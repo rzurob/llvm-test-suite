@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat17.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +34,6 @@
 !*
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing  parameters
 !*                             : as intent(in) actual arguments and intsize=8
-!*                             : 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -55,9 +48,9 @@
           integer                     :: STATUS
           integer                     :: NUMBER
           character(2047)             :: VALUE
-          INTEGER                     :: ARR(10) 
+          INTEGER                     :: ARR(10)
           integer                     :: ARGCOUNT
-        end type dertype 
+        end type dertype
 
         character(513), PARAMETER   :: NAME = 'CmdLine     '
         logical,        PARAMETER   :: TRIM_NAME = .true.
@@ -73,7 +66,7 @@
 
 
       character(4099) 	STR
-      INTEGER         	ARR(10) 
+      INTEGER         	ARR(10)
 
       character(2049)              :: CmdLine = 'fxclat17 \\\[\\\*\\\?\\\]'
       integer                      :: CmdCount, i
@@ -84,7 +77,7 @@
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 1 ) & 
+      if ( CmdCount .ne. 1 ) &
       then
         call zzrcY4(63)
       endif
@@ -99,7 +92,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         cmd%NUMBER = i
         call GET_COMMAND_ARGUMENT(cmd%NUMBER, cmd%VALUE, cmd%LENGTH, cmd%STATUS)
         call GET_COMMAND_ARGUMENT(cmd%NUMBER)
@@ -123,12 +116,12 @@
       endif
 
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 
 
-  
+
               ! Currently ZZRC only support default int size !
       SUBROUTINE ZZRCY4(RC)
         integer RC

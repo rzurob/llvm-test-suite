@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp Null1.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Null1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Null1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*   null()
 !*   The characteristics
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -60,9 +54,9 @@
 
   END MODULE
 
-  PROGRAM Null1 
+  PROGRAM Null1
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT) :: V
 
@@ -78,11 +72,11 @@
   ProcPtr1 => ExtFun
 
   ProcPtr => ExtFun
-  ProcPtr => NULL(ProcPtr) 
+  ProcPtr => NULL(ProcPtr)
   ProcPtr => NULL(ProcPtr1)
 
 
-  V%ProcPtr => NULL(Fun) 
+  V%ProcPtr => NULL(Fun)
   V%ProcPtr => Fun
   V%ProcPtr => NULL(ProcPtr1)
 

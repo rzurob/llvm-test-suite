@@ -1,40 +1,34 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrMatmulIntReal.f 
+!*  TEST CASE NAME             : dataPtrMatmulIntReal.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !* - intrinsic matmul's two args are data pointers of type integer and real
-!* - type real & integer, bounds-remapping-list 
+!* - type real & integer, bounds-remapping-list
 !* - target is the selector of associate statement
-!* 
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
     program main
 
-    	type base 
+    	type base
 	    integer, allocatable :: a(:)
     	end type
 
-	type(base), target :: aT 
+	type(base), target :: aT
 
 	integer, pointer :: ip(:,:)
 
 	real, pointer :: rp(:,:)
 
-	real, target :: rt(12) = (/ ((/-1, 0, 1,2/),i=1,3)/) 
+	real, target :: rt(12) = (/ ((/-1, 0, 1,2/),i=1,3)/)
 
 	Allocate(aT%a(100), source =  &
                 (/ (/((/1,2,-1/),i=1,4)/), (/(i,i=1,88)/) /))
@@ -42,7 +36,7 @@
 	associate( x => aT%a )
 
 	    ip(1:3, 1:4) => x
-	    
+
 	    if ( .not. associated(ip) ) stop 11
 	    if ( any( lbound(ip) .ne. (/1,1 /) )) stop 13
 	    if ( any( ubound(ip) .ne. (/3,4 /) )) stop 15
@@ -53,7 +47,7 @@
 
 	    associate( y => ip)
 
-	    	rp(2:5,-1:1) => rt 
+	    	rp(2:5,-1:1) => rt
 
 	    	if ( .not. associated(rp) ) stop 21
 	    	if ( any( lbound(rp) .ne. (/2,-1 /) )) stop 23

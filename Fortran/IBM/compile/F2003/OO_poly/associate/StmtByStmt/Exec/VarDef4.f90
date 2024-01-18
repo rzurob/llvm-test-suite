@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp VarDef4.f 
+! %POSTCMD: tcomp VarDef4.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : VarDef4 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : VarDef4
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 22, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,31 +30,31 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
-!*   Variable Definition Context on non variable selector 
-!*   - do control var 
-!*    (300332) 
+!*
+!*   Variable Definition Context on non variable selector
+!*   - do control var
+!*    (300332)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM VarDef4 
+  PROGRAM VarDef4
   IMPLICIT NONE
- 
+
   TYPE :: DT
-    INTEGER :: i 
+    INTEGER :: i
   END TYPE
 
   TYPE(DT) :: T
   PARAMETER (T=DT(0))
 
   ASSOCIATE ( i => T%i )
-  
+
     DO i=1, 2
     END DO
 
   END ASSOCIATE
 
 
-  END 
+  END
 

@@ -1,6 +1,6 @@
 program main
   implicit none
-  
+
   logical, parameter   :: src=.false.
   logical, allocatable :: a, b
 

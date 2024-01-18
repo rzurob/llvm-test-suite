@@ -1,20 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : readSizeSpec01 - Data Transfer Statements
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 28, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Formatted Non-Advancing Input Asynchronous
 !*                               Data Transfers
 !*  SECONDARY FUNCTIONS TESTED : SIZE= Specifier contains the Count of
 !*                               Characters Transferred
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : READ(), ASYNCHRONOUS=, ID=, IOSTAT=, and

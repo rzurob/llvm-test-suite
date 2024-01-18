@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Select-Type Constructor: Unlimited Polymorphic Scalar Entities
@@ -60,7 +49,7 @@ use m
 
    class(*), allocatable     :: u1
    class(*), pointer         :: u2
-   
+
    class(base), allocatable  :: b1
    class(base), pointer      :: b2
 
@@ -73,7 +62,7 @@ use m
    allocate ( b2, source = child ( 102.0 , 103.0 ) )
    allocate ( c1, source = child ( 201.0 , 202.0 ) )
    allocate ( c2, source = child ( 203.0 , 204.0 ) )
-   
+
    allocate ( u1, source = b1 )
    u2 => b2
 
@@ -92,7 +81,7 @@ use m
    deallocate ( u1 )
    allocate ( u1, source = c1 )
    u2 => c2
-   
+
    select type ( g => u1 )
       type is ( child )
          write ( 1, "(DT'_u1'(8,3,9,4))", iostat = stat, iomsg = msg ) g

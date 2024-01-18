@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : associate002l
 !*
-!*  PROGRAMMER                 : David Forster (derived from associate002 by Robert Ma)
 !*  DATE                       : 2007-09-14 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer Input/Output list
 !*                               - try to read associate-name, and associate name is of unlimited polymorphic type
@@ -109,7 +101,7 @@ program associate002l
    write (1, iostat=stat, iomsg=msg )       c3, i1
    write (1, iostat=stat, iomsg=msg )       c4, c5
    write (1, iostat=stat, iomsg=msg )       c6, c7
-   
+
    rewind 1
 
    associate ( a => b1, b => b2, c => b3, d => b4 )
@@ -199,7 +191,7 @@ program associate002l
                print *,g
          end select
    end select
-   
+
    ! close the file appropriately
 
    close ( 1, status ='delete' )

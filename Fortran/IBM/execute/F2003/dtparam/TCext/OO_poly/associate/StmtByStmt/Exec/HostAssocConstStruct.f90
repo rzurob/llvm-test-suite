@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  HostAssocConstStruct.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  HostAssocConstStruct.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : HostAssocConstStruct 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : HostAssocConstStruct
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,11 +32,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is an associte name associating to a constant structure (component) 
-!*   (ICE)   
+!*    The selector is an associte name associating to a constant structure (component)
+!*   (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
   MODULE M
 
     TYPE :: Base(K1)    ! (4)
@@ -57,7 +51,7 @@
       INTEGER(K1)  :: ChildId = 2
       CLASS(Base(K1)), POINTER :: BasePtr => NULL()
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -77,25 +71,25 @@
     SUBROUTINE SetBaseId(Arg)
     CLASS(Base(4))  :: Arg
       Arg%BaseId = -1
-    END SUBROUTINE 
+    END SUBROUTINE
 
   END MODULE
 
-  PROGRAM HostAssocConstStruct 
+  PROGRAM HostAssocConstStruct
   USE M
   IMPLICIT NONE
 
-  TYPE(Base(4)),  PARAMETER :: V = Base(4)()  
-  TYPE(Child(4)), PARAMETER :: W = Child(4)() 
- 
+  TYPE(Base(4)),  PARAMETER :: V = Base(4)()
+  TYPE(Child(4)), PARAMETER :: W = Child(4)()
+
     ASSOCIATE ( T0 => W, T1 => W%Base, T2 => V )
     ASSOCIATE ( As0 => T0, As1 => T1, As2 => T2)
- 
-      IF ( As0%GetID()      .NE. 2 ) STOP 41 
+
+      IF ( As0%GetID()      .NE. 2 ) STOP 41
       IF ( As0%ChildID      .NE. 2 ) STOP 42
       IF ( As0%Base%GetId() .NE. 1 ) STOP 43
       IF ( As0%BaseId       .NE. 1 ) STOP 44
-    
+
       IF ( As1%BaseID  .NE. 1 ) STOP 50
       IF ( As1%GetID() .NE. 1 ) STOP 51
 

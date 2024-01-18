@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : 338155 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : 338155
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 19, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,25 +19,20 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  
 !*  defect 338155 -- accessible private components in IO from module
-!*
-!*     
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  MODULE M 
+  MODULE M
   TYPE :: DT
     INTEGER, PRIVATE :: I
     INTEGER          :: J
   END TYPE
   END MODULE
 
-  MODULE M1 
+  MODULE M1
   USE M
 
   TYPE, EXTENDS(DT) :: DT1
@@ -55,9 +44,9 @@
 
   SUBROUTINE S()
 
-  print*, T%i 
+  print*, T%i
   ! the component "i" is inaccessible here
-  PRINT*, T   
+  PRINT*, T
   !? the component "i" is accessible here
 
   END SUBROUTINE

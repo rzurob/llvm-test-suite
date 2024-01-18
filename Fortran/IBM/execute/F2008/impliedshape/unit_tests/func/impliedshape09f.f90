@@ -1,17 +1,9 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : impliedshape09f.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : February 14, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Implied-shape arrays
-!*
-!* DRIVER STANZA              : xlf2008
 !*
 !* DESCRIPTION                : Testing proper functionality of
 !*                              implied-shape arrays of DTP
@@ -28,16 +20,16 @@
       type, extends(base) :: child(k,l,j)
          integer, kind :: k
          integer, len :: l,j
- 
+
          character(l+j) :: c
          integer(k) :: i
       end type
-      
+
       type(base), parameter :: t2 (*,*) = &
            & reshape([(base(i,'IJKL'),i=101,200)],[10,10])
       type(base), parameter :: t2a (10,10) = &
            & reshape([(base(i,'IJKL'),i=101,200)],[10,10])
-      
+
       type(child(4,1,2)), parameter :: ta (*) = &
            & reshape([child(4,1,2)(c='abc',i=88), &
            & child(4,1,2)(10,'XLF ','xyz',44)],[2])
@@ -64,6 +56,6 @@
         & ANY(tb%c .NE. tba%c) .OR. ANY(tb%i .NE. tba%i)) then
         ERROR STOP 3
       endif
-      
+
       end
 

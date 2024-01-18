@@ -1,20 +1,13 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound07
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug 20, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Functionality of cobound intrinsics
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qintsize=8
 !*
 !*  DESCRIPTION                : Testing kind type parameter of cobound
@@ -26,7 +19,7 @@
 
       complex, save :: coarr1(10)[*]
       real, save :: coarr2(10)[666:*]
- 
+
       integer :: def_int
 
       if (kind(def_int) .ne. 8) then

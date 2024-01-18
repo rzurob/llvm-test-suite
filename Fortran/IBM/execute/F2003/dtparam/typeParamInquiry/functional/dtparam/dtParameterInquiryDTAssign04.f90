@@ -1,31 +1,23 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryDTAssign04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryDTAssign04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 24 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. INTRINSIC ASSIGNMENT
 !* 4. COMPONENT IS DEFERRED DERIVED TYPE
-!* 5. DEFECT 355338, 355327 
+!* 5. DEFECT 355338, 355327
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type B(lb)
@@ -34,11 +26,11 @@ module m
    type A(la)
       integer,len   :: la
       type(B(:)),allocatable :: b1
-      type(B(:)),pointer     :: b2 
+      type(B(:)),pointer     :: b2
    end type
 end module
 
-program dtParameterInquiryDTAssign04 
+program dtParameterInquiryDTAssign04
   use m
   implicit none
 
@@ -47,7 +39,7 @@ program dtParameterInquiryDTAssign04
   type(A(:)),allocatable :: a3
   type(A(:)),pointer     :: a4=>null()
   type(A(:)),pointer     :: a5=>null()
-  
+
   a1%b1=B(6)()
   allocate(B(2*a1%b1%lb) :: a1%b2)
 

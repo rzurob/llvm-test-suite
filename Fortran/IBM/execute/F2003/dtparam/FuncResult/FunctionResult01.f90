@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FunctionResult01.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : March 15, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly         
+!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -24,7 +16,7 @@
 !*
 !*  Defect 356663
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -50,12 +42,12 @@ MODULE Mod
       CONTAINS
 
       FUNCTION func(Arg)
-        CLASS(*) :: Arg, func 
-        POINTER  :: func 
+        CLASS(*) :: Arg, func
+        POINTER  :: func
 
           ALLOCATE(func, SOURCE = Arg)
- 
-      END FUNCTION   
+
+      END FUNCTION
 END MODULE
 
 PROGRAM FunctionResult01
@@ -63,7 +55,7 @@ PROGRAM FunctionResult01
       IMPLICIT NONE
 
       TYPE(Base(4,10)) :: b1
-      TYPE(Base(4,:)), POINTER :: b_ptr 
+      TYPE(Base(4,:)), POINTER :: b_ptr
       CLASS(Base(4,:)), POINTER :: b_poly
 
       SELECT TYPE ( s => func(b1) )
@@ -77,7 +69,7 @@ PROGRAM FunctionResult01
            STOP 14
       END SELECT
 
-      ALLOCATE( Base(4,15) :: b_ptr ) 
+      ALLOCATE( Base(4,15) :: b_ptr )
       SELECT TYPE ( s => func(b_ptr) )
         TYPE IS (Base(4,*))
            IF (s%k1 .NE.  4) STOP 15
@@ -89,7 +81,7 @@ PROGRAM FunctionResult01
            STOP 19
       END SELECT
 
-      ALLOCATE( NextGen(4,1,4,2,5,10) :: b_poly ) 
+      ALLOCATE( NextGen(4,1,4,2,5,10) :: b_poly )
       SELECT TYPE ( s => func(b_poly) )
         CLASS IS (NextGen(4,*,4,*,*,*))
            IF (s%k1 .NE.  4) STOP 20
@@ -108,7 +100,7 @@ PROGRAM FunctionResult01
            STOP 31
       END SELECT
 
-      ALLOCATE( Child(4,10,4,20) :: b_poly ) 
+      ALLOCATE( Child(4,10,4,20) :: b_poly )
       SELECT TYPE ( s => func(b_poly) )
         CLASS IS (Child(4,*,4,*))
            IF (s%k1 .NE.   4) STOP 32

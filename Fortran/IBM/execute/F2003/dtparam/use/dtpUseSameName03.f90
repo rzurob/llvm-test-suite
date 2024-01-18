@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUseSameName03
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-09-08
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTP and USE
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 355310
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -107,7 +101,7 @@ contains
 
   end subroutine mytest1
 
- 
+
   subroutine mytest2(arg)
     use :: dtpUseSameName03mod, only : parentClass => base2
     use :: dtpUseSameName03mod, only : childClass  => derived2
@@ -120,5 +114,5 @@ contains
     print *, chobj, chobj % p, p_obj, p_obj % p, p_obj_arg, p_obj_arg % p
 
   end subroutine mytest2
- 
+
 end program dtpUseSameName03

@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : saModuleNIntern
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-07-26
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF SYNC ALL
 !*  SECONDARY FUNCTIONS TESTED : synchronisation from module procedures and internal procedures
@@ -79,7 +75,7 @@ program saModuleNIntern
    integer :: out, self, rightBuddy, leftBuddy, nImages, i, j, aBuddy, eFoundInImage, testcount, stat
    logical :: eFound
    character(100) :: emsg
-   
+
    call preamble
 
    call loopTest(STRESS_LEVEL, stat)

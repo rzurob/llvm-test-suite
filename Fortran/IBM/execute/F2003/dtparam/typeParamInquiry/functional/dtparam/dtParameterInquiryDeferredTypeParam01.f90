@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryDeferredTypeParam01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryDeferredTypeParam01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 21 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. WITHOUT COMPONENT
 !* 4. USE ASSIGNMENT,ALLOCATE
@@ -35,11 +27,11 @@ module m
 
 end module
 
-  program dtParameterInquiryDeferredTypeParam01 
+  program dtParameterInquiryDeferredTypeParam01
   use m
   implicit none
-  
-  type(base(2,5)),target :: b1 
+
+  type(base(2,5)),target :: b1
   type(base(2,:)),allocatable :: b2
   type(base(2,:)),pointer  :: b3=>null()
   type(base(2,:)),allocatable :: b4

@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyTarget07.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyTarget07.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 20 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 20 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!* 
+!*
 !*  1. If the dummy argument has the TARGET attribute, does not have the VALUE attribute, and is either a scalar or an assumed-shape array, and the corresponding actual argument has the TARGET attribute but is not an array section with a vector subscript then
 !*
 !* 1) Any pointers associated with the actual argument becomes associated with the corresponding dummy argument on invocation of the procedure and
@@ -46,7 +38,7 @@ program dummyArgDeferPolyTarget07
 
   class(base(:)),target,allocatable :: tarchild(:)
 
-  type(base(3)),target    :: tarbase(2:3) 
+  type(base(3)),target    :: tarbase(2:3)
 
   tarbase=[base(3)(i=[3,4,5]),base(3)(i=[-3,-4,-5])]
 
@@ -71,16 +63,16 @@ program dummyArgDeferPolyTarget07
   if(lbound(pbase,1) /= 5)                               error stop 20_4
   if(ubound(pbase,1) /= 6)                               error stop 21_4
   if(any(pbase(5)%i /= [11,22]))                         error stop 22_4
-  if(any(pbase(6)%i /= [-11,-22]))                       error stop 23_4 
+  if(any(pbase(6)%i /= [-11,-22]))                       error stop 23_4
   select type(pbase)
     type is(child(*,*))
       if(any(pbase(6)%basecomp%i /= [-3,-4,-5]))         error stop 24_4
       if(associated(pbase(5)%basecomp))                  error stop 25_4
     class default
       error stop 101_4
-  end select 
+  end select
   contains
- 
+
     subroutine sub(arg)
        class(base(:)),target,allocatable :: arg(:)
 
@@ -92,7 +84,7 @@ program dummyArgDeferPolyTarget07
        select type(arg)
          type is(child(*,*))
           if(.not. associated(arg(1)%basecomp,tarbase(2))) error stop 15_4
-          if(.not. associated(arg(2)%basecomp,tarbase(3))) error stop 16_4 
+          if(.not. associated(arg(2)%basecomp,tarbase(3))) error stop 16_4
           if(any(arg(1)%basecomp%i /= [3,4,5]))            error stop 17_4
           if(any(arg(2)%basecomp%i /= [-3,-4,-5]))         error stop 18_4
           nullify(arg(1)%basecomp)

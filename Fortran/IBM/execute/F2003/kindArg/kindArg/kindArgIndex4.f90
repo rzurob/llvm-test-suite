@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgIndex4
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : INDEX 
+!*  SECONDARY FUNCTIONS TESTED : INDEX
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Returns the starting position of a substring within a string 
-!*    
-!*  (322624/325890) 
+!*  Returns the starting position of a substring within a string
+!*
+!*  (322624/325890)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -41,7 +33,7 @@
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
-     
+
   CHARACTER(:), POINTER :: Str(:)
   CHARACTER(:), ALLOCATABLE :: CC(:)
 
@@ -85,10 +77,10 @@
   IF (ANY(INDEX(STRING=Str(32:32),  SUBSTRING=CC(32:32))                      .NE. 1)) STOP 93
   IF (ANY(INDEX(STRING=Str(33:127), SUBSTRING=CC(33:127))                     .NE. 3)) STOP 94
 
-  IF (ANY( INDEX(STRING=Str, SUBSTRING=CC, BACK=.FALSE., KIND=1_8) .NE. INDEX(STRING=Str, SUBSTRING=CC))) STOP 111 
-  IF (ANY( INDEX(STRING=Str, SUBSTRING=CC, BACK=.FALSE., KIND=1_4) .NE. INDEX(STRING=Str, SUBSTRING=CC))) STOP 112 
-  IF (ANY( INDEX(STRING=Str, SUBSTRING=CC, BACK=.FALSE., KIND=1_2) .NE. INDEX(STRING=Str, SUBSTRING=CC))) STOP 113 
-  IF (ANY( INDEX(STRING=Str, SUBSTRING=CC, BACK=.FALSE., KIND=1_1) .NE. INDEX(STRING=Str, SUBSTRING=CC))) STOP 114 
+  IF (ANY( INDEX(STRING=Str, SUBSTRING=CC, BACK=.FALSE., KIND=1_8) .NE. INDEX(STRING=Str, SUBSTRING=CC))) STOP 111
+  IF (ANY( INDEX(STRING=Str, SUBSTRING=CC, BACK=.FALSE., KIND=1_4) .NE. INDEX(STRING=Str, SUBSTRING=CC))) STOP 112
+  IF (ANY( INDEX(STRING=Str, SUBSTRING=CC, BACK=.FALSE., KIND=1_2) .NE. INDEX(STRING=Str, SUBSTRING=CC))) STOP 113
+  IF (ANY( INDEX(STRING=Str, SUBSTRING=CC, BACK=.FALSE., KIND=1_1) .NE. INDEX(STRING=Str, SUBSTRING=CC))) STOP 114
 
   END
 

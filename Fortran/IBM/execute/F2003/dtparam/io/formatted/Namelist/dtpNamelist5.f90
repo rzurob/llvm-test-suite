@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpNamelist5
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul 07, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The namelist statement
-!*  Namelist group object may be a member of more than one namelist group 
-!*  
-!* 
+!*  Namelist group object may be a member of more than one namelist group
+!*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -82,9 +72,9 @@
 
   PRINT*, "in modsub"
   WRITE(*, NML=NL0)
-  WRITE(*, NML=NL1) 
+  WRITE(*, NML=NL1)
   CALL IntSub()
- 
+
   CONTAINS
 
   SUBROUTINE IntSub()
@@ -92,7 +82,7 @@
 
   PRINT*, "in intsub of modsub "
   WRITE(*, NML=NL0)
-  WRITE(*, NML=NL1) 
+  WRITE(*, NML=NL1)
 
   END SUBROUTINE
 
@@ -102,16 +92,16 @@
 
   PROGRAM dtpNamelist5
   USE M, ONLY: NL0, modsub, s, t
-  NAMELIST /NL1/ S,T  ! <- this is not the continuation of NL3 from the module 
+  NAMELIST /NL1/ S,T  ! <- this is not the continuation of NL3 from the module
 
   CALL ModSub()
 
   PRINT*, "in main "
   WRITE(*, NML=NL0)
-  WRITE(*, NML=NL1) 
+  WRITE(*, NML=NL1)
 
   CALL IntSub()
- 
+
   CONTAINS
 
   SUBROUTINE IntSub()
@@ -119,7 +109,7 @@
 
   PRINT*, "in intsub of main "
   WRITE(*, NML=NL0)
-  WRITE(*, NML=NL1) 
+  WRITE(*, NML=NL1)
 
   END SUBROUTINE
 

@@ -12,38 +12,30 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dtpexpression028
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : June 2nd, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :testing expressions with derived types
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
-		
+
 type A(k1,k2,k3)
   integer, kind :: k1
   integer, kind :: k2
   integer, kind :: k3
-     
-  complex(k3-1) ::  c1=(k3*k3,k1-k2)  
+
+  complex(k3-1) ::  c1=(k3*k3,k1-k2)
   complex(k2*k2) :: c2=cmplx(k1+k2+k3,-k1-k2-k3)
   complex(k1+k2+2) :: c3(k1-1:k3**2) =(/(cmplx(k1,k2),i=k1-1,k3**2)/)
   complex(k2) :: c4(k1:k3)=(/(k1,k2),(k2,k3),(-k3,-k1),(k1+k3+k2,k1*k2*k3)/)
   complex(k2*2) :: c5(k3:k3+k3)=(/((k2/k1,k3-k2),i=k3,10)/)
-  
+
 	end type
 
 type(A(2,4,5)) :: A1
@@ -67,4 +59,4 @@ if(any(A1%c5.ne.(/((2,1),i=5,10)/))) error stop 16
 
 
 end
-  
+

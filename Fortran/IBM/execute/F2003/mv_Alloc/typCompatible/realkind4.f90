@@ -1,22 +1,10 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : realkind4.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM/TO are of type real
 !*                               FROM is component of pointer to a DT
@@ -30,11 +18,11 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
-      
- 
+
+
       type base
           real, allocatable :: r2(:,:)
-      end type 
+      end type
 
       type(base), target :: trg
       contains
@@ -45,10 +33,10 @@ module m
               real func(:,:)
               allocatable  func
 
-              prg => trg 
+              prg => trg
               call move_alloc(prg%r2, func)
-	      if ( .not. allocated(func)) stop 25 
-          end function 
+	      if ( .not. allocated(func)) stop 25
+          end function
 
 end module
 

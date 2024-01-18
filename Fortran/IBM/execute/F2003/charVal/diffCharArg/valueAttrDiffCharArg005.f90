@@ -1,28 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : valueAttrDiffCharArg005.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 04/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : The following was passed as actual args
-!*				to subroutines which contain the value 
+!*				to subroutines which contain the value
 !*				attribute with its respective dummy args:
 !*				   literals, array, elements of an array,
 !*				   and substrings. All of which are 0 byte
 !*				   character strings
-!*
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

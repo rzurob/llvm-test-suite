@@ -1,35 +1,28 @@
 !*********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument309f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from C
 !*
 !*                                - Allocate (a, source=b) with only a having a C descriptor
 !*                                - Verify values both in Fortran and C
-!*                                - type c_float 
+!*                                - type c_float
 !*                                - Nesting of calls
 !*                                   Bind(c) ==> Non-bind(c)
-!*                                - Matmul: the last dimension of the first 
-!*                                          array must be equal to the first 
+!*                                - Matmul: the last dimension of the first
+!*                                          array must be equal to the first
 !*                                          dimension of the second array
 !* Fortran array:
 !*   - dim 1 is number of rows
-!*   - dim2 is number of columns 
-!*   - Column order 
+!*   - dim2 is number of columns
+!*   - Column order
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -101,11 +94,11 @@ subroutine check(arg) bind(C)
     use iso_c_binding
     implicit none
     real(c_float), allocatable :: arg(:,:)
-    real :: y(2,3) 
+    real :: y(2,3)
 
 !*********************************************
-!          y = 3 2 1     
-!             -2 4 1         
+!          y = 3 2 1
+!             -2 4 1
 !*********************************************
 
     if( .not. allocated(arg) ) ERROR STOP 40

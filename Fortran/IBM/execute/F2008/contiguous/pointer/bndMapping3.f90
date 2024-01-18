@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bndMapping3.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Bound Remapping
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                : -
 !*
-!*  DESCRIPTION                : - 
-!*                      
 !*    LHS is array pointer with CONTIGUOUS attribute (rank =1)
 !*    RHS is assumed-shape array with CONTIGUOUS attribute (rank =3)
 !*
@@ -41,19 +31,19 @@ PROGRAM bndMapping3
 
       CALL Sub(I3D)
 
-      ptr => foo(I3D,1,8) 
+      ptr => foo(I3D,1,8)
       IF (ANY(ptr .NE. [(I, I=1,8)])) ERROR STOP 10
       IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 11
 
-      ptr => foo(I3D,1,5) 
+      ptr => foo(I3D,1,5)
       IF (ANY(ptr .NE. [(I, I=1,5)])) ERROR STOP 12
       IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 13
 
-      ptr => foo(I3D,2,5) 
+      ptr => foo(I3D,2,5)
       IF (ANY(ptr .NE. [(I, I=1,4)])) ERROR STOP 14
       IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 15
 
-      ptr => foo(I3D,7,8) 
+      ptr => foo(I3D,7,8)
       IF (ANY(ptr .NE. [(I, I=1,2)])) ERROR STOP 16
       IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 17
 
@@ -66,7 +56,7 @@ PROGRAM bndMapping3
 
         Iup = UBOUND(Arg, 1)
         Ilow = LBOUND(Arg, 1)
-        ptrc(Ilow:Iup) => Arg 
+        ptrc(Ilow:Iup) => Arg
 
         IF (ANY(ptrc .NE. [1,2])) ERROR STOP 18
 
@@ -76,8 +66,8 @@ PROGRAM bndMapping3
           INTEGER :: K, P, Isize
           INTEGER, POINTER :: foo(:)
           INTEGER, TARGET, CONTIGUOUS :: Arg(:,:,:)
-              
-              IF ( (P-K+1) > size(Arg) ) ERROR STOP 19 
+
+              IF ( (P-K+1) > size(Arg) ) ERROR STOP 19
               foo(K:P) => Arg
 
       END FUNCTION foo

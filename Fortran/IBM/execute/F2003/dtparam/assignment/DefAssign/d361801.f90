@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361801.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361801.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 5 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 5 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 361801
@@ -33,12 +25,12 @@ module m
   end type
   contains
       function getFun(tar)
-         type(outer(*)),intent(in),target :: tar 
+         type(outer(*)),intent(in),target :: tar
          type(outer(3)),pointer :: getFun
 
-         print *,"|",tar,"|"           
+         print *,"|",tar,"|"
          print *,"|",tar%inn1comp%c1,"|"
-         print *,"|",tar%inn1comp,"|"  
+         print *,"|",tar%inn1comp,"|"
 
          getFun=>tar
       end function

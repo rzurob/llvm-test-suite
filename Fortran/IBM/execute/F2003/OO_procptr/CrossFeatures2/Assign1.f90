@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Assign1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Assign1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Assign1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Assign1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 23, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  A derived-type intrinsic assignment 
-!*  (ICE)  
+!*
+!*  A derived-type intrinsic assignment
+!*  (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -58,7 +52,7 @@
     END TYPE
 
     INTERFACE ASSIGNMENT ( = )
-      MODULE PROCEDURE PToP 
+      MODULE PROCEDURE PToP
     END INTERFACE ASSIGNMENT ( = )
 
     CONTAINS
@@ -78,16 +72,16 @@
     SUBROUTINE PToP (Arg1, Arg2)
     TYPE(DT), INTENT (OUT) :: Arg1
     TYPE(Dt), INTENT (IN)  :: Arg2
-      Arg1%Base = Arg2%Base  
-      Arg1%ProcPtr2 => Arg2%ProcPtr2  
+      Arg1%Base = Arg2%Base
+      Arg1%ProcPtr2 => Arg2%ProcPtr2
     END SUBROUTINE
- 
+
   END MODULE
 
 
-  PROGRAM Assign1 
+  PROGRAM Assign1
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT)              :: V
   TYPE (Base)            :: V1
@@ -97,9 +91,9 @@
   PROCEDURE(ModFun1), POINTER :: ProcPtr1
   PROCEDURE(ModFun2), POINTER :: ProcPtr2
 
-  ProcPtr1 => ModFun1 
+  ProcPtr1 => ModFun1
   ProcPtr2 => ModFun2
- 
+
   V = DT(Base=Base(ProcPtr1), ProcPtr2=ModFun2 )
   IF (.NOT. Equal(V, DT(Base=Base(ProcPtr1), ProcPtr2=ModFun2 )) ) STOP 11
 
@@ -118,22 +112,22 @@
   FUNCTION Equal(Arg1, Arg2)
   LOGICAL Equal
   CLASS(Base) :: Arg1, Arg2
-  
+
   Equal = .FALSE.
 
   SELECT TYPE ( Arg1 )
   TYPE IS (Base)
     SELECT TYPE ( Arg2 )
     TYPE IS (Base )
-      Equal = ASSOCIATED(Arg1%ProcPtr1, Arg2%ProcPtr1) 
+      Equal = ASSOCIATED(Arg1%ProcPtr1, Arg2%ProcPtr1)
     CLASS DEFAULT
       STOP 22
     END SELECT
-  TYPE IS (DT)  
+  TYPE IS (DT)
     SELECT TYPE ( Arg2 )
     TYPE IS (DT )
-      Equal = ASSOCIATED(Arg1%ProcPtr1, Arg2%ProcPtr1) 
-      Equal = Equal .AND. ASSOCIATED(Arg1%ProcPtr2, Arg2%ProcPtr2) 
+      Equal = ASSOCIATED(Arg1%ProcPtr1, Arg2%ProcPtr1)
+      Equal = Equal .AND. ASSOCIATED(Arg1%ProcPtr2, Arg2%ProcPtr2)
     CLASS DEFAULT
       STOP 33
     END SELECT

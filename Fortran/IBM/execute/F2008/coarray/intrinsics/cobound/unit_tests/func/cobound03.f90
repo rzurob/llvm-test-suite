@@ -1,21 +1,14 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound03
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug 20, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Functionality of cobound intrinsics
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Testing various combinations of
 !*                               argument keywords for the cobound
@@ -54,7 +47,7 @@
 
          i  = ucobound(DIM=1, COARRAY=coarr)
          if (i .ne. 10) error stop 6
-         
+
       end if
 
       sync all

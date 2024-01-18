@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: ../ieeeconsts.f ../fake_ieee_modules.f intrimod12.f
 ! %VERIFY: intrimod12.out:../emptyout.vf
 ! %STDIN:
@@ -11,10 +11,7 @@
 ! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod12.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
@@ -49,12 +46,12 @@
 
        program intrimod12
 
-         use mod1     
+         use mod1
          use, intrinsic :: ieee_arithmetic, only: inrt => IEEE_NEAREST
          use, intrinsic :: xlf_fp_util, only: fpo => fp_overflow,  &
      &               fpd => fp_div_by_zero, fpv => fp_invalid,     &
      &               fpu => fp_underflow, fpe=> fp_inexact
-         implicit none 
+         implicit none
 
          flags = (/ fpo, fpd, fpv, fpu, fpe /)
          call sub1(inrt, flags)
@@ -90,7 +87,7 @@
          do k = 1, 5
             if (flag_values(k) .neqv. .false. ) stop 10
          enddo
-         
+
          if (isdt(P4) .AND. isdt(N4)) then
             if (iisf(P4) .OR. iisf(N4)) stop 12
          endif
@@ -109,7 +106,7 @@
 
 !... Testing xlf_fp_util module
          call sff(flags(1))
-         call cff(flags(5)) 
+         call cff(flags(5))
          if ( gff(flags(1)) .eq. 0 ) stop 17
          if ( gff(flags(5)) .ne. 0 ) stop 18
 

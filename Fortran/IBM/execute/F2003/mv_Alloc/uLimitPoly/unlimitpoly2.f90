@@ -1,28 +1,16 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlimitpoly2.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 05/24/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimit polymorphic,
-!*                               FROM has protected, target attritbue 
-!*                               TO has private, target attritbue 
+!*                               FROM has protected, target attritbue
+!*                               TO has private, target attritbue
 !*                               derived-type, complex
-!*                        
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -34,7 +22,7 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
-    type T 
+    type T
     end type
 
     class(*), protected, target, allocatable :: old
@@ -44,7 +32,7 @@ module m
         subroutine sub
 
             allocate(old, source = (20.1_4, 40.1_4))
-    
+
             if ( .not. allocated(old) ) stop 11
 
             allocate ( T :: new)
@@ -59,9 +47,9 @@ module m
 
             select type(new)
                  type is (complex)
-                    write (*, '("(",f10.2,", ", f10.2, ")")') new 
+                    write (*, '("(",f10.2,", ", f10.2, ")")') new
                  class default
-                    stop 23 
+                    stop 23
             end select
 
         end subroutine

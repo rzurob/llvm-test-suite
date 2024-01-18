@@ -1,22 +1,17 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal023kl.f
 !*  TEST CASE NAME             : type-bound procedure ffinal023kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal023 by Catherine Sun)
 !*  DATE                       : 2007-11-26 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines: import 
-!*    
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines: import
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -45,12 +40,12 @@ use m
     type(base(4))  :: dt1   ! tcx: (4)
     type(child(4,9))  :: dt2   ! tcx: (4,9)
 
-    interface interf 
+    interface interf
         subroutine fBase(arg1)
         import base
         type(base(4)), intent(inout) :: arg1 ! tcx: (4)
         end subroutine
-  
+
         subroutine fChild(arg1)
         import child
         type(child(4,*)), intent(inout) :: arg1 ! tcx: (4,*)
@@ -63,7 +58,7 @@ use m
         type (child(4,*)), intent (in) :: arg1  ! tcx: (4,*)
         print *, 'finalizeChild'
     end subroutine
- 
+
 end module
 
 use m1
@@ -77,7 +72,7 @@ subroutine fBase (arg1)
 use m, only : base
    type(base(4)), intent(inout) :: arg1 ! tcx: (4)
    type(base(4))  :: t1   ! tcx: (4)
-end subroutine 
+end subroutine
 
 subroutine fChild (arg1)
 use m1, only : child

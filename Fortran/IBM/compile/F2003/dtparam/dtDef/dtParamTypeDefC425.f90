@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefC425 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefC425
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 29, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  C425 (R430) The same type-attr-spec shall not appear more than once 
-!*  in a given derived-type-stmt. 
+!*  C425 (R430) The same type-attr-spec shall not appear more than once
+!*  in a given derived-type-stmt.
 !*
 !*  (No complaint on DT3)
 !*
@@ -46,7 +40,7 @@
     INTEGER, KIND :: K
   END TYPE
 
-  TYPE, EXTENDS(DT), ABSTRACT, EXTENDS(DT)  :: DT4(K)  
+  TYPE, EXTENDS(DT), ABSTRACT, EXTENDS(DT)  :: DT4(K)
     INTEGER, KIND :: K
   END TYPE
 
@@ -61,7 +55,7 @@
 
   END MODULE
 
-  PROGRAM dtParamTypeDefC425 
-  
+  PROGRAM dtParamTypeDefC425
+
   END
 

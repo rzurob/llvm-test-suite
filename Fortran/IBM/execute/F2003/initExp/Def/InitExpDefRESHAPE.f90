@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefRESHAPE.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefRESHAPE.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an tranformational intrinsic
-!* 
+!*
 !*  - RESHAPE
 !*  (319105/320523)
 !*
@@ -37,7 +30,7 @@
   MODULE M
 
   TYPE :: DT
-    COMPLEX  :: Z=(0., 0.) 
+    COMPLEX  :: Z=(0., 0.)
     LOGICAL(2) :: L(3,3)=.FALSE.
     PROCEDURE(), POINTER, NOPASS :: ProcPtr=>NULL()
     CONTAINS
@@ -53,82 +46,82 @@
   END MODULE
 
 
-  PROGRAM  InitExpDefRESHAPE 
+  PROGRAM  InitExpDefRESHAPE
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
 
-  INTEGER(1),   PARAMETER :: I1(8,8)   = RESHAPE((/(I, I=1,64)/),(/8,8/)) 
+  INTEGER(1),   PARAMETER :: I1(8,8)   = RESHAPE((/(I, I=1,64)/),(/8,8/))
   INTEGER(1),   PARAMETER :: P11(17)   = RESHAPE((/(I, I=65,81)/),(/17/))
-  INTEGER(1),   PARAMETER :: P12(17:0) = 0 
+  INTEGER(1),   PARAMETER :: P12(17:0) = 0
   INTEGER(1),   PARAMETER :: O1(2)     = RESHAPE((/2,1/),(/2/))
   INTEGER(1),   PARAMETER :: R11(9,9)  = RESHAPE((/(I, I=1,81)/),(/9,9/))
   INTEGER(1),   PARAMETER :: R12(9,9)  = TRANSPOSE(R11)
- 
+
   INTEGER(KIND(RESHAPE(I1,   (/8,8/))))         , PARAMETER :: TI11(8,8) = RESHAPE(R11, (/8,8/))
   INTEGER(KIND(RESHAPE(TI11, (/8,8/), P12)))    , PARAMETER :: TI12(8,8) = RESHAPE(R11, (/8,8/), P12)
-  INTEGER(KIND(RESHAPE(TI12, (/8,8/), P11)))    , PARAMETER :: TI13(9,9) = RESHAPE(I1,  (/9,9/), P11) 
-  INTEGER(KIND(RESHAPE(I1,   (/8,8/), P11, O1))), PARAMETER :: TI14(9,9) = RESHAPE(I1,  (/9,9/), P11, O1) 
+  INTEGER(KIND(RESHAPE(TI12, (/8,8/), P11)))    , PARAMETER :: TI13(9,9) = RESHAPE(I1,  (/9,9/), P11)
+  INTEGER(KIND(RESHAPE(I1,   (/8,8/), P11, O1))), PARAMETER :: TI14(9,9) = RESHAPE(I1,  (/9,9/), P11, O1)
 
-  INTEGER(2),   PARAMETER :: I2(8,8)   = RESHAPE((/(I, I=1,64)/),(/8,8/)) 
+  INTEGER(2),   PARAMETER :: I2(8,8)   = RESHAPE((/(I, I=1,64)/),(/8,8/))
   INTEGER(2),   PARAMETER :: P21(17)   = RESHAPE((/(I, I=65,81)/),(/17/))
-  INTEGER(2),   PARAMETER :: P22(17:0) = 0 
+  INTEGER(2),   PARAMETER :: P22(17:0) = 0
   INTEGER(2),   PARAMETER :: O2(2)     = RESHAPE((/2,1/),(/2/))
   INTEGER(2),   PARAMETER :: R21(9,9)  = RESHAPE((/(I, I=1,81)/),(/9,9/))
   INTEGER(2),   PARAMETER :: R22(9,9)  = TRANSPOSE(R11)
- 
+
   INTEGER(KIND(RESHAPE(I2,   (/8,8/))))         , PARAMETER :: TI21(8,8) = RESHAPE(R21, (/8,8/))
   INTEGER(KIND(RESHAPE(TI21, (/8,8/), P22)))    , PARAMETER :: TI22(8,8) = RESHAPE(R21, (/8,8/), P22)
-  INTEGER(KIND(RESHAPE(TI22, (/8,8/), P21)))    , PARAMETER :: TI23(9,9) = RESHAPE(I2,  (/9,9/), P21) 
-  INTEGER(KIND(RESHAPE(I2,   (/8,8/), P21, O1))), PARAMETER :: TI24(9,9) = RESHAPE(I2,  (/9,9/), P21, O1) 
+  INTEGER(KIND(RESHAPE(TI22, (/8,8/), P21)))    , PARAMETER :: TI23(9,9) = RESHAPE(I2,  (/9,9/), P21)
+  INTEGER(KIND(RESHAPE(I2,   (/8,8/), P21, O1))), PARAMETER :: TI24(9,9) = RESHAPE(I2,  (/9,9/), P21, O1)
 
-  INTEGER(4),   PARAMETER :: I4(8,8)   = RESHAPE((/(I, I=1,64)/),(/8,8/)) 
+  INTEGER(4),   PARAMETER :: I4(8,8)   = RESHAPE((/(I, I=1,64)/),(/8,8/))
   INTEGER(4),   PARAMETER :: P41(17)   = RESHAPE((/(I, I=65,81)/),(/17/))
-  INTEGER(4),   PARAMETER :: P42(17:0) = 0 
+  INTEGER(4),   PARAMETER :: P42(17:0) = 0
   INTEGER(4),   PARAMETER :: O4(2)     = RESHAPE((/2,1/),(/2/))
   INTEGER(4),   PARAMETER :: R41(9,9)  = RESHAPE((/(I, I=1,81)/),(/9,9/))
   INTEGER(4),   PARAMETER :: R42(9,9)  = TRANSPOSE(R11)
- 
+
   INTEGER(KIND(RESHAPE(I4,   (/8,8/))))         , PARAMETER :: TI41(8,8) = RESHAPE(R41, (/8,8/))
   INTEGER(KIND(RESHAPE(TI41, (/8,8/), P42)))    , PARAMETER :: TI42(8,8) = RESHAPE(R41, (/8,8/), P42)
-  INTEGER(KIND(RESHAPE(TI42, (/8,8/), P41)))    , PARAMETER :: TI43(9,9) = RESHAPE(I4,  (/9,9/), P41) 
-  INTEGER(KIND(RESHAPE(I4,   (/8,8/), P41, O4))), PARAMETER :: TI44(9,9) = RESHAPE(I4,  (/9,9/), P41, O4) 
+  INTEGER(KIND(RESHAPE(TI42, (/8,8/), P41)))    , PARAMETER :: TI43(9,9) = RESHAPE(I4,  (/9,9/), P41)
+  INTEGER(KIND(RESHAPE(I4,   (/8,8/), P41, O4))), PARAMETER :: TI44(9,9) = RESHAPE(I4,  (/9,9/), P41, O4)
 
-  INTEGER(8),   PARAMETER :: I8(8,8)   = RESHAPE((/(I, I=1,64)/),(/8,8/)) 
+  INTEGER(8),   PARAMETER :: I8(8,8)   = RESHAPE((/(I, I=1,64)/),(/8,8/))
   INTEGER(8),   PARAMETER :: P81(17)   = RESHAPE((/(I, I=65,81)/),(/17/))
-  INTEGER(8),   PARAMETER :: P82(17:0) = 0 
+  INTEGER(8),   PARAMETER :: P82(17:0) = 0
   INTEGER(8),   PARAMETER :: O8(2)     = RESHAPE((/2,1/),(/2/))
   INTEGER(8),   PARAMETER :: R81(9,9)  = RESHAPE((/(I, I=1,81)/),(/9,9/))
   INTEGER(8),   PARAMETER :: R82(9,9)  = TRANSPOSE(R11)
- 
+
   INTEGER(KIND(RESHAPE(I8,   (/8,8/))))         , PARAMETER :: TI81(8,8) = RESHAPE(R81, (/8,8/))
   INTEGER(KIND(RESHAPE(TI81, (/8,8/), P82)))    , PARAMETER :: TI82(8,8) = RESHAPE(R81, (/8,8/), P82)
-  INTEGER(KIND(RESHAPE(TI82, (/8,8/), P81)))    , PARAMETER :: TI83(9,9) = RESHAPE(I8,  (/9,9/), P81) 
-  INTEGER(KIND(RESHAPE(I8,   (/8,8/), P81, O4))), PARAMETER :: TI84(9,9) = RESHAPE(I8,  (/9,9/), P81, O8) 
+  INTEGER(KIND(RESHAPE(TI82, (/8,8/), P81)))    , PARAMETER :: TI83(9,9) = RESHAPE(I8,  (/9,9/), P81)
+  INTEGER(KIND(RESHAPE(I8,   (/8,8/), P81, O4))), PARAMETER :: TI84(9,9) = RESHAPE(I8,  (/9,9/), P81, O8)
 
-  COMPLEX(8),   PARAMETER :: Z8(8,8)    = RESHAPE((/((I,-I), I=1,64)/),(/8,8/)) 
+  COMPLEX(8),   PARAMETER :: Z8(8,8)    = RESHAPE((/((I,-I), I=1,64)/),(/8,8/))
   COMPLEX(8),   PARAMETER :: ZP81(17)   = RESHAPE((/((I,-I), I=65,81)/),(/17/))
-  COMPLEX(8),   PARAMETER :: ZP82(17:0) = 0 
+  COMPLEX(8),   PARAMETER :: ZP82(17:0) = 0
   INTEGER(8),   PARAMETER :: ZO8(2)     = RESHAPE((/1,2/),(/2/))
   COMPLEX(8),   PARAMETER :: ZR81(9,9)  = RESHAPE((/((I,-I), I=1,81)/),(/9,9/))
   COMPLEX(8),   PARAMETER :: ZR82(9,9)  = TRANSPOSE(ZR81)
- 
+
   COMPLEX(KIND(RESHAPE(Z8,   (/8,8/))))           , PARAMETER :: TZ81(8,8) = RESHAPE(ZR81, (/8,8/))
   COMPLEX(KIND(RESHAPE(TZ81, (/8,8/), ZP82)))     , PARAMETER :: TZ82(8,8) = RESHAPE(ZR81, (/8,8/), ZP82)
-  COMPLEX(KIND(RESHAPE(TZ82, (/8,8/), ZP81)))     , PARAMETER :: TZ83(9,9) = RESHAPE(Z8,   (/9,9/), ZP81) 
-  COMPLEX(KIND(RESHAPE(Z8,   (/8,8/), ZP81, ZO8))), PARAMETER :: TZ84(9,9) = RESHAPE(Z8,   (/9,9/), ZP81, ZO8) 
+  COMPLEX(KIND(RESHAPE(TZ82, (/8,8/), ZP81)))     , PARAMETER :: TZ83(9,9) = RESHAPE(Z8,   (/9,9/), ZP81)
+  COMPLEX(KIND(RESHAPE(Z8,   (/8,8/), ZP81, ZO8))), PARAMETER :: TZ84(9,9) = RESHAPE(Z8,   (/9,9/), ZP81, ZO8)
 
-  TYPE(DT),   PARAMETER :: D(8,8)    = RESHAPE((/(DT((I,-I)), I=1,64)/),(/8,8/)) 
+  TYPE(DT),   PARAMETER :: D(8,8)    = RESHAPE((/(DT((I,-I)), I=1,64)/),(/8,8/))
   TYPE(DT),   PARAMETER :: DP1(17)   = RESHAPE((/(DT((I,-I)), I=65,81)/),(/17/))
-  TYPE(DT),   PARAMETER :: DP2(17:0) = DT() 
+  TYPE(DT),   PARAMETER :: DP2(17:0) = DT()
   INTEGER,    PARAMETER :: DO(2)     = RESHAPE((/2,1/),(/2/))
   TYPE(DT),   PARAMETER :: DR1(9,9)  = RESHAPE((/(DT((I,-I)), I=1,81)/),(/9,9/))
   TYPE(DT),   PARAMETER :: DR2(9,9)  = TRANSPOSE(DR1)
- 
+
   TYPE(DT)    , PARAMETER :: TD1(8,8) = RESHAPE(DR1, (/8,8/))
   TYPE(DT)    , PARAMETER :: TD2(8,8) = RESHAPE(DR1, (/8,8/), DP2)
-  TYPE(DT)    , PARAMETER :: TD3(9,9) = RESHAPE(D,   (/9,9/), DP1) 
-  TYPE(DT)    , PARAMETER :: TD4(9,9) = RESHAPE(D,   (/9,9/), DP1, DO) 
+  TYPE(DT)    , PARAMETER :: TD3(9,9) = RESHAPE(D,   (/9,9/), DP1)
+  TYPE(DT)    , PARAMETER :: TD4(9,9) = RESHAPE(D,   (/9,9/), DP1, DO)
 
 
 
@@ -186,4 +179,4 @@
   END
 
 
- 
+

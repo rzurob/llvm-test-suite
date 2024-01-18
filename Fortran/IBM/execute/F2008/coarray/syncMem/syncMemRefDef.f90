@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : syncMemRefDef
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-09-22
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF SYNC MEMORY
 !*  SECONDARY FUNCTIONS TESTED : coarray variable reference precedes (re)definition

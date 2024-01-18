@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefIEEE_SELECTED_REAL_KIND.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefIEEE_SELECTED_REAL_KIND.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,32 +19,31 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an tranformational intrinsic
-!* 
-!*  -  IEEE_SELECTED_REAL_KIND 
+!*
+!*  -  IEEE_SELECTED_REAL_KIND
 !*  (319319)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM   InitExpDefIEEE_SELECTED_REAL_KIND 
+  PROGRAM   InitExpDefIEEE_SELECTED_REAL_KIND
   USE IEEE_ARITHMETIC
   IMPLICIT NONE
   INTEGER :: I, J, K
 
 
-  INTEGER  :: R(12) = (/4,8,-2,8,8,-2,16,-4,-2,-1,-1,-3/) 
+  INTEGER  :: R(12) = (/4,8,-2,8,8,-2,16,-4,-2,-1,-1,-3/)
 
-  INTEGER(1), PARAMETER :: PI11=6 
-  INTEGER(1), PARAMETER :: PI12=14 
-  INTEGER(1), PARAMETER :: PI13=30 
+  INTEGER(1), PARAMETER :: PI11=6
+  INTEGER(1), PARAMETER :: PI12=14
+  INTEGER(1), PARAMETER :: PI13=30
   INTEGER(1), PARAMETER :: PI14=63
-  INTEGER(2), PARAMETER :: RI11=36 
+  INTEGER(2), PARAMETER :: RI11=36
   INTEGER(2), PARAMETER :: RI12=300
   INTEGER(2), PARAMETER :: RI13=999
- 
+
   INTEGER, PARAMETER :: T1(12) = (/                           &
                         IEEE_SELECTED_REAL_KIND(PI11, RI11)   &
                       , IEEE_SELECTED_REAL_KIND(PI11, RI12)   &
@@ -63,17 +56,17 @@
                       , IEEE_SELECTED_REAL_KIND(PI13, RI13)   &
                       , IEEE_SELECTED_REAL_KIND(PI14, RI11)   &
                       , IEEE_SELECTED_REAL_KIND(PI14, RI12)   &
-                      , IEEE_SELECTED_REAL_KIND(PI14, RI13)/)  
+                      , IEEE_SELECTED_REAL_KIND(PI14, RI13)/)
 
 
-  INTEGER(2), PARAMETER :: PI21=6 
-  INTEGER(2), PARAMETER :: PI22=14 
-  INTEGER(2), PARAMETER :: PI23=30 
+  INTEGER(2), PARAMETER :: PI21=6
+  INTEGER(2), PARAMETER :: PI22=14
+  INTEGER(2), PARAMETER :: PI23=30
   INTEGER(2), PARAMETER :: PI24=63
-  INTEGER(2), PARAMETER :: RI21=36 
+  INTEGER(2), PARAMETER :: RI21=36
   INTEGER(2), PARAMETER :: RI22=300
   INTEGER(2), PARAMETER :: RI23=999
- 
+
   INTEGER, PARAMETER :: T2(12) = (/                           &
                         IEEE_SELECTED_REAL_KIND(PI21, RI21)   &
                       , IEEE_SELECTED_REAL_KIND(PI21, RI22)   &
@@ -86,17 +79,17 @@
                       , IEEE_SELECTED_REAL_KIND(PI23, RI23)   &
                       , IEEE_SELECTED_REAL_KIND(PI24, RI21)   &
                       , IEEE_SELECTED_REAL_KIND(PI24, RI22)   &
-                      , IEEE_SELECTED_REAL_KIND(PI24, RI23)/)  
+                      , IEEE_SELECTED_REAL_KIND(PI24, RI23)/)
 
 
-  INTEGER(2), PARAMETER :: PI41=6 
-  INTEGER(2), PARAMETER :: PI42=14 
-  INTEGER(2), PARAMETER :: PI43=30 
+  INTEGER(2), PARAMETER :: PI41=6
+  INTEGER(2), PARAMETER :: PI42=14
+  INTEGER(2), PARAMETER :: PI43=30
   INTEGER(2), PARAMETER :: PI44=63
-  INTEGER(2), PARAMETER :: RI41=36 
+  INTEGER(2), PARAMETER :: RI41=36
   INTEGER(2), PARAMETER :: RI42=300
   INTEGER(2), PARAMETER :: RI43=999
- 
+
   INTEGER, PARAMETER :: T4(12) = (/                           &
                         IEEE_SELECTED_REAL_KIND(PI41, RI41)   &
                       , IEEE_SELECTED_REAL_KIND(PI41, RI42)   &
@@ -109,17 +102,17 @@
                       , IEEE_SELECTED_REAL_KIND(PI43, RI43)   &
                       , IEEE_SELECTED_REAL_KIND(PI44, RI41)   &
                       , IEEE_SELECTED_REAL_KIND(PI44, RI42)   &
-                      , IEEE_SELECTED_REAL_KIND(PI44, RI43)/)  
+                      , IEEE_SELECTED_REAL_KIND(PI44, RI43)/)
 
 
-  INTEGER(2), PARAMETER :: PI81=6 
-  INTEGER(2), PARAMETER :: PI82=14 
-  INTEGER(2), PARAMETER :: PI83=30 
+  INTEGER(2), PARAMETER :: PI81=6
+  INTEGER(2), PARAMETER :: PI82=14
+  INTEGER(2), PARAMETER :: PI83=30
   INTEGER(2), PARAMETER :: PI84=63
-  INTEGER(2), PARAMETER :: RI81=36 
+  INTEGER(2), PARAMETER :: RI81=36
   INTEGER(2), PARAMETER :: RI82=300
   INTEGER(2), PARAMETER :: RI83=999
- 
+
   INTEGER, PARAMETER :: T8(12) = (/                           &
                         IEEE_SELECTED_REAL_KIND(PI81, RI81)   &
                       , IEEE_SELECTED_REAL_KIND(PI81, RI82)   &
@@ -132,7 +125,7 @@
                       , IEEE_SELECTED_REAL_KIND(PI83, RI83)   &
                       , IEEE_SELECTED_REAL_KIND(PI84, RI81)   &
                       , IEEE_SELECTED_REAL_KIND(PI84, RI82)   &
-                      , IEEE_SELECTED_REAL_KIND(PI84, RI83)/)  
+                      , IEEE_SELECTED_REAL_KIND(PI84, RI83)/)
 
   LOGICAL :: LI11 = IEEE_SELECTED_REAL_KIND(PI11)   .EQ. IEEE_SELECTED_REAL_KIND(PI11, 0_1)
   LOGICAL :: LI12 = IEEE_SELECTED_REAL_KIND(R=RI11) .EQ. IEEE_SELECTED_REAL_KIND(0_1, RI11)
@@ -167,4 +160,4 @@
   END
 
 
- 
+

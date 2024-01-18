@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryDTComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryDTComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 19 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 19 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. INQUIRY TYPE PARAMETER OF DERIVED TYPE COMPONENT
 !* 4. DT COMPONENT DOESN'T HAVE TYPE PARAMETER
@@ -29,7 +21,7 @@
 module m
    type B
       character(:),allocatable :: c1(:)
-      character(:),pointer     :: c2(:)=>null() 
+      character(:),pointer     :: c2(:)=>null()
    end type
 
    type :: A(k,l)
@@ -37,11 +29,11 @@ module m
      integer,len  :: l=3
 
      type(B) :: b
-   end type 
+   end type
 
 end module
 
-  program dtParameterInquiryDTComp01 
+  program dtParameterInquiryDTComp01
   use m
   implicit none
 
@@ -69,9 +61,9 @@ end module
   end associate
 
   allocate(A(4,5) :: a2)
-  
+
   a2%b%c1=a1%b%c1(1:4)(1:3)
-  a2%b%c2=>a1%b%c2(2:3)(1:7) 
+  a2%b%c2=>a1%b%c2(2:3)(1:7)
 
   associate(x=>a2%b)
      if(x%c1%len /= len(x%c1) .or. x%c1%len /= 3)          error stop 17_4
@@ -82,7 +74,7 @@ end module
      if(x%c2%len /= len(x%c2) .or. x%c2%len /= 7)          error stop 21_4
      if(x%c2%kind /= kind(x%c2) .or. x%c2%kind /= 1)       error stop 22_4
      if(ubound(x%c2,1) /= 2)                               error stop 23_4
-     if(any(x%c2 /= 'fortran'))                            error stop 24_4  
+     if(any(x%c2 /= 'fortran'))                            error stop 24_4
   end associate
 
 end

@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_PARAMETER_01a.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 20, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Explicit Init Expression - PARAMETER
-!*  SECONDARY FUNCTIONS TESTED : Array constructor 
+!*  SECONDARY FUNCTIONS TESTED : Array constructor
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,20 +17,20 @@
 !*  Defect 362080
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
         INTEGER, KIND :: k1 = 4
-        INTEGER, LEN  :: l1 = 10 
+        INTEGER, LEN  :: l1 = 10
 
         INTEGER(k1)   :: A0(l1) = -1
         CHARACTER(l1) :: C0(l1) = 'XLF'
-        REAL(k1)      :: R0(l1) = -0.1 
+        REAL(k1)      :: R0(l1) = -0.1
       END TYPE
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)
-        INTEGER, KIND :: k2 = 4 
+        INTEGER, KIND :: k2 = 4
         INTEGER, LEN  :: l2 = 10
 
         CLASS(Base(k2,l2)), POINTER :: cmp1
@@ -47,16 +39,16 @@ END MODULE
 PROGRAM DTP_PARAMETER_01a
       USE Mod
 
-      INTEGER, PARAMETER :: M = 10, K = 4 
+      INTEGER, PARAMETER :: M = 10, K = 4
 
       INTEGER,      PARAMETER :: Iconst(M) = [(I, I = 1, M)]
-      CHARACTER(M), PARAMETER :: Cconst(M) = [(CHAR(I)//" ", I = 1, M)] 
+      CHARACTER(M), PARAMETER :: Cconst(M) = [(CHAR(I)//" ", I = 1, M)]
       REAL,         PARAMETER :: Rconst(M) = [(I/REAL(M), I = 1, M)]
 
       TYPE(Base),    PARAMETER :: b1 = Base ( Iconst, Cconst, Rconst )
       TYPE(Child),   PARAMETER :: c1 = Child ( 2*Iconst, Cconst, EXP(Rconst) , NULL() )
 
-      CLASS(Base(K,:)), ALLOCATABLE :: poly 
+      CLASS(Base(K,:)), ALLOCATABLE :: poly
       LOGICAL(4), EXTERNAL :: precision_r4
 
       IF ( SIZE(b1%A0) .NE. M ) STOP 10
@@ -74,7 +66,7 @@ PROGRAM DTP_PARAMETER_01a
         IF ( .NOT. precision_r4(b1%R0(I), I/REAL(M)) ) STOP 21
       END DO
 
-      ALLOCATE( poly, source = b1 ) 
+      ALLOCATE( poly, source = b1 )
       IF ( SIZE(poly%A0) .NE. M ) STOP 30
       IF ( SIZE(poly%C0) .NE. M ) STOP 31
       IF ( SIZE(poly%R0) .NE. M ) STOP 32
@@ -89,7 +81,7 @@ PROGRAM DTP_PARAMETER_01a
         IF ( TRIM(poly%C0(I)) .NE. CHAR(I) ) STOP 40
         IF ( .NOT. precision_r4(poly%R0(I), I/REAL(M)) ) STOP 41
       END DO
-      DEALLOCATE( poly ) 
+      DEALLOCATE( poly )
 
       IF ( SIZE(c1%A0) .NE. M ) STOP 50
       IF ( SIZE(c1%C0) .NE. M ) STOP 51
@@ -103,10 +95,10 @@ PROGRAM DTP_PARAMETER_01a
       IF ( ANY(c1%A0 .NE. [(2*I, I = 1, M)]) ) STOP 59
       DO I = 1, M
         IF ( TRIM(c1%C0(I)) .NE. CHAR(I) ) STOP 60
-        IF ( .NOT. precision_r4(c1%R0(I), EXP(I/REAL(M))) ) STOP 61 
+        IF ( .NOT. precision_r4(c1%R0(I), EXP(I/REAL(M))) ) STOP 61
       END DO
 
-      IF ( ASSOCIATED(c1%cmp1) ) STOP 62 
+      IF ( ASSOCIATED(c1%cmp1) ) STOP 62
       ALLOCATE ( c1%cmp1, SOURCE = b1 )
       IF ( SIZE(c1%cmp1%A0) .NE. M ) STOP 63
       IF ( SIZE(c1%cmp1%C0) .NE. M ) STOP 64
@@ -120,10 +112,10 @@ PROGRAM DTP_PARAMETER_01a
       IF ( ANY(c1%cmp1%A0 .NE. [(I, I = 1, M)]) ) STOP 72
       DO I = 1, M
         IF ( TRIM(c1%cmp1%C0(I)) .NE. CHAR(I) ) STOP 73
-        IF ( .NOT. precision_r4(c1%cmp1%R0(I), I/REAL(M))) STOP 74 
+        IF ( .NOT. precision_r4(c1%cmp1%R0(I), I/REAL(M))) STOP 74
       END DO
 
-      ALLOCATE( poly, source = c1 ) 
+      ALLOCATE( poly, source = c1 )
       SELECT TYPE ( s => poly )
           TYPE IS (Child(4,*,4,*))
             IF ( SIZE(s%A0) .NE. M ) STOP 80
@@ -159,6 +151,6 @@ PROGRAM DTP_PARAMETER_01a
           CLASS DEFAULT
              STOP 104
       END SELECT
-      DEALLOCATE( poly ) 
+      DEALLOCATE( poly )
 
 END PROGRAM DTP_PARAMETER_01a

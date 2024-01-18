@@ -1,17 +1,11 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : image_index_d001.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : August 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
@@ -52,7 +46,7 @@ program main
 	print *, image_index(cafl2, i4)
 	print *, image_index(cafl4, i4)
 	print *, image_index(cafl8, i4)
-	
+
 	print *, image_index(cafch, i4)
         print *, image_index(cafl8(29), i4)
 
@@ -73,7 +67,7 @@ program main
 	print *, image_index(l4, i4)
 	print *, image_index(l8scal, i4)
 	print *, image_index(ch, i4)
-	
+
 	print *, image_index(cafi4[1], i4)
 
 end

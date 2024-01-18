@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArraySections/arrsec_4d.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jul. 09, 2008
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 353925
 !*
@@ -51,7 +47,7 @@ print *,dta(1)%bc(:N:vs)%id
 print *,dta(1)%bc(1::0)%id
 
 dta(:)%bc(N)%id = (/(i,i=1,N)/)
-print *,dta(::0)%bc(N)%id		
+print *,dta(::0)%bc(N)%id
 print *,dta(:N:0)%bc(N)%id
 print *,dta(N::S)%bc(N)%id
 print *,dta(N::vs)%bc(N)%id

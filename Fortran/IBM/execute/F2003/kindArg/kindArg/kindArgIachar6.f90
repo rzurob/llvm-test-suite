@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgIachar6
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 16, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : IACHAR 
+!*  SECONDARY FUNCTIONS TESTED : IACHAR
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Entities with different attubute used for kind arg - associate/select type 
-!*    
-!*  (322269) 
+!*  Entities with different attubute used for kind arg - associate/select type
+!*
+!*  (322269)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -43,7 +35,7 @@
   INTEGER(2), POINTER     :: I02, II02(:), K02
   CLASS(*),   ALLOCATABLE :: I04, II04(:), K04
   CLASS(*),   POINTER     :: I08, II08(:), K08
-     
+
   !CHARACTER :: CC=(/(ACHAR(I=I, KIND=1), I=0, 127)/)
   CHARACTER :: CC(128)
 
@@ -80,7 +72,7 @@
   TYPE IS (INTEGER(8))
 
 
- 
+
   DO I1 = 0, 127
     IF (IACHAR(ACHAR(I1), KIND=KIND((/K1/))  )     .NE. I1)                   STOP 11
     IF (IACHAR(ACHAR(I1), KIND=KIND((/K2/))-1)     .NE. I1)                   STOP 12
@@ -115,30 +107,30 @@
   II4 = II2
   II8 = II4
 
-  IF (ANY( IACHAR(C=CC, KIND=II1%KIND  ) .NE. II8)) STOP 111 
-  IF (ANY( IACHAR(C=CC, KIND=II2%KIND-1) .NE. II4)) STOP 112 
-  IF (ANY( IACHAR(C=CC, KIND=II4%KIND-3) .NE. II2)) STOP 113 
-  IF (ANY( IACHAR(C=CC, KIND=II8%KIND-7) .NE. II1)) STOP 114 
+  IF (ANY( IACHAR(C=CC, KIND=II1%KIND  ) .NE. II8)) STOP 111
+  IF (ANY( IACHAR(C=CC, KIND=II2%KIND-1) .NE. II4)) STOP 112
+  IF (ANY( IACHAR(C=CC, KIND=II4%KIND-3) .NE. II2)) STOP 113
+  IF (ANY( IACHAR(C=CC, KIND=II8%KIND-7) .NE. II1)) STOP 114
 
 
   CLASS DEFAULT
     STOP 91
-  END SELECT 
+  END SELECT
   CLASS DEFAULT
     STOP 92
-  END SELECT 
+  END SELECT
   CLASS DEFAULT
     STOP 93
-  END SELECT 
+  END SELECT
   CLASS DEFAULT
     STOP 94
-  END SELECT 
+  END SELECT
   CLASS DEFAULT
     STOP 95
-  END SELECT 
+  END SELECT
   CLASS DEFAULT
     STOP 96
-  END SELECT 
+  END SELECT
 
   END ASSOCIATE
 

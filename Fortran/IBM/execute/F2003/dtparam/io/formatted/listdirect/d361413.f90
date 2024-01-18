@@ -1,22 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361413.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361413.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 24 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 24 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
@@ -33,7 +26,7 @@ program d361413
   class(base(3)),pointer :: ptr=>null()
 
   allocate(base(3) :: ptr)
-  select type(ptr)         
+  select type(ptr)
      type is(base(*))
 
        print *,ptr%c1(3,3)

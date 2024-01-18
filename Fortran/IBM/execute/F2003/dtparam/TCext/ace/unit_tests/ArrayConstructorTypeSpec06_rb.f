@@ -3,15 +3,11 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : ArrayConstructorTypeSpec06_rb
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from
 !*                               ArrayConstructorTypeSpec06 by Rob James)
 !*  DATE                       : 2008-01-29 (original: 09/14/2006)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  DESCRIPTION                : Testing array constructors with type
 !*  specifications as actual arguments.

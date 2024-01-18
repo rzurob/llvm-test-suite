@@ -1,27 +1,20 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank604f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : October 27, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
-!* REQUIRED COMPILER OPTIONS    : 
+!* REQUIRED COMPILER OPTIONS    :
 !*                               (use -D_DEBUG for a debug version)
 !*
 !* DESCRIPTION                  : Calling a BIND(C) procedure defined in Fortran from C
 !*                                - CFI_attribute_allocatable
 !*                                - use "dimension" attribute
 !*                                - type c_int
-!*                                - various ranks 
+!*                                - various ranks
 !*                                - nested with bind(c)=>non-bind(c) call
 !*
 !* If the actual argument  has rank zero, the dummy argument has rank zero;
@@ -42,27 +35,27 @@
 subroutine fcheck(flag, arr) bind(c)
     use :: iso_c_binding, only: c_int
     implicit none
-    integer :: i 
+    integer :: i
     integer(c_int) :: flag
     integer(c_int), allocatable, dimension(..) :: arr
 
-    interface 
-        subroutine sub(r, s, arr) 
+    interface
+        subroutine sub(r, s, arr)
             implicit none
             integer :: r, s
             integer, allocatable :: arr(..)
         end subroutine sub
-    end interface 
+    end interface
 
-!      /* 
+!      /*
 !       flag set to 0: unallocated scalar
-!       flag set to 1: allocated scalar 
+!       flag set to 1: allocated scalar
 !       flag set to 2: rank 1 and lbound is -19
-!       flag set to 3: rank 1 and lbound is 2  
-!       flag set to 4: rank 2 and lbound is 1  
-!       flag set to 5: rank 15 and lbound is 1  
+!       flag set to 3: rank 1 and lbound is 2
+!       flag set to 4: rank 2 and lbound is 1
+!       flag set to 5: rank 15 and lbound is 1
 !       */
-   
+
     if ( flag .eq. 0 ) then
         if(               allocated(arr) ) ERROR STOP 10
     elseif ( flag .eq. 1 ) then
@@ -120,7 +113,7 @@ subroutine fcheck(flag, arr) bind(c)
     end if
 end subroutine fcheck
 
-subroutine sub(r, s, arr) 
+subroutine sub(r, s, arr)
     implicit none
     integer :: r, s
     integer, allocatable :: arr(..)

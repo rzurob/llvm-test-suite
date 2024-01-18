@@ -1,5 +1,4 @@
 
-
   PROGRAM dtParamTypeDecC501_63
 
   TYPE :: DT0(L)

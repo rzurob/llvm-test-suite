@@ -1,38 +1,33 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dfinal009kk.f
 !*  TEST CASE NAME             : type-bound procedure dfinal009kk
 !*
-!*  PROGRAMMER                 : David Forster (derived from dfinal009 by Catherine Sun)
 !*  DATE                       : 2007-11-12 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines: 
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines:
 !*                               The dummy argument of the final
 !*                               subroutine finalchild must not have
-!*                               the OPTIONAL attribute 
+!*                               the OPTIONAL attribute
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
- 
+
 module m
 
    type :: base (kbase) ! kbase=4
       integer, kind :: kbase
    end type
 
-end module 
+end module
 
 module m1
    use m
-   
+
    type,extends(base) :: child (kchild) ! kchild=4
       integer, kind :: kchild
    contains
@@ -50,21 +45,21 @@ contains
 end module
 
    use m1
- 
+
    call example
- 
- end 
-   
+
+ end
+
    subroutine example()
-    
+
       use m1
-     
+
       type(child(4,4)) :: dt1 ! tcx: (4,4)
 
       allocate(dt0)
       deallocate(dt0)
 
-   end subroutine 
+   end subroutine
 
 
 

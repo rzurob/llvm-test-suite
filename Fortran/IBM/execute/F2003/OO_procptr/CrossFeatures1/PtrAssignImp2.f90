@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignImp2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignImp2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignImp2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignImp2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  If proc-pointer-object has an implicit interface and is referenced 
-!*  as a subroutine, proc-target shall be a subroutine. 
-!*  () 
+!*
+!*  If proc-pointer-object has an implicit interface and is referenced
+!*  as a subroutine, proc-target shall be a subroutine.
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -56,18 +50,18 @@
 
   SUBROUTINE ExtSub(Arg)
   USE M
-  TYPE (Child) :: Arg 
+  TYPE (Child) :: Arg
     Arg = Child(Base(-1))
-  END SUBROUTINE 
+  END SUBROUTINE
 
   PROGRAM PtrAssignImp2
-  USE M 
-  IMPLICIT TYPE(Child)(C) 
+  USE M
+  IMPLICIT TYPE(Child)(C)
 
   INTERFACE
     SUBROUTINE Extsub(Arg)
      IMPORT Child
-     TYPE (Child) :: arg 
+     TYPE (Child) :: arg
     END SUBROUTINE
   END INTERFACE
 
@@ -83,5 +77,5 @@
   CALL  CProcPtr(W)
   IF ( W%BaseComp%ID   .NE. -1 ) STOP 21
 
-  END 
+  END
 

@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryResParam06.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryResParam06.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 2 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 2 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. SPECIFICATION FUNCTION AS LENGTH TYPE PARAMETER AND ARRAY BOUND
 !* 4. DEFECT 354585 354604
@@ -34,12 +26,12 @@ module m
     contains
     pure integer function getlen1(a)
        character(*),intent(in) :: a
-          getlen1=a%len 
+          getlen1=a%len
     end function
 
     pure integer function getlen3(a)
        type(base(*)),intent(in) :: a
-          getlen3=a%l 
+          getlen3=a%l
     end function
 
     pure integer function getlen2(a,len)
@@ -56,11 +48,11 @@ module m
 
 end module
 
-program dtParameterInquiryResParam06 
+program dtParameterInquiryResParam06
   use m
   implicit none
 
-  call test() 
+  call test()
 end
 
 subroutine test()
@@ -81,7 +73,7 @@ use m
   !--- defect 354604--!
   type(base(getlen4(t6,3))) :: t5(getlen4(t6,3))
   type(base(getlen3(t6))) :: t7(getlen3(t6))
- 
+
   allocate(character(len=getlen1(c2)) :: c1(getlen1(c2)))
   if(c1%len /= 3)                                 error stop 10_4
   if(ubound(c1,1) /= 3)                           error stop 11_4
@@ -120,7 +112,7 @@ use m
    if(ubound(c4,1) /= 3)                           error stop 27_4
 
    if(c5%len /= len(c5) .or. c5%len /= 6)          error stop 28_4
-   if(ubound(c5,1) /= 6)                           error stop 29_4   
+   if(ubound(c5,1) /= 6)                           error stop 29_4
 
   if(t6%l /= 3)                                   error stop 30_4
 

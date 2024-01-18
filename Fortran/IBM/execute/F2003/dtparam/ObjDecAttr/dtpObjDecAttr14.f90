@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr14
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 30, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  intent(inout) 
-!*  
+!*  intent(inout)
 !*
-!* 
 !*  (init expr issue)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,7 +36,7 @@
   TYPE, ABSTRACT, EXTENDS(DT0)  :: DT1(K1, L1)
     INTEGER, KIND    :: K1=k0
     INTEGER, LEN     :: L1=k0
-    CHARACTER(L1+3) :: C1 = "DT1" 
+    CHARACTER(L1+3) :: C1 = "DT1"
     CONTAINS
     PROCEDURE(ModFun), NOPASS, DEFERRED :: Proc
   END TYPE
@@ -60,10 +49,10 @@
     REAL   (K2)      :: R=K2
     LOGICAL(K2)      :: L=.TRUE._1
     COMPLEX(K2)      :: Z=(K1, K2)
-    TYPE(DT0(K2, L2))           :: T0 
+    TYPE(DT0(K2, L2))           :: T0
     TYPE(DT2(K2, L2)), POINTER  :: Ptr2
     CONTAINS
-    PROCEDURE, NOPASS :: Proc => ModFun 
+    PROCEDURE, NOPASS :: Proc => ModFun
   END TYPE
 
   CHARACTER(10) :: C
@@ -71,16 +60,16 @@
   CONTAINS
 
   FUNCTION ModFun(Arg)
-  TYPE(DT2(8,*,8,*,8,*)), INTENT(INOUT) :: Arg 
+  TYPE(DT2(8,*,8,*,8,*)), INTENT(INOUT) :: Arg
   TYPE(DT2(8,Arg%L0,8,Arg%L1,8,Arg%L2)) :: ModFun
-     ModFun = DT2(8,8,8,8,8,8)(t0=dt0(8,8)(),ptr2=null()) 
-  END FUNCTION 
+     ModFun = DT2(8,8,8,8,8,8)(t0=dt0(8,8)(),ptr2=null())
+  END FUNCTION
 
   END MODULE
 
   FUNCTION ExtFun(Arg)
   USE M
-  TYPE(DT2(8,*,8,*,8,*)), INTENT(INOUT) :: Arg 
+  TYPE(DT2(8,*,8,*,8,*)), INTENT(INOUT) :: Arg
   TYPE(DT2(8,Arg%L0,8,Arg%L1,8,Arg%L2)) :: ExtFun
 
     IF ( Arg%K0          .NE.   8     ) STOP 11
@@ -100,14 +89,14 @@
     IF ( Arg%T0%L0        .NE.   Arg%L2           ) STOP 24
     IF ( .NOT. ASSOCIATED( Arg%Ptr2 )            ) STOP 25
 
-    ExtFun%C1 = "12345678" 
-    ExtFun%C2 = "87654321" 
-    ExtFun%I =  1 
+    ExtFun%C1 = "12345678"
+    ExtFun%C2 = "87654321"
+    ExtFun%I =  1
     ExtFun%R =  1
-    ExtFun%L = .TRUE. 
+    ExtFun%L = .TRUE.
     ExtFun%Z =  (1, 1)
-    ExtFun%T0 = DT0(8, Arg%L2)() 
-    ExtFun%Ptr2 => NULL() 
+    ExtFun%T0 = DT0(8, Arg%L2)()
+    ExtFun%Ptr2 => NULL()
 
     C = "ExtFun"
 
@@ -116,8 +105,8 @@
   PROGRAM dtpObjDecAttr14
   USE M
 
-  PROCEDURE(ModFun) ExtFun 
-  TYPE(DT2(8,:,8,:,8,:)), POINTER :: Ptr 
+  PROCEDURE(ModFun) ExtFun
+  TYPE(DT2(8,:,8,:,8,:)), POINTER :: Ptr
   TYPE(DT2(8,8,8,8,8,8)), TARGET :: Tar, arg
 
   Tar%C1 = ""

@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument303f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from C
@@ -21,9 +14,8 @@
 !*                                - Allocate in Fortran / deallocate in C
 !*                                - Set values in Fortran
 !*                                - Verify values both in Fortran and C
-!*                                - type c_float 
-!*                                - Optional Allocatable dummy argument 
-!*
+!*                                - type c_float
+!*                                - Optional Allocatable dummy argument
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -41,7 +33,7 @@ subroutine sub_alloc(value, arg) bind(C)
             use iso_c_binding
             implicit none
             real(c_float) :: arg
-       end     
+       end
     end interface
 
     real(c_float), allocatable :: arg
@@ -51,19 +43,19 @@ subroutine sub_alloc(value, arg) bind(C)
     if ( allocated(arg) ) then
       print*, "arg is already allocated!"
       ERROR STOP 10
-    else 
-       if ( present(value) ) then 
+    else
+       if ( present(value) ) then
          allocate(arg, source=Func(value))
-       else 
+       else
          allocate(arg, source=Func(-88.0))
-       endif 
+       endif
     endif
 
     if ( .not. allocated(arg) ) ERROR STOP 11
 
     if (  i .eq. 0 ) then
       if ( arg   .NE.     -88.0 ) ERROR STOP 12
-    else 
+    else
       if ( arg   .NE.     -99.0 ) ERROR STOP 13
     endif
 
@@ -80,7 +72,7 @@ subroutine sub_alloc_clean(value, arg) bind(C)
             use iso_c_binding
             implicit none
             real(c_float) :: arg
-       end     
+       end
     end interface
 
     real(c_float), allocatable :: arg
@@ -112,5 +104,5 @@ function compute(arg,opt) result(res) bind(C)
     real(c_float) :: res
     real(c_float), allocatable :: opt, arg
 
-    res = opt * arg 
+    res = opt * arg
 end function compute

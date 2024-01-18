@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d357760.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d357760.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 21 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. DEFECT 357760
@@ -25,14 +17,14 @@
 module m
    type dtp(l)
      integer,len     :: l
-     character(l)    :: c(l-1) 
+     character(l)    :: c(l-1)
    end type
 end module
   use m
   implicit none
 
   type(dtp(3)) :: dtp1=dtp(3)(c=["1","2"])
-  call check()   
+  call check()
   write (*,'(4a2)') getresult()
   contains
      subroutine check()

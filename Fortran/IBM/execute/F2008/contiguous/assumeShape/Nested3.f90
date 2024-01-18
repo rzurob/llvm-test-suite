@@ -1,27 +1,16 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Nested3.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Nested subroutine call
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                :
 !*
-!*  DESCRIPTION                : 
-!*       
-!*                      
-!*    - Inner most subroutine has assumed shape array dummy argument 
-!*      with CONTIGUOUS attribute 
+!*    - Inner most subroutine has assumed shape array dummy argument
+!*      with CONTIGUOUS attribute
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -37,15 +26,15 @@ MODULE Mod
 
       CONTAINS
 
-      SUBROUTINE Sub(Arg)           
+      SUBROUTINE Sub(Arg)
         INTEGER, CONTIGUOUS :: Arg(:)
 
         IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 20
-        CALL SubSub(Arg) 
+        CALL SubSub(Arg)
       END SUBROUTINE Sub
-      
+
       SUBROUTINE SubSub(Arg)
-        INTEGER :: Arg(100), I 
+        INTEGER :: Arg(100), I
 
         IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 30
         IF ( ANY(Arg       .NE.  [(I, I=1,100,1)]) ) ERROR STOP 31
@@ -57,11 +46,11 @@ MODULE Mod
 
       FUNCTION Swap(Arg) RESULT(res)
         INTEGER, CONTIGUOUS :: Arg(:)
-        INTEGER, DIMENSION(100) :: res, tmp 
+        INTEGER, DIMENSION(100) :: res, tmp
 
         tmp = Arg(100:1:-1)
         res  = tmp
-      END FUNCTION Swap 
+      END FUNCTION Swap
 
       INTEGER FUNCTION somme(Arg)
         INTEGER, CONTIGUOUS :: Arg(:)
@@ -69,7 +58,7 @@ MODULE Mod
 
         tmp = Arg
         somme = SUM(tmp)
-      END FUNCTION somme 
+      END FUNCTION somme
 
 END MODULE Mod
 PROGRAM Nested3
@@ -81,7 +70,7 @@ PROGRAM Nested3
       INTEGER, POINTER :: ptr(:)
 
       I3D = [(I, I=1,100)]
-      ptr => I3D 
+      ptr => I3D
 
       CALL Sub(ptr)
       IF ( ANY(ptr       .NE.  [(I, I=1,100,1)]) ) ERROR STOP 10

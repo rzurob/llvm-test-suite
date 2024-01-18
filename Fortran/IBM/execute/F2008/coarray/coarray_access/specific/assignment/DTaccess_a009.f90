@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a009.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -58,7 +54,7 @@ program testing
     	print *, v4, v8
     	error stop 15
     end if
-    
+
     if ( any(iatmp4 /= [integer*4 :: 1,1,1,1,1,1,1,1,1,1]) ) error stop 16
     if ( any(iatmp8 /= [integer*8 :: 2,2,2,2,2,2,2,2,2,2]) ) error stop 17
 
@@ -80,7 +76,7 @@ subroutine sub0()
 
     common /com_data/ v4, iatmp4, v8, iatmp8
 
-    
+
     caf%i4 = v4
     caf%i8 = v8
     cafar%i4 = iatmp4
@@ -90,14 +86,14 @@ subroutine sub0()
     	print *, caf
     	error stop 21
     end if
-    
+
     if ( any(cafar%i4 /= [1,1,2,3,5,8,13,21,34,v4]) ) then
     	print *, cafar(:)%i4
     	error stop 22
     end if
-    
+
     if ( any(cafar%i8 /= [v8,0,v8,0,v8,0,v8,0,v8,0]) ) then
-    	print *, cafar(:)%i8 
+    	print *, cafar(:)%i8
     	error stop 23
     end if
 

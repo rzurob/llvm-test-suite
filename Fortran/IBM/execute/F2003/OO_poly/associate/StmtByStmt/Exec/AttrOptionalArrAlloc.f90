@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  AttrOptionalArrAlloc.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  AttrOptionalArrAlloc.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : AttrOptionalArrAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 22, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
-!*   The selector has an allocatable arrray with 
-!*   the optional attribute   
-!*    () 
+!*
+!*   The selector has an allocatable arrray with
+!*   the optional attribute
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -49,7 +43,7 @@
 
     TYPE  :: Zero
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -100,13 +94,13 @@
   USE M
   INTEGER :: i
   TYPE (Child), ALLOCATABLE :: W(:)
-  
+
   INTERFACE
     SUBROUTINE Sub(Arg, I, J)
-    IMPORT Child 
+    IMPORT Child
     TYPE(Child), OPTIONAL, ALLOCATABLE :: Arg(:)
     INTEGER               :: I, J
-    END SUBROUTINE 
+    END SUBROUTINE
   END INTERFACE
 
   CALL Sub(W, 3, 8)
@@ -125,7 +119,7 @@
   IF ( ANY(W(4::2)%ChildID       .NE. 0 )) STOP 47
   IF ( ANY(W(4::2)%GetId()       .NE. 0 )) STOP 48
 
-  END 
+  END
 
   SUBROUTINE Sub(Arg, I, J)
   USE M
@@ -147,7 +141,7 @@
     IF ( ANY(Arg%Base%GetId()  .NE. -1 )) STOP 31
     IF ( ANY(Arg%ChildID       .NE. -2 )) STOP 32
     IF ( ANY(Arg%GetId()       .NE. -2 )) STOP 33
-  
+
     CALL Arg%Base%SetID(Arg)
     CALL Arg%SetID(Arg)
 

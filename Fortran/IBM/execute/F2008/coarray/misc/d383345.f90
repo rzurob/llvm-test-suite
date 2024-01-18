@@ -3,7 +3,7 @@
       if (num_images() .ne. 4) then
          stop 1
       end if
-            
+
       x = [1,2]
 
       sync all

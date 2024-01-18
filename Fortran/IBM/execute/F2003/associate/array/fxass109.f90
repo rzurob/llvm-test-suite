@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass109.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass109.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE with array
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -43,7 +31,6 @@
 !*  INPUTS                     : None
 !*  OUTPUTS                    : None
 !*
-!*
 !*  SETUP REQUIREMENTS         : N/A
 !*  DEPENDENCIES               : External routine ZZRC
 !*  REQUIRED COMPILER OPTIONS  : None
@@ -55,8 +42,8 @@
 !*
 !*  CONDITIONS TESTED          : Listed below.
 !*
-!*  DESCRIPTION                : Test: ASSOCIATE with subroutine and 
-!*                                     array sections with do loop 
+!*  DESCRIPTION                : Test: ASSOCIATE with subroutine and
+!*                                     array sections with do loop
 !*                                     and integer data types.
 !*
 !* ===================================================================
@@ -72,7 +59,7 @@
       program fxass109
 
       implicit none
-          
+
        integer :: a(20), b(20), c(20), i
        integer i_arr1(3)
 
@@ -86,7 +73,7 @@
        c(2:20:2) = (/ (i,i=10,100,10) /)
 
        i_arr1 = (/ 1,2,3 /)
-       
+
        call sub1(i_arr1(:),1)
 
        call sub1(i_arr1(1:2),5)
@@ -118,6 +105,6 @@
            endif
          end associate
       enddo
-      end subroutine 
+      end subroutine
 
       end

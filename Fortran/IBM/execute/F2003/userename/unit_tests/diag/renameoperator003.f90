@@ -12,23 +12,16 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : renameoperator003
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : Oct. 28, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : diagnostic testing of renaming the operator in 
+!*  DESCRIPTION                : diagnostic testing of renaming the operator in
 !*                               a USE statement. Generic binding is not allowed
 !*                               for the operator being renamed
 !*

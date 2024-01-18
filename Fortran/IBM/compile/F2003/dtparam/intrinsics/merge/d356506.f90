@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d356506.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d356506.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 21 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. DEFECT 356506 
+!* 1. DEFECT 356506
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type dtp(k,l)
@@ -48,11 +40,11 @@ program d356506
 
    i3=merge(i2,i2,[.true.,.false.])!<=== compile pass at this line
    i3=merge(i2,i2,mask1)           !<=== compile pass at this line
-   i3=merge(i2,i2,mask2)           !<=== compile fail at this line 
+   i3=merge(i2,i2,mask2)           !<=== compile fail at this line
 
-   dtp3=merge(dtp2,dtp2,[.true.,.false.]) !<=== compile pass at this line 
-   dtp3=merge(dtp2,dtp2,mask1)    !<=== compile pass at this line 
-   dtp3=merge(dtp2,dtp2,mask2)    !<=== compile fail at this line 
+   dtp3=merge(dtp2,dtp2,[.true.,.false.]) !<=== compile pass at this line
+   dtp3=merge(dtp2,dtp2,mask1)    !<=== compile pass at this line
+   dtp3=merge(dtp2,dtp2,mask2)    !<=== compile fail at this line
 
 end program
 

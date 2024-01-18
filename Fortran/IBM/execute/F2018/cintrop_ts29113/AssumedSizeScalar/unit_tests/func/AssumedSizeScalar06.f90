@@ -1,6 +1,6 @@
 ! Paper 13-283 proposes an interp for TS 291113 (C-interop) that allows
 ! a scalar actual argument corresponding to an assumed-type and assumed-size
-! dummy arg. 
+! dummy arg.
 
   use, intrinsic :: iso_c_binding
   implicit none

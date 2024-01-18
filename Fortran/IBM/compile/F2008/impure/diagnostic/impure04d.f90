@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure04d
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
 !*
 !*  DESCRIPTION
@@ -33,7 +30,7 @@ PROGRAM main
       REAL :: foo
       real, intent(in) :: a
       foo = a+1
-     
+
 
     END FUNCTION foo
 

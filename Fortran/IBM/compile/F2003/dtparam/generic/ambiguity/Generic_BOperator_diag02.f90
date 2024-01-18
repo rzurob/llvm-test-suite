@@ -1,22 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_Operator03c
-!*                               DTP - Generic Operator  
+!*                               DTP - Generic Operator
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 03, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Resolution based on rank - assumed size array
 !*                               rank mismatches allowed when referenced by the specific name
-!*                               rank mismatches are disallowed when referenced with the generic operator 
-!*                               
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*                               rank mismatches are disallowed when referenced with the generic operator
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -39,33 +33,33 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base (k,l)
-        INTEGER, KIND :: k 
-        INTEGER, LEN :: l 
+        INTEGER, KIND :: k
+        INTEGER, LEN :: l
 
         INTEGER :: value
 
-        CONTAINS 
+        CONTAINS
          PROCEDURE, PASS :: mut1
          PROCEDURE, PASS :: mut2
          GENERIC :: operator(*) => mut1, mut2
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
-      END TYPE Child 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen (k13,l13)
         INTEGER, KIND :: k13
         INTEGER, LEN :: l13
       END TYPE NextGen
 
-      CONTAINS 
+      CONTAINS
 !*
-      TYPE(Base(4,:)) FUNCTION mut1(arg1,arg2) 
+      TYPE(Base(4,:)) FUNCTION mut1(arg1,arg2)
       CLASS(Base(4,*)), INTENT(IN) :: arg1
       CLASS(Base(4,*)), DIMENSION(*), INTENT(IN) :: arg2   ! rank 1
       POINTER :: mut1
@@ -75,7 +69,7 @@
 
       END FUNCTION mut1
 
-      TYPE(Base(4,:)) FUNCTION mut2(arg1,arg2) 
+      TYPE(Base(4,:)) FUNCTION mut2(arg1,arg2)
       CLASS(Base(4,*)), INTENT(IN) :: arg1
       CLASS(Base(4,*)), INTENT(IN) :: arg2(:,:)            ! rank 2
       POINTER :: mut2
@@ -101,6 +95,6 @@
       B_var => C0 * B2              ! generic call to mut2
       B2_var => mut1(C0,B2)         ! call to mut1 is possible only when calling with the specific
 
-      B2_var => mut1(C0,B2)         ! call to mut1 with an array of rank 3 is possible with the specific            
-      B_var => C0 * B3              ! but not with the generic operator 
+      B2_var => mut1(C0,B2)         ! call to mut1 with an array of rank 3 is possible with the specific
+      B_var => C0 * B3              ! but not with the generic operator
       END PROGRAM Generic_Operator03c

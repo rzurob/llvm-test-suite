@@ -1,22 +1,15 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/func/polyAssign1025f_LHSallocSameTypeDiffShape.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 07 August 2015
-!* ORIGIN                       : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  
+!* DESCRIPTION
 !*                              : Test the situations that all arrays on the LHS and RHS are allocated, but LHS and RHS have different shapes, i.e. same rank but different extents.
 !*                              :   -In the above situation LHS should get exactly the same copy as RHS, and the extent is changed after polymorphic assignment.
 !*                              : Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.
@@ -29,7 +22,7 @@
 !* ===================================================================
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-   
+
 module m
    type base
       integer :: i1

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Null6.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Null6.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Null6.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Null6.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 11, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*   null()
 !*   If any type parameters of the contextual entity are assumed,
-!*   MOLD shall be present 
-!*  () 
+!*   MOLD shall be present
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -61,11 +55,11 @@
 
   END MODULE
 
-  PROGRAM Null6 
+  PROGRAM Null6
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
   TYPE(DT) :: V
- 
+
   TYPE(DT), POINTER :: U(:)
   TYPE(DT), ALLOCATABLE :: X(:)
 
@@ -91,9 +85,9 @@
   CHARACTER(*), POINTER   :: V5
 
   IF (ASSOCIATED(V2))  STOP 13
-  
+
   IF (ASSOCIATED(V3))  STOP 15
-  
+
   IF (ALLOCATED(V4))   STOP 17
 
   IF (ASSOCIATED(V5))  STOP 18

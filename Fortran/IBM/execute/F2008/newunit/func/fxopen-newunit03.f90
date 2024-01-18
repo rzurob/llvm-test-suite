@@ -1,22 +1,15 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxopen-newunit03.f
-!*
-!* PROGRAMMER                   : Sarah Kouchaki-Ramezan
 !* DATE                         : Oct. 2010
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: NEWUNIT= specifier, Feature#:377344
 !* SECONDARY FUNTIONS TESTED    : READ,WRITE,REWIND
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Testing differen integer data type 
+!* DESCRIPTION                  : Testing differen integer data type
 !*                                ( integer *1,*2,*4,*8) for NEWUNIT=value.
 !*
 !* ===================================================================
@@ -53,13 +46,13 @@
     DO m = 1, 50
     WRITE(IVAR%i1_in, *) value_in(m)
     END DO
-    
-    REWIND(IVAR%i1_in)   
+
+    REWIND(IVAR%i1_in)
 
     DO m = 1, 50
     READ(IVAR%i1_in, *) value_out(m)
     END DO
-    
+
     DO m = 1, 50
      if ( value_in(m) .ne. value_out(m) ) error stop 1_4
     END DO
@@ -74,13 +67,13 @@
     DO m = 1, 50
     WRITE(IVAR%i2_in, *) value_in(m)
     END DO
-    
-    REWIND(IVAR%i2_in)   
+
+    REWIND(IVAR%i2_in)
 
     DO m = 1, 50
     READ(IVAR%i2_in, *) value_out(m)
     END DO
-    
+
     DO m = 1, 50
      if ( value_in(m) .ne. value_out(m) ) error stop 10_4
     END DO

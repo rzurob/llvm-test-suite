@@ -30,7 +30,6 @@ use m
 100     format (5g15.5)
     end subroutine
 
-
     subroutine printBase8 (b)
         type (base(8,*)), intent(in) :: b
 

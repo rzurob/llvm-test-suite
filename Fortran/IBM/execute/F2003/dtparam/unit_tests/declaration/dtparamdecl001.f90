@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -14,28 +9,17 @@
 ! %STDIN:
 ! %STDOUT: dtparamdecl001.out
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Chris Tandy
 !*  DATE                       : 09/20/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf90
-!*
-!*  DESCRIPTION                : TYPE parameters,                                  
+!*  DESCRIPTION                : TYPE parameters,
 !*                                1) kind and len attribute
 !*                                2) type parameters used in:
 !*                                     i) array high bound
@@ -59,7 +43,7 @@
 program dtparamdecl001
   type, extends(old) :: new
   end type
- 
+
   type old
      integer :: b
   end type
@@ -68,22 +52,21 @@ program dtparamdecl001
      integer, kind :: basekind
      integer, len :: baselen
      integer(basekind) :: basearray(baselen)
-     
+
   end type
-  
+
   type(base(4,4)) :: base1
-  
+
    type(base(basekind=4,baselen=6)) :: base2
-  
+
    base1%basearray = 3
    base1%basearray(2) = 6
-  
+
    base2%basearray = 5
    base2%basearray(2) = 9
-  
+
    print *, ' base1=', base1
    print *, ' base2=', base2
-  
-end  
-  
-  
+
+end
+

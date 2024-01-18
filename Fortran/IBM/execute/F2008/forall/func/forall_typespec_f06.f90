@@ -1,13 +1,10 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_f06.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED : Compatibility with !HPF$ align and distribute
@@ -16,7 +13,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*    Test simple Forall construct with a scalar-mask-expr.  Test forall 
+!*    Test simple Forall construct with a scalar-mask-expr.  Test forall
 !*    assignment as the forall-body-stmt.
 !*
 !* =============================================================================
@@ -81,7 +78,7 @@ PROGRAM fxfc007
    FORALL ( integer(1)::in1 = 1:100, .FALSE. )
       i2a(in1) = in1
    END FORALL
-   
+
    PRINT *,i2a
 
    !-------------------------------------------------
@@ -105,10 +102,10 @@ PROGRAM fxfc007
 
    i4a = 0
    FORALL ( integer(1)::in1 = 1:99, i4a(in1) > in1 )
-      i4a(in1) = in1 
+      i4a(in1) = in1
    END FORALL
 
-   PRINT *,i4a 
+   PRINT *,i4a
 
    !-------------------------------------------------
    ! Mask is logical named constant
@@ -130,12 +127,12 @@ PROGRAM fxfc007
    PRINT *,CASENUM
 
    i6a = 0
-   FORALL ( integer(1)::in1 = 1:100 , in1/2 .NE. (in1+1)/2 ) 
+   FORALL ( integer(1)::in1 = 1:100 , in1/2 .NE. (in1+1)/2 )
       l6a(in1) = .TRUE.
       l6a(in1+1) = .FALSE.
    END FORALL
    FORALL ( in1 = 1:100, l6a(in1) )
-      i6a(in1) = in1 
+      i6a(in1) = in1
    END FORALL
 
    PRINT *,l6a

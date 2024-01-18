@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferDiag04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferDiag04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 5 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 5 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Dummy Argument with deferred length 
+!*  PRIMARY FUNCTIONS TESTED   : Dummy Argument with deferred length
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. If a dummy argument is allocatable or pointer, the associated actual argument shall be polymorphic if and only if the dummy argument is polymorphic and the declared type of the actual arguments shall be same as the declared type of the dummy argument.
 !*  2. following is the illegal cases:
 !*   1)dummy argument is not polymorphic, but actual argument is polymorphic.
 !*   2)dummy argument is polymorphic, but actual argument is not.
-!*   3)dummy argument and actual argument are both polymorphic, but declared type is not same. 
+!*   3)dummy argument and actual argument are both polymorphic, but declared type is not same.
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type base(k1,l1)
@@ -41,7 +33,7 @@ module m
     end subroutine
     subroutine sub2(arg)
        type(base(2,:)),pointer :: arg
-    end subroutine   
+    end subroutine
 end module
 
 program dummyArgDeferDiag04
@@ -52,16 +44,16 @@ program dummyArgDeferDiag04
   interface
 
   subroutine sub3(arg)
-     import 
+     import
      class(base(2,:)),allocatable :: arg
   end subroutine
 
   subroutine sub4(arg)
-     import 
+     import
      class(base(2,:)),pointer :: arg
   end subroutine
 
-  end interface 
+  end interface
 
   class(base(2,:)),allocatable :: base1
   class(base(2,:)),pointer     :: base2=>null()
@@ -75,7 +67,7 @@ program dummyArgDeferDiag04
   type(child(2,:,4,:)),allocatable :: child1
   type(child(2,:,4,:)),pointer     :: child2=>null()
 
-  call sub1(base1)  
+  call sub1(base1)
   call sub2(base2)
   call sub3(base3)
   call sub4(base4)
@@ -87,16 +79,16 @@ program dummyArgDeferDiag04
   call sub4(child2)
   call sub3(base5)
   call sub4(base6)
-  
+
   contains
      subroutine sub5(arg)
          class(child(2,:,4,:)),allocatable :: arg
-     end subroutine 
+     end subroutine
 
      subroutine sub6(arg)
          class(child(2,:,4,:)),pointer :: arg
      end subroutine
- 
+
 end program
 
 subroutine sub3(arg)

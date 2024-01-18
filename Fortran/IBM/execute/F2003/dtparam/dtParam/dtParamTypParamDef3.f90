@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypParamDef3   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypParamDef3
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Type param def stmt - kind selector 
+!*  Type param def stmt - kind selector
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -48,12 +41,12 @@
     INTEGER(KIND=K)       :: KK=K
     INTEGER(KIND=K)       :: LL(L, L)=K
     CONTAINS
-    GENERIC :: Proc => ModSub2, ModSub8 
+    GENERIC :: Proc => ModSub2, ModSub8
     PROCEDURE ::  ModSub2
     PROCEDURE ::  ModSub8
   END TYPE
 
-  CONTAINS 
+  CONTAINS
 
   SUBROUTINE ModSub0(Arg)
   CLASS(DT0(1,*)) :: Arg
@@ -84,7 +77,7 @@
 
   END MODULE
 
-  PROGRAM  dtParamTypParamDef3 
+  PROGRAM  dtParamTypParamDef3
   USE M
   TYPE (DT0(1,4))       :: T1
   TYPE (DT1(2,4,2,4))   :: T2

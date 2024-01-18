@@ -1,6 +1,6 @@
 MODULE ASSERTMOD
 
-  !generic interfaces for routines with overloading. 
+  !generic interfaces for routines with overloading.
   INTERFACE assert
 
      MODULE PROCEDURE  assert1_log1_i2, assert1_log2_i2,&
@@ -35,7 +35,7 @@ CONTAINS
     !Report and die if any logical is false (used for arg range checking).
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(1), INTENT(IN) :: n1
-    INTEGER(2) :: rte 
+    INTEGER(2) :: rte
     if (.not. n1) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
@@ -47,7 +47,7 @@ CONTAINS
     !Report and die if any logical is false (used for arg range checking).
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(2), INTENT(IN) :: n1
-    INTEGER(2) :: rte 
+    INTEGER(2) :: rte
     if (.not. n1) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
@@ -59,11 +59,11 @@ CONTAINS
     !Report and die if any logical is false (used for arg range checking).
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(4), INTENT(IN) :: n1
-    INTEGER(2) :: rte 
+    INTEGER(2) :: rte
     if (.not. n1) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert1_log4_i2
 
@@ -71,55 +71,55 @@ CONTAINS
     !Report and die if any logical is false (used for arg range checking).
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(8), INTENT(IN) :: n1
-    INTEGER(2) :: rte 
+    INTEGER(2) :: rte
     if (.not. n1) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert1_log8_i2
 
   SUBROUTINE assert2_log1_i2(n1,n2,string,rte)
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(1), INTENT(IN) :: n1,n2
-    INTEGER(2) :: rte 
+    INTEGER(2) :: rte
     if (.not. (n1 .and. n2)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert2_log1_i2
 
   SUBROUTINE assert2_log2_i2(n1,n2,string,rte)
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(2), INTENT(IN) :: n1,n2
-    INTEGER(2) :: rte 
+    INTEGER(2) :: rte
     if (.not. (n1 .and. n2)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert2_log2_i2
 
   SUBROUTINE assert2_log4_i2(n1,n2,string,rte)
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(4), INTENT(IN) :: n1,n2
-    INTEGER(2) :: rte 
+    INTEGER(2) :: rte
     if (.not. (n1 .and. n2)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert2_log4_i2
 
   SUBROUTINE assert2_log8_i2(n1,n2,string,rte)
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(8), INTENT(IN) :: n1,n2
-    INTEGER(2) :: rte 
+    INTEGER(2) :: rte
     if (.not. (n1 .and. n2)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert2_log8_i2
 
@@ -130,7 +130,7 @@ CONTAINS
     if (.not. (n1 .and. n2 .and. n3)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert3_log1_i2
 
@@ -141,7 +141,7 @@ CONTAINS
     if (.not. (n1 .and. n2 .and. n3)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert3_log2_i2
 
@@ -152,7 +152,7 @@ CONTAINS
     if (.not. (n1 .and. n2 .and. n3)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert3_log4_i2
 
@@ -163,7 +163,7 @@ CONTAINS
     if (.not. (n1 .and. n2 .and. n3)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert3_log8_i2
 
@@ -174,7 +174,7 @@ CONTAINS
     if (.not. all(n)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert_v_log1_i2
 
@@ -185,7 +185,7 @@ CONTAINS
     if (.not. all(n)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert_v_log2_i2
 
@@ -196,7 +196,7 @@ CONTAINS
     if (.not. all(n)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert_v_log4_i2
 
@@ -207,21 +207,21 @@ CONTAINS
     if (.not. all(n)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert_v_log8_i2
 
 !**********************************************************
 !              For Integer(4)                             *
 !**********************************************************
-     
+
   !Routines for argument checking and error handling:
 
   SUBROUTINE assert1_log1_i4(n1,string,rte)
     !Report and die if any logical is false (used for arg range checking).
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(1), INTENT(IN) :: n1
-    INTEGER(4) :: rte 
+    INTEGER(4) :: rte
     if (.not. n1) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
@@ -233,7 +233,7 @@ CONTAINS
     !Report and die if any logical is false (used for arg range checking).
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(2), INTENT(IN) :: n1
-    INTEGER(4) :: rte 
+    INTEGER(4) :: rte
     if (.not. n1) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
@@ -245,11 +245,11 @@ CONTAINS
     !Report and die if any logical is false (used for arg range checking).
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(4), INTENT(IN) :: n1
-    INTEGER(4) :: rte 
+    INTEGER(4) :: rte
     if (.not. n1) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert1_log4_i4
 
@@ -257,55 +257,55 @@ CONTAINS
     !Report and die if any logical is false (used for arg range checking).
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(8), INTENT(IN) :: n1
-    INTEGER(4) :: rte 
+    INTEGER(4) :: rte
     if (.not. n1) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert1_log8_i4
 
   SUBROUTINE assert2_log1_i4(n1,n2,string,rte)
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(1), INTENT(IN) :: n1,n2
-    INTEGER(4) :: rte 
+    INTEGER(4) :: rte
     if (.not. (n1 .and. n2)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert2_log1_i4
 
   SUBROUTINE assert2_log2_i4(n1,n2,string,rte)
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(2), INTENT(IN) :: n1,n2
-    INTEGER(4) :: rte 
+    INTEGER(4) :: rte
     if (.not. (n1 .and. n2)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert2_log2_i4
 
   SUBROUTINE assert2_log4_i4(n1,n2,string,rte)
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(4), INTENT(IN) :: n1,n2
-    INTEGER(4) :: rte 
+    INTEGER(4) :: rte
     if (.not. (n1 .and. n2)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert2_log4_i4
 
   SUBROUTINE assert2_log8_i4(n1,n2,string,rte)
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(8), INTENT(IN) :: n1,n2
-    INTEGER(4) :: rte 
+    INTEGER(4) :: rte
     if (.not. (n1 .and. n2)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert2_log8_i4
 
@@ -316,7 +316,7 @@ CONTAINS
     if (.not. (n1 .and. n2 .and. n3)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert3_log1_i4
 
@@ -327,7 +327,7 @@ CONTAINS
     if (.not. (n1 .and. n2 .and. n3)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert3_log2_i4
 
@@ -338,7 +338,7 @@ CONTAINS
     if (.not. (n1 .and. n2 .and. n3)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert3_log4_i4
 
@@ -349,7 +349,7 @@ CONTAINS
     if (.not. (n1 .and. n2 .and. n3)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert3_log8_i4
 
@@ -360,7 +360,7 @@ CONTAINS
     if (.not. all(n)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert_v_log1_i4
 
@@ -371,7 +371,7 @@ CONTAINS
     if (.not. all(n)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert_v_log2_i4
 
@@ -382,7 +382,7 @@ CONTAINS
     if (.not. all(n)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert_v_log4_i4
 
@@ -393,7 +393,7 @@ CONTAINS
     if (.not. all(n)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert_v_log8_i4
 
@@ -401,12 +401,11 @@ CONTAINS
 !              For Integer(8)                             *
 !**********************************************************
 
- 
   SUBROUTINE assert1_log1_i8(n1,string,rte)
     !Report and die if any logical is false (used for arg range checking).
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(1), INTENT(IN) :: n1
-    INTEGER(8) :: rte 
+    INTEGER(8) :: rte
     if (.not. n1) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
@@ -418,7 +417,7 @@ CONTAINS
     !Report and die if any logical is false (used for arg range checking).
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(2), INTENT(IN) :: n1
-    INTEGER(8) :: rte 
+    INTEGER(8) :: rte
     if (.not. n1) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
@@ -430,11 +429,11 @@ CONTAINS
     !Report and die if any logical is false (used for arg range checking).
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(4), INTENT(IN) :: n1
-    INTEGER(8) :: rte 
+    INTEGER(8) :: rte
     if (.not. n1) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert1_log4_i8
 
@@ -442,55 +441,55 @@ CONTAINS
     !Report and die if any logical is false (used for arg range checking).
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(8), INTENT(IN) :: n1
-    INTEGER(8) :: rte 
+    INTEGER(8) :: rte
     if (.not. n1) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert1_log8_i8
 
   SUBROUTINE assert2_log1_i8(n1,n2,string,rte)
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(1), INTENT(IN) :: n1,n2
-    INTEGER(8) :: rte 
+    INTEGER(8) :: rte
     if (.not. (n1 .and. n2)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert2_log1_i8
 
   SUBROUTINE assert2_log2_i8(n1,n2,string,rte)
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(2), INTENT(IN) :: n1,n2
-    INTEGER(8) :: rte 
+    INTEGER(8) :: rte
     if (.not. (n1 .and. n2)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert2_log2_i8
 
   SUBROUTINE assert2_log4_i8(n1,n2,string,rte)
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(4), INTENT(IN) :: n1,n2
-    INTEGER(8) :: rte 
+    INTEGER(8) :: rte
     if (.not. (n1 .and. n2)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert2_log4_i8
 
   SUBROUTINE assert2_log8_i8(n1,n2,string,rte)
     CHARACTER(LEN=*), INTENT(IN) :: string
     LOGICAL(8), INTENT(IN) :: n1,n2
-    INTEGER(8) :: rte 
+    INTEGER(8) :: rte
     if (.not. (n1 .and. n2)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert2_log8_i8
 
@@ -501,7 +500,7 @@ CONTAINS
     if (.not. (n1 .and. n2 .and. n3)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert3_log1_i8
 
@@ -512,7 +511,7 @@ CONTAINS
     if (.not. (n1 .and. n2 .and. n3)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert3_log2_i8
 
@@ -523,7 +522,7 @@ CONTAINS
     if (.not. (n1 .and. n2 .and. n3)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert3_log4_i8
 
@@ -534,7 +533,7 @@ CONTAINS
     if (.not. (n1 .and. n2 .and. n3)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert3_log8_i8
 
@@ -545,7 +544,7 @@ CONTAINS
     if (.not. all(n)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert_v_log1_i8
 
@@ -556,7 +555,7 @@ CONTAINS
     if (.not. all(n)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert_v_log2_i8
 
@@ -567,7 +566,7 @@ CONTAINS
     if (.not. all(n)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert_v_log4_i8
 
@@ -578,7 +577,7 @@ CONTAINS
     if (.not. all(n)) then
        write (*,*) 'Error: an assertion failed with this tag:', &
             string
-       call zzrc(int(rte,4)) 
+       call zzrc(int(rte,4))
     end if
   END SUBROUTINE assert_v_log8_i8
 

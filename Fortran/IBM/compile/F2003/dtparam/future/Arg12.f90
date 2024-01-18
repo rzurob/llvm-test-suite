@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp Arg12.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg12.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg12.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 23, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Explicit dummy procedure - Characteristics 
-!*  Implicit/Explicit Interface 
+!*
+!*  Explicit dummy procedure - Characteristics
+!*  Implicit/Explicit Interface
 !*  (304109) - Defered to feature 304991
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -54,20 +48,20 @@
       INTEGER, LEN  :: N1
       CHARACTER(N1) :: C
     END TYPE
- 
+
     INTERFACE
       FUNCTION IntF(Arg)
       IMPORT
-        TYPE(Base(4,*)) :: Arg 
-        TYPE(Base(4,3)):: IntF 
+        TYPE(Base(4,*)) :: Arg
+        TYPE(Base(4,3)):: IntF
       END FUNCTION
     END INTERFACE
- 
+
   END MODULE
 
   FUNCTION ExtFun(Arg)
   USE M
-  TYPE(Base(4,*)) :: Arg 
+  TYPE(Base(4,*)) :: Arg
   TYPE(Base(4,3)) :: ExtFun
     ExtFun = Arg
   END FUNCTION
@@ -77,9 +71,9 @@
   USE M
   IMPLICIT NONE
 
-  PROCEDURE(IntF) :: ExtFun 
-  PROCEDURE(IntF), POINTER :: ProcPtr1 
-  PROCEDURE(TYPE(Base(4,3))), POINTER :: ProcPtr2 
+  PROCEDURE(IntF) :: ExtFun
+  PROCEDURE(IntF), POINTER :: ProcPtr1
+  PROCEDURE(TYPE(Base(4,3))), POINTER :: ProcPtr2
 
   ProcPtr1 => ExtFun
   CALL IntSub(ProcPtr1)

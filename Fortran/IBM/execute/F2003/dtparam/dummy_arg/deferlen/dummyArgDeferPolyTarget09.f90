@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyTarget09.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyTarget09.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 20 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 20 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*   pointer is associated with target, and pass pointer and target as actual argument, pointer dummy argument and target dummy argument becomes associated, inside procedure, dummy argument pointer is associated with another target, verify association status after execuation of procedure is completed. 
+!*   pointer is associated with target, and pass pointer and target as actual argument, pointer dummy argument and target dummy argument becomes associated, inside procedure, dummy argument pointer is associated with another target, verify association status after execuation of procedure is completed.
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(l1)
@@ -41,14 +33,14 @@ program dummyArgDeferPolyTarget09
   class(base(:)),pointer :: pbase1(:)=>null(),pbase2(:)=>null()
   class(base(:)),target,allocatable  :: tar1(:)
   type(child(2,3)),target  :: tar2(2:3)
- 
-  
+
+
   allocate(tar1(5:7),source= &
           [child(2,3)(i=[1,2]),child(2,3)([3,4]),child(2,3)([5,6])] )
 
   select type(tar1)
     type is(child(*,*))
-      tar1(5)%childcomp=>tar1(7) 
+      tar1(5)%childcomp=>tar1(7)
       tar1(6)%childcomp=>tar1(6)
       tar1(7)%childcomp=>tar1(5)
     class default
@@ -74,10 +66,10 @@ program dummyArgDeferPolyTarget09
   select type(pbase1)
     type is(child(*,*))
       if(.not. associated(pbase1(10)%childcomp,tar2(3)))   error stop 30_4
-      if(.not. associated(pbase1(11)%childcomp,tar2(2)))   error stop 31_4 
+      if(.not. associated(pbase1(11)%childcomp,tar2(2)))   error stop 31_4
     class default
       error stop 101_4
-  end select 
+  end select
 
   if(lbound(pbase2,1) /= 5)                                error stop 32_4
   if(ubound(pbase2,1) /= 7)                                error stop 33_4
@@ -104,7 +96,7 @@ program dummyArgDeferPolyTarget09
          if(any(target(5)%i /= [1,2]))                     error stop 18_4
          if(any(target(6)%i /= [3,4]))                     error stop 19_4
          if(any(target(7)%i /= [5,6]))                     error stop 20_4
-       
+
          select type(ptr)
            type is(child(*,*))
              select type(target)

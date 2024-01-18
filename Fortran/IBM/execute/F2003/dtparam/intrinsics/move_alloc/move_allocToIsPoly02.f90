@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocToIsPoly02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocToIsPoly02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 6 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 6 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
@@ -33,7 +25,7 @@ module m
    type,extends(base) :: child(k2,l2)
       integer,kind   :: k2
       integer,len    :: l2
-      integer(k1+k2) :: i2(l1:l2) 
+      integer(k1+k2) :: i2(l1:l2)
    end type
 end module
 
@@ -56,8 +48,8 @@ program move_allocToIsPoly02
        do i=3,6
           from1(i)%i1=[ (j,j=1,3)]
           from1(i)%i2=(/ (j,j=3,5) /)
-       end do 
-  end select                   
+       end do
+  end select
 
   allocate(from2(-5:-3),source=from1)
 
@@ -86,8 +78,8 @@ program move_allocToIsPoly02
         do i=3,6
             if(any(x(i)%i1 /= [ (j,j=1,3)]))   error stop 16_4
             if(any(x(i)%i2 /=(/ (j,j=3,5) /)))   error stop 17_4
-        end do              
-  end select      
+        end do
+  end select
 
   call move_alloc(from2,to2)
 
@@ -105,6 +97,6 @@ program move_allocToIsPoly02
             if(any(x(i)%i2 /=(/ (j,j=3,5) /)))   error stop 25_4
         end do
   end select
-    
+
 end program
 

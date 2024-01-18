@@ -7,7 +7,7 @@ module anc_mod
 
   interface
     module subroutine mod_sub()
-    end subroutine 
+    end subroutine
   end interface
 contains
   subroutine print_mod_var(arg)
@@ -21,8 +21,8 @@ implicit none
 contains
   subroutine s1(arg)
     type(base) :: arg
-    arg%i1 = 5 
-  end subroutine 
+    arg%i1 = 5
+  end subroutine
 end submodule
 
 submodule (anc_mod:submod1) submod2
@@ -32,16 +32,16 @@ contains
     type(base) :: b1
     call s1(b1)
     call print_mod_var(b1)
-    print*, b1 
+    print*, b1
     call s2(b1)
     call print_mod_var(b1)
-    print*, b1 
-  end subroutine 
+    print*, b1
+  end subroutine
 
   subroutine s2(arg)
-    type(base) :: arg 
+    type(base) :: arg
     arg%i1 = 7
-  end 
+  end
 end submodule
 
 program main

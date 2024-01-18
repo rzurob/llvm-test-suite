@@ -22,18 +22,17 @@ program fxisopca01
       end subroutine sub4
    end interface
 
-
    type(C_PTR) :: cp
    type(C_FUNPTR) :: psubc
-   !procedure(subce) :: proc_subc  
-   psubc = C_FUNLOC(subce) 
-   
+   !procedure(subce) :: proc_subc
+   psubc = C_FUNLOC(subce)
+
    call sub4(psubc)
 
    contains
     subroutine subc(a) bind(c)
       INTEGER(C_INT) :: a(18, 3:7, 2)
-      print *, "Hello world subc called with " 
+      print *, "Hello world subc called with "
       print *, a(2,4,2)
     end subroutine subc
 

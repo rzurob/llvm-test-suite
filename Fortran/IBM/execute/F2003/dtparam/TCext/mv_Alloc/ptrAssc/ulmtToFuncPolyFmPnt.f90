@@ -3,28 +3,16 @@
 ! opt variations: -qnok -ql
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ulmtToFuncPolyFmPnt.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is poly, dummy arg, type child
-!*                               TO is class(*), external func name 
-!*                               pointer is poly, dummy arg, type base 
+!*                               TO is class(*), external func name
+!*                               pointer is poly, dummy arg, type base
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -37,18 +25,18 @@ module m
 
       type  :: base(k1)    ! (4)
           integer, kind :: k1
-      end type 
+      end type
 
       type, extends(base) :: child    ! (4)
           character(:), allocatable :: ch*8
-      end type 
+      end type
 
-      interface 
+      interface
          class(*) function func(arg,brg)
-            import base, child 
-            class(child(4)) :: arg 
+            import base, child
+            class(child(4)) :: arg
             class(base(4)) :: brg
-            allocatable :: func, arg 
+            allocatable :: func, arg
          end function
       end interface
 
@@ -57,7 +45,7 @@ end module
 
       use m
 
-      class(base(4)), pointer :: p 
+      class(base(4)), pointer :: p
       class(child(4)), allocatable :: d
 
       allocate(p, source= base(4)()  )
@@ -65,10 +53,10 @@ end module
 
       select type ( x => func(d, p) )
           type is ( child(4) )
-              if ( x%ch /= 'XYZabcde' ) stop 23 
+              if ( x%ch /= 'XYZabcde' ) stop 23
           class default
               stop 25
-      end select          
+      end select
 
       if ( allocated(d) ) stop 27
 
@@ -76,18 +64,18 @@ end module
 
          class(*) function func(arg,brg)
             use m, only : base, child
-            class(child(4)), intent(inout) :: arg 
+            class(child(4)), intent(inout) :: arg
             class(base(4)) :: brg
-            allocatable arg, func 
-            pointer brg 
+            allocatable arg, func
+            pointer brg
             target arg, func
 
             brg => arg
 
-            call move_alloc(arg, func) 
+            call move_alloc(arg, func)
 
             if (  .not. allocated(func) ) stop 11
-  
+
             select type ( func)
                 type is (child(4))
                     if (.not. associated(brg, func) ) stop 21

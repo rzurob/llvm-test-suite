@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditd001.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,34 +12,27 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditd001
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Nov. 25, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : providing support for the DECIMAL=
 !*                               specifier and decimal edit mode control
 !*                               descriptors. Feature 289039.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qdebug=intmsg
-!*  REQUIRED RUNTIME OPTIONS   : 
+!*  REQUIRED RUNTIME OPTIONS   :
 !*
 !*  DESCRIPTION                : This diagnostic test, makes sure that
-!*                               if the DECIMAL= specifier is used more  
+!*                               if the DECIMAL= specifier is used more
 !*                               than once in the same i/o statement,
 !*                               an appropriate error message is issued.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
-      
+
       integer :: ios
       character(5) mode
       character(10) :: buffer, tmp
@@ -53,5 +46,5 @@
       ! test for internal files as well:
       write(buffer,*, decimal='comma', iostat=ios, decimal='comma') 3.14
       read(buffer, *, decimal='point', iostat=ios, decimal='comma') tmp
-      
+
       end

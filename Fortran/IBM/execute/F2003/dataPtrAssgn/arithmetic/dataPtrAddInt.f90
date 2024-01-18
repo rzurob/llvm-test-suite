@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrAddInt.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -22,7 +16,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
     type, abstract :: base
- 	class(*), pointer :: p(:,:) 
+ 	class(*), pointer :: p(:,:)
 	contains
 	    procedure(func), deferred :: pp
     end type
@@ -32,26 +26,26 @@ module m
 
       	contains
 	    procedure :: pp
-    end type 
+    end type
 
-    interface 
+    interface
 	function func(arg)
 	    import
 	    integer, pointer :: func(:,:)
-	    class(base), intent(in) :: arg 
-	end function 
+	    class(base), intent(in) :: arg
+	end function
 
         function pp(arg)
 	    import
 	    integer, pointer :: pp(:,:)
-            class(child), intent(in) :: arg 
+            class(child), intent(in) :: arg
 	end function
     end interface
 end module
 
 program main
 
-    use m 
+    use m
 
     class(child), allocatable :: b1
 
@@ -59,21 +53,21 @@ program main
 
     b1%p(4:,5:) => b1%pp()
 
-    if ( .not. associated(b1%p)) stop 1 
+    if ( .not. associated(b1%p)) stop 1
     if ( any (lbound(b1%p) .ne. (/4,5/))) stop 2
-    if ( any (ubound(b1%p) .ne. (/8,9/))) stop 3 
+    if ( any (ubound(b1%p) .ne. (/8,9/))) stop 3
 
     select type (x => b1%p)
 	type is (integer)
 	    if ( any( x+x(8:4:-1,9:5:-1) .ne. 26 )) stop 4
 	class default
-	    stop 5 
+	    stop 5
     end select
 end program
 
         function pp(arg)
-	    use m, only : child 
+	    use m, only : child
 	    integer, pointer :: pp(:,:)
-            class(child), intent(in) :: arg 
-	    allocate(pp(size(arg%tar,1), size(arg%tar,2)), source = arg%tar) 
-	end function 
+            class(child), intent(in) :: arg
+	    allocate(pp(size(arg%tar,1), size(arg%tar,2)), source = arg%tar)
+	end function

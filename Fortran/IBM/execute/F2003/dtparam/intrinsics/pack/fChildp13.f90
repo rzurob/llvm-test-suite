@@ -1,38 +1,28 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Adrian Green
 !*  DATE                       : July 27, 2008
 !*  ORIGIN                     : XLF Compiler Test,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !       Pack Intrinsic function with derived type parameters.
-!*  DESCRIPTION                : Uses pack with a derived type component that extends another derived type. 
-!*								
-!*
-!*
-!*
+!*  DESCRIPTION                : Uses pack with a derived type component that extends another derived type.
 !*
 module m
 	type base(k)
 		integer, kind :: k
 		integer(k) :: elem
 	end type base
-	
+
 	type, extends(base) :: child
 		integer :: element
 	end type child
-	
+
 end module m
 
-program a	
+program a
 
 use m
-type (child(4)) :: vec(2,4), res(8), field(8) 
+type (child(4)) :: vec(2,4), res(8), field(8)
 logical :: mask1(8) = (/.TRUE., .FALSE., .TRUE., .FALSE., .TRUE., .FALSE., .TRUE., .FALSE./)
 logical :: mask2(2,4)
 integer :: num

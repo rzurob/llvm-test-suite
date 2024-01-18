@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg9.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg9.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg9.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg9.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Argument association - array 
+!*
+!*  Argument association - array
 !* ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -72,10 +66,10 @@
 
   END MODULE
 
-  PROGRAM Arg9 
+  PROGRAM Arg9
   USE M
-  IMPLICIT NONE 
-  PROCEDURE(IFun), POINTER :: ProcPtr 
+  IMPLICIT NONE
+  PROCEDURE(IFun), POINTER :: ProcPtr
   CALL IntSub1(ModFun )
 
   ProcPtr => ModFun
@@ -99,7 +93,7 @@
       IF (ANY(U%Base%C .NE. "123")    )          STOP 21
 
     END DO
- 
+
   END SUBROUTINE
 
   SUBROUTINE IntSub2(Arg)
@@ -118,7 +112,7 @@
       IF (ANY(U%Base%C .NE. "123")    )          STOP 41
 
     END DO
- 
+
   END SUBROUTINE
 
 

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcSyntax.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcSyntax.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Syntax 
+!*  Syntax
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -38,7 +30,7 @@
 
   CONTAINS
   CHARACTER(3) FUNCTION ModFun(Arg)
-  INTEGER :: Arg   
+  INTEGER :: Arg
     ModFun = "OK0"
   END FUNCTION
 
@@ -59,11 +51,11 @@
     ExtFun3 = "OK3"
   END FUNCTION
 
-  PROGRAM mProcSyntax 
+  PROGRAM mProcSyntax
   USE M
   IMPLICIT NONE
 
-  INTERFACE 
+  INTERFACE
     CHARACTER(3) FUNCTION ExtFun3(Arg)
       LOGICAL   Arg
     END FUNCTION
@@ -72,7 +64,7 @@
     END FUNCTION
   END INTERFACE
 
-  PROCEDURE(ExtFun3), POINTER ::  ProcPtr 
+  PROCEDURE(ExtFun3), POINTER ::  ProcPtr
 
 
   CALL Check(ExtFun2)
@@ -97,9 +89,9 @@
   IF (Fun(1_1)     .NE. "OK2") STOP 13
   IF (Fun(.TRUE.)  .NE. "OK3") STOP 14
 
- 
+
   END SUBROUTINE
- 
+
   END
 
 

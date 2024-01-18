@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltAsAssoName.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltAsAssoName
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 06, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector name is the same as its associate name
 !*    ()
 !*
@@ -46,7 +40,7 @@
   MODULE M
 
     TYPE  :: Zero
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -95,11 +89,11 @@
   TYPE(Child), TARGET :: Tar
   CLASS(*), POINTER  :: Ptr
 
-  Ptr => Tar 
+  Ptr => Tar
   SELECT TYPE( Ptr => Ptr)
     CLASS IS (Child)
       SELECT TYPE( Ptr => Ptr )
-        TYPE IS (Child) 
+        TYPE IS (Child)
           IF ( Ptr%Base%GetId() .NE. 1 ) STOP 34
           IF ( Ptr%GetId()      .NE. 2 ) STOP 35
           IF ( Ptr%BaseId       .NE. 1 ) STOP 36
@@ -112,7 +106,7 @@
           IF ( Ptr%GetId()      .NE. -2 ) STOP 45
           IF ( Ptr%BaseId       .NE. -1 ) STOP 46
           IF ( Ptr%ChildId      .NE. -2 ) STOP 47
-    END SELECT 
-  END SELECT 
+    END SELECT
+  END SELECT
   END
-  
+

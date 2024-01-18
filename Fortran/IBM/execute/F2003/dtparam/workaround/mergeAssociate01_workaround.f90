@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergegAssociate01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergegAssociate01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 22 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 22 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE AND FSOURCE ARE SCALR OR ARRAY
 !* 4. ! USE ASSOCIATE
 !* 5. DEFECT 356156
@@ -55,16 +47,16 @@ program mergegAssociate01
 
    mask1=[.true.,.false.,.true.,.false.,.true.,.false.]
 
-   mask2=reshape(mask1,(/2,3/)) 
-   
+   mask2=reshape(mask1,(/2,3/))
+
    dtp3=reshape(dtp1,(/2,3/))
    dtp4=reshape(dtp2,(/2,3/))
- 
+
    dtp5=dtp1
    dtp6=dtp2
 
    dtp9=>dtp1
-   dtp10=>dtp2 
+   dtp10=>dtp2
 
    allocate(dtp11(2,3),source=dtp3)
    allocate(dtp12(2,3),source=dtp4)
@@ -112,7 +104,7 @@ program mergegAssociate01
       if(x%l /= 3)                                  error stop 17_4
       if(any(x%i /= [1,-2,3,-4,5,-6]))              error stop 18_4
       if(any(x%c /= ["A","b","C","d","E","f"]))     error stop 19_4
-      
+
    end subroutine
 
 !   associate(x=>merge(dtp1,dtp2,.not. mask1))

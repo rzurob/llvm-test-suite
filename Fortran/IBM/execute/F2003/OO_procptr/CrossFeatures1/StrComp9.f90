@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: StrComp9.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: StrComp9.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : StrComp9.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : StrComp9.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Procedure pointer components - sequence 
-!*  () 
+!*
+!*  Procedure pointer components - sequence
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,7 +44,7 @@
       PROCEDURE(LOGICAL(1)), NOPASS, POINTER :: ProcPtr
     END TYPE
 
-    INTERFACE 
+    INTERFACE
       FUNCTION ExtFun(C, ProcPtr)
         IMPORT
         TYPE(Base)           :: ExtFun
@@ -60,14 +54,14 @@
     END INTERFACE
 
   CONTAINS
- 
+
   FUNCTION ModFun()
   LOGICAL(1) :: ModFun
     ModFun = .TRUE.
   END FUNCTION
- 
+
   END MODULE
- 
+
   FUNCTION ExtFun(C, ProcPtr)
 
   TYPE :: Base
@@ -78,16 +72,16 @@
 
   TYPE(Base)           :: ExtFun
   CHARACTER(3)         :: C
-  PROCEDURE(LOGICAL(1)), POINTER :: ProcPtr 
-    ExtFun%ProcPtr => ProcPtr 
-    ExtFun%C = C 
+  PROCEDURE(LOGICAL(1)), POINTER :: ProcPtr
+    ExtFun%ProcPtr => ProcPtr
+    ExtFun%C = C
 
   END FUNCTION
 
- 
-  PROGRAM StrComp8  
+
+  PROGRAM StrComp8
   USE M
-  IMPLICIT TYPE(Base)(P) 
+  IMPLICIT TYPE(Base)(P)
 
   TYPE(Base)  :: U
   LOGICAL     :: L=.FALSE.

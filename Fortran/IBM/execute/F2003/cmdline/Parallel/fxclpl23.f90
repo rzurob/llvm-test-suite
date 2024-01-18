@@ -15,26 +15,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpl23.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -42,9 +36,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :  Call command line intrinsic routines from threads through mutex
-!*                             :    
-!*          
-!*                     
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
@@ -62,7 +54,7 @@
       PROGRAM fxclp23
 
       use THREADMOD
-      
+
       IMPLICIT NONE
 
       integer i, iRC
@@ -79,9 +71,9 @@
       end do
 
 
-      END 
+      END
 
- 
+
       INCLUDE 'cmdline.include'
 
 
@@ -89,41 +81,41 @@
       SUBROUTINE SUB( iDummy )
 
       use THREADMOD
-      
+
       INTEGER iDummy
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE  
-      character(513)   :: NAME  
-      logical          :: TRIM_NAME 
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
       integer          :: ARGCOUNT
 
-      character(2049)  :: CmdLine 
+      character(2049)  :: CmdLine
       integer          :: CmdCount, i, k
       character(2047)  :: Argument
-     
+
 
         CmdLine = 'fxclpl23 =-=-=-=-=-=-=--=-=-245324-523=-5=2321351=34-'
         NAME = 'CmdLine   '
         TRIM_NAME  = .true.
 
-    do while (f_pthread_mutex_trylock(mutex) .ne. 0)   
-    end do 
+    do while (f_pthread_mutex_trylock(mutex) .ne. 0)
+    end do
         CmdCount = COMMAND_ARGUMENT_COUNT()
-        if ( CmdCount .ne. 1 ) & 
+        if ( CmdCount .ne. 1 ) &
         then
           error stop 63
         endif
-    if (f_pthread_mutex_unlock(mutex) .ne. 0) then    
+    if (f_pthread_mutex_unlock(mutex) .ne. 0) then
        print *, "Cannot unlock the mutex."
        error stop 73
     end if
 
-    do while (f_pthread_mutex_trylock(mutex) .ne. 0)   
-    end do   
+    do while (f_pthread_mutex_trylock(mutex) .ne. 0)
+    end do
       call GET_COMMAND(COMMAND, LENGTH, STATUS)
         if ( (TRIM(COMMAND) .ne. TRIM(CmdLine))  .or. &
              (LENGTH .ne. LEN(TRIM(CmdLine)))    .or. &
@@ -131,13 +123,13 @@
         then
           error stop 64
         endif
-    if (f_pthread_mutex_unlock(mutex) .ne. 0) then    
+    if (f_pthread_mutex_unlock(mutex) .ne. 0) then
        print *, "Cannot unlock the mutex."
        error stop 74
     end if
 
-    do while (f_pthread_mutex_trylock(mutex) .ne. 0)   
-    end do 
+    do while (f_pthread_mutex_trylock(mutex) .ne. 0)
+    end do
         DO i  = 0, CmdCount
           NUMBER = i
           call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
@@ -149,13 +141,13 @@
             error stop 65
           endif
         END DO
-    if (f_pthread_mutex_unlock(mutex) .ne. 0) then    
+    if (f_pthread_mutex_unlock(mutex) .ne. 0) then
        print *, "Cannot unlock the mutex."
        error stop 75
     end if
 
-    do while (f_pthread_mutex_trylock(mutex) .ne. 0)   
-    end do 
+    do while (f_pthread_mutex_trylock(mutex) .ne. 0)
+    end do
         call GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
         if ( (TRIM(VALUE) .ne. TRIM(CmdLine))  .or. &
              (LENGTH .ne. LEN(TRIM(CmdLine)))  .or. &
@@ -164,7 +156,7 @@
           error stop 66
         endif
 
-    if (f_pthread_mutex_unlock(mutex) .ne. 0) then    
+    if (f_pthread_mutex_unlock(mutex) .ne. 0) then
        print *, "Cannot unlock the mutex."
        error stop 76
     end if

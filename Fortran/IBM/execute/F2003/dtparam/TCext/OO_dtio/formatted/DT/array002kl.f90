@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : array002kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from array002 by Robert Ma)
 !*  DATE                       : 2007-06-04 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        array polymorphic derived type variable
@@ -61,7 +53,7 @@ use m
    class(base(4)), pointer      :: b2(:,:)
    class(child(4,3)), allocatable :: c1
    class(child(4,3)), pointer     :: c2
-   
+
    dimension :: c1(:)
    dimension :: c2(:,:)
 
@@ -105,7 +97,7 @@ use m, only: base, child
    character(20) :: fmt
 
    write ( unit, * ) 'iotype:', iotype
-   
+
    select type ( dtv )
       type is (base(4))
          write ( unit, * ) ' empty v_list'

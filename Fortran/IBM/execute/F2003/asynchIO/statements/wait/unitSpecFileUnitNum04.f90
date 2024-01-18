@@ -1,13 +1,7 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unitSpecFileUnitNum04 - WAIT() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March  3, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() Statement
 !*  SECONDARY FUNCTIONS TESTED : UNIT= Specifier Value is:
@@ -15,7 +9,6 @@
 !*                               b)  OUTPUT_UNIT (Unit=6),
 !*                               c)  ERROR_UNIT (Unit=0)
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WAIT(), UNIT= Specifier
@@ -48,7 +41,6 @@
 !*  opened for asynchronous input/output is permitted, provided that the
 !*  WAIT statement has no ID= specifier; ...
 !*
-!*
 !*  9.4 File connection
 !*
 !*  A unit, specified by an io-unit, provides a means for referring to a
@@ -70,7 +62,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 PROGRAM unitSpecFileUnitNum04
-    USE ISO_FORTRAN_ENV 
+    USE ISO_FORTRAN_ENV
 
 
     !

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrC720_1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrC720_1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  C720 (R735) If bounds-remapping-list is specified, data-target shall have rank one;
-!*  otherwise, the ranks of data-pointer-object and data-target shall be the same.   
-!*   
+!*  otherwise, the ranks of data-pointer-object and data-target shall be the same.
 !*
 !*  (322997)
 !*
@@ -50,7 +42,7 @@
     END FUNCTION
   END MODULE
 
-  PROGRAM dataPtrC720_1 
+  PROGRAM dataPtrC720_1
   USE M
   IMPLICIT NONE
 
@@ -58,7 +50,7 @@
   CLASS(*), POINTER              :: Ptr1(:), Ptr2(:,:)
 
   ALLOCATE(Arr2(2,3), SOURCE=DT(-1))
-  Ptr1(0:1) => Arr2(:,3) 
+  Ptr1(0:1) => Arr2(:,3)
 
   IF (ANY(LBOUND(Ptr1) .NE.   (/0/))) STOP 11
   IF (ANY(UBOUND(Ptr1) .NE.   (/1/))) STOP 12
@@ -71,7 +63,7 @@
 
 
   ALLOCATE(Arr1(8), SOURCE=(/DT(1),DT(2),DT(3),DT(4),DT(5),DT(6),DT(7),DT(8)/))
-  Ptr2(0:1, 0:1) => Arr1(::2) 
+  Ptr2(0:1, 0:1) => Arr1(::2)
 
   IF (ANY(LBOUND(Ptr2) .NE.   (/0,0/))) STOP 21
   IF (ANY(UBOUND(Ptr2) .NE.   (/1,1/))) STOP 22
@@ -82,8 +74,8 @@
     STOP 24
   END SELECT
 
-  Arr2(:,3)%ID = 1 
-  Ptr1(3:) => Arr2(:,3) 
+  Arr2(:,3)%ID = 1
+  Ptr1(3:) => Arr2(:,3)
 
   IF (ANY(LBOUND(Ptr1) .NE.   (/3/))) STOP 31
   IF (ANY(UBOUND(Ptr1) .NE.   (/4/))) STOP 32
@@ -96,7 +88,7 @@
 
   ALLOCATE(Arr3(2,2,2), SOURCE=DT(-1))
   Arr3(:,1,:)%ID = RESHAPE((/1,2,3,4/),(/2,2/))
-  Ptr2(0:, 0:) => Arr3(:,1,:) 
+  Ptr2(0:, 0:) => Arr3(:,1,:)
 
   IF (ANY(LBOUND(Ptr2) .NE.   (/0,0/))) STOP 41
   IF (ANY(UBOUND(Ptr2) .NE.   (/1,1/))) STOP 42

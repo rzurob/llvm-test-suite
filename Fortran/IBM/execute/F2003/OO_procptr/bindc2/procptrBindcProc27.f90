@@ -1,27 +1,16 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*                                associate procedure pointer with c function
 !*                                pointer pointing to C function with void pointer
 !*                                as its argument(in Fortran, dummy argument for C_PTR
 !*                                is with value attribute) and its return. void * with
-!*                                char. 
+!*                                char.
 !* ===================================================================
 
 program procptrBindcProc27
@@ -29,7 +18,7 @@ program procptrBindcProc27
    use ISO_C_BINDING,ONLY : C_F_PROCPOINTER, C_FUNPTR, C_CHAR, C_FUNLOC, C_ASSOCIATED, C_LOC, C_PTR
 
    type dt
-       type(C_FUNPTR) :: cfunptr 
+       type(C_FUNPTR) :: cfunptr
    end type
    interface
        type(C_PTR) function cfunc(i) bind(c)
@@ -40,12 +29,12 @@ program procptrBindcProc27
 
    type(dt) :: dtype
    character(C_CHAR), target :: i
-   type(C_PTR) :: j, res 
+   type(C_PTR) :: j, res
    character(C_CHAR), pointer :: p, pp
 
    procedure(cfunc), pointer :: funptr => null()
 
-   i = 'A' 
+   i = 'A'
    j = C_LOC(i)
 
    if ( .not. C_ASSOCIATED(j) ) error stop 1_4

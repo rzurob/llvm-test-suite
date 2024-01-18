@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgMaxloc5
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : MAXLOC 
+!*  SECONDARY FUNCTIONS TESTED : MAXLOC
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Characteristics.
-!*  Integer. If KIND is present, the kind type parameter is that specified by the value of KIND; 
+!*  Integer. If KIND is present, the kind type parameter is that specified by the value of KIND;
 !*  otherwise the kind type parameter is that of default integer type. If DIM is absent, the result
-!*  is an array of rank one and of size equal to the rank of ARRAY; otherwise, the result is of rank n - 1 
-!*  and shape (d1, d2, ..., dDIM-1, dDIM+1, ..., dn), where (d1, d2, ..., dn) is the shape of ARRAY. 
-!*    
-!*  () 
+!*  is an array of rank one and of size equal to the rank of ARRAY; otherwise, the result is of rank n - 1
+!*  and shape (d1, d2, ..., dDIM-1, dDIM+1, ..., dn), where (d1, d2, ..., dn) is the shape of ARRAY.
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -80,7 +72,7 @@
     IF (KIND(MAXLOC(ARRAY=RR8(:I2), MASK=.TRUE._4, KIND=RR8(:I2)%KIND )) .NE. 8 )  STOP 24
     IF (ANY( MAXLOC(ARRAY=RR6(:I2), MASK=.TRUE._2, KIND=RR6(:I2)%KIND-8) .NE. I2)) STOP 25
     IF (KIND(MAXLOC(ARRAY=RR6(:I2), MASK=.TRUE._2, KIND=RR6(:I2)%KIND-8)).NE. 8  ) STOP 26
- 
+
   END DO
 
   DO I4 =1, 128

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr18
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 31, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  PARAMETER 
-!*  
+!*  PARAMETER
 !*
-!* 
 !*  (ICE-337445)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -43,13 +32,13 @@
     INTEGER, KIND :: K0=1
     INTEGER, LEN  :: L0=1
     CONTAINS
-    PROCEDURE, PASS(Obj) :: Proc0 => CheckDT0 
+    PROCEDURE, PASS(Obj) :: Proc0 => CheckDT0
   END TYPE
 
   TYPE, ABSTRACT, EXTENDS(DT0)  :: DT1(K1, L1)
     INTEGER(K0), KIND    :: K1=K0
     INTEGER(K0), LEN     :: L1=K0
-    CHARACTER(L1+3) :: C1 = "DT1" 
+    CHARACTER(L1+3) :: C1 = "DT1"
     !CONTAINS
     !PROCEDURE(CHECKDT1), NOPASS, DEFERRED :: Proc
   END TYPE
@@ -62,10 +51,10 @@
     REAL   (K2)          :: R=K2
     LOGICAL(K2)          :: L=.TRUE._1
     COMPLEX(K2)          :: Z=CMPLX(K1, K2, K2)
-    TYPE(DT0(K2, L2))           :: T0 
+    TYPE(DT0(K2, L2))           :: T0
     TYPE(DT2(K2, L2)), POINTER  :: Ptr2
     CONTAINS
-    PROCEDURE, PASS(Obj) :: Proc2 => CheckDT2 
+    PROCEDURE, PASS(Obj) :: Proc2 => CheckDT2
   END TYPE
 
   CONTAINS
@@ -78,7 +67,7 @@
   END SUBROUTINE
 
   SUBROUTINE CheckDT2(Obj,Arg)
-  CLASS(DT2(8,*,8,*,8,*)) :: Obj 
+  CLASS(DT2(8,*,8,*,8,*)) :: Obj
   TYPE (DT2(8,*,8,*,8,*)) :: Arg
 
     IF ( Arg%K0   .NE.   Obj%K0     ) STOP 41
@@ -101,14 +90,14 @@
     IF ( Arg%Ptr2%K2           .NE.   Obj%Ptr2%K2           ) STOP 56
     IF ( Arg%Ptr2%L2           .NE.   Obj%Ptr2%L2           ) STOP 37
 
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END MODULE
 
   PROGRAM dtpObjDecAttr18
   USE M
 
-  TYPE(DT2(8,3,8,3,8,3)), TARGET :: Tar 
+  TYPE(DT2(8,3,8,3,8,3)), TARGET :: Tar
 
   TYPE(DT0(8,2)),  PARAMETER :: T1=DT0(8,2)()
   TYPE(DT0(8,2)),  PARAMETER :: T2=T1

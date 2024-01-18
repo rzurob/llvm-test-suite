@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryIntrinsicDefer05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryIntrinsicDefer05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 4 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 4 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
 !* 3. DEFERRED TYPE PARAMETER INQUIRY
 !* 4. ALLOCATABLE AND POINTER SCALAR AS DUMMY ARGUMENT
 !* 5. DEFECT 354606
@@ -70,9 +62,9 @@ program typeParamInquiryIntrinsicDefer05
 
     character(:),allocatable :: a2
     character(*),parameter :: a3="efg"
- 
+
     allocate(a1,source="xlftest")
-    a2=a1//' '//"team"  
+    a2=a1//' '//"team"
     call test1(a1)
     call test2(a2)
     if(a2 /= "test")                                     error stop 16_4
@@ -89,12 +81,12 @@ program typeParamInquiryIntrinsicDefer05
     if(p1%kind /= kind(p1) .or. p1%kind /=1)             error stop 23_4
     if(p1 /= "xlftest" )                                 error stop 24_4
 
-    call test4(p1) 
+    call test4(p1)
     allocate(character(getlen('abc')+len('abc')+len(t1(1:3))) :: p1)
     p2=>p1
     call test5(p2)
     if(p2 /= "test")                                      error stop 30_4
-    if(p2%len /= len(p2) .or. p2%len /= 4)                error stop 31_4 
+    if(p2%len /= len(p2) .or. p2%len /= 4)                error stop 31_4
     if(p2%kind /= kind(p2) .or. p2%kind /=1)              error stop 32_4
 
     call test6(p2)
@@ -110,26 +102,26 @@ program typeParamInquiryIntrinsicDefer05
          if(aa1 /= "xlftest" )                            error stop 10_4
          if(aa1%len /= len(aa1) .or. aa1%len /= 7)        error stop 11_4
          if(aa1%kind /= kind(aa1) .or. aa1%kind /=1)      error stop 12_4
-      end subroutine 
-     
+      end subroutine
+
       subroutine test2(aa2)
-         character(:),allocatable,intent(inout) :: aa2 
+         character(:),allocatable,intent(inout) :: aa2
          if(aa2 /= "xlftest team" )                       error stop 13_4
          if(aa2%len /= len(aa2) .or. aa2%len /= 12)       error stop 14_4
          if(aa2%kind /= kind(aa2) .or. aa2%kind /=1)      error stop 15_4
-   
+
          if(allocated(aa2))  deallocate(aa2)
             allocate(aa2,source=a1(4:))
- 
-      end subroutine         
+
+      end subroutine
 
       subroutine test3(aa2)
          character(:),allocatable,intent(out) :: aa2
 
          if(allocated(aa2))                               error stop 19_4
          allocate(character(len=getlen('abc')+getlen(a3)) :: aa2)
-      end subroutine 
+      end subroutine
 
 end
 
-    
+

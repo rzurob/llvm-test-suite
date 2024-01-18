@@ -2,29 +2,23 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f fort.*
-! %COMPOPTS: 
-! %GROUP: fxstio004.f 
+! %COMPOPTS:
+! %GROUP: fxstio004.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio004.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 07, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
 !*
-!*  Description                : Test derived type(scalar and 
-!*                               array) with Stream I/O.  
+!*  Description                : Test derived type(scalar and
+!*                               array) with Stream I/O.
 !*
 !=======================================================================
 
@@ -57,7 +51,7 @@
     complex   compa2(2,2)
     character chara2(2,2)
     byte      bta2(2,2)
-    logical   loga2(2,2)  
+    logical   loga2(2,2)
   end type dt3
 
   type(dt1) a1 /dt1( 100, 1.0, (1.0, 2.0), "abc", &
@@ -70,7 +64,7 @@
   a2 = dt2((/1, 0, -10/), (/100.0, 0.0, -1.0/),  &
     (/(20.0e1, 30.0e1), (0.0e0, 0.0e0), (-21.0e0, -31.0e0)/), &
     (/"A", " ", "m"/), (/"b", "1", "."/),  &
-    (/.false.,  .true., .false./))        
+    (/.false.,  .true., .false./))
 
   a3 = dt3(reshape((/a2%inta(1), a2%inta(2),a2%inta(3), a1%int/), &
     (/2,2/)), reshape((/a2%ra(1), a2%ra(2), a2%ra(3), a1%r/), &
@@ -85,7 +79,7 @@
   open(1, form='unformatted', access='stream', iostat=ios, err=100)
   open(2, form='unformatted', access='stream', iostat=ios, err=100)
   open(3, form='unformatted', access='stream', iostat=ios, err=100)
- 
+
   write (1, iostat=ios, err=200) a1
   write (2, iostat=ios, err=200) a2
   write (3, iostat=ios, err=200) a3
@@ -107,7 +101,7 @@
   rewind(2, iostat=ios, err=500)
   read(2, iostat=ios, err=400) b2
   caseid =20
-  
+
   do i = 1, 3
      if(a2%inta(i) .ne. b2%inta(i))          call zzrc(i*caseid+1)
      if(a2%ra(i) .ne. b2%ra(i))              call zzrc(i*caseid+2)

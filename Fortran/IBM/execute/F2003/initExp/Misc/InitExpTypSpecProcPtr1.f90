@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecProcPtr1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecProcPtr1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  intrinsic-type-spec in proc ptr: real and complex 
-!* 
-!*  
-!* 
+!*  intrinsic-type-spec in proc ptr: real and complex
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -40,46 +30,46 @@
 
   FUNCTION R4()
     REAL(4) :: R4
-    R4 = 4 
+    R4 = 4
   END FUNCTION
- 
+
   FUNCTION R8()
-    REAL(8) :: R8 
-    R8 = 8 
+    REAL(8) :: R8
+    R8 = 8
   END FUNCTION
- 
+
   FUNCTION R6()
-    REAL(16) :: R6 
-    R6 = 16. 
+    REAL(16) :: R6
+    R6 = 16.
   END FUNCTION
- 
- 
+
+
   FUNCTION Z4()
     COMPLEX(4) :: Z4
-    Z4 = (4., -4.) 
+    Z4 = (4., -4.)
   END FUNCTION
- 
+
   FUNCTION Z8()
     COMPLEX(8) :: Z8
-    Z8 = (8., -8.) 
+    Z8 = (8., -8.)
   END FUNCTION
- 
+
   FUNCTION Z6()
     COMPLEX(16) :: Z6
-    Z6 = (16., -16.) 
+    Z6 = (16., -16.)
   END FUNCTION
- 
- 
+
+
   END MODULE
 
 
-  PROGRAM InitExpTypSpecProcPtr1 
+  PROGRAM InitExpTypSpecProcPtr1
   USE M
   IMPLICIT NONE
 
   INTEGER :: I
 
-  
+
   PROCEDURE(REAL(KIND=4_8)),                 POINTER :: R4ProcPtr
   PROCEDURE(REAL(KIND=SIZE([(i,i=1,8)]))),   POINTER :: R8ProcPtr
   PROCEDURE(REAL(KIND=SIZE([(i,i=1,16)]))),  POINTER :: R6ProcPtr
@@ -108,4 +98,4 @@
 
   END
 
- 
+

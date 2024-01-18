@@ -5,53 +5,47 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
 ! %GROUP: ftybn022e.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn022e.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn022e.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!*  
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
+!*
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : accessibility testing with one module.
 !*                               useing type-bound procedures to test
 !*                               derived type components with multiple
 !*                               access specifiers.
-!*                            
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 
-	module mod1	      
+	module mod1
       integer, protected :: prot_a
       integer :: publ_a
       integer, private :: priv_a
-      
+
       type base(k1,k2)    ! (4,4)
       integer, kind        :: k1,k2
       integer(k1)          :: prot_b, publ_b
       integer(k2), private :: priv_b
  	   contains
  	     procedure, nopass :: bind_base1 => setValue
- 	     procedure, nopass :: bind_base2 => test_set 
+ 	     procedure, nopass :: bind_base2 => test_set
  	     procedure, nopass :: bind_base3 => priv_verify
    	end type base
 
@@ -69,13 +63,13 @@
    	   prot_a = arg1%prot_b
       	publ_a = arg1%publ_b
       	priv_a = arg1%priv_b
-      end subroutine test_set 
- 
+      end subroutine test_set
+
       logical function priv_verify(arg1)
  	     type(base(4,4)) :: arg1
    	      priv_verify =  (priv_a .eq. arg1%priv_b)
-      end function priv_verify 
-   end module 
+      end function priv_verify
+   end module
 
    module mod2
    use mod1
@@ -95,15 +89,15 @@
    integer, dimension(3) :: val
    type(base(4,4)) :: base_dt
    type(parent(4,4)) :: parent_dt
- 
+
    val = (/100, 200, 300/)
    call base_dt%bind_base1(base_dt, val)
    call base_dt%bind_base2(base_dt)
 
    if (prot_a .ne. 100 ) error stop 3
    if (publ_a .ne. 200 ) error stop 4
- 
+
    if (base_dt%bind_base3(base_dt) .neqv. .true. )   error stop 7
    if (parent_dt%bind_parent(base_dt) .neqv. .true. )   error stop 6
   end
-   
+

@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Section 9.5.3.7.3 Resolving derived-type input/output procedure references (generic binding)
 !*                                    - Make both generic type bound and interface available
@@ -125,19 +114,19 @@ program resolve006a
 
    write ( 1, iostat = stat, iomsg = msg ) b1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
-   
+
    rewind 1
-   
+
    read ( 1, iostat = stat, iomsg = msg )  b2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) )  error stop 2_4
-   
+
    dummy => b2
-   
+
    do while ( associated(dummy ) )
       print *, dummy%c
-      dummy => dummy%next   
+      dummy => dummy%next
    end do
-   
+
    close ( 1, status ='delete')
 
 end program

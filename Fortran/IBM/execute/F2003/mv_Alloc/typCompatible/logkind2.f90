@@ -1,27 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : logkind2.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM/TO are of logical*2
 !*                               use implicit to specify logical*2
 !*                               -qintsize = 2
-!*                               default logical type is kind 4 
+!*                               default logical type is kind 4
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -43,10 +31,10 @@
           call move_alloc(l1, l2)
 
           if ( allocated(l1)) stop 11
-          if ( .not. allocated(l2)) stop 13  
- 
+          if ( .not. allocated(l2)) stop 13
+
           if ( size(l2,2) /= 3 ) stop 21
-          if ( l2(2,1,3) .neqv. .true. ) stop 23 
+          if ( l2(2,1,3) .neqv. .true. ) stop 23
           if ( l2(1,3,2) .neqv. .false. ) stop 25
 
           end

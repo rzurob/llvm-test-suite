@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltVarAlloc.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltTypeVarAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 15, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a poly allocatable var. 
+!*
+!*   The selector is a poly allocatable var.
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -57,7 +51,7 @@
 
     TYPE, EXTENDS(Base) :: Child    ! (4,20)
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -65,13 +59,13 @@
     ELEMENTAL FUNCTION GetChildId(Arg)
     CLASS(Child(4,*)), INTENT(IN) :: Arg
     INTEGER      :: GetChildId
-      GetChildId = 2 
+      GetChildId = 2
     END FUNCTION
 
     ELEMENTAL FUNCTION GetBaseId(Arg)
     CLASS(Base(4,*)), INTENT(IN) :: Arg
     INTEGER      :: GetBaseId
-      GetBaseId = 1 
+      GetBaseId = 1
     END FUNCTION
 
   END MODULE
@@ -80,17 +74,17 @@
   USE M
   IMPLICIT NONE
 
-  CLASS(*), ALLOCATABLE :: Var 
+  CLASS(*), ALLOCATABLE :: Var
 
   ALLOCATE(Child(4,20) :: Var)
 
   SELECT TYPE ( Var )
-    CLASS DEFAULT 
+    CLASS DEFAULT
 
       ASSOCIATE ( As => Var )
       SELECT TYPE (As)
         CLASS DEFAULT
-          STOP 20   
+          STOP 20
         TYPE IS (CHARACTER(*))
           STOP 21
         TYPE IS (Base(4,*))
@@ -100,8 +94,8 @@
         CLASS is (Child(4,*))
           STOP 24
         TYPE IS (Child(4,*))
-          IF ( As%Base%GetId() .NE. 1 ) STOP 34 
-          IF ( As%GetId()      .NE. 2 ) STOP 35 
+          IF ( As%Base%GetId() .NE. 1 ) STOP 34
+          IF ( As%GetId()      .NE. 2 ) STOP 35
       END SELECT
       END ASSOCIATE
 

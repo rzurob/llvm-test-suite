@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer Input/Output list
 !*                               - try to read associate-name, and associate name is of unlimited polymorphic type
@@ -126,7 +110,7 @@ program associate002
    write (1, iostat=stat, iomsg=msg )       c3, i1
    write (1, iostat=stat, iomsg=msg )       c4, c5
    write (1, iostat=stat, iomsg=msg )       c6, c7
-   
+
    rewind 1
 
    associate ( a => b1, b => b2, c => b3, d => b4 )
@@ -216,7 +200,7 @@ program associate002
                print *,g
          end select
    end select
-   
+
    ! close the file appropriately
 
    close ( 1, status ='delete' )

@@ -1,29 +1,17 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlimitpoly9.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 05/30/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimit polymorphic,
-!*                               TO and FROM are component of a derived-type 
+!*                               TO and FROM are component of a derived-type
 !*                               which is a allocatable subobject of another
 !*                               derived-type
-!*                               dynamic type is a derived-type 
-!*                               FROM is zero-size array 
+!*                               dynamic type is a derived-type
+!*                               FROM is zero-size array
 !*				 TO is finalized, rank one
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -43,7 +31,7 @@ module m
        contains
          final :: final2
 	 final :: final3
-   end type 
+   end type
 
    type A
        class(*), allocatable ::  l1(:)
@@ -62,12 +50,12 @@ module m
        subroutine final2(arg)
           type(child), intent(in) :: arg
           print *, "finalization for child scalar"
-	  cNumrZero = cNumrZero + 1 
+	  cNumrZero = cNumrZero + 1
        end subroutine
        subroutine final3(arg)
           type(child), intent(in) :: arg(:)
           print *, "finalization for child rank one"
-	  cNumrOne = cNumrOne + 1 
+	  cNumrOne = cNumrOne + 1
        end subroutine
 
 end module
@@ -84,14 +72,14 @@ use m
    allocate( base :: b1%l2(1,1)%l1(6:5))
    if ( .not. allocated(b1%l2(1,1)%l1) ) stop 30
 
-   
+
    allocate( b1%l2(2,1)%l1(2:5), source = (/ (child('FORTRAN'), i = 1,4) /) )
-   if ( .not. allocated(b1%l2(2,1)%l1) ) stop 40 
+   if ( .not. allocated(b1%l2(2,1)%l1) ) stop 40
 
    cNumrZero = 0
    cNumrOne = 0
    bNum = 0
-       
+
    call move_alloc( b1%l2(1,1)%l1, b1%l2(2,1)%l1 )
 
    if ( cNumrOne /= 1 ) stop 41
@@ -99,7 +87,7 @@ use m
    if ( bNum /= 4 ) stop 45
 
    if ( allocated(b1%l2(1,1)%l1) ) stop 50
-   if ( .not. allocated(b1%l2(2,1)%l1) ) stop 60 
+   if ( .not. allocated(b1%l2(2,1)%l1) ) stop 60
 
    if ( same_type_as(bs, b1%l2(2,1)%l1) .neqv. .true. ) stop 69
 

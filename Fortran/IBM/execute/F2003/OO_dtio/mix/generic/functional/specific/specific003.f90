@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures (generic-binding)
 !*                                 - Specific Binding
@@ -122,13 +111,13 @@ program specific003
          write ( 1, "(DT)", iostat = stat, iomsg = msg )    g
    end select
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
-   
+
    select type ( b2 )
       type is (child)
          write ( 1, "(DT)", iostat = stat, iomsg = msg )    b2
    end select
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 2_4
-   
+
    write ( 1, "(2(DT,:,/))", iostat = stat, iomsg = msg )    c1, c2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 3_4
 
@@ -142,7 +131,7 @@ program specific003
          end select
    end select
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) )      error stop 4_4
-   
+
    select type ( b1 )
       type is (child)
         if ( ( b1%c /= 'jkl' ) .or. ( b1%i /= 1004 ) )  error stop 5_4

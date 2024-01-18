@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf042.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,25 +12,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf042
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Feb. 09, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : namelist output for logical/real/complex/integer
 !*                               with DECIAMl= specifier. This tests external file i/o.
@@ -51,7 +44,7 @@
       namelist /nml_i/ iarr
       namelist /nml_l/ larr
       namelist /nml_cx/ cxarr
-      
+
       open(unit=OUT, file='decimaleditf042.out')
 
       write(OUT,nml_r,decimal='comma')

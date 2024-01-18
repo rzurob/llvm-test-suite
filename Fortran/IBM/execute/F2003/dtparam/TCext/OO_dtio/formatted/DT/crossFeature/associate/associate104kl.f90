@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : associate104kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from associate104 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Associate Constructor: Unlimited Polymorphic Array Entities (read)
@@ -115,7 +107,7 @@ use m
             read ( 1, "(DT'u1-1'(8,3,9,4), DT'u1-2'(8,3,9,4))", iostat = stat, iomsg = msg, pos = 8 ) d
             if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 3_4
             print *, d%i
-            print *, d%j            
+            print *, d%j
       end select
    end associate
 

@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxclat25 1 a 2"
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat25.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,7 @@
 !*
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing string sections of variables defined
 !*                             : in different derived types as the augument keywords
-!*                             : 
-!*                             :  
+!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -51,7 +44,7 @@
          type C
            character(2049)      :: COMMAND
          end type C
-         
+
          type L
            integer              :: LENGTH
          end type L
@@ -79,7 +72,7 @@
          type A
            integer              :: ARGCOUNT
          end type A
-        
+
       end module modtype
 
 
@@ -107,7 +100,7 @@
       integer STATUS
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 3 ) & 
+      if ( CmdCount .ne. 3 ) &
       then
         error stop 63
       endif
@@ -136,7 +129,7 @@
 
 
       DO i  = 0, CmdCount
-       
+
         Nu%NUMBER = i
         call MyGetArg(CmdLine, Nu%NUMBER, Argument)
 
@@ -182,8 +175,8 @@
       endif
 
 
-      END 
- 
+      END
+
 
       INCLUDE 'cmdline.include'
 

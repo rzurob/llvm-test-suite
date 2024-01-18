@@ -1,25 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozReal007.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : REAL intrinsic
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                :If A is a boz-literal-constant     
-!*                              and KIND is present, the kind      
-!*                          	type parameter is that specified   
-!*				by the value of KIND               
+!*  DESCRIPTION                :If A is a boz-literal-constant
+!*                              and KIND is present, the kind
+!*                          	type parameter is that specified
+!*				by the value of KIND
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -39,7 +28,7 @@ program bozReal007
 
     testR = &
     REAL(B"01000000001000101110000001100111111011011110111011001010011100110011110010101110000111001011010010101111010101011011101010110001", 16)
-    
+
     if (testI(1) /= &
     B"0100000000100010111000000110011111101101111011101100101001110011") &
     error stop 1_4
@@ -49,12 +38,12 @@ program bozReal007
     error stop 2_4
 
     testR = REAL(O"777434343434343434345362143434343434343434", 16)
-    if (testI(1) /= O'377616161616161616162') error stop 3_4 
-    if (testI(2) /= O"1362143434343434343434") error stop 4_4 
+    if (testI(1) /= O'377616161616161616162') error stop 3_4
+    if (testI(2) /= O"1362143434343434343434") error stop 4_4
 
     testR = REAL(Z"3fffcd343866873bbc990cb9e52aa19d", 16)
-    if (testI(1) /= Z'3FFFCD343866873B') error stop 5_4  
-    if (testI(2) /= Z"BC990CB9E52AA19D") error stop 6_4  
+    if (testI(1) /= Z'3FFFCD343866873B') error stop 5_4
+    if (testI(2) /= Z"BC990CB9E52AA19D") error stop 6_4
 
     !Upper Bound
     testR = &

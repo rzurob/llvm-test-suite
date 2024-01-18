@@ -1,18 +1,13 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue05d.f
-!*  TEST CASE TITLE : F2008: VALUE attr allowed for dummy args of PURE proc
-!*  PROGRAMMER      : Gaby Baghdadi
 !*  DATE            : 2010-12-01
-!*  ORIGIN          : XL Fortran Compiler Development, IBM Torolab
 !*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
 !*  - dummy data objects declared as arrays with value attribute
-!*  - test above for module pure and elemental functions and subroutines, with 
+!*  - test above for module pure and elemental functions and subroutines, with
 !*    dummy args of all scalar data types
 !*  - update 2015/08/25 removed arrays from elemental procedures
 !*
@@ -38,7 +33,7 @@ contains
         complex*8, value, dimension(12) :: sx8
         complex, dimension(13) :: sx
         value :: sx
-	func1 = 0 
+	func1 = 0
     end function
 
     real elemental function func2(si8,si4,si2,si1,si,sr16,sr8,sr4,sr,sx32,sx16,sx8,sx)
@@ -58,7 +53,7 @@ contains
         complex*8, value :: sx8
         complex :: sx
         value :: sx
-	func2 = 0 
+	func2 = 0
     end function
 
     pure subroutine sub1(si8,si4,si2,si1,si,sr16,sr8,sr4,sr,sx32,sx16,sx8,sx)

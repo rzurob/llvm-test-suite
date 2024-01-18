@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh neg003 
+! %PRECMD: $TR_SRC/fxieee.presh neg003
 ! %COMPOPTS: -qfree=f90 -qxlf90=signedzero
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,22 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : February 6, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NEGATIVE with complex numbers.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -37,7 +28,6 @@
 !*
 !* 1.Test operation for negative reals of complex numbers
 !* 2.Test operation for positive reals of complex numbers
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -60,8 +50,8 @@
 ! Test operation for negative reals of complex numbers
 
 	cx = (-2345.89, -1.43E4)
-        if (ieee_is_negative(real(cx)) .neqv. .true.) error stop 1 
-        if (ieee_is_negative(imag(cx)) .neqv. .true.) error stop 2 
+        if (ieee_is_negative(real(cx)) .neqv. .true.) error stop 1
+        if (ieee_is_negative(imag(cx)) .neqv. .true.) error stop 2
 
         ! Now check that no flags were turned on.
         call ieee_get_flag(ieee_all,flag_values)
@@ -75,7 +65,7 @@
 
         cx8 = (-2345.89_8, -1.43D4)
         if (ieee_is_negative(real(cx8)) .neqv. .true.) error stop 3
-        if (ieee_is_negative(imag(cx8)) .neqv. .true.) error stop 4 
+        if (ieee_is_negative(imag(cx8)) .neqv. .true.) error stop 4
 
         ! Now check that no flags were turned on.
         call ieee_get_flag(ieee_all,flag_values)
@@ -142,7 +132,7 @@
         call ieee_get_flag(ieee_all,flag_values)
 
         do i = 1,5
-            if (flag_values(i) .neqv. .false.)error stop 60 
+            if (flag_values(i) .neqv. .false.)error stop 60
         end do
 
         end program

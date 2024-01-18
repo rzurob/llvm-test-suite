@@ -1,18 +1,8 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Characters with deferred length type parameter
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : scalar character with deferred length with substring assignments
 !*                               allocate statement
@@ -41,7 +31,7 @@ program deferLenAllocate009
 
    print *, c1
    c1(4:6) = ''
-   
+
    ! should be padded with blanks
    if ( c1 /= 'xxx   ghijkl' ) error stop 1_4
 
@@ -50,7 +40,7 @@ program deferLenAllocate009
    print *, c1
    c1(10:12) = 'zzz'
    print *, c1
-   
+
    allocate ( c2, source = c1(2:12) )
    print *, c2
 

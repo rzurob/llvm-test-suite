@@ -1,24 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozInt008.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 01/23/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : INT intrinsic using KIND parameter
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : A boz-literal-constant shall appear
 !*				 as the actual argument associated with
-!*				the dummy argument A of the numeric 
+!*				the dummy argument A of the numeric
 !*				intrinsic function INT. If KIND is
 !*				present, the kind type parameter is
 !*				that specified by the value of KIND.

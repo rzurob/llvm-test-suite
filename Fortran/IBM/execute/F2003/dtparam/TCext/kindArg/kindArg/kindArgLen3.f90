@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgLen3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : LEN 
+!*  SECONDARY FUNCTIONS TESTED : LEN
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,11 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Description. Returns the length of a character entity. 
-!*    
-!*  (322672) 
+!*  Description. Returns the length of a character entity.
+!*
+!*  (322672)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,14 +37,14 @@
       INTEGER, LEN  :: N1
     CHARACTER(:), ALLOCATABLE :: CC(:,:)
   END TYPE
-  
+
   INTEGER(1) :: I1
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
-    
+
   TYPE(DT(4,20)), POINTER :: T
- 
+
   ALLOCATE(T)
   ALLOCATE(CHARACTER(128) :: T%CC(128,128))
 

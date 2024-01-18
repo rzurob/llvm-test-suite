@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d362336.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d362336.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 19 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 19 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 362336
@@ -26,7 +18,7 @@ module m
    type A(l1)
       integer,len  :: l1
       contains
-        procedure :: assignA                
+        procedure :: assignA
         generic   :: assignment(=)=>assignA
    end type
 
@@ -34,7 +26,7 @@ module m
       integer,len   :: l2
 
       type(A(3)) :: acomp
-      procedure(afun),nopass,pointer :: aptr=>null()  
+      procedure(afun),nopass,pointer :: aptr=>null()
    end type
 
   contains
@@ -49,7 +41,7 @@ module m
          class(A(3)),intent(in)    :: dt
       end subroutine
 
-       subroutine assignB(this,dt)          
+       subroutine assignB(this,dt)
          class(B(2)),intent(inout) :: this
          class(B(2)),intent(in)    :: dt
       end subroutine

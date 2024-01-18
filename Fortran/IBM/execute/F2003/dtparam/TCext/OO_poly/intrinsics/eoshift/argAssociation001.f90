@@ -1,13 +1,9 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qnock -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/intrinsics/eoshift/argAssociation001.f
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/eoshift
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/08/2005
 ! PRIMARY FUNCTIONS TESTED   : eoshift
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : ARRAY is a dummy argument. Dummy
 !                              argument is non-pointer, non-allocatable,
 !                              non-poly, and is array.

@@ -8,7 +8,7 @@ program main
     subroutine sub11(a)
       integer :: a
     end subroutine
- 
+
     subroutine sub12(a)
       integer :: a(..)
     end subroutine
@@ -18,7 +18,7 @@ program main
     subroutine sub21(a)
       integer :: a(:)
     end subroutine
- 
+
     subroutine sub22(a)
       integer :: a(..)
     end subroutine
@@ -28,7 +28,7 @@ program main
     elemental subroutine sub31(a)
       integer, intent(in) :: a
     end subroutine
- 
+
     subroutine sub32(a)
       integer :: a(..)
     end subroutine

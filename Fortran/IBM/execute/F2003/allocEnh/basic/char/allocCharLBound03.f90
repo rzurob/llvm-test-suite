@@ -1,14 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : allocCharLBound03 - Basic Tests: CHARACTER
 !*                               Intrinsic Type
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : September 12, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Allocated ALLOCATABLE Array of Type CHARACTER
@@ -16,7 +11,6 @@
 !*                               "1" as the Lower Bound for an N-Dimension
 !*                               Array (1<= N <= 7) -- N == 5
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATABLE Attribute, Intrinsic Assignment
@@ -28,7 +22,6 @@
 !*  7.4.1.1 General form
 !*
 !*  R734 assignment-stmt  is  variable = expr
-!*
 !*
 !*  7.4.1.3 Interpretation of intrinsic assignments
 !*
@@ -66,7 +59,7 @@ PROGRAM allocCharLBound03
 
     IF (.NOT. ALLOCATED( chrArrAlloc1 )) CALL zzrc( 10_4 )
     chrArrAlloc1 = RESHAPE((/ ('ibm', i = 1, 243) /), (/ 3,3,3,3,3 /))
-    
+
 
     ALLOCATE(chrArrAlloc2( -1:1,-1:1,-1:1,-1:1,-1:1 ),&
         SOURCE=RESHAPE((/ (CHAR( (32 + MOD(i, 94)) ), i = 1, 243) /),&

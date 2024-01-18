@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Structure Component: Scalar Polymorphic Derived Type Component
@@ -80,9 +69,9 @@ use m
 
    write ( 1, "(DT'_con2'(6,7),DT'_con2base'(8))", iostat = stat, iomsg = msg )     c2%b2, c2%b2%base
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 2_4
-   
+
    c1 = container1(child('JKL','MNO'))
-   
+
    select type ( g => c1%b1 )
       type is ( child )
          write ( 1, "(DT'_con1'(7,8),DT'_con1base'(9))", iostat = stat, iomsg = msg )     c1%b1, g%base

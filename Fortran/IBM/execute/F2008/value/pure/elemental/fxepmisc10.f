@@ -1,40 +1,33 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qstrict -qrndsngl -qnomaf -qfixed=132
 ! %GROUP: fxepmisc10.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : User Defined Elemental Procedures
-!*                                                                     
-!*  PROGRAMMER                 : Chris Hayes 
-!*  DATE                       : July 28, 1998
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
-!*  PRIMARY FUNCTIONS TESTED   : ELEMENTAL procedures
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  ===================================================================
 !*
-!*  DRIVER STANZA              : xlf95
+!*  DATE                       : July 28, 1998
+!*  ORIGIN                     : AIX Compiler Development,
+!*
+!*  PRIMARY FUNCTIONS TESTED   : ELEMENTAL procedures
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qstrict -qrndsngl -qnomaf
 !*
 !*  KEYWORD(S)                 : ELEMENTAL, array, parallel sections, derived
 !*                               type, real, integer, character
-!*  TARGET(S)                  : 
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Test calls to elemental functions 
+!*  DESCRIPTION                : Test calls to elemental functions
 !*                               from within parallel sections. Here
 !*                               the components of a derived type
 !*                               are evaluated in parallel.
@@ -62,8 +55,8 @@
       END TYPE
 
       integer, parameter :: const=40
-      TYPE(dt)   arr1(const),arr2(const),arr3(const),arr4(const)     
-      TYPE(dt)   res1(const),res2(const),res3(const),res4(const)     
+      TYPE(dt)   arr1(const),arr2(const),arr3(const),arr4(const)
+      TYPE(dt)   res1(const),res2(const),res3(const),res4(const)
       integer count1, count2, count3, count4
       integer    iarr1(10),iarr2(10),iarr3(10)
       real       rarr1(15),rarr2(15),rarr3(15)
@@ -97,7 +90,7 @@
        do count1=1,const
          res1(count1)%int_ar =iarr1*iarr2-iarr3
          res1(count1)%real_ar=rarr1/rarr2/rarr3
-       end do 
+       end do
 
        res2%int_sc =5*12-(-13)
        res2%real_sc=15.5E0/132.5E0/2.10E0
@@ -105,7 +98,7 @@
        do count1=1,const
          res2(count1)%int_ar =iarr2*iarr3-iarr1
          res2(count1)%real_ar=rarr2/(rarr3+1.0e0)/(rarr1+1.0e0)
-       end do 
+       end do
 
        res3%int_sc =52*(-62)-73
        res3%real_sc=31.5E0/213.25E0/121.0E0
@@ -113,7 +106,7 @@
        do count1=1,const
          res3(count1)%int_ar =iarr3*iarr1-iarr2
          res3(count1)%real_ar=rarr3/(rarr1+1.0e0)/(rarr2+1.0e0)
-       end do 
+       end do
 
        res4%int_sc =-215*612-(-513)
        res4%real_sc=901.5E0/(-213.25E0)/(-217.0E0)
@@ -121,7 +114,7 @@
        do count1=1,const
          res4(count1)%int_ar =iarr3*iarr2-iarr1
          res4(count1)%real_ar=rarr3/(rarr2+1.0e0)/(rarr1+1.0e0)
-       end do 
+       end do
 
 !SMP$ PARALLEL SECTIONS, PRIVATE(count1)
 !SMP$ SECTION
@@ -221,17 +214,17 @@
       end do
 
 !SMP$ END PARALLEL SECTIONS
- 
+
 ! Verify the results of the previous test
       call check(arr4,res4,5,const)
 
       CONTAINS
 !*********************************************************************
 !* Elemental Function definitions
-!* 
+!*
 !*********************************************************************
 !*********************************************************************
-!* elemfunc1: 
+!* elemfunc1:
 !*********************************************************************
 
       ELEMENTAL INTEGER FUNCTION elemfunc1(A1,A2,A3)
@@ -240,7 +233,7 @@
       END FUNCTION elemfunc1
 
 !*********************************************************************
-!* elemfunc2: 
+!* elemfunc2:
 !*********************************************************************
 
       ELEMENTAL REAL FUNCTION elemfunc2(A1,A2,A3)
@@ -249,7 +242,7 @@
       END FUNCTION elemfunc2
 
 !*********************************************************************
-!* elemfunc3: 
+!* elemfunc3:
 !*********************************************************************
 
       ELEMENTAL CHARACTER*5 FUNCTION elemfunc3(A1,A2,A3)
@@ -258,7 +251,7 @@
       END FUNCTION elemfunc3
 
 !*********************************************************************
-!* elemfunc4: 
+!* elemfunc4:
 !*********************************************************************
 
       ELEMENTAL FUNCTION elemfunc4(A1,A2,A3)
@@ -293,9 +286,9 @@
          end do
        end do
       END SUBROUTINE check
-   
+
 
 !*********************************************************************
 !* Main program ends
 !*********************************************************************
-      END 
+      END

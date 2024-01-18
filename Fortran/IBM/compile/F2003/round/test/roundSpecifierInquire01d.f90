@@ -1,22 +1,14 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ROUND specifier= 
-!*                             
+!*  PRIMARY FUNCTIONS TESTED   : ROUND specifier=
 !*
-!*  DESCRIPTION                : diagnostic test for round with inquire 
-!*    
+!*  DESCRIPTION                : diagnostic test for round with inquire
+!*
 !* ===================================================================
 
-  program roundSpecifierInquire01d 
+  program roundSpecifierInquire01d
     use ISO_FORTRAN_ENV
     character(*), parameter:: r_mode(2) = (/"down", "zero"/)
 
@@ -35,7 +27,7 @@
     contains
 
        character(:) function getRoundMode(i)
-           allocatable :: getRoundMode 
+           allocatable :: getRoundMode
 
            allocate (character(i) :: getRoundMode)
        end function
@@ -45,9 +37,9 @@
 
            select type (x)
                type is (character(*))
-                   inquire (1, round=x)  !<-- wrong 
+                   inquire (1, round=x)  !<-- wrong
 
            end select
        end subroutine
 
-  end program roundSpecifierInquire01d 
+  end program roundSpecifierInquire01d

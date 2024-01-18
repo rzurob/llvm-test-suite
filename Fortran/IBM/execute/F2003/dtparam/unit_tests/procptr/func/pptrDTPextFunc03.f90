@@ -7,7 +7,7 @@
     TYPE, EXTENDS(DT) :: DT1
       INTEGER(K)   :: I=K
       CHARACTER(L) :: C="!!!!!!!"
-      PROCEDURE(Integer), NOPASS, POINTER :: ProcPtr => NULL() 
+      PROCEDURE(Integer), NOPASS, POINTER :: ProcPtr => NULL()
     END TYPE
   END MODULE
 
@@ -18,7 +18,7 @@
   dt1obj%ProcPtr => func1
   print*, dt1obj%procptr()
   end
-  
+
   integer function func1()
     func1 = 12
   end function

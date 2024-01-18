@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : nullGeneric09.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : nullGeneric09.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 27 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 27 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD]) 
+!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD])
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.88 
+!* 1. TEST SECTION 13.7.88
 !* 2. NULL([MOLD])
 !* 3. MOLD IS POINTER OR ALLOCATABLE
-!* 4. NULL(MOLD) IS USED AS ACTUAL ARGUMENT OF GENERIC TYPE-BOUND PROCEDURE 
+!* 4. NULL(MOLD) IS USED AS ACTUAL ARGUMENT OF GENERIC TYPE-BOUND PROCEDURE
 !* 5. ACTUAL ARGUMENTS ARE DIFFERENT TYPE , TYPE PARAMETER AND RANK
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -159,7 +151,7 @@ program nullGeneric09
    if(.not. associated(a1,ta1))               error stop 16_4
    if(.not. allocated(a2))                    error stop 17_4
    if(.not. associated(b1,tb1))               error stop 18_4
-   if(.not. allocated(b2))                    error stop 19_4   
+   if(.not. allocated(b2))                    error stop 19_4
    if(.not. associated(b3))                   error stop 20_4
    if(.not. associated(b4))                   error stop 21_4
 
@@ -173,10 +165,10 @@ program nullGeneric09
    call any1%proc(null(a1))
    call any1%proc(null(a2))
    call any1%proc(null(b1))
-   call any1%proc(null(b2))   
+   call any1%proc(null(b2))
    call any1%proc(null(b3))
    call any1%proc(null(b4))
-   
+
 end program
 
 

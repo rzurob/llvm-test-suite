@@ -21,7 +21,7 @@ program main
   call cfun(cproc)
 
   contains
-        subroutine check_c_to_f(c_arg2,c_len, extent, test_no) bind(c) 
+        subroutine check_c_to_f(c_arg2,c_len, extent, test_no) bind(c)
         use, intrinsic :: iso_c_binding
         character(*) :: c_arg2(2,2)
         integer(C_INT) c_len,extent, test_no
@@ -46,7 +46,7 @@ program main
         endif
        i = LBOUND(c_arg2,1)
        DO WHILE (i .LE. extent)
-        if( c_arg2(i,i) .NE. c_test) then        
+        if( c_arg2(i,i) .NE. c_test) then
          error STOP 4
          endif
         i = i+1

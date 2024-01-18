@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecUseOfSpecExpr
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 11, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  
 !*   A specification-expr in an array-spec, in a type-param-value in a declaration-type-spec corresponding to
-!*   a length type parameter, or in a char-length in an entity-decl shall be an initialization expression unless 
-!*   it is in an interface body (12.3.2.1), the specification part of a subprogram, or the declaration-type-spec 
-!*   of a FUNCTION statement (12.5.2.1). 
-!* 
+!*   a length type parameter, or in a char-length in an entity-decl shall be an initialization expression unless
+!*   it is in an interface body (12.3.2.1), the specification part of a subprogram, or the declaration-type-spec
+!*   of a FUNCTION statement (12.5.2.1).
 !*
-!*     
-!*
-!*  (340828) 
+!*  (340828)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -54,12 +43,12 @@
   PROGRAM dtParamTypeDecUseOfSpecExpr
   USE M
 
-  INTERFACE 
+  INTERFACE
 
     SUBROUTINE S(J, T)
-    IMPORT 
+    IMPORT
       INTEGER :: J
-      TYPE(DT(1,J)) :: T(J) 
+      TYPE(DT(1,J)) :: T(J)
     END SUBROUTINE
 
     FUNCTION F(J,T)
@@ -88,28 +77,28 @@
   SUBROUTINE S(J, T)
   USE M
   INTEGER :: J
-  TYPE(DT(1,J)) :: T(J) 
+  TYPE(DT(1,J)) :: T(J)
 
   IF (T%K        .NE. 1   )              STOP 11
   IF (T%L        .NE. 100 )              STOP 12
   IF (SIZE(T)    .NE. 100 )              STOP 13
   IF (ANY (T%I   .NE. [(I,I=1, 100 )] )) STOP 14
-  
+
   END SUBROUTINE
 
   FUNCTION F(J, T)
   !FUNCTION F(J, T)
-  USE M 
+  USE M
   INTEGER :: J
   TYPE(DT(2,J)) :: T(J) , F
-  !TYPE(DT(2,J)) :: F(J) 
+  !TYPE(DT(2,J)) :: F(J)
   DIMENSION  :: F(J)
 
   IF (T%K        .NE. 2   )              STOP 21
   IF (T%L        .NE. 1000 )             STOP 22
   IF (SIZE(T)    .NE. 1000 )             STOP 23
   IF (ANY (T%I   .NE. [(I,I=1, 1000)] )) STOP 24
-  
+
   F = T(J:1:-1)
 
   END FUNCTION

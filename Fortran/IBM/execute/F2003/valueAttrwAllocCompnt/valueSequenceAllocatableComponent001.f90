@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Value Attribute for derived type containing allocatable components
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : value attribute with derived type containing allocatable components
 !*                                 - with sequence type allocatable component
@@ -31,12 +20,12 @@
 module m
 
    use ISO_C_BINDING
-   
+
    type seq
       sequence
       integer :: i
    end type
-   
+
    type, bind(c) :: bb
       integer(C_INT) :: j
    end type

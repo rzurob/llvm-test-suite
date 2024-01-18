@@ -21,7 +21,6 @@
          f1 = 3.0
       end function
 
-
       !! result keyword(s) only
       function f2 (a)   result(f0)  ! ok: one RESULT keyword
         f0 = 3.0;
@@ -38,7 +37,6 @@
         fb = 3.0;
       end
 
-
       !! bind keyword(s) only
       function f6 (a)   bind(C)  ! ok: one BIND keyword
         f6 = 3.0;
@@ -47,7 +45,6 @@
       function f7 (a)   bind(C) bind(C)  ! illegal: two BIND keywords
         f7 = 3.0;
       end
-
 
       !! bind-w-name keyword(s) only
       function f8 (a)   bind(C,name='f8B')  ! ok: one BIND keyword
@@ -60,7 +57,6 @@
       function fa (a)   bind(C,name='faB') bind(C,name='faC')  ! illegal: two BIND keywords, diff name
         fa = 3.0;
       end
-
 
       !! result + bind
       function fb (a)   result(f0) bind(C)  ! ok: RESULT 1st, BIND 2nd
@@ -77,7 +73,6 @@
       function fe (a)   bind(C,name='feB') result(f0)  ! ok: BIND-NAME 1st, ...
         f0 = 3.0;
       end
-
 
       !! multiple result + bind keyword(s)
       ! rrbb, bbrr, rbrb, brbr, rbrr, brbb.
@@ -101,7 +96,6 @@
       function fk (a)   bind(C) result(f0) bind(C) bind(C)  ! illegal*2: 4 kwds
         f0 = 3.0;
       end
-
 
       !! multiple result + bind-w-name keyword(s):
       ! rrbb,rrbB, bbrr,bBrr, rbrb,rbrB, brbr,brBr
@@ -140,7 +134,6 @@
      & result(f0)  ! illegal*2: 4 keywords
         f0 = 3.0;
       end
-
 
       !! multiple result + bind-w-name keyword(s):
       ! rbrr,

@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fdtedit002dkl
 !*
-!*  PROGRAMMER                 : David Forster (derived from fdtedit002d by Robert Ma)
 !*  DATE                       : 2007-06-07 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Test if compiler complains when char-literal-constant
@@ -72,7 +64,7 @@ use m
 
    integer :: stat
    character(150) :: msg
- 
+
    open (1, file = 'fdtedit002dkl.1', form='formatted', access='sequential' )
 
    allocate ( b1, source = base(4)(100) )

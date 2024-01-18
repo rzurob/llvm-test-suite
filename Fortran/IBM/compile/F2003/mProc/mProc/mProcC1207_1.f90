@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcC1207_1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcC1207_1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 28, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generalization of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generalization of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,33 +19,31 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  C1207 (R1206) A procedure-name shall have an explicit interface and shall
 !*  refer to an accessible procedure pointer, external procedure,
-!*  dummy procedure, or module procedure.  
+!*  dummy procedure, or module procedure.
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM mProcC1207_1 
+  PROGRAM mProcC1207_1
 
   PROCEDURE() :: Sub
   INTERFACE Fun
-    PROCEDURE Sub 
+    PROCEDURE Sub
   END INTERFACE
 
-  PROCEDURE(INTEGER) Fun1 
+  PROCEDURE(INTEGER) Fun1
   INTERFACE Fun
-    PROCEDURE Fun1 
+    PROCEDURE Fun1
   END INTERFACE
 
   External ExtSub
   INTERFACE Fun
-    PROCEDURE ExtSub 
+    PROCEDURE ExtSub
   END INTERFACE
 
   INTERFACE Fun
@@ -68,7 +60,7 @@
   RECURSIVE FUNCTION F() !RESULT(R)
   INTEGER :: F
     INTERFACE Fun
-      PROCEDURE F 
+      PROCEDURE F
     END INTERFACE
     F = 1
   END FUNCTION

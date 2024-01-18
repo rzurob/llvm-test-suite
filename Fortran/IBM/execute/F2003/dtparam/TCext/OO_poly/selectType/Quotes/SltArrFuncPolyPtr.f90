@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrFuncPolyPtr.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrFuncPolyPtr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is a poly array pointer from function call
-!*  
+!*
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -53,7 +47,7 @@
 
     TYPE  :: Zero(K1)    ! (4)
         INTEGER, KIND :: K1
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4)
       INTEGER(K1) :: BaseId = 1
@@ -105,7 +99,7 @@
   TYPE(Child(4)), TARGET :: V(2,2), W(2,2)
   INTEGER :: i
   CLASS(*), POINTER :: P1(:,:), P2(:,:)
-  
+
   W%BaseId = -1
   W%ChildId = -2
 
@@ -114,14 +108,14 @@
   CALL Sub(P1, P2)
 
   CONTAINS
-  
+
   SUBROUTINE Sub(Arg1, Arg2)
   CLASS(*) :: Arg1(:, :), Arg2(:, :)
   LOGICAL :: Mask(2, 2) = .true.
 
-  Mask(1,2) = .false. 
+  Mask(1,2) = .false.
   Mask(2,1) = .false.
- 
+
   SELECT TYPE ( V=>MERGE(Arg1, Arg2, Mask) )
     CLASS DEFAULT
       SELECT TYPE (V)
@@ -145,9 +139,9 @@
 
   END SELECT
 
-  END SUBROUTINE 
- 
- 
+  END SUBROUTINE
+
+
   END
 
 

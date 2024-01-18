@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  AttrOptionalArrSec.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  AttrOptionalArrSec.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : AttrOptionalArrSec
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 22, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,10 +32,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
-!*   The selector has an array section  
-!*   the optional attribute   
-!*    () 
+!*
+!*   The selector has an array section
+!*   the optional attribute
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,7 +47,7 @@
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4,20)
       INTEGER(K1) :: BaseId = 1
@@ -104,13 +98,13 @@
   USE M
   INTEGER :: i
   TYPE (Child(4,20)) :: W(6)
-  
+
   INTERFACE
     SUBROUTINE Sub(Arg, I, J)
     IMPORT Zero
     CLASS(Zero(4,*)), OPTIONAL :: Arg(I:J)
     INTEGER               :: I, J
-    END SUBROUTINE 
+    END SUBROUTINE
   END INTERFACE
 
   W(::2) = Child(4,20)(BaseID=-1, ChildID=-2)
@@ -127,7 +121,7 @@
   IF ( ANY(W(2::2)%ChildID       .NE. 0 )) STOP 47
   IF ( ANY(W(2::2)%GetId()       .NE. 0 )) STOP 48
 
-  END 
+  END
 
   SUBROUTINE Sub(Arg, I, J)
   USE M

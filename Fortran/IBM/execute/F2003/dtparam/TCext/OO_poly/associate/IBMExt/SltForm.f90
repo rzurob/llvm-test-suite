@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  SltForm.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  SltForm.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : SltForm 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : SltForm
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 05, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,12 +33,12 @@
 !*
 !*  DESCRIPTION
 !*    The selector has the form a.b
-!*    () 
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM SltForm 
+  PROGRAM SltForm
   IMPLICIT NONE
 
   TYPE :: L0(K1)    ! (4)
@@ -59,9 +53,9 @@
   TYPE, EXTENDS(L1) :: L2    ! (4)
     INTEGER(K1) :: I2=2
   END TYPE
-  
+
   TYPE (L2(4)) :: L
- 
+
   ASSOCIATE ( As => L  )
     IF ( As.I2 .NE. 2  )      STOP 20
     As.I2 = -2
@@ -72,15 +66,15 @@
 
       ASSOCIATE ( As => As.L0  )
         IF ( As.I0 .NE. 0  )  STOP 22
-      END ASSOCIATE 
+      END ASSOCIATE
 
       IF ( As.L0.I0 .NE. 0  ) STOP 23
       IF ( As.I1 .NE. -1  )   STOP 24
 
-    END ASSOCIATE 
+    END ASSOCIATE
 
     IF ( As.I2 .NE. -2  )     STOP 25
 
-  END ASSOCIATE 
+  END ASSOCIATE
 
   END

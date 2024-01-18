@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  SetGlobeEnt.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : SetGlobeEnt 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : SetGlobeEnt
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Set globe entities 
-!* 
-!*  () 
+!*
+!*  Set globe entities
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -51,7 +45,7 @@
     TYPE, ABSTRACT :: DT0(N1,K1)    ! (20,8)
       INTEGER, KIND :: K1
       INTEGER, LEN  :: N1
-      INTEGER(K1)   :: IArr(2) 
+      INTEGER(K1)   :: IArr(2)
       CONTAINS
       PROCEDURE, PASS(Obj)   :: GetInt
     END TYPE
@@ -62,16 +56,16 @@
   CONTAINS
 
     ELEMENTAL FUNCTION GetInt(Num, Obj)
-    CLASS(DT0(*,8)), INTENT(IN)    :: Obj 
+    CLASS(DT0(*,8)), INTENT(IN)    :: Obj
     INTEGER, INTENT(IN)      :: Num
-    INTEGER(KIND(Obj%IArr))   :: GetInt 
-      GetInt = Obj%IArr(Num) 
+    INTEGER(KIND(Obj%IArr))   :: GetInt
+      GetInt = Obj%IArr(Num)
     END FUNCTION
 
   END MODULE
 
 
-  PROGRAM SetGlobeEnt 
+  PROGRAM SetGlobeEnt
   USE M
   IMPLICIT NONE
 
@@ -86,7 +80,7 @@
 
     SELECT TYPE (U => Ptr(:,:,:))
     CLASS IS (DT0(*,8))
-      STOP 20 
+      STOP 20
     CLASS IS (DT(*,8))
       ASSOCIATE (U => U)
 
@@ -104,7 +98,7 @@
         IF (ANY(U(:,:,:)%IArr(2)  .NE. -2)) STOP 33
         IF (ANY(U(:,:,:)%GetInt(1).NE. -1)) STOP 34
         IF (ANY(U(:,:,:)%GetInt(2).NE. -2)) STOP 35
-     
+
       END ASSOCIATE
     END SELECT
 

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361880_2.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361880_2.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 5 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 5 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 361880
@@ -38,7 +30,7 @@ module m
    end interface
 
    contains
-       subroutine assignC1(this,dt)       
+       subroutine assignC1(this,dt)
            class(C(*)),intent(inout) :: this
            class(C(*)),intent(in) :: dt
 
@@ -58,10 +50,10 @@ program d361880_2
      contains
 
           subroutine allocComp(dt)
-               type(C(*)),intent(inout) :: dt(:)  
+               type(C(*)),intent(inout) :: dt(:)
 
-                integer :: l                  
-                l=lbound(dt,1)               
+                integer :: l
+                l=lbound(dt,1)
                 allocate(dt(lbound(dt,1))%a1comp(2))
                 allocate(dt(lbound(dt,1)+1)%a1comp(2))
 

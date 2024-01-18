@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf037.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,25 +12,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf037
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 04, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This tests the default behaviour of
 !*                               decimal edit mode as well as validating
@@ -50,14 +43,14 @@
       integer, parameter :: NUM_TESTS = 4 ! number of records in each input files
 
       character(50) :: buffer, my_fmt
-      
+
       integer :: i
-      
+
       ! open the unit with default decimal mode
       open(IN_C, file=FNAME_C)
       open(IN_P, file=FNAME_P)
       open(OUT, file=FNAME_OUT)
-      
+
       my_fmt='point'
       write(OUT, *, decimal=my_fmt) rl1
 
@@ -84,7 +77,7 @@
       open(IN_C, file=FNAME_C)
       open(IN_P, file=FNAME_P)
       open(OUT, file=FNAME_OUT, position='append', decimal='comma')
-      
+
       write(OUT, '(dp, f12.9)') rl1
 
       ! read everything from input files and output it to OUT
@@ -102,7 +95,7 @@
 
       close(IN_C)
       close(IN_P)
-      
+
       write(OUT, '(dp, f12.9)') rl1      ! dp should win
       my_fmt='(dc, f12.9)'
       write(OUT, my_fmt, decimal='point') rl1 ! dc should win

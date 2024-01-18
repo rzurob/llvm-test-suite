@@ -1,29 +1,14 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 03/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : dtparam (section 4.5.9: structure constructor)
 !                               Case: Use of different forms of expressions for
 !                               data component in structure constructor: named
 !                               constants, type parameter name and type
 !                               parameter inquiry.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -43,7 +28,7 @@ module m
         type (base(k,n)) :: data = base(k,n)(data=(/(-1.0*i, i=1,n)/), kindVal=k)
     end type
 
-    type (base(8, 20)) b_const 
+    type (base(8, 20)) b_const
 
     parameter (b_const = base(8,20)(kindVal=8, &
         data=(/(mod(3.65d2, i*1.0d0), i=1,20)/)))

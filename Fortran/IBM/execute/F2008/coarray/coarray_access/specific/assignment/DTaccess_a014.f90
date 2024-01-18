@@ -1,17 +1,13 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a014.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
-!*  Assign pointer non-coarray variables to a Derived Type coarray component 
+!*  Assign pointer non-coarray variables to a Derived Type coarray component
 !*  (scalars and arrays of different kinds) and vice versa
 !*
 !* ============================================================================
@@ -51,13 +47,13 @@ program main
 	allocate(v8)
 	v4 = min4
 	v8 = min8
-	
+
 	allocate(iatmp1(10), source = [integer(1):: 1,1,2,3,5,8,13,21,34,v1])
 	allocate(iatmp2(10), source = [integer(2):: v2,0,v2,0,v2,0,v2,0,v2,0])
 	allocate(iatmp4(10), source = [integer(4):: 0,v4,0,v4,0,v4,0,v4,0,v4])
 	allocate(iatmp8(10), source = [integer(8):: v8,0,v8,0,v8,0,v8,0,v8,0])
 
-	
+
 	! test assignment to coarrays
 	CAF%i1 = v1
 	CAF%i2 = v2
@@ -74,32 +70,32 @@ program main
 		print *, "expected", min1, min2, min4, min8
 		error stop 21
 	end if
-	
+
 	if (any(CAFAR%i1 /= [integer(1) :: 1,1,2,3,5,8,13,21,34,v1])) then
 		print *, "actual", CAFAR%i1
 		print *, "expected", 1,1,2,3,5,8,13,21,34,v1
 		error stop 22
 	end if
-	
+
 	if (any(CAFAR%i2 /= [integer(2) :: v2,0,v2,0,v2,0,v2,0,v2,0])) then
 		print *, "actual", CAFAR%i2
 		print *, "expected", v2,0,v2,0,v2,0,v2,0,v2,0
 		error stop 23
 	end if
-	
+
 	if (any(CAFAR%i4 /= [integer(4) :: 0,v4,0,v4,0,v4,0,v4,0,v4])) then
 		print *, "actual", CAFAR%i4
 		print *, "expected", 0,v4,0,v4,0,v4,0,v4,0,v4
 		error stop 24
 	end if
-	
+
 	if (any(CAFAR%i8 /= [integer(8) :: v8,0,v8,0,v8,0,v8,0,v8,0])) then
 		print *, "actual", CAFAR%i8
 		print *, "expected", v8,0,v8,0,v8,0,v8,0,v8,0
 		error stop 25
 	end if
 
-	
+
 	! test assignment from coarrays (first, reset targets)
 	v1 = 0
 	v2 = 0
@@ -124,32 +120,32 @@ program main
 		print *, "expected", min1, min2, min4, min8
 		error stop 31
 	end if
-	
+
 	if ( any(iatmp1 /= [integer(1) :: 1,1,2,3,5,8,13,21,34,v1]) ) then
 		print *, "actual", iatmp1
 		print *, "expected", 1,1,2,3,5,8,13,21,34,v1
 		error stop 32
 	end if
-	
+
 	if ( any(iatmp2 /= [integer(2) :: v2,0,v2,0,v2,0,v2,0,v2,0]) ) then
 		print *, "actual", iatmp2
 		print *, "expected", v2,0,v2,0,v2,0,v2,0,v2,0
 		error stop 33
 	end if
-	
+
 	if ( any(iatmp4 /= [integer(4) :: 0,v4,0,v4,0,v4,0,v4,0,v4]) ) then
 		print *, "actual", iatmp4
 		print *, "expected", 0,v4,0,v4,0,v4,0,v4,0,v4
 		error stop 34
 	end if
-	
+
 	if ( any(iatmp8 /= [integer(8) :: v8,0,v8,0,v8,0,v8,0,v8,0]) ) then
 		print *, "actual", iatmp8
 		print *, "expected", v8,0,v8,0,v8,0,v8,0,v8,0
 		error stop 35
 	end if
 
-	
+
 	! try targets - first release already allocated space, then set up pointers and set to max value
 	deallocate(v1, iatmp1, v2, iatmp2, v4, iatmp4, v8, iatmp8)
 
@@ -190,25 +186,25 @@ program main
 		print *, "expected", v1, v2, v4, v8
 		error stop 41
 	end if
-	
+
 	if ( any(CAFAR%i1 /= [integer(1):: 1,1,2,3,5,8,13,21,34,v1]) ) then
 		print *, "actual", CAFAR%i1
 		print *, "expected", 1,1,2,3,5,8,13,21,34,v1
 		error stop 42
 	end if
-	
+
 	if ( any(CAFAR%i2 /= [v2,mid2,v2,mid2,v2,mid2,v2,mid2,v2,mid2]) ) then
 		print *, "actual", CAFAR%i2
 		print *, "expected", v2,mid2,v2,mid2,v2,mid2,v2,mid2,v2,mid2
 		error stop 43
 	end if
-	
+
 	if ( any(CAFAR%i4 /= [mid4,v4,mid4,v4,mid4,v4,mid4,v4,mid4,v4]) ) then
 		print *, "actual", CAFAR%i4
 		print *, "expected", mid4,v4,mid4,v4,mid4,v4,mid4,v4,mid4,v4
 		error stop 44
 	end if
-	
+
 	if ( any(CAFAR%i8 /= [v8,mid8,v8,mid8,v8,mid8,v8,mid8,v8,mid8]) ) then
 		print *, "actual", CAFAR%i8
 		print *, "expected", v8,mid8,v8,mid8,v8,mid8,v8,mid8,v8,mid8

@@ -1,15 +1,11 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acetdt35cdk_4
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt35cd
 !*                               by David Forster)
 !*  DATE                       : 2007-11-29 (original: 2006-11-16)
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters Array Constructor
 !*                               Enhancements
@@ -20,12 +16,11 @@
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
 !*                               (original: Feature Number 289053)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : DTIO
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -67,7 +62,7 @@ program acetdt35cdk_4
 
   print *, [ADerived(4,4,4,1):: ADerived(4,4,4,1)(null(),null(),null(),null(),null(),null(),null(),null())] ! tcx: (4,4,4,1) ! tcx: (4,4,4,1)
   print *, [ADerived(4,4,4,1)::] ! tcx: (4,4,4,1)
-  
+
 end program acetdt35cdk_4
 
 

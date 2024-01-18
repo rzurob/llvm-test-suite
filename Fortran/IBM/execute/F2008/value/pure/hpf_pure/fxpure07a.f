@@ -12,15 +12,10 @@
 ! %POSTCMD: $TR_SRC/fxpure.pstsh fxpure07a
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxpure07a
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Mike Schouten
 !*  DATE                       : Oct 26, 1995
 !*  ORIGIN                     : PPS Languages, Poughkeepsie, NY
 !*
@@ -55,7 +50,6 @@
 !*
 !*  CONDITIONS TESTED          :
 !*
-!*
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -89,7 +83,7 @@
 !hpf$ align with t1a :: t1b
 !hpf$ distribute t2b (CYCLIC, BLOCK) onto P
 !hpf$ align t2a (k, j) with t2b (j, k)
-  
+
       interface
         pure function func3 (a, x)
           type t2
@@ -228,7 +222,7 @@
 
         m = ubound (a, 1)
         n = ubound (a, 2)
-        
+
         q = 0
         s = 0.
         do ii = 1, m
@@ -254,7 +248,7 @@
         m = ubound (a, 1)
         n = ubound (a, 2)
         p = ubound (b, 1)
-        
+
         do ii = 1, p
           q = 0
           s = 0.
@@ -288,7 +282,7 @@
 
         m = ubound (a, 1)
         n = ubound (a, 2)
-        
+
         do i = 1, n
           q = 0
           s = 0.
@@ -317,7 +311,7 @@
         m = ubound (a, 1)
         n = ubound (a, 2)
         p = ubound (b, 1)
-        
+
         do i = 1, p
           q = 0
           s = 0.

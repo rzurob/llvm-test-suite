@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsScalarCharComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsScalarCharComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 13 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 13 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -57,7 +49,7 @@ program spreadSourceIsScalarCharComp02
 
   contain1=container(3)(ch2=["123","456","789"],&
           mychar1=mychar(2,4)(ch1=["00","11","22"]))
-  
+
   allocate(contain2,source=container(3)(ch2=["ab","cd","ef"], &
           mychar1=mychar(2,4)(ch1=["xx","yy","zz"])) )
 
@@ -68,7 +60,7 @@ program spreadSourceIsScalarCharComp02
   if(ubound(contain3,1) /= 3)                              error stop 12_4
   if(any(shape(contain3) /= 4) )                           error stop 13_4
   if(contain3%l3 /= 3)                                     error stop 14_4
-  do i=0,3 
+  do i=0,3
      if(any(contain3(i)%ch2 /= ["123","456","789"]))       error stop 15_4
      if(contain3(i)%ch2%len /= 3)                          error stop 16_4
      if(lbound(contain3(i)%ch2,1) /= 1)                    error stop 17_4
@@ -80,7 +72,7 @@ program spreadSourceIsScalarCharComp02
      if(any(contain3(i)%mychar1%ch1 /= ["00","11","22"]))  error stop 22_4
   end do
 
-  contain4=spread(contain2,1,20)  
+  contain4=spread(contain2,1,20)
 
   do i=1,20
      if(any(contain4(i)%ch2 /= ["ab","cd","ef"]))          error stop 23_4
@@ -94,5 +86,5 @@ program spreadSourceIsScalarCharComp02
      if(any(contain4(i)%mychar1%ch1 /= ["xx","yy","zz"]))  error stop 30_4
 
   end do
-        
+
 end program

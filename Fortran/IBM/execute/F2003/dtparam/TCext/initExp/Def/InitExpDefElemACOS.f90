@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemACOS.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemACOS.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -ACOS 
+!*
+!*  -ACOS
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -50,15 +43,15 @@
   END TYPE
 
   CONTAINS
-  
+
   SUBROUTINE ModSub(Arg)
   CLASS(DT(4)) :: Arg
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END MODULE
 
 
-  PROGRAM InitExpDefElemACOS 
+  PROGRAM InitExpDefElemACOS
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
@@ -70,17 +63,17 @@
     TYPE(DT(K2))  :: Comp=DT(K2)(I=ABS(-Param%I))
   END TYPE
 
-  TYPE(DT1(4)) ::  T1,Arr1(NINT(3*ACOS(0.54030231_8)):NINT(Param%R)) 
+  TYPE(DT1(4)) ::  T1,Arr1(NINT(3*ACOS(0.54030231_8)):NINT(Param%R))
   PARAMETER  (  Arr1=(/(DT1(4)(DT(4)(I=NINT(ACOS(I/5.1)), R=ACOS(I/5.001))),&
-                       I=3*NINT(ACOS(0.54030231_8)), NINT(Param%R))/)  ) 
+                       I=3*NINT(ACOS(0.54030231_8)), NINT(Param%R))/)  )
 
   TYPE, EXTENDS(DT) :: DT2    ! (4)
   END TYPE
- 
-  TYPE(DT2(4)) :: Arr2(NINT(ACOS(Param%R)):NINT(3*ACOS(Param%R)))=    &
-                        DT2(4)(DT=DT(4)(I=ACOS(0.54030231_8),   R=-ACOS(0.54030231_8))) 
 
- 
+  TYPE(DT2(4)) :: Arr2(NINT(ACOS(Param%R)):NINT(3*ACOS(Param%R)))=    &
+                        DT2(4)(DT=DT(4)(I=ACOS(0.54030231_8),   R=-ACOS(0.54030231_8)))
+
+
   IF (Param%I             .NE. 3   )                      STOP 11
   IF (ABS(Param%R-5_8*ACOS(0.54030231_8)) .GE. 1.e-5  )   STOP 12
 
@@ -90,8 +83,8 @@
   IF (ANY(LBOUND(Arr1)   .NE. (/3/)) )     STOP 31
   IF (ANY(UBOUND(Arr1)   .NE. (/5/)) )     STOP 32
 
-  IF (ANY(Arr1%Comp%I    .NE. (/(NINT(ACOS(I/5.0)),    I=3, 5)/) ))         STOP 41 
-                         
+  IF (ANY(Arr1%Comp%I    .NE. (/(NINT(ACOS(I/5.0)),    I=3, 5)/) ))         STOP 41
+
   IF (.NOT. ALL(precision_R4(Arr1%Comp%R, (/(ACOS(I/5.001),    &
           I=NINT(3*ACOS(0.54030231_8)), NINT(5*ACOS(0.54030231_8)))/) )))   STOP 42
 
@@ -107,7 +100,7 @@
       real*4, intent(in) :: value,exp
       real*4  range,high_a,low_a,temp
 
-      range = .00001 
+      range = .00001
 
       temp = exp*range
       high_a = temp + exp

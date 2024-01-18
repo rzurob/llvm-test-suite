@@ -13,15 +13,10 @@
 ! *********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Stream access to the files
 !*                             : that cannot be positioned.
 !*                             :
-!*  PROGRAMMER                 : Daniel Chen
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  DIAGNOSES TESTED           : Stream I/O statements can access the
 !*                             : files that cannot be positioned.
@@ -29,8 +24,6 @@
 !*                             : on data transfer statements with files
 !*                             : that cannot be positioned.
 !*                             :
-!*                             :
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

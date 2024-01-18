@@ -1,13 +1,9 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=none /tstdev/OO_poly/intrinsics/cshift/transfer003.f
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/cshift
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 01/31/2005
 ! PRIMARY FUNCTIONS TESTED   : cshift
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : ARRAY is function return of transfer.
 !                              Poly and unlimited poly.
 !=======================================================================

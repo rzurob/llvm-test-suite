@@ -1,29 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Adrian Green
 !*  DATE                       : July 27, 2008
 !*  ORIGIN                     : XLF Compiler Test,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !       Pack Intrinsic function with derived type parameters.
-!*  DESCRIPTION                : uses external functions for matrix multiplication, 
+!*  DESCRIPTION                : uses external functions for matrix multiplication,
 !*								 with an interfaced operator. PACK used as an argument.
-!*
-!*
-!*
-!*
 !*
 module m1
 type adrow(k)
   integer, kind :: k
   real(k), pointer :: element => null()
 end type adrow
- 
+
 type admatrix (k1)
   integer, kind :: k1
   type (adrow(k1)), dimension(3) :: row
@@ -31,8 +21,8 @@ end type admatrix
 
 	interface operator(*)
 		module procedure vector_multi, arrayvector_multi
-	end interface 	
-	
+	end interface
+
 contains
 
 		function vector_multi(matrixA, matrixB) result (X)
@@ -42,7 +32,7 @@ contains
 			dotprod = 0.0
 			do i = 1,3
 				dotprod = dotprod + matrixA%row(i)%element*matrixB%row(i)%element
-			end do 
+			end do
 			X = dotprod
 		end function vector_multi
 
@@ -52,11 +42,11 @@ contains
 			real :: X(3)
 			do i = 1,3
 				X(i) = matrixA(i)* matrixB(i)
-			end do	
+			end do
 		end function arrayvector_multi
 end module m1
 
-program a	
+program a
 
 use m1
 type (admatrix(4)) :: res(3)
@@ -73,8 +63,7 @@ real :: res2(6)
 		do i = 1,3
 			allocate(vec(k,j)%row(i)%element, SOURCE = num)
 			num = num + 1.0
-		end do 
-	end do
+		end do
 	end do
 	mask2 = reshape(mask1, (/2, 3/))
 	field2 = reshape(field1, (/2, 3/))

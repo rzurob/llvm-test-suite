@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/pack
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/20/2005
 ! PRIMARY FUNCTIONS TESTED   : pack
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Function return of pack is the SOURCE
 !                              of spread. Poly and unlimited poly.
 !=======================================================================

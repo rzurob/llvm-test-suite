@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemANINT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemANINT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 23, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,9 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
+!*
 !*  -ANINT
 !*  (318902)
 !*
@@ -39,7 +32,7 @@
 
 
 
-  PROGRAM InitExpDefElemANINT 
+  PROGRAM InitExpDefElemANINT
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -62,9 +55,9 @@
       INTEGER, LEN  :: N2
   END TYPE
 
-  TYPE(DT1(4,20,4,20)) :: T3=DT1(4,20,4,20)(AINT(T2(:,3:)%R(1,1)))  
+  TYPE(DT1(4,20,4,20)) :: T3=DT1(4,20,4,20)(AINT(T2(:,3:)%R(1,1)))
 
-   
+
   IF (ANY(LBOUND(IC)   .NE. (/1, 1/)) )             STOP 11
   IF (ANY(UBOUND(IC)   .NE. (/5, 5/)) )             STOP 12
   IF (ANY(IC           .NE.  -1.0   ) )             STOP 13
@@ -91,4 +84,4 @@
 
   END
 
- 
+

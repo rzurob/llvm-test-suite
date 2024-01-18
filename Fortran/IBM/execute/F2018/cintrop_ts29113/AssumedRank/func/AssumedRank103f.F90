@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank103f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : August  25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank object
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
@@ -22,8 +15,8 @@
 !*                                - Call to BIND(C) / Non-Bind(C) procedure from different scopes:
 !*                                      main program, module and internal procedure
 !*                                - Interface block appears in a module
-!*                                - Actual arg is assumed size array  
-!*                                - LBOUND, UBOUND, SHAPE, SIZE, RANK 
+!*                                - Actual arg is assumed size array
+!*                                - LBOUND, UBOUND, SHAPE, SIZE, RANK
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -39,25 +32,25 @@ module mod
 
    interface
      subroutine sub_bind_c(dim, arr) bind(C)
-       import 
+       import
        implicit none
        integer :: dim
-       integer(c_int) :: arr(..) 
+       integer(c_int) :: arr(..)
      end subroutine sub_bind_c
      subroutine sub_dim_bind_c(dim, arr) bind(C)
-       import 
+       import
        implicit none
        integer :: dim
        integer(c_int), dimension(..) :: arr
      end subroutine sub_dim_bind_c
      subroutine sub(dim, arr)
-       import 
+       import
        implicit none
        integer :: dim
-       integer(c_int) :: arr(..) 
+       integer(c_int) :: arr(..)
      end subroutine sub
      subroutine sub_dim(dim, arr)
-       import 
+       import
        implicit none
        integer :: dim
        integer(c_int), dimension(..) :: arr
@@ -98,7 +91,7 @@ module mod
    end subroutine sub_mod
 end module mod
 
-program AssumedRank103f 
+program AssumedRank103f
    use iso_c_binding
    use mod
    implicit none
@@ -108,13 +101,13 @@ program AssumedRank103f
 
    A = 0; B = 0; C = 0; D = 0;
 
-!---------- call BIND(C)/Non-BIND(C) procedures from internal procedure 
+!---------- call BIND(C)/Non-BIND(C) procedures from internal procedure
    call sub_int(A, 1)
    call sub_int(B, 2)
    call sub_int(C, 3)
    call sub_int(D, 4)
 
-!---------- call BIND(C)/Non-BIND(C) procedures from module procedure 
+!---------- call BIND(C)/Non-BIND(C) procedures from module procedure
    call sub_mod(A, 1)
    call sub_mod(B, 1)
    call sub_mod(C, 1)
@@ -152,7 +145,7 @@ subroutine sub_bind_c(dim, arr) bind(C)
      use iso_c_binding
      implicit none
      integer :: dim, N
-     integer(c_int) :: arr(..) 
+     integer(c_int) :: arr(..)
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -161,7 +154,7 @@ subroutine sub_bind_c(dim, arr) bind(C)
      #endif
 
      N = dim
-     if (DEBUG_MODE) then 
+     if (DEBUG_MODE) then
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -176,11 +169,11 @@ subroutine sub_bind_c(dim, arr) bind(C)
      if (any(ubound(arr)    /=     [-1])) ERROR STOP 114
 end subroutine sub_bind_c
 
-subroutine sub(dim, arr) 
+subroutine sub(dim, arr)
      use iso_c_binding
      implicit none
      integer :: dim, N
-     integer(c_int) :: arr(..) 
+     integer(c_int) :: arr(..)
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -189,7 +182,7 @@ subroutine sub(dim, arr)
      #endif
 
      N = dim
-     if (DEBUG_MODE) then 
+     if (DEBUG_MODE) then
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -217,7 +210,7 @@ subroutine sub_dim_bind_c(dim, arr) bind(C)
      #endif
 
      N = dim
-     if (DEBUG_MODE) then 
+     if (DEBUG_MODE) then
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -245,7 +238,7 @@ subroutine sub_dim(dim, arr)
      #endif
 
      N = dim
-     if (DEBUG_MODE) then 
+     if (DEBUG_MODE) then
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)

@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Null6.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Null6.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Null6.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Null6.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 11, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Null 
+!*  SECONDARY FUNCTIONS TESTED : Null
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,11 +34,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*   null()
 !*   If any type parameters of the contextual entity are assumed,
-!*   MOLD shall be present- procptr is not a data entity. 
-!*  () 
+!*   MOLD shall be present- procptr is not a data entity.
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -62,9 +56,9 @@
 
   END MODULE
 
-  PROGRAM Null6 
+  PROGRAM Null6
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   INTERFACE
     FUNCTION IFun1(Arg)
@@ -86,13 +80,13 @@
   TYPE(DT1(4,20)) :: V
 
   V = DT1(4,20)(NULL())
-  IF (ASSOCIATED(V%ProcPtr))  STOP 13 
+  IF (ASSOCIATED(V%ProcPtr))  STOP 13
 
   V = DT1(4,20)(NULL(ProcPtr3))
-  IF (ASSOCIATED(V%ProcPtr))  STOP 14 
+  IF (ASSOCIATED(V%ProcPtr))  STOP 14
 
-  CALL IntSub(NULL(), NULL()) 
-  CALL IntSub(NULL(ProcPtr1), NULL(ProcPtr2)) 
+  CALL IntSub(NULL(), NULL())
+  CALL IntSub(NULL(ProcPtr1), NULL(ProcPtr2))
 
   CONTAINS
 

@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass054.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass054.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -57,7 +45,6 @@
 !*  DESCRIPTION                : Test: NESTED ASSOCIATE with expressions
 !*                                     with logical, logical*(1,2,4,8) and
 !*                                     character data types.
-!*
 !*
 !* ===================================================================
 !*
@@ -93,7 +80,7 @@
       logical*8 a8 / .true. /
       logical*8 b8 / .false. /
       logical*8 c8 / .true. /
-      
+
       character*4 ca4 / 'good' /
 
       character*9 ca8 / 'excellent' /
@@ -153,7 +140,7 @@
                  error stop 11
                  endif
       end associate assc
-   
+
       assoc_1: associate ( arg_4 => ca4 )
         assoc_2: associate ( arg_8 => ca8 )
           assoc_3: associate ( arg5 =>  ca5 )

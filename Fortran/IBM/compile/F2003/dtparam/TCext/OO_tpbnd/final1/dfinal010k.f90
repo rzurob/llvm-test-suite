@@ -1,24 +1,19 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dfinal010k.f
 !*  TEST CASE NAME             : type-bound procedure dfinal010k
 !*
-!*  PROGRAMMER                 : David Forster (derived from dfinal010 by Catherine Sun)
 !*  DATE                       : 2007-11-13 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines: 
-!*                               Final subroutines shall not be a 
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines:
+!*                               Final subroutines shall not be a
 !*                               function.
-!*  
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -28,10 +23,10 @@ module m
         integer(kbase_1) :: x
         contains
 
-!* expect error message 1514-598 here 
-        final  :: finalizeBase 
+!* expect error message 1514-598 here
+        final  :: finalizeBase
     end type
-    
+
     contains
     integer function finalizeBase (b1)
        type(base(4)), intent(out) :: b1  ! tcx: (4)

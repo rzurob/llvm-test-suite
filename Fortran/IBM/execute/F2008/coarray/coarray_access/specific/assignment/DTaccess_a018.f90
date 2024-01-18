@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a018.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -71,25 +67,25 @@ program main
 		print *, "expected", par2, par3, par4
 		error stop 21
 	end if
-	
+
 	if ( any(iaCAF%i2 /= [(i,i=1,10)]) ) then
 		print *, "actual", iaCAF%i2
 		print *, "expected", [(i,i=1,10)]
 		error stop 22
 	end if
-	
+
 	if (any(iaCAF%c3 /= [(repeat(achar(A_CAP+i-1),3),i=1,10)])) then
 		print *, "actual", iaCAF%c3
 		print *, "expected", [(repeat(achar(A_CAP+i-1),3),i=1,10)]
 		error stop 23
 	end if
-	
+
 	if (any(.not.same4(iaCAF%r4,[(1.0/i,i=1,10)]))) then
 		print *, "actual", iaCAF%r4
 		error stop 24
 	end if
 
-	
+
 	! assign from coarrays
 	v = der2(3,4)(0,'',0.0)
 	a = v
@@ -107,19 +103,19 @@ program main
 		print *, "expected", par2, par3, par4
 		error stop 31
 	end if
-	
+
 	if (any(a%f1 /= [(i,i=1,10)])) then
 		print *, "actual", a%f1
 		print *, "expected", [(i,i=1,10)]
 		error stop 32
 	end if
-	
+
 	if (any(a%f2 /= [(repeat(achar(A_CAP+i-1),3),i=1,10)])) then
 		print *, "actual", a%f2
 		print *, "expected", [(repeat(achar(A_CAP+i-1),3),i=1,10)]
 		error stop 33
 	end if
-	
+
 	if (any(.not.same4(a%f3,[(1.0/i,i=1,10)]))) then
 		print *, "actual", a%f3
 		error stop 34
@@ -133,14 +129,14 @@ contains
 		same4 = .true.
 		r1 = a1
 		r2 = a2
-		
+
 		! covers exact equality, Inf and NaN:
 		if (r1 == r2 .or. ieee_is_nan(r1) .and. ieee_is_nan(r1)) return
 		if (.not.ieee_is_normal(r1) .or. .not.ieee_is_normal(r2)) then
 			r1 = 1e20 * r1
 			r2 = 1e20 * r2
 		end if
-		
+
 		! covers approximate equality:
 		same4 = abs(r1 - r2) <= abs((r1*0.5E-5 + r2*0.5E-5)) ! avoiding overflow on max
 	end function same4

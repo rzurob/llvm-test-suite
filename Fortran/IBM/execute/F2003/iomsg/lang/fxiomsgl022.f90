@@ -5,33 +5,25 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgl022.f
 ! %VERIFY: fort.18:fxiomsgl022.vf
-! %STDIN: 
-! %STDOUT:  
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 !***************************************************************************
- 
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : Invalid unit numbers & file types -w/ BACKSPACE
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : BACKSPACE
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 3
 !*
 !*  DESCRIPTION                : BACKSPACE is only for external file connected
@@ -51,11 +43,11 @@
 !*********************************************************************
 
       program fxiomsgl022
- 
-      implicit none       
- 
-      integer*4 case_id    
- 
+
+      implicit none
+
+      integer*4 case_id
+
       integer*4 ios, unit_number
 
       character*300 errmsg
@@ -65,47 +57,42 @@
 !
       case_id = 0
       call zzrc (case_id )
- 
+
 !
 ! TestCase 1...
 !
- 
+
       case_id = case_id + 1
 
       unit_number = -9
- 
+
       call print_msg( unit_number, errmsg )
- 
- 
+
 !
 ! TestCase 2...
 !
- 
+
       case_id = case_id + 1
 
       open ( 8, access = 'DIRECT', recl = 80 )
- 
+
       call print_msg( 8, errmsg )
- 
- 
+
 !
 ! TestCase 3...
 !
 
       case_id = case_id + 1
- 
+
       open ( 9, form = 'FORMATTED', access = 'DIRECT', recl = 80 )
- 
 
       call print_msg( 9, errmsg )
- 
- 
-! Clean up...
- 
-      close ( 8, status = 'DELETE' )
- 
-      close ( 9, status = 'DELETE' )
 
+! Clean up...
+
+      close ( 8, status = 'DELETE' )
+
+      close ( 9, status = 'DELETE' )
 
    contains
 
@@ -121,6 +108,5 @@
 
       end subroutine
 
- 
       end            ! End of TestCase.
 

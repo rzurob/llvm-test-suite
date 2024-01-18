@@ -22,7 +22,6 @@ complex(complex_kind), parameter :: res(num_tests) =     &
 complex(complex_kind) c_res(num_tests)
 
 integer n
-  
 
 n = 1
 call c_acos(x(n), c_res(n))

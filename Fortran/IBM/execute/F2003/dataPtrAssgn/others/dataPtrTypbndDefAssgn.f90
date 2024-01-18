@@ -1,31 +1,25 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrTypebndDefineAssgn.f 
+!*  TEST CASE NAME             : dataPtrTypebndDefineAssgn.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!*  - type bound defined assignment a1 = a2; 
-!*   apply ptr assignment to ptr component of a1/a2 in defined assgn procedure 
+!*  - type bound defined assignment a1 = a2;
+!*   apply ptr assignment to ptr component of a1/a2 in defined assgn procedure
 !*
 !*  234567890123456789012345678901234567890123456789012345678901234567890
             module m
 
 		type A
-		    integer id 
-		end type 
+		    integer id
+		end type
 
 		type base
 		    class(*), pointer :: p(:)
@@ -42,7 +36,7 @@
 			a1%p(lbound(a2%p,1):ubound(a2%p,1)/2)  =>  a2%p
 			a1%p(ubound(a1%p,1) : )  =>  a1%p
 
-		    end subroutine 
+		    end subroutine
 	    end module
 
         program main
@@ -51,7 +45,7 @@
 		type(base) :: a1
 		class(base), target, allocatable :: a2
 
-		type(A), target :: tar(20) 
+		type(A), target :: tar(20)
 
 		tar = ( / (A(-i), i=1,20) /)
 
@@ -61,7 +55,7 @@
 
 		a1 = a2
 
-		if ( .not. associated(a1%p) ) stop 7 
+		if ( .not. associated(a1%p) ) stop 7
 		if ( lbound(a1%p,1) /= 10) stop 11
 		if ( ubound(a1%p,1) /= 19) stop 13
 

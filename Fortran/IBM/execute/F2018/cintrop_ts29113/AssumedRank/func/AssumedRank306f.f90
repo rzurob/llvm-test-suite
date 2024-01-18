@@ -1,28 +1,20 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank304f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : October 27, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
-!* REQUIRED COMPILER OPTIONS    : 
+!* REQUIRED COMPILER OPTIONS    :
 !*                               (use -D_DEBUG for a debug version)
 !*
-!* DESCRIPTION                  : Calling a BIND(C) procedure defined in C from Fortran 
+!* DESCRIPTION                  : Calling a BIND(C) procedure defined in C from Fortran
 !*                                - array is rank 0, 1, 2, 15
 !*                                - allocatable
 !*                                - OPTIONAL
 !*                                - type c_int
-!*
 !*
 !* Actua15 Argument:
 !*
@@ -42,19 +34,19 @@ implicit none
 interface
     subroutine c_check(a) bind(c)
         import :: c_int
-        integer(c_int), allocatable, optional :: a(..) 
+        integer(c_int), allocatable, optional :: a(..)
     end
 end interface
 
-integer        :: st, i, j, k 
+integer        :: st, i, j, k
 character(200) :: msg
 integer(c_int), allocatable :: a0
 integer(c_int), allocatable :: a1(:), a2(:,:), a3(:,:,:)
 integer(c_int), allocatable :: a15(:,:,:,:,:,:,:,:,:,:,:,:,:,:,:)
 
-     
-! Allocate all the allocatable arrays 
-! 
+
+! Allocate all the allocatable arrays
+!
 a0 = -1
 
 allocate(a1(10), stat=st, errmsg=msg)
@@ -124,7 +116,7 @@ if( any(ubound(a3) /=                         [5,3,0]) ) ERROR STOP 46
 do i = lbound(a3,1), ubound(a3,1), 1
    do j = lbound(a3,2), ubound(a3,2), 1
       do k = lbound(a3,3), ubound(a3,3), 1
-         if( a3(i,j,k)     /=              (i + j + k) ) ERROR STOP 47 
+         if( a3(i,j,k)     /=              (i + j + k) ) ERROR STOP 47
       end do
    end do
 end do
@@ -146,7 +138,7 @@ call c_check(a2)
 call c_check(a3)
 call c_check(a15)
 
-! Verify again 
+! Verify again
 if(                                .not. allocated(a0) ) ERROR STOP 110
 if( a0             /=                               -1 ) ERROR STOP 111
 
@@ -178,7 +170,7 @@ if( any(ubound(a3) /=                         [5,3,0]) ) ERROR STOP 146
 do i = lbound(a3,1), ubound(a3,1), 1
    do j = lbound(a3,2), ubound(a3,2), 1
       do k = lbound(a3,3), ubound(a3,3), 1
-         if( a3(i,j,k)     /=              (i + j + k) ) ERROR STOP 147 
+         if( a3(i,j,k)     /=              (i + j + k) ) ERROR STOP 147
       end do
    end do
 end do

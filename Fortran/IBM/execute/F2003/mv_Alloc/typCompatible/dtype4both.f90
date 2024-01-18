@@ -1,25 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dtype4both.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is of a DT, an optional dummy arg
-!*                               of a type bound proc 
+!*                               of a type bound proc
 !*                               TO is of the same DT as FROM
 !*                               TO is function return name
 !*                               move_alloc called in a type bound proc
@@ -39,21 +27,21 @@ module m
       end type
 
       type  :: base
-          type(A), allocatable :: a1 
+          type(A), allocatable :: a1
           contains
               procedure :: get_alloc  => func
-      end type 
+      end type
 
-      contains 
+      contains
          type(base) function func(arg, brg)
             class(base) :: arg
-            type(base), target :: brg 
+            type(base), target :: brg
             optional :: brg
             allocatable func, brg
 
-            if ( present(brg))  then 
+            if ( present(brg))  then
                if ( .not. allocated(brg))  allocate(brg, source = arg)
-               call move_alloc(brg,func) 
+               call move_alloc(brg,func)
             end if
 
          end function
@@ -68,10 +56,10 @@ end module
 
       allocate(b, source=( base ( A('XYZ') ) ) )
 
-      d =  b%get_alloc( b ) 
+      d =  b%get_alloc( b )
 
       if ( allocated(b)) stop 11
- 
+
       if ( d%a1%ch /= 'XYZ' ) stop 21
 
       end

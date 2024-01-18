@@ -1,37 +1,29 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergegPolyAsArg01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergegPolyAsArg01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 22 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 22 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE AND FSOURCE ARE POLYMORPHIC
 !* 4. USE ASSOCIATE
-!* 5. DEFECT 356156 356275 
+!* 5. DEFECT 356156 356275
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type base(k1,l1)
      integer,kind :: k1
      integer,len  :: l1
-    
+
      integer(k1)   :: i1
      character(l1) :: c1
   end type
@@ -39,7 +31,7 @@ module m
   type,extends(base) :: child(k2,l2)
      integer(2),kind :: k2
      integer(2),len  :: l2
-    
+
      integer(k2) :: i2
      character(l2) :: c2
   end type
@@ -60,7 +52,7 @@ program mergegPolyAsArg01
 
    mask1=[.true.,.false.,.true.,.false.,.true.,.false.]
    mask2=reshape(mask1,(/2,3/))
- 
+
    chld1=[( (child(4,3,2,6)(i1=k,c1=char(k+64),i2=k+10,c2=char(k+96))),k=1,6 )]
 
    chld2=[( (child(4,3,2,6)(i1=-k,c1=char(k+70),i2=-k-10,c2=char(k+102))),k=1,6 )]
@@ -74,10 +66,10 @@ program mergegPolyAsArg01
    allocate(poly2(6),source=chld2)
 
    allocate(poly3(2,3),source=chld3)
-   
+
    allocate(poly4(2,3),source=chld4)
 
-   associate(x=>merge(poly1(1:1),poly2(1:1),.true.))   
+   associate(x=>merge(poly1(1:1),poly2(1:1),.true.))
       select type(x)
          type is(child(4,*,2,*))
             if(size(x,1) /= 1)                  error stop 10_4
@@ -135,7 +127,7 @@ program mergegPolyAsArg01
 
 
    associate(x=>merge(poly1,poly2,mask1))
-  
+
       select type(x)
          type is(child(4,*,2,*))
             if(size(x,1) /= 6)                  error stop 50_4
@@ -158,7 +150,7 @@ program mergegPolyAsArg01
             if(x%c2%len /= 6)                   error stop 66_4
         class default
             error stop 203_4
-     end select 
+     end select
    end associate
 
 
@@ -186,7 +178,7 @@ program mergegPolyAsArg01
               if(x%c2%len /= 6)                   error stop 86_4
            class default
                error stop 204_4
-       end select   
+       end select
 
    end associate
 
@@ -219,11 +211,11 @@ program mergegPolyAsArg01
                 if(x%c2%len /= 6)                   error stop 110_4
             class default
                 error stop 205_4
-       end select 
+       end select
 
    end associate
 
-   associate(x=>merge(poly3,poly4,.not. mask2))   
+   associate(x=>merge(poly3,poly4,.not. mask2))
 
       select type(x)
            type is(child(4,*,2,*))

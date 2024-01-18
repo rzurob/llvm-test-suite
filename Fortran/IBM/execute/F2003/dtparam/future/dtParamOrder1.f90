@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamOrder1   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamOrder1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,25 +19,24 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  The type parameter order of a nonextended type is the order of the type parameter list 
-!*  in the derived type definition 
-!*  
+!*  The type parameter order of a nonextended type is the order of the type parameter list
+!*  in the derived type definition
+!*
 !*  (340293)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamOrder1 
+  PROGRAM dtParamOrder1
   IMPLICIT NONE
 
   TYPE DT1(K1, L1, K2, L2, K3, L3)
     INTEGER,          KIND :: K1
     INTEGER(KIND=K1), KIND :: K2   ! K1 has not been seen yet?
     INTEGER(KIND=K1), LEN  :: L1
-    INTEGER(KIND=K2), KIND :: K3 
+    INTEGER(KIND=K2), KIND :: K3
     INTEGER(KIND=K2), LEN  :: L2
-    INTEGER(KIND=K3), LEN  :: L3 
+    INTEGER(KIND=K3), LEN  :: L3
 !   INTEGER,          KIND :: K1
     INTEGER(KIND=1)        :: Arr(L1:L2, L2:L3)
   END TYPE

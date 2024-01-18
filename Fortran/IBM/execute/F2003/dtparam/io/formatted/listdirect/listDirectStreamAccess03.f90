@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectStreamAccess03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectStreamAccess03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 21 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 21 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!* 1. Test Read statement with list directed IO  and stream access 
+!* 1. Test Read statement with list directed IO  and stream access
 !* 2. Execute read in type bound procedure
 !* 3. Derived type is polymorphic type
 !234567490123456749012345674901234567490123456749012345674901234567490
@@ -28,7 +20,7 @@ module m1
    type A(k1,l1)
      integer,kind :: k1 !k1=4
      integer,len  :: l1 !l1=3
- 
+
      character(l1):: c1(k1)="***"
      real(k1)    :: r1(l1)=9.9
      contains
@@ -41,7 +33,7 @@ module m1
      integer,len  :: l2 ! l2=4
 
      complex(k2)  :: x1(l2)=(-9.9_8,-9.9_8)
-     type(A(k2/2,l2-1)) :: a1comp 
+     type(A(k2/2,l2-1)) :: a1comp
 
      contains
        procedure :: readDT=>readBase
@@ -53,7 +45,7 @@ module m1
        subroutine readA(this,unit)
           class(A(4,*)),intent(inout) :: this
           integer,intent(in) :: unit
-          
+
           print *,"in readA"
           select type(this)
              type is(A(4,*))
@@ -69,7 +61,7 @@ module m1
           integer,intent(in) :: unit,bound
 
           print *,"in readBase"
-        
+
           read(unit,*,decimal='point') this%x1
           call this%a1comp%read(unit)
 
@@ -83,7 +75,7 @@ module m2
   type,extends(base) :: child(k3,l3)
      integer,kind :: k3 ! k3=4
      integer,len  :: l3 ! l3=3
-     
+
      integer(k3) :: i1(l3-1)=-99
      type(A(k3,l3)) :: a2comp
 
@@ -99,31 +91,31 @@ module m2
        integer,intent(in)  :: unit,bound
 
        print *,"in readChild"
-      
+
        if(bound .eq. 2) then
- 
+
           call this%base%read(unit,bound)
           select type(this)
              type is(child(8,*,4,*))
                 read(unit,*)   this%i1
-                call this%a2comp%read(unit) 
+                call this%a2comp%read(unit)
              class default
                 stop 12
           end select
 
         else
-         
-           select type(this) 
+
+           select type(this)
               type is(child(8,*,4,*))
                   read(unit,*) this
               class default
                   stop 13
-           end select 
+           end select
 
-        end if 
-   
+        end if
+
     end subroutine
-  
+
 end module
 
 program listDirectStreamAccess03
@@ -131,10 +123,10 @@ program listDirectStreamAccess03
 
    interface
       subroutine sub(arg)
-        import  
+        import
         class(base(8,*)),intent(inout) :: arg(2:)
       end subroutine
-   end interface   
+   end interface
 
    logical,external :: precision_x6,precision_r4
 
@@ -144,7 +136,6 @@ program listDirectStreamAccess03
    allocate(child(8,tar%k2/2,4,tar%k3-1) :: tar(-1:0) )
 
    ptr(2:)=>tar(0:-1:-1)
-
 
    ! following is the record need to read
 
@@ -159,10 +150,9 @@ program listDirectStreamAccess03
    !1*, 2*(1.2,-1.2) 1*(-0.5,0.5) 2*"ABC" , 1*HOT
    !1*'CAP' , -4.5, -0.007 -34.E4
    !-4 +8 abc "def" 'ghi' j_k 1* -2.8 09
-  
- 
+
    call sub(tar)
-  
+
    !verify value of ptr
 
    select type(x=>ptr)
@@ -186,7 +176,7 @@ program listDirectStreamAccess03
         if(.not. precision_x6(x(3)%x1(3),(-98121.3_8,-2.D05))) stop 27
         if(.not. precision_x6(x(3)%x1(4),(0.4_8,-4.5_8)))      stop 28
 
-        if(any(x(3)%a1comp%c1 /= & 
+        if(any(x(3)%a1comp%c1 /= &
                  (/"***","   ","BCD","FGH" /) ))               stop 29
         if(.not. precision_r4(x(3)%a1comp%r1(1),-7.2 ))        stop 30
         if(.not. precision_r4(x(3)%a1comp%r1(2),5._4 ))        stop 31
@@ -197,7 +187,7 @@ program listDirectStreamAccess03
 
       class default
         stop 14
-   end select  
+   end select
 end program
 
 subroutine sub(arg)

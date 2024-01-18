@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxclms14 111111111 2222 33 -"
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,35 +12,28 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclms14.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Invoke command_argument_count as actual arguments of some inline 
+!*  DESCRIPTION                : Invoke command_argument_count as actual arguments of some inline
 !*                             : functions like mod/ishift etc.
-!*                             : 
 !*                             :
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -65,9 +58,9 @@
       character(300)             :: VALUE
       integer                    :: ARGCOUNT
 
-      
 
-      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) & 
+
+      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) &
       then
         error stop 63
       endif
@@ -107,8 +100,8 @@
       endif
 
 
-      END 
- 
-   
+      END
+
+
 
 

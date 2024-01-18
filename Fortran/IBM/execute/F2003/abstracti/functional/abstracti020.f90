@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquida
 !*  DATE                       : 02/20/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: interface block
 !*                                        poly abstract type return, interface of a deferred binding
@@ -52,7 +36,7 @@ module m
 type, abstract :: base
    integer :: id
 contains
-   procedure(itf), pass, deferred :: getbase   
+   procedure(itf), pass, deferred :: getbase
 end type
 
 abstract interface
@@ -80,12 +64,12 @@ end module
 
 program abstracti020
    use m
-   
+
    class(base), pointer :: b1
-   type(child) :: c1 = child(5) 
-   
+   type(child) :: c1 = child(5)
+
    b1 => c1%getbase()
-   
+
    if(b1%id .ne. 5) error stop 1_4
-   
+
 end program abstracti020

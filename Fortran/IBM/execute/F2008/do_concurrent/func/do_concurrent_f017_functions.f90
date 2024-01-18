@@ -1,13 +1,11 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                              IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : do_concurrent_f017_functions.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon
 !*  DATE                       : 2015-07-03
 !*  ORIGIN                     :
 !*
@@ -15,10 +13,9 @@
 !*  SECONDARY FUNCTIONS TESTED :
 !*  ADAPTED FROM               :
 !*
-!*  DESCRIPTION                : - DO CONCURRENT loops inside external 
-!*                                 subroutines and functions in modules from 
+!*  DESCRIPTION                : - DO CONCURRENT loops inside external
+!*                                 subroutines and functions in modules from
 !*                                 external files
-!*                              
 !*
 !=============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890
@@ -223,8 +220,8 @@ module m2
     logical, external :: precision_r8
 
     allocate(i_res2(5,5),i_arr2(10))
- 
-    i_res = 0.0d0 
+
+    i_res = 0.0d0
     i_res2 = 0.0d0
     i_arr2 = (/4.0d0,9.0d0,16.0d0,25.0d0,36.0d0,49.0d0,64.0d0,81.0d0,100.0d0,121.0d0/)
 
@@ -281,9 +278,9 @@ module m2
     logical, external :: precision_r8
 
     allocate(i_res2(10), i_arr(10))
- 
+
     i_res = 0.0d0
-    i_res2 = 0.0d0 
+    i_res2 = 0.0d0
     i_arr = (/4.0d0,9.0d0,16.0d0,25.0d0,36.0d0,49.0d0,64.0d0,81.0d0,100.0d0,121.0d0/)
 
     do concurrent (i = 1:10, lvar .eqv. .true.)

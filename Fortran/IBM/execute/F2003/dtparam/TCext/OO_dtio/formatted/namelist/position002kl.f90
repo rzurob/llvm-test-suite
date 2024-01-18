@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : position002kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from position002 by Robert Ma)
 !*  DATE                       : 2007-07-06 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try position edit descriptors (T, TL, TR, X) with multiple level of namelist DTIO(Output)
@@ -72,7 +64,7 @@ program position002kl
 
    allocate( b1, b1%c, b1%c%d )
    allocate( b2, b2%c, b2%c%d )
-   
+
    b1%i = 1
    b1%c%j= 2
    b1%c%d%k= 3
@@ -124,7 +116,7 @@ subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)
    if ( iostat /= 0 ) error stop 4_4
 
    write (unit, basedtio, iostat=iostat, iomsg=iomsg)
-   
+
    if ( ( iostat /= 0 ) .or. ( iomsg /= 'containerdtio' )) error stop 5_4
 
    iomsg = 'dtiowrite'
@@ -133,7 +125,7 @@ end subroutine
 
 subroutine containerwriteformatted(dtv, unit, iotype, v_list, iostat, iomsg )
    use m, only: container, data
-   
+
    interface write(formatted)
       subroutine datawriteformatted(dtv, unit, iotype, v_list, iostat, iomsg )
          import data
@@ -157,7 +149,7 @@ subroutine containerwriteformatted(dtv, unit, iotype, v_list, iostat, iomsg )
    namelist /containerdtio/ d1
 
    allocate (d1, source = dtv%d)
-   
+
    if ( iotype /= "NAMELIST" ) error stop 6_4
    if ( size(v_list, 1) /= 0 ) error stop 7_4
 
@@ -167,7 +159,7 @@ subroutine containerwriteformatted(dtv, unit, iotype, v_list, iostat, iomsg )
 
    write (unit, containerdtio, iostat=iostat, iomsg=iomsg)
    if ( ( iostat /= 0 ) .or. ( iomsg /= 'datadtio' )) error stop 9_4
-   
+
    iomsg = 'containerdtio'
 
 end subroutine
@@ -181,7 +173,7 @@ subroutine datawriteformatted(dtv, unit, iotype, v_list, iostat, iomsg )
    integer, intent(in)     :: v_list(:)
    integer,  intent(out) :: iostat
    character(*),  intent(inout) :: iomsg
-   
+
    if ( iotype /= "NAMELIST" ) error stop 10_4
    if ( size(v_list, 1) /= 0 ) error stop 11_4
 

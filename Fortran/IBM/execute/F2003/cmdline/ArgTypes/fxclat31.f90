@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat131.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,34 +33,34 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing pointee components
-!*                             : of derived type and COMMAND_ARGUMENT_COUNT as actual arguments 
+!*                             : of derived type and COMMAND_ARGUMENT_COUNT as actual arguments
 !*                             : through a call chain
 
-!* 
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
       module modtype
 
         type dertype
           sequence
           character(2049)  :: COMMAND
           integer      	   :: LENGTH
-          character(4099)  :: STR     ! take spaces 
+          character(4099)  :: STR     ! take spaces
           integer          :: STATUS
           integer          :: NUMBER
           character(2047)  :: VALUE
-          INTEGER          :: ARR(10) ! take spaces 
+          INTEGER          :: ARR(10) ! take spaces
           character(513)   :: NAME
           logical          :: TRIM_NAME
           integer          :: ARGCOUNT
-        end type dertype 
+        end type dertype
 
         character(2049)              :: CmdLine = 'fxclat31 --------- 111111111 =============='
         integer                      :: CmdCount = 3
         integer                      :: i
         character(2047)              :: Argument
-         
+
       end module modtype
 
 
@@ -76,7 +70,7 @@
 
       IMPLICIT NONE
 
-      INTRINSIC COMMAND_ARGUMENT_COUNT         
+      INTRINSIC COMMAND_ARGUMENT_COUNT
 
 
 
@@ -101,7 +95,7 @@
       POINTER(PtrTRIM_NAME, TRIM_NAME)
       POINTER(PtrARGCOUNT, ARGCOUNT)
 
-       
+
       PtrCOMMAND   = LOC(cmd%COMMAND)
       PtrLENGTH    = LOC(cmd%LENGTH)
       PtrSTATUS    = LOC(cmd%STATUS)
@@ -117,7 +111,7 @@
       CALL SUB1(COMMAND_ARGUMENT_COUNT, COMMAND, LENGTH, STATUS, NUMBER,  VALUE, NAME, TRIM_NAME, ARGCOUNT)
 
       CALL SUB2(COMMAND_ARGUMENT_COUNT, COMMAND, LENGTH, STATUS, NUMBER,  VALUE, NAME, TRIM_NAME, ARGCOUNT)
- 
+
       CALL SUB3(COMMAND_ARGUMENT_COUNT, COMMAND, LENGTH, STATUS, NUMBER,  VALUE, NAME, TRIM_NAME, ARGCOUNT)
 
       CONTAINS
@@ -140,7 +134,7 @@
       ENDSUBROUTINE
 
 
-      END 
+      END
 
 
       INCLUDE 'cmdline.include'
@@ -158,10 +152,10 @@
       character(*)     :: NAME
       logical          :: TRIM_NAME
       integer          :: ARGCOUNT
-      
-      integer          :: FUN 
 
-      if ( FUN().ne. CmdCount ) & 
+      integer          :: FUN
+
+      if ( FUN().ne. CmdCount ) &
       then
         error stop 63
       endif
@@ -176,7 +170,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)

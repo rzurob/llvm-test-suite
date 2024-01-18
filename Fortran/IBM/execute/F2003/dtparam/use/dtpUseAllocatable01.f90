@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUseAllocatable01
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-10-07
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTP and USE
 !*
@@ -16,17 +11,13 @@
 !*
 !*  REFERENCE                  : Feature Number 355310
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*
-!*  
-!*
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -34,7 +25,7 @@
 module dtpUseAllocatable01Basemod
 
   implicit none
-  
+
   type :: Base
      integer :: iComp
   end type Base
@@ -84,7 +75,7 @@ program dtpUseAllocatable01
   type (Derived2(8)), allocatable   :: d28b, d28arr(:)
   type (Derived3(8,3))              :: d383a
   type (Derived3(8,3)), allocatable :: d383b, d383c, d383arr(:)
-  
+
   allocate(bb,d4b,d24b,d343b,d8b,d28b,d383b)
 
   allocate(bc, source = Base(39))

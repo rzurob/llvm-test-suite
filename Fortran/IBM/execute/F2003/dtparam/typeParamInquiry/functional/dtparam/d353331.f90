@@ -1,26 +1,18 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d353331.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d353331.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 3 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 3 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. DEFECT 353331
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -50,10 +42,10 @@ program d353331
   if(b1%l1 /= 4)                                      error stop 10_4
   if(b1%l2 /= 10)                                     error stop 11_4
   if(b1%l1%kind /= kind(b1%l1) .or. b1%l1%kind /= 1)  error stop 12_4
-  if(b1%l2%kind /= kind(b1%l2) .or. b1%l2%kind /= 2)  error stop 13_4 
+  if(b1%l2%kind /= kind(b1%l2) .or. b1%l2%kind /= 2)  error stop 13_4
   if(b1%c1%len /= len(b1%c1) .or. b1%c1%len /= 14)    error stop 14_4
   if(b1%c2%len /= len(b1%c2) .or. b1%c2%len /= 40)    error stop 15_4
-  
+
   if(b2%k1 /= 2)                                      error stop 16_4
   if(b2%l1 /= 2)                                      error stop 17_4
   if(b2%l2 /= 2)                                      error stop 18_4

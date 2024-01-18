@@ -3,22 +3,11 @@
 ! opt variations: -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : C460: specific-binding does not exist
 !*  KEYWORD(S)                 :
@@ -39,7 +28,7 @@ module m
       contains
          generic :: operator(+) => myadd
    end type
-   
+
    interface myadd
       type(base(4)) function add(a, b)
          import base

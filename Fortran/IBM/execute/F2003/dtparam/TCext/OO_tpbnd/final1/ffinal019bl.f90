@@ -1,22 +1,17 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal019bl.f
 !*  TEST CASE NAME             : type-bound procedure ffinal019bl
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal019b by Catherine Sun)
 !*  DATE                       : 2007-11-26 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines: defect 284803 
-!*    
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines: defect 284803
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -34,12 +29,12 @@ contains
       print *, "finalizeBase"
    end subroutine
 
-end module 
+end module
 
 module m1
    use m
-   
-   type,extends(base) :: child 
+
+   type,extends(base) :: child
    contains
       final :: finalChild
    end type
@@ -52,25 +47,25 @@ contains
       print *, "finalizeChild"
    end subroutine
 
-end module 
+end module
 
    use m1
- 
+
    call example
- 
- end 
-   
+
+ end
+
    subroutine example()
-    
-      use m1 
-     
+
+      use m1
+
       type(base(1)) :: dt1 ! tcx: (1)
 
       allocate(child(1)::dt0) ! tcx: child(1)
       deallocate(dt0)
 
-  
-   end subroutine 
+
+   end subroutine
 
 
 

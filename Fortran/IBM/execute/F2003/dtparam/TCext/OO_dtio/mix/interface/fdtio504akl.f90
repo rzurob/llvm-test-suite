@@ -1,21 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fdtio504akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from fdtio504a by Jim Xia)
 !*  DATE                       : 2007-08-14 (original: 10/28/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
-!*  SECONDARY FUNCTIONS TESTED : DTIO 
+!*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : DTIO on generics (IOSTAT and IOMSG values in
 !                               DTIO procedures)
@@ -65,7 +57,7 @@ use m
 
     stat = 100
     errormsg = 'no error'
-    
+
     write (1, iostat=stat, iomsg=errormsg) b1
 
     if (stat /= 1) error stop 101_4

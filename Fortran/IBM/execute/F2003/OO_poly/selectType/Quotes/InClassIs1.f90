@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: InClassIs1.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : InClassIs1
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 21, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Within the CLASS IS, the associating entity is polymorphic   
-!*   
+!*
+!*  Within the CLASS IS, the associating entity is polymorphic
+!*
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -50,7 +44,7 @@
     TYPE  :: Zero
     CONTAINS
       PROCEDURE, NoPASS   :: Called
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -101,11 +95,11 @@
   END MODULE
 
 
-  PROGRAM InClassIs1 
+  PROGRAM InClassIs1
   USE M
   IMPLICIT NONE
   TYPE(Child) :: V(2:3,3:4)=Child(BaseId=-1, ChildId=-2)
-   
+
   CALL Sub(V(2:3,3:4))
 
   CONTAINS
@@ -114,12 +108,12 @@
   CLASS(*) :: Arg(2:3,3:4)
 
     SELECT TYPE (U => Arg)
-    CLASS IS (Base) 
+    CLASS IS (Base)
        STOP 43
     CLASS IS (Child)
       SELECT TYPE (U)
       CLASS IS (Child)
-        IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30 
+        IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30
         IF ( SIZE(U)          .NE. 4 )          STOP 31
         IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
         IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
@@ -128,7 +122,7 @@
         IF ( ANY(U%GetId()      .NE. -2) )      STOP 36
         IF ( ANY(U%BaseId       .NE. -1) )      STOP 37
         IF ( ANY(U%ChildId      .NE. -2) )      STOP 38
-  
+
         IF ( .NOT. U%Called() ) STOP 45
       CLASS DEFAULT
          STOP 51
@@ -141,7 +135,7 @@
     END SELECT
 
   END SUBROUTINE
- 
+
   END
 
 

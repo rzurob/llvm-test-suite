@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Array Constructor
@@ -117,19 +106,19 @@ program arrayConstr001
 
    write ( 1, "(3(DT(3)))", iostat = stat, iomsg = msg )            (/ base(), base(), base() /)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteb' ) ) error stop 1_4
-   
+
    write ( 1, "(3(DT(3,4)))", iostat = stat, iomsg = msg )          (/ ( child(),i=1,3 ) /)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowritec' ) ) error stop 2_4
-   
+
    write ( 1, "(3(DT(3,4,3)))", iostat = stat, iomsg = msg )        (/ ( gen3(),i=4,6 ) /)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteg' ) ) error stop 3_4
-   
+
    write ( 1, "(4(DT(3)))", iostat = stat, iomsg = msg )          (/ base('abc'), base('def'), ( base('ghi'), i=1,2 )/)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteb' ) ) error stop 4_4
-   
+
    write ( 1, "(3(DT(3,4)))", iostat = stat, iomsg = msg )        (/ ( child('IBM',2005),i=1,3 ) /)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowritec' ) ) error stop 5_4
-   
+
    write ( 1, "(3(DT(4,4,4)))", iostat = stat, iomsg = msg )            (/ ( gen3('FTN',2003,'GRT'),i=4,6 ) /)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteg' ) ) error stop 6_4
 

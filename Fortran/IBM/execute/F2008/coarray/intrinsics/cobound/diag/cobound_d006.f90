@@ -1,27 +1,21 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound_d006.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : September 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Return type testing of lcobound/ucobound
 !*                               with 1 argument returns a rank-1 array.
-!*                            
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program main
-	
+
 	integer, save :: caf[*]
 	integer :: iscal
 	real :: rscal
@@ -41,8 +35,8 @@ program main
 	logical*2 :: l2(1)
 	logical*4 :: l4(1)
 	logical*8 :: l8(1)
-	   
-	
+
+
 !### lcobound
 	i1 = lcobound(caf)
 	i2 = lcobound(caf)
@@ -53,13 +47,13 @@ program main
 	r8 = lcobound(caf)
 	cx4 = lcobound(caf)
 	cx8 = lcobound(caf)
-	
+
 	l1 = lcobound(caf)
 	l2 = lcobound(caf)
 	l4 = lcobound(caf)
 	l8 = lcobound(caf)
 	ch = lcobound(caf)
-	
+
 	iscal = lcobound(caf)
 	rscal = lcobound(caf)
 	cscal = lcobound(caf)
@@ -67,9 +61,9 @@ program main
 	caf = lcobound(caf)
 	ia = lcobound(caf)
 	rc = lcobound(caf)
-	
 
-!### ucobound	
+
+!### ucobound
 	i1 = ucobound(caf)
 	i2 = ucobound(caf)
 	i4 = ucobound(caf)
@@ -79,13 +73,13 @@ program main
 	r8 = ucobound(caf)
 	cx4 = ucobound(caf)
 	cx8 = ucobound(caf)
-	
+
 	l1 = ucobound(caf)
 	l2 = ucobound(caf)
 	l4 = ucobound(caf)
 	l8 = ucobound(caf)
 	ch = ucobound(caf)
-	
+
 	iscal = ucobound(caf)
 	rscal = ucobound(caf)
 	cscal = ucobound(caf)
@@ -93,5 +87,5 @@ program main
 	caf = ucobound(caf)
 	ib = ucobound(caf)
 	cd = ucobound(caf)
-	
+
 end

@@ -1,25 +1,14 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                : MAX/MIN with variable as actual 
+!*  DESCRIPTION                : MAX/MIN with variable as actual
 !*                               argument in procedure pointer with
-!*                               explicit interface  
+!*                               explicit interface
 !* ===================================================================
 
   module m
@@ -36,7 +25,7 @@
     end interface
   end module
 
-  program mxminVarArrArgSub4 
+  program mxminVarArrArgSub4
     use m
     interface
         subroutine ifacesub1(arg1, arg2)
@@ -69,7 +58,7 @@
           error stop 1_4
     endif
 
-  end program mxminVarArrArgSub4 
+  end program mxminVarArrArgSub4
 
   subroutine sub1(arg1, arg2)
     character*3 arg1
@@ -84,5 +73,4 @@
     character*3 :: fun1
     fun1 = arg
   end function
-
 

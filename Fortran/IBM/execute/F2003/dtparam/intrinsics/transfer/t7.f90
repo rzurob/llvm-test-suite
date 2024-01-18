@@ -12,7 +12,7 @@ type dt (k,l)
 	integer,len :: l
 	complex(k) :: c(l)
 end type
-	
+
 end module m1
 
 program a
@@ -25,7 +25,7 @@ real(kind=4) :: r4(8), r42(8)
 real(kind=8) :: r8(8), r82(8)
 complex(kind=4) :: c4(4), c42(4)
 complex(kind=8) :: c8(4), c82(4)
-integer k 
+integer k
 equivalence(c4,r4)
 equivalence(c8,r8)
 
@@ -89,14 +89,14 @@ dt8 = transfer(dtp82,dt82,2)
 k=1
 do i=1,ubound(dtp42,1)
 	do j=1,dtp42%l
-		if (mod(j,2) == 0) then 
+		if (mod(j,2) == 0) then
 			if(imag(dt4(int(i/3)+1)%c(k)) /= dtp42(i)%r(j)) then
 				print *, "error with dt4(",int(i/3)+1,")%r(",k,") = ",cmplx(dt4(int(i/3)+1)%c(k)),"dtp42(",i,")%r(",j,") = ",dtp42(i)%r(j)
 				STOP 5
 			end if
 			if (k == 1) then
 				k = 2
-			else 
+			else
 				k = 1
 			end if
 		else
@@ -110,14 +110,14 @@ end do
 k=1
 do i=1,ubound(dtp8,1)
 	do j=1,dtp8%l
-		if (mod(j,2) == 0) then 
+		if (mod(j,2) == 0) then
 			if(imag(dt8(int(i/3)+1)%c(k)) /= dtp82(i)%r(j)) then
 				print *, "error with dt8(",int(i/3)+1,")%r(",k,") = ",dt8(int(i/3)+1)%c(k),"dtp8(",i,")%r(",j,") = ",dtp82(i)%r(j)
 				STOP 7
 			end if
 			if (k == 1) then
 				k = 2
-			else 
+			else
 				k = 1
 			end if
 		else
@@ -129,7 +129,6 @@ do i=1,ubound(dtp8,1)
 	end do
 end do
 
-
 r42 = transfer(dtp42,r4)
 r82 = transfer(dtp82,r8)
 c42 = transfer(dt42,c4)
@@ -138,7 +137,7 @@ c82 = transfer(dt82,c8)
 do i=1,4
 if (r4(i) /= r42(i)) then
 	print *, "error with r42 = transfer(dtp42,r4), r42 =", r42,"r4 =",r4
-	STOP 9 
+	STOP 9
 endif
 if (r82(i) /= r8(i)) then
 	print *, "error with r82 = transfer(dtp82,r8), r82 =", r82,"r8 =",r8
@@ -150,7 +149,7 @@ if (c4(i) /= c42(i)) then
 	print *, "error with r42 = transfer(dtp42,r4), r42 =", r42,"r4 =",r4
 	STOP 11
 endif
-if (c82(i) /= c8(i)) then 
+if (c82(i) /= c8(i)) then
 	print *, "error with r82 = transfer(dtp82,r8), r82 =", r82,"r8 =",r8
 	STOP 12
 endif

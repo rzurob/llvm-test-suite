@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxcllf39 D\\D C\% \$E"
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,46 +12,39 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxcllf39.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Invoke command line intrinsic routines by calling to recursive module  
+!*  DESCRIPTION                : Invoke command line intrinsic routines by calling to recursive module
 !*                             : functions and with result variables as arguments
-!*                             :   
-!*                     
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-      BLOCK DATA 
+      BLOCK DATA
 
-        character(513)   :: NAME  
-        logical          :: TRIM_NAME 
-        character(2049)  :: CmdLine 
-          
+        character(513)   :: NAME
+        logical          :: TRIM_NAME
+        character(2049)  :: CmdLine
+
         COMMON /sargs/CmdLine, NAME, TRIM_NAME
 
         DATA CmdLine/'fxcllf39 D\\D C\\% $E'/, NAME /'CmdLine   '/, TRIM_NAME /.true./
@@ -62,14 +55,14 @@
 
       MODULE MOD
 
- 
+
 
       integer i
 
-      character(513)   :: NAME  
-      logical          :: TRIM_NAME 
-      character(2049)  :: CmdLine 
-          
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
+      character(2049)  :: CmdLine
+
       COMMON /sargs/CmdLine, NAME, TRIM_NAME
 
 
@@ -81,35 +74,35 @@
       INTEGER, SAVE ::  Num /3/
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE 
-      integer          :: ARGCOUNT 
-          
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
+
 
       integer              :: CmdCount
       character(2047)      :: Argument
       integer              :: i, j
- 
+
       ResCommand = ' '
 
       IF( Num .ne. 1) THEN
           Num = Num - 1
-          ResCommand = F_GET_CMD(COMMAND, LENGTH, STATUS) 
+          ResCommand = F_GET_CMD(COMMAND, LENGTH, STATUS)
       ELSE
 
       call GET_COMMAND(ResCommand, LENGTH, STATUS)
       if ( (TRIM(ResCommand) .ne. TRIM(CmdLine))  .or. &
            (LENGTH .ne. LEN(TRIM(CmdLine)))    .or. &
            (STATUS .ne. 0) )                        &
-      then 
+      then
          error stop 64
       endif
 
       END IF
 
-      END FUNCTION 
+      END FUNCTION
 
       RECURSIVE FUNCTION F_GET_CMD_ARG(CmdCount, NUMBER, VALUE, LENGTH, STATUS) RESULT(ResStatus)
 
@@ -118,16 +111,16 @@
       INTEGER, SAVE ::  Num /3/
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE 
-      integer          :: ARGCOUNT 
-          
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
+
       integer              :: CmdCount
       character(2047)      :: Argument
       integer              :: i, j
- 
+
       ResStatus = 0
 
       IF( Num .ne. 1) THEN
@@ -136,7 +129,7 @@
       ELSE
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, ResStatus)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -162,16 +155,16 @@
       character(2047)  :: ResValue
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE 
-      integer          :: ARGCOUNT 
-          
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
+
       integer              :: CmdCount
       character(2047)      :: Argument
       integer              :: i, j
- 
+
       ResValue = '????!'
 
       IF( Num .ne. 1) THEN
@@ -193,8 +186,8 @@
       END FUNCTION
 
 
-      END MODULE 
- 
+      END MODULE
+
 
       PROGRAM fxcllf39
 
@@ -202,17 +195,17 @@
       IMPLICIT NONE
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE 
-      integer          :: ARGCOUNT 
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
 
 
 
       IF (COMMAND_ARGUMENT_COUNT() .ne. 3 ) error stop 73
 
-  
+
       IF (TRIM(F_GET_CMD(COMMAND, LENGTH, STATUS)) .ne. 'fxcllf39 D\\D C\\% $E' )      error stop 74
 
 
@@ -223,7 +216,7 @@
 
 
 
-      END 
+      END
 
 
 

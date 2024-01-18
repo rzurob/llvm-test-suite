@@ -1,13 +1,8 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!* =====================================================================
-!* TEST CASE TITLE            : intrinsics/transpose/argumentKeyword001.f
-!* PROGRAMMER                 : Yong Du
 !* DATE                       : 12/30/2004
 !* ORIGIN                     :
 !* PRIMARY FUNCTIONS TESTED   : transpose
-!* DRIVER STANZA              : xlf90
 !* DESCRIPTION                :
 !*   Actual arguments are specified using argument keywords.
 !* =====================================================================

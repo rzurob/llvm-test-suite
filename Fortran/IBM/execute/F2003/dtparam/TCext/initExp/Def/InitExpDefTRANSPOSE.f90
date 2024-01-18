@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefTRANSPOSE.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefTRANSPOSE.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an tranformational intrinsic
-!* 
-!*  - TRANSPOSE 
+!*
+!*  - TRANSPOSE
 !*  (319498)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -61,20 +54,20 @@
   END MODULE
 
 
-  PROGRAM   InitExpDefTRANSPOSE 
+  PROGRAM   InitExpDefTRANSPOSE
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
 
   TYPE(DT(4,1,1,2)),  PARAMETER :: S(1,128)=RESHAPE((/(DT(4,1,1,2)(ProcPtr=NULL(), L=.TRUE., I=I, C=CHAR(I)), I=1,128)/),(/1,128/))
-  INTEGER,   PARAMETER :: II(128) = (/(I, I=1,128)/) 
-  CHARACTER, PARAMETER :: CC(128) = (/(CHAR(I), I=1,128)/) 
+  INTEGER,   PARAMETER :: II(128) = (/(I, I=1,128)/)
+  CHARACTER, PARAMETER :: CC(128) = (/(CHAR(I), I=1,128)/)
 
   TYPE(DT(4,1,1,2)),  PARAMETER :: T1(128,1) = TRANSPOSE(MATRIX=S)
-  INTEGER,   PARAMETER :: T2(128,1) = TRANSPOSE(S(:,:)%I) 
-  CHARACTER, PARAMETER :: T3(128,1) = TRANSPOSE(S%C) 
-  INTEGER,   PARAMETER :: T4(1,128)   = TRANSPOSE(TRANSPOSE(S(1:,:)%I)) 
-  CHARACTER, PARAMETER :: T5(1,128)   = TRANSPOSE(TRANSPOSE(S%C)) 
+  INTEGER,   PARAMETER :: T2(128,1) = TRANSPOSE(S(:,:)%I)
+  CHARACTER, PARAMETER :: T3(128,1) = TRANSPOSE(S%C)
+  INTEGER,   PARAMETER :: T4(1,128)   = TRANSPOSE(TRANSPOSE(S(1:,:)%I))
+  CHARACTER, PARAMETER :: T5(1,128)   = TRANSPOSE(TRANSPOSE(S%C))
   TYPE(DT(4,1,1,2)),  PARAMETER :: T6(1,128)   = TRANSPOSE(TRANSPOSE(S(:,:)))
 
 
@@ -93,4 +86,4 @@
   END
 
 
- 
+

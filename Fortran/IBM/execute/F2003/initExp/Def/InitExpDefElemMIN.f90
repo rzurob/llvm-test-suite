@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemMIN.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemMIN.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  MIN 
+!*
+!*  -  MIN
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,7 +30,7 @@
 
 
   PROGRAM  InitExpDefElemMIN
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
 
@@ -66,7 +59,7 @@
     REAL(4)     :: R4(128) =(/(I, I=0,127)/)
     REAL(8)     :: R8(128) =(/(I, I=0,127)/)
     REAL(16)    :: R6(128) =(/(I, I=0,127)/)
-    CHARACTER(128) :: Str(128) = C 
+    CHARACTER(128) :: Str(128) = C
   END TYPE
 
   TYPE :: DT
@@ -77,7 +70,7 @@
     REAL(4)     :: R4(16)
     REAL(8)     :: R8(16)
     REAL(16)    :: R6(16)
-    CHARACTER(128) :: Str(16)  
+    CHARACTER(128) :: Str(16)
   END TYPE
 
   TYPE (DT0), PARAMETER  :: T=DT0()

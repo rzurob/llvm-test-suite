@@ -3,22 +3,11 @@
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: non-polymorphic elemental assignment for type component as well as type
 !*  KEYWORD(S)                 :
@@ -75,20 +64,20 @@ program genericAssignmentElemental004
    type(base(4)) :: b1
    type(base(4)) :: b2(3)
    type(base(4)), allocatable :: b3(:)
-   
+
    b1 = base(4)(inner(4)(100))
    print *, b1
-   
+
    b2 = base(4)(inner(4)(200))
    print *, b2
-   
+
    allocate ( b3(5) )
    b3 = base(4)(inner(4)(300))
    print *, b3
-   
+
    b2 = (/ base(4)(inner(4)(2000)), base(4)(inner(4)(2001)), base(4)(inner(4)(2002)) /)
    print *, b2
-   
+
    b3 = (/ b2, base(4)( (/inner(4)(2004), inner(4)(2005), inner(4)(2006)/) ), base(4)( (/inner(4)(2007), inner(4)(2008), inner(4)(2009)/) ) /)
    print *, b3
 

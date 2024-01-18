@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpCommon3 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpCommon3
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 13, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The common statement
-!* 
+!*
 !*  The demension attribute specified by the common stmt
-!* 
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,28 +36,28 @@
     SEQUENCE
     REAL(K)       :: R(L)=K
   END TYPE
- 
+
   TYPE :: DT_C(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     CHARACTER(L)  :: C(L)=CHAR(48+K)
   END TYPE
- 
+
   TYPE :: DT_I(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     INTEGER(K)    :: I(L)=K
   END TYPE
- 
+
   TYPE :: DT_L(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     LOGICAL(K)    :: A(L)=.TRUE.
   END TYPE
- 
+
   TYPE :: DT_Z(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
@@ -84,15 +75,15 @@
     TYPE(DT_L(K,L))  :: A
     TYPE(DT_Z(K,L))  :: Z
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpCommon3 
+  PROGRAM dtpCommon3
   USE M
   IMPLICIT NONE
 
   INTEGER, PARAMETER :: N=128
-  TYPE(DT(8,7))  :: T  
+  TYPE(DT(8,7))  :: T
   COMMON /BLK/T(N)
 
   INTEGER I
@@ -118,14 +109,14 @@
 
   END DO
 
-  END 
+  END
 
   SUBROUTINE ExtSub()
-  USE M 
+  USE M
 
   INTEGER, PARAMETER :: N1=100, N2=28
 
-  TYPE(DT(8,7))  :: T1, T2  
+  TYPE(DT(8,7))  :: T1, T2
   COMMON /BLK/T1(N1), T2(N2)
 
   DO I=1, N1

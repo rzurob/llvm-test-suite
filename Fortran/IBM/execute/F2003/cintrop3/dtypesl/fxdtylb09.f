@@ -1,40 +1,26 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
 ! %PRECMD: ${TR_SRC}/scrdtyf00.presh fxdtylb09 cxdtyla09
 ! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for derived types with BIND(C) attr.
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived types with BIND(C) attribute
-!*  SECONDARY FUNCTIONS TESTED : see below 
+!*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -149,7 +135,7 @@ program fxdtylb09
       end function fun4
    end interface
 
-   type(dt2) :: dt0 = dt2(2.0e0,.true.,6.0q0,8.0d0,10.0e0,.true.,14.0d0,'A', & 
+   type(dt2) :: dt0 = dt2(2.0e0,.true.,6.0q0,8.0d0,10.0e0,.true.,14.0d0,'A', &
                       dt1(.true.,4.0d0,'A',8.0e0,10.0q0,12.0d0,.true.,16.0e0))
 
    type(dt2) :: dta, dtb, dtc

@@ -3,22 +3,11 @@
 ! opt variations: -qck -qnok -qnodeferredlp -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with assignment
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: pass-obj specified with elemental subroutines but with array sections (ICE in another place currently)
 !*  KEYWORD(S)                 :
@@ -93,7 +82,7 @@ program genericAssignmentPass009
 
    allocate ( b1(4), source = (/ child(4,3)('abc','ABC'), child(4,3)('def','DEF'), child(4,3)('ghi','GHI'), child(4,3)('jkl','JKL') /) )
    allocate ( b2(4), source = (/ child(4,3)('ABC','abc'), child(4,3)('DEF','def'), child(4,3)('GHI','ghi'), child(4,3)('JKL','jkl') /) )
-   
+
    c1 = (/ b1(4:3:-1), b2(1), b2(4) /)
    print *, c1
 

@@ -5,53 +5,47 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn096l.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn096l.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn096l.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn096l.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : pass binding attribute 
+!*  DATE                       :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : pass binding attribute
 !*
 !*  SECONDARY FUNCTIONS TESTED : inheritance
 !*
 !*  DESCRIPTION                : testing the base procedure is bound to
-!*                               multiple level inherited types with 
-!*                               different binding-names. 
-!*    
+!*                               multiple level inherited types with
+!*                               different binding-names.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod	      
+   module mod
       integer :: int = 200
       character*20 :: c = "hi"
 
-      type parent(n1,k1)    ! (20,4) 
+      type parent(n1,k1)    ! (20,4)
          integer, kind :: k1
          integer, len  :: n1
          integer(k1)   :: x
       contains
       	 procedure, pass(arg5) :: bind_b => proc1
          procedure, pass :: bind_r => proc2
-      end type 
+      end type
 
-      type, extends(parent) :: child    ! (20,4) 
+      type, extends(parent) :: child    ! (20,4)
       contains
          procedure, pass(arg2) :: bind_c => proc1
       end type
@@ -66,7 +60,7 @@
          procedure, pass(arg1) :: bind_4 => proc1
       end type
 
-      type, extends(fourGen) :: fifGen    ! (20,4) 
+      type, extends(fourGen) :: fifGen    ! (20,4)
       contains
          procedure, pass(arg3) :: bind_5 => proc1
       end type
@@ -83,11 +77,11 @@
       end subroutine
 
       subroutine proc2(arg1)
-         class(parent(*,4)) :: arg1 
+         class(parent(*,4)) :: arg1
          int = 0
          c = ""
       end subroutine
-   end module     
+   end module
    use mod
 
    type(parent(20,4)) :: dt_p
@@ -124,4 +118,4 @@
    if (c .ne. "hi_again")    error stop 17
 
    end
-   
+

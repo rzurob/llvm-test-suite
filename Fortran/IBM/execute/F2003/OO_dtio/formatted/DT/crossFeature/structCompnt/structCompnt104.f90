@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Structure Component: Scalar Sequence Derived Type Component (read)
@@ -75,7 +64,7 @@ use m1
 
    type(container)               :: c1
    type(container), allocatable  :: c2
-   
+
    c1 = container(b1=base(d1=data('ABC'),d2=data('DEF')))
    allocate ( c2 , source = container(b1=base(d1=data('GHI'),d2=data('JKL'))) )
 
@@ -89,10 +78,10 @@ use m1
 
    read ( 1, "(DT'_con2'(5,5),DT'_con3'(6,6))", iostat = stat, iomsg = msg )      ( c2%b1, i = 0 ,1 )
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 2_4
-   
+
    if ( ( c1%b1%d1%c /= 'ABC' ) .or. ( c1%b1%d2%c /= 'DEF' ) )  error stop 3_4
    if ( ( c2%b1%d1%c /= 'MNO' ) .or. ( c2%b1%d2%c /= 'PQR' ) )  error stop 3_4
-   
+
    print *, rbuffer
 
 end program

@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: errimagenum02.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,22 +12,15 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : errimagenum02
-!*
-!*  PROGRAMMER                 : Xing Xue
 !*  DATE                       : August 10, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Allow users to choose to prepend image number
 !*                               to the traceback info
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : *_r ( thread-safe )
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qcaf
 !*  REQUIRED RUNTIME OPTIONS   : ERRIMAGENUM
 !*

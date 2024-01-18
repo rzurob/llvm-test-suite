@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : combinedAttr1.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 2010-09-14
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : - Combination of attributes CONTIGUOUS,
-!*                                   POINTER and SAVE 
+!*                                   POINTER and SAVE
 !*                               - Target of array pointer is dummy arg of
 !*                                   explicit array
 !*
@@ -39,7 +29,7 @@ program main
     arr = (/(i,i=1,20)/)
 
     call sub(arr)
-    call sub(arr) 
+    call sub(arr)
 
     if ( any(arr .ne. (/23,26,29,32,35,38,41,44,47,50,53,56,59,62,65,68,71,74,77,80/))) stop 21
 
@@ -49,7 +39,7 @@ program main
 
         integer :: i, x(11:30)
         target x
-        integer, pointer, contiguous, save :: z(:) 
+        integer, pointer, contiguous, save :: z(:)
 
         if ( .not. associated(z)) then
             z=>x
@@ -58,7 +48,7 @@ program main
         endif
 
         do i = 1+10, size(x)+10
-            x(i) = i + x(i) 
+            x(i) = i + x(i)
         end do
 
     end subroutine

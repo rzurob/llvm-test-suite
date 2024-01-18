@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : miscNaNInfIO003.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : July 5, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -34,16 +28,16 @@
       implicit none
 
       integer, parameter :: in = 11
-      
+
       real(kind=4) :: nanq_pos, nanq_neg, nans_pos, nans_neg,          &
      &                inf_pos, inf_neg
 
-      open(in, file='miscNaNInfIO003.dat', decimal='point') 
+      open(in, file='miscNaNInfIO003.dat', decimal='point')
 
       ! reset variables
       nanq_pos = 0.0; nanq_neg = 0.0; nans_pos = 0.0; nans_neg = 0.0
       inf_pos  = 0.0; inf_neg  = 0.0
-      
+
       read(in, '(dp, 6f30.6)') nanq_pos, nanq_neg, nans_pos, nans_neg, &
      &                         inf_pos, inf_neg
 
@@ -71,7 +65,7 @@
       ! reset variables
       nanq_pos = 0.0; nanq_neg = 0.0; nans_pos = 0.0; nans_neg = 0.0
       inf_pos  = 0.0; inf_neg  = 0.0
-      
+
       read(in, '(dc, bz, sp, 6f40.0)')                                 &
      &     nanq_pos, nanq_neg, nans_pos, nans_neg, inf_pos, inf_neg
 
@@ -92,9 +86,9 @@
          integer(kind=4)          :: int_tmp
 
          equivalence(real_tmp, int_tmp)
-         
+
          real_tmp = val
-         
+
          if ( ( .not. ieee_is_nan(val) ) .or.                          &
      &        ( ieee_class(val) .ne. ieee_quiet_nan ) .or.             &
      &        ( int_tmp .le. 0 ) ) then
@@ -111,9 +105,9 @@
          integer(kind=4)          :: int_tmp
 
          equivalence(real_tmp, int_tmp)
-         
+
          real_tmp = val
-         
+
          if ( ( .not. ieee_is_nan(val) ) .or.                          &
      &        ( ieee_class(val) .ne. ieee_quiet_nan ) .or.             &
      &        ( int_tmp .ge. 0 ) ) then
@@ -130,9 +124,9 @@
          integer(kind=4)          :: int_tmp
 
          equivalence(real_tmp, int_tmp)
-         
+
          real_tmp = val
-         
+
          if ( ( .not. ieee_is_nan(val) ) .or.                          &
      &        ( ieee_class(val) .ne. ieee_signaling_nan ) .or.         &
      &        ( int_tmp .le. 0 ) ) then
@@ -149,9 +143,9 @@
          integer(kind=4)          :: int_tmp
 
          equivalence(real_tmp, int_tmp)
-         
+
          real_tmp = val
-         
+
          if ( ( .not. ieee_is_nan(val) ) .or.                          &
      &        ( ieee_class(val) .ne. ieee_signaling_nan ) .or.         &
      &        ( int_tmp .ge. 0 ) ) then
@@ -160,7 +154,7 @@
             is_nans_neg = .true.
          end if
       end function
-      
+
       ! Returns true if val == +Inf
       logical function is_inf_pos(val)
          real(kind=4), intent(in) :: val
@@ -181,5 +175,5 @@
             is_inf_neg = .true.
          end if
       end function
-      
+
       end

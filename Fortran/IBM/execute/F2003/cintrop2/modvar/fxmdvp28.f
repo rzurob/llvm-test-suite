@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: ${TR_SRC}/fxmdvn01.sh fxmdvp28 cxmdvp14 
+! %PRECMD: ${TR_SRC}/fxmdvn01.sh fxmdvp28 cxmdvp14
 ! %COMPOPTS: -qfree=f90 -qmixed
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,24 +12,18 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxmdvp28.f
 !
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 24, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    : -qfree=f90 -qmixed
 !*
 !* DESCRIPTION                  : Test the interoperability of character and
-!*                              : array of character module variable with 
+!*                              : array of character module variable with
 !*                              : binding label, with -qmixed, use module
 !*                              : iso_c_binding, in the scope of fsub and cmain.
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -76,7 +70,7 @@ integer :: i, j, k
   IF ( ch3 .NE. 'd' ) THEN
     ERROR STOP 53
   END IF
-  
+
   IF ( cha1 .NE. 'h' ) THEN
     ERROR STOP 57
   END IF
@@ -84,16 +78,16 @@ integer :: i, j, k
   IF ( chaR .NE. 'i' ) THEN
     ERROR STOP 58
   END IF
-  
+
   do i = 1, 5
     IF ( ch4(1) .NE. 'e' ) THEN
       ERROR STOP 54
     END IF
   end do
-  
+
 
   do j= 1, 2
-    do k = 1, 3 
+    do k = 1, 3
      IF ( ch5(k, j, 1) .NE. 'f' ) THEN
        ERROR STOP 55
      END IF
@@ -118,4 +112,4 @@ cha1 = 'g'
 chaR = 'h'
 
 
-end 
+end

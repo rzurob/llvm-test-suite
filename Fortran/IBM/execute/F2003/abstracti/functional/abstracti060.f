@@ -1,7 +1,7 @@
 !*********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qstrict -qarch=com
 ! %GROUP: fxpd0082.f
 ! %VERIFY: fxpd0082.out:fxpd0082.vf
@@ -12,13 +12,8 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Allan Zhang        
 !*  DATE                       : October 01, 1996
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : PARALLEL DO
 !*  SECONDARY FUNCTIONS TESTED : REDUCTION clause,do-loops,
@@ -26,7 +21,7 @@
 !*  TEST CASE NAME             : independent/reduction/fxpd0082
 !*
 !*  DESCRIPTION                : Test PARALLEL DO with REDUCTION clause
-!*                               where the REDUCTION named-variable is 
+!*                               where the REDUCTION named-variable is
 !*                               an array.  Test various
 !*                               uses of that array within the DO-loop.
 !*
@@ -42,7 +37,7 @@
 !*  10/01/96   AZ     -Initial Version
 !*  05/22/97   KL     -Modified for PARALLEL DO directive
 !*  07/28/98   VE     -Modified for PARALLEL DO DEFAULT and
-!*		       FIRSTPRIVATE clauses 
+!*		       FIRSTPRIVATE clauses
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 !
@@ -50,7 +45,7 @@
 program abstracti060
    implicit none
    integer i,j,k,l,m,n
-   integer,parameter :: Nx=100 
+   integer,parameter :: Nx=100
    real u,v,w
    integer r,s,t
    integer :: ia(Nx)
@@ -82,7 +77,7 @@ program abstracti060
    forall(i=1:Nx) ia_new(i) = i
 
 !smp$ parallel do default(none), private( i ), reduction(+:ia),&
-!smp$ shared(ia_new ) 
+!smp$ shared(ia_new )
    do i = 1, 100
       ia(i) = ia(i) + (ia_new(i) * ia_new(i) - ia_new(i))
    enddo
@@ -108,7 +103,7 @@ program abstracti060
 !smp$ parallel do default(shared), private( r,s),shared(r16a_new),&
 !smp$ reduction(*:r16a)
    do r = 1.0, 100.0, 2.0
-!smp$ parallel do private(s), firstprivate(r), default(none),& 
+!smp$ parallel do private(s), firstprivate(r), default(none),&
 !smp$ reduction(*:r16a),shared(r16a_new)
       do s = 1.0, 100.0, 2.0
          r16a(r:r+1,s:s+1) = r16a(r:r+1,s:s+1) * s * r * s * r * s * r * s &

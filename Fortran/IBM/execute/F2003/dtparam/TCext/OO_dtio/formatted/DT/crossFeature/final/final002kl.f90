@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : final002kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from final002 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Final Subroutine: Ensure DTIO can be invoked correctly during finalization with array
@@ -72,7 +64,7 @@ module m
       subroutine finalbasearray(dtv)
          type(base(4)), intent(inout) :: dtv(:)
          character(100) :: fmt
-         
+
          write ( fmt, * ) "(", size(dtv),"(DT'finalizebasearray'(5)))"
          write ( 1, "(A)", advance='no', iostat = stat, iomsg = msg )      'inside finalbasearray =>'
          write ( 1, fmt, iostat = stat, iomsg = msg )                      dtv
@@ -106,7 +98,7 @@ use m
    allocate( b2(4), source = (/ base(4)(1), base(4)(2), base(4)(3), base(4)(4) /) )
    write ( 1, "('b3:')")
    allocate( b3(4), source = (/ child(4,3)(5,'ABC'), child(4,3)(6,'DEF'), child(4,3)(7,'GHI'), child(4,3)(8,'JKL') /) )
-   
+
    write ( 1, "('deallocate:')")
    deallocate( b2, b3 )
 

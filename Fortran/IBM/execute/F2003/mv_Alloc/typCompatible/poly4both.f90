@@ -1,25 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : poly4both.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM/TO are of polymorphic DT
-!*                               TO is extended from FROM, direct child of FROM 
+!*                               TO is extended from FROM, direct child of FROM
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -30,8 +18,8 @@
 
 module m
       type  :: base
-          integer , allocatable :: i1 
-      end type 
+          integer , allocatable :: i1
+      end type
 
       type, extends(base) :: child
           integer , allocatable:: i2
@@ -39,11 +27,11 @@ module m
 
       class(child), allocatable :: b
 
-      interface 
+      interface
            subroutine sub(arg,brg)
                import base
                import child
-               
+
                class(base), allocatable ::  arg
                class(child), allocatable :: brg
            end subroutine
@@ -58,7 +46,7 @@ use m
     allocate(a, source = base(66))
 
     call sub(a, b)
-    
+
     if ( allocated(b) ) stop 11
 
     select type (a)

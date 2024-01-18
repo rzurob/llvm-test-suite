@@ -3,31 +3,19 @@
 ! opt variations: -qnok -ql
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlimitpolyC.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 05/31/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimit polymorphic,
-!*                               global entities declared in module, 
+!*                               global entities declared in module,
 !*                               have public, save, private attribute
 !*                               FROM and TO are same object to test
-!*                               TO has unallocated status 
-!*                        
+!*                               TO has unallocated status
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -53,7 +41,7 @@ module m
             if ( .not. allocated(new) ) stop 11
 
             call move_alloc(new, new)
-            if ( allocated(new) ) stop 21 
+            if ( allocated(new) ) stop 21
         end subroutine
 end module
 

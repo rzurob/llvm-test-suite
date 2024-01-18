@@ -1,25 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozCmplx010.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : CMPLX intrinsic
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                :Section 13.7.20 - Statement:
 !*				CMPLX (X [, Y, KIND])
 !*
-!*  Passing INF, NaNS, and NaNQ as arguements                        	
+!*  Passing INF, NaNS, and NaNQ as arguements
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

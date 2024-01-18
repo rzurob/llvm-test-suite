@@ -1,13 +1,10 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure15f
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
-!*  
+!*
 !*  DESCRIPTION
 !*
 !* Uses IMPURE elemental procedure as an INTERFACE.
@@ -19,11 +16,11 @@
   IMPURE ELEMENTAL FUNCTION final (z)
     IMPLICIT  NONE
     INTEGER, INTENT(IN) :: z
-    
+
     INTEGER :: final
-    INTEGER :: sum = 0.0 
+    INTEGER :: sum = 0.0
     sum = 2*z
-    
+
     final = sum+z
   END FUNCTION final
 
@@ -31,7 +28,7 @@
 
 
 PROGRAM main
-  
+
   IMPLICIT NONE
 
 INTERFACE imp
@@ -46,7 +43,7 @@ end INTERFACE
   INTEGER :: i
   INTEGER :: z(n), b(n)
   z = (/ (i, i = 1, n) /)
-  
+
 do i = 1,2500,5
 b(i) = final(z(i))
    PRINT *,b(i)

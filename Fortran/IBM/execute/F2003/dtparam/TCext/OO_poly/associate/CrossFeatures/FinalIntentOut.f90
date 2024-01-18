@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  FinalIntentOut.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : FinalIntentOut
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 14, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,12 +34,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   The intent(out) attribute 
-!*    () 
+!*   The intent(out) attribute
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   MODULE M
 
     INTEGER :: INDEX=0
@@ -64,7 +58,7 @@
       INTEGER(K2)   :: Id = 0
       CHARACTER(N2) :: C  = " "
       LOGICAL(K3)   :: L  = .FALSE.
- 
+
       CONTAINS
       PROCEDURE, PASS   :: GetId
       PROCEDURE, PASS   :: GetC
@@ -83,59 +77,59 @@
       Fin(Index) = 1
 !     PRINT *, "Base Finalization"
     END SUBROUTINE
- 
+
     SUBROUTINE Final(Obj)
     TYPE(DT(4,*,4,*,4)) :: Obj
       Index = Index + 1
       Fin(Index) = 2
 !     PRINT *, "DT Finalization"
     END SUBROUTINE
- 
+
     SUBROUTINE FinalArr(ObjArr)
     TYPE(DT(4,*,4,*,4)) :: ObjArr(:)
       Index = Index + 1
       Fin(Index) = 3
 !     PRINT *, "DT ARR Finalization"
     END SUBROUTINE
- 
+
     ELEMENTAL FUNCTION GetId(Arg)
-    IMPLICIT CLASS(DT(4,*,4,*,4))(A) 
+    IMPLICIT CLASS(DT(4,*,4,*,4))(A)
     INTENT(IN) :: Arg
     INTEGER    :: GetId
       GetId = Arg%Id
     END FUNCTION
 
     ELEMENTAL FUNCTION GetC(Arg)
-    IMPLICIT CLASS(DT(4,*,4,*,4))(A) 
+    IMPLICIT CLASS(DT(4,*,4,*,4))(A)
     INTENT(IN) :: Arg
     CHARACTER  :: GetC
       GetC = Arg%C
     END FUNCTION
 
     ELEMENTAL FUNCTION GetL(Arg)
-    IMPLICIT CLASS(DT(4,*,4,*,4))(A) 
+    IMPLICIT CLASS(DT(4,*,4,*,4))(A)
     INTENT(IN) :: Arg
     LOGICAL    :: GetL
       GetL = Arg%L
     END FUNCTION
 
   END MODULE
- 
+
   PROGRAM FinalIntentOut
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
-  TYPE(DT(4,20,4,3,4)), TARGET :: V =  DT(4,20,4,3,4)(ID=-1, C="!", L=.TRUE.) 
+  TYPE(DT(4,20,4,3,4)), TARGET :: V =  DT(4,20,4,3,4)(ID=-1, C="!", L=.TRUE.)
 
-  Fin = -1 
+  Fin = -1
 
-  ASSOCIATE ( As => Fun(V) ) 
+  ASSOCIATE ( As => Fun(V) )
 
     !FINALIZATION Finishes after evaluation of the selector
     IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) STOP 79
 
-    Fin = -1 
-    ASSOCIATE ( As => As ) 
+    Fin = -1
+    ASSOCIATE ( As => As )
 
       IF ( As%ID       .NE. -2 ) STOP 20
       IF ( As%GetID()  .NE. -2 ) STOP 21
@@ -145,7 +139,7 @@
 
       IF ( As%L       .NEQV. .TRUE. ) STOP 40
       IF ( As%GetL()  .NEQV. .TRUE. ) STOP 41
-    
+
     END ASSOCIATE
 
     IF ( ANY(Fin .NE. -1 ) ) STOP 89 !  no finalization happen
@@ -161,14 +155,14 @@
   IF ( ANY(Fin .NE. (/0,-1,-1,-1,-1,-1/) ) ) STOP 99
   ! no finalization happen for a return of a pointer
 
-  Fin = -1 
+  Fin = -1
   Index = 0
-  ASSOCIATE ( As => V ) 
+  ASSOCIATE ( As => V )
 
-    ASSOCIATE ( As => Fun(As) ) 
+    ASSOCIATE ( As => Fun(As) )
 
       !FINALIZATION Finishes after evaluation of the selector
-      IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) STOP 119 
+      IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) STOP 119
 
       IF ( As%ID       .NE. -2 ) STOP 50
       IF ( As%GetID()  .NE. -2 ) STOP 51
@@ -180,15 +174,15 @@
       IF ( As%GetL()  .NEQV. .TRUE. ) STOP 71
 
     END ASSOCIATE
-   
+
     !FINALIZATION Finishes
 !   PRINT *, "Finalization finished"
-    IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) STOP 89 
+    IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) STOP 89
     ! no finalization happen for a return of a pointer
 
     Fin = -1
     INDEX = 1
-    Fin ( Index ) = 0  
+    Fin ( Index ) = 0
 
   END ASSOCIATE
 
@@ -201,10 +195,10 @@
   TYPE(DT(4,*,4,*,4)), INTENT(OUT) :: Arg
   CLASS(DT(4,:,4,:,4)), POINTER :: Fun
 !   print*, "in fun"
-    ALLOCATE(Fun, SOURCE= DT(4,20,4,3,4)(ID=-2, C="2", L=.TRUE.)) 
+    ALLOCATE(Fun, SOURCE= DT(4,20,4,3,4)(ID=-2, C="2", L=.TRUE.))
 !   print*, "out fun"
   END FUNCTION
 
 
-  END 
+  END
 

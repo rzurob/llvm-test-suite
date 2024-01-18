@@ -9,7 +9,7 @@
       logical reused
 
       ! Open num_units to exhaust the fast units table
-      do j = 1, num_units      
+      do j = 1, num_units
         open(newunit=i, status='scratch')
         unit_numbers(j) = i
         print *, i

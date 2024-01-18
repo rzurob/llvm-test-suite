@@ -1,5 +1,5 @@
 module utilities
- use,intrinsic :: iso_fortran_env 
+ use,intrinsic :: iso_fortran_env
 
  interface PrintResult
       module procedure Print_int8, &
@@ -9,19 +9,19 @@ module utilities
                         Print_real32, &
                         Print_real64, &
                         Print_real128
- end interface 
- 
+ end interface
+
  contains
 
 logical function Print_int8( x , y)
   implicit none
-  
+
   logical, INTENT(IN) :: x
   INTEGER(INT8), INTENT(IN) :: y
 
   print*,x
   print*,y
-  
+
   Print_int8= .true.
 
 end function
@@ -31,10 +31,10 @@ logical function Print_int16( x , y)
 
   logical, INTENT(IN) :: x
   INTEGER(INT16), INTENT(IN) :: y
-  
+
   print*,x
   print*,y
-  
+
   Print_int16= .true.
 end function
 
@@ -79,7 +79,7 @@ logical function Print_real64( x , y)
 
   logical, INTENT(IN) :: x
   REAL(REAL64), INTENT(IN) :: y
-  
+
   print*,x
   print*,y
 

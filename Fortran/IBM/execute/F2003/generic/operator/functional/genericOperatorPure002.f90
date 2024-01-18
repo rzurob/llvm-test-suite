@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Binary Operator: UD operator subroutine is a pure function, with class hierarchy and
 !*                                                child type defined another UD operator
@@ -94,7 +83,7 @@ program genericOperatorPure002
    allocate ( b2, source = b1 * 100  )
    allocate ( b3, source = child(100,200) * (/ 100, 200 /) )
 
-   print *, b1%x  
+   print *, b1%x
    print *, b2%x
    select type ( b3 )
       type is ( child )

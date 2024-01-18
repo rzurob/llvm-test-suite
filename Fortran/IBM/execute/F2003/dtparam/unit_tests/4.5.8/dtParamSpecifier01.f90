@@ -1,7 +1,7 @@
 subroutine sub(x)
 
 type :: dt(k,l)
-  integer, kind :: k = 0 
+  integer, kind :: k = 0
   integer, len :: l
   sequence
   integer(k) i(l)
@@ -13,7 +13,6 @@ do i = 1, ubound(x%i, 1)
   x%i(i) = i
 enddo
 end subroutine
-
 
 type :: dt(k,l)
   integer, kind :: k = 0

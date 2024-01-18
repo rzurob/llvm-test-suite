@@ -1,33 +1,25 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AssumedType02f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : August 22, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop: Assumed Type objects
 !*
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Calling a BIND(C) procedure from Fortran
 !*                               where the procedure is defined in C
-!*                               Multiple TYPE(*) dummy arguments 
-!*                               
+!*                               Multiple TYPE(*) dummy arguments
 !*
 !**********************************************************************
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 use, intrinsic :: iso_c_binding
 implicit none
-integer(c_int)                 :: i_int   
+integer(c_int)                 :: i_int
 real(c_float)                  :: r_float
 character(c_char)              :: x_char
 
@@ -46,7 +38,7 @@ x_char = 'A'
 
 
 print*, "Before the call to C_sub:", i_int, r_float, x_char
-call c_sub(i_int, r_float, x_char) 
+call c_sub(i_int, r_float, x_char)
 print*, "After the call to C_sub:", i_int, r_float, x_char
 
-end 
+end

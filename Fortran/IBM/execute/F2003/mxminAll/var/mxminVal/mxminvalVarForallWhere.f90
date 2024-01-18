@@ -1,27 +1,16 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/15/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX*/MIN* intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX*/MIN* intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                : MAXVAL/MINVAL with where and forall construct 
-!*                               with its argument is variable. 
+!*  DESCRIPTION                : MAXVAL/MINVAL with where and forall construct
+!*                               with its argument is variable.
 !* ===================================================================
 
-  program mxminvalVarForallWhere 
+  program mxminvalVarForallWhere
 
      character*3 x(2,3,5,6,7), y(2,3,5,6,7), v1(2,3,5,7), v2(2,3,5,7)
      integer v(4)
@@ -33,7 +22,7 @@
          v1 = maxval(y,dim=4)
      elsewhere
          v1 = minval(y, dim=4, mask=.true.)
-     end where       
+     end where
 
      v = shape(maxval(x, dim=4))
 
@@ -48,14 +37,14 @@
      forall(i = 1:7, v1(2,3,5,i) > minval(x))
 
         where (v2(:,:,:,i) >  minval(x, mask=.true.) )
-            v2(:,:,:,i) =  maxval(y) 
+            v2(:,:,:,i) =  maxval(y)
         elsewhere
-            v2(:,:,:,i) = minval(y) 
+            v2(:,:,:,i) = minval(y)
         end where
 
      end forall
 
-     if(any(v2 .ne. "gbx")) error stop 3_4 
+     if(any(v2 .ne. "gbx")) error stop 3_4
 
-  end program mxminvalVarForallWhere 
+  end program mxminvalVarForallWhere
 

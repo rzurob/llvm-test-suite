@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass037.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass037.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -73,8 +61,8 @@
 
       program fxass36a
       implicit none
- 
-      interface 
+
+      interface
       recursive subroutine int_sub()
       end subroutine
 
@@ -117,7 +105,7 @@
             if ( cont .lt. 3 ) then
               associate ( arg => cont*2 )
               if(arg .ne. cont*2 ) then
-              error stop 10 
+              error stop 10
               endif
               end associate
               call int_sub()
@@ -138,7 +126,7 @@
             if ( cont .lt. 3_1 ) then
               associate ( arg => cont - 1_1 )
               if(arg .ne. (cont - 1_1) ) then
-              error stop 11 
+              error stop 11
               endif
               end associate
               call int1_sub()
@@ -158,7 +146,7 @@
             if ( cont .lt. 3_2 ) then
               associate ( arg => cont + 2_2 )
               if(arg .ne. (cont + 2_2) ) then
-              error stop 12 
+              error stop 12
               endif
               end associate
               call int2_sub()
@@ -177,7 +165,7 @@
             if ( cont .lt. 3 ) then
               associate ( arg => cont )
               if(arg .ne. cont ) then
-              error stop 13 
+              error stop 13
               endif
               end associate
               call int4_sub()
@@ -196,7 +184,7 @@
             if ( cont .lt. 3_8 ) then
               associate ( arg => (cont + 2_8)*2_8 )
               if(arg .ne. (cont + 2_8)*2_8 ) then
-              error stop 14 
+              error stop 14
               endif
               end associate
               call int8_sub()
@@ -215,7 +203,7 @@
             if ( cont .lt. 3_1 ) then
               associate ( arg => cont*1_1 )
               if(arg .ne. cont*1_1 ) then
-              error stop 15 
+              error stop 15
               endif
               end associate
               call byte_sub()

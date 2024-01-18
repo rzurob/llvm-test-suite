@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: C818ClassDefaults.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: C818ClassDefaults.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C818ClassDefaults
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 3, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C818 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C818
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    Nested select type constructs within class default bolck 
+!*    Nested select type constructs within class default bolck
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -44,18 +38,18 @@
 
   PROGRAM C818ClassDefaults
   IMPLICIT NONE
- 
+
   CLASS(*), ALLOCATABLE :: Var
- 
+
   ALLOCATE(Var, SOURCE=1 )
 
-A:  SELECT TYPE ( Var) 
+A:  SELECT TYPE ( Var)
     CLASS DEFAULT A
-B:    SELECT TYPE ( Var) 
+B:    SELECT TYPE ( Var)
       CLASS DEFAULT B
-C:      SELECT TYPE ( Var) 
+C:      SELECT TYPE ( Var)
         CLASS DEFAULT C
-D:        SELECT TYPE ( Var) 
+D:        SELECT TYPE ( Var)
           CLASS DEFAULT D
           END SELECT D
         END SELECT C

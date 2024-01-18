@@ -1,13 +1,6 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTENT, VOLATILE
 !*
@@ -17,11 +10,11 @@
 !*         ,INTRINSIC OR INTENT(IN) shall not be specified.
 !* ===================================================================
 
-  program volatileC526External 
+  program volatileC526External
 
-     external cos 
+     external cos
 
      VOLATILE cos
 
-  end program volatileC526External 
+  end program volatileC526External
 

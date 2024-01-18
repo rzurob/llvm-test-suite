@@ -1,43 +1,37 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrConcat.f 
+!*  TEST CASE NAME             : dataPtrConcat.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!* - data-ptr & data-tar are components of same derived-type, of type char(:) 
-!* - pointer-assignment applied in module proc; the results verified in main proc 
+!* - data-ptr & data-tar are components of same derived-type, of type char(:)
+!* - pointer-assignment applied in module proc; the results verified in main proc
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 module m
 
 
-    type base 
+    type base
         character(:), pointer :: ptr(:)
         character(:), allocatable :: char(:)
     end type
 
- 
+
     contains
         subroutine sub(a)
             type(base), target :: a
-	
+
             a%ptr(3:) => a%char
 
-	    a%char(1:3) = a%char(7:5:-1)  
+	    a%char(1:3) = a%char(7:5:-1)
         end subroutine
 
 end module
@@ -55,7 +49,7 @@ program main
 
     if  ( .not. associated(t1%ptr, t1%char)) stop 1
     if ( lbound(t1%ptr, 1) /= 3 ) stop 3
-    if ( ubound(t1%ptr, 1) /= 9 ) stop 5 
+    if ( ubound(t1%ptr, 1) /= 9 ) stop 5
 
     print *, t1%ptr
     print *, t1%ptr // "---"

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemCOUNT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemCOUNT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  - COUNT 
+!*
+!*  - COUNT
 !*  (318959/325220)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM  InitExpDefElemCOUNT 
+  PROGRAM  InitExpDefElemCOUNT
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -59,11 +52,11 @@
   INTEGER(KIND(COUNT(R24 .EQ. 0))) :: T14=COUNT(R24(:) .EQ. R24)
   INTEGER(KIND(COUNT(R28 .EQ. 0))) :: T18=COUNT(R28    .NE. R21(1:))
 
-  LOGICAL(1), PARAMETER   :: Z1(1:0, 2)= .TRUE. 
+  LOGICAL(1), PARAMETER   :: Z1(1:0, 2)= .TRUE.
   LOGICAL(2), PARAMETER   :: Z2(1:0, 2)= .TRUE.
   LOGICAL(4), PARAMETER   :: Z4(1:0, 2)= .TRUE.
   LOGICAL(8), PARAMETER   :: Z8(1:0, 2)= .TRUE.
- 
+
   INTEGER(KIND(COUNT(Z1))), PARAMETER  :: T21(0)=COUNT(Z1)
   INTEGER(KIND(COUNT(Z2))), PARAMETER  :: T22(0)=COUNT(Z2)
   INTEGER(KIND(COUNT(Z4))), PARAMETER  :: T24(0)=COUNT(Z4)
@@ -133,4 +126,4 @@
   END
 
 
- 
+

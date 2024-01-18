@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatBasic01c.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatBasic01c.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 3 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 3 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. drived type has scalar intrinsic components
@@ -33,7 +25,7 @@ module m
      real(2*k2)     :: r1
      complex(k1+k2) :: x1
      character(l1+l2) :: c1
-     logical(k1)      :: log1 
+     logical(k1)      :: log1
   end type
 
   contains
@@ -84,7 +76,7 @@ program formatBasic01c
   allocate(base(4,4,3,5) :: base1,base2(-1:0) )
 
   open(10,file="formatBasic01c.in",iostat=ios)
- 
+
   if(ios .eq. 0) then
      read (10,fmt= '(bn,i5,bz,2i3)') base1%i1,base2%i1
      read (10,fmt= '(3(f8.3))')  base1%r1,base2%r1
@@ -100,7 +92,7 @@ program formatBasic01c
   read(10,fmt= '(i5,/,f8.3,/,f9.1,f7.2,/,a8,/,l2)')  base1
 
   write(*,'(i5,/,f8.3,/,f9.1,f7.2,/,a8,/,l2)') base1
- 
+
   read(10,fmt= '(i3,f8.3,f9.1,f7.2,a10,l10)' ) base2
 
   write(*,fmt= 100) base2

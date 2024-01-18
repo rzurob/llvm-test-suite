@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrPrivComp.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrPrivComp.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 08, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  private components 
+!*  private components
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -46,27 +38,27 @@
     INTEGER(K2), PRIVATE             :: PtrI2Tar(10,  10)=-2_2
     INTEGER(K3), PRIVATE             :: PtrI4Tar(10,  10)=-4_4
     INTEGER(K4), PUBLIC              :: PtrI8Tar(100, 100)=-8_8
-  
+
     REAL(K3), PRIVATE                :: PtrR4Tar(10,   10)=-4.0_4
     REAL(K4), PRIVATE                :: PtrR8Tar(10,   10)=-8.0_8
     REAL(K5), PUBLIC                 :: PtrR16Tar(100, 100)=-16.0_16
-  
+
     COMPLEX(K3), PRIVATE             :: PtrC4Tar(10,   10)=(4.0_4, -4.0_4)
     COMPLEX(K4), PRIVATE             :: PtrC8Tar(10,   10)=(8.0_8, -8.0_8)
     COMPLEX(K5), PUBLIC              :: PtrC16Tar(100, 100)=(16.0_16, -16.0_16)
-  
+
     LOGICAL(K1), PRIVATE             :: PtrL1Tar(10, 10)=.TRUE._1
     LOGICAL(K2), PRIVATE             :: PtrL2Tar(10, 10)=.TRUE._2
     LOGICAL(K3), PRIVATE             :: PtrL4Tar(10, 10)=.TRUE._4
     LOGICAL(K4), PUBLIC              :: PtrL8Tar(10, 10)=.TRUE._8
-  
+
     CHARACTER(kind=K1,len=N1),PUBLIC :: PtrC1Tar(100, 100)= "1"
   END TYPE
 
 
   END MODULE
 
-  PROGRAM dataPtrPrivComp 
+  PROGRAM dataPtrPrivComp
   USE M
   IMPLICIT NONE
 
@@ -74,13 +66,13 @@
   REAL(16),     POINTER  :: PtrR16(:,:) =>NULL()
   COMPLEX(16),  POINTER  :: PtrC16(:,:)=>NULL()
   LOGICAL(8),   POINTER  :: PtrL8(:,:) =>NULL()
-  CHARACTER(1), POINTER  :: PtrC1(:,:) =>NULL() 
+  CHARACTER(1), POINTER  :: PtrC1(:,:) =>NULL()
 
 
-  TYPE (DT(1,2,4,8,16,:)),    POINTER  :: P(:, :) 
+  TYPE (DT(1,2,4,8,16,:)),    POINTER  :: P(:, :)
   TYPE (DT(1,2,4,8,16,1)),    TARGET   :: T(10, 10)
 
- 
+
   P(0:, 0: ) => T
   IF (.NOT. ASSOCIATED(P))                       STOP 11
   IF (ANY( LBOUND(P)         .NE. (/0, 0 /)))    STOP 12

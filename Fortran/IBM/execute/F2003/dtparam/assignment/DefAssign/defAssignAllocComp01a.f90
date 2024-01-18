@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignAllocComp01a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignAllocComp01a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 5 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 5 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test defined assignment with generic interface
@@ -33,11 +25,11 @@ module m
    type B(l2)
       integer,len :: l2
       integer,allocatable :: i1(:)
-      character(l2),allocatable :: c3(:) 
+      character(l2),allocatable :: c3(:)
    end type
 
    type C(l3)
-      integer,len :: l3 
+      integer,len :: l3
       type(A(l3+1)),allocatable :: a1comp(:)
       type(B(:)),allocatable :: b1comp(:)
    end type
@@ -85,13 +77,13 @@ program defAssignAllocComp01a
      type(C(2)),pointer :: cptr2(:)=>null()
 
      type(C(2)),target  :: ctar(2:3)
- 
+
      type(A(3)) :: a1(2)
-     
+
      type(A(3)) :: a2(2)
- 
+
      type(B(1)) :: b1(2)
- 
+
      type(B(2)) :: b2(2)
 
      ! call assignA
@@ -106,8 +98,8 @@ program defAssignAllocComp01a
      ! call assignB
      b1 = [B(1)(i1=[1,2,3,4],c3=["x","y","z"]), &
            B(1)(i1=[-1,-2,-3,-4],c3=["X","Y","Z"])]
-    
-     ! call assignB 
+
+     ! call assignB
      b2 = [B(2)(i1=[5,6],c3=["go","do"]),&
            B(2)(i1=[-5,-6,-7],c3=["GO","DO","TO"])  ]
 
@@ -125,7 +117,7 @@ program defAssignAllocComp01a
      if(any(b1(1)%c3 /= ["x","y","z"]))         stop 19
      if(any(b1(2)%i1 /= [-1,-2,-3,-4]))         stop 20
      if(any(b1(2)%c3 /= ["X","Y","Z"]))         stop 21
-   
+
      if(any(b2(1)%i1 /= [5,6]))                 stop 22
      if(any(b2(1)%c3 /= ["go","do"]))           stop 23
      if(any(b2(2)%i1 /= [-5,-6,-7]))            stop 24
@@ -143,7 +135,7 @@ program defAssignAllocComp01a
        if(any(x(1)%c2 /= ["ab","cd","ef"]))      stop 27
        if(any(x(2)%c1 /= ["AB","CD","EF"]))      stop 28
        if(any(x(2)%c2 /= ["CUP","HAT"]))         stop 29
-     
+
      end associate
 
      associate(x=>ctar(3)%a1comp)
@@ -156,7 +148,7 @@ program defAssignAllocComp01a
      end associate
 
      associate(x=>ctar(2)%b1comp)
-       
+
        if(any(x(1)%i1 /= [1,2,3,4]))             stop 34
        if(any(x(1)%c3 /= ["x","y","z"]))         stop 35
        if(any(x(2)%i1 /= [-1,-2,-3,-4]))         stop 36
@@ -170,7 +162,7 @@ program defAssignAllocComp01a
        if(any(x(1)%c3 /= ["go","do"]))           stop 39
        if(any(x(2)%i1 /= [-5,-6,-7]))            stop 40
        if(any(x(2)%c3 /= ["GO","DO","TO"]))      stop 41
-     
+
      end associate
 
      allocate(cptr2(-1:0))
@@ -221,9 +213,9 @@ program defAssignAllocComp01a
      allocate(A(3) :: cptr1%a1comp(2))
      allocate(B(1) :: cptr1%b1comp(2))
 
-     ! call assignC 
+     ! call assignC
      cptr1=ctar(2)
-     
+
      associate(x=>cptr1%a1comp)
 
        if(any(x(1)%c1 /= ["cup","hat"]))         stop 58
@@ -234,7 +226,7 @@ program defAssignAllocComp01a
      end associate
 
      associate(x=>cptr1%b1comp)
-      
+
        if(any(x(1)%i1 /= [1,2,3,4]))             stop 62
        if(any(x(1)%c3 /= ["x","y","z"]))         stop 63
        if(any(x(2)%i1 /= [-1,-2,-3,-4]))         stop 64
@@ -249,7 +241,6 @@ program defAssignAllocComp01a
      allocate (B(2) :: cptr1%b1comp(2))
      ! call assignB
      cptr1%b1comp=ctar(3)%b1comp
-
 
      associate(x=>cptr1%a1comp)
 
@@ -268,7 +259,7 @@ program defAssignAllocComp01a
        if(any(x(2)%c3 /= ["GO","DO","TO"]))      stop 73
 
      end associate
-      
+
      contains
 
           subroutine allocComp(dt)
@@ -276,11 +267,11 @@ program defAssignAllocComp01a
                integer :: l
 
                l=lbound(dt,1)
-               
+
                allocate(A(3) :: dt(l)%a1comp(2))
                allocate(B(1) :: dt(l)%b1comp(2))
                allocate(A(3) :: dt(l+1)%a1comp(2))
                allocate(B(2) :: dt(l+1)%b1comp(2))
-         
+
           end subroutine
 end program

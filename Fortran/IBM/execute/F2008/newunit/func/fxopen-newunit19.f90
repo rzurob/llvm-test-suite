@@ -1,25 +1,17 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxopen-newunit19.f
-!*
-!* PROGRAMMER                   : Sarah Kouchaki-Ramezan
 !* DATE                         : Oct. 2010
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: NEWUNIT= specifier, Feature#:377344
 !* SECONDARY FUNTIONS TESTED    : READ,WRITE,REWIND
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Using NEWUNIT with FILE and INQUIRE(),
 !*                                PENDING= Specifier, ID= Specifier
 !*                                ERR= Specifier,READ and unformatted
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -61,14 +53,14 @@
     DO i = 1, 3
     WRITE(0, *) "ioID(", i, ") = '", ioID( i ), "'"
     INQUIRE(IVAR, ID=ioID( i ), PENDING=stillPending, IOMSG=iMsg, ERR=100)
-    
+
     IF (i > 2) ERROR STOP 3_4
     GOTO 200
 100     WRITE(0, *) "INQUIRE(ERR=100,ID=", ioID( i ), ") ", iMsg
         IF (i < 3) ERROR STOP 5_4
 200     CONTINUE
     END DO
- 
+
 
 
     CLOSE(IVAR, IOSTAT=iStat, IOMSG=iMsg)

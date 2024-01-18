@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: Optional2.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Optional 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Optional
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  The associating entity's optional attribute. 
-!*  Scalar 
+!*
+!*  The associating entity's optional attribute.
+!*  Scalar
 !*  (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -53,7 +47,7 @@
       INTEGER, KIND :: K1
       INTEGER(K1)   :: Id = 1
       CONTAINS
-      PROCEDURE, PASS   :: GetId 
+      PROCEDURE, PASS   :: GetId
     END TYPE
 
   CONTAINS
@@ -66,7 +60,7 @@
   END MODULE
 
 
-  PROGRAM Optional2 
+  PROGRAM Optional2
   USE M
   IMPLICIT NONE
 
@@ -85,9 +79,9 @@
   TYPE(DT(4)),   POINTER  :: DTVPtr
 
 
-  Str(:) = '!' 
+  Str(:) = '!'
   C = Str
-  
+
   CALL Sub()
   CALL Sub(Int)
   CALL Sub(Cplx)
@@ -101,46 +95,46 @@
   SUBROUTINE Sub(Arg)
   CLASS(*), TARGET, OPTIONAL  :: Arg
 
-    IF ( .NOT. PRESENT(Arg)) RETURN 
- 
-    SELECT TYPE (U => Arg)
-    CLASS DEFAULT 
+    IF ( .NOT. PRESENT(Arg)) RETURN
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30 
+    SELECT TYPE (U => Arg)
+    CLASS DEFAULT
+
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30
 
     ASSOCIATE ( W => U )
 
       SELECT TYPE (U => W )
 
       TYPE IS (INTEGER(KIND(IntPtr)))
-        IntPtr => U 
+        IntPtr => U
         IF ( U   .NE. IntPtr )      STOP 35
         IF ( KIND(U) .NE. KIND(IntPtr) ) STOP 36
 
       TYPE IS (COMPLEX(KIND(CplxPtr)))
-        CplxPtr => U 
+        CplxPtr => U
         IF ( U   .NE. CplxPtr )     STOP 37
         IF ( KIND(U) .NE. KIND(CplxPtr) )STOP 38
 
       TYPE IS (REAL(KIND(RPtr)))
-        RPtr => U 
+        RPtr => U
         IF ( U   .NE. RPtr )       STOP 37
         IF ( KIND(U) .NE. KIND(RPtr) )  STOP 38
 
       TYPE IS (LOGICAL(KIND(LPtr)))
-        LPtr => U 
-        IF ( U   .NEQV. LPtr)       STOP 40 
-        IF ( KIND(U) .NE. KIND(LPtr) )   STOP 41 
+        LPtr => U
+        IF ( U   .NEQV. LPtr)       STOP 40
+        IF ( KIND(U) .NE. KIND(LPtr) )   STOP 41
 
       TYPE IS (CHARACTER(*))
-        CPtr => U 
-        IF ( U  .NE. CPtr )       STOP 42 
-        IF ( LEN(U) .NE. LEN(CPtr) )   STOP 43 
+        CPtr => U
+        IF ( U  .NE. CPtr )       STOP 42
+        IF ( LEN(U) .NE. LEN(CPtr) )   STOP 43
 
       TYPE IS (DT(4))
-        DTVPtr => DTV 
-        IF ( U%Id      .NE. DTVPtr%Id )      STOP 42 
-        IF ( U%GetId() .NE. DTVPtr%GetId())   STOP 43 
+        DTVPtr => DTV
+        IF ( U%Id      .NE. DTVPtr%Id )      STOP 42
+        IF ( U%GetId() .NE. DTVPtr%GetId())   STOP 43
 
       CLASS DEFAULT
         STOP 51
@@ -148,7 +142,7 @@
 
     END ASSOCIATE
     END SELECT
-  
+
   END SUBROUTINE
 
   END

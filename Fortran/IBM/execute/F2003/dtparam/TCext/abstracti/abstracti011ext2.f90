@@ -3,21 +3,15 @@
 
 !************************************************************************
 !* ======================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* ======================================================================
 !*
 !*  TEST CASE NAME             : abstracti011ext2
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti011
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-17 (original: 02/20/2006)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Abstract Interface
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : ALLOCATE (abstract type in allocate statement;
 !                               a test case derived from fdtio513a1.f)

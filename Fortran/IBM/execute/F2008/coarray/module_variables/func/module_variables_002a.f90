@@ -1,21 +1,11 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Denis Navotniy
 !*  DATE                       : September 29, 2010
 !* .or.GIN                     :
-!*                             : 
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              :
 !*
 !*  DESCRIPTION                : Test module variables for array: INTEGER, REAL,
 !                                CHARACTER, COMPLEX, LOGICAL
@@ -29,17 +19,17 @@ program module_variables_002a
 	use mod001f
 
 	implicit none
-    
+
 	integer	:: array1(10)
 	real    :: array2(10)
 	complex :: cm
 	character :: ch
-	
+
 	integer :: me,num,i, left
-	
+
 	integer*8	:: ci
 	real*8		:: cr
-	
+
 	me = THIS_IMAGE()
     num = NUM_IMAGES()
 
@@ -51,7 +41,7 @@ program module_variables_002a
 	ci = PRODUCT(ar_int1[me])
 	cr = PRODUCT(ar_re1[me])
 	print *, me, ci, cr
-	
+
 	!Expectedresult for 'print *, me, ci' is
 	!
 	!4 3805072588800
@@ -77,20 +67,20 @@ program module_variables_002a
 	!4 3805072588800.00000
 	!1 3628800.00000000000
 	!---------------------------------------------------
-	
+
 	!----Test module variables for array: COMPLEX------
 	ar_comp1[me] = (/(1.0,1.0*me),(2.0,2.0*me),(3.0,3.0*me),(4.0,4.0*me),(5.0,5.0*me),(6.0,6.0*me),(7.0,7.0*me),(8.0,8.0*me),(9.0,9.0*me),(10.0,10.0*me)/)
-	
+
 	cm = PRODUCT(ar_comp1[me])
-	
-	print *, me, cm	
+
+	print *, me, cm
 	!---------------------------------------------------
-	
+
 	!----Test module variables for array: LOGICAL------
 	ar_log1[me] = [((mod(i,me) .ne. 0), i = 1, 10)]
-		
+
 	print *, me, ar_log1(me)[me]
-	
+
 	!Expected result for 'print *, me, caf6(me)[me]' is
 	!6 F
 	!10 F
@@ -103,24 +93,24 @@ program module_variables_002a
 	!4 F
 	!8 F
 	!----------------------------------------------------
-	
+
 	!----Test module variables for array: CHARACTER------
 	if (me == 1) then
         left = num
     else
         left = me - 1
     end if
-	
+
 	ar_char1(1)[me] = 'a'
 	ar_char2(1)[me] = 'a'
-	
+
 	ch = ar_char1(1)[me]
 	ar_char1(1)[me] = ar_char2(1)[left]
 	ar_char2(1)[me] = ch
 	sync all
-	
+
 	print *,me, ar_char1(1)[me], ar_char2(1)[me]
-	
+
 	!Expected result for 'print *,me, ar_char1(1)[me], ar_char2(1)[me]' is
 	!4 ba
 	!5 ba
@@ -128,8 +118,5 @@ program module_variables_002a
 	!2 ba
 	!1 ba
 	!----------------------------------------------------
-	
-	
-	
-	
-end program module_variables_002a	
+
+end program module_variables_002a

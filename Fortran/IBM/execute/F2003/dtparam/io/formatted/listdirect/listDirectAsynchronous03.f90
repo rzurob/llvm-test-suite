@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectAsynchronous03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectAsynchronous03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 26 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 26 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test read statement with asynchronous IO and stream access
@@ -25,7 +17,7 @@
 !234567490123456749012345674901234567490123456749012345674901234567490
 module m1
   type A(len)
-     integer,len  :: len 
+     integer,len  :: len
      integer      :: i1(len:len+1)=-99
      character(3) :: c1(len-1:len)="***"
      logical      :: g1(len:len+1)=.false.
@@ -35,14 +27,14 @@ module m1
 
   type base(l1)
     integer,len :: l1
-    
+
     type(A(l1)) :: a1comp(l1+1)
     type(A(l1)) :: a2comp(l1)
-    
+
     contains
 
       procedure :: readDT=>readBase
-      generic  :: read=>readDT 
+      generic  :: read=>readDT
   end type
 
   type,extends(base) :: child(l2)
@@ -52,7 +44,7 @@ module m1
     contains
 
        procedure :: readDT=>readChild
-       generic  :: read=>readDT 
+       generic  :: read=>readDT
   end type
 
   contains
@@ -68,7 +60,7 @@ module m1
                id=idvar,pos=mypos,decimal='comma') this
          class default
             stop 16
-       end select 
+       end select
     end subroutine
 
     subroutine readChild(this,unit,idvar,mypos)
@@ -83,7 +75,7 @@ module m1
         class default
            stop 17
       end select
-        
+
     end subroutine
 
 end module
@@ -107,9 +99,9 @@ module m2
              if(mypos /= 1)                    stop 12
 
              call dt%read(unit,idvar,mypos)
-              
+
              wait(unit,id=idvar)
- 
+
              inquire(unit,id=idvar,pending=pending,pos=mypos)
 
              if(pending .neqv. .false.)        stop 13
@@ -122,12 +114,12 @@ module m2
              inquire(unit,id=idvar,pending=pending,pos=mypos)
 
              if(pending .neqv. .false.)        stop 15
- 
+
            class default
 
              stop 11
-       end select        
-     
+       end select
+
     end subroutine
 
 end module
@@ -229,11 +221,10 @@ program listDirectAsynchronous03
          if(.not. precision_r4(x%a4comp(1)%x1,(1.3,-4.1) ))      stop 48
 
      class default
- 
+
         stop 18
   end select
-  
-  close(10) 
 
+  close(10)
 
 end program

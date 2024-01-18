@@ -1,21 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : directRead02
-!*  TEST CASE TITLE            : Unformatted Intrinsic Input (with DTP)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : September 30, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Data Transfer from a DIRECT File
 !*  SECONDARY FUNCTIONS TESTED : input-item-list is an Extended Derived
 !*                               Type (with Parameters)
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : READ

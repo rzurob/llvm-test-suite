@@ -1,29 +1,16 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX*/MIN* as component in struct constructor
 !*
-!*
 !* ===================================================================
 
-
-program mxminMisc16 
+program mxminMisc16
 
      type base
          integer  id
@@ -39,10 +26,10 @@ program mxminMisc16
 
      character*4 :: x(5)
 
-     type (child) :: c 
+     type (child) :: c
      type (grandchild) :: g
 
-     type (base) :: b 
+     type (base) :: b
 
      x = "zzzz"
 
@@ -72,5 +59,5 @@ program mxminMisc16
         error stop 4_4
      endif
 
-end program mxminMisc16 
+end program mxminMisc16
 

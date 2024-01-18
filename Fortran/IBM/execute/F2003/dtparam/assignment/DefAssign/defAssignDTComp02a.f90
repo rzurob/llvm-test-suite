@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignDTComp02a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignDTComp02a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 3 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 3 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test defined assignment with interface block
@@ -32,13 +24,13 @@ module m
   type inner2(l2)
      integer,len   :: l2 ! l2=4
      integer       :: i1(l2)=-99
-  end type 
+  end type
   type outer(l3,l4)
     integer,len :: l3,l4 ! l3=3,l4=4
     logical     :: g1(l3:l4)=.false.
     type(inner1(l3))  :: inn1comp(l3:l4)
-    type(inner2(l4))  :: inn2comp(l3:l4) 
-  end type 
+    type(inner2(l4))  :: inn2comp(l3:l4)
+  end type
 
   interface assignment(=)
      module procedure assignInn1_1,assignInn1_2,&
@@ -49,16 +41,16 @@ module m
       elemental subroutine assignInn1_1(this,arg)
          class(inner1(*)),intent(inout) :: this
          class(inner1(*)),intent(in)    :: arg
-      
+
          this%c1=arg%c1
-   
+
       end subroutine
 
       subroutine assignInn1_2(this,char)
          type(inner1(*)),intent(inout) :: this
-         character(*),intent(in) :: char(:,:) 
+         character(*),intent(in) :: char(:,:)
 
-         print *,"in assignInn1_2"         
+         print *,"in assignInn1_2"
 
          this%c1=char
 
@@ -66,7 +58,7 @@ module m
 
       elemental subroutine assignInn2_1(this,arg)
          class(inner2(*)),intent(inout) :: this
-         class(inner2(*)),intent(in)  :: arg 
+         class(inner2(*)),intent(in)  :: arg
 
          this%i1=arg%i1
 
@@ -74,10 +66,10 @@ module m
 
       subroutine assignInn2_2(this,int)
          class(inner2(*)),intent(inout) :: this
-         integer,intent(in) :: int(:) 
+         integer,intent(in) :: int(:)
 
          print *,"in assignInn2_2"
-         
+
          this%i1=int
 
       end subroutine
@@ -86,23 +78,23 @@ module m
          class(outer(*,*)),intent(inout),pointer :: this
          class(outer(*,*)),intent(in),target    :: arg
 
-         print *,"in assignOut"         
+         print *,"in assignOut"
          this=>getFun(arg)
 
-      end subroutine 
+      end subroutine
 
       function getFun(tar)
          class(outer(*,*)),intent(in),target :: tar
          class(outer(:,:)),pointer :: getFun
 
          print *,"in getFun"
- 
+
          allocate(outer(tar%l3,tar%l4) :: getFun)
 
          getFun%g1=tar%g1
          getFun%inn1comp=tar%inn1comp ! call assignInn1_1
          getFun%inn2comp=tar%inn2comp ! call assignInn2_1
-         
+
       end function
 
 end module
@@ -145,7 +137,7 @@ program defAssignDTComp02a
 
    ptr=getFun(tar2) ! call assignOut
 
-   ! output ptr for verification 
-   write(*,'(2l2,8a4,8i3)') ptr 
+   ! output ptr for verification
+   write(*,'(2l2,8a4,8i3)') ptr
 
 end program

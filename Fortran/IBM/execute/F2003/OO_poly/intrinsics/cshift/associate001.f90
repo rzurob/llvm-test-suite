@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/cshift
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 01/27/2005
 ! PRIMARY FUNCTIONS TESTED   : cshift
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : ARRAY or SHIFT is an associate name.
 !=======================================================================
 ! REVISION HISTORY

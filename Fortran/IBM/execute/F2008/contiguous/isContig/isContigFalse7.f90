@@ -1,24 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : isContigFalse7.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS intrinsic
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : - ASSOCIATE and SELECTTYPE
 !*                               - complex type
-!*  DRIVER STANZA              :
 !*
-!*  DESCRIPTION                : - 
-!*                               - 
+!*  DESCRIPTION                : -
+!*                               -
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -40,7 +31,7 @@ PROGRAM isContigFalse7
       COMPLEX(16), POINTER  :: ptr3(:,:,:)
       CLASS(*), POINTER     :: upoly3(:,:,:)
 
-!*    Data pointer assignment 
+!*    Data pointer assignment
 
       ptr => Zarr                                                 ! contiguous
       IF ( .NOT. IS_CONTIGUOUS(ptr) )  ERROR STOP 10
@@ -60,7 +51,7 @@ PROGRAM isContigFalse7
         IF ( IS_CONTIGUOUS(a) .NEQV. IS_CONTIGUOUS(ptr([1,2,3,4,5])) )  ERROR STOP 16
       END ASSOCIATE
 
-!*    Allocatable array 
+!*    Allocatable array
 
       ALLOCATE(COMPLEX(8):: upoly(10))                            ! contiguous
       IF ( .NOT. IS_CONTIGUOUS(upoly) )  ERROR STOP 20
@@ -80,7 +71,7 @@ PROGRAM isContigFalse7
         IF ( IS_CONTIGUOUS(a) .NEQV. IS_CONTIGUOUS(upoly([1,2,3,4,5])) )  ERROR STOP 26
       END ASSOCIATE
 !*
-      DEALLOCATE(upoly) 
+      DEALLOCATE(upoly)
       ALLOCATE(upoly(10), SOURCE=Zarr)
       IF ( .NOT. IS_CONTIGUOUS(upoly) )  ERROR STOP 30
 
@@ -132,21 +123,21 @@ PROGRAM isContigFalse7
 
       ASSOCIATE( a => upoly3(5,:,:) )    ! Not contiguous
         IF (                         IS_CONTIGUOUS(a)              )  ERROR STOP 51
-        IF ( IS_CONTIGUOUS(a) .NEQV. IS_CONTIGUOUS(upoly3(5,:,:)) )  ERROR STOP 52 
+        IF ( IS_CONTIGUOUS(a) .NEQV. IS_CONTIGUOUS(upoly3(5,:,:)) )  ERROR STOP 52
       END ASSOCIATE
 
       ASSOCIATE( a => upoly3(1,1,4:5) )  ! Not contiguous
-        IF (                         IS_CONTIGUOUS(a)                )  ERROR STOP 53 
-        IF ( IS_CONTIGUOUS(a) .NEQV. IS_CONTIGUOUS(upoly3(1,1,4:5)) )  ERROR STOP 54 
+        IF (                         IS_CONTIGUOUS(a)                )  ERROR STOP 53
+        IF ( IS_CONTIGUOUS(a) .NEQV. IS_CONTIGUOUS(upoly3(1,1,4:5)) )  ERROR STOP 54
       END ASSOCIATE
 
       ASSOCIATE( a => upoly3(:,:,5:1:-1) )  ! Not contiguous
-        IF (                         IS_CONTIGUOUS(a)                   )  ERROR STOP 55 
-        IF ( IS_CONTIGUOUS(a) .NEQV. IS_CONTIGUOUS(upoly3(:,:,5:1:-1)) )  ERROR STOP 56 
+        IF (                         IS_CONTIGUOUS(a)                   )  ERROR STOP 55
+        IF ( IS_CONTIGUOUS(a) .NEQV. IS_CONTIGUOUS(upoly3(:,:,5:1:-1)) )  ERROR STOP 56
       END ASSOCIATE
 
       ASSOCIATE( a => upoly3(:,:,[1,2]) )   ! Not contiguous
-        IF (                         IS_CONTIGUOUS(a)                  )  ERROR STOP 57 
+        IF (                         IS_CONTIGUOUS(a)                  )  ERROR STOP 57
         IF ( IS_CONTIGUOUS(a) .NEQV. IS_CONTIGUOUS(upoly3(:,:,[1,2])) )  ERROR STOP 58
       END ASSOCIATE
 !*

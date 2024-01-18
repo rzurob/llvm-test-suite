@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : array107kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from array107 by Robert Ma)
 !*  DATE                       : 2007-06-05 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        array sequence derived type variable containing sequence components which uses DTIO (read)
@@ -98,7 +90,7 @@ use m
 
    if ( ( b3(1,1)%d%i  /= 300 )   .or. ( b3(2,1)%d%i  /= 301 )   .or. ( b3(1,2)%d%i  /= 302 )  .or. ( b3(2,2)%d%i  /= 303 ) .or. &
         ( b3(1,1)%c  /= 'abc' ) .or. ( b3(2,1)%c  /= 'DEF' ) .or. ( b3(1,2)%c  /= 'ghi' ).or. ( b3(2,2)%c  /= 'JKL' )  ) error stop 6_4
-   
+
    print *, rbuffer
 
 end program

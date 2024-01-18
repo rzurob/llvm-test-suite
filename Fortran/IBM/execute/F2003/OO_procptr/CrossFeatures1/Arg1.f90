@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 19, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Dummy argument is a procedure pointer - function/Null 
-!*  (304727)(305366)(305719) 
+!*
+!*  Dummy argument is a procedure pointer - function/Null
+!*  (304727)(305366)(305719)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,7 +41,7 @@
     TYPE :: Base
       CHARACTER(3) :: C
     END TYPE
-  
+
   END MODULE
 
   MODULE M
@@ -56,9 +50,9 @@
     TYPE  :: DT
       PROCEDURE(TYPE(Base)), NOPASS, POINTER :: ProcPtr
     END TYPE
-   
+
     CONTAINS
- 
+
     FUNCTION ModFun(Arg)
     TYPE(Base) :: Arg, ModFun
       ModFun = Arg
@@ -69,17 +63,17 @@
   FUNCTION RetPtr(Fun)
   USE M
   PROCEDURE(ModFun), POINTER :: Fun
-  PROCEDURE(ModFun), POINTER :: RetPtr 
-    RetPtr => Fun 
+  PROCEDURE(ModFun), POINTER :: RetPtr
+    RetPtr => Fun
   END FUNCTION
- 
-  PROGRAM Arg1 
+
+  PROGRAM Arg1
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   INTERFACE
     FUNCTION RetPtr(Fun)
-      IMPORT 
+      IMPORT
       PROCEDURE(ModFun), POINTER :: Fun
       PROCEDURE(ModFun), POINTER :: RetPtr
     END FUNCTION
@@ -97,7 +91,7 @@
   SUBROUTINE IntSub(Ptr)
   PROCEDURE(ModFun), POINTER :: Ptr
     IF ( ASSOCIATED(Ptr)) STOP 41
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END
 

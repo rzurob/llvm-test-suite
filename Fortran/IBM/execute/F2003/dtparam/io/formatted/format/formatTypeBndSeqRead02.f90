@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatTypeBndSeqRead02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatTypeBndSeqRead02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 9 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1.test READ statement in type bound procedure
@@ -27,14 +19,14 @@ module m
    type inner(l1)
      integer(8),len  :: l1
      integer         :: i1(l1) !l1=3
-     character(l1+1) :: c1(l1) 
+     character(l1+1) :: c1(l1)
    end type
 
    type outer(l2)
      integer,len  :: l2
      logical      :: log1(l2) !l2=2
      real         :: r1(l2:l2)!l2=2
-     complex(8)   :: x1 
+     complex(8)   :: x1
      type(inner(l2+1)) :: comp(l2)
      contains
         procedure,pass :: readOuter
@@ -54,7 +46,7 @@ module m
                stop 10
            end select
        end subroutine
-      
+
        subroutine writeOuter(this)
            class(Outer(*)),intent(in) :: this
 
@@ -65,7 +57,7 @@ module m
              class default
                stop 11
            end select
-           
+
        end subroutine
 
 end module
@@ -75,25 +67,25 @@ program formatTypeBndSeqRead02
   implicit none
 
   class(outer(:)),pointer :: outer1=>null()
-  
+
   integer :: ios
   character(500) :: msg
 
   allocate(outer(2) :: outer1)
-     
+
   open(10,file="formatTypeBndSeqRead02.dat",action='read',&
        form='formatted',access='sequential',blank='zero',decimal='comma',&
-       sign='plus',iomsg=msg,iostat=ios) 
+       sign='plus',iomsg=msg,iostat=ios)
 
   if(ios /= 0) then
      print *,"fail to open the file"
      print *,"iomsg=",msg
      print *,"iostat=",ios
-     stop 9  
+     stop 9
   else
      call outer1%readOuter
      call outer1%writeOuter
-  end if 
+  end if
 
   close(10)
 

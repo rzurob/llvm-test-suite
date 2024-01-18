@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecProcPtr.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecProcPtr.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  intrinsic-type-spec in proc ptr: integer and logical 
-!* 
-!*  
-!* 
+!*  intrinsic-type-spec in proc ptr: integer and logical
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -40,55 +30,55 @@
 
   FUNCTION I1()
     INTEGER(1) :: I1
-    I1 = 1 
+    I1 = 1
   END FUNCTION
- 
+
   FUNCTION I2()
     INTEGER(2) :: I2
-    I2 = 2 
+    I2 = 2
   END FUNCTION
- 
+
   FUNCTION I4()
     INTEGER(4) :: I4
-    I4 = 4 
+    I4 = 4
   END FUNCTION
- 
+
   FUNCTION I8()
     INTEGER(8) :: I8
-    I8 = 8 
+    I8 = 8
   END FUNCTION
- 
- 
+
+
   FUNCTION L1()
     LOGICAL(1) :: L1
     L1 = .TRUE.
   END FUNCTION
- 
+
   FUNCTION L2()
     LOGICAL(2) :: L2
     L2 = .TRUE.
   END FUNCTION
- 
+
   FUNCTION L4()
     LOGICAL(4) :: L4
     L4 = .TRUE.
   END FUNCTION
- 
+
   FUNCTION L8()
     LOGICAL(8) :: L8
     L8 = .TRUE.
   END FUNCTION
- 
+
   END MODULE
 
 
-  PROGRAM InitExpTypSpecProcPtr 
+  PROGRAM InitExpTypSpecProcPtr
   USE M
   IMPLICIT NONE
 
   INTEGER :: I
 
-  
+
   PROCEDURE(INTEGER(KIND=1_8)),             POINTER :: I1ProcPtr
   PROCEDURE(INTEGER(KIND=KIND([1_1])+1)),   POINTER :: I2ProcPtr
   PROCEDURE(INTEGER(KIND=KIND([1_2])*2)),   POINTER :: I4ProcPtr
@@ -122,4 +112,4 @@
 
   END
 
- 
+

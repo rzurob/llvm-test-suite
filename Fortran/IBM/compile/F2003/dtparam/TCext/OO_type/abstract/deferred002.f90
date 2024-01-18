@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: if the type definition contains or inherits
 !*                                        a deferred binding, ABSTRACT shall appear. (C427)
@@ -50,24 +34,24 @@
 
 
 module m
-   
+
    type, abstract :: b1(k1)
       integer, kind :: k1
       integer(k1) :: id
    contains
       procedure(printif), nopass, deferred :: print
    end type
-   
+
    type, extends(b1) :: b2(k2,n)
       integer, kind :: k2
       integer, len :: n
    end type
-   
+
    interface
       subroutine printif()
       end subroutine
    end interface
-   
+
 end module
 
 program deferred002

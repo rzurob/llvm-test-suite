@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar102akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar102a by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        scalar polymorphic derived type variable with abstract type (read)
@@ -106,9 +98,9 @@ use m
 
    read ( 1, "(DT'c2'(10,5))", iostat = stat, iomsg = msg )  c2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 3_4
-   
+
    print *, rbuffer
-   
+
    select type ( b1 )
       type is ( child(4,*) )
          if ( ( b1%i /= 200 ) .or. ( b1%c /= 'abc' ) )  error stop 4_4
@@ -131,7 +123,7 @@ use m, only: base, child, rbuffer, idx
 
    character(20) :: fmt
    character(3) :: tmp
-   
+
    write ( rbuffer(idx), * ) iotype, v_list
    idx = idx + 1
 

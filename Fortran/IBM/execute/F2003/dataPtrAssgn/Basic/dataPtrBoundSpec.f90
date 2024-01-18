@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrBoundSpec.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrBoundSpec.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  R737 bounds-spec is lower-bound-expr :
-!*   
 !*
 !*  (322952)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrBoundSpec 
+  PROGRAM dataPtrBoundSpec
   IMPLICIT NONE
 
   INTEGER(1), PARAMETER :: I1Max=127
@@ -65,30 +57,30 @@
   TYPE(DT) :: T
 
   T%IPtr1(I1Min:) => I1Arr
-  IF ( ANY(LBOUND(T%IPtr1) .NE. (/I1Min/)) )   STOP 9 
-  IF ( ANY(UBOUND(T%IPtr1) .NE. (/(I2Max+1)*2+i1Min-1/)))    STOP 10 
+  IF ( ANY(LBOUND(T%IPtr1) .NE. (/I1Min/)) )   STOP 9
+  IF ( ANY(UBOUND(T%IPtr1) .NE. (/(I2Max+1)*2+i1Min-1/)))    STOP 10
 
   T%IPtr1(I2Max:) => I1Arr
-  IF ( ANY(LBOUND(T%IPtr1) .NE. (/I2Max/)) )                 STOP 11 
-  IF ( ANY(UBOUND(T%IPtr1) .NE. (/(I2Max+1)*2+I2Max-1/)))    STOP 12 
+  IF ( ANY(LBOUND(T%IPtr1) .NE. (/I2Max/)) )                 STOP 11
+  IF ( ANY(UBOUND(T%IPtr1) .NE. (/(I2Max+1)*2+I2Max-1/)))    STOP 12
 
   T%IPtr1(I4Max:) => I1Arr
-  IF ( ANY(LBOUND(T%IPtr1) .NE. (/I4Max/)) )                 STOP 21 
-  IF ( ANY(UBOUND(T%IPtr1) .NE. (/(I2Max+1)*2+I4Max-1/)))    STOP 22 
+  IF ( ANY(LBOUND(T%IPtr1) .NE. (/I4Max/)) )                 STOP 21
+  IF ( ANY(UBOUND(T%IPtr1) .NE. (/(I2Max+1)*2+I4Max-1/)))    STOP 22
 
   T%IPtr2(1_8:, 0_8:) => I2Arr
-  IF ( ANY(LBOUND(T%IPtr2) .NE. (/1_8, 0_8/)) )              STOP 31 
-  IF ( ANY(UBOUND(T%IPtr2) .NE. (/I1Max+1, I1Max-1/)))       STOP 32 
+  IF ( ANY(LBOUND(T%IPtr2) .NE. (/1_8, 0_8/)) )              STOP 31
+  IF ( ANY(UBOUND(T%IPtr2) .NE. (/I1Max+1, I1Max-1/)))       STOP 32
 
-  
+
 
   T%IPtr2(I1Min:, I1Min:) => I2Arr
-  IF ( ANY(LBOUND(T%IPtr2) .NE. (/I1Min, I1Min/)) )   STOP 41 
-  IF ( ANY(UBOUND(T%IPtr2) .NE. (/-1, -2/)))          STOP 42 
+  IF ( ANY(LBOUND(T%IPtr2) .NE. (/I1Min, I1Min/)) )   STOP 41
+  IF ( ANY(UBOUND(T%IPtr2) .NE. (/-1, -2/)))          STOP 42
 
   T%IPtr2(I2Max:, I2Max:) => I2Arr
   IF ( ANY(LBOUND(T%IPtr2) .NE. (/I2Max, I2Max/)) )               STOP 51
-  IF ( ANY(UBOUND(T%IPtr2) .NE. (/I2Max+I1Max+0, I2Max+I1Max-1/)))STOP 52 
+  IF ( ANY(UBOUND(T%IPtr2) .NE. (/I2Max+I1Max+0, I2Max+I1Max-1/)))STOP 52
 
   END
 

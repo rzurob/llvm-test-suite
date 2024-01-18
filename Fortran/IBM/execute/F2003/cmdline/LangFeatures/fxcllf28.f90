@@ -12,45 +12,38 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxcllf28.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Use command line intrinsic routine names as if construct name 
+!*  DESCRIPTION                : Use command line intrinsic routine names as if construct name
 !*                             : and call these intrinsics in functions
-!*                             : Use labels as actual arguments to return to  if constructs 
-!*                             :  
-!*   28. Use procedures and  labels as actual args to have alternative returns 
+!*                             : Use labels as actual arguments to return to  if constructs
+!*   28. Use procedures and  labels as actual args to have alternative returns
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD
 
-      character(513)   :: NAME  
-      logical          :: TRIM_NAME 
-      character(2049)  :: CmdLine 
-          
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
+      character(2049)  :: CmdLine
+
 
       DATA CmdLine    /'fxcllf28 1 a 2 b'/
       DATA NAME       /'CmdLine   '/
@@ -58,11 +51,11 @@
 
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE  
-      integer          :: ARGCOUNT 
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
 
 
       DATA COMMAND    / '????? '/
@@ -93,7 +86,7 @@
            LOGICAL F_COMMAND_ARGUMENT_COUNT
            END FUNCTION
 
-           FUNCTION  F_GET_COMMAND() 
+           FUNCTION  F_GET_COMMAND()
            LOGICAL F_GET_COMMAND
            END FUNCTION
 
@@ -113,7 +106,7 @@
 !            action-statement
 !          ENDIF NAME
 !CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
-        
+
         CALL S_COMMAND_ARGUMENT_COUNT(*10)
 
 10     COMMAND_ARGUMENT_COUNT:  if ( F_COMMAND_ARGUMENT_COUNT()) then
@@ -132,8 +125,8 @@
 
 20     GET_COMMAND_ARGUMENT:  if ( F_COMMAND_ARGUMENT_COUNT()) then
               L = F_GET_COMMAND()
-            else  
-              L = F_GET_COMMAND_ARGUMENT() 
+            else
+              L = F_GET_COMMAND_ARGUMENT()
             end if GET_COMMAND_ARGUMENT
 
 
@@ -149,7 +142,7 @@
 
 30     GET_ENVIRONMENT_VARIABLE: if ( F_GET_ENVIRONMENT_VARIABLE() ) then
               L = F_GET_ENVIRONMENT_VARIABLE()
-            elseif (F_GET_COMMAND()) then   
+            elseif (F_GET_COMMAND()) then
               L = F_GET_COMMAND()
             end if GET_ENVIRONMENT_VARIABLE
 
@@ -169,20 +162,20 @@
         F_GET_COMMAND()                               .and. &
         F_GET_COMMAND_ARGUMENT()                      .and. &
         F_GET_ENVIRONMENT_VARIABLE()   )                    &
-      THEN   
+      THEN
         L = F_COMMAND_ARGUMENT_COUNT() .and. &
         F_GET_COMMAND()                .and. &
         F_GET_COMMAND_ARGUMENT()       .and. &
-        F_GET_ENVIRONMENT_VARIABLE()  
+        F_GET_ENVIRONMENT_VARIABLE()
       ELSEIF (F_GET_ENVIRONMENT_VARIABLE() )  THEN
-        L = F_GET_ENVIRONMENT_VARIABLE()  
+        L = F_GET_ENVIRONMENT_VARIABLE()
       ELSE
-        L = F_GET_COMMAND()  
+        L = F_GET_COMMAND()
       ENDIF GET_COMMAND
 
-   
 
-      END 
+
+      END
 
 
       FUNCTION F_COMMAND_ARGUMENT_COUNT()
@@ -193,7 +186,7 @@
 
         F_COMMAND_ARGUMENT_COUNT = .true.
         CmdCount = COMMAND_ARGUMENT_COUNT()
-        if ( CmdCount .ne. 4 ) & 
+        if ( CmdCount .ne. 4 ) &
         then
           F_COMMAND_ARGUMENT_COUNT = .false.
           error stop 63
@@ -215,14 +208,14 @@
              (STATUS .ne. 0) )                        &
         then
           F_GET_COMMAND = .false.
-          error stop 64 
+          error stop 64
         endif
 
       END FUNCTION
 
 
       FUNCTION F_GET_COMMAND_ARGUMENT()
-     
+
       USE MOD
       LOGICAL F_GET_COMMAND_ARGUMENT
 
@@ -231,13 +224,13 @@
           NUMBER = i
           call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
           call MyGetArg(CmdLine, NUMBER, Argument)
- 
+
           if ( (TRIM(VALUE) .ne. TRIM(Argument))       .or. &
                (LENGTH      .ne. LEN(TRIM(Argument)))  .or. &
                (STATUS      .ne. 0) )                       &
           then
             F_GET_COMMAND_ARGUMENT = .true.
-            error stop 65 
+            error stop 65
           endif
         END DO
 
@@ -262,14 +255,14 @@
       ENDFUNCTION
 
 
-! SUB DEF 
+! SUB DEF
 
       SUBROUTINE S_COMMAND_ARGUMENT_COUNT(*)
 
       USE MOD
 
         CmdCount = COMMAND_ARGUMENT_COUNT()
-        if ( CmdCount .ne. 4 ) & 
+        if ( CmdCount .ne. 4 ) &
         then
           error stop 63
         endif
@@ -289,7 +282,7 @@
              (LENGTH .ne. LEN(TRIM(CmdLine)))    .or. &
              (STATUS .ne. 0) )                        &
         then
-          error stop 64 
+          error stop 64
         endif
 
         RETURN 1
@@ -298,19 +291,19 @@
 
 
       SUBROUTINE S_GET_COMMAND_ARGUMENT(*)
-     
+
       USE MOD
 
         DO i  = 0, CmdCount
           NUMBER = i
           call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
           call MyGetArg(CmdLine, NUMBER, Argument)
- 
+
           if ( (TRIM(VALUE) .ne. TRIM(Argument))       .or. &
                (LENGTH      .ne. LEN(TRIM(Argument)))  .or. &
                (STATUS      .ne. 0) )                       &
           then
-            error stop 65 
+            error stop 65
           endif
         END DO
 

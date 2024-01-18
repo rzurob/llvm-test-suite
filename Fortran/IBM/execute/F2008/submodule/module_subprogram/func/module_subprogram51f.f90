@@ -1,20 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : module_subprogram51f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 6 December, 2012
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : submodule
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
 !*  TARGET(S)                  :
@@ -24,8 +18,8 @@
 !*
 !*   Ensure variable name reused in local scope of submodule does not
 !*   overwrite the variable in host scope
-!*   
-!*   The variable is reused in a local scope by: 
+!*
+!*   The variable is reused in a local scope by:
 !*   - redeclaration in a submodule
 !*   - redeclaration in a function
 !*   - use association, with an alias in a submodule
@@ -33,7 +27,7 @@
 !*
 !*   Secondary tests:
 !*   - chain of submodules (5 levels)
-!*   - compile succeeds if an interface declares a subroutine, which 
+!*   - compile succeeds if an interface declares a subroutine, which
 !*     is never defined in the host nor the submodules
 !* ===================================================================
 !*
@@ -60,7 +54,7 @@ USE t
 IMPLICIT NONE
 integer, public :: modInt = 100
 
-  INTERFACE 
+  INTERFACE
     module function func1(arg1, arg2)
       integer, intent(in) :: arg1
       integer, intent(in) :: arg2(arg1:arg1+modInt)
@@ -80,7 +74,7 @@ integer, public :: modInt = 100
       type(base) :: arg3
       type(base2) :: func3
     end function func3
-   
+
     module function func4(arg1, arg2, arg3, arg4)
       use t2
       integer, intent(in) :: arg1, arg3
@@ -129,7 +123,7 @@ CONTAINS
   module procedure func2
       arg4 = (/ 'hello', 'world' /)
       func2 = base()
-      func2%i = modInt 
+      func2%i = modInt
 
       print *, "func2 lbound = ", lbound(arg2)
       print *, "func2 ubound = ", ubound(arg2)
@@ -148,14 +142,14 @@ CONTAINS
       func3 = base2()
       func3%i = modInt + arg3%i * 1.0
   end procedure func3
-  
+
   module procedure func4
       use t2
       USE m2, modInt => b2
       print *, "func4 lbound = ", lbound(arg2)
       print *, "func4 ubound = ", ubound(arg2)
       func4 = base2()
-      func4%i = modInt 
+      func4%i = modInt
   end
 END SUBMODULE
 
@@ -167,7 +161,7 @@ CONTAINS
       print *, "func5 ubound = ", ubound(arg2)
       func5 = base()
       func5%i = modInt + arg3%i
-  end 
+  end
 END SUBMODULE subm4
 
 SUBMODULE (m:subm4) subm5
@@ -180,7 +174,7 @@ CONTAINS
       character(5), allocatable :: b(:)
       type(base) :: res_func2, res_func5, c
       type(base2) :: res_func3, res_func4
- 
+
       allocate(b(2))
       c = base()
       c%i = 1
@@ -195,7 +189,7 @@ CONTAINS
       if(.not.precision_r4(res_func4%i,103.0)) error stop 69   ! expect modInt value from func4 scope
       if(res_func5%i.ne.105) error stop 70   ! expect modInt value from func5 scope
       func6 = modInt
-  end 
+  end
 END SUBMODULE subm5
 
 PROGRAM module_subprogram51f

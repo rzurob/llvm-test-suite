@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltVarDummyUL.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltVarDummyUL
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is an unlimited poly dummy 
+!*
+!*   The selector is an unlimited poly dummy
 !*    (ICE:297189)
 !*    (Wrong result-300729)
 !*
@@ -57,7 +51,7 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -88,24 +82,24 @@
 
   INTERFACE
     SUBROUTINE Sub(Arg)
-    IMPORT Ful 
+    IMPORT Ful
       PROCEDURE (Ful) :: Arg
     END SUBROUTINE
   END INTERFACE
 
   CALL Sub(Ful)
 
-  END  
- 
+  END
+
   SUBROUTINE Sub(FArg)
   USE M
-  PROCEDURE (Ful) :: Farg 
+  PROCEDURE (Ful) :: Farg
 
   TYPE (Child), TARGET :: Tar=Child(BaseId=-1, ChildId=-2)
 
   SELECT TYPE ( Ptr => FArg(Tar))
     CLASS DEFAULT
-      STOP 20   
+      STOP 20
     CLASS is (Base)
       STOP 24
     TYPE is (INTEGER(1))
@@ -113,10 +107,10 @@
     CLASS is (Child)
       STOP 25
     TYPE is (Child)
-      IF ( Ptr%BaseId       .NE. -1 ) STOP 31 
-      IF ( Ptr%ChildId      .NE. -2 ) STOP 32 
-      IF ( Ptr%Base%GetId() .NE. -1 ) STOP 33 
-      IF ( Ptr%GetId()      .NE. -2 ) STOP 34 
+      IF ( Ptr%BaseId       .NE. -1 ) STOP 31
+      IF ( Ptr%ChildId      .NE. -2 ) STOP 32
+      IF ( Ptr%Base%GetId() .NE. -1 ) STOP 33
+      IF ( Ptr%GetId()      .NE. -2 ) STOP 34
   END SELECT
 
   END SUBROUTINE

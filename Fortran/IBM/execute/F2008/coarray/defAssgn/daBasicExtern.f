@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : daBasicExtern
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-12-20
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 CAF coarray defined assignment
 !*  SECONDARY FUNCTIONS TESTED : 'basic' externally defined subroutine ???
@@ -15,7 +11,6 @@
 !*  DESCRIPTION
 !*
 !*  ---
-!*
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789

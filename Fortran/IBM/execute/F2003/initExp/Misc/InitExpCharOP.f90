@@ -1,22 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TESTOP CASE NAME             : InitExpCharOP.f  
+!*  TESTOP CASE NAME             : InitExpCharOP.f
 !*  TESTOP CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept. 07 2006
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER CharOPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +20,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Character operation 
-!* 
-!* (324975) 
-!* 
+!*  Character operation
+!*
+!* (324975)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpCharOP 
+  PROGRAM InitExpCharOP
   IMPLICIT NONE
 
   INTEGER     :: I
@@ -57,10 +50,10 @@
             //   CHAR(120)//CHAR(121)//CHAR(122)//CHAR(123)//CHAR(124)//CHAR(125)//CHAR(126)//CHAR(127)
 
 
-  CHARACTER(LEN=128, KIND=1)  :: C1(128)= [(REPEAT(A(I)(1:I),1) // REPEAT(A(I)(I+1:128), 1) , I=1,128)] 
-  CHARACTER(LEN=128, KIND=1)  :: C2(128)= [(REPEAT(A(I)(I:I),I) // REPEAT(A(I)(I:I), 128-I) , I=1,128)] 
-  CHARACTER(LEN=128, KIND=1)  :: C3(128)= [(REPEAT(A(I)(I:I),128) // REPEAT("", 128 ) , I=1,128)] 
-  CHARACTER(LEN=128, KIND=1)  :: C4(128)= [(REPEAT(A(I)(1:128),1) // REPEAT(" ", 128 ) , I=1,128)] 
+  CHARACTER(LEN=128, KIND=1)  :: C1(128)= [(REPEAT(A(I)(1:I),1) // REPEAT(A(I)(I+1:128), 1) , I=1,128)]
+  CHARACTER(LEN=128, KIND=1)  :: C2(128)= [(REPEAT(A(I)(I:I),I) // REPEAT(A(I)(I:I), 128-I) , I=1,128)]
+  CHARACTER(LEN=128, KIND=1)  :: C3(128)= [(REPEAT(A(I)(I:I),128) // REPEAT("", 128 ) , I=1,128)]
+  CHARACTER(LEN=128, KIND=1)  :: C4(128)= [(REPEAT(A(I)(1:128),1) // REPEAT(" ", 128 ) , I=1,128)]
 
 
   IF ( ANY( C1 .NE. A ) ) STOP 11
@@ -73,7 +66,7 @@
 
   IF ( ANY( C4 .NE. A ) ) STOP 14
 
-  END 
+  END
 
 
- 
+

@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrAddReal.f 
+!*  TEST CASE NAME             : dataPtrAddReal.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -29,7 +23,7 @@ module m
 	   double precision, pointer :: func(:,:)
            allocate(func(size(arg,1), size(arg,2)), source =  &
              arg(ubound(arg,1):lbound(arg,1):-1,ubound(arg,2):lbound(arg,2):-1))
-       end function 
+       end function
 end module
 
 program main
@@ -39,17 +33,17 @@ program main
     double precision, target :: tar(16)
     logical precision_r8
 
-    tar = (/(real(i,8), i=1,16 )/) 
+    tar = (/(real(i,8), i=1,16 )/)
 
     ptr(kind(tar):kind(tar)+3, 0:3) => tar
 
-    if ( .not. associated(ptr)) stop 11 
+    if ( .not. associated(ptr)) stop 11
     if ( any(lbound(ptr) .ne. (/8,0/))) stop 12
     if ( any(ubound(ptr) .ne. (/11,3/))) stop 13
 
-    ptr(kind(ptr):, kind(tar):) => func(ptr) 
+    ptr(kind(ptr):, kind(tar):) => func(ptr)
 
-    if ( .not. associated(ptr)) stop 21 
+    if ( .not. associated(ptr)) stop 21
     if ( any(lbound(ptr) .ne. (/8,8/))) stop 22
     if ( any(ubound(ptr) .ne. (/11,11/))) stop 23
 

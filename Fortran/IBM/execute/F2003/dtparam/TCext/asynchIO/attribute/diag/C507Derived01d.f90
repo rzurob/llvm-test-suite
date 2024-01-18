@@ -3,21 +3,15 @@
 ! opt variations: -qck
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : C507Derived01d - ASYNCHRONOUS
 !*                               Attribute in Derived Types
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : January 17, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C507
 !*  SECONDARY FUNCTIONS TESTED : Derived Type -- Base Object
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

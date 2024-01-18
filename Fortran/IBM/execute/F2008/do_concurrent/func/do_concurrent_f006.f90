@@ -1,27 +1,25 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                              IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f006.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon
 !*  DATE                       : 2015-04-01
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*
-!*  DESCRIPTION                : - Various kinds of real pointers and double 
-!*                                 pointers in DO CONCURRENT loops including 
+!*  DESCRIPTION                : - Various kinds of real pointers and double
+!*                                 pointers in DO CONCURRENT loops including
 !*                                 nested DO CONCURRENT loops
-!*                               - concurrent-limit contains a variable with 
+!*                               - concurrent-limit contains a variable with
 !*                                 the parameter attribute
-!*                               - scalar-mask-expr contains real pointers and 
+!*                               - scalar-mask-expr contains real pointers and
 !*                                 logical pointers
-!*                               - Use of procedures inside DO CONCURRENT loops 
+!*                               - Use of procedures inside DO CONCURRENT loops
 !*                                 with pointers as arguments
-!*                               - Use of procedures in the scalar-mask-expr 
+!*                               - Use of procedures in the scalar-mask-expr
 !*                                 with pointers as arguments
 !*
 !=============================================================================
@@ -47,7 +45,7 @@
           pure function func3(r8_var1, r8_var2)
             real*8, intent(in) :: r8_var1, r8_var2
             real*8 :: func3
-          end function 
+          end function
         end interface
 
         logical, external :: precision_r4, precision_r8
@@ -121,7 +119,7 @@
           p_i_res2(i,j) = log10(real(10**j,8))
         end do
 
-        i_res2_result(1,:) = 0.0d0 
+        i_res2_result(1,:) = 0.0d0
         i_res2_result(2,:) = (/1.0d0, 2.0d0, 0.0d0, 4.0d0, 0.0d0/)
         i_res2_result(3,:) = 0.0d0
         i_res2_result(4,:) = (/1.0d0, 2.0d0, 0.0d0, 4.0d0, 0.0d0/)
@@ -157,7 +155,7 @@
               print *, "x: ", x
               print *, "y: ", y
               print *, "i_res2: ", i_res2
-              error stop 3 
+              error stop 3
             end if
           end do
         end do
@@ -202,7 +200,7 @@
         i_res2_result(3,:) = 31.5d0
         i_res2_result(4,:) = 42.0d0
         i_res2_result(5,:) = 52.5d0
-        i_res5_result(1,:) = (/2.0d0,3.0d0,4.0d0,5.0d0,6.0d0/) 
+        i_res5_result(1,:) = (/2.0d0,3.0d0,4.0d0,5.0d0,6.0d0/)
         i_res5_result(2,:) = (/2.0d0,3.0d0,4.0d0,5.0d0,6.0d0/)
         i_res5_result(3,:) = (/2.0d0,3.0d0,4.0d0,5.0d0,6.0d0/)
         i_res5_result(4,:) = (/2.0d0,3.0d0,4.0d0,5.0d0,6.0d0/)
@@ -249,7 +247,7 @@
 
         i_res2 = 0.0d0
         i_res5 = 0.0d0
-   
+
         do concurrent (i = 1:5, j = 1:5, (func2(-1.0e0*p_i_arr(i)) > 12.0e0) .and. (func2(-1.0e0*p_i_arr(j)) < 50.0e0))
           p_i_res2(i,j) = func3(100.5d0,real(i*j,8))
           call sub1()
@@ -290,7 +288,7 @@
 
         do concurrent (i = 1:m*2, p_lvar .eqv. .true.)
           call sub1()
-          p_i_res3(i) = func1(p_i_arr4(i)) 
+          p_i_res3(i) = func1(p_i_arr4(i))
           do concurrent (j = 100:1000:100, (abs(-1.0d0*p_i_arr3(j/100)) >= 30.0d0) .and. (abs(-1.0d0*p_i_arr3(j/100)) <= 80.0d0))
             p_i_res4(j/100) = func1(p_i_arr4(j/100))
             call sub1()

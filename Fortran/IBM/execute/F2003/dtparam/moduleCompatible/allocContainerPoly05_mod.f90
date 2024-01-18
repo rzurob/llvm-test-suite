@@ -12,7 +12,6 @@ MODULE mod
 
 END MODULE mod
 
-
 MODULE cMod
     USE mod
 
@@ -43,7 +42,6 @@ MODULE cMod
             INTEGER :: stat
 
             CHARACTER(255) :: errmsg
-
 
             ALLOCATE(this, STAT=stat, ERRMSG=errmsg)
             IF (stat /= 0) THEN

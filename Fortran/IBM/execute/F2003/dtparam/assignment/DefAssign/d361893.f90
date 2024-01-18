@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361893.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361893.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 5 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 5 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 361893
@@ -25,7 +17,7 @@
 module m
    type A(l1)
       integer,len :: l1
-      character(l1),allocatable :: c1(:)  
+      character(l1),allocatable :: c1(:)
    end type
    type B(l2)
       integer,len :: l2
@@ -40,11 +32,11 @@ program d361493
      call allocComp(cobj)
      contains
           subroutine allocComp(dt)
-               type(B(*)),intent(inout) :: dt(:) 
+               type(B(*)),intent(inout) :: dt(:)
                integer :: l
                l=lbound(dt,1)
                print *,l
-               allocate(dt(l)%a1comp(2))  
+               allocate(dt(l)%a1comp(2))
 
           end subroutine
 

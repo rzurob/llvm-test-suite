@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio172.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,20 +12,13 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access Mode
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -33,22 +26,22 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/31/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/31/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  program fxstio172 
+  program fxstio172
 
      implicit none
      integer    ios, i, pos
-     character*30  ch_in1, ch_out1  
-     character*30  ch_in2, ch_out2  
-     character*30  ch_in3, ch_out3  
-     character*30  ch_in4, ch_out4  
-     character*30  ch_in5, ch_out5  
-     character*30  ch_in6, ch_out6  
+     character*30  ch_in1, ch_out1
+     character*30  ch_in2, ch_out2
+     character*30  ch_in3, ch_out3
+     character*30  ch_in4, ch_out4
+     character*30  ch_in5, ch_out5
+     character*30  ch_in6, ch_out6
 
      integer*1     i1_out
      integer*2     i2_out
@@ -65,9 +58,9 @@
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
 
-!********************************************************** 
+!**********************************************************
 !      Initialization                                     *
-!********************************************************** 
+!**********************************************************
 
      ch_in1 = "This is the first record!"
      ch_in2 = "This is the second record!"
@@ -75,10 +68,10 @@
      ch_in4 = "0.1E-2 0.8E+2 0.4Q-2  0.7Q+2  "
      ch_in5 = "This is the last record!"
 
-     
-!********************************************************** 
+
+!**********************************************************
 !      Writing to the file                      *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio172.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
@@ -100,26 +93,26 @@
 
      WRITE(1, FMT='(A)', IOSTAT=ios, ERR=91, ADVANCE='yes') ch_in4(21:)
 
-     WRITE(1, FMT='("1101     367 ")', IOSTAT=ios, ERR=91, ADVANCE='no') 
+     WRITE(1, FMT='("1101     367 ")', IOSTAT=ios, ERR=91, ADVANCE='no')
 
-     WRITE(1, FMT='("  F              ")', IOSTAT=ios, ERR=91, ADVANCE='no') 
+     WRITE(1, FMT='("  F              ")', IOSTAT=ios, ERR=91, ADVANCE='no')
 
      WRITE(1, FMT="(/'This is the last record!')", IOSTAT=ios, ERR=91, &
     &         ADVANCE='no')
 
 
-!********************************************************** 
+!**********************************************************
 !      Checking record positions                          *
-!********************************************************** 
+!**********************************************************
 
      INQUIRE(1, POS= pos)
      if ( pos .ne. 256 ) error stop 20 	! End-of-file
 
      BACKSPACE(1)
      INQUIRE(1, POS= pos)
-     if ( pos .ne. 232 ) error stop 21	! 6th record 
+     if ( pos .ne. 232 ) error stop 21	! 6th record
 
-     BACKSPACE(1)	
+     BACKSPACE(1)
      INQUIRE(1, POS= pos)
      if ( pos .ne. 201 ) error stop 21 	! 5th record
 
@@ -137,12 +130,12 @@
 
      BACKSPACE(1)
      INQUIRE(1, POS= pos)
-     if ( pos .ne. 1 ) error stop 21	! First record 
+     if ( pos .ne. 1 ) error stop 21	! First record
 
 
-!********************************************************** 
+!**********************************************************
 !      Reading the file                                   *
-!********************************************************** 
+!**********************************************************
 
      READ(1, FMT='(A)', IOSTAT=ios, ERR=92, ADVANCE='no' ) ch_out1
 
@@ -163,9 +156,9 @@
      READ(1, FMT='(/A24)', IOSTAT=ios, ERR=92, ADVANCE='no' ) ch_out5
 
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( ch_in1 .ne. ch_out1 ) error stop 30
      if ( ch_in2 .ne. ch_out2 ) error stop 31
@@ -182,12 +175,12 @@
      if ( ch_out5 .ne. ch_in5 ) error stop 50
 
 
-!********************************************************** 
+!**********************************************************
 !        Checking the end-of-file                         *
-!********************************************************** 
+!**********************************************************
 
      READ(1, FMT='(A30)', IOSTAT=ios, END=95 ) ch_out5
-     error stop 60  
+     error stop 60
 95   if ( ios .ne. -1 ) error stop 61
 
      CLOSE(1, STATUS='DELETE')
@@ -195,11 +188,11 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 
    end program
 

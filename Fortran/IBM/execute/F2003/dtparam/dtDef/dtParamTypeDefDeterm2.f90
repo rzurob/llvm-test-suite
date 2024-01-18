@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefDeterm2   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefDeterm2
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 13, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Determination of Types 
+!*  SECONDARY FUNCTIONS TESTED : Determination of Types
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,20 +19,19 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Determination of derived types - sequence types 
+!*  Determination of derived types - sequence types
 !*
 !*  (Syntax err)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamTypeDefDeterm2 
+  PROGRAM dtParamTypeDefDeterm2
 
   TYPE :: DT(K, L)
     INTEGER, KIND :: K
     INTEGER, LEN  :: L
-    SEQUENCE      
+    SEQUENCE
     INTEGER(K)  :: I
     REAL(K)     :: R
     COMPLEX(K)  :: Cplx
@@ -58,14 +51,14 @@
 
   CALL Sub1(T1, -1_8, -1.0_8, (1._8, -1._8), .FALSE._8, "B   ")
   CALL Sub2(T1, -1_8, -1.0_8, (1._8, -1._8), .FALSE._8, "B   ")
- 
+
   CONTAINS
 
     SUBROUTINE Sub(Arg, I, R, Cplx, L, C)
     TYPE :: DT(K, L)
       INTEGER, KIND :: K
       INTEGER, LEN  :: L
-      SEQUENCE      
+      SEQUENCE
       INTEGER(K)  :: I
       REAL(K)     :: R
       COMPLEX(K)  :: Cplx
@@ -87,12 +80,12 @@
     IF ( TRIM(Arg%C).NE.   TRIM(C)) STOP 27
 
     END SUBROUTINE
-    
+
     SUBROUTINE Sub1(Arg, I, R, Cplx, L, C)
     TYPE :: DT(K, L)
       INTEGER, KIND :: K
       INTEGER, LEN  :: L
-      SEQUENCE      
+      SEQUENCE
       INTEGER(K)  :: I
       REAL(K)     :: R
       COMPLEX(K)  :: Cplx
@@ -114,12 +107,12 @@
     IF ( TRIM(Arg%C).NE.   TRIM(C)) STOP 27
 
     END SUBROUTINE
-    
+
     SUBROUTINE Sub2(Arg, I, R, Cplx, L, C)
     TYPE :: DT(K, L)
       INTEGER, KIND :: K
       INTEGER, LEN  :: L
-      SEQUENCE      
+      SEQUENCE
       INTEGER(K)  :: I
       REAL(K)     :: R
       COMPLEX(K)  :: Cplx
@@ -141,6 +134,6 @@
     IF ( TRIM(Arg%C).NE.   TRIM(C)) STOP 27
 
     END SUBROUTINE
-    
+
   END
 

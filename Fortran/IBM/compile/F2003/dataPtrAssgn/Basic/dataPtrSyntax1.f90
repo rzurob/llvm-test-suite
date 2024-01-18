@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrSyntax1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrSyntax1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : Syntax 
+!*  SECONDARY FUNCTIONS TESTED : Syntax
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -26,10 +20,10 @@
 !*  DESCRIPTION
 !*
 !*  Syntax checking:
-!* 
-!*  R735 pointer-assignment-stmt is 
-!*     data-pointer-object [ (bounds-spec-list) ] => data-target 
-!*  R737 bounds-spec is lower-bound-expr : 
+!*
+!*  R735 pointer-assignment-stmt is
+!*     data-pointer-object [ (bounds-spec-list) ] => data-target
+!*  R737 bounds-spec is lower-bound-expr :
 !*
 !*  ()
 !*

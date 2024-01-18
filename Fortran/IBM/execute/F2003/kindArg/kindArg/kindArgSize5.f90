@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgSize5
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : SIZE 
+!*  SECONDARY FUNCTIONS TESTED : SIZE
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Characteristics.
-!*  Integer scalar. If KIND is present, the kind type parameter is that specified by the value of KIND; 
+!*  Integer scalar. If KIND is present, the kind type parameter is that specified by the value of KIND;
 !*  otherwise the kind type parameter is that of default integer type.
 !*
-!*    
-!*  (322836) 
+!*  (322836)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -44,9 +35,9 @@
   INTEGER(2), POINTER     ::  K2
   INTEGER(4), ALLOCATABLE ::  K4
   INTEGER(8), POINTER     ::  K8
-    
+
   INTEGER :: I
- 
+
   TYPE :: DT
   END TYPE
 
@@ -61,7 +52,7 @@
 
   IF (     SIZE(CC,   KIND=K1%KIND )                 .NE. 1)              STOP 13
   IF (KIND(SIZE(CC,   KIND=K1%KIND ))                .NE. K1%KIND)        STOP 14
-  DO I = 1, 9 
+  DO I = 1, 9
     IF (     SIZE(CC, KIND=K1%KIND, DIM=I )          .NE. 1)              STOP 15
     IF (KIND(SIZE(CC, KIND=K1%KIND, DIM=I ))         .NE. K1%KIND)        STOP 16
   END DO
@@ -69,7 +60,7 @@
 
   IF (     SIZE(CC,   KIND=K2%KIND )                 .NE. 1)              STOP 23
   IF (KIND(SIZE(CC,   KIND=K2%KIND ))                .NE. K2%KIND)        STOP 24
-  DO I = 1, 9 
+  DO I = 1, 9
     IF (     SIZE(CC, KIND=K2%KIND, DIM=I )          .NE. 1)              STOP 25
     IF (KIND(SIZE(CC, KIND=K2%KIND, DIM=I ))         .NE. K2%KIND)        STOP 26
   END DO
@@ -85,7 +76,7 @@
 
   IF (     SIZE(CC,   KIND=K8%KIND )                 .NE. 1)              STOP 53
   IF (KIND(SIZE(CC,   KIND=K8%KIND ))                .NE. K8%KIND)        STOP 54
-  DO I = 1, 9 
+  DO I = 1, 9
     IF (     SIZE(CC, KIND=K8%KIND, DIM=I )          .NE. 1)              STOP 55
     IF (KIND(SIZE(CC, KIND=K8%KIND, DIM=I ))         .NE. K8%KIND)        STOP 56
   END DO
@@ -100,7 +91,7 @@
 
   IF (     SIZE(CC,   KIND=K1%KIND )                 .NE. 0)              STOP 63
   IF (KIND(SIZE(CC,   KIND=K1%KIND ))                .NE. K1%KIND)        STOP 64
-  DO I = 1, 9 
+  DO I = 1, 9
     IF (     SIZE(CC, KIND=K1%KIND, DIM=I )          .NE. 0)              STOP 65
     IF (KIND(SIZE(CC, KIND=K1%KIND, DIM=I ))         .NE. K1%KIND)        STOP 66
   END DO
@@ -108,7 +99,7 @@
 
   IF (     SIZE(CC,   KIND=K2%KIND )                 .NE. 0)              STOP 73
   IF (KIND(SIZE(CC,   KIND=K2%KIND ))                .NE. K2%KIND)        STOP 74
-  DO I = 1, 9 
+  DO I = 1, 9
     IF (     SIZE(CC, KIND=K2%KIND, DIM=I )          .NE. 0)              STOP 75
     IF (KIND(SIZE(CC, KIND=K2%KIND, DIM=I ))         .NE. K2%KIND)        STOP 76
   END DO
@@ -124,7 +115,7 @@
 
   IF (     SIZE(CC,   KIND=K8%KIND )                 .NE. 0)              STOP 93
   IF (KIND(SIZE(CC,   KIND=K8%KIND ))                .NE. K8%KIND)        STOP 94
-  DO I = 1, 9 
+  DO I = 1, 9
     IF (     SIZE(CC, KIND=K8%KIND, DIM=I )          .NE. 0)              STOP 95
     IF (KIND(SIZE(CC, KIND=K8%KIND, DIM=I ))         .NE. K8%KIND)        STOP 96
   END DO

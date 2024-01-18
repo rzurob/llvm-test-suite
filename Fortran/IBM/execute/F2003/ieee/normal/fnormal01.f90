@@ -12,22 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Vasile Radulescu
 !*  DATE                       : February 15, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NORMAL 
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NORMAL
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : -qfloat=nans:nofold 
+!*  REQUIRED COMPILER OPTIONS  : -qfloat=nans:nofold
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -35,14 +26,13 @@
 !*
 !*  DESCRIPTION                : Testing IEEE_IS_NORMAL for REAL(4).
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
         program fnormal01
-      
+
         use ieee_arithmetic
         use constants_for_ieee
-       
+
         real(4), dimension(5) :: normal_result
         real(4), parameter :: normal_pos1 = tiny(1.0)
         real(4), parameter :: normal_pos2 = huge(1.0)
@@ -63,11 +53,11 @@
 !...test with PINF and NINF values
         if (ieee_support_datatype(PINF_4) .AND. ieee_support_datatype(NINF_4)) then
            if (ieee_is_normal(PINF_4) .OR. ieee_is_normal(NINF_4)) then
-              call zzrc(caseid) 
+              call zzrc(caseid)
            endif
         endif
 
-!...test with PHD, PTD, NHD, NTD values        
+!...test with PHD, PTD, NHD, NTD values
        if (ieee_support_datatype(PHD_4) .AND. ieee_support_datatype(PTD_4)) then
            if (ieee_is_normal(PHD_4) .eqv. .true. ) then
               call zzrc(caseid+1)
@@ -76,7 +66,7 @@
               call zzrc(caseid+2)
            endif
        endif
-        
+
        if (ieee_support_datatype(NHD_4) .AND. ieee_support_datatype(NTD_4)) then
            if (ieee_is_normal(NHD_4) .eqv. .true.) then
               call zzrc(caseid+3)
@@ -86,7 +76,7 @@
            endif
        endif
 
-!...test with PZERO and NZERO values       
+!...test with PZERO and NZERO values
         if (ieee_support_datatype(PZERO_4) .AND. ieee_support_datatype(NZERO_4)) then
            if (ieee_is_normal(PZERO_4) .neqv. .true.) then
               call zzrc(caseid+5)
@@ -103,12 +93,12 @@
            endif
         endif
 
-       if (ieee_support_datatype(normal_pos2)) then    
+       if (ieee_support_datatype(normal_pos2)) then
            if (ieee_is_normal(normal_pos2) .neqv. .true.) then
               call zzrc(caseid+8)
            endif
        endif
-        
+
 !...test with arrays
         arrval = (/ PNANQ_4, PNANS_4, NNANQ_4, NNANS_4 /)
         if (ieee_support_datatype(arrval)) then

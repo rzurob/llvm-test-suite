@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  AttrTargetAlloc.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  AttrTargetAlloc.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : AttrTargetAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 22, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,10 +32,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*   The selector has the target and allocatable attributes
-!*   
-!*    () 
+!*
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,7 +47,7 @@
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4,20)
       INTEGER(K1) :: BaseId = 1
@@ -112,10 +106,10 @@
 
   ASSOCIATE ( As => W )
 
-    PtrZ => As%Base%Zero 
-    PtrB => As%Base 
-    PtrC => As 
- 
+    PtrZ => As%Base%Zero
+    PtrB => As%Base
+    PtrC => As
+
     IF ( .NOT. ASSOCIATED(PtrZ) ) STOP 20
     IF ( .NOT. ASSOCIATED(PtrB) ) STOP 21
     IF ( .NOT. ASSOCIATED(PtrC) ) STOP 22
@@ -129,10 +123,10 @@
     IF ( PtrC%GetId()       .NE. -2 ) STOP 33
 
     ASSOCIATE ( As => W%Base )
-     
-      PtrZ => As%Zero 
-      PtrB => As 
- 
+
+      PtrZ => As%Zero
+      PtrB => As
+
       IF ( .NOT. ASSOCIATED(PtrZ) ) STOP 20
       IF ( .NOT. ASSOCIATED(PtrB) ) STOP 21
 

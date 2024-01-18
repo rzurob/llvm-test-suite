@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgLbound4
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 05, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : UBOUND 
+!*  SECONDARY FUNCTIONS TESTED : UBOUND
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  If KIND is present, the kind type parameter is that specified  by the value of KIND;
-!*  otherwise the kind type parameter is that of default integer type 
-!*    
-!*  () 
+!*  otherwise the kind type parameter is that of default integer type
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -40,17 +32,17 @@
 
   INTEGER(1) :: I1
   INTEGER(4) :: I
-     
+
   INTEGER, PARAMETER    :: L1=2**7-2
   INTEGER, PARAMETER    :: L2=2**7-1
- 
+
   CHARACTER(128), PARAMETER :: CC0(L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2)=" "
   CLASS(*), ALLOCATABLE     :: CC(:,:,:,:,:,:,:,:,:)
 
   ALLOCATE(CHARACTER(128) :: CC(L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2))
-   
 
-  DO I1 = 1, 9 
+
+  DO I1 = 1, 9
     IF (     UBOUND(ARRAY=CC, DIM=I1, KIND=LEN(CC0(:,:,:,:,:,:,:,:,:)(1:8)))   .NE. L2)     STOP 11
     IF (KIND(UBOUND(ARRAY=CC, DIM=I1, KIND=LEN(CC0(:,:,:,:,:,:,:,:,:)(1:8))))  .NE. 8)      STOP 12
     IF (     UBOUND(ARRAY=CC, DIM=I1, KIND=LEN(CC0(:,:,:,:,:,:,:,:,:)(1:4)))   .NE. L2)     STOP 13

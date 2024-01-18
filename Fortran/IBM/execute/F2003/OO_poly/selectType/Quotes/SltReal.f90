@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: SltReal.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: SltReal.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltReal
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is of Real 
+!*
+!*   The selector is of Real
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,20 +50,20 @@
   Ptr => R4
 
   SELECT TYPE ( As => Ptr )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 30
   TYPE IS (REAL(8) )
-    STOP 34 
+    STOP 34
   TYPE IS (REAL(4))
     IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 31
     IF ( LBOUND(As, 1) .NE. 1       )   STOP 32
     IF ( ANY(As        .NE. (/1._4,2._4,3._4,4._4/)) )  STOP 32
   END SELECT
- 
-  Ptr => R8 
- 
+
+  Ptr => R8
+
   SELECT TYPE ( Ptr )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 40
   TYPE IS (REAL  )
     STOP 41
@@ -78,33 +72,33 @@
     IF ( LBOUND(Ptr, 1) .NE. 1       )   STOP 43
     IF ( ANY(Ptr        .NE. (/1._8,2._8,3._8,4._8/)) )  STOP 44
   TYPE IS (REAL(16) )
-    STOP 45 
+    STOP 45
   END SELECT
-  
-  Ptr => R16 
+
+  Ptr => R16
 
   SELECT TYPE ( As => Ptr(::3) )
   TYPE IS (REAL(8))
-    STOP 54 
-  CLASS DEFAULT 
+    STOP 54
+  CLASS DEFAULT
     STOP 50
   TYPE IS (REAL( 16) )
     IF ( ANY(SHAPE(As) .NE. (/2/))  )   STOP 51
     IF ( LBOUND(As, 1) .NE. 1       )   STOP 52
     IF ( ANY(As        .NE. (/1.,4./)) )  STOP 53
   END SELECT
-  
-  Ptr => R 
+
+  Ptr => R
 
   SELECT TYPE ( As => Ptr(3) )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 60
   TYPE IS (REAL(4))
     IF ( As .NE. 3. )  STOP 62
   TYPE IS (REAL(8) )
-    STOP 64 
+    STOP 64
   END SELECT
-  
-  
+
+
   END
 

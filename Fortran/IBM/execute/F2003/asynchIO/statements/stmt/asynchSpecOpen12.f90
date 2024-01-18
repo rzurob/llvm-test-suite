@@ -1,21 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchSpecOpen12 - ASYNCHRONOUS=
 !*                               Specifier in I/O Statements
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April  7, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Data Transfers on a Unit OPEN()ed
 !*                               for Asynchronous I/O to a specific File
 !*  SECONDARY FUNCTIONS TESTED : Subsequent OPEN() of a different File
 !*                               using the same Unit
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : OPEN(), ASYNCHRONOUS= Specifier
@@ -33,13 +27,11 @@
 !*  statement without a STATUS= specifier had been executed for the
 !*  unit immediately prior to the execution of an OPEN statement.
 !*
-!*
 !*  9.4.6 The CLOSE statement
 !*
 !*  Execution of a CLOSE statement performs a wait operation for any
 !*  pending asynchronous data transfer operations for the specified
 !*  unit.
-!*
 !*
 !*  9.6.2 Wait operation
 !*

@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadAsFunRes02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadAsFunRes02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 21 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
 !*  2. USE SPREAD AS FUNCTION RESULT,PASS SOURCE,DIM,NCOPIES AS ACTUAL ARGUMENT
 !*  3. USE DIFFERENT FUNCTIONS (INTERAL,EXTERNAL)
-!*  4. SOURCE HAS DIFFERENT DIMENSIONS   
+!*  4. SOURCE HAS DIFFERENT DIMENSIONS
 !*  5. SOURCE HAS DERIVED TYPE COMPONENT
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -43,11 +35,11 @@ module m
    contains
       function getSpreadResult3(source,dim,ncopies)
           type(contain(1,2)),intent(in) :: source(:,:)
-          type(contain(1,:)),allocatable:: getSpreadResult3(:,:,:) 
+          type(contain(1,:)),allocatable:: getSpreadResult3(:,:,:)
           integer :: dim,ncopies
           getSpreadResult3=spread(source,dim,ncopies)
       end function
-   
+
 end module
 
 program spreadAsFunRes02
@@ -70,7 +62,7 @@ program spreadAsFunRes02
   type(contain(1,:)),allocatable :: contain2(:)
   type(contain(1,:)),allocatable :: contain3(:,:)
   type(contain(1,:)),allocatable :: contain4(:,:,:)
- 
+
   contain2=getSpreadResult1(contain1,1,5)
 
   if(.not. allocated(contain2))                          error stop 10_4
@@ -84,7 +76,7 @@ program spreadAsFunRes02
     if(contain2(i)%dtp1%i /= 1)                          error stop 16_4
     if(contain2(i)%dtp1%c /= "1")                        error stop 17_4
     if(contain2(i)%dtp1%i%kind /= 2)                     error stop 18_4
-    if(contain2(i)%dtp1%c%len /= 3)                      error stop 19_4 
+    if(contain2(i)%dtp1%c%len /= 3)                      error stop 19_4
   end do
 
 
@@ -110,7 +102,7 @@ program spreadAsFunRes02
      if(contain3(i,1)%dtp1%c /= "1")                      error stop 32_4
      if(contain3(i,2)%dtp1%c /= "2")                      error stop 33_4
 
-  end do  
+  end do
 
   if(allocated(contain3))  deallocate(contain3)
 
@@ -146,8 +138,8 @@ program spreadAsFunRes02
                                contain(1,2)(dtp(2,3)(-1,"-1")), &
                                contain(1,2)(dtp(2,3)(2,"+2")),&
                                contain(1,2)(dtp(2,3)(-2,"-2")) ] )
-                           
-  allocate(contain3(2,2),source=reshape(contain2,(/2,2/)) )  
+
+  allocate(contain3(2,2),source=reshape(contain2,(/2,2/)) )
 
   contain4=getSpreadResult3(contain3,1,5)
 
@@ -173,7 +165,7 @@ program spreadAsFunRes02
      if(contain4(i,1,2)%dtp1%c /= "+2")                   error stop 64_4
      if(contain4(i,2,2)%dtp1%c /= "-2")                   error stop 65_4
 
-  end do  
+  end do
 
 
   if(allocated(contain4))   deallocate(contain4)
@@ -233,15 +225,15 @@ program spreadAsFunRes02
   end do
 
   contains
-   
+
      function getSpreadResult1(source,dim,ncopies)
-  
+
           type(contain(1,2)),intent(in)  :: source
           integer,intent(in) :: dim,ncopies
-          type(contain(1,source%l2)),allocatable :: getSpreadResult1(:) 
-            
-          getSpreadResult1=spread(source,dim,ncopies)       
-     end function 
+          type(contain(1,source%l2)),allocatable :: getSpreadResult1(:)
+
+          getSpreadResult1=spread(source,dim,ncopies)
+     end function
 end program
 
 function getSpreadResult2(source,dim,ncopies)
@@ -251,4 +243,4 @@ function getSpreadResult2(source,dim,ncopies)
    type(contain(1,source%l2)),allocatable :: getSpreadResult2(:,:)
 
    getSpreadResult2=spread(source,dim,ncopies)
-end function  
+end function

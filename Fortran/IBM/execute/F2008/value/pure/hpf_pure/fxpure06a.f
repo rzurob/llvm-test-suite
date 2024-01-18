@@ -5,22 +5,17 @@
 ! %PRECMD: PROCS=4
 ! %COMPOPTS: -qarch=com
 ! %GROUP: fxpure06a.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT: fxpure06a.out
 ! %EXECARGS:
 ! %POSTCMD: spiff -r 0.0001 fxpure06a.out $TR_SRC/fxpure06a.vf
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxpure06a
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Mike Schouten
 !*  DATE                       : Oct 26, 1995
 !*  ORIGIN                     : PPS Languages, Poughkeepsie, NY
 !*
@@ -54,7 +49,6 @@
 !*  ASSUMPTIONS                : None
 !*
 !*  CONDITIONS TESTED          :
-!*
 !*
 !* ===================================================================
 !*
@@ -90,7 +84,7 @@
 !hpf$ distribute t2b (CYCLIC) onto P
 !hpf$ align with t2b :: t2a
       character*40 ct
-  
+
       interface
         pure type (t1) function func1 (a, x)
           type t1

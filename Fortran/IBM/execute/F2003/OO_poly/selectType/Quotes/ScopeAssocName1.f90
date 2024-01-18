@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  ScopeAssocName1.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : ScopeAssocName1 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : ScopeAssocName1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,16 +30,16 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  The scope of associate name 
+!*
+!*  The scope of associate name
 !*  Nested associate/select type constructs
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
     TYPE, ABSTRACT :: DT0
-      INTEGER(8) :: IArr(2) 
+      INTEGER(8) :: IArr(2)
       CONTAINS
       PROCEDURE, PASS(Obj)   :: GetInt
     END TYPE
@@ -56,16 +50,16 @@
   CONTAINS
 
     ELEMENTAL FUNCTION GetInt(Num, Obj)
-    CLASS(DT0), INTENT(IN)    :: Obj 
+    CLASS(DT0), INTENT(IN)    :: Obj
     INTEGER, INTENT(IN)      :: Num
-    INTEGER(KIND(Obj%IArr))   :: GetInt 
-      GetInt = Obj%IArr(Num) 
+    INTEGER(KIND(Obj%IArr))   :: GetInt
+      GetInt = Obj%IArr(Num)
     END FUNCTION
 
   END MODULE
 
 
-  PROGRAM ScopeAssocName1 
+  PROGRAM ScopeAssocName1
   USE M
   IMPLICIT NONE
 
@@ -80,7 +74,7 @@
 
     SELECT TYPE (U => Ptr(:,:,:))
     CLASS IS (DT0)
-      STOP 20 
+      STOP 20
     CLASS IS (DT)
       ASSOCIATE (U => U)
         IF (SIZE(U(2,2,2)%IArr)   .NE. 2)  STOP 30

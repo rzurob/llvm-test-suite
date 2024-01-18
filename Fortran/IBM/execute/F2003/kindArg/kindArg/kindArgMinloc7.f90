@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgMinloc7
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : MINLOC 
+!*  SECONDARY FUNCTIONS TESTED : MINLOC
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,6 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Value.
 !*  Case (ii): The result of MINLOC (ARRAY, MASK = MASK) is a rank-one array whose
 !*  element values are the values of the subscripts of an element of ARRAY, corre22
@@ -36,8 +28,8 @@
 !*  element has the minimum value, the element whose subscripts are returned is the
 !*  first such element taken in array element order. If ARRAY has size zero or every
 !*  element of MASK has the value false, all elements of the result are zero.
-!* 
-!*  () 
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -46,10 +38,10 @@
   IMPLICIT NONE
 
   INTEGER     :: I
-  INTEGER(1)  :: II1(-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0)  = 0 
-  INTEGER(2)  :: II2(-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0)  = 0 
-  INTEGER(4)  :: II4(-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0)  = 0 
-  INTEGER(8)  :: II8(-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0)  = 0 
+  INTEGER(1)  :: II1(-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0)  = 0
+  INTEGER(2)  :: II2(-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0)  = 0
+  INTEGER(4)  :: II4(-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0)  = 0
+  INTEGER(8)  :: II8(-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0)  = 0
 
   REAL(4)     :: RR4(-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0)  = 0
   REAL(8)     :: RR8(-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0)  = 0
@@ -112,8 +104,8 @@
   IF (KIND(MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:) ))                                     .NE. 4)                        STOP 28
 
 
-  CC = ACHAR(1) 
-  CC(-1,0,-1,0,-1,0,-1,0,-1,:) = ACHAR(0) 
+  CC = ACHAR(1)
+  CC(-1,0,-1,0,-1,0,-1,0,-1,:) = ACHAR(0)
   IF (ANY( MINLOC(ARRAY=CC, MASK=MM, KIND=CC%KIND )  .NE. (/1,2,1,2,1,2,1,2,1,1/)))      STOP 30
   IF (KIND(MINLOC(ARRAY=CC, MASK=MM, KIND=CC%KIND )) .NE. 1)                             STOP 31
   IF (ANY( MINLOC(ARRAY=CC )                         .NE. (/1,2,1,2,1,2,1,2,1,1/)))      STOP 32
@@ -166,8 +158,8 @@
   IF (KIND(MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,1:0,:) ))                                     .NE. 4)                        STOP 58
 
 
-  CC = ACHAR(1) 
-  CC(-1,0,-1,0,-1,0,-1,0,-1,0) = ACHAR(0) 
+  CC = ACHAR(1)
+  CC(-1,0,-1,0,-1,0,-1,0,-1,0) = ACHAR(0)
   IF (ANY( MINLOC(ARRAY=CC(:,:,:,:,:,:,:,:,:,1:0), MASK=.FALSE., KIND=CC%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/)))   STOP 60
   IF (KIND(MINLOC(ARRAY=CC(:,:,:,:,:,:,:,:,:,1:0), MASK=.FALSE., KIND=CC%KIND )) .NE. 1)                          STOP 61
   IF (ANY( MINLOC(ARRAY=CC(:,:,:,:,1:0,:,:,:,:,:) )                .NE. (/0,0,0,0,0,0,0,0,0,0/)))   STOP 62
@@ -213,8 +205,8 @@
 
 
 
-  CC = ACHAR(1) 
-  CC(-1,0,-1,0,-1,0,-1,0,-1,0) = ACHAR(0) 
+  CC = ACHAR(1)
+  CC(-1,0,-1,0,-1,0,-1,0,-1,0) = ACHAR(0)
   IF (ANY( MINLOC(ARRAY=CC, MASK=MM1, KIND=CC%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/)))   STOP 160
   IF (KIND(MINLOC(ARRAY=CC, MASK=MM1, KIND=CC%KIND )) .NE. 1)                          STOP 161
 

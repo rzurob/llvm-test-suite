@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C919_001l
 !*
-!*  PROGRAMMER                 : David Forster (derived from C919_001 by Robert Ma)
 !*  DATE                       : 2007-09-09 (original: 11/04/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5 Data Transfer Statements
 !*                               - C919: if io-unit is not a file-unit-number, then no POS= and REC=
@@ -35,7 +27,7 @@ module m
        integer, len :: lbase_1
         character(lbase_1) :: c
     end type
-   
+
 end module
 
 program C919_001l
@@ -64,7 +56,7 @@ use m
          character(*), intent(inout) :: iomsg
       end subroutine
    end interface
-   
+
    class(base(:)), allocatable :: b1 ! tcx: (:)
    class(base(:)), pointer     :: b2 ! tcx: (:)
 
@@ -92,7 +84,7 @@ use m
     integer, intent(in)  :: v_list(:)
     integer, intent(out) :: iostat
     character(*), intent(inout) :: iomsg
-    
+
     if (unit >= 0) error stop 101_4
 
     write (unit, *, iostat=iostat, iomsg=iomsg) dtv%c
@@ -107,7 +99,7 @@ use m
     integer, intent(in)  :: v_list(:)
     integer, intent(out) :: iostat
     character(*), intent(inout) :: iomsg
-    
+
     if (unit >= 0) error stop 2_4
 
     read (unit, *, iostat=iostat, iomsg=iomsg) dtv%c

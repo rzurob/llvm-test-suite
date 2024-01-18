@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mult_type_bound_non_override.f 
-!*
-!*  PROGRAMMER                 : Paul Liu
 !*  DATE                       : 2011-05-20
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : within module
 !*                               more than 2 type bound procedures
@@ -47,15 +37,15 @@
         subroutine real_fox()
           print *, "real_fox"
         end subroutine
-		
+
         subroutine real_cat()
           print *, "real_cat"
         end subroutine
-		
+
         subroutine real_bar()
           print *, "real_bar"
         end subroutine
-		
+
       end module
 
       program t

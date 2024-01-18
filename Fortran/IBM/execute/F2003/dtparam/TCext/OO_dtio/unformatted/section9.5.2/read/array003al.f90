@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : array003al
 !*
-!*  PROGRAMMER                 : David Forster (derived from array003a by Robert Ma)
 !*  DATE                       : 2007-09-14 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Unlimited polymorphic array entity containing unlimited polymorphic component (input)
@@ -71,7 +63,7 @@ program array003al
    c3 = 'ghi'
    i2 = 102
    c4 = 'jkl'
-   
+
    select type ( b1 )
       type is (base)
          allocate ( b1(1)%u, source = -999 )      !<- integer type
@@ -79,7 +71,7 @@ program array003al
       class default
          error stop 101_4
    end select
-   
+
    select type ( b2 )
       type is (base)
          allocate ( b2(1,1)%u, source = datum(3)() ) !<- datum type ! tcx: (3)
@@ -119,8 +111,8 @@ program array003al
                print *, b
          end select
    end select
-   
-   
+
+
    select type ( b2)
       type is (base)
          select type ( b => b2(1,1)%u )

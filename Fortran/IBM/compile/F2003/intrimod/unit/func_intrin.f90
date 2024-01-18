@@ -13,19 +13,13 @@
 ! *********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : For module nature in USE statement.
 !*                             :
-!*  PROGRAMMER                 : Daniel Chen
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  DIAGNOSES TESTED           : The name of an external function can
 !*                               be the same as an intrinsic module.
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -c
 !*
 !*  KEYWORD(S)                 :
@@ -39,7 +33,7 @@
          integer aa
        end module
 
-       integer function ieee_exceptions() 
+       integer function ieee_exceptions()
          use, intrinsic ::  ieee_exceptions
          ieee_exceptions = 5
        end function ieee_exceptions

@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxumodprocstmt005.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,24 +12,17 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxumodprocstmt005
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Sept. 22, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : generalization of module procedure
 !*                               stmts, by making the MODULE keyword
 !*                               optional. These statements are called
 !*                               procedure statements in F2003.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qdebug=ooall
 !*
 !*  DESCRIPTION                : This functional test, makes sure that
@@ -41,7 +34,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
-      
+
       ! explicit interface for s1
       interface
          subroutine s1(arg)
@@ -54,9 +47,9 @@
       type mytype
          procedure(s1), nopass, pointer :: proc_ptr
       end type
-      
+
       type(mytype) xx
-      
+
       interface generic_name1
          procedure xx%proc_ptr
          procedure s1

@@ -1,20 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : module_subprogram02d
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 6 December, 2012
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : submodule
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -34,15 +28,15 @@
 !234567890223456789022345678902234567890223456789022345678902234567890
 
 MODULE m
-  INTERFACE 
+  INTERFACE
     module integer function func(x)
       integer, intent(in) :: x
-    end function func 
+    end function func
   END INTERFACE
 END MODULE m
 
 MODULE m2
-  INTERFACE 
+  INTERFACE
     module integer function func(x)
       integer, intent(in) :: x
     end function func
@@ -54,7 +48,7 @@ USE m2
 CONTAINS
   module procedure func
     func = x * 2
-  end 
+  end
 END SUBMODULE b
 
 PROGRAM module_subprogram02d

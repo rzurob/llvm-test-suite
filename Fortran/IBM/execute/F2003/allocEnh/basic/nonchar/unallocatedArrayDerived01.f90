@@ -1,21 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unallocatedArrayDerived01 - Basic Tests:
 !*                               Non-CHARACTER Array of Derived Type
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : August 28, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Unallocated ALLOCATABLE Array of Derived Type
 !*  SECONDARY FUNCTIONS TESTED : and expr is a Array of Derived Type with the
 !*                               same Shape and Length Type Parameter Values
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : TYPE, ALLOCATABLE Attribute, Intrinsic
@@ -28,7 +22,6 @@
 !*  7.4.1.1 General form
 !*
 !*  R734 assignment-stmt  is  variable = expr
-!*
 !*
 !*  7.4.1.3 Interpretation of intrinsic assignments
 !*
@@ -78,7 +71,7 @@ END MODULE mDerived3
 
 MODULE mSubroutine
     USE mDerived3
-    
+
     TYPE(tDerived3), ALLOCATABLE :: derived3ArrayAlloc( :,:,: )
 
     CONTAINS

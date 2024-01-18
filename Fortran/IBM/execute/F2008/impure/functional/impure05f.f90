@@ -1,10 +1,7 @@
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure05f
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
 !*
 !*  DESCRIPTION
@@ -22,7 +19,7 @@ PROGRAM main
   INTEGER :: a(n), b(n), s(n)
   a = (/ (i, i = 1, n) /)
   do i = 2,2000,2
-   
+
    b(i) = func1 (a(i))
    PRINT *,b(i)
   end do
@@ -31,20 +28,20 @@ CONTAINS
 
   INTEGER  FUNCTION func1(z)
     INTEGER :: z
-   
+
     func1 = func2(z)
   END FUNCTION func1
 
    INTEGER  FUNCTION func2(y)
    INTEGER:: y
-   
+
     func2 = final(y)
  END FUNCTION func2
 
 
-  IMPURE  FUNCTION final (a) 
+  IMPURE  FUNCTION final (a)
     INTEGER  :: a
     INTEGER :: final
-    final = a  
-  END FUNCTION final 
-END PROGRAM main 
+    final = a
+  END FUNCTION final
+END PROGRAM main

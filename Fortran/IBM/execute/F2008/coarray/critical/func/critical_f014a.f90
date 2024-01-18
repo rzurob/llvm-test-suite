@@ -1,14 +1,8 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : critical_f014a.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : February 2011
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
 !*  SECONDARY FUNCTIONS TESTED :
@@ -23,13 +17,13 @@
 program DTDummyArgA
 	integer :: num
 	real :: res
-	
+
 	type sfx
 		sequence
 		real(8) :: left, right
 	end type
 	type (sfx), save :: sample[*], dopple(100)[*]
-	
+
 	interface
 		real function opDT(caf, cafar)
 			type sfx
@@ -39,7 +33,7 @@ program DTDummyArgA
 			type (sfx) :: caf[*], cafar(100)[*]
 		end function
 	end interface
-	
+
 	res = opDT(sample, dopple)
 end
 
@@ -52,18 +46,18 @@ real function opDT(caf, cafar)
 	type (sfx) :: caf[*], cafar(100)[*]
 	integer, save :: iter[*]
 	integer :: num
-	
+
 	num = num_images()
 	iter = 1
 	caf = sfx(1.0, 1.0)
 	cafar = sfx(1.0, 1.0)
 	sync all
-	
+
 	critical
 		caf[1]%left = 2 ** iter[1]
 		caf[1]%right = caf[1]%right / 2
 	end critical
-	
+
 	sync all
 	if (caf[1]%left /= 2) then
 		print *, caf[1]%left
@@ -76,7 +70,7 @@ real function opDT(caf, cafar)
 		print *, 1 / (2 ** num)
 		error stop 17
 	end if
-	
+
 	do i = 1, 1000
 		critical
 			if (this_image() == 1) then
@@ -89,6 +83,6 @@ real function opDT(caf, cafar)
 			end if
 		end critical
 	end do
-	
+
 	opDT = 1.0
 end function

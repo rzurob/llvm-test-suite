@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : F2003/dtparam/procPtr/
-! PROGRAMMER                 : Morteza Ershad-Manesh
 ! DATE                       : 07/29/2008
-! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component 
-! DRIVER STANZA              : xlfF2003
+! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component
 ! DESCRIPTION                : Use of DEFERRED procedure declaration statement and procedure component statment
 !=======================================================================
 ! REVISION HISTORY
@@ -24,7 +20,7 @@ MODULE OurTypeDef
 	  LOGICAL            :: HIDDEN=.false.
 	END TYPE OBJECT
 
-	TYPE,EXTENDS(OBJECT),ABSTRACT :: DRAWABLE_OBJ 
+	TYPE,EXTENDS(OBJECT),ABSTRACT :: DRAWABLE_OBJ
 	 INTEGER(KIND=RKind), DIMENSION(3)   :: COLOR=(/0.0,0.0,0.0/)
 	 CONTAINS
       PROCEDURE(PREPARE_OBJ),PASS(OBJ),DEFERRED :: PrepObj
@@ -40,7 +36,7 @@ END MODULE
 
 MODULE OBJDefinitions
  USE OurTypeDef
- 
+
   TYPE,EXTENDS(DRAWABLE_OBJ):: TRIANGLE
    REAL(KIND=RKind),DIMENSION(3,3) :: VERTICES
     CONTAINS
@@ -57,8 +53,8 @@ MODULE OBJDefinitions
     print*," B:",OBJ%VERTICES(2,:)
     print*," C:",OBJ%VERTICES(3,:)
     print*,""
-  END SUBROUTINE PREPARE_TRIANGLE 
-   
+  END SUBROUTINE PREPARE_TRIANGLE
+
  SUBROUTINE TRIANGLE_Z_OVERLAP(OBJ1,OBJ2)
    TYPE(TRIANGLE(20,4)),INTENT(IN) :: OBJ1,OBJ2
    IF ((OBJ1%VERTICES(1,3) .LT. OBJ2%VERTICES(1,3)) .AND. ( (OBJ1%VERTICES(2,3) .LT. OBJ2%VERTICES(2,3))  .OR.  (OBJ1%VERTICES(3,3) .LT. OBJ2%VERTICES(3,3)) )) THEN
@@ -77,7 +73,7 @@ MODULE OBJDefinitions
    ABSTRACT INTERFACE
    FUNCTION IChangePtr2 ()
     END FUNCTION
-   END INTERFACE  
+   END INTERFACE
 
    print*,"END OF EXECUTION OF PROGRAM procdeclfn16"
 
@@ -92,7 +88,7 @@ PROGRAM procdeclfn16
  INTEGER                      :: Rtncode
  PROCEDURE(Z_OVERLAP),POINTER :: procptr => null()
  PROCEDURE(InterfaceChangePtr),POINTER :: procptr2 => null()
- 
+
  ABSTRACT INTERFACE
   SUBROUTINE Z_OVERLAP(OBJ1,OBJ2)
    use OBJDefinitions
@@ -117,28 +113,28 @@ END INTERFACE
  Blue_Triangle%VERTICES(1,:)=(/5,5,0/)
  Blue_Triangle%VERTICES(2,:)=(/10,12,0/)
  Blue_Triangle%VERTICES(3,:)=(/0,12,0/)
- 
+
  call Blue_Triangle%PrepObj
  Triangle2=>Blue_Triangle
- 
+
  procptr=>TRIANGLE_Z_OVERLAP
  PRINT*,"CHECK TO SEE IF Z AXIS OF ",Triangle2%NAME," is closer then ",Triangle1%NAME
  call procptr(Triangle2,Triangle1)
- PRINT*,""  
-  
+ PRINT*,""
+
  GREEN_Triangle%NAME='GREEN Triangle'
  GREEN_Triangle%COLOR=(/0,0,255/)
  GREEN_Triangle%VERTICES(1,:)=Triangle2%VERTICES(1,:)
  GREEN_Triangle%VERTICES(2,:)=Triangle2%VERTICES(2,:)
  GREEN_Triangle%VERTICES(3,:)=Triangle2%VERTICES(3,:)
- 
+
  call GREEN_Triangle%PrepObj
  Triangle1=>GREEN_Triangle
- 
+
  PRINT*,"CHECK TO SEE IF Z AXIS OF ",Triangle2%NAME," is closer then ",Triangle1%NAME
    call procptr(Triangle2,Triangle1)
- print*,""  
- 
+ print*,""
+
  procptr2=>ChangePtr
  Rtncode=ChangePtr()
  call procptr2()           ! This line should display Nothing

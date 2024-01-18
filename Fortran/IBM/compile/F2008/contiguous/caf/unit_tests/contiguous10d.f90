@@ -1,18 +1,10 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : contiguous10d.f
-!*
-!*  PROGRAMMER                 : David Nichols
 !*  DATE                       : June 24, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS simply contiguous
 !*                               6.5.4 & 12.5.2.7
-!*
-!*  DRIVER STANZA              : xlf2008
 !*
 !*  DESCRIPTION                : Testing proper diagnostics of
 !*                               the F2008 CONTIGUOUS simply contig
@@ -27,7 +19,7 @@
         integer :: stride
 
         ! If the dummy argument is an array coarray that has the
-        !  CONTIGUOUS attribute or is not of assumed shape, the 
+        !  CONTIGUOUS attribute or is not of assumed shape, the
         !  corresponding actual argument shall be simply contiguous.
 
         stride = 1
@@ -49,7 +41,7 @@
         call sub_arg_coarray_a(ia(::stride))
         call sub_arg_coarray_c(ia(::stride))
         call sub_arg_coarray_d(ia(::stride))
-        
+
         call sub_arg_coarray_a(ia(1:3:2))
         call sub_arg_coarray_c(ia(1:3:2))
         call sub_arg_coarray_d(ia(1:3:2))

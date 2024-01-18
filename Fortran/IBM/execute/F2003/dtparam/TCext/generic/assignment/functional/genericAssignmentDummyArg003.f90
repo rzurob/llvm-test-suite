@@ -3,22 +3,11 @@
 ! opt variations: -qnol -qdeferredlp -qreuse=base
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: polymorphic dummy arguments being the operand
 !*  KEYWORD(S)                 :
@@ -45,7 +34,7 @@ module m
    type, extends(base) :: child(n2,k2)    ! (20,4,20,4)
       integer, kind :: k2
       integer, len  :: n2
-      integer(k2)   :: j = -999 
+      integer(k2)   :: j = -999
    end type
 
    contains
@@ -104,18 +93,18 @@ program genericAssignmentDummyArg003
    print *, c2%i, c2%j
 
    deallocate ( b1 )
-   
+
    allocate ( child(20,4,20,4) :: b1 )
    call assignment ( b1, c1 )
-   
+
    select type ( b1 )
       type is ( child(*,4,*,4) )
          print *, b1
    end select
-   
+
    call assignment ( c2, b1 )
    print *, c2%i, c2%j
-   
+
 
 end program
 

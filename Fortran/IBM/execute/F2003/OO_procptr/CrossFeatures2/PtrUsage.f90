@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrUsage.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrUsage.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrUsage.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrUsage.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 20, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,17 +30,17 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Usage: Pass procedure itself as target / argument 
-!*   
-!*  (315457/316472) 
+!*
+!*  Usage: Pass procedure itself as target / argument
+!*
+!*  (315457/316472)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
   MODULE M
-  
+
   LOGICAL :: L(3) = .FALSE.
 
   CONTAINS
@@ -65,7 +59,7 @@
     IF ( .NOT. ASSOCIATED(ProcPtr, ModSub)) STOP 10
 
     ProcPtr1 => ModSub1
-    CAll ModSub2(ProcPtr1) 
+    CAll ModSub2(ProcPtr1)
     L(2) = .TRUE.
 
   END SUBROUTINE
@@ -78,11 +72,11 @@
 
   END MODULE
 
-  
-  PROGRAM PtrUsage 
+
+  PROGRAM PtrUsage
   USE M
-  IMPLICIT NONE 
- 
+  IMPLICIT NONE
+
   CALL ModSub()
   IF ( .NOT. ANY(L) ) STOP 12
 

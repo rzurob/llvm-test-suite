@@ -1,19 +1,15 @@
 
-
 !*******************************************************************************
-!*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
 !*  ============================================================================
 !*
 !*  TEST CASE NAME             :/cintrop_ts29113/asynch_communication/asynchcomm009f.f
-!* FEATURE NAME                : C_Interop_Asynch_Communication 
-!*  PROGRAMMER                 : Tapti Vaid
+!* FEATURE NAME                : C_Interop_Asynch_Communication
 !*  DATE                       : 2013-10-07
 !*
 !*  DESCRIPTION
 !*
 !* Checks the functionalilty of C_interop ASYNCHRONOUS Communication when a pointer to an asynchronous variable is sent over the MPI communication.
-!* 
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -27,11 +23,11 @@ include 'mpif.h'
 real, pointer :: y
 ASYNCHRONOUS :: y
 real :: a0, b1,  res1=0, result1=0
-real, target ::b0 
+real, target ::b0
 integer :: nt, rank, len, mpierror, rc, i
 integer :: status(MPI_STATUS_SIZE)
 integer, parameter :: TAG_SEND_ARR = 10, TAG_RES_READY = 11
-integer :: reqs(2) 
+integer :: reqs(2)
 y => b0
 
 
@@ -56,7 +52,7 @@ b0 = 0
 if (rank .eq. 0) then
 b0 = 50
 a0 = 100
-	block 
+	block
 
 	ASYNCHRONOUS :: b0
 	call MPI_ISEND(y , 1 , MPI_REAL, 1, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(1), mpierror)
@@ -64,7 +60,7 @@ a0 = 100
 	result1 = sqrt(a0)
     call MPI_WAIT(reqs(1), status, mpierror)
 	b0 = a0*2 !Now that a0 has been sent we can alter its value
-	
+
 end block
 !get the result from task 1
 

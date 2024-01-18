@@ -6,7 +6,7 @@
 
     TYPE  :: Zero
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -17,7 +17,6 @@
     END TYPE
 
   END MODULE
-
 
 PROGRAM MAIN
   USE M
@@ -35,7 +34,7 @@ PROGRAM MAIN
 
   ALLOCATE(W,X, SOURCE=Child(BaseID=-1, ChildID=-2))
   ALLOCATE(Y,Z, MOLD=Child(BaseID=-1, ChildID=-2))
- 
+
   allocate(a(2,2,2), b, source=(3.0_8,4.0_8))
   allocate(c(2,2,2),d, mold=(3.0_8,4.0_8))
 
@@ -50,13 +49,13 @@ PROGRAM MAIN
   k = -7
   allocate (i,j,source=k)
   deallocate(i,j)
-  
+
   allocate (i,j,source=2)
   deallocate(i,j)
-  
+
   allocate (i,j,mold=k)
   deallocate(i,j)
-  
+
   allocate (i,j,mold=2)
   deallocate(i,j)
 

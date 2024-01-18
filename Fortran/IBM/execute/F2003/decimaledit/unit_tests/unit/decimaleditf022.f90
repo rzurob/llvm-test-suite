@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf022.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,34 +12,27 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf022
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Dec. 21, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DESCRIPTION                : This tests the functionality of the  
-!*                               decimal edit mode when using namelist 
-!*                               I/O. This tests the run-time encoding 
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : This tests the functionality of the
+!*                               decimal edit mode when using namelist
+!*                               I/O. This tests the run-time encoding
 !*                               of DECIMAL= specifier for external files
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
-      
+
       character(50), parameter :: FNAME_C = 'decimaleditf022.c.dat',   &
      &                            FNAME_P = 'decimaleditf022.p.dat',   &
      &                            FNAME_OUT = 'decimaleditf022.out'
@@ -47,10 +40,10 @@
 
       real ::  rl1 = 4.12 ,rl2 = 3.14
       complex ::  cx1 = (1234.012, 1.01), cx2 = (13.13, 4.88)
- 
-      
+
+
       namelist /nml1/ rl1, cx1
-      
+
       namelist /nml2/ rl2, cx2
 
       character(10) :: my_fmt
@@ -61,13 +54,13 @@
       my_fmt='point'
       open(IN_P, file=FNAME_P, decimal=my_fmt)
       open(OUT, file=FNAME_OUT, decimal=my_fmt)
-      
+
       write(OUT, nml1)
       my_fmt='point'
       write(OUT, nml1, decimal=my_fmt)
       my_fmt='comma'
       write(OUT, nml1, decimal=my_fmt)
-      
+
       my_fmt='comma'
       read(IN_C, nml2, decimal=my_fmt)
       my_fmt='point'
@@ -101,7 +94,7 @@
       write(OUT, nml1, decimal=my_fmt)
       my_fmt='comma'
       write(OUT, nml1, decimal=my_fmt)
-      
+
       my_fmt='comma'
       read(IN_C, nml2, decimal=my_fmt)
       my_fmt='point'
@@ -115,7 +108,7 @@
       write(OUT, nml2, decimal=my_fmt)
       my_fmt='point'
       write(OUT, nml2, decimal=my_fmt)
-   
+
       close(IN_C)
       close(IN_P)
       close(OUT)

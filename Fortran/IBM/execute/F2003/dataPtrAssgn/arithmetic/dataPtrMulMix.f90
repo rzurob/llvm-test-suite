@@ -1,36 +1,30 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrMulMix.f 
+!*  TEST CASE NAME             : dataPtrMulMix.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
 !* - data_ptr is the component of a derived-type.
-!* - apply the allocatable intrinsic assignment to array objects of the DT 
+!* - apply the allocatable intrinsic assignment to array objects of the DT
 !* - integer type * real type
-!* 
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 module m
-     type base 
+     type base
          integer , pointer ::  ptr(:)
      end type
 end module
 
 program main
-    use m 
+    use m
     type(base), allocatable ::  b1(:), b2(:)
 
     allocate(b1(5))
@@ -45,13 +39,13 @@ program main
 	if (ubound(b1(i)%ptr,1) /= i+9 ) call zzrc(i_4+20)
     enddo
 
-    do i = 1, 5 
+    do i = 1, 5
         allocate(b2(i)%ptr(5), source = (/( i*10+j, j=1,5) /) )
     enddo
 
     b1 = b2
 
-    do i = 1, 5 
+    do i = 1, 5
         write(*, '(5f15.10)') b1(i)%ptr * real(2,8)
     enddo
 end

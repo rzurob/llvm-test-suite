@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting array objects with sequence type contain non-polymorphic component(Output)
@@ -86,7 +70,7 @@ program array004a
    character(200) :: msg = ''
 
    namelist /nml1/ b1, b2, b3
-   
+
    allocate ( b1(4), source = (/ base(null(),c='abc', i =101), base(null(),c='def', i =102), base(null(),c='ghi',i = 103), base(null(),c='jkl',i = 104) /) )
    allocate ( b2(4), source = (/ base(null(),c='ABC', i =105), base(null(),c='DEF', i =106), base(null(),c='GHI',i = 107), base(null(),c='JKL',i = 108) /) )
    b3 = reshape( source = b2(4:1:-1) , shape = (/2,2/) )     !<- b2 in reverse order
@@ -139,7 +123,7 @@ subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)
    namelist /dtio/ dummy
 
    allocate( dummy(size(dtv%b,1)), source= (/ dtv%b /) )
-   
+
    if ( iotype /= "NAMELIST" ) error stop 3_4
    if ( size(v_list, 1) /= 0 ) error stop 4_4
 
@@ -147,7 +131,7 @@ subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)
    if ( iostat /= 0 ) error stop 5_4
    write ( unit, "(A3)", iostat = iostat ) dtv%c
    write ( unit, "(I4)", iostat = iostat ) dtv%i
-   
+
    iomsg = 'dtiowrite'
 
 end subroutine

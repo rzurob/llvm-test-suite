@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d362516.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d362516.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 22 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 22 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 362516
@@ -29,14 +21,14 @@ module m
 
     type B(l2)
        integer,len :: l2
-       type(A(l2+1)),allocatable :: a1comp(:)  
+       type(A(l2+1)),allocatable :: a1comp(:)
     end type
 end module
 
 program d362516
      use m
      type(A(:)),allocatable,target :: a2(:)
-     type(B(1)),allocatable,target :: b3(:)  
+     type(B(1)),allocatable,target :: b3(:)
 
      a2=[A(2)(),A(2)(),A(2)(),A(2)()]
 

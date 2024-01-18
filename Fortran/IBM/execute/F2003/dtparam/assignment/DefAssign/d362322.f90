@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d362322.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d362322.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 19 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 19 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 362322
@@ -25,7 +17,7 @@
 module m1
    type A(l1)
       integer,len  :: l1
-      procedure(ifun),nopass,pointer :: iprocptr=>null() 
+      procedure(ifun),nopass,pointer :: iprocptr=>null()
    end type
   contains
       integer function ifun(int)
@@ -34,7 +26,7 @@ module m1
         ifun=int
       end function
 
-      function afun(ta)                  
+      function afun(ta)
         type(A(4)),intent(in) :: ta
         type(A(4))  :: afun
 
@@ -44,7 +36,7 @@ module m1
 end module
 
 module m2
-use m1,XA=>A                             
+use m1,XA=>A
    contains
       subroutine assignA1(this,dt)
          class(XA(4)),intent(inout) :: this

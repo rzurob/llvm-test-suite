@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltHostVarULPtr.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltHostVarULPtr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 05, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is an associate name associating to unlimited poly pointer 
+!*
+!*   The selector is an associate name associating to unlimited poly pointer
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -46,7 +40,7 @@
   MODULE M
 
     TYPE  :: Zero
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -93,16 +87,16 @@
   PROGRAM SltHostVarULPtr
   USE M
   IMPLICIT NONE
-  CLASS(*), POINTER :: Ptr 
+  CLASS(*), POINTER :: Ptr
   TYPE(Child), TARGET :: Tar
   TYPE(Child), TARGET :: Tar1=Child(BaseId=-1, ChildId=-2)
 
-  Ptr => Tar 
+  Ptr => Tar
 
   SELECT TYPE ( As => Ptr  )
     CLASS IS (Zero)
       SELECT TYPE (As)
-        TYPE IS (Child) 
+        TYPE IS (Child)
           Tar = Tar1
           IF ( As%Base%GetId() .NE. -1 ) STOP 34
           IF ( As%GetId()      .NE. -2 ) STOP 35
@@ -126,4 +120,4 @@
   END SELECT
 
   END
-  
+

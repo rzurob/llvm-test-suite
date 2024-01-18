@@ -1,40 +1,26 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
 ! %PRECMD: ${TR_SRC}/scrdtya01.presh fxdtyra39
 ! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for derived types with BIND(C) attr.
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived types with BIND(C) attribute
-!*  SECONDARY FUNCTIONS TESTED : see below 
+!*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -43,7 +29,7 @@
 !*  DESCRIPTION                :
 !*
 !*      - Testing 3-levels deep derived types with BIND(C) attribute
-!*      - Testing 3-levels deep derived types with VALUE, INTENT attributes 
+!*      - Testing 3-levels deep derived types with VALUE, INTENT attributes
 !*      - Testing 3-levels deep derived types with integer and real components
 !*      - Testing FORTRAN external functions
 !*      - Main written in FORTRAN
@@ -466,7 +452,7 @@ function fun3(dtu,dty) bind(c)
 
    if ( dtu%var_a /= 4.0e0 .or. dtu%vdt2%var_a /= 4.0d0 .or. &
                             dtu%vdt2%vdt1%var_a /= 4 ) error stop 244
-   if ( dtu%var_b /= 8 .or. dtu%vdt2%var_b /= 8 .or. & 
+   if ( dtu%var_b /= 8 .or. dtu%vdt2%var_b /= 8 .or. &
                             dtu%vdt2%vdt1%var_b /= 8.0d0 ) error stop 246
    if ( dtu%var_c /= 12.0q0 .or. dtu%vdt2%var_c /= 12.0d0 .or. &
                              dtu%vdt2%vdt1%var_c /= 12 ) error stop 248

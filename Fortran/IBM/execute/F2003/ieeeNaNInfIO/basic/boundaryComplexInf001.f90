@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : boundaryComplexInf001.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 14, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      use, intrinsic :: ieee_arithmetic 
+      use, intrinsic :: ieee_arithmetic
       implicit none
 
       real(16)     :: rli, rlr
@@ -47,7 +41,7 @@
 
       integer, parameter :: unit = 11
 
-      character(72), parameter :: myfmt =                             & 
+      character(72), parameter :: myfmt =                             &
      & '(2F0.0,/,2F1.1,/,2F2.1,/,2F3.2,/,2F4.2,/,2F5.2' //            &
      & ',/,2F6.2,/,2F7.2,/,2F15.2)'
 
@@ -55,7 +49,7 @@
       equivalence(rlr, rlrequiv)
 
       open(unit, file='boundaryComplexInf001.out', action='write')
-      
+
       ! Write out complex(4) Infinity ( positive and negative )
 
       cx1 = (z'7F800000',z'7F800000') ! positive Inf
@@ -89,7 +83,7 @@
       rlrequiv = z'FFF0000000000000' ! negative Inf
       cx3 = (rlr, rli)
       write(unit, fmt=myfmt) cx3, cx3, cx3, cx3, cx3, cx3, cx3, cx3, cx3
- 
+
       rliequiv = z'7FF0000000000000' ! positive Inf
       rlrequiv = z'FFF0000000000000' ! negative Inf
       cx3 = (rlr, rli)

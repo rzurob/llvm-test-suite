@@ -2,28 +2,22 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: $TR_SRC/fxstio231.presh fxstio231
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  redherring.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio231.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 31, 2003
 !*
-!*  Primary Function Tested    : buffering run-time option 
+!*  Primary Function Tested    : buffering run-time option
 !*
-!*  Description                : Test XLFRTEOPTS=buffering=disable_all 
+!*  Description                : Test XLFRTEOPTS=buffering=disable_all
 !*                               use Fortran program call a C function
 !*                               which read the file created by fortran
 !*                               , then modify the data and create a new
@@ -33,7 +27,7 @@
 !=======================================================================
 
 !* Declare Variables.
-  
+
    integer ios /0/
    integer ivar /123/, ivar1, ivar2
    real rvar /1.234567/, rvar1, rvar2
@@ -56,7 +50,7 @@
 
    open(2, file='outfile',access='stream', form='formatted', iostat=ios,&
       err=100)
- 
+
    read(2, fmt='(I10)', iostat=ios, err=200) ivar1
    read(2, fmt='(F9.6)', iostat=ios, err=200) rvar1
    read(2, fmt='(A2)', iostat=ios, err=200) hvar1

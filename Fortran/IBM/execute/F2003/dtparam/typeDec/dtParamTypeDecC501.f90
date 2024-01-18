@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 17, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
-!*  -- A constant or subobject of a constant 
-!*  (340476) 
+!*  -- A constant or subobject of a constant
+!*  (340476)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,10 +43,10 @@
     TYPE(DT0(KIND, LEN)) :: T=DT0(KIND, 4)()
   END TYPE
 
-  TYPE(DT(KIND=4,          LEN=4)), PARAMETER :: T1(1)  =  DT(KIND=4_1, LEN=4_8)() 
+  TYPE(DT(KIND=4,          LEN=4)), PARAMETER :: T1(1)  =  DT(KIND=4_1, LEN=4_8)()
 
-  TYPE(DT(T1(1)%DT0%I,     LEN=T1(1)%DT0%I))  :: T2(1)  =  DT(T1(1)%DT0%I, LEN=T1(1)%DT0%I)() 
-  TYPE(DT(KIND=T1(1)%K,    L=T1%LEN))         :: T3(1)  =  DT(KIND=T1(1)%K, L=T1%LEN)() 
+  TYPE(DT(T1(1)%DT0%I,     LEN=T1(1)%DT0%I))  :: T2(1)  =  DT(T1(1)%DT0%I, LEN=T1(1)%DT0%I)()
+  TYPE(DT(KIND=T1(1)%K,    L=T1%LEN))         :: T3(1)  =  DT(KIND=T1(1)%K, L=T1%LEN)()
 
 
   IF ( T1%K               .NE.   4          ) STOP 11

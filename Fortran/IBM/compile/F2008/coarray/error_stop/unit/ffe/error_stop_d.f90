@@ -1,30 +1,23 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : error_stop_d.f
-!*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : July 30, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : error stop statement 
+!*  PRIMARY FUNCTIONS TESTED   : error stop statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qcaf
 !*
 !*  DESCRIPTION                :
 !*
-!*    The stop code must be a scalar constant expression of character or integer type. 
+!*    The stop code must be a scalar constant expression of character or integer type.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   Program Error_stop_d
   integer, parameter :: a=1
   character, parameter :: c='n'
- 
+
     !good
     error stop
     error stop 0+0
@@ -37,13 +30,13 @@
     error stop -2
     error stop +2_1
     error stop +2_8
-    
+
     error stop "werw"
     error stop 'werw'
     error stop ''//""
     error stop 's'//"t"//"op"
     error stop c//"!stop"
-  
+
   end
 
   subroutine s()
@@ -63,7 +56,7 @@
   1 error stop -1
 
   END subroutine
- 
+
   pure subroutine s1()
     !bad
     error stop

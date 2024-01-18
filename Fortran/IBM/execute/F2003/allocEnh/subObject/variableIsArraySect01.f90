@@ -1,14 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : variableIsArraySect01 - variable is a
 !*                               Subobject
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : November  8, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Array Section (a single Dimension) of a
@@ -16,7 +11,6 @@
 !*                               Array
 !*  SECONDARY FUNCTIONS TESTED : and expr is of the same type as variable
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATABLE Attribute, Intrinsic Assignment
@@ -28,7 +22,6 @@
 !*  7.4.1.1 General form
 !*
 !*  R734 assignment-stmt  is  variable = expr
-!*
 !*
 !*  7.4.1.3 Interpretation of intrinsic assignments
 !*
@@ -65,12 +58,12 @@ PROGRAM variableIsArraySect01
     d1 = [ (tD(-9,-9), i = 1, 3) ]
     d3 = RESHAPE([ (tD(i,i), i = 26, 0, -1) ], [ 3,3,3 ])
 
-    IF (.NOT. ALLOCATED( d1 )) CALL zzrc( 10_4 ) 
+    IF (.NOT. ALLOCATED( d1 )) CALL zzrc( 10_4 )
 
     PRINT *, SIZE( d1 ), (d1( i )%b, i = 1, SIZE( d1 ))
     PRINT *, ' ', d1( : )%d
 
-    IF (SIZE( d1 ) /= 3) CALL zzrc( 11_4 ) 
+    IF (SIZE( d1 ) /= 3) CALL zzrc( 11_4 )
 
     DO i = 1, SIZE(d3, 1)
         IF (d1( i )%b /= d1( i )%d) CALL zzrc( (11_4 + INT(i, 4)) )
@@ -93,7 +86,7 @@ PROGRAM variableIsArraySect01
             INTEGER(4) :: m
 
 
-            IF (.NOT. ALLOCATED( d3 )) CALL zzrc( rc ) 
+            IF (.NOT. ALLOCATED( d3 )) CALL zzrc( rc )
 
 
             PRINT *

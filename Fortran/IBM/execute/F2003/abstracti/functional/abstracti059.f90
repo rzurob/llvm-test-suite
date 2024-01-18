@@ -13,21 +13,15 @@
 ! *********************************************************************
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxst011b.f
-!*  TEST CASE TITLE            : Intrinsics and Options for SMP
 !*
-!*  PROGRAMMER                 : Terence Yuen
 !*  DATE                       : October 10, 1996
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : -qsmp=schedule= compiler option
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : (xlf90)
 !*  REQUIRED COMPILER OPTIONS  : (-qsmp)  -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -35,10 +29,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Test Function Calls in do-loops
-!*                               In this test, only pure functions 
+!*                               In this test, only pure functions
 !*                               are called.
 !*
-!*                               Derived from fxst011a.f 
+!*                               Derived from fxst011a.f
 !*                               Only compiler option is changed.
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,7 +41,7 @@ program abstracti059
   integer :: j1,j2,j3,j4,j5,j6,j7,j8,j9
 
 
-  abstract interface 
+  abstract interface
      real pure function func1ai (i1)
        integer, intent(in) :: i1
      end function func1ai
@@ -115,7 +109,7 @@ program abstracti059
         end do
      end do
   end do
-  
+
   print *, "Test 2"
   write(*, fmt="(8i8)") (((i2_2(j1,j2,j3),j1=1,4,2), j2=17,20,2), j3=1,4)
 
@@ -127,7 +121,7 @@ program abstracti059
   end do
 
   print *, "Test 3"
-  write(*, fmt="(8i8)") i3_2 
+  write(*, fmt="(8i8)") i3_2
 
   ! Test 4: Array Argument, array result
 
@@ -141,13 +135,13 @@ program abstracti059
          end do
      end do
   end do
-   
+
   print *, "Test 4"
-  write(*, fmt="(8i8)") i4_2 
+  write(*, fmt="(8i8)") i4_2
 
 end program abstracti059
- 
- 
+
+
 real pure function func1 (i1)
   integer, intent(in) :: i1
   func1 = real(i1)

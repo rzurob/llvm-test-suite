@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : cdaasBasicNewBounds
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-09-28
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray dummy arguments - assumed size
 !*  SECONDARY FUNCTIONS TESTED : everything but the bounds are the same

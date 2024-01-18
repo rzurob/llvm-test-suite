@@ -3,30 +3,18 @@
 ! opt variations: -ql
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : complex32.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : TO is of unlimited poly, component of a DT     
+!*  DESCRIPTION                : TO is of unlimited poly, component of a DT
 !*                               FROM is of complex*32 with private attr
-!*                               be called in external procedure 
-!*                               rank 4 
-!*                               
+!*                               be called in external procedure
+!*                               rank 4
+!*
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -37,30 +25,30 @@
 
 module m
 
-       type A(k1)    ! (16) 
+       type A(k1)    ! (16)
           integer, kind            :: k1
           complex(k1), allocatable :: a1(:,:,:,:)
-          class(*), allocatable :: a2(:,:,:,:) 
+          class(*), allocatable :: a2(:,:,:,:)
        end type
 
-       interface 
+       interface
           subroutine sub(arg)
               import A
               type(A(16)), intent(inout) :: arg
           end subroutine
-       end interface 
+       end interface
 end module
 
-program main 
+program main
 
        use m
-       type(A(16)) ::  aT 
+       type(A(16)) ::  aT
 
        aT%a1 = reshape( (/ ( cmplx(i+1, i-1, 16), i = -7, 8 ) /),(/2,2,2,2/) )
 
        allocate( complex*8 :: aT%a2(5,5,5,-1))
        select type( x=>aT%a2 )
-           type is (complex(16)) 
+           type is (complex(16))
                x = cmplx( int(2, 1), real(3.0, 16), 16 )
        end select
 
@@ -68,13 +56,13 @@ program main
 
        if ( .not. allocated(aT%a2) ) stop 21
        if ( allocated(aT%a1) ) stop 23
- 
+
        do i = 1, 4
-           if ( size( aT%a2, i) /= 2 ) call zzrc(i) 
+           if ( size( aT%a2, i) /= 2 ) call zzrc(i)
        end do
 
        select type( x=>aT%a2 )
-           type is (complex(16)) 
+           type is (complex(16))
            write ( 6, 100) x(1,1,2,2)
        end select
 

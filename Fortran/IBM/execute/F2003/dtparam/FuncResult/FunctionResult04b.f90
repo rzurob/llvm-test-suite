@@ -1,38 +1,30 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FunctionResult04b.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : March 15, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly         
+!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* Defect 356663 
+!* Defect 356663
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
         INTEGER, KIND :: k1
         INTEGER, LEN  :: l1
 
-        CHARACTER(l1) :: C0 
+        CHARACTER(l1) :: C0
         INTEGER(k1), ALLOCATABLE :: A0(:)
       END TYPE
 
@@ -43,26 +35,26 @@ MODULE Mod
 
       CONTAINS
 
-      FUNCTION func(Arg) 
+      FUNCTION func(Arg)
         CLASS(Base(4,*)), INTENT(IN) :: Arg
-        CLASS(Base(4,:)), ALLOCATABLE :: func 
+        CLASS(Base(4,:)), ALLOCATABLE :: func
 
         SELECT TYPE ( Arg )
            CLASS IS (Base(4,*))
-              ALLOCATE (Base(4,Arg%l1) :: func) 
+              ALLOCATE (Base(4,Arg%l1) :: func)
               func%C0 = Arg%C0
               func%A0 = Arg%A0
 
            CLASS IS (Child(4,*,4,*))
-              ALLOCATE (Child(4,Arg%l1,4,Arg%l2) :: func) 
+              ALLOCATE (Child(4,Arg%l1,4,Arg%l2) :: func)
               func%C0 = Arg%C0
               func%A0 = Arg%A0
 
            CLASS DEFAULT
               STOP 10
         END SELECT
- 
-      END FUNCTION   
+
+      END FUNCTION
 END MODULE
 
 PROGRAM FunctionResult04b
@@ -70,7 +62,7 @@ PROGRAM FunctionResult04b
       IMPLICIT NONE
 
       TYPE(Base(4,10)) ::  b1
-      INTEGER :: I 
+      INTEGER :: I
 
       b1 = func(Base(4,10) ( 'IBM', (/ (I, I = 1, 10) /) ))
       IF ( b1%C0     .NE.             'IBM' ) STOP 10

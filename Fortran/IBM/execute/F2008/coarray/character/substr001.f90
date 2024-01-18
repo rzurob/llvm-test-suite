@@ -1,34 +1,29 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : substr001.f
-!*  TEST CASE TITLE            : Test the substring of different length character coarray
-!*                               
-!*  PROGRAMMER                 : Ke Wen Lin 
-!*  DATE                       : March 28, 2011 
+!*
+!*  DATE                       : March 28, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test the substring of different length character coarray
-!*                              
-!*  SECONDARY FUNCTIONS TESTED :                                                      
+!*
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : No Feature Number
 !*
-!*  DRIVER STANZA              : xlf2003_r
 !*  REQUIRED COMPILER OPTIONS  : -qcaf -q64
 !*
 !*  KEYWORD(S)                 : character, CAF, substring
-!*                              
-!*  TARGET(S)                  : different length character                           
+!*
+!*  TARGET(S)                  : different length character
 !*
 !*  DESCRIPTION:
 !*  -----------
-!*  The testcase aim to 
+!*  The testcase aim to
 !*  1. test the substring of different length character coarray.
 !*  -----------
-!*  
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program substr001
@@ -36,13 +31,13 @@ program substr001
 	implicit none
 
 	integer, parameter :: P = 1, Q = 2
-	
-	character (len=10),		save :: coStr1[*] 
-	character (len=100), 	save :: coStr2[*] 
-	character (len=1000), 	save :: coStr3[*] 
-	character (len=2000), 	save :: coStr4[*] 
-	character (len=2000) 		 :: loStr 
-	
+
+	character (len=10),		save :: coStr1[*]
+	character (len=100), 	save :: coStr2[*]
+	character (len=1000), 	save :: coStr3[*]
+	character (len=2000), 	save :: coStr4[*]
+	character (len=2000) 		 :: loStr
+
 	character (len=1), save :: unit_char[*], parity_char[*]
 	character (len=1) 		:: P_unit_char, P_parity_char, Q_unit_char, Q_parity_char
 
@@ -56,7 +51,7 @@ program substr001
 
 	if (MOD(me,2) == 0) then
 		parity_char = "E"
-	else 
+	else
 		parity_char = "O"
 	end if
 
@@ -68,14 +63,14 @@ program substr001
 	coStr1 = repeat(unit_char,10)
 	coStr2 = repeat(parity_char,100)
 	coStr3 = repeat(unit_char,1000)
-	
+
 	sync all
 
 		!***********************************!
 		!	  test co, co[me], co[P]        !
 		!	  combine with concatenation    !
 		!***********************************!
-	
+
 	!!! ************  from beginning to end  ************ !!!
 
 	coStr4 = ""
@@ -329,54 +324,54 @@ program substr001
 	  .AND. (verifyChars(coStr4,11,30,P_unit_char)))) then
 		error stop 42
 	end if
-	
+
 	! ************** blend images ************** !
 
-	if (ne > MAX_IMAGE) then 
+	if (ne > MAX_IMAGE) then
 		ne = MAX_IMAGE
 	end if
 
 	sync all
-	
+
 	! when current image is P, compare the results from concatenation and substring
 	if(me == P) then
 
 		coStr4 = ""
-		
+
 		do i = 1, ne
 			coStr4 = trim(coStr4) // coStr1(1:5)[i]
-		end do 
-			
+		end do
+
 		if(len_trim(coStr4) /= (ne * 5)) then
-			error stop 51        
+			error stop 51
 		end if
 
 		do i = 1, ne
 		   loStr((i-1)*5+1:i*5) = coStr1(6:10)[i]
 		end do
 
-		if(coStr4 /= loStr) then 
+		if(coStr4 /= loStr) then
 		   error stop 52
 		end if
-		
 
-	else if (me /= P) then 
+
+	else if (me /= P) then
 		! when current image is Q, substring from P & Q, then change P
-		if(me == Q) then 
+		if(me == Q) then
 			coStr4[P] = ""
 			coStr4[P] = coStr1(1:5)[P] // coStr1(6:10)[Q]
 			if(.NOT.( (len_trim(coStr4[P]) == 10) .AND. (verifyChars(coStr4[P],1,5,P_unit_char)) &
 			  .AND. (verifyChars(coStr4[P],6,10,Q_unit_char)) )) then
 				error stop 53
 			end if
-			
+
 			coStr4[P] = ""
 			coStr4[P] = coStr1(3:7)[P] // coStr1(3:7)[Q]
 			if(.NOT.( (len_trim(coStr4[P]) == 10) .AND. (verifyChars(coStr4[P],1,5,P_unit_char)) &
 			  .AND. (verifyChars(coStr4[P],6,10,Q_unit_char)) )) then
 				error stop 54
 			end if
-			
+
 			coStr4[P] = ""
 			coStr4[P] = coStr1(6:10)[P] // coStr1(1:5)[Q]
 			if(.NOT.( (len_trim(coStr4[P]) == 10) .AND. (verifyChars(coStr4[P],1,5,P_unit_char)) &
@@ -384,11 +379,11 @@ program substr001
 				error stop 55
 			end if
 		end if
-		
+
 	end if
 
 	sync all
-	
+
 	! each image substring from each of the others, then verify the results
 	do i = 1, ne
 		coStr4[me] = ""
@@ -396,6 +391,6 @@ program substr001
 		if(.NOT. (verifyChars(coStr4,1,i,unit_char[i]))) then
 			error stop 61
 		end if
-	end do 
+	end do
 
 end program substr001

@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: $TR_SRC/fxi3e2.presh fxfinite04
-! %COMPOPTS: -qfloat=nans:nofold -qrealsize=4 -qfree=f90 -qstrict 
+! %COMPOPTS: -qfloat=nans:nofold -qrealsize=4 -qfree=f90 -qstrict
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,21 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Vasile Radulescu
 !*  DATE                       : February 15, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_FINITE 
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_FINITE
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  : -qfloat=nans:nofold -qrealsize=4
 !*
 !*  KEYWORD(S)                 :
@@ -39,11 +30,11 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
         program fxfinite04
-      
+
         use ieee_arithmetic
         use constants_for_ieee
-        
-        real plus_nanq, minus_nanq, plus_nans, minus_nans       
+
+        real plus_nanq, minus_nanq, plus_nans, minus_nans
         real, parameter :: pos_r1 = tiny(1.0)
         real, parameter :: pos_r2 = huge(1.0)
         real, dimension(4) :: arrval
@@ -64,11 +55,11 @@
 !...test with PINF and NINF values
         if (ieee_support_datatype(PINF_4) .AND. ieee_support_datatype(NINF_4)) then
            if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) then
-              error stop 2 
+              error stop 2
            endif
         endif
 
-!...test with PHD, PTD, NHD, NTD values        
+!...test with PHD, PTD, NHD, NTD values
        if (ieee_support_datatype(PHD_4) .AND. ieee_support_datatype(PTD_4)) then
            if (ieee_is_finite(PHD_4) .neqv. .true.) then
               error stop 3
@@ -77,7 +68,7 @@
               error stop 4
            endif
        endif
-        
+
        if (ieee_support_datatype(NHD_4) .AND. ieee_support_datatype(NTD_4)) then
            if (ieee_is_finite(NHD_4) .neqv. .true.) then
               error stop 5
@@ -87,7 +78,7 @@
            endif
        endif
 
-!...test with PZERO and NZERO values       
+!...test with PZERO and NZERO values
         if (ieee_support_datatype(PZERO_4) .AND. ieee_support_datatype(NZERO_4)) then
            if (ieee_is_finite(PZERO_4) .neqv. .true.) then
               error stop 7
@@ -97,14 +88,14 @@
            endif
         endif
 
-!...test with positive normal 
+!...test with positive normal
         if (ieee_support_datatype(pos_r1)) then
            if (ieee_is_finite(pos_r1) .neqv. .true. ) then
               error stop 9
            endif
         endif
 
-       if (ieee_support_datatype(pos_r2)) then    
+       if (ieee_support_datatype(pos_r2)) then
            if (ieee_is_finite(pos_r2) .neqv. .true.) then
               error stop 10
            endif

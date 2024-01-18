@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefParentheses.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefParentheses.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 06, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  An initialization expression enclosed in parentheses
-!* 
-!* 
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -58,21 +50,21 @@
   END MODULE
 
 
-  PROGRAM InitExpDefParentheses 
+  PROGRAM InitExpDefParentheses
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
 
   INTEGER(8),  PARAMETER :: I8(-2147483648:-2147483646) = ((((((((((-1))))))))))
-  LOGICAL(1),  PARAMETER :: L1(-128:-126) = (((((((((((/.TRUE., .TRUE.,.TRUE./))))))))))) 
+  LOGICAL(1),  PARAMETER :: L1(-128:-126) = (((((((((((/.TRUE., .TRUE.,.TRUE./)))))))))))
   REAL(16),    PARAMETER :: R6(125:127) = (((((((((((/(-1.0 , I=1,3)/)))))))))))
   COMPLEX(4),  PARAMETER :: Z4(-32768:-32766) = (((((((((((1.0, -1.0)))))))))))
   TYPE(DT(4,20)),    PARAMETER :: D(2147483645:2147483647)=((((((((((DT(4,20)()))))))))))
- 
-  INTEGER,     PARAMETER :: SIZ=3
-  INTEGER,     PARAMETER :: Con(3)=3 
 
- 
+  INTEGER,     PARAMETER :: SIZ=3
+  INTEGER,     PARAMETER :: Con(3)=3
+
+
   INTEGER(((((((((((KIND(SIZE((/(I,I=KIND(L1), SIZE(I8))/))))))))))))))   ::  &
               TI1(((((((((((SIZE((/(I,I=KIND(L1), SIZE(I8))/)))))))))))))  =  &
                   ((((((((((SIZE((/(I,I=KIND(L1), SIZE(I8))/))))))))))))
@@ -86,7 +78,7 @@
               TI4(SIZE((/(I,I=KIND(L1), SIZE(((((((((((D))))))))))))/))) =  &
                           SIZE((/(I,I=KIND(L1), SIZE(((((((((((D))))))))))))/))
 
- 
+
   IF ( KIND(TI1 )  .NE. 4 )         STOP 11
   IF ( SIZE(TI1)   .NE. SIZ )       STOP 12
   IF ( ANY(TI1     .NE. Con ))      STOP 13
@@ -107,4 +99,4 @@
   END
 
 
- 
+

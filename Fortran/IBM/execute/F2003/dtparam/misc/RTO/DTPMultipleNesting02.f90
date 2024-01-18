@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTPMultipleNesting02
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : February 05, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Run Time Offset (RTO)
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : Default initialization
@@ -30,7 +22,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
@@ -45,12 +37,12 @@ MODULE Mod
         INTEGER, LEN  :: l2 = 10
 
         INTEGER(k1)                 :: Iarr(l1) = -3
-        CLASS(Base(k2,l2)), POINTER :: ptr   
+        CLASS(Base(k2,l2)), POINTER :: ptr
       END TYPE Child
 
       TYPE Branch  (q3,n1,n2,n3)
         INTEGER, KIND :: q3 = KIND(0)
-        INTEGER, LEN  :: n1 = 2, n2 = 2, n3 = 2 
+        INTEGER, LEN  :: n1 = 2, n2 = 2, n3 = 2
 
         TYPE(Child(q3,n1,q3,n2)) :: cmp1(n3)
         TYPE(Child(q3,n2,q3,n2)) :: cmp2(n3)
@@ -58,7 +50,7 @@ MODULE Mod
 END MODULE Mod
 PROGRAM DTPMultipleNesting02
       USE Mod
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE(Branch(4,:,:,:)), ALLOCATABLE  :: b0
       INTEGER :: i
@@ -88,7 +80,7 @@ PROGRAM DTPMultipleNesting02
         IF ( ANY((b0%cmp1(i)%Iarr)      .NE.   -3) )    STOP 25
 
         ALLOCATE( Base(4,5) :: b0%cmp1(i)%ptr )
-        IF ( b0%cmp1(i)%ptr%l1              .NE.        5 )  STOP 26 
+        IF ( b0%cmp1(i)%ptr%l1              .NE.        5 )  STOP 26
 
         IF ( LEN(b0%cmp1(i)%ptr%Carr)       .NE.        5 )  STOP 27
         IF ( ANY((b0%cmp1(i)%ptr%Carr)      .NE. 'AAAAA') )  STOP 28
@@ -97,7 +89,7 @@ PROGRAM DTPMultipleNesting02
         IF ( LBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        1 )  STOP 30
         IF ( UBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        5 )  STOP 31
         IF ( ANY((b0%cmp1(i)%ptr%Rarr)      .NE.       4) )  STOP 32
-      END DO 
+      END DO
 
       IF ( SIZE(b0%cmp2)          .NE.   10 )    STOP 33
       IF ( LBOUND(b0%cmp2, 1)     .NE.    1 )    STOP 34
@@ -118,7 +110,7 @@ PROGRAM DTPMultipleNesting02
         IF ( ANY((b0%cmp2(i)%Iarr)      .NE.   -3) )    STOP 45
 
         ALLOCATE( Base(4,5) :: b0%cmp2(i)%ptr )
-        IF ( b0%cmp2(i)%ptr%l1              .NE.        5 )  STOP 46 
+        IF ( b0%cmp2(i)%ptr%l1              .NE.        5 )  STOP 46
 
         IF ( LEN(b0%cmp2(i)%ptr%Carr)       .NE.        5 )  STOP 47
         IF ( ANY((b0%cmp2(i)%ptr%Carr)      .NE. 'AAAAA') )  STOP 48
@@ -127,6 +119,6 @@ PROGRAM DTPMultipleNesting02
         IF ( LBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        1 )  STOP 50
         IF ( UBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        5 )  STOP 51
         IF ( ANY((b0%cmp2(i)%ptr%Rarr)      .NE.       4) )  STOP 52
-      END DO 
+      END DO
 
 END PROGRAM DTPMultipleNesting02

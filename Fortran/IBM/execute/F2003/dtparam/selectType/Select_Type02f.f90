@@ -1,26 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type02f - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 26, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Argument association - external function
 !*                               Selector being a function call
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -39,16 +32,16 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN  :: l1 
-      END TYPE Base 
+        INTEGER, KIND :: k1
+        INTEGER, LEN  :: l1
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
-        CLASS(Base(k1,l1)), POINTER :: Cmp 
-      END TYPE Child 
+        CLASS(Base(k1,l1)), POINTER :: Cmp
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen
       END TYPE NextGen
@@ -58,22 +51,22 @@ END MODULE Mod1
 !*
 PROGRAM Select_Type02f
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      TYPE(Child(knd1,len1)) :: child1 
+      TYPE(Child(knd1,len1)) :: child1
       TYPE(Base(knd1,len1)), TARGET :: tgt = Base(knd1,len1) ()
 
       INTERFACE
         FUNCTION foo(Obj)
           USE Mod1
-          IMPLICIT NONE 
+          IMPLICIT NONE
           CLASS(*)  :: Obj
           CLASS(*), ALLOCATABLE  :: foo
         END FUNCTION foo
 
         FUNCTION Dfoo(Obj)
           USE Mod1
-          IMPLICIT NONE 
+          IMPLICIT NONE
           CLASS(Base(2,5)), POINTER  :: Dfoo
           CLASS(Base(2,5)), POINTER :: Obj
         END FUNCTION Dfoo
@@ -133,7 +126,7 @@ END PROGRAM Select_Type02f
 !*
 FUNCTION foo(Obj)
         USE Mod1
-        IMPLICIT NONE 
+        IMPLICIT NONE
         CLASS(*)  :: Obj
         CLASS(*), ALLOCATABLE  :: foo
 
@@ -143,7 +136,7 @@ END FUNCTION foo
 
 FUNCTION Dfoo(Obj)
         USE Mod1
-        IMPLICIT NONE 
+        IMPLICIT NONE
         CLASS(Base(2,5)), POINTER  :: Dfoo
         CLASS(Base(2,5)), POINTER :: Obj
 

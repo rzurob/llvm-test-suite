@@ -3,25 +3,13 @@
 ! opt variations: -qnol -qnodeferredlp
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : Mix generic type bounds
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : mix add, subtract, and assignment in a type
-!*
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -94,7 +82,7 @@ program genericMix001
    i = int(20,4)(10) + int(20,4)(5)
    j = i + int(20,4)(15) - int(20,4)(10)
    k = i + j - i - j
-   
+
    print *, i%i
    print *, j%i
    print *, k%i

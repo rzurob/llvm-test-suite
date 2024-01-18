@@ -1,24 +1,21 @@
 !**********************************************************************
 !*
 !*  TEST CASE NAME             : module_subprogram22f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 25 April 2013
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  KEYWORD(S)                 : F2008 SUBMODULE AC IMPLIED DO
 !*
 !*  TARGET(S)                  :
-!*                               
-!*  DESCRIPTION                : 
+!*
+!*  DESCRIPTION                :
 !*  based on arr_misc/constructor/fxco0010
 !*
-!*  Verify acceptance of array constructors in a submodule and the 
+!*  Verify acceptance of array constructors in a submodule and the
 !*   scope of an AC implied do, array segments, array expressions, or
 !*   a combination.
 !*
@@ -26,7 +23,7 @@
 !*  - two submodules may have the same name, as long as they have
 !*    different host modules.
 !*  - one of these modules use associates the other
-!*  
+!*
 !*  Verify that the results match the values of the original test case
 !* ===================================================================
 !*
@@ -46,16 +43,16 @@
 MODULE DATA
   IMPLICIT NONE
   INTEGER CASENUM,i,j
-  
+
   INTEGER i10(10),i5a(5),i5b(5)
   INTEGER i55(5,5),i15(-7:7)
 
   COMPLEX c232(2,3,2),c25(2,5),c210(2,10)
-   
+
   INTERFACE
 
     MODULE SUBROUTINE SUB1( Arg1, Arg2, Arg3, CASENUM )
-      INTEGER CASENUM 
+      INTEGER CASENUM
       INTEGER Arg1(:), Arg2(:), Arg3(:)
     END SUBROUTINE SUB1
 
@@ -63,7 +60,7 @@ MODULE DATA
       INTEGER CASENUM
         COMPLEX Arg1(:,:,CASENUM:),Arg2(:,:),Arg3(:,:)
       END SUBROUTINE SUB2
- 
+
       MODULE SUBROUTINE SUB3( Arg1, Arg2, CASENUM )
         INTEGER CASENUM
         character*5  Arg1(:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:)
@@ -128,7 +125,7 @@ CONTAINS
     i10 = (/ 1,2,3,4,5,6,7,8,9,10 /)
     i5a = (/ 3,4,5,6,7 /)
     i5b = (/ 1,3,5,7,9 /)
-     
+
     CASENUM = 1
     call sub1( i10,i5a,i5b,CASENUM )
     if ( ( i10(1).NE.3 ) .OR.( i10(2).NE.4 ) .OR.( i10(3).NE.5 ) &
@@ -150,14 +147,14 @@ CONTAINS
      .OR.( i15(-1).NE.6 ) .OR.( i15(-0).NE.7 ) .OR.( i15( 1).NE.1 ) &
      .OR.( i15( 2).NE.3 ) .OR.( i15( 3).NE.5 ) .OR.( i15( 4).NE.7 ) &
      .OR.( i15( 5) .NE. 9 ) ) CALL ZZRC( CASENUM )
-  END 
+  END
 
   !- Array Vector Subscript Section
   MODULE PROCEDURE TEST3
     i10 = (/ 1,10,2,9,3,8,4,7,5,6 /)
     i5a = (/ 3,4,5,6,7 /)
     i5b = (/ 1,5,9,8,4 /)
-    
+
     CASENUM = 20
     call sub1( i10((/(i,i=1,10,2),(i,i=10,2,-2) /)),i5a,i10( (/i5b/) ), CASENUM )
   END
@@ -166,7 +163,7 @@ CONTAINS
   MODULE PROCEDURE TEST4
     CASENUM = 30
     call sub1( (/(CASENUM,CASENUM=1,10)/), (/3,4,5,6,7/),(/1,3,5,7,9/), CASENUM )
-  END 
+  END
 
   !- Array Expressions
   MODULE PROCEDURE TEST5
@@ -174,10 +171,10 @@ CONTAINS
     i5a = (/ 1,2,3,4,5 /)
     i5b = (/ 6,7,8,9,10 /)
     i55(:,1) = (/ 5,4,-3,-2,-1 /)
-      
+
     CASENUM = 40
     call sub1( i10+(/0,1,1,2,2,3,3,4,4,5/), i5a+2,i5b-abs(i55(:,1)), CASENUM )
-  END 
+  END
 
 !***********************************************************************
 !*
@@ -194,11 +191,11 @@ CONTAINS
     c25 = RESHAPE( (/ (1.0,1.0),(2.0,2.0),(3.0,3.0),(4.0,4.0),(5.0,5.0),(6.0,6.0),(7.0,7.0),(8.0,8.0),(9.0,9.0),(10.0,10.0) /), (/2,5/) )
     c210(1,:) = (/ (1.0,1.0),(2.0,2.0),(3.0,3.0),(4.0,4.0),(5.0,5.0),(6.0,6.0),(7.0,7.0),(8.0,8.0),(9.0,9.0),(10.0,10.0) /)
     c210(2,10:1:-1) = c210(1,:)
- 
+
     CASENUM = 50
     Call sub2( c232,c25,c210, CASENUM )
 
-  END 
+  END
 END SUBMODULE
 
 !***********************************************************************
@@ -214,7 +211,7 @@ CONTAINS
 !- Arg1 is of size 10 = 1,2,3,4,5,6,7,8,9,10
 !- Arg2 is of size 5  = 3,4,5,6,7
 !- Arg3 is of size 5  = 1,3,5,7,9
-! 
+!
   MODULE PROCEDURE SUB1
     INTEGER test( 10 )
 
@@ -227,7 +224,7 @@ CONTAINS
     .OR.( test(10) .NE. 10 ) ) CALL ZZRC( CASENUM )
 
     CASENUM = CASENUM + 1
-    !- Array Section 
+    !- Array Section
     test = 0
     test = (/ 1,2,Arg1(3:8),9,10 /)
     if (( test(1).NE.1 ) .OR.( test(2).NE.2 ) .OR.( test(3).NE.3 ) &
@@ -282,7 +279,7 @@ CONTAINS
      .OR.( test(10) .NE. 10 ) ) CALL ZZRC( CASENUM )
 
     Arg1 = (/ Arg2,Arg3 /)
-      
+
   END
 
 !***********************************************************************
@@ -307,7 +304,7 @@ CONTAINS
     test = (/ Arg3(1,:) /)
     CASENUM = CASENUM + 1
     IF ( ( .NOT. precision_x8( test(1), (1.0,1.0) )) .OR. &
-         ( .NOT. precision_x8( test(2), (2.0,2.0) )) .OR. & 
+         ( .NOT. precision_x8( test(2), (2.0,2.0) )) .OR. &
          ( .NOT. precision_x8( test(3), (3.0,3.0) )) .OR. &
          ( .NOT. precision_x8( test(4), (4.0,4.0) )) .OR. &
          ( .NOT. precision_x8( test(5), (5.0,5.0) )) .OR. &
@@ -317,11 +314,11 @@ CONTAINS
          ( .NOT. precision_x8( test(9), (9.0,9.0) )) .OR. &
          ( .NOT. precision_x8( test(10), (10.0,10.0) )) ) &
          CALL ZZRC( CASENUM )
-          
+
     !- Array Section
     CASENUM = CASENUM + 1
     test = (0.0,0.0)
-         
+
     test = (/ Arg1(1,:,j+1),Arg1(:,2,j),Arg1(:,1,j), Arg1(2,3:1:-1,j+1) /)
     IF ( ( .NOT. precision_x8( test(1), (1.0,1.0) )) .OR. &
          ( .NOT. precision_x8( test(2), (2.0,2.0) )) .OR. &
@@ -334,7 +331,7 @@ CONTAINS
          ( .NOT. precision_x8( test(9), (9.0,9.0) )) .OR. &
          ( .NOT. precision_x8( test(10), (10.0,10.0) )) ) &
          CALL ZZRC( CASENUM )
-         
+
     !- Array Vector Subscript
     CASENUM = CASENUM + 1
     test = (0.0,0.0)
@@ -350,7 +347,7 @@ CONTAINS
          ( .NOT. precision_x8( test(9), (9.0,9.0) )) .OR. &
          ( .NOT. precision_x8( test(10), (10.0,10.0) )) ) &
          CALL ZZRC( CASENUM )
-         
+
     !- Expressions within Constructor
     CASENUM = CASENUM + 1
     test = (0.0,0.0)
@@ -364,10 +361,10 @@ CONTAINS
          ( .NOT. precision_x8( test(7), (7.0,7.0) )) .OR. &
          ( .NOT. precision_x8( test(8), (8.0,8.0) )) .OR. &
          ( .NOT. precision_x8( test(9), (9.0,9.0) )) .OR. &
-         ( .NOT. precision_x8( test(10), (10.0,10.0) )) ) & 
+         ( .NOT. precision_x8( test(10), (10.0,10.0) )) ) &
          CALL ZZRC( CASENUM )
 
-  END 
+  END
 
 !***********************************************************************
 !*
@@ -424,11 +421,11 @@ CONTAINS
            ( test(7) .NE. 'HIggg' ) .OR. ( test(8) .NE. 'HIhhh' ) )    &
            CALL ZZRC( CASENUM )
 
-  END 
-END SUBMODULE 
+  END
+END SUBMODULE
 
 PROGRAM SUBMODULE22F
 USE TESTS
 
 IF (.not.RUNTESTS()) error stop 66
-END 
+END

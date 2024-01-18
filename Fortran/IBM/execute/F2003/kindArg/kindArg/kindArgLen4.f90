@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgLen4
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : LEN 
+!*  SECONDARY FUNCTIONS TESTED : LEN
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Description. Returns the length of a character entity. 
-!*    
-!*  () 
+!*  Description. Returns the length of a character entity.
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -41,12 +33,12 @@
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
-     
+
   CHARACTER(127), PARAMETER :: CC(0:127)=" "
   INTEGER, PARAMETER :: KIND(4)=(/1,2,4,8/)
 
 
-  
+
   DO I1 = 0, 127
     IF (LEN(STRING=CC(I1)(:I1), KIND=KIND(4) )    .NE. I1)                   STOP 11
     IF (LEN(STRING=CC(I1)(:I1), KIND=KIND(3) )    .NE. I1)                   STOP 12

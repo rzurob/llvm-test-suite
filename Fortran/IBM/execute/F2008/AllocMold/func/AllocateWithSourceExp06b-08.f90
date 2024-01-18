@@ -1,45 +1,35 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*
-!*  TEST CASE TITLE            : AllocateWithSourceExp06-08
-!*
-!*  ORIGINAL PROGRAMMER        : Dorra Bouchiha
-!*  PROGRAMMER                 : Izhak Jakov
 !*
 !*  DATE                       : June 2, 2015
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with source expression 
+!*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with source expression
 !*  SECONDARY FUNCTIONS TESTED :
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* allocate-stmt is 
+!* allocate-stmt is
 !*   ALLOCATE ( [ type-spec :: ] allocation-list [, alloc-opt-list ] )
 !*
-!*  Defect 361745                
+!*  Defect 361745
 !*
 !*  TEST CASE ADAPTED FROM     : $(tsrcdir)/F2003/dtparam/allocate/SourceExp/AllocateWithSourceExp06.f
-!* 
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithSourceExp06
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
         INTEGER, LEN  :: l1 = 1
 
-        CHARACTER(l1)  :: name  
+        CHARACTER(l1)  :: name
         INTEGER(k1) :: my_arr(l1)
       END TYPE Base
 
@@ -57,13 +47,13 @@ PROGRAM AllocateWithSourceExp06
       ALLOCATE(b1, c1, SOURCE=Base(4,5)('Base', -99))
       CALL alloc_auto(b1,c1)
       DEALLOCATE(b1); DEALLOCATE(c1)
-      
+
       ALLOCATE(b_poly, c_poly, SOURCE=Base(4,10)('Base', -99))
       CALL alloc_auto(b_poly,c_poly)
       DEALLOCATE(b_poly); DEALLOCATE(c_poly)
-      
+
       ALLOCATE(b1, c1, SOURCE=Base(4,3)('Base', -99))
-      
+
       ALLOCATE(b_poly, c_poly, SOURCE=Child(4,2,4,3)('Child', 22, b1 , b1))
       CALL alloc_auto(b_poly,c_poly)
       DEALLOCATE(b_poly); DEALLOCATE(c_poly)
@@ -98,7 +88,7 @@ PROGRAM AllocateWithSourceExp06
                       CLASS DEFAULT
                          STOP 114
                   END SELECT
-                  
+
               CLASS IS (Child(4,*,4,*))
                   ALLOCATE(Obj1, Obj2, SOURCE=Arg1)
 
@@ -146,9 +136,9 @@ PROGRAM AllocateWithSourceExp06
               CLASS DEFAULT
                  STOP 324
           END SELECT
-          
+
           DEALLOCATE(Obj1, Obj2)
-          
+
           SELECT TYPE ( Arg2 )
               CLASS IS (Base(4,*))
                   ALLOCATE(Obj1, Obj2, SOURCE=Arg2)
@@ -173,7 +163,7 @@ PROGRAM AllocateWithSourceExp06
                       CLASS DEFAULT
                          STOP 2114
                   END SELECT
-                  
+
               CLASS IS (Child(4,*,4,*))
                   ALLOCATE(Obj1, Obj2, SOURCE=Arg2)
 

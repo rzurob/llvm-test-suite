@@ -1,22 +1,17 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal015aakl.f
 !*  TEST CASE NAME             : type-bound procedure ffinal015aakl
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal015aa by Catherine Sun)
 !*  DATE                       : 2007-11-21 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines 
-!*    
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -31,8 +26,8 @@
       type, extends(t1) :: t2 (lt2) ! lt2=0
          integer, len :: lt2
       contains
-         final :: finalize_t1v 
-      end type 
+         final :: finalize_t1v
+      end type
 
       type, extends(t1) :: t3 (lt3) ! lt3=0
          integer, len :: lt3
@@ -49,13 +44,13 @@
          type(t1(4)) :: x ! tcx: (4)
          if (associated(x%vector))    deallocate(x%vector)
       end subroutine
- 
+
       subroutine finalize_t1v(x)
          type(t2(4,*)) :: x(1:3) ! tcx: (4,*)
          do i = lbound(x, 1), ubound(x, 1)
             if (associated(x(i)%vector)) &
                deallocate(x(i)%vector)
-         end do  
+         end do
       end subroutine
 
       elemental subroutine finalize_t2e(x)

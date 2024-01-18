@@ -1,19 +1,12 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal501a2kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal501a2 by Jim Xia)
 !*  DATE                       : 2007-11-01 (original: 02/10/2005)
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : final sub (finalization of allcoatable
 !                               components during intrinsic assignment)
@@ -57,7 +50,7 @@ module m
     subroutine finalizeChild (c)
         type (child(8,*)), intent(inout) :: c ! tcx: (8,*)
 
-        print *, 'finalizeChild' 
+        print *, 'finalizeChild'
     end subroutine
 
     subroutine finalizeChildArray1 (c)

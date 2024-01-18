@@ -1,28 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozCmplx008.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : CMPLX intrinsic
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                :Section 13.7.20 - Statement:
 !*				CMPLX (X [, Y, KIND])
 !*
-!* Specifying all three arguements in the order of KIND, Y, X. 
-!* Specifying kind type as 16                      	                              
-!*                          	
-!*				
+!* Specifying all three arguements in the order of KIND, Y, X.
+!* Specifying kind type as 16
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================

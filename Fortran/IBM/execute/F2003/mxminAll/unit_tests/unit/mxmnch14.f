@@ -3,7 +3,7 @@
 ! %MAIN: YES
 ! %PRECMD:
 ! %COMPOPTS: -qfixed
-! %GROUP: mxmnch14.f 
+! %GROUP: mxmnch14.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
@@ -12,26 +12,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mxmnch14
-!*
-!*  PROGRAMMER                 : John Zang
 !*  DATE                       : Oct. 20, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support character argument for MAX/
 !*                               MIN/MAXVAL/MINVAL/MAXLOC/MINLOC
 !*  SECONDARY FUNCTIONS TESTED : Functional test
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qfixed
 !*
 !*  DESCRIPTION                : MAX/MIN - Maximum or minimum value
 !*                               according to their collating sequence
-!*                               of ASCII characters. 
+!*                               of ASCII characters.
 !*                               MAXVAL/MINVAL - Maximum or minimum value
 !*                               of elements in a character array.
 !*                               MAXLOC/MINLOC - The location of maximum
@@ -44,7 +37,7 @@
       character(5), parameter :: aa(2,2) =
      + reshape((/'a','j','c','l'/), (/2,2/))
       character(5), parameter :: bb(2,4) =
-     + reshape((/'e','f','g','h','i','b','k','d'/), (/2,4/)) 
+     + reshape((/'e','f','g','h','i','b','k','d'/), (/2,4/))
       character(5), parameter :: cc(2,2) = max(aa, bb(:,3:4))
       character(5), parameter :: dd(2,2) = min(aa, bb(:,1:2))
       if (cc(1,1) /= 'i') error stop 1

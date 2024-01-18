@@ -1,38 +1,30 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam06.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam06.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 24 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
-!* 3. DUMMY ARGUMENT IS INTENT(INOUT) ALLOCATABLE OR POINTER 
+!* 3. DUMMY ARGUMENT IS INTENT(INOUT) ALLOCATABLE OR POINTER
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
        type base(k1,l1)
           integer,kind :: k1
-          integer(k1%kind),len :: l1         
+          integer(k1%kind),len :: l1
        end type
-       
+
        type,extends(base) :: child(k2,l2)
-          integer(k1%kind),kind :: k2    
+          integer(k1%kind),kind :: k2
           integer(k2),len :: l2
        end type
       contains
@@ -59,7 +51,7 @@ module m
        end subroutine
 end module
 
-  program dtParameterInquirySelectTypeParam06 
+  program dtParameterInquirySelectTypeParam06
   use m
   implicit none
 
@@ -81,8 +73,8 @@ end module
   class(base(2,:)),pointer  :: p1 => null()
   class(base(2,:)),allocatable  :: a1
   type(child(a1%k1,2*5,4,3*max(3,5))),target :: a2
- 
-  allocate(child(2,99,4,999) :: a1) 
+
+  allocate(child(2,99,4,999) :: a1)
   call check1(a1)
   select type(a1)
      type is(base(2,*))
@@ -120,7 +112,7 @@ end module
       class default
         error stop 102_4
 
-  end select   
+  end select
 
   allocate(base(2,1111) :: p1)
   call check3(p1,a2)
@@ -171,7 +163,7 @@ end
        class default
           error stop 104_4
      end select
-     deallocate(dt)     
+     deallocate(dt)
      allocate(base(2,max(3,5)) :: dt)
   end subroutine
 
@@ -182,7 +174,7 @@ end
 
      print *,"call check2"
      select type(dt1)
-       type is(base(2,*)) 
+       type is(base(2,*))
          print *,"it is base"
          if(dt1%k1 /= 2)                                   error stop 38_4
          if(dt1%l1 /= 111)                                 error stop 39_4
@@ -192,7 +184,7 @@ end
             dt1%l1%kind /= 4)                              error stop 41_4
        class default
          error stop 105_4
-     end select 
+     end select
      deallocate(dt1)
      allocate(dt1,source=dt2)
 

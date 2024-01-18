@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar003l
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar003 by Robert Ma)
 !*  DATE                       : 2007-10-03 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try output item to be scalar of sequence type
@@ -60,18 +52,18 @@ program scalar003l
 
    integer :: stat
    character(200) :: msg
-   
+
    character(3) :: c3, c4, c5
 
    ! allocation of variables
-     
+
    allocate ( b3, source = base(3) (null()) ) ! tcx: (3)
    allocate ( b4, source = base(3) (null()) ) ! tcx: (3)
 
    allocate (b3%c, source = 'ghi' )
    allocate (b4%c, source = 'jkl' )
    allocate (b5%c, source = 'mno' )
-      
+
    open (unit = 1, file ='scalar003l.data', form='unformatted', access='sequential')
 
    ! unformatted I/O operations
@@ -109,8 +101,8 @@ use m1
    character(*), intent(inout) :: iomsg
 
    write (unit, iostat=iostat )     dtv%c
-   iomsg = 'dtiowrite' 
-   
+   iomsg = 'dtiowrite'
+
 end subroutine
 
 

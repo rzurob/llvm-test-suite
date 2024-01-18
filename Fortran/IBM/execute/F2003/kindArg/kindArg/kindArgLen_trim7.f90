@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgLen_trim7
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : LEN_TRIM 
+!*  SECONDARY FUNCTIONS TESTED : LEN_TRIM
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Entities with different attribute used for kind arg - return from len 
-!*    
-!*  () 
+!*  Entities with different attribute used for kind arg - return from len
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,8 +39,8 @@
   CHARACTER(:), ALLOCATABLE :: CC(:)
 
   CALL IntSub(CC)
- 
-  DO I = 1, 127 
+
+  DO I = 1, 127
     IF (     LEN_TRIM(STRING=CC(I)(:I), KIND=SUM(SHAPE(Arr1)))   .NE. 0)   STOP 11
     IF (KIND(LEN_TRIM(STRING=CC(I)(:I), KIND=SUM(SHAPE(Arr1))))  .NE. 1)    STOP 12
     IF (     LEN_TRIM(STRING=CC(I)(:I), KIND=SUM(SHAPE(Arr2)))   .NE. 0)   STOP 13
@@ -59,7 +51,7 @@
     IF (KIND(LEN_TRIM(STRING=CC(I)(:I), KIND=SUM(SHAPE(Arr8))))  .NE. 8)    STOP 18
   END DO
 
-  DO I =1, 128 
+  DO I =1, 128
     IF (ANY( LEN_TRIM(STRING=CC(I:)(:), KIND=SUM(SHAPE(Arr1)))  .NE. 0))   STOP 21
     IF (KIND(LEN_TRIM(STRING=CC(I:)(:), KIND=SUM(SHAPE(Arr1)))) .NE. 1)     STOP 22
     IF (ANY( LEN_TRIM(STRING=CC(I:)(:), KIND=SUM(SHAPE(Arr2)))  .NE. 0))   STOP 23
@@ -70,7 +62,7 @@
     IF (KIND(LEN_TRIM(STRING=CC(I:)(:), KIND=SUM(SHAPE(Arr8)))) .NE. 8)     STOP 28
   END DO
 
-  DO I = 1, 128 
+  DO I = 1, 128
     IF (ANY( LEN_TRIM(STRING=CC(:I)(I:I), KIND=SUM(SHAPE(Arr1)))  .NE. 0)) STOP 41
     IF (KIND(LEN_TRIM(STRING=CC(:I)(I:I), KIND=SUM(SHAPE(Arr1)))) .NE. 1)  STOP 42
     IF (ANY( LEN_TRIM(STRING=CC(:I)(I:I), KIND=SUM(SHAPE(Arr2)))  .NE. 0)) STOP 43
@@ -81,7 +73,7 @@
     IF (KIND(LEN_TRIM(STRING=CC(:I)(I:I), KIND=SUM(SHAPE(Arr8)))) .NE. 8)  STOP 48
   END DO
 
-  DO I = 1, 128 
+  DO I = 1, 128
     IF (ANY( LEN_TRIM(STRING=CC(:)(I+1:I), KIND=SUM(SHAPE(Arr1)))  .NE. 0)) STOP 81
     IF (KIND(LEN_TRIM(STRING=CC(:)(I+1:I), KIND=SUM(SHAPE(Arr1)))) .NE. 1)  STOP 82
     IF (ANY( LEN_TRIM(STRING=CC(:)(I+1:I), KIND=SUM(SHAPE(Arr2)))  .NE. 0)) STOP 83

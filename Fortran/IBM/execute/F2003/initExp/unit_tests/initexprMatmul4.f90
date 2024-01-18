@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Initialization expression
 !*
-!* PROGRAMMER                 : Kelvin Li
 !* DATE                       : March 31, 2006
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : MATMUL intrinsic
 !*
@@ -32,7 +27,6 @@ complex(16), dimension(7,12), parameter :: &
 complex(16), dimension(12,67), parameter :: &
   &  B16=reshape((/(cmplx(i,i),i=-804,-1)/), (/12,67/))
 
-
 parameter (A4=reshape((/(1.0_4,1.3_4),(4,4.2),(-2.0,1.9),(-5.5,7.4),(-3,6),(1.2,2.1)/),(/2,3/)))
 parameter (B4=reshape((/(7.0_4,8),(9,10),(11,12),(6.22_4,4.402_4), &
   & (11.7496_4,5.31_4),(1.903_4,1.72_4),(5.86_4,9.51_4)/),(/3,2/)))
@@ -49,7 +43,6 @@ if (.not. all(complex4Equal(res4a, res4b))) stop 2
 
 res8b = matmul(A8,B8)
 if (.not. all(complex8Equal(res8a, res8b))) stop 3
-
 
     contains
 

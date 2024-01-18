@@ -1,26 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlimitpoly3.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 05/24/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM, TO) 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM, TO)
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimit polymorphic,
-!*                               FROM has private attribute, TO has public attr 
-!*                               type real 
+!*                               FROM has private attribute, TO has public attr
+!*                               type real
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -34,12 +22,12 @@
 module m
     class(*), private, allocatable :: old
     class(*), public, allocatable ::  new
-  
+
     contains
         subroutine sub
 
             allocate(old, source = 10.8)
-    
+
             if ( .not. allocated(old) ) stop 11
 
             call move_alloc(old,new)
@@ -52,7 +40,7 @@ program main
 use m
 
     allocate(new, source="FORTRAN")
-           
+
     call sub
 
     if ( .not. allocated(new) ) stop 22
@@ -61,6 +49,6 @@ use m
         type is (real)
             if ( new /= 10.8) stop 23
         class default
-            stop 23 
+            stop 23
     end select
 end

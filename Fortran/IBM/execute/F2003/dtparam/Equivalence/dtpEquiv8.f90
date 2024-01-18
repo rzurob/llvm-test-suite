@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpEquiv8 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpEquiv8
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 05, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The equivalence statement
-!* 
-!*  Stroage association on zero sized storage sequence 
-!* 
-!*  
+!*
+!*  Stroage association on zero sized storage sequence
+!*
 !*  (338994)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -46,38 +36,38 @@
     SEQUENCE
     REAL       :: R(L)=K
   END TYPE
- 
+
   TYPE :: DT_C(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     CHARACTER(L)  :: C(L)=CHAR(48+K)
   END TYPE
- 
+
   TYPE :: DT_I(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     INTEGER    :: I(L)=K
   END TYPE
- 
+
   TYPE :: DT_L(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     LOGICAL    :: A(L)=.TRUE.
   END TYPE
- 
+
   TYPE :: DT_Z(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     COMPLEX    :: Z(L)=(K,-K)
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpEquiv8 
+  PROGRAM dtpEquiv8
   USE M
 
   TYPE(DT_R(1,9))  :: R, R0(0)
@@ -95,7 +85,7 @@
   TYPE(DT_Z(1,9))  :: Z, Z0(0)
   COMPLEX          :: Z1(9)=-(-1,1)
 
-  
+
   EQUIVALENCE(R, R0)
   EQUIVALENCE(R1, R0)
 

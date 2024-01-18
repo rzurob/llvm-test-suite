@@ -1,39 +1,23 @@
 !######################################################################
-! SCCS ID Information                                                  
-! %W%, %I%                                                             
-! Extract Date/Time: %D% %T%                                           
-! Checkin Date/Time: %E% %U%                                           
-!######################################################################
 ! *********************************************************************
-! %START                                                               
-! %MAIN: YES                                                           
-! %PRECMD: rm -f *.mod                                                 
-! %COMPOPTS: -qfree=f90                                                
-! %GROUP: dtio002.f                                                   
-! %VERIFY:                                                             
-! %STDIN:                                                              
-! %STDOUT:                                                             
-! %EXECARGS:                                                           
-! %POSTCMD:                                                            
-! %END                                                                 
+! %START
+! %MAIN: YES
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: dtio002.f
+! %VERIFY:
+! %STDIN:
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
+! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing:  DTIO
 !*                                         CLASS(derived-type-spec) may specify an abstract type
@@ -51,17 +35,16 @@ module m
       integer, kind :: k1
       integer(k1) i
    end type
-   
+
    type, extends(base) :: child(k2)
       integer, kind :: k2
    end type
-      
-end module
 
+end module
 
 program dtio002
    use m
-   
+
    interface read(unformatted)
          subroutine unformattedRead (dtv, unit, iostat, iomsg)
         import base
@@ -81,27 +64,27 @@ program dtio002
             character(*), intent(inout) :: iomsg
         end subroutine
     end interface
-    
+
     class(base(4)), allocatable :: b1
     class(base(4)), pointer :: b2
     integer :: iostat
     character(20):: iomsg
-    
+
     open (1, form='unformatted', status='scratch')
-    
+
     allocate (b1, source = child(4,4)(10) )
     allocate (child(4,4) :: b2)
-    
+
     write (1, iostat=iostat, iomsg=iomsg ) b1
     if (iostat .ne. 0) error stop 1_4
-    
+
     backspace 1
     read  (1) b2
-    
+
     if (b2%i .ne. 10) error stop 2_4
-    
+
     close (1)
-    
+
 end program
 
 subroutine unformattedRead (dtv, unit, iostat, iomsg)

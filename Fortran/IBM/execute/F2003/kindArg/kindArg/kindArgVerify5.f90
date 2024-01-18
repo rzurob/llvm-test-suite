@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgVerify5
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 06, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : VERIFY 
+!*  SECONDARY FUNCTIONS TESTED : VERIFY
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Characteristics.
-!*  Integer. If KIND is present, the kind type parameter is that specified by the value of KIND; 
-!*  otherwise the kind type parameter is that of default integer type. 
-!*   
-!*    
-!*  (322447) 
+!*  Integer. If KIND is present, the kind type parameter is that specified by the value of KIND;
+!*  otherwise the kind type parameter is that of default integer type.
+!*
+!*  (322447)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,7 +38,7 @@
     INTEGER(8) :: K8=0
     CHARACTER  :: CC=""
   END TYPE
-   
+
   INTEGER(1) :: I1
   INTEGER(2) :: I2
   INTEGER(4) :: I4, I, J
@@ -65,7 +56,7 @@
       CC(I)(J:J)=ACHAR(0)
     END DO
     CC(I)(1:1)=ACHAR(I)
-  END DO 
+  END DO
 
   DO I1 = 1, 127
     IF (     VERIFY(STRING=CC(I1), SET=CC(I1)(1:1), KIND=KIND(T%K8))   .NE. 2)               STOP 11

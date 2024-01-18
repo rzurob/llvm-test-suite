@@ -1,35 +1,28 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/func/polyAssign1004f_4level.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 07 August 2015
-!* ORIGIN                       : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test whether the variable of an intrinsic assignment is polymorphic. 
+!* DESCRIPTION                  : Test whether the variable of an intrinsic assignment is polymorphic.
 !*                              : Variables should be allocated and assigned with the correspinding dynamic type.
 !*                              : We test polymorphic assignment to four levels of extensible derived types described as bellow.
 !*---------------------------------------------------------------------
-!* t is the base derived type, and t2 and t3 are extensibe derived   
+!* t is the base derived type, and t2 and t3 are extensibe derived
 !* t2 and t3 are extensibe derived type of t
 !* t4 and t5 are extensibe derived type of t3
 !* t6 and t7 are extensibe derived type of t5
 !*
-!*                           t                                       
-!*                          / \                                       
-!*                         /   \                                      
-!*                        /     \                                     
-!*                       t2     t3                                 
+!*                           t
+!*                          / \
+!*                         /   \
+!*                        /     \
+!*                       t2     t3
 !*                              /\
 !*                             /  \
 !*                            /    \
@@ -38,7 +31,7 @@
 !*                                /  \
 !*                               /    \
 !*                              t6    t7
-!*                                  
+!*
 !---------------------------------------------------------------------
 !* ===================================================================
 !*  REVISION HISTORY
@@ -95,7 +88,7 @@ Program polyAssign1004f
       type is (t4)
         if (x4%i .ne. 10) error stop 19
         if (x4%j3 .ne. 30) error stop 20
-        if (x4%j4 .ne. 40) error stop 21 
+        if (x4%j4 .ne. 40) error stop 21
       class default
         error stop  22
     end select

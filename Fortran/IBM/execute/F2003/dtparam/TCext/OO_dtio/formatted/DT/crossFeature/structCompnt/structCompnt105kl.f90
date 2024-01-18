@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : structCompnt105kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from structCompnt105 by Robert Ma)
 !*  DATE                       : 2007-06-07 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Structure Component: Array Non-polymorphic Derived Type Component (read)
@@ -44,12 +36,12 @@ module m
       integer, len :: lc1
       type(base(lc1)) :: b1(lc1)
    end type
-   
+
    type container2 (lc2)
       integer, len :: lc2
       type(base(lc2)), pointer :: b2(:)
    end type
-   
+
    type container3 (lc3a,lc3b)
       integer, len :: lc3a,lc3b
       type(child(lc3a,lc3b)), allocatable :: b3(:,:)
@@ -76,36 +68,36 @@ use m
          character(*),  intent(inout) :: iomsg
       end subroutine
    end interface
-   
+
    type(container1(3))               :: c1
    class(container2(3)), allocatable :: c2
    class(container3(3,3)), pointer     :: c3
-   
+
    c1 = container1(3)(b1=(/base(3)(''), base(3)(''), base(3)('')/) )
    allocate( c2, source = container2(3)(null()))
    allocate( c2%b2(4)  )
-   
+
    allocate( c3, source = container3(3,3)( null() ) )
    allocate( c3%b3(2,2) )
-   
+
 
    open (1, file = 'structCompnt105kl.1', form='formatted', access='sequential' )
    idx = 1
    read ( 1, "(DT'_con1-1'(4),2(DT'_con1-23'(5)))", iostat = stat, iomsg = msg )       c1%b1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 1_4
-   
+
    read ( 1, "(3(DT'_con2'(6)))", iostat = stat, iomsg = msg )       c2%b2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 2_4
-   
+
    read ( 1, "(2(DT'_con3'(6,7),DT'_con3'(5,6)),/,4(DT'_con3base'(8)))", iostat = stat, iomsg = msg )     c3%b3, c3%b3%base
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 3_4
-   
+
    print *, c1%b1%c
    print *, c2%b2%c
    print *, c3%b3%c
    print *, c3%b3%cc
    print *, rbuffer
-   
+
 
 end program
 

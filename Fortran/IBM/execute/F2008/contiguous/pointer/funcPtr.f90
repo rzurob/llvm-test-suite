@@ -1,25 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : funcPtr.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment 
-!*                             :
+!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
 !*  SECONDARY FUNCTIONS TESTED : Function result with CONTIGUOUS attribute
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - Pointer has CONTIGUOUS attribute 
+!*  DESCRIPTION                : - Pointer has CONTIGUOUS attribute
 !*    - Dummy is assumed shape array with or without CONTIGUOUS attribute
-!*    - Actual is contiguous array 
+!*    - Actual is contiguous array
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -97,7 +87,7 @@ PROGRAM funcPtr
 
       CONTAINS
 
-      FUNCTION foo(Arg)  
+      FUNCTION foo(Arg)
         INTEGER, TARGET, CONTIGUOUS  :: Arg(:,:,:)
         INTEGER, POINTER, CONTIGUOUS :: foo(:,:,:)
 
@@ -108,6 +98,6 @@ PROGRAM funcPtr
 
         IF ( .NOT. ASSOCIATED(foo)    ) ERROR STOP 32
         IF ( .NOT. IS_CONTIGUOUS(foo) ) ERROR STOP 33
-      END FUNCTION foo 
+      END FUNCTION foo
 
 END PROGRAM funcPtr

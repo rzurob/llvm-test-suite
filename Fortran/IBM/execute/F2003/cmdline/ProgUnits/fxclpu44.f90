@@ -12,37 +12,29 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu44.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Invoke command line procedures through pure 
+!*  DESCRIPTION                : Invoke command line procedures through pure
 !*                             : recursive procedures
-!*                             : 
-!*                             : 
-!*                             : 
+!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -66,7 +58,7 @@
 
 
         character(50)    :: Argument
- 
+
       END TYPE
 
 
@@ -80,7 +72,7 @@
       IMPLICIT NONE
 
 
-      INTERFACE 
+      INTERFACE
 
         PURE RECURSIVE LOGICAL FUNCTION PF_GET_CMD(Num)
           INTEGER, INTENT(IN) :: Num
@@ -96,7 +88,7 @@
 
       END INTERFACE
 
- 
+
       LOGICAL  NumOfExec(10), LJunk(10)
       INTEGER  Junk(10), I
 
@@ -105,51 +97,51 @@
 
       NumOfExec = .true.
 
-      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.) 
+      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.)
         Junk(I) = COMMAND_ARGUMENT_COUNT()
       END FORALL
 
 
-      if ( ANY(Junk .ne. A.CmdCount ) ) & 
+      if ( ANY(Junk .ne. A.CmdCount ) ) &
       then
         error stop 73
       endif
 
 
-      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.) 
-        LJunk(I) = PF_GET_CMD(5) 
+      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.)
+        LJunk(I) = PF_GET_CMD(5)
       END FORALL
 
 
-       if ( ANY(LJunk .eqv. .false. ) ) & 
+       if ( ANY(LJunk .eqv. .false. ) ) &
        then
          error stop 74
        endif
 
 
-       FORALL (I = 1:10, NumOfExec(I) .eqv. .true.) 
+       FORALL (I = 1:10, NumOfExec(I) .eqv. .true.)
          LJunk(I) = PF_GET_CMD_ARG(5)
        END FORALL
 
 
-       if ( ANY(LJunk .eqv. .false. ) ) & 
+       if ( ANY(LJunk .eqv. .false. ) ) &
        then
          error stop 75
        endif
 
-       FORALL (I = 1:10, NumOfExec(I) .eqv. .true.) 
-         LJunk(I) = PF_GET_ENV_VAR(5) 
+       FORALL (I = 1:10, NumOfExec(I) .eqv. .true.)
+         LJunk(I) = PF_GET_ENV_VAR(5)
        END FORALL
 
 
-       if ( ANY(LJunk .eqv. .false. ) ) & 
+       if ( ANY(LJunk .eqv. .false. ) ) &
        then
          error stop 76
        endif
 
 
 
-      END 
+      END
 
 
       PURE RECURSIVE FUNCTION PF_GET_CMD(Num)
@@ -161,7 +153,7 @@
       INTEGER, INTENT(IN)   :: Num
 
       integer   :: i, j
- 
+
       PF_GET_CMD = .true.
 
       IF (Num .gt. 1 ) THEN
@@ -172,24 +164,24 @@
       if ( (TRIM(A%COMMAND) .ne. TRIM(A%CmdLine))  .or. &
            (A%LENGTH .ne. LEN(TRIM(A%CmdLine)))    .or. &
            (A%STATUS .ne. 0) )                          &
-      then 
-        PF_GET_CMD = .false. 
+      then
+        PF_GET_CMD = .false.
         ! error stop 64
       endif
 
       END IF
 
-      END FUNCTION 
+      END FUNCTION
 
 
-      PURE RECURSIVE FUNCTION PF_GET_CMD_ARG(Num) 
+      PURE RECURSIVE FUNCTION PF_GET_CMD_ARG(Num)
 
       USE MOD
 
       LOGICAL             ::  PF_GET_CMD_ARG
       INTEGER, INTENT(IN) ::  Num
 
-      INTERFACE 
+      INTERFACE
         pure SUBROUTINE MyGetArg(CmdLine, Num, Arg)
           CHARACTER*(*), INTENT(in)  :: CmdLine
           CHARACTER*(*), INTENT(out) ::  Arg
@@ -199,7 +191,7 @@
 
       TYPE(CMD), AUTOMATIC  :: A
       integer            :: i, j
- 
+
       PF_GET_CMD_ARG = .true.
 
 
@@ -208,7 +200,7 @@
       ELSE
 
       DO i  = 0, A%CmdCount
-       
+
         A%NUMBER = i
         call GET_COMMAND_ARGUMENT(A%NUMBER, A%VALUE, A%LENGTH, A%STATUS)
         call MyGetArg(A%CmdLine, A%NUMBER, A%Argument)
@@ -229,7 +221,7 @@
 
 
 
-      PURE RECURSIVE FUNCTION PF_GET_ENV_VAR(Num) 
+      PURE RECURSIVE FUNCTION PF_GET_ENV_VAR(Num)
 
       USE MOD
 
@@ -238,7 +230,7 @@
       INTEGER, INTENT(IN) ::  Num
 
       integer   :: i, j
- 
+
       PF_GET_ENV_VAR = .true.
 
       IF (Num .gt. 1 ) THEN
@@ -257,6 +249,6 @@
       END IF
 
       END FUNCTION
- 
+
       INCLUDE 'cmdline.include'
 

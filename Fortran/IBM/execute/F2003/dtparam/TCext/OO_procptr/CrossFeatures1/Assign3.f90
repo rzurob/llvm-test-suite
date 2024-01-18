@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: Assign3.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Assign3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Assign3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 16, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,19 +34,19 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  A derived-type intrinsic assignment 
-!*  (304716) 
+!*
+!*  A derived-type intrinsic assignment
+!*  (304716)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
 
-    INTERFACE 
+    INTERFACE
       FUNCTION CToC(Arg)
        CHARACTER(*) :: Arg
-       CHARACTER(LEN(Arg)) :: CToc 
+       CHARACTER(LEN(Arg)) :: CToc
       END FUNCTION
     END INTERFACE
 
@@ -68,7 +62,7 @@
     END TYPE
 
     INTERFACE ASSIGNMENT ( = )
-      MODULE PROCEDURE  PToP 
+      MODULE PROCEDURE  PToP
     END INTERFACE ASSIGNMENT ( = )
 
     CONTAINS
@@ -83,29 +77,29 @@
     TYPE(DT(4)), INTENT (OUT) :: Arg1
     TYPE(DT(4)), INTENT (IN)  :: Arg2
       Arg1%Id  = Arg2%Id
-      Arg1%BComp => Arg2%BComp 
+      Arg1%BComp => Arg2%BComp
     END SUBROUTINE
- 
+
   END MODULE
 
 
-  PROGRAM Assign3 
+  PROGRAM Assign3
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT(4)) :: V
   TYPE (Base(4)),     TARGET  :: BTar
   PROCEDURE(CToC), POINTER :: ProcPtr
   CHARACTER(1025)          :: Str=CHAR(40)
- 
-  ProcPtr => RetPtr(Fun) 
+
+  ProcPtr => RetPtr(Fun)
   BTar = Base(4)(RetPtr(Fun))
   V = DT(4)(-1, BTar)
 
   IF ( V%Id .NE. -1 ) STOP 11
   IF ( .NOT. ASSOCIATED(V%BComp, BTar) )  STOP 12
   IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr, RetPtr(Fun)) )  STOP 12
-  
+
   IF (V%Bcomp%ProcPtr("ABC") .NE. "ABC" ) STOP 14
 
   IF (V%BComp%ProcPtr("") .NE. "" ) STOP 15
@@ -116,8 +110,8 @@
 
   FUNCTION RetPtr(Arg)
   PROCEDURE(CToC), POINTER :: RetPtr
-  PROCEDURE(CToC) :: Arg 
-    RetPtr => Arg 
+  PROCEDURE(CToC) :: Arg
+    RetPtr => Arg
   END FUNCTION
 
   END

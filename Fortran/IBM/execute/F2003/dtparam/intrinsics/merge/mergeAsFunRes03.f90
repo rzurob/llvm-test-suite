@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeAsFunRes03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeAsFunRes03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 19 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 19 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE AND FSOURCE ARE POLYMORPHIC
 !* 4. FUNCTION RESULT ARE MERGE
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -31,21 +23,21 @@ module m
      integer,kind  :: k1
      integer,len   :: l1
      integer(k1)   :: i1
-     character(l1) :: c1 
-  end type 
-  type,extends(base) :: child(k2,l2) 
+     character(l1) :: c1
+  end type
+  type,extends(base) :: child(k2,l2)
      integer,kind  :: k2
      integer,len   :: l2
      integer(k2)   :: i2
-     character(l2) :: c2 
-  end type 
+     character(l2) :: c2
+  end type
   contains
 
      function getMergeResult(Ts,Fs,Mask)
         class(base(2,*)),intent(in) :: Ts,Fs
         logical,intent(in)        :: Mask
         class(base(2,:)),pointer :: getMergeResult
-        select type(Ts) 
+        select type(Ts)
            type is(child(2,*,4,*))
              select type(Fs)
                type is(child(2,*,4,*))
@@ -64,9 +56,9 @@ program mergeAsFunRes03
    implicit none
 
    class(base(2,:)),allocatable :: ba1,ba2
- 
-    
-    
+
+
+
    allocate(ba1,source=child(2,3,4,7) (i1=1, c1= "123", &
                                        i2=11 , c2= "456") )
 
@@ -86,8 +78,8 @@ program mergeAsFunRes03
            if(x%i2%kind /= 4)                      error stop 18_4
            if(x%c1 /= "123")                       error stop 19_4
            if(x%c2 /= "456")                       error stop 20_4
-        class default 
-           error stop 102_4           
+        class default
+           error stop 102_4
    end select
 
    select type(x=>getMergeResult(ba1,ba2,.false.) )
@@ -104,7 +96,7 @@ program mergeAsFunRes03
            if(x%c2 /= "bbb")                       error stop 30_4
          class default
            error stop 103_4
-   end select      
-  
+   end select
+
 end program
 

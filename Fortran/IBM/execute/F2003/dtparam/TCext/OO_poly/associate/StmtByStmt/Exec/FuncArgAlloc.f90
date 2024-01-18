@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncArgAlloc.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncArgAlloc.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncArgAlloc 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncArgAlloc
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,14 +32,14 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The associating entity associating to an allocatable is used as actual argument 
+!*    The associating entity associating to an allocatable is used as actual argument
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
 
-    TYPE :: Foundation(K1,N1)    ! (4,20) 
+    TYPE :: Foundation(K1,N1)    ! (4,20)
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
     END TYPE
@@ -57,7 +51,7 @@
       INTEGER(K1)  :: ChildId = 2
       TYPE(Foundation(K1,N1)), ALLOCATABLE :: FdComp
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -70,12 +64,12 @@
 
   END MODULE
 
-  PROGRAM FuncArgAlloc 
+  PROGRAM FuncArgAlloc
   USE M
   TYPE(Child(4,20)), ALLOCATABLE  :: V
 
   ALLOCATE(V)
- 
+
   ASSOCIATE ( As => V  )
     ALLOCATE(As%FdComp, SOURCE=Foundation(4,20)())
     PRINT*, Func(As)
@@ -87,15 +81,15 @@
   FUNCTION Func(Arg)
     CLASS(Base(4,*))              :: Arg
     CHARACTER(3)  :: Func
-   
+
     SELECT TYPE (Arg)
       TYPE IS (Child(4,*))
         Arg%ChildId = -2
       CLASS DEFAULT
         STOP 11
-    END SELECT 
-    Func = "OK!" 
- 
-  END FUNCTION 
+    END SELECT
+    Func = "OK!"
+
+  END FUNCTION
 
   END

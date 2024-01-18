@@ -1,18 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : intrinsic_procedures.f
-!*
-!*  PROGRAMMER                 : Xing Xue
 !*  DATE                       : July 31, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : THIS_IMAGE intrinsic
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95_r
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : functional testing of the THIS_IMAGE
@@ -29,14 +22,14 @@ end program intrinsic_procedures
 
 subroutine this_image_test
   integer, save:: a[*], b(10)[2,*], c(10,10)[3,2,*]
-  
+
   integer me, meA(1), meB1, meB2, meC1, meC2, meC3
   integer i,j
   integer thisImageBVector(2)
   integer thisImageCVector(3)
   integer dd(3)
 
-  interface 
+  interface
      function foo1(a)
        integer a(1), foo1(1)
      end function foo1
@@ -53,11 +46,11 @@ subroutine this_image_test
   ! the image index of the invoking image
   me = this_image()
   print *,me,': me=',me
-  
+
   ! case ii
   ! Invoke THIS_IMAGE() with the COARRAY argument.  This returns the
   ! sequence of cosubscript values for COARRAY that would specify the
-  ! invoking image. 
+  ! invoking image.
   meA = this_image(a)
   print *,me,': this_image(a)=',meA
   thisImageBVector = this_image(B)
@@ -86,7 +79,7 @@ subroutine this_image_test
   meC2 = this_image(c,2)
   meC3 = this_image(c,3)
   print *, me,': meC1=',meC1,', meC2=',meC2,', meC3=',meC3
-  
+
   ! case v
   ! Same as case iv, except variables are used instead of constants
   ! for argument DIM.
@@ -101,16 +94,16 @@ subroutine this_image_test
 end subroutine this_image_test
 
 function foo1(a)
-  integer a(1), foo1(1) 
+  integer a(1), foo1(1)
   foo1 = a
 end function foo1
 
 function foo2(a)
-  integer a(2), foo2(2) 
+  integer a(2), foo2(2)
   foo2 = a
 end function foo2
 
 function foo3(a)
-  integer a(3), foo3(3) 
+  integer a(3), foo3(3)
   foo3 = a
 end function foo3

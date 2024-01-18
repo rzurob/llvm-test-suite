@@ -1,20 +1,13 @@
 
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt203.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -74,7 +67,7 @@ program test
   use dtmod
   use testmod
   implicit none
-  
+
   integer i, j, k, tmp
   integer(c_size_t) size
   integer, parameter :: DIM1=5, DIM2=3
@@ -104,7 +97,7 @@ program test
   call c_sub_test1(arg2=psi)
   call c_sub_test1(pdt1_arr, psi)
 
-  do j=1, DIM2 
+  do j=1, DIM2
     do i=1, DIM1
       do k=1, 2
 	tdt2_arr(i,j)%c(k) = i+j+k*1.0

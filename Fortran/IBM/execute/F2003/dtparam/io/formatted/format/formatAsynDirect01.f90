@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatAsynDirect01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatAsynDirect01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 23 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test asynchronous READ & WRITE with direct access
-!* 2. derived type is polymorphic 
+!* 2. derived type is polymorphic
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(l1)
@@ -54,7 +46,7 @@ module m
        dt_plus_dt%c2=dt1%c2//dt2%c2
        dt_plus_dt%c3=dt1%c3//dt2%c3
     end function
-      
+
 end module
 
 program formatAsynDirect01
@@ -94,10 +86,10 @@ program formatAsynDirect01
      type is(gen3(*,*,*))
         poly2%c1=["00","11"]
         poly2%c2=["hello","HELLO"]
-        poly2%c3=["fantastic","FANTASTIC"] 
+        poly2%c3=["fantastic","FANTASTIC"]
      class default
        stop 13
-  end select  
+  end select
 
 
   select type(x=>poly1)
@@ -107,14 +99,14 @@ program formatAsynDirect01
              gen1=x+y
              record=0
              j=0
-              
+
              ! write 3 copies of data into file,every data has 6 records
              do i=1,3
                write(10,'(a18/a18)',rec=5+record, asynchronous='yes',&
                    id=idvar(j+1),iostat=ios)   gen1%c3
-            
+
                if(ios /= 0)    stop 16
- 
+
                write(10,'(a10/a10)',rec=3+record,asynchronous='yes',&
                    id=idvar(j+2),iostat=ios)   gen1%c2
 
@@ -137,10 +129,10 @@ program formatAsynDirect01
         stop 14
   end select
 
-  ! wait data to be transferred 
+  ! wait data to be transferred
   do i=1,9
-      wait(10,id=idvar(i))     
-  end do 
+      wait(10,id=idvar(i))
+  end do
 
   allocate(gen3(gen1%l1,gen1%l2,gen1%l3) :: gen2(3))
 
@@ -148,7 +140,7 @@ program formatAsynDirect01
   record=0
   j=0
 
-  ! read data into gen2  
+  ! read data into gen2
   do i=1,3
     read(10,'(a18/a18)',rec=5+record, asynchronous='yes',&
          id=idvar(j+1),iostat=ios) gen2(i)%c3
@@ -180,6 +172,6 @@ program formatAsynDirect01
     write(*, '(2a4/2a10/2a18)')  gen2(i)
   end do
 
- close(10)  
+ close(10)
 
 end program

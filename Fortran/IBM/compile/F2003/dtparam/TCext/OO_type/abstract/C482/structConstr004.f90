@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: The derived-type-spec shall not specify an abstract type (C401)
 !*                                        Structure Constructor appears in an IO statement (w/ or w/o DTIO)
@@ -47,9 +36,9 @@ module m
          procedure, pass :: print
          generic :: write(formatted) => print
    end type
-   
+
    contains
-   
+
       subroutine print (dtv, unit, iotype, v_list, iostat, iomsg )
          class(base2(*)), intent(in) :: dtv
          integer, intent(in) :: unit
@@ -57,7 +46,7 @@ module m
          integer, intent(in) :: v_list(:)
          integer, intent(out) :: iostat
          character(*), intent(inout) :: iomsg
-         
+
          write ( unit, *) dtv%c
       end subroutine
 end module

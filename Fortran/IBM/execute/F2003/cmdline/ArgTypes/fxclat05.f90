@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat05.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,27 +33,27 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing components
-!*                             : of record structure defined in common block and initialized in 
+!*                             : of record structure defined in common block and initialized in
 !*                             : data block
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
       module modtype
 
         STRUCTURE /ST/
           character(2049)  :: COMMAND
           integer      	   :: LENGTH
-          character(4099)  :: STR     ! take spaces 
+          character(4099)  :: STR     ! take spaces
           integer          :: STATUS
           integer          :: NUMBER
           character(2047)  :: VALUE
-          INTEGER          :: ARR(10) ! take spaces 
+          INTEGER          :: ARR(10) ! take spaces
           character(513)   :: NAME
           logical          :: TRIM_NAME
           integer          :: ARGCOUNT
-        END STRUCTURE 
-         
+        END STRUCTURE
+
       end module modtype
 
 
@@ -71,7 +65,7 @@
 
 
       character(4099) 	STR
-      INTEGER         	ARR(10) 
+      INTEGER         	ARR(10)
 
       character(2049)              :: CmdLine = 'fxclat05 \\\/\\\/ \\\*'
       integer                      :: CmdCount, i
@@ -82,7 +76,7 @@
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 2 ) & 
+      if ( CmdCount .ne. 2 ) &
       then
         error stop 63
       endif
@@ -96,7 +90,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         cmd%NUMBER = i
         call GET_COMMAND_ARGUMENT(cmd%NUMBER, cmd%VALUE, cmd%LENGTH, cmd%STATUS)
         call MyGetArg(CmdLine, cmd%NUMBER, Argument)
@@ -119,14 +113,14 @@
       endif
 
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 
 
       BLOCK DATA BLOCKDATA
          USE modtype
-         RECORD /ST/ cmd        
+         RECORD /ST/ cmd
          common /blk/cmd
 
          DATA cmd%STR /'1234567890'/
@@ -134,6 +128,6 @@
          DATA cmd%NAME /'CmdLine     '/
          DATA cmd%TRIM_NAME  / .true./
 
-      END BLOCK DATA 
-  
-        
+      END BLOCK DATA
+
+

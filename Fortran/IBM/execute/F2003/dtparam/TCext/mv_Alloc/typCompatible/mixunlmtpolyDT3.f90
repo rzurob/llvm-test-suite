@@ -3,26 +3,14 @@
 ! opt variations: -qck -qnol -qnodeferredlp
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mixunlmtpolyDT3.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM is of an nonpoly DT 
+!*  DESCRIPTION                : FROM is of an nonpoly DT
 !*                               TO is of unlmited poly
 !*                               both are dummy args
 !*                               defect 322393
@@ -41,7 +29,7 @@ module m
           integer, len  :: n1
           integer(k1)   :: id
           character(:), allocatable :: name
-      end type 
+      end type
 
       contains
           subroutine sub(a, b)
@@ -65,14 +53,14 @@ use m
       if ( .not. allocated(b)) stop 23
       select type(b)
           type is (base(*,8))
-!              print *, b(1,1)%id, b(2,1)%id, b(3,1)%id, b(4,1)%id, b(5,1)%id 
+!              print *, b(1,1)%id, b(2,1)%id, b(3,1)%id, b(4,1)%id, b(5,1)%id
 !              print *, b(1,1)%name, b(2,1)%name, b(3,1)%name, b(4,1)%name, b(5,1)%name
-!              print *, b(1,2)%id, b(2,2)%id, b(3,2)%id, b(4,2)%id, b(5,2)%id 
+!              print *, b(1,2)%id, b(2,2)%id, b(3,2)%id, b(4,2)%id, b(5,2)%id
 !              print *, b(1,2)%name, b(2,2)%name, b(3,2)%name, b(4,2)%name, b(5,2)%name
-              print *,  (/ ( b(i,1)%id, i = 1,5) /) 
-              print *,  (/ ( b(i,1)%name, i = 1,5) /) 
-              print *,  (/ ( b(i,2)%id, i = 1,5) /) 
-              print *,  (/ ( b(i,2)%name, i = 1,5) /) 
+              print *,  (/ ( b(i,1)%id, i = 1,5) /)
+              print *,  (/ ( b(i,1)%name, i = 1,5) /)
+              print *,  (/ ( b(i,2)%id, i = 1,5) /)
+              print *,  (/ ( b(i,2)%name, i = 1,5) /)
           class default
              stop 51
       end select

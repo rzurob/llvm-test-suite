@@ -1,45 +1,38 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: dcomp dtybn014.f 
+! %POSTCMD: dcomp dtybn014.f
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtybn014.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : dtybn014.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : binding attributes 
+!*  DATE                       :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : binding attributes
 !*
 !*  SECONDARY FUNCTIONS TESTED : pass
 !*
-!*  DESCRIPTION                : if =>procedure-name appears, the 
-!*                               double-colon separator shall 
+!*  DESCRIPTION                : if =>procedure-name appears, the
+!*                               double-colon separator shall
 !*                               appear.
-!*                            
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod1	      
+   module mod1
       type parent
          integer :: x
 	 contains
-      	 procedure  bind => proc 
+      	 procedure  bind => proc
       end type
 
       type(parent) :: dt_p
@@ -49,9 +42,9 @@
          class(parent) :: arg1
       end subroutine
 
-   end module     
+   end module
 
 !   use mod1
 
    end
-   
+

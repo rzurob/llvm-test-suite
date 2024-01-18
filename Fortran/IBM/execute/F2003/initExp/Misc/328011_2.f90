@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Defect_328011_2.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : Defect_328011_2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 17, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,26 +19,25 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  Requested by 328011, covering passing array section into an elemental intrinsic
-!*  function. 
-!*  
+!*  function.
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM Defect_328011_2 
+  PROGRAM Defect_328011_2
   IMPLICIT NONE
 
   INTEGER            :: I
   INTEGER, PARAMETER :: ZZ(2,2) = RESHAPE((/1,2,3,4/),(/2,2/))
-  INTEGER, PARAMETER :: YY(3)   = (/6,7,8/) 
-  INTEGER, PARAMETER :: AA(4)   = (/ (ZZ(1:i,1:i),i=1,1) , YY /) 
-     
+  INTEGER, PARAMETER :: YY(3)   = (/6,7,8/)
+  INTEGER, PARAMETER :: AA(4)   = (/ (ZZ(1:i,1:i),i=1,1) , YY /)
+
   IF ( ANY( AA .NE. [1,6,7,8] ) ) STOP 11
 
   END
 
- 
+

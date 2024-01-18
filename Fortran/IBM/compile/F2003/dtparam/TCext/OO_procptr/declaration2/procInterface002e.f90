@@ -3,13 +3,9 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=none
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_procptr/declaration2
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 06/18/2005
 ! PRIMARY FUNCTIONS TESTED   : procedure pointer declaration
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Do not specify proc-interface. The
 !                              associated function is an internal
 !                              function. Poly and unlimited poly.

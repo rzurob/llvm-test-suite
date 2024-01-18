@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssign.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssign.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : PtrAssign.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 11, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,16 +30,16 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Procedure pointer 
-!* 
-!*  (304373) 
+!*
+!*  Procedure pointer
+!*
+!*  (304373)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
     PROCEDURE (ModFun), POINTER :: ProcPtr => NULL()
-  CONTAINS 
+  CONTAINS
     FUNCTION ModFun(Arg)
     INTEGER(1) :: ModFun, Arg
       ModFun = Arg
@@ -59,7 +53,7 @@
 
     LProcPtr => LModFun
     IF ( LProcPtr(10_1) .NE. 10_1 ) STOP 11
- 
+
     LProcPtr1 => LModFun
     IF ( LProcPtr1(1_1) .NE. 1_1 )  STOP 12
 

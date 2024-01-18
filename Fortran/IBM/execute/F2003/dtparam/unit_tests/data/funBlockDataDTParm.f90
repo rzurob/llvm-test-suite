@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : funBlockDataDTParm.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Zheming Gu
 !*  DATE                       : May 11,2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : support for structure constructors containing type parameters to the DATA statement.
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 333315
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -27,8 +21,6 @@
 !*  -----------
 !*  type structure constructors containing type
 !*  parameters to the Block DATA statement.
-!*  
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -71,7 +63,7 @@
                 integer i
                 type (SimpleType(4,2,4,1)) dtCommon
                 common /cblock/ dtCommon
-                
+
                 data dtCommon/SimpleType(4,2,4,1)(.true.,.false.,.true.,.false.,.true.)/
         end
 

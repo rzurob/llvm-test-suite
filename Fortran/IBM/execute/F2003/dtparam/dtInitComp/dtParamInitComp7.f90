@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitComp7 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitComp7
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 26, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Default initialization for component 
+!*  SECONDARY FUNCTIONS TESTED : Default initialization for component
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  If the component is of a type for which default initialization is specified for a component, 
+!*  If the component is of a type for which default initialization is specified for a component,
 !*  the default initialization specified by initialization-expr overrides the default initialization
 !*  specified for that component.
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,7 +46,7 @@
      PROCEDURE(IntFun), POINTER :: ProcPtr => NULL()
      LOGICAL(K)   :: LL(L)=.TRUE._8
    CONTAINS
-     PROCEDURE, PASS :: IntFun 
+     PROCEDURE, PASS :: IntFun
    END TYPE
 
    TYPE :: DT2(K2,L2)
@@ -66,7 +59,7 @@
                Z=(/((-K2,K2), I=1,K2)/),          &
                C="??????????",                    &
                ProcPtr=NULL(),                    &
-               LL=(/(.FALSE._4, I=1,K2)/)   )      
+               LL=(/(.FALSE._4, I=1,K2)/)   )
     END TYPE
 
   CONTAINS
@@ -80,7 +73,7 @@
   END MODULE
 
 
-  PROGRAM dtParamInitComp7 
+  PROGRAM dtParamInitComp7
   USE M
 
   TYPE(DT2(K2=4, L2=0)) :: T1
@@ -135,7 +128,7 @@
 
   IF ( ASSOCIATED(T2%t%ProcPtr) )              STOP 57
 
- 
+
 
   END
 

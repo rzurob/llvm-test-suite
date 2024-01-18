@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadDiagRangeOfDIM01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadDiagRangeOfDIM01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 16 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 16 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -35,12 +27,12 @@ program spreadDiagRangeOfDIM01
 
   use m
   implicit none
-  
+
   type(dtp(2,3)) :: dtp1
   type(dtp(4,2)) :: dtp2=dtp(4,2)(i=[1,2])
   type(dtp(2,3)) :: dtp3(4)
   type(dtp(2,:)),allocatable :: dtp4(:,:)
-  
+
   allocate(dtp4(2,2),source=reshape(dtp3,(/2,2/)))
 
   print *,spread(dtp1,dim=2,ncopies=5)

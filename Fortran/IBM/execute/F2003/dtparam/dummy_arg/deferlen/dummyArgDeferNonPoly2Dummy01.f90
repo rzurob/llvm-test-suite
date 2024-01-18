@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPoly2Dummy01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPoly2Dummy01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 12 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 12 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. 2 Dummy arguments
@@ -25,12 +17,12 @@
 !*       first length type parameter is assumed
 !*       second length type parameter is deferred
 !*  3. second dummy argument:
-!*       length type parameters are assumed 
+!*       length type parameters are assumed
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type dtp(l1,l2)
       integer,len      :: l1,l2
-      character(l1+l2) :: c 
+      character(l1+l2) :: c
    end type
 
    contains
@@ -48,11 +40,11 @@ module m
         if(arg1%c  /= "xlftest")            error stop 12_4
 
 
-        contains 
+        contains
 
            subroutine sub2(arg)
                type(dtp(*,:)),pointer,intent(inout) :: arg
-                              
+
                allocate(arg,source=dtp(1,7)("xlf"//"test"))
            end subroutine
      end subroutine

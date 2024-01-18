@@ -1,11 +1,6 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/abstract/C503/procDeclrStmt001.f
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -14,33 +9,22 @@
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: dcomp procDeclrStmt001.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*
 !*  DESCRIPTION                : Testing: Procedure declaration statement
-!*                                        external functions (with implicit interface) 
+!*                                        external functions (with implicit interface)
 !*                                        with return type which is non-polymorphic abstract type
-!*                                           
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -67,7 +51,7 @@ end module
 
 program procDeclrStmt001
    use m
-   
+
    class(base(4)), pointer :: b1
    procedure(type(base(4))) :: genbaseptr
    allocate(b1, source=genbaseptr())
@@ -81,7 +65,7 @@ contains
       class(base(4)), intent(in) :: a
       print *,a%i
    end subroutine
-   
+
 end program
 
 type(base(4)) function genbaseptr()

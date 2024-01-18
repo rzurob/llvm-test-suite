@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrTar2.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrTar2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 04, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,19 +19,18 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*   If data-target is not a pointer, data-pointer-object becomes pointer associated with
 !*   the assignment target. Otherwise, the pointer association status of data-pointer-object
-!*   becomes that of data-target; if data-target is associated with an object, 
+!*   becomes that of data-target; if data-target is associated with an object,
 !*   data-pointer-object becomes associated with the assignment target.  If data
 !*   target is allocatable, it shall be allocated.
-!*   -- allocatable 
+!*   -- allocatable
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrTar2 
+  PROGRAM dataPtrTar2
   IMPLICIT NONE
 
   TYPE :: DT0

@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : saBasicSync
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-07-26
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF SYNC ALL
 !*  SECONDARY FUNCTIONS TESTED : basic test of synchronisation
@@ -39,8 +35,8 @@ program saBasicSync
    logical, save :: errorFound[*]
    integer :: self, rightBuddy, leftBuddy, nImages, i, aBuddy
    logical :: eFoundInImage, eFound
-   
-   
+
+
    arrived  = 0
    errorFound = .false.
 

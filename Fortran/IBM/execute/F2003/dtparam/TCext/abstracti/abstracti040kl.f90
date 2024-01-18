@@ -1,21 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : abstracti040kl
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti040
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-31 (original: 02/20/2006)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Abstract Interface
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*
 !*  DESCRIPTION                : Testing:
 !*  - Procedure statements with abstract interface
@@ -185,7 +178,7 @@ integer function one(n,x,y,z)
   else
     z = 2*x + int(y)
     one = sum(x) + sum(y)
-  end if 
+  end if
 
 end function one
 

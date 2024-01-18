@@ -1,24 +1,12 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dblprecision1.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM is of type dbl precision 
+!*  DESCRIPTION                : FROM is of type dbl precision
 !*                               TO is of unlimited poly
 !*
 !* ===================================================================
@@ -35,17 +23,17 @@
                  allocatable func(:)
                  double precision, allocatable :: arg(:)
                  class(*), allocatable :: brg(:)
-                 intent(inout) :: arg, brg 
+                 intent(inout) :: arg, brg
               end function
           end interface
-      end module  
+      end module
 
       use m
 
       double precision, allocatable :: d1(:)
       double precision t,q
       class(*), allocatable :: d2(:)
-      logical precision_R8 
+      logical precision_R8
 
       allocate(double precision :: d2(20))
       allocate(d1(1), source = (/ real(3, 8) /) )
@@ -63,11 +51,11 @@
           allocatable func(:)
           double precision, allocatable :: arg(:)
           class(*), allocatable :: brg(:)
-          intent(inout) :: arg,brg 
+          intent(inout) :: arg,brg
 
           call move_alloc(arg, brg)
 
-          if ( allocated(arg) ) stop 32 
+          if ( allocated(arg) ) stop 32
 	  if ( .not. allocated(brg) ) stop 34
 
           allocate(func(1), source = brg )

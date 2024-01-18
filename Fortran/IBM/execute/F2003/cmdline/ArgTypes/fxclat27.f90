@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxclat27 00000 ========= aaaaaaaaaaa"
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat27.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -41,9 +35,7 @@
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing  return values from
 !*                             : intrinsic functions (RSHIFT /LSHIFT/TRIM)
 !*                             : on  typeless constants as intent(in) arguments
-!*                             : 
-!*                             : 
-!*           
+!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -70,7 +62,7 @@
       allocate(COMMAND, LENGTH, STATUS, NUMBER, VALUE, ARGCOUNT)
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 3 ) & 
+      if ( CmdCount .ne. 3 ) &
       then
         error stop 63
       endif
@@ -128,7 +120,7 @@
       endif
 
 
-      
+
       ! z'436D644C696E652020'  == 'CmdLine  '
       call GET_ENVIRONMENT_VARIABLE(TRIM(z'436D644C696E652020'), VALUE(1013:2039), LENGTH, STATUS, .true. .or. .true.)
       if ( (TRIM(VALUE(1013:2039)) .ne. TRIM(CmdLine))  .or. &
@@ -149,8 +141,8 @@
       deallocate(COMMAND, LENGTH, STATUS, NUMBER, VALUE, ARGCOUNT)
 
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 
 

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrSave..f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrSave..f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 08, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Save 
+!*  Save
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrSave 
+  PROGRAM dataPtrSave
   IMPLICIT NONE
 
   TYPE :: DT
@@ -55,32 +47,32 @@
   TYPE(DT),   POINTER, SAVE :: Ptr(:)
   INTEGER                   :: I=0
 
-  IF ( I .EQ. 0 ) THEN 
+  IF ( I .EQ. 0 ) THEN
 
-    Ptr(I:) => Arr 
+    Ptr(I:) => Arr
     IF (.NOT. ASSOCIATED(Ptr, Arr))            STOP 11
     IF (ANY( LBOUND(Ptr) .NE. (/I /)))         STOP 12
     IF (ANY( UBOUND(Ptr) .NE. (/I+99/)))       STOP 13
     IF (ANY( Ptr%I       .NE. 0 ))             STOP 14
 
-    Ptr(I:99) => Arr 
+    Ptr(I:99) => Arr
     IF (.NOT. ASSOCIATED(Ptr, Arr))            STOP 21
     IF (ANY( LBOUND(Ptr) .NE. (/I /)))         STOP 22
     IF (ANY( UBOUND(Ptr) .NE. (/ 99/)))        STOP 23
     IF (ANY( Ptr%I       .NE. 0 ))             STOP 24
 
     Arr(:)%I = 1
-    I = 1 
+    I = 1
 
   ELSE
 
-    Ptr(I:) => Arr 
+    Ptr(I:) => Arr
     IF (.NOT. ASSOCIATED(Ptr, Arr))            STOP 31
     IF (ANY( LBOUND(Ptr) .NE. (/I /)))         STOP 32
     IF (ANY( UBOUND(Ptr) .NE. (/I+99/)))       STOP 33
     IF (ANY( Ptr%I       .NE. I ))             STOP 34
 
-    Ptr(I:100) => Arr 
+    Ptr(I:100) => Arr
     IF (.NOT. ASSOCIATED(Ptr))                 STOP 41
     IF (ANY( LBOUND(Ptr) .NE. (/I /)))         STOP 42
     IF (ANY( UBOUND(Ptr) .NE. (/100/)))        STOP 43

@@ -1,26 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d354413.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d354413.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 29 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 29 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. DEFECT 354413 
+!* 1. TEST SECTION 6.1.3
+!* 2. DEFECT 354413
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

@@ -1,23 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : autoobj34
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 30, 2008
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DTPARAM: Automatic objects 
+!*  PRIMARY FUNCTIONS TESTED   : DTPARAM: Automatic objects
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 333321 
+!*  REFERENCE                  : Feature Number 333321
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*
-!*  The length parameter depends on V through use association 
-!*  the array bound relies on v 
+!*  The length parameter depends on V through use association
+!*  the array bound relies on v
 !*
 !*  ()
 !*
@@ -47,7 +39,7 @@
 
   SUBROUTINE Sub()
 
-  TYPE base(l) 
+  TYPE base(l)
     INTEGER, LEN :: l
     CHARACTER(l) :: c="123"
   END TYPE
@@ -55,14 +47,14 @@
   TYPE dt(l)
     INTEGER, LEN :: l
     TYPE(base(l)) :: arr(l)
-  END TYPE 
+  END TYPE
 
   TYPE(dt(n)) b(n)
 
 print*, b%l
 print*, SIZE(b(1)%arr)
 print*, len(b(1)%arr%c)
- 
+
   IF (b%l            .NE. 2)  STOP 11
   IF (b(1)%arr%l        .NE. 2)  STOP 12
   IF (len(b(1)%arr%c)    .NE. 2)  STOP 13

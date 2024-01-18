@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_10
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 03, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
 !*  -- An ac-do-variable within an array constructor where each scalar-int-expr
 !*     of the corresponding ac-implied-do-control is a restricted expression
-!*   
+!*
 !*   (340460)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -47,7 +40,7 @@
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=1
     CHARACTER(LEN=L)  :: C
-    TYPE(DT(K, L)),           POINTER :: Ptr1 
+    TYPE(DT(K, L)),           POINTER :: Ptr1
     TYPE(DT(K, L+1)),         POINTER :: Ptr2    => NULL()
     TYPE(DT(K, L+2)),         POINTER :: Ptr3(:) => NULL()
   END TYPE
@@ -62,8 +55,8 @@
 
   SUBROUTINE ModSub(L)
   INTEGER :: L
-  TYPE(DT(K=4, L=L)) :: T  
-  TYPE(DT(K=4, L=L+3)), POINTER :: Ptr4(:) 
+  TYPE(DT(K=4, L=L)) :: T
+  TYPE(DT(K=4, L=L+3)), POINTER :: Ptr4(:)
 
   nullify (t%ptr1)
 
@@ -88,7 +81,7 @@
 
   END MODULE
 
-  
+
   PROGRAM dtParamTypeDecC501_10
   USE M
 

@@ -85,7 +85,6 @@ use m
     end if
 end subroutine
 
-
 subroutine allocateBase1 (b, r1, c1)
 use m
     class(base(n=*,l=*)), allocatable, intent(out) :: b

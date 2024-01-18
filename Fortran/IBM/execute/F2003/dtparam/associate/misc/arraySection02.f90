@@ -1,21 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : arraySection02
-!*  TEST CASE TITLE            : selector is an Array Section
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : September 16, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : The ASSOCIATE Construct
 !*  SECONDARY FUNCTIONS TESTED : selector is an Array Section (with a
 !*                               Vector Subscript)
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE
@@ -93,7 +87,7 @@ PROGRAM arraySection02
             END ASSOCIATE
         END DO
 
-    END ASSOCIATE 
+    END ASSOCIATE
 
 
     DO i = 1, 3
@@ -109,7 +103,7 @@ PROGRAM arraySection02
             ELSE IF ( ANY(b /= baseArray( vector,i )) ) THEN
                 CALL zzrc( (j + 3_4) )
             END IF
-        END ASSOCIATE 
+        END ASSOCIATE
     END DO
 
 END PROGRAM arraySection02

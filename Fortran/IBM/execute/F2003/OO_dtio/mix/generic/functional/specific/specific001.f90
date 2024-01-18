@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures (generic-binding)
 !*                                 - Specific Binding
@@ -108,13 +97,13 @@ program specific001
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) )     error stop 1_4
 
    rewind 1
-   
+
    read ( 1, "(DT)", iostat = stat, iomsg = msg )    c2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) )      error stop 2_4
 
    read ( 1, "(DT)", iostat = stat, iomsg = msg )    c1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) )      error stop 3_4
-   
+
    read ( 1, "(DT,/,DT)", iostat = stat, iomsg = msg ) b2, b1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) )      error stop 4_4
 

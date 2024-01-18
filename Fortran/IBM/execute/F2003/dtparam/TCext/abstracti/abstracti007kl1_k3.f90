@@ -1,26 +1,18 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : abstracti007kl1_k3
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti007 by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-11 (original: 02/20/2006)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Abstract Interface
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
-!*
-!*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures 
+!*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures
 !*                               (generic-binding)
 !*                               - Specific Binding
 !*                               - deferred specific type bound procedure
-!*                               - deferred binding in two parent types, 
+!*                               - deferred binding in two parent types,
 !*                                 and implemented in gen3 type
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

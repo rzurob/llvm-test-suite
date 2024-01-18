@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : F2003/dtparam/procPtr/
-! PROGRAMMER                 : Morteza Ershad-Manesh
 ! DATE                       : 08/13/2008
-! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component 
-! DRIVER STANZA              : xlfF2003
+! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component
 ! DESCRIPTION                : use of  procedure declaration statement in Functions and Main program and Select type
 !=======================================================================
 ! REVISION HISTORY
@@ -15,30 +11,30 @@
 !=======================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 MODULE M
-  TYPE Base(k1) 
+  TYPE Base(k1)
    INTEGER, KIND :: k1
    INTEGER(K1)   :: I
    INTEGER(K1),POINTER   :: IntNum
    REAL(K1),POINTER      :: RealNum
    COMPLEX(K1),POINTER   :: CompNum
    LOGICAL(K1),POINTER   :: LogNum
-  END TYPE 
-  
+  END TYPE
+
   TYPE,EXTENDS(Base)::Child1
     INTEGER(K1)   :: Num
-  END TYPE 
-  
+  END TYPE
+
   TYPE,EXTENDS(Base)::Child2
     REAL(K1)   :: Num
-  END TYPE 
+  END TYPE
 
   TYPE,EXTENDS(Base)::Child3
     COMPLEX(K1)   :: Num
-  END TYPE   
-  
+  END TYPE
+
   TYPE,EXTENDS(Base)::Child4
     LOGICAL(K1)   :: Num
-  END TYPE  
+  END TYPE
 
   TYPE,EXTENDS(BASE)::  Child5
     TYPE(child1(K1)),POINTER :: Inum
@@ -50,29 +46,29 @@ END MODULE
 
 MODULE N
  USE M
- 
+
  INTERFACE SWITCH
   SUBROUTINE SADD_Child1_TYPES (C1,C2)
   import Child1
    TYPE(Child1(4)),  INTENT (INOUT) :: C1,C2
   END SUBROUTINE SADD_Child1_TYPES
- 
+
   SUBROUTINE SADD_Child2_TYPES (C1,C2)
    import Child2
    TYPE(Child2(4)),  INTENT (INOUT) :: C1,C2
   END SUBROUTINE SADD_Child2_TYPES
- 
+
   SUBROUTINE SADD_Child3_TYPES (C1,C2)
   import Child3
    TYPE(Child3(4)),  INTENT (INOUT) :: C1,C2
   END SUBROUTINE SADD_Child3_TYPES
-  
+
   SUBROUTINE SADD_Child4_TYPES (C1,C2)
   import Child4
    TYPE(Child4(4)),  INTENT (INOUT) :: C1,C2
   END SUBROUTINE SADD_Child4_TYPES
  END INTERFACE SWITCH
- 
+
 END MODULE
 
   SUBROUTINE SADD_Child1_TYPES (x,y)
@@ -101,24 +97,24 @@ END MODULE
 
 MODULE FnInt
 USE N
- INTERFACE 
+ INTERFACE
   SUBROUTINE IWhat_TYPES (x,y)
   import Base
    CLASS(Base(4)), INTENT(INOUT) :: x,y
   END SUBROUTINE IWhat_TYPES
-  
+
   SUBROUTINE IADD_Child_TYPES (x,y)
   import Child1
   import Child5
    TYPE(Child1(4)), INTENT(INOUT) :: x
    TYPE(Child5(4)), INTENT(INOUT) :: y
   END SUBROUTINE IADD_Child_TYPES
-  
+
   SUBROUTINE IADD_Child1_TYPES (x,y)
   import Child1
    TYPE(Child1(4)), INTENT(INOUT) :: x,y
   END SUBROUTINE IADD_Child1_TYPES
-  
+
   SUBROUTINE IADD_Child2_TYPES (x,y)
   import Child2
    TYPE(Child2(4)), INTENT(INOUT) :: x,y
@@ -138,13 +134,13 @@ USE N
   import Child5
    TYPE(Child5(4)), INTENT(INOUT) :: x,y
   END SUBROUTINE IADD_Child5_TYPES
-  
+
   SUBROUTINE ITransferElmn (x,y)
   import Base
    CLASS(Base(4)), INTENT(INOUT) :: x,y
   END SUBROUTINE ITransferElmn
  END INTERFACE
- 
+
  CONTAINS
   SUBROUTINE What_TYPES (xin,yin)
    CLASS(Base(4)), INTENT(INOUT) :: xin,yin
@@ -154,7 +150,7 @@ USE N
    PROCEDURE(IADD_Child3_TYPES), POINTER :: procptr3=>null()
    PROCEDURE(IADD_Child4_TYPES), POINTER :: procptr4=>null()
    PROCEDURE(IADD_Child5_TYPES), POINTER :: procptr5=>null()
-   
+
     SELECT TYPE (yin)
 	 TYPE IS (Child1(4))
 	  PRINT*,"y - TYPE is Child1(4)"
@@ -179,7 +175,7 @@ USE N
 		  call procptr2(xin,yin)
          CLASS DEFAULT
 		  print*,"Unknown Type"
-       END SELECT	  
+       END SELECT
 	 TYPE IS (Child3(4))
 	  PRINT*,"y - TYPE is Child3(4)"
 	   SELECT TYPE (xin)
@@ -209,9 +205,9 @@ USE N
          CLASS DEFAULT
 		  print*,"Unknown Type"
        END SELECT
-	END SELECT	   
+	END SELECT
   END SUBROUTINE What_TYPES
-  
+
   SUBROUTINE ADD_Child1_TYPES (x,y)
    TYPE(Child1(4)), INTENT(INOUT) :: x,y
    y%Num=x%Num + y%Num
@@ -255,8 +251,8 @@ USE N
    TYPE(Child5(4)), INTENT(INOUT) :: y
    y%Lnum%Num=x%Num .AND. y%Lnum%Num
   END SUBROUTINE ADD_Child4a_TYPES
-  
-END MODULE 
+
+END MODULE
 
 PROGRAM procdeclfn18
 USE N
@@ -266,7 +262,7 @@ USE FnInt
 
  TYPE(Base(4)):: B1
  TYPE(Child5(4))  :: T5
- 
+
  TYPE(Child1(4)),TARGET:: T1a,T1b
  TYPE(Child2(4)),TARGET:: T2a,T2b
  TYPE(Child3(4)),TARGET:: T3a,T3b
@@ -276,7 +272,7 @@ USE FnInt
  TYPE(Child2(4)),POINTER:: T2c,T2d
  TYPE(Child3(4)),POINTER:: T3c,T3d
  TYPE(Child4(4)),POINTER:: T4c,T4d
- 
+
  procptr=>What_TYPES
 
  !INTEGER
@@ -299,12 +295,12 @@ USE FnInt
  T4d=>T4b
  T4c%Num=.TRUE.
  T4d%Num=.FALSE.
- 
+
  T5%Inum=>T1d
  T5%Rnum=>T2d
  T5%Cnum=>T3d
  T5%Lnum=>T4d
- 
+
   print*,"Integer:"
  print*,"Using Procedure pointer:"
  call procptr(T1a,T1b)
@@ -336,7 +332,7 @@ USE FnInt
  print*,T5%Cnum%Num
  print*,"Using INTERFACE SWITCH:"
  call SWITCH(T3a,T3a)
- print*,T3a%Num  
+ print*,T3a%Num
   print*,""
   print*,"Logical:"
  print*,"Using Procedure pointer:"
@@ -347,7 +343,7 @@ USE FnInt
  print*,T5%Lnum%Num
  print*,"Using INTERFACE SWITCH:"
  call SWITCH(T4a,T4a)
- print*,T4a%Num  
+ print*,T4a%Num
   print*,""
   print*,"Using Type definition t5:"
  print*,"Using Procedure pointer:"
@@ -357,6 +353,6 @@ USE FnInt
  call What_TYPES   (T5,T1b)
  print*,T5%Inum%Num
 
- 
+
 
  END PROGRAM procdeclfn18

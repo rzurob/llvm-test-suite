@@ -1,13 +1,6 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : array section, VOLATILE
 !*
@@ -19,7 +12,7 @@
 !*                dummy argument shall be an assumed-shape array.
 !* ===================================================================
 
-  program volatileC1232ArraySection07d 
+  program volatileC1232ArraySection07d
 
     complex y(16)
     integer x, z
@@ -32,8 +25,8 @@
     integer function arraySectionVolatile(x, y)
 
       integer y
-      complex, VOLATILE::x(1:y)               !dummy argument is adjustable  
+      complex, VOLATILE::x(1:y)               !dummy argument is adjustable
       arraySectionVolatile = y+5              !array
-     end function arraySectionVolatile 
+     end function arraySectionVolatile
 
   end program volatileC1232ArraySection07d

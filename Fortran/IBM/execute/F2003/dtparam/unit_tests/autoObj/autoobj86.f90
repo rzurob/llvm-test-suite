@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : autoobj83
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 31, 2009
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTPARAM: Automatic objects
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 333321
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*
-!*  Autoobj could be ptr or alloc 
+!*  Autoobj could be ptr or alloc
 !*
 !*  ()
 !*
@@ -37,7 +29,7 @@
   PROGRAM autoobj86
 
   TYPE base
-    integer :: i=1 
+    integer :: i=1
   END TYPE
 
   TYPE dt(l)
@@ -53,11 +45,11 @@
   SUBROUTINE Sub(N)
 
   TYPE(dt(n)), target ::  a!(n)
-  TYPE(dt(n)), pointer :: b!(n)  
+  TYPE(dt(n)), pointer :: b!(n)
   TYPE(dt(n)), allocatable :: c!(n)
 
   b => a
-  ALLOCATE( c, source=a) 
+  ALLOCATE( c, source=a)
 
   IF (b%l               .NE. 4)   STOP 11
   IF (UBOUND(b%arr, 1)  .NE. 4)   STOP 12

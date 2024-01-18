@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefEOSHIFT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefEOSHIFT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 28, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an tranformational intrinsic
-!* 
-!*  - EOSHIFT 
+!*
+!*  - EOSHIFT
 !*  (318847/319511)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,7 +35,7 @@
     CONTAINS
     PROCEDURE  :: Proc => ModSub
   END TYPE
- 
+
   CONTAINS
 
   SUBROUTINE ModSub(Arg)
@@ -51,7 +44,7 @@
 
   END MODULE
 
-  PROGRAM InitExpDefEOSHIFT 
+  PROGRAM InitExpDefEOSHIFT
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
@@ -118,4 +111,4 @@
   END
 
 
- 
+

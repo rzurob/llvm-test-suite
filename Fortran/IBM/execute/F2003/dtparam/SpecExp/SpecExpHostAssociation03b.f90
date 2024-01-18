@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : SpeExpHostAssociation03b.f
-!*
-!*  PROGRAMMER                 : Dorra Bouhiha
 !*  DATE                       : June 14, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Speification expression - Host Association
 !*  SECONDARY FUNCTIONS TESTED : Named Constant
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -59,7 +51,7 @@ PROGRAM SpeExpHostAssociation03b
 
       PARAMETER (n1 = NextGen ( I1 = 1, I2 = 2, I3 = 3, A1 = 11 , A2 = 22, A3 = 33, name = 'A',                     &
         c1 = Child(4,4,8,8)(1, [(I, I=1,4)], 'C', 2, [(2*I, I=1,8)], b1=Base(8,8)(3, [(3*I, I =1,8)], 'D')),  &
-        b1 = Base(4,4)(10, 20, 'B') ) ) 
+        b1 = Base(4,4)(10, 20, 'B') ) )
 
       TYPE(NextGen(4,3,4,5,4,7)), PARAMETER :: m1 =  NextGen(4,3,4,5,4,7) (                                      &
         b1 = Base(4,5)( I1 = 10, A1 = [(4*I, I =1,5)], name = 'BBBBB' ),                                         &
@@ -80,20 +72,20 @@ PROGRAM SpeExpHostAssociation03b
       CALL Sub25(4,7,30)
 
       CONTAINS
- 
+
       SUBROUTINE Sub11(N)
         INTEGER :: N
-        TYPE(Base(n1%c1%b1%k1,n1%c1%b1%l1)) :: Obj 
+        TYPE(Base(n1%c1%b1%k1,n1%c1%b1%l1)) :: Obj
 
         IF ( Obj%k1 .NE. N ) STOP 10
         IF ( Obj%l1 .NE. N ) STOP 11
         IF ( SIZE(Obj%A1)  .NE. N ) STOP 12
         IF ( LEN(Obj%name) .NE. N ) STOP 13
       END SUBROUTINE Sub11
- 
+
       SUBROUTINE Sub12(N)
-        INTEGER :: N 
-        TYPE(Base(n1%c1%b1%l1,2*n1%c1%b1%k1)) :: Obj 
+        INTEGER :: N
+        TYPE(Base(n1%c1%b1%l1,2*n1%c1%b1%k1)) :: Obj
 
         IF ( Obj%k1 .NE.   N ) STOP 14
         IF ( Obj%l1 .NE. 2*N ) STOP 15
@@ -117,7 +109,7 @@ PROGRAM SpeExpHostAssociation03b
         IF ( SIZE(Obj%b1%A1)  .NE. 2*M ) STOP 26
         IF ( LEN(Obj%b1%name) .NE. 2*M ) STOP 27
       END SUBROUTINE Sub13
- 
+
       SUBROUTINE Sub14(N, M, P)
         INTEGER :: N, M, P
         TYPE(Child(KIND(n1%c1%b1%A1(1)),n1%c1%b1%A1(1),KIND(n1%c1%b1%A1(n1%l3)),n1%c1%b1%A1(n1%l3))) :: Obj
@@ -134,7 +126,7 @@ PROGRAM SpeExpHostAssociation03b
         IF ( SIZE(Obj%b1%A1)  .NE. P ) STOP 36
         IF ( LEN(Obj%b1%name) .NE. P ) STOP 37
       END SUBROUTINE Sub14
- 
+
       SUBROUTINE Sub15(N, M, P)
         INTEGER :: N, M, P, I
         TYPE(Base(KIND(n1%c1%b1%I1),LEN(n1%c1%b1%name))) :: Obj(n1%c1%b1%I1)
@@ -147,7 +139,7 @@ PROGRAM SpeExpHostAssociation03b
             IF ( LEN(Obj(I)%name) .NE. N ) STOP 42
          END DO
       END SUBROUTINE Sub15
- 
+
       SUBROUTINE Sub21(N, M)
         INTEGER :: N, M
         TYPE(Base(m1%c1%b1%k1,m1%c1%b1%l1)) :: Obj

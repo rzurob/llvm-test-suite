@@ -1,14 +1,7 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : GENERICS
-!*
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : 13/07/2009
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*  DESCRIPTION                : Reduced test case from original TC given 
+!*  DESCRIPTION                : Reduced test case from original TC given
 !*                               in defect 346625.
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

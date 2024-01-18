@@ -1,20 +1,12 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : argpresence02f.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : March 2, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Argument Presence Enhancement
 !*
-!* DRIVER STANZA              : xlf2008
-!*
 !* DESCRIPTION                : Testing proper functionality of
-!*                              argument presence 
+!*                              argument presence
 !*                              in intrisic procedures with optional
 !*                              dummy args
 !*
@@ -22,7 +14,7 @@
 
  integer, pointer     :: pu, pa
  integer, target      :: t
- integer, allocatable :: au, aa 
+ integer, allocatable :: au, aa
 
  integer, parameter :: ip(2,2) = 1
  integer, parameter :: ip2(1:8,10:40) = 1

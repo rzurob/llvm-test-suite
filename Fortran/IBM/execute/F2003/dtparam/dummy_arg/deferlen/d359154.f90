@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d359154.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d359154.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 20 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 20 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  DEFECT 359154 
+!*  DEFECT 359154
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(l1)
@@ -51,7 +43,7 @@ module m
        end subroutine
 
        subroutine sub3(arg)
-          type(child(*,*)), target,intent(inout) :: arg(:) 
+          type(child(*,*)), target,intent(inout) :: arg(:)
 
           print *,arg(1)%firstname,arg(2)%firstname,arg(3)%firstname
        end subroutine

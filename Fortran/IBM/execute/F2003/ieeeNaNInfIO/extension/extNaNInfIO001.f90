@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : extNaNInfIO001.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : July 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=oldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -25,7 +19,7 @@
 !*
 !*  DESCRIPTION:
 !*  -----------
-!*  Testing the non-standard forms of NaN on input/output supported 
+!*  Testing the non-standard forms of NaN on input/output supported
 !*  by extension.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -46,7 +40,7 @@ program extNaNInfIO001
       integer :: count = 0, index = 1
 
       logical, external :: precision_r4
-      
+
       open(in,  file='extNaNInfIO001.dat', action='read')
       open(out, file='extNaNInfIO001.out', action='write')
 
@@ -57,7 +51,7 @@ program extNaNInfIO001
 
          cx = (0.0, 0.0); rl1 = 0.0; rl2 = 0.0; rl3 = 0.0; rl4 = 0.0
          rl5 = 0.0; real_part = 0.0; imag_part = 0.0
-         
+
          if ( index .eq. 1 ) then
             index = 2
          else
@@ -69,7 +63,7 @@ program extNaNInfIO001
 
          real_part = real(cx)
          imag_part = imag(cx)
-         
+
          !**************************************************************
          ! check the values just read
          !**************************************************************
@@ -96,11 +90,11 @@ program extNaNInfIO001
          if ( ( .not. ieee_is_nan( rl3 ) ) .or.                        &
      &        ( ieee_class( rl3 ) .ne. ieee_quiet_nan ) .or.           &
      &        ( .not. equiv_is_negative( rl3 ) ) ) error stop 5_4
-         
+
          ! rl4 should be +Inf
          if ( ieee_is_finite(rl4) .or. ieee_is_negative(rl4)  )        &
      &        error stop 6_4
-         
+
          ! rl5 should be -Inf
          if ( ieee_is_finite(rl5) .or. .not. ieee_is_negative(rl5) )   &
      &        error stop 7_4
@@ -116,7 +110,7 @@ program extNaNInfIO001
 
          cx = (0.0, 0.0); rl1 = 0.0; rl2 = 0.0; rl3 = 0.0; rl4 = 0.0
          rl5 = 0.0; real_part = 0.0; imag_part = 0.0
-         
+
          if ( index .eq. 1 ) then
             index = 2
          else
@@ -128,7 +122,7 @@ program extNaNInfIO001
 
          real_part = real(cx)
          imag_part = imag(cx)
-         
+
 
          !**************************************************************
          ! check the values just read
@@ -155,11 +149,11 @@ program extNaNInfIO001
          if ( ( .not. ieee_is_nan( rl3 ) ) .or.                        &
      &        ( ieee_class( rl3 ) .ne. ieee_quiet_nan ) .or.           &
      &        ( .not. equiv_is_negative( rl3 ) ) ) error stop 12_4
-         
+
          ! rl4 should be +Inf
          if ( ieee_is_finite(rl4) .or. ieee_is_negative(rl4)  )        &
      &        error stop 13_4
-         
+
          ! rl5 should be -Inf
          if ( ieee_is_finite(rl5) .or. .not. ieee_is_negative(rl5) )   &
      &        error stop 14_4
@@ -173,7 +167,7 @@ program extNaNInfIO001
 
       close(in)
       close(out)
-      
+
       contains
 
       ! Returns true if the integer equivalence of
@@ -182,11 +176,11 @@ program extNaNInfIO001
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
-         
+
          if ( val_eq .ge. 0 ) then
             equiv_is_negative = .false.
          else
@@ -201,9 +195,9 @@ program extNaNInfIO001
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
 
          if ( val_eq .le. 0 ) then

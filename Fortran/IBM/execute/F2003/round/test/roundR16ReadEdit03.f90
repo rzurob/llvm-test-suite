@@ -1,25 +1,17 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with real*16 in READ statement
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*            test different round mode with real*16 using internal file.
 !*
 !*           10.6.1.2.6. The rounding mode can be specified by a data
 !*           transfer input/output statement.
 !* ===================================================================
 
-  program roundR16ReadEdit03 
+  program roundR16ReadEdit03
 
     implicit none
 
@@ -27,7 +19,7 @@
     integer i
     integer ios
     real*16 rd1(6), rd2(6)
-    real*16 vf_rd1(6), vf_rd2(6) 
+    real*16 vf_rd1(6), vf_rd2(6)
 
     character(60):: unit_i =                                       &
         &    '1250050900327650900100765-1250050900327650900100765'
@@ -42,19 +34,15 @@
     rd2 = 0.0_16
     vf_rd1 =(/z'3FF400355F73E1C2BC97B092CC929AFF',                &
               z'3FF400355F73E1C13CA427B699B6B27F',                &
-              z'3FF400355F73E1C13CA427B699B6B27F',                &    
-              z'3FF400355F73E1C2BC97B092CC929B00',                &
               z'3FF400355F73E1C2BC97B092CC929B00',                &
               z'3FF400355F73E1C2BC97B092CC929B00'/)
 
     vf_rd2 =(/z'BFF400355F73E1C23C97B092CC929AFF',                &
               z'BFF400355F73E1C1BCA427B699B6B27F',                &
-              z'BFF400355F73E1C1BCA427B699B6B27F',                &
-              z'BFF400355F73E1C23C97B092CC929B00',                & 
-              z'BFF400355F73E1C23C97B092CC929B00',                & 
+              z'BFF400355F73E1C23C97B092CC929B00',                &
               z'BFF400355F73E1C23C97B092CC929B00'/)
-   
-    do i = 1, 6 
+
+    do i = 1, 6
 
        read(unit_i, '(f25.24, f26.24)', iostat=ios, round=r_mode(i))   &
        rd1(i), rd2(i)
@@ -66,4 +54,4 @@
 
     end do
 
-  end program roundR16ReadEdit03 
+  end program roundR16ReadEdit03

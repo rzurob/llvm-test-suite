@@ -1,27 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozCmplx009.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : CMPLX intrinsic
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                :Section 13.7.20 - Statement:
 !*				CMPLX (X [, Y, KIND])
 !*
-!*  128 bit pattern for arugements X and Y                         	                             
-!*                          	
-!*				
+!*  128 bit pattern for arugements X and Y
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -33,7 +21,7 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 program bozCmplx009
-    
+
     integer(8) :: testI(4)
     complex(16) :: testC
 
@@ -55,7 +43,7 @@ program bozCmplx009
     if (testI(4) /= Z'42B383C9B0D69ED0') error stop 4_4
 
     testC = CMPLX(O"407140357524563001666", &
-    B"01000000001000101110000001100111111011011110111011001010011100110011110010101110000111001011010010101111010101011011101010110001", 16) 
+    B"01000000001000101110000001100111111011011110111011001010011100110011110010101110000111001011010010101111010101011011101010110001", 16)
 
     if (testI(1) /= O'0') error stop 5_4
     if (testI(2) /= O"407140357524563001666") error stop 6_4

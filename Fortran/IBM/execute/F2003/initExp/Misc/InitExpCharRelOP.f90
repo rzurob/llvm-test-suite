@@ -1,22 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TESTOP CASE NAME             : InitExpCharRelOP.f  
+!*  TESTOP CASE NAME             : InitExpCharRelOP.f
 !*  TESTOP CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept. 07 2006
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Charber 289074 
+!*  REFERENCE                  : Feature Charber 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +20,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!* Char relational operation 
-!* 
-!*
-!* 
+!* Char relational operation
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpCharRelOP 
+  PROGRAM InitExpCharRelOP
   IMPLICIT NONE
 
   INTEGER     :: I
@@ -59,27 +50,27 @@
 
 
 
-  LOGICAL :: L1(128) = C           <  C(128:1:-1)  .EQV. C(128:1:-1)       <  C 
+  LOGICAL :: L1(128) = C           <  C(128:1:-1)  .EQV. C(128:1:-1)       <  C
   LOGICAL :: L2(128) = C           <  C // " "     .EQV. C // " "          <  C
   LOGICAL :: L3(128) = C(:)(1:127) <  C            .EQV. C(:)(1:127)// " " <  C
 
-  LOGICAL :: L4(128) = C           <= C(128:1:-1)  .EQV. C(128:1:-1)       <= C 
+  LOGICAL :: L4(128) = C           <= C(128:1:-1)  .EQV. C(128:1:-1)       <= C
   LOGICAL :: L5(128) = C           <= C // " "     .EQV. C // " "          <= C
   LOGICAL :: L6(128) = C(:)(1:127) <= C            .EQV. C(:)(1:127)// " " <= C
 
-  LOGICAL :: L7(128) = C           == C(128:1:-1)  .EQV. C(128:1:-1)       == C 
+  LOGICAL :: L7(128) = C           == C(128:1:-1)  .EQV. C(128:1:-1)       == C
   LOGICAL :: L8(128) = C           == C // " "     .EQV. C // " "          == C
   LOGICAL :: L9(128) = C(:)(1:127) == C            .EQV. C(:)(1:127)// " " == C
 
-  LOGICAL :: L11(128) = C           /= C(128:1:-1)  .EQV. C(128:1:-1)       /= C 
+  LOGICAL :: L11(128) = C           /= C(128:1:-1)  .EQV. C(128:1:-1)       /= C
   LOGICAL :: L12(128) = C           /= C // " "     .EQV. C // " "          /= C
   LOGICAL :: L13(128) = C(:)(1:127) /= C            .EQV. C(:)(1:127)// " " /= C
 
-  LOGICAL :: L14(128) = C           >  C(128:1:-1)  .EQV. C(128:1:-1)       >  C 
+  LOGICAL :: L14(128) = C           >  C(128:1:-1)  .EQV. C(128:1:-1)       >  C
   LOGICAL :: L15(128) = C           >  C // " "     .EQV. C // " "          >  C
   LOGICAL :: L16(128) = C(:)(1:127) >  C            .EQV. C(:)(1:127)// " " >  C
 
-  LOGICAL :: L17(128) = C           >= C(128:1:-1)  .EQV. C(128:1:-1)       >= C 
+  LOGICAL :: L17(128) = C           >= C(128:1:-1)  .EQV. C(128:1:-1)       >= C
   LOGICAL :: L18(128) = C           >= C // " "     .EQV. C // " "          >= C
   LOGICAL :: L19(128) = C(:)(1:127) >= C            .EQV. C(:)(1:127)// " " >= C
 
@@ -108,7 +99,7 @@
 
 
 
-  END 
+  END
 
 
- 
+

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : sync_images_app_8.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : July 11 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SYNC IMAGES 
+!*  PRIMARY FUNCTIONS TESTED   : SYNC IMAGES
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : CMVC Feature number: 351605.22 
+!*  REFERENCE                  : CMVC Feature number: 351605.22
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
+!*  Sync image small application :
 !*
-!*  Sync image small application :  
-!*  
-!*  sync in the fashion of : 1<-2<-...<-n and then 1->2->...->n 
-!*  The calculation is circulate a value to all images 
+!*  sync in the fashion of : 1<-2<-...<-n and then 1->2->...->n
+!*  The calculation is circulate a value to all images
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   PROGRAM sync_images_app_8
   IMPLICIT NONE
   INTEGER :: num_img, me, i, j
@@ -46,7 +39,7 @@
 
   IF (num_img .LT. 3) THEN
     SYNC IMAGES(*)
-    STOP 
+    STOP
   END IF
 
   left = me - 1
@@ -55,7 +48,7 @@
 
   SYNC IMAGES(*)
 
-  DO i=1, num_img 
+  DO i=1, num_img
     IF (me .EQ. 1) THEN
        work[me] = i
     ELSE
@@ -67,11 +60,11 @@
     IF (me .LT. num_img) THEN
        SYNC IMAGES(right)
     END IF
-       
+
     IF (work .NE. i) ERROR STOP "err 11"
     IF (work[right] .NE. i) ERROR STOP "err 12"
 
-    SYNC IMAGES(*) 
+    SYNC IMAGES(*)
   END DO
 
   END

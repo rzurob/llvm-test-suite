@@ -1,23 +1,15 @@
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocAllocComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocAllocComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 9 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
@@ -32,7 +24,7 @@ module m
    type second(l2)
      integer,len :: l2
      integer,allocatable  :: i3(:)
-     type(first(:)),allocatable :: first1 
+     type(first(:)),allocatable :: first1
    end type
    type third(l3)
      integer,len  :: l3
@@ -66,10 +58,10 @@ program move_allocAllocComp01
   allocate(third1%second1%first1%i2(3),source=[ (i,i=8,10)] )
 
 
-  from1=third1 
-  
+  from1=third1
+
   call move_alloc(from1,to1)
-  
+
   if(allocated(from1))                       error stop 10_4
   if(.not. allocated(to1))                   error stop 11_4
   if(.not. allocated(to1%first2))            error stop 12_4
@@ -99,7 +91,7 @@ program move_allocAllocComp01
 
   if(any(to1%second1%i3 /= [-1,-2]))         error stop 32_4
   if(any(third1%second1%first1%i1 /= [-5,-4,-3,-2,-1]))       error stop 33_4
-  if(any(third1%second1%first1%i2 /= [8,9,10]))               error stop 34_4 
+  if(any(third1%second1%first1%i2 /= [8,9,10]))               error stop 34_4
 
 end program
 

@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh fxieee04 
+! %PRECMD: $TR_SRC/fxieee.presh fxieee04
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,21 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Marcus Yu
 !*  DATE                       : February 5, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SET_HALTING_MODE
 !*  SECONDARY FUNCTIONS TESTED : IEEE_GET_HALTING_MODE
 !*                               IEEE_SUPPORT_HALTING_MODE
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qflttrap
 !*
 !*  KEYWORD(S)                 :
@@ -61,19 +53,19 @@
          if (ieee_support_halting(ieee_overflow) .eqv. .false.) then
 		     stop "No support halting on overflow."
          endif
-				
+
          if (ieee_support_halting(ieee_divide_by_zero) .eqv. .false.) then
 		     stop "No support halting on divide_by_zero."
          endif
-		
+
          if (ieee_support_halting(ieee_underflow) .eqv. .false.) then
 		     stop "No support halting on underflow."
          endif
-		
+
 		 if (ieee_support_halting(ieee_inexact) .eqv. .false.) then
 		     stop "No support halting on inexact."
          endif
-		
+
 		 call ieee_set_halting_mode(ieee_all,.false.)
          call ieee_get_halting_mode(ieee_all, all_flags)
 		 expected_all = (/.false., .false., .false., .false., .false./)
@@ -109,31 +101,31 @@
 		  		  print *, "Failed, halting_modes were not set."
 		  	  endif
 		  enddo
-		  
+
 		  call ieee_set_halting_mode(ieee_divide_by_zero, .true.)
 		  call ieee_get_halting_mode(ieee_divide_by_zero, flag)
 		  if (flag .eqv. .false.) then
 		  	  print *, "Failed, halting_mode divide by zero were not set."
 		  endif
-		  
+
 		  call ieee_set_halting_mode(ieee_overflow, .true.)
 		  call ieee_get_halting_mode(ieee_overflow, flag)
 		  if (flag .eqv. .false.) then
 		  	  print *, "Failed, halting_mode overflow were not set."
 		  endif
-		  
+
 		  call ieee_set_halting_mode(ieee_invalid, .true.)
 		  call ieee_get_halting_mode(ieee_invalid, flag)
 		  if (flag .eqv. .false.) then
 		  	  print *, "Failed, halting_mode invalid were not set."
 		  endif
-		  
+
 		  call ieee_set_halting_mode(ieee_underflow, .true.)
 		  call ieee_get_halting_mode(ieee_underflow, flag)
 		  if (flag .eqv. .false.) then
 		  	  print *, "Failed, halting_mode underflow were not set."
 		  endif
-		  
+
 		  call ieee_set_halting_mode(ieee_inexact, .true.)
 		  call ieee_get_halting_mode(ieee_inexact, flag)
 		  if (flag .eqv. .false.) then

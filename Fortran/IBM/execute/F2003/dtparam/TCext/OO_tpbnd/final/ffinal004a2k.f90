@@ -1,16 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 
 !*  TEST CASE NAME             : ffinal004a2k
-!*  PROGRAMMER                 : David Forster(derived from ffinal004a2)
 !*  DATE                       : 2007-10-31
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 module m
     type base (kbase_1) ! kbase_1=8
        integer, kind :: kbase_1
@@ -70,7 +65,6 @@ use m
 
     print *, 'end'
 end
-
 
 ! Extensions to introduce derived type parameters:
 ! type: base - added parameters (kbase_1) to invoke with (8) / declare with (8) - 3 changes

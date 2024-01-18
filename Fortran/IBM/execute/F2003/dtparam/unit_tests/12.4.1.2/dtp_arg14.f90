@@ -1,17 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Argument association with DTP
 !*                             :
-!*  PROGRAMMER                 : Huiwen Li
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  FUNCTIONAL TESTED          : Pass object to type bind procedure
 !*                               - Check type parameter of poly object
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,7 +31,7 @@ type, extends(dt_base) :: dt_child(m)
   contains
   procedure :: prt_tp => child_print
 end type
-  
+
 contains
 subroutine base_print(pa)
 class(dt_base(4, *)) :: pa

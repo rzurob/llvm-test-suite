@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpDecTypeSpecifier1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 16, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  The explicit type declaration may override or confirm the implicit type 
+!*  The explicit type declaration may override or confirm the implicit type
 !*  that could otherwise be indicated by the first letter of an entity name
-!*  
-!*  -Confirm 
 !*
-!*  (ICE-336909) 
+!*  -Confirm
+!*
+!*  (ICE-336909)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -64,7 +57,7 @@
   CLASS(DT(8,3)) :: C
 
   ALLOCATABLE E
-  CLASS(*) :: E 
+  CLASS(*) :: E
 
 
   IF ( B%K               .NE.   1          ) STOP 11

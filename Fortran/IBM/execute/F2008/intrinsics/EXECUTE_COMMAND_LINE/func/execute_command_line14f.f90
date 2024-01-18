@@ -1,27 +1,17 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : execute_command_line14f.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-12-14
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : EXECUTE_COMMAND_LINE intrinsic
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED :  
-!*                                
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*
 !*  EXECUTE_COMMAND_LINE(COMMAND [, WAIT, EXITSTAT, CMDSTAT, CMDMSG ])
 !*
-!*  run EXECUTE_COMMAND_LINE and SYSTEM with the echo command and verify they have the same behavior. 
+!*  run EXECUTE_COMMAND_LINE and SYSTEM with the echo command and verify they have the same behavior.
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -35,13 +25,13 @@
 MODULE Mod
       CONTAINS
 
-      SUBROUTINE Sub1(Arg) 
+      SUBROUTINE Sub1(Arg)
         INTEGER :: Arg, I
 
         open(unit=10, file='file01')
         write(10, *) 1,' line written in file01'
 
-        DO I = 2, Arg   
+        DO I = 2, Arg
           write(10, *) I,' lines written in file01'
         END DO
       END SUBROUTINE Sub1
@@ -53,20 +43,20 @@ PROGRAM execute_command_line14f
 
       cmd = "diff file01 file02"
 
-      CALL Sub1(100); CALL Sub2(100) 
+      CALL Sub1(100); CALL Sub2(100)
 
       CALL EXECUTE_COMMAND_LINE(cmd)
       CALL SYSTEM(cmd)
 
       CONTAINS
 
-      SUBROUTINE Sub2(Arg) 
+      SUBROUTINE Sub2(Arg)
         INTEGER :: Arg, I
 
         open(unit=20, file='file02')
         write(20, *) 1,' line written in file02'
 
-        DO I = 2, Arg   
+        DO I = 2, Arg
           write(20, *) I,' lines written in file02'
         END DO
       END SUBROUTINE Sub2

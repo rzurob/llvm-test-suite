@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrTypBndDefOp.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  interaction with type bound generics
-! 
-!*  -- Defined Operator 
+!
+!*  -- Defined Operator
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -43,27 +36,27 @@
     GENERIC     :: OPERATOR( + ) => ModFun
     PROCEDURE   :: ModFun
   END TYPE
- 
+
   TYPE, EXTENDS(DT) :: DT1
   END TYPE
 
-  INTERFACE OPERATOR( + ) 
+  INTERFACE OPERATOR( + )
     PROCEDURE ModFun   ! can be dup
-  END INTERFACE  
+  END INTERFACE
 
   CONTAINS
 
   ELEMENTAL FUNCTION ModFun(Arg1, Arg2)
-  CLASS(DT), INTENT(IN) :: Arg1 
-  TYPE(DT), INTENT(IN) :: Arg2 
-  TYPE(DT)             :: ModFun 
-    ModFun%ID = "ModFun-"// TRIM(Arg1%ID) // TRIM(Arg2%ID) 
-  END FUNCTION 
+  CLASS(DT), INTENT(IN) :: Arg1
+  TYPE(DT), INTENT(IN) :: Arg2
+  TYPE(DT)             :: ModFun
+    ModFun%ID = "ModFun-"// TRIM(Arg1%ID) // TRIM(Arg2%ID)
+  END FUNCTION
 
   END MODULE
 
 
-  PROGRAM dataPtrTypBndDefOp 
+  PROGRAM dataPtrTypBndDefOp
   USE Mod
 
 
@@ -81,7 +74,7 @@
   IF (ANY( UBOUND(Ptr) .NE. (/N,N/)))                                         STOP 23
   IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=1,M)/),(/N,N/))))           STOP 24
 
-  Ptr = Ptr + Ptr 
+  Ptr = Ptr + Ptr
   IF (ANY( Ptr%ID  .NE. RESHAPE((/("ModFun-" //CHAR(I)//CHAR(I), I=1,M)/),(/N,N/))))  STOP 25
 
   Ptr(0:9,0:9) => Tar1

@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting, scalar objects and with internal file (Input)
@@ -84,16 +68,16 @@ program scalar105
    write ( internalFile(1), *)    "&nml"
    write ( internalFile(2), *)    "b1= 2, b2= 4,"
    write ( internalFile(3), *)    "b3= 6"
-   write ( internalFile(4), *)    "/"   
-   
+   write ( internalFile(4), *)    "/"
+
    read (internalFile, NML=nml, iostat=stat, iomsg=msg)
 
    if (( stat /=  0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
-  
+
    if ( b1%i /= 2 ) error stop 2_4
    if ( b2%i /= 4 ) error stop 3_4
    if ( b3%i /= 6 ) error stop 4_4
-   
+
 end program
 
 

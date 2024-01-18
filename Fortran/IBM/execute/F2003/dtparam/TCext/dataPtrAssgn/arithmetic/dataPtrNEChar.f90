@@ -4,20 +4,14 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrNEChar.f 
+!*  TEST CASE NAME             : dataPtrNEChar.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -26,7 +20,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- Program main 
+ Program main
     type try(k1,n1,n2)    ! (4,3,3)
         integer, kind              :: k1
         integer, len               :: n1,n2
@@ -45,7 +39,7 @@
     if ( .not. associated(t1%ptr, t1%char)) stop 12
     if ( lbound(t1%ptr,1) /= 1 ) stop 15
     if ( ubound(t1%ptr,1) /= 7 ) stop 18
-    print *,  t1%ptr == t1%char 
+    print *,  t1%ptr == t1%char
     print *, t1%ptr
 
  End program

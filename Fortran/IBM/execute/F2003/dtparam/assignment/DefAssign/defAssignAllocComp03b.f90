@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignAllocComp03b.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignAllocComp03b.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 9 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 9 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test defined assignment with generic binding
@@ -26,9 +18,9 @@
 module m
    type :: A(l0)
       integer,len :: l0 ! l0=3
-     
+
       integer :: i1(l0:l0+1)
-      character(l0),allocatable :: c1(:) 
+      character(l0),allocatable :: c1(:)
       logical,allocatable       :: g1(:)
       contains
           procedure :: assignA
@@ -38,20 +30,20 @@ module m
    type :: base(l1)
       integer,len :: l1 ! l1=2
       type(A(l1+1)),allocatable :: a1comp(:)
-     
+
       contains
          procedure :: assignBase
-         generic   :: assignment(=)=>assignBase 
+         generic   :: assignment(=)=>assignBase
    end type
 
    type,extends(base) :: child(l2)
       integer,len :: l2 ! l2=3
-      
+
       type(A(l1+1)),allocatable :: a2comp(:)
-      type(A(l2)),allocatable   :: a3comp(:) 
+      type(A(l2)),allocatable   :: a3comp(:)
 
       contains
-        
+
          procedure :: assignChild
          generic   :: assignment(=)=>assignChild
    end type
@@ -61,11 +53,11 @@ module m
       elemental subroutine assignA(this,tA)
          class(A(*)),intent(inout) :: this
          type(A(*)),intent(in)     :: tA
-       
+
          this%i1=TA%i1
          this%c1=TA%c1
          this%g1=TA%g1
-         
+
       end subroutine
 
       subroutine assignBase(this,tA)
@@ -73,7 +65,7 @@ module m
          type(A(*)),intent(in)        :: tA(:)
 
          do i=lbound(tA,1),ubound(tA,1)
-            ! call assignA 
+            ! call assignA
             this%a1comp(i) = tA(i)
          end do
 
@@ -82,14 +74,14 @@ module m
       elemental subroutine assignChild(this,tC)
          class(child(*,*)),intent(inout) :: this
          class(child(*,*)),intent(in) :: tC
-        
-         ! call assignA  
+
+         ! call assignA
          this%a1comp=tC%a1comp
          this%a2comp=tC%a2comp
          this%a3comp=tC%a3comp
- 
+
       end subroutine
- 
+
 end module
 
 program defAssignAllocComp03b
@@ -118,7 +110,7 @@ program defAssignAllocComp03b
    allocate(obj2(1)%a3comp(obj2%l1:obj2%l1))
 
    select type(obj1)
-      type is(child(*,*)) 
+      type is(child(*,*))
         allocate(obj1(2)%a2comp(obj1%l2:obj1%l2))
         allocate(obj1(2)%a3comp(obj1%l1:obj1%l1))
 
@@ -133,24 +125,24 @@ program defAssignAllocComp03b
 
         ! call assignChild
         obj2 = obj1
-          
+
      class default
         stop 9
-   end select 
-  
+   end select
+
    allocate(obj3(-1:-1))
 
    allocate(obj3(-1)%a1comp(size(obj1(2)%a1comp)))
 
    ! call assignBase
-   obj3(-1)=obj1(2)%a1comp 
+   obj3(-1)=obj1(2)%a1comp
 
    if(any(obj1(2)%a1comp(1)%i1 /= [1,2] ))                             stop 10
    if(any(obj1(2)%a1comp(2)%i1 /= [3,4] ))                             stop 11
    if(any(obj1(2)%a1comp(1)%c1 /= ["abc","def","ghi"]))                stop 12
    if(any(obj1(2)%a1comp(2)%c1 /= ["ABC","DEF"]))                      stop 13
    if(any(obj1(2)%a1comp(1)%g1 .neqv. [.true.,.false.]))               stop 14
-   if(any(obj1(2)%a1comp(2)%g1 .neqv. [.false.,.true.,.false.]))       stop 15 
+   if(any(obj1(2)%a1comp(2)%g1 .neqv. [.false.,.true.,.false.]))       stop 15
 
    select type(x=>obj1(2))
       type is(child(*,*))
@@ -193,6 +185,6 @@ program defAssignAllocComp03b
       if(any(x%a1comp(1)%g1 .neqv. [.true.,.false.]))                 stop 38
       if(any(x%a1comp(2)%g1 .neqv. [.false.,.true.,.false.]))         stop 39
 
-   end associate   
+   end associate
 
 end program

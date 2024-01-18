@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemLOG.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemLOG.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  LOG 
+!*
+!*  -  LOG
 !*  (319105)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -36,7 +29,7 @@
 
 
   PROGRAM  InitExpDefElemLOG
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
   REAL(4),    PARAMETER :: R=2.3025851
@@ -56,7 +49,7 @@
     COMPLEX(KIND(LOG((/((-1._16, +0._16), I=1,128)/))))  :: Z6(128)=LOG((/((-1._16,-0._16), I=1,128)/))
   END TYPE
 
-  TYPE(DT0), PARAMETER :: C=DT0(R=NULL(), Ptr=NULL(), ProcPtr=NULL()) 
+  TYPE(DT0), PARAMETER :: C=DT0(R=NULL(), Ptr=NULL(), ProcPtr=NULL())
 
   TYPE :: DT
     LOGICAL :: L1=ALL(ABS(LOG((/10./))-R) .GT. 1.E-6 )
@@ -74,7 +67,7 @@
   IF (KIND(C%Z4)  .NE. 4)    STOP 14
   IF (KIND(C%Z8)  .NE. 8)    STOP 15
   IF (KIND(C%Z6)  .NE. 16)   STOP 16
- 
+
   IF( ANY( ABS(C%R4-R)  .GE. 1.E-6 ))       STOP 21
   IF( ANY( ABS(C%R8-R)  .GE. 1.E-6 ))       STOP 22
   IF( ANY( ABS(C%R6-R)  .GE. 1.E-6 ))       STOP 23

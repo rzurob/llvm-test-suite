@@ -1,20 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : UNPACK DTP INTRINSIC FUNCTION
-!*
-!*  PROGRAMMER                 : Adrian Green
 !*  DATE                       : July 27, 2008
 !*  ORIGIN                     : XLF Compiler Test,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !       Unpack Intrinsic function with derived type parameters.
-!*  DESCRIPTION                : Uses unpack with a derived type component with a deffered  
-!*								length parameter. Derived type has real and integer array 
-!*                              components. 
-!*
+!*  DESCRIPTION                : Uses unpack with a derived type component with a deffered
+!*								length parameter. Derived type has real and integer array
+!*                              components.
 !*
 module m1
 	type dtp(l)
@@ -29,7 +22,7 @@ use m1
 type (dtp(:)), pointer :: point(:)
 type (dtp(3)), dimension(8) :: matrixA
 type (dtp(3)), dimension(4,4) :: field, res
-logical :: mask1(4,4) 
+logical :: mask1(4,4)
 integer :: num
 num = 1
 
@@ -69,7 +62,7 @@ do i = 1,4
 		print *, res(i,j)%comp(1), '  ', res(i,j)%comp(2), '  ', res(i,j)%comp(3)
 	end do
 	print *, ' '
-end do 
+end do
 print *, "com"
 do i = 1,4
 	do j=1,4

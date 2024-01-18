@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : nullAsRes01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : nullAsRes01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 26 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 26 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD]) 
+!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD])
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.88 
+!* 1. TEST SECTION 13.7.88
 !* 2. NULL([MOLD]) AS FUNCTION RESULT
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -44,7 +36,7 @@ module m
 
          nullRes3=>null()
      end function
-     
+
 end module
 
 program nullAsRes01
@@ -52,7 +44,7 @@ program nullAsRes01
    implicit none
 
    type(dtp(2)),pointer :: dtp1=>null()
-   type(dtp(4)),pointer :: dtp2=>null() 
+   type(dtp(4)),pointer :: dtp2=>null()
    type(dtp(2)),pointer :: dtp3(:)=>null()
    type(dtp(4)),pointer :: dtp4(:)=>null()
 
@@ -66,7 +58,7 @@ program nullAsRes01
    if(associated(dtp2))                         error stop 11_4
    if(associated(dtp3))                         error stop 12_4
    if(associated(dtp4))                         error stop 13_4
- 
+
    dtp1=>tar1
    dtp2=>tar2
    dtp3=>tar3
@@ -107,7 +99,7 @@ program nullAsRes01
    if(.not. associated(dtp1,tar1))              error stop 30_4
    if(.not. associated(dtp2,tar2))              error stop 31_4
    if(.not. associated(dtp3,tar3))              error stop 32_4
-   if(.not. associated(dtp4,tar4))              error stop 33_4   
+   if(.not. associated(dtp4,tar4))              error stop 33_4
 
 
    contains
@@ -116,7 +108,7 @@ program nullAsRes01
 
          pointer :: nullRes2
          nullRes2=>null()
- 
+
      end function
 
      type(dtp(4)) function nullRes4(dt)

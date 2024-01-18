@@ -1,23 +1,16 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxopen-newunit20.f
-!*
-!* PROGRAMMER                   : Sarah Kouchaki-Ramezan
 !* DATE                         : Oct. 2010
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: NEWUNIT= specifier, Feature#:377344
 !* SECONDARY FUNTIONS TESTED    : READ,WRITE,REWIND
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Simple testcase for defect#381739
-!*                                
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*
@@ -35,7 +28,7 @@
 
 
     OPEN(NEWUNIT=IVAR, FILE = 'fxopen-newunit20.dat')
-    
+
     PRINT *, IVAR
 
     READ (IVAR, *) RVAR

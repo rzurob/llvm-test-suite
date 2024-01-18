@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank111f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : August  25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank object
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
@@ -40,12 +33,12 @@ module mod
      subroutine sub_bind_c(arr, test) bind(C)
          implicit none
          integer :: test
-         integer, allocatable :: arr(..) 
+         integer, allocatable :: arr(..)
      end subroutine sub_bind_c
      subroutine sub(arr, test)
          implicit none
          integer :: test
-         integer, allocatable :: arr(..) 
+         integer, allocatable :: arr(..)
      end subroutine sub
      subroutine sub_ext(al, A, B, C, D)
          integer, allocatable :: al, A(:), B(:,:), C(:,:,:), D(:,:,:,:,:,:,:,:,:,:)
@@ -84,7 +77,7 @@ module mod
    end subroutine sub_mod
 end module mod
 
-program AssumedRank110f 
+program AssumedRank110f
    use mod
    implicit none
    integer :: i, j, k
@@ -146,7 +139,7 @@ contains
      if (.not.  allocated(C))  ERROR STOP 13
      if (.not.  allocated(D))  ERROR STOP 14
 
-!---------- call BIND(C) procedure from internal procedure 
+!---------- call BIND(C) procedure from internal procedure
      call sub_bind_c(al, 0)
      call sub_bind_c(A, 1)
      call sub_bind_c(B, 2)
@@ -169,12 +162,12 @@ subroutine sub_ext(al, A, B, C, D)
        subroutine sub_bind_c(arr, test) bind(C)
            implicit none
            integer :: test
-           integer, allocatable :: arr(..) 
+           integer, allocatable :: arr(..)
        end subroutine sub_bind_c
        subroutine sub(arr, test)
            implicit none
            integer :: test
-           integer, allocatable :: arr(..) 
+           integer, allocatable :: arr(..)
        end subroutine sub
      end interface
 
@@ -184,7 +177,7 @@ subroutine sub_ext(al, A, B, C, D)
      if (.not.  allocated(C))  ERROR STOP 23
      if (.not.  allocated(D))  ERROR STOP 24
 
-!---------- call BIND(C) procedure from external procedure 
+!---------- call BIND(C) procedure from external procedure
      call sub_bind_c(al, 0)
      call sub_bind_c(A, 1)
      call sub_bind_c(B, 2)
@@ -200,10 +193,10 @@ end subroutine sub_ext
 
 subroutine sub_bind_c(arr, test) bind(C)
      implicit none
-     ! Dummy arg. 
+     ! Dummy arg.
      integer :: test
-     integer, allocatable :: arr(..) 
-     ! Internal variables 
+     integer, allocatable :: arr(..)
+     ! Internal variables
      integer, parameter :: dim1 = 5
 
      #if defined (TC_DEBUG)
@@ -213,8 +206,8 @@ subroutine sub_bind_c(arr, test) bind(C)
      #endif
 
      if (.not. allocated(arr))  ERROR STOP 101
-     if (DEBUG_MODE) then 
-        print*, test 
+     if (DEBUG_MODE) then
+        print*, test
         print*, size(arr)
         print*, shape(arr)
         print*, rank(arr)
@@ -262,10 +255,10 @@ end subroutine sub_bind_c
 
 subroutine sub(arr, test)
      implicit none
-     ! Dummy arg. 
+     ! Dummy arg.
      integer :: test
-     integer, allocatable :: arr(..) 
-     ! Internal variables 
+     integer, allocatable :: arr(..)
+     ! Internal variables
      integer, parameter :: dim1 = 5
 
      #if defined (TC_DEBUG)
@@ -275,8 +268,8 @@ subroutine sub(arr, test)
      #endif
 
      if (.not. allocated(arr))  ERROR STOP 201
-     if (DEBUG_MODE) then 
-        print*, test 
+     if (DEBUG_MODE) then
+        print*, test
         print*, size(arr)
         print*, shape(arr)
         print*, rank(arr)

@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryResParam03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryResParam03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 27 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 27 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. FUNCTION RESULT AS LENGTH TYPE PARAMETER
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -35,13 +27,13 @@ module m
    end type
 end module
 
-  program dtParameterInquiryResParam03 
+  program dtParameterInquiryResParam03
   use m
   implicit none
 
   interface
      function getlen1(dt)
-        import 
+        import
         class(base(*)) :: dt
         integer(8) :: getlen1
      end function
@@ -51,7 +43,7 @@ end module
   type(child) :: c1
   type(base)  :: b1
 
-  
+
   class(base(:)),allocatable :: b2
   class(*),pointer :: p1
 
@@ -68,7 +60,7 @@ end module
   end select
   deallocate(b2)
 
-  allocate(child(l1=getlen1(c1),l2=getlen1(b1)) :: b2) 
+  allocate(child(l1=getlen1(c1),l2=getlen1(b1)) :: b2)
   select type(b2)
      type is(child(*,*))
         if(b2%l1 /= c1%l1+c1%l2)                        error stop 11_4
@@ -84,22 +76,22 @@ end module
       if(x%l2 /= 14)                                    error stop 14_4
       class default
         error stop 102_4
-  end select 
+  end select
   deallocate(p1)
- 
+
   allocate(base(c1%l1+getlen2()) :: p1)
   select type(p1)
     type is(base(*))
         if(p1%l1 /= 18)                                 error stop 15_4
     class default
         error stop 103_4
-  end select 
+  end select
   deallocate(p1)
 
   contains
- 
+
      integer function getlen2()
-        getlen2=b1%l1 + c1%l1 + c1%l2 
+        getlen2=b1%l1 + c1%l1 + c1%l2
      end function
 end
 

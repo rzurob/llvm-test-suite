@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dummyArg003al
 !*
-!*  PROGRAMMER                 : David Forster (derived from dummyArg003a by Robert Ma)
 !*  DATE                       : 2007-10-03 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try output item to be an unlimited polymorphic array
@@ -114,7 +106,7 @@ program dummyArg003al
    call myWrite2 (1, stat, msg, 160, b3(1,1:2) )
    call myWrite2 (1, stat, msg, 140, b4((/2,4,3/)) )
 
-  
+
    read (1, iostat=stat, iomsg=msg, pos=60  )              c2
    read (1, iostat=stat, iomsg=msg, pos=1   )              c4
 

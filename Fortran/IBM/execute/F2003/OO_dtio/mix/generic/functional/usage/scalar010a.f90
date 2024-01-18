@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Usage of GENERIC BINDING
 !*                                  - scalar derived type with multiple level of heirarchy, and use parent component in child dtio
@@ -155,7 +144,7 @@ program scalar010a
    allocate ( gen3 :: c1 )
 
    read ( 1, iostat = stat, iomsg = msg ) b1, c1
-  
+
    select type ( b1 )
       type is ( child )
         if ( ( b1%c /= 'abc' ) .or. ( b1%i /= 101 ) ) error stop 1_4

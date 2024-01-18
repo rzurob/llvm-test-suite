@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpIAAArrayExternal003
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2009-05-22
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment with Allocation
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 365653
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*  ADAPTED FROM               : dtpIAAArray003 (<-dtpIAABasic003<-dtpIAABasic002<-dtpIAABasic001)
 !*
 !*  DESCRIPTION
@@ -235,7 +229,7 @@ subroutine test (o1, o2, o3, v1, v2, v3)
   print *, 91, allocated(o1), o1%k, o1%l, len(o1%dlvar%chvar), o1
   print *, 92, allocated(o2), o2%k, o2%l, len(o2%dlvar%chvar), o2
   print *, 93, allocated(o3), o3%k, o3%l, len(o3%dlvar%chvar), o3
-  
+
   print *, 94, allocated(v1), v1%k, v1%l, len(v1%dlvar%chvar), v1
   print *, 95, allocated(v2), v2%k, v2%l, len(v2%dlvar%chvar), v2
   print *, 96, allocated(v3), v3%k, v3%l, len(v3%dlvar%chvar), v3

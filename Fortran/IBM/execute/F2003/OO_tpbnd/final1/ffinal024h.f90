@@ -1,34 +1,28 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
+! %PRECMD: rm -f *.mod
 ! %COMPOPTS:  -qfree=f90
-! %GROUP: ffinal024h.f 
+! %GROUP: ffinal024h.f
 ! %VERIFY: ffinal024h.out:ffinal024h.vf
 ! %STDIN:
-! %STDOUT: ffinal024h.out 
+! %STDOUT: ffinal024h.out
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal024h.f
-!*  TEST CASE TITLE            : type-bound procedure
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : final subroutines 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : final subroutines
 !*
-!*  DESCRIPTION                : testing final subroutines: import 
-!*    
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  DESCRIPTION                : testing final subroutines: import
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -40,7 +34,7 @@ module m
     end type
     contains
     subroutine finalizeBase (arg1)
-       type (base), intent (in) :: arg1 
+       type (base), intent (in) :: arg1
        print *, 'finalizeBase'
     end subroutine
 end module
@@ -52,29 +46,29 @@ use m
        final :: finalizeChild
     end type
 
-    class(base), pointer  :: dt1  
+    class(base), pointer  :: dt1
 
     interface interf
         subroutine fBase(arg1)
         import base
         class(base), intent(inout) :: arg1
         end subroutine
-    end interface 
+    end interface
 
     contains
 
     subroutine finalizeChild (arg1)
-        type (child), intent (in) :: arg1 
+        type (child), intent (in) :: arg1
         print *, 'finalizeChild'
     end subroutine
- 
+
 end module
 
 module m2
 use m1
    type dt
-      type(base), allocatable ::  dt_b 
-      type(child), pointer :: dt_c(:) 
+      type(base), allocatable ::  dt_b
+      type(child), pointer :: dt_c(:)
    end type
 end module
 
@@ -91,13 +85,13 @@ subroutine fBase (arg1)
 use m, only : base
 use m2, only : dt
    type(base), intent(inout) :: arg1
-   class(dt), allocatable  :: t1(:)  
+   class(dt), allocatable  :: t1(:)
    allocate(t1(2))
-   allocate(t1(1)%dt_b) 
+   allocate(t1(1)%dt_b)
    allocate(t1(1)%dt_c(2))
    allocate(t1(2)%dt_b)
    allocate(t1(2)%dt_c(2))
    deallocate(t1(1)%dt_b, t1(1)%dt_c)
    deallocate(t1(2)%dt_b, t1(2)%dt_c)
-end subroutine 
+end subroutine
 

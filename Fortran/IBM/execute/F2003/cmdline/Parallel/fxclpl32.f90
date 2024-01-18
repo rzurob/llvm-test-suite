@@ -12,39 +12,32 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpl32.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Call command line intrinsic routines through parallel region 
+!*  DESCRIPTION                : Call command line intrinsic routines through parallel region
 !*                             : mixed with single, barrier and master directives
-!*                   
-!*                          
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
 
       PROGRAM fxclpl32
 
@@ -52,19 +45,19 @@
 
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE  
-      character(513)   :: NAME  
-      logical          :: TRIM_NAME 
-      integer          :: ARGCOUNT 
-  
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
+      integer          :: ARGCOUNT
+
 
       character(2049)      :: CmdLine  = 'fxclpl32 asdfs\\#3 6\\^'
       integer              :: CmdCount, i, k
       character(2047)      :: Argument
-     
+
       NAME = 'CmdLine    '
       TRIM_NAME = .true.
 
@@ -78,15 +71,15 @@
     !$OMP  FIRSTPRIVATE(CmdLine)   &
     !$OMP  FIRSTPRIVATE(NAME)      &
     !$OMP  FIRSTPRIVATE(TRIM_NAME) &
-    !$OMP  PRIVATE(Argument)         
+    !$OMP  PRIVATE(Argument)
 
-    !$OMP SINGLE 
+    !$OMP SINGLE
         CmdCount = COMMAND_ARGUMENT_COUNT()
-        if ( CmdCount .ne. 2 ) & 
+        if ( CmdCount .ne. 2 ) &
         then
           error stop 63
         endif
-    !$OMP END SINGLE 
+    !$OMP END SINGLE
 
 
         call GET_COMMAND(COMMAND, LENGTH, STATUS)
@@ -96,8 +89,8 @@
         then
           error stop 64
         endif
-      
-    !$OMP BARRIER  
+
+    !$OMP BARRIER
     !$OMP MASTER
         DO i  = 0, CmdCount
 
@@ -116,7 +109,7 @@
         END DO
     !$OMP END MASTER
 
-    !$OMP BARRIER  
+    !$OMP BARRIER
 
         call GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 
@@ -129,12 +122,12 @@
 
 
 
-    !$OMP END PARALLEL     
+    !$OMP END PARALLEL
 
 
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 
 

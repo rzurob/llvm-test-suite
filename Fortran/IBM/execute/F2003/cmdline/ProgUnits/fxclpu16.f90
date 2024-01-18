@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu16.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,14 +33,13 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Call command line procedures through external functions
-!*                             : which are used for the defined operators 
-!*                             : with actual arguments defined in derived type in module 
-!*                             : 
+!*                             : which are used for the defined operators
+!*                             : with actual arguments defined in derived type in module
 !*                             :
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD
- 
+
       TYPE DT
 
       character(2049)   :: COMMAND
@@ -109,8 +102,8 @@
       END INTERFACE
 
 
-      TYPE(DT) :: A 
-      TYPE(DT) :: B 
+      TYPE(DT) :: A
+      TYPE(DT) :: B
 
 
 
@@ -129,12 +122,12 @@
       TYPE(DT), INTENT(in)  :: B
       TYPE(DT), INTENT(in)  :: A
       TYPE(DT)              :: EXT_FUN1
-      
+
       integer                      :: i
       character(2047)              :: Argument
 
 
-      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) & 
+      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) &
       then
         error stop 63
       endif
@@ -153,7 +146,7 @@
       TYPE(DT)              :: B
       TYPE(DT)              :: A
       TYPE(DT)              :: EXT_FUN2
-      
+
       integer                      :: i
       character(2047)              :: Argument
 
@@ -179,12 +172,12 @@
       TYPE(DT)              :: B
       TYPE(DT)              :: A
       TYPE(DT)              :: EXT_FUN3
-      
+
       integer                      :: i
       character(2047)              :: Argument
 
       DO i  = 0, CmdCount
-       
+
         B%NUMBER = i
         call GET_COMMAND_ARGUMENT(B%NUMBER, B%VALUE, B%LENGTH, B%STATUS)
         call MyGetArg(CmdLine, B%NUMBER, Argument)
@@ -212,7 +205,7 @@
       TYPE(DT)              :: B
       TYPE(DT)              :: A
       TYPE(DT)              :: EXT_FUN4
-      
+
       integer                      :: i
       character(2047)              :: Argument
 
@@ -232,6 +225,6 @@
 
       END FUNCTION
 
- 
+
       INCLUDE 'cmdline.include'
 

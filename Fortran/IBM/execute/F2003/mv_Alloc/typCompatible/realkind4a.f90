@@ -1,25 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : realkind4a.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is of type real*4
-!*                                TO is of type class(*) 
+!*                                TO is of type class(*)
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -50,7 +38,7 @@ end module
             type is (real*4)
                 if ( size(y,1) /= 2) stop 21
                 if ( size(y,2) /= 5) stop 23
-                 write (*, '(2f12.8)') y 
+                 write (*, '(2f12.8)') y
              end select
       contains
           subroutine sub(x)

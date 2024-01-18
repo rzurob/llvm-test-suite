@@ -1,26 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : valueAttrMultiArg003.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 04/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Passing characters along with multiple
 !*				 actual args of different types. character
 !*				 actual arg to be tested is 16 bytes.
-!*                              
-!*                              
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -40,7 +28,7 @@ program valueAttrMultiArg003
 
     integer :: in1, in2, in3
     logical :: logic1
-    real :: re1, re2    
+    real :: re1, re2
 
     ch = 'abcdefghijklmnop'
     ch2 = 'xy'
@@ -74,7 +62,7 @@ program valueAttrMultiArg003
 	character(8) :: tmp3
         integer :: int1, int2, int3
         logical :: log1
-        real :: real1, real2 
+        real :: real1, real2
 
         if (log1) then
 	    real1 = real2 + (int1*1.0)
@@ -93,7 +81,7 @@ program valueAttrMultiArg003
 	character(8) :: tmp3
         integer :: int1, int2, int3
         logical :: log1
-        real :: real1, real2 
+        real :: real1, real2
 
         if (log1) then
 	    real1 = real2 + (int1*1.0)
@@ -112,7 +100,7 @@ program valueAttrMultiArg003
 	character(8) :: tmp3
         integer :: int1, int2, int3
         logical :: log1
-        real :: real1, real2 
+        real :: real1, real2
 
         if (log1) then
 	    real1 = real2 + (int1*1.0)
@@ -132,7 +120,7 @@ program valueAttrMultiArg003
 	character(8) :: tmp3
         integer :: int1, int2, int3
         logical :: log1
-        real :: real1, real2 
+        real :: real1, real2
 
         if (log1) then
 	    real1 = real2 + (int1*1.0)

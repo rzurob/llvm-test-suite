@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrC718_1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrC718_1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  C718 (R735) If bounds-spec-list is specified, the number of bounds-specs shall equal
 !*  the rank of data pointer-object.
-!*   
+!*
 !*  -20 Dimensions
 !*  ()
 !*
@@ -50,11 +43,11 @@
     END FUNCTION
   END MODULE
 
-  PROGRAM dataPtrC718_1 
+  PROGRAM dataPtrC718_1
   USE M
   IMPLICIT NONE
 
-  TYPE(DT),   TARGET  ::   T20(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)=DT(1) 
+  TYPE(DT),   TARGET  ::   T20(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)=DT(1)
   CLASS(DT ), POINTER :: Ptr20(:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:)
 
 
@@ -72,7 +65,7 @@
   Ptr20(1:,1:,1:,1:,1:,1:,1:,1:,1:,1:,0:,0:,0:,0:,0:,0:,0:,0:,0:,0:) => T20
   IF (ANY(LBOUND(Ptr20) .NE. (/1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0 /))) STOP 31
   IF (ANY(UBOUND(Ptr20) .NE. (/1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0 /))) STOP 32
- 
+
   END
 
 

@@ -1,23 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : data_main.f
-!*
-!*  PROGRAMMER                 : Feng Ye 
 !*  DATE                       : June 2, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Coarray in data stmt 
+!*  PRIMARY FUNCTIONS TESTED   : Coarray in data stmt
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : 
 !*  REQUIRED COMPILER OPTIONS  : -qcaf
 !*
-!*  DESCRIPTION                : 
-!*                 
-!*    Test coarray objects initialized in main 
+!*  DESCRIPTION                :
+!*
+!*    Test coarray objects initialized in main
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -27,7 +20,7 @@
    integer, save :: arr_coarr2(3)[*]
 
    integer       :: me, temp
-   integer       :: images 
+   integer       :: images
    integer       :: next
 
    data s_coarr /-1/
@@ -59,7 +52,7 @@
 
    do i=1, 3
      if (arr_coarr1(i)[next] .NE. -1 ) stop 31
-     arr_coarr1(i)[next] = 1 
+     arr_coarr1(i)[next] = 1
      if (arr_coarr1(i)[next] .NE.  1 ) stop 32
 
      if (arr_coarr2(i)[next] .NE. -2 ) stop 41

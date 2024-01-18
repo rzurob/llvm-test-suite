@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361862.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361862.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 5 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 5 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 361862
@@ -44,7 +36,7 @@ module m
    end type
 
    interface assignment(=)
-      module procedure assignChild,assignA 
+      module procedure assignChild,assignA
    end interface
 
    contains
@@ -62,7 +54,7 @@ module m
          class(child(*,*,*)),intent(inout) :: this
          class(child(*,*,*)),intent(in)    :: dt
          this%a1comp=dt%a1comp ! call assignA
-         this%a2comp=dt%a2comp ! call assignA  
+         this%a2comp=dt%a2comp ! call assignA
       end subroutine
 
 end module
@@ -72,9 +64,7 @@ program d361862
 
     implicit none
 
-
     type(child(2,3,4)),allocatable,target :: child1(:,:)
-
 
     allocate(child(2,3,4) :: child1(1,1) )
 
@@ -89,7 +79,7 @@ program d361862
                              A(4)(["TEST","TEAM","FAIL","PASS"], &
                                   [.true.,.false.,.false.,.true.] ) ] )
 
-    print *,child1(1,1) 
+    print *,child1(1,1)
 
 end program
 

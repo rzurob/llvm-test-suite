@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : acetdt00
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2006-09-27
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : derived type
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -171,7 +165,7 @@ program acetdt00
   comp1 = [composed(base(-1, huge(1e3), (1e-9,1e-37)), .false.), &
            composed(base(huge(1), 1e-9, 1/(huge(0.0),tiny(0.0))), .false.), &
            composed(base(1, 1e37, (huge(0.0),tiny(0.0))), .true.)]
-  
+
   comp2 = [composed:: composed(base(-1, huge(1e3), (1e-9,1e-37)), .false.), &
                       composed(base(huge(1), 1e-9, 1/(huge(0.0),tiny(0.0))), .false.), &
                       composed(base(1, 1e37, (huge(0.0),tiny(0.0))), .true.)]

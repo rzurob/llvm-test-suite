@@ -1,46 +1,32 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
 ! %PRECMD: ${TR_SRC}/scrisoa00.presh fxisok07 cxisok07
 ! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
-!*  SECONDARY FUNCTIONS TESTED : see below 
+!*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_CHAR, C_SIGNED_CHAR
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*
 !*	- testing C_CHAR and C_SIGNED_CHAR
 !*	- using external FORTRAN subroutines
@@ -54,7 +40,7 @@ subroutine sub1(a,b)
 
    character(C_CHAR) :: a(4)
    integer(C_SIGNED_CHAR) :: b(4)
-   
+
    do i = 1, 4
       if ( a(i) /= achar(iachar('A')+i-1) ) error stop 20
       a(i) = achar(iachar('A')+i+3)
@@ -123,7 +109,7 @@ subroutine sub5(aa,bb)
 
    character(C_CHAR) :: aa(6,4)
    integer(C_SIGNED_CHAR) :: bb(6,4)
-   
+
    do i = 1, 4
       do j = 1, 6
          if ( aa(j,i) /= achar(iachar('A')+(i-1)*6+(j-1)) ) error stop 36
@@ -170,7 +156,7 @@ subroutine sub7(aa,bb)
 
    character(C_CHAR), intent(inout) :: aa(6,4)
    integer(C_SIGNED_CHAR), intent(inout) :: bb(6,4)
-   
+
    do i = 1, 4
       do j = 1, 6
          if ( aa(j,i) /= achar(iachar('A')+(i-1)*6+(j-1)) ) error stop 48
@@ -187,7 +173,7 @@ subroutine sub8(aa,bb)
 
    character(C_CHAR), intent(out) :: aa(6,4)
    integer(C_SIGNED_CHAR), intent(out) :: bb(6,4)
-   
+
    do i = 1, 4
       do j = 1, 6
          aa(j,i) = achar(iachar('A')+(i-1)*6+j)

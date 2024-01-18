@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefDeterm6   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefDeterm6
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 15, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Determination of Types 
+!*  SECONDARY FUNCTIONS TESTED : Determination of Types
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Determination of derived types - sequence types 
+!*  Determination of derived types - sequence types
 !*
 !*  (Syntax err&ice/340219)
 !*
@@ -34,31 +27,6 @@
 
 
   MODULE M
-
-  TYPE :: DT(K, L)
-    INTEGER, KIND :: K
-    INTEGER, LEN  :: L
-    SEQUENCE      
-    INTEGER(K)  :: I
-    REAL(K)     :: R
-    COMPLEX(K)  :: Cplx
-    LOGICAL(K)  :: LL
-    CHARACTER(L):: C
-  END TYPE
-
-  INTERFACE 
-    SUBROUTINE SubIFace(Arg)
-      IMPORT DT
-      TYPE(DT(8, *)) Arg
-    END SUBROUTINE
-  END INTERFACE
-
-  PROCEDURE(SubIFace), POINTER :: ProcPtr
-
-  END MODULE
-
-  PROGRAM dtParamTypeDefDeterm6 
-  USE M, ONLY : ProcPtr 
 
   TYPE :: DT(K, L)
     INTEGER, KIND :: K
@@ -71,7 +39,32 @@
     CHARACTER(L):: C
   END TYPE
 
-  INTERFACE 
+  INTERFACE
+    SUBROUTINE SubIFace(Arg)
+      IMPORT DT
+      TYPE(DT(8, *)) Arg
+    END SUBROUTINE
+  END INTERFACE
+
+  PROCEDURE(SubIFace), POINTER :: ProcPtr
+
+  END MODULE
+
+  PROGRAM dtParamTypeDefDeterm6
+  USE M, ONLY : ProcPtr
+
+  TYPE :: DT(K, L)
+    INTEGER, KIND :: K
+    INTEGER, LEN  :: L
+    SEQUENCE
+    INTEGER(K)  :: I
+    REAL(K)     :: R
+    COMPLEX(K)  :: Cplx
+    LOGICAL(K)  :: LL
+    CHARACTER(L):: C
+  END TYPE
+
+  INTERFACE
     SUBROUTINE Sub(Arg)
       IMPORT
       TYPE(DT(8, *)) Arg

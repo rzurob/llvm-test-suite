@@ -1,27 +1,18 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : diagC1241.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-11-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS Attribute   
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : - 
-!*                               - 
-!*  DRIVER STANZA              :
+!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS Attribute
+!*  SECONDARY FUNCTIONS TESTED : -
+!*                               -
 !*
-!*  DESCRIPTION                : - 
-!*                               - 
+!*  DESCRIPTION                : -
+!*                               -
 !*  C1241:
-!*        The actual argument corresponding to a dummy pointer with the CONTIGUOUS attribute 
-!*        shall be simply contiguous. 
+!*        The actual argument corresponding to a dummy pointer with the CONTIGUOUS attribute
+!*        shall be simply contiguous.
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -50,51 +41,51 @@ PROGRAM diagC1241
       INTEGER, POINTER, CONTIGUOUS :: C3(:,:,:)
 
       P3 => T3                      !<--- not simply contiguous: invalid
-      CALL sub(P3)                  
+      CALL sub(P3)
 
       P3 => T3(:,:,:)               !<--- not simply contiguous: invalid
-      CALL sub(P3)                  
+      CALL sub(P3)
 
       P3 => T3(:,:,:100)            !<--- not simply contiguous: invalid
-      CALL sub(P3)                  
+      CALL sub(P3)
 
       P3 => T3(:,:,1:100)           !<--- not simply contiguous: invalid
-      CALL sub(P3)                  
+      CALL sub(P3)
 
       P3 => T3(:,:,1:100:1)         !<--- not simply contiguous: invalid
-      CALL sub(P3)                  
+      CALL sub(P3)
 
       P3 => T3(:,1:100,:)           !<--- not simply contiguous: invalid
-      CALL sub(P3)                  
+      CALL sub(P3)
 
       P3 => T3(:,:100,:)            !<--- not simply contiguous: invalid
-      CALL sub(P3)                  
+      CALL sub(P3)
 
       P3 => T3(1:100,1:100,1:100)   !<--- not simply contiguous: invalid
-      CALL sub(P3)                  
+      CALL sub(P3)
 
       C3 => T3                      !<--- simply contiguous: valid
-      CALL sub(C3)                  
+      CALL sub(C3)
 
       C3 => T3(:,:,:)               !<--- simply contiguous: valid
-      CALL sub(C3)                  
+      CALL sub(C3)
 
       C3 => T3(:,:,:100)            !<--- simply contiguous: valid
-      CALL sub(C3)                  
+      CALL sub(C3)
 
       C3 => T3(:,:,1:100)           !<--- simply contiguous: valid
-      CALL sub(C3)                  
+      CALL sub(C3)
 
       C3 => T3(:,:,1:100:1)         !<--- simply contiguous: valid
-      CALL sub(C3)                  
+      CALL sub(C3)
 
       C3 => T3(:,1:100,:)           !<--- simply contiguous: valid
-      CALL sub(C3)                 
+      CALL sub(C3)
 
       C3 => T3(:,:100,:)            !<--- simply contiguous: valid
-      CALL sub(C3)                  
+      CALL sub(C3)
 
       C3 => T3(1:100,1:100,1:100)   !<--- simply contiguous: valid
-      CALL sub(C3)                  
+      CALL sub(C3)
 
 END PROGRAM diagC1241

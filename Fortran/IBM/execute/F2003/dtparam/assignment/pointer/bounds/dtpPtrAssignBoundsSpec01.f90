@@ -1,16 +1,11 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : dtpPtrAssignBoundsSpec01
-!*  TEST CASE TITLE            : POINTER Assignment (with Bounds Specification
 !*                               and Remapping)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 26, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Bounds Specification with a Polymorphic
 !*                               Base Derived Type data-pointer-object
@@ -18,7 +13,6 @@
 !*                               Base Derived Type with a dynamic type
 !*                               of the Base/Extended Derived Type
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -96,10 +90,10 @@ MODULE mBase
 
             IF (.NOT. ASSOCIATED( pointer ))            CALL zzrc( rc )
             IF (.NOT. ASSOCIATED(pointer, target))      CALL zzrc( (rc + 1_4) )
-        
+
             IF ( ANY(SHAPE( pointer ) /= SHAPE( target )) )&
                                                         CALL zzrc( (rc + 2_4) )
-        
+
             DO i = 1, 3
                 IF (LBOUND(pointer, i) /= bounds( i ))&
                                         CALL zzrc( (rc + 2_4 + INT(i, 4)) )
@@ -107,7 +101,7 @@ MODULE mBase
                     (bounds( i ) + SIZE(pointer, i) - 1))&
                                         CALL zzrc( (rc + 6_4 + INT(i, 4)) )
             END DO
-        
+
             l = 0
             DO k = LBOUND(pointer, 3), UBOUND(pointer, 3)
                 o = 1 - bounds( 3 )
@@ -120,7 +114,7 @@ MODULE mBase
                         IF (target( (i + m),(j + n),(k + o) ) /=&
                                                     pointer( i,j,k ))&
                                         CALL zzrc( (rc + 10_4 + INT(l, 4)) )
-        
+
                         l = l + 1
                     END DO
                 END DO

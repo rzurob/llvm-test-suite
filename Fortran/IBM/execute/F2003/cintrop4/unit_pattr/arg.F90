@@ -44,7 +44,6 @@
 
       !! proc & entry both bind(c), result & args not interop
       !
-      !
       subroutine s1 (j, k) bind(c)
         ARG_DCL1
         ARG_DCL2
@@ -53,7 +52,6 @@
 
       !! proc bind(c) but entry not, result & args not interop
       !
-      !
       subroutine s2 (j, k) bind(c)
         ARG_DCL1
         ARG_DCL2
@@ -61,7 +59,6 @@
       end subroutine
 
       !! entry bind(c) but proc not, result & args not interop
-      !
       !
       subroutine s3 (j, k)
         ARG_DCL1

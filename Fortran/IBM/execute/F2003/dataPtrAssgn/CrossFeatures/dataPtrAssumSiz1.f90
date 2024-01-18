@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrAssumSiz1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrAssumSiz1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 09, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  If the actual argument associated with the assumed-size dummy array is an array of any
-!*  type other than default character, the size of the dummy array is that of the actual array. 
-!*  
+!*  type other than default character, the size of the dummy array is that of the actual array.
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -53,7 +46,7 @@
   END MODULE
 
 
-  PROGRAM dataPtrAssumSiz1 
+  PROGRAM dataPtrAssumSiz1
   USE M
   IMPLICIT NONE
 
@@ -63,7 +56,7 @@
   L = 0
   U = 9
   N = 10
-  
+
   ALLOCATE( Ptr(10, 10), SOURCE=DT(-1))
 
   CALL S(Ptr, Ptr, N, L, U)
@@ -82,8 +75,8 @@
   CLASS(DT), POINTER :: Ptr(:, :)
   CLASS(DT), TARGET  :: Arr(*)
   INTEGER            :: N, L, U
- 
-  Ptr(L:U, L:U) => Arr(1:N*N)  
+
+  Ptr(L:U, L:U) => Arr(1:N*N)
 
   IF (.NOT. ASSOCIATED(Ptr))                       STOP 21
   IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    STOP 22

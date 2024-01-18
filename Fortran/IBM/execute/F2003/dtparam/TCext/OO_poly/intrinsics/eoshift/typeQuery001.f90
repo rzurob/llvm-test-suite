@@ -1,13 +1,9 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/intrinsics/eoshift/typeQuery001.f
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/eoshift
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/03/2005
 ! PRIMARY FUNCTIONS TESTED   : eoshift
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Use EXTENDS_TYPE_OF and SAME_TYPE_AS to
 !                              check the return value.
 !=======================================================================

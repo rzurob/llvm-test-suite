@@ -1,23 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : execute_command_line02d.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-12-15
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : EXECUTE_COMMAND_LINE intrinsic
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED :  
-!*                                
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*
 !*  EXECUTE_COMMAND_LINE(COMMAND [, WAIT, EXITSTAT, CMDSTAT, CMDMSG ])
 !*
@@ -34,16 +24,16 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 PROGRAM execute_command_line02d
       IMPLICIT NONE
-      INTEGER, PARAMETER :: N = 10 
+      INTEGER, PARAMETER :: N = 10
 
       CHARACTER(10)         :: cmd(5), msg(2)
-      LOGICAL,DIMENSION(N)  :: flag = .True. 
+      LOGICAL,DIMENSION(N)  :: flag = .True.
       INTEGER, ALLOCATABLE  :: Icmd(:)
       INTEGER, DIMENSION(2) :: Istat
 
       cmd = "echo test"
       msg = "pass!"
-      ALLOCATE( Icmd(N) ) 
+      ALLOCATE( Icmd(N) )
 
       CALL EXECUTE_COMMAND_LINE(COMMAND=cmd)
       CALL EXECUTE_COMMAND_LINE(COMMAND="echo test", CMDMSG=msg)

@@ -1,29 +1,19 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Recursive3.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : 2010-10-18
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED :   DTP 
+!*  SECONDARY FUNCTIONS TESTED :   DTP
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - Recursive function call with assumed 
-!*                                 shape array that has the TARGET and 
+!*  DESCRIPTION                : - Recursive function call with assumed
+!*                                 shape array that has the TARGET and
 !*                                 CONTIGUOUS attribute
 !*                               - Function result is a pointer with CONTIGUOUS
 !*                                 attribute
-!*                               - Actual argument is simply contiguous 
-!*                               - Associate construct 
+!*                               - Actual argument is simply contiguous
+!*                               - Associate construct
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -37,7 +27,7 @@
 MODULE Mod
       IMPLICIT NONE
 
-      TYPE :: Base(K1,N1)    
+      TYPE :: Base(K1,N1)
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
 
@@ -45,7 +35,7 @@ MODULE Mod
         CHARACTER(N1) :: C="ABC"
       END TYPE
 
-      TYPE, EXTENDS(Base) :: Child 
+      TYPE, EXTENDS(Base) :: Child
         INTEGER(K1)  :: ChildId = 2
       END TYPE
 

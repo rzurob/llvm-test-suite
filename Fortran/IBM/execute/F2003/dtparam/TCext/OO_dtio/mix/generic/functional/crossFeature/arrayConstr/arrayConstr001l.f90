@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : arrayConstr001l
 !*
-!*  PROGRAMMER                 : David Forster (derived from arrayConstr001 by Robert Ma)
 !*  DATE                       : 2007-07-23 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Array Constructor
@@ -119,19 +111,19 @@ program arrayConstr001l
 
    write ( 1, "(3(DT(3)))", iostat = stat, iomsg = msg )            (/ base(3)(), base(3)(), base(3)() /) ! tcx: (3) ! tcx: (3) ! tcx: (3)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteb' ) ) error stop 101_4
-   
+
    write ( 1, "(3(DT(3,4)))", iostat = stat, iomsg = msg )          (/ ( child(3,4)(),i=1,3 ) /) ! tcx: (3,4)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowritec' ) ) error stop 2_4
-   
+
    write ( 1, "(3(DT(3,4,3)))", iostat = stat, iomsg = msg )        (/ ( gen3(3,4)(),i=4,6 ) /) ! tcx: (3,4,3) ! tcx: (3,4)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteg' ) ) error stop 3_4
-   
+
    write ( 1, "(4(DT(3)))", iostat = stat, iomsg = msg )          (/ base(3)('abc'), base(3)('def'), ( base(3)('ghi'), i=1,2 )/) ! tcx: (3) ! tcx: (3) ! tcx: (3)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteb' ) ) error stop 4_4
-   
+
    write ( 1, "(3(DT(3,4)))", iostat = stat, iomsg = msg )        (/ ( child(3,4)('IBM',2005),i=1,3 ) /) ! tcx: (3,4)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowritec' ) ) error stop 5_4
-   
+
    write ( 1, "(3(DT(4,4,4)))", iostat = stat, iomsg = msg )            (/ ( gen3(3,4)('FTN',2003,'GRT'),i=4,6 ) /) ! tcx: (3,4,3) ! tcx: (3,4)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteg' ) ) error stop 6_4
 

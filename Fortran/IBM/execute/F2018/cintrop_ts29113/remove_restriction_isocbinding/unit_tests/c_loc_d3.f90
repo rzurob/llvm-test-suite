@@ -12,4 +12,4 @@ allocate(dt(4) :: d1(4))
 addr = c_loc(d1)
 
 end
-  
+

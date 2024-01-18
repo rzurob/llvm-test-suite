@@ -1,28 +1,17 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
-!*                                associate procedure pointer with c function 
+!*  DESCRIPTION                :
+!*                                associate procedure pointer with c function
 !*                                pointer pointing to function returning
 !*                                c long int. Also associate procedure pointer
-!*                                with c function pointer pointing to 
+!*                                with c function pointer pointing to
 !*                                subroutine. Check function result as
-!*                                well as argument result. 
+!*                                well as argument result.
 !*                                c function pointer is derived type
 !*                                component.
 !* ===================================================================
@@ -33,11 +22,11 @@ program procptrBindcProc03b
 
    type dt
        type(C_FUNPTR) :: cptr
-       type(C_FUNPTR) :: cfunptr 
+       type(C_FUNPTR) :: cfunptr
    end type
    interface
        subroutine csub(i) bind(c)
-          import C_PTR 
+          import C_PTR
           type(C_PTR) :: i
        end subroutine csub
    end interface
@@ -50,14 +39,14 @@ program procptrBindcProc03b
 
    type(dt) :: dtype
    integer(C_LONG), target :: i
-   type(C_PTR) :: j, res 
+   type(C_PTR) :: j, res
    integer(C_LONG), pointer :: p, pp
 
    procedure(csub),pointer :: fptr => null()
    procedure(cfunc), pointer :: funptr => null()
 
    i = max(23_C_LONG, 34_C_LONG)
-   j = C_LOC(i) 
+   j = C_LOC(i)
    if ( .not. C_ASSOCIATED(j) ) error stop 1_4
    if ( .not. C_ASSOCIATED(j, C_LOC(i)) ) error stop 2_4
 
@@ -81,7 +70,7 @@ program procptrBindcProc03b
    if ( .not. C_ASSOCIATED(j) ) error stop 15_4
    if ( C_ASSOCIATED(j, C_LOC(i)) ) error stop 16_4
 
-   if (p /= 34 ) error stop 17_4 
+   if (p /= 34 ) error stop 17_4
    call C_F_POINTER(j,p)
    if ( ASSOCIATED(p,i) ) error stop 18_4
    if ( p /= 23 ) error stop 19_4

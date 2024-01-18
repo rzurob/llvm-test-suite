@@ -2,20 +2,13 @@
 ! ftcx_dtp -ql /tstdev/F2003/round/test/roundDTIOChildRead01.f
 ! opt variations: -qnol
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 14/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ROUND specifier with DTIO 
+!*  PRIMARY FUNCTIONS TESTED   : ROUND specifier with DTIO
 !*
-!*  DESCRIPTION                : test differnt round= mode specified 
+!*  DESCRIPTION                : test differnt round= mode specified
 !*                               in parent's OPEN, and carried over to
 !*                               child during read.
 !* ===================================================================
@@ -27,9 +20,9 @@
 
         real(k1)         r4
         real(k2)         r8
-        real(k3)         r16  
+        real(k3)         r16
         contains
- 
+
         procedure::readFormat
         generic :: read(formatted) => readFormat
      end type
@@ -51,7 +44,7 @@
 
           if(iostat /= 0) return
 
-          if(transfer(dtv%r4, 0) .ne. 1067450788_4) error stop 1_4 
+          if(transfer(dtv%r4, 0) .ne. 1067450788_4) error stop 1_4
 
           if(transfer(dtv%r8, 0_8) .ne. 4608308547941528973_8) then
               error stop 2_4
@@ -59,7 +52,7 @@
 
           if(dtv%r16 .ne. z'3FF400355F73E1C2BC97B092CC929AFF') then
              error stop 3_4
-          endif 
+          endif
 
           inquire(unit, round=r_mode)
 
@@ -79,4 +72,4 @@
 
     close(3)
 
-  end program roundDTIOChildRead01 
+  end program roundDTIOChildRead01

@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -14,26 +9,15 @@
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try output item to be a non-polymorphic array function return (pointer, allocatable, and neither)
@@ -65,7 +49,7 @@ contains
       character(3) :: c
       getNewBase = base(c)
    end function
-   
+
    function getNewChild(c)
       type(child) :: getNewChild(3)
       character(6) :: c
@@ -75,7 +59,7 @@ contains
 end module
 
 program funcRetrn004a
-   use m1   
+   use m1
 
    interface write(unformatted)
       subroutine writeUnformatted (dtv, unit, iostat, iomsg)
@@ -84,9 +68,9 @@ program funcRetrn004a
          integer,  intent(in) :: unit
          integer,  intent(out) :: iostat
          character(*),  intent(inout) :: iomsg
-      end subroutine   
+      end subroutine
    end interface
-   
+
    interface
       function getNewBasePtr(c)
          import base
@@ -94,15 +78,15 @@ program funcRetrn004a
          character(3) :: c
       end function
    end interface
-   
-   interface   
+
+   interface
       function getNewChildAlloc(c)
          import child
          type(child), allocatable :: getNewChildAlloc(:)
          character(6) :: c
       end function
    end interface
-   
+
    ! declaration of variables
    integer :: stat
    character(200) :: msg
@@ -110,34 +94,34 @@ program funcRetrn004a
    character(18)  :: c2
    character(6)   :: c3
    character(12)  :: c4
-    
+
    open (unit = 1, file ='funcRetrn004a.data', form='unformatted', access='sequential')
-   
+
    ! unformatted I/O operations
-   
+
    write (1, iostat=stat, iomsg=msg )             getNewBase('abc')
    write (1, iostat=stat, iomsg=msg )             getNewChild('defghi')
    write (1, iostat=stat, iomsg=msg )             getNewBasePtr('jkl')
    write (1, iostat=stat, iomsg=msg )             getNewChildAlloc('mnopqr')
-   
+
    rewind 1
-   
+
    read (1, iostat=stat, iomsg=msg )              c1
    read (1, iostat=stat, iomsg=msg )              c2
    read (1, iostat=stat, iomsg=msg )              c3
    read (1, iostat=stat, iomsg=msg )              c4
-   
+
    ! check if the values are set correctly
 
    if ( c1 /= 'abcabc' )                   error stop 1_4
    if ( c2 /= 'defghidefghidefghi' )       error stop 2_4
    if ( c3 /= 'jkljkl' )                   error stop 3_4
    if ( c4 /= 'mnopqrpqrmno' )             error stop 4_4
-   
+
    ! close the file appropriately
-   
+
    close ( 1, status ='delete' )
-  
+
 end program
 
 subroutine writeUnformatted (dtv, unit, iostat, iomsg)
@@ -162,7 +146,7 @@ function getNewBasePtr(c)
    character(3) :: c
    allocate ( getNewBasePtr(2), source = (/ base(c), base(c) /) )
 end function
-   
+
 function getNewChildAlloc(c)
    use m1
    type(child), allocatable :: getNewChildAlloc(:)

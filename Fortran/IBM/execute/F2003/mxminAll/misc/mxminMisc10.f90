@@ -1,21 +1,10 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX*/MIN* as actual argument passed to
 !*                               subprogram with  dummy argument as
@@ -26,7 +15,7 @@
 !*                               MAX*/MIN* with DIM
 !* ===================================================================
 
-program mxminMisc10 
+program mxminMisc10
 
    interface
         subroutine sub1(arg)
@@ -54,7 +43,7 @@ program mxminMisc10
 
    call sub3(max(x, y))
 
-end program mxminMisc10 
+end program mxminMisc10
 
    subroutine sub1(arg)
        character*3 arg(3:, :, 10:, :)
@@ -69,7 +58,7 @@ end program mxminMisc10
        v = shape(minval(arg, dim=1))
        if(v(1) .ne. 5 .or. v(2) .ne. 6 .or. v(3) .ne. 7) then
              error stop 3_4
-       endif 
+       endif
    end subroutine
 
    subroutine sub2(arg)

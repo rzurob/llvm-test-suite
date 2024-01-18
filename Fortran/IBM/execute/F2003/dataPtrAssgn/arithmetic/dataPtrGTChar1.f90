@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrGTChar1.f 
+!*  TEST CASE NAME             : dataPtrGTChar1.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -28,7 +22,7 @@ module A
 end module
 
 program main
-    use A 
+    use A
 
     character(8), target :: tar(2) = (/ "IBM XLF ", 'ibm xlf ' /)
 
@@ -44,7 +38,7 @@ program main
 	type is (character(*))
     	    print *, ptr
 	class default
-	    stop 8 
+	    stop 8
     end select
 
     call sub
@@ -56,9 +50,9 @@ program main
     select type (ptr)
 	type is (character(*))
     	    print *, ptr
-	    print *, ptr >= (/'COMPILER', 'COMPILER' /) 
+	    print *, ptr >= (/'COMPILER', 'COMPILER' /)
 	class default
-	    stop 8 
+	    stop 8
     end select
 
     contains
@@ -72,9 +66,9 @@ program main
 
             select type (ptr)
 	        type is (character(*))
-    	            print *, ptr 
+    	            print *, ptr
 	        class default
-	            stop 8 
+	            stop 8
             end select
 
         end subroutine

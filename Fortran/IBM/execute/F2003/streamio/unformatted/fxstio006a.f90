@@ -2,28 +2,22 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:  rm -f fort.*
-! %COMPOPTS: 
-! %GROUP: fxstio006a.f 
+! %COMPOPTS:
+! %GROUP: fxstio006a.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio006a.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 07, 2003
 !*
 !*  Primary Function Tested    : Ununformatted stream access I/O
 !*
-!*  Description                : Test F90  pointers with  
+!*  Description                : Test F90  pointers with
 !*                               Unformatted Synchronous Stream I/O.
 !*
 !=======================================================================
@@ -34,13 +28,13 @@
 
      integer ios
 
-!* F90 Declaration 
+!* F90 Declaration
      logical cmp_x8_array,cmp_x16_array,cmp_x32_array
      logical cmp_r4_array,cmp_r8_array,cmp_r16_array
      logical cmp_i1_array,cmp_i2_array,cmp_i4_array,cmp_i8_array
      logical cmp_l1_array,cmp_l2_array,cmp_l4_array,cmp_l8_array
      logical cmp_b_array,cmp_ch_array
-   
+
       complex   , pointer :: p_xar1(:)
       real(16), pointer :: p_r16ar2(:,:)
       integer(4), pointer :: p_i4var
@@ -75,7 +69,7 @@
 !  print *, t_xar1
 !  print *, cmp_x8_array(t_xar1,(/(1.0,-1.0),(2.0,-2.0),(3.0,-3.0)/),3)
    if(cmp_x8_array(t_xar1,(/(1.0,-1.0),(2.0,-2.0),(3.0,-3.0)/),3) &
-     .neqv. .true.)  error stop 111 
+     .neqv. .true.)  error stop 111
 
   open(2, access='stream', form='unformatted', action='readwrite', &
      iostat=ios, err=100)
@@ -108,10 +102,10 @@
      iostat=ios, err=100)
   write(8, iostat=ios, err=200) p_b4var
   rewind(8, iostat=ios, err=500)
-  if(t_b4var .neqv. .true.) error stop 6 
+  if(t_b4var .neqv. .true.) error stop 6
 
 !* set the targets to some other values
- 
+
    t_xar1 = (/(0.0,-0.0),(0.0,-0.0),(0.0,-0.0)/)
    t_r16ar2 = reshape((/0.0q0,0.0q0,0.0q0,0.0q0,0.0q0,0.0q0/),(/3,2/))
    t_i4var = 0
@@ -119,7 +113,7 @@
    t_ch4ar2 = reshape((/'000','000','000','000','000','000'/),(/2,3/))
    t_b4var = .false.
 
-!* Read values back 
+!* Read values back
 
    read(1, iostat=ios, err=400) p_xar1
    if(cmp_x8_array(t_xar1,(/(1.0,-1.0),(2.0,-2.0),(3.0,-3.0)/),3) &
@@ -160,5 +154,5 @@ stop
     error stop 400
 500 print *, "rewind error: iostat = ", ios
     error stop 500
- 
+
 end

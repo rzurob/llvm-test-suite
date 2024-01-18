@@ -3,7 +3,7 @@
 ! %MAIN: YES
 ! %PRECMD:
 ! %COMPOPTS: -qfixed
-! %GROUP: mxmnch25.f 
+! %GROUP: mxmnch25.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
@@ -12,26 +12,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mxmnch25
-!*
-!*  PROGRAMMER                 : John Zang
 !*  DATE                       : Oct. 20, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support character argument for MAX/
 !*                               MIN/MAXVAL/MINVAL/MAXLOC/MINLOC
 !*  SECONDARY FUNCTIONS TESTED : Functional test
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qfixed
 !*
 !*  DESCRIPTION                : MAX/MIN - Maximum or minimum value
 !*                               according to their collating sequence
-!*                               of ASCII characters. 
+!*                               of ASCII characters.
 !*                               MAXVAL/MINVAL - Maximum or minimum value
 !*                               of elements in a character array.
 !*                               MAXLOC/MINLOC - The location of maximum
@@ -40,12 +33,12 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
-      type dt 
+      type dt
         character(10) aa(2,3,4)
       end type
       type(dt) adt
       character(10), allocatable :: xx(:,:)
-      integer, allocatable :: yy(:) 
+      integer, allocatable :: yy(:)
 
       adt%aa = '!'
       adt%aa(2,1,3) = 'ibm'
@@ -54,7 +47,7 @@
       adt%aa(1,3,1) = 'bel'
       adt%aa(2,2,1) = 'jan'
       adt%aa(2,3,4) = 'gb'
-      
+
 
       if (maxval(adt%aa(:,:,2:3)) /= 'ibm') error stop 1
       if (maxval(adt%aa(:,1:2,:)) /= 'usa') error stop 2

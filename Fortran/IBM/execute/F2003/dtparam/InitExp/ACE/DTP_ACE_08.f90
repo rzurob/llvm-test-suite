@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_ACE_08.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification 
-!*  SECONDARY FUNCTIONS TESTED : ACE unfolding at runtime 
+!*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification
+!*  SECONDARY FUNCTIONS TESTED : ACE unfolding at runtime
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -22,7 +14,7 @@
 !*
 !*  DESCRIPTION                :
 !*
-!* Defect : 364760   
+!* Defect : 364760
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
@@ -47,7 +39,7 @@ MODULE Mod
         INTEGER, KIND :: k3 = 4
         INTEGER, LEN  :: l3 = 2
 
-        INTEGER(k3) :: A21(l3) = -4, A22(l3+2) = -5 
+        INTEGER(k3) :: A21(l3) = -4, A22(l3+2) = -5
         TYPE(DT1(k3,l3)) :: dcmp(l3)
       END TYPE
 
@@ -63,7 +55,7 @@ PROGRAM DTP_ACE_08
 
       n1 = [DT2(K,M) :: DT2(K,M) (11, 22, [DT1(K,M) :: DT1(K,M)([ &
         (I, I = 1, M-1)], Base(K,M)()), DT1(K,M)(3, Base(K,M)(1, 2)), DT1(K,M)(bcmp=Base(K,M)() )] )]
-           
+
       IF ( SIZE(n1) .NE. 1 ) STOP 10
       DO I = 1, SIZE(n1)
            IF ( n1(I)%k3 .NE. K ) STOP 11

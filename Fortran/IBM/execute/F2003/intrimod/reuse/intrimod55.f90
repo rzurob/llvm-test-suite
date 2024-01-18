@@ -12,21 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : INTRINSIC/NON_INTRINSIC module nature
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : January, 2004
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : -qnostrictieeemod
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -57,23 +49,23 @@
         subroutine xxxx()
           use, intrinsic :: ieee_exceptions
           logical :: val(5)
-          
+
           call ieee_get_flag(ieee_all,val)
           print *, val
           call ieee_set_flag(ieee_overflow, .true.)
-          
+
           entry yyyy()
-          
+
           call ieee_get_flag(ieee_all,val)
           print *, val
           call ieee_set_flag(ieee_underflow, .true.)
-          
+
           entry vvvv()
-          
+
           call ieee_get_flag(ieee_all,val)
           print *, val
           call ieee_set_flag(ieee_divide_by_zero, .true.)
-          
+
           call ieee_set_flag(ieee_inexact, .false.)
           call ieee_get_flag(ieee_all,val)
           print *, val
@@ -108,15 +100,15 @@
         logical :: val(5)
         val = get_flags()
         print *, val
-        
+
         call clr_fpscr_flags(fp_overflow)
         call set_fpscr_flags(fp_inexact)
-        
+
         val = get_flags()
         print *, val
-        
+
         call xxxx
-        
+
         val = get_flags()
         print *, val
       end subroutine zzzz
@@ -130,13 +122,13 @@
         logical :: val(5)
         call ieee_get_flag(ieee_all, val)
         print *, val
-        
+
         call ieee_set_flag(ieee_overflow, .false.)
         call ieee_set_flag(ieee_inexact, .true.)
-        
+
         call ieee_get_flag(ieee_all, val)
         print *, val
-        
+
         call yyyy
 
         call ieee_get_flag(ieee_all, val)

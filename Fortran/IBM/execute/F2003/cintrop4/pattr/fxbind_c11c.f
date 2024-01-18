@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,24 +13,16 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c11c.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute 
+!* DESCRIPTION                  : Test: BINC(C) attribute
 !*                                with different intrinsic data type,
 !*                                with compatible attribute - internt(in)
 !*                                intent(out), target,
@@ -54,7 +41,7 @@
 
 
 
-   
+
        subroutine extsub_int(i1, i2, i4, i8, i81) BIND(C)
            integer*1, intent(in), target  :: i1
            integer*2, intent(in), target  :: i2
@@ -68,7 +55,7 @@
            real*4, intent(in), target   ::  r4
            real*8, intent(in), target   ::  r8
            real*8, intent(out) :: r161
-           r161 = r4 + r8 
+           r161 = r4 + r8
        end subroutine extsub_real
 
        subroutine extsub_log(l1, l11) BIND(C)

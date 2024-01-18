@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  AttrOptionalArrPtrSec.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  AttrOptionalArrPtrSec.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : AttrOptionalArrPtrSec 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : AttrOptionalArrPtrSec
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 22, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*   The selector is an array pointer (section) with the optional attribute
-!*   
-!*    (ICE-300258) 
+!*
+!*    (ICE-300258)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -49,7 +43,7 @@
 
     TYPE  :: Zero
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -96,12 +90,12 @@
   END MODULE
 
 
-  PROGRAM AttrTargetArrAllocSec 
+  PROGRAM AttrTargetArrAllocSec
   USE M
   CLASS (Zero), POINTER :: Ptr(:)
 
   CALL Sub( Ptr, 3, 5)
-  
+
   IF ( .NOT. ASSOCIATED(Ptr) ) STOP 19
   SELECT TYPE ( Ptr => Ptr(:))
   TYPE IS (Child)
@@ -129,10 +123,10 @@
   CLASS IS (Child)
   ASSOCIATE ( As => Arg )
 
-    PtrZ => As%Base%Zero 
-    PtrB => As%Base 
-    PtrC => As 
- 
+    PtrZ => As%Base%Zero
+    PtrB => As%Base
+    PtrC => As
+
     IF ( .NOT. ASSOCIATED(PtrZ) ) STOP 20
     IF ( .NOT. ASSOCIATED(PtrB) ) STOP 21
     IF ( .NOT. ASSOCIATED(PtrC) ) STOP 22
@@ -148,7 +142,7 @@
     IF( ANY(SHAPE(PtrZ)  .NE. (/J-I+1/) ) ) STOP 50
     IF( ANY(SHAPE(PtrB)  .NE. (/J-I+1/) ) ) STOP 51
     IF( ANY(SHAPE(PtrC)  .NE. (/J-I+1/) ) ) STOP 52
- 
+
     IF ( ANY(PtrB%BaseID      .NE. -1 )) STOP 60
     IF ( ANY(PtrB%GetId()     .NE. -1 )) STOP 61
 
@@ -158,10 +152,10 @@
     IF ( ANY(PtrC%GetId()       .NE. -2 )) STOP 65
 
     ASSOCIATE ( As => As(::1)%Base )
-     
-      PtrZ => As%Zero 
-      PtrB => As 
- 
+
+      PtrZ => As%Zero
+      PtrB => As
+
       IF ( .NOT. ASSOCIATED(PtrZ) ) STOP 70
       IF ( .NOT. ASSOCIATED(PtrB) ) STOP 71
 
@@ -170,10 +164,10 @@
 
       IF( ANY(UBOUND(PtrZ) .NE. (/3/) ) ) STOP 90
       IF( ANY(UBOUND(PtrB) .NE. (/3/) ) ) STOP 91
- 
+
       IF( ANY(SHAPE(PtrZ)  .NE. (/3/) ) ) STOP 93
       IF( ANY(SHAPE(PtrB)  .NE. (/3/) ) ) STOP 94
- 
+
       IF ( ANY(PtrB%BaseID      .NE. -1 )) STOP 95
       IF ( ANY(PtrB%GetId()     .NE. -1 )) STOP 96
 

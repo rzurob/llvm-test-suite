@@ -1,33 +1,22 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX*/MIN* as actual argument passed to
 !*                               subprogram with  dummy argument as
 !*                               assumed shape array
 !*
-!*                               different length dummy argument as argument 
+!*                               different length dummy argument as argument
 !*                               to MAX/MIN
 !*
-!*                               MAX*/MIN* with DIM and MASK 
+!*                               MAX*/MIN* with DIM and MASK
 !* ===================================================================
 
-program mxminMisc11 
+program mxminMisc11
 
    interface
         subroutine sub1(arg)
@@ -55,7 +44,7 @@ program mxminMisc11
 
    call sub3(max(x, y))
 
-end program mxminMisc11 
+end program mxminMisc11
 
    subroutine sub1(arg)
        character*3 arg(3:, :, 10:, :)
@@ -70,7 +59,7 @@ end program mxminMisc11
        v = shape(minval(arg, dim=1, mask=.true.))
        if(v(1) .ne. 5 .or. v(2) .ne. 6 .or. v(3) .ne. 7) then
              error stop 3_4
-       endif 
+       endif
    end subroutine
 
    subroutine sub2(arg)
@@ -91,7 +80,7 @@ end program mxminMisc11
             error stop 6_4
       endif
       varg1 = "ggg"
-      varg2 = "zzzzz"           
+      varg2 = "zzzzz"
       if(len(max(varg1, varg2, arg)) .ne. 5) then
              error stop 7_4
       endif
@@ -99,6 +88,4 @@ end program mxminMisc11
             error stop 8_4
       endif
    end subroutine
-
-
 

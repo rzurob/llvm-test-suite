@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatBasic04c.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatBasic04c.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 7 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  1. test READ statement 
+!*  1. test READ statement
 !*  2  derived type is polymorphic which has logical ultimate component
 !*  3. use lw,gw.d,gw.dEe edit descriptor
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -28,7 +20,7 @@ module m
    type base(k1)
       integer,kind :: k1
       logical(k1)  :: log1(k1)
-      logical(k1)  :: log2(k1-1:k1+1) 
+      logical(k1)  :: log2(k1-1:k1+1)
    end type
    type,extends(base) :: child(l1)
       integer,len  :: l1
@@ -43,9 +35,9 @@ module m
      select type(arg)
         type is(child(2,*))
           read(10,100) arg
-100 format(2l5/3g5.2/2g5.2E1)        
+100 format(2l5/3g5.2/2g5.2E1)
         class default
-          error stop 100_4   
+          error stop 100_4
      end select
    end subroutine
 
@@ -65,12 +57,12 @@ program formatBasic04c
   pbase(0:)=>tbase(3:1:-1)
 
   open(10 ,file="formatBasic04c.in",iostat=ios)
-  
+
   if(ios /= 0) then
      print *,"fail to open the file"
      print *,"iostat=",ios
      print *,"iomsg=",msg
-     error stop 103_4 
+     error stop 103_4
   else
       call readdata(tbase)
 

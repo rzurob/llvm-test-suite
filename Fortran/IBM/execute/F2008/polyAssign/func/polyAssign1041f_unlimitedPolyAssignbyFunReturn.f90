@@ -1,24 +1,17 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/func/polyAssign1041f_unlimitedPolyAssignbyFunReturn.f 
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 05 August 2015
-!* ORIGIN                      : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !* SECONDARY FUNTIONS TESTED    : LHS of intrinsic assignment with function return
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
-!* Test LHS of intrinsic assignment with function return.  
+!* Test LHS of intrinsic assignment with function return.
 !* LHS variable is unlimited polymorphic entity.
 !* RHS expression is a function returning an allocatable object.
 !* Change the type of argument inside the function.
@@ -66,8 +59,8 @@ program main
     print *, '**************','end of loop for i=', i, '*************'
     print *, ''
   end do
- 
-  contains 
+
+  contains
   function retPoly(p)
     class(*), pointer :: p
     class(t), allocatable :: retPoly
@@ -81,5 +74,5 @@ program main
         retPoly = t(null)
         print *, "not related type in retPoly"
     end select
-  end function    
+  end function
 end

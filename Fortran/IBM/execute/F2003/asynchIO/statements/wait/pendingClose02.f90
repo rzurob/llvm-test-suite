@@ -1,19 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingClose02 - CLOSE() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 24, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Asynchronous Data Transfers with
 !*                               an Error
 !*  SECONDARY FUNCTIONS TESTED : CLOSE() Performs a Wait Operation
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : CLOSE(), WAIT(), ID= Specifier
@@ -39,7 +32,6 @@
 !*                   or  ERR = label
 !*                   or  STATUS = scalar-default-char-expr
 !*
-!*
 !*  9.6.1 WAIT statement
 !*
 !*  A WAIT statement performs a wait operation for specified pending
@@ -56,7 +48,6 @@
 !*                   or  ERR = label
 !*                   or  ID = scalar-int-expr
 !*  ...
-!*
 !*
 !*  9.6.2 Wait operation
 !*

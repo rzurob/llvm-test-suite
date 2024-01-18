@@ -1,28 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : valueAttrDiffCharArg004.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 04/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : The following was passed as actual args
-!*				to subroutines which contain the value 
+!*				to subroutines which contain the value
 !*				attribute with its respective dummy args:
 !*				   literals, array, elements of an array,
 !*				   and substrings. All of which are 256 byte
 !*				   character strings
-!*
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -38,13 +26,13 @@ program valueAttrDiffCharArg004
 
     character (len=256) :: ch(50)
     character (len=320) :: char1
-      
+
     ch = &
     'aabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccdd'
-    
+
     char1 = &
     'lfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxt'
-    
+
     call testV(ch, ch(50), ch(16), &
     'qwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyui', &
     char1(64:319))
@@ -75,7 +63,7 @@ program valueAttrDiffCharArg004
     if (ch(27) /= &
     'xyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxy') &
     error stop 5_4
-    
+
     if (char1 /= &
     'lfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxt') &
     error stop 6_4
@@ -86,19 +74,19 @@ program valueAttrDiffCharArg004
     call test2(ch, ch(1), ch(38), &
     'qwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyui', &
     char1(64:319))
-    
+
     if (ch(1) /= &
     'xyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxx') &
     error stop 7_4
-    
+
     if (ch(38) /= &
     'zxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyz') &
     error stop 8_4
-    
+
     if (ch(50) /= &
     'yzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccdd') &
     error stop 9_4
-    
+
     if (char1 /= &
     'lfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxt') &
     error stop 10_4
@@ -123,14 +111,14 @@ program valueAttrDiffCharArg004
 
 	tmp_e1 = &
 	'aaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbb'
-	
+
 	if (tmp(1) /= &
 	'aabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccdd') &
 	error stop 71_4
 
         tmp = &
 	'xyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxy'
-	
+
 	if (tmp_e1 /= &
 	'aaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbb') &
 	error stop 61_4
@@ -141,11 +129,11 @@ program valueAttrDiffCharArg004
 
 	tmp_e2 = &
 	'yyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzz'
-	
+
 	if (tmp(27) /= &
 	'xyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxy') &
 	error stop 41_4
-	
+
 	subStr = &
 	'tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt'
 
@@ -166,14 +154,14 @@ program valueAttrDiffCharArg004
 
 	tmp_e1 = &
 	'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh'
-	
+
 	if (tmp(1) /= &
 	'aabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccd') &
 	error stop 72_4
 
         tmp = &
 	'xyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxy'
-	
+
 	if (tmp_e1 /= &
 	'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh') &
 	error stop 62_4
@@ -184,7 +172,7 @@ program valueAttrDiffCharArg004
 
 	tmp_e2 = &
 	'yyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzz'
-	
+
 	if (tmp(38) /= &
 	'xyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzx') &
 	error stop 42_4
@@ -209,14 +197,14 @@ program valueAttrDiffCharArg004
 
 	tmp_e1 = &
 	'aaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbb'
-	
+
 	if (tmp(50) /= &
 	'aabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccdd') &
 	error stop 74_4
 
 	tmp = &
 	'xyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxy'
-	
+
 	if (tmp_e1 /= &
 	'aaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbbaaaabbbb') &
 	error stop 64_4
@@ -227,7 +215,7 @@ program valueAttrDiffCharArg004
 
 	tmp_e2 = &
 	'yyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzzyyyyzzzz'
-	
+
 	if (tmp(16) /= &
 	'xyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxy') &
 	error stop 43_4

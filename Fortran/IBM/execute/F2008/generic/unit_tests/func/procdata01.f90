@@ -48,5 +48,5 @@ end
 
 integer function bar(x, y, z)
   real x, y, z
-  bar = int(x + y + z) 
+  bar = int(x + y + z)
 end function

@@ -1,18 +1,8 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Characters with deferred length type parameter
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : scalar character with deferred length
 !*                               with unformatted DT I/O (namelist)
@@ -105,7 +95,7 @@ program deferLenAllocate014
    end select
 
    if ( ( stat /= 0 ) .or. ( msg /= '' ) ) error stop 3_4
-   
+
    close ( 1, status = 'delete' )
 
 end program

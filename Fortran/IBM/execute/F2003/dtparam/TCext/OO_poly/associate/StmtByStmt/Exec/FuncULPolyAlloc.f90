@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncULPolyAlloc.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncULPolyAlloc.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : FuncULPolyAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 14, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,9 +32,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a function call returning an unlimited poly allocatable 
-!*   
-!*    (299787) 
+!*    The selector is a function call returning an unlimited poly allocatable
+!*
+!*    (299787)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -48,17 +42,17 @@
   MODULE M
     TYPE :: Base(K1)    ! (4)
       INTEGER, KIND :: K1
-      INTEGER(K1)   :: BaseID=1 
+      INTEGER(K1)   :: BaseID=1
     END TYPE
 
     TYPE, EXTENDS(Base) :: Child    ! (4)
-      TYPE(Base(K1)) :: BS=Base(K1)(0) 
+      TYPE(Base(K1)) :: BS=Base(K1)(0)
       CLASS(Base(K1)), POINTER :: BSPtr=>NULL()
-      INTEGER(K1) :: ChildID=2 
+      INTEGER(K1) :: ChildID=2
     END TYPE
 
   CONTAINS
-   
+
     FUNCTION ReturnObj(Arg)
     TYPE (Child(4)) :: Arg
     CLASS (Base(4)), ALLOCATABLE  :: ReturnObj
@@ -71,7 +65,7 @@
   USE M
   IMPLICIT NONE
   INTEGER :: i
-  TYPE(Child(4)), TARGET :: V=Child(4)(BaseID=-1, ChildID=-2) 
+  TYPE(Child(4)), TARGET :: V=Child(4)(BaseID=-1, ChildID=-2)
 
   ASSOCIATE ( As => TRANSFER(ReturnObj(V), ReturnObj(V)) )
 
@@ -87,7 +81,7 @@
       END ASSOCIATE
 
     CLASS DEFAULT
-      STOP 88 
+      STOP 88
     END SELECT
 
   END ASSOCIATE

@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 06/07/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Procedure Pointer with BIND(C) feature
 !*                                        multiple levels of calls on FORTRAN and C side with procptr and func ptr
@@ -65,7 +54,7 @@ subroutine foo2(i) bind(C)
 
    print *,"inside foo2:",i
    pp2 => foo3
-   
+
    i = i + 1
 
    call pp2(i)

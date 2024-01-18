@@ -11,7 +11,7 @@ module nnn
   interface
     module type(base) function foo(arg1, arg2, arg3)
       integer :: yyy = 5
-      integer, intent(in) :: arg1 
+      integer, intent(in) :: arg1
       integer, intent(in) :: arg2
       integer arg3
       optional :: arg3
@@ -50,5 +50,4 @@ program mod_subprog
   b1 = foo(j, i)
   print*, b1
 end
- 
 

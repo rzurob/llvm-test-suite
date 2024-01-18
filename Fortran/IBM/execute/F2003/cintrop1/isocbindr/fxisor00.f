@@ -1,46 +1,32 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
 ! %PRECMD: ${TR_SRC}/scrisor00.presh fxisor00 cxisor00
 ! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
-!*  SECONDARY FUNCTIONS TESTED : see below 
+!*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_BOOL
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*
 !*	- testing C_BOOL
 !*	- using external FORTRAN functions
@@ -53,7 +39,7 @@ logical(C_BOOL) function fnt1(a)
    use ISO_C_BINDING
 
    logical(C_BOOL) :: a
-   
+
    if ( a .neqv. .true. ) error stop 20
 
    a = .false.
@@ -65,7 +51,7 @@ logical(C_BOOL) function fnt2(a)
    use ISO_C_BINDING
 
    logical(C_BOOL), value :: a
-   
+
    if ( a .neqv. .true. ) error stop 22
 
    a = .false.
@@ -77,7 +63,7 @@ logical(C_BOOL) function fnt3(a)
    use ISO_C_BINDING
 
    logical(C_BOOL), intent(in) :: a
-   
+
    if ( a .neqv. .true. ) error stop 24
 
    fnt3 = .false.
@@ -87,7 +73,7 @@ logical(C_BOOL) function fnt4(a)
    use ISO_C_BINDING
 
    logical(C_BOOL), intent(in), value :: a
-   
+
    if ( a .neqv. .true. ) error stop 26
 
    fnt4 = .false.
@@ -97,7 +83,7 @@ logical(C_BOOL) function fnt5(a)
    use ISO_C_BINDING
 
    logical(C_BOOL), intent(in) :: a
-   
+
    if ( a .neqv. .true. ) error stop 28
 
    fnt5 = .false.
@@ -107,7 +93,7 @@ logical(C_BOOL) function fnt6(a)
    use ISO_C_BINDING
 
    logical(C_BOOL), intent(in), value :: a
-   
+
    if ( a .neqv. .true. ) error stop 30
 
    fnt6 = .false.

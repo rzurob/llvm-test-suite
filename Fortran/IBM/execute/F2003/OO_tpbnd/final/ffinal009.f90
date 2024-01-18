@@ -1,21 +1,8 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 02/09/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : final sub (finalization of the pointer returned
 !                               from a function call)
@@ -62,7 +49,7 @@ module m
 
         print *, 'finalizeBase'
     end subroutine
-    
+
     subroutine finalizeBaseArray1 (b)
         type(base), intent(in) :: b(:)
 

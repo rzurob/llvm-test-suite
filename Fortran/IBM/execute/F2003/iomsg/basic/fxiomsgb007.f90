@@ -5,43 +5,34 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgb007.f
 ! %VERIFY: fort.18:fxiomsgb007.vf
-! %STDIN: 
-! %STDOUT: 
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
 
-
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : Formatted/Unformatted sequential I/O:
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : WRITE
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 2
 !*
 !*  DESCRIPTION                : Unformatted write attempt on formatted file or
 !*                               Formatted write attempt on unformatted file are
 !*                               all not allowed.
 !*
-!*
 !*  TEST CONDITIONS            : 1) Unformatted write attempt on formatted file
 !*                             : 2) Formatted write attempt on unformatted file
-!*                               
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*  MM/DD/YY:  Init:  Comments:
@@ -49,11 +40,9 @@
 !*
 !*********************************************************************
 
-
       program fxiomsgb007
 
       implicit none
-      
 
       integer*4  case_id, ios
 
@@ -74,14 +63,13 @@
       ivar = 125
 
       write( 10, '(I4)', err = 100, iostat = ios ) ivar
-    
+
       write( 10, err = 100, iostat = ios, iomsg = errmsg ) ivar
 
       goto 300
 
 100   write(18,*) errmsg
 
-    
 !
 !  Test case 2...
 !
@@ -94,7 +82,6 @@
       goto 300
 
 200   write(18,*) errmsg
-
 
 ! Clean up....
 

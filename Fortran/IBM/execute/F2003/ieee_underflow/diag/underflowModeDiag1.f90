@@ -1,41 +1,30 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : underflowModeDiag1.f
-!*
-!*  PROGRAMMER                 : Nancy Wang
 !*  DATE                       : Nov. 15 2007
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ieee_set_underfolow_mode(gradual) 
+!*  PRIMARY FUNCTIONS TESTED   : ieee_set_underfolow_mode(gradual)
 !*                             : ieee_get_underflow_mode(gradual)
 !*  SECONDARY FUNCTIONS TESTED :
 !*  REFERENCE                  : Feature Number 289080
 !*
+!*  DESCRIPTION                :
+!*  test if compiler issues a suitable error message when passing an invalid argument to ieee_set_underfolow_mode(gradual) and ieee_get_underflow_mode(gradual) intrinsic subroutines
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                :    
-!*  test if compiler issues a suitable error message when passing an invalid argument to ieee_set_underfolow_mode(gradual) and ieee_get_underflow_mode(gradual) intrinsic subroutines 
-!* 
-!23456789012345678901234567890123456789012345678901234567890123456789012   
+!23456789012345678901234567890123456789012345678901234567890123456789012
       module m
         type Info
             character(20) :: Name
             character(40) :: Address
             character(20) :: PhoneNum
             character(40) :: Email
-        end type Info         
+        end type Info
       end module m
       program underflowModeDiag1
         use,intrinsic :: ieee_arithmetic
-        use m 
+        use m
         implicit none
-        
+
         logical   :: l
         logical(1) :: l_1
         logical(2) :: l_2
@@ -49,9 +38,9 @@
         complex   :: x
         double complex :: dx
         byte :: b = 'A'
-        type(Info)        :: myInfo 
+        type(Info)        :: myInfo
 
-!       pass 2 more arguements to SET and GET subroutines 
+!       pass 2 more arguements to SET and GET subroutines
         if(ieee_support_underflow_control(r)) then
            call ieee_set_underflow_mode(.true.,.false.)
            call ieee_set_underflow_mode(l,l_const,l_4,.true.)

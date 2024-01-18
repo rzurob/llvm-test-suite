@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10.1.3 Namelist group object list items
 !*                                        try logical with namelist formatting
@@ -74,20 +58,20 @@ program logical001
 
    class(base), allocatable  :: b1
    class(base), pointer      :: b2
- 
+
    namelist /n1/ b1, b2
-   
+
    allocate (b1, b2)
 
    open (1, file='logical001.1', form='formatted', access='sequential' )
 
    read (1, n1, iostat = stat, iomsg = msg)
-   
+
    print *,b1%true
    print *,b1%false
    print *,b2%true
    print *,b2%false
-   
+
 end program
 
 subroutine readformatted (dtv, unit, iotype, v_list, iostat, iomsg)

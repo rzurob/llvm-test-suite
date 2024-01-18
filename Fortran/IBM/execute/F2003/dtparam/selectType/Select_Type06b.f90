@@ -1,25 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type06b - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 12, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : generic type-bound procedures
 !*                               Use association
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -43,44 +37,44 @@
       IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
         REAL(k1), ALLOCATABLE ::  my_arr(:)
-      END TYPE Base 
-      
+      END TYPE Base
+
       END MODULE Mod1
 !*####################################################################
       MODULE Mod2
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       INTEGER, PARAMETER :: single = KIND(0.0), double = KIND(0d0), len1 = 10
 
-      TYPE, EXTENDS(Base) :: List 
+      TYPE, EXTENDS(Base) :: List
         TYPE(List(k1,l1)), POINTER :: Next => NULL()
         CONTAINS
         PROCEDURE, PRIVATE :: Dfoo
-        PROCEDURE, PRIVATE :: Sfoo 
+        PROCEDURE, PRIVATE :: Sfoo
         GENERIC :: p => Sfoo , Dfoo
-      END TYPE List  
+      END TYPE List
 
       CONTAINS
 
-      TYPE(List(single,len1)) FUNCTION Sfoo (Obj) result (answer) 
-        CLASS(List(single,*)), TARGET  :: OBJ 
+      TYPE(List(single,len1)) FUNCTION Sfoo (Obj) result (answer)
+        CLASS(List(single,*)), TARGET  :: OBJ
         POINTER :: answer
-      
+
            answer => OBJ%NEXT
 
       END FUNCTION Sfoo
 
-      TYPE(List(double,len1)) FUNCTION Dfoo (Obj) result (answer) 
-        CLASS(List(double,*)), TARGET  :: OBJ 
+      TYPE(List(double,len1)) FUNCTION Dfoo (Obj) result (answer)
+        CLASS(List(double,*)), TARGET  :: OBJ
         POINTER :: answer
-      
+
            answer => OBJ%NEXT
- 
+
       END FUNCTION Dfoo
 
       END MODULE Mod2
@@ -135,16 +129,16 @@
       CLASS(*), POINTER :: U
       POINTER :: SInit, DInit
 
-      ALLOCATE(List(knd1,len1):: SInit)    
+      ALLOCATE(List(knd1,len1):: SInit)
       IF ( .NOT. ASSOCIATED(SInit)) STOP 10
-      ALLOCATE(List(knd2,len1):: DInit)    
+      ALLOCATE(List(knd2,len1):: DInit)
       IF ( .NOT. ASSOCIATED(DInit)) STOP 11
 
-      CALL BuildList(SInit) 
+      CALL BuildList(SInit)
       U => SInit
 
       CALL SELECT_TYPE(U)
-      CALL BuildList(DInit) 
+      CALL BuildList(DInit)
       U => DInit
 
       CALL SELECT_TYPE(U)
@@ -161,7 +155,7 @@
           STEMP => Obj
 
           DO I = 1, 10
-           IF ( .NOT. ASSOCIATED(STEMP%NEXT) ) STOP 20 
+           IF ( .NOT. ASSOCIATED(STEMP%NEXT) ) STOP 20
            STEMP => STEMP%p()
            IF ( SIZE(STEMP%my_arr) .NE. I ) STOP 30
           END DO
@@ -171,7 +165,7 @@
           DTEMP => Obj
 
           DO I = 1, 10
-           IF ( .NOT. ASSOCIATED(DTEMP%NEXT) ) STOP 22 
+           IF ( .NOT. ASSOCIATED(DTEMP%NEXT) ) STOP 22
            DTEMP => DTEMP%p()
            IF ( SIZE(DTEMP%my_arr) .NE. I ) STOP 31
           END DO

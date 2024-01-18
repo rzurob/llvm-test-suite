@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361743_2.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361743_2.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 5 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 5 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 361743
@@ -35,11 +27,11 @@ module m
   contains
 
      subroutine sub(arg)
-         class(A(2)),intent(in) :: arg(:) 
+         class(A(2)),intent(in) :: arg(:)
 
          if(any(arg(1)%i1 /= -99))         stop 10
          if(any(arg(2)%i1 /= -99))         stop 11
- 
+
      end subroutine
 end module
 
@@ -50,7 +42,7 @@ program d361743
 
   allocate(b(2))
 
-  call sub(b(1)%a1comp) 
+  call sub(b(1)%a1comp)
 
   if(any(b(1)%g1 .neqv. .false.))          stop 12
   if(any(b(2)%g1 .neqv. .false.))          stop 13

@@ -1,20 +1,17 @@
 ! ************************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/intrimod43a.presh 
-! %COMPOPTS: 
+! %PRECMD: $TR_SRC/intrimod43a.presh
+! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod43a.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004

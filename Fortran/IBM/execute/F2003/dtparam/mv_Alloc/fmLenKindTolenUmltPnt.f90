@@ -1,26 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fmLenKindTolenUmltPnt.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is nonpoly DT of child  with len&kind param
 !*                               TO is poly DT of base with len param
-!*                               Pnt is of type class(*), func name 
+!*                               Pnt is of type class(*), func name
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -32,20 +20,20 @@
 module m
 
    type base(l)
-       integer, len :: l 
+       integer, len :: l
        character(l), allocatable :: ch(:)
-   end type 
+   end type
 
-   type, extends(base) :: child (k) 
+   type, extends(base) :: child (k)
        integer, kind :: k
        integer(k*2), allocatable :: id(:)
    end type
 
-   contains 
+   contains
        function func(arg, brg)
            type( child(l=3, k=2)), allocatable :: arg
            class( base(3)), allocatable :: brg
-           target arg, brg 
+           target arg, brg
            class(*), pointer :: func
 
            func => arg

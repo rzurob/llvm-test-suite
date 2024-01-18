@@ -1,31 +1,23 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryAssumedTypeParam04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryAssumedTypeParam04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 18 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 18 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. ACTUAL ARGUMENT IS ALLOCATABLE AND POINTER
-!* 4. USE EXTERNAL SUBROUTINE 
-!* 5. DEFECT 353958 353191  
+!* 4. USE EXTERNAL SUBROUTINE
+!* 5. DEFECT 353958 353191
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
@@ -35,13 +27,13 @@ module m
       integer(4),kind :: k2
       integer(2),len  :: l1
       integer(4),len  :: l2
-      
+
       integer(k1) :: i1(l1:l2)
       integer(k2) :: i2(l2:l1+l2)
    end type
 end module
 
-  program dtParameterInquiryAssumedTypeParam04 
+  program dtParameterInquiryAssumedTypeParam04
   use m
   implicit none
 
@@ -86,7 +78,7 @@ end module
   if(t2%l2%kind /= kind(t2%l2) .or. t2%l2%kind /= 4)        error stop 27_4
   if(lbound(t2%i1,1) /=3 .or. ubound(t2%i1,1) /=6)          error stop 28_4
   if(lbound(t2%i2,1) /=6 .or. ubound(t2%i2,1) /=9)        error stop 29_4
-   
+
 
   t3=>t1
 
@@ -99,7 +91,7 @@ end module
   if(t3%l1%kind /= kind(t3%l1) .or. t3%l1%kind /= 2)        error stop 36_4
   if(t3%l2%kind /= kind(t3%l2) .or. t3%l2%kind /= 4)        error stop 37_4
   if(lbound(t3%i1,1) /=t3%l1 .or. ubound(t3%i1,1) /=t3%l2)  error stop 38_4
-  if(lbound(t3%i2,1) /=6 .or. ubound(t3%i2,1) /=9)          error stop 39_4   
+  if(lbound(t3%i2,1) /=6 .or. ubound(t3%i2,1) /=9)          error stop 39_4
 
   allocate(t4,source=getMytype(t3))
 
@@ -118,7 +110,7 @@ end module
 end
 
     function getMytype(b)
-      use m,only: mytype 
+      use m,only: mytype
       type(mytype(k1=4,k2=8,l1=*,l2=*)),intent(in) :: b
       type(mytype(k1=4,k2=8,l1=b%l1,l2=b%l2))  :: getMytype
       getMytype = b

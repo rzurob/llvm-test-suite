@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  Case.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Case 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Case
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -41,11 +35,11 @@
 !*
 !*  DESCRIPTION
 !*    The Case stmt
-!*    () 
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   MODULE M
     TYPE :: DT(K1,N1)    ! (4,1)
       INTEGER, KIND :: K1
@@ -62,32 +56,32 @@
   CONTAINS
 
     ELEMENTAL FUNCTION GetId(Arg)
-    IMPLICIT CLASS(DT(4,*))(A) 
+    IMPLICIT CLASS(DT(4,*))(A)
     INTENT(IN) :: Arg
     INTEGER    :: GetId
       GetId = Arg%Id
     END FUNCTION
 
     ELEMENTAL FUNCTION GetC(Arg)
-    IMPLICIT CLASS(DT(4,*))(A) 
+    IMPLICIT CLASS(DT(4,*))(A)
     INTENT(IN) :: Arg
     CHARACTER  :: GetC
       GetC = Arg%C
     END FUNCTION
 
     ELEMENTAL FUNCTION GetL(Arg)
-    IMPLICIT CLASS(DT(4,*))(A) 
+    IMPLICIT CLASS(DT(4,*))(A)
     INTENT(IN) :: Arg
     LOGICAL    :: GetL
       GetL = Arg%L
     END FUNCTION
 
   END MODULE
- 
-  PROGRAM Case 
+
+  PROGRAM Case
 
   USE M
-  IMPLICIT TYPE(DT(4,1))(A) 
+  IMPLICIT TYPE(DT(4,1))(A)
   DIMENSION :: Arr(2:130)
   LOGICAL(8) :: LArr(2:130)
   INTEGER :: i
@@ -96,11 +90,11 @@
   ASSOCIATE ( As => (/(DT(4,1)(Id=i), i=2, 130)/) )
     SELECT CASE (As(1)%ID)
     CASE (:-1)
-      STOP 20 
+      STOP 20
     CASE (0)
-      STOP 21 
+      STOP 21
     CASE (1:)
-      Arr  = As 
+      Arr  = As
     END SELECT
   END ASSOCIATE
 
@@ -110,11 +104,11 @@
   ASSOCIATE ( As => Arr )
     SELECT CASE (As(3)%C)
     CASE (:CHAR(48))
-      STOP 30 
+      STOP 30
     CASE (CHAR(50):)
-      STOP 31 
+      STOP 31
     CASE (CHAR(49))
-      As%C = (/(CHAR(4+i), i=2, 130)/)  
+      As%C = (/(CHAR(4+i), i=2, 130)/)
     END SELECT
   END ASSOCIATE
 
@@ -124,9 +118,9 @@
   ASSOCIATE ( As => Arr(::2) )
     SELECT CASE (As(3)%L)
     CASE (.TRUE.)
-      STOP 40 
+      STOP 40
     CASE (.FALSE.)
-      As%L = .TRUE. 
+      As%L = .TRUE.
     END SELECT
   END ASSOCIATE
 

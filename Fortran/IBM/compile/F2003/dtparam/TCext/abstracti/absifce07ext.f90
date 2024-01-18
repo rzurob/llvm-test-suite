@@ -3,19 +3,14 @@
 
 !***********************************************************************
 !* =====================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : absifce07ext
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from absifce07
 !*                               by James Ren)
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf90/95)
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : The abstract interface name can not

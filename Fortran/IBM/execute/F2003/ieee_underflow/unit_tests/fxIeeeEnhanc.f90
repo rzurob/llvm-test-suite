@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxIeeeEnhanc.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Zheming Gu
 !*  DATE                       : July 26,2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE Enhancements
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289080
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -27,10 +21,9 @@
 !*  -----------
 !*  Test IEEE Enhancements
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-program fxIeeeEnhanc 
+program fxIeeeEnhanc
         use,intrinsic :: ieee_arithmetic
         logical :: yn,i1,i2,i3=ieee_support_underflow_control()
         yn= .true.; i1=.true. ; i2=.true.

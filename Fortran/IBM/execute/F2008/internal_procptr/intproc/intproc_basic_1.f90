@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_basic_1.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : April 21 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*
 !*  Test the basic functionality -- internal procedure as actual argument
-!*   
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
     INTEGER :: j=0
   END MODULE
- 
+
   PROGRAM intproc_basic_1
   USE M
   INTEGER :: i=0
@@ -65,12 +56,12 @@
 
   FUNCTION  Intfuncp(proc)
   PROCEDURE(INTEGER) :: proc
-    Intfuncp = proc() 
-  END FUNCTION 
+    Intfuncp = proc()
+  END FUNCTION
 
   FUNCTION Intfunc()
     Intfunc = -1
-  END FUNCTION 
+  END FUNCTION
 
   END
 

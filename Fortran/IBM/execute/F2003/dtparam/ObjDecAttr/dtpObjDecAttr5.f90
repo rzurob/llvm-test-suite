@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr5
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 23, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  The DIMENSION attribute --  The deferred shape array
-!*   
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -87,7 +78,7 @@
   IF ( SIZE( P3 ) .NE. N*N ) STOP 72
 
   DO I = -N ,-1
-  DO J = 1, N 
+  DO J = 1, N
 
     IF ( P1(I,J)%K0               .NE.   0          ) STOP 11
     IF ( P1(I,J)%L0               .NE.   0          ) STOP 12
@@ -127,8 +118,8 @@
 
   PROGRAM dtpObjDecAttr5
   USE M
-  
-  CALL Check(107, 2) 
+
+  CALL Check(107, 2)
 
   END
 

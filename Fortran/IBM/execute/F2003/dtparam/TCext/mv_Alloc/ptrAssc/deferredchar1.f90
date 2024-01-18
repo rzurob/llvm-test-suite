@@ -3,24 +3,12 @@
 ! opt variations: -qnock -qnok -qnol -qnodeferredlp
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : deferredchar1.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM/TO are of
 !*                                  - type character(:)
@@ -37,10 +25,10 @@
 
 module m
     character(:, kind=1), pointer :: p1(:)
-    character(len=:), allocatable, target :: from(:) 
+    character(len=:), allocatable, target :: from(:)
 end module
 
-program main 
+program main
 use m
     type ::  base(k1,n1)    ! (4,20)
         integer, kind :: k1
@@ -55,7 +43,7 @@ use m
 
     allocate(a%from(5), source = (/ '01','23','45','67','89' /))
 
-    p1 => a%from 
+    p1 => a%from
 
     allocate(a%to(10), source =  (/( char(i), i=72,81 ) /)  )
 

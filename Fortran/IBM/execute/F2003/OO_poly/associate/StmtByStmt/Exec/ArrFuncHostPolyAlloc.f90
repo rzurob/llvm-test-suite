@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrFuncHostPolyAlloc.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrFuncHostPolyAlloc.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrFuncHostDummy
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 16, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a function call 
-!*    with an associate name  associting to a poly allcatable dummy array 
-!*   
-!*    (298777) 
+!*    The selector is a function call
+!*    with an associate name  associting to a poly allcatable dummy array
+!*
+!*    (298777)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -49,7 +43,7 @@
 
     TYPE  :: Zero
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -118,7 +112,7 @@
   TYPE (Base) :: Temp(3)
 
   ALLOCATE(Arg(6))
-  
+
   SELECT TYPE (Arg)
   TYPE IS (Child)
     Arg(::2) = Child(ChildID=-2, BaseID=-1)
@@ -153,7 +147,7 @@
     Temp = As1%Base
     As1%Base = As2%Base
     As2%Base = Temp
- 
+
   END ASSOCIATE
 
   IF ( .NOT. ALLOCATED(V) )           STOP 14
@@ -165,6 +159,6 @@
   END SUBROUTINE
 
   END
-  
+
 
 

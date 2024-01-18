@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefInqHUGE.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefInqHUGE.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 03, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,23 +19,22 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  a reference to a specification inquiry 
-!* 
-!*  - HUGE 
-!* 
+!*  a reference to a specification inquiry
+!*
+!*  - HUGE
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM         InitExpDefInqHUGE 
+  PROGRAM         InitExpDefInqHUGE
   IMPLICIT NONE
   INTEGER :: I, J, K
 
-  INTEGER(1),  PARAMETER :: I1(1:0) = -1 
-  INTEGER(2),  PARAMETER :: I2(1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1) = -1 
+  INTEGER(1),  PARAMETER :: I1(1:0) = -1
+  INTEGER(2),  PARAMETER :: I2(1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1) = -1
   INTEGER(4),  PARAMETER :: I4 = 10
   INTEGER(8),  PARAMETER :: I8(-2147483648:-2147483647, 2147483646:2147483647) = 1
 
@@ -49,16 +42,16 @@
   INTEGER(KIND(HUGE(I2))):: TI2 = HUGE(I2)
   INTEGER(KIND(HUGE(I4))):: TI4 = HUGE(I4)
   INTEGER(KIND(HUGE(I8))):: TI8 = HUGE(I8)
- 
+
   INTEGER(KIND(HUGE(TI1))), PARAMETER :: MI1 = 2_1**DIGITS(I1)-1
   INTEGER(KIND(HUGE(TI2))), PARAMETER :: MI2 = 2_2**DIGITS(I2)-1
   INTEGER(KIND(HUGE(TI4))), PARAMETER :: MI4 = 2_4**DIGITS(I4)-1
   INTEGER(KIND(HUGE(TI8))), PARAMETER :: MI8 = 2_8**DIGITS(I8)-1
- 
- 
+
+
   REAL(4),   PARAMETER :: R4 = 10
   REAL(8),   PARAMETER :: R8(-2147483648:-2147483647, 2147483646:2147483647) = 1
-  REAL(16),  PARAMETER :: R6(1:0) = -1 
+  REAL(16),  PARAMETER :: R6(1:0) = -1
 
   REAL(KIND(HUGE(R4)))  :: TR4  = HUGE(R4)
   REAL(KIND(HUGE(R8)))  :: TR8  = HUGE(R8)
@@ -83,4 +76,4 @@
   END
 
 
- 
+

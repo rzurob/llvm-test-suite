@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecSltTyp.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecSltTyp.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Type Spec in SELECT TYPE STMT 
-!* 
-!* (324712) 
-!* 
+!*  Type Spec in SELECT TYPE STMT
+!*
+!* (324712)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM InitExpTypSpecSltTyp 
+  PROGRAM InitExpTypSpecSltTyp
   IMPLICIT NONE
 
   CLASS(*), ALLOCATABLE :: I1(:)
@@ -64,7 +56,7 @@
     IF ( ANY( I1  .NE. -1_1 )) STOP 13
   CLASS DEFAULT
     STOP 14
-  END SELECT 
+  END SELECT
 
   SELECT TYPE ( I2 )
   TYPE IS (INTEGER(KIND=KIND([-2_2])))
@@ -73,7 +65,7 @@
     IF ( ANY( I2  .NE. -2_1 )) STOP 23
   CLASS DEFAULT
     STOP 24
-  END SELECT 
+  END SELECT
 
   SELECT TYPE ( I4 )
   TYPE IS (INTEGER(KIND=KIND([-4_4])))
@@ -82,7 +74,7 @@
     IF ( ANY( I4  .NE. -4_4 )) STOP 33
   CLASS DEFAULT
     STOP 34
-  END SELECT 
+  END SELECT
 
   SELECT TYPE ( I8 )
   TYPE IS (INTEGER(KIND=KIND([-8_8])))
@@ -91,7 +83,7 @@
     IF ( ANY( I8  .NE. -8_8 )) STOP 43
   CLASS DEFAULT
     STOP 44
-  END SELECT 
+  END SELECT
 
   SELECT TYPE ( L1 )
   TYPE IS (LOGICAL(KIND=KIND([.FALSE._1])))
@@ -100,7 +92,7 @@
     IF ( ANY( L1  .NEQV. .TRUE._1 )) STOP 53
   CLASS DEFAULT
     STOP 54
-  END SELECT 
+  END SELECT
 
   SELECT TYPE ( L2 )
   TYPE IS (LOGICAL(KIND=KIND([.FALSE._2])))
@@ -109,7 +101,7 @@
     IF ( ANY( L2  .NEQV. .TRUE._2 )) STOP 63
   CLASS DEFAULT
     STOP 64
-  END SELECT 
+  END SELECT
 
   SELECT TYPE ( L4 )
   TYPE IS (LOGICAL(KIND=KIND([.FALSE._4])))
@@ -118,7 +110,7 @@
     IF ( ANY( L4  .NEQV. .TRUE._4 )) STOP 73
   CLASS DEFAULT
     STOP 74
-  END SELECT 
+  END SELECT
 
   SELECT TYPE ( L8 )
   TYPE IS (LOGICAL(KIND=KIND([.FALSE._8])))
@@ -127,9 +119,9 @@
     IF ( ANY( L8  .NEQV. .TRUE._8 )) STOP 83
   CLASS DEFAULT
     STOP 84
-  END SELECT 
+  END SELECT
 
 
   END
 
- 
+

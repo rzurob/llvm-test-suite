@@ -4,7 +4,7 @@
       END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
-        REAL :: Rarr  
+        REAL :: Rarr
       END TYPE Child
 
       CLASS(Base(:)), ALLOCATABLE        :: b1
@@ -25,7 +25,7 @@
 
        select type (x)
          type is (base(*))
-           
+
          type is (child(*))
            STOP  1
        end select

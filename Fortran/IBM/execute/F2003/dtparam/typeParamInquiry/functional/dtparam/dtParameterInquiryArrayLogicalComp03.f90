@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryArrayLogicalComp03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryArrayLogicalComp03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 11 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 11 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY FOR DT AND COMPONENT
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. LOGICAL ARRAY POINTER COMPONENT
@@ -40,20 +32,20 @@ module m
      logical(4),pointer :: a3(:)
      logical(8),pointer :: a4(:)
      logical(k1),pointer :: a5(:)
-     logical(k2),pointer :: a6(:) 
+     logical(k2),pointer :: a6(:)
      logical(k1+k2),pointer :: a7(:)
      logical(k1%kind),pointer :: a8(:)
      logical(k2%kind),pointer :: a9(:)
      logical(k1%kind+k2%kind),pointer :: a10(:,:)
-     logical(1),pointer :: a11(:)     
-     logical(1),pointer :: a12(:)     
-     logical(1),pointer :: a13(:)  
-     logical(2),pointer :: a14(:) 
+     logical(1),pointer :: a11(:)
+     logical(1),pointer :: a12(:)
+     logical(1),pointer :: a13(:)
+     logical(2),pointer :: a14(:)
      logical(max(4,k2)),pointer :: a15(:)
      logical(ichar(char(4))),pointer :: a16(:)
 
-   end type 
-         
+   end type
+
 end module
 
   program dtParameterInquiryArrayLogicalComp03
@@ -70,7 +62,7 @@ end module
   if(t%a1%kind /= kind(t%a1) .or. t%a1%kind /= 1)           error stop 14_4
   if(t%a2%kind /= kind(t%a2) .or. t%a2%kind /= 2)           error stop 15_4
   if(t%a3%kind /= kind(t%a3) .or. t%a3%kind /= 4)           error stop 16_4
-  if(t%a4%kind /= kind(t%a4) .or. t%a4%kind /= 8)           error stop 17_4 
+  if(t%a4%kind /= kind(t%a4) .or. t%a4%kind /= 8)           error stop 17_4
 
   if(t%a5%kind /= kind(t%a5) .or. t%a5%kind /= 2)           error stop 18_4
   if(t%a6%kind /= kind(t%a6) .or. t%a6%kind /= 2)           error stop 19_4
@@ -85,6 +77,6 @@ end module
   if(t%a14%kind /= kind(t%a14) .or. t%a14%kind /= 2)        error stop 27_4
   if(t%a15%kind /= kind(t%a15) .or. t%a15%kind /= 4)        error stop 28_4
   if(t%a16%kind /= kind(t%a16) .or. t%a16%kind /= 4)        error stop 29_4
-   
+
 
   end

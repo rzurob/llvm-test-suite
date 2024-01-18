@@ -1,10 +1,7 @@
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure03f
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
 !*
 !*  DESCRIPTION
@@ -27,7 +24,7 @@ PROGRAM main
    b(i) = func1 (a(i),s)
    PRINT *,b(i)
   end do
-  
+
  CONTAINS
 
    INTEGER FUNCTION func1(z,s)
@@ -42,13 +39,13 @@ PROGRAM main
     func2 = final(y,s)
  END FUNCTION func2
 
-  IMPURE ELEMENTAL FUNCTION final (a,s) 
-    INTEGER, INTENT(IN) :: a 
+  IMPURE ELEMENTAL FUNCTION final (a,s)
+    INTEGER, INTENT(IN) :: a
     INTEGER, INTENT(out) :: s
     INTEGER :: final
     INTEGER :: sum
     sum = 2
     s = a*2
     final  = sum+a
-  END FUNCTION final 
-END PROGRAM main 
+  END FUNCTION final
+END PROGRAM main

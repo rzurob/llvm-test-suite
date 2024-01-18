@@ -1,24 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : BParallelRegion.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2011-01-24
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Block with OMP
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED :  
-!*                                
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                :  
-!*
+!*  DESCRIPTION                :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -38,21 +27,21 @@ PROGRAM BParallelRegion
     INTEGER         :: i
     INTEGER         :: arr(4)
 
-    i = -99 
-    arr = 0   
+    i = -99
+    arr = 0
 
-    !$OMP PARALLEL num_threads(4) 
-        BLOCK 
-          INTEGER :: i 
+    !$OMP PARALLEL num_threads(4)
+        BLOCK
+          INTEGER :: i
             i = omp_get_thread_num()
-            arr(i) = i 
-        END BLOCK 
+            arr(i) = i
+        END BLOCK
     !$OMP END PARALLEL
 
      call simple_sort(arr)
      IF ( ANY(arr .NE.  [3,2,1,0] ) ) STOP 10
 
-     
+
     CONTAINS
 
     SUBROUTINE simple_sort (X)
@@ -66,7 +55,7 @@ PROGRAM BParallelRegion
             X(I) = X(Iswap)
             X(Iswap) = TEMP
          ENDIF
-      END DO 
+      END DO
       END SUBROUTINE simple_sort
 
 END PROGRAM BParallelRegion

@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar004kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar004 by Robert Ma)
 !*  DATE                       : 2007-07-07 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with polymorphic pointer component with type (Output)
@@ -95,7 +87,7 @@ program scalar004kl
    allocate(b3%b, source = d1)
    allocate(b4, source = base(4,3)(c='jkl')) ! tcx: (4,3)
    allocate(b4%b, source = d1)
-   
+
    write (1,NML=nml1, iostat=stat, iomsg=msg)
    if (( stat /=  0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
 

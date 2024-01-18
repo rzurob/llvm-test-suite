@@ -1,13 +1,9 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !* TEST BUCKET                : OO_poly/intrinsics/typeQuery
-!* PROGRAMMER                 : Yong Du
 !* DATE                       : 11/03/2004
 !* PRIMARY FUNCTIONS TESTED   : extends_type_of(A, MOLD)
 !* SECONDARY FUNCTIONS TESTED : same_type_as(A, B)
-!* DRIVER STANZA              : xlf90
 !* DESCRIPTION                : MOLD or A is an array constructor, or
 !*                              is initialized using array constructor.
 !* =====================================================================

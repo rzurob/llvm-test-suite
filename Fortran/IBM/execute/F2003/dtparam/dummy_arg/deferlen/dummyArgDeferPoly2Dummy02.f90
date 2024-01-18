@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPoly2Dummy02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPoly2Dummy02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 21 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  first dummy argument is unlimited polymorphic type with intent(out) attribute,its value taken from second dummy argument which has intent(in) attribute.
@@ -43,11 +35,11 @@ program dummyArgDeferPoly2Dummy02
   class(*),allocatable               :: upoly(:)
   type(child(:,:,2,4)),allocatable   :: tchild(:)
 
-  
+
   allocate(poly(3:4),source= &
       [child(2,3,2,4)(i1=[1,2],i2=[3,4,5]),&
-       child(2,3,2,4)(i1=[-1,-2],i2=[-3,-4,-5]) ]) 
- 
+       child(2,3,2,4)(i1=[-1,-2],i2=[-3,-4,-5]) ])
+
   call sub1(upoly,poly)
 
   if(.not. allocated(upoly))                 error stop 10_4
@@ -62,7 +54,7 @@ program dummyArgDeferPoly2Dummy02
         if(any(upoly(2)%i2 /= [-3,-4,-5]))   error stop 16_4
       class default
         error stop 50_4
-  end select 
+  end select
 
   select type(poly)
     type is(child(*,*,2,4))
@@ -87,8 +79,8 @@ program dummyArgDeferPoly2Dummy02
      subroutine sub1(upoly,poly)
         class(*),allocatable,intent(out)          :: upoly(:)
         class(base(:,:)),allocatable,intent(in)   :: poly(:)
-    
-        allocate(upoly(2),source=poly) 
+
+        allocate(upoly(2),source=poly)
      end subroutine
 
      subroutine sub2(upoly,child)

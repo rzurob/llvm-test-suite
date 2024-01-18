@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrTypBndDefAssgn.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*  
 !* Interaction with type bound generic
-!* 
-!*  -- Defined assignment 
+!*
+!*  -- Defined assignment
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -48,15 +40,15 @@
   CONTAINS
 
   ELEMENTAL SUBROUTINE ModSub(Arg1, Arg2)
-  TYPE(DT), INTENT(INOUT) :: Arg1 
-  CLASS(DT), INTENT(IN)    :: Arg2 
-    Arg1%ID = "ModSub-"//Arg2%ID 
-  END SUBROUTINE 
+  TYPE(DT), INTENT(INOUT) :: Arg1
+  CLASS(DT), INTENT(IN)    :: Arg2
+    Arg1%ID = "ModSub-"//Arg2%ID
+  END SUBROUTINE
 
 
   END MODULE
 
-  PROGRAM dataPtrTypBndDefAssgn 
+  PROGRAM dataPtrTypBndDefAssgn
   USE Mod
   IMPLICIT NONE
 
@@ -74,7 +66,7 @@
   IF (ANY( UBOUND(Ptr) .NE. (/N,N/)))                                         STOP 23
   IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=1,M)/),(/N,N/))))           STOP 24
 
-  Ptr = Tar2 
+  Ptr = Tar2
   IF (ANY( Ptr%ID  .NE. RESHAPE((/("ModSub-" //CHAR(I), I=1,M)/),(/N,N/))))   STOP 25
 
   Ptr(0:8,0:8) => Tar1

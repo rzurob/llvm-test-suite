@@ -1,14 +1,9 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME             : acetint30a
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2006-08-03
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : intrinsic type, typeless, character, hollerith
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -78,7 +72,7 @@ program acetint30a
   i2Arr = (/integer(2):: 8224_2, b'0010000000100000', o'020040', z'2020', 2h  /)
   call check2(11, i2Arr)
   call check2(12, (/integer(2):: 8224_2, b'0010000000100000', o'020040', z'2020', 2h  /))
- 
+
   i4Arr = (/integer(4):: 538976288_4, b'00100000001000000010000000100000', o'4010020040', z'20202020', 4h    /)
   call check4(13, i4Arr)
   call check4(14, (/integer(4):: 538976288_4, b'00100000001000000010000000100000', o'4010020040', z'20202020', 4h    /))

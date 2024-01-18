@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass033.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass033.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -93,34 +81,34 @@
       double precision cc
 
       logical :: precision_r4, precision_r6, precision_r8
-     
-      c = (a + b)*10 + 10   
+
+      c = (a + b)*10 + 10
       call real_sub(a,b,c)
-         if(c .eq. 0.0)then 
+         if(c .eq. 0.0)then
            error stop 10
          endif
 
-      c16 = (a16 + b16)*10 + 10   
+      c16 = (a16 + b16)*10 + 10
       call real16_sub(a16,b16,c16)
-         if(c16 .eq. 0.0)then 
+         if(c16 .eq. 0.0)then
            error stop 11
          endif
 
-      cc = (aa + bb)*10 + 10   
+      cc = (aa + bb)*10 + 10
       call double_sub(aa,bb,cc)
-         if(cc .eq. 0.0)then 
+         if(cc .eq. 0.0)then
            error stop 12
          endif
 
-      c4 = (a4 + b4)*10 + 10   
+      c4 = (a4 + b4)*10 + 10
       call real4_sub(a4,b4,c4)
-         if(c4 .eq. 0.0)then 
+         if(c4 .eq. 0.0)then
            error stop 13
          endif
 
-      c8 = (a8 + b8)*10 + 10   
+      c8 = (a8 + b8)*10 + 10
       call real8_sub(a8,b8,c8)
-         if(c8 .eq. 0.0)then 
+         if(c8 .eq. 0.0)then
            error stop 14
          endif
 
@@ -134,7 +122,7 @@
             integer count
             logical :: precision_r4
 
-            c = (a + b)*10 + 10   
+            c = (a + b)*10 + 10
             do count = 1, 10
 
             associate ( arg => a )
@@ -158,7 +146,7 @@
             integer count
             logical :: precision_r6
 
-            c16 = (a16 + b16)*10 + 10   
+            c16 = (a16 + b16)*10 + 10
             do count = 1, 10
 
             associate ( arg16 => a16 )
@@ -182,7 +170,7 @@
             integer count
             logical ::  precision_r6
 
-            cc = (aa + bb)*10 + 10   
+            cc = (aa + bb)*10 + 10
             do count = 1, 10
 
             associate ( arg2 => aa )
@@ -205,7 +193,7 @@
             integer count
             logical :: precision_r4
 
-            c4 = (a4 + b4)*10 + 10   
+            c4 = (a4 + b4)*10 + 10
             do count = 1, 10
 
             associate ( arg4 => a4 )
@@ -230,7 +218,7 @@
 
             c8 = (a8 + b8)*10 + 10
             do count = 1, 10
-  
+
             associate ( arg8 => a8 )
               arg8 = arg8 + (a8 + b8)*10
               if (.not.precision_r8(arg8,a8)) then

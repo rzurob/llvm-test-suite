@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : inputComplexNaN007.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 8, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -30,7 +24,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      use, intrinsic :: ieee_arithmetic 
+      use, intrinsic :: ieee_arithmetic
       implicit none
 
       complex(4)  :: cx1
@@ -62,7 +56,7 @@
          cx1 = (0.0, 0.0) ! reset cx1
 
          read(unit,'(2G15.1)',iostat=ios) cx1
-         
+
          if ( is_iostat_end(ios) ) exit
 
          rl4r = real(cx1)
@@ -74,14 +68,14 @@
          if ( ( ieee_class( rl4r ) .ne. ieee_signaling_nan ) .or. &
      &        ( ieee_class( rl4i ) .ne. ieee_signaling_nan ) )    &
      &        call zzrc(2000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
          print*, "Error: No or bad input file"
          stop 1
       end if
-      
+
       rewind(unit) ! reposition the file to the beginning.
       i = 0
 
@@ -92,7 +86,7 @@
          cx2 = (0.0, 0.0) ! reset cx2
 
          read(unit,'(2G15.1)',iostat=ios) cx2
-         
+
          if ( is_iostat_end(ios) ) exit
 
          rl8r = dreal(cx2)
@@ -104,14 +98,14 @@
          if ( ( ieee_class( rl8r ) .ne. ieee_signaling_nan ) .or. &
      &        ( ieee_class( rl8i ) .ne. ieee_signaling_nan ) )    &
      &        call zzrc(4000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
          print*, "Error: No or bad input file"
          stop 1
       end if
-      
+
       rewind(unit) ! reposition the file to the beginning.
       i = 0
 
@@ -123,7 +117,7 @@
          cx3 = (0.0, 0.0) ! reset cx3
 
          read(unit,'(2G15.1)',iostat=ios) cx3
-         
+
          if ( is_iostat_end(ios) ) exit
 
          rl6r = qreal(cx3)
@@ -135,14 +129,14 @@
          if ( ( ieee_class( rl6requiv ) .ne. ieee_signaling_nan ) .or. &
      &        ( ieee_class( rl6iequiv ) .ne. ieee_signaling_nan ) )    &
      &        call zzrc(6000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
          print*, "Error: No or bad input file"
          stop 1
       end if
-      
+
       close(unit)
       i = 0
 
@@ -157,7 +151,7 @@
          cx1 = (0.0, 0.0) ! reset cx1
 
          read(unit,'(2G15.1)',iostat=ios) cx1
-         
+
          if ( is_iostat_end(ios) ) exit
 
          rl4r = real(cx1)
@@ -169,14 +163,14 @@
          if ( ( ieee_class( rl4r ) .ne. ieee_quiet_nan ) .or. &
      &        ( ieee_class( rl4i ) .ne. ieee_quiet_nan ) )    &
      &        call zzrc(8000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
          print*, "Error: No or bad input file"
          stop 1
       end if
-      
+
       rewind(unit) ! reposition the file to the beginning.
       i = 0
 
@@ -187,7 +181,7 @@
          cx2 = (0.0, 0.0) ! reset cx2
 
          read(unit,'(2G15.1)',iostat=ios) cx2
-         
+
          if ( is_iostat_end(ios) ) exit
 
          rl8r = dreal(cx2)
@@ -199,14 +193,14 @@
          if ( ( ieee_class( rl8r ) .ne. ieee_quiet_nan ) .or. &
      &        ( ieee_class( rl8i ) .ne. ieee_quiet_nan ) )    &
      &        call zzrc(10000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
          print*, "Error: No or bad input file"
          stop 1
       end if
-      
+
       rewind(unit) ! reposition the file to the beginning.
       i = 0
 
@@ -218,7 +212,7 @@
          cx3 = (0.0, 0.0) ! reset cx3
 
          read(unit,'(2G15.1)',iostat=ios) cx3
-         
+
          if ( is_iostat_end(ios) ) exit
 
          rl6r = qreal(cx3)
@@ -230,7 +224,7 @@
          if ( ( ieee_class( rl6requiv ) .ne. ieee_quiet_nan ) .or. &
      &        ( ieee_class( rl6iequiv ) .ne. ieee_quiet_nan ) )    &
      &        call zzrc(12000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then

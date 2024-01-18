@@ -1,29 +1,20 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocPtr02f
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Feb, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Allocatable/Pointer
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : Use C-interoperable allocatable and 
-!*                               pointer arrays to multiply the 
-!*                               following matrixes on the Fortran 
+!*  DESCRIPTION                : Use C-interoperable allocatable and
+!*                               pointer arrays to multiply the
+!*                               following matrixes on the Fortran
 !*                               side and display the resulting matrix
 !*                               on the C side:
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

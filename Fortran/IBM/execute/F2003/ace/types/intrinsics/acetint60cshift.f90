@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : acetint60cshift
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2006-11-24
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -54,7 +48,7 @@ program acetint60cshift
   array = [integer:: 1,2,3,4,5,6,7,8,9]
   array = [integer:: cshift(reshape(array,[integer:: 3,3]), shift=[integer:: array(1:8:3)], dim=2)]
   if (any(array /= [integer:: 4,5,6, 7,8,9, 1,2,3])) stop 6
-  
+
   if (any(cshift ([integer:: (i,i=1,9)], 2) /= [integer:: (i,i=3,9), 1, 2])) stop 2
   array = cshift ([integer:: (i ** 2, i=1,9)], -1)
   if (any(array /= [integer:: 9**2, (i ** 2, i=1,8)])) stop 7

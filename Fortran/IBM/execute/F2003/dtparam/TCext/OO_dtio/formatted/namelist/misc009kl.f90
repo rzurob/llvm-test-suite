@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : misc009kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from misc009 by Robert Ma)
 !*  DATE                       : 2007-07-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Select type: printing out associate-name components
 !*  KEYWORD(S)                 :
@@ -40,7 +32,7 @@ end module
 
 program misc009kl
    use m1
-        
+
    class(base(:)), allocatable  :: dummy(:) ! tcx: (:)
    allocate( dummy(1), source = (/ child(3,3)('abc','def') /) ) ! tcx: (3,3)
 

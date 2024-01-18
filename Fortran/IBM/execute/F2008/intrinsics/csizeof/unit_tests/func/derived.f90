@@ -1,32 +1,32 @@
       program t
 
-      use, intrinsic :: iso_c_binding      
+      use, intrinsic :: iso_c_binding
       implicit none
       integer(c_size_t) :: rt
-	  
+
       type, bind(c) :: my_type1
       integer(C_SHORT) :: s(2)
       end type                     !  4
-	
+
       type, bind(c) :: my_type2
-      real(c_float) r1             !  4  
-      real(c_long_double) r2       ! 16 
+      real(c_float) r1             !  4
+      real(c_long_double) r2       ! 16
       real(c_double) r3            !  8
       end type                     ! 28
-	
+
       type, bind(c) :: my_type3
-      character(len=1) str2        !  1  
+      character(len=1) str2        !  1
       integer(c_short) sint1(3)    !  6  sint1+str2 = 8
-      complex(c_double_complex) c1 ! 16 
-      integer(c_int8_t) bint       !  1  
+      complex(c_double_complex) c1 ! 16
+      integer(c_int8_t) bint       !  1
       logical(c_bool) bool         !  1  bint+bool = 4
       end type !28
-	
+
       type, bind(c) :: my_type4
       logical(c_bool) bool         !  1
-      type(my_type3) :: t_f_34     ! 28	
+      type(my_type3) :: t_f_34     ! 28
       end type                     ! 32
-	  
+
       type(my_type1)::dt1_array(20)
       type(my_type1)::dt1_scalar
 
@@ -38,7 +38,7 @@
 
       type(my_type4)::dt4_array(1)
       type(my_type4)::dt4_scalar
-	  
+
       type(c_ptr) :: pd
       type(c_funptr) :: pf
 
@@ -65,7 +65,7 @@
       sizeof_my_type2 = get_sizeof_my_type2()
       sizeof_my_type3 = get_sizeof_my_type3()
       sizeof_my_type4 = get_sizeof_my_type4()
-	  
+
       rt = c_sizeof(dt1_scalar) !4
       if (rt /= sizeof_my_type1) error stop 1
 
@@ -119,5 +119,5 @@
 
       rt = c_sizeof(pf)
       if (rt /= c_long) error stop 18
-  
-      end 
+
+      end

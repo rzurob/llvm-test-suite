@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrPtrComp.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrPtrComp.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 08, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  pointer component 
+!*  pointer component
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -44,25 +36,25 @@
     CHARACTER(1),PUBLIC,  POINTER :: PtrC1(:, :)
 
     INTEGER(1)     :: I1Tar(10,10)=1_1
-    REAL(4)        :: R4Tar(10,10)=4.0_4 
+    REAL(4)        :: R4Tar(10,10)=4.0_4
     COMPLEX(4)     :: C4Tar(10,10)=(4.0,-4.0)
-    LOGICAL(1)     :: L1Tar(10,10)=.TRUE._1 
+    LOGICAL(1)     :: L1Tar(10,10)=.TRUE._1
     CHARACTER(1)   :: C1Tar(10,10)="1"
   END TYPE
 
   TYPE (DT), SAVE, TARGET   :: T
 
   CONTAINS
- 
+
   SUBROUTINE S()
- 
+
   T%PtrI1(0:, 0: ) => T%I1Tar
   IF (.NOT. ASSOCIATED(T%PtrI1))                       STOP 11
   IF (ANY( LBOUND(T%PtrI1)         .NE. (/0, 0 /)))    STOP 12
   IF (ANY( UBOUND(T%PtrI1)         .NE. (/9, 9 /)))    STOP 13
   IF (ANY( T%PtrI1                 .NE. 1_1))          STOP 14
 
-  T%PtrI1(0:9, 0:0 ) => T%I1Tar(:, 1) 
+  T%PtrI1(0:9, 0:0 ) => T%I1Tar(:, 1)
   IF (.NOT. ASSOCIATED(T%PtrI1))                       STOP 15
   IF (ANY( LBOUND(T%PtrI1)         .NE. (/0, 0 /)))    STOP 16
   IF (ANY( UBOUND(T%PtrI1)         .NE. (/9, 0 /)))    STOP 17
@@ -121,7 +113,7 @@
 
   END MODULE
 
-  PROGRAM dataPtrPtrComp 
+  PROGRAM dataPtrPtrComp
   USE M
   IMPLICIT NONE
 

@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 2011-05-24
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Add a workaround to fArg522a.f (defect 318078
 !                               not fixable)
@@ -57,7 +47,7 @@ module m
                 charLen = size(x2)*localLen
 
                 allocate (character(charLen) :: x1, stat=i3, errmsg=err)
-                
+
                 if (i3 /= 0) then
                     print *, i3, err
                     error stop 15_4

@@ -1,30 +1,21 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_PARAMETER_02a.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result 
-!*  SECONDARY FUNCTIONS TESTED : Array constructor 
+!*  PRIMARY FUNCTIONS TESTED   : Function result
+!*  SECONDARY FUNCTIONS TESTED : Array constructor
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -54,7 +45,7 @@ END MODULE
 PROGRAM DTP_PARAMETER_02a
       USE Mod
 
-      INTEGER, PARAMETER :: M = 10, L =5, P =2, K = 4 
+      INTEGER, PARAMETER :: M = 10, L =5, P =2, K = 4
 
       INTEGER, PARAMETER :: I10(M) = [(I, I = 1, M)], I5(L) = [(I**2, I = 1, L)]
 
@@ -63,7 +54,7 @@ PROGRAM DTP_PARAMETER_02a
       TYPE(NextGen(l1=P,l2=L,l3=M)), PARAMETER :: n1 = NextGen(l1=P,l2=L,l3=M) &
                  ( [5, 6], 'AB', I5, 'CDEFG', I10, 'HIJKLMNOPQ' )
 
-      CLASS(Base(K,:)), POINTER :: poly 
+      CLASS(Base(K,:)), POINTER :: poly
 
       IF ( SIZE(b1%A0)     .NE. M ) STOP 10
       IF ( LBOUND(b1%A0,1) .NE. 1 ) STOP 11

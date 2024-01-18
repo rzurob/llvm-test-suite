@@ -1,21 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Abstractr Interface
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Functional test
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : The use of procedure pointers with the
-!*                               interfaces declared in an abstract interface 
-!*                               They can point to any procedures as long as 
+!*                               interfaces declared in an abstract interface
+!*                               They can point to any procedures as long as
 !*                               they have the same interface
 !*
 !* ===================================================================
@@ -25,12 +18,12 @@ abstract interface
    function func (x)
       integer, intent (in) :: x
       logical :: func
-   end function 
+   end function
 
    subroutine print_out(n, result)
       integer, intent (in) :: n
       logical, intent (in) :: result
-   end subroutine    
+   end subroutine
 end interface
 
 logical result
@@ -71,13 +64,13 @@ logical function prime(n)
    j = sqrt(real(n))
    do  10, while ((i .le. j) .and. (mod(n, i) .ne. 0))
       i = i + 1
-10 continue      
+10 continue
    if( i .gt. j) then
-      prime = .true.     
+      prime = .true.
    else
       prime = .false.
-   end if   
-end  function   
+   end if
+end  function
 
 subroutine print_result(n, result)
    integer, intent (in) :: n
@@ -86,5 +79,5 @@ subroutine print_result(n, result)
       print *, n, ' is a prime number'
    else
       print *, n, ' is not a prime number'
-   end if        
+   end if
 end subroutine

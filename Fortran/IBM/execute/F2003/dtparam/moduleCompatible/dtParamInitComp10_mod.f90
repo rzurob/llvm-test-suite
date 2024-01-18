@@ -26,12 +26,9 @@
         createObj%i = 4
         createObj%r = 4.0
         nullify (createObj%t2)
-        createObj%t%i = 4
-        createObj%t%r = 4.0
         createObj%t1%i = 4
         createObj%t1%r = 4.0
     end function
-
 
     function createObj48 ()
         type(DT1(4,4,8,8)) createObj48
@@ -39,8 +36,6 @@
         createObj48%i = 4
         createObj48%r = 4.0
         nullify (createObj48%t2)
-        createObj48%t%i = 4
-        createObj48%t%r = 4.0
         createObj48%t1%i = 8
         createObj48%t1%r = 8.0
     end function

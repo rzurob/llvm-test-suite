@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fpscrstop057.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,39 +12,32 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fpscrstop057
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Feb. 16, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : When STOP stmt is executed and a floating-
 !*                               point exception is occurred, an informational
 !*                               message should be displayed indicating which
 !*                               FPSCR exception flags are set.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=stopexcept and @PROCESS directive
-!*  REQUIRED RUNTIME OPTIONS   : 
+!*  REQUIRED RUNTIME OPTIONS   :
 !*
 !*  DESCRIPTION                : Test the STOP message when all five
 !*                               FPSCR exception flags are on.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-      
+
 ! overwrite compile-time option.
-@PROCESS XLF2003(NOSTOPEXCEPT) 
+@PROCESS XLF2003(NOSTOPEXCEPT)
       use, intrinsic :: ieee_exceptions
       implicit none
-      
+
       call ieee_set_flag(ieee_all, .true.)
-      
+
       stop "The End"
-      
+
       end

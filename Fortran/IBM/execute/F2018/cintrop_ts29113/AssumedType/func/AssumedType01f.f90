@@ -1,20 +1,13 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AssumedType01f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : June 13, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop: Assumed Type objects
 !*
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Calling a BIND(C) procedure from Fortran
@@ -26,10 +19,10 @@
 use, intrinsic :: iso_c_binding
 use iso_fortran_env
 implicit none
-integer(c_short)               :: i_short 
-integer(c_int)                 :: i_int   
-integer(c_long)                :: i_long  
-integer(c_long_long)           :: i_long_long  
+integer(c_short)               :: i_short
+integer(c_int)                 :: i_int
+integer(c_long)                :: i_long
+integer(c_long_long)           :: i_long_long
 integer(c_signed_char)         :: i_signed_char
 integer(c_size_t)              :: i_size_t
 integer(c_int8_t)              :: i_int8_t
@@ -45,7 +38,7 @@ integer(c_int_fast16_t)        :: i_int_fast16_t
 integer(c_int_fast32_t)        :: i_int_fast32_t
 integer(c_int_fast64_t)        :: i_int_fast64_t
 integer(c_intmax_t)            :: i_intmax_t
-integer(c_intptr_t)            :: i_intptr_t    
+integer(c_intptr_t)            :: i_intptr_t
 real(c_float)                  :: r_float
 real(c_double)                 :: r_double
 real(c_long_double)            :: r_long_double
@@ -61,7 +54,7 @@ interface
       use, intrinsic :: iso_c_binding
       implicit none
       type(*) :: a
-      integer(c_int), value :: flag 
+      integer(c_int), value :: flag
    end subroutine c_sub
 end interface
 
@@ -75,8 +68,8 @@ i_int8_t = 23567
 i_int16_t = i_int8_t*2
 i_int32_t = i_int8_t*4
 i_int64_t = i_int8_t*32
-i_int_least8_t = 8 
-i_int_least16_t = 16 
+i_int_least8_t = 8
+i_int_least16_t = 16
 i_int_least32_t = 32
 i_int_least64_t = 64
 i_int_fast8_t = 8
@@ -84,7 +77,7 @@ i_int_fast16_t = 16
 i_int_fast32_t = 32
 i_int_fast64_t = 64
 i_intmax_t = 100
-i_intptr_t = 20 
+i_intptr_t = 20
 r_float = 1.03
 r_double = 9.0025
 r_long_double = 0.60d-10
@@ -95,9 +88,9 @@ l_bool = .true.
 x_char = 'A'
 
 
-!---- testing unsigned short 
+!---- testing unsigned short
 
-!---- testing short 
+!---- testing short
 call c_sub(i_short, 1)
 print*, "The actual value being:", i_short
 flush(output_unit)
@@ -112,7 +105,7 @@ call c_sub(i_short, 1)
 print*, "The actual value being:", i_short
 flush(output_unit)
 
-!---- testing int   
+!---- testing int
 call c_sub(i_int, 2)
 print*, "The actual value being:", i_int
 flush(output_unit)
@@ -127,7 +120,7 @@ call c_sub(i_int, 2)
 print*, "The actual value being:", i_int
 flush(output_unit)
 
-!---- testing long  
+!---- testing long
 call c_sub(i_long, 3)
 print*, "The actual value being:", i_long
 flush(output_unit)
@@ -142,7 +135,7 @@ call c_sub(i_long, 3)
 print*, "The actual value being:", i_long
 flush(output_unit)
 
-!---- testing long long 
+!---- testing long long
 call c_sub(i_long_long, 4)
 print*, "The actual value being:", i_long_long
 flush(output_unit)
@@ -223,22 +216,22 @@ call c_sub(i_int_least64_t, 13)
 print*, "The actual value being:", i_int_least64_t
 flush(output_unit)
 
-!---- testing c_int_fast8_t  
+!---- testing c_int_fast8_t
 call c_sub(i_int_fast8_t, 14)
 print*, "The actual value being:", i_int_fast8_t
 flush(output_unit)
 
-!---- testing c_int_fast16_t  
+!---- testing c_int_fast16_t
 call c_sub(i_int_fast16_t, 15)
 print*, "The actual value being:", i_int_fast16_t
 flush(output_unit)
 
-!---- testing c_int_fast32_t  
+!---- testing c_int_fast32_t
 call c_sub(i_int_fast32_t, 16)
 print*, "The actual value being:", i_int_fast32_t
 flush(output_unit)
 
-!---- testing c_int_fast64_t  
+!---- testing c_int_fast64_t
 call c_sub(i_int_fast64_t, 17)
 print*, "The actual value being:", i_int_fast64_t
 flush(output_unit)
@@ -298,4 +291,4 @@ call c_sub(i_size_t, 28)
 print*, "The actual value being:", i_size_t
 flush(output_unit)
 
-end 
+end

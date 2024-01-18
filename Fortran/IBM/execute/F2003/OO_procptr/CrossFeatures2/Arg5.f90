@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg5.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg5.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg5.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg5.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,7 +31,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  Argument association - Implicit interface   
+!*  Argument association - Implicit interface
 !* ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -83,15 +77,15 @@
     ExtFun = Arg
   END FUNCTION
 
-  PROGRAM Arg5 
+  PROGRAM Arg5
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
   PROCEDURE(IFun) :: ExtFun
-  PROCEDURE(IFun), POINTER :: ProcPtr 
+  PROCEDURE(IFun), POINTER :: ProcPtr
 
   INTERFACE
     FUNCTION IFun1(Arg)
-      IMPORT DT 
+      IMPORT DT
       TYPE(DT), INTENT(IN) :: Arg
       TYPE(DT)             :: IFun1
     END FUNCTION

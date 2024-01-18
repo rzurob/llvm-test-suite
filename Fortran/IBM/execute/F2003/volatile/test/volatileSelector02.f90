@@ -1,21 +1,14 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector in selectType, VOLATILE
 !*
-!*  DESCRIPTION                : functional TC  
+!*  DESCRIPTION                : functional TC
 !*
-!*     8.1.4.3 
+!*     8.1.4.3
 !*
-!*  The associating entity has the ASYNCHRONOUS, TARGET, or VOLATILE attribute 
+!*  The associating entity has the ASYNCHRONOUS, TARGET, or VOLATILE attribute
 !*  if and only if the selector is a variable and has the attribute.
 !* ===================================================================
 
@@ -23,7 +16,7 @@
 
     interface
         function func(x)
-            class (*), pointer :: func 
+            class (*), pointer :: func
             class (*), intent(in) :: x
             VOLATILE:: func
         end function
@@ -35,7 +28,7 @@
 
     select type (a => func (y))    ! selector is function return
         type is (integer(8))
-            print *, a 
+            print *, a
         type is (integer(4))
             print *, a * 2
     end select
@@ -43,7 +36,7 @@
    end program volatileSelector02
 
    function func(x)
-       class (*), pointer :: func 
+       class (*), pointer :: func
        class (*), intent(in) :: x
        VOLATILE::func
 

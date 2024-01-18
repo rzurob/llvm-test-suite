@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mult_type_bound_nopass2.f 
-!*
-!*  PROGRAMMER                 : Paul Liu
 !*  DATE                       : 2011-05-20
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : no module
 !*                               nopass attribute
@@ -49,7 +39,7 @@
           real function real_foo()
           end function
         end interface
-  
+
         type point
           contains
           procedure,nopass :: foo=>real_foo,bar

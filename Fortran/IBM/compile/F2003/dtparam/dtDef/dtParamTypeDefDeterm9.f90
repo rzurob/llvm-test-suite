@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefDeterm9   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefDeterm9
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 15, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Determination of Types 
+!*  SECONDARY FUNCTIONS TESTED : Determination of Types
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Determination of derived types - sequence types 
+!*  Determination of derived types - sequence types
 !*
 !*  (335771)
 !*
@@ -105,7 +98,7 @@
 
   END MODULE
 
-  PROGRAM dtParamTypeDefDeterm9 
+  PROGRAM dtParamTypeDefDeterm9
   USE M, ONLY: T0, T1, T2, T3, T4, T5, T6, T7, T9
   USE ISO_C_BINDING
 
@@ -191,7 +184,7 @@
 
   T3 = T33 ! This should be fine
 
-  T4 = T44 
+  T4 = T44
 
   T5 = T55 ! This should be fine
 

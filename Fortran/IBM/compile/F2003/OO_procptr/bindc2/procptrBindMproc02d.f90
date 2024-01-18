@@ -1,23 +1,12 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                :  diagnostic TC for C_ASSOCIATE()
-!*                                
+!*
 !* ===================================================================
 
 program procptrBindMproc02d
@@ -39,7 +28,7 @@ program procptrBindMproc02d
 
    procedure(csub), pointer :: pnobind
 
-   print *, C_ASSOCIATED(cfuncptr2, cptr1) 
+   print *, C_ASSOCIATED(cfuncptr2, cptr1)
    print *, C_ASSOCIATED(cptr1, cfuncptr2)
    print *, C_ASSOCIATED(pnobind)
    print *, C_ASSOCIATED(cfuncptr2, pnobind)

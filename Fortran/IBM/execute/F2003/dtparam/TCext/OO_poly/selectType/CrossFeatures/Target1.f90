@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Target1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Target1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Target1 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Target1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Target 
-!*  
-!* 
+!*
+!*  Target
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -76,7 +68,7 @@
 
   END MODULE
 
-  PROGRAM Target1 
+  PROGRAM Target1
   USE M
   IMPLICIT NONE
   TYPE(DT(4,1,1025)), TARGET :: V(4,4)
@@ -103,7 +95,7 @@
   CLASS(DT(4,1,*)), TARGET  :: U(:,:)
   CLASS(DT(4,1,:)), POINTER :: PU(:,:)
   CLASS(*), TARGET  :: W(:,:)
-  CHARACTER(1025), POINTER :: PW(:,:) 
+  CHARACTER(1025), POINTER :: PW(:,:)
   INTEGER :: i
 
   IF (ANY(SHAPE(U) .NE. (/3,3/))) STOP 30
@@ -133,7 +125,7 @@
     STOP 50
   END SELECT
 
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END
 

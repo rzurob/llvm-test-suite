@@ -5,48 +5,41 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: dcomp dtybn007.f 
+! %POSTCMD: dcomp dtybn007.f
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtybn007.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : dtybn007.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : private subroutine 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : pass 
+!*  PRIMARY FUNCTIONS TESTED   : private subroutine
+!*
+!*  SECONDARY FUNCTIONS TESTED : pass
 !*
 !*  DESCRIPTION                : testing the private type bound
 !*                               procedure within a private derived
-!*                               type. 
-!*                               
-!*    
+!*                               type.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod1	      
+   module mod1
       type,private :: parent(n1,k1)    ! (20,4)
          integer, kind :: k1
          integer, len  :: n1
          integer(k1)   :: x
 	 contains
       	 procedure, private, pass :: bind => proc1
-      end type 
+      end type
 
    type(parent(20,4)) :: dt_p
 
@@ -54,11 +47,11 @@
       subroutine proc1(arg1)
          class(parent(*,4)) :: arg1
       end subroutine
-   
-   end module     
+
+   end module
 
    use mod1
    call dt_p%bind()
 
    end
-   
+

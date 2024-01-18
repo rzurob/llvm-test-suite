@@ -1,17 +1,9 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : argpresence15f.f
-!*
-!* PROGRAMMER                 : Bardia Mahjour
 !* DATE                       : Aug 25, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Argument Presence Enhancement
-!*
-!* DRIVER STANZA              : xlf2008
 !*
 !* DESCRIPTION                : Making sure that the proper guard is generated
 !*                              when doing copy-in/out when the actual argument
@@ -37,7 +29,7 @@
       print *, "before", ptr
       call foo(ptr)
       print *, "after", ptr
-      
+
       contains
       subroutine foo(arg1)
         integer, optional, pointer :: arg1(:)

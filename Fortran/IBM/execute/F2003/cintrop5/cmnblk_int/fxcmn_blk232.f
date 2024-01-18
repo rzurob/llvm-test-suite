@@ -2,30 +2,23 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk232 cxcmn_blk201
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.o *.mod fxcmn_blk232 fxcmn_blk232.out
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that variables of
@@ -33,8 +26,8 @@
 !*                               interoperate with C variables
 !*
 !*                               Scope:  module
-!* 
-!*				 This testcase will also test multiple common blocks with a 
+!*
+!*				 This testcase will also test multiple common blocks with a
 !*			         single variable in them interoperated with C variables, but
 !*                               in this testcase all common blocks will be on one COMMON
 !*                               statement.
@@ -45,7 +38,7 @@
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-module fmod1 
+module fmod1
 	use iso_c_binding
         implicit none
 
@@ -53,10 +46,10 @@ module fmod1
 ! Integers Declaration
 !      	- use decimal, binary, octal values to define type
 !     	- use KIND, SELECTED_INT_KIND, MAX, LEN
-!	- use ISO_C_BINDING modules	
+!	- use ISO_C_BINDING modules
 ! ----------------------------------------------------------------------------
 
-	integer (kind=o'001')				:: int_s1a 
+	integer (kind=o'001')				:: int_s1a
 	integer (LEN('k'))				:: int_s1b
 
 	integer (2 )					:: int_s2a
@@ -67,7 +60,7 @@ module fmod1
 
 	integer (kind=MAX(8, 7))			:: int_s8a
 	integer (kind=int((4.4e0_8,6.5e0_8))+4 ) 	:: int_s8b
-	
+
 	INTEGER (C_SIGNED_CHAR 		)		:: int_C_SIGNED_CHAR
 	INTEGER (C_SHORT 		)		:: int_C_SHORT
 	INTEGER (C_INT 			)		:: int_C_INT
@@ -77,7 +70,7 @@ module fmod1
 	INTEGER (C_INTPTR_T 		)		:: int_C_INTPTR_T
 	INTEGER (C_INTMAX_T 		)		:: int_C_INTMAX_T
 	INTEGER (C_INT8_T 		)		:: int_C_INT8_T
-	INTEGER (C_INT16_T 		)		:: int_C_INT16_T 
+	INTEGER (C_INT16_T 		)		:: int_C_INT16_T
 	INTEGER (C_INT32_T 		)		:: int_C_INT32_T
 	INTEGER (C_INT64_T 		)		:: int_C_INT64_T
 	INTEGER (C_INT_LEAST8_T 	)		:: int_C_INT_LEAST8_T
@@ -120,7 +113,7 @@ module fmod1
          , /blk_int_C_INT_FAST8_T/   int_C_INT_FAST8_T          &
          , /blk_int_C_INT_FAST16_T/  int_C_INT_FAST16_T         &
          , /blk_int_C_INT_FAST32_T/  int_C_INT_FAST32_T         &
-         , /blk_int_C_INT_FAST64_T/  int_C_INT_FAST64_T 
+         , /blk_int_C_INT_FAST64_T/  int_C_INT_FAST64_T
 
 
         BIND(C) 	::   /blk_int_s1a/ ,  &
@@ -152,7 +145,7 @@ module fmod1
          /blk_int_C_INT_FAST32_T/ ,  &
          /blk_int_C_INT_FAST64_T/
 
-end module fmod1 
+end module fmod1
 
 
 program fxcmn_blk232
@@ -237,7 +230,7 @@ program fxcmn_blk232
 
 
 ! ----------------------------------------------------------------------------
-!  Call to C subprogram  
+!  Call to C subprogram
 ! ----------------------------------------------------------------------------
 	CALL CSUB_ALL()
 

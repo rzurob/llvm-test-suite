@@ -1,28 +1,13 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 08/16/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : derived type parameter
 !                               Use function result that is an array of derived
 !                               types for the allocatable component; function
 !                               return is a pointer array after bounds-remap.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -84,7 +69,7 @@ use m
 
     if (any(lbound(b1%data) /= 1) .or. any(ubound(b1%data) /= 10)) &
         error stop 4_4
-        
+
     if (any(lbound(b2%data) /= (/1,1/)) .or. &
         any(ubound(b2%data) /= (/6,5/))) error stop 5_4
 

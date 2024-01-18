@@ -1,34 +1,29 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : concate004.f
-!*  TEST CASE TITLE            : Test the concatenation of character array coarray
-!*                               
-!*  PROGRAMMER                 : Ke Wen Lin 
-!*  DATE                       : March 23, 2011 
+!*
+!*  DATE                       : March 23, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test the concatenation of character array coarray
-!*                              
-!*  SECONDARY FUNCTIONS TESTED :                                                      
-!*                              
+!*
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REFERENCE                  : No Feature Number
 !*
-!*  DRIVER STANZA              : xlf2003_r
 !*  REQUIRED COMPILER OPTIONS  : -qcaf -q64
 !*
 !*  KEYWORD(S)                 : character, CAF, array
-!*                                                
-!*  TARGET(S)                  : character array coarray                
+!*
+!*  TARGET(S)                  : character array coarray
 !*
 !*  DESCRIPTION:
 !*  -----------
-!*  The testcase aim to 
+!*  The testcase aim to
 !*  1. test the concatenation of character array coarray
 !*  -----------
-!*  
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program concate004
@@ -36,9 +31,9 @@ program concate004
 	implicit none
 
 	integer, parameter  :: P = 1, Q = 2
-	
-	character (len=10), save :: coStr(3)[-1:0,0:1,2:*] 
-	character (len=10) 		 :: loStr(2) 
+
+	character (len=10), save :: coStr(3)[-1:0,0:1,2:*]
+	character (len=10) 		 :: loStr(2)
 
 	character (len=1000) 		:: concateStr
 	character (len=1000) 		:: verifyConcateStr
@@ -47,9 +42,9 @@ program concate004
 	character (len=1),	  save 	:: co_verify_chars(-1:0)[*]
 	character (len=1) 			:: PQ_verify_chars(0:3)
 	character (len=1) 			:: unit_char, parity_char
-	
+
 	integer :: coStr_low_bounds(3), coStr_up_bounds(3), coStr_index(3)
-	integer :: coConcateStr_low_bounds(2), coConcateStr_up_bounds(2), coConcateStr_index(2) 
+	integer :: coConcateStr_low_bounds(2), coConcateStr_up_bounds(2), coConcateStr_index(2)
 
 	integer :: me, ne, units, i, j, k, m, n
 
@@ -63,7 +58,7 @@ program concate004
 	if ( MOD(me,2) == 0) then
 		co_verify_chars(0) = "E"
 		parity_char = "E"
-	else 
+	else
 		co_verify_chars(0) = "O"
 		parity_char = "O"
 	end if
@@ -98,7 +93,7 @@ program concate004
 	coConcateStr_index = this_image(coConcateStr)
 
 	sync all
-	
+
 	!!! ************  coarray // local  ************ !!!
 	concateStr = ""
 	concateStr = coStr(1)//loStr(1) ! 10 + 10
@@ -152,7 +147,7 @@ program concate004
 	concateStr = ""
 	concateStr = coStr(1)//coStr(2)//coStr(3) ! 10 + 10 + 10
 	if(.NOT.( (len_trim(concateStr) == 30) .AND. (verifyChars(concateStr,1,10,co_verify_chars(-1))) &
-	  .AND. (verifyChars(concateStr,11,20,co_verify_chars(0))) & 
+	  .AND. (verifyChars(concateStr,11,20,co_verify_chars(0))) &
 	  .AND. (verifyChars(concateStr,21,30,co_verify_chars(-1))))) then
 		error stop 17
 	end if
@@ -196,7 +191,7 @@ program concate004
 
 	! ************** blend images ************** !
 
-	if (ne > MAX_IMAGE) then 
+	if (ne > MAX_IMAGE) then
 		ne = MAX_IMAGE
 	end if
 
@@ -218,9 +213,9 @@ program concate004
 					end do
 				end do
 			end do loop1
-			
+
 		if(len_trim(concateStr) /= (ne * 10)) then
-			error stop 41        
+			error stop 41
 		end if
 
 		loop2:do k = coStr_low_bounds(3),coStr_up_bounds(3)
@@ -235,22 +230,22 @@ program concate004
 				end do
 			end do loop2
 
-		if(concateStr /= verifyConcateStr) then 
+		if(concateStr /= verifyConcateStr) then
 		   error stop 42
 		end if
-		
-	! when current is not P, change P 			
-	else if (me /= P) then 
-			
-		if(me == Q) then 
+
+	! when current is not P, change P
+	else if (me /= P) then
+
+		if(me == Q) then
 			coConcateStr[0,1] = coStr(1)[-1,0,2]//coStr(1)[0,0,2]
 			if(.NOT.( (len_trim(coConcateStr[0,1]) == 20) .AND. (verifyChars(coConcateStr[0,1],1,10,PQ_verify_chars(0))) &
 			  .AND. (verifyChars(coConcateStr[0,1],11,20,PQ_verify_chars(2))) )) then
 				error stop 43
 			end if
-			
-			coConcateStr[0,1]  = trim(coConcateStr[0,1])//coStr(2)[0,0,2]//coStr(2)[-1,0,2] 
-			
+
+			coConcateStr[0,1]  = trim(coConcateStr[0,1])//coStr(2)[0,0,2]//coStr(2)[-1,0,2]
+
 			if(.NOT.( (len_trim(coConcateStr[0,1]) == 40) .AND. (verifyChars(coConcateStr[0,1],1,10,PQ_verify_chars(0))) &
 			  .AND. (verifyChars(coConcateStr[0,1],11,20,PQ_verify_chars(2)))  &
 			  .AND. (verifyChars(coConcateStr[0,1],21,30,PQ_verify_chars(3))) &
@@ -258,39 +253,39 @@ program concate004
 				error stop 44
 			end if
 		end if
-		
+
 	end if
 
 	sync all
-	
+
 	! concatenation between any two images
 	loop3:  do k = coStr_low_bounds(3),coStr_up_bounds(3)
 				do j = coStr_low_bounds(2),coStr_up_bounds(2)
 					do i = coStr_low_bounds(1),coStr_up_bounds(1)
-						
+
 						m = image_index(coStr,(/i,j,k/))
-						
+
 						coConcateStr = ""
 						coConcateStr = coStr(2)//coStr(2)[i,j,k]
-						
+
 						if(len_trim(coConcateStr) /= 20) then
 							error stop 45
 						end if
-						
+
 						if(.NOT. (verifyChars(coConcateStr,1,10,co_verify_chars(0)))) then
 							error stop 46
 						end if
-						
-						if (MOD(m,2) == 0) then 
+
+						if (MOD(m,2) == 0) then
 							if(.NOT. (verifyChars(coConcateStr,11,20,PQ_verify_chars(3)))) then
 								error stop 47
 							end if
-						else 
+						else
 							if(.NOT. (verifyChars(coConcateStr,11,20,PQ_verify_chars(1)))) then
 								error stop 48
 							end if
 						end if
-						
+
 						if(m == ne) then
 							exit loop3
 						end if

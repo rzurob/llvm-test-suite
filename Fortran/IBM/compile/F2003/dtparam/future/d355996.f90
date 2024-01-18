@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d355996.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d355996.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 12 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 12 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. DEFECT 355996 
+!* 1. DEFECT 355996
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type A(l)
@@ -33,7 +25,7 @@ program d355996
     use m
     implicit none
 
-    type(A) :: a1=A()()  
+    type(A) :: a1=A()()
     type(A) :: a2(2)=[A()(),A()()]
 
 end program

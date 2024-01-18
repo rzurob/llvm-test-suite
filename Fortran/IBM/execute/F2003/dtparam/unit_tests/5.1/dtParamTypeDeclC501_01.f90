@@ -13,7 +13,7 @@
            use m
            integer n, n_back
            integer, parameter :: x(2) = (/ 1, 2 /)
-           integer common_obj 
+           integer common_obj
            common /blk/ common_obj
            type dt(l)
              integer, len :: l
@@ -28,7 +28,7 @@
            ! A host-associated object
            type(dt(hostassoc)) d
            ! A use-associated object
-           type(dt(useassoc)) e 
+           type(dt(useassoc)) e
            ! A restricted expression enclosed in parentheses
            type(dt((((5))))) f
 
@@ -39,7 +39,7 @@
            if (b%l /= n_back*2) error stop 2
            if (c%l /= common_obj) error stop 3
            if (d%l /= hostassoc) error stop 4
-           if (e%l /= useassoc) error stop 5 
+           if (e%l /= useassoc) error stop 5
            if (f%l /= 5) error stop 6
          end subroutine
        end program

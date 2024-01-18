@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : saBasicMessage
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-07-26
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF SYNC ALL
 !*  SECONDARY FUNCTIONS TESTED : errmsg variable is not altered on no error

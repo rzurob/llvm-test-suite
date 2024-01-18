@@ -1,26 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Nested1.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Nested subroutine call
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                :
 !*
-!*  DESCRIPTION                : 
-!*       
-!*                      
-!*    - Inner most subroutine has explit shape array dummy argument 
+!*    - Inner most subroutine has explit shape array dummy argument
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -39,7 +28,7 @@ PROGRAM Nested1
       INTEGER, POINTER :: ptr(:,:,:)
 
       I3D = RESHAPE( SOURCE = [(I, I=1,125)], SHAPE = [5,5,5] )
-      ptr => I3D 
+      ptr => I3D
       CALL Sub1(ptr)
 
       init = 1
@@ -47,7 +36,7 @@ PROGRAM Nested1
          DO J = 1, 5
            DO I = 1, 5
                IF ( ptr(I, J, K) .NE. I+J+K ) ERROR STOP 100
-               ptr(I, J, K) = init 
+               ptr(I, J, K) = init
                init = init + 1
            ENDDO
          ENDDO
@@ -95,17 +84,17 @@ PROGRAM Nested1
 
       CONTAINS
 
-      SUBROUTINE Sub1(Arg)           
+      SUBROUTINE Sub1(Arg)
         INTEGER :: Arg(:,:,:)
 
         IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 10
         IF ( ANY(Arg .NE. RESHAPE(SOURCE=[(I, I=1,125)], SHAPE=[5,5,5])) ) ERROR STOP 13
 
-        CALL SubSub(Arg) 
+        CALL SubSub(Arg)
         IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 11
 
       END SUBROUTINE Sub1
-      
+
       SUBROUTINE Sub2(Arg)
         INTEGER, POINTER :: Arg(:,:,:)
 

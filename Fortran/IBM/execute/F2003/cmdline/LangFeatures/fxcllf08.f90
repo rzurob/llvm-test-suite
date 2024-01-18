@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxcllf08 /////// ////-///// ---//// //////-----"
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,39 +12,32 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxcllf08.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Call command line intrinsic routines in an internal routine  
+!*  DESCRIPTION                : Call command line intrinsic routines in an internal routine
 !*                             : which is called  through nested do while statements
-!*                             : 
-!*              
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
 
       PROGRAM fxcllf08
 
@@ -52,10 +45,10 @@
 
 
 
-      character(513)   :: NAME  
-      logical          :: TRIM_NAME 
-      character(2049)  :: CmdLine 
-          
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
+      character(2049)  :: CmdLine
+
 
       DATA CmdLine    /'fxcllf08 /////// ////-///// ---//// //////-----'/
       DATA NAME       /'CmdLine   '/
@@ -63,11 +56,11 @@
 
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE  
-      integer          :: ARGCOUNT 
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
 
 
       DATA COMMAND    / '????? '/
@@ -84,32 +77,32 @@
       integer              :: i
       INTEGER    :: l, m, n
 
-  
+
       l = 0
       DO WHILE ( l .le. 2)
       m = 0
       DO WHILE ( m .le. 2)
       n = 0
       DO WHILE ( n .le. 2)
-  
+
         CALL SUB
 
       n = n + 1
-      END DO 
+      END DO
       m = m + 1
-      END DO 
+      END DO
       l = l + 1
-      END DO 
+      END DO
 
 
       CONTAINS
 
- 
+
       SUBROUTINE SUB
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 4 ) & 
+      if ( CmdCount .ne. 4 ) &
       then
         error stop 63
       endif
@@ -125,7 +118,7 @@
 
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -140,7 +133,7 @@
       END DO
 
 
-	
+
       call GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
       if ( (TRIM(VALUE) .ne. TRIM(CmdLine))  .or. &
             (LENGTH .ne. LEN(TRIM(CmdLine)))  .or. &
@@ -154,7 +147,7 @@
       END SUBROUTINE
 
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 

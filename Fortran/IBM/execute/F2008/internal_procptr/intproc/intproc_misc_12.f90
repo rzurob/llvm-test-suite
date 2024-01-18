@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_misc_12.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May 04, 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,8 +11,7 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*  Miscellaneous Test  --  
-!*  Variables in different scoping units whith the same name 
-!*  
+!*  Miscellaneous Test  --
+!*  Variables in different scoping units whith the same name
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -42,15 +34,15 @@
   PROCEDURE(), POINTER :: procptr
     iii = iarg + 111
     procptr => set
-    CALL procptr(Iarg) 
-    procptr => check 
-    CALL procptr(Iarg) 
+    CALL procptr(Iarg)
+    procptr => check
+    CALL procptr(Iarg)
   CONTAINS
     SUBROUTINE set(iarg)
       iii = Iarg
     END SUBROUTINE
     SUBROUTINE check(iarg)
-      IF (ANY(iii .NE. Iarg)) ERROR STOP 11 
+      IF (ANY(iii .NE. Iarg)) ERROR STOP 11
     END SUBROUTINE
   END SUBROUTINE
 
@@ -60,17 +52,17 @@
   PROCEDURE(), POINTER :: procptr
     iii = iarg + 111
     procptr => set
-    CALL procptr(Iarg) 
-    IF (ANY(iii .NE. Iarg+111)) ERROR STOP 13 
-    procptr => check 
-    CALL procptr(Iarg) 
+    CALL procptr(Iarg)
+    IF (ANY(iii .NE. Iarg+111)) ERROR STOP 13
+    procptr => check
+    CALL procptr(Iarg)
   END BLOCK
   CONTAINS
     SUBROUTINE set(iarg)
       iii = Iarg+3
     END SUBROUTINE
     SUBROUTINE check(iarg)
-      IF (ANY(iii .NE. Iarg+3)) ERROR STOP 12 
+      IF (ANY(iii .NE. Iarg+3)) ERROR STOP 12
     END SUBROUTINE
   END SUBROUTINE
 
@@ -81,17 +73,17 @@
   PROCEDURE(), POINTER :: procptr
     iii = iarg + 111
     procptr => set
-    CALL procptr(Iarg) 
-    IF (ANY(iii .NE. Iarg+111)) ERROR STOP 14 
-    procptr => check 
-    CALL procptr(Iarg) 
+    CALL procptr(Iarg)
+    IF (ANY(iii .NE. Iarg+111)) ERROR STOP 14
+    procptr => check
+    CALL procptr(Iarg)
   END BLOCK
   CONTAINS
     SUBROUTINE set(iarg)
       iii = Iarg+4
     END SUBROUTINE
     SUBROUTINE check(iarg)
-      IF (ANY(iii .NE. Iarg+4)) ERROR STOP 15 
+      IF (ANY(iii .NE. Iarg+4)) ERROR STOP 15
     END SUBROUTINE
   END SUBROUTINE
 
@@ -104,11 +96,11 @@
   DO I = 1, 10000
     iii = -I
     CALL Msub1(I)
-    IF (ANY(iii .NE. -I)) ERROR STOP 16 
+    IF (ANY(iii .NE. -I)) ERROR STOP 16
     CALL Msub2(I)
-    IF (ANY(iii .NE. I+3)) ERROR STOP 17 
+    IF (ANY(iii .NE. I+3)) ERROR STOP 17
     CALL Msub3(I)
-    IF (ANY(iii .NE. I+3)) ERROR STOP 18 
+    IF (ANY(iii .NE. I+3)) ERROR STOP 18
   END DO
 
   END

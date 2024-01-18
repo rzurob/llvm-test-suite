@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemDOT_PRODUCT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemDOT_PRODUCT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to a transformational  intrinsic
-!* 
-!*  - DOT_PRODUCT 
+!*
+!*  - DOT_PRODUCT
 !*  (318833)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM  InitExpDefElemDOT_PRODUCT 
+  PROGRAM  InitExpDefElemDOT_PRODUCT
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -73,9 +66,9 @@
   LOGICAL(KIND(DOT_PRODUCT(L2, L8))) :: TL8(DOT_PRODUCT(I8, I2))=DOT_PRODUCT(L8, L2)
 
 
-  IF (KIND(TI0)   .NE.   1   )        STOP 8 
-  IF (SIZE(TI0)   .NE.   127 )        STOP 9 
-  IF (ANY( TI0    .NE.   0   ))       STOP 10 
+  IF (KIND(TI0)   .NE.   1   )        STOP 8
+  IF (SIZE(TI0)   .NE.   127 )        STOP 9
+  IF (ANY( TI0    .NE.   0   ))       STOP 10
 
   IF (KIND(TI1)   .NE.   1   )        STOP 21
   IF (SIZE(TI1)   .NE.   127 )        STOP 22
@@ -113,4 +106,4 @@
   END
 
 
- 
+

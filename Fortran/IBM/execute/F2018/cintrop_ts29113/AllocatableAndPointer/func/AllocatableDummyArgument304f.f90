@@ -1,30 +1,22 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument304f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy arg1ument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from C
 !*
 !*                                - Allocate in C / deallocate in Fortran
 !*                                - Set values in C
-!*                                - Intent(In) dummy argument 
-!*                                - Optinal dummy argument 
+!*                                - Intent(In) dummy argument
+!*                                - Optinal dummy argument
 !*                                - Verify values both in Fortran and C
 !*                                - type c_double
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -42,7 +34,7 @@ subroutine sub_dealloc(arg1) bind(C)
     if ( .not. allocated(arg1) ) then
       print*, "arg1 is not allocated!"
       ERROR STOP 20
-    else 
+    else
       deallocate(arg1)
     endif
 
@@ -84,8 +76,8 @@ subroutine compute(arg1, arg2) bind(C)
     print*, all1, res1
 
     allocate(obj1, obj2)
-    obj1 = arg1 
-    obj2 = arg2 
+    obj1 = arg1
+    obj2 = arg2
     all2 = obj1 * obj2
     res2 = obj1 * obj2
     print*, "all2, res2:"
@@ -114,7 +106,7 @@ subroutine set_value(arg, opt1, opt2, opt3, opt4, value, val1, val2, val3, val4)
     real(c_double), allocatable, optional :: opt1, opt2, opt3, opt4
 
     if ( .not. allocated(arg) ) ERROR STOP 10
-    arg = value 
+    arg = value
 
     if ( present(opt1) ) then
        if ( .not. allocated(opt1) ) ERROR STOP 11

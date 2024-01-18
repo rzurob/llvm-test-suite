@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefUNPACK.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefUNPACK.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an tranformational intrinsic
-!* 
-!*  - UNPACK 
+!*
+!*  - UNPACK
 !*  (319511)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -47,7 +40,7 @@
     CONTAINS
     PROCEDURE  :: Proc => ModSub
   END TYPE
- 
+
   CONTAINS
 
   SUBROUTINE ModSub(Arg)
@@ -56,7 +49,7 @@
 
   END MODULE
 
-  PROGRAM   InitExpDefUNPACK 
+  PROGRAM   InitExpDefUNPACK
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
@@ -65,8 +58,8 @@
 
   INTEGER(1),   PARAMETER :: I11(3)    = (/(I, I=1,3)/)
   LOGICAL(1),   PARAMETER :: MI11(3,3) = RESHAPE((/F,T,F,T,F,F,F,F,T/), (/3,3/))
-  INTEGER(1),   PARAMETER :: FI11(3,3) = RESHAPE((/1,0,0,0,1,0,0,0,1/), (/3,3/))    
-  
+  INTEGER(1),   PARAMETER :: FI11(3,3) = RESHAPE((/1,0,0,0,1,0,0,0,1/), (/3,3/))
+
   INTEGER(KIND(UNPACK(I11, MASK=MI11, FIELD=FI11))),   PARAMETER ::   &
                            TI11(3,3)=UNPACK(I11, MASK=MI11, FIELD=FI11)
   INTEGER(KIND(UNPACK(I11, MASK=MI11, FIELD=0_1))),      PARAMETER ::   &
@@ -76,8 +69,8 @@
 
   LOGICAL(2),   PARAMETER :: L21(3)    = (/T,T,T/)
   LOGICAL(2),   PARAMETER :: ML21(3,3) = RESHAPE((/F,T,F,T,F,F,F,F,T/), (/3,3/))
-  LOGICAL(2),   PARAMETER :: FL21(3,3) = RESHAPE((/T,F,F,F,T,F,F,F,T/), (/3,3/))    
-  
+  LOGICAL(2),   PARAMETER :: FL21(3,3) = RESHAPE((/T,F,F,F,T,F,F,F,T/), (/3,3/))
+
   LOGICAL(KIND(UNPACK(L21, MASK=ML21, FIELD=FL21))),   PARAMETER ::   &
                            TL21(3,3)=UNPACK(L21, MASK=ML21, FIELD=FL21)
   LOGICAL(KIND(UNPACK(L21, MASK=ML21, FIELD=.FALSE._2))),      PARAMETER ::   &
@@ -87,8 +80,8 @@
 
   REAL(4),      PARAMETER :: R41(3)    = (/(I, I=1,3)/)
   LOGICAL(4),   PARAMETER :: MR41(3,3) = RESHAPE((/F,T,F,T,F,F,F,F,T/), (/3,3/))
-  REAL(4),      PARAMETER :: FR41(3,3) = RESHAPE((/1,0,0,0,1,0,0,0,1/), (/3,3/))    
-  
+  REAL(4),      PARAMETER :: FR41(3,3) = RESHAPE((/1,0,0,0,1,0,0,0,1/), (/3,3/))
+
   REAL(KIND(UNPACK(R41, MASK=MR41, FIELD=FR41))),   PARAMETER ::   &
                            TR41(3,3)=UNPACK(R41, MASK=MR41, FIELD=FR41)
   REAL(KIND(UNPACK(R41, MASK=MR41, FIELD=0._4))),      PARAMETER ::   &
@@ -99,8 +92,8 @@
   COMPLEX(8),      PARAMETER :: Z81(3)    = (/((I,I), I=1,3)/)
   LOGICAL(4),      PARAMETER :: MZ81(3,3) = RESHAPE((/F,T,F,T,F,F,F,F,T/), (/3,3/))
   COMPLEX(8),      PARAMETER :: FZ81(3,3) =    &
-                   RESHAPE((/(1,1),(0,0),(0,0),(0,0),(1,1),(0,0),(0,0),(0,0),(1,1)/), (/3,3/))    
-  
+                   RESHAPE((/(1,1),(0,0),(0,0),(0,0),(1,1),(0,0),(0,0),(0,0),(1,1)/), (/3,3/))
+
   COMPLEX(KIND(UNPACK(Z81, MASK=MZ81, FIELD=FZ81))),   PARAMETER ::   &
                            TZ81(3,3)=UNPACK(Z81, MASK=MZ81, FIELD=FZ81)
   COMPLEX(KIND(UNPACK(Z81, MASK=MZ81, FIELD=(0._8,0._8)))),      PARAMETER ::   &
@@ -113,10 +106,10 @@
   TYPE(DT(4,2)),     PARAMETER :: D(3)    = (/(DT(4,2)(I=I), I=1,3)/)
   LOGICAL(1),   PARAMETER :: MD(3,3) = RESHAPE((/F,T,F,T,F,F,F,F,T/), (/3,3/))
   TYPE(DT(4,2)),     PARAMETER :: FD(3,3) =     &
-                RESHAPE((/DT(4,2)(I=1),DT(4,2)(I=0),DT(4,2)(I=0),DT(4,2)(I=0),DT(4,2)(I=1),DT(4,2)(I=0),DT(4,2)(I=0),DT(4,2)(I=0),DT(4,2)(I=1)/), (/3,3/))    
-  
-  TYPE(DT(4,2)),     PARAMETER ::  TD1(3,3)=UNPACK(D, MASK=MD, FIELD=FD) 
-  TYPE(DT(4,2)),     PARAMETER ::  TD2(3,3)=UNPACK(D, MASK=MD, FIELD=DT(4,2)(I=0)) 
+                RESHAPE((/DT(4,2)(I=1),DT(4,2)(I=0),DT(4,2)(I=0),DT(4,2)(I=0),DT(4,2)(I=1),DT(4,2)(I=0),DT(4,2)(I=0),DT(4,2)(I=0),DT(4,2)(I=1)/), (/3,3/))
+
+  TYPE(DT(4,2)),     PARAMETER ::  TD1(3,3)=UNPACK(D, MASK=MD, FIELD=FD)
+  TYPE(DT(4,2)),     PARAMETER ::  TD2(3,3)=UNPACK(D, MASK=MD, FIELD=DT(4,2)(I=0))
   TYPE(DT(4,2)),     PARAMETER ::  DR1(3,3) =   &
                 RESHAPE((/DT(4,2)(I=1),DT(4,2)(I=1),DT(4,2)(I=0),DT(4,2)(I=2),DT(4,2)(I=1),DT(4,2)(I=0),DT(4,2)(I=0),DT(4,2)(I=0),DT(4,2)(I=3)/), (/3,3/))
   TYPE(DT(4,2)),     PARAMETER ::  DR2(3,3) =   &
@@ -151,4 +144,4 @@
   END
 
 
- 
+

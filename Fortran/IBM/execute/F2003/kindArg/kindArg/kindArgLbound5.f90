@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgLbound5
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : LBOUND 
+!*  SECONDARY FUNCTIONS TESTED : LBOUND
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Characteristics.
-!*  Integer. If KIND is present, the kind type parameter is that specified by the value of KIND; 
+!*  Integer. If KIND is present, the kind type parameter is that specified by the value of KIND;
 !*  otherwise the kind type parameter is that of default integer type. The result is scalar if DIM is present;
 !*  otherwise, the result is an array of rank one and size n, where n is the rank of ARRAY.
-!*    
-!*  (322652) 
+!*
+!*  (322652)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

@@ -1,23 +1,12 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                :  diagnostic TC for C_F_PROCPOINTER()
-!*                                
+!*
 !* ===================================================================
 
 program procptrBindMproc01d
@@ -28,7 +17,7 @@ program procptrBindMproc01d
    type(C_FUNPTR) :: cfuncptr2
    type(C_PTR) :: cptr1
 
-   integer, pointer :: ip 
+   integer, pointer :: ip
    integer, pointer :: iparray(:)
    integer :: int
 
@@ -53,7 +42,7 @@ program procptrBindMproc01d
     call C_F_PROCPOINTER()
     call C_F_PROCPOINTER(cfuncptr2)
     call C_F_PROCPOINTER(pfuncptr)
-    call C_F_PROCPOINTER(cfuncptr1, pfuncptr) 
+    call C_F_PROCPOINTER(cfuncptr1, pfuncptr)
     call C_F_PROCPOINTER(cptr1, pfuncptr)
 
     call C_F_PROCPOINTER(int, pfuncptr)
@@ -63,7 +52,7 @@ program procptrBindMproc01d
     call C_F_PROCPOINTER(cfuncptr2, iparray)
     call C_F_PROCPOINTER(C_FUNLOC(pbind), C_FUNLOC(pbind))
     call C_F_PROCPOINTER(C_FUNLOC(pbind), cfuncptr2)
-    call C_F_PROCPOINTER(pbind, pbind) 
+    call C_F_PROCPOINTER(pbind, pbind)
 
 end program procptrBindMproc01d
 

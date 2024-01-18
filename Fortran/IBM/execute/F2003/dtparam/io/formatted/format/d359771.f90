@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d359771.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d359771.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 5 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 5 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  defect 359771
@@ -31,7 +23,7 @@ module m
 
   contains
     subroutine readbase(arg1)
-       type(base(*)),pointer,intent(inout) :: arg1 
+       type(base(*)),pointer,intent(inout) :: arg1
 
        read (10,fmt= '(a8)') arg1%c1
        read (10,fmt= '(l2)') arg1%log1
@@ -51,7 +43,7 @@ program d359771
 
   open(10,file="d359771.in")
 
-  call readbase(base1) 
+  call readbase(base1)
 
   close(10)
 

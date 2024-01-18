@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpDecTypeSpecifierCls3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 18, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  The dynamic type of an unallocated allocatable or a disassociated pointer is 
+!*  The dynamic type of an unallocated allocatable or a disassociated pointer is
 !*  the same as its declared type
-!* 
-!*  -- The dynamic type 
-!* 
 !*
-!*  (ICE) 
+!*  -- The dynamic type
+!*
+!*  (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

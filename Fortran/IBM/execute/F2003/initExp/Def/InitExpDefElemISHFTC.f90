@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemISHFTC.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemISHFTC.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 10, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  ISHFTC 
+!*
+!*  -  ISHFTC
 !*  (319093/319591)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -40,13 +33,13 @@
   INTEGER :: I, J
 
   INTEGER(KIND(ISHFTC((/(1_1, I=0, 127)/), SIZE=8_8, SHIFT=8))),    PARAMETER ::    &
-       I1(128)=ISHFTC((/(1_1, I=0, 127)/), SIZE=8_8, SHIFT=8)  
+       I1(128)=ISHFTC((/(1_1, I=0, 127)/), SIZE=8_8, SHIFT=8)
   INTEGER(KIND(ISHFTC((/(-128_2, I=0, 127)/), SHIFT=-2, SIZE=2))),  PARAMETER ::    &
-       I2(128)=ISHFTC((/(-128_2, I=0, 127)/), SHIFT=-2, SIZE=2)  
+       I2(128)=ISHFTC((/(-128_2, I=0, 127)/), SHIFT=-2, SIZE=2)
   INTEGER(KIND(ISHFTC((/(-128_4, I=0, 127)/), 0_8, SIZE=32))),      PARAMETER ::    &
-       I4(128)=ISHFTC((/(-128_4, I=0, 127)/), 0_8, SIZE=32)  
+       I4(128)=ISHFTC((/(-128_4, I=0, 127)/), 0_8, SIZE=32)
   INTEGER(KIND(ISHFTC(I=(/(1_8, I=0, 127)/), SHIFT=(/(1,-1, I=1,128,2)/), SIZE=(/(1, I=1,128)/)))), PARAMETER ::    &
-       I8(128)=ISHFTC(I=(/(1_8, I=0, 127)/), SHIFT=(/(1,-1, I=1,128,2)/), SIZE=(/(1, I=1,128)/))  
+       I8(128)=ISHFTC(I=(/(1_8, I=0, 127)/), SHIFT=(/(1,-1, I=1,128,2)/), SIZE=(/(1, I=1,128)/))
 
 
   TYPE :: DT0
@@ -54,7 +47,7 @@
   END TYPE
 
   TYPE :: DT
-    TYPE(DT0) :: Arr(4) 
+    TYPE(DT0) :: Arr(4)
   END TYPE
                                 !DT0(ISHFTC((/(INT(z"FFF0", 2), I=0, 127)/), SHIFT=-4, SIZE=2)),    &
 

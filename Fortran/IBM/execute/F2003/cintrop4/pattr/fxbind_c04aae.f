@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,16 +13,9 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c04aae.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran programs interoperate with C functions
@@ -36,7 +24,6 @@
 !*                              - interop functions contained in Module
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -47,15 +34,15 @@
 !*   - passing scalar arguments by REFERENCE and by VALUE
 !*   - main written in FORTRAN, Fortran calls C functions.
 !*
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. Declare the interop functions in Fortran program.
 !*          ( Create a procedural interface that corresponds to the C prototype
-!*          and bind the interface to the C function using the BIND(C) specifier). 
+!*          and bind the interface to the C function using the BIND(C) specifier).
 !*          2. Initialize the variable which will be the  actual arguments of
-!*             the interop functions. 
+!*             the interop functions.
 !*          3. Fortran  program call C function.The argument is  altered
 !*             during execution of the C Function.
-!*          4. Assertion: Check the modified auguments and return value  
+!*          4. Assertion: Check the modified auguments and return value
 !*             in Fortran to verify it is correct.
 !*
 !* ===================================================================
@@ -130,15 +117,15 @@ program fxbind_c04aae
   der_ref%i8 = 17
   der_ref_compare%i8 = 20
 
-  der_ref%r4 = 4.80 
+  der_ref%r4 = 4.80
   der_ref_compare%r4 = 9.6
-  der_ref%r8 = 140.8 
+  der_ref%r8 = 140.8
   der_ref_compare%r8 = 281.6
   der_ref%r16 = 1600.3
   der_ref_compare%r16 = 3200.6
-  der_ref%l1 = .false. 
+  der_ref%l1 = .false.
   der_ref_compare%l1 = .true.
-  der_ref%c = 'a' 
+  der_ref%c = 'a'
   der_ref_compare%c = 'd'
 
   der_val%i1 = 5
@@ -149,28 +136,28 @@ program fxbind_c04aae
   der_val_compare%i4 = 11
   der_val%i8 = 17
   der_val_compare%i8 = 17
-  der_val%r4 = 4.80 
+  der_val%r4 = 4.80
   der_val_compare%r4 = 4.80
-  der_val%r8 = 140.8 
+  der_val%r8 = 140.8
   der_val_compare%r8 = 140.8
   der_val%r16 = 1600.3
   der_val_compare%r16 = 1600.3
-  der_val%l1 = .false. 
+  der_val%l1 = .false.
   der_val_compare%l1 = .false.
-  der_val%c = 'a' 
+  der_val%c = 'a'
   der_val_compare%c = 'a'
 
   !**********************************************************
-  ! Calling C from Fortran with derive type with different 
+  ! Calling C from Fortran with derive type with different
   !          data type and check the results
   !**********************************************************
 
   ! Test 1 : call by reference
-  ! A dummy argument without the VALUE attribute correspond 
-  ! to a formal parameter  of the prototype in C program 
+  ! A dummy argument without the VALUE attribute correspond
+  ! to a formal parameter  of the prototype in C program
   ! that is of a pointer type.
 
-  tmp = fun_der_ref(der_ref) 
+  tmp = fun_der_ref(der_ref)
   if(der_ref%i1 .ne. der_ref_compare%i1) error stop 10
   if(der_ref%i2 .ne. der_ref_compare%i2) error stop 11
   if(der_ref%i4 .ne. der_ref_compare%i4) error stop 12
@@ -184,7 +171,7 @@ program fxbind_c04aae
 
   ! Test 2 : call by value
   ! A dummy argument with the VALUE attribute  correspond
-  ! to a formal parameter of the prototype in C program that is 
+  ! to a formal parameter of the prototype in C program that is
   ! not of a pointer type.
 
   tmp = fun_der_val(der_val)

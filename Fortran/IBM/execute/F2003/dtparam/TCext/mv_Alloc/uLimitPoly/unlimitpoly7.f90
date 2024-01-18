@@ -3,31 +3,18 @@
 ! opt variations: -qnok -qnol
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlimitpoly7.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 05/30/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimit polymorphic,
 !*                               TO and FROM have dimension attribute
 !*                               rank = 2
 !*                               FROM is a component of a derived-type
 !*                               dynamic type is integer
-!*
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -54,7 +41,7 @@ use m
 
    type(base(4,20)) b1
 
-   integer i 
+   integer i
 
    class(*), allocatable, dimension(:,:) :: to
 
@@ -66,21 +53,21 @@ use m
        type is (integer)
             arg = reshape( (/ (i, i = -12, -1 ) /),(/3,4/) )
        class default
-            stop 11 
+            stop 11
    end select
 
    call move_alloc( b1%from, to )
-  
+
    if ( .not. allocated(to) ) stop 23
 
    if ( allocated(b1%from) ) stop 25
 
    select type(to)
        type is (integer)
-            print *, shape(to) 
+            print *, shape(to)
             print *, to
        class default
-            stop 31 
+            stop 31
    end select
 
 end

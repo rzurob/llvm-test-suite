@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C812Func.f 
+! %POSTCMD: tcomp C812Func.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C812Func
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 3, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C812 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C812
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,7 +32,7 @@
 !*  DESCRIPTION
 !*    The selector is a function call, associate name appears in variablr
 !*    definition context
-!*    
+!*
 !*    (Wrong Msg: "The selector in the SELECT TYPE statement is not a named variable.
 !*     An associate name should appear" )
 !*
@@ -55,15 +49,15 @@
   TYPE, EXTENDS(Base) :: Child
     TYPE(Base) :: BaseArr(1)
   END TYPE
- 
+
   SELECT TYPE ( As => Fun(Base()) )
     TYPE IS (Base)
       STOP 20
     CLASS DEFAULT
       STOP 30
     CLASS IS (Child)
-      As = Child( BaseArr=(/Base()/) ) 
-  END SELECT 
+      As = Child( BaseArr=(/Base()/) )
+  END SELECT
   STOP 40
 
   CONTAINS
@@ -75,7 +69,7 @@
     SELECT TYPE( Fun )
       TYPE IS (Child)
         Fun%Base=Arg
-      CLASS DEFAULT 
+      CLASS DEFAULT
         STOP 22
     END SELECT
   END FUNCTION

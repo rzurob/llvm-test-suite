@@ -2,28 +2,13 @@
 ! ftcx_dtp -qnol /tstdev/F2003/allocEnh/misc/d307217.f
 ! opt variations: -ql
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 10/17/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : miscellaneous (defect 307217)
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -33,7 +18,7 @@ module m
         integer, kind            :: k1
         integer(k1), allocatable :: id
     end type
-    
+
     interface write (formatted)
         subroutine writeFormatted (dtv, unit, iotype, vlist, iostat, iomsg)
         import base

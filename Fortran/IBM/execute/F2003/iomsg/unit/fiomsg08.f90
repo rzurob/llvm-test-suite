@@ -13,19 +13,13 @@
 ! *********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : For IOMSG= variable in I/O statements.
 !*                             :
-!*  PROGRAMMER                 : Daniel Chen
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  FUNCTIONALITY TESTED       : IOMSG variable has assumed length.
 !*                               This is a severe error.
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -44,7 +38,7 @@
           open(11, status='new', iostat=i, iomsg=iomsg_var)
           if (len(iomsg_var) .ne. 245) error stop 2
           print*, iomsg_var, '<=='
-          
+
         END
 
         PROGRAM MAIN

@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatDirectAccessReadWrite02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatDirectAccessReadWrite02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 15 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. READ or WRITE from or to same file with direct access
-!*  2. derived type is polymorphic type 
+!*  2. derived type is polymorphic type
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
-   type base(l1) 
+   type base(l1)
       integer,len :: l1
       character(l1+1) :: c1 !l1=2
    end type
@@ -37,7 +29,7 @@ module m
    type,extends(child) :: gen3(l3)
      integer,len :: l3   ! l3=4
      character(l1+l2+l3) :: c3(l3:l1+l2)
-     type(child(l3-l1,l3-1)) :: comp 
+     type(child(l3-l1,l3-1)) :: comp
    end type
 
 end module
@@ -46,7 +38,7 @@ program formatDirectAccessReadWrite02
   use m
   interface
      subroutine readData1(unit,dtp)
-        import 
+        import
         class(base(*)),intent(inout) :: dtp
         integer,intent(in) :: unit
 
@@ -65,8 +57,8 @@ program formatDirectAccessReadWrite02
   class(base(2)),pointer :: base1(:)=>null()
   class(base(:)),pointer :: base2(:)=>null()
   type(gen3(2,3,4)),target :: tar1(2:3)
- 
- 
+
+
   integer :: ios
   character(300) :: msg
 
@@ -74,7 +66,7 @@ program formatDirectAccessReadWrite02
   tar1(2)%c2=["TELUS","INTEL"]
   tar1(2)%c3=["XLFORTRAN","TEST TEAM"]
   tar1(2)%comp=child(2,3)(c1="123",c2=["abcde","ABCDE"])
- 
+
   base1(-1:)=>tar1(2:3)
   allocate(gen3(2,3,4) :: base2(2:3))
 
@@ -93,7 +85,7 @@ program formatDirectAccessReadWrite02
      write(10,'(a3)',rec=15) x(2)%c1
      write(10,'(a5,a5)',rec=100) x(2)%c2
      write(10,'(2a9)',rec=99) x(2)%c3
-     write(10,'(a3,2a5)',rec=101) x(2)%comp 
+     write(10,'(a3,2a5)',rec=101) x(2)%comp
 
      call readData1(10,x(3))
 
@@ -101,7 +93,7 @@ program formatDirectAccessReadWrite02
      x(3)%c2=["LIGHT","HIGHT"]
      x(3)%c3=["TELEPHONE","MICROWAVE"]
      x(3)%comp=child(2,3)(c1="456",c2=["hijkl","HIJKL"])
-          
+
      call writeData1(10,x(3))
    end associate
 
@@ -119,7 +111,7 @@ program formatDirectAccessReadWrite02
       class default
         stop 14
   end select
-         
+
   close(10)
 
 end program
@@ -138,10 +130,10 @@ subroutine readData1(unit,dtp)
        read(unit,'(a3,2a5)',rec=101) dtp%comp
 
        write(*,'(a3/2a5/2a9/a3,2a5,:/)') dtp
-  
+
      class default
         stop 11
-  end select      
+  end select
 end subroutine
 
 subroutine writeData1(unit,dtp)

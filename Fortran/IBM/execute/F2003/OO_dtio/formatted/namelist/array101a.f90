@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with polymorphic/nonpoly array (Input)
@@ -123,7 +107,7 @@ program array101a
               ( b2(2,3)%i /= 999 ) .or. ( b2(2,3)%i1 /= 999 ) .or. &
               ( b2(3,3)%i /= 999 ) .or. ( b2(3,3)%i1 /= 999 ))      error stop 5_4
    end select
-   
+
    if ( ( b3(1,1)%i /= 301 ) .or. ( b3(2,1)%i /= 302 ) .or. ( b3(1,2)%i /= 303 ) .or. ( b3(2,2)%i /= 304 ) ) error stop 6_4
 
    if ( ( b4(1,1)%i /= 401 ) .or. ( b4(1,1)%i1 /= 402 ) .or. &

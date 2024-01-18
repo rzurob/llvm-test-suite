@@ -1,30 +1,19 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX/MIN with named constant as actual
-!*                               argument to subprogram with generic 
+!*                               argument to subprogram with generic
 !*                               interface name the same as intrinsic
-!*                               name 
-!*  (314919)                                 
+!*                               name
+!*  (314919)
 !* ===================================================================
 
-  program mxminArrayArgGenInterface1 
+  program mxminArrayArgGenInterface1
 
        intrinsic max
 
@@ -47,13 +36,12 @@
 
        if(max(x2, y2) .neqv. .true. ) then
              error stop 2_4
-       endif 
+       endif
 
-  end program mxminArrayArgGenInterface1 
+  end program mxminArrayArgGenInterface1
 
        logical function maxlog(arg1, arg2)
              logical arg1, arg2
              maxlog = arg1
        end function
-
 

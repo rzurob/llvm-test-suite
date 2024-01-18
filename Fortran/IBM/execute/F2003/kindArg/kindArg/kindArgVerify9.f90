@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgVerify9
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : VERIFY 
+!*  SECONDARY FUNCTIONS TESTED : VERIFY
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  -qintsize 
-!*    
-!*  () 
+!*  -qintsize
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -37,7 +29,7 @@
   PROGRAM kindArgVerify9
 
   INTEGER :: I
-     
+
   CHARACTER(128) :: CC(0:127)
   CHARACTER(127) :: C
 
@@ -64,5 +56,5 @@
   IF (KIND(VERIFY(STRING=CC,SET=C, BACK=.FALSE., KIND=K%KIND))   .NE. K%KIND )     STOP 24
 
 
-  END 
+  END
 

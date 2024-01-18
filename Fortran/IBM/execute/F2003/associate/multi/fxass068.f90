@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass068.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass068.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -55,7 +43,7 @@
 !*  CONDITIONS TESTED          : Listed below.
 !*
 !*  DESCRIPTION                : Test: MULTIPLE ASSOCIATE with expressions
-!*                                     with character using do while and 
+!*                                     with character using do while and
 !*                                     do loop.
 !*
 !* ===================================================================
@@ -80,7 +68,7 @@
       character*9 a8 / 'excellent' /
       character*9 b8 / '  weather' /
       character*18 c8
-      
+
       character*5 a5 / 'white' /
       character*5 b5 / 'house' /
       character*11 c5
@@ -89,11 +77,11 @@
 
 !-----------   ASSOCIATE with CHARACTER expressions ----------------
 
-      c4 = 'good girl'   
+      c4 = 'good girl'
       count = 1
       do while (count .LE. 10)
 
-      associate ( arg4 => a4 , argb4 => b4, argc4 => c4 ) 
+      associate ( arg4 => a4 , argb4 => b4, argc4 => c4 )
          if(arg4 .ne. a4)then
            error stop 4
          endif
@@ -118,7 +106,7 @@
 
 !-----------   ASSOCIATE with CHARACTER expressions ----------------
 
-      c5 = 'white-house'   
+      c5 = 'white-house'
       do count = 1, 10
 
       associate ( arg5 => a5 //'-'// b5 )

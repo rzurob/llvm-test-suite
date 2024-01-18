@@ -1,20 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : len_trim_k1_f5.f
 !*
-!*  PROGRAMMER                 : Vince Yuen
 !*  DATE                       : Apr 10, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support KIND Argument for new intrinsics
 !*
 !*  KEYWORD(S)                 : KIND
 !*
-!*  DESCRIPTION                : test len_trim functionality with various 
-!*                               kind specified (with and without keyword) 
+!*  DESCRIPTION                : test len_trim functionality with various
+!*                               kind specified (with and without keyword)
 !*                               using simple scalar initialization expressions
 !*                               , no -qintsize
 !*

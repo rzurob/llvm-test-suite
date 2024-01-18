@@ -1,37 +1,31 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrEQchar1.f 
+!*  TEST CASE NAME             : dataPtrEQchar1.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
 !* - data-ptr of a component of sequence derived-type, character(:)
 !* - data-ptr has bounds-remapping
-!* - test operator == 
+!* - test operator ==
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program main
- 
+
     type base
         character(:), pointer :: ptr(:)
     end type
 
     class(*), pointer :: b1
 
-    type(base), target, allocatable :: b2 
+    type(base), target, allocatable :: b2
 
     character(4), target :: tar(4) =  (/ '1234', 'ABCD', '5678','OPQR' /)
 
@@ -44,7 +38,7 @@ program main
     	    b1%ptr(2:4) => b2%ptr
      	    if ( .not. associated(b1%ptr, b2%ptr) ) stop 2
             if ( lbound(b1%ptr,1) /= 2 ) stop 5
-            if ( ubound(b1%ptr,1) /= 4 ) stop 8 
+            if ( ubound(b1%ptr,1) /= 4 ) stop 8
 
 	    print *, b1%ptr
             if ( any(b1%ptr == b1%ptr .neqv. .true.) ) stop 10

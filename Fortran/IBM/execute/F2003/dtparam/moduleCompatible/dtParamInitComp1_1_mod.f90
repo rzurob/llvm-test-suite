@@ -14,9 +14,9 @@
       REAL(K)      :: R(K)=N(1:K)
       COMPLEX(K)   :: Z(K)=ZN(1:K)
       CHARACTER(L) :: C(K) = CHAR(K)  !C(L) = CHAR(K)
-      PROCEDURE(IntFun), POINTER :: ProcPtr => NULL() 
+      PROCEDURE(IntFun), POINTER :: ProcPtr => NULL()
     CONTAINS
-      PROCEDURE, PASS :: IntFun 
+      PROCEDURE, PASS :: IntFun
     END TYPE
 
   CONTAINS

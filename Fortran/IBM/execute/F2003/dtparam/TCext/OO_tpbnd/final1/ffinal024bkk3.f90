@@ -1,22 +1,17 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal024bkk3.f
 !*  TEST CASE NAME             : type-bound procedure ffinal024bkk3
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal024b by Catherine Sun)
 !*  DATE                       : 2007-11-27 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines: import 
-!*    
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines: import
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -49,7 +44,7 @@ use m
         import base
         type(base(4)), intent(inout) :: arg1 ! tcx: (4)
         end subroutine
-    end interface 
+    end interface
 
     contains
 
@@ -57,7 +52,7 @@ use m
         type (child(4,4)), intent (in) :: arg1  ! tcx: (4,4)
         print *, 'finalizeChild'
     end subroutine
- 
+
 end module
 
 module m2
@@ -82,7 +77,7 @@ use m2, only : dt
    type(dt(4,4,4)), pointer  :: t1   ! tcx: (4,4,4)
    allocate(t1)
    deallocate(t1)
-end subroutine 
+end subroutine
 
 
 

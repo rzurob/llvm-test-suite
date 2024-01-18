@@ -1,25 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : intkind4.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM/TO are of type integer
-!*                               FROM is component inheritted from parent 
+!*                               FROM is component inheritted from parent
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -31,13 +19,13 @@
 module m
       type  :: base
           integer , allocatable :: i1 (:)
-      end type 
-
-      type, extends(base) :: child
-          type(base) :: b 
       end type
 
-      type(child), allocatable :: c 
+      type, extends(base) :: child
+          type(base) :: b
+      end type
+
+      type(child), allocatable :: c
 
       contains
 
@@ -49,7 +37,7 @@ module m
 
               call move_alloc(arg%i1, arg%b%i1)
 
-          end subroutine 
+          end subroutine
 
 end module
 
@@ -62,6 +50,6 @@ use m
 
           if ( allocated( c%i1) ) stop 21
           if ( .not. allocated(c%b%i1) ) stop 23
- 
+
           print *, c%b%i1
           end

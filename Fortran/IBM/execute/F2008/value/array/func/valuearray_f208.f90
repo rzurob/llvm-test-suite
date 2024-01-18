@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f208.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -116,7 +113,7 @@ loop1d: do doc1=1,SZA5
 		loop3d: do doc3=1,SZA4
 			loop4d: do doc4=1,SZA6
 				loop5d: do doc5=1,SZA7
-				
+
 	i5	(doc1,doc2,doc3,doc4,doc5)= doc1+doc2+doc3+doc4+doc5
 	i5_r(doc1,doc2,doc3,doc4,doc5)= doc1+doc2+doc3+doc4+doc5
 
@@ -165,13 +162,13 @@ call sub1_lg(l1)
 if (any (l1 .NEQV. l1_r)) error stop 14
 
 call sub1_dvt(dvt1)
-do doCounter=1,SIZEOFA	  
+do doCounter=1,SIZEOFA
 	if (dvt1(doCounter)%i1 		.ne. 	dvt1_r(doCounter)%i1) 			error stop 1501
 	if (.not. precision_r4 (dvt1(doCounter)%r1,dvt1_r(doCounter)%r1)) 	error stop 1502
-	if (dvt1(doCounter)%l1 		.NEQV. 	dvt1_r(doCounter)%l1) 			error stop 1503	
+	if (dvt1(doCounter)%l1 		.NEQV. 	dvt1_r(doCounter)%l1) 			error stop 1503
 	if (.not. precision_x8 (dvt1(doCounter)%c1,dvt1_r(doCounter)%c1)) 	error stop 1504
 	if (dvt1(doCounter)%char1 	.ne. 	dvt1_r(doCounter)%char1) 		error stop 1505
-end do	
+end do
 
 call sub2_int(i2)
 if (any (i2 .ne. i2_r)) error stop 16
@@ -186,23 +183,23 @@ call sub3_int(i5)
 if (any (i5 .ne. i5_r)) error stop 19
 
 contains
-  
+
 pure subroutine sub1_int(arg)
     integer*4 :: arg(:)
 	value arg
-	arg = 200	
+	arg = 200
 end subroutine
 
 pure subroutine sub2_int(arg)
     integer*4 :: arg(:,:,:,:,:,:,:)
 	value arg
-	arg = 200	
+	arg = 200
 end subroutine
 
 pure subroutine sub3_int(arg)
     integer*4 :: arg(:,:,:,:,:)
 	value arg
-	arg = 200	
+	arg = 200
 end subroutine
 
 pure subroutine sub1_r(arg)
@@ -215,19 +212,19 @@ pure subroutine sub1_com(arg)
     complex*8 :: arg(:)
 	value arg
 	arg=(5*atan(1.0),7*atan(1.0))
-end subroutine	
+end subroutine
 
 pure subroutine sub1_char(arg)
     character(SIZEOFA) :: arg(:)
 	value arg
-	arg = "abcdefghij"	
+	arg = "abcdefghij"
 end subroutine
 
 pure subroutine sub1_lg(arg)
     logical :: arg(:)
 	value arg
 	arg = .false.
-end subroutine	
+end subroutine
 
 pure subroutine sub1_dvt(arg)
     type(t1) :: arg(:)

@@ -1,23 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dtComponet.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -38,9 +28,9 @@ MODULE Mod
 
       CONTAINS
 
-      SUBROUTINE Sub(arg)  
+      SUBROUTINE Sub(arg)
         INTEGER :: I
-        INTEGER, POINTER, CONTIGUOUS :: arg(:)     
+        INTEGER, POINTER, CONTIGUOUS :: arg(:)
 
         tgt = [(I, I=1,100)]
 
@@ -67,7 +57,7 @@ PROGRAM dtComponet
       IF ( .NOT. IS_CONTIGUOUS(T0) ) STOP 16
 
       DO I = 1, SIZE(P0)
-          CALL Sub(P0(I)%cp) 
+          CALL Sub(P0(I)%cp)
           IF (ANY(P0(I)%cp .NE. [(J, J=1,100)])) STOP 18
       END DO
 
@@ -82,7 +72,7 @@ PROGRAM dtComponet
       IF ( .NOT. IS_CONTIGUOUS(T0) ) STOP 23
 
       DO I = 1, SIZE(P0)
-          CALL Sub(P0(I)%cp) 
+          CALL Sub(P0(I)%cp)
           IF (ANY(P0(I)%cp .NE. [(J, J=1,100)])) STOP 26
       END DO
 

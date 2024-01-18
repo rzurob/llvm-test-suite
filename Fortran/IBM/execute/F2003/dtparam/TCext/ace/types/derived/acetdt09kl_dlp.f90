@@ -3,16 +3,12 @@
 
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME             : acetdt09
 !*  TEST CASE NAME             : acetdt09kl_dlp
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt09
 !*                               by David Forster)
 !*  DATE                       : 2008-01-14 (original: 2006-08-09)
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*
@@ -21,7 +17,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : polymorphic, select type

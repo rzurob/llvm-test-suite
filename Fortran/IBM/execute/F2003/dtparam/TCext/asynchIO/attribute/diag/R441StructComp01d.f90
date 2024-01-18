@@ -3,22 +3,16 @@
 ! opt variations: -qck
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : R441StructComp01d - ASYNCHRONOUS
 !*                               Attribute in Derived Types
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : January 16, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute in a Type Declaration
 !*                               Statement
 !*  SECONDARY FUNCTIONS TESTED : ASYNCHRONOUS Attribute in a Component Part
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

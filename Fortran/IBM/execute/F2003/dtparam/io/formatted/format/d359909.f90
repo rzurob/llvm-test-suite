@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d359909.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d359909.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 9 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  defect 359909
@@ -25,11 +17,11 @@
 module m
   type base(l1)
     integer,len  :: l1
-    integer      :: i1(l1-1:l1+1) 
+    integer      :: i1(l1-1:l1+1)
   end type
   type,extends(base) :: child(l2)
      integer,len  :: l2
-     integer      :: i2(l1:l2) 
+     integer      :: i2(l1:l2)
   end type
 end module
 

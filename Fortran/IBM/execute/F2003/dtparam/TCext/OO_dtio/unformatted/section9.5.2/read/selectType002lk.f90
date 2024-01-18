@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : selectType002lk
 !*
-!*  PROGRAMMER                 : David Forster (derived from selectType002 by Robert Ma)
 !*  DATE                       : 2007-09-19 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer Input/Output list
 !*                               - try to read selector in class default in select type construct
@@ -166,14 +158,14 @@ program selectType002lk
       type is (gen3(*,4)) ! tcx: (*,4)
          if ( ( b3%c /= 'jkl' ) .or. ( b3%cc /= 'mno' ) .or. ( b3%i /= 101 ) ) error stop 14_4
       class default
-         error stop 15_4         
+         error stop 15_4
    end select
 
    select type ( c2 )
       type is (gen3(*,4)) ! tcx: (*,4)
          if ( ( c2%c /= 'GHI' ) .or. ( c2%cc /= 'JKL' ) .or. ( c2%i /= 201 ) ) error stop 16_4
       class default
-         error stop 17_4         
+         error stop 17_4
    end select
 
    ! close the file appropriately

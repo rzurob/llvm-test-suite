@@ -3,22 +3,11 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Operator: Scalar with class hierarchy and unlimited polymorphic
 !*  KEYWORD(S)                 :
@@ -158,7 +147,7 @@ program genericOperatorScalar007
                end select
          end select
    end select
-   
+
    deallocate ( u1, u2, u3 )
 
    allocate ( u1, source = gen3(20,4)(10,10,10,10) + gen3(20,4)(1,1,1,1) )

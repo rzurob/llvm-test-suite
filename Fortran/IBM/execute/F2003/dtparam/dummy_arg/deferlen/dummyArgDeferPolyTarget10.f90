@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyTarget10.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyTarget10.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 20 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 20 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. function result is a pointer with deferred length parameter
@@ -40,7 +32,7 @@ module m
        type(child(*,*)),target,intent(in) :: dt(:)
        class(base(:)),pointer             :: gettype1(:)
 
-       gettype1=>dt 
+       gettype1=>dt
      end function
 
 end module
@@ -55,7 +47,7 @@ program dummyArgDeferPolyTarget10
 
   tar=[child(3,4)(c1="red",c2="blue"),&
        child(3,4)(c1="123",c2="4567"), &
-       child(3,4)(c1="xlf",c2="test")] 
+       child(3,4)(c1="xlf",c2="test")]
 
   call check1(gettype1(tar))
 
@@ -79,7 +71,7 @@ program dummyArgDeferPolyTarget10
      subroutine check1(arg)
 
        class(base(:)),pointer,intent(in) :: arg(:)
-      
+
        if(lbound(arg,1) /= 1)                  error stop 10_4
        if(ubound(arg,1) /= 3)                  error stop 11_4
        select type(arg)
@@ -94,7 +86,7 @@ program dummyArgDeferPolyTarget10
             if(arg(3)%c2 /= "test")            error stop 19_4
          class default
             error stop 50_4
-       end select  
+       end select
 
      end subroutine
 
@@ -104,6 +96,6 @@ program dummyArgDeferPolyTarget10
 
        arg(2:)=>gettype1(tar)
 
-     end subroutine  
+     end subroutine
 
 end program

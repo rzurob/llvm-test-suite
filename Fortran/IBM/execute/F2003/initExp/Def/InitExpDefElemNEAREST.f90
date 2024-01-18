@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemNEAREST.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemNEAREST.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  NEAREST 
+!*
+!*  -  NEAREST
 !*  (319219)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,11 +30,11 @@
 
 
   PROGRAM  InitExpDefElemNEAREST
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
 
-  
+
   REAL(KIND( NEAREST(X=(/(REAL(I, KIND=4), I=1,128)/), S=-1._8)))  ::    &
   TR4(128) = NEAREST(X=(/(REAL(I, KIND=4), I=1,128)/), S=-1._8)
 
@@ -54,10 +47,10 @@
   REAL(4) :: R4(128)
   REAL(8) :: R8(128)
   REAL(16) :: R6(128)
- 
-  REAL(4) :: X4(128) = EOSHIFT( NEAREST(X=(/(REAL(I, KIND=4), I=1,128)/), S=-1._4), SHIFT=-1, BOUNDARY=NEAREST(0.0_4, -1.0)) 
-  REAL(8) :: X8(128) = EOSHIFT( NEAREST(X=(/(REAL(I, KIND=8), I=1,128)/), S=-1._8), SHIFT=-1, BOUNDARY=NEAREST(0.0_8, -1.0)) 
-  REAL(16):: X6(128) = EOSHIFT( NEAREST(X=(/(REAL(I, KIND=16),I=1,128)/), S=-1._16), SHIFT=-1, BOUNDARY=NEAREST(0.0_16, -1.0)) 
+
+  REAL(4) :: X4(128) = EOSHIFT( NEAREST(X=(/(REAL(I, KIND=4), I=1,128)/), S=-1._4), SHIFT=-1, BOUNDARY=NEAREST(0.0_4, -1.0))
+  REAL(8) :: X8(128) = EOSHIFT( NEAREST(X=(/(REAL(I, KIND=8), I=1,128)/), S=-1._8), SHIFT=-1, BOUNDARY=NEAREST(0.0_8, -1.0))
+  REAL(16):: X6(128) = EOSHIFT( NEAREST(X=(/(REAL(I, KIND=16),I=1,128)/), S=-1._16), SHIFT=-1, BOUNDARY=NEAREST(0.0_16, -1.0))
 
 
 

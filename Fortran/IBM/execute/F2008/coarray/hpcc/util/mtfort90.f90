@@ -54,7 +54,7 @@
 ! the array for the state vector
     integer, save, dimension(0:N-1) :: mt
     integer, save                   :: mti = N1
-    
+
 ! Overload procedures for saving and getting mt state
     interface mtsave
       module procedure mtsavef
@@ -132,7 +132,7 @@
     endif
 
     y=mt(mti)
-    mti = mti + 1 
+    mti = mti + 1
     y=ieor(y,TSHFTU(y))
     y=ieor(y,iand(TSHFTS(y),TMASKB))
     y=ieor(y,iand(TSHFTT(y),TMASKC))
@@ -250,7 +250,7 @@
 !
 !    use mtmod
 !    implicit none
- 
+
 !    integer, parameter      :: no=1000
 !    real(8), dimension(0:7) :: r
 !    integer j,k

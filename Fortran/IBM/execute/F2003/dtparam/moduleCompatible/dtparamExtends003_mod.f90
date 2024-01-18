@@ -18,7 +18,6 @@ module m
     class(base(single, nameLen)), pointer :: b1_m => null()
 end module
 
-
 module m1
 use m
     type, extends(child) :: gen3

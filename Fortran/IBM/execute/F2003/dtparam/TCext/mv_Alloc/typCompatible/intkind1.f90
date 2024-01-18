@@ -3,26 +3,14 @@
 ! opt variations: -qnol
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : intkind1.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM/TO are of type integer(1) 
+!*  DESCRIPTION                : FROM/TO are of type integer(1)
 !*
 !* ===================================================================
 !*
@@ -34,11 +22,11 @@
 
 
       module m
-          integer(1), allocatable   ::  i1(:,:,:) 
+          integer(1), allocatable   ::  i1(:,:,:)
           type base(n1,k1)    ! (20,1)
               integer, kind              :: k1
               integer, len               :: n1
-              integer(k1), allocatable     :: i1(:,:,:) 
+              integer(k1), allocatable     :: i1(:,:,:)
           end type
       end module
 
@@ -54,6 +42,6 @@
 
       if ( allocated(b1%i1) ) stop 21
       if ( .not. allocated(i1) ) stop 31
-      print *, i1(:,1,1)  
-      print *, i1(:,2,1)  
+      print *, i1(:,1,1)
+      print *, i1(:,2,1)
       end

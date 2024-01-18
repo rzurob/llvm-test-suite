@@ -2,34 +2,27 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk065 cxcmn_blk065
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.o *.mod fxcmn_blk065 fxcmn_blk065.out
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : March 19, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc 
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This test case will verify that 1-dimensional array 
-!*				 variables inside of common blocks are interoperable 
+!*  DESCRIPTION                : This test case will verify that 1-dimensional array
+!*				 variables inside of common blocks are interoperable
 !*				 with C variables that are not inside of a structure.
 !*
 !*                               Data type being tested:  INTEGER(C_SIGNED_CHAR)
@@ -55,17 +48,17 @@ program fxcmn_blk065
 	INTEGER (C_SIGNED_CHAR 		)		:: int_C_SIGNED_CHAR(5)
 
 ! ----------------------------------------------------------------------------
-! One COMMON statement with one common block in one BIND(C) statement  
+! One COMMON statement with one common block in one BIND(C) statement
 ! ----------------------------------------------------------------------------
 
-	COMMON     /blk_int_C_SIGNED_CHAR/  int_C_SIGNED_CHAR  	
+	COMMON     /blk_int_C_SIGNED_CHAR/  int_C_SIGNED_CHAR
 	bind(c, Name ='_______________________________________________________________________')  :: /blk_int_C_SIGNED_CHAR/
 
 ! ----------------------------------------------------------------------------
 ! Integer Initialization
 ! ----------------------------------------------------------------------------
 
-	int_C_SIGNED_CHAR               = (/b'1111111',o'0',-128, o'177',127/)        
+	int_C_SIGNED_CHAR               = (/b'1111111',o'0',-128, o'177',127/)
 
 ! ----------------------------------------------------------------------------
 ! Integer Verification

@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: charvalueattrf062.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,24 +12,17 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : charvalueattrf062
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 26, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the VALUE
-!*                               attribute when used with characters of 
-!*                               length other than 1. ( Feature 298120 )   
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*                               attribute when used with characters of
+!*                               length other than 1. ( Feature 298120 )
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Test that pass-by-value using VALUE attribute
 !*                               works as expected for procedures that have
@@ -47,7 +40,7 @@
            character(1), value :: c4
          end subroutine
       end interface
-      
+
       character(3) :: x1 = 'AaA'
       character(1) :: x2, x4
       character(12) :: x3 = 'CcCCcCCcCCcC'
@@ -61,7 +54,7 @@
       if( x2 .ne. 'u' ) error stop 6
       if( x3 .ne. 'CcCCcCCcCCcC' ) error stop 7
       if( x4 .ne. 'D' ) error stop 8
-      
+
       call s1(x1, 'B', 'CcCCcCCcCCcC', x4)
       if( x1 .ne. 'AaA' ) error stop 9
       if( x4 .ne. 'D' ) error stop 10

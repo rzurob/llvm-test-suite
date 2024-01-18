@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsArrayCharComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsArrayCharComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 17 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -29,7 +21,7 @@ module m
      integer,len     :: l
      character(l)    :: ch(k)
    end type
-   
+
 end module
 
 program spreadSourceIsArrayCharComp01
@@ -86,7 +78,7 @@ program spreadSourceIsArrayCharComp01
      subroutine verify1(dt)
         type(dtp(2,*)),intent(in) :: dt(:,:)
         integer :: i
-        ! element order: 
+        ! element order:
         ! dt(1,1) - dtp1(2) - ["111","222"]
         ! dt(2,1) - dtp1(2)
         ! dt(3,1) - dtp1(2)
@@ -107,7 +99,7 @@ program spreadSourceIsArrayCharComp01
         ! dt(3,4) - dtp1(5)
         ! dt(4,4) - dtp1(5)
         ! dt(5,4) - dtp1(5)
- 
+
         if(dt%k /= 2)                              error stop 10_4
         if(dt%l /= 3)                              error stop 11_4
         if(size(dt,1) /= 5)                        error stop 12_4
@@ -117,13 +109,13 @@ program spreadSourceIsArrayCharComp01
           if(any(dt(i,2)%ch /= ["333","444"]))     error stop 15_4
           if(any(dt(i,3)%ch /= ["555","666"]))     error stop 16_4
           if(any(dt(i,4)%ch /= ["777","888"]))     error stop 17_4
-        end do 
-     end subroutine   
+        end do
+     end subroutine
 
      subroutine verify2(dt)
         type(dtp(2,*)),intent(in) :: dt(:,:)
         integer :: i
-        
+
         ! element order
         ! dt(1,1) - dtp1(2) - ["111","222"]
         ! dt(2,1) - dtp1(3) - ["333","444"]
@@ -161,8 +153,8 @@ program spreadSourceIsArrayCharComp01
        type(dtp(2,*)),intent(in) :: dt(:,:,:)
        integer :: i
        ! element order:
-       ! dt(1,1,1) - dtp2(1,1) - ["111","222"] 
-       ! dt(2,1,1) - dtp2(1,1) 
+       ! dt(1,1,1) - dtp2(1,1) - ["111","222"]
+       ! dt(2,1,1) - dtp2(1,1)
        ! dt(3,1,1) - dtp2(1,1)
        ! dt(4,1,1) - dtp2(1,1)
        ! dt(5,1,1) - dtp2(1,1)
@@ -201,7 +193,7 @@ program spreadSourceIsArrayCharComp01
     subroutine verify4(dt)
        type(dtp(2,*)),intent(in) :: dt(:,:,:)
        integer :: i
-       
+
        ! element order:
        ! dt(1,1,1) - ["111","222"]
        ! dt(2,1,1) - ["333","444"]

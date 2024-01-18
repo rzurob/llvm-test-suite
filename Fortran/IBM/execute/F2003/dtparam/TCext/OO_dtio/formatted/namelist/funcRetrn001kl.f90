@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : funcRetrn001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from funcRetrn001 by Robert Ma)
 !*  DATE                       : 2007-07-05 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with non polymorphic function return variable
@@ -83,7 +75,7 @@ contains
     type is (child(*,4)) ! tcx: (*,4)
        writechild = dtv
     end select
-    
+
     write (unit, WC, iostat = stat, iomsg = msg )
 
   end function writeChild

@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Structure Component: Scalar Sequence Derived Type Component
@@ -73,7 +62,7 @@ use m1
 
    type(container)               :: c1
    type(container), allocatable  :: c2
-   
+
    c1 = container(b1=base(d1=data('ABC'),d2=data('DEF')))
    allocate ( c2 , source = container(b1=base(d1=data('GHI'),d2=data('JKL'))) )
 

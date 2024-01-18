@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrExp.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrExp.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 16, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Expression - type 
+!*  Expression - type
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,12 +29,12 @@
   MODULE M
 
   TYPE :: DT
-    INTEGER            :: ID=0 
-    CLASS(*), POINTER :: Ptr(:, :) 
+    INTEGER            :: ID=0
+    CLASS(*), POINTER :: Ptr(:, :)
   END TYPE
 
   TYPE, EXTENDS(DT) :: DT1
-    INTEGER, PRIVATE :: ID1=1 
+    INTEGER, PRIVATE :: ID1=1
   END TYPE
 
   CONTAINS
@@ -62,19 +54,19 @@
   END MODULE
 
 
-  PROGRAM dataPtrExp 
+  PROGRAM dataPtrExp
   USE M
   IMPLICIT NONE
 
   TYPE(DT), TARGET   :: T(100, 100)  = DT(ID=-1, Ptr=NULL())
-  TYPE(DT1), TARGET  :: T1(10000)    = DT1(ID=-2, Ptr=NULL()) 
+  TYPE(DT1), TARGET  :: T1(10000)    = DT1(ID=-2, Ptr=NULL())
   INTEGER    :: I, J, K, N
- 
+
   N = 100; K = 0
 
-  DO I =1, N 
-  DO J =I, N 
-    T(I, J)%Ptr(I:, J:) => F1(T) 
+  DO I =1, N
+  DO J =I, N
+    T(I, J)%Ptr(I:, J:) => F1(T)
     IF (.NOT. ASSOCIATED(T(I, J)%Ptr))                   STOP 11
     IF (ANY( LBOUND(T(I, J)%Ptr) .NE. (/I, J /)))        STOP 12
     IF (ANY( UBOUND(T(I, J)%Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
@@ -84,8 +76,8 @@
     CLASS DEFAULT
       STOP 15
     END SELECT
- 
-    T1(I)%Ptr(I:J, I:J) => F2(T1) 
+
+    T1(I)%Ptr(I:J, I:J) => F2(T1)
     IF (.NOT. ASSOCIATED(T1(I)%Ptr))                 STOP 21
     IF (ANY( LBOUND(T1(I)%Ptr) .NE. (/I,  I/)))      STOP 22
     IF (ANY( UBOUND(T1(I)%Ptr) .NE. (/J,  J/)))      STOP 23
@@ -95,7 +87,7 @@
     CLASS DEFAULT
       STOP 25
     END SELECT
- 
+
   END DO
   END DO
 

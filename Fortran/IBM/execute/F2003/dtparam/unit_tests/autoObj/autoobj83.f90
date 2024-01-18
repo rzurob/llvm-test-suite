@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : autoobj83
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 31, 2009
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTPARAM: Automatic objects
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 333321
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*
-!*  Expr for array bound spec 
+!*  Expr for array bound spec
 !*
 !*  ()
 !*
@@ -39,7 +31,7 @@
         integer, len :: m
         real(4) :: i(m+1)!=-1
     end type
-    
+
     type dt(n)
         integer, len :: n
         type(base(n-1)) :: arr(n)
@@ -47,11 +39,11 @@
 
     CALL sub(4)
     CONTAINS
-  
+
     SUBROUTINE Sub(N)
 
-    type(dt(N)), pointer :: x 
-    type(dt(N)), target  :: t 
+    type(dt(N)), pointer :: x
+    type(dt(N)), target  :: t
 
     t%arr(1)%i = -1
 

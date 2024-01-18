@@ -1,47 +1,31 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/abstract/crossFeature/selectType/selectType006.f
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: selectType006.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*
 !*  DESCRIPTION                : Select Type Construct
-!*                               if several CLASS IS type guard statements 
+!*                               if several CLASS IS type guard statements
 !*                               match the selector, one of these statements
-!*                               must specify a type that is an extension of 
-!*                               all the types specified in the others; 
+!*                               must specify a type that is an extension of
+!*                               all the types specified in the others;
 !*                               the block following that statement is executed.
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -51,7 +35,6 @@
 !*
 !*  MM/DD/YY:  Init:  Comments:
 !* ===================================================================
-
 
 module m
 
@@ -79,23 +62,22 @@ end module
 
 program selectType006
    use m
-   
+
    class(b1(4)), allocatable :: b11
-   
+
    allocate (b11, source = b4(4,4,20,4,20,4,20)(5))
-   
+
    select type( b => b11 )
       class is (b1(4))
          error stop 1_4
-      class is (b2(4,4,*)) 
+      class is (b2(4,4,*))
          error stop 2_4
       class is (b3(4,4,*,4,*))
          error stop 3_4
-      class is (b4(4,4,*,4,*,4,*)) 
+      class is (b4(4,4,*,4,*,4,*))
          if (b%i .ne. 5) error stop 4_4
       class default
          error stop 5_4
    end select
-   
-   
+
 end program

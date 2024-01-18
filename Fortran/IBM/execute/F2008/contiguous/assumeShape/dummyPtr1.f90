@@ -1,28 +1,17 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dummyPtr1.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                : - Pointer has contiguous attribute
 !*
-!*  DESCRIPTION                : - Pointer has contiguous attribute 
-!*                      
 !*    Dummy argument is pointer with CONTIGUOUS attribute
-!*    Actual argument must be simply contiguous: 
-!*        * Pointer with CONTIGUOUS attribute (only supported case for now) 
-!*
+!*    Actual argument must be simply contiguous:
+!*        * Pointer with CONTIGUOUS attribute (only supported case for now)
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -36,12 +25,12 @@
 PROGRAM dummyPtr1
       IMPLICIT NONE
 
-      INTEGER :: I, J 
+      INTEGER :: I, J
       INTEGER, TARGET  :: I2D(2,2)
       INTEGER, POINTER, CONTIGUOUS :: ptr(:,:)
 
       I2D = RESHAPE( SOURCE = [(I, I=1,4)], SHAPE = [2,2] )
-      ptr => I2D 
+      ptr => I2D
       IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 10
 
       CALL Sub(ptr)
@@ -50,7 +39,7 @@ PROGRAM dummyPtr1
 
       CONTAINS
 
-      SUBROUTINE Sub(Arg)           
+      SUBROUTINE Sub(Arg)
         INTEGER, POINTER, CONTIGUOUS  :: Arg(:,:)
 
         IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 20
@@ -61,5 +50,5 @@ PROGRAM dummyPtr1
            END DO
         END DO
       END SUBROUTINE Sub
-      
+
 END PROGRAM dummyPtr1

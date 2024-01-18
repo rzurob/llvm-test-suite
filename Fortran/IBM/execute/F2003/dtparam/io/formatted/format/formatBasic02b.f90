@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatBasic02b.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatBasic02b.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 3 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 3 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. derived type has multiple character scalar and array component.
@@ -39,12 +31,12 @@ module m
      subroutine writebase1(arg)
         type(base(*,*)),target,intent(in)  :: arg(:)
 
-        write (10,*) "-----100 : tbase1" 
+        write (10,*) "-----100 : tbase1"
         write (10,100)  arg
         write (10,*) "-----101 : tbase1"
-        write (10,101)  arg 
+        write (10,101)  arg
         write (10,*) "-----102 : tbase1"
-        write (10,102)  arg 
+        write (10,102)  arg
 
         write (10,*) "-----100 : tbase1"
         write (10,100) arg(ubound(arg,1):lbound(arg,1):-1)
@@ -62,13 +54,13 @@ module m
 
      subroutine writebase2(arg)
         type(base(*,*)),target,intent(in)  :: arg(:)
-      
+
         write (10,*) "-----103 : tbase2"
         write (10,103)  arg
         write (10,*) "-----104 : tbase2"
-        write (10,104)  arg 
+        write (10,104)  arg
         write (10,*) "-----105 : tbase2"
-        write (10,105)  arg 
+        write (10,105)  arg
 
         103 format("|",tr1,"|",a2,a3,a4,a9,a3,"|",2x,"|",tr3,"|",a2,a3,a4,a9,a3,"|")
         104 format("|",tr6,tl6,a2,a3,2(a2,a5),"|")
@@ -85,26 +77,26 @@ program formatBasic02b
   type(base(:,:)),target,allocatable :: tbase2(:)
   integer :: ios
   character(256) :: msg
-  
+
   tbase1=[base(3,5)(c1="xlf",c2=["-123+","-456+","-789+"],c3=["abcde"]), &
           base(3,5)(c1="ON",c2=["000","111","222"],c3=["ibmcanada"])]
 
   tbase2=[base(3,5)(c1="roger",c2=["intern","cable ","televi"], &
-           c3=["xyz"]),tbase1(2)] 
+           c3=["xyz"]),tbase1(2)]
 
   open(unit=10,file='formatBasic02b.out', &
        form='formatted',access='sequential',action='write',iostat=ios)
- 
+
   if(ios .eq. 0) then
-  
+
      call writebase1(tbase1)
      call writebase2(tbase2)
   else
      print *,"iostat is not zero, fail to open the file"
      print *,"iostat=",ios
      print *,"iomsg=",msg
-     stop 11 
-  end if   
+     stop 11
+  end if
 
   close(10)
 

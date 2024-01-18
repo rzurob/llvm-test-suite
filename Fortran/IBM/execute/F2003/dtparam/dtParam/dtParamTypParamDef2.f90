@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypParamDef2   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypParamDef2
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Type param def stmt - kind selector 
+!*  Type param def stmt - kind selector
 !*
 !*  (ICE)
 !*
@@ -41,14 +34,14 @@
     INTEGER(KIND=K)       :: KK=K
     INTEGER(KIND=K)       :: LL(L, L)=K
     CONTAINS
-    GENERIC :: Proc => ModSub1, ModSub2, ModSub4, ModSub8 
+    GENERIC :: Proc => ModSub1, ModSub2, ModSub4, ModSub8
     PROCEDURE ::  ModSub1
     PROCEDURE ::  ModSub2
     PROCEDURE ::  ModSub4
     PROCEDURE ::  ModSub8
   END TYPE
 
-  CONTAINS 
+  CONTAINS
 
   SUBROUTINE ModSub1(Arg)
   CLASS(DT(1,*)) :: Arg
@@ -88,7 +81,7 @@
 
   END MODULE
 
-  PROGRAM  dtParamTypParamDef2 
+  PROGRAM  dtParamTypParamDef2
   USE M
   TYPE (DT(1,4))    :: T1
   TYPE (DT(2,4))    :: T2

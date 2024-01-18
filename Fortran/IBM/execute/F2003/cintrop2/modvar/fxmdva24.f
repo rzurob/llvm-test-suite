@@ -1,42 +1,32 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !************************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD:  $TR_SRC/run.sh fxmdva24 cxmdva24
-! %COMPOPTS:  
-! %GROUP: redherring.f 
+! %COMPOPTS:
+! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !************************************************************************
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : fxmdva24.f 
-!*  TEST CASE TITLE            : Support for  Module Variable with Bind(C)
+!*  TEST CASE NAME             : fxmdva24.f
 !*                               (Test bind(c) attribute/statement)
 !*
-!*  PROGRAMMER                 : Kan Tian
-!*  DATE                       : Sep 2,2002 
+!*  DATE                       : Sep 2,2002
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test integer variables,the combination
-!*                               of type and kind type parameter ,with bind(c) 
+!*                               of type and kind type parameter ,with bind(c)
 !*                               attribute/statement, is interoperate with
-!*                               corresponding C type. 
-!* 
+!*                               corresponding C type.
+!*
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               : External routine ZZRC
 !*
@@ -44,7 +34,7 @@
 !*  DESCRIPTION                :
 !*                              Pass data between a C variable with external
 !*				linkage and Fortran variable has the bind(c)
-!*				attribute. 
+!*				attribute.
 !*                              Verify the result of data passing.
 !*
 !*  TEST ITEMS                 :
@@ -52,13 +42,13 @@
 !*          2.Test bind(c) statement, declaring the binding label implicitly.
 !*          3.Test bind(c) attribute, declaring the binding label explicitly.
 !*          4.Test bind(c) statement, declaring the binding label explicitly.
-!*          5.Declaration of variable in C code, use assignment statement assigns 
+!*          5.Declaration of variable in C code, use assignment statement assigns
 !*            a value to the variable in the main program.
 !*          6.Declaration of a variable with its initialization in C code.
 !*          7.Use of bind(c) statement before variable declaration.
 !*          8.Use of bind(c) statement after  variable declaration.
 !*
-!*  ALGORITHM                  :  
+!*  ALGORITHM                  :
 !*          1. Declare the interop variable in Fortran Module.
 !*          2. Initialize the variable in  C main program.
 !*          3. C program call Fortran Subroutine to pass the variable value
@@ -70,7 +60,7 @@
 !*          6. Assertion 2: In C program ,Check the new value is correct
 !*             passed from Fortran.
 !*             if not, return the value other than "0" and program stops.
-!*             otherwise, return "0" and program end.               
+!*             otherwise, return "0" and program end.
 !* ===================================================================
 !*  REVISION HISTORY
 !*
@@ -95,7 +85,7 @@ module mod
 
   ! Use of bind(c) statement after  variable declaration
   integer(C_SIZE_T) :: fx4
-  bind(c,name="x4") :: fx4 
+  bind(c,name="x4") :: fx4
 
 
   INTERFACE assert_eq2                   ! generic name
@@ -129,7 +119,7 @@ subroutine fsub()
 
   case_id = 1
 
-  basval1 =1 
+  basval1 =1
   result= assert_eq2(x1,basval1)
   print *, "In Fortran before changing:"
   print *, x1
@@ -147,7 +137,7 @@ subroutine fsub()
 
   case_id = 2
 
-  basval2 =1 
+  basval2 =1
   result= assert_eq2(x2,basval2)
   print *, "In Fortran before changing:"
   print *, x2
@@ -165,7 +155,7 @@ subroutine fsub()
 
   case_id = 3
 
-  basval3 =1 
+  basval3 =1
   result= assert_eq2(fx3,basval3)
   print *, "In Fortran before changing:"
   print *, fx3
@@ -184,7 +174,7 @@ subroutine fsub()
 
   case_id = 4
 
-  basval4 =1 
+  basval4 =1
   result= assert_eq2(fx4,basval4)
   print *, "In Fortran before changing:"
   print *, fx4

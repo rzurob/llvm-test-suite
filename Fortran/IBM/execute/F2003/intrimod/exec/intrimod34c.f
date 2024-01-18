@@ -4,21 +4,18 @@
 ! %PRECMD: rm -f ieee_*.mod xlf_fp_util.mod
 ! %COMPOPTS: -qextname -qhalt=w
 ! %GROUP: intrimod34c.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod34c.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
-!*  Description      : Use INTRINSIC module in a NON_INTRINSIC module with 
+!*  Description      : Use INTRINSIC module in a NON_INTRINSIC module with
 !*                     the same name.
 !*                     -qextname is also used.
 !*
@@ -32,7 +29,7 @@
 !
 
 
-!.... A NON_INTRINSIC module with the same name as the INTRINSIC module 
+!.... A NON_INTRINSIC module with the same name as the INTRINSIC module
 !.... 'xlf_fp_util'. The INTRINSIC module is refrenced inside.
 
        module xlf_fp_util
@@ -40,7 +37,7 @@
          use, intrinsic :: xlf_fp_util
          integer(fpscr_kind), dimension(5) :: flags
 
-         contains 
+         contains
             subroutine sub1(rt_nearest)
                use, intrinsic :: ieee_arithmetic
                use, intrinsic :: xlf_fp_util
@@ -55,7 +52,7 @@
                do k = 1, 5
                   if (flag_values(k) .neqv. .false. ) stop 10
                enddo
-         
+
                call ieee_get_status(status_value)
                call ieee_set_rounding_mode(rt_nearest)
                call ieee_get_rounding_mode(rtype)
@@ -65,11 +62,11 @@
                call ieee_set_status(status_value)
 
                call set_fpscr_flags(flags(1))
-               call clr_fpscr_flags(flags(5)) 
+               call clr_fpscr_flags(flags(5))
                if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
                if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 18
 
-            end subroutine 
+            end subroutine
 
        end module
 
@@ -78,7 +75,7 @@
 
          use, intrinsic :: ieee_arithmetic
          use :: xlf_fp_util		! NON_INTRINSIC
-         implicit none 
+         implicit none
 
          flags = (/ fp_overflow, fp_div_by_zero, fp_invalid, &
      &               fp_underflow, fp_inexact /)

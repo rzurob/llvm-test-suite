@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : autoobj84
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 31, 2009
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTPARAM: Automatic objects
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 333321
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*
-!*  pointer/charater components 
+!*  pointer/charater components
 !*
 !*  ()
 !*
@@ -39,10 +31,10 @@
   TYPE :: Base  (l)
     INTEGER, LEN :: l
     CHARACTER(l) :: c = 'B'
-  END TYPE 
+  END TYPE
 
-  TYPE, EXTENDS(Base) :: DT 
-    CLASS(Base(l)), POINTER :: P 
+  TYPE, EXTENDS(Base) :: DT
+    CLASS(Base(l)), POINTER :: P
   END TYPE
 
   CALL sub(4)
@@ -51,11 +43,11 @@
   SUBROUTINE Sub(N)
 
 
-  TYPE(DT(N)),    TARGET  :: T 
+  TYPE(DT(N)),    TARGET  :: T
   CLASS(Base(N)), POINTER :: p
 
   allocate(t%p)
-  p => T 
+  p => T
   SELECT TYPE (T => P )
     CLASS IS (DT(*))
 

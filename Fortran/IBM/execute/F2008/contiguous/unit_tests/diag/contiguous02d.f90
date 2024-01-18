@@ -1,17 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : contiguous02d.f
-!*
-!*  PROGRAMMER                 : David Nichols
 !*  DATE                       : June 24, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute - 5.3.7.1
-!*
-!*  DRIVER STANZA              : xlf2008
 !*
 !*  DESCRIPTION                : Testing proper diagnostics of
 !*                               the F2008 attribute
@@ -23,7 +15,7 @@
       program contiguous02d
 
       ! 5.3.7.1 The CONTIGUOUS attribute specifies that an assumed-shape array
-      ! can only be argument associated with a contiguous actual argument, or 
+      ! can only be argument associated with a contiguous actual argument, or
       ! that an array pointer can only be pointer associated with a contiguous
       ! target.
 
@@ -47,7 +39,7 @@
 
         subroutine contiguous_sub (A,B,C)
           ! Assumed-shape arrays
-          integer, contiguous          :: A (:), B (0:) 
+          integer, contiguous          :: A (:), B (0:)
           ! Array pointer
           integer, contiguous, pointer :: C (:)
         end subroutine

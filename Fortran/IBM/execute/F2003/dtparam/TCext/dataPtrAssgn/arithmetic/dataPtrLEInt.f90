@@ -4,20 +4,14 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrLEInt.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -36,40 +30,40 @@ module m
 	    generic, public :: output => print_int, print_char
     end type
 
-    contains 
+    contains
 	function print_int(arg)
 	    byte, pointer :: print_int(:)
 	    integer*1 :: arg(:)
 
-	    allocate(print_int(size(arg)), source = arg) 
-	end function 
+	    allocate(print_int(size(arg)), source = arg)
+	end function
 	function print_char(arg)
 	    character(len=1), pointer :: print_char(:)
 	    character :: arg(:)
 
-	    allocate(print_char(size(arg)), source = arg) 
-	end function 
+	    allocate(print_char(size(arg)), source = arg)
+	end function
 end module
 
 program main
 
-    use m 
+    use m
 
     type(base(4,20)) :: b1
 
     b1%p(2:3,1:2) => b1%output( [ -3_1,-20_1,0_1,-23_1] )
 
-    if ( .not. associated(b1%p)) stop 1 
+    if ( .not. associated(b1%p)) stop 1
 
-    select type(x => b1%p) 
+    select type(x => b1%p)
 	type is (byte)
             if ( any (lbound(x) .ne. (/2,1/))) stop 2
-            if ( any (ubound(x) .ne. (/3,2/))) stop 3 
-	    if ( all(x .le. 0)) print *, x 
+            if ( any (ubound(x) .ne. (/3,2/))) stop 3
+	    if ( all(x .le. 0)) print *, x
     	type is (character(*))
 	    print *, x
 	class default
-	   stop 5 
+	   stop 5
     end select
 
 end program

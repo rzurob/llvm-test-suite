@@ -6,7 +6,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxdmodprocstmt006.f
 ! %VERIFY:
 ! %STDIN:
@@ -16,38 +16,31 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxdmodprocstmt006
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Sept. 22, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : generalization of module procedure
 !*                               stmts, by making the MODULE keyword
 !*                               optional. These statements are called
 !*                               procedure statements in F2003.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qdebug=ooall
 !*
 !*  DESCRIPTION                : This diagnostic test, makes sure that
 !*                               if MODULE is specified and the identifier
-!*                               refers to a proc pointer component, 
+!*                               refers to a proc pointer component,
 !*                               it is flagged.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-      
+
       implicit none
 
-      interface 
+      interface
          subroutine sub_iface()
-         end subroutine 
+         end subroutine
          integer function fun_iface()
          end function
       end interface
@@ -58,16 +51,16 @@
         procedure(sub_iface), nopass, pointer :: sub_ptr_comp
         procedure(fun_iface), nopass, pointer :: fun_ptr_comp
       end type a_type
-      
+
       type(a_type(4,20)) :: x
-      
+
       interface generic_name1
          module procedure x%sub_ptr_comp
       end interface
       interface generic_name2
          module procedure x%fun_ptr_comp
       end interface
-      
+
       call generic_name1()
       call generic_name2()
       call x%sub_ptr_comp()

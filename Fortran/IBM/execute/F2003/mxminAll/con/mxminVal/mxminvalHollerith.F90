@@ -1,23 +1,12 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 2/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX*/MIN* intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX*/MIN* intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                : MAXVAL/MINVAL Hollerith constant as its 
+!*  DESCRIPTION                : MAXVAL/MINVAL Hollerith constant as its
 !*                               argument.
 !*  (315974)
 !* ===================================================================
@@ -28,10 +17,10 @@
            character(*):: arg
            if(arg .ne. "gh") error stop 6_4
         end subroutine
-  end module modValHollerith 
+  end module modValHollerith
 
-program mxminvalHollerith 
-  
+program mxminvalHollerith
+
    use modValHollerith
 
    character*2 v(3)
@@ -41,10 +30,10 @@ program mxminvalHollerith
    if(minval(reshape((/1Ha//1Hb, 1Hc//1Hd, 1He//1Hf, 1Hg//1Hh, 1Hx//1Hy, 1Hr//1Hs/), (/2,3/))) .ne. "ab") error stop 2_4
 
 #if __BIG_ENDIAN__
-  v = minval(reshape((/1Ha//1Hb, 1Hc//1Hd, 1He//1Hf, 1Hg//1Hh, 1Hx//1Hy, 1Hr//1Hs/), (/2,3/)),dim=max(1HA , 1HB)-1109401631, mask = .true.) 
+  v = minval(reshape((/1Ha//1Hb, 1Hc//1Hd, 1He//1Hf, 1Hg//1Hh, 1Hx//1Hy, 1Hr//1Hs/), (/2,3/)),dim=max(1HA , 1HB)-1109401631, mask = .true.)
 #else
-  v = minval(reshape((/1Ha//1Hb, 1Hc//1Hd, 1He//1Hf, 1Hg//1Hh, 1Hx//1Hy, 1Hr//1Hs/), (/2,3/)),dim=reverse_byte_order(max(1HA , 1HB))-1109401631, mask = .true.) 
-#endif	
+  v = minval(reshape((/1Ha//1Hb, 1Hc//1Hd, 1He//1Hf, 1Hg//1Hh, 1Hx//1Hy, 1Hr//1Hs/), (/2,3/)),dim=reverse_byte_order(max(1HA , 1HB))-1109401631, mask = .true.)
+#endif
 
   if(v(1) .ne. "ab" .or. v(2) .ne. "ef" .or. v(3) .ne. "rs") error stop 3_4
 
@@ -52,11 +41,11 @@ program mxminvalHollerith
         error stop 4_4
   endif
 
-  if(maxval((/1Ha//1Hb, max(1Hc//1Hd, 1Ha//1Ha), 1He//1Hf, 1Hg//1Hh/)) .ne. "gh") then 
+  if(maxval((/1Ha//1Hb, max(1Hc//1Hd, 1Ha//1Ha), 1He//1Hf, 1Hg//1Hh/)) .ne. "gh") then
         error stop 5_4
   endif
 
    call sub2(maxval((/1Ha//1Hb, max(1Hc//1Hd, 1Ha//1Ha), 1He//1Hf, 1Hg//1Hh/)))
 
-end program mxminvalHollerith 
+end program mxminvalHollerith
 

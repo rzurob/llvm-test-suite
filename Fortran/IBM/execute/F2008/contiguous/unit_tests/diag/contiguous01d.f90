@@ -1,17 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : contiguous01d.f
-!*
-!*  PROGRAMMER                 : David Nichols
 !*  DATE                       : June 24, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute - C530
-!*
-!*  DRIVER STANZA              : xlf2008
 !*
 !*  DESCRIPTION                : Testing proper diagnostics of
 !*                               the F2008 attribute
@@ -40,13 +32,13 @@
         subroutine contiguous_sub (valid2,valid3,valid4,invalid6,invalid7)
           ! Value CONTIGUOUS attribute on dummy agrument
           ! Assumed-shape arrays
-          integer, contiguous                             :: valid2 (:), valid3 (0:) 
+          integer, contiguous                             :: valid2 (:), valid3 (0:)
           ! Array pointer
-          integer, contiguous, pointer                    :: valid4 (:, :) 
+          integer, contiguous, pointer                    :: valid4 (:, :)
 
           ! Invalid CONTIGUOUS attribute on dummy argument
           ! Automatic explicit-shape array
-          integer, contiguous, dimension (0, 10)          :: invalid6 
+          integer, contiguous, dimension (0, 10)          :: invalid6
           ! Allocatable array
           integer, contiguous, allocatable, dimension (:) :: invalid7
           ! Implied-shape array

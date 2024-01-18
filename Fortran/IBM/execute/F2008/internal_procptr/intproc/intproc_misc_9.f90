@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_misc_9.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May 02, 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,8 +11,7 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -25,12 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*  Miscellaneous Test  --  
-!*    argument association on data object of derived type that has 
-!*    procedure pointer component 
-!*   
-!*  
+!*  Miscellaneous Test  --
+!*    argument association on data object of derived type that has
+!*    procedure pointer component
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

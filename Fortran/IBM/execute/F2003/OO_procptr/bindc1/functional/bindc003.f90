@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 06/07/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Procedure Pointer with BIND(C) feature
 !*                                        Procedure Pointer pointing at C functions with BIND(C) function interface, pass by reference
@@ -80,7 +69,7 @@ module cinterfaces
       multiply = i1 * i2 * i3 * i4 * i5
 
    end function
-   
+
    integer(C_INTMAX_T) function add(i1, i2, i3, i4, i5) BIND(C)
       integer(C_INTMAX_T), intent(in), value        :: i1
       integer(C_INTPTR_T), intent(in), value        :: i2

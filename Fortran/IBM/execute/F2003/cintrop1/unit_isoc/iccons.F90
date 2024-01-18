@@ -1,46 +1,35 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
-! %EXECARGS: 
+! %EXECARGS:
 ! %POSTCMD: ${TR_SRC}/iccons.sh
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  =================================================================== 
-!*  XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
+!*  ===================================================================
+!*
 !*  TEST CASE NAME             : Testing ISO_C_BINDING constants
-!*  TEST CASE TITLE            : Functional testing of the
 !*                               ISO_C_BINDING module.
-!*                                                                     
-!*  PROGRAMMER                 : Rob James
+!*
 !*  DATE                       : June 4, 2003
-!*  ORIGIN                     : XL Fortran Compiler Development
-!*                                                                      
+!*
 !*  DESCRIPTION                : Testing the values of the constants
 !*                               provided by the ISO_C_BINDING module.
-!*                                                             
-!* =================================================================== 
 !*
-!*  REVISION HISTORY            
-!*  
+!* ===================================================================
+!*
+!*  REVISION HISTORY
+!*
 !*  MM/DD/YYYY:  Init:  Comments:
 !*  06/04/2003   RJ     -Initial Version
-!*                                                                    
-!* =================================================================== 
+!*
+!* ===================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890
       @PROCESS ESCAPE
       program iccons

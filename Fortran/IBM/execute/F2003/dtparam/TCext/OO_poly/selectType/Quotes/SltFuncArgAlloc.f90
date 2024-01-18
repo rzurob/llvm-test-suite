@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltFuncArgAlloc.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltFuncArgAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 05, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a function return with associate name(to allocatable) as argument 
+!*
+!*   The selector is a function return with associate name(to allocatable) as argument
 !*    (297701)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -53,7 +47,7 @@
         INTEGER, KIND :: K1
     CONTAINS
       PROCEDURE, NoPASS   :: ReturnObj
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4)
       INTEGER(K1) :: BaseId = 1
@@ -74,7 +68,7 @@
     FUNCTION ReturnObj(Arg)
     CLASS(Zero(4)) :: Arg
     CLASS(*), ALLOCATABLE :: ReturnObj
-      ALLOCATE(ReturnObj, SOURCE=Arg) 
+      ALLOCATE(ReturnObj, SOURCE=Arg)
     END FUNCTION
 
     ELEMENTAL FUNCTION GetChildId(Arg)
@@ -112,7 +106,7 @@
   SELECT TYPE ( As0 => V )
     CLASS IS (Zero(4))
       SELECT TYPE (As => As0%ReturnObj(As0))
-        TYPE IS (Child(4)) 
+        TYPE IS (Child(4))
           IF ( As%Base%GetId() .NE. 1 ) STOP 34
           IF ( As%GetId()      .NE. 2 ) STOP 35
           IF ( As%BaseId       .NE. 1 ) STOP 36

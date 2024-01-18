@@ -1,23 +1,13 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/coarray/stop/func/stop_f026.f
 !*  TYPE                       : Functional test
 !*  FEATURE                    : #351605.31 CAF - STOP statement
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 19 Oct 2010
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               :
 !*
 !*  DESCRIPTION                : Basic case for STOP initiating normal termination
@@ -68,7 +58,7 @@ program stop_prog
   sync all
   call sleep_(mod(selfImage,8)*3)
   if (selfImage == endImage) then
-     f_ret = mod_f_es(selfImage) 
+     f_ret = mod_f_es(selfImage)
      print *, "  Ret code:", f_ret
   else
      do i=1, iter

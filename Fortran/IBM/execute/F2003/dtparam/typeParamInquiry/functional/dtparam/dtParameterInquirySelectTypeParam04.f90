@@ -1,37 +1,29 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 25 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 25 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
-!* 3. DUMMY ARGUMENT IS INTENT(IN) ALLOCATABLE OR POINTER 
-!* 4. DEFECT 354300,353970 
+!* 3. DUMMY ARGUMENT IS INTENT(IN) ALLOCATABLE OR POINTER
+!* 4. DEFECT 354300,353970
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
        type base(k1,l1)
           integer,kind :: k1
-          integer(k1%kind),len :: l1         
+          integer(k1%kind),len :: l1
        end type
-       
+
        type,extends(base) :: child(k2,l2)
           integer,kind :: k2
           integer(k2),len :: l2
@@ -72,11 +64,11 @@ module m
         class  default
            error stop 103_4
        end select
-           
+
        end subroutine
 end module
 
-  program dtParameterInquirySelectTypeParam04 
+  program dtParameterInquirySelectTypeParam04
   use m
   implicit none
 
@@ -90,16 +82,16 @@ end module
   class(base(kind(4),:)),pointer  :: p1 => null()
   class(base(2,:)),allocatable  :: a1
   type(child(a1%k1,2*5,kind(8),3*max(3,5))),target :: a2
-  
-  allocate(base(kind(2_2),max(3,5)) :: a1)   
+
+  allocate(base(kind(2_2),max(3,5)) :: a1)
   call check1(a1)
   deallocate(a1)
   allocate(a1,source=a2)
-  call check1(a1)  
+  call check1(a1)
 
   allocate(child(a2%k2,a2%l2,a1%k1,a1%l1) :: p1)
   call check2(p1)
-  deallocate(p1) 
+  deallocate(p1)
 
 end
 

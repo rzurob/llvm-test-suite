@@ -1,31 +1,24 @@
 !*********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument312f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from C
 !*
 !*                                - Allocate (a, source=b) with only b having a C descriptor
-!*                                - derived type 
+!*                                - derived type
 !*                                - Nesting of calls
 !*                                   Bind(c) ==> Non-bind(c)
 !*                                   Bind(c) ==> bind(c) ==> Non-bind(c)
 !*                                   Bind(c) ==> bind(c) ==> bind(c)
-!*                                - Matmul: the last dimension of the first 
-!*                                          array must be equal to the first 
+!*                                - Matmul: the last dimension of the first
+!*                                          array must be equal to the first
 !*                                          dimension of the second array
 !*                                - Verify values both in Fortran and C
 !*
@@ -43,7 +36,7 @@ module mod
     type, bind(c) :: shape
       character(c_char) :: name
       integer(c_int)    :: area
-      integer(c_int)    :: sides(2) 
+      integer(c_int)    :: sides(2)
     end type
 end module mod
 
@@ -69,7 +62,7 @@ subroutine fill_all(all) bind(c)
 
     if(.not. allocated(all)) ERROR STOP 18
 
-    all = reshape([shape("a",4,[2,2]), shape("t",6,[2,3]),  &  
+    all = reshape([shape("a",4,[2,2]), shape("t",6,[2,3]),  &
             &      shape("d",9,[3,3]), shape("r",6,[3,2])], [2,2])
 
     print*, all(1,1)

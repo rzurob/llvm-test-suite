@@ -1,23 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpNOESCAPE.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpNOESCAPE.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 25, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : -qrealsize 
+!*  REQUIRED COMPILER OPTIONS  : -qrealsize
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -25,11 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  -qnoescape 
-!* 
-!* 
-!*  
+!*  -qnoescape
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -38,9 +28,9 @@
   PROGRAM  InitExpNOESCAPE
   IMPLICIT NONE
 
-  INTEGER  :: I 
+  INTEGER  :: I
 
-  CHARACTER(3),    PARAMETER :: C(128)=(/( "\t\", I=0, 127)/)  
+  CHARACTER(3),    PARAMETER :: C(128)=(/( "\t\", I=0, 127)/)
 
   TYPE :: DT
     CHARACTER(3) :: C= "\\\"

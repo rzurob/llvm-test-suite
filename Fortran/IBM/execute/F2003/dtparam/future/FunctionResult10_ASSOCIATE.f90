@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FunctionResult10.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : March 25, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Function result
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -22,7 +14,7 @@
 !*
 !*  DESCRIPTION                :
 !*
-!* Defect: 364256 
+!* Defect: 364256
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
@@ -57,7 +49,7 @@ MODULE Mod
         integer, intent(in) :: l1
         TYPE(NewType(4,l1)) :: foo
 
-        foo = NewType(4,l1)( Arg%b1, Arg%c1 ) 
+        foo = NewType(4,l1)( Arg%b1, Arg%c1 )
 
       END FUNCTION foo
 END MODULE

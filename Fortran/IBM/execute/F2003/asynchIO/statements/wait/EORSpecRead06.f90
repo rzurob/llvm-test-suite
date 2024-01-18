@@ -1,13 +1,7 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : EORSpecRead06 - WAIT() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March  10, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() on Pending Non-Advancing Read Data
 !*                               Transfer Operations (with/without ID=
@@ -16,7 +10,6 @@
 !*  SECONDARY FUNCTIONS TESTED : EOR= Specifier (end-of-record Condition
 !*                               is *NOT* encountered)
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WAIT(), EOR= Specifier, ID= Specifier
@@ -96,7 +89,7 @@ PROGRAM EORSpecRead06
             CALL zzrc( 4 )
         END IF
     END DO
-    
+
 
     i = 1
     ioID( i ) = -99
@@ -106,7 +99,7 @@ PROGRAM EORSpecRead06
         WRITE(0, *) "READ() <", iStat, "> ", iMsg
         CALL zzrc( 5 )
     END IF
-    
+
 
     DO i = 1, 100, 10
         WRITE(6, 100) (dataList( (i + j) ), j = 0, 9)

@@ -1,24 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrSpreadDbleCmplxPrec.f 
+!*  TEST CASE NAME             : dataPtrSpreadDbleCmplxPrec.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!* - data-pointers are components of DT, type double complex/precision 
-!* - the same data-pointers are passed as an actual arg of subprogram's 
+!* - data-pointers are components of DT, type double complex/precision
+!* - the same data-pointers are passed as an actual arg of subprogram's
 !* -       two dummy args
 !* - inside subprogram(elemental/nonelemental), dummy arg is redefined
 !*
@@ -26,7 +20,7 @@
 
     module m
 	type base
-	    double complex, pointer :: dcp(:) 
+	    double complex, pointer :: dcp(:)
 	end type
     end module
 
@@ -34,13 +28,13 @@
 	use m
 
 	type, extends(base) :: child
-	    double precision, pointer :: dpp(:) 
+	    double precision, pointer :: dpp(:)
 	end type
     end module
 
     module k
 	use n
- 
+
 	contains
 	    elemental subroutine sub_dp(a1, a2)
 	        double precision, intent(inout) :: a1
@@ -54,9 +48,9 @@
 		a2 = a2(ubound(a1,1):lbound(a1,1):-1)
 	    end subroutine
     end module
-		
+
     program main
-	use k 
+	use k
 
 	type(child) :: c
 
@@ -72,18 +66,18 @@
 
 	call sub_dc(c%dcp, c%dcp)
 
-	write (*, '("(",f10.3,", ", f10.3, ")")')  c%dcp 
-	write (*, '("(",f10.3,", ", f10.3, ")")')  spread(c%dcp, 1,3)  
+	write (*, '("(",f10.3,", ", f10.3, ")")')  c%dcp
+	write (*, '("(",f10.3,", ", f10.3, ")")')  spread(c%dcp, 1,3)
 
-	! double precision 	
-	c%dpp(1:8) => c%dpp 
+	! double precision
+	c%dpp(1:8) => c%dpp
 
 	if ( .not. associated(c%dpp)) stop 21
 	if ( lbound(c%dpp,1) /= 1 ) stop 23
 	if ( ubound(c%dpp,1) /= 8 ) stop 25
 
 	call sub_dp(c%dpp, c%dpp)
-	write(*, '(4f10.3)') c%dpp 
-	write(*, '(4f10.3)') spread(c%dpp, 1, 3) 
+	write(*, '(4f10.3)') c%dpp
+	write(*, '(4f10.3)') spread(c%dpp, 1, 3)
 
     end program

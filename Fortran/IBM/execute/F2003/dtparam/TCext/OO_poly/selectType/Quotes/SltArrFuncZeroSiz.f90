@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrFuncZeroSiz.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrFuncZeroSiz
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 17, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a function call returing a poly array of zero 
+!*
+!*   The selector is a function call returing a poly array of zero
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -69,13 +63,13 @@
     ELEMENTAL FUNCTION GetChildId(Arg)
     CLASS(Child(4,*)), INTENT(IN) :: Arg
     INTEGER                  :: GetChildId
-      GetChildId = 2 
+      GetChildId = 2
     END FUNCTION
 
     ELEMENTAL FUNCTION GetBaseId(Arg)
     CLASS(Base(4,*)), INTENT(IN)  :: Arg
     INTEGER                  :: GetBaseId
-      GetBaseId = 1 
+      GetBaseId = 1
     END FUNCTION
 
   END MODULE
@@ -106,7 +100,7 @@
        TYPE IS (Zero(4,*))
           STOP 38
       END SELECT
-  
+
   END ASSOCIATE
   END SELECT
 

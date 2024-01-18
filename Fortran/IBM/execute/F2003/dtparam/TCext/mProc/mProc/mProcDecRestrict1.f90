@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcDecRestrict1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcDecRestrict1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 02, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,12 +23,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  If a generic procedure is accessed from a module, the rules apply to all the
-!*  specific versions even the rules apply to all the specific versions even 
+!*  specific versions even the rules apply to all the specific versions even
 !*  if some of them are inaccessible by their specific names.
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -75,7 +67,7 @@
   PROCEDURE(ModFun), POINTER :: ProcPtr
 
   INTERFACE Fun
-    PROCEDURE ProcPtr 
+    PROCEDURE ProcPtr
   END INTERFACE
 
   CONTAINS
@@ -92,9 +84,9 @@
   USE M1
 
   CONTAINS
-  
+
   SUBROUTINE ModSub()
-    ProcPtr => ModFun 
+    ProcPtr => ModFun
   END SUBROUTINE
 
   END MODULE
@@ -104,7 +96,7 @@
   USE M1, ONLY: Fun, DT1
   USE M2
 
-  TYPE(DT(4,9))  :: T  
+  TYPE(DT(4,9))  :: T
   TYPE(DT1(4,9,4,20)) :: T1
 
   CALL ModSub

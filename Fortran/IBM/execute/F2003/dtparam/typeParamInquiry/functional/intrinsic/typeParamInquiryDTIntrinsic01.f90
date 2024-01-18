@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryDTIntrinsic01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryDTIntrinsic01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 6 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 6 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
-!* 3. INTRINSIC TYPE IN DT 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
+!* 3. INTRINSIC TYPE IN DT
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -35,7 +27,7 @@ module m
       character(len('xlf'//'test')) :: c5
       character(len(''))  :: c6
       character(-10,1)  :: c7
-      
+
       real      :: r1
       real(selected_real_kind(5,300)) :: r2
       real(kind(-2.4Q100))  :: r3
@@ -54,13 +46,13 @@ module m
       complex(max(kind(4.5),kind(1111)))  :: x3
       complex(kind(8._16))  :: x4
       complex(2**4)  :: x5
-        
+
       logical   :: l1
       logical(kind(.true.))  :: l2
       logical(kind(.false._8)) :: l3
       logical(kind=2)  :: l4
-      logical(kind=kind(l2))  :: l5 
-   
+      logical(kind=kind(l2))  :: l5
+
    end type
 
    contains
@@ -117,7 +109,7 @@ end module
   integer :: i
   type(t) :: t1
   type(t),allocatable :: t2
-  type(t),pointer  :: t3 
+  type(t),pointer  :: t3
   type(t),target  :: t4
   type(t),allocatable :: t5(:)
 
@@ -126,7 +118,7 @@ end module
 
   call checktype(t1)
   call checktype(t2)
-  call checktype(t3) 
+  call checktype(t3)
   do i=lbound(t5,1),ubound(t5,1)
      call checktype(t5(i))
   enddo

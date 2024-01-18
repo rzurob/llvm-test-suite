@@ -4,25 +4,18 @@
 
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Test of SIGN= specifier
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN= specifier
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SIGN
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*  DESCRIPTION                : Testing sign= specifier in formatted
-!*                               write statement in dtio      
+!*                               write statement in dtio
 !*
 !* ===================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -50,7 +43,7 @@ module signdtio
          character(*), intent(inout) ::  iomsg
          integer, intent(in) :: v_list(:)
          integer, intent(out) :: iostat
-      end subroutine   
+      end subroutine
    end interface
 end module
 

@@ -9,7 +9,6 @@ module m
     end type
 end module
 
-
 program dummyArg008
 use m
     interface assgn
@@ -65,7 +64,6 @@ use m
             if (.not. precision_x6(c1(i)%cx(j), &
                 cmplx(log(j*1.0d0), log(j*1.0d1),8))) error stop 6_4
 
-
             if (.not. precision_x6(c1(i)%cx(j), c2(i)%cx(j))) error stop 7_4
         end do
 
@@ -77,7 +75,6 @@ use m
         end do
     end do
 end
-
 
 subroutine assgnBase (b1, b2)
 use m, only: base

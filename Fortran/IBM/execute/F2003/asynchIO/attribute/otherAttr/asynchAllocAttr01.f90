@@ -1,19 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchAllocAttr01 - ASYNCHRONOUS Attribute
 !*                               Interactions with Other Attributes
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : February  8, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : Interactions with the ALLOCATABLE Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 :
@@ -33,13 +27,11 @@
 !*                  or  ALLOCATABLE
 !*                  or  ASYNCHRONOUS
 !*
-!*
 !*  5.1.2.2 ALLOCATABLE attribute
 !*
 !*  An object with the ALLOCATABLE attribute is one for which space is
 !*  allocated by an ALLOCATE statement (6.3.1) or by an intrinsic assignment
 !*  statement (7.4.1.3).
-!*
 !*
 !*  5.2.2 ALLOCATABLE statement
 !*

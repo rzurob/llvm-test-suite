@@ -1,21 +1,17 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : module_subprogram14f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : April 20, 2013
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 SUBMODULE  BLOCK
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION
 !*  based on F2008/block/BInModProc.f
 !*
-!*  Define a block in a module function, testing compatibility with the F2008 
+!*  Define a block in a module function, testing compatibility with the F2008
 !*   BLOCK feature.
 !*
 !*  Secondary tests:
@@ -61,7 +57,7 @@ contains
       print '("in sub:",i6,"|",i6,"=",i12,"; x",z4,"0000|x",z4,"=x",z8)', a1, a2, a3, a1, a2, a3
       print *, a1, a2, a3, pat1, pat2, a3
     end block
-  end 
+  end
 
 end submodule submod
 

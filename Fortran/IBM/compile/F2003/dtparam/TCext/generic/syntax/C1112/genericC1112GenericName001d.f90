@@ -2,24 +2,12 @@
 ! ftcx_dtp -qnol /tstdev/F2003/generic/syntax/C1112/genericC1112GenericName001d.f
 ! opt variations: -ql
 
-
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : GENERICS
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with generic-name
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : C1112: generic-spec in use only statement shall not specify
 !*                                      a generic binding

@@ -2,47 +2,36 @@
 ! ftcx_dtp -qk -qreuse=none /tstdev/F2003/mxminAll/misc/mxminMisc21.f
 ! opt variations: -qck -qnok -qreuse=self
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAXLOC/MINLOC with zero-sized array
 !*
 !*   (315021)
 !* ===================================================================
 
-program mxminMisc21 
+program mxminMisc21
 
    type dt(k1,n1,n2)    ! (4,2,2)
      integer, kind :: k1
      integer, len  :: n1,n2
      character(n1)    z(4:1, 2:-4)
      character(n2)    zz(3:-1, 4:2, 9:2)
-   end type 
+   end type
 
    character*(5)   x1_arr(3:1), x2_arr(1:0, 4:3), x3_arr(2:1,4:2,7:3)
    integer         v0, v1(1), v2(2), v3(3), v4(2), v5(3)
 
-   type(dt(4,2,2)) :: obj 
+   type(dt(4,2,2)) :: obj
 
    v0 = 3
    v1 = 3
-   v2 = 3    
+   v2 = 3
    v3 = 3
    v4 = 3
    v5 = 3
@@ -79,7 +68,7 @@ program mxminMisc21
    endif
 
    v0 = 4
-   v1 = 4 
+   v1 = 4
    v2 = 4
    v3 = 4
    v4 = 4

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyDefAssign02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyDefAssign02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 24 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. base type has integer component, child type has derived type pointer.
@@ -59,7 +51,7 @@ module m
                     type is(child(*,*))
                     this%i1=arg%i1+10
                     this%comp=>arg%comp
-               end select                
+               end select
          end select
       end subroutine
 
@@ -84,32 +76,32 @@ program dummyArgDeferPolyDefAssign02
       RHS(2)%comp=>tar(1)
       RHS(3)%comp=>tar(2)
     class default
-      stop 11 
-  end select 
+      stop 11
+  end select
 
-  allocate(child(4,3) :: LHS(6:7)) 
+  allocate(child(4,3) :: LHS(6:7))
 
   LHS=RHS
 
   if(any(LHS%i1 /= [11,12]))                 stop 1
   select type(LHS)
      type is(child(*,*))
-       if(LHS(6)%comp%l1 /= 3)               stop 2 
-       if(LHS(7)%comp%l1 /= 3)               stop 3 
-       if(LHS(6)%comp%i1 /= 99)              stop 4 
-       if(LHS(7)%comp%i1 /= -99)             stop 5 
+       if(LHS(6)%comp%l1 /= 3)               stop 2
+       if(LHS(7)%comp%l1 /= 3)               stop 3
+       if(LHS(6)%comp%i1 /= 99)              stop 4
+       if(LHS(7)%comp%i1 /= -99)             stop 5
      class default
        stop 9
-  end select 
+  end select
 
   select type(LHS)
       type is(child(*,*))
           LHS%base=RHS
-          if(any(LHS%base%i1 /= [-9,-8]))    stop 6 
+          if(any(LHS%base%i1 /= [-9,-8]))    stop 6
           if(LHS(6)%comp%i1 /= 99)           stop 7
-          if(LHS(7)%comp%i1 /= -99)          stop 8 
+          if(LHS(7)%comp%i1 /= -99)          stop 8
        class default
           stop 10
-  end select  
+  end select
 
 end program

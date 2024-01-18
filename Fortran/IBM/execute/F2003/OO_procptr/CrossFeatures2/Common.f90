@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Common.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Common.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Common.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Common.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Common block 
+!*
+!*  Common block
 !*  (314890)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -52,7 +46,7 @@
   CLASS(*), POINTER :: F(:)
     F => Arg
   END FUNCTION
- 
+
   END MODULE
 
   FUNCTION ExtFun(Arg)
@@ -60,18 +54,18 @@
   CLASS(*), POINTER :: ExtFun(:)
     ExtFun => Arg
   END FUNCTION
- 
-  PROGRAM Common0 
+
+  PROGRAM Common0
   USE M
   PROCEDURE(F), POINTER :: ProcPtr
-  PROCEDURE(F)          :: ExtFun 
+  PROCEDURE(F)          :: ExtFun
   COMMON ProcPtr
 
   ProcPtr => ExtFun
   CALL IntSub()
   IF ( ASSOCIATED(ProcPtr) ) STOP 13
-   
-   
+
+
   CONTAINS
 
   SUBROUTINE IntSub()
@@ -86,10 +80,10 @@
   CLASS DEFAULT
     STOP 12
   END SELECT
- 
+
   NULLIFY(ProcPtr)
- 
-  END SUBROUTINE 
+
+  END SUBROUTINE
 
 
   END

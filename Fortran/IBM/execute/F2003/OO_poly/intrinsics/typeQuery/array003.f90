@@ -11,16 +11,11 @@
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            :
-!*  PROGRAMMER                 : Yong Du
+!*  ===================================================================
 !*  DATE                       : 11/03/2004
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : extends_type_of(A, MOLD)
 !*  SECONDARY FUNCTIONS TESTED : same_type_as(A, B)
-!*  DRIVER STANZA              : xlf90
 !*  DESCRIPTION                : MOLD and A are one or multi dimensional
 !*    whole array, explicit-shape or deferred-shape; non-poly, poly, or
 !*    unlimited poly. Derived type is zero storage. Declared type can

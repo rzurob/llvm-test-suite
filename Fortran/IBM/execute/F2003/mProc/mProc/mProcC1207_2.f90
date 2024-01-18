@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcC1207_2.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcC1207_2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 28, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generalization of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generalization of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  C1207 (R1206) A procedure-name shall have an explicit interface and shall
 !*  refer to an accessible procedure pointer, external procedure,
-!*  dummy procedure, or module procedure.  
+!*  dummy procedure, or module procedure.
 !*
-!*  
 !*  (316777/317589)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,10 +34,10 @@
   END FUNCTION
 
   MODULE M0
-  INTERFACE Fun 
+  INTERFACE Fun
     FUNCTION IFun(Arg)
      INTEGER :: Arg, IFun
-    END FUNCTION 
+    END FUNCTION
     PROCEDURE IFun
   END INTERFACE
 
@@ -56,13 +48,13 @@
   MODULE M1
 
   INTERFACE Fun
-    PROCEDURE IFun 
+    PROCEDURE IFun
   END INTERFACE
 
-  INTERFACE Fun 
+  INTERFACE Fun
     FUNCTION IFun(Arg)
       INTEGER :: Arg, IFun
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
 
   END MODULE
@@ -70,12 +62,12 @@
   MODULE M2
 
   INTERFACE Fun
-    PROCEDURE ProcPTr 
+    PROCEDURE ProcPTr
   END INTERFACE
 
   PROCEDURE(IFun), POINTER :: ProcPtr
- 
-  INTERFACE 
+
+  INTERFACE
     FUNCTION IFun(Arg)
       INTEGER :: Arg, IFun
     END FUNCTION
@@ -87,7 +79,7 @@
    USE M0
   END MODULE
 
-  PROGRAM mProcC1207_2 
+  PROGRAM mProcC1207_2
   USE M0, ONLY: Fun0 => Fun
   USE M1, ONLY: Fun1 => Fun
   USE M2, ONLY: Fun2 => Fun, Ptr => ProcPtr, ExtFun => IFun

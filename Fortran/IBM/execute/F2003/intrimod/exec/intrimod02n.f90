@@ -11,14 +11,11 @@
 ! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod02n.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
-!*  Description      : Use NON_INTRINSIC modules with same name as an 
+!*  Description      : Use NON_INTRINSIC modules with same name as an
 !*                     INTRINSIC module in internal subroutine and function.
 !*
 !*************************************************************************
@@ -64,7 +61,7 @@
                do k = 1, 5
                   if (flag_values(k) .neqv. .false. ) stop 10
                enddo
-           
+
                if (ieee_support_datatype(PINF_4) .AND. &
  	           ieee_support_datatype(NINF_4)) then
                   if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) stop 12
@@ -85,14 +82,14 @@
 
 !... Testing xlf_fp_util module
                call set_fpscr_flags(flags(1))
-               call clr_fpscr_flags(flags(5)) 
+               call clr_fpscr_flags(flags(5))
                if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
                if ( get_fpscr_flags(flags(5)) .eq. 0 ) stop 18
 
             end subroutine sub1
 
 
-            logical function fun1() 
+            logical function fun1()
   	       use, non_intrinsic :: ieee_arithmetic
 	       use, non_intrinsic :: ieee_exceptions
                use, non_intrinsic :: constants_for_ieee
@@ -112,7 +109,7 @@
                do k = 1, 5
                   if (flag_values(k) .neqv. .false. ) stop 30
                enddo
-           
+
                if (ieee_support_datatype(PINF_4) .AND. &
  	           ieee_support_datatype(NINF_4)) then
                   if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) stop 32
@@ -132,7 +129,7 @@
                call ieee_set_status(status_value)
 
                call set_fpscr_flags(flags(1))
-               call clr_fpscr_flags(flags(5)) 
+               call clr_fpscr_flags(flags(5))
                if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 37
                if ( get_fpscr_flags(flags(5)) .eq. 0 ) stop 38
 

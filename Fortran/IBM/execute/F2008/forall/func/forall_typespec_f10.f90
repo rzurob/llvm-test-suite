@@ -1,21 +1,18 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_f10.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*  ADAPTED FROM               : hpf_forall/construct/fxfc026.scenario
 !*
 !*  DESCRIPTION
 !*
-!*    Test that execution of the forall-body statements occur only for active 
+!*    Test that execution of the forall-body statements occur only for active
 !*    combinations of index-name values.
 !*
 !* =============================================================================
@@ -23,7 +20,7 @@
 
 PROGRAM fxfc026
 
-   
+
    INTEGER CASENUM ,i,j,k
 
    REAL TEST1(100)
@@ -50,7 +47,7 @@ PROGRAM fxfc026
    PRINT *,"CASENUM = ",CASENUM
 
    TEST1 = 0
-   FORALL ( integer(2)::i = 1:100:2 ) 
+   FORALL ( integer(2)::i = 1:100:2 )
       TEST1(i) = 1
    END FORALL
 
@@ -91,7 +88,7 @@ PROGRAM fxfc026
       END FORALL
    END FORALL
    PRINT *, TEST2
-      
+
 
 !----------------------------------
 ! forall with stride with mask

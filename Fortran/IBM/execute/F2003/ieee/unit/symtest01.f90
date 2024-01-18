@@ -12,21 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Rafik Zurob
 !*  DATE                       : March, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Save and Restore 
+!*  PRIMARY FUNCTIONS TESTED   : Save and Restore
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -34,7 +26,6 @@
 !*
 !*  DESCRIPTION                : test save and restore for procedures
 !*                               that use ieee
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,17 +36,17 @@
 !     No save and restore should be done around I/O routines
       subroutine xx()
          use ieee_arithmetic
-         
+
          interface
            subroutine yy()
              use ieee_exceptions
            end subroutine yy
          end interface
-         
+
          logical :: val(5),expected(5)
          integer :: i
          type(ieee_round_type) :: rndmode
-         
+
          call ieee_set_flag(ieee_divide_by_zero, .true.)
          ! div_by_zero should be set in xx
          call yy()
@@ -96,17 +87,17 @@
         oldrnd = set_round_mode(fp_rnd_rp)
       end subroutine
 
-      
 
-      
+
+
       use ieee_exceptions
-      
-      interface 
+
+      interface
         subroutine xx()
         use ieee_exceptions
         end
       end interface
-      
+
       print *, "The FE set the IEEE_FPSCR bit on xx, yy, and _main"
       print *, "zz does not have the bit set."
       print *, "The IO library functions also have the bit set."

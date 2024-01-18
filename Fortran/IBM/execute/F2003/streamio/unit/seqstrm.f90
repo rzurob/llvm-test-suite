@@ -13,14 +13,9 @@
 ! *********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
 !*                             :
-!*  PROGRAMMER                 : Daniel Chen
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  DIAGNOSES TESTED           : A formatted file "seqfor.data" is
 !*                             : created and connected to two units for
@@ -28,7 +23,6 @@
 !*                             : INQUIRE statement.
 !*                             : POSITION specifier in the OPEN statement.
 !*                             : FLUSH statement.
-!*                             :
 !*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*

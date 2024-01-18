@@ -1,13 +1,8 @@
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : coindexObjectProcedureDT04.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Shahid Alam
 !*  DATE                       : 2011-05-20
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coindex object Procedure Calls
 !*
@@ -15,12 +10,11 @@
 !*
 !*  REFERENCE                  : Feature Number 388003
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -31,7 +25,6 @@
 !*  either less than SIZE or multiple of SIZE. The extra number of images
 !*  will be ignored.
 !*  Dummy procedures
-!*
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -144,7 +137,7 @@ program main
    call verifyResult(verifyImagesProcessed, A1, A2, image, SIZE)
 
    contains
-   
+
    subroutine verifyResult(dummy_proc, A1, A2, image, SIZE)
       procedure(verifyImagesProcessed) :: dummy_proc
       type(SPHERE), intent(in) :: A1(:)[*]

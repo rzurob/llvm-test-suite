@@ -21,7 +21,6 @@
         f0 = 1.0
       END FUNCTION
 
-
       !! user of dummy SUBROUTINE argument
       SUBROUTINE rcv1 (dummyProc)
         INTERFACE
@@ -42,7 +41,6 @@
         d = dummyProc()
         print *, 'dummy proc returned: ', d
       END SUBROUTINE
-
 
       !! supplier of dummy procedure argument
       program m0

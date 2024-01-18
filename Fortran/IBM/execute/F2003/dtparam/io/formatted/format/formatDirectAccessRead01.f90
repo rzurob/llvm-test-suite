@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatDirectAccessRead01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatDirectAccessRead01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 14 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 14 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test Read statement with direct access
@@ -31,9 +23,9 @@ module m
       integer(k1) :: int(l1)
    end type
 
-   type,extends(base) :: child(l2)   
+   type,extends(base) :: child(l2)
       integer,len     :: l2 !l2= 4
-      character(l1+l2) :: char(l1:l2) 
+      character(l1+l2) :: char(l1:l2)
    end type
 
    type,extends(child) :: gen3(l3)
@@ -42,7 +34,7 @@ module m
    end type
 
    contains
- 
+
       subroutine readData(dt,unit)
          class(base(2,:)),pointer,intent(out) :: dt(:)
          integer,intent(in) :: unit
@@ -59,19 +51,19 @@ module m
                  read(10,'(3l6)',rec=10) dt(0)%log
                  read(10,'(3i4)',rec=9) dt(0)%int
                  read(10,'(2a7)',rec=8) dt(0)%char
-        
+
         class default
            stop 11
      end select
 
-      end subroutine      
+      end subroutine
 end module
 
 program formatDirectAccessRead01
   use m
   implicit none
 
-  integer        :: ios 
+  integer        :: ios
   character(300) :: msg
 
   class(base(2,:)),pointer :: base1(:)=>null()
@@ -84,16 +76,16 @@ program formatDirectAccessRead01
      print *,"fail to open the file"
      print *,"iostat=",ios
      print *,"iomsg=",msg
-     stop 10 
-  else 
+     stop 10
+  else
      call readData(base1,10)
      select type(base1)
         type is(gen3(2,*,*,*))
            write(*,'(3i4/2a7/3l4)') base1
         class default
-           stop 12 
+           stop 12
      end select
-  end if  
+  end if
 
   close(10)
 

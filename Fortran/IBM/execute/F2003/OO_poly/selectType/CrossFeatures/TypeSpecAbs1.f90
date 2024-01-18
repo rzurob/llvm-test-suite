@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: TypeSpecAbs1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: TypeSpecAbs1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : TypeSpecAbs1
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 28, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,33 +30,33 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Type Spec : an abstract type 
-!* 
-!*  () 
+!*
+!*  Type Spec : an abstract type
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
     TYPE  :: DT0
-      INTEGER(2) :: IArr(2) 
+      INTEGER(2) :: IArr(2)
       CONTAINS
       PROCEDURE, PASS(Obj)   :: GetInt
     END TYPE
 
     TYPE, EXTENDS(DT0), ABSTRACT :: DT1
     END TYPE
-  
+
     TYPE, EXTENDS(DT1) :: DT
     END TYPE
-  
+
   CONTAINS
 
     ELEMENTAL FUNCTION GetInt(Num, Obj)
-    CLASS(DT0), INTENT(IN)    :: Obj 
+    CLASS(DT0), INTENT(IN)    :: Obj
     INTEGER, INTENT(IN)      :: Num
-    INTEGER(KIND(Obj%IArr))   :: GetInt 
-      GetInt = Obj%IArr(Num) 
+    INTEGER(KIND(Obj%IArr))   :: GetInt
+      GetInt = Obj%IArr(Num)
     END FUNCTION
 
   END MODULE
@@ -71,7 +65,7 @@
   PROGRAM  TypeSpecAbs
   USE M
   IMPLICIT NONE
- 
+
   CLASS(DT0), POINTER  :: U(:,:,:)
 
     ALLOCATE(U(2,2,2), SOURCE=DT(IArr=(/1_2, 2_2/)))
@@ -81,7 +75,7 @@ S1: SELECT TYPE (S2 => U)
 
 S2: SELECT TYPE (U => S2 )
     CLASS IS (DT0)
-      STOP 20 
+      STOP 20
     CLASS IS (DT1)
         IF (ANY(U(:,:,:)%IArr(1)  .NE. 1)) STOP 22
         IF (ANY(U(:,:,:)%IArr(2)  .NE. 2)) STOP 23

@@ -2,23 +2,15 @@
 ! ftcx_dtp -qnol -qreuse=none /tstdev/F2003/abstracti/functional/abstracti022.f
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : abstracti022ext
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti022
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-29 (original: 02/20/2006)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Abstract Interface
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Deferred Binding
 !*  - Private Deferred Binding in base type in 1 module

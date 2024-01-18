@@ -1,24 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: initialization expression is not the same as assignment
 !*                                           with class hierarchy (generic or intrinsic), and different rank which
-!*                                           intrinsic assignment does not support, however we still provide a 
+!*                                           intrinsic assignment does not support, however we still provide a
 !*                                           UD assignment which should not be used
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

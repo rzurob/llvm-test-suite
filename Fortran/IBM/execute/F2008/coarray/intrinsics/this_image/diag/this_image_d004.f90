@@ -1,23 +1,16 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : this_image_d004.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : July 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Return type testing. This_image returns an scalar
 !*				 integer when 0 or 2 args are properly provided.
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -51,7 +44,7 @@ program main
 	cx4 = this_image()
 	cx8 = this_image()
 	caf = this_image()
-	
+
 	i1 = this_image(icaf, 1)
 	i2 = this_image(icaf, 1)
 	i4 = this_image(icaf, 1)
@@ -70,13 +63,13 @@ program main
 	l8 = this_image()
 	ch = this_image()
 	lcaf = this_image()
-	
+
 	l1 = this_image(icaf, 1)
 	l2 = this_image(icaf, 1)
 	l4 = this_image(icaf, 1)
 	l8 = this_image(icaf, 1)
 	ch = this_image(icaf, 1)
 	lcaf = this_image(icaf, 1)
-	
+
 end
 

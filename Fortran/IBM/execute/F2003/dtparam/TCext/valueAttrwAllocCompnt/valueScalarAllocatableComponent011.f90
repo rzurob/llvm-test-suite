@@ -3,26 +3,15 @@
 ! opt variations: -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Value Attribute for derived type containing allocatable components
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : value attribute with derived type containing allocatable components
 !*                                 - type: derived type with intrinsic allocatable components
-!*                                 - deallocatable of actual argument should not affect the value dummy arg 
+!*                                 - deallocatable of actual argument should not affect the value dummy arg
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -47,9 +36,9 @@ module m
       subroutine deallocActual()
 
          print *, 'deallocating component of b1', b1%i
-         
+
          deallocate ( b1%i )
-         
+
          print *, allocated(b1%i)
 
       end subroutine
@@ -59,7 +48,7 @@ module m
 
          print *, 'inside foo', a%i, allocated(a%i)
          call deallocActual()
-         print *, 'after deallocActual', a%i, allocated(a%i)         
+         print *, 'after deallocActual', a%i, allocated(a%i)
 
       end subroutine
 
@@ -69,9 +58,9 @@ program valueScalarAllocatableComponent011
    use m
 
    b1 = base(4)(10000)
-   
+
    call foo(b1)
-   
+
    print *, allocated(b1%i)
 
 end program

@@ -1,18 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mcd-sum.f
-!*
-!*  PROGRAMMER                 : Xing Xue
 !*  DATE                       : July 31, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray access
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95_r
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : functional testing of coarray
@@ -94,7 +87,7 @@ subroutine MCD_SUM_save
      print *,"sum1=",sum1
      print *,"sum2=",sum2
   endif
-  
+
   SYNC ALL
 end subroutine MCD_SUM_save
 
@@ -138,7 +131,7 @@ end subroutine MCD_SUM_save
 !     print *,"sum1=",sum1
 !     print *,"sum2=",sum2
 !  endif
-!  
+!
 !  SYNC ALL
 !end subroutine MCD_SUM_common
 
@@ -148,15 +141,15 @@ end subroutine MCD_SUM_save
 !  integer :: caf0[2,3,*]
 !  integer :: caf1(10)[*]
 !  integer :: caf2(10,10)[2,3,*]
-! 
-!  interface 
-!     subroutine initCoArrays(caf0, caf1, caf2) 
+!
+!  interface
+!     subroutine initCoArrays(caf0, caf1, caf2)
 !       integer :: caf0[1,1,*]
 !       integer :: caf1(1)[*]
 !       integer :: caf2(1,1)[1,1,*]
 !     end subroutine initCoArrays
 !
-!     subroutine sumCoArrays(caf0, caf1, caf2) 
+!     subroutine sumCoArrays(caf0, caf1, caf2)
 !       integer :: caf0[2,3,*]
 !       integer :: caf1(1)[*]
 !       integer :: caf2(1,1)[2,3,*]
@@ -165,7 +158,7 @@ end subroutine MCD_SUM_save
 !     subroutine sumCoArraysVarCoSpace(   &
 !          caf0, caf0x, caf0y, &
 !          caf1, caf1x, caf1y, &
-!          caf2, caf2x, caf2y, n, m) 
+!          caf2, caf2x, caf2y, n, m)
 !       integer caf0x, caf0y
 !       integer caf1x, caf1y
 !       integer caf2x, caf2y
@@ -188,22 +181,22 @@ end subroutine MCD_SUM_save
 !end subroutine subroutineDriver
 !
 !
-!subroutine initCoArrays(caf0, caf1, caf2) 
+!subroutine initCoArrays(caf0, caf1, caf2)
 !  implicit none
 !  integer :: caf0[2,3,*]
 !  integer :: caf1(10)[2,3,*]
 !  integer :: caf2(10,10)[2,3,*]
-!  
+!
 !  integer :: me, num_imgs, me1, me2, me3, me0
-!  
+!
 !  me = this_image()
 !  me0 = me-1
 !  num_imgs = num_images()
-!  
+!
 !  caf0 = me
 !  caf1(1:10)[mod(me0,2)+1, mod(me0/2,3)+1,me0/(2*3)+1] = me
 !  caf2(1:10, 1:10) = me
-!  
+!
 !end subroutine initCoArrays
 !
 !subroutine sumCoArrays(caf0, caf1, caf2)
@@ -237,7 +230,7 @@ end subroutine MCD_SUM_save
 !     print *,"sum1=",sum1
 !     print *,"sum2=",sum2
 !  endif
-!  
+!
 !end subroutine sumCoArrays
 !
 !
@@ -278,5 +271,5 @@ end subroutine MCD_SUM_save
 !     print *,"sum1=",sum1
 !     print *,"sum2=",sum2
 !  endif
-!  
+!
 !end subroutine sumCoArraysVarCoSpace

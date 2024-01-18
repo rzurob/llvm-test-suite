@@ -1,21 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : abstracti010k
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti010
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-17 (original: 02/20/2006)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
-!*  SECONDARY FUNCTIONS TESTED : Abstract Interface 
+!*  SECONDARY FUNCTIONS TESTED : Abstract Interface
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : ALLOCATE (allocatable array component
 !*  allocation or deallocation during intrinsic assignment; focus on bounds

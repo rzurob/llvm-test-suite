@@ -1,25 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozReal008.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : REAL intrinsic
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                :If A is a boz-literal-constant     
-!*                              and KIND is present, the kind      
-!*                          	type parameter is that specified   
-!*				by the value of KIND               
+!*  DESCRIPTION                :If A is a boz-literal-constant
+!*                              and KIND is present, the kind
+!*                          	type parameter is that specified
+!*				by the value of KIND
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -47,7 +36,7 @@ program bozReal008
 
     !Negative Infinity
     testR = REAL(b'11111111100000000000000000000000')
-    if (testI /= b'11111111100000000000000000000000') error stop 4_4 
+    if (testI /= b'11111111100000000000000000000000') error stop 4_4
     testR = REAL(O'37740000000')
     if (testI /= O'37740000000') error stop 5_4
     testR = REAL(Z'FF800000')
@@ -56,7 +45,7 @@ program bozReal008
 
     !Positive NaNS (Lower Bound)
     testR = REAL(B'1111111100000000000000000000001')
-    if (testI /= B'1111111100000000000000000000001') error stop 7_4  
+    if (testI /= B'1111111100000000000000000000001') error stop 7_4
     testR = REAL(O'17740000001')
     if (testI /= O'17740000001') error stop 8_4
     testR = REAL(Z'7F800001')
@@ -90,7 +79,7 @@ program bozReal008
 
     !Positive NaNQ (Lower Bound)
     testR = REAL(B'1111111110000000000000000000000')
-    if (testI /= B'1111111110000000000000000000000') error stop 19_4  
+    if (testI /= B'1111111110000000000000000000000') error stop 19_4
     testR = REAL(O'17760000000')
     if (testI /= O'17760000000') error stop 20_4
     testR = REAL(Z'7FC00000')

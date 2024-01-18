@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Nullify2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Nullify2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Nullify2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Nullify2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : nullify 
+!*  SECONDARY FUNCTIONS TESTED : nullify
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  The nullify stmt 
-!*  (315148) 
+!*
+!*  The nullify stmt
+!*  (315148)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -54,22 +48,22 @@
     PROCEDURE(Fun), POINTER :: ReturnProcPtr
     PROCEDURE(Fun)          :: Arg
       ReturnProcPtr => Arg
-    END FUNCTION 
-    
+    END FUNCTION
+
     FUNCTION Fun(Arg)
-    CLASS(*) :: Arg 
-    CLASS(*), POINTER :: Fun 
-      ALLOCATE(Fun, SOURCE=Arg) 
+    CLASS(*) :: Arg
+    CLASS(*), POINTER :: Fun
+      ALLOCATE(Fun, SOURCE=Arg)
     END FUNCTION
 
   END MODULE
 
-  PROGRAM Nullify2 
+  PROGRAM Nullify2
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
   PROCEDURE(ReturnProcPtr), POINTER :: ProcPtr=>NULL()
 
-  ProcPtr => ReturnProcPtr 
+  ProcPtr => ReturnProcPtr
   NULLIFY(ProcPtr(Fun))
 
   END

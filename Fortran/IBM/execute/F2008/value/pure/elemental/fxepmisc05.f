@@ -1,41 +1,34 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qrndsngl -qstrict -qnomaf -qfixed=132
 ! %GROUP: fxepmisc05.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : User Defined Elemental Procedures
-!*                                                                     
-!*  PROGRAMMER                 : Chris Hayes 
-!*  DATE                       : July 28, 1998
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
-!*  PRIMARY FUNCTIONS TESTED   : ELEMENTAL procedures
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  ===================================================================
 !*
-!*  DRIVER STANZA              : xlf95
+!*  DATE                       : July 28, 1998
+!*  ORIGIN                     : AIX Compiler Development,
+!*
+!*  PRIMARY FUNCTIONS TESTED   : ELEMENTAL procedures
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qrndsngl -qstrict -qnomaf
 !*
 !*  KEYWORD(S)                 : ELEMENTAL, array, optional argument
-!*  TARGET(S)                  : 
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Test elemental procedures with optional
 !*                               dummy arguments.
-!*                               
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*
@@ -53,7 +46,7 @@
 
       real*4, DIMENSION(5,2,5,2) :: D4arr21,D4arr22,D4arr23,D4arr24
      +                             ,D4arr25,D4arr26
-      real*4, DIMENSION(40) :: D1arr21,D1arr22,D1arr23,D1arr24 
+      real*4, DIMENSION(40) :: D1arr21,D1arr22,D1arr23,D1arr24
       real*4, DIMENSION(2,1,2,1,1,1,1,1,2,1,1,2,1,1,3,2,2,3,2,1) ::
      +           D20arr21,D20arr22,D20arr23
 
@@ -82,7 +75,7 @@
 !*********************************************************************
 !* Main program ends
 !*********************************************************************
-      END 
+      END
 
       SUBROUTINE sub1(A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13)
       real*4, DIMENSION(5,2,5,2) :: A1,A2,A3,A4,A5,A6,res1,objective1
@@ -107,16 +100,16 @@
 100   FORMAT(E12.5,E12.5,E12.5,E12.5,E12.5)
 
 ! Calculate the expected values for the first test
-      objective2=-99.0e0 
+      objective2=-99.0e0
       do count1=2,40,2
        objective2(count1)=A7(count1)*var2-A9(count1)*A10(count1)
       end do
 
-      res2=-99.0e0 
+      res2=-99.0e0
 ! Call elemental function with optional arg
       forall(count1=1:40,MOD(count1,2).eq.0)
-       res2(count1)=elemfunc41(A1=A7(count1),A2=var2,A3=A9(count1),A4=A10(count1)) 
-      end forall 
+       res2(count1)=elemfunc41(A1=A7(count1),A2=var2,A3=A9(count1),A4=A10(count1))
+      end forall
 
 ! Verify the results of the previous test
       do count1=1,40
@@ -124,13 +117,13 @@
       end do
 
 ! Calculate the expected values for the second test
-      objective1=-99.0e0 
+      objective1=-99.0e0
       forall(count1=1:5,count2=1:2)
        objective1(count1,count2,count1,count2)=(A4(count1,count2,count1,count2)+
      +                  A2(count1,count2,count1,count2))/A3(count1,count2,count1,count2)
       end forall
 
-      res1=-99.0e0 
+      res1=-99.0e0
 ! Call elemental function without optional arg
       forall(count1=1:5,count2=1:2)
        res1(count1,count2,count1,count2)=elemfunc41(A1=A4(count1,count2,count1,count2),
@@ -139,7 +132,7 @@
 
 ! Verify the results of the previous test
       tmp1=RESHAPE(res1,(/100/))
-      tmp2=RESHAPE(objective1,(/100/)) 
+      tmp2=RESHAPE(objective1,(/100/))
       do count1=1,100
        if (.not. precision_r4(tmp1(count1),tmp2(count1))) error stop 2
       end do
@@ -178,10 +171,10 @@
 
 !*********************************************************************
 !* Elemental Function definitions
-!* 
+!*
 !*********************************************************************
 !*********************************************************************
-!* elemfunc41: 
+!* elemfunc41:
 !*********************************************************************
 
       ELEMENTAL REAL(4) FUNCTION elemfunc41(A1,A2,A3,A4)
@@ -197,17 +190,17 @@
 
 !*********************************************************************
 !* Elemental Subroutine definitions
-!* 
+!*
 !*********************************************************************
 !*********************************************************************
-!* elemsub41: 
+!* elemsub41:
 !*********************************************************************
 
       ELEMENTAL SUBROUTINE elemsub41(A1,A2,A3)
        real*4, value    :: A1
        real*4, OPTIONAL, value      :: A3
        real*4, INTENT(inout) :: A2
-       if (present(A3)) then 
+       if (present(A3)) then
          A2=A2+MAX(A1,A2,A3)-MIN(A1,A2,A3)
        else
          A2=SIN(A1)-A2

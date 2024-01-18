@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar002l
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar002 by Robert Ma)
 !*  DATE                       : 2007-09-18 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try input item to be scalar object with array component
@@ -56,27 +48,27 @@ program scalar002l
    class(base(:)), pointer         :: b2 ! tcx: (:)
    type(base(:)), allocatable :: b3 ! tcx: (:)
    type(base(:)),  pointer :: b4 ! tcx: (:)
-   
+
    integer :: stat
    character(200) :: msg
-   
+
    character(9) :: c1
    character(6)  :: c2
    character(12)  :: c3
    character(3)  :: c4
 
    ! allocation of variables
-     
+
    allocate ( b1, source = base(3) (null()) ) ! tcx: (3)
    allocate ( b2, source = base(3) (null()) ) ! tcx: (3)
    allocate ( b3, source = base(3) (null()) ) ! tcx: (3)
    allocate ( b4, source = base(3) (null()) ) ! tcx: (3)
-   
+
    allocate (b1%c(3), source = (/ 'XXX', 'XXX', 'XXX' /) )
    allocate (b2%c(2), source = (/ 'XXX', 'XXX' /) )
    allocate (b3%c(4), source = (/ 'XXX', 'XXX', 'XXX', 'XXX' /) )
    allocate (b4%c(1), source = (/ 'XXX' /) )
-      
+
    open (unit = 1, file ='scalar002l.data', form='unformatted', access='sequential')
 
    ! unformatted I/O operations
@@ -85,9 +77,9 @@ program scalar002l
    write (1, iostat=stat, iomsg=msg )             'ABCDEF'
    write (1, iostat=stat, iomsg=msg )             'abcdefghijkl'
    write (1, iostat=stat, iomsg=msg )             'ABC'
-   
+
    rewind 1
-   
+
    read (1, iostat=stat, iomsg=msg )             b1
    if (( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 101_4
    read (1, iostat=stat, iomsg=msg )             b2
@@ -118,8 +110,8 @@ use m1
    character(*), intent(inout) :: iomsg
 
    read (unit, iostat=iostat )     ( dtv%c(i), i = 1, size(dtv%c,1) )
-   iomsg = 'dtioread' 
-   
+   iomsg = 'dtioread'
+
 end subroutine
 
 

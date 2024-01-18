@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Value Attribute for derived type containing allocatable components
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : value attribute with derived type containing allocatable components
 !*                                 - type: derived type with intrinsic allocatable components
@@ -83,7 +72,7 @@ program valueAllocatableComponentProcedurePtr001
    print *, 'after foo1', b1%i1
 
    p1 => foo2
-   
+
    print *, b1%i1
    call p1(b1)
    print *, 'after foo2', b1%i1

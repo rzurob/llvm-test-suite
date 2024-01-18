@@ -2,40 +2,34 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk052b cxcmn_blk052
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.o *.mod fxcmn_blk052b fxcmn_blk052b.out
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This test case will verify that a 1-dimensional array variable 
-!*                               inside of BIND(C) common block with a binding label is 
+!*  DESCRIPTION                : This test case will verify that a 1-dimensional array variable
+!*                               inside of BIND(C) common block with a binding label is
 !*                               interoperable with a C variable that is not in a structure.
 !*
 !*                               Data type being tested: logical(C_BOOL)
-!*					
-!*                               Test: BIND(C) common block in external subroutine 
-!*					
+!*
+!*                               Test: BIND(C) common block in external subroutine
+!*
 !* ===================================================================
-!*  REVISION HISTORY					
-!*  MM/DD/YY:  Init:  Comments:			
+!*  REVISION HISTORY
+!*  MM/DD/YY:  Init:  Comments:
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -70,7 +64,7 @@ subroutine extern_fsub()
 ! ----------------------------------------------------------------------------
 
         !*** Verify values before passing to C
-        if ( log1(1)   .neqv.  .true.  ) 	error stop 5    
+        if ( log1(1)   .neqv.  .true.  ) 	error stop 5
         if ( log1(2)   .neqv.  .false. )    	error stop 6
         if ( log1(3)   .neqv.  .true.  )   	error stop 7
         if ( log1(4)   .neqv.  .false. )  	error stop 8

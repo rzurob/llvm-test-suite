@@ -2,30 +2,19 @@
 ! ftcx_dtp -qk -ql /tstdev/OO_procptr/bindc2/procptrBindcProc08.f
 ! opt variations: -qnok -qnol
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
-!*                                associate procedure pointer with c function 
+!*  DESCRIPTION                :
+!*                                associate procedure pointer with c function
 !*                                pointer pointing to C function with void pointer
 !*                                as its argument(in Fortran, dummy argument for C_PTR
-!*                                is with value attribute) and its return. void * with 
-!*                                int32_t. 
+!*                                is with value attribute) and its return. void * with
+!*                                int32_t.
 !* ===================================================================
 
 program procptrBindcProc08

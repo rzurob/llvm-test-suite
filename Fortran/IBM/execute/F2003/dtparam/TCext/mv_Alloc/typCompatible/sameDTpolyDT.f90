@@ -3,27 +3,15 @@
 ! opt variations: -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=self
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : sameDTpolyDT.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : TO is of poly DT same as FROM 
-!*                               FROM is a non-poly DT 
+!*  DESCRIPTION                : TO is of poly DT same as FROM
+!*                               FROM is a non-poly DT
 !*                               component type is same as type defined
 !* ===================================================================
 !*
@@ -36,12 +24,12 @@
       type A(k1,n1)    ! (4,20)
           integer, kind           :: k1
           integer, len            :: n1
-          class(A(k1,:)), pointer :: self => null() 
-      end type 
-      
+          class(A(k1,:)), pointer :: self => null()
+      end type
+
       class(A(4,:)), allocatable, target ::  a1
       type(A(4,:)), allocatable ::  a2
-      
+
       allocate(a2, source = A(4,20)(a1) )
 
       call move_alloc(a2, a1)

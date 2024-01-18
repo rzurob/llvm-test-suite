@@ -1,20 +1,10 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Characters with deferred length type parameter
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : C403: character with deferred length with 
+!*  DESCRIPTION                : C403: character with deferred length with
 !*                                     pointer or allocatable attributes, but
 !*                                     in another statement
 !*  KEYWORD(S)                 :
@@ -38,9 +28,9 @@ program deferLenC403_002
 
    character(:) c2
    pointer c2
-   
+
    contains
-   
+
       subroutine bar(c3)
          character(:) :: c3
          pointer c3
@@ -50,6 +40,6 @@ end program
 
 character(:) function c4()
    allocatable c4
-   
+
    allocate ( c4, source = 'abc' )
 end function

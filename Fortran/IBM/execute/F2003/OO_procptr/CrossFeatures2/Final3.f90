@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Final3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Final3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Final3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Final3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Finalization - Structure constructor 
-!*  () 
+!*
+!*  Finalization - Structure constructor
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -67,57 +61,57 @@
     SUBROUTINE FinalDT(Arg)
     TYPE(DT) :: Arg
       Index = Index + 1
-      TracE(Index) = 2 
+      TracE(Index) = 2
       Print*, "Final DT"
     END SUBROUTINE
-    
+
     SUBROUTINE FinalBase(Arg)
     TYPE(Base) :: Arg
       Index = Index + 1
-      TracE(Index) = 1 
+      TracE(Index) = 1
       Print*, "Final Base"
     END SUBROUTINE
-    
+
     FUNCTION ModFun1(Arg)
-    CLASS(Base) :: Arg 
-    CLASS(Base), POINTER :: ModFun1 
+    CLASS(Base) :: Arg
+    CLASS(Base), POINTER :: ModFun1
       ALLOCATE(ModFun1, SOURCE=Arg)
     END FUNCTION
- 
+
     FUNCTION ModFun2(Arg)
-    CLASS(DT) :: Arg 
-    CLASS(DT), ALLOCATABLE :: ModFun2 
+    CLASS(DT) :: Arg
+    CLASS(DT), ALLOCATABLE :: ModFun2
       ALLOCATE(ModFun2, SOURCE=Arg)
     END FUNCTION
- 
+
     FUNCTION ModFun3(Arg1, Arg2)
     CLASS(DT) :: Arg1
-    PROCEDURE(ModFun1), POINTER :: ModFun3, Arg2 
+    PROCEDURE(ModFun1), POINTER :: ModFun3, Arg2
       ModFun3 => Arg2
     END FUNCTION
- 
+
   END MODULE
 
 
-  PROGRAM Final3  
+  PROGRAM Final3
   USE M
   TYPE(DT) :: V
   PROCEDURE(ModFun2), POINTER :: ProcPtr
 
   type(base) :: baseModFun1
-  
+
   baseModFun1%ProcPtr1 => Modfun1
 
-  IF ( ANY (Trace .NE. 0)) STOP 11 
+  IF ( ANY (Trace .NE. 0)) STOP 11
   V = DT(Base=BaseModfun1, BComp=BaseModfun1, ProcPtr2=ModFun2)
   IF ( ANY (Trace .NE. (/2,1,1,2,1,1,0,0/))) STOP 12
 
-  Trace=0 
+  Trace=0
   Index = 0
   V%Base = V%ProcPtr1()
   IF ( ANY (Trace .NE. (/1,0,0,0,0,0,0,0/))) STOP 13
 
-  Trace=0 
+  Trace=0
   Index = 0
   V = V%ProcPtr2()
   IF ( ANY (Trace .NE. (/2,1,1,2,1,1,0,0/))) STOP 14

@@ -1,6 +1,6 @@
 program main
   implicit none
-  
+
   integer, parameter   :: src=-2
   integer, allocatable :: a, b
 

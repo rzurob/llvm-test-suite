@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -12,28 +7,17 @@
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: dcomp array001.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :	
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: If the rightmost part-name is of abstract type, data-ref shall be polymorphic. (C611)
 !*                                        array non-polymorphic abstract data-ref used in pointer assignment
@@ -48,30 +32,30 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
-   
+
    type, abstract :: base
       integer :: id
    end type
-   
+
    type, extends(base) :: child
       real :: rid
    end type
-   
+
 end module
 
 program array001
-   use m  
-   
+   use m
+
    class(base), pointer, dimension(:) :: b1
    type(child), target :: c11(5)
    class(child), target, allocatable :: c12(:)
    type(child),  pointer :: c13(:)
-   
-   allocate (c12(5)) 
+
+   allocate (c12(5))
    c13 => c12
-   
+
    b1 => c11(1)%base           !<- illegal
    b1 => c12(1:3)%base         !<- illegal
    b1 => c13(5:3:1)%base       !<- illegal
-   
+
 end program

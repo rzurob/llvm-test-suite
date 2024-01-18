@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : BInRecurProc
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-12-14
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 BLOCK
 !*  SECONDARY FUNCTIONS TESTED : block in different contexts (recursive)
@@ -74,12 +70,12 @@ contains
     type(tree), pointer :: node
     if (associated(node)) then
        block
-          !type(tree), pointer :: nleft = node % left      !<------- not supported yet 
-          !type(tree), pointer :: nright = node % right    !<------- not supported yet 
-          type(tree), pointer :: nleft 
-          type(tree), pointer :: nright 
+          !type(tree), pointer :: nleft = node % left      !<------- not supported yet
+          !type(tree), pointer :: nright = node % right    !<------- not supported yet
+          type(tree), pointer :: nleft
+          type(tree), pointer :: nright
 
-          nleft => node % left 
+          nleft => node % left
           nright => node % right
 
           print *, node%datum
@@ -95,7 +91,7 @@ contains
     d = 0
     if (associated(node)) then
        block
-         integer :: dLeft 
+         integer :: dLeft
          integer :: dRight
 
          dLeft  = depth(node%left)

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatStreamAccessBasicWrite02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatStreamAccessBasicWrite02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 11 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 11 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. test WRITE statement with stream access
@@ -29,7 +21,7 @@ module m
       integer       :: i1(l) !l=3
       character(l)  :: c1(l)
       contains
-         procedure,pass :: writeDt 
+         procedure,pass :: writeDt
     end type
     type base(l1)
       integer,len :: l1
@@ -38,7 +30,7 @@ module m
       contains
          procedure,pass :: writeBase
     end type
-    
+
     type,extends(base) :: child(l2)
       integer,len :: l2
       complex  :: x1(l2-1) !l2=3
@@ -48,7 +40,7 @@ module m
     end type
 
     contains
-    
+
       subroutine writeBase(this)
          class(base(*)),intent(in) :: this
          integer :: mypos
@@ -58,12 +50,12 @@ module m
               inquire(10,pos=mypos)
 !              print *,mypos
               write(10,'(f7.3,f7.3)',pos=1) this%r1
-              call this%dt1%writeDt 
-              call this%writeChild 
+              call this%dt1%writeDt
+              call this%writeChild
            class default
              stop 12
-         end select         
-      end subroutine 
+         end select
+      end subroutine
 
       subroutine writeDt(this)
          class(DT(*)),intent(in) :: this
@@ -93,7 +85,7 @@ module m
               stop 14
          end select
       end subroutine
-    
+
 end module
 
 program formatStreamAccessBasicWrite02
@@ -103,7 +95,7 @@ program formatStreamAccessBasicWrite02
   class(base(:)),allocatable :: base1
   integer :: ios,mypos
   character(300) :: msg
-  
+
   allocate(child(2,3) :: base1)
 
   select type(base1)
@@ -118,8 +110,8 @@ program formatStreamAccessBasicWrite02
       base1%dt2%i1=[311,-312,313]
       base1%dt2%c1=["Book","Tool","Loop"]
     class default
-      stop 11 
-  end select 
+      stop 11
+  end select
 
   open(10,file='formatStreamAccessBasicWrite02.out',status='new',&
           form='formatted', access='stream',&
@@ -130,14 +122,14 @@ program formatStreamAccessBasicWrite02
     print *,"fail to open the file"
     print *,"iomsg=",msg
     print *,"iostat=",ios
-    stop 16 
+    stop 16
   else
        call base1%writeBase
 
        select type(base1)
           type is(child(*,*))
              inquire(10,pos=mypos)
-!             print *,mypos 
+!             print *,mypos
              write(10,100) base1
              inquire(10,pos=mypos)
 !             print *,mypos
@@ -148,10 +140,10 @@ program formatStreamAccessBasicWrite02
 
 100    format(2f7.3,/3i7.4,/a3,a4,a3,/e10.3,e15.3e4,/en10.3,es10.3,/3i7.4,/a3,a4,a3)
   close(10,iostat=ios)
-  
+
   if(ios /= 0) then
      print *,"fail to close the file,iostat=",ios
      stop 17
   end if
-    
+
 end program

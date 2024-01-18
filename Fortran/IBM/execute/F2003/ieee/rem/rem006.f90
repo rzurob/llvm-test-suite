@@ -12,23 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : March 14, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_REM with modules.
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
-!*                               
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -36,10 +26,9 @@
 !*
 !*  DESCRIPTION                :
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      module modus 
+      module modus
 
          contains
 
@@ -51,7 +40,7 @@
             logical :: flag_values(5)
             integer :: i
 
-            !  test real*4 
+            !  test real*4
 
             call ieee_set_flag(ieee_all,.false.)
 
@@ -72,7 +61,7 @@
             use ieee_arithmetic
 	    implicit none
             real*8 :: x8, y8, z8
-            logical :: flag_values (5)  
+            logical :: flag_values (5)
             integer :: i, j
 
             !  test real*8
@@ -93,7 +82,7 @@
 
       program rem_module
 
-      use modus 
+      use modus
       use ieee_arithmetic
       implicit none
 
@@ -109,4 +98,4 @@
 
       call bar2(b1, b2, resb)
 
-      end 
+      end

@@ -1,23 +1,20 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_f13.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED : Nesting in TM construct
-!*  ADAPTED FROM               : 
+!*  ADAPTED FROM               :
 !*
 !*  DESCRIPTION
 !*
-!*    TM atomic region with forall construct/statement nested and vice versa.  
-!*    Also contains an TM nested in an SMP section with a forall construct 
-!*    nested in the TM section.  
+!*    TM atomic region with forall construct/statement nested and vice versa.
+!*    Also contains an TM nested in an SMP section with a forall construct
+!*    nested in the TM section.
 !*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890

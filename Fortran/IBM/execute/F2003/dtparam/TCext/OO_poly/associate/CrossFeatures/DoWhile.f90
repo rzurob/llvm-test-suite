@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  DoWhile.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : DoWhile 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : DoWhile
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -41,11 +35,11 @@
 !*
 !*  DESCRIPTION
 !*    The DoWhile stmt
-!*    (ICE) 
+!*    (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   MODULE M
     TYPE :: DT(K1,N1)    ! (4,1)
       INTEGER, KIND :: K1
@@ -62,32 +56,32 @@
   CONTAINS
 
     ELEMENTAL FUNCTION GetId(Arg)
-    IMPLICIT CLASS(DT(4,*))(A) 
+    IMPLICIT CLASS(DT(4,*))(A)
     INTENT(IN) :: Arg
     INTEGER    :: GetId
       GetId = Arg%Id
     END FUNCTION
 
     ELEMENTAL FUNCTION GetC(Arg)
-    IMPLICIT CLASS(DT(4,*))(A) 
+    IMPLICIT CLASS(DT(4,*))(A)
     INTENT(IN) :: Arg
     CHARACTER  :: GetC
       GetC = Arg%C
     END FUNCTION
 
     ELEMENTAL FUNCTION GetL(Arg)
-    IMPLICIT CLASS(DT(4,*))(A) 
+    IMPLICIT CLASS(DT(4,*))(A)
     INTENT(IN) :: Arg
     LOGICAL    :: GetL
       GetL = Arg%L
     END FUNCTION
 
   END MODULE
- 
-  PROGRAM DoWhile 
+
+  PROGRAM DoWhile
 
   USE M
-  IMPLICIT TYPE(DT(4,1))(A) 
+  IMPLICIT TYPE(DT(4,1))(A)
   DIMENSION :: Arr(2:130)
   LOGICAL(8) :: LArr(2:130)
   INTEGER :: i
@@ -99,7 +93,7 @@
     As1 = 2
     DO WHILE ( As1 .LE. As2 )
       Arr(As1)%L = .TRUE.
-      As1 = As1 + 1 
+      As1 = As1 + 1
     END DO
   END ASSOCIATE
   END ASSOCIATE
@@ -113,8 +107,8 @@
   ASSOCIATE ( As1 => Arr(2)%ID, As2 => As(129) )
     As1 = 2
     DO WHILE ( As1 .LE. As2 )
-      Arr(As1)%L = .TRUE. 
-      As1 = As1 + 1 
+      Arr(As1)%L = .TRUE.
+      As1 = As1 + 1
     END DO
   END ASSOCIATE
   END ASSOCIATE
@@ -129,8 +123,8 @@
   ASSOCIATE ( As1 => As(129), As2 => 130 )
     As1 = 2
     DO WHILE ( As1 .LE. As2 )
-      Arr(As1)%C = CHAR(As1) 
-      As1 = As1 + 1 
+      Arr(As1)%C = CHAR(As1)
+      As1 = As1 + 1
     END DO
   END ASSOCIATE
   END ASSOCIATE

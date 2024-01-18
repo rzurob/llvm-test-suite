@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditd009.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,23 +12,16 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditd009
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Dec. 08, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : providing support for the DECIMAL=
 !*                               specifier and decimal edit mode control
 !*                               descriptors. Feature 289039.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qdebug=intmsg
 !*
 !*  DESCRIPTION                : This diagnostic test, checks to make sure
@@ -48,9 +41,9 @@
       complex :: my_complex
       integer :: int_arr(10)
       real    :: real_arr(10)
-      
+
 ! TESTING FOR EXTERNAL FILES ONLY:
-      
+
       open(unit=77, file='decimaleditd009.dat')
 
       ! character constant not valid:
@@ -68,7 +61,7 @@
 
       ! character string valid
       inquire(77,decimal=my_char)
-      
+
       ! character array element valid
       inquire(77, decimal=my_char_arr(1))
       inquire(77, decimal=char_arr(1))
@@ -84,5 +77,5 @@
 
       ! complex not valid:
       inquire(77, decimal=my_complex)
-      
+
       end

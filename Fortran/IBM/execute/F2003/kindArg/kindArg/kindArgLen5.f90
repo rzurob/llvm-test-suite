@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgLen5
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : LEN 
+!*  SECONDARY FUNCTIONS TESTED : LEN
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Characteristics.
-!*  Integer scalar. If KIND is present, the kind type parameter is that specified by the value of KIND; 
-!*  otherwise the kind type parameter is that of default integer type. 
-!*    
-!*  (322675) 
+!*  Integer scalar. If KIND is present, the kind type parameter is that specified by the value of KIND;
+!*  otherwise the kind type parameter is that of default integer type.
+!*
+!*  (322675)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,12 +39,12 @@
   END TYPE
 
   TYPE (DT), PARAMETER :: T=DT()
- 
+
   INTEGER(1) :: I1
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
-     
+
   CHARACTER(127), PARAMETER :: CC(128)=" "
 
 

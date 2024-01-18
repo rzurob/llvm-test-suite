@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignProcNameDummy.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignProcNameDummy.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignProcNameDummy.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignProcNameDummy.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 13, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,24 +30,23 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  C727 (R742) A procedure-name shall be the name of an external, module,
 !*  or dummy procedure, a specific intrinsic function listed in 13.6
 !*  and not marked with a bullet (.), or a procedure pointer.
-!* 
-!* 
-!*  () 
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
 
-  CONTAINS 
+  CONTAINS
 
   FUNCTION ModFun(Arg)
   CLASS(*)          :: Arg
-  CLASS(*), POINTER :: ModFun 
+  CLASS(*), POINTER :: ModFun
     ALLOCATE(ModFun, SOURCE=Arg)
   END FUNCTION
 
@@ -63,13 +56,13 @@
   PROGRAM PtrAssignProcNameDummy
   USE M
   IMPLICIT NONE
-  PROCEDURE(IFun), POINTER :: ProcPtr 
-  PROCEDURE(IFun)          :: ExtFun 
+  PROCEDURE(IFun), POINTER :: ProcPtr
+  PROCEDURE(IFun)          :: ExtFun
 
-  INTERFACE 
+  INTERFACE
     FUNCTION IFun(Arg)
     CLASS(*)          :: Arg
-    CLASS(*), POINTER :: IFun 
+    CLASS(*), POINTER :: IFun
     END FUNCTION
   END INTERFACE
 
@@ -86,10 +79,10 @@
 
   SUBROUTINE IntSub(Proc)
 
-  PROCEDURE(IFun)          :: Proc 
-  PROCEDURE(IFun), POINTER :: Ptr 
+  PROCEDURE(IFun)          :: Proc
+  PROCEDURE(IFun), POINTER :: Ptr
 
-    Ptr => Proc 
+    Ptr => Proc
     SELECT TYPE ( As => Ptr(1_1) )
     TYPE IS (INTEGER(1))
       IF ( As .NE. 1_1 ) STOP 11
@@ -103,7 +96,7 @@
 
   FUNCTION ExtFun(Arg)
   CLASS(*)          :: Arg
-  CLASS(*), POINTER :: ExtFun 
+  CLASS(*), POINTER :: ExtFun
     ALLOCATE(ExtFun, SOURCE=Arg)
   END FUNCTION
 

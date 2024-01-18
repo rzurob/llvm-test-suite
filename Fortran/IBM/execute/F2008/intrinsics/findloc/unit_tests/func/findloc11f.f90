@@ -1,21 +1,11 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FINDLOC_INTEGER
-!*
-!*  PROGRAMMER                 : Rafik Zurob
 !*  DATE                       : 2014-04-07
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FINDLOC intrinsic
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              :
 !*
 !*  DESCRIPTION                : Test that findloc RTE function returns
 !*                               0 when VALUE is not found.

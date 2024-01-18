@@ -1,23 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 06/07/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*
 !*  DESCRIPTION                : Testing: Procedure Pointer with BIND(C) feature
-!*                                        Procedure Pointer pointing at FORTRAN functions which returns a procedure pointer that 
+!*                                        Procedure Pointer pointing at FORTRAN functions which returns a procedure pointer that
 !*                                        is pointing to C functions with character dummy arguments (C_CHAR)
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypParamR436   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypParamR436
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  R436 type-param-decl is type-param-name [ = scalar-int-initialization-expr ] 
+!*  R436 type-param-decl is type-param-name [ = scalar-int-initialization-expr ]
 !*  - Constant
 !*  (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamTypParamR436 
+  PROGRAM dtParamTypParamR436
 
   INTEGER, PARAMETER :: F=4
 
@@ -44,7 +37,7 @@
   END TYPE
 
   TYPE( DT0 ), PARAMETER :: T0=DT0()
- 
+
   TYPE :: DT1(K, L)
     INTEGER(KIND=F), KIND :: K=F+F
     INTEGER(KIND=F), LEN  :: L=F+F

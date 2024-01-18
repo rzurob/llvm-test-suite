@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  AssocNameInterface1.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : AssocNameInterface1
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 28, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Specific Interface's name 
-!* 
-!*  (ICE-298940) 
+!*
+!*  Specific Interface's name
+!*
+!*  (ICE-298940)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -51,23 +45,23 @@
     TYPE, ABSTRACT :: DT0(N1,K1)    ! (20,8)
       INTEGER, KIND :: K1
       INTEGER, LEN  :: N1
-      INTEGER(K1)   :: IArr(2) 
+      INTEGER(K1)   :: IArr(2)
       CONTAINS
       PROCEDURE, PASS(Obj)   :: GetInt
     END TYPE
 
     TYPE, EXTENDS(DT0) :: DT    ! (20,8)
     END TYPE
-  
+
     TYPE(DT(20,8)), TARGET   ::  DTV(3,3,3)
-    
+
   CONTAINS
 
     ELEMENTAL FUNCTION GetInt(Num, Obj)
-    CLASS(DT0(*,8)), INTENT(IN)    :: Obj 
+    CLASS(DT0(*,8)), INTENT(IN)    :: Obj
     INTEGER, INTENT(IN)      :: Num
-    INTEGER(KIND(Obj%IArr))   :: GetInt 
-      GetInt = Obj%IArr(Num) 
+    INTEGER(KIND(Obj%IArr))   :: GetInt
+      GetInt = Obj%IArr(Num)
     END FUNCTION
 
   END MODULE
@@ -76,17 +70,17 @@
   PROGRAM AssocNameInterface1
   USE M
   IMPLICIT NONE
- 
+
   INTERFACE ITF
     FUNCTION Fun()
       INTEGER Fun
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
 
-  INTERFACE 
+  INTERFACE
     FUNCTION Fun1()
      INTEGER Fun1
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
 
   CLASS(DT0(:,8)), POINTER :: PTR(:,:,:)
@@ -100,7 +94,7 @@
 
     SELECT TYPE (Fun1 => ITF )
     CLASS IS (DT0(*,8))
-      STOP 20 
+      STOP 20
     CLASS IS (DT(*,8))
         IF (ANY(Fun1(:,:,:)%IArr(1)  .NE. 1)) STOP 22
         IF (ANY(Fun1(:,:,:)%IArr(2)  .NE. 2)) STOP 23
@@ -124,12 +118,12 @@
 
   FUNCTION Fun1()
   INTEGER Fun1
-    Fun1 = 1 
-  END FUNCTION 
+    Fun1 = 1
+  END FUNCTION
 
 
   FUNCTION Fun()
   INTEGER Fun
-    Fun = 2 
-  END FUNCTION 
+    Fun = 2
+  END FUNCTION
 

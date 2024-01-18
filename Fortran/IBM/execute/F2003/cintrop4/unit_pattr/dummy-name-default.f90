@@ -29,7 +29,6 @@
         print*, 'I am dummyproc.  I should not have been called.'
       END SUBROUTINE
 
-
       !!! Users of dummy procedure arguments.
 
       !! user of dummy SUBROUTINE argument
@@ -52,7 +51,6 @@
         d = dummyProc()
         print *, 'dummy proc returned: ', d
       END SUBROUTINE
-
 
       !!! Driver -- supplier of dummy procedure argument.
       program m0

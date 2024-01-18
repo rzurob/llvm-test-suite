@@ -3,22 +3,11 @@
 ! opt variations: -qnol -qdeferredlp -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: dummy arguments of poly assumed shape array
 !*  KEYWORD(S)                 :
@@ -126,13 +115,13 @@ program genericAssignmentArray005
       c2(k)%i = 1000*k
       c2(k)%j = -1000*k
    end do
-   	
+
    do k = 1, 2
       do j = 1, 2
          b3(j,k)%i = j*k
       end do
    end do
-   	
+
    do k = 1, 3
       do j = 1, 3
          c3(j,k)%i = j*k
@@ -151,10 +140,10 @@ program genericAssignmentArray005
 
    c1 = b2
    print *, c1%i, c1%j
-   
+
    b1 = b3
    print *, b1%i
-   
+
    c1 = c3
    print *, c1%i, c1%j
 
@@ -172,7 +161,7 @@ program genericAssignmentArray005
       type is ( child(*,4) )
          print *, b1%i, b1%j
    end select
-   
+
    b1 = c3
    select type ( b1 )
       type is ( child(*,4) )

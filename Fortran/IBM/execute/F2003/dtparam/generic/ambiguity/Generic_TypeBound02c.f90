@@ -1,22 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound02c
 !*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY SUBROUTINES TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY SUBROUTINES TESTED : Resolution for polymorphic objects
 !*                                 based on the number of arguments using NOPASS
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -39,33 +32,33 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
-        CONTAINS 
+        CONTAINS
          PROCEDURE, NOPASS :: sub0
-         PROCEDURE, NOPASS :: sub1      
+         PROCEDURE, NOPASS :: sub1
          GENERIC :: SUB =>  sub0, sub1
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2)
-        INTEGER, KIND :: k2 
-      END TYPE Child 
+        INTEGER, KIND :: k2
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen(k3)
-        INTEGER, KIND :: k3 
+        INTEGER, KIND :: k3
 
-        CONTAINS 
+        CONTAINS
          PROCEDURE, NOPASS :: sub2
          GENERIC :: SUB =>  sub2
       END TYPE NextGen
 
       CHARACTER(10) :: tag
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE sub0
       CLASS(Base(4,:)), POINTER  :: pntr
@@ -90,7 +83,7 @@
 
       SUBROUTINE sub2(Obj,Arg)
       !CLASS(NextGen(4,*,4,4)) :: Obj
-      CLASS(Base(4,*)) :: Obj, Arg 
+      CLASS(Base(4,*)) :: Obj, Arg
       CLASS(Base(4,:)), POINTER :: pntr
 
       ALLOCATE (pntr, source = Obj)
@@ -104,21 +97,21 @@
 !*
       PROGRAM Generic_TypeBound02c
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(Base(4,:)), POINTER :: poly1 
+      CLASS(Base(4,:)), POINTER :: poly1
       TYPE(Child(4,5,4)), TARGET :: tgt1
-      TYPE(Base(4,5))  :: base1 
-      TYPE(NextGen(4,10,4,4)) :: dtv    
+      TYPE(Base(4,5))  :: base1
+      TYPE(NextGen(4,10,4,4)) :: dtv
 
       CALL base1%SUB()
       IF ( tag .NE. '0' ) STOP 10
 
-      ALLOCATE(Base(4,10):: poly1)       
+      ALLOCATE(Base(4,10):: poly1)
       CALL poly1%SUB()
       IF ( tag .NE. '0' ) STOP 11
 
-      poly1 => tgt1                
+      poly1 => tgt1
       CALL poly1%SUB()
       IF ( tag .NE. '0' ) STOP 12
 
@@ -143,10 +136,10 @@
            IF ( tag .NE. '2' ) STOP 19
 
           CLASS DEFAULT
-           STOP 32  
+           STOP 32
       END SELECT
 
-      ALLOCATE(NextGen(4,10,8,8):: poly1)   
+      ALLOCATE(NextGen(4,10,8,8):: poly1)
       CALL poly1%SUB()
       IF ( tag .NE. '0' ) STOP 20
 

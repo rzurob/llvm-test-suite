@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_5
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 30, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
-!*  -- A structure constructor where each component is a restricted expression 
-!*   
-!*   
+!*  -- A structure constructor where each component is a restricted expression
 !*
-!*  (340561) 
+!*  (340561)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -67,9 +58,9 @@
   SUBROUTINE IntSub()
 
 
-  TYPE(DT(KIND=4,    LEN=SIZE([ DT(4, LEN=1)(t=t01)]))) :: T1(1)  
-  TYPE(DT(KIND=4,    LEN=SIZE([(DT(4, LEN=1)(t=t01), I=1, T%I)]))) :: T2(1)  
-  TYPE(DT(KIND=4,    LEN=SIZE([(DT(4, LEN=1)(I=-I, t=t01), I=1, T%I)])))   :: T3(1)  
+  TYPE(DT(KIND=4,    LEN=SIZE([ DT(4, LEN=1)(t=t01)]))) :: T1(1)
+  TYPE(DT(KIND=4,    LEN=SIZE([(DT(4, LEN=1)(t=t01), I=1, T%I)]))) :: T2(1)
+  TYPE(DT(KIND=4,    LEN=SIZE([(DT(4, LEN=1)(I=-I, t=t01), I=1, T%I)])))   :: T3(1)
 
 
   IF ( T%K               .NE.   4          ) STOP 41
@@ -102,7 +93,7 @@
   IF ( T3%T%K             .NE.   4          ) STOP 38
   IF ( T3%T%L             .NE.   4        ) STOP 39
 
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END
 

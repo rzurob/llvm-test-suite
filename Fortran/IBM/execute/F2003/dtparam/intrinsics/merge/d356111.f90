@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d356111.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d356111.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 12 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 12 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
-!* 3. DEFECT 356111 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
+!* 3. DEFECT 356111
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type A(l1)
@@ -51,7 +43,7 @@ program d356111
    contains
    subroutine t (x)
         class(A(*)) x(:)
-        print *, associated(x(1)%c1, x(2)%c1) 
+        print *, associated(x(1)%c1, x(2)%c1)
         print *,"|",x(1)%c1,"|",x(2)%c1,"|"
    end subroutine
 end

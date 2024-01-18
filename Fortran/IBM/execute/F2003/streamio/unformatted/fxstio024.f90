@@ -1,24 +1,18 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fort.* 
-! %COMPOPTS: 
-! %GROUP: fxstio024.f   
+! %PRECMD: rm -f fort.*
+! %COMPOPTS:
+! %GROUP: fxstio024.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio024.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 19, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
@@ -30,10 +24,10 @@
 !=======================================================================
 
 !* Declare Variables.
-    
-  integer ios 
+
+  integer ios
   integer filesize /0/, filesize1 /0/, position /0/, poin /0/
-  integer ivar1 /2000/, ivar2 
+  integer ivar1 /2000/, ivar2
   integer,parameter :: ipararr(3) = (/2147, 0000, 2147/)
 
   real rvar1 /-1.2e-30/, rvar2, rvar3
@@ -48,7 +42,7 @@
 
 !* TEST1 : integer
 
-!* open an unit with formatted stream I/O 
+!* open an unit with formatted stream I/O
    open(1, access='stream', form='formatted', &
       iostat=ios, err=100, status='unknown')
    write(1, fmt='(I10)', iostat=ios, err=200) ivar1
@@ -85,7 +79,7 @@
 
 !* test the terminal-point
   caseid =7
-  read (1, pos=filesize, err=400, end=50, iostat=ios) ivar2 
+  read (1, pos=filesize, err=400, end=50, iostat=ios) ivar2
   error stop 14
 50 continue
   if (ios .ne. -1)  error stop 15
@@ -115,7 +109,6 @@
    if(position .ne. 1) error stop 2
    read(1, iostat=ios, err=400) rvar2
 
-
 !* test end-of-record symbol
    inquire( 1,pos=position, size=filesize, iostat=ios, err=300)
    print *, position, filesize
@@ -139,7 +132,7 @@
 
     close(1, status='delete')
 
-!* TEST3 : logical 
+!* TEST3 : logical
 !* open an unit with formatted stream I/O
    open(1, access='stream', form='formatted', &
       iostat=ios, err=100, status='unknown')
@@ -184,7 +177,7 @@
 
    close(1, status='delete')
 
-!* TEST4 : character 
+!* TEST4 : character
 !* open an unit with formatted stream I/O
    open(1, access='stream', form='formatted', &
       iostat=ios, err=100, status='unknown')

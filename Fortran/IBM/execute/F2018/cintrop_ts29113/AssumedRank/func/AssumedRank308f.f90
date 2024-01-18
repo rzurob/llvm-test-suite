@@ -1,27 +1,20 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank308f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : October 27, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
-!* REQUIRED COMPILER OPTIONS    : 
+!* REQUIRED COMPILER OPTIONS    :
 !*                               (use -D_DEBUG for a debug version)
 !*
-!* DESCRIPTION                  : Calling a BIND(C) procedure defined in C from Fortran 
+!* DESCRIPTION                  : Calling a BIND(C) procedure defined in C from Fortran
 !*                                - array is rank 0, 1, 2, 15
 !*                                - allocatable
-!*                                - intent(out) 
-!*                                - type c_float 
+!*                                - intent(out)
+!*                                - type c_float
 !*
 !* When a C function is invoked from a Fortran procedure via an interface with an INTENT(OUT) allocatable
 !* dummy argument, and the actual argument in the reference to the C function is an allocated allocatable variable,
@@ -49,15 +42,15 @@ interface
     end
 end interface
 
-integer        :: st, i, j, k 
+integer        :: st, i, j, k
 character(200) :: msg
 real(c_float), allocatable :: a0
 real(c_float), allocatable :: a1(:), a2(:,:)
 real(c_float), allocatable :: a15(:,:,:,:,:,:,:,:,:,:,:,:,:,:,:)
 logical precision_r4
 
-     
-! Allocate all the allocatable objects 
+
+! Allocate all the allocatable objects
 allocate(a0, stat=st, errmsg=msg)
 if( st .NE. 0 ) then
    print *, msg
@@ -109,13 +102,13 @@ if( any(shape(a15)  /= [1,1,1,1,1,1,1,1,1,1,1,1,1,1,3]) ) ERROR STOP 44
 if( any(lbound(a15) /= [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]) ) ERROR STOP 45
 if( any(ubound(a15) /= [1,1,1,1,1,1,1,1,1,1,1,1,1,1,3]) ) ERROR STOP 46
 
-! Allocate in C with different values / bounds 
+! Allocate in C with different values / bounds
 call c_modify(a0)
 call c_modify(a1)
 call c_modify(a2)
 call c_modify(a15)
 
-! Verify the new allocation status and rank, shape, size, bounds and contiguity 
+! Verify the new allocation status and rank, shape, size, bounds and contiguity
 if( .not.         allocated(a0) ) ERROR STOP 100
 if( .not. precision_r4(a0, 3.1) ) ERROR STOP 101
 

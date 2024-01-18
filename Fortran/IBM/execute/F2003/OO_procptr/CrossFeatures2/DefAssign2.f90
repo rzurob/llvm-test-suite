@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: DefAssign2.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : DefAssign2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : DefAssign2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 23, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Defined assignment - where 
-!*  (ice) 
+!*
+!*  Defined assignment - where
+!*  (ice)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -65,32 +59,32 @@
     END FUNCTION
 
     ELEMENTAL SUBROUTINE MyAssign1 (Arg1, Arg2)
-    TYPE(Base), INTENT(OUT) :: Arg1 
-    TYPE(Base), INTENT(IN)  :: Arg2 
+    TYPE(Base), INTENT(OUT) :: Arg1
+    TYPE(Base), INTENT(IN)  :: Arg2
       Arg1 = Arg2
-    END SUBROUTINE 
- 
+    END SUBROUTINE
+
     ELEMENTAL SUBROUTINE MyAssign2 (Arg1, arg2)
-    TYPE(DT),    INTENT(OUT) :: Arg1 
-    TYPE(Base),  INTENT(IN)  :: Arg2 
-      Arg1%Base = Arg2 
-      Arg1%ProcPtr => ModFun 
-    END SUBROUTINE 
- 
+    TYPE(DT),    INTENT(OUT) :: Arg1
+    TYPE(Base),  INTENT(IN)  :: Arg2
+      Arg1%Base = Arg2
+      Arg1%ProcPtr => ModFun
+    END SUBROUTINE
+
     ELEMENTAL SUBROUTINE MyAssign3 (Arg1, Arg2)
-    TYPE(Base), INTENT(OUT) :: Arg1 
-    TYPE(DT),   INTENT(IN)  :: Arg2 
+    TYPE(Base), INTENT(OUT) :: Arg1
+    TYPE(DT),   INTENT(IN)  :: Arg2
       Arg1 = Arg2%Base
-    END SUBROUTINE 
- 
+    END SUBROUTINE
+
     ELEMENTAL SUBROUTINE MyAssign4 (Arg1, Arg2)
-    TYPE(DT),  INTENT(OUT) :: Arg1 
-    TYPE(DT),  INTENT(IN)  :: Arg2 
+    TYPE(DT),  INTENT(OUT) :: Arg1
+    TYPE(DT),  INTENT(IN)  :: Arg2
       Arg1%ProcPtr => Arg2%ProcPtr
-      Arg1%Id = Arg2%Id 
-    END SUBROUTINE 
- 
- 
+      Arg1%Id = Arg2%Id
+    END SUBROUTINE
+
+
   END MODULE
 
 
@@ -103,7 +97,7 @@
       MODULE PROCEDURE MyAssign2
       MODULE PROCEDURE MyAssign3
       MODULE PROCEDURE MyAssign4
-    END INTERFACE ASSIGNMENT ( = ) 
+    END INTERFACE ASSIGNMENT ( = )
 
   INTEGER :: I
   TYPE(Base) :: B1(511), B2(511)
@@ -125,7 +119,7 @@
   END DO
 
   WHERE ((/(.TRUE., I=1,511)/)  )
-    B2 = DT(-1, ModFun) 
+    B2 = DT(-1, ModFun)
   END WHERE
   DO I=1, 511
    IF (B2(I)%Id .NE. -1) STOP 33

@@ -1,10 +1,4 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass112.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on allocate
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -55,7 +43,7 @@
 !*  CONDITIONS TESTED          : Listed below.
 !*
 !*  DESCRIPTION                : Test: ASSOCIATE with expression and with
-!*                                     integer*(1,2,4,8), logical(1,2,4,8) 
+!*                                     integer*(1,2,4,8), logical(1,2,4,8)
 !*                                     and ALLOCATE with
 !* ===================================================================
 !*
@@ -64,16 +52,15 @@
 !*  MM/DD/YY:  Init:  Comments:
 !*                    -Initial Version
 !*
-!*
 !* ===================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       program fxass112
       implicit none
 
-      integer*1, allocatable :: i1 
-      integer*2, allocatable :: i2 
-      integer*4, allocatable :: i4 
+      integer*1, allocatable :: i1
+      integer*2, allocatable :: i2
+      integer*4, allocatable :: i4
       integer*8, allocatable :: i8
 
       logical(1),allocatable :: log1
@@ -154,4 +141,4 @@
        error stop 18
       endif
 
-      end 
+      end

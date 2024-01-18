@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectMixedTypeReadWrite02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectMixedTypeReadWrite02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 19 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 19 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. read data with list directed IO, and write output with format specification
-!* 2. use user defined operator(+) 
+!* 2. use user defined operator(+)
 !234567490123456749012345674901234567490123456749012345674901234567490
 module m1
   type DT(k0,l0)
@@ -43,7 +35,7 @@ module m2
   type,extends(base) ::  child(k2,l2)
      integer,kind :: k2 !k2=4
      integer,len  :: l2 !l2=5
-    
+
      logical(k2)  :: g(l2)=.false.
      type(DT(k2,l2)) :: dtcomp
   end type
@@ -53,7 +45,7 @@ module m2
   end interface
 
   contains
- 
+
   function plus1(t1,t2)
     class(base(4,:)),allocatable,intent(in) :: t1(:)
     type(child(4,*,4,*)),intent(in) :: t2
@@ -61,7 +53,7 @@ module m2
     integer :: i
      select type(t1)
         type is(child(4,*,4,*))
-           allocate(child(t1%k1,2*t1%l1,t1%k2,t1%l2) :: plus1(size(t1)) ) 
+           allocate(child(t1%k1,2*t1%l1,t1%k2,t1%l2) :: plus1(size(t1)) )
            select type(x=>plus1)
               type is(child(4,*,4,*))
                   do i=1,size(t1)
@@ -85,13 +77,13 @@ module m2
      allocate(child(4,3,4,5) :: dt(2:3))
      select type(dt)
          type is(child(4,*,4,*))
-            read(unit,*,decimal='comma') dt(2)  
+            read(unit,*,decimal='comma') dt(2)
             read(unit,*,decimal='point') dt(3)
          class default
             stop 11
      end select
 
-  end subroutine 
+  end subroutine
 
 end module
 
@@ -144,8 +136,8 @@ program listDirectMixedTypeReadWrite02
       stop 14
   end select
 
-100 format (4(a6,:,','))  
+100 format (4(a6,:,','))
 
   close(10)
-            
+
 end program

@@ -3,22 +3,11 @@
 ! opt variations: -qnok -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Value Attribute for derived type containing allocatable components
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : value attribute with derived type containing allocatable components
 !*                                 - type: derived type with unlimited polymorphic allocatable components
@@ -41,7 +30,7 @@ module m
       integer, kind            :: k1
       integer(k1), allocatable :: i
    end type
-   
+
    type base(k2)    ! (4)
       integer, kind :: k2
       class(*), allocatable :: i1
@@ -60,9 +49,9 @@ module m
          type is ( inner(4) )
             print *, g%i
       end select
-      
+
       a = innerfoo ( a, a )
-      
+
       select type ( g => a%i1 )
          type is ( integer )
             print *, g
@@ -78,14 +67,14 @@ module m
 
             ia = base(4) ( 1000000 )
             print *, 'innerfoo'
-            
+
             select type ( g => ia%i1 )
                type is ( integer )
                   print *, g
                type is ( inner(4) )
                   print *, g%i
             end select
-            
+
             select type ( g => ib%i1 )
                type is ( integer )
                   print *, g
@@ -100,7 +89,7 @@ module m
                type is ( inner(4) )
                   print *, g%i
             end select
-            
+
             select type ( g => ib%i1 )
                type is ( integer )
                   print *, g
@@ -114,9 +103,9 @@ module m
                type is ( inner(4) )
                   print *, g%i
             end select
- 
+
             innerfoo = base(4)( 100 - 200 + 400 )
-            
+
          end function
 
    end subroutine

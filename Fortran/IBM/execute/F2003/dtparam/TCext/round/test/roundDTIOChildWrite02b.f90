@@ -2,16 +2,9 @@
 ! ftcx_dtp -ql /tstdev/F2003/round/test/roundDTIOChildWrite02b.f
 ! opt variations: -qnol
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 14/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND specifier with WRITE statment
 !*                               in DTIO
@@ -29,7 +22,7 @@
 
         real(k1)         r
         contains
- 
+
         procedure::writeFormat
         generic :: write(formatted) => writeFormat
      end type
@@ -48,7 +41,7 @@
 
           call ieee_set_rounding_mode(ieee_up)
 
-          write(unit, fmt='(f7.5)', iostat=iostat, iomsg=iomsg,   & 
+          write(unit, fmt='(f7.5)', iostat=iostat, iomsg=iomsg,   &
               & round="down") dtv%r
 
           if(iostat /= 0) return
@@ -68,7 +61,7 @@
 
           write(unit, fmt='(20a)') r_mode
 
-          call ieee_set_rounding_mode(ieee_to_zero) 
+          call ieee_set_rounding_mode(ieee_to_zero)
 
           write(unit, fmt='(2x, f7.5)', iostat=iostat, iomsg=iomsg, &
                & round="up") dtv%r
@@ -129,4 +122,4 @@
     open(unit=3, file='roundDTIOChildWrite02b.out')
     write(3,*) dt1
 
-  end program roundDTIOChildWrite02b 
+  end program roundDTIOChildWrite02b

@@ -1,21 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : allocBaseVariable01
-!*  TEST CASE TITLE            : ALLOCATE() Statement with DTP
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : December  4, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : The ALLOCATE Statement has an allocation-list
 !*                               that is a Base Derived Type
 !*  SECONDARY FUNCTIONS TESTED : and the allocation-list contains variable
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATE

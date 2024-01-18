@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr10
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 28, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  The external attribute -- External procedures 
-!* 
+!*  The external attribute -- External procedures
 !*
-!* 
 !*  (337336)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -46,7 +35,7 @@
   TYPE, ABSTRACT, EXTENDS(DT0)  :: DT1(K1, L1)
     INTEGER, KIND :: K1=K0
     INTEGER, LEN  :: L1=K0
-    CHARACTER(L1+3) :: C1 = "DT1" 
+    CHARACTER(L1+3) :: C1 = "DT1"
     CONTAINS
     PROCEDURE(ModFun), NOPASS, DEFERRED :: Proc
   END TYPE
@@ -59,10 +48,10 @@
     REAL   (MOD(K2, 17)) :: R
     LOGICAL(MOD(K2, 9))  :: L
     COMPLEX(MOD(K2, 17)) :: Z
-    TYPE(DT0(K2, L2))    :: T0 
+    TYPE(DT0(K2, L2))    :: T0
     TYPE(DT2(K2, L2)), POINTER  :: Ptr2
     CONTAINS
-    PROCEDURE, NOPASS :: Proc => ModFun 
+    PROCEDURE, NOPASS :: Proc => ModFun
   END TYPE
 
   CHARACTER(10) :: C
@@ -82,7 +71,7 @@
   USE M
   !INTEGER :: L
   TYPE(DT0(2,2)) :: ExtFun
-    ExtFun = DT0(2,2)() 
+    ExtFun = DT0(2,2)()
     C = "ExtFun"
   END FUNCTION
 
@@ -90,18 +79,18 @@
   USE M
 
   TYPE(DT0(2,2)) :: T, ExtFun
- 
+
   EXTERNAL ExtFun
 
   INTEGER  :: L=2
- 
+
   T = ExtFun()
 
   IF ( T%K0            .NE.   2          ) STOP 11
   IF ( T%L0            .NE.   2          ) STOP 12
   IF ( C               .NE.   "ExtFun"   ) STOP 13
 
-  T = modFun(2,DT0(2,L)()) 
+  T = modFun(2,DT0(2,L)())
   IF ( C               .NE.   "ModFun"   ) STOP 20
 
   END

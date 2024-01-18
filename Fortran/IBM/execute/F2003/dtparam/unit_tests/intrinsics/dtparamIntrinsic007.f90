@@ -18,4 +18,4 @@ print *, maxval(base2%baseId)
 print *, minloc(base2%baseId, kind=4)
 
 end
-   
+

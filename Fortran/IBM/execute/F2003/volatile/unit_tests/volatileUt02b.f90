@@ -1,19 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : volatileUt02b.f
 !*
-!*  PROGRAMMER                 : Vince Yuen
 !*  DATE                       : May 26, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Supporting VOLATILE for F2003
 !*
 !*  KEYWORD(S)                 : VOLATILE
 !*
-!*  DESCRIPTION                : Volatile attribute on an internally 
+!*  DESCRIPTION                : Volatile attribute on an internally
 !*                               defined entity with the same name as
 !*                               entity defined in enclosing scope
 !*

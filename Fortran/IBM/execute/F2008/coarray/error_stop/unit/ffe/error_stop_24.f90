@@ -1,18 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : error_stop_24.f
-!*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : July 30, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : error stop statement 
+!*  PRIMARY FUNCTIONS TESTED   : error stop statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qcaf
 !*
 !*  DESCRIPTION                :
@@ -30,5 +23,5 @@
 
     ERROR STOP "Can not reach here!"
 
-  END 
- 
+  END
+

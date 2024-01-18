@@ -1,10 +1,4 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
@@ -17,22 +11,16 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass114.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on allocate
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  KEYWORD(S)                 : ASSOCIATE,integer, constant array,complex 
+!*  KEYWORD(S)                 : ASSOCIATE,integer, constant array,complex
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS            : 1
 !*  STATUS                     : done
@@ -45,7 +33,7 @@
 !*
 !*  SETUP REQUIREMENTS         : N/A
 !*  DESCRIPTION                : Test: ASSOCIATE with expression and with
-!*                                     integer*(1,2,4,8) and complex(4,8,16) 
+!*                                     integer*(1,2,4,8) and complex(4,8,16)
 !*                                     and ALLOCATE with constant array.
 !* ===================================================================
 !*
@@ -61,9 +49,9 @@
       implicit none
 
       integer,parameter, dimension(4) :: arr = (/1,-1,10,-10/)
-      integer(1),allocatable ::i1 
-      integer(2),allocatable ::i2 
-      integer(4),allocatable ::i4 
+      integer(1),allocatable ::i1
+      integer(2),allocatable ::i2
+      integer(4),allocatable ::i4
       integer(8),allocatable ::i8
 
       complex(4),allocatable :: c4
@@ -143,8 +131,8 @@
       deallocate (c4, c8, c16)
 
       if(allocated(i1) .or. allocated(i2) .or. &
-       allocated(i4) .or. allocated(i8)) error stop 19 
+       allocated(i4) .or. allocated(i8)) error stop 19
 
       if(allocated(c4) .or. allocated(c8) .or. allocated(c16)) error stop 20
 
-      end 
+      end

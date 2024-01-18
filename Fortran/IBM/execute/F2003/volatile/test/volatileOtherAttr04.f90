@@ -1,18 +1,10 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 12/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : VOLATILE with allocatable 
-!*                                
+!*  PRIMARY FUNCTIONS TESTED   : VOLATILE with allocatable
 !*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*            functional test VOLATILE compatible with allocatable.
 !* ===================================================================
 

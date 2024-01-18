@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Misc3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Misc3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Misc3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Misc3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 29, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,16 +34,16 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Procedure pointer - implicit interface and intrinsics 
+!*
+!*  Procedure pointer - implicit interface and intrinsics
 !*  (315059)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM Misc3 
+  PROGRAM Misc3
 
-  IMPLICIT REAL(P) 
+  IMPLICIT REAL(P)
   TYPE :: DT(K1)    ! (4)
     INTEGER, KIND :: K1
     PROCEDURE(REAL), NOPASS, POINTER :: ProcPtr
@@ -64,10 +58,10 @@
 
   PROCEDURE(),            POINTER :: ProcPtr0
   PROCEDURE(REAL),        POINTER :: ProcPtr1
-  !PROCEDURE(ProcPtr1),   POINTER :: ProcPtr2 ! This is wrong 
+  !PROCEDURE(ProcPtr1),   POINTER :: ProcPtr2 ! This is wrong
   PROCEDURE(RToR),        POINTER :: ProcPtr2
   PROCEDURE(ProcPtr2),    POINTER :: ProcPtr3
-  TYPE(DT(4))                     :: V 
+  TYPE(DT(4))                     :: V
 
   ProcPtr0 => SIN
   IF ( ABS(ProcPtr0(1.0)-0.84147098) .GT. 0.000001) STOP 10

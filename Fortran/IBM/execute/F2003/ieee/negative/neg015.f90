@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh neg015 
+! %PRECMD: $TR_SRC/fxieee.presh neg015
 ! %COMPOPTS: -qstrict -qfloat=nomaf -qrealsize=8 -qfree=f90 -qxlf90=signedzero
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,25 +12,16 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : February 6, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NEGATIVE with Infinities,  
+!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NEGATIVE with Infinities,
 !*                               NaNs, and Denormals.
 !*                               Only default real and double precision real
 !*                               will be  be promoted.
 !*
 !*  SECONDARY FUNCTIONS TESTED : -qrealsize
 !*
-!*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  : -qrealsize
 !*
 !*  KEYWORD(S)                 :
@@ -38,13 +29,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : This testcase follows the scenarios :
-!* 
+!*
 !* 1.Test +/- infinity for real
 !* 2.Test  NaNS/NaNQ for real
 !* 3.Test +/- infinity for double precision
 !* 4.Test  NaNS/NaNQ for double precision
 !* 7.Test Denormals for default real/double precision
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,8 +42,8 @@
         use ieee_arithmetic
         use constants_for_ieee
 
-        real :: var_4 
-        double precision :: var_8 
+        real :: var_4
+        double precision :: var_8
         real*16 :: var_16
         logical :: result, flag_values(5)
         integer :: i, Z, P, R

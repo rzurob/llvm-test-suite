@@ -1,23 +1,18 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal022kk.f
 !*  TEST CASE NAME             : type-bound procedure ffinal022kk
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal022 by Catherine Sun)
 !*  DATE                       : 2007-11-26 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines: 
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines:
 !*                               finalizations in  print statement
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -43,16 +38,16 @@ use m
        final :: finalizeChild
     end type
 
-    interface interf 
+    interface interf
         function fBase()
         import base
            type(base(4)) :: fBase ! tcx: (4)
         end function
-  
+
         function fChild(arg1)
         import child
            type(child(4,4)) :: fChild ! tcx: (4,4)
-           integer, intent(in) :: arg1 
+           integer, intent(in) :: arg1
         end function
     end interface
 
@@ -62,7 +57,7 @@ use m
         type (child(4,4)), intent (in) :: arg1  ! tcx: (4,4)
         print *, 'finalizeChild'
     end subroutine
- 
+
 end module
 
 use m1
@@ -81,8 +76,8 @@ end function
 function fChild (arg1)
 use m1, only : child
     type (child(4,4))  :: fChild  ! tcx: (4,4)
-    integer, intent(in) :: arg1 
-    fChild%int = arg1 
+    integer, intent(in) :: arg1
+    fChild%int = arg1
 end function
 
 

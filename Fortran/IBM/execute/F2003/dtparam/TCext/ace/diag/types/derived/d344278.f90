@@ -1,22 +1,13 @@
 !**********************************************************************
 !* ====================================================================
-!* XL Fortran Test Case                           IBM INTERNAL USE ONLY
-!* ====================================================================
 !*
 !*  TEST CASE NAME             : d344278
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt33dext)
-!*
 !*  DATE                       : 2007-11-28
-!*
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Array Constructor Enhancement
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DEFECT ABSTRACT            : DTPARAM: DIAG: Unexpected Results (Array
 !*                               Constructor in ASSOCIATE Construct)
@@ -31,7 +22,6 @@
 !*
 !*  1516-036 (S) Entity bland has undefined type.
 !*  1516-036 (S) Entity complex has undefined type.
-!*
 !*
 !*  Given the above, I suspect that the Diagnostics for lines 26 and 30
 !*  (each of which are expected to produce a message) are incorrect:

@@ -1,20 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingERRSpec02 - INQUIRE() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 24, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : An Error in one of several Pending Data
 !*                               Transfers
 !*  SECONDARY FUNCTIONS TESTED : INQUIRE() with the PENDING=, and ERR=
 !*                               Specifiers
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : READ(), INQUIRE(), PENDING= Specifier,
@@ -49,7 +42,6 @@
 !*
 !*  C950 (R930) If an ID= specifier appears, a PENDING= specifier shall
 !*              also appear.
-!*
 !*
 !*  9.9.1.20 PENDING= specifier in the INQUIRE statement
 !*

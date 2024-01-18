@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Marcus Yu
 !*  DATE                       : March 8, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_UNORDERED
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +25,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 	    program fxieee21
@@ -236,13 +227,13 @@
                print *, "ieee_unordered error in real*16."
             endif
          end do
-		
+
 		 do i = 13, 16
             if ( results(i) .eqv. .true.) then
                print *, "ieee_unordered error in real*16."
             endif
          end do
-		
+
         if (ieee_unordered(values1_16(1), values2_16(1)) .eqv. .false.) then
            print *, "ieee_unordered error 11."
         endif

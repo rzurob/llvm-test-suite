@@ -2,30 +2,19 @@
 ! ftcx_dtp -qk -qnol /tstdev/OO_procptr/bindc2/procptrBindcProc32.f
 ! opt variations: -qnok -ql
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*                                associate procedure pointer with c function
 !*                                pointer pointing to C function with void pointer
 !*                                as its argument(in Fortran, dummy argument for C_PTR
 !*                                is with value attribute) and its return. void * with
-!*                                nested derived type. 
+!*                                nested derived type.
 !* ===================================================================
 
 program procptrBindcProc32
@@ -48,7 +37,7 @@ program procptrBindcProc32
 
    type dt(k1)    ! (4)
        integer, kind :: k1
-       type(C_FUNPTR) :: cfunptr 
+       type(C_FUNPTR) :: cfunptr
    end type
 
    interface
@@ -61,12 +50,12 @@ program procptrBindcProc32
    type(dt(4)) :: dtype
 
    type(dt2) , target :: i
-   type(C_PTR) :: j, res 
+   type(C_PTR) :: j, res
    type(dt2), pointer :: p
 
    procedure(cfunc), pointer :: funptr => null()
 
-   i%c = 1_C_INT 
+   i%c = 1_C_INT
    i%d1%b = 2_C_INT
    i%d1%d0%a = 3_C_INT
 

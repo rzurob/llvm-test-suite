@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatNonadvancingStream02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatNonadvancingStream02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 19 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 19 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test READ & WRITE with nonadvancing IO and stream access method
@@ -36,7 +28,7 @@ module m
 
     type base(l3)
         integer,len   :: l3 ! l3=2
-        logical       :: g1(l3) 
+        logical       :: g1(l3)
         type(inner1(l3+1)) :: in1
         contains
            procedure,pass :: writebase
@@ -45,7 +37,7 @@ module m
 
     type,extends(base):: child(l4)
         integer,len   ::  l4  ! l4=3
-        type(inner2(l3+l4)) :: in2 
+        type(inner2(l3+l4)) :: in2
         contains
           procedure,pass  :: writechild
           procedure,pass  :: readchild
@@ -71,9 +63,9 @@ module m
 
             select type(this)
                type is(base(*))
-                  
+
                   ! read the first record
-                  read(10,'(t5,l1)',advance='no',eor=100,size=count) this%g1(1) 
+                  read(10,'(t5,l1)',advance='no',eor=100,size=count) this%g1(1)
                   if(count /= 1)       stop 17
 
                   inquire(10,pos=pos)
@@ -92,7 +84,7 @@ module m
                   read(10,'(a3,tr5,a3)',advance='no', &
                           size=count,pos=7)                 this%in1%c1(3:2:-1)
                   if(count /= 6)       stop 21
-                  
+
                   inquire(10,pos=pos)
                   if(pos /= 18)        stop 22
 
@@ -102,7 +94,7 @@ module m
 
                   read(10,'(tr4,a3)',advance='no',size=count) this%in1%c1(1)
                   if(count /= 3)        stop 23
-                 
+
                   inquire(10,pos=pos)
                   if(pos /= 14)         stop 24
 
@@ -123,7 +115,7 @@ module m
             select type(this)
                 type is(child(*,*))
                    call this%base%writebase
-                   write(10,'(sp,5(i3,:,","))',advance='yes') this%in2%i1  
+                   write(10,'(sp,5(i3,:,","))',advance='yes') this%in2%i1
                 class default
                    stop 13
             end select
@@ -144,17 +136,17 @@ module m
                   if(count /= 6)        stop 25
 
                   inquire(10,pos=pos)
-                  if(pos /= 38)         stop 26 
+                  if(pos /= 38)         stop 26
 
                   ! point to the beginning of the third record
                   backspace 10
                   read(10,'(i3,tr1,i3,tr1,i3)',advance='no', &
                           size=count,pos=19)   this%in2%i1(5:3:-1)
-                 
-                  if(count /= 9)       stop 27 
- 
+
+                  if(count /= 9)       stop 27
+
                   inquire(10,pos=pos)
-                  if(pos /= 30)        stop 28 
+                  if(pos /= 30)        stop 28
 
                class default
                  stop 14
@@ -185,24 +177,24 @@ program formatNonadvancingStream02
       print *,"fail to open the file"
       print *,"iostat=",ios
       print *,"iomsg=",msg
-      stop 10 
+      stop 10
   end if
 
   select type(poly1)
      type is(child(*,*))
 
-         call poly1%writechild 
+         call poly1%writechild
 
          rewind 10
 
          call poly1%readchild
 
          write(*,'(2l2/3a3/5i3)',advance='yes')  poly1
-  
+
      class default
          stop 11
   end select
-  
+
   close(10,status='keep')
-  
+
 end program

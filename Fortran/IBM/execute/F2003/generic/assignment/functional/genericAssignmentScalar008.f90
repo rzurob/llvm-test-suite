@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: operands with poly scalar with overridding specific typebound
 !*  KEYWORD(S)                 :
@@ -95,27 +84,27 @@ program genericAssignmentScalar008
    b1 = c1
    c2 = child( 10 , 20 )
    c1 = c2
-   
+
    print *, b1%i
    print *, c2%i, c2%j
    print *, c1%i, c1%j
-   
+
    deallocate ( b1, b2 )
-   
+
    allocate ( b1, source = child() )
    allocate ( b2, source = base ( 100 ) )
-   
+
    b1 = b2
    select type ( b1 )
       type is ( child )
          print *, b1%i, b1%j
    end select
-   
+
    b1 = c1
    select type ( b1 )
       type is ( child )
          print *, b1%i, b1%j
    end select
-   
+
 
 end program

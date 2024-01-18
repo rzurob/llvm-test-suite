@@ -1,15 +1,11 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acesyntc497dl
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acesyntc497d
 !*                               by David Forster)
 !*  DATE                       : 2007-11-16 (original: 2006-11-19)
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*                               (+ Array Constructor Enhancements
@@ -19,12 +15,11 @@
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
 !*                               (original: Feature Number 289053)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ac-implied-do, ac-do-variable
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -99,7 +94,7 @@ program acesyntc497dl
   print *, [complex::   (((cmplx(j,j), j=1,2), i=1,2), i=1,2)]
   print *, [character:: (((char(i), j=1,2), i=1,2), i=1,2)]
   print *, [logical::   (((logical(i==j), j=1,2), i=1,2), i=1,2)]
-  
+
   darr = [derived(1)::   (((derived(1)(), i=1,2), j=1,2), i=1,1)] ! tcx: (1) ! tcx: (1)
   larr = [logical::   (((i==j, i=1,2), j=1,2), i=1,1)]
   carr = [character:: (((char(i), i=1,2), j=1,2), i=1,1)]

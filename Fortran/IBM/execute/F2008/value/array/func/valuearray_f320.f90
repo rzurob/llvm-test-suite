@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f320.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -94,7 +91,7 @@ call sub1_int4(arg2=i1)
 if (any (i1 .ne. i1_r)) error stop 4010
 
 contains
-  
+
 subroutine sub1_int1(arg1, arg2)
     integer*4 :: arg1(:)
 	integer*4, optional :: arg2(:)
@@ -107,7 +104,7 @@ subroutine sub1_int2(arg1, arg2)
     integer*4, optional :: arg1(:)
 	integer*4 :: arg2(:)
 	value arg1,arg2
-	if (present(arg1)) arg1 = 200	
+	if (present(arg1)) arg1 = 200
 	arg2 = 300
 end subroutine
 

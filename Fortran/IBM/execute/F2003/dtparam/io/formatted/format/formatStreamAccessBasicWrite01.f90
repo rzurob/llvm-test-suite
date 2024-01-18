@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatStreamAccessBasicWrite01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatStreamAccessBasicWrite01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 11 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 11 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. test Write statement with stream access
@@ -27,7 +19,7 @@ module m
    type inner1(l1)
       integer,len :: l1
       character(l1+1) :: c1
-      integer      :: i1(l1:l1+1) 
+      integer      :: i1(l1:l1+1)
    end type
 
    type inner2(l2)
@@ -35,12 +27,12 @@ module m
       logical     :: log1(l2)
       type(inner1(l2+1)) :: inn1
    end type
-   
+
    type outer(l3)
       integer,len   :: l3
       character(l3) :: c2(l3)
       type(inner2(l3-1)) :: inn2
-   end type 
+   end type
 
 end module
 
@@ -90,8 +82,8 @@ program formatStreamAccessBasicWrite01
       inquire(10,pos=mypos)
       if(mypos /= 63) stop 16
 
-  end if   
-   
+  end if
+
   close(10)
-  
+
 end program

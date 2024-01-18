@@ -4,34 +4,26 @@
 ! %PRECMD: rm -f fort.*
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgm006.f
-! %VERIFY: 
-! %STDIN: 
-! %STDOUT: 
+! %VERIFY:
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
 
-
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : Sequence derived type with IOMSG
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 1
 !*
 !*  DESCRIPTION                : Using one component of a sequence derived type
@@ -47,14 +39,12 @@
 !*
 !*********************************************************************
 
-
       program fxiomsgm006
 
       implicit none                     ! All variables must be Declared
- 
- 
+
       integer*4 case_id, ios            ! Test Case id under test.
- 
+
       type msg
           sequence
           character*1     cz
@@ -65,35 +55,32 @@
 
       type(msg)      errmsg
 
- 
 !
 ! Initialize Return Code routine to SUCCESS...
 !
- 
+
       case_id = 0
       call zzrc ( case_id )
- 
+
 !
 ! TestCase 1...
 !
- 
+
       case_id = case_id + 1
 
       errmsg%keep = 'abc'
 
       open ( 9, status = 'OLD', access = 'SEQUENTIAL', form =  &
   &    'FORMATTED', err = 100, iostat = ios, iomsg = errmsg%destroy )
- 
+
       call zzrc ( case_id )
 
- 
 100   if ( errmsg%keep <> 'abc' )  call zzrc ( 100 )
 
       if ( ios <> 6 ) call zzrc ( case_id )
- 
- 
+
 ! Clean up....
- 
+
       close ( 9, status = 'DELETE' )
- 
+
       end                            ! End of TestCase.

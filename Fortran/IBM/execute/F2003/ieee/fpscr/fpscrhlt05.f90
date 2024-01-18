@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: fpscrhlt05.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,24 +12,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : IEEE modules - FPSCR save and restore
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : March 30, 2002
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ieee_arithmetic 
+!*  PRIMARY FUNCTIONS TESTED   : ieee_arithmetic
 !*				 ieee_get_halting_mode()
 !*				 ieee_set_halting_mode()
 !*
 !*  REFERENCE                  : Feature 180920
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This is a FPSCR testcase. 
+!*  DESCRIPTION                : This is a FPSCR testcase.
 !*				 In this testcase, main program that uses IEEE
 !*				 calls subroutines which itself calls another
 !*				 subroutine.
@@ -38,11 +32,11 @@
 !*                               entry into subroutine called by main program.
 !*
 !*				 Rule:
-!*  				 1) When returning from a procedure that 
+!*  				 1) When returning from a procedure that
 !*				 uses IEEE, the settings for
-!*  				 halting mode return to the values 
+!*  				 halting mode return to the values
 !*				 they had at procedure entry.
-!*				 
+!*
 !*                               2) Calls to procedures that do not use
 !*                               IEEE from procedures that do, the
 !*                               floating-point status will not change.
@@ -59,18 +53,18 @@
 
           interface
 
-            subroutine ext_sub101() 
+            subroutine ext_sub101()
 	  	use ieee_arithmetic
             end subroutine
 
-            subroutine ext_sub201() 
+            subroutine ext_sub201()
 	  	use xlf_fp_util
             end subroutine
 
           end interface
 
 	  logical*4 flag_values(5)
-	
+
 !*  Check if initially halting mode flags false.
 	  call ieee_get_halting_mode(ieee_all, flag_values)
   	  if (any(flag_values .neqv. .false.))		error stop 1
@@ -84,13 +78,13 @@
 	  call ext_sub101()
 	  call ieee_get_halting_mode(ieee_all, flag_values)
   	  if (any(flag_values .neqv. .false.))		error stop 2
-	
+
 !*  Main program uses IEEE, and calls subroutine that does not use IEEE,
 !*  which calls other subroutines that do or don't use IEEE.
 	  call ext_sub201()
 	  call ieee_get_halting_mode(ieee_all, flag_values)
   	  if (any(flag_values .neqv. .false.))		error stop 3
-	
+
 	end program
 
 
@@ -102,15 +96,15 @@
 	  logical*4 flag_values(5)
 
 	  interface
-            subroutine ext_sub102() 
+            subroutine ext_sub102()
 	  	use ieee_arithmetic
             end subroutine
 
-            subroutine ext_sub103() 
+            subroutine ext_sub103()
 	  	use ieee_arithmetic
             end subroutine
 
-            subroutine ext_sub104() 
+            subroutine ext_sub104()
 	  	use ieee_arithmetic
             end subroutine
 
@@ -230,8 +224,8 @@
 !* ---------------------------------------------------------------------
 
 !***  Subroutines that do not use IEEE modules.
-!*  Rule:  When returning from a procedure that does not use IEEE, 
-!*         the settings for halting mode do not return to the values 
+!*  Rule:  When returning from a procedure that does not use IEEE,
+!*         the settings for halting mode do not return to the values
 !*         they had at procedure entry.
 
           call ext_sub202()
@@ -290,7 +284,7 @@
 !*  When returning from a procedure that uses IEEE, the settings for
 !*  halting mode return to the values they had at procedure entry.
 !***********************************************************************
-!* In ext_sub102, all halting flags are set to true. 
+!* In ext_sub102, all halting flags are set to true.
 	subroutine ext_sub102()
           use ieee_arithmetic
           logical*4 flag_values(5)
@@ -302,8 +296,8 @@
         end subroutine !** end ext_sub102()
 !* ---------------------------------------------------------------------
 
-!* In ext_sub103, some halting flags are set to true; while some are 
-!* not modified. 
+!* In ext_sub103, some halting flags are set to true; while some are
+!* not modified.
         subroutine ext_sub103()
           use ieee_arithmetic
           logical*4 flag_values(5)
@@ -322,8 +316,8 @@
         end subroutine !** end ext_sub103()
 !* ---------------------------------------------------------------------
 
-!* In ext_sub104, the halting flags that were true in ext_sub103 are 
-!* not modified; and the remaining flags are set to true. 
+!* In ext_sub104, the halting flags that were true in ext_sub103 are
+!* not modified; and the remaining flags are set to true.
         subroutine ext_sub104()
           use ieee_arithmetic
           logical*4 flag_values(5)

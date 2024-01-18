@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt002.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -56,10 +49,10 @@
         end if
 
         if (present(arg3)) then
-	    do i=1, 5          	 
-	    do j=1, 5          	 
-	    do k=1, 5          	 
-	    do l=1, 5          	 
+	    do i=1, 5
+	    do j=1, 5
+	    do k=1, 5
+	    do l=1, 5
 		arg3(l,k,j,i)=0
 	    end do
 	    end do

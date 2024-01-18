@@ -1,18 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cafsum.f
-!*
-!*  PROGRAMMER                 : Xing Xue
 !*  DATE                       : July 31, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray access
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95_r
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : functional testing of REAL*16 coarray
@@ -50,9 +43,9 @@ program QCAFSUM
      sum2(1:10, 1:10) = 0
      do i=1, num_imgs
         sum = sum + i
-        sum0 = sum0 + caf0[i] 
-        sum1(1:10) = sum1(1:10) + caf1(1:10)[i] 
-        sum2(1:10, 1:10) = sum2(1:10, 1:10) + caf2(1:10, 1:10)[i] 
+        sum0 = sum0 + caf0[i]
+        sum1(1:10) = sum1(1:10) + caf1(1:10)[i]
+        sum2(1:10, 1:10) = sum2(1:10, 1:10) + caf2(1:10, 1:10)[i]
      enddo
      if (sum0 .ne. sum) then
         error stop 1
@@ -73,7 +66,7 @@ program QCAFSUM
      print *,"sum1=",sum1
      print *,"sum2=",sum2
   endif
-  
+
   SYNC ALL
-  
+
 end program QCAFSUM

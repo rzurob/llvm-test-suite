@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu42.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,9 +33,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Invoke command line procedures within external/internal recursive
-!*                             : functions through interface and return the derived type of  
+!*                             : functions through interface and return the derived type of
 !*                             : result by result variables
-!*                             : 
 !*                             : (Check if the intrinsic affect other storage)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -75,7 +68,7 @@
         character        :: char9   /'?'/
 
         character(50)    :: Argument
- 
+
       END TYPE
 
 
@@ -86,32 +79,32 @@
       USE MOD
 
       INTEGER i
-      
-      INTERFACE 
-        RECURSIVE FUNCTION F_GET_COMMAND(Num, Result) 
+
+      INTERFACE
+        RECURSIVE FUNCTION F_GET_COMMAND(Num, Result)
         USE MOD
           TYPE(CMD) F_GET_COMMAND
-          TYPE(CMD) Result 
+          TYPE(CMD) Result
           INTEGER   Num
         END FUNCTION
 
         RECURSIVE FUNCTION F_GET_COMMAND_ARGUMENT(Num, Result)
         USE MOD
           TYPE(CMD) F_GET_COMMAND_ARGUMENT
-          TYPE(CMD) Result 
+          TYPE(CMD) Result
           INTEGER   Num
         END FUNCTION
-  
-        RECURSIVE FUNCTION F_GET_ENVIRONMENT_VARIABLE(Num, Result)  
+
+        RECURSIVE FUNCTION F_GET_ENVIRONMENT_VARIABLE(Num, Result)
         USE MOD
           TYPE(CMD) F_GET_ENVIRONMENT_VARIABLE
-          TYPE(CMD) Result 
+          TYPE(CMD) Result
           INTEGER   Num
-        END FUNCTION     
+        END FUNCTION
       END INTERFACE
 
 
-      INTERFACE 
+      INTERFACE
         RECURSIVE FUNCTION F_COMMAND_ARGUMENT_COUNT(Num, CmdCount)
           INTEGER CmdCount
           INTEGER F_COMMAND_ARGUMENT_COUNT
@@ -121,7 +114,7 @@
 
       TYPE(CMD) :: Result
 
-      IF ( F_COMMAND_ARGUMENT_COUNT(5, Result.CmdCount) .ne. Result.CmdCount) ERROR STOP 63 
+      IF ( F_COMMAND_ARGUMENT_COUNT(5, Result.CmdCount) .ne. Result.CmdCount) ERROR STOP 63
 
       Result = F_GET_COMMAND(5, Result)
 
@@ -132,7 +125,7 @@
       CALL Check(Result)
 
       Result = F_GET_ENVIRONMENT_VARIABLE(5, Result)
-  
+
       CALL Check(Result)
 
 
@@ -173,7 +166,7 @@
       INTEGER Num
 
       IF (Num .gt. 1) THEN
-      
+
         F_COMMAND_ARGUMENT_COUNT = F_COMMAND_ARGUMENT_COUNT(Num - 1, CmdCount)
 
       ELSE
@@ -190,13 +183,13 @@
       INTEGER   Num
 
       IF (Num .gt. 1) THEN
-      
+
         F_COMMAND_ARGUMENT_COUNT_INT = F_COMMAND_ARGUMENT_COUNT_INT(Num - 1, CmdCount)
 
       ELSE
 
         F_COMMAND_ARGUMENT_COUNT_INT = COMMAND_ARGUMENT_COUNT()
-        if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT()) & 
+        if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT()) &
         then
           error stop 63
         endif
@@ -262,7 +255,7 @@
 
       END FUNCTION
 
- 
+
       RECURSIVE FUNCTION F_GET_COMMAND_ARGUMENT(Num, Result) result ( R )
       USE MOD
       IMPLICIT NONE
@@ -302,7 +295,7 @@
       ELSE
 
       DO i  = 0, R%CmdCount
-       
+
         R%NUMBER = i
         call GET_COMMAND_ARGUMENT(                &
                 R%NUMBER,    &
@@ -346,7 +339,7 @@
 
       ELSE
 
-      R = F_GET_ENVIRONMENT_VARIABLE_INT(Num - 1, Result) 
+      R = F_GET_ENVIRONMENT_VARIABLE_INT(Num - 1, Result)
 
       END IF
 

@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemDIM.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemDIM.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,9 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
+!*
 !*  -  DIM
 !*  ()
 !*
@@ -67,18 +60,18 @@
   END TYPE
 
   TYPE(DT0(20,1,2,4,8,1,2,4,8,4,8,16,4,8,16)), PARAMETER :: P=DT0(20,1,2,4,8,1,2,4,8,4,8,16,4,8,16)()
- 
-  TYPE :: DT(K15,N2)    ! (4,20) 
+
+  TYPE :: DT(K15,N2)    ! (4,20)
       INTEGER, KIND :: K15
       INTEGER, LEN  :: N2
-    INTEGER(KIND(DIM(P%XI1, P%XII1)))   :: TI1(4,4) = DIM(P%XI1, P%XII1) 
-    INTEGER(KIND(DIM(P%XI2, P%XII2)))   :: TI2(4,4) = DIM(P%XI2, P%XII2) 
-    INTEGER(KIND(DIM(P%XI4, P%XII4)))   :: TI4(4,4) = DIM(P%XI4, P%XII4) 
-    INTEGER(KIND(DIM(P%XI8, P%XII8)))   :: TI8(4,4) = DIM(P%XI8, P%XII8) 
+    INTEGER(KIND(DIM(P%XI1, P%XII1)))   :: TI1(4,4) = DIM(P%XI1, P%XII1)
+    INTEGER(KIND(DIM(P%XI2, P%XII2)))   :: TI2(4,4) = DIM(P%XI2, P%XII2)
+    INTEGER(KIND(DIM(P%XI4, P%XII4)))   :: TI4(4,4) = DIM(P%XI4, P%XII4)
+    INTEGER(KIND(DIM(P%XI8, P%XII8)))   :: TI8(4,4) = DIM(P%XI8, P%XII8)
 
-    REAL(KIND(DIM(P%XR4, P%XRR4)))       :: TR4(4,4) = DIM(P%XR4, P%XRR4) 
-    REAL(KIND(DIM(P%XR8, P%XRR8)))       :: TR8(4,4) = DIM(P%XR8, P%XRR8) 
-    REAL(KIND(DIM(P%XR6, P%XRR6)))       :: TR6(4,4) = DIM(P%XR6, P%XRR6) 
+    REAL(KIND(DIM(P%XR4, P%XRR4)))       :: TR4(4,4) = DIM(P%XR4, P%XRR4)
+    REAL(KIND(DIM(P%XR8, P%XRR8)))       :: TR8(4,4) = DIM(P%XR8, P%XRR8)
+    REAL(KIND(DIM(P%XR6, P%XRR6)))       :: TR6(4,4) = DIM(P%XR6, P%XRR6)
   END TYPE
 
   TYPE(DT(4,20)) :: T
@@ -102,4 +95,4 @@
 
   END
 
- 
+

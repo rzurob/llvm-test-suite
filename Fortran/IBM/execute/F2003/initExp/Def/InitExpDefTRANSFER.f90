@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefTRANSFER.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefTRANSFER.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,140 +19,139 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an tranformational intrinsic
-!* 
-!*  - TRANSFER 
+!*
+!*  - TRANSFER
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM  InitExpDefTRANSFER 
+  PROGRAM  InitExpDefTRANSFER
   IMPLICIT NONE
   INTEGER :: I, J, K
 
-  INTEGER(1), PARAMETER :: I11       = 1 
-  INTEGER(1), PARAMETER :: I12(2)    = 1 
- 
+  INTEGER(1), PARAMETER :: I11       = 1
+  INTEGER(1), PARAMETER :: I12(2)    = 1
+
   INTEGER(KIND(TRANSFER(TRANSFER(I11, I12), I11))), PARAMETER       :: TI11    &
-                   = TRANSFER(TRANSFER(I11, I12), I11) 
+                   = TRANSFER(TRANSFER(I11, I12), I11)
   INTEGER(KIND(TRANSFER(TRANSFER(I12, I12), I12))), PARAMETER       :: TI12(2) &
-                   = TRANSFER(TRANSFER(I12, I12), I12) 
+                   = TRANSFER(TRANSFER(I12, I12), I12)
   INTEGER(KIND(TRANSFER(TRANSFER(I12, I11, 2), I12))), PARAMETER    :: TI13(2) &
-                   = TRANSFER(TRANSFER(I12, I11, 2), I12) 
+                   = TRANSFER(TRANSFER(I12, I11, 2), I12)
   INTEGER(KIND(TRANSFER(TRANSFER(I12, I12, 2), I12, 2))), PARAMETER :: TI14(2) &
-                   = TRANSFER(TRANSFER(I12, I12, 2), I12, 2) 
+                   = TRANSFER(TRANSFER(I12, I12, 2), I12, 2)
 
-  INTEGER(2), PARAMETER :: I21       = 1 
-  INTEGER(2), PARAMETER :: I22(2)    = 1 
- 
+  INTEGER(2), PARAMETER :: I21       = 1
+  INTEGER(2), PARAMETER :: I22(2)    = 1
+
   INTEGER(KIND(TRANSFER(TRANSFER(I21, I22), I21))), PARAMETER       :: TI21    &
-                   = TRANSFER(TRANSFER(I21, I22), I21) 
+                   = TRANSFER(TRANSFER(I21, I22), I21)
   INTEGER(KIND(TRANSFER(TRANSFER(I22, I22), I22))), PARAMETER       :: TI22(2) &
-                   = TRANSFER(TRANSFER(I22, I22), I22) 
+                   = TRANSFER(TRANSFER(I22, I22), I22)
   INTEGER(KIND(TRANSFER(TRANSFER(I22, I21, 2), I22))), PARAMETER    :: TI23(2) &
-                   = TRANSFER(TRANSFER(I22, I21, 2), I22) 
+                   = TRANSFER(TRANSFER(I22, I21, 2), I22)
   INTEGER(KIND(TRANSFER(TRANSFER(I22, I22, 2), I22, 2))), PARAMETER :: TI24(2) &
-                   = TRANSFER(TRANSFER(I22, I22, 2), I22, 2) 
+                   = TRANSFER(TRANSFER(I22, I22, 2), I22, 2)
 
-  INTEGER(4), PARAMETER :: I41       = 1 
-  INTEGER(4), PARAMETER :: I42(2)    = 1 
- 
+  INTEGER(4), PARAMETER :: I41       = 1
+  INTEGER(4), PARAMETER :: I42(2)    = 1
+
   INTEGER(KIND(TRANSFER(TRANSFER(I41, I42), I41))), PARAMETER       :: TI41    &
-                   = TRANSFER(TRANSFER(I41, I42), I41) 
+                   = TRANSFER(TRANSFER(I41, I42), I41)
   INTEGER(KIND(TRANSFER(TRANSFER(I42, I42), I42))), PARAMETER       :: TI42(2) &
-                   = TRANSFER(TRANSFER(I42, I42), I42) 
+                   = TRANSFER(TRANSFER(I42, I42), I42)
   INTEGER(KIND(TRANSFER(TRANSFER(I42, I41, 2), I42))), PARAMETER    :: TI43(2) &
-                   = TRANSFER(TRANSFER(I42, I41, 2), I42) 
+                   = TRANSFER(TRANSFER(I42, I41, 2), I42)
   INTEGER(KIND(TRANSFER(TRANSFER(I42, I42, 2), I42, 2))), PARAMETER :: TI44(2) &
-                   = TRANSFER(TRANSFER(I42, I42, 2), I42, 2) 
+                   = TRANSFER(TRANSFER(I42, I42, 2), I42, 2)
 
-  INTEGER(8), PARAMETER :: I81       = 1 
-  INTEGER(8), PARAMETER :: I82(2)    = 1 
- 
+  INTEGER(8), PARAMETER :: I81       = 1
+  INTEGER(8), PARAMETER :: I82(2)    = 1
+
   INTEGER(KIND(TRANSFER(TRANSFER(I81, I82), I81))), PARAMETER       :: TI81    &
-                   = TRANSFER(TRANSFER(I81, I82), I81) 
+                   = TRANSFER(TRANSFER(I81, I82), I81)
   INTEGER(KIND(TRANSFER(TRANSFER(I82, I82), I82))), PARAMETER       :: TI82(2) &
-                   = TRANSFER(TRANSFER(I82, I82), I82) 
+                   = TRANSFER(TRANSFER(I82, I82), I82)
   INTEGER(KIND(TRANSFER(TRANSFER(I82, I81, 2), I82))), PARAMETER    :: TI83(2) &
-                   = TRANSFER(TRANSFER(I82, I81, 2), I82) 
+                   = TRANSFER(TRANSFER(I82, I81, 2), I82)
   INTEGER(KIND(TRANSFER(TRANSFER(I82, I82, 2), I82, 2))), PARAMETER :: TI84(2) &
-                   = TRANSFER(TRANSFER(I82, I82, 2), I82, 2) 
+                   = TRANSFER(TRANSFER(I82, I82, 2), I82, 2)
 
-  REAL(4), PARAMETER :: R41       = 1.1 
-  REAL(4), PARAMETER :: R42(2)    = 1.1 
- 
+  REAL(4), PARAMETER :: R41       = 1.1
+  REAL(4), PARAMETER :: R42(2)    = 1.1
+
   REAL(KIND(TRANSFER(TRANSFER(R41, R42), R41))), PARAMETER       :: TR41    &
-                   = TRANSFER(TRANSFER(R41, R42), R41) 
+                   = TRANSFER(TRANSFER(R41, R42), R41)
   REAL(KIND(TRANSFER(TRANSFER(R42, R42), R42))), PARAMETER       :: TR42(2) &
-                   = TRANSFER(TRANSFER(R42, R42), R42) 
+                   = TRANSFER(TRANSFER(R42, R42), R42)
   REAL(KIND(TRANSFER(TRANSFER(R42, R41, 2), R42))), PARAMETER    :: TR43(2) &
-                   = TRANSFER(TRANSFER(R42, R41, 2), R42) 
+                   = TRANSFER(TRANSFER(R42, R41, 2), R42)
   REAL(KIND(TRANSFER(TRANSFER(R42, R42, 2), R42, 2))), PARAMETER :: TR44(2) &
-                   = TRANSFER(TRANSFER(R42, R42, 2), R42, 2) 
+                   = TRANSFER(TRANSFER(R42, R42, 2), R42, 2)
 
-  REAL(8), PARAMETER :: R81       = 1.1 
-  REAL(8), PARAMETER :: R82(2)    = 1.1 
- 
+  REAL(8), PARAMETER :: R81       = 1.1
+  REAL(8), PARAMETER :: R82(2)    = 1.1
+
   REAL(KIND(TRANSFER(TRANSFER(R81, R82), R81))), PARAMETER       :: TR81    &
-                   = TRANSFER(TRANSFER(R81, R82), R81) 
+                   = TRANSFER(TRANSFER(R81, R82), R81)
   REAL(KIND(TRANSFER(TRANSFER(R82, R82), R82))), PARAMETER       :: TR82(2) &
-                   = TRANSFER(TRANSFER(R82, R82), R82) 
+                   = TRANSFER(TRANSFER(R82, R82), R82)
   REAL(KIND(TRANSFER(TRANSFER(R82, R81, 2), R82))), PARAMETER    :: TR83(2) &
-                   = TRANSFER(TRANSFER(R82, R81, 2), R82) 
+                   = TRANSFER(TRANSFER(R82, R81, 2), R82)
   REAL(KIND(TRANSFER(TRANSFER(R82, R82, 2), R82, 2))), PARAMETER :: TR84(2) &
-                   = TRANSFER(TRANSFER(R82, R82, 2), R82, 2) 
+                   = TRANSFER(TRANSFER(R82, R82, 2), R82, 2)
 
-  REAL(16), PARAMETER :: R61       = 1.1 
-  REAL(16), PARAMETER :: R62(2)    = 1.1 
- 
+  REAL(16), PARAMETER :: R61       = 1.1
+  REAL(16), PARAMETER :: R62(2)    = 1.1
+
   REAL(KIND(TRANSFER(TRANSFER(R61, R62), R61))), PARAMETER       :: TR61    &
-                   = TRANSFER(TRANSFER(R61, R62), R61) 
+                   = TRANSFER(TRANSFER(R61, R62), R61)
   REAL(KIND(TRANSFER(TRANSFER(R62, R62), R62))), PARAMETER       :: TR62(2) &
-                   = TRANSFER(TRANSFER(R62, R62), R62) 
+                   = TRANSFER(TRANSFER(R62, R62), R62)
   REAL(KIND(TRANSFER(TRANSFER(R62, R61, 2), R62))), PARAMETER    :: TR63(2) &
-                   = TRANSFER(TRANSFER(R62, R61, 2), R62) 
+                   = TRANSFER(TRANSFER(R62, R61, 2), R62)
   REAL(KIND(TRANSFER(TRANSFER(R62, R62, 2), R62, 2))), PARAMETER :: TR64(2) &
-                   = TRANSFER(TRANSFER(R62, R62, 2), R62, 2) 
+                   = TRANSFER(TRANSFER(R62, R62, 2), R62, 2)
 
 
-  COMPLEX(4), PARAMETER :: Z41       = (1.1,1.1) 
-  COMPLEX(4), PARAMETER :: Z42(2)    = (1.1,1.1) 
- 
+  COMPLEX(4), PARAMETER :: Z41       = (1.1,1.1)
+  COMPLEX(4), PARAMETER :: Z42(2)    = (1.1,1.1)
+
   COMPLEX(KIND(TRANSFER(TRANSFER(Z41, Z42), Z41))), PARAMETER       :: TZ41    &
-                   = TRANSFER(TRANSFER(Z41, Z42), Z41) 
+                   = TRANSFER(TRANSFER(Z41, Z42), Z41)
   COMPLEX(KIND(TRANSFER(TRANSFER(Z42, Z42), Z42))), PARAMETER       :: TZ42(2) &
-                   = TRANSFER(TRANSFER(Z42, Z42), Z42) 
+                   = TRANSFER(TRANSFER(Z42, Z42), Z42)
   COMPLEX(KIND(TRANSFER(TRANSFER(Z42, Z41, 2), Z42))), PARAMETER    :: TZ43(2) &
-                   = TRANSFER(TRANSFER(Z42, Z41, 2), Z42) 
+                   = TRANSFER(TRANSFER(Z42, Z41, 2), Z42)
   COMPLEX(KIND(TRANSFER(TRANSFER(Z42, Z42, 2), Z42, 2))), PARAMETER :: TZ44(2) &
-                   = TRANSFER(TRANSFER(Z42, Z42, 2), Z42, 2) 
+                   = TRANSFER(TRANSFER(Z42, Z42, 2), Z42, 2)
 
-  COMPLEX(8), PARAMETER :: Z81       = (1.1,1.1) 
-  COMPLEX(8), PARAMETER :: Z82(2)    = (1.1,1.1) 
- 
+  COMPLEX(8), PARAMETER :: Z81       = (1.1,1.1)
+  COMPLEX(8), PARAMETER :: Z82(2)    = (1.1,1.1)
+
   COMPLEX(KIND(TRANSFER(TRANSFER(Z81, Z82), Z81))), PARAMETER       :: TZ81    &
-                   = TRANSFER(TRANSFER(Z81, Z82), Z81) 
+                   = TRANSFER(TRANSFER(Z81, Z82), Z81)
   COMPLEX(KIND(TRANSFER(TRANSFER(Z82, Z82), Z82))), PARAMETER       :: TZ82(2) &
-                   = TRANSFER(TRANSFER(Z82, Z82), Z82) 
+                   = TRANSFER(TRANSFER(Z82, Z82), Z82)
   COMPLEX(KIND(TRANSFER(TRANSFER(Z82, Z81, 2), Z82))), PARAMETER    :: TZ83(2) &
-                   = TRANSFER(TRANSFER(Z82, Z81, 2), Z82) 
+                   = TRANSFER(TRANSFER(Z82, Z81, 2), Z82)
   COMPLEX(KIND(TRANSFER(TRANSFER(Z82, Z82, 2), Z82, 2))), PARAMETER :: TZ84(2) &
-                   = TRANSFER(TRANSFER(Z82, Z82, 2), Z82, 2) 
+                   = TRANSFER(TRANSFER(Z82, Z82, 2), Z82, 2)
 
-  COMPLEX(16), PARAMETER :: Z61       = (1.1,1.1) 
-  COMPLEX(16), PARAMETER :: Z62(2)    = (1.1,1.1) 
- 
+  COMPLEX(16), PARAMETER :: Z61       = (1.1,1.1)
+  COMPLEX(16), PARAMETER :: Z62(2)    = (1.1,1.1)
+
   COMPLEX(KIND(TRANSFER(TRANSFER(Z61, Z62), Z61))), PARAMETER       :: TZ61    &
-                   = TRANSFER(TRANSFER(Z61, Z62), Z61) 
+                   = TRANSFER(TRANSFER(Z61, Z62), Z61)
   COMPLEX(KIND(TRANSFER(TRANSFER(Z62, Z62), Z62))), PARAMETER       :: TZ62(2) &
-                   = TRANSFER(TRANSFER(Z62, Z62), Z62) 
+                   = TRANSFER(TRANSFER(Z62, Z62), Z62)
   COMPLEX(KIND(TRANSFER(TRANSFER(Z62, Z61, 2), Z62))), PARAMETER    :: TZ63(2) &
-                   = TRANSFER(TRANSFER(Z62, Z61, 2), Z62) 
+                   = TRANSFER(TRANSFER(Z62, Z61, 2), Z62)
   COMPLEX(KIND(TRANSFER(TRANSFER(Z62, Z62, 2), Z62, 2))), PARAMETER :: TZ64(2) &
-                   = TRANSFER(TRANSFER(Z62, Z62, 2), Z62, 2) 
+                   = TRANSFER(TRANSFER(Z62, Z62, 2), Z62, 2)
 
 
 
@@ -255,4 +248,4 @@
   END
 
 
- 
+

@@ -1,25 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozReal005.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/02/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : REAL intrinsic
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                :If A is a boz-literal-constant     
-!*                              and KIND is present, the kind      
-!*                          	type parameter is that specified   
-!*				by the value of KIND               
+!*  DESCRIPTION                :If A is a boz-literal-constant
+!*                              and KIND is present, the kind
+!*                          	type parameter is that specified
+!*				by the value of KIND
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================

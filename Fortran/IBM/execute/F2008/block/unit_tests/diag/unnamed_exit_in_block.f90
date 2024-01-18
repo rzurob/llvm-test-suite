@@ -2,6 +2,6 @@
 ! construct; otherwise, it shall be within the range of at least one do-construct.
 
 a : block
-  exit 
+  exit
 end block a
 end

@@ -15,16 +15,11 @@
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            :
-!*  PROGRAMMER                 : Yong Du
+!*  ===================================================================
 !*  DATE                       : 10/25/2004
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : extends_type_of(A, MOLD)
 !*  SECONDARY FUNCTIONS TESTED : same_type_as(A, B)
-!*  DRIVER STANZA              : xlf90
 !*  DESCRIPTION                : Arguments of the intrinsics are dummy
 !*    arguments of another procedure. Dummy arguments are non-poly,
 !*    non-pointer, and non-allocatable. Dummy arguments are explicit-

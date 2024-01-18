@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Select-Type Constructor: Polymorphic Scalar Entities (read)
@@ -106,11 +95,11 @@ use m
       type is ( child )
          if ( ( .not. precision_r4(b2%i,102.0 ) ) .or. ( .not. precision_r4(b2%j,103.0 ) ) ) error stop 6_4
    end select
-   
+
    if ( ( .not. precision_r4(c1%i,201.0 ) ) .or. ( .not. precision_r4(c1%j,202.0 ) ) )      error stop 7_4
    if ( ( .not. precision_r4(c2%i,203.0 ) ) .or. ( .not. precision_r4(c2%j,204.0 ) ) )      error stop 8_4
-   
-   
+
+
    print *, rbuffer
 
 end program

@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryScalarComp11.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryScalarComp11.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 9 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. CHARACTER SCALAR POINTER COMPONENT
@@ -34,7 +26,7 @@ module m
    type base(k1,k2,l1,l2)
        integer(k_2),kind :: k1
        integer(selected_int_kind(10)),kind :: k2
-      
+
        integer(k1),len :: l1
        integer(k2),len :: l2
 
@@ -46,11 +38,11 @@ module m
        character(2*k2),pointer      :: c6=>null()
        character(len=len(1_"xlftest")),pointer   :: c7=>null()
        character(len(c_const)),pointer  :: c8=>null()
-       character(l1%kind),pointer   :: c9=>null() 
+       character(l1%kind),pointer   :: c9=>null()
        character(3),pointer         :: c10=>null()
        character(len('')),pointer   :: c11=>null()
        character(-8),pointer        :: c12=>null()
- 
+
    end type
 end module
 
@@ -90,7 +82,7 @@ end module
 
   if(t%c1 /= "xlf")                                           error stop 30_4
   if(t%c2 /= "x")                                             error stop 31_4
-  
+
   if(t%c1%len /= len(t%c1) .or. t%c1%len /= 5)                error stop 32_4
   if(t%c2%len /= len(t%c2) .or. t%c2%len /= 1)                error stop 33_4
   if(t%c3%len /= len(t%c3) .or. t%c3%len /= 6)                error stop 34_4

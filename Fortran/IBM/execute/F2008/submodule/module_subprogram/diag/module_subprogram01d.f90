@@ -1,20 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : module_subprogram01d
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 6 December, 2012
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : submodule
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -34,7 +28,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 MODULE m
-  INTERFACE 
+  INTERFACE
     module subroutine sub(x, y)
       integer, intent(in) :: x
       integer, intent(out) :: y
@@ -43,7 +37,7 @@ MODULE m
 END MODULE m
 
 MODULE m2
-  INTERFACE 
+  INTERFACE
     module subroutine sub(x, y)
       integer, intent(in) :: x
       integer, intent(out) :: y

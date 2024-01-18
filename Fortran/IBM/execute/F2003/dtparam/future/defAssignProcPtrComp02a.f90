@@ -1,31 +1,23 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignProcPtrComp02a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignProcPtrComp02a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 17 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 17 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test defined assignment with interface block
 !* 2. Defined assignment procedure are external procedures
 !* 3. Procedure pointer component associates with defined assignment procedure.
-!* 
+!*
 !234567490123456749012345674901234567490123456749012345674901234567490
 module mA
-   interface 
+   interface
       subroutine assignChar(char1,char2)
           character(*),intent(inout) :: char1
           character(*),intent(in)   :: char2
@@ -41,7 +33,7 @@ module mA
    type A(l1)
      integer,len :: l1 ! l1=4
      character(l1)  :: c1(l1)="(**)"
-     integer        :: i1(l1-1:l1+1) = -99          
+     integer        :: i1(l1-1:l1+1) = -99
      procedure(assignChar),nopass,pointer :: aptr1=>null()
      procedure(assignInt),nopass,pointer  :: aptr2=>null()
    end type
@@ -100,7 +92,7 @@ program defAssignProcPtrComp02a
    type(A(4)),target :: aobj1
 
    type(B(3)) :: bobj1
- 
+
    class(C(:)),allocatable :: cobj1
 
    class(*),allocatable    :: upoly
@@ -146,14 +138,14 @@ program defAssignProcPtrComp02a
 
    select type(upoly)
       type is(C(*))
-         upoly=C(4)(bobj1,assignB)  ! invoke assignC 
+         upoly=C(4)(bobj1,assignB)  ! invoke assignC
 
          if(any(upoly%bcomp%acomp%c1 /= ["flx","FLX","mbi","MBI"]))   stop 29
          if(any(upoly%bcomp%acomp%i1 /= [-1,-2,-3]))                  stop 30
          if(.not. associated(upoly%cptr,assignB))                     stop 31
          if(.not. associated(upoly%bcomp%bptr,assignA))               stop 32
          if(.not. associated(upoly%bcomp%acomp%aptr1,assignChar))     stop 33
-         if(.not. associated(upoly%bcomp%acomp%aptr2,assignInt))      stop 34 
+         if(.not. associated(upoly%bcomp%acomp%aptr2,assignInt))      stop 34
       class default
          stop 35
    end select
@@ -211,8 +203,8 @@ subroutine assignB(this,tb)
   use mB
   class(B(*)),intent(inout) :: this
   type(B(*)),intent(in) :: tb
- 
-  print *,"in assignB" 
+
+  print *,"in assignB"
   select type(this)
      type is(B(*))
 

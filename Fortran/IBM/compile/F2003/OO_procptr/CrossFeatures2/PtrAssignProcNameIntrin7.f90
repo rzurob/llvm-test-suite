@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp PtrAssignProcNameIntrin7.f 
+! %POSTCMD: tcomp PtrAssignProcNameIntrin7.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignProcNameIntrin7 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignProcNameIntrin7
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 14, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,13 +30,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  C727 (R742) A procedure-name shall be the name of an external, module,
 !*  or dummy procedure, a specific intrinsic function listed in 13.6
 !*  and not marked with a bullet (.), or a procedure pointer.
-!* 
-!* 
-!*  (315369) 
+!*
+!*  (315369)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,7 +43,7 @@
 
   PROGRAM PtrAssignProcNameIntrin7
   IMPLICIT NONE
-  
+
   TYPE :: DT
     PROCEDURE(LOGICAL),  POINTER, NOPASS :: PtrLGE
     PROCEDURE(LOGICAL),  POINTER, NOPASS :: PtrLGT
@@ -64,14 +57,14 @@
   END TYPE
 
   INTRINSIC LGE, LGT, LLE, MAX0, MAX1, MIN0, MIN1, REAL, SNGL
- 
+
   TYPE (DT) :: V
 
-  V%PtrLGE => LGE 
+  V%PtrLGE => LGE
 
-  V%PtrLGT => LGT 
+  V%PtrLGT => LGT
 
-  V%PtrLLE => LLE 
+  V%PtrLLE => LLE
 
   V%PtrMAX0 => MAX0
 

@@ -3,13 +3,9 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=none
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/pack
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/22/2005
 ! PRIMARY FUNCTIONS TESTED   : pack
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : ARRAY is a dummy argument. Dummy
 !                              argument is non-pointer, non-allocatable,
 !                              unlimited poly, and is array.
@@ -44,7 +40,7 @@ module m
 
         m1 = (/.FALSE.,.TRUE.,.TRUE.,.FALSE.,.TRUE., &
                .TRUE.,.FALSE.,.FALSE.,.TRUE.,.FALSE., &
-               .TRUE.,.FALSE.,.FALSE.,.TRUE.,.FALSE./) 
+               .TRUE.,.FALSE.,.FALSE.,.TRUE.,.FALSE./)
 
         select type(name1=>pack(arg5, reshape(m1,(/3,2,2/)), arg1))
             type is (Base(*,4))

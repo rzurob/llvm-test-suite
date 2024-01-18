@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryWithoutComp02_d353423.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryWithoutComp02_d353423.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 13 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 13 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. DIFFERENT TYPE PARAMETER
-!* 4. WITHOUT COMPONENT 
+!* 4. WITHOUT COMPONENT
 !* 5. DEFECT 353423
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -54,8 +46,8 @@ end module
   use m
   implicit none
 
-  type(base1(1,1,1,1,1,1,1)) :: t1 
-  type(base2(2,2,1,1,1))      :: t2 
+  type(base1(1,1,1,1,1,1,1)) :: t1
+  type(base2(2,2,1,1,1))      :: t2
 
   if(t1%k1 /= 1 .or. t1%k2 /= 1 .or. t1%k3 /= 1)     error stop 10_4
   if(t1%l1 /= 1 .or. t1%l2 /= 1 .or. t1%l3 /= 1)     error stop 11_4
@@ -78,6 +70,6 @@ end module
   if(t2%l1%kind /= kind(t2%l1) .or. t2%l1%kind /= 4)   error stop 27_4
   if(t2%l2 /= 1)                                       error stop 28_4
   if(t2%l2%kind /= kind(t2%l2) .or. t2%l2%kind /= 4)   error stop 29_4
-  if(t2%i1%kind /= kind(t2%i1) .or. t2%i1%kind /= 2)   error stop 30_4 
-    
+  if(t2%i1%kind /= kind(t2%i1) .or. t2%i1%kind /= 2)   error stop 30_4
+
   end

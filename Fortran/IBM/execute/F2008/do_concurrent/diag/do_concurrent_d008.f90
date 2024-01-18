@@ -1,13 +1,11 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                                IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : do_concurrent_d008.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2015-03-20
 !*  ORIGIN                     :
 !*
@@ -15,7 +13,7 @@
 !*  SECONDARY FUNCTIONS TESTED :
 !*  ADAPTED FROM               :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*    - A reference to a nonpure procedure appears inside a do concurrent
 !*      construct
 !*    - the procedure could be internal; or
@@ -23,11 +21,11 @@
 !=============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890
 module m
-    interface 
+    interface
       module integer function modp2(i, j)
         integer, intent(in) :: i, j
       end function
-  
+
       module subroutine mods2()
       end subroutine
     end interface
@@ -79,7 +77,7 @@ program prog
           import
         end
 
-      end interface 
+      end interface
 
       DO CONCURRENT (j = 0:ly, i = 0:lx/8-1)
           co(i, j) = B'00111111'; o(i, j) = 0

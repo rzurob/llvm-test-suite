@@ -1,22 +1,10 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case IBM INTERNAL USE ONLY
-!* ===================================================================
-!* ===================================================================
-!*
-!* TEST CASE TITLE : Test for DTP with EOSHIFT
 !*
 !* TEST CASE NAME : eoshiftdtp36.f
 !*
-!* PROGRAMMER : Andy Sheung
 !* DATE : July 25, 2008
-!* ORIGIN : AIX Compiler Development, Toronto Lab
 !*
 !* DESCRIPTION:
 !* EOSHIFT performs an end-off shift on an array expression of rank one

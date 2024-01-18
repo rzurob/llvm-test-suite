@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrCount.f 
+!*  TEST CASE NAME             : dataPtrCount.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !* - data-target is defined by data statement
@@ -22,15 +16,15 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  program main 
+  program main
 
-      class(*), pointer, dimension(:,:,:) :: l_p	
-      logical*8, target :: l_t(3,2,2) 
+      class(*), pointer, dimension(:,:,:) :: l_p
+      logical*8, target :: l_t(3,2,2)
 
       data l_t / .true., .false., .false., .true., .false., .true., &
 	         .false., .false., .true., .true., .false., .false. /
 
-      l_p(lbound(l_t,1):, ubound(l_t,2):, dim(2,3):) => l_t(:2,:2,:2)	
+      l_p(lbound(l_t,1):, ubound(l_t,2):, dim(2,3):) => l_t(:2,:2,:2)
 
       if ( .not. associated(l_p)) stop 2
       if ( any(lbound(l_p) .ne. (/1,2,0/))) stop 5
@@ -38,13 +32,13 @@
 
       select type (l_p)
 	   type is (logical*8)
-      		print *, l_p 
+      		print *, l_p
 		print *, count(l_p, 1)
 		print *, count(l_p, 2)
 		print *, count(l_p, 3)
 	   class default
-		stop 10 
-      end select		
+		stop 10
+      end select
 
       ! l_p is zero-size array pointer
       l_p(2:0,2:1,2:-1) => l_p(:,2,1)

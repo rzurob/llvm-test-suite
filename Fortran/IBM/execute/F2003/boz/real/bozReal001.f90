@@ -1,25 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozReal001.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : REAL intrinsic
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                :Parameter A in the REAL intrinsic      
-!*                              is a boz-literal-constant and KIND     
+!*  DESCRIPTION                :Parameter A in the REAL intrinsic
+!*                              is a boz-literal-constant and KIND
 !*                          	is not present, the kind type parameter
-!*				is that of default real type.          
+!*				is that of default real type.
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -60,7 +49,7 @@ program bozReal001
     !Test Kind Value
     if (KIND(REAL(B"111111100111100000011001000010")) /= 4) &
     error stop 10_4
- 
+
     if (KIND(REAL(O"10432657462")) /= 4) error stop 11_4
     if (KIND(REAL(Z"4A02F53B")) /= 4) error stop 12_4
 

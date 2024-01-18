@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr2
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 22, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  -- the asynchronous attribute 
-!* 
+!*  -- the asynchronous attribute
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,8 +43,8 @@
   TYPE(DT1(2,2)), ALLOCATABLE, ASYNCHRONOUS :: P2(:)
   TYPE(DT1(1,1,K1=2,L1=2)), ALLOCATABLE, ASYNCHRONOUS :: P3(:)
 
-  TYPE(DT0), ASYNCHRONOUS          :: T1(107) 
-  TYPE(DT1(2,2)), ASYNCHRONOUS     :: T2(107) 
+  TYPE(DT0), ASYNCHRONOUS          :: T1(107)
+  TYPE(DT1(2,2)), ASYNCHRONOUS     :: T2(107)
   TYPE(DT1(1,1,2,2)), ASYNCHRONOUS :: T3(107)
 
   CONTAINS
@@ -105,14 +96,14 @@
   P1 = T1
   P2 = T2
   P3 = T3
-     
+
   END SUBROUTINE
 
   END MODULE
 
   PROGRAM dtpObjDecAttr2
   USE M
-  
+
   CALL Assgn()
   CALL Check()
 

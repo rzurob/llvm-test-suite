@@ -1,41 +1,33 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryDTIntrinsic10.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryDTIntrinsic10.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 9 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
 !* 3. USE EXTENDS
-!* 4. COMPONENT IS ARRAY 
+!* 4. COMPONENT IS ARRAY
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
-   type first 
+   type first
       integer(2) ,dimension(3):: i=0
       character(:),allocatable :: c1(:)
    end type first
-   type,extends(first) :: second 
+   type,extends(first) :: second
       character(:),pointer :: c2(:) => null()
    end type
-   type,extends(second) :: third 
+   type,extends(second) :: third
       real,dimension(4) :: r=0.0
    end type
 
@@ -47,17 +39,17 @@ program typeParamInquiryDTIntrinsic10
 
   character(len("3rd")),target :: t3="3rd"
   character(len("2nd")),target :: t2="2nd"
-  class(first),pointer :: p 
-  integer  :: j 
+  class(first),pointer :: p
+  integer  :: j
 
   type(first),target   :: dt1
   type(second),target  :: dt2
-  type(third),target   :: dt3 
-  
-  p=>dt3 
+  type(third),target   :: dt3
+
+  p=>dt3
 
   call sub(p)
-  
+
   if(any(dt3%i  /= (/(j,j=1,size(dt3%i))/) ))           error stop 10_4
   if(dt3%i%kind /= kind(dt3%i) .or. dt3%i%kind /=2 )    error stop 11_4
   if(any(dt3%c1 /= "third" ) )   error stop 12_4
@@ -84,7 +76,7 @@ program typeParamInquiryDTIntrinsic10
   p=>dt1
 
   call sub(p)
-  
+
   if(any(dt1%i  /= (/(2*j,j=1,size(dt1%i))/) ))         error stop 27_4
   if(dt1%i%kind /= kind(dt1%i) .or. dt1%i%kind /= 2)    error stop 28_4
   if(any(dt1%c1 /= "first"))                            error stop 29_4
@@ -108,8 +100,8 @@ program typeParamInquiryDTIntrinsic10
               dt%i=[2,4,6]
               allocate(dt%c1(2:4),source="first")
            class default
-              print *,"should not come here" 
-        end select 
+              print *,"should not come here"
+        end select
 
-     end subroutine 
+     end subroutine
 end

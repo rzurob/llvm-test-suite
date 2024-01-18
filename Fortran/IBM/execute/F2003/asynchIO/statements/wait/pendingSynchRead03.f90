@@ -1,13 +1,7 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingSynchRead03 - Wait Operation
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 31, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Error Condition in one of Three Pending
 !*                               Unformatted Data Transfers
@@ -16,7 +10,6 @@
 !*                               report this Condition; if present, ERR=
 !*                               should also be handled correctly
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : READ(), ASYNCHRONOUS=, ID=, IOSTAT=, IOMSG=,
@@ -60,7 +53,6 @@
 !*      the unit. If an error, end-of-file, or end-of-record condition occurs
 !*      during any of the wait operations, steps 4 through 8 are skipped for
 !*      the current data transfer statement.
-!*
 !*
 !*  9.6.2 Wait operation
 !*

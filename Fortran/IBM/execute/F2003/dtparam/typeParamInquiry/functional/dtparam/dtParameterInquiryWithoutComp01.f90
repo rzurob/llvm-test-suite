@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryWithoutComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryWithoutComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 23 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. DIFFERENT DERIVED TYPE PARAMETER
-!* 4. WITHOUT COMPONENT 
+!* 4. WITHOUT COMPONENT
 !* 5. DEFECT 353191
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -39,23 +31,23 @@ module m
 
 end module
 
-  program dtParameterInquiryWithoutComp01 
+  program dtParameterInquiryWithoutComp01
   use m
   implicit none
 
   integer,parameter   :: i1=2,i2=4
   character(len=*),parameter :: c1="xlftest"
-   
+
   type( t(1,2,10,20) )         :: t1
   type( t(1_2,2_8,10_2,20_4) ) :: t2
   type( t(i1,i2,i1+i2,max(i1,i2)) ) :: t3
   type( t(selected_int_kind(10_8),kind(1_''),len(''),c1%len) ) :: t4
   type( t(k1=4,k2=8,l2=10_4,l1=i1*i2) )  :: t5
-  type( t(int(0.000),2,-1,30) )  :: t6  
+  type( t(int(0.000),2,-1,30) )  :: t6
   type( t(0,0,0,0) )              :: t7
-  type( t(1,2,-1,-2) )          :: t8  
+  type( t(1,2,-1,-2) )          :: t8
   type( t(int(1.0),ichar('0'),int((3.0,4.0)),int(3.0/4.0)) )       :: t9
- 
+
   if(t1%k1 /=1 .or. t1%k2 /=2 .or. t1%l1 /=10 .or. t1%l2 /=20) error stop 10_4
   if(t2%k1 /=1 .or. t2%k2 /=2 .or. t2%l1 /=10 .or. t2%l2 /=20) error stop 11_4
   if(t3%k1 /=2 .or. t3%k2 /=4 .or. t3%l1 /= 6 .or. t3%l2 /= 4) error stop 12_4
@@ -69,13 +61,13 @@ end module
 
   if(t1%k1%kind /= kind(t1%k1)  .or. t1%k1%kind /=4 ) error stop 19_4
   if(t1%k2%kind /= kind(t1%k2)  .or. t1%k2%kind /=2 ) error stop 20_4
-  if(t1%l1%kind /= kind(t1%l1)  .or. t1%l1%kind /=4 ) error stop 21_4 
-  if(t1%l2%kind /= kind(t1%l2)  .or. t1%l2%kind /=8 ) error stop 22_4     
+  if(t1%l1%kind /= kind(t1%l1)  .or. t1%l1%kind /=4 ) error stop 21_4
+  if(t1%l2%kind /= kind(t1%l2)  .or. t1%l2%kind /=8 ) error stop 22_4
 
   if(t2%k1%kind /= kind(t2%k1)  .or. t2%k1%kind /=4 ) error stop 23_4
   if(t2%k2%kind /= kind(t2%k2)  .or. t2%k2%kind /=2 ) error stop 24_4
   if(t2%l1%kind /= kind(t2%l1)  .or. t2%l1%kind /=4 ) error stop 25_4
-  if(t2%l2%kind /= kind(t2%l2)  .or. t2%l2%kind /=8 ) error stop 26_4  
+  if(t2%l2%kind /= kind(t2%l2)  .or. t2%l2%kind /=8 ) error stop 26_4
 
   if(t3%k1%kind /= kind(t3%k1)  .or. t3%k1%kind /=4 ) error stop 27_4
   if(t3%k2%kind /= kind(t3%k2)  .or. t3%k2%kind /=2 ) error stop 28_4

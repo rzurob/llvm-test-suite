@@ -12,22 +12,14 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : March 14, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_REM(X,Y)= X-Y*N
-!*                               different rounding types of N 
+!*                               different rounding types of N
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -35,9 +27,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Function Result = X - Y * N
-!*                               N is a rounding of n 
+!*                               N is a rounding of n
 !*                               where n = X / Y
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -202,7 +193,7 @@
 !       Test real*4 /real*8  for n = 0.7, N = 1
 
         call ieee_set_flag(ieee_all,.false.)
-        
+
         x4 = 7.0
         y4 = 10.0
         x8 = 7.0_8
@@ -364,7 +355,7 @@
 
         if (z4 /= -21.0 ) error stop 43
         if (z8 /= -21.0_8 ) error stop 44
- 
+
 !       Test real*4 /real*8   for n = 4.5 , N = 4
 
         call ieee_set_flag(ieee_all,.false.)
@@ -384,7 +375,7 @@
 
         if (z4 /=  5.0 ) error stop 46
         if (z8 /=  5.0_8 ) error stop 47
- 
+
 !       Test real*4 /real*8   for n = -4.5 , N = -4
 
         call ieee_set_flag(ieee_all,.false.)
@@ -449,6 +440,6 @@
 
         if (z4 /= -5.0 ) error stop 55
         if (z8 /=  -5.0_8 ) error stop 56
-		     
+
         end program
 

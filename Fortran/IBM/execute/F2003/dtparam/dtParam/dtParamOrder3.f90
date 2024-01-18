@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamOrder3   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamOrder3
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 23, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +19,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  
-!*  The type parameter order of an extended type consists of the type parameter order of 
-!*  its parent type followed by any additional type parameters in the order of the type 
-!*  parameter list in the derived-type definition. 
-!*  
+!*  The type parameter order of an extended type consists of the type parameter order of
+!*  its parent type followed by any additional type parameters in the order of the type
+!*  parameter list in the derived-type definition.
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamOrder3 
+  PROGRAM dtParamOrder3
   IMPLICIT NONE
 
 

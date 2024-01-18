@@ -19,5 +19,5 @@ program main
       print *, x%j
     type is (t1)
       print *, "type is t1"
-  end select 
+  end select
 end program

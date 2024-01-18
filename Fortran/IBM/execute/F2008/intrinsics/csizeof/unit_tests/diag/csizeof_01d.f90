@@ -1,7 +1,7 @@
       program t
       use, intrinsic :: iso_c_binding
       implicit none
-      
+
       integer rt
 
       byte y
@@ -10,13 +10,12 @@
       logical(4) logc4
       logical(8) logc8
       logical    logc
-      
-      real :: arrx(20, 20)
 
+      real :: arrx(20, 20)
 
       rt = c_sizeof(ch(1:2)) ! Illegal.  Substring is not C interoperable
       rt = c_sizeof(y)       ! Illegal.  Byte is not C interoperable
-      
+
       rt = c_sizeof(.true.)  ! Illegal.  Only logical(1) is C interoperable
       rt = c_sizeof(logc2)   ! Illegal.  Logical(2) is not C interoperable
       rt = c_sizeof(logc4)   ! Illegal.  Logical(4) is not C interoperable
@@ -35,8 +34,8 @@
       rt = c_sizeof(arr0)        ! Illegal.  Assumed-shape array
       rt = c_sizeof(4+arr0)      ! allowed
       rt = c_sizeof(arr0*kind(4))! allowed
-      end subroutine 
-      
+      end subroutine
+
       subroutine sub1(arr1, i, j) ! Assumed-size arrays
       use, intrinsic :: iso_c_binding
       implicit none
@@ -45,7 +44,7 @@
       integer i, j
       rt = c_sizeof(arr1)        ! Illegal.  Assumed-sized array
 
-      end subroutine 
+      end subroutine
 
       subroutine sub2() ! Deferred-shape arrays
       use, intrinsic :: iso_c_binding
@@ -63,8 +62,8 @@
 
       rt = c_sizeof(4+arr2_1)       ! allowed
       rt = c_sizeof(arr2_1*kind(4)) ! allowed
-      
-      end subroutine 
+
+      end subroutine
 
       subroutine sub3(arr3_1, arr3_2, n) ! character type with len!=1
       use, intrinsic :: iso_c_binding
@@ -80,12 +79,12 @@
         character(n) arr3_3
 
         i = 2 ; j =5
-        rt = c_sizeof("ab")      ! Illegal.  Char len > 1 
+        rt = c_sizeof("ab")      ! Illegal.  Char len > 1
         rt = c_sizeof(str1)      ! Illegal str1 has len=10
-        rt = c_sizeof(str1(1:2)) ! Illegal 
-        rt = c_sizeof(str1(3:1))  
-        rt = c_sizeof(str3)       
-        rt = c_sizeof(str3(1:2))  
+        rt = c_sizeof(str1(1:2)) ! Illegal
+        rt = c_sizeof(str1(3:1))
+        rt = c_sizeof(str3)
+        rt = c_sizeof(str3(1:2))
 
         rt = c_sizeof(str1(j:j))
         rt = c_sizeof(str1(i:j))
@@ -102,7 +101,6 @@
         rt = c_sizeof(arr3_2)
         rt = c_sizeof(arr3_3)
       end subroutine
-
 
       subroutine sub4() ! expression and function reference
       use, intrinsic :: iso_c_binding
@@ -133,7 +131,7 @@
         rt = c_sizeof(2*func2()) ! allowed
         rt = c_sizeof(func2()-3) ! allowed
         rt = c_sizeof(func2())
-        
+
         rt = c_sizeof(logc1 .and. logc2)
         rt = c_sizeof(logc2 .and. logc4)
         rt = c_sizeof(logc4 .and. logc8)
@@ -164,7 +162,7 @@
         rt = c_sizeof(pcharr)
         rt = c_sizeof(prarr)
         rt = c_sizeof(pdt)
-      end subroutine 
+      end subroutine
 
       subroutine sub7() !zero-size
         use, intrinsic :: iso_c_binding
@@ -176,4 +174,4 @@
         rt = c_sizeof(zero_size1)
         rt = c_sizeof(zero_size2)
         rt = c_sizeof(zero_size3)
-      end 
+      end

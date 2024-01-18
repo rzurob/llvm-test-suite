@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgSize6
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : SIZE 
+!*  SECONDARY FUNCTIONS TESTED : SIZE
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Entities of different types for ARRAY 
-!*    
-!*  () 
+!*  Entities of different types for ARRAY
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -49,7 +41,7 @@
   ALLOCATE(MM4(127,129) ,SOURCE=.FALSE._4)
   ALLOCATE(MM8(127,129) ,SOURCE=.FALSE._8)
 
- 
+
 
   ASSOCIATE (T1=>MM1, T2=>MM2, T4=>MM4, T8=>MM8)
   SELECT TYPE(M1=>T1)
@@ -60,7 +52,7 @@
   TYPE IS (LOGICAL(4))
   SELECT TYPE(M8=>T8)
   TYPE IS (LOGICAL(8))
- 
+
   DO I = 1, 127
     IF (     SIZE(M1(I,:I),   KIND=M1%KIND )            .NE. I)         STOP 10
     IF (KIND(SIZE(M1(I,:I),   KIND=M1%KIND ))           .NE. M1%KIND)   STOP 11
@@ -116,16 +108,16 @@
 
   CLASS DEFAULT
     STOP 92
-  END SELECT 
+  END SELECT
   CLASS DEFAULT
     STOP 92
-  END SELECT 
+  END SELECT
   CLASS DEFAULT
     STOP 93
-  END SELECT 
+  END SELECT
   CLASS DEFAULT
     STOP 94
-  END SELECT 
+  END SELECT
 
   END ASSOCIATE
 

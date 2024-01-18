@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: AssocNameAsOther2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: AssocNameAsOther2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : AssocNameAsOther2 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : AssocNameAsOther2
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 28, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The associate construct name is the same as external entity's name 
-!*    
+!*    The associate construct name is the same as external entity's name
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,20 +38,20 @@
   PROGRAM AssocNameAsOther2
 
   INTEGER(8), EXTERNAL :: Ext
- 
+
 
   ASSOCIATE ( Ext => Ext(1)  )
     IF ( Ext .NE. 1_8 ) Stop 11
-  END ASSOCIATE 
+  END ASSOCIATE
   IF ( Ext(1) .NE. 1_8 ) Stop 12
 
   CALL Sub(Ext)
- 
+
   CONTAINS
-  
+
   SUBROUTINE Sub(Arg)
   PROCEDURE(INTEGER(8)) :: Arg
-  
+
     ASSOCIATE ( Arg => Arg(1) )
       IF ( Arg .NE. 1_8 ) Stop 13
     END ASSOCIATE
@@ -72,4 +65,4 @@
     Ext = Arg
   END FUNCTION
 
- 
+

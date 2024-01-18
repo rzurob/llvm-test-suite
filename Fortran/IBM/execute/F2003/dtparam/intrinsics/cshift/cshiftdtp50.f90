@@ -1,22 +1,10 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case IBM INTERNAL USE ONLY
-!* ===================================================================
-!* ===================================================================
-!*
-!* TEST CASE TITLE : Test for DTP with CSHAPE
 !*
 !* TEST CASE NAME : cshiftdtp50.f
 !*
-!* PROGRAMMER : Andy Sheung
 !* DATE : Jul31, 2008
-!* ORIGIN : AIX Compiler Development, Toronto Lab
 !*
 !* DESCRIPTION:
 !* CSHIFT performs a circular shift on an array expression of rank one or perform circular

@@ -1,23 +1,15 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 12/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : VOLATILE with SAVE attribute 
-!*                                
+!*  PRIMARY FUNCTIONS TESTED   : VOLATILE with SAVE attribute
 !*
-!*  DESCRIPTION                :  
-!*            functional test VOLATILE compatible with SAVE attribute 
+!*  DESCRIPTION                :
+!*            functional test VOLATILE compatible with SAVE attribute
 !* ===================================================================
 
    module m
-      type dt 
+      type dt
          integer x
       end type
 
@@ -25,12 +17,12 @@
 
       function func(y)
         type(dt), intent(in) :: y
-        type(dt), pointer :: func 
+        type(dt), pointer :: func
 
         type(dt), target, SAVE, VOLATILE::tmp
 
         tmp%x = y%x
-    
+
         func=>tmp
       end function
    end module

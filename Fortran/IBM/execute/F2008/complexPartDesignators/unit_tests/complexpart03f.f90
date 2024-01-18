@@ -1,17 +1,9 @@
 !* ===================================================================
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE            : complexpart03f.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : June 24, 2010
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Complex part designator
-!*
-!* DRIVER STANZA              : xlf2008
 !*
 !* DESCRIPTION                : Testing proper functionality of
 !*                              scalar complex part designators
@@ -19,7 +11,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       program complexpart03f
-      
+
       complex, parameter :: cp = (1.0,2.0)
 
       complex     :: c
@@ -62,7 +54,7 @@
       ra = c%re
       rb = c%im
       print *, "3:  ", ra, rb
- 
+
       c%re = 7.0
       c%im = 8.0
       associate ( y => c%im, x => c%re )
@@ -154,7 +146,7 @@
 
       tc%re = 34.0
       tc%im = 35.0
-      call sub1(24, tc%re, tc%im) 
+      call sub1(24, tc%re, tc%im)
 
       tc%re = 36.0
       tc%im = 37.0

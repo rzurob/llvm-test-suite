@@ -1,31 +1,22 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE     : C Interop: Assumed-length Character arguments
-!*
-!*
-!*
-!*  PROGRAMMER          : Umme Hunny
 !*  DATE                : June, 1, 2014
-!*  ORIGIN              : AIX Compiler Development, Toronto Lab
 !*  FEATURE             : RTC Master Story:
 !*                        C Interop: Assumed-length Character arguments
 !*                        (master story) (72333)
 !*
-!*  FEATURE             : C Interop: Assumed-length Character arguments 
+!*  FEATURE             : C Interop: Assumed-length Character arguments
 !* ===================================================================
-!23456789012345678901234567890123456789012345678901234567890123456789012     
-      
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
       program assumed_lenght001
 
         interface
           subroutine check_f_to_c(c_arg1, c_len, test_no) bind(c)
-            use, intrinsic :: iso_c_binding 
+            use, intrinsic :: iso_c_binding
             character(*), DIMENSION(*) :: c_arg1
-            integer(C_INT) c_len, test_no 
+            integer(C_INT) c_len, test_no
           end subroutine
         end interface
 
@@ -63,7 +54,7 @@
         type(EXT_TYPE) :: ext_vtest
 
         CHARACTER(6), DIMENSION(1) :: v_char20 /'TWENTY'/
- 
+
         CHARACTER(11), EXTERNAL :: func1
         CHARACTER(11), EXTERNAL :: func2
         CHARACTER(10), INTRINSIC :: TRIM
@@ -77,10 +68,10 @@
         v_char14 = "FOURTEEN"
         v_char15 => v_char18
 
- 
-        ! F2C      
-        print *, "F2C" 
-        
+
+        ! F2C
+        print *, "F2C"
+
         !a) Character variables with different attributes
 
         !"
@@ -98,17 +89,17 @@
         call check_f_to_c(v_char12, LEN(v_char12), 12)
         call check_f_to_c(v_char13, LEN(v_char13), 13)
         call check_f_to_c(v_char14, LEN(v_char14), 14)
-        call check_f_to_c(v_char15, LEN(v_char15), 15) 
+        call check_f_to_c(v_char15, LEN(v_char15), 15)
         call check_f_to_c(v_char16, LEN(v_char16), 16)
         call check_f_to_c(v_char17, LEN(v_char17), 17)
         call check_f_to_c(v_char18, LEN(v_char18), 18)
-        call check_f_to_c(v_char19, LEN(v_char19), 19) 
-       
-        !b) Scalar component of a derived type 
-       
+        call check_f_to_c(v_char19, LEN(v_char19), 19)
+
+        !b) Scalar component of a derived type
+
         call check_f_to_c(base_vtest%v_char_base, LEN(base_vtest%v_char_base), 21)
-        call check_f_to_c(ext_vtest%v_char_ext_type, LEN(ext_vtest%v_char_ext_type), 22) 
-        call check_f_to_c(ext_vtest%v_char_ext_type//base_vtest%v_char_base, LEN(ext_vtest%v_char_ext_type//base_vtest%v_char_base), 31)       
+        call check_f_to_c(ext_vtest%v_char_ext_type, LEN(ext_vtest%v_char_ext_type), 22)
+        call check_f_to_c(ext_vtest%v_char_ext_type//base_vtest%v_char_base, LEN(ext_vtest%v_char_ext_type//base_vtest%v_char_base), 31)
 
         !c) Scalar array element
 
@@ -117,18 +108,18 @@
         call check_f_to_c(v_char20(1)//v_char20(1), LEN(v_char20(1)//v_char20(1)), 30)
 
         !d) Function return value
-        
-        call check_f_to_c(func3(), LEN(func3()), 23)        
+
+        call check_f_to_c(func3(), LEN(func3()), 23)
         call check_f_to_c(func1(), LEN(func1()), 24)
         call check_f_to_c(func2("TWENTY_FIVE"), LEN(func2("TWENTY_FIVE")), 25)
         call check_f_to_c(TRIM(v_char12), LEN(TRIM(v_char12)), 26)  !ICE
 
-        call check_f_to_c(TRIM(v_char12//"__"), LEN(TRIM(v_char12//"__")), 27)        
+        call check_f_to_c(TRIM(v_char12//"__"), LEN(TRIM(v_char12//"__")), 27)
 
         !e) Expressions with character variables
-        
+
         call check_f_to_c(v_char12//v_char12, LEN(v_char12//v_char12), 28)
-  
+
       contains
        FUNCTION func3() RESULT (v_char)
           character(7) v_char
@@ -155,4 +146,4 @@
 
 
 
-       
+

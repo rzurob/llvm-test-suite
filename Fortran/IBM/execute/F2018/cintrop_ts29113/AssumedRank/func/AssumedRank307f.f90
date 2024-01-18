@@ -1,26 +1,19 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank307f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : October 27, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
-!* REQUIRED COMPILER OPTIONS    : 
+!* REQUIRED COMPILER OPTIONS    :
 !*                               (use -D_DEBUG for a debug version)
 !*
-!* DESCRIPTION                  : Calling a BIND(C) procedure defined in C from Fortran 
+!* DESCRIPTION                  : Calling a BIND(C) procedure defined in C from Fortran
 !*                                - array is rank 0, 1, 2, 15
 !*                                - allocatable
-!*                                - intent(out) 
+!*                                - intent(out)
 !*                                - type c_long
 !*
 !* When a C function is invoked from a Fortran procedure via an interface with an INTENT(OUT) allocatable
@@ -49,15 +42,15 @@ interface
     end
 end interface
 
-integer        :: st, i, j, k 
+integer        :: st, i, j, k
 character(200) :: msg
 integer(c_long), allocatable :: a0
 integer(c_long), allocatable :: a1(:), a2(:,:), a3(:,:,:)
 integer(c_long), allocatable :: a15(:,:,:,:,:,:,:,:,:,:,:,:,:,:,:)
 
-     
-! Allocate all the allocatable arrays 
-! 
+
+! Allocate all the allocatable arrays
+!
 a0 = -1
 
 allocate(a1(10), stat=st, errmsg=msg)
@@ -128,7 +121,7 @@ call c_check(a2)
 call c_check(a3)
 call c_check(a15)
 
-! Verify again 
+! Verify again
 if(  allocated(a0) ) ERROR STOP 110
 if(  allocated(a1) ) ERROR STOP 120
 if(  allocated(a2) ) ERROR STOP 130

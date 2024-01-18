@@ -1,17 +1,13 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a016.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
-!*  Assign a non-coarray variable to a Derived Type coarray allocatable component 
+!*  Assign a non-coarray variable to a Derived Type coarray allocatable component
 !*  and vice versa
 !*
 !* ============================================================================
@@ -31,7 +27,7 @@ end module
 program main
 	use modOTT
 	implicit none
-	
+
 	call sub0()
 
 contains
@@ -66,7 +62,7 @@ contains
 		CAF%i2(3:) = iatmp4(3:4)
 		CAF%i4 = v4
 		CAF%i8 = reshape(iatmp8, [2,2])
-		
+
 
 		if ( CAF%i1 /= mid1) then
 			print *, "actual", CAF%i1
@@ -138,7 +134,7 @@ contains
 		deallocate(CAF%i2)
 		deallocate(CAF%i4)
 		deallocate(CAF%i8)
-		
+
 	end subroutine
 
 end

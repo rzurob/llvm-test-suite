@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitComp6 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitComp6
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Default initialization for component 
+!*  SECONDARY FUNCTIONS TESTED : Default initialization for component
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  ZERO sized array 
-!*  
+!*  ZERO sized array
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM dtParamInitComp6 
+  PROGRAM dtParamInitComp6
 
   TYPE :: DT(K, L)
     INTEGER(1), KIND :: K=4
@@ -51,7 +43,7 @@
   TYPE(DT)  :: T(3:4, 1:0)
   TYPE(DT(L=1,K=8))  :: T1(3:4, 1:0)
 
- 
+
   IF ( T%K         .NE. 4 )                STOP 11
   IF ( T%L         .NE. 1 )                STOP 12
 

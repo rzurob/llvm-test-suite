@@ -1,28 +1,18 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : execute_command_line17f.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-12-14
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : EXECUTE_COMMAND_LINE intrinsic
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED :  
-!*                                
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*
 !*  EXECUTE_COMMAND_LINE(COMMAND [, WAIT, EXITSTAT, CMDSTAT, CMDMSG ])
 !*
-!*  run EXECUTE_COMMAND_LINE and SYSTEM with the echo command and verify they have the same behavior. 
-!*  run "date" command and verify they have the same behavior. 
+!*  run EXECUTE_COMMAND_LINE and SYSTEM with the echo command and verify they have the same behavior.
+!*  run "date" command and verify they have the same behavior.
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

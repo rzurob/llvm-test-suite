@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecDT5
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 19, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  The basic syatax  
+!*  The basic syatax
 !*  Allocation of a dummy argument with the length parameter being *
-!*  
-!*  (340741) 
+!*
+!*  (340741)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -51,15 +44,15 @@
     REAL(K), PRIVATE     :: R=K
   END TYPE
 
-  CLASS(DT(8_8, L=1)), POINTER       :: T3(:) 
-  CLASS(DT(8_8, L=1)), ALLOCATABLE   :: T4(:) 
+  CLASS(DT(8_8, L=1)), POINTER       :: T3(:)
+  CLASS(DT(8_8, L=1)), ALLOCATABLE   :: T4(:)
 
   CONTAINS
 
   SUBROUTINE Check0(T3, T4)
   CLASS(DT(8_8, L=*, LEN=*)),         POINTER      :: T3(:)
   CLASS(DT(8_8, KIND=8, L=*, LEN=*)), ALLOCATABLE  :: T4(:)
- 
+
   ALLOCATE( DT(8_8, L=*, LEN=*) :: T3(10) )
 
   SELECT TYPE ( T3 )
@@ -112,7 +105,7 @@
   END TYPE
 
   END MODULE
- 
+
   PROGRAM dtParamTypeDecDT5
   USE M
   USE M1

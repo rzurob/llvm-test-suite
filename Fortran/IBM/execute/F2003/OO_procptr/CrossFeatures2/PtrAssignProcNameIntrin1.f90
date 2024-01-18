@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ExtAssignProcNameIntrin1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: ExtAssignProcNameIntrin1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : ExtAssignProcNameIntrin1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : ExtAssignProcNameIntrin1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 13, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,13 +30,13 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  C727 (R742) A procedure-name shall be the name of an external, module,
 !*  or dummy procedure, a specific intrinsic function listed in 13.6
 !*  and not marked with a bullet (.), or a procedure pointer.
-!* 
-!*  Intrinsincs 
-!*  () 
+!*
+!*  Intrinsincs
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -146,7 +140,7 @@
 
   IF (ABS(ExtCSIN((1.0,1.0)) - (1.298457623,0.6349639297)) .GT. .00001 ) STOP 19
 
-  IF (ABS(ExtCSQRT((1.0,1.0)) - (1.098684072,0.4550898671)) .GT. .00001 ) STOP 20 
+  IF (ABS(ExtCSQRT((1.0,1.0)) - (1.098684072,0.4550898671)) .GT. .00001 ) STOP 20
 
   END
 

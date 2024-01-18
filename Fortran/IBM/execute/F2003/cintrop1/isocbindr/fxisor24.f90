@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_BOOL
@@ -110,7 +96,7 @@ logical(C_BOOL) function fnt1(a)
    use ISO_C_BINDING
 
    logical(C_BOOL) :: a
-   
+
    if ( a .neqv. .true. ) error stop 28
 
    a = .false.
@@ -122,7 +108,7 @@ logical(C_BOOL) function fnt2(a)
    use ISO_C_BINDING
 
    logical(C_BOOL), value :: a
-   
+
    if ( a .neqv. .true. ) error stop 30
 
    a = .false.
@@ -134,7 +120,7 @@ logical(C_BOOL) function fnt3(a)
    use ISO_C_BINDING
 
    logical(C_BOOL), intent(in) :: a
-   
+
    if ( a .neqv. .true. ) error stop 32
 
    fnt3 = .false.
@@ -144,7 +130,7 @@ logical(C_BOOL) function fnt4(a)
    use ISO_C_BINDING
 
    logical(C_BOOL), intent(in), value :: a
-   
+
    if ( a .neqv. .true. ) error stop 34
 
    fnt4 = .false.

@@ -13,15 +13,10 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxpure12a
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Mike Schouten
 !*  DATE                       : Mar 16, 1995
 !*  ORIGIN                     : PPS Languages, Kingston, NY
 !*
@@ -55,7 +50,6 @@
 !*  ASSUMPTIONS                : None
 !*
 !*  CONDITIONS TESTED          :
-!*
 !*
 !* ===================================================================
 !*
@@ -105,9 +99,9 @@
 
 ! This test seems too simple.  I would rather it made a difference that
 ! the subroutine is declared pure.
-      
+
       call pusort (r1)
-      
+
       do i = 1, 46, 5
         write(6, 10000) 1, r1 (i), r1 (i+1), r1 (i+2), r1 (i+3), r1 (i+4)
       end do
@@ -115,7 +109,7 @@
 ! Test #2:  Cyclic distribution
 
       call pusort (r2)
-      
+
       do i = 1, 46, 5
         write(6, 10000) 2, r2 (i), r2 (i+1), r2 (i+2), r2 (i+3), r2 (i+4)
       end do

@@ -12,21 +12,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenameonlys002.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : rename a public operator unary with access via one only
 !*
@@ -34,11 +27,11 @@
 module opmod
 
   public :: operator(.realed.)
-  
+
   interface operator(.realed.)
     module procedure sqreal
   end interface
-  
+
   interface operator(.halved.)
     module procedure cut
   end interface
@@ -62,8 +55,8 @@ program main
  use opmod , only: operator(.half.) => operator(.halved.)
  use opmod , only: operator(.square.) => operator(.realed.)
   real :: a=1.0,b=2.0,c
-  
+
   c=.square.b
   print *,c
-  
+
 end program

@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryIntrinsicAssum01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryIntrinsicAssum01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 8 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 8 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
 !* 3. DUMMY ARGUMENT HAS ASSUMED LENGTH AND HAS INTENT(IN) ATTRIBUTE
 !* 4. DEFECT 352994,354606,354812
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -32,13 +24,13 @@ module m
    character(:),pointer :: c(:)
    character(:),allocatable :: d(:)
    character(len=7),target :: e="xlftest"
-   character(len=*),parameter :: f(3)=['abcd','efgh','ijkl'] 
+   character(len=*),parameter :: f(3)=['abcd','efgh','ijkl']
 end module
 program typeParamInquiryIntrinsicAssum01
     use m
     implicit none
 
-    allocate(a,source="xlf"//"test") 
+    allocate(a,source="xlf"//"test")
     b="xlf"//"test"
 
     call test1(a)
@@ -51,8 +43,8 @@ program typeParamInquiryIntrinsicAssum01
 
 
     allocate(c(size(f)),source=f)
-    d=c 
-    
+    d=c
+
     call test3(c)
     call test3(d)
 
@@ -63,13 +55,13 @@ program typeParamInquiryIntrinsicAssum01
     contains
 
       subroutine test1(arg)
-         character(*),intent(in) :: arg 
-         
-           if(arg%len /= len(arg) .or. arg%len /=7)          error stop 10_4 
+         character(*),intent(in) :: arg
+
+           if(arg%len /= len(arg) .or. arg%len /=7)          error stop 10_4
            if(arg%kind /= kind(arg) .or. arg%kind /=1)       error stop 11_4
            if(len(arg(1:3))    /=3)                          error stop 12_4
            if(arg /= "xlftest")                              error stop 13_4
-      end subroutine         
+      end subroutine
 
       subroutine test2(arg)
          character(*),intent(in) :: arg
@@ -100,8 +92,8 @@ program typeParamInquiryIntrinsicAssum01
           if(arg%kind /= kind(arg) .or. arg%kind /=1)        error stop 23_4
           if(ubound(arg,1) /= 3)                             error stop 24_4
           if(any(arg /= ['abc','efg']))                      error stop 25_4
- 
-     end subroutine      
+
+     end subroutine
 
 end
 

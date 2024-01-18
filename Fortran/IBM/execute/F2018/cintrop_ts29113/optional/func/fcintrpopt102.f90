@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt102.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -24,7 +17,7 @@
 !*   the actual argument is a disassociated POINTER or an unallocated ALLOCATABLE
 !*
 !* Dummy Argument:
-!*   dummy argument is not allocatable or pointer when -qxlf2008=checkpresence 
+!*   dummy argument is not allocatable or pointer when -qxlf2008=checkpresence
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -49,7 +42,7 @@ module testmod
    subroutine test1(arg1, arg2) bind(c)
       integer(c_long), optional, intent(in) :: arg1
       integer(c_long), optional :: arg2
-      
+
       if (present(arg1)) then
 	   error stop 10
       endif
@@ -97,7 +90,7 @@ program testprogram
 
   integer(c_long), pointer :: pi_a
   integer(c_long), allocatable :: ai_a
-  
+
   real(c_float), pointer :: pr_a
   real(c_float), allocatable :: ar_a
 
@@ -131,5 +124,5 @@ program testprogram
   call test3(arg2=at_a)
   call test3(pt_a, at_a)
   call test3(at_a, pt_a)
-  
+
 end program

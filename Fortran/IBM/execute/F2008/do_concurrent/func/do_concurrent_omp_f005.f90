@@ -1,18 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_omp_f005.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon
 !*  DATE                       : August 12, 2015
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT
 !*  SECONDARY FUNCTIONS TESTED : preserving value of private variables
 !*
-!*  DRIVER STANZA              : xlf2008_r 
 !*  REQUIRED COMPILER OPTIONS  : -qsmp
 !*
 !*  KEYWORD(S)                 : DO CONCURRENT, OMP PARALLEL, PRIVATE
@@ -30,7 +25,7 @@ PROGRAM main
       INTEGER, TARGET  :: tgt1, tgt2
       INTEGER, POINTER :: ptr => NULL()
 
-      !$OMP PARALLEL NUM_THREADS(Threads) PRIVATE(ptr) 
+      !$OMP PARALLEL NUM_THREADS(Threads) PRIVATE(ptr)
         DO CONCURRENT (I = 1:N)
           ptr => tgt1
         END DO
@@ -45,7 +40,7 @@ PROGRAM main
       IF ( ASSOCIATED(ptr) )  ERROR STOP 11
 
 
-      !$OMP PARALLEL NUM_THREADS(Threads) FIRSTPRIVATE(ptr) 
+      !$OMP PARALLEL NUM_THREADS(Threads) FIRSTPRIVATE(ptr)
         DO CONCURRENT (I = 1:N)
           DO CONCURRENT (J = 1:5)
             DO CONCURRENT (K = 1:5)

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrZeroSiz.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrZeroSiz
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 07, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a zero size  array 
+!*
+!*   The selector is a zero size  array
 !*    (ICE-297864)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -46,7 +40,7 @@
   MODULE M
 
     TYPE  :: Zero
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
     CONTAINS
@@ -63,13 +57,13 @@
     ELEMENTAL FUNCTION GetChildId(Arg)
     CLASS(Child), INTENT(IN) :: Arg
     INTEGER                  :: GetChildId
-      GetChildId = 2 
+      GetChildId = 2
     END FUNCTION
 
     ELEMENTAL FUNCTION GetBaseId(Arg)
     CLASS(Base), INTENT(IN)  :: Arg
     INTEGER                  :: GetBaseId
-      GetBaseId = 1 
+      GetBaseId = 1
     END FUNCTION
 
   END MODULE
@@ -120,4 +114,4 @@
   END SUBROUTINE
 
   END
-  
+

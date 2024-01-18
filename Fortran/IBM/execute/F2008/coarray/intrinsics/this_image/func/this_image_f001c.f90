@@ -1,30 +1,23 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : this_image_f001c.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : July 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This_image(caf, x) should always produce a result 
+!*  DESCRIPTION                : This_image(caf, x) should always produce a result
 !*                               greater than 1.
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program main
 	integer, allocatable :: lb(:), ub(:), arr(:)
 	real, save :: caf[*]
-	
+
 	allocate(arr(1))
 	arr = this_image(caf, 1)
 	if ( any(arr .lt. [1]) ) then
@@ -43,7 +36,7 @@ contains
 		complex, save :: caf2[2,0:1,-1:*]
 		integer, allocatable :: lb(:), ub(:)
 		integer :: imval, num
-		
+
 		num = 1
 		lb = lcobound(caf2)
 		ub = ucobound(caf2)
@@ -52,14 +45,14 @@ contains
 			print *, lb, ":", ub
 			error stop 12
 		end if
-		
+
 		do i = 1, size(lb)
 			imval = this_image(caf2, i)
 			if (imval < num) then
 				print *, imval, num, this_image()
 				error stop 13
 			end if
-			
+
 			num = num - 1
 		end do
 		sync all
@@ -77,5 +70,5 @@ subroutine sub1(caf)
 		error stop 14
 	end if
 	sync all
-	
+
 end subroutine

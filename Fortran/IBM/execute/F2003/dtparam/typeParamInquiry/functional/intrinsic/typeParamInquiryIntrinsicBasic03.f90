@@ -1,30 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryIntrinsicBasic03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryIntrinsicBasic03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 7 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
-!* 3. TYPE PARAMETER INQUIRY FOR  NAMED CONSTANT    
-!*  
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
+!* 3. TYPE PARAMETER INQUIRY FOR  NAMED CONSTANT
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -65,22 +56,22 @@ program typeParamInquiryIntrinsicBasic03
     if(i1%kind /= kind(i1) .or. i1%kind /= 2 .or. kind(i1) /= 2) stop 1
     if(i2%kind /= kind(i2) .or. i2%kind /= 4 .or. kind(i2) /= 4) stop 2
     if(i3%kind /= kind(i3) .or. i3%kind /= 1 .or. kind(i3) /= 1) stop 3
-     
+
     if(r1%kind /= kind(r1) .or. r1%kind /= 8 .or. kind(r1) /= 8) stop 4
     if(r2%kind /= kind(r2) .or. r2%kind /= 4 .or. kind(r2) /= 4) stop 5
     if(r3%kind /= kind(r3) .or. r3%kind /=16 .or. kind(r3) /=16) stop 6
 
-    if(l1%kind /= kind(l1) .or. l1%kind /= 2 .or. kind(l1) /= 2) stop 7 
-    if(l2%kind /= kind(l2) .or. l2%kind /= 4 .or. kind(l2) /= 4) stop 8 
+    if(l1%kind /= kind(l1) .or. l1%kind /= 2 .or. kind(l1) /= 2) stop 7
+    if(l2%kind /= kind(l2) .or. l2%kind /= 4 .or. kind(l2) /= 4) stop 8
     if(l3%kind /= kind(l3) .or. l3%kind /= 8 .or. kind(l3) /= 8) stop 9
- 
-    if(x1%kind /= kind(x1) .or. x1%kind /= 8 .or. kind(x1) /= 8) stop 10 
-    if(x2%kind /= kind(x2) .or. x2%kind /= 4 .or. kind(x2) /= 4) stop 11 
+
+    if(x1%kind /= kind(x1) .or. x1%kind /= 8 .or. kind(x1) /= 8) stop 10
+    if(x2%kind /= kind(x2) .or. x2%kind /= 4 .or. kind(x2) /= 4) stop 11
     if(l3%kind /= kind(l3) .or. l3%kind /= 8 .or. kind(l3) /= 8) stop 12
 
     if(x1%kind /= kind(x1) .or. x1%kind /= 8 .or. kind(x1) /= 8) stop 13
     if(x2%kind /= kind(x2) .or. x2%kind /= 4 .or. kind(x2) /= 4) stop 14
-    if(x3%kind /= kind(x3) .or. x3%kind /=16 .or. kind(x3) /=16) stop 15 
+    if(x3%kind /= kind(x3) .or. x3%kind /=16 .or. kind(x3) /=16) stop 15
 
     if(c1%kind /= kind(c1) .or. c1%kind /= 1 .or. kind(c1) /= 1) stop 16
     if(c2%kind /= kind(c2) .or. c2%kind /= 1 .or. kind(c2) /= 1) stop 17
@@ -88,7 +79,7 @@ program typeParamInquiryIntrinsicBasic03
     if(c4%kind /= kind(c4) .or. c4%kind /= 1 .or. kind(c4) /= 1) stop 19
     if(c5%kind /= kind(c5) .or. c5%kind /= 1 .or. kind(c5) /= 1) stop 20
 
-    if(c1%len  /= len(c1)  .or. c1%len  /= 0 .or. len(c1)  /= 0) stop 21 
+    if(c1%len  /= len(c1)  .or. c1%len  /= 0 .or. len(c1)  /= 0) stop 21
     if(c2%len  /= len(c2)  .or. c2%len  /= 2 .or. len(c2)  /= 2) stop 22
     if(c3%len  /= len(c3)  .or. c3%len  /= 1 .or. len(c3)  /= 1) stop 23
     if(c4%len  /= len(c4)  .or. c4%len  /= 1 .or. len(c4)  /= 1) stop 24
@@ -104,7 +95,7 @@ program typeParamInquiryIntrinsicBasic03
     if(c7%len  /= len(c7)  .or. c7%len  /= 0 .or. len(c7)  /= 0) stop 32
     if(c8%len  /= len(c8)  .or. c8%len  /= 0 .or. len(c8)  /= 0) stop 33
     if(c9%len  /= len(c9)  .or. c9%len  /= 2 .or. len(c9)  /= 2) stop 34
-    if(c10%len /= len(c10) .or. c10%len /= 1 .or. len(c10) /= 1) stop 35  
+    if(c10%len /= len(c10) .or. c10%len /= 1 .or. len(c10) /= 1) stop 35
 
 
 end

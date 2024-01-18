@@ -1,17 +1,11 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound_f005c.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : September 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
@@ -30,12 +24,12 @@ contains
 		integer, parameter :: n = 3
 		integer(2) :: arr1(n), arr2(n)
 		integer :: i
-		
+
 		do i = 1, n
 			arr1(i) = lcobound(coary, i, 2)
 			arr2(i) = ucobound(coary, i, 2)
 		end do
-		
+
 		if ( any(arr1 .ne. [7_2, 1_2, 0_2]) ) then
 			print *, arr1
 			error stop 13
@@ -45,19 +39,19 @@ contains
 			error stop 14
 		end if
 		sync all
-		
+
 		three =  1
 	end function
-	
-	
+
+
 	subroutine two(coary)
 		real(4) :: coary[3:4,3:4,3:4,*]
 		integer, parameter :: n = 4
 		integer(4) :: arr_lo(n), arr_hi(n)
-		
+
 		arr_lo = lcobound(KIND=4, COARRAY=coary)
 		arr_hi = ucobound(KIND=4, COARRAY=coary)
-		
+
 		if ( any(arr_lo .ne. [3_4, 3_4, 3_4, 1_4]) ) then
 			print *, arr_lo
 			error stop 17
@@ -68,7 +62,7 @@ contains
 		end if
 		sync all
 	end subroutine
-	
+
 end module
 
 
@@ -82,14 +76,14 @@ program main
 	integer(4), allocatable :: arr_lo(:), arr_hi(:)
 	integer :: x
 
-	
+
 !#### Three Arguments
 	allocate(arr1(n), arr2(n))
 	do i = 1, n
 		arr1(i) = lcobound(caf1, i, 1)
 		arr2(i) = ucobound(caf1, i, 1)
 	end do
-	
+
 	if ( any(arr1 .ne. [0_2, 1_2, 3_2, 1_2, 11_2]) ) then
 		print *, arr1
 		error stop 11
@@ -100,15 +94,15 @@ program main
 	end if
 	deallocate(arr1, arr2)
 	sync all
-	
+
 	x = three(caf1)
-	
+
 
 !#### Two Arguments
 	allocate(arr_lo(1), arr_hi(1))
 	arr_lo = lcobound(COARRAY=caf2, KIND=4)
 	arr_hi = ucobound(COARRAY=caf2, KIND=4)
-	
+
 	if ( any(arr_lo .ne. [-3_4]) ) then
 		print *, arr_lo
 		error stop 15
@@ -119,7 +113,7 @@ program main
 	end if
 	deallocate(arr_lo, arr_hi)
 	sync all
-	
+
 	call two(caf2)
-	
+
 end

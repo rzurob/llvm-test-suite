@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocCharComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocCharComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 3 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 3 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
@@ -25,7 +17,7 @@
 !*  3. CALL MOVE_ALLOC IN TYPE_BOUND PROCEDURE
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
-   type mytype 
+   type mytype
       contains
          procedure,nopass :: proc1=>sub1
          procedure,nopass :: proc2=>sub2
@@ -40,14 +32,14 @@ module m
       subroutine sub1(from,to)
          type(dtp(*)),allocatable       :: from
          type(dtp(from%l)),allocatable  :: to
-         
+
          call move_alloc(from,to)
-      end subroutine 
+      end subroutine
 
       subroutine sub2(from,to)
          type(dtp(*)),allocatable       :: from(:)
          type(dtp(from%l)),allocatable  :: to(:)
-        
+
          call move_alloc(from,to)
 
       end subroutine
@@ -67,20 +59,20 @@ program move_allocCharComp01
   type(dtp(7)),allocatable  :: from2(:)
   type(dtp(7)),allocatable  :: to2(:)
 
-  allocate(dtp(5) :: from1) 
+  allocate(dtp(5) :: from1)
   allocate(from1%c2(3),source=["IBM","XLF","XLC"])
   from1%c1=[character(7) :: "winter","summer","autumn","spring"]
 
-  if(any(from1%c1 /= ["winter","summer","autumn","spring"] )) error stop 14_4 
+  if(any(from1%c1 /= ["winter","summer","autumn","spring"] )) error stop 14_4
 
   allocate(from2(-4:-2))
   from2(-4)%c1 = ["a1","b2","c3"]
   from2(-3)%c1 = ["000","111","222"]
   from2(-2)%c1 = ["x","y","z"]
- 
-  do i=-4,-2 
-    allocate(from2(i)%c2(3),source=from2(i)%c1//":" ) 
-  end do          
+
+  do i=-4,-2
+    allocate(from2(i)%c2(3),source=from2(i)%c1//":" )
+  end do
 
   call mytype1%proc(from1,to1)
   if(allocated(from1))                             error stop 10_4
@@ -89,8 +81,8 @@ program move_allocCharComp01
   if(to1%c1%len /= 7)                              error stop 13_4
   if(any(to1%c1 /= ["winter","summer","autumn","spring"])) error stop 14_4
   if(any(to1%c2 /= ["IBM","XLF","XLC"]))           error stop 15_4
- 
-  call mytype1%proc(from2,to2)  
+
+  call mytype1%proc(from2,to2)
   if(allocated(from2))                             error stop 16_4
   if(.not. allocated(to2))                         error stop 17_4
   if(to2%l /= 7)                                   error stop 18_4

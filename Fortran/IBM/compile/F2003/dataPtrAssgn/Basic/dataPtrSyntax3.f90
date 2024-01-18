@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrSyntax3.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrSyntax3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : Syntax 
+!*  SECONDARY FUNCTIONS TESTED : Syntax
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -26,8 +20,8 @@
 !*  DESCRIPTION
 !*
 !*  Syntax checking:
-!* 
-!*  Target is proc/proc ptr 
+!*
+!*  Target is proc/proc ptr
 !*  Proc ptr with bound remapping
 !*  ()
 !*
@@ -40,17 +34,17 @@
   INTERFACE
     FUNCTION F()
       INTEGER, POINTER ::  F(:)
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
- 
-  INTEGER, POINTER :: Ptr1(:) 
+
+  INTEGER, POINTER :: Ptr1(:)
   PROCEDURE(F), POINTER :: ProcPtr
 
   Ptr1(1:) => F
   Ptr1(1:3) => F
 
-  Ptr1(1:) => ProcPtr 
-  Ptr1(1:3) => ProcPtr 
+  Ptr1(1:) => ProcPtr
+  Ptr1(1:3) => ProcPtr
 
   ProcPtr(1:) => F
   ProcPtr(1:3) => F

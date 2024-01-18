@@ -1,13 +1,9 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qnock -qnok -ql -qreuse=self -qdefaultpv -qdeferredlp /tstdev/OO_poly/intrinsics/eoshift/transfer003.f
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/eoshift
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/04/2005
 ! PRIMARY FUNCTIONS TESTED   : eoshift
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : ARRAY is function return of transfer.
 !                              Poly and unlimited poly.
 !=======================================================================

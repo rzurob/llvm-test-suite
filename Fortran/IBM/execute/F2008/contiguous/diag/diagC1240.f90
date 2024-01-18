@@ -1,24 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : diagC1240.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-11-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS Attribute   
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : - 
-!*                               - 
-!*  DRIVER STANZA              :
+!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS Attribute
+!*  SECONDARY FUNCTIONS TESTED : -
+!*                               -
 !*
-!*  DESCRIPTION                : - 
-!*                               - 
+!*  DESCRIPTION                : -
+!*                               -
 !*  C1240:
 !*   If an actual argument is an array pointer that has the ASYNCHRONOUS or VOLATILE
 !*   attribute but does not have the CONTIGUOUS attribute, and the corresponding dummy argument has
@@ -79,26 +70,26 @@ PROGRAM diagC1240
       REAL(8), POINTER, ASYNCHRONOUS :: pA(:,:,:)
       REAL(8), POINTER, ASYNCHRONOUS, CONTIGUOUS :: pcA(:,:,:)
 
-      CALL sub_volatile(pcV)                 !<--- valid 
-      CALL sub_volatile(pcV(:,:,:))          !<--- valid 
-      CALL sub_volatile(pcV(:,:,1:100))      !<--- valid 
-      CALL sub_volatile_ptr(pcV)             !<--- valid 
-      CALL sub_volatile_tgt(pcV)             !<--- valid 
+      CALL sub_volatile(pcV)                 !<--- valid
+      CALL sub_volatile(pcV(:,:,:))          !<--- valid
+      CALL sub_volatile(pcV(:,:,1:100))      !<--- valid
+      CALL sub_volatile_ptr(pcV)             !<--- valid
+      CALL sub_volatile_tgt(pcV)             !<--- valid
 
-      CALL sub_volatile(pV)                  !<--- invalid 
-      CALL sub_volatile_ptr(pV)              !<--- invalid 
-      CALL sub_volatile_tgt(pV)              !<--- invalid 
+      CALL sub_volatile(pV)                  !<--- invalid
+      CALL sub_volatile_ptr(pV)              !<--- invalid
+      CALL sub_volatile_tgt(pV)              !<--- invalid
 
 !*
- 
-      CALL sub_asyn(pcA)                     !<--- valid 
-      CALL sub_asyn(pcA(:,:,:))              !<--- valid 
-      CALL sub_asyn(pcA(:,:,:100))           !<--- valid 
-      CALL sub_asyn_ptr(pcA)                 !<--- valid 
-      CALL sub_asyn_tgt(pcA)                 !<--- valid 
- 
-      CALL sub_asyn(pA)                      !<--- invalid 
-      CALL sub_asyn_ptr(pA)                  !<--- invalid 
-      CALL sub_asyn_tgt(pA)                  !<--- invalid 
+
+      CALL sub_asyn(pcA)                     !<--- valid
+      CALL sub_asyn(pcA(:,:,:))              !<--- valid
+      CALL sub_asyn(pcA(:,:,:100))           !<--- valid
+      CALL sub_asyn_ptr(pcA)                 !<--- valid
+      CALL sub_asyn_tgt(pcA)                 !<--- valid
+
+      CALL sub_asyn(pA)                      !<--- invalid
+      CALL sub_asyn_ptr(pA)                  !<--- invalid
+      CALL sub_asyn_tgt(pA)                  !<--- invalid
 
 END PROGRAM diagC1240

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatAsynStream01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatAsynStream01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 21 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. test asynchronous READ & WRITE with stream access method
@@ -49,8 +41,8 @@ module m
              type is(dtp(4,*))
                  ! choose data to read
                  read(unit,'(tr2,i1,tr2,i1,tr2,i1,3l2,tr3,a4,tr4,a4,tr3,a3)', &
-                  pos=pos,asynchronous='yes',iostat=ios,iomsg=msg) this 
-                 
+                  pos=pos,asynchronous='yes',iostat=ios,iomsg=msg) this
+
                  if(ios /= 0 ) then
                    print *,"fail to read data"
                    print *,"iostat=",ios
@@ -60,9 +52,9 @@ module m
 
              class default
                 stop 15
-          end select 
-           
-       end subroutine 
+          end select
+
+       end subroutine
 
        subroutine writeData(this,unit)
           class(dtp(4,*)),intent(in)  :: this
@@ -70,13 +62,13 @@ module m
 
           integer :: ios,idvar(10)
           character(256) :: msg
-      
+
           select type(this)
             type is(dtp(4,*))
-               do i=1,10 
+               do i=1,10
                   ! write records
                   write(unit,'(3i3,3l2,3(a7,:,","))', &
-                   asynchronous='yes',id=idvar(i),iostat=ios,iomsg=msg) this 
+                   asynchronous='yes',id=idvar(i),iostat=ios,iomsg=msg) this
 
                   if(ios /= 0) then
                      print *,"fail to write the record"
@@ -84,12 +76,12 @@ module m
                      print *,"iomsg=",msg
                      stop 13
                   end if
-      
+
                end do
 
                do i=1,10
                   ! wait specified pending data to be completed
-                  wait(unit,id=idvar(i),iostat=ios,iomsg=msg) 
+                  wait(unit,id=idvar(i),iostat=ios,iomsg=msg)
                end do
 
                if(ios /=0 ) then
@@ -97,11 +89,11 @@ module m
                      print *,"iostat=",ios
                      print *,"iomsg=",msg
                      stop 14
-                  end if  
+                  end if
             class default
                stop 12
           end select
- 
+
        end subroutine
 
 end module
@@ -142,9 +134,9 @@ program formatAsynStream01
 
       ! write 10 records
       call dtp1%writeData(10)
-      
+
       rewind 10
- 
+
       do i=1,10
 
          ! read records one by one

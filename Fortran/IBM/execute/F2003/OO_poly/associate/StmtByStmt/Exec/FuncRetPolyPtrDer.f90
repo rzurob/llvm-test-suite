@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncRetPolyPtrDer.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncRetPolyPtrDer.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRetPolyPtrDer 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRetPolyPtrDer
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a func call returning a poly pointer 
-!*    of derived type 
+!*    The selector is a func call returning a poly pointer
+!*    of derived type
 !*    (Comp Failed)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -46,7 +40,7 @@
 
     TYPE :: Base
       INTEGER :: BaseId = 1
-      CLASS(Base),  POINTER :: BaseComp => NULL() 
+      CLASS(Base),  POINTER :: BaseComp => NULL()
     CONTAINS
       PROCEDURE, PASS   :: GetId => GetBaseId
     END TYPE
@@ -54,7 +48,7 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -73,19 +67,19 @@
 
   END MODULE
 
-  PROGRAM FunRetPolyPtrDer 
+  PROGRAM FunRetPolyPtrDer
   USE M
   TYPE(Child), TARGET :: V = Child(BaseId= -1, ChildId=-2 )
 
   ASSOCIATE ( As => Func( V ) )
 
-    IF ( As%GetID() .NE. -2) STOP 50 
-    IF ( As%BaseId  .NE. -1) STOP 51 
+    IF ( As%GetID() .NE. -2) STOP 50
+    IF ( As%BaseId  .NE. -1) STOP 51
 
     ASSOCIATE ( As1 => As%GetId() )
-       IF ( As1 .NE. -2) STOP 52 
+       IF ( As1 .NE. -2) STOP 52
     END ASSOCIATE
-   
+
     IF ( .NOT. SAME_TYPE_AS(As, Child()) )     STOP 53
     IF ( .NOT. SAME_TYPE_AS(As%BaseComp, As) ) STOP 54
 
@@ -108,9 +102,9 @@
     CLASS(Child), TARGET  :: Arg
     CLASS(Base), POINTER  :: Func
 
-    Func => Arg 
+    Func => Arg
     FUNC%BaseComp => Func
- 
-  END FUNCTION 
+
+  END FUNCTION
 
   END

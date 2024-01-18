@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : PointerDummyCharacter.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Ren Jian Gang
 !*  DATE                       : May 13, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
@@ -16,7 +12,6 @@
 !*
 !*  REFERENCE                  : Feature Number 916820
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -53,20 +48,20 @@ call charcmp(t, t2)
 p => t
 call ptr_with_tar(p, t, t)
 
-contains 
+contains
   subroutine subsub(ptr)
     character(*), pointer, intent(in) :: ptr
-        
+
     print *, ptr
     print *, len(ptr)
   end
-  
+
   character(20) function funcfunc(ptr)
     character(*), pointer, intent(in) :: ptr
 
     funcfunc = TRIM(ptr) // ", right?"
   end
-  
+
   subroutine ptr_with_tar(ptr, tar, t)
     character(:), pointer, intent(in) :: ptr
     character(*), target :: tar
@@ -82,7 +77,7 @@ end
 
 subroutine charcmp(ptr1, ptr2)
   character(*), pointer, intent(in) :: ptr1, ptr2
-  
+
   if (len(ptr1) >= len(ptr2)) then
     print *, "'", ptr1, "'", " wins"
   else

@@ -1,16 +1,8 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : pointer array, VOLATILE
-!*
 !*
 !*  DESCRIPTION                : funtional TC for  C1233
 !*
@@ -36,10 +28,9 @@
 
     deallocate(ptrArray)
 
-  end program volatileC1233PointerArray01 
+  end program volatileC1233PointerArray01
 
   subroutine ExplicitArray(x)
-       class(*), VOLATILE :: x(:,:)   
+       class(*), VOLATILE :: x(:,:)
   end subroutine ExplicitArray
-
 

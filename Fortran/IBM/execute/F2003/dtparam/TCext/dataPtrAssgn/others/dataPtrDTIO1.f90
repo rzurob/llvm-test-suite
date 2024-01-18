@@ -4,25 +4,19 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrDTIO1.f 
+!*  TEST CASE NAME             : dataPtrDTIO1.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
 !* - data-ptr is a component of a derived-type is used in DTIO write statement,
-!*   whose routine is a type-bound procedure 
+!*   whose routine is a type-bound procedure
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -30,7 +24,7 @@ module m
    type base(k1)    ! (4)
       integer, kind         :: k1
       class(*), pointer :: p(:)
-      real(k1), allocatable :: tar(:) 
+      real(k1), allocatable :: tar(:)
 
       contains
 	  procedure :: writeformatted
@@ -50,11 +44,11 @@ subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)
 
    select type(x=>dtv%p)
 	type is (real)
-            write (unit, '(5g12.6)', iostat=iostat) x 
+            write (unit, '(5g12.6)', iostat=iostat) x
         class default
             stop 4
    end select
-	
+
    if (iostat /= 0) stop 5
 
 end subroutine
@@ -64,7 +58,7 @@ end module
 program main
     use m
 
-    type(base(4)), pointer :: b1 
+    type(base(4)), pointer :: b1
 
     allocate(b1)
 
@@ -74,9 +68,9 @@ program main
 
     if ( .not. associated(b1%p, b1%tar(::2))) stop 1
     if ( lbound(b1%p,1) /= 10 ) stop 2
-    if ( ubound(b1%p,1) /= 14 ) stop 3 
+    if ( ubound(b1%p,1) /= 14 ) stop 3
 
-    write(*, '(DT)') b1 
+    write(*, '(DT)') b1
 
 end program
 

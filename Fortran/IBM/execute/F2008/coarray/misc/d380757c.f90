@@ -1,16 +1,16 @@
       implicit none
       character(6) :: c1
       character(2), save :: c2[*], c3
- 
+
       character*10, save :: cc1 = '----------'
       character*5, save :: cco[*]
- 
+
       integer :: me, i
       me = this_image()
       c3 = '!;'
       c2 = achar(me+ichar('a')-1) // achar(me+ichar('b')-1)
       cco = achar(me+70)//'1234' ! 'G', 'H', ...
- 
+
       sync all
 
       c1 = c2 // c2[1] // c3
@@ -42,8 +42,6 @@
       cc1 = cco[i] ! pad
 
       print *, "5:", cc1, "."
-
-
 
       end
 

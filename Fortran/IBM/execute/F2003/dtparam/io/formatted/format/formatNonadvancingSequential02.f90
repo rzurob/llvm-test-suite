@@ -1,32 +1,24 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatNonadvancingSequential02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatNonadvancingSequential02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 18 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 18 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. read or write with non-advancing IO
 !* 2. derived type has nested derived type component and derived type has sequence property
-!* 3. 1 more data is appended at end of file 
+!* 3. 1 more data is appended at end of file
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type inner(k1,l1)
-      integer,kind :: k1  ! k1=2 
+      integer,kind :: k1  ! k1=2
       integer,len  :: l1  ! l1=3
       sequence
       integer(k1)  :: i1(l1)
@@ -38,7 +30,7 @@ module m
       integer,len  :: l2 ! l2=3
       sequence
       character(l2) :: c1
-      type(inner(2,l2)) :: comp1 
+      type(inner(2,l2)) :: comp1
    end type
 
 end module
@@ -76,12 +68,12 @@ program formatNonadvancingSequential02
 
   !start to read c1
   read(10,'(a3)',advance='no',eor=10,size=count,iostat=ios)  outer1(1)%c1
-  
+
   if(count /= 3)         stop 11
-  
-  ! read i1, use TAB control edit descriptor 
+
+  ! read i1, use TAB control edit descriptor
   read(10,'(t2,bz,i3,tl1,i3,tl5,bn,i5)', &
-        advance='no',eor=12,size=count,iostat=ios) outer1(1)%comp1%i1 
+        advance='no',eor=12,size=count,iostat=ios) outer1(1)%comp1%i1
 
   if(count /= 11)        stop 13
 
@@ -93,15 +85,15 @@ program formatNonadvancingSequential02
 
   ! read r1
   read(10,'(/f4.1)',advance='no', &
-        eor=16,size=count,iostat=ios) outer1(1)%comp1%r1 
+        eor=16,size=count,iostat=ios) outer1(1)%comp1%r1
 
-  if(count /= 4)         stop 17 
+  if(count /= 4)         stop 17
 
   rewind 10
 
   ! read all data together with different format
   read(10,'(a3,3i2,l4,tl4,l4,/f5.2)',advance='no',&
-      eor=18,size=count,iostat=ios)       outer1(2) 
+      eor=18,size=count,iostat=ios)       outer1(2)
 
   if(count /= 22)        stop 19
 
@@ -114,12 +106,12 @@ program formatNonadvancingSequential02
   if(ios /= 0) then
      print *,"fail to close the file,iostat=",ios
      return
-  end if 
+  end if
 
   return
 
 10 print *,"oops,end of file is reached!,iostat=",ios
-   stop 10 
+   stop 10
 12 print *,"oops,end of file is reached!,iostat=",ios
    stop 12
 14 print *,"oops,end of file is reached!,iostat=",ios
@@ -127,6 +119,6 @@ program formatNonadvancingSequential02
 16 print *,"oops,end of file is reached!,iostat=",ios
    stop 16
 18 print *,"oops,end of file is reached!,iostat=",ios
-   stop 18 
+   stop 18
 
 end program

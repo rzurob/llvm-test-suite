@@ -11,16 +11,11 @@
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            :
-!*  PROGRAMMER                 : Yong Du
+!*  ===================================================================
 !*  DATE                       : 12/21/2004
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : transfer
 !*  SECONDARY FUNCTIONS TESTED :
-!*  DRIVER STANZA              : xlf90
 !*  DESCRIPTION                :
 !*    SOURCE is an associate name.
 !*
@@ -56,14 +51,14 @@ use m
     associate(name1=>ap1)
         associate(name2=>transfer(name1, Child(8,9)))
             if(.NOT. same_type_as(name2, Child(8,9))) error stop 1_4
-            print *, name2 
+            print *, name2
         end associate
     end associate
 
     associate(name1=>ap1(15:19))
         associate(name2=>transfer(name1, Child(8,9)))
             if(.NOT.  same_type_as(name2, Child(8,9))) error stop 2_4
-            print *, name2 
+            print *, name2
         end associate
     end associate
 end

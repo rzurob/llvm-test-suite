@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d362431.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d362431.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 19 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 19 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 362431
 !234567490123456749012345674901234567490123456749012345674901234567490
 module m
    type base(k1,l1)
-      integer,kind :: k1             
+      integer,kind :: k1
       integer,len  :: l1 ! l1=2
 
       integer(k1)  :: i1(2:4)
@@ -42,7 +34,7 @@ module m
    end type
 
    interface assignment(=)
-      module procedure assign  
+      module procedure assign
    end interface
 
    contains
@@ -61,7 +53,7 @@ program d362431
    implicit none
 
    integer :: i
-   class(*),allocatable :: obj1(:),obj2(:)  
+   class(*),allocatable :: obj1(:),obj2(:)
 
    allocate(gen3(2,1,4,2,8,3) :: obj1(2))
 
@@ -83,7 +75,7 @@ program d362431
              ! invoke assign
              select type(y=>obj2)
                 type is(base(2,*))
-                    y(i)=x(i)%child%base  
+                    y(i)=x(i)%child%base
              end select
         class default
            stop 2

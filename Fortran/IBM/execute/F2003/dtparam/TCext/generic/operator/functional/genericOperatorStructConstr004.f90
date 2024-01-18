@@ -3,22 +3,11 @@
 ! opt variations: -qnol -qdefaultpv -qnodeferredlp -qreuse=self
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Operator: Scalar to Scalar with structure constructors within structure constructor
 !*  KEYWORD(S)                 :
@@ -95,8 +84,8 @@ program genericOperatorStructConstr004
    allocate ( b1 , source = base(20,4)( 100, inner(20,4)( 999 ) ) + base(20,4)( 200 ) )
 
    if ( ( b1%x /= 300 ) .or. ( b1%i%j /= 0 ) )          error stop 2_4
-   
+
    b2 = base(20,4) ( 10, inner(20,4)(20) ) + base(20,4) (i = inner(20,4)(40) , x = 30 )
-   if ( ( b2%x /= 40 ) .or. ( b2%i%j /= 60 ) )          error stop 3_4  
+   if ( ( b2%x /= 40 ) .or. ( b2%i%j /= 60 ) )          error stop 3_4
 
 end

@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 23 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. SELECT TYPE IN SUBROUTINE
-!* 4. DUMMY ARGUMENT IS ASSUMED 
+!* 4. DUMMY ARGUMENT IS ASSUMED
 !* 5. CALL THROUGH MULTIPLE SUBROUTINE
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -37,18 +29,18 @@ module m
       integer(2),kind  :: k2=4
       integer(4),len   :: l2=5
    end type
-     
+
    contains
      subroutine checktype1(dt)
          class(base(2,*)) :: dt
          select type(dt)
             type is(base(2,*))
-               print *,"checktype1 : dt is base" 
+               print *,"checktype1 : dt is base"
                if(dt%k1 /=2)                                  error stop 9_4
                if(dt%l1 /=3)                                  error stop 10_4
                if(dt%k1%kind /=kind(dt%k1) &
                     .or. dt%k1%kind /= 1)                     error stop 11_4
-               if(dt%l1%kind /=kind(dt%l1) & 
+               if(dt%l1%kind /=kind(dt%l1) &
                    .or. dt%l1%kind /= 8)                      error stop 12_4
 
             type is(child(2,*,4,*))
@@ -83,10 +75,10 @@ module m
 
 end module
 
-  program dtParameterInquirySelectTypeParam02 
+  program dtParameterInquirySelectTypeParam02
   use m
   implicit none
-  
+
   interface
      subroutine checktype3(dt)
          import
@@ -110,10 +102,10 @@ end module
   allocate(child(b1%k1,b1%l1,c1%k2,c1%l2) :: b2)
   call checktype2(b2)
 
-  allocate(b3,source=b1)  
+  allocate(b3,source=b1)
   call checktype3(b3)
   b3=>c1
-  call checktype3(b3) 
+  call checktype3(b3)
 
 end
 

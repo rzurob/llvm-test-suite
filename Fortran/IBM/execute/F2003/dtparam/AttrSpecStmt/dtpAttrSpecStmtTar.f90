@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpAttrSpecStmtTar
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 13, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  -- TARGET statement 
-!*  
-!* 
+!*  -- TARGET statement
+!*
 !*    (337970)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -49,7 +39,7 @@
     INTEGER, KIND    :: K1=0
     INTEGER, LEN     :: L1=0
     SEQUENCE
-    CHARACTER(L1+3)      :: C1 = "DT1" 
+    CHARACTER(L1+3)      :: C1 = "DT1"
   END TYPE
 
   TYPE :: DT2(K2,L2)
@@ -61,8 +51,8 @@
     REAL   (K2)          :: R=K2
     LOGICAL(K2)          :: L=.TRUE._1
     COMPLEX(K2)          :: Z=CMPLX(K2, K2, K2)
-    TYPE(DT0(K2, L2))    :: T0(L2) 
-    TYPE(DT2(K2, L2)), POINTER  :: Ptr 
+    TYPE(DT0(K2, L2))    :: T0(L2)
+    TYPE(DT2(K2, L2)), POINTER  :: Ptr
   END TYPE
 
   INTEGER,   PARAMETER   :: N=1024
@@ -94,7 +84,7 @@
                                    L = .TRUE.,     &
                                    Z = (1.,-1.),   &
                                    Ptr  = NULL(),  &
-                                   T0=DT0(8,7)() ) 
+                                   T0=DT0(8,7)() )
 
 
   END MODULE
@@ -127,8 +117,8 @@
   USE M
   IMPLICIT NONE
   INTEGER I
- 
-  INTERFACE 
+
+  INTERFACE
     SUBROUTINE ExtSub(P0,P1,P2,T0,T1,T2)
     USE M, ONLY: DT0,DT1,DT2,CT,N
     TYPE(DT0(1,3)), TARGET :: T0(N)
@@ -150,7 +140,7 @@
   IF ( .NOT. ASSOCIATED( P0     ) ) STOP 11
   IF ( .NOT. ASSOCIATED( P1, T1 ) ) STOP 12
   IF ( .NOT. ASSOCIATED( P2, T2 ) ) STOP 13
- 
+
   IF ( SIZE( P0 ) .NE. N ) STOP 14
   IF ( SIZE( P1 ) .NE. N ) STOP 15
   IF ( SIZE( P2 ) .NE. N ) STOP 16
@@ -159,7 +149,7 @@
   IF ( LBOUND( P1,1 ) .NE. -N ) STOP 18
   IF ( LBOUND( P2,1 ) .NE. -N ) STOP 19
 
-  DO I=-N, -1 
+  DO I=-N, -1
 
     IF ( P0(I)%L0     .NE. 3         )  STOP 30
     IF ( P1(I)%L1     .NE. 5         )  STOP 32

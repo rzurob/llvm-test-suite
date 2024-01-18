@@ -2,30 +2,23 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk216 cxcmn_blk206
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: rm -f *.o *.mod fxcmn_blk216 
+! %POSTCMD: rm -f *.o *.mod fxcmn_blk216
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that variables of
@@ -35,7 +28,7 @@
 !*                               Scope:  internal subroutine
 !*
 !*				 This testcase will
-!*				 verify 3-dimensional array variables inside of 
+!*				 verify 3-dimensional array variables inside of
 !*				 BIND(C) common block.
 !*
 !* ===================================================================
@@ -61,7 +54,7 @@ program fxcmn_blk216
 
 ! ----------------------------------------------------------------------------
 ! Integer Declaration
-!	- use ISO_C_BINDING modules	
+!	- use ISO_C_BINDING modules
 !       - use default/non-default variables
 ! ----------------------------------------------------------------------------
 
@@ -72,7 +65,7 @@ program fxcmn_blk216
 	integer  					:: int_s4(2,2,2)
 
 	integer (kind=int((4.4e0_8,6.5e0_8))+4 ) 	:: int_s8(2,2,2)
-	
+
 	INTEGER (C_SIGNED_CHAR 		)		:: int_C_SIGNED_CHAR(2,2,2)
 	INTEGER (C_SHORT 		)		:: int_C_SHORT(2,2,2)
 	INTEGER (C_INT 			)		:: int_C_INT(2,2,2)
@@ -90,7 +83,7 @@ program fxcmn_blk216
 	INTEGER (C_INT_LEAST32_T 	)		:: int_C_INT_LEAST32_T(2,2,2)
 	INTEGER (C_INT_LEAST64_T 	)		:: int_C_INT_LEAST64_T(2,2,2)
 	INTEGER (C_INT_FAST8_T 		)		:: int_C_INT_FAST8_T(2,2,2)
-!	INTEGER (C_INT_FAST16_T 	)		:: int_C_INT_FAST16_T(2,2,2)  !** not supported on AIX5.1 and below 
+!	INTEGER (C_INT_FAST16_T 	)		:: int_C_INT_FAST16_T(2,2,2)  !** not supported on AIX5.1 and below
 	INTEGER (C_INT_FAST32_T 	)		:: int_C_INT_FAST32_T(2,2,2)
 	INTEGER (C_INT_FAST64_T 	)		:: int_C_INT_FAST64_T(2,2,2)
 
@@ -164,9 +157,9 @@ program fxcmn_blk216
 !         specific values for each element in the array
 !       - use RESHAPE to shape the array into a 3-D array use padding for some
 ! ----------------------------------------------------------------------------
-	
 
-        int_s1 			=  RESHAPE( (/b'1111111',o'0',-128,o'177',127,0,-0,-111/), (/2,2,2/))		
+
+        int_s1 			=  RESHAPE( (/b'1111111',o'0',-128,o'177',127,0,-0,-111/), (/2,2,2/))
 
         int_s2 			=  RESHAPE( (/o'77777',o'0',-32768, 32767,b'1111111',0,-1277/), (/2,2,2/), (/-1,-2,-3/))
 
@@ -177,10 +170,10 @@ program fxcmn_blk216
         int_C_SIGNED_CHAR	= RESHAPE( (/b'1111111',o'0',-128, o'177',127/), (/2,2,2/), (/-1,-2,-3/))
         int_C_SHORT		= RESHAPE( (/o'77777',o'0',-32768, 32767,b'1111111'/), (/2,2,2/), (/-1,-2,-3/))
         int_C_INT		= RESHAPE( (/2147483647,b'1111111',-2147483648, 0, o'3641100'/), (/2,2,2/), (/-1,-2,-3/))
-        int_C_LONG		=  2147483647 
+        int_C_LONG		=  2147483647
         int_C_LONG_LONG		= -9223372036854775807_8
         int_C_SIZE_T		= RESHAPE( (/2147483647,b'1111111',-2147483648, 0, o'3641100'/), (/2,2,2/), (/-1,-2,-3/))
-        int_C_INTPTR_T		=  1000000000           
+        int_C_INTPTR_T		=  1000000000
         int_C_INTMAX_T		= RESHAPE( (/9223372036854775807_8,b'000000000',-9223372036854775807_8,o'3641100',-2147483648_8/),(/2,2,2/),(/-1_8,-2_8,-3_8/))
         int_C_INT8_T		= -128
         int_C_INT16_T		= RESHAPE( (/o'77777',o'0',-32768, 32767,b'1111111'/), (/2,2,2/), (/-1,-2,-3/))
@@ -299,7 +292,7 @@ program fxcmn_blk216
         end do
 
 ! ----------------------------------------------------------------------------
-!  Call to C subprogram  
+!  Call to C subprogram
 ! ----------------------------------------------------------------------------
 !	CALL CSUB_ALL()
 

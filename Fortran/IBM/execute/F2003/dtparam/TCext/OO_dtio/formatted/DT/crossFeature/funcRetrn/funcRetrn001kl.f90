@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : funcRetrn001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from funcRetrn001 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Function Return: Non Polymorphic Scalar Entities
@@ -75,7 +67,7 @@ use m
    type(child(4,4)), allocatable :: c1
    type(child(4,4)), pointer     :: c2
    type(child(4,4))              :: c3 = child(4,4)(205.0,206.0)
-   
+
    procedure(type(child(4,4))) :: genCopyExt
 
    open (1, file = 'funcRetrn001kl.1', form='formatted', access='sequential' )

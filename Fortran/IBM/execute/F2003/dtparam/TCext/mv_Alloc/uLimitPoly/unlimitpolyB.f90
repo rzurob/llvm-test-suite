@@ -3,24 +3,12 @@
 ! opt variations: -qnok -qnol
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlimitpolyB.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 05/24/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimit polymorphic,
 !*                               FROM/TO are dummy arg
@@ -48,14 +36,14 @@ module m
         integer(k1)      id
         contains
            final :: final1
-    end type 
+    end type
 
-    type A(k2,n2)    ! (4,20) 
+    type A(k2,n2)    ! (4,20)
         integer, kind :: k2
         integer, len  :: n2
        contains
           final :: final2
-    end type	
+    end type
 
     contains
 
@@ -71,7 +59,7 @@ module m
 
         subroutine final2(arg)
           type(A(4,*)), intent(in) :: arg(:,:)
-          numA = numA + 1 
+          numA = numA + 1
        end subroutine
 
 end module
@@ -83,13 +71,13 @@ use m
 
     allocate( o1(5,1), source = reshape((/ (base(20,4)(i), i= 11,51,10) /), (/5,1/)))
     allocate( o2(1,2), source = reshape((/ A(4,20)(), A(4,20)() /),(/1,2/)))
-   
+
     numA = 0
     numB = 0
- 
+
     call sub (o1, o2)
 
-    if ( numA /= 1 ) stop 11 
+    if ( numA /= 1 ) stop 11
     if ( numB /= 0) stop 13
 
     if ( allocated(o1) ) stop 21
@@ -99,9 +87,9 @@ use m
     select type(o2)
         type is (base(*,4))
 		do i = 1, 5
-	           if ( o2(i,1)%id  /= 10*i + 1 )  call zzrc(i) 
+	           if ( o2(i,1)%id  /= 10*i + 1 )  call zzrc(i)
 		enddo
         class default
-            stop 25 
+            stop 25
     end select
 end

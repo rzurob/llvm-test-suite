@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArraySections/d356389.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Sep. 26, 2008
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See defect 356389
 !*  REFERENCE                  : Feature Number 353925
 !*

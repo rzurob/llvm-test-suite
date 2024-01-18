@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcGenericName.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcGenericName.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 03, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  A generic name specifies a single name to reference all of the procedure names in 
+!*  A generic name specifies a single name to reference all of the procedure names in
 !*  the interface block.  A generic name may be the same as any one of the procedure names
 !*  in the interface block, or the same as any accessible generic name.
-!* 
-!*  -- External 
+!*
+!*  -- External
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,7 +35,7 @@
   TYPE :: DT
     INTEGER :: ID
   END TYPE
- 
+
   TYPE, EXTENDS(DT) :: DT1
   END TYPE
 
@@ -54,48 +47,48 @@
 
   PROCEDURE(ModFun1), POINTER  :: ProcPtr
 
-  INTERFACE  ExtFun 
+  INTERFACE  ExtFun
     FUNCTION ExtFun(Arg1, Arg2)
-      IMPORT 
-      TYPE(DT3), INTENT(IN) :: Arg1 
-      TYPE(DT3), INTENT(IN) :: Arg2 
-      TYPE(DT3)             :: ExtFun 
+      IMPORT
+      TYPE(DT3), INTENT(IN) :: Arg1
+      TYPE(DT3), INTENT(IN) :: Arg2
+      TYPE(DT3)             :: ExtFun
     END FUNCTION
     PROCEDURE ExtFun
     PROCEDURE ModFun
-    PROCEDURE ProcPtr 
+    PROCEDURE ProcPtr
   END INTERFACE
- 
+
   !PROCEDURE(ModFun1), POINTER  :: ProcPtr
 
   CONTAINS
 
   FUNCTION ModFun(Arg1, Arg2)
-  TYPE(DT), INTENT(IN) :: Arg1 
-  TYPE(DT), INTENT(IN) :: Arg2 
-  TYPE(DT)             :: ModFun 
-    ModFun%ID = Arg1%ID + Arg2%ID 
-  END FUNCTION 
+  TYPE(DT), INTENT(IN) :: Arg1
+  TYPE(DT), INTENT(IN) :: Arg2
+  TYPE(DT)             :: ModFun
+    ModFun%ID = Arg1%ID + Arg2%ID
+  END FUNCTION
 
   FUNCTION ModFun1(Arg1, Arg2)
-  TYPE(DT1), INTENT(IN) :: Arg1 
-  TYPE(DT1), INTENT(IN) :: Arg2 
-  TYPE(DT1)             :: ModFun1 
-    ModFun1%ID = Arg1%ID + Arg2%ID 
-  END FUNCTION 
+  TYPE(DT1), INTENT(IN) :: Arg1
+  TYPE(DT1), INTENT(IN) :: Arg2
+  TYPE(DT1)             :: ModFun1
+    ModFun1%ID = Arg1%ID + Arg2%ID
+  END FUNCTION
 
   END MODULE
 
   FUNCTION ExtFun(Arg1, Arg2)
   USE M, ONLY: DT3
-  TYPE(DT3), INTENT(IN) :: Arg1 
-  TYPE(DT3), INTENT(IN) :: Arg2 
-  TYPE(DT3)             :: ExtFun 
-    ExtFun%ID = Arg1%ID + Arg2%ID 
-  END FUNCTION 
+  TYPE(DT3), INTENT(IN) :: Arg1
+  TYPE(DT3), INTENT(IN) :: Arg2
+  TYPE(DT3)             :: ExtFun
+    ExtFun%ID = Arg1%ID + Arg2%ID
+  END FUNCTION
 
 
-  PROGRAM mProcGenericName 
+  PROGRAM mProcGenericName
   USE M
 
   TYPE(DT)  :: T=DT(-1)
@@ -105,9 +98,9 @@
 
   ProcPtr => ModFun1
 
-  T   = ExtFun(DT(-1),  DT(-1)) 
-  T1  = ExtFun(DT1(-2), DT1(-2)) 
-  T3  = ExtFun(DT3(-3), DT3(-3)) 
+  T   = ExtFun(DT(-1),  DT(-1))
+  T1  = ExtFun(DT1(-2), DT1(-2))
+  T3  = ExtFun(DT3(-3), DT3(-3))
 
   IF (T%ID   .NE. -2 ) STOP 11
   IF (T1%ID  .NE. -4 ) STOP 12

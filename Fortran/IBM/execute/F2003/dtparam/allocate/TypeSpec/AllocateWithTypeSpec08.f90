@@ -1,39 +1,31 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocateWithTypeSpec07 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : January 20, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !*  SECONDARY FUNCTIONS TESTED :
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : Deferred LEN parameter
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* allocate-stmt is 
+!* allocate-stmt is
 !*   ALLOCATE ( [ type-spec :: ] allocation-list [, alloc-opt-list ] )
 !*
-!* Defect 351490 
+!* Defect 351490
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN  :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN  :: l1
 
         CHARACTER(2*l1+k1) :: status
         CHARACTER(l1) :: tag
@@ -43,7 +35,7 @@ MODULE Mod
         INTEGER, KIND :: k2
         INTEGER, LEN  :: l2
 
-        CLASS(Base(k2,l2-l1)), ALLOCATABLE :: b_cmp    
+        CLASS(Base(k2,l2-l1)), ALLOCATABLE :: b_cmp
       END TYPE Child
 END MODULE Mod
 PROGRAM AllocateWithTypeSpec07
@@ -61,7 +53,7 @@ PROGRAM AllocateWithTypeSpec07
       CALL alloc_comp(b1)
       IF (b1%status .NE. '1 allocation done') STOP 12
 
-      SELECT TYPE ( b1 )  
+      SELECT TYPE ( b1 )
         CLASS IS (Child(4,*,4,*))
             IF (.NOT. ALLOCATED(b1%b_cmp)) STOP 13
             CALL verify_type_param(b1%b_cmp)
@@ -73,7 +65,7 @@ PROGRAM AllocateWithTypeSpec07
 
       CALL duplicate(b1)
 
-      SELECT TYPE ( b1 )  
+      SELECT TYPE ( b1 )
         CLASS IS (Child(4,*,4,*))
            DEALLOCATE(b1%b_cmp)
 
@@ -86,9 +78,9 @@ PROGRAM AllocateWithTypeSpec07
       CONTAINS
 !*
       SUBROUTINE verify_type_param(Arg)
-         CLASS(Base(4,*)) :: Arg    
+         CLASS(Base(4,*)) :: Arg
 
-         SELECT TYPE ( Arg )  
+         SELECT TYPE ( Arg )
               CLASS IS (Base(4,*))
                  Arg%tag = 'Base'
                  IF (Arg%l1 .NE. 10) STOP 20
@@ -105,12 +97,12 @@ PROGRAM AllocateWithTypeSpec07
       END SUBROUTINE verify_type_param
 
       SUBROUTINE alloc_comp(Arg)
-         CLASS(Base(4,*)), ALLOCATABLE :: Arg    
+         CLASS(Base(4,*)), ALLOCATABLE :: Arg
 
-         SELECT TYPE ( Arg )  
+         SELECT TYPE ( Arg )
               CLASS IS (Child(4,*,4,*))
                  IF ( ALLOCATED(Arg%b_cmp)) STOP 30
-                 ALLOCATE(Base(4,Arg%l2-Arg%l1) :: Arg%b_cmp) 
+                 ALLOCATE(Base(4,Arg%l2-Arg%l1) :: Arg%b_cmp)
                  Arg%status = '1 allocation done'
 
               CLASS DEFAULT
@@ -120,16 +112,16 @@ PROGRAM AllocateWithTypeSpec07
       END SUBROUTINE alloc_comp
 
       SUBROUTINE duplicate(Arg)
-         CLASS(Base(4,*)), ALLOCATABLE :: Arg    
+         CLASS(Base(4,*)), ALLOCATABLE :: Arg
          CLASS(Base(4,:)), ALLOCATABLE :: AutoObj
 
          ALLOCATE(AutoObj, source = Arg)
          IF (AutoObj%status .NE. '1 allocation done') STOP 40
 
-         SELECT TYPE ( Arg )  
+         SELECT TYPE ( Arg )
            CLASS IS (Child(4,*,4,*))
               IF (.NOT. ALLOCATED(Arg%b_cmp)) STOP 41
-  
+
            CLASS DEFAULT
               STOP 42
          END SELECT
@@ -140,6 +132,6 @@ PROGRAM AllocateWithTypeSpec07
 
          DEALLOCATE(AutoObj)
 
-      END SUBROUTINE duplicate   
+      END SUBROUTINE duplicate
 
 END PROGRAM AllocateWithTypeSpec07

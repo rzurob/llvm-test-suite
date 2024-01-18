@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocCharComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocCharComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 3 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 3 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
-!*  2. PARENT TYPE HAS CHARACTER COMPONENT,CHILD TYPE HAS CHARACTER COMPONENT AND DERIVED TYPE POINTER   
+!*  2. PARENT TYPE HAS CHARACTER COMPONENT,CHILD TYPE HAS CHARACTER COMPONENT AND DERIVED TYPE POINTER
 !*  3. DEFECT 357082
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -55,7 +47,7 @@ program move_allocCharComp02
   select type(from1)
      type is(child(*,*,*))
 
-        from1%ch3="fortran" 
+        from1%ch3="fortran"
         allocate(from1%baseComp,source=from1)    ! defect 357082
         if(.not. associated(from1%baseComp))           error stop 11_4
      class default
@@ -82,7 +74,7 @@ program move_allocCharComp02
         select type(x=>to1%baseComp)
             type is(child(*,*,*))
                if(x%l1 /= 1)                           error stop 24_4
-               if(x%l2 /= 2)                           error stop 25_4 
+               if(x%l2 /= 2)                           error stop 25_4
                if(x%l2 /= 2)                           error stop 26_4
                if(x%ch1 /= "xlf")                      error stop 27_4
                if(x%ch2 /= "test")                     error stop 28_4
@@ -92,7 +84,7 @@ program move_allocCharComp02
         end select
      class default
          error stop 101_4
-  end select 
+  end select
 
 end program
 

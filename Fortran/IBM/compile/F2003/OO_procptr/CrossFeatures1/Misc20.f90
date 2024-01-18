@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
-! %EXECARGS: 
-! %POSTCMD: tcomp Misc20.f 
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD: tcomp Misc20.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             :  Misc20.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  
-!*  Accessibility : Private/Public 
-!*  
-!*  
+!*
+!*  Accessibility : Private/Public
+!*
 !*  (ICE-305108)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -96,8 +88,8 @@
   ProcPtr2 => ModSub
 
   V%ProcPtr1 => ModSub
-  V%ProcPtr2 => ModSub !no compalin here due to err recovery  
-                       ! but when remove the complaint part, 
+  V%ProcPtr2 => ModSub !no compalin here due to err recovery
+                       ! but when remove the complaint part,
                        !these err will be found
   U%ProcPtr1 => ModSub
   U%ProcPtr2 => ModSub

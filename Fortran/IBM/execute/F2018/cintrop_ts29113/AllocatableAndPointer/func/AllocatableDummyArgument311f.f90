@@ -1,35 +1,28 @@
 !*********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument309f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from C
 !*
 !*                                - Allocate(a, source=b) with a and b both having a C descriptor
 !*                                - Verify values both in Fortran and C
-!*                                - type c_float 
+!*                                - type c_float
 !*                                - Nesting of calls
 !*                                   Bind(c) ==> Non-bind(c)
-!*                                - Matmul: the last dimension of the first 
-!*                                          array must be equal to the first 
+!*                                - Matmul: the last dimension of the first
+!*                                          array must be equal to the first
 !*                                          dimension of the second array
 !* Fortran array:
 !*   - dim 1 is number of rows
-!*   - dim2 is number of columns 
-!*   - Column order 
+!*   - dim2 is number of columns
+!*   - Column order
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -47,7 +40,7 @@ subroutine sub_alloc(tgt, src) bind(C)
     character(200)             :: msg
 
     interface
-       subroutine check(arg) 
+       subroutine check(arg)
            implicit none
            real, allocatable :: arg(:,:)
        end subroutine
@@ -99,15 +92,15 @@ subroutine sub_dealloc(arg) bind(C)
     if ( allocated(arg) ) ERROR STOP 31
 end subroutine sub_dealloc
 
-subroutine check(arg) 
+subroutine check(arg)
     implicit none
     real, allocatable :: arg(:,:)
-    real :: y(2,3) 
+    real :: y(2,3)
     integer :: i, j
 
 !*********************************************
-!          y = 3 2 1     
-!             -2 4 1         
+!          y = 3 2 1
+!             -2 4 1
 !*********************************************
 
     if( .not. allocated(arg) ) ERROR STOP 40
@@ -129,18 +122,18 @@ logical(c_bool) function ffunc(a,b) bind(C)
     real(c_float), allocatable :: b(:,:), r(:)
 
     interface
-       subroutine check(arg) 
+       subroutine check(arg)
            implicit none
            real, allocatable :: arg(:,:)
        end subroutine
     end interface
 
-    call check(b) 
+    call check(b)
     if( .not. associated(a) ) ERROR STOP 50
     if( size(a) /=        3 ) ERROR STOP 51
     ffunc = .true.
     r = matmul(b,a)
-    if (any(r /= [14., 3.]) ) then 
+    if (any(r /= [14., 3.]) ) then
         ffunc = .false.
         ERROR STOP 52
    end if

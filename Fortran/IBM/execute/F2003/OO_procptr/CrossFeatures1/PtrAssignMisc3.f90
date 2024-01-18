@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignMisc3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignMisc3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignMisc3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignMisc3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 26, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,32 +30,32 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Module procedure and external procedure 
-!*  () 
+!*
+!*  Module procedure and external procedure
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
-  
+
   CONTAINS
     FUNCTION ExtFun()
     CHARACTER(3), POINTER :: ExtFun
-      !ALLOCATE(ExtFun, SOURCE="mod") 
+      !ALLOCATE(ExtFun, SOURCE="mod")
       ALLOCATE(ExtFun)
-      ExtFun = "mod" 
+      ExtFun = "mod"
     END FUNCTION
   END MODULE
 
   FUNCTION ExtFun()
   CHARACTER(3), POINTER :: ExtFun
-    !ALLOCATE(ExtFun, SOURCE="ext") 
+    !ALLOCATE(ExtFun, SOURCE="ext")
     ALLOCATE(ExtFun)
-    ExtFun = "ext" 
+    ExtFun = "ext"
   END FUNCTION
 
   PROGRAM PtrAssignMisc3
-  USE M, ModFun => ExtFun 
+  USE M, ModFun => ExtFun
   IMPLICIT NONE
 
   PROCEDURE(ModFun),   POINTER :: ProcPtr1
@@ -70,9 +64,9 @@
   INTERFACE
     FUNCTION ExtFun()
       CHARACTER(3), POINTER :: ExtFun
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
- 
+
   PROCEDURE(ExtFun),   POINTER :: ProcPtr3
   PROCEDURE(ProcPtr3), POINTER :: ProcPtr4
 
@@ -89,5 +83,5 @@
     IF ( ProcPtr4() .NE. "ext" )  STOP 41
 
 
-  END 
+  END
 

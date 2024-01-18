@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefADJUSTR.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefADJUSTR.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
+!*
 !*  - ADJUSTR / KIND
 !*  ()
 !*
@@ -35,7 +28,7 @@
 
 
 
-  PROGRAM InitExpDefADJUSTR 
+  PROGRAM InitExpDefADJUSTR
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -48,7 +41,7 @@
   REAL(LEN(ADJUSTL("1234"//"5678")))     :: R8=LEN(ADJUSTL("12345678"))
   REAL(LEN(ADJUSTL(" 123456789012345"))) :: R16=LEN(ADJUSTL("1234567890123456"))
 
-  LOGICAL(LEN(ADJUSTL(" ")))          :: L1=LEN(ADJUSTL(" ")) == 1 
+  LOGICAL(LEN(ADJUSTL(" ")))          :: L1=LEN(ADJUSTL(" ")) == 1
   LOGICAL(LEN(ADJUSTL("  ")))         :: L2=LEN(ADJUSTL("  ")) == 2
   LOGICAL(LEN(ADJUSTL("    ")))       :: L4=LEN(ADJUSTL("    ")) == 4
   LOGICAL(LEN(ADJUSTL("12345678")))   :: L8=LEN(ADJUSTL("12345678")) == 8
@@ -104,4 +97,4 @@
 
   END
 
- 
+

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypParamC434   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypParamC434
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 26, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  C434 (R435) A type-param-name in a type-param-def-stmt in a derived-type-def
-!*  shall be one of the  type-param-names in the derived-type-stmt of that 
+!*  shall be one of the  type-param-names in the derived-type-stmt of that
 !*  derived-type-def
 !*
 !*  (err msg missing except for line 81 & ice)
@@ -82,7 +75,7 @@
   END TYPE
 
 
-  
+
   END
 
 

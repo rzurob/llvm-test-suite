@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : nullDiagDiffType01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : nullDiagDiffType01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 26 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 26 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD])
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.88
@@ -27,10 +19,10 @@ module m
    type A(k)
       integer,kind :: k
       integer(k) :: i
-   end type 
+   end type
    type B(k)
       integer,kind :: k
-      integer(k) :: i 
+      integer(k) :: i
    end type
 end module
 
@@ -54,7 +46,7 @@ program nullDiagDiffType01
   type(B(4)),pointer     :: b1
   type(B(4)),allocatable :: b2
 
- 
+
   i1=>null(r1)
   r1=>null(c1)
   l1=>null(i1)
@@ -63,7 +55,7 @@ program nullDiagDiffType01
   i2=null(c1)
   r2=null(l1)
   l1=null(c2)
-  c1=null(i2)  
+  c1=null(i2)
 
   a1=>b1
   b1=>a1

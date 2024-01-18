@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,21 +13,13 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c11j.f
-!* TEST CASE TITLE              : BIND(C) attribute/statement
-!*
-!* PROGRAMMER                   : Yubin Liao 
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Test: BINC(C) attribute/statement
@@ -41,7 +28,7 @@
 !*                                integer*1, integer*2, integer*4,
 !*                                integer*8, real*4, real*8, complex,
 !*                                character(1). Using Fortran implemented
-!*                                module function. 
+!*                                module function.
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -57,7 +44,7 @@ contains
        function exfun_int1(a1) result(a2) BIND(C)
             integer*1, intent(in), target :: a1
             integer*1 a2
-            a2 = a1 + 3 
+            a2 = a1 + 3
        end function exfun_int1
 
        function exfun_int2(b1) result(b2) BIND(C)
@@ -105,13 +92,13 @@ contains
        function exfun_comp1(l1) result(l2) bind(c)
             complex*8, intent(in), target :: l1
             complex*8 l2
-            l2 = l1 + (1.0,1.0) 
+            l2 = l1 + (1.0,1.0)
        end function exfun_comp1
-       
+
        function exfun_comp2(m1) result(m2) bind(c)
             complex*16,intent(in), target  :: m1
-            complex*16 m2 
+            complex*16 m2
             m2 = m1 + (1.0D0, 1.0D0)
        end function exfun_comp2
-       
- end module m 
+
+ end module m

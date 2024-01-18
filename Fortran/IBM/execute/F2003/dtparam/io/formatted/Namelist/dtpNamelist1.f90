@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpNamelist1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 29, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The namelist statement
-!*  on array 
-!* 
+!*  on array
+!*
 !*  (ice)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -59,7 +50,7 @@
     INTEGER(K2)   :: I(L2)=K2
   END TYPE
   SAVE
- 
+
   TYPE(DT0(1,3))        :: R
   TYPE(DT1(1,3,4,5))    :: S
   TYPE(DT2(1,3,4,5,8,7)):: T
@@ -80,7 +71,7 @@
   CALL IntSub([R,R,R],[S,S,S],[T,T,T],3)
 
   CONTAINS
- 
+
   SUBROUTINE IntSub(R,S,T,N)
   INTEGER N
   TYPE(DT0(1,*))        :: R(N)
@@ -91,10 +82,10 @@
   NAMELIST /NL/R,S,T
 
   WRITE(*, NML=NL0)
-  WRITE(*, NML=NL1) 
+  WRITE(*, NML=NL1)
   WRITE(*, NML=NL2)
   WRITE(*, NML=NL)
-  
+
   END SUBROUTINE
 
   END

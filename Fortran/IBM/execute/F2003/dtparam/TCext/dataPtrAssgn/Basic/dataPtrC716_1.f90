@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrC716_1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrC716_1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,18 +23,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  C716 (R735) If data-target is not unlimited polymorphic, data-pointer-object shall
 !*  be type compatible (5.1.1.2) with it, and the corresponding kind type
-!*  parameters shall be equal. 
-!*   
+!*  parameters shall be equal.
 !*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrC716_1 
+  PROGRAM dataPtrC716_1
   IMPLICIT NONE
 
   CHARACTER(3), TARGET  :: Arr(3)="123"
@@ -66,7 +58,7 @@
   IF (ANY(UBOUND(Ptr) .NE. (/6/))) STOP 12
   IF (ANY(Ptr         .NE. "123")) STOP 13
 
-  Ptr(1:3) => Ptr(:) 
+  Ptr(1:3) => Ptr(:)
   IF (ANY(LBOUND(Ptr) .NE. (/1/))) STOP 21
   IF (ANY(UBOUND(Ptr) .NE. (/3/))) STOP 22
   IF (ANY(Ptr         .NE. "123")) STOP 23
@@ -77,7 +69,7 @@
   IF (ANY(Ptr1%C       .NE. (/"3","2","1"/))) STOP 33
 
   I=2; J=2
-  Ptr1(I:J) => Arr1 
+  Ptr1(I:J) => Arr1
   IF (ANY(LBOUND(Ptr1) .NE. (/I/)))   STOP 41
   IF (ANY(UBOUND(Ptr1) .NE. (/J/)))   STOP 42
   IF (ANY(Ptr1%C       .NE. (/"1"/))) STOP 43
@@ -89,7 +81,7 @@
   IF (ANY(Ptr2%C       .NE. (/"3","2","1"/))) STOP 53
 
   I=0; J=0
-  Ptr1(I:J) => Ptr1 
+  Ptr1(I:J) => Ptr1
   IF (ANY(LBOUND(Ptr1) .NE. (/I/)))   STOP 61
   IF (ANY(UBOUND(Ptr1) .NE. (/J/)))   STOP 62
   IF (ANY(Ptr1%C       .NE. (/"1"/))) STOP 63

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_62
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 30, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
-!*  -- A specification inquiry 
-!*  -- a numeric inquiry function 
-!*     DIGITS/EPSILON/HUGE/MAXEXPONENT 
+!*  -- A specification inquiry
+!*  -- a numeric inquiry function
+!*     DIGITS/EPSILON/HUGE/MAXEXPONENT
 !*     MINEXPONENT/PRECISION/RADIX/RANGE/TINY
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -59,15 +52,15 @@
   CONTAINS
   SUBROUTINE ModSub()
 
-  TYPE(DT(KIND=4,          LEN=DIGITS(1.0)))                :: T1(1)  
-  TYPE(DT(KIND=4,          L  =INT(EPSILON(1.0)*2**23) ))   :: T2(1)  
-  TYPE(DT(KIND=KIND(T%K),  LEN=HUGE(1_1)-126 ))             :: T3(1)  
-  TYPE(DT(KIND=4,          L  =MAXEXPONENT([2.0]) ) )       :: T4(1)  
+  TYPE(DT(KIND=4,          LEN=DIGITS(1.0)))                :: T1(1)
+  TYPE(DT(KIND=4,          L  =INT(EPSILON(1.0)*2**23) ))   :: T2(1)
+  TYPE(DT(KIND=KIND(T%K),  LEN=HUGE(1_1)-126 ))             :: T3(1)
+  TYPE(DT(KIND=4,          L  =MAXEXPONENT([2.0]) ) )       :: T4(1)
 
 
   IF ( T1%K               .NE.   4          ) STOP 11
   IF ( T1%L               .NE.   1          ) STOP 12
-  IF ( T1%KIND            .NE.   4          ) STOP 13  
+  IF ( T1%KIND            .NE.   4          ) STOP 13
   IF ( T1%LEN             .NE.   24         ) STOP 14
   IF ( ANY( T1%I          .NE.   4        ) ) STOP 15
   IF ( T1%T%K             .NE.   4          ) STOP 18
@@ -108,13 +101,13 @@
   CALL IntSub()
 
   CONTAINS
- 
+
   SUBROUTINE IntSub()
-  TYPE(DT(KIND=4,          LEN=MINEXPONENT([1.])+126))        :: T5(1)  
-  TYPE(DT(KIND=4,          L  =PRECISION([1.,2.]) ))          :: T6(1)  
-  TYPE(DT(KIND=KIND(T%K),  LEN=RADIX([1,2]) ))                :: T7(1)  
-  TYPE(DT(KIND=4,          L  = RANGE([1_2,2_2])))            :: T8(1)  
-  TYPE(DT(KIND=4,          LEN  = INT(TINY(1.)*2.**127)))     :: T9(1)  
+  TYPE(DT(KIND=4,          LEN=MINEXPONENT([1.])+126))        :: T5(1)
+  TYPE(DT(KIND=4,          L  =PRECISION([1.,2.]) ))          :: T6(1)
+  TYPE(DT(KIND=KIND(T%K),  LEN=RADIX([1,2]) ))                :: T7(1)
+  TYPE(DT(KIND=4,          L  = RANGE([1_2,2_2])))            :: T8(1)
+  TYPE(DT(KIND=4,          LEN  = INT(TINY(1.)*2.**127)))     :: T9(1)
 
   IF ( T5%K               .NE.   4          ) STOP 51
   IF ( T5%L               .NE.   1          ) STOP 52

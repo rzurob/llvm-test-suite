@@ -1,19 +1,12 @@
 !*********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument309f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from C
@@ -21,16 +14,16 @@
 !*                                - Allocate (a, source=b) with a and b both having a C descriptor
 !*                                - Allocate on the Fortran side/ Deallocate on the Fortran side
 !*                                - Verify values both in Fortran and C
-!*                                - type c_float 
+!*                                - type c_float
 !*                                - Nesting of calls
 !*                                   Bind(c) ==> bind(c)
-!*                                - Matmul: the last dimension of the first 
-!*                                          array must be equal to the first 
+!*                                - Matmul: the last dimension of the first
+!*                                          array must be equal to the first
 !*                                          dimension of the second array
 !* Fortran array:
 !*   - dim 1 is number of rows
-!*   - dim2 is number of columns 
-!*   - Column order 
+!*   - dim2 is number of columns
+!*   - Column order
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -128,11 +121,11 @@ end subroutine sub_dealloc
 subroutine modify_values(arg) bind(C)
     implicit none
     real, allocatable :: arg(:,:)
-    real :: y(2,3) 
+    real :: y(2,3)
 
 !*********************************************
-!          y = 3 2 1     
-!             -2 4 1         
+!          y = 3 2 1
+!             -2 4 1
 !*********************************************
 
     if( .not. allocated(arg) ) ERROR STOP 50
@@ -145,7 +138,7 @@ subroutine modify_values(arg) bind(C)
     if( ubound(arg,2) /= ubound(y,2) )  ERROR STOP 54
     if( any(arg       /=          y) )  ERROR STOP 55
 
-    !modify an arbitary value 
+    !modify an arbitary value
     arg(1,3) = -arg(2,3)
 end subroutine modify_values
 
@@ -154,16 +147,16 @@ logical(c_bool) function ffunc(a,b) bind(C)
     implicit none
     real(c_float), pointer     :: a(:)
     real(c_float), allocatable :: b(:,:), r(:)
-    real :: x(3), y(2,3) 
+    real :: x(3), y(2,3)
 
-    interface 
+    interface
        subroutine my_matmul(a,b,r)
            implicit none
            real(4), pointer     :: a(:)
            real(4), allocatable :: b(:,:), r(:)
 
        end subroutine my_matmul
-    end interface 
+    end interface
 
    ffunc = .true.
 
@@ -183,14 +176,14 @@ logical(c_bool) function ffunc(a,b) bind(C)
     print*, "actual results"
     print*, r
 
-    if (any(r /= matmul(y,x)) ) then 
-    !if (any(r /= [12., 1.]) ) then 
+    if (any(r /= matmul(y,x)) ) then
+    !if (any(r /= [12., 1.]) ) then
         ffunc = .false.
         ERROR STOP 60
    end if
 !*********************************************
-! expected result: 
-!   12.  1. 
+! expected result:
+!   12.  1.
 !*********************************************
 end function ffunc
 

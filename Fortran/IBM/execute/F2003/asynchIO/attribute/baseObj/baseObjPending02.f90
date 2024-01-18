@@ -1,14 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : baseObjPending02 - ASYNCHRONOUS Attribute
 !*                               in Scoping Unit
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : January 19, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Base Object does *NOT* appear in
 !*                               an Executable Statement in a Scoping Unit
@@ -16,7 +11,6 @@
 !*                               executed while the Variable is a Pending
 !*                               I/O Storage Sequence Affector
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 :

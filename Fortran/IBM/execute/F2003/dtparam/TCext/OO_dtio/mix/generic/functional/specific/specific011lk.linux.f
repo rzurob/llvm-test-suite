@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : specific011lk
 !*
-!*  PROGRAMMER                 : David Forster (derived from specific011lk by Robert Ma)
 !*  DATE                       : 2007-08-09 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures (generic-binding)
 !*                                 - Specific Binding
@@ -140,10 +132,10 @@ program specific011lk
       type is ( child(*,4) ) ! tcx: (*,4)
          if ( ( b1%c /= 'abc' ) .or. ( b1%i /= 1001 ) .or. ( c1%c /= 'ghi' ) .or. ( c1%i /= 1004 ) ) error stop 3_4
    end select
-   
+
    select type ( b2 )
       type is ( gen3(*,4) ) ! tcx: (*,4)
-         select type ( c2 ) 
+         select type ( c2 )
             type is ( gen3(*,4) ) ! tcx: (*,4)
                if ( ( b2%c /= 'def' ) .or. ( b2%i /= 1002 ) .or. ( b2%j /= 1003 ) .or. &
                     ( c2%c /= 'jkl' ) .or. ( c2%i /= 1005 ) .or. ( c2%j /= 1006 ) .or. &

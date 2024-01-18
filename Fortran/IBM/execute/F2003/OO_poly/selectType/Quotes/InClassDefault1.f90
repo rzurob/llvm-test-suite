@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: InClassDefault1.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : InClassDefault
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Within the CLASS DEFAULT, the associating entity is polymorphic   
-!*  and has the same declared type as the selector 
+!*
+!*  Within the CLASS DEFAULT, the associating entity is polymorphic
+!*  and has the same declared type as the selector
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -49,7 +43,7 @@
 
     TYPE  :: Zero
       INTEGER(1) :: Int=8_1
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       COMPLEX(8) :: Cplx=(-8.0_8, 8.0_8)
@@ -69,7 +63,7 @@
   TYPE(Base) :: V(2:3,3:4)
   CHARACTER(1025) :: Str
 
-  Str(:) = '!' 
+  Str(:) = '!'
   V%C(:) = Str
   CALL Sub(V(2:3,3:4))
 
@@ -81,16 +75,16 @@
   INTEGER :: i
 
     SELECT TYPE (U => Arg)
-    CLASS DEFAULT 
+    CLASS DEFAULT
       SELECT TYPE (U)
       CLASS IS (Base)
         T%L = .FALSE.
         T = U(2,3)
-        IF ( .NOT. T%L )            STOP 20 
+        IF ( .NOT. T%L )            STOP 20
         IF ( LEN(U%C) .NE. 1025 )   STOP 21
         IF ( ANY(U%C  .NE. Str) )   STOP 22
-  
-        IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30 
+
+        IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30
         IF ( SIZE(U)          .NE. 4 )          STOP 31
         IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
         IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
@@ -102,11 +96,11 @@
         IF ( ANY(U%Cplx       .NE. (-8.0_8, 8.0_8) ))   STOP 37
         IF ( KIND(U%Cplx) .NE. 8 )                      STOP 38
 
-        IF ( ANY(U%L        .NEQV. .TRUE._8) )   STOP 40 
-        IF ( KIND(U%L) .NE. 8 )                  STOP 41 
+        IF ( ANY(U%L        .NEQV. .TRUE._8) )   STOP 40
+        IF ( KIND(U%L) .NE. 8 )                  STOP 41
 
-        IF ( ANY(U%C    .NE. Str) )   STOP 42 
-        IF ( LEN(U%C) .NE. 1025 )     STOP 43 
+        IF ( ANY(U%C    .NE. Str) )   STOP 42
+        IF ( LEN(U%C) .NE. 1025 )     STOP 43
 
       CLASS DEFAULT
         STOP 51
@@ -117,7 +111,7 @@
     END SELECT
 
   END SUBROUTINE
- 
+
   END
 
 

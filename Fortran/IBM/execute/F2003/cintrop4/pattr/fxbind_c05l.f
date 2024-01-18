@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,28 +13,20 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c05k.f
-!* TEST CASE TITLE              : BIND(C) attribute/statement
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Test: BINC(C) attribute/statement
 !*                                with different intrinsic data type,
 !*                                integer*1, integer*2, integer*4,
 !*                                integer*8, real*4, real*8, complex,
-!*                                character(1). Using module 
+!*                                character(1). Using module
 !*                                entry. Fortran calls C.
 !*                                with implicit typing
 !* ===================================================================
@@ -54,7 +41,7 @@
 module m
 contains
 
-       function fexfun_int1(a1) result(a2) 
+       function fexfun_int1(a1) result(a2)
            implicit integer*1 (a)
            a2 = a1
            return
@@ -62,7 +49,7 @@ contains
            a2 = a1 + 3
        end function fexfun_int1
 
-       function fexfun_int2(b1) result(b2) 
+       function fexfun_int2(b1) result(b2)
             implicit integer*2 (b)
             b2 = b1
             return
@@ -70,7 +57,7 @@ contains
             b2 = b1 + 3
        end function fexfun_int2
 
-       function fexfun_int4(c1) result(c2) 
+       function fexfun_int4(c1) result(c2)
             implicit integer*4 (c)
             c2 = c1
             return
@@ -78,7 +65,7 @@ contains
             c2 = c1 + 3
        end function fexfun_int4
 
-       function fexfun_int8(d1) result(d2) 
+       function fexfun_int8(d1) result(d2)
            implicit integer*8 (d)
            d2 = d1
            return
@@ -86,7 +73,7 @@ contains
            d2 = d1 + 3
        end function fexfun_int8
 
-       function fexfun_real4(e1) result(e2) 
+       function fexfun_real4(e1) result(e2)
             implicit real*4 (e)
             e2 = e1
             return
@@ -94,15 +81,15 @@ contains
             e2 = e1 * 2
        end function fexfun_real4
 
-       function fexfun_real8(f1) result(f2) 
+       function fexfun_real8(f1) result(f2)
            implicit real*8 (f)
            f2 = f1
-           return 
+           return
        entry exfun_real8(f1) result(f2) bind(c)
            f2 = f1 * 2
        end function fexfun_real8
 
-       function fexfun_real16(g1) result(g2) 
+       function fexfun_real16(g1) result(g2)
             implicit real*16 (g)
             g2 = g1
             return
@@ -110,7 +97,7 @@ contains
             g2 = g1 * 2
        end function fexfun_real16
 
-       function fexfun_log1(h1) result(h2) 
+       function fexfun_log1(h1) result(h2)
            implicit logical*1 (h)
            h2 = h1
            return
@@ -118,22 +105,22 @@ contains
            h2 = .not. h1
        end function fexfun_log1
 
-       function fexfun_comp1(l1) result(l2) 
+       function fexfun_comp1(l1) result(l2)
            implicit complex*8 (l)
            l2 = l1
            return
        entry exfun_comp1(l1) result(l2) bind(c)
            l2 = l1 + (1.0, 1.0)
        end function fexfun_comp1
-       
-       function fexfun_comp2(m1) result(m2) 
+
+       function fexfun_comp2(m1) result(m2)
            implicit complex*16 (m)
            m2 = m1
            return
        entry exfun_comp2(m1) result(m2) bind(c)
            m2 = m1 + (1.0D0, 1.0D0)
        end function fexfun_comp2
-       
-   
+
+
 end module m
- 
+

@@ -31,7 +31,7 @@
 
       oldcounterv(:)=0
       counterv(:)=0
-      
+
       call timer_start(10)
       do i=1,niters
 !         call dump (K,D,clusterv,counterv,oldcounterv)
@@ -43,12 +43,11 @@
          call timer_stop(2)
          if (this_image() .EQ. 1) then
             chg = kmeans_getchange(K,counterv,oldcounterv)
-            print *, 'Iter=', i, ' chg=', chg 
+            print *, 'Iter=', i, ' chg=', chg
          end if
       end do
       call timer_stop(10)
       end
-
 
 !*    ********************************************************************
 !*                       REAVERAGE KERNEL                                *
@@ -86,7 +85,6 @@
       end do
 
       end
-
 
 !*    ********************************************************************
 !*    *               calculate the change and update counters           *
@@ -151,7 +149,7 @@
       subroutine dump(K,D,clusterv,counterv,oldcounterv)
       integer*8 K,D,d1,k1,counterv(K),oldcounterv(K)
       double precision clusterv(K,D)
-      
+
       do k1=1,K
          do d1=1,D
             write(*, 10, advance='no') clusterv(k1,d1)

@@ -1,36 +1,29 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/diag/polyAssign1025d_2level.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 07 August 2015
-!* ORIGIN                       : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  
+!* DESCRIPTION
 !*                              : Test compiling with Fortran language standards: Fortran 2003std, 95std, 90std, 77std.
-!*                              : Test whether the variable of an intrinsic assignment is polymorphic. 
+!*                              : Test whether the variable of an intrinsic assignment is polymorphic.
 !*                              : Variables should be allocated and assigned with the corresponding dynamic type.
 !*                              : We test polymorphic assignment to two levels of extensible derived types described as bellow.
 !*---------------------------------------------------------------------
-!* t is the base derived type, and t2 and t3 are extensibe derived   
+!* t is the base derived type, and t2 and t3 are extensibe derived
 !* t2 and t3 are extensibe derived type of t
 !*
-!*                           t                                       
-!*                          / \                                       
-!*                         /   \                                      
-!*                        /     \                                     
-!*                       t2     t3                                 
-!*                                  
+!*                           t
+!*                          / \
+!*                         /   \
+!*                        /     \
+!*                       t2     t3
+!*
 !---------------------------------------------------------------------
 !* ===================================================================
 !*  REVISION HISTORY
@@ -41,7 +34,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-Program polyAssign1025d 
+Program polyAssign1025d
     Type t
       integer :: i = 10
     End Type

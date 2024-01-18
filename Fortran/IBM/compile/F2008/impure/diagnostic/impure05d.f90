@@ -1,17 +1,14 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure05d
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
 !*
 !*  DESCRIPTION
 !*
 !*  checks if an error is generated when there is more than one occurrence of the
-!*  keyword IMPURE in the definition of an elemental procedure 
+!*  keyword IMPURE in the definition of an elemental procedure
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -33,7 +30,7 @@ PROGRAM main
       REAL :: foo
       real, intent(in) :: a
       foo = a+1
-     
+
 
     END FUNCTION foo
 

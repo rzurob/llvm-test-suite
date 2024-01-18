@@ -1,11 +1,6 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/abstract/C503/interface003.f
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -20,22 +15,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: interface block
 !*                                        poly abstract type return, interface of a deferred binding
@@ -55,7 +39,7 @@ type, abstract :: base(k1)    ! (4)
    integer, kind :: k1
    integer(k1)   :: id
 contains
-   procedure(itf), pass, deferred :: getbase   
+   procedure(itf), pass, deferred :: getbase
 end type
 
 interface
@@ -85,12 +69,12 @@ end module
 
 program interface003
    use m
-   
+
    class(base(4)), pointer :: b1
-   type(child(4,4,20)) :: c1 = child(4,4,20)(5) 
-   
+   type(child(4,4,20)) :: c1 = child(4,4,20)(5)
+
    b1 => c1%getbase()
-   
+
    if(b1%id .ne. 5) error stop 1_4
-   
+
 end program

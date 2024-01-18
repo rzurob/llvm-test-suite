@@ -1,31 +1,23 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with real*8 in READ statement
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*                   test if round specified in specifier and descriptor.
-!*                   There would be no side effect. 
+!*                   There would be no side effect.
 !* ===================================================================
 
-  program roundR8ReadEdit01a 
+  program roundR8ReadEdit01a
 
     implicit none
 
-    character(18) :: r_mode 
+    character(18) :: r_mode
     integer ios
     real*8 rd1, rd2
 
-    integer, parameter::unit_r = 2 
+    integer, parameter::unit_r = 2
 
     rd1 = 0.0D0
     rd2 = 0.0D0
@@ -41,7 +33,7 @@
 
     inquire(unit_r, round=r_mode)
 
-    if(r_mode .ne. 'UP') error stop 1_4 
+    if(r_mode .ne. 'UP') error stop 1_4
 
     if(transfer(rd1, 0_8) .ne. 4608308547941528973_8) error stop 2_4
 

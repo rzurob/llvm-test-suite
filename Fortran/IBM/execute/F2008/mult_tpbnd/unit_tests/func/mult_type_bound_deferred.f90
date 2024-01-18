@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mult_type_deferred.f 
-!*
-!*  PROGRAMMER                 : Paul Liu
 !*  DATE                       : 2011-05-20
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : within module
 !*                               deferred attribute
@@ -58,12 +48,12 @@ module m
    contains
 
       subroutine real_foo(dtv)
-         class(fox_child(4,4)), intent(inout) :: dtv 
+         class(fox_child(4,4)), intent(inout) :: dtv
          print *,"real_foo:", dtv%i - dtv%j
       end subroutine
 
       subroutine real_bar(dtv)
-         class(fox_child(4,4)), intent(inout) :: dtv 
+         class(fox_child(4,4)), intent(inout) :: dtv
          print *,"real_bar:", dtv%i + dtv%j
       end subroutine
 

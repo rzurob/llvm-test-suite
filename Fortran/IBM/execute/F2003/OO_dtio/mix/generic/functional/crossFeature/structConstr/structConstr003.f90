@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Structure Constructor
@@ -146,7 +135,7 @@ program structConstr003
 
    write ( 1, "(DT(3,5,4))", iostat = stat, iomsg = msg )    gen3('mno', OneThousandOne, zoo )
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteg' ) )         error stop 5_4
-   
+
    write ( 1, "(DT(5,5,5))", iostat = stat, iomsg = msg )   ( child (zoo,OneThousand), gen3('cat',OneThousandOne, zoo),i=-1,1 )
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteg' ) )         error stop 6_4
 

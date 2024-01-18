@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypParamDef1   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypParamDef1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 15, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Type param def stmt - kind selector 
+!*  Type param def stmt - kind selector
 !*
 !*  (ICE)
 !*
@@ -40,7 +33,7 @@
     INTEGER(KIND=1), LEN  :: L=0
     INTEGER(KIND=K)       :: KK=K
     INTEGER(KIND=K)       :: LL(L, L)=1
-    CONTAINS 
+    CONTAINS
     PROCEDURE :: Proc => ModSub1
   END TYPE
 
@@ -49,7 +42,7 @@
     INTEGER(KIND=2), LEN  :: L=0
     INTEGER(KIND=K)       :: KK=K
     INTEGER(KIND=K)       :: LL(L, L)=1
-    CONTAINS 
+    CONTAINS
     PROCEDURE :: Proc => ModSub2
   END TYPE
 
@@ -58,7 +51,7 @@
     INTEGER(KIND=4), LEN  :: L=0
     INTEGER(KIND=K)       :: KK=K
     INTEGER(KIND=K)       :: LL(L, L)=1
-    CONTAINS 
+    CONTAINS
     PROCEDURE :: Proc => ModSub4
   END TYPE
 
@@ -67,13 +60,13 @@
     INTEGER(KIND=8), LEN  :: L=0
     INTEGER(KIND=K)       :: KK=K
     INTEGER(KIND=K)       :: LL(L, L)=1
-    CONTAINS 
+    CONTAINS
     PROCEDURE :: Proc => ModSub8
   END TYPE
 
 
-  
-  CONTAINS 
+
+  CONTAINS
 
   SUBROUTINE ModSub1(Arg)
   CLASS(DT1(1,*)) :: Arg
@@ -109,7 +102,7 @@
 
   END MODULE
 
-  PROGRAM  dtParamTypParamDef1 
+  PROGRAM  dtParamTypParamDef1
   USE M
   TYPE (DT1(1,4))    :: T1
   TYPE (DT2(2,8))    :: T2

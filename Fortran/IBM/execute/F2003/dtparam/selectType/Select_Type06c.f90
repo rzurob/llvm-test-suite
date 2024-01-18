@@ -1,24 +1,18 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type06c - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 12, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : type-bound procedures - Use association
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -42,26 +36,26 @@
       IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
         CHARACTER(l1), ALLOCATABLE :: tag(:)
-      END TYPE Base 
-      
-      TYPE, EXTENDS(Base) :: List 
+      END TYPE Base
+
+      TYPE, EXTENDS(Base) :: List
         TYPE(List(k1,l1)), POINTER :: Next => NULL()
         CONTAINS
-        PROCEDURE  :: p=> foo 
-      END TYPE List  
+        PROCEDURE  :: p=> foo
+      END TYPE List
 
       INTEGER, PARAMETER :: knd1 = KIND(0.0), len1 = 10
 
       CONTAINS
 
-      TYPE(List(knd1,len1)) FUNCTION foo (Obj) result (answer) 
-        CLASS(List(knd1,*)), TARGET  :: OBJ 
+      TYPE(List(knd1,len1)) FUNCTION foo (Obj) result (answer)
+        CLASS(List(knd1,*)), TARGET  :: OBJ
         POINTER :: answer
-      
+
            answer => OBJ%NEXT
 
       END FUNCTION foo
@@ -98,10 +92,10 @@
       CLASS(*), POINTER :: U
       POINTER :: SInit
 
-      ALLOCATE(List(knd1,len1):: SInit)    
+      ALLOCATE(List(knd1,len1):: SInit)
       IF ( .NOT. ASSOCIATED(SInit)) STOP 10
 
-      CALL BuildList(SInit) 
+      CALL BuildList(SInit)
       U => SInit
 
       CALL SELECT_TYPE(U)
@@ -118,7 +112,7 @@
           STEMP => Obj
 
           DO I = 1, 10
-           IF ( .NOT. ASSOCIATED(STEMP%NEXT) ) STOP 20 
+           IF ( .NOT. ASSOCIATED(STEMP%NEXT) ) STOP 20
            STEMP => STEMP%p()
            IF ( LEN(STEMP%tag) .NE. len1 ) STOP 30
            IF ( STEMP%tag(1) .NE. 'A' ) STOP 31

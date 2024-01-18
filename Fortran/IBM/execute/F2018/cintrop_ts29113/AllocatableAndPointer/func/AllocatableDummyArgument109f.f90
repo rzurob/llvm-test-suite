@@ -1,26 +1,19 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument106f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
 !*
 !*                                - Allocatable / Pointer Scalar various interoperable types
-!*                                - Generic resolution based 
-!*                                  * on type 
+!*                                - Generic resolution based
+!*                                  * on type
 !*                                  * attribute (allocatable vs. pointer)
 !*                                - List-directed I/O
 !*
@@ -35,7 +28,7 @@ implicit none
          implicit none
          integer(c_signed_char),allocatable ::x
          integer(c_signed_char) y
-      end  subroutine 
+      end  subroutine
       subroutine i1_ptr_sub(x,y) bind(c)
          use iso_c_binding, only: c_signed_char
          implicit none
@@ -121,7 +114,7 @@ implicit none
          implicit none
          complex(c_float_complex), pointer ::x
          complex(c_float_complex) y
-      end  subroutine 
+      end  subroutine
       subroutine cx8_alloc_sub(x,y) bind(c)
          use iso_c_binding, only: c_float_complex
          implicit none
@@ -237,7 +230,7 @@ implicit none
      i1_ptr => i1_tgt
 
      call alloc_ptr_sub(i1_alloc, i1_res)
-     if (i1_res /= 77) error stop 1 
+     if (i1_res /= 77) error stop 1
      call alloc_ptr_sub(i1_ptr, i1_res)
      if (i1_res /= 44) error stop 2
 

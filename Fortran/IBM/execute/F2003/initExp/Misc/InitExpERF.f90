@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpERF.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpERF.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,20 +19,17 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!* 
-!*  ERF -- An IBM extension 
-!*  
+!*  ERF -- An IBM extension
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   PROGRAM  InitExpERF
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
 
-  REAL(8), PARAMETER :: R = 0.8427007794_8 
+  REAL(8), PARAMETER :: R = 0.8427007794_8
 
   TYPE :: DT
     REAL(4)  :: R4(4,4)=0
@@ -51,7 +42,7 @@
                                     R4 = ERF(X=1.),                                 &
                                     R8 = RESHAPE((/(ERF(1._8), I=1,16)/), (/4,4/)), &
                                     R6 = ERF(X=1._16)                               &
-                                )                               
+                                )
 
 
   REAL(KIND(ERF(X=1.0_4))) :: R4(1) = ERF(X=1.0_4)

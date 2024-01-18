@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltTypeBnd.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltTypeBnd
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 14, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The type spec is specified with a type with variuos bindings 
+!*
+!*   The type spec is specified with a type with variuos bindings
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -71,9 +65,9 @@
       PROCEDURE, PASS  :: GetIdx => GetChildId ! bypass the original private attr ?
     END TYPE
 
-    INTERFACE 
+    INTERFACE
       ELEMENTAL FUNCTION GetBase1Interface(Arg)
-        IMPORT Base1 
+        IMPORT Base1
         CLASS(Base1(4)), INTENT(IN) :: Arg
         INTEGER      :: GetBase1Interface
       END FUNCTION
@@ -121,7 +115,7 @@
      IF (Var%GetId()            .NE. 2 )    STOP 32
      IF (Var%ChildId            .NE. 2 )    STOP 33
      IF (Var%Base1Id            .NE. 1 )    STOP 34
-     IF (Var%GetBase1Id()       .NE. 1 )    STOP 35 
+     IF (Var%GetBase1Id()       .NE. 1 )    STOP 35
      IF (Var%Base%GetId()       .NE. -1 )   STOP 36
      IF (Var%Base1%Base%GetId() .NE. -1 )   STOP 37
      IF (Var%Base1%Base%GetId() .NE. -1 )   STOP 38

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp C815TypeIsSeq.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C815TypeIsSeq
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 2, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
 !*  SECONDARY FUNCTIONS TESTED : Constraint C815
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,15 +30,15 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   Use sequence type as type spec  
+!*   Use sequence type as type spec
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM C815TypeIsSeq 
+  PROGRAM C815TypeIsSeq
   IMPLICIT NONE
- 
+
   TYPE :: Seq
     SEQUENCE
     INTEGER :: i
@@ -59,13 +53,13 @@
   SUBROUTINE Sub(Arg)
 
   CLASS(*) :: Arg
- 
+
   SELECT TYPE ( Arg )
     TYPE IS (Seq)
     CLASS IS (Seq)
     CLASS DEFAULT
       STOP 30
-  END SELECT 
+  END SELECT
 
   END SUBROUTINE
   END

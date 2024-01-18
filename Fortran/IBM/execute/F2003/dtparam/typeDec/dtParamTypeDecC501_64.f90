@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_64
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 30, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
-!*  -- A specification inquiry 
-!*  -- IEEE inquiry function(only test 4 of this kind) 
-!*    IEEE_SUPPORT_DATATYPE/IEEE_SUPPORT_DENORMAL/IEEE_SUPPORT_DIVIDE/IEEE_SUPPORT_INF 
-!* 
+!*  -- A specification inquiry
+!*  -- IEEE inquiry function(only test 4 of this kind)
+!*    IEEE_SUPPORT_DATATYPE/IEEE_SUPPORT_DENORMAL/IEEE_SUPPORT_DIVIDE/IEEE_SUPPORT_INF
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -59,19 +51,19 @@
   TYPE, EXTENDS(DT0) :: DT(KIND, LEN)
     INTEGER(1), KIND     :: KIND=K
     INTEGER(2), LEN      :: LEN=K
- 
-    TYPE(DT0(K=4,       L=SIZE([IEEE_SUPPORT_DATATYPE(1._4)])))     :: T1(1)  
-    TYPE(DT0(K=4,       L=SIZE([IEEE_SUPPORT_DENORMAL(-1._8)])))    :: T2(1)  
-    TYPE(DT0(K=4,       L=SIZE([IEEE_SUPPORT_DIVIDE(0._16)])))      :: T3(1)  
-    TYPE(DT0(K=4,       L=SIZE([IEEE_SUPPORT_INF(0._8)])))          :: T4(1)  
-  
+
+    TYPE(DT0(K=4,       L=SIZE([IEEE_SUPPORT_DATATYPE(1._4)])))     :: T1(1)
+    TYPE(DT0(K=4,       L=SIZE([IEEE_SUPPORT_DENORMAL(-1._8)])))    :: T2(1)
+    TYPE(DT0(K=4,       L=SIZE([IEEE_SUPPORT_DIVIDE(0._16)])))      :: T3(1)
+    TYPE(DT0(K=4,       L=SIZE([IEEE_SUPPORT_INF(0._8)])))          :: T4(1)
+
   END TYPE
 
   TYPE (DT(L=8)) :: T1
 
   IF ( T1%K               .NE.   4          ) STOP 11
   IF ( T1%L               .NE.   8          ) STOP 12
-  IF ( T1%KIND            .NE.   4          ) STOP 13  
+  IF ( T1%KIND            .NE.   4          ) STOP 13
   IF ( T1%LEN             .NE.   4          ) STOP 14
   IF ( ANY( T1%I          .NE.   4        ) ) STOP 15
 

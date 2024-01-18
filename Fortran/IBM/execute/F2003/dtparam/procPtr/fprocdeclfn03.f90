@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : F2003/dtparam/procPtr/
-! PROGRAMMER                 : Morteza Ershad-Manesh
 ! DATE                       : 08/05/2008
-! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component 
-! DRIVER STANZA              : xlfF2003
+! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component
 ! DESCRIPTION                : Use of  procedure declaration statement & procedure component with NOPASS attr.
 !=======================================================================
 ! REVISION HISTORY
@@ -20,13 +16,13 @@ INTERFACE
    INTEGER(KIND=4),SAVE    :: NumCalled =1
  END SUBROUTINE
 END INTERFACE
-  TYPE Base(k1,LEN1) 
+  TYPE Base(k1,LEN1)
    INTEGER, KIND   :: k1
    INTEGER, LEN    :: LEN1
    INTEGER(K1)     :: I
    CHARACTER(LEN=LEN1) :: OurChar
    PROCEDURE(PrntChar4), NOPASS,POINTER  :: procptr => null()
-  END TYPE 
+  END TYPE
 END MODULE
 
 MODULE m
@@ -39,19 +35,19 @@ USE types
    print*,"PrntChar4 has been called,",NumCalled," times"
    NumCalled=NumCalled+1
  END SUBROUTINE
- 
+
  SUBROUTINE AsstPtr(a)
   TYPE(Base(4,20)),INTENT(INOUT) :: a
    a%procptr=>PrntChar5
  END SUBROUTINE
- 
+
  SUBROUTINE PrntChar1 (a)
    TYPE(Base(4,20)),INTENT(INOUT) :: a
-   
+
    print*,"PrntValue 1 , the value of the character is ",a%OurChar
    print*,"Is procptr associated? ", associated(a%procptr)
  END SUBROUTINE
- 
+
  SUBROUTINE PrntChar2 (b)
   TYPE(Base(4,20)),INTENT(INOUT) :: b
   INTEGER, SAVE :: N=2
@@ -59,27 +55,27 @@ USE types
   print*,"Is procptr associated? ", associated(b%procptr)
    N=N+1
  END SUBROUTINE
- 
+
  SUBROUTINE PrntChar3 (b)
   TYPE(Base(4,20)),INTENT(INOUT) :: b
   INTEGER, SAVE :: N=2
   print*,"PrntValue 3 , the value of the character is ",b%OurChar, " and when it is adjusted left ", ADJUSTL(b%OurChar),"."
   print*,"Is procptr associated? ", associated(b%procptr)
   N=N+1
- END SUBROUTINE 
+ END SUBROUTINE
 
  SUBROUTINE callprntValue2(b)
   TYPE(Base(4,20)),INTENT(INOUT) :: b
-  PROCEDURE(PrntChar2),POINTER :: ptr   ! RETURN TYPE OF OUR FN IS A POINTER 
+  PROCEDURE(PrntChar2),POINTER :: ptr   ! RETURN TYPE OF OUR FN IS A POINTER
   ptr=>PrntChar2
   b%i=20
   call ptr(b)
  END SUBROUTINE
- 
+
  FUNCTION ChangePtr(i)
    INTEGER,INTENT(IN) :: i
-   PROCEDURE(PrntChar1),POINTER :: ChangePtr   ! RETURN TYPE OF OUR FN IS A POINTER 
-     
+   PROCEDURE(PrntChar1),POINTER :: ChangePtr   ! RETURN TYPE OF OUR FN IS A POINTER
+
    IF ( i .EQ. 1) THEN
     ChangePtr=>PrntChar1
    ELSE IF (i .EQ. 2) THEN
@@ -88,12 +84,12 @@ USE types
     ChangePtr=>PrntChar2
    ENDIF
   END FUNCTION
-  
+
    FUNCTION ChangePtr2(i,c)
    INTEGER,INTENT(IN) :: i
    CLASS(Base(4,*)),INTENT(IN):: c
-   PROCEDURE(PrntChar1),POINTER :: ChangePtr2   ! RETURN TYPE OF OUR FN IS A POINTER 
-   
+   PROCEDURE(PrntChar1),POINTER :: ChangePtr2   ! RETURN TYPE OF OUR FN IS A POINTER
+
 
    SELECT TYPE (c)
     TYPE IS (Base(4,*))
@@ -101,9 +97,9 @@ USE types
     CLASS IS (Base(4,*))
 	 print*,"CLASS IS BASE(4,",c%LEN1,")"
    END SELECT
-   
+
    	  ChangePtr2=>PrntChar3
-   
+
   END FUNCTION
 END MODULE
 
@@ -113,11 +109,11 @@ USE M
  TYPE(Base(4,20)) :: n
 
   n=Base(4,20)(15, "ABCDEFGHIJ")
- 
+
  print*,"Before association"
  procptr1 => ChangePtr(1)
  call procptr1(n)
- 
+
  procptr1 => ChangePtr(3)
  call procptr1(n)
 
@@ -133,6 +129,6 @@ USE M
  call procptr1(n)
  procptr1 => ChangePtr2(2,Base(4,20)(15,"ABCDEFGHIJ"))
  call procptr1(n)
- 
+
 END PROGRAM procdeclfn03
 

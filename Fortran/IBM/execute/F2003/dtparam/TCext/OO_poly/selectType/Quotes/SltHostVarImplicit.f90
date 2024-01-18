@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltHostVarImplicit.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltHostVarImplicit
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 23, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is an associate name associating to an entity of implicit type 
+!*
+!*   The selector is an associate name associating to an entity of implicit type
 !*    (Ice : 297436 )
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -51,7 +45,7 @@
 
     TYPE  :: Zero(K1)    ! (4)
         INTEGER, KIND :: K1
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4)
       INTEGER(K1) :: BaseId = 1
@@ -97,13 +91,13 @@
 
   PROGRAM SltHostVarImplicit
   USE M
-  IMPLICIT CLASS(*)(V), TYPE(Zero(4))(B) 
+  IMPLICIT CLASS(*)(V), TYPE(Zero(4))(B)
   ALLOCATABLE :: V
 
   ALLOCATE(V, SOURCE=Child(4)())
 
   SELECT TYPE ( As => V )
-    CLASS IS (Child(4)) 
+    CLASS IS (Child(4))
       IF ( As%Base%GetId() .NE.  1 ) STOP 34
       IF ( As%GetId()      .NE.  2 ) STOP 35
       IF ( As%BaseId       .NE.  1 ) STOP 36
@@ -124,4 +118,4 @@
 
 
   END
-  
+

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgAchar8
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : ACHAR 
+!*  SECONDARY FUNCTIONS TESTED : ACHAR
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Achar called in arr constructor 
-!*    
-!*  () 
+!*  Achar called in arr constructor
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -41,14 +33,14 @@
   INTEGER(1), ALLOCATABLE :: II1(:)
   INTEGER(4), ALLOCATABLE :: I4
   INTEGER(8), POINTER     :: I8
-  
+
   INTEGER                 :: I
-   
+
 ! CHARACTER :: CC(0:127)=(/(ACHAR(I=I, KIND=1), I=0, 127)/)
 
   CHARACTER :: CC(0:127)
   CC=(/(ACHAR(I=I, KIND=1), I=0, 127)/)
- 
+
   ALLOCATE(I4)
   ALLOCATE(I8)
 

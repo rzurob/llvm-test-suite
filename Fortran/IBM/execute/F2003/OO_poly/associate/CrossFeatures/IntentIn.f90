@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  IntentIn.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : IntentIn
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 07, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a dummy with ontent(in) 
-!*    () 
+!*    The selector is a dummy with ontent(in)
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,7 +39,7 @@
 
     TYPE :: Base
       INTEGER :: BaseId = 1
-      CLASS(*), ALLOCATABLE :: Unknown(:) 
+      CLASS(*), ALLOCATABLE :: Unknown(:)
       CONTAINS
       PROCEDURE,nopass :: Bnd
     END TYPE
@@ -55,7 +49,7 @@
     END TYPE
 
     CONTAINS
-  
+
     ELEMENTAL FUNCTION Bnd(Arg)
     INTEGER, INTENT(IN) :: Arg
     INTEGER :: Bnd
@@ -63,16 +57,16 @@
     END FUNCTION
 
   END MODULE
-  
+
   PROGRAM IntentIn
 
   USE M, DT=>Child
   IMPLICIT NONE
 
-  CLASS(DT), POINTER :: V(:) 
-  
+  CLASS(DT), POINTER :: V(:)
+
   ALLOCATE (V(3), SOURCE=DT(Unknown=(/"321","321"/)) )
-  
+
   CALL Sub(V)
 
   IF (.NOT. ASSOCIATED(V))         STOP 50
@@ -88,11 +82,11 @@
     END SELECT
 
   CONTAINS
- 
+
   SUBROUTINE Sub(Arg)
   CLASS(DT), POINTER, INTENT(IN) :: Arg(:)
 
-    ASSOCIATE( As => Arg ) 
+    ASSOCIATE( As => Arg )
 
       IF ( ANY(V%BaseID  .NE.  1 ) )  STOP 71
       IF ( ANY(V%ChildID .NE.  2 ) )  STOP 72

@@ -1,13 +1,10 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_f04.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED : Compatibility with !HPF$ Processor tag
@@ -16,7 +13,7 @@
 !*  DESCRIPTION
 !*
 !*    Test simple Forall construct with a scalar-mask-expr.  Test forall pointer
-!*    assignment in forall-stmt-body.  
+!*    assignment in forall-stmt-body.
 !*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890
@@ -31,7 +28,7 @@ PROGRAM fxfc009
    !--------------------------------
    ! Variable Declarations
    !--------------------------------
- 
+
    INTEGER,TARGET :: i1_t(20,20)
    INTEGER,POINTER :: i1_p(:,:)
 
@@ -102,7 +99,7 @@ PROGRAM fxfc009
 
    FORALL ( integer*4::in1 = 1:20 )
       FORALL ( integer(4)::in2 = 1:20 , in1 > in2 )
-         i3_p(in1,in2) = in1 + in2 
+         i3_p(in1,in2) = in1 + in2
       END FORALL
    END FORALL
 
@@ -121,7 +118,7 @@ PROGRAM fxfc009
    FORALL ( integer*2::in1 = 1:100 , r4_t(in1) .EQ. real(in1/2) )
       r4_p(in1) = 99
    END FORALL
-   
+
    PRINT *,r4_t
 
    !-------------------------------------------------
@@ -137,7 +134,7 @@ PROGRAM fxfc009
    FORALL ( integer(2)::in1 = 1:99, SUM(i5_p(in1:)) > 5000 )
       i5_p(in1) = 999
    END FORALL
-  
+
    PRINT *,i5_t
 
 END

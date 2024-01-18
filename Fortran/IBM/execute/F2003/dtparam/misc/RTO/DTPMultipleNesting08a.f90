@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTPMultipleNesting08a
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : February 15, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Run Time Offset (RTO)
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : Default initialization
@@ -61,27 +53,27 @@ MODULE Mod
 
       SUBROUTINE Select_type(Arg)
         CLASS(*) :: Arg
- 
+
         SELECT TYPE ( Arg )
           CLASS IS (NextGen1(4,*))
             IF ( Arg%l1 .NE. 513 ) STOP 10
-    
+
             IF ( LEN(Arg%C1) .NE. 1026 ) STOP 11
             IF ( SIZE(Arg%F1) .NE. 1026 ) STOP 12
             IF ( LBOUND(Arg%F1,1) .NE.  1 ) STOP 13
             IF ( UBOUND(Arg%F1,1) .NE. 1026 ) STOP 14
-    
+
             Arg%Child%C1 = "B"
             Arg%Child%F1 = .True.
-    
+
           CLASS IS (NextGen2(4,*))
             IF ( Arg%l1 .NE. 513 ) STOP 15
-    
+
             IF ( LEN(Arg%C1) .NE. 1026 ) STOP 16
             IF ( SIZE(Arg%F1) .NE. 1026 ) STOP 17
             IF ( LBOUND(Arg%F1,1) .NE.  1 ) STOP 18
             IF ( UBOUND(Arg%F1,1) .NE. 1026 ) STOP 19
-    
+
             Arg%Child%C1 = "F"
             Arg%Child%F1 = .False.
 
@@ -108,7 +100,7 @@ MODULE Mod
             ASSOCIATE ( p => Arg%cmp2 )
               SELECT TYPE ( p )
                  CLASS IS (NextGen2(4,*))
-                   IF ( p%l1 .NE. 513 ) STOP 30 
+                   IF ( p%l1 .NE. 513 ) STOP 30
 
                    IF ( LEN(p%C1) .NE. 1026 ) STOP 31
                    IF ( SIZE(p%F1) .NE. 1026 ) STOP 32
@@ -116,13 +108,13 @@ MODULE Mod
                    IF ( UBOUND(p%F1,1) .NE. 1026 ) STOP 34
 
                    p%C1 = "L"
-                   p%F1 = .True. 
+                   p%F1 = .True.
 
                  CLASS DEFAULT
                    STOP 35
               END SELECT
             END ASSOCIATE
-    
+
           CLASS DEFAULT
             STOP 36
         END SELECT

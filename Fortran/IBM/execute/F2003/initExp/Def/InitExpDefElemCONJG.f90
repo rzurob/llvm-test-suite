@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemCONJG.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemCONJG.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 25, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  - CONJG 
+!*
+!*  - CONJG
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM  InitExpDefElemCONJG 
+  PROGRAM  InitExpDefElemCONJG
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -53,7 +46,7 @@
 
   COMPLEX(KIND(CONJG(Z16))),   PARAMETER  ::   &
         T3(LBOUND(CONJG(Z16),1):UBOUND(CONJG(Z16),1), LBOUND(CONJG(Z16),2):UBOUND(CONJG(Z16),2)) &
-        = CONJG(2*Z16(:,:)) +  2*Z16(63,63) 
+        = CONJG(2*Z16(:,:)) +  2*Z16(63,63)
 
   IF (KIND(T1)         .NE. 4 )            STOP 11
   IF (ANY( LBOUND(T1)  .NE. (/1, 1/)))     STOP 12
@@ -78,4 +71,4 @@
   END
 
 
- 
+

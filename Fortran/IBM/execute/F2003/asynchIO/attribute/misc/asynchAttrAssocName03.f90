@@ -1,20 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchAttrAssocName03 - ASYNCHRONOUS
 !*                               Attribute in the ASSOCIATE Construct
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : February 28, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : associate-name => selector (where selector
 !*                               implicitly has the ASYNCHRONOUS Attribute)
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 : ASYNCHRONOUS Attribute, ASSOCIATE Construct
@@ -33,7 +27,6 @@
 !*  R818 association          is  associate-name => selector
 !*  R819 selector             is  expr
 !*                            or  variable
-!*
 !*
 !*  8.1.4.3 Attributes of associate names
 !*

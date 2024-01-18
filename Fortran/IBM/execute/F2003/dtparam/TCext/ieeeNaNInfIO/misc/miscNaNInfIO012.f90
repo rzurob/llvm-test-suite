@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : miscNaNInfIO012.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : July 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -35,7 +29,7 @@
       module m
 
         implicit none
-        
+
         type :: Point(k1,n1)    ! (4,3)
           integer, kind    :: k1
           integer, len     :: n1
@@ -49,7 +43,7 @@
             generic         :: write(formatted) => childo
             generic         :: read(formatted)  => childi
         end type
-      
+
       contains
         subroutine reset(arg)
           class(Point(4,*)) :: arg
@@ -82,7 +76,7 @@
              read(unit, myfmt) dtv%name, dtv%x, dtv%y, dtv%cx_value
           endif
 
-          
+
         end subroutine
 
         subroutine childo(dtv, unit, iotype, vlist, iostat, iomsg)
@@ -109,11 +103,11 @@
              write(unit, myfmt) dtv%name, dtv%x, dtv%y, dtv%cx_value
 
           endif
-          
+
         end subroutine
 
       end module
-      
+
 program miscNaNInfIO012
 
       use m
@@ -122,13 +116,13 @@ program miscNaNInfIO012
       integer, parameter :: in = 11, out = 12
 
       type(Point(4,3)) :: pt1, pt2
-      
+
       open(in,  file='miscNaNInfIO012.dat', action='read')
       open(out, file='miscNaNInfIO012.out', action='write')
 
       call pt1%reset
       call pt2%reset
-      
+
       read(in,*) pt1
       read(in,*) pt2
 
@@ -147,11 +141,11 @@ program miscNaNInfIO012
       end if
       if ( .not. equiv_is_negative( imag(pt2%cx_value) ) ) then
          error stop 5_4
-      end if      
-      
+      end if
+
       write(out,"(dt'FORMATTED'(3,7,8))") pt1
       write(out,"(dt'FORMATTED'(3,7,8))") pt2
-      
+
       call pt1%reset
       call pt2%reset
 
@@ -178,7 +172,7 @@ program miscNaNInfIO012
 
       close(in)
       close(out)
-      
+
       contains
 
       ! Returns true if the integer equivalence of
@@ -187,11 +181,11 @@ program miscNaNInfIO012
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
-         
+
          if ( val_eq .ge. 0 ) then
             equiv_is_negative = .false.
          else
@@ -206,9 +200,9 @@ program miscNaNInfIO012
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
 
          if ( val_eq .le. 0 ) then

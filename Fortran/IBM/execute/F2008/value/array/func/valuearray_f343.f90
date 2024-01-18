@@ -1,17 +1,14 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f343.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
 !*
 !*  DESCRIPTION                : testing the extensions to the VALUE attribute
-!*                   			for arrays of different types 
+!*                   			for arrays of different types
 !*								- passing an array to a function to check that
 !*								1. dummy argument is equal to the actual argument
 !*								2. actual argument doesn't change
@@ -121,7 +118,7 @@ loop1d: do doc1=1,SZA5
 		loop3d: do doc3=1,SZA4
 			loop4d: do doc4=1,SZA6
 				loop5d: do doc5=1,SZA7
-				
+
 	i5	(doc1,doc2,doc3,doc4,doc5)= doc1+doc2+doc3+doc4+doc5
 	i5_r(doc1,doc2,doc3,doc4,doc5)= -1
 	i5_f(doc1,doc2,doc3,doc4,doc5)= -1
@@ -176,19 +173,19 @@ if (any (l1_f .NEQV. l1_r)) error stop 14
 if (any (l1 .EQV. l1_r)) error stop 214
 
 dvt1_f = func1_dvt(dvt1)
-do doCounter=1,SIZEOFA	  
+do doCounter=1,SIZEOFA
 	if (dvt1_f(doCounter)%i1 		.ne. 	dvt1_r(doCounter)%i1) 			error stop 1501
 	if (.not. precision_r4 (dvt1_f(doCounter)%r1,dvt1_r(doCounter)%r1)) 	error stop 1502
-	if (dvt1_f(doCounter)%l1 		.NEQV. 	dvt1_r(doCounter)%l1) 			error stop 1503	
+	if (dvt1_f(doCounter)%l1 		.NEQV. 	dvt1_r(doCounter)%l1) 			error stop 1503
 	if (.not. precision_x8 (dvt1_f(doCounter)%c1,dvt1_r(doCounter)%c1)) 	error stop 1504
 	if (dvt1_f(doCounter)%char1 	.ne. 	dvt1_r(doCounter)%char1) 		error stop 1505
-	
+
 	if (dvt1(doCounter)%i1 		.eq. 	dvt1_r(doCounter)%i1) 		error stop 2501
 	if (precision_r4 (dvt1(doCounter)%r1,dvt1_r(doCounter)%r1)) 	error stop 2502
-	if (dvt1(doCounter)%l1 		.EQV. 	dvt1_r(doCounter)%l1) 		error stop 2503	
+	if (dvt1(doCounter)%l1 		.EQV. 	dvt1_r(doCounter)%l1) 		error stop 2503
 	if (precision_x8 (dvt1(doCounter)%c1,dvt1_r(doCounter)%c1)) 	error stop 2504
 	if (dvt1(doCounter)%char1 	.eq. 	dvt1_r(doCounter)%char1) 	error stop 2505
-end do	
+end do
 
 i2_f = func2_int(i2)
 if (any (i2_f .ne. i2_r)) error stop 16
@@ -207,26 +204,26 @@ if (any (i5_f .ne. i5_r)) error stop 19
 if (any (i5 .eq. i5_r)) error stop 219
 
 contains
-  
+
 pure integer*4 function func1_int(arg)
     integer*4 :: arg(:)
 	value arg
 	arg = 100
-	func1_int = 100	
+	func1_int = 100
 end
 
 pure integer*4 function func2_int(arg)
     integer*4 :: arg(:,:,:,:,:,:,:)
 	value arg
 	arg = -1
-	func2_int = -1	
+	func2_int = -1
 end
 
 pure integer*4 function func3_int(arg)
     integer*4 :: arg(:,:,:,:,:)
 	value arg
 	arg = -1
-	func3_int = -1	
+	func3_int = -1
 end
 
 pure real function func1_r(arg)
@@ -241,13 +238,13 @@ pure complex*8 function func1_com(arg)
 	value arg
 	arg =(atan(1.0),2*atan(1.0))
 	func1_com=(atan(1.0),2*atan(1.0))
-end	
+end
 
 pure character(SIZEOFA) function func1_char(arg)
     character(SIZEOFA) :: arg(:)
 	value arg
 	arg = "1234567890"
-	func1_char = "1234567890"	
+	func1_char = "1234567890"
 end
 
 pure logical function func1_lg(arg)
@@ -255,7 +252,7 @@ pure logical function func1_lg(arg)
 	value arg
 	arg = .true.
 	func1_lg = .true.
-end	
+end
 
 pure type(t1) function func1_dvt(arg)
     type(t1) :: arg(:)

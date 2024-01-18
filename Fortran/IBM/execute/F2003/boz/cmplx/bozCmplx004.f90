@@ -1,27 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozCmplx004.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : CMPLX intrinsic
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                :Section 13.7.20 - Statement:
 !*				CMPLX (X [, Y, KIND])
 !*
 !*   Testing default X dummy argument in CMPLX intrinsic.
 !*   Default Kind type 8 using option -qrealsize=8
-!*                          					
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================

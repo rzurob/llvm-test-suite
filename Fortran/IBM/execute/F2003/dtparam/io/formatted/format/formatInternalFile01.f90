@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatInternalFile01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatInternalFile01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 10 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. test read & write from or to internal file(string buffer)
@@ -55,24 +47,24 @@ program formatInternalFile01
        access='sequential',sign='suppress',iostat=ios)
 
   if(ios /= 0) then
-    print *,"fail to open the file, iostat=",ios 
-    stop 10 
+    print *,"fail to open the file, iostat=",ios
+    stop 10
   else
-     write(10,'(sp,2i4,/3a3/3l3/f5.2,e12.3,f7.2)') base1 
+     write(10,'(sp,2i4,/3a3/3l3/f5.2,e12.3,f7.2)') base1
   end if
 
   rewind(10)
- 
+
   read(10,'(a30/a30/a30/a30)')  (buffer(i),i=1,4)
 
   do i=1,4
-     write(*,'(a30)') buffer(i) 
+     write(*,'(a30)') buffer(i)
   end do
 
   read(buffer,'(2i4/3a3/3l3/f5.2,e12.3,f7.2)') base2
 
   write(*,'(sp,2i4,/3a3/3l3/f5.2,e12.3,f7.2)') base2
 
-  close(10) 
+  close(10)
 
 end program

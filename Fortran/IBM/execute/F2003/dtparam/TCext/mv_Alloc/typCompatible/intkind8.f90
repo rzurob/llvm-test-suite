@@ -3,24 +3,12 @@
 ! opt variations: -qnol -qnodeferredlp
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : intkind8.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM/TO are of type integer*8
 !* ===================================================================
@@ -36,22 +24,22 @@ module m
           integer, kind                    :: k1
           integer, len                     :: n1
           integer(k1), public, allocatable :: i1 (:)
-      end type 
+      end type
 
-      type(base(:,8)), pointer  :: b 
+      type(base(:,8)), pointer  :: b
       type(base(20,8)) d
 
-      contains 
+      contains
          type(base(:,8)) function func()
             pointer func
 
-            allocate(func, source=base(20,8)( int( (/1,2,3,4/), 8) ) ) 
+            allocate(func, source=base(20,8)( int( (/1,2,3,4/), 8) ) )
          end function
 
 end module
 
       use m
-      integer(8) i 
+      integer(8) i
 
        allocate(b, source = func())
 
@@ -61,7 +49,7 @@ end module
        if ( .not. allocated(d%i1) ) stop 23
 
        do i = 1, 4
-          if ( d%i1(i) /= i ) call zzrc(i_4) 
+          if ( d%i1(i) /= i ) call zzrc(i_4)
        end do
 
        end

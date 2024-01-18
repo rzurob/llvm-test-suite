@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryArrayCharComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryArrayCharComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 15 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY FOR DT AND COMPONENT
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. CHARACTER ALLOCATABLE ARRAY COMPONENT
@@ -30,13 +22,13 @@
 
 module m
    type base(k1,k2,l1,l2)
-     
+
       integer(1),kind :: k1=2
       integer(2),kind :: k2=4
 
       integer(k1),len :: l1=k1
       integer(k2),len :: l2=k2
-      
+
       character(k1),allocatable :: c1(:)
       character(k2),allocatable :: c2(:)
       character(len=l1),allocatable :: c3(:,:)
@@ -52,8 +44,8 @@ module m
       character(l2%kind),allocatable :: c13(:)
       character(l1%kind),allocatable :: c14(:)
 
-   end type 
-         
+   end type
+
 end module
 
   program dtParameterInquiryArrayCharComp02
@@ -66,7 +58,7 @@ end module
   if(t%k2 /= 4)                                             error stop 11_4
   if(t%l1 /= 2)                                             error stop 12_4
   if(t%l2 /= 4)                                             error stop 13_4
-  
+
   if(t%k1%kind /= kind(t%k1) .or. t%k1%kind /= 1)           error stop 14_4
   if(t%k2%kind /= kind(t%k2) .or. t%k2%kind /= 2)           error stop 15_4
   if(t%l1%kind /= kind(t%l1) .or. t%l1%kind /= 2)           error stop 16_4

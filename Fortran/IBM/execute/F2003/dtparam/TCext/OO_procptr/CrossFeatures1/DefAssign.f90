@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: DefAssign.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : DefAssign.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : DefAssign.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 17, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +34,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Defined assignment
 !*  (304718) -> 305334
 !*   NOTE from JX: proc-ptr not allowed in defined assgn; test case updated
@@ -51,10 +45,10 @@
 
   MODULE M
 
-    INTERFACE 
+    INTERFACE
       FUNCTION CToC(Arg)
        CHARACTER(*) :: Arg
-       CHARACTER(LEN(Arg)) :: CToC 
+       CHARACTER(LEN(Arg)) :: CToC
       END FUNCTION
     END INTERFACE
 
@@ -86,40 +80,40 @@
     END FUNCTION
 
     SUBROUTINE MyAssign1 (Arg1, Arg2)
-    PROCEDURE(CToC), POINTER, INTENT(OUT) :: Arg1 
-    PROCEDURE(CToC), POINTER, INTENT(IN) :: Arg2 
+    PROCEDURE(CToC), POINTER, INTENT(OUT) :: Arg1
+    PROCEDURE(CToC), POINTER, INTENT(IN) :: Arg2
       Arg1 => Arg2
-    END SUBROUTINE 
- 
+    END SUBROUTINE
+
 !   SUBROUTINE MyAssign2 (Arg1, Arg2)
-!   PROCEDURE(CToC), POINTER, INTENT(OUT) :: Arg1 
+!   PROCEDURE(CToC), POINTER, INTENT(OUT) :: Arg1
 !   PROCEDURE(CToC), INTENT(IN) :: Arg2 !disallowed by C1214
 !     Arg1 => Arg2
-!   END SUBROUTINE 
- 
+!   END SUBROUTINE
+
     SUBROUTINE MyAssign3 (Arg1, Arg2)
-    PROCEDURE(CToC), POINTER, INTENT(OUT) :: Arg1 
-    TYPE(DT(*,4)), INTENT(IN) :: Arg2 
+    PROCEDURE(CToC), POINTER, INTENT(OUT) :: Arg1
+    TYPE(DT(*,4)), INTENT(IN) :: Arg2
       Arg1 => Arg2%BComp%ProcPtr
-    END SUBROUTINE 
- 
+    END SUBROUTINE
+
   END MODULE
 
 
-  PROGRAM DefAssign 
+  PROGRAM DefAssign
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   PROCEDURE(CToC), POINTER :: ProcPtr
   PROCEDURE(CToC), POINTER :: ProcPtr1
   TYPE(Base(4,20)),      TARGET  :: BTar
 
-  ProcPtr => NULL() 
+  ProcPtr => NULL()
 !  ProcPtr = RetPtr(Fun)
   call assgn (ProcPtr, RetPtr(Fun))
   IF (ProcPtr("ABC") .NE. "ABC" ) STOP 14
 
-  ProcPtr => Fun 
+  ProcPtr => Fun
 !  ProcPtr = NULL(ProcPtr)
   call assgn (ProcPtr, NULL(ProcPtr))
   IF (ASSOCIATED(ProcPtr) ) STOP 15
@@ -139,8 +133,8 @@
 
   FUNCTION RetPtr(Arg)
   PROCEDURE(CToC), POINTER :: RetPtr
-  PROCEDURE(CToC) :: Arg 
-    RetPtr => Arg 
+  PROCEDURE(CToC) :: Arg
+    RetPtr => Arg
   END FUNCTION
 
   END

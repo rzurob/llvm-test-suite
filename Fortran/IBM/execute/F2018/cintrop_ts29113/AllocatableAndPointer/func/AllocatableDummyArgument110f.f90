@@ -1,26 +1,19 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument110f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
 !*
 !*                                - Allocatable Scalar/Array of various interoperable types
-!*                                - List-directed read 
-!*                                - Formatted write 
+!*                                - List-directed read
+!*                                - Formatted write
 !*                                - move_alloc
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -57,11 +50,11 @@ subroutine my_read(a, b, unit) bind(c)
      character(256) :: iomsg
      integer lb, ub
 
-     if (.not. allocated(a)) then 
+     if (.not. allocated(a)) then
         allocate(a)
-     else 
+     else
         error stop 10
-     end if 
+     end if
      read (unit, *, iostat=iostat, iomsg=iomsg) a , lb, ub
      if (iostat /= 0) return
 
@@ -76,7 +69,7 @@ subroutine my_read(a, b, unit) bind(c)
          allocate(localData(lb:ub))
          read (unit, *, iostat=iostat, iomsg=iomsg) localData
          if (iostat /= 0) return
-         if (allocated(b)) then 
+         if (allocated(b)) then
              error stop 11
          else
             call move_alloc(localData, b)
@@ -112,12 +105,12 @@ implicit none
     end interface
 
     do i =1, 8
-        write (1,*) i*100, 0, i 
+        write (1,*) i*100, 0, i
         write (1,*) (j*1.1d0, j=1,i+1)
     end do
-    
+
     rewind(1)
-    
+
     do i = 1, 8
         call my_read(id, data, 1)
         call my_print(id, data, OUTPUT_UNIT)

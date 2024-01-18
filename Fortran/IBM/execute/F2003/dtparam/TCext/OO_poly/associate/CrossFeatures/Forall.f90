@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  Forall.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Forall 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Forall
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,11 +33,11 @@
 !*
 !*  DESCRIPTION
 !*    The forall stmt
-!*    () 
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   MODULE M
     TYPE :: DT(K1)    ! (4)
       INTEGER, KIND :: K1
@@ -55,18 +49,18 @@
   CONTAINS
 
     ELEMENTAL FUNCTION GetId(Arg)
-    IMPLICIT CLASS(DT(4))(A) 
+    IMPLICIT CLASS(DT(4))(A)
     INTENT(IN) :: Arg
     INTEGER    :: GetId
       GetId = Arg%Id
     END FUNCTION
 
   END MODULE
- 
-  PROGRAM Forall 
+
+  PROGRAM Forall
 
   USE M
-  IMPLICIT TYPE(DT(4))(A) 
+  IMPLICIT TYPE(DT(4))(A)
   DIMENSION :: Arr(2:130)
   LOGICAL(8) :: LArr(2:130)
   INTEGER :: i
@@ -74,7 +68,7 @@
   ASSOCIATE ( As => (/(DT(4)(-3), i=1, 131)/) )
     FORALL (i=2:130:2)
       Arr(i)  = As(i)
-    END FORALL 
+    END FORALL
   END ASSOCIATE
 
   IF ( Any(Arr(2::2)%ID      .NE. -3) ) STOP 60
@@ -82,8 +76,8 @@
 
   ASSOCIATE ( As => Arr )
     FORALL (i=2:130:1)
-      As%ID = -2 
-    END FORALL 
+      As%ID = -2
+    END FORALL
   END ASSOCIATE
 
   IF ( Any(Arr%ID      .NE. -2) ) STOP 70
@@ -91,8 +85,8 @@
 
   ASSOCIATE ( As => Arr )
     FORALL (i=2:130, As(i)%ID .EQ. -2)
-      As(i)%ID = -3 
-    END FORALL 
+      As(i)%ID = -3
+    END FORALL
   END ASSOCIATE
 
   IF ( Any(Arr%ID      .NE. -3) ) STOP 80
@@ -100,8 +94,8 @@
 
   ASSOCIATE ( As => Arr(:) )
     FORALL ( i=1:129 )
-      As(i)%ID = As(i)%ID + 5 
-    END FORALL 
+      As(i)%ID = As(i)%ID + 5
+    END FORALL
   END ASSOCIATE
 
   IF ( Any(Arr%ID      .NE. 2) ) STOP 90

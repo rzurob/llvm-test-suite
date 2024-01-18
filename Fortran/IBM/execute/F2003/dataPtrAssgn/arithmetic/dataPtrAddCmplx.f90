@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrAddCmplx.f 
+!*  TEST CASE NAME             : dataPtrAddCmplx.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -33,26 +27,26 @@ program main
     ptr((-1)**mod(1,2):) => c4(10:1:-1)
 
     if ( .not. associated(ptr, c4(10:1:-1))) stop 1
-    if ( lbound(ptr,1) /= -1 ) stop 2 
-    if ( ubound(ptr,1) /= 8 ) stop 3 
+    if ( lbound(ptr,1) /= -1 ) stop 2
+    if ( ubound(ptr,1) /= 8 ) stop 3
 
     select type(ptr)
-	type is (complex(4)) 
+	type is (complex(4))
             where ( real(ptr) < 0.0  )
-        	ptr = -ptr 
-		ptr = ptr + ptr 
-            end where 
+        	ptr = -ptr
+		ptr = ptr + ptr
+            end where
 	class default
-	    stop 5 
+	    stop 5
     end select
 
     select type(ptr)
-	type is (complex(4)) 
-    	    write (*, '("(",f10.6,", ", f10.6, ")")')  ptr 
+	type is (complex(4))
+    	    write (*, '("(",f10.6,", ", f10.6, ")")')  ptr
 	class default
-	    stop 5 
+	    stop 5
     end select
-   
+
     write (*, '("(",f10.6,", ", f10.6, ")")')  c4
 
 end program

@@ -2,9 +2,9 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk234 cxcmn_blk204
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT: fxcmn_blk234.out
 ! %EXECARGS:
@@ -12,20 +12,13 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that variables of
@@ -38,14 +31,13 @@
 !*                               single variable in them interoperated with C variables.
 !*				 (i.e. no struct used in C code)
 !*
-!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*  MM/DD/YY:  Init:  Comments:
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-module fmod1 
+module fmod1
 	use iso_c_binding
         implicit none
 
@@ -53,10 +45,10 @@ module fmod1
 ! Integers Declaration
 !      	- use decimal, binary, octal values to define type
 !     	- use KIND, SELECTED_INT_KIND, MAX, LEN
-!	- use ISO_C_BINDING modules	
+!	- use ISO_C_BINDING modules
 ! ----------------------------------------------------------------------------
 
-	integer (kind=o'001')				:: int_s1a(5) 
+	integer (kind=o'001')				:: int_s1a(5)
 	integer (LEN('k'))				:: int_s1b(5)
 
 	integer (2 )					:: int_s2a(5)
@@ -67,7 +59,7 @@ module fmod1
 
 	integer (kind=MAX(8, 7))			:: int_s8a(5)
 	integer (kind=int((4.4e0_8,6.5e0_8))+4 ) 	:: int_s8b(5)
-	
+
 	INTEGER (C_SIGNED_CHAR 		)		:: int_C_SIGNED_CHAR(5)
 	INTEGER (C_SHORT 		)		:: int_C_SHORT(5)
 	INTEGER (C_INT 			)		:: int_C_INT(5)
@@ -156,7 +148,7 @@ module fmod1
          /blk_int_C_INT_FAST32_T/ ,  &
          /blk_int_C_INT_FAST64_T/
 
-end module fmod1 
+end module fmod1
 
 
 program fxcmn_blk234
@@ -171,13 +163,13 @@ program fxcmn_blk234
 !         specific values for each element in the array
 ! ----------------------------------------------------------------------------
 
-        int_s1a 			=  (/b'1111111',o'0',-128,o'177',127/)		
+        int_s1a 			=  (/b'1111111',o'0',-128,o'177',127/)
         int_s1b 			= -128
 
         int_s2a 			=  (/o'77777',o'0',-32768, 32767,b'1111111'/)
         int_s2b 			= -32768
 
-        int_s4a 			=  (/2147483647,b'1111111',-2147483648, 0, o'3641100'/) 
+        int_s4a 			=  (/2147483647,b'1111111',-2147483648, 0, o'3641100'/)
         int_s4b 			= -2147483648
 
         int_s8a 			=  (/9223372036854775807_8,b'000000000',-9223372036854775807_8, o'3641100', -2147483648_8/)
@@ -186,10 +178,10 @@ program fxcmn_blk234
         int_C_SIGNED_CHAR		= (/b'1111111',o'0',-128, o'177',127/)
         int_C_SHORT			= (/o'77777',o'0',-32768, 32767,b'1111111'/)
         int_C_INT			= (/2147483647,b'1111111',-2147483648, 0, o'3641100'/)
-        int_C_LONG			= 2147483647 
+        int_C_LONG			= 2147483647
         int_C_LONG_LONG			= -9223372036854775807_8
         int_C_SIZE_T			= (/2147483647,b'1111111',-2147483648, 0, o'3641100'/)
-        int_C_INTPTR_T			=  1000000000           
+        int_C_INTPTR_T			=  1000000000
         int_C_INTMAX_T			= (/9223372036854775807_8,b'000000000',-9223372036854775807_8, o'3641100', -2147483648_8/)
         int_C_INT8_T			= -128
         int_C_INT16_T			= (/o'77777',o'0',-32768, 32767,b'1111111'/)
@@ -294,10 +286,10 @@ program fxcmn_blk234
         if ( ANY (int_c_int_least8_t(1:5) .ne. -128                 ))   error stop 70
 
         if ( int_c_int_least16_t(1)   .ne.  o'77777'       	    )    error stop 71
-        if ( int_c_int_least16_t(2)   .ne.  o'0'       	    	    )    error stop 72  
+        if ( int_c_int_least16_t(2)   .ne.  o'0'       	    	    )    error stop 72
         if ( int_c_int_least16_t(3)   .ne. -32768       	    )    error stop 73
         if ( int_c_int_least16_t(4)   .ne.  32767              	    )    error stop 74
-        if ( int_c_int_least16_t(5)   .ne.  b'1111111'              )    error stop 75 
+        if ( int_c_int_least16_t(5)   .ne.  b'1111111'              )    error stop 75
 
         if ( ANY (int_c_int_least32_t(1:5) .ne.  0                  ))    error stop 76
 
@@ -320,7 +312,7 @@ program fxcmn_blk234
 
 
 ! ----------------------------------------------------------------------------
-!  Call to C subprogram  
+!  Call to C subprogram
 ! ----------------------------------------------------------------------------
 	CALL CSUB_ALL()
 

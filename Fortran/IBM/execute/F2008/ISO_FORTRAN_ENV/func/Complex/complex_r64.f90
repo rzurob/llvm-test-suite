@@ -5,7 +5,7 @@
    REAL(REAL64) :: Z
    complex(kind=KIND(Z)) :: X
    complex(kind=REAL64) :: Y
-   
+
      X=(3838838,2349_4)
      Y=X
 
@@ -15,5 +15,5 @@
      print*,"SUB=",Y-X
      print*,"MUL=",Y*X
      print*,"DIV=",Y/X
- 
+
   end program

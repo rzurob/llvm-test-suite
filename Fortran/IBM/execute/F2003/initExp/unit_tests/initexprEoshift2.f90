@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Initialization expression
 !*
-!* PROGRAMMER                 : Kelvin Li
 !* DATE                       : March 31, 2006
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : EOSHIFT intrinsic
 !*
@@ -58,7 +53,6 @@ if (.not. all(c3a .eq. c3res)) then
   stop 3
 endif
 
-
 d1res = eoshift(d0, -3)
 if (.not. all(d1 .eq. d1res)) then
   stop 4
@@ -76,7 +70,7 @@ d3res = eoshift(d3, shift=reshape((/0,-1,1,1,-1,0,-2,2,1/),(/3,3/)), &
 do i=1,3
   do j=1,2
     do k=1,3
-      if ( .not. precision_r8(d3res(i,j,k), d3a(i,j,k))) then	
+      if ( .not. precision_r8(d3res(i,j,k), d3a(i,j,k))) then
         print *, i, j, k, d3res(i,j,k), d3a(i,j,k)
         stop 6
       endif

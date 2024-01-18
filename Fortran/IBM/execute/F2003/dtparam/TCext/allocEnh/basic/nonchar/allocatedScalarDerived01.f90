@@ -3,23 +3,17 @@
 ! opt variations: -qnol -qnodeferredlp
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : allocatedScalarDerived01 - Basic Tests:
 !*                               Non-CHARACTER Derived Type
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : August  8, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Allocated ALLOCATABLE Scalar of Derived Type
 !*  SECONDARY FUNCTIONS TESTED : and expr is a Scalar of Derived Type with the
 !*                               same Shape and Length Type Parameter Values
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : TYPE, ALLOCATABLE Attribute, Intrinsic
@@ -32,7 +26,6 @@
 !*  7.4.1.1 General form
 !*
 !*  R734 assignment-stmt  is  variable = expr
-!*
 !*
 !*  7.4.1.3 Interpretation of intrinsic assignments
 !*

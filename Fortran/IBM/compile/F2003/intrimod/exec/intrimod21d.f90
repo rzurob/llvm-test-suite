@@ -2,24 +2,21 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f ieee_*.mod xlf_fp_util.mod
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: dcomp intrimod21d.f
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod21d.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use INTRINSIC module with same name as the internal
-!*                     subroutine and module procedures is not allowed.  
+!*                     subroutine and module procedures is not allowed.
 !*
 !*************************************************************************
 !*  REVISION HISTORY
@@ -40,13 +37,13 @@
 
          contains
 
-!... ERROR: module prodcedure with same name as an INTRINSIC module            
+!... ERROR: module prodcedure with same name as an INTRINSIC module
 	    subroutine xlf_fp_util(ieee_exceptions)
                flags = (/ fp_overflow, fp_div_by_zero, fp_invalid, &
      &               fp_underflow, fp_inexact /)
 
                call ieee_exceptions(IEEE_NEAREST, flags)
-            end subroutine     
+            end subroutine
 
        end module
 
@@ -56,7 +53,7 @@
          use :: mod1
          use, intrinsic :: ieee_arithmetic
          use, intrinsic :: xlf_fp_util
-         implicit none 
+         implicit none
          external ieee_arithmetic		! External procedure
 
          call xlf_fp_util(ieee_arithmetic)
@@ -68,18 +65,18 @@
 !... ieee_exceptions is use ieee_arithmetic therefore it can not be used
 !... as the name of internal procedures.
 
-            logical function ieee_exceptions(rt_nearest, flags) 
+            logical function ieee_exceptions(rt_nearest, flags)
                use, intrinsic :: ieee_arithmetic
                use, intrinsic :: xlf_fp_util
-               type(ieee_round_type), intent(in) :: rt_nearest 
+               type(ieee_round_type), intent(in) :: rt_nearest
                integer(fpscr_kind), dimension(5) :: flags
 
                call ieee_set_rounding_mode(rt_nearest)
                call set_fpscr_flags(flags(1))
-               call clr_fpscr_flags(flags(5)) 
+               call clr_fpscr_flags(flags(5))
 
                ieee_exceptions=.true.
-           end function 
+           end function
 
       end program
 

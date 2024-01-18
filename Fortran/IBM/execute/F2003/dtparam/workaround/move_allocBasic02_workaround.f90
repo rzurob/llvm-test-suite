@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocBasic02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocBasic02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 7 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
@@ -40,7 +32,7 @@ module m
     integer,len   :: l3
     type(A(l3+1)) :: a2
     type(B(l3-1)) :: b1
-  end type 
+  end type
 end module
 
 program move_allocBasic02
@@ -54,7 +46,7 @@ program move_allocBasic02
   type(C(3)),allocatable :: from2(:)
   type(C(3)),allocatable :: to2(:)
 
-  allocate(from1,source=C(3)(a2=A(4)(i1=1,i2=-1), & 
+  allocate(from1,source=C(3)(a2=A(4)(i1=1,i2=-1), &
                              b1=B(2)(a1=A(8)(i1=2,i2=-2)) ) )
 
   allocate(from2(3:4),source= [C(3)(a2=A(4)(i1=3,i2=-3),b1=B(2)(a1=A(8)(i1=4,i2=-4))), C(3)(a2=A(4)(i1=5,i2=-5),b1=B(2)(a1=A(8)(i1=6,i2=-6 ) ) )] )
@@ -69,7 +61,7 @@ program move_allocBasic02
   if(any(from1%b1%a1%i1 /= 2))               error stop 16_4
   if(any(from1%b1%a1%i2 /= -2))              error stop 17_4
 
-  call move_alloc(from1,to1)      
+  call move_alloc(from1,to1)
 
   if(allocated(from1))                       error stop 18_4
   if(.not. allocated(to1))                   error stop 19_4
@@ -82,12 +74,12 @@ program move_allocBasic02
   if(to1%b1%a1%l1 /= 8)                      error stop 25_4
   if(any(to1%b1%a1%i1 /= 2))                 error stop 26_4
   if(any(to1%b1%a1%i2 /= -2))                error stop 27_4
-                 
+
    allocate(C(3):: to2(-200:200))
 
    if(lbound(to2,1) /= -200)                 error stop 28_4
    if(ubound(to2,1) /= 200)                  error stop 29_4
-      
+
    call move_alloc(from2,to2)
 
   if(allocated(from2))                       error stop 30_4
@@ -107,6 +99,6 @@ program move_allocBasic02
   if(any(to2(3)%b1%a1%i1 /= 4))              error stop 42_4
   if(any(to2(3)%b1%a1%i2 /= -4))             error stop 43_4
   if(any(to2(4)%b1%a1%i1 /= 6))              error stop 44_4
-  if(any(to2(4)%b1%a1%i2 /= -6))             error stop 45_4 
-   
+  if(any(to2(4)%b1%a1%i2 /= -6))             error stop 45_4
+
 end program

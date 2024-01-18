@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: OneBlkParams.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: OneBlkParams.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : OneBlkParams
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : ONLY ONE TYPE/CLASS IS BLOCK 
+!*  SECONDARY FUNCTIONS TESTED : ONLY ONE TYPE/CLASS IS BLOCK
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The type parameters are diff 
+!*
+!*   The type parameters are diff
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -48,31 +42,31 @@
   PROGRAM OneBlkParams
   IMPLICIT NONE
 
-  INTEGER :: Visited = 0 
+  INTEGER :: Visited = 0
 
-  IF (                         & 
-  &      (Fint(1_1) .NE. 1 )   & 
-  & .OR. (Fint(2_2) .NE. 1 )   & 
-  & .OR. (Fint(4_4) .NE. 1 )   & 
-  & .OR. (Fint(8_8) .NE. 1 )   & 
-  & .OR. (Fint(2_2) .NE. 1 )   ) THEN 
+  IF (                         &
+  &      (Fint(1_1) .NE. 1 )   &
+  & .OR. (Fint(2_2) .NE. 1 )   &
+  & .OR. (Fint(4_4) .NE. 1 )   &
+  & .OR. (Fint(8_8) .NE. 1 )   &
+  & .OR. (Fint(2_2) .NE. 1 )   ) THEN
     STOP 111
   END IF
 
-  IF (                             & 
-  &      (FChar("1")    .NE. 1 )   & 
-  & .OR. (FChar("12")   .NE. 1 )   & 
-  & .OR. (FChar("")     .NE. 1 )   & 
-  & .OR. (FChar("123")  .NE. 1 )   & 
-  & .OR. (FChar("1234") .NE. 1 )   ) THEN 
+  IF (                             &
+  &      (FChar("1")    .NE. 1 )   &
+  & .OR. (FChar("12")   .NE. 1 )   &
+  & .OR. (FChar("")     .NE. 1 )   &
+  & .OR. (FChar("123")  .NE. 1 )   &
+  & .OR. (FChar("1234") .NE. 1 )   ) THEN
     STOP 112
   END IF
 
-  IF (                                      & 
-  &      (FCmpx((1.0_4, 0_2))   .NE. 1 )   & 
-  & .OR. (FCmpx((8_8, 2._4))     .NE. 1 )   & 
-  & .OR. (FCmpx((1_1, 8._16))    .NE. 1 )   & 
-  & .OR. (FCmpx((16._16, .8_16)) .NE. 1 )   ) THEN 
+  IF (                                      &
+  &      (FCmpx((1.0_4, 0_2))   .NE. 1 )   &
+  & .OR. (FCmpx((8_8, 2._4))     .NE. 1 )   &
+  & .OR. (FCmpx((1_1, 8._16))    .NE. 1 )   &
+  & .OR. (FCmpx((16._16, .8_16)) .NE. 1 )   ) THEN
     STOP 112
   END IF
 

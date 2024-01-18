@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass102.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass102.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -58,7 +46,7 @@
 !*                                     single and double dimention array
 !*                                     with using reshape and do loop
 !*                                     with complex, complex*8, complex*16
-!*                                     complex*32 and double complex data 
+!*                                     complex*32 and double complex data
 !*                                     types.
 !*
 !* ===================================================================
@@ -109,7 +97,7 @@
      +(/ 2,2 /) )
       arr_c52 = reshape( &
      +(/ (1.0,1.0),(2.0,2.0),(3.0,3.0),(4.0,4.0),(5.0,5.0), &
-     +(6.0,6.0),(7.0,7.0),(8.0,8.0),(9.0,9.0),(10.0,10.0) /), (/ 5,2 /) ) 
+     +(6.0,6.0),(7.0,7.0),(8.0,8.0),(9.0,9.0),(10.0,10.0) /), (/ 5,2 /) )
       arr_c12 = reshape( (/ (4.0,4.0),(6.0,6.0) /), (/ 1,2 /) )
 
       ar_c = arr_c * 10

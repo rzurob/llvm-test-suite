@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : array101bkl
 !*
-!*  PROGRAMMER                 : David Forster (derived from array101b by Robert Ma)
 !*  DATE                       : 2007-06-20 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with polymorphic/nonpoly array with type with derived type component (Input)
@@ -72,7 +64,7 @@ program array101bkl
    class(child(4,4)), pointer    :: b4(:,:)
 
    namelist /nml1/ b1
-   namelist /nml2/ b2   
+   namelist /nml2/ b2
    namelist /nml3/ b3
    namelist /nml4/ b4
 

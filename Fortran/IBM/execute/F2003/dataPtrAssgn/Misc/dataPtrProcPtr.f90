@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrProcPtr.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrProcPtr.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 21, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,28 +19,26 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  result from procedure pointer 
+!*  result from procedure pointer
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM dataPtrProcPtr 
+  PROGRAM dataPtrProcPtr
   IMPLICIT NONE
-  
+
   INTEGER, PARAMETER :: LB=-(2**31)
   INTEGER, PARAMETER :: UB=(2**31)-1
- 
+
   INTEGER,  TARGET  :: Tar2(LB:LB, UB:UB), Tar22(UB:UB, UB:UB)
   INTEGER,  TARGET ::  Tar1(LB:LB), Tar11(UB:UB)
   INTEGER,  POINTER :: Ptr(:, :)
   INTEGER    :: I, J, K, N
 
-  INTERFACE 
+  INTERFACE
     FUNCTION IFun1(Arg)
       INTEGER, TARGET :: Arg(:)
       INTEGER, POINTER :: IFun1(:)
@@ -60,7 +52,7 @@
   PROCEDURE(IFun1), POINTER :: Ptr1
   PROCEDURE(IFun2), POINTER :: Ptr2
 
- 
+
   N = 1; K = 0
 
   Tar2 = UB
@@ -73,42 +65,42 @@
   Ptr2 => IFun2
 
 
-    Ptr(LB:, LB:) => Ptr2(Tar2) 
+    Ptr(LB:, LB:) => Ptr2(Tar2)
     CALL Check2(LB, LB, LB, LB, 1, UB)
 
-    Ptr(UB:, UB:) => Ptr2(Tar2) 
+    Ptr(UB:, UB:) => Ptr2(Tar2)
     CALL Check2(UB, UB, UB, UB, 1, UB)
 
-    Ptr(UB:, LB:) => Ptr2(Tar2) 
+    Ptr(UB:, LB:) => Ptr2(Tar2)
     CALL Check2(UB, LB, UB, LB, 1, UB)
 
-    Ptr(LB:, LB:) => Ptr2(Tar22) 
+    Ptr(LB:, LB:) => Ptr2(Tar22)
     CALL Check2(LB, LB, LB, LB, 1, UB)
 
-    Ptr(UB:, UB:) => Ptr2(Tar22) 
+    Ptr(UB:, UB:) => Ptr2(Tar22)
     CALL Check2(UB, UB, UB, UB, 1, UB)
 
-    Ptr(UB:, LB:) => Ptr2(Tar22) 
+    Ptr(UB:, LB:) => Ptr2(Tar22)
     CALL Check2(UB, LB, UB, LB, 1, UB)
 
-    Ptr(LB:LB, LB:LB) => Ptr1(Tar1) 
+    Ptr(LB:LB, LB:LB) => Ptr1(Tar1)
     CALL Check1(LB, LB, LB, LB, 1, LB)
-  
-    Ptr(UB:UB, UB:UB) => Ptr1(Tar1) 
+
+    Ptr(UB:UB, UB:UB) => Ptr1(Tar1)
     CALL Check1(UB, UB, UB, UB, 1, LB)
-  
-    Ptr(LB:LB, UB:UB) => Ptr1(Tar1) 
+
+    Ptr(LB:LB, UB:UB) => Ptr1(Tar1)
     CALL Check1(LB, LB, UB, UB, 1, LB)
-  
-    Ptr(LB:LB, LB:LB) => Ptr1(Tar11) 
+
+    Ptr(LB:LB, LB:LB) => Ptr1(Tar11)
     CALL Check1(LB, LB, LB, LB, 1, LB)
-  
-    Ptr(UB:UB, UB:UB) => Ptr1(Tar11) 
+
+    Ptr(UB:UB, UB:UB) => Ptr1(Tar11)
     CALL Check1(UB, UB, UB, UB, 1, LB)
-  
-    Ptr(LB:LB, UB:UB) => Ptr1(Tar11) 
+
+    Ptr(LB:LB, UB:UB) => Ptr1(Tar11)
     CALL Check1(LB, LB, UB, UB, 1, LB)
-  
+
   CONTAINS
 
   SUBROUTINE Check2(L1, L2, U1, U2, SIZ, Value)

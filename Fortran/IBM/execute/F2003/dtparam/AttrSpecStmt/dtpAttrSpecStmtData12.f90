@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpAttrSpecStmtData12
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 21, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- DATA statement
 !*
-!*  The sequence of array elements is in array element order 
-!*   
+!*  The sequence of array elements is in array element order
+!*
 !*  (ice)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -43,7 +34,7 @@
     INTEGER, KIND :: K0=1
     INTEGER, LEN  :: L0=1
     CONTAINS
-    PROCEDURE :: ModFun0 
+    PROCEDURE :: ModFun0
   END TYPE
 
   TYPE,  EXTENDS(DT0)  :: DT1(K1, L1)
@@ -51,7 +42,7 @@
     INTEGER(K0), LEN  :: L1=1
     INTEGER(K1)       :: R(L1)!=K1
     CONTAINS
-    PROCEDURE :: ModFun1 
+    PROCEDURE :: ModFun1
   END TYPE
 
   TYPE, EXTENDS(DT1) :: DT2(K2,L2)
@@ -61,34 +52,34 @@
     CHARACTER(L2) :: C(L2)!=CHAR(K2)
     TYPE(DT2(K0,L0,K1,L0,K2,L2)), POINTER :: Ptr!=>NULL()
     CONTAINS
-    PROCEDURE, NOPASS :: ModFun2 
+    PROCEDURE, NOPASS :: ModFun2
   END TYPE
 
 
   CONTAINS
 
   FUNCTION ModFun0(Arg)
-  CLASS(DT0(1,*)), INTENT(IN) :: Arg 
+  CLASS(DT0(1,*)), INTENT(IN) :: Arg
   INTEGER ModFun0
-    ModFun0 = Arg%L0 
-  END FUNCTION 
+    ModFun0 = Arg%L0
+  END FUNCTION
 
   FUNCTION ModFun1(Arg)
-  CLASS(DT1(1,*,4,*)), INTENT(IN) :: Arg 
+  CLASS(DT1(1,*,4,*)), INTENT(IN) :: Arg
   COMPLEX ::  ModFun1(2)
     ModFun1(1) =  (Arg%K0, Arg%L0)
     ModFun1(2) =  (Arg%K1, Arg%L1)
-  END FUNCTION 
+  END FUNCTION
 
   FUNCTION ModFun2(Arg)
-  CLASS(DT2(1,*,4,*,8,*)), INTENT(IN) :: Arg(:,:) 
+  CLASS(DT2(1,*,4,*,8,*)), INTENT(IN) :: Arg(:,:)
   TYPE(DT2(1,Arg%L0,4,Arg%L1,8,Arg%L2)) ModFun2(SIZE(Arg,1),SIZE(Arg,2))
     ModFun2 = Arg
     DO I=1, Arg%L2
       ModFun2%I(I) = -Arg%I(I)
     END DO
     IF ( SIZE( ModFun2(1,1)%I ) .NE. Arg%L2 ) STOP 99
-  END FUNCTION 
+  END FUNCTION
 
   END MODULE
 
@@ -102,7 +93,7 @@
                                                DT1=DT1(1,3,4,5)(4), &
                                                  I=1,                          &
                                                  C=CHAR(1),                    &
-                                               Ptr=NULL() )                     
+                                               Ptr=NULL() )
 
   TYPE(DT0(1,3)),         PARAMETER :: C02=DT0(1,3)()
   TYPE(DT1(1,3,4,5)),     PARAMETER :: C12=DT1(1,3,4,5)(DT0=DT0(1,3)(),R=2)
@@ -110,7 +101,7 @@
                                                DT1=DT1(1,3,4,5)(4), &
                                                  I=2,                          &
                                                  C=CHAR([1,2,3,4,5,6,7]),      &
-                                               Ptr=NULL() )                     
+                                               Ptr=NULL() )
 
   TYPE(DT0(1,3)),         PARAMETER :: C03=DT0(1,3)()
   TYPE(DT1(1,3,4,5)),     PARAMETER :: C13=DT1(1,3,4,5)(DT0=DT0(1,3)(),R=3)
@@ -118,7 +109,7 @@
                                                DT1=DT1(1,3,4,5)(4),             &
                                                  I=3,                          &
                                                  C=CHAR(3),                    &
-                                               Ptr=NULL() )                     
+                                               Ptr=NULL() )
 
   INTEGER, PARAMETER  :: N=3
   INTEGER :: I,J
@@ -155,11 +146,11 @@
   DO I=1, N
   DO J=1, N
 
-    IF ( ( S0(I,J)%ModFun0()              .NE. S0(I,J)%L0    ) ) STOP 60 
+    IF ( ( S0(I,J)%ModFun0()              .NE. S0(I,J)%L0    ) ) STOP 60
     IF ( any( S1(I,J)%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 61
 
     IF ( ASSOCIATED(S2(I,J)%Ptr) )                STOP 62
- 
+
     IArr = S2(I,J)%ModFun2(s2)
     IF ( ANY( IArr(1,1)%I .NE. -C21%I   ) ) STOP 63
     IF ( ANY( IArr(2,2)%I .NE. -C22%I   ) ) STOP 64

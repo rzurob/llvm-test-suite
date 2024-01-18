@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignComp.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignComp.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : PtrAssignComp.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 13, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,19 +30,19 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Procedure pointer component 
-!* 
-!*  () 
+!*
+!*  Procedure pointer component
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
 
-  INTERFACE 
+  INTERFACE
     FUNCTION IntF(Arg)
-    CLASS(*), ALLOCATABLE  :: IntF 
+    CLASS(*), ALLOCATABLE  :: IntF
     CLASS(*)               :: Arg
     END FUNCTION
   END INTERFACE
@@ -66,7 +60,7 @@
   PROGRAM  PtrAssign
   USE M, LModFun => ModFun, LIntF => IntF
   IMPLICIT NONE
-  
+
   TYPE :: DT
     PROCEDURE (LIntF), POINTER, NOPASS :: ProcPtr
   END TYPE
@@ -76,7 +70,7 @@
   ALLOCATE(V, SOURCE=DT(LModFun))
 
   SELECT TYPE (V)
-  TYPE IS (DT) 
+  TYPE IS (DT)
 
     V%ProcPtr => LModFun
     CALL IntSub( V%ProcPtr(10_1), 10_1 )
@@ -84,9 +78,9 @@
     V%ProcPtr => LModFun
     CALL IntSub( V%ProcPtr(1_1), 1_1 )
 
-    CALL IntSub(V%ProcPtr(V%ProcPtr(1_1)), 1_1 ) 
-    
-    CALL IntSub( V%ProcPtr(-128_1),  -128_1 ) 
+    CALL IntSub(V%ProcPtr(V%ProcPtr(1_1)), 1_1 )
+
+    CALL IntSub( V%ProcPtr(-128_1),  -128_1 )
 
   CLASS DEFAULT
     STOP 55
@@ -104,7 +98,7 @@
   CLASS DEFAULT
     STOP 12
   END SELECT
-  
+
   END SUBROUTINE
 
   END

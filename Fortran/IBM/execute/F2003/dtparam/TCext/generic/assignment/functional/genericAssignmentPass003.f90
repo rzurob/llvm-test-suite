@@ -3,22 +3,11 @@
 ! opt variations: -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with assignment
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: pass-obj specified assignment to different derived types
 !*  KEYWORD(S)                 :
@@ -78,7 +67,7 @@ program genericAssignmentPass003
 
    type(base(4)) :: b1
    type(base1(8)) :: bb1
-   
+
    class(base(4)), allocatable :: b2
    class(base1(8)), pointer :: bb2
 
@@ -89,11 +78,11 @@ program genericAssignmentPass003
    print *, bb1
 
    allocate ( b2, bb2 )
-   
+
    b2 = bb1
    print *, b2%i
-   
+
    bb2 = b1
-   print *, bb2%k   
+   print *, bb2%k
 
 end program

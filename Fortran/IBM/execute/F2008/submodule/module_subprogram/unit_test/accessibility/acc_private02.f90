@@ -7,7 +7,7 @@ module anc_mod
 
   interface
     module subroutine mod_sub()
-    end subroutine 
+    end subroutine
   end interface
 contains
   subroutine print_mod_var()
@@ -19,9 +19,9 @@ submodule (anc_mod) submod1
 implicit none
 contains
   subroutine s1()
-    i1 = 5 
-    j1 = 6 
-  end subroutine 
+    i1 = 5
+    j1 = 6
+  end subroutine
 end submodule
 
 submodule (anc_mod:submod1) submod2
@@ -39,7 +39,7 @@ contains
   subroutine s2()
     i1 = 7
     j1 = 8
-  end 
+  end
 end submodule
 
 program main

@@ -1,33 +1,26 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : UNPACK DTP INTRINSIC FUNCTION
-!*
-!*  PROGRAMMER                 : Adrian Green
 !*  DATE                       : July 27, 2008
 !*  ORIGIN                     : XLF Compiler Test,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !       Pack Intrinsic function with derived type parameters.
-!*  DESCRIPTION                : Uses pack with a derived type component with a derived type component 
-!*								 containing a derived type component. UNPACK is placed   
+!*  DESCRIPTION                : Uses pack with a derived type component with a derived type component
+!*								 containing a derived type component. UNPACK is placed
 !*								in a seperate subroutine, in a seperate module and interfaced.
-!*
 !*
 module m1
 	type adelem(k)
 		integer, kind :: k
 		real(k) :: elem
 	end type adelem
-	
+
 	type adrow(k1)
 		integer, kind :: k1
 		real(k1) :: element
 		type (adelem(k1)) :: elema
 	end type adrow
-	
+
 	type admatrix (k2)
 		integer, kind :: k2
 		type (adrow(k2)), dimension(3) :: row
@@ -38,7 +31,7 @@ module m2
 	use m1
 	interface operator(+)
 		module procedure unpacked
-	end interface 	
+	end interface
 contains
 	function unpacked(dtp, mask) result (X)
 			type(admatrix(4)), intent(in), dimension(:) :: dtp
@@ -57,7 +50,7 @@ contains
 	end function unpacked
 end module m2
 
-program a	
+program a
 
 use m1
 use m2
@@ -74,7 +67,7 @@ do j = 1,4
 	vec(j)%row(i)%elema%elem = num
 	vec(j)%row(i)%element = num*2
 	num = num + 1.0
-	end do 
+	end do
 end do
 mask2 = reshape(mask1, (/4, 2/))
 field2 = reshape(field1, (/4, 2/))
@@ -86,7 +79,7 @@ do k =1,4
 	do j=1,2
 		print *, res(k,j)%row(1)%elema%elem, '  ', res(k,j)%row(2)%elema%elem, '  ',res(k,j)%row(3)%elema%elem
 	end do
-	print *, ' ' 
+	print *, ' '
 end do
 print *, "element"
 do k =1,4

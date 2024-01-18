@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrR739.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrR739.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 03, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  R739 data-target is variable or expr 
-!*   
+!*  R739 data-target is variable or expr
 !*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrR739 
+  PROGRAM dataPtrR739
   IMPLICIT NONE
 
   TYPE :: DT
@@ -49,12 +41,12 @@
   INTEGER(8)        :: I8
   INTEGER           :: I, J
 
-  I1=0; I8=7 
-  
+  I1=0; I8=7
+
   Arr(:)%ID = (/0,1,2,3,4,5,6,7/)
   DO  I=I1, I8
     Arr(I)%Ptr1(I:I+I8) => Arr
-    Arr(I)%Ptr2(I-I8:I) => Arr(I)%Ptr1 
+    Arr(I)%Ptr2(I-I8:I) => Arr(I)%Ptr1
   END DO
 
   DO  I=I1, I8
@@ -69,11 +61,11 @@
   END DO
 
 
-  Ptr(I1:I8) => Arr 
+  Ptr(I1:I8) => Arr
   Arr(:)%ID = (/-0,-1,-2,-3,-4,-5,-6,-7/)
 
   DO  I=I1, I8
-    Arr(I)%Ptr1(I:I+I8) => Ptr 
+    Arr(I)%Ptr1(I:I+I8) => Ptr
     Arr(I)%Ptr2(I-I8:I) => Ptr(I)%Ptr1
   END DO
 

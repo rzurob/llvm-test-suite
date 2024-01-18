@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsArrayProcPtrComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsArrayProcPtrComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 20 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 20 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
-!*  2. SOURCE IS POLYMORPHIC ARRAY AND HAS PROCEDURE POINTER COMPONENTS 
+!*  2. SOURCE IS POLYMORPHIC ARRAY AND HAS PROCEDURE POINTER COMPONENTS
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
 
@@ -42,7 +34,7 @@ module m
    end type
 
    type,extends(base) :: child(k2)
-     integer,kind     :: k2 
+     integer,kind     :: k2
      procedure(f2),nopass,pointer :: procptr2=>null()
    end type
 
@@ -79,7 +71,7 @@ program spreadSourceIsArrayProcPtrComp01
     class default
       error stop 100_4
   end select
-  
+
   allocate(b2(2,2),source=reshape(b1,(/2,2/)) )
 
   call verify1(spread(b1,1,5)) ! dim is 1
@@ -90,7 +82,7 @@ program spreadSourceIsArrayProcPtrComp01
   !   | b1(2), b1(3), b1(4), b1(5) |
   !   | b1(2), b1(3), b1(4), b1(5) |
 
-  
+
   call verify2(spread(b1,2,5)) ! dim is 2
   !   spread(..) becomes ...
   !   | b1(2), b1(2), b1(2), b1(2), b1(2) |
@@ -105,13 +97,13 @@ program spreadSourceIsArrayProcPtrComp01
   !   b2(2,2) - (fun1(int),fun2(char))
 
   call verify3(spread(b2,1,5)) ! dim is 1
-  !   shape is 5,2,2  
+  !   shape is 5,2,2
   !   dt(x,1,1) - (x is 1 - 5) - (fun1(int),fun2(char))
   !   dt(x,1,2) - (x is 1 - 5) - (fun1(int),fun2(char))
   !   dt(x,2,1) - (x is 1 - 5) - (fun1(int),fun2(char))
   !   dt(x,2,2) - (x is 1 - 5) - (fun1(int),fun2(char))
 
-  !   | (fun1(int),fun2(char)), (fun1(int),fun2(char)) |   b2(1,1) , b2(1,2) 
+  !   | (fun1(int),fun2(char)), (fun1(int),fun2(char)) |   b2(1,1) , b2(1,2)
   !   | (fun1(int),fun2(char)), (fun1(int),fun2(char)) |   b2(2,1) , b2(2,2)
 
   call verify4(spread(b2,2,5)) ! dim is 2
@@ -126,7 +118,7 @@ program spreadSourceIsArrayProcPtrComp01
      subroutine verify1(dt)
         class(base(*)),intent(in) :: dt(:,:)
 
-        ! element order: 
+        ! element order:
         ! dt(1,1) - b1(2) - (fun1(int),fun2(char))
         ! dt(2,1) - b1(2)
         ! dt(3,1) - b1(2)
@@ -147,9 +139,9 @@ program spreadSourceIsArrayProcPtrComp01
         ! dt(3,4) - b1(5)
         ! dt(4,4) - b1(5)
         ! dt(5,4) - b1(5)
-        
+
         select type(dt)
-           type is(child(*,4)) 
+           type is(child(*,4))
              if(dt%k2 /= 4)                              error stop 10_4
              if(dt%l1 /= 2)                              error stop 11_4
              if(size(dt,1) /= 5)                         error stop 12_4
@@ -168,15 +160,15 @@ program spreadSourceIsArrayProcPtrComp01
                if(dt(i,4)%procptr1(i) /= i)              error stop 20_4
                if(dt(i,4)%procptr2(char(i)) /= char(i))  error stop 21_4
 
-             end do 
+             end do
            class default
                error stop 101_4
         end select
-     end subroutine   
+     end subroutine
 
      subroutine verify2(dt)
         class(base(*)),intent(in) :: dt(:,:)
-        
+
         ! element order
         ! dt(1,1) - b1(2) - (fun1(int),fun2(char))
         ! dt(2,1) - b1(3) - (fun1(int),fun2(char))
@@ -231,7 +223,7 @@ program spreadSourceIsArrayProcPtrComp01
 
        ! element order:
        ! dt(1,1,1) - b2(1,1) - (fun1(int),fun2(char))
-       ! dt(2,1,1) - b2(1,1) 
+       ! dt(2,1,1) - b2(1,1)
        ! dt(3,1,1) - b2(1,1)
        ! dt(4,1,1) - b2(1,1)
        ! dt(5,1,1) - b2(1,1)
@@ -284,14 +276,14 @@ program spreadSourceIsArrayProcPtrComp01
 
     subroutine verify4(dt)
        class(base(*)),intent(in) :: dt(:,:,:)
-       
+
        ! element order:
        ! dt(1,1,1) - (fun1(int),fun2(char))
        ! dt(2,1,1) - (fun1(int),fun2(char))
-       ! dt(1,2,1) - 
-       ! dt(2,2,1) - 
+       ! dt(1,2,1) -
+       ! dt(2,2,1) -
        ! dt(1,3,1) -
-       ! dt(2,3,1) - 
+       ! dt(2,3,1) -
        ! dt(1,4,1) -
        ! dt(2,4,1) -
        ! dt(1,5,1) -
@@ -300,7 +292,7 @@ program spreadSourceIsArrayProcPtrComp01
        ! dt(1,1,2) - (fun1(int),fun2(char))
        ! dt(2,1,2) - (fun1(int),fun2(char))
        ! dt(1,2,2) -
-       ! dt(2,2,2) - 
+       ! dt(2,2,2) -
        ! dt(1,3,2) -
        ! dt(2,3,2) -
        ! dt(1,4,2) -

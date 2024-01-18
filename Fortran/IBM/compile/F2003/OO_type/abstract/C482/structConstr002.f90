@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,25 +13,14 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*
 !*  DESCRIPTION                : Testing: The derived-type-spec shall not specify an abstract type (C401)
-!*                                        Structure Constructor as Source in Allocate statement (for pointer/allocatable)           
+!*                                        Structure Constructor as Source in Allocate statement (for pointer/allocatable)
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -48,15 +32,15 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
-   
+
    type, abstract :: base
       integer :: id
    end type
-   
+
    type, extends(base) :: child
       real :: rid
    end type
-   
+
 end module
 
 program structConstr002
@@ -67,12 +51,12 @@ program structConstr002
    type(child), pointer     :: c2
    class(*), allocatable    :: u1
    class(*), pointer        :: u2
-   
+
    allocate(b1,source=base(4))
    allocate(b2,source=base(5))
    allocate(c1,source=child(base=base(1),rid=5.6))
    allocate(c2,source=child(base=base(2),rid=7.8))
-   allocate(u1,source=child(base=base(3),rid=9.1))   
-   allocate(u2,source=child(base=base(4),rid=2.3))   
-   
+   allocate(u1,source=child(base=base(3),rid=9.1))
+   allocate(u2,source=child(base=base(4),rid=2.3))
+
 end program

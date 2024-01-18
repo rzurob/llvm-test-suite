@@ -1,20 +1,15 @@
 
-
-
 !*******************************************************************************
-!*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
 !*  ============================================================================
 !*
 !*  TEST CASE NAME             :/cintrop_ts29113/asynch_communication/asynchcomm014f.f
-!* FEATURE NAME                : C_Interop_Asynch_Communication 
-!*  PROGRAMMER                 : Tapti Vaid
+!* FEATURE NAME                : C_Interop_Asynch_Communication
 !*  DATE                       : 2013-10-07
 !*
 !*  DESCRIPTION
 !*
 !* Checks the functionalilty of C_interop ASYNCHRONOUS Communication with a CHARACTER data type.
-!* 
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -33,7 +28,7 @@ integer :: nt, rank, len, mpierror, rc, i
 integer :: status(MPI_STATUS_SIZE)
 integer, parameter :: TAG_SEND_ARR = 10, TAG_RES_READY = 11
 
-integer :: reqs(2) 
+integer :: reqs(2)
 !!real :: !! other varaibles that won't be used asynchronously but will be used somewhere else
 
 ! initialization
@@ -55,19 +50,19 @@ integer :: reqs(2)
 if (rank .eq. 0) then
 
 
-b0 ="Y" 
-a0 ="Y" 
-	
-	block 
+b0 ="Y"
+a0 ="Y"
+
+	block
 
 	ASYNCHRONOUS :: b0
 	call MPI_ISEND(b0, 1 , MPI_CHARACTER, 1, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(1), mpierror)
 	! While waiting for the data to be sent, do some calculations:
 	result1 =  a0
     call MPI_WAIT(reqs(1), status, mpierror)
-		   
+
 	end block
-	
+
 !get the result from task 1
 
 call MPI_RECV(res0, 1, MPI_CHARACTER, 1, TAG_RES_READY, MPI_COMM_WORLD, status, mpierror)
@@ -75,19 +70,19 @@ print *, "Output from task 0 =", result1
 print *, "Output from task 1 =", res0
 
 else !(if task# =1)
-	
+
 		block
-		
+
 		ASYNCHRONOUS :: b1
 		call MPI_IRECV(b1, 1 , MPI_CHARACTER, 0, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(2), mpierror)
 		call MPI_WAIT(reqs(2), status, mpierror)
 		! Now that we received our data, calculate the sum and send the result to task 0.
-		b1="N" 
+		b1="N"
 		res1 = b1
         call MPI_SEND(res1, 1, MPI_CHARACTER, 0, TAG_RES_READY, MPI_COMM_WORLD, mpierror)
 
         end block
-		
+
 end if
 call MPI_FINALIZE(mpierror)
 end

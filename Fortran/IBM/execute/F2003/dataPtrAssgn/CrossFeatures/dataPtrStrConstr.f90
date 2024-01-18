@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrStrConstr.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrStrConstr.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 09, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Construction of derived-type values 
+!*  Construction of derived-type values
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -36,7 +28,7 @@
 
   MODULE M
 
-    
+
   TYPE :: DT
     CLASS(*), POINTER :: Ptr(:, :)
   CONTAINS
@@ -67,7 +59,7 @@
 
   END MODULE
 
-  PROGRAM dataPtrStrConstr 
+  PROGRAM dataPtrStrConstr
   USE M
   IMPLICIT NONE
 
@@ -80,7 +72,7 @@
     IF (.NOT. ASSOCIATED(T(1,1)%Ptr, T))                    STOP 11
     IF (ANY( LBOUND(T(1,1)%Ptr)         .NE. (/1, 1 /)))    STOP 12
     IF (ANY( UBOUND(T(1,1)%Ptr)         .NE. (/10,10 /)))    STOP 13
-  CLASS DEFAULT 
+  CLASS DEFAULT
      STOP 14
   END SELECT
 
@@ -91,7 +83,7 @@
     IF (.NOT. ASSOCIATED(T1(1)%Ptr, T1(1:9)))           STOP 21
     IF (ANY( LBOUND(T1(1)%Ptr)         .NE. (/1 /)))    STOP 22
     IF (ANY( UBOUND(T1(1)%Ptr)         .NE. (/9 /)))    STOP 23
-  CLASS DEFAULT 
+  CLASS DEFAULT
      STOP 14
   END SELECT
 

@@ -12,7 +12,7 @@ function foo(a, b) bind(c)
   else
     foo = a
   endif
-end function 
+end function
 
 program main
   use iso_c_binding

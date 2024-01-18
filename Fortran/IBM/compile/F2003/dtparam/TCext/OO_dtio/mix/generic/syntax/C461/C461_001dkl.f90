@@ -1,23 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C461_001dkl
 !*
-!*  PROGRAMMER                 : David Forster (derived from C461_001d by Robert Ma)
 !*  DATE                       : 2007-08-13 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures (generic-binding)
-!*                               Syntax Check: C461 If generic-spec is not generic-name, each 
+!*                               Syntax Check: C461 If generic-spec is not generic-name, each
 !*                                                  of its specific bindings shall have a passed-
 !*                                                  object dummy argument.
 !*

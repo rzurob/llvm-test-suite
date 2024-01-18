@@ -2,23 +2,16 @@
 ! ftcx_dtp -qnol /tstdev/F2003/round/test/roundDTIOChildWrite02.f
 ! opt variations: -ql
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 14/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND specifier with WRITE statment
 !*                               in DTIO
 !*
-!*  DESCRIPTION                : test multiple child write statements with 
+!*  DESCRIPTION                : test multiple child write statements with
 !*                               ROUND= specifier. Subsequent write statment
-!*                               should not be affected by previous statement. 
+!*                               should not be affected by previous statement.
 !* ===================================================================
 
   module m
@@ -27,7 +20,7 @@
 
         real(k1)         r
         contains
- 
+
         procedure::writeFormat
         generic :: write(formatted) => writeFormat
      end type
@@ -119,4 +112,4 @@
     open(unit=3, file='roundDTIOChildWrite02.out')
     write(3,*) dt1
 
-  end program roundDTIOChildWrite02 
+  end program roundDTIOChildWrite02

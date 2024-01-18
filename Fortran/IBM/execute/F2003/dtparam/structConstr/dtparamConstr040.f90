@@ -33,7 +33,7 @@ use m
 
     type(A(8,:)), allocatable :: a1
     type(B(4,589)) :: b1
-    
+
     b1 = B (4,589)(log((/(1.0*i, i=1,589)/)), equal = isABequal)
 
     d1 = (/(i, i=800,1,-1)/)
@@ -44,7 +44,6 @@ use m
 
     if ((.not. a1%equal(b1)) .or. (.not. b1%equal(a1))) error stop 1_4
 
-
     deallocate (a1)
 
     allocate (A(8,200) :: a1)
@@ -53,7 +52,6 @@ use m
 
     if (a1%equal(b1) .or. b1%equal(a1)) error stop 2_4
 end
-
 
 logical function isABequal (a1, b1)
 use m

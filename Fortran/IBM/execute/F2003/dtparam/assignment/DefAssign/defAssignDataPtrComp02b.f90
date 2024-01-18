@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignDataPtrComp02a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignDataPtrComp02a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 9 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 9 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test defined assignment with generic binding
@@ -28,7 +20,7 @@ module m
      integer,kind :: k1
 
      integer(k1),pointer :: i1(:,:)=>null()
-     real(k1),pointer    :: r1(:,:)=>null() 
+     real(k1),pointer    :: r1(:,:)=>null()
      contains
          procedure :: assignA1
          procedure :: assignA2
@@ -36,12 +28,12 @@ module m
    end type
 
    type base(l1)
-     integer,len :: l1 
+     integer,len :: l1
      character(l1),pointer :: c1(:,:)=>null()
      type(A(4)) :: a1comp(2)
      contains
         procedure :: assign1=>assignBase
-        generic   :: assignment(=)=>assign1 
+        generic   :: assignment(=)=>assign1
    end type
 
    type,extends(base) :: child(k2)
@@ -97,8 +89,8 @@ module m
 
        s1=lbound(dt%c1,1); s2=ubound(dt%c1,1)
        s3=lbound(dt%c1,2); s4=ubound(dt%c1,2)
-       
-       allocate(this%c1(s1:s2,s3:s4),source=dt%c1) 
+
+       allocate(this%c1(s1:s2,s3:s4),source=dt%c1)
        this%a1comp=dt%a1comp  ! call assignA1
 
      end subroutine
@@ -109,20 +101,19 @@ module m
 
        integer :: d1,d2,d3,d4
 
-
        d1=lbound(dt%g1,1); d2=ubound(dt%g1,1)
        d3=lbound(dt%g1,2); d4=ubound(dt%g1,2)
-        
+
        select type(this)
            type is(child(*,2))
 
               this%base=dt ! call assignBase
-              
+
               allocate(this%g1(d1:d2,d3:d4),source=dt%g1)
               this%a2comp=dt%a2comp  ! call assignA2
 
        end select
- 
+
      end subroutine
 
      elemental subroutine assignChild2(this,dt)
@@ -134,8 +125,8 @@ module m
        s2=size(dt%c1,2)
        d1=size(dt%g1,1)
        d2=size(dt%g1,2)
-      
-       allocate(this%c1(s1,s2),source=dt%c1)  
+
+       allocate(this%c1(s1,s2),source=dt%c1)
        this%a1comp=dt%a1comp ! call assignA1
 
        allocate(this%g1(d1,d2),source=dt%g1)
@@ -170,10 +161,10 @@ subroutine sub
    type(tA(8)),target :: a4
 
    integer,target :: i1(2,3)=reshape([1,2,3,4,5,6],(/2,3/))
- 
-   integer(8),target :: i2(2,3) 
 
-   real,target    :: r1(1,1)=reshape([1.2],(/1,1/)) 
+   integer(8),target :: i2(2,3)
+
+   real,target    :: r1(1,1)=reshape([1.2],(/1,1/))
 
    real(8),target :: r2(1,1)=reshape([1.2_8],(/1,1/))
 
@@ -186,9 +177,8 @@ subroutine sub
 
    i2=i1; g2=g1;
 
-   ! call assignA1 
+   ! call assignA1
    a1=[tA(4)(i1,r1),tA(4)(i1(1:1,3:3),r1)]
-
 
    !---verify a1----!
    if(any(a1(1)%i1(1,:) /= [1,3,5]))                   stop 10
@@ -212,7 +202,6 @@ subroutine sub
    ! call assignA1
    a3=tA(4)(i1(2:2,3:3),r1(:,:))
 
-
    !--- verify a3---!
    if(.not. precision_r4(a3(1)%r1,1.2_4))              stop 18
    if(any(a3(1)%i1 /= 6))                              stop 19
@@ -224,15 +213,13 @@ subroutine sub
    ! call assignA2
    a4=tA(8)(i2,r2)
 
-
    !--- verify a4---!
    if(.not. precision_r8(a4%r1,1.2_8))                 stop 24
    if(any(a4%i1(1,:) /= [1,3,5]))                      stop 25
    if(any(a4%i1(2,:) /= [2,4,6]))                      stop 26
- 
-   ! call assignChild1    
-    tc1= reshape([tchild(3,2)(c1,a1(2),g1,a1(1))],(/1,1/))
 
+   ! call assignChild1
+    tc1= reshape([tchild(3,2)(c1,a1(2),g1,a1(1))],(/1,1/))
 
    !--- verify tc1---!
    if(any(tc1(1,1)%c1(1,:) /= ["abc","def"]))          stop 28
@@ -272,7 +259,7 @@ subroutine sub
         stop 101
    end select
 
-   allocate(tbase(3) :: tb2(1,1)) 
+   allocate(tbase(3) :: tb2(1,1))
 
    ! call assignBase
    tb2(1,1)=tc1(1,1)
@@ -284,7 +271,7 @@ subroutine sub
    if(any(tb2(1,1)%a1comp(2)%i1(1,:) /= 5))           stop 53
    if(.not. precision_r4(tb2(1,1)%a1comp(1)%r1,1.2_4))   stop 54
    if(.not. precision_r4(tb2(1,1)%a1comp(2)%r1,1.2_4))   stop 55
-   
+
    deallocate(tb1)
 
    allocate(tchild(3,4)  :: tb1(1,1))

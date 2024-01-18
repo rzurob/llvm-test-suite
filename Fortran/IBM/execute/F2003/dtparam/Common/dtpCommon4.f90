@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpCommon4 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpCommon4
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 13, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,24 +19,20 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The common statement
-!* 
+!*
 !*     A storage sequence is formed consisting of the sequence of storage units in the storage
 !*     sequences (16.4.3.1) of all data objects in the common block object lists for the common
 !*     block. The order of the storage sequences is the same as the order of the appearance of the
 !*     common block object lists in the scoping unit.
-!* 
-!* 
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
- 
+
   TYPE :: DT_I(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
@@ -51,14 +41,14 @@
     INTEGER(K)    :: I(L)!=K
     CHARACTER(L)  :: C2
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpCommon4 
+  PROGRAM dtpCommon4
   USE M
   IMPLICIT NONE
 
-  TYPE(DT_I(2,7))  :: T1, T2, T3, T4, T5, T6, T7, T8, T9, T10 
+  TYPE(DT_I(2,7))  :: T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
   COMMON /BLK/T1, T2, T3, T4, T5, T6, T7, T8, T9, T10
 
   T1%C1=CHAR(0)
@@ -95,15 +85,15 @@
 
   CALL ExtSub()
 
-  END 
+  END
 
   SUBROUTINE ExtSub()
-  USE M 
+  USE M
 
   TYPE(DT_I(2,7))  :: T
   COMMON /BLK/T(10)
 
-  DO I=1, 10 
+  DO I=1, 10
     IF ( ANY( T(I)%I .NE. I ) ) STOP 11
   END DO
 

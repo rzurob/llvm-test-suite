@@ -1,43 +1,27 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: dcomp dummyArgCharctrstc005.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Characteristics of DTIO interface and procedures
 !*                               shall be the same as ones defined in Section 9.5.3.7.2.
-!*                               1) Dummy Argument Characteristics 
+!*                               1) Dummy Argument Characteristics
 !*                                  -  Intent
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -57,17 +41,17 @@ end module
 
 program dummyArgCharctrstc005
    use m
-   
+
    interface read(unformatted)
       subroutine readUnformatted (dtv, unit, iostat, iomsg)
          import base
          class(base) :: dtv                          !<- from intent(inout) to omitting intent attribute
-         integer, intent(in) :: unit                
-         integer, intent(out) :: iostat            
-         character(*), intent(inout) :: iomsg           
+         integer, intent(in) :: unit
+         integer, intent(out) :: iostat
+         character(*), intent(inout) :: iomsg
       end subroutine
    end interface
-   
+
    interface write(unformatted)
       subroutine writeUnformatted (dtv, unit, iostat, iomsg)
          import base
@@ -76,8 +60,8 @@ program dummyArgCharctrstc005
          integer, intent(out) :: iostat
          character(*), intent(out) :: iomsg          !<- from intent(inout) to intent(in)
       end subroutine
-   end interface   
-      
+   end interface
+
    interface read(formatted)
       subroutine readFormatted (dtv, unit, iotype, v_list, iostat, iomsg)
          import base
@@ -96,7 +80,7 @@ program dummyArgCharctrstc005
          class(base), intent(in) :: dtv
          integer, intent(in) :: unit
          character(*), intent(in) :: iotype
-         integer, intent(in) :: v_list(:)      
+         integer, intent(in) :: v_list(:)
          integer, intent(inout) :: iostat            !<- from intent(out) to intent(inout)
          character(*), intent(inout) :: iomsg
       end subroutine

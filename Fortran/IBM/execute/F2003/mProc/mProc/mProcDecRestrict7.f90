@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcDecRestrict7.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcDecRestrict7.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 13, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  One has a passed-object dummy arguments and the other does not have a passed obj 
-!*  
-!* 
-!*   
+!*  One has a passed-object dummy arguments and the other does not have a passed obj
+!*
 !*  (317253)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -62,7 +53,7 @@
 
   END MODULE
 
-  PROGRAM mProcDecRestrict7 
+  PROGRAM mProcDecRestrict7
   USE M
 
   INTERFACE G
@@ -71,7 +62,7 @@
 
 
   TYPE(DT) :: T, T1
-  
+
   CALL G(T, DT("0"))
   IF (TRIM(T%ID)    .NE. "ModSub-0"   ) STOP 11
 

@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f ieee_*.mod xlf_fp_util.mod
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: ../ieeeconsts.f  intrimod13.f
 ! %VERIFY: intrimod13.out:../emptyout.vf
 ! %STDIN:
@@ -11,16 +11,13 @@
 ! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod13.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
-!*  Description      : Use INTRINSIC and NON_INTRINSIC modules without 
-!*                     specifying the keyword. The NON_INTRINSIC one should 
-!*                     be accessed, if one exists. Otherwise the INTRINSIC 
+!*  Description      : Use INTRINSIC and NON_INTRINSIC modules without
+!*                     specifying the keyword. The NON_INTRINSIC one should
+!*                     be accessed, if one exists. Otherwise the INTRINSIC
 !*                     module should be used.
 !*                     In this case, there is no same name module.
 !*                     The output should be empty.
@@ -62,8 +59,8 @@
 
          use :: mod1     			! NON_INTRINSIC
          use :: ieee_arithmetic			! INTRINSIC
-         use :: xlf_fp_util			! INTRINSIC		
-         implicit none 
+         use :: xlf_fp_util			! INTRINSIC
+         implicit none
 
          flags = (/ fp_overflow, fp_div_by_zero, fp_invalid, &
      &               fp_underflow, fp_inexact /)
@@ -93,7 +90,7 @@
          do k = 1, 5
             if (flag_values(k) .neqv. .false. ) stop 10
          enddo
-         
+
          if (ieee_support_datatype(PINF_4) .AND. &
  	     ieee_support_datatype(NINF_4)) then
             if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) stop 12
@@ -114,14 +111,14 @@
 
 !... Testing xlf_fp_util module
          call set_fpscr_flags(flags(1))
-         call clr_fpscr_flags(flags(5)) 
+         call clr_fpscr_flags(flags(5))
          if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
          if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 18
 
       end subroutine sub1
 
 
-      logical function fun1(rt_nearest, flags) 
+      logical function fun1(rt_nearest, flags)
   	 use :: ieee_arithmetic			! INTRINSIC
 	 use :: ieee_exceptions			! INTRINSIC
          use :: constants_for_ieee		! NON_INTRINSIC
@@ -129,7 +126,7 @@
 
          real*4 yr
          type(ieee_round_type) :: rtype
-         type(ieee_round_type), intent(in) :: rt_nearest 
+         type(ieee_round_type), intent(in) :: rt_nearest
          type(ieee_status_type) :: status_value
          logical :: flag_values(5)
          integer(fpscr_kind), dimension(5) :: flags
@@ -138,7 +135,7 @@
          do k = 1, 5
             if (flag_values(k) .neqv. .false. ) stop 30
          enddo
-           
+
          if (ieee_support_datatype(PINF_4) .AND. &
  	     ieee_support_datatype(NINF_4)) then
             if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) stop 32
@@ -158,7 +155,7 @@
          call ieee_set_status(status_value)
 
          call set_fpscr_flags(flags(1))
-         call clr_fpscr_flags(flags(5)) 
+         call clr_fpscr_flags(flags(5))
          if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 37
          if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 38
 

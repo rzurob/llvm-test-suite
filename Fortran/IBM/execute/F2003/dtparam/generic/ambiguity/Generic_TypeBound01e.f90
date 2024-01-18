@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound01e
 !*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
-!*  SECONDARY FUNCTIONS TESTED : Resolution based on rank 
-!*                               
-!*                     
+!*  SECONDARY FUNCTIONS TESTED : Resolution based on rank
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -39,39 +31,39 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
-        CONTAINS 
-         PROCEDURE :: foo1      
+        CONTAINS
+         PROCEDURE :: foo1
          PROCEDURE :: foo2
          GENERIC :: FUNC =>  foo1 , foo2
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2)
-        INTEGER, KIND :: k2 
-      END TYPE Child 
+        INTEGER, KIND :: k2
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen(k3)
-        INTEGER, KIND :: k3 
+        INTEGER, KIND :: k3
       END TYPE NextGen
 
-      CONTAINS 
+      CONTAINS
 !*
       CLASS(Base(4,:)) FUNCTION foo1(Obj,Arg)
-      CLASS(Base(4,*)) :: Obj, Arg         ! Arg: rank is 0 
+      CLASS(Base(4,*)) :: Obj, Arg         ! Arg: rank is 0
       POINTER :: foo1
-      
+
       ALLOCATE (foo1, source = Obj)
       IF ( .NOT. ASSOCIATED(foo1)) STOP 1
 
       END FUNCTION foo1
 
       CLASS(Base(4,:)) FUNCTION foo2(Obj,Arg)
-      CLASS(Base(4,*)) :: Obj, Arg(:)      ! Arg: rank is 1 
+      CLASS(Base(4,*)) :: Obj, Arg(:)      ! Arg: rank is 1
       POINTER :: foo2
 
       ALLOCATE (foo2, source = Obj)
@@ -83,9 +75,9 @@
 !*
       PROGRAM Generic_TypeBound01e
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(Base(4,:)), POINTER :: poly1 
+      CLASS(Base(4,:)), POINTER :: poly1
       TYPE(Child(4,5,4)), TARGET :: tgt1
       TYPE(Base(4,5))  :: base1
       TYPE(child(4,10,4)) :: child1
@@ -107,35 +99,35 @@
       CLASS(Child(4,:,4)), ALLOCATABLE :: allc_chd(:)
       CLASS(NextGen(4,:,4,4)), ALLOCATABLE :: allc_nxtg(:)
 !*
-!  The following will call foo1 
+!  The following will call foo1
 !*
       IF ( .NOT. ASSOCIATED(base1%FUNC(base1)) ) STOP 10
       IF ( .NOT. ASSOCIATED(base1%FUNC(tgt1)) ) STOP 11
       IF ( .NOT. ASSOCIATED(base1%FUNC(child1)) ) STOP 12
       IF ( .NOT. ASSOCIATED(base1%FUNC(nxtg)) ) STOP 13
 
-      ALLOCATE(Base(4,10):: poly1)      
+      ALLOCATE(Base(4,10):: poly1)
       IF ( .NOT. ASSOCIATED(poly1%FUNC(base1)) ) STOP 14
       IF ( .NOT. ASSOCIATED(poly1%FUNC(tgt1)) ) STOP 15
       IF ( .NOT. ASSOCIATED(poly1%FUNC(poly1)) ) STOP 16
       IF ( .NOT. ASSOCIATED(poly1%FUNC(child1)) ) STOP 17
       IF ( .NOT. ASSOCIATED(poly1%FUNC(nxtg)) ) STOP 18
 
-      poly1 => tgt1                       
+      poly1 => tgt1
       IF ( .NOT. ASSOCIATED(poly1%FUNC(base1)) ) STOP 19
       IF ( .NOT. ASSOCIATED(poly1%FUNC(tgt1)) ) STOP 20
       IF ( .NOT. ASSOCIATED(poly1%FUNC(poly1)) ) STOP 21
       IF ( .NOT. ASSOCIATED(poly1%FUNC(child1)) ) STOP 22
       IF ( .NOT. ASSOCIATED(poly1%FUNC(nxtg)) ) STOP 23
 
-      ALLOCATE(NextGen(4,10,4,4):: poly1) 
+      ALLOCATE(NextGen(4,10,4,4):: poly1)
       IF ( .NOT. ASSOCIATED(poly1%FUNC(base1)) ) STOP 24
       IF ( .NOT. ASSOCIATED(poly1%FUNC(tgt1)) ) STOP 25
       IF ( .NOT. ASSOCIATED(poly1%FUNC(poly1)) ) STOP 26
       IF ( .NOT. ASSOCIATED(poly1%FUNC(child1)) ) STOP 27
       IF ( .NOT. ASSOCIATED(poly1%FUNC(nxtg)) ) STOP 28
 
-      ALLOCATE(NextGen(4,10,8,8):: poly1)   
+      ALLOCATE(NextGen(4,10,8,8):: poly1)
       IF ( .NOT. ASSOCIATED(poly1%FUNC(base1)) ) STOP 29
       IF ( .NOT. ASSOCIATED(poly1%FUNC(tgt1)) ) STOP 30
       IF ( .NOT. ASSOCIATED(poly1%FUNC(poly1)) ) STOP 31
@@ -152,7 +144,7 @@
       IF ( .NOT. ASSOCIATED(nxtg%FUNC(poly1)) ) STOP 40
       IF ( .NOT. ASSOCIATED(nxtg%FUNC(nxtg)) ) STOP 41
 !*
-!  The following will call foo2 
+!  The following will call foo2
 !*
       IF ( .NOT. ASSOCIATED(base1%FUNC(arr_base)) ) STOP 42
       IF ( .NOT. ASSOCIATED(base1%FUNC(arr_child)) ) STOP 43
@@ -170,7 +162,7 @@
       IF ( .NOT. ASSOCIATED(poly1%FUNC(arr_child)) ) STOP 52
       IF ( .NOT. ASSOCIATED(poly1%FUNC(arr_nxtg)) ) STOP 53
 
-      ALLOCATE(Base(4,10) :: ptr_base(10)) 
+      ALLOCATE(Base(4,10) :: ptr_base(10))
       IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_base)) ) STOP 54
       IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_base)) ) STOP 55
       IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_base)) ) STOP 56
@@ -186,7 +178,7 @@
       IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_chd)) ) STOP 64
       IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_chd)) ) STOP 65
 
-      ALLOCATE(NextGen(4,10,4,4) :: ptr_base(10), ptr_chd(5), ptr_nxtg(2) )      
+      ALLOCATE(NextGen(4,10,4,4) :: ptr_base(10), ptr_chd(5), ptr_nxtg(2) )
       IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_base)) ) STOP 66
       IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_base)) ) STOP 67
       IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_base)) ) STOP 68
@@ -214,7 +206,7 @@
       IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_nxtg)) ) STOP 88
       IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_nxtg)) ) STOP 89
 
-      ALLOCATE(Base(4,10) :: allc_base(10)) 
+      ALLOCATE(Base(4,10) :: allc_base(10))
       IF ( .NOT. ASSOCIATED(base1%FUNC(allc_base)) ) STOP 90
       IF ( .NOT. ASSOCIATED(child1%FUNC(allc_base)) ) STOP 91
       IF ( .NOT. ASSOCIATED(nxtg%FUNC(allc_base)) ) STOP 92
@@ -226,7 +218,7 @@
       IF ( .NOT. ASSOCIATED(nxtg%FUNC(allc_chd)) ) STOP 96
       IF ( .NOT. ASSOCIATED(poly1%FUNC(allc_chd)) ) STOP 97
 
-      ALLOCATE(NextGen(4,10,4,4) :: allc_nxtg(2) )      
+      ALLOCATE(NextGen(4,10,4,4) :: allc_nxtg(2) )
       IF ( .NOT. ASSOCIATED(base1%FUNC(allc_nxtg)) ) STOP 98
       IF ( .NOT. ASSOCIATED(child1%FUNC(allc_nxtg)) ) STOP 99
       IF ( .NOT. ASSOCIATED(nxtg%FUNC(allc_nxtg)) ) STOP 100

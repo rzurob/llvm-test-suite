@@ -5,38 +5,29 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgb005.f
 ! %VERIFY: fort.18:fxiomsgb005.vf
-! %STDIN: 
-! %STDOUT: 
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
 
-
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : Read/Write with recl = 0
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : READ  WRITE
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 2
 !*
 !*  DESCRIPTION                : Create direct formatted file, then read/write
 !*                               with REC = 0
-!*
 !*
 !*  TEST CONDITIONS            : 1) Write direct formatted file with rec = 0
 !*                               2) Read  direct formatted file with rec = 0
@@ -48,11 +39,9 @@
 !*
 !*********************************************************************
 
-
       program fxiomsgb005
 
       implicit none
-
 
       integer*4 case_id
 
@@ -64,14 +53,12 @@
 
       character*300 errmsg
 
-
 !
 ! Initialize Return Code routine to SUCCESS...
 !
 
       case_id = 0
       call zzrc(case_id)
-
 
 !
 ! Create file
@@ -81,17 +68,15 @@
 
       open ( 10 , access = 'DIRECT', recl = 6, form = 'FORMATTED' )
 
-
 !
 ! TestCase 1...
 !
 
       case_id = case_id + 1
 
-
       write ( 10, fmt = '( A )', iostat = ios, iomsg = errmsg, &
   &   rec = rec_num ) 'xXxXxX'
- 
+
       write ( 18, * ) errmsg
 
 !

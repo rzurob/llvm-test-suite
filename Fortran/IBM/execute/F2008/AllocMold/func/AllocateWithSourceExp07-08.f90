@@ -1,42 +1,32 @@
 !* ===================================================================
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* 
-!* TEST CASE TITLE            : AllocateWithSourceExp07-08
-!* 
-!* ORIGINAL PROGRAMMER        : Dorra Bouchiha
-!* PROGRAMMER                 : Izhak Jakov
-!* 
+!*
 !* DATE                       : June 2, 2015
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
-!* 
-!* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with source expression 
+!*
+!* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with source expression
 !* SECONDARY FUNCTIONS TESTED :
-!*                              
-!* 
-!* DRIVER STANZA              : xlf2003
-!* REQUIRED COMPILER OPTIONS  : 
-!* 
-!* KEYWORD(S)                 : 
+!*
+!* REQUIRED COMPILER OPTIONS  :
+!*
+!* KEYWORD(S)                 :
 !* TARGET(S)                  :
-!* NUMBER OF TESTS CONDITIONS : 
-!* 
+!* NUMBER OF TESTS CONDITIONS :
+!*
 !* DESCRIPTION                :
-!* 
-!* Defect 361745                
-!* 
+!*
+!* Defect 361745
+!*
 !* TEST CASE ADAPTED FROM     : $(tsrcdir)/F2003/dtparam/allocate/SourceExp/AllocateWithSourceExp07.f
-!* 
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithSourceExp07
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
         INTEGER, LEN  :: l1 = 1
 
-        CHARACTER(l1)  :: name  
+        CHARACTER(l1)  :: name
         INTEGER(k1) :: my_arr(l1)
       END TYPE Base
 
@@ -44,8 +34,8 @@ PROGRAM AllocateWithSourceExp07
         INTEGER, KIND :: k2 = KIND(0)
         INTEGER, LEN  :: l2 = 2
 
-        CLASS(Base(k2,l2)), ALLOCATABLE :: b_cmp  
-        CLASS(Base(k2,l2)), ALLOCATABLE :: c_cmp 
+        CLASS(Base(k2,l2)), ALLOCATABLE :: b_cmp
+        CLASS(Base(k2,l2)), ALLOCATABLE :: c_cmp
       END TYPE Child
 
       TYPE(Base(4,:)), POINTER :: b1, c1
@@ -60,7 +50,7 @@ PROGRAM AllocateWithSourceExp07
       CALL alloc_auto(b_poly)
       CALL alloc_auto(c_poly)
 
-      ALLOCATE(b_poly, c_poly, SOURCE=Child(4,2,4,3)('Child', 22, Base(4,3)('Bcomp', -88) , Base(4,3)('Ccomp', -77))) 
+      ALLOCATE(b_poly, c_poly, SOURCE=Child(4,2,4,3)('Child', 22, Base(4,3)('Bcomp', -88) , Base(4,3)('Ccomp', -77)))
       CALL alloc_auto(b_poly)
       CALL alloc_auto(c_poly)
       DEALLOCATE(b_poly); DEALLOCATE(c_poly)

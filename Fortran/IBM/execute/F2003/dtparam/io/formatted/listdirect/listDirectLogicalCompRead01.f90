@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectLogicalCompRead01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectLogicalCompRead01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 14 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 14 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!* 1. Test Read statement with logical ultimate components 
+!* 1. Test Read statement with logical ultimate components
 !* 2. Use implicit statement
 !* 3, Use different input for logical data
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,14 +29,14 @@ end module
 
 module m2
   use m1
-  
+
   type log2(k2,l2)
      integer,kind :: k2 ! k2=4
      integer,len  :: l2 ! l2=6
-     sequence 
+     sequence
      logical(k2) :: g2
      logical(k2) :: g3(l2-1)
-     type(log1(k2+k2,l2-1)) :: lcomp1  
+     type(log1(k2+k2,l2-1)) :: lcomp1
   end type
 
   type log3(k3,l3)
@@ -55,7 +47,7 @@ module m2
   end type
 
   contains
- 
+
     function retrieveData(dt,unit)
       type(log2(4,:)), allocatable :: dt(:)
       type(log3(4,:)), allocatable :: retrieveData(:)
@@ -64,16 +56,16 @@ module m2
       allocate(log3(4, dt%l2) :: retrieveData(2))
 
       call read(dt,unit)
- 
+
       retrieveData%lcomp2 = dt
 
-    end function 
+    end function
 
     subroutine read(bt,unit)
       type(log2(4,:)), allocatable :: bt(:)
       integer :: unit
 
-      read(unit,*)  bt(0) 
+      read(unit,*)  bt(0)
       read(unit,*,decimal='comma')  bt(1)
 
     end subroutine
@@ -84,12 +76,12 @@ program listDirectLogicalCompRead01
   use m2
   implicit none
 
-  call sub  
-  
+  call sub
+
 end program
 
 subroutine sub
-   use m2 
+   use m2
 
    integer :: i
    character(256) :: msg
@@ -106,7 +98,7 @@ subroutine sub
       print *,"iostat=",ios
       print *,"iomsg=",msg
       stop 10
-   end if 
+   end if
 
    ! initialize derived type
    do i=lbound(ss,1),ubound(ss,1)
@@ -122,15 +114,15 @@ subroutine sub
    !2*.true  ; 1*; 1*.too fog.
    !1*f ; 1*T ft 2*truth ; 100*Fall /note:100*Fall are ignored
 
-   tt=retrieveData(ss,10) 
+   tt=retrieveData(ss,10)
 
    ! output results for verification
    do i=lbound(tt,1),ubound(tt,1)
        write(*,*) tt(i)%lcomp2%g2
        write(*,*) tt(i)%lcomp2%g3
-       write(*,*) tt(i)%lcomp2%lcomp1%g1 
-   end do 
+       write(*,*) tt(i)%lcomp2%lcomp1%g1
+   end do
 
-   close(10,status='keep')  
+   close(10,status='keep')
 
 end subroutine

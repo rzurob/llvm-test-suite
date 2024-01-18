@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpCommon10 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpCommon10
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 19, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,23 +19,20 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The common statement
-!* 
-!*     A procedure pointer shall be storage associated only with another procedure pointer; 
+!*
+!*     A procedure pointer shall be storage associated only with another procedure pointer;
 !*     either both interfaces shall be explicit or both interfaces shall be implicit
-!*   
-!*    -- Procedure pointers with an explicit interface 
-!* 
+!*
+!*    -- Procedure pointers with an explicit interface
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
- 
+
   TYPE :: DT(K,L1,L2)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L1=4
@@ -60,13 +51,13 @@
   CHARACTER(*) :: C1(:)
   CHARACTER(*) :: C2(:)
   TYPE(DT(2,C1%LEN,C2%LEN)) :: F
-    F = DT(2,C1%LEN, C2%LEN)(C1, C2) 
+    F = DT(2,C1%LEN, C2%LEN)(C1, C2)
   END FUNCTION
 
   END MODULE
 
 
-  PROGRAM dtpCommon10 
+  PROGRAM dtpCommon10
   USE M
   IMPLICIT NONE
 
@@ -80,8 +71,8 @@
   ProcPtr0 => F
   C1 = "123456789"
   C2 = "7654321"
- 
-  T = ProcPtr(C1, C2) 
+
+  T = ProcPtr(C1, C2)
 
   IF ( .NOT. ASSOCIATED(ProcPtr, F) ) STOP 10
   IF (  ANY ( T%C1 .NE. C1        ) ) STOP 11

@@ -2,39 +2,32 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk516a cxcmn_blk506
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f fxcmn_blk516a.o cxcmn_blk506.o fxcmn_blk516a
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that scalar variables
 !*				 of all data types inside of common blocks are
-!*				 interoperable with C variables 
+!*				 interoperable with C variables
 !*
 !*				 Test:  BIND(C) statement in internal subroutine
 !*
-!*				 Multiple COMMON statements with one 
+!*				 Multiple COMMON statements with one
 !*				 variable in one BIND(C) statements
 !*
 !* ===================================================================
@@ -101,10 +94,10 @@ program fxcmn_blk516a
         real ( 8 )                              	:: real_s8c
         real (KIND=O'010')      			:: real_s8d
 
-                                             
-                                    
+
+
         REAL (C_LONG_DOUBLE             )                          :: real_s16c
-                                       
+
 
         REAL (C_FLOAT                   )       	:: r_C_FLOAT_s4a
         REAL (C_FLOAT                   )       	:: r_C_FLOAT_s4b
@@ -126,38 +119,38 @@ program fxcmn_blk516a
 ! Multiple COMMON statements with one variable in one BIND(C) statements
 ! ----------------------------------------------------------------------------
 
-        common /blk_int_C_INT_LEAST32_T/                         int_C_INT_LEAST32_T  
-        common /blk_r_C_DOUBLE_s8a/                         r_C_DOUBLE_s8a      
-        common /blk_int_s2b/                         int_s2b            
+        common /blk_int_C_INT_LEAST32_T/                         int_C_INT_LEAST32_T
+        common /blk_r_C_DOUBLE_s8a/                         r_C_DOUBLE_s8a
+        common /blk_int_s2b/                         int_s2b
         common /blk_int_C_INT_FAST32_T/                         int_C_INT_FAST32_T
-        common /blk_int_s4a/                         int_s4a           
+        common /blk_int_s4a/                         int_s4a
         common /blk_int_C_INT_FAST64_T/                         int_C_INT_FAST64_T
-        common /blk_real_s16c/                         real_s16c        
-        common /blk_int_s4b/                         int_s4b         
-        common /blk_int_s8b/                         int_s8b       
-        common /blk_int_C_SIGNED_CHAR/                         int_C_SIGNED_CHAR      
-        common /blk_int_C_SHORT/                         int_C_SHORT           
-        common /blk_real_s8b/                         real_s8b             
-        common /blk_int_C_INT/                         int_C_INT           
-        common /blk_int_C_LONG_LONG/                         int_C_LONG_LONG    
-        common /blk_int_C_LONG/                         int_C_LONG     
-        common /blk_char_C_CHAR/                         char_C_CHAR       
-        common /blk_int_C_SIZE_T/                         int_C_SIZE_T     
-        common /blk_int_C_INTPTR_T/                         int_C_INTPTR_T  
-        common /blk_real_s4c/                         real_s4c             
-        common /blk_int_C_INTMAX_T/                         int_C_INTMAX_T      
-        common /blk_int_C_INT8_T/                         int_C_INT8_T       
-        common /blk_int_C_INT16_T/                         int_C_INT16_T     
-        common /blk_int_C_INT32_T/                         int_C_INT32_T    
-        common /blk_r_C_FLOAT_s4a/                         r_C_FLOAT_s4a   
-        common /blk_int_C_INT64_T/                         int_C_INT64_T  
-        common /blk_int_C_INT_LEAST8_T/                         int_C_INT_LEAST8_T   
-        common /blk_int_C_INT_LEAST16_T/                         int_C_INT_LEAST16_T 
-        common /blk_char1/                         char1              
-        common /blk_int_C_INT_LEAST64_T/                         int_C_INT_LEAST64_T   
-        common /blk_log1/                         log1                 
-        common /blk_int_C_INT_FAST8_T/                         int_C_INT_FAST8_T   
-        common /blk_int_s1b/                         int_s1b            
+        common /blk_real_s16c/                         real_s16c
+        common /blk_int_s4b/                         int_s4b
+        common /blk_int_s8b/                         int_s8b
+        common /blk_int_C_SIGNED_CHAR/                         int_C_SIGNED_CHAR
+        common /blk_int_C_SHORT/                         int_C_SHORT
+        common /blk_real_s8b/                         real_s8b
+        common /blk_int_C_INT/                         int_C_INT
+        common /blk_int_C_LONG_LONG/                         int_C_LONG_LONG
+        common /blk_int_C_LONG/                         int_C_LONG
+        common /blk_char_C_CHAR/                         char_C_CHAR
+        common /blk_int_C_SIZE_T/                         int_C_SIZE_T
+        common /blk_int_C_INTPTR_T/                         int_C_INTPTR_T
+        common /blk_real_s4c/                         real_s4c
+        common /blk_int_C_INTMAX_T/                         int_C_INTMAX_T
+        common /blk_int_C_INT8_T/                         int_C_INT8_T
+        common /blk_int_C_INT16_T/                         int_C_INT16_T
+        common /blk_int_C_INT32_T/                         int_C_INT32_T
+        common /blk_r_C_FLOAT_s4a/                         r_C_FLOAT_s4a
+        common /blk_int_C_INT64_T/                         int_C_INT64_T
+        common /blk_int_C_INT_LEAST8_T/                         int_C_INT_LEAST8_T
+        common /blk_int_C_INT_LEAST16_T/                         int_C_INT_LEAST16_T
+        common /blk_char1/                         char1
+        common /blk_int_C_INT_LEAST64_T/                         int_C_INT_LEAST64_T
+        common /blk_log1/                         log1
+        common /blk_int_C_INT_FAST8_T/                         int_C_INT_FAST8_T
+        common /blk_int_s1b/                         int_s1b
         common /blk_int_C_INT_FAST16_T/                         int_C_INT_FAST16_T
         common /blk_real_s4b/                         real_s4b
 

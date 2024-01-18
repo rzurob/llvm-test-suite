@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt200.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -212,12 +205,12 @@ end interface
     complex(c_long_double_complex)::        c3
     logical(c_bool) ::              ll
     character(c_char) ::            cc
-   
-    i1=1 
-    i2=2 
-    i3=3 
+
+    i1=1
+    i2=2
+    i3=3
     i4=4_C_LONG_LONG
-    i5=5 
+    i5=5
     i6=6
     i7=7
     i8=8

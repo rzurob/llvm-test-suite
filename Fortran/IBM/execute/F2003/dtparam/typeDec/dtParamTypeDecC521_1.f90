@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC521_1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 10, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C521 (R504) The function-name shall be the name of an external function, 
+!*  C521 (R504) The function-name shall be the name of an external function,
 !*  an intrinsic function, a function dummy procedure, or a statement function.
-!*   
-!*  Dummy procedure and statement function 
-!*  () 
+!*
+!*  Dummy procedure and statement function
+!*  ()
 !   JX: 20090108: the original test case is insane: 1.) in a statement function,
 !   the scalar-expr should not be structure constructor; 2.) statement functions
 !   are an obsolenscent feature and their use is not encouraged.
@@ -51,8 +44,8 @@
   CONTAINS
 
   FUNCTION ModFun(Arg1, Arg2)
-  INTEGER :: Arg1 
-  CHARACTER(*) :: Arg2 
+  INTEGER :: Arg1
+  CHARACTER(*) :: Arg2
 
   TYPE(DT(8,LEN(Arg2))) :: ModFun
 
@@ -82,7 +75,7 @@
   CHARACTER(4) :: C
 !  StmtFun(L,C) = DT(8,LEN(C))(L, C)
 
-  T = DT(8,LEN(C))(8,"ABCD") 
+  T = DT(8,LEN(C))(8,"ABCD")
   IF ( T%I             .NE.  8            ) STOP 12
   IF ( T%C             .NE.  "ABCD"       ) STOP 13
 

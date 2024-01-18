@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : boundaryComplexNaN005.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 14, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -31,7 +25,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      use, intrinsic :: ieee_arithmetic 
+      use, intrinsic :: ieee_arithmetic
       implicit none
 
       real(16)     :: rli, rlr
@@ -42,7 +36,7 @@
 
       integer, parameter :: unit = 11
 
-      character(72), parameter :: myfmt =                             & 
+      character(72), parameter :: myfmt =                             &
      & '(2ES1.1,/,2ES2.1,/,2ES3.2,/,2ES4.2,/,2ES5.2' //               &
      & ',/,2ES6.2,/,2ES7.2,/,2ES15.2)'
 
@@ -50,7 +44,7 @@
       equivalence(rlr, rlrequiv)
 
       open(unit, file='boundaryComplexNaN005.out', action='write')
-      
+
       ! Write out complex(4) quiet NaN ( positive and negative )
 
       cx1 = (z'7FFFFFFF',z'7FFFFFFF') ! positive NaN(Q)
@@ -78,7 +72,7 @@
       rlrequiv = z'FFFFFFFFFFFFFFFF' ! negative NaN(Q)
       cx3 = (rlr, rli)
       write(unit, fmt=myfmt) cx3, cx3, cx3, cx3, cx3, cx3, cx3, cx3
- 
+
 
      !*********************************************************
 

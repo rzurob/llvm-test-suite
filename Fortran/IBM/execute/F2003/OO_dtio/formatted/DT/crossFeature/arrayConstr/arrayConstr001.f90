@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Array Constructor containing structure constructor
@@ -66,7 +55,7 @@ use m
 
    write ( 1, "(DT'_child-1'(4,4),/,DT'_child-2'(5,5),/,DT'_child-3'(6,6))", iostat = stat, iomsg = msg )   (/ child(201,'ABC'), child(202,'DEF'), child(203,'GHI') /)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 2_4
-   
+
    write ( 1, "(DT'_base-1'(4))", iostat = stat, iomsg = msg )   (/ ( base(i+300), i = 1, 3 ) /)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 3_4
 

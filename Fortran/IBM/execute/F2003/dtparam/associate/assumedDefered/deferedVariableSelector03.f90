@@ -1,22 +1,16 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : deferedVariableSelector03
-!*  TEST CASE TITLE            : variable selector with Defered Length
 !*                               Parameter(s)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : August  1, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is a variable
 !*  SECONDARY FUNCTIONS TESTED : The Variable is an Unlimited Polymorphic
 !*                               and has a Defered Length Parameter
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE
@@ -88,13 +82,13 @@ MODULE Madness
             ASSOCIATE(b => baseObj)
                 SELECT TYPE ( b )
                     CLASS IS (object(*))
-                        IF (LEN( b%string ) /= LEN( checkStr )) THEN 
+                        IF (LEN( b%string ) /= LEN( checkStr )) THEN
                             CALL zzrc( (rc + 1_4) )
 
-                        ELSE IF (b%ell1 /= LEN( checkStr )) THEN 
+                        ELSE IF (b%ell1 /= LEN( checkStr )) THEN
                             CALL zzrc( (rc + 2_4) )
 
-                        ELSE IF (b%string /= checkStr) THEN 
+                        ELSE IF (b%string /= checkStr) THEN
                             CALL zzrc( (rc + 3_4) )
                         END IF
 
@@ -171,19 +165,19 @@ SUBROUTINE DerivedCheck(derived, rc)
     ASSOCIATE(d => derived)
         SELECT TYPE ( d )
             TYPE IS (method(*,*,KIND( real16 )))
-                IF (KIND( d%array ) /= KIND( real16 )) THEN 
+                IF (KIND( d%array ) /= KIND( real16 )) THEN
                     CALL zzrc( rc )
 
-                ELSE IF (d%k /= KIND( real16 )) THEN 
+                ELSE IF (d%k /= KIND( real16 )) THEN
                     CALL zzrc( (rc + 1_4) )
 
-                ELSE IF (SIZE( d%array ) /= SIZE( real16 )) THEN 
+                ELSE IF (SIZE( d%array ) /= SIZE( real16 )) THEN
                     CALL zzrc( (rc + 2_4) )
 
-                ELSE IF (d%ell2 /= SIZE( real16 )) THEN 
+                ELSE IF (d%ell2 /= SIZE( real16 )) THEN
                     CALL zzrc( (rc + 3_4) )
 
-                ELSE IF ( ANY(d%array /= real16) ) THEN 
+                ELSE IF ( ANY(d%array /= real16) ) THEN
                     CALL zzrc( (rc + 4_4) )
                 END IF
 

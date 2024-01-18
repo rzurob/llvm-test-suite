@@ -1,14 +1,8 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : critical_f019.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : January 2011
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
 !*  SECONDARY FUNCTIONS TESTED :
@@ -43,7 +37,7 @@ program main
 			end if
 		end if
 	end do
-	
+
 	sync all
 	if (this_image() <= 2) then
 		if (bad /= 0) then
@@ -56,6 +50,6 @@ program main
 			error stop 16
 		end if
 	end if
-	
-	
+
+
 end

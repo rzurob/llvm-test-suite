@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_p009.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : May 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -107,7 +103,7 @@ contains
 		integer(2), intent(in) :: a3
 		integer(2) :: exp3
 		integer :: nr
-		
+
 		if (a3 /= exp3) then
 			print *, a3, exp3
 			call fail(nr)
@@ -118,7 +114,7 @@ contains
 		type (obj), intent(in) :: a3[*]
 		integer(2) :: exp3
 		integer :: nr
-		
+
 		if (a3%i2 /= exp3) then
 			print *, a3%i2, exp3
 			call fail(nr)

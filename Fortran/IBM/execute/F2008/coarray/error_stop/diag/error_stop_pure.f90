@@ -1,28 +1,17 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/coarray/error_stop/diag/error_stop_pure.f
 !*  TYPE                       : Duagnostic test
 !*  FEATURE                    : #351605.31 CAF - ERROR STOP statement
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 28 August 2010
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  DRIVER STANZA              : xlf  _r
 !*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               :
 !*
 !*  DESCRIPTION                : Test that a pure subprogram must not
-!*                               contain an ERROR STOP statement 
+!*                               contain an ERROR STOP statement
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -110,7 +99,7 @@
      if (size(array6) /=  9) error stop 6
      if (size(array7) /= 10) error stop 7
      end subroutine sub
-    
+
      program test
      call sub()
-     end  
+     end

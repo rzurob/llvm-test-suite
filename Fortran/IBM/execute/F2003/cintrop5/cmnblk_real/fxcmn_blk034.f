@@ -2,28 +2,22 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk_qlngdbl.sh fxcmn_blk034 cxcmn_blk034
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.o *.mod fxcmn_blk034 fxcmn_blk034.out
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that a single variable inside of
 !*                               BIND(C) common block with a binding label is interoperable
@@ -54,7 +48,7 @@ program fxcmn_blk034
 
 
 	!-- commented out TINY(Real1), because it gives 0.20041683600089727779961080513501620E-291
-        !-- Real1  =  -( TINY(Real1) )  
+        !-- Real1  =  -( TINY(Real1) )
 
 	Real1  = -2.225073Q-308
 

@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncArgPtr.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncArgPtr.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : FuncArgPtr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,7 +32,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The associating entity associating to an pointer is used as actual argument 
+!*    The associating entity associating to an pointer is used as actual argument
 !*    (comp failed)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -59,10 +53,10 @@
   PROGRAM FuncArgPtr
   USE M
   TYPE(Child(4,20)), TARGET  :: V
-  TYPE(Child(4,:)), POINTER  :: Ptr 
+  TYPE(Child(4,:)), POINTER  :: Ptr
 
-  Ptr => V 
- 
+  Ptr => V
+
   ASSOCIATE ( As => Ptr  )
      IF ( Func(As) .NE. 2 ) STOP 11
   END ASSOCIATE
@@ -72,16 +66,16 @@
   ELEMENTAL FUNCTION Func(Arg)
     CLASS(Base(4,*)), INTENT(IN)  :: Arg
     INTEGER :: Func
-    
+
     SELECT TYPE (Arg)
       TYPE IS (Child(4,*))
-        Func = 2 
+        Func = 2
       TYPE IS (Base(4,*))
-        Func = 1 
+        Func = 1
       CLASS DEFAULT
-        Func = -1 
-    END SELECT 
- 
-  END FUNCTION 
+        Func = -1
+    END SELECT
+
+  END FUNCTION
 
   END

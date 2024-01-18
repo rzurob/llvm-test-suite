@@ -1,19 +1,12 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal516a2kd
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal516a2 by Jim Xia)
 !*  DATE                       : 2007-11-11 (original: 06/15/2005)
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : was "final sub (finalization of function results in specification expression)"
 !*                               now this is a diagnostic, verifying that the private length parameter is

@@ -1,27 +1,25 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                               IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f002.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon
 !*  DATE                       : 2015-03-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*
 !*  DESCRIPTION                : - Various kinds of integers, reals and double
-!*                                 variables in DO CONCURRENT loops including 
-!*                                 nested DO CONCURRENT loops 
+!*                                 variables in DO CONCURRENT loops including
+!*                                 nested DO CONCURRENT loops
 !*                               - concurrent-limit contains a variable with the
 !*                                 parameter attribute
-!*                               - scalar-mask-expr contains arrays of various 
+!*                               - scalar-mask-expr contains arrays of various
 !*                                 real kinds and logicals
-!*                               - Use of elemental intrinsic functions inside 
+!*                               - Use of elemental intrinsic functions inside
 !*                                 DO CONCURRENT loops
-!*                               - Use of elemental intrinsic functions in the 
+!*                               - Use of elemental intrinsic functions in the
 !*                                 scalar-mask-expr
 !*                               - Use of ASSOCIATE in DO CONCURRENT construct
 !*
@@ -74,7 +72,7 @@
 
         do concurrent (i = 1:5, j = 1:5, (mod(100.0e0,i_arr2(i)) > 15.1e0) .and. (mod(100.0e0,i_arr(j)) < 30.6e0))
           associate (assoc_res2 => log10(real(10**j,8)))
-            i_res2(i,j) = assoc_res2 
+            i_res2(i,j) = assoc_res2
           end associate
         end do
 
@@ -158,8 +156,8 @@
             end associate test4
           end do
         end do
-       
-        i_res2_result(1,:) = 10.5d0 
+
+        i_res2_result(1,:) = 10.5d0
         i_res2_result(2,:) = 21.0d0
         i_res2_result(3,:) = 31.5d0
         i_res2_result(4,:) = 42.0d0
@@ -275,7 +273,7 @@
           if ( .not. precision_r8(i_res3(x),i_res3_result(x)) ) then
             print *, "3-level nested do concurrent with multiple indices and masks produced incorrect results"
             print *, "failure in first, outer-most loop"
-            print *, "x: ", x 
+            print *, "x: ", x
             print *, "i_res3: ", i_res3
             error stop 10
           end if

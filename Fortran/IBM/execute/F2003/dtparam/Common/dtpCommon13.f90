@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpCommon13 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpCommon13
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 19, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,23 +19,20 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The common statement
-!* 
-!*  An object with the TARGET attribute may be storage associated only with another object 
+!*
+!*  An object with the TARGET attribute may be storage associated only with another object
 !*  that has the TARGET attribute and the same type and type parameters
-!* 
+!*
 !*  -- the target attribute
-!* 
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
- 
+
   TYPE :: DT(K,L1,L2)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L1=4
@@ -56,32 +47,32 @@
   TYPE(DT(2,7,9)),  TARGET  :: T1(1024)
 
   COMMON T1, Ptr
- 
+
   END MODULE
 
 
-  PROGRAM dtpCommon13 
+  PROGRAM dtpCommon13
   USE M
   IMPLICIT NONE
 
   TYPE(DT(2,7,9)), TARGET :: T(1024)
   CHARACTER(7)    :: C1(9)
   CHARACTER(9)    :: C2(7)
-  INTEGER         :: K(9) 
+  INTEGER         :: K(9)
   INTEGER         :: I
   COMMON T
 
   Ptr => T
 
-  C1 = "123456789" 
+  C1 = "123456789"
   K = [1,2,3,4,5,6,7,8,9]
   C2 = "7654321"
 
   DO I=1, 1024
-    T(I)%C1 = C1 
-    T(I)%I  = K 
-    T(I)%C2 = C2 
-  END DO 
+    T(I)%C1 = C1
+    T(I)%I  = K
+    T(I)%C2 = C2
+  END DO
 
   IF ( .NOT. ASSOCIATED(Ptr, T ) ) STOP 11
   IF ( .NOT. ASSOCIATED(Ptr, T1) ) STOP 12

@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPolyOperator01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPolyOperator01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 22 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 22 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  1. allocatable variable with deferred length parameter is used as dummy argument of specific procedure. 
+!*  1. allocatable variable with deferred length parameter is used as dummy argument of specific procedure.
 !*  2. user defined operator is "+"
-!*  3.it will invoke corresponding specific procedure when user defined "+" is used in statement. 
+!*  3.it will invoke corresponding specific procedure when user defined "+" is used in statement.
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type dtp(k1,l1)
@@ -47,7 +39,7 @@ module m
 
         add1%i=this%i+dt%i
         add1%c=this%c//dt%c
-     end function   
+     end function
 
      function add2(this,dt)
         class(dtp(2,*)),intent(in) :: this
@@ -82,13 +74,13 @@ program dummyArgDeferNonPolyOperator01
   type(dtp(2,:)),allocatable :: dtp2(:),dtp3,result1(:),result2
 
   type(dtp(4,:)),allocatable :: tar
-  
+
   dtp1=dtp(2,3)(i=10,c="abc")
 
   allocate(dtp2(3),source= &
     [dtp(2,5)(i=1,c="00000"),dtp(2,5)(i=2,c="11111"),dtp(2,5)(i=3,c="22222")])
 
-    
+
   result1= dtp1 + dtp2
 
   if(size(result1,1) /= 3)                           error stop 10_4
@@ -107,9 +99,9 @@ program dummyArgDeferNonPolyOperator01
 
   deallocate(result2)
 
-  result2=dtp1 + tar 
+  result2=dtp1 + tar
 
   if(result2%i /= -10)                               error stop 15_4
-  if(result2%c /= "abcQ")                            error stop 16_4  
-        
+  if(result2%c /= "abcQ")                            error stop 16_4
+
 end program

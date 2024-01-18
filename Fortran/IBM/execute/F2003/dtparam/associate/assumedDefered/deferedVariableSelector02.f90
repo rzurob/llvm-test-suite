@@ -1,22 +1,16 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : deferedVariableSelector02
-!*  TEST CASE TITLE            : variable selector with Defered Length
 !*                               Parameter(s)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : July 23, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is a variable
 !*  SECONDARY FUNCTIONS TESTED : The Variable is Polymorphic and has a
 !*                               Defered Length Parameter
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE
@@ -65,7 +59,7 @@ MODULE mod1
                     PRINT *, "SIZE( baseExpected ) =", SIZE( baseExpected )
 
                     CALL zzrc( rc )
-    
+
                 ELSE IF ( ANY(ba%cArray /= baseExpected) ) THEN
                     PRINT *, "ba%cArray = (", ba%cArray, ")"
                     PRINT *, "baseExpected = (", baseExpected, ")"

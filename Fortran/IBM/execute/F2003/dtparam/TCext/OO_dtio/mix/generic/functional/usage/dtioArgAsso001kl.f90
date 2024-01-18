@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtioArgAsso001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from dtioArgAsso001 by Robert Ma)
 !*  DATE                       : 2007-08-13 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Usage of GENERIC BINDING
 !*                                  - Ensure DTIO procedure arguments are associated correctly
@@ -58,7 +50,7 @@ module m
          write ( buffer(idx), *, iostat=iostat, iomsg=iomsg)  unit, iotype, v_list
 
          iomsg = 'dtiowriteb'
-         
+
          idx = idx +1
 
       end subroutine
@@ -73,7 +65,7 @@ module m
 
          write ( buffer(idx), *, iostat=iostat, iomsg=iomsg)  unit, iotype, v_list
          iomsg = 'dtioreadb'
-         
+
          idx = idx + 1
 
       end subroutine
@@ -87,7 +79,7 @@ program dtioArgAsso001kl
 
    integer :: stat
    character(200) :: msg
-   
+
    namelist /n1/ b1
 
    open ( 1, file = 'dtioArgAsso001kl.1', form='formatted', access='sequential' )
@@ -100,12 +92,12 @@ program dtioArgAsso001kl
    write (1, "(DT'_b1'(1,2,3,4,5,6))")    b1   !<- unit: 1, iotype: "DT_b1", v_list: (/1,2,3,4,5,6/)
 
    rewind 1
-   
+
    read (1, *, iostat = stat) b1                             !<- unit: 1, iotype: "LISTDIRECTED", v_list: (//)
    rewind 1
    read (1, n1, iostat = stat, iomsg = msg)                               !<- unit: 1, iotype: "NAMELIST", v_list: (//)
    read (1, "(DT'_b1'(1,2,3,4,5,6))", iostat = stat)    b1   !<- unit: 1, iotype: "DT_b1", v_list: (/1,2,3,4,5,6/)
-   
+
    print *, buffer
 
    close ( 1, status ='delete')

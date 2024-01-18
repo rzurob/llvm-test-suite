@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxopen-newunit08
 !*
-!*  PROGRAMMER                 :  (derived from associate001 by Robert Ma)
 !*  DATE                       :
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008: NEWUNIT= specifier, Feature#:377344
 !*  SECONDARY FUNCTIONS TESTED : DTIO( Derived Type Parameters),Namelist formatting
 !*  REFERENCE                  :
-!*
-!*  DRIVER STANZA              :
 !*
 !*  DESCRIPTION                : Testing namelist fromatting in NEWUNIT=DTIO user-defind.
 !*                               The "unit" argument in the user defined procedure

@@ -1,25 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : realkind8a.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is of type real*8
-!*                               TO is  of unlimited poly 
+!*                               TO is  of unlimited poly
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -32,9 +20,9 @@ module m
       type base
           class(*), allocatable :: r
           real*8, allocatable :: var
-      end type 
+      end type
 
-      interface 
+      interface
            subroutine sub(arg)
                import base
                type(base) :: arg
@@ -62,7 +50,7 @@ end module
                 write (*, '(f15.8)' ) b%var
       end select
 
-      end 
+      end
 
            subroutine sub(arg)
                use m, only:base
@@ -70,7 +58,7 @@ end module
                real*8, allocatable :: r1
 
                allocate(arg%r, source = dprod(1.1_4, 2.2_4) )
-               allocate(r1, source=-3.3_8) 
+               allocate(r1, source=-3.3_8)
                allocate(arg%var, source = r1 )
 
            end subroutine

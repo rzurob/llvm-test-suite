@@ -13,20 +13,13 @@
 !**********************************************************************
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Rafik Zurob
 !*  DATE                       : June 12, 2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ieee_rem, ieee_invalid
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -54,7 +47,7 @@
       do i = 1, 4
         if (val(i) .neqv. .false.) call zzrc(i)
       enddo
-      
+
       ! dx/dy doesn't fit in an integer*8, so ieee_invalid will be set.
       dx = huge(dx)
       dy = 2.0d0

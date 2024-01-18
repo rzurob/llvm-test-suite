@@ -1,26 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONMLtY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Namelist_dummyArg09
 !*                               DTP - Namelist
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : November 25, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY SUBROUTINES TESTED   : Namelist with Intrinsic IO
 !*  SECONDARY SUBROUTINES TESTED : Dummy argument with deferred LEN parameter
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : NAMELIST 
+!*  KEYWORD(S)                 : NAMELIST
 !*
 !*  DESCRIPTION                :
-!*  namelist-stmt is 
+!*  namelist-stmt is
 !*
 !*     NAMELIST  / namelist-group-name / namelist-group-object-list &
 !*     [ [ , ] / namelist-group-name / namelist-group-object-list ] . . .
@@ -29,34 +22,34 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE, ABSTRACT :: Base (k1,l1)  !(4,10)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN  :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN  :: l1
 
         INTEGER(k1/k1) :: Iarr(l1+1-5) = k1
         CHARACTER(l1)  :: Carr(l1) = 'ABCD'
 
         CONTAINS
-        PROCEDURE :: fsingle => sfoo                     
+        PROCEDURE :: fsingle => sfoo
         GENERIC   :: init => fsingle
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)  !(4,10)
-        INTEGER, KIND :: k2 
-        INTEGER, LEN  :: l2 
-      END TYPE Child 
+        INTEGER, KIND :: k2
+        INTEGER, LEN  :: l2
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen (k3,k4,l3,l4) !(4,4,10,10)
         INTEGER, KIND :: k3, k4
         INTEGER, LEN  :: l3, l4
 
         TYPE(Child(k3,l3,k4,l4)) :: dtCarr(l3/l4)
-      END TYPE NextGen 
+      END TYPE NextGen
 
       CONTAINS
- 
+
       SUBROUTINE sfoo(Arg)
          CLASS(Base(4,*)) :: Arg
 
@@ -75,7 +68,7 @@ PROGRAM Namelist_dummyArg09
 
        NAMELIST /NMLb/n1, /NMLc/c1
        NAMELIST /NMLt/n1,c1
- 
+
        OPEN (1, file = 'Namelist_dummyArg09.In', form='formatted')
 
        call sub(n1)
@@ -88,17 +81,17 @@ PROGRAM Namelist_dummyArg09
       CONTAINS
 !*
      SUBROUTINE sub(Arg)
-       TYPE(NextGen(single,*,single,*,single,single,*,*)) :: Arg   
-       TYPE(NextGen(single,:,single,:,single,single,:,:)), POINTER :: ptr 
+       TYPE(NextGen(single,*,single,*,single,single,*,*)) :: Arg
+       TYPE(NextGen(single,:,single,:,single,single,:,:)), POINTER :: ptr
 
-       NAMELIST /NMLb/Arg, /NMLp/ptr 
-       NAMELIST /NMLt/Arg,ptr 
+       NAMELIST /NMLb/Arg, /NMLp/ptr
+       NAMELIST /NMLt/Arg,ptr
 
        ALLOCATE(NextGen(single,length,single,length,single,single,length,length) :: ptr)
 
        READ(1, NML=NMLb)
        READ(1, NML=NMLp)
- 
+
        WRITE(*, NML=NMLt, DELIM='QUOTE')
 
       END SUBROUTINE sub

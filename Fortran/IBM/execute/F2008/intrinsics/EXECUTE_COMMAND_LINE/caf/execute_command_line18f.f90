@@ -1,30 +1,17 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : execute_command_line18f.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2011-01-05
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : EXECUTE_COMMAND_LINE intrinsic
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : co-array 
+!*  SECONDARY FUNCTIONS TESTED : co-array
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                :
 !*
-!*  DESCRIPTION                : 
-!*
-!*
-!*  In this tc the number of images has to be limited. 
+!*  In this tc the number of images has to be limited.
 !*  Otherwise the program will attempt to create file names like:
-!*  file: or file< (the later produces an error with the touch command) 
-!*
-!*
+!*  file: or file< (the later produces an error with the touch command)
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -39,15 +26,15 @@ PROGRAM execute_command_line18f
       IMPLICIT NONE
       INTEGER, SAVE :: m[*]
       CHARACTER(100) :: cmd, msg
-      INTEGER :: I, Istat, Icmd, me 
+      INTEGER :: I, Istat, Icmd, me
 
       cmd = "ls file"
       msg = "default"
-      Icmd = 0 
-      Istat = 0 
+      Icmd = 0
+      Istat = 0
       me = this_image()
 
-      CALL EXECUTE_COMMAND_LINE("touch file"// achar(Iachar("0")+me))  
+      CALL EXECUTE_COMMAND_LINE("touch file"// achar(Iachar("0")+me))
 
       SYNC ALL
 
@@ -62,7 +49,7 @@ PROGRAM execute_command_line18f
 
       SYNC ALL
 
-      CALL EXECUTE_COMMAND_LINE("rm file"// achar(Iachar("0")+me))  
+      CALL EXECUTE_COMMAND_LINE("rm file"// achar(Iachar("0")+me))
 
       SYNC ALL
 

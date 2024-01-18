@@ -1,25 +1,17 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : OptionalArg04f
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : May 23, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop OPTIONAL argument
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Calling a BIND(C) procedure from Fortran
-!*                               where the procedure is defined in C. 
+!*                               where the procedure is defined in C.
 !*                               - The actual arg is a disassociated POINTER
 !*                                 or an unallocated POINTER and the dummy
 !*                                 argument is not allocatable or pointer
@@ -66,7 +58,7 @@
       rr_targ = -rr_targ
       call c_func(arg2=rr_ptr)
 
-      nullify(ii_ptr)      
+      nullify(ii_ptr)
       call c_func(ii_ptr, rr_ptr)
 
       call c_func(ii_ptr)
@@ -76,10 +68,10 @@
       ii_al = 5
       rr_al = 3.14
       call c_func(ii_al, rr_al)
-      
+
       deallocate(ii_al)
       call c_func(ii_al, rr_al)
-      
+
       deallocate(rr_al)
       call c_func(ii_al, rr_al)
 

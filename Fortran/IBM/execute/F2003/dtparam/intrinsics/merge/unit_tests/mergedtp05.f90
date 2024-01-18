@@ -5,7 +5,7 @@ type dtp (k, n)
   integer(k) ::  i = n
 end type
 
-type (dtp(4,6)) :: dtp1(6) 
+type (dtp(4,6)) :: dtp1(6)
 type (dtp(4,6)) :: dtp2(6) = (/dtp(4,6)(7), dtp(4,6)(8), dtp(4,6)(9), dtp(4,6)(10), &
                                dtp(4,6)(11), dtp(4,6)(12)/)
 type (dtp(4,6)) dtp3(2,3), dtp4(2,3), res(2,3)

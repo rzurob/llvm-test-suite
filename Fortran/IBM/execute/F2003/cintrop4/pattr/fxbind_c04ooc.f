@@ -1,13 +1,8 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/runf.sh fxbind_c04ooc 
+! %PRECMD: $TR_SRC/runf.sh fxbind_c04ooc
 ! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -18,22 +13,14 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c04ooc.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions
 !*                               contained in Module.
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -41,10 +28,10 @@
 !*   - FORTRAN code only , the interoperable function is implemented
 !*     in Fortran and called in Fortran.
 !*   - External procedure ( Fun/Entry), the interfaces is implicit.
-!*   - Both primary entry point and an alternate entry point have 
+!*   - Both primary entry point and an alternate entry point have
 !*     bind(c) attribute.
 !*   - Datatype :complex
-!*   
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*
@@ -76,7 +63,7 @@ FUNCTION eval3 ( x, result ) BIND(C) ! Global-Scope function with bind(c)
 
   ! Calculate result
   result = a + b*x
-  eval3 = a 
+  eval3 = a
   RETURN
 
   ! Entry INITL specifies the values of a and b

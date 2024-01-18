@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Null.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Null.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Null.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Null.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*   null()
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -71,33 +65,33 @@
 
   END MODULE
 
-  PROGRAM Null0 
+  PROGRAM Null0
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT(20,4)) :: V
   PROCEDURE(IFun), POINTER :: ProcPtr=>NULL()
 
-  ProcPtr => Fun 
-  ProcPtr => NULL(V%ProcPtr) 
+  ProcPtr => Fun
+  ProcPtr => NULL(V%ProcPtr)
   IF ( ASSOCIATED(ProcPtr) ) STOP 11
 
-  ProcPtr => Fun 
-  ProcPtr => NULL(ProcPtr) 
+  ProcPtr => Fun
+  ProcPtr => NULL(ProcPtr)
   IF ( ASSOCIATED(ProcPtr) ) STOP 12
 
-  V%ProcPtr => Fun 
-  V%ProcPtr => NULL(V%ProcPtr) 
+  V%ProcPtr => Fun
+  V%ProcPtr => NULL(V%ProcPtr)
   IF ( ASSOCIATED(V%ProcPtr) ) STOP 13
 
-  ProcPtr => NULL() 
-  V%ProcPtr => Fun 
-  V%ProcPtr => NULL(ProcPtr) 
+  ProcPtr => NULL()
+  V%ProcPtr => Fun
+  V%ProcPtr => NULL(ProcPtr)
   IF ( ASSOCIATED(V%ProcPtr) ) STOP 14
 
-  ProcPtr => Fun 
-  V%ProcPtr => Fun 
-  V%ProcPtr => NULL(ProcPtr) 
+  ProcPtr => Fun
+  V%ProcPtr => Fun
+  V%ProcPtr => NULL(ProcPtr)
   IF ( ASSOCIATED(V%ProcPtr) ) STOP 15
 
   END

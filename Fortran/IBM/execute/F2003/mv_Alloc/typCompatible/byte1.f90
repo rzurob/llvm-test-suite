@@ -1,24 +1,12 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : byte.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM/TO are of type byte 
+!*  DESCRIPTION                : FROM/TO are of type byte
 !*                               move_alloc called in internal proc of
 !*                               a module procedure
 !*
@@ -56,7 +44,7 @@
       call sub(b)
 
       if ( allocated(g) ) stop 11
-      if ( .not. allocated(b) ) stop 21 
+      if ( .not. allocated(b) ) stop 21
       if ( b /= 127 ) stop 31
 
       end

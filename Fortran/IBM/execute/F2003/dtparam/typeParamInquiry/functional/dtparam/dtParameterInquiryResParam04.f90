@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryResParam04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryResParam04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 29 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 29 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. FUNCTION RESULT AS ACTUAL ARGUMENT
 !* 4. DEFECT 354454
@@ -47,7 +39,7 @@ module m
              getlen=dt%l1
         end select
      end function
-     
+
      function getlenkind(dt)
         class(base(*)) :: dt
         integer :: getlenkind
@@ -58,18 +50,18 @@ module m
              getlenkind=dt%l1%kind
           class default
              error stop 100_4
-        end select         
+        end select
      end function
 
 end module
 
-  program dtParameterInquiryResParam04 
+  program dtParameterInquiryResParam04
   use m
   implicit none
 
   interface
   subroutine setdt(dt,length)
-     import 
+     import
      type(base(:)),pointer,intent(inout) :: dt
      integer :: length
   end subroutine
@@ -79,7 +71,7 @@ end module
       type(base(*)) :: dt
       character(dt%l1+length) setchar
       integer :: length
-  end function 
+  end function
   end interface
 
   type(child) :: c1
@@ -88,13 +80,13 @@ end module
   character(:),allocatable :: a1
 
   allocate(base(getlen(b1)) :: p1)
-  call setdt(p1,getlen(c1))   
+  call setdt(p1,getlen(c1))
   if(p1%l1 /= 10)                                        error stop 11_4
-  
+
   allocate(a1,source=setchar(p1,3))
   if(a1 /='xlftest' )                                    error stop 12_4
   if(a1%len /= len(a1) .or. a1%len /= 13)                error stop 13_4
-  
+
   deallocate(a1)
   allocate(a1,source=setchar(p1,getlen(c1)))
   if(a1 /= 'xlftest')                                     error stop 14_4
@@ -116,16 +108,16 @@ end
   subroutine setdt(dt,length)
      use m
      type(base(:)),pointer,intent(inout) :: dt
-     integer :: length 
+     integer :: length
      if(dt%l1 /= 4)                                      error stop 10_4
      allocate(base(length) :: dt)
-  end subroutine 
+  end subroutine
 
   function setchar(dt,length)
       use m
       type(base(*)) :: dt
       character(dt%l1+length) setchar
       integer :: length
-      setchar='xlftest'    
-  end function   
+      setchar='xlftest'
+  end function
 

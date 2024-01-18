@@ -1,22 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound01d
 !*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Resolution for polymorphic objects
 !*                               based on the number of arguments
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -39,33 +32,33 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
-        CONTAINS 
-         PROCEDURE, PASS :: foo1      
-         GENERIC :: FUNC =>  foo1 
-      END TYPE Base 
+        CONTAINS
+         PROCEDURE, PASS :: foo1
+         GENERIC :: FUNC =>  foo1
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2)
-        INTEGER, KIND :: k2 
+        INTEGER, KIND :: k2
 
-        CONTAINS 
+        CONTAINS
          PROCEDURE, PASS :: foo2
          GENERIC :: FUNC =>  foo2
-      END TYPE Child 
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen(k3)
-        INTEGER, KIND :: k3 
+        INTEGER, KIND :: k3
 
-        CONTAINS 
+        CONTAINS
          GENERIC :: REPT =>  foo1, foo2
       END TYPE NextGen
 
-      CONTAINS 
+      CONTAINS
 !*
       CLASS(Base(4,:)) FUNCTION foo1(Obj)
       CLASS(Base(4,*)) :: Obj
@@ -78,7 +71,7 @@
 
       CLASS(Child(4,:,4)) FUNCTION foo2(Obj,Arg)
       CLASS(Child(4,*,4)) :: Obj
-      CLASS(Base(4,*)) :: Arg 
+      CLASS(Base(4,*)) :: Arg
       ALLOCATABLE :: foo2
 
       ALLOCATE (foo2, source = Obj)
@@ -90,11 +83,11 @@
 !*
       PROGRAM Generic_TypeBound01d
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(Base(4,:)), POINTER :: poly1 
+      CLASS(Base(4,:)), POINTER :: poly1
       TYPE(Child(4,5,4)), TARGET :: tgt1
-      TYPE(Base(4,5))  :: base1 
+      TYPE(Base(4,5))  :: base1
       TYPE(child(4,10,4)) :: child1
       TYPE(NextGen(4,10,4,4)) :: dtv
 
@@ -116,7 +109,7 @@
            IF ( .NOT. ALLOCATED(poly1%FUNC(poly1)) ) STOP 16
 
           CLASS DEFAULT
-           STOP 102 
+           STOP 102
       END SELECT
 
       ALLOCATE(NextGen(4,10,8,8):: poly1)   ! dynamic type NextGen with k2=k3=8, call foo1
@@ -143,7 +136,7 @@
       END SELECT
 
       ALLOCATE(NextGen(4,10,8,8):: poly1)   ! dynamic type NextGen with k2=k3=8, call foo1
-      
+
       SELECT TYPE ( poly1) ! call possible only within select type
           CLASS IS (NextGen(4,*,8,8))
              IF ( .NOT. ALLOCATED(poly1%REPT())) STOP 27

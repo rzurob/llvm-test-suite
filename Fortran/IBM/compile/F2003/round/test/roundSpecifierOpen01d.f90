@@ -1,23 +1,15 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND specifier= in OPEN statement
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*          The round specifier has a limited list of character values.
 !*          Any trailing blanks are ignored, but not blanks preceding.
 !* ===================================================================
 
-  program roundSpecifierOpen01d 
+  program roundSpecifierOpen01d
     use ISO_FORTRAN_ENV
 
     real r, w
@@ -35,4 +27,4 @@
 
     write(OUTPUT_UNIT, *, round='U'//'  P')  w !<--illegal
 
-  end program roundSpecifierOpen01d 
+  end program roundSpecifierOpen01d

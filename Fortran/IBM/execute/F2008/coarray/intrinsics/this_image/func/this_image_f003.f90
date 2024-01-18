@@ -1,17 +1,11 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : this_image_f003.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : July 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
@@ -50,10 +44,10 @@ program main
 		print *, num2
 		error stop 14
 	end if
-	
+
 !=========================================
 !=========================================
-	
+
 	allocate(arr(3))
 	arr = this_image(caf2)
 	print *, arr
@@ -70,7 +64,7 @@ program main
 		error stop 23
 	end if
 	deallocate(arr)
-	
+
 	allocate(arr(3))
 	do i = 1, size(arr)
 		arr(i) = this_image(caf2, i)

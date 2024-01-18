@@ -2,7 +2,7 @@ module m
   type dtp(k1,k2,l1,l2)
      integer,kind    :: k1
      integer(2),kind :: k2
-     integer,len     :: l1 
+     integer,len     :: l1
      integer(2),len  :: l2
   end type
 
@@ -20,17 +20,17 @@ module m
          if(arg%l2 /= 3)                 error stop 14_4
          deallocate(arg)
       endif
-   end subroutine   
+   end subroutine
 
    subroutine modsub2(arg)
       type(dtp(2,4,:,:)),pointer :: arg(:)
-      
+
       if(.not. associated(arg)) then
          allocate(dtp(2,4,2,3)  :: arg(3))
       else
          if(arg%l1 /= 2)                 error stop 19_4
          if(arg%l2 /= 3)                 error stop 20_4
          deallocate(arg)
-      endif      
-   end subroutine 
+      endif
+   end subroutine
 end module

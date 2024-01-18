@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck -ql -qdeferredlp /tstdev/OO_poly/allocate/falloc018a1_1.f90
 ! opt variations: -qnock -qnol -qnodeferredlp
 
-
 module m
     type base(n1,k1)    ! (20,4)
         integer, kind :: k1

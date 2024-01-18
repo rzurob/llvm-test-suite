@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C813Dummy.f 
+! %POSTCMD: tcomp C813Dummy.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C813dummy
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 3, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C813 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C813
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a dummy of derived type 
+!*    The selector is a dummy of derived type
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -55,7 +49,7 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -77,14 +71,14 @@
   PROGRAM C813Dummy
   USE M
   IMPLICIT NONE
- 
+
   CLASS(ChilD), ALLOCATABLE :: Var
- 
+
   ALLOCATE(Var, SOURCE=Child(BaseId=-1, ChildId=-2) )
   CALL Sub(Var)
 
   CONTAINS
- 
+
   SUBROUTINE Sub(Arg)
   TYPE(Child) :: Arg
 
@@ -93,17 +87,17 @@
       STOP 50
     CLASS DEFAULT
        STOP 30
-  END SELECT 
+  END SELECT
 
-  ASSOCIATE( As => Var%Base ) 
-  SELECT TYPE (  As => As) 
+  ASSOCIATE( As => Var%Base )
+  SELECT TYPE (  As => As)
     TYPE IS (Base)
       STOP 51
     CLASS DEFAULT
       STOP 31
-  END SELECT 
+  END SELECT
   END ASSOCIATE
-  
+
   END SUBROUTINE
 
   END

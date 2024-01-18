@@ -5,55 +5,49 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn091k.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn091k.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn091k.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn091k.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : overriding 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
 !*
-!*  DESCRIPTION                : testing the base procedure is bound to 
+!*  SECONDARY FUNCTIONS TESTED : overriding
+!*
+!*  DESCRIPTION                : testing the base procedure is bound to
 !*                               two types which all extend the base type,
 !*                               with different binding-names.
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-      module mod	      
+      module mod
       integer :: int = 200
       character*20 :: c = "hi"
 
-      type base(n1,k1)    ! (20,4) 
+      type base(n1,k1)    ! (20,4)
          integer, kind :: k1
          integer, len  :: n1
          integer(k1)   :: x
       contains
       	 procedure, nopass :: bind_b => proc1
-      end type 
+      end type
 
       type, extends(base) :: parent1    ! (20,4)
       contains
-	 procedure, nopass :: bind_p1 => proc1 
-      end type  
+	 procedure, nopass :: bind_p1 => proc1
+      end type
 
       type, extends(base) :: parent2    ! (20,4)
       contains
@@ -71,14 +65,14 @@
          c = ""
       end subroutine
 
-   end module     
+   end module
 
    use mod
 
    type(base(20,4)) :: dt
    type(parent1(20,4)) :: dt_p1
    type(parent2(20,4)) :: dt_p2
-     
+
    if (int .ne. 200)      error stop 2
    if (c .ne. "hi")    error stop 3
 
@@ -90,11 +84,11 @@
    call dt_p1%bind_p1()
    if (int .ne. 400)      error stop 6
    if (c .ne. "hi_again")    error stop 7
-  
+
    call proc2()
    call dt_p2%bind_p2()
    if (int .ne. 400)      error stop 8
    if (c .ne. "hi_again")    error stop 9
 
    end
-   
+

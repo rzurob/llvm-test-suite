@@ -4,17 +4,14 @@
 ! %PRECMD:
 ! %COMPOPTS: -qhalt=w
 ! %GROUP: intrimod21a.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod21a.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
@@ -60,7 +57,7 @@
          use :: mod1
          use, intrinsic :: ieee_arithmetic
          use, intrinsic :: xlf_fp_util
-         implicit none 
+         implicit none
 
 
          flags = (/ fp_overflow, fp_div_by_zero, fp_invalid, &
@@ -91,7 +88,7 @@
          do k = 1, 5
             if (flag_values(k) .neqv. .false. ) stop 10
          enddo
-         
+
          call ieee_get_status(status_value)
          call ieee_set_rounding_mode(rt_nearest)
          call ieee_get_rounding_mode(rtype)
@@ -101,7 +98,7 @@
          call ieee_set_status(status_value)
 
          call set_fpscr_flags(flags(1))
-         call clr_fpscr_flags(flags(5)) 
+         call clr_fpscr_flags(flags(5))
          if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
          if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 18
 
@@ -111,13 +108,13 @@
 
 !... An external function with the same name as xlf utility intrinsic module
 
-      logical function xlf_fp_util(rt_nearest, flags) 
+      logical function xlf_fp_util(rt_nearest, flags)
   	 use, intrinsic :: ieee_arithmetic
          use, intrinsic :: xlf_fp_util
 
          real*4 yr
          type(ieee_round_type) :: rtype
-         type(ieee_round_type), intent(in) :: rt_nearest 
+         type(ieee_round_type), intent(in) :: rt_nearest
          type(ieee_status_type) :: status_value
          logical :: flag_values(5)
          integer(fpscr_kind), dimension(5) :: flags
@@ -126,7 +123,7 @@
          do k = 1, 5
             if (flag_values(k) .neqv. .false. ) stop 30
          enddo
-           
+
          call ieee_get_status(status_value)
          call ieee_set_rounding_mode(rt_nearest)
          call ieee_get_rounding_mode(rtype)
@@ -136,7 +133,7 @@
          call ieee_set_status(status_value)
 
          call set_fpscr_flags(flags(1))
-         call clr_fpscr_flags(flags(5)) 
+         call clr_fpscr_flags(flags(5))
          if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 37
          if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 38
 

@@ -5,33 +5,25 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgm003.f
 ! %VERIFY: fort.18:fxiomsgm003.vf
-! %STDIN: 
-! %STDOUT:  
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
- 
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : iomsg should be effective only it's specified
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : READ
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 1
 !*
 !*  DESCRIPTION                : The IOMSG option should be in effective where
@@ -50,7 +42,7 @@
 !*********************************************************************
 
       program fxiomsgm003
-   
+
       implicit none
       integer*4 ios
 
@@ -60,17 +52,13 @@
 
       character*100 unit9 ( 1 )
 
-      
-
       open ( 9, access = 'SEQUENTIAL', form = 'FORMATTED', err = 100 )
 
       write ( 9, fmt = '( A10 )' ) 'xXxXxXxXxX'
 
       write ( unit9, fmt = '( A6 )', err = 100 ) 'xXxXxXxXxX'
 
-
       rewind 9
-
 
       errmsg="abc"
 
@@ -78,9 +66,7 @@
 
       read ( 9, fmt='(A10)',  iostat=ios , iomsg=errmsg ) varchar
 
-      write( 18 , * ) errmsg 
-
-
+      write( 18 , * ) errmsg
 
       errmsg="abc"
 
@@ -95,5 +81,4 @@
 100   call zzrc ( 100 )
 
       end
-
 

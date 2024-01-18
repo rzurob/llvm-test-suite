@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpEquiv5 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpEquiv5
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 05, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The equivalence statement
-!* 
-!*    Impicit typing rules 
-!*  
+!*
+!*    Impicit typing rules
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,38 +36,38 @@
     SEQUENCE
     REAL(K)       :: R(L)=K
   END TYPE
- 
+
   TYPE :: DT_C(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     CHARACTER(L)  :: C(L)=CHAR(48+K)
   END TYPE
- 
+
   TYPE :: DT_I(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     INTEGER(K)    :: I(L)=K
   END TYPE
- 
+
   TYPE :: DT_L(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     LOGICAL(K)    :: A(L)=.TRUE.
   END TYPE
- 
+
   TYPE :: DT_Z(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     COMPLEX(K)    :: Z(L)=(K,-K)
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpEquiv5 
+  PROGRAM dtpEquiv5
   USE M
 
   IMPLICIT TYPE(DT_R(16,7))(R)
@@ -92,7 +83,7 @@
   LOGICAL(8)        :: L1(2)
   COMPLEX(16)       :: Z1(9)
 
-  
+
   EQUIVALENCE(R, R1)
   EQUIVALENCE(C, C1)
   EQUIVALENCE(I, I1)

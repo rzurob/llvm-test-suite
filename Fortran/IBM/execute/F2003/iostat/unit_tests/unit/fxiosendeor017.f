@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxiosendeor017.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,26 +12,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxiosendeor017
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug. 19, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : is_iostat_end and is_iostat_eor intrinsics
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This tests the functionality of the intrinsic when used
 !*                               in an implied-do loop, in an initialization expression.
 !*
-!*  IMPORTANT CONSIDERATION    : THIS TEST CASE WILL FAIL BECAUSE OF A KNOWN BUG, FOR 
+!*  IMPORTANT CONSIDERATION    : THIS TEST CASE WILL FAIL BECAUSE OF A KNOWN BUG, FOR
 !*                               WHICH I HAVE OPENED A DEFECT (308489). UNTIL THIS DEFECT
 !*                               IS FIXED, THE TESTCASE WILL FAIL.
 !*
@@ -43,7 +36,7 @@
       logical, dimension(6) :: idlend =                                 &
      & (/ ( is_iostat_end(input(i)), i=1, 6) /)
       logical, dimension(6) :: idleor =                                 &
-     & (/ ( is_iostat_eor(input(i)), i=1, 6) /)                         
+     & (/ ( is_iostat_eor(input(i)), i=1, 6) /)
 
       write(*,*) idlend
       write(*,*) idleor

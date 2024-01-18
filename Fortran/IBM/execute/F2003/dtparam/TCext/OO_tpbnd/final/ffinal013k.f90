@@ -1,19 +1,12 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal013k
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal013 by Jim Xia)
 !*  DATE                       : 2007-10-31 (original: 02/10/2005)
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : final sub (finalization of a linked-list)
 !*
@@ -93,7 +86,7 @@ use m1
 
     node2%data => b_ptr2
     node2%next => node3
-    
+
 
     list%data  => b_ptr1
     list%next  => node2

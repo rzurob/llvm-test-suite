@@ -1,11 +1,7 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : caflock04f.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Ren Jian Gang
 !*  DATE                       : May 08, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
@@ -15,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 387873
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -26,8 +21,8 @@
 !*  -----------
 !*  CAF: LOCK/UNLOCK statements
 !*
-!234567890123456789012345678901234567890123456789012345678901234567890      
-  
+!234567890123456789012345678901234567890123456789012345678901234567890
+
 module lock_manager
   use, intrinsic :: iso_fortran_env, only: lock_type
 
@@ -37,7 +32,7 @@ module lock_manager
     subroutine lock_add(var, j)
       integer, intent(out) :: var
       integer, intent(in) :: j
-	  
+
       lock(stack_lock(j)[5])
       var = var + 1
       runlock(stack_lock(j)[5])
@@ -60,9 +55,9 @@ program p
 
   call lock_add(i, j)
   print *, "Add: ", i
-  
+
   j = 3
-  
+
   call lock_sub(i, j)
   print *, "Sub: ", i
 end program

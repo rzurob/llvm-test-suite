@@ -37,7 +37,6 @@ module m
     end subroutine
 end module
 
-
 module m1
 use m
     type, extends(shape) :: triangle    ! (4,20)

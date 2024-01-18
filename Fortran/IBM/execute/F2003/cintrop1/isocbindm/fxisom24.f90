@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_LONG_DOUBLE
@@ -110,7 +96,7 @@ real(C_LONG_DOUBLE) function fnt1(a)
    use ISO_C_BINDING
 
    real(C_LONG_DOUBLE) :: a
-   
+
    if ( a /= 5.0d0 ) error stop 28
 
    a = a + 5.0d0
@@ -122,7 +108,7 @@ real(C_LONG_DOUBLE) function fnt2(a)
    use ISO_C_BINDING
 
    real(C_LONG_DOUBLE), value :: a
-   
+
    if ( a /= 5.0d0 ) error stop 30
 
    a = a + 5.0d0
@@ -134,7 +120,7 @@ real(C_LONG_DOUBLE) function fnt3(a)
    use ISO_C_BINDING
 
    real(C_LONG_DOUBLE), intent(in) :: a
-   
+
    if ( a /= 5.0d0 ) error stop 32
 
    fnt3 = 0
@@ -144,7 +130,7 @@ real(C_LONG_DOUBLE) function fnt4(a)
    use ISO_C_BINDING
 
    real(C_LONG_DOUBLE), intent(in), value :: a
-   
+
    if ( a /= 5.0d0 ) error stop 34
 
    fnt4 = 0

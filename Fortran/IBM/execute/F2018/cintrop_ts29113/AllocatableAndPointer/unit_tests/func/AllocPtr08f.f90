@@ -1,22 +1,14 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocPtr08f
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Feb, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Allocatable/Pointer
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Calling TIFs that end up turning into
 !*                               calls to the RTE.
@@ -81,7 +73,7 @@
 
         ! ****** Test 3: ****** !
         a(3,1) = 0
-        
+
         print *, maxloc(a)
         print *, carr
         print *, maxloc(carr)

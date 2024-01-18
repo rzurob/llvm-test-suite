@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrAssumSiz.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrAssumSiz.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 09, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Assumed size array 
+!*  Assumed size array
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -58,13 +50,13 @@
   END MODULE
 
 
-  PROGRAM dataPtrAssumSiz 
+  PROGRAM dataPtrAssumSiz
   USE M
   IMPLICIT NONE
 
   TYPE(DT(4)),     TARGET :: Arr(10,10)
 
-  Arr = DT(4)(-1) 
+  Arr = DT(4)(-1)
 
   CALL S(Arr, 10, 0, 9)
 

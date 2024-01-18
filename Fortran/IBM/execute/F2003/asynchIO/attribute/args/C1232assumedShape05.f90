@@ -1,21 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : C1232assumedShape05 - ASYNCHRONOUS
 !*                               Attribute in Assumed-Shape Array Arguments
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April  7, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Actual Argument is an Assumed-Shape Array
 !*  SECONDARY FUNCTIONS TESTED : Dummy Argument explicitly has the ASYNCHRONOUS
 !*                               and VOLATILE Attributes, and is an
 !*                               Assumed-Shape Array
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASYNCHRONOUS Attribute

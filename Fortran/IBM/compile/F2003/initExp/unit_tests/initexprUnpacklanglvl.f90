@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Initialization expression
 !*
-!* PROGRAMMER                 : Kelvin Li
 !* DATE                       : March 31, 2006
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : UNPACK intrinsic
 !*
@@ -64,20 +59,18 @@ real(16), parameter :: fldR16(2,2)=reshape((/-1,-2,-3,-4/), (/2,2/))
 real(16), dimension(2,2) :: resR16=unpack(r16, mask=msk, field=fldR16)
 
 complex(4), parameter :: c4(4)=(/(5.,6.),(6.,7.),(7.,8.),(8.,9.)/)
-complex(4), parameter :: fldC4(2,2)=reshape((/& 
+complex(4), parameter :: fldC4(2,2)=reshape((/&
  & cmplx(-1.0),cmplx(-2.0),cmplx(-3),cmplx(-4)/),(/2,2/))
 complex(4), dimension(2,2) :: resC1=unpack(c4, msk, fldC4)
- 
+
 complex(8), parameter :: c8(4)=(/(1.,1.),(2.,2.),(3.,3.),(4.,4.)/)
-complex(8), parameter :: fldC8(2,2)=reshape((/& 
+complex(8), parameter :: fldC8(2,2)=reshape((/&
  & cmplx(-1.0),cmplx(-2.0),cmplx(-3),cmplx(-4)/), (/2,2/))
 complex(8), dimension(2,2) :: resC3=unpack(c8, mask=msk, field=fldC8)
 
 complex(16), parameter :: c16(4)=(/(1.q0,0.q0),(2.0q0,0.q0),(3.q0,0.q0),(4.q0,0.q0)/)
-complex(16), parameter :: fldC16(2,2)=reshape((/& 
+complex(16), parameter :: fldC16(2,2)=reshape((/&
  & cmplx(-1.0),cmplx(-2.0),cmplx(-3),cmplx(-4)/), (/2,2/))
 complex(16), dimension(2,2) :: resC16=unpack(c16, mask=msk, field=fldC16)
-
-
 
 end

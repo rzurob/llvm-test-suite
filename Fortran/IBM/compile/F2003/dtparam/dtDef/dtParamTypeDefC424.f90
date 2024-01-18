@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefC424 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefC424
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 29, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -26,14 +20,12 @@
 !*  DESCRIPTION
 !*
 !*  C424 (R430) A derived type type-name shall not be DOUBLEPRECISION or the same as
-!*  the name of any intrinsic type defined in this standard. 
-!*
-!*
+!*  the name of any intrinsic type defined in this standard.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamTypeDefC424 
+  PROGRAM dtParamTypeDefC424
 
   TYPE, BIND(C) :: DOUBLEPRECISION(K)
     INTEGER, KIND :: K
@@ -63,6 +55,6 @@
     INTEGER, KIND :: K3
   END TYPE
 
-  
+
   END
 

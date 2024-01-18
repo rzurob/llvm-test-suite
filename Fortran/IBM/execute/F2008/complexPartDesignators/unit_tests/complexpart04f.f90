@@ -1,17 +1,9 @@
 !* ===================================================================
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE            : complexpart04f.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : June 24, 2010
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Complex part designator
-!*
-!* DRIVER STANZA              : xlf2008
 !*
 !* DESCRIPTION                : Testing proper functionality of
 !*                              array complex part designators
@@ -79,8 +71,8 @@
       allocate (base2(8,3,5) :: polyc(2))
 
       polyc(1)%cmpl%re = 11.0
-      polyc(1)%cmpl%im = 12.0 
-      polyc(1)%cmpl(7)%re = 13.0 
+      polyc(1)%cmpl%im = 12.0
+      polyc(1)%cmpl(7)%re = 13.0
       polyc(1)%cmpl(7)%im = 14.0
       polyc(2)%cmpl%re = 15.0
       polyc(2)%cmpl%im = 16.0
@@ -113,7 +105,7 @@
 
       subroutine sub1(i, r)
       real :: r(:)
-      integer :: a(3), i 
+      integer :: a(3), i
       a(1) = r%kind * 2
       a(2) = LOC(r(2)) - LOC(r(1))
       a(3) = LOC(r(3)) - LOC(r(2))
@@ -124,7 +116,7 @@
       subroutine sub2(i, r)
       real :: r(3)
       integer :: a(3), i
-      a(1) = r%kind 
+      a(1) = r%kind
       a(2) = LOC(r(2)) - LOC(r(1))
       a(3) = LOC(r(3)) - LOC(r(2))
       write(*,FMT='(I3,": ",3F12.8)') i, r

@@ -1,24 +1,17 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : this_image_f002b.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : July 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This_image(caf) should always produce a rank 1 array
 !*                               result whereby each cobound should be less than or
 !*                               equal to num_images() if none are defined at declaration.
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -30,7 +23,7 @@ contains
 	subroutine sub2(x)
 		integer :: x
 		integer, save :: caf[0:*]
-	
+
 		x = x - 1
 		allocate(arr(1))
 		arr = this_image(caf)
@@ -80,8 +73,8 @@ subroutine sub1()
 		print *, arr, num
 		error stop 12
 	end if
-	
+
 	deallocate(arr)
 	sync all
-	
+
 end subroutine

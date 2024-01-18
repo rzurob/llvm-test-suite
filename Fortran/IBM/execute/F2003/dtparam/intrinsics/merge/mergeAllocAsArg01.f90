@@ -1,35 +1,27 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeAllocAsArg01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeAllocAsArg01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 21 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE AND FSOURCE ARE ALLOCATABLE ARRAY
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type dtp(k,l)
      integer,kind :: k
      integer,len  :: l
-    
+
      integer(k)   :: i
      character(l) :: c
   end type
@@ -39,7 +31,7 @@ program mergeAllocAsArg01
    use m
    implicit none
 
-   integer :: k 
+   integer :: k
    logical :: mask1(6)=[.true.,.false.,.true.,.false.,.true.,.false.]
    type(dtp(4,3)) :: dtp1(6),dtp2(2,3)
    type(dtp(4,3)),allocatable :: dtp3(:),dtp4(:,:)
@@ -47,7 +39,7 @@ program mergeAllocAsArg01
    logical :: mask2(2,3)
 
    mask2=reshape(mask1,(/2,3/))
-   
+
    dtp1= [( (dtp(4,3)(i=k,c=char(k+64))),k=1,6 ) ]
    dtp2= reshape(dtp1,(/2,3/))
 
@@ -56,7 +48,7 @@ program mergeAllocAsArg01
 
    dtp5=merge([dtp1(1),dtp1(2),dtp1(3)],[dtp3(4),dtp3(5),dtp3(6)], &
                [.true.,.false.,.true.])
-   
+
    if(any(dtp5%i /= [1,15,3] ))                        error stop 11_4
    if(any(dtp5%c /= ["A","e","C"] ))                   error stop 12_4
    if(dtp5%k /= 4)                                     error stop 13_4
@@ -72,7 +64,7 @@ program mergeAllocAsArg01
    if(dtp5%k /= 4)                                     error stop 19_4
    if(dtp5%l /= 3)                                     error stop 20_4
    if(dtp5%i%kind /= 4)                                error stop 21_4
-   if(dtp5%c%len /= 3)                                 error stop 22_4 
+   if(dtp5%c%len /= 3)                                 error stop 22_4
 
    dtp5=merge(dtp1(4:6),dtp3(1:3),[.true.,.false.,.true.])
 
@@ -90,7 +82,7 @@ program mergeAllocAsArg01
    if(dtp5%k /= 4)                                     error stop 31_4
    if(dtp5%l /= 3)                                     error stop 32_4
    if(any(dtp5%i /= [12,3,16] ))                       error stop 33_4
-   if(any(dtp5%c /= ["b","C","f"] ))                   error stop 34_4 
+   if(any(dtp5%c /= ["b","C","f"] ))                   error stop 34_4
    if(dtp5%k /= 4)                                     error stop 35_4
    if(dtp5%l /= 3)                                     error stop 36_4
    if(dtp5%i%kind /= 4)                                error stop 37_4

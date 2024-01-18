@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatAsynStream02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatAsynStream02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 23 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test asynchronous READ & WRITE with stream access & nonadvancing IO
@@ -32,10 +24,10 @@ module m
    type,extends(base) :: child(k2,l2)
       integer,kind :: k2 ! k2=4
       integer,len  :: l2 ! l2=3
-      integer(k2)  :: i1(k2) 
+      integer(k2)  :: i1(k2)
       logical(k2)  :: g1(l1:l2)
-   end type 
-   
+   end type
+
 end module
 
 program formatAsynStream02
@@ -79,18 +71,18 @@ program formatAsynStream02
          ! append one more record before read data
          write(1024,'(a)',advance='yes', &
                asynchronous='yes',id=idvar) ".true.,.false."
-       
+
          wait(1024,id=idvar)
 
-         ! point to the beignning of the first record        
+         ! point to the beignning of the first record
          rewind 1024
 
-         ! start to read 
+         ! start to read
          call readData(tar1,1024)
 
       class default
-         stop 12 
-  end select 
+         stop 12
+  end select
 
   select type(ptr1)
       type is(child(*,4,*))
@@ -101,7 +93,7 @@ program formatAsynStream02
   end select
 
   close(10)
-    
+
 
 end program
 
@@ -115,12 +107,12 @@ end program
 
 subroutine readData(arg,unit)
    use m
-   class(base(*)),intent(inout),target :: arg(2:) 
+   class(base(*)),intent(inout),target :: arg(2:)
    integer,intent(in)  :: unit
 
    integer :: ios,pos
    character(256) :: msg
-   
+
    select type(arg)
       type is(child(*,4,*))
 
@@ -141,18 +133,18 @@ subroutine readData(arg,unit)
 
         inquire(unit,pos=pos)
 
-        if(pos /= 28)      stop 16 
+        if(pos /= 28)      stop 16
 
-        ! read second record 
+        ! read second record
         read(unit,'(4i3,tr7)',advance='no',pos=pos , &
             asynchronous='yes',id=idvar,iostat=ios,iomsg=msg) arg(2)%i1
- 
+
         if(ios /= 0) then
             print *,"fail to read data"
             print *,"iostat=",ios
             print *,"iomsg=",msg
             stop 17
-        end if     
+        end if
 
         wait(unit,id=idvar)
 
@@ -223,6 +215,6 @@ subroutine readData(arg,unit)
 
       class default
           stop 13
-   end select 
+   end select
 
 end subroutine

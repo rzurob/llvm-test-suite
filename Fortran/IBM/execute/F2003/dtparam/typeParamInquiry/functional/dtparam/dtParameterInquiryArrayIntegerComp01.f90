@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryArrayIntegerComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryArrayIntegerComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 10 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY FOR DT AND COMPONENT
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. INTEGER ARRAY COMPONENT
@@ -47,8 +39,8 @@ module m
      integer(max(2,4)) :: i5(lbound(i1,1)+2 : ubound(i1,1)+2)
      integer(4) :: i6(l1:l1+l2) ! defect 353331
 
-   end type 
-         
+   end type
+
 end module
 
   program dtParameterInquiryArrayIntegerComp01
@@ -59,14 +51,14 @@ end module
 
 
   if(t%k1 /= 2)                                         error stop 10_4
-  if(t%k2 /= 2)                                         error stop 11_4 
+  if(t%k2 /= 2)                                         error stop 11_4
   if(t%k3 /= 1)                                         error stop 12_4
-  
+
   if(t%l1 /= 2)                                         error stop 13_4
   if(t%l2 /= 2)                                         error stop 14_4
   if(t%l3 /= 4)                                         error stop 15_4
- 
-  if(t%k1%kind /= kind(t%k1) .or. t%k1%kind /= 1)       error stop 16_4 
+
+  if(t%k1%kind /= kind(t%k1) .or. t%k1%kind /= 1)       error stop 16_4
   if(t%k2%kind /= kind(t%k2) .or. t%k2%kind /= 2)       error stop 17_4
   if(t%k3%kind /= kind(t%k3) .or. t%k3%kind /= 4)       error stop 18_4
 

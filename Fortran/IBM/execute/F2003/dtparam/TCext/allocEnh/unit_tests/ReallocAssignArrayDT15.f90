@@ -2,27 +2,15 @@
 ! ftcx_dtp -ql -qdeferredlp /tstdev/F2003/allocEnh/unit_tests/ReallocAssignArrayDT15.f
 ! opt variations: -qnol -qnodeferredlp
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ReallocAssignArrayDT15
-!*
-!*  PROGRAMMER                 : Rob James
 !*  DATE                       : June 9, 2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  DESCRIPTION                : Testing reallocation on assignment,
 !*                               with an array of derived types with
-!*                               a deferred length type parameter on 
+!*                               a deferred length type parameter on
 !*                               the left-hand side of the assignment.
 !*
 !* ===================================================================

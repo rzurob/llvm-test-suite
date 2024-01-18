@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : mixNaNInfIO001.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 14, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -31,9 +25,9 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      use, intrinsic :: ieee_arithmetic 
+      use, intrinsic :: ieee_arithmetic
       implicit none
-      
+
       real(4)  :: rl1 = 0.0, rl11 = 0.0, rl111 = 0.0
       real(8)  :: rl2
       real(16) :: rl3
@@ -45,21 +39,21 @@
       integer :: ii
 
       integer, parameter :: out = 11, in = 12
-      
+
       open(in, file='mixNaNInfIO001.dat', action='read')
       open(out, file='mixNaNInfIO001.out', action='write')
-      
+
       read(in,'(2f4.4)') rl1, rl2
       write(out, '(f8.2, f6.3)') rl1, rl2
-      
+
       read(in,'(f3.1, f6.5, f3.3)') rl1, rl2, rl3
       write(out, '(3F6.1)') rl1, rl2, rl3
 
       read(in,'(2f3.1, f3.1)') rl1, rl2, rl3
       write(out, '(3F6.1)') rl1, rl2, rl3
-      
+
       read(in,'(f3.1, f6.0, f4.2)') rl1, rl2, rl3
-      write(out, '(3F6.1, f4.1)') rl1, rl2, rl3, rl2      
+      write(out, '(3F6.1, f4.1)') rl1, rl2, rl3, rl2
 
       read(in,'(f4.2, f7.0)') rl1, rl2
       write(out, '(2F10.1)') rl1, rl2
@@ -81,7 +75,7 @@
 
       read(in, '(i2, f15.1, f4.4, f3.3)') ii, rl1, rl2, rl3
       write(out, '(i3,3F15.1)') ii, rl1, rl2, rl3
-      
+
       read(in, '(f8.8, 3f3.0, f4.2)') rl1, rl2, rl3, rl11, rl111
       write(out, '(5f9.0)')  rl1, rl2, rl3, rl11, rl111
 
@@ -90,7 +84,7 @@
 
       read(in, '(f4.1,f7.2,f4.2, f5.1)') rl1, rl2, rl3, rl11
       write(out, '(4f10.2)') rl1, rl2, rl3, rl11
-      
+
 
       read(in, '(2f4.2)') cx1
       write(out, '(2f8.3)') cx1
@@ -106,7 +100,7 @@
 
       read(in, '(f3.0, f7.1, f4.1)') cx3, rl2
       write(out, '(3f8.2)') cx3, rl2
-      
+
       read(in, '(f5.4, f7.4)') cx2
       write(out, '(2f10.1)') cx2
 
@@ -130,7 +124,7 @@
 
       read(in, '(f8.1, f3.1, f4.1, f3.1, f5.1)') cx2, cx1, rl3
       write(out, '(5f8.2)') cx2, cx1, rl3
-      
+
       read(in, '(f9.1, f4.1, f5.1, f10.1)') rl1, rl2, cx1
       write(out, '(4f10.1)') rl1, rl2, cx1
 

@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDefSyntax5
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 29, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  syntax of derived type stmt 
-!*
-!*
+!*  syntax of derived type stmt
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -91,7 +83,7 @@
   TYPE(DT2(2)) :: T2
   TYPE(DT3(4)) :: T3
   TYPE(DT5(8)) :: T5
- 
+
   IF ( T1%K .NE. 1 ) STOP 11
   IF ( T2%K .NE. 2 ) STOP 12
   IF ( T3%K .NE. 4 ) STOP 13
@@ -108,11 +100,11 @@
   END SUBROUTINE
 
   END MODULE
-  
-  PROGRAM dtParamTypeDefSyntax5 
+
+  PROGRAM dtParamTypeDefSyntax5
   USE M
 
   CALL Check()
- 
+
   END
 

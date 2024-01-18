@@ -1,40 +1,32 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : nullGeneric01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : nullGeneric01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 23 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD]) 
+!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD])
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.88 
+!* 1. TEST SECTION 13.7.88
 !* 2. NULL([MOLD])
 !* 3. MOLD IS POINTER
-!* 4. NULL(MOLD) IS USED AS ACTUAL ARGUMENT OF GENERIC PROCEDURE 
+!* 4. NULL(MOLD) IS USED AS ACTUAL ARGUMENT OF GENERIC PROCEDURE
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type dtp(k,l)
       integer,kind :: k
       integer,len  :: l
-      
+
       integer(k)   :: int
-      character(l) :: ch 
+      character(l) :: ch
    end type
- 
+
 end module
 
 program nullGeneric01
@@ -73,7 +65,7 @@ program nullGeneric01
    dtp4=>tar4
 
    call sub(dtp1)
-   call sub(dtp2)    
+   call sub(dtp2)
    call sub(dtp3)
    call sub(dtp4)
 

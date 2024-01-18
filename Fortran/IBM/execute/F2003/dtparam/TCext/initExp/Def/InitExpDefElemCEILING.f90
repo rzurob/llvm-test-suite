@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemCEILING.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemCEILING.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 24, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,17 +23,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  - CEILING 
+!*
+!*  - CEILING
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM InitExpDefElemCEILING 
+  PROGRAM InitExpDefElemCEILING
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -57,41 +50,41 @@
     INTEGER, LEN  :: N1
 
     REAL(CEILING(3.1))  :: R44(CEILING(3.01), CEILING(3.001)) = CEILING(R4(:,:))
-    REAL(CEILING(3.1))  :: R48(CEILING(3.01), CEILING(3.001)) = CEILING(R4(:,:)+R8) 
+    REAL(CEILING(3.1))  :: R48(CEILING(3.01), CEILING(3.001)) = CEILING(R4(:,:)+R8)
     REAL(CEILING(3.1))  :: R416(CEILING(3.01), CEILING(3.001)) = CEILING(R16-R4)
 
     REAL(CEILING(7.1))  :: R84(CEILING(3.01), CEILING(3.001)) = CEILING(R4(:,:))
-    REAL(CEILING(7.1))  :: R88(CEILING(3.01), CEILING(3.001)) = CEILING(R4(:,:)+R8) 
+    REAL(CEILING(7.1))  :: R88(CEILING(3.01), CEILING(3.001)) = CEILING(R4(:,:)+R8)
     REAL(CEILING(7.1))  :: R816(CEILING(3.01), CEILING(3.001)) = CEILING(R16-R4)
 
     REAL(CEILING(15.1))  :: R164(CEILING(3.01), CEILING(3.0001)) = CEILING(R4(:,:))
-    REAL(CEILING(15.1))  :: R168(CEILING(3.01), CEILING(3.0001)) = CEILING(R4(:,:)+R8) 
+    REAL(CEILING(15.1))  :: R168(CEILING(3.01), CEILING(3.0001)) = CEILING(R4(:,:)+R8)
     REAL(CEILING(15.1))  :: R1616(CEILING(3.01), CEILING(3.0001)) = CEILING(R16-R4)
 
   END TYPE
 
   TYPE(DT(4,20)) :: T
 
-  IF (ANY( R4  .NE. RESHAPE((/(I, I=1,16)/),(/4,4/) ) ) )  STOP 11 
-  IF (ANY( R8  .NE. RESHAPE((/(I, I=1,16)/),(/4,4/) ) ) )  STOP 12 
-  IF (ANY( R16 .NE. RESHAPE((/(I, I=2,17)/),(/4,4/) ) ) )  STOP 13 
- 
+  IF (ANY( R4  .NE. RESHAPE((/(I, I=1,16)/),(/4,4/) ) ) )  STOP 11
+  IF (ANY( R8  .NE. RESHAPE((/(I, I=1,16)/),(/4,4/) ) ) )  STOP 12
+  IF (ANY( R16 .NE. RESHAPE((/(I, I=2,17)/),(/4,4/) ) ) )  STOP 13
+
   IF (KIND(T%R44) .NE. 4 )         STOP 21
-  IF (ANY( T%R44  .NE. R4 ) )      STOP 22 
-  IF (ANY( T%R48  .NE. R4+R8 ) )   STOP 23 
-  IF (ANY( T%R416 .NE. R16-R4 ) )  STOP 24 
+  IF (ANY( T%R44  .NE. R4 ) )      STOP 22
+  IF (ANY( T%R48  .NE. R4+R8 ) )   STOP 23
+  IF (ANY( T%R416 .NE. R16-R4 ) )  STOP 24
 
   IF (KIND(T%R84) .NE. 8 )         STOP 31
-  IF (ANY( T%R84  .NE. R4 ) )      STOP 32 
-  IF (ANY( T%R88  .NE. R4+R8 ) )   STOP 33 
-  IF (ANY( T%R816 .NE. R16-R4 ) )  STOP 34 
+  IF (ANY( T%R84  .NE. R4 ) )      STOP 32
+  IF (ANY( T%R88  .NE. R4+R8 ) )   STOP 33
+  IF (ANY( T%R816 .NE. R16-R4 ) )  STOP 34
 
   IF (KIND(T%R164) .NE. 16 )        STOP 41
-  IF (ANY( T%R164  .NE. R4 ) )      STOP 42 
-  IF (ANY( T%R168  .NE. R4+R8 ) )   STOP 43 
-  IF (ANY( T%R1616 .NE. R16-R4 ) )  STOP 44 
+  IF (ANY( T%R164  .NE. R4 ) )      STOP 42
+  IF (ANY( T%R168  .NE. R4+R8 ) )   STOP 43
+  IF (ANY( T%R1616 .NE. R16-R4 ) )  STOP 44
 
 
   END
 
- 
+

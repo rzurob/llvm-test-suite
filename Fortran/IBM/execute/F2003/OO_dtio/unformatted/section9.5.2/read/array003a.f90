@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Unlimited polymorphic array entity containing unlimited polymorphic component (input)
@@ -88,7 +72,7 @@ program array003a
    c3 = 'ghi'
    i2 = 102
    c4 = 'jkl'
-   
+
    select type ( b1 )
       type is (base)
          allocate ( b1(1)%u, source = -999 )      !<- integer type
@@ -96,7 +80,7 @@ program array003a
       class default
          error stop 1_4
    end select
-   
+
    select type ( b2 )
       type is (base)
          allocate ( b2(1,1)%u, source = datum() ) !<- datum type
@@ -136,8 +120,8 @@ program array003a
                print *, b
          end select
    end select
-   
-   
+
+
    select type ( b2)
       type is (base)
          select type ( b => b2(1,1)%u )

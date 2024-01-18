@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN: YES
@@ -17,16 +12,9 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
 !* =================================================================== *
-!* XL FORTRAN TEST CASE                         IBM INTERNAL USE ONLY  *
-!* =================================================================== *
-!*                                                                     *
-!* TEST CASE TITLE : diagnostic test for DTP dummy argument with VALUE *
 !*                                                                     *
 !* TEST CASE NAME             : dtParamDummyValueC527_05.f             *
-!*                                                                     *
-!* PROGRAMMER                 : Rick Sawyer                            *
 !*                                                                     *
 !* DATE                       : May 13, 2008                           *
 !*                                                                     *
@@ -50,8 +38,8 @@
 !* CONDITIONS TESTED          : Listed below.                          *
 !***********************************************************************
 
-      ! C527: If the VALUE attribute is specified, the PARAMETER, EXTERNAL, 
-      ! POINTER, ALLOCATABLE, DIMENSION, VOLATILE, INTENT(INOUT), or 
+      ! C527: If the VALUE attribute is specified, the PARAMETER, EXTERNAL,
+      ! POINTER, ALLOCATABLE, DIMENSION, VOLATILE, INTENT(INOUT), or
       ! INTENT(OUT) attribute shall not be specified.
        module m
          type dt(l)

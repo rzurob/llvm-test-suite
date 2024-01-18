@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10.1.1 Namelist Input Values
 !*                                        Derived type variable shall be expanded into intrinsic types
@@ -53,7 +37,7 @@ module m
    type innerdata
       character(3) :: c   = 'xxx'
    end type
-   
+
    type data
       integer(4)   :: i = -999
       type(innerdata) :: i1
@@ -79,7 +63,7 @@ program input103a
    allocate(b2)
 
    open (1, file='input103a.1', form='formatted', access='sequential' )
-   
+
    read (1, nml, iostat = stat, iomsg = msg)
 
    if ( ( b1%j /= 101 ) .or. ( b1%d1%i /= 1001 ) .or. ( b1%d1%i1%c /= 'abc' ) )  error stop 1_4

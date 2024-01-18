@@ -1,23 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : nestDT.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 2010-12-01
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - derived-type's component is of another derived-type  
+!*  DESCRIPTION                : - derived-type's component is of another derived-type
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -33,14 +23,14 @@ module mod
 
     use, intrinsic :: iso_c_binding
 
-    type, bind(c) :: dT1 
-         real(C_FLOAT)    :: a 
-         integer(C_INT)     :: b 
+    type, bind(c) :: dT1
+         real(C_FLOAT)    :: a
+         integer(C_INT)     :: b
     end type dT1
 
     type, bind(c) :: dT2
          type(dT1)         :: dt(2)
-         complex(C_LONG_DOUBLE_COMPLEX) :: c 
+         complex(C_LONG_DOUBLE_COMPLEX) :: c
     end type dT2
 
 end module

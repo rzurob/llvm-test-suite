@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrReshapeOther.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -24,8 +18,8 @@
 
 module m
 
-	integer, pointer :: ip(:,:) 
-	logical*1, pointer :: lp(:,:) 
+	integer, pointer :: ip(:,:)
+	logical*1, pointer :: lp(:,:)
 
 	interface foo
 	    subroutine intsub(a)
@@ -53,8 +47,8 @@ end module
 
 	call intsub(itar)
 
-	if ( .not. associated(ip)) stop 3 
-	if ( any(lbound(ip) .ne. (/3,4/))) stop 5 
+	if ( .not. associated(ip)) stop 3
+	if ( any(lbound(ip) .ne. (/3,4/))) stop 5
 	if ( any(ubound(ip) .ne. (/5,6/))) stop 7
 
 	print *, ip
@@ -63,8 +57,8 @@ end module
 
 	call logsub(ltar)
 
-	if ( .not. associated(lp)) stop 13 
-	if ( any(lbound(lp) .ne. (/-1,3/))) stop 15 
+	if ( .not. associated(lp)) stop 13
+	if ( any(lbound(lp) .ne. (/-1,3/))) stop 15
 	if ( any(ubound(lp) .ne. (/3,3/))) stop 17
 
 	print *, lp
@@ -73,15 +67,15 @@ end module
     end program
 
 	    subroutine intsub(a)
-		use m, only : ip 
+		use m, only : ip
 		integer, target :: a(*)
 
-		ip(3:5,4:6) => a(2:20:2) 
+		ip(3:5,4:6) => a(2:20:2)
 	    end subroutine
 
 	    subroutine logsub(a)
 		use m, only : lp
 	        logical*1, target :: a(-1:3, 3:*)
 
-	        lp(lbound(a,1):, lbound(a,2):) => a(:,:3) 
+	        lp(lbound(a,1):, lbound(a,2):) => a(:,:3)
 	    end subroutine

@@ -1,31 +1,24 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 12/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : array section with vector subscript 
+!*  PRIMARY FUNCTIONS TESTED   : array section with vector subscript
 !*                               VOLATILE
-!*  DESCRIPTION                : diagnostic TC for  12.4.1.2 
+!*  DESCRIPTION                : diagnostic TC for  12.4.1.2
 !*     12.4.1.2:
 !*        If the actual argument is an array section having vector
 !*     subscript, the dummy argumnet is not definable and should not
 !*     have, intent(out), intent(inout), volatile, or asynchronous
-!*     attributes. 
+!*     attributes.
 !* ===================================================================
 
-  program volatileOtherAttr01d 
+  program volatileOtherAttr01d
 
     interface
        subroutine arraySectionVolatile(x)
          integer, intent(in) :: x(:)
          VOLATILE x
-       end subroutine arraySectionVolatile 
+       end subroutine arraySectionVolatile
     end interface
 
     integer y(16)
@@ -37,5 +30,5 @@
 
   subroutine arraySectionVolatile(x)
 
-    integer, intent(in), VOLATILE  ::x(:)               
-  end subroutine arraySectionVolatile 
+    integer, intent(in), VOLATILE  ::x(:)
+  end subroutine arraySectionVolatile

@@ -1,29 +1,18 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : maskl-maskr01d.f
-!*
-!*  PROGRAMMER                 : Maryam Moghadas
 !*  DATE                       : 2013-02-27
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MASKL, MASKR intrinsics
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              :
 !*
 !*  DESCRIPTION                : MASKL(I[, KIND]), MASKR(I[, KIND])
 !*
 !*  Test the compilation fails if:
 !*
 !*  * first argument is not a nonnegative integer type less than or equal to the number of bits
-!*  * second argument if exists, is not a scalar integer constant expression 
-!*
+!*  * second argument if exists, is not a scalar integer constant expression
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -35,9 +24,9 @@
 !* ===================================================================
 
 program maskl_maskr
- 
- real :: i1 = 2 
- integer :: i2 = -2 
+
+ real :: i1 = 2
+ integer :: i2 = -2
 
  integer (kind = 1) :: j1 = 9
  integer (kind = 2) :: j2 = 17
@@ -56,8 +45,8 @@ print *, 'MASKR(i1)=       ', MASKR(i1)
 print *, 'MASKR(2.0)=      ', MASKR(2.0)
 
 !---- MASKL/R should not accept negative integer as first argument ---------!
-print *, 'MASKL(-2)=       ', MASKL(-2) 
- 
+print *, 'MASKL(-2)=       ', MASKL(-2)
+
 print *, 'MASKR(-2)=       ', MASKR(-2)
 
 !---- MASKL/R should not accept integer argument greater than the permitted bit size ----!
@@ -94,32 +83,5 @@ print *, 'MASKR(-2)=       ', MASKR(-2)
  print *, 'MASKL(5,k3)   ', MASKL(4,k3)
  print *, 'MASKR(5,k5)   ', MASKR(4,k5)
 
-
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: SltAbsCom.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: SltAbsCom.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltAbsCom
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 14, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +34,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is specified with abstract component
 !*    (Comp failed)
 !*
@@ -59,7 +53,7 @@
     TYPE, EXTENDS(Base) :: Child    ! (20,4)
       INTEGER(K1)  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     TYPE, ABSTRACT,  EXTENDS(Child) :: Abs    ! (20,4)
@@ -91,10 +85,10 @@
   CLASS(Base(:,4)), POINTER :: Ptr1
   TYPE(Child(20,4)), TARGET :: Tar1
 
-  Ptr1 => Tar1 
+  Ptr1 => Tar1
 
   SELECT TYPE ( Ptr1 )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 20
   TYPE IS (Child(*,4))
     IF ( Ptr1%ChildId      .NE. 2 )  STOP 33
@@ -102,11 +96,11 @@
     IF ( Ptr1%Base%BaseId  .NE. 1 )  STOP 34
 !   IF ( Ptr1%Base%GetId() .NE. 1 )  STOP 34 C611
   END SELECT
-  
-  Ptr => Tar 
+
+  Ptr => Tar
 
   SELECT TYPE ( As => Ptr )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 40
   TYPE IS (Child(*,4))
     IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 41
@@ -116,6 +110,6 @@
     IF ( ANY(As%Base%BaseId  .NE. (/1,1,1,1/)) )  STOP 44
 !   IF ( ANY(As%Base%GetId() .NE. (/1,1,1,1/)) )  STOP 44 !C611
   END SELECT
-  
+
   END
 

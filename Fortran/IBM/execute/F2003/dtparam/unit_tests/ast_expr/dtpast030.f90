@@ -12,24 +12,16 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dtpexpression030
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : June 2nd, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :testing expressions with derived types
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,25 +42,25 @@ end type
 type D(kd,ld)
   integer, kind :: kd
   integer, len  :: ld
-  
+
   character(len=ld) :: c
   integer, allocatable :: i
 end type
-  
+
 type E
   type(A) :: A1
-end type  
+end type
 
 type F(k1,k2)
   integer, kind :: k1
   integer, kind :: k2
-  
+
   type(A) :: A1=A(k1+k2*k1,(k1+k2)/k1)
   type(B) :: B1!=B(null(),(k2-k1,k2*2))
   type(C) :: C1=C(k2-k1,-k1,achar(88))
   type(D(k2-k1,k2)) :: D1=D(k2-k1,k2)("abcd"//"efg",null())
   type(E) :: E1=E(A(k1,k2*2))
-  
+
 end type
 
 type(F(10,20)) :: F1
@@ -93,4 +85,4 @@ contains
         createB = B(r1, c1)
     end function
 end
-  
+

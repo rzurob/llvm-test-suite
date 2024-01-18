@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fdtedit108akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from fdtedit108a by Robert Ma)
 !*  DATE                       : 2007-06-08 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        multiple DT edit descriptor in an I/O statement (read)
@@ -105,7 +97,7 @@ use m
 
    read ( 1, fmt, iostat = stat, iomsg = msg )      b1, b2, b3, b4
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) )  error stop 1_4
-   
+
    if ( b1%i /= 100 ) error stop 2_4
    select type ( b2 )
       type is ( child(4,4) )
@@ -113,7 +105,7 @@ use m
    end select
    if ( b3%c /= 'IBM' ) error stop 4_4
    if ( b4%c /= 'FTN' ) error stop 5_4
-   
+
    print *, rbuffer
 
 end program

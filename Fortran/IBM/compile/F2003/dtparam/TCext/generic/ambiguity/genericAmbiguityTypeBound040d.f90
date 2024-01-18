@@ -3,25 +3,13 @@
 ! opt variations: -qnok -qnol
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : ambiguious generic interfaces
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : ambiguous when optional arg is added, without optional no ambiguity
-!*                               
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -51,7 +39,7 @@ module genericName
          procedure, nopass :: threeargs2
          generic :: threeargs => threeargs2
    end type
-   
+
    type, extends(b1) :: c2(k3,n3)    ! (20,4,4,20)
        integer, kind :: k3
        integer, len  :: n3

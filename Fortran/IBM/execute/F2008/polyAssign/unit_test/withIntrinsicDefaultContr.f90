@@ -6,5 +6,5 @@ Program test
     x=t()
     print *, allocated(x)
     print *, x%i
-   
+
 End

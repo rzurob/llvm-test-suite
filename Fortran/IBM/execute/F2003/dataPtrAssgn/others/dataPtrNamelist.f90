@@ -1,23 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrNamelist.f 
+!*  TEST CASE NAME             : dataPtrNamelist.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!* - data-ptr is a namelist group object 
+!* - data-ptr is a namelist group object
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -31,7 +25,7 @@ program main
 
     namelist /nlst/  ptr
 
-    type(base), target :: b 
+    type(base), target :: b
 
     allocate( b%tar(4), source =  (/ '1234', 'ABCD', '5678','OPQR' /) )
 
@@ -39,8 +33,8 @@ program main
 
     if ( .not. associated(ptr, b%tar) ) stop 2
     if ( lbound(ptr,1) /= 2 ) stop 5
-    if ( ubound(ptr,1) /= 5 ) stop 8 
- 
+    if ( ubound(ptr,1) /= 5 ) stop 8
+
     open (5, file = 'dataPtrNamelist.out', form ='formatted', access='stream' )
 
     write(5, nml=nlst)

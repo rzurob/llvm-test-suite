@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Argument Association: assumed size array dummy argument
@@ -57,8 +46,8 @@ module m
 
       subroutine foo ( dtv )
          type(base), intent(in) :: dtv(2,*)
-         character(27) :: fmt 
-         
+         character(27) :: fmt
+
          fmt = "(DT'_foo'(5),/,DT'_foo'(6))"
 
          write (1, fmt, iostat = stat, iomsg = msg ) dtv(1:2,1:2)

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatBasic04b.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatBasic04b.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 7 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test WRITE statement with edit decriptor
@@ -33,7 +25,7 @@ module m
 
   type,extends(base) :: child(l2)
     integer,len  :: l2
-    logical(k1)  :: log2(l1:l2)  
+    logical(k1)  :: log2(l1:l2)
   end type
 
   type,extends(child) :: gen3(l3)
@@ -98,6 +90,6 @@ program formatBasic04b
        call writechild(base2%comp)
     class default
        error stop 102_4
-  end select 
+  end select
 
 end program

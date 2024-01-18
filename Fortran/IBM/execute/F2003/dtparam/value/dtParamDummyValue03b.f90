@@ -1,33 +1,21 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!* TEST CASE TITLE : Functional test for DTP dummy argument with VALUE
-!*                                                                     
 !* TEST CASE NAME              : dtParamDummyValue03b.f
 !*
-!*  PROGRAMMER                 : Andy Sheung
 !*  DATE                       : July 10, 2008
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
-!*  DESCRIPTION: 
-!*  The VALUE attribute specifies a type of argument association between a 
-!*  dummy argument and an actual argument. If the dummy argument has the 
-!*  VALUE attribute, it becomes associated with a definable anonymous data 
-!*  object whose initial value is that of the actual argument. Subsequent 
-!*  changes to the value or definition status of the dummy argument do not 
+!*  DESCRIPTION:
+!*  The VALUE attribute specifies a type of argument association between a
+!*  dummy argument and an actual argument. If the dummy argument has the
+!*  VALUE attribute, it becomes associated with a definable anonymous data
+!*  object whose initial value is that of the actual argument. Subsequent
+!*  changes to the value or definition status of the dummy argument do not
 !*  affect the actual argument.
 !*
 !*  CASE:
-!*  When having an external procedure, and its actual argument is a DT 
+!*  When having an external procedure, and its actual argument is a DT
 !*  component
 !*
 !* ===================================================================
@@ -48,7 +36,7 @@
   INTERFACE
     SUBROUTINE ExtSub(i, ch)
       INTEGER (KIND=2), VALUE :: i
-      CHARACTER (LEN=3), VALUE :: ch 
+      CHARACTER (LEN=3), VALUE :: ch
     END SUBROUTINE
   END INTERFACE
 
@@ -67,11 +55,11 @@
 
   SUBROUTINE ExtSub(i, ch)
     INTEGER (KIND=2), VALUE :: i
-    CHARACTER (LEN=3), VALUE :: ch 
+    CHARACTER (LEN=3), VALUE :: ch
 
     IF ((i.ne.11) .or. (i%KIND.ne.2) .or. (ch.ne.'abc') .or. (ch%LEN.ne.3)) THEN
       print *, i, T%KIND, ch, ch%LEN
-      STOP 1 
+      STOP 1
     END IF
 
     i = 99

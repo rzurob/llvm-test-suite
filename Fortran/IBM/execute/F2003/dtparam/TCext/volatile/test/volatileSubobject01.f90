@@ -2,29 +2,22 @@
 ! ftcx_dtp -qreuse=self /tstdev/F2003/volatile/test/volatileSubobject01.f
 ! opt variations: -qck -qreuse=none
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : subobject, VOLATILE
 !*
-!*  DESCRIPTION                : functional TC  
+!*  DESCRIPTION                : functional TC
 !*
-!*     5.1.2.16 
-!*        an object may have the volatile attribute in a particular scoping 
+!*     5.1.2.16
+!*        an object may have the volatile attribute in a particular scoping
 !*        unit without necessarily having it in other scoping units. If
 !*        an object has the Volatile attribute, then all of its subobject
 !*        also have the VOLATILE attribute.
 !* ===================================================================
 
-  program volatileSubobject01 
+  program volatileSubobject01
 
     type base(k1,n1)    ! (4,2)
        integer, kind :: k1
@@ -33,7 +26,7 @@
        complex(k1)      y
        character(n1)    z
     end type base
- 
+
     type(base(4,2)), VOLATILE::a
 
-  end program volatileSubobject01 
+  end program volatileSubobject01

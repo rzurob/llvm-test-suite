@@ -3,13 +3,9 @@
 ! opt variations: -ql
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_procptr/component1
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 04/18/2005
 ! PRIMARY FUNCTIONS TESTED   : procedure pointer component
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Specify proc-interface using declaration
 !                              type specification. The associated
 !                              function is an internal function.

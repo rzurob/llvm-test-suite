@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_misc_5.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May 02, 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,8 +11,7 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -25,15 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*  Test procedure argument asociation/pointer assignment -- 
-!*     C730 (R740) The proc-target shall not be a 
-!*     nonintrinsic elemental procedure. 
+!*  Test procedure argument asociation/pointer assignment --
+!*     C730 (R740) The proc-target shall not be a
+!*     nonintrinsic elemental procedure.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
-  PROGRAM intproc_misc_5 
+
+  PROGRAM intproc_misc_5
   PROCEDURE(), POINTER :: proc
 
   proc => sub

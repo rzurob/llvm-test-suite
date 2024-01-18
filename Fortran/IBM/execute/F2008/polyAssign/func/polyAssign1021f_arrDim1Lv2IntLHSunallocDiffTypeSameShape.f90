@@ -1,22 +1,15 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/func/polyAssign1021f_arrDim1Lv2IntLHSunallocDiffTypeSameShape.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 07 August 2015
-!* ORIGIN                       : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Disabled. 
+!* DESCRIPTION                  : Disabled.
 !*                              : Test when LHS is unallocated initially and RHS is allocated and hve different types. LHS is base type and RHS is an extended derived type.
 !*                              : --LHS and RHS have different type and the same shape.
 !*                              : Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.
@@ -29,7 +22,7 @@
 !* ===================================================================
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-   
+
 module m
    type base
       integer :: i1
@@ -48,7 +41,7 @@ Program polyAssign1021f
     !b1 = base(1) !<--LHS is unallocated initially, the assignment will b1 allocated
     !if ( allocated(b1) .eqv.  .false. ) error stop "allocated(b1) status should not be false after the initiallization."
     !if (lbound(b1,1) /= 1) error stop "(lbound(b1,1) should be 1 by default."
-    !if (ubound(b1,1) /= 0) error stop "ubound(b1,1) should be 0 to indicate a zero-sized array." 
+    !if (ubound(b1,1) /= 0) error stop "ubound(b1,1) should be 0 to indicate a zero-sized array."
 
     select type (b3)
       type is (child)

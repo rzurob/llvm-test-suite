@@ -60,7 +60,6 @@ use m
     write (c, '(dc, i4,10(";",g15.7), i4,12(";(",g25.16, ";", g25.16,")" ))') &
             10, (i*1.0, i=1, 10), 12, (cmplx(i*1.0, i*2.0, 8), i=-12,-1)
 
-
     !! now read data back to b1
     allocate (b1)
 

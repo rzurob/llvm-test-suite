@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ExplicitInitExp08.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Explicit Init Expression
-!*  SECONDARY FUNCTIONS TESTED : Defined assignment 
+!*  SECONDARY FUNCTIONS TESTED : Defined assignment
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,36 +17,36 @@
 !*  Defect 362080
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
-        INTEGER, KIND :: k1 
+        INTEGER, KIND :: k1
         INTEGER, LEN  :: l1
 
-        INTEGER(k1)    :: A1(l1-1) = -1 
+        INTEGER(k1)    :: A1(l1-1) = -1
         CHARACTER*(l1) :: C1 = 'C1'
 
         CONTAINS
-        PROCEDURE, PASS :: assgnBase 
+        PROCEDURE, PASS :: assgnBase
         GENERIC :: assignment(=) => assgnBase
       END TYPE
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)
-        INTEGER, KIND :: k2 
+        INTEGER, KIND :: k2
         INTEGER, LEN  :: l2
 
-        INTEGER(k1)         :: A2(-1:k2-l1+2) = -2 
+        INTEGER(k1)         :: A2(-1:k2-l1+2) = -2
         CHARACTER*(l1+2*l2) :: C2 = 'C2'
-        TYPE(Base(k1,l1))   :: bcomp 
+        TYPE(Base(k1,l1))   :: bcomp
 
         CONTAINS
-        PROCEDURE, PASS :: assgnChild 
+        PROCEDURE, PASS :: assgnChild
         GENERIC :: assignment(=) => assgnChild
       END TYPE
 
       TYPE, EXTENDS(Child) :: NextGen (k3,l3)
-        INTEGER, KIND :: k3 
+        INTEGER, KIND :: k3
         INTEGER, LEN  :: l3
 
         INTEGER(k1)    :: A3(k3/k2) = -3
@@ -69,35 +61,35 @@ MODULE Mod
       CONTAINS
 
      SUBROUTINE assgnBase(this, arg)
-       CLASS(Base(4,*)), INTENT(OUT) :: this 
-       TYPE(Base(4,*)), INTENT(IN) :: arg 
+       CLASS(Base(4,*)), INTENT(OUT) :: this
+       TYPE(Base(4,*)), INTENT(IN) :: arg
 
-       this%A1 = arg%A1 
-       this%C1 = arg%C1 
+       this%A1 = arg%A1
+       this%C1 = arg%C1
      END SUBROUTINE
 
      SUBROUTINE assgnChild(this, arg)
-       CLASS(Child(4,*,100,*)), INTENT(OUT) :: this 
-       TYPE(Child(4,*,100,*)), INTENT(IN) :: arg 
+       CLASS(Child(4,*,100,*)), INTENT(OUT) :: this
+       TYPE(Child(4,*,100,*)), INTENT(IN) :: arg
 
-       this%A1 = arg%A1 
-       this%C1 = arg%C1 
-       this%A2 = arg%A2 
-       this%C2 = arg%C2 
-       this%bcomp = arg%bcomp 
+       this%A1 = arg%A1
+       this%C1 = arg%C1
+       this%A2 = arg%A2
+       this%C2 = arg%C2
+       this%bcomp = arg%bcomp
      END SUBROUTINE
 
      SUBROUTINE assgnNextGen(this, arg)
-       CLASS(NextGen(4,*,64,*,128,*)), INTENT(OUT) :: this 
-       TYPE(NextGen(4,*,64,*,128,*)), INTENT(IN) :: arg 
+       CLASS(NextGen(4,*,64,*,128,*)), INTENT(OUT) :: this
+       TYPE(NextGen(4,*,64,*,128,*)), INTENT(IN) :: arg
 
-       this%A1 = arg%A1 
-       this%C1 = arg%C1 
-       this%A2 = arg%A2 
-       this%C2 = arg%C2 
-       this%bcomp = arg%bcomp 
-       this%A3 = arg%A3 
-       this%C3 = arg%C3 
+       this%A1 = arg%A1
+       this%C1 = arg%C1
+       this%A2 = arg%A2
+       this%C2 = arg%C2
+       this%bcomp = arg%bcomp
+       this%A3 = arg%A3
+       this%C3 = arg%C3
        IF ( ALLOCATED( arg%poly ) ) THEN
            allocate (this%poly, source = arg%poly )
        ELSE
@@ -115,11 +107,11 @@ PROGRAM ExplicitInitExp08
       TYPE(Child(4,3,100,100)) :: c2, c1 = Child(4,3,100,100) ( 20,   &
                 'BBBBB', 30, 'XL-compiler', Base(4,3) (40, 'CCCCC') )
       TYPE(NextGen(4,10,64,64,128,128)) :: n2, n1 =                   &
-                NextGen(4,10,64,64,128,128) ( 11, 'Heisenberg',       & 
-                22, 'David Hilbert', Base(4,10) (33, 'Sommerfeld'),   &  
-                44, 'Ferdinand von Lindemann', NULL() ) 
+                NextGen(4,10,64,64,128,128) ( 11, 'Heisenberg',       &
+                22, 'David Hilbert', Base(4,10) (33, 'Sommerfeld'),   &
+                44, 'Ferdinand von Lindemann', NULL() )
 
-      b2 = b1 
+      b2 = b1
       IF ( SIZE(b2%A1)     .NE.       4 ) STOP 10
       IF ( LBOUND(b2%A1,1) .NE.       1 ) STOP 11
       IF ( UBOUND(b2%A1,1) .NE.       4 ) STOP 12
@@ -127,7 +119,7 @@ PROGRAM ExplicitInitExp08
       IF ( LEN(b2%C1)      .NE.       5 ) STOP 14
       IF ( TRIM(b2%C1)     .NE. 'AAAAA' ) STOP 15
 
-      c2 = c1 
+      c2 = c1
       IF ( SIZE(c2%A1)     .NE.     2 ) STOP 20
       IF ( LBOUND(c2%A1,1) .NE.     1 ) STOP 21
       IF ( UBOUND(c2%A1,1) .NE.     2 ) STOP 22
@@ -146,10 +138,10 @@ PROGRAM ExplicitInitExp08
       IF ( ANY(c2%bcomp%A1       .NE.   40) ) STOP 35
       IF ( LEN(c2%bcomp%C1)      .NE.     3 ) STOP 36
       IF ( TRIM(c2%bcomp%C1)     .NE. 'CCC' ) STOP 37
- 
+
       allocate (base(4,10) :: n1%poly)
       n1%poly = Base(4,10) (55, 'Rubinowicz')
-      n2 = n1 
+      n2 = n1
       IF ( SIZE(n2%A1)     .NE.            9 ) STOP 40
       IF ( LBOUND(n2%A1,1) .NE.            1 ) STOP 41
       IF ( UBOUND(n2%A1,1) .NE.            9 ) STOP 42
@@ -180,5 +172,5 @@ PROGRAM ExplicitInitExp08
       IF ( ANY(n2%poly%A1          .NE.   55) ) STOP 67
       IF ( LEN(n2%poly%C1)         .NE.    10 ) STOP 68
       IF ( TRIM(n2%poly%C1) .NE. 'Rubinowicz' ) STOP 69
-  
+
 END PROGRAM ExplicitInitExp08

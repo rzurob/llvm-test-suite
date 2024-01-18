@@ -3,22 +3,11 @@
 ! opt variations: -qck -qnok -qnol
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment( = )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : C459: define generic TB with same generic name with different access-spec
 !*                                     within the same derived type
@@ -41,9 +30,9 @@ module m
       contains
          generic, private :: assignment(=) => ttob
          procedure :: ttob
-         
+
    end type
-   
+
    type, extends(base) :: child(k2,n2)    ! (4,3,4,20)
        integer, kind :: k2
        integer, len  :: n2

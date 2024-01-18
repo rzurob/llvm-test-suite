@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : extNaNInfIO004.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : July 17, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=oldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -25,7 +19,7 @@
 !*
 !*  DESCRIPTION:
 !*  -----------
-!*  Testing the non-standard forms of NaN on input/output supported 
+!*  Testing the non-standard forms of NaN on input/output supported
 !*  by extension using namelist I/O.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -44,7 +38,7 @@ program extNaNInfIO004
       integer      :: i1
 
       logical, external :: precision_r4
-      
+
       namelist /nan/ cc, nanq_pos, i1, inf_neg, cx,                   &
      &               my_pi, nans_neg, inf_pos
 
@@ -56,15 +50,15 @@ program extNaNInfIO004
       ! read in the values and initialize items inside the namelist
       read(in, nan)
 
-     
+
       ! check the values just read
-     
+
       nanq_neg  = real(cx)
       nans_pos = imag(cx)
-      
+
       if( ieee_is_finite(inf_pos) .or. ieee_is_negative(inf_pos) )     &
      &     error stop 1_4
-      
+
       if( ( .not. ieee_is_nan(nanq_neg) ) .or.                         &
      &    ( ieee_class(nanq_neg) .ne. ieee_quiet_nan ) .or.            &
      &    ( .not. equiv_is_negative(nanq_neg) ) ) error stop 2_4
@@ -76,28 +70,28 @@ program extNaNInfIO004
       if( ( .not. ieee_is_nan(nanq_pos) ) .or.                         &
      &    ( ieee_class(nanq_pos) .ne. ieee_quiet_nan ) .or.            &
      &    ( .not. equiv_is_positive(nanq_pos) ) ) error stop 4_4
-      
+
       if(ieee_is_finite(inf_neg) .or. .not. ieee_is_negative(inf_neg)) &
-     &     error stop 5_4      
+     &     error stop 5_4
 
       if( ( .not. ieee_is_nan(nans_neg) ) .or.                         &
      &    (ieee_class(nans_neg) .ne. ieee_signaling_nan) .or.          &
      &    ( .not. equiv_is_negative(nans_neg) ) ) error stop 6_4
 
       if ( cc .ne. 'xLf' ) error stop 7_4
-      
+
       if ( i1 .ne. 2003 ) error stop 8_4
-      
+
       if ( .not. precision_r4(my_pi, 3.14_4) ) error stop 9_4
-      
-      
+
+
       ! write out the namelist
       write(out, nan)
       write(out, nan, sign='plus', decimal='comma', delim='quote')
 
       close(in)
       close(out)
-      
+
       contains
 
       ! Returns true if the integer equivalence of
@@ -106,11 +100,11 @@ program extNaNInfIO004
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
-         
+
          if ( val_eq .ge. 0 ) then
             equiv_is_negative = .false.
          else
@@ -125,9 +119,9 @@ program extNaNInfIO004
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
 
          if ( val_eq .le. 0 ) then

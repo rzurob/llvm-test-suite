@@ -3,27 +3,15 @@
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=self
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : selectorFm.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : 
-!*                               FROM is selector of select type 
+!*  DESCRIPTION                :
+!*                               FROM is selector of select type
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -39,8 +27,8 @@
     type base(k2)    ! (4)
         integer, kind             :: k2
         class(*), allocatable :: TO
-        class(A(k2)), allocatable :: FROM 
-    end type 
+        class(A(k2)), allocatable :: FROM
+    end type
 
     type(base(4)), pointer :: b
 
@@ -49,7 +37,7 @@
     allocate ( A(4):: b%from )
 
     select type ( x => b%from )
-        type is ( A(4)) 
+        type is ( A(4))
             call move_alloc ( x, b%TO)
     end select
 

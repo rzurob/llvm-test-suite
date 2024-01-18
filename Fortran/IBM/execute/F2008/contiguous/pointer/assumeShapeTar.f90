@@ -1,25 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : assumeShapeTar.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - Target is assumed shape dummy argument 
+!*  DESCRIPTION                : - Target is assumed shape dummy argument
 !*                                 with contiguous attribute
-!*                      
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -110,7 +99,7 @@ PROGRAM assumeShapeTar
 
       END SUBROUTINE Sub1
 
-      SUBROUTINE Sub2(Arg)  
+      SUBROUTINE Sub2(Arg)
         INTEGER, POINTER, CONTIGUOUS :: Arg(:,:,:)
         INTEGER, POINTER, CONTIGUOUS :: ptr(:,:,:)
 

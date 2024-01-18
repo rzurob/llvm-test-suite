@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -14,26 +9,15 @@
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.9.3: Inquire by output list
 !*                               - Try output item function return of some transformational intrinsic functions
@@ -55,39 +39,39 @@ module m1
 end module
 
 program funcRetrn001
-   use m1   
-     
+   use m1
+
    ! declaration of variables
    class(base), allocatable :: b1(:), b2(:,:)
-   class(base), pointer :: b3(:)  , b4(:,:) 
+   class(base), pointer :: b3(:)  , b4(:,:)
    logical :: mergemask(2,2) = reshape( source = (/ .true. , .false. , .true. , .false. /), shape = (/2,2/) )
-   integer :: length1 = 0 
-   
+   integer :: length1 = 0
+
    ! allocation of variables
-   
+
    allocate(b1(4), source = (/ base('abc'), base('def'), base('ghi'), base('jkl') /) )
    allocate(b2(2,2), source = reshape( source = (/ base('abc'), base('def'), base('ghi'), base('jkl') /), shape=(/2,2/) ))
    allocate(b3(4), source = (/ base('ABC'), base('DEF'), base('GHI'), base('JKL') /) )
    allocate(b4(2,2), source = reshape( source = (/ base('ABC'), base('DEF'), base('GHI'), base('JKL') /), shape=(/2,2/) ))
-   
+
    ! unformatted I/O operations
-   
+
    select type ( b11 => b1 )
       type is (base)
          inquire ( iolength = length1 )              cshift (b11, shift=-1)
    end select
-   
+
    if ( length1 /= 12 )                       error stop 1_4
    length1 = 0
-   
+
    select type ( b13 => eoshift(b3,shift=-1, boundary=base('xxx') ) )
       type is (base)
-         inquire ( iolength = length1 )       b13    
+         inquire ( iolength = length1 )       b13
    end select
-   
+
    if ( length1 /= 12 )                       error stop 2_4
-   length1 = 0  
-     
+   length1 = 0
+
    select type ( b12 => b2 )
       type is (base)
          select type ( b14 => b4 )
@@ -95,23 +79,23 @@ program funcRetrn001
                inquire ( iolength = length1 )        merge (b12,b14,mergemask)
          end select
    end select
-   
+
    if ( length1 /= 12 )                       error stop 3_4
-   length1 = 0  
+   length1 = 0
 
    select type ( tmpb => transpose(reshape( source = b3, shape=(/2,2/) )) )
       type is (base)
-         inquire ( iolength = length1 )              tmpb   
+         inquire ( iolength = length1 )              tmpb
    end select
-   
+
    if ( length1 /= 12 )                       error stop 4_4
-   length1 = 0  
-   
+   length1 = 0
+
    select type ( tmpc => spread ( (/ b3 , b3 /), dim=1, ncopies=2 ) )
       type is (base)
-         inquire ( iolength = length1 )              tmpc  
+         inquire ( iolength = length1 )              tmpc
    end select
-   
+
    if ( length1 /= 48 )                       error stop 5_4
 
 end program

@@ -10,7 +10,7 @@ type dtp (k1)
   type (dt(k1)) :: d1
 end type
 
-type (dtp(4)) :: dtp1(6) = (/dtp(4)(dt(4)(1)), dtp(4)(dt(4)(2)), & 
+type (dtp(4)) :: dtp1(6) = (/dtp(4)(dt(4)(1)), dtp(4)(dt(4)(2)), &
                              dtp(4)(dt(4)(3)), dtp(4)(dt(4)(4)), &
                              dtp(4)(dt(4)(5)), dtp(4)(dt(4)(6))/)
 type (dtp(4)) :: dtp2(6) = (/dtp(4)(dt(4)(7)), dtp(4)(dt(4)(8)), &

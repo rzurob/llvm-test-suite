@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefDeterm3   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefDeterm3
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 13, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Determination of Types 
+!*  SECONDARY FUNCTIONS TESTED : Determination of Types
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,7 +19,6 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  Determination of derived types - sequence types / allocatable
 !*
 !*  (Syntax err)
@@ -33,12 +26,12 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamTypeDefDeterm3 
+  PROGRAM dtParamTypeDefDeterm3
 
   TYPE :: DT(K, L)
     INTEGER, KIND :: K
     INTEGER, LEN  :: L
-    SEQUENCE      
+    SEQUENCE
     INTEGER(K)  :: I
     REAL(K)     :: R
     COMPLEX(K)  :: Cplx
@@ -52,17 +45,17 @@
 
   T0 = DT(8,4)(-1_8, -1.0_8, (1._8, -1._8), .FALSE._8, "B")
   ALLOCATE(T1, SOURCE=T0)
-  T2 = T1 
+  T2 = T1
 
   CALL Sub(T1, T2, -1_8, -1.0_8, (1._8, -1._8), .FALSE._8, "B   ")
- 
+
   CONTAINS
 
     SUBROUTINE Sub(Arg1, Arg2, I, R, Cplx, L, C)
     TYPE :: DT(K, L)
       INTEGER, KIND :: K
       INTEGER, LEN  :: L
-      SEQUENCE      
+      SEQUENCE
       INTEGER(K)  :: I
       REAL(K)     :: R
       COMPLEX(K)  :: Cplx
@@ -92,6 +85,6 @@
     IF ( TRIM(Arg2%C).NE.   TRIM(C)) STOP 37
 
     END SUBROUTINE
-    
+
   END
 

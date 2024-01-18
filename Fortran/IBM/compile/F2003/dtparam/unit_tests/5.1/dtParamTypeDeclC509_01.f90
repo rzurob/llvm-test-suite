@@ -6,7 +6,7 @@
            integer, len :: l
            integer(k*2) :: i(l-1)
          end type
-         
+
          class(dt(2,:)), allocatable :: d1  ! legal
          class(dt(4,2)), pointer :: d2      ! legal
        contains

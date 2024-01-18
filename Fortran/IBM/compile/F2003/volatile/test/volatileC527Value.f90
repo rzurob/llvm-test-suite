@@ -1,13 +1,6 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE attribute, VOLATILE
 !*
@@ -24,7 +17,7 @@
     end type
   end module
 
-  program volatileC527Value 
+  program volatileC527Value
      use mod
      implicit none
      interface
@@ -36,5 +29,5 @@
        end subroutine
      end interface
 
-  end program volatileC527Value 
+  end program volatileC527Value
 

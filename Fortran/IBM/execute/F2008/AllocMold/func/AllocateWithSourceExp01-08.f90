@@ -1,24 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*
-!*  TEST CASE TITLE            : AllocateWithSourceExp01-08
-!*
-!*  ORIGINAL PROGRAMMER        : Dorra Bouchiha
-!*  PROGRAMMER                 : Izhak Jakov
 !*
 !*  DATE                       : May 13, 2015
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -31,18 +21,18 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN  :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN  :: l1
 
         CHARACTER(l1) :: Calloc(l1) = 'AAA'
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)
-        INTEGER, KIND :: k2 
-        INTEGER, LEN  :: l2 
+        INTEGER, KIND :: k2
+        INTEGER, LEN  :: l2
 
         REAL :: Rarr(l1) = k2
         CLASS(Base(k2,l1)), POINTER :: next => NULL()
@@ -51,7 +41,7 @@ MODULE Mod1
       TYPE, EXTENDS(Child) :: NextGen (k3,l3)
         INTEGER, KIND :: k3
         INTEGER, LEN  :: l3
- 
+
         CHARACTER(l2) :: Carr(l2) = 'ABCD '
         INTEGER(k2)   :: Iarr(l2) = k3
       END TYPE NextGen
@@ -60,9 +50,9 @@ END MODULE Mod1
 PROGRAM AllocateWithSourceExp01
       USE MOD1
       IMPLICIT NONE
- 
+
       TYPE(Base(4,:)), POINTER :: b1(:)
-      TYPE(Child(4,10,4,10)), TARGET :: c1 = Child(4,10,4,10)(Rarr = -1) 
+      TYPE(Child(4,10,4,10)), TARGET :: c1 = Child(4,10,4,10)(Rarr = -1)
       TYPE(NextGen(4,10,4,10,5,5)), ALLOCATABLE :: n1(:), n2(:)
       CLASS(Base(4,4)), POINTER :: bptr1, bptr2
 
@@ -83,13 +73,13 @@ PROGRAM AllocateWithSourceExp01
       ALLOCATE(n1(5), n2(5), source = NextGen(4,10,4,10,5,5) (Calloc = 'XLFtest', Rarr = 9.5, &
                 & next = c1, Carr = string, Iarr = 1))
 
-                 
+
 !      Allocate array n1 with 5 elements of this source
       IF (SIZE(n1) .NE. 5) STOP 150
       IF (SIZE(n2) .NE. 5) STOP 151
-   
+
    print *, "DONE 1"
-      DO I = 1, 5 
+      DO I = 1, 5
 
 !     Check n1
           IF (LEN(n1(I)%Calloc) .NE. 10) STOP 16
@@ -154,12 +144,12 @@ PROGRAM AllocateWithSourceExp01
        IF (SIZE(n2(2)%Iarr) .NE. 10) STOP 75
        IF (ANY(n2(2)%Iarr .NE. 7)) STOP 76
 
-   
+
        ALLOCATE (bptr1, bptr2, source = Child(4,4,4,4) ('XLFt', -2))
 
        SELECT TYPE(bptr1)
           TYPE IS(Child(4,*,4,*))
-             ALLOCATE(bptr1%next,source=bptr1) 
+             ALLOCATE(bptr1%next,source=bptr1)
              IF (LEN(bptr1%Calloc) .NE. 4) STOP 42
              IF (ANY(bptr1%Calloc .NE. 'XLFt')) STOP 43
              IF (SIZE(bptr1%Rarr) .NE. 4) STOP 44
@@ -177,10 +167,10 @@ PROGRAM AllocateWithSourceExp01
           CLASS DEFAULT
              STOP 51
        END SELECT
-       
+
        SELECT TYPE(bptr2)
           TYPE IS(Child(4,*,4,*))
-             ALLOCATE(bptr2%next,source=bptr2) 
+             ALLOCATE(bptr2%next,source=bptr2)
              IF (LEN(bptr2%Calloc) .NE. 4) STOP 142
              IF (ANY(bptr2%Calloc .NE. 'XLFt')) STOP 143
              IF (SIZE(bptr2%Rarr) .NE. 4) STOP 144
@@ -198,19 +188,19 @@ PROGRAM AllocateWithSourceExp01
           CLASS DEFAULT
              STOP 151
        END SELECT
-       
-       
+
+
        print *, "DONE 2"
 
        DEALLOCATE(b1,n1,n2,bptr1,bptr2)
        print *, "DONE 3"
-      
+
        CONTAINS
 !*
        SUBROUTINE sub(argn1, argn2)
        TYPE(NextGen(4,*,4,*,5,*)), ALLOCATABLE, INTENT(OUT) :: argn1(:), argn2(:)
-   
-       TYPE(Base(4,10)), TARGET :: tgt 
+
+       TYPE(Base(4,10)), TARGET :: tgt
        print *, "SUBROUTINE"
        ALLOCATE(argn1(2), argn2(2), SOURCE = [NextGen(4,10,4,10,5,5) ('BBB', 66.22, tgt, 'Erwin', 5),  &
               & NextGen(4,10,4,10,5,5) ('CCC', 22.66, tgt, 'Werne', 7)])

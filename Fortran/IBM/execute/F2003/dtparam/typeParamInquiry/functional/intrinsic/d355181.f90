@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : d355181.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Nancy Wang
 !*  DATE                       : August 19 2008
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  :
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*
 !*  DESCRIPTION
 !*
@@ -33,9 +25,9 @@ program d355181
     character(:),pointer :: c3=>null()
     allocate(character(7) :: c2)
     c2="xlftest"
-    c1=>c2(1:3)                   
-    c3=>c2(1:3)                   
-    print *,c3,len(c3),c3%len 
+    c1=>c2(1:3)
+    c3=>c2(1:3)
+    print *,c3,len(c3),c3%len
     select type(c1)
        type is(character(*))
           print *,c1,len(c1),c1%len

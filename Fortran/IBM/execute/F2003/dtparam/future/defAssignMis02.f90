@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignMis02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignMis02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 20 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 20 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test defined assignment with interface block
@@ -46,8 +38,8 @@ module m
       subroutine subA1(this,dt)
          type(A(*)),intent(inout) :: this
          type(A(*)),intent(in)    :: dt
- 
-         print *,"in subA1" 
+
+         print *,"in subA1"
          call subA2(this,dt)
 
       end subroutine
@@ -88,7 +80,7 @@ module m
                   type is (B(*))
                      do i=lbound(dt%acomp1,1),ubound(dt%acomp1,1)
                          ! intrinsic assignment
-                         this%acomp1(i)%i1=dt%acomp1(i)%i1 
+                         this%acomp1(i)%i1=dt%acomp1(i)%i1
                          this%acomp1(i)%c1=dt%acomp1(i)%c1
                      end do
                      this%acomp2=>dt%acomp2 ! invoke pointer assignment
@@ -222,7 +214,7 @@ program defAssignMis02
      implicit none
 
      character(:),allocatable,target :: c1(:)
-     
+
      type(A(2)) :: aobj1,aobj3(3)
      type(A(:)),target,allocatable :: aobj2,aobj4(:)
 
@@ -249,7 +241,7 @@ program defAssignMis02
      if(any(aobj2%i1 /= [1,2,3]))                            stop 18
      if(any(aobj2%c1 /= ["ab","aB","Ab","AB"]))              stop 19
 
-     print *,"**** TEST  3****" 
+     print *,"**** TEST  3****"
      ! invoke assign2
      aobj3=[aobj1,A(2)([4,5,6],c1(1:2)),A(2)([-1,-2,-3],c1(3:4))]
 
@@ -280,7 +272,7 @@ program defAssignMis02
      if(any(bobj1%acomp2(1)%i1 /= [4,5,6]))                  stop 34
      if(any(bobj1%acomp2(1)%c1 /= ["ab","aB"]))              stop 35
      if(any(bobj1%acomp2(2)%i1 /= [-1,-2,-3]))               stop 36
-     if(any(bobj1%acomp2(2)%c1 /= ["Ab","AB"]))              stop 37    
+     if(any(bobj1%acomp2(2)%c1 /= ["Ab","AB"]))              stop 37
 
      print *,"**** TEST  6****"
      call subB1(bobj2,bobj1)
@@ -293,7 +285,7 @@ program defAssignMis02
      if(any(bobj2%acomp2(2)%i1 /= [-1,-2,-3]))               stop 42
      if(any(bobj2%acomp2(2)%c1 /= ["Ab","AB"]))              stop 43
 
-     print *,"**** TEST  7****" 
+     print *,"**** TEST  7****"
      !invoke assign2
      bobj3=[bobj1, &
             B(1)(A(2)( [7,8,9],c1(1:1) ), &

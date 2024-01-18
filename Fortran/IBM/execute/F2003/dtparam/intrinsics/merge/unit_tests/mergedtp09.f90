@@ -2,7 +2,7 @@
 
 type dtp (k)
   integer, kind :: k
-  integer(k), allocatable :: i 
+  integer(k), allocatable :: i
 end type
 
 type (dtp(4)) dtp1(6), dtp2(6), dtp3(2,3), dtp4(2,3), res(2,3)

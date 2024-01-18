@@ -12,37 +12,31 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu40.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Invoke command line procedures within external functions 
-!*                             : through interface and return the derived type of result by 
+!*  DESCRIPTION                : Invoke command line procedures within external functions
+!*                             : through interface and return the derived type of result by
 !*                             : result variables
 !*                             : (Check if the intrinsic affect other storage)
-!* 
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
@@ -74,7 +68,7 @@
         character        :: char9   /' '/
 
         character(50)    :: Argument
- 
+
       END TYPE
 
 
@@ -85,29 +79,29 @@
       USE MOD
 
       INTEGER i
-      
-      INTERFACE 
-        FUNCTION F_GET_COMMAND(Result) 
+
+      INTERFACE
+        FUNCTION F_GET_COMMAND(Result)
         USE MOD
           TYPE(CMD) F_GET_COMMAND
-          TYPE(CMD) Result 
+          TYPE(CMD) Result
         END FUNCTION
 
         FUNCTION F_GET_COMMAND_ARGUMENT(Result)
         USE MOD
           TYPE(CMD) F_GET_COMMAND_ARGUMENT
-          TYPE(CMD) Result 
+          TYPE(CMD) Result
         END FUNCTION
-  
-        FUNCTION F_GET_ENVIRONMENT_VARIABLE(Result)  
+
+        FUNCTION F_GET_ENVIRONMENT_VARIABLE(Result)
         USE MOD
           TYPE(CMD) F_GET_ENVIRONMENT_VARIABLE
-          TYPE(CMD) Result 
-        END FUNCTION     
+          TYPE(CMD) Result
+        END FUNCTION
       END INTERFACE
 
 
-      INTERFACE 
+      INTERFACE
         FUNCTION F_COMMAND_ARGUMENT_COUNT(CmdCount)
           INTEGER CmdCount
           INTEGER F_COMMAND_ARGUMENT_COUNT
@@ -127,7 +121,7 @@
       CALL Check(Result)
 
       Result = F_GET_ENVIRONMENT_VARIABLE(Result)
-  
+
       CALL Check(Result)
 
       CONTAINS
@@ -167,7 +161,7 @@
 
       F_COMMAND_ARGUMENT_COUNT = COMMAND_ARGUMENT_COUNT()
 
-      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT()) & 
+      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT()) &
       then
         error stop 63
       endif
@@ -199,7 +193,7 @@
 
       END FUNCTION
 
- 
+
       FUNCTION F_GET_COMMAND_ARGUMENT(Result) result ( R )
       USE MOD
       IMPLICIT NONE
@@ -210,7 +204,7 @@
       R = Result
 
       DO i  = 0, R%CmdCount
-       
+
         R%NUMBER = i
         call GET_COMMAND_ARGUMENT(                &
                 R%NUMBER,    &

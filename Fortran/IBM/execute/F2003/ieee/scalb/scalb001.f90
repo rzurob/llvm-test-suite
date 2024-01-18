@@ -12,21 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : March 13, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SCALB with reals.
 !*                               IEEE_SCALB = 2**I * X
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -57,7 +49,7 @@
         use ieee_arithmetic
         use constants_for_ieee
 	implicit none
-        
+
         real*4 :: xr4, result4
         integer :: yi, i
 	real*8 :: xr8, result8
@@ -69,20 +61,20 @@
         logical :: flag_values(5)
         logical :: flag_value
         type(ieee_status_type) :: status_value
-	
+
         equivalence(iresult4, result4)
         equivalence(iresult8, result8)
         equivalence(iresult16, result16)
 
 
-	call ieee_get_status(status_value)       
-		
+	call ieee_get_status(status_value)
+
 !       Test positive real*4 when yi = 0
 
         xr4 = 4.0
         yi = 0
         result4 = ieee_scalb(xr4, yi)
-        if (result4 /= xr4) error stop 1 
+        if (result4 /= xr4) error stop 1
 
         ! Now check that no flags were turned on.
         call ieee_get_flag(ieee_all,flag_values)
@@ -93,7 +85,7 @@
 
 !       Test positive real*8 when I = 0
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         xr8 = 2.0_8
         yi = 0
@@ -109,7 +101,7 @@
 
 !       Test positive real*16 when I = 0
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         xr16 = 8.0_16
         yi = 0
@@ -125,7 +117,7 @@
 
 !       Test negative real*4 when I = 0
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         xr4 = -4.0
         yi = 0
@@ -141,7 +133,7 @@
 
 !       Test negative real*8 when I = 0
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         xr8 = -2.0_8
         yi = 0
@@ -157,7 +149,7 @@
 
 !       Test negative real*16 when I = 0
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         xr16 = -8.0_16
         yi = 0
@@ -172,7 +164,7 @@
 
 !       Test positive real*4 when I = -0
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         xr4 = 4.0
         yi = -0
@@ -188,7 +180,7 @@
 
 !       Test positive real*8 when yi = -0
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         xr8 = 2.0_8
         yi = -0
@@ -204,7 +196,7 @@
 
 !       Test positive real*16 when I = -0
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         xr16 = 8.0_16
         yi = -0
@@ -220,7 +212,7 @@
 
 !       Test negative real*4 when I = -0
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         xr4 = -4.0
         yi = -0
@@ -236,7 +228,7 @@
 
 !       Test negative real*8 when I = -0
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         xr8 = -2.0_8
         yi = -0
@@ -252,7 +244,7 @@
 
 !       Test negative real*16 when I = -0
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         xr16 = -8.0_16
         yi = -0
@@ -266,10 +258,10 @@
         enddo
 
 
-		
-!       Test real argument = +INF		
 
-	call ieee_set_status(status_value)       
+!       Test real argument = +INF
+
+	call ieee_set_status(status_value)
 
         xr4 = X"7F800000"
         xr8 = X"7FF0000000000000"
@@ -280,9 +272,9 @@
 
         call ieee_get_flag(IEEE_OVERFLOW, flag_value)
 	if (flag_value .eqv. .true.) error stop 14
-				           !IEEE_OVERFLOW signaling for PINF! 
-		       
-	call ieee_set_status(status_value)       
+				           !IEEE_OVERFLOW signaling for PINF!
+
+	call ieee_set_status(status_value)
 
         result8 = ieee_scalb(xr8, yi)
         if (result8 /= X"7FF0000000000000") error stop 15
@@ -291,7 +283,7 @@
         if (flag_value .eqv. .true.) error stop 16
                                            !IEEE_OVERFLOW signaling for PINF!
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         result16 = ieee_scalb(xr16, yi)
         if (result16 /= X"7FF00000000000000000000000000000") error stop 17
@@ -301,7 +293,7 @@
                                            !IEEE_OVERFLOW signaling for PINF!
 
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
 !       Test real argument = -INF
 
@@ -316,7 +308,7 @@
         if (flag_value .eqv. .true.) error stop 20
                                            !IEEE_OVERFLOW signaling for PINF!
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         result8 = ieee_scalb(xr8, yi)
         if (result8 /= X"FFF0000000000000") error stop 21
@@ -325,7 +317,7 @@
         if (flag_value .eqv. .true.) error stop 22
                                            !IEEE_OVERFLOW signaling for PINF!
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         result16 = ieee_scalb(xr16, yi)
         if (result16 /= X"FFF00000000000000000000000000000") error stop 23
@@ -334,7 +326,7 @@
         if (flag_value .eqv. .true.) error stop 24
                                            !IEEE_OVERFLOW signaling for PINF!
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
 
 !Test a large +I
@@ -342,14 +334,14 @@
         yi = 2147483647
 	xr4 = 16
 	result4 = ieee_scalb(xr4, yi)
-	if (result4 /= z"7f800000") error stop 25 
+	if (result4 /= z"7f800000") error stop 25
 				! "ieee_scalb failed for a large I
 
 	call ieee_get_flag(IEEE_OVERFLOW, flag_value)
-	if (flag_value .eqv. .false.) error stop 26 
+	if (flag_value .eqv. .false.) error stop 26
 			          !IEEE_OVERFLOW not signaling for a large I!
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         yi = 2147483647
         xr8 = 16_8
@@ -364,29 +356,29 @@
 !Test Underflow
 
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
-        yi = -9 
+        yi = -9
         xr4 = 2.0_4**(-143)
         result4 = ieee_scalb(xr4, yi)
         if (result4 /= z"00000000") error stop 29
-                                    !ieee_scalb failed 
+                                    !ieee_scalb failed
 
         call ieee_get_flag(IEEE_UNDERFLOW, flag_value)
-        if (flag_value .eqv. .false.) error stop 30 
+        if (flag_value .eqv. .false.) error stop 30
                                     !IEEE_UNDERFLOW not signaling for a large I
 
 
-	call ieee_set_status(status_value)       
+	call ieee_set_status(status_value)
 
         xr4 = tiny(1.0)
         yi  = -24
         result4 = ieee_scalb(xr4, yi)
 	xr4 = 2.0_4**yi*xr4
-	if (result4 /= xr4) error stop 31 
+	if (result4 /= xr4) error stop 31
 
         call ieee_get_flag(IEEE_UNDERFLOW, flag_value)
-        if (flag_value .eqv. .false.) error stop 32 
+        if (flag_value .eqv. .false.) error stop 32
                                                 !IEEE_UNDERFLOW not signaling!
 
         call ieee_set_status(status_value)
@@ -397,7 +389,7 @@
         xr8 = PZERO_8
         xr16 = PZERO_16
         yi = 28
- 
+
         result4 = ieee_scalb(xr4, yi)
         if (result4 /= PZERO_4) error stop 33
 
@@ -538,7 +530,7 @@
             if (flag_values(i) .neqv. .false.)error stop 227
         enddo
 
- 
+
         call ieee_set_status(status_value)
 
         xr4 = NTD_4

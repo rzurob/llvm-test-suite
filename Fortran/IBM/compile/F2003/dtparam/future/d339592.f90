@@ -11,5 +11,5 @@ MODULE Mod
         TYPE(Base(k2)) :: arr(1) = [Base(k2) ( )]
       END TYPE
 END MODULE
-Use Mod 
+Use Mod
 END

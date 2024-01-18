@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,31 +13,23 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c03aac.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran programs interoperate with C functions
 !*                                through a Fortran procedure interface that uses
 !*                                the BIND specification .
-!*            
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !*   - Test: BINC(C) attribute with  different intrinsic data type,
 !*           character*1,logical*1.
-!*           The datatype logical*2, logical*4,logical*8 and 
+!*           The datatype logical*2, logical*4,logical*8 and
 !*           byte is not supported.
 !*   - The interoperable  procedure itself is  implemented as C function.
 !*   - The interoperabl Fortran procedure  has an explicit interface and
@@ -50,15 +37,15 @@
 !*   - passing scalar arguments by REFERENCE and by VALUE
 !*   - main written in FORTRAN, Fortran calls C functions.
 !*
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. Declare the interop functions in Fortran program.
 !*          ( Create a procedural interface that corresponds to the C prototype
-!*          and bind the interface to the C function using the BIND(C) specifier). 
+!*          and bind the interface to the C function using the BIND(C) specifier).
 !*          2. Initialize the variable which will be the  actual arguments of
-!*             the interop functions. 
+!*             the interop functions.
 !*          3. Fortran  program call C function.The argument is  altered
 !*             during execution of the C Function.
-!*          4. Assertion: Check the modified auguments and return value  
+!*          4. Assertion: Check the modified auguments and return value
 !*             in Fortran to verify it is correct.
 !*
 !* ===================================================================
@@ -98,7 +85,7 @@ program fxbind_c03aac
      end function exfun_log_val1
 
      function TryRetLog (r)  BIND(C)
-       LOGICAL*1  r, RetLog  
+       LOGICAL*1  r, RetLog
      END function TryRetLog
 
   end interface
@@ -111,7 +98,7 @@ program fxbind_c03aac
   logical*1 al_ref1 /.false./, res_log_ref1
   logical*1 al_val1 /.false./, res_log_val1
   logical*1 l /.true./
-  logical*1 r, s, RetLog  
+  logical*1 r, s, RetLog
 
   !**********************************************************
   !        Calling C from Fortran with character data type
@@ -119,8 +106,8 @@ program fxbind_c03aac
   !**********************************************************
 
   ! Test 1 : call by reference
-  ! A dummy argument without the VALUE attribute correspond 
-  ! to a formal parameter  of the prototype in C program 
+  ! A dummy argument without the VALUE attribute correspond
+  ! to a formal parameter  of the prototype in C program
   ! that is of a pointer type.
 
   res_ch_ref = fun_char_ref(ach_ref,bch_ref)
@@ -132,7 +119,7 @@ program fxbind_c03aac
 
   ! Test 2 : call by value
   ! A dummy argument with the VALUE attribute  correspond
-  ! to a formal parameter of the prototype in C program that is 
+  ! to a formal parameter of the prototype in C program that is
   ! not of a pointer type.
 
   res_ch_val = fun_char_val(ach_val,bch_val)
@@ -147,8 +134,8 @@ program fxbind_c03aac
   !                and check the Results
   !**********************************************************
   ! Test 3 : call by reference
-  ! A dummy argument without the VALUE attribute correspond 
-  ! to a formal parameter  of the prototype in C program 
+  ! A dummy argument without the VALUE attribute correspond
+  ! to a formal parameter  of the prototype in C program
   ! that is of a pointer type.
 
   res_log_ref1 = exfun_log_ref1(al_ref1, l)
@@ -163,7 +150,7 @@ program fxbind_c03aac
 
   ! Test 4 : call by value
   ! A dummy argument with the VALUE attribute  correspond
-  ! to a formal parameter of the prototype in C program that is 
+  ! to a formal parameter of the prototype in C program that is
   ! not of a pointer type.
 
   res_log_val1 = exfun_log_val1(al_val1, l)
@@ -177,8 +164,8 @@ program fxbind_c03aac
   endif
 
   ! Test Fortran and C with a LOGICAL function return value
-  r = .FALSE.  
-  s = .TRUE. .AND. RetLog(r)  
+  r = .FALSE.
+  s = .TRUE. .AND. RetLog(r)
   call assert(s,'Hello, the result is not correct!',40)
 
 end program fxbind_c03aac

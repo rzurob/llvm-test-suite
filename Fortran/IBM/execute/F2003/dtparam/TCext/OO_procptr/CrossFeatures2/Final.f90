@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Final.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Final.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Final.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Final.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Finalization - allocate/deallocate 
-!*  (ice-314926) 
+!*
+!*  Finalization - allocate/deallocate
+!*  (ice-314926)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -72,45 +66,45 @@
     SUBROUTINE FinalDT(Arg)
     TYPE(DT(4,*)) :: Arg
       Index = Index + 1
-      TracE(Index) = 2 
+      TracE(Index) = 2
       Print*, "Final DT"
     END SUBROUTINE
-    
+
     SUBROUTINE FinalBase(Arg)
     TYPE(Base(4,*)) :: Arg
       Index = Index + 1
-      TracE(Index) = 1 
+      TracE(Index) = 1
       Print*, "Final Base"
     END SUBROUTINE
-    
+
     FUNCTION ModFun1(Arg)
-    CLASS(Base(4,*)) :: Arg 
-    CLASS(Base(4,:)), POINTER :: ModFun1 
+    CLASS(Base(4,*)) :: Arg
+    CLASS(Base(4,:)), POINTER :: ModFun1
       ALLOCATE(ModFun1, SOURCE=Arg)
     END FUNCTION
- 
+
     FUNCTION ModFun2(Arg)
-    CLASS(DT(4,*)) :: Arg 
-    CLASS(DT(4,:)), ALLOCATABLE :: ModFun2 
+    CLASS(DT(4,*)) :: Arg
+    CLASS(DT(4,:)), ALLOCATABLE :: ModFun2
       ALLOCATE(ModFun2, SOURCE=Arg)
     END FUNCTION
- 
+
     FUNCTION ModFun3(Arg1, Arg2)
     CLASS(DT(4,*)) :: Arg1
-    PROCEDURE(ModFun1), POINTER :: ModFun3, Arg2 
+    PROCEDURE(ModFun1), POINTER :: ModFun3, Arg2
       ModFun3 => Arg2
     END FUNCTION
- 
+
   END MODULE
 
-  PROGRAM Final0  
+  PROGRAM Final0
   USE M
   TYPE(DT(4,:)), POINTER :: V
 
   ALLOCATE(V, SOURCE=DT(4,20)(Base=Base(4,20)(ModFun1), ProcPTr2=Modfun2))
 
-  IF ( .NOT. ASSOCIATED(V%ProcPtr1, Modfun1)) STOP 11 
-  IF ( .NOT. ASSOCIATED(V%ProcPtr2, Modfun2)) STOP 12 
+  IF ( .NOT. ASSOCIATED(V%ProcPtr1, Modfun1)) STOP 11
+  IF ( .NOT. ASSOCIATED(V%ProcPtr2, Modfun2)) STOP 12
 
   IF ( ANY (Trace .NE. (/2,1,1,0,0/))) STOP 14
 

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecPreSpec1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecPreSpec1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,47 +19,43 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  intrinsic-type-spec in pre-spec : real and complex
-!* 
-!*  
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   REAL(KIND=4_8) FUNCTION R4()
-    R4 = 4 
+    R4 = 4
   END FUNCTION
- 
-  REAL(KIND=SIZE([(i,i=1,8)])) FUNCTION R8()
-    R8 = 8 
-  END FUNCTION
- 
-  REAL(KIND=SIZE([(i,i=1,16)])) FUNCTION R6()
-    R6 = 16. 
-  END FUNCTION
- 
- 
-  COMPLEX(KIND=4_1) FUNCTION Z4()
-    Z4 = (4., -4.) 
-  END FUNCTION
- 
-  COMPLEX(KIND=SIZE([(i,i=1,8)])) FUNCTION Z8()
-    Z8 = (8., -8.) 
-  END FUNCTION
- 
-  COMPLEX(KIND=SIZE([(i,i=1,16)])) FUNCTION Z6()
-    Z6 = (16., -16.) 
-  END FUNCTION
- 
 
-  PROGRAM InitExpTypSpecPreSpec1 
+  REAL(KIND=SIZE([(i,i=1,8)])) FUNCTION R8()
+    R8 = 8
+  END FUNCTION
+
+  REAL(KIND=SIZE([(i,i=1,16)])) FUNCTION R6()
+    R6 = 16.
+  END FUNCTION
+
+
+  COMPLEX(KIND=4_1) FUNCTION Z4()
+    Z4 = (4., -4.)
+  END FUNCTION
+
+  COMPLEX(KIND=SIZE([(i,i=1,8)])) FUNCTION Z8()
+    Z8 = (8., -8.)
+  END FUNCTION
+
+  COMPLEX(KIND=SIZE([(i,i=1,16)])) FUNCTION Z6()
+    Z6 = (16., -16.)
+  END FUNCTION
+
+
+  PROGRAM InitExpTypSpecPreSpec1
   IMPLICIT NONE
 
   INTEGER :: I
 
-  
+
   PROCEDURE(REAL(KIND=4_8)),                 POINTER :: R4PreSpec
   PROCEDURE(REAL(KIND=SIZE([(i,i=1,8)]))),   POINTER :: R8PreSpec
   PROCEDURE(REAL(KIND=SIZE([(i,i=1,16)]))),  POINTER :: R6PreSpec
@@ -76,7 +66,7 @@
 
   REAL(KIND=4_8)               , EXTERNAL :: R4
   REAL(KIND=SIZE([(i,i=1,8)])) , EXTERNAL :: R8
-  REAL(KIND=SIZE([(i,i=1,16)])), EXTERNAL :: R6 
+  REAL(KIND=SIZE([(i,i=1,16)])), EXTERNAL :: R6
 
   COMPLEX(KIND=4_1)               , EXTERNAL :: Z4
   COMPLEX(KIND=SIZE([(i,i=1,8)])) , EXTERNAL :: Z8
@@ -101,4 +91,4 @@
 
   END
 
- 
+

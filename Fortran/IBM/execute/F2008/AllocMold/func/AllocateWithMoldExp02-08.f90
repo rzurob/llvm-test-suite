@@ -1,34 +1,24 @@
 !* ===================================================================
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* 
-!* TEST CASE TITLE            : AllocateWithMoldExp02-08 
-!* 
-!* ORIGINAL PROGRAMMER        : Dorra Bouchiha
-!* PROGRAMMER                 : Izhak Jakov
-!* 
+!*
 !* DATE                       : June 9, 2015
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
-!* 
-!* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Mold Expression 
+!*
+!* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Mold Expression
 !* SECONDARY FUNCTIONS TESTED :
-!*                              
-!* 
-!* DRIVER STANZA              : xlf2003
-!* REQUIRED COMPILER OPTIONS  : 
-!* 
-!* KEYWORD(S)                 : 
+!*
+!* REQUIRED COMPILER OPTIONS  :
+!*
+!* KEYWORD(S)                 :
 !* TARGET(S)                  :
-!* NUMBER OF TESTS CONDITIONS : 
-!* 
+!* NUMBER OF TESTS CONDITIONS :
+!*
 !* DESCRIPTION                :
-!* 
+!*
 !* TEST CASE ADAPTED FROM     : $(tsrcdir)F2008/AllocMold/func/AllocateWithSourceExp02-08.f
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithMoldExp02
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
 !     INTEGER, ALLOCATABLE :: i(:)
       TYPE Base  (k1,l1)
@@ -43,11 +33,11 @@ PROGRAM AllocateWithMoldExp02
         INTEGER, LEN  :: l2 = 5
 
         CLASS(Base(k2,:)), POINTER :: Cmp => null()
-        INTEGER(k2) :: A2(2:l1,l2+1) = k1+k2 !10-1, 5+1 = 2:10, 1:6 
+        INTEGER(k2) :: A2(2:l1,l2+1) = k1+k2 !10-1, 5+1 = 2:10, 1:6
       END TYPE Child
 
       TYPE(Child) :: c1, c2
- 
+
       !call printAll("C1:", c1)
       IF ( SIZE(c1%A1)      .NE.    10    ) ERROR STOP 101
       IF ( ANY(SHAPE(c1%A1) .NE.  (/10/)) ) ERROR STOP 102
@@ -86,7 +76,7 @@ PROGRAM AllocateWithMoldExp02
       IF ( ANY(c2%A2        .NE.     8)   ) ERROR STOP 371
       IF ( c2%l2            .NE.     5    ) ERROR STOP 372
       IF ( ASSOCIATED(c2%Cmp)             ) ERROR STOP 380
-      
+
       CALL sub2(c1, c2)
 
       SELECT TYPE ( s => c1%Cmp )
@@ -138,7 +128,7 @@ PROGRAM AllocateWithMoldExp02
         CLASS DEFAULT
            ERROR STOP 49
       END SELECT
-      
+
       CONTAINS
 
       SUBROUTINE sub2(arg1, arg2)
@@ -152,7 +142,7 @@ PROGRAM AllocateWithMoldExp02
             SELECT TYPE ( arg2 )
               CLASS IS (Child(4,*,4,*))
                 IF ( ASSOCIATED(arg1%Cmp) ) ERROR STOP 51
-                ALLOCATE( tmp1, tmp2, MOLD = arg1 ) 
+                ALLOCATE( tmp1, tmp2, MOLD = arg1 )
                 arg1%cmp => tmp1
                 arg2%cmp => tmp2
               CLASS DEFAULT
@@ -162,19 +152,19 @@ PROGRAM AllocateWithMoldExp02
              ERROR STOP 55
         END SELECT
       END SUBROUTINE sub2
-     
+
      ! FUNCTION checkShape(arr, i, val)
 ! !        INTEGER              :: di
        ! INTEGER     :: arr(*)
        ! INTEGER              :: i, val !index and value of element i
        ! LOGICAL              :: checkShape
        ! INTEGER, ALLOCATABLE :: e(:)
-        
-       ! print *, arr        
+
+       ! print *, arr
 ! !      ALLOCATE(e, SOURCE=SHAPE(arr))
        ! checkShape = e(i) .NE. val
      ! END FUNCTION
-      
+
       subroutine printAll(title, b4) !Used for debugging
         logical          :: dbg = .true.
         character(*)     :: title
@@ -183,7 +173,7 @@ PROGRAM AllocateWithMoldExp02
         if (dbg) then
           print*, title
           print*, "--------"
-          
+
           print*; print *, "Base Part:";
           print*, "``````````"
           print*, "A1      :",  b4%A1
@@ -191,7 +181,7 @@ PROGRAM AllocateWithMoldExp02
           print*, "shape%A1:", shape(b4%A1)
           print*, "lower%A1:", lbound(b4%A1, 1)
           print*, "upper%A1:", ubound(b4%A1, 1)
-          
+
           select type (b4)
             class is (child(4,*,4,*))
               print*; print *, "Child Part:"
@@ -211,7 +201,7 @@ PROGRAM AllocateWithMoldExp02
           print*
         end if
       end subroutine
-        
-      
+
+
 
 END PROGRAM AllocateWithMoldExp02

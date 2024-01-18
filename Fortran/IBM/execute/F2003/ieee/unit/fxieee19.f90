@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Marcus Yu
 !*  DATE                       : February 11, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SUPPORT_SQRT
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +25,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 	     program fxieee19
@@ -61,16 +52,16 @@
      &       (/              &
      &       huge(1.0_16),  & ! Positive Normal
      &       tiny(1.0_16)   & ! Positive Normal
-     &       /)     
+     &       /)
 
 ! get original flags
         call ieee_get_flag(ieee_all, original)
 
 ! Ensure all exception flags are quiet
         call ieee_set_flag(ieee_all,.false.)
-		
+
         if (ieee_support_sqrt()) print *, "ieee support sqrt error."
-		
+
         if (ieee_support_sqrt(values(1)) .eqv. .false.) then
 		     print *, "ieee support sqrt error in real*4."
 		  endif

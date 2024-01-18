@@ -12,21 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Vasile Radulescu
 !*  DATE                       : February 15, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NORMAL 
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NORMAL
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  : -qfloat=nans:nofold
 !*
 !*  KEYWORD(S)                 :
@@ -35,11 +26,10 @@
 !*
 !*  DESCRIPTION                : Testing IEEE_IS_NORMAL for REAL(16).
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
      program fnormal03
-      
+
      use ieee_arithmetic
      use constants_for_ieee
 
@@ -68,10 +58,10 @@
         error stop 1
      endif
      if (ieee_is_normal(NINF_16) .neqv. .false.) then
-        error stop 2 
+        error stop 2
      endif
 
-!...test with PZERO_16 and PZERO2_16 values       
+!...test with PZERO_16 and PZERO2_16 values
 
      if (ieee_is_normal(PZERO_16) .neqv. .true.) then
         error stop 3
@@ -87,7 +77,7 @@
      if (ieee_is_normal(tiny_denormal_pos) .neqv. .false. ) then
         error stop 5
      endif
-   
+
      tiny_denormal_neg = -tiny(1.0_16)/2.0_16
      if (ieee_is_normal(tiny_denormal_neg) .neqv. .false. ) then
         error stop 6
@@ -99,7 +89,7 @@
         error stop 7
      endif
 
-    
+
      if (ieee_is_normal(normal_pos2) .neqv. .true.) then
         error stop 8
      endif
@@ -121,7 +111,7 @@
         error stop 12
      endif
 
-!...test IEEE_IS_NORMAL with normal values resulting from operations        
+!...test IEEE_IS_NORMAL with normal values resulting from operations
      normal_result(1) = PNORMAL1_16/PNORMAL2_16
 
      if (ieee_is_normal(normal_result(1)) .eqv. .false. ) then
@@ -140,7 +130,7 @@
         error stop 15
      endif
 
- 
+
      normal_result(4) = PNORMAL1_16/NNORMAL2_16
 
      if (ieee_is_normal(normal_result(4)) .eqv. .false. ) then

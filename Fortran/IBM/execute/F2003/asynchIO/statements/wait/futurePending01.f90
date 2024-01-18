@@ -1,19 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : futurePending01 - WAIT() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April 12, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Data Transfers
 !*  SECONDARY FUNCTIONS TESTED : WAIT() with ID= Specifier Values of
 !*                               Future Pending Data Transfers
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WRITE(), WAIT(), ID= Specifier
@@ -38,7 +31,6 @@
 !*                   or  ERR = label
 !*                   or  ID = scalar-int-expr
 !*  ...
-!*
 !*
 !*  9.6.2 Wait operation
 !*

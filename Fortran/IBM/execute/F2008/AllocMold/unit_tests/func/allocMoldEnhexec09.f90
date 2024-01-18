@@ -1,8 +1,8 @@
 integer, allocatable :: jjj(:)
 integer :: kkk(5)
 integer m
-do m=1, 5 
-  kkk(m) = m + 1 
+do m=1, 5
+  kkk(m) = m + 1
 end do
 allocate(jjj, source=kkk(2:4))
 print*, jjj

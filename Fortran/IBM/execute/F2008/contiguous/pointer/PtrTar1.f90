@@ -1,26 +1,16 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : PtrTar1.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                : - Pointer has contiguous attribute
 !*
-!*  DESCRIPTION                : - Pointer has contiguous attribute 
-!*                      
 !*    Dummy argument is pointer with no CONTIGUOUS attribute
-!*    Actual argument is contiguous 
+!*    Actual argument is contiguous
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -37,7 +27,7 @@ PROGRAM PtrTar1
       INTEGER, TARGET  :: I3D(2,2,2)
       INTEGER, POINTER :: ptr(:,:,:)
 
-      ptr => I3D 
+      ptr => I3D
       CALL Sub1(ptr)
       CALL Sub2(ptr)
 
@@ -47,7 +37,7 @@ PROGRAM PtrTar1
 
       CONTAINS
 
-      SUBROUTINE Sub1(Arg)           
+      SUBROUTINE Sub1(Arg)
         INTEGER, POINTER :: Arg(:,:,:)
         INTEGER, POINTER, CONTIGUOUS :: ptr(:,:,:)
 
@@ -59,12 +49,12 @@ PROGRAM PtrTar1
         IF ( .NOT. ASSOCIATED(ptr)    ) STOP 13
         IF ( .NOT. IS_CONTIGUOUS(ptr) ) STOP 14
 
-        CALL SubSub(ptr) 
+        CALL SubSub(ptr)
         IF ( .NOT. ASSOCIATED(ptr)    ) STOP 15
         IF ( .NOT. IS_CONTIGUOUS(ptr) ) STOP 16
 
       END SUBROUTINE Sub1
-      
+
       SUBROUTINE Sub2(Arg)
         INTEGER, POINTER :: Arg(:,:,:)
         INTEGER, POINTER, CONTIGUOUS :: ptr(:,:,:)

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: InClassIs2.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : InClassIs2
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 21, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Within the CLASS IS, the associating entity is polymorphic   
+!*
+!*  Within the CLASS IS, the associating entity is polymorphic
 !*  the associating entity assumes the selector's type parameters
 !*  ()
 !*
@@ -49,7 +43,7 @@
 
     TYPE  :: Zero
       INTEGER(1) :: Int=8_1
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       COMPLEX(8) :: Cplx=(-8.0_8, 8.0_8)
@@ -63,13 +57,13 @@
   END MODULE
 
 
-  PROGRAM InClassIs2 
+  PROGRAM InClassIs2
   USE M
   IMPLICIT NONE
   TYPE(Child) :: V(2:3,3:4)
   CHARACTER(1025) :: Str
 
-  Str(:) = '!' 
+  Str(:) = '!'
   V%C(:) = Str
   CALL Sub(V(2:3,3:4))
 
@@ -80,13 +74,13 @@
   INTEGER :: i
 
     SELECT TYPE (U => Arg)
-    CLASS IS (Base) 
+    CLASS IS (Base)
        STOP 43
     CLASS IS (Child)
       SELECT TYPE (U)
       CLASS IS (Child)
 
-        IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30 
+        IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30
         IF ( SIZE(U)          .NE. 4 )          STOP 31
         IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
         IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
@@ -115,7 +109,7 @@
     END SELECT
 
   END SUBROUTINE
- 
+
   END
 
 

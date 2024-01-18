@@ -2,30 +2,19 @@
 ! ftcx_dtp -qk -ql /tstdev/OO_procptr/bindc2/procptrBindcProc29.f
 ! opt variations: -qnok -qnol
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*                                associate procedure pointer with c function
 !*                                pointer pointing to C function with void pointer
 !*                                as its argument(in Fortran, dummy argument for C_PTR
 !*                                is with value attribute) and its return. void * with
-!*                                derived type. 
+!*                                derived type.
 !* ===================================================================
 
 program procptrBindcProc29
@@ -39,7 +28,7 @@ program procptrBindcProc29
    type dt(k1,n1)    ! (4,20)
        integer, kind :: k1
        integer, len  :: n1
-       type(C_FUNPTR) :: cfunptr 
+       type(C_FUNPTR) :: cfunptr
    end type
 
    interface
@@ -52,12 +41,12 @@ program procptrBindcProc29
    type(dt(4,20)) :: dtype
 
    type(dbind) , target :: i
-   type(C_PTR) :: j, res 
+   type(C_PTR) :: j, res
    type(dbind), pointer :: p, pp
 
    procedure(cfunc), pointer :: funptr => null()
 
-   i%b = 2_C_INT 
+   i%b = 2_C_INT
    j = C_LOC(i)
    if ( .not. C_ASSOCIATED(j) ) error stop 1_4
    if ( .not. C_ASSOCIATED(j, C_LOC(i)) ) error stop 2_4
@@ -78,7 +67,7 @@ program procptrBindcProc29
 
    if ( .not. C_ASSOCIATED(j) ) error stop 25_4
 
-   do k = 1, 5 
+   do k = 1, 5
       if ( p%b(k) /= 2 ) error stop 26_4
    end do
 

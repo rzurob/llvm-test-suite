@@ -1,20 +1,9 @@
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Huiwen Li
 !*  DATE                       : 07/20/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : ALLOCATE with DTP
 !*                              (type-spec used in ALLOCATE statement;
@@ -40,7 +29,7 @@ module amod
         integer, kind :: k = 4
         integer, len  :: l = 10
         integer(k) :: id = -1
-        
+
 
         contains
         procedure :: print => printChild

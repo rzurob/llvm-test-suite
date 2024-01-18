@@ -1,19 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchTargetAttr01 - ASYNCHRONOUS Attribute
 !*                               Interactions with Other Attributes
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : February 16, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : Interactions with the TARGET Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 :
@@ -35,13 +29,11 @@
 !*  ...
 !*                  or  TARGET
 !*
-!*
 !*  5.1.2.14 TARGET attribute
 !*
 !*  An object with the TARGET attribute may have a pointer associated with
 !*  it (7.4.2). An object without the TARGET attribute shall not have an
 !*  accessible pointer associated with it.
-!*
 !*
 !*  5.2.13 TARGET statement
 !*

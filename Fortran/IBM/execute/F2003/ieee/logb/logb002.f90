@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : February 5, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_LOGB with real Infinities and NaNs.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +28,6 @@
 !*
 !* 1.Test +/- NANs for real*4/*8/*16
 !* 2.Test +/- INF for real*4/*8/*16
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,7 +43,7 @@
         real*16 :: x_16, y_16
         logical :: flag_value, expect_value(5),flag_values(5)
         type(ieee_status_type) :: status_value
-        
+
         equivalence(iy_4,y_4)
         equivalence(iy_8,y_8)
         equivalence(iy_16,y_16)
@@ -61,7 +52,7 @@
 
         call ieee_set_flag(ieee_all,.false.)
 
-        x_4 = PNANQ_4 
+        x_4 = PNANQ_4
         y_4 = ieee_logb(x_4)
         if (iy_4 /= iPNANQ_4)error stop 1
                                          !ieee_logb failed real*4 w/ PNANQ
@@ -83,7 +74,7 @@
 
         expect_value = (/.false.,.false.,.true.,.false.,.false./)
 
-        x_4 = PNANS_4 
+        x_4 = PNANS_4
         y_4 = ieee_logb(x_4)
         if (iy_4 /= iPNANQ_4)error stop 3
                                          !ieee_logb failed real*4 w/ PNANS
@@ -133,7 +124,7 @@
 
         expect_value = (/.false.,.false.,.true.,.false.,.false./)
 
-        x_8 = PNANS_8 
+        x_8 = PNANS_8
         y_8 = ieee_logb(x_8)
         if (iy_8 /= iPNANQ_8)error stop 7
                                          !ieee_logb failed real*8 w/ PNANS
@@ -164,12 +155,12 @@
         y_16 = ieee_logb(x_16)
         if (iy_16(1) /= iPNANQ_16(1))error stop 9
                                          !"ieee_logb failed real*16 w/ PNANQ
- 
+
         x_16 = NNANQ_16
         y_16 = ieee_logb(x_16)
         if (iy_16(1) /= iNNANQ_16(1))error stop 10
                                          !"ieee_logb failed real*16 w/ NNANQ
- 
+
         ! Now check that no flags were turned on.
         call ieee_get_flag(ieee_all,flag_values)
         do i = 1,5
@@ -185,7 +176,7 @@
         y_16 = ieee_logb(x_16)
         if (iy_16(1) /= iPNANQ_16(1))error stop 11
                                          !"ieee_logb failed real*16 w/ PNANS
- 
+
         call ieee_get_flag(ieee_all,flag_values)
         do i =1,5
            if (expect_value(i).neqv.flag_values(i)) call zzrc (100+i)
@@ -210,18 +201,18 @@
         call ieee_set_flag(ieee_all,.false.)
 
 
-        x_4 = PINF_4 
+        x_4 = PINF_4
         y_4 = ieee_logb(x_4)
         if (iy_4 /= iPINF_4)error stop 13
-                                         !ieee_logb failed real*4 w/PINF_4 
+                                         !ieee_logb failed real*4 w/PINF_4
 
-        x_4 = NINF_4 
+        x_4 = NINF_4
         y_4 = ieee_logb(x_4)
         if (iy_4 /= iPINF_4)error stop 14
                                          !ieee_logb failed real*4 w/NINF_4
 
 
-        x_8 = PINF_8 
+        x_8 = PINF_8
         y_8 = ieee_logb(x_8)
         if (iy_8 /= iPINF_8)error stop 15
                                          !ieee_logb failed real*8 w/PINF_8

@@ -1,20 +1,12 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ROUND specifier= 
-!*                             
+!*  PRIMARY FUNCTIONS TESTED   : ROUND specifier=
 !*
 !*  DESCRIPTION                : test round with inquire and data
 !*                               transfer statement inside subprogram.
-!*    
+!*
 !* ===================================================================
 
   module m
@@ -45,14 +37,13 @@
     end subroutine
 
     subroutine inquireRoundModeByUnit (unit, roundMode)
-        integer, intent(in) :: unit 
+        integer, intent(in) :: unit
         character(*), intent(out) :: roundMode
 
         inquire (unit, round=roundMode)
     end subroutine
 
   end module
-
 
   program roundSpecifierInquire02
      use m
@@ -81,5 +72,5 @@
      if(c(3) .ne. 'COMPATIBLE') error stop 3_4
      if(c(4) .ne. 'COMPATIBLE') error stop 4_4
      if(c(5) .ne. 'COMPATIBLE') error stop 5_4
-  
+
   end program roundSpecifierInquire02

@@ -3,22 +3,11 @@
 ! opt variations: -qnol
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : C459: define generic TB with same generic name with different access-spec
 !*                                     within the same derived type
@@ -61,7 +50,7 @@ module m
          type(base(20,4)) :: add_base
          add_base%i = passobj%i + base%i
       end function
-      
+
       function add_base_array ( passobj, basearray )
          class(base(*,4)), intent(in) :: passobj, basearray(:)
          type(base(20,4)) :: add_base_array

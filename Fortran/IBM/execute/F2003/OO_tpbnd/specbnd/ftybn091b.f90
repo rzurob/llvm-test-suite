@@ -1,51 +1,45 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn091b.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn091b.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn091b.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn091b.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : overriding 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
+!*
+!*  SECONDARY FUNCTIONS TESTED : overriding
 !*
 !*  DESCRIPTION                : parent procedures are inherited.
-!*                               with more than one type extend base 
+!*                               with more than one type extend base
 !*                               type.
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-	module mod	      
+	module mod
       integer :: int = 200
       character*20 :: c = "hi"
 
-		type base 
+		type base
          integer :: x
 		contains
       	procedure, nopass :: bind_b => proc1
 		end type base
 
       type, extends(base) :: parent1
-      end type  
+      end type
 
       type, extends(base) :: parent2
       end type
@@ -56,7 +50,7 @@
          c = "hi_again"
       end subroutine
 
-	end module     
+	end module
 
    use mod
 
@@ -80,4 +74,4 @@
    if (int .ne. 400)      error stop 8
    if (c .ne. "hi_again")    error stop 9
    end
-   
+

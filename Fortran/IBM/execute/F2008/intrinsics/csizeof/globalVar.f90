@@ -1,30 +1,20 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : globalVar.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 2010-10-22
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : - A C variable is interoperate with a variable
 !*                               declared in the scope of module
-!*                               - type integer(C_LONG) 
+!*                               - type integer(C_LONG)
 !*                               - type real(C_LONG_DOUBLE)
-!*                               - complex(C_LONG_DOUBLE_COMPLEX) 
+!*                               - complex(C_LONG_DOUBLE_COMPLEX)
 !*                               - array
 !*                               - main program in C
- 
+
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -59,7 +49,7 @@ end module
          array2_size = c_sizeof(array2)
     end function array2_size
 
-    
+
     integer(C_SIZE_T) function array3_size() bind(c)
          use, intrinsic :: iso_c_binding
          use mod, only : array3

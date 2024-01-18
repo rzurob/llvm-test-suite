@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadAsFunRes01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadAsFunRes01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 20 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 20 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
 !*  2. USE SPREAD AS FUNCTION RESULT,PASS SOURCE,DIM,NCOPIES AS ACTUAL ARGUMENT
 !*  3. USE DIFFERENT FUNCTIONS (INTERAL,EXTERNAL)
-!*  4. SOURCE HAS DIFFERENT DIMENSIONS   
+!*  4. SOURCE HAS DIFFERENT DIMENSIONS
 !*  5. DERIVED TYPE HAS INTEGER AND CHARACTER ARRAY COMPONENT
 !*  6. DEFECT 357751
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -39,11 +31,11 @@ module m
    contains
       function getSpreadResult3(source,dim,ncopies)
           type(dtp(2,3)),intent(in) :: source(:,:)
-          type(dtp(2,:)),allocatable:: getSpreadResult3(:,:,:) 
+          type(dtp(2,:)),allocatable:: getSpreadResult3(:,:,:)
           integer :: dim,ncopies
           getSpreadResult3=spread(source,dim,ncopies)
       end function
-   
+
 end module
 
 program spreadAsFunRes01
@@ -65,7 +57,7 @@ program spreadAsFunRes01
   type(dtp(2,:)),allocatable :: dtp2(:)
   type(dtp(2,:)),allocatable :: dtp3(:,:)
   type(dtp(2,:)),allocatable :: dtp4(:,:,:)
- 
+
   dtp2=getSpreadResult1(dtp1,1,4)
 
   if(.not. allocated(dtp2))                          error stop 10_4
@@ -79,7 +71,7 @@ program spreadAsFunRes01
     if(dtp2(i)%i%kind /= 2)                          error stop 16_4
     if(lbound(dtp2(i)%c,1) /= 2)                     error stop 17_4
     if(ubound(dtp2(i)%c,1) /= 4)                     error stop 18_4
-    if(dtp2(i)%c%len /= 3)                           error stop 19_4 
+    if(dtp2(i)%c%len /= 3)                           error stop 19_4
   end do
 
 
@@ -100,11 +92,11 @@ program spreadAsFunRes01
      if(dtp3(i,1)%c%len /= 3)                         error stop 30_4
      if(dtp3(i,2)%c%len /= 3)                         error stop 31_4
      if(lbound(dtp3(i,1)%c,1) /= 2)                   error stop 32_4
-     if(lbound(dtp3(i,2)%c,1) /= 2)                   error stop 33_4 
+     if(lbound(dtp3(i,2)%c,1) /= 2)                   error stop 33_4
      if(ubound(dtp3(i,1)%c,1) /= 4)                   error stop 34_4
      if(ubound(dtp3(i,2)%c,1) /= 4)                   error stop 35_4
 
-  end do  
+  end do
 
   if(allocated(dtp3))  deallocate(dtp3)
 
@@ -129,7 +121,7 @@ program spreadAsFunRes01
      if(ubound(dtp3(1,i)%c,1) /= 4)                   error stop 50_4
      if(ubound(dtp3(2,i)%c,1) /= 4)                   error stop 51_4
 
-  end do  
+  end do
 
   if(allocated(dtp2)) deallocate(dtp2)
   if(allocated(dtp3)) deallocate(dtp3)
@@ -138,8 +130,8 @@ program spreadAsFunRes01
                            dtp(2,3)([-1,-2,-3],["-1","-2","-3"]), &
                            dtp(2,3)([4,5,6],["4","5","6"]),&
                            dtp(2,3)([-4,-5,-6],["-4","-5","-6"]) ] )
-                           
-  allocate(dtp3(2,2),source=reshape(dtp2,(/2,2/)) )  
+
+  allocate(dtp3(2,2),source=reshape(dtp2,(/2,2/)) )
 
   dtp4=getSpreadResult3(dtp3,1,5)
 
@@ -156,7 +148,7 @@ program spreadAsFunRes01
      if(any(dtp4(i,2,1)%c /= ["-1","-2","-3"]))       error stop 59_4
      if(any(dtp4(i,1,2)%c /= ["4","5","6"]))          error stop 60_4
      if(any(dtp4(i,2,2)%c /= ["-4","-5","-6"]))       error stop 61_4
-  end do  
+  end do
 
 
   if(allocated(dtp4))   deallocate(dtp4)
@@ -195,15 +187,15 @@ program spreadAsFunRes01
      if(any(dtp4(2,2,i)%c /= ["-4","-5","-6"]))       error stop 81_4
   end do
   contains
-   
+
      function getSpreadResult1(source,dim,ncopies)
-  
+
           type(dtp(2,3)),intent(in)  :: source
           integer,intent(in) :: dim,ncopies
-          type(dtp(2,source%l)),allocatable :: getSpreadResult1(:) 
-            
-          getSpreadResult1=spread(source,dim,ncopies)       
-     end function 
+          type(dtp(2,source%l)),allocatable :: getSpreadResult1(:)
+
+          getSpreadResult1=spread(source,dim,ncopies)
+     end function
 end program
 
 function getSpreadResult2(source,dim,ncopies)
@@ -213,4 +205,4 @@ function getSpreadResult2(source,dim,ncopies)
    type(dtp(2,source%l)),allocatable :: getSpreadResult2(:,:)
 
    getSpreadResult2=spread(source,dim,ncopies)
-end function  
+end function

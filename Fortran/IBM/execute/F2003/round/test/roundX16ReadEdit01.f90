@@ -1,32 +1,24 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with READ statement
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*           test round with complex(16) in read.
 !*           10.6.1.2.6. The rounding mode can be specified by a data
 !*           transfer input/output statement, an OPEN statement or an
 !*           edit descriptor.
 !* ===================================================================
 
-  program roundX16ReadEdit01 
+  program roundX16ReadEdit01
 
     implicit none
 
-    character(18) :: r_mode 
+    character(18) :: r_mode
     complex(16) rd
 
-    integer, parameter::unit_r = 2 
+    integer, parameter::unit_r = 2
 
     rd = (0.0Q0, 0.0Q0)
 
@@ -38,7 +30,7 @@
 
     inquire(unit_r, round=r_mode)
 
-    if(r_mode .ne. 'UP') error stop 1_4 
+    if(r_mode .ne. 'UP') error stop 1_4
 
     if(qreal(rd) .ne. z'3FF400355F73E1C2BC97B092CC929AFF') error stop 2_4
 
@@ -128,4 +120,4 @@
 
     close(unit_r)
 
-  end program roundX16ReadEdit01 
+  end program roundX16ReadEdit01

@@ -1,18 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArraySections/c619d1.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jul. 09, 2008
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : Constraint C619 (R617)
 !*  REFERENCE                  : Feature Number 353925
 !*
 !*  DESCRIPTION:
 !*  Tests constraint C619 (R617) in a PDT:
-!*  Array-section: if a substring range appears, the rightmost part-name shall 
+!*  Array-section: if a substring range appears, the rightmost part-name shall
 !*  be of type character.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

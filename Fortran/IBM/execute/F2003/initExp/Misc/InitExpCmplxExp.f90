@@ -1,22 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TESTOP CASE NAME             : InitExpCmplxExp.f  
+!*  TESTOP CASE NAME             : InitExpCmplxExp.f
 !*  TESTOP CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept. 07 2006
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER CmplxExpTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +20,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Complex exponentialtion 
-!* 
-!*  
+!*  Complex exponentialtion
+!*
 !*  (325913)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -36,7 +29,7 @@
 
 
 
-  PROGRAM InitExpCmplxExp 
+  PROGRAM InitExpCmplxExp
 
   LOGICAL precision_x8
   LOGICAL precision_x6
@@ -48,11 +41,11 @@
 
   COMPLEX(KIND=4)   :: Z4(128)= A**B
   COMPLEX(KIND=8)   :: Z8(128)= (-A)**C
-  COMPLEX(KIND=16)  :: Z6(128)= (-B)**(-C) 
+  COMPLEX(KIND=16)  :: Z6(128)= (-B)**(-C)
 
   COMPLEX(KIND=4)   :: RZ4(128)
   COMPLEX(KIND=8)   :: RZ8(128)
-  COMPLEX(KIND=16)  :: RZ6(128) 
+  COMPLEX(KIND=16)  :: RZ6(128)
 
   RZ4 =  A**B
   RZ8 = (-A)**C
@@ -64,7 +57,7 @@
     IF ( .NOT. precision_x3(Z6(i), RZ6(i) ) ) STOP 13
   END DO
 
-  END 
+  END
 
 
- 
+

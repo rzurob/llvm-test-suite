@@ -1,17 +1,9 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : impliedshape06f.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : February 14, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Implied-shape arrays
-!*
-!* DRIVER STANZA              : xlf2008
 !*
 !* DESCRIPTION                : Testing proper functionality of
 !*                              implied-shape arrays differing
@@ -23,7 +15,7 @@
 
       type base
         integer :: a    = 1
-        integer :: b    = 2 
+        integer :: b    = 2
       end type
 
       ! The PARAMETER statement must appear last as stated in the F2008
@@ -40,7 +32,7 @@
 
       dimension :: i4c4a(*), r4c4a(*)
       integer, parameter :: i4c4a = [ (i,i=1,3), (i,i=4,6) ]
-      real,    parameter :: r4c4a = [ (i,i=1,3), (i,i=4,6) ] 
+      real,    parameter :: r4c4a = [ (i,i=1,3), (i,i=4,6) ]
 
       dimension :: i4d4(*,*,*,*), r4d4(*,*,*,*), dp4c4 (*), dp4d4 (*,*,*,*)
       integer :: i4d4
@@ -100,7 +92,7 @@
 
       dimension :: tb4c4b (*), tb4d4b (*,*,*,*)
       type(base), parameter :: tb4c4b = [ (base(i,i),i=1,3), (base(i,i),i=4,6) ], &
-      &                        tb4d4b = reshape([(base(i,i),i=1,16)],[2,2,2,2]) 
+      &                        tb4d4b = reshape([(base(i,i),i=1,16)],[2,2,2,2])
 
 
 

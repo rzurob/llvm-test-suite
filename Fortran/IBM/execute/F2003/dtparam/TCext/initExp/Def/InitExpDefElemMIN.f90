@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemMIN.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemMIN.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  MIN 
+!*
+!*  -  MIN
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -41,7 +34,7 @@
 
 
   PROGRAM  InitExpDefElemMIN
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
 
@@ -72,7 +65,7 @@
     REAL(K5)                  :: R4(128) =(/(I, I=0,127)/)
     REAL(K6)                  :: R8(128) =(/(I, I=0,127)/)
     REAL(K7)                  :: R6(128) =(/(I, I=0,127)/)
-    CHARACTER(kind=K8,len=N1) :: Str(128) = C 
+    CHARACTER(kind=K8,len=N1) :: Str(128) = C
   END TYPE
 
   TYPE :: DT(K9,K10,K11,K12,K13,K14,K15,K16,N2)    ! (1,2,4,8,4,8,16,1,128)
@@ -85,7 +78,7 @@
     REAL(K13)                  :: R4(16)
     REAL(K14)                  :: R8(16)
     REAL(K15)                  :: R6(16)
-    CHARACTER(kind=K16,len=N2) :: Str(16)  
+    CHARACTER(kind=K16,len=N2) :: Str(16)
   END TYPE
 
   TYPE (DT0(1,2,4,8,4,8,16,1,128)), PARAMETER  :: T=DT0(1,2,4,8,4,8,16,1,128)()

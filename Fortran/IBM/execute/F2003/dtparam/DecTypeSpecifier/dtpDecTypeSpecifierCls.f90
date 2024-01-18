@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpDecTypeSpecifierCls
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 18, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  A polymorphic allocatable object may be allocated to be of any type 
-!*  with which it is type compatible. 
-!*  -- The dynamic type 
-!* 
+!*  A polymorphic allocatable object may be allocated to be of any type
+!*  with which it is type compatible.
+!*  -- The dynamic type
 !*
-!*  (ICE) 
+!*  (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,7 +45,7 @@
   CLASS(DT0), ALLOCATABLE :: T1
   CLASS(DT0(2,2)), ALLOCATABLE :: T2
   CLASS(DT1(1,1,K1=2,L1=2)), ALLOCATABLE :: T3
- 
+
   ALLOCATE(T1, SOURCE=DT0())
   SELECT  TYPE( T1)
   TYPE IS( DT0(0,*))

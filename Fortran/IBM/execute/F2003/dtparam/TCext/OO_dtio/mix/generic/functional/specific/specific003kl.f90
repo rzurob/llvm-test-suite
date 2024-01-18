@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : specific003kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from specific003 by Robert Ma)
 !*  DATE                       : 2007-08-09 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures (generic-binding)
 !*                                 - Specific Binding
@@ -124,13 +116,13 @@ program specific003kl
          write ( 1, "(DT)", iostat = stat, iomsg = msg )    g
    end select
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
-   
+
    select type ( b2 )
       type is (child(*,4)) ! tcx: (*,4)
          write ( 1, "(DT)", iostat = stat, iomsg = msg )    b2
    end select
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 2_4
-   
+
    write ( 1, "(2(DT,:,/))", iostat = stat, iomsg = msg )    c1, c2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 3_4
 
@@ -144,7 +136,7 @@ program specific003kl
          end select
    end select
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) )      error stop 4_4
-   
+
    select type ( b1 )
       type is (child(*,4)) ! tcx: (*,4)
         if ( ( b1%c /= 'jkl' ) .or. ( b1%i /= 1004 ) )  error stop 5_4

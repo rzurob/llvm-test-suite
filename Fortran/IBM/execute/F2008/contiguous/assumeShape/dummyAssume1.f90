@@ -1,26 +1,16 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dummyAssume1.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                : - Pointer has contiguous attribute
 !*
-!*  DESCRIPTION                : - Pointer has contiguous attribute 
-!*                      
 !*    Dummy argument is pointer with no CONTIGUOUS attribute
-!*    Actual argument is contiguous 
+!*    Actual argument is contiguous
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -39,13 +29,13 @@ MODULE Mod
 
       CONTAINS
 
-      SUBROUTINE Sub(Arg)           
+      SUBROUTINE Sub(Arg)
         INTEGER, TARGET, CONTIGUOUS  :: Arg(:,:)
 
         IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 11
         Arg = Arg + 1
       END SUBROUTINE Sub
-      
+
       SUBROUTINE Sub2(Arg)
         INTEGER, TARGET, CONTIGUOUS, INTENT(OUT)  :: Arg(:,:)
 
@@ -57,7 +47,7 @@ PROGRAM dummyAssume1
       USE Mod
 
       I2D = RESHAPE( SOURCE = [(I, I=1,100)], SHAPE = [2,2] )
-      ptr => I2D 
+      ptr => I2D
 
       CALL Sub(ptr)
       IF (ANY(ptr .NE. RESHAPE(SOURCE =[(I, I=2,101)], SHAPE=[2,2]) )) ERROR STOP 100

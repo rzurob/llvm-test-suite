@@ -2,23 +2,17 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f fort.*
-! %COMPOPTS: 
-! %GROUP: fxstio013.f 
+! %COMPOPTS:
+! %GROUP: fxstio013.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio013.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 17, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
@@ -29,19 +23,19 @@
 !=======================================================================
 
 !* Declare Variables.
-   
+
    implicit none
    integer id_no, ios
    logical precision_r4, precision_r6, precision_r8
    logical precision_x8, precision_x6, precision_x3
 
    integer*1 int1 /127/  , int11       !* max value for integer*1
-   integer*2 int2 /-128/ , int21       
+   integer*2 int2 /-128/ , int21
    integer*4 int4 /2147483647/ , int41 !* max value for integer*4
    integer*8 int8 /1000000000/ , int81
 
    real*4  real4 /3.402823E+38/, real41      !* Approximate absolute max
-   real*8  real8 /2.225074D-308/, real81     !* Appoximate absolute nonzero min 
+   real*8  real8 /2.225074D-308/, real81     !* Appoximate absolute nonzero min
    real*16 real16 /1.797693Q+308/, real61   !* Appoximate absolute max
 
    complex*8  complex8 /(3.4E30, 0.1E-1)/ , complex81
@@ -66,7 +60,7 @@
    write(1 , id=id_no, iostat=ios, err=200) int1, int2, int4, int8
    wait(id = id_no)
    rewind(1, iostat=ios, err=500)
-   read (1, iostat=ios, err=400) int11, int21, int41, int81 
+   read (1, iostat=ios, err=400) int11, int21, int41, int81
 
    print *, "hello"
    if ((int1 .ne. int11) .or. (int2 .ne. int21) .or. &
@@ -123,7 +117,7 @@
    open(1, access='stream', form='unformatted', asynch='yes', &
       iostat=ios, err=100, status='unknown')
 
-   write(1, id=id_no, iostat=ios, err=200) log1, log2, log4, log8 
+   write(1, id=id_no, iostat=ios, err=200) log1, log2, log4, log8
    wait(id = id_no)
    rewind(1, iostat=ios, err=500)
    read(1, iostat=ios, err=400) log11, log21, log41, log81
@@ -135,7 +129,7 @@
 !* TEST6 : byte
    open(1, access='stream', form='unformatted', asynch='yes', &
       iostat=ios, err=100, status='unknown')
-   write(1, id=id_no, iostat=ios, err=200) byte1 
+   write(1, id=id_no, iostat=ios, err=200) byte1
    wait(id = id_no)
    rewind(1, iostat=ios, err=500)
    read(1, iostat=ios, err=400) byte11

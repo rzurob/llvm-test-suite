@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefDeterm8   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefDeterm8
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 15, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Determination of Types 
+!*  SECONDARY FUNCTIONS TESTED : Determination of Types
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Determination of derived types - sequence types 
+!*  Determination of derived types - sequence types
 !*
 !*  (ICE)
 !*
@@ -38,7 +31,7 @@
   TYPE :: DT(K, L)
     INTEGER, KIND :: K
     INTEGER, LEN  :: L
-    SEQUENCE      
+    SEQUENCE
     INTEGER(K)  :: I
     REAL(K)     :: R
     COMPLEX(K)  :: Cplx
@@ -46,10 +39,10 @@
     CHARACTER(L):: C
   END TYPE
 
-  INTERFACE 
+  INTERFACE
     SUBROUTINE IFun(Arg)
       IMPORT DT
-      TYPE(DT(8, 4)) Fun 
+      TYPE(DT(8, 4)) Fun
       TYPE(DT(8, *)) Arg
     END SUBROUTINE
   END INTERFACE
@@ -61,7 +54,7 @@
   CONTAINS
     PROCEDURE, NOPASS :: Fun => ModFun
   END TYPE
-  
+
   CONTAINS
 
   FUNCTION ModFun(Proc)
@@ -81,18 +74,18 @@
       IMPORT DT
       TYPE(DT(8, 4)) Fun
       TYPE(DT(8, *)) Arg
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
 
-  PROCEDURE (IFun)          :: Proc 
+  PROCEDURE (IFun)          :: Proc
   PROCEDURE (IFun), POINTER :: ModFun
-    ModFun => Proc 
+    ModFun => Proc
   END FUNCTION
 
   END MODULE
 
-  PROGRAM dtParamTypeDefDeterm8 
-  USE M, ONLY : DT1 
+  PROGRAM dtParamTypeDefDeterm8
+  USE M, ONLY : DT1
 
   TYPE :: DT(K, L)
     INTEGER, KIND :: K
@@ -110,7 +103,7 @@
       IMPORT DT
       TYPE(DT(8, *)) Arg
       TYPE(DT(8, 4)) ExtFun
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
 
   TYPE(DT(8, 4))  :: T
@@ -141,7 +134,7 @@
   TYPE(DT(8, *)) Arg
   TYPE(DT(8, 4)) ExtFun
 
-    ExtFun = Arg 
+    ExtFun = Arg
 
-  END FUNCTION 
+  END FUNCTION
 

@@ -1,24 +1,16 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dummyArg002al
 !*
-!*  PROGRAMMER                 : David Forster (derived from dummyArg002a by Robert Ma)
 !*  DATE                       : 2007-10-03 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
-!*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
-!*                               - Try output item to be an array dummy argument of pointer/allocatable 
+!*                               - Try output item to be an array dummy argument of pointer/allocatable
 !*                               Sequential Access
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -37,7 +29,7 @@ module m1
       contains
          procedure, pass :: getC
    end type
-   
+
    interface write(unformatted)
       subroutine writeUnformatted (dtv, unit, iostat, iomsg)
          import base
@@ -45,15 +37,15 @@ module m1
          integer,  intent(in) :: unit
          integer,  intent(out) :: iostat
          character(*),  intent(inout) :: iomsg
-      end subroutine   
+      end subroutine
    end interface
-   
+
 contains
    function getC (a)
       class(base(*)), intent(in) :: a ! tcx: (*)
       character(3) :: getC
-      getC = a%c      
-   end function   
+      getC = a%c
+   end function
 
    subroutine myWrite(unit, stat, msg, a, b )
       class(base(:)), intent(in), allocatable :: a(:) ! tcx: (*)
@@ -61,19 +53,19 @@ contains
       integer, intent(in)  :: unit
       integer, intent(out) :: stat
       character(*), intent(inout) :: msg
-      
+
       if (.not. present(b) ) then
          write(unit, iostat=stat, iomsg=msg) a
       else
       	 write(unit, iostat=stat, iomsg=msg) a,b
-      end if       
+      end if
    end subroutine
 
 end module
 
 program dummyArg002al
-   use m1   
-  
+   use m1
+
    ! declaration of variables
    class(base(:)), allocatable, dimension(:) :: b1 ! tcx: (:)
    class(base(3)), pointer, dimension(:,:)   :: b2 ! tcx: (:)
@@ -82,32 +74,32 @@ program dummyArg002al
    character(200) :: msg
    character(8)  :: c1
    character(20)  :: c2
-   
+
    ! allocation of variables
    allocate ( b1(2), source = (/ base(3)('abc'), base(3)('def') /) ) ! tcx: (3) ! tcx: (3)
    allocate ( b2(1,3), source = reshape ( source = (/ base(3)('ABC'), base(3)('DEF') , base(3)('GHI') /), shape=(/1,3/)) ) ! tcx: (3) ! tcx: (3) ! tcx: (3)
-   
+
    open (unit = 1, file ='dummyArg002al.data', form='unformatted', access='sequential')
-   
+
    ! unformatted I/O operations
-   
+
    call myWrite (1, stat, msg, b1 )                !<- write 'abcZdefZ' to file
    call myWrite (1, stat, msg, b1, b2 )            !<- write 'abcZdefZABCZDEFZGHIZ' to file
-   
+
    rewind 1
-   
+
    read (1, iostat=stat, iomsg=msg )              c1
    read (1, iostat=stat, iomsg=msg )              c2
-   
+
    ! check if the values are set correctly
 
    if ( c1 /= 'abcZdefZ' )                          error stop 101_4
    if ( c2 /= 'abcZdefZABCZDEFZGHIZ' )              error stop 2_4
-   
+
    ! close the file appropriately
-   
+
    close ( 1, status ='delete' )
-   
+
 end program
 
 subroutine writeUnformatted (dtv, unit, iostat, iomsg)
@@ -120,7 +112,7 @@ use m1, only: base
     write (unit, iostat=iostat, iomsg=iomsg ) dtv%getC()
     ! add a mark at the end of record, so we know DTIO is used.
     write (unit, iostat=iostat, iomsg=iomsg ) "Z"
-    
+
 end subroutine
 
 

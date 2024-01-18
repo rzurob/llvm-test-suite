@@ -1,26 +1,15 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX*/MIN* with automatic array
 !* ===================================================================
 
-program mxminMisc13 
+program mxminMisc13
 
    character*2 a(10)
 
@@ -35,7 +24,7 @@ program mxminMisc13
             integer arg, v(2)
             character*6 x(1:arg, 2:6)
             x = "abcdeg"
-            x(8, 6) = 'zzzzzz' 
+            x(8, 6) = 'zzzzzz'
             if(maxval(x) .ne. 'zzzzzz') then
                 error stop 2_4
             endif
@@ -45,5 +34,5 @@ program mxminMisc13
             endif
         end subroutine
 
-end program mxminMisc13 
+end program mxminMisc13
 

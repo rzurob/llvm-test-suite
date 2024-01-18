@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitComp3 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitComp3
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 26, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Default initialization for component 
+!*  SECONDARY FUNCTIONS TESTED : Default initialization for component
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  Initialized by type declaration statement 
-!*  
+!*  Initialized by type declaration statement
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -54,7 +46,7 @@
       LOGICAL(K)   :: LL(L)=.TRUE.
       TYPE(DT1(k0,l0,K,L))  :: T(K)
     CONTAINS
-      PROCEDURE, PASS :: IntFun 
+      PROCEDURE, PASS :: IntFun
     END TYPE
 
   CONTAINS
@@ -68,14 +60,14 @@
   END MODULE
 
 
-  PROGRAM dtParamInitComp3 
+  PROGRAM dtParamInitComp3
   USE M
   implicit none
 
   TYPE(DT1(K=4, L=1))  :: T1=DT1(K=4, L=1)()
   TYPE(DT1(K=4, L=1))  :: T2=DT1(K=4, L=1)()
-  TYPE(DT1(K=4, L=1))  :: T3=DT1(K=4, L=1, K0=0)() 
-  TYPE(DT1(K0=0, L=0)) :: T4=DT1(K=0, L0=0)() 
+  TYPE(DT1(K=4, L=1))  :: T3=DT1(K=4, L=1, K0=0)()
+  TYPE(DT1(K0=0, L=0)) :: T4=DT1(K=0, L0=0)()
 
   TYPE(DT2(1,1,4,1)) :: T  =  DT2(1,1,4,1)&
              (I=-4, R=-4, Z=(-4,4), C="??????????", &
@@ -119,17 +111,17 @@
   IF ( T1%L0 .NE. 0 )                 STOP 12
   IF ( T1%K  .NE. 4 )                 STOP 13
   IF ( T1%L  .NE. 1 )                 STOP 14
- 
+
   IF ( T3%K0 .NE. 0 )                 STOP 21
   IF ( T3%L0 .NE. 0 )                 STOP 22
   IF ( T3%K  .NE. 4 )                 STOP 23
   IF ( T3%L  .NE. 1 )                 STOP 24
- 
+
   IF ( T4%K0 .NE. 0 )                 STOP 31
   IF ( T4%L0 .NE. 0 )                 STOP 32
   IF ( T4%K  .NE. 0 )                 STOP 33
   IF ( T4%L  .NE. 0 )                 STOP 34
- 
+
 
   END
 

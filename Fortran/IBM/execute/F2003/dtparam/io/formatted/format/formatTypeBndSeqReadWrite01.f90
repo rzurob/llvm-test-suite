@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatTypeBndSeqReadWrite01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatTypeBndSeqReadWrite01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 9 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test WRITE & READ statement
@@ -43,7 +35,7 @@ module m
      logical       :: log2(l1:l2)
      contains
         procedure,pass :: writeChild
-        procedure,pass :: readChild 
+        procedure,pass :: readChild
   end type
 
   contains
@@ -63,12 +55,12 @@ module m
            class default
               stop 12
         end select
- 
+
      end subroutine
 
      subroutine writeBase(this)
         class(base(*)),intent(in) :: this
-        
+
         select type(this)
            type is(base(*))
               write(10,'(3a2/2l4)') this
@@ -91,7 +83,7 @@ module m
            class default
               stop 16
         end select
-        
+
      end subroutine
      subroutine readBase(this)
         class(base(*)),intent(inout) :: this
@@ -102,7 +94,7 @@ module m
            class default
               stop 17
         end select
- 
+
      end subroutine
 
 end module
@@ -118,7 +110,7 @@ program formatTypeBndSeqReadWrite01
 
   allocate(child(2,3,4) :: base1(-3:-2))
 
-  select type(x=>base1) 
+  select type(x=>base1)
      type is(child(*,*,*))
             x(-3)%c1=["ab","cd","ef"]
             x(-2)%c1=["12","34","56"]
@@ -139,18 +131,18 @@ program formatTypeBndSeqReadWrite01
      print *,"fail to open the file"
      print *,"iomsg=",msg
      print *,"iostat=",ios
-     stop 9 
+     stop 9
   else
-     
+
      select type(base1)
         type is(child(*,*,*))
 
           call base1(-3)%writeChild(COMP)
-          call base1(-2)%writeChild(DT) 
+          call base1(-2)%writeChild(DT)
         class default
            stop 11
      end select
-  end if 
+  end if
 
   rewind 10
 
@@ -177,7 +169,7 @@ program formatTypeBndSeqReadWrite01
       class default
         stop 18
   end select
-  
+
   close(10)
- 
+
 end program

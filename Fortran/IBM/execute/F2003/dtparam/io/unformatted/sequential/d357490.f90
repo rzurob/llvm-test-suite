@@ -1,20 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : d357490
-!*  TEST CASE TITLE            : Reduced Code for Defect:  d357490
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : October 15, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  ABSTRACT                   : DTPARAM: ASTI: ICE: IO: Unformatted WRITE
 !*                               of First Element of Array Dummy Argument
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

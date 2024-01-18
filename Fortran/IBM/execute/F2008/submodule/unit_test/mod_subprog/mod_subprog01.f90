@@ -1,5 +1,5 @@
-!In module procedure interface body, the type parameter, bounds of one argument 
-!  may depend on another dummy argument. That dependency should be available in 
+!In module procedure interface body, the type parameter, bounds of one argument
+!  may depend on another dummy argument. That dependency should be available in
 !  the corresponding separate module subprogram.
 
 module mmm
@@ -13,7 +13,7 @@ module nnn
   interface
     module type(base) function foo(arg1, arg2)
       integer :: yyy = 5
-      integer, intent(in) :: arg1 
+      integer, intent(in) :: arg1
       integer, intent(in) :: arg2(arg1)
     end
   end interface
@@ -24,7 +24,7 @@ contains
   module procedure foo
     integer :: yyy = 6
     print*, arg1
-    print*, ubound(arg2) !! should be the value of arg1 
+    print*, ubound(arg2) !! should be the value of arg1
     foo = base()
     print*, foo
     foo%i = 5
@@ -45,5 +45,4 @@ program mod_subprog
   b1 = foo(j, i)
   print*, b1
 end
- 
 

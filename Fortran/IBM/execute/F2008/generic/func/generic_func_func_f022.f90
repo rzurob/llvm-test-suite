@@ -1,21 +1,13 @@
-!######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/generic/func/generic_func_func_f022.f
 !*  TYPE                       : Functional test
 !*  FEATURE                    : #917301 F2008: Generic resolution extensions
 !*  RTC Master Story           : 17301: F2008: Generic resolution extensions (master story)
 !*                               https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/17301
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 29 June 2012
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               :
 !*
@@ -104,7 +96,7 @@ contains
       implicit none
          integer (KIND=4), DIMENSION(3) :: func_rank1
          integer :: x
-         
+
          print *, "       inside func_rank1()"
          func_rank1 = x*4 -5
       end function

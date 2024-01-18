@@ -1,14 +1,9 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: $TR_SRC/run.sh fxbind_c04eeb  cxbind_c03eeb
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -18,31 +13,23 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c04eeb.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran Entry in function called from C
 !*                              - interop functions contained in Module.
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !*   - Test: BINC(C) attribute with  different intrinsic data type,
 !*           real*4,real*8,real*16.
-!*           
-!*   - The interoperable  procedure itself is  implemented using Fortran 
-!*     function Entry Statement.  
+!*
+!*   - The interoperable  procedure itself is  implemented using Fortran
+!*     function Entry Statement.
 !*   - The interoperabl Fortran procedure  has an explicit interface and
 !*     is declared with the BIND attribute.
 !*   - passing scalar arguments by REFERENCE and by VALUE
@@ -50,7 +37,7 @@
 !*     entry point  have bind(c) attribute.
 !*   - main written in C, C  calls FORTRAN functions.
 !*
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. C program call the Fortran function has a primary entry
 !*            point and an alternate entry point.
 !*          2. Assertion: Check the return value  in C

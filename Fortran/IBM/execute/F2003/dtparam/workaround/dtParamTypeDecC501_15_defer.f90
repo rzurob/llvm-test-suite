@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_15
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 07, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
-!*  -- Inquiry on entities defined previously 
-!*     
-!*    
-!*   
+!*  -- Inquiry on entities defined previously
+!*
 !*   (340498)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -47,17 +38,17 @@
 
   TYPE :: DT(K,K1,K2,K4,K8,L)
     INTEGER,     LEN :: L=0
-    INTEGER,    KIND :: K = 4 
-    INTEGER(8), KIND :: K1 = 1 
-    INTEGER(4), KIND :: K2 = 2 
-    INTEGER(2), KIND :: K4 = 4 
-    INTEGER(1), KIND :: K8 = 8 
+    INTEGER,    KIND :: K = 4
+    INTEGER(8), KIND :: K1 = 1
+    INTEGER(4), KIND :: K2 = 2
+    INTEGER(2), KIND :: K4 = 4
+    INTEGER(1), KIND :: K8 = 8
     CHARACTER(LEN=L) :: C(L)
   END TYPE
 
   TYPE(DT(K=4,K1=8,K2=4,K4=2,K8=1, L=L)) :: T(1:L)
-  TYPE(DT(K=T%K, K1=T%K1, K2=T%K2, K4=T%K4, K8=T%K8,  L=T%L))  :: T1(1:UBOUND(T,1))  
-  TYPE(DT(K=T%K, K1=T1%K1,K2=T1%K2,K4=T1%K4,K8=T1%K8, L=T1%L)) :: T2(1:UBOUND(T1,1)), T3(UBOUND(T2,1))  
+  TYPE(DT(K=T%K, K1=T%K1, K2=T%K2, K4=T%K4, K8=T%K8,  L=T%L))  :: T1(1:UBOUND(T,1))
+  TYPE(DT(K=T%K, K1=T1%K1,K2=T1%K2,K4=T1%K4,K8=T1%K8, L=T1%L)) :: T2(1:UBOUND(T1,1)), T3(UBOUND(T2,1))
 
 
   IF (  T1%K          .NE.  4  )            STOP 20
@@ -86,7 +77,7 @@
 
   END MODULE
 
-  
+
   PROGRAM dtParamTypeDecC501_15
   USE M
 

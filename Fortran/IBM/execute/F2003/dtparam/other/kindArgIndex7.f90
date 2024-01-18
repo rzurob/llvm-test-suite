@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgIndex7
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : ICHAR 
+!*  SECONDARY FUNCTIONS TESTED : ICHAR
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  
 !*  Case (ii): If BACK is present with the value true, the result is the maximum value of
 !*  I less than or equal to LEN (STRING) . LEN (SUBSTRING) + 1 such that
-!*  STRING (I : I + LEN (SUBSTRING) . 1) = SUBSTRING or 
+!*  STRING (I : I + LEN (SUBSTRING) . 1) = SUBSTRING or
 !*  zero if there is no such value.
 !*  Zero is returned if LEN (STRING) < LEN (SUBSTRING) and
-!*  LEN (STRING) + 1 is returned if LEN (SUBSTRING) = 0. 
-!*    
-!*  () 
+!*  LEN (STRING) + 1 is returned if LEN (SUBSTRING) = 0.
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

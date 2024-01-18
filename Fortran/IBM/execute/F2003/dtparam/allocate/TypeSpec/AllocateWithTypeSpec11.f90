@@ -1,38 +1,30 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocateWithTypeSpec11 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : January 20, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !*  SECONDARY FUNCTIONS TESTED :
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* allocate-stmt is 
+!* allocate-stmt is
 !*   ALLOCATE ( [ type-spec :: ] allocation-list [, alloc-opt-list ] )
 !*
 !* C626 (R623) A type-param-value in a type-spec shall be an asterisk if and only if
 !* each allocate-object is a dummy argument for which the corresponding type parameter is assumed.
 !*
-!* Defect 361720 
+!* Defect 361720
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithTypeSpec11
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
@@ -53,7 +45,7 @@ PROGRAM AllocateWithTypeSpec11
       INTEGER :: I, J
 
       CLASS(Base(knd1,len1)), POINTER :: b1
-      CLASS(Base(knd1,len2)), POINTER :: b2  
+      CLASS(Base(knd1,len2)), POINTER :: b2
 
       CALL allocate_base(b1, len1)
 
@@ -114,30 +106,30 @@ PROGRAM AllocateWithTypeSpec11
       end subroutine
 
       SUBROUTINE allocate_base(Arg, l)
-      CLASS(Base(knd1,*)), POINTER  :: Arg 
+      CLASS(Base(knd1,*)), POINTER  :: Arg
       integer, intent(in) :: l
 
-      ALLOCATE(Base(knd1,*) :: Arg)        
+      ALLOCATE(Base(knd1,*) :: Arg)
       IF ( Arg%l1 .NE. l) STOP 20
 
-      Arg%my_arr = (/(i, i = 1, Arg%l1)/) 
+      Arg%my_arr = (/(i, i = 1, Arg%l1)/)
 
       END SUBROUTINE allocate_base
 
       RECURSIVE SUBROUTINE allocate_child(Arg, depth)
-      CLASS(Base(knd1,*)), POINTER :: Arg    
+      CLASS(Base(knd1,*)), POINTER :: Arg
 
       integer, intent(in) :: depth
 
       if (depth <= 0) stop 25
 
-      ALLOCATE(Child(knd1,len2,knd1,len2) :: Arg)        
+      ALLOCATE(Child(knd1,len2,knd1,len2) :: Arg)
 
       SELECT TYPE ( Arg )
         CLASS IS (Child(knd1,*,knd1,*))
-            IF ( Arg%l1 .NE. len2) STOP 21 
-            IF ( Arg%l2 .NE. len2) STOP 22 
-            Arg%my_arr = (/(i, i = 1, Arg%l1)/) 
+            IF ( Arg%l1 .NE. len2) STOP 21
+            IF ( Arg%l2 .NE. len2) STOP 22
+            Arg%my_arr = (/(i, i = 1, Arg%l1)/)
 
             if (depth > 1) then
                 call allocate_base(Arg%b_cmp,len2)

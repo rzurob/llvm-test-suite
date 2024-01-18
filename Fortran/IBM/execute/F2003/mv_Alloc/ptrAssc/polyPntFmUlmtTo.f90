@@ -1,26 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : polyPntFmUlmtTo.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM is component of poly type base 
+!*  DESCRIPTION                : FROM is component of poly type base
 !*                               TO is of class(*), component of DT
-!*                               pointer is of poly type base 
+!*                               pointer is of poly type base
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -31,10 +19,10 @@
 
 module m
    type base
-       class(*), allocatable :: l1 
+       class(*), allocatable :: l1
    end type
 
-   type, extends(base) :: child 
+   type, extends(base) :: child
        class(base), allocatable :: l2
     end type
 
@@ -46,7 +34,7 @@ use m
 
     class(base), pointer :: p
 
-    type(base)  B 
+    type(base)  B
 
     B = base ( 'ABC-XYZ' )
 
@@ -62,7 +50,7 @@ use m
             select type ( y  => x%l1 )
                 type is (character(*))
                     print *, y
-            end select 
-    end select 
+            end select
+    end select
 
 end

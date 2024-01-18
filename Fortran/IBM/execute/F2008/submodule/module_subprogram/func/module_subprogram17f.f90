@@ -1,34 +1,27 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : module_subprogram17f
-!*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : December 20, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*  based on enum/func/fxenum0009.f
 !*
 !*  Use enumerators in a submodule defined in host scope
-!*  
+!*
 !*  Secondary tests:
 !*  - bind(c) used in a module function
 !*  - local helper method defined in the submodule
 !*  - local variable defined in submodule and verified
-!*  
+!*
 !*  Verify that the results match the values of the original test case
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -62,8 +55,8 @@ contains
          if (.not. precision_R4(t, 120.0)) error stop 1
 
    end subroutine internal_routine
-   
-end module m    
+
+end module m
 
 ! external procedure
 subroutine external_routine
@@ -111,7 +104,7 @@ contains
          error stop 4
       end if
 
-   end 
+   end
 
    ! helper method, local to the submodule
    subroutine inner_routine

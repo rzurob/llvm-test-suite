@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpPtrAssignSelectTypeExprDeferred
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-12-01
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment without Lower Bounds Specification or Remap
 !*
@@ -16,18 +11,16 @@
 !*
 !*  REFERENCE                  : Feature Number 360669
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
 !*  Pass a polymorphic IN parameter to a subroutine and according to its type,
 !*  determined via SELECT TYPE, modify the value of another parameter.
-!*  
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -92,7 +85,7 @@ program dtpPtrAssignSelectTypeExprDeferred
   b4p => b4
   b5p => b5
   b6p => b6
-  
+
   vp => v1
   call testAssign(vp,b1p,b2p,b3p,b4p,b5p,b6p)
   vp => v2

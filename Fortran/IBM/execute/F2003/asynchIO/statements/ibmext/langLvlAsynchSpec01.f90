@@ -1,20 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : langLvlAsynchSpec01 - IBM Extensions with
 !*                               Language Level Options
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April 11, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : -qlanglvl=[extended|2003pure|2003std] Option
 !*  SECONDARY FUNCTIONS TESTED : ASYNCH= Specifier in the:  OPEN(), and
 !*                               INQUIRE() Statements
 !*
-!*  DRIVER STANZA              : langLvlAsynchSpec01e:  xlf2003
 !*                               langLvlAsynchSpec01p:  xlf95
 !*                               langLvlAsynchSpec01s:  xlf95
 !*  REQUIRED COMPILER OPTIONS  : langLvlAsynchSpec01e:  -qlanglvl=extended
@@ -28,8 +22,6 @@
 !*  DESCRIPTION                :
 !*  Code which uses the IBM Extension(s) noted below.
 !*
-!*  From the XL Fortran Language Reference:
-!*
 !*  OPEN
 !*
 !*    Purpose
@@ -39,11 +31,11 @@
 !*      of a connection between an external file and a unit.
 !*
 !*      Syntax
-!*         OPEN ( open_list )   
+!*         OPEN ( open_list )
 !*
 !*         ...
 !*
-!*         ----------    IBM  Extension    ---------- 
+!*         ----------    IBM  Extension    ----------
 !*         ASYNCH= char_expr
 !*           is an asynchronous I/O specifier that indicates whether an
 !*            explicitly connected unit is to be used for asynchronous I/O.
@@ -61,7 +53,7 @@
 !*
 !*         ...
 !*
-!*         ----------    IBM  Extension    ---------- 
+!*         ----------    IBM  Extension    ----------
 !*         ASYNCH= char_variable
 !*           indicates whether the unit is connected for asynchronous access.
 !*         ---------- End of IBM Extension ----------

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  UserDefOpDer.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  UserDefOpDer.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : UserDefOpDer 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : UserDefOpDer
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -52,7 +46,7 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -71,18 +65,18 @@
 
   END MODULE
 
-  PROGRAM UserDefOpDer 
+  PROGRAM UserDefOpDer
   USE M
- 
+
   INTERFACE OPERATOR ( .OP. )
     FUNCTION MyOp (Arg1, Arg2)
       IMPORT Base, Child
       TYPE(Base),  INTENT(IN) :: Arg1
-      TYPE(Child), INTENT(IN) :: Arg2 
-      TYPE(Child)             :: MyOp 
-    END FUNCTION 
+      TYPE(Child), INTENT(IN) :: Arg2
+      TYPE(Child)             :: MyOp
+    END FUNCTION
   END INTERFACE OPERATOR ( .OP. )
- 
+
   ASSOCIATE ( As => Base() .OP. Child() )
     IF( As%BaseId       .NE. 2 ) STOP 46
     IF( As%Base%GetId() .NE. 2 ) STOP 47
@@ -90,7 +84,7 @@
     IF( As%ChildId      .NE. 3 ) STOP 49
   END ASSOCIATE
 
-  END 
+  END
 
   FUNCTION MyOp (Arg1, Arg2)
   USE M

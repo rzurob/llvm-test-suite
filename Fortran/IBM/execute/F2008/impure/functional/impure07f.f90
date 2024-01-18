@@ -1,16 +1,13 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure07f
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
-!*  
+!*
 !*  DESCRIPTION
 !*
-!*  checks if an IMPURE elemental procedure works with a STOP statement 
+!*  checks if an IMPURE elemental procedure works with a STOP statement
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -34,13 +31,13 @@ CONTAINS
 
 INTEGER FUNCTION func1(z)
     INTEGER :: z
-    
+
     func1 = func2(z)
   END FUNCTION func1
 
    INTEGER  FUNCTION func2(y)
    INTEGER :: y
-    
+
     func2 = final(y)
  END FUNCTION func2
 
@@ -48,7 +45,7 @@ INTEGER FUNCTION func1(z)
     INTEGER, INTENT(INOUT) :: a
     INTEGER :: final
     INTEGER :: sum
-    PRINT* ,"a  = ",a   
+    PRINT* ,"a  = ",a
     sum = 2
     STOP
     final = sum+a

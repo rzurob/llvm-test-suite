@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrArrSec.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrArrSec.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 15, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,38 +23,36 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  the array section
 !*
-!*  
 !*  (323291)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM dataPtrArrSec 
+  PROGRAM dataPtrArrSec
   IMPLICIT NONE
 
   TYPE :: DT(N1,K1)    ! (20,4)
     INTEGER, KIND :: K1
     INTEGER, LEN  :: N1
-    INTEGER(K1)   :: ID 
+    INTEGER(K1)   :: ID
   END TYPE
 
   CLASS(DT(:,4)), POINTER :: Arr(:, :), Arr1(:)
   CLASS(DT(:,4)), POINTER :: Ptr(:, :)
   INTEGER            :: I, J, N, K
- 
-  N = 100 
+
+  N = 100
   ALLOCATE(Arr(N,N), SOURCE=DT(20,4)(-1))
   ALLOCATE(Arr1(N*N), SOURCE=DT(20,4)(-2))
 
   Arr%ID  = RESHAPE((/(i, i=1, 10000)/), (/100, 100/))
   Arr1%ID = (/(i, i=1, 10000)/)
 
-  DO I =1, N 
-  DO J =I, N 
+  DO I =1, N
+  DO J =I, N
 
     Ptr => Arr
     Ptr(I:, J:) => Ptr(N:I:-1, N:J:-1)

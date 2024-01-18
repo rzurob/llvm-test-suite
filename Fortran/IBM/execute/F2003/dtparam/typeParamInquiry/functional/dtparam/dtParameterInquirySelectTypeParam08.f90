@@ -1,42 +1,34 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam08.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam08.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 26 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 26 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
-!* 3. UNLIMITED POLYMORPHIC 
+!* 3. UNLIMITED POLYMORPHIC
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
        type base(l1)
           integer(2),len :: l1
        end type
-       
+
        type,extends(base) :: child(l2)
           integer(8),len :: l2
        end type
 
 end module
 
-  program dtParameterInquirySelectTypeParam08 
+  program dtParameterInquirySelectTypeParam08
   use m
   implicit none
 
@@ -54,7 +46,7 @@ end module
   select type(x=>gettype(p1))
       type is(integer(kind(8)))
         print *,"function return type is integer"
-        print *,x%kind,kind(x)       
+        print *,x%kind,kind(x)
       class default
         error stop 101_4
   end select
@@ -67,7 +59,7 @@ end module
         print *,p1%l1,p1%l1%kind,kind(p1%l1)
      class default
         error stop 102_4
-  end select   
+  end select
 
   select type(x=>gettype(p1))
      type is(base(*))
@@ -77,7 +69,7 @@ end module
         error stop 103_4
   end select
 
-  deallocate(p1) 
+  deallocate(p1)
   allocate(child(selected_int_kind(3),int(-4.4)) :: p1)
 
   select type(p1)
@@ -98,7 +90,7 @@ end module
        error stop 105_4
   end select
 
-  
+
   contains
     class(*) function  gettype(t)
        class(*),intent(in) :: t
@@ -108,7 +100,7 @@ end module
        select type(t)
           type is(integer(kind(8)))
             print *,"it is integer"
-            print *,t%kind,kind(t) 
+            print *,t%kind,kind(t)
             allocate(gettype,source=t)
           type is(base(*))
             print *,"it is base"
@@ -123,6 +115,6 @@ end module
            error stop 106_4
        end select
        print *,"exit gettype"
-    end function  
+    end function
 end
 

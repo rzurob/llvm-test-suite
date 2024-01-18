@@ -1,21 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Adrian Green
 !*  DATE                       : July 27, 2008
 !*  ORIGIN                     : XLF Compiler Test,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !       Transpose Intrinsic function with derived type parameters.
-!*  DESCRIPTION                : Description: uses external functions for matrix multiplication, 
+!*  DESCRIPTION                : Description: uses external functions for matrix multiplication,
 !*                               with an interfaced operator.
-!*
-!*
-!*
 !*
 module m1
 
@@ -23,9 +14,9 @@ module m1
 
 type adrow(k)
   integer, kind :: k
-  integer(k) :: element 
+  integer(k) :: element
 end type adrow
- 
+
 type admatrix (k,l1)
   integer, kind :: k
   integer, len :: l1
@@ -36,16 +27,16 @@ end type admatrix
 
 	interface operator(*)
 		module procedure matrix_scalarmulti, matrix_multi
-	end interface 	
-	
+	end interface
+
 	interface operator(+)
 		module procedure matrix_addition
 	end interface
-	
+
 	! interface transposed
 		! module procedure transposer1, transposer2
 	! end interface
-	
+
 contains
 
 !subroutine to check equality of matrices
@@ -60,7 +51,7 @@ contains
 			do j=1, ubound(matrixA,1)
 				do k=1,matrixA%l1
 					if (matrixA(j,i)%row(k)%element /= matrixB(j,i)%row(k)%element) then
-						print *, "error occured in number", err_check, "call to equality_check" 
+						print *, "error occured in number", err_check, "call to equality_check"
 						STOP 2
 					end if
 				end do
@@ -68,12 +59,12 @@ contains
 		end do
 	end subroutine equality_check
 
-!function to add matrices	
+!function to add matrices
 	function matrix_addition(matrixA, matrixB) result (X)
 		type(admatrix(4,l1=*)), intent(in) :: matrixA(:,:)
 		type(admatrix(4,l1=*)), intent(in) :: matrixB(:,:)
 		type(admatrix(4,l1=matrixA%l1)) :: X(ubound(matrixA,1), ubound(matrixA,2))
-		
+
 		do i=1, ubound(matrixA,2)
 			do j=1,ubound(matrixA,1)
 				do k=1,matrixA%l1
@@ -81,14 +72,14 @@ contains
 				end do
 			end do
 		end do
-	end function matrix_addition	
+	end function matrix_addition
 
-!function to multiply matrices	
+!function to multiply matrices
 	function matrix_multi(matrixA, matrixB) result(X)
 		type(admatrix(4,l1=*)), intent(in) :: matrixA(:,:)
 		type(admatrix(4,l1=*)), intent(in) :: matrixB(:,:)
 		type(admatrix(4,l1=matrixA%l1)) :: X(ubound(matrixA,1),ubound(matrixB,2))
-			
+
 		do i=1, ubound(matrixB,2)
 			do j=1,ubound(matrixA,1)
 				do m=1,matrixA%l1
@@ -101,7 +92,7 @@ contains
 						X(j,i)%row(m)%element = X(j,i)%row(m)%element + matrixA(j,k)%row(m)%element*matrixB(k,i)%row(m)%element
 					end do
 				end do
-			end do 
+			end do
 		end do
   	end function matrix_multi
 
@@ -110,26 +101,26 @@ contains
 		type(admatrix(4,l1=*)), intent(in) :: matrixA(:,:)
 		integer, intent(in) :: constant
 		type(admatrix(4,l1=matrixA%l1)) :: X(ubound(matrixA,1), ubound(matrixA,2))
-		
+
 		do i = 1, ubound(matrixA,2)
 			do j = 1, ubound(matrixA,1)
 				do k=1,matrixA%l1
 					X(j,i)%row(k)%element = constant * matrixA(j,i)%row(k)%element
-				end do	
+				end do
 			end do
 		end do
 	end function matrix_scalarmulti
 
-!function to perform the transpose intrinsic function 
+!function to perform the transpose intrinsic function
 	function transposer(matrixA,length) result(X)
 		type(admatrix(4,l1=length)), intent(in)::matrixA(:,:)
 		type(admatrix(4,l1=length)) :: X(ubound(matrixA,2), ubound(matrixA,1))
 		X = transpose(matrixA)
-	end function transposer	
-	
+	end function transposer
+
 end module m1
 
-program a	
+program a
 
 !Test transpose primarily through mathematical properties
 
@@ -153,7 +144,7 @@ allocate(admatrix(4,length)::add1(20,10), add2(20,10), mult1(10,10), mult2(10,10
 		do j = 1,ubound(matrix1,2)
 			do i=1,matrix1%l1
 				matrix1(k,j)%row(i)%element = num
-			end do 
+			end do
 			num = num + 1
 		end do
 	end do
@@ -166,20 +157,20 @@ allocate(admatrix(4,length)::add1(20,10), add2(20,10), mult1(10,10), mult2(10,10
 			num = num + 2
 		end do
 	end do
-	
+
 	!! Att = A
 	!call equality_check(matrix1, transpose(transpose(matrix1)))
 	matrix1t = transposer(matrix1,length)
 	matrix2 = transposer(matrix1t,length)
 	call equality_check(matrix1, matrix2)
-	
+
 	!!At + Bt =(A+B)t
 	matrix1t = transposer(matrix1,length)
 	matrix2t = transposer(matrix2,length)
 	add1 = transposer( matrix1 + matrix2, length)
 	add2 = matrix1t + matrix2t
 	call equality_check(add1, add2)
-	
+
 	!!(AB)t = BtAt
 	matrix1t = transposer(matrix1,length)
 	matrix2t = transposer(matrix2,length)
@@ -187,12 +178,12 @@ allocate(admatrix(4,length)::add1(20,10), add2(20,10), mult1(10,10), mult2(10,10
 	mult2=matrix2*matrix1t !BtAt
 	mult1t = transposer(mult1,length) !(AB)t
 	call equality_check(mult2, mult1t)
-	
+
 	!!(cAt) = cAt
 	constant = 10
 	matrix1t = transposer(matrix1,length)
 	matrix3t = matrix1t*constant
 	matrix2t = transposer(matrix1*constant,length)
 	call equality_check(matrix2t, matrix3t)
-	
+
 end program a

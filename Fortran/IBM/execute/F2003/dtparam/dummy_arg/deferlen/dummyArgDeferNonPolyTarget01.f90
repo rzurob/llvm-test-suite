@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPolyTarget01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPolyTarget01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 7 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. If the dummy argument has the TARGET attribute, does not have the VALUE attribute, and is either a scalar or an assumed-shape array, and the corresponding actual argument has the TARGET attribute but is not an array section with a vector subscript then
@@ -32,11 +24,11 @@ module m
      integer(k1)  :: int1(l1)
    end type
 
-   type contain(k2,l2) 
+   type contain(k2,l2)
      integer,kind     :: k2
      integer(8),len   :: l2
      type(dtp(k2,:)),pointer     :: dtp1=>null()
-   end type 
+   end type
 
 end module
 
@@ -45,7 +37,7 @@ program dummyArgDeferNonPolyTarget01
   implicit none
 
   type(dtp(2,:)),target,allocatable      :: dtar1
-  
+
   type(contain(2,:)),target,allocatable  :: contain1
   type(contain(2,:)),pointer             :: pcontain1=>null()
 
@@ -86,12 +78,12 @@ program dummyArgDeferNonPolyTarget01
 
   if(pcontain1%dtp1%l1 /= 3)                             error stop 41_4
   if(any(pcontain1%dtp1%int1 /= [7,8,9]))                error stop 42_4
- 
+
   contains
 
      subroutine associate1(arg)
         type(contain(2,:)),target,allocatable :: arg
- 
+
         if(.not. associated(pcontain1,arg))              error stop 10_4
         if(arg%l2 /= 3)                                  error stop 11_4
         if(.not. associated(arg%dtp1,dtar1))             error stop 12_4
@@ -99,9 +91,9 @@ program dummyArgDeferNonPolyTarget01
         if(any(arg%dtp1%int1 /= [1,2,3]))                error stop 14_4
 
         arg%dtp1%int1=[-1,-2,-3]
-         
+
      end subroutine
-   
+
      subroutine associate2(arg)
         type(contain(2,:)),target,allocatable :: arg(:)
 
@@ -110,14 +102,14 @@ program dummyArgDeferNonPolyTarget01
         if(lbound(arg,1) /= 1)                           error stop 22_4
         if(ubound(arg,1) /= 2)                           error stop 23_4
         if(.not. associated(arg(1)%dtp1,dtar1))          error stop 24_4
-        if(associated(arg(2)%dtp1))                      error stop 25_4 
+        if(associated(arg(2)%dtp1))                      error stop 25_4
         if(arg(1)%dtp1%l1 /= 3)                          error stop 26_4
         if(any(arg(1)%dtp1%int1 /= [-1,-2,-3]))          error stop 27_4
 
         arg(1)%dtp1%int1=[4,5,6]
         allocate(arg(2)%dtp1,source=dtp(2,3)([-4,-5,-6]) )
 
-     end subroutine   
+     end subroutine
 
      subroutine associate3(arg)
         type(dtp(2,:)),target,allocatable :: arg

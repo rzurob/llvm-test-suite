@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass053.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass053.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -55,7 +43,7 @@
 !*  CONDITIONS TESTED          : Listed below.
 !*
 !*  DESCRIPTION                : Test: NESTED ASSOCIATE
-!*                                     associat result with expressions and 
+!*                                     associat result with expressions and
 !*                                     with real, real*4, real*8, real*16
 !*                                     double precision data types.
 !*
@@ -107,7 +95,7 @@
                assoc3: associate ( arg8 => a8 )
                  assoc4: associate ( arg16 => a16 )
                    assoc5: associate ( arg_1 => aa )
-                     arg_1 = arg_1 + (bb + 1_8)*10_8  
+                     arg_1 = arg_1 + (bb + 1_8)*10_8
                        if (.not.precision_r8(arg_1,cc)) then
                        error stop 6
                        endif

@@ -1,40 +1,34 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fort.* 
-! %COMPOPTS: 
+! %PRECMD: rm -f fort.*
+! %COMPOPTS:
 ! %GROUP: fxstio303.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio303.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 22, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
 !*
 !*  Description                : Test size=specifer & stream=specifer
-!*                               in inquire statment with a file 
+!*                               in inquire statment with a file
 !*                               connected for direct/sequential access
 !*                               I/O
 !*
 !=======================================================================
 
 !* Declare and initialize variables.
-  
+
    integer ios
    integer position /0/, fsize(3) /3*0/
-   integer number /0/, iol /0/ 
+   integer number /0/, iol /0/
    integer ivar1 /2000/
 
    real rarr1(3), rarr2(3)
@@ -66,7 +60,7 @@
    inquire( iolength=iol ) ivar1
    write(1, num=number, err=200) ivar1
    if ( number .ne. iol )   error stop 11
-   
+
    inquire(1, access=acc, size=fsize(1), stream=str, iostat=ios, err=200)
 
    if ( acc .ne. "STREAM" )    error stop 12
@@ -87,7 +81,7 @@
    open(1, form='unformatted', iostat=ios, err=100)
 
    inquire(1, access=acc, size=fsize(3), stream=str, iostat=ios, err=200)
-   
+
    if ( acc .ne. "SEQUENTIAL" )    error stop 17
    if ( str .ne. "NO")        error stop 18
    if ( fsize(1) .ne. fsize(3)) error stop 19
@@ -126,7 +120,6 @@
    if ( str .ne. "NO")        error stop 28
    if ( fsize(1) .ne. fsize(3)) error stop 29
    close(1, status='delete')
-
 
 !* TEST3 : logical
    open(1, access='stream', form='unformatted', iostat=ios, &
@@ -170,7 +163,7 @@
    inquire( iolength=iol ) hvar1
    write(1, num=number, err=200) hvar1
    if ( number .ne. iol )   error stop 41
- 
+
    inquire(1, access=acc, size=fsize(1), stream=str, iostat=ios, err=200)
 
    if ( acc .ne. "STREAM" )    error stop 42

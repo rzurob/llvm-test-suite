@@ -2,23 +2,17 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:  rm -f fort.*
-! %COMPOPTS: -qposition=appendold 
-! %GROUP:  fxstio011.f 
+! %COMPOPTS: -qposition=appendold
+! %GROUP:  fxstio011.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio011.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 07, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
@@ -29,7 +23,7 @@
 !=======================================================================
 
 !* Declare Variables.
-   
+
   implicit none
   integer len
   integer id(10), ios
@@ -59,7 +53,7 @@
       iostat=ios, err=100, status='unknown')
    write(1, id=id(1), iostat=ios, err=200) ivar1
    write(1, id=id(2), iostat=ios, err=200) ipararr
- 
+
    wait(id =id(1))
    wait(id =id(2))
    close(1)
@@ -207,7 +201,7 @@
    if (harr2(2) .ne. hpararr(2)) error stop 56
    if (harr2(3) .ne. hpararr(3)) error stop 57
 
-   close(1, status='delete') 
+   close(1, status='delete')
 
 !* TEST6 : byte
    open(1, access='sequential', form='unformatted', asynch='yes', &

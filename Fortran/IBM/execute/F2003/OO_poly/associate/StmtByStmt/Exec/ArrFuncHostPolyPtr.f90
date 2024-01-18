@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrFuncHostPolyPtr.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrFuncHostPolyPtr.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrFuncHostDummy
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 16, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a function call 
-!*    with an associate name  associting to a poly pointer  dummy array 
-!*    as argument 
-!*    (ICE) 
+!*    The selector is a function call
+!*    with an associate name  associting to a poly pointer  dummy array
+!*    as argument
+!*    (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -49,7 +43,7 @@
 
     TYPE  :: Zero
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -117,7 +111,7 @@
   TYPE (Child) :: Temp(3)
 
   ALLOCATE(Arg(6))
-  
+
   SELECT TYPE (Arg)
   TYPE IS (Child)
     Arg(::2) = Child(ChildID=-2, BaseID=-1)
@@ -159,11 +153,11 @@
 
     CLASS DEFAULT
       STOP 50
-    END SELECT 
+    END SELECT
     CLASS DEFAULT
       STOP 51
     END SELECT
- 
+
   END ASSOCIATE
 
   IF ( .NOT. ASSOCIATED(V) )          STOP 14
@@ -176,6 +170,6 @@
   END SUBROUTINE
 
   END
-  
+
 
 

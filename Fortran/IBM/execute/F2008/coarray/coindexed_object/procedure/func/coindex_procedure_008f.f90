@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Andy Chen
 !*  DATE                       : September 14, 2010
 !* .or.GIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Test module procedures (function and
 !                                subroutine).Argument type: array and scalar.
@@ -44,7 +34,7 @@ contains
     subroutine arraysum(x, mysum)
         real, intent(in) ::x(:)
         real, intent(out) ::mysum
-        do i = 1,10 
+        do i = 1,10
             mysum = mysum + x(i)
         end do
         return
@@ -81,7 +71,7 @@ program coindex_procedure_008f
     sync all
     do i=1,3
         do j=1,4
-            m = image_index(caf1, [i,j]) 
+            m = image_index(caf1, [i,j])
             if ( intreturn(caf1[i,j]) .ne. m*2) then
                 error stop 1
             end if
@@ -90,7 +80,7 @@ program coindex_procedure_008f
 
     do i=1,4
         do j=1,3
-            m = image_index(caf2, [i,j]) 
+            m = image_index(caf2, [i,j])
             if ( intreturn(caf2(5)[i,j]) .ne. 5*m*2) then
                 error stop 2
             end if
@@ -116,7 +106,7 @@ program coindex_procedure_008f
             if ( .not. precision_r4(sum1, sum2)) then
                 print *, 'sum1=',sum1,' sum2=',sum2
                 error stop 4
-            end if 
+            end if
         end do
     end do
 

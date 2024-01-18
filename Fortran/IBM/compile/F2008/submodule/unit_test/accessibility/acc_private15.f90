@@ -14,31 +14,31 @@ module anc_mod
   type base
     private
     integer, allocatable :: i1(:)
-    contains 
+    contains
       procedure, nopass, private :: printme => print_mod_var
   end type
 
-  type(base), pointer :: b1 
+  type(base), pointer :: b1
   type(base), target :: tar
 
   private b1
-  private tar 
+  private tar
   private print_mod_var
 
   interface
     module subroutine mod_sub()
-    end subroutine 
+    end subroutine
   end interface
 contains
   subroutine print_mod_var()
-    print*, b1%i1 
+    print*, b1%i1
   end subroutine
   subroutine init()
     allocate(o1)
     allocate(o1%m(5))
     o1%m = 5
     allocate(o1%n(7))
-    o1%n = 7 
+    o1%n = 7
   end
 end module
 
@@ -47,12 +47,12 @@ implicit none
 contains
   subroutine s1()
     if (associated(b1)) then
-      b1%i1 = o1%m 
+      b1%i1 = o1%m
     else
       allocate(b1)
-      b1%i1 = o1%m 
+      b1%i1 = o1%m
     end if
-  end subroutine 
+  end subroutine
 end submodule
 
 submodule (anc_mod:submod1) submod2
@@ -65,23 +65,23 @@ contains
     call s1()
     call print_mod_var()
     call b1%printme()
-    print*, b1%i1 
+    print*, b1%i1
     call s2()
     call print_mod_var()
     call b1%printme()
-    print*, b1%i1 
-  end subroutine 
+    print*, b1%i1
+  end subroutine
 
   subroutine s2()
     if (associated(b1)) then
       nullify(b1)
       allocate(b1)
-      b1%i1 = o1%n 
+      b1%i1 = o1%n
     else
       allocate(b1)
-      b1%i1 = o1%n 
+      b1%i1 = o1%n
     end if
-  end 
+  end
 end submodule
 
 program main

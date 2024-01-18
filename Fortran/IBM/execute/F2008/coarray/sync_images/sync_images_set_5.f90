@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : sync_images_set_5.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : July 11 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SYNC IMAGES 
+!*  PRIMARY FUNCTIONS TESTED   : SYNC IMAGES
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : CMVC Feature number: 351605.22 
+!*  REFERENCE                  : CMVC Feature number: 351605.22
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
+!*  Test various forms of the image_set:
 !*
-!*  Test various forms of the image_set:  
-!*   
-!*  Image set is a single vale -- sync in a ring fashion 
+!*  Image set is a single vale -- sync in a ring fashion
 !*  Pass a number through a ring of images and back to its origin.
 !*  (390688)
 !*
@@ -40,13 +33,13 @@
   INTEGER, SAVE :: work[*]
   INTEGER :: status=0
   CHARACTER(30) :: errstr=" "
- 
+
 
   me = this_image()
   num_img = num_images()
 
   DO j=1, 10
-    work = 0 
+    work = 0
     SYNC ALL
     CALL int_sub(me, j)
   END DO

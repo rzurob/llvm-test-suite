@@ -1,25 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type01c - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August  12, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Allocation of a pointer inside the SELECT TYPE Construct
 !*                               Host association/Argument association
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -40,7 +34,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       PROGRAM Select_Type01c
-      IMPLICIT NONE 
+      IMPLICIT NONE
 !*
 ! DERIVED TYPE declarations
 !*
@@ -49,15 +43,15 @@
         INTEGER, LEN :: len1 = 20
 
         INTEGER(KIND=k1) :: my_arr(len1)
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
         CLASS(Base(k1,len1)), POINTER :: Cmp
-      END TYPE Child 
+      END TYPE Child
 
       INTEGER, PARAMETER :: k1 = KIND(0), len1 = 10
       INTEGER :: I
-      CLASS(*), ALLOCATABLE :: child1 
+      CLASS(*), ALLOCATABLE :: child1
       TYPE(Base(k1,len1)), TARGET :: tgt
 
       tgt%my_arr=(/ (I, I = 1, len1) /)
@@ -67,16 +61,16 @@
 
       CALL sub2
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE sub2
 
       SELECT TYPE (A => child1)
         CLASS IS (Child(k1,*))
-           !ALLOCATE(Base(k1,len1):: A%Cmp) ! passes if this line is added 
+           !ALLOCATE(Base(k1,len1):: A%Cmp) ! passes if this line is added
            A%Cmp => tgt
            IF ( .NOT. ASSOCIATED(A%Cmp)) STOP 20
-           CALL sub1(A%Cmp) 
+           CALL sub1(A%Cmp)
 
         CLASS IS (Base(k1,*))
            STOP 21

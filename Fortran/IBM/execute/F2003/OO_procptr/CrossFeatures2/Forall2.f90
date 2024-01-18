@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Forall2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Forall2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Forall2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Forall2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 21, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  FORALL/defined operator 
-!*  
-!*  (ICE) 
+!*
+!*  FORALL/defined operator
+!*
+!*  (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,7 +46,7 @@
       PROCEDURE(Fun), POINTER, PASS(Arg) :: ProcPtr1=>NULL()
     END TYPE
 
-    INTERFACE OPERATOR ( + )   
+    INTERFACE OPERATOR ( + )
       MODULE PROCEDURE OP
     END INTERFACE OPERATOR ( + )
 
@@ -73,7 +67,7 @@
     TYPE (DT), INTENT (IN) :: Arg1
     TYPE (DT), INTENT (IN) :: Arg2
     TYPE (DT) :: Op
-      Op%Id = Arg1%Id + Arg2%Id 
+      Op%Id = Arg1%Id + Arg2%Id
       Op%ProcPtr => Arg2%ProcPtr
       Op%ProcPtr1 => Arg2%ProcPtr1
     END FUNCTION
@@ -85,7 +79,7 @@
       Arg1%ProcPtr => Arg2%ProcPtr
       Arg1%ProcPtr1 => Arg2%ProcPtr1
     END SUBROUTINE
- 
+
     PURE FUNCTION Fun(Arg)
     TYPE(DT) :: Fun
     CLASS(DT), INTENT(IN) :: Arg
@@ -101,21 +95,21 @@
   END MODULE
 
 
-  PROGRAM Forall2 
-  USE M 
-  IMPLICIT NONE 
+  PROGRAM Forall2
+  USE M
+  IMPLICIT NONE
 
   TYPE (DT) :: V, W(30), U(30)
-  INTEGER   :: I 
+  INTEGER   :: I
   PROCEDURE(IFun), POINTER :: ProcPtr
 
   V%Id = 1
   V%ProcPtr => Fun1
   V%ProcPtr1 => Fun
-  ProcPtr => Fun 
+  ProcPtr => Fun
 
   FORALL (I=V%ProcPtr(1):V%ProcPtr(30):V%ProcPtr(1))
-    W(I) = ProcPtr(V) + ProcPtr(DT(3,Fun1, Fun)) 
+    W(I) = ProcPtr(V) + ProcPtr(DT(3,Fun1, Fun))
     U(I) = V%ProcPtr1() + V%ProcPtr1()
   END FORALL
 
@@ -124,7 +118,7 @@
     IF ( W(I)%Id .NE. 4 ) STOP 11
     IF ( .NOT. ASSOCIATED(W(I)%ProcPtr, Fun1) ) STOP 12
     IF ( .NOT. ASSOCIATED(W(I)%ProcPtr1, Fun) ) STOP 13
-   
+
     IF ( U(I)%Id .NE. 2 ) STOP 21
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Fun1) ) STOP 22
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr1, Fun) ) STOP 23
@@ -133,7 +127,7 @@
 
   FORALL (I=Fun1(1):Fun1(15)+Fun1(15):1)
     W(I) = DT(1, V%ProcPtr, V%ProcPtr1)+ DT(1, Fun1, Fun)
-    U(I) = W(I) 
+    U(I) = W(I)
   END FORALL
 
   DO I=1, 30
@@ -141,7 +135,7 @@
     IF ( W(I)%Id .NE. 2 ) STOP 31
     IF ( .NOT. ASSOCIATED(W(I)%ProcPtr, Fun1) ) STOP 32
     IF ( .NOT. ASSOCIATED(W(I)%ProcPtr1, Fun) ) STOP 33
-   
+
     IF ( W(I)%Id .NE. 2 ) STOP 41
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Fun1) ) STOP 42
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr1, Fun) ) STOP 43

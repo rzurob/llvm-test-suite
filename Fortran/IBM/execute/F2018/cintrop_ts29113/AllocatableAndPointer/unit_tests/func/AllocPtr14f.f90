@@ -1,22 +1,14 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocPtr14f
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Feb, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Allocatable/Pointer
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Pointer Assignment
 !*
@@ -69,7 +61,7 @@
         copy = reshape([(i,i=1,10,1)], [5,2])
 
         if (associated(a) .or. associated(b)) error stop 20
-        
+
         ! ****** Test 1: ****** !
         print *, "~~~ Test 1:"
         a => copy
@@ -103,7 +95,7 @@
         b => a(3,2)
         print *, associated(b)
         print *, b
-        
+
         ! ****** Test 5: ****** !
         print *, "~~~ Test 5:"
         lp1 => a(:,2)
@@ -139,7 +131,7 @@
         print *, a
         if (is_contiguous(a)) error stop 8
         print *, lbound(a), ubound(a)
-        
+
         ! ****** Test 9: ****** !
         print *, "~~~ Test 9:"
         b => copy(4,2)
@@ -171,5 +163,5 @@
         print *, associated(pout)
         print *, pout
 
-        
+
       end

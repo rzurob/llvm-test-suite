@@ -1,6 +1,6 @@
 ! 4.5.1.3 Determination of Types
 ! The two sequence derived type definitions here are considered
-! equivalent.  The type parameters have different names 
+! equivalent.  The type parameters have different names
 ! the same names, and attributes.
 type dt2(o2)
   integer, kind :: o2

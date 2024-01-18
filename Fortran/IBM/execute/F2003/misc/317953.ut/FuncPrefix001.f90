@@ -1,23 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : FuncPrefix001.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Zheming Gu
 !*  DATE                       : Feb 09,2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : function prefix ICE
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Defect Number 317953
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -26,7 +20,7 @@
 !*  DESCRIPTION:
 !*  -----------
 !*  ICE caused by the function prefix containing a type component that is a specification
-!*  expression. 
+!*  expression.
 
 !234567890123456789012345678901234567890123456789012345678901234567890
 

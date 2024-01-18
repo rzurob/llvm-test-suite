@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemFLOOR.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemFLOOR.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  FLOOR 
+!*
+!*  -  FLOOR
 !*  (318996)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -36,7 +29,7 @@
 
 
   PROGRAM  InitExpDefElemFLOOR
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J, K
 
   REAL(4), PARAMETER :: r4Quiet_N_NaN     = REAL(z"FFFFFFFF", KIND=4)
@@ -117,7 +110,7 @@
 ! print*,floor(r8Quiet_P_NaN)
 
 
- 
+
   IF ( KIND(I41)  .NE. 4      )      STOP 11
   IF ( ANY( I41   .NE. I4NMAX  ) )   STOP 12
 
@@ -169,4 +162,4 @@
 
   END
 
- 
+

@@ -1,25 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrMergeChar.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!* - data-pointer of type character(:), target of type char(2), 
-!* - data-pointer as arg of merge 
-!* - data-target is redefined by self reference in module procedure 
+!* - data-pointer of type character(:), target of type char(2),
+!* - data-pointer as arg of merge
+!* - data-target is redefined by self reference in module procedure
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -40,12 +34,12 @@ end module
     program main
 
         use m
-	
-	allocate(chT(26), source = (/ (repeat(achar(i+64),2), i= 1,26)  /) )  
+
+	allocate(chT(26), source = (/ (repeat(achar(i+64),2), i= 1,26)  /) )
 
 	chP(size(chT):) => chT(::2)
 
-	if ( .not. associated(chP)) stop 5 
+	if ( .not. associated(chP)) stop 5
 	if ( lbound(chP,1) /= 26) stop 7
 	if ( ubound(chP,1) /= 38) stop 9
 
@@ -54,6 +48,6 @@ end module
         call sub(chT)
 	print *, chP
 
-	print *, merge(chP, "->", (/(mod(i,2) == 1,i=1,13) /)) 
+	print *, merge(chP, "->", (/(mod(i,2) == 1,i=1,13) /))
 
     end program

@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_misc_10.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May 03, 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,8 +11,7 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -25,16 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
+!*  Miscellaneous Test  --
+!*    argument association on data object of derived type that has
+!*    procedure pointer component, and with the VALUE attribute
 !*
-!*  Miscellaneous Test  --  
-!*    argument association on data object of derived type that has 
-!*    procedure pointer component, and with the VALUE attribute 
-!* 
 !*  The host instance of an internal procedure that is
-!*  invoked via a dummy procedure or procedure pointer is the host 
+!*  invoked via a dummy procedure or procedure pointer is the host
 !*  instance of the associating entity from when the
-!*  argument association or pointer association was established 
-!*  (388639) 
+!*  argument association or pointer association was established
+!*  (388639)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -61,12 +54,12 @@
                                            !<-- instance of modsub. No effect here.
     !IF (.NOT. ASSOCIATED(Arg%int_ptr, intsub)) ERROR STOP 12
     ! the host instance of intsub now is diffenret from the one when
-    ! "Arg%int_ptr => intsub" is done 
-    IF (      ASSOCIATED(Arg%int_ptr, intsub)) ERROR STOP 12 
+    ! "Arg%int_ptr => intsub" is done
+    IF (      ASSOCIATED(Arg%int_ptr, intsub)) ERROR STOP 12
     IF (.NOT. ASSOCIATED(Arg%int_ptr, mod_procptr)) ERROR STOP 13
   ELSE
     Arg%int_ptr => intsub
-    mod_procptr => intsub 
+    mod_procptr => intsub
     CALL modsub(Arg, N)
   END IF
 

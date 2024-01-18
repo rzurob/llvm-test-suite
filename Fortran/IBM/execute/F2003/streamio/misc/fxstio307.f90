@@ -2,28 +2,22 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f fort.*; $TR_SRC/fxstio307.presh fxstio307
-! %COMPOPTS: 
-! %GROUP: redherring.f 
+! %COMPOPTS:
+! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio307.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 31, 2003
 !*
-!*  Primary Function Tested    : sequential access devices 
+!*  Primary Function Tested    : sequential access devices
 !*
-!*  Description                : Test stream access I/O on sequential 
+!*  Description                : Test stream access I/O on sequential
 !*                               access devices.
 !*
 !=======================================================================
@@ -45,7 +39,7 @@
    open(2, file='/dev/null',access='stream', form='unformatted', iostat=ios,&
       err=120)
    write(2, iostat=ios, err=200) ivar1
- 
+
 !* close(1)
    close(2)
 
@@ -73,7 +67,7 @@
 !* open(2, file='/dev/tty', access='stream', form='formatted', iostat=ios,&
 !*    err=100)
 !* write(2, fmt='(A1)', iostat=ios, err=200) hvar1
-   
+
    close(1)
 !* close(2)
 

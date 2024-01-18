@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar008kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar008 by Robert Ma)
 !*  DATE                       : 2007-08-13 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Usage of GENERIC BINDING
 !*                                  - scalar derived type parameter
@@ -115,7 +107,7 @@ program scalar008kl
    type(base(3)), parameter  :: b2 = base(3)('IBM') ! tcx: (3) ! tcx: (3)
    type(child(3,4)), parameter :: c1 = child(3,4)('ftn',2003) ! tcx: (3,4) ! tcx: (3,4)
    type(child(3,4)), parameter :: c2 = child(3,4)('FTN',2004) ! tcx: (3,4) ! tcx: (3,4)
-   
+
    type(base(3))  :: b11, b12 ! tcx: (3)
    type(child(3,4)) :: c11, c12 ! tcx: (3,4)
 

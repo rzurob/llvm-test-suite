@@ -3,10 +3,10 @@
 #NAME=/tstdev/OO_tpbnd/specific/ftpbnd505d.f
 #FEATURE = OO_tpbnd
 #CREATOR = Jim Xia
-#DATE    = 
+#DATE    =
 #TEST_TYPE=
 #ENDDOC
- 
+
 #BEGINENV
 #BEGINDEFS
 #ENDDEFS
@@ -20,10 +20,10 @@
 #VALIDRCS  = 1
 #STDERR    = ftpbnd505d.err
 #ENDCMD
- 
+
 #CMD       = XLDIFF
 #INPUT     = ftpbnd505d.err $($(tcasedir)ftpbnd505d$(product)vf)
 #ENDCMD
- 
+
 #ENDCONTROL
 #ENDSCENARIO

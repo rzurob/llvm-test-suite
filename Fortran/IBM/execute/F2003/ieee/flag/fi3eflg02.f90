@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD:  
+! %PRECMD:
 ! %COMPOPTS: -qintsize=4 -qfree=f90
 ! %GROUP: fi3eflg02.f
 ! %VERIFY:
@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 :
 !*  DATE                       : February 15, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SET_FLAG
 !*  SECONDARY FUNCTIONS TESTED : IEEE_GET_FLAG
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  : -qintsize=4
 !*
 !*  KEYWORD(S)                 :
@@ -48,7 +40,7 @@
         integer :: k
 
 
-!...test IEEE_ALL for true 
+!...test IEEE_ALL for true
 !set all flags for IEEE_ALL array named constants to true
         call ieee_set_flag(ieee_all, .true.)
 
@@ -70,7 +62,7 @@
           endif
         enddo
 
-!...test IEEE_ALL for false 
+!...test IEEE_ALL for false
 !set all flags for IEEE_ALL to false
         call ieee_set_flag(ieee_all, .false.)
 
@@ -92,7 +84,7 @@
           endif
         enddo
 
-!...test IEEE_USUAL for true 
+!...test IEEE_USUAL for true
 !set all flags for IEEE_USUAL array named constants to true
         call ieee_set_flag(ieee_all, .true.)
 
@@ -114,7 +106,7 @@
            endif
         enddo
 
-!...test IEEE_USUAL array named constants for false 
+!...test IEEE_USUAL array named constants for false
 !for .FALSE. values
         call ieee_set_flag(ieee_usual, .false.)
         call ieee_get_flag(ieee_usual, usual_flags)
@@ -147,28 +139,28 @@
            error stop 9
         endif
 
-!IEEE_DIVIDE_BY_ZERO 
+!IEEE_DIVIDE_BY_ZERO
         call ieee_set_flag(IEEE_DIVIDE_BY_ZERO, .true.)
         call ieee_get_flag(ieee_all, all_flags)
         if (all_flags(2) .neqv. .true. ) then
            error stop 10
         endif
 
-!IEEE_INVALID 
+!IEEE_INVALID
         call ieee_set_flag(IEEE_INVALID, .true.)
         call ieee_get_flag(ieee_all, all_flags)
         if (all_flags(3) .neqv. .true. ) then
            error stop 11
         endif
 
-!IEEE_UNDERFLOW 
+!IEEE_UNDERFLOW
         call ieee_set_flag(IEEE_UNDERFLOW, .true.)
         call ieee_get_flag(ieee_all, all_flags)
         if (all_flags(4) .neqv. .true. ) then
            error stop 12
         endif
 
-!IEEE_INEXACT 
+!IEEE_INEXACT
         call ieee_set_flag(IEEE_INEXACT, .true.)
         call ieee_get_flag(ieee_all, all_flags)
         if (all_flags(5) .neqv. .true. ) then
@@ -183,7 +175,7 @@
            if ( usual_flags(k) .neqv. .true. ) then
               error stop 14
            endif
-        enddo 
+        enddo
 
 !set each individual exception flag to false
 !IEEE_OVERFLOW

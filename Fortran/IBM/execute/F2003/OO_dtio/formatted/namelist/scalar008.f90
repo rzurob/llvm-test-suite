@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,25 +13,14 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
-!*                                        Try namelist formatting for derived type object, 
+!*                                        Try namelist formatting for derived type object,
 !*                                        and invoke external procedure namelist formatting (Output)
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -91,7 +75,7 @@ program scalar008
    allocate(b2, source = base(c='def',i=2) )
    b3 =  base(c='ghi',i=3)
    allocate(b4, source = base(c='jkl',i=4) )
-   
+
    write (1,NML=nml1, iostat=stat, iomsg=msg)
    if (( stat /=  0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
 
@@ -130,7 +114,7 @@ subroutine writeChar (unit,c)
    integer, intent(in) :: unit
    character(*), intent(in) :: c
    namelist /nmlc/ c
-   
+
    write (unit,nmlc,iostat=iostat )
-   
+
 end subroutine

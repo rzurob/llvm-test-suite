@@ -15,16 +15,11 @@
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            :
-!*  PROGRAMMER                 : Yong Du
+!*  ===================================================================
 !*  DATE                       : 01/06/2005
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : spread
 !*  SECONDARY FUNCTIONS TESTED :
-!*  DRIVER STANZA              : xlf90
 !*  DESCRIPTION                :
 !*    Function return of spread is the SOURCE of transfer.
 !*    Non-poly.
@@ -59,7 +54,7 @@ use m
 
     b1 = (/(Base(4)(i),i=101,105)/)
 
-    associate(name1=>transfer(spread(b1,1,2), (/Child(4)(1,1)/))) 
+    associate(name1=>transfer(spread(b1,1,2), (/Child(4)(1,1)/)))
         if(.NOT. same_type_as(name1, Child(4)(1,1))) error stop 1_4
         print *, name1
         print *, size(name1)

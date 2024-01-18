@@ -1,25 +1,14 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/15/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX*/MIN* intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX*/MIN* intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAXVAL/MINVAL with named constant as actual
-!*                               argument to subprogram. Using typeless, 
-!*                               byte or integer as DIM and MASK. 
+!*                               argument to subprogram. Using typeless,
+!*                               byte or integer as DIM and MASK.
 !* ===================================================================
 @process intlog
 
@@ -39,14 +28,14 @@
 
 @process intlog
   program mxminvalArgSub4
-    
+
     use ArgSub4
 
     interface
         function func1(carg, n)
-          character(*),dimension(*) :: carg 
+          character(*),dimension(*) :: carg
           character(n),dimension(n) :: func1
-        end function 
+        end function
     end interface
 
     character*3, parameter :: x(4) = (/"ddd", "bbb", "aaa", "ttt"/)
@@ -79,17 +68,17 @@
             character(*) :: carg
             integer iarg
             character*3  carray(iarg)
-             
+
             carray = "xxx"
             carray(3) = "yyy"
-          
+
             if(carg .ne. "aaa") error stop 5_4
 
             if(maxval(max(carray, carg, carray(1))) .ne. "yyy") then
                 error stop 6_4
             endif
 
-         end subroutine 
+         end subroutine
 
   end program mxminvalArgSub4
 

@@ -1,26 +1,16 @@
 !* ===================================================================
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE            : AllocateWithSourceExp03-08
-!*
-!* ORIGINAL PROGRAMMER        : Dorra Bouchiha
-!* PROGRAMMER                 : Izhak Jakov
 !*
 !* DATE                       : June 2, 2015
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
-!* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression 
+!* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression
 !* SECONDARY FUNCTIONS TESTED :
-!*                              
 !*
-!* DRIVER STANZA              : xlf2003
-!* REQUIRED COMPILER OPTIONS  : 
+!* REQUIRED COMPILER OPTIONS  :
 !*
-!* KEYWORD(S)                 : 
+!* KEYWORD(S)                 :
 !* TARGET(S)                  :
-!* NUMBER OF TESTS CONDITIONS : 
+!* NUMBER OF TESTS CONDITIONS :
 !*
 !* DESCRIPTION                :
 !*
@@ -30,7 +20,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithSourceExp03
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
@@ -56,7 +46,7 @@ PROGRAM AllocateWithSourceExp03
       IF (ANY(c1%Iarr .NE. 99)) ERROR STOP 31
       IF (ANY(c1%Cmp%Carr .NE. 'We')) ERROR STOP 32
       IF (ANY(c1%Cmp%Iarr .NE. 1)) ERROR STOP 33
-      
+
       IF (ANY(c2%Carr .NE. 'TE')) ERROR STOP 10
       IF (ANY(c2%Iarr .NE. 99)) ERROR STOP 11
       IF (ANY(c2%Cmp%Carr .NE. 'We')) ERROR STOP 12
@@ -67,7 +57,7 @@ PROGRAM AllocateWithSourceExp03
       IF (ANY(c1%Iarr .NE. 99)) ERROR STOP 35
       IF (ANY(c1%Cmp%Carr .NE. 'We')) ERROR STOP 36
       IF (ANY(c1%Cmp%Iarr .NE. 1)) ERROR STOP 37
-      
+
       IF (ANY(c2%Carr .NE. 'TE')) ERROR STOP 14
       IF (ANY(c2%Iarr .NE. 99)) ERROR STOP 15
       IF (ANY(c2%Cmp%Carr .NE. 'We')) ERROR STOP 16
@@ -78,7 +68,7 @@ PROGRAM AllocateWithSourceExp03
       IF (ANY(c1%Iarr .NE. 99)) ERROR STOP 39
       IF (ANY(c1%Cmp%Carr .NE. 'We')) ERROR STOP 40
       IF (ANY(c1%Cmp%Iarr .NE. 1)) ERROR STOP 41
-      
+
       IF (ANY(c2%Carr .NE. 'TE')) ERROR STOP 18
       IF (ANY(c2%Iarr .NE. 99)) ERROR STOP 19
       IF (ANY(c2%Cmp%Carr .NE. 'We')) ERROR STOP 20
@@ -89,7 +79,7 @@ PROGRAM AllocateWithSourceExp03
       IF (ANY(c1%Iarr .NE. 99)) ERROR STOP 43
       IF (ANY(c1%Cmp%Carr .NE. 'We')) ERROR STOP 44
       IF (ANY(c1%Cmp%Iarr .NE. 1)) ERROR STOP 45
-      
+
       IF (ANY(c2%Carr .NE. 'TE')) ERROR STOP 22
       IF (ANY(c2%Iarr .NE. 99)) ERROR STOP 23
       IF (ANY(c2%Cmp%Carr .NE. 'We')) ERROR STOP 24
@@ -98,7 +88,7 @@ PROGRAM AllocateWithSourceExp03
       CONTAINS
 !*
       FUNCTION func(Arg)
-        TYPE(Base(4,*)) :: Arg                           
+        TYPE(Base(4,*)) :: Arg
         TYPE(Child(4,:,4,:)), POINTER :: func
 
         ALLOCATE(func, SOURCE = Child(4,Arg%l1,4,Arg%l1) (Carr = 'TEST', &
@@ -106,10 +96,10 @@ PROGRAM AllocateWithSourceExp03
       END FUNCTION func
 
       FUNCTION foo(Arg)
-        CLASS(Base(4,*)) :: Arg                           
-        TYPE(Child(4,:,4,:)), POINTER :: foo 
+        CLASS(Base(4,*)) :: Arg
+        TYPE(Child(4,:,4,:)), POINTER :: foo
 
         ALLOCATE(foo, SOURCE = Child(4,Arg%l1,4,Arg%l1) (Carr = 'TEST', &
               & Cmp = Arg, Iarr = 99) )
-      END FUNCTION foo 
+      END FUNCTION foo
 END PROGRAM AllocateWithSourceExp03

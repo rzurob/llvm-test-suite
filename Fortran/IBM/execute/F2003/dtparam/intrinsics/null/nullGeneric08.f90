@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : nullGeneric08.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : nullGeneric08.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 23 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD]) 
+!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD])
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.88 
+!* 1. TEST SECTION 13.7.88
 !* 2. NULL([MOLD])
-!* 3. MOLD IS POLYMORPHIC ALLOCATABLE 
-!* 4. NULL(MOLD) IS USED AS ACTUAL ARGUMENT OF GENERIC PROCEDURE 
+!* 3. MOLD IS POLYMORPHIC ALLOCATABLE
+!* 4. NULL(MOLD) IS USED AS ACTUAL ARGUMENT OF GENERIC PROCEDURE
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(k1)
@@ -59,7 +51,7 @@ program nullGeneric08
 
    end interface
 
-  
+
    class(base(2)),allocatable  :: dtp1
    class(base(4)),allocatable  :: dtp2
 
@@ -69,19 +61,19 @@ program nullGeneric08
    call sub(dtp1)
    call sub(dtp2)
    call sub(dtp1,dtp2)
-   
+
    call sub(null(dtp1))
    call sub(null(dtp2))
    call sub(null(dtp1),null(dtp2))
-   
+
    if(allocated(dtp1))  deallocate(dtp1)
    if(allocated(dtp2))  deallocate(dtp2)
 
    allocate(dtp1,source=child(2,1)(i=3,j=-3))
    allocate(dtp2,source=child(4,8)(i=4,j=-4))
- 
+
    call sub(dtp1)
-   call sub(dtp2) 
+   call sub(dtp2)
    call sub(dtp1,dtp2)
 
    call sub(null(dtp1))

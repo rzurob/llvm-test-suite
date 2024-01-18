@@ -1,23 +1,15 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : d342451
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*                               (derived from abstracti005kl_dlp_rb)
 !*
 !*  DATE                       : 2007-10-09
 !*
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
-!*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Abstract Interface
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DEFECT ABSTRACT            : DTPARAM: No Conversion from an Extended Type
 !*                               in a Structure Constructor for an Allocatable

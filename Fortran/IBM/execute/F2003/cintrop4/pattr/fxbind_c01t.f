@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,26 +13,18 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c01t.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 1, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute 
-!*                                with derived types with different 
-!*                                intrinsic data type  
+!* DESCRIPTION                  : Test: BINC(C) attribute
+!*                                with derived types with different
+!*                                intrinsic data type
 !*                                Using external subroutine, entry.
 !*                                Both subroutine and entry have
 !*                                bind(c) attribute.
@@ -53,11 +40,11 @@
 
 module m
    type, bind(c) :: der_bind
-         
+
          character*1 ch1
-  
+
          logical*1 l1
-  
+
          integer*1 i1
          integer*2 i2
          integer*4 i4
@@ -65,53 +52,53 @@ module m
 
          real*4 r4
          real*8 r8
-         
+
          complex*8 x8
          complex*16 x16
     end type der_bind
 end module
 
 
-       
 
-       subroutine sextsub_der(sder) bind(c) 
+
+       subroutine sextsub_der(sder) bind(c)
          use m
          type(der_bind) :: sder, der
-        
+
          sder%i1 = sder%i1 - 3
          sder%i2 = sder%i2 - 3
          sder%i4 = sder%i4 - 3
          sder%i8 = sder%i8 - 3
-         
+
          sder%r4 = sder%r4 / 2
          sder%r8 = sder%r8 / 2
-         
+
          sder%ch1 = 'a'
-         
+
          sder%l1 = .false.
-         
+
          sder%x8 = (3.0, 4.0)
          sder%x16 = (5.0D0, 6.0D0)
          return
-       entry extsub_der(der) bind(c) 
-        
-        
+       entry extsub_der(der) bind(c)
+
+
          der%i1 = der%i1 + 3
          der%i2 = der%i2 + 3
          der%i4 = der%i4 + 3
          der%i8 = der%i8 + 3
-         
+
          der%r4 = der%r4 * 2
          der%r8 = der%r8 * 2
-         
+
          der%ch1 = 'd'
-         
+
          der%l1 = .true.
-         
+
          der%x8 = (6.0, 8.0)
          der%x16 = (10.0D0, 12.0D0)
 
        end subroutine sextsub_der
-      
-       
-   
+
+
+

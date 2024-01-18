@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatInternalFile05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatInternalFile05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 15 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. test READ or WRITE from or to internal file
@@ -35,7 +27,7 @@ module m
       real(2*k1)    :: r1(l1-1)
       contains
         procedure,pass :: writeInternal1
-        procedure,pass :: readInternal1 
+        procedure,pass :: readInternal1
         procedure,pass :: writeInternal2
         procedure,pass :: readInternal2
         procedure,pass :: writeData1
@@ -43,17 +35,17 @@ module m
    end type
 
    contains
-  
+
       subroutine writeInternal1(this,buffer,unit)
          class(dtp(2,*)),intent(in) :: this
          character(32),intent(inout) :: buffer(1:*)
-         integer,intent(in) :: unit  
+         integer,intent(in) :: unit
 
-         read(unit,'(a)',rec=5) buffer(lbound(buffer,1)) 
+         read(unit,'(a)',rec=5) buffer(lbound(buffer,1))
          read(unit,'(a)',rec=6) buffer(lbound(buffer,1)+1)
          read(unit,'(a)',rec=7) buffer(lbound(buffer,1)+2)
          read(unit,'(a)',rec=3) buffer(lbound(buffer,1)+3)
-        
+
       end subroutine
 
       subroutine writeInternal2(this,buffer,unit)
@@ -73,7 +65,7 @@ module m
          character(32),intent(in) :: buffer(1:*)
          integer :: i
          select type(this)
-           type is(dtp(2,*)) 
+           type is(dtp(2,*))
                 read(buffer(1), '(2a3)') this%c1
                 read(buffer(2), '(3i4)') this%i1
                 read(buffer(3), '(3l3)') this%g1
@@ -81,7 +73,7 @@ module m
            class default
              stop 11
          end select
-    
+
       end subroutine
 
       subroutine readInternal2(this,buffer)
@@ -103,13 +95,13 @@ module m
       subroutine writeData1(this,unit)
          class(dtp(2,*)),intent(in) :: this
          integer,intent(in) :: unit
-     
+
          write(unit,'(2a3)',rec=5) this%c1
          write(unit,'(3i4)',rec=3) this%i1
          write(unit,'(3l3)',rec=7) this%g1
          write(unit,'(2f9.3)',rec=3) this%r1
          write(unit,'(3i4)',rec=6) this%i1
- 
+
       end subroutine
 
      subroutine writeData2(this,unit)
@@ -162,7 +154,7 @@ program formatInternalFile05
      print *,"fail to open the file"
      print *,"iostat=",ios
      print *,"iomsg=",msg
-     stop 10 
+     stop 10
   else
 
      call dtp1(-1)%writeData1(10)
@@ -173,15 +165,15 @@ program formatInternalFile05
 
 !     write(*,'(/a/)') "Value of buffer:"
      write(*,'(a)') buffer
- 
-     call dtp2(1)%readInternal1(buffer(:4)) 
-     call dtp2(2)%readInternal2(buffer(5:)) 
+
+     call dtp2(1)%readInternal1(buffer(:4))
+     call dtp2(2)%readInternal2(buffer(5:))
 
 !     write(*,'(/a/)') "Value of dtp2:"
      write(*,'(2a3/3i4/3l3/2f9.3)') dtp2
-  
+
   end if
 
-  close(10)  
+  close(10)
 
 end program

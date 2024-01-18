@@ -1,23 +1,18 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dfinal006k.f
 !*  TEST CASE NAME             : type-bound procedure dfinal006k
 !*
-!*  PROGRAMMER                 : David Forster (derived from dfinal006 by Catherine Sun)
 !*  DATE                       : 2007-11-12 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
 !*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : testing final subroutines:
 !*                               dup "final" keyword
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -28,7 +23,7 @@ module m
         contains
         final, final, final  :: finalizeBase !* expect an error message here
     end type
-    
+
     contains
     subroutine finalizeBase (b1)
        type(base(4)) :: b1  ! tcx: (4)

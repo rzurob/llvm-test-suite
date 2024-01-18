@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryMis02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryMis02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 26 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 26 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
-!* 3. TYPE PARAMETER INQUIRY AS ARRAY BOUND 
+!* 3. TYPE PARAMETER INQUIRY AS ARRAY BOUND
 !* 4. DEFECT 354583
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -34,14 +26,14 @@ module m
    end type
 end module
 
-  program dtParameterInquiryMis02 
+  program dtParameterInquiryMis02
   use m
   implicit none
 
   character(len=*),parameter :: c1="xlftest"
   character(len=8) :: c2(c1%len-1:c1%len+1)=c1
   character(:),allocatable :: c4(:)
- 
+
   type(base(k=kind(c1)+c1%kind,l=len(c1)+2)) :: b1
   type(base),parameter :: b2=base()
   type(base(2,:)),allocatable :: b3(:)
@@ -51,11 +43,11 @@ end module
 
 
   if(lbound(i1,1) /= 2)                                   error stop 8_4
-  if(ubound(i1,1) /= 9)                                   error stop 9_4 
+  if(ubound(i1,1) /= 9)                                   error stop 9_4
 
 
   allocate(b1%c(c1%kind:c1%len),source=c1(1:3))
-   
+
   if(any(c2 /= "xlftest"))                                error stop 10_4
   if(c2%len /= len(c2) .or. c2%len /= 8)                  error stop 11_4
   if(lbound(c2,1) /= 6)                                   error stop 12_4
@@ -65,7 +57,7 @@ end module
   if(b1%k /= 2)                                           error stop 15_4
   if(b1%l /= 9)                                           error stop 16_4
   if(b1%c%len /= len(b1%c) .or. b1%c%len /= 3)            error stop 17_4
-  
+
   deallocate(b1%c)
   allocate(b1%c(b1%k:b1%l),source=c1(4:7))
 

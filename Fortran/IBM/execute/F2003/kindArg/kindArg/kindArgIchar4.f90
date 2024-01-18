@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgIchar4
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : ICHAR 
+!*  SECONDARY FUNCTIONS TESTED : ICHAR
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Ichar is the inverse of the CHAR function 
-!*    
-!*  (322601) 
+!*  Ichar is the inverse of the CHAR function
+!*
+!*  (322601)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -41,7 +33,7 @@
   INTEGER(2) :: I2, II2(128)
   INTEGER(4) :: I4, II4(128)
   INTEGER(8) :: I8, II8(128)
-     
+
   CHARACTER(:), POINTER :: CC(:)
 
   ALLOCATE(CC(128), SOURCE=(/(CHAR(I=I, KIND=1), I=0, 127)/))
@@ -76,16 +68,16 @@
 
 
 
-  IF (ANY( ICHAR(C=(/(CHAR(I1), I1=0,127)/), KIND=1_8) .NE. ICHAR(CC))) STOP 111 
-  IF (ANY( ICHAR(C=(/(CHAR(I2), I2=0,127)/), KIND=1_4) .NE. ICHAR(CC))) STOP 112 
-  IF (ANY( ICHAR(C=(/(CHAR(I4), I4=0,127)/), KIND=1_2) .NE. ICHAR(CC))) STOP 113 
-  IF (ANY( ICHAR(C=(/(CHAR(I8), I8=0,127)/), KIND=1_1) .NE. ICHAR(CC))) STOP 114 
+  IF (ANY( ICHAR(C=(/(CHAR(I1), I1=0,127)/), KIND=1_8) .NE. ICHAR(CC))) STOP 111
+  IF (ANY( ICHAR(C=(/(CHAR(I2), I2=0,127)/), KIND=1_4) .NE. ICHAR(CC))) STOP 112
+  IF (ANY( ICHAR(C=(/(CHAR(I4), I4=0,127)/), KIND=1_2) .NE. ICHAR(CC))) STOP 113
+  IF (ANY( ICHAR(C=(/(CHAR(I8), I8=0,127)/), KIND=1_1) .NE. ICHAR(CC))) STOP 114
 
 
-  IF (ANY( ICHAR(CHAR(I=(/(I1, I1=0,127)/), KIND=KIND((/ICHAR(CC, KIND=1_1)/)))) .NE. (/ICHAR(CC)/))) STOP 115 
-  IF (ANY( ICHAR(CHAR(I=(/(I1, I1=0,127)/), KIND=KIND((/ICHAR(CC, KIND=1_2)/)))) .NE. (/ICHAR(CC)/))) STOP 116 
-  IF (ANY( ICHAR(CHAR(I=(/(I1, I1=0,127)/), KIND=KIND((/ICHAR(CC, KIND=1_4)/)))) .NE. (/ICHAR(CC)/))) STOP 117 
-  IF (ANY( ICHAR(CHAR(I=(/(I1, I1=0,127)/), KIND=KIND((/ICHAR(CC, KIND=1_8)/)))) .NE. (/ICHAR(CC)/))) STOP 118 
+  IF (ANY( ICHAR(CHAR(I=(/(I1, I1=0,127)/), KIND=KIND((/ICHAR(CC, KIND=1_1)/)))) .NE. (/ICHAR(CC)/))) STOP 115
+  IF (ANY( ICHAR(CHAR(I=(/(I1, I1=0,127)/), KIND=KIND((/ICHAR(CC, KIND=1_2)/)))) .NE. (/ICHAR(CC)/))) STOP 116
+  IF (ANY( ICHAR(CHAR(I=(/(I1, I1=0,127)/), KIND=KIND((/ICHAR(CC, KIND=1_4)/)))) .NE. (/ICHAR(CC)/))) STOP 117
+  IF (ANY( ICHAR(CHAR(I=(/(I1, I1=0,127)/), KIND=KIND((/ICHAR(CC, KIND=1_8)/)))) .NE. (/ICHAR(CC)/))) STOP 118
 
   END
 

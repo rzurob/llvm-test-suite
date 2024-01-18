@@ -1,25 +1,18 @@
 !*********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument116f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Fortran Bind(c) procedure called from Fortran
 !*                                - Nesting of calls
 !*                                   Bind(c) ==> Non-bind(c)
-!*                                - contiguous attribute 
+!*                                - contiguous attribute
 !* Fortran array:
 !*   - dim 1 is number of rows
 !*   - dim2 is number of columns
@@ -40,9 +33,9 @@ module mod
       contains
       subroutine contig_sub(arr) bind(c)
         integer, contiguous :: arr(:,:) ! assumed-shape array in Bind(c) procedure not supported yet
-     
-        block 
-        integer i 
+
+        block
+        integer i
 
             if ( lbound(arr,1) /=                 1 )  ERROR STOP 50
             if ( lbound(arr,2) /=                 1 )  ERROR STOP 51
@@ -50,7 +43,7 @@ module mod
             if ( ubound(arr,2) /=          DIM_SIZE )  ERROR STOP 53
             if ( size(arr)     /= (DIM_SIZE/STRIDE)*DIM_SIZE ) ERROR STOP 54
             if ( any(arr       /= reshape([((2*i-1), i=1, (DIM_SIZE/STRIDE)*DIM_SIZE)], [DIM_SIZE/STRIDE, DIM_SIZE])) ) ERROR STOP 55
-        end block 
+        end block
 
         call sub(arr)
       end subroutine
@@ -58,15 +51,15 @@ module mod
       subroutine sub(arg)
         integer :: arg(DIM_SIZE/STRIDE, DIM_SIZE)
 
-        block 
-            integer i 
+        block
+            integer i
             if ( lbound(arg,1) /=                 1 )  ERROR STOP 60
             if ( lbound(arg,2) /=                 1 )  ERROR STOP 61
             if ( ubound(arg,1) /=   DIM_SIZE/STRIDE )  ERROR STOP 62
             if ( ubound(arg,2) /=          DIM_SIZE )  ERROR STOP 63
             if ( size(arg)     /= (DIM_SIZE/STRIDE)*DIM_SIZE ) ERROR STOP 64
             if ( any(arg       /= reshape([((2*i-1), i=1, (DIM_SIZE/STRIDE)*DIM_SIZE)], [DIM_SIZE/STRIDE, DIM_SIZE])) ) ERROR STOP 65
-        end block 
+        end block
 
         arg(:,1) = arg(:,1) + 1
       end subroutine
@@ -110,7 +103,7 @@ program AllocatableDummyArgument116f
       if ( ubound(ptr,2) /=          DIM_SIZE )  ERROR STOP 35
       if ( size(ptr)     /= (DIM_SIZE/STRIDE)*DIM_SIZE ) ERROR STOP 36
       if ( any(ptr(:,1)           /= [2,4,6,8,10]) ) ERROR STOP 37
-      if ( any(ptr(:,2:DIM_SIZE)  /= reshape([((2*i-1)+DIM_SIZE, & 
+      if ( any(ptr(:,2:DIM_SIZE)  /= reshape([((2*i-1)+DIM_SIZE, &
     &        i=1, DIM_SIZE/STRIDE*(DIM_SIZE-1))], [DIM_SIZE/STRIDE, DIM_SIZE-1])) ) ERROR STOP 38
 
       deallocate(tgt)

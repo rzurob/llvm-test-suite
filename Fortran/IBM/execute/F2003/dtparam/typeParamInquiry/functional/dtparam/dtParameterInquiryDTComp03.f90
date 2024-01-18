@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryDTComp03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryDTComp03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 21 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. INQUIRY TYPE PARAMETER OF DERIVED TYPE COMPONENT
 !* 4. DERIVED TYPE COMPONENT HAS TYPE PARAMETER
@@ -43,7 +35,7 @@ module m
 
 end module
 
-  program dtParameterInquiryDTComp03 
+  program dtParameterInquiryDTComp03
   use m
   implicit none
 
@@ -68,15 +60,15 @@ end module
   if(b1%c2 /= "xlftest")                                    error stop 13_4
   if(b1%a1%l1 /= 3)                                         error stop 14_4
   if(b1%a1%c1%len /= 5)                                     error stop 15_4
-  if(b1%a1%c1 /= '12345')                                   error stop 16_4  
+  if(b1%a1%c1 /= '12345')                                   error stop 16_4
   if(b1%a2%l1 /= 1)                                         error stop 17_4
   if(b1%a2%c1%len /= 3)                                     error stop 18_4
   if(b1%a2%c1 /= "678")                                     error stop 19_4
-  
+
   b2%c2=b1%c2(1:3)
   b2%a1=A(4)(c1=b1%a1%c1(2:4))
   allocate(b2%a2,source=A(1)(c1=b1%a1%c1))
-  
+
   if(b2%l2 /= 3)                                            error stop 20_4
   if(b2%l2%kind /= 4)                                       error stop 21_4
   if(b2%c2%len /= 3)                                        error stop 22_4

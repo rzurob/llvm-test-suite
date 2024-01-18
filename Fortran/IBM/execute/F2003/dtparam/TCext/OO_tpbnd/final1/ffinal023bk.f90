@@ -1,22 +1,17 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal023bk.f
 !*  TEST CASE NAME             : type-bound procedure ffinal023bk
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal023b by Catherine Sun)
 !*  DATE                       : 2007-11-26 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines: import 
-!*    
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines: import
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -46,7 +41,7 @@ use m
         import base
         integer, intent(in) :: arg1
         end subroutine
-  
+
         subroutine fChild(arg1, arg2)
         import child
         integer, intent(in) :: arg1, arg2
@@ -59,7 +54,7 @@ use m
         type (child(4)), intent (in) :: arg1  ! tcx: (4)
         print *, 'finalizeChild'
     end subroutine
- 
+
 end module
 
 use m1
@@ -70,12 +65,12 @@ use m1
 end
 
 subroutine fBase (arg1)
-use m, only : base 
+use m, only : base
    integer, intent(in) :: arg1
    type(base(4)), allocatable  :: dt1   ! tcx: (4)
    allocate(dt1)
    deallocate(dt1)
-end subroutine 
+end subroutine
 
 subroutine fChild (arg1, arg2)
 use m1, only : child
@@ -83,7 +78,7 @@ use m1, only : child
     type(child(4)), allocatable  :: dt1  ! tcx: (4)
     allocate(dt1)
     deallocate(dt1)
-end subroutine 
+end subroutine
 
 
 

@@ -2,7 +2,7 @@ MODULE Mod
       TYPE Base (k1)
         INTEGER, KIND :: k1 = 4
 
-        INTEGER(k1) :: A01(k1) = -1 
+        INTEGER(k1) :: A01(k1) = -1
       END TYPE
 
       TYPE :: Child (k2)
@@ -12,4 +12,4 @@ MODULE Mod
       END TYPE
 
 END MODULE
-END 
+END

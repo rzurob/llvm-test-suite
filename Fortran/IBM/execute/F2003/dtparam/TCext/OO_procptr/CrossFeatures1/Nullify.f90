@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Nullify.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Nullify.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Nullify.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Nullify.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  The nullify stmt 
-!*   
-!*  () 
+!*
+!*  The nullify stmt
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -63,7 +57,7 @@
     FUNCTION ProcFun(Arg)
     PROCEDURE(TYPE(DT(20,4))), POINTER :: ProcFun
     PROCEDURE(TYPE(DT(20,4)))          :: Arg
-      ProcFun => Arg 
+      ProcFun => Arg
     END FUNCTION
 
     FUNCTION Fun(Arg)
@@ -74,9 +68,9 @@
 
   END MODULE
 
-  PROGRAM Nullify 
+  PROGRAM Nullify
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE(DT(20,4))                :: V
   PROCEDURE(Fun), POINTER :: ProcPtr1=>NULL()
@@ -95,16 +89,16 @@
   NULLIFY(ProcPtr1)
   IF ( ASSOCIATED( ProcPtr1 ))       STOP 23
 
-  ProcPtr2 => ExtSub 
+  ProcPtr2 => ExtSub
   IF ( .NOT. ASSOCIATED( ProcPtr2 )) STOP 31
   CALL ProcPtr2("-3")
-  IF ( TRIM(Mark) .NE. "-3")         STOP 32 
+  IF ( TRIM(Mark) .NE. "-3")         STOP 32
   NULLIFY(ProcPtr2)
   IF ( ASSOCIATED( ProcPtr2 ))       STOP 33
 
   V%ProcPtr =>  Fun
   ProcPtr1 =>  Fun
-  ProcPtr1 => ProcPtr1 
+  ProcPtr1 => ProcPtr1
   IF ( .NOT. ASSOCIATED( V%ProcPtr )) STOP 41
   IF ( .NOT. ASSOCIATED( ProcPtr1 ))  STOP 42
   IF (  V%ProcPtr(-1) .NE. -1)        STOP 43
@@ -119,6 +113,6 @@
   SUBROUTINE ExtSub(Arg)
   USE M
   IMPLICIT NONE
-  CHARACTER(*) :: Arg 
+  CHARACTER(*) :: Arg
     Mark = Arg
   END SUBROUTINE

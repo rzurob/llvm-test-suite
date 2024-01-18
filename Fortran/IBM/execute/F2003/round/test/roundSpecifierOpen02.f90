@@ -1,29 +1,21 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND specifier= in OPEN statement.
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*                            scalar character with deferred length
 !*                            as character expression. Also test function
 !*                            return as character expression in round
-!*                            specifier. 
+!*                            specifier.
 !* ===================================================================
 
-  module m 
+  module m
     character(:), allocatable :: c1, c2
   end module
 
-  program roundSpecifierOpen02 
+  program roundSpecifierOpen02
 
     use m
     character*17 rMode(2)
@@ -32,7 +24,7 @@
 
     open(12, file="tstRound12", round=roundOne('compatible'))
 
-    inquire(12, round = rMode(1)) 
+    inquire(12, round = rMode(1))
 
     if(rMode(1) .ne. 'COMPATIBLE') error stop 1_4
 
@@ -46,14 +38,14 @@
 
       character(:) function roundOne ( c )
          character(10) c
-         allocatable :: roundOne 
+         allocatable :: roundOne
 
          allocate (roundOne, source = c )
       end function
 
       character(:) function roundTwo( c )
          character(:), allocatable :: c
-         allocatable :: roundTwo 
+         allocatable :: roundTwo
 
          allocate ( c, source = "processor_defined" )
 
@@ -61,4 +53,4 @@
 
       end function
 
-  end program roundSpecifierOpen02 
+  end program roundSpecifierOpen02

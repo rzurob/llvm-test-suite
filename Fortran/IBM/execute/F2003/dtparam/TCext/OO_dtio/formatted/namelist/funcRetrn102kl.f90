@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : funcRetrn102kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from funcRetrn102 by Robert Ma)
 !*  DATE                       : 2007-07-05 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with non polymorphic array function return variable
@@ -73,7 +65,7 @@ program funcRetrn102kl
    if ( ( b1(1)%c /= 'abc' ) .or. ( b1(2)%c /= 'def' ) .or. ( b1(3)%c /= 'ghi' ) )  error stop 1_4
    if ( ( c2(1)%c /= 'ABC' ) .or. ( c2(2)%c /= 'DEF' ) .or. ( c2(3)%c /= 'GHI' ) .or. &
         ( c2(1)%i /= 101 ) .or. ( c2(2)%i /= 102 ) .or. ( c2(3)%i /= 103 ) )        error stop 2_4
-   
+
    allocate ( child(3,4):: c1(3) ) ! tcx: child(3,4)
    c1 = readchild()
 

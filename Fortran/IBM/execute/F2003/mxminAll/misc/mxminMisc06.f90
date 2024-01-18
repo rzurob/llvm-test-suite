@@ -1,26 +1,15 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX*/MIN* as actual argument passed to
-!*                               elemental subprogram with variable as 
-!*                               MAX/MIN argument 
-!*                               
+!*                               elemental subprogram with variable as
+!*                               MAX/MIN argument
+!*
 !*                               use min/maxval (pack(array, mask))
 !* ===================================================================
 
@@ -45,7 +34,7 @@ module misc6
         end function
 end module misc6
 
-program mxminMisc06 
+program mxminMisc06
 
   use misc6
 
@@ -81,18 +70,17 @@ program mxminMisc06
 
   if(max_min(maxval(x, mask = .true.)) .ne. 'xyz') then
        error stop 7_4
-  endif 
+  endif
 
   if(max_min(maxval(pack(x, mask = .true.))) .ne. 'xyz') then
        error stop 8_4
-  endif 
+  endif
 
   if(ichar(max_min(minval(pack(x, mask = .false.)))) .ne. 127) then
         error stop 9_4
-  endif 
+  endif
 
-
-end program mxminMisc06 
+end program mxminMisc06
 
 elemental function fun1(arg)
     character*3, intent(in):: arg

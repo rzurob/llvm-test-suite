@@ -12,20 +12,14 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxmdvp04.f
 !
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 24, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    : -qfree=f90
 !*
 !* DESCRIPTION                  : Test the interoperability of complex module
@@ -99,7 +93,7 @@ do i = 1, 10
       ERROR STOP 54
   END IF
 end do
-  
+
 
 do j= 1, 10
    do i = 1, 10
@@ -122,16 +116,16 @@ do i = 1, 2
      end if
    end do
 end do
-  
+
   a = (0.0,1.0)
   b = (0.0,1.0)
   c = (0.0D0,1.0D0)
   d = (0.0,1.0)
-  
+
   bb = (0.0, 1.0)
   cc = (0.0D0, 1.0D0)
   dd = (0.0Q0, 1.0Q0)
-  
+
   a1 = (0.0,1.0)
   a2 = (0.0,1.0)
   a3 = (0.0,1.0)
@@ -148,4 +142,4 @@ end do
   d2 = (0.0Q0,1.0Q0)
   d3 = (0.0Q0,1.0Q0)
 
-end 
+end

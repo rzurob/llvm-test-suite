@@ -1,22 +1,11 @@
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 08/21/2015
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*      Check if a polymorhic subroutine could be used inside a do concurrent
 !*    poly function return (poly function results in reshape() and used as
 !*    the actual arg)

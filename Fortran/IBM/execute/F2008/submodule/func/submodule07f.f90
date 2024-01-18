@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : submodule07f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : April 20, 2013
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Submodule
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008_r
 !*  REQUIRED COMPILER OPTIONS  : -qsmp
 !*
 !*  KEYWORD(S)                 : F2008 submodule
@@ -24,24 +18,24 @@
 !*  based on omp31/Atomic/func/AtomicCapture06f.f
 !*
 !*  This testcase tests the acceptance of the constructs:
-!*  - Atomic capture 
-!*  - OMP Parallel loop      
+!*  - Atomic capture
+!*  - OMP Parallel loop
 !*  - Scalar pointer
 !*  in submodules.
-!*  
+!*
 !*  Secondary tests:
-!*  - use of a module with descendant submodules in another module with 
+!*  - use of a module with descendant submodules in another module with
 !*    descendant submodules, which is used in another scope
-!*  - mutations in a variable use-associated from same module can be 
+!*  - mutations in a variable use-associated from same module can be
 !*    confirmed in other modules where it is use-associated.  It can be
 !*     mutated:
 !*     - directly in the submodule scope by assignment
-!*     - indirectly in the submodule scope by calling a procedure on the 
+!*     - indirectly in the submodule scope by calling a procedure on the
 !*       use-associated module (the procedure may reside in a submodule)
-!*     - indirectly through OMP parallel as a shared variable (also 
-!*       verify it is not modified with OMP parallel private)  
-!* 
-!*  Note: the subroutines are numbered in order of execution.  
+!*     - indirectly through OMP parallel as a shared variable (also
+!*       verify it is not modified with OMP parallel private)
+!*
+!*  Note: the subroutines are numbered in order of execution.
 !*
 !* ===================================================================
 !*
@@ -54,10 +48,10 @@ MODULE data
 IMPLICIT NONE
 
   IMPLICIT NONE
-  INTEGER, PARAMETER :: N=1100 
+  INTEGER, PARAMETER :: N=1100
   INTEGER, POINTER :: p
   INTEGER, TARGET :: t, t2
-  INTEGER :: i, q 
+  INTEGER :: i, q
 
 END MODULE
 
@@ -112,7 +106,7 @@ CONTAINS
   end subroutine
 END SUBMODULE
 
-SUBMODULE (mod1) smod1_2  
+SUBMODULE (mod1) smod1_2
 CONTAINS
   module subroutine sub02()
     if ((q  .lt. 0) .and. (q .gt. p-1)) error stop 2
@@ -181,10 +175,10 @@ MODULE mod2
 
     module subroutine sub05()
     end subroutine
-  
+
     module subroutine sub07()
     end subroutine
-    
+
     module subroutine sub09()
     end subroutine
   END INTERFACE
@@ -196,16 +190,16 @@ SUBMODULE (mod2) smod2_1
       call initializeEnv()
 
       q = 0; t = -100
-      p => t 
-      !$OMP PARALLEL DO SHARED(p) 
-          DO i = 1, N   
+      p => t
+      !$OMP PARALLEL DO SHARED(p)
+          DO i = 1, N
                 !$OMP ATOMIC CAPTURE
                        q = p
-                       p = p + 1 
+                       p = p + 1
                 !$OMP END ATOMIC
           END DO
       !$OMP END PARALLEL DO
-      
+
       call sub02()
       call sub03()
     end subroutine sub01
@@ -215,15 +209,15 @@ SUBMODULE (mod2) smod2_2
   CONTAINS
     module subroutine sub03()
       q = 0; t = -100
-      !$OMP PARALLEL DO SHARED(p) 
-          DO i = 1, N   
+      !$OMP PARALLEL DO SHARED(p)
+          DO i = 1, N
                 !$OMP ATOMIC CAPTURE
                        p = p + 1
                        q = p
                 !$OMP END ATOMIC
           END DO
       !$OMP END PARALLEL DO
-      
+
       call sub04()
       call sub05()
     end subroutine sub03
@@ -239,12 +233,12 @@ SUBMODULE (mod2:smod2_1) smod2_3
       if (.not. associated(p,t))  error stop 6
       !$OMP PARALLEL PRIVATE(p)
             p => t2
-            !$OMP CRITICAL       
+            !$OMP CRITICAL
                 if (.not. associated(p,t2))  error stop 7
-            !$OMP END CRITICAL       
+            !$OMP END CRITICAL
 
             !$OMP DO
-                DO i = 1, N   
+                DO i = 1, N
                       !$OMP ATOMIC CAPTURE
                              q = p
                              p = p + 1
@@ -285,7 +279,7 @@ SUBMODULE (mod2:smod2_1) smod2_4
                 END DO
             !$OMP END DO
       !$OMP END PARALLEL
-     
+
       call helper()
       call sub08()
       call sub09()
@@ -297,7 +291,7 @@ SUBMODULE (mod2:smod2_4) smod2_7
   INTEGER, PARAMETER :: N=1000
   INTEGER, POINTER :: p
   INTEGER, TARGET :: t, t2
-  INTEGER :: i, q 
+  INTEGER :: i, q
   CONTAINS
     module subroutine helper()
       q = 0; t = -50
@@ -325,7 +319,7 @@ SUBMODULE (mod2:smod2_4) smod2_7
       if ((q  .lt. 0) .and. (q .gt. t2)) error stop 117
       if (t2  .ne. 999) error stop 118
       if (.not. associated(p,t))  error stop 119
-     
+
     end subroutine
 END SUBMODULE
 

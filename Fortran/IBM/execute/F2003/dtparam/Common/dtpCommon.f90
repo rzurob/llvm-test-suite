@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpCommon 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpCommon
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 11, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The common statement
-!* 
-!* 
+!*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,10 +43,10 @@
     INTEGER(K)   :: I(L)!=K
     TYPE(DT0(K,L)):: S
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpCommon 
+  PROGRAM dtpCommon
   USE M
 
   TYPE(DT0(1,3)) :: R, R1
@@ -64,10 +54,10 @@
 
   COMMON   R
   COMMON //T
- 
+
   COMMON /BLK/R1
   COMMON /BLK/T1
- 
+
   IF ( R%K0  .NE. 1   ) STOP 11
   IF ( R%L0  .NE. 3   ) STOP 12
 
@@ -83,7 +73,7 @@
 
   IF ( ANY ( LBOUND(T%I) .NE. 1          ) ) STOP 27
   IF ( SIZE( T%I )       .NE. 7            ) STOP 28
- 
+
   IF ( T%S%K0 .NE. 8   ) STOP 41
   IF ( T%S%L0 .NE. 7   ) STOP 42
 
@@ -96,20 +86,20 @@
 
   IF ( ANY ( LBOUND(T1%I) .NE. 1          ) ) STOP 37
   IF ( SIZE( T1%I )       .NE. 7            ) STOP 38
- 
+
   IF ( T1%S%K0 .NE. 8   ) STOP 43
   IF ( T1%S%L0 .NE. 7   ) STOP 44
 
-  T%R = -8 
+  T%R = -8
   T%C = CHAR(0)
   T%I = -7
- 
-  T1%R = -8 
+
+  T1%R = -8
   T1%C = CHAR(0)
   T1%I = -7
 
   CALL ExtSub()
- 
+
   END
 
   SUBROUTINE ExtSub()
@@ -119,7 +109,7 @@
 
   COMMON //T
   COMMON /BLK/T1
- 
+
   IF ( ANY ( LBOUND(T%R) .NE. 1          ) ) STOP 50
   IF ( SIZE( T%R )       .NE. 7            ) STOP 51
   IF ( ANY ( T%R         .NE. -8         ) ) STOP 52
@@ -130,7 +120,7 @@
   IF ( ANY ( LBOUND(T%I) .NE. 1          ) ) STOP 57
   IF ( SIZE( T%I )       .NE. 7            ) STOP 58
   IF ( ANY ( T%I         .NE. -7         ) ) STOP 59
- 
+
   IF ( ANY ( LBOUND(T1%R) .NE. 1          ) ) STOP 60
   IF ( SIZE( T1%R )       .NE. 7            ) STOP 61
   IF ( ANY ( T1%R         .NE. -8         ) ) STOP 62
@@ -141,7 +131,7 @@
   IF ( ANY ( LBOUND(T1%I) .NE. 1          ) ) STOP 67
   IF ( SIZE( T1%I )       .NE. 7            ) STOP 68
   IF ( ANY ( T1%I         .NE. -7         ) ) STOP 69
- 
+
   END SUBROUTINE
 
 

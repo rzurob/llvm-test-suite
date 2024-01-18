@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecDT3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 19, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  The basic syatax  
-!*  TYPE ( derived-type-spec ) 
+!*  The basic syatax
+!*  TYPE ( derived-type-spec )
 !*  accessibility
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,11 +45,11 @@
     TYPE(DT0(KIND, LEN)) :: T=DT0(KIND, 1)()
   END TYPE
 
-  TYPE(DT(KIND=2, LEN=1))   :: T1(1)  =  DT(KIND=2_1, LEN=1_8)() 
-  TYPE(DT(8_8,    LEN=1))   :: T2(1)  =  DT(KIND=8_1, LEN=1)() 
+  TYPE(DT(KIND=2, LEN=1))   :: T1(1)  =  DT(KIND=2_1, LEN=1_8)()
+  TYPE(DT(8_8,    LEN=1))   :: T2(1)  =  DT(KIND=8_1, LEN=1)()
 
-  TYPE(DT(8_8, LEN=1)), POINTER       :: T3(:) 
-  TYPE(DT(4_8, LEN=:)), ALLOCATABLE   :: T4(:) 
+  TYPE(DT(8_8, LEN=1)), POINTER       :: T3(:)
+  TYPE(DT(4_8, LEN=:)), ALLOCATABLE   :: T4(:)
 
   END MODULE
 
@@ -79,7 +72,7 @@
   END TYPE
 
   END MODULE
- 
+
   PROGRAM dtParamTypeDecDT3
   USE M, ONLY: T1,T2,T3,T4
   USE M1

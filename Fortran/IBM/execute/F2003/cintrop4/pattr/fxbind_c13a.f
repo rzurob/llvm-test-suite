@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,28 +13,20 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c13a.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Test interface bind(c) subroutine
-!*                                with c function pointer as argument. 
+!*                                with c function pointer as argument.
 !*                                Subwoutine is implemented in C and
 !*                                called from fortran
-!*                                
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*
@@ -66,7 +53,7 @@ use iso_c_binding
    fp = C_FUNLOC(f)
 
    call sub(fp, arg, ret)
-   
+
    if (ret .ne. 4) then
      error stop 10
    end if

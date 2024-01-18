@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclms02.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,32 +33,31 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing long strings as
-!*                             : actual arguments. 
+!*                             : actual arguments.
 !*                             : (to check if these intrinsic routine can handle those big size args)
-!*                             : (Currently the maximum length for command line on all platform is 
+!*                             : (Currently the maximum length for command line on all platform is
 !*                             : less than 128k = 131072)
-!*                             : 
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
       module  MOD
 
         character(131072)    :: COMMAND
         integer      	     :: LENGTH
         integer              :: STATUS
         integer              :: NUMBER
-        character(131072)    :: VALUE     
-        integer              :: ARGCOUNT 
+        character(131072)    :: VALUE
+        integer              :: ARGCOUNT
 
-        character(131072)    :: NAME      
+        character(131072)    :: NAME
         logical              :: TRIM_NAME = .true.
         integer              :: CmdCount  = 5
-        character(131072)    :: CmdLine 
+        character(131072)    :: CmdLine
 
        !character(131072)    :: NAME      = 'CmdLine     '
        ! character(131072)   :: CmdLine   = 'fxclms02 ----- ++++++++++ 11111111111111 AAAAAAAA M-N'
-       
-      end module 
+
+      end module
 
 
       PROGRAM fxclms02
@@ -77,16 +70,16 @@
       integer              :: i
       character(131072)    :: Argument
 
- 
+
       NAME      = 'CmdLine     '
       CmdLine   = 'fxclms02 ----- ++++++++++ 11111111111111 AAAAAAAA M-N'
- 
-      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) & 
+
+      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) &
       then
         error stop 63
       endif
 
-      
+
       call GET_COMMAND(COMMAND, LENGTH, STATUS)
       if ( (TRIM(COMMAND) .ne. TRIM(CmdLine))  .or. &
            (LENGTH .ne. LEN(TRIM(CmdLine)))    .or. &
@@ -149,8 +142,8 @@
       endif
 
 
-      END 
- 
+      END
+
 
       INCLUDE 'cmdline.include'
 

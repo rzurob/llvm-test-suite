@@ -1,19 +1,14 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue16.f
-!*  TEST CASE TITLE : F2008: VALUE attr allowed for dummy args of PURE proc
-!*  PROGRAMMER      : Gaby Baghdadi
 !*  DATE            : 2010-12-01
-!*  ORIGIN          : XL Fortran Compiler Development, IBM Torolab
 !*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
 !*  - dummy data objects with value attribute before and after extended derived
 !*    type dummy argument
-!*  - the derived type has explicit as well as allocatable arrays that are 
+!*  - the derived type has explicit as well as allocatable arrays that are
 !*    modified in the pure procedures
 !*  - see defect 385516 on array limitation (hence the small ranks size used)
 !*
@@ -25,7 +20,7 @@ module m
         integer :: i
         character*3 :: c
     end type
-    
+
     type, extends(base) :: child
         character(:), allocatable :: cc
         integer :: ii
@@ -33,7 +28,7 @@ module m
         integer :: jj
     end type
 end module
-    
+
 use m
 implicit none
 type(child) :: co = child(12,'abc',null(),34,null(),56)
@@ -72,7 +67,7 @@ contains
             vb%aiarr = vb%aiarr * 2
             foo = va+vc
             va = 88
-            vc = 99 
+            vc = 99
         endif
     end function
 
@@ -92,7 +87,7 @@ contains
             vb%aiarr = vb%aiarr * 2
             efoo = va+vc
             va = 88
-            vc = 99 
+            vc = 99
         endif
     end function
 
@@ -113,7 +108,7 @@ contains
             vb%aiarr = vb%aiarr * 2
             res = va+vc
             va = 88
-            vc = 99 
+            vc = 99
         endif
     end subroutine
 
@@ -134,7 +129,7 @@ contains
             vb%aiarr = vb%aiarr * 2
             res = va+vc
             va = 88
-            vc = 99 
+            vc = 99
         endif
     end subroutine
 

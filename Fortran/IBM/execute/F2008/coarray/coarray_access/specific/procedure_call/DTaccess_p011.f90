@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_p011.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : May 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -64,7 +60,7 @@ contains
 		real(4), intent(inout) :: a1
 		real(4) :: exp1, new1
 		integer :: nr
-		
+
 		if (a1 /= exp1) then
 			print *, a1, exp1
 			call fail(nr)
@@ -76,7 +72,7 @@ contains
 		type (obj), intent(inout) :: a1[*]
 		real(4) :: exp1, new1
 		integer :: nr
-		
+
 		if (a1%r4 /= exp1) then
 			print *, a1%r4, exp1
 			call fail(nr)
@@ -103,7 +99,7 @@ contains
 		real(8), intent(inout) :: a3
 		real(8) :: exp3, new3
 		integer :: nr
-		
+
 		if (a3 /= exp3) then
 			print *, a3, exp3
 			call fail(nr)
@@ -115,7 +111,7 @@ contains
 		type (obj), intent(inout) :: a3[*]
 		real(8) :: exp3, new3
 		integer :: nr
-		
+
 		if (a3%r8 /= exp3) then
 			print *, a3%r8, exp3
 			call fail(nr)
@@ -137,7 +133,7 @@ contains
 		a3%r8 = new3
 	end function faddle3
 
-	
+
 	subroutine fail(nr)
 		integer :: nr
 		print *, "Failed in test", nr

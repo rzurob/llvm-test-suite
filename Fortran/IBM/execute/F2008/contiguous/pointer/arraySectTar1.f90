@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : arraySectTar1.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : The module will be compiled with XLF 13.1 
+!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
+!*  SECONDARY FUNCTIONS TESTED : The module will be compiled with XLF 13.1
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                : - Target is a contiguous array section
 !*
-!*  DESCRIPTION                : - Target is a contiguous array section 
-!*                      
 !*  A nonzero-sized array section is contiguous provided that
 !*     (a) its base object is contiguous,
 !*     (b) it does not have a vector subscript,
@@ -132,10 +122,10 @@ PROGRAM arraySectTar1
 !******************* zero sized array ***********************
 
       !IF ( .NOT. IS_CONTIGUOUS(I0D) )  ERROR STOP 38
-      !ptr => I0D 
+      !ptr => I0D
       !IF ( .NOT. IS_CONTIGUOUS(ptr) )  ERROR STOP 39
 
-      !ptr_c => I0D 
+      !ptr_c => I0D
       !IF ( .NOT. IS_CONTIGUOUS(ptr_c) ) ERROR STOP 40
 
       !ptr_c => ptr
@@ -156,7 +146,7 @@ PROGRAM arraySectTar1
       !IF ( .NOT. IS_CONTIGUOUS(I5D(1,1,1,1,1:2:-1)) )  ERROR STOP 47
 
 !******************** rank > 1 ******************************
-      
+
       ptr5D => I5D
       IF ( .NOT. IS_CONTIGUOUS(ptr5D) )  ERROR STOP 48
 

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadWithAssociate02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadWithAssociate02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 24 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -58,7 +50,7 @@ program spreadWithAssociate02
          if(x%l1 /= 2)                                  error stop 10_4
          if(x%l2 /= 3)                                  error stop 11_4
          if(any(x%c1 /= "12"))                          error stop 12_4
-         if(any(x%c2 /= "-12"))                         error stop 13_4 
+         if(any(x%c2 /= "-12"))                         error stop 13_4
          if(x%c1%len /= 2)                              error stop 14_4
          if(x%c2%len /= 6)                              error stop 15_4
        class default
@@ -72,7 +64,7 @@ program spreadWithAssociate02
          if(x%l1 /= 2)                                  error stop 16_4
          if(x%l2 /= 3)                                  error stop 17_4
          if(x%c1%len /= 2)                              error stop 18_4
-         if(x%c2%len /= 6)                              error stop 19_4    
+         if(x%c2%len /= 6)                              error stop 19_4
          do i=1,5
              if(x(i,1)%c1 /= "12")                      error stop 20_4
              if(x(i,1)%c2 /= "-12")                     error stop 21_4
@@ -86,7 +78,7 @@ program spreadWithAssociate02
        class default
          error stop 101_4
     end select
-  end associate      
+  end associate
 
   associate(x=>spread(base2,2,5))
     select type(x)

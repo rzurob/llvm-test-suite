@@ -1,28 +1,20 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank601f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : October 27, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
-!* REQUIRED COMPILER OPTIONS    : 
+!* REQUIRED COMPILER OPTIONS    :
 !*                               (use -D_DEBUG for a debug version)
 !*
 !* DESCRIPTION                  : Calling a BIND(C) procedure defined in Fortran from C
 !*                                - argay is rank 1
-!*                                - CFI_attribute_other: Lower bound is always 1 on the Fortran side 
+!*                                - CFI_attribute_other: Lower bound is always 1 on the Fortran side
 !*                                - type c_int
 !*                                - nested with bind(c)=>bind(c) call
-!*
 !*
 !* Actual Argument:
 !*
@@ -38,30 +30,30 @@
 subroutine fcheck(flag, arg) bind(c)
     use :: iso_c_binding, only: c_int
     implicit none
-    integer :: i 
+    integer :: i
     integer(c_int) :: flag
     integer(c_int), dimension(..), intent(in) :: arg
 
-    interface 
+    interface
         subroutine sub(r, s, lb, ub, arg)
             implicit none
             integer :: r, s, lb, ub
             integer, dimension(..), optional :: arg
         end subroutine sub
-        subroutine sub_bind_c(r, s, lb, ub, arg) bind(c)  
+        subroutine sub_bind_c(r, s, lb, ub, arg) bind(c)
             implicit none
             integer, intent(in), optional :: arg(..)
             integer :: r, s, lb, ub
         end subroutine sub_bind_c
-    end interface 
+    end interface
 
-!      /* 
+!      /*
 !       flag set to 0 when lbound is 1
 !       flag set to 1 when lbound is 1
 !       flag set to 2 when lbound is 1
 !       flag set to -1 when argay is not contiguous and lbound is 1
 !       */
-   
+
     if ( flag .eq. -1 ) then
         if(           is_contiguous(arg) ) ERROR STOP 11
         if( rank(arg)      .ne.        1 ) ERROR STOP 12
@@ -115,7 +107,7 @@ subroutine sub(r, s, lb, ub, arg)
     integer, dimension(..), optional :: arg
     integer :: r, s, lb, ub
 
-    if ( present(arg) ) then 
+    if ( present(arg) ) then
         if( rank(arg)      .ne.        r ) ERROR STOP 101
         if( size(arg)      .ne.        s ) ERROR STOP 102
         if( any(shape(arg) .ne.     [s]) ) ERROR STOP 103
@@ -129,7 +121,7 @@ subroutine sub_bind_c(r, s, lb, ub, arg) bind(c)
     integer, intent(in), optional :: arg(..)
     integer :: r, s, lb, ub
 
-    if ( present(arg) ) then 
+    if ( present(arg) ) then
         if( rank(arg)      .ne.        r ) ERROR STOP 101
         if( size(arg)      .ne.        s ) ERROR STOP 102
         if( any(shape(arg) .ne.     [s]) ) ERROR STOP 103

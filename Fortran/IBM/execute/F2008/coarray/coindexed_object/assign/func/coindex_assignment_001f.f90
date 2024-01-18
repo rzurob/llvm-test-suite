@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Andy Chen
 !*  DATE                       : September 07, 2010
 !* .or.GIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Test intrinsic type for array: INTEGER, REAL,
 !                                DOUBLE, COMPLEX, CHARACTER, LOGICAL
@@ -102,7 +92,7 @@ program coindex_assignment_001f
         end if
     end do
 
-    do i=1, 10 
+    do i=1, 10
         do j=1, 10
             if ( .not. co_precision_r4(caf2(i,j), real1(i,j), 1.0e-12)) then
                 error stop 3
@@ -131,7 +121,7 @@ program coindex_assignment_001f
         ( .not. co_precision_x8( caf4(9), (9.0,9.0*me), 1.0e-12 ) ) .or. &
         ( .not. co_precision_x8( caf4(10), (10.0,10.0*me), 1.0e-12 ) ) )then
         error stop 7
-    end if 
+    end if
 
     if( ( .not. precision_x8( cpx2(1), (1.0,1.0*left) ) ) .or. &
         ( .not. precision_x8( cpx2(2), (2.0,2.0*left) ) ) .or. &
@@ -144,7 +134,7 @@ program coindex_assignment_001f
         ( .not. precision_x8( cpx2(9), (9.0,9.0*left) ) ) .or. &
         ( .not. precision_x8( cpx2(10), (10.0,10.0*left) ) ) )then
         error stop 8
-    end if 
+    end if
 
     do i=1, 10
         if ( (logical1(i) .neqv. (mod(i,me) .ne. 0)) ) then

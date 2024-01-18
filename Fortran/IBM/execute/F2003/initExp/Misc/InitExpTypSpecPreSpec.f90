@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecPreSpecr.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecPreSpecr.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  intrinsic-type-spec in pre-sprec: integer and logical 
-!* 
-!*  
-!* 
+!*  intrinsic-type-spec in pre-sprec: integer and logical
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -39,48 +29,48 @@
   CONTAINS
 
   INTEGER(KIND=1_8) FUNCTION I1()
-    I1 = 1 
+    I1 = 1
   END FUNCTION
- 
+
   INTEGER(KIND=KIND([1_1])+1) FUNCTION I2()
-    I2 = 2 
+    I2 = 2
   END FUNCTION
- 
+
   INTEGER(KIND=KIND([1_2])*2) FUNCTION I4()
-    I4 = 4 
+    I4 = 4
   END FUNCTION
- 
+
   INTEGER(KIND=KIND([1_8])*1) FUNCTION I8()
-    I8 = 8 
+    I8 = 8
   END FUNCTION
- 
- 
+
+
   LOGICAL(KIND=KIND([1_1])) FUNCTION L1()
     L1 = .TRUE.
   END FUNCTION
- 
+
   LOGICAL(KIND=KIND([1_2])) FUNCTION L2()
     L2 = .TRUE.
   END FUNCTION
- 
+
   LOGICAL(KIND=KIND([1_4])) FUNCTION L4()
     L4 = .TRUE.
   END FUNCTION
- 
+
   LOGICAL(KIND=KIND([1_8])) FUNCTION L8()
     L8 = .TRUE.
   END FUNCTION
- 
+
   END MODULE
 
 
-  PROGRAM InitExpTypSpecPreSpecr 
+  PROGRAM InitExpTypSpecPreSpecr
   USE M
   IMPLICIT NONE
 
   INTEGER :: I
 
-  
+
   PROCEDURE(INTEGER(KIND=1_8)),             POINTER :: I1PreSpecr
   PROCEDURE(INTEGER(KIND=KIND([1_1])+1)),   POINTER :: I2PreSpecr
   PROCEDURE(INTEGER(KIND=KIND([1_2])*2)),   POINTER :: I4PreSpecr
@@ -114,4 +104,4 @@
 
   END
 
- 
+

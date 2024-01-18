@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrTypeBound.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrTypeBound.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 09, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  type bound procedure 
+!*  type bound procedure
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -45,7 +37,7 @@
     INTEGER, LEN  :: N1
     CHARACTER(N1) :: CArr(0:9, 0:9)
   END TYPE
-    
+
   TYPE, EXTENDS(DT0) :: DT    ! (4,3)
   CONTAINS
     PROCEDURE, NOPASS :: Fun => ModFun
@@ -75,8 +67,8 @@
   IMPLICIT NONE
 
   CHARACTER(3), POINTER :: PtrCArr(:, :)
-  
-  T%CArr = "123" 
+
+  T%CArr = "123"
   PtrCArr => T%Fun(T)
 
   IF (.NOT. ASSOCIATED(PtrCArr))                       STOP 11

@@ -3,7 +3,7 @@ module m
     type, abstract :: base
         procedure(genBasePtr), pointer :: replicate => null()
     end type
-    
+
     type, extends(base) :: child (k)
         integer, kind :: k
 
@@ -68,7 +68,6 @@ module m
     end subroutine
 end module
 
-
 program dtparamProcComp006
 use m
     class(base), pointer :: b1, b2
@@ -91,7 +90,6 @@ use m
     b1%replicate => createChild4
     b2%replicate => createChild8
 
-
     b2 => b1%replicate()
 
     call printBase (b2)
@@ -104,7 +102,6 @@ use m
 
     deallocate (b2, b1, b3)
 end
-
 
 function createChild4 (b)
 use m, only : base, child

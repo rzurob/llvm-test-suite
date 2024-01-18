@@ -1,27 +1,16 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang
 !*  DATE                       : 3/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
 !*
 !*  DESCRIPTION                :  interlanguage call from C to Fortran.
 !*                                Derived type argument passed to Fortran
 !*                                and its value gets initialized in Fortran
 !*                                and updated in C through procedure pointer
 !*                                associating with c function pointer pointing
-!*                                to C function. 
+!*                                to C function.
 !* ===================================================================
 
 module mbind1
@@ -44,8 +33,8 @@ integer(C_INT) function fnt1(dobj) bind(c)
    interface
        subroutine initdt(i) bind(c)
           use mbind1
-          type(dbind), intent(inout) :: i 
-       end subroutine 
+          type(dbind), intent(inout) :: i
+       end subroutine
    end interface
 
    type(dbind), intent(inout), target :: dobj
@@ -69,5 +58,5 @@ integer(C_INT) function fnt1(dobj) bind(c)
    call fptr(dobj)
 
    fnt1 = 0
-  
+
 end function fnt1

@@ -1,25 +1,14 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                : MAXVAL/MINVAL and MAXLOC/MINLOC as actual 
+!*  DESCRIPTION                : MAXVAL/MINVAL and MAXLOC/MINLOC as actual
 !*                               argument passed to subprogram with variable
-!*                               argument. 
+!*                               argument.
 !*
 !* ===================================================================
 
@@ -35,23 +24,23 @@ module misc4
              character*3, intent(in):: arg
              character*3 fun1
              fun1 = arg
-          end function 
+          end function
 
           elemental function fun2(arg)
              integer, intent(in)::arg
              integer fun2
              fun2 = arg
-          end function 
+          end function
 
           elemental function fun3(arg)
              integer, intent(in)::arg
              integer fun3
              fun3 = arg
-          end function 
+          end function
 
 end module misc4
 
-program mxminMisc04 
+program mxminMisc04
     use misc4
 
     character*3 ver(2)
@@ -63,7 +52,7 @@ program mxminMisc04
 
     if(ver(1) .ne. 'gta' .or. ver(2) .ne. 'zdf') then
          error stop 1_4
-    endif     
+    endif
 
     if (fun1(maxval(x, mask = .true.)) .ne. 'zdf') then
           error stop 2_4
@@ -73,14 +62,14 @@ program mxminMisc04
         error stop 3_4
     endif
 
-    ver_int = fun2(maxloc(x))  
+    ver_int = fun2(maxloc(x))
 
     if(ver_int(1) .ne. 2 .or. ver_int(2) .ne. 1) then
           error stop 4_4
     endif
 
     ver_int = fun2(minloc(x, mask = .true.))
- 
+
     if(ver_int(1) .ne. 1 .or. ver_int(2) .ne. 1) then
            error stop 5_4
     endif
@@ -96,6 +85,5 @@ program mxminMisc04
          error stop 7_4
     endif
 
-
-end program mxminMisc04 
+end program mxminMisc04
 

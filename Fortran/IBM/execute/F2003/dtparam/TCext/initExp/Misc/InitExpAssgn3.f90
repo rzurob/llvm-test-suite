@@ -4,23 +4,18 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TESTOP CASE NAME             : InitExpAssgn3.f  
+!*  TESTOP CASE NAME             : InitExpAssgn3.f
 !*  TESTOP CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept. 11 2006
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Charber 289074 
+!*  REFERENCE                  : Feature Charber 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,11 +24,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Derived type intrinsic assignment 
-!* 
-!* (325090) -- proved that no any defined assignment involved. 
-!* 
+!*  Derived type intrinsic assignment
+!*
+!* (325090) -- proved that no any defined assignment involved.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -59,7 +52,7 @@
 
   END MODULE
 
-  PROGRAM InitExpAssgn3 
+  PROGRAM InitExpAssgn3
   USE M
   IMPLICIT NONE
 
@@ -70,13 +63,13 @@
     INTEGER, LEN     :: N2
     TYPE(DT0(N2,K2)) :: T
   END TYPE
- 
+
   TYPE (DT(4,20)) :: T(128)=[(DT(4,20)(T=DT0(20,4)(I)), I=1,128)]
 
   !IF ( ANY(T%T%ID .NE. [(-I, I=1,128)] )) STOP 11
-  IF ( ANY(T%T%ID .NE. [(I, I=1,128)] )) STOP 11   
+  IF ( ANY(T%T%ID .NE. [(I, I=1,128)] )) STOP 11
 
-  END 
+  END
 
 
- 
+

@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_arg_2.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : April 21 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,8 +11,7 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -25,20 +19,18 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*  Test procedure argument asociation -- 
-!*    Diagnosis on Passing internal procedure to procedure dummy with 
-!*    differnet characteristics. 
-!*
+!*  Test procedure argument asociation --
+!*    Diagnosis on Passing internal procedure to procedure dummy with
+!*    differnet characteristics.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
-  PROGRAM intproc_arg_2 
+
+  PROGRAM intproc_arg_2
 
   CALL Intsub1(Intsub)
   CALL Intsub3(Intsub)  ! <-- no complaint, tolerant
-  CALL Intsub5(Intsub4) 
+  CALL Intsub5(Intsub4)
   CALL Intsub6(Intfunc)
 
   CONTAINS
@@ -67,11 +59,11 @@
   END SUBROUTINE
 
   INTEGER FUNCTION Intfunc()
-   Intfunc = 0 
-  END FUNCTION 
+   Intfunc = 0
+  END FUNCTION
 
   SUBROUTINE Intsub6(arg)
-  PROCEDURE(REAL) :: arg 
+  PROCEDURE(REAL) :: arg
   END SUBROUTINE
 
   END

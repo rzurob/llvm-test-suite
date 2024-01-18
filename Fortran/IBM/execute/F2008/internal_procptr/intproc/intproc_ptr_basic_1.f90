@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_ptr_basic_1.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : April 21 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,23 +19,20 @@
 !*
 !*  DESCRIPTION
 !*
-!*
 !*  Test the basic functionality --
-!*     internal procedure in main as procedure target 
-!*   
-!*
+!*     internal procedure in main as procedure target
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
     INTEGER :: j=0
   END MODULE
- 
+
   PROGRAM intproc_basic_1
   USE M
   INTEGER :: i=0
-  PROCEDURE(), POINTER :: procptr 
-  PROCEDURE(INTEGER), POINTER :: procptr1 
+  PROCEDURE(), POINTER :: procptr
+  PROCEDURE(INTEGER), POINTER :: procptr1
 
   procptr => Intsub
   CALL procptr()
@@ -51,7 +42,7 @@
   CALL procptr()
   IF ( j .NE. -1 ) ERROR STOP 12
 
-  procptr1 => Intfunc 
+  procptr1 => Intfunc
   j = -3
   IF ( procptr1() .NE. -3 ) ERROR STOP 13
 
@@ -66,8 +57,8 @@
   END SUBROUTINE
 
   FUNCTION Intfunc()
-    Intfunc = j 
-  END FUNCTION 
+    Intfunc = j
+  END FUNCTION
 
   END
 

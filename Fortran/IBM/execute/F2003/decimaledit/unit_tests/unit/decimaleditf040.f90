@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf040.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,25 +12,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf040
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 05, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This testcase tests the behaviour when
 !*                               reading a line containing multiple data
@@ -40,13 +33,13 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
 
-      character(50), parameter :: FNAME_IN = 'decimaleditf040.dat'     
+      character(50), parameter :: FNAME_IN = 'decimaleditf040.dat'
       integer, parameter :: IN = 22 ! unit numbers
 
       real :: rl1 = 3.14, rl2, rl3, rl4
 
       character(50) :: buffer, my_fmt
-      
+
       print '(dc, f4.2)', rl1
       print '(dp, f4.2)', rl1
 

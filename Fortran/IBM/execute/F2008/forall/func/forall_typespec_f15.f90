@@ -1,13 +1,10 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_f15.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED : Use of FORALL constructs/statements in
@@ -16,8 +13,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*    Test the FORALL-construct with assignments to adjustable-shape arrays.  
-!*    Test with local dummy arrays distributed onto local processor 
+!*    Test the FORALL-construct with assignments to adjustable-shape arrays.
+!*    Test with local dummy arrays distributed onto local processor
 !*    arrangements.
 !*
 !* =============================================================================
@@ -26,7 +23,7 @@
 PROGRAM fxfc034b
 
    INTEGER CASENUM,in1,in2,in3
-   
+
    integer,parameter :: p1=-1,p2=3
 
    INTEGER i1(100)
@@ -67,43 +64,43 @@ PROGRAM fxfc034b
       SUBROUTINE sub1( array,n )
          INTEGER n,array(n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub2( array,n )
          INTEGER n,array(-10:n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub3( array,n )
          INTEGER n,array(n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub4( array,m,n )
          INTEGER m,n,array(m,n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub4b( array,m,n )
          INTEGER m,n,array(m,n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub5( array,m,n )
          INTEGER m,n,array(-5:m,-2:n)
       END SUBROUTINE
-   
+
       SUBROUTINE sub6( array,m,n )
          INTEGER m,n,array(-5:m,-2:n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub7( array,m,n )
          INTEGER m,n,array(m,n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub8( array,m,n )
          INTEGER m,n,array(m,n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub9( array,m,n )
          INTEGER m,n,array(m,n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub10( array,m,n )
          INTEGER m,n,array(m,n)
          INTEGER in1,in2
@@ -251,7 +248,7 @@ PROGRAM fxfc034b
 
    CASENUM = 22
    PRINT *,"CASENUM=",CASENUM
-   i22 = 0 
+   i22 = 0
    in1 = -51
    in2 = 51
    in3 = 2
@@ -340,13 +337,13 @@ SUBROUTINE sub2( array,n )
       forall ( in2 = in1:in1 ) array(in2) = array(in1) + in2
    END FORALL
 END SUBROUTINE
-  
+
 
 !-------------------------------
 ! This subroutine accepts a one
 ! dimensional array and assigns
 ! values to it.
-! 
+!
 ! Test: FORALL-construct
 !
 !-------------------------------
@@ -360,7 +357,7 @@ SUBROUTINE sub3( array,n )
          array(in1-in2:in1-in2+1) = in1+in2
       END FORALL
    END FORALL
-END SUBROUTINE 
+END SUBROUTINE
 
 !-------------------------------
 ! This subroutine accepts a two

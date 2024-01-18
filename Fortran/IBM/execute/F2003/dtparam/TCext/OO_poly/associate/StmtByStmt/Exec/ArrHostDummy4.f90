@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrHostDummy4.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrHostDummy4.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrHostDummy4
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 16, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,9 +32,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a host associate name 
-!*    Selector is a poly zero sized dummy array 
-!*    () 
+!*    The selector is a host associate name
+!*    Selector is a poly zero sized dummy array
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,7 +46,7 @@
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4,20)
       INTEGER(K1) :: BaseId = 1
@@ -110,7 +104,7 @@
 
   V(1::2)%Child = (/(Child(4,20)(ChildID=-2, BaseID=-1), i=1, 3)/)
   V(2::2)%Child = (/(Child(4,20)(ChildID= 0, BaseID= 0), i=1, 3)/)
- 
+
   CALL SWAP(V(1::2)%Child, V(2::2)%Child , SIZE(V(1::2)))
 
   IF ( ANY(V(1::2)%Child%BaseID  .NE. -1) ) STOP 10
@@ -122,9 +116,9 @@
 
   SUBROUTINE SWAP(Arr1, Arr2, N )
   CLASS(*), INTENT(INOUT) :: Arr1(-1:-2), Arr2(0:-1)
-  TYPE(Child(4,20))  :: Temp(0) 
+  TYPE(Child(4,20))  :: Temp(0)
   INTEGER :: N
- 
+
   ASSOCIATE ( As1 => Arr1, As2 => Arr2 )
 
     IF (ANY(SHAPE(As1)  .NE. (/0/)))            STOP 21
@@ -142,7 +136,7 @@
     TYPE IS (Child(4,*))
 
     ASSOCIATE ( As => As1(:) )
-   
+
       IF (ANY(SHAPE(As) .NE. (/0/)))      STOP 33
       IF ( ANY(As%Base%GetId() .NE. -9) ) STOP 34
       IF ( ANY(As%GetId()      .NE. -8) ) STOP 35
@@ -160,7 +154,7 @@
     END ASSOCIATE
 
     ASSOCIATE ( As => As2(:) )
-   
+
       IF (ANY(SHAPE(As) .NE. (/0/)))     STOP 53
       IF ( ANY(As%Base%GetId() .NE. 9) ) STOP 54
       IF ( ANY(As%GetId()      .NE. 8) ) STOP 55
@@ -179,7 +173,7 @@
 
     Temp = As1
     As1 = As2
-    As2 = temp 
+    As2 = temp
 
     END SELECT
     END SELECT
@@ -188,6 +182,6 @@
   END SUBROUTINE
 
   END
-  
+
 
 

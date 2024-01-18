@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : March 14, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SCALB with modules.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -114,7 +106,7 @@
 	use ieee_arithmetic
 	use modus
 	implicit none
-        
+
         logical :: flag_values(5)
         logical :: flag_value
         type(ieee_status_type) :: status_value
@@ -124,12 +116,12 @@
         integer :: iar(2)
 	real*8 ::  xar8(2),ar8
         real*16 :: xar16(2), ar16
-		
+
 	xar4 = (/16, 18/)
 	iar = (/5, 10/)
 	xar8 = (/16_8, 18_8/)
         xar16 = (/126.0_16, 168.0_16/)
-     
+
 !Test real*4
 
         call ieee_get_status(status_value)

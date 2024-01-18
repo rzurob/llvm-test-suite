@@ -1,23 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozC408digit004d.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 01/19/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : octal-constant	is B ’ digit [ digit ] ... ’
 !*				or B " digit [ digit ] ... "
 !*
 !*				digit shall have one of the values 0 through 7.
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                :
 !*  KEYWORD(S)                 :

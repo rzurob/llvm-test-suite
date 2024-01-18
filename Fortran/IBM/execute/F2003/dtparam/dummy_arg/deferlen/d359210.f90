@@ -1,31 +1,23 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d359210.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d359210.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 20 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 20 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  DEFECT 359210 
+!*  DEFECT 359210
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(l1)
       integer,len :: l1
-      integer     :: i(l1) 
+      integer     :: i(l1)
    end type
 
    type,extends(base) :: child(l2)
@@ -54,4 +46,4 @@ program d359210
          error stop 10_4
   end select
 
-end program 
+end program

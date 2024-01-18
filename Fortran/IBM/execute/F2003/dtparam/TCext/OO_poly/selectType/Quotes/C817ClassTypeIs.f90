@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: C817ClassTypeIs.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: C817ClassTypeIs.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C817ClassTypeIs
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 3, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C817 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C817
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +34,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The same type is specified for both type guard CLASS IS 
+!*    The same type is specified for both type guard CLASS IS
 !*    and TYPE IS
 !*    ()
 !*
@@ -73,19 +67,19 @@
   PROGRAM C817ClassTypeIs
   USE M
   IMPLICIT NONE
- 
-  CLASS(*), POINTER :: Ptr 
+
+  CLASS(*), POINTER :: Ptr
   TYPE(Level2(4)), TARGET  :: Tar
 
-  Ptr  => Tar 
+  Ptr  => Tar
   CALL Sub(Ptr)
 
   CONTAINS
-  
+
   SUBROUTINE Sub(Arg)
   CLASS(*) :: Arg
 
-  SELECT TYPE ( Arg ) 
+  SELECT TYPE ( Arg )
     TYPE IS (Level1(4))
       STOP 50
     CLASS IS (Level1(4))
@@ -97,10 +91,10 @@
     CLASS IS (Level4(4))
       STOP 55
     TYPE IS (Level4(4))
-      STOP 56  
+      STOP 56
     CLASS DEFAULT
       STOP 30
-  END SELECT 
+  END SELECT
 
   END SUBROUTINE
 

@@ -1,22 +1,10 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ulmtPntFunc.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is non-poly, dummy arg, type child
 !*                               TO is poly, dummy arg, type base
@@ -33,16 +21,16 @@ module m
 
       type  :: base
           integer id
-      end type 
+      end type
 
       type, extends(base) :: child
           character(:), allocatable :: ch
-      end type 
+      end type
 
-      contains 
+      contains
 
          class(*) function func(arg,brg)
-            type(child) :: arg 
+            type(child) :: arg
             class(base) :: brg
             allocatable arg, brg
             pointer func
@@ -72,9 +60,9 @@ end module
       select type ( x => func(d, b) )
           type is ( child )
               if ( x%id /= 8 ) stop 21
-              if ( x%ch /= 'XYZ' ) stop 23 
+              if ( x%ch /= 'XYZ' ) stop 23
           class default
               stop 25
-      end select          
+      end select
 
       end

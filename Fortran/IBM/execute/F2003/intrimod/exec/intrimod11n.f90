@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: ../ieeeconsts.f ../fake_ieee_modules.f intrimod11n.f
 ! %VERIFY: intrimod11n.out:fakeout1.vf
 ! %STDIN:
@@ -11,10 +11,7 @@
 ! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod11n.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
@@ -31,7 +28,7 @@
 
        module mod1
 
-         use, non_intrinsic :: xlf_fp_util, only:fpscr_kind     
+         use, non_intrinsic :: xlf_fp_util, only:fpscr_kind
 
          interface
             subroutine sub1(rt_nearest, flags)
@@ -48,11 +45,11 @@
 
        program intrimod11n
 
-         use :: mod1     
+         use :: mod1
          use, non_intrinsic :: ieee_arithmetic, only : IEEE_NEAREST
          use, non_intrinsic :: xlf_fp_util, only : fp_overflow, fp_div_by_zero, &
      &               fp_invalid, fp_underflow, fp_inexact
-         implicit none 
+         implicit none
 
          flags = (/ fp_overflow, fp_div_by_zero, fp_invalid, &
      &               fp_underflow, fp_inexact /)
@@ -87,7 +84,7 @@
          do k = 1, 5
             if (flag_values(k) .neqv. .false. ) stop 10
          enddo
-         
+
          if (ieee_support_datatype(PINF_4) .AND. &
  	     ieee_support_datatype(NINF_4)) then
             if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) stop 12
@@ -107,7 +104,7 @@
 
 !... Testing xlf_fp_util module
          call set_fpscr_flags(flags(1))
-         call clr_fpscr_flags(flags(5)) 
+         call clr_fpscr_flags(flags(5))
          if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
          if ( get_fpscr_flags(flags(5)) .eq. 0 ) stop 18
 

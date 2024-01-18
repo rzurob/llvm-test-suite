@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrGEInt.f 
+!*  TEST CASE NAME             : dataPtrGEInt.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -31,7 +25,7 @@ module n
 
     type, extends(base) :: A
 	integer*8, pointer :: p(:,:,:)
-    end type 
+    end type
 
     type, extends(base) :: B
 	procedure(func), nopass, pointer :: pp => null()
@@ -41,7 +35,7 @@ module n
 	function func(arg)
 	    integer*8, pointer :: func(:)
 	    integer :: arg(:)
-	end function 
+	end function
     end interface
 end module
 
@@ -56,14 +50,14 @@ program main
 
     a1 = A(null())
 
-    a1%p(1:2,3:4,5:7) => b1%pp( [-1,0,1,2,3,4,5,6,7,8,9,10])  
+    a1%p(1:2,3:4,5:7) => b1%pp( [-1,0,1,2,3,4,5,6,7,8,9,10])
 
-    if ( .not. associated(a1%p)) stop 1 
+    if ( .not. associated(a1%p)) stop 1
     if ( any (lbound(a1%p) .ne. (/1,3,5/))) stop 2
-    if ( any (ubound(a1%p) .ne. (/2,4,7/))) stop 3 
+    if ( any (ubound(a1%p) .ne. (/2,4,7/))) stop 3
 
     if ( any(a1%p(2,3,:) .ge. (/0,4,8 /)) ) then
-    	a1%p(2,3,:) = a1%p(2,3, 7:5:-1) 
+    	a1%p(2,3,:) = a1%p(2,3, 7:5:-1)
     endif
 
     print *, a1%p
@@ -74,5 +68,5 @@ end program
 	    integer*8, pointer :: func(:)
 	    integer :: arg(:)
 
-	    allocate(func(size(arg)), source = int(arg,8)) 
-	end function 
+	    allocate(func(size(arg)), source = int(arg,8))
+	end function

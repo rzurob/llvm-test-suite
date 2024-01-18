@@ -1,35 +1,25 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d353419_2.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d353419_2.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept 08 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept 08 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. DEFECT 353419 
+!* 1. TEST SECTION 6.1.3
+!* 2. DEFECT 353419
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 module m
    type base(l)
-      integer,len :: l 
+      integer,len :: l
       integer(kind(1)+kind(0)) :: i1
       integer(kind(-1)+kind(100))   :: i2
-   end type                        
+   end type
 end module
 
 program d353419_2
@@ -43,5 +33,5 @@ program d353419_2
    print *,t%i1%kind,kind(t%i1)
    print *,t%i2%kind,kind(t%i2)
 
-end    
+end
 

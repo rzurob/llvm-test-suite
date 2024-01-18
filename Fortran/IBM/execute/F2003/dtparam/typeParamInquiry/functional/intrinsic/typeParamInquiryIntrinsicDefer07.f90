@@ -1,31 +1,23 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryIntrinsicDefer07.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryIntrinsicDefer07.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 31 2008  
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 31 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
 !* 3. DEFERRED TYPE PARAMETER INQUIRY
-!* 4. ALLOCATABLE AND POINTER  
-!* 5. DUMMY ARGUMENT IS UNLIMITED POLYMORPHIC 
+!* 4. ALLOCATABLE AND POINTER
+!* 5. DUMMY ARGUMENT IS UNLIMITED POLYMORPHIC
 !* 6. DEFECT 354520
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -40,21 +32,21 @@ program typeParamInquiryIntrinsicDefer07
 
     allocate(a1(len("xlf")+1),source=["abc","def","ghi","jkl"])
 
-    call test1(a1) 
+    call test1(a1)
 
     allocate(character(ubound(a1,1)+lbound(a1,1) + &
              a1%len + len(a1) + a1%kind+ kind(a1) ) :: a2(a1%len+len(a1)) )
 
     call test2(a2)
-   
+
     call test3(b1)
 
     call test4(b2)
- 
+
     contains
       subroutine test1(x)
         class(*),intent(in)  :: x(:)
-          
+
         select type(x)
           type is (character(*))
             if(x%len /=len(x) .or. x%len /= 3)         error stop 10_4
@@ -62,8 +54,8 @@ program typeParamInquiryIntrinsicDefer07
             if(ubound(x,1) /= 4)                       error stop 12_4
           class default
             error stop 100_4
-        end select  
-      end subroutine 
+        end select
+      end subroutine
 
       subroutine test2(x)
         class(*),intent(in)  :: x(:)

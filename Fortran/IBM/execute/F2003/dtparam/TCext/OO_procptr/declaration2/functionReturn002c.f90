@@ -3,13 +3,9 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=none
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_procptr/declaration2
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 06/18/2005
 ! PRIMARY FUNCTIONS TESTED   : procedure pointer declaration
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : The target of a procedure pointer is
 !                              specified by function return. Specify
 !                              proc-interface using declaration type
@@ -83,7 +79,7 @@ program functionReturn002c
 use m
     class(*), allocatable :: b1
     !procedure(type(Base)), pointer :: pp1
-     procedure(func2), pointer :: pp1 
+     procedure(func2), pointer :: pp1
 
     allocate(b1, SOURCE=Base(20,4)(5))
     pp1 => func1(b1)

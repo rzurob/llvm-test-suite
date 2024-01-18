@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcTypBndDTIOWriteU.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcTypBndDTIOWriteU.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 02, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  interaction with type bound generics 
-!*  
+!*  interaction with type bound generics
 !*
-!*  -- DTIO/WRITE(UNFORMATTED) 
+!*  -- DTIO/WRITE(UNFORMATTED)
 !*  (317038)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,76 +34,76 @@
     CHARACTER  :: ID
   CONTAINS
     GENERIC    :: WRITE(UNFORMATTED) => WriteUF
-    PROCEDURE  :: WriteUF 
+    PROCEDURE  :: WriteUF
   END TYPE
- 
+
   TYPE :: DT1
     CHARACTER  :: ID
   CONTAINS
     GENERIC    :: WRITE(UNFORMATTED) => WriteUF1
-    PROCEDURE  :: WriteUF1 
+    PROCEDURE  :: WriteUF1
   END TYPE
- 
+
   TYPE :: DT2
     CHARACTER  :: ID
   CONTAINS
     GENERIC    :: WRITE(UNFORMATTED) => WriteUF2
-    PROCEDURE  :: WriteUF2 
+    PROCEDURE  :: WriteUF2
   END TYPE
- 
+
   TYPE :: DT3
     CHARACTER  :: ID
   CONTAINS
     GENERIC    :: WRITE(UNFORMATTED) => WriteUF3
-    PROCEDURE  :: WriteUF3 
+    PROCEDURE  :: WriteUF3
   END TYPE
 
- 
-  INTERFACE WRITE(UNFORMATTED) 
-    PROCEDURE WriteUF 
-    PROCEDURE WriteUF1 
-    PROCEDURE WriteUF2 
-    PROCEDURE WriteUF3 
-  END INTERFACE  
+
+  INTERFACE WRITE(UNFORMATTED)
+    PROCEDURE WriteUF
+    PROCEDURE WriteUF1
+    PROCEDURE WriteUF2
+    PROCEDURE WriteUF3
+  END INTERFACE
 
   CONTAINS
 
   SUBROUTINE WriteUF(Dtv, Unit, IOStat, IOMSG)
-  CLASS(DT),         INTENT(IN)    :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    WRITE(Unit) DTV%ID  
-  END SUBROUTINE 
+  CLASS(DT),         INTENT(IN)    :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    WRITE(Unit) DTV%ID
+  END SUBROUTINE
 
   SUBROUTINE WriteUF1(Dtv, Unit, IOStat, IOMSG)
-  CLASS(DT1),        INTENT(IN)    :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    WRITE(Unit) DTV%ID  
-  END SUBROUTINE 
+  CLASS(DT1),        INTENT(IN)    :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    WRITE(Unit) DTV%ID
+  END SUBROUTINE
 
   SUBROUTINE WriteUF2(Dtv, Unit, IOStat, IOMSG)
-  CLASS(DT2),        INTENT(IN)    :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    WRITE(Unit) DTV%ID  
-  END SUBROUTINE 
+  CLASS(DT2),        INTENT(IN)    :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    WRITE(Unit) DTV%ID
+  END SUBROUTINE
 
   SUBROUTINE WriteUF3(Dtv, Unit, IOStat, IOMSG)
-  CLASS(DT3),        INTENT(IN)    :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    WRITE(Unit) DTV%ID  
-  END SUBROUTINE 
+  CLASS(DT3),        INTENT(IN)    :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    WRITE(Unit) DTV%ID
+  END SUBROUTINE
 
   END MODULE
 
 
-  PROGRAM mProcTypBndDTIOWriteU 
+  PROGRAM mProcTypBndDTIOWriteU
   USE M
 
 

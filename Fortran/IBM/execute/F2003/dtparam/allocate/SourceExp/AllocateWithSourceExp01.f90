@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocateWithSourceExp01
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : January 20, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,31 +17,31 @@
 !* allocate-stmt is
 !*   ALLOCATE ( [ type-spec :: ] allocation-list [, alloc-opt-list ] )
 !*
-!* Defect 361702 
+!* Defect 361702
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN  :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN  :: l1
 
-        CHARACTER(l1) :: Calloc(l1) = 'AAA' 
-      END TYPE Base 
+        CHARACTER(l1) :: Calloc(l1) = 'AAA'
+      END TYPE Base
 
-      TYPE, EXTENDS(Base) :: Child (k2,l2) 
-        INTEGER, KIND :: k2 
-        INTEGER, LEN  :: l2 
+      TYPE, EXTENDS(Base) :: Child (k2,l2)
+        INTEGER, KIND :: k2
+        INTEGER, LEN  :: l2
 
         REAL :: Rarr(l1) = k2
         CLASS(Base(k2,l1)), POINTER :: next => NULL()
-      END TYPE Child 
+      END TYPE Child
 
-      TYPE, EXTENDS(Child) :: NextGen (k3,l3) 
+      TYPE, EXTENDS(Child) :: NextGen (k3,l3)
         INTEGER, KIND :: k3
         INTEGER, LEN  :: l3
- 
+
         CHARACTER(l2) :: Carr(l2) = 'ABCD '
         INTEGER(k2)   :: Iarr(l2) = k3
       END TYPE NextGen
@@ -57,12 +49,12 @@ END MODULE Mod1
 PROGRAM AllocateWithSourceExp01
       USE MOD1
       IMPLICIT NONE
- 
+
        TYPE(Base(4,:)), POINTER :: b1(:)
-       TYPE(Child(4,10,4,10)), TARGET :: c1 = Child(4,10,4,10)(Rarr = -1) 
+       TYPE(Child(4,10,4,10)), TARGET :: c1 = Child(4,10,4,10)(Rarr = -1)
        TYPE(NextGen(4,10,4,10,5,5)), ALLOCATABLE :: n1(:)
-       CLASS(Base(4,4)), POINTER :: bptr  
- 
+       CLASS(Base(4,4)), POINTER :: bptr
+
        CHARACTER(100) :: string
        INTEGER :: I
 
@@ -81,7 +73,7 @@ PROGRAM AllocateWithSourceExp01
                  & next = c1, Carr = string, Iarr = 1))
 
        IF (SIZE(n1) .NE. 5) STOP 15
-       DO I = 1, 5 
+       DO I = 1, 5
           IF (LEN(n1(I)%Calloc) .NE. 10) STOP 16
           IF (ANY(n1(I)%Calloc .NE. 'XLFtest')) STOP 17
           IF (SIZE(n1(I)%Rarr) .NE. 10) STOP 18
@@ -117,7 +109,7 @@ PROGRAM AllocateWithSourceExp01
 
        SELECT TYPE(bptr)
           TYPE IS(Child(4,*,4,*))
-             ALLOCATE(bptr%next,source=bptr) 
+             ALLOCATE(bptr%next,source=bptr)
              IF (LEN(bptr%Calloc) .NE. 4) STOP 42
              IF (ANY(bptr%Calloc .NE. 'XLFt')) STOP 43
              IF (SIZE(bptr%Rarr) .NE. 4) STOP 44
@@ -142,7 +134,7 @@ PROGRAM AllocateWithSourceExp01
 !*
       SUBROUTINE sub(argn1)
        TYPE(NextGen(4,*,4,*,5,*)), ALLOCATABLE, INTENT(OUT) :: argn1(:)
-       TYPE(Base(4,10)), TARGET :: tgt 
+       TYPE(Base(4,10)), TARGET :: tgt
 
        ALLOCATE(argn1(2), SOURCE = [NextGen(4,10,4,10,5,5) ('BBB', 66.22, tgt, 'Erwin', 5),  &
               & NextGen(4,10,4,10,5,5) ('CCC', 22.66, tgt, 'Werne', 7)])

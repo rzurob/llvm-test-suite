@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 22 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 22 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. SELECT TYPE IN SUBROUTINE
-!* 4. DUMMY ARGUMENT IS ASSUMED 
+!* 4. DUMMY ARGUMENT IS ASSUMED
 !* 5. CHRACTER ARRAY COMPONENT
 !* 6. DEFECT 354602
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -40,18 +32,18 @@ module m
       integer(4),len   :: l3
       character(l1+l2+l3) :: c3(l3:l1+l2)
    end type
-     
+
    contains
      subroutine checktype(dt)
          class(base(:,:)),pointer,intent(in) :: dt
          select type(dt)
             type is(base(*,*))
-               print *,"checktype : dt is base" 
+               print *,"checktype : dt is base"
                if(dt%l1 /=3)                                  error stop 9_4
                if(dt%l2 /=7)                                  error stop 10_4
                if(dt%l1%kind /=kind(dt%l1) &
                     .or. dt%l1%kind /= 8)                     error stop 11_4
-               if(dt%l2%kind /=kind(dt%l2) & 
+               if(dt%l2%kind /=kind(dt%l2) &
                    .or. dt%l2%kind /= 2)                      error stop 12_4
                if(dt%c1%len /=len(dt%c1) &
                     .or. dt%c1%len /= 0)                      error stop 13_4
@@ -101,10 +93,10 @@ module m
 
 end module
 
-  program dtParameterInquirySelectTypeParam03 
+  program dtParameterInquirySelectTypeParam03
   use m
   implicit none
-  
+
   class(base(:,:)),pointer :: dt=>null()
 
   allocate(base(len('xlf'),len("xlf"//"test")) :: dt)

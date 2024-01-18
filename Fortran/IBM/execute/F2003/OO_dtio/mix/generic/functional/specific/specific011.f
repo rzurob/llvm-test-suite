@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures (generic-binding)
 !*                                 - Specific Binding
@@ -138,10 +127,10 @@ program specific011
       type is ( child )
          if ( ( b1%c /= 'abc' ) .or. ( b1%i /= 1001 ) .or. ( c1%c /= 'ghi' ) .or. ( c1%i /= 1004 ) ) error stop 3_4
    end select
-   
+
    select type ( b2 )
       type is ( gen3 )
-         select type ( c2 ) 
+         select type ( c2 )
             type is ( gen3 )
                if ( ( b2%c /= 'def' ) .or. ( b2%i /= 1002 ) .or. ( b2%j /= 1003 ) .or. &
                     ( c2%c /= 'jkl' ) .or. ( c2%i /= 1005 ) .or. ( c2%j /= 1006 ) .or. &

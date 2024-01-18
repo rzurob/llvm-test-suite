@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDefSyntax1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 23, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  No data components 
+!*  No data components
 !*
 !*  (338858)
 !
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamTypeDefSyntax1 
+  PROGRAM dtParamTypeDefSyntax1
   IMPLICIT REAL(T)
   PARAMETER (Kind1=4)
 
@@ -63,12 +57,12 @@
     INTEGER(Kind1), KIND :: KP1 = Kind1
   END TYPE
 
-  
-  TYPE (DT1(0, 1, 2147483647))                                  :: T1 
+
+  TYPE (DT1(0, 1, 2147483647))                                  :: T1
   TYPE (DT2(0_8, -1_1, -2147483648))                            :: T2
   TYPE (DT3(0, 1, 2147483647, 0_8, -1_1, -2147483648 ))         :: T3
-  TYPE (DT4(-1_1+1, 2_8-1_2, -2147483648))                      :: T4 
-  TYPE (DT5(-1_1+1, 2_8-1_2, -2147483649_8+1, 1_8, 1_4, 1_2)):: T5 
+  TYPE (DT4(-1_1+1, 2_8-1_2, -2147483648))                      :: T4
+  TYPE (DT5(-1_1+1, 2_8-1_2, -2147483649_8+1, 1_8, 1_4, 1_2)):: T5
 
   IF (T1%TP1 .NE. 0 )           STOP 11
   IF (T1%TP2 .NE. 1 )           STOP 12

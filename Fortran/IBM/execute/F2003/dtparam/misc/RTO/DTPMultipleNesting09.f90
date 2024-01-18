@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTPMultipleNesting09.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : March 25, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Run Time Offset (RTO)
-!*  SECONDARY FUNCTIONS TESTED : Structure constructor 
+!*  SECONDARY FUNCTIONS TESTED : Structure constructor
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,14 +17,14 @@
 !* Defect: 355394.3
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
         INTEGER, KIND :: k1
         INTEGER, LEN  :: l1
 
-        INTEGER(k1) :: A0(l1), A1(2*l1), A2(l1,l1) 
+        INTEGER(k1) :: A0(l1), A1(2*l1), A2(l1,l1)
       END TYPE
 
       TYPE,  EXTENDS(Base) :: Child (k2,l2)
@@ -54,7 +46,7 @@ PROGRAM DTPMultipleNesting09
       USE Mod
       IMPLICIT NONE
 
-      CLASS(*), POINTER :: upoly 
+      CLASS(*), POINTER :: upoly
 
       ALLOCATE( upoly, SOURCE =  Base(4,10) ( 1, 2, 3 ) )
       SELECT TYPE ( upoly )

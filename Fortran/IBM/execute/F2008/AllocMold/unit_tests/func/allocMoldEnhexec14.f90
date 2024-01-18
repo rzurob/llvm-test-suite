@@ -1,6 +1,6 @@
 type base
   integer :: iii
-end type 
+end type
 
 type(base), allocatable :: b1(:)
 integer, allocatable :: jjj(:)

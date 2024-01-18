@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadAsActualArg01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadAsActualArg01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 23 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
-!*  2. USE GENERIC BINDING WITH SPREAD AS ACTUAL ARGUMENT 
-!*  3. RANK ARE DIFFERENT 
+!*  2. USE GENERIC BINDING WITH SPREAD AS ACTUAL ARGUMENT
+!*  3. RANK ARE DIFFERENT
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type dtp(k1,k2,l1,l2)
@@ -34,17 +26,17 @@ module m
         procedure,nopass :: spread2=>checkSpread2
         procedure,nopass :: spread3=>checkSpread3
         generic :: spread=>spread1,spread2,spread3
-  end type 
+  end type
 
   contains
 
     subroutine checkSpread1(dt,dim)
-       type(dtp(2,2,*,*)),intent(in) :: dt(:) 
+       type(dtp(2,2,*,*)),intent(in) :: dt(:)
        integer, intent(in) :: dim
        integer :: i
 
        print *," in checkSpread1,dim= ",dim
-       
+
        if(dt%k1 /= 2 .or. dt%k2 /= 2)                 error stop 10_4
        if(dt%l1 /= 1 .or. dt%l2 /= 2)                 error stop 11_4
        if(dim == 1) then
@@ -61,7 +53,7 @@ module m
        integer  :: i
 
        print *," in checkSpread2,dim= ",dim
-       
+
        if(dt%k1 /= 2 .or. dt%k2 /= 2)                 error stop 15_4
        if(dt%l1 /= 1 .or. dt%l2 /= 2)                 error stop 16_4
        select case(dim)
@@ -70,8 +62,8 @@ module m
                if(any(dt(i,1)%i /= [1,2]))            error stop 17_4
                if(any(dt(i,2)%i /= [1,2]))            error stop 18_4
                if(lbound(dt(i,1)%i,1) /= 1)           error stop 19_4
-               if(ubound(dt(i,2)%i,1) /= 2)           error stop 20_4 
-             end do 
+               if(ubound(dt(i,2)%i,1) /= 2)           error stop 20_4
+             end do
           case(2)
              do i=1,size(dt,2)
                if(any(dt(1,i)%i /= [1,2]))            error stop 21_4
@@ -81,13 +73,13 @@ module m
              end do
           case default
             error stop 101_4
-       end select 
+       end select
     end subroutine
     subroutine checkSpread3(dt,dim)
        type(dtp(2,2,*,*)),intent(in) :: dt(:,:,:)
        integer,intent(in)  :: dim
        integer  :: i
- 
+
        print *," in checkSpread3,dim= ",dim
 
        if(dt%k1 /= 2 .or. dt%k2 /= 2)                  error stop 25_4
@@ -101,7 +93,7 @@ module m
                if(any(dt(i,2,1)%i /= [1,2]))           error stop 28_4
 
                if(lbound(dt(i,1,1)%i,1) /= 1)          error stop 29_4
-               if(ubound(dt(i,2,1)%i,1) /= 2)          error stop 30_4  
+               if(ubound(dt(i,2,1)%i,1) /= 2)          error stop 30_4
                if(lbound(dt(i,1,2)%i,1) /= 1)          error stop 31_4
                if(ubound(dt(i,2,2)%i,1) /= 2)          error stop 32_4
              end do
@@ -140,7 +132,7 @@ program spreadAsActualArg01
   implicit none
 
   type(dtp(2,2,:,:)),allocatable :: dtp1
-  
+
   integer :: dim
 
   allocate(dtp(2,2,1,2) :: dtp1)
@@ -149,7 +141,7 @@ program spreadAsActualArg01
   call dtp1%spread(spread(dtp1,1,2),dim=1)
   call dtp1%spread(spread(spread(dtp1,1,2),1,3),dim=1)
   call dtp1%spread(spread(spread(dtp1,1,2),1,3),dim=2)
-  call dtp1%spread(spread( spread( spread(dtp1,1,2), 1,2),1,2),dim=1 )    
+  call dtp1%spread(spread( spread( spread(dtp1,1,2), 1,2),1,2),dim=1 )
   call dtp1%spread(spread( spread( spread(dtp1,1,2), 1,2),1,2),dim=2 )
   call dtp1%spread(spread( spread( spread(dtp1,1,2), 1,2),1,2),dim=3 )
 end program

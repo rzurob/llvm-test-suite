@@ -1,20 +1,15 @@
 !*********************************************************************
 !  ===================================================================
-!  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!  ===================================================================
 !
 !  TEST CASE NAME             : do_concurrent_f032.f
-!  TEST CASE TITLE            :
 !
-!  PROGRAMMER                 : Bernard Kan
 !  DATE                       : Sept 21, 2015
-!  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !
 !  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT Construct
 !  SECONDARY FUNCTIONS TESTED : PURE Function
 !
 !  DESCRIPTION                : Indirect array access inside a scalar-
-!    mask-expr or in the DO CONCURRENT construct 
+!    mask-expr or in the DO CONCURRENT construct
 !    Also covers some secondary tests:
 !    - the scalar-mask-expression, concurrent-step or concurrent-limit could be:
 !      - an expression
@@ -135,7 +130,6 @@ PROGRAM do_concurrent_f029
      integer :: limit2 = 10
    end type
 
-
    integer, dimension(100) :: main_index1 = (/ (j, j=1,100) /)
    integer, dimension(10)  :: main_index2 = (/ (j, j=1,10) /)
    integer :: main_limit1 = 100
@@ -147,7 +141,7 @@ PROGRAM do_concurrent_f029
    !--------------------------------
    ! counters
    !--------------------------------
-   
+
    type (base) base1
    type (child) child1
 
@@ -245,7 +239,7 @@ PROGRAM do_concurrent_f029
           r1a(mod_index1(in1),in2) = imag(c1a(in1,mod_index2(in2)))
       END DO
    END DO
-  
+
    DO in1 = 1,100, 3
      DO in2 = 1,10,2
         if( .not.precision_r4( real(c1a(in1,in2)),0)) then

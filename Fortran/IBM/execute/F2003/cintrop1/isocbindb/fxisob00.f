@@ -1,46 +1,32 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
 ! %PRECMD: ${TR_SRC}/scrisoa00.presh fxisob00 cxisob00
 ! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
-!*  SECONDARY FUNCTIONS TESTED : see below 
+!*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_LONG, C_LONG_LONG
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*
 !*	- testing C_LONG and C_LONG_LONG
 !*	- using external FORTRAN functions
@@ -54,7 +40,7 @@ integer(C_LONG) function fnt1(a,b)
 
    integer(C_LONG) :: a
    integer(C_LONG_LONG) :: b
-   
+
    if ( a /= 5 ) error stop 20
    if ( b /= 10 ) error stop 22
 
@@ -69,7 +55,7 @@ integer(C_LONG) function fnt2(a,b)
 
    integer(C_LONG), value :: a
    integer(C_LONG_LONG), value :: b
-   
+
    if ( a /= 5 ) error stop 24
    if ( b /= 10 ) error stop 26
 
@@ -84,7 +70,7 @@ integer(C_LONG) function fnt3(a,b)
 
    integer(C_LONG), intent(in) :: a
    integer(C_LONG_LONG), intent(in) :: b
-   
+
    if ( a /= 5 ) error stop 28
    if ( b /= 10 ) error stop 30
 
@@ -96,7 +82,7 @@ integer(C_LONG) function fnt4(a,b)
 
    integer(C_LONG), intent(in), value :: a
    integer(C_LONG_LONG), intent(in), value :: b
-   
+
    if ( a /= 5 ) error stop 32
    if ( b /= 10 ) error stop 34
 
@@ -108,7 +94,7 @@ integer(C_LONG) function fnt5(a,b)
 
    integer(C_LONG), intent(in) :: a
    integer(C_LONG_LONG), intent(in) :: b
-   
+
    if ( a /= 5 ) error stop 36
    if ( b /= 10 ) error stop 38
 
@@ -120,7 +106,7 @@ integer(C_LONG) function fnt6(a,b)
 
    integer(C_LONG), intent(in), value :: a
    integer(C_LONG_LONG), intent(in), value :: b
-   
+
    if ( a /= 5 ) error stop 40
    if ( b /= 10 ) error stop 42
 

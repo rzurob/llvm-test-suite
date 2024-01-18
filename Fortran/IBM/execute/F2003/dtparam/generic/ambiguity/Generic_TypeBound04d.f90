@@ -1,23 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound04d
 !*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY SUBROUTINES TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY SUBROUTINES TESTED : Resolution for polymorphic objects
-!*                                 based on type incompatibility of the 
+!*                                 based on type incompatibility of the
 !*                                 non-passed object dummy argument
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -40,32 +33,32 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base (k,l)
-        INTEGER, KIND :: k 
-        INTEGER, LEN :: l 
+        INTEGER, KIND :: k
+        INTEGER, LEN :: l
 
         CHARACTER(l) :: tag
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child1 (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
-        CONTAINS 
+        CONTAINS
          PROCEDURE, NOPASS :: sub1
          GENERIC :: SUB =>  sub1
-      END TYPE Child1 
+      END TYPE Child1
 
       TYPE, EXTENDS(Base) :: Child2 (k2,l2)
-        INTEGER, KIND :: k2 
-        INTEGER, LEN :: l2 
+        INTEGER, KIND :: k2
+        INTEGER, LEN :: l2
 
-        CONTAINS 
+        CONTAINS
          PROCEDURE, NOPASS :: sub2
          GENERIC :: SUB =>  sub2
-      END TYPE Child2 
+      END TYPE Child2
 
       TYPE, EXTENDS(Child1) :: NextGen1 (k13,l13)
         INTEGER, KIND :: k13
@@ -78,7 +71,7 @@
       END TYPE NextGen2
 
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE sub1(Obj)
       CLASS(Base(4,*)) :: Obj
@@ -98,22 +91,22 @@
 !*
       PROGRAM Generic_TypeBound04d
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      TYPE(BAse(4,10)) :: b1 
-      TYPE(Child1(4,5,4,10)), TARGET  :: c1 
-      TYPE(NextGen2(4,10,4,2,8,20)) :: n2     
+      TYPE(BAse(4,10)) :: b1
+      TYPE(Child1(4,5,4,10)), TARGET  :: c1
+      TYPE(NextGen2(4,10,4,2,8,20)) :: n2
 
-      CLASS(Base(4,:)), POINTER :: poly_b1 
-      CLASS(Child1(4,5,4,10)), POINTER :: poly_c1 
-      CLASS(NextGen2(4,:,4,:,8,:)), POINTER :: poly_n2     
+      CLASS(Base(4,:)), POINTER :: poly_b1
+      CLASS(Child1(4,5,4,10)), POINTER :: poly_c1
+      CLASS(NextGen2(4,:,4,:,8,:)), POINTER :: poly_n2
 
-!* Test 1: allocation of dynamic objects 
+!* Test 1: allocation of dynamic objects
       ALLOCATE(Base(4,10):: poly_b1)
       poly_c1 =>  c1
       ALLOCATE(poly_n2, source=n2)
 
-!* call to sub1      
+!* call to sub1
       CALL c1%SUB(b1)
       IF ( b1%tag .NE. '1' ) STOP 10
       CALL c1%SUB(c1)
@@ -130,7 +123,7 @@
       CALL poly_c1%SUB(poly_n2)
       IF ( poly_n2%tag .NE. '1' ) STOP 16
 
-!* call to sub2      
+!* call to sub2
       CALL n2%SUB(b1)
       IF ( b1%tag .NE. '2' ) STOP 17
       CALL n2%SUB(c1)

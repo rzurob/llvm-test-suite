@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : February 5, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_LOGB with real variables.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,7 +30,6 @@
 !* 2.Test negative real*4/*8/*16
 !* 3.Test +/- ZERO  real*4/*8/*16
 !* 4.Test +/- Denormals real*4/*8/*16
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,10 +44,10 @@
         real*16 :: x_16, y_16
         logical :: flag_values(5), flag_value, expect_value(5)
         type(ieee_status_type) :: status_value
-		
+
 
 !       Test real*4
- 
+
         call ieee_set_flag(ieee_all,.false.)
 
 
@@ -71,7 +62,7 @@
         x_4 = tiny(1.0)
         y_4 = ieee_logb(x_4)
         if (y_4 /= exponent(x_4)-1)error stop 3
-                                        ! "ieee_logb failed for real*4."		
+                                        ! "ieee_logb failed for real*4."
 
         ! Now check that no flags were turned on.
         call ieee_get_flag(ieee_all,flag_values)
@@ -95,8 +86,8 @@
                                           ! "ieee_logb failed for real*8."
         x_8 = tiny(1.0_8)
         y_8 = ieee_logb(x_8)
-        if (y_8 /= exponent(x_8)-1)error stop 6 
-                                          ! "ieee_logb failed for real*8."	
+        if (y_8 /= exponent(x_8)-1)error stop 6
+                                          ! "ieee_logb failed for real*8."
 
 
         ! Now check that no flags were turned on.
@@ -148,7 +139,7 @@
 
         x_8 = -65536.0
         y_8 = ieee_logb(x_8)
-        if (y_8 /= exponent(x_8)-1)error stop 11 
+        if (y_8 /= exponent(x_8)-1)error stop 11
                                         ! "ieee_logb failed real*8 w/ negative."
 
         ! Now check that no flags were turned on.
@@ -162,7 +153,7 @@
 
         x_16 = -2.0_16**308
         y_16 = ieee_logb(x_16)
-        if (y_16 /= exponent(x_16)-1)error stop 12 
+        if (y_16 /= exponent(x_16)-1)error stop 12
                                        !"ieee_logb failed real*16 w/ negative.."
 
 !        ! Now check that no flags were turned on.
@@ -172,7 +163,7 @@
 !        enddo
 
 
-!       Test zero 
+!       Test zero
 
         call ieee_set_flag(ieee_all,.false.)
 
@@ -281,7 +272,7 @@
         y_8 = ieee_logb(x_8)
         if (y_8 /= exponent(x_8)-1)error stop 23
                                           ! "ieee_logb failed for real*8."
-        
+
         y_8 = ieee_logb(x_8)
         if (y_8 /= exponent(x_8)-1)error stop 24
                                           ! "ieee_logb failed for real*8."

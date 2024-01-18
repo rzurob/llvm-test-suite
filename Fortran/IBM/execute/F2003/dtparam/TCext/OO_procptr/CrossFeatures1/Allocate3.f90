@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Allocate3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Allocate3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Allocate3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Allocate3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 9, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,23 +34,23 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  The allocate stmt 
-!*   
-!*  (306345) 
+!*
+!*  The allocate stmt
+!*
+!*  (306345)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
 
-    INTERFACE 
+    INTERFACE
       FUNCTION IntF(Arg)
-        PROCEDURE(INTEGER), POINTER :: IntF 
+        PROCEDURE(INTEGER), POINTER :: IntF
         PROCEDURE(INTEGER)          :: Arg
       END FUNCTION
     END INTERFACE
-    
+
     TYPE :: DT(K1)    ! (4)
       INTEGER, KIND :: K1
       INTEGER(K1)   :: Id
@@ -68,7 +62,7 @@
     FUNCTION ProcFun(Arg)
     PROCEDURE(INTEGER), POINTER :: ProcFun
     PROCEDURE(INTEGER)          :: Arg
-      ProcFun => Arg 
+      ProcFun => Arg
     END FUNCTION
 
     FUNCTION Fun(Arg)
@@ -79,20 +73,20 @@
 
   END MODULE
 
-  PROGRAM Allocate3 
+  PROGRAM Allocate3
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
   TYPE(DT(4))              :: V
   TYPE(DT(4)), POINTER     :: VP
   TYPE(DT(4)), ALLOCATABLE :: VA
- 
+
   ALLOCATE(VP)
   IF ( .NOT. ASSOCIATED( VP ) )        STOP 11
   IF (       ASSOCIATED( VP%ProcPtr2)) STOP 12
 
   VP%ProcPtr2 => Fun
   IF ( .NOT. ASSOCIATED( VP%ProcPtr2 ))    STOP 13
-  V = DT(4)(VP%ProcPtr2(-1), NULL(), VP%ProcPtr2 ) 
+  V = DT(4)(VP%ProcPtr2(-1), NULL(), VP%ProcPtr2 )
   IF ( V%Id .NE. -1 )                      STOP 14
   IF ( .NOT. ASSOCIATED(V%ProcPtr2, Fun) ) STOP 15
 
@@ -114,4 +108,4 @@
 
   END
 
- 
+

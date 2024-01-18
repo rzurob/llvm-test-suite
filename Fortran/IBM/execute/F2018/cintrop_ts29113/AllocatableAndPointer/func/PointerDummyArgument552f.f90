@@ -1,31 +1,23 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : PointerDummyArgument552f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Calling a BIND(C) procedure defined in C from Fortran 
+!* DESCRIPTION                  : Calling a BIND(C) procedure defined in C from Fortran
 !*                                - Assoociate in C using CFI_setpointer
 !*                                - Assoociate a pointer with a C-descriptor to a pointer that also has a C-descriptor
 !*                                - Assoociate a pointer with a Fortran-descriptor to a pointer with a C-descriptor
-!*                                - De-associate in Fortran using => NULL() 
-!*                                - Verify association status and values in both C and Fortran 
-!*                                  
+!*                                - De-associate in Fortran using => NULL()
+!*                                - Verify association status and values in both C and Fortran
 !*
 !* Actual Argument:
-!*  
+!*
 !* Dummy Argument:
 !*
 !* ===================================================================
@@ -57,11 +49,11 @@ end interface
 integer(c_int), pointer :: al(:,:,:,:,:,:,:,:,:,:,:,:,:,:,:)
 integer(c_int), pointer :: ptr1D(:)
 integer(c_int), allocatable :: al1D(:)
-     
+
 ! call C procedures with non-associated
 call c_associate(al)
 
-! verify association status, size and bounds 
+! verify association status, size and bounds
 if(                               .not. associated(al) ) ERROR STOP 10
 if(                            .not. is_contiguous(al) ) ERROR STOP 11
 if( size(al)       /=                                3 ) ERROR STOP 12
@@ -85,7 +77,7 @@ if( any(shape(ptr1D) /=     [3]) ) ERROR STOP 22
 if( lbound(ptr1D,1)  /=        1 ) ERROR STOP 23
 if( ubound(ptr1D,1)  /=        3 ) ERROR STOP 24
 if( any(ptr1D        /= [3,2,4]) ) ERROR STOP 25
-! ----> send this one to C and check contiguity/values, size and other things 
+! ----> send this one to C and check contiguity/values, size and other things
 ptr1D => NULL()
 
 allocate(ptr1D(3))
@@ -97,7 +89,7 @@ if( any(shape(ptr1D) /=     [3]) ) ERROR STOP 32
 if( lbound(ptr1D,1)  /=        1 ) ERROR STOP 33
 if( ubound(ptr1D,1)  /=        3 ) ERROR STOP 34
 if( any(ptr1D        /= [3,2,4]) ) ERROR STOP 35
-! ----> send this one to C and check contiguity/values, size and other things 
+! ----> send this one to C and check contiguity/values, size and other things
 deallocate(ptr1D)
 
 al1D = al(1,1,1,1,1,1,1,1,1,1,1,1,1,1,:)

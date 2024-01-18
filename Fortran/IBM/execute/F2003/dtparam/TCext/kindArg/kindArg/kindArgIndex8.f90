@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgIndex8
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : INDEX 
+!*  SECONDARY FUNCTIONS TESTED : INDEX
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,12 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  
-!*  Long string(2**30) 
-!*    
-!*  () 
+!*  Long string(2**30)
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -42,15 +33,15 @@
   PROGRAM kindArgIndex8
   IMPLICIT NONE
 
-  INTEGER(1) :: I1 
+  INTEGER(1) :: I1
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
 
   INTEGER   :: I, J
-  CHARACTER(LEN=:), POINTER :: CC 
-  CHARACTER(LEN=128*100) :: C 
-  
+  CHARACTER(LEN=:), POINTER :: CC
+  CHARACTER(LEN=128*100) :: C
+
   TYPE :: DT(N1,D1,D2,D3,D4)    ! (20,1,2,4,8)
     INTEGER, KIND :: D1,D2,D3,D4
     INTEGER, LEN  :: N1
@@ -63,7 +54,7 @@
   TYPE (DT(20,1,2,4,8)), PARAMETER :: T(128)=DT(20,1,2,4,8)(1,2,4,8)
 
   DO I=1, LEN(C)
-    C(I:I)= ACHAR(MOD(I,128)) 
+    C(I:I)= ACHAR(MOD(I,128))
   END DO
 
   ALLOCATE(CC, SOURCE=C)

@@ -1,47 +1,42 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : substr003.f
-!*  TEST CASE TITLE            : Test the substring of character array coarray
-!*                               
-!*  PROGRAMMER                 : Ke Wen Lin 
-!*  DATE                       : March 28, 2011 
+!*
+!*  DATE                       : March 28, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test the substring of character array coarray
-!*                              
-!*  SECONDARY FUNCTIONS TESTED :                                                      
-!*  
+!*
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REFERENCE                  : No Feature Number
 !*
-!*  DRIVER STANZA              : xlf2003_r
 !*  REQUIRED COMPILER OPTIONS  : -qcaf -q64
 !*
 !*  KEYWORD(S)                 : character, CAF, substring, array
-!* 
-!*  TARGET(S)                  : character array coarray           
+!*
+!*  TARGET(S)                  : character array coarray
 !*
 !*  DESCRIPTION:
 !*  -----------
-!*  The testcase aim to 
+!*  The testcase aim to
 !*  1. test the substring of character array coarray
 !*  -----------
-!*  
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program substr003
 	use char_mod
 	implicit none
-	
+
 	integer, parameter :: P = 1, Q = 2
-	
-	character (len=100), 	save :: coStr(3)[-1:0,0:1,2:*] 
-	character (len=2000),	save :: coStr4[0:2,1:*] 
+
+	character (len=100), 	save :: coStr(3)[-1:0,0:1,2:*]
+	character (len=2000),	save :: coStr4[0:2,1:*]
 	character (len=1), 		save :: unit_char[*], parity_char[*]
 
-	character (len=2000) :: loStr 
+	character (len=2000) :: loStr
 	character (len=1) 	 :: P_unit_char, P_parity_char, Q_unit_char, Q_parity_char
 
 	integer :: coStr_low_bounds(3), coStr_up_bounds(3), coStr_index(3)
@@ -57,7 +52,7 @@ program substr003
 
 	if (MOD(me,2) == 0) then
 		parity_char = "E"
-	else 
+	else
 		parity_char = "O"
 	end if
 
@@ -80,7 +75,7 @@ program substr003
 	coStr4_index = this_image(coStr4)
 
 	sync all
-	
+
 	!!! ************  from beginning to end  ************ !!!
 
 	coStr4 = ""
@@ -119,7 +114,7 @@ program substr003
 	  .AND. (verifyChars(coStr4,2,11,parity_char)) &
 	  .AND. (verifyChars(coStr4,12,111,unit_char)))) then
 		error stop 16
-	end if 
+	end if
 
 	coStr4[coStr4_index(1),coStr4_index(2)] = ""
 	coStr4[coStr4_index(1),coStr4_index(2)] = coStr(1)(1:1)[coStr_index(1),coStr_index(2),coStr_index(3)] // coStr(2)(1:10)[coStr_index(1),coStr_index(2),coStr_index(3)] // coStr(3)(1:100)[coStr_index(1),coStr_index(2),coStr_index(3)]
@@ -259,12 +254,12 @@ program substr003
 
 	! ************** blend images ************** !
 
-	if (ne > MAX_IMAGE) then 
+	if (ne > MAX_IMAGE) then
 		ne = MAX_IMAGE
 	end if
 
 	sync all
-	
+
 	! when current image is P, compare the results from concatenation and substring
 	if(me == P) then
 
@@ -280,11 +275,11 @@ program substr003
 					end do
 				end do
 			end do loop1
-		
+
 		if(len_trim(coStr4) /= (ne * 5)) then
-			error stop 51        
+			error stop 51
 		end if
-		
+
 		loStr = ""
 		loop2:do k = coStr_low_bounds(3),coStr_up_bounds(3)
 				do j = coStr_low_bounds(2),coStr_up_bounds(2)
@@ -297,28 +292,28 @@ program substr003
 					end do
 				end do
 			end do loop2
-		
-		if(coStr4 /= loStr) then 
+
+		if(coStr4 /= loStr) then
 		   error stop 52
 		end if
-		
+
 	else if (me /= P) then
-		! when current image is Q, substring from P & Q, then change P	
-		if(me == Q) then 
+		! when current image is Q, substring from P & Q, then change P
+		if(me == Q) then
 			coStr4[0,1] = ""
 			coStr4[0,1] = coStr(1)(1:5)[-1,0,2] // coStr(1)(6:10)[0,0,2]
 			if(.NOT.( (len_trim(coStr4[0,1]) == 10) .AND. (verifyChars(coStr4[0,1],1,5,P_unit_char)) &
 			  .AND. (verifyChars(coStr4[0,1],6,10,Q_unit_char)) )) then
 				error stop 53
 			end if
-			
+
 			coStr4[0,1] = ""
 			coStr4[0,1] = coStr(1)(3:7)[-1,0,2] // coStr(1)(3:7)[0,0,2]
 			if(.NOT.( (len_trim(coStr4[0,1]) == 10) .AND. (verifyChars(coStr4[0,1],1,5,P_unit_char)) &
 			  .AND. (verifyChars(coStr4[0,1],6,10,Q_unit_char)) )) then
 				error stop 54
 			end if
-			
+
 			coStr4[0,1] = ""
 			coStr4[0,1] = coStr(1)(6:10)[-1,0,2] // coStr(1)(1:5)[0,0,2]
 			if(.NOT.( (len_trim(coStr4[0,1]) == 10) .AND. (verifyChars(coStr4[0,1],1,5,P_unit_char)) &
@@ -326,7 +321,7 @@ program substr003
 				error stop 55
 			end if
 		end if
-		
+
 	end if
 
 end program substr003

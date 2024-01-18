@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 2011-07-13
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : a simple test on assumed size coarray dummy
 !*                              The algorithm is to reverse an array component
@@ -44,7 +34,7 @@ module m
 
     contains
 
-    !this routine does reversal on elemnet order for 
+    !this routine does reversal on elemnet order for
     ! each a(1:n) if the flag == 'reverse'
     subroutine reverse_order_n_sum (a, n)
         integer, intent(in) :: n

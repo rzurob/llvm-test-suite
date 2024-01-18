@@ -1,35 +1,27 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : nullDefaultInitComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : nullDefaultInitComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 26 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 26 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD]) 
+!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD])
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.88 
+!* 1. TEST SECTION 13.7.88
 !* 2. NULL([MOLD])
 !* 3. DEFAULT INITIALIZATION FOR A DERIVED TYPE COMPONENT
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type A(ka)
-       integer,kind :: ka 
+       integer,kind :: ka
        integer,allocatable :: i1
-       integer,pointer     :: i2=>null() 
+       integer,pointer     :: i2=>null()
    end type
    type B(kb)
        integer,kind :: kb
@@ -45,8 +37,8 @@ program nullDefaultInitComp01
    type(B(4)) :: btype
 
    type(A(4)),target :: atype
- 
-   integer,target :: i=2 
+
+   integer,target :: i=2
 
    if(btype%kb /= 4)                             error stop 10_4
    if(allocated(btype%a1))                       error stop 11_4
@@ -62,8 +54,8 @@ program nullDefaultInitComp01
 
    if(allocated(btype%a1%i1))                    error stop 17_4
    if(associated(btype%a1%i2))                   error stop 18_4
-   if(allocated(btype%a2%i1))                    error stop 19_4 
-   if(associated(btype%a2%i2))                   error stop 20_4     
+   if(allocated(btype%a2%i1))                    error stop 19_4
+   if(associated(btype%a2%i2))                   error stop 20_4
 
    btype%a1%i1=i
    btype%a1%i2=>i
@@ -78,7 +70,7 @@ program nullDefaultInitComp01
    if(btype%a1%i2 /= 2)                          error stop 26_4
    if(btype%a2%i1 /= 2)                          error stop 27_4
    if(btype%a2%i2 /= 2)                          error stop 28_4
-   
+
 
 
 end program

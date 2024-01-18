@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcSourceOfProc.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcSourceOfProc.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  The source of procedures - generic bindings from parent type. 
+!*  The source of procedures - generic bindings from parent type.
 !*
-!*  
 !*  (317221)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -61,7 +53,7 @@
 
   MODULE M1
   USE M, ONLY: DT
- 
+
   PROCEDURE(ModSub), POINTER :: ProcPtr
 
   TYPE, EXTENDS(DT) :: DT1
@@ -93,10 +85,10 @@
   USE M1, ONLY: T1, T2, InitProcPtr, ASSIGNMENT(=)
 
 
-  CALL InitProcPtr() 
+  CALL InitProcPtr()
 
-  T  = T1 
-  T1 = T2 
+  T  = T1
+  T1 = T2
 
   IF (TRIM(T%ID)   .NE. "M-0" )  STOP 11
   IF (TRIM(T1%ID)  .NE. "M1-2" ) STOP 12

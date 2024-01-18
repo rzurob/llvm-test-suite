@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrC717_3.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrC717_3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 2, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  C717 (R735) If data-target is unlimited polymorphic, data-pointer-object shall be
-!*  unlimited polymorphic,  of a sequence derived type, or of a type with 
-!*  the BIND attribute.  
-!*  -- bind(c) 
+!*  unlimited polymorphic,  of a sequence derived type, or of a type with
+!*  the BIND attribute.
+!*  -- bind(c)
 !*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-  PROGRAM dataPtrC717_3 
+  PROGRAM dataPtrC717_3
   USE ISO_C_BINDING
   IMPLICIT NONE
 
@@ -49,7 +42,7 @@
     CLASS(*), POINTER :: CPtr(:)
   END TYPE
 
-  TYPE(DT)           :: T 
+  TYPE(DT)           :: T
   TYPE(DT0), TARGET  :: Arr(0:2)=(/DT0(1), DT0(2), DT0(3)/)
   CLASS(*), POINTER  :: CPtr(:)
   TYPE(DT0), POINTER :: CPtr1(:)
@@ -62,7 +55,7 @@
   IF (ANY(CPtr1%I .NE. (/1,2,3/) ))     STOP 13
 
 
-  ALLOCATE(CPtr(0:2), SOURCE=(/DT0(3),DT0(2),DT0(1)/)) 
+  ALLOCATE(CPtr(0:2), SOURCE=(/DT0(3),DT0(2),DT0(1)/))
   I=LBOUND(CPtr,1); J=UBOUND(CPtr,1)-1
   T%CPtr(I:J) => CPtr(I:J+1)
   IF (ANY(LBOUND(T%CPtr) .NE. (/I/)))   STOP 21

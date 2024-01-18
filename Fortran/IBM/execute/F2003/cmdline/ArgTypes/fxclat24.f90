@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxclat24 -sdfgsd sdfgd-sfgdsfg dsfgdsfg +_23453245"
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat24.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,7 @@
 !*
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing variables defined
 !*                             : in a module with the same name as the augument keywords
-!*                             : 
-!*                             : 
+!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -56,10 +49,10 @@
           character(2047)             :: VALUE
           character(513)              :: NAME
           logical                     :: TRIM_NAME
-          INTEGER                     :: ARR(10) 
+          INTEGER                     :: ARR(10)
           integer                     :: ARGCOUNT
 
-        
+
       end module modtype
 
 
@@ -85,7 +78,7 @@
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 4 ) & 
+      if ( CmdCount .ne. 4 ) &
       then
         error stop 63
       endif
@@ -114,7 +107,7 @@
 
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call MyGetArg(CmdLine, NUMBER, Argument)
 
@@ -160,8 +153,8 @@
       endif
 
 
-      END 
- 
+      END
+
 
       INCLUDE 'cmdline.include'
 
@@ -169,4 +162,4 @@
 
 
 
-  
+

@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d353692.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d353692.f
 !*
-!*  PROGRAMMER                 : Nancy Wang   (edited by David Forster)
 !*  DATE                       : July 14 2008 (edited on August 20, 2009)
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
 !*  SECONDARY FUNCTIONS TESTED :  track defect 353821
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. DEFECT 353692 (dup of 353821)
 !*
 !*  CHANGES:
@@ -35,7 +27,6 @@
 !*
 !*  It seems that IF statements may handle the KIND information differently than
 !*  print statements, so we augment the print statements with IF statements.
-
 
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -56,7 +47,7 @@ program d353692
   print *,t%k1%kind,kind(t%k1)
   print *,t%k2%kind,kind(t%k2)
   print *,kind(t%k1+t%k2),t%i%kind,kind(t%i)
-  allocate(integer(kind(t%k1+t%k2)) :: t%i(2)) 
+  allocate(integer(kind(t%k1+t%k2)) :: t%i(2))
 
   if ( t%k1 /= 2 .or. t%k2 /= 2 ) stop 2
   if ( t%k1%kind /= 1 .or. kind(t%k1) /= 1 ) stop 3

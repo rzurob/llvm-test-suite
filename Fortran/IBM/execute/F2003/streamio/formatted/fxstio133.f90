@@ -2,45 +2,38 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio133.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                : Reading a record file created by formatted 
+!*  DESCRIPTION                : Reading a record file created by formatted
 !*                               stream access using sequential I/O.
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/21/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/21/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  program fxstio133 
+  program fxstio133
 
      implicit none
      integer    ios
@@ -57,16 +50,16 @@
      logical*2 	l2_in, l2_out
      logical*4 	l4_in, l4_out
      logical*8 	l8_in, l8_out
-     character    ch1_in, ch1_out  
-     character*15 ch15_in, ch15_out  
+     character    ch1_in, ch1_out
+     character*15 ch15_in, ch15_out
      byte       b_in, b_out
 
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
-	
-!********************************************************** 
+
+!**********************************************************
 !        Initialization of variables                      *
-!********************************************************** 
+!**********************************************************
 
      i2_in = 1234
      i4_in = -20000000
@@ -86,16 +79,16 @@
      b_in = b'01110111'
 
 
-!********************************************************** 
+!**********************************************************
 !        Writing and Reading the file                     *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio133.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
 
      call write_stream(1)
 
-     CLOSE(1) 
+     CLOSE(1)
 
      OPEN(2, FILE='fxstio133.dat', FORM='FORMATTED', ACCESS='SEQUENTIAL', &
     &     STATUS='OLD', IOSTAT=ios, ERR=90)
@@ -103,9 +96,9 @@
      call read_sequential(2)
 
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( i2_in .ne. i2_out ) error stop 20
      if ( i4_in .ne. i4_out ) error stop 21
@@ -135,7 +128,7 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 
      contains
 
@@ -167,7 +160,7 @@
 
            return
 91         print *, "Error while writing to the file: IOSTAT = ", ios
-           error stop 91 
+           error stop 91
         end subroutine
 
 
@@ -176,7 +169,7 @@
 
            READ(unit, FMT='(I5, I10, I20)', IOSTAT=ios, ERR=92) &
           &      i2_out, i4_out, i8_out
-           READ(unit, FMT='(F9.6,D25.17,Q40.32)', IOSTAT=ios, ERR=92) & 
+           READ(unit, FMT='(F9.6,D25.17,Q40.32)', IOSTAT=ios, ERR=92) &
           &      r4_out, r8_out, r16_out
            READ(unit, FMT='(D25.17)', IOSTAT=ios, ERR=92) d8_out
            READ(unit, FMT='(2E15.7,2D25.17,2Q40.32)',IOSTAT=ios,ERR=92) &
@@ -189,6 +182,6 @@
 
            return
 92         print *, "Error while reading from the file: IOSTAT = ", ios
-           error stop 92 
+           error stop 92
         end subroutine
    end program

@@ -1,22 +1,15 @@
 !********************************************************************* !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignIntrinsicComp02a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignIntrinsicComp02a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 2 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 2 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test Defined Assignment with interface block
@@ -44,7 +37,7 @@ module m
    contains
 
       subroutine assign1(dt1,dt2)
-         class(base(*)),intent(inout) :: dt1 
+         class(base(*)),intent(inout) :: dt1
          class(base(*)),intent(in)    :: dt2
 
          print *,"in assign1"
@@ -71,17 +64,16 @@ module m
          class(base(*)),intent(in)  :: dt2(:)
 
          print *,"in assign2"
-         
+
          dt1=dt2(lbound(dt2,1)) ! call assign1
       end subroutine
-
 
       subroutine assign3(dt1,dt2)
          class(base(*)),intent(inout) :: dt1(:)
          class(base(*)),intent(in)    :: dt2(:)
 
          integer :: l1,l2,i
-        
+
          print *,"in assign3"
 
          l1=lbound(dt1,1)
@@ -97,18 +89,18 @@ module m
                    type is(base(*))
                        do i=0,size(x)-1
                           x(l1+i)%c1="("//dt2(l2+i)%c1(:)(2:2)//")"
-                       end do       
+                       end do
                    type is(child(*,4,*))
-                      do i=0,size(x)-1 
+                      do i=0,size(x)-1
                           x(l1+i)%i1=-y(l2+i)%i1
                           x(l1+i)%c1="{"//y(l2+i)%c1(:)(2:2)//"}"
                       end do
                    class default
                       stop 11
-                end select 
+                end select
              class default
                 stop 10
-         end select 
+         end select
       end subroutine
 
 end module
@@ -117,23 +109,23 @@ program defAssignIntrinsicComp02a
      use m
      implicit none
 
-     class(base(3)),pointer :: ptr1(:)=>null()      
+     class(base(3)),pointer :: ptr1(:)=>null()
      type(child(3,4,:)),target,allocatable :: tar1(:)
      type(child(3,4,5)) :: child1(3)
-     type(base(3)) :: base1(3)    
-   
+     type(base(3)) :: base1(3)
+
      allocate(child(3,4,5) :: ptr1(3),tar1(0:2))
 
-     ! call assign3 
+     ! call assign3
      tar1=[child(3,4,5)(c1=["XLF","IBM","XLC"],i1=[11,-12,13]) , &
            child(3,4,5)(c1=["123","456","789"],i1=[21,-22,23]), &
-           child(3,4,5)(c1=["abc","def","ghi"],i1=[31,-32,33]) ] 
+           child(3,4,5)(c1=["abc","def","ghi"],i1=[31,-32,33]) ]
 
-     ptr1=>tar1 ! intrinsic assignment 
-     
+     ptr1=>tar1 ! intrinsic assignment
+
      select type(x=>ptr1)
         type is(child(*,4,*))
-            write(*,*) x 
+            write(*,*) x
         class default
            stop 12
      end select
@@ -141,7 +133,7 @@ program defAssignIntrinsicComp02a
      child1(1:3)=tar1(0:2) ! call assign3
 
      write(*,*) child1
- 
+
      child1=tar1%base ! call assign3
 
      write(*,*) child1
@@ -151,11 +143,11 @@ program defAssignIntrinsicComp02a
      write(*,*) base1
 
      child1%base=base1 ! call assign3
-     
+
      write(*,*) child1
 
      tar1(0)=tar1(2) ! call assign1
-    
+
      write(*,*) tar1
 
      tar1(0)=tar1(1)%base ! call assign1
@@ -166,7 +158,7 @@ program defAssignIntrinsicComp02a
 
      select type(ptr1)
         type is(child(*,4,*))
-           write(*,*) ptr1     
+           write(*,*) ptr1
         class default
            stop 15
      end select

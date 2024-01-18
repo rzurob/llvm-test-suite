@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditd004.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,35 +12,28 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditd004
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Dec. 02, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : providing support for the DECIMAL=
 !*                               specifier and decimal edit mode control
 !*                               descriptors. Feature 289039.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*  REQUIRED RUNTIME OPTIONS   : langlvl=xxxxx
 !*
-!*  DESCRIPTION                : This diagnostic test, checks various    
+!*  DESCRIPTION                : This diagnostic test, checks various
 !*                               runtime langlvls to make sure use of
-!*                               DC and DP descriptors gets flagged 
+!*                               DC and DP descriptors gets flagged
 !*                               when 90std and 95std is specified.
-!*                               This only tests runtime encoding of 
+!*                               This only tests runtime encoding of
 !*                               the descriptors.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-      
+
       CHARACTER(10) BUFFER
       real :: TMP
       CHARACTER(10) MY_FMT

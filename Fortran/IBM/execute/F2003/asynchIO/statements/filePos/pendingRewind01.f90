@@ -1,20 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingRewind01 - REWIND Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 17, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Perform Unformatted Asynchronous WRITE()
 !*                               Operations
 !*  SECONDARY FUNCTIONS TESTED : Perform a REWIND, and READ() the data
 !*                               written
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : REWIND, WRITE(), READ(), ID= Specifier
@@ -36,7 +29,6 @@
 !*  Execution of a file positioning statement performs a wait operation
 !*  for all pending asynchronous data transfer operations for the
 !*  specified unit.
-!*
 !*
 !*  9.7.3 REWIND statement
 !*

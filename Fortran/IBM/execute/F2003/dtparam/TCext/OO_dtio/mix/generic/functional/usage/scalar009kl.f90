@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar009kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar009 by Robert Ma)
 !*  DATE                       : 2007-08-13 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Usage of GENERIC BINDING
 !*                                  - scalar derived type containing private components
@@ -165,34 +157,34 @@ program scalar009kl
    call c1%seti(1001)
 
    write ( 1, "(2(DT))", iostat = stat, iomsg = msg ) b1, c1
-   
+
    deallocate ( b1 )
    allocate ( child(3,4) :: b1 ) ! tcx: (3,4)
-   
-   select type ( b1 ) 
+
+   select type ( b1 )
       type is ( child(*,4) ) ! tcx: (*,4)
          call b1%setc('ghi')
-         call b1%seti(1002)   
+         call b1%seti(1002)
    end select
-   
+
    write ( 1, "((DT))", iostat = stat, iomsg = msg ) b1
 
    rewind 1
-   
+
    deallocate ( b1, c1 )
    allocate (base(3):: b1 ) ! tcx: base(3)
    allocate (child(3,4):: c1 ) ! tcx: child(3,4)
-   
+
    read ( 1, "(2(DT))", iostat = stat, iomsg = msg ) b1, c1
-   
+
    if ( ( b1%getc() /= 'abc' ) .or. ( c1%getc() /= 'def' ) .or. ( c1%geti() /= 1001 ) ) error stop 101_4
-   
+
    deallocate ( b1 )
    allocate ( child(3,4) :: b1 ) ! tcx: (3,4)
-   
+
    read ( 1, "((DT))", iostat = stat, iomsg = msg )  b1
-   
-   select type ( b1 ) 
+
+   select type ( b1 )
       type is ( child(*,4) ) ! tcx: (*,4)
          if ( ( b1%getc() /= 'ghi' ) .or. ( b1%geti() /= 1002 ) ) error stop 2_4
    end select

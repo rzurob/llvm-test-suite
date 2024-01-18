@@ -12,44 +12,36 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dtpexpression024
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : June 2nd, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :testing expressions with derived types
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 type A(ka,la)
   integer, kind :: ka
   integer, len  :: la
-  
+
   real(ka+ka), allocatable :: r(:)
   integer :: i(la+la)
-     
+
 end type
 
 type B(kb,lb)
   integer, kind :: kb
   integer, len  :: lb
-  
+
   integer(kb+kb) :: j
   type(A(kb+kb,(lb*lb)/(kb+kb))) :: A1(kb:lb)
   character(len=lb+lb-kb) :: char(kb*kb:lb*lb)
-  real(kb+kb+kb+kb) :: k 
+  real(kb+kb+kb+kb) :: k
 end type
 
 
@@ -69,4 +61,3 @@ if(lbound(B1%char,1).ne.4) error stop 11
 if(ubound(B1%char,1).ne.100) error stop 12
 
 end
-  

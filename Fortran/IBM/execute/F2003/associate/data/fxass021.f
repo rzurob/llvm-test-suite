@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfixed
 ! %GROUP: fxass021.f
 ! %VERIFY:
@@ -17,24 +11,19 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*
 !*  TEST CASE NAME             : fxass021.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE with do while
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
 !*  DESCRIPTION                : ASSOCIATE with integer reshape array
-!*                               with lable do loop and do while and 
+!*                               with lable do loop and do while and
 !*                               -qfixed
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS            : 1
 !*  STATUS                     : done
@@ -79,8 +68,8 @@
         error stop 1
         endif
        end associate
-            
-       i = i+1
-   10 end do    
 
-      end 
+       i = i+1
+   10 end do
+
+      end

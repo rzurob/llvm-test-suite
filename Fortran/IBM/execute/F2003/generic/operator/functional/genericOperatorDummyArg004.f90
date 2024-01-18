@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator(*)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : operator: non-poly (explicit size) array dummy arguments being the operand
 !*  KEYWORD(S)                 :
@@ -53,7 +42,7 @@ program genericOperatorDummyArg004
 
    type(base) :: b1, b2(5)
    type(base), allocatable :: b3(:)
-   
+
    integer :: i(3)
 
    b1 = base(100)
@@ -81,7 +70,7 @@ program genericOperatorDummyArg004
       integer function mul(a, b)
          type(base), intent(inout) :: a
          type(base), intent(in)  :: b(5)
-         
+
          dimension :: mul(3)
 
          print *, 'mul'
@@ -108,7 +97,7 @@ integer function bmul ( a, b )
    type(base), intent(in) :: b(3)
 
    dimension :: bmul(3)
-   
+
    do k = 1,3
       bmul(k) =  a%i * b(k)%i
    end do

@@ -2,30 +2,23 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio132.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,13 +27,13 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/21/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/21/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  program fxstio132 
+  program fxstio132
 
      implicit none
      integer    ios
@@ -57,16 +50,16 @@
      logical*2 	l2_in, l2_out
      logical*4 	l4_in, l4_out
      logical*8 	l8_in, l8_out
-     character    ch1_in, ch1_out  
-     character*15 ch15_in, ch15_out  
+     character    ch1_in, ch1_out
+     character*15 ch15_in, ch15_out
      byte       b_in, b_out
 
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
-	
-!********************************************************** 
+
+!**********************************************************
 !        Initialization of variables                      *
-!********************************************************** 
+!**********************************************************
 
      i2_in = 1234
      i4_in = -20000000
@@ -86,16 +79,16 @@
      b_in = b'01110111'
 
 
-!********************************************************** 
+!**********************************************************
 !        Writing and Reading the file                     *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio132.dat', FORM='FORMATTED', ACCESS='SEQUENTIAL', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
 
      call write_sequential(1)
 
-     CLOSE(1) 
+     CLOSE(1)
 
      OPEN(2, FILE='fxstio132.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='OLD', IOSTAT=ios, ERR=90)
@@ -103,9 +96,9 @@
      call read_stream(2)
 
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( i2_in .ne. i2_out ) error stop 20
      if ( i4_in .ne. i4_out ) error stop 21
@@ -130,9 +123,9 @@
 
      if ( b_in .ne. b_out) error stop 34
 
-!********************************************************** 
+!**********************************************************
 !    Checking the end-of-file and end-of-file             *
-!********************************************************** 
+!**********************************************************
 
      READ(2, FMT='(A1)', IOSTAT=ios, END=51, POS=342) ch1_out
      error stop 50
@@ -150,7 +143,7 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 
      contains
 	subroutine write_sequential(unit)
@@ -158,7 +151,7 @@
 
            WRITE(unit, FMT='(I5, I10, I20)', IOSTAT=ios, ERR=91) &
           &      i2_in, i4_in, i8_in
-           WRITE(unit, FMT='(F9.6,D25.17,Q40.32)', IOSTAT=ios, ERR=91) & 
+           WRITE(unit, FMT='(F9.6,D25.17,Q40.32)', IOSTAT=ios, ERR=91) &
           &      r4_in, r8_in, r16_in
            WRITE(unit, FMT='(D25.17)', IOSTAT=ios, ERR=91) d8_in
            WRITE(unit, FMT='(2E15.7,2D25.17,2Q40.32)',IOSTAT=ios,ERR=91) &
@@ -171,7 +164,7 @@
 
            return
 91         print *, "Error while writing to the file: IOSTAT = ", ios
-           error stop 91 
+           error stop 91
         end subroutine
 
 	subroutine read_stream(unit)
@@ -202,6 +195,6 @@
 
            return
 92         print *, "Error while reading from the file: IOSTAT = ", ios
-           error stop 92 
+           error stop 92
         end subroutine
    end program

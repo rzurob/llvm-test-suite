@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryArrayIntegerComp05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryArrayIntegerComp05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang   (edited by David Forster)
 !*  DATE                       : July 15 2008 (edited on August 20, 2009)
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
 !*  SECONDARY FUNCTIONS TESTED :  defect 353821 workaround
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY FOR DT AND COMPONENT
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. INTEGER ALLOCATABLE ARRAY COMPONENT
@@ -62,8 +54,8 @@ module m
      integer(kind(int(k2,k1))),allocatable :: i7(:)           ! defect 353821
      integer(k1%kind),dimension(:,:),allocatable :: i8
      integer(kind(int(k1,1)+int(k2,k1))),allocatable :: i9(:) ! defects 353692, 353821
-   end type 
-         
+   end type
+
 end module
 
   program dtParameterInquiryArrayIntegerComp05
@@ -72,7 +64,7 @@ end module
 
   type(base(2,2,4,8))  :: t
 
-   
+
   integer,dimension(2:3,3:-1) :: a1=1
   allocate(t%i1(2))
   allocate(integer(2)::t%i2(3))
@@ -81,31 +73,31 @@ end module
 
   allocate(t%i5(-3:3))
   allocate(t%i6(-1:1,-1:0))                                   ! defect 353689
-  allocate(t%i7(2)) 
+  allocate(t%i7(2))
   allocate(integer(t%k1%kind) ::t%i8(3:4,0:-1))
-  allocate(integer(kind(t%k1+t%k2)) :: t%i9(4)) 
+  allocate(integer(kind(t%k1+t%k2)) :: t%i9(4))
 
 
   if(t%k1 /= 2)                                           error stop 10_4
   if(t%k2 /= 2)                                           error stop 11_4
   if(t%l1 /= 4)                                           error stop 12_4
   if(t%l2 /= 8)                                           error stop 13_4
-  
+
   if(t%k1%kind /= kind(t%k1) .or. t%k1%kind /= 1)         error stop 14_4
   if(t%k2%kind /= kind(t%k2) .or. t%k2%kind /= 2)         error stop 15_4
 
   if(t%l1%kind /= kind(t%l1) .or. t%l1%kind /= 2)         error stop 16_4
   if(t%l2%kind /= kind(t%l2) .or. t%l2%kind /= 2)         error stop 17_4
-  
-  if(t%i1%kind /= kind(t%i1) .or. t%i1%kind /= 1)         error stop 18_4  
+
+  if(t%i1%kind /= kind(t%i1) .or. t%i1%kind /= 1)         error stop 18_4
   if(t%i2%kind /= kind(t%i2) .or. t%i2%kind /= 2)         error stop 19_4
   if(t%i3%kind /= kind(t%i3) .or. t%i3%kind /= 4)         error stop 20_4
   if(t%i4%kind /= kind(t%i4) .or. t%i4%kind /= 8)         error stop 21_4
   if(t%i5%kind /= kind(t%i5) .or. t%i5%kind /= 2)         error stop 22_4
   if(t%i6%kind /= kind(t%i6) .or. t%i6%kind /= 4)         error stop 23_4
   if(t%i7%kind /= kind(t%i7) .or. t%i7%kind /= 2)         error stop 24_4
-  if(t%i8%kind /= kind(t%i8) .or. t%i8%kind /= 1)         error stop 25_4 
-  if(t%i9%kind /= kind(t%i9) .or. t%i9%kind /= 2)         error stop 26_4 
+  if(t%i8%kind /= kind(t%i8) .or. t%i8%kind /= 1)         error stop 25_4
+  if(t%i9%kind /= kind(t%i9) .or. t%i9%kind /= 2)         error stop 26_4
 
   if(lbound(t%i1,1) /=1 .or. ubound(t%i1,1) /= 2)         error stop 27_4
   if(lbound(t%i2,1) /=1 .or. ubound(t%i2,1) /= 3)         error stop 28_4

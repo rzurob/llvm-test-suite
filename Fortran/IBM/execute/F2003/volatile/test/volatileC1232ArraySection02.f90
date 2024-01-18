@@ -1,16 +1,8 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 20/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : assumed-shape array, VOLATILE
-!*
 !*
 !*  DESCRIPTION                : functional TC for  C1232
 !*
@@ -30,7 +22,7 @@
    subroutine arraySectionVolatile(x)         ! internal subroutine
 
       integer, VOLATILE:: x(:,:)
-    
+
     end subroutine arraySectionVolatile
 
   end program volatileC1232ArraySection02

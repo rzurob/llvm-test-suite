@@ -1,22 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : submodule10f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : April 20, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                               
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  DRIVER STANZA              : xlf2008
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
@@ -101,6 +94,6 @@ PROGRAM allocBasePoly03
 
     DEALLOCATE( basePtr )
 
-    IF ( ASSOCIATED( basePtr ) )                error stop  30_4 
+    IF ( ASSOCIATED( basePtr ) )                error stop  30_4
 
 END PROGRAM allocBasePoly03

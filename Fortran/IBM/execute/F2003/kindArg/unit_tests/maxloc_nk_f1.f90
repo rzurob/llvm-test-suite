@@ -1,20 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : maxloc_nk_f1.f
 !*
-!*  PROGRAMMER                 : Vince Yuen
 !*  DATE                       : Apr 10, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support KIND Argument for new intrinsics
 !*
 !*  KEYWORD(S)                 : KIND
 !*
 !*  DESCRIPTION                : test maxloc functionality without kind
-!*                               specified, with various combos of opt 
+!*                               specified, with various combos of opt
 !*                               args, no -qintsize
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890!

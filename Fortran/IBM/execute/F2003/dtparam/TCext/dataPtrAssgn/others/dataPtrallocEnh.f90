@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrallocEnh.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
-!* - data-tar has allocatable attr, which is redefined by intrinisc =, due to 
+!* - data-tar has allocatable attr, which is redefined by intrinisc =, due to
 !*   the size changed. Test the association status of data-ptr &data-target
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,7 +36,7 @@ program main
 
     if (.not. associated(ptr,tar)) stop 1
     if ( lbound(ptr,1) /= 2) stop 2
-    if ( ubound(ptr,1) /= 11) stop 3 
+    if ( ubound(ptr,1) /= 11) stop 3
     if ( any(ptr%id .ne. (/(i,i=1,10)/))) stop 5
 
     tar = (/ ( base(20,4)(i), i=1,11)/)

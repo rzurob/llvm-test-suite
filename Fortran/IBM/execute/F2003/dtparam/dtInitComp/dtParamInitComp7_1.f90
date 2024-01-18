@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitComp7_1 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitComp7_1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 26, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Default initialization for component 
+!*  SECONDARY FUNCTIONS TESTED : Default initialization for component
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  If the component is of a type for which default initialization is specified for a component, 
+!*  If the component is of a type for which default initialization is specified for a component,
 !*  the default initialization specified by initialization-expr overrides the default initialization
 !*  specified for that component.
 !*
-!*  (341246) 
+!*  (341246)
 !*  -- Dup of dtParamInitComp9.f to avoid ac imp do issue
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -63,13 +56,13 @@
                R=(/(-K2, I=1,K2)/),               &
                Z=(/((-K2,K2), I=1,K2)/),          &
                C="??????????",                    &
-               LL=(/(.FALSE._4, I=1,K2)/)   )      
+               LL=(/(.FALSE._4, I=1,K2)/)   )
     END TYPE
 
   END MODULE
 
 
-  PROGRAM dtParamInitComp7_1 
+  PROGRAM dtParamInitComp7_1
   USE M
 
   TYPE(DT2(K2=8, L2=8)) :: T2

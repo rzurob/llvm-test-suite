@@ -4,17 +4,14 @@
 ! %PRECMD: $TR_SRC/intrimod25.presh intrimod25 intrimod25_c
 ! %COMPOPTS: -qintlog -qhalt=w
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod25.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
@@ -68,7 +65,7 @@
          enddo
 
          if( c_fun1() /= 0 ) stop 12
-           
+
          call ieee_get_status(status_value)
          call ieee_set_rounding_mode(rt_nearest)
          yr = ieee_rint(1.1)

@@ -2,8 +2,8 @@
 !subprogram, shall not have the SAVE attribute.
 
 pure subroutine sub
-  block 
+  block
     integer i
     static i
   end block
-end 
+end

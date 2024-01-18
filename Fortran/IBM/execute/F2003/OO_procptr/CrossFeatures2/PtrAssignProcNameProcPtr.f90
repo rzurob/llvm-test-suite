@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignProcNameProcPtr.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignProcNameProcPtr.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignProcNameProcPtr.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignProcNameProcPtr.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,36 +30,36 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  C727 (R742) A procedure-name shall be the name of an external, module,
 !*  or dummy procedure, a specific intrinsic function listed in 13.6
 !*  and not marked with a bullet (.), or a procedure pointer.
-!* 
-!*  The target is a procedure target 
-!*  () 
+!*
+!*  The target is a procedure target
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
 
-    INTERFACE 
+    INTERFACE
       FUNCTION IFun(Arg)
         CLASS(*)          :: Arg
-        CLASS(*), POINTER :: IFun 
+        CLASS(*), POINTER :: IFun
       END FUNCTION
 
       FUNCTION IFun1(Arg)
         CLASS(*)          :: Arg(:)
-        CLASS(*), POINTER :: IFun1(:) 
+        CLASS(*), POINTER :: IFun1(:)
       END FUNCTION
     END INTERFACE
 
-  CONTAINS 
+  CONTAINS
 
   SUBROUTINE ModSub(ArgPtr)
 
-    PROCEDURE(IFun), POINTER           :: Ptr 
-    PROCEDURE(IFun), POINTER, OPTIONAL :: ArgPtr 
+    PROCEDURE(IFun), POINTER           :: Ptr
+    PROCEDURE(IFun), POINTER, OPTIONAL :: ArgPtr
 
     Ptr => ArgPtr
 
@@ -75,19 +69,19 @@
       IF ( As      .NE. "1234" ) STOP 12
     CLASS DEFAULT
       STOP 14
-    END SELECT 
-     
+    END SELECT
+
   END SUBROUTINE
 
   FUNCTION ModFun(Arg)
     CLASS(*)          :: Arg
-    CLASS(*), POINTER :: ModFun 
+    CLASS(*), POINTER :: ModFun
       ALLOCATE(ModFun, SOURCE=Arg)
   END FUNCTION
 
   FUNCTION ModFunArr(Arg)
     CLASS(*)          :: Arg(:)
-    CLASS(*), POINTER :: ModFunArr(:) 
+    CLASS(*), POINTER :: ModFunArr(:)
       ALLOCATE(ModFunArr(SIZE(Arg)), SOURCE=Arg)
   END FUNCTION
 
@@ -98,9 +92,9 @@
   USE M
   IMPLICIT NONE
 
-  PROCEDURE(IFun),  POINTER :: Ptr1 
-  PROCEDURE(IFun1), POINTER :: Ptr2 
-  
+  PROCEDURE(IFun),  POINTER :: Ptr1
+  PROCEDURE(IFun1), POINTER :: Ptr2
+
   Ptr1 => ModFun
   CALL ModSub(Ptr1)
 
@@ -112,9 +106,9 @@
   SUBROUTINE IntSub(ArgPtr)
   INTEGER                  :: i
   PROCEDURE(IFun1), POINTER :: Ptr
-  PROCEDURE(IFun1), POINTER :: ArgPtr 
-    
-    Ptr => ArgPtr 
+  PROCEDURE(IFun1), POINTER :: ArgPtr
+
+    Ptr => ArgPtr
     SELECT TYPE ( As => Ptr((/((1.0_8, -1.0_8) , i=1, 511)/)) )
     TYPE IS (COMPLEX(8))
       IF (ANY(SHAPE(As) .NE. (/511/) ) )         STOP 21

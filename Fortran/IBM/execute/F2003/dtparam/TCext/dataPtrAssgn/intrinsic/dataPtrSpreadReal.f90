@@ -4,25 +4,19 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrSpreadreal.f 
+!*  TEST CASE NAME             : dataPtrSpreadreal.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
 !* - data-pointer is component of dummy arg of type bound subroutine
-!* - lb is a dummy arg of type bound procedure 
+!* - lb is a dummy arg of type bound procedure
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -32,7 +26,7 @@ module m
 	integer, kind     :: k1
 	integer, len      :: n1
 	real(k1), pointer :: x(:)
- 	procedure(basesub), nopass, pointer :: pp  
+ 	procedure(basesub), nopass, pointer :: pp
     end type
 
     real, target, allocatable :: arr(:)
@@ -48,18 +42,18 @@ module m
 
 	    allocate(tmp(i), source=(/ (base(20,4)( arr,null() ),j=1,i) /) )
 
-	    b%x(lbound:) => tmp(1)%x(::2) 
-	
-	end subroutine 
+	    b%x(lbound:) => tmp(1)%x(::2)
+
+	end subroutine
 
 end module
- 
+
     program main
 	use m
 
 	type(base(20,4)) :: b1
-	procedure(basesub), pointer :: pp	
-	type(base(20,4)) :: b2 
+	procedure(basesub), pointer :: pp
+	type(base(20,4)) :: b2
 
  	b1%pp => basesub
 
@@ -69,10 +63,10 @@ end module
 
         if ( .not. associated(b2%x) ) stop 13
         if ( lbound(b2%x,1) /= 10 ) stop 15
-        if ( ubound(b2%x,1) /= 17 ) stop 17 
+        if ( ubound(b2%x,1) /= 17 ) stop 17
 
 	write(*, '(4f14.8)') b2%x
 	print *, shape(spread(b2%x, 2, 2))
-	write(*, '(8f14.6)') spread(b2%x,2, 2) 
+	write(*, '(8f14.6)') spread(b2%x,2, 2)
 
     end program

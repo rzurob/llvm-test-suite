@@ -1,21 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Deferred Character Length
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unit testing
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  DESCRIPTION                : Testing the allocatable attributes on
-!*                               characters with deferred length acting 
-!*                               as dummy argument      
+!*                               characters with deferred length acting
+!*                               as dummy argument
 !*
 !* ===================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890

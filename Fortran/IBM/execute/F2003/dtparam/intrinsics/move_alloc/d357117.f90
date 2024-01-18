@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d357117.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d357117.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 7 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. DEFECT 357117
@@ -27,8 +19,8 @@ module m
      integer,kind :: k
      integer,len  :: l
      integer(k)   :: i(l)
-     contains                     
-        final  :: finaldtp 
+     contains
+        final  :: finaldtp
   end type
 
   contains
@@ -44,6 +36,6 @@ program d357117
 
   type(dtp(2,4)),allocatable :: from2
 
-  from2=dtp(2,4)(i=[-1,-2,-3,-4]) 
+  from2=dtp(2,4)(i=[-1,-2,-3,-4])
 
 end program

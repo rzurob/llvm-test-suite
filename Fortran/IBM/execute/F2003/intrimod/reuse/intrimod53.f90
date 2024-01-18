@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: ../fake_ieee_modules.f ../ieeeconsts.f intrimod53.f
 ! %VERIFY: intrimod53.out:../emptyout.vf
@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : INTRINSIC/NON_INTRINSIC module nature
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : January, 2004
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -34,7 +26,6 @@
 !*
 !*  DESCRIPTION                : Re-using /tstdev/ieee/unit/fxieee23.f
 !*                               to test INTRINSIC module nature.
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
         program fxieee23

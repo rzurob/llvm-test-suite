@@ -3,21 +3,14 @@
 ! opt variations: -qnock -qnok -qnol
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Deferred Character Length
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unit testing
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
-!*  DESCRIPTION                : Testing the user defined operator on  
+!*  DESCRIPTION                : Testing the user defined operator on
 !*                               characters with deferred length.
 !*
 !* ===================================================================
@@ -38,20 +31,20 @@ interface operator(+)
          type(Person(4,*)), intent(in):: p1, p2
          character(len(p1%name) + len(p2%name)) add
       end function
-end interface         
+end interface
 
 end module m
 
 use m
 type(Person(4,20)) p1, p2
 character(17) result
-allocate(character(7)  :: p1%name)      
-allocate(character(10) :: p2%name)      
+allocate(character(7)  :: p1%name)
+allocate(character(10) :: p2%name)
 
 p1%name = 'Kennedy'
 p2%name = 'Washington'
 
-result = p1 + p2      
+result = p1 + p2
 
 if (result /= 'KennedyWashington') error stop 1
 end

@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignProcPtrComp03a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignProcPtrComp03a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 18 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 18 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. Test defined assignment with interface block
@@ -25,10 +17,10 @@
 module m
    type base(k1,l1)
       integer,kind :: k1
-      integer,len  :: l1 
-    
+      integer,len  :: l1
+
       integer(k1)  :: i1(k1:k1+l1+1)
-      procedure(fun),nopass,pointer :: procptr1=>null()   
+      procedure(fun),nopass,pointer :: procptr1=>null()
    end type
 
    type,extends(base) :: child(k2,l2)
@@ -42,14 +34,13 @@ module m
    type,extends(child) :: gen3(k3,l3)
       integer,kind  :: k3
       integer,len   :: l3
- 
-      integer(k3),pointer :: i3(:) 
+
+      integer(k3),pointer :: i3(:)
       procedure(sub),nopass,pointer :: procptr3=>null()
    end type
 
-
    contains
-       
+
       subroutine assign1(this,dt)
          class(*),intent(inout) :: this
          class(*),intent(in)    :: dt
@@ -87,8 +78,8 @@ module m
                         if(allocated(dt%i2))  &
                           allocate(this%i2(size(dt%i2)),source=dt%i2)
                         if(associated(dt%i3))  &
-                            allocate(this%i3(size(dt%i3)),source=dt%i3) 
-                        
+                            allocate(this%i3(size(dt%i3)),source=dt%i3)
+
                         this%procptr1=>dt%procptr1
                         this%procptr2=>dt%procptr2
                         this%procptr3=>dt%procptr3
@@ -97,7 +88,7 @@ module m
                          stop 13
                  end select
          end select
-   
+
       end subroutine
 
       subroutine assign2(this,dt)
@@ -142,7 +133,7 @@ module m
                           allocate(x%i2(size(y%i2)),source=y%i2)
                         if(associated(x%i3))  &
                             allocate(x%i3(size(y%i3)),source=y%i3)
-   
+
                         x%procptr1=>y%procptr1
                         x%procptr2=>y%procptr2
                         x%procptr3=>y%procptr3
@@ -156,22 +147,22 @@ module m
 
       end subroutine
       function fun(arg)
-          class(*),intent(in)  :: arg 
-          class(*),allocatable :: fun 
+          class(*),intent(in)  :: arg
+          class(*),allocatable :: fun
 
           allocate(fun,source=arg)
-             
+
       end function
 
       subroutine sub(arg)
-          class(*),intent(inout) :: arg 
+          class(*),intent(inout) :: arg
 
           select type(arg)
              type is(base(2,*))
-                arg%i1=-arg%i1 
+                arg%i1=-arg%i1
              type is(child(2,*,4,*))
                 arg%i1=2*arg%i1
-                arg%i2=arg%i2+10 
+                arg%i2=arg%i2+10
              class default
                 stop 10
           end select
@@ -186,11 +177,11 @@ program defAssignProcPtrComp03a
 
    integer :: i
    class(*),allocatable :: obj1(:),obj2(:),obj3,obj4(:)
-  
+
    procedure(fun),pointer :: procptr1=>null()
 
    procedure(sub),pointer :: procptr2=>null()
- 
+
    allocate(gen3(2,1,4,2,8,3) :: obj1(2),obj2(2))
 
    select type(x=>obj1)
@@ -201,11 +192,11 @@ program defAssignProcPtrComp03a
           x(2)%i2=[11,12]
           allocate(x(1)%i3(3),source=[20_8,30_8,40_8])
           allocate(x(2)%i3(1),source=[50_8])
-       
-          do i=1,2 
+
+          do i=1,2
              x(i)%procptr1=>fun
              x(i)%procptr2=>fun
-             x(i)%procptr3=>sub 
+             x(i)%procptr3=>sub
           end do
 
        class default
@@ -215,14 +206,14 @@ program defAssignProcPtrComp03a
    procptr1=>fun
    procptr2=>sub
 
-   print *,"****TEST  1****" 
+   print *,"****TEST  1****"
    ! invoke assign1
    call assign1(obj2(2), procptr1(obj1(1)))
 
    associate(x=>obj2(2))
       select type(x)
         type is(gen3(2,*,4,*,8,*))
-      
+
            if(any(x%i1 /=[1_2,2_2,3_2]))               stop 19
            if(any(x%i2 /= 10))                         stop 20
            if(any(x%i3 /= [20_8,30_8,40_8]))           stop 21
@@ -236,7 +227,7 @@ program defAssignProcPtrComp03a
                  class default
                    stop 23
               end select
-           end associate    
+           end associate
 
            deallocate(obj3)
            allocate(obj3,source=x%child%base)
@@ -262,8 +253,8 @@ program defAssignProcPtrComp03a
         class default
            stop 29
       end select
-   end associate   
-    
+   end associate
+
    print *,"****TEST  2****"
    ! invoke assign1
    call assign1(obj2(1), fun(obj1(2)))
@@ -350,7 +341,7 @@ program defAssignProcPtrComp03a
 
         allocate(obj3,source=x(1)%child)
 
-        call procptr2(obj3) 
+        call procptr2(obj3)
 
         select type(obj3)
             type is(child(2,*,4,*))
@@ -372,11 +363,11 @@ program defAssignProcPtrComp03a
             class default
               stop 60
         end select
- 
+
       class default
 
         stop 61
- 
+
    end select
 
    deallocate(obj2)
@@ -392,7 +383,7 @@ program defAssignProcPtrComp03a
          select type(y=>obj2(1))
             type is(child(2,*,4,*))
                 if(any(y%i1 /= [1_2,2_2,3_2]))          stop 62
-                if(any(y%i2 /= 10))                     stop 63  
+                if(any(y%i2 /= 10))                     stop 63
             class default
                stop 64
          end select
@@ -406,7 +397,7 @@ program defAssignProcPtrComp03a
    allocate(child(2,1,4,2) :: obj2(2))
 
    print *,"****TEST  5****"
-   select type(x=>obj1) 
+   select type(x=>obj1)
       type is(gen3(2,*,4,*,8,*))
          allocate(obj4(2),source=x%child)
       class default
@@ -430,10 +421,10 @@ program defAssignProcPtrComp03a
                select type(y)
                   type is(child(2,*,4,*))
                      if(any(y%i1 /= [1,2,3]))           stop 77
-                     if(any(y%i2 /= [10]))              stop 78 
+                     if(any(y%i2 /= [10]))              stop 78
                   class default
                      stop 79
-               end select 
+               end select
             end associate
 
             associate(y=>x(2)%procptr1(x(2)))
@@ -448,8 +439,7 @@ program defAssignProcPtrComp03a
 
         class default
             stop 83
-   end select   
-
+   end select
 
    deallocate(obj2)
 
@@ -502,7 +492,6 @@ program defAssignProcPtrComp03a
             stop 99
    end select
 
-
    deallocate(obj2)
 
    allocate(base(2,1) :: obj2(2))
@@ -527,5 +516,5 @@ program defAssignProcPtrComp03a
         class default
             stop  105
    end select
-    
+
 end program

@@ -1,24 +1,22 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                              IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f017.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon
 !*  DATE                       : 2015-07-03
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*
-!*  DESCRIPTION                : - DO CONCURRENT loops (including nested DO 
-!*                                 CONCURRENT loops) inside subroutines and 
-!*                                 functions inside modules from external 
+!*  DESCRIPTION                : - DO CONCURRENT loops (including nested DO
+!*                                 CONCURRENT loops) inside subroutines and
+!*                                 functions inside modules from external
 !*                                 files
-!*                               - concurrent-limit contains a variable with 
+!*                               - concurrent-limit contains a variable with
 !*                                 the parameter attribute
-!*                               - scalar-mask-expr contains logicals and 
+!*                               - scalar-mask-expr contains logicals and
 !*                                 user-defined procedures
 !*
 !=============================================================================
@@ -107,7 +105,7 @@
         i_res3 = 0.0d0
         call sub2(j,k,i_arr)
         i_res3 = func2(j,k,i_arr)
-  
+
         i_res3_result(1,:) = 0.0d0
         i_res3_result(2,:) = 0.0d0
         i_res3_result(3,:) = (/4.0d0,4.0d0,4.0d0,0.0d0,0.0d0/)
@@ -124,7 +122,7 @@
             end if
           end do
         end do
- 
+
         i_res = 0.0d0
         i_arr2 = (/10.0d0,20.0d0,30.0d0,40.0d0,50.0d0,60.0d0,70.0d0,80.0d0,90.0d0,100.0d0/)
         call sub1(i,j,k,i_arr2)

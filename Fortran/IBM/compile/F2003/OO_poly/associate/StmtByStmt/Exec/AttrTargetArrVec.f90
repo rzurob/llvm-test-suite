@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp AttrTargetArrVec.f 
+! %POSTCMD: tcomp AttrTargetArrVec.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : AttrTargetArrVec
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 22, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
-!*   The selector has the target attribute  
-!*   
-!*    (300217) 
+!*
+!*   The selector has the target attribute
+!*
+!*    (300217)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -49,7 +43,7 @@
 
     TYPE  :: Zero
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -96,7 +90,7 @@
   END MODULE
 
 
-  PROGRAM AttrTargetArrVec 
+  PROGRAM AttrTargetArrVec
   USE M
   TYPE (Child),   TARGET :: W(3:8)=Child(BaseID=-1, ChildID=-2)
   CLASS (Zero),  POINTER :: PtrZ(:)
@@ -108,14 +102,14 @@
 
   ASSOCIATE ( As => W((/S1,S2/)) )
 
-    PtrZ => As%Base%Zero 
-    PtrB => As%Base 
-    PtrC => As 
- 
+    PtrZ => As%Base%Zero
+    PtrB => As%Base
+    PtrC => As
+
     ASSOCIATE ( As => As(:)%Base )
-     
-      PtrZ => As%Zero 
-      PtrB => As 
+
+      PtrZ => As%Zero
+      PtrB => As
 
     END ASSOCIATE
 

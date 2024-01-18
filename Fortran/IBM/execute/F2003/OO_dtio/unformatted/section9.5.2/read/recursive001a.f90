@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2 Output Statement
 !*                                        Try linked list data structure with recursive DTIO with class hierarchy
@@ -132,12 +116,12 @@ program recursive001a
 
    read (1, iostat=stat, iomsg=msg)       head
    if (( stat /=  0 ) .or. ( msg /= 'dtioread' ) ) error stop 4_4
-   
+
    select type ( b2 )
       type is (child)
          if (( b1%c /= 'abc' ) .or. ( b2%c /= 'def' ) .or. ( b2%i /= 101 ) .or. ( b3%c /= 'ghi' ) ) error stop 5_4
-   end select   
-   
+   end select
+
    head => b4
 
    read (1, iostat=stat, iomsg=msg)       head
@@ -149,13 +133,13 @@ program recursive001a
             type is (child)
                if (( b4%c /= 'jkl' ) .or. ( b4%i /= 102 ) .or. ( b5%c /= 'mno' ) .or. ( b6%i /= 103 ) .or. ( b6%c /= 'pqr' ) ) error stop 7_4
          end select
-   end select   
-   
+   end select
+
    head => b5
 
    read (1, iostat=stat, iomsg=msg)       head
    if (( stat /=  0 ) .or. ( msg /= 'dtioread' ) ) error stop 8_4
-   
+
    select type ( b6 )
       type is (child)
          if ( ( b5%c /= 'stu' ) .or. ( b6%i /= 104 ) .or. ( b6%c /= 'vwx' ) ) error stop 9_4

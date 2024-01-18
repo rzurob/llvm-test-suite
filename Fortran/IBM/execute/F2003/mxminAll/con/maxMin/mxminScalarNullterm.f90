@@ -1,29 +1,18 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/15/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                : MAX/MIN with named constant as 
+!*  DESCRIPTION                : MAX/MIN with named constant as
 !*                               argument to sub with null character appened
-!*                               using -qnullterm 
+!*                               using -qnullterm
 !*                               character dummy argument is inherited length
 !* ===================================================================
 
-  program mxminScalarNullterm 
+  program mxminScalarNullterm
 
       character*1, parameter :: x="a", y="z"
       character*4, parameter :: x1 = "abcd", y1 = "dcba"
@@ -51,7 +40,7 @@
         if (c==char(0)) error stop 4_4
         p = p + 1
       end do
-      if (c /= char(0)) error stop 5_4 
+      if (c /= char(0)) error stop 5_4
 
       p = loc(arg3)
       do count = 1, arg1

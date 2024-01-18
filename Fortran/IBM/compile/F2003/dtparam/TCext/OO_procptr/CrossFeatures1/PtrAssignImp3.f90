@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:  tcomp PtrAssignImp3.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignImp3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignImp3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  If proc-pointer-object has an implicit interface and is referenced 
-!*  as a subroutine, proc-target shall be a subroutine. 
-!*  () 
+!*
+!*  If proc-pointer-object has an implicit interface and is referenced
+!*  as a subroutine, proc-target shall be a subroutine.
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -59,24 +53,24 @@
 
   SUBROUTINE ExtSub(Arg)
   USE M
-  TYPE (Child(*,4)) :: Arg 
+  TYPE (Child(*,4)) :: Arg
     Arg = Child(20,4)(-2)
-  END SUBROUTINE 
+  END SUBROUTINE
 
   FUNCTION ExtFun()
   USE M
-  TYPE (Child(20,4)) :: ExtFun 
+  TYPE (Child(20,4)) :: ExtFun
     ExtFun = Child(20,4)(-1)
-  END FUNCTION 
+  END FUNCTION
 
   PROGRAM PtrAssignImp3
-  USE M 
-  IMPLICIT TYPE(Child(20,4))(C) 
+  USE M
+  IMPLICIT TYPE(Child(20,4))(C)
 
   INTERFACE
     SUBROUTINE Extsub(Arg)
       IMPORT Child
-      TYPE (Child(*,4)) :: arg 
+      TYPE (Child(*,4)) :: arg
     END SUBROUTINE
 
     FUNCTION ExtFun()
@@ -89,13 +83,13 @@
   PROCEDURE(),  POINTER :: CProcPtr
   TYPE(Child(20,4))           :: V
 
-  ProcPtr => ExtFun 
+  ProcPtr => ExtFun
   CProcPtr => ExtSub
 
   IF (.TRUE. ) THEN
     PRINT*, CProcPtr(V)
     CALL ProcPtr(Child(20,4)(-2))
   END IF
- 
-  END 
+
+  END
 

@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,25 +13,17 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c03aak.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran programs interoperate with C functions
 !*                                through a Fortran procedure interface that uses
 !*                                the BIND specification .
-!*            
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -49,15 +36,15 @@
 !*   - main written in FORTRAN, Fortran calls C functions.
 !*   - Requires C compiler -qlongdbl option.
 !*
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. Declare the interop functions in Fortran program.
 !*          ( Create a procedural interface that corresponds to the C prototype
-!*          and bind the interface to the C function using the BIND(C) specifier). 
+!*          and bind the interface to the C function using the BIND(C) specifier).
 !*          2. Initialize the variable which will be the  actual arguments of
-!*             the interop functions. 
+!*             the interop functions.
 !*          3. Fortran  program call C function.The argument is  altered
 !*             during execution of the C Function.
-!*          4. Assertion: Check the modified auguments and return value  
+!*          4. Assertion: Check the modified auguments and return value
 !*             in Fortran to verify it is correct.
 !*
 !* ===================================================================
@@ -97,16 +84,16 @@ program fxbind_c03aak
   !                and check the results
   !**********************************************************
   ! Test 1 : call by reference
-  ! A dummy argument without the VALUE attribute correspond 
-  ! to a formal parameter  of the prototype in C program 
+  ! A dummy argument without the VALUE attribute correspond
+  ! to a formal parameter  of the prototype in C program
   ! that is of a pointer type.
 
   test = .False.
   res16_ref = arith_real16_ref(ai16_ref,bi16_ref)
-  test =  ai16_ref == 10.0d0 
+  test =  ai16_ref == 10.0d0
   call assert(test,'Hello, the result is not correct!',20)
 
-  test =  bi16_ref == 20.0d0 
+  test =  bi16_ref == 20.0d0
   call assert(test,'Hello, the result is not correct!',21)
 
   test = res16_ref .eq. 20.0d0
@@ -114,15 +101,15 @@ program fxbind_c03aak
 
   ! Test 2 : call by value
   ! A dummy argument with the VALUE attribute  correspond
-  ! to a formal parameter of the prototype in C program that is 
+  ! to a formal parameter of the prototype in C program that is
   ! not of a pointer type.
 
   res16_val =arith_real16_val(ai16_val,bi16_val)
-  test =  ai16_val == 5.0d0 
+  test =  ai16_val == 5.0d0
   print *, "the ai16_val =", ai16_val
   call assert(test,'Hello, the result is not correct!',30)
 
-  test =  bi16_val == 10.0d0 
+  test =  bi16_val == 10.0d0
   call assert(test,'Hello, the result is not correct!',31)
 
   test = res16_val .eq. 20.0d0

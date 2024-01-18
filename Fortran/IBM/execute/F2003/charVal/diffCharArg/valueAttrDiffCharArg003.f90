@@ -1,28 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : valueAttrDiffCharArg003.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 04/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : The following was passed as actual args
-!*				to subroutines which contain the value 
+!*				to subroutines which contain the value
 !*				attribute with its respective dummy args:
 !*				   literals, array, elements of an array,
 !*				   and substrings. All of which are 128 byte
 !*				   character strings
-!*
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -38,13 +26,13 @@ program valueAttrDiffCharArg003
 
     character (len=128) :: ch(50)
     character (len=160) :: char1
-      
-    ch = & 
+
+    ch = &
     'aabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccddaabbccdd'
-    
+
     char1 = &
     'lfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxtlfhdviuwapmubfyuedxt'
-    
+
     call testV(ch, ch(50), ch(16), &
     'qwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyuiqwertyui', &
     char1(32:159))
@@ -52,7 +40,7 @@ program valueAttrDiffCharArg003
     if (ch(50) /= &
     'xyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxy') &
     error stop 1_4
-    
+
     if (ch(16) /= &
     'xyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxyxyzxyzxy') &
     error stop 2_4

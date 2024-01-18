@@ -1,27 +1,16 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : CopyInOut3.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2011-08-25
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Copy-in/out for assumed shape arrays
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                :
 !*
-!*  DESCRIPTION                : 
-!*       
-!*                      
-!*    - Inner most subroutine has assumed shape array dummy argument 
-!*      with CONTIGUOUS attribute 
+!*    - Inner most subroutine has assumed shape array dummy argument
+!*      with CONTIGUOUS attribute
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -38,18 +27,18 @@ MODULE Mod
 
       CONTAINS
 
-      SUBROUTINE Sub(Arg)           
+      SUBROUTINE Sub(Arg)
         INTEGER, CONTIGUOUS, INTENT(IN) :: Arg(:)
-        INTEGER :: I  
+        INTEGER :: I
 
         IF (       .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 20
         IF ( SIZE(Arg) .NE.              N2 ) ERROR STOP 21
         IF ( ANY(Arg   .NE. [(I, I=1,N,s)]) ) ERROR STOP 22
-        CALL SubSub(Arg) 
+        CALL SubSub(Arg)
       END SUBROUTINE Sub
-      
+
       SUBROUTINE SubSub(Arg)
-        INTEGER :: Arg(N2), I 
+        INTEGER :: Arg(N2), I
 
         IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 30
         IF ( ANY(Arg       .NE.    [(I, I=1,N,s)]) ) ERROR STOP 31
@@ -58,18 +47,18 @@ MODULE Mod
         IF ( somme(Swap(Arg)) .NE.            2500 ) ERROR STOP 34
 
         DO I = 1, N2
-          IF ( Arg(I)       .NE.  I*s-1 ) ERROR STOP 35             !<--- need to make sure the elements are right 
+          IF ( Arg(I)       .NE.  I*s-1 ) ERROR STOP 35             !<--- need to make sure the elements are right
         ENDDO
 
       END SUBROUTINE SubSub
 
       FUNCTION Swap(Arg) RESULT(res)
         INTEGER, CONTIGUOUS, INTENT(IN) :: Arg(:)
-        INTEGER, DIMENSION(50) :: res, tmp 
+        INTEGER, DIMENSION(50) :: res, tmp
 
         tmp = Arg(N2:1:-1)
         res  = tmp
-      END FUNCTION Swap 
+      END FUNCTION Swap
 
       INTEGER FUNCTION somme(Arg)
         INTEGER, CONTIGUOUS :: Arg(:)
@@ -77,14 +66,14 @@ MODULE Mod
 
         tmp = Arg
         somme = SUM(tmp)
-      END FUNCTION somme 
+      END FUNCTION somme
 
 END MODULE Mod
 PROGRAM CopyInOut3
       USE Mod
       IMPLICIT NONE
 
-      INTEGER :: I 
+      INTEGER :: I
       INTEGER, TARGET  :: I3D(N)
       INTEGER, POINTER :: ptr(:)
 

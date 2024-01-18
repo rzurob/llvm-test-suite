@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : cdasBasicStgAssoc
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-09-24
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray dummy arguments - assumed size
 !*  SECONDARY FUNCTIONS TESTED : access only, storage association in multiple dimensions

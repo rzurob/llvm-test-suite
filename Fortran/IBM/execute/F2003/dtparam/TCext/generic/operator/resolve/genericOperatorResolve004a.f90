@@ -3,22 +3,11 @@
 ! opt variations: -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Operator: 12.4.5 Resolving type-bound procedure references
 !*                                         iv ) contains both assumed-shape array and elemental references with interface
@@ -62,12 +51,12 @@ end module
 
 module n
    use m, only: base
-   
+
    interface operator(+)
       module procedure elementaladd
    end interface
    contains
-   
+
    type(base(4)) elemental function elementaladd (a,b)
       class(base(4)), intent(in) :: a, b
 
@@ -81,7 +70,7 @@ program genericOperatorResolve004a
 
    type(base(4)) :: b1, b2(4)
    type(base(4)), allocatable :: b3(:)
-   
+
    allocate ( b3(4) )
 
    b1 = base(4)(5) + base(4)(5)

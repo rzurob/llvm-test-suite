@@ -1,14 +1,12 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL
 !USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : do_concurrent_f028.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2015-08-31
 !*  ORIGIN                     :
 !*
@@ -16,16 +14,15 @@
 !*  SECONDARY FUNCTIONS TESTED :
 !*  ADAPTED FROM               :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*    - acceptance test for do concurrent with different ways of declaring the
 !*      type in integer_type_spec
 !*    - DO CONCURRENT keyword should be case insensitive
-!* 
-!* 
+!*
 !=============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890
        program main
-        integer, parameter :: i1 = 1 
+        integer, parameter :: i1 = 1
         integer, parameter :: i2 = 2
         integer, parameter :: i4 = 4
         integer, parameter :: i8 = 8
@@ -34,21 +31,21 @@
         integer, parameter :: step = 1
         character*32 :: arg = 'one'
 
-        ! Type specified in brackets.  Type with * is already extensively tested 
+        ! Type specified in brackets.  Type with * is already extensively tested
         do concurrent (integer(1) :: i = 1:20)
-        end do 
+        end do
 
         DO concurrent (integer(2) :: i = 1:20)
-        end do 
+        end do
 
         do CONCURRENT (integer(4) :: i = 1:20)
-        end do 
+        end do
 
         DO CONCURRENT (integer(8) :: i = 1:20)
-        end do 
+        end do
 
         dO cOnCuRrEnT (integer(16) :: i = 1:20)
-        end do 
+        end do
 
         do concurrent (integer(i1) :: i = 1:20)
         end do
@@ -84,7 +81,7 @@
 1010        error stop  10
           end do
         end if
- 
+
         print *, "arg=", arg
         ! nested case of above
         if (arg .eq. 'twenty') then

@@ -1,23 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ptrCompTypeCheck.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -31,29 +21,29 @@
 MODULE Mod1
       IMPLICIT NONE
 
-      TYPE DT1  
+      TYPE DT1
         INTEGER, POINTER, CONTIGUOUS ::  ip(:)
-      END TYPE DT1 
+      END TYPE DT1
 
-      TYPE DT2  
+      TYPE DT2
         REAL, POINTER, CONTIGUOUS ::  rp(:)
-      END TYPE DT2 
+      END TYPE DT2
 
-      TYPE DT3  
+      TYPE DT3
         LOGICAL, POINTER, CONTIGUOUS :: lp(:)
-      END TYPE DT3 
+      END TYPE DT3
 
-      TYPE DT4  
+      TYPE DT4
         COMPLEX, POINTER, CONTIGUOUS :: zp(:)
-      END TYPE DT4 
+      END TYPE DT4
 
       TYPE DT5
         CHARACTER(10),    POINTER, CONTIGUOUS :: cp(:)
-      END TYPE DT5 
+      END TYPE DT5
 
       TYPE DT6
         DOUBLE PRECISION, POINTER, CONTIGUOUS :: dp(:)
-      END TYPE DT6 
+      END TYPE DT6
 END MODULE Mod1
 PROGRAM ptrCompTypeCheck
       USE Mod1
@@ -64,15 +54,15 @@ PROGRAM ptrCompTypeCheck
       IMPLICIT TYPE (DT5) (c)
       IMPLICIT TYPE (DT6) (d)
 
-      INTEGER, TARGET :: it(100) 
-      REAL, TARGET :: rt(10) 
-      LOGICAL, TARGET :: lt(2) 
-      COMPLEX, TARGET :: zt(10) 
-      CHARACTER(10), TARGET :: ct(10) 
-      DOUBLE PRECISION, TARGET :: dt(10) 
+      INTEGER, TARGET :: it(100)
+      REAL, TARGET :: rt(10)
+      LOGICAL, TARGET :: lt(2)
+      COMPLEX, TARGET :: zt(10)
+      CHARACTER(10), TARGET :: ct(10)
+      DOUBLE PRECISION, TARGET :: dt(10)
 
       CLASS(*), POINTER :: poly(:)
- 
+
       i%ip => it
       poly => i%ip
       IF ( .NOT. IS_CONTIGUOUS(poly) ) ERROR STOP 10

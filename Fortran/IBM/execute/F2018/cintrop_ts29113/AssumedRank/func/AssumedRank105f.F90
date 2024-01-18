@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank105f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : August  25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank object
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
@@ -22,8 +15,8 @@
 !*                                - Call to BIND(C) / Non-Bind(C) procedure from different scopes:
 !*                                      main program, module and internal procedure
 !*                                - Interface block appears in a module
-!*                                - Actual arg is assumed size array  
-!*                                - LBOUND, UBOUND, SHAPE, SIZE, RANK 
+!*                                - Actual arg is assumed size array
+!*                                - LBOUND, UBOUND, SHAPE, SIZE, RANK
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -39,52 +32,52 @@ module mod
 
    interface
      subroutine sub_bind_c_1(arr) bind(C)
-       import 
+       import
        implicit none
        integer :: dim
-       integer(c_int) :: arr(..) 
+       integer(c_int) :: arr(..)
      end subroutine sub_bind_c_1
      subroutine sub_bind_c_2(arr) bind(C)
-       import 
+       import
        implicit none
        integer :: dim
-       integer(c_int) :: arr(..) 
+       integer(c_int) :: arr(..)
      end subroutine sub_bind_c_2
      subroutine sub_bind_c_3(arr) bind(C)
-       import 
+       import
        implicit none
        integer :: dim
-       integer(c_int) :: arr(..) 
+       integer(c_int) :: arr(..)
      end subroutine sub_bind_c_3
      subroutine sub_bind_c_4(arr) bind(C)
-       import 
+       import
        implicit none
        integer :: dim
-       integer(c_int) :: arr(..) 
+       integer(c_int) :: arr(..)
      end subroutine sub_bind_c_4
      subroutine sub_1(arr)
-       import 
+       import
        implicit none
        integer :: dim
-       integer(c_int) :: arr(..) 
+       integer(c_int) :: arr(..)
      end subroutine sub_1
      subroutine sub_2(arr)
-       import 
+       import
        implicit none
        integer :: dim
-       integer(c_int) :: arr(..) 
+       integer(c_int) :: arr(..)
      end subroutine sub_2
      subroutine sub_3(arr)
-       import 
+       import
        implicit none
        integer :: dim
-       integer(c_int) :: arr(..) 
+       integer(c_int) :: arr(..)
      end subroutine sub_3
      subroutine sub_4(arr)
-       import 
+       import
        implicit none
        integer :: dim
-       integer(c_int) :: arr(..) 
+       integer(c_int) :: arr(..)
      end subroutine sub_4
    end interface
 
@@ -124,7 +117,7 @@ module mod
    end subroutine sub_mod_4
 end module mod
 
-program AssumedRank105f 
+program AssumedRank105f
    use iso_c_binding
    use mod
    implicit none
@@ -134,13 +127,13 @@ program AssumedRank105f
 
    A = 0; B = 0; C = 0; D = 0;
 
-!---------- call BIND(C)/Non-BIND(C) procedures from internal procedure 
+!---------- call BIND(C)/Non-BIND(C) procedures from internal procedure
    call sub_int_1(A)
    call sub_int_2(B)
    call sub_int_3(C)
    call sub_int_4(D)
 
-!---------- call BIND(C)/Non-BIND(C) procedures from module procedure 
+!---------- call BIND(C)/Non-BIND(C) procedures from module procedure
    call sub_mod_1(A)
    call sub_mod_2(B)
    call sub_mod_3(C)
@@ -179,7 +172,7 @@ end program AssumedRank105f
 subroutine sub_bind_c_1(arr) bind(C)
      use iso_c_binding
      implicit none
-     integer(c_int) :: arr(..) 
+     integer(c_int) :: arr(..)
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -187,7 +180,7 @@ subroutine sub_bind_c_1(arr) bind(C)
       logical :: DEBUG_MODE = .FALSE.
      #endif
 
-     if (DEBUG_MODE) then 
+     if (DEBUG_MODE) then
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -206,7 +199,7 @@ end subroutine sub_bind_c_1
 subroutine sub_bind_c_2(arr) bind(C)
      use iso_c_binding
      implicit none
-     integer(c_int) :: arr(..) 
+     integer(c_int) :: arr(..)
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -214,7 +207,7 @@ subroutine sub_bind_c_2(arr) bind(C)
       logical :: DEBUG_MODE = .FALSE.
      #endif
 
-     if (DEBUG_MODE) then 
+     if (DEBUG_MODE) then
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -235,7 +228,7 @@ end subroutine sub_bind_c_2
 subroutine sub_bind_c_3(arr) bind(C)
      use iso_c_binding
      implicit none
-     integer(c_int) :: arr(..) 
+     integer(c_int) :: arr(..)
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -243,7 +236,7 @@ subroutine sub_bind_c_3(arr) bind(C)
       logical :: DEBUG_MODE = .FALSE.
      #endif
 
-     if (DEBUG_MODE) then 
+     if (DEBUG_MODE) then
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -265,7 +258,7 @@ end subroutine sub_bind_c_3
 subroutine sub_bind_c_4(arr) bind(C)
      use iso_c_binding
      implicit none
-     integer(c_int) :: arr(..) 
+     integer(c_int) :: arr(..)
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -273,7 +266,7 @@ subroutine sub_bind_c_4(arr) bind(C)
       logical :: DEBUG_MODE = .FALSE.
      #endif
 
-     if (DEBUG_MODE) then 
+     if (DEBUG_MODE) then
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -289,10 +282,10 @@ subroutine sub_bind_c_4(arr) bind(C)
      if (any(ubound(arr) /=         [1,2,3,4,-1])) ERROR STOP 144
 end subroutine sub_bind_c_4
 
-subroutine sub_1(arr) 
+subroutine sub_1(arr)
      use iso_c_binding
      implicit none
-     integer(c_int) :: arr(..) 
+     integer(c_int) :: arr(..)
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -300,7 +293,7 @@ subroutine sub_1(arr)
       logical :: DEBUG_MODE = .FALSE.
      #endif
 
-     if (DEBUG_MODE) then 
+     if (DEBUG_MODE) then
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -319,7 +312,7 @@ end subroutine sub_1
 subroutine sub_2(arr)
      use iso_c_binding
      implicit none
-     integer(c_int) :: arr(..) 
+     integer(c_int) :: arr(..)
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -327,7 +320,7 @@ subroutine sub_2(arr)
       logical :: DEBUG_MODE = .FALSE.
      #endif
 
-     if (DEBUG_MODE) then 
+     if (DEBUG_MODE) then
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -346,10 +339,10 @@ subroutine sub_2(arr)
      if (any(ubound(arr)    /=      [10,-1])) ERROR STOP 526
 end subroutine sub_2
 
-subroutine sub_3(arr) 
+subroutine sub_3(arr)
      use iso_c_binding
      implicit none
-     integer(c_int) :: arr(..) 
+     integer(c_int) :: arr(..)
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -357,7 +350,7 @@ subroutine sub_3(arr)
       logical :: DEBUG_MODE = .FALSE.
      #endif
 
-     if (DEBUG_MODE) then 
+     if (DEBUG_MODE) then
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -376,10 +369,10 @@ subroutine sub_3(arr)
      if (any(ubound(arr)    /=   [10,10,-1])) ERROR STOP 537
 end subroutine sub_3
 
-subroutine sub_4(arr) 
+subroutine sub_4(arr)
      use iso_c_binding
      implicit none
-     integer(c_int) :: arr(..) 
+     integer(c_int) :: arr(..)
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -387,7 +380,7 @@ subroutine sub_4(arr)
       logical :: DEBUG_MODE = .FALSE.
      #endif
 
-     if (DEBUG_MODE) then 
+     if (DEBUG_MODE) then
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)

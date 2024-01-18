@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltHostVarPtr.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltHostVarPtr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 23, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +34,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is an associate name associating to a pointer
 !*    ()
 !*
@@ -51,7 +45,7 @@
 
     TYPE  :: Zero(K1)    ! (4)
         INTEGER, KIND :: K1
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4)
       INTEGER(K1) :: BaseId = 1
@@ -98,24 +92,24 @@
   PROGRAM SltHostVarPtr
   USE M
   IMPLICIT  NONE
-  CLASS(Zero(4)), POINTER :: Ptr 
-  CLASS(Child(4)), ALLOCATABLE, Target :: Tar 
+  CLASS(Zero(4)), POINTER :: Ptr
+  CLASS(Child(4)), ALLOCATABLE, Target :: Tar
 
-  ALLOCATE(Child(4) :: Tar) 
+  ALLOCATE(Child(4) :: Tar)
   Ptr => Tar
 
   SELECT TYPE ( As => Ptr )
-    CLASS IS (Zero(4)) 
+    CLASS IS (Zero(4))
       SELECT TYPE ( Ptr )
-        CLASS IS (Zero(4)) 
+        CLASS IS (Zero(4))
           SELECT TYPE ( As )
-            CLASS IS (Base(4)) 
+            CLASS IS (Base(4))
               SELECT TYPE ( Ptr )
-                CLASS IS (Base(4)) 
+                CLASS IS (Base(4))
                   SELECT TYPE ( As )
-                    CLASS IS (Child(4)) 
+                    CLASS IS (Child(4))
                       SELECT TYPE ( Ptr )
-                        CLASS IS (Child(4)) 
+                        CLASS IS (Child(4))
                           IF ( As%Base%GetId() .NE.  1 ) STOP 34
                           IF ( As%GetId()      .NE.  2 ) STOP 35
                           IF ( As%BaseId       .NE.  1 ) STOP 36
@@ -141,4 +135,4 @@
 
 
   END
-  
+

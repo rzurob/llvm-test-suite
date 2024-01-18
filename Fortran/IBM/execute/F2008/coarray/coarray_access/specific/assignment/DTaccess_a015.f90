@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a015.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -69,32 +65,32 @@ program main
 		print *, "expected", min1, min2, min4, min8
 		error stop 21
 	end if
-	
+
 	if (any(CAFAR%i1 .ne. [integer(1):: 1,1,2,3,v1])) then
 		print *, "actual", CAFAR%i1
 		print *, "expected", 1,1,2,3,v1
 		error stop 22
 	end if
-	
+
 	if (any(CAFAR%i2 .ne. [integer(2):: v2,0,v2,0,v2])) then
 		print *, "actual", CAFAR%i2
 		print *, "expected", v2,0,v2,0,v2
 		error stop 23
 	end if
-	
+
 	if (any(CAFAR%i4 .ne. [integer(4):: 0,v4,0,v4,0])) then
 		print *, "actual", CAFAR%i4
 		print *, "expected", 0,v4,0,v4,0
 		error stop 24
 	end if
-	
+
 	if (any(CAFAR%i8 .ne. [integer(8):: v8,0,v8,0,v8])) then
 		print *, "actual", CAFAR%i8
 		print *, "expected", v8,0,v8,0,v8
 		error stop 25
 	end if
 
-	
+
 	! assign from coarray
 	v1 = 0
 	v2 = 0
@@ -119,25 +115,25 @@ program main
 		print *, "expected",  min1, min2, min4, min8
 		error stop 31
 	end if
-	
+
 	if (any(iatmp1 /= [integer(1):: 1,1,2,3,v1])) then
 		print *, "actual", iatmp1
 		print *, "expected", 1,1,2,3,v1
 		error stop 32
 	end if
-	
+
 	if (any(iatmp2 /= [integer(2):: v2,0,v2,0,v2])) then
 		print *, "actual", iatmp2
 		print *, "expected", v2,0,v2,0,v2
 		error stop 33
 	end if
-	
+
 	if (any(iatmp4 /= [integer(4):: 0,v4,0,v4,0])) then
 		print *, "actual", iatmp4
 		print *, "expected", 0,v4,0,v4,0
 		error stop 34
 	end if
-	
+
 	if (any(iatmp8 /= [integer(8):: v8,0,v8,0,v8])) then
 		print *, "actual", iatmp8
 		print *, "expected", v8,0,v8,0,v8

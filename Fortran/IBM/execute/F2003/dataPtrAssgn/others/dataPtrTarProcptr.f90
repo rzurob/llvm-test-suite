@@ -1,25 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrTarProcptr.f 
+!*  TEST CASE NAME             : dataPtrTarProcptr.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
 !* - data-target is proc pointer which is dummy arg
-!* - data-pointer is dummy arg of derived type 
-!* - lb/ub is dummy arg, ub has optional attribute 
+!* - data-pointer is dummy arg of derived type
+!* - lb/ub is dummy arg, ub has optional attribute
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -29,11 +23,11 @@ module m
 	integer :: index
     end type
 
-    interface 
+    interface
 	function basefunc(i)
-	    import base 
+	    import base
 	    integer i
-	    type(base), pointer :: basefunc(:) 
+	    type(base), pointer :: basefunc(:)
 	end function
     end interface
 
@@ -54,7 +48,7 @@ module m
         end subroutine
 
 end module
- 
+
     program main
 	use m
 	class(base), pointer :: pd(:)
@@ -63,21 +57,21 @@ end module
 
 	! procedure pointer assignment
 	pp => basefunc
-	sp => sub 
+	sp => sub
 
 	call sp(pd,pp,9)
-	
+
 	if ( .not. associated(pd) ) stop 3
 	if ( lbound(pd,1) /=9 ) stop 5
-	if ( ubound(pd,1) /= 17 ) stop 7 
-	print *, pd%index 
+	if ( ubound(pd,1) /= 17 ) stop 7
+	print *, pd%index
 
         call sp(pd,pp,11,30)
- 
+
 	if ( .not. associated(pd) ) stop 13
 	if ( lbound(pd,1) /=11 ) stop 15
-	if ( ubound(pd,1) /= 30 ) stop 17 
-	print *, pd%index 
+	if ( ubound(pd,1) /= 30 ) stop 17
+	print *, pd%index
 
 
     end program
@@ -85,7 +79,7 @@ end module
     function basefunc(i)
  	use m, only : base
 	integer i
-	type(base), pointer  :: basefunc(:) 
+	type(base), pointer  :: basefunc(:)
 
-	allocate(basefunc(i), source=(/ (base(j),j=1,i) /) )	
+	allocate(basefunc(i), source=(/ (base(j),j=1,i) /) )
     end function

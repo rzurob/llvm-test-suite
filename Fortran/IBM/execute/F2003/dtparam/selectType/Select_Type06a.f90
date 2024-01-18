@@ -1,25 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type06a - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 12, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : type-bound procedure - 'recursive' type
 !*                               Use association
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -41,31 +35,31 @@
       IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
         INTEGER(k1) :: position = 0
-      END TYPE Base 
+      END TYPE Base
 
-      TYPE, EXTENDS(Base) :: List 
+      TYPE, EXTENDS(Base) :: List
         TYPE(List(k1,l1)), POINTER :: Next => NULL()
         CONTAINS
         PROCEDURE :: GetSum => GET_CUMM_SUM
-      END TYPE List  
+      END TYPE List
 
       INTEGER, PARAMETER :: knd1 = KIND(0), len1 = 10
-      
+
       CONTAINS
 
       SUBROUTINE GET_CUMM_SUM (OBJ)
-        CLASS(List(knd1,*)), TARGET  :: OBJ    
-      
+        CLASS(List(knd1,*)), TARGET  :: OBJ
+
        print*, OBJ%position, CUMM_SUM(OBJ%position)
-      
+
       END SUBROUTINE GET_CUMM_SUM
 
       SUBROUTINE BuildList(T)
-        CLASS(List(knd1,len1)), POINTER :: T, Node1, Node2 
+        CLASS(List(knd1,len1)), POINTER :: T, Node1, Node2
         INTEGER :: I
 
        Node1 => T
@@ -82,7 +76,7 @@
       RECURSIVE FUNCTION CUMM_SUM (N)  result(answer)
         INTEGER :: answer
         INTEGER, INTENT(IN) :: N
-      
+
       IF (N <= 0) THEN
         answer = 1
       ELSE
@@ -95,25 +89,25 @@
 
       PROGRAM Select_Type06a
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       CLASS(*), POINTER :: DTV
       CLASS(List(knd1,len1)), POINTER :: TEMP, INIT
       INTEGER :: I
 
-      ALLOCATE(List(knd1,len1):: Init)    
+      ALLOCATE(List(knd1,len1):: Init)
       IF ( .NOT. ASSOCIATED(Init)) STOP 10
 
-      CALL BuildList(Init) 
+      CALL BuildList(Init)
       DTV => Init
 
       SELECT TYPE ( DTV )
         TYPE IS (List(knd1,*))
 
-          TEMP => DTV  
+          TEMP => DTV
 
           DO I = 1, 10
-           IF ( .NOT. ASSOCIATED(TEMP%NEXT) ) STOP 20 
+           IF ( .NOT. ASSOCIATED(TEMP%NEXT) ) STOP 20
            TEMP => TEMP%NEXT
            Call TEMP%GetSum()
           END DO

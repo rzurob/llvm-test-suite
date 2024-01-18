@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUOpSimpleBinaryMixedAssignNamedInterface
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2009-02-11
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : User-Defined Operators
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 361989
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -329,7 +323,7 @@ program dtpUOpSimpleBinaryMixedAssignNamedInterface
 
   use dtpUOpSimpleBinaryMixedAssignNamedInterfacemod
   implicit none
-  
+
   type(dk(2)) :: xk2a, xk2b, xk2c
   type(dk(4)) :: xk4a, xk4b, xk4c
 
@@ -426,7 +420,7 @@ program dtpUOpSimpleBinaryMixedAssignNamedInterface
   print *, xk2c
   xk4c = x2k24a.split.xk2b		! DK_4_TYPE
   print *, xk4c     !<-- line 20
-  xk4c = x2k42a.split.xk2b		! DK_4_TYPE 
+  xk4c = x2k42a.split.xk2b		! DK_4_TYPE
   print *, xk4c
   x2k22c = x2k44a.split.xk2b		! D2K_2_2_TYPE
   print *, x2k22c

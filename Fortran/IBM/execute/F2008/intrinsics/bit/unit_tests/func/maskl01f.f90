@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : MASKL_TEST
-!*
-!*  PROGRAMMER                 : Maryam Moghadas 
 !*  DATE                       : 2013-02-10
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MASKL intrinsic
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED :  
-!*                                
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                : MASKL(I [,KIND]) 
-!*     
+!*  DESCRIPTION                : MASKL(I [,KIND])
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -31,16 +21,16 @@
  PROGRAM maskL_TEST
  IMPLICIT NONE
  INTEGER :: i
- INTEGER , PARAMETER :: k1=1, k2=2, k4=4, k8=8 
- INTEGER :: t1 = MASKL(3,1), t2 = SHIFTL(7_1,8-3) 
+ INTEGER , PARAMETER :: k1=1, k2=2, k4=4, k8=8
+ INTEGER :: t1 = MASKL(3,1), t2 = SHIFTL(7_1,8-3)
  INTEGER  :: a=3
- INTEGER :: arr1(8), mask_arr1(8)=0, arr2(8)=0 
- 
+ INTEGER :: arr1(8), mask_arr1(8)=0, arr2(8)=0
+
  arr1 = (/32, 31, 30, 29, 28, 27, 26, 25/)
 
  DO i = 1,8
     mask_arr1(i) = -2**(i-1)
- END DO 
+ END DO
 
 !---------------------------------------------------------!
 !------- different methods for argument passing ----------!
@@ -51,13 +41,13 @@
  IF (MASKL(3,8) .NE. SHIFTL(7_8,64-3))      ERROR STOP 5
 
  IF (MASKL(a,k1) .NE. MASKL(3,1)) ERROR STOP 6
- IF (MASKL(a,k2) .NE. MASKL(3,2)) ERROR STOP 7 
+ IF (MASKL(a,k2) .NE. MASKL(3,2)) ERROR STOP 7
  IF (MASKL(a,k4) .NE. MASKL(3,4)) ERROR STOP 8
  IF (MASKL(a,k8) .NE. MASKL(3,8)) ERROR STOP 9
 
  IF (MASKL(3,k1) .NE. MASKL(3,1)) ERROR STOP 10
  IF (MASKL(a,1) .NE. MASKL(3,1))  ERROR STOP 11
- 
+
  IF (MASKL(3,k2) .NE. MASKL(3,2)) ERROR STOP 12
  IF (MASKL(a,2)  .NE. MASKL(3,2)) ERROR STOP 13
 

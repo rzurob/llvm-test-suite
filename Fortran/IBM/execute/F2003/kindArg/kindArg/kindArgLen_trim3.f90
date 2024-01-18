@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgLen_trim3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 23, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : LEN_TRIM 
+!*  SECONDARY FUNCTIONS TESTED : LEN_TRIM
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Returns the length of the character argument without counting trailing blank characters. 
-!*    
-!*  () 
+!*  Returns the length of the character argument without counting trailing blank characters.
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -39,16 +31,16 @@
   TYPE :: DT
     CHARACTER(:), ALLOCATABLE :: CC(:,:)
   END TYPE
-  
+
   INTEGER(1) :: I1
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
-    
+
   TYPE(DT), POINTER :: T
   INTEGER, PARAMETER :: II(128)=(/(I,I=1,128)/)
-  INTEGER            :: III(128,128) 
- 
+  INTEGER            :: III(128,128)
+
   ALLOCATE(T)
   ALLOCATE(CHARACTER(128) :: T%CC(128,128))
 
@@ -59,7 +51,7 @@
     III(I,J)=J
   END DO
   END DO
- 
+
 
   DO I1 =1, 127
     IF (LEN_TRIM(STRING=T%CC(I1,I1), KIND=I1%KIND )   .NE. I1 )   STOP 11

@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpCommonC587_1 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpCommonC587_1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 05, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The common statement
 !*
 !*  C587 (R558) Only one appearance of a given variable-name or proc-pointer-name is permitted in all
 !*  common-block-object-lists within a scoping unit.
-!*  -- Test procedure pointers 
-!* 
-!*   
+!*  -- Test procedure pointers
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,13 +37,13 @@
     CHARACTER(L)  :: C(L)!=CHAR(48+K)
   END TYPE
 
- 
+
   CONTAINS
 
-  FUNCTION F() 
+  FUNCTION F()
   TYPE(DT_C(4,128))  :: F, C, C1
   COMMON /BLK/C, C1
-    F = C 
+    F = C
   END FUNCTION
 
   END MODULE
@@ -70,7 +60,7 @@
   END BLOCK DATA
 
 
-  PROGRAM dtpCommonC587_1 
+  PROGRAM dtpCommonC587_1
   USE M
 
   TYPE(DT_C(4,128))  :: C, C1
@@ -85,7 +75,7 @@
   CALL ExtSub()
 
   C1 = ProcPtr()
- 
+
   IF ( ANY(C%C      .NE. [(CHAR(I),I=127, 0, -1)] ) ) STOP 14
   IF ( ANY(C1%C     .NE. [(CHAR(I),I=127, 0, -1)] ) ) STOP 15
 
@@ -95,7 +85,7 @@
   USE M
   TYPE(DT_C(4,128))  :: C, C1
   PROCEDURE(F), POINTER :: ProcPtr
-  COMMON /BLK/C, C1 
+  COMMON /BLK/C, C1
   COMMON ProcPtr
   INTEGER I
 

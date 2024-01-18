@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_p013.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : June 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -56,7 +52,7 @@ program main
 		print *, a4
 		error stop 44
 	end if
-	
+
 	call twiddle1(.false., exp2=0_2, new1=a2, nr=17)
 	call twiddle1(.false., exp2=a2, new1=b2, nr=18)
 	call twaddle1(.false., exp2=b2, new1=a2, nr=19)
@@ -91,7 +87,7 @@ contains
 		integer(2) :: exp2, new1
 		integer :: nr
 		logical :: pres
-		
+
 		if (pres .neqv. present(a2)) call fail(100+nr)
 		if (.not. present(a2)) return
 		if (a2 /= exp2) then
@@ -107,7 +103,7 @@ contains
 		integer(2) :: exp2, new1
 		integer :: nr
 		logical :: pres
-		
+
 		if (pres .neqv. present(a2)) call fail(100+nr)
 		if (.not. present(a2)) return
 		if (a2%i2 /= exp2) then
@@ -122,7 +118,7 @@ contains
 		integer(2), optional :: a2
 		integer(2) :: new1
 		logical :: pres
-		
+
 		if (pres .neqv. present(a2)) call fail(120)
 		if (.not. present(a2)) then
 			fiddle1 = new1
@@ -136,7 +132,7 @@ contains
 		type (obj), optional :: a2[*]
 		integer(2) :: new1
 		logical :: pres
-		
+
 		if (pres .neqv. present(a2)) call fail(121)
 		if (.not. present(a2)) then
 			faddle1 = new1
@@ -152,7 +148,7 @@ contains
 		integer(4) :: exp4, new3
 		integer :: nr
 		logical :: pres
-		
+
 		if (pres .neqv. present(a4)) call fail(100+nr)
 		if (.not. present(a4)) return
 		if (a4 /= exp4) then
@@ -168,7 +164,7 @@ contains
 		integer(4) :: exp4, new3
 		integer :: nr
 		logical :: pres
-		
+
 		if (pres .neqv. present(a4)) call fail(100+nr)
 		if (.not. present(a4)) return
 		if (a4%i4 /= exp4) then
@@ -183,7 +179,7 @@ contains
 		integer(4), optional :: a4
 		integer(4) :: new3
 		logical :: pres
-		
+
 		if (pres .neqv. present(a4)) call fail(122)
 		if (.not. present(a4)) then
 			fiddle3 = new3
@@ -197,7 +193,7 @@ contains
 		type (obj), optional :: a4[*]
 		integer(4) :: new3
 		logical :: pres
-		
+
 		if (pres .neqv. present(a4)) call fail(123)
 		if (.not. present(a4)) then
 			faddle3 = new3

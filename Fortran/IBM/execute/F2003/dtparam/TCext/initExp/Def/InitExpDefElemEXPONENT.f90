@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemEXPONENT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemEXPONENT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  EXPONENT 
+!*
+!*  -  EXPONENT
 !*  (318985/319550)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -40,9 +33,9 @@
 
 
   PROGRAM  InitExpDefElemEXPONENT
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J, K
- 
+
 
   TYPE :: DT0(N1,K1,K2,K3)    ! (20,4,8,16)
     INTEGER, KIND :: K1,K2,K3
@@ -52,7 +45,7 @@
     REAL(K3)      :: XR6(4) =  4.2
   END TYPE
 
-  TYPE :: DT(N2,K4)    ! (20,4) 
+  TYPE :: DT(N2,K4)    ! (20,4)
     INTEGER, KIND :: K4
     INTEGER, LEN  :: N2
     INTEGER(K4)   :: E1(4)
@@ -84,4 +77,4 @@
 
   END
 
- 
+

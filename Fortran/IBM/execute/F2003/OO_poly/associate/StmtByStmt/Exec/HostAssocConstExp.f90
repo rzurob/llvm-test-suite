@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  HostAssocConstExp.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  HostAssocConstExp.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : HostAssocConstExp 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : HostAssocConstExp
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,18 +30,17 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is an associte name associating to a constant expression 
-!*     
+!*    The selector is an associte name associating to a constant expression
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
 
   PROGRAM HostAssocConstExp
   IMPLICIT NONE
 
   INTEGER :: i
-  INTEGER :: Int1(10) = 1 
- 
+  INTEGER :: Int1(10) = 1
+
     ASSOCIATE ( T0 => Int1 + (/( i, i = 1, 10) /) )
     ASSOCIATE ( As0 => T0)
     ASSOCIATE ( As1 => As0(1:10:2))

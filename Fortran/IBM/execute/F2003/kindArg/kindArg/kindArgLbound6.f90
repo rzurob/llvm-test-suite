@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgLbound6
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : LBOUND 
+!*  SECONDARY FUNCTIONS TESTED : LBOUND
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Case (i): If ARRAY is a whole array or array structure component and either ARRAY is an
 !*  assumed-size array of rank DIM or dimension DIM of ARRAY has nonzero extent,
 !*  LBOUND (ARRAY, DIM) has a value equal to the lower bound for subscript DIM
-!*  of ARRAY. Otherwise the result value is 1 
-!*  -- array component   
-!*  () 
+!*  of ARRAY. Otherwise the result value is 1
+!*  -- array component
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -41,7 +33,7 @@
   IMPLICIT NONE
 
   INTEGER :: I, I1
-  
+
   TYPE :: DT
     SEQUENCE
     CHARACTER :: C
@@ -60,7 +52,7 @@
   TYPE(DT)           :: T
   INTEGER, PARAMETER :: L2= 127, L1= -128
 
- 
+
   ALLOCATE( DT1 ::  TT%Arr(L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2))
   ALLOCATE( DT1 ::  TT%Arr0(L2:L1,L2:L1,L2:L1,L2:L1,L2:L1,L2:L1,L2:L1,L2:L1,L2:L1))
 

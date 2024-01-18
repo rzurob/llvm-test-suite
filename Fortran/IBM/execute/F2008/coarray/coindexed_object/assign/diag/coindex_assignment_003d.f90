@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Andy Chen
 !*  DATE                       : October 06, 2010
 !* .or.GIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Diagnostic Test for array: Intrinsic coarray as
 !*                               array coarray
@@ -34,7 +24,7 @@ program coindex_assignment_003d
     integer, save    :: caf1[*]
     integer :: me, num, left, i
     integer :: array1(10)
-    
+
     me = THIS_IMAGE()
     num = NUM_IMAGES()
 

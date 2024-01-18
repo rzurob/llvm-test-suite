@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : recursive101kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from recursive101 by Robert Ma)
 !*  DATE                       : 2007-07-06 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2
 !*                                        Try linked list data structure with recursive DTIO with namelist formatting
@@ -69,7 +61,7 @@ program recursive101kl
 
    read (1, linkedlist, iostat=stat, iomsg=msg)
    if (( stat /=  0 ) .or. ( msg /= 'dtioread' ) ) error stop 1_4
-   
+
    dummy => head
    do while (associated(dummy))
       print *, dummy%c
@@ -89,7 +81,7 @@ program recursive101kl
 
    ! combine two linked list together
    b1%next%next%next => b2
-   
+
    head => b1
 
    read (1, linkedlist, iostat=stat, iomsg=msg)

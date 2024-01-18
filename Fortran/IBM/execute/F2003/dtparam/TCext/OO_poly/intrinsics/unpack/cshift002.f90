@@ -3,13 +3,9 @@
 ! opt variations: -qnok -qnol -qnodeferredlp -qreuse=base
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/unpack
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/25/2005
 ! PRIMARY FUNCTIONS TESTED   : unpack
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Function return of unpack is ARRAY of
 !                              cshift. Poly and unlimited poly.
 !=======================================================================

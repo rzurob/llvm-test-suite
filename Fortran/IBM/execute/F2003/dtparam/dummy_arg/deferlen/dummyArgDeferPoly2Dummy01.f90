@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPoly2Dummy01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPoly2Dummy01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 21 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. actual pointer becomes associated with actual target when corresponding dummy pointer associated with dummy target.
@@ -42,7 +34,7 @@ module m
        class(base(*,*)),target,intent(in)     :: arg2(:)
 
        arg1=>arg2
- 
+
     end subroutine
 
     subroutine sub2(arg1,arg2)
@@ -51,11 +43,11 @@ module m
 
        select type(arg1)
          type is(child(*,*,2,4))
-           arg1=child(2,3,2,4)(i1=[11,12],i2=[13,14,15]) 
+           arg1=child(2,3,2,4)(i1=[11,12],i2=[13,14,15])
          class default
            error stop 50_4
        end select
-    
+
        select type(arg2)
           type is(child(*,*,2,4))
             arg2=child(2,3,2,4)(i1=[-11,-12],i2=[-13,-14,-15])
@@ -96,7 +88,7 @@ program dummyArgDeferPoly2Dummy01
      class default
        error stop 52_4
 
-  end select 
+  end select
 
   select type(pbase2)
      type is(child(*,*,2,4))

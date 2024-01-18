@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefPACK.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefPACK.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an tranformational intrinsic
-!* 
-!*  - PACK 
+!*
+!*  - PACK
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,7 +35,7 @@
     CONTAINS
     PROCEDURE  :: Proc => ModSub
   END TYPE
- 
+
   CONTAINS
 
   SUBROUTINE ModSub(Arg)
@@ -51,7 +44,7 @@
 
   END MODULE
 
-  PROGRAM   InitExpDefPACK 
+  PROGRAM   InitExpDefPACK
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
@@ -60,52 +53,52 @@
   LOGICAL(1),         PARAMETER :: M11(6) =(/(.TRUE.,.FALSE., I=1,3)/)
   INTEGER(1),         PARAMETER :: V11(6) =(/(-I, I=1,6)/)
   INTEGER(1),         PARAMETER :: PI11(6)=(/(/1,3,5/),(/-4,-5,-6/)/)
- 
-  INTEGER(KIND(PACK(I11, .TRUE.)))   :: TI11(6)=PACK(I11, .TRUE.) 
-  INTEGER(KIND(PACK(I11, M11)))      :: TI12(3)=PACK(I11, M11) 
-  INTEGER(KIND(PACK(I11, M11, V11))) :: TI13(6)=PACK(I11, MASK=M11, VECTOR=V11) 
- 
+
+  INTEGER(KIND(PACK(I11, .TRUE.)))   :: TI11(6)=PACK(I11, .TRUE.)
+  INTEGER(KIND(PACK(I11, M11)))      :: TI12(3)=PACK(I11, M11)
+  INTEGER(KIND(PACK(I11, M11, V11))) :: TI13(6)=PACK(I11, MASK=M11, VECTOR=V11)
+
   INTEGER(4),         PARAMETER :: I41(6) =(/(I, I=1,6)/)
   LOGICAL(4),         PARAMETER :: M41(6) =(/(.TRUE.,.FALSE., I=1,3)/)
   INTEGER(4),         PARAMETER :: V41(6) =(/(-I, I=1,6)/)
   INTEGER(4),         PARAMETER :: PI41(6)=(/(/1,3,5/),(/-4,-5,-6/)/)
- 
-  INTEGER(KIND(PACK(I41, .TRUE.)))   :: TI41(6)=PACK(I41, .TRUE.) 
-  INTEGER(KIND(PACK(I41, M41)))      :: TI42(3)=PACK(I41, M41) 
-  INTEGER(KIND(PACK(I41, M41, V41))) :: TI43(6)=PACK(I41, MASK=M41, VECTOR=V41) 
- 
+
+  INTEGER(KIND(PACK(I41, .TRUE.)))   :: TI41(6)=PACK(I41, .TRUE.)
+  INTEGER(KIND(PACK(I41, M41)))      :: TI42(3)=PACK(I41, M41)
+  INTEGER(KIND(PACK(I41, M41, V41))) :: TI43(6)=PACK(I41, MASK=M41, VECTOR=V41)
+
   INTEGER(8),         PARAMETER :: I81(6) =(/(I, I=1,6)/)
   LOGICAL(8),         PARAMETER :: M81(6) =(/(.TRUE.,.FALSE., I=1,3)/)
   INTEGER(8),         PARAMETER :: V81(6) =(/(-I, I=1,6)/)
   INTEGER(8),         PARAMETER :: PI81(6)=(/(/1,3,5/),(/-4,-5,-6/)/)
- 
-  INTEGER(KIND(PACK(I81, .TRUE.)))   :: TI81(6)=PACK(I81, .TRUE.) 
-  INTEGER(KIND(PACK(I81, M81)))      :: TI82(3)=PACK(I81, M81) 
-  INTEGER(KIND(PACK(I81, M81, V81))) :: TI83(6)=PACK(I81, MASK=M41, VECTOR=V81) 
- 
+
+  INTEGER(KIND(PACK(I81, .TRUE.)))   :: TI81(6)=PACK(I81, .TRUE.)
+  INTEGER(KIND(PACK(I81, M81)))      :: TI82(3)=PACK(I81, M81)
+  INTEGER(KIND(PACK(I81, M81, V81))) :: TI83(6)=PACK(I81, MASK=M41, VECTOR=V81)
+
   REAL(8),         PARAMETER :: R81(6) =(/(I, I=1,6)/)
   REAL(8),         PARAMETER :: RV81(6) =(/(-I, I=1,6)/)
- 
-  REAL(KIND(PACK(R81, .TRUE.)))   :: TR81(6)=PACK(R81, .TRUE.) 
-  REAL(KIND(PACK(R81, M11)))      :: TR82(3)=PACK(R81, M41) 
-  REAL(KIND(PACK(R81, M11, RV81))) :: TR83(6)=PACK(R81, MASK=M81, VECTOR=RV81) 
- 
+
+  REAL(KIND(PACK(R81, .TRUE.)))   :: TR81(6)=PACK(R81, .TRUE.)
+  REAL(KIND(PACK(R81, M11)))      :: TR82(3)=PACK(R81, M41)
+  REAL(KIND(PACK(R81, M11, RV81))) :: TR83(6)=PACK(R81, MASK=M81, VECTOR=RV81)
+
   COMPLEX(4),         PARAMETER :: Z41(6) =(/((I,-I), I=1,6)/)
   COMPLEX(4),         PARAMETER :: ZV41(6)=(/((-I,I), I=1,6)/)
   COMPLEX(4),         PARAMETER :: PZ41(6)=(/(/(1,-1),(3,-3),(5,-5)/),(/(-4,4),(-5,5),(-6,6)/)/)
- 
-  COMPLEX(KIND(PACK(Z41, .TRUE.)))   :: TZ41(6)=PACK(Z41, .TRUE.) 
-  COMPLEX(KIND(PACK(Z41, M11)))      :: TZ42(3)=PACK(Z41, M11) 
-  COMPLEX(KIND(PACK(Z41, M41, ZV41))) :: TZ43(6)=PACK(Z41, MASK=M41, VECTOR=ZV41) 
- 
+
+  COMPLEX(KIND(PACK(Z41, .TRUE.)))   :: TZ41(6)=PACK(Z41, .TRUE.)
+  COMPLEX(KIND(PACK(Z41, M11)))      :: TZ42(3)=PACK(Z41, M11)
+  COMPLEX(KIND(PACK(Z41, M41, ZV41))) :: TZ43(6)=PACK(Z41, MASK=M41, VECTOR=ZV41)
+
   TYPE(DT),  PARAMETER :: T(6) =(/(DT(CHAR(I)), I=1,6)/)
   TYPE(DT),  PARAMETER :: V(6) =(/(DT(CHAR(I)), I=7,12)/)
   TYPE(DT),  pARAMETER :: P(6) =(/DT(CHAR(1)),DT(CHAR(3)),DT(CHAR(5)),DT(CHAR(10)),DT(CHAR(11)),DT(CHAR(12))/)
- 
-  TYPE(DT) :: T1(6)=PACK(T, .TRUE.) 
-  TYPE(DT) :: T2(3)=PACK(T, M11) 
-  TYPE(DT) :: T3(6)=PACK(T, MASK=M41, VECTOR=V) 
- 
+
+  TYPE(DT) :: T1(6)=PACK(T, .TRUE.)
+  TYPE(DT) :: T2(3)=PACK(T, M11)
+  TYPE(DT) :: T3(6)=PACK(T, MASK=M41, VECTOR=V)
+
 
 
   IF (KIND(TI11)   .NE.   1 )                STOP 11
@@ -151,4 +144,4 @@
   END
 
 
- 
+

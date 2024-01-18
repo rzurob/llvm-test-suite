@@ -2,9 +2,9 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk_qlngdbl.sh fxcmn_blk311 cxcmn_blk301
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT: fxcmn_blk311.out
 ! %EXECARGS:
@@ -12,20 +12,13 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc
 !*  REQUIRED COMPILER OPTIONS  : -qlongdouble (with xlc)
 !*
 !*  DESCRIPTION                : This test case will verify that scalar variables of
@@ -59,11 +52,11 @@ program fxcmn_blk311
 
 ! ----------------------------------------------------------------------------
 ! Real Declaration
-!     	- use KIND, MAX, LEN, INT, MIN 
-!	- use ISO_C_BINDING modules	
+!     	- use KIND, MAX, LEN, INT, MIN
+!	- use ISO_C_BINDING modules
 ! ----------------------------------------------------------------------------
 
-	real (kind=o'004')			:: real_s4a 
+	real (kind=o'004')			:: real_s4a
 	real (LEN('Kobi'))			:: real_s4b
         real                       		:: real_s4c
         real (  4)                       	:: real_s4d
@@ -93,7 +86,7 @@ program fxcmn_blk311
 ! Multiple COMMON statements with one variable in one BIND(C) statements
 ! ----------------------------------------------------------------------------
 
-        common /blk_real_s4a/          real_s4a 
+        common /blk_real_s4a/          real_s4a
         common /blk_real_s4b/          real_s4b
         common /blk_real_s4c/          real_s4c
         common /blk_real_s4d/          real_s4d
@@ -119,7 +112,7 @@ program fxcmn_blk311
         common /blk_r_C_DOUBLE_s8d/          r_C_DOUBLE_s8d
 
 
-        bind(c) ::  			& 
+        bind(c) ::  			&
           /blk_real_s4a/                &
         , /blk_real_s4b/                &
         , /blk_real_s4c/                &
@@ -139,7 +132,7 @@ program fxcmn_blk311
         , /blk_r_C_DOUBLE_s8a/          &
         , /blk_r_C_DOUBLE_s8b/          &
         , /blk_r_C_DOUBLE_s8c/          &
-        , /blk_r_C_DOUBLE_s8d/         
+        , /blk_r_C_DOUBLE_s8d/
 
 
 
@@ -148,9 +141,9 @@ program fxcmn_blk311
 !       - use max and min possible values for +ve and -ve numbers
 ! ----------------------------------------------------------------------------
 
-        real_s4a 			=  3.402823E+38 
+        real_s4a 			=  3.402823E+38
         real_s4b 			=  1.175494E-38
-        real_s4c                        = -3.402823E+38 
+        real_s4c                        = -3.402823E+38
         real_s4d                        = -1.175494E-38
 
         real_s8a 			=  1.797693D+308
@@ -158,7 +151,7 @@ program fxcmn_blk311
         real_s8c                        = -1.797693D+308
         real_s8d                        = -2.225073D-308
 
-        real_s16a 			=  1.797693Q+308 
+        real_s16a 			=  1.797693Q+308
         real_s16b 			=  2.225073Q-308
         real_s16c                       = -1.797693Q+308
         real_s16d                       = -2.225073Q-308

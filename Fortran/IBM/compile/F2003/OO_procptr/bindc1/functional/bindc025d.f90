@@ -1,23 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 06/07/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*
 !*  DESCRIPTION                : Testing: Procedure Pointer with BIND(C) feature
-!*                                        Diagnostic: define BIND(C) procedure pointer in BIND(C) 
+!*                                        Diagnostic: define BIND(C) procedure pointer in BIND(C)
 !*                                        and non-BIND(C) common blocks
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

@@ -1,22 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_Operator_diag01
-!*                               DTP - Generic Operator  
+!*                               DTP - Generic Operator
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 03, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Resolution based on rank - assumed size array
-!*                               rank decalred with DIMENSION vs. shape declared explicitly 
-!*                     
+!*                               rank decalred with DIMENSION vs. shape declared explicitly
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -39,33 +32,33 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base (k,l)
-        INTEGER, KIND :: k 
-        INTEGER, LEN :: l 
+        INTEGER, KIND :: k
+        INTEGER, LEN :: l
 
         INTEGER :: value
 
-        CONTAINS 
+        CONTAINS
          PROCEDURE, PASS :: mut1
          PROCEDURE, PASS :: mut2
          GENERIC :: operator(*) => mut1, mut2
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
-      END TYPE Child 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen (k13,l13)
         INTEGER, KIND :: k13
         INTEGER, LEN :: l13
       END TYPE NextGen
 
-      CONTAINS 
+      CONTAINS
 !*
-      TYPE(Base(4,:)) FUNCTION mut1(arg1,arg2) 
+      TYPE(Base(4,:)) FUNCTION mut1(arg1,arg2)
       CLASS(Base(4,*)), INTENT(IN) :: arg1
       CLASS(Base(4,*)), DIMENSION(:,:), INTENT(IN) :: arg2   ! rank 1
       POINTER :: mut1
@@ -75,7 +68,7 @@
 
       END FUNCTION mut1
 
-      TYPE(Base(4,:)) FUNCTION mut2(arg1,arg2) 
+      TYPE(Base(4,:)) FUNCTION mut2(arg1,arg2)
       CLASS(Base(4,*)), INTENT(IN) :: arg1
       CLASS(Base(4,*)), INTENT(IN) :: arg2(:,:)            ! rank 2
       POINTER :: mut2

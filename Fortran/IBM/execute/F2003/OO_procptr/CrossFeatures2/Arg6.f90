@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg6.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg6.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg6.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg6.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,7 +31,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  Argument association - Implicit interface  of subroutine 
+!*  Argument association - Implicit interface  of subroutine
 !* ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -66,28 +60,28 @@
     TYPE(DT), INTENT(IN)  :: Arg2
     TYPE(DT), INTENT(OUT) :: Arg1
       Arg1 = Arg2
-    END SUBROUTINE 
+    END SUBROUTINE
 
     SUBROUTINE ISub(Arg1, Arg2)
     TYPE(DT), INTENT(IN)  :: Arg2
-    TYPE(DT), INTENT(OUT) :: Arg1 
+    TYPE(DT), INTENT(OUT) :: Arg1
       Arg1 = Arg2
-    END SUBROUTINE 
+    END SUBROUTINE
 
   END MODULE
 
   SUBROUTINE ExtSub(Arg1, Arg2)
   USE M
   TYPE(DT), INTENT(IN)  :: Arg2
-  TYPE(DT), INTENT(OUT) :: Arg1 
-    Arg1 = Arg2 
-  END SUBROUTINE 
+  TYPE(DT), INTENT(OUT) :: Arg1
+    Arg1 = Arg2
+  END SUBROUTINE
 
-  PROGRAM Arg6 
+  PROGRAM Arg6
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
   PROCEDURE(Isub) :: ExtSub
-  PROCEDURE(ISub), POINTER :: ProcPtr 
+  PROCEDURE(ISub), POINTER :: ProcPtr
 
   ProcPtr => ExtSub
   CALL IntSub( ProcPtr, ProcPtr )

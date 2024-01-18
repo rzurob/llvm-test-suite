@@ -1,26 +1,21 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal019ak.f
 !*  TEST CASE NAME             : type-bound procedure ffinal019ak
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal019a by Catherine Sun)
 !*  DATE                       : 2007-11-26 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
 !*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : testing final subroutines:defect 284803
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-module m   
+module m
 
    type :: base (kbase_1) ! kbase_1=4
       integer, kind :: kbase_1
@@ -31,10 +26,10 @@ end module
 
 module m1
    use m
-   
-   type,extends(base) :: child 
+
+   type,extends(base) :: child
    contains
-      final :: finalChild 
+      final :: finalChild
    end type
 
    type(child(8)), allocatable :: dt0  ! tcx: (8)
@@ -45,23 +40,23 @@ contains
       print *, "finalizeChild"
    end subroutine
 
-end module 
+end module
 
    use m1
- 
+
    call example
- 
+
  end
-   
+
    subroutine example()
-    
+
       use m1
-     
+
       type(child(8)) :: dt1 ! tcx: (8)
 
      allocate(dt0)
      deallocate(dt0)
-  
+
    end subroutine
 
 

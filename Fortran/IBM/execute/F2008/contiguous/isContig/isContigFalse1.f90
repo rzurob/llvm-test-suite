@@ -1,24 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : isContigFalse1.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS intrinsic
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - 
-!*                      
+!*  DESCRIPTION                : -
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -38,8 +27,8 @@ PROGRAM isContigFalse1
       DOUBLE PRECISION, POINTER              :: multi_ptr(:,:,:,:,:,:,:,:,:,:)
       DOUBLE PRECISION, ALLOCATABLE          :: multi_all(:,:,:,:,:,:,:,:,:,:)
 
-      ALLOCATE( all(10) ) 
-      all = -1.d0 
+      ALLOCATE( all(10) )
+      all = -1.d0
       IF ( .NOT. IS_CONTIGUOUS(all) )  ERROR STOP 10
 
       ptr => foo(all(1:10:2))
@@ -48,8 +37,8 @@ PROGRAM isContigFalse1
 
 !*************rank > 1
 
-      ALLOCATE( multi_all(3,3,3,3,3,3,3,3,3,3) ) 
-      multi_all = -10.d0 
+      ALLOCATE( multi_all(3,3,3,3,3,3,3,3,3,3) )
+      multi_all = -10.d0
       IF ( .NOT. IS_CONTIGUOUS(multi_all) )  ERROR STOP 13
 
       multi_ptr => multi_foo(multi_all(:,:,:,:,:,:,:,:,:,1:3:2))
@@ -62,13 +51,13 @@ PROGRAM isContigFalse1
         DOUBLE PRECISION, TARGET  :: OBJ(:)
         DOUBLE PRECISION, POINTER :: foo(:)
 
-            foo => Obj    
+            foo => Obj
       END FUNCTION foo
 
       FUNCTION multi_foo(Obj)
         DOUBLE PRECISION, TARGET  :: OBJ(:,:,:,:,:,:,:,:,:,:)
         DOUBLE PRECISION, POINTER :: multi_foo(:,:,:,:,:,:,:,:,:,:)
 
-            multi_foo => Obj    
+            multi_foo => Obj
       END FUNCTION multi_foo
 END PROGRAM isContigFalse1

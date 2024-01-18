@@ -1,23 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquida
 !*  DATE                       : 02/20/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : Testing SIGN specifier with the WRITE stmt with
-!*  format declarations and printing to a file with stream access, and testing 
+!*  format declarations and printing to a file with stream access, and testing
 !*  format SIGN selectors(SS,SP,S). Testing integer variables.
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

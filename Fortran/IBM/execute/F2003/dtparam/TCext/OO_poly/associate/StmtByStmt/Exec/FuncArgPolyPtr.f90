@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncArgPolyPtr.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncArgPolyPtr.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : FuncArgPolyPtr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,7 +33,7 @@
 !*
 !*  DESCRIPTION
 !*    The poly associating entity is used as actual argument
-!*    The associated entity is a pointer 
+!*    The associated entity is a pointer
 !*    (Comp failed: ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -49,16 +43,16 @@
     TYPE :: Base(K1)    ! (4)
       INTEGER, KIND            :: K1
       INTEGER(K1)              :: BaseId = 1
-      CLASS(Base(K1)), POINTER :: BaseComp => NULL() 
+      CLASS(Base(K1)), POINTER :: BaseComp => NULL()
     CONTAINS
       PROCEDURE, PASS   :: GetId => GetBaseId
     END TYPE
 
     TYPE, EXTENDS(Base) :: Child    ! (4)
       INTEGER(K1)  :: ChildId = 2
-      CLASS(Child(K1)),  POINTER :: ChildComp => NULL() 
+      CLASS(Child(K1)),  POINTER :: ChildComp => NULL()
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -79,9 +73,9 @@
 
   PROGRAM FuncArgPolyPtr
   USE M
-  CLASS(*),     ALLOCATABLE :: V1 
-  CLASS(Base(4)),  ALLOCATABLE :: V2 
-  CLASS(Child(4)), ALLOCATABLE :: V3 
+  CLASS(*),     ALLOCATABLE :: V1
+  CLASS(Base(4)),  ALLOCATABLE :: V2
+  CLASS(Child(4)), ALLOCATABLE :: V3
 
   ALLOCATE(V1, SOURCE=GenChild(-1, -2))
   SELECT TYPE (V1)
@@ -96,7 +90,7 @@
     CLASS DEFAULT
       STOP 21
   END SELECT
- 
+
   ASSOCIATE ( As => V1 )
   ASSOCIATE ( As1 => Func(As) )
     SELECT TYPE (As1)
@@ -140,13 +134,13 @@
   INTEGER               :: Arg1, Arg2
     ALLOCATE(GenChild, SOURCE=Child(4)(BaseId=Arg1, ChildId=Arg2))
   END FUNCTION
-  
+
   FUNCTION Func(Arg)
     CLASS(*), TARGET  :: Arg
     CLASS(*), POINTER  :: Func
 
-    Func => Arg 
- 
-  END FUNCTION 
+    Func => Arg
+
+  END FUNCTION
 
   END

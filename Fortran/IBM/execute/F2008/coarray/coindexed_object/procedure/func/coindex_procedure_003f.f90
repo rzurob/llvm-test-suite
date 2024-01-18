@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Andy Chen
 !*  DATE                       : September 14, 2010
 !* .or.GIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Test module procedures (function and
-!                                subroutine).Argument type: array and scalar. 
+!                                subroutine).Argument type: array and scalar.
 !*
 !*  KEY.or.(S)                 :
 !*  TARGET(S)                  :
@@ -43,7 +33,7 @@ contains
     subroutine arraysum(x, mysum)
         real, intent(in) ::x(:)
         real, intent(out) ::mysum
-        do i = 1,10 
+        do i = 1,10
             mysum = mysum + x(i)
         end do
         return
@@ -78,7 +68,7 @@ program coindex_procedure_003f
     caf3 = [((i*me*1.0), i=1,10)]
 
     sync all
-    
+
     if ( intreturn(caf1[left]) .ne. left*2) then
         error stop 1
     end if
@@ -105,7 +95,7 @@ program coindex_procedure_003f
     if ( .not. precision_r4(sum1, sum2)) then
         print *, 'sum1=',sum1,' sum2=',sum2
         error stop 4
-    end if 
+    end if
 
 end program
 

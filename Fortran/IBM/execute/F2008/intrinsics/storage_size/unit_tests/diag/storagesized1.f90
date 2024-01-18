@@ -1,5 +1,5 @@
 !!! Argument of STORAGE_SIZE must be a data object. It cannot be an expression,
-!!! structure constructor, array constructor, procedure call that is not 
+!!! structure constructor, array constructor, procedure call that is not
 !!! variable.
 integer i, j
 type dt
@@ -14,6 +14,5 @@ contains
 function foo()
 integer foo
 foo = 2
-end
 end
 

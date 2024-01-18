@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : associate001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from associate001 by Robert Ma)
 !*  DATE                       : 2007-08-02 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Associate Construct
@@ -183,7 +175,7 @@ program associate001kl
       type is ( child(*,4) ) ! tcx: (*,4)
          if ( ( b1%c /= 'mno' ) .or. ( b1%i /= 1004 ) .or. ( b2%c /= 'def' ) )            error stop 8_4
    end select
-   
+
    associate ( g => b1, h => b2 )
       read ( 1, "(2(DT))", iostat = stat, iomsg = msg, pos = 51 )      h, g
       if ( ( stat /= 0 ) .or. ( msg /= 'dtioreadc' ) )       error stop 9_4

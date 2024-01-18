@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : lstInputReal001.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 23, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -40,18 +34,18 @@
       integer(4)   :: ii1, ii2, ii3, ii4, ii5, ii6
       integer      :: i1, i2
       character(3) :: c1, c2
-      
+
       integer(4) :: ios = 0, count = 0
-      
+
       equivalence(rl1, ii1)
       equivalence(rl2, ii2)
       equivalence(rl3, ii3)
       equivalence(rl4, ii4)
       equivalence(rl5, ii5)
       equivalence(rl6, ii6)
-      
+
       open(in, file='lstInputReal001.dat', action='read')
-      
+
       do
          count = count + 1
 
@@ -64,28 +58,28 @@
          ! read in the values
          read(in,*, iostat=ios)                                       &
      &        rl1, i1, rl2, c1, rl3, i2, rl4, c2, rl5, rl6
-         
+
          if ( is_iostat_end(ios) ) exit ! end of file - leave the loop
-         
+
          ! validate the values read into the variables one by one
          ! The 2 least significant digits of the return value indicate
-         ! which item in the input list caused the error. 
+         ! which item in the input list caused the error.
          ! The most significant digits represent the input count number.
-         
+
          ! rl1 must be +Inf
          if ( ieee_is_finite(rl1) .or. ( ii1 .le. 0 ) )                &
      &        call zzrc( (count*100_4) + 1_4 )
-         
+
          ! i1 must be 123
          if ( i1 .ne. 123 ) call zzrc((count*100_4) + 2_4 )
-         
+
          ! rl2 must be -Inf
          if ( ieee_is_finite(rl2) .or. ( ii2 .ge. 0 ) )                &
      &        call zzrc( (count*100_4) + 3_4 )
 
          ! c1 must be 'iBm'
          if ( c1 .ne. 'iBm' ) call zzrc((count*100_4) + 4_4 )
-         
+
          ! rl3 must be +NaN(Q)
          if ( ( .not. ieee_is_nan(rl3) ) .or.                          &
      &        ( ieee_class(rl3) .ne. ieee_quiet_nan ) .or.             &
@@ -101,7 +95,7 @@
 
          ! c2 must be 'XlF'
          if ( c2 .ne. 'XlF' ) call zzrc((count*100_4) + 8_4 )
-         
+
          ! rl5 must be +NaN(S)
          if ( ( .not. ieee_is_nan(rl5) ) .or.                          &
      &        ( ieee_class(rl5) .ne. ieee_signaling_nan ) .or.         &
@@ -119,7 +113,7 @@
          print *, "Error: No or bad input file"
          stop 1
       end if
-      
+
       close(in)
 
       end

@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Usage of GENERIC BINDING
 !*                                  - scalar derived type containing private components
@@ -161,33 +150,33 @@ program scalar009
    call c1%seti(1001)
 
    write ( 1, "(2(DT))", iostat = stat, iomsg = msg ) b1, c1
-   
+
    deallocate ( b1 )
    allocate ( child :: b1 )
-   
-   select type ( b1 ) 
+
+   select type ( b1 )
       type is ( child )
          call b1%setc('ghi')
-         call b1%seti(1002)   
+         call b1%seti(1002)
    end select
-   
+
    write ( 1, "((DT))", iostat = stat, iomsg = msg ) b1
 
    rewind 1
-   
+
    deallocate ( b1, c1 )
    allocate ( b1, c1 )
-   
+
    read ( 1, "(2(DT))", iostat = stat, iomsg = msg ) b1, c1
-   
+
    if ( ( b1%getc() /= 'abc' ) .or. ( c1%getc() /= 'def' ) .or. ( c1%geti() /= 1001 ) ) error stop 1_4
-   
+
    deallocate ( b1 )
    allocate ( child :: b1 )
-   
+
    read ( 1, "((DT))", iostat = stat, iomsg = msg )  b1
-   
-   select type ( b1 ) 
+
+   select type ( b1 )
       type is ( child )
          if ( ( b1%getc() /= 'ghi' ) .or. ( b1%geti() /= 1002 ) ) error stop 2_4
    end select

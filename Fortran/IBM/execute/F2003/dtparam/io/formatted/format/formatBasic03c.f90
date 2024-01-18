@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatBasic03c.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatBasic03c.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 5 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 5 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test READ statement with different control and data edit descriptor: bn,bz,iw.m ..
@@ -36,7 +28,7 @@ module m
 
   type,extends(child) :: gen3(l3)
      integer,len  :: l3
-     type(child(l3-2,l3-1)) :: comp 
+     type(child(l3-2,l3-1)) :: comp
   end type
 
   contains
@@ -72,7 +64,7 @@ module m
          type is(gen3(*,*,*))
            read(2*arg%l3,fmt=100) arg
 
-         100 format(bn,3i5/2i5.3,bz,/,3i5/2i5.3) 
+         100 format(bn,3i5/2i5.3,bz,/,3i5/2i5.3)
          class default
            error stop 108_4
        end select
@@ -87,7 +79,7 @@ program formatBasic03c
   class(base(3)),target,allocatable :: tbase1(:)
   class(base(:)),target,allocatable :: tbase2(:)
   class(base(:)),pointer :: pbase(:)=>null()
-   
+
   integer :: ios
 
   allocate(gen3(3,4,5) :: tbase1(-1:0))
@@ -125,7 +117,7 @@ program formatBasic03c
         print *,pbase%comp
     class default
       error stop 103_4
-  end select   
+  end select
 
   pbase=>tbase2
 
@@ -134,7 +126,7 @@ program formatBasic03c
         print *,pbase%comp
     class default
       error stop 104_4
-  end select  
+  end select
 
   rewind(10)
 
@@ -145,7 +137,7 @@ program formatBasic03c
     class default
       error stop 105_4
   end select
-     
+
   close(10)
-  
+
 end program

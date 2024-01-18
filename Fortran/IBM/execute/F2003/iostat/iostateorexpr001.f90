@@ -1,7 +1,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: iostateorexpr001.f
 ! %VERIFY:
 ! %STDIN:
@@ -11,25 +11,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : iostateorexpr001 
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Jan 20, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : is_iostat_eor 
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*  PRIMARY FUNCTIONS TESTED   : is_iostat_eor
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Ensure that basic funcationailty works for instrinsic when reads and uses a format line
 	PROGRAM iostateorexpr001
-	INTEGER , DIMENSION(11) :: A 
+	INTEGER , DIMENSION(11) :: A
 	INTEGER :: ios
 	INTEGER :: I
 	OPEN(UNIT=1,FILE='fmtdat.txt',STATUS='OLD')
@@ -44,7 +37,7 @@
 			EXIT
 		ENDIF
 	END DO
-	
+
 	DO I=1,9
 		PRINT * , ' I = ',I,' A(I) = ',A(I)
 	ENDDO
@@ -58,7 +51,7 @@
 	IF (is_iostat_eor(ios)) THEN
 		PRINT *,' End of record detected at line ',I
 	endif
-	
+
 	write(6,*) "expr = ios(which should be -1)+2+(2*4)-8-2: ",is_iostat_eor(ios+2+(2*4)-8-2)
      write(6,*) "expr = ios(which should be -1)+2*max(3,4)-8: ",is_iostat_eor(ios+2*max(3,4)-8)
      write(6,*) "expr = ios(which should be -1)+2*max(3,4)-8**3: ",is_iostat_eor(ios+2*max(3,4)-8**3)

@@ -1,20 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : d358226
-!*  TEST CASE TITLE            : Reduced Code for Defect:  d358226
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : October 30, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  ABSTRACT                   : OOPS: ICE: DIAG: IO: IMPDO: POLY: In xlfentry
 !*                               with non-DTIO Polymorphic I/O
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

@@ -1,40 +1,32 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryDTAssign02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryDTAssign02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 23 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. INTRINSIC ASSIGNMENT
-!* 4. DERIVED TYPE HAS ALLOCATABLE OR POINTER COMPONENT 
+!* 4. DERIVED TYPE HAS ALLOCATABLE OR POINTER COMPONENT
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type A(l)
       integer,len  :: l
       character(:),allocatable   :: c1(:)
-      character(:),pointer       :: c2=>null() 
+      character(:),pointer       :: c2=>null()
    end type
 end module
 
-program dtParameterInquiryDTAssign02 
+program dtParameterInquiryDTAssign02
   use m
   implicit none
 
@@ -51,9 +43,9 @@ program dtParameterInquiryDTAssign02
   allocate(character(2*a1%l) :: a1%c2)
   a1%c2="xlftest"
   a2=a1
-  
+
   if(a2%l /= 3)                                      error stop 10_4
-  if(a2%c1%len /= len(a2%c1) .or. a2%c1%len /= 4)    error stop 11_4  
+  if(a2%c1%len /= len(a2%c1) .or. a2%c1%len /= 4)    error stop 11_4
   if(any(a2%c1 /= ['1230','4560','7890']))           error stop 12_4
   if(a2%c2%len /= len(a2%c2) .or. a2%c2%len /= 6)    error stop 13_4
   if(a2%c2 /= "xlftes")                              error stop 14_4
@@ -84,12 +76,12 @@ program dtParameterInquiryDTAssign02
 
   if(any(a5(1)%c1 /= ['1230','4560','7890']))        error stop 28_4
   if(any(a5(2)%c1 /= ['1230','4560','7890']))        error stop 29_4
-  if(a5(1)%c2%len /= len(a5(1)%c2) & 
+  if(a5(1)%c2%len /= len(a5(1)%c2) &
         .or. a5(1)%c2%len /= 6)                      error stop 30_4
   if(a5(2)%c2%len /= len(a5(2)%c2) &
         .or. a5(2)%c2%len /= 6)                      error stop 31_4
   if(a5(1)%c2 /= "xlftes")                           error stop 32_4
-  if(a5(2)%c2 /= "xlftes")                           error stop 33_4 
+  if(a5(2)%c2 /= "xlftes")                           error stop 33_4
 
   a6=a5
   if(a6%l /= 3)                                      error stop 34_4
@@ -105,7 +97,7 @@ program dtParameterInquiryDTAssign02
   if(a6(2)%c2%len /= len(a6(2)%c2) &
         .or. a6(2)%c2%len /= 6)                      error stop 40_4
   if(a6(1)%c2 /= "xlftes")                           error stop 41_4
-  if(a6(2)%c2 /= "xlftes")                           error stop 42_4 
+  if(a6(2)%c2 /= "xlftes")                           error stop 42_4
 
   a7=>a5
   if(a7%l /= 3)                                      error stop 43_4

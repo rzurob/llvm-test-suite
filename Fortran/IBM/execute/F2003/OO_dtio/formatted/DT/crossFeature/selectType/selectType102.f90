@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Select-Type Constructor: Polymorphic Array Entities (read)
@@ -65,7 +54,7 @@ use m
 
    class(child), allocatable :: c1(:,:)
    class(child), pointer     :: c2(:)
-   
+
    character(81) :: fmt = "(DT'_b1-4'(7,2), DT'_b1-3'(8,3), DT'_b1-2'(8,3), DT'_b1-1'(7,2) )"
 
    open (1, file = 'selectType102.1', form='formatted', access='sequential' )
@@ -100,19 +89,19 @@ use m
          read ( 1, "(DT'_c2-1'(7,2,8,3), DT'_c2-2'(8,3,9,4))", iostat = stat, iomsg = msg ) g  !<= two elements
          if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 4_4
    end select
-   
+
    print *, b1%i
    select type ( b2 )
       type is ( child )
          print *, b2%i
          print *, b2%j
    end select
-   
+
    print *, c1%i
    print *, c1%j
    print *, c2%i
    print *, c2%j
-   
+
    print *, rbuffer
 end program
 

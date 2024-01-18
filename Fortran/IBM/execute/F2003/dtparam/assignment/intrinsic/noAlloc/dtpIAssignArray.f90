@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpIAssignArray
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-11-12
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment without Allocation
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 358785
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -114,7 +108,7 @@ contains
     if (size(d2_5841) /= 1) stop 34
 
     if (b_3%l /= 3 .or. len(b_3%ch) /= 3 .or. any(b_3%ch /= 'abc')) stop 2
-    
+
     do i = 1, 3
        if (d_34(i)%l /= 3 .or. d_34(i)%k /= 4 .or. len(d_34(i)%ch) /= 3 .or. d_34(i)%ch /= 'def' .or. .not.d_34(i)%lfld &
             .or. size(d_34(i)%ifld) /= 3 .or. kind(d_34(i)%lfld) /= 4 .or. kind(d_34(i)%ifld) /= 4 .or. kind(d_34(i)%rfld) /= 4 &

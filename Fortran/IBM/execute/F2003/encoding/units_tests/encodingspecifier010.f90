@@ -1,19 +1,12 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : encodingspecifier010
-!*
-!*  PROGRAMMER                 : Robert Jackiewicz
 !*  DATE                       : August 22, 2007
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ENCODING= specifier in I/O statements
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  : *
 !*  DESCRIPTION                : functional I/O using UTF-8 encoding for OPEN statement
 !*

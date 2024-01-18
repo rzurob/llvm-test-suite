@@ -1,28 +1,17 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                :  simple test on void * as the C return.
 !*                                associate procedure pointer with c function
 !*                                pointer pointing to function returning
-!*                                void *.  
+!*                                void *.
 !* ===================================================================
 
-program procptrBindcProc01a 
+program procptrBindcProc01a
 
    use ISO_C_BINDING
 
@@ -49,7 +38,7 @@ program procptrBindcProc01a
    ch = 'Z'
    cch = 'G'
 
-   p => cch 
+   p => cch
 
    if(ASSOCIATED(fun_match)) error stop 1_4
    call C_F_PROCPOINTER(C_FUNLOC(match), fun_match)
@@ -61,5 +50,5 @@ program procptrBindcProc01a
    call C_F_POINTER(res,p)
    if(p /= 'Z') error stop 4_4
 
-end program procptrBindcProc01a 
+end program procptrBindcProc01a
 

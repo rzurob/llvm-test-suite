@@ -1,33 +1,25 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocPtr15f
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : March, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Allocatable/Pointer
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Check the following two rules:
 !*
 !*   a) When a Fortran procedure that has an INTENT(OUT) allocatable
-!*      dummy argument is invoked by a C function, and the actual 
-!*      argument in the C function is the address of a C descriptor 
+!*      dummy argument is invoked by a C function, and the actual
+!*      argument in the C function is the address of a C descriptor
 !*      that describes an allocated allocatable variable, the variable
 !*      is deallocated on entry to the Fortran procedure.
-!*   b) When a C function is invoked from a Fortran procedure via an 
-!*      interface with an INTENT(OUT) allocatable dummy argument, and 
-!*      the actual argument in the reference to the C function is an 
+!*   b) When a C function is invoked from a Fortran procedure via an
+!*      interface with an INTENT(OUT) allocatable dummy argument, and
+!*      the actual argument in the reference to the C function is an
 !*      allocated allocatable variable, the variable is deallocated on
 !*      invocation (before execution of the C function begins).
 !*

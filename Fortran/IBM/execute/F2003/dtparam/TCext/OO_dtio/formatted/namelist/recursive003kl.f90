@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : recursive003kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from recursive003 by Robert Ma)
 !*  DATE                       : 2007-07-06 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2
 !*                                        Try linked list data structure with recursive DTIO with namelist formatting
@@ -68,10 +60,10 @@ program recursive003kl
    type(base(3)), target :: b3 ! tcx: (3)
    type(child(3,4)), target :: b4 ! tcx: (3,4)
    class(child(:,4)), pointer :: b5, b6 ! tcx: (:,4)
-   
+
    character(3), target :: ll1end = 'end'
    integer, target :: ll2end = 99999
-   
+
    namelist /linkedlist/ head
 
    open (1, file = 'recursive003kl.1', form='formatted', access='sequential' )

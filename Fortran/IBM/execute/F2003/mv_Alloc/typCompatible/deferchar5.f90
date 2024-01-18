@@ -1,24 +1,12 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : deferchar5.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM/TO are of type character(*) 
+!*  DESCRIPTION                : FROM/TO are of type character(*)
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -44,8 +32,8 @@
 
   contains
       subroutine sub(arg1, arg2)
-          character(*), intent(inout), allocatable :: arg1(:) 
-          character(*), intent(inout), allocatable :: arg2(:) 
+          character(*), intent(inout), allocatable :: arg1(:)
+          character(*), intent(inout), allocatable :: arg2(:)
           call move_alloc(arg1, arg2)
       end subroutine
   end

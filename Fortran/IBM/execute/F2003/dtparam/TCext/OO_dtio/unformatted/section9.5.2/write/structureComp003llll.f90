@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : structureComp003llll
 !*
-!*  PROGRAMMER                 : David Forster (derived from structureComp003 by Robert Ma)
 !*  DATE                       : 2007-10-03 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try output item to be structure component, try parent component
@@ -30,14 +22,14 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m1
-   
+
    type base (lbase_1) ! lbase_1=3
       integer, len :: lbase_1
       character(lbase_1) :: c = ''
       contains
          procedure, pass :: getC
    end type
-   
+
    type, extends(base) :: child (lchild_1) ! lchild_1=3
       integer, len :: lchild_1
       character(lchild_1) :: cc = ''
@@ -47,22 +39,22 @@ module m1
       integer, len :: lcontainer_1,lcontainer_2
       type(child(lcontainer_1,lcontainer_2)) :: b1 ! tcx: (lcontainer_1,lcontainer_2)
       type(child(lcontainer_1,lcontainer_2)) :: b2 ! tcx: (lcontainer_1,lcontainer_2)
-   end type   
-   
+   end type
+
 contains
    function getC (a)
       class(base(*)), intent(in) :: a ! tcx: (*)
       character(3) :: getC
-      getC = a%c      
-   end function       
+      getC = a%c
+   end function
 end module
 
 
 program structureComp003llll
-   use m1   
+   use m1
 
    interface write(unformatted)
-      
+
       subroutine writeUnformattedContainer (dtv, unit, iostat, iomsg)
          import container
          class(container(*,*)), intent(in) :: dtv ! tcx: (*,*)
@@ -70,7 +62,7 @@ program structureComp003llll
          integer,  intent(out) :: iostat
          character(*),  intent(inout) :: iomsg
       end subroutine
-      
+
       subroutine writeUnformattedBase (dtv, unit, iostat, iomsg)
          import base
          class(base(*)), intent(in) :: dtv ! tcx: (*)
@@ -78,9 +70,9 @@ program structureComp003llll
          integer,  intent(out) :: iostat
          character(*),  intent(inout) :: iomsg
       end subroutine
-      
+
    end interface
-  
+
    ! declaration of variables
    class(container(:,:)), allocatable  :: b11 ! tcx: (:,:)
    class(container(:,:)), pointer      :: b12 ! tcx: (:,:)
@@ -90,37 +82,37 @@ program structureComp003llll
    character(15)  :: c1, c4
    character(7)   :: c2
    character(4)   :: c3
-   
+
    ! allocation of variables
    allocate ( b11, source = container(3,3)( b2=child(3,3)('def','ghi'), b1=child(3,3)('abc','def') ) ) ! tcx: (3,3) ! tcx: (3,3) ! tcx: (3,3)
    allocate ( b12, source = container(3,3)( b2=child(3,3)('DEF','EFG'), b1=child(3,3)('ABC','DEF') ) ) ! tcx: (3,3) ! tcx: (3,3) ! tcx: (3,3)
    b13 = container(3,3)( b2=child(3,3)('JKL','MNO'), b1=child(3,3)('GHI','JKL') ) ! tcx: (3,3) ! tcx: (3,3) ! tcx: (3,3)
-   
+
    open (unit = 1, file ='structureComp003llll.data', form='unformatted', access='direct', recl=30)
-   
+
    ! unformatted I/O operations
-   
+
    write (1, iostat=stat, iomsg=msg, rec=1 )             b11                !<- write 'abcdefZdefghiZY' to file
    write (1, iostat=stat, iomsg=msg, rec=4 )             b12%b1             !<- write 'ABCDEFZ' to file
    write (1, iostat=stat, iomsg=msg, rec=2 )             b13%b2%base        !<- write 'JKLZ'    to file
    write (1, iostat=stat, iomsg=msg, rec=3 )             container(3,3)( b2=child(3,3)('jkl','mno'), b1=child(3,3)('ghi','jkl') )  !<- write 'ghijklZjklmnoZY' to file ! tcx: (3,3) ! tcx: (3,3) ! tcx: (3,3)
-   
+
    read (1, iostat=stat, iomsg=msg, rec=1 )              c1
    read (1, iostat=stat, iomsg=msg, rec=4 )              c2
    read (1, iostat=stat, iomsg=msg, rec=2 )              c3
    read (1, iostat=stat, iomsg=msg, rec=3 )              c4
-   
+
    ! check if the values are set correctly
-   
+
    if ( c1 /= 'abcdefZdefghiZY' )     error stop 101_4
    if ( c2 /= 'ABCDEFZ' )             error stop 2_4
    if ( c3 /= 'JKLZ' )                error stop 3_4
    if ( c4 /= 'ghijklZjklmnoZY' )     error stop 4_4
-   
+
    ! close the file appropriately
-   
+
    close ( 1, status ='delete' )
-   
+
 end program
 
 subroutine writeUnformattedContainer (dtv, unit, iostat, iomsg)
@@ -138,12 +130,12 @@ use m1
             integer,  intent(out) :: iostat
             character(*),  intent(inout) :: iomsg
         end subroutine
-    end interface    
+    end interface
 
     write (unit, iostat=iostat, iomsg=iomsg ) dtv%b1, dtv%b2
     ! add a mark at the end of record, so we know DTIO is used.
     write (unit, iostat=iostat, iomsg=iomsg ) "Y"
-    
+
 end subroutine
 
 subroutine writeUnformattedBase (dtv, unit, iostat, iomsg)
@@ -154,15 +146,15 @@ use m1
     character(*), intent(inout) :: iomsg
 
     write (unit, iostat=iostat, iomsg=iomsg ) dtv%getC()
-    
+
     select type (dtv)
        type is (child(*,*)) ! tcx: (*,*)
           write (unit, iostat=iostat, iomsg=iomsg ) dtv%cc
     end select
-    
-    ! add a mark at the end of record, so we know DTIO is used.        
+
+    ! add a mark at the end of record, so we know DTIO is used.
     write (unit, iostat=iostat, iomsg=iomsg ) "Z"
-    
+
 end subroutine
 
 

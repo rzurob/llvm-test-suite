@@ -3,18 +3,11 @@
 ! opt variations: -qnock -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Deferred Character Length
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unit testing
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  DESCRIPTION                : Testing the deferred length character
@@ -30,10 +23,10 @@ type :: person(k1)    ! (4)
    character (:), pointer :: info(:,:)
 end type person
 
-contains 
+contains
 function GetPersonInfo(p)
    type (person(4)) :: p, GetPersonInfo
-   GetPersonInfo%info => p%info 
+   GetPersonInfo%info => p%info
    GetPersonInfo%age = p%age
 end function
 
@@ -53,7 +46,7 @@ end subroutine
 
 end module
 
-use m 
+use m
 
 type (person(4)) p1, p2
 character(:), allocatable, target :: char(:,:)

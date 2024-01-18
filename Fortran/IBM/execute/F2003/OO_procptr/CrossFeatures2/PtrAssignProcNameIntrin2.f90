@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ExtAssignProcNameIntrin2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: ExtAssignProcNameIntrin2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : ExtAssignProcNameIntrin2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : ExtAssignProcNameIntrin2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 13, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,13 +30,13 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  C727 (R742) A procedure-name shall be the name of an external, module,
 !*  or dummy procedure, a specific intrinsic function listed in 13.6
 !*  and not marked with a bullet (.), or a procedure pointer.
-!* 
-!*  Intrinsics -- TC changed due to C1215 
-!*  () 
+!*
+!*  Intrinsics -- TC changed due to C1215
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -83,7 +77,7 @@
   END FUNCTION
 
   FUNCTION ExtDDIM(Arg1, Arg2)
-  DOUBLE PRECISION :: ExtDDIM 
+  DOUBLE PRECISION :: ExtDDIM
   DOUBLE PRECISION, INTENT(IN) :: Arg1, Arg2
     ExtDDIM = DDIM(Arg1, Arg2)
   END FUNCTION
@@ -95,7 +89,7 @@
   END FUNCTION
 
   FUNCTION ExtDIM(Arg1, Arg2)
-  DOUBLE PRECISION :: ExtDIM 
+  DOUBLE PRECISION :: ExtDIM
   REAL, INTENT(IN) :: Arg1, Arg2
     ExtDIM = DIM(Arg1, Arg2)
   END FUNCTION
@@ -140,7 +134,7 @@
 
   IF (ExtDDIM(-3.0_8, 2.0_8) .NE. 0.0 ) STOP 19
 
-  IF (ExtDINT(-2.783D0) .NE. -2.0D0 )   STOP 20 
+  IF (ExtDINT(-2.783D0) .NE. -2.0D0 )   STOP 20
 
   END
 

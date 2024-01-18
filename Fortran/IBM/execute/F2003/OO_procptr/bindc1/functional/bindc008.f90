@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 06/07/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Procedure Pointer with BIND(C) feature
 !*                                        Procedure Pointer pointing at FORTRAN functions which returns a procedure pointer that
@@ -80,10 +69,10 @@ program bindc008
 
    b3 = pp2(b1, b2)
    call pp1 ( b3 )
-   
+
    nullify ( pp1 )
    nullify ( pp2 )
-   
+
    if ( ( associated( pp1 ) ) .or. ( associated( pp2 ) ) .or. ( associated( pp1, pp2 ) ) ) error stop 1_4
 
 end

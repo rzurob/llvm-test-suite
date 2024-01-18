@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcDecRestrict5.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcDecRestrict5.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 10, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,13 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  Within a scoping unit, two procedures that have the same generic name shall
 !*  both be subroutines or both be functions
-!*  
-!*  
 !*
-!*  
 !*  (317262)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -49,10 +39,10 @@
     INTEGER, LEN              :: N1
     CHARACTER(kind=K1,len=N1) :: ID
   CONTAINS
-    GENERIC    :: ASSIGNMENT(=) => ModSub 
-    GENERIC    :: OPERATOR(.OP.) => ModFun 
-    PROCEDURE, PASS(Arg2)  :: ModSub 
-    PROCEDURE  :: ModFun 
+    GENERIC    :: ASSIGNMENT(=) => ModSub
+    GENERIC    :: OPERATOR(.OP.) => ModFun
+    PROCEDURE, PASS(Arg2)  :: ModSub
+    PROCEDURE  :: ModFun
   END TYPE
 
   TYPE, EXTENDS(DT) :: DT1    ! (1,1)
@@ -72,7 +62,7 @@
   END FUNCTION
 
   END MODULE
- 
+
   PROGRAM mProcDecRestrict5
   USE M
   PROCEDURE(ModFun), POINTER :: ProcPtr
@@ -82,16 +72,16 @@
   SUBROUTINE IntSub(Proc)
   PROCEDURE(ModSub) :: Proc
 
-  INTERFACE ASSIGNMENT(=) 
+  INTERFACE ASSIGNMENT(=)
     PROCEDURE ProcPtr
   END INTERFACE
 
-  INTERFACE OPERATOR( .OP. ) 
-    PROCEDURE Proc 
+  INTERFACE OPERATOR( .OP. )
+    PROCEDURE Proc
   END INTERFACE
 
   END SUBROUTINE
- 
+
   END
 
 

@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass073.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass073.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -71,7 +59,7 @@
       program fxass73a
       implicit none
 
-      logical(4), parameter :: T = .true. 
+      logical(4), parameter :: T = .true.
       logical(8), parameter :: F = .false.
 
       logical a / .true.  /
@@ -91,16 +79,16 @@
 
       logical*8 a8 / .true. /
       logical*8 b8 / .false. /
-      
+
       integer count
 
 !-----------   ASSOCIATE with LOGICAL expressions ----------------
 
-      c = .false.   
+      c = .false.
       do count = 1, 10
 
       associate ( arg => a .eqv. b , arc => c)
-         if(arg .neqv. arc)then 
+         if(arg .neqv. arc)then
            error stop 1
          endif
       end associate
@@ -109,7 +97,7 @@
 
 !-----------   ASSOCIATE with LOGICAL*1 expressions ----------------
 
-      c1 = .true.   
+      c1 = .true.
       do count = 1, 10
 
       associate ( arg1 => a1 .neqv. b1 , arc1 => c1)
@@ -123,7 +111,7 @@
 
 !-----------   ASSOCIATE with LOGICAL*2 expressions ----------------
 
-      c2 = .false.   
+      c2 = .false.
       do count = 1, 10
 
       associate ( arg2 => a2 .eqv. b2 , arc2 => c2 )

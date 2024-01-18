@@ -7,7 +7,7 @@ real(8), parameter :: y(*) = &
 real(8), parameter :: z(*) = hypot(x, y)
 real(8), parameter :: vf(*) = &
   [ 5.0d0, 0.0d0, 0.0d0, 1.0d0, 12.0d0, 0.282842712474619d2, huge(real(1.0d0, kind=8)) ]
-    
+
 integer(4) i
 
 interface

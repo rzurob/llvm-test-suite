@@ -1,24 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : BNestedTask.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2011-01-24
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Block with OMP
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED :  
-!*                                
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                :  
-!*
+!*  DESCRIPTION                :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -49,10 +38,10 @@ PROGRAM BNestedTask
         if (iMod == 0) iMod = N
 
         !$OMP task                                      !<-- localVar is shared; iMod is firstprivate
-            BLOCK 
+            BLOCK
                INTEGER(8) :: j =-99
- 
-                 !$OMP task shared(temp1)               !<-- j should be firstprivate here 
+
+                 !$OMP task shared(temp1)               !<-- j should be firstprivate here
                     DO j = 2, iMod
                         temp1(j) = j * temp1(j-1)
                     END DO
@@ -61,7 +50,7 @@ PROGRAM BNestedTask
                  !$OMP critical (test)
                      IF ( j .NE. -99 ) STOP 10
                  !$OMP END critical (test)
-            END BLOCK 
+            END BLOCK
             localVar(i) = temp1(iMod)
         !$OMP END task
 

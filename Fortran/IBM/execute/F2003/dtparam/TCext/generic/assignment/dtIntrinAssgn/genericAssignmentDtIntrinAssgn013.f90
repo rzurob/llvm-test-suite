@@ -3,22 +3,11 @@
 ! opt variations: -qck -qnok -qnol -qdefaultpv -qdeferredlp -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Derived Type Intrinsic Assignment:
 !*                                      - container type contains a derived type component that has UD assignment with pass on second arg
@@ -85,7 +74,7 @@ program genericAssignmentDtIntrinAssgn013
 
    c2 = c1
    print *, c2%inn%i, c2%c, associated ( c2%inn%i, c1%inn%i ), associated ( c2%inn%i, i1 ), associated ( c1%inn%i, i1 )
-   
+
    c2 = container(4,3,20)(inner(20,4)(null()), 'ftn')
    print *, c2%inn%i, c2%c
 

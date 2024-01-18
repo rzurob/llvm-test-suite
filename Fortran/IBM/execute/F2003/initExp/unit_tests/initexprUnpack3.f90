@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Initialization expression
 !*
-!* PROGRAMMER                 : Kelvin Li
 !* DATE                       : March 31, 2006
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : UNPACK intrinsic
 !*
@@ -36,12 +31,11 @@ real(8), dimension(10,10) :: res8=unpack(v8, mask=msk8, field=fld8), &
 logical, parameter :: msk16(3,7)=reshape( &
   & (/ (F,i=1,7), (T,i=8,14), (F,i=15,21) /), (/3,7/))
 real(16), parameter :: fld16(3,7)=reshape( &
-  & (/(-1.1Q0,i=1,7), (2.0Q2,i=8,14), (-3.0Q1,i=15,21) /), (/3,7/)) 
+  & (/(-1.1Q0,i=1,7), (2.0Q2,i=8,14), (-3.0Q1,i=15,21) /), (/3,7/))
 real(16), parameter :: v16(7)=(/ &
   &  10.670563, 10.424179, 6.261701, 19.733476, 10.900613, &
   &  19.079081, 18.003928/)
 real(16), dimension(3,7) :: res16=unpack(v16, msk16, fld16), res16a
-
 
 if (.not. all(res4 .eq. unpack(v4, msk4, fld4))) stop 1
 

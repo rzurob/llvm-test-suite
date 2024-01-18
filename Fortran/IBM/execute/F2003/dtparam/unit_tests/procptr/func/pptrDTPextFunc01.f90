@@ -13,8 +13,6 @@
 
     end module
 
-   
-
     use mmm
       interface
         FUNCTION extFun(Arg)
@@ -23,10 +21,10 @@
           type(dt1(4,4)) :: extFun
         END FUNCTION
       end interface
-    PROCEDURE(IntFun), POINTER :: ProcPtr => NULL() 
+    PROCEDURE(IntFun), POINTER :: ProcPtr => NULL()
 
     type(dt1(4,4)) :: dtobj
-    type(dt1(4,5)) :: arg1 
+    type(dt1(4,5)) :: arg1
 
     procptr => extfun
 

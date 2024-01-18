@@ -3,21 +3,15 @@
 ! opt variations: -ql -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchValueAttr01 - ASYNCHRONOUS Attribute
 !*                               Interactions with Other Attributes
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : February 17, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : Interactions with the VALUE Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 :
@@ -39,12 +33,10 @@
 !*  ...
 !*                  or  VALUE
 !*
-!*
 !*  5.1.2.15 VALUE attribute
 !*
 !*  The VALUE attribute specifies a type of argument association (12.4.1.2)
 !*  for a dummy argument.
-!*
 !*
 !*  5.2.14 VALUE statement
 !*
@@ -72,9 +64,9 @@ PROGRAM asynchValueAttr01
     INTERFACE
         INTEGER FUNCTION SavePoint(ioUnit, block, sPt)
             USE mPoint
-        
+
             IMPLICIT NONE
-        
+
             INTEGER, INTENT(IN) :: ioUnit
             LOGICAL, INTENT(IN) :: block
             TYPE(tPoint(4)), VALUE, ASYNCHRONOUS :: sPt
@@ -148,7 +140,7 @@ PROGRAM asynchValueAttr01
             CALL zzrc( 5 )
         END IF
     END DO
-    
+
 
     CLOSE(UNIT=oUnit, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN

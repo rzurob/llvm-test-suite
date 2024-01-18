@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Value Attribute for derived type containing allocatable components
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : value attribute with derived type containing allocatable components
 !*                                 - type: derived type with (non-)polymorphic allocatable components
@@ -96,7 +85,7 @@ module m
          print *, b%in1%i
          b%in1%i = -999
          print *, b%in1%i
-         
+
          select type ( g => b%in2 )
             type is ( inner )
                print *, g%i
@@ -132,7 +121,7 @@ program valueOptionalDummyArg002
    print *, b2%in1%i
    call foo(b=b2,a=b1)
    print *, b1%in1%i, b2%in1%i
-   
+
    allocate ( c1, source = child ( inner(400), cinner(500, 600) ) )
    allocate ( c2, source = child ( inner(4000), cinner(5000, 6000) ) )
 
@@ -145,7 +134,7 @@ program valueOptionalDummyArg002
       type is ( cinner )
          print *, g%i, g%j
    end select
-   
+
    call bar(c2)
    print *, c2%in1%i
    select type ( g => c2%in2 )
@@ -154,7 +143,7 @@ program valueOptionalDummyArg002
       type is ( cinner )
          print *, g%i, g%j
    end select
-   
+
    call bar(b=c2,a=c1)
    print *, c1%in1%i
    select type ( g => c1%in2 )
@@ -163,7 +152,7 @@ program valueOptionalDummyArg002
       type is ( cinner )
          print *, g%i, g%j
    end select
-   
+
    print *, c2%in1%i
    select type ( g => c2%in2 )
       type is ( inner )

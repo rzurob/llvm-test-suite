@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh fxieee22 
+! %PRECMD: $TR_SRC/fxieee.presh fxieee22
 ! %COMPOPTS: -qfloat=nans -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Marcus Yu
 !*  DATE                       : February 12, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_VALUE
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +25,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 	     program fxieee22
@@ -78,7 +69,7 @@
   !      if (ieee_class(values(1)) /= ieee_quiet_nan) then
   !         print *, "IEEE value failed, real*4, nanq"
   !      endif
-     
+
 	!    values(1) = ieee_value(values(1), ieee_positive_zero)
     !    if (ieee_class(values(1)) /= ieee_positive_zero) then
     !       print *, "IEEE value failed, real*4, p_zero"

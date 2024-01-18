@@ -1,37 +1,29 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeAsInitExp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeAsInitExp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 19 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 19 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. INITIALIZE DERIVED TYPE COMPONENT WITH MERGE
 !* 4. INITIALIZE DERIVED TYPE WITH MERGE
 !* 5. TSOURCE AND FSOURCE ARE SCALAR
-!* 6  DEFECT 356488  
+!* 6  DEFECT 356488
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type :: dtp(k,l)
      integer,kind   :: k=merge(4,1,.true.)
-     integer,len    :: l=merge(0,3,.false.)    
+     integer,len    :: l=merge(0,3,.false.)
      integer(k)     :: i=merge(1,2,.true.)
      character(l)   :: c=merge("xlf","123",.true.)
    end type
@@ -44,7 +36,7 @@ program mergeAsInitExp01
    type(dtp(4,3)),parameter :: dtp2=dtp(4,3)(i=merge(-1,-2,.false.), &
                                    c=merge("000","111",.false.))
 
-   type(dtp(4,3)) :: dtp3=merge(dtp1,dtp2,.true.) 
+   type(dtp(4,3)) :: dtp3=merge(dtp1,dtp2,.true.)
 
    type(dtp(4,3)) :: dtp4=merge(dtp1,dtp2,.false.)
 
@@ -60,7 +52,7 @@ program mergeAsInitExp01
    if(dtp2%i /= -2)                            error stop 18_4
    if(dtp2%i%kind /= 4)                        error stop 19_4
    if(dtp2%c /= "111")                         error stop 20_4
-   if(dtp2%c%len /= 3)                         error stop 21_4   
+   if(dtp2%c%len /= 3)                         error stop 21_4
 
    if(dtp3%k /= 4)                             error stop 22_4
    if(dtp3%l /= 3)                             error stop 23_4

@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Dummy Argument Association
@@ -123,7 +112,7 @@ end module
 program dummyArg003
    use m
 
-   type(base)              :: b1(3) = (/ base('abc'), base('def'), base('ghi') /) 
+   type(base)              :: b1(3) = (/ base('abc'), base('def'), base('ghi') /)
    type(base), allocatable :: b2(:)
    type(base), pointer     :: b3(:)
 

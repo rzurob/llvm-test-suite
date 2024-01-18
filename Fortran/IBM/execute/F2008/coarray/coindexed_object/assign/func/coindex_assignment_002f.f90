@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Andy Chen
 !*  DATE                       : September 08, 2010
 !* .or.GIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Test intrinsic type for scalar: INTEGER, REAL,
 !                                DOUBLE, COMPLEX, CHARACTER, LOGICAL
@@ -68,7 +58,6 @@ program coindex_assignment_002f
         end function
     end interface
 
-
     me = THIS_IMAGE()
     num = NUM_IMAGES()
 
@@ -118,11 +107,11 @@ program coindex_assignment_002f
 
     if ( .not. precision_x8( caf4, (1.0,1.0*me) ) )then
         error stop 7
-    end if 
+    end if
 
     if ( .not. precision_x8( cpx2, (1.0,1.0*left) ) ) then
         error stop 8
-    end if 
+    end if
 
     if ( logical1 .neqv. (mod(me, 2) .ne. 0) ) then
         error stop 11

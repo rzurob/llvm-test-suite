@@ -1,18 +1,8 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Characters with deferred length type parameter
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : array character with deferred length as structure component with
 !*                               implicit pointer assignment
@@ -45,7 +35,7 @@ program deferLenPtrAssgn007
    character, target :: c(6)=(/ "C", "D", "E", "F", "G", "H" /)
    character(2), target :: aa(2)= (/ "aa", "AA" /)
    character(3), target :: bbb(3)=(/ "bbb", "BBB", "BbB" /)
-   character*4, target :: cccc(4)=(/ "cccc", "CCCC", "ccCC", "CCcc" /) 
+   character*4, target :: cccc(4)=(/ "cccc", "CCCC", "ccCC", "CCcc" /)
 
    b1 = base(a)
    print *, b1%c, len(b1%c), size(b1%c), associated(b1%c, a)

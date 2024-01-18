@@ -12,44 +12,38 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxcllf34.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Call command line intrinsic routines through entries 
-!*                             : of external subroutine with pointees as actual 
+!*  DESCRIPTION                : Call command line intrinsic routines through entries
+!*                             : of external subroutine with pointees as actual
 !*                             : arguments of these intrinsics
-!*   
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD
 
-      character(513)   :: NAME  
-      logical          :: TRIM_NAME 
-      character(2049)  :: CmdLine 
-          
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
+      character(2049)  :: CmdLine
+
 
       DATA CmdLine    /'fxcllf34 =-=-=-===-=- ___----- _+_+_+_+_'/
       DATA NAME       /'CmdLine   '/
@@ -57,11 +51,11 @@
 
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE  
-      integer          :: ARGCOUNT 
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
 
 
       DATA COMMAND    / '????? '/
@@ -71,14 +65,14 @@
       DATA VALUE      / 1*'!'/
       DATA ARGCOUNT   / 0 /
 
-      character(513)   :: PteNAME  
-      logical          :: PteTRIM_NAME 
+      character(513)   :: PteNAME
+      logical          :: PteTRIM_NAME
       character(2049)  :: PteCOMMAND
-      integer          :: PteLENGTH     
-      integer          :: PteSTATUS  
-      integer          :: PteNUMBER 
-      character(2047)  :: PteVALUE  
-      integer          :: PteARGCOUNT 
+      integer          :: PteLENGTH
+      integer          :: PteSTATUS
+      integer          :: PteNUMBER
+      character(2047)  :: PteVALUE
+      integer          :: PteARGCOUNT
 
 
       POINTER(PtrCOMMAND,    PteCOMMAND)
@@ -105,7 +99,7 @@
       USE MOD
       IMPLICIT NONE
 
-       
+
       PtrCOMMAND   = LOC(COMMAND)
       PtrLENGTH    = LOC(LENGTH)
       PtrSTATUS    = LOC(STATUS)
@@ -116,7 +110,7 @@
       PtrARGCOUNT  = LOC(ARGCOUNT)
 
 
-      CALL ENT_COMMAND_ARGUMENT_COUNT                                        
+      CALL ENT_COMMAND_ARGUMENT_COUNT
 
       CALL ENT_GET_COMMAND
 
@@ -135,7 +129,7 @@
 
       ENTRY ENT_COMMAND_ARGUMENT_COUNT
          CmdCount = COMMAND_ARGUMENT_COUNT()
-         if ( CmdCount .ne. 3 ) & 
+         if ( CmdCount .ne. 3 ) &
          then
            error stop 63
          endif
@@ -156,7 +150,7 @@
           PteNUMBER = i
           call GET_COMMAND_ARGUMENT(PteNUMBER, PteVALUE, PteLENGTH, PteSTATUS)
           call MyGetArg(CmdLine, PteNUMBER, Argument)
- 
+
           if ( (TRIM(PteVALUE) .ne. TRIM(Argument))       .or. &
                (PteLENGTH      .ne. LEN(TRIM(Argument)))  .or. &
                (PteSTATUS      .ne. 0) )                       &

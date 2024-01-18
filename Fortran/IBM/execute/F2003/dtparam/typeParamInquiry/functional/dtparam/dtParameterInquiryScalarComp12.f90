@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryScalarComp12.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryScalarComp12.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 10 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. LOGICAL,REAL,COMPLEX SCALAR POINTER COMPONENT
@@ -29,13 +21,13 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 module m
-    
+
    integer,parameter  :: k8=8
    type base(k)
      integer,kind  :: k
-     
+
      logical,pointer    :: l1
-     logical(1),pointer :: l2 
+     logical(1),pointer :: l2
      logical(2),pointer :: l3
      logical(4),pointer :: l4
      logical(8),pointer :: l5
@@ -44,14 +36,14 @@ module m
      logical(k+k),pointer :: l8
      logical(int(k)),pointer :: l9
      logical(selected_int_kind(k%kind)),pointer :: l10
-     
+
      real,pointer       :: r1
      real(4),pointer    :: r2
      real(8),pointer    :: r3
      real(16),pointer   :: r4
      real(k+k),pointer    :: r5
-     real(2**k),pointer :: r6 
-     real(k8),pointer   :: r7   
+     real(2**k),pointer :: r6
+     real(k8),pointer   :: r7
      real(kind(5)),pointer :: r8
 
      complex,pointer    :: x1
@@ -60,7 +52,7 @@ module m
      complex(16),pointer :: x4
      complex(max(1,2*k)),pointer  :: x5
      complex(selected_int_kind(9)),pointer :: x6
-         
+
    end type
 end module
 
@@ -69,10 +61,10 @@ end module
   implicit none
 
   type(base(2))  :: t
-  
+
   if(t%k /= 2)                                           error stop 10_4
-  if(t%k%kind /= kind(t%k) .or. t%k%kind /= 4)           error stop 11_4 
-  
+  if(t%k%kind /= kind(t%k) .or. t%k%kind /= 4)           error stop 11_4
+
   if(t%l1%kind /= kind(t%l1) .or. t%l1%kind /= 4)        error stop 12_4
   if(t%l2%kind /= kind(t%l2) .or. t%l2%kind /= 1)        error stop 13_4
   if(t%l3%kind /= kind(t%l3) .or. t%l3%kind /= 2)        error stop 14_4

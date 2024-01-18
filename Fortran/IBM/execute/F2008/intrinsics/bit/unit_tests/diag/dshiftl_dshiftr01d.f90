@@ -1,21 +1,11 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dshiftl-dshiftr01d.f
-!*
-!*  PROGRAMMER                 : Maryam Moghadas
 !*  DATE                       : 2013-02-27
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DSHIFTL, DSHIFTR intrinsics
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              :
 !*
 !*  DESCRIPTION                : DSHIFTL(I, J, SHIFT), DSHIFTR(I, J, SHIFT)
 !*
@@ -44,7 +34,7 @@ program dshiftl_dshiftr
 
  data i2 /B"00010011"/
  data j2 /B"00110000"/
- 
+
  !---- DSHIFTL/R should not accept real numbers as its first/second argument ----!
   print *,'DSHIFTL(i_r, 4, 5)  ', DSHIFTL(i_r, 4, 5)
   print *,'DSHIFTL(3, j_r, 5)  ', DSHIFTL(3, j_r, 5)
@@ -66,7 +56,6 @@ program dshiftl_dshiftr
   print *, 'DSHIFTL(INT(3,1), INT(4,2), 5)  ', DSHIFTL(INT(3,1), INT(4,2), 5)
   print *, 'DSHIFTR(INT(3,1), INT(4,2), 5)  ', DSHIFTR(INT(3,1), INT(4,2), 5)
 
-
  !---- DSHIFTL/R should not accept any third argument rather than nonnegative integer ----!
              ! less then or equal to bit_size(I) or bit_size(j) !
 
@@ -78,28 +67,17 @@ program dshiftl_dshiftr
 
   print *, 'DSHIFTL(3_2, 4_2, 17)  ', DSHIFTL(3_2, 4_2, 17)
   print *, 'DSHIFTR(3_2, 4_2, 17)  ', DSHIFTR(3_2, 4_2, 17)
-  
+
   print *, 'DSHIFTL(3, 4, 35)  ', DSHIFTL(3, 4, 35)
   print *, 'DSHIFTR(3, 4, 35)  ', DSHIFTR(3, 4, 35)
-  
+
   print *, 'DSHIFTL(3_4, 4_4, 35)  ', DSHIFTL(3_4, 4_4, 35)
   print *, 'DSHIFTR(3_4, 4_4, 35)  ', DSHIFTR(3_4, 4_4, 35)
-  
+
   print *, 'DSHIFTL(3_8, 4_8, 65)  ', DSHIFTL(3_8, 4_8, 65)
   print *, 'DSHIFTR(3_8, 4_8, 65)  ', DSHIFTR(3_8, 4_8, 65)
-  
+
   print *, 'DSHIFTL(3, 4, -2)  ', DSHIFTL(3, 4, -2)
   print *, 'DSHIFTR(3, 4, -2)  ', DSHIFTR(3, 4, -2)
-end 
-
-
-
-
-
-
-
-
-
-
-
+end
 

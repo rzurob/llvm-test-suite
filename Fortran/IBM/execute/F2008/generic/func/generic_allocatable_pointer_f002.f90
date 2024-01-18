@@ -1,21 +1,13 @@
-!#######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/generic/func/generic_allocatable_pointer_f002.f
 !*  TYPE                       : Functional test
 !*  FEATURE                    : #917301 F2008: Generic resolution extensions
 !*  RTC Master Story           : 17301: F2008: Generic resolution extensions (master story)
 !*                               https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/17301
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 29 June 2012
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  : -qarch=auto
 !*  DEPENDENCIES               :
 !*
@@ -29,7 +21,7 @@ implicit none
       subroutine v_alloc_sub(x,y)
          vector(unsigned(4)),allocatable ::x
          vector(unsigned(4)) y
-      end  subroutine 
+      end  subroutine
       subroutine v_ptr_sub(x,y)
          vector(unsigned(4)), pointer ::x
          vector(unsigned(4)) y
@@ -61,7 +53,7 @@ implicit none
    end interface
 
      vector(unsigned(4))               :: v_res
-     vector(unsigned(4)), target       :: v_tgt 
+     vector(unsigned(4)), target       :: v_tgt
      vector(unsigned(4)), allocatable  :: v_alloc
      vector(unsigned(4)), pointer      :: v_ptr
 

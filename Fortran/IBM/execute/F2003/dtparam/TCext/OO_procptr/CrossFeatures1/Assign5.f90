@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: Assign5.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Assign5.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Assign5.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 16, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,16 +34,16 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  A derived-type intrinsic assignment 
-!*  304717->305713 
+!*
+!*  A derived-type intrinsic assignment
+!*  304717->305713
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
 
-    INTERFACE 
+    INTERFACE
       FUNCTION CToC(Arg)
         CHARACTER(*) :: Arg(:)
         CHARACTER(LEN(Arg)) :: CToC(SIZE(Arg))
@@ -97,16 +91,16 @@
           Count = 5 ! restore the init
         END IF
       END IF
- 
+
     END FUNCTION
-    
-     
+
+
   END MODULE
 
 
-  PROGRAM Assign5 
+  PROGRAM Assign5
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT(20,4)) :: V
   PROCEDURE(SavePtr), POINTER :: ProcPtr
@@ -118,7 +112,7 @@
   IF ( .NOT. ALLOCATED(V%BComp) )  STOP 12
   IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr, RetPtr(Fun)) ) STOP 13
 
-  ProcPtr => SavePtr 
+  ProcPtr => SavePtr
   IF (ANY(ProcPtr(Fun, (/"123", "abc"/)) .NE. (/"123", "abc"/)) ) STOP 14
   IF (ANY(ProcPtr(Fun, (/"", ""/))       .NE. (/"", ""/)) )       STOP 15
 
@@ -127,8 +121,8 @@
 
   FUNCTION RetPtr(Arg)
   PROCEDURE(CToC), POINTER :: RetPtr
-  PROCEDURE(CToC) :: Arg 
-    RetPtr => Arg 
+  PROCEDURE(CToC) :: Arg
+    RetPtr => Arg
   END FUNCTION
 
   END

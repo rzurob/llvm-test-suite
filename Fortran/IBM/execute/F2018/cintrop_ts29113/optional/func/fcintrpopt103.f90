@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt103.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -96,7 +89,7 @@ program testprogram
 
   print *, "Testing sub1..................."
 
-  do i=1, 5 
+  do i=1, 5
         pt_dt2_rk1_arr(i).a = 5
         pt_dt2_rk1_arr(i).d1.a = 15
         pt_dt2_rk1_arr(i).d1.d0.a = 25
@@ -135,7 +128,7 @@ program testprogram
   print *, "Testing sub4..................."
 
   pt_dt0.a = 85
-  
+
   do i=1, 5
         pt_dt0_rk1_arr(i).a = 95
   enddo

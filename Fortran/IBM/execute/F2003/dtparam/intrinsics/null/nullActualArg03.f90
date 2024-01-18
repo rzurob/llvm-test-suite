@@ -1,31 +1,23 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : nullActualArg03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : nullActualArg03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 24 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD]) 
+!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD])
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.88 
+!* 1. TEST SECTION 13.7.88
 !* 2. NULL([MOLD])
 !* 3. MOLD IS POINTER OR ALLOCABLE
 !* 4. NULL([MOLD]) IS PASSED THROUGH MULTIPLE SUBROUTINE
-!* 5. NULL([MOLD]) IS USED AS ACTUAL ARGUMENT 
+!* 5. NULL([MOLD]) IS USED AS ACTUAL ARGUMENT
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type dtp(l)
@@ -67,17 +59,17 @@ program nullActualArg03
 
          print *,"sub1:",allocated(dt)
          call sub2(dt)
-      end subroutine 
+      end subroutine
 
       subroutine sub2(dt)
          type(dtp(3)),allocatable :: dt
-         
+
          print *,"sub2:",allocated(dt)
       end subroutine
 
       subroutine sub3(dt)
          type(dtp(3)),pointer :: dt
-           
+
          print *,"sub3:",associated(dt)
          call sub4(dt)
       end subroutine

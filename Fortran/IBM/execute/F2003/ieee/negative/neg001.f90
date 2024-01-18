@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh neg001 
+! %PRECMD: $TR_SRC/fxieee.presh neg001
 ! %COMPOPTS: -qfree=f90 -qstrict -qxlf90=signedzero
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,22 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : February 6, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NEGATIVE with reals.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -65,9 +56,9 @@
  	b = -987654321.0_8
         c = -987654321.0_16
 
-        if (ieee_is_negative(a) .neqv. .true.) error stop 1 
-        if (ieee_is_negative(b) .neqv. .true.) error stop 2 
-        if (ieee_is_negative(c) .neqv. .true.) error stop 3 
+        if (ieee_is_negative(a) .neqv. .true.) error stop 1
+        if (ieee_is_negative(b) .neqv. .true.) error stop 2
+        if (ieee_is_negative(c) .neqv. .true.) error stop 3
 
         ! Now check that no flags were turned on.
         call ieee_get_flag(ieee_all,flag_values)
@@ -148,7 +139,7 @@
 ! Test for pozitive reals
         call ieee_set_flag(ieee_all,.false.)
 
-        a = 0.0 
+        a = 0.0
         b = 0.0_8
         c = 0.0_16
 
@@ -227,7 +218,7 @@
         ! Now check that no flags were turned on.
         call ieee_get_flag(ieee_all,flag_values)
         do i = 1,5
-            if (flag_values(i) .neqv. .false.)error stop 100 
+            if (flag_values(i) .neqv. .false.)error stop 100
         enddo
 
 

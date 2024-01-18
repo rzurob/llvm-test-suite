@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecSltTyp2.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecSltTyp2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,34 +19,32 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  intrinsic-type-spec in select type stmt 
-!* 
-!* (325910/326233)  
-!* 
+!*  intrinsic-type-spec in select type stmt
+!*
+!* (325910/326233)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypSpecSltTyp2 
+  PROGRAM InitExpTypSpecSltTyp2
   IMPLICIT  CHARACTER(KIND=KIND(0_1))           (A)
   IMPLICIT  CHARACTER(LEN=A%LEN+1, KIND=A%KIND) (B)
   IMPLICIT  CHARACTER(B%LEN+1,     KIND=B%KIND) (C)
 
   INTEGER :: I
-  
+
   CLASS(*), ALLOCATABLE :: C1(:)
   CLASS(*), ALLOCATABLE :: C2(:)
   CLASS(*), ALLOCATABLE :: C3(:)
 
-  !ALLOCATE(CHARACTER(KIND=KIND(-1_1)) :: C1(128)) 
+  !ALLOCATE(CHARACTER(KIND=KIND(-1_1)) :: C1(128))
   !C1 = [(CHAR(I), I=0, 127)]
-  ALLOCATE(C1(128), SOURCE=[(CHAR(I), I=0, 127)]) 
+  ALLOCATE(C1(128), SOURCE=[(CHAR(I), I=0, 127)])
 
-  ALLOCATE(C2(128), SOURCE= [CHARACTER(LEN=A%LEN+1, KIND=A%KIND):: [(CHAR(I)//CHAR(I), I=0, 127)] ]) 
-  ALLOCATE(C3(128), SOURCE= [CHARACTER(B%LEN+1,     KIND=B%KIND):: [CHARACTER(B%LEN+1, KIND=B%KIND)::(" "//CHAR(I)//" ", I=0, 127)] ]) 
+  ALLOCATE(C2(128), SOURCE= [CHARACTER(LEN=A%LEN+1, KIND=A%KIND):: [(CHAR(I)//CHAR(I), I=0, 127)] ])
+  ALLOCATE(C3(128), SOURCE= [CHARACTER(B%LEN+1,     KIND=B%KIND):: [CHARACTER(B%LEN+1, KIND=B%KIND)::(" "//CHAR(I)//" ", I=0, 127)] ])
 
 
   SELECT TYPE ( C1 )
@@ -90,4 +82,4 @@
 
   END
 
- 
+

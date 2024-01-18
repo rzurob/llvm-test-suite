@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: charvalueattrd001.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,35 +12,28 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : charvalueattrd001
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 24, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : providing support for character dummy
-!*                               arguments with length other than 1 to  
+!*                               arguments with length other than 1 to
 !*                               have the VALUE attribute (Feature 298120).
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qdebug=intmsg
-!*  REQUIRED RUNTIME OPTIONS   : 
+!*  REQUIRED RUNTIME OPTIONS   :
 !*
 !*  DESCRIPTION                : This diagnostic test, makes sure that
-!*                               if characters of length 1 or other than 1  
+!*                               if characters of length 1 or other than 1
 !*                               have the VALUE attribute, they don't get
 !*                               flagged at compile-time, as long as the
 !*                               length is known at compile-time.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
-      
+
       interface gen1
          subroutine ss1(a)
            character(1), value :: a
@@ -111,7 +104,7 @@
            character(0) :: d
          end subroutine
       end interface
-      
+
       end
 
 

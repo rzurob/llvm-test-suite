@@ -1,24 +1,12 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : intkind1cmp.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM and TO are component of DTs, 
+!*  DESCRIPTION                : FROM and TO are component of DTs,
 !*                               of type integer(1)
 !* ===================================================================
 !*
@@ -30,7 +18,7 @@
 
 module m
 
-   type A ( k1) 
+   type A ( k1)
        integer, kind :: k1
        integer(k1), allocatable :: i1(:)
    end type
@@ -49,7 +37,7 @@ use m
     allocate( a2, source = B(1,1)( (/ ( i, i = 1, 10) /), (/-8,-6,-4/) ) )
 
     select type (a2)
-        type is (B(1,1)) 
+        type is (B(1,1))
             call move_alloc(a2%i2, a1%i1)
         class default
             stop 21

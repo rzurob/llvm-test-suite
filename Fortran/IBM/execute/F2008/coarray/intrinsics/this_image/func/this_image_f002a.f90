@@ -1,23 +1,16 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : this_image_f002a.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : July 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This_image() should always produce a result 
+!*  DESCRIPTION                : This_image() should always produce a result
 !*                               less than or equal to num_images().
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -28,7 +21,7 @@ contains
 
 	integer function fun1(x)
 		integer :: x
-	
+
 		fun1 = this_image()
 		if (fun1 > x) then
 			print *, fun1, x
@@ -63,9 +56,9 @@ contains
 		integer :: fun0
 
 		fun0 = this_image()
-	end function 
+	end function
 
-end 
+end
 
 
 subroutine sub1(n)

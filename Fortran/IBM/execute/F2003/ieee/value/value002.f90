@@ -12,20 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  aL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : February 12, 2002
 !*  ORIGIN                     : aL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_VALUE with variables.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +26,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -60,7 +52,7 @@
 	Y = ieee_signaling_nan
 
         a = ieee_value(a, Y)
-        if (ieee_class(a) /= Y) error stop 1 
+        if (ieee_class(a) /= Y) error stop 1
 
         call ieee_get_flag(ieee_all,flag_values)
         do i = 1,5
@@ -196,7 +188,7 @@
 	Y = ieee_signaling_nan
 
         b = ieee_value(b, Y)
-        if (ieee_class(b) /= Y) error stop 11 
+        if (ieee_class(b) /= Y) error stop 11
 
         call ieee_get_flag(ieee_all,flag_values)
         do i = 1,5
@@ -329,7 +321,7 @@
 	Y = ieee_signaling_nan
 
         c = ieee_value(c, Y)
-        if (ieee_class(c) /= Y) error stop 21 
+        if (ieee_class(c) /= Y) error stop 21
 
         call ieee_get_flag(ieee_all,flag_values)
         do i = 1,5

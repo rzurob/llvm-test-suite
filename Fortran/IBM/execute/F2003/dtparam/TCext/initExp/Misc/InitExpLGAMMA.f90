@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpLGAMMA.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpLGAMMA.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!* 
-!*  LGAMMA -- An IBM extension 
-!* (324496) 
+!*  LGAMMA -- An IBM extension
+!* (324496)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -40,11 +32,11 @@
 
 
   PROGRAM  InitExpLGAMMA
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
 
-  REAL(8), PARAMETER :: R = 12.80182743_8 
+  REAL(8), PARAMETER :: R = 12.80182743_8
 
   TYPE :: DT(N1,K1,K2,K3)    ! (20,4,8,16)
     INTEGER, KIND :: K1,K2,K3
@@ -59,7 +51,7 @@
                           R4 = LGAMMA(X=10.),                                 &
                           R8 = RESHAPE((/(LGAMMA(10._8), I=1,16)/), (/4,4/)), &
                           R6 = LGAMMA(X=10._16)                               &
-                          )                               
+                          )
 
 
   REAL(KIND(LGAMMA(X=10.0_4))) :: R4(128) = LGAMMA(X=10.0_4)

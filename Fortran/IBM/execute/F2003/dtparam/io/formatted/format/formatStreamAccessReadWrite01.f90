@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatStreamAccessReadWrite01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatStreamAccessReadWrite01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 12 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 12 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. test READ & WRITE statement with stream access
@@ -30,19 +22,19 @@ module m
      sequence
      character(l1) :: c1 !l1=3
    end type
-   
+
    type B(l2)
      integer,len :: l2
      sequence
      character(l2+len("A")) :: c2 ! l2=3
-   end type 
-   
+   end type
+
    type Container(l3,l4)
       integer,len :: l3,l4
       type(A(l3+1)) :: compa(l3:l4) !l3=2, l4=4
       type(B(l4-1)) :: compb(l3:l4)
-   end type    
-   
+   end type
+
 end module
 
 program formatStreamAccessReadWrite01
@@ -60,7 +52,7 @@ program formatStreamAccessReadWrite01
              compb=[B(3)("ABCD"),B(3)("EFGH"),B(3)("IJKL")]) ]
 
   open(10,file="formatStreamAccessReadWrite01.out",form='formatted', &
-        status='new',access='stream',action='write',iostat=ios,iomsg=msg) 
+        status='new',access='stream',action='write',iostat=ios,iomsg=msg)
 
   if(ios /= 0) then
      print *,"fail to open the file"
@@ -76,7 +68,7 @@ program formatStreamAccessReadWrite01
   close(10,iostat=ios,status='keep')
 
   if(ios /= 0)  then
-      print *,"error occurred,fail to close the file, iostat=",ios 
+      print *,"error occurred,fail to close the file, iostat=",ios
       return
   end if
 

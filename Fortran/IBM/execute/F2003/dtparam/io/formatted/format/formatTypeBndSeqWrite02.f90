@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatTypeBndSeqWrite02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatTypeBndSeqWrite02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 9 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test WRITE & PRINT statement in type-bound procedure
@@ -27,17 +19,17 @@ module m
    type inner(l1)
      integer(8),len  :: l1
      integer         :: i1(l1) !l1=3
-     character(l1+1) :: c1(l1) 
+     character(l1+1) :: c1(l1)
      contains
-        procedure,pass :: writeInner 
-        procedure,pass :: printInner 
+        procedure,pass :: writeInner
+        procedure,pass :: printInner
    end type
 
    type outer(l2)
      integer,len  :: l2
      logical      :: log1(l2) !l2=2
      real         :: r1(l2:l2)!l2=2
-     complex(8)   :: x1 
+     complex(8)   :: x1
      type(inner(l2+1)) :: comp(l2)
      contains
         procedure,pass :: writeOuter
@@ -65,7 +57,7 @@ module m
         class(inner(*)),intent(in) :: this
 
         print *,"in printInner"
-        
+
         select type(this)
            type is(inner(*))
              print 103, this
@@ -74,7 +66,7 @@ module m
            class default
              stop 13
         end select
-     end subroutine 
+     end subroutine
 
      subroutine writeOuter(this)
         class(outer(*)),intent(in) :: this
@@ -98,8 +90,8 @@ module m
      subroutine printOuter(this)
         class(outer(*)),intent(in) :: this
 
-        print *,"in printOuter"       
- 
+        print *,"in printOuter"
+
         select type(this)
            type is(outer(*))
              print 102,this
@@ -107,7 +99,7 @@ module m
              call this%comp(1)%printInner
              call this%comp(2)%printInner
 
-             102 format(1x,2l4,sp,/f7.1/f7.1,f7.1,2(/3i5/3a3)) 
+             102 format(1x,2l4,sp,/f7.1/f7.1,f7.1,2(/3i5/3a3))
 
            class default
              stop 12
@@ -127,11 +119,11 @@ program formatTypeBndSeqWrite02
   outer1%log1=[.true.,.false.]
   outer1%r1=-2.75
   outer1%x1=(2.22,-2.22)
-  
+
   outer1%comp=[inner(3)(i1=[123,456,789],c1=["blue","greg","dark"]), &
                inner(3)(i1=[-123,-456,-789],c1=["abcd","efgh","ijkl"])]
 
-  call outer1%writeOuter 
+  call outer1%writeOuter
   call outer1%printOuter
-     
+
 end program

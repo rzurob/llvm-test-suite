@@ -1,27 +1,25 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                              IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f007.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon
 !*  DATE                       : 2015-07-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*
-!*  DESCRIPTION                : - Various kinds of real pointers and double 
-!*                                 pointers in DO CONCURRENT loops including 
+!*  DESCRIPTION                : - Various kinds of real pointers and double
+!*                                 pointers in DO CONCURRENT loops including
 !*                                 nested DO CONCURRENT loops
-!*                               - concurrent-limit contains a variable with 
+!*                               - concurrent-limit contains a variable with
 !*                                 the parameter attribute
-!*                               - scalar-mask-expr contains real pointers and 
+!*                               - scalar-mask-expr contains real pointers and
 !*                                 logical pointers
-!*                               - Use of pointers to procedures inside DO 
+!*                               - Use of pointers to procedures inside DO
 !*                                 CONCURRENT loops with pointers as arguments
-!*                               - Use of pointers to procedures in the 
+!*                               - Use of pointers to procedures in the
 !*                                 scalar-mask-expr with pointers as arguments
 !*
 !=============================================================================
@@ -47,7 +45,7 @@
           pure function func3_r8(r8_var1, r8_var2)
             real*8, intent(in) :: r8_var1, r8_var2
             real*8 :: func3_r8
-          end function 
+          end function
 
           pure function func3_r4(r4_var1, r4_var2)
             real*4, intent(in) :: r4_var1, r4_var2
@@ -270,7 +268,7 @@
 
         i_res2 = 0.0d0
         i_res5 = 0.0d0
-   
+
         do concurrent (i = 1:5, j = 1:5, (p_func2_r4(-1.0e0*p_i_arr(i)) > 12.0e0) .and. (p_func2_r4(-1.0e0*p_i_arr(j)) < 50.0e0))
           p_i_res2(i,j) = p_func3_r8(100.5d0,real(i*j,8))
           call p_sub1()
@@ -311,7 +309,7 @@
 
         do concurrent (i = 1:m*2, p_lvar .eqv. .true.)
           call p_sub1()
-          p_i_res3(i) = p_func1(p_i_arr4(i)) 
+          p_i_res3(i) = p_func1(p_i_arr4(i))
           do concurrent (j = 100:1000:100, (p_func2_r8(-1.0d0*p_i_arr3(j/100)) >= 30.0d0) .and. (p_func2_r8(-1.0d0*p_i_arr3(j/100)) <= 80.0d0))
             p_i_res4(j/100) = p_func1(p_i_arr4(j/100))
             call p_sub1()

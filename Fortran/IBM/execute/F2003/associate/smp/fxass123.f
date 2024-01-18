@@ -1,16 +1,11 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !*********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD:  EXEC_REP=10 
+! %PRECMD:  EXEC_REP=10
 ! %COMPOPTS: -qfixed -qsmp -F:xlf90_r
 ! %GROUP: fxass123.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
@@ -18,28 +13,20 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxass123.f
-!* TEST CASE TITLE              : ASSOCIATE
-!*
-!* PROGRAMMER                   : Sarah Kouchaki-Ramezan
 !* DATE                         : Feb. 13, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90_r
 !* REQUIRED COMPILER OPTIONS    : -qsmp
 !*
 !* DESCRIPTION                  : Test: ASSOCIATE with Parallel
-!*                                Do LastPrivate OMP 
+!*                                Do LastPrivate OMP
 !*                                clauses in a External Fortran
 !*                                Function using interface and intent(in)
-!*                                containing real, integer, character 
+!*                                containing real, integer, character
 !*                                and allocatable data types.
 !* ===================================================================
 !*  REVISION HISTORY
@@ -80,7 +67,7 @@
         associate ( arg => x )
         arg = arg + fun_associate(i, d)
         if (.not. precision_r4(arg,x)) error stop 1
-        end associate 
+        end associate
 !$omp end critical
         associate ( arg1 => i + 4 )
         if (arg1 .ne. (i + 4)) error stop 2
@@ -104,7 +91,7 @@
       tmp1 = 0.0
       do i=1, n-1
         do j=1, n-1
-          tmp1 = tmp1 + d(i,j) + 1 
+          tmp1 = tmp1 + d(i,j) + 1
           tmp2 = tmp2 + p(i,j) + 1
         enddo
       enddo

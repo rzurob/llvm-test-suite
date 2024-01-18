@@ -1,25 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : combinedAttr2.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-13
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : - Combination of attributes CONTIGUOUS,
 !*                                   and TARGET
-!*                               - Array is of type INTEGER and of 
+!*                               - Array is of type INTEGER and of
 !*                                   derived type with type parameters
 !*
 !*  KEYWORD(S)                 :
@@ -54,7 +44,7 @@ MODULE Mod
         IF ( .NOT. IS_CONTIGUOUS(ptr) ) STOP 42
 
         SELECT TYPE( s=>ptr )
-          TYPE IS (DT0(K,*))  
+          TYPE IS (DT0(K,*))
                IF ( s%K0 .NE. K ) STOP 43
                IF ( s%L0 .NE. M ) STOP 44
 
@@ -97,14 +87,14 @@ PROGRAM combinedAttr2
       ALLOCATE( P0(1) )
       IF ( .NOT. IS_CONTIGUOUS(P0) )     STOP 14
       IF ( .NOT.    ASSOCIATED(P0) )     STOP 15
-      P1 => Fun1(P0) 
+      P1 => Fun1(P0)
       IF (  .NOT.   ASSOCIATED(P1) )     STOP 16
 
       CONTAINS
 
       SUBROUTINE Sub1(tgt)
         INTEGER :: J
-        INTEGER, POINTER :: ptr(:) 
+        INTEGER, POINTER :: ptr(:)
         INTEGER, TARGET, CONTIGUOUS :: tgt(:)
 
         IF (      ASSOCIATED(ptr)     ) STOP 20
@@ -115,7 +105,7 @@ PROGRAM combinedAttr2
         IF ( .NOT. IS_CONTIGUOUS(ptr) ) STOP 22
 
         DO J = 1, SIZE(tgt)
-            tgt(J) = P*tgt(J) 
+            tgt(J) = P*tgt(J)
         END DO
       END SUBROUTINE Sub1
 

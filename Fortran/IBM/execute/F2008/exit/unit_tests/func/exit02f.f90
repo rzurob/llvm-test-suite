@@ -1,17 +1,9 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : exit02f.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : March 8, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : EXIT Statement
-!*
-!* DRIVER STANZA              : xlf2008
 !*
 !* DESCRIPTION                : Testing proper functionality of
 !*                              EXIT in nested constructs
@@ -79,11 +71,11 @@
       ELSEIF (i .EQ. 2) then i2
         ERROR STOP 7
       ELSEIF (i .EQ. 4) then i2
-        i3 : IF (i .EQ. 5) then 
+        i3 : IF (i .EQ. 5) then
           ERROR STOP 8
         ELSEIF (i .EQ. 4) then i3
           i = 7
-          i4 : IF (i .EQ. 0) then 
+          i4 : IF (i .EQ. 0) then
             ERROR STOP 9
           ELSEIF (i .EQ. 4) then i4
             ERROR STOP 10

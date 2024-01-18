@@ -1,13 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : volatileUt06.f
 !*
-!*  PROGRAMMER                 : Vince Yuen
 !*  DATE                       : May 26, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Supporting VOLATILE for F2003
 !*
@@ -15,8 +11,8 @@
 !*
 !*  DESCRIPTION                : 12.4.1.2
 !*
-!* If the actual argument is an array section having a vector subscript, 
-!* the dummy argument is not definable and shall not have the INTENT (OUT), 
+!* If the actual argument is an array section having a vector subscript,
+!* the dummy argument is not definable and shall not have the INTENT (OUT),
 !* INTENT (INOUT), VOLATILE, or ASYNCHRONOUS attributes.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

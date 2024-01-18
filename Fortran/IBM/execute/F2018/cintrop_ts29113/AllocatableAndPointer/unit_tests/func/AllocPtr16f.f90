@@ -1,27 +1,19 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocPtr16f
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : March, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Allocatable/Pointer
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Check the following:
 !*
 !*  The value of the base_addr field of a C descriptor that represents
-!*  an unallocated allocatable variable or a pointer that is 
+!*  an unallocated allocatable variable or a pointer that is
 !*  disassociated, must be null pointer.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -47,7 +39,7 @@
       integer(c_int), target :: t = 6
 
       ptr => NULL()
-      
+
       call test_ptr(ptr, 1)
       call test_alloc(al, 2)
 
@@ -60,7 +52,7 @@
 
       call test_ptr(ptr, 3)
       call test_alloc(al, 4)
-      
+
       allocate(ptr)
       ptr = 6
       deallocate(ptr)

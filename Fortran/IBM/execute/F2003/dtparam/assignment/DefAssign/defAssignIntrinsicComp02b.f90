@@ -1,22 +1,15 @@
 !********************************************************************* !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignIntrinsicComp02b.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignIntrinsicComp02b.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 1 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 1 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test Defined Assignment with generic binding
@@ -56,7 +49,7 @@ module m
          class(base(*)),intent(in) :: dt
 
          print *,"in  assign_c"
-         
+
          this%c1=dt%c1(ubound(dt%c1,1):lbound(dt%c1,1):-1)
          select type(dt)
             type is(child(*,4,*))
@@ -82,7 +75,6 @@ program defAssignIntrinsicComp02b
      use m
      implicit none
 
-
      class(base(3)),allocatable :: base1
      class(base(:)),allocatable :: base2
      type(child(3,4,5)) :: child1
@@ -90,7 +82,7 @@ program defAssignIntrinsicComp02b
      allocate(base1,source=base(3)(c1=["abc","def","ghi"]))
 
      ! call assign_c
-     child1=child(3,4,5)(c1=["XLF","IBM","XLC"],i1=[11,-12,13] ) 
+     child1=child(3,4,5)(c1=["XLF","IBM","XLC"],i1=[11,-12,13] )
 
      write(*,*) child1
 

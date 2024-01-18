@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : misc013kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from misc013 by Robert Ma)
 !*  DATE                       : 2007-07-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: print structure components (defect 301054)
 !*  KEYWORD(S)                 :
@@ -42,7 +34,7 @@ program misc013kl
    type(base(4,3))              :: c1(3) = (/ base(4,3)('ABC',101), base(4,3)('DEF',102), base(4,3)('GHI',103) /) ! tcx: (4,3) ! tcx: (4,3) ! tcx: (4,3) ! tcx: (4,3)
    class(base(4,:)), pointer    :: c2(:) ! tcx: (4,:)
 
-   allocate ( c2(3), source = c1 ) 
+   allocate ( c2(3), source = c1 )
    print *,  c1%c
    print *,  c2%c
    print *,  c2(1)%c, c2(2)%c, c2(3)%c

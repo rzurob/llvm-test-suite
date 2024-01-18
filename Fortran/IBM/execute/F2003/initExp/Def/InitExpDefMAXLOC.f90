@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefMAXLOC.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefMAXLOC.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an tranformational intrinsic
-!* 
+!*
 !*  - MAXLOC
 !*  (325156/326102/326262)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM  InitExpDefMAXLOC 
+  PROGRAM  InitExpDefMAXLOC
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -216,4 +209,4 @@
   END
 
 
- 
+

@@ -1,31 +1,22 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE     : C Interop: Assumed-length Character arguments
-!*
-!*
-!*
-!*  PROGRAMMER          : Umme Hunny
 !*  DATE                : June, 1, 2014
-!*  ORIGIN              : AIX Compiler Development, Toronto Lab
 !*  FEATURE             : RTC Master Story:
 !*                        C Interop: Assumed-length Character arguments
 !*                        (master story) (72333)
 !*
-!*  FEATURE             : C Interop: Assumed-length Character arguments 
+!*  FEATURE             : C Interop: Assumed-length Character arguments
 !* ===================================================================
-!23456789012345678901234567890123456789012345678901234567890123456789012     
-      
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
       program assumed_lenght001
 
         interface
           subroutine check_f_to_c(c_arg1, c_len, test_no) bind(c)
-            use, intrinsic :: iso_c_binding 
+            use, intrinsic :: iso_c_binding
             character(*), DIMENSION(..)  :: c_arg1
-            integer(C_INT) c_len, test_no 
+            integer(C_INT) c_len, test_no
           end subroutine
           subroutine check_f_to_f(c_arg2, c_len, test_no) bind(c)
             use, intrinsic :: iso_c_binding
@@ -49,12 +40,12 @@
           end subroutine
 
         end interface
-      
-        ! F2C       
+
+        ! F2C
 
         print *, "F2C"
 
-        !a) Section of character literal 
+        !a) Section of character literal
         call check_f_to_c("",LEN(""),1 )
         call check_f_to_c('',LEN(''),1)
         call check_f_to_c('ABC 123 "test"', LEN('ABC 123 "test"'), 2)
@@ -76,13 +67,13 @@
         !c) charcter expression
 
         call check_f_to_c('ABC'//'123', LEN('ABC'//'123'), 12)
-        call check_f_to_c('ABC'//'123'(1:2), LEN('ABC'//'123'(1:2)),13) 
-          
+        call check_f_to_c('ABC'//'123'(1:2), LEN('ABC'//'123'(1:2)),13)
+
         ! F2F
         print *, "F2F"
 
         !a) Section of character literal
-        
+
         call check_f_to_f("",LEN(""),1 )
         call check_f_to_f('',LEN(''),1)
         call check_f_to_f('ABC 123 "test"', LEN('ABC 123 "test"'), 2)
@@ -104,8 +95,8 @@
         !c) charcter expression
 
         call check_f_to_f('ABC'//'123', LEN('ABC'//'123'), 12)
-        call check_f_to_f('ABC'//'123'(1:2), LEN('ABC'//'123'(1:2)),13)        
-    
+        call check_f_to_f('ABC'//'123'(1:2), LEN('ABC'//'123'(1:2)),13)
+
           ! F2C2F
         print *, "F2C2F"
 
@@ -132,7 +123,7 @@
 
         call check_f_to_c_to_f('ABC'//'123', LEN('ABC'//'123'), 12)
         call check_f_to_c_to_f('ABC'//'123'(1:2), LEN('ABC'//'123'(1:2)),13)
-   
+
           ! F2F2C
         print *, "F2F2C"
 
@@ -168,7 +159,7 @@
         character(*), DIMENSION(..) :: c_arg2
         integer(C_INT) c_len, test_no
         character(c_len) c_test
-        if(c_len .NE. LEN(c_arg2)) then           
+        if(c_len .NE. LEN(c_arg2)) then
            error STOP 1
         endif
         if(RANK(c_arg2) .NE. 0) then
@@ -188,7 +179,7 @@
         character(*), DIMENSION(..) :: c_arg3
         integer(C_INT) c_len, test_no
         call check_f_to_c(c_arg3,LEN(c_arg3), test_no)
-       end subroutine 
+       end subroutine
        subroutine check_f_to_f_to_f(c_arg3, c_len, test_no) bind(c)
         use, intrinsic :: iso_c_binding
         interface

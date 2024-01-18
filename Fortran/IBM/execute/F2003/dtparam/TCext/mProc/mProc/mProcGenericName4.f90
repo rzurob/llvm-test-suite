@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcGenericName4.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcGenericName4.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 03, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,12 +23,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  A generic name specifies a single name to reference all of the procedure names in 
+!*  A generic name specifies a single name to reference all of the procedure names in
 !*  the interface block.  A generic name may be the same as any one of the procedure names
 !*  in the interface block, or the same as any accessible generic name.
-!* 
-!*  -- Entry 
+!*
+!*  -- Entry
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -48,34 +41,34 @@
     INTEGER, LEN  :: N1
     INTEGER(K1)   :: ID
   END TYPE
- 
+
   CONTAINS
 
   FUNCTION ModFun(Arg)
-  CLASS(*), INTENT(IN) :: Arg(:), Arg1, Arg2 
-  CLASS(*), POINTER    :: ModFun(:) 
-  CLASS(*), POINTER    :: ModFun1(:) 
-  CLASS(*), POINTER    :: ModFun2(:) 
+  CLASS(*), INTENT(IN) :: Arg(:), Arg1, Arg2
+  CLASS(*), POINTER    :: ModFun(:)
+  CLASS(*), POINTER    :: ModFun1(:)
+  CLASS(*), POINTER    :: ModFun2(:)
 
-    ALLOCATE(ModFun(SIZE(Arg)), SOURCE=Arg) 
+    ALLOCATE(ModFun(SIZE(Arg)), SOURCE=Arg)
     RETURN
 
   ENTRY  ModFun1(Arg, Arg1)
-    ALLOCATE(ModFun1(SIZE(Arg)), SOURCE=Arg) 
+    ALLOCATE(ModFun1(SIZE(Arg)), SOURCE=Arg)
     RETURN
 
   Entry ModFun2(Arg, Arg1, Arg2)
-    ALLOCATE(ModFun2(SIZE(Arg)), SOURCE=Arg) 
+    ALLOCATE(ModFun2(SIZE(Arg)), SOURCE=Arg)
     RETURN
 
-  END FUNCTION 
+  END FUNCTION
 
   END MODULE
 
-  PROGRAM mProcGenericName4 
+  PROGRAM mProcGenericName4
   USE M
 
-  INTERFACE  ModFun1 
+  INTERFACE  ModFun1
     PROCEDURE ModFun
     PROCEDURE ModFun1
     MODULE PROCEDURE ModFun2
@@ -88,23 +81,23 @@
     IF (As(1)%ID .NE. -1 ) STOP 12
   CLASS DEFAULT
     STOP 13
-  END SELECT 
- 
+  END SELECT
+
   SELECT TYPE ( As => ModFun1((/DT(20,4)(-2), DT(20,4)(-3)/), DT(20,4)(-2)) )
   TYPE IS (DT(*,4))
     IF (SIZE(As) .NE.  2 )          STOP 21
     IF (ANY( As%ID.NE. (/-2,-3/)) ) STOP 22
   CLASS DEFAULT
     STOP 23
-  END SELECT 
- 
+  END SELECT
+
   SELECT TYPE ( As => ModFun1((/DT(20,4)(1),DT(20,4)(2),DT(20,4)(3)/),DT(20,4)(-3),DT(20,4)(-3)) )
   TYPE IS (DT(*,4))
     IF (SIZE(As) .NE.  3 )          STOP 31
     IF (ANY( As%ID.NE. (/1,2,3/)) ) STOP 32
   CLASS DEFAULT
     STOP 33
-  END SELECT 
+  END SELECT
 
   END
 

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgVerify7
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : VERIFY 
+!*  SECONDARY FUNCTIONS TESTED : VERIFY
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Value.
 !*  If BACK is present with the value true and if STRING contains at least one
 !*  character that is not in SET, the value of the result is the position of the rightmost
-!*  character of STRING that is not in SET. 
+!*  character of STRING that is not in SET.
 !*
-!*  The length set is zero  
-!*  () 
+!*  The length set is zero
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,7 +44,7 @@
   CHARACTER(128) :: C= ""
   CHARACTER(128) :: CC(0:127)= ""
 
-  
+
   DO I =0, 127
     CC(I)(I+1:I+1)= CHAR(I)
   END DO

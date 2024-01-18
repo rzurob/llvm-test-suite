@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltFuncHostArrPolyAlloc.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltFuncHostArrPolyAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 21, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a function call with a host associate name associating to  
-!*   an allocatable array  
+!*
+!*   The selector is a function call with a host associate name associating to
+!*   an allocatable array
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,7 +50,7 @@
         INTEGER, LEN  :: N1
     CONTAINS
       PROCEDURE, NoPASS   :: Called
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4,20)
       INTEGER(K1) :: BaseId = 1
@@ -111,7 +105,7 @@
   USE M
   IMPLICIT NONE
   CLASS(Child(4,20)), ALLOCATABLE :: V(:,:)
-   
+
   CALL Sub(V)
   SELECT TYPE (W=>V)
   CLASS IS (Child(4,*))
@@ -119,7 +113,7 @@
     IF ( ANY(W%GetId()      .NE. -2) ) STOP 55
     IF ( ANY(W%BaseId       .NE. -1) ) STOP 56
     IF ( ANY(W%ChildId      .NE. -2) ) STOP 57
-  END SELECT 
+  END SELECT
 
   CONTAINS
 
@@ -131,7 +125,7 @@
 
   SUBROUTINE Sub(Arg)
   CLASS(Child(4,*)),OPTIONAL, ALLOCATABLE :: Arg(:, :)
-  
+
     IF ( .NOT. PRESENT(Arg) ) STOP 11
 
     ALLOCATE(Arg(2:3,3:4))
@@ -139,7 +133,7 @@
     Arg%ChildId = -2
 
     SELECT TYPE (U => Arg)
-    CLASS IS (Child(4,*)) 
+    CLASS IS (Child(4,*))
       SELECT TYPE (W => Fun(U))
       TYPE IS (Child(4,*))
           ! Check U
@@ -151,7 +145,7 @@
           IF ( ANY(U%GetId()      .NE. -2) )      STOP 36
           IF ( ANY(U%BaseId       .NE. -1) )      STOP 37
           IF ( ANY(U%ChildId      .NE. -2) )      STOP 38
-  
+
           !Check W
           IF ( SIZE(W)          .NE. 4 )          STOP 41
           IF ( ANY (LBOUND(W)   .NE. (/2, 2/) ) ) STOP 42
@@ -172,9 +166,9 @@
 
   END SELECT
 
-  END SUBROUTINE 
- 
- 
+  END SUBROUTINE
+
+
   END
 
 

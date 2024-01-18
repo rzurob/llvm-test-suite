@@ -1,11 +1,7 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : caflock03f.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Ren Jian Gang
 !*  DATE                       : May 08, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
@@ -15,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 387873
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -26,8 +21,8 @@
 !*  -----------
 !*  CAF: LOCK/UNLOCK statements
 !*
-!234567890123456789012345678901234567890123456789012345678901234567890      
-  
+!234567890123456789012345678901234567890123456789012345678901234567890
+
 module stack_manager
   use, intrinsic :: iso_fortran_env, only: lock_type
 
@@ -50,12 +45,12 @@ module stack_manager
       stack_size = stack_size - 1
       runlock(dimen_lock[-3, 2])
     end subroutine get_task
-	
+
 	subroutine put_task(job,image)
       ! Put a task on the stack of image
       type(task),intent(in) :: job
       integer,intent(in) :: image
-  
+
       lock(dimen_lock[image, image + 1])
       stack_size[image] = stack_size[image] + 1
       stack(stack_size[image])[image] = job

@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : array001a1kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from array001a1 by Robert Ma)
 !*  DATE                       : 2007-06-20 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with polymorphic/nonpoly array with abstract type with no components/zero-length
@@ -78,7 +70,7 @@ program array001a1kl
 
    namelist /nml1/ c1, b2
    namelist /nml2/ b1, c2
-   
+
    allocate( child:: b1(3) )
    allocate( base1(0):: c1(3) )
 

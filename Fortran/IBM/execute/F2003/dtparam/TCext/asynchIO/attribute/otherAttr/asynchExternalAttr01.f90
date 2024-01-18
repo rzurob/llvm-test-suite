@@ -3,21 +3,15 @@
 ! opt variations: -qnol -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchExternalAttr01 - ASYNCHRONOUS Attribute
 !*                               Interactions with Other Attributes
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : February  9, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : Interactions with the EXTERNAL Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 :
@@ -39,7 +33,6 @@
 !*  ...
 !*                  or  EXTERNAL
 !*
-!*
 !*  5.1.2.6 EXTERNAL attribute
 !*
 !*  The EXTERNAL attribute specifies that an entity is an external procedure,
@@ -47,7 +40,6 @@
 !*  attribute may also be specified by an EXTERNAL statement (12.3.2.2), a
 !*  procedure-declaration-stmt (12.3.2.3) or an interface body that is not
 !*  in an abstract interface block (12.3.2.1).
-!*
 !*
 !*  12.3.2.2 EXTERNAL statement
 !*

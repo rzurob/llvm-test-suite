@@ -4,26 +4,20 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrEoshiftChar.f 
+!*  TEST CASE NAME             : dataPtrEoshiftChar.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
 !* - date-pointer of class(*), array pointer
-!* - data-target is type bound proc with pass attribute 
-!* - the proc returns array pointer of character(:) 
+!* - data-target is type bound proc with pass attribute
+!* - the proc returns array pointer of character(:)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,7 +39,7 @@ module m
 		class(base(4,*)), intent(in) :: a
 		character(:), allocatable :: ch(:)
 
-		allocate(func(size(ch)), source= ch) 
+		allocate(func(size(ch)), source= ch)
 	    end function
 
 end module
@@ -66,7 +60,7 @@ end module
 
 	p(size(p):) => b2%fun(ch)
 
-	if ( .not. associated(p)) stop 5 
+	if ( .not. associated(p)) stop 5
 	if ( lbound(p,1) /= 0) stop 7
 	if ( ubound(p,1) /= 25) stop 9
 

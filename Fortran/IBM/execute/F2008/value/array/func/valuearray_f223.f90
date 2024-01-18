@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f223.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -114,13 +111,13 @@ call sub9_int(dvt2(2:5:2)%i1(3))
 	end do
 
 contains
-  
+
 subroutine sub1_int(arg) !(dvt1%i1) (/1,2,3,4,5,6/)
     integer*4, value :: arg(:)
 	do doCounter=1,6
 		if (arg(doCounter) .ne. doCounter) error stop 10
 	end do
-	
+
 	do doCounter=1,size(arg)
 		arg(doCounter) = 6+doCounter
 	end do
@@ -131,7 +128,7 @@ subroutine sub2_int(arg) !dvt1%i1(2:5) (/2,3,4,5/)
 	do doCounter=1,4
 		if (arg(doCounter) .ne. doCounter+1) error stop 20
 	end do
-	
+
 	do doCounter=1,size(arg)
 		arg(doCounter) = 6+doCounter
 	end do
@@ -142,7 +139,7 @@ subroutine sub3_int(arg) !dvt1%i1(2:5:2) (/2,4/)
 	do doCounter=1,2
 		if (arg(doCounter) .ne. doCounter*2) error stop 30
 	end do
-	
+
 	do doCounter=1,size(arg)
 		arg(doCounter) = 6+doCounter
 	end do
@@ -153,7 +150,7 @@ subroutine sub4_int(arg) !dvt2%i2 (/10,20,30,40,50,60/)
 	do doCounter=1,6
 		if (arg(doCounter) .ne. 10*doCounter) error stop 40
 	end do
-	
+
 	do doCounter=1,size(arg)
 		arg(doCounter) = 6+doCounter
 	end do
@@ -164,7 +161,7 @@ subroutine sub5_int(arg) !dvt2%i1(3) (/3,4,5,6,1,2/)
 	do doCounter=1,6
 		if (arg(doCounter) .ne. mod((doCounter+1),6)+1) error stop 50
 	end do
-	
+
 	do doCounter=1,size(arg)
 		arg(doCounter) = 6+doCounter
 	end do
@@ -175,7 +172,7 @@ subroutine sub6_int(arg) !dvt2(2:5) (/20,30,40,50/)
 	do doCounter=1,4
 		if (arg(doCounter) .ne. (doCounter+1)*10) error stop 60
 	end do
-	
+
 	do doCounter=1,size(arg)
 		arg(doCounter) = 6+doCounter
 	end do
@@ -186,7 +183,7 @@ subroutine sub7_int(arg) !dvt2(3:5)%i1(3) (/5,6,1/)
 	do doCounter=1,3
 		if (arg(doCounter) .ne. mod((doCounter+3),6)+1) error stop 70
 	end do
-	
+
 	do doCounter=1,size(arg)
 		arg(doCounter) = 6+doCounter
 	end do
@@ -197,7 +194,7 @@ subroutine sub8_int(arg) !dvt2(2:5:2)%i2 (/20,40/)
 	do doCounter=1,2
 		if (arg(doCounter) .ne. doCounter*20) error stop 80
 	end do
-	
+
 	do doCounter=1,size(arg)
 		arg(doCounter) = 6+doCounter
 	end do
@@ -208,7 +205,7 @@ subroutine sub9_int(arg) !dvt2(2:5:2)%i1(3) (/4,6/)
 	do doCounter=1,2
 		if (arg(doCounter) .ne. 2*(doCounter-1)+4) error stop 90
 	end do
-	
+
 	do doCounter=1,size(arg)
 		arg(doCounter) = 6+doCounter
 	end do

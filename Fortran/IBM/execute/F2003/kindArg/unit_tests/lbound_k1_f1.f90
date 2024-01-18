@@ -1,19 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : lbound_k1_f1.f
 !*
-!*  PROGRAMMER                 : Vince Yuen
 !*  DATE                       : Apr 10, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support KIND Argument for new intrinsics
 !*
 !*  KEYWORD(S)                 : KIND
 !*
-!*  DESCRIPTION                : test lbound functionality with various 
+!*  DESCRIPTION                : test lbound functionality with various
 !*                               combos of opt args, kind = 1 specified
 !*                               (with and without keyword), -qintsize=2
 !*

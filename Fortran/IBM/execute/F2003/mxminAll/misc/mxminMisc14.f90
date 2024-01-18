@@ -1,43 +1,31 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX*/MIN* with class obj.
-!*                                
+!*
 !* ===================================================================
 
-module misc14 
+module misc14
 
-   type base  
+   type base
      character*3 bname
    end type
 
    type, extends (base) :: child
-     character*3 :: cname 
+     character*3 :: cname
    end type
 
    class(child), allocatable :: charC(:)
 
+end module misc14
 
-end module misc14 
-
-program mxminMisc14  
-use misc14 
+program mxminMisc14
+use misc14
 
    character*3 x, y
 
@@ -57,7 +45,5 @@ use misc14
 
    deallocate(charC)
 
- 
-end program mxminMisc14 
-
+end program mxminMisc14
 

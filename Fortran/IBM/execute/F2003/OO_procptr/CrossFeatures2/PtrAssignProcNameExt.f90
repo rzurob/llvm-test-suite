@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignProcNameExt.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignProcNameExt.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignProcNameExt.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignProcNameExt.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 12, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,13 +30,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  C727 (R742) A procedure-name shall be the name of an external, module,
 !*  or dummy procedure, a specific intrinsic function listed in 13.6
 !*  and not marked with a bullet (.), or a procedure pointer.
-!* 
-!* 
-!*  (315269) 
+!*
+!*  (315269)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -67,7 +60,7 @@
   END MODULE
 
 
-  PROGRAM PtrAssignProcNameExt  
+  PROGRAM PtrAssignProcNameExt
   USE M
   IMPLICIT NONE
 
@@ -93,7 +86,7 @@
 
   FUNCTION ExtFun(Arg)
   CLASS(*)          :: Arg(:)
-  CLASS(*), POINTER :: ExtFun(:) 
+  CLASS(*), POINTER :: ExtFun(:)
     ALLOCATE(ExtFun(SIZE(Arg)), SOURCE=Arg)
   END FUNCTION
 
@@ -109,7 +102,7 @@
     CLASS DEFAULT
       STOP 24
     END SELECT
-  END SUBROUTINE 
+  END SUBROUTINE
 
 
 

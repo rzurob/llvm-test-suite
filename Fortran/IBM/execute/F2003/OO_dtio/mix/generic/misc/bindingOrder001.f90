@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Miscellaneous:
 !*                                 - reverse the order of declaration between generic and specific binding
@@ -34,7 +23,7 @@ module m
       character(3) :: c = 'xxx'
       contains
          generic :: write(formatted) => write
-         generic :: read(formatted)  => read   
+         generic :: read(formatted)  => read
          procedure, pass :: write => writebase
          procedure, pass :: read => readbase
    end type

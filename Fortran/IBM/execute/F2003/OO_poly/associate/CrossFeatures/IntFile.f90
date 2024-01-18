@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  IntFile.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : IntFile 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : IntFile
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,18 +30,18 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The internal file 
-!*    () 
+!*    The internal file
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   MODULE M
     TYPE :: DT
       INTEGER      :: Id = 1
       CHARACTER(3) :: C  = "1"
       LOGICAL      :: L  = .TRUE.
- 
+
       CONTAINS
       PROCEDURE, PASS   :: GetId
       PROCEDURE, PASS   :: GetC
@@ -57,32 +51,32 @@
   CONTAINS
 
     ELEMENTAL FUNCTION GetId(Arg)
-    IMPLICIT CLASS(DT)(A) 
+    IMPLICIT CLASS(DT)(A)
     INTENT(IN) :: Arg
     INTEGER    :: GetId
       GetId = Arg%Id
     END FUNCTION
 
     ELEMENTAL FUNCTION GetC(Arg)
-    IMPLICIT CLASS(DT)(A) 
+    IMPLICIT CLASS(DT)(A)
     INTENT(IN) :: Arg
     CHARACTER  :: GetC
       GetC = Arg%C
     END FUNCTION
 
     ELEMENTAL FUNCTION GetL(Arg)
-    IMPLICIT CLASS(DT)(A) 
+    IMPLICIT CLASS(DT)(A)
     INTENT(IN) :: Arg
     LOGICAL    :: GetL
       GetL = Arg%L
     END FUNCTION
 
   END MODULE
- 
-  PROGRAM IntFile 
+
+  PROGRAM IntFile
 
   USE M
-  IMPLICIT TYPE(DT)(A) 
+  IMPLICIT TYPE(DT)(A)
   DIMENSION :: Arr(2:130)
   INTEGER :: i
   CHARACTER(3) :: C
@@ -90,8 +84,8 @@
 
   ASSOCIATE ( As => Arr )
     DO i=2, 129
-      WRITE(As(i)%C, FMT=*) "!" 
-      READ(As(i)%C, FMT=*) As(i+1)%C 
+      WRITE(As(i)%C, FMT=*) "!"
+      READ(As(i)%C, FMT=*) As(i+1)%C
       IF ( TRIM(As(i+1)%C) .NE. "!" ) STOP 20
     END DO
   END ASSOCIATE
@@ -102,5 +96,5 @@
   IF ( Any(Arr%ID      .NE. 1) ) STOP 60
   IF ( ANY(Arr%GetID() .NE. 1) ) STOP 61
 
-  END 
+  END
 

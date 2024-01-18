@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpAttrSpecStmtData10
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 20, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- DATA statement
 !*
-!*  the named constant or derived type accessible by use association. 
-!*   
+!*  the named constant or derived type accessible by use association.
+!*
 !*  (ice)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -43,7 +34,7 @@
     INTEGER, KIND :: K0=1
     INTEGER, LEN  :: L0=1
     CONTAINS
-    PROCEDURE :: ModFun0 
+    PROCEDURE :: ModFun0
   END TYPE
 
   TYPE,  EXTENDS(DT0)  :: DT1(K1, L1)
@@ -51,7 +42,7 @@
     INTEGER(K0), LEN  :: L1=1
     INTEGER(K1)       :: R(L1)!=K1
     CONTAINS
-    PROCEDURE :: ModFun1 
+    PROCEDURE :: ModFun1
   END TYPE
 
   TYPE, EXTENDS(DT1) :: DT2(K2,L2)
@@ -61,7 +52,7 @@
     CHARACTER(L2) :: C(L2)!=CHAR(K2)
     TYPE(DT2(K0,L0,K1,L0,K2,L2)), POINTER :: Ptr!=>NULL()
     CONTAINS
-    PROCEDURE :: ModFun2 
+    PROCEDURE :: ModFun2
   END TYPE
 
   TYPE(DT0(1,3)),         PARAMETER :: CT0=DT0(1,3)()
@@ -70,30 +61,30 @@
                                                DT1=DT1(1,3,4,5)([1,2,3,4,5]),  &
                                                  I=[1,2,3,4,5,6,7],            &
                                                  C=CHAR([1,2,3,4,5,6,7]),      &
-                                               Ptr=NULL() )                     
+                                               Ptr=NULL() )
 
   INTEGER, PARAMETER  :: N=96
 
   CONTAINS
 
   FUNCTION ModFun0(Arg)
-  CLASS(DT0(1,*)), INTENT(IN) :: Arg 
+  CLASS(DT0(1,*)), INTENT(IN) :: Arg
   INTEGER ModFun0
-    ModFun0 = Arg%L0 
-  END FUNCTION 
+    ModFun0 = Arg%L0
+  END FUNCTION
 
   FUNCTION ModFun1(Arg)
-  CLASS(DT1(1,*,4,*)), INTENT(IN) :: Arg 
+  CLASS(DT1(1,*,4,*)), INTENT(IN) :: Arg
   COMPLEX ::  ModFun1(2)
     ModFun1(1) =  (Arg%K0, Arg%L0)
     ModFun1(2) =  (Arg%K1, Arg%L1)
-  END FUNCTION 
+  END FUNCTION
 
   FUNCTION ModFun2(Arg)
-  CLASS(DT2(1,*,4,*,8,*)), INTENT(IN) :: Arg 
+  CLASS(DT2(1,*,4,*,8,*)), INTENT(IN) :: Arg
   integer modfun2(size(arg%i))
-    ModFun2 = -Arg%I 
-  END FUNCTION 
+    ModFun2 = -Arg%I
+  END FUNCTION
 
   END MODULE
 
@@ -134,7 +125,7 @@
   DO I=1, N
   DO J=1, N
 
-    IF ( T0(I,J)%ModFun0()              .NE. T0(I,J)%L0    ) STOP 9 
+    IF ( T0(I,J)%ModFun0()              .NE. T0(I,J)%L0    ) STOP 9
     IF ( ANY( T1(I,J)%R                      .NE. C1%R(1)       ) ) STOP 10
     IF ( ANY( T1(I,J)%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 11
 
@@ -142,12 +133,12 @@
     IF ( ANY( T2(I,J)%I .NE. C2%I(1)               ) ) STOP 13
     IF ( ANY( T2(I,J)%C .NE. CHAR(1)               ) ) STOP 14
     IF ( ASSOCIATED(T2(I,J)%Ptr ) )               STOP 15
- 
+
     IArr = T2(I,J)%ModFun2()
     IF ( ANY( IArr .NE. -1   ) ) STOP 16
     IF ( ANY( T2(I,J)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 17
 
-    IF ( S0(I,J)%ModFun0()              .NE. S0(I,J)%L0    ) STOP 19 
+    IF ( S0(I,J)%ModFun0()              .NE. S0(I,J)%L0    ) STOP 19
     IF ( ANY( S1(I,J)%R                      .NE. C1%R          ) ) STOP 20
     IF ( ANY( S1(I,J)%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 21
 
@@ -155,7 +146,7 @@
     IF ( ANY( S2(I,J)%I .NE. C2%I                  ) ) STOP 23
     IF ( ANY( S2(I,J)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) STOP 24
     IF (  ASSOCIATED(S2(I,J)%Ptr) )                STOP 25
- 
+
     IArr = S2(I,J)%ModFun2()
     IF ( ANY( IArr .NE. [-1,-2,-3,-4,-5,-6,-7]   ) ) STOP 26
     IF ( ANY( ModFun1(D1(1,-3,4,-5)(0)) .NE. [(1,-3),(4,-5)] ) ) STOP 27

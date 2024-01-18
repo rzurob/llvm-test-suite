@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: Optional.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Optional 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Optional
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  The associating entity's optional attribute. 
-!* 
+!*
+!*  The associating entity's optional attribute.
+!*
 !*  (ICE)
 !*  (Seg fault-301386:dummy array bound)
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -48,7 +42,7 @@
     TYPE :: DT
       INTEGER :: Id = 1
       CONTAINS
-      PROCEDURE, PASS   :: GetId 
+      PROCEDURE, PASS   :: GetId
     END TYPE
 
   CONTAINS
@@ -61,7 +55,7 @@
   END MODULE
 
 
-  PROGRAM Optional 
+  PROGRAM Optional
   USE M
   IMPLICIT NONE
 
@@ -80,9 +74,9 @@
   TYPE(DT),   POINTER  :: DTVPtr(:,:)
 
 
-  Str(:) = '!' 
+  Str(:) = '!'
   C = Str
-  
+
   CALL Sub()
   CALL Sub(Int(2:3,3:4))
   CALL Sub(Cplx(2:3,3:4))
@@ -96,12 +90,12 @@
   SUBROUTINE Sub(Arg)
   CLASS(*), TARGET, OPTIONAL  :: Arg(2:3,3:4)
 
-    IF ( .NOT. PRESENT(Arg)) RETURN 
- 
-    SELECT TYPE (U => Arg)
-    CLASS DEFAULT 
+    IF ( .NOT. PRESENT(Arg)) RETURN
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30 
+    SELECT TYPE (U => Arg)
+    CLASS DEFAULT
+
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30
       IF ( SIZE(U)          .NE. 4 )          STOP 31
       IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
       IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
@@ -112,34 +106,34 @@
       SELECT TYPE (U => W )
 
       TYPE IS (INTEGER(KIND(Int)))
-        IntPtr => U 
+        IntPtr => U
         IF ( ANY(U   .NE. IntPtr) )      STOP 35
         IF ( KIND(U) .NE. KIND(IntPtr) ) STOP 36
 
       TYPE IS (COMPLEX(KIND(Cplx)))
-        CplxPtr => U 
+        CplxPtr => U
         IF ( ANY(U   .NE. CplxPtr ))     STOP 37
         IF ( KIND(U) .NE. KIND(CplxPtr) )STOP 38
 
       TYPE IS (REAL(KIND(R)))
-        RPtr => U 
+        RPtr => U
         IF ( ANY(U   .NE. RPtr ))       STOP 37
         IF ( KIND(U) .NE. KIND(RPtr) )  STOP 38
 
       TYPE IS (LOGICAL(KIND(L)))
-        LPtr => U 
-        IF ( ANY(U   .NEQV. LPtr) )      STOP 40 
-        IF ( KIND(U) .NE. KIND(LPtr) )   STOP 41 
+        LPtr => U
+        IF ( ANY(U   .NEQV. LPtr) )      STOP 40
+        IF ( KIND(U) .NE. KIND(LPtr) )   STOP 41
 
       TYPE IS (CHARACTER(*))
-        CPtr => U 
-        IF ( ANY(U  .NE. CPtr) )       STOP 42 
-        IF ( LEN(U) .NE. LEN(CPtr) )   STOP 43 
+        CPtr => U
+        IF ( ANY(U  .NE. CPtr) )       STOP 42
+        IF ( LEN(U) .NE. LEN(CPtr) )   STOP 43
 
       TYPE IS (DT)
-        DTVPtr => DTV 
-        IF ( ANY(U%Id      .NE. DTVPtr%Id ) )      STOP 42 
-        IF ( ANY(U%GetId() .NE. DTVPtr%GetId()))   STOP 43 
+        DTVPtr => DTV
+        IF ( ANY(U%Id      .NE. DTVPtr%Id ) )      STOP 42
+        IF ( ANY(U%GetId() .NE. DTVPtr%GetId()))   STOP 43
 
       CLASS DEFAULT
         STOP 51
@@ -147,7 +141,7 @@
 
     END ASSOCIATE
     END SELECT
-  
+
   END SUBROUTINE
 
   END

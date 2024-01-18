@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Scope4.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Scope4.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Scope4 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Scope4
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,12 +30,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*  Scope 
-!*  (ICE) 
+!*  Scope
+!*  (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-  PROGRAM Scope4 
+  PROGRAM Scope4
   IMPLICIT NONE
   CHARACTER(9) :: A(3:6) = "123456789", B(4)="987654321"
 
@@ -61,7 +55,7 @@
   CLASS(*) :: B(4:7)
 
   SELECT TYPE (B)
-  TYPE IS (CHARACTER(*)) 
+  TYPE IS (CHARACTER(*))
 
     ASSOCIATE ( A => B )
 
@@ -69,7 +63,7 @@
       IF ( ANY(SHAPE(A)  .NE. (/4/) ) )          STOP 12
       IF ( ANY(A         .NE. "987654321" ) )    STOP 13
 
-      B = "43219876" 
+      B = "43219876"
       ASSOCIATE ( A => A )
         IF ( ANY(LBOUND(A) .NE. (/4/) ) )        STOP 21
         IF ( ANY(SHAPE(A)  .NE. (/4/) ) )        STOP 22
@@ -85,5 +79,5 @@
   IF ( ANY(SHAPE(A)  .NE. (/4/) ) )          STOP 32
   IF ( ANY(A         .NE. "123456789" ) )    STOP 33
 
-  END SUBROUTINE  
+  END SUBROUTINE
   END

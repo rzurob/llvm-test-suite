@@ -1,23 +1,18 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal021fk.f
 !*  TEST CASE NAME             : type-bound procedure ffinal021fk
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal021f by Catherine Sun)
 !*  DATE                       : 2007-11-26 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines: 
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines:
 !*                               derived type with pointer attribute.
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -28,7 +23,7 @@ module m
     contains
         final :: finalizeBase
     end type
-    
+
     type, extends(base) :: child
     contains
        final :: finalizeChild
@@ -59,7 +54,7 @@ subroutine example
 use m
     type(base(4)), pointer :: dt1 ! tcx: (4)
     type(child(4)), pointer  :: dt2 ! tcx: (4)
-   
+
     print *, "example"
 
 end subroutine

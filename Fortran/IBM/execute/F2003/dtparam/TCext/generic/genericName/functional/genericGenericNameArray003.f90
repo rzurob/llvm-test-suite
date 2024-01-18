@@ -3,22 +3,11 @@
 ! opt variations: -qnock -qnodeferredlp
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with generic-name
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : generic-name: generic tb containing polymorphic array of
 !*                                             derived types dummy args of different ranks
@@ -138,7 +127,7 @@ program genericGenericNameArray003
    call b0%print(b2)
    call b0%print(c1)
    call b0%print(c2)
-   
+
    call c0%print(c1)
    call c0%print(c2)
    call c0%print(c3)
@@ -147,7 +136,7 @@ program genericGenericNameArray003
       class is ( child(1,*,4) )
          call c0%print(b3)
    end select
-   
+
    call b0%print( b1(1:3:2) )   !<- 1d array section
    call b0%print( b2(1:1,1:2) ) !<- 2d array section
 
@@ -159,5 +148,5 @@ program genericGenericNameArray003
       class is ( child(1,*,4) )
          call c0%print(b3(2:1:-1,2:1:-1,2:1:-1))
    end select
-   
+
 end program

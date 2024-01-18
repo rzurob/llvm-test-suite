@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: BranchByCycle.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : BranchByCycle 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : BranchByCycle
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +34,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
 !*
 !*  Branch out by CYCLE
 !*
@@ -69,7 +62,7 @@
   END MODULE
 
 
-  PROGRAM BranchByCycle 
+  PROGRAM BranchByCycle
   USE M
   IMPLICIT NONE
 
@@ -85,7 +78,7 @@
   LOGICAL :: L(2)=.FALSE.
 
     DO i=1,1
- 
+
 6   SELECT TYPE (U => Arg(:,S,:))
     CLASS DEFAULT
 
@@ -94,7 +87,7 @@
       IF ( ANY (LBOUND(U)   .NE. (/1,1,1/) ) ) STOP 32
       IF ( ANY (UBOUND(U)   .NE. (/3,3,3/) ) ) STOP 33
       IF ( ANY(SHAPE(U)     .NE. (/3,3,3/)) )  STOP 34
-    
+
     ASSOCIATE ( W => U )
 
       DO j=1,1
@@ -114,9 +107,9 @@
       END DO
 !     PRINT*, "OUT SELECT2"
       L(1) = .TRUE.
- 
+
 4   END ASSOCIATE
-    
+
     CYCLE
 5   END SELECT
 

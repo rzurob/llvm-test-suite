@@ -1,28 +1,18 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : isContigTrue4.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 2010-09-29
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - test intrinsic IS_CONTIGUOUS 
+!*  DESCRIPTION                : - test intrinsic IS_CONTIGUOUS
 !*                               - actual arg is
-!*                                   - array constructor 
-!*                                   - intrinsic function call 
-!*                                   - array with only 1 element 
-!*                               
+!*                                   - array constructor
+!*                                   - intrinsic function call
+!*                                   - array with only 1 element
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================

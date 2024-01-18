@@ -1,16 +1,8 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : assumed-shape array, VOLATILE
-!*
 !*
 !*  DESCRIPTION                : diagnostic TC for  C1232
 !*
@@ -20,7 +12,7 @@
 !*                dummy argument shall be an assumed-shape array.
 !* ===================================================================
 
-  program volatileC1232Assumedshape01d 
+  program volatileC1232Assumedshape01d
 
     interface
        subroutine innerAssumeShapeVolatile(x)
@@ -39,11 +31,11 @@
       subroutine externalAssumeShapeVolatile(a)
            integer, VOLATILE:: a(5,6,10)
       end subroutine externalAssumeShapeVolatile
-    end interface  
+    end interface
 
-    integer x(1:, :, :)                     ! actual argument is assumed 
+    integer x(1:, :, :)                     ! actual argument is assumed
     call externalAssumeShapeVolatile(x)     ! shape array
-    
+
   end subroutine innerAssumeShapeVolatile
 
   subroutine externalAssumeShapeVolatile(a)

@@ -1,29 +1,18 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : CopyInOut2.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2011-08-20
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : copy-in/out for assumed shape arrays
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                :
 !*
-!*  DESCRIPTION                : 
-!*       
-!*                      
-!*    - Non contigusous actual argument is a pointer 
+!*    - Non contigusous actual argument is a pointer
 !*    - Outer most subroutine has assumed shape array dummy argument with contiguous attribute
-!*    - Second subroutine has explit shape array dummy argument 
-!*    - Inner most subroutine has assumed shape array dummy argument with contiguous attribute 
+!*    - Second subroutine has explit shape array dummy argument
+!*    - Inner most subroutine has assumed shape array dummy argument with contiguous attribute
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -59,7 +48,7 @@ PROGRAM CopyInOut2
 
       CONTAINS
 
-      SUBROUTINE Sub1(Arg)           
+      SUBROUTINE Sub1(Arg)
         INTEGER, CONTIGUOUS :: Arg(:,:,:)
 
         IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 10
@@ -68,7 +57,7 @@ PROGRAM CopyInOut2
         CALL SubSub1(Arg(1,::2,:))                                                                    !<--- shape (2,3)
         CALL SubSub2(Arg(1,::2,:),UBOUND(Arg(1,::2,:),1), UBOUND(Arg(1,::2,:),2))
       END SUBROUTINE Sub1
-      
+
       SUBROUTINE Sub2(Arg)
         INTEGER, CONTIGUOUS, INTENT(INOUT) :: Arg(:,:,:)
 
@@ -79,7 +68,7 @@ PROGRAM CopyInOut2
         CALL SubSub2(Arg(1,::2,:),UBOUND(Arg(1,::2,:),1), UBOUND(Arg(1,::2,:),2))
       END SUBROUTINE Sub2
 
-      SUBROUTINE Sub3(Arg)           
+      SUBROUTINE Sub3(Arg)
         INTEGER :: Arg(:,:,:)
 
         IF ( ANY(Arg       .NE. test) ) ERROR STOP 14
@@ -96,7 +85,7 @@ PROGRAM CopyInOut2
 
         DO I = 1, 2
            DO J = 1, 3
-             IF ( Arg(I,J)    .NE.  1+(20*(I-1)+50*(J-1)) ) ERROR STOP 17 
+             IF ( Arg(I,J)    .NE.  1+(20*(I-1)+50*(J-1)) ) ERROR STOP 17
            ENDDO
         ENDDO
         CALL SubSubSub(Arg(2,::2))                                                                !<---- shape (2)

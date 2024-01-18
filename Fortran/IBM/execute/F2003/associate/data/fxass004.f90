@@ -1,14 +1,8 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass004.f
 ! %VERIFY:
 ! %STDIN:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass004.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -79,7 +67,7 @@
       character*9 a8 / 'excellent' /
       character*9 b8 / '  weather' /
       character*19 c8
-      
+
       character*5 a5 / 'white' /
       character*5 b5 / 'house' /
       character*11 c5
@@ -88,7 +76,7 @@
 
 !-----------   ASSOCIATE with CHARACTER expressions ----------------
 
-      c4 = 'good girl'   
+      c4 = 'good girl'
       count = 1
       do while (count .LE. 10)
 
@@ -117,7 +105,7 @@
 
 !-----------   ASSOCIATE with CHARACTER expressions ----------------
 
-      c5 = 'white-house'   
+      c5 = 'white-house'
       do count = 1, 10
 
       associate ( arg5 =>  a5 //'-'// b5 )

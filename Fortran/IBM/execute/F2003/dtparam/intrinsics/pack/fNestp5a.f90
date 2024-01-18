@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Adrian Green
 !*  DATE                       : July 27, 2008
 !*  ORIGIN                     : XLF Compiler Test,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !       Pack Intrinsic function with derived type parameters.
-!*  DESCRIPTION                : Uses pack with a derived type component of a derived type 
-!*								 containing a pointer and a real component. PACK is placed   
+!*  DESCRIPTION                : Uses pack with a derived type component of a derived type
+!*								 containing a pointer and a real component. PACK is placed
 !*								in a seperate subroutine, in a seperate module and interfaced.
 !*                              Derived type has allocatable attribute.
-!*
-!*
 !*
 module m1
 type adrow(k)
@@ -31,8 +23,8 @@ end type admatrix
 
 	interface operator(+)
 		module procedure packed
-	end interface 	
-	
+	end interface
+
 contains
 	function packed(dtp, mask) result (X)
 			type(admatrix(4)), intent(in), dimension(:,:) :: dtp
@@ -47,10 +39,10 @@ contains
 			X = pack(dtp, mask, field)
 			!allocate(X, SOURCE=unpack(dtp, mask, field2))
 	end function packed
-		
+
 end module m1
 
-program a	
+program a
 
 use m1
 type (admatrix(4)), allocatable :: vec(:,:), res(:)
@@ -67,7 +59,7 @@ do k = 1,2
 		do i = 1,3
 			allocate(vec(k,j)%row(i)%element, SOURCE = num)
 			num = num + 1.0
-		end do 
+		end do
 	end do
 end do
 mask2 = reshape(mask1, (/2, 4/))

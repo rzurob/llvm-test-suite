@@ -12,20 +12,14 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxmdvn07.f
 !
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 24, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    : -qfree=f90
 !*
 !* DESCRIPTION                  : Test the interoperability of real module
@@ -37,7 +31,7 @@
 module mod
 
 character(len = 8), parameter :: CH = "abcdABCD"
-bind(c, name='a') :: w 
+bind(c, name='a') :: w
 real :: w = 0.0
 real(4), bind(c, name = "B") :: x = 0.0
 real(8), bind(c, name = "c ") :: y = 0.0D0
@@ -136,10 +130,10 @@ do i = 1, 10
       ERROR STOP 54
     END IF
 end do
-  
+
 
 do j= 1, 10
-  do k = 1, 10 
+  do k = 1, 10
      IF(.not.precision_r4(w2(k,j),2.0) .or. &
         .not.precision_r4(x2(k,j),2.0) .or. &
         .not.precision_r8(y2(k,j),2.0D0) .or. &
@@ -161,4 +155,4 @@ do i = 1, 2
    end do
 end do
 
-end 
+end

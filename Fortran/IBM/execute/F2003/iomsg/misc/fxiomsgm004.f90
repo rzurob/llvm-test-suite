@@ -5,38 +5,30 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgm004.f
 ! %VERIFY: fort.18:fxiomsgm004.vf
-! %STDIN: 
-! %STDOUT:  
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
- 
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : iomsg should be effective only it's specified
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : WRITE
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 2
 !*
 !*  DESCRIPTION                : The IOMSG option should be in effective where
 !*                               it's specified. This test case  uses the option
-!*                               IOMSG in Test Case1 while not in Test Case2, 
+!*                               IOMSG in Test Case1 while not in Test Case2,
 !*                               check if IOMSG is still effective in Test Case2.
 !*
 !*  TEST CONDITIONS            : 1) WRITE  on a SYN I/O file with IOMSG option
@@ -50,15 +42,13 @@
 !*********************************************************************
 
       program fxiomsgm004
- 
+
       implicit none                     ! All variables must be Declared
- 
- 
+
       integer*4 case_id, i, j           ! Test Case id under test.
       integer*4 ios, wid(2)
       character*300 errmsg
       logical*4  there
-
 
 !
 ! Initialize Return Code routine to SUCCESS...
@@ -70,11 +60,11 @@
 !
 ! TestCase 1...
 !
- 
+
       case_id = case_id + 1
 
       errmsg = 'abc'
- 
+
       open ( 8, form = 'unformatted', err = 10, access = 'STREAM', asynch='NO' )
 
       write ( 8, id = wid(1), err = 20, iostat = ios, iomsg = errmsg ) 'CCCCC'
@@ -82,7 +72,6 @@
       call zzrc ( case_id )
 
 20    write ( 18, * ) errmsg
-
 
 !
 ! TestCase 2...
@@ -92,7 +81,6 @@
 
       errmsg = 'abc'
 
-
       open ( 9, form = 'unformatted', err = 10, access = 'STREAM', asynch='NO' )
 
       write ( 9, id = wid(2), err = 30, iostat = ios ) 'DDDDD'
@@ -100,7 +88,6 @@
       call zzrc ( case_id )
 
 30    write ( 18, * ) errmsg
-
 
 ! Clean up...
 

@@ -1,16 +1,13 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure12f
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
-!*  
+!*
 !*  DESCRIPTION
 !*
-!* checks if a combination of PURE and IMPURE elemental procedures works fine to 
+!* checks if a combination of PURE and IMPURE elemental procedures works fine to
 !  output the right result
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -25,7 +22,7 @@ PROGRAM main
   b(1:2500:5) = final(a(1:2500:5), f(1:2500:5))
 
   CONTAINS
- 
+
   IMPURE ELEMENTAL FUNCTION final (a, f1)
       IMPLICIT NONE
       INTEGER, INTENT(INOUT) :: f1
@@ -35,7 +32,7 @@ PROGRAM main
 
       sum = 2
       f1 = func1(a, a)
-      final = sum + f1 
+      final = sum + f1
   END FUNCTION final
 
   IMPURE ELEMENTAL FUNCTION func1(z,y)

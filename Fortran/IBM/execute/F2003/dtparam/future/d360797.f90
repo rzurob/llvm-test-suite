@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d360797.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d360797.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 9 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -41,9 +33,9 @@ program d360797
   use m
   implicit none
 
-  class(dtp(3)),allocatable :: dtp1 
+  class(dtp(3)),allocatable :: dtp1
   allocate(dtp1,source=dtp(3)(i=1))
-  associate (x=>dtp1%modDTP)  
+  associate (x=>dtp1%modDTP)
      print *,"|",x%i,"|"
      select type(x)
        type is(dtp(*))

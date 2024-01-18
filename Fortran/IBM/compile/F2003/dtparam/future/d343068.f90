@@ -1,23 +1,11 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql OO_type/struct_constr/fconstr024d.f
 ! (moved to F2003/dtparam/future/d343068.f, per defect 343068)
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 02/17/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  DESCRIPTION                : structure constructor (private parent type will
 !                               result in private parent component, and is not

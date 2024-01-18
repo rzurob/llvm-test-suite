@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : access001akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from access001a by Robert Ma)
 !*  DATE                       : 2007-06-20 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with namelist and object of public/private accessibility (output)
@@ -63,7 +55,7 @@ module m
       class(base(4)), intent(inout) :: dtv
       dtv%i = i
    end subroutine
-      
+
    integer function geti(dtv)
       class(base(4)), intent(in) :: dtv
       geti = dtv%i
@@ -75,10 +67,10 @@ module m
       b2%i = 888
       b3%i = 999
    end subroutine
-   
+
    subroutine writeIt(unit)
       integer, intent(in) :: unit
-      write ( unit, n123, iostat = stat, iomsg = msg )      
+      write ( unit, n123, iostat = stat, iomsg = msg )
    end subroutine
 
 end module
@@ -89,13 +81,13 @@ use m
    open (1, file = 'access001akl.1', form='formatted', access='sequential' )
    call start()
    call writeIt(1)
-   
+
    call b1%seti(333)
    call b2%seti(444)
    call b3%seti(555)
-   
-   call writeIt(1)   
-   
+
+   call writeIt(1)
+
 end program
 
 

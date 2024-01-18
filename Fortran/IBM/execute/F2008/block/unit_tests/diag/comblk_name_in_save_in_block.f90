@@ -3,7 +3,7 @@
 
   integer i
   common /comblk/ i
-  block 
+  block
     save /comblk/
   end block
-end 
+end

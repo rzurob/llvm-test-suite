@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d356322.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d356322.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 17 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. DEFECT 356322 
+!* 1. DEFECT 356322
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type A(l1)
@@ -48,7 +40,7 @@ program d356322
 
    call associate_replacer (getDT1(a3))
 !   associate(x=>getDT1(a3))
-!      print *,x%c1 
+!      print *,x%c1
 !   end associate
 
    contains
@@ -56,7 +48,7 @@ program d356322
    subroutine associate_replacer (x)
         type(A(*)), intent(in) :: x
 
-         print *,x%c1 
+         print *,x%c1
    end subroutine
 
 end program

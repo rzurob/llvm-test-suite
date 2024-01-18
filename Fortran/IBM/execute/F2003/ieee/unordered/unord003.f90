@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : March 8, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_UNORDERED NANs with variables.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +25,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
     program fxieee21
@@ -46,21 +37,21 @@
         real*4 :: a, b
         real*8 :: c, d
         real*16 :: e, f
-        real*4 :: val1 
-        real*4 :: val2 
-        real*4 :: val3 
-        real*4 :: val4 
+        real*4 :: val1
+        real*4 :: val2
+        real*4 :: val3
+        real*4 :: val4
 
-        real*8 :: val1_8 
-        real*8 :: val2_8 
-        real*8 :: val3_8 
-        real*8 :: val4_8 
+        real*8 :: val1_8
+        real*8 :: val2_8
+        real*8 :: val3_8
+        real*8 :: val4_8
 
-        real*16 :: val1_16 
-        real*16 :: val2_16 
-        real*16 :: val3_16 
-        real*16 :: val4_16 
- 
+        real*16 :: val1_16
+        real*16 :: val2_16
+        real*16 :: val3_16
+        real*16 :: val4_16
+
         logical :: res, flag_values(5)
 
 

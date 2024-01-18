@@ -1,24 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrTransferDT.f 
+!*  TEST CASE NAME             : dataPtrTransferDT.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
 !* - data-pointer  of poly type, type compatible with data-target
-!* - as arg of transfer 
+!* - as arg of transfer
 !* - data-target has allocatable attribute
 !* - after ptr =, apply intrinsin = to data-target. tar = tar
 !*
@@ -50,11 +44,11 @@ end module
         if ( any(lbound(p) .ne. (/1,2/)) ) stop 13
         if ( any(ubound(p) .ne. (/8,9/)) ) stop 15
 
-	tar = tar 
+	tar = tar
 
         select type (p)
             type is (child)
-		do j = 2,9 
+		do j = 2,9
 		    do i = 1, 8
                         print *, p(i,j)%id
 		    enddo
@@ -67,7 +61,7 @@ end module
 
 	print *, shape(res)
 
-	do i = 1, 64 
+	do i = 1, 64
 	    print *, res(i)%id
 	end do
 end program

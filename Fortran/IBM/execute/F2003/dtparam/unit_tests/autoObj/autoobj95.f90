@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : autoobj95
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 31, 2009
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTPARAM: Automatic objects
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 333321
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*
-!*  Char comp and array dummy 
+!*  Char comp and array dummy
 !*  (RTO issue)
 !*
 !*  ()
@@ -37,7 +29,7 @@
 
   PROGRAM autoobj03
 
-  TYPE base(l) 
+  TYPE base(l)
     INTEGER, LEN :: l
     CHARACTER(l) :: c="12345"
   END TYPE
@@ -45,7 +37,7 @@
   TYPE dt(l)
     INTEGER, LEN :: l
     TYPE(base(l)) :: arr(l:l+l-1)
-  END TYPE 
+  END TYPE
 
   CALL sub(2)
   CONTAINS

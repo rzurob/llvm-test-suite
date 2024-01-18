@@ -1,25 +1,18 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument106f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
 !*
 !*                                - Allocatable scalar/array of various interoperable types
-!*                                - Array constructor 
+!*                                - Array constructor
 !*                                - move_alloc
 !*                                - Generic resolution based
 !*                                  * on type
@@ -181,10 +174,10 @@ subroutine my_allocate_int2(a, b, n) bind(c)
    print*, a
 
    if (.not. allocated(a)) error stop 10
-   call my_move_alloc(a) 
+   call my_move_alloc(a)
    if (      allocated(a)) error stop 11
 
-   contains 
+   contains
    subroutine my_move_alloc(from)
      integer(2), allocatable :: from(:), to(:)
 
@@ -207,10 +200,10 @@ subroutine my_allocate_float(a, b, n) bind(c)
    print*, a
 
    if (.not. allocated(a)) error stop 10
-   call my_move_alloc(a) 
+   call my_move_alloc(a)
    if (      allocated(a)) error stop 11
 
-   contains 
+   contains
    subroutine my_move_alloc(from)
      real(4), allocatable :: from(:), to(:)
 
@@ -233,10 +226,10 @@ subroutine my_allocate_double(a, b, n) bind(c)
    print*, a
 
    if (.not. allocated(a)) error stop 10
-   call my_move_alloc(a) 
+   call my_move_alloc(a)
    if (      allocated(a)) error stop 11
 
-   contains 
+   contains
    subroutine my_move_alloc(from)
      double precision, allocatable :: from(:), to(:)
 
@@ -259,10 +252,10 @@ subroutine my_allocate_bool(a, b, n) bind(c)
    print*, a
 
    if (.not. allocated(a)) error stop 10
-   call my_move_alloc(a) 
+   call my_move_alloc(a)
    if (      allocated(a)) error stop 11
 
-   contains 
+   contains
    subroutine my_move_alloc(from)
      logical(1), allocatable :: from(:), to(:)
 
@@ -285,10 +278,10 @@ subroutine my_allocate_char(a, b, n) bind(c)
    print*, a
 
    if (.not. allocated(a)) error stop 10
-   call my_move_alloc(a) 
+   call my_move_alloc(a)
    if (      allocated(a)) error stop 11
 
-   contains 
+   contains
    subroutine my_move_alloc(from)
      character(:), allocatable :: from(:), to(:)
 
@@ -311,10 +304,10 @@ subroutine my_allocate_cmplx(a, b, n) bind(c)
    print*, a
 
    if (.not. allocated(a)) error stop 10
-   call my_move_alloc(a) 
+   call my_move_alloc(a)
    if (      allocated(a)) error stop 11
 
-   contains 
+   contains
    subroutine my_move_alloc(from)
      complex(4), allocatable :: from(:), to(:)
 
@@ -337,10 +330,10 @@ subroutine my_allocate_dcmplx(a, b, n) bind(c)
    print*, a
 
    if (.not. allocated(a)) error stop 10
-   call my_move_alloc(a) 
+   call my_move_alloc(a)
    if (      allocated(a)) error stop 11
 
-   contains 
+   contains
    subroutine my_move_alloc(from)
      double complex, allocatable :: from(:), to(:)
 

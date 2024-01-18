@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemALL.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemALL.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 25, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to a transformational intrinsic
-!* 
-!*  - ALL 
+!*
+!*  - ALL
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM  InitExpDefElemALL 
+  PROGRAM  InitExpDefElemALL
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -65,7 +58,7 @@
   LOGICAL(2), PARAMETER   :: Z2(1:0, 2)= .FALSE.
   LOGICAL(4), PARAMETER   :: Z4(1:0, 2)= .FALSE.
   LOGICAL(8), PARAMETER   :: Z8(1:0, 2)= .FALSE.
- 
+
   LOGICAL(KIND(ALL(T11))), PARAMETER :: T21(1:0)=ALL(Z1)
   LOGICAL(KIND(ALL(T12))), PARAMETER :: T22(1:0)=ALL(Z2)
   LOGICAL(KIND(ALL(T14))), PARAMETER :: T24(1:0)=ALL(Z4)
@@ -116,4 +109,4 @@
   END
 
 
- 
+

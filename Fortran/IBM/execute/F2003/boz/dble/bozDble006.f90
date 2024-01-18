@@ -1,24 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozDble006.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : DBLE intrinsic
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                :Section 13.7.29: DBLE(A)
 !*			The result has the value REAL (A, KIND (0.0D0))
-!*                      Passing INF, NaNS, and NaNQ bit pattern   
+!*                      Passing INF, NaNS, and NaNQ bit pattern
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -47,7 +36,7 @@ program bozDble006
 
     !Negative Infinity
     testR = DBLE(b'11111111100000000000000000000000')
-    if (testI /= b'11111111100000000000000000000000') error stop 4_4 
+    if (testI /= b'11111111100000000000000000000000') error stop 4_4
     testR = DBLE(O'37740000000')
     if (testI /= O'37740000000') error stop 5_4
     testR = DBLE(Z'FF800000')
@@ -56,7 +45,7 @@ program bozDble006
 
     !Positive NaNS (Lower Bound)
     testR = DBLE(B'1111111100000000000000000000001')
-    if (testI /= B'1111111100000000000000000000001') error stop 7_4  
+    if (testI /= B'1111111100000000000000000000001') error stop 7_4
     testR = DBLE(O'17740000001')
     if (testI /= O'17740000001') error stop 8_4
     testR = DBLE(Z'7F800001')
@@ -90,7 +79,7 @@ program bozDble006
 
     !Positive NaNQ (Lower Bound)
     testR = DBLE(B'1111111110000000000000000000000')
-    if (testI /= B'1111111110000000000000000000000') error stop 19_4  
+    if (testI /= B'1111111110000000000000000000000') error stop 19_4
     testR = DBLE(O'17760000000')
     if (testI /= O'17760000000') error stop 20_4
     testR = DBLE(Z'7FC00000')

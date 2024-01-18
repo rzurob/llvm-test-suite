@@ -1,59 +1,53 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn091i.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn091i.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn091i.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn091i.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : inheritance 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
 !*
-!*  DESCRIPTION                : testing a procedure is bound to two different 
-!*                               types. 
-!*    
+!*  SECONDARY FUNCTIONS TESTED : inheritance
+!*
+!*  DESCRIPTION                : testing a procedure is bound to two different
+!*                               types.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-      module mod	      
+      module mod
       integer :: int = 200
       character*20 :: c = "hi"
 
-      type base1 
+      type base1
          integer :: x
       contains
       	 procedure, nopass :: bind_b1 => proc1
-      end type 
+      end type
 
-      type base2 
+      type base2
          integer :: x
       contains
          procedure, nopass :: bind_b2 => proc1
-      end type  
+      end type
 
-      type base3 
+      type base3
          integer :: x
       contains
          procedure, nopass :: bind_b3 => proc1
-      end type  
+      end type
 
       contains
       subroutine proc1()
@@ -61,7 +55,7 @@
          c = "hi_again"
       end subroutine
 
-	end module     
+	end module
 
    use mod
 
@@ -70,7 +64,7 @@
    type(base3) :: dt3
    if (int .ne. 200)      error stop 2
    if (c .ne. "hi")    error stop 3
-  
+
    call dt1%bind_b1()
    if (int .ne. 400)      error stop 4
    if (c .ne. "hi_again")    error stop 5
@@ -80,7 +74,7 @@
    call dt2%bind_b2()
    if (int .ne. 400)      error stop 6
    if (c .ne. "hi_again")    error stop 7
-  
+
    int = 0
    c = ""
    call dt3%bind_b3()
@@ -88,4 +82,4 @@
    if (c .ne. "hi_again")    error stop 7
 
    end
-   
+

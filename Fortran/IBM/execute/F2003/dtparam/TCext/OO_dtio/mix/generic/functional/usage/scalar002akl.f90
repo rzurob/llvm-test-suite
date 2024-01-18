@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar002akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar002a by Robert Ma)
 !*  DATE                       : 2007-08-13 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Usage of GENERIC BINDING
 !*                                  - scalar non-polymorphic derived type entity without DTIO
@@ -101,11 +93,11 @@ program scalar002akl
 
    read ( 1, iostat = stat, iomsg = msg )                  c2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioreadb' ) )          error stop 6_4
-   
+
    read ( 1, iostat = stat, iomsg = msg )       c1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioreadb' ) )          error stop 7_4
 
-   if ( ( c1%i /= 1002 ) .or. ( c1%b%c /= 'def' ) .or. & 
+   if ( ( c1%i /= 1002 ) .or. ( c1%b%c /= 'def' ) .or. &
         ( c2%i /= 1001 ) .or. ( c2%b%c /= 'abc' ) )          error stop 8_4
 
    close ( 1, status ='delete')

@@ -1,17 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Argument association with DTP
 !*                             :
-!*  PROGRAMMER                 : Huiwen Li
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  FUNCTIONAL TESTED          : Passed-object dummy argument
 !*                               - the len type parameter must be assumed
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -28,11 +22,11 @@
     integer(kind=1), len  :: l=0
     integer(kind=k)       :: kk=K
     integer(kind=k)       :: ll(l, l)=1
-    contains 
+    contains
     procedure :: proc => modsub1
   END TYPE
 
-  contains 
+  contains
   subroutine modsub1(arg)
   class(dt1(1,2)) :: arg
 
@@ -42,7 +36,7 @@
 
   end module
 
-  program dtp_arg15 
+  program dtp_arg15
   use M
   type (dt1(1,2))    :: t1
 

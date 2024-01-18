@@ -21,7 +21,7 @@
       end subroutine timer_init
 
       subroutine timer_start(n)
-      
+
         implicit none
         integer, intent(in) :: n
         real                :: etime_, elapsed(2)

@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : syncMemDefRefSimple
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-09-17
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF SYNC MEMORY
 !*  SECONDARY FUNCTIONS TESTED : simple remote definition and reference

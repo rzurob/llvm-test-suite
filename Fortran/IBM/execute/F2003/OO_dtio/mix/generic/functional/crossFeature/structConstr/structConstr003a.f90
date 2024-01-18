@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Structure Constructor
@@ -149,10 +138,10 @@ program structConstr003a
    read ( 1, iostat = stat, iomsg = msg )       c4
    read ( 1, iostat = stat, iomsg = msg )       c5
    read ( 1, iostat = stat, iomsg = msg )       c6
-   
+
    if ( ( c1 /= 'abc' ) .or. ( c2 /= 'defxxx' )  .or. ( c3 /= 'ghiyyyzzz' ) .or. (c4 /= 'jklAAA' ) .or. ( c5 /= 'mnoBBBZOO' ) .or. &
         ( c6 /= 'ZOOAAAcatBBBZOOZOOAAAcatBBBZOOZOOAAAcatBBBZOO' ) ) error stop 7_4
-       
+
    close ( 1, status = 'delete' )
 
 

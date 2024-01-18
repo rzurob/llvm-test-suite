@@ -13,14 +13,9 @@
 ! *********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
 !*                             :
-!*  PROGRAMMER                 : Daniel Chen
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  DIAGNOSES TESTED           : The POS specifier can only appear in
 !*                             : input/output statements that specify a
@@ -30,7 +25,6 @@
 !*                             : that cannot be positioned.
 !*                             : Recovering from recoverable error
 !*                             : conditions is also tested.
-!*                             :
 !*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*

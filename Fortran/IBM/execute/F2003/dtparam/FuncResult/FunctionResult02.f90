@@ -1,29 +1,21 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FunctionResult02.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : March 15, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly         
+!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -49,12 +41,12 @@ MODULE Mod
       CONTAINS
 
       FUNCTION func(Arg)
-        CLASS(*) :: Arg, func 
-        POINTER  :: func 
+        CLASS(*) :: Arg, func
+        POINTER  :: func
 
           ALLOCATE(func, SOURCE = Arg)
- 
-      END FUNCTION   
+
+      END FUNCTION
 
       SUBROUTINE Select_type(Arg)
         CLASS(*) :: Arg
@@ -120,31 +112,31 @@ PROGRAM FunctionResult02
 
       CLASS(*), ALLOCATABLE :: u_poly
 
-      ALLOCATE( Base(4,10) :: u_poly ) 
+      ALLOCATE( Base(4,10) :: u_poly )
 
       ASSOCIATE ( a => func(u_poly) )
-            call Select_type(a) 
-      END ASSOCIATE  
+            call Select_type(a)
+      END ASSOCIATE
 
       DEALLOCATE(u_poly)
-      ALLOCATE( Child(4,8,4,16) :: u_poly ) 
+      ALLOCATE( Child(4,8,4,16) :: u_poly )
 
       ASSOCIATE ( a => func(u_poly) )
-            call Select_type(a) 
-      END ASSOCIATE  
+            call Select_type(a)
+      END ASSOCIATE
 
       DEALLOCATE(u_poly)
-      ALLOCATE( NextGen(4,1,4,2,3,6) :: u_poly ) 
+      ALLOCATE( NextGen(4,1,4,2,3,6) :: u_poly )
 
       ASSOCIATE ( a => func(u_poly) )
-            call Select_type(a) 
-      END ASSOCIATE  
+            call Select_type(a)
+      END ASSOCIATE
 
       DEALLOCATE(u_poly)
-      ALLOCATE( u_poly, SOURCE = Child(8,2,8,4) (C0 = 'AB', F0 = .True., A0 = -1, A1 = -2, A2 = -3) ) 
+      ALLOCATE( u_poly, SOURCE = Child(8,2,8,4) (C0 = 'AB', F0 = .True., A0 = -1, A1 = -2, A2 = -3) )
 
       ASSOCIATE ( a => func(u_poly) )
-            call Select_type(a) 
-      END ASSOCIATE  
+            call Select_type(a)
+      END ASSOCIATE
 
 END PROGRAM FunctionResult02

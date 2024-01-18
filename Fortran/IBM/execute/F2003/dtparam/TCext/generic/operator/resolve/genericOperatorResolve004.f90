@@ -3,22 +3,11 @@
 ! opt variations: -qnol -qnodeferredlp
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Operator: 12.4.5 Resolving type-bound procedure references
 !*                                         iv ) contains both assumed-shape array and elemental references
@@ -74,7 +63,7 @@ program genericOperatorResolve004
 
    type(base(20,4)) :: b1, b2(4)
    type(base(:,4)), allocatable :: b3(:)
-   
+
    allocate ( base(20,4):: b3(4) )
 
    b1 = base(20,4)(5) + base(20,4)(5)

@@ -1,33 +1,25 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with real*8 in READ statement
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*           10.6.1.2.6. The rounding mode can be specified by a data
 !*           transfer input/output statement, an OPEN statement or an
 !*           edit descriptor.
 !*           test ROUND edit descriptor in READ statement.
 !* ===================================================================
 
-  program roundR8ReadEdit02 
+  program roundR8ReadEdit02
 
     implicit none
 
-    character(18) :: r_mode 
+    character(18) :: r_mode
     integer ios
     real*8 rd1, rd2
 
-    integer, parameter::unit_r = 2 
+    integer, parameter::unit_r = 2
 
     rd1 = 0.0
     rd2 = 0.0
@@ -43,7 +35,7 @@
 
     inquire(unit_r, round=r_mode)
 
-    if(r_mode .ne. 'UP') error stop 1_4 
+    if(r_mode .ne. 'UP') error stop 1_4
 
     if(transfer(rd1, 0_8) .ne. 4608308547941528973_8) error stop 2_4
 
@@ -86,7 +78,7 @@
     if(transfer(rd2, 0_8) .ne. -4615063488913246836_8) error stop 9_4
 
     ! round in processor_defined mode
- 
+
     rewind(unit_r)
 
     read(unit_r, '(RP, f14.13, f15.13)', iostat=ios) rd1, rd2
@@ -109,7 +101,7 @@
 
     if(transfer(rd2, 0_8) .ne. -4615063488913246836_8) error stop 13_4
 
-    r_mode="down" 
+    r_mode="down"
 
     inquire(unit_r, round=r_mode)
 
@@ -117,4 +109,4 @@
 
     close(unit_r)
 
-  end program roundR8ReadEdit02 
+  end program roundR8ReadEdit02

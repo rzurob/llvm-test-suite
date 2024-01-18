@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar010kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar010 by Robert Ma)
 !*  DATE                       : 2007-07-10 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with polymorphic entities contains polymorphic components (Output)
@@ -80,7 +72,7 @@ program scalar010kl
    allocate(b1)
    allocate(basedata(4,2):: b1%bd) ! tcx: basedata(4,2)
    allocate(child(4,4) :: b2 ) ! tcx: (4)
-   
+
    select type(b2)
       type is (child(4,4)) ! tcx: (4)
          allocate(childdata(4,2,4,2) :: b2%bd, b2%cd) ! tcx: (4,2)
@@ -95,7 +87,7 @@ program scalar010kl
                g%i2 = (/789, 890/)
          end select
    end select
-  
+
    b1%bd%i1= (/ 567, 890 /)
 
 

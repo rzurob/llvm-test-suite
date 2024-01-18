@@ -1,22 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound04a
 !*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY SUBROUTINES TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY SUBROUTINES TESTED : Resolution for non-polymorphic objects
-!*                                 based on type incompatibility and number of arguments 
-!*                     
+!*                                 based on type incompatibility and number of arguments
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -39,28 +32,28 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base (k,l)
-        INTEGER, KIND :: k 
-        INTEGER, LEN :: l 
+        INTEGER, KIND :: k
+        INTEGER, LEN :: l
 
-        CONTAINS 
+        CONTAINS
          PROCEDURE :: sub1
          PROCEDURE, PASS(Arg1) :: sub2
          PROCEDURE, PASS(Arg2) :: sub3
          GENERIC :: SUB =>  sub1, sub2, sub3
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child1 (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
-      END TYPE Child1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
+      END TYPE Child1
 
       TYPE, EXTENDS(Base) :: Child2 (k2,l2)
-        INTEGER, KIND :: k2 
-        INTEGER, LEN :: l2 
-      END TYPE Child2 
+        INTEGER, KIND :: k2
+        INTEGER, LEN :: l2
+      END TYPE Child2
 
       TYPE, EXTENDS(Child1) :: NextGen1 (k13,l13)
         INTEGER, KIND :: k13
@@ -74,7 +67,7 @@
 
       CHARACTER(10) :: tag
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE sub1(Obj)
       CLASS(Base(4,*)) :: Obj
@@ -115,13 +108,13 @@
 !*
       PROGRAM Generic_TypeBound04a
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      TYPE(Base(4,5)) :: b1 
-      TYPE(Child1(4,5,4,10)) :: c1 
-      TYPE(Child2(4,5,4,10)) :: c2 
-      TYPE(NextGen1(4,10,4,2,4,2)) :: n1     
-      TYPE(NextGen2(4,10,4,2,4,2)) :: n2     
+      TYPE(Base(4,5)) :: b1
+      TYPE(Child1(4,5,4,10)) :: c1
+      TYPE(Child2(4,5,4,10)) :: c2
+      TYPE(NextGen1(4,10,4,2,4,2)) :: n1
+      TYPE(NextGen2(4,10,4,2,4,2)) :: n2
 
 !*  Only one passed object dummy argument : call to sub1
       CALL b1%SUB()

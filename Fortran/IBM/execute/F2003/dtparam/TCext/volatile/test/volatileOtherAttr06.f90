@@ -2,22 +2,14 @@
 ! ftcx_dtp -qnol /tstdev/F2003/volatile/test/volatileOtherAttr06.f
 ! opt variations: -ql
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 12/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : VOLATILE with OPTIONAL attribute 
-!*                                
+!*  PRIMARY FUNCTIONS TESTED   : VOLATILE with OPTIONAL attribute
 !*
-!*  DESCRIPTION                :  
-!*            functional test VOLATILE compatible with OPTIONAL attribute 
+!*  DESCRIPTION                :
+!*            functional test VOLATILE compatible with OPTIONAL attribute
 !* ===================================================================
 
     module m

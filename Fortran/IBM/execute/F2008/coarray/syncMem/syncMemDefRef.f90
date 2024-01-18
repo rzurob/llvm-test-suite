@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : syncMemDefRef
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-09-10
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF SYNC MEMORY
 !*  SECONDARY FUNCTIONS TESTED : simple test of definition preceding reference - P&Q split
@@ -20,7 +16,7 @@
 !*  Verify that the statement in image P defining image Q's variable in fact
 !*  precedes image Q's examination of it, once the handshake is done.
 !*  -- Identical to syncMemDefRefInterleaved, except that the code for P and Q
-!*     is split differently, using individual sync memory statements. 
+!*     is split differently, using individual sync memory statements.
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789

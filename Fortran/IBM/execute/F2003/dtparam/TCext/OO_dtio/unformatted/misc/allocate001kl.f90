@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : allocate001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from allocate001 by Robert Ma)
 !*  DATE                       : 2007-09-10 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: allocate statement with source= a function return
 !*  KEYWORD(S)                 :
@@ -51,7 +43,7 @@ contains
 
 end module
 
-program allocate001kl 
+program allocate001kl
    use m
 
    class(base(:)), allocatable :: b1 ! tcx: (:)

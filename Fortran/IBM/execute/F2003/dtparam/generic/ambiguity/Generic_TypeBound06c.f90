@@ -1,22 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound06c
 !*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY SUBROUTINES TESTED   : Generic Resolution - Derived-type parameters
-!*  SECONDARY SUBROUTINES TESTED : distinguish by name using NOPASS  
+!*  SECONDARY SUBROUTINES TESTED : distinguish by name using NOPASS
 !*                                 Resolution based on type incompatibility of the dummy arguments
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -39,30 +32,30 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k,l)
         INTEGER, KIND :: k
-        INTEGER, LEN :: l 
+        INTEGER, LEN :: l
 
-        CONTAINS 
-         PROCEDURE, PASS(this) :: sub1      
+        CONTAINS
+         PROCEDURE, PASS(this) :: sub1
          PROCEDURE, PASS(this) :: sub2
          GENERIC :: SUB =>  sub2, sub1
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child1 (k1)
-        INTEGER, KIND :: k1 
-      END TYPE Child1 
+        INTEGER, KIND :: k1
+      END TYPE Child1
 
       TYPE, EXTENDS(Base) :: Child2 (k2)
-        INTEGER, KIND :: k2 
-      END TYPE Child2 
+        INTEGER, KIND :: k2
+      END TYPE Child2
 
 
       CHARACTER(10) :: tag
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE sub1(this,Arg0,Arg1,Arg2,Arg3)
       CLASS(Base(4,*)) :: this
@@ -78,7 +71,7 @@
 
       SUBROUTINE sub2(this,Arg1,Arg0,Arg3,Arg2)
       CLASS(Base(4,*)) :: this
-      CLASS(Child1(4,*,4)) :: Arg0, Arg3 
+      CLASS(Child1(4,*,4)) :: Arg0, Arg3
       CLASS(Child2(4,*,4)) :: Arg1, Arg2
 
       IF (Arg0%k .NE. Arg3%k) STOP 12
@@ -92,7 +85,7 @@
 !*
       PROGRAM Generic_TypeBound06c
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       CLASS(Child1(4,10,4)), POINTER :: b41 , b42
       CLASS(Child2(4,10,4)), POINTER :: b81, b82

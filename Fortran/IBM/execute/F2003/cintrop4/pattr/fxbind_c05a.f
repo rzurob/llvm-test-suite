@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,27 +13,19 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c05a.f
-!* TEST CASE TITLE              : BIND(C) attribute/statement
-!*
-!* PROGRAMMER                   : Yubin Liao 
 !* DATE                         : Jan. 1, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute/statement 
+!* DESCRIPTION                  : Test: BINC(C) attribute/statement
 !*                                with different intrinsic data type,
 !*                                integer*1, integer*2, integer*4,
-!*                                integer*8, real*4, real*8, complex, 
+!*                                integer*8, real*4, real*8, complex,
 !*                                character(1). Using external
 !*                                subroutine,interface.Fortran calls C.
 !*                                with implict typing
@@ -51,7 +38,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 program fxbind_c05a
-   
+
 
    interface
        subroutine extsub_int(a, b, c, d) BIND(C)
@@ -68,19 +55,19 @@ program fxbind_c05a
 
        subroutine extsub_log(h) BIND(C)
            implicit logical*1 (h)
-          
+
        end subroutine extsub_log
 
        subroutine extsub_comp(l, m) BIND(C)
-           implicit complex*8  (l) 
-           implicit complex*16 (m) 
+           implicit complex*8  (l)
+           implicit complex*16 (m)
        end subroutine extsub_comp
 
        subroutine extsub_char(n) BIND(C)
            implicit character*1 (n)
        end subroutine extsub_char
 
-       
+
    end interface
 
    logical precision_R4, precision_R6, precision_R8
@@ -90,19 +77,19 @@ program fxbind_c05a
    implicit integer*2 (b)
    implicit integer*4 (c)
    implicit integer*8 (d)
- 
+
    implicit real*4   (e)
    implicit real*8   (f)
    implicit real*16  (g)
 
    implicit logical*1 (h)
-   
+
 
    implicit character*1 (n)
 
    implicit complex*8 (l)
    implicit complex*16 (m)
- 
+
    a1 = 5
    a2 = 8
    b1 = 15
@@ -111,7 +98,7 @@ program fxbind_c05a
    c2 = 14
    d1 = 17
    d2 = 20
- 
+
    e1 = 4.80
    e2 = 9.6
    f1 = 140.8
@@ -121,18 +108,18 @@ program fxbind_c05a
 
    h1 = .false.
    h2 = .true.
-   
+
 
    n1 = 'a'
    n2 = 'd'
-   
+
    l1 = (0.0, 0.0)
    l2 = (1.0, 1.0)
-   
+
    m1 = (0.0D0, 0.0D0)
    m2 = (1.0D0, 1.0D0)
 
- 
+
    call extsub_int(a1, b1, c1, d1)
       if(a1 .ne. a2)then
         error stop 10
@@ -171,10 +158,10 @@ program fxbind_c05a
       if(n1 .ne. n2)then
         error stop 50
       endif
-   
-   
+
+
    call extsub_comp(l1, m1)
-   
+
       if(.not. precision_x8(l1, l2))then
         error stop 61
       endif
@@ -183,4 +170,4 @@ program fxbind_c05a
         error stop 62
       endif
 
-end 
+end

@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : submodule19f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 6 December, 2012
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : submodule
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
@@ -24,9 +18,9 @@
 !*  based on OO_procptr/component1/functionReturn003.f
 !*
 !*  Define a module function that sets the target of a procedure pointer
-!*  
+!*
 !*  Secondary tests:
-!*  - module function can access module functions defined in other 
+!*  - module function can access module functions defined in other
 !*    submodules
 !*  - multiple submodules of a module each defining different procedures
 !*    declared in the interface:
@@ -36,11 +30,11 @@
 !*             /   |   \
 !*            m1   m2   m3
 !*  - set a pointer indirectly using the module function through use
-!*    association of m in module n to a pointer inside a derived type 
+!*    association of m in module n to a pointer inside a derived type
 !*  - verifies nested use association of a module with submodules
-!*  
+!*
 !*  Verify that the results match the values of the original test case
-!*  
+!*
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -53,7 +47,7 @@ module m
     type Base
         integer i
     end type
-   
+
     interface
         module function func1(i)
             integer, intent(in) :: i

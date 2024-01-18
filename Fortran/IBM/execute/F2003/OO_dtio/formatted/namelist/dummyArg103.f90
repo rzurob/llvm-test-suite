@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting for derived type object which is a dummy argument
@@ -111,14 +95,14 @@ program dummyArg103
    if ( b2%readBase(1) /= 0 ) error stop 3_4
    if ( b3%readBase(1) /= 0 ) error stop 4_4
    if ( b4%readBase(1) /= 0 ) error stop 5_4
-   
+
    select type (b1)
       type is (child)
          if ( ( b1%c /= 'abc' ) .or. (b1%i /= 1234 ) ) error stop 6_4
       class default
          error stop 7_4
    end select
-   
+
    if ( b2%c /= 'def' ) error stop 8_4
    if ( b3%c /= 'ghi' ) error stop 9_4
    if ( b4%c /= 'jkl' ) error stop 10_4

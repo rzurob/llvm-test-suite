@@ -1,68 +1,53 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 2009-12-17
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : defect 372839
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-module foomod 
+module foomod
 
 
-  type :: foo 
+  type :: foo
 
 
-     integer :: intval 
+     integer :: intval
 
 
-   contains 
-     procedure, pass(a) :: foosub1 
-     procedure, pass(a) :: foosub2 
-     generic, public    :: foosub => foosub1, foosub2 
-  end type foo 
+   contains
+     procedure, pass(a) :: foosub1
+     procedure, pass(a) :: foosub2
+     generic, public    :: foosub => foosub1, foosub2
+  end type foo
 
 
-contains 
+contains
 
 
-  subroutine foosub1(a, b, c, d) 
-    class(foo)  :: a 
-    real         :: b 
-    integer      :: c 
-    complex, optional :: d 
+  subroutine foosub1(a, b, c, d)
+    class(foo)  :: a
+    real         :: b
+    integer      :: c
+    complex, optional :: d
     print *,  'foosub1'
-    return 
-  end subroutine foosub1 
+    return
+  end subroutine foosub1
 
 
-  subroutine foosub2(a, c, d, e, f) 
-    class(foo)  :: a 
-    integer      :: c 
-    complex, optional :: d 
-    real, optional :: e, f 
+  subroutine foosub2(a, c, d, e, f)
+    class(foo)  :: a
+    integer      :: c
+    complex, optional :: d
+    real, optional :: e, f
     print *, 'foosub2'
-    return 
-  end subroutine foosub2 
+    return
+  end subroutine foosub2
 
-end module foomod 
+end module foomod
 
 use foomod
     type(foo) :: f1

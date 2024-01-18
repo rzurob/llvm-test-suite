@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxdmodprocstmt018.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,28 +12,21 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxdmodprocstmt018
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Sept. 22, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : generalization of module procedure
 !*                               stmts, by making the MODULE keyword
 !*                               optional. These statements are called
 !*                               procedure statements in F2003.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DESCRIPTION                : This test case makes sure that if a 
-!*                               procedure statement ( not a proc  
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : This test case makes sure that if a
+!*                               procedure statement ( not a proc
 !*                               declaration ) appears outside of an
 !*                               interface block, it is flagged.
 !*
@@ -53,7 +46,7 @@
       procedure s1
       procedure f1
       procedure s1, f1
-      
+
       module procedure s1
       module procedure f1
       module procedure s1, f1
@@ -68,4 +61,4 @@
       integer function f1()
          f1 = 1
       end function f1
-      
+

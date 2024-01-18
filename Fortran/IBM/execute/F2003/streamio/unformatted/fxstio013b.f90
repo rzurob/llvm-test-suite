@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: cp $TR_SRC/../formatted/check_array.inc .; cp $TR_SRC/../formatted/check_interface.inc .
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio013b.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,20 +12,13 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access Mode
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -33,14 +26,14 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  04/04/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  04/04/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
   include 'check_array.inc'
 
-  program fxstio013b 
+  program fxstio013b
 
      implicit none
      integer    i, j, k, l, ios
@@ -53,23 +46,23 @@
      complex*8 	x8_in(N,N), x8_out(N,N)
 
      include 'check_interface.inc'
-     
-!********************************************************** 
+
+!**********************************************************
 !        Initialization of arrays                         *
-!********************************************************** 
+!**********************************************************
 
      do i = 1, N
         do j = 1, N
            i4_in(i,j) = i+j
            r4_in(i,j) = SIN((i+j)*0.1)
            x8_in(i,j) = (SIN((i+j)*0.1), COS((i+j)*0.1))
-        enddo 
-     enddo 
+        enddo
+     enddo
 
 
-!********************************************************** 
+!**********************************************************
 !   Writing Asynchronously and and Reading Synchronously  *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FORM='UNFORMATTED', ACCESS='STREAM', &
    &     ASYNCH='YES', STATUS='REPLACE', IOSTAT=ios, ERR=90)
@@ -84,7 +77,7 @@
          WAIT(ID=idnum1(i))
          WAIT(ID=idnum2(i))
          WAIT(ID=idnum3(i))
-      enddo 
+      enddo
 
      CLOSE(1)
 
@@ -103,9 +96,9 @@
 
      CLOSE(1, STATUS='DELETE')
 
-!********************************************************** 
+!**********************************************************
 !   Writing Synchronously and and Reading Asynchronously  *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FORM='UNFORMATTED', ACCESS='STREAM', &
    &     ASYNCH='NO', STATUS='REPLACE', IOSTAT=ios, ERR=90)
@@ -131,7 +124,7 @@
          WAIT(ID=idnum1(i))
          WAIT(ID=idnum2(i))
          WAIT(ID=idnum3(i))
-      enddo 
+      enddo
 
      if ( .not. Array_Check (i4_in, i4_out)  ) error stop 30
      if ( .not. Array_Check (r4_in, r4_out)  ) error stop 31
@@ -142,11 +135,11 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 
    end program
 

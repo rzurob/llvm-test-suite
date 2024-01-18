@@ -1,25 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : explictArrAsArg.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 2010-12-01
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : - the actual arg of c_sizeof is explicit array
 !*                               whose lb and ub are dummy args or variable
- 
+
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -32,9 +22,9 @@
 
     integer(C_SIZE_T) function array1_size() bind(c)
          use, intrinsic :: iso_c_binding
-         array1_size = get_size(11,20) 
- 
-         contains 
+         array1_size = get_size(11,20)
+
+         contains
              integer(C_SIZE_T) function get_size(lb,ub)
                  use, intrinsic :: iso_c_binding
                  integer lb,ub
@@ -46,7 +36,7 @@
 
     integer(C_SIZE_T) function array2_size() bind(c)
          use, intrinsic :: iso_c_binding
-         integer lb 
+         integer lb
 
          lb = 11
 

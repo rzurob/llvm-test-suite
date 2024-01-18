@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefInqIEEE_SUPPORT_HALTING.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefInqIEEE_SUPPORT_HALTING.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 04, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,28 +19,27 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an IEEE inquiry function
-!* 
-!*  -  IEEE_SUPPORT_HALTING 
-!* 
+!*
+!*  -  IEEE_SUPPORT_HALTING
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM  InitExpDefInqIEEE_SUPPORT_HALTING 
-  USE IEEE_EXCEPTIONS 
+  PROGRAM  InitExpDefInqIEEE_SUPPORT_HALTING
+  USE IEEE_EXCEPTIONS
   IMPLICIT NONE
   INTEGER :: I, J, K
 
 
-  TYPE(IEEE_FLAG_TYPE), PARAMETER :: INVALID        = IEEE_INVALID 
-  TYPE(IEEE_FLAG_TYPE), PARAMETER :: OVERFLOW       = IEEE_OVERFLOW 
-  TYPE(IEEE_FLAG_TYPE), PARAMETER :: DIVIDE_BY_ZERO = IEEE_DIVIDE_BY_ZERO 
-  TYPE(IEEE_FLAG_TYPE), PARAMETER :: UNDERFLOW      = IEEE_UNDERFLOW  
-  TYPE(IEEE_FLAG_TYPE), PARAMETER :: INEXACT        = IEEE_INEXACT 
+  TYPE(IEEE_FLAG_TYPE), PARAMETER :: INVALID        = IEEE_INVALID
+  TYPE(IEEE_FLAG_TYPE), PARAMETER :: OVERFLOW       = IEEE_OVERFLOW
+  TYPE(IEEE_FLAG_TYPE), PARAMETER :: DIVIDE_BY_ZERO = IEEE_DIVIDE_BY_ZERO
+  TYPE(IEEE_FLAG_TYPE), PARAMETER :: UNDERFLOW      = IEEE_UNDERFLOW
+  TYPE(IEEE_FLAG_TYPE), PARAMETER :: INEXACT        = IEEE_INEXACT
 
 
   LOGICAL  :: T11= IEEE_SUPPORT_HALTING(INVALID)
@@ -79,4 +72,4 @@
   END
 
 
- 
+

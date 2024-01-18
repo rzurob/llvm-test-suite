@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f203.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -73,7 +70,7 @@ if (any (i1 .ne. i1_r)) error stop 10
 
 
 contains
-  
+
 subroutine sub1_int(arg)
     integer*4 :: arg(:)
 	value arg
@@ -82,7 +79,7 @@ subroutine sub1_int(arg)
 		do doCounter=1,SIZEOFA
 			if (.not. precision_r4(r1(doCounter),r1_r(doCounter))) error stop 11
 		end do
-	arg = 200	
+	arg = 200
 end subroutine
 
 subroutine sub1_r(arg)
@@ -90,7 +87,7 @@ subroutine sub1_r(arg)
 	value arg
 	do doCounter=1,SIZEOFA
 		if (.not. precision_r4(arg(doCounter),r1(doCounter))) error stop 111
-	end do	
+	end do
 	call sub1_com(com1)
 	do doCounter=1,SIZEOFA
 		if (.not. precision_x8(com1(doCounter),com1_r(doCounter))) error stop 12
@@ -103,19 +100,19 @@ subroutine sub1_com(arg)
 	value arg
 	do doCounter=1,SIZEOFA
 		if (.not. precision_x8(arg(doCounter),com1(doCounter))) error stop 112
-	end do	
+	end do
 	call sub1_char(c1)
 		if (any (c1 .ne. c1_r)) error stop 13
 	arg=(5*atan(1.0),7*atan(1.0))
-end subroutine	
+end subroutine
 
 subroutine sub1_char(arg)
     character(SIZEOFA) :: arg(:)
 	value arg
-	if (any (arg .ne. c1)) error stop 113	
+	if (any (arg .ne. c1)) error stop 113
 	call sub1_lg(l1)
 		if (any (l1 .NEQV. l1_r)) error stop 14
-	arg = "abcdefghij"	
+	arg = "abcdefghij"
 end subroutine
 
 subroutine sub1_lg(arg)
@@ -123,26 +120,26 @@ subroutine sub1_lg(arg)
 	value arg
 	if (any (arg .NEQV. l1)) error stop 114
 	call sub1_dvt(dvt1)
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (dvt1(doCounter)%i1 		.ne. 	dvt1_r(doCounter)%i1) 			error stop 1501
 		if (.not. precision_r4 (dvt1(doCounter)%r1,dvt1_r(doCounter)%r1)) 	error stop 1502
-		if (dvt1(doCounter)%l1 		.NEQV. 	dvt1_r(doCounter)%l1) 			error stop 1503	
+		if (dvt1(doCounter)%l1 		.NEQV. 	dvt1_r(doCounter)%l1) 			error stop 1503
 		if (.not. precision_x8 (dvt1(doCounter)%c1,dvt1_r(doCounter)%c1)) 	error stop 1504
 		if (dvt1(doCounter)%char1 	.ne. 	dvt1_r(doCounter)%char1) 		error stop 1505
-	end do		
+	end do
 	arg = .false.
-end subroutine	
+end subroutine
 
 subroutine sub1_dvt(arg)
     type(t1) :: arg(:)
 	value arg
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (arg(doCounter)%i1 		.ne. 	dvt1(doCounter)%i1) 			error stop 11501
 		if (.not. precision_r4 (arg(doCounter)%r1,dvt1(doCounter)%r1)) 	error stop 11502
-		if (arg(doCounter)%l1 		.NEQV. 	dvt1(doCounter)%l1) 			error stop 11503	
+		if (arg(doCounter)%l1 		.NEQV. 	dvt1(doCounter)%l1) 			error stop 11503
 		if (.not. precision_x8 (arg(doCounter)%c1,dvt1(doCounter)%c1)) 	error stop 11504
 		if (arg(doCounter)%char1 	.ne. 	dvt1(doCounter)%char1) 		error stop 11505
-	end do		
+	end do
 	arg	= t1(.false.,400,"6pq94jv382",4*atan(1.0),(3*atan(1.0),7*atan(1.0)))
 end subroutine
 

@@ -1,23 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrUnpackChar.f 
+!*  TEST CASE NAME             : dataPtrUnpackChar.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!* - data-pointer of type character(*), dummy arg; 
+!* - data-pointer of type character(*), dummy arg;
 !* - data-target of type character(3)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -32,8 +26,8 @@ program main
     if ( .not. associated(p)) stop 21
     if ( lbound(p,1) /= 2 ) stop 23
     if ( ubound(p,1) /= 4 ) stop 25
-   
-    print *, (/ (p(i), i=2,4) /) 
+
+    print *, (/ (p(i), i=2,4) /)
 
     p = (/ 'IBM', 'XLF', 'XLC' /)
 
@@ -44,9 +38,9 @@ program main
  	   character(*), target, allocatable :: a(:)
 	   allocate(a(10), source =(/ (repeat(char(i),3), i=65,74) /) )
 
-	   if ( .not. allocated(a)) stop 1 
+	   if ( .not. allocated(a)) stop 1
 
 	   p(2:4) => a(::3)
 
 	end subroutine
-end 
+end

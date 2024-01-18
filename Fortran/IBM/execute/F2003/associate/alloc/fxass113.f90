@@ -1,10 +1,4 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass113.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on derived types and allocate
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -70,23 +58,23 @@
       program fxass113
       implicit none
 
-      type dtest   
+      type dtest
 
-      integer(1),allocatable ::i1 
-      integer(2),allocatable ::i2 
-      integer(4),allocatable ::i4 
-      integer(8),allocatable ::i8 
+      integer(1),allocatable ::i1
+      integer(2),allocatable ::i2
+      integer(4),allocatable ::i4
+      integer(8),allocatable ::i8
 
       end type dtest
 
-      type d_test   
+      type d_test
 
-      real(4),allocatable ::r4 
-      real(8),allocatable ::r8 
-      real(16),allocatable ::r16 
+      real(4),allocatable ::r4
+      real(8),allocatable ::r8
+      real(16),allocatable ::r16
 
       end type d_test
- 
+
       type(dtest) dt
       type(d_test) d_t
 
@@ -131,7 +119,7 @@
       end associate
 
       if (.not. precision_r4(10.12,d_t%r4)) error stop 13
-      associate ( arg5 => d_t%r4 + 1.0 ) 
+      associate ( arg5 => d_t%r4 + 1.0 )
       if (.not. precision_r4((d_t%r4 + 1.0),arg5)) error stop 14
       end associate
 

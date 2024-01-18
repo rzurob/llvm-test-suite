@@ -1,19 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : C515valueAttr001d - VALUE Attribute
 !*                               (CHARACTER Length > 1)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April 25, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE Attribute
 !*  SECONDARY FUNCTIONS TESTED : Specified for non-Dummy Arguments
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 : VALUE Attribute

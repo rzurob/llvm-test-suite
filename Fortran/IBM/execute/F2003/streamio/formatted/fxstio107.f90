@@ -1,31 +1,24 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fxstio107.dat 
-! %COMPOPTS: 
+! %PRECMD: rm -f fxstio107.dat
+! %COMPOPTS:
 ! %GROUP:  fxstio107.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,14 +27,14 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/13/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/13/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
   include 'check_array.inc'
 
-  program fxstio107 
+  program fxstio107
 
      implicit none
      integer    ios
@@ -55,21 +48,21 @@
      complex*8, allocatable  ::  x8_in, x8_out
      complex*16, allocatable :: x16_in(:), x16_out(:)
      complex*32, allocatable :: x32_in, x32_out
-     logical*2, allocatable  ::	l2_in, l2_out  
+     logical*2, allocatable  ::	l2_in, l2_out
      logical*4, allocatable  :: l4_in, l4_out
      logical*8, allocatable  :: l8_in(:,:), l8_out(:,:)
-     character, allocatable  :: ch1_in, ch1_out  
-     character*15, allocatable :: ch15_in(:), ch15_out(:)  
+     character, allocatable  :: ch1_in, ch1_out
+     character*15, allocatable :: ch15_in(:), ch15_out(:)
      byte, allocatable       :: b_in, b_out
 
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
-	
+
      include 'check_interface.inc'
 
-!********************************************************** 
+!**********************************************************
 !        Allocate Objects                                 *
-!********************************************************** 
+!**********************************************************
 
      allocate(i2_in, i2_out)
      allocate(i4_in, i4_out)
@@ -87,9 +80,9 @@
      allocate(ch15_in(N), ch15_out(N))
      allocate(b_in, b_out)
 
-!********************************************************** 
+!**********************************************************
 !        Initialization of variables                      *
-!********************************************************** 
+!**********************************************************
 
      i2_in = 1234
      i4_in = -20000000
@@ -108,15 +101,15 @@
      b_in = b'01010111'
 
 
-!********************************************************** 
+!**********************************************************
 !        Writing and Reading the file                     *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio107.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='NEW', IOSTAT=ios, ERR=90)
 
      WRITE(1, FMT='(I5, I10, 10I20)', IOSTAT=ios, ERR=91) i2_in, i4_in, i8_in
-     WRITE(1, FMT='(F9.6,100D25.17,Q40.32)', IOSTAT=ios, ERR=91) & 
+     WRITE(1, FMT='(F9.6,100D25.17,Q40.32)', IOSTAT=ios, ERR=91) &
     &      r4_in, r8_in, r16_in
      WRITE(1, FMT='(2E15.7,20D25.17,2Q40.32)', IOSTAT=ios, ERR=91) &
     &      x8_in, x16_in, x32_in
@@ -137,9 +130,9 @@
 
      CLOSE(1, STATUS='DELETE')
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( i2_in .ne. i2_out ) error stop 10
      if ( i4_in .ne. i4_out ) error stop 11
@@ -165,12 +158,12 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 93   print *, "Error while rewinding the file: IOSTAT = ", ios
-     error stop 93 
+     error stop 93
 
    end program

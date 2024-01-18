@@ -1,26 +1,18 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocPtr02d
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : March, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : 26305: C-interop Allocatable/Pointer
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Diagnose the following constraint:
-!*  
-!*  C516: The ALLOCATABLE or POINTER attribute shall not be specified 
+!*
+!*  C516: The ALLOCATABLE or POINTER attribute shall not be specified
 !*  for a default-initialized dummy argument of a procedure that has a
 !*  proc-language-binding-spec
 !*
@@ -64,6 +56,6 @@
         type(base2), pointer :: a3(:)
         type(base2), allocatable :: a4
         type(base1), pointer :: a5(:)
-        
+
       end subroutine
 

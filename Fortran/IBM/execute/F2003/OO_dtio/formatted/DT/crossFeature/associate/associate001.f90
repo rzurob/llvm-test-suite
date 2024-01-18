@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Associate Constructor: (Non-) Polymorphic Scalar Entities
@@ -87,7 +76,7 @@ use m
       write ( 1, "(DT'_b3'(8,3))", iostat = stat, iomsg = msg ) g
       if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 3_4
    end associate
-   
+
    associate ( g => c1 )
       write ( 1, "(DT'_c1'(8,3,9,4))", iostat = stat, iomsg = msg ) g
       if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 4_4
@@ -101,7 +90,7 @@ use m
    associate ( g => c3 )
       write ( 1, "(DT'_c3'(9,3,9,4))", iostat = stat, iomsg = msg ) g
       if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 6_4
-   end associate  
+   end associate
 
 end program
 

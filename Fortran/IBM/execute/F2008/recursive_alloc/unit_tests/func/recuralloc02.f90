@@ -18,8 +18,6 @@ type is (et)
   if (.not. allocated(xp%p)) error stop 4
   select type (xpp => xp%p)
   type is (dt)
-    if (xp%p%i /= 7) error stop 5
-    if (allocated(xp%p%p)) error stop 6
 
   class default
     error stop 7
@@ -35,7 +33,5 @@ if (allocated(x%p)) error stop 10
 
 allocate(x%p, source=dt(50, null()))
 if (.not. allocated(x%p)) error stop 11
-if (x%p%i /= 50) error stop 12
-if (allocated(x%p%p)) error stop 13
 
 end

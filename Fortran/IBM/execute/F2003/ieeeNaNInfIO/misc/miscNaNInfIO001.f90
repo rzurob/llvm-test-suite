@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : miscNaNInfIO001.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : July 4, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -33,17 +27,17 @@
       implicit none
 
       integer, parameter :: in = 11, out = 12
-      
+
       real(4)    :: rl1, rl2, rl3, rl4, rl5, rl6
       integer(4) :: rl1e, rl2e, rl3e, rl4e, rl5e, rl6e
 
       equivalence(rl1, rl1e); equivalence(rl2, rl2e)
       equivalence(rl3, rl3e); equivalence(rl4, rl4e)
       equivalence(rl5, rl5e); equivalence(rl6, rl6e)
-      
+
       open(in,  file='miscNaNInfIO001.dat')
       open(out, file='miscNaNInfIO001.out')
-      
+
       read(in, '(2P, f5.2, f8.2, f11.2, dc, f13.2, f7.2, f5.5)')      &
      &     rl1, rl2, rl3, rl4, rl5, rl6
 
@@ -85,8 +79,8 @@
      &     error stop 4_4
 
       write(out, '(1P, 6F10.4)') rl1, rl2, rl3, rl4, rl5, rl6
-      
+
       close(in)
       close(out)
-      
+
       end

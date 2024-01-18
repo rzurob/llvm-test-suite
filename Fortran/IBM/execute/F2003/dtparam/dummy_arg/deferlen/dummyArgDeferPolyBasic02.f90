@@ -1,34 +1,26 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyBasic02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyBasic02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 17 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. parent type has unlimited polymorphic component
 !* 2. extended type has polymorphic pointer component
-!* 3. actual argument is polymorphic pointer array 
-!* 4. pass actual argument through several procedure call, and modify component in procedure, verify actual argument and dummy argument result. 
+!* 3. actual argument is polymorphic pointer array
+!* 4. pass actual argument through several procedure call, and modify component in procedure, verify actual argument and dummy argument result.
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type base(l1)
       integer,len  :: l1
-      class(*),allocatable :: basecomp 
+      class(*),allocatable :: basecomp
   end type
 
   type,extends(base) :: child(l2)
@@ -40,15 +32,15 @@ module m
 
     subroutine sub1(arg)
 
-      class(base(:)),pointer,intent(out) :: arg(:) 
+      class(base(:)),pointer,intent(out) :: arg(:)
 
       if(associated(arg))                  error stop 10_4
-      
+
       allocate(child(3,4) :: arg(2:3))
 
       allocate(arg(2)%basecomp,source="xlf")
       allocate(arg(3)%basecomp,source=10)
-      
+
       select type(arg)
          type is(child(*,*))
              arg(2)%childcomp(5:)=>arg
@@ -63,7 +55,7 @@ module m
     subroutine sub2(arg)
 
       class(base(:)),pointer,intent(inout) :: arg(:)
-     
+
       select type(arg)
           type is(child(*,*))
              if(lbound(arg,1) /= 2)                  error stop 11_4
@@ -74,7 +66,7 @@ module m
                 class default
                    error stop 101_4
              end select
- 
+
              select type(x=>arg(3)%basecomp)
                 type is(integer)
                    if(x /= 10)                       error stop 14_4
@@ -135,17 +127,17 @@ module m
 
            call sub3(arg)
 
-      end select 
+      end select
 
     end subroutine
 
     subroutine sub3(arg)
 
       type(child(*,*)),target,intent(inout) :: arg(100:)
-      
+
       if(lbound(arg,1) /= 100)                     error stop 33_4
       if(ubound(arg,1) /= 101)                     error stop 34_4
-      
+
       if(allocated(arg(100)%basecomp))  deallocate(arg(100)%basecomp)
       if(allocated(arg(101)%basecomp))  deallocate(arg(101)%basecomp)
 
@@ -154,7 +146,7 @@ module m
 
       arg(100)%childcomp(2:3)=>arg
       arg(101)%childcomp(-3:-2)=>arg
-           
+
     end subroutine
 
 end module
@@ -236,6 +228,6 @@ program dummyArgDeferPolyBasic02
                    error stop 116_4
             end select
       class default
-              error stop 117_4  
+              error stop 117_4
   end select
 end program

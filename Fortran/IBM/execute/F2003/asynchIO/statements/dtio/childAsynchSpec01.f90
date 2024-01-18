@@ -1,14 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : childAsynchSpec01 - Derived-Type I/O
 !*                               (DTIO) Interactions with Asynchronous I/O
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April 12, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Formatted Derived-Type I/O (DTIO) Routines
 !*                               Defined for a Derived-Type
@@ -16,7 +11,6 @@
 !*                               Statements; ID= Specifier a Child I/O
 !*                               Statement
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : READ(), WRITE(), ID= Specifier, ASYNCHRONOUS=
@@ -31,7 +25,6 @@
 !*  R910 read-stmt        is  READ ( io-control-spec-list )[ input-item-list]
 !*  R911 write-stmt       is  WRITE ( io-control-spec-list )[ output-item-list]
 !*
-!*
 !*  9.5.1 Control information list
 !*
 !*  R913 io-control-spec  is  [ UNIT = ] io-unit
@@ -42,19 +35,16 @@
 !*  ...
 !*                        or  ID = scalar-int-variable
 !*
-!*
 !*  9.5.1.4 ASYNCHRONOUS= specifier in a data transfer statement
 !*
 !*  The ASYNCHRONOUS= specifier determines whether this input/output
 !*  statement is synchronous or asynchronous.
-!*
 !*
 !*  9.5.1.8 ID= specifier in a data transfer statement
 !*
 !*  Successful execution of an asynchronous data transfer statement
 !*  containing an ID= specifier causes the variable specified in the
 !*  ID= specifier to become defined with a processor-dependent value.
-!*
 !*
 !*  9.5.3.7.2 User-defined derived-type input/output procedures
 !*

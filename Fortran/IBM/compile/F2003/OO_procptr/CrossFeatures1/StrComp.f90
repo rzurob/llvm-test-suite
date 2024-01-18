@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp StrComp.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : StrComp.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : StrComp.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 17, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Structure component 
-!*  () 
+!*
+!*  Structure component
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -64,23 +58,23 @@
       Fun = Arg
     END FUNCTION
 
- 
+
   END MODULE
 
 
-  PROGRAM StrComp  
+  PROGRAM StrComp
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE(DT)   :: D(512)
-  
+
   D%BComp%ProcPtr => Fun
-  
+
   D(1::2)%BComp%ProcPtr => Fun
 
   D(2:2)%BComp%ProcPtr => Fun
 
-  D(3:2)%BComp%ProcPtr => Fun 
+  D(3:2)%BComp%ProcPtr => Fun
 
   END
 

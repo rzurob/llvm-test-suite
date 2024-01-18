@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemMERGE.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemMERGE.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  MERGE 
+!*
+!*  -  MERGE
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,15 +49,15 @@
     COMPLEX(K3)               :: Z4(128)=(/((1.,0.),(0.,1.), I=1,128,2)/)
     COMPLEX(K4)               :: Z8(128)=(/((1.,0.),(0.,1.), I=1,128,2)/)
     COMPLEX(K5)               :: Z6(128)=(/((1.,0.),(0.,1.), I=1,128,2)/)
-    CHARACTER(kind=K1,len=N1) :: C1(128)=(/(ACHAR(1), ACHAR(0), I=1,128,2)/) 
-    CHARACTER(kind=K1,len=N1) :: C2(128)=(/(ACHAR(0), ACHAR(1), I=1,128,2)/) 
+    CHARACTER(kind=K1,len=N1) :: C1(128)=(/(ACHAR(1), ACHAR(0), I=1,128,2)/)
+    CHARACTER(kind=K1,len=N1) :: C2(128)=(/(ACHAR(0), ACHAR(1), I=1,128,2)/)
   END TYPE
 
   INTEGER, PARAMETER  :: II(128)=(/(0,1, I=1,128,2)/)
   REAL,    PARAMETER  :: RR(128)=(/(0.,1., I=1,128,2)/)
   LOGICAL, PARAMETER  :: LL(128)=(/(.FALSE.,.TRUE., I=1,128,2)/)
   COMPLEX, PARAMETER  :: ZZ(128)=(/((0.,1.),(1.,0.), I=1,128,2)/)
- 
+
   TYPE(DT0(1,2,4,8,16,1)), PARAMETER :: T=DT0(1,2,4,8,16,1)()
 
   END MODULE
@@ -72,7 +65,7 @@
 
   PROGRAM  InitExpDefElemMERGE
   USE M, DT0=>DT0, I=>II, R=>RR, L=>LL, Z=>ZZ, T=>T
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER ::  J
 
   TYPE :: DT(K6,N2)    ! (4,20)
@@ -135,25 +128,25 @@
   IF ( KIND(T1%Z8)   .NE.  8 ) STOP 42
   IF ( KIND(T1%Z6)   .NE.  16) STOP 43
 
-  IF ( ANY (T1%I1    .NE. 1 )) STOP 51 
-  IF ( ANY (T1%I2    .NE. 1 )) STOP 52 
-  IF ( ANY (T1%I4    .NE. 1 )) STOP 53 
-  IF ( ANY (T1%I8    .NE. 1 )) STOP 54 
+  IF ( ANY (T1%I1    .NE. 1 )) STOP 51
+  IF ( ANY (T1%I2    .NE. 1 )) STOP 52
+  IF ( ANY (T1%I4    .NE. 1 )) STOP 53
+  IF ( ANY (T1%I8    .NE. 1 )) STOP 54
 
-  IF ( ANY (T1%R4    .NE. 1 )) STOP 61 
-  IF ( ANY (T1%R8    .NE. 1 )) STOP 62 
-  IF ( ANY (T1%R6    .NE. 1 )) STOP 63 
+  IF ( ANY (T1%R4    .NE. 1 )) STOP 61
+  IF ( ANY (T1%R8    .NE. 1 )) STOP 62
+  IF ( ANY (T1%R6    .NE. 1 )) STOP 63
 
-  IF ( ANY (T1%L1    .NEQV. .TRUE. )) STOP 71 
-  IF ( ANY (T1%L2    .NEQV. .TRUE. )) STOP 72 
-  IF ( ANY (T1%L4    .NEQV. .TRUE. )) STOP 73 
-  IF ( ANY (T1%L8    .NEQV. .TRUE. )) STOP 74 
+  IF ( ANY (T1%L1    .NEQV. .TRUE. )) STOP 71
+  IF ( ANY (T1%L2    .NEQV. .TRUE. )) STOP 72
+  IF ( ANY (T1%L4    .NEQV. .TRUE. )) STOP 73
+  IF ( ANY (T1%L8    .NEQV. .TRUE. )) STOP 74
 
-  IF ( ANY (T1%Z4    .NE. (1.,0.) )) STOP 81 
-  IF ( ANY (T1%Z8    .NE. (1.,0.) )) STOP 82 
-  IF ( ANY (T1%Z6    .NE. (1.,0.) )) STOP 83 
+  IF ( ANY (T1%Z4    .NE. (1.,0.) )) STOP 81
+  IF ( ANY (T1%Z8    .NE. (1.,0.) )) STOP 82
+  IF ( ANY (T1%Z6    .NE. (1.,0.) )) STOP 83
 
-  IF ( ANY (T1%C     .NE. ACHAR(1) )) STOP 99 
+  IF ( ANY (T1%C     .NE. ACHAR(1) )) STOP 99
 
   END
 

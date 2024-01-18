@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : submodule20f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 6 December, 2012
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : submodule
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
@@ -27,9 +21,9 @@
 !*   submodule when the USE keyword is specified in:
 !*   - the host module scope
 !*   - a module subroutine definition
-!*  
-!*  Verify that the results match the values of the original test case.  
-!*  
+!*
+!*  Verify that the results match the values of the original test case.
+!*
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -48,7 +42,7 @@ end module
 module m2
 use m1
 
-interface 
+interface
 
 
     real module function func1()

@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass030.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass030.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -54,7 +42,7 @@
 !*
 !*  CONDITIONS TESTED          : Listed below.
 !*
-!*  DESCRIPTION                : Test: ASSOCIATE with expressions 
+!*  DESCRIPTION                : Test: ASSOCIATE with expressions
 !*                                     with kind(1,2,4,8,16) integer
 !*                                     logical, complex, real data types
 !*
@@ -117,9 +105,9 @@
                   error stop 10
                   endif
            end associate
-      
+
            associate ( arg => i2 )
-                  arg = arg*2 
+                  arg = arg*2
                   if(arg .ne. i2)then
                   error stop 11
                   endif
@@ -141,7 +129,7 @@
 !-----------   ASSOCIATE with REAL expressions ----------------
 
            associate ( arg => r4 )
-                  arg = arg*2 
+                  arg = arg*2
                   if (.not. precision_r4(arg,r4)) then
                   error stop 14
                   endif

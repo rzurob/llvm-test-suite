@@ -1,49 +1,41 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeCharComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeCharComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 9 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE,FSOURCE ARE SCALAR DERIVED TYPE
-!* 4. DERIVED TYPE HAS DIFFERENT SCALAR CHARACTER COMPONENT 
+!* 4. DERIVED TYPE HAS DIFFERENT SCALAR CHARACTER COMPONENT
 !* 5. USE INTRINSIC ASSIGNMENT
 !* 5. DEFECT 355924 355926 355942
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type A(l)
      integer(8),len  :: l=4
-     
+
      character(2*l) :: c1="xlftest"
      character(:),allocatable :: c2
      character(:),pointer :: c3=>null()
      character(2*l),pointer :: c4=>null()
 
   end type
-   
+
   contains
      function getDT1(dt)
         class(A(*)),intent(in) :: dt
         type(A(:)),allocatable :: getDT1
-        print *,dt%l 
+        print *,dt%l
         getDT1=merge(dt,dt,.true.)
         print *,getDT1%l
      end function
@@ -68,7 +60,7 @@ program mergeCharComp01
    if(associated(a2%c3))                              error stop 14_4
    if(associated(a2%c4))                              error stop 15_4
    if(a2%c4%len /= 8)                                 error stop 16_4
- 
+
    a1%c1(4:6)= a1%c1(1:3)
    a1%c2 = "Hello IBM"
    a1%c3=>a1%c2(1:5)
@@ -85,7 +77,7 @@ program mergeCharComp01
    if(a2%c3 /= "Hello")                               error stop 23_4
    if(.not. associated(a2%c4))                        error stop 24_4
    if(a2%c4 /= "Train")                               error stop 25_4
-   if(a2%c4%len /= 8)                                 error stop 26_4   
+   if(a2%c4%len /= 8)                                 error stop 26_4
 
 
    allocate(a3,source=merge(a1,a1,(a1%l .eq. a1%l)) )
@@ -100,7 +92,7 @@ program mergeCharComp01
    if(.not. associated(a3%c4))                        error stop 34_4
    if(a3%c4 /= "Train")                               error stop 35_4
    if(a3%c4%len /= 8)                                 error stop 36_4
-    
+
    a2=getDT1(a1)
    if(a2%l /= 4)                                      error stop 37_4
    if(a2%c1%len /= 8)                                 error stop 38_4
@@ -112,5 +104,5 @@ program mergeCharComp01
    if(.not. associated(a2%c4))                        error stop 44_4
    if(a2%c4 /= "Train")                               error stop 45_4
    if(a2%c4%len /= 8)                                 error stop 46_4
-             
+
 end program

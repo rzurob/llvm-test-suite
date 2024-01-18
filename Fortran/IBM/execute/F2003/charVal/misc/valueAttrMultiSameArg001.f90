@@ -1,20 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : valueAttrMultiSameArg001 - VALUE Attribute
 !*                               (CHARACTER Length > 1)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April 25, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Multiple Dummy Arguments of Type Character
 !*                               of Length > 1 with the VALUE Attribute
 !*  SECONDARY FUNCTIONS TESTED : The Actual Arguments are the same Variable
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : VALUE Attribute
@@ -39,12 +33,10 @@
 !*              parameter values shall be omitted or specified by
 !*              initialization expressions.
 !*
-!*
 !*  5.1.2.15 VALUE attribute
 !*
 !*  The VALUE attribute specifies a type of argument association (12.4.1.2)
 !*  for a dummy argument.
-!*
 !*
 !*  5.2.14 VALUE statement
 !*
@@ -52,7 +44,6 @@
 !*
 !*  The VALUE statement specifies the VALUE attribute (5.1.2.15) for a list
 !*  of dummy arguments.
-!*
 !*
 !*  12.4.1.2 Actual arguments associated with dummy data objects
 !*

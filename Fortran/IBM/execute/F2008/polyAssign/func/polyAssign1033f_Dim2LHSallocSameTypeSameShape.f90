@@ -1,23 +1,16 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/func/polyAssign1033f_Dim2LHSallocSameTypeSameShape.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 07 August 2015
-!* ORIGIN                       : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                 
-!*                              : Test the situations that all arrays on the LHS and RHS are allocated, assign with the same type and the same shape, but different bounds, i.e. same rank and extent but different bounds. 
+!* DESCRIPTION
+!*                              : Test the situations that all arrays on the LHS and RHS are allocated, assign with the same type and the same shape, but different bounds, i.e. same rank and extent but different bounds.
 !*                              :    -In the above situation LHS should have element by element copy from RHS, but the bounds should not be changed.
 !*                              : We add arrays with rank=2, LHS is allocated, RHS is allocated.
 !*                              : Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.
@@ -30,7 +23,7 @@
 !* ===================================================================
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-   
+
 module m
    type base
       integer :: i1
@@ -77,7 +70,7 @@ Program polyAssign1033f
     if (b2(9)%i1 /= 2) error stop 23
     if (b2(10)%i1 /= 2) error stop 24
 
-    b1 = b2   !no deallocation, and not reset the lbound for b1. 
+    b1 = b2   !no deallocation, and not reset the lbound for b1.
     !print *, 'Should have no deallocation, and should not reset the lbound for b1.'
     if (lbound(b1,1) /= 2 ) error stop 101
     if (ubound(b1,1) /= 11) error stop 102

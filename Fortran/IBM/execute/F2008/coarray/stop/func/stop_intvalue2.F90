@@ -1,24 +1,13 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/coarray/stop/func/stop_intvalue2.F
 !*  TYPE                       : Functional test
 !*  FEATURE                    : #351605.31 CAF - STOP statement
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 19 Oct 2010
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  DRIVER STANZA              : xlf  _r
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               :
 !*
 !*  DESCRIPTION                : Test that on sequential (non-CAF) mode,
@@ -30,7 +19,7 @@
 
 program stop_values
 
-  print *, " Error Code Value set to: ", TC_STOP_VALUE 
+  print *, " Error Code Value set to: ", TC_STOP_VALUE
   stop TC_STOP_VALUE
 
   print *, " FAILURE if this message output!"

@@ -1,27 +1,19 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/func/polyAssign1042f_variousAttributes.f 
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 05 August 2015
-!*  ORIGIN                      : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : LHS is an unlimited polymorphic scalar, RHS is an object of a derived type which is also an element of an array. 
-!*                              : Test LHS of intrinsic assignment with attributes of unlimited polymorphic, target, pointer and allocatable. 
+!* DESCRIPTION                  : LHS is an unlimited polymorphic scalar, RHS is an object of a derived type which is also an element of an array.
+!*                              : Test LHS of intrinsic assignment with attributes of unlimited polymorphic, target, pointer and allocatable.
 !*                              : LHS variable is unlimited polymorphic entity, RHS is an object of a derived type.
 !*                              : Define array whose elements are allocatable unlimited type
 !*                              : Re-assign array element with other defined type
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY

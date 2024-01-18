@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C813Param.f 
+! %POSTCMD: tcomp C813Param.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C813Param
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 3, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C813 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C813
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -44,9 +38,9 @@
 
   PROGRAM C813Param
   IMPLICIT NONE
- 
-  CHARACTER(LEN=3), PARAMETER :: ArrChar(4) = "321" 
- 
+
+  CHARACTER(LEN=3), PARAMETER :: ArrChar(4) = "321"
+
   SELECT TYPE (  As => ArrChar )
     TYPE IS (INTEGER(2))
       STOP 50
@@ -54,7 +48,7 @@
       STOP 30
     TYPE IS (CHARACTER(*))
       STOP 20
-  END SELECT 
+  END SELECT
   STOP 40
 
   END

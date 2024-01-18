@@ -1,6 +1,5 @@
 !.... A non_intrinsic module with a module procedure that uses an intrinsic module.
 
-
       module constants
 
       ! IEEE Single: real(4)
@@ -14,7 +13,7 @@
         contains
            subroutine sub2()
               use ieee_arithmetic
-             
+
               if (ieee_support_datatype(PINF_4) .AND. &
                  ieee_support_datatype(NINF_4)) then
                  if (ieee_is_finite(PINF_4) .OR.      &
@@ -26,11 +25,9 @@
                  if (ieee_is_finite(PHD_4) .neqv. .true.) stop 23
                  if (ieee_is_finite(PTD_4) .neqv. .true.) stop 24
               endif
-               
-        
+
            end subroutine
       end module
-
 
 !... A non_intrinsic module that uses intrinsic/non_intrinsic modules
       module my_mod
@@ -58,9 +55,8 @@
             do k = 1, 5
                if (flag_values(k) .neqv. .false. ) stop 10
             enddo
-           
 
-            call sub2()      ! Call a non_intrinsic module procedure 
+            call sub2()      ! Call a non_intrinsic module procedure
 
             call ieee_get_status(status_value)
             call ieee_set_rounding_mode(rt_nearest)
@@ -71,12 +67,11 @@
             call ieee_set_status(status_value)
 
             call set_fpscr_flags(flags(1))
-            call clr_fpscr_flags(flags(5)) 
+            call clr_fpscr_flags(flags(5))
             if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
             if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 18
 
          end subroutine sub1
 
       end module my_mod
-
 

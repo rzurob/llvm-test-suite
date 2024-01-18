@@ -1,28 +1,13 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 09/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : allocatable enhancement
 !                               Use the dummy arg as the expr for the intrinsic
 !                               assignment; use explicit-shape array for the
 !                               dummy-arg and test bounds after assignment.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -61,7 +46,7 @@ use m
             error stop 2_4
 
     k = 1
-    
+
     do j = -1, 3
         do i = 0, 9
             if (.not. precision_r4(k*1.0, r1(i,j))) error stop 3_4
@@ -79,7 +64,7 @@ use m
 
 
     k = 1
-    
+
     do j = 0, 9
         do i = 1, 5
             if (.not. precision_r4(k*1.0, r1(i,j))) error stop 6_4
@@ -96,7 +81,7 @@ use m
 
 
     k = 100
-    
+
     do j = 0, 9
         do i = 1, 5
             if (.not. precision_r4(k*1.0, r1(i,j))) error stop 26_4

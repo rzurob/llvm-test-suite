@@ -1,22 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : submodule08f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : December 20, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                               
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  DRIVER STANZA              : xlf2008
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
@@ -25,8 +18,8 @@
 !*
 !*  DESCRIPTION                :
 !*  based on F2003/dtparam/allocate/allocBaseVariable03.f
-!*  
-!*  Generic function pointer resolution to functions declared in an 
+!*
+!*  Generic function pointer resolution to functions declared in an
 !*   interface and defined in a different descendant submodules among
 !*   the submodules represented in this tree structure:
 !*                       m
@@ -34,12 +27,12 @@
 !*                     m1 m2
 !*                        / \
 !*                       m3 m4
-!*          
+!*
 !* Secondary tests:
 !* - submodule m2 does not define anything (blank)
 !*
 !* Verify that the results match the values of the original test case.
-!*  
+!*
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 MODULE typeMod
@@ -62,7 +55,7 @@ MODULE typeMod
             GENERIC :: NewBase => NewBase2, NewBase4, NewBase8
 
     END TYPE base
-    
+
     INTERFACE
 
         MODULE FUNCTION NewBase2(this, rc)
@@ -185,7 +178,7 @@ PROGRAM allocBaseVariable03
     IF (LBOUND(b1%array, 1) /= 5)           error stop  17_4
 
     IF (b1%l2 /= 10)                        error stop  18_4
-    IF (UBOUND(b1%array, 1) /= 10)          error stop  19_4 
+    IF (UBOUND(b1%array, 1) /= 10)          error stop  19_4
 
 
     IF ( ASSOCIATED( b2 ) )                 error stop  20_4
@@ -206,7 +199,7 @@ PROGRAM allocBaseVariable03
     IF (UBOUND(b2%array, 1) /= 10)           error stop  29_4
 
 
-    IF ( ASSOCIATED( b3 ) )                 error stop  30_4 
+    IF ( ASSOCIATED( b3 ) )                 error stop  30_4
 
     b3 => b3%NewBase( 41_4 )
 
@@ -215,13 +208,13 @@ PROGRAM allocBaseVariable03
     IF (b3%k /= 2)                          error stop  33_4
     IF (KIND( b3%array ) /= 2)              error stop  34_4
 
-    IF ( ANY(SHAPE( b3%array ) /= [ 2 ]) )  error stop  35_4 
+    IF ( ANY(SHAPE( b3%array ) /= [ 2 ]) )  error stop  35_4
 
-    IF (b3%l1 /= -1)                        error stop  36_4 
-    IF (LBOUND(b3%array, 1) /= -1)          error stop  37_4 
+    IF (b3%l1 /= -1)                        error stop  36_4
+    IF (LBOUND(b3%array, 1) /= -1)          error stop  37_4
 
-    IF (b3%l2 /= 0)                         error stop  38_4 
-    IF (UBOUND(b3%array, 1) /= 0)           error stop  39_4 
+    IF (b3%l2 /= 0)                         error stop  38_4
+    IF (UBOUND(b3%array, 1) /= 0)           error stop  39_4
 
 
 END PROGRAM allocBaseVariable03

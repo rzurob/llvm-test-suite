@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxclms09 ..... :::: ====="
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,36 +12,29 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclms09.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Use INTRINSIC statement and generic interface block with 
+!*  DESCRIPTION                : Use INTRINSIC statement and generic interface block with
 !*                             : the same name as these intrinsic routines to define
 !*                             : their extensions
-!*                             : 
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
@@ -70,7 +63,7 @@
       INTRINSIC GET_COMMAND
       INTRINSIC GET_COMMAND_ARGUMENT
       INTRINSIC GET_ENVIRONMENT_VARIABLE
-      
+
       INTERFACE COMMAND_ARGUMENT_COUNT
         FUNCTION My_COMMAND_ARGUMENT_COUNT(i)
           INTEGER My_COMMAND_ARGUMENT_COUNT, i
@@ -102,11 +95,11 @@
       CALL GET_COMMAND_ARGUMENT
 
       CALL GET_ENVIRONMENT_VARIABLE
- 
 
-      END 
- 
- 
+
+      END
+
+
 
       FUNCTION My_COMMAND_ARGUMENT_COUNT(NoUse)
       USE MOD
@@ -114,7 +107,7 @@
 
       My_COMMAND_ARGUMENT_COUNT  = COMMAND_ARGUMENT_COUNT()
 
-      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) & 
+      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) &
       then
         error stop 63
       endif
@@ -142,7 +135,7 @@
 
 
         DO i  = 0, CmdCount
-       
+
           NUMBER = i
           call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
           call MyGetArg(CmdLine, NUMBER, Argument)

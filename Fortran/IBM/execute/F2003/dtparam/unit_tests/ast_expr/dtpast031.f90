@@ -12,24 +12,16 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dtpexpression031
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : June 2nd, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :testing expressions with derived types
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -40,7 +32,7 @@ end type
 type C(kc,lc)
   integer, kind :: kc
   integer, len  :: lc
-  
+
   real(kc+2+4), pointer :: r(:)
 
 end type
@@ -48,15 +40,15 @@ end type
 type B(k,l)
   integer, kind :: k
   integer, len  :: l
-  
+
   integer(k+1), allocatable :: i(:)
   complex(k*2+2), allocatable :: c(:,:)
   real(k+1), pointer :: r(:)
   character(len=l+k*l), pointer :: char(:)
   type(A), allocatable  :: dt(:)
   type(C(k-1,l/2)), pointer :: dtc(:)
- 
-  
+
+
 end type
 
 type(B(3,10)) :: B1

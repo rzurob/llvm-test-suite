@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Value Attribute for derived type containing allocatable components
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : value attribute with derived type containing unlimited polymorphic allocatable components
 !*                                 - type: derived type with (non-)polymorphic allocatable components
@@ -116,7 +105,7 @@ program valueOptionalDummyArg003
    end select
 
    allocate ( b2, source = base(in1, i1) )
-   
+
    call foo ( b2 )
    select type ( g => b2%in1 )
       type is ( integer )
@@ -131,11 +120,11 @@ program valueOptionalDummyArg003
       type is ( inner )
          print *, g%i
    end select
-   
+
    allocate ( b3, source = base(i1,in1) )
-   
+
    call foo ( b1, b3 )
-   
+
    select type ( g => b1%in1 )
       type is ( integer )
          print *, g
@@ -148,7 +137,7 @@ program valueOptionalDummyArg003
       type is ( inner )
          print *, g%i
    end select
-   
+
    select type ( g => b3%in1 )
       type is ( integer )
          print *, g

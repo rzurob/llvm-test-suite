@@ -1,20 +1,10 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : James Ren
 !*  DATE                       : 06/07/2007
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : function return with DTP
 !*
@@ -37,7 +27,7 @@ base2 = funn(base1)
 
 print *, base2%baseid
 
-contains 
+contains
 function funn(arg)
    type(base(4, *)) :: arg
    type(base(4, 5)) :: funn

@@ -15,16 +15,11 @@
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            :
-!*  PROGRAMMER                 : Yong Du
+!*  ===================================================================
 !*  DATE                       : 11/20/2004
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : reshape
 !*  SECONDARY FUNCTIONS TESTED :
-!*  DRIVER STANZA              : xlf90
 !*  DESCRIPTION                :
 !*    SOURCE is non-poly
 !*    Assigned data entity is poly
@@ -78,7 +73,7 @@ elemental subroutine ct(c, t)
     use m
     class(Base(4)), intent(out) :: c
     type(Child(4)), intent(in) :: t
-    
+
     select type ( c )
        type is ( Base(4) )
           c%i = t%i

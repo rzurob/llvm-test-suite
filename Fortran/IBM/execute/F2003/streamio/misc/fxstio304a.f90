@@ -1,35 +1,29 @@
 !*********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fort.* 
-! %COMPOPTS: 
-! %GROUP: fxstio304a.f 
+! %PRECMD: rm -f fort.*
+! %COMPOPTS:
+! %GROUP: fxstio304a.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio304a.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 22, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
 !*
-!*  Description                : Test stream access I/O with NANS,   
-!*                               NANQ, INF.                      
+!*  Description                : Test stream access I/O with NANS,
+!*                               NANQ, INF.
 !*
 !=======================================================================
 
-   real*4 pinf , minf 
-   real*4 pnanq , mnanq 
+   real*4 pinf , minf
+   real*4 pnanq , mnanq
    real*4 pnans /z'7f800001'/, mnans /z'ffbfffff'/
 
    real*4 rpinf, rminf
@@ -41,11 +35,11 @@
    integer*4 ipnanq, imnanq
    integer*4 ipnans, imnans
    integer ios
-   
+
    character*3   pinf1, pinf11
    character*4   minf1, pnanq1, mnanq1, pnans1, mnans1
    character*4   minf11, pnanq11, mnanq11, pnans11, mnans11
-  
+
    equivalence(ipinf, rpinf)
    equivalence(iminf, rminf)
    equivalence(ipnanq,rpnanq)
@@ -65,7 +59,7 @@
    write(1, iostat=ios, err=200) pinf, minf, pnanq, mnanq, &
       pnans, mnans
    rewind(1, iostat=ios, err=500)
- 
+
    read(1, iostat=ios, err=400) rpinf, rminf, rpnanq, rmnanq, &
       rpnans, rmnans
    if(ipinf .ne. z"7f800000")     error stop 111
@@ -78,7 +72,7 @@
 !  if(imnans .ne. z'ffbfffff')    error stop 16
 
    close(1, status='keep')
-   
+
    open(1, access='sequential', form='unformatted', iostat=ios,&
       status='old', err=100)
    read(1, iostat=ios, err=400) rpinf1, rminf1, rpnanq1, rmnanq1
@@ -111,9 +105,6 @@ close(1, status='delete')
    if(minf1 .ne. minf11)     error stop 31
    if(pnanq1 .ne. pnanq11) error stop 32
    if(mnanq1 .ne. mnanq11) error stop 33
-
-
-
 
 stop
 

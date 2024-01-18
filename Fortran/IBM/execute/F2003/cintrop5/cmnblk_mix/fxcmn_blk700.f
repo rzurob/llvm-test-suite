@@ -2,35 +2,28 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk_qlngdbl.sh fxcmn_blk700 cxcmn_blk700
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f fxcmn_blk700.o cxcmn_blk700.o fxcmn_blk700
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that 3-dimensional array variables
 !*				 of all data types inside of common blocks are
-!*				 interoperable with C variables 
+!*				 interoperable with C variables
 !*
 !*				 Test:  BIND(C) statement in main program
 !*
@@ -47,7 +40,7 @@ subroutine fxcmn_blk700a()
 	use iso_c_binding
         implicit none
 	logical precision_r4, precision_r8, precision_r16
- 
+
         integer i,j,k
 
         integer (kind=o'001')                           :: int_s1a(2,2,2)
@@ -153,7 +146,7 @@ subroutine fxcmn_blk700a()
                         int_C_INT_FAST8_T	,  &
 			int_s1b			,  &
                         int_C_INT_FAST16_T	,  &
-                        real_s4b		
+                        real_s4b
 
         bind(c) :: /Blk_All/
 
@@ -216,40 +209,40 @@ subroutine fxcmn_blk700a()
         do j = 1, 2
           do k = 1, 2
 
-         int_c_int_least32_t(k,j,i)     =  40 
+         int_c_int_least32_t(k,j,i)     =  40
          r_c_double_s8a(k,j,i)          =  39
          int_s2b(k,j,i)                 =  38
-         int_c_int_fast32_t(k,j,i)      =  37 
-         int_s4a(k,j,i)                 =  36 
-         int_c_int_fast64_t(k,j,i)      =  35 
-         real_s16c(k,j,i)               =  34 
-         int_s4b(k,j,i)                 =  33 
-         int_s8b(k,j,i)                 =  32 
-         int_c_signed_char(k,j,i)       =  31 
-         int_c_short(k,j,i)             =  30 
-         real_s8b(k,j,i)                =  29 
-         int_c_int(k,j,i)               =  28 
-         int_c_long_long(k,j,i)         =  27 
-         int_c_long(k,j,i)              =  26 
-         char_c_char(k,j,i)             =  'a' 
-         int_c_size_t(k,j,i)            =  25 
+         int_c_int_fast32_t(k,j,i)      =  37
+         int_s4a(k,j,i)                 =  36
+         int_c_int_fast64_t(k,j,i)      =  35
+         real_s16c(k,j,i)               =  34
+         int_s4b(k,j,i)                 =  33
+         int_s8b(k,j,i)                 =  32
+         int_c_signed_char(k,j,i)       =  31
+         int_c_short(k,j,i)             =  30
+         real_s8b(k,j,i)                =  29
+         int_c_int(k,j,i)               =  28
+         int_c_long_long(k,j,i)         =  27
+         int_c_long(k,j,i)              =  26
+         char_c_char(k,j,i)             =  'a'
+         int_c_size_t(k,j,i)            =  25
          int_c_intptr_t(k,j,i)          =  24
-         real_s4c(k,j,i)                =  23 
-         int_c_intmax_t(k,j,i)          =  22 
-         int_c_int8_t(k,j,i)            =  21 
-         int_c_int16_t(k,j,i)           =  20 
-         int_c_int32_t(k,j,i)           =  19 
+         real_s4c(k,j,i)                =  23
+         int_c_intmax_t(k,j,i)          =  22
+         int_c_int8_t(k,j,i)            =  21
+         int_c_int16_t(k,j,i)           =  20
+         int_c_int32_t(k,j,i)           =  19
          r_c_float_s4a(k,j,i)           =  18
-         int_c_int64_t(k,j,i)           =  17 
-         int_c_int_least8_t(k,j,i)      =  16 
-         int_c_int_least16_t(k,j,i)     =  15 
-         char1(k,j,i)                   =  'b' 
-         int_c_int_least64_t(k,j,i)     =  14 
-         log1(k,j,i)                    =  .true. 
-         int_c_int_fast8_t(k,j,i)       =  13 
-         int_s1b(k,j,i)                 =  12 
-         int_c_int_fast16_t(k,j,i)      =  11 
-         real_s4b(k,j,i)                =  10. 
+         int_c_int64_t(k,j,i)           =  17
+         int_c_int_least8_t(k,j,i)      =  16
+         int_c_int_least16_t(k,j,i)     =  15
+         char1(k,j,i)                   =  'b'
+         int_c_int_least64_t(k,j,i)     =  14
+         log1(k,j,i)                    =  .true.
+         int_c_int_fast8_t(k,j,i)       =  13
+         int_s1b(k,j,i)                 =  12
+         int_c_int_fast16_t(k,j,i)      =  11
+         real_s4b(k,j,i)                =  10.
 
           end do
         end do

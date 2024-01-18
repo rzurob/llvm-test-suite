@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeDTComp04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeDTComp04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 15 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE,FSOURCE ARE DERIVED TYPE ARRAY OR COMPONENT
 !* 4. DERIVED TYPE HAS ALLOCATABLE DT COMPONENT
 !* 5. ! USE ASSOCIATE
@@ -42,9 +34,9 @@ end module
 program mergeDTComp04
    use m
    implicit none
-   
+
    type(B(4)) :: b1(2),b2(2)
-   
+
    type(B(:)),allocatable :: b3(:),b4(:)
 
    allocate(b3(2),source=[B(3)(type1=A(7)(ca="123")),&
@@ -85,7 +77,7 @@ program mergeDTComp04
       if(x(2)%type1%l1 /= 4)                            error stop 12_4
       if(x(1)%type1%ca /= "abc")                        error stop 13_4
       if(x(2)%type1%ca /= "111")                        error stop 14_4
-   end subroutine         
+   end subroutine
 
 !   associate(x=>merge(b1,b2,[.false.,.true.]))
    subroutine associate2(x)

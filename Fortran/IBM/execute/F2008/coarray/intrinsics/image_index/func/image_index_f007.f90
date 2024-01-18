@@ -1,14 +1,8 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : image_index_f007.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : August 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
 !*  SECONDARY FUNCTIONS TESTED :
@@ -27,7 +21,7 @@ end module
 
 program main
 	use modFDC
-	
+
 	print *, image_index(caf, [1,1,1])
 	sync all
 	print *, image_index(caf, [1,1,2])

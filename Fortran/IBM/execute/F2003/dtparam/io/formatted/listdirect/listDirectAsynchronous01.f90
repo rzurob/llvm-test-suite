@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectAsynchronous01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectAsynchronous01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 26 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 26 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test write and read statement with asynchronous IO
-!* 2. Use common block 
+!* 2. Use common block
 !* 3. Derived type has multiply layers of derived type components
 !234567490123456749012345674901234567490123456749012345674901234567490
 module m1
@@ -32,20 +24,20 @@ module m1
       sequence
       character(k1) :: c1(l1)="****"
       integer(k1)   :: i1(l1-1:l1)=-99
-   end type 
+   end type
    type inner2(k2,l2)
       integer,kind :: k2 !k2=4
       integer,len  :: l2 !l2=4
-      
+
       sequence
-      logical(2*k2) :: g1(l2)=.false. 
+      logical(2*k2) :: g1(l2)=.false.
       type(inner1(k2,l2-1)) :: inn1
    end type
    type inner3(k3,l3)
       integer,kind :: k3 !k3=4
       integer,len  :: l3 !l3=3
 
-      sequence 
+      sequence
       real(k3)     :: r1(l3:l3+1)=-9.9
       type(inner2(k3,l3+1)) :: inn2
    end type
@@ -68,8 +60,8 @@ end module
 program listDirectAsynchronous01
   use m2
 
-  call sub 
-  
+  call sub
+
 end program
 
 subroutine sub
@@ -80,7 +72,7 @@ subroutine sub
    integer :: ios,idvar1,idvar2
    logical :: pending1,pending2
    character(256) :: msg
-   type(outer(4,4)) :: outobj1,outobj2(2) 
+   type(outer(4,4)) :: outobj1,outobj2(2)
 
    logical,external :: precision_r4,precision_x6
 
@@ -91,7 +83,7 @@ subroutine sub
    outobj1%inn3%r1= [-3.567E0,+5.7E-3]
    outobj1%inn3%inn2%g1=[.true.,.false.,.false.,.true.]
    outobj1%inn3%inn2%inn1%c1=["ABCD","\"EF\"","'GH'"]
-   outobj1%inn3%inn2%inn1%i1=[-34,+12]    
+   outobj1%inn3%inn2%inn1%i1=[-34,+12]
 
    open(10,file='listDirectAsynchronous01.dat',status='old',&
         form='formatted',access='sequential',position='append', &
@@ -108,7 +100,7 @@ subroutine sub
 
    write(10,*,asynchronous='yes',id=idvar1,decimal='comma') outobj1%x1(1:2)
    write(10,*,asynchronous='yes',id=idvar2,sign='plus') outobj1%x1(3)
-   
+
    wait(10,id=idvar1,iostat=ios,iomsg=msg)
 
    if(ios <> 0) then
@@ -116,7 +108,7 @@ subroutine sub
       print *,"iostat=",ios
       print *,"iomsg=",msg
       stop 11
-   end if  
+   end if
 
    inquire(10,id=idvar1,pending=pending1)
 
@@ -133,7 +125,7 @@ subroutine sub
 
    inquire(10,id=idvar2,pending=pending2)
 
-   if(pending2 .neqv. .false.)   stop 14   
+   if(pending2 .neqv. .false.)   stop 14
 
    write(10,*,asynchronous='yes',decimal='comma') outobj1%inn3%r1
    write(10,*,asynchronous='yes')  &
@@ -151,14 +143,14 @@ subroutine sub
    inquire(10,pending=pending1)
 
    if(pending1 .neqv. .false.)   stop 15
-  
-   ! back to beginning of first record 
+
+   ! back to beginning of first record
    rewind 10
-  
+
    ! start to read data into outobj2
- 
+
    read(10,*,asynchronous='yes',id=idvar1) outobj2(1)
- 
+
    wait(10,id=idvar1,iostat=ios,iomsg=msg)
 
    if(ios <> 0) then
@@ -187,9 +179,8 @@ subroutine sub
 
    if(pending1 .neqv. .false.)    stop 19
 
-
    read(10,*,asynchronous='yes') outobj2(2)%x1(1)
-   
+
    read(10,*,asynchronous='yes',decimal="comma") outobj2(2)%inn3%r1
 
    read(10,*,asynchronous='yes') outobj2(2)%inn3%inn2
@@ -203,7 +194,7 @@ subroutine sub
       stop 20
    end if
 
-   inquire(10,pending=pending1) 
+   inquire(10,pending=pending1)
 
    if(pending1 .neqv. .false.)    stop 21
 
@@ -227,7 +218,7 @@ subroutine sub
    if(.not. precision_x6(outobj2(2)%x1(3),(0.12D-2,-3.4D3) ))   stop 32
 
    if(.not. precision_r4(outobj2(2)%inn3%r1(3),-3.567_4) )      stop 33
-   if(.not. precision_r4(outobj2(2)%inn3%r1(4),5.7E-3) )        stop 34 
+   if(.not. precision_r4(outobj2(2)%inn3%r1(4),5.7E-3) )        stop 34
 
    if(any(outobj2(2)%inn3%inn2%g1 .neqv. &
                  [.true.,.false.,.true.,.false.] ))             stop 35
@@ -236,7 +227,6 @@ subroutine sub
              ["\'GH\'","\"EF\"","ABCD"]))                       stop 36
    if(any(outobj2(2)%inn3%inn2%inn1%i1 /= [-34,12]))            stop 37
 
-
-   close(10) 
+   close(10)
 
 end subroutine

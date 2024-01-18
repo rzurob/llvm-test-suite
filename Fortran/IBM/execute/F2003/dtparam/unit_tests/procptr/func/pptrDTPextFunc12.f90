@@ -43,7 +43,7 @@ use n
 
     a = func2(b)
     print *, a
-end 
+end
 
 function func2(b)
 use m

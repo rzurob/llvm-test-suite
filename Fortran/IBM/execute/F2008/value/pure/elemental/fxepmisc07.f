@@ -1,36 +1,29 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qrndsngl -qstrict -qnomaf -qfixed=132
 ! %GROUP: fxepmisc07.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : User Defined Elemental Procedures
-!*                                                                     
-!*  PROGRAMMER                 : Chris Hayes 
-!*  DATE                       : July 28, 1998
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
-!*  PRIMARY FUNCTIONS TESTED   : ELEMENTAL procedures
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  ===================================================================
 !*
-!*  DRIVER STANZA              : xlf95
+!*  DATE                       : July 28, 1998
+!*  ORIGIN                     : AIX Compiler Development,
+!*
+!*  PRIMARY FUNCTIONS TESTED   : ELEMENTAL procedures
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qrndsngl -qstrict -qnomaf
 !*
 !*  KEYWORD(S)                 : ELEMENTAL, array, genereic interface
-!*  TARGET(S)                  : 
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Tests elemental functions accessed
@@ -61,13 +54,13 @@
       complex  , DIMENSION(50) ::  Xarr1, Xarr2, Xarr3, Xarr4, Xres1, objective21
       complex  , DIMENSION(5,10) ::  Xarr11, Xarr12, Xarr13, Xarr14, Xres11, objective22
       logical    precision_x8, precision_r4, logarr1(50), logarr2(10,5)
-      
+
 
       INTERFACE func
         ELEMENTAL INTEGER(4) FUNCTION elem_int(A1,A2,A3)
          integer*4, value :: A1,A2,A3
         END FUNCTION elem_int
-  
+
         ELEMENTAL REAL(4) FUNCTION elem_real(A1,A2,A3)
          real*4, value :: A1,A2,A3
         END FUNCTION elem_real
@@ -327,15 +320,15 @@
 !*********************************************************************
 !* Main program ends
 !*********************************************************************
-      END 
+      END
 
 
 !*********************************************************************
 !* Elemental Function definitions
-!* 
+!*
 !*********************************************************************
 !*********************************************************************
-!* elem_int: 
+!* elem_int:
 !*********************************************************************
 
       ELEMENTAL INTEGER(4) FUNCTION elem_int(A1,A2,A3)
@@ -344,7 +337,7 @@
       END FUNCTION elem_int
 
 !*********************************************************************
-!* elem_real: 
+!* elem_real:
 !*********************************************************************
 
       ELEMENTAL REAL(4) FUNCTION elem_real(A1,A2,A3)
@@ -353,7 +346,7 @@
       END FUNCTION elem_real
 
 !*********************************************************************
-!* elem_cpx: 
+!* elem_cpx:
 !*********************************************************************
 
       ELEMENTAL COMPLEX FUNCTION elem_cpx(A1,A2,A3)
@@ -362,7 +355,7 @@
       END FUNCTION elem_cpx
 
 !*********************************************************************
-!* elem_mix: 
+!* elem_mix:
 !*********************************************************************
 
       ELEMENTAL COMPLEX FUNCTION elem_mix(A1,A2,A3)

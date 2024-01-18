@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemCSHIFT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemCSHIFT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an tranformational intrinsic
-!* 
-!*  - CSHIFT 
+!*
+!*  - CSHIFT
 !*  (318961/318170/320008)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -43,7 +36,7 @@
     CONTAINS
     PROCEDURE  :: Proc => ModSub
   END TYPE
- 
+
   CONTAINS
 
   SUBROUTINE ModSub(Arg)
@@ -52,7 +45,7 @@
 
   END MODULE
 
-  PROGRAM  InitExpDefElemCSHIFT 
+  PROGRAM  InitExpDefElemCSHIFT
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
@@ -104,19 +97,19 @@
   IF (KIND(T18)   .NE.   8 )        STOP 17
   IF (ANY( T18    .NE.   R11%I ))   STOP 18
 
-  IF (SIZE(T2 )   .NE.   0 )        STOP 21 
-  IF (SIZE(T21)   .NE.   0 )        STOP 22 
+  IF (SIZE(T2 )   .NE.   0 )        STOP 21
+  IF (SIZE(T21)   .NE.   0 )        STOP 22
 
-  IF (ANY( T31%I  .NE. M20%I ))     STOP 31 
-  IF (ANY( T32%I  .NE. M3%I  ))     STOP 32 
+  IF (ANY( T31%I  .NE. M20%I ))     STOP 31
+  IF (ANY( T32%I  .NE. M3%I  ))     STOP 32
 
-  IF (ANY( T41%I  .NE. M21%I ))     STOP 41 
-  IF (ANY( T42%I  .NE. M21%I ))     STOP 42 
+  IF (ANY( T41%I  .NE. M21%I ))     STOP 41
+  IF (ANY( T42%I  .NE. M21%I ))     STOP 42
 
-  IF (ANY( T51%I  .NE. M22%I ))     STOP 51 
-  IF (ANY( T52%I  .NE. M22%I ))     STOP 52 
+  IF (ANY( T51%I  .NE. M22%I ))     STOP 51
+  IF (ANY( T52%I  .NE. M22%I ))     STOP 52
 
   END
 
 
- 
+

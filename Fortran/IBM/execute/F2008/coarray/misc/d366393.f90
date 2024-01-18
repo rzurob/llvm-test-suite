@@ -18,7 +18,7 @@
            myarray = -4
            call sub(myarray)
         end if
-        
+
         sync all
 
         print *, this_image(), ":", myarray

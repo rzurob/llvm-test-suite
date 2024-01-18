@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpEquiv7 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpEquiv7
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 05, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The equivalence statement
-!* 
+!*
 !*  A structure of a numeric sequence type may be equivalenced to another structure of a numeric
 !*  sequence type, an object of default integer type, default real type, double precision real type,
 !*  default complex type, or default logical type such that components of the structure ultimately
 !*  become associated only with objects of these types
-!* 
-!*  
+!*
 !*  (the wrong result)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -49,38 +39,38 @@
     SEQUENCE
     REAL       :: R(L)=K
   END TYPE
- 
+
   TYPE :: DT_C(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     CHARACTER(L)  :: C(L)=CHAR(48+K)
   END TYPE
- 
+
   TYPE :: DT_I(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     INTEGER    :: I(L)=K
   END TYPE
- 
+
   TYPE :: DT_L(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     LOGICAL    :: A(L)=.TRUE.
   END TYPE
- 
+
   TYPE :: DT_Z(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     COMPLEX    :: Z(L)=(K,-K)
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpEquiv7 
+  PROGRAM dtpEquiv7
   USE M
 
   TYPE(DT_R(-1,9))  :: R
@@ -98,7 +88,7 @@
   TYPE(DT_Z(-1,9))  :: Z
   COMPLEX           :: Z1(9)=-(-1,1)
 
-  
+
   EQUIVALENCE(R, R1)
   EQUIVALENCE(C, C1)
   EQUIVALENCE(I, I1)

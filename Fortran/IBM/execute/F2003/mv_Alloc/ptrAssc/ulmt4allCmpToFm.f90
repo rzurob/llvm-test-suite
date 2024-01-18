@@ -1,25 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ulmt4allCmpToFm.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : TO/FROM are component of DT, type class(*) 
-!*                               Pointer is type class(*) 
+!*  DESCRIPTION                : TO/FROM are component of DT, type class(*)
+!*                               Pointer is type class(*)
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -31,9 +19,9 @@
 
     type A
        class(*), pointer :: p
-    end type 
+    end type
 
-    type, extends(A) :: B 
+    type, extends(A) :: B
        class(*), allocatable :: b1(:)
     end type
 
@@ -51,7 +39,7 @@
 
     allocate(j(5), source =  (/ ( i, i = 1, 5) /) )
     allocate(x1(5), source =(/ ( A( j(i) ), i = 1, 5 ) /) )
-    
+
     allocate(k(3), source =  (/ ( i, i = 6, 8) /) )
     allocate(x2(3), source =(/ ( A( k(i) ), i = 1,3 ) /) )
 
@@ -64,7 +52,7 @@
     if ( allocated(y(1)%b1) ) stop 9
     if ( .not. allocated( y(2)%b1) ) stop 10
 
-    if ( .not. associated(p, y(2)%b1) ) stop 11 
+    if ( .not. associated(p, y(2)%b1) ) stop 11
 
     select type ( x => y(1)%p )
         type is (integer)
@@ -75,38 +63,38 @@
 
     select type ( x => y(2)%p )
         type is (logical)
-            if ( x .neqv. .true. ) stop 31 
+            if ( x .neqv. .true. ) stop 31
         class default
             stop 33
     end select
 
     select type( x => y(2)%b1 )
         type is ( A )
-            select type( z => x(1)%p ) 
+            select type( z => x(1)%p )
                 type is (integer)
-                    if ( z /= 1 ) stop 51 
+                    if ( z /= 1 ) stop 51
                 class default
                     stop 41
             end select
-            select type( z => x(2)%p ) 
+            select type( z => x(2)%p )
                 type is (integer)
-                    if ( z /= 2 ) stop 52 
+                    if ( z /= 2 ) stop 52
                 class default
                     stop 43
             end select
-            select type( z => x(3)%p ) 
+            select type( z => x(3)%p )
                 type is (integer)
                     if ( z /= 3 ) stop 53
                 class default
                     stop 45
             end select
-            select type( z => x(4)%p ) 
+            select type( z => x(4)%p )
                 type is (integer)
-                    if ( z /= 4 ) stop 54 
+                    if ( z /= 4 ) stop 54
                 class default
                     stop 47
             end select
-            select type( z => x(5)%p ) 
+            select type( z => x(5)%p )
                 type is (integer)
                     if ( z /= 5 ) stop 55
                 class default

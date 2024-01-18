@@ -1,25 +1,18 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound06
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug 20, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Functionality of cobound intrinsics
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Testing runtime values of ucobound focusing
-!*                               on upper cobound of the last codimension. 
-!*  
+!*                               on upper cobound of the last codimension.
+!*
 !*  ASSUMPTION:                : Number of images is equal to 30.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -63,18 +56,18 @@
          print *, "coarray argument ucobounds:"
          call foo(1) ! should print 30
          call foo(5) ! should print 34
-         
+
          print *, "c2 ucobounds:"
          print *, ucobound(c2) ! should print 3, 7, 2
-         
+
          print *, "c3 ucobounds:"
          print *, ucobound(c3) ! should print 60, 1
-         
+
       end if
 
       sync all
 
-      contains 
+      contains
       subroutine foo(n)
         integer :: n
         integer, save :: coarr[n:*]

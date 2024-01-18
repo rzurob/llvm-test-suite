@@ -1,20 +1,15 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue04d.f
-!*  TEST CASE TITLE : F2008: VALUE attr allowed for dummy args of PURE proc
-!*  PROGRAMMER      : Gaby Baghdadi
 !*  DATE            : 2010-12-01
-!*  ORIGIN          : XL Fortran Compiler Development, IBM Torolab
 !*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
 !* - declare dummy data objects with value attribute and one of:
 !*   POINTER, ALLOCATABLE, VOLATILE, INTENT(INOUT), or INTENT(OUT) attributes
 !* - specify value attribute more than once for an object
-!* - attempt to modify intent(in) dummy arg that also has value attribute 
+!* - attempt to modify intent(in) dummy arg that also has value attribute
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 

@@ -1,23 +1,12 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/15/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                : MAXVAL/MINVAL with derived type component 
+!*  DESCRIPTION                : MAXVAL/MINVAL with derived type component
 !*                               as argument. No DIM or MASK specified.
 !*                               Also with automatic array.
 !*  (315480)
@@ -26,11 +15,11 @@
   module ArgSub3
      type dt_array
        character*3, dimension(5) :: b = max("zzz", "kkk")
-     end type   
- 
+     end type
+
      contains
         subroutine sub2(arg1, arg2)
-           type(dt_array) :: dt_arg 
+           type(dt_array) :: dt_arg
            character*3 , intent(in):: arg2
            character*3 , intent(inout)::arg1
            if(arg2  .ne. "ccc") error stop 1_4
@@ -41,24 +30,24 @@
   end module ArgSub3
 
   program mxminvalVarArgSub1
-    
+
     use ArgSub3
 
     interface
         function func1(carg, n)
-          character*3 :: carg 
+          character*3 :: carg
           character(n) :: func1
-        end function 
+        end function
     end interface
 
     type dt_init
       sequence
       character*3 :: c(4) = min("sss", "ccc", "hhh")
     end type
- 
+
     character*3 :: v
 
-    type(dt_init) :: z 
+    type(dt_init) :: z
 
     v = "ggg"
 
@@ -68,7 +57,7 @@
 
     call sub1(minval(z%c), 4)
 
-    if(func1(maxval(z%c),3) .ne. "ccc") error stop 4_4 
+    if(func1(maxval(z%c),3) .ne. "ccc") error stop 4_4
 
     contains
          subroutine sub1(carg, iarg)
@@ -82,7 +71,7 @@
             if(carg .ne. "ccc") error stop 5_4
             if(maxval(carray)  .ne. "zzz") error stop 6_4
 
-         end subroutine 
+         end subroutine
 
   end program mxminvalVarArgSub1
 

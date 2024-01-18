@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitComp3_1 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitComp3_1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 26, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Default initialization for component 
+!*  SECONDARY FUNCTIONS TESTED : Default initialization for component
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  Initialized by type declaration statement 
-!*  
+!*  Initialized by type declaration statement
+!*
 !*  -- Dup of dtParamInitComp9.f to avoid ac imp do issue
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -58,7 +51,7 @@
       LOGICAL(K)   :: LL(L)=.TRUE._1
       TYPE(DT1(K,L))  :: T(K)
     CONTAINS
-      PROCEDURE, PASS :: IntFun 
+      PROCEDURE, PASS :: IntFun
     END TYPE
 
   CONTAINS
@@ -72,7 +65,7 @@
   END MODULE
 
 
-  PROGRAM dtParamInitComp3_1 
+  PROGRAM dtParamInitComp3_1
   USE M
 
   INTEGER, PARAMETER :: K=4
@@ -80,8 +73,8 @@
 
   TYPE(DT1(K=4, L=1))  :: T1=DT1(K=4, L=1)()
   TYPE(DT1(K=4, L=1))  :: T2=DT1(K=4, L=1)()
-  TYPE(DT1(K=4, L=1))  :: T3=DT1(K=4, L=1, K0=0)() 
-  TYPE(DT1(K0=0, L0=0)) :: T4=DT1(K0=0, L0=0)() 
+  TYPE(DT1(K=4, L=1))  :: T3=DT1(K=4, L=1, K0=0)()
+  TYPE(DT1(K0=0, L0=0)) :: T4=DT1(K0=0, L0=0)()
 
 
   TYPE(DT2(K=4,L=1,K0=1,L0=1))     :: T  =    &
@@ -91,7 +84,7 @@
               Z=(/((-T%K,T%K), I=1,T%K)/),      &
               C="??????????",                   &
               ProcPtr=NULL(),                   &
-              LL=(/(.FALSE._K, I=1,T%L)/), t = dt1(4,1,4,1)() )    
+              LL=(/(.FALSE._K, I=1,T%L)/), t = dt1(4,1,4,1)() )
 
 
   IF ( T%K0        .NE. 1 )                 STOP 41
@@ -131,17 +124,17 @@
   IF ( T1%L0 .NE. 0 )                 STOP 12
   IF ( T1%K  .NE. K )                 STOP 13
   IF ( T1%L  .NE. L )                 STOP 14
- 
+
   IF ( T3%K0 .NE. 0 )                 STOP 21
   IF ( T3%L0 .NE. 0 )                 STOP 22
   IF ( T3%K  .NE. K )                 STOP 23
   IF ( T3%L  .NE. L )                 STOP 24
- 
+
   IF ( T4%K0 .NE. 0 )                 STOP 31
   IF ( T4%L0 .NE. 0 )                 STOP 32
   IF ( T4%K  .NE. 4 )                 STOP 33
   IF ( T4%L  .NE. 1 )                 STOP 34
- 
+
 
   END
 

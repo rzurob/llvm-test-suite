@@ -1,25 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type_Basic06 - SELECT TYPE 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : July  23, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : USE Association with ONLY and RENAME
-!*                               
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -37,11 +28,10 @@
 !*                       or CLASS DEFAULT [ select-construct-name ]
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-!*####################################################################
 !*#                FIRST MODULE : DECLARATIONS OF TYPES              #
 !*####################################################################
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Shape (k1,len1)
         INTEGER, KIND :: k1  !4
@@ -53,33 +43,33 @@
 
       TYPE, EXTENDS(Shape) :: Square
         REAL(KIND=k1) :: width
-      END TYPE Square   
-      
+      END TYPE Square
+
       REAL, PARAMETER ::  seed1=10.0, seed2=5.0
-      
+
       END MODULE Mod1
 !*####################################################################
 !*#                SECOND MODULE : DECLARATIONS OF SUBPROGRAMS       #
 !*####################################################################
       MODULE Mod2
       USE Mod1, Sq => Square
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE, EXTENDS(Sq) :: Rec
-        REAL :: height 
+        REAL :: height
       END TYPE Rec
 
-      CONTAINS       
+      CONTAINS
 
       SUBROUTINE compute_area1(My_shape)
 
-      CLASS(*), INTENT(INOUT), POINTER :: My_shape 
+      CLASS(*), INTENT(INOUT), POINTER :: My_shape
       TYPE(Sq(4,20)), ALLOCATABLE :: A_square
 
       ALLOCATE(A_square)
-      
+
       A_square%width = seed1
- 
+
       ALLOCATE(My_shape, source = A_square)
       IF ( .NOT. ASSOCIATED(My_shape)) STOP 10
 
@@ -87,7 +77,7 @@
         CLASS IS (Sq(4,*))
             A%name = 'a square'
             print *, 'My shape could be ', TRIM(A%name)
-         
+
         CLASS IS (Rec(4,*))
             A%name = 'a rectangle'
             print *, 'My shape could be ', TRIM(A%name)
@@ -96,7 +86,7 @@
            A%area = compute_square_area(A%width)
            A%name = 'a square'
            print *, 'My shape is ', TRIM(A%name), ' and the area is', FLOOR(A%area)
-          
+
         TYPE IS (Rec(4,*))
            A%height=seed2
            A%area = compute_rectangle_area(A%width,A%height)
@@ -104,7 +94,7 @@
            print *, 'My shape is ', TRIM(A%name), ' and the area is', FLOOR(A%area)
 
         CLASS DEFAULT
-           print *, 'area cannot be computed: Undefined Shape' 
+           print *, 'area cannot be computed: Undefined Shape'
            STOP 11
       END SELECT
 
@@ -172,16 +162,16 @@
 !*
       PURE REAL FUNCTION compute_square_area(x) result (answer)
       REAL, INTENT(IN) ::  x
-       
+
       answer=x**2
 
       END FUNCTION compute_square_area
 !*
-!* compute the area of a rectangle 
+!* compute the area of a rectangle
 !*
       PURE REAL FUNCTION compute_rectangle_area(x,y) result (answer)
       REAL, INTENT(IN) ::  x,y
-       
+
       answer=x*y
 
       END FUNCTION compute_rectangle_area
@@ -192,9 +182,9 @@
 !*####################################################################
       PROGRAM Select_Type_Basic06
       USE Mod2, ONLY: compute_area1, compute_area2, compute_area3
-      IMPLICIT NONE 
-      
-      CLASS(*), POINTER :: My_shape 
+      IMPLICIT NONE
+
+      CLASS(*), POINTER :: My_shape
 
       CALL compute_area1(My_shape)
 

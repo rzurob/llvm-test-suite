@@ -1,73 +1,65 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AssumedType14f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : June 13, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop: Assumed Type objects
 !*
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : non-BIND(C) procedures defined in Fortran, 
-!*                               call in Fortran 
-!*                               dummy argument is scalar assumed type 
-!*                               actual argument is of derived type 
-!*                               - basic 
-!*                               - extended 
-!*                               - with allocatable component 
-!*                               - with pointer component 
-!*                               - with sequence attribute 
-!*                              
+!*  DESCRIPTION                : non-BIND(C) procedures defined in Fortran,
+!*                               call in Fortran
+!*                               dummy argument is scalar assumed type
+!*                               actual argument is of derived type
+!*                               - basic
+!*                               - extended
+!*                               - with allocatable component
+!*                               - with pointer component
+!*                               - with sequence attribute
 !*
 !**********************************************************************
 !234567890123456789012345678901234567890123456789012345678901234567890
 module mod
   implicit none
 
-  type base 
+  type base
     integer :: i
-  end type base 
+  end type base
 
   type, extends(base) :: child
-    real :: x 
+    real :: x
   end type child
 
-  type dt1  
+  type dt1
     integer, allocatable :: arr
-  end type dt1  
+  end type dt1
 
-  type dt2  
+  type dt2
     integer, pointer :: ptr
-  end type dt2  
+  end type dt2
 
-  type dt3  
+  type dt3
     sequence
-    integer :: j 
-  end type dt3  
+    integer :: j
+  end type dt3
 
   contains
-  subroutine mod_sub(a) 
+  subroutine mod_sub(a)
      type(*) :: a
   end subroutine mod_sub
 
-  subroutine mod_sub_optional(a) 
+  subroutine mod_sub_optional(a)
      type(*), optional :: a
   end subroutine mod_sub_optional
 
-  subroutine mod_sub_target(a) 
+  subroutine mod_sub_target(a)
      type(*), target :: a
   end subroutine mod_sub_target
 
-  subroutine mod_sub_volatile(a) 
+  subroutine mod_sub_volatile(a)
      type(*), volatile :: a
   end subroutine mod_sub_volatile
 end module mod
@@ -82,68 +74,68 @@ type(dt1) :: dt1_0
 type(dt2) :: dt2_0
 type(dt3) :: dt3_0
 
-call sub(b) 
-call sub(c) 
-call sub(dt1_0) 
-call sub(dt2_0) 
-call sub(dt3_0) 
+call sub(b)
+call sub(c)
+call sub(dt1_0)
+call sub(dt2_0)
+call sub(dt3_0)
 
-call sub_optional(b) 
-call sub_optional(c) 
-call sub_optional(dt1_0) 
-call sub_optional(dt2_0) 
-call sub_optional(dt3_0) 
+call sub_optional(b)
+call sub_optional(c)
+call sub_optional(dt1_0)
+call sub_optional(dt2_0)
+call sub_optional(dt3_0)
 
-call sub_target(b) 
-call sub_target(c) 
-call sub_target(dt1_0) 
-call sub_target(dt2_0) 
-call sub_target(dt3_0) 
+call sub_target(b)
+call sub_target(c)
+call sub_target(dt1_0)
+call sub_target(dt2_0)
+call sub_target(dt3_0)
 
-call sub_volatile(b) 
-call sub_volatile(c) 
-call sub_volatile(dt1_0) 
-call sub_volatile(dt2_0) 
-call sub_volatile(dt3_0) 
+call sub_volatile(b)
+call sub_volatile(c)
+call sub_volatile(dt1_0)
+call sub_volatile(dt2_0)
+call sub_volatile(dt3_0)
 
-call mod_sub(b) 
-call mod_sub(c) 
-call mod_sub(dt1_0) 
-call mod_sub(dt2_0) 
-call mod_sub(dt3_0) 
+call mod_sub(b)
+call mod_sub(c)
+call mod_sub(dt1_0)
+call mod_sub(dt2_0)
+call mod_sub(dt3_0)
 
-call mod_sub_optional(b) 
-call mod_sub_optional(c) 
-call mod_sub_optional(dt1_0) 
-call mod_sub_optional(dt2_0) 
-call mod_sub_optional(dt3_0) 
+call mod_sub_optional(b)
+call mod_sub_optional(c)
+call mod_sub_optional(dt1_0)
+call mod_sub_optional(dt2_0)
+call mod_sub_optional(dt3_0)
 
-call mod_sub_target(b) 
-call mod_sub_target(c) 
-call mod_sub_target(dt1_0) 
-call mod_sub_target(dt2_0) 
-call mod_sub_target(dt3_0) 
+call mod_sub_target(b)
+call mod_sub_target(c)
+call mod_sub_target(dt1_0)
+call mod_sub_target(dt2_0)
+call mod_sub_target(dt3_0)
 
-call mod_sub_volatile(b) 
-call mod_sub_volatile(c) 
-call mod_sub_volatile(dt1_0) 
-call mod_sub_volatile(dt2_0) 
-call mod_sub_volatile(dt3_0) 
+call mod_sub_volatile(b)
+call mod_sub_volatile(c)
+call mod_sub_volatile(dt1_0)
+call mod_sub_volatile(dt2_0)
+call mod_sub_volatile(dt3_0)
 
-  contains 
-  subroutine sub(a) 
+  contains
+  subroutine sub(a)
      type(*) :: a
   end subroutine sub
 
-  subroutine sub_optional(a) 
+  subroutine sub_optional(a)
      type(*), optional :: a
   end subroutine sub_optional
 
-  subroutine sub_target(a) 
+  subroutine sub_target(a)
      type(*), target :: a
   end subroutine sub_target
 
-  subroutine sub_volatile(a) 
+  subroutine sub_volatile(a)
      type(*), volatile :: a
   end subroutine sub_volatile
 end program AssumedType14f

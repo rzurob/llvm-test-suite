@@ -2,7 +2,7 @@
       program t
         use, intrinsic :: iso_c_binding
         implicit none
-         
+
         interface
           real(c_float) function func1(i)
             use, intrinsic :: iso_c_binding
@@ -13,11 +13,11 @@
           real(c_double) function func2()
             use, intrinsic :: iso_c_binding
             implicit none
-          end function 
+          end function
 
-        end interface 
-		
-        logical(c_bool)      logc1 
+        end interface
+
+        logical(c_bool)      logc1
         logical(2)           logc2
         logical(4)           logc4
         logical(8)           logc8
@@ -53,7 +53,7 @@
 
         rt = c_sizeof(int8_1 > int8_2)
         if (rt /= c_bool) error stop 7
-		
+
         rt = c_sizeof(int8_1 /= int16)
         if (rt /= c_int16_t) error stop 8
 
@@ -74,12 +74,11 @@
 
         rt = c_sizeof(.not. logc)
         if (rt /= kind(logc)) error stop 14
-		
+
         rt = c_sizeof(func2()>func1(3))
         if (rt /= c_double) error stop 15
       end
 
-	  
       real(c_float) function func1(i)
         use, intrinsic :: iso_c_binding
         implicit none
@@ -87,9 +86,8 @@
         func1 = 1.0+i
       end function
 
-
       real(c_double) function func2()
         use, intrinsic :: iso_c_binding
         implicit none
         func2 = 4
-      end function 
+      end function

@@ -6,9 +6,9 @@
         ! IEEE Single: real(4)
         real(4), parameter :: r1_4 = 0.0_4
         real(4), parameter :: r2_4 = 1.0_4
-        real(4), parameter :: r3_4 = 1.1_4      
+        real(4), parameter :: r3_4 = 1.1_4
         real(4), parameter :: zr_4 = z"00000001"
- 
+
         ! IEEE Double: real(8)
         real(8), parameter :: r1_8 = 0.0_8
         real(8), parameter :: r2_8 = 1.0_8
@@ -20,7 +20,7 @@
         real(16), parameter :: r2_16 = 1.0_16
         real(16), parameter :: r3_16 = 1.1_16
         real(16), parameter :: zr_16 = z"00000000000000000000000000000001"
-       
+
         ! Infinities
 
         ! IEEE Single: real(4)
@@ -34,7 +34,6 @@
         ! IBM Extended: real(16)
         real(16), parameter :: PINF_16 = z"7ff00000000000000000000000000000"
         real(16), parameter :: NINF_16 = z"fff00000000000000000000000000000"
-
 
         ! Zeros
 
@@ -50,7 +49,6 @@
         real(16), parameter :: PZERO_16 = z"00000000000000000000000000000000"
         real(16), parameter :: PZERO2_16 = z"80000000000000008000000000000000"
         ! real(16) has no negative zero
-
 
         ! NaNs
 
@@ -72,7 +70,6 @@
         real(16), parameter :: NNANQ_16 = z"ffff0000000000000000000000000000"
         real(16), parameter :: NNANS_16 = z"fff70000000000000000000000000000"
 
-
         ! Denormal Values
         ! P means Positive, N means Negative
         ! HD means Hugest Denormal (in magnitude)
@@ -90,7 +87,5 @@
         real(8), parameter :: PTD_8 = z"0000000000000001"
         real(8), parameter :: NHD_8 = z"800fffffffffffff"
         real(8), parameter :: NTD_8 = z"8000000000000001"
-
-
 
         end module

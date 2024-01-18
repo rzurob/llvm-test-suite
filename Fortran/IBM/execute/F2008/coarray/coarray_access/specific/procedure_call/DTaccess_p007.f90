@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_p007.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : May 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -19,7 +15,7 @@
 program main
 
 	implicit none
-	
+
 	interface
 		subroutine twaddle1(caf, i1, r1)
 			type A
@@ -27,25 +23,25 @@ program main
 				integer(8) :: i
 				real(8) :: r
 			end type
-			
+
 			type (A), intent(inout) :: caf[10:*]
 			integer(8) :: i1
 			real(8) :: r1
 		end subroutine
-		
+
 		subroutine twaddle2(caf, i1, r1)
 			type A
 				sequence
 				integer(8) :: i
 				real(8) :: r
 			end type
-		
+
 			type (A), intent(inout) :: caf(2,2)[-1:0,0:1,1:*]
 			integer(8) :: i1
 			real(8) :: r1
 		end subroutine
 	end interface
-	
+
 	type A
 		sequence
 		integer(8) :: i
@@ -54,7 +50,7 @@ program main
 
 	logical :: precision_r8
 	integer :: i, j
-	
+
 	type (A), save :: cafA[*]
 	type (A) :: dtA
 	type (A), save :: cafB(2,2)[2,2,*]
@@ -76,20 +72,20 @@ program main
 		print *, dtA%r
 		error stop 21
 	end if
-	
-	
+
+
 	cafB%i = 1
 	cafB%r = 2.0_8
 	dtB%i = 29
 	dtB%r = 4.0_8
-	
+
 	call twaddle2(cafB, 29_8, 2.0_8)
 	if ( any(cafB%i /= dtB%i) ) then
 		print *, "actual", cafB%i
 		print *, "expected", dtB%i
 		error stop 22
 	end if
-	
+
 	do i = 1, 2
 		do j = 1, 2
 			if (.not. precision_r8(cafB(i,j)%r, dtB(i,j)%r)) then
@@ -100,7 +96,7 @@ program main
 			end if
 		end do
 	end do
-	
+
 end
 
 
@@ -110,11 +106,11 @@ subroutine twaddle1(caf, i1, r1)
 		integer(8) :: i
 		real(8) :: r
 	end type
-	
+
 	type (A), intent(inout) :: caf[10:*]
 	integer(8) :: i1
 	real(8) :: r1
-	
+
 	caf%i = caf%i * i1
 	caf%r = caf%r + r1
 end subroutine
@@ -130,9 +126,9 @@ subroutine twaddle2(caf, i1, r1)
 	type (A), intent(inout) :: caf(2,2)[-1:0,0:1,1:*]
 	integer(8) :: i1
 	real(8) :: r1
-	
+
 	caf%i = i1
-	
+
 	do i = 1, 2
 		do j = 1, 2
 			caf(i,j)%r = caf(i,j)%r + r1

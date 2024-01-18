@@ -1,33 +1,25 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectRealCompWrite01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectRealCompWrite01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 9 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 9 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. Test Write and Read when Derived type has real ultimate components
-!*  2. Derived type is polymorphic type and has type bound procedure and generic binding 
+!*  2. Derived type is polymorphic type and has type bound procedure and generic binding
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m1
    type base(k1,l1)
       integer,kind :: k1
       integer,len  :: l1 ! l1=1
- 
+
       real(k1) :: r1(l1)
       contains
          procedure ::  writeDT=>writeBase
@@ -48,12 +40,12 @@ module m1
               stop 12
         end select
     end subroutine
- 
+
 end module
 
 module m2
   use m1
-  
+
   type,extends(base) :: child(k2,l2)
       integer,kind  :: k2
       integer,len   :: l2 ! l2=2
@@ -61,17 +53,17 @@ module m2
       real(k1+k2) :: r2(l1:l2)
       contains
          procedure ::  writeDT=>writeChild
-         generic :: write=>writeDT 
+         generic :: write=>writeDT
   end type
 
   type,extends(child) :: gen3(k3,l3)
        integer,kind :: k3
        integer,len  :: l3 ! l3=4
 
-       real(k1+k2+k3) :: r3(l1+l2:l3) 
-       
+       real(k1+k2+k3) :: r3(l1+l2:l3)
+
        contains
-         procedure :: writeDT=>writeGen3 
+         procedure :: writeDT=>writeGen3
          generic   :: write=>writeDT
   end type
 
@@ -90,7 +82,7 @@ module m2
              x(2)%r3=[-1.23Q+208,1.23Q-208]
           class default
              stop 10
-       end select 
+       end select
 
        ptr(-2:)=>target
 
@@ -99,8 +91,8 @@ module m2
     subroutine writeChild(dt,unit)
         class(child(4,*,4,*)),intent(in) :: dt
         integer,intent(in) :: unit
-        
-        print *," in writeChild"        
+
+        print *," in writeChild"
         select type(dt)
            type is(child(4,*,4,*))
               write(unit,*) dt
@@ -113,10 +105,10 @@ module m2
         class(gen3(4,*,4,*,8,*)),intent(in) :: dt
         integer,intent(in) :: unit
 
-        print *," in writeGen3"    
+        print *," in writeGen3"
         select type(dt)
            type is(gen3(4,*,4,*,8,*))
-              ! write the slash separator to ignore remainning items when reading inputs later 
+              ! write the slash separator to ignore remainning items when reading inputs later
               write(unit,*,decimal='COMMA') dt,"/"
            class default
              stop 14
@@ -142,13 +134,13 @@ program listDirectRealCompWrite01
 
   open(unit=unit,file='listDirectRealCompWrite01.out',form='formatted', &
       access='sequential',status='replace', &
-      sign='plus',decimal='comma',iostat=ios,iomsg=msg)  
+      sign='plus',decimal='comma',iostat=ios,iomsg=msg)
 
   if( ios <> 0) then
      write(unit,*) "fail to open the file"
      write(unit,*) "iostat=",ios
      write(unit,*) "iomsg=",msg
-     stop 11 
+     stop 11
   end if
 
   do i=lbound(poly1,1),ubound(poly1,1)
@@ -166,19 +158,19 @@ program listDirectRealCompWrite01
      end associate
   end do
 
-  ! rewind back for read 
+  ! rewind back for read
   rewind unit
 
   allocate(gen3(4,1,4,2,8,4) :: poly2(-2:-1))
-  
+
   select type(poly2)
-    type is(gen3(4,*,4,*,8,*)) 
+    type is(gen3(4,*,4,*,8,*))
         ! assign value to poly2(-1)
         poly2(-1)%r1=1.0_4
         poly2(-1)%r2=1.1_8
         poly2(-1)%r3=1.2_16
         ! value of poly2(-2) comes from read, rest of items after slash will be ignored when read into array poly2
-        read(unit,*) poly2  
+        read(unit,*) poly2
     class default
        stop 17
   end select
@@ -188,33 +180,33 @@ program listDirectRealCompWrite01
      select type(x=>upoly1(i))
         type is(gen3(4,*,4,*,8,*))
            if(.not. precision_r4(x%r1,-1.23E-03))        stop 18
-           if(.not. precision_r8(x%r2(1),0.789D9))       stop 19      
-           if(.not. precision_r8(x%r2(2),-78.9D-9))      stop 20  
+           if(.not. precision_r8(x%r2(1),0.789D9))       stop 19
+           if(.not. precision_r8(x%r2(2),-78.9D-9))      stop 20
            if(.not. precision_r16(x%r3(3),-1.23Q+208))   stop 21
            if(.not. precision_r16(x%r3(4),1.23Q-208))    stop 22
         class default
-           stop 23 
+           stop 23
      end select
-  end do  
+  end do
 
   select type(poly2)
     type is(gen3(4,*,4,*,8,*))
        if(.not. precision_r4(poly2(-2)%r1,-1.23E-03))           stop 24
        if(.not. precision_r8(poly2(-2)%r2(1),0.789D9))          stop 25
-       if(.not. precision_r8(poly2(-2)%r2(2),-78.9D-9))         stop 26 
+       if(.not. precision_r8(poly2(-2)%r2(2),-78.9D-9))         stop 26
        if(.not. precision_r16(poly2(-2)%r3(3),-1.23Q+208))      stop 27
-       if(.not. precision_r16(poly2(-2)%r3(4),1.23Q-208))       stop 28  
+       if(.not. precision_r16(poly2(-2)%r3(4),1.23Q-208))       stop 28
 
        if(.not. precision_r4(poly2(-1)%r1,1.0_4))               stop 29
-       if(.not. precision_r8(poly2(-1)%r2(1),1.1_8))            stop 30 
-       if(.not. precision_r8(poly2(-1)%r2(2),1.1_8))            stop 31 
-       if(.not. precision_r16(poly2(-1)%r3(3),1.2_16))          stop 32 
-       if(.not. precision_r16(poly2(-1)%r3(4),1.2_16))          stop 33 
+       if(.not. precision_r8(poly2(-1)%r2(1),1.1_8))            stop 30
+       if(.not. precision_r8(poly2(-1)%r2(2),1.1_8))            stop 31
+       if(.not. precision_r16(poly2(-1)%r3(3),1.2_16))          stop 32
+       if(.not. precision_r16(poly2(-1)%r3(4),1.2_16))          stop 33
 
     class default
-       stop 34 
+       stop 34
   end select
-  
+
   close(unit,status='keep')
 
 end program

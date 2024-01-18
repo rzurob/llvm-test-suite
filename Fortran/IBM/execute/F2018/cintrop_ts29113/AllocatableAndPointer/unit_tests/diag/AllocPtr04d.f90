@@ -1,26 +1,18 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocPtr04d
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : March, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : 26305: C-interop Allocatable/Pointer
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Diagnose the following constraint:
-!*  
-!*  If a dummy argument in an interoperable interface is a pointer, 
+!*
+!*  If a dummy argument in an interoperable interface is a pointer,
 !*  it must not have the CONTIGUOUS attribute. (See section 8.7 bullet
 !*  6-c of the TS)
 !*

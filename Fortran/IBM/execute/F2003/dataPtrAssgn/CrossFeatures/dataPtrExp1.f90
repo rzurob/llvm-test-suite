@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrExp1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrExp1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 16, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Expression - type parameter 
+!*  Expression - type parameter
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -55,38 +47,38 @@
   END MODULE
 
 
-  PROGRAM dataPtrExp1 
+  PROGRAM dataPtrExp1
   USE M
   IMPLICIT NONE
 
-  CHARACTER(15), TARGET  :: T(100, 100), C 
-  CHARACTER(:), POINTER  :: Ptr(:,:) 
-  CHARACTER(15), TARGET  :: T1(10000) 
+  CHARACTER(15), TARGET  :: T(100, 100), C
+  CHARACTER(:), POINTER  :: Ptr(:,:)
+  CHARACTER(15), TARGET  :: T1(10000)
   INTEGER    :: I, J, K, N
- 
+
   N = 100; K = 0
   C = "012345678912345"
   T = C
   T1 = C
 
 
-  DO I =1, N 
-  DO J =I, N 
+  DO I =1, N
+  DO J =I, N
 
-    Ptr(I:, J:) => F1(T) 
+    Ptr(I:, J:) => F1(T)
     IF (.NOT. ASSOCIATED(Ptr))                   STOP 11
     IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 12
     IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
     IF (LEN(Ptr) .NE. 15)                        STOP 14
     IF (ANY( Ptr      .NE.  C ))                 STOP 15
- 
-    Ptr(I:J, I:J) => F2(T1) 
+
+    Ptr(I:J, I:J) => F2(T1)
     IF (.NOT. ASSOCIATED(Ptr))                 STOP 21
     IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      STOP 22
     IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      STOP 23
     IF (LEN(Ptr) .NE. 15)                      STOP 24
     IF (ANY( Ptr      .NE.  C ))               STOP 25
- 
+
   END DO
   END DO
 

@@ -1,42 +1,37 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90  
-! %GROUP: ftybn095a.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn095a.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : ftybn095a.f
-!*  TEST CASE TITLE            : type-bound procedure
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : type bound procedure 
+!*  DATE                       :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : type bound procedure
 !*
 !*  SECONDARY FUNCTIONS TESTED : pass, non_overridable
 !*
-!*  DESCRIPTION                : testing the derived type with type-bound 
-!*                               procedure as array element. 
-!*    
+!*  DESCRIPTION                : testing the derived type with type-bound
+!*                               procedure as array element.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod1	      
+   module mod1
       type parent
          integer :: x = 100
 	 contains
       	 procedure, nopass, non_overridable :: bind => proc1
-      end type 
+      end type
 
    type, extends(parent) :: child
    end type
@@ -48,7 +43,7 @@
    contains
       subroutine proc1(arg1)
          class(parent) :: arg1
-         arg1%x = 200 
+         arg1%x = 200
       end subroutine
 
    end module
@@ -57,7 +52,7 @@
    type(parent) :: dt_p(2)
    type(dt) :: dt_test(3)
 
-   call dt_p%bind(dt_p(1)) 
+   call dt_p%bind(dt_p(1))
    call dt_test%dt_c(2)%bind(dt_test(1)%dt_c(3))
    if (dt_p(1)%x .ne. 200)  error stop 2_4
    if (dt_p(2)%x .ne. 100)  error stop 22_4

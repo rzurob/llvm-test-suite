@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Common.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Common.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRet8.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRet8.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Common block 
+!*
+!*  Common block
 !*  (304354)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -52,7 +46,7 @@
   INTEGER :: F(SIZE(Arg))
     F= Arg
   END FUNCTION
- 
+
   END MODULE
 
   FUNCTION ExtFun(Arg)
@@ -60,18 +54,18 @@
   INTEGER :: ExtFun(SIZE(Arg))
     ExtFun = Arg
   END FUNCTION
- 
-  PROGRAM Common 
+
+  PROGRAM Common
   USE M
   PROCEDURE(F), POINTER :: ProcPtr
-  PROCEDURE(F)          :: ExtFun 
+  PROCEDURE(F)          :: ExtFun
   COMMON ProcPtr
 
   ProcPtr => ExtFun
   CALL IntSub()
   IF ( ASSOCIATED(ProcPtr) ) STOP 12
-   
-   
+
+
   CONTAINS
 
   SUBROUTINE IntSub()
@@ -82,10 +76,10 @@
 
   V = ProcPtr((/(I, I=1,1024)/))
   IF ( ANY(V .NE. (/(I, I=1,1024)/)) ) STOP 11
- 
+
   NULLIFY(ProcPtr)
- 
-  END SUBROUTINE 
+
+  END SUBROUTINE
 
 
   END

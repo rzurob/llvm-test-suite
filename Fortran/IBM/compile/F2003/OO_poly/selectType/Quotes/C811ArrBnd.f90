@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C811ArrBnd.f 
+! %POSTCMD: tcomp C811ArrBnd.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : C811ArrBnd 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : C811ArrBnd
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 2, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C811 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C811
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is an array constructor without ssociate-name => 
+!*    The selector is an array constructor without ssociate-name =>
 !*    Array formed by a binding call
-!*    (ICE) 
+!*    (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,7 +44,7 @@
 
     TYPE, EXTENDS(Base) :: Child
     CONTAINS
-      PROCEDURE, PASS   :: GetBase  
+      PROCEDURE, PASS   :: GetBase
     END TYPE
 
     CONTAINS
@@ -67,22 +61,22 @@
       END SELECT
     END FUNCTION
 
-  END MODULE 
+  END MODULE
 
   PROGRAM C811ArrBnd
   USE M
   IMPLICIT NONE
-  
+
   CLASS(*), POINTER    :: Ptr
   CLASS(Child), POINTER :: Ptr1
 
   ALLOCATE(Child :: Ptr )
- 
+
   SELECT TYPE ( Ptr%GetBase() )
-  END SELECT 
+  END SELECT
 
   SELECT TYPE ( Ptr1%GetBase() )
-  END SELECT 
+  END SELECT
   STOP 40
 
   END

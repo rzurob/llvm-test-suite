@@ -1,24 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : findloc01d.f
-!*
-!*  PROGRAMMER                 : Maryam Moghadas
 !*  DATE                       : 2013-05-28
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : findloc trinsic
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
 !*  DESCRIPTION                : FINDLOC (ARRAY, VALUE, DIM [, MASK, KIND, BACK])
-!*                               FINDLOC (ARRAY, VALUE [, MASK, KIND, BACK]) 
+!*                               FINDLOC (ARRAY, VALUE [, MASK, KIND, BACK])
 !*
 !*  Test the compilation fails if:
 !*
@@ -41,12 +31,12 @@
 !* ===================================================================
 
 PROGRAM findloc_diag
- 
+
  integer loop_i, k1 = 4
 
  integer  :: array_i0 = 4, value_i = 2
  integer, dimension(2) :: array_i1 = (/2,4/)
- 
+
  real  :: array_r0 = 4.0, value_r = 2.0
  real, dimension(4) :: array_r1 = (/1.0,2.0,3.0,4.0/)
 
@@ -63,7 +53,6 @@ PROGRAM findloc_diag
  byte, dimension(2) :: array_b1 = (/2,4/)
 
  logical :: mask_1(1) = (/.TRUE./)
-
 
  !-- defining a derive type (array) to check that findloc does not accept it --!
  type TypeA
@@ -125,21 +114,17 @@ print *, findloc(array_r1, value_r, 1, KIND = k1)
 print *, findloc(array_r1, value_r, 1, KIND = 16)
 print *, findloc(array_r1, value_r, 1, KIND = (/2/))
 
-
 print *, findloc(array_ch1, value_ch, 1, KIND = k1)
 print *, findloc(array_ch1, value_ch, 1, KIND = 16)
 print *, findloc(array_ch1, value_ch, 1, KIND = (/2/))
-
 
 print *, findloc(array_co1, value_co, 1, KIND = k1)
 print *, findloc(array_co1, value_co, 1, KIND = 16)
 print *, findloc(array_co1, value_co, 1, KIND = (/2/))
 
-
 print *, findloc(array_log1, value_log, 1, KIND = k1)
 print *, findloc(array_log1, value_log, 1, KIND = 16)
 print *, findloc(array_log1, value_log, 1, KIND = (/2/))
-
 
 print *, findloc(array_b1, value_b, 1, KIND = k1)
 print *, findloc(array_b1, value_b, 1, KIND = 16)
@@ -149,34 +134,20 @@ print *, findloc(array_b1, value_b, 1, KIND = (/2/)
 print *, findloc(array_i1, value_i, 1, BACK = 1)
 print *, findloc(array_i1, value_i, 1, BACK = (/.TRUE./))
 
-
 print *, findloc(array_r1, value_r, 1, BACK = 1)
 print *, findloc(array_r1, value_r, 1, BACK = (/.TRUE./))
-
 
 print *, findloc(array_co1, value_co, 1, BACK = 1)
 print *, findloc(array_co1, value_co, 1, BACK = (/.TRUE./))
 
-
 print *, findloc(array_log1, value_log, 1, BACK = 1)
 print *, findloc(array_log1, value_log, 1, BACK = (/.TRUE./))
-
 
 print *, findloc(array_b1, value_b, 1, BACK = 1)
 print *, findloc(array_b1, value_b, 1, BACK = (/.TRUE./))
 
-
-
 print *, findloc(array_ch1, value_ch, 1, BACK = 1)
 print *, findloc(array_ch1, value_ch, 1, BACK = (/.TRUE./))
 
-
 END
-
-
-
-
-
-
-
 

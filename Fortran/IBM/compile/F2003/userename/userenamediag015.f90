@@ -12,27 +12,20 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenamesame005.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2009b
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : ensure rename to a local that points to same function
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module opmod
- 
+
   interface operator(.add.)
     function plus2(a,b)
     real :: plus2
@@ -58,7 +51,7 @@ program main
     real, intent(in) :: a,b
     end function
   end interface
-   
+
   real :: a,b,c
   c=a.plus.b
   b=a.Plus.c
@@ -66,7 +59,7 @@ program main
   print *,c
   print *,b
   print *,a
-  
+
 end program
 
 function plus2(a,b)

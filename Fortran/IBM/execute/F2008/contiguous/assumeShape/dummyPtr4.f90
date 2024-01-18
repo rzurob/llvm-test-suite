@@ -1,26 +1,16 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dummyPtr4.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : external subroutine 
+!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute
+!*  SECONDARY FUNCTIONS TESTED : external subroutine
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                : - Pointer has contiguous attribute
 !*
-!*  DESCRIPTION                : - Pointer has contiguous attribute 
-!*                      
 !*    Dummy argument is pointer with CONTIGUOUS attribute
-!*    Actual argument is contiguous 
+!*    Actual argument is contiguous
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -39,20 +29,20 @@ PROGRAM dummyPtr4
       INTEGER, POINTER, CONTIGUOUS :: ptr(:,:)
 
       INTERFACE
-         SUBROUTINE Sub(Arg)           
+         SUBROUTINE Sub(Arg)
             INTEGER, POINTER, CONTIGUOUS  :: Arg(:,:)
          END SUBROUTINE Sub
       END INTERFACE
 
       I2D = RESHAPE( SOURCE = [(I, I=1,4)], SHAPE = [2,2] )
-      ptr => I2D 
+      ptr => I2D
       IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 10
 
       CALL Sub(ptr)
       IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 11
       IF (ANY(ptr .NE. RESHAPE(SOURCE =[1,2,2,4], SHAPE=[2,2]) )) ERROR STOP 12
 END PROGRAM dummyPtr4
-SUBROUTINE Sub(Arg)           
+SUBROUTINE Sub(Arg)
   INTEGER, POINTER, CONTIGUOUS  :: Arg(:,:)
 
   IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 20

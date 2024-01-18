@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf029.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,30 +12,23 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf029
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 04, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DESCRIPTION                : This tests the functionality of the  
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : This tests the functionality of the
 !*                               decimal edit mode when doing I/O with
-!*                               arrays of COMPLEX. Both internal and external 
-!*                               files are tested. This testcase tests the 
+!*                               arrays of COMPLEX. Both internal and external
+!*                               files are tested. This testcase tests the
 !*                               compile-time encoding of DECIMAL= specifier.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -47,11 +40,11 @@
       integer, parameter :: IN_C = 11, IN_P = 22, OUT = 33 ! unit numbers
 
       complex, dimension(3) :: cx1, cx2
-      
+
       integer, parameter :: NUM_TESTS = 2 ! number of records in each input files
 
       character(100) :: buffer
-      
+
       integer :: i
 
       cx1=(/(1.10, 1.12), (1.20, 1.22), (1.30, 1.32)/)
@@ -60,7 +53,7 @@
       open(IN_C, file=FNAME_C, decimal='comma')
       open(IN_P, file=FNAME_P, decimal='point')
       open(OUT, file=FNAME_OUT, decimal='point')
-      
+
       write(OUT, *, decimal='point') cx1
 
       ! read everything from input files and output it to OUT
@@ -85,7 +78,7 @@
       open(IN_C, file=FNAME_C, decimal='point')
       open(IN_P, file=FNAME_P, decimal='comma')
       open(OUT, file=FNAME_OUT, decimal='comma', position='append')
-      
+
       write(OUT, *, decimal='point') cx1
 
       ! read everything from input files and output it to OUT

@@ -1,13 +1,11 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                                IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : do_concurrent_d006.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2015-03-20
 !*  ORIGIN                     :
 !*
@@ -15,7 +13,7 @@
 !*  SECONDARY FUNCTIONS TESTED :
 !*  ADAPTED FROM               :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*   - a RETURN statement shall not appear in a DO CONCURRENT construct
 !*
 !=============================================================================
@@ -29,7 +27,7 @@
 
       DO CONCURRENT (j = 0:ly, i = 0:lx/8-1)
           RETURN
-      END DO 
+      END DO
 
       Mothership2: DO CONCURRENT (j = 0:ly)
         abc: DO CONCURRENT (i = 0:lx/8-1)
@@ -47,12 +45,12 @@
         DO CONCURRENT (i = 0:lx/8-1)
           RETURN
         END DO
-      END DO 
+      END DO
 
       DO CONCURRENT (j = 0:ly)
         DO CONCURRENT (i = 0:lx/8-1)
         END DO
         RETURN
-      END DO 
+      END DO
 
 end

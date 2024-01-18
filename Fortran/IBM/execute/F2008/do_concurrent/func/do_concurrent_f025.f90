@@ -1,14 +1,12 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL
 !USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : do_concurrent_f025.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2015-03-24
 !*  ORIGIN                     :
 !*
@@ -16,9 +14,9 @@
 !*  SECONDARY FUNCTIONS TESTED :
 !*  ADAPTED FROM               :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*    - acceptance of do concurrent loop with a large number of indices with OMP
-!*    - acceptance of deep nesting with OMP of 
+!*    - acceptance of deep nesting with OMP of
 !*      - do concurrent
 !*      - do concurrent in other loop structures
 !*
@@ -36,7 +34,7 @@
 !****************************************************************************!
         do concurrent (a = 1:2, b = 1:2, c = 1:2, d = 1:2, e = 1:2, f = 1:2, g = 1:2, h = 1:2, i = 1:2, j = 1:2, k = 1:2, l = 1:2, m = 1:2, n = 1:2, o = 1:2, p = 1:2, q = 1:2, r = 1:2, s = 1:2, t = 1:2)
           res(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t)=.true.
-        end do 
+        end do
 
         if (any(res .eqv. .false.)) error stop 11
 

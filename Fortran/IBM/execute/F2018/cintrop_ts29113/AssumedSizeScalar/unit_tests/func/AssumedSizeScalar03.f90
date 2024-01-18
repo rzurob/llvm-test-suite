@@ -1,6 +1,6 @@
 ! Paper 13-283 proposes an interp for TS 291113 (C-interop) that allows
 ! a scalar actual argument corresponding to an assumed-type and assumed-size
-! dummy arg. 
+! dummy arg.
 
   real r1(4, 4)
   r1 = 1.0

@@ -1,26 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type01d - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 11, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Nested SELECT TYPE Construct
 !*                               Host association
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -39,7 +32,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       PROGRAM Select_Type01d
-      IMPLICIT NONE 
+      IMPLICIT NONE
 !*
 ! DERIVED TYPE declarations
 !*
@@ -48,27 +41,27 @@
         INTEGER, LEN :: len1 = 20
 
         INTEGER(KIND=k1) :: my_arr(len1)
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
         CLASS(*), POINTER :: Cmp
-      END TYPE Child 
+      END TYPE Child
 
       INTEGER, PARAMETER :: k1 = KIND(0), len1 = 10
       CLASS(*), POINTER :: pntr
-    
-      ALLOCATE(Child(k1,len1):: pntr)    
+
+      ALLOCATE(Child(k1,len1):: pntr)
       IF (.NOT. ASSOCIATED(pntr)) STOP 10
 
       CALL sub2
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE sub2
 
       SELECT TYPE ( A => pntr)
         TYPE IS (Child(k1,*))
-           ALLOCATE(Base(k1,len1):: A%Cmp)    
+           ALLOCATE(Base(k1,len1):: A%Cmp)
            IF (.NOT. ASSOCIATED(A%Cmp)) STOP 11
            CALL sub1(A%Cmp)
 
@@ -100,9 +93,9 @@
 
               TYPE IS (Base(k1,*))
                 IF (SIZE(A%my_arr) .NE. len1) STOP 12
-        
+
               CLASS DEFAULT
-                STOP 41 
+                STOP 41
             END SELECT
            !* End nested SELECT TYPE
 

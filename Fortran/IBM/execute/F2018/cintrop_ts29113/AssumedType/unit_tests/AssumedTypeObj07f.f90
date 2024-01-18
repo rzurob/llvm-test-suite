@@ -1,22 +1,15 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AssumedTypeObj07f
-!*
-!*  PROGRAMMER                 : Ren, Jian Gang
 !*  DATE                       : Apr 14, 2012
 !*  ORIGIN                     : Linux/AIX Compiler Development,
 !*                             : IBM Software Solutions China Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Assumed-type object
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Calling a BIND(C) procedure from Fortran
 !*                               where the procedure is defined in C with
@@ -42,8 +35,8 @@ module m
     integer(c_int) k
   end type
 
-  integer, parameter :: MAKE_DT = 1 
-  integer, parameter :: MAKE_ET = 2 
+  integer, parameter :: MAKE_DT = 1
+  integer, parameter :: MAKE_ET = 2
   integer, parameter :: MAKE_FT = 3
 
   contains
@@ -60,16 +53,16 @@ module m
       else
         error stop
       endif
-    end function 
+    end function
 end module
 
 program AssumedTypeObj07f
-  use, intrinsic :: iso_c_binding 
+  use, intrinsic :: iso_c_binding
   use m
   implicit none
 
   type new_t
-    integer(c_int) :: newV = -1  
+    integer(c_int) :: newV = -1
   end type
 
   class(*), allocatable :: a
@@ -85,7 +78,7 @@ program AssumedTypeObj07f
     end subroutine c_func_dyn
   end interface
 
-  allocate(a, source=make_type(MAKE_DT)) 
+  allocate(a, source=make_type(MAKE_DT))
   call sub(a, 1)
   deallocate(a)
 
@@ -105,12 +98,12 @@ program AssumedTypeObj07f
   call sub(a, 5)
   deallocate(a)
 
-  contains 
+  contains
     subroutine sub(a, flag)
       TYPE(*) :: a
       TYPE(*) :: flag
-     
-      call c_func_dyn(a, flag) 
+
+      call c_func_dyn(a, flag)
     end
 end
 

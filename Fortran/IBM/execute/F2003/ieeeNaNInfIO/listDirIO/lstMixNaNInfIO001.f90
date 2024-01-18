@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : lstMixNaNInfIO001.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 23, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -43,21 +37,21 @@
       real(16)    :: rl3
 
       integer :: ios = 0
-      
+
       open(in,  file='lstMixNaNInfIO001.dat', action='read')
       open(out, file='lstMixNaNInfIO001.out', action='write')
-      
+
       do
          read(in, *, iostat=ios) cx1, rl1, cx2, rl2, cx3, rl3
 
          if ( is_iostat_end(ios) ) exit
-         
+
          write(out, *) rl3, cx3, rl2, cx2, rl1, cx1
-         
+
       end do
 
       close(in)
       close(out)
 
-      
+
       end

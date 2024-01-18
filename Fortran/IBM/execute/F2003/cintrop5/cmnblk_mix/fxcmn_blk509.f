@@ -2,41 +2,33 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk_qlngdbl.sh fxcmn_blk509 cxcmn_blk509
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f fxcmn_blk509.o cxcmn_blk509.o fxcmn_blk509
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that 1-dimensional array variables
 !*				 of all data types inside of common blocks are
-!*				 interoperable with C variables 
+!*				 interoperable with C variables
 !*
 !*				 Test:  BIND(C) statement in main program
 !*
 !*                               Multiple COMMON statements with one
 !*                               variable in one BIND(C) statements
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -49,7 +41,7 @@ program fxcmn_blk509
 	use iso_c_binding
         implicit none
 	logical precision_r4, precision_r8, precision_r16
- 
+
         integer i
 
         integer (kind=o'001')                           :: int_s1a(3)
@@ -277,7 +269,7 @@ program fxcmn_blk509
         if (         int_C_INT_FAST16_T(i)              .ne.   79 )      error stop 46
         if (         real_s4b(i)                        .ne.   80 )      error stop 47
 
-      end do 
+      end do
 
 
 
@@ -329,7 +321,7 @@ program fxcmn_blk509
         if ( int_s1b(i)                .ne. 52 )      error stop 81
         if ( int_c_int_fast16_t(i)     .ne. 51 )      error stop 82
         if ( real_s4b(i)               .ne. 50 )      error stop 83
-      end do 
+      end do
 
 
 end program

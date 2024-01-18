@@ -1,39 +1,31 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgTypeCompatible03a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgTypeCompatible03a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 14 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 14 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
 !*  sub1 - actual : Pchild
 !*         dummy  : Pchild
-!*  sub2 - actual : Pchild 
-!*         dummy  : Pbase 
-!*  sub3 - actual : Pbase 
-!*         dummy  : Pbase 
+!*  sub2 - actual : Pchild
+!*         dummy  : Pbase
+!*  sub3 - actual : Pbase
+!*         dummy  : Pbase
 !*  sub4 - actual : Pbase
 !*         dummy  : Tbase
-!*   test actual argument pass through several layers of procedure,verify type,and component value  
+!*   test actual argument pass through several layers of procedure,verify type,and component value
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type base(k1,l1)
-      integer,kind :: k1 
+      integer,kind :: k1
       integer,len  :: l1
       integer(k1)  :: i1
   end type
@@ -41,14 +33,14 @@ module m
   type,extends(base) :: child(k2,l2)
       integer,kind :: k2
       integer,len  :: l2
-      integer(k2)  :: i2  
+      integer(k2)  :: i2
   end type
 
   contains
 
     subroutine sub1(arg)
 
-      class(child(2,:,4,:)),allocatable,intent(out) :: arg 
+      class(child(2,:,4,:)),allocatable,intent(out) :: arg
 
       print *,"in sub1"
 
@@ -63,10 +55,10 @@ module m
 
     subroutine sub2(arg)
        class(base(2,*)),intent(inout) :: arg
-      
-       print *,"in sub2" 
-       call sub3(arg)    
-   
+
+       print *,"in sub2"
+       call sub3(arg)
+
     end subroutine
 
     subroutine sub3(arg)
@@ -78,8 +70,8 @@ module m
 
     subroutine sub4(arg)
        type(base(2,*)),intent(inout)  :: arg
-       
-       print *,"in sub4" 
+
+       print *,"in sub4"
        arg%i1=99
     end subroutine
 

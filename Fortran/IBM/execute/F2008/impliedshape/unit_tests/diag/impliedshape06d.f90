@@ -1,17 +1,9 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : impliedshape06d.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : February 14, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Implied-shape arrays
-!*
-!* DRIVER STANZA              : xlf2008
 !*
 !* DESCRIPTION                : Testing proper diagnostics of
 !*                              implied-shape arrays with langlvls
@@ -68,10 +60,10 @@
       logical, parameter :: l4d2 (*,*) = &
            & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2])
       logical, parameter :: l4d3 (*,*,*) = &
-           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., & 
+           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., &
            &          .FALSE.,.TRUE.,.FALSE.,.TRUE.],[2,2,2])
       logical, parameter :: l4d4 (*,*,*,*) = &
-           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., & 
+           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2,2,2])

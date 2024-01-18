@@ -1,20 +1,13 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AssumedType01f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : June 13, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop: Assumed Type objects
 !*
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Calling a BIND(C) procedure from Fortran
@@ -25,10 +18,10 @@
 
 use, intrinsic :: iso_c_binding
 implicit none
-integer, parameter             :: N = 10 
-integer                        :: i 
+integer, parameter             :: N = 10
+integer                        :: i
 integer(c_short)               :: i_short(N)
-integer(c_int)                 :: i_int(N)   
+integer(c_int)                 :: i_int(N)
 integer(c_long)                :: i_long(N/2)
 real(c_float)                  :: r_float(2*N)
 real(c_double)                 :: r_double(N/5)
@@ -50,15 +43,15 @@ i_long = 4
 i_short = [(i, i=1,N)]
 r_float = 1.03
 r_double = 9.25
-z_float_complex = (5.0e0,5.0e0)        !<--- does not compile 
+z_float_complex = (5.0e0,5.0e0)        !<--- does not compile
 l_bool = .true.
 
 print*, "Before the call to C_sub:", i_short
-call c_sub(i_short(1), size(i_short), 1)                     !<--- modify all the elements 
+call c_sub(i_short(1), size(i_short), 1)                     !<--- modify all the elements
 print*, "After the call to C_sub:", i_short
 
 print*, "Before the call to C_sub:", i_int
-call c_sub(i_int(5), (N-5)+1, 2)                             !<--- modify 6 elements: 5 to 10 
+call c_sub(i_int(5), (N-5)+1, 2)                             !<--- modify 6 elements: 5 to 10
 print*, "After the call to C_sub:", i_int
 
 print*, "Before the call to C_sub:", i_long
@@ -81,4 +74,4 @@ print*, "Before the call to C_sub:", l_bool
 call c_sub(l_bool(1), size(l_bool), 7)                       !<--- modify the whole array (3 elements)
 print*, "After the call to C_sub:", l_bool
 
-end 
+end

@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : daAll_DT
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-12-20
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 CAF coarray defined assignment
 !*  SECONDARY FUNCTIONS TESTED : LHS is any non-char coarray intrinsic type, RHS is noncoarray derived type
@@ -69,7 +65,7 @@ program dAll_DT
   zv = d2
   rv = d2
   lv = d2
-  
+
   if ( any(iv .ne. [99,98,97]) ) then
 	print *, iv
 	error stop 11
@@ -86,13 +82,13 @@ program dAll_DT
 	print *, lv
 	error stop 14
   end if
-  
-  
+
+
   iv = d1
   zv = d1
   rv = d1
   lv = d1
-  
+
   if ( any(iv .ne. [1,2,3]) ) then
 	print *, iv
 	error stop 15
@@ -116,7 +112,7 @@ subroutine i_d_assign(lhs,rhs)
   use :: dtmod
   integer(4), intent(out) :: lhs(3)
   type(dt), intent(in) :: rhs
-  
+
   lhs = rhs%icomp
 end subroutine
 
@@ -124,7 +120,7 @@ subroutine z_d_assign(lhs,rhs)
   use :: dtmod
   complex(4), intent(out) :: lhs
   type(dt), intent(in) :: rhs
-  
+
   lhs = rhs%zcomp
 end subroutine
 
@@ -132,7 +128,7 @@ subroutine r_d_assign(lhs,rhs)
   use :: dtmod
   real(8), intent(out) :: lhs
   type(dt), intent(in) :: rhs
-  
+
   lhs = rhs%rcomp
 end subroutine
 
@@ -140,6 +136,6 @@ subroutine l_d_assign(lhs,rhs)
   use :: dtmod
   logical(1), intent(out) :: lhs
   type(dt), intent(in) :: rhs
-  
+
   lhs = rhs%lcomp
 end subroutine

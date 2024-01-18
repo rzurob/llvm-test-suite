@@ -1,25 +1,14 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*                                associate procedure pointer with c function
 !*                                pointer pointing to C function with void pointer
-!*                                void ** as its argument and its return. 
+!*                                void ** as its argument and its return.
 !* ===================================================================
 
 program procptrBindcProc29c
@@ -31,7 +20,7 @@ program procptrBindcProc29c
    end type
 
    type dt
-       type(C_FUNPTR) :: cfunptr 
+       type(C_FUNPTR) :: cfunptr
    end type
 
    interface
@@ -44,12 +33,12 @@ program procptrBindcProc29c
    type(dt) :: dtype
 
    type(dbind) , target :: i
-   type(C_PTR) :: j, res 
+   type(C_PTR) :: j, res
    type(dbind), pointer :: p, pp
 
    procedure(cfunc), pointer :: funptr => null()
 
-   i%b = 2_C_INT 
+   i%b = 2_C_INT
    j = C_LOC(i)
    if ( .not. C_ASSOCIATED(j) ) error stop 1_4
    if ( .not. C_ASSOCIATED(j, C_LOC(i)) ) error stop 2_4
@@ -70,7 +59,7 @@ program procptrBindcProc29c
 
    if ( .not. C_ASSOCIATED(j) ) error stop 25_4
 
-   do k = 1, 5 
+   do k = 1, 5
       if ( p%b(k) /= 2 ) error stop 26_4
    end do
 

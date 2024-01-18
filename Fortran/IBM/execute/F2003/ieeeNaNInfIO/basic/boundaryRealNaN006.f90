@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : boundaryRealNaN006.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -31,7 +25,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      use, intrinsic :: ieee_arithmetic 
+      use, intrinsic :: ieee_arithmetic
       implicit none
 
       real(4)  :: rl1(8)
@@ -41,13 +35,13 @@
 
       integer, parameter :: unit = 11
 
-      character(64), parameter :: myfmt =                              & 
+      character(64), parameter :: myfmt =                              &
      & '(Q1.1,/,Q2.1,/,Q3.2,/,Q4.2,/,Q5.2,/,Q6.2,/,Q7.2,/,Q15.2)'
 
       equivalence(rl3, rl3equiv)
 
       open(unit, file='boundaryRealNaN006.out', action='write')
-      
+
       ! Write out real(4) quiet NaN ( positive and negative )
 
       rl1 = b'01111111111111111111111111111111' ! positive NaN(Q)
@@ -71,7 +65,7 @@
 
       rl3equiv = z'FFFFFFFFFFFFFFFF' ! negative NaN(Q)
       write(unit, fmt=myfmt) rl3, rl3, rl3, rl3, rl3, rl3, rl3, rl3
- 
+
 
      !*********************************************************
 

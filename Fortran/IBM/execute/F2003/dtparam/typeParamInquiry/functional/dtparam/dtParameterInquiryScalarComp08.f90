@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryScalarComp08.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryScalarComp08.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
 !*  DATE                       : July 8 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY FOR DT AND COMPONENT
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. ALLOCATABLE SCALAR CHARACTER COMPONENT
@@ -42,7 +34,7 @@ module m
 
      character(kind=1,len=2),allocatable     :: c1
      character(len=:),allocatable            :: c2
-     character(len=k1+k2+k3+k4),allocatable  :: c3  
+     character(len=k1+k2+k3+k4),allocatable  :: c3
      character(len=l1),allocatable           :: c4
      character(len=k1%kind),allocatable      :: c5
      character(len=7*l1%kind),allocatable    :: c6
@@ -67,14 +59,14 @@ end module
   allocate(t%c3,source='')
   t%c4="fortran xlftest team"
   t%c5=t%c1//t%c2
-  allocate(t%c6,source=1_"xlftest") 
+  allocate(t%c6,source=1_"xlftest")
   t%c7=char(ichar('A'))//char(ichar('B'))
   t%c8=t%c4(1:2)
   allocate(t%c9,source=t%c8(1:0))
-  t%c10="xlftest"(1:3) 
+  t%c10="xlftest"(1:3)
   allocate(t%c11,source="hello"//" "//"world!")
 
- 
+
   if(t%k1 /= 1)                                                error stop 10_4
   if(t%k2 /= 2)                                                error stop 11_4
   if(t%k3 /= 3)                                                error stop 12_4
@@ -95,14 +87,14 @@ end module
   if(t%c2 /= "xl")                                             error stop 23_4
   if(t%c3 /= '')                                               error stop 24_4
   if(t%c4 /= "fortr")                                          error stop 25_4
-  if(t%c5 /= "x")                                              error stop 26_4 
+  if(t%c5 /= "x")                                              error stop 26_4
   if(t%c6 /= "xlftest")                                        error stop 27_4
   if(t%c7 /= 'AB')                                             error stop 28_4
   if(t%c8 /= "fo")                                             error stop 29_4
   if(t%c9 /= '')                                               error stop 30_4
   if(t%c10 /= '')                                              error stop 31_4
   if(t%c11 /= "hello world!")                                  error stop 32_4
- 
+
   if(t%c1%kind /= kind(t%c1) .or. t%c1%kind /= 1)              error stop 33_4
   if(t%c2%kind /= kind(t%c2) .or. t%c2%kind /= 1)              error stop 34_4
   if(t%c3%kind /= kind(t%c3) .or. t%c3%kind /= 1)              error stop 35_4

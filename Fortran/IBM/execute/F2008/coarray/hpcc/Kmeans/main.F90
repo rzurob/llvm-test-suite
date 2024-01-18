@@ -1,5 +1,5 @@
 !*    ********************************************************************
-!*                               MAIN PROGRAM  
+!*                               MAIN PROGRAM
 !*    ********************************************************************
 
       program kmeans_main
@@ -33,7 +33,7 @@
            double precision clusterv(K,D)
          end function
       end interface
-      
+
 ! ----------- read command line arguments -----------------------------
 
       call getarg(1, argbuf)
@@ -77,7 +77,7 @@
  50      format('                  rate =', F5.2, ' GFlops')
  55      format('             equiv. BW =', F5.2, ' GBytes/s')
  60      format('   Reaverage time      =', F8.2, ' secs')
-         
+
          timePerIter = timer_total(1) / K / N / D / niters * 1.0e9
          procGflops = 3.0/timePerIter
          procBW = 9.0/timePerIter

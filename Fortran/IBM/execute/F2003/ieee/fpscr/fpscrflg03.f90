@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: -qfree=f90 -qstrict 
+! %COMPOPTS: -qfree=f90 -qstrict
 ! %GROUP: fpscrflg03.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,30 +12,24 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : IEEE modules
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : March 30, 2002
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ieee_get_flag()
 !*				 ieee_set_flag()
 !*
 !*  REFERENCE                  : Feature 180920
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This is a FPSCR testcase. 
+!*  DESCRIPTION                : This is a FPSCR testcase.
 !*				 In this testcase, main program will call a
-!*				 subroutine and the subroutine will call another 
+!*				 subroutine and the subroutine will call another
 !*                               subroutine.
 !*				 It tests the following scenarios:
-!*	1) Processes that use IEEE calling processes that don't use IEEE. 
-!*	2) Processes that don't use IEEE calling processes that use IEEE. 
-!*	3) Flags that cleared on entry to a process that use IEEE, and are restored on exit. 
+!*	1) Processes that use IEEE calling processes that don't use IEEE.
+!*	2) Processes that don't use IEEE calling processes that use IEEE.
+!*	3) Flags that cleared on entry to a process that use IEEE, and are restored on exit.
 !*      4) Flags that are set in a process that use IEEE remain set on exit.
 !*
 !* ===================================================================
@@ -50,7 +44,7 @@
 
           interface
 
-            subroutine ext_sub1() 
+            subroutine ext_sub1()
 	  	use ieee_arithmetic
             end subroutine
 
@@ -62,7 +56,7 @@
                 use ieee_arithmetic
             end subroutine
 
-            subroutine ext_sub11() 
+            subroutine ext_sub11()
 	  	use ieee_arithmetic
             end subroutine
 
@@ -81,7 +75,7 @@
           end interface
 
 	  integer*4 flag_values(5)
-	
+
           flag_values(1) = get_fpscr_flags(fp_overflow)
           flag_values(2) = get_fpscr_flags(fp_div_by_zero)
           flag_values(3) = get_fpscr_flags(fp_invalid)
@@ -135,7 +129,7 @@
           call clr_fpscr_flags(fp_inv_vxsoft)
 
 
-!*** sub5: flag was set in subroutine 
+!*** sub5: flag was set in subroutine
           call ext_sub5()
           flag_values(1) = get_fpscr_flags(fp_overflow)
           flag_values(2) = get_fpscr_flags(fp_div_by_zero)
@@ -257,7 +251,7 @@
           call clr_fpscr_flags(fp_inv_vxsoft)
 
 
-!*** sub15: flag was set in subroutine 
+!*** sub15: flag was set in subroutine
           call ext_sub15()
           flag_values(1) = get_fpscr_flags(fp_overflow)
           flag_values(2) = get_fpscr_flags(fp_div_by_zero)
@@ -360,7 +354,7 @@
 !*  which itself calls subroutrine that uses IEEE.
 !* --------------------------------------------------------------
 !*  Call to an external subroutine with exception flags SET on
-!*  entry into the subroutine. 
+!*  entry into the subroutine.
 !***********************************************************************
 !*** sub1: flag was not set in subroutine
           call ext_sub1()
@@ -382,7 +376,7 @@
 
           if (any(flag_values .eq. 0))                  error stop 22
 
-!*** sub5: flag was set in subroutine 
+!*** sub5: flag was set in subroutine
           call ext_sub5()
           flag_values(1) = get_fpscr_flags(fp_overflow)
           flag_values(2) = get_fpscr_flags(fp_div_by_zero)
@@ -418,7 +412,7 @@
 !*  which itself calls subroutrine that does not use IEEE.
 !* --------------------------------------------------------------
 !*  Call to an external subroutine with exception flags SET on
-!*  entry into the subroutine. 
+!*  entry into the subroutine.
 !***********************************************************************
 !*** sub11: flag was not set in subroutine
           call ext_sub11()
@@ -440,7 +434,7 @@
 
           if (any(flag_values .eq. 0))                  error stop 28
 
-!*** sub15: flag was set in subroutine 
+!*** sub15: flag was set in subroutine
           call ext_sub15()
           flag_values(1) = get_fpscr_flags(fp_overflow)
           flag_values(2) = get_fpscr_flags(fp_div_by_zero)
@@ -494,8 +488,8 @@
 
 !***********************************************************************
 !*  Rule:
-!*	If there is an exception flag clear on entry into a procedure that 
-!*      uses IEEE intrinsic modules, the flag can be set on exit. 
+!*	If there is an exception flag clear on entry into a procedure that
+!*      uses IEEE intrinsic modules, the flag can be set on exit.
 !***********************************************************************
 
 !***  Sub1 calls sub2  ***
@@ -643,7 +637,7 @@
 !***********************************************************************
 !*  External subroutine with exception flags set on entry
 !*  calls another subroutine that does not
-!*  use IEEE modules. 
+!*  use IEEE modules.
 !***********************************************************************
 !***  sub11 calls sub12  ***
         subroutine ext_sub11()
@@ -652,7 +646,7 @@
 
 	  interface
 		subroutine ext_sub12()
-			use xlf_fp_util 
+			use xlf_fp_util
 		end subroutine
 	  end interface
 
@@ -679,7 +673,7 @@
           flag_values(4) = get_fpscr_flags(fp_underflow)
           flag_values(5) = get_fpscr_flags(fp_inexact)
 
-!*  Check if all flags are initially false. 
+!*  Check if all flags are initially false.
           if (any(flag_values .ne. 0))           	error stop 303
 
         end subroutine !!ext_sub12()
@@ -785,7 +779,7 @@
           flag_values(4) = get_fpscr_flags(fp_underflow)
           flag_values(5) = get_fpscr_flags(fp_inexact)
 
-!*  Check if all flags are initially false. 
+!*  Check if all flags are initially false.
           if (any(flag_values .ne. 0))           	error stop 312
 
 !*  Assign true to all flags.
@@ -809,7 +803,7 @@
 
 !-----------------------------------------------------------------------
 !***********************************************************************
-!*  External subroutine that doesn't use IEEE calls subroutine 
+!*  External subroutine that doesn't use IEEE calls subroutine
 !*  that uses IEEE.
 !*  Flag is CLEAR in main program.
 !***********************************************************************
@@ -830,7 +824,7 @@
           flag_values(4) = get_fpscr_flags(fp_underflow)
           flag_values(5) = get_fpscr_flags(fp_inexact)
 
-!*  Check if all flags are initially false. 
+!*  Check if all flags are initially false.
           if (any(flag_values .ne. 0))           	error stop 314
 
 	  call ext_sub4()
@@ -848,7 +842,7 @@
 
 !-----------------------------------------------------------------------
 !***********************************************************************
-!*  External subroutine that doesn't use IEEE calls subroutine 
+!*  External subroutine that doesn't use IEEE calls subroutine
 !*  that uses IEEE.
 !*  Flag is SET in main program.
 !***********************************************************************
@@ -869,7 +863,7 @@
           flag_values(4) = get_fpscr_flags(fp_underflow)
           flag_values(5) = get_fpscr_flags(fp_inexact)
 
-!*  Check if all flags are initially true, since its set in main program. 
+!*  Check if all flags are initially true, since its set in main program.
           if (any(flag_values .eq. 0))           	error stop 316
 
 	  call ext_sub4()

@@ -2,43 +2,36 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk061b cxcmn_blk061
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.o *.mod fxcmn_blk061b fxcmn_blk061b.out
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : March 19, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc 
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This test case will verify that 1-dimensional array 
-!*				 variables inside of common blocks are interoperable 
+!*  DESCRIPTION                : This test case will verify that 1-dimensional array
+!*				 variables inside of common blocks are interoperable
 !*				 with C variables that are not inside of a structure.
 !*
 !*                               Data type being tested:  integer*1
-!*					
-!*                               Test: BIND(C) common block in external subroutine 
-!*					
+!*
+!*                               Test: BIND(C) common block in external subroutine
+!*
 !* ===================================================================
-!*  REVISION HISTORY					
-!*  MM/DD/YY:  Init:  Comments:			
+!*  REVISION HISTORY
+!*  MM/DD/YY:  Init:  Comments:
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -60,20 +53,20 @@ subroutine extern_fsub()
 ! ----------------------------------------------------------------------------
 
 
-	integer (kind=o'001')				:: int_s1(5) 
+	integer (kind=o'001')				:: int_s1(5)
 
 ! ----------------------------------------------------------------------------
-! One COMMON statement with one common block in one BIND(C) statement  
+! One COMMON statement with one common block in one BIND(C) statement
 ! ----------------------------------------------------------------------------
 
-	COMMON     /blk_int_s1/     	int_s1       		
-	bind(c, Name ='_______________________________________________________________________')  :: /blk_int_s1/ 
+	COMMON     /blk_int_s1/     	int_s1
+	bind(c, Name ='_______________________________________________________________________')  :: /blk_int_s1/
 
 ! ----------------------------------------------------------------------------
 ! Integer Initialization
 ! ----------------------------------------------------------------------------
 
-	int_s1                  =  (/b'1111111',o'0',-128,o'177',127/)    
+	int_s1                  =  (/b'1111111',o'0',-128,o'177',127/)
 
 ! ----------------------------------------------------------------------------
 ! Integer Verification

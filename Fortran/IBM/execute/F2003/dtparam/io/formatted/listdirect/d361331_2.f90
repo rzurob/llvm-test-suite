@@ -1,22 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361331_2.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361331_2.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 24 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 24 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
@@ -35,7 +28,7 @@ module m
      integer,kind :: k3
      integer,len  :: l3
 
-     integer(k3) :: i1(l3-1) 
+     integer(k3) :: i1(l3-1)
      contains
         procedure :: readDT=>readChild
         generic  :: myread=>readDT
@@ -76,9 +69,9 @@ program d361331_2
 
    allocate(tar(-1:0))
 
-   print *,tar%k2,tar%l2,tar%k3,tar%l3 
+   print *,tar%k2,tar%l2,tar%k3,tar%l3
 
-   call sub(tar)  
+   call sub(tar)
 
 end program
 
@@ -87,7 +80,7 @@ subroutine sub(arg)
    class(base(8,*)),intent(inout) :: arg(2:)
 
 
-!   open(10,status='scratch') 
+!   open(10,status='scratch')
 
    call arg(2)%myread(10)
 

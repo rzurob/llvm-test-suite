@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypParamKind   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypParamKind
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  Each type parameter is itself of type integer. If its kind selector is omitted,
-!*  the kind type parameter is default integer 
-!*  
+!*  the kind type parameter is default integer
+!*
 !*  (not recog KIND/340263)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM  dtParamTypParamKind 
+  PROGRAM  dtParamTypParamKind
 
   TYPE :: DT0(K1, K2, K, K4, K8)
     INTEGER(KIND=1), KIND :: K1=1_1

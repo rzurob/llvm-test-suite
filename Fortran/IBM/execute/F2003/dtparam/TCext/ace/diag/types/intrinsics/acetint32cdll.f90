@@ -1,15 +1,11 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acetint32cdll
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetint32cd
 !*                               by David Forster)
 !*  DATE                       : 2007-12-03 (original: 2006-08-30)
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*                               (+ Array Constructor Enhancements)
@@ -20,12 +16,11 @@
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
 !*                               (original: Feature Number 289053)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : procedure pointer, character
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -39,7 +34,7 @@
 module acetint32cdmod
 
   implicit none
-  
+
   type :: modtype (lmodtype_1,lmodtype_2) ! lmodtype_1,lmodtype_2=1,7
      integer, len :: lmodtype_1,lmodtype_2
      character(lmodtype_1) :: myval = 'a'

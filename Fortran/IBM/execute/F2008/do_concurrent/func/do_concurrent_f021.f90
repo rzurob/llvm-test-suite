@@ -1,24 +1,17 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt200.f
-!*
-!* PROGRAMMER                   : Bernard Kan
 !* DATE                         : Aug 31, 2015
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008 DO CONCURENT
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !*
-!* Calling a BIND(C) procedure from Fortran in a DO CONCURRENT construct, 
+!* Calling a BIND(C) procedure from Fortran in a DO CONCURRENT construct,
 !* (where the procedure is defined in C).
 !* Based on cintrop_ts29113/optional/func/fcintrpopt200.scenario
 !*
@@ -216,12 +209,12 @@ end interface
     logical(c_bool) ::              ll
     character(c_char) ::            cc
     integer :: i, j
-   
-    i1=1 
-    i2=2 
-    i3=3 
+
+    i1=1
+    i2=2
+    i3=3
     i4=4_C_LONG_LONG
-    i5=5 
+    i5=5
     i6=6
     i7=7
     i8=8

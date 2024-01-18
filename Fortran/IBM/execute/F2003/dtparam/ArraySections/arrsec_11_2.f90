@@ -1,21 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArraySections/arrsec_1.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Sep 23, 2008
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 353925
 !*
 !*  DESCRIPTION:
 !*
 !*  6.2.2.3 Array sections
-!*  Variant of arrsec_11_1.f: with x component as var char-len component and 
-!*  child includes kind parameter. 
-!*  Also ICEs with 080921a per notes in arrsec_11_1.f 
+!*  Variant of arrsec_11_1.f: with x component as var char-len component and
+!*  child includes kind parameter.
+!*  Also ICEs with 080921a per notes in arrsec_11_1.f
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

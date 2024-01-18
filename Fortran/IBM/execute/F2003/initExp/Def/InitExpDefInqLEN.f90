@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefInqLEN.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefInqLEN.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 03, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,25 +19,24 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  a reference to a specification inquiry 
-!* 
-!*  - LEN 
-!* 
+!*  a reference to a specification inquiry
+!*
+!*  - LEN
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM   InitExpDefInqLEN 
+  PROGRAM   InitExpDefInqLEN
   IMPLICIT NONE
   INTEGER :: I, J, K
 
-  CHARACTER(0),    PARAMETER :: C0(-2147483648:-2147483647, 2147483646:2147483647) = CHAR(0) 
-  CHARACTER(1),    PARAMETER :: C1 = CHAR(127) 
-  CHARACTER(9),    PARAMETER :: C9(-2147483648:-2147483647, 2147483646:2147483647) = CHAR(1) 
-  CHARACTER(513),  PARAMETER :: C513 = REPEAT("!", 513) 
+  CHARACTER(0),    PARAMETER :: C0(-2147483648:-2147483647, 2147483646:2147483647) = CHAR(0)
+  CHARACTER(1),    PARAMETER :: C1 = CHAR(127)
+  CHARACTER(9),    PARAMETER :: C9(-2147483648:-2147483647, 2147483646:2147483647) = CHAR(1)
+  CHARACTER(513),  PARAMETER :: C513 = REPEAT("!", 513)
 
   INTEGER  :: KTP4 = KIND(LEN(C0))
   INTEGER  :: KTP1 = KIND(LEN(C0, KIND=1))
@@ -68,4 +61,4 @@
   END
 
 
- 
+

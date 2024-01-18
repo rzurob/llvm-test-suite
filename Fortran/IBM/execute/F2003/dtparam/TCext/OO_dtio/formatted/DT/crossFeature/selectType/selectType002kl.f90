@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : selectType002kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from selectType002 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Select-Type Constructor: Polymorphic Array Entities
@@ -65,7 +57,7 @@ use m
 
    class(child(4,4)), allocatable :: c1(:,:)
    class(child(4,4)), pointer     :: c2(:)
-   
+
    character(81) :: fmt = "(DT'_b1-3'(7,2), DT'_b1-2'(8,3), DT'_b1-1'(9,4), DT'_b1-4'(9,3), DT'_b1-1'(7,2) )"
 
    open (1, file = 'selectType002kl.1', form='formatted', access='sequential' )

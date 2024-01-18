@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefStructConstr.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefStructConstr.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 17, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,12 +23,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a structure constructor in which each expression corresponding to an allocatable component
 !*  is a reference to the intrinsic function NULL, and all other expressions are
 !*  initialization expressions;
-!* 
-!*  
+!*
 !*  (318848)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -48,23 +40,23 @@
   TYPE :: DT(K1,K2,N1)    ! (4,1,1)
     INTEGER, KIND                           :: K1,K2
     INTEGER, LEN                            :: N1
-    INTEGER(K1), ALLOCATABLE                 :: I 
-    CHARACTER(kind=K2,len=N1), ALLOCATABLE   :: C 
-    REAL(K1) ,      ALLOCATABLE              :: R 
+    INTEGER(K1), ALLOCATABLE                 :: I
+    CHARACTER(kind=K2,len=N1), ALLOCATABLE   :: C
+    REAL(K1) ,      ALLOCATABLE              :: R
     PROCEDURE(),NOPASS, POINTER :: ProcPtr=>NULL()
     CONTAINS
     PROCEDURE, NOPASS :: ModSub
   END TYPE
 
   CONTAINS
-  
+
   SUBROUTINE ModSub()
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END MODULE
 
 
-  PROGRAM InitExpDefStructConstr 
+  PROGRAM InitExpDefStructConstr
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
@@ -75,18 +67,18 @@
     TYPE(DT(K3,K4,1)) :: Arr(SIZE(IArr), SIZE(IArr))=DT(K3,K4,1)(R=NULL(),C=NULL(),I=NULL())
   END TYPE
 
-  TYPE(DT1(4,1,1)) ::  T1,Arr1(SIZE(IArr)) 
+  TYPE(DT1(4,1,1)) ::  T1,Arr1(SIZE(IArr))
   PARAMETER  (  Arr1=(/(DT1(4,1,1)(DT(4,1,1)(R=NULL(),C=NULL(),I=NULL())),&
-                       I=KIND(1_1), SIZE(IArr))/)  ) 
+                       I=KIND(1_1), SIZE(IArr))/)  )
 
   TYPE, EXTENDS(DT) :: DT2(K5)    ! (4,1,1,4)
       INTEGER, KIND :: K5
   END TYPE
- 
-  TYPE(DT2(4,1,1,4)) :: Arr2(SIZE(IArr))=DT2(4,1,1,4)(DT=DT(4,1,1)(R=NULL(),C=NULL(),I=NULL())) 
- 
+
+  TYPE(DT2(4,1,1,4)) :: Arr2(SIZE(IArr))=DT2(4,1,1,4)(DT=DT(4,1,1)(R=NULL(),C=NULL(),I=NULL()))
+
   DO I=1, 10
-  DO J=1, 10 
+  DO J=1, 10
     IF (ALLOCATED(T1%Arr(I,J)%I))              STOP 11
     IF (ALLOCATED(T1%Arr(I,J)%C))              STOP 12
     IF (ALLOCATED(T1%Arr(I,J)%R))              STOP 13
@@ -115,4 +107,4 @@
 
   END
 
- 
+

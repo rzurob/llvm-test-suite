@@ -1,20 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : exprSelector05
-!*  TEST CASE TITLE            : expr selector with Derived Type Parameters
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : July 14, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is an Expression
 !*  SECONDARY FUNCTIONS TESTED : The Expression is a Level-2 Expression
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE

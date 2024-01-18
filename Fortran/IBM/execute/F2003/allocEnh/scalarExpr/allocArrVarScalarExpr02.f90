@@ -1,20 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : allocArrVarScalarExpr02 - expr is a
 !*                               Scalar and variable is an Array
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : October 26, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Allocated ALLOCATABLE Array of Type CHARACTER
 !*  SECONDARY FUNCTIONS TESTED : and expr is a Scalar
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATABLE Attribute, Intrinsic Assignment
@@ -26,7 +20,6 @@
 !*  7.4.1.1 General form
 !*
 !*  R734 assignment-stmt  is  variable = expr
-!*
 !*
 !*  7.4.1.3 Interpretation of intrinsic assignments
 !*
@@ -41,7 +34,6 @@
 !*  If expr is a scalar and variable is an array, the expr is treated as if
 !*  it were an array of the same shape as variable with every element of the
 !*  array equal to the scalar value of expr.
-!*
 !*
 !*  NOTE:  The Length Comparison in "CheckDefCharArrAlloc()" is affected
 !*  by Interp d320792.

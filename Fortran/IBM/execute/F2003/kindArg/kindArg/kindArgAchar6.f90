@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgAchar6
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : ACHAR 
+!*  SECONDARY FUNCTIONS TESTED : ACHAR
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Entities with different attubute used for kind arg - associate/select type 
-!*    
-!*  (322978) 
+!*  Entities with different attubute used for kind arg - associate/select type
+!*
+!*  (322978)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -38,7 +30,7 @@
 
 
   CLASS(*), ALLOCATABLE :: I01, II01(:)
-     
+
 !  CHARACTER :: CC=(/(ACHAR(I=I, KIND=1), I=0, 127)/)
 
 
@@ -55,7 +47,7 @@
   SELECT TYPE (II1 => II01)
   TYPE IS (INTEGER(1))
 
- 
+
   DO I1 = 0, 127
     IF (IACHAR(ACHAR(I1, KIND=K1%KIND ))        .NE. I1)                   STOP 11
     IF (IACHAR(ACHAR(I1, KIND=K2%KIND ))        .NE. I1)                   STOP 12
@@ -74,21 +66,21 @@
     IF (ACHAR(IACHAR(ACHAR(I2, KIND=II1%KIND ))) .NE. ACHAR(I2, KIND=II1%KIND ))  STOP 26
   END DO
 
-  IF (ANY( ACHAR(I=(/(I1, I1=0,127)/), KIND=K8%KIND) .NE. CC)) STOP 111 
-  IF (ANY( ACHAR(I=(/(I2, I2=0,127)/), KIND=K4%KIND) .NE. CC)) STOP 112 
-  IF (ANY( ACHAR(I=(/(I4, I4=0,127)/), KIND=K2%KIND) .NE. CC)) STOP 113 
-  IF (ANY( ACHAR(I=(/(I8, I8=0,127)/), KIND=K1%KIND) .NE. CC)) STOP 114 
+  IF (ANY( ACHAR(I=(/(I1, I1=0,127)/), KIND=K8%KIND) .NE. CC)) STOP 111
+  IF (ANY( ACHAR(I=(/(I2, I2=0,127)/), KIND=K4%KIND) .NE. CC)) STOP 112
+  IF (ANY( ACHAR(I=(/(I4, I4=0,127)/), KIND=K2%KIND) .NE. CC)) STOP 113
+  IF (ANY( ACHAR(I=(/(I8, I8=0,127)/), KIND=K1%KIND) .NE. CC)) STOP 114
 
-  IF (ANY( IACHAR(ACHAR(I=(/(I1, I1=0,127)/), KIND=I1%KIND))  .NE. (/(I1, I1=0,127)/))) STOP 115 
-  IF (ANY( IACHAR(ACHAR(I=(/(I2, I2=0,127)/), KIND=II1%KIND)) .NE. (/(I2, I2=0,127)/))) STOP 116 
+  IF (ANY( IACHAR(ACHAR(I=(/(I1, I1=0,127)/), KIND=I1%KIND))  .NE. (/(I1, I1=0,127)/))) STOP 115
+  IF (ANY( IACHAR(ACHAR(I=(/(I2, I2=0,127)/), KIND=II1%KIND)) .NE. (/(I2, I2=0,127)/))) STOP 116
 
 
   CLASS DEFAULT
     STOP 91
-  END SELECT 
+  END SELECT
   CLASS DEFAULT
     STOP 92
-  END SELECT 
+  END SELECT
 
   END ASSOCIATE
 

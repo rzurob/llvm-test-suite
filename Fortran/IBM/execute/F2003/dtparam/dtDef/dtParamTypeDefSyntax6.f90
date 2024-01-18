@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDefSyntax6
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 29, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,7 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  syntax of derived type stmt 
+!*  syntax of derived type stmt
 !*
 !*  (ICE)
 !*
@@ -56,13 +50,13 @@
     CHARACTER(K1+K+K2) :: C(L)="1"
   END TYPE DT3
 
-  
+
   END MODULE
-  
-  PROGRAM dtParamTypeDefSyntax6 
+
+  PROGRAM dtParamTypeDefSyntax6
   USE M1
   TYPE(DT3(K2=2,K=2,L=2,K1=2)) :: T
-  
+
   IF (LEN(T%C)      .NE. 6  )  STOP 11
   IF (SIZE(T%C)     .NE. 2  )  STOP 12
   IF (TRIM(T%C(1)) .NE. "1" )  STOP 13

@@ -12,52 +12,46 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : IEEE modules
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : March 30, 2002
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ieee_get_flag(), 
+!*  PRIMARY FUNCTIONS TESTED   : ieee_get_flag(),
 !*				 ieee_set_flag(),
-!*				 ieee_overflow, 
-!*				 ieee_divide_by_zero, 
-!*				 ieee_invalid, 
-!*				 ieee_underflow, 
-!*				 ieee_inexact, 
+!*				 ieee_overflow,
+!*				 ieee_divide_by_zero,
+!*				 ieee_invalid,
+!*				 ieee_underflow,
+!*				 ieee_inexact,
 !*				 get_fpscr_flags(),
 !*				 set_fpscr_flags(),
-!*				 fp_overflow, 
-!*				 fp_div_by_zero, 
-!*				 fp_underflow, 
-!*				 fp_inexact, 
-!*				 fp_invalid, 
-!*				 fp_inv_isi, 
-!*				 fp_inv_idi 
+!*				 fp_overflow,
+!*				 fp_div_by_zero,
+!*				 fp_underflow,
+!*				 fp_inexact,
+!*				 fp_invalid,
+!*				 fp_inv_isi,
+!*				 fp_inv_idi
 !*
 !*  REFERENCE                  : Feature 180920
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  : -qstrict -qfloat=nofold -qnoipa
 !*
-!*  DESCRIPTION                : This is a FPSCR testcase. 
-!* 
+!*  DESCRIPTION                : This is a FPSCR testcase.
+!*
 !*				 This testcase uses REAL*8 variables.
 !*				 In this testcase, main program that
 !*				 uses IEEE modules will
-!*                               call internal and external subroutines 
+!*                               call internal and external subroutines
 !*                               that use or don't use IEEE modules.
 !*
 !*				 It tests the following
 !*				 scenarios:
-!*	1) Processes that use IEEE calling processes that don't use IEEE. 
-!*	2) Processes that use IEEE calling processes that use IEEE. 
-!*	3) Flags that cleared on entry to a process that use IEEE, and are restored on exit. 
+!*	1) Processes that use IEEE calling processes that don't use IEEE.
+!*	2) Processes that use IEEE calling processes that use IEEE.
+!*	3) Flags that cleared on entry to a process that use IEEE, and are restored on exit.
 !*      4) Flags that are set in a process that use IEEE remain set on exit.
 !*
-!*	This testcase will also make sure that ieee_arithmetic is 
+!*	This testcase will also make sure that ieee_arithmetic is
 !*      in fact the super-set of ieee_exceptions by using ieee_arithmetic
 !*	in one subroutine and then using ieee_exceptions in the next, and so on.
 !*
@@ -74,12 +68,12 @@
           interface
 
 !*** external subroutine that uses ieee_arithmetic ***
-            subroutine ext_sub1() 
+            subroutine ext_sub1()
 	  	use ieee_arithmetic
             end subroutine
 
 !*** external subroutine that uses ieee_exceptions ***
-            subroutine ext_sub2() 
+            subroutine ext_sub2()
 	  	use ieee_exceptions
             end subroutine
 
@@ -131,7 +125,7 @@
           end interface
 
 	  logical*4 flag_values(5)
-	
+
 	  integer exp8
 	  real*8 zero8
 
@@ -168,7 +162,7 @@
 	  call ieee_set_flag(ieee_all, .false.)  ! clear flag
           call ieee_get_flag(ieee_all, flag_values)
 
-!*** sub5: flag was set in subroutine 
+!*** sub5: flag was set in subroutine
           call ext_sub5()
           call ieee_get_flag(ieee_all, flag_values)
           if (any(flag_values .neqv. .true.))           error stop 6
@@ -215,22 +209,22 @@
 
 !***********************************************************************
 !*  Assign true to all exception flags.
-!*********************************************************************** 
+!***********************************************************************
           tmpr8 = 2.0d0
 	  zero8	= 0.0d0
           overflow_r8 		= huge(tmpr8)**(1023)
 	  divbyzero_r8 		= 10./zero8
           underflow_r8 		= tiny(tmpr8)/huge(tmpr8)
 
-!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE 
-	  call ieee_set_flag(ieee_invalid, .true.)  
+!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE
+	  call ieee_set_flag(ieee_invalid, .true.)
 
-	 
+
 !***********************************************************************
 !*  The if loops below are to ensure that variables: overflow_r8,
 !*  divbyzero_r8, invalid_r8, underflow_r8 affect the output of the program.
 !*  If a variable doesn't affect the output, TOBEY throws away the variable
-!*  - we don't want that to happen in this situation.	
+!*  - we don't want that to happen in this situation.
 !***********************************************************************
 	  if (overflow_r8 .le.(2**1023))		error stop 101
 	  if (divbyzero_r8 .le.(2**1023))		error stop 102
@@ -243,9 +237,9 @@
 !*  Process that use IEEE calling processes that use IEEE.
 !* --------------------------------------------------------------
 !*  Call to an external subroutine with exception flags SET on entry
-!*  into the subroutine. 
+!*  into the subroutine.
 !***********************************************************************
-!***  On entry, the flag is cleared, and on exit it is reset to true. 
+!***  On entry, the flag is cleared, and on exit it is reset to true.
 
 !*** sub1: flag was not changed explicitely in subroutine
 	  call ext_sub1()
@@ -267,12 +261,12 @@
           call ieee_get_flag(ieee_all, flag_values)
           if (any(flag_values .neqv. .true.))           error stop 34
 
-!*** sub7: flag was set then cleared in subroutine; flag can not be cleared on exit 
+!*** sub7: flag was set then cleared in subroutine; flag can not be cleared on exit
           call ext_sub7()
           call ieee_get_flag(ieee_all, flag_values)
           if (any(flag_values .neqv. .true.))           error stop 35
 
-!*** sub7: flag was set then cleared in subroutine; flag can not be cleared on exit 
+!*** sub7: flag was set then cleared in subroutine; flag can not be cleared on exit
           call ext_sub8()
           call ieee_get_flag(ieee_all, flag_values)
           if (any(flag_values .neqv. .true.))           error stop 36
@@ -305,7 +299,7 @@
 !*  into the subroutine.
 !***********************************************************************
 	  call ieee_set_flag(ieee_all, .false.)  ! clear flag
-	  call ieee_get_flag(ieee_all, flag_values) 
+	  call ieee_get_flag(ieee_all, flag_values)
 
 !*** This subroutine doesn't use ieee modules.
      	  call ext_sub13()
@@ -318,7 +312,7 @@
           if (any(flag_values .neqv. .true.))           error stop 52
 
 	  call ieee_set_flag(ieee_all, .false.)  ! clear flag
-	  call ieee_get_flag(ieee_all, flag_values) 
+	  call ieee_get_flag(ieee_all, flag_values)
 
 !*** This subroutine doesn't use ieee modules wtih no interface and sets flag by calculation.
      	  call ext_sub15()
@@ -326,7 +320,7 @@
           if (any(flag_values .neqv. .true.))  		error stop 53
 
 	  call ieee_set_flag(ieee_all, .false.)  ! clear flag
-	  call ieee_get_flag(ieee_all, flag_values) 
+	  call ieee_get_flag(ieee_all, flag_values)
 
 !*** This subroutine doesn't use ieee modules wtih no interface and sets flag by set_fpscr_flags.
      	  call ext_sub16()
@@ -334,7 +328,7 @@
           if (any(flag_values .neqv. .true.))  		error stop 54
 
 	  call ieee_set_flag(ieee_all, .false.)  ! clear flag
-	  call ieee_get_flag(ieee_all, flag_values) 
+	  call ieee_get_flag(ieee_all, flag_values)
 
 !*** This subroutine doesn't use ieee modules and sets flag, and tries to clear it by calculation.
           call ext_sub17()
@@ -342,7 +336,7 @@
           if (any(flag_values .neqv. .true.))           error stop 55
 
 	  call ieee_set_flag(ieee_all, .false.)  ! clear flag
-	  call ieee_get_flag(ieee_all, flag_values) 
+	  call ieee_get_flag(ieee_all, flag_values)
 
 !*** This subroutine doesn't use ieee modules and sets flag, and clears it by clr_fpscr_flags.
           call ext_sub18()
@@ -382,7 +376,7 @@
 
 
 !***********************************************************************
-!*  Internal subroutines 
+!*  Internal subroutines
 !***********************************************************************
 !***  Internal subroutine with flags CLEAR on entry and exit.
           call int_sub1()
@@ -470,8 +464,8 @@
 
 !***********************************************************************
 !*  Rule:
-!*	If there is an exception flag set on entry into a procedure that 
-!*      uses IEEE intrinsic modules, the flag clears on entry into the 
+!*	If there is an exception flag set on entry into a procedure that
+!*      uses IEEE intrinsic modules, the flag clears on entry into the
 !* 	procedure and resets when returning from the procedure.
 !***********************************************************************
         subroutine ext_sub1()
@@ -518,15 +512,15 @@
 	  divbyzero_r8 		= 10./zero8
           underflow_r8 		= tiny(tmpr8)/huge(tmpr8)
 
-!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE 
-	  call ieee_set_flag(ieee_invalid, .true.)  
+!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE
+	  call ieee_set_flag(ieee_invalid, .true.)
 
-	 
+
 !***********************************************************************
 !*  The four if loops below are to ensure that variables: overflow_r8,
 !*  divbyzero_r8, invalid_r8, underflow_r8 affect the output of the program.
 !*  If a variable doesn't affect the output, TOBEY throws away the variable
-!*  - we don't want that to happen in this situation.	
+!*  - we don't want that to happen in this situation.
 !***********************************************************************
 	  if (overflow_r8 .le.(2**1023))		error stop 204
 	  if (divbyzero_r8 .le.(2**1023))		error stop 205
@@ -563,8 +557,8 @@
 	  divbyzero_r8 		= 10./zero8
           underflow_r8 		= tiny(tmpr8)/huge(tmpr8)
 
-!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE 
-	  call ieee_set_flag(ieee_invalid, .true.)  
+!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE
+	  call ieee_set_flag(ieee_invalid, .true.)
 
 	  if (overflow_r8 .le.(2**1023))		error stop 209
 	  if (divbyzero_r8 .le.(2**1023))		error stop 210
@@ -613,15 +607,15 @@
 	  divbyzero_r8 		= 10./zero8
           underflow_r8 		= tiny(tmpr8)/huge(tmpr8)
 
-!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE 
-	  call ieee_set_flag(ieee_invalid, .true.)  
+!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE
+	  call ieee_set_flag(ieee_invalid, .true.)
 
-	 
+
 !***********************************************************************
 !*  The if loops below are to ensure that variables: overflow_r8,
 !*  divbyzero_r8, invalid_r8, underflow_r8 affect the output of the program.
 !*  If a variable doesn't affect the output, TOBEY throws away the variable
-!*  - we don't want that to happen in this situation.	
+!*  - we don't want that to happen in this situation.
 !***********************************************************************
 	  if (overflow_r8 .le.(2**1023))		error stop 214
 	  if (divbyzero_r8 .le.(2**1023))		error stop 215
@@ -660,15 +654,15 @@
 	  divbyzero_r8 		= 10./zero8
           underflow_r8 		= tiny(tmpr8)/huge(tmpr8)
 
-!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE 
-	  call ieee_set_flag(ieee_invalid, .true.)  
+!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE
+	  call ieee_set_flag(ieee_invalid, .true.)
 
-	 
+
 !***********************************************************************
 !*  The if loops below are to ensure that variables: overflow_r8,
 !*  divbyzero_r8, invalid_r8, underflow_r8 affect the output of the program.
 !*  If a variable doesn't affect the output, TOBEY throws away the variable
-!*  - we don't want that to happen in this situation.	
+!*  - we don't want that to happen in this situation.
 !***********************************************************************
 	  if (overflow_r8 .le.(2**1023))		error stop 220
 	  if (divbyzero_r8 .le.(2**1023))		error stop 221
@@ -718,8 +712,8 @@
 	  divbyzero_r8 		= 10./zero8
           underflow_r8 		= tiny(tmpr8)/huge(tmpr8)
 
-!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE 
-	  call ieee_set_flag(ieee_invalid, .true.)  
+!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE
+	  call ieee_set_flag(ieee_invalid, .true.)
 
 	  if (overflow_r8 .le.(2**1023))		error stop 226
 	  if (divbyzero_r8 .le.(2**1023))		error stop 227
@@ -753,15 +747,15 @@
 	  divbyzero_r8 		= 10./zero8
           underflow_r8 		= tiny(tmpr8)/huge(tmpr8)
 
-!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE 
-	  call ieee_set_flag(ieee_invalid, .true.)  
+!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE
+	  call ieee_set_flag(ieee_invalid, .true.)
 
-	 
+
 !***********************************************************************
 !*  The if loops below are to ensure that variables: overflow_r8,
 !*  divbyzero_r8, invalid_r8, underflow_r8 affect the output of the program.
 !*  If a variable doesn't affect the output, TOBEY throws away the variable
-!*  - we don't want that to happen in this situation.	
+!*  - we don't want that to happen in this situation.
 !***********************************************************************
 	  if (overflow_r8 .le.(2**1023))		error stop 231
 	  if (divbyzero_r8 .le.(2**1023))		error stop 232
@@ -810,9 +804,9 @@
 	  divbyzero_r8 		= 10./zero8
           underflow_r8 		= tiny(tmpr8)/huge(tmpr8)
 
-!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE 
-	  call ieee_set_flag(ieee_invalid, .true.)  
-	 
+!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE
+	  call ieee_set_flag(ieee_invalid, .true.)
+
 	  if (overflow_r8 .le.(2**1023))		error stop 236
 	  if (divbyzero_r8 .le.(2**1023))		error stop 237
 	  if (underflow_r8 .gt.(2**(-1074)))		error stop 238
@@ -849,9 +843,9 @@
 	  divbyzero_r8 		= 10./zero8
           underflow_r8 		= tiny(tmpr8)/huge(tmpr8)
 
-!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE 
-	  call ieee_set_flag(ieee_invalid, .true.)  
-	 
+!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE
+	  call ieee_set_flag(ieee_invalid, .true.)
+
 	  if (overflow_r8 .le.(2**1023))		error stop 242
 	  if (divbyzero_r8 .le.(2**1023))		error stop 243
 	  if (underflow_r8 .gt.(2**(-1074)))		error stop 244
@@ -868,12 +862,12 @@
 
 !***********************************************************************
 !*  External subroutine with exception flags CLEAR on entry
-!*  into the subroutine. This subroutine doesn't use ieee modules 
+!*  into the subroutine. This subroutine doesn't use ieee modules
 !*  ----------------------------------------------------------------
 !*  Rule:
 !*	Calls to procedures that do not use the ieee modules from
 !*	procedures that do, will not change the floating point status
-!*	except by setting exception flags. 
+!*	except by setting exception flags.
 !***********************************************************************
 !*  Subroutine has an interface inside main.
         subroutine ext_sub13()
@@ -886,7 +880,7 @@
           flag_values(4) = get_fpscr_flags(fp_underflow)
           flag_values(5) = get_fpscr_flags(fp_inexact)
 
-!*  Check if all flags are initially false. 
+!*  Check if all flags are initially false.
           if (any(flag_values .ne. 0))           	error stop 247
 
         end subroutine !!ext_sub13()
@@ -911,7 +905,7 @@
           flag_values(4) = get_fpscr_flags(fp_underflow)
           flag_values(5) = get_fpscr_flags(fp_inexact)
 
-!*  Check if all flags are initially false. 
+!*  Check if all flags are initially false.
           if (any(flag_values .ne. 0))           	error stop 248
 
 !*  Assign true to all exception flags.
@@ -921,7 +915,7 @@
 	  divbyzero_r8 		= 10./zero8
           underflow_r8 		= tiny(tmpr8)/huge(tmpr8)
 
-!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE 
+!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE
           call set_fpscr_flags(fp_inv_isi)
 
 	  if (overflow_r8 .le.(2**1023))		error stop 249
@@ -934,7 +928,7 @@
           flag_values(4) = get_fpscr_flags(fp_underflow)
           flag_values(5) = get_fpscr_flags(fp_inexact)
 
-!*  Check if all flags are set to true. 
+!*  Check if all flags are set to true.
           if (any(flag_values .eq. 0))           	error stop 252
 
         end subroutine !!ext_sub14()
@@ -969,7 +963,7 @@
 	  divbyzero_r8 		= 10./zero8
           underflow_r8 		= tiny(tmpr8)/huge(tmpr8)
 
-!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE 
+!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE
           call set_fpscr_flags(fp_inv_isi)
 
 	  if (overflow_r8 .le.(2**1023))		error stop 254
@@ -982,7 +976,7 @@
           flag_values(4) = get_fpscr_flags(fp_underflow)
           flag_values(5) = get_fpscr_flags(fp_inexact)
 
-!*  Check if all flags are set to true. 
+!*  Check if all flags are set to true.
           if (any(flag_values .eq. 0))           	error stop 257
 
         end subroutine !!ext_sub15()
@@ -1051,7 +1045,7 @@
 	  divbyzero_r8 		= 10./zero8
           underflow_r8 		= tiny(tmpr8)/huge(tmpr8)
 
-!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE 
+!*** IPA optimizes invalid calculations too well, so force ieee_invalid to TRUE
           call set_fpscr_flags(fp_inv_isi)
 
 	  if (overflow_r8 .le.(2**1023))		error stop 261
@@ -1089,7 +1083,7 @@
         end subroutine !!ext_sub17()
 !=======================================================================
 
-!*  Subroutine has an interface inside main and sets then clear flag by set_fpscr_flags 
+!*  Subroutine has an interface inside main and sets then clear flag by set_fpscr_flags
 !*  and clr_fpscr_flags.
         subroutine ext_sub18()
           use xlf_fp_util
@@ -1143,7 +1137,7 @@
 !=======================================================================
 !***********************************************************************
 !*  External subroutine with exception flags set on entry
-!*  into the subroutine. This subroutine doesn't use ieee modules 
+!*  into the subroutine. This subroutine doesn't use ieee modules
 !*  ----------------------------------------------------------------
 !*  Rule:
 !*      Calls to procedures that do not use the ieee modules from

@@ -7,7 +7,7 @@
       !             statement or an image control statement.
       ! 8.5.1 Image control statements
       ! Execution of an image control statement divides the execution sequence
-      ! on an image into segments. Each of the following is an image control 
+      ! on an image into segments. Each of the following is an image control
       ! statement:
       !   - SYNC ALL statement
       critical
@@ -22,7 +22,7 @@
       !   - SYNC MEMORY statement
       critical
         sync memory
-      end critical 
+      end critical
 
       !   - ALLOCATE or DEALLOCATE statement that has a coarray allocate-object
       !!! Allocatable coarrays not supported yet:
@@ -38,7 +38,7 @@
         unlock ( lockable )
       end critical lock_in_c
 
-      !   - any statement that completes execution of a block or procedure 
+      !   - any statement that completes execution of a block or procedure
       !       and which results in the implicit deallocation of a coarray;
       !!! Allocatable coarrays not supported yet:
       ! dealloc_coarray : critical
@@ -47,7 +47,7 @@
       !   - STOP statement;
       a : critical
         stop 1
-        stop 
+        stop
         stop 'a'
       end critical a
 

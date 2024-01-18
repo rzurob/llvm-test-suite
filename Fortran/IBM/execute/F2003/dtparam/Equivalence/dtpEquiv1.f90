@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpEquiv1 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpEquiv1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 05, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The equivalence statement
-!* 
+!*
 !*  If the equivalenced objects have differing type or type parameters, the EQUIVALENCE statement does
-!*  not cause type conversion or imply mathematical equivalence.  
+!*  not cause type conversion or imply mathematical equivalence.
 !*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -58,10 +49,10 @@
     COMPLEX(K)    :: Z(L)=(K,-K)
     TYPE(DT0(K,L)):: S
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpEquiv1 
+  PROGRAM dtpEquiv1
   USE M
 
   TYPE(DT0(4,5))  :: S, S1
@@ -69,7 +60,7 @@
 
   EQUIVALENCE(S, S1)
   equivalence(T, T1)
- 
+
   IF ( S%K0              .NE. 4            ) STOP 11
   IF ( S%L0              .NE. 5            ) STOP 12
   IF ( ANY ( LBOUND(S%C) .NE. 1          ) ) STOP 13
@@ -93,7 +84,7 @@
   IF ( ANY ( LBOUND(T%A) .NE. 1          ) ) STOP 34
   IF ( SIZE( T%A )       .NE. 7            ) STOP 35
   IF ( ANY ( T%A         .NEQV. .TRUE.   ) ) STOP 36
- 
+
   IF ( T%S%K0              .NE. 8            ) STOP 41
   IF ( T%S%L0              .NE. 7            ) STOP 42
   IF ( ANY ( LBOUND(T%S%C) .NE. 1          ) ) STOP 43
@@ -102,14 +93,14 @@
   IF ( ANY ( T%S%C         .NE. CHAR(48+8) ) ) STOP 46
 
   S = DT0(4,5)(CHAR(0))
-  
-  T%R = -T%R 
+
+  T%R = -T%R
   T%C = CHAR(0)
   T%I = -T%I
   T%Z = -T%Z
   T%A = .NOT. T%A
-  T%S = DT0(8,7)(CHAR(0)) 
- 
+  T%S = DT0(8,7)(CHAR(0))
+
   IF ( S1%K0              .NE. 4            ) STOP 11
   IF ( S1%L0              .NE. 5            ) STOP 12
   IF ( ANY ( LBOUND(S1%C) .NE. 1          ) ) STOP 13
@@ -133,7 +124,7 @@
   IF ( ANY ( LBOUND(T1%A) .NE. 1          ) ) STOP 34
   IF ( SIZE( T1%A )       .NE. 7            ) STOP 35
   IF ( ANY ( T1%A         .NEQV. .FALSE.  ) ) STOP 36
- 
+
   IF ( T1%S%K0              .NE. 8            ) STOP 41
   IF ( T1%S%L0              .NE. 7            ) STOP 42
   IF ( ANY ( LBOUND(T1%S%C) .NE. 1          ) ) STOP 43
@@ -141,7 +132,7 @@
   IF (       T1%S%C%LEN     .NE. 7            ) STOP 45
   IF ( ANY ( T1%S%C         .NE. CHAR(0)    ) ) STOP 46
 
- 
+
   END
 
 

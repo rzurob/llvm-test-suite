@@ -1,5 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
 ! cinterop/pattr/fxbind_c03eed.f, xlftest.cinterop, tstdev.cinterop, 1.1
 ! Extract Date/Time: 04/04/06 11:11:56
 ! Checkin Date/Time: 04/03/23 17:32:51
@@ -8,7 +7,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: $TR_SRC/runcomplex.sh fxbind_c03eed  cxbind_c03eed
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -18,36 +17,28 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c03eed.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran Entry in function called from C
-!*            
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !*   - Test: BINC(C) attribute with  different intrinsic data type,
 !*           complex*4,complex*8.
-!*   - The interoperable  procedure itself is implemented using Fortran 
-!*     function Entry Statement.  
+!*   - The interoperable  procedure itself is implemented using Fortran
+!*     function Entry Statement.
 !*   - Both primary entry point and an alternate entry point
 !*     have bind(c) attribute.
 !*   - passing scalar arguments by REFERENCE and by VALUE
 !*   - main written in C, C calls FORTRAN functions.
 !*
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. C program call the Fortran function has a primary entry
 !*             point and an alternate entry point.
 !*          2. Assertion: Check the return value in C

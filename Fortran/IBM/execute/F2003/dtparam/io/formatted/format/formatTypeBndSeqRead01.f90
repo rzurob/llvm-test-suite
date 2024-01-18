@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatTypeBndSeqRead01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatTypeBndSeqRead01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 9 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test READ statement in type bound procedure
@@ -29,7 +21,7 @@ module m
      integer(8),len  :: l1
      integer(k1)     :: i(l1-1:l1+1) ! l1=2
      contains
-        procedure,pass :: readInner 
+        procedure,pass :: readInner
    end type
 
    type outer(k2,l2)
@@ -42,12 +34,12 @@ module m
    end type
 
    contains
-    
-      subroutine readInner(this,unit)
-          class(inner(8,*)),intent(inout) :: this 
-          integer,intent(in) :: unit 
 
-          print *,"in readInner" 
+      subroutine readInner(this,unit)
+          class(inner(8,*)),intent(inout) :: this
+          integer,intent(in) :: unit
+
+          print *,"in readInner"
           select type(this)
              type is(inner(8,*))
                read(unit,'(b16/,i6.3/,g6)') this%i
@@ -55,23 +47,23 @@ module m
              class default
                stop 12
           end select
-   
+
       end subroutine
 
       subroutine readOuter(this,unit)
-          class(outer(4,*)),intent(inout) :: this 
+          class(outer(4,*)),intent(inout) :: this
           integer,intent(in) :: unit
 
           print *,"in readOuter"
           select type(this)
              type is(outer(4,*))
-               
-               read(unit,'(a5/,a2/,g4.1e2)') this%c 
+
+               read(unit,'(a5/,a2/,g4.1e2)') this%c
                write(*,'("|",a5,"|",a2,"|",g4.1e2,"|")') this%c
 
                call this%comp%readinner(unit)
              class default
-               stop 11 
+               stop 11
           end select
       end subroutine
 
@@ -83,9 +75,9 @@ program formatTypeBndSeqRead01
 
   type(outer(4,2)),target :: tar1
   type(outer(4,:)),pointer :: outer1=>null()
- 
+
   integer :: ios
-  character(500) :: msg  
+  character(500) :: msg
 
   outer1=>tar1
 
@@ -95,8 +87,8 @@ program formatTypeBndSeqRead01
   if( ios /= 0 )  then
      print *,"fail to open the file"
      print *,"iostat=",ios
-     print *,"iomsg=",msg 
-     stop 10   
+     print *,"iomsg=",msg
+     stop 10
   else
      call outer1%readOuter(10)
   end if

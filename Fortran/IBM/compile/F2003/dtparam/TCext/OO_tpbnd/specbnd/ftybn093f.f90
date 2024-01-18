@@ -5,43 +5,37 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: dcomp ftybn093f.f ftybn093f.vf 
+! %POSTCMD: dcomp ftybn093f.f ftybn093f.vf
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn093f.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn093f.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : overriding 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
 !*
-!*  DESCRIPTION                : The overriding binding and the overriden 
+!*  SECONDARY FUNCTIONS TESTED : overriding
+!*
+!*  DESCRIPTION                : The overriding binding and the overriden
 !*                               binding shall satisfy the following
-!*                               condition: if the overriden binding is 
+!*                               condition: if the overriden binding is
 !*                               pure then the overriding binding shall
 !*                               also be pure.
-!*                             
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-      module mod	      
-      type base(n1,k1)    ! (20,4) 
+      module mod
+      type base(n1,k1)    ! (20,4)
          integer, kind :: k1
          integer, len  :: n1
          integer(k1)   :: x
@@ -53,18 +47,18 @@
       contains
 !* expect error message 1514-570
          procedure, nopass :: bind_b => proc2
-      end type  
+      end type
 
       contains
       pure function proc1()
          proc1 = 100
-      end function 
+      end function
 
       function proc2()
          proc2 = 200
       end function
 
-   end module     
+   end module
 
    end
-   
+

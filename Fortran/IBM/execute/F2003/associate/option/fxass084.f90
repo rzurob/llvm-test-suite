@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90 -qintsize=4
 ! %GROUP: fxass084.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass084.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE ,allocate
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -87,15 +75,15 @@
       forall(i=1:10, j=1:10, j>=2 .and. j<=6) rel1(i,j)= 9.0
 
       associate( alloc_i => ubound(int1,1) )
-        if (alloc_i .ne. 11) error stop 1        
+        if (alloc_i .ne. 11) error stop 1
       end associate
 
       associate( alloc_r => ubound(rel1,1) )
-        if (alloc_r .ne. 10) error stop 2        
+        if (alloc_r .ne. 10) error stop 2
       end associate
 
       associate( alloc => int1(2,3)*4 )
-        if (alloc .ne. (int1(2,3)*4)) error stop 3        
+        if (alloc .ne. (int1(2,3)*4)) error stop 3
       end associate
 
       associate( alloc => rel1(2,3)*4 )
@@ -103,8 +91,8 @@
       end associate
 
       associate( alloc => int1(2,3) )
-        alloc = alloc + 5  
-        if (alloc .ne. int1(2,3)) error stop 5        
+        alloc = alloc + 5
+        if (alloc .ne. int1(2,3)) error stop 5
       end associate
 
       associate( alloc => rel1(2,3) )

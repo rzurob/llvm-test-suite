@@ -4,7 +4,6 @@ module m
         integer(8), pointer :: data(:)
     end type
 
-
     interface write(formatted)
         subroutine formattedWrite (dtv, unit, iotype, v_list, iostat, iomsg)
         import base
@@ -17,7 +16,6 @@ module m
         end subroutine
     end interface
 end module
-
 
 subroutine formattedWrite (dtv, unit, iotype, v_list, iostat, iomsg)
 use m, only: base
@@ -35,7 +33,6 @@ use m, only: base
     if (associated (dtv%data)) &
             write (unit, '(3i10, TR5)', iostat=iostat, iomsg=iomsg) dtv%data
 end subroutine
-
 
 program fdtio060
 use m

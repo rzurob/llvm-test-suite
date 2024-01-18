@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : arraySectTar1.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : The module will be compiled with XLF 13.1 
+!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
+!*  SECONDARY FUNCTIONS TESTED : The module will be compiled with XLF 13.1
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                : - Target is a contiguous array section
 !*
-!*  DESCRIPTION                : - Target is a contiguous array section 
-!*                      
 !*  A nonzero-sized array section is contiguous provided that
 !*     (a) its base object is contiguous,
 !*     (b) it does not have a vector subscript,
@@ -40,7 +30,7 @@ MODULE Mod
       INTEGER, TARGET               :: I0D(0)
       INTEGER, TARGET               :: I1D(10)
       INTEGER, TARGET               :: I5D(2,2,2,2,2)
-      
+
       INTEGER, POINTER              :: ptr(:)
       INTEGER, POINTER              :: ptr5D(:,:,:,:,:)
 

@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,29 +13,21 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c07h.f
-!* TEST CASE TITLE              : BIND(C) attribute/statement
-!*
-!* PROGRAMMER                   : Yubin Liao 
 !* DATE                         : Sep. 1, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Test: BINC(C) attribute/statement
 !*                                with different intrinsic data type,
 !*                                integer*1, integer*2, integer*4,
 !*                                integer*8, real*4, real*8, complex
-!*                                character(1), with value attribute. 
-!*                                Using module 
+!*                                character(1), with value attribute.
+!*                                Using module
 !*                                function,interface. Fortran calls C.
 !*
 !* ===================================================================
@@ -56,7 +43,7 @@ module m
    interface
        function exfun_int1(a1) result(a2) BIND(C)
             integer*1, value :: a1
-            integer*1 a2 
+            integer*1 a2
        end function exfun_int1
 
        function exfun_int2(b1) result(b2) BIND(C)
@@ -101,14 +88,14 @@ module m
 
        function exfun_comp1(l1) result(l2) bind(c)
             complex*8, value :: l1
-            complex*8 l2 
+            complex*8 l2
        end function exfun_comp1
-       
+
        function exfun_comp2(m1) result(m2) bind(c)
             complex*16, value :: m1
-            complex*16 m2 
+            complex*16 m2
        end function exfun_comp2
-       
+
    end interface
 end module m
 
@@ -117,39 +104,39 @@ end module m
    logical precision_R4, precision_R6, precision_R8
    logical precision_x8, precision_x16
 
-   
+
 
    integer*1 a1 /5/, a3
    integer*1 a2 /8/
-   
+
    integer*2 b1 /15/, b3
    integer*2 b2 /18/
-   
+
    integer*4 c1 /11/, c3
    integer*4 c2 /14/
-   
+
    integer*8 d1 /17/, d3
    integer*8 d2 /20/
 
    real*4 e1 /4.80/, e3
    real*4 e2 /9.6/
-   
+
    real*8 f1 /140.8/, f3
    real*8 f2 /281.6/
-   
+
    real*16 g1 /1600.3/, g3
    real*16 g2 /3200.6/
 
    logical*1 h1 /.false./, h3
    logical*1 h2 /.true./
-   
-   
+
+
    character*1 n1 /'a'/, n3 /'d'/
    character*1 n2 /'a'/
 
    complex*8 l1 /(0.0, 0.0)/, l3
    complex*8 l2  /(1.0, 1.0)/
-   
+
    complex*16 m1 /(0.0D0, 0.0D0)/, m3
    complex*16 m2 /(1.0D0, 1.0D0)/
 
@@ -189,7 +176,7 @@ end module m
         error stop 30
       endif
 
-    
+
 
     n3 = exfun_char(n1)
       if(n3 .ne. n2)then
@@ -200,10 +187,10 @@ end module m
       if(.not. precision_x8(l3,l2))then
         error stop 50
       end if
-      
+
     m3 = exfun_comp2(m1)
       if(.not. precision_x16(m3,m2))then
         error stop 51
       end if
 
-end 
+end

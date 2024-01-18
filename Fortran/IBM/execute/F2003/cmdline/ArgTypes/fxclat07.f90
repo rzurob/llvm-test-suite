@@ -12,37 +12,30 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat07.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Tests command line intrinsic routines by passing pointer 
+!*  DESCRIPTION                : Tests command line intrinsic routines by passing pointer
 !*                             : components (pointing to allocatable objects) of derived type
 !*                             : as arguments
-!*                             
-!*                    
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       module modtype
@@ -56,8 +49,8 @@
           character(513),  POINTER  :: NAME
           logical,         POINTER  :: TRIM_NAME
           integer ,        POINTER  :: ARGCOUNT
-        end type dertype 
-         
+        end type dertype
+
       end module modtype
 
 
@@ -69,11 +62,11 @@
 
       character(2049), ALLOCATABLE, TARGET  :: COMMAND
       integer,         ALLOCATABLE, TARGET  :: LENGTH
-      character(4099), ALLOCATABLE, TARGET  :: STR      
+      character(4099), ALLOCATABLE, TARGET  :: STR
       integer,         ALLOCATABLE, TARGET  :: STATUS
       integer,         ALLOCATABLE, TARGET  :: NUMBER
       character(2047), ALLOCATABLE, TARGET  :: VALUE
-      INTEGER,         ALLOCATABLE, TARGET  :: ARR(:)  
+      INTEGER,         ALLOCATABLE, TARGET  :: ARR(:)
       character(513),  ALLOCATABLE, TARGET  :: NAME
       logical,         ALLOCATABLE, TARGET  :: TRIM_NAME
       integer,         ALLOCATABLE, TARGET  :: ARGCOUNT
@@ -92,13 +85,13 @@
       then
         error stop 61
       endif
-      
+
       allocate (COMMAND, LENGTH, STATUS, NUMBER, VALUE, NAME, TRIM_NAME, ARGCOUNT)
 
       if  (.not.allocated(COMMAND)    .or. .not.allocated(LENGTH) .or. &
            .not.allocated(STATUS)     .or. .not.allocated(NUMBER) .or. &
            .not.allocated(VALUE)      .or. .not.allocated(NAME)   .or. &
-           .not.allocated(TRIM_NAME)  .or. .not.allocated(ARGCOUNT))   & 
+           .not.allocated(TRIM_NAME)  .or. .not.allocated(ARGCOUNT))   &
       then
         error stop 62
       endif
@@ -114,7 +107,7 @@
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 0 ) & 
+      if ( CmdCount .ne. 0 ) &
       then
         error stop 63
       endif
@@ -127,7 +120,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         cmd%NUMBER = i
         call GET_COMMAND_ARGUMENT(cmd%NUMBER, cmd%VALUE, cmd%LENGTH, cmd%STATUS)
         call MyGetArg(CmdLine, cmd%NUMBER, Argument)
@@ -161,12 +154,12 @@
         error stop 68
       endif
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 
 
 
-  
-  
+
+
 

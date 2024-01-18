@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpCommonC588 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpCommonC588
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 13, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The common statement
-!* 
+!*
 !*     C588 (R558) A common-block-object shall not be a dummy argument, an allocatable variable, a
 !*     derived-type object with an ultimate component that is allocatable, an automatic object, a
 !*     function name, an entry name, a variable with the BIND attribute, or a result name.
 !*
-!*   -- Test pointer components 
+!*   -- Test pointer components
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -48,28 +39,28 @@
     SEQUENCE
     REAL(K)       :: R(L)=K
   END TYPE
- 
+
   TYPE :: DT_C(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     CHARACTER(L)  :: C(L)=CHAR(48+K)
   END TYPE
- 
+
   TYPE :: DT_I(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     INTEGER(K)    :: I(L)=K
   END TYPE
- 
+
   TYPE :: DT_L(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     LOGICAL(K)    :: A(L)=.TRUE.
   END TYPE
- 
+
   TYPE :: DT_Z(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
@@ -87,16 +78,16 @@
     TYPE(DT_L(K,L)), POINTER  :: A
     TYPE(DT_Z(K,L)), POINTER  :: Z
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpCommonC588 
+  PROGRAM dtpCommonC588
   USE M
 
   TYPE(DT(8,7)), POINTER :: Ptr
   TYPE(DT(8,7)), TARGET  :: Tar
 
-  COMMON /BLK/ Ptr, Tar 
+  COMMON /BLK/ Ptr, Tar
 
   CALL ExtSub()
 
@@ -117,15 +108,15 @@
   IF ( SIZE(Tar%Z%Z) .NE. 7        ) STOP 61
   IF ( ANY (Tar%Z%Z  .NE. (8,-8) ) ) STOP 62
 
-  END 
+  END
 
   SUBROUTINE ExtSub()
-  USE M 
+  USE M
 
   TYPE(DT(8,7)), POINTER :: Ptr
   TYPE(DT(8,7)), TARGET  :: Tar
 
-  COMMON /BLK/ Ptr, Tar 
+  COMMON /BLK/ Ptr, Tar
 
   ALLOCATE(Tar%R)
   ALLOCATE(Tar%C)

@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures (generic-binding)
 !*                               Stmt by Stmt: (Pg.199 12-16) For a particular derived type and a particular
@@ -49,7 +38,7 @@ module m
 
          generic :: write(formatted) => fwrite
          generic :: write(unformatted) => uwrite
-         
+
    end type
 
    interface read(formatted)
@@ -159,8 +148,8 @@ program multipleBinding002
    if ( ( stat /= 0 ) .or. ( msg /= 'uread' ) )  error stop 11_4
    if ( b1%c /= 'FTN' ) error stop 12_4
 
-   close ( 1, status='delete' ) 
-   close ( 2, status='delete' ) 
+   close ( 1, status='delete' )
+   close ( 2, status='delete' )
 
 end program
 

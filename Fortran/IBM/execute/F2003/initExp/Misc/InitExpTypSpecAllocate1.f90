@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpeAllocate1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpeAllocate1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  type-spec in allocate stmt 
-!* 
-!*  
-!* 
+!*  type-spec in allocate stmt
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypSpeAllocate1 
+  PROGRAM InitExpTypSpeAllocate1
 
   IMPLICIT REAL(KIND=4_8)  (A)
   IMPLICIT REAL(KIND=8_4)  (B)
@@ -48,8 +38,8 @@
 
   INTEGER   :: I
   REAL(4)   :: R4
-  REAL(8)   :: R8 
-  REAL(16)  :: R6 
+  REAL(8)   :: R8
+  REAL(16)  :: R6
 
 
   REAL, PARAMETER :: Res(128)=(/(-I, I=0, 127)/)

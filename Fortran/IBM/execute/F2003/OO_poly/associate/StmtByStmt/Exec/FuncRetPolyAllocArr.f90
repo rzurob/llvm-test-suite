@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncRetPolyAllocArr.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncRetPolyAllocArr.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRetPolyAllocArr 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRetPolyAllocArr
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a func call returning a poly allocatable 
-!*    array of derived type 
+!*    The selector is a func call returning a poly allocatable
+!*    array of derived type
 !*    (Comp Failed : 298097)
 !*    (ICE-298465 on same_type_as())
 !*
@@ -47,16 +41,16 @@
 
     TYPE :: Base
       INTEGER :: BaseId = 1
-      CLASS(Base),  POINTER :: BaseComp => NULL() 
+      CLASS(Base),  POINTER :: BaseComp => NULL()
     CONTAINS
       PROCEDURE, PASS   :: GetId => GetBaseId
     END TYPE
 
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
-      CLASS(Child), POINTER  :: ChildComp => NULL() 
+      CLASS(Child), POINTER  :: ChildComp => NULL()
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -88,13 +82,13 @@
     IF ( .NOT. ASSOCIATED(As(3)%BaseComp, V) )  STOP 48
     IF ( .NOT. ASSOCIATED(As(3)%ChildComp, V) ) STOP 49
 
-    IF ( ANY(As%GetID() .NE. 2))  STOP 50 
-    IF ( ANY(As%BaseId  .NE. 1) ) STOP 51 
+    IF ( ANY(As%GetID() .NE. 2))  STOP 50
+    IF ( ANY(As%BaseId  .NE. 1) ) STOP 51
 
     ASSOCIATE ( As1 => As(1)%ChildComp%GetId() )
-       IF ( As1 .NE. -2) STOP 52 
+       IF ( As1 .NE. -2) STOP 52
     END ASSOCIATE
-   
+
     IF ( .NOT. SAME_TYPE_AS(As, Child()) )         STOP 53
     IF ( .NOT. SAME_TYPE_AS(As(3)%BaseComp, As) )  STOP 54
     IF ( .NOT. SAME_TYPE_AS(As(1)%ChildComp, As) ) STOP 55
@@ -110,17 +104,17 @@
     CLASS(Child), TARGET     :: Arg
     CLASS(Child), ALLOCATABLE :: Func(:)
 
-    ALLOCATE(Child :: Func(3)) 
+    ALLOCATE(Child :: Func(3))
     FUNC(3)%BaseComp  => Arg
     SELECT TYPE (As => Func )
-      TYPE IS (Child) 
-        AS(1)%ChildComp => Arg 
-        AS(2)%ChildComp => Arg 
-        AS(3)%ChildComp => Arg 
+      TYPE IS (Child)
+        AS(1)%ChildComp => Arg
+        AS(2)%ChildComp => Arg
+        AS(3)%ChildComp => Arg
       CLASS DEFAULT
         STOP 77
     END SELECT
 
-  END FUNCTION 
+  END FUNCTION
 
   END

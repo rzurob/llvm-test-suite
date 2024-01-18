@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf033.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,25 +12,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf033
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 04, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Using DECIMAL= in INQUIRE stmt
 !*
@@ -44,9 +37,9 @@
       real :: rl1 = 3.14 , rl2
 
       character(20) :: str_decimal
-      
+
       open(unit=IN, file=FNAME_IN, decimal='COMMA')
-      
+
       str_decimal=''
       inquire(unit=IN, decimal=str_decimal)
       if( str_decimal .ne. 'COMMA' ) error stop 1
@@ -59,10 +52,10 @@
 
       open(unit=OUT, file=FNAME_OUT)
 
-      str_decimal=''      
+      str_decimal=''
       inquire(OUT, decimal=str_decimal)
       if( str_decimal .ne. 'POINT' ) error stop 3
-      
+
       write(OUT,*,decimal='COMMA') rl1
 
       str_decimal=''
@@ -71,12 +64,12 @@
 
       open(unit=IN, decimal='POINT')
 
-      str_decimal=''      
+      str_decimal=''
       inquire(IN, decimal=str_decimal)
       if( str_decimal .ne. 'POINT' ) error stop 5
 
       close(IN)
-      
+
       str_decimal=''
       inquire(IN, decimal=str_decimal)
       if( str_decimal .ne. 'UNDEFINED' ) error stop 6
@@ -102,7 +95,7 @@
       if( str_decimal .ne. 'COMMA' ) error stop 9
 
       close(OUT)
-      
+
       open(unit=OUT, file=FNAME_OUT, form='unformatted')
 
       str_decimal=''
@@ -111,8 +104,8 @@
 
       close(OUT)
 
-      
-      
+
+
       ! test pre-connected units:
       str_decimal=''
       inquire(0, decimal=str_decimal)

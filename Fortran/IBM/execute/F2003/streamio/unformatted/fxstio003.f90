@@ -1,35 +1,29 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fort.* 
-! %COMPOPTS: 
-! %GROUP: fxstio003.f 
+! %PRECMD: rm -f fort.*
+! %COMPOPTS:
+! %GROUP: fxstio003.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio003.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 07, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
 !*
-!*  Description                : Test assumed-size array and deferred-shape 
-!*                               array with Stream I/O.  
+!*  Description                : Test assumed-size array and deferred-shape
+!*                               array with Stream I/O.
 !*
 !=======================================================================
 
 !* Declare Variables.
-   
+
   implicit none
   integer i, j, ios
   integer int(3,3), int1(9)
@@ -39,7 +33,7 @@
   real, allocatable :: real1(:, :), real2(:)
   real, allocatable :: realc1(:), realc2(:), realc3(:)
   real, allocatable :: realc11(:), realc21(:), realc31(:)
- 
+
   complex, allocatable :: comp(:, :), comp1(:)
   complex, allocatable :: compc1(:), compc2(:), compc3(:)
   complex, allocatable :: compc11(:), compc21(:), compc31(:)
@@ -59,8 +53,6 @@
   allocate(comp(3, 3), comp1(9))
   allocate(compc1(3), compc2(3), compc3(3))
   allocate(compc11(3), compc21(3), compc31(3))
-
-
 
 !* initialize the array int(3,3)
 
@@ -90,7 +82,7 @@
   realc2 = (/(real1(i,2),i=1,3)/)
   realc3 = (/(real1(i,3),i=1,3)/)
 
-  write (1, iostat=ios, err=200) real1 
+  write (1, iostat=ios, err=200) real1
   write (2, iostat=ios, err=200) realc1(1), realc1(2), realc1(3)
   write (3, iostat=ios, err=200) (realc2(i), i=1,3)
   write (4, iostat=ios, err=200) realc3
@@ -122,7 +114,7 @@
   close(2, status='delete')
   close(3, status='delete')
   close(4, status='delete')
- 
+
 !* Testing complex
     do i=1,3
     do j=1,3
@@ -141,13 +133,13 @@
   compc2 = (/(comp(i,2),i=1,3)/)
   compc3 = (/(comp(i,3),i=1,3)/)
 
-  write (1,  iostat=ios, err=200) comp 
+  write (1,  iostat=ios, err=200) comp
   write (2,  iostat=ios, err=200) compc1(1), compc1(2), compc1(3)
   write (3,  iostat=ios, err=200) (compc2(i), i=1,3)
   write (4,  iostat=ios, err=200) compc3
 
   rewind(1, iostat=ios, err=500)
-  read(1,  iostat=ios, err=400) comp1 
+  read(1,  iostat=ios, err=400) comp1
   rewind(2, iostat=ios, err=500)
   read(2,  iostat=ios, err=400) compc11(1), compc11(2), compc11(3)
   rewind(3, iostat=ios, err=500)

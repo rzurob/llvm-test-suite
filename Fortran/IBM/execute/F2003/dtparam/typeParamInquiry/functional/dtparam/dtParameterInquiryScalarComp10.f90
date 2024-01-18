@@ -1,31 +1,24 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryScalarComp10.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryScalarComp10.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 9 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
+!*  REFERENCE                  :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  REQUIRED COMPILER OPTIONS  : -qfree=f90 
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. INTEGER POINTER COMPONENT
@@ -37,12 +30,12 @@ module m
    type base(k1,k2,k3,k4,l1,l2,l3,l4)
     integer(max(1,-1)),kind    :: k1
     integer(2_8),kind          :: k2
-    integer(k_4),kind          :: k3    
+    integer(k_4),kind          :: k3
     integer(2*k_4),kind        :: k4
-    
+
     integer(k1%kind),len       :: l1
     integer(k2),len            :: l2
-    integer(k_4),len            :: l3 
+    integer(k_4),len            :: l3
     integer(k4%kind),len       :: l4
 
     integer,pointer            :: i1

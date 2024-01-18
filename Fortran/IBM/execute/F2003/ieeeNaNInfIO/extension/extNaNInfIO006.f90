@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : extNaNInfIO006.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : July 18, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=oldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -31,7 +25,7 @@
       module m
 
         implicit none
-        
+
         type :: Point
           real(kind=4)    :: x, y
           complex(kind=4) :: cx_value
@@ -43,7 +37,7 @@
             generic         :: write(formatted) => childo
             generic         :: read(formatted)  => childi
         end type
-      
+
       contains
         subroutine reset(arg)
           class(Point) :: arg
@@ -76,7 +70,7 @@
              read(unit, myfmt) dtv%name, dtv%x, dtv%y, dtv%cx_value
           endif
 
-          
+
         end subroutine
 
         subroutine childo(dtv, unit, iotype, vlist, iostat, iomsg)
@@ -103,11 +97,11 @@
              write(unit, myfmt) dtv%name, dtv%x, dtv%y, dtv%cx_value
 
           endif
-          
+
         end subroutine
 
       end module
-      
+
 program extNaNInfIO006
 
       use m
@@ -116,7 +110,7 @@ program extNaNInfIO006
       integer, parameter :: in = 11, out = 12
 
       type(Point) :: pt1, pt2, pt3
-      
+
       open(in,  file='extNaNInfIO006.dat', action='read')
       open(out, file='extNaNInfIO006.out', action='write')
 
@@ -137,11 +131,11 @@ program extNaNInfIO006
       if ( .not. equiv_is_negative(pt3%x) ) error stop 6_4
       if ( .not. equiv_is_negative(pt3%y) ) error stop 7_4
       if ( .not. equiv_is_positive(imag(pt3%cx_value)) ) error stop 8_4
-      
+
       write(out,"(dt'FORMATTED'(3,7,8))") pt1
       write(out,"(dt'FORMATTED'(3,7,8))") pt2
       write(out,"(dt'FORMATTED'(2,5,5))") pt3
-      
+
       call pt1%reset
       call pt2%reset
       call pt3%reset
@@ -166,7 +160,7 @@ program extNaNInfIO006
 
       close(in)
       close(out)
-      
+
       contains
 
       ! Returns true if the integer equivalence of
@@ -175,11 +169,11 @@ program extNaNInfIO006
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
-         
+
          if ( val_eq .ge. 0 ) then
             equiv_is_negative = .false.
          else
@@ -194,9 +188,9 @@ program extNaNInfIO006
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
 
          if ( val_eq .le. 0 ) then

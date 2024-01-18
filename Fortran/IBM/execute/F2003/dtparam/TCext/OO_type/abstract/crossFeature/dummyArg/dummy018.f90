@@ -1,11 +1,6 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/abstract/crossFeature/dummyArg/dummy018.f
- !#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -20,24 +15,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*
-!*  DESCRIPTION                : Testing:  C503 The TYPE(derived-type-spec) shall not specify an abstract type		    
+!*  DESCRIPTION                : Testing:  C503 The TYPE(derived-type-spec) shall not specify an abstract type
 !*                                         unlimited polymorphic dummy argument (non-pointer and non-allocatable) with array with
 !*                                           a) polymorphic abstract type actual argument
 !*                                           b) polymorphic extension type of abstract type actual argument
@@ -52,12 +36,12 @@
 !* ===================================================================
 
 module m
-   
+
    type, abstract :: base(k1)    ! (4)
       integer, kind :: k1
       integer(k1)   :: id
    end type
-   
+
    type, extends(base) :: child(k2)    ! (4,4)
       integer, kind :: k2
       integer(k2)   :: rid
@@ -67,7 +51,7 @@ contains
 
    subroutine foo(a)
       class(*) :: a(:)
-     
+
       select type (a)
          class is (base(4))
             error stop 1_4
@@ -75,12 +59,12 @@ contains
             if ((a(1)%id+a(2)%id) .ne. 9)          error stop 2_4
             if ((a(1)%rid+a(2)%rid) .ne. 11)     error stop 3_4
       end select
-      
+
    end subroutine
-   
+
    subroutine foo1(a)
       class(*) :: a(2,*)
-     
+
       select type (a)
          class is (base(4))
             error stop 4_4
@@ -88,7 +72,7 @@ contains
             if ((a(1,1)%id+a(2,1)%id) .ne. 9)          error stop 5_4
             if ((a(1,1)%rid+a(2,1)%rid) .ne. 11)     error stop 6_4
       end select
-      
+
    end subroutine
 
    integer function boo(a)
@@ -105,26 +89,26 @@ end module
 
 program dummy018
    use m
-   
+
    class(base(4)), allocatable         :: b1(:)
    type(child(4,4)), allocatable, target :: c1(:)
    class(child(4,4)), pointer            :: c2(:)
-   
+
    allocate (b1(2), source = (/ child(4,4)(3,4), child(4,4)(6,7) /))
    allocate (c1(2), source = (/ child(4,4)(3,4), child(4,4)(6,7) /))
- 
+
    c2 => c1
-      
+
    call foo(b1)
    call foo(c1)
    call foo(c2)
-   
+
    call foo1(b1)
    call foo1(c1)
    call foo1(c2)
-   
+
    if ( boo(b1) .ne. 9 ) error stop 8_4
    if ( boo(c1) .ne. 9 ) error stop 9_4
    if ( boo(c2) .ne. 9 ) error stop 10_4
-   
+
 end program

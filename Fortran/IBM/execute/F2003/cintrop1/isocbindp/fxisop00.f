@@ -1,46 +1,32 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
 ! %PRECMD: ${TR_SRC}/scrisop00.presh fxisop00 cxisop00
 ! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
-!*  SECONDARY FUNCTIONS TESTED : see below 
+!*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : 16
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*
 !*	- testing 16
 !*	- using external FORTRAN functions
@@ -53,7 +39,7 @@ real(16) function fnt1(a)
    use ISO_C_BINDING
 
    real(16) :: a
-   
+
    if ( a /= 5.0q0 ) error stop 20
 
    a = a + 5.0q0
@@ -65,7 +51,7 @@ real(16) function fnt2(a)
    use ISO_C_BINDING
 
    real(16), value :: a
-   
+
    if ( a /= 5.0q0 ) error stop 22
 
    a = a + 5.0q0
@@ -77,7 +63,7 @@ real(16) function fnt3(a)
    use ISO_C_BINDING
 
    real(16), intent(in) :: a
-   
+
    if ( a /= 5.0q0 ) error stop 24
 
    fnt3 = 0
@@ -87,7 +73,7 @@ real(16) function fnt4(a)
    use ISO_C_BINDING
 
    real(16), intent(in), value :: a
-   
+
    if ( a /= 5.0q0 ) error stop 26
 
    fnt4 = 0
@@ -97,7 +83,7 @@ real(16) function fnt5(a)
    use ISO_C_BINDING
 
    real(16), intent(in) :: a
-   
+
    if ( a /= 5.0q0 ) error stop 28
 
    fnt5 = 0
@@ -107,7 +93,7 @@ real(16) function fnt6(a)
    use ISO_C_BINDING
 
    real(16), intent(in), value :: a
-   
+
    if ( a /= 5.0q0 ) error stop 30
 
    fnt6 = 0

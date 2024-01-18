@@ -4,17 +4,14 @@
 ! %PRECMD: $TR_SRC/intrimod25.presh intrimod25 intrimod34g_c
 ! %COMPOPTS: -qintlog -qhalt=w -qextname
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod25.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004

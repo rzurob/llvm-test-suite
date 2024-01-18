@@ -4,20 +4,14 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrEQchar.f 
+!*  TEST CASE NAME             : dataPtrEQchar.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -41,9 +35,9 @@ program main
 
     use m
 
-    type(base(4)), pointer :: b1(:) 
+    type(base(4)), pointer :: b1(:)
 
-    character(3), target, volatile :: tar(3,4) = reshape( & 
+    character(3), target, volatile :: tar(3,4) = reshape( &
          (/ '123', '456','789','abc','def','ghi','jkl', 'opq', &
            '012', '345', '678', 'zyx' /), (/3,4/) )
 
@@ -53,7 +47,7 @@ program main
 
      if ( .not. associated(b1(1)%ptr, b1(2)%ptr) ) stop 2
      if ( any ( lbound(b1(1)%ptr) .ne. (/ 3, 1 /) )) stop 5
-     if ( any ( ubound(b1(1)%ptr) .ne. (/ 5, 4 /) )) stop 8 
+     if ( any ( ubound(b1(1)%ptr) .ne. (/ 5, 4 /) )) stop 8
 
      print *, b1(1)%ptr
 

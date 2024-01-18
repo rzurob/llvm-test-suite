@@ -1,38 +1,30 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryIntrinsicAssociate02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryIntrinsicAssociate02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 7 2008  
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 7 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
-!* 3. TYPE PARAMETER INQUIRY INSIDE ASSOCIATE 
-!* 4. SELECTOR IS SCALAR VARIABLE  
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
+!* 3. TYPE PARAMETER INQUIRY INSIDE ASSOCIATE
+!* 4. SELECTOR IS SCALAR VARIABLE
 !234567890123456789012345678901234567890123456789012345678901234567890
 program typeParamInquiryIntrinsicAssociate02
     implicit none
-    
+
     integer(kind('a')) :: i1
-    integer(max(1,2))  :: i2 
+    integer(max(1,2))  :: i2
     integer(selected_int_kind(7)) :: i3
-    integer(kind(2_4)+kind(2_4))  :: i4 
+    integer(kind(2_4)+kind(2_4))  :: i4
     integer(kind=2),parameter     :: i5=2_4
 
     real(4*kind('a'))  :: r1
@@ -55,18 +47,18 @@ program typeParamInquiryIntrinsicAssociate02
     character(kind=1,len=3)    :: c2="he"
     character(len=7)           :: c3="team"
     character(len('abc'))      :: c4="abc"
-    character(len('abcdefg'(1:4))) :: c5="abcdefg"(1:4) 
+    character(len('abcdefg'(1:4))) :: c5="abcdefg"(1:4)
     character(c1%len)              :: c6=c1
     character(c1(1:2)%len)         :: c7=c1(1:2)
     character(len(c1)+len('abc'))  :: c8=c1//'abc'
-    character(len('abc'//'efg'(:2)))   :: c9='abc'//'efg' 
+    character(len('abc'//'efg'(:2)))   :: c9='abc'//'efg'
     character(c1(1:1)%len+len(c1(4:4))) :: c10=c1(1:1)//c1(4:4)
 
-    !-------------verify integer-----------------!     
+    !-------------verify integer-----------------!
     associate(i_1=>i1)
        if(i_1%kind /= kind(i_1) .or. i_1%kind /= 1)           error stop 10_4
     end associate
- 
+
     associate(i_2=>i2)
        if(i_2%kind /= kind(i_2) .or. i_2%kind /= 2)           error stop 11_4
     end associate

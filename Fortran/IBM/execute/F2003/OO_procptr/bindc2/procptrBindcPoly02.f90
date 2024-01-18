@@ -1,29 +1,18 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                :  allocate unlimited poly with expression
-!*                                in SOURCE being function reference using 
+!*                                in SOURCE being function reference using
 !*                                procedure pointer pointing to C function.
 !*                                Check function return value, updated
 !*                                argument value as well as selector with
 !*                                c interoperable type inside select type.
 !*                                dummy argument is C_PTR and function
-!*                                return is C_INT. 
+!*                                return is C_INT.
 !* ===================================================================
 
 program procptrBindcPoly02
@@ -31,7 +20,7 @@ program procptrBindcPoly02
    use ISO_C_BINDING,ONLY : C_F_PROCPOINTER, C_FUNPTR, C_INT, C_FUNLOC, C_ASSOCIATED, C_LOC, C_PTR
 
    type, bind(c):: dt
-       type(C_FUNPTR) :: cfunptr 
+       type(C_FUNPTR) :: cfunptr
    end type
 
    interface
@@ -51,7 +40,7 @@ program procptrBindcPoly02
    class(*), pointer :: fpoly
 
    i = max(23_C_INT, 34_C_INT)
-   j = C_LOC(i) 
+   j = C_LOC(i)
    if ( .not. C_ASSOCIATED(j) ) error stop 1_4
    if ( .not. C_ASSOCIATED(j, C_LOC(i)) ) error stop 2_4
 

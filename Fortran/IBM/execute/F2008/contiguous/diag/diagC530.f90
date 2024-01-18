@@ -1,26 +1,17 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : diagC530.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-11-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS Attribute   
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : - 
-!*                               - 
-!*  DRIVER STANZA              :
+!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS Attribute
+!*  SECONDARY FUNCTIONS TESTED : -
+!*                               -
 !*
-!*  DESCRIPTION                : - 
-!*                               - 
+!*  DESCRIPTION                : -
+!*                               -
 !*  C530:
-!*     An entity with the CONTIGUOUS attribute shall be an array POINTER 
+!*     An entity with the CONTIGUOUS attribute shall be an array POINTER
 !*     or an assumed-shape array
 !*
 !*  KEYWORD(S)                 :
@@ -37,8 +28,8 @@ MODULE Mod
 
       INTEGER, PARAMETER :: N = 1024
 
-!* valid, rank = 1 
-      REAL(16), POINTER, CONTIGUOUS :: p1(:)  
+!* valid, rank = 1
+      REAL(16), POINTER, CONTIGUOUS :: p1(:)
       CLASS(*), POINTER, CONTIGUOUS :: p2(:)
       REAL(8),  POINTER, DIMENSION(:), CONTIGUOUS :: p3 => NULL()
 
@@ -70,7 +61,7 @@ MODULE Mod
       CONTIGUOUS p11
       POINTER :: p11
 
-!* valid, rank = 3 
+!* valid, rank = 3
       REAL(16), POINTER, CONTIGUOUS :: c1(:,:,:)
       CLASS(*), POINTER, CONTIGUOUS :: c2(:,:,:)
       REAL(8),  POINTER, DIMENSION(:,:,:), CONTIGUOUS :: c3 => NULL()
@@ -104,12 +95,12 @@ MODULE Mod
       POINTER :: c11
 
 !*******************************************
-!*    invalid, rank = 1 
+!*    invalid, rank = 1
       REAL(16), CONTIGUOUS  :: t1(10)
       REAL(16), TARGET, CONTIGUOUS  :: t2(N)
       INTEGER, TARGET, DIMENSION(N), CONTIGUOUS :: t3
 
-!*    invalid, rank = 5 
+!*    invalid, rank = 5
       REAL(16), TARGET, CONTIGUOUS   :: t4(1,1,1,1,1)
       INTEGER, ALLOCATABLE, DIMENSION(:,:,:,:,:), CONTIGUOUS :: t5
 

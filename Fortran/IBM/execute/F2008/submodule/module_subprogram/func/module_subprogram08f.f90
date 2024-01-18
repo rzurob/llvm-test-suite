@@ -1,22 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : module_subprogram08f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : December 20, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                               
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  DRIVER STANZA              : xlf2008
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
@@ -25,8 +18,8 @@
 !*
 !*  DESCRIPTION                :
 !*  based on F2003/dtparam/allocate/allocBaseVariable03.f
-!*  
-!*  Generic function pointer resolution to functions declared in an 
+!*
+!*  Generic function pointer resolution to functions declared in an
 !*   interface and defined in a different descendant submodules among
 !*   the submodules represented in this tree structure:
 !*                       m
@@ -34,12 +27,12 @@
 !*                     m1 m2
 !*                        / \
 !*                       m3 m4
-!*          
+!*
 !* Secondary tests:
 !* - submodule m2 does not define anything (blank)
 !*
 !* Verify that the results match the values of the original test case.
-!*  
+!*
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 MODULE typeMod
@@ -62,7 +55,7 @@ MODULE typeMod
             GENERIC :: NewBase => NewBase2, NewBase4, NewBase8
 
     END TYPE base
-    
+
     INTERFACE
 
         MODULE FUNCTION NewBase2(this, rc)
@@ -106,7 +99,7 @@ SUBMODULE (typeMod) subMod
                 CALL zzrc( rc )
             END IF
 
-        END 
+        END
 
 END SUBMODULE subMod
 
@@ -150,7 +143,7 @@ CONTAINS
                 CALL zzrc( rc )
             END IF
 
-        END 
+        END
 
 END SUBMODULE node4
 

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Misc8.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Misc8.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             :  Misc8.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 08, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  
-!*  Calling proc ptr in default IO 
-!*  
-!*  
+!*
+!*  Calling proc ptr in default IO
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -63,7 +55,7 @@
 
   END MODULE
 
-  PROGRAM Misc8 
+  PROGRAM Misc8
   USE M
   IMPLICIT TYPE(DT)(P)
 
@@ -71,9 +63,9 @@
   PROCEDURE(TYPE(DT)), POINTER  :: ProcPtr2
   PROCEDURE(ModFun),   POINTER  :: ProcPtr3
 
-  ProcPtr1 => ModFun   
-  ProcPtr2 => ModFun   
-  ProcPtr3 => ModFun   
+  ProcPtr1 => ModFun
+  ProcPtr2 => ModFun
+  ProcPtr3 => ModFun
 
   PRINT *, ProcPtr1()
   PRINT *, ProcPtr2()

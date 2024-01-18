@@ -28,7 +28,7 @@
 #if (defined(ARRAY_ELEMENT_TARGET))
 #define C_F_POINTER_SHAPE_ARG_DECL
 #define C_F_POINTER_SHAPE_ARG_ASSIGN
-#define C_F_POINTER_SHAPE_ARG 
+#define C_F_POINTER_SHAPE_ARG
 #elif (defined(VAR_SHAPE_ARG) || defined(PARAM_SHAPE_ARG))
 #define C_F_POINTER_SHAPE_ARG_DECL integer, dimension(TARGET_RANK) :: C_F_POINTER_SHAPE_ARG_NAME
 #define C_F_POINTER_SHAPE_ARG , C_F_POINTER_SHAPE_ARG_NAME
@@ -44,7 +44,6 @@
 #define C_F_POINTER_SHAPE_ARG , (/ 4 /)
 #else
 #define C_F_POINTER_SHAPE_ARG , (/ TARGET_SIZE_DIM1 /)
-#endif
 #endif
 #else
 #define TARGET_DIMENSIONS

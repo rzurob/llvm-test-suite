@@ -1,24 +1,17 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/diag/polyAssign1022d_DiffRanka.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 07 August 2015
-!* ORIGIN                       : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !* SECONDARY FUNTIONS TESTED    : LHS of intrinsic assignment with rank compatibility.
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : LHS rank=2, RHS rank=1.
-!*                              : Test polymorphic assignment with different ranks. 
+!*                              : Test polymorphic assignment with different ranks.
 !*                              : When do assignment between different ranks, will produce the "Operands must be conformable." errors
 !*                              : Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.
 !*                              : We test array polymorphic assignment to two levels of extensible derived types with integer type inside.
@@ -33,7 +26,7 @@
 !* ===================================================================
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-   
+
 module m
    type base
       integer :: i1
@@ -48,7 +41,7 @@ Program polyAssign1022d
     class(base), allocatable :: b1(:), b2(:), a1(:,:), a2(:,:)
 
     allocate(base :: b2(1:10))   !different bounds and the same extent
-    
+
     allocate(base :: a2(-1:0,1:10))
 
     if ( allocated(b1) .neqv.  .false. ) error stop "allocated(b1) status should be false initially."
@@ -56,7 +49,7 @@ Program polyAssign1022d
     b1 = base(1) !<--LHS is unallocated initially, the assignment will not be effectiv
     if ( allocated(b1) .neqv.  .false. ) error stop "allocated(b1) status should be false after the uneffective initiallization."
     if (lbound(b1,1) /= 1) error stop "(lbound(b1,1) should be 1 by default  even it is unallocated now."
-    if (ubound(b1,1) /= 0) error stop "ubound(b1,1) should be 0 to indicate a zero-sized array, since it is unallocated" 
+    if (ubound(b1,1) /= 0) error stop "ubound(b1,1) should be 0 to indicate a zero-sized array, since it is unallocated"
 
     b2 = base(2)
     if (lbound(b2,1) /= 1 ) error stop 13
@@ -71,7 +64,7 @@ Program polyAssign1022d
     if (b2(9)%i1 /= 2) error stop 23
     if (b2(10)%i1 /= 2) error stop 24
 
-    b1 = b2   !<--This will make b1 allocated, get exactly copy as b2! 
+    b1 = b2   !<--This will make b1 allocated, get exactly copy as b2!
     if ( allocated(b1) .eqv. .false. ) error stop " b1 = b2 will make b1 allocated, get exactly copy as b2!"
     if (lbound(b1,1) /= 1) error stop "(lbound(b1,1) should be 1 as b2."
     if (ubound(b1,1) /= 10) error stop "ubound(b1,1) should be 10 as b2"
@@ -98,7 +91,7 @@ Program polyAssign1022d
     if (ubound(a1,2) /= 0) error stop "ubound(a1,2) should be 0 to indicate a zero-sized array, since it is unallocated"
 
     a2 = base(2)
-    if (lbound(a2,1) /= -1) error stop 40 
+    if (lbound(a2,1) /= -1) error stop 40
     if (ubound(a2,1) /= 0) error stop 41
     if (lbound(a2,2) /= 1) error stop 42
     if (ubound(a2,2) /= 10) error stop 43

@@ -1,27 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozCmplx005.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : CMPLX intrinsic
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                :Section 13.7.20 - Statement:
 !*				CMPLX (X [, Y, KIND])
 !*
-!* Testing default X dummy argument and explicitly defining the 
-!* Kind argument without specifying the Y argument. Kind type 8                         	
-!*				
+!* Testing default X dummy argument and explicitly defining the
+!* Kind argument without specifying the Y argument. Kind type 8
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -35,7 +24,7 @@
 program bozCmplx005
 
     complex(8) :: b8, o8, z8
-         
+
     b8 = cmplx(B"11111111110011110000001100100001110101101111000110111001101001", kind=8)
     o8 = cmplx(O"407140357524563001666", kind=8)
     z8 = cmplx(Z"42B383C9B0D69ED0", kind=8)

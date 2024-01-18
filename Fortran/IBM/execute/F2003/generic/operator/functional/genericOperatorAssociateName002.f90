@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Operator: use associate name and see if
 !*                                         operator of generic tb can be used in select type
@@ -100,7 +89,7 @@ program genericOperatorAssociateName002
             end select
          end associate
    end select
-   
+
    select type ( b => b2 )
       class is ( base )
          associate ( g => b + b2 )
@@ -110,6 +99,6 @@ program genericOperatorAssociateName002
                   print *, g%j
             end select
          end associate
-   end select 
-   
+   end select
+
 end program

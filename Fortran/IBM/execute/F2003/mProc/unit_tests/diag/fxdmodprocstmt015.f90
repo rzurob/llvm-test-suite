@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxdmodprocstmt015.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,28 +12,21 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxdmodprocstmt015
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Sept. 22, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : generalization of module procedure
 !*                               stmts, by making the MODULE keyword
 !*                               optional. These statements are called
 !*                               procedure statements in F2003.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qlanglvl=90std
 !*
 !*  DESCRIPTION                : If the ordering of interface body
-!*                               and procedure statements do not 
+!*                               and procedure statements do not
 !*                               conform to the F90 std, then we should
 !*                               NOT flag the ordering if 'MODULE'
 !*                               keyword is not specified, since another
@@ -41,8 +34,8 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
-      
-      interface 
+
+      interface
          subroutine s1()
          end subroutine s1
          subroutine s3(arg)
@@ -79,5 +72,5 @@
           integer :: arg
         end subroutine s6
       end interface
-      
+
       end

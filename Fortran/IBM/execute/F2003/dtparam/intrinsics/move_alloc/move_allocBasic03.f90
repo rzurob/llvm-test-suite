@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocBasic03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocBasic03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 7 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
@@ -31,7 +23,7 @@ module m
    type, extends(base) :: child(l2)
       integer,len :: l2
       integer     :: i2(l2-1:l2+1)
-      type(base(l2)) :: b1 
+      type(base(l2)) :: b1
    end type
 end module
 
@@ -45,7 +37,7 @@ program move_allocBasic03
   type(base(2)),allocatable    :: base1
 
   allocate(base(2) :: base1)
-  base1=base(2)(i1=[1,2,3])   
+  base1=base(2)(i1=[1,2,3])
 
   allocate(from1,source=child(1,2)(i1=[-2,-3,-4],i2=[-5,-6,-7] ,b1=base1) )
 
@@ -67,7 +59,7 @@ program move_allocBasic03
 
   if(allocated(from1))                             error stop 22_4
   if(.not. allocated(to1))                         error stop 23_4
-  
+
   select type(to1)
      type is(child(*,*))
      if(to1%l1 /= 1)                               error stop 24_4
@@ -84,5 +76,5 @@ program move_allocBasic03
      if(ubound(to1%b1%i1,1) /= 6)                  error stop 35_4
      class default
         error stop 100_4
-  end select   
+  end select
 end program

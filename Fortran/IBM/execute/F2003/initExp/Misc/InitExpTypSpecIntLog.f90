@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecIntLog.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecIntLog.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,23 +19,21 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  intrinsic-type-spec : integer and logical 
-!* 
+!*  intrinsic-type-spec : integer and logical
+!*
 !*  (324642)
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypSpecIntLog 
+  PROGRAM InitExpTypSpecIntLog
   IMPLICIT NONE
 
   INTEGER :: I
 
-  INTEGER,                       PARAMETER :: R(128) = (/(-I, I=1, 128)/)  
+  INTEGER,                       PARAMETER :: R(128) = (/(-I, I=1, 128)/)
 
   INTEGER(KIND=1_8),             PARAMETER :: I1(128)=(/(-I, I=1, 128)/)
   INTEGER(KIND=I1%KIND+1),       PARAMETER :: I2(128)=(/(-I, I=1, 128)/)
@@ -75,4 +67,4 @@
 
   END
 
- 
+

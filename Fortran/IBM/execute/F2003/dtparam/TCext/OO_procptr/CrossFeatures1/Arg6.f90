@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg6.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg6.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg6.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg6.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 20, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,11 +34,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  If an external procedure name or a dummy procedure name is used as an actual
 !*  argument, its interface shall be explicit or it shall be explicitly
 !*  declared to have the EXTERNAL attribute
-!* 
+!*
 !* (304048)(305976)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -55,17 +49,17 @@
       INTEGER, KIND              :: K1
       INTEGER, LEN               :: N1
       CHARACTER(kind=K1,len=N1)  :: C
-      TYPE(Base(K1,N1)), POINTER :: BPtr 
+      TYPE(Base(K1,N1)), POINTER :: BPtr
     END TYPE
- 
+
     INTERFACE
       FUNCTION IntF(Arg)
       IMPORT
-        TYPE(Base(1,*)) :: Arg 
-        TYPE(Base(1,3)), ALLOCATABLE :: IntF 
+        TYPE(Base(1,*)) :: Arg
+        TYPE(Base(1,3)), ALLOCATABLE :: IntF
       END FUNCTION
     END INTERFACE
- 
+
   END MODULE
 
   MODULE M
@@ -75,16 +69,16 @@
 
   FUNCTION ExtFun(Arg)
   USE M
-  TYPE(Base(1,*)) :: Arg 
-  TYPE(Base(1,3)), ALLOCATABLE :: ExtFun 
+  TYPE(Base(1,*)) :: Arg
+  TYPE(Base(1,3)), ALLOCATABLE :: ExtFun
     !ALLOCATE(ExtFun, SOURCE=Arg) ! not 10.1
     ALLOCATE(ExtFun)
-    ExtFun = Arg 
+    ExtFun = Arg
   END FUNCTION
 
-  PROGRAM Arg6 
+  PROGRAM Arg6
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
   PROCEDURE(IntF) :: ExtFun
 
   CALL IntSub1(ExtFun )
@@ -95,11 +89,11 @@
   SUBROUTINE IntSub1(Arg)
   PROCEDURE(IntF) :: Arg
   TYPE(Base(1,3)) :: V
-  TYPE(Base(1,3)), TARGET :: Tar=Base(1,3)("abc", NULL()) 
+  TYPE(Base(1,3)), TARGET :: Tar=Base(1,3)("abc", NULL())
     V = Arg(Base(1,3)("123", Tar))
     IF (V%C .NE. "123")                STOP 11
     IF (.NOT. ASSOCIATED(V%BPtr, Tar)) STOP 12
-    IF (V%BPtr%C .NE. "abc" )          STOP 13 
+    IF (V%BPtr%C .NE. "abc" )          STOP 13
   END SUBROUTINE
 
   END

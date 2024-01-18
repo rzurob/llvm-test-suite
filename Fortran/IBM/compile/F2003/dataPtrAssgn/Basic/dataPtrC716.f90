@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrC716.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrC716.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,23 +19,21 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  C716 (R735) If data-target is not unlimited polymorphic, data-pointer-object shall be 
+!*  C716 (R735) If data-target is not unlimited polymorphic, data-pointer-object shall be
 !*  type compatible (5.1.1.2) with it, and the corresponding kind type parameters
-!*  shall be equal. 
-!*   
+!*  shall be equal.
 !*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrC716 
+  PROGRAM dataPtrC716
   IMPLICIT NONE
 
   INTEGER(1), TARGET  :: Arr(3)
   INTEGER(2), POINTER :: ptr(:)
- 
+
   TYPE :: DT0
   END TYPE
 
@@ -57,9 +49,9 @@
   Ptr(1:3) => Arr
 
   Ptr1(-1:) => Arr1(:)
- 
+
   Ptr2(3:) => Arr2(:)
- 
+
   END
 
 

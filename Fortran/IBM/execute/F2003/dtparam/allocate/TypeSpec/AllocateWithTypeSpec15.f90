@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocateWithTypeSpec15
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : January 20, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : Deferred LEN parameter
@@ -25,18 +17,18 @@
 !* allocate-stmt is
 !*   ALLOCATE ( [ type-spec :: ] allocation-list [, alloc-opt-list ] )
 !*
-!*  Defect 361310                
-!* 
+!*  Defect 361310
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithTypeSpec15
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1,l2)
         INTEGER, KIND :: k1 = KIND(0)
         INTEGER, LEN  :: l1 = 1
         INTEGER, LEN  :: l2 = 2
 
-        CHARACTER(l1)  :: name  
+        CHARACTER(l1)  :: name
         INTEGER(k1) :: my_arr(l1,l2)
       END TYPE Base
 
@@ -51,7 +43,7 @@ PROGRAM AllocateWithTypeSpec15
 
       CALL Alloc_auto_child21(2,1)
 
-      CALL Alloc_auto_child73(7,3) 
+      CALL Alloc_auto_child73(7,3)
 
       CALL Alloc_auto_child105(10,5)
 
@@ -125,7 +117,7 @@ PROGRAM AllocateWithTypeSpec15
 
       DEALLOCATE(c1,c2,c3)
 
-      END SUBROUTINE Alloc_auto_child73 
+      END SUBROUTINE Alloc_auto_child73
 
       SUBROUTINE Alloc_auto_child105(n, m)
       INTEGER :: n

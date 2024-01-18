@@ -1,27 +1,25 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                              IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f023.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon
 !*  DATE                       : 2015-07-13
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*
-!*  DESCRIPTION                : - READ/WRITE statements inside DO CONCURRENT 
-!*                                 loops including nested DO CONCURRENT loops 
+!*  DESCRIPTION                : - READ/WRITE statements inside DO CONCURRENT
+!*                                 loops including nested DO CONCURRENT loops
 !*                                 using:
-!*                                   - READ/WRITE statements on units opened with NEWUNIT 
-!*                                   - READ/WRITE statements using IOSTAT 
-!*                                   - READ/WRITE statements using IOMSG 
-!*                                   - READ/WRITE statements using FMT=* 
-!*                               - concurrent-limit contains a variable with the 
+!*                                   - READ/WRITE statements on units opened with NEWUNIT
+!*                                   - READ/WRITE statements using IOSTAT
+!*                                   - READ/WRITE statements using IOMSG
+!*                                   - READ/WRITE statements using FMT=*
+!*                               - concurrent-limit contains a variable with the
 !*                                 parameter attribute
-!*                               - scalar-mask-expr contains logicals and 
+!*                               - scalar-mask-expr contains logicals and
 !*                                 procedures
 !*
 !=============================================================================
@@ -370,7 +368,7 @@
               error stop 621
             end if
           end if
-          i_res3(i) = sqrt(i_arr4(i)) 
+          i_res3(i) = sqrt(i_arr4(i))
           do concurrent (j = 100:1000:100, (abs(-1.0d0*i_arr3(j/100)) >= 30.0d0) .and. (abs(-1.0d0*i_arr3(j/100)) <= 80.0d0))
             read(unit2, IOSTAT=io_read, IOMSG=msg_read, FMT=*) animals
             if (io_read /= 0) then

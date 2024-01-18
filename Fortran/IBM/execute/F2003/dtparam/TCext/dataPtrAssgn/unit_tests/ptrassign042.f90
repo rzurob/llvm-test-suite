@@ -16,24 +16,16 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ptrassign042
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : March 31, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :functional testing of bounds-remapping and bounds-spec
-!*                              
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -41,20 +33,20 @@
     integer, kind        :: k1
     integer(k1), pointer :: ptr(:,:)
   end type
- 
+
   type dttar(n1,k2)    ! (5,4)
      integer, kind :: k2
      integer, len  :: n1
      integer(k2)   :: tar(n1:n1-1)
   end type
-  
+
   type(dtptr(4)) :: dtptr1
-  
+
   type(dttar(5,4)), target :: dttar1
-  
+
   dtptr1%ptr(1:10,1:10)=>dttar1%tar
-  
-   
+
+
 
 end
-      
+

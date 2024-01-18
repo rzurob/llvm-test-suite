@@ -2,28 +2,17 @@
 ! ftcx_dtp -qk -ql /tstdev/OO_procptr/bindc2/procptrBindCtoF03.f
 ! opt variations: -qnok -qnol
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang
 !*  DATE                       : 3/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
 !*
 !*  DESCRIPTION                :  interlanguage call from C->F/F->C
 !*                                Derived type argument passed to Fortran
 !*                                and its value initialized by Fortran
-!*                                by associating C function address with 
+!*                                by associating C function address with
 !*                                procedure pointer.
 !*                                Derived type argument passed to Fortran
 !*                                again and its value updated by Fortran
@@ -53,7 +42,7 @@ integer(C_INT) function fnt1(dobj) bind(c)
        subroutine initdt(i) bind(c)
           use ISO_C_BINDING, ONLY : C_PTR
           type(C_PTR) :: i
-       end subroutine 
+       end subroutine
    end interface
 
    type(dbind), intent(inout), target :: dobj
@@ -69,7 +58,7 @@ integer(C_INT) function fnt1(dobj) bind(c)
    dobj%b = 2_C_INT
    dtype%cptr = C_NULL_FUNPTR
 
-   a = C_LOC(dobj) 
+   a = C_LOC(dobj)
    if ( .not. C_ASSOCIATED(a) ) error stop 1_4
    if ( .not. C_ASSOCIATED(a, C_LOC(dobj)) ) error stop 2_4
 
@@ -101,7 +90,7 @@ integer(C_INT) function fnt1(dobj) bind(c)
    end do
 
    fnt1 = 0
-  
+
 end function fnt1
 
 integer(C_INT) function fnt2(dobj) bind(c)
@@ -112,7 +101,7 @@ integer(C_INT) function fnt2(dobj) bind(c)
        subroutine update(cptr) bind(c)
           import C_FUNPTR
           type(C_FUNPTR) :: cptr
-       end subroutine update 
+       end subroutine update
    end interface
 
    interface
@@ -135,12 +124,12 @@ integer(C_INT) function fnt2(dobj) bind(c)
 
    call pupdate(fp)
 
-   if(ASSOCIATED(pupdatedt)) error stop 30_4    
+   if(ASSOCIATED(pupdatedt)) error stop 30_4
    call C_F_PROCPOINTER(fp, pupdatedt)
    if(.not. ASSOCIATED(pupdatedt)) error stop 31_4
 
    call pupdatedt(dobj)
 
    fnt2 = 0
- 
+
 end function fnt2

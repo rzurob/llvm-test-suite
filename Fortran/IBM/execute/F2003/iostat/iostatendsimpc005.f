@@ -1,7 +1,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: diag1.f
 ! %VERIFY:
 ! %STDIN:
@@ -11,26 +11,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : func1 
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Jan 9, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : is_iostat_end is_iostat_eor
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Ensure that basic funcationailty works for eof with created direct file access that is to say it cannot happen
 	implicit none
 	character(10) :: dword,r1="RECORD 1",r2="RECORD 2",r3="RECORD 3"
-	
+
 	integer :: ios
 	OPEN (3,FILE='cdirect.txt',  status='new',ACCESS='DIRECT',RECL=10)
 	write (3,rec=1) r1

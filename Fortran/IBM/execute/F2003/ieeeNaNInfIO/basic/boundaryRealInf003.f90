@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : boundaryRealInf003.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -31,7 +25,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      use, intrinsic :: ieee_arithmetic 
+      use, intrinsic :: ieee_arithmetic
       implicit none
 
       real(4)  :: rl1(8)
@@ -41,13 +35,13 @@
 
       integer, parameter :: unit = 11
 
-      character(64), parameter :: myfmt =                              & 
+      character(64), parameter :: myfmt =                              &
      & '(D1.1,/,D2.1,/,D3.2,/,D4.2,/,D5.2,/,D8.2,/,D9.2,/,D15.2)'
 
       equivalence(rl3, rl3equiv)
 
       open(unit, file='boundaryRealInf003.out', action='write')
-      
+
       ! Write out real(4) IEEE Infinity ( positive and negative )
 
       rl1 = b'01111111100000000000000000000000' ! positive Inf

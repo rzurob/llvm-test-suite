@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dtParamInheritedParam  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dtParamInheritedParam
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Inherited parameters 
-!*  
+!*  Inherited parameters
+!*
 !*  (Passing)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamInheritedParam 
+  PROGRAM dtParamInheritedParam
   IMPLICIT NONE
 
   TYPE :: DT(K)
@@ -42,7 +35,7 @@
 
   TYPE, EXTENDS(DT) :: DT1(K)
     INTEGER, KIND :: K=0
-  END TYPE 
+  END TYPE
 
   TYPE :: DT2(L)
     INTEGER, LEN :: L=1

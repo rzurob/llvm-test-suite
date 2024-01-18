@@ -1,18 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cafsum02.f
-!*
-!*  PROGRAMMER                 : Xing Xue
 !*  DATE                       : July 31, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray access
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95_r
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : functional testing of coarray
@@ -23,7 +16,7 @@
 	program cafsum02
 	integer, save :: coarray(10)[*], sum[*]
 	integer me, i, verify_sum
-        
+
         me = THIS_IMAGE()
         coarray(:) = me
         sum = 0
@@ -45,9 +38,9 @@
             verify_sum = verify_sum + (i - 1) * 10
           end do
           if (sum .ne. verify_sum) then
-            error stop 10 
+            error stop 10
           end if
           print *, "The sum is:", sum
         end if
         SYNC ALL
-        end 
+        end

@@ -12,44 +12,38 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxcllf22.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY SUBROUTINES TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY SUBROUTINES TESTED : 
+!*  SECONDARY SUBROUTINES TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Call command line intrinsic routines through  a call chain of 
-!*                             : internal / external subrouitnes with typeless data 
+!*  DESCRIPTION                : Call command line intrinsic routines through  a call chain of
+!*                             : internal / external subrouitnes with typeless data
 !*                             : (Octal/Hex) are intent(in) args
-!*     
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD
 
-      character(513)   :: NAME  
-      logical          :: TRIM_NAME 
-      character(2049)  :: CmdLine 
-          
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
+      character(2049)  :: CmdLine
+
 
       DATA CmdLine    /'fxcllf22 1'/
       DATA NAME       /'CmdLine   '/
@@ -57,11 +51,11 @@
 
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS 
-      integer          :: NUMBER 
-      character(2047)  :: VALUE  
-      integer          :: ARGCOUNT 
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
 
 
       DATA COMMAND    / '????? '/
@@ -92,9 +86,9 @@
 
       SUBROUTINE SUB0
 
-                                                    
+
       CALL  EXT_COMMAND_ARGUMENT_COUNT( )
-                                  
+
       CALL EXT_GET_COMMAND( )
 
       CALL EXT_GET_COMMAND_ARGUMENT( COMMAND_ARGUMENT_COUNT())
@@ -111,9 +105,9 @@
 
       SUBROUTINE EXT_COMMAND_ARGUMENT_COUNT()
       USE MOD
- 
+
          CmdCount = COMMAND_ARGUMENT_COUNT()
-         if ( CmdCount .ne. 1 ) & 
+         if ( CmdCount .ne. 1 ) &
          then
            error stop 63
          endif
@@ -130,7 +124,7 @@
              (LENGTH .ne. LEN(TRIM(CmdLine)))    .or. &
              (STATUS .ne. 0) )                        &
         then
-          error stop 64 
+          error stop 64
         endif
 
       END SUBROUTINE
@@ -145,7 +139,7 @@
           NUMBER = i
           call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
           call MyGetArg(CmdLine, NUMBER, Argument)
- 
+
           if ( (TRIM(VALUE) .ne. TRIM(Argument))       .or. &
                (LENGTH      .ne. LEN(TRIM(Argument)))  .or. &
                (STATUS      .ne. 0) )                       &

@@ -12,21 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Vasile Radulescu
 !*  DATE                       : February 15, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_FINITE 
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_FINITE
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  : -qfloat=nans:nofold -qrealsize=8
 !*
 !*  KEYWORD(S)                 :
@@ -39,10 +30,10 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
         program fxfinite05
-      
+
         use ieee_arithmetic
         use constants_for_ieee
-        
+
         real plus_nanq, minus_nanq, plus_nans, minus_nans
         real, parameter :: pos_r1 = tiny(1.0)
         real, parameter :: pos_r2 = huge(1.0)
@@ -64,11 +55,11 @@
 !...test with PINF and NINF values
         if (ieee_support_datatype(PINF_8) .AND. ieee_support_datatype(NINF_8)) then
            if (ieee_is_finite(PINF_8) .OR. ieee_is_finite(NINF_8)) then
-              error stop 2 
+              error stop 2
            endif
         endif
 
-!...test with PHD_8, PTD_8, NHD_8, NTD_8 values        
+!...test with PHD_8, PTD_8, NHD_8, NTD_8 values
        if (ieee_support_datatype(PHD_8) .AND. ieee_support_datatype(PTD_8)) then
            if (ieee_is_finite(PHD_8) .neqv. .true.) then
               error stop 3
@@ -77,7 +68,7 @@
               error stop 4
            endif
        endif
-        
+
        if (ieee_support_datatype(NHD_8) .AND. ieee_support_datatype(NTD_8)) then
            if (ieee_is_finite(NHD_8) .neqv. .true.) then
               error stop 5
@@ -87,7 +78,7 @@
            endif
        endif
 
-!...test with PZERO_8 and NZERO_8 values       
+!...test with PZERO_8 and NZERO_8 values
         if (ieee_support_datatype(PZERO_8) .AND. ieee_support_datatype(NZERO_8)) then
            if (ieee_is_finite(PZERO_8) .neqv. .true.) then
               error stop 7
@@ -104,7 +95,7 @@
            endif
         endif
 
-       if (ieee_support_datatype(pos_r2)) then    
+       if (ieee_support_datatype(pos_r2)) then
            if (ieee_is_finite(pos_r2) .neqv. .true.) then
               error stop 10
            endif
@@ -133,8 +124,8 @@
            if (ieee_is_finite(neg_r4) .neqv. .true.) then
               error stop 14
            endif
-       endif 
-        
+       endif
+
 !...test with arrays
         arrval = (/ PNANQ_8, PNANS_8, NNANQ_8, NNANS_8 /)
         if (ieee_support_datatype(arrval)) then

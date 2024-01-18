@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass057.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass057.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -161,7 +149,7 @@
                   error stop 12
                   endif
              end associate nest3
-                  dertype = dertype*2 
+                  dertype = dertype*2
                   if(dertype .ne. d_t%i2)then
                   error stop 11
                   endif
@@ -171,24 +159,24 @@
                   error stop 10
                   endif
            end associate nest1
-      
+
 
 !-----------   ASSOCIATE with REAL expressions ----------------
 
            nest5: associate ( dertype => der_type%r4 )
             nest6: associate ( dertype => der_type%r8 )
              nest7: associate ( dertype => der_type%r16 )
-                  dertype = dertype + 800.0  
+                  dertype = dertype + 800.0
                   if (.not.precision_r6(dertype,d_t%r16)) then
                   error stop 16
                   endif
               end associate nest7
-                  dertype = dertype*2 
+                  dertype = dertype*2
                   if (.not.precision_r8(dertype,d_t%r8)) then
                   error stop 15
                   endif
              end associate nest6
-                  dertype = dertype*2 
+                  dertype = dertype*2
                   if (.not.precision_r4(dertype,d_t%r4)) then
                   error stop 14
                   endif
@@ -200,7 +188,7 @@
 
            nest8: associate ( dertype => der_type%c )
             nest9: associate ( dertype => der_type%b )
-                  dertype = dertype + 2  
+                  dertype = dertype + 2
                   if(dertype .ne. d_t%b)then
                   error stop 18
                   endif

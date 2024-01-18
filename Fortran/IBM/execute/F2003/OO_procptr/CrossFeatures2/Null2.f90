@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Null7.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Null7.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Null7.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Null7.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 11, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*   null()
 !*   characteristics of the result are determined by the entity with which
 !*   the reference is associated.
-!*  (ice-struct constr) 
+!*  (ice-struct constr)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -54,20 +48,20 @@
     CONTAINS
 
     FUNCTION Fun(Arg)
-    TYPE(DT)  :: Fun 
-    CLASS(DT) :: Arg 
+    TYPE(DT)  :: Fun
+    CLASS(DT) :: Arg
       Fun = Arg
     END FUNCTION
 
   END MODULE
 
-  PROGRAM Null2 
+  PROGRAM Null2
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
   TYPE(DT), TARGET  :: V,W(3)
-  TYPE(DT), POINTER :: Ptr(:) 
+  TYPE(DT), POINTER :: Ptr(:)
 
-  INTERFACE ExtSub 
+  INTERFACE ExtSub
     SUBROUTINE ExtSub1(V1, V2, V3, V4)
     IMPORT  DT
       TYPE (DT), POINTER :: V1(:)
@@ -84,7 +78,7 @@
 
   END INTERFACE
 
-  Ptr => W(1:0) 
+  Ptr => W(1:0)
   CALL ExtSub( NULL(Ptr)   ,                                            &
              & (/DT(-1, NULL(V%ProcPtr)) /),                      &
              & (/DT(-1, NULL()),DT(-1, NULL()),DT(-1, NULL()) /), &
@@ -103,7 +97,7 @@
   IF (.NOT. ASSOCIATED(V1))  STOP 21
   IF (SIZE(V1) .NE. 0) STOP 22
   IF (SIZE(V2) .NE. 1) STOP 24
-  
+
   END SUBROUTINE
 
 
@@ -119,11 +113,11 @@
   IF (ASSOCIATED(V1))  STOP 11
 
   IF (SIZE(V2) .NE. 1) STOP 14
-  
+
   IF (SIZE(V3) .NE. 3) STOP 16
-  
+
   IF (SIZE(V4) .NE. 1) STOP 18
-  
+
   END SUBROUTINE
 
 

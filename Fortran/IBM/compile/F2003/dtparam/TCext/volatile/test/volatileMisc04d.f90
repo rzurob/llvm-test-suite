@@ -2,26 +2,19 @@
 ! ftcx_dtp -qnol /tstdev/F2003/volatile/test/volatileMisc04d.f
 ! opt variations: -ql
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 12/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VOLATILE
 !*
 !*  DESCRIPTION                : diagnostic TC for  DTIO
 !*
-!*   9.5.3.7.2: 
+!*   9.5.3.7.2:
 !*             If the dtio-generic-spec is WRITE(FORMATTED), the characteristics
 !*     shall be the same as those specified.....
 !*            Use -qxlf2003=novolatile should not have effect to current
-!*            behavior. 
+!*            behavior.
 !* ===================================================================
 
     module m

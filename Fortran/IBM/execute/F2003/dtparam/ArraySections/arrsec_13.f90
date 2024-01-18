@@ -1,19 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArraySections/arrsec_13.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Sep 26, 2008
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 353925
 !*
 !*  DESCRIPTION:
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-  
+
 module m
     type plist(n)
         integer, len :: n

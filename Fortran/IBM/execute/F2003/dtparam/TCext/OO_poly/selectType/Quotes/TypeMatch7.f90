@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: TypeMatch7.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : TypeMatch7
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 24, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   Match with nested select type construct  
+!*
+!*   Match with nested select type construct
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -54,7 +48,7 @@
       INTEGER, KIND :: K1
       INTEGER, LEN  :: N1
       INTEGER(K1)   :: Id = 0
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base(N2,K2)    ! (20,4,20,4)
       INTEGER, KIND :: K2
@@ -70,11 +64,11 @@
 
   END MODULE
 
-  PROGRAM TypeMatch2 
+  PROGRAM TypeMatch2
   USE M
   IMPLICIT NONE
   CLASS(*), POINTER :: V(:,:)
-   
+
     ALLOCATE(V(2:3,3:4), SOURCE=Child(20,4,20,4,20,4)())
 
     SELECT TYPE (V)
@@ -91,9 +85,9 @@
       CLASS IS (Base(*,4,*,4))
 
        SELECT TYPE (V)
-       CLASS IS (Child(*,4,*,4,*,4)) 
+       CLASS IS (Child(*,4,*,4,*,4))
          STOP 40
-       CLASS IS (Base(*,4,*,4)) 
+       CLASS IS (Base(*,4,*,4))
          STOP 41
        TYPE IS (Child(*,4,*,4,*,4))
 
@@ -102,7 +96,7 @@
          IF ( ANY (LBOUND(V)   .NE. (/2, 3/) ) ) STOP 32
          IF ( ANY (UBOUND(V)   .NE. (/3, 4/) ) ) STOP 33
          IF ( ANY(SHAPE(V)     .NE. (/2,2/)) )   STOP 34
-       
+
        TYPE IS (Base(*,4,*,4))
          STOP 45
       CLASS DEFAULT
@@ -112,7 +106,7 @@
     END SELECT
     END SELECT
     END SELECT
- 
+
   END
 
 

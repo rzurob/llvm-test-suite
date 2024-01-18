@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  HostAssocVarPtr.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  HostAssocVarPtr.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : HostAssocVarPtr 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : HostAssocVarPtr
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,7 +33,7 @@
 !*
 !*  DESCRIPTION
 !*    The selector is a non poly pointer variable of derived types
-!*    (ICE) 
+!*    (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -57,7 +51,7 @@
       TYPE(Base(K1)), POINTER  :: BasePtr
       TYPE(Child(K1)), POINTER :: ChildPtr
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -80,20 +74,20 @@
   USE M
   IMPLICIT NONE
 
-  TYPE(Base(4)),  TARGET      :: V  
-  TYPE(Child(4)), TARGET      :: U  
-  TYPE(Child(4)), TARGET      :: W(3)  
-  TYPE(Child(4)), POINTER     :: Ptr  
-  TYPE(Child(4)), POINTER     :: PtrArr(:)  
- 
-  Ptr => U 
+  TYPE(Base(4)),  TARGET      :: V
+  TYPE(Child(4)), TARGET      :: U
+  TYPE(Child(4)), TARGET      :: W(3)
+  TYPE(Child(4)), POINTER     :: Ptr
+  TYPE(Child(4)), POINTER     :: PtrArr(:)
+
+  Ptr => U
   PtrArr => W
 
   ASSOCIATE ( T  => Ptr )
   ASSOCIATE ( As => T  )
-    IF ( As%GetID() .NE. 2) STOP 50 
-    IF ( As%ChildId .NE. 2) STOP 51 
-    IF ( As%BaseId .NE. 1) STOP 52 
+    IF ( As%GetID() .NE. 2) STOP 50
+    IF ( As%ChildId .NE. 2) STOP 51
+    IF ( As%BaseId .NE. 1) STOP 52
     ASSOCIATE ( As2 => As%Base )
       IF ( As2%GetID() .NE. 1 ) STOP 53
     END ASSOCIATE
@@ -107,16 +101,16 @@
     As%ChildPtr => Ptr  ! itself
     IF ( As%ChildPtr%BaseId .NE. -1) STOP 56
     IF ( As%ChildPtr%ChildId .NE. 2) STOP 57
-     
+
   END ASSOCIATE
   END ASSOCIATE
 
-  
+
   ASSOCIATE ( T  => PtrArr )
   ASSOCIATE ( As => T  )
-    IF ( ANY(As%GetID() .NE. 2)) STOP 60 
-    IF ( ANY(As%ChildId .NE. 2)) STOP 61 
-    IF ( ANY(As%BaseId  .NE. 1)) STOP 62 
+    IF ( ANY(As%GetID() .NE. 2)) STOP 60
+    IF ( ANY(As%ChildId .NE. 2)) STOP 61
+    IF ( ANY(As%BaseId  .NE. 1)) STOP 62
     ASSOCIATE ( As2 => As%Base )
       IF ( ANY(As2%GetID() .NE. 1) ) STOP 63
     END ASSOCIATE

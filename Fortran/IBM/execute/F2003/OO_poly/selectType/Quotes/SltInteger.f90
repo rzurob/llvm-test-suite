@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: SltInteger.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: SltInteger.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltInteger
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is of integer 
+!*
+!*   The selector is of integer
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,20 +50,20 @@
   Ptr => I1
 
   SELECT TYPE ( As => Ptr )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 30
   TYPE IS (INTEGER )
-    STOP 34 
+    STOP 34
   TYPE IS (INTEGER(1))
     IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 31
     IF ( LBOUND(As, 1) .NE. 1       )   STOP 32
     IF ( ANY(As        .NE. (/1_1,2_1,3_1,4_1/)) )  STOP 32
   END SELECT
- 
+
   Ptr => I2
- 
+
   SELECT TYPE ( Ptr )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 40
   TYPE IS (INTEGER(1)  )
     STOP 41
@@ -78,33 +72,33 @@
     IF ( LBOUND(Ptr, 1) .NE. 1       )   STOP 43
     IF ( ANY(Ptr        .NE. (/1_2,2_2,3_2,4_2/)) )  STOP 44
   TYPE IS (INTEGER )
-    STOP 45 
+    STOP 45
   END SELECT
-  
+
   Ptr => I4
 
   SELECT TYPE ( As => Ptr(::3) )
   TYPE IS (INTEGER(2))
-    STOP 54 
-  CLASS DEFAULT 
+    STOP 54
+  CLASS DEFAULT
     STOP 50
   TYPE IS (INTEGER( 4) )
     IF ( ANY(SHAPE(As) .NE. (/2/))  )   STOP 51
     IF ( LBOUND(As, 1) .NE. 1       )   STOP 52
     IF ( ANY(As        .NE. (/1,4/)) )  STOP 53
   END SELECT
-  
+
   Ptr => I8
 
   SELECT TYPE ( As => Ptr(3) )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 60
   TYPE IS (INTEGER(8))
     IF ( As   .NE. 3 )  STOP 62
   TYPE IS (INTEGER )
-    STOP 64 
+    STOP 64
   END SELECT
-  
-  
+
+
   END
 

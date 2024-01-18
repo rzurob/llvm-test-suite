@@ -1,27 +1,22 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : fdivideINT16
 !*
-!*  PROGRAMMER                 : Morteza Ershad-Manesh
 !*  DATE                       : 2010-07-12
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 
+!*  REFERENCE                  : Feature Number
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
-!*  ADAPTED FROM               : 
+!*  ADAPTED FROM               :
 !*
 !*  DESCRIPTION
 !*   This test case uses INT16 from IOS_FORTRAN_ENV module.
@@ -45,7 +40,7 @@ DivideBy1=30
 
 DO i=1,30
  Array(i)=i * 910
- Array1(i)=i * 910 
+ Array1(i)=i * 910
 END DO
 
 DivideBy=Array(29)
@@ -64,7 +59,7 @@ DO i=1,30
    PRINT*,"Values: ",Result(i), " != ", Result1(i)
    error stop 1_4
  ELSE
-   PRINT*,"i=",i 
+   PRINT*,"i=",i
    PRINT*,Result(i)," == ", Result1(i)
  END IF
 END DO

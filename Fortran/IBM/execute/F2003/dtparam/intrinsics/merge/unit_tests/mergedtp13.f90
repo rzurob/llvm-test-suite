@@ -21,6 +21,6 @@ res = merge(dtp3, dtp4, mask)
 
 print *, res(1,1)%i, ' ', res(1,1)%r, '   ', res(1,2)%i, '  ', res(1,2)%r, &
          '    ',res(1,3)%i, '  ', res(1,3)%r
-print *, res(2,1)%i, ' ', res(2,1)%r, '   ', res(2,2)%i, ' ', res(2,2)%r, & 
+print *, res(2,1)%i, ' ', res(2,1)%r, '   ', res(2,2)%i, ' ', res(2,2)%r, &
          '    ', res(2,3)%i, ' ', res(2,3)%r
 end

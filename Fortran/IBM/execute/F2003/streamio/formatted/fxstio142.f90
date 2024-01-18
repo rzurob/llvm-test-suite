@@ -2,30 +2,23 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: cp $TR_SRC/check_array.inc .; cp $TR_SRC/check_interface.inc .; cp $TR_SRC/fxstio142.in .
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio142.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: diff fxstio142.dat $TR_SRC/fxstio142.vf && rm -f fxstio142.dat 
+! %POSTCMD: diff fxstio142.dat $TR_SRC/fxstio142.vf && rm -f fxstio142.dat
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access Mode
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE , READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,10 +27,10 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/24/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/24/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
 
   include 'check_array.inc'
@@ -47,14 +40,14 @@
      implicit none
      integer  ios, pos
      integer, parameter   :: N = 10
-     real                 :: r4_out , r4_in 
-     real*8               :: r8_out , r8_in 
-     real*16              :: r16_out , r16_in 
-     complex              :: x8_out , x8_in 
-     complex*16           :: x16_out , x16_in 
-     complex*32           :: x32_out , x32_in 
+     real                 :: r4_out , r4_in
+     real*8               :: r8_out , r8_in
+     real*16              :: r16_out , r16_in
+     complex              :: x8_out , x8_in
+     complex*16           :: x16_out , x16_in
+     complex*32           :: x32_out , x32_in
      real*4               :: r4_arr_out(N), r4_arr_in(N)
-     complex*16           :: x16_arr_out(N), x16_arr_in(N)  
+     complex*16           :: x16_arr_out(N), x16_arr_in(N)
      real*8, pointer      :: r8_pout
      real*8, target       :: r8_tout
      complex*8, pointer   :: x8_pout
@@ -76,9 +69,9 @@
      include 'check_interface.inc'
 
 
-!********************************************************** 
+!**********************************************************
 !       Allocation, Association & Initialization          *
-!********************************************************** 
+!**********************************************************
 
      allocate(r4_all_out)
      allocate(r4_all_arr_out(N))
@@ -107,9 +100,9 @@
      x8_all_out = (1.12345678, -.0112344579)
      x8_all_arr_out = (0.0, -0.0)
 
-!********************************************************** 
+!**********************************************************
 !      Writing and Reading the file                      *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio142.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90, ACTION='write')
@@ -152,9 +145,9 @@
 
 !
 !    Leaving a hole in the last record
-! 
+!
      WRITE(1, FMT='(2Q30.9)', IOSTAT=ios,ERR=91, ADVANCE='yes', POS=1000) &
-    &        (huge(r16_out), 0.0Q0) 
+    &        (huge(r16_out), 0.0Q0)
      CLOSE(1)
 
 
@@ -205,11 +198,11 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 
    end program
 

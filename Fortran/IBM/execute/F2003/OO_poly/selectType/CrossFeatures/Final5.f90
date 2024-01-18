@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Final5.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Final5.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Final5 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Final5
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !* Finalization
 !* (299542)
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -64,7 +57,7 @@
       Index = Index + 1
       Final(Index) = .TRUE.
     END SUBROUTINE
-    
+
   END MODULE
 
   PROGRAM final5
@@ -74,11 +67,11 @@
   TYPE(DT) :: V,W
 
   print*, Final
-  print*, V%C0 
+  print*, V%C0
 
   Final = .FALSE.
   Index = 0
-  V = U 
+  V = U
 
   IF (ANY(Final(1:1) .NEQV. .TRUE.))  STOP 21
   IF (ANY(Final(3: ) .NEQV. .FALSE.)) STOP 23
@@ -97,7 +90,7 @@
   SELECT TYPE ( UArg )
   TYPE IS (DT)
     IF (ANY(Final(:) .NEQV. .FALSE.)) STOP 41
-    UArg = DT() 
+    UArg = DT()
     IF (ANY(Final(1:2) .NEQV. .TRUE. )) STOP 42
     IF (ANY(Final(3: ) .NEQV. .FALSE.)) STOP 43
   CLASS DEFAULT

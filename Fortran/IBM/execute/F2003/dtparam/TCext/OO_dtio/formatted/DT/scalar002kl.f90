@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar002kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar002 by Robert Ma)
 !*  DATE                       : 2007-06-11 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        scalar polymorphic derived type variable
@@ -102,7 +94,7 @@ use m, only: base, child
    character(20) :: fmt
 
    write ( unit, * ) 'iotype:', iotype
-   
+
    select type ( dtv )
       type is (base(4))
          write ( unit, * ) ' empty v_list'

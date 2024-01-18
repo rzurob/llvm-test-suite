@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtriPolyPtr1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtriPolyPtr1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 06, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  If data pointer-object is of sequence derived type or a type with the BIND 
+!*  If data pointer-object is of sequence derived type or a type with the BIND
 !*  attribute, the dynamic type of data-target shall be that derived type.
-!*  
-!*  -sequence 
+!*
+!*  -sequence
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtriPolyPtr1 
+  PROGRAM dataPtriPolyPtr1
   IMPLICIT NONE
 
   TYPE :: DT
@@ -69,7 +62,7 @@
   Ptr6(1:, 1:) => Ptr1
   IF (ANY( LBOUND(Ptr6) .NE. (/1,1 /))) STOP 21
   IF (ANY( UBOUND(Ptr6) .NE. (/1,10/))) STOP 22
-  Ptr7(1:, 1:) => Ptr6 
+  Ptr7(1:, 1:) => Ptr6
   IF (ANY(Ptr7%C      .NE. "abc"))      STOP 23
   DEALLOCATE(Ptr1)
 
@@ -85,7 +78,7 @@
   Ptr6(1:, 1:) => Ptr2
   IF (ANY( LBOUND(Ptr6) .NE. (/1,1 /))) STOP 31
   IF (ANY( UBOUND(Ptr6) .NE. (/1,10/))) STOP 32
-  Ptr7(1:, 1:) => Ptr6 
+  Ptr7(1:, 1:) => Ptr6
   IF (ANY(Ptr7%C      .NE. "123"))      STOP 33
   DEALLOCATE(Ptr2)
 
@@ -93,7 +86,7 @@
   Ptr6(0:2, 0:2) => Ptr2(:, 3)
   IF (ANY( LBOUND(Ptr6) .NE. (/0,0 /))) STOP 34
   IF (ANY( UBOUND(Ptr6) .NE. (/2,2 /))) STOP 35
-  Ptr7(1:, 1:) => Ptr6 
+  Ptr7(1:, 1:) => Ptr6
   IF (ANY(Ptr7%C      .NE. "321"))      STOP 36
   DEALLOCATE(Ptr2)
 

@@ -1,13 +1,8 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/runf.sh fxbind_c04ssa  
+! %PRECMD: $TR_SRC/runf.sh fxbind_c04ssa
 ! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -18,22 +13,15 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c04ssa.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
 !*                                contained in Module.
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
-!*                             
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -41,8 +29,6 @@
 !*   - FORTRAN code only , the interoperable function is implemented
 !*     in Fortran and called in Fortran.
 !*   - passing 1-dim  integer array arguments
-!*    
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -92,7 +78,7 @@ PROGRAM test_maxval
 
 END PROGRAM test_maxval
 
-function   maxval_i ( array, nvals, value_max) bind(c) 
+function   maxval_i ( array, nvals, value_max) bind(c)
   IMPLICIT NONE
 
   ! List of calling arguments:

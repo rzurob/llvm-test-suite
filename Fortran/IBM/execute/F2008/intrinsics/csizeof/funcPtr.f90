@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : funcPtr.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 2010-11-01
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : - test type(C_FUNPTR) which is interoperable
-!*                                 with C function pointer type 
+!*                                 with C function pointer type
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -43,15 +33,15 @@ program main
 
         real(C_FLOAT) function extFunc(x) bind(c)
             use, intrinsic :: iso_c_binding
-            integer x 
-        end function extFunc 
+            integer x
+        end function extFunc
 
     end interface
 
-    type(C_FUNPTR) :: fp 
+    type(C_FUNPTR) :: fp
     integer(C_INT) :: size
 
-    fp = C_FUNLOC(extFunc) 
+    fp = C_FUNLOC(extFunc)
 
     call sub(fp,size)
 
@@ -62,5 +52,5 @@ end
 real(C_FLOAT) function extFunc(x) bind(c)
     use, intrinsic :: iso_c_binding
     integer x
-    extFunc = x * 8.0 
-end function extFunc 
+    extFunc = x * 8.0
+end function extFunc

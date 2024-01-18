@@ -16,8 +16,8 @@
       TYPE(Base(l1=3)), TARGET :: btgt = Base(l1=3) ( 1, 'b1const' )
       CLASS(Container(4,:)), POINTER :: poly
 
-      ALLOCATE( Container(4,3) :: poly ) 
-      poly%ptr => btgt 
+      ALLOCATE( Container(4,3) :: poly )
+      poly%ptr => btgt
       IF ( LEN(poly%ptr%C0)  .NE. 3 ) STOP 10
 
-END 
+END

@@ -62,7 +62,7 @@ subroutine use_interface_only
 end subroutine
 
 subroutine use_binding_only
-  use m, only: dt, addmp 
+  use m, only: dt, addmp
   type(dt) z
   z%i = 7
   z = 3 + z

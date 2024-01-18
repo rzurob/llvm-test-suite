@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Select-Type Constructor: Polymorphic Array Entities
@@ -63,7 +52,7 @@ use m
 
    class(child), allocatable :: c1(:,:)
    class(child), pointer     :: c2(:)
-   
+
    character(81) :: fmt = "(DT'_b1-3'(7,2), DT'_b1-2'(8,3), DT'_b1-1'(9,4), DT'_b1-4'(9,3), DT'_b1-1'(7,2) )"
 
    open (1, file = 'selectType002.1', form='formatted', access='sequential' )

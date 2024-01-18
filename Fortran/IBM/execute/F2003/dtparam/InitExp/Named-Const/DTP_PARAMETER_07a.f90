@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_PARAMETER_07a.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Named Constant (PARAMETER)
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,7 +17,7 @@
 !*  Defect: 364814
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -56,8 +48,8 @@ MODULE Mod
       CONTAINS
 
       SUBROUTINE CreateNew(Arg)
-        CLASS(Base(4,*)) :: Arg 
-        CLASS(Base(4,:)), POINTER :: Obj 
+        CLASS(Base(4,*)) :: Arg
+        CLASS(Base(4,:)), POINTER :: Obj
         INTEGER :: I
 
         ALLOCATE( Obj, SOURCE = Arg )
@@ -147,9 +139,9 @@ PROGRAM DTP_PARAMETER_07a
                  ( 5, 'AB', 3, 'ABCDE', 1, 'n1constant', Base(4,10)(), Child(4,10,4,10)() )
 
       CALL CreateNew(b1)
-      
+
       CALL CreateNew(c1)
-     
+
       CALL CreateNew(n1)
-      
+
 END PROGRAM DTP_PARAMETER_07a

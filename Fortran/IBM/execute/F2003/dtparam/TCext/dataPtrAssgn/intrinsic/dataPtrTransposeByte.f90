@@ -4,25 +4,19 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrTransposeByte.f 
+!*  TEST CASE NAME             : dataPtrTransposeByte.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !* - data-pointer is pointer component , the selector of select type
-!* - data-pointer thr the selector as arg of transpose, type byte 
-!* - bound is func name 
+!* - data-pointer thr the selector as arg of transpose, type byte
+!* - bound is func name
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -36,7 +30,7 @@ module m
     type :: B(k2,n2)    ! (4,20)
     integer, kind          :: k2
     integer, len           :: n2
-    type(A(k2,:)), pointer :: p1(:,:)    
+    type(A(k2,:)), pointer :: p1(:,:)
     end type
 end module
 
@@ -52,30 +46,30 @@ end module
     allocate(A(4,20) :: b1%p1(1,1))
 
     i = 3
-    
+
     b1%p1(1,1)%y = reshape((/ (i,i=1,100) /), (/10,10 /) )
 
     b1%p1(1,1)%x(2:, 2:) => b1%p1(1,1)%y
 
     if ( .not. associated(b1%p1(1,1)%x, b1%p1(1,1)%y)) stop 11
-    if ( any ( lbound(b1%p1(1,1)%x) .ne. (/2,2/))) stop 12 
-    if ( any ( ubound(b1%p1(1,1)%x) .ne. (/11,11/))) stop 15 
+    if ( any ( lbound(b1%p1(1,1)%x) .ne. (/2,2/))) stop 12
+    if ( any ( ubound(b1%p1(1,1)%x) .ne. (/11,11/))) stop 15
 
     b1%p1(1,1)%x(i:func(4), j: func(5)) => b1%p1(1,1)%x(:,7)
 
     if ( .not. associated(b1%p1(1,1)%x)) stop 21
-    if ( any ( lbound(b1%p1(1,1)%x) .ne. (/3,3/))) stop 22 
-    if ( any ( ubound(b1%p1(1,1)%x) .ne. (/4,5/))) stop 25 
+    if ( any ( lbound(b1%p1(1,1)%x) .ne. (/3,3/))) stop 22
+    if ( any ( ubound(b1%p1(1,1)%x) .ne. (/4,5/))) stop 25
 
     select type(arg => b1%p1(1,1)%x)
         type is (byte)
         print *, arg
         a1 = transpose(arg)
         class default
-        stop 31 
-    end select    
+        stop 31
+    end select
 
-    do i = 1, 3 
+    do i = 1, 3
        print *, a1(i,:)
     end do
 
@@ -83,5 +77,5 @@ end module
     function func(a)
         integer a, func
         func = a
-    end function 
+    end function
     end program

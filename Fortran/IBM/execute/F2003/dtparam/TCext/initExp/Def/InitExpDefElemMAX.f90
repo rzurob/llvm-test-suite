@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemMAX.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemMAX.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  MAX 
+!*
+!*  -  MAX
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -41,7 +34,7 @@
 
 
   PROGRAM  InitExpDefElemMAX
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
 
@@ -72,7 +65,7 @@
     REAL(K3)      :: R4(128) =(/(I, I=0,127)/)
     REAL(K4)      :: R8(128) =(/(I, I=0,127)/)
     REAL(K5)      :: R6(128) =(/(I, I=0,127)/)
-    CHARACTER(N1) :: Str(128) = C 
+    CHARACTER(N1) :: Str(128) = C
   END TYPE
 
   TYPE :: DT(K6,K7,K8,K9,K10,N2)    ! (1,2,4,8,16,128)
@@ -85,7 +78,7 @@
     REAL(K8)      :: R4(16)
     REAL(K9)      :: R8(16)
     REAL(K10)     :: R6(16)
-    CHARACTER(N2) :: Str(16)  
+    CHARACTER(N2) :: Str(16)
   END TYPE
 
   TYPE (DT0(1,2,4,8,16,128)), PARAMETER  :: T=DT0(1,2,4,8,16,128)()

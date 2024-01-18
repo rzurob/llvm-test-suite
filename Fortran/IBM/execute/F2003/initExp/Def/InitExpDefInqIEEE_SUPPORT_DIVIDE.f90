@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefInqIEEE_SUPPORT_DIVIDE.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefInqIEEE_SUPPORT_DIVIDE.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 05, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +19,17 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an IEEE inquiry function
-!* 
-!*  -  IEEE_SUPPORT_DIVIDE 
-!* 
+!*
+!*  -  IEEE_SUPPORT_DIVIDE
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM   InitExpDefInqIEEE_SUPPORT_DIVIDE 
+  PROGRAM   InitExpDefInqIEEE_SUPPORT_DIVIDE
   USE IEEE_ARITHMETIC
   IMPLICIT NONE
   INTEGER :: I, J, K
@@ -72,4 +65,4 @@
   END
 
 
- 
+

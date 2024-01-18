@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf035.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,24 +12,17 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf035
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 04, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qlanglvl=77/90/95std/90/95pure
 !*  REQUIRED RUN-TIME OPTIONS  : langlvl=90/95std/90/95pure
 !*
@@ -51,17 +44,17 @@
       integer, parameter :: NUM_TESTS = 4 ! number of records in each input files
 
       character(50) :: buffer
-      
+
       integer :: i
-      
+
       character(20) ::  fmt_comma = 'comma'
-      
-      
+
+
       ! open the unit with the mode in which data has been written to each file
       open(IN_C, file=FNAME_C, decimal=fmt_comma)
       open(IN_P, file=FNAME_P, decimal='point')
       open(OUT, file=FNAME_OUT, decimal='point')
-      
+
       write(OUT, *, decimal='point') rl1
 
       ! read everything from input files and output it to OUT
@@ -86,7 +79,7 @@
       open(IN_C, file=FNAME_C, decimal='point')
       open(IN_P, file=FNAME_P, decimal=fmt_comma)
       open(OUT, file=FNAME_OUT, decimal=fmt_comma, position='append')
-      
+
       write(OUT, *, decimal='point') rl1
 
       ! read everything from input files and output it to OUT

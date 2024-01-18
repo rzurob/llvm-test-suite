@@ -1,13 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : volatileUt07.f
 !*
-!*  PROGRAMMER                 : Vince Yuen
 !*  DATE                       : May 26, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Supporting VOLATILE for F2003
 !*
@@ -15,7 +11,7 @@
 !*
 !*  DESCRIPTION                : C526
 !*
-!* C526 (R501) If the VOLATILE attribute is specified, the PARAMETER, 
+!* C526 (R501) If the VOLATILE attribute is specified, the PARAMETER,
 !* INTRINSIC, EXTERNAL, or INTENT(IN) attribute shall not be specified.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

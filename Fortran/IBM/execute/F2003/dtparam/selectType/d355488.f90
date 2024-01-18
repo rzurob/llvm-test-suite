@@ -17,7 +17,7 @@
       ALLOCATE(Child(5):: dtv)
       print*, ALLOCATED(dtv)
 
-      dtv%Cmp => tgt                   
+      dtv%Cmp => tgt
       print*, ASSOCIATED(dtv%Cmp)
 
       END

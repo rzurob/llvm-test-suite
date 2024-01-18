@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcDTIOReadF.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcDTIOReadF.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 01, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  A generic interface block specifies a generic interface for each of the
-!*  procedures in the interface block. The PROCEDURE statement lists procedure 
+!*  procedures in the interface block. The PROCEDURE statement lists procedure
 !*  pointers, external procedures, du mmy procedures, or module procedures
 !*  that have this generic interface. A generic interface is always explicit.
-!*  -- DTIO/READ(FORMATTED) 
+!*  -- DTIO/READ(FORMATTED)
 !*  (316848)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,15 +35,15 @@
   TYPE :: DT
     CHARACTER :: ID
   END TYPE
- 
+
   TYPE :: DT1
     CHARACTER :: ID
   END TYPE
- 
+
   TYPE :: DT2
     CHARACTER :: ID
   END TYPE
- 
+
   TYPE :: DT3
     CHARACTER :: ID
   END TYPE
@@ -59,65 +52,65 @@
 
   MODULE M1
   USE M
- 
-  INTERFACE READ(FORMATTED) 
-    PROCEDURE ReadF 
-  END INTERFACE  
+
+  INTERFACE READ(FORMATTED)
+    PROCEDURE ReadF
+  END INTERFACE
 
   CONTAINS
 
   SUBROUTINE ReadF(Dtv, Unit, IOTYPE, V_List, IOStat, IOMSG)
-  CLASS(DT),         INTENT(INOUT) :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE 
+  CLASS(DT),         INTENT(INOUT) :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE
   INTEGER,           INTENT(IN)    :: V_List(:)
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    READ(Unit, FMT="(A1)") DTV%ID  
-  END SUBROUTINE 
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    READ(Unit, FMT="(A1)") DTV%ID
+  END SUBROUTINE
 
   SUBROUTINE ReadF1(Dtv, Unit, IOTYPE, V_List, IOStat, IOMSG)
-  CLASS(DT1),        INTENT(INOUT) :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE 
+  CLASS(DT1),        INTENT(INOUT) :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE
   INTEGER,           INTENT(IN)    :: V_List(:)
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    READ(Unit, FMT="(A1)") DTV%ID  
-  END SUBROUTINE 
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    READ(Unit, FMT="(A1)") DTV%ID
+  END SUBROUTINE
 
   SUBROUTINE ReadF2(Dtv, Unit, IOTYPE, V_List, IOStat, IOMSG)
-  CLASS(DT2),        INTENT(INOUT) :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE 
+  CLASS(DT2),        INTENT(INOUT) :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE
   INTEGER,           INTENT(IN)    :: V_List(:)
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    READ(Unit, FMT="(A1)") DTV%ID  
-  END SUBROUTINE 
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    READ(Unit, FMT="(A1)") DTV%ID
+  END SUBROUTINE
 
 
   END MODULE
 
   SUBROUTINE ReadF3(Dtv, Unit, IOTYPE, V_List, IOStat, IOMSG)
   USE M
-  CLASS(DT),         INTENT(INOUT) :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE 
+  CLASS(DT),         INTENT(INOUT) :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE
   INTEGER,           INTENT(IN)    :: V_List(:)
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    READ(Unit, FMT="(A1)") DTV%ID  
-  END SUBROUTINE 
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    READ(Unit, FMT="(A1)") DTV%ID
+  END SUBROUTINE
 
 
 
-  PROGRAM mProcDTIOReadF 
+  PROGRAM mProcDTIOReadF
   USE M
   USE M1
 
 
-  INTERFACE READ(FORMATTED) 
+  INTERFACE READ(FORMATTED)
     SUBROUTINE ReadF3(Dtv, Unit, IOTYPE, V_List, IOStat, IOMSG)
       IMPORT
       CLASS(DT3),        INTENT(INOUT) :: DTV
@@ -127,11 +120,11 @@
       INTEGER,           INTENT(OUT)   :: IOSTAT
       CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
     END SUBROUTINE
-  END INTERFACE  
+  END INTERFACE
 
-  INTERFACE READ(FORMATTED) 
-    PROCEDURE ReadF3 
-  END INTERFACE  
+  INTERFACE READ(FORMATTED)
+    PROCEDURE ReadF3
+  END INTERFACE
 
   CALL IntSub(ReadF1)
 
@@ -142,11 +135,11 @@
   PROCEDURE(ReadF2), POINTER  :: ProcPtr
 
   INTERFACE READ(FORMATTED)
-    PROCEDURE Proc 
+    PROCEDURE Proc
   END INTERFACE
 
-  INTERFACE READ(FORMATTED) 
-    PROCEDURE ProcPtr 
+  INTERFACE READ(FORMATTED)
+    PROCEDURE ProcPtr
   END INTERFACE
 
   TYPE(DT)  :: T

@@ -1,35 +1,29 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fort.* 
-! %COMPOPTS: 
-! %GROUP: fxstio002.f 
+! %PRECMD: rm -f fort.*
+! %COMPOPTS:
+! %GROUP: fxstio002.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio002.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 07, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
 !*
 !*  Description                : Test arrays with implied-do constructors
-!*                               which with Stream I/O.  
+!*                               which with Stream I/O.
 !*
 !=======================================================================
 
 !* Declare Variables.
-   
+
   implicit none
   integer i, j, ios
   integer int(3,3), int1(9)
@@ -39,7 +33,7 @@
   real real1(3, 3), real2(9)
   real realc1(3), realc2(3), realc3(3)
   real realc11(3), realc21(3), realc31(3)
- 
+
   complex comp(3, 3), comp1(9)
   complex compc1(3), compc2(3), compc3(3)
   complex compc11(3), compc21(3), compc31(3)
@@ -52,7 +46,7 @@
     end do
   end do
 
-!* open two stream I/O and two sequential I/O units for synchronous I/O 
+!* open two stream I/O and two sequential I/O units for synchronous I/O
 
   open(1, form='unformatted', access='stream', iostat=ios, err=100)
   open(2, form='unformatted', access='sequential' , iostat=ios, err=100)
@@ -61,10 +55,10 @@
 
   intc1 = (/(int(i,1),i=1,3)/)
   intc2 = (/(int(i,2),i=1,3)/)
-  intc3 = (/(int(i,3),i=1,3)/) 
+  intc3 = (/(int(i,3),i=1,3)/)
 
-  write (1, iostat=ios, err=200) int 
-  write (2, iostat=ios, err=200) intc1(1), intc1(2), intc1(3)      
+  write (1, iostat=ios, err=200) int
+  write (2, iostat=ios, err=200) intc1(1), intc1(2), intc1(3)
   write (3, iostat=ios, err=200) (intc2(i), i=1,3)
   write (4, iostat=ios, err=200) intc3
 
@@ -95,14 +89,13 @@
   close(2, status='delete')
   close(3, status='delete')
   close(4, status='delete')
-  
+
 !* Test real
   do i=1,3
     do j=1,3
        real1(i,j) = real(i * 10 + j)
     end do
   end do
-
 
 !* open two stream I/O and two sequential I/O units for synchronous I/O
 
@@ -115,7 +108,7 @@
   realc2 = (/(real1(i,2),i=1,3)/)
   realc3 = (/(real1(i,3),i=1,3)/)
 
-  write (1, iostat=ios, err=200) real1 
+  write (1, iostat=ios, err=200) real1
   write (2, iostat=ios, err=200) realc1(1), realc1(2), realc1(3)
   write (3, iostat=ios, err=200) (realc2(i), i=1,3)
   write (4, iostat=ios, err=200) realc3
@@ -147,7 +140,7 @@
   close(2, status='delete')
   close(3, status='delete')
   close(4, status='delete')
- 
+
 !* Testing complex
     do i=1,3
     do j=1,3
@@ -166,13 +159,13 @@
   compc2 = (/(comp(i,2),i=1,3)/)
   compc3 = (/(comp(i,3),i=1,3)/)
 
-  write (1, iostat=ios, err=200) comp 
+  write (1, iostat=ios, err=200) comp
   write (2, iostat=ios, err=200) compc1(1), compc1(2), compc1(3)
   write (3, iostat=ios, err=200) (compc2(i), i=1,3)
   write (4, iostat=ios, err=200) compc3
 
   rewind(1, iostat=ios, err=500)
-  read(1, iostat=ios, err=400) comp1 
+  read(1, iostat=ios, err=400) comp1
   rewind(2, iostat=ios, err=500)
   read(2, iostat=ios, err=400) compc11(1), compc11(2), compc11(3)
   rewind(3, iostat=ios, err=500)

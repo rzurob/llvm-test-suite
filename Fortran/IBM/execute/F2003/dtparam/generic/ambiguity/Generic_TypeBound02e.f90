@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound01e
 !*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY SUBROUTINES TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY SUBROUTINES TESTED : Resolution based on rank using NOPASS
-!*                               
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -39,36 +31,36 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
         CHARACTER(:), ALLOCATABLE :: tag
 
-        CONTAINS 
-         PROCEDURE, NOPASS :: sub1      
+        CONTAINS
+         PROCEDURE, NOPASS :: sub1
          PROCEDURE, NOPASS :: sub2
          GENERIC :: SUB =>  sub1 , sub2
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)
-        INTEGER, KIND :: k2 
-        INTEGER, LEN :: l2 
-      END TYPE Child 
+        INTEGER, KIND :: k2
+        INTEGER, LEN :: l2
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen(k3,l3)
-        INTEGER, KIND :: k3 
-        INTEGER, LEN :: l3 
+        INTEGER, KIND :: k3
+        INTEGER, LEN :: l3
       END TYPE NextGen
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE sub1(pntr,Obj)
-      CLASS(Base(4,*)) :: Obj         ! Obj: rank is 0 
+      CLASS(Base(4,*)) :: Obj         ! Obj: rank is 0
       CLASS(Base(4,:)), POINTER, INTENT(OUT) :: pntr
-      
+
       ALLOCATE (pntr,  source = Obj)
       IF (.NOT. ASSOCIATED(pntr)) STOP 1
 
@@ -77,8 +69,8 @@
       END SUBROUTINE sub1
 
       SUBROUTINE sub2(pntr,Obj)
-      CLASS(Base(4,*)) :: Obj(:)      ! Obj: rank is 1 
-      CLASS(Base(4,:)), POINTER, INTENT(OUT) :: pntr 
+      CLASS(Base(4,*)) :: Obj(:)      ! Obj: rank is 1
+      CLASS(Base(4,:)), POINTER, INTENT(OUT) :: pntr
 
       ALLOCATE (pntr,  source = Obj(1))
       IF (.NOT. ASSOCIATED(pntr)) STOP 2
@@ -91,9 +83,9 @@
 !*
       PROGRAM Generic_TypeBound01e
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(Base(4,:)), POINTER :: poly1 
+      CLASS(Base(4,:)), POINTER :: poly1
 
       TYPE(Base(4,5))  :: base1
       TYPE(Child(4,5,4,10)), TARGET :: tgt1
@@ -105,9 +97,9 @@
       TYPE(NextGen(4,10,4,15,4,15)) :: arr_nxtg(10)
       TYPE(NextGen(4,10,4,15,4,15)), TARGET :: tgt_nxtg(100)
 !*
-!  The following will call sub1 
+!  The following will call sub1
 !*
-      poly1 => tgt1 
+      poly1 => tgt1
       call base1%SUB(poly1,base1)
       IF ( .NOT. ASSOCIATED(poly1) ) STOP 10
       IF (poly1%tag .NE. 'sub1') STOP 11
@@ -204,13 +196,13 @@
 
       deallocate (poly1)
 
-      call poly1%SUB(poly1,poly1)  
+      call poly1%SUB(poly1,poly1)
       IF ( .NOT. ASSOCIATED(poly1) ) STOP 42
       IF (poly1%tag .NE. 'sub1') STOP 43
 
       deallocate (poly1)
 
-      ALLOCATE(NextGen(4,10,8,100,8,100):: poly1) 
+      ALLOCATE(NextGen(4,10,8,100,8,100):: poly1)
       call base1%SUB(poly1,base1)
       IF ( .NOT. ASSOCIATED(poly1) ) STOP 44
       IF (poly1%tag .NE. 'sub1') STOP 45
@@ -313,7 +305,7 @@
 
       deallocate (poly1)
 !*
-!  The following will call sub2 
+!  The following will call sub2
 !*
       call arr_base%SUB(poly1,arr_base)
       IF ( .NOT. ASSOCIATED(poly1) ) STOP 78

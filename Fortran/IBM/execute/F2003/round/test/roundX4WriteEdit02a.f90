@@ -1,30 +1,22 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with different data edit descriptor.
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*                           test both round specifier and descriptor
 !*                           specified. There should be no side-effect.
 !* ===================================================================
 
-  program roundX4WriteEdit02a 
+  program roundX4WriteEdit02a
 
     implicit none
- 
-    character(18) :: r_mode 
+
+    character(18) :: r_mode
     complex w1, w2
 
-    integer, parameter::unit = 2 
+    integer, parameter::unit = 2
 
     ! round in up mode
 
@@ -97,4 +89,4 @@
 
    close(unit)
 
-  end program roundX4WriteEdit02a 
+  end program roundX4WriteEdit02a

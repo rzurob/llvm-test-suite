@@ -2,7 +2,7 @@
 !!! type is testted separately.
 
 integer result
-integer i 
+integer i
 integer(1) :: i1
 integer(2) :: i2
 integer(4) :: i4
@@ -19,7 +19,7 @@ complex(4) :: cplx4
 complex(8) :: cplx8
 complex(16) :: cplx16
 
-logical l 
+logical l
 logical(1) :: l1
 logical(2) :: l2
 logical(4) :: l4

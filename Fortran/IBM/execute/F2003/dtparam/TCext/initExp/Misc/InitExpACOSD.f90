@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpACOSD.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpACOSD.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug 16, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,17 +23,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to ACOSD  -- IBM extension
-!* 
-!*  
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM InitExpACOSD 
+  PROGRAM InitExpACOSD
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -52,12 +42,12 @@
     CHARACTER*(INT(ACOSD(0.5)))  :: C1(3)=(/(CHAR(INT(ACOSD(0.5))), I=1,3)/)
   END TYPE
 
-  TYPE(DT(4))  :: T 
-  TYPE(DT1(4)) :: T1  
+  TYPE(DT(4))  :: T
+  TYPE(DT1(4)) :: T1
 
   CHARACTER*(INT(ACOSD(0.5))) :: &
          C(INT(ACOSD(0.5)):INT(ACOSD(0.5))) =(/CHAR(INT(ACOSD(0.5)))/)
- 
+
   TYPE(DT1(4)), PARAMETER :: Const(INT(ACOSD(0.5))) =   &
                           DT1(4)(C1=(/(CHAR(INT(ACOSD(0.5))), I=1,3)/), C=CHAR(INT(ACOSD(0.5))))
 
@@ -175,4 +165,4 @@
 
   END
 
- 
+

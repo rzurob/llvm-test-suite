@@ -2,34 +2,28 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f fort.* ; export XLFRTEOPTS=multconn=yes
-! %COMPOPTS: 
-! %GROUP: fxstio232.f 
+! %COMPOPTS:
+! %GROUP: fxstio232.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio232.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : April 1, 2003
 !*
-!*  Primary Function Tested    : multconnect run-time option 
+!*  Primary Function Tested    : multconnect run-time option
 !*
-!*  Description                : Test stream access I/O with multconnect 
-!*                               run-time option enable. 
+!*  Description                : Test stream access I/O with multconnect
+!*                               run-time option enable.
 !*
 !=======================================================================
 
 !* Declare Variables.
-  
+
    integer ios
    integer filesize(2) /2*0/
    integer ivar1 /2000/, ivar2, ivar3
@@ -75,7 +69,7 @@
    inquire(2, size=filesize(2), iostat=ios, err=300)
    if ( ivar2 .ne. ivar3 )         error stop 16
    if ( filesize(1) .ne. filesize(2)) error stop 19
-    
+
    close(1, status='delete')
 
 !* real

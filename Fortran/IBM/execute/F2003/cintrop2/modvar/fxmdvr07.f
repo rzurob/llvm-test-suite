@@ -12,20 +12,14 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxmdvr07.f
 !
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 24, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    : -qfree=f90
 !*
 !* DESCRIPTION                  : Test the interoperability of drived type module
@@ -41,18 +35,18 @@ use iso_c_binding
     logical(c_bool) :: lo
     real(c_double) :: b
   end type
-  
+
 end module
 
 subroutine fsub(z)
   use mod
   type(dt) :: z
-  
+
   logical precision_r4
   logical precision_r8
 
-  
- 
+
+
 
 IF ( .not.precision_r4(z%a, 0.0) ) THEN
     ERROR STOP 51
@@ -65,13 +59,13 @@ END IF
 IF ( z%ch .NE. 'a') THEN
   ERROR STOP 53
 END IF
-  
+
 IF ( z%lo .NEQV. .true. ) THEN
   ERROR STOP 54
 END IF
 
 z = dt('b', 2.0, .false., 2.0D0)
- 
+
 end
 
 

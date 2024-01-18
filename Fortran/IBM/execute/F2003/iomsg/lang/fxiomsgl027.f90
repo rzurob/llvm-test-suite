@@ -5,38 +5,30 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgl027.f
 ! %VERIFY: fort.18:fxiomsgl027.vf
-! %STDIN: 
-! %STDOUT: 
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***************************************************************************
- 
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : Extra commas in the format specifier
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : WRITE  FORMAT
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 2
 !*
-!*  DESCRIPTION                : Different combinations of invalid commas were 
+!*  DESCRIPTION                : Different combinations of invalid commas were
 !*                               put in format statements. The WRITE statement
-!*                               was tested in a function which returns a 
+!*                               was tested in a function which returns a
 !*                               string.
 !*
 !*  TEST CONDITIONS            : 1) Invalid comma between parenthesis.
@@ -50,52 +42,47 @@
 !*********************************************************************
 
       program fxiomsgl027
- 
+
       implicit none                     ! All variables must be Declared
- 
- 
+
       integer*4 case_id, ios            ! Test Case id under test.
- 
+
       integer*4 varint
- 
+
       character*20 form
- 
+
       character*300 errmsg
- 
+
 !
 ! Initialize Return Code routine to SUCCESS...
 !
- 
+
       case_id = 0
       call zzrc ( case_id )
- 
- 
+
 !
 ! TestCase 1...
 !
- 
+
       case_id = case_id + 1
- 
+
       form = '( 50 (,I5,) )'
- 
+
       errmsg = print_msg( form )
- 
+
       write(18,*) errmsg
- 
- 
+
 !
 ! TestCase 2...
 !
- 
+
       case_id = case_id + 1
- 
+
       form = '( 50 ( I5,, ) )'
- 
+
       errmsg = print_msg( form )
- 
+
       write(18,*) errmsg
-
-
 
       contains
 
@@ -104,9 +91,9 @@
         character*300 errmsg_var
 
         write(0, fmt = form_var, iostat = ios, iomsg = errmsg_var ) varint
- 
+
         print_msg = errmsg_var
 
       end function print_msg
- 
+
       end                            ! End of TestCase.

@@ -1,19 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : idSpecIDValue07 - WAIT() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 15, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() Statement
 !*  SECONDARY FUNCTIONS TESTED : WAIT() on ID= Value from the same and
 !*                               other (Formatted) I/O Units
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WAIT(), ID= Specifier
@@ -23,7 +16,6 @@
 !*  DESCRIPTION                :
 !*  Due to the implementation of Formatted Asynchronous I/O, all of the
 !*  WAIT() Statements below should complete with an IOSTAT value of 0.
-!*
 !*
 !*  9.6.1 WAIT statement
 !*

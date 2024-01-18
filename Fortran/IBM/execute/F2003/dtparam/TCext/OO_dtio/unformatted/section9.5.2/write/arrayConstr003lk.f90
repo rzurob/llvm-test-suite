@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : arrayConstr003lk
 !*
-!*  PROGRAMMER                 : David Forster (derived from arrayConstr003 by Robert Ma)
 !*  DATE                       : 2007-10-03 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2 (Data Transfer input/output list)
 !*                               - output item is an array constructor with unlimited polymorphic variables
@@ -78,7 +70,7 @@ program arrayConstr002
    allocate ( u2(3), source = (/ child(3,4)('ABC',106), child(3,4)('DEF',107), child(3,4)('GHI',108)/) ) ! tcx: (3,4) ! tcx: (3,4) ! tcx: (3,4)
    allocate ( u4, source = child(3,4)('JKL',101) ) ! tcx: (3,4)
    allocate ( u6(2,2), source = reshape ( source = (/ child(3,4)('MNO',102), child(3,4)('PQR', 103), child(3,4)('STU',104), child(3,4)('VWX',105) /), shape = (/2,2 /)) ) ! tcx: (3,4) ! tcx: (3,4) ! tcx: (3,4) ! tcx: (3,4)
-   
+
    open (unit = 1, file ='arrayConstr002.data', form='unformatted', access='sequential')
 
    ! I/O operations
@@ -106,7 +98,7 @@ program arrayConstr002
                end select
          end select
    end select
-   
+
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 2_4
 
    rewind 1

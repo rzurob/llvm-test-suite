@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Marcus Yu
 !*  DATE                       : February 11, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SUPPORT_ROUNDING
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +25,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 	    program fxieee18
@@ -62,20 +53,20 @@
      &       (/              &
      &       huge(1.0_16),  & ! Positive Normal
      &       tiny(1.0_16)   & ! Positive Normal
-     &       /)    
+     &       /)
 
 
 ! get original flags
         call ieee_get_flag(ieee_all, original)
 
 ! witnout arg, returen false
-        
+
         if (ieee_support_rounding(ieee_nearest)) print *, "support rounding error."
-        if (ieee_support_rounding(ieee_to_zero)) print *, "support rounding error."		
+        if (ieee_support_rounding(ieee_to_zero)) print *, "support rounding error."
 		if (ieee_support_rounding(ieee_up)) print *, "support rounding error."
         if (ieee_support_rounding(ieee_down)) print *, "support rounding error."
-        if (ieee_support_rounding(ieee_other)) print *, "support rounding error."		
-		
+        if (ieee_support_rounding(ieee_other)) print *, "support rounding error."
+
 ! test real*4
         if (ieee_support_rounding(ieee_nearest, values(1)) .eqv. .false.) then
            print *, "support rounding error in real*4."
@@ -157,7 +148,7 @@
 		if (ieee_support_rounding(ieee_other, values_8) ) then
 		     print *, "support rounding error in real*8."
         endif
-		
+
 ! test real*16
         if (ieee_support_rounding(ieee_nearest, values_16(1))) then
            print *, "support rounding error in real*16 for nearest."

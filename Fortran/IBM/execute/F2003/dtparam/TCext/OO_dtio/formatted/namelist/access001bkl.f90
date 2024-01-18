@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : access001bkl
 !*
-!*  PROGRAMMER                 : David Forster (derived from access001b by Robert Ma)
 !*  DATE                       : 2007-06-20 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with private polymorphic component (output)
@@ -82,13 +74,13 @@ module m
       class(data(4)), intent(in) :: dtv
       getdata = dtv%i
    end function
-   
+
    subroutine start()
       allocate ( b1, source = base(4)( d=data(4)(101)))
       allocate ( b2, source = base(4)( d=data(4)(102)))
       allocate ( b3%d, source = data(4)(103) )
    end subroutine
-   
+
    subroutine write(unit)
       integer, intent(in) :: unit
       write (unit, n123, iostat = stat, iomsg = msg )
@@ -102,9 +94,9 @@ use m
 
    open (1, file = 'access001bkl.1', form='formatted', access='sequential' )
    call start()
-   
+
    call write (1)
-   
+
 end program
 
 
@@ -134,7 +126,7 @@ use m, only: base, data
    if ( size(v_list, 1) /= 0 ) error stop 3_4
 
    write (unit, *, iostat=iostat, iomsg = iomsg )   dtv%get()
-   
+
    if ( ( iostat /= 0 ) .or. ( iomsg /= 'datawrite' ) ) error stop 4_4
 
    iomsg = 'dtiowrite'

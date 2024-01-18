@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsScalarIntComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsScalarIntComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 13 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 13 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -42,7 +34,7 @@ program spreadSourceIsScalarIntComp01
   type(dtp(2))  :: dtp1
   type(dtp(4))  :: dtp2
   type(dtp(8))  :: dtp3
-  
+
   type(dtp(2)),allocatable :: dtp5,result1(:)
   type(dtp(8)),allocatable :: result2(:)
 
@@ -54,14 +46,14 @@ program spreadSourceIsScalarIntComp01
   dtp1=dtp(2)(i=1)
   dtp2=dtp(4)(i=2)
   dtp3=dtp(8)(i=3)
-  
+
   associate(x=>spread(dtp1,1,3))
      print *,"dtp1--","shape:",shape(x),"param:",x%k,"value:",x
   end associate
 
   associate(x=>spread(dtp2,1,-1)) !--- zero-sized array--!
      print *,"dtp2--","shape:",shape(x),"param:",x%k,"value:",x
-  end associate 
+  end associate
 
   result2=spread(dtp3,1,1)
      print *,"dtp3--","shape:",shape(result2), &
@@ -70,10 +62,10 @@ program spreadSourceIsScalarIntComp01
   associate(x=>spread(dtp(1)(i=4),1,3))
      print *,"dtp4--","shape:",shape(x),"param:",x%k,"value:",x
   end associate
-    
+
   dtp5=dtp(2)(i=5)
 
-  result1=spread(dtp5,1,2)  
+  result1=spread(dtp5,1,2)
       print *,"dtp5--","shape:",shape(result1), &
                        "param:",result1%k,"value:",result1
 
@@ -91,7 +83,7 @@ program spreadSourceIsScalarIntComp01
 
   associate(x=>spread(dtp8,1,4))
      print *,"dtp8--","shape:",shape(x),"param:",x%k,"value:",x
-  end associate  
+  end associate
 
 
 end program

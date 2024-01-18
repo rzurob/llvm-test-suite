@@ -1,22 +1,15 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/func/polyAssign1035f_Dim2LHSallocDiffTypeSameShape.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 07 August 2015
-!* ORIGIN                       : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  
+!* DESCRIPTION
 !*                              : Test when LHS is allocated initially and RHS is allocated and hve different types. LHS is base type and RHS is an extended derived type.
 !*                              : --LHS and RHS have different type and the same shape.
 !*                              : We add arrays with rank=2, LHS is allocated, RHS is allocated.
@@ -30,7 +23,7 @@
 !* ===================================================================
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-   
+
 module m
    type base
       integer :: i1
@@ -45,7 +38,7 @@ Program polyAssign1035f
     integer :: i
     class(base), allocatable :: b1(:), b3(:), a1(:,:), a3(:,:)
 
-    allocate(base :: b1(2:11))  !type base  
+    allocate(base :: b1(2:11))  !type base
     allocate(child :: b3(2:11)) !different types
 
     allocate(base :: a1(-2:-1,2:11))
@@ -53,7 +46,7 @@ Program polyAssign1035f
 
     if ( allocated(b1) .eqv.  .false. ) error stop "allocated(b1) status should not be false initially."
 
-    b1 = base(1) 
+    b1 = base(1)
     if (lbound(b1,1) /= 2 ) error stop 1
     if (ubound(b1,1) /= 11 ) error stop 2
     if (b1(2)%i1 /= 1) error stop 3
@@ -132,7 +125,7 @@ Program polyAssign1035f
     end select
 
     if ( allocated(a1) .eqv.  .false. ) error stop "allocated(a1) status should not be false initially."
-    a1 = base(1) 
+    a1 = base(1)
     if ( allocated(a1) .eqv.  .false. ) error stop "allocated(a1) status should not be false after the initiallization."
 
 

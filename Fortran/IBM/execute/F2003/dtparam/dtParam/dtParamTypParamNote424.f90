@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dtParamTypParamNote424  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dtParamTypParamNote424
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  The code is copied from the note 4.24 on P.49 
-!*   
+!*  The code is copied from the note 4.24 on P.49
 !*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamTypParamNote424 
+  PROGRAM dtParamTypParamNote424
   IMPLICIT NONE
 
 
@@ -46,7 +38,7 @@
     !-- Specify a nondefault kind for d.
     REAL(k) :: element(d,d)
   END TYPE
-  
+
   !In the following example, dim is declared to be a kind parameter, allowing generic overloading of
   !procedures distinguished only by dim.
   TYPE general_point(dim)

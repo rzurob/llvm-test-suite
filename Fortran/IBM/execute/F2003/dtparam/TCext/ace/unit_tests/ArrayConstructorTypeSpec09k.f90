@@ -1,20 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : ArrayConstructorTypeSpec09k
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from
 !*                               ArrayConstructorTypeSpec09 by Rob James)
 !*  DATE                       : 2008-01-29 (original: 09/15/2006)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Array Constructor Enhancements
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  DESCRIPTION                : Testing array constructors with type
 !*                               specifications as actual arguments.

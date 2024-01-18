@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a003.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -109,14 +105,14 @@ contains
 		same4 = .true.
 		r1 = a1
 		r2 = a2
-		
+
 		! covers exact equality, Inf and NaN:
 		if (r1 == r2 .or. ieee_is_nan(r1) .and. ieee_is_nan(r1)) return
 		if (.not.ieee_is_normal(r1) .or. .not.ieee_is_normal(r2)) then
 			r1 = 1e20 * r1
 			r2 = 1e20 * r2
 		end if
-		
+
 		! covers approximate equality:
 		same4 = abs(r1 - r2) <= abs((r1*0.5E-5 + r2*0.5E-5)) ! avoiding overflow on max
 	end function same4
@@ -127,14 +123,14 @@ contains
 		same8 = .true.
 		r1 = a1
 		r2 = a2
-		
+
 		! covers exact equality, Inf and NaN:
 		if (r1 == r2 .or. ieee_is_nan(r1) .and. ieee_is_nan(r1)) return
 		if (.not.ieee_is_normal(r1) .or. .not.ieee_is_normal(r2)) then
 			r1 = 1e40 * r1
 			r2 = 1e40 * r2
 		end if
-		
+
 		! covers approximate equality:
 		same8 = abs(r1 - r2) <= abs((r1*0.5D-14 + r2*0.5D-14)) ! avoiding overflow on max
 	end function same8

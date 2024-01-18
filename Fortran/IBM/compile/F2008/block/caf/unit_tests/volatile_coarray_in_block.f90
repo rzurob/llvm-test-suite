@@ -2,8 +2,8 @@
 !for a coarray that is not a construct entity of that construct.
 
 integer, save :: i[*]
-  
-block 
+
+block
   volatile i
 end block
-end 
+end

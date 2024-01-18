@@ -1,19 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingEndfile01 - ENDFILE Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 17, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Perform Unformatted Asynchronous WRITE()
 !*                               Operations
 !*  SECONDARY FUNCTIONS TESTED : Perform a ENDFILE, and WRITE() further data
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ENDFILE, WRITE(), ID= Specifier
@@ -35,7 +28,6 @@
 !*  Execution of a file positioning statement performs a wait operation
 !*  for all pending asynchronous data transfer operations for the
 !*  specified unit.
-!*
 !*
 !*  9.7.2 ENDFILE statement
 !*

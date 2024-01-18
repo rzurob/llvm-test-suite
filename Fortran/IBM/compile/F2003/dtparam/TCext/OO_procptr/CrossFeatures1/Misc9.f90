@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90 -qsuppress=1514-008
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp Misc9.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             :  Misc9.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 08, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,18 +34,16 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  
+!*
 !*  Objects with proc-ptr components are not allowed in default IO.
-!*  
-!*  
+!*
 !*  (ICE-304882)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM Misc9 
-  IMPLICIT NONE 
+  PROGRAM Misc9
+  IMPLICIT NONE
 
   TYPE :: DT(N1,K1)    ! (20,4)
     INTEGER, KIND :: K1
@@ -69,15 +61,15 @@
   END TYPE
 
 
-  TYPE(DT(20,4))  :: V1 
+  TYPE(DT(20,4))  :: V1
   TYPE(DT1(20,4)) :: V2
 
-  READ *, V1 
+  READ *, V1
   PRINT *,V1
-  
-  READ *, V2 
+
+  READ *, V2
   PRINT *,V2
-  
+
 
   END
 

@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with generic name
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : C459: define generic TB with same generic name with different access-spec
 !*                                     within same derived type ( inheritance )
@@ -39,12 +28,12 @@ module m
          procedure, nopass :: set8
          generic :: set => set1
    end type
-   
+
    type, extends(base) :: child
       contains
          generic :: set => set2
    end type
-   
+
    type, extends(child) :: gen3
       contains
          generic, private :: set => set4, set8
@@ -57,19 +46,19 @@ module m
          integer(1), intent(in) :: i
 
       end subroutine
-      
+
       subroutine set2 ( a , i )
          class(base), intent(inout) :: a
          integer(2), intent(in) :: i
 
       end subroutine
-      
+
       subroutine set4 ( a , i )
          class(base), intent(inout) :: a
          integer(4), intent(in) :: i
 
       end subroutine
-      
+
       subroutine set8 ( a , i )
          class(base), intent(inout) :: a
          integer(8), intent(in) :: i

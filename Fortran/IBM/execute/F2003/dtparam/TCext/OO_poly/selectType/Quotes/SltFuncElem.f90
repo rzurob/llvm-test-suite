@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltFuncElem.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltFuncElem
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +34,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is a poly elemental func call.
 !*    ()
 !*
@@ -51,7 +45,7 @@
 
     TYPE  :: Zero(K1)    ! (4)
         INTEGER, KIND :: K1
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4)
       INTEGER(K1) :: BaseId = 1
@@ -70,7 +64,7 @@
 
     INTERFACE ASSIGNMENT (=)
       ELEMENTAL SUBROUTINE ElemS(Arg1, Arg2)
-        CLASS(*), INTENT(INOUT) :: Arg1 
+        CLASS(*), INTENT(INOUT) :: Arg1
         CLASS(*), INTENT(IN)    :: Arg2
       END SUBROUTINE
     END INTERFACE
@@ -116,27 +110,27 @@
 
   SELECT TYPE ( V1 )
     CLASS DEFAULT
-      STOP 30   
+      STOP 30
     TYPE is (Base(4))
       STOP 32
     CLASS IS (Child(4))
       V1 = V2
       DO i=1, 5
-        IF ( V1(i)%Base%GetId() .NE.  i ) STOP 34 
+        IF ( V1(i)%Base%GetId() .NE.  i ) STOP 34
         IF ( V1(i)%GetId()      .NE. -i ) STOP 35
         IF ( V1(i)%BaseId       .NE.  i ) STOP 36
         IF ( V1(i)%ChildId      .NE. -i ) STOP 37
       END DO
     CLASS IS (Zero(4))
-      STOP 38 
+      STOP 38
   END SELECT
 
   END
-  
+
     ELEMENTAL SUBROUTINE ElemS(Arg1, Arg2)
     USE M, ONLY : Child
     IMPLICIT NONE
-    CLASS(*), INTENT(INOUT) :: Arg1 
+    CLASS(*), INTENT(INOUT) :: Arg1
     CLASS(*), INTENT(IN)    :: Arg2
 
       SELECT TYPE ( Arg1 )
@@ -145,7 +139,7 @@
             CLASS IS (Child(4))
               Arg1 = Arg2
           END SELECT
-      END SELECT 
-    END SUBROUTINE 
+      END SELECT
+    END SUBROUTINE
 
 

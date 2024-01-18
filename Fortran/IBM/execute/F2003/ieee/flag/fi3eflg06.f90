@@ -1,8 +1,8 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS:  -qfree=f90 
+! %PRECMD:
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: fi3eflg06.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,21 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Vasile Radulescu
 !*  DATE                       : February 15, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SET_FLAG
 !*  SECONDARY FUNCTIONS TESTED : IEEE_GET_FLAG
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -63,9 +55,9 @@
 !test for IEEE_ALL array named constants
         all_flags_values = set_flags_for_ieee_all_true()
         if (any(all_flags_values .neqv. .true. )) error stop 4
- 
+
 !clear all flags
-        call ieee_set_flag(ieee_all, .false. ) 
+        call ieee_set_flag(ieee_all, .false. )
         call ieee_get_flag(ieee_all, all_flags_values)
         if (any(all_flags_values .neqv. .false. )) error stop 5
 
@@ -78,24 +70,24 @@
         if (any(usual_flags_values .neqv. .false. )) error stop 9
 
         end
- 
+
 
         logical function set_flags_for_ieee_all_true()
- 
+
           use ieee_exceptions
           logical*4 :: all_flags_values(5)
 
 !check if all flags are cleared
           call ieee_get_flag(ieee_all, all_flags_values)
           if (any(all_flags_values .neqv. .false. )) error stop 2
- 
+
           call ieee_set_flag(ieee_all, .true.)
           call ieee_get_flag(ieee_all, all_flags_values)
           if (any(all_flags_values .neqv. .true. )) error stop 3
           set_flags_for_ieee_all_true = all_flags_values(5)
 
         end function set_flags_for_ieee_all_true
- 
+
 
         logical function set_flags_for_ieee_usual_true()
 

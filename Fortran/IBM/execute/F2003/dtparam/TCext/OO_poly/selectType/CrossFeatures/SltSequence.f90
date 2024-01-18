@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  SltSequence.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  SltSequence.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : SltSequence 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : SltSequence
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 28, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  componet of  sequence type 
-!* 
-!*  () 
+!*
+!*  componet of  sequence type
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,8 +46,8 @@
       INTEGER, KIND             :: K1,K2
       INTEGER, LEN              :: N1
       SEQUENCE
-      INTEGER(K1)               :: IArr(2)=-1 
-      CHARACTER(kind=K2,len=N1) :: CArr(2)="!" 
+      INTEGER(K1)               :: IArr(2)=-1
+      CHARACTER(kind=K2,len=N1) :: CArr(2)="!"
     END TYPE
 
     TYPE :: DT1(K3,N2,K4,N3)    ! (4,20,1,1025)
@@ -61,13 +55,13 @@
       INTEGER, LEN        :: N2,N3
       TYPE(DT0(K3,K4,N3)) :: Seq
     END TYPE
-  
+
     TYPE, EXTENDS(DT1) :: DT    ! (4,20,1,1025)
     END TYPE
-  
+
   END MODULE
 
-  PROGRAM SltSequence  
+  PROGRAM SltSequence
   USE M
   IMPLICIT NONE
   TYPE(DT(4,20,1,1025)) :: V(2,2,2)
@@ -84,7 +78,7 @@ S1: SELECT TYPE (S2 => U)
 
 S2: SELECT TYPE (U => S2 )
     CLASS DEFAULT
-      STOP 20 
+      STOP 20
     CLASS IS (DT1(4,*,1,*))
 
         IF (ANY(U(:,:,:)%Seq%IArr(1)  .NE. -1)) STOP 21
@@ -94,8 +88,8 @@ S2: SELECT TYPE (U => S2 )
 
         U%Seq%IArr(1) = 1
         U%Seq%IArr(2) = 2
-        U%Seq%CArr(1) = "K" 
-        U%Seq%CArr(2) = "Q" 
+        U%Seq%CArr(1) = "K"
+        U%Seq%CArr(2) = "Q"
 
         IF (SIZE(U(2,2,2)%Seq%IArr)   .NE. 2)  STOP 30
         IF (KIND(U(2,2,2)%Seq%IArr)   .NE. 4)  STOP 31

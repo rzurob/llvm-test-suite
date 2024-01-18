@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : array002akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from array002a by Robert Ma)
 !*  DATE                       : 2007-06-20 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting implicit array objects and define implicit statement inside DTIO (Output)
@@ -35,14 +27,14 @@ module m
    contains
       procedure(inf),deferred, pass :: get
    end type
-   
+
    type, extends(abstractdata) :: data (kd)
       integer, kind :: kd
       integer(kd) :: i
    contains
       procedure, pass :: get
    end type
-   
+
    type :: base (lb)
       integer, len :: lb
       character(lb) ::  c
@@ -55,7 +47,7 @@ module m
          class(abstractdata), intent(in) :: dtv
       end function
    end interface
-   
+
    interface write(formatted)
       subroutine writeformatted(dtv, unit, iotype, v_list, iostat, iomsg )
          import base
@@ -76,9 +68,9 @@ module m
          character(*),  intent(inout) :: iomsg
       end subroutine
    end interface
-   
+
 contains
-  
+
    integer function get (dtv)
       class(data(4)), intent(in) :: dtv
       get = dtv%i
@@ -108,7 +100,7 @@ program array002akl
    allocate ( b2(3), source = (/ base(3)(c='b21',d=data(4)(2001)), base(3)(c='b22',d=data(4)(2002)), base(3)(c='b23',d=data(4)(2003)) /) )
    allocate ( z3(3), source = b2 )
    allocate ( z4(2,2), source = reshape ( source = (/ b1, b1 /), shape = (/2,2/) ) )
-   
+
    write (1,NML=nml1, iostat=stat, iomsg=msg)
    if (( stat /=  0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
 
@@ -119,9 +111,9 @@ end program
 
 subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)
    use m, only: base, abstractdata, write(formatted), writeformatteddata
-   
+
    implicit class(abstractdata) (X)
-   
+
    class(base(*)), intent(in) :: dtv
    integer, intent(in) :: unit
    character(*), intent(in) :: iotype
@@ -136,11 +128,11 @@ subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)
    if ( size(v_list, 1) /= 0 ) error stop 4_4
 
    write (unit, *, iostat=iostat )        dtv%c
-   
+
    if ( iostat /= 0 ) error stop 5_4
-   
+
    allocate ( x1, source = dtv%d )
-   write (unit, dtio, iostat=iostat )        
+   write (unit, dtio, iostat=iostat )
 
    iomsg = 'dtiowrite'
 

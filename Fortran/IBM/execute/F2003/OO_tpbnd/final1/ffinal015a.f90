@@ -1,34 +1,28 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
 ! %GROUP: ffinal015a.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal015a.f
-!*  TEST CASE TITLE            : type-bound procedure
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : final subroutines 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : final subroutines
 !*
-!*  DESCRIPTION                : testing final subroutines 
-!*    
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  DESCRIPTION                : testing final subroutines
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -42,10 +36,10 @@
       type t2
          integer, pointer :: vector(:) => null()
       contains
-         final :: finalize_t1v 
-      end type 
+         final :: finalize_t1v
+      end type
 
-      type t3  
+      type t3
          integer, pointer :: vector(:) => null()
       contains
          final :: finalize_t2e
@@ -60,13 +54,13 @@
          type(t1) :: x
          if (associated(x%vector))    deallocate(x%vector)
       end subroutine
- 
+
       subroutine finalize_t1v(x)
          type(t2) :: x(1:3)
          do i = lbound(x, 1), ubound(x, 1)
             if (associated(x(i)%vector)) &
                deallocate(x(i)%vector)
-         end do  
+         end do
       end subroutine
       elemental subroutine finalize_t2e(x)
          type(t3), intent(inout) :: x

@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: ${TR_SRC}/fxmdvn01.sh fxmdvn02 cxmdvn02 
+! %PRECMD: ${TR_SRC}/fxmdvn01.sh fxmdvn02 cxmdvn02
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,20 +12,14 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxmdvn02.f
 !
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 24, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    : -qfree=f90
 !*
 !* DESCRIPTION                  : Test the interoperability of character and
@@ -76,16 +70,16 @@ call csub()
   IF ( ch3 .NE. 'd' ) THEN
     ERROR STOP 53
   END IF
-  
+
   do i = 1, 5
     IF ( ch4(1) .NE. 'e' ) THEN
       ERROR STOP 54
     END IF
   end do
-  
+
 
   do j= 1, 2
-    do k = 1, 3 
+    do k = 1, 3
      IF ( ch5(k, j, 1) .NE. 'f' ) THEN
        ERROR STOP 55
      END IF
@@ -100,4 +94,4 @@ call csub()
     end do
   end do
 
-end 
+end

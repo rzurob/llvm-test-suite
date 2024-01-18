@@ -1,39 +1,23 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: userDefOp001.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing:  User-defined operator and assignment
 !*                               a) both operands are polymorphic abstract type for the operator in the interface and supplying
@@ -48,21 +32,21 @@
 !* ===================================================================
 
 module m
-   
+
    type, abstract :: base
       integer :: id
    end type
-   
+
    type, extends(base) :: child
    end type
-   
+
    interface operator(+)
       type(child) function myAdd1(a,b)
          import base, child
          class(base), intent(in) :: a, b
       end function
    end interface
-   
+
    interface assignment(=)
       subroutine myAsgn1(a,b)
          import base, child
@@ -75,9 +59,9 @@ end module
 
 program userDefOp001
    use m
-   
+
    class(base), allocatable :: b1, b2, b3, b4
-   
+
    allocate( b1, source=child(3) )
    allocate( b2, source=child(1) )
    allocate( b3, source=(b1+b2) )
@@ -88,13 +72,12 @@ program userDefOp001
 
 end program
 
-
 type(child) function myAdd1(a,b)
    use m, only: base, child
    class(base), intent(in) :: a, b
    myAdd1%id = a%id + b%id
 end function
-   
+
 subroutine myAsgn1(a,b)
    use m, only: base, child
    class(base), intent(out) :: a

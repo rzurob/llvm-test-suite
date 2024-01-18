@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : recursive001l
 !*
-!*  PROGRAMMER                 : David Forster (derived from recursive001 by Robert Ma)
 !*  DATE                       : 2007-10-03 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2
 !*                                        Try linked list data structure with recursive DTIO
@@ -44,22 +36,22 @@ module m
 contains
 
    recursive subroutine writeunformatted ( dtv, unit, iostat, iomsg )
-   
+
       class(base(*)), intent(in) :: dtv ! tcx: (*)
       integer, intent(in) :: unit
       integer, intent(out) :: iostat
       character(*), intent(inout) :: iomsg
-   
+
       write (unit, iostat=iostat )   dtv%c
       if ( iostat /= 0  ) error stop 7_4
-   
+
       if ( associated(dtv%next) ) then
          write(unit, iostat= iostat, iomsg = iomsg ) dtv%next
          if ( ( iostat /= 0 ) .or. ( iomsg /= 'dtiowrite' ) ) error stop 8_4
       end if
-   
+
       iomsg = 'dtiowrite'
-   
+
    end subroutine
 
 end module
@@ -86,7 +78,7 @@ program recursive001l
    ! first linked list
    b1%next => b2
    b2%next => b3
-   
+
    ! second linked list
    b4%next => b5
    b5%next => b6
@@ -95,22 +87,22 @@ program recursive001l
 
    write (1, iostat=stat, iomsg=msg)       head
    if (( stat /=  0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 101_4
-   
+
    head => b4
 
    write (1, iostat=stat, iomsg=msg)       head
    if (( stat /=  0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 2_4
-   
+
    head => b5
 
    write (1, iostat=stat, iomsg=msg)       head
-   if (( stat /=  0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 3_4 
-   
+   if (( stat /=  0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 3_4
+
    rewind 1
 
    read (1, iostat=stat, iomsg = msg)      c1
    if ( ( c1 /= 'abcdefghi' ) )                     error stop 4_4
-   
+
    read (1, iostat=stat, iomsg = msg)      c2
    if ( ( c2 /= 'jklmnopqr' ) )                     error stop 5_4
 

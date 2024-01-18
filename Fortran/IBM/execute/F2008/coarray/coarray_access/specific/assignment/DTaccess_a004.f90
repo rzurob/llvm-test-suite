@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a004.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -112,7 +108,7 @@ program main
 	ctmp3 = ctmp3
 	catmp1 = cafar(:)%c1
 	catmp3 = cafar(:)%c3
-	
+
 	if ( (ctmp1 /= v1) .or. (ctmp3 /= v3) ) error stop 15
 	if ( any(catmp1 /= [character(1):: v1,hash,v1,hash,v1,hash,v1,hash,v1,hash]) ) then
 		print '("catmp1:",9(a1,"/"),a1,";")', catmp1

@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting for derived type object which is a assumed-shape array dummy argument
@@ -124,7 +108,7 @@ program dummyArg101a2
    if ( ( b3(1)%c /= 'mno' ) .or. ( b3(2)%c /= 'pqr' ) ) error stop 6_4
    if ( ( b4(1)%c /= 'stu' ) .or. ( b4(1)%i /= 4 ) .or. ( b4(2)%c /= 'vwx' ) .or. ( b4(2)%i /= 5 ) .or. &
         ( b4(3)%c /= 'xxx' ) .or. ( b4(3)%i /= -999 ) .or. ( b4(4)%c /= 'xxx' ) .or. ( b4(4)%i /= -999 ) )    error stop 7_4
- 
+
 end program
 
 

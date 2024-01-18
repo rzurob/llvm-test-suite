@@ -3,26 +3,14 @@
 ! opt variations: -qnol -qnodeferredlp
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlmtpolyfunc1.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM/TO are of type unlimited poly 
+!*  DESCRIPTION                : FROM/TO are of type unlimited poly
 !*                               TO is function return name
 !*                               FROM is an optional dummy arg
 !*                               move_alloc appears in a type bound proc
@@ -42,18 +30,18 @@ module m
           integer(k1), allocatable :: i1
           contains
               procedure :: get_alloc  => func
-      end type 
+      end type
 
-      contains 
+      contains
          class(*) function func(arg, brg)
             class(base(*,8)) :: arg
-            class(*), optional, allocatable :: brg 
+            class(*), optional, allocatable :: brg
             allocatable func
 
-            allocate(brg, source= arg ) 
-            call move_alloc(brg,func) 
-           
-            if ( .not. allocated(func)) stop 9 
+            allocate(brg, source= arg )
+            call move_alloc(brg,func)
+
+            if ( .not. allocated(func)) stop 9
          end function
 
 end module
@@ -71,6 +59,6 @@ end module
           class default
              STOP 23
       end select
-            
-      if ( allocated(c) ) stop 31 
+
+      if ( allocated(c) ) stop 31
       end

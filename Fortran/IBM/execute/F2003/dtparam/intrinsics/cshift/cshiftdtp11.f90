@@ -1,23 +1,12 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case IBM INTERNAL USE ONLY
-!* ===================================================================
-!* ===================================================================
-!*
-!* TEST CASE TITLE : Test for DTP with CSHIFT
 !*
 !* TEST CASE NAME : cshiftdtp11.f
 !*
 !* CREATED BY: Pooja Dayanand
 !* MODIFIED BY: Andy Sheung
 !* DATE : Jul31, 2008
-!* ORIGIN : AIX Compiler Development, Toronto Lab
 !*
 !* DESCRIPTION:
 !* CSHIFT performs a circular shift on an array expression of rank one or perform circular
@@ -32,7 +21,7 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 type dt (k)
   integer, kind :: k
-  integer(k), allocatable :: i 
+  integer(k), allocatable :: i
 end type
 
 type dtp (k1)
@@ -40,7 +29,7 @@ type dtp (k1)
   type (dt(k1)) :: d1
 end type
 
-type (dtp(4)) :: dtp1(9) 
+type (dtp(4)) :: dtp1(9)
 type (dtp(4)) dtp2(3,3), res(3,3)
 
 do j = 1,9

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Record.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Record.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Record 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Record
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 05, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,17 +30,17 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is of record structure 
-!*    () 
+!*    The selector is of record structure
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   PROGRAM SltRecord
   IMPLICIT NONE
- 
+
   INTEGER :: Pi
- 
+
   STRUCTURE /S1/
     STRUCTURE /S2/ A
       INTEGER :: I=1
@@ -65,7 +59,7 @@
     IF ( As1.A%Pi .NE. -3  )     STOP 20
     IF ( As1.A%I  .NE. 1  )      STOP 21
     IF ( As1.B%J  .NE. 2  )      STOP 22
-  
+
     ASSOCIATE ( As1 => As1.A, As2 => As2.I, As3 => As1.B )
       IF ( As1%I  .NE. 1  )      STOP 23
       IF ( As2    .NE. 1  )      STOP 24
@@ -83,6 +77,6 @@
     IF ( R1.A%I   .NE. -1  )      STOP 33
     IF ( R1.B%J   .NE. -2  )      STOP 34
 
-  END ASSOCIATE 
+  END ASSOCIATE
 
   END

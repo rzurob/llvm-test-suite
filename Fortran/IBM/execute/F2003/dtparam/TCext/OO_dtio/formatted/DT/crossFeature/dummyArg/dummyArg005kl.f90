@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dummyArg005kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from dummyArg005 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Argument Association: assumed size array dummy argument
@@ -59,8 +51,8 @@ module m
 
       subroutine foo ( dtv )
          type(base(4)), intent(in) :: dtv(2,*)
-         character(27) :: fmt 
-         
+         character(27) :: fmt
+
          fmt = "(DT'_foo'(5),/,DT'_foo'(6))"
 
          write (1, fmt, iostat = stat, iomsg = msg ) dtv(1:2,1:2)

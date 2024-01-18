@@ -1,17 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : critical03d.f
-!*
-!*  PROGRAMMER                 : David Nichols
 !*  DATE                       : Oct 13, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CRITICAL Construct
-!*
-!*  DRIVER STANZA              : xlf2008
 !*
 !*  DESCRIPTION                : Testing proper diagnostics of
 !*                               the F2008 CRITICAL Construct
@@ -22,13 +14,13 @@
       module m
 
       ! Executable in specification: illegal
-      critical 
+      critical
       end critical
 
       contains
 
       subroutine critical_in_sub()
-        critical 
+        critical
 	  critical
           end critical
         end critical
@@ -62,8 +54,8 @@
       end subroutine named_end
 
       subroutine named_crit ()
-        ghost : critical 
-        ghostly : critical 
+        ghost : critical
+        ghostly : critical
       end subroutine named_crit
 
       end program critical03d

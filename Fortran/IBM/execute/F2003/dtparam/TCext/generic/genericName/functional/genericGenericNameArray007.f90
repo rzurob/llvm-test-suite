@@ -3,22 +3,11 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with generic-name
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : generic-name: generic tb has allocatable/pointer dummy args
 !*  KEYWORD(S)                 :
@@ -124,5 +113,5 @@ program genericGenericNameArray007
 
    call c0%print(c1)
    call c0%print(c2)
-   
+
 end program

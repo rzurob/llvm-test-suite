@@ -1,21 +1,11 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FINDLOC_REAL
-!*
-!*  PROGRAMMER                 : Maryam Moghadas
 !*  DATE                       : 2013-05-27
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FINDLOC intrinsic
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              :
 !*
 !*  DESCRIPTION                : FINDLOC (ARRAY, VALUE, DIM [, MASK, KIND, BACK]) or
 !*                               FINDLOC (ARRAY, VALUE [, MASK, KIND, BACK])
@@ -32,18 +22,18 @@
 PROGRAM FINDLOC_REAL
 
 !-- all values are known at compile time:
-integer :: arr(5) = (/1, 4, 3, 4, 5/), val = 4, d = 1 
+integer :: arr(5) = (/1, 4, 3, 4, 5/), val = 4, d = 1
 logical :: m(5) = (/.TRUE., .TRUE., .TRUE., .TRUE., .TRUE./), b=.TRUE.
 
-!-- in the following cases FE does not know the values @ compile time: 
+!-- in the following cases FE does not know the values @ compile time:
 integer  :: arr1(5), arr2(-3:1), arr2d(3,4), arr3d(2,4,3)
-logical  :: mask1(5), mask2(5), mask3(-2:2),  s_mask, back1, back2, mask2d(3,4), mask3d(2,4,3) 
-integer :: val1, dim1, val_input  
-integer, parameter :: kind1=4 
+logical  :: mask1(5), mask2(5), mask3(-2:2),  s_mask, back1, back2, mask2d(3,4), mask3d(2,4,3)
+integer :: val1, dim1, val_input
+integer, parameter :: kind1=4
 
 
 arr1 = (/1, 4, 3, 4, 5/)
-arr2 = arr1 
+arr2 = arr1
 arr2d = reshape((/1, 2, 3, 4, 5, 3, 6, 7, 3, 8, 9, 9/), (/3,4/))
 arr3d = reshape ((/1,2,3,4,5,6,3,7,8,9,10,11,12,13,14,3,15,16,17,18,19,20,3,21/), (/2,4,3/))
 val1 = 4
@@ -66,7 +56,7 @@ mask3d = reshape((/.TRUE., .TRUE., .TRUE., .TRUE., .TRUE., .TRUE., .TRUE., .TRUE
 
 !-- comparing the result when some of the arguments are known at compile time vs all of them vs none of them:
 if (ANY(findloc(arr, val) .NE. findloc(arr1, val1))) ERROR STOP 10
-!-- RTE should fix dim problem 
+!-- RTE should fix dim problem
 if (findloc(arr, val, d) .NE. findloc(arr1, val1, dim1)) ERROR STOP 11
 if (ANY(findloc(arr, val1) .NE. findloc(arr1, val))) ERROR STOP 12
 if (ANY(findloc(arr, val, m, kind1, b) .NE. findloc(arr1, val1, mask1, kind1, back1))) ERROR STOP 13
@@ -78,9 +68,9 @@ if (findloc(arr1, 4, 1, MASK=mask1, BACK = .TRUE.) .NE. 4) ERROR STOP 15
 
 if (ANY(findloc(arr1, 4, Mask=mask1, BACK = .false.) .NE. (/2/))) ERROR STOP 16
 
-if (findloc(arr1, 4, 1, mask1, 4, .false.) .NE. 2) ERROR STOP 17 
+if (findloc(arr1, 4, 1, mask1, 4, .false.) .NE. 2) ERROR STOP 17
 
-!--  when all args are present: 
+!--  when all args are present:
 if (findloc(arr1, 4, 1, mask1, 4, .true.) .NE. 4) ERROR STOP 18
 !-- using the argument keywords:
 if (findloc(VALUE=4, ARRAY=arr1, BACK=.false., KIND=4, MASK=mask1, DIM=1) .NE. 2) STOP 19
@@ -111,7 +101,7 @@ if (findloc(arr1, 1, 1, mask2) .NE. 0) ERROR STOP 29
 !-- when BACK argument is absent:
 if (findloc(arr1, val1, 1, mask1, kind1) .NE. findloc(arr1, val1, 1, mask1, kind1, .false.)) ERROR STOP 30
 
-!-- when MASK is a scalar 
+!-- when MASK is a scalar
 if (findloc(arr1, val1, 1, mask1, kind1) .NE. findloc(arr1, val1, 1, s_mask, kind1)) ERROR STOP 31
 
 !-- test with different lower bounds of ARRAY argument:
@@ -121,7 +111,7 @@ if (findloc(arr1, val1, 1, mask3) .NE. findloc(arr2, val1, 1, mask1)) ERROR STOP
 
 !-- test with 2-dimensional array:
 if (ANY(findloc(arr2d, 3) .NE. (/3,1/))) ERROR STOP 35
-if (ANY(findloc(arr2d, 3, mask2d) .NE. (/3,2/))) ERROR STOP 36 
+if (ANY(findloc(arr2d, 3, mask2d) .NE. (/3,2/))) ERROR STOP 36
 if (ANY(findloc(arr2d, 3, s_mask) .NE. (/3,1/))) ERROR STOP 37
 
 if (ANY(findloc(arr2d, 3, 1) .NE. (/3,3,3,0/))) ERROR STOP 38
@@ -138,7 +128,7 @@ if (ANY(findloc(arr2d, 3, mask2d, BACK=.TRUE.) .NE. (/3,2/))) ERROR STOP 44
 
 if (ANY(findloc(arr2d, 9, 1) .NE. (/0,0,0,2/))) ERROR STOP 45
 if (ANY(findloc(arr2d, 9, 1, BACK=.FALSE.) .NE. (/0,0,0,2/))) ERROR STOP 46
-if (ANY(findloc(arr2d, 9, 1, BACK=.TRUE.) .NE. (/0,0,0,3/))) ERROR STOP 47 
+if (ANY(findloc(arr2d, 9, 1, BACK=.TRUE.) .NE. (/0,0,0,3/))) ERROR STOP 47
 
 !-- test with 3-dimensional array:
 if (ANY(findloc(arr3d, 3) .NE. (/1,2,1/))) ERROR STOP 48

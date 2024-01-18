@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectRealCompRead01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectRealCompRead01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 15 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 15 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test Read statement with ultimate real components
-!* 2. Use sequence statement in derived type 
-!* 3. Use equivalence statement 
+!* 2. Use sequence statement in derived type
+!* 3. Use equivalence statement
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m1
   type DT0(k1,l1)
@@ -53,7 +45,7 @@ program listDirectRealCompRead01
 
   interface
      function readData(dt,unit)
-       import 
+       import
        implicit type(RDT1(4,*)) (d)
        implicit type(RDT1(4,:)) (r)
        allocatable :: readData(:)
@@ -65,13 +57,13 @@ program listDirectRealCompRead01
   integer :: ios,i
   character(256) :: msg
   logical :: precision_r4,precision_r8,precision_r16
- 
+
   implicit type(RDT1(4,3)) (T)
-  implicit type(RDT1(4,:)) (D) 
+  implicit type(RDT1(4,:)) (D)
 
   allocatable :: d1(:)
   dimension :: t1(2),t2(3:4)
- 
+
   equivalence(t1,t2)
 
   !initialize variable
@@ -79,7 +71,7 @@ program listDirectRealCompRead01
      t1(i)%r3=0.1_4
      t1(i)%dtcomp%r1=0.1_8
      t1(i)%dtcomp%r2=0.1_16
-  end do 
+  end do
 
   open(10,file='listDirectRealCompRead01.dat',form='formatted',&
        access='sequential',iostat=ios,iomsg=msg)
@@ -88,14 +80,14 @@ program listDirectRealCompRead01
       print *,"fail to open the file"
       print *,"iostat=",ios
       print *,"iomsg=",msg
-      stop 10 
+      stop 10
   end if
 
   allocate(d1(2),source=readData(t1,10))
 
   if(.not. precision_r4(t2(3)%r3(1),0.1))                 stop 11
   if(.not. precision_r4(t2(3)%r3(2),-3.4))                stop 12
-  if(.not. precision_r4(t2(3)%r3(3),0.12E-01))            stop 13 
+  if(.not. precision_r4(t2(3)%r3(3),0.12E-01))            stop 13
   if(.not. precision_r8(t2(3)%dtcomp%r1(1),-2.1E2_8))     stop 14
   if(.not. precision_r8(t2(3)%dtcomp%r1(2),0.1_8))        stop 15
   if(.not. precision_r16(t2(3)%dtcomp%r2,3.2_16))         stop 16
@@ -103,26 +95,26 @@ program listDirectRealCompRead01
   if(.not. precision_r4(t2(4)%r3(1),2.3_4))               stop 17
   if(.not. precision_r4(t2(4)%r3(2),-4.0E-15))            stop 18
   if(.not. precision_r4(t2(4)%r3(3),-3.0))                stop 19
-  if(.not. precision_r8(t2(4)%dtcomp%r1(1),-2.0_8))       stop 20 
-  if(.not. precision_r8(t2(4)%dtcomp%r1(2),-2.E-01_8))    stop 21 
-  if(.not. precision_r16(t2(4)%dtcomp%r2,-3.7_16))        stop 22 
-   
-  if(.not. precision_r4(d1(1)%r3(1),0.1))                 stop 23 
-  if(.not. precision_r4(d1(1)%r3(2),-3.4))                stop 24 
-  if(.not. precision_r4(d1(1)%r3(3),0.12E-01))            stop 25 
-  if(.not. precision_r8(d1(1)%dtcomp%r1(1),-2.1E2_8))     stop 26 
-  if(.not. precision_r8(d1(1)%dtcomp%r1(2),0.1_8))        stop 27 
-  if(.not. precision_r16(d1(1)%dtcomp%r2,3.2_16))         stop 28 
+  if(.not. precision_r8(t2(4)%dtcomp%r1(1),-2.0_8))       stop 20
+  if(.not. precision_r8(t2(4)%dtcomp%r1(2),-2.E-01_8))    stop 21
+  if(.not. precision_r16(t2(4)%dtcomp%r2,-3.7_16))        stop 22
 
-  if(.not. precision_r4(d1(2)%r3(1),2.3_4))               stop 29 
-  if(.not. precision_r4(d1(2)%r3(2),-4.0E-15))            stop 30 
-  if(.not. precision_r4(d1(2)%r3(3),-3.0))                stop 31 
-  if(.not. precision_r8(d1(2)%dtcomp%r1(1),-2.0_8))       stop 32 
-  if(.not. precision_r8(d1(2)%dtcomp%r1(2),-2.E-01_8))    stop 33 
-  if(.not. precision_r16(d1(2)%dtcomp%r2,-3.7_16))        stop 34 
-    
+  if(.not. precision_r4(d1(1)%r3(1),0.1))                 stop 23
+  if(.not. precision_r4(d1(1)%r3(2),-3.4))                stop 24
+  if(.not. precision_r4(d1(1)%r3(3),0.12E-01))            stop 25
+  if(.not. precision_r8(d1(1)%dtcomp%r1(1),-2.1E2_8))     stop 26
+  if(.not. precision_r8(d1(1)%dtcomp%r1(2),0.1_8))        stop 27
+  if(.not. precision_r16(d1(1)%dtcomp%r2,3.2_16))         stop 28
+
+  if(.not. precision_r4(d1(2)%r3(1),2.3_4))               stop 29
+  if(.not. precision_r4(d1(2)%r3(2),-4.0E-15))            stop 30
+  if(.not. precision_r4(d1(2)%r3(3),-3.0))                stop 31
+  if(.not. precision_r8(d1(2)%dtcomp%r1(1),-2.0_8))       stop 32
+  if(.not. precision_r8(d1(2)%dtcomp%r1(2),-2.E-01_8))    stop 33
+  if(.not. precision_r16(d1(2)%dtcomp%r2,-3.7_16))        stop 34
+
   close(10)
-    
+
 end program
 
 function readData(dt,unit)
@@ -138,8 +130,8 @@ function readData(dt,unit)
    ! +2.3 , -4.0E-15 1*-3,-2. -2.-01 2*-3.7
 
    read(unit,*,decimal='comma') dt(lbound(dt,1))
-   read(unit,*,decimal='point') dt(lbound(dt,1)+1) 
+   read(unit,*,decimal='point') dt(lbound(dt,1)+1)
 
-   readData=dt 
+   readData=dt
 
 end function

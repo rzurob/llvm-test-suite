@@ -1,20 +1,14 @@
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : mergeProcPointerComp01.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Nancy Wang
 !*  DATE                       : Sept. 22 2008
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  :
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*
 !*  DESCRIPTION
 !*
@@ -60,10 +54,10 @@ program mergeProcPointerComp01
     do k=1,3
 
       dtp1(k)%proc => func1()
-  
-      call dtp1(k)%proc(merge(dtp1(k),dtp2(k),.true.)) 
-    
-      call dtp1(k)%proc(merge(dtp1(k),dtp2(k),.false.)) 
+
+      call dtp1(k)%proc(merge(dtp1(k),dtp2(k),.true.))
+
+      call dtp1(k)%proc(merge(dtp1(k),dtp2(k),.false.))
 
     end do
 end program

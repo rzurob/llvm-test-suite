@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass074.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass074.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -79,7 +67,7 @@
       complex*8 a8 / (1.0e0, 2.0e0) /
       complex*8 b8 / (3.0e0, 4.0e0) /
       complex*8 c8
-      
+
       complex*16 a16 / (1.0d0, 2.0d0) /
       complex*16 b16 / (3.0d0, 4.0d0) /
       complex*16 c16
@@ -98,7 +86,7 @@
 
 !-----------   ASSOCIATE with COMPLEX expressions ----------------
 
-      c = (4.0e0, 6.0e0)   
+      c = (4.0e0, 6.0e0)
       do count = 1, 10
 
       associate ( arg => a , argb => b , argc => c)
@@ -107,13 +95,13 @@
            error stop 1
          endif
       end associate
-      a = (1.0e0, 2.0e0) 
+      a = (1.0e0, 2.0e0)
 
       end do
 
 !-----------   ASSOCIATE with COMPLEX*16 expressions ----------------
 
-      c16 = (2.0d0, 3.0d0)   
+      c16 = (2.0d0, 3.0d0)
       do count = 1, 10
 
       associate ( arg16 => a16 , argb16 => (1.0d0, 1.0d0))
@@ -127,7 +115,7 @@
 
 !-----------   ASSOCIATE with COMPLEX*32 expressions ----------------
 
-      c32 = (2.0q0, 3.0q0)   
+      c32 = (2.0q0, 3.0q0)
       do count = 1, 10
 
       associate ( arg32 => a32 , argb32 => (1.0q0, 1.0q0) )

@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryResParam06_d354585.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryResParam06_d354585.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 2 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 2 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. DEFECT 354585
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -33,11 +25,11 @@ module m
 
 end module
 
-program dtParameterInquiryResParam06_d354585 
+program dtParameterInquiryResParam06_d354585
   use m
   implicit none
 
-  call test() 
+  call test()
 end
 
 subroutine test()
@@ -46,6 +38,6 @@ subroutine test()
   integer :: i=4
   character(len=*),parameter :: c="xlf"
   type(base(:)),allocatable :: p1
-  allocate(base(i+c%len) :: p1)  
+  allocate(base(i+c%len) :: p1)
 
 end subroutine

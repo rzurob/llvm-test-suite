@@ -1,21 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : d327313 - expr is a Scalar and variable is
 !*                               an Array
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : October 27, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: ALLOC: Run-Time SIGSEGV with Derived
 !*                               Type with ALLOCATABLE Component in IF/ELSE IF
 !*                               Construct
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATABLE Attribute, Intrinsic Assignment

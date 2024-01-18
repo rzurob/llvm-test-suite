@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Function subprogram (Section 12.5.2.1), function return cannot be abstract type, class(abstract type)
 !*                                        returns extension of abstract type
@@ -48,46 +32,46 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
-   
+
    type, abstract :: base
       integer :: id
    end type
-   
+
    type, extends(base) :: child
    end type
-   
+
 
 contains
 
    type(child) function foo(a)
       pointer :: foo
       type(child), intent(in) :: a
-      allocate(foo, source=a) 
+      allocate(foo, source=a)
    end function
-   
+
    function foo1(a) result (boo)
       class(child), pointer :: boo
       type(child), intent(in) :: a
-      allocate(boo, source=a ) 
+      allocate(boo, source=a )
    end function
-  
+
 end module
 
 program funcRetrn003
-   use m   
-   
+   use m
+
    class(base), allocatable :: c
    class(child), allocatable :: c1
-   
+
    allocate (c1, source = child(4))
-   
+
    allocate ( c,source=foo(c1) )
    if (c%id .ne. 4) error stop 1_4
-   
+
    deallocate (c)
-   allocate ( c, source=foo1(child(5)) ) 
-   
+   allocate ( c, source=foo1(child(5)) )
+
    if (c%id .ne. 5) error stop 2_4
-      
+
 end program
 

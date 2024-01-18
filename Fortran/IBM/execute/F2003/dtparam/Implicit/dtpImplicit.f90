@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpImplicit
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 22, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The implicit statement
-!*   
-!* 
+!*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -42,7 +32,7 @@
     INTEGER, KIND :: K0=1
     INTEGER, LEN  :: L0=1
     CONTAINS
-    PROCEDURE :: ModFun0 
+    PROCEDURE :: ModFun0
   END TYPE
 
   TYPE,  EXTENDS(DT0)  :: DT1(K1, L1)
@@ -50,7 +40,7 @@
     INTEGER(K0), LEN  :: L1=1
     REAL(K1) :: R(L1)=K1
     CONTAINS
-    PROCEDURE :: ModFun1 
+    PROCEDURE :: ModFun1
   END TYPE
 
   TYPE, EXTENDS(DT1) :: DT2(K2,L2)
@@ -60,32 +50,32 @@
     CHARACTER(L2) :: C(L2)=CHAR(K2)
     TYPE(DT2(K0,L0,K1,L0,K2,L2)), POINTER :: Ptr=>NULL()
     CONTAINS
-    PROCEDURE :: ModFun2 
+    PROCEDURE :: ModFun2
   END TYPE
 
   CONTAINS
 
   FUNCTION ModFun0(Arg)
-  CLASS(DT0(1,*)), INTENT(IN) :: Arg 
+  CLASS(DT0(1,*)), INTENT(IN) :: Arg
   INTEGER ModFun0
     ModFun0 = Arg%L0
-  END FUNCTION 
+  END FUNCTION
 
   FUNCTION ModFun1(Arg)
-  CLASS(DT1(1,*,4,*)), INTENT(IN) :: Arg 
+  CLASS(DT1(1,*,4,*)), INTENT(IN) :: Arg
   COMPLEX ::  ModFun1(2)
     ModFun1(1) =  (Arg%K0, Arg%L0)
     ModFun1(2) =  (Arg%K1, Arg%L1)
-  END FUNCTION 
+  END FUNCTION
 
   FUNCTION ModFun2(Arg)
-  CLASS(DT2(1,*,4,*,8,*)), INTENT(IN) :: Arg 
+  CLASS(DT2(1,*,4,*,8,*)), INTENT(IN) :: Arg
   TYPE(DT2(1,Arg%L0,4,Arg%L1,8,Arg%L2)) ModFun2
-    ModFun2%R = -Arg%R 
-    ModFun2%I = -Arg%I 
-    ModFun2%C = CHAR(Arg%L2) 
+    ModFun2%R = -Arg%R
+    ModFun2%I = -Arg%I
+    ModFun2%C = CHAR(Arg%L2)
     IF ( SIZE( ModFun2%I ) .NE. Arg%L2 ) STOP 22
-  END FUNCTION 
+  END FUNCTION
 
   END MODULE
 
@@ -95,7 +85,7 @@
   IMPLICIT TYPE(DT1(1,3,4,5))(S)
   IMPLICIT TYPE(DT2(1,3,4,5,8,7))(T)
 
-   
+
   INTEGER :: IArr(7)=0
 
   IF ( R%ModFun0() .NE. R%L0 ) STOP 11
@@ -123,13 +113,13 @@
   IF ( ANY ( TT%C    .NE. CHAR(T%L2)  ) ) STOP 35
 
 
-  R =  DT0(1,3)() 
-  S =  DT1(1,3,4,5)([1,2,3,4,5]) 
+  R =  DT0(1,3)()
+  S =  DT1(1,3,4,5)([1,2,3,4,5])
   T =  DT2(1,3,4,5,8,7)(                  &
            DT1=DT1(1,3,4,5)([1,2,3,4,5]), &
              I=[1,2,3,4,5,6,7],           &
              C=CHAR([1,2,3,4,5,6,7]),     &
-            Ptr=NULL() )    
+            Ptr=NULL() )
 
 
   IF ( R%ModFun0() .NE. R%L0 ) STOP 41

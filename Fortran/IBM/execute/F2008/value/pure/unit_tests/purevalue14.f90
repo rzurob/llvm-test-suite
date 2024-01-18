@@ -1,17 +1,12 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue14.f
-!*  TEST CASE TITLE : F2008: VALUE attr allowed for dummy args of PURE proc
-!*  PROGRAMMER      : Gaby Baghdadi
 !*  DATE            : 2010-12-01
-!*  ORIGIN          : XL Fortran Compiler Development, IBM Torolab
 !*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
-!*  - this is a copy of purevalue03.f, modified to define the pure procedures 
+!*  - this is a copy of purevalue03.f, modified to define the pure procedures
 !*    externally, and declare them here through explicit interface for func1,
 !*    sub1, and through module interface for func2 and sub2, and through use
 !*    association for func3, sub3

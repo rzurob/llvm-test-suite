@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpByte.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpByte.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 28, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,18 +23,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  -- Byte 
-!* 
-!*  
-!*  
+!*  -- Byte
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpByte 
+  PROGRAM InitExpByte
   IMPLICIT NONE
 
   INTEGER :: I
@@ -62,10 +52,10 @@
     BYTE :: B2(T%L1%KIND)=(/(T%L1, I=1, T%L1%KIND)/)
     BYTE :: B3(T%C%KIND) =(/(T%C,  I=1, T%C%KIND)/)
   END TYPE
- 
+
   TYPE(DT1(4,20)) :: T1
- 
- 
+
+
   IF (SIZE(T1%B1)    .NE. 1  ) STOP 11
   IF (SIZE(T1%B2)    .NE. 1  ) STOP 12
   IF (SIZE(T1%B3)    .NE. 1  ) STOP 13
@@ -76,4 +66,4 @@
 
   END
 
- 
+

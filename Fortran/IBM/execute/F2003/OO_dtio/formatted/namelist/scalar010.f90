@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with polymorphic entities contains polymorphic components (Output)
@@ -91,7 +75,7 @@ program scalar010
    open (1, file = 'scalar010.1', form='formatted', access='sequential' )
    allocate(b1, b1%bd)
    allocate(child :: b2 )
-   
+
    select type(b2)
       type is (child)
          allocate(childdata :: b2%bd, b2%cd)
@@ -106,7 +90,7 @@ program scalar010
                g%i2 = (/789, 890/)
          end select
    end select
-  
+
    b1%bd%i1= (/ 567, 890 /)
 
 

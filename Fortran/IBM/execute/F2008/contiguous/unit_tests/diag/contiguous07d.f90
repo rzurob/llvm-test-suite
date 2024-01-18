@@ -1,18 +1,10 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : contiguous07d.f
-!*
-!*  PROGRAMMER                 : David Nichols
 !*  DATE                       : June 24, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS simply contiguous
 !*                               6.5.4 & 12.5.2.7
-!*
-!*  DRIVER STANZA              : xlf2008
 !*
 !*  DESCRIPTION                : Testing proper diagnostics of
 !*                               the F2008 CONTIGUOUS simply contig
@@ -97,12 +89,12 @@
         ! 12.5.2.7: Pointer dummy variables:
         call simply_contig_sub(ipac)
         call simply_contig_sub(b%ipac)
-        contains 
+        contains
 
         subroutine simply_contig_sub(ptr)
-          ! 12.5.2.7: Pointer dummy variables: 
-          ! C1241: The actual argument corresponding to a dummy pointer 
-          !        with the CONTIGUOUS attribute shall be simply 
+          ! 12.5.2.7: Pointer dummy variables:
+          ! C1241: The actual argument corresponding to a dummy pointer
+          !        with the CONTIGUOUS attribute shall be simply
           !        contiguous (6.5.4).
           integer, pointer, contiguous :: ptr (:,:,:)
         end subroutine

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgMaxloc8
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : MAXLOC 
+!*  SECONDARY FUNCTIONS TESTED : MAXLOC
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,6 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Value.
 !*  Case (iii): If ARRAY has rank one, MAXLOC (ARRAY, DIM = DIM [, MASK = MASK])
 !*  is a scalar whose value is equal to that of the first element of MAXLOC (ARRAY [,
@@ -34,8 +26,8 @@
 !*  ..., sn ) of the result is equal to
 !*  MAXLOC (ARRAY (s1, s2, ..., sDIM-1, :, sDIM+1, ..., sn), DIM=1
 !*  [, MASK = MASK (s1, s2, ..., sDIM-1, :, sDIM+1, ..., sn) ] ).
-!* 
-!*  () 
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -44,10 +36,10 @@
   IMPLICIT NONE
 
   INTEGER     :: I
-  INTEGER(1)  :: II1(2,2,2,2,2,2,2,2,2,2)  = 0 
-  INTEGER(2)  :: II2(2,2,2,2,2,2,2,2,2,2)  = 0 
-  INTEGER(4)  :: II4(2,2,2,2,2,2,2,2,2,2)  = 0 
-  INTEGER(8)  :: II8(2,2,2,2,2,2,2,2,2,2)  = 0 
+  INTEGER(1)  :: II1(2,2,2,2,2,2,2,2,2,2)  = 0
+  INTEGER(2)  :: II2(2,2,2,2,2,2,2,2,2,2)  = 0
+  INTEGER(4)  :: II4(2,2,2,2,2,2,2,2,2,2)  = 0
+  INTEGER(8)  :: II8(2,2,2,2,2,2,2,2,2,2)  = 0
 
   REAL(4)     :: RR4(2,2,2,2,2,2,2,2,2,2)  = 0
   REAL(8)     :: RR8(2,2,2,2,2,2,2,2,2,2)  = 0
@@ -101,8 +93,8 @@
   IF (KIND(MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM, DIM=7, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )) .NE. 8 ) STOP 26
 
 
-  CC = ACHAR(0) 
-  CC(:,:,:,:,:,:,:,2,:,:) = ACHAR(1) 
+  CC = ACHAR(0)
+  CC(:,:,:,:,:,:,:,2,:,:) = ACHAR(1)
   IF (ANY( MAXLOC(ARRAY=CC, MASK=MM1, DIM=8, KIND=CC%KIND )  .NE. 0))   STOP 30
   IF (KIND(MAXLOC(ARRAY=CC, MASK=MM1, DIM=8, KIND=CC%KIND )) .NE. 1)    STOP 31
 
@@ -144,8 +136,8 @@
   IF (KIND(MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM1, DIM=7, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )) .NE. 8 ) STOP 66
 
 
-  CC = ACHAR(0) 
-  CC(:,:,:,:,:,:,:,2,:,:) = ACHAR(1) 
+  CC = ACHAR(0)
+  CC(:,:,:,:,:,:,:,2,:,:) = ACHAR(1)
   IF (ANY( MAXLOC(ARRAY=CC, MASK=MM1, DIM=8, KIND=CC%KIND )  .NE. 0))   STOP 70
   IF (KIND(MAXLOC(ARRAY=CC, MASK=MM1, DIM=8, KIND=CC%KIND )) .NE. 1)    STOP 71
 

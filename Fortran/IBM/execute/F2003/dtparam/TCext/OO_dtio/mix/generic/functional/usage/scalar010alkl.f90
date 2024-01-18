@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar010alkl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar010a by Robert Ma)
 !*  DATE                       : 2007-08-13 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Usage of GENERIC BINDING
 !*                                  - scalar derived type with multiple level of heirarchy, and use parent component in child dtio
@@ -159,7 +151,7 @@ program scalar010alkl
    allocate ( gen3(3,4,3) :: c1 ) ! tcx: (3,4,3)
 
    read ( 1, iostat = stat, iomsg = msg ) b1, c1
-  
+
    select type ( b1 )
       type is ( child(*,4) ) ! tcx: (*,4)
         if ( ( b1%c /= 'abc' ) .or. ( b1%i /= 101 ) ) error stop 101_4

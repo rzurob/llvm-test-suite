@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp Allocate2.f 
+! %POSTCMD: tcomp Allocate2.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Allocate2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Allocate2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 9, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  The allocate stmt 
-!*   
-!*  (ICE) 
+!*
+!*  The allocate stmt
+!*
+!*  (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -61,7 +55,7 @@
     FUNCTION ProcFun(Arg)
     PROCEDURE(INTEGER), POINTER :: ProcFun
     PROCEDURE(INTEGER)          :: Arg
-      ProcFun => Arg 
+      ProcFun => Arg
     END FUNCTION
 
     FUNCTION Fun(Arg)
@@ -72,12 +66,12 @@
 
   END MODULE
 
-  PROGRAM Allocate2 
+  PROGRAM Allocate2
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
   TYPE(DT(20,4)) :: V
 
- 
+
   ALLOCATE(ProcFun)
   ALLOCATE(ProcFun, SOURCE=Fun)
   ALLOCATE(ProcFun(Fun))
@@ -89,8 +83,8 @@
 
   DEALLOCATE(V%ProcPtr(Fun))
   DEALLOCATE(ProcFun)
- 
+
 
   END
 
- 
+

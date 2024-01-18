@@ -1,22 +1,10 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
-!*
-!* TEST CASE TITLE : Functional test for DTP dummy argument with VALUE
 !*
 !* TEST CASE NAME              : dtParamDummyValue14b.f
 !*
-!*  PROGRAMMER                 : Andy Sheung
 !*  DATE                       : July 10, 2008
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  DESCRIPTION:
 !*  The VALUE attribute specifies a type of argument association between a
@@ -27,9 +15,9 @@
 !*  affect the actual argument.
 !*
 !*  CASE:
-!*  Having a pointer component with DTP in a DT defined in a module, with 
-!*  the pointer component allocated in the main, pass the DT as a dummy 
-!*  argument of an external subroutine, and allocate the pointer component 
+!*  Having a pointer component with DTP in a DT defined in a module, with
+!*  the pointer component allocated in the main, pass the DT as a dummy
+!*  argument of an external subroutine, and allocate the pointer component
 !*  in the subroutine
 !*
 !* ===================================================================

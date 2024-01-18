@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgMinloc6
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : MINLOC 
+!*  SECONDARY FUNCTIONS TESTED : MINLOC
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,6 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Value.
 !*  Case (i): The result of MINLOC (ARRAY) is a rank-one array whose element values are
 !*  the values of the subscripts of an element of ARRAY whose value equals the
@@ -34,9 +26,9 @@
 !*  in the range 1 to ei, where ei is the extent of the ith dimension of ARRAY. If
 !*  more than one element has the minimum value, the element whose subscripts are
 !*  returned is the first such element, taken in array element order. If ARRAY has
-!*  size zero, all elements of the result are zero. 
-!*   
-!*  () 
+!*  size zero, all elements of the result are zero.
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,10 +37,10 @@
   IMPLICIT NONE
 
   INTEGER     :: I
-  INTEGER(1)  :: II1(0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1)  = 0 
-  INTEGER(2)  :: II2(0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1)  = 0 
-  INTEGER(4)  :: II4(0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1)  = 0 
-  INTEGER(8)  :: II8(0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1)  = 0 
+  INTEGER(1)  :: II1(0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1)  = 0
+  INTEGER(2)  :: II2(0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1)  = 0
+  INTEGER(4)  :: II4(0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1)  = 0
+  INTEGER(8)  :: II8(0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1)  = 0
 
   REAL(4)     :: RR4(0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1)  = 0
   REAL(8)     :: RR8(0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1,0:1)  = 0
@@ -67,7 +59,7 @@
 
   II1 = 1
   II1(0,1,0,1,0,1,0,1,0,1) = 0
-  IF (ANY( MINLOC(ARRAY=II1, KIND=II1%KIND )  .NE. (/1,2,1,2,1,2,1,2,1,2/))) STOP 8 
+  IF (ANY( MINLOC(ARRAY=II1, KIND=II1%KIND )  .NE. (/1,2,1,2,1,2,1,2,1,2/))) STOP 8
   IF (KIND(MINLOC(ARRAY=II1, KIND=II1%KIND )) .NE. 1)                        STOP 9
 
   II1 = 1
@@ -116,8 +108,8 @@
   IF (ANY( MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:) )                                      .NE. (/2,1,2,1,2,1,2,1,2,1/))) STOP 27
   IF (KIND(MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:) ))                                     .NE. 4)                        STOP 28
 
-  CC = ACHAR(1) 
-  CC(0,1,0,1,0,1,0,1,0,1) = ACHAR(0) 
+  CC = ACHAR(1)
+  CC(0,1,0,1,0,1,0,1,0,1) = ACHAR(0)
   IF (ANY( MINLOC(ARRAY=CC, KIND=CC%KIND )  .NE. (/1,2,1,2,1,2,1,2,1,2/)))   STOP 30
   IF (KIND(MINLOC(ARRAY=CC, KIND=CC%KIND )) .NE. 1)                          STOP 31
   IF (ANY( MINLOC(ARRAY=CC )                .NE. (/1,2,1,2,1,2,1,2,1,2/)))   STOP 32
@@ -170,8 +162,8 @@
   IF (KIND(MINLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,1:0,:) ))                                     .NE. 4)                        STOP 58
 
 
-  CC = ACHAR(1) 
-  CC(0,1,0,1,0,1,0,1,0,1) = ACHAR(0) 
+  CC = ACHAR(1)
+  CC(0,1,0,1,0,1,0,1,0,1) = ACHAR(0)
   IF (ANY( MINLOC(ARRAY=CC(:,:,:,:,:,:,:,:,:,1:0), KIND=CC%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/)))   STOP 60
   IF (KIND(MINLOC(ARRAY=CC(:,:,:,:,:,:,:,:,:,1:0), KIND=CC%KIND )) .NE. 1)                          STOP 61
   IF (ANY( MINLOC(ARRAY=CC(:,:,:,:,1:0,:,:,:,:,:) )                .NE. (/0,0,0,0,0,0,0,0,0,0/)))   STOP 62

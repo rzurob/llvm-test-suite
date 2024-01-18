@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxclpu14 .////////, AAAAAAA, ,"
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpuf14.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,44 +34,43 @@
 !*
 !*  DESCRIPTION                : Declare actual arguments mixed with other data and initialize
 !*                             : them within BLOCK DATA
-!*                             : Invoke command line intrinsic routines through a call chain   
-!*                             : from internal to external subs 
-!*                             :   
-!*  
+!*                             : Invoke command line intrinsic routines through a call chain
+!*                             : from internal to external subs
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD
 
-        character(513)   :: NAME 
-        character(513)   :: NAME1 
-        logical          :: TRIM_NAME 
+        character(513)   :: NAME
+        character(513)   :: NAME1
+        logical          :: TRIM_NAME
         character(2049)  :: CmdLine
-        character(2049)  :: CmdLine1  
+        character(2049)  :: CmdLine1
         integer          :: CmdCount
 
         COMMON /sargs/CmdLine,CmdLine1, NAME, NAME1, TRIM_NAME, CmdCount
 
         character(2049)  :: COMMAND
         character(2049)  :: COMMAND1
-        integer          :: LENGTH     
-        integer          :: STATUS  
+        integer          :: LENGTH
+        integer          :: STATUS
         integer          :: NUMBER
-        character(2047)  :: VALUE1  
-        character(2047)  :: VALUE 
-        integer          :: ARGCOUNT 
+        character(2047)  :: VALUE1
+        character(2047)  :: VALUE
+        integer          :: ARGCOUNT
 
         COMMON /cargs/COMMAND, COMMAND1, LENGTH, STATUS, NUMBER, VALUE1, VALUE, ARGCOUNT
 
 
-      END MODULE 
+      END MODULE
 
 
-      BLOCK DATA 
-        character(513)   :: NAME 
-        character(513)   :: NAME1 
-        logical          :: TRIM_NAME 
+      BLOCK DATA
+        character(513)   :: NAME
+        character(513)   :: NAME1
+        logical          :: TRIM_NAME
         character(2049)  :: CmdLine
-        character(2049)  :: CmdLine1  
+        character(2049)  :: CmdLine1
         integer          :: CmdCount
 
         COMMON /sargs/CmdLine,CmdLine1, NAME, NAME1, TRIM_NAME, CmdCount
@@ -91,12 +84,12 @@
 
         character(2049)  :: COMMAND
         character(2049)  :: COMMAND1
-        integer          :: LENGTH     
-        integer          :: STATUS  
+        integer          :: LENGTH
+        integer          :: STATUS
         integer          :: NUMBER
-        character(2047)  :: VALUE1  
-        character(2047)  :: VALUE 
-        integer          :: ARGCOUNT 
+        character(2047)  :: VALUE1
+        character(2047)  :: VALUE
+        integer          :: ARGCOUNT
 
         COMMON /cargs/COMMAND, COMMAND1, LENGTH, STATUS, NUMBER, VALUE1, VALUE, ARGCOUNT
 
@@ -121,7 +114,7 @@
       IMPLICIT NONE
 
 
-      INTERFACE 
+      INTERFACE
 
         SUBROUTINE S_GET_CMD
         END SUBROUTINE
@@ -138,11 +131,11 @@
 
       CONTAINS
 
-      SUBROUTINE INT_SUB 
+      SUBROUTINE INT_SUB
 
         IF (COMMAND_ARGUMENT_COUNT() .ne. CmdCount ) error stop 63
 
-  
+
         CALL S_GET_CMD
 
 
@@ -167,14 +160,14 @@
       NAME1    = '22222222222222222222222222222'
       CmdLine1 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
       COMMAND1 = 'yyyyyyyyyyyyyyyyyyyyyy'
-      VALUE1   = 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv' 
+      VALUE1   = 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv'
 
 
       call GET_COMMAND(COMMAND, LENGTH, STATUS)
       if ( (TRIM(COMMAND) .ne. TRIM(CmdLine))  .or. &
            (LENGTH .ne. LEN(TRIM(CmdLine)))    .or. &
            (STATUS .ne. 0) )                        &
-      then 
+      then
          error stop 64
       endif
 
@@ -192,11 +185,11 @@
       NAME1    = '22222222222222222222222222222'
       CmdLine1 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
       COMMAND1 = 'yyyyyyyyyyyyyyyyyyyyyy'
-      VALUE1   = 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv' 
- 
+      VALUE1   = 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv'
+
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -213,7 +206,7 @@
 
 
 
-      SUBROUTINE S_GET_ENV_VAR() 
+      SUBROUTINE S_GET_ENV_VAR()
 
       USE MOD
 
@@ -235,7 +228,7 @@
 
 
 
- 
+
       INCLUDE 'cmdline.include'
 
 

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  BranchOut1.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  BranchOut1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : BranchOut1
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,22 +30,22 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*  Branch out of an associate construct and the target is still in another 
-!*  associate construct 
-!*  (ICE: signal 11 received) 
+!*  Branch out of an associate construct and the target is still in another
+!*  associate construct
+!*  (ICE: signal 11 received)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM BranchOut 
+  PROGRAM BranchOut
   IMPLICIT NONE
 
   ASSOCIATE (As0  => 1 )
     ASSOCIATE (As1  => As0 )
       GOTO 10
     END ASSOCIATE
- 
-    10 PRINT*, "OK!" 
+
+    10 PRINT*, "OK!"
   END ASSOCIATE
 
 

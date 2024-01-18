@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitComp4_1 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitComp4_1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Default initialization for component 
+!*  SECONDARY FUNCTIONS TESTED : Default initialization for component
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  Entities with the save in module/main 
-!*  
+!*  Entities with the save in module/main
+!*
 !*  -- Dup of dtParamInitComp9.f to avoid ac imp do issue
-!*  (similar to 324069) 
+!*  (similar to 324069)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -56,17 +49,17 @@
       LOGICAL(K)   :: LL(L)=.TRUE._8
     END TYPE
 
-    TYPE(DT2(K=4, L=1)) :: T0 
+    TYPE(DT2(K=4, L=1)) :: T0
     SAVE                :: T0
 
   END MODULE
 
 
-  PROGRAM dtParamInitComp4_1 
+  PROGRAM dtParamInitComp4_1
   USE M
 
 
-  TYPE(DT2(L=1,K0=8,L0=-1))  :: T 
+  TYPE(DT2(L=1,K0=8,L0=-1))  :: T
 
 
   IF ( T%K0        .NE. 8 )                  STOP 11

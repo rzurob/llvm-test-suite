@@ -1,19 +1,14 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue06.f
-!*  TEST CASE TITLE : F2008: VALUE attr allowed for dummy args of PURE proc
-!*  PROGRAMMER      : Gaby Baghdadi
 !*  DATE            : 2010-12-01
-!*  ORIGIN          : XL Fortran Compiler Development, IBM Torolab
 !*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
-!*  - dummy data objects with value attribute before and after a procedure 
+!*  - dummy data objects with value attribute before and after a procedure
 !*    dummy argument
-!*  - the dummy procedure is also a pure function that takes a dummy argument 
+!*  - the dummy procedure is also a pure function that takes a dummy argument
 !*    with value attribute, also modifies its arg
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890123456789

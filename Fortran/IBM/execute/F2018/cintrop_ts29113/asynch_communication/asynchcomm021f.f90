@@ -1,21 +1,18 @@
 
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             :/cintrop_ts29113/asynch_communication/asynchcomm021f.f
-!* FEATURE NAME                : C_Interop_Asynch_Communication 
-!*  PROGRAMMER                 : Tapti Vaid
+!* FEATURE NAME                : C_Interop_Asynch_Communication
 !*  DATE                       : 2013-10-07
 !*
 !*  DESCRIPTION
 !*
 !* Checks the functionalilty of C_interop ASYNCHRONOUS Communication under USE association with the following scenario:
-!* Defined in: module 
+!* Defined in: module
 !* Made asynchronous in: external subroutine
 !* Used for asynch communication in: external subroutine
-!* 
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 module mymod
@@ -35,7 +32,7 @@ integer :: nt, rank, len, mpierror, rc, i
 integer :: status(MPI_STATUS_SIZE)
 integer, parameter :: TAG_SEND_ARR = 10, TAG_RES_READY = 11
 
-integer :: reqs(2) 
+integer :: reqs(2)
 ASYNCHRONOUS :: b0
 real :: a0,  res1=0, result1=0
 
@@ -60,8 +57,8 @@ if (rank .eq. 0) then
 b0 = 50
 a0 = 100
 
-	block 
-	
+	block
+
 	call MPI_ISEND(b0, 1 , MPI_REAL, 1, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(1), mpierror)
 	! While waiting for the data to be sent, do some calculations:
 	result1 = sqrt(a0)
@@ -69,7 +66,7 @@ a0 = 100
 	b0 = a0*2 !Now that a0 has been sent we can alter its value
 
 	end block
-	
+
 !get the result from task 1
 call MPI_RECV(b0, 1, MPI_REAL, 1, TAG_RES_READY, MPI_COMM_WORLD, status, mpierror)
 if (.not. precision_r4(result1 , 10.00000000)) error STOP 1
@@ -99,7 +96,7 @@ interface asynch_comm
 SUBROUTINE init()
 
 end subroutine
-end interface 
+end interface
 
 call init()
 end

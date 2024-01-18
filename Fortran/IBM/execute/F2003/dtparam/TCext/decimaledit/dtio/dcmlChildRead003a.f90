@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql -qdeferredlp /tstdev/F2003/decimaledit/dtio/dcmlChildRead003a.f
 ! opt variations: -qnol -qnodeferredlp
 
-
 module m
     type base(n1,k1,k2)    ! (20,4,8)
         integer, kind            :: k1,k2
@@ -65,7 +64,6 @@ use m
 
     write (c, '(dc, i4,10(";",g15.7), i4,12(";(",g25.16, ";", g25.16,")" ))') &
             10, (i*1.0, i=1, 10), 12, (cmplx(i*1.0, i*2.0, 8), i=-12,-1)
-
 
     !! now read data back to b1
     allocate (base(20,4,8) :: b1)

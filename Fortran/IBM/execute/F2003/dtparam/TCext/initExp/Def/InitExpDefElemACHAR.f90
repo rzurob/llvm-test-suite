@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemACHAR.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemACHAR.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,9 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
+!*
 !*  -ACHAR
 !*  ()
 !*
@@ -39,7 +32,7 @@
 
 
 
-  PROGRAM InitExpDefElemACHAR 
+  PROGRAM InitExpDefElemACHAR
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -53,15 +46,15 @@
     CHARACTER(LEN(ACHAR(3)//ACHAR(3)//ACHAR(3)))  :: C1(3)=(/(ACHAR(I), I=1,3)/)
   END TYPE
 
-  TYPE(DT(4,20))  :: T 
-  TYPE(DT1(4,20)) :: T1  
+  TYPE(DT(4,20))  :: T
+  TYPE(DT1(4,20)) :: T1
 
   CHARACTER(LEN=SIZE((/(ACHAR(I), I=1,3)/))) :: &
        C(SIZE((/(ACHAR(3), I=1,3)/)):SIZE((/(ACHAR(3), I=1,5)/))) =(/(ACHAR(I), I=1,3)/)
- 
+
   TYPE(DT1(4,20)), PARAMETER :: Const=DT1(4,20)(DT=DT(4,20)(),C1=ACHAR(0)//ACHAR(0)//ACHAR(0))
 
- 
+
   IF (T%C       .NE. ACHAR(3)//ACHAR(3)//ACHAR(3)   )          STOP 11
   IF (LEN(T%C)  .NE. 3   )                                     STOP 11
 
@@ -81,4 +74,4 @@
 
   END
 
- 
+

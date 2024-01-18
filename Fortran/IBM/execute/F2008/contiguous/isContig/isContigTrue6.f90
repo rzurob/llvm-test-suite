@@ -1,24 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : isContigTrue6.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS intrinsic
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - 
-!*                      
+!*  DESCRIPTION                : -
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -38,7 +27,7 @@ PROGRAM isContigTrue6
       REAL(16), POINTER              :: Mptr(:,:,:,:,:,:,:,:,:,:)
       REAL(16), ALLOCATABLE          :: Mall(:,:,:,:,:,:,:,:,:,:)
 
-      ALLOCATE( all(10) ) 
+      ALLOCATE( all(10) )
       all = -1.
       IF ( .NOT. IS_CONTIGUOUS(all) )  ERROR STOP 10
 
@@ -56,8 +45,8 @@ PROGRAM isContigTrue6
 
 !*************rank > 1
 
-      ALLOCATE( Mall(3,3,3,3,3,3,3,3,3,3) ) 
-      Mall = -10.d0 
+      ALLOCATE( Mall(3,3,3,3,3,3,3,3,3,3) )
+      Mall = -10.d0
       IF ( .NOT. IS_CONTIGUOUS(Mall) )  ERROR STOP 20
 
       Mptr => Mfoo(Mall(:,:,:,:,:,:,:,:,:,1:3:1))
@@ -73,13 +62,13 @@ PROGRAM isContigTrue6
         REAL(16), TARGET, CONTIGUOUS  :: OBJ(:)
         REAL(16), POINTER, CONTIGUOUS :: foo(:)
 
-            foo => Obj    
+            foo => Obj
       END FUNCTION foo
 
       FUNCTION Mfoo(Obj)
         REAL(16), TARGET, CONTIGUOUS  :: OBJ(:,:,:,:,:,:,:,:,:,:)
         REAL(16), POINTER, CONTIGUOUS :: Mfoo(:,:,:,:,:,:,:,:,:,:)
 
-            Mfoo => Obj    
+            Mfoo => Obj
       END FUNCTION Mfoo
 END PROGRAM isContigTrue6

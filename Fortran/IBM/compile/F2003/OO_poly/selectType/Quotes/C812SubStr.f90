@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C812SubStr.f 
+! %POSTCMD: tcomp C812SubStr.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C812SubStr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 3, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C812 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C812
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -51,18 +45,18 @@
 
   SUBROUTINE Sub(Arg)
   CLASS(*), INTENT(IN) :: Arg
-  
+
   SELECT TYPE ( As => Arg )
     CLASS DEFAULT
       SELECT TYPE ( As => As )
         CLASS DEFAULT
-        As = "9876543210" 
-      END SELECT 
+        As = "9876543210"
+      END SELECT
     TYPE IS (REAL(8))
       STOP 20
     TYPE IS (CHARACTER(*))
       STOP 30
-  END SELECT 
+  END SELECT
   STOP 40
 
   END SUBROUTINE

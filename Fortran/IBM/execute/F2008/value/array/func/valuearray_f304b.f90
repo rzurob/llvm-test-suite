@@ -1,18 +1,15 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f304b.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
 !*
 !*  DESCRIPTION                : testing the extensions to the VALUE attribute
-!*                         		for passing an array of different types 
-!*								to external subroutines using an interface	
+!*                         		for passing an array of different types
+!*								to external subroutines using an interface
 !*									testing will check that
 !*								1. dummy argument is equal to the actual argument
 !*								2. actual argument doesn't change
@@ -29,27 +26,27 @@ interface
 		integer*4 :: arg(:)
 		value arg
 	end subroutine
-	
+
 	subroutine sub1_r(arg)
 		real :: arg(:)
 		value arg
 	end subroutine
-	
+
 	subroutine sub1_com(arg)
 		complex*8 :: arg(:)
 		value arg
-	end subroutine	
-	
+	end subroutine
+
 	subroutine sub1_char(arg)
 		character(10) :: arg(:)
 		value arg
 	end subroutine
-	
+
 	subroutine sub1_lg(arg)
 		logical :: arg(:)
 		value arg
-	end subroutine	
-	
+	end subroutine
+
 	subroutine sub1_dvt(arg)
 		import t1
 		type(t1) :: arg(:)
@@ -102,12 +99,12 @@ call sub1_lg(l1)
 if (any (l1 .NEQV. l1_r)) error stop 14
 
 call sub1_dvt(dvt1)
-do doCounter=1,SIZEOFA	  
+do doCounter=1,SIZEOFA
 	if (dvt1(doCounter)%i1 		.ne. 	dvt1_r(doCounter)%i1) 			error stop 1501
 	if (.not. precision_r4 (dvt1(doCounter)%r1,dvt1_r(doCounter)%r1)) 	error stop 1502
-	if (dvt1(doCounter)%l1 		.NEQV. 	dvt1_r(doCounter)%l1) 			error stop 1503	
+	if (dvt1(doCounter)%l1 		.NEQV. 	dvt1_r(doCounter)%l1) 			error stop 1503
 	if (.not. precision_x8 (dvt1(doCounter)%c1,dvt1_r(doCounter)%c1)) 	error stop 1504
 	if (dvt1(doCounter)%char1 	.ne. 	dvt1_r(doCounter)%char1) 		error stop 1505
-end do	
+end do
 
 end

@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  FinalAssign.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : FinalAssign
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 14, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,12 +34,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   The intrinsic assignment 
-!*    (Failed 18-301309) 
+!*   The intrinsic assignment
+!*    (Failed 18-301309)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   MODULE M
 
     INTEGER :: INDEX=0
@@ -64,7 +58,7 @@
       INTEGER(K1)               :: Id = 0
       CHARACTER(kind=K2,len=N2) :: C  = " "
       LOGICAL(K1)               :: L  = .FALSE.
- 
+
       CONTAINS
       PROCEDURE, PASS   :: GetId
       PROCEDURE, PASS   :: GetC
@@ -83,63 +77,63 @@
       Fin(Index) = 1
 !     PRINT *, "Base Finalization"
     END SUBROUTINE
- 
+
     SUBROUTINE Final(Obj)
     TYPE(DT(4,*,1,*)) :: Obj
       Index = Index + 1
       Fin(Index) = 2
 !     PRINT *, "DT Finalization"
     END SUBROUTINE
- 
+
     SUBROUTINE FinalArr(ObjArr)
     TYPE(DT(4,*,1,*)) :: ObjArr(:)
       Index = Index + 1
       Fin(Index) = 3
 !     PRINT *, "DT ARR Finalization"
     END SUBROUTINE
- 
+
     ELEMENTAL FUNCTION GetId(Arg)
-    IMPLICIT CLASS(DT(4,*,1,*))(A) 
+    IMPLICIT CLASS(DT(4,*,1,*))(A)
     INTENT(IN) :: Arg
     INTEGER    :: GetId
       GetId = Arg%Id
     END FUNCTION
 
     ELEMENTAL FUNCTION GetC(Arg)
-    IMPLICIT CLASS(DT(4,*,1,*))(A) 
+    IMPLICIT CLASS(DT(4,*,1,*))(A)
     INTENT(IN) :: Arg
     CHARACTER  :: GetC
       GetC = Arg%C
     END FUNCTION
 
     ELEMENTAL FUNCTION GetL(Arg)
-    IMPLICIT CLASS(DT(4,*,1,*))(A) 
+    IMPLICIT CLASS(DT(4,*,1,*))(A)
     INTENT(IN) :: Arg
     LOGICAL    :: GetL
       GetL = Arg%L
     END FUNCTION
 
   END MODULE
- 
+
   PROGRAM FinalAssign
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
-  TYPE(DT(4,20,1,3)), TARGET :: V =  DT(4,20,1,3)(ID=-1, C="!", L=.TRUE.) 
-   
-  Fin = -1 
+  TYPE(DT(4,20,1,3)), TARGET :: V =  DT(4,20,1,3)(ID=-1, C="!", L=.TRUE.)
+
+  Fin = -1
   Index = 0
 
-  ASSOCIATE ( As => V ) 
+  ASSOCIATE ( As => V )
 
   ! no finalization happen for a return of a pointer
     IF ( ANY(Fin .NE. -1 ) ) STOP 19
 
-    ASSOCIATE ( As => As ) 
+    ASSOCIATE ( As => As )
 
       As = DT(4,20,1,3)(ID=-2, C="2", L=.TRUE.)
-      !FINALIZATION Finished  for the left side 
-      IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) STOP 18 
+      !FINALIZATION Finished  for the left side
+      IF ( ANY(Fin .NE. (/2,1,2,1,-1,-1/) ) ) STOP 18
       Fin = -1
       Index = 1
 
@@ -151,16 +145,16 @@
 
       IF ( As%L       .NEQV. .TRUE. ) STOP 40
       IF ( As%GetL()  .NEQV. .TRUE. ) STOP 41
-    
+
     END ASSOCIATE
 
-    ! No FINALIZATION  
-    IF ( ANY(Fin .NE. -1 ) ) STOP 17 
+    ! No FINALIZATION
+    IF ( ANY(Fin .NE. -1 ) ) STOP 17
 
   END ASSOCIATE
 
-  ! No FINALIZATION  
-  IF ( ANY(Fin .NE. -1 ) ) STOP 16 
+  ! No FINALIZATION
+  IF ( ANY(Fin .NE. -1 ) ) STOP 16
 
-  END 
+  END
 

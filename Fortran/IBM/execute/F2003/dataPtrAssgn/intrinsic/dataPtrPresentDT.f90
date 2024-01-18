@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrPresentDT.f 
+!*  TEST CASE NAME             : dataPtrPresentDT.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -26,16 +20,16 @@
 
 module m
 
-    type A 
-        complex, allocatable :: x 
+    type A
+        complex, allocatable :: x
     end type
 
-    interface   
-        subroutine sub(p)       
-            import A    
-            type(A), optional, pointer :: p(:)  
-        end subroutine  
-    end interface 
+    interface
+        subroutine sub(p)
+            import A
+            type(A), optional, pointer :: p(:)
+        end subroutine
+    end interface
 
 end module
 
@@ -56,17 +50,17 @@ end module
         call sub(p)
 
         do i = 1, 5
-            write (*, '("(",f10.6,", ", f10.6, ")")') p(i)%x 
+            write (*, '("(",f10.6,", ", f10.6, ")")') p(i)%x
         enddo
 
     end program
 
-    subroutine sub(p)       
-      use m, only: A              
-      type(A), optional, pointer :: p(:)  
+    subroutine sub(p)
+      use m, only: A
+      type(A), optional, pointer :: p(:)
 
-      if ( present(p) ) then      
-        p = p   
-      endif       
+      if ( present(p) ) then
+        p = p
+      endif
 
     end subroutine

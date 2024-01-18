@@ -1,46 +1,39 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: dcomp dtybn011.f 
+! %POSTCMD: dcomp dtybn011.f
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtybn011.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : dtybn011.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : binding attributes 
+!*  DATE                       :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : binding attributes
 !*
 !*  SECONDARY FUNCTIONS TESTED : pass
 !*
-!*  DESCRIPTION                : the same binding attribute shall not 
+!*  DESCRIPTION                : the same binding attribute shall not
 !*                               appear more than once in a given
-!*                               binding-attr-list. 
-!*                            
-!*    
+!*                               binding-attr-list.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod1	      
+   module mod1
       type parent
          integer :: x
 	 contains
-      	 procedure, private, pass, non_overridable, pass, pass, non_overridable :: bind 
-      end type 
+      	 procedure, private, pass, non_overridable, pass, pass, non_overridable :: bind
+      end type
 
       type(parent) :: dt_p
 
@@ -53,11 +46,11 @@
       call dt_p%bind()
    end subroutine
 
-   end module     
+   end module
 
    use mod1
 
-   call test 
+   call test
 
    end
-   
+

@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Final Subroutine
@@ -130,8 +119,8 @@ program final001
    allocate ( b1 )
    deallocate ( b1 )       !<- finalize b1 (base('xxx'))
    c1 = child('abc',1001)  !<- finalize c1 (child('xxx',-999)) and child('abc',1001) and base('abc')
-   
+
    allocate ( c2(3) )
    deallocate ( c2 )       !<- finalize c2 ((/child('xxx',-999), child('xxx',-999), child('xxx',-999)/)) and 3 base('xxx')
-   
+
 end program

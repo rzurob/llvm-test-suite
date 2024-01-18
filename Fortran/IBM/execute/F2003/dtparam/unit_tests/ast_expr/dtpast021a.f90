@@ -12,33 +12,25 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dtpexpression021a
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : June 2nd, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :testing expressions with derived types
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
 type A(k,l)
   integer, kind :: k
   integer, len  :: l
-  
+
   character(len=l**(l-7),kind=k-4) :: b(k:l)
-     
+
 end type
 end module
 
@@ -53,4 +45,3 @@ if(kind(A1%b).ne.1) error stop 5
 if(len(A1%b).ne.81) error stop 6
 
 end
-  

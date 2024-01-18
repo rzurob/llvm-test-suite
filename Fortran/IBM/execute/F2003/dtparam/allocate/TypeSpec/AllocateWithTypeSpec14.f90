@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocateWithTypeSpec14
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : January 20, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : Deferred LEN parameter
@@ -25,17 +17,17 @@
 !* allocate-stmt is
 !*   ALLOCATE ( [ type-spec :: ] allocation-list [, alloc-opt-list ] )
 !*
-!*  Defect 359976                
-!* 
+!*  Defect 359976
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithTypeSpec14
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
         INTEGER, LEN  :: l1 = 1
 
-        CHARACTER(l1)  :: name  
+        CHARACTER(l1)  :: name
         INTEGER(k1) :: my_arr(l1)
       END TYPE Base
 
@@ -47,7 +39,7 @@ PROGRAM AllocateWithTypeSpec14
         CLASS(Base(k2,l2)), POINTER :: c_cmp => NULL()
       END TYPE Child
 
-!* test Base 
+!* test Base
 
       CALL Alloc_auto2base(1)
 
@@ -57,7 +49,7 @@ PROGRAM AllocateWithTypeSpec14
 
       CALL Alloc_auto2base(20)
 
-!* test Child 
+!* test Child
 
       CALL Alloc_auto2child(1)
 
@@ -91,11 +83,11 @@ PROGRAM AllocateWithTypeSpec14
 
       print*, Obj%name
       print*, Obj%my_arr
-      print*,  ASSOCIATED(Obj%b_cmp, tgt1) 
-      print*,  ASSOCIATED(Obj%c_cmp, tgt2) 
-      IF ( Obj%b_cmp%l1 .NE. 2*n ) STOP 20 
-      IF ( Obj%c_cmp%l1 .NE. 2*n ) STOP 21 
+      print*,  ASSOCIATED(Obj%b_cmp, tgt1)
+      print*,  ASSOCIATED(Obj%c_cmp, tgt2)
+      IF ( Obj%b_cmp%l1 .NE. 2*n ) STOP 20
+      IF ( Obj%c_cmp%l1 .NE. 2*n ) STOP 21
 
-      END SUBROUTINE Alloc_auto2child 
+      END SUBROUTINE Alloc_auto2child
 
 END PROGRAM AllocateWithTypeSpec14

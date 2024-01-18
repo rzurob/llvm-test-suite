@@ -1,45 +1,39 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fort.* 
-! %COMPOPTS: -qintsize=8 
-! %GROUP: fxstio206.f 
+! %PRECMD: rm -f fort.*
+! %COMPOPTS: -qintsize=8
+! %GROUP: fxstio206.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio206.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 22, 2003
 !*
-!*  Primary Function Tested    : options with stream I/O 
+!*  Primary Function Tested    : options with stream I/O
 !*
 !*  Description                : Test SIZE=specifier in READ, WRITE &
-!*                               INQUIRE statments with -qintsize=8 
+!*                               INQUIRE statments with -qintsize=8
 !*                               stream I/O
 !*
 !=======================================================================
 
 !* Declare Variables.
-  
+
   integer*4 ios /0/
 ! integer*4 position /0/, position1 /0/
   integer*4 filesize(3) /3*0/, filesize1(3) /3*0/
-  integer*4 iol /0/, number(2) /2*0/ 
+  integer*4 iol /0/, number(2) /2*0/
   integer*4 iol1 /0/, number1(2) /2*0/
 
   integer iarr1(10) /10*0/, iarr2(10) /10*0/    !default intsize is 8
-  integer iarr3(10) /10*0/                      !default intsize is 2 
-  integer*4 iarr11(10) /10*0/, iarr12(10) /10*0/    
+  integer iarr3(10) /10*0/                      !default intsize is 2
+  integer*4 iarr11(10) /10*0/, iarr12(10) /10*0/
   integer*4 iarr13(10) /10*0/
 
   logical   log1 /.TRUE./ , log2 /.TRUE./       !default intsize is 8
@@ -57,11 +51,11 @@
 
    if ( filesize(1)  .ne. 0 )     error stop 11_4
    if ( filesize1(1) .ne. 0 )     error stop 12_4
- 
-   inquire(iolength=iol) iarr1 
+
+   inquire(iolength=iol) iarr1
    print *, iol
 
-   write(1, iostat=ios, err=200) iarr2 
+   write(1, iostat=ios, err=200) iarr2
    print *, ios
    inquire(1, size=filesize(2), iostat=ios, err=300)
    rewind(1, iostat=ios, err=500)

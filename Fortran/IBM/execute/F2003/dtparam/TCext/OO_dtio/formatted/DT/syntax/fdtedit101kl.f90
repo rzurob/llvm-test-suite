@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fdtedit101kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from fdtedit101 by Robert Ma)
 !*  DATE                       : 2007-06-08 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        With no char-literal-constant and no v_list present (compile time format)
@@ -75,7 +67,7 @@ use m
    allocate ( b2, source = base(4)(200) )
 
 10 format (DT)
-   
+
    write ( 1, 10, iostat = stat, iomsg = msg )   b1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
 
@@ -119,7 +111,7 @@ use m, only: base
 
    if ( iotype /= "DT" ) error stop 6_4
    if ( ( size(v_list, 1) /= 0 ) .or. ( len(iotype) /= 2 ) ) error stop 7_4
-   
+
    write ( unit, "(I4)", iostat = iostat ) dtv%i
 
    iomsg = 'dtiowrite'

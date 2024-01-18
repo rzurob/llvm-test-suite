@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxclms10 01234567890-01234567890=0123456789"
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,37 +12,30 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclms10.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Through USE statement to rename module procedures' name 
-!*                             : the same as these command line intrinsics, and call them 
+!*  DESCRIPTION                : Through USE statement to rename module procedures' name
+!*                             : the same as these command line intrinsics, and call them
 !*                             : inside module routines
 !*                             :
-!*                             : 
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
@@ -69,7 +62,7 @@
 
       MOD_COMMAND_ARGUMENT_COUNT  = COMMAND_ARGUMENT_COUNT()
 
-      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) & 
+      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) &
       then
         error stop 63
       endif
@@ -94,7 +87,7 @@
 
 
         DO i  = 0, CmdCount
-       
+
           NUMBER = i
           call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
           call MyGetArg(CmdLine, NUMBER, Argument)
@@ -130,10 +123,10 @@
 
       PROGRAM fxclms10
 
-      USE MOD,  COMMAND_ARGUMENT_COUNT   => MOD_COMMAND_ARGUMENT_COUNT  
-      USE MOD,  GET_COMMAND              => MOD_GET_COMMAND  
-      USE MOD,  GET_COMMAND_ARGUMENT     => MOD_GET_COMMAND_ARGUMENT  
-      USE MOD,  GET_ENVIRONMENT_VARIABLE => MOD_GET_ENVIRONMENT_VARIABLE  
+      USE MOD,  COMMAND_ARGUMENT_COUNT   => MOD_COMMAND_ARGUMENT_COUNT
+      USE MOD,  GET_COMMAND              => MOD_GET_COMMAND
+      USE MOD,  GET_COMMAND_ARGUMENT     => MOD_GET_COMMAND_ARGUMENT
+      USE MOD,  GET_ENVIRONMENT_VARIABLE => MOD_GET_ENVIRONMENT_VARIABLE
 
 
       IMPLICIT NONE
@@ -146,11 +139,11 @@
       CALL GET_COMMAND_ARGUMENT
 
       CALL GET_ENVIRONMENT_VARIABLE
- 
 
-      END 
- 
- 
+
+      END
+
+
 
 
 

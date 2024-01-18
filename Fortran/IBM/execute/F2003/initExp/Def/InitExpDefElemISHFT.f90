@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemISHFT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemISHFT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 10, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  ISHFT 
+!*
+!*  -  ISHFT
 !*  (319057)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -40,13 +33,13 @@
   INTEGER :: I, J
 
   INTEGER(KIND(ISHFT((/(1_1, I=0, 127)/), 2_8))),    PARAMETER ::    &
-      I11(128)=ISHFT((/(1_1, I=0, 127)/), 2_8)  
+      I11(128)=ISHFT((/(1_1, I=0, 127)/), 2_8)
   INTEGER(KIND(ISHFT((/(-128_1, I=0, 127)/), -2))),  PARAMETER ::    &
-      I12(128)=ISHFT((/(-128_1, I=0, 127)/), -2)  
+      I12(128)=ISHFT((/(-128_1, I=0, 127)/), -2)
   INTEGER(KIND(ISHFT((/(-128_1, I=0, 127)/), 0_8))), PARAMETER ::    &
-      I13(128)=ISHFT((/(-128_1, I=0, 127)/), 0_8)  
+      I13(128)=ISHFT((/(-128_1, I=0, 127)/), 0_8)
   INTEGER(KIND(ISHFT((/(1_1, I=0, 127)/), (/(1,-1, I=1,128,2)/)))), PARAMETER ::    &
-      I14(128)=ISHFT(I=(/(1_1, I=0, 127)/), SHIFT=(/(1,-1, I=1,128,2)/))  
+      I14(128)=ISHFT(I=(/(1_1, I=0, 127)/), SHIFT=(/(1,-1, I=1,128,2)/))
   INTEGER(1),  PARAMETER :: I1(128)=(/(2,0, I=1,128,2)/)
 
 
@@ -55,7 +48,7 @@
   END TYPE
 
   TYPE :: DT
-    TYPE(DT0) :: Arr(4) 
+    TYPE(DT0) :: Arr(4)
   END TYPE
 
   TYPE(DT), PARAMETER :: T=DT((/DT0(ISHFT((/(1_1, I=0, 127)/), 2_8)),    &

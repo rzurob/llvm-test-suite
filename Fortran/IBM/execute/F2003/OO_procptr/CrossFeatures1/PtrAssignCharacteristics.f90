@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignCharacteristics.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignCharacteristics.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignCharacteristics.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignCharacteristics.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
-!*  proc-pointer-object is not pure while proc-target may be pure 
-!*  () 
+!*
+!*  proc-pointer-object is not pure while proc-target may be pure
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,7 +44,7 @@
     ExtFun = Arg
   END FUNCTION
 
-  PROGRAM PtrAssignCharacteristics 
+  PROGRAM PtrAssignCharacteristics
   IMPLICIT NONE
 
   INTERFACE
@@ -67,9 +61,9 @@
     END FUNCTION
   END INTERFACE
 
-  PROCEDURE(ExtF2)          :: ExtFun 
+  PROCEDURE(ExtF2)          :: ExtFun
   PROCEDURE(ExtF1), POINTER :: ProcPtr
- 
+
   INTEGER :: i
 
   ProcPtr => ExtFun
@@ -80,5 +74,5 @@
 
   IF (  ProcPtr(12345678_8) .NE. 12345678_8 )    STOP 31
 
-  END 
+  END
 

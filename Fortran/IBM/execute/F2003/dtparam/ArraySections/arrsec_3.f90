@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArraySections/arrsec_3.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jul. 09, 2008
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 353925
 !*
@@ -14,14 +10,14 @@
 !*
 !*  6.2.2.3 Array sections
 !*  14-3:
-!*  In an array-section with no section-subscript-list, the rank and shape 
-!*  of the array is the rank and shape of the part-ref with nonzero rank; 
-!*  otherwise (a) the rank of the array section is the number of subscript 
-!*  triplets and vector subscripts in the section subscript list. 
-!*  (b) The shape is the rank-one array whose ith element is the number of 
-!*  integer values in the sequence indicated by the ith subscript triplet or 
-!*  vector subscript. If any of these sequences is empty, the array section has 
-!*  size zero. The subscript order of the elements of an array section is that 
+!*  In an array-section with no section-subscript-list, the rank and shape
+!*  of the array is the rank and shape of the part-ref with nonzero rank;
+!*  otherwise (a) the rank of the array section is the number of subscript
+!*  triplets and vector subscripts in the section subscript list.
+!*  (b) The shape is the rank-one array whose ith element is the number of
+!*  integer values in the sequence indicated by the ith subscript triplet or
+!*  vector subscript. If any of these sequences is empty, the array section has
+!*  size zero. The subscript order of the elements of an array section is that
 !*  of the array data object that the array section represents.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

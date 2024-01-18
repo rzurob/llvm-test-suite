@@ -2,6 +2,6 @@
 !function
 
   block
-    add(a) = a 
+    add(a) = a
   end block
-end 
+end

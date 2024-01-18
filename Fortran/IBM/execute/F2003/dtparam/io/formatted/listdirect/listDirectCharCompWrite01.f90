@@ -1,33 +1,25 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectCharCompWrite01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectCharCompWrite01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 7 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 7 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Derived type has ultimate character components
-!* 2. Test write statement with different value of delimiters: APOSTROPHE, QUOTE,NONE 
+!* 2. Test write statement with different value of delimiters: APOSTROPHE, QUOTE,NONE
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m1
   type inner(l2)
      integer,len :: l2  ! l2=6
      character(l2) :: c2(l2)
-     character(l2+1) :: c3 
+     character(l2+1) :: c3
   end type
 end module
 
@@ -36,8 +28,8 @@ use m1
    type outer(l1)
       integer(8),len :: l1 ! l1=5
       character(l1+1) :: c1(l1)
-      type(inner(l1+1)) :: comp 
-   end type 
+      type(inner(l1+1)) :: comp
+   end type
 end module
 
 subroutine writeDT1(dtArg)
@@ -55,7 +47,7 @@ subroutine writeDT1(dtArg)
      print *,"iostate=",ios
      print *,"iomsg=",msg
      stop 11
-  end if 
+  end if
 
   ! page 242: character sequences produced when the delimiter mode has a value of QUOTE are delimited by quotes, are preceded and followed by a value separater, and have each internal quote represented on the external medium by TWO contiguous quotes.
 
@@ -125,9 +117,9 @@ program listDirectCharCompWrite01
   use m2
   implicit none
 
-  interface 
+  interface
     subroutine writeDT1(dtArg)
-       import 
+       import
        type(outer(*)),intent(in) :: dtArg(:)
     end subroutine
 
@@ -136,7 +128,7 @@ program listDirectCharCompWrite01
        type(outer(*)),intent(in) :: dtArg(:)
     end subroutine
 
-  end interface 
+  end interface
 
   integer,parameter :: N=1
   integer :: i,ios
@@ -155,6 +147,6 @@ program listDirectCharCompWrite01
 
   call writeDT1(ptr1)
 
-  call writeDT2(tar1) 
+  call writeDT2(tar1)
 
 end program

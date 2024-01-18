@@ -1,19 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : implicitIntrinsic01 - ASYNCHRONOUS
 !*                               Attribute in Scoping Unit
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : January 17, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute Conferred Implicitly
 !*  SECONDARY FUNCTIONS TESTED : Intrinsic Type
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 :

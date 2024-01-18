@@ -1,20 +1,15 @@
 
-
-
 !*******************************************************************************
-!*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
 !*  ============================================================================
 !*
 !*  TEST CASE NAME             :/cintrop_ts29113/asynch_communication/asynchcomm013f.f
-!* FEATURE NAME                : C_Interop_Asynch_Communication 
-!*  PROGRAMMER                 : Tapti Vaid
+!* FEATURE NAME                : C_Interop_Asynch_Communication
 !*  DATE                       : 2013-10-07
 !*
 !*  DESCRIPTION
 !*
 !* Checks the functionalilty of C_interop ASYNCHRONOUS Communication with a COMPLEX data type.
-!* 
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -39,7 +34,7 @@ integer :: nt, rank, len, mpierror, rc, i
 integer :: status(MPI_STATUS_SIZE)
 integer, parameter :: TAG_SEND_ARR = 10, TAG_RES_READY = 11
 
-integer :: reqs(2) 
+integer :: reqs(2)
 !!real :: !! other varaibles that won't be used asynchronously but will be used somewhere else
 
 ! initialization
@@ -61,16 +56,16 @@ integer :: reqs(2)
 if (rank .eq. 0) then
 
 
-b0 =(2.0,3.0) 
-a0 =(3.0,2.0) 
+b0 =(2.0,3.0)
+a0 =(3.0,2.0)
 
-block 
+block
 ASYNCHRONOUS :: b0
 
  call MPI_ISEND(b0, 1 , MPI_COMPLEX , 1, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(1), mpierror)
  result1 =  a0
  call MPI_WAIT(reqs(1), status, mpierror)
-		   
+
 end block
 
 
@@ -86,7 +81,7 @@ block
 	call MPI_IRECV(b1, 1 , MPI_COMPLEX, 0, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(2), mpierror)
 	call MPI_WAIT(reqs(2), status, mpierror)
 
-	b1=(5.0,5.0) 
+	b1=(5.0,5.0)
 	res1 = b1
    	call MPI_SEND(res1, 1, MPI_COMPLEX, 0, TAG_RES_READY, MPI_COMM_WORLD, mpierror)
 

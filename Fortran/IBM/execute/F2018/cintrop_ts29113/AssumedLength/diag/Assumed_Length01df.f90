@@ -1,24 +1,15 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE     : C Interop: Assumed-length Character arguments
-!*
-!*
-!*
-!*  PROGRAMMER          : Umme Hunny
 !*  DATE                : June, 1, 2014
-!*  ORIGIN              : AIX Compiler Development, Toronto Lab
 !*  FEATURE             : RTC Master Story:
 !*                        C Interop: Assumed-length Character arguments
 !*                        (master story) (72333)
 !*
-!*  FEATURE             : C Interop: Assumed-length Character arguments 
+!*  FEATURE             : C Interop: Assumed-length Character arguments
 !* ===================================================================
-!23456789012345678901234567890123456789012345678901234567890123456789012     
-      
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
       program assumed_lenght001
 
         interface
@@ -27,15 +18,15 @@
             character(*), intent(IN) :: c_arg2(5)
         end subroutine
         end interface
-      
+
         character(5) :: a1(5)
-        a1 = 'F2C__'         
+        a1 = 'F2C__'
         call check_f_to_f_in(a1)
       end program
 
       subroutine check_f_to_f_in(c_arg2) bind(c)
         use, intrinsic :: iso_c_binding
-        character(*), intent(IN):: c_arg2(5)   
+        character(*), intent(IN):: c_arg2(5)
         print *, c_arg2
         c_arg2 = "MODIFY"
         print *, c_arg2
@@ -48,7 +39,7 @@
 
 
 
- 
+
 
 
 

@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Misc.
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf95
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Specific type bound procedure with PASS (arg-name) and PRIVATE
 !*  KEYWORD(S)                 :
@@ -39,11 +28,11 @@ module m
 
    subroutine b ( a )
       class(base), intent(in) :: a
-      
+
       print *, a%i
-      
+
    end subroutine
-   
+
    subroutine foo (a)
       class(base), intent(in) :: a
       call a%b

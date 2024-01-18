@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: charvalueattrf068.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,31 +12,24 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : charvalueattrf068
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Feb. 01, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the VALUE
-!*                               attribute when used with characters of 
-!*                               length other than 1. ( Feature 298120 )   
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*                               attribute when used with characters of
+!*                               length other than 1. ( Feature 298120 )
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Test when argument is a concatination of
 !*                               two or more other character strings.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 program main
-      
+
 
       character(3) :: a
       character(1) :: b
@@ -48,11 +41,11 @@ program main
       d = 'Ef'
 
       call s1(a//b)
-      
+
       if( a .ne. 'AbC' .or. b .ne. 'd' ) error stop 2
-      
+
       call s1(c//'C'//b)
-      
+
       if( c .ne. 'Ab' .or. b .ne. 'd' ) error stop 3
 
       call s1(a//b//c)
@@ -61,15 +54,15 @@ program main
 
 
       call s2(a//b, d)
-      
+
       if( a .ne. 'AbC' .or. b .ne. 'd' ) error stop 33
-      
+
       call s2(c//'C'//b, 'Ef')
-      
+
       if( c .ne. 'Ab' .or. b .ne. 'd' ) error stop 44
 
       call s2(a//b//c, d)
-      
+
       if ( a .ne. 'AbC' .or. b .ne. 'd' .or.  &
      &     c .ne. 'Ab' .or. d .ne. 'Ef' ) error stop 55
 
@@ -78,7 +71,7 @@ program main
       if ( d .ne. 'Ef' ) error stop 66
 
       call s2(a//b//c//'12321341', 'Ef')
-      
+
       contains
       subroutine s1(x)
         character(1), value :: x

@@ -12,29 +12,22 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenamesame006.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : ensure renaming non ambiguous operators from different modules to same name works
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module opmod
 
-  
-  
+
+
   interface operator(.addreal.)
     module procedure plusreal
   end interface
@@ -50,7 +43,7 @@ end module
 
 module opmod2
 
-   
+
   interface operator(.add.)
     module procedure plus
   end interface
@@ -76,9 +69,9 @@ program main
   c=a.plus.b
   f=d.plus.e
   z=x.plus.y
-  
+
   print *,c
   print *,f
   print *,z
-  
+
 end program

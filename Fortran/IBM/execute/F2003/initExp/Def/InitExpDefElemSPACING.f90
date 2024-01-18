@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemSPACING.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemSPACING.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 14, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  SPACING 
+!*
+!*  -  SPACING
 !*  (319281)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,7 +30,7 @@
 
 
   PROGRAM  InitExpDefElemSPACING
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
 
@@ -87,9 +80,9 @@
 
 
   TYPE :: DT
-    REAL(4)  :: R4(4,4)=RESHAPE((/(3.0, I=1,16)/),(/4,4/)) 
-    REAL(8)  :: R8(4,4)=RESHAPE((/(3.0, I=1,16)/),(/4,4/)) 
-    REAL(16) :: R6(4,4)=RESHAPE((/(3.0, I=1,16)/),(/4,4/)) 
+    REAL(4)  :: R4(4,4)=RESHAPE((/(3.0, I=1,16)/),(/4,4/))
+    REAL(8)  :: R8(4,4)=RESHAPE((/(3.0, I=1,16)/),(/4,4/))
+    REAL(16) :: R6(4,4)=RESHAPE((/(3.0, I=1,16)/),(/4,4/))
   END TYPE
 
   TYPE (DT), PARAMETER :: X = DT()
@@ -97,9 +90,9 @@
   REAL(8),   PARAMETER :: RR8=2._8**(-51)
   REAL(16),  PARAMETER :: RR6=2._16**(-104)
 
-  REAL(KIND(RESHAPE(X%R4,(/4,4/))))  :: TR4(4,4)=RESHAPE(SPACING(X=X%R4),(/4,4/)) 
-  REAL(KIND(RESHAPE(X%R8,(/4,4/))))  :: TR8(4,4)=RESHAPE(SPACING(X=X%R8),(/4,4/)) 
-  REAL(KIND(RESHAPE(X%R6,(/4,4/))))  :: TR6(4,4)=RESHAPE(SPACING(X=X%R6),(/4,4/)) 
+  REAL(KIND(RESHAPE(X%R4,(/4,4/))))  :: TR4(4,4)=RESHAPE(SPACING(X=X%R4),(/4,4/))
+  REAL(KIND(RESHAPE(X%R8,(/4,4/))))  :: TR8(4,4)=RESHAPE(SPACING(X=X%R8),(/4,4/))
+  REAL(KIND(RESHAPE(X%R6,(/4,4/))))  :: TR6(4,4)=RESHAPE(SPACING(X=X%R6),(/4,4/))
 
   REAL(4) :: T41(8)=SPACING(X=r4Quiet_N_NaN)
   REAL(4) :: T42(8)=SPACING(X=r4Signaling_N_NaN)

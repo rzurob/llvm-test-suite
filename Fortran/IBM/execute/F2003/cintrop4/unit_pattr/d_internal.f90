@@ -76,7 +76,6 @@
         end function
       end subroutine
 
-
       !! External function and all variants it can contain
       function f() bind(c)  ! ok: global-scope function
         f = 1.0
@@ -117,7 +116,6 @@
 
         end function
       end function
-
 
       module m
       contains
@@ -161,7 +159,6 @@
           end function
         end subroutine
 
-
         !! Module function and all variants it can contain
         function mf() bind(c)  ! ok: module function
           mf = 1.0
@@ -203,7 +200,6 @@
           end function
         end function
       end module
-
 
       !! Pogram and all variants it can contain
       program p

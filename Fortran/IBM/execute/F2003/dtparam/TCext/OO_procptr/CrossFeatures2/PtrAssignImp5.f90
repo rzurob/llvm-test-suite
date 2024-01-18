@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignImp5.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignImp5.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignImp5.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignImp5.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,12 +34,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  If proc-target and proc-pointer-object are functions, 
+!*
+!*  If proc-target and proc-pointer-object are functions,
 !*  they shall have the same type; corresponding type parameters
 !*  shall either both be deferred or both have the same value.
-!* 
-!*  () 
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -85,19 +79,19 @@
   END MODULE
 
   FUNCTION ExtFun(Arg)
-  CLASS(*), POINTER :: ExtFun(:) 
-  CLASS(*)          :: Arg(:) 
+  CLASS(*), POINTER :: ExtFun(:)
+  CLASS(*)          :: Arg(:)
     ALLOCATE(ExtFun(2:1+SIZE(Arg)), SOURCE=Arg)
   END FUNCTION
 
   PROGRAM PtrAssignImp5
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   INTERFACE
     FUNCTION ExtFun(Arg)
-      CLASS(*), POINTER :: ExtFun(:) 
-      CLASS(*)          :: Arg(:) 
+      CLASS(*), POINTER :: ExtFun(:)
+      CLASS(*)          :: Arg(:)
     END FUNCTION
   END INTERFACE
 
@@ -107,7 +101,7 @@
   ProcPtr => ExtFun
   SELECT TYPE ( As => ProcPtr(V))
   TYPE Is (Child(4))
- 
+
     IF ( ANY(SHAPE(As) .NE. (/3333/) ))        STOP 11
     IF ( ANY(LBOUND(As) .NE. (/2/)) )          STOP 12
     IF ( ANY(UBOUND(As) .NE. (/1+SIZE(V)/) ))  STOP 13
@@ -117,7 +111,7 @@
     IF ( ANY(As%Base%GetID() .NE. -1) ) STOP 23
     IF ( ANY(As%GetID()      .NE. -2) ) STOP 24
 
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 33
   END SELECT
 

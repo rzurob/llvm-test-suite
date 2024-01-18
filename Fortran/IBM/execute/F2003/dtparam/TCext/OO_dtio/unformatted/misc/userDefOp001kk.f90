@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : userDefOp001kk
 !*
-!*  PROGRAMMER                 : David Forster (derived from userDefOp001 by Robert Ma)
 !*  DATE                       : 2007-09-10 (original: 09/28/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing:  User-defined operator and assignment with DTIO
 !*  KEYWORD(S)                 :
@@ -96,7 +88,6 @@ program userDefOp001kk
 
 end program
 
-
 class(base(4)) function myAdd(a,b) ! tcx: (4)
    use m, only: base, child
 
@@ -172,7 +163,6 @@ use m
    iomsg = 'dtiowrite'
 
 end subroutine
-
 
 ! Extensions to introduce derived type parameters:
 ! type: base - added parameters (kbase_1) to invoke with (4) / declare with (4) - 18 changes

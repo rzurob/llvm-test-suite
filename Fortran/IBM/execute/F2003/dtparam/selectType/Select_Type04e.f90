@@ -1,26 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type04e - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : September 04, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Use association - Select case within select type
 !*                               Selector being a function call
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -44,23 +37,23 @@ MODULE Mod1
       IMPLICIT NONE
 
       TYPE Node  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
         PRIVATE
         CHARACTER(l1), public :: Grad
-        CHARACTER(l1) :: Notes 
-      END TYPE Node 
+        CHARACTER(l1) :: Notes
+      END TYPE Node
 
       TYPE, EXTENDS(Node) :: ExtNode
         PRIVATE
         INTEGER(k1), ALLOCATABLE :: Ext_array(:)
-      END TYPE ExtNode 
+      END TYPE ExtNode
 
       TYPE, EXTENDS(Node) :: BrcNode
         PRIVATE
         INTEGER(k1), ALLOCATABLE :: Brc_array(:)
-      END TYPE BrcNode 
+      END TYPE BrcNode
 
       INTEGER, PARAMETER :: N = 3
       INTEGER, PARAMETER :: knd1 = 4, len1 = 10 , knd2 = 8, len2 = 20
@@ -102,7 +95,7 @@ MODULE Mod1
       FUNCTION make_decision(U,V) result(decision)
          CLASS(*), POINTER, OPTIONAL ::  U, V
          REAL    :: tmp1
-         LOGICAL :: decision  
+         LOGICAL :: decision
 
          IF ( .NOT. PRESENT(U) .OR. .NOT. PRESENT(V) ) THEN
            decision = .False.
@@ -143,8 +136,8 @@ MODULE Mod1
       END Function
 
       FUNCTION foo(Obj)
-         CLASS(*), POINTER  :: foo 
-         CLASS(*), POINTER :: Obj 
+         CLASS(*), POINTER  :: foo
+         CLASS(*), POINTER :: Obj
 
          foo => Obj
          IF ( .NOT. ASSOCIATED(foo) ) STOP 4
@@ -155,7 +148,7 @@ MODULE Mod2
       USE Mod1
       IMPLICIT NONE
 
-      CONTAINS 
+      CONTAINS
 
       SUBROUTINE Sub1(T)
          CLASS(*), POINTER ::  T
@@ -176,7 +169,7 @@ MODULE Mod2
            CLASS DEFAULT
               STOP 30
 
-         END SELECT 
+         END SELECT
       END SUBROUTINE
 
       SUBROUTINE give_me_grad(U,V)
@@ -196,11 +189,11 @@ END MODULE Mod2
 PROGRAM Select_Type04e
       USE Mod1
       USE Mod2, ONLY: give_me_grad
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      TYPE(ExtNode(knd1,len1)), TARGET  :: FirstSubj 
+      TYPE(ExtNode(knd1,len1)), TARGET  :: FirstSubj
       TYPE(BrcNode(knd2,len2)), TARGET  :: SecondSubj
-      CLASS(*), POINTER ::  SubjA, SubjB 
+      CLASS(*), POINTER ::  SubjA, SubjB
 
       SubjA  => FirstSubj
       SubjB  => SecondSubj

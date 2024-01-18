@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignDataPtrComp02a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignDataPtrComp02a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 9 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 9 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test defined assignment with interface block
@@ -28,11 +20,11 @@ module m
      integer,kind :: k1
 
      integer(k1),pointer :: i1(:,:)=>null()
-     real(k1),pointer    :: r1(:,:)=>null() 
+     real(k1),pointer    :: r1(:,:)=>null()
    end type
 
    type base(l1)
-     integer,len :: l1 
+     integer,len :: l1
      character(l1),pointer :: c1(:,:)=>null()
      type(A(4)) :: a1comp(2)
    end type
@@ -53,21 +45,21 @@ module m
      subroutine assignA1(this,dt)
        class(A(4)),intent(inout) :: this(:)
        type(A(4)),intent(in)     :: dt
- 
+
        print *,"in assignA1"
 
        do i=lbound(this,1),ubound(this,1)
           this(i)%i1=>dt%i1
           this(i)%r1=>dt%r1
-       end do 
+       end do
      end subroutine
 
      subroutine assignA2(this,dt)
        class(A(4)),intent(inout) :: this(:)
        type(A(4)),intent(in)     :: dt(:)
-      
+
        print *,"in assignA2"
-             
+
        do i=lbound(this,1),ubound(this,1)
            this(i)%i1=>dt(i)%i1
            this(i)%r1=>dt(i)%r1
@@ -80,7 +72,7 @@ module m
        type(A(4)),intent(in)     :: dt
 
        print *,"in assignA3"
-        
+
        this%i1=>dt%i1
        this%r1=>dt%r1
 
@@ -112,21 +104,21 @@ module m
               this%c1=>dt%c1
               this%a1comp=dt%a1comp  ! call assignA2
            class default
-               stop 100  
+               stop 100
        end select
- 
+
      end subroutine
 
      subroutine assignChild1(this,dt)
        class(child(*,2)),intent(inout) :: this(:,:)
        type(child(*,2)),intent(in)     :: dt(:,:)
-       
+
        integer :: i,j
 
        print *,"in assignChild1"
 
        do i=lbound(this,1),ubound(this,1)
-            do j=lbound(this,2),ubound(this,2)        
+            do j=lbound(this,2),ubound(this,2)
                this(i,j)%c1=>dt(i,j)%c1
                this(i,j)%a1comp=dt(i,j)%a1comp ! call assignA2
                this(i,j)%g1=>dt(i,j)%g1
@@ -176,10 +168,10 @@ subroutine sub
    type(tA(8)),target :: a4
 
    integer,target :: i1(2,3)=reshape([1,2,3,4,5,6],(/2,3/))
- 
-   integer(8),target :: i2(2,3) 
 
-   real,target    :: r1(1,1)=reshape([1.2],(/1,1/)) 
+   integer(8),target :: i2(2,3)
+
+   real,target    :: r1(1,1)=reshape([1.2],(/1,1/))
 
    real(8),target :: r2(1,1)
 
@@ -192,7 +184,7 @@ subroutine sub
 
    i2=i1; r2=1.2_8; g2=g1;
 
-   ! call assignA2 
+   ! call assignA2
    a1=[tA(4)(i1,r1),tA(4)(i1(1:1,3:3),r1)]
 
    !---verify a1----!
@@ -229,8 +221,8 @@ subroutine sub
    if(any(a4%i1(1,:) /= [1,3,5]))                      stop 25
    if(any(a4%i1(2,:) /= [2,4,6]))                      stop 26
    if(.not. precision_r8(a4%r1,1.2_8))                 stop 27
- 
-   ! call assignChild1    
+
+   ! call assignChild1
    tc1= reshape([tchild(3,2)(c1,a1(2),g1,a1(1))],(/1,1/))
 
    !--- verify tc1---!
@@ -271,7 +263,7 @@ subroutine sub
         stop 101
    end select
 
-   allocate(tbase(3) :: tb2(1,1)) 
+   allocate(tbase(3) :: tb2(1,1))
 
    ! call assignBase
    tb2(1,1)=tc1(1,1)
@@ -283,7 +275,7 @@ subroutine sub
    if(any(tb2(1,1)%a1comp(2)%i1(1,:) /= 5))           stop 53
    if(.not. precision_r4(tb2(1,1)%a1comp(1)%r1,1.2_4))   stop 54
    if(.not. precision_r4(tb2(1,1)%a1comp(2)%r1,1.2_4))   stop 55
-   
+
    deallocate(tb1)
 
    allocate(tchild(3,4)  :: tb1(1,1))

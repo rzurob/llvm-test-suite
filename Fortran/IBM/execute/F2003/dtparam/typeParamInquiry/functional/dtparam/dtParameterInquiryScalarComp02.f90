@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryScalarComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryScalarComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 10 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY FOR DT AND COMPONENT
 !* 3. DIFFERENT TYPE PARAMETER
-!* 4. SCALAR CHARACTER COMPONENT 
+!* 4. SCALAR CHARACTER COMPONENT
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -32,7 +24,7 @@ module m
    type base(k1,k2,l1,l2)
        integer(2),kind    :: k1
        integer(2*k1),kind :: k2
-       
+
        integer(k1),len    :: l1
        integer(kind('a')),len  :: l2
 
@@ -43,10 +35,10 @@ module m
        character(len=k1+l1)  :: c5="test c5"
        character(-1)         :: c6="test c6"
        character(c1%len)     :: c7="test c7"
-       character(k1%kind)    :: c8="test c8" 
-       character((l2%kind+l1%kind)*3)        :: c9="test c9" 
+       character(k1%kind)    :: c8="test c8"
+       character((l2%kind+l1%kind)*3)        :: c9="test c9"
        character(selected_char_kind("ascii")) :: c10="test c10"
-       
+
    end type
 end module
 
@@ -54,8 +46,8 @@ end module
   use m
   implicit none
 
-  type(base(1,1,1,1))   :: t1 
-  if(t1%k1 /=1 .or. t1%k2 /= 1 .or. t1%l1 /=1 .or. t1%l2 /= 1)  &  
+  type(base(1,1,1,1))   :: t1
+  if(t1%k1 /=1 .or. t1%k2 /= 1 .or. t1%l1 /=1 .or. t1%l2 /= 1)  &
                                                        error stop 10_4
 
   if(t1%k1%kind /=kind(t1%k1) .or. t1%k1%kind /=2)     error stop 11_4
@@ -89,7 +81,7 @@ end module
   if(t1%c6%kind /= kind(t1%c6) .or. t1%c6%kind /=1)    error stop 32_4
 
   if(t1%c7 /="te")                                     error stop 33_4
-  if(t1%c7%len /= len(t1%c7) .or. t1%c7%len /=2)       error stop 34_4  
+  if(t1%c7%len /= len(t1%c7) .or. t1%c7%len /=2)       error stop 34_4
   if(t1%c7%kind /= kind(t1%c7) .or. t1%c7%kind /=1)    error stop 35_4
 
 
@@ -100,10 +92,10 @@ end module
   if(t1%c9 /="test c")                                 error stop 39_4
   if(t1%c9%len /= len(t1%c9) .or. t1%c9%len /=6)       error stop 40_4
   if(t1%c9%kind /= kind(t1%c9) .or. t1%c9%kind /=1)    error stop 41_4
- 
+
   if(t1%c10 /="t")                                     error stop 42_4
-  if(t1%c10%len /= len(t1%c10) .or. t1%c10%len /=1)    error stop 43_4 
+  if(t1%c10%len /= len(t1%c10) .or. t1%c10%len /=1)    error stop 43_4
   if(t1%c10%kind /= kind(t1%c10) .or. t1%c10%kind /=1) error stop 44_4
 
- 
+
   end

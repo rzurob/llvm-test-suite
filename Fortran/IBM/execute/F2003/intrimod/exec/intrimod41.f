@@ -1,25 +1,22 @@
 ! ************************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/intrimod41.presh 
+! %PRECMD: $TR_SRC/intrimod41.presh
 ! %COMPOPTS: -qhalt=w
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod41.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Testing backward compatibility with XLF8.1.
-!*                     Calling module procedures where both modules and the 
+!*                     Calling module procedures where both modules and the
 !*                     caller are are pre-compiled with 8.1, linked with 9.1.
 !*
 !*************************************************************************

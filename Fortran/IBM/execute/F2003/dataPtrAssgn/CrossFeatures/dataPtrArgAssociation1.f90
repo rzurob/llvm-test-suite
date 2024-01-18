@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrArgAssociation1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrArgAssociation1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 20, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Argument  
+!*  Argument
 !*
-!*  
 !*  (323280)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM dataPtrArgAssociation1 
+  PROGRAM dataPtrArgAssociation1
   IMPLICIT NONE
 
   INTEGER,  TARGET  :: Tar2(100, 100)
@@ -48,7 +40,7 @@
   Tar1 = 1
   Tar2 = 2
 
-  DO I =1, N 
+  DO I =1, N
   DO J =I, N
 
     Ptr(F2(Ptr, Tar2, I, J):, F1(Ptr, Tar1, I, J):) => Tar2
@@ -58,7 +50,7 @@
     IF (ANY( LBOUND(Ptr) .NE. (/-I, -J /)))      STOP 12
     IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
     IF (ANY( Tar2     .NE.  I*J ))               STOP 14
- 
+
     Ptr(F1(Ptr, Tar1, I, J):F2(Ptr, Tar2, I, J), I:J) => Tar1
     Ptr = -I*J
 
@@ -67,7 +59,7 @@
     IF (ANY( LBOUND(Ptr) .NE. (/-J,  I/)))          STOP 22
     IF (ANY( UBOUND(Ptr) .NE. (/-I,  J/)))          STOP 23
     IF (ANY( Tar1(1:(J-I+1)*(J-I+1)) .NE.  -I*J ))  STOP 24
- 
+
   END DO
   END DO
 

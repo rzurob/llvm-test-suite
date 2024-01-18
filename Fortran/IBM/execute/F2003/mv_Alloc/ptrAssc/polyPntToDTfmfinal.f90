@@ -1,22 +1,10 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : polyPntToDTfmfinal.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : TO is of a poly type which has final subroutine
 !*                               FROM is of nonpoly type of child
@@ -33,19 +21,19 @@
 module m
    type base
         contains
-            final :: finalA 
+            final :: finalA
    end type
 
    type, extends(base) :: A
-       class(base), allocatable :: x 
-   end type 
+       class(base), allocatable :: x
+   end type
 
    class(base), pointer :: p(:)
 
-   contains 
+   contains
        subroutine finalA(a)
             type( base), intent(inout) :: a(:)
-            print *, "deallocting" 
+            print *, "deallocting"
        end subroutine
 end module
 
@@ -54,8 +42,8 @@ use m
     type(A), target, allocatable :: from(:)
     class(base), target, allocatable :: to (:)
 
-    allocate(from(3:5), source = (/ A(base()),A(base()),A(base()) /) ) 
-   ! allocate(from(3:5), source = (/ (A(base()), i=1,3) /) ) 
+    allocate(from(3:5), source = (/ A(base()),A(base()),A(base()) /) )
+   ! allocate(from(3:5), source = (/ (A(base()), i=1,3) /) )
 
     p => from
 

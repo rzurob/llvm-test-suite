@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrCshiftLog.f 
+!*  TEST CASE NAME             : dataPtrCshiftLog.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -48,7 +42,7 @@ module m
 
                 allocate(l8_p(2,2,2,2), source=reshape( logical(l2_p,8), &
 			(/2,2,2,2/)))
- 
+
                 l8_p(2:,2:,-127:,128:) => l8_p
 
             end subroutine
@@ -58,26 +52,26 @@ end module
 program main
         use m
 
-	logical*1, pointer :: l1_p1(:,:) 
+	logical*1, pointer :: l1_p1(:,:)
         logical*2, pointer :: l2_p1(:,:)
         logical*4, pointer :: l4_p1(:,:,:)
         logical*8, pointer :: l8_p1(:,:,:,:)
 
 	call allocation
 
-	if ( .not. associated(l4_p)) stop 11 
+	if ( .not. associated(l4_p)) stop 11
 	if ( any(lbound(l4_p) .ne. (/0,-1,0 /))) stop 13
 	if ( any(ubound(l4_p) .ne. (/1,0,1 /))) stop 15
 
-	if ( .not. associated(l2_p)) stop 7 
-	if ( any(lbound(l2_p) .ne. (/0,0 /))) stop 8 
-	if ( any(ubound(l2_p) .ne. (/3,3 /))) stop 9 
+	if ( .not. associated(l2_p)) stop 7
+	if ( any(lbound(l2_p) .ne. (/0,0 /))) stop 8
+	if ( any(ubound(l2_p) .ne. (/3,3 /))) stop 9
 
-	if ( .not. associated(l1_p)) stop 1 
+	if ( .not. associated(l1_p)) stop 1
 	if ( any(lbound(l1_p) .ne. (/2 /))) stop 3
 	if ( any(ubound(l1_p) .ne. (/9 /))) stop 5
 
-	if ( .not. associated(l8_p)) stop 21 
+	if ( .not. associated(l8_p)) stop 21
 	if ( any(lbound(l8_p) .ne. (/2,2,-127,128 /))) stop 23
 	if ( any(ubound(l8_p) .ne. (/3,3,-126,129 /))) stop 25
 
@@ -88,7 +82,7 @@ program main
 
 	l1_p = l1_p(9:2:-1)
 	l2_p = reshape((/ l2_p(0,:), l2_p(1,:), l2_p(2,:),l2_p(3,:) /), (/4,4/))
-	l4_p = l4_p .and. .true. 
+	l4_p = l4_p .and. .true.
 	l8_p = l8_p .or. .false.
 
 	print *, l1_p
@@ -100,7 +94,7 @@ program main
 	print *, cshift(l2_p, (/-1,0,1,-1/), 2)
 	print *, cshift(l4_p, 1)
 	print *, cshift(l8_p, -1)
-	
+
 	l1_p1(2:3,4:7) => l1_p
         deallocate(l1_p1)
 

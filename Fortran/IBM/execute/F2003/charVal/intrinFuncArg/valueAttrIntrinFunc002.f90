@@ -1,27 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : valueAttrIntrinFunc002.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 04/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
+!*  DESCRIPTION                : Pass results of intrinsic functions
+!*				to subroutines which contain dummy args
+!*				using the value attribute. Results will be
+!*				16 byte characters
 !*
-!*  DESCRIPTION                : Pass results of intrinsic functions        
-!*				to subroutines which contain dummy args     
-!*				using the value attribute. Results will be  
-!*				16 byte characters                          
-!*                              
-!*                              
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -77,16 +65,16 @@ program valueAttrIntrinFunc002
         if (tmp3 /= 'xxxxxxxxxxxxxxxx') error stop 28_4
         if (tmp4 /= 'xxxxxxxxxxxxxxxx') error stop 29_4
         if (tmp5 /= 'xxxxxxxxxxxxxxxx') error stop 30_4
-	
+
     end subroutine
 
     subroutine test2(tmp, tmp2, tmp3, tmp4, tmp5)
 
         character(15), VALUE :: tmp, tmp2, tmp3, tmp4, tmp5
-        if (tmp /= 'zzyxqwopzzyxqwo') error stop 11_4  
+        if (tmp /= 'zzyxqwopzzyxqwo') error stop 11_4
         if (tmp2 /= 'abcdefghabcdefg') error stop 12_4
         if (tmp3 /= 'abababababababa') error stop 13_4
-        if (tmp4 /= 'zzyxqwopzzyxqwo') error stop 14_4 
+        if (tmp4 /= 'zzyxqwopzzyxqwo') error stop 14_4
         if (tmp5 /= 'abcdefghabcdefg') error stop 15_4
 
         tmp = 'xxxxxxxxxxxxxxxx'

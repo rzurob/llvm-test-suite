@@ -17,7 +17,7 @@
         if (basePtr%arr(ii) .ne. 5) stop 1
       end do
 
-      basePtr%arr = 6 
+      basePtr%arr = 6
 
       do ii = 1, 10
         if (basePtr%arr(ii) .ne. 6) stop 2

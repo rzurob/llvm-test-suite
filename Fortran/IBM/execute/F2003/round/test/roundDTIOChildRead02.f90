@@ -1,18 +1,11 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 14/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ROUND specifier with DTIO 
+!*  PRIMARY FUNCTIONS TESTED   : ROUND specifier with DTIO
 !*
 !*  DESCRIPTION                : test round mode set differntly
-!*                               in parent's OPEN, and in child data 
+!*                               in parent's OPEN, and in child data
 !*                               trasfer during read.  Test complex data
 !*                               type when round set to up.
 !* ===================================================================
@@ -22,9 +15,9 @@
 
         complex c4
         complex(8) c8
-        complex(16) c16  
+        complex(16) c16
         contains
- 
+
         procedure::readFormat
         generic :: read(formatted) => readFormat
      end type
@@ -86,4 +79,4 @@
     read(3,*) dt1
     close(3)
 
-  end program roundDTIOChildRead02 
+  end program roundDTIOChildRead02

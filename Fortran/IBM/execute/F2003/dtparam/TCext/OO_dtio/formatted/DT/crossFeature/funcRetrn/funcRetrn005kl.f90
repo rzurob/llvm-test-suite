@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : funcRetrn005kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from funcRetrn005 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Function Return: Unlimited Polymorphic Scalar/Array Entities
@@ -92,13 +84,13 @@ use m
          write ( 1, "(DT'_btbound'(7,2))", iostat = stat, iomsg = msg )  g
          if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
    end select
-   
+
    select type ( g => b2%genCopy() )
       class is ( base(4) )
          write ( 1, "(DT'_ctbound'(7,2,8,3))", iostat = stat, iomsg = msg )  g
          if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 2_4
    end select
-   
+
    select type ( g => genCopy(b3) )
       class is ( base(4) )
          write ( 1, "(DT'mod1'(7,1),DT'mod2'(8,2,9,3))", iostat = stat, iomsg = msg )       g

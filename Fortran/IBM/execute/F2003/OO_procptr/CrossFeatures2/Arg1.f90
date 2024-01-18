@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 25 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Dummy argument is a procedure pointer - procedure pointer return
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,7 +41,7 @@
     TYPE :: Base
       CHARACTER(3) :: C
     END TYPE
-  
+
   END MODULE
 
   MODULE M
@@ -58,19 +52,19 @@
     CONTAINS
       PROCEDURE, NoPASS :: Proc=>ModFun
     END TYPE
-   
+
     CONTAINS
- 
+
     FUNCTION ModFun(Arg)
     CLASS(Base) :: Arg
     CLASS(Base), POINTER ::  ModFun
-      ALLOCATE(ModFun, SOURCE=Arg) 
+      ALLOCATE(ModFun, SOURCE=Arg)
     END FUNCTION
 
     FUNCTION IFun(Arg)
     CLASS(Base) :: Arg
     CLASS(Base), POINTER ::  IFun
-      ALLOCATE(IFun, SOURCE=Arg) 
+      ALLOCATE(IFun, SOURCE=Arg)
     END FUNCTION
 
   END MODULE
@@ -78,20 +72,20 @@
   FUNCTION RetPtr(Fun)
   USE M
   PROCEDURE(IFun)          :: Fun
-  PROCEDURE(IFun), POINTER :: RetPtr 
-    RetPtr => Fun 
+  PROCEDURE(IFun), POINTER :: RetPtr
+    RetPtr => Fun
   END FUNCTION
- 
+
   PROGRAM Arg1
   USE M
-  IMPLICIT TYPE(DT)(P) 
+  IMPLICIT TYPE(DT)(P)
   PROCEDURE(IFun), POINTER :: ProcPtr
 
   INTERFACE
     FUNCTION RetPtr(Fun)
-    IMPORT IFun 
+    IMPORT IFun
       PROCEDURE(IFun)          :: Fun
-      PROCEDURE(IFun), POINTER :: RetPtr 
+      PROCEDURE(IFun), POINTER :: RetPtr
     END FUNCTION
   END INTERFACE
 
@@ -117,22 +111,22 @@
 
   SELECT TYPE (As => U%ProcPtr(U))
   TYPE IS (DT)
-    W = As 
+    W = As
     IF ( W%C  .NE. "123" ) STOP 33
     IF ( .NOT. ASSOCIATED(W%ProcPtr, Ptr) ) STOP 34
-  CLASS  DEFAULT 
+  CLASS  DEFAULT
     STOP 35
   END SELECT
 
   SELECT TYPE (As => U%Proc(U))
   TYPE IS (DT)
-    W = As 
+    W = As
     IF ( W%C  .NE. "123" ) STOP 43
     IF ( .NOT. ASSOCIATED(W%ProcPtr, Ptr) ) STOP 44
-  CLASS  DEFAULT 
+  CLASS  DEFAULT
     STOP 45
   END SELECT
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END
 

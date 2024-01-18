@@ -1,14 +1,9 @@
 C***********************************************************************
 C*  ===================================================================
-C*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-C*  ===================================================================
 C*
 C*  TEST CASE NAME             : FXIF0001
-C*  TEST CASE TITLE            : Intrinsic Functions on Derived Type Component
 C*
-C*  PROGRAMMER                 : Alice Ngai
 C*  DATE                       : 10 Feb 1992
-C*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 C*
 C*  PRIMARY FUNCTIONS TESTED   : INT
 C*  SECONDARY FUNCTIONS TESTED : None
@@ -114,9 +109,9 @@ C A derived type whose components  of type INTEGER.
          real(real64) i
          real*4 i2
          real*8 i4
-         
+
       end type real_test
- 
+
 C A derived type whose components are one-dimensional arrays of INTEGER type.
       type real_arr
 
@@ -128,10 +123,10 @@ C A derived type whose components are one-dimensional arrays of INTEGER type.
 
 C A derived type whose components are two-dimensional arrays of INTEGER type.
       type real_dbl
-  
+
          real(real64) i(3,3)
          real*4 i2(3,3)
-         real*8 i4(3,3) 
+         real*8 i4(3,3)
 
       end type real_dbl
 
@@ -156,7 +151,7 @@ C/ ->  Constant derived object which is two levels deep
       end type two_deep_var
       type (two_deep_var) parent_var            ! parent_var%child_var%x
 
-      type two_deep_arr 
+      type two_deep_arr
          type (real_arr) child_arr
       end type two_deep_arr
       type (two_deep_arr) parent_arr            ! parent_arr%child_arr%x(1)
@@ -169,7 +164,7 @@ C/ ->  Constant derived object which is two levels deep
       type two_deep_var_array
          type (real_test) child_var_array(3,3)
       end type two_deep_var_array
-      type (two_deep_var_array) parent_var_array(3,3) 
+      type (two_deep_var_array) parent_var_array(3,3)
 c/ parent_var_array(1,1)%child_var_array(1,1)%x
 
       type two_deep_arr_array
@@ -183,7 +178,7 @@ c/ parent_arr_array(1,1)%child_arr_array(1,1)%x(1)
       end type two_deep_dbl_array
       type (two_deep_dbl_array) parent_dbl_array(3,3)
 c/ parent_dbl_array(1,1)%child_dbl_array(1,1)%x(1,1)
-         
+
 C/ ->  Constant derived object which is three levels deep
       type three_deep_sc
          type (two_deep_sc) parent_sc
@@ -246,7 +241,7 @@ C/ ->  Initialize grandparent_sc
       parameter (grandparent_sc = three_deep_sc (parent_sc))
 
 C/ Initialize all variables
-C/ ->  Initialize child_var 
+C/ ->  Initialize child_var
       child_var = real_test(r_sc, r2_sc, i4_sc)
 
 C/ ->  Initialize parent_var
@@ -370,7 +365,7 @@ C/ Test cases for derived type components (1-deep)
       result_var3 = real(child_arr%i4(2))
       call check(result_var1, result_var2, result_var3, equal)
       if (.not. equal) call zzrc(caseid)
-      
+
       caseid = 4
       result_var1 = real(child_dbl%i(2,2))
       result_var2 = real(child_dbl%i2(2,2))
@@ -386,12 +381,12 @@ C/ Test cases for derived type components (1-deep)
       if (.not. equal) call zzrc(caseid)
 
       caseid = 6
-      result_var1 = real(child_arr_array(2,2)%i(2)) 
+      result_var1 = real(child_arr_array(2,2)%i(2))
       result_var2 = real(child_arr_array(2,2)%i2(2))
-      result_var3 = real(child_arr_array(2,2)%i4(2)) 
+      result_var3 = real(child_arr_array(2,2)%i4(2))
       call check(result_var1, result_var2, result_var3, equal)
       if (.not. equal) call zzrc(caseid)
-      
+
       caseid = 7
       result_var1 = real(child_dbl_array(2,2)%i(2,2))
       result_var2 = real(child_dbl_array(2,2)%i2(2,2))
@@ -401,16 +396,16 @@ C/ Test cases for derived type components (1-deep)
 
 C/ Test cases for derived type components (2-deep)
       caseid = 8
-      result_var1 = real(parent_sc%child_sc%i) 
+      result_var1 = real(parent_sc%child_sc%i)
       result_var2 = real(parent_sc%child_sc%i2)
-      result_var3 = real(parent_sc%child_sc%i4) 
+      result_var3 = real(parent_sc%child_sc%i4)
       call check(result_var1, result_var2, result_var3, equal)
       if (.not. equal) call zzrc(caseid)
 
       caseid = 9
       result_var1 = real(parent_var%child_var%i)
       result_var2 = real(parent_var%child_var%i2)
-      result_var3 = real(parent_var%child_var%i4) 
+      result_var3 = real(parent_var%child_var%i4)
       call check(result_var1, result_var2, result_var3, equal)
       if (.not. equal) call zzrc(caseid)
 
@@ -420,7 +415,7 @@ C/ Test cases for derived type components (2-deep)
       result_var3 = real(parent_arr%child_arr%i4(2))
       call check(result_var1, result_var2, result_var3, equal)
       if (.not. equal) call zzrc(caseid)
-      
+
       caseid = 11
       result_var1 = real(parent_dbl%child_dbl%i(2,2))
       result_var2 = real(parent_dbl%child_dbl%i2(2,2))
@@ -429,9 +424,9 @@ C/ Test cases for derived type components (2-deep)
       if (.not. equal) call zzrc(caseid)
 
       caseid = 12
-      result_var1 = real(parent_var_array(2,2)%child_var_array(2,2)%i) 
-      result_var2 = real(parent_var_array(2,2)%child_var_array(2,2)%i2) 
-      result_var3 = real(parent_var_array(2,2)%child_var_array(2,2)%i4) 
+      result_var1 = real(parent_var_array(2,2)%child_var_array(2,2)%i)
+      result_var2 = real(parent_var_array(2,2)%child_var_array(2,2)%i2)
+      result_var3 = real(parent_var_array(2,2)%child_var_array(2,2)%i4)
       call check(result_var1, result_var2, result_var3, equal)
       if (.not. equal) call zzrc(caseid)
 
@@ -443,14 +438,14 @@ C/ Test cases for derived type components (2-deep)
      + i4(2)
       call check(result_var1, result_var2, result_var3, equal)
       if (.not. equal) call zzrc(caseid)
-      
+
       caseid = 14
       result_var1 = real(parent_dbl_array(2,2)%child_dbl_array(2,2)%
-     + i(2,2)) 
+     + i(2,2))
       result_var2 = real(parent_dbl_array(2,2)%child_dbl_array(2,2)%
      + i2(2,2))
       result_var3 = real(parent_dbl_array(2,2)%child_dbl_array(2,2)%
-     + i4(2,2)) 
+     + i4(2,2))
       call check(result_var1, result_var2, result_var3, equal)
       if (.not. equal) call zzrc(caseid)
 
@@ -458,7 +453,7 @@ C/ Test cases for derived type components (3-deep)
       caseid = 15
       result_var1 = real(grandparent_sc%parent_sc%child_sc%i)
       result_var2 = real(grandparent_sc%parent_sc%child_sc%i2)
-      result_var3 = real(grandparent_sc%parent_sc%child_sc%i4) 
+      result_var3 = real(grandparent_sc%parent_sc%child_sc%i4)
       call check(result_var1, result_var2, result_var3, equal)
       if (.not. equal) call zzrc(caseid)
 
@@ -475,7 +470,7 @@ C/ Test cases for derived type components (3-deep)
       result_var3 = real(grandparent_arr%parent_arr%child_arr%i4(2))
       call check(result_var1, result_var2, result_var3, equal)
       if (.not. equal) call zzrc(caseid)
-      
+
       caseid = 18
       result_var1 = real(grandparent_dbl%parent_dbl%child_dbl%i(2,2))
       result_var2 = real(grandparent_dbl%parent_dbl%child_dbl%i2(2,2))
@@ -502,7 +497,7 @@ C/ Test cases for derived type components (3-deep)
      + parent_arr_array(2,2)%child_arr_array(2,2)%i4(2))
       call check(result_var1, result_var2, result_var3, equal)
       if (.not. equal) call zzrc(caseid)
-      
+
       caseid = 21
       result_var1 = real(grandparent_dbl_array(2,2)%
      + parent_dbl_array(2,2)%child_dbl_array(2,2)%i(2,2))

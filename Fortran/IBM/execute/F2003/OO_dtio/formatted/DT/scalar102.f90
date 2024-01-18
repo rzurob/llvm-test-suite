@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        scalar polymorphic derived type variable (read)
@@ -89,9 +78,9 @@ use m
 
    read ( 1, "(DT'c2'(10,5))", iostat = stat, iomsg = msg )  c2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 4_4
-   
+
    print *, rbuffer
-   
+
    if ( b1%i /= 100 )        error stop 5_4
    select type ( b2 )
       type is ( child )
@@ -99,7 +88,7 @@ use m
    end select
    if ( ( c1%i /= 300 ) .or. ( c1%c /= 'def' ) )  error stop 7_4
    if ( ( c2%i /= 400 ) .or. ( c2%c /= 'ghi' ) )  error stop 8_4
-   
+
 end program
 
 subroutine readformatted (dtv, unit, iotype, v_list, iostat, iomsg)

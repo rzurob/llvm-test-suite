@@ -3,22 +3,11 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : GENERICS
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with generic name
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Generic type bound call appearing in spec-expr for array bounds
 !*  KEYWORD(S)                 :
@@ -73,7 +62,7 @@ module m
          class(child(*,4)), intent(inout) :: dtv
          integer(4), intent(in) :: i(dtv%puregeti():dtv%puregeti()+9)
          integer(4), intent(in) :: j(dtv%puregeti()+100:dtv%puregeti()+109)
-         
+
          do k = lbound(i,1),ubound(i,1)
             dtv%i = dtv%i + i(k)
          end do

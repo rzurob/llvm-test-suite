@@ -3,16 +3,11 @@
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : variableIsStructComp03 - variable is a
 !*                               Subobject
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : November  9, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is a
 !*                               Derived Type (with a Structure Component
@@ -20,7 +15,6 @@
 !*                               Derived Type)
 !*  SECONDARY FUNCTIONS TESTED : and expr is of the same type as variable
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATABLE Attribute, Intrinsic Assignment
@@ -32,7 +26,6 @@
 !*  7.4.1.1 General form
 !*
 !*  R734 assignment-stmt  is  variable = expr
-!*
 !*
 !*  7.4.1.3 Interpretation of intrinsic assignments
 !*

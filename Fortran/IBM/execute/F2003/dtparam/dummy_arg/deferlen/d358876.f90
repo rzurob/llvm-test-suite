@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d358876.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d358876.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 13 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 13 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  DEFECT 358876
@@ -41,8 +33,8 @@ implicit none
 
 type(outer(:)),allocatable :: outer1
 
-allocate(outer1,source=& 
-  outer(3)("xlf",inner(5)(["test1","test2"]) )) 
+allocate(outer1,source=&
+  outer(3)("xlf",inner(5)(["test1","test2"]) ))
 
   if(outer1%c1 /= "xlf")                           stop 10
   if(any(outer1%inner1%c2 /= ["test1","test2"]))   stop 11

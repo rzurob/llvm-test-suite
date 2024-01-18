@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcTypBndDTIOWriteF.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcTypBndDTIOWriteF.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  interaction with type bound generics 
+!*  interaction with type bound generics
 !*
-!*  -- DTIO/Write(FORMATTED) 
+!*  -- DTIO/Write(FORMATTED)
 !*  (316777/317038)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -49,81 +42,81 @@
     GENERIC    :: WRITE(FORMATTED) => WriteF
     PROCEDURE  :: WriteF
   END TYPE
- 
+
   TYPE :: DT1(K2,N2)    ! (4,1)
     INTEGER, KIND :: K2
     INTEGER, LEN  :: N2
     CHARACTER(N2) :: ID
   END TYPE
- 
+
   TYPE :: DT2(K3,N3)    ! (4,1)
     INTEGER, KIND :: K3
     INTEGER, LEN  :: N3
     CHARACTER(N3) :: ID
   END TYPE
- 
+
   TYPE :: DT3(K4,N4)    ! (4,1)
     INTEGER, KIND :: K4
     INTEGER, LEN  :: N4
     CHARACTER(N4) :: ID
   END TYPE
 
-  INTERFACE WRITE(FORMATTED) 
-    MODULE PROCEDURE WriteF 
-  END INTERFACE  
+  INTERFACE WRITE(FORMATTED)
+    MODULE PROCEDURE WriteF
+  END INTERFACE
 
   CONTAINS
 
   SUBROUTINE WriteF(Dtv, Unit, IOTYPE, V_List, IOStat, IOMSG)
-  CLASS(DT(4,*)),         INTENT(IN)    :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE 
+  CLASS(DT(4,*)),         INTENT(IN)    :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE
   INTEGER,           INTENT(IN)    :: V_List(:)
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    WRITE(Unit, FMT="(A1)") DTV%ID  
-  END SUBROUTINE 
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    WRITE(Unit, FMT="(A1)") DTV%ID
+  END SUBROUTINE
 
   SUBROUTINE WriteF1(Dtv, Unit, IOTYPE, V_List, IOStat, IOMSG)
-  CLASS(DT1(4,*)),        INTENT(IN)    :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE 
+  CLASS(DT1(4,*)),        INTENT(IN)    :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE
   INTEGER,           INTENT(IN)    :: V_List(:)
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    WRITE(Unit, FMT="(A1)") DTV%ID  
-  END SUBROUTINE 
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    WRITE(Unit, FMT="(A1)") DTV%ID
+  END SUBROUTINE
 
   SUBROUTINE WriteF2(Dtv, Unit, IOTYPE, V_List, IOStat, IOMSG)
-  CLASS(DT2(4,*)),        INTENT(IN)    :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE 
+  CLASS(DT2(4,*)),        INTENT(IN)    :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE
   INTEGER,           INTENT(IN)    :: V_List(:)
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    WRITE(Unit, FMT="(A1)") DTV%ID  
-  END SUBROUTINE 
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    WRITE(Unit, FMT="(A1)") DTV%ID
+  END SUBROUTINE
 
 
   END MODULE
 
   SUBROUTINE WriteF3(Dtv, Unit, IOTYPE, V_List, IOStat, IOMSG)
   USE M
-  CLASS(DT(4,*)),         INTENT(IN)    :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE 
+  CLASS(DT(4,*)),         INTENT(IN)    :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  CHARACTER (LEN=*), INTENT(IN)    :: IOTYPE
   INTEGER,           INTENT(IN)    :: V_List(:)
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    WRITE(Unit, FMT="(A1)") DTV%ID  
-  END SUBROUTINE 
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    WRITE(Unit, FMT="(A1)") DTV%ID
+  END SUBROUTINE
 
 
 
   PROGRAM  mProcTypBndDTIOWriteF
   USE M
 
-  INTERFACE 
+  INTERFACE
     SUBROUTINE WriteF3(Dtv, Unit, IOTYPE, V_List, IOStat, IOMSG)
       IMPORT
       CLASS(DT3(4,*)),        INTENT(IN)    :: DTV
@@ -133,11 +126,11 @@
       INTEGER,           INTENT(OUT)   :: IOSTAT
       CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
     END SUBROUTINE
-  END INTERFACE  
+  END INTERFACE
 
-  INTERFACE WRITE(FORMATTED) 
-    PROCEDURE ProcPtr1 
-  END INTERFACE  
+  INTERFACE WRITE(FORMATTED)
+    PROCEDURE ProcPtr1
+  END INTERFACE
 
   PROCEDURE(WriteF2), POINTER  :: ProcPtr
   PROCEDURE(WriteF3), POINTER  :: ProcPtr1
@@ -153,11 +146,11 @@
   PROCEDURE(WriteF2), POINTER  :: ProcPtr
 
   INTERFACE WRITE(FORMATTED)
-    PROCEDURE Proc 
+    PROCEDURE Proc
   END INTERFACE
 
-  INTERFACE WRITE(FORMATTED) 
-    PROCEDURE ProcPtr 
+  INTERFACE WRITE(FORMATTED)
+    PROCEDURE ProcPtr
   END INTERFACE
 
   TYPE(DT(4,1))  :: T  = DT(4,1)("0")

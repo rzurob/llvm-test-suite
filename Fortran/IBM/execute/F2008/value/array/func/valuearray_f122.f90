@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f122.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -48,12 +45,12 @@ call sub32(l1,l1)
 if (any (l1 .NEQV. l1_r)) error stop 3201
 
 contains
-  
+
 subroutine sub11(arg,n)
     logical*2 :: arg(n)
 	integer n
 	value arg
-	
+
 	if (any (arg .NEQV. l1_r)) error stop 1110
 	if (size(arg) .ne. SIZEOFA) error stop 1111
 	if ( any(lbound(arg) .ne. 1)) error stop 1112
@@ -61,12 +58,12 @@ subroutine sub11(arg,n)
 	if (rank(arg) .ne. 1) error stop 1114
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 1115
 	arg = .false.
-end subroutine	
+end subroutine
 
 subroutine sub12(arg)
     logical*2 :: arg(10)
 	value arg
-	
+
 	if (any (arg .NEQV. l1_r)) error stop 1210
 	if (size(arg) .ne. SIZEOFA) error stop 1211
 	if ( any(lbound(arg) .ne. 1)) error stop 1212
@@ -74,12 +71,12 @@ subroutine sub12(arg)
 	if (rank(arg) .ne. 1) error stop 1214
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 1215
 	arg = .false.
-end subroutine		
+end subroutine
 
 subroutine sub13(arg)
     logical*2 :: arg(SIZEOFA)
 	value arg
-	
+
 	if (any (arg .NEQV. l1_r)) error stop 1310
 	if (size(arg) .ne. SIZEOFA) error stop 1311
 	if ( any(lbound(arg) .ne. 1)) error stop 1312
@@ -87,12 +84,12 @@ subroutine sub13(arg)
 	if (rank(arg) .ne. 1) error stop 1314
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 1315
 	arg = .false.
-end subroutine		
+end subroutine
 
 subroutine sub14(arg)
     logical*2 :: arg(:)
 	value arg
-	
+
 	if (any (arg .NEQV. l1_r)) error stop 1410
 	if (size(arg) .ne. SIZEOFA) error stop 1411
 	if ( any(lbound(arg) .ne. 1)) error stop 1412
@@ -100,13 +97,13 @@ subroutine sub14(arg)
 	if (rank(arg) .ne. 1) error stop 1414
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 1415
 	arg = .false.
-end subroutine	
+end subroutine
 
 subroutine sub21(arg,n)
 	integer n
 	logical*2, DIMENSION(n) :: arg
 	value arg
-	
+
 	if (any (arg .NEQV. l1_r)) error stop 2110
 	if (size(arg) .ne. SIZEOFA) error stop 2111
 	if ( any(lbound(arg) .ne. 1)) error stop 2112
@@ -114,12 +111,12 @@ subroutine sub21(arg,n)
 	if (rank(arg) .ne. 1) error stop 2114
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 2115
 	arg = .false.
-end subroutine	
+end subroutine
 
 subroutine sub22(arg)
 	logical*2, DIMENSION(10) :: arg
 	value arg
-	
+
 	if (any (arg .NEQV. l1_r)) error stop 2210
 	if (size(arg) .ne. SIZEOFA) error stop 2211
 	if ( any(lbound(arg) .ne. 1)) error stop 2212
@@ -127,12 +124,12 @@ subroutine sub22(arg)
 	if (rank(arg) .ne. 1) error stop 2214
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 2215
 	arg = .false.
-end subroutine	
+end subroutine
 
 subroutine sub23(arg)
 	logical*2, DIMENSION(SIZEOFA) :: arg
 	value arg
-	
+
 	if (any (arg .NEQV. l1_r)) error stop 2310
 	if (size(arg) .ne. SIZEOFA) error stop 2311
 	if ( any(lbound(arg) .ne. 1)) error stop 2312
@@ -140,12 +137,12 @@ subroutine sub23(arg)
 	if (rank(arg) .ne. 1) error stop 2314
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 2315
 	arg = .false.
-end subroutine	
+end subroutine
 
 subroutine sub24(arg)
 	logical*2, DIMENSION(:) :: arg
 	value arg
-	
+
 	if (any (arg .NEQV. l1_r)) error stop 2410
 	if (size(arg) .ne. SIZEOFA) error stop 2411
 	if ( any(lbound(arg) .ne. 1)) error stop 2412
@@ -153,13 +150,13 @@ subroutine sub24(arg)
 	if (rank(arg) .ne. 1) error stop 2414
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 2415
 	arg = .false.
-end subroutine	
+end subroutine
 
 subroutine sub31(arg,arg2)
 	logical*2 arg2(:)
 	logical*2 arg(size(arg2))
 	value arg
-	
+
 	if (any (arg .NEQV. l1_r)) error stop 3110
 	if (size(arg) .ne. SIZEOFA) error stop 3111
 	if ( any(lbound(arg) .ne. 1)) error stop 3112
@@ -167,13 +164,13 @@ subroutine sub31(arg,arg2)
 	if (rank(arg) .ne. 1) error stop 3114
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 3115
 	arg = .false.
-end subroutine	
+end subroutine
 
 subroutine sub32(arg,arg2)
 	logical*2 arg2(:)
 	logical*2 , DIMENSION (size(arg2)) :: arg
 	value arg
-	
+
 	if (any (arg .NEQV. l1_r)) error stop 3210
 	if (size(arg) .ne. SIZEOFA) error stop 3211
 	if ( any(lbound(arg) .ne. 1)) error stop 3212
@@ -181,6 +178,6 @@ subroutine sub32(arg,arg2)
 	if (rank(arg) .ne. 1) error stop 3214
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 3215
 	arg = .false.
-end subroutine	
+end subroutine
 
 end

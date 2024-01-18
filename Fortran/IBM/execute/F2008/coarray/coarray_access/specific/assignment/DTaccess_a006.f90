@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a006.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -70,7 +66,7 @@ program main
 		print *, "expected", dtB
 		error stop 23
 	end if
-	
+
 	if ( any(cafB(:,:)%j .ne. dtB(:,:)%j) ) then
 		print *, "actual", cafB
 		print *, "expected", dtB
@@ -81,13 +77,13 @@ program main
 	! next test assignment from the coarray array
 	arr = mid
 	dtB = cafB
-	
+
 	if ( any( reshape(dtB(:,:)%i, [4]) .ne. arr)) then
 		print *, "actual", dtB
 		print *, "expected", arr
 		error stop 25
 	end if
-	
+
 	if ( any( reshape(dtB(:,:)%j, [4]) .ne. arr)) then
 		print *, "actual", dtB
 		print *, "expected", arr

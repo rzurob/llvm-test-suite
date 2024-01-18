@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefMINVAL.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefMINVAL.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an tranformational intrinsic
-!* 
+!*
 !*  - MINVAL
 !*  (319347)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM  InitExpDefMINVAL 
+  PROGRAM  InitExpDefMINVAL
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -122,7 +115,7 @@
   CHARACTER(KIND(MINVAL(C3, DIM=1))) :: TC3(3) =MINVAL(C3)
   CHARACTER(KIND(MINVAL(C3, DIM=3))) :: TC4(3) =MINVAL(C1, MASK=M1)
   CHARACTER(KIND(MINVAL(C3, DIM=1))) :: TC5(5,5) =MINVAL(C1, MASK=M1, DIM=1)
-  
+
   CHARACTER(16) TC(3)
 
   IF (KIND(TI11)   .NE.  1  )              STOP 10
@@ -219,4 +212,4 @@
   END
 
 
- 
+

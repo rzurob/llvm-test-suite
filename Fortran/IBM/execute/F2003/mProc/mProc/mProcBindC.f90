@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcBindC.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcBindC.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 03, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Bind(C) 
-!* 
-!*   
+!*  Bind(C)
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,54 +34,54 @@
     INTEGER(C_INT)    :: ID0
     CHARACTER(C_CHAR) :: ID1
   END TYPE
- 
-  INTERFACE Fun 
+
+  INTERFACE Fun
     PROCEDURE ModFun
   END INTERFACE
 
   PRIVATE ModFun
- 
+
   CONTAINS
 
   FUNCTION ModFun(Arg)  BIND(C)
-  TYPE(DT), INTENT(IN)   :: Arg 
+  TYPE(DT), INTENT(IN)   :: Arg
   TYPE(DT)  :: ModFun
     ModFun%ID0 = 0
-    ModFun%ID1 = Arg%ID1 
-  END FUNCTION 
+    ModFun%ID1 = Arg%ID1
+  END FUNCTION
 
   FUNCTION ModFun1(Arg, Arg1) BIND(C)
-  TYPE(DT), INTENT(IN) :: Arg, Arg1 
+  TYPE(DT), INTENT(IN) :: Arg, Arg1
   TYPE(DT)  :: ModFun1
     ModFun1%ID0 = 1
-    ModFun1%ID1 = Arg%ID1 
-  END FUNCTION 
+    ModFun1%ID1 = Arg%ID1
+  END FUNCTION
 
   FUNCTION IntFun(Arg, Arg1, Arg2) BIND(C)
-  TYPE(DT), INTENT(IN) :: Arg, Arg1, Arg2 
+  TYPE(DT), INTENT(IN) :: Arg, Arg1, Arg2
   TYPE(DT)  :: IntFun
-    IntFun = Arg 
-  END FUNCTION 
+    IntFun = Arg
+  END FUNCTION
 
   END MODULE
 
   FUNCTION ExtFun(Arg, Arg1, Arg2) BIND(C)
   USE M, ONLY : DT
-  TYPE(DT), INTENT(IN) :: Arg, Arg1, Arg2 
+  TYPE(DT), INTENT(IN) :: Arg, Arg1, Arg2
   TYPE(DT)  :: ExtFun
     ExtFun%ID0 = 2
-    ExtFun%ID1 = Arg%ID1 
-  END FUNCTION 
+    ExtFun%ID1 = Arg%ID1
+  END FUNCTION
 
 
-  PROGRAM mProcBindC 
+  PROGRAM mProcBindC
   USE M
 
-  PROCEDURE(IntFun)          :: ExtFun 
+  PROCEDURE(IntFun)          :: ExtFun
   PROCEDURE(IntFun), POINTER :: ProcPtr
 
   INTERFACE Fun
-    PROCEDURE ProcPtr 
+    PROCEDURE ProcPtr
   END INTERFACE
 
   PRocPtr => ExtFun
@@ -104,13 +96,13 @@
   INTERFACE Fun
     PROCEDURE Proc
   END INTERFACE
- 
+
   TYPE(DT) :: T, T1, T2
 
   T  = Fun(DT(0, "0"))
-  T1 = Fun(DT(1, "1"), DT(1, "1")) 
-  T2 = Fun(DT(2, "2"), DT(1, "1"), DT(0, "0")) 
- 
+  T1 = Fun(DT(1, "1"), DT(1, "1"))
+  T2 = Fun(DT(2, "2"), DT(1, "1"), DT(0, "0"))
+
   IF ( T%ID0  .NE.   0 )   STOP 11
   IF ( T%ID1  .NE. "0" )   STOP 12
 

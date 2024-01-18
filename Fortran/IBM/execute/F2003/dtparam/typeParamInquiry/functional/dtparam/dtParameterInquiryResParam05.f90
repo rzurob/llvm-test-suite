@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryResParam05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryResParam05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 29 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 29 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. FUNCTION RESULT IS ARRAY WITH TPINQ AS ELEMENTS
 !* 4. DEFECT 353790
@@ -62,7 +54,7 @@ module m
 
 end module
 
-  program dtParameterInquiryResParam05 
+  program dtParameterInquiryResParam05
   use m
   implicit none
 
@@ -71,16 +63,16 @@ end module
     function  getParamInfo1(dt)
        import
        type(base(4,1,5,7,*,*)),intent(in) :: dt
-       integer,dimension(12) :: getParamInfo1 
+       integer,dimension(12) :: getParamInfo1
     end function
-  
-  end interface 
+
+  end interface
 
   type(base(4,1,5,max(3,7),:,:)),allocatable :: b1
   type(base) :: b2
 
   !--- defect 353790--!
-  allocate(base(kind(2_4),kind('a'), & 
+  allocate(base(kind(2_4),kind('a'), &
     selected_int_kind(7)+1,max(3,7),99,9) :: b1)
 
 !    allocate(base(4,1,5,7,99,9) :: b1)
@@ -106,6 +98,6 @@ end
         getParamInfo1(9)=dt%k3%kind
         getParamInfo1(10)=dt%k4%kind
         getParamInfo1(11)=dt%l1%kind
-        getParamInfo1(12)=dt%l2%kind 
-        
+        getParamInfo1(12)=dt%l2%kind
+
      end function

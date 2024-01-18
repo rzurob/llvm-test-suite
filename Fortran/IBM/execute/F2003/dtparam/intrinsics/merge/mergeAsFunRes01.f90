@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeAsFunRes01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeAsFunRes01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 19 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 19 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE AND FSOURCE ARE DERIVED TYPE ALLOCATABLE ARRAY
 !* 4. DRIVED TYPE COMPONENT AND CHARACTER COMPONENT
 !* 5. MERGE AS FUNCTION RESULT
@@ -36,7 +28,7 @@ module m
   end type
   type B(l2)
      integer,len  :: l2
-     
+
      type(A(2,:)),allocatable :: a1(:)
   end type
 end module
@@ -47,15 +39,15 @@ program mergeAsFunRes01
 
    interface
       function getMergeResult2(Ts,Fs,Mask)
-         import  
+         import
          type(B(*)),intent(in) :: Ts(:),Fs(:)
          logical,intent(in) :: Mask(:)
-         type(B(:)),allocatable :: getMergeResult2(:)         
+         type(B(:)),allocatable :: getMergeResult2(:)
 
       end function
    end interface
 
-   type(A(2,:)),allocatable :: typeA1(:),typeA2(:) 
+   type(A(2,:)),allocatable :: typeA1(:),typeA2(:)
    type(B(:)),allocatable :: typeB1(:),typeB2(:),typeB3(:)
 
    allocate(typeA1(2),source=[A(2,3)(c1=["1234","5678"]), &
@@ -94,7 +86,7 @@ program mergeAsFunRes01
    if(any(typeB3(2)%a1(2)%c1 /=  &
                     ["8888","9999"]  ))                 error stop 27_4
 
-   
+
    typeB3=getMergeResult2(typeB1,typeB2,[.false.,.true.])
 
    if(typeB3%l2 /= 3)                                   error stop 40_4
@@ -119,7 +111,7 @@ program mergeAsFunRes01
    if(any(typeB3(2)%a1(2)%c1 /=  &
                     ["00","11","22","33"]  ))           error stop 57_4
 
-   
+
    contains
       function getMergeResult1()
          type(B(:)),allocatable :: getMergeResult1(:)
@@ -133,7 +125,7 @@ function getMergeResult2(Ts,Fs,Mask)
     type(B(*)),intent(in) :: Ts(:),Fs(:)
     logical,intent(in) :: Mask(:)
     type(B(:)),allocatable :: getMergeResult2(:)
-     
+
         getMergeResult2=merge(Ts,Fs,Mask)
 end function
 

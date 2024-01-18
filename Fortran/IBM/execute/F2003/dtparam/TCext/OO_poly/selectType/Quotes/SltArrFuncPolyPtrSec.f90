@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrFuncPolyPtrSec.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrFuncPtrAllocSec
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 19, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is an array pointer from function call
-!*   forming a array section 
+!*   forming a array section
 !*    (Polymorphism-298420)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,7 +50,7 @@
         INTEGER, LEN  :: N1
     CONTAINS
       PROCEDURE, NoPASS   :: Called
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base(N2,K2)    ! (4,20,20,4)
       INTEGER, KIND :: K2
@@ -115,7 +109,7 @@
   USE M
   IMPLICIT NONE
   TYPE(Child(4,20,20,4,20,4)) :: V(4,4)
-  
+
   V%BaseId = -1
   V%ChildId = -2
 
@@ -128,10 +122,10 @@
   CLASS(*), POINTER :: Fun(:,:)
     ALLOCATE(Fun(SIZE(Arg,1),SIZE(Arg,2)), SOURCE=Arg)
   END FUNCTION
-    
+
   SUBROUTINE Sub(Arg)
   CLASS(Base(4,*,*,4)) :: Arg(:, :)
- 
+
     SELECT TYPE (V => RESHAPE(Fun(Arg(1::2,::1)),(/2,2/)))
     CLASS DEFAULT
       SELECT TYPE (V => RESHAPE(V,(/2,2/)))
@@ -161,9 +155,9 @@
 
   END SELECT
 
-  END SUBROUTINE 
- 
- 
+  END SUBROUTINE
+
+
   END
 
 

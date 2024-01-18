@@ -3,22 +3,11 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator(.ggg.)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Operator: poly (assumed-size) array dummy arguments being the operand
 !*                                           also defined Operator arguments are assumed-size
@@ -57,7 +46,7 @@ module m
          class(base(*,4)), intent(in)  :: b(*)
 
          allocatable :: ab(:)
-         
+
          allocate ( ab(4) )
 
          do k = 1,4
@@ -118,7 +107,7 @@ program genericOperatorDummyArg007
    b1%i = 100
    c1%i = 1000
    c1%j = 2000
-   
+
    print *, '============================================='
    i= assumedsize( b1, (/ base(20,4)(1), base(20,4)(2), base(20,4)(3), base(20,4)(4) /) )
    print *, i

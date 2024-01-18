@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_61
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 30, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
-!*  -- A specification inquiry 
-!*  -- BIT_SIZE/LEN/KIND/NEW_LINE 
-!*   
-!*   
+!*  -- A specification inquiry
+!*  -- BIT_SIZE/LEN/KIND/NEW_LINE
 !*
-!*  (336280) 
+!*  (336280)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -55,21 +46,21 @@
   END TYPE
 
   TYPE(DT), SAVE :: T(2:3)
-  INTEGER, PARAMETER :: One=1 
+  INTEGER, PARAMETER :: One=1
 
   END MODULE
 
   PROGRAM dtParamTypeDecC501_61
   CALL ExtSub()
-  END 
+  END
 
   SUBROUTINE ExtSub()
   USE M
 
-  TYPE(DT(KIND=4,          LEN=BIT_SIZE(One)))        :: T1(1)  
-  TYPE(DT(KIND=4,          L  =LEN(T%C)+1 ))          :: T2(1)  
-  TYPE(DT(KIND=KIND(T%K),  LEN=KIND(T%L)+2 ))         :: T3(1)  
-  TYPE(DT(KIND=4,          L  =ICHAR(NEW_LINE("A")))) :: T4(1)  
+  TYPE(DT(KIND=4,          LEN=BIT_SIZE(One)))        :: T1(1)
+  TYPE(DT(KIND=4,          L  =LEN(T%C)+1 ))          :: T2(1)
+  TYPE(DT(KIND=KIND(T%K),  LEN=KIND(T%L)+2 ))         :: T3(1)
+  TYPE(DT(KIND=4,          L  =ICHAR(NEW_LINE("A")))) :: T4(1)
 
 
   IF ( T1%K               .NE.   4          ) STOP 11

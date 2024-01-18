@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadAsInitExp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadAsInitExp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 22 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 22 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -28,7 +20,7 @@ module m
   type A(l1)
     integer,len   :: l1=2
     character(l1) :: ch="x"
-  end type   
+  end type
   type B(k1)
     integer,kind :: k1=4
     integer(k1)  :: int=99
@@ -51,7 +43,7 @@ program spreadAsInitExp01
   type(C(4,2)) :: c1(2:3)=spread(c(4,2)(),1,2)
   type(C(4,2)),parameter :: c2(2)= &
                spread(c(4,2)(a1=spread( a(2)(ch="ab"),1,2) , &
-                             b1=spread( b(4)(int=11),1,2) ),1,2 ) 
+                             b1=spread( b(4)(int=11),1,2) ),1,2 )
   type(C(4,2)),allocatable :: c3(:)
 
   c3=c2
@@ -65,8 +57,8 @@ program spreadAsInitExp01
       if(c1(i)%a1(j)%l1 /= 2)                     error stop 14_4
       if(c1(i)%a1(j)%ch /= "x")                   error stop 15_4
       if(c1(i)%b1(j)%k1 /= 4)                     error stop 16_4
-      if(c1(i)%b1(j)%int /= 99)                   error stop 17_4 
-    end do   
+      if(c1(i)%b1(j)%int /= 99)                   error stop 17_4
+    end do
   end do
 
   if(lbound(c3,1) /= 1)                           error stop 18_4

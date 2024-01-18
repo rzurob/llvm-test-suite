@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpCommonC587 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpCommonC587
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 05, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The common statement
-!* 
+!*
 !*  C587 (R558) Only one appearance of a given variable-name or proc-pointer-name is permitted in all
-!*  common-block-object-lists within a scoping unit. 
-!*  -- Test the variables with the same in different scoping units 
+!*  common-block-object-lists within a scoping unit.
+!*  -- Test the variables with the same in different scoping units
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -46,35 +37,35 @@
     SEQUENCE
     REAL(K)       :: R(L)!=K
   END TYPE
- 
+
   TYPE :: DT_C(K,L)
     INTEGER, KIND :: K!=4
     INTEGER, LEN  :: L!=4
     SEQUENCE
     CHARACTER(L)  :: C(L)!=CHAR(48+K)
   END TYPE
- 
+
   TYPE :: DT_I(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     INTEGER(K)    :: I(L)!=K
   END TYPE
- 
+
   TYPE :: DT_L(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     LOGICAL(K)    :: A(L)!=.TRUE.
   END TYPE
- 
+
   TYPE :: DT_Z(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     COMPLEX(K)    :: Z(L)!=(K,-K)
   END TYPE
- 
+
   END MODULE
 
   BLOCK DATA
@@ -102,7 +93,7 @@
 
   END BLOCK DATA
 
-  PROGRAM dtpCommonC587 
+  PROGRAM dtpCommonC587
   USE M
 
   TYPE(DT_R(16,9))  :: R(1)
@@ -110,7 +101,7 @@
   TYPE(DT_I(2,9))   :: I(1)
   TYPE(DT_L(8,9))   :: L(1)
   TYPE(DT_Z(16,9))  :: Z(1)
-  
+
   COMMON /BLK/R
   COMMON /BLK/C
   COMMON /BLK/I
@@ -164,7 +155,7 @@
   TYPE(DT_I(2,9))   :: I(1)
   TYPE(DT_L(8,9))   :: L(1)
   TYPE(DT_Z(16,9))  :: Z(1)
-  
+
   COMMON /BLK/R
   COMMON /BLK/C
   COMMON /BLK/I

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatStreamAccessBasicRead01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatStreamAccessBasicRead01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 11 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 11 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test READ statement with stream access
@@ -28,7 +20,7 @@ module m
       integer,len :: l1  ! l1=4
       sequence
       character(l1+1) :: c1
-      integer      :: i1(l1:l1+1) 
+      integer      :: i1(l1:l1+1)
    end type
 
    type inner2(l2)
@@ -37,13 +29,13 @@ module m
       logical     :: log1(l2)
       type(inner1(l2+1)) :: inn1
    end type
-   
+
    type outer(l3)
       integer,len   :: l3  ! l3=4
       sequence
       character(l3) :: c2(l3)
       type(inner2(l3-1)) :: inn2
-   end type 
+   end type
 
 end module
 
@@ -78,14 +70,14 @@ program formatStreamAccessBasicRead01
       read(10,fmt='(i1)',pos=31) tar%inn2%inn1%i1(ubound(tar%inn2%inn1%i1,1))
       read(10,fmt='(i2)',pos=30) tar%inn2%inn1%i1(lbound(tar%inn2%inn1%i1,1))
 
-      write(*,'(4a4,/3l2,/a5,/2i2)') pouter 
-      
+      write(*,'(4a4,/3l2,/a5,/2i2)') pouter
+
       read(10,'(4a4,/3l2,/a5,2i1)',pos=1 )  tar
 
-      write(*,'(4a4,/3l3,/a5,/2i2)') pouter 
-  
-  end if   
+      write(*,'(4a4,/3l3,/a5,/2i2)') pouter
+
+  end if
 
   close(10)
-  
+
 end program

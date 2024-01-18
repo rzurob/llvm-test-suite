@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryAssumedTypeParam02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryAssumedTypeParam02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 17 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
-!* 3. USE ASSUMED LENGTH PARAMETER 
+!* 3. USE ASSUMED LENGTH PARAMETER
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type ::base(l1,l2)
@@ -34,14 +26,14 @@ module m
    end type
 end module
 
-  program dtParameterInquiryAssumedTypeParam02 
+  program dtParameterInquiryAssumedTypeParam02
   use m
   implicit none
 
   type(base(2,3)) :: b1
   character(:),allocatable :: c1(:,:)
-   
-  
+
+
   call sub1(b1)
   if(ubound(c1,1) /= 2)                                    error stop 10_4
   if(ubound(c1,2) /= 3)                                    error stop 11_4
@@ -57,10 +49,10 @@ end module
 
   contains
     subroutine sub1(t)
-       type(base(l1=*,l2=*)) :: t 
-       allocate(c1(t%l1,t%l2),source="xlftest")       
-       allocate(b1%c1(t%l2-t%l1,t%l1+t%l2),source=c1(1,1)) 
+       type(base(l1=*,l2=*)) :: t
+       allocate(c1(t%l1,t%l2),source="xlftest")
+       allocate(b1%c1(t%l2-t%l1,t%l1+t%l2),source=c1(1,1))
        if(ubound(t%c2,1) /= t%l1 .or. ubound(t%c2,2) /= t%l2)  error stop 18_4
-    end subroutine 
+    end subroutine
 
 end

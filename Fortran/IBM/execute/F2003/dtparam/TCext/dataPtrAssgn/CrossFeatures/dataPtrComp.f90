@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrComp.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrComp.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 15, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Component 
+!*  Component
 !*
-!*  
 !*  (323380)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -52,9 +44,9 @@
 
   TYPE(DT(20,4)), TARGET :: T(10, 10), T1(100)
   INTEGER, TARGET  :: TarArr(10, 10), TarArr1(100)
-  
-  TarArr  = -1 
-  TarArr1 = -2 
+
+  TarArr  = -1
+  TarArr1 = -2
 
   T  = DT(20,4)(TarArr, TarArr1)
   T1 = DT(20,4)(TarArr, TarArr1)
@@ -68,11 +60,11 @@
   CLASS(DT(:,4)), POINTER :: Ptr(:, :)
   INTEGER            :: I, J, N
 
-  DO I =1, N 
-  DO J =I, N 
+  DO I =1, N
+  DO J =I, N
 
-    Ptr(I:, J:) => Arr(I:, J:) 
-    Ptr(I, J)%PArr0(I:, J:) => Ptr(I, J)%PArr0(I:, J:) 
+    Ptr(I:, J:) => Arr(I:, J:)
+    Ptr(I, J)%PArr0(I:, J:) => Ptr(I, J)%PArr0(I:, J:)
     IF (.NOT. ASSOCIATED(Ptr(I, J)%PArr0,  Arr(I, J)%PArr0(I:, J:) ))    STOP 11
     IF (ANY( LBOUND(Ptr(I, J)%PArr0) .NE. (/I , J/)))                    STOP 12
     IF (ANY( UBOUND(Ptr(I, J)%PArr0) .NE. (/N,  N/)))                    STOP 13

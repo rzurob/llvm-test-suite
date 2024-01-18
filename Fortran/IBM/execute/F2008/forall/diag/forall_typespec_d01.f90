@@ -1,24 +1,21 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_01d.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
-!*  SECONDARY FUNCTIONS TESTED : 
-!*  ADAPTED FROM               : 
+!*  SECONDARY FUNCTIONS TESTED :
+!*  ADAPTED FROM               :
 !*
 !*  DESCRIPTION
 !*
 !*    Use real*4, real*8, ... , and complex*8, complex*16, ..., in the type
 !*    specifier --> Error message
 !*    Also expect the same for a derived type, other non-integer types.
-!*  
+!*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890
 

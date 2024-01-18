@@ -2,32 +2,19 @@
 ! ftcx_dtp -qck -ql -qreuse=base /tstdev/F2003/mxminAll/misc/mxminMisc16.f
 ! opt variations: -qnock -qnol -qreuse=none
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX*/MIN* as component in struct constructor
 !*
-!*
 !* ===================================================================
 
-
-program mxminMisc16 
+program mxminMisc16
 
      type base(n1,k1)    ! (20,4)
          integer, kind :: k1
@@ -47,10 +34,10 @@ program mxminMisc16
 
      character*4 :: x(5)
 
-     type (child(20,4,1,3)) :: c 
+     type (child(20,4,1,3)) :: c
      type (grandchild(20,4,1,3)) :: g
 
-     type (base(20,4)) :: b 
+     type (base(20,4)) :: b
 
      x = "zzzz"
 
@@ -80,5 +67,5 @@ program mxminMisc16
         error stop 4_4
      endif
 
-end program mxminMisc16 
+end program mxminMisc16
 

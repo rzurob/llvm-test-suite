@@ -12,26 +12,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxsigndzerointr003
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : Aug. 26, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : new runtime routines for ATAN2, LOG and SQRT intrinsics
 !*  SECONDARY FUNCTIONS TESTED : None
-!* 
-!*  DRIVER STANZA              : xlf95
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=signdzerointr
 !*
 !*  DESCRIPTION                : Passing generic values as arguments to
 !*															 ATAN2,LOG and SQRT intrinsics to make sure
-!*															 the compiler conforms to Fortran 2003 standard     
-!*   
+!*															 the compiler conforms to Fortran 2003 standard
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 real ::a,b,c,d
 complex :: f,g,h,i
@@ -81,6 +74,6 @@ if(.not.precision_x16(p,(0.804718956217050252d0,1.10714871779409041d0))) error s
 if(.not.precision_x16(q,(1.48584587818229807d0,0.841271640857651493d0))) error stop 8
 
 
-end program 
+end program
 
-		
+

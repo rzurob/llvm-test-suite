@@ -3,16 +3,11 @@
 ! opt variations: -ql -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unallocatedLBoundDerived03 - Basic Tests:
 !*                               Non-CHARACTER Derived Type
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : August 31, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Unallocated ALLOCATABLE Array of Derived Type
@@ -20,7 +15,6 @@
 !*                               "1" as the Lower Bound for an N-Dimension
 !*                               Array (1<= N <= 7) -- N == 3
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : TYPE, ALLOCATABLE Attribute, Intrinsic
@@ -33,7 +27,6 @@
 !*  7.4.1.1 General form
 !*
 !*  R734 assignment-stmt  is  variable = expr
-!*
 !*
 !*  7.4.1.3 Interpretation of intrinsic assignments
 !*

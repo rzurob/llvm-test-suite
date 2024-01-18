@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  C809AssoName6.f  
-! %VERIFY: 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  C809AssoName6.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT:  
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C809AssoName6
-!*  TEST CASE TITLE            : C809
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 20, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : Associate name 
+!*  SECONDARY FUNCTIONS TESTED : Associate name
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,11 +32,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     The associate name must only be declared once in the ASSOCIATE statement  
-!*     Selector is an array constructor with the same name as associate name 
+!*     The associate name must only be declared once in the ASSOCIATE statement
+!*     Selector is an array constructor with the same name as associate name
 !*    (ICE)
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
   MODULE M
 
     TYPE, ABSTRACT :: Base(K1,N1)    ! (4,20)
@@ -50,11 +44,11 @@
         INTEGER, LEN  :: N1
     END TYPE
 
-    TYPE, EXTENDS(Base) :: Child    ! (4,20) 
+    TYPE, EXTENDS(Base) :: Child    ! (4,20)
       INTEGER(K1)  :: Id = 0
     CONTAINS
-      PROCEDURE, NOPASS :: PrintType => PrintChild 
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, NOPASS :: PrintType => PrintChild
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -79,7 +73,7 @@
     ASSOCIATE ( Child => (/(Child(4,20)(i), i =1, 3) /) )
       IF ( ANY(SHAPE(Child)  .NE. (/3/)) )    STOP 50
       IF ( ANY(Child%GetId() .NE. (/1,2,3/))) STOP 51
- 
+
       ASSOCIATE ( Child => Child  )
         IF ( ANY(SHAPE(Child)  .NE. (/3/)) )    STOP 52
         IF ( ANY(Child%Id      .NE. (/1,2,3/))) STOP 53

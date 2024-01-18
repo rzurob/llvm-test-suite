@@ -1,20 +1,15 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue08.f
-!*  TEST CASE TITLE : F2008: VALUE attr allowed for dummy args of PURE proc
-!*  PROGRAMMER      : Gaby Baghdadi
 !*  DATE            : 2010-12-01
-!*  ORIGIN          : XL Fortran Compiler Development, IBM Torolab
 !*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
-!*  - array and pointer to array actual argument passed to elemental function 
+!*  - array and pointer to array actual argument passed to elemental function
 !*    with scalar dummy arg having value attribute
 !*  - function modifies dummy arg and returns an array
-!*  - caller verifies actual argument array is not modified, and the array 
+!*  - caller verifies actual argument array is not modified, and the array
 !*    returned
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890123456789

@@ -3,22 +3,11 @@
 ! opt variations: -ql -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Operator: Scalar to Scalar with structure constructors
 !*  KEYWORD(S)                 :
@@ -83,14 +72,14 @@ program genericOperatorStructConstr001
    class(base(4)), pointer :: b2
 
    b1 = ( base(4)(100, 101) + base(4) ( 200, 201 ) )
-   
-   allocate ( b2, source = ( base(4)() + base(4) ( 99 , 99 ) ) ) 
-   
+
+   allocate ( b2, source = ( base(4)() + base(4) ( 99 , 99 ) ) )
+
    if ( ( b1%x /= 300 ) .or. ( b1%y /= 302 ) ) error stop 1_4
    if ( ( b2%x /= 0 ) .or. ( b2%y /= 0 ) )     error stop 2_4
-   
+
    nullify ( b2 )
-   
+
    b1 = ( base(4) (y = 100 ) - base(4) ( x= -200 ) )
    if ( ( b1%x /= 101 ) .or. ( b1%y /= 199 ) ) error stop 3_4
 

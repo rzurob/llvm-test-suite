@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : F2003/dtparam/procPtr/
-! PROGRAMMER                 : Morteza Ershad-Manesh
 ! DATE                       : 08/05/2008
-! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component 
-! DRIVER STANZA              : xlfF2003
+! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component
 ! DESCRIPTION                : Use of  procedure declaration statement & procedure component with NoPass and PASS attr. and DEFFERED attr. and changing values using procedure statments (calls)
 !=======================================================================
 ! REVISION HISTORY
@@ -38,48 +34,48 @@ MODULE M
      PROCEDURE,PASS(OBJ) :: Get_Properties=>GET_CUBE_PROPERTIES
 	 PROCEDURE,PASS(OBJ) :: Set_Properties=>SET_CUBE_PROPERTIES
    END TYPE
-	
-	
+
+
 	TYPE,EXTENDS(DRAWABLE_OBJ):: rectangular_prism
      REAL(kind=k1)    :: Volume=0,Surface=0
     CONTAINS
      PROCEDURE,PASS(OBJ) :: Get_Properties=>GET_rectangular_prism_PROPERTIES
 	 PROCEDURE,PASS(OBJ) :: Set_Properties=>SET_rectangular_prism_PROPERTIES
    END TYPE
-   
-   
+
+
 	ABSTRACT INTERFACE
 	 SUBROUTINE PREPARE_OBJ(OBJ)
 	 import DRAWABLE_OBJ
 	  CLASS(DRAWABLE_OBJ(4,*)),INTENT(IN) :: OBJ
 	 END SUBROUTINE PREPARE_OBJ
-	 
+
 	 SUBROUTINE PREPARE_OBJ2(OBJ,OBJ2)
 	 import DRAWABLE_OBJ
 	  CLASS(DRAWABLE_OBJ(4,*)),INTENT(INOUT) :: OBJ,OBJ2
 	 END SUBROUTINE PREPARE_OBJ2
- 
+
  	 REAL FUNCTION ICUBE_SURFACEAREA_OBJ(OBJ)
 	 import CUBE
 	  TYPE(CUBE(4,20)),INTENT(IN) :: OBJ
 	 END FUNCTION ICUBE_SURFACEAREA_OBJ
-	 
+
 	 REAL FUNCTION ICUBE_Volume_OBJ(OBJ)
 	 import CUBE
 	  TYPE(CUBE(4,20)),INTENT(IN) :: OBJ
 	 END FUNCTION ICUBE_Volume_OBJ
-	 
+
 	REAL FUNCTION Irectangular_prism_SURFACEAREA_OBJ(OBJ)
 	 import rectangular_prism
 	  TYPE(rectangular_prism(4,20)),INTENT(IN) :: OBJ
 	 END FUNCTION Irectangular_prism_SURFACEAREA_OBJ
-	 
+
 	 REAL FUNCTION Irectangular_prism_Volume_OBJ(OBJ)
 	 import rectangular_prism
 	  TYPE(rectangular_prism(4,20)),INTENT(IN) :: OBJ
 	 END FUNCTION Irectangular_prism_Volume_OBJ
-	 
-    END INTERFACE	
+
+    END INTERFACE
 
  CONTAINS
   SUBROUTINE GET_CUBE_PROPERTIES (OBJ)
@@ -90,13 +86,13 @@ MODULE M
 	print*,"Cube Volume:",OBJ%Volume
 	print*,"Cube Surface:",OBJ%Surface
   END SUBROUTINE GET_CUBE_PROPERTIES
-  
+
   SUBROUTINE SET_CUBE_PROPERTIES (OBJ,OBJ2)
     CLASS(CUBE(4,*)),INTENT(OUT) ::OBJ
 	TYPE(CUBE(4,20)),INTENT(IN) ::OBJ2
 	PROCEDURE(ICUBE_SURFACEAREA_OBJ),POINTER :: SA =>NULL()
 	PROCEDURE(ICUBE_Volume_OBJ),POINTER :: A  =>NULL()
-	
+
 	OBJ%NAME=OBJ2%NAME
 	OBJ%SIDES1=OBJ2%SIDES1
 	SA=>CUBE_SURFACEAREA_OBJ
@@ -112,17 +108,17 @@ MODULE M
 	  RES=6*((OBJ%SIDES1)**2)
 	  CUBE_SURFACEAREA_OBJ=RES(1)
   END FUNCTION CUBE_SURFACEAREA_OBJ
-  
+
   REAL FUNCTION CUBE_Volume_OBJ(OBJ)
 	  TYPE(CUBE(4,20)),INTENT(IN) :: OBJ
 	  REAL(KIND=4)             :: RES(1)
 	  RES=((OBJ%SIDES1)**3)
 	  print*,OBJ%SIDES1,"---",RES, "-|",(OBJ%SIDES1)**3
 	  CUBE_Volume_OBJ=RES(1)
-  END FUNCTION CUBE_Volume_OBJ  
-  
+  END FUNCTION CUBE_Volume_OBJ
 
-  
+
+
    SUBROUTINE GET_rectangular_prism_PROPERTIES (OBJ)
     CLASS(rectangular_prism(4,*)),INTENT(IN) ::OBJ
 	print*,"Rectangular Prism Property:"
@@ -131,13 +127,13 @@ MODULE M
 	print*,"RP Volume:",OBJ%Volume
 	print*,"RP Surface:",OBJ%Surface
   END SUBROUTINE GET_rectangular_prism_PROPERTIES
-  
+
   SUBROUTINE SET_rectangular_prism_PROPERTIES (OBJ,OBJ2)
     CLASS(rectangular_prism(4,*)),INTENT(OUT) ::OBJ
 	TYPE(rectangular_prism(4,20)),INTENT(IN) ::OBJ2
 	PROCEDURE(Irectangular_prism_SURFACEAREA_OBJ),POINTER :: SA =>NULL()
 	PROCEDURE(Irectangular_prism_Volume_OBJ),POINTER :: A  =>NULL()
-	
+
 	OBJ%NAME=OBJ2%NAME
 	OBJ%SIDES3=OBJ2%SIDES3
 	SA=>rectangular_prism_SURFACEAREA_OBJ
@@ -153,14 +149,14 @@ MODULE M
 	  RES=(2*(OBJ%SIDES3(1))*((OBJ%SIDES3(2)))) + (2*(OBJ%SIDES3(2))*((OBJ%SIDES3(3)))) + (2*(OBJ%SIDES3(1))*((OBJ%SIDES3(3))) )
 	  rectangular_prism_SURFACEAREA_OBJ=RES(1)
   END FUNCTION rectangular_prism_SURFACEAREA_OBJ
-  
+
   REAL FUNCTION rectangular_prism_Volume_OBJ(OBJ)
 	  TYPE(rectangular_prism(4,20)),INTENT(IN) :: OBJ
 	  REAL(KIND=4)             :: RES(3)
 	  RES=((OBJ%SIDES3(1))*(OBJ%SIDES3(2))*(OBJ%SIDES3(3)))
 	  rectangular_prism_Volume_OBJ=RES(1)
-  END FUNCTION rectangular_prism_Volume_OBJ  
-  
+  END FUNCTION rectangular_prism_Volume_OBJ
+
 END MODULE
 
 
@@ -181,9 +177,9 @@ USE M
  print*,"After Setting Values"
  print*,"--------------------"
  call MyCube%Get_Properties()
-  
- 
- print*,"|--------------------|" 
+
+
+ print*,"|--------------------|"
   TempRP%NAME="MyRP"
  TempRP%SIDES3=(/MyCube%Volume,33.0,MyCube%Surface/)
  print*,"Before Setting Values"

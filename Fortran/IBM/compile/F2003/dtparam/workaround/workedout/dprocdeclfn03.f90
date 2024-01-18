@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : F2003/dtparam/procPtr/
-! PROGRAMMER                 : Morteza Ershad-Manesh
 ! DATE                       : 08/05/2008
-! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component 
-! DRIVER STANZA              : xlfF2003
+! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component
 ! DESCRIPTION                : Use of  procedure declaration statement & procedure component with NoPass and PASS attr. and DEFFERED attr.
 !=======================================================================
 ! REVISION HISTORY
@@ -18,7 +14,7 @@
 MODULE M
 
     TYPE, EXTENDS(OBJECT) :: T
-     INTEGER :: N 
+     INTEGER :: N
     END TYPE
 
     TYPE, ABSTRACT :: OBJECT (k1,LEN1)

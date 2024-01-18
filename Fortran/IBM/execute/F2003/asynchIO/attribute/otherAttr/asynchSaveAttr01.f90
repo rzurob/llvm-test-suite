@@ -1,19 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchSaveAttr01 - ASYNCHRONOUS Attribute
 !*                               Interactions with Other Attributes
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : February 16, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : Interactions with the SAVE Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 :
@@ -35,7 +29,6 @@
 !*  ...
 !*                  or  SAVE
 !*
-!*
 !*  5.1.2.13 SAVE attribute
 !*
 !*  An entity with the SAVE attribute, in the scoping unit of a subprogram,
@@ -49,7 +42,6 @@
 !*  status, and value after a RETURN or END statement is executed in a
 !*  procedure that accesses the module unless it is a pointer and its
 !*  target becomes undefined.
-!*
 !*
 !*  5.2.12 SAVE statement
 !*

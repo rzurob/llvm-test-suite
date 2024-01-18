@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/27/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: C471 An overriding binding shall have the DEFERRED attribute only if the binding
 !*                                        it overrides is deferred.
@@ -49,33 +33,33 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
-   
+
    type, abstract :: base(k1)
       integer, kind :: k1
       integer(k1) :: id
    contains
       procedure(print1), deferred, pass :: print
    end type
-   
+
    type, extends(base), abstract :: child(k2)
       integer, kind :: k2
    contains
       procedure(print2), deferred, pass :: print
    end type
-      
+
    type, extends(child) :: gen3(k3)
       integer, kind :: k3
    contains
       procedure, pass :: print => printgen3
    end type
-   
+
    interface
       subroutine print1(a)
          import base
          class(base(4)), intent(in) :: a
       end subroutine
-   end interface 
-   
+   end interface
+
    interface
       subroutine print2(a)
          import child
@@ -84,23 +68,23 @@ module m
    end interface
 
 contains
-   
+
    subroutine printgen3(a)
       class(gen3(4,4,4)), intent(in) :: a
-      print *,a%id   
+      print *,a%id
    end subroutine
-   
+
 end module
 
 program deferred002
-   use m  
+   use m
    class(base(4)), pointer :: b1
    class(child(4,4)), allocatable :: c1
-   
+
    allocate (b1, source = gen3(4,4,4)(3))
    allocate (c1, source = gen3(4,4,4)(4))
-   
+
    call b1%print()
    call c1%print()
-   
+
 end program

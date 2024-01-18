@@ -3,7 +3,7 @@ type(c_funptr) :: cptr
 
 interface
   subroutine sub() bind(c)
-  end 
+  end
 
   subroutine sub2()
   end

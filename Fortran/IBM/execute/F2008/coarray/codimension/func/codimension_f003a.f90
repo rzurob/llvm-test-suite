@@ -1,22 +1,16 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : codimension_f003a.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : October 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Test codimension attribute vs entity declaration for a static coarray.
-!*                            
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
@@ -24,25 +18,25 @@
 	integer*8, save, codimension[*] :: caf2(2,2)[10:*]
 	complex*8, save, codimension[2,2,*] :: caf3[0:1,1:2,2:*]
 	logical*8, save, dimension(3), codimension[1:2,0:*] :: caf4[5,4,3,2,*]
-	
+
 	type blk
 		integer :: x
 		logical :: flag
 	end type
 	type (blk) :: dts
-	
+
 	integer, allocatable :: a(:), b(:)
 	integer :: num
 	num = num_images()
 	dts%flag = .false.
 	dts%x = -1
-	
-	
+
+
 !%%%%%%%%%%%%%%%%%%%%%%% CAF1 %%%%%%%%%%%%%%%%%%%%%%%
 	!#### Test coarray bounds
 	a = lcobound(caf1)
 	b = ucobound(caf1)
-	
+
 	if ((size(a) /= 1) .or. (size(b) /= 1)) then
 		error stop 11
 	end if
@@ -54,7 +48,7 @@
 		print *, b, num
 		error stop 13
 	end if
-	
+
 	!#### Test coarray storage
 	caf1 = dts%x
 	caf1[1] = dts%x + 1
@@ -69,13 +63,13 @@
 			error stop 15
 		end if
 	end if
-	
+
 
 !%%%%%%%%%%%%%%%%%%%%%%% CAF2 %%%%%%%%%%%%%%%%%%%%%%%
 	!#### Test coarray bounds
 	a = lcobound(caf2)
 	b = ucobound(caf2)
-	
+
 	if ((size(a) /= 1) .or. (size(b) /= 1)) then
 		error stop 21
 	end if
@@ -87,7 +81,7 @@
 		print *, b, 9 + num
 		error stop 23
 	end if
-	
+
 	!#### Test coarray storage
 	caf2 = caf1
 	if (this_image() == 1) then
@@ -102,12 +96,12 @@
 		end if
 	end if
 
-	
+
 !%%%%%%%%%%%%%%%%%%%%%%% CAF3 %%%%%%%%%%%%%%%%%%%%%%%
 	!#### Test coarray bounds
 	a = lcobound(caf3)
 	b = ucobound(caf3)
-	
+
 	if ((size(a) /= 3) .or. (size(b) /= 3)) then
 		error stop 31
 	end if
@@ -119,7 +113,7 @@
 		print *, b
 		error stop 33
 	end if
-	
+
 	!#### Test coarray storage
 	caf3 = (12.5, -15.25)
 	if (caf3 /= (12.5, -15.25)) then
@@ -132,7 +126,7 @@
 	!#### Test coarray bounds
 	a = lcobound(caf4)
 	b = ucobound(caf4)
-	
+
 	if ((size(a) /= 5) .or. (size(b) /= 5)) then
 		error stop 41
 	end if
@@ -144,7 +138,7 @@
 		print *, b
 		error stop 43
 	end if
-	
+
 	!#### Test coarray storage
 	caf4 = dts%flag
 	caf4[1,1,1,1,1] = .true.

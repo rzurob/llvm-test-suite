@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: StrComp6.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: StrComp6.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : StrComp6.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : StrComp6.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 24, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  on pure function 
-!*  (314926) 
+!*
+!*  on pure function
+!*  (314926)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -65,30 +59,30 @@
     CONTAINS
 
     PURE FUNCTION ModFun1(Arg)
-    CLASS(Base(4,*)), INTENT(IN) :: Arg 
-    TYPE (Base(4,20)) :: ModFun1 
-      ModFun1%ProcPtr1 => Arg%ProcPtr1 
+    CLASS(Base(4,*)), INTENT(IN) :: Arg
+    TYPE (Base(4,20)) :: ModFun1
+      ModFun1%ProcPtr1 => Arg%ProcPtr1
     END FUNCTION
- 
+
     PURE FUNCTION ModFun2(Arg)
-    CLASS(DT(4,*)), INTENT(IN) :: Arg 
-    TYPE (DT(4,20)) :: ModFun2 
+    CLASS(DT(4,*)), INTENT(IN) :: Arg
+    TYPE (DT(4,20)) :: ModFun2
       ModFun2%ProcPtr1 => Arg%ProcPtr1
       ModFun2%ProcPtr2 => Arg%ProcPtr2
       ALLOCATE(base(4,20) :: ModFun2%BComp)
       ModFun2%BComp%ProcPtr1 => Arg%ProcPtr1
     END FUNCTION
- 
+
     FUNCTION ModFun3(Arg1, Arg3)
     CLASS(DT(4,*)) :: Arg1
-    PROCEDURE(ModFun1)          :: Arg3 
-    PROCEDURE(ModFun1), POINTER :: ModFun3 
+    PROCEDURE(ModFun1)          :: Arg3
+    PROCEDURE(ModFun1), POINTER :: ModFun3
       ModFun3 => Arg3
     END FUNCTION
- 
+
   END MODULE
 
-  PROGRAM StrComp6  
+  PROGRAM StrComp6
   USE M
   TYPE(DT(4,:)),   POINTER :: V
   TYPE(Base(4,:)), POINTER :: V1
@@ -98,9 +92,9 @@
 
   ALLOCATE(V, SOURCE=DT(4,20)(Base=Base(4,20)(ModFun1), BComp=Base(4,20)(ModFun1), ProcPTr2=Modfun2))
 
-  IF ( .NOT. ASSOCIATED(V%ProcPtr1, Modfun1)) STOP 11 
-  IF ( .NOT. ASSOCIATED(V%ProcPtr2, Modfun2)) STOP 12 
-  IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr1, Modfun1)) STOP 13 
+  IF ( .NOT. ASSOCIATED(V%ProcPtr1, Modfun1)) STOP 11
+  IF ( .NOT. ASSOCIATED(V%ProcPtr2, Modfun2)) STOP 12
+  IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr1, Modfun1)) STOP 13
 
   ALLOCATE(Base(4,20) :: V1)
   V1%ProcPtr1 => Null()
@@ -125,6 +119,6 @@
 
   ProcPtr => U(1)%ProcPtr(ModFun1)
   IF ( .NOT. ASSOCIATED(ProcPtr, Modfun1)) STOP 21
-  
+
   END
 

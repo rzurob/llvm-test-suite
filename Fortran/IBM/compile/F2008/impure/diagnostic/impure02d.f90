@@ -1,17 +1,14 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure02d
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
 !*
 !*  DESCRIPTION
 !*
-!*  checks if an IMPURE elemental procedure which is also RECURSIVE, generates an error 
-!*  message 
+!*  checks if an IMPURE elemental procedure which is also RECURSIVE, generates an error
+!*  message
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 

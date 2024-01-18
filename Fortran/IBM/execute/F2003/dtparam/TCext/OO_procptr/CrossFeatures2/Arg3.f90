@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,11 +34,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  If an external procedure name or a dummy procedure name is used as an actual
 !*  argument, its interface shall be explicit or it shall be explicitly
 !*  declared to have the EXTERNAL attribute
-!* 
+!*
 !* ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -91,14 +85,14 @@
   USE M
   CLASS(DT(4,*,4,*)) :: Arg
   CLASS(DT(4,:,4,:)), POINTER ::  ExtFun
-    ALLOCATE(ExtFun, SOURCE=Arg) 
+    ALLOCATE(ExtFun, SOURCE=Arg)
   END FUNCTION
 
-  PROGRAM Arg3 
+  PROGRAM Arg3
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
   PROCEDURE(IFun) :: ExtFun
-  PROCEDURE(ExtFun), POINTER :: ProcPtr 
+  PROCEDURE(ExtFun), POINTER :: ProcPtr
 
   CALL IntSub1(ExtFun )
 
@@ -116,7 +110,7 @@
     IF (.NOT. ASSOCIATED(V%ProcPtr, Arg)) STOP 12
 
     V%C = "321"
-    V%ProcPtr => IFun 
+    V%ProcPtr => IFun
     U = V%Proc()
     IF (U%C .NE. "321")                    STOP 21
     IF (.NOT. ASSOCIATED(U%ProcPtr, IFun)) STOP 22

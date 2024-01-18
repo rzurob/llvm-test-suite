@@ -32,4 +32,3 @@
 
   ! Expected result:
   !  hello
-  !  hello

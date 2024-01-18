@@ -1,28 +1,16 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : complex32a.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : TO is of unlimited poly, component of a DT     
+!*  DESCRIPTION                : TO is of unlimited poly, component of a DT
 !*                               TO/FROM of complex*32 with many attrs
-!*                               be called in module procedure 
-!*                               rank 5 
-!*                               
+!*                               be called in module procedure
+!*                               rank 5
+!*
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -34,21 +22,21 @@
 module m
 
        complex*32, allocatable, save, protected, volatile :: a1(:,:,:,:,:)
-       
-       contains 
+
+       contains
           subroutine sub(a2)
-              complex(16), intent(inout) :: a2(:,:,:,:,:) 
+              complex(16), intent(inout) :: a2(:,:,:,:,:)
               allocatable a2
               call move_alloc(a1, a2)
           end subroutine
 
-          subroutine new 
+          subroutine new
               allocate(a1(1,1,1,1,1))
               a1 = cmplx(cmplx(1,2,16))
           end subroutine
 end module
 
-program main 
+program main
 
        use m
        complex(16), allocatable :: x(:,:,:,:,:)
@@ -60,7 +48,7 @@ program main
        if ( .not. allocated(x) ) stop 21
        if ( allocated(a1) ) stop 23
 
-       write (6, 100) x(1,1,1,1,1) 
+       write (6, 100) x(1,1,1,1,1)
 
        100 format ("(", 2f25.17, ")")
 end

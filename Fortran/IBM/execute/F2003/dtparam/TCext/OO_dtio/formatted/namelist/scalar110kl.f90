@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar110kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar110 by Robert Ma)
 !*  DATE                       : 2007-07-12 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with polymorphic entities contains polymorphic components (Output)
@@ -80,7 +72,7 @@ program scalar110kl
    allocate(b1)
    allocate(basedata(4,2):: b1%bd) ! tcx: basedata(4,2)
    allocate(child(4,4) :: b2 ) ! tcx: (4,4)
-   
+
    select type ( b2 )
       type is (child(4,4)) ! tcx: (4,4)
          allocate(childdata(4,2,4,2) :: b2%bd, b2%cd) ! tcx: (4,2,4,2)
@@ -147,7 +139,7 @@ subroutine readformatted (dtv, unit, iotype, v_list, iostat, iomsg)
          allocate (dtv%bd, source = dummy1)
          allocate (dtv%cd, source = dummy2)
       class default            !<- if it's not type child, it's type base
-         allocate (dummy1, source = dtv%bd)      
+         allocate (dummy1, source = dtv%bd)
          read (unit, basedtio, iostat = iostat, iomsg = iomsg)
          deallocate ( dtv%bd )
          allocate (dtv%bd, source = dummy1)

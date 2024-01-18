@@ -1,19 +1,11 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with READ/WRITE statement
-!*                             
 !*
-!*  DESCRIPTION                : 
-!*                 test different ROUND mode for list-directed formatting. 
+!*  DESCRIPTION                :
+!*                 test different ROUND mode for list-directed formatting.
 !* ===================================================================
 
   program roundRealRWEdit05
@@ -24,10 +16,10 @@
     character(18) :: r_mode(6)
     real*8  r1(6), r2(6), r3(6), r4(6)
 
-    integer, parameter::unit_r = 2 
-    integer, parameter::unit_w = 3 
+    integer, parameter::unit_r = 2
+    integer, parameter::unit_w = 3
 
-    open(unit_r, access="sequential", form="formatted",             & 
+    open(unit_r, access="sequential", form="formatted",             &
         & file="roundRealRWEdit05.dat")
 
     open(unit_w, access="sequential", form="formatted",             &

@@ -3,24 +3,12 @@
 ! opt variations: -ql -qreuse=self -qreuse=none
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlimitpoly5.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 05/24/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimit polymorphic, scalar
 !*                               keyword FROM/TO provided in a reference to MOVE_ALLOC
@@ -28,7 +16,7 @@
 !*                               FROM/TO has intent, save attribute
 !*                               type LOGICAL
 !*				 TO is finialized, FROM is not finalized
-!*                        
+!*
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -39,10 +27,10 @@
 
 module m
 
-    integer, save :: countA 
+    integer, save :: countA
     integer, save :: countB
 
-    type A(k1,k2)    ! (4,4) 
+    type A(k1,k2)    ! (4,4)
        integer, kind :: k1,k2
        real(k1)         x
        real(k2)         y
@@ -51,7 +39,7 @@ module m
           final :: final1
     end type
 
-    type, extends(A) :: B    ! (4,4) 
+    type, extends(A) :: B    ! (4,4)
        real(k1) z
 
        contains
@@ -79,24 +67,24 @@ program main
 use m
 
     class(*), allocatable :: from
-    class(*), asynchronous, allocatable :: to 
+    class(*), asynchronous, allocatable :: to
 
     ! final subroutines for B and A are called
     allocate(from, source = B(4,4)(8.123, 3.456, 5.003) )
 
-    ! final subroutine for A is called 
+    ! final subroutine for A is called
     allocate(to, source = A(4,4)(10,39) )
 
     if ( .not. allocated(from) ) stop 21
     if ( .not. allocated(to) ) stop 22
 
     countB = 0
-    countA = 0 
+    countA = 0
 
     ! final subroutine for A is called
     call move_alloc(from, to)
 
-    if ( countA /= 1 ) stop 23 
+    if ( countA /= 1 ) stop 23
     if ( countB /= 0 ) stop 24
 
     if ( allocated(from) ) stop 25
@@ -104,10 +92,10 @@ use m
 
     select type(to)
         type is (B(4,4))
-            PRINT 10, to 
+            PRINT 10, to
             10  FORMAT(" ", F5.3," ", F5.3, " ", F5.3)
         class default
-            stop 33 
+            stop 33
     end select
 end
 

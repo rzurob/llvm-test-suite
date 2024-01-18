@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : ambiguious generic interfaces
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Optional dummy args, and some class hierarchy
 !*
@@ -84,7 +73,7 @@ program genericAmbiguityTypeBound030
    call c1_1%threeargs( c1_1, g1_1, c2_1 )
 
    call c1_1%threeargs( c1_1, g1_1 )
-   
+
    call g1_1%threeargs( c1_1, g1_1, c1_1 )
 
    call g1_1%threeargs( c1_1, g1_1, c2_1 )

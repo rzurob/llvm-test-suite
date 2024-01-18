@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefDeterm7   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefDeterm7
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 15, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Determination of Types 
+!*  SECONDARY FUNCTIONS TESTED : Determination of Types
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Determination of derived types - sequence types 
+!*  Determination of derived types - sequence types
 !*
 !*  (Syntax err&ice/340231)
 !*
@@ -38,7 +31,7 @@
   TYPE :: DT(K, L)
     INTEGER, KIND :: K
     INTEGER, LEN  :: L
-    SEQUENCE      
+    SEQUENCE
     INTEGER(K)  :: I
     REAL(K)     :: R
     COMPLEX(K)  :: Cplx
@@ -46,18 +39,18 @@
     CHARACTER(L):: C
   END TYPE
 
-  INTERFACE 
+  INTERFACE
     TYPE(DT(8, 4)) FUNCTION Fun(Arg)
       IMPORT DT
       TYPE(DT(8, *)) :: Arg
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
 
- 
+
   END MODULE
 
-  PROGRAM dtParamTypeDefDeterm7 
-  USE M, ONLY : Fun 
+  PROGRAM dtParamTypeDefDeterm7
+  USE M, ONLY : Fun
 
   TYPE :: DT(K, L)
     INTEGER, KIND :: K
@@ -71,7 +64,7 @@
   END TYPE
 
   TYPE(DT(8, 4)) :: T
-  
+
   T = Fun(DT(8,4)(-1_8, -1.0_8, (1._8, -1._8), .FALSE._8, "B"))
 
   IF ( T%I      .NE.   -1_8 )           STOP 23
@@ -82,7 +75,7 @@
 
   END
 
-  TYPE(DT(8, 4)) FUNCTION Fun(Arg) 
+  TYPE(DT(8, 4)) FUNCTION Fun(Arg)
   TYPE :: DT(K, L)
     INTEGER, KIND :: K
     INTEGER, LEN  :: L
@@ -95,8 +88,8 @@
   END TYPE
   TYPE(DT(8, *)) Arg
 
-    Fun =Arg 
+    Fun =Arg
 
-  END FUNCTION 
+  END FUNCTION
 
 

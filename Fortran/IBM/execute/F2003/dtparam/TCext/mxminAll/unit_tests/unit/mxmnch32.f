@@ -16,26 +16,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxmxc032
-!*
-!*  PROGRAMMER                 : John Zang
 !*  DATE                       : Oct. 20, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support character argument for MAX/
 !*                               MIN/MAXVAL/MINVAL/MAXLOC/MINLOC
 !*  SECONDARY FUNCTIONS TESTED : Functional test
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qfixed
 !*
 !*  DESCRIPTION                : MAX/MIN - Maximum or minimum value
 !*                               according to their collating sequence
-!*                               of ASCII characters. 
+!*                               of ASCII characters.
 !*                               MAXVAL/MINVAL - Maximum or minimum value
 !*                               of elements in a character array.
 !*                               MAXLOC/MINLOC - The location of maximum
@@ -44,13 +37,13 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
-      type dt(k1,n1)    ! (4,10) 
+      type dt(k1,n1)    ! (4,10)
         integer, kind :: k1
         integer, len  :: n1
         character(n1)    aa(2,3,4)
       end type
       type(dt(4,10)) adt
-      integer, allocatable :: yy(:) 
+      integer, allocatable :: yy(:)
       integer, allocatable :: xx(:,:)
 
       adt%aa = '!'
@@ -60,12 +53,12 @@
       adt%aa(1,3,1) = 'bel'
       adt%aa(2,2,1) = 'jan'
       adt%aa(2,3,4) = 'gb'
-      
+
       allocate(yy(3))
       yy = maxloc(adt%aa(:,:,2:3))
-      if (yy(1) /= 2) error stop 1 
-      if (yy(2) /= 1) error stop 2 
-      if (yy(3) /= 2) error stop 3 
+      if (yy(1) /= 2) error stop 1
+      if (yy(2) /= 1) error stop 2
+      if (yy(3) /= 2) error stop 3
       deallocate(yy)
 
       allocate(xx(3,2))
@@ -107,9 +100,9 @@
 
       allocate(yy(3))
       yy = minloc(adt%aa(:,:,2:3))
-      if (yy(1) /= 1) error stop 21 
-      if (yy(2) /= 2) error stop 22 
-      if (yy(3) /= 1) error stop 23 
+      if (yy(1) /= 1) error stop 21
+      if (yy(2) /= 2) error stop 22
+      if (yy(3) /= 1) error stop 23
       deallocate(yy)
 
       allocate(xx(3,2))

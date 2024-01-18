@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361880_1.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361880_1.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 5 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 5 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 361880
@@ -26,19 +18,19 @@ module m
    type A(l1)
       integer,len :: l1
       character(l1),allocatable :: c1(:)
-      character(:),allocatable :: c2(:)  
+      character(:),allocatable :: c2(:)
    end type
 
    type B(l2)
       integer,len :: l2
       integer,allocatable :: i1(:)
-      character(l2),allocatable :: c3(:) 
+      character(l2),allocatable :: c3(:)
    end type
 
    type C(l3)
       integer,len :: l3 ! l3=2
       type(A(2+1)),allocatable :: a1comp(:)
-      type(B(:)),allocatable :: b1comp(:) 
+      type(B(:)),allocatable :: b1comp(:)
    end type
 
 end module

@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefC427 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefC427
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 29, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -27,15 +21,14 @@
 !*
 !*  C427 (R429) If the type definition contains or inherits (4.5.6.1) a deferred
 !*  binding (4.5.4), ABSTRACT shall appear.
-!*   
 !*
-!*  (Complaint on k1 and DSIN? -- 339680) 
+!*  (Complaint on k1 and DSIN? -- 339680)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamTypeDefC427 
- 
+  PROGRAM dtParamTypeDefC427
+
    TYPE DT(K0)
      INTEGER, KIND :: K0
    END TYPE
@@ -45,33 +38,33 @@
      END SUBROUTINE
    END INTERFACE
 
-   TYPE, EXTENDS(DT) :: DT1(K) 
+   TYPE, EXTENDS(DT) :: DT1(K)
      INTEGER, KIND :: K
-     TYPE(DT(K))   :: Comp 
+     TYPE(DT(K))   :: Comp
      CONTAINS
-     PROCEDURE(S), DEFERRED, NOPASS :: TBP 
+     PROCEDURE(S), DEFERRED, NOPASS :: TBP
    END TYPE
-   
-   TYPE, EXTENDS(DT) :: DT2(K) 
+
+   TYPE, EXTENDS(DT) :: DT2(K)
      INTEGER, KIND :: K
      CONTAINS
-     PROCEDURE(ModSub), NOPASS, DEFERRED :: TBP 
+     PROCEDURE(ModSub), NOPASS, DEFERRED :: TBP
    END TYPE
 
    PROCEDURE(S) :: Proc
 
-   TYPE, EXTENDS(DT) :: DT3(K) 
+   TYPE, EXTENDS(DT) :: DT3(K)
      INTEGER, KIND :: K
      CONTAINS
-     PROCEDURE(Proc), NOPASS, DEFERRED :: TBP 
+     PROCEDURE(Proc), NOPASS, DEFERRED :: TBP
    END TYPE
 
-   TYPE :: DT4(K) 
+   TYPE :: DT4(K)
      INTEGER, KIND :: K
      CONTAINS
-     PROCEDURE(ABS), NOPASS, DEFERRED :: TBP 
+     PROCEDURE(ABS), NOPASS, DEFERRED :: TBP
    END TYPE
- 
+
 ! -------------------------------------------------
 
 
@@ -110,7 +103,7 @@
      CONTAINS
      PROCEDURE(DSIN), NOPASS, DEFERRED :: TBP
    END TYPE
- 
+
    TYPE, EXTENDS(DT16) :: DT17(K)
      INTEGER, KIND :: K
    END TYPE
@@ -118,8 +111,8 @@
    CONTAINS
 
    SUBROUTINE ModSub()
-   END SUBROUTINE 
-  
+   END SUBROUTINE
+
   END
 
 

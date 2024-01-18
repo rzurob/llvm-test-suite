@@ -1,23 +1,12 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                : MAX*/MIN* with deferred shape array 
+!*  DESCRIPTION                : MAX*/MIN* with deferred shape array
 !* ===================================================================
 
 program mxminMisc17
@@ -32,8 +21,8 @@ program mxminMisc17
 
    allocate(x2(2, 3))
 
-   x2 = "ggg" 
-  
+   x2 = "ggg"
+
    if(any(max(x1, x2)   .ne. 'ggg')) then
          error stop 1_4
    endif
@@ -48,6 +37,5 @@ program mxminMisc17
 
    deallocate(x2)
 
-end program mxminMisc17 
-
+end program mxminMisc17
 

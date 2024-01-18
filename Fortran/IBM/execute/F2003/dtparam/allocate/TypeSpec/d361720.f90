@@ -1,7 +1,7 @@
       TYPE Base  (l1)
         INTEGER, LEN  :: l1
 
-        INTEGER :: my_arr(l1)    
+        INTEGER :: my_arr(l1)
       END TYPE Base
 
       CLASS(Base(5)), ALLOCATABLE :: c1
@@ -13,7 +13,7 @@
       SUBROUTINE allocate_me(Arg)
       CLASS(Base(*)), ALLOCATABLE :: Arg
 
-      ALLOCATE(Base(*) :: Arg)  
+      ALLOCATE(Base(*) :: Arg)
 
       END SUBROUTINE allocate_me
 END

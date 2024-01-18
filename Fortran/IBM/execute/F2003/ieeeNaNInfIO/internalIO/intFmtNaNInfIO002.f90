@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : intFmtNaNInfIO002.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : July 26, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -29,7 +23,7 @@
 !*  internal files.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-      
+
       use, intrinsic :: ieee_arithmetic
       implicit none
 
@@ -38,10 +32,10 @@
 
       character(50) :: iFile =                                         &
      &     '-nan +infiniTy -NaN(s) nan -inf +nan(Q) -nan()'
-      
+
       read(iFile,'(f4.2, f11.0, f7.7, ES4.1, G5.3, D8.1, Q7.3)')       &
      &     rl1, rl2, rl3, rl4, rl5, cx
-      
+
       if ( .not. equiv_is_negative(rl1) ) error stop 1_4
       if ( .not. equiv_is_positive(rl2) ) error stop 2_4
       if ( .not. equiv_is_negative(rl3) ) error stop 3_4
@@ -49,8 +43,8 @@
       if ( .not. equiv_is_negative(rl5) ) error stop 5_4
       if ( .not. equiv_is_positive(real(cx)) ) error stop 6_4
       if ( .not. equiv_is_negative(imag(cx)) ) error stop 7_4
-      
-      
+
+
       contains
 
       ! Returns true if the integer equivalence of
@@ -59,11 +53,11 @@
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
-         
+
          if ( val_eq .ge. 0 ) then
             equiv_is_negative = .false.
          else
@@ -78,9 +72,9 @@
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
 
          if ( val_eq .le. 0 ) then
@@ -91,6 +85,6 @@
 
       end function
 
-      
-      
+
+
       end

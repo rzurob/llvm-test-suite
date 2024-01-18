@@ -1,26 +1,23 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f014.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon 
 !*  DATE                       : 2015-06-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*
-!*  DESCRIPTION                : - Block statements with DO CONCURRENT loops in 
-!*                                 them with block statements in them (including 
+!*  DESCRIPTION                : - Block statements with DO CONCURRENT loops in
+!*                                 them with block statements in them (including
 !*                                 nested DO CONCURRENT loops)
-!*                               - User-defined data types containing reals, 
+!*                               - User-defined data types containing reals,
 !*                                 logicals, characters, complex and doubles
-!*                               - scalar-mask-expr contains user-defined data 
+!*                               - scalar-mask-expr contains user-defined data
 !*                                 types
-!*                               - DO CONCURRENT loops (including nested DO 
-!*                                 CONCURRENT loops) acting on BLOCK local 
+!*                               - DO CONCURRENT loops (including nested DO
+!*                                 CONCURRENT loops) acting on BLOCK local
 !*                                 variables
-!*                               - Select statement inside DO CONCURRENT loop 
+!*                               - Select statement inside DO CONCURRENT loop
 !*                                 with user-defined data types inside
 !*
 !* =============================================================================
@@ -59,13 +56,13 @@
         integer :: x, y, z
         real*8 :: real8_result(10)
         complex*8 :: comp8_result(5,5)
-        complex*16 :: comp16_result(3,3,3) 
+        complex*16 :: comp16_result(3,3,3)
         type (realType) dtRealType
         type (complexType) dtComplexType
         type (logicalType) dtLogicalType
         type (mixType) dtMixType
 
-        
+
         block
           integer*1 :: int1
           integer*2 :: int2
@@ -91,8 +88,8 @@
         if ( .not. precision_r4(dtRealType%real4,111.5e0) ) then
           print *, "select statement inside block in do concurrent loop inside block produces incorrect results"
           print *, "dtRealType%real4: ", dtRealType%real4
-          error stop 1 
-        end if 
+          error stop 1
+        end if
 
         real8_result = (/25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,245.6d0,823.44d0/)
         do x = 1,10
@@ -129,8 +126,8 @@
             end if
           end do
         end do
-      
-        dtMixType%char4(2) = "fail" 
+
+        dtMixType%char4(2) = "fail"
         dtRealType%real8 = 65.5d0
         block
           integer*1 :: int1
@@ -157,7 +154,7 @@
               end do
             end block
           end do
-        end block 
+        end block
 
         if ( .not. precision_r8(dtMixType%doub,15.5d1) ) then
           print *, "3-level nested do concurrent with multiple indices and masks initialized with DATA statements produced incorrect results"

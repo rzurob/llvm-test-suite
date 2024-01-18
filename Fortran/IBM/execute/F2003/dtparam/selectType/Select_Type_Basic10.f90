@@ -1,24 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type_Basic10 - SELECT TYPE 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 13, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters 
+!*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : SELECT CASE nested in SELECT TYPE
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -37,17 +29,17 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
     MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Basic (k1,len1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: len1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: len1
 
         CHARACTER(LEN=len1):: tag = 'Sum'
       END TYPE Basic
 
       TYPE, EXTENDS(Basic) :: ExtBasic (k2)
-        INTEGER, KIND :: k2 
+        INTEGER, KIND :: k2
 
         REAL(k2), ALLOCATABLE :: my_arr(:)
       END TYPE ExtBasic
@@ -59,7 +51,7 @@
 
     PROGRAM Select_Type_Basic10
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       INTERFACE
          SUBROUTINE Sub1(p)
@@ -69,7 +61,7 @@
       END INTERFACE
 
       TYPE(ExtBasic(k1,len1,k2)), TARGET :: Indv
-      CLASS(Basic(k1,len1)), POINTER :: Pnt 
+      CLASS(Basic(k1,len1)), POINTER :: Pnt
 
       ALLOCATE(Indv%my_arr(2*len1))
       IF ( .NOT. ALLOCATED(Indv%my_arr)) STOP 10
@@ -98,7 +90,7 @@
 
     SUBROUTINE Sub1(T)
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       CLASS(*) ::  T
       REAL :: tmp

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignProcNameIntrin4.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignProcNameIntrin4.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignProcNameIntrin3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignProcNameIntrin3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 14, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,20 +30,20 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  C727 (R742) A procedure-name shall be the name of an external, module,
 !*  or dummy procedure, a specific intrinsic function listed in 13.6
 !*  and not marked with a bullet (.), or a procedure pointer.
-!* 
-!*  Intrinsics 
-!*  (315324/316469/316083/330287) 
+!*
+!*  Intrinsics
+!*  (315324/316469/316083/330287)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
 
-  INTERFACE 
+  INTERFACE
     FUNCTION ExtDTANH(Arg)
       DOUBLE PRECISION :: ExtDTANH
       DOUBLE PRECISION, INTENT(IN) :: Arg
@@ -75,7 +69,7 @@
       DOUBLE PRECISION, INTENT(IN) :: Arg
     END FUNCTION
 
-!   FUNCTION ExtINDEX(Arg1, Arg2, Arg3, Arg4)  ! As the KIND arg of INDEX is not a real Argument. it presents a specific interface 
+!   FUNCTION ExtINDEX(Arg1, Arg2, Arg3, Arg4)  ! As the KIND arg of INDEX is not a real Argument. it presents a specific interface
     FUNCTION ExtINDEX(Arg1, Arg2, Arg3)
       INTEGER :: ExtINDEX
       CHARACTER(*), INTENT(IN) :: Arg1, Arg2
@@ -119,7 +113,7 @@
     PROCEDURE(ExtISIGN),  POINTER, NOPASS :: PtrISIGN
 !   PROCEDURE(ExtLEN),    POINTER, NOPASS :: PtrLEN
     PROCEDURE(LEN),       POINTER, NOPASS :: PtrLEN
-    PROCEDURE(ExtMOD),    POINTER, NOPASS :: PtrMOD 
+    PROCEDURE(ExtMOD),    POINTER, NOPASS :: PtrMOD
     PROCEDURE(ExtNINT),   POINTER, NOPASS :: PtrNINT
   END TYPE
 
@@ -130,14 +124,14 @@
   PROGRAM PtrAssignProcNameIntrin4
   USE M, V=>U
   IMPLICIT NONE
-  
-  V%PtrDTANH => DTANH
-  IF (ABS(V%PtrDTANH(1.0D0) - 0.76159416D0) .GT. .00001 ) STOP 11 
 
-  V%PtrEXP => EXP 
+  V%PtrDTANH => DTANH
+  IF (ABS(V%PtrDTANH(1.0D0) - 0.76159416D0) .GT. .00001 ) STOP 11
+
+  V%PtrEXP => EXP
   IF (ABS(V%PtrEXP(1.0) - 2.7182818 ) .GT. .00001 ) STOP 12
 
-  V%PtrIABS => IABS 
+  V%PtrIABS => IABS
   IF (V%PtrIABS(-3) .NE.  3 ) STOP 13
 
   V%PtrIDIM => IDIM
@@ -152,14 +146,14 @@
   V%PtrISIGN => ISIGN
   IF (V%PtrISIGN(-3, 2) .NE. 3 ) STOP 17
 
-  V%PtrLEN => LEN 
+  V%PtrLEN => LEN
   IF (V%PtrLEN('-3') .NE. 2 ) STOP 18
 
-  V%PtrMOD => MOD 
+  V%PtrMOD => MOD
   IF (V%PtrMOD(-8, -5) .NE. -3 ) STOP 19
 
-  V%PtrNINT => NINT 
-  IF (V%PtrNINT(2.783) .NE. 3 ) STOP 20 
+  V%PtrNINT => NINT
+  IF (V%PtrNINT(2.783) .NE. 3 ) STOP 20
 
   END
 

@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltTypeCompArr.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltTypeCompArr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 14, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The type spec is specified with a type with variuos Array components 
+!*
+!*   The type spec is specified with a type with variuos Array components
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -62,7 +56,7 @@
 
     TYPE, EXTENDS(Base1) :: Child    ! (20,4)
       INTEGER(K1) :: childId=2
-      CLASS(*), POINTER  :: UArr(:) 
+      CLASS(*), POINTER  :: UArr(:)
     END TYPE
 
   END MODULE
@@ -77,7 +71,7 @@
   Ptr => Tar
   SELECT TYPE (Ptr)
     TYPE IS (Child(*,4))
-      Ptr(1)%UArr           => Ptr 
+      Ptr(1)%UArr           => Ptr
       Ptr(1)%Base1%BaseArr1 => Ptr%Base
       Ptr(1)%BaseArr        => Ptr%Base
   END SELECT
@@ -92,7 +86,7 @@
    CLASS IS (Child(*,4))
      STOP 22
    TYPE IS (Child(*,4))
-    
+
      IF ( ANY(As%BaseId  .NE. -1  ))  STOP 31
      IF ( ANY(As%Base1Id .NE.  1  ))  STOP 32
      IF ( ANY(As%ChildId .NE.  2  ))  STOP 33

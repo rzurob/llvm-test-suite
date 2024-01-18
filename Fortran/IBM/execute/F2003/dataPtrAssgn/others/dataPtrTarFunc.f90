@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrTarFunc.f 
+!*  TEST CASE NAME             : dataPtrTarFunc.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -22,7 +16,7 @@
 !*  element of array pointer as lb or ub of pointer or target
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
         module m
 		type A
 		    integer, pointer :: p(:,:)
@@ -30,19 +24,19 @@
 
 		contains
                     function func(lb,ub)
-	                integer, pointer :: func(:) 
+	                integer, pointer :: func(:)
 		        integer :: lb , ub
 
 	                allocate(func(ub-lb+1), source=(/(i,i=lb,ub)/))
-                    end function 
+                    end function
         end module
 
         program main
                 use m
-	
+
 		class(*), allocatable :: a1
 		integer, pointer :: p(:)
-		integer, target :: t(200) 
+		integer, target :: t(200)
 		set_lb(i) = i*2 + 3
 
 		allocate(A :: a1)
@@ -51,16 +45,16 @@
 		    type is (A)
 			! bounds-remapping-list
 			a1%p(20:25,set_lb(4):20) => func(101,200)
-			
+
 			if ( .not. associated(a1%p)) stop 11
-			print *, lbound(a1%p) 
-			print *, ubound(a1%p) 
+			print *, lbound(a1%p)
+			print *, ubound(a1%p)
 			print *, a1%p
-	
-			! bounds-spec-list	
+
+			! bounds-spec-list
 			p(a1%p(20,11):) => func(1,a1%p(25,20)/4)
 
-			if ( .not. associated(p)) stop 12 
+			if ( .not. associated(p)) stop 12
 			print *, lbound(p)
 			print *, ubound(p)
 			print *, p

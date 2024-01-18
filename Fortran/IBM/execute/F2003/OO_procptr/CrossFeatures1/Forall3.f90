@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Forall3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Forall3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Forall3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Forall3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 12, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  FORALL/assignments
-!*  
-!*  (ICE-305693) 
+!*
+!*  (ICE-305693)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,8 +44,8 @@
       PROCEDURE(Fun), POINTER, NOPASS :: ProcPtr=>NULL()
     END TYPE
 
-    INTERFACE ASSIGNMENT ( = )  
-      MODULE PROCEDURE Assign 
+    INTERFACE ASSIGNMENT ( = )
+      MODULE PROCEDURE Assign
     END INTERFACE ASSIGNMENT ( = )
 
     CONTAINS
@@ -61,8 +55,8 @@
     TYPE (DT), INTENT (IN)  :: Arg2
       Arg1%Id = Arg2%Id
       Arg1%ProcPtr => Arg2%ProcPtr
-    END SUBROUTINE 
- 
+    END SUBROUTINE
+
     PURE FUNCTION Fun(Arg)
     INTEGER :: Fun
     INTEGER, INTENT(IN) :: Arg
@@ -78,9 +72,9 @@
   END MODULE
 
 
-  PROGRAM Forall3 
+  PROGRAM Forall3
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT) :: V, W(30000), U(30000), X(30000), Z(30000)
   INTEGER :: I
@@ -90,16 +84,16 @@
   V%Id = 1
   V%ProcPtr => Fun
   ProcPtr => Fun1
- 
+
   FORALL (I=V%ProcPtr(1):V%ProcPtr(30000):V%ProcPtr(1))
 
-    W(I)%Id = V%ProcPtr(-1) 
-    W(I)%ProcPtr =>  V%ProcPtr 
+    W(I)%Id = V%ProcPtr(-1)
+    W(I)%ProcPtr =>  V%ProcPtr
     U(I) = ProcPtr(DT(-1, W(I)%ProcPtr))
     X(W(I)%ProcPtr(I))%Id = W(I)%ProcPtr(I)
-    X(W(I)%ProcPtr(I))%ProcPtr => Fun 
-    Z(W(I)%ProcPtr(I)) = DT(W(I)%ProcPtr(I), Fun) 
- 
+    X(W(I)%ProcPtr(I))%ProcPtr => Fun
+    Z(W(I)%ProcPtr(I)) = DT(W(I)%ProcPtr(I), Fun)
+
   END FORALL
 
   DO I=Fun(1), Fun(30000), 3
@@ -107,7 +101,7 @@
     IF ( W(I)%Id .NE. -1 ) STOP 11
     IF ( .NOT. ASSOCIATED(W(I)%ProcPtr) ) STOP 12
     IF ( .NOT. ASSOCIATED(W(I)%ProcPtr, Fun) ) STOP 13
-   
+
     IF ( U(I)%Id .NE. -1 ) STOP 21
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr) ) STOP 22
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Fun) ) STOP 23

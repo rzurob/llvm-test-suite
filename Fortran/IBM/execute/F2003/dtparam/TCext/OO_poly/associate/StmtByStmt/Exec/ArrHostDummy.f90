@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrHostDummy.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrHostDummy.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrHostDummy
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 16, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,9 +32,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a host associate name 
-!*    Selector is a dummy array 
-!*    () 
+!*    The selector is a host associate name
+!*    Selector is a dummy array
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,7 +46,7 @@
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4,20)
       INTEGER(K1) :: BaseId = 1
@@ -107,7 +101,7 @@
 
   V(1::2) = (/(Child(4,20)(ChildID=-2, BaseID=-1), i=1, 3)/)
   V(2::2) = (/(Child(4,20)(ChildID= 0, BaseID= 0), i=1, 3)/)
- 
+
   CALL Sub(V(1::2), V(2::2) )
 
   IF ( ANY(V(1::2)%BaseID  .NE. 1) ) STOP 20
@@ -119,14 +113,14 @@
 
   SUBROUTINE Sub(Arr1, Arr2)
   CLASS(*) :: Arr1(:), Arr2(:)
- 
+
   ASSOCIATE ( As1 => Arr1, As2 => Arr2 )
     IF (ANY(SHAPE(As1) .NE. (/3/)))            STOP 32
 
     ASSOCIATE ( As => As1(:) )
     SELECT TYPE ( As )
     CLASS IS (Child(4,*))
-   
+
           IF (ANY(SHAPE(As) .NE. (/3/)))      STOP 33
           IF ( ANY(As%Base%GetId() .NE. -1) ) STOP 34
           IF ( ANY(As%GetId()      .NE. -2) ) STOP 35
@@ -141,7 +135,7 @@
           IF ( ANY(As%BaseId       .NE. 1 ) ) STOP 46
           IF ( ANY(As%ChildId      .NE. 2 ) ) STOP 47
 
-    CLASS DEFAULT 
+    CLASS DEFAULT
       STOP 38
     END SELECT
     END ASSOCIATE
@@ -149,7 +143,7 @@
     ASSOCIATE ( As => As2(:) )
     SELECT TYPE ( As )
     CLASS IS (Child(4,*))
-   
+
           IF (ANY(SHAPE(As) .NE. (/3/)))     STOP 53
           IF ( ANY(As%Base%GetId() .NE. 0) ) STOP 54
           IF ( ANY(As%GetId()      .NE. 0) ) STOP 55
@@ -164,7 +158,7 @@
           IF ( ANY(As%BaseId       .NE. 0 ) ) STOP 66
           IF ( ANY(As%ChildId      .NE. 0 ) ) STOP 67
 
-    CLASS DEFAULT 
+    CLASS DEFAULT
       STOP 68
     END SELECT
     END ASSOCIATE
@@ -174,6 +168,6 @@
   END SUBROUTINE
 
   END
-  
+
 
 

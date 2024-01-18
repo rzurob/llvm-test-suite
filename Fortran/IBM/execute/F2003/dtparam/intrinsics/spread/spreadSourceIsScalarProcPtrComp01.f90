@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsScalarProcPtrComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsScalarProcPtrComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 16 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 16 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -28,7 +20,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
 
-  interface 
+  interface
      integer function fun1(int)
         integer,intent(in) :: int
      end function
@@ -43,7 +35,7 @@ module m
 
    interface
       function fun2()
-         import 
+         import
          type(A(2,:)),allocatable :: fun2
       end function
    end interface
@@ -64,7 +56,7 @@ program spreadSourceIsScalarProcPtrComp01
   type(B(2,3)),allocatable :: b1
   type(B(2,3)),pointer     :: b2=>null()
   type(B(2,3)),target      :: b3
- 
+
   allocate(B(2,3) :: b1)
   b1%a1=A(2,3)(i1=[1,2,3])
   b1%a1%procptr1=>fun1
@@ -86,8 +78,8 @@ program spreadSourceIsScalarProcPtrComp01
         integer :: i,flag
         type(A(2,:)),allocatable :: tmp
 
- 
-        print *,"test ", flag 
+
+        print *,"test ", flag
         do i=lbound(dt,1),ubound(dt,1)
            if(dt(i)%k2 /= 2)                               error stop 10_4
            if(dt(i)%l2 /= 3)                               error stop 11_4
@@ -104,13 +96,13 @@ program spreadSourceIsScalarProcPtrComp01
            if(tmp%procptr1(i) /= 2*i)                      error stop 20_4
 
         end do
-        
-     end subroutine  
+
+     end subroutine
 end program
 
 integer function fun1(int)
   integer,intent(in) :: int
-  fun1=2*int 
+  fun1=2*int
 end function
 
 function fun2()
@@ -120,4 +112,4 @@ function fun2()
   allocate(fun2,source=A(2,3)(i1=[-1,-2,-3]))
   fun2%procptr1=>fun1
 
-end function 
+end function

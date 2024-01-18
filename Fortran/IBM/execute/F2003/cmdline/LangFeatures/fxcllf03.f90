@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxcllf03 +++ ++AAA VVV____ S 5"
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxcllf03.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,12 +33,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Call COMMAND_ARGUMENT_COUNT  in  Computed GOTO statement
-!*                             : 
-!*                             : 
-!*           
+!*                             :
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
 
 
 
@@ -53,19 +46,19 @@
       IMPLICIT NONE
 
       character(2049)  :: COMMAND
-      character(2049)  :: CmdLine 
-      integer          :: LENGTH     
-      character(513)   :: NAME  
-      integer          :: STATUS  
-      character(2047)  :: VALUE  
-      logical          :: TRIM_NAME 
-      integer          :: NUMBER 
+      character(2049)  :: CmdLine
+      integer          :: LENGTH
+      character(513)   :: NAME
+      integer          :: STATUS
+      character(2047)  :: VALUE
+      logical          :: TRIM_NAME
+      integer          :: NUMBER
       character(2047)  :: Argument
-      integer          :: ARGCOUNT 
+      integer          :: ARGCOUNT
       integer          :: CmdCount
       integer          :: i
 
-          
+
       CmdLine   = 'fxcllf03 +++ ++AAA VVV____ S 5'
       NAME      = 'CmdLine   '
       TRIM_NAME = .true.
@@ -79,9 +72,9 @@
 
 40    error stop 67
 
-	
+
 1     CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 5 ) & 
+      if ( CmdCount .ne. 5 ) &
       then
         error stop 63
       endif
@@ -97,7 +90,7 @@
 
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -112,7 +105,7 @@
       END DO
 
 
-	
+
       call GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
       if ( (TRIM(VALUE) .ne. TRIM(CmdLine))  .or. &
             (LENGTH .ne. LEN(TRIM(CmdLine)))  .or. &
@@ -123,7 +116,7 @@
 
 
       END
- 
+
       INCLUDE 'cmdline.include'
 
 

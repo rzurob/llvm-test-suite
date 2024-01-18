@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/diag/polyAssign1012d_LHSnonallocAssign.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 07 August 2015
-!* ORIGIN                       : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : LHS is a base type of pointer, not allocatable, RHS are allocatable scalars with class and type attributes.
@@ -61,6 +54,6 @@ Program test
     z = x !<--The polymorphic variable being defined in the intrinsic assignment must be allocatable.
     z = y !<--The polymorphic variable being defined in the intrinsic assignment must be allocatable.
     a = x
-    a = y 
+    a = y
     a = z
 End

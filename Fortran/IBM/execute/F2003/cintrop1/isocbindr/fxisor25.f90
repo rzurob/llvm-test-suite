@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_BOOL
@@ -209,7 +195,7 @@ logical(C_BOOL) function fnt1(a)
    use ISO_C_BINDING
 
    logical(C_BOOL) :: a(5)
-   
+
    do i = 1, 5
       if ( a(i) .neqv. .true. ) error stop 36
       a(i) = .not. a(i)
@@ -259,7 +245,7 @@ logical(C_BOOL) function fnt5(aa)
    use ISO_C_BINDING
 
    logical(C_BOOL) :: aa(10,5)
-   
+
    do i = 1, 5
       do j = 1, 10
          if ( aa(j,i) .neqv. .true. ) error stop 42
@@ -288,7 +274,7 @@ logical(C_BOOL) function fnt7(aa)
    use ISO_C_BINDING
 
    logical(C_BOOL), intent(inout) :: aa(10,5)
-   
+
    do i = 1, 5
       do j = 1, 10
          if ( aa(j,i) .neqv. .true. ) error stop 46
@@ -303,7 +289,7 @@ logical(C_BOOL) function fnt8(aa)
    use ISO_C_BINDING
 
    logical(C_BOOL), intent(out) :: aa(10,5)
-   
+
    do i = 1, 5
       do j = 1, 10
          aa(j,i) = .not. aa(j,i)

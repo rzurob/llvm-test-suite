@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : protected001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from protected001 by Robert Ma)
 !*  DATE                       : 2007-07-06 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with data object with protected attribute (output)
@@ -91,12 +83,12 @@ use m
    character(200) :: msg = ''
 
    open (1, file = 'protected001kl.1', form='formatted', access='sequential' )
-   
+
    call assoMe((2.0,3.0))
    call allocMe()
-   
-   write (1, b1b3, iostat = stat, iomsg = msg )   
-   write (1, b2b4, iostat = stat, iomsg = msg )   
+
+   write (1, b1b3, iostat = stat, iomsg = msg )
+   write (1, b2b4, iostat = stat, iomsg = msg )
 
 end program
 

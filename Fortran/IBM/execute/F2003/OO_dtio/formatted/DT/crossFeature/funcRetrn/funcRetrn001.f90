@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Function Return: Non Polymorphic Scalar Entities
@@ -73,7 +62,7 @@ use m
    type(child), allocatable :: c1
    type(child), pointer     :: c2
    type(child)              :: c3 = child(205.0,206.0)
-   
+
    procedure(type(child)) :: genCopyExt
 
    open (1, file = 'funcRetrn001.1', form='formatted', access='sequential' )

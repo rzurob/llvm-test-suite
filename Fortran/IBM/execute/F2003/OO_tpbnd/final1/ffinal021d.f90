@@ -2,35 +2,29 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
+! %PRECMD: rm -f *.mod
 ! %COMPOPTS:  -qfree=f90
-! %GROUP: ffinal021d.f 
+! %GROUP: ffinal021d.f
 ! %VERIFY: ffinal021d.out:ffinal021d.vf
 ! %STDIN:
-! %STDOUT: ffinal021d.out 
+! %STDOUT: ffinal021d.out
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal021d.f
-!*  TEST CASE TITLE            : type-bound procedure
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : final subroutines 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : final subroutines
 !*
-!*  DESCRIPTION                : testing final subroutines: 
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  DESCRIPTION                : testing final subroutines:
 !*                               derived type with target attribute.
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -40,7 +34,7 @@ module m
     contains
         final :: finalizeBase
     end type
-    
+
     type, extends(base) :: child
     contains
        final :: finalizeChild

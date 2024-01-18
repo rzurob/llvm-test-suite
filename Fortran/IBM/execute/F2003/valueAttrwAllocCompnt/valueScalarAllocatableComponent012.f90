@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Value Attribute for derived type containing allocatable components
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : value attribute with derived type containing allocatable components
 !*                                 - type: derived type with intrinsic allocatable components, pass
@@ -75,9 +64,9 @@ module m
          print *, 'inside boo', a%inb%i
 
          call foo(a)
-         
+
          print *, 'inside boo 2', a%inb%i
-         
+
          a%inb = inner(500)
 
          print *, 'after boo', allocated(a%inb)
@@ -125,5 +114,5 @@ program valueScalarAllocatableComponent012
    print *, '=========='
    print *, 'main c1', allocated ( c1%inb%i ), allocated ( c1%inb ), c1%inb%i
    print *, '=========='
-   
+
 end program

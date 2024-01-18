@@ -12,41 +12,35 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu01.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Call command line procedures through ext. subroutine  with arguments 
-!*                             : specified as components of derived type in modules and defined with 
+!*  DESCRIPTION                : Call command line procedures through ext. subroutine  with arguments
+!*                             : specified as components of derived type in modules and defined with
 !*                             : private/public
 !*                             : (test command line procedures arguments with public/private attribute)
-!*                               
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       module MOD
- 
+
       PUBLIC
 
       type dertype
@@ -60,8 +54,8 @@
           character(513)    :: NAME
           logical           :: TRIM_NAME
           integer           :: ARGCOUNT
-      end type dertype 
-         
+      end type dertype
+
 
       character(2049)              :: CmdLine = 'fxclpu01 123 -ABC _ECF'
       integer                      :: CmdCount, i
@@ -74,7 +68,7 @@
       SUBROUTINE MOD_SUB
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 3 ) & 
+      if ( CmdCount .ne. 3 ) &
       then
         error stop 63
       endif
@@ -88,7 +82,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         cmd%NUMBER = i
         call GET_COMMAND_ARGUMENT(cmd%NUMBER, cmd%VALUE, cmd%LENGTH, cmd%STATUS)
         call MyGetArg(CmdLine, cmd%NUMBER, Argument)
@@ -124,7 +118,7 @@
       USE MOD
       IMPLICIT NONE
 
-      CALL EXT_SUB 
+      CALL EXT_SUB
 
       END
 
@@ -135,9 +129,9 @@
 
       END SUBROUTINE
 
- 
+
       INCLUDE 'cmdline.include'
 
 
 
-  
+

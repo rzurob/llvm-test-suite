@@ -3,21 +3,15 @@
 
 !************************************************************************
 !* ======================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* ======================================================================
 !*
 !*  TEST CASE NAME             : abstracti013k_dpv_ra
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti013
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-19 (original: 02/20/2006)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Abstract Interface
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : poly-function-return (function returns
 !                               allocatable of a class of abstract type SHAPE)

@@ -1,37 +1,28 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FunctionResult05.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : March 25, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result 
+!*  PRIMARY FUNCTIONS TESTED   : Function result
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
         INTEGER, KIND :: k1
         INTEGER, LEN  :: l1
 
-        INTEGER(k1) :: A0(1:l1), A1(0:2*l1), A2(2:l1,2:l1) 
+        INTEGER(k1) :: A0(1:l1), A1(0:2*l1), A2(2:l1,2:l1)
       END TYPE
 
       TYPE,  EXTENDS(Base) :: Child (k2,l2)
@@ -43,21 +34,21 @@ MODULE Mod
 
       CONTAINS
 
-      CLASS(Base(4,:)) FUNCTION BuildBase(K) 
+      CLASS(Base(4,:)) FUNCTION BuildBase(K)
         INTEGER :: I, K
         POINTER :: BuildBase
 
         ALLOCATE( Base(4,K) :: BuildBase )
- 
-      END FUNCTION   
 
-      CLASS(Child(4,:,4,:)) FUNCTION BuildChild(K,L) 
+      END FUNCTION
+
+      CLASS(Child(4,:,4,:)) FUNCTION BuildChild(K,L)
         INTEGER :: I, K, L
         POINTER :: BuildChild
- 
+
         ALLOCATE( Child(4,K,4,L) :: BuildChild )
- 
-      END FUNCTION   
+
+      END FUNCTION
 END MODULE
 
 PROGRAM FunctionResult05
@@ -74,7 +65,7 @@ PROGRAM FunctionResult05
       IF (SIZE(b1%A1) .NE.  21) STOP 12
       IF (SIZE(b1%A2) .NE.  81) STOP 13
 
-      c1 => BuildChild(2,4) 
+      c1 => BuildChild(2,4)
       IF (c1%l1 .NE. 2) STOP 14
       IF (c1%l2 .NE. 4) STOP 15
       IF (SIZE(c1%A0) .NE.  2) STOP 16
@@ -91,7 +82,7 @@ PROGRAM FunctionResult05
       IF (SIZE(b2%A1) .NE.  41) STOP 25
       IF (SIZE(b2%A2) .NE. 361) STOP 26
 
-      b2 => BuildChild(3,6) 
+      b2 => BuildChild(3,6)
       SELECT TYPE ( b2 )
         CLASS IS (Child(4,*,4,*))
           IF (b2%l1 .NE. 3) STOP 27

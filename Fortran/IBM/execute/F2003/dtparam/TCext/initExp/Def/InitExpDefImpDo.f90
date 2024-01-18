@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefImpDo.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefImpDo.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 06, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,11 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  An implied-do variable within an array constructor in which each element
 !*  and implied-do control expression is an initialization expression
-!* 
-!* 
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -59,21 +51,21 @@
   END MODULE
 
 
-  PROGRAM InitExpDefImpDo 
+  PROGRAM InitExpDefImpDo
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
 
-  INTEGER(8),     PARAMETER :: I8(-2147483648:-2147483646) = -1 
-  LOGICAL(1),     PARAMETER :: L1(-128:-126) = .TRUE. 
-  REAL(16),       PARAMETER :: R6(125:127) = -1.0 
+  INTEGER(8),     PARAMETER :: I8(-2147483648:-2147483646) = -1
+  LOGICAL(1),     PARAMETER :: L1(-128:-126) = .TRUE.
+  REAL(16),       PARAMETER :: R6(125:127) = -1.0
   COMPLEX(4),     PARAMETER :: Z4(-32768:-32766) = (1.0, -1.0)
   TYPE(DT(4,20)), PARAMETER :: D(2147483645:2147483647)=DT(4,20)()
- 
-  INTEGER,        PARAMETER :: SIZ=3
-  INTEGER,        PARAMETER :: Con(3)=(/1,2,3/) 
 
- 
+  INTEGER,        PARAMETER :: SIZ=3
+  INTEGER,        PARAMETER :: Con(3)=(/1,2,3/)
+
+
   INTEGER(KIND(SIZE((/(I,I=KIND(L1), SIZE(I8))/))))         :: TI1(SIZE((/(I,I=KIND(L1), SIZE(I8))/))) =  &
                                                                         (/(I,I=KIND(L1), SIZE(I8))/)
   INTEGER(KIND(SIZE((/(I,I=KIND(L1), SIZE(L1))/), KIND=2))) :: TI2(SIZE((/(I,I=KIND(L1), SIZE(L1))/))) =  &
@@ -103,4 +95,4 @@
   END
 
 
- 
+

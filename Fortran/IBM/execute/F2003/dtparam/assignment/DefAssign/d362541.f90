@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d362541.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d362541.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 22 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 22 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 362541
@@ -32,12 +24,12 @@ module m
 
    type B(l2)
       integer,len   :: l2 ! l2=1
-      type(A(l2+1)) :: acomp1(1)     
+      type(A(l2+1)) :: acomp1(1)
       type(A(:)),pointer :: acomp2(:)
    end type
 
    interface assignment(=)
-       module procedure assign1  
+       module procedure assign1
    end interface
 
    contains
@@ -93,7 +85,7 @@ program d362541
 
      aobj4=A(2)([11,22,33],c2)
 
-     bobj1=B(1)(aobj1,aobj4) 
+     bobj1=B(1)(aobj1,aobj4)
 
      if(bobj1%acomp1(1)%l1 /= 2)                              stop 1
      if(any(bobj1%acomp1(1)%i1 /= [1,2,3]))                   stop 2

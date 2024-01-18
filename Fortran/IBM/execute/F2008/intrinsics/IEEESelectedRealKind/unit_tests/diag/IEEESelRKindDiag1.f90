@@ -18,12 +18,7 @@
       end
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Ren Jian Gang
 !*  DATE                       : Nov 06, 2010
 !*  ORIGIN                     : AIX Compiler Development,
 !*                             : IBM China Development Shanghai Lab
@@ -33,13 +28,8 @@
 !     of ieee_selected_real_kind intrinsic
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :  -qlanglvl=2003pure
 !*
 !*  DESCRIPTION                :
-!*
-!*
-!*
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

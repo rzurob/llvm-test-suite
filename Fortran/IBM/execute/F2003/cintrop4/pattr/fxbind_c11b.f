@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,29 +13,21 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c01b.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute 
+!* DESCRIPTION                  : Test: BINC(C) attribute
 !*                                with different intrinsic data type,
 !*                                with intent(in), intent(out), target
 !*                                integer*1, integer*2, integer*4,
-!*                                integer*8, real*4, real*8, complex 
-!*                                character(1). Using module 
+!*                                integer*8, real*4, real*8, complex
+!*                                character(1). Using module
 !*                                subroutine,interface. Fortran calls C
 !* ===================================================================
 !*  REVISION HISTORY
@@ -86,13 +73,13 @@ module m
 
    end interface
 end module m
-   
-   use m 
+
+   use m
    implicit none
 
    logical precision_R4, precision_R6, precision_R8
    logical precision_x8, precision_x16
-   
+
 !**********************************************************
 !        Initialization of variables                      *
 !**********************************************************
@@ -101,10 +88,10 @@ end module m
    integer*2 ai2 /15/, bi2 /15/
    integer*4 ai4 /11/, bi4 /11/
    integer*8 ai8 /17/, bi8 /17/, i811/0/, i812 /48/
- 
+
    real*4   ar4 /4.80/, br4 /4.80/
    real*8   ar8 /40.0/, br8 /40.0/
-   real*8  ar16 /600.0/, br16 /600.0/, r161/0.0D0/, r162 
+   real*8  ar16 /600.0/, br16 /600.0/, r161/0.0D0/, r162
 
    logical*1 al1 /.false./, bl1 /.true./, l11 /.false./
    !logical*2 al2 /.false./, bl2 /.true./
@@ -113,11 +100,11 @@ end module m
 
    complex*8   ac8 /(0.0, 0.0)/, bc8 /(1.0, 1.0)/
    complex*16  ac16 /(0.0D0, 0.0D0)/, bc16 /(1.0D0, 1.0D0)/
-   
+
    character*1 ach1 /'a'/, bch1 /'a'/, ch11 /'b'/
 
- 
- 
+
+
 !**********************************************************
 !        Calling C from Fortran with integer data type
 !                and check the results
@@ -139,7 +126,7 @@ end module m
       if(ai8 .ne. bi8)then
         error stop 13
       endif
-      
+
       if(i811 .ne. i812) then
          error stop 14
       end if
@@ -160,7 +147,7 @@ end module m
         error stop 21
       endif
 
-      
+
       if(.not. precision_R8(r161,r162))then
         error stop 22
       endif
@@ -174,8 +161,8 @@ end module m
       if(al1 .neqv. .false.)then
         error stop 30
       endif
-      
-      if(l11 .neqv. bl1) then 
+
+      if(l11 .neqv. bl1) then
         error stop 31
       end if
 
@@ -204,13 +191,13 @@ end module m
       if(ch11 .ne. 'd' )then
         error stop 51
       endif
-      
+
 !**********************************************************
 !        Calling C from Fortran with Complex data type
 !                and check the Results
 !**********************************************************
    call extsub_comp(ac8, ac16, bc8, bc16)
-   
+
       if(.not. precision_x8(ac8,bc8))then
         error stop 61
       endif
@@ -218,10 +205,10 @@ end module m
       if(.not. precision_x16(ac16,bc16))then
         error stop 62
       endif
-      
+
    !call extsub_byte(ab1)
    !   if(ab1 .ne. bb1)then
    !     error stop 60
    !   endif
 
-end 
+end

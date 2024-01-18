@@ -2,39 +2,32 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk_qlngdbl.sh fxcmn_blk507 cxcmn_blk506
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f fxcmn_blk507.o cxcmn_blk506.o fxcmn_blk507
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that scalar variables
 !*				 of all data types inside of common blocks are
-!*				 interoperable with C variables 
+!*				 interoperable with C variables
 !*
 !*				 Test:  BIND(C) statement in main program
 !*
-!*				 One COMMON statement with multiple common blocks with one 
+!*				 One COMMON statement with multiple common blocks with one
 !*				 variable in one BIND(C) statements
 !*
 !* ===================================================================
@@ -118,7 +111,7 @@ program fxcmn_blk507
 ! One COMMON statement with multiple common blocks with one variable in one BIND(C) statements
 ! ----------------------------------------------------------------------------
 
-        common    /blk_int_C_INT_LEAST32_T/             int_C_INT_LEAST32_T     &  
+        common    /blk_int_C_INT_LEAST32_T/             int_C_INT_LEAST32_T     &
                 , /blk_r_C_DOUBLE_s8a/                  r_C_DOUBLE_s8a          &
                 , /blk_int_s2b/                         int_s2b                 &
                 , /blk_int_C_INT_FAST32_T/              int_C_INT_FAST32_T      &
@@ -151,7 +144,7 @@ program fxcmn_blk507
                 , /blk_int_C_INT_FAST8_T/               int_C_INT_FAST8_T       &
                 , /blk_int_s1b/                         int_s1b                 &
                 , /blk_int_C_INT_FAST16_T/              int_C_INT_FAST16_T      &
-                , /blk_real_s4b/                        real_s4b        
+                , /blk_real_s4b/                        real_s4b
 
 
         bind(c) :: 				   &

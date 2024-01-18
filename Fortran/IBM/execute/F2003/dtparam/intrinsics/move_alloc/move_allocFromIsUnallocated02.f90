@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocFromIsUnallocated02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocFromIsUnallocated02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 29 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 29 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
-!*  2. FROM IS UNALLOCATED,CALL MOVE_ALLOC IN SUBROUTINE 
+!*  2. FROM IS UNALLOCATED,CALL MOVE_ALLOC IN SUBROUTINE
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type dtp(k,l)
@@ -42,7 +34,7 @@ program move_allocFromIsUnallocated02
   type(dtp(2,4)),allocatable  :: dtp2
   type(dtp(2,:)),allocatable  :: dtp3
   class(dtp(2,4)),allocatable :: dtp4
-  class(dtp(2,:)),allocatable :: dtp5 
+  class(dtp(2,:)),allocatable :: dtp5
 
   dtp2=dtp(2,4)(i=[1,2,3,4])
   dtp3=dtp2
@@ -63,7 +55,7 @@ program move_allocFromIsUnallocated02
   if(allocated(dtp3))                             error stop 15_4
   if(allocated(dtp4))                             error stop 16_4
   if(allocated(dtp5))                             error stop 17_4
- 
+
   contains
 
      subroutine move_alloc1(from,to)
@@ -71,7 +63,7 @@ program move_allocFromIsUnallocated02
          type(dtp(2,4)),intent(out),allocatable   :: to
 
          call move_alloc(from,to)
-               
+
      end subroutine
 
      subroutine move_alloc2(from,to)

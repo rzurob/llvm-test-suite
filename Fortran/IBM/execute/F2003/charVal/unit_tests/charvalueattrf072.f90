@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: charvalueattrf072.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,26 +12,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : charvalueattrf072
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Feb. 01, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the VALUE
-!*                               attribute when used with characters of 
-!*                               length other than 1. ( Feature 298120 )   
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*                               attribute when used with characters of
+!*                               length other than 1. ( Feature 298120 )
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DESCRIPTION                : test for when the proc takes more than 
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : test for when the proc takes more than
 !*                               1 arg and the actual arg is a function
 !*                               result longer than the dummy
 !*
@@ -42,7 +35,7 @@ program main
       character(2) :: c2
       character(3) :: c3
       character(87) :: c4
-      
+
       c1 = 'A'
       c2 = 'AB'
       c3 = 'ABC'
@@ -51,101 +44,101 @@ program main
 !     s1
       call s1(f2(), c1)
       if ( c1 .ne. 'A' ) error stop 20
-      
+
       call s1(f3(), c1)
       if ( c1 .ne. 'A' ) error stop 21
-      
+
       call s1(f3(), c2 )
       if ( c2 .ne. 'AB' ) error stop 22
-      
-      call s1(f4(), c3) 
+
+      call s1(f4(), c3)
       if ( c3 .ne. 'ABC' ) error stop 23
-      
-      call s1(f4(), c4 ) 
+
+      call s1(f4(), c4 )
       if ( c4 .ne. repeat('ABC',29)) error stop 24
 
-!     s2      
+!     s2
       call s2(f2(), c2)
       if ( c2 .ne. 'AB' ) error stop 25
-      
+
       call s2(f3(), c2)
       if ( c2 .ne. 'AB' ) error stop 26
-      
+
       call s2(f3(), c3 )
       if ( c3 .ne. 'ABC' ) error stop 27
-            
-      call s2(f4(), c4 ) 
+
+      call s2(f4(), c4 )
       if ( c4 .ne. repeat('ABC',29)) error stop 28
-      
+
 !     s3
       call s3(f2(), c3)
       if ( c3 .ne. 'ABC' ) error stop 29
-            
+
       call s3(f3(), c3 )
       if ( c3 .ne. 'ABC' ) error stop 30
-            
-      call s3(f4(), c4 ) 
+
+      call s3(f4(), c4 )
       if ( c4 .ne. repeat('ABC',29)) error stop 31
 
 !     s4
-                  
+
       call s4(f2(), c4 )
       if ( c4 .ne. repeat('ABC',29) ) error stop 32
 
       call s4(f3(), c4 )
       if ( c4 .ne. repeat('ABC',29) ) error stop 33
-            
-      call s4(f4(), c4 ) 
+
+      call s4(f4(), c4 )
       if ( c4 .ne. repeat('ABC',29)) error stop 34
 
 !     s11
       call s11(f2(), c1)
       if ( c1 .ne. 'A' ) error stop 35
-      
+
       call s11(f3(), c1)
       if ( c1 .ne. 'A' ) error stop 36
-      
+
       call s11(f3(), c2 )
       if ( c2 .ne. 'AB' ) error stop 37
-      
-      call s11(f4(), c3) 
+
+      call s11(f4(), c3)
       if ( c3 .ne. 'ABC' ) error stop 38
-      
-      call s11(f4(), c4 ) 
+
+      call s11(f4(), c4 )
       if ( c4 .ne. repeat('ABC',29)) error stop 39
 
-!     s22      
+!     s22
       call s22(f2(), c2)
       if ( c2 .ne. 'AB' ) error stop 40
-      
+
       call s22(f3(), c2)
       if ( c2 .ne. 'AB' ) error stop 41
-      
+
       call s22(f3(), c3 )
       if ( c3 .ne. 'ABC' ) error stop 42
-            
-      call s22(f4(), c4 ) 
+
+      call s22(f4(), c4 )
       if ( c4 .ne. repeat('ABC',29)) error stop 43
-      
+
 !     s33
       call s33(f2(), c3)
       if ( c3 .ne. 'ABC' ) error stop 44
-            
+
       call s33(f3(), c3 )
       if ( c3 .ne. 'ABC' ) error stop 45
-            
-      call s33(f4(), c4 ) 
+
+      call s33(f4(), c4 )
       if ( c4 .ne. repeat('ABC',29)) error stop 45
 
 !     s4
-                  
+
       call s44(f2(), c4 )
       if ( c4 .ne. repeat('ABC',29) ) error stop 46
 
       call s44(f3(), c4 )
       if ( c4 .ne. repeat('ABC',29) ) error stop 47
-            
-      call s44(f4(), c4 ) 
+
+      call s44(f4(), c4 )
       if ( c4 .ne. repeat('ABC',29)) error stop 48
 
 

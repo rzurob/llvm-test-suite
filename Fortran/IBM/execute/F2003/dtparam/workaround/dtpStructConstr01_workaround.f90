@@ -1,20 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : dtpStructConstr01
-!*  TEST CASE TITLE            : init-expr (Default Initialization)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : May 25, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Structure Constructor
 !*  SECONDARY FUNCTIONS TESTED : With a zero Length/Sized Array Component
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE

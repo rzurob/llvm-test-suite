@@ -1,7 +1,7 @@
       TYPE Base  (l1)
         INTEGER, LEN  :: l1
 
-        CHARACTER(l1) :: tag  
+        CHARACTER(l1) :: tag
         INTEGER, ALLOCATABLE :: my_arr(:)
       END TYPE Base
 
@@ -16,7 +16,7 @@
 
       ALLOCATE(b1)
 
-      SELECT TYPE ( b1 )        
+      SELECT TYPE ( b1 )
            CLASS IS (Child(*,*))
               ALLOCATE(Base(b1%l2) :: b1%b_cmp)
               ALLOCATE(b1%b_cmp%my_arr(b1%b_cmp%l1), SOURCE=(/(i, i = 1, b1%b_cmp%l1)/))

@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : cdasCorankChg
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-11-18
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray dummy arguments - scalar
 !*  SECONDARY FUNCTIONS TESTED : corank is different

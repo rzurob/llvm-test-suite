@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C920_001k
 !*
-!*  PROGRAMMER                 : David Forster (derived from C920_001 by Robert Ma)
 !*  DATE                       : 2007-09-10 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5 Data transfer statements
 !*                               C920: if REC= appears, shall not specify END=, namelist
@@ -40,7 +32,7 @@ end module
 
 program C920_001k
    use m1
-   
+
    interface read(unformatted)
       subroutine readUnformatted (dtv, unit, iostat, iomsg)
       import base
@@ -72,7 +64,7 @@ program C920_001k
    write (1, rec=5) b1
 
    read (1, rec=5, end=300 ) b2          !<- specify END= with REC= (IBM extension <= allowed!! )
-   
+
 300 print *,'IBM extension'
 
    close ( 1, status = 'delete' )

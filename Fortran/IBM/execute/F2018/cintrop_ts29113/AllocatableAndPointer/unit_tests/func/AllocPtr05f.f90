@@ -1,22 +1,14 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocPtr05f
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Feb, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Allocatable/Pointer
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Doing Fortran I/O when CFIs are involved
 !*
@@ -55,7 +47,7 @@
       t1(1,1) = 1.0; t1(1,2) = 2.0;
       t1(2,1) = 3.0; t1(2,2) = 4.0;
       t1(3,1) = 5.0; t1(3,2) = 6.0;
-      
+
       p1 => t1
       p2 => t2
 
@@ -92,4 +84,4 @@
         use, intrinsic :: iso_c_binding
         real(c_float), allocatable :: arg
         print '(F9.2)', arg
-      end  
+      end

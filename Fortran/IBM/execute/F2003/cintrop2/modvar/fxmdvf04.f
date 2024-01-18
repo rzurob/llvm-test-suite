@@ -1,49 +1,38 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !************************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD:  $TR_SRC/run.sh   fxmdvf04  cxmdvf04 
-! %COMPOPTS:  
-! %GROUP: redherring.f 
+! %PRECMD:  $TR_SRC/run.sh   fxmdvf04  cxmdvf04
+! %COMPOPTS:
+! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !************************************************************************
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : fxmdvf04.f 
-!*  TEST CASE TITLE            : bind(c) attribute/statement
+!*  TEST CASE NAME             : fxmdvf04.f
 !*
-!*  PROGRAMMER                 : Kan Tian
-!*  DATE                       : Sep 2,2002 
+!*  DATE                       : Sep 2,2002
 !*
-!*  PRIMARY FUNCTIONS TESTED   :test integer variables with bind(c) 
+!*  PRIMARY FUNCTIONS TESTED   :test integer variables with bind(c)
 !*                              attribute/statement with various
-!*                              kind type parameter. 
-!*                             
+!*                              kind type parameter.
+!*
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  :
-!*
 !*
 !*  DESCRIPTION                :
 !*                              Pass data between a C variable with external
 !*				linkage and Fortran variable has the bind(c)
-!*				attribute. 
-!*                              Verify the result of data passing. 
-!*                               
+!*				attribute.
+!*                              Verify the result of data passing.
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*
@@ -75,7 +64,7 @@ end module
 PROGRAM sum
 
   IMPLICIT NONE
-  CALL sub1 
+  CALL sub1
 END PROGRAM sum
 
 SUBROUTINE sub1
@@ -86,7 +75,7 @@ SUBROUTINE sub1
 
 
   SUBROUTINE sum_sq
-    
+
     use mod
     integer(C_SIZE_T)::y
     logical::res

@@ -5,62 +5,56 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn096i.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn096i.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn096i.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn096i.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : pass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : inheritance 
+!*  PRIMARY FUNCTIONS TESTED   : pass binding attribute
 !*
-!*  DESCRIPTION                : testing a procedure is bound to different 
-!*                               types. 
-!*    
+!*  SECONDARY FUNCTIONS TESTED : inheritance
+!*
+!*  DESCRIPTION                : testing a procedure is bound to different
+!*                               types.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod	      
+   module mod
       integer :: int = 200
       character*20 :: c = "hi"
 
-      type base1(k1)    ! (4) 
+      type base1(k1)    ! (4)
          integer, kind :: k1
          integer(k1)   :: x
 	 contains
       	 procedure, pass(arg1) :: bind_b1 => proc1
-      end type 
+      end type
 
-      type base2(k2)    ! (4) 
+      type base2(k2)    ! (4)
          integer, kind :: k2
          integer(k2)   :: x
       contains
          procedure, pass(arg2) :: bind_b2 => proc1
-      end type  
+      end type
 
-      type base3(k3)    ! (4) 
+      type base3(k3)    ! (4)
          integer, kind :: k3
          integer(k3)   :: x
       contains
          procedure, pass(arg3) :: bind_b3 => proc1
-      end type  
+      end type
 
       contains
       subroutine proc1(arg1, arg2, arg3)
@@ -71,7 +65,7 @@
          c = "hi_again"
       end subroutine
 
-	end module     
+	end module
 
    use mod
 
@@ -95,4 +89,4 @@
    if (c .ne. "hi_again")    error stop 7
 
    end
-   
+

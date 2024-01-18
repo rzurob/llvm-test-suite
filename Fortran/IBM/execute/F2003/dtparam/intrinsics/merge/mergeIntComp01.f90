@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeIntComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeIntComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 9 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE,FSOURCE ARE SCALAR DERIVED TYPE
 !* 4. COMPONENT ARE SCALAR REAL,INTEGER,COMPLEX
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -30,12 +22,12 @@ module m
   type A(k,l)
      integer(2),kind :: k=8
      integer(8),len  :: l=3
-    
-     integer(2) :: i1=234 
+
+     integer(2) :: i1=234
      integer(k) :: i2=-456
      real(4)    :: r1=-2.33
-     real(k)    :: r2=3.2E-2 
-     complex(k) :: x=(1.2,3.5) 
+     real(k)    :: r2=3.2E-2
+     complex(k) :: x=(1.2,3.5)
   end type
 end module
 
@@ -43,11 +35,11 @@ program mergeIntComp01
    use m
    implicit none
 
-   logical precision_r4,precision_r8,precision_x16 
+   logical precision_r4,precision_r8,precision_x16
 
-   type(A) :: a1 
-   type(A) :: a2=A()(0,0,0.,0._8,(0._8,0._8)) 
-   type(A),parameter :: a3=A(8,3)(9,99,9._4,99._8,(-9._8,-9._8)) 
+   type(A) :: a1
+   type(A) :: a2=A()(0,0,0.,0._8,(0._8,0._8))
+   type(A),parameter :: a3=A(8,3)(9,99,9._4,99._8,(-9._8,-9._8))
 
    a2=merge(a1,a2,.true.)
 
@@ -58,10 +50,10 @@ program mergeIntComp01
    if(a2%i2 /= a1%i2 .or. a2%i2 /= -456)                   error stop 14_4
    if(a2%i2%kind /= a1%i2%kind .or. a2%i2%kind /= 8)       error stop 15_4
    if(a2%r1%kind /= a1%r1%kind .or. a2%r1%kind /= 4)       error stop 16_4
-   if(a2%r2%kind /= a1%r2%kind .or. a2%r2%kind /= 8)       error stop 17_4 
+   if(a2%r2%kind /= a1%r2%kind .or. a2%r2%kind /= 8)       error stop 17_4
    if(.not. precision_r4(a2%r1,a1%r1))                     error stop 18_4
-   if(.not. precision_r8(a2%r2,a1%r2))                     error stop 19_4 
-   if(.not. precision_x16(a2%x,a1%x))                      error stop 20_4  
+   if(.not. precision_r8(a2%r2,a1%r2))                     error stop 19_4
+   if(.not. precision_x16(a2%x,a1%x))                      error stop 20_4
 
    a1=merge(a1,A()(1,2,3._4,4._8,(5._8,5._8)),.false.)
 

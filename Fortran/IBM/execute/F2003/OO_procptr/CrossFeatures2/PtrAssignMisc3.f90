@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignMisc3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignMisc3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignMisc3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignMisc3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 26, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,19 +30,19 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Module procedure and external procedure 
-!*  (314738) 
+!*
+!*  Module procedure and external procedure
+!*  (314738)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
-  
+
   CONTAINS
     FUNCTION ExtFun(Arg)
     CLASS(*), POINTER :: ExtFun
-    CLASS(*)          :: Arg 
-      ALLOCATE(ExtFun, SOURCE=Arg) 
+    CLASS(*)          :: Arg
+      ALLOCATE(ExtFun, SOURCE=Arg)
     END FUNCTION
   END MODULE
 
@@ -59,7 +53,7 @@
   END FUNCTION
 
   PROGRAM PtrAssignMisc3
-  USE M, ModFun => ExtFun 
+  USE M, ModFun => ExtFun
   IMPLICIT NONE
 
   PROCEDURE(ModFun),   POINTER :: ProcPtr1
@@ -69,9 +63,9 @@
     FUNCTION ExtFun(Arg)
       CLASS(*), POINTER :: ExtFun
       CLASS(*)          :: Arg
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
- 
+
   PROCEDURE(ExtFun),   POINTER :: ProcPtr3
   PROCEDURE(ProcPtr3), POINTER :: ProcPtr4
 
@@ -108,5 +102,5 @@
   END SELECT
 
 
-  END 
+  END
 

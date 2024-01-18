@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: InClassIsClassDefault2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: InClassIsClassDefault2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : InClassIsClassDefault2
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*  Within the CLASS DEFAULT and TYPE IS
 !*  for extensible types
-!*   
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -50,7 +44,7 @@
   MODULE M
 
     TYPE  :: Zero
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -100,7 +94,7 @@
   USE M
   IMPLICIT NONE
 
-  TYPE(Child) :: Arr(2:3,3:4) 
+  TYPE(Child) :: Arr(2:3,3:4)
 
   CALL Sub(Arr)
 
@@ -110,20 +104,20 @@
   CLASS(*) :: Arg(2:3,3:4)
 
     SELECT TYPE (U => Arg)
-    CLASS DEFAULT 
+    CLASS DEFAULT
     SELECT TYPE (U)
-    CLASS IS (Child) 
+    CLASS IS (Child)
     SELECT TYPE (U)
-    CLASS DEFAULT 
+    CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30 
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30
       IF ( SIZE(U)          .NE. 4 )          STOP 31
       IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
       IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
       IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   STOP 34
 
       SELECT TYPE ( As => Arg )
-      
+
       TYPE IS (Child)
 
           IF ( ANY(As%Base%GetId() .NE. U%Base%GetId()) ) STOP 34
@@ -148,7 +142,7 @@
     END SELECT
 
   END SUBROUTINE
- 
+
   END
 
 

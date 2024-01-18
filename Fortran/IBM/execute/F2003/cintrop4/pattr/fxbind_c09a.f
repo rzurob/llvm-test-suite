@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,24 +13,16 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c09a.f
-!* TEST CASE TITLE              : BIND(C) attribute/statement
-!*
-!* PROGRAMMER                   : Yubin Liao 
 !* DATE                         : Sep. 1, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute 
+!* DESCRIPTION                  : Test: BINC(C) attribute
 !*                                with different intrinsic data type,
 !*                                integer*1, integer*2, integer*4,
 !*                                integer*8, real*4, real*8, complex
@@ -86,19 +73,19 @@ program fxbind_c09a
    integer*2 ai2 /15/, bi2 /18/
    integer*4 ai4 /11/, bi4 /14/
    integer*8 ai8 /17/, bi8 /20/
- 
+
    real*4   ar4 /4.80/, br4 /1.80/
    real*8   ar8 /140.8/, br8 /137.8/
    real*16  ar16 /1600.3/, br16 /1597.3/
-   
+
    character ch /'f'/
-   
+
    complex*8 co8 /(3.0, 6.0)/
    complex*16 co16 /(3.0D0, 6.0D0)/
 
    integer a
    a = 3
- 
+
    call extsub_int(ai1, ai2, ai4, ai8, a)
       if(ai1 .ne. bi1)then
         error stop 10
@@ -133,7 +120,7 @@ program fxbind_c09a
       if ( ch .ne. 'd') then
         error stop 30
       end if
-   
+
    a = 3
 
    call extsub_comp(co8, co16, a)
@@ -144,4 +131,4 @@ program fxbind_c09a
      if (.not. precision_x16(co16, (0.0D0, 0.0D0))) then
         error stop 41
      end if
-end 
+end

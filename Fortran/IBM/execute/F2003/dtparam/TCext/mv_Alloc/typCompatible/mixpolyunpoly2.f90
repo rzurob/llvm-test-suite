@@ -3,24 +3,12 @@
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=none
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mixpolyunpoly2.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : TO is of type unlimited poly& component of a DT
 !*                               FROM is a dynamic type
@@ -36,10 +24,10 @@ module m
       type  :: base(k1)    ! (4)
           integer, kind :: k1
           class(*), allocatable :: i1
-      end type 
+      end type
       type, extends(base) :: child    ! (4)
           class(base(k1)), allocatable :: i2
-      end type 
+      end type
 end module
 
       use m
@@ -48,7 +36,7 @@ end module
 
       allocate(b, source = child(4)( 'IBM-COMPILER', base(4)(12) ) )
       allocate(a, source = b )
-  
+
       select type ( b )
           type is ( child(4) )
               call move_alloc(a, b%i2%i1)
@@ -58,9 +46,9 @@ end module
 
               select type (   x => b%i2%i1 )
                   type is (child(4))
-                      select type ( y => x%i1 ) 
+                      select type ( y => x%i1 )
                           type is (character(*))
-                              if ( y /= 'IBM-COMPILER' ) stop 21 
+                              if ( y /= 'IBM-COMPILER' ) stop 21
                           class default
                               stop 23
                       end select
@@ -73,6 +61,6 @@ end module
                       end select
               end select
           class default
-              stop 41 
+              stop 41
          end select
       end

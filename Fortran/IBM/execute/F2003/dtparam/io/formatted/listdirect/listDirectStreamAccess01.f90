@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectStreamAccess01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectStreamAccess01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 20 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 20 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. Test read with list directed IO and stream access
@@ -29,7 +21,7 @@ module m1
      integer,len  :: l0 ! l0=3
 
      sequence
-     integer(k0)  :: i1=-99 
+     integer(k0)  :: i1=-99
      integer(2*k0) :: i2(l0+1)=-99
   end type
   type DT1(k1,l1)
@@ -40,7 +32,7 @@ module m1
      character(k1) :: c1(l1-1)="****"
      character(l1+1) :: c2="*****"
      type(DT0(k1,l1-1)) :: dt0comp
-  end type 
+  end type
 end module
 
 module m2
@@ -57,7 +49,7 @@ module m2
 
   contains
 
-    subroutine read1(dt2,unit) 
+    subroutine read1(dt2,unit)
        implicit type(DT2(2,4)) (d)
        allocatable :: dt2(:)
        intent(inout) :: dt2
@@ -67,10 +59,10 @@ module m2
           allocate(DT2(2,4) :: dt2(-1:0))
        end if
 
-       call read2(dt2(-1),unit) 
-       call read3(dt2(0),unit) 
+       call read2(dt2(-1),unit)
+       call read3(dt2(0),unit)
 
-    end subroutine 
+    end subroutine
 
     subroutine read2(dt2,unit)
        implicit type(DT2(2,*)) (d)
@@ -83,23 +75,23 @@ module m2
        read(unit,*,pos=mypos) dt2%g1,dt2%g2(1)
        inquire(unit,pos=mypos)
        if(mypos /= 20)     stop 12
-     
+
        read(unit,*,pos=mypos) dt2%g2(2:4)
-       inquire(unit,pos=mypos) 
+       inquire(unit,pos=mypos)
        if( mypos /= 38)     stop 13
 
        read(unit,*,pos=mypos) dt2%dt1comp%c1
-       inquire(unit,pos=mypos) 
-       if( mypos /= 58)      stop 14 
+       inquire(unit,pos=mypos)
+       if( mypos /= 58)      stop 14
 
        read(unit,*,pos=mypos) dt2%dt1comp%c2
-       inquire(unit,pos=mypos) 
+       inquire(unit,pos=mypos)
        if(mypos /= 68)       stop 15
 
        read(unit,*,pos=mypos) dt2%dt1comp%dt0comp%i1,dt2%dt1comp%dt0comp%i2(1)
        inquire(unit,pos=mypos)
        if(mypos /= 83)       stop 16
-       
+
        read(unit,*) dt2%dt1comp%dt0comp%i2(2:4)
 
     end subroutine
@@ -134,7 +126,7 @@ use m2
    character(256) :: msg
 
    implicit type(DT2(2,4)) (D)
-   
+
    allocatable :: dt2(:)
 
    open(10,file='listDirectStreamAccess01.dat',status='old',&
@@ -151,11 +143,11 @@ use m2
    call read1(dt2,10)
 
    !output results for verification
-   
+
    do i=lbound(dt2,1),ubound(dt2,1)
       write(*,*) dt2(i)
-   end do 
+   end do
 
-  close(10,status='keep') 
-             
+  close(10,status='keep')
+
 end program

@@ -5,45 +5,37 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn021b.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn021b.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn021b.f 
-!*  TEST CASE TITLE            : type-bound procedures
+!*  TEST CASE NAME             : ftybn021b.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
+!*  DATE                       :
 !
 !*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
 !*
-!*  SECONDARY FUNCTIONS TESTED : overriding 
+!*  SECONDARY FUNCTIONS TESTED : overriding
 !*
-!*  DESCRIPTION                : Testing the nopass binding attribute, 
+!*  DESCRIPTION                : Testing the nopass binding attribute,
 !*                               the binding procedures without dummy
-!*                               argument & overriding in the same 
-!*                               scope. 
-!*                              
-!*                             
-!*                            
+!*                               argument & overriding in the same
+!*                               scope.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 
-	module mod	      
-		type base(n1,k1)    ! (20,4) 
+	module mod
+		type base(n1,k1)    ! (20,4)
       integer, kind :: k1
       integer, len  :: n1
       integer(k1)   :: x
@@ -56,24 +48,24 @@
  		procedure, nopass :: bind => proc2
 		end type
 
-      type, extends(parent) :: child    ! (20,4) 
+      type, extends(parent) :: child    ! (20,4)
       contains
       procedure, nopass :: bind => proc3
       end type
 
       contains
       integer function proc1()
-         proc1 = 100 
+         proc1 = 100
       end function proc1
 
       integer function proc2()
-         proc2 = 200 
+         proc2 = 200
       end function proc2
 
       integer function proc3()
-         proc3 = 300 
+         proc3 = 300
       end function proc3
-	end module     
+	end module
 
    use mod
 
@@ -90,4 +82,4 @@
    if(child_dt1%bind() .ne. child_dt1%x) error stop 4
 
    end
-   
+

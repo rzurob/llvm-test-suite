@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpEquivC584 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpEquivC584
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 09, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The equivalence statement
-!* 
-!*  C584 584 (R556) If an equivalence-object has the PROTECTED attribute, all of the objects in 
+!*
+!*  C584 584 (R556) If an equivalence-object has the PROTECTED attribute, all of the objects in
 !*  the equivalence set shall have the PROTECTED attribute
 !*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -58,7 +49,7 @@
     COMPLEX(KZ)                :: Z(L)=(KZ,-KZ)
 
   END TYPE
- 
+
   INTEGER, PARAMETER :: N=95
 
   SAVE
@@ -75,7 +66,7 @@
   integer :: count = 0
 
   DO I=1, N
-    R(I)%R = -R(I)%R 
+    R(I)%R = -R(I)%R
     if (mod(count,2) == 0) then
         R(I)%C = CHAR(0)
     else
@@ -91,11 +82,11 @@
 
   END MODULE
 
-  PROGRAM dtpEquivC584 
+  PROGRAM dtpEquivC584
   USE M
 
   DO I=1, N
- 
+
   IF ( ANY ( LBOUND(T(I)%R) .NE. 1          ) ) STOP 20
   IF ( SIZE( T(I)%R )       .NE. 7            ) STOP 21
   IF ( KIND( T(I)%R )       .NE. 16           ) STOP 22
@@ -116,14 +107,14 @@
   IF ( SIZE( T(I)%A )       .NE. 7            ) STOP 37
   IF ( KIND( T(I)%A )       .NE. 8            ) STOP 38
   IF ( ANY ( T(I)%A         .NEQV. .TRUE.   ) ) STOP 39
- 
+
   IF ( ANY ( LBOUND(T(I)%Z) .NE. 1          ) ) STOP 41
   IF ( SIZE( T(I)%Z )       .NE. 7            ) STOP 42
   IF ( KIND( T(I)%Z )       .NE. 8            ) STOP 43
   IF ( ANY ( T(I)%Z         .NE. (8, -8)    ) ) STOP 43
 
   CALL Change()
- 
+
   IF ( ANY ( LBOUND(S(I)%R) .NE. 1          ) ) STOP 50
   IF ( SIZE( S(I)%R )       .NE. 7            ) STOP 51
   IF ( KIND( S(I)%R )       .NE. 16           ) STOP 52
@@ -144,7 +135,7 @@
   IF ( SIZE( S(I)%A )       .NE. 7            ) STOP 67
   IF ( KIND( S(I)%A )       .NE. 8            ) STOP 68
   IF ( ANY ( S(I)%A         .NEQV. .FALSE.  ) ) STOP 69
- 
+
   IF ( ANY ( LBOUND(S(I)%Z) .NE. 1          ) ) STOP 71
   IF ( SIZE( S(I)%Z )       .NE. 7            ) STOP 72
   IF ( KIND( S(I)%Z )       .NE. 8            ) STOP 73
@@ -153,7 +144,7 @@
   CALL Change()
 
   END DO
- 
+
   END
 
 

@@ -1,17 +1,11 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : codimension_d01.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : October 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
@@ -19,7 +13,7 @@
 !*                               in situations of invalid syntax.
 !*                                   a) Improper bracket syntax
 !*                                   b) Mispelling
-!*                            
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program main

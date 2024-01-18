@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignImp.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignImp.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignImp.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignImp.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  explicit  interface
-!*  (ice-314926) 
+!*  (ice-314926)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -71,7 +65,7 @@
     INTEGER      :: GetBaseId
       GetBaseId = Arg%BaseId
     END FUNCTION
- 
+
   END MODULE
 
   FUNCTION ExtFun()
@@ -81,8 +75,8 @@
   END FUNCTION
 
   PROGRAM PtrAssignImp
-  USE M 
-  IMPLICIT NONE 
+  USE M
+  IMPLICIT NONE
 
   INTERFACE
     FUNCTION ExtFun()
@@ -99,14 +93,14 @@
   IF ( V%GetID()     .NE. V%ProcPtr2()      ) STOP 12
 
   SELECT TYPE (V)
-  TYPE IS (Child) 
+  TYPE IS (Child)
     V = V
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP  44
   END SELECT
 
   IF ( V%Base%GetID() .NE. V%Base%ProcPtr1() ) STOP 21
   IF ( V%GetID()     .NE. V%ProcPtr2()      ) STOP 22
 
-  END 
+  END
 

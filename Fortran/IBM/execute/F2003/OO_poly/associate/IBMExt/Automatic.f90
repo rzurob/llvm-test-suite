@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Automatic.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Automatic.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Automatic 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Automatic
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 05, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,13 +30,13 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is an automatic entity 
-!*    () 
+!*    The selector is an automatic entity
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM Automatic 
+  PROGRAM Automatic
   IMPLICIT NONE
 
   CHARACTER   :: C="!"
@@ -51,8 +45,8 @@
   BYTE        :: B=1_1
 
   CALL Sub()
-  IF (C .NE. "!" .OR. .NOT. L .OR. I .NE. -1 .OR. B .NE. 1 ) STOP 99 
- 
+  IF (C .NE. "!" .OR. .NOT. L .OR. I .NE. -1 .OR. B .NE. 1 ) STOP 99
+
   CONTAINS
 
   SUBROUTINE Sub()
@@ -70,43 +64,43 @@
 
   ASSOCIATE ( As => B  )
     IF ( ANY(As .NE. 1_1) ) STOP 11
-  END ASSOCIATE 
+  END ASSOCIATE
 
   BPtr => C
   ASSOCIATE ( As => BPtr  )
     SELECT TYPE ( As )
     CLASS DEFAULT
-      STOP 20 
+      STOP 20
     TYPE IS (CHARACTER(*))
       IF ( ANY(As .NE. "!") ) STOP 21
       AS = "1"
       IF ( ANY(C .NE. "1" ) )STOP 22
     END SELECT
-  END ASSOCIATE 
+  END ASSOCIATE
 
   BPtr => I
   ASSOCIATE ( As => BPtr  )
     SELECT TYPE ( As )
     CLASS DEFAULT
-      STOP 30 
+      STOP 30
     TYPE IS (INTEGER(1))
       IF ( ANY(As .NE. -1 )) STOP 31
       AS = 1
       IF ( ANY(I .NE. 1 )) STOP 32
     END SELECT
-  END ASSOCIATE 
+  END ASSOCIATE
 
   BPtr => L
   ASSOCIATE ( As => BPtr  )
     SELECT TYPE ( As )
     CLASS DEFAULT
-      STOP 40 
+      STOP 40
     TYPE IS (LOGICAL(1))
       IF ( ANY(.NOT. As )) STOP 41
-      AS = .FALSE. 
+      AS = .FALSE.
       IF ( ANY(L) ) STOP 42
     END SELECT
-  END ASSOCIATE 
+  END ASSOCIATE
 
   BPtr => B
   ASSOCIATE ( As => BPtr  )
@@ -124,7 +118,7 @@
       AS = -1
       IF ( ANY(B .NE. -1 )) STOP 52
     END SELECT
-  END ASSOCIATE 
+  END ASSOCIATE
 
   END SUBROUTINE
 

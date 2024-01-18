@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocFromIsUnallocated01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocFromIsUnallocated01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 29 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 29 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
@@ -43,7 +35,7 @@ program move_allocFromIsUnallocated01
   type(dtp(2,:)),allocatable :: dtp3
 
   class(dtp(2,4)),allocatable :: dtp4
-  class(dtp(2,:)),allocatable :: dtp5 
+  class(dtp(2,:)),allocatable :: dtp5
 
   if(allocated(dtp1))                    error stop 10_4
   if(allocated(dtp2))                    error stop 11_4
@@ -55,7 +47,7 @@ program move_allocFromIsUnallocated01
   call move_alloc(dtp1,dtp3)
   call move_alloc(dtp1,dtp4)
   call move_alloc(dtp1,dtp5)
-  
+
   if(allocated(dtp2))                    error stop 15_4
   if(allocated(dtp3))                    error stop 16_4
   if(allocated(dtp4))                    error stop 17_4
@@ -66,7 +58,7 @@ program move_allocFromIsUnallocated01
   call move_alloc(dtp3,dtp4)
   call move_alloc(dtp3,dtp5)
 
-  if(allocated(dtp1))                    error stop 19_4 
+  if(allocated(dtp1))                    error stop 19_4
   if(allocated(dtp2))                    error stop 20_4
   if(allocated(dtp3))                    error stop 21_4
   if(allocated(dtp4))                    error stop 22_4
@@ -102,7 +94,7 @@ program move_allocFromIsUnallocated01
   if(allocated(dtp2))                    error stop 35_4
   if(allocated(dtp3))                    error stop 36_4
   if(allocated(dtp4))                    error stop 37_4
-  if(allocated(dtp5))                    error stop 38_4  
+  if(allocated(dtp5))                    error stop 38_4
 
 end program
 

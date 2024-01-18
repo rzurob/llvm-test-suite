@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_ACE_05.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification 
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -21,7 +13,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
@@ -32,7 +23,7 @@ MODULE Mod
         INTEGER, LEN  :: l1 = 10
 
         INTEGER(k1) :: A01(l1) = -1, A02(l1+1) = -2
-        REAL(k1)    :: R0 = -0.1 
+        REAL(k1)    :: R0 = -0.1
       END TYPE
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)
@@ -46,13 +37,13 @@ PROGRAM DTP_ACE_05
       USE Mod
       IMPLICIT NONE
 
-      INTEGER, PARAMETER :: K =4 , N = 10, M = 3 
-      INTEGER, PARAMETER :: J = N, Q = M  
-      INTEGER :: I 
+      INTEGER, PARAMETER :: K =4 , N = 10, M = 3
+      INTEGER, PARAMETER :: J = N, Q = M
+      INTEGER :: I
       TYPE(Base(K,N)) :: b1(2)
       TYPE(Child(K,M,K,M)) :: c1 =  Child(K,M,K,M)( [(1, I = 1, M)],         &
           [(2, I = 1, (M+1))], 0.99, [(I, I = 1, M)] ), c2 =  Child(K,M,K,M) &
-          ( A01=N, A02=2*N, A2=3*N ), carr(5) 
+          ( A01=N, A02=2*N, A2=3*N ), carr(5)
       LOGICAL, EXTERNAL :: precision_r4
 
       b1 = [Base(K,N) :: Base(K,N)(), Base(K,N)(2, 3, 0.2)]

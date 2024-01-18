@@ -1,32 +1,24 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound01
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug 20, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Functionality of cobound intrinsics
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This functional test, makes sure that
 !*                               L/UCOBOUND return expected values when
-!*                               coarray has explicit coshape with 
-!*                               compile-time constant cobounds. 
+!*                               coarray has explicit coshape with
+!*                               compile-time constant cobounds.
 !*                               This test case also tests the following:
 !*                                 - runtime values for DIM
 !*                                 - DIM present/not present
 !*                                 - I/O statement
 !*                                 - array assignment (testing scalarization)
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

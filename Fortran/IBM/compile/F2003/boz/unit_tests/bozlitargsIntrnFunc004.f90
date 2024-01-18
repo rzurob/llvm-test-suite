@@ -6,26 +6,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozlitargsIntrnFunc004
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : Aug. 26, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : boz-literal args to REAL, INT, CMPLX and DBLE intrinsics
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  : -qlanglvl=2003std
 !*
 !*  DESCRIPTION                : using boz-literals in various situations to genereate
 !*															 the appropriate language level message for Fortran 2003
-!*															     
-!*   
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 integer :: i,k
 real :: j,a,x

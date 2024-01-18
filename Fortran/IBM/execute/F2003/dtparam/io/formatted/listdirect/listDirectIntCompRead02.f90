@@ -1,33 +1,25 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectIntCompRead02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectIntCompRead02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 14 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 14 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test Read statement with integer as components
-!* 2. Execute Read statement with dummy argument as input object, and dummy argument is passed through multiple subroutines  
+!* 2. Execute Read statement with dummy argument as input object, and dummy argument is passed through multiple subroutines
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m1
    type base(k1,l1)
       integer,kind :: k1
       integer,len  :: l1
-      
+
       integer(k1) :: i1(l1)
    end type
 end module
@@ -44,7 +36,7 @@ use m1
 
      subroutine sub1(arg)
          class(base(4,*)),intent(inout) :: arg(2:)
-        
+
          call sub2(arg(ubound(arg,1):lbound(arg,1):-1) )
      end subroutine
 
@@ -57,9 +49,9 @@ use m1
          class(base(4,*)),intent(inout) :: arg(:)
          select type(arg)
            type is(base(4,*))
-              read(10,*,decimal='point')    arg 
+              read(10,*,decimal='point')    arg
            class default
-              stop 11 
+              stop 11
          end select
      end subroutine
 
@@ -71,12 +63,12 @@ use m1
 
      subroutine sub5(arg)
          type(child(4,*,4,*)),intent(inout) :: arg(:)
-        
-         do i=lbound(arg,1),ubound(arg,1) 
+
+         do i=lbound(arg,1),ubound(arg,1)
             read(10,*,decimal='comma') arg(i)%i2
          end do
      end subroutine
-   
+
 end module
 
 program listDirectIntCompRead02
@@ -99,7 +91,7 @@ program listDirectIntCompRead02
     stop 10
   end if
 
-  ! following is the input we want to read, there are extra value in the input 
+  ! following is the input we want to read, there are extra value in the input
 
   !-20 , 1*-30 2*+21, 1* , - 7
   ! ;-52 +04 ; ;+2*-1;
@@ -118,10 +110,10 @@ program listDirectIntCompRead02
   select type(obj)
      type is(child(4,*,4,*))
         write(*,*,sign='plus') obj
-     class default 
+     class default
         stop 13
   end select
 
   close(10)
- 
+
 end program

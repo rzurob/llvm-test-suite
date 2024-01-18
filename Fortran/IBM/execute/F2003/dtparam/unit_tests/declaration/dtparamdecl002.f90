@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -14,28 +9,17 @@
 ! %STDIN:
 ! %STDOUT: dtparamdecl002.out
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Chris Tandy
 !*  DATE                       : 09/20/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf90
-!*
-!*  DESCRIPTION                : TYPE parameters,                                  
+!*  DESCRIPTION                : TYPE parameters,
 !*                                1) kind and len attribute
 !*                                2) type parameters used in:
 !*                                     i) array low and high bound
@@ -59,7 +43,7 @@
 program dtparamdecl002
   type, extends(old) :: new
   end type
- 
+
   type old
      integer :: b
   end type
@@ -69,31 +53,30 @@ program dtparamdecl002
      integer, len :: low1, high1
      real(basekind) :: basearray(low1:high1)
      real(basekind) :: basearray2(1:high1 - 2)
-     
+
   end type
-  
+
   type(base(4,1,4)) :: base1
-  
+
   type(base(low1=1, basekind=8,high1=10)) :: base2
-  
+
   base1%basearray = 3.0
   base1%basearray(2) = 6.0
-  
+
   base1%basearray2 = 123.0
   base1%basearray2(2) = 678.0
-  
+
   base2%basearray = 5.0
   base2%basearray(2) = 9.0
-  
+
   base2%basearray2 = 345678.0
   base2%basearray2(2) = 987654.0
-  
+
   print *, 'ubound(base1%basearray)=', ubound(base1%basearray)
   print *, 'lbound(base1%basearray)=', lbound(base1%basearray),  ' base1=', base1
-  
+
   print *, 'ubound(base2%basearray)=', ubound(base2%basearray)
   print *, 'ubound(base2%basearray2)=', ubound(base2%basearray2)
   print *, 'lbound(base2%basearray)=', lbound(base2%basearray),  ' base2=', base2
-end  
-  
-  
+end
+

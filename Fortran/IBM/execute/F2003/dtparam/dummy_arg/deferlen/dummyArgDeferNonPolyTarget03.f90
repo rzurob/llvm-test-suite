@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPolyTarget03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPolyTarget03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 7 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  1.actual target and actual pointer passed through dummy arguments,dummy pointer is associated with dummy target, after executing procedure, actual pointer will assocaite with actual target. 
+!*  1.actual target and actual pointer passed through dummy arguments,dummy pointer is associated with dummy target, after executing procedure, actual pointer will assocaite with actual target.
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type dtp(k1,l1)
@@ -75,12 +67,12 @@ program dummyArgDeferNonPolyTarget03
   call associate3(tar2,ptr2)
 
   if(any(ptr2(-1)%c1 /= ["00","11"]))                     error stop 27_4
-  if(any(ptr2(0)%c1 /= ["22","33"]))                      error stop 28_4   
+  if(any(ptr2(0)%c1 /= ["22","33"]))                      error stop 28_4
 
   contains
-   
+
    subroutine associate1(tar,ptr)
-      type(dtp(2,:)),allocatable,target    :: tar 
+      type(dtp(2,:)),allocatable,target    :: tar
       type(dtp(2,:)),pointer,intent(out)   :: ptr
 
       if(.not. allocated(tar)) then

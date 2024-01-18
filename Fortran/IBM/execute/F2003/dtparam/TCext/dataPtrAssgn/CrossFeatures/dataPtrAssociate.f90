@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrAssociate.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrAssociate.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 16, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Associate 
+!*  Associate
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -66,19 +58,19 @@
 
   END MODULE
 
-  PROGRAM dataPtrAssociate 
+  PROGRAM dataPtrAssociate
   USE M
   IMPLICIT NONE
 
   TYPE(DT(3,4)), TARGET  ::  Tar2(100, 100)
   TYPE(DT1(3,4,4,3)), TARGET  :: Tar1(10000)
   CLASS(DT(:,4)), POINTER :: Ptr(:, :)
- 
+
   INTEGER    :: I, J, K, N
- 
+
   N = 100; K = 0
 
-  DO I =1, N 
+  DO I =1, N
   DO J =I, N
 
     Ptr(I:, J:) => Tar2
@@ -87,19 +79,19 @@
       TYPE IS (DT(*,4))
         Ptr = DT(3,4)(ID=I*J, Ptr=Tar2)
       END SELECT
- 
+
       IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 12
       IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
       IF (ANY( Tar2%ID     .NE.  I*J ))            STOP 14
     END ASSOCIATE
     IF (.NOT. ASSOCIATED(Ptr, Tar2))               STOP 11
     IF (ANY( Ptr%ModFun() .NE.  I*J ))             STOP 15
- 
-    Ptr(I:J, I:J) => Tar1 
+
+    Ptr(I:J, I:J) => Tar1
     ASSOCIATE( Ptr => Ptr)
       SELECT TYPE (Ptr)
       TYPE IS (DT1(*,4,4,*))
-        Ptr = DT1(3,4,4,3)(ID=-I*J, Ptr=Tar2) 
+        Ptr = DT1(3,4,4,3)(ID=-I*J, Ptr=Tar2)
       END SELECT
 
       IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      STOP 22
@@ -108,7 +100,7 @@
     END ASSOCIATE
     IF (.NOT. ASSOCIATED(Ptr))                   STOP 21
     IF (ANY( Ptr%ModFun() .NE.  -I*J ))          STOP 15
- 
+
   END DO
   END DO
 

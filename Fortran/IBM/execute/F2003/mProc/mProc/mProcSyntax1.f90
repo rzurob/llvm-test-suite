@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcSyntax1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcSyntax1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Syntax 
+!*  Syntax
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -39,9 +31,9 @@
   INTERFACE Fun
 
     PROCEDURE ModFun
- 
+
     CHARACTER(3) FUNCTION ExtFun(Arg)
-    IMPORT 
+    IMPORT
       REAL Arg
       INTERFACE Fun1
         PROCEDURE ModFun,ModFun1
@@ -54,12 +46,12 @@
   CONTAINS
 
   CHARACTER(3) FUNCTION ModFun(Arg)
-  INTEGER :: Arg   
+  INTEGER :: Arg
     ModFun = "OK0"
   END FUNCTION
 
   CHARACTER(3) FUNCTION ModFun1(Arg)
-  INTEGER(1) :: Arg   
+  INTEGER(1) :: Arg
   INTERFACE Fun1
     PROCEDURE ModFun
   END INTERFACE
@@ -74,8 +66,8 @@
     ExtFun = "OK!"
   END FUNCTION
 
-  PROGRAM mProcSyntax1 
-  USE M, ONLY : Fun, ModFun1 
+  PROGRAM mProcSyntax1
+  USE M, ONLY : Fun, ModFun1
 
   INTERFACE Fun
     PROCEDURE   ModFun1
@@ -85,7 +77,7 @@
   IF (Fun(1)   .NE. "OK0") STOP 12
   IF (Fun(1_1) .NE. "OK1") STOP 13
 
- 
+
   END
 
 

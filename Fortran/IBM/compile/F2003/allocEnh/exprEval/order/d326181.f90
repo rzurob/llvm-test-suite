@@ -1,20 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : d326181 - Order of Expression Evaluation
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : October  3, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: ALLOCENH: Error in WCODE with Derived
 !*                               Type Array that Contains an ALLOCATABLE
 !*                               Component
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : Array Intrinsic Assignment, Vector Subscript,

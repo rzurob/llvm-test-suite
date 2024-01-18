@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg15.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg15.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg15.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg15.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 24, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Argument association -
-!*  Implicit interface 
+!*  Implicit interface
 !* (304184)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -49,21 +43,21 @@
     TYPE :: Base
       CHARACTER(3) :: C
     END TYPE
- 
+
     INTERFACE
       FUNCTION IntF(Arg)
       IMPORT
-        TYPE(Base), INTENT(IN) :: Arg 
-        TYPE(Base):: IntF 
+        TYPE(Base), INTENT(IN) :: Arg
+        TYPE(Base):: IntF
       END FUNCTION
     END INTERFACE
 
- 
+
   END MODULE
 
   PURE FUNCTION ExtFun(Arg)
   USE M
-  TYPE(Base), INTENT(IN) :: Arg 
+  TYPE(Base), INTENT(IN) :: Arg
   TYPE(Base) :: ExtFun
     ExtFun = Arg
   END FUNCTION

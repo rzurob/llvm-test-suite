@@ -12,37 +12,29 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat21.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Tests command line intrinsic routines by passing arithmatic/character 
+!*  DESCRIPTION                : Tests command line intrinsic routines by passing arithmatic/character
 !*                             : expresssions with various optional arguments as intent(in) arguments
 !*                             : Set default int sizt=8
-!*                             : 
-!*           
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -66,10 +58,10 @@
       character(2047)             :: VALUE
       integer                     :: ARGCOUNT
 
-      
+
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 6 ) & 
+      if ( CmdCount .ne. 6 ) &
       then
         call zzrcy4(63)
       endif
@@ -86,7 +78,7 @@
 
       call GET_COMMAND( LENGTH=LENGTH, COMMAND=COMMAND(1:101))
       if ( (TRIM(COMMAND(1:101)) .ne. TRIM(CmdLine))  .or. &
-           (LENGTH .ne. LEN(TRIM(CmdLine))))               & 
+           (LENGTH .ne. LEN(TRIM(CmdLine))))               &
       then
         call zzrcy4(65)
       endif
@@ -98,7 +90,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call MyGetArg(CmdLine, NUMBER, Argument)
 
@@ -144,8 +136,8 @@
       endif
 
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 
 
@@ -160,4 +152,4 @@
       END SUBROUTINE
 
 
-  
+

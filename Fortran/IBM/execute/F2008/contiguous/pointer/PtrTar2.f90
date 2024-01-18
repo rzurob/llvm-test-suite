@@ -1,25 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : PtrTar2.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment 
-!*                             :
+!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
 !*  SECONDARY FUNCTIONS TESTED : Function result with CONTIGUOUS attribute
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - Pointer has CONTIGUOUS attribute 
+!*  DESCRIPTION                : - Pointer has CONTIGUOUS attribute
 !*    - Dummy is assumed shape array with or without CONTIGUOUS attribute
-!*    - Actual is contiguous array 
+!*    - Actual is contiguous array
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -85,7 +75,7 @@ PROGRAM PtrTar2
 
       CONTAINS
 
-      FUNCTION foo1(Arg)  
+      FUNCTION foo1(Arg)
         INTEGER, TARGET :: Arg(:,:,:)
         INTEGER, POINTER, CONTIGUOUS :: foo1(:,:,:)
 
@@ -98,7 +88,7 @@ PROGRAM PtrTar2
         IF ( .NOT. IS_CONTIGUOUS(foo1) ) STOP 13
       END FUNCTION
 
-      FUNCTION foo2(Arg) RESULT(res) 
+      FUNCTION foo2(Arg) RESULT(res)
         INTEGER, TARGET, CONTIGUOUS  :: Arg(:,:,:)
         INTEGER, POINTER, CONTIGUOUS :: res(:,:,:)
 

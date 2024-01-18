@@ -1,13 +1,9 @@
 
-
 !*******************************************************************************
-!*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
 !*  ============================================================================
 !*
 !*  TEST CASE NAME             :/cintrop_ts29113/asynch_communication/asynchcomm022f.f
-!* FEATURE NAME                : C_Interop_Asynch_Communication 
-!*  PROGRAMMER                 : Tapti Vaid
+!* FEATURE NAME                : C_Interop_Asynch_Communication
 !*  DATE                       : 2013-10-07
 !*
 !*  DESCRIPTION
@@ -22,7 +18,7 @@
 !*Defined in: main
 !*Made asynchronous in: submodule (contained in main)
 !*Used for asynch communication in: internal subroutine
-!* 
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -33,17 +29,17 @@ implicit none
 include 'mpif.h'
 real :: a0, res0=0, res1=0, result1=0
 real :: b0, b1
-asynchronous :: b0 
+asynchronous :: b0
 
 call mpi_communication()
 
-contains 
+contains
 subroutine mpi_communication()
 integer :: nt, rank, len, mpierror, rc, i
 integer :: status(MPI_STATUS_SIZE)
 integer, parameter :: TAG_SEND_ARR = 10, TAG_RES_READY = 11
 
-integer :: reqs(2) 
+integer :: reqs(2)
 
 
 ! initialization
@@ -62,12 +58,12 @@ integer :: reqs(2)
        end if
 
 ! assuming there are 2 tasks in the MPI_COMM_WORLD; task 0 sends b to task 1 and calcuates the square root of a (after which it alters b)
-! task 1 calculates the square of b and sends the result to task 0 
+! task 1 calculates the square of b and sends the result to task 0
 if (rank .eq. 0) then
 
 a0 = 100
 
-	block 
+	block
 
 	b0 = 50
 	call MPI_ISEND(b0, 1 , MPI_REAL, 1, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(1), mpierror)
@@ -86,7 +82,7 @@ if (res0 .ne. 2500.000000) error STOP 2
 else !(if task# =1)
 
 	block
-	
+
 	real, asynchronous :: b1
 	call MPI_IRECV(b1, 1 , MPI_REAL, 0, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(2), mpierror)
 	call MPI_WAIT(reqs(2), status, mpierror)

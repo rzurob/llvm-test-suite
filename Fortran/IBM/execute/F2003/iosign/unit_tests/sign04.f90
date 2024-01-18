@@ -13,18 +13,11 @@
 !***********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Test of SIGN= specifier
-!*      
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN= specifier
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SIGN
@@ -33,7 +26,7 @@
 !*                               in OPEN statement
 !*                             1 The sign= specifier in OPEN statement
 !*                               set the default sign mode in the following
-!*                               connection 
+!*                               connection
 !*                             2 The S/SS/SP edit descriptors in WRITE statement
 !*                               will temporarily change the SIGN mode
 !*                               set in the OPEN statement

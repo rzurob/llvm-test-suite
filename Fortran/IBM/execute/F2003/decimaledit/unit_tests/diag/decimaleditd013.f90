@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditd013.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,24 +12,17 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditd013
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Dec. 08, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : providing support for the DECIMAL=
 !*                               specifier and decimal edit mode control
 !*                               descriptors. Feature 289039.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This diagnostic test, checks to make sure
 !*                               invalid values for the DECIMAL= specifier
@@ -49,13 +42,13 @@
       val4 = 'COMMA'
       val5 = 'comma'
       val6 = 'point'
-      
+
       inval1 = 'pomma'
       inval2 = 'coint'
       inval3 = ''
       inval4 = 'notavalidvalue'
       inval5 = 'commma'
-      
+
       ! valid values: ( should not be flagged )
       write(buffer, *, decimal=val1) 3.14
       read(buffer, *, decimal=val2) input
@@ -70,5 +63,5 @@
       write(buffer,*,decimal=inval3) 3.14
       read(buffer,*,decimal=inval4) input
       write(buffer,*,decimal=inval5) 3.14
-      
+
       end

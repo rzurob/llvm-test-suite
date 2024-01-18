@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C813VarDer.f 
+! %POSTCMD: tcomp C813VarDer.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C813VarDer
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 3, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C813 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C813
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +34,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a var of derived type 
+!*    The selector is a var of derived type
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -61,7 +55,7 @@
     TYPE, EXTENDS(Base) :: Child    ! (4,20)
       INTEGER(K1)  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -83,35 +77,35 @@
   PROGRAM C813VarDer
   USE M
   IMPLICIT NONE
- 
+
   CLASS(Child(4,:)), ALLOCATABLE :: Var
- 
+
   ALLOCATE(Var, SOURCE=Child(4,20)(BaseId=-1, ChildId=-2) )
 
-  SELECT TYPE (  As => Var%Base) 
+  SELECT TYPE (  As => Var%Base)
     TYPE IS (Base(4,*))
       STOP 50
     CLASS DEFAULT
       STOP 30
-  END SELECT 
+  END SELECT
 
   SELECT TYPE (Var)
     CLASS IS (Child(4,*))
-      SELECT TYPE (  As => Var%Base) 
+      SELECT TYPE (  As => Var%Base)
         TYPE IS (Base(4,*))
           STOP 50
         CLASS DEFAULT
           STOP 30
-      END SELECT 
-  END SELECT 
+      END SELECT
+  END SELECT
 
-  ASSOCIATE( As => Var%Base ) 
-  SELECT TYPE (  As => As) 
+  ASSOCIATE( As => Var%Base )
+  SELECT TYPE (  As => As)
     TYPE IS (Base(4,*))
       STOP 50
     CLASS DEFAULT
       STOP 30
-  END SELECT 
+  END SELECT
   END ASSOCIATE
 
   END

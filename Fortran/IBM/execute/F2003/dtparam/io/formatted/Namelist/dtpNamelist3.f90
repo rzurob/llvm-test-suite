@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpNamelist3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul 07, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The namelist statement
-!*  Namelist-group-name appear more than once in the NAMELIST statements in a scoping unit. 
-!*  
-!* 
+!*  Namelist-group-name appear more than once in the NAMELIST statements in a scoping unit.
+!*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -61,7 +51,7 @@
     INTEGER(K2)   :: I(L2)=K2
   END TYPE
   SAVE
- 
+
   TYPE(DT0(1,3))        :: R
   TYPE(DT1(1,3,4,5))    :: S
   TYPE(DT2(1,3,4,5,8,7)):: T
@@ -93,9 +83,9 @@
   PROGRAM dtpNamelist3
   USE M, ONLY:R,S,T
 
-  INTERFACE 
+  INTERFACE
     SUBROUTINE S1()
-    IMPORT R,S,T 
+    IMPORT R,S,T
       NAMELIST /NL0/ R,S
       NAMELIST /NL0/ R,T
       NAMELIST /NL1/ S
@@ -124,10 +114,10 @@
   NAMELIST /NL3/ S,S
 
   WRITE(*, NML=NL0)
-  WRITE(*, NML=NL1) 
+  WRITE(*, NML=NL1)
   WRITE(*, NML=NL2)
   WRITE(*, NML=NL3)
-  
+
   END
 
 

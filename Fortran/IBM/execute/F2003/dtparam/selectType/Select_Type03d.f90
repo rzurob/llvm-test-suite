@@ -1,26 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type03c - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 29, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
-!*  SECONDARY FUNCTIONS TESTED : IMPLICIT TYPE mapping 
+!*  SECONDARY FUNCTIONS TESTED : IMPLICIT TYPE mapping
 !*                               Host association - Array Constructor
-!*                       
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -39,7 +32,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 !*
 ! DERIVED TYPE declarations
 !*
@@ -48,14 +41,14 @@
         INTEGER, LEN :: l1  !5
 
         INTEGER(KIND=k1) :: my_arr(l1)
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
-        CLASS(*), ALLOCATABLE :: Cmp(:) 
-      END TYPE Child 
+        CLASS(*), ALLOCATABLE :: Cmp(:)
+      END TYPE Child
 
       INTEGER, PARAMETER :: knd1 = KIND(0), len1 = 5
-  
+
       CONTAINS
 !*
       SUBROUTINE sub2(Obj)
@@ -85,21 +78,21 @@
 
       TYPE(Child(knd1,len1)), TARGET :: cbl
       POINTER :: dtv
-      INTEGER :: Base  ! In this scoping unit Base is not a TYPE 
+      INTEGER :: Base  ! In this scoping unit Base is not a TYPE
 
       ALLOCATE(Base(knd1,len1):: cbl%Cmp(len1))
       IF ( .NOT. ALLOCATED(cbl%Cmp)) STOP 101
 
-      !dynamic TYPE of dtv is Child       
-      dtv => cbl 
+      !dynamic TYPE of dtv is Child
+      dtv => cbl
       IF ( .NOT. ASSOCIATED(dtv)) STOP 104
- 
+
       Base=0
 
       SELECT TYPE (dtv)
          CLASS IS (Child(knd1,*))
             !call possible only within the SELECT TYPE
-            CALL sub2(dtv) 
+            CALL sub2(dtv)
             Base = len1
 
          CLASS DEFAULT

@@ -1,24 +1,13 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*                               interoperable procedure pointer entity as expression
-!*                               in defined assignment 
+!*                               in defined assignment
 !* ===================================================================
 module mdefassign
 
@@ -31,7 +20,7 @@ module mdefassign
 
 end module mdefassign
 
-program procptrBindcDefAssign 
+program procptrBindcDefAssign
 
    use ISO_C_BINDING
 
@@ -60,7 +49,7 @@ program procptrBindcDefAssign
 
    p = C_NULL_FUNPTR
 
-   j = 'A' 
+   j = 'A'
 
    subind => csub
 
@@ -74,11 +63,11 @@ program procptrBindcDefAssign
 
    if(funind(j) .ne. 'B') error stop 5_4
 
-   result = funind(j) 
+   result = funind(j)
 
    if(result .ne. 66) error stop 6_4
 
-end program procptrBindcDefAssign 
+end program procptrBindcDefAssign
 
 subroutine char_to_integer(arg1, arg2)
       integer, intent(out) :: arg1

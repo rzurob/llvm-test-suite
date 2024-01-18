@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltFuncPolyZero.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltFuncPolyZero
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +34,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is a poly func call returning entity of zero size.
 !*    ()
 !*
@@ -59,7 +53,7 @@
 
     TYPE, EXTENDS(Base) :: Child    ! (4)
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -67,7 +61,7 @@
     ELEMENTAL FUNCTION GetChildId(Arg)
     CLASS(Child(4)), INTENT(IN) :: Arg
     INTEGER      :: GetChildId
-      GetChildId = 2 
+      GetChildId = 2
     END FUNCTION
 
     ELEMENTAL FUNCTION GetBaseId(Arg)
@@ -91,14 +85,14 @@
   INTERFACE
     FUNCTION Func(Arg)
       CLASS(*) :: Arg
-      CLASS(*), ALLOCATABLE :: Func 
-    END FUNCTION 
+      CLASS(*), ALLOCATABLE :: Func
+    END FUNCTION
   END INTERFACE
 
 
   SELECT TYPE ( As => Func(Zero(4)()))
     CLASS DEFAULT
-      STOP 20   
+      STOP 20
     CLASS is (Base(4))
       STOP 21
     TYPE is (INTEGER(1))
@@ -108,50 +102,50 @@
     TYPE is (Child(4))
       STOP 24
     TYPE is (Zero(4))
-      IF ( SIZEOF(As) .NE. 0 ) STOP 25 
+      IF ( SIZEOF(As) .NE. 0 ) STOP 25
   END SELECT
 
   SELECT TYPE ( As => Func(Base(4)()))
     CLASS DEFAULT
-      STOP 30   
+      STOP 30
     CLASS is (Base(4))
-      STOP 31 
+      STOP 31
     TYPE is (INTEGER(8))
-      STOP 32 
+      STOP 32
     CLASS is (Child(4))
-      STOP 33 
+      STOP 33
     TYPE is (Base(4))
-      IF ( SIZEOF(As) .NE. 0 ) STOP 34 
-      IF ( As%GetId() .NE. 1 ) STOP 35 
+      IF ( SIZEOF(As) .NE. 0 ) STOP 34
+      IF ( As%GetId() .NE. 1 ) STOP 35
     TYPE is (Zero(4))
       STOP 36
   END SELECT
 
   SELECT TYPE ( As => Func(Child(4)()))
     CLASS DEFAULT
-      STOP 40   
+      STOP 40
     CLASS is (Base(4))
-      STOP 41 
+      STOP 41
     TYPE is (INTEGER(8))
-      STOP 42 
+      STOP 42
     CLASS is (Child(4))
-      IF ( SIZEOF(As)      .NE. 0 ) STOP 43 
-      IF ( As%Base%GetId() .NE. 1 ) STOP 44 
-      IF ( As%GetId()      .NE. 2 ) STOP 45 
+      IF ( SIZEOF(As)      .NE. 0 ) STOP 43
+      IF ( As%Base%GetId() .NE. 1 ) STOP 44
+      IF ( As%GetId()      .NE. 2 ) STOP 45
     TYPE is (Base(4))
-      STOP 46 
+      STOP 46
     TYPE is (Zero(4))
-      STOP 47 
+      STOP 47
   END SELECT
 
 
-  END  
- 
+  END
+
   FUNCTION Func(Arg)
   USE M
   CLASS(*) :: Arg
-  CLASS(*), ALLOCATABLE :: Func 
+  CLASS(*), ALLOCATABLE :: Func
 
   ALLOCATE(Func, SOURCE=Arg)
 
-  END FUNCTION 
+  END FUNCTION

@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: non-polymorphic abstract type entities in functions and subroutines (scalar, array, pointer, allocatable)
 !*  KEYWORD(S)                 :
@@ -50,10 +34,10 @@ module m
    type, abstract:: base
       integer :: i = 5
    end type
-   
+
    type, extends(base) :: child
    end type
-   
+
 contains
 
    integer function foo ()
@@ -63,12 +47,12 @@ contains
       type(base), allocatable, dimension(:) :: b4
       foo = 5
    end function
-   
+
 end module
 
 program localVar003
 end program
-   
+
 subroutine foo ()
    use m, only: base, newbase=>base
    type(newbase) :: b1
@@ -78,5 +62,5 @@ contains
    subroutine innerfoo()
       type(newbase), pointer :: b3
       type(newbase), allocatable, dimension(:) :: b4
-   end subroutine     
+   end subroutine
 end subroutine

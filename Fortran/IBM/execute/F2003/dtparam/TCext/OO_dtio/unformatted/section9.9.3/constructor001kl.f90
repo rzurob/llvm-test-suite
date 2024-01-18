@@ -1,24 +1,16 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : constructor001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from constructor001 by Robert Ma)
 !*  DATE                       : 2007-09-18 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
-!*
 !*  DESCRIPTION                : Testing: Secition 9.9.3 INQUIRE by output list
-!*                               - inquire iolength of scalar polymorphic items 
+!*                               - inquire iolength of scalar polymorphic items
 !*                                 when output items are structure/array constructor
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -38,7 +30,7 @@ module m1
       real(kbase_1)      :: y
       character(lbase_1) :: z
    end type
-   
+
    type, extends(base) :: child (kchild_1) ! kchild_1=2
       integer, kind :: kchild_1
       integer(kchild_1) :: a
@@ -49,34 +41,34 @@ module m1
    interface
       integer function getIOlengthArray (item)
          class(*) :: item(:)
-      end function 
+      end function
    end interface
 
    interface
       integer function getIOlength (item)
          class(*) :: item
-      end function 
+      end function
    end interface
 end module
 
 program constructor001kl
-   use m1   
-   
+   use m1
+
    character(200) :: msg1 = ''
    integer :: stat1
    integer :: length1
-   
+
    if ( getIOlength ( base(4,8,3)(x=1, y=2.2, z='abc') ) /= 16 )            error stop 101_4  ! tcx: (4,8,3)
-   
+
    if ( getIOlength ( child(4,8,3,2)(1,2.3,'abc',4,5,(6.0,7.0)) ) /= 48 )     error stop 2_4  ! tcx: (4,8,3,2)
-   
+
    if ( getIOlengthArray ( (/ base(4,8,3)(x=1, y=2.2, z='abc'), base(4,8,3)(x=3, y=4.5, z='abc') /) ) /= 32  )             error stop 3_4    ! tcx: (4,8,3) ! tcx: (4,8,3)
 
    if ( getIOlengthArray ( (/ ( child(4,8,3,2)(1,2.3,'abc',4,5,(6.0,7.0)), i=10,1,-2 ) /) )      /= 240 )             error stop 4_4  ! tcx: (4,8,3,2)
-   
+
    if ( getIOlengthArray ( (/ ( child(4,8,3,2)(1,2.3,'abc',4,5,(6.0,7.0)), i=10,1 ) /) )         /= 0 )               error stop 5_4  ! tcx: (4,8,3,2)
 
-      
+
 end program
 
 integer function getIOlength (item)
@@ -93,9 +85,9 @@ use m1, only: base, child
       class default
          error stop 6_4
    end select
-   
-   getIOlength = length1   
-   
+
+   getIOlength = length1
+
 end function
 
 integer function getIOlengthArray (item)
@@ -112,9 +104,9 @@ use m1, only: base, child
       class default
          error stop 7_4
    end select
-   
-   getIOlengthArray = length1   
-   
+
+   getIOlengthArray = length1
+
 end function
 
 ! Extensions to introduce derived type parameters:

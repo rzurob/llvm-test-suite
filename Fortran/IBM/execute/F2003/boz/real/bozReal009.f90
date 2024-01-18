@@ -1,25 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozReal009.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : REAL intrinsic
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                :If A is a boz-literal-constant     
-!*                              and KIND is present, the kind      
-!*                          	type parameter is that specified   
-!*				by the value of KIND               
+!*  DESCRIPTION                :If A is a boz-literal-constant
+!*                              and KIND is present, the kind
+!*                          	type parameter is that specified
+!*				by the value of KIND
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -56,7 +45,7 @@ program bozReal009
 
     if (testI /= &
     b'1111111111110000000000000000000000000000000000000000000000000000') &
-    error stop 4_4 
+    error stop 4_4
 
     testR = REAL(O'1777600000000000000000', 8)
     if (testI /= O'1777600000000000000000') error stop 5_4
@@ -69,7 +58,7 @@ program bozReal009
 
     if (testI /= &
     B'111111111110000000000000000000000000000000000000000000000000001') &
-    error stop 7_4  
+    error stop 7_4
 
     testR = REAL(O'777600000000000000001', 8)
     if (testI /= O'777600000000000000001') error stop 8_4
@@ -121,7 +110,7 @@ program bozReal009
 
     if (testI /= &
     B'111111111111000000000000000000000000000000000000000000000000000') &
-    error stop 19_4  
+    error stop 19_4
 
     testR = REAL(O'777700000000000000000', 8)
     if (testI /= O'777700000000000000000') error stop 20_4

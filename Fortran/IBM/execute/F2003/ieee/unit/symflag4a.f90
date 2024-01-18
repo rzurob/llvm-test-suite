@@ -12,28 +12,19 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Rafik Zurob
 !*  DATE                       : March, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Save and Restore 
+!*  PRIMARY FUNCTIONS TESTED   : Save and Restore
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : test Save and Restore
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -72,27 +63,27 @@
       end interface
 
       logical :: val(5)
-      
+
       call ieee_get_flag(ieee_all,val)
       print *, val
-      
+
       call ieee_set_flag(ieee_overflow, .true.)
-      
+
       call ieee_get_flag(ieee_all,val)
       print *, val
 
       call xxxx
-      
-      call ieee_get_flag(ieee_all,val)
-      print *, val      
-      
-      call yyyy
-      
+
       call ieee_get_flag(ieee_all,val)
       print *, val
-      
+
+      call yyyy
+
+      call ieee_get_flag(ieee_all,val)
+      print *, val
+
       call zzzz
-      
+
       call ieee_get_flag(ieee_all,val)
       print *, val
       end
@@ -103,12 +94,12 @@
       subroutine yyyy()
         use ieee_exceptions
         logical val(5)
-        
+
         call ieee_get_flag(ieee_all,val)
         print *, val
-        
+
         call xxxx
-        
+
         call ieee_get_flag(ieee_all,val)
         print *, val
       end subroutine yyyy

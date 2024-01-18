@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d353684.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d353684.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 14 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 14 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. DEFECT 353684
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -40,7 +32,7 @@ program d353684
   implicit none
 
   type(base)  :: t
-  print *,ubound(t%i,1),ubound(t%i,2) 
+  print *,ubound(t%i,1),ubound(t%i,2)
   print *,t%i
   print *,shape(t%i)
 

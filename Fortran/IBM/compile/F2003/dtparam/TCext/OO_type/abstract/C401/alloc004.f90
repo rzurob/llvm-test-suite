@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Allocate Statement (Section 6.3.1)
 !*                               iv) Allocate polymorphic non-abstract type scalar with abstract type-spec
@@ -48,26 +32,26 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
-   
+
    type:: base(k1)
       integer, kind :: k1
       integer :: id
    end type
-   
+
    type, extends(base), abstract :: child(k2)
       integer, kind :: k2
       real(k2) :: rid
    end type
-      
+
 end module
 
 program alloc004
    use m
-   
+
    class(base(4)), allocatable :: b1
    class(base(4)), pointer     :: b2
-   
+
    allocate ( child(4,4) :: b1 )
-   allocate ( child(4,4) :: b2 ) 
-   
+   allocate ( child(4,4) :: b2 )
+
 end program

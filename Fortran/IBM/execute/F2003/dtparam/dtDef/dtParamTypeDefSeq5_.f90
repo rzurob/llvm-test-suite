@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefSeq5 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefSeq5
 !*
-!*  PROGRAMMER                 : Jim Xia (originated from a case developed by Feng Ye)
 !*  DATE                       : Dec. 12, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Sequence Type 
+!*  SECONDARY FUNCTIONS TESTED : Sequence Type
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Parameterized sequence type - components of sequence type 
-!*
+!*  Parameterized sequence type - components of sequence type
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -71,7 +63,7 @@
   IF ( T%K          .NE. 4 )      STOP 13
   IF ( T%L          .NE. 4 )      STOP 14
 
-  IF ( ANY(SHAPE(T(1)%Comp) .NE. (/1/)))  STOP 21 
+  IF ( ANY(SHAPE(T(1)%Comp) .NE. (/1/)))  STOP 21
   IF ( T(1)%Comp%K      .NE. 4 )     STOP 22
   IF ( T(1)%Comp%L      .NE. 4 )     STOP 23
 

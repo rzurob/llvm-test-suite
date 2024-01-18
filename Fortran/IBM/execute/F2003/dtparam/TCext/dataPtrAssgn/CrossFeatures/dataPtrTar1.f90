@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrTar1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrTar1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 08, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,16 +23,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  The target -- sub object 
+!*  The target -- sub object
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrTar1 
+  PROGRAM dataPtrTar1
   IMPLICIT NONE
 
   TYPE :: DT(K1,K2,N1)    ! (4,1,1)
@@ -56,13 +48,13 @@
   CHARACTER(1)          :: Arr1(10,10)
   INTEGER,      POINTER :: IPtr(:,:)
   CHARACTER(1), POINTER :: CPtr(:,:)
-  
+
   Arr(:, 1)%I = (/(I, I=1, 100)/)
   Arr(:, 1)%C = (/(CHAR(I), I=1, 100)/)
   Arr(:, 2)%I = (/(I, I=1, 100)/)
   Arr(:, 2)%C = (/(CHAR(I), I=1, 100)/)
- 
-  IPtr(0:, 0:) => Arr(::2, ::2)%I 
+
+  IPtr(0:, 0:) => Arr(::2, ::2)%I
   IF (.NOT. ASSOCIATED(IPtr, Arr(::2, ::2)%I))       STOP 11
   IF (ANY( LBOUND(IPtr) .NE. (/ 0, 0 /)))            STOP 12
   IF (ANY( UBOUND(IPtr) .NE. (/49, 0 /)))            STOP 13
@@ -77,7 +69,7 @@
   IF (ANY( CPtr        .NE. Arr1))                   STOP 25
 
   I = -1
-  IPtr(0:, 0:) => Arr(:, 0:I)%I 
+  IPtr(0:, 0:) => Arr(:, 0:I)%I
   IF ( ASSOCIATED(IPtr, Arr(:, 0:I)%I))              STOP 31
   IF (ANY( LBOUND(IPtr) .NE. (/ 0, 1 /)))            STOP 32
   IF (ANY( UBOUND(IPtr)  .NE. (/99, 0 /)))           STOP 33

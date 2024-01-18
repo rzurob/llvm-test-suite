@@ -4,25 +4,19 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrAll.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
 !* - data-pointer X, a derived-type, has alloctable component(X%P)
-!* - data-pointer has intent(in) attr, it's allocatable component is 
+!* - data-pointer has intent(in) attr, it's allocatable component is
 !*     redefined by X%P = X%P(ub:lb:-1)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -57,8 +51,8 @@ end module
 
         call sub(p)
 
-	if ( any (all(p%x) .neqv. (/ .true./))) stop 17 
-	
+	if ( any (all(p%x) .neqv. (/ .true./))) stop 17
+
 
     end program
 
@@ -66,5 +60,5 @@ end module
             use m, only: A
             type(A(*,4)), intent(in), pointer :: p(:)
 
-            p%x = p(ubound(p,1):lbound(p,1):-1)%x 
+            p%x = p(ubound(p,1):lbound(p,1):-1)%x
         end subroutine

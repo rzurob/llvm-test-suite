@@ -1,19 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingBackspace03 - BACKSPACE Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : November 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Perform Unformatted Asynchronous READ()
 !*                               Operations on a Unit OPEN()ed for Read only
 !*  SECONDARY FUNCTIONS TESTED : BACKSPACE Once after each READ() Operation
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : BACKSPACE, READ(), ID= Specifier
@@ -35,7 +28,6 @@
 !*  Execution of a file positioning statement performs a wait operation
 !*  for all pending asynchronous data transfer operations for the
 !*  specified unit.
-!*
 !*
 !*  9.7.1 BACKSPACE statement
 !*

@@ -1,21 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_BOperator05b
 !*                               DTP - Generic Operator (binary)
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 03, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
-!*  SECONDARY FUNCTIONS TESTED : Resolution based on rank - assumed shape array          
-!*                     
+!*  SECONDARY FUNCTIONS TESTED : Resolution based on rank - assumed shape array
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -23,19 +16,19 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base (k,l)
-        INTEGER, KIND :: k 
-        INTEGER, LEN :: l 
+        INTEGER, KIND :: k
+        INTEGER, LEN :: l
 
         INTEGER :: value
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
-      END TYPE Child 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen (k13,l13)
         INTEGER, KIND :: k13
@@ -48,10 +41,10 @@
          module procedure mut2
       END INTERFACE
 
-      CONTAINS 
+      CONTAINS
 !*
-      TYPE(Base(4,:)) FUNCTION mut0(arg1,arg2) 
-      CLASS(Base(4,*)), INTENT(IN) :: arg1 
+      TYPE(Base(4,:)) FUNCTION mut0(arg1,arg2)
+      CLASS(Base(4,*)), INTENT(IN) :: arg1
       CLASS(Base(4,*)), INTENT(IN) :: arg2      ! rank 0
       POINTER :: mut0
 
@@ -60,7 +53,7 @@
 
       END FUNCTION mut0
 
-      TYPE(Base(4,:)) FUNCTION mut1(arg1,arg2) 
+      TYPE(Base(4,:)) FUNCTION mut1(arg1,arg2)
       CLASS(Base(4,*)), INTENT(IN) :: arg1
       CLASS(Base(4,*)), INTENT(IN) :: arg2(:)   ! rank 1
       POINTER :: mut1
@@ -70,7 +63,7 @@
 
       END FUNCTION mut1
 
-      TYPE(Base(4,:)) FUNCTION mut2(arg1,arg2) 
+      TYPE(Base(4,:)) FUNCTION mut2(arg1,arg2)
       CLASS(Base(4,*)), INTENT(IN) :: arg1
       CLASS(Base(4,*)), INTENT(IN) :: arg2(:,:)  ! rank 2
       POINTER :: mut2
@@ -88,7 +81,7 @@
       IMPLICIT CLASS(Child(4,:,4,:))(C)
       IMPLICIT CLASS(NextGen(4,:,4,:,8,:))(N)
 
-      POINTER :: b_var  
+      POINTER :: b_var
       POINTER :: C0, N0
       POINTER :: B1(:), C1(:)
       POINTER :: B2(:,:), N2(:,:)

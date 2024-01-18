@@ -32,7 +32,6 @@
         return
       end subroutine
 
-
       function f1()
          f1 = 1
          return
@@ -60,7 +59,6 @@
       entry f4e (arg1, arg2) bind(C)  ! ok: fn-entry w/ parens and 2 args
          f4e = 2
       end function
-
 
       program p1  ! don't complain when -c not supplied
       end program

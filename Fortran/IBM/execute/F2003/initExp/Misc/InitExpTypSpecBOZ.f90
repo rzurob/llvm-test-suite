@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecBOZ.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecBOZ.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 29 2006
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,23 +19,19 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  BOZ in data stmt 
-!* 
-!*  
-!* 
+!*  BOZ in data stmt
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypSpecBOZ 
+  PROGRAM InitExpTypSpecBOZ
   IMPLICIT NONE
 
   INTEGER :: I
 
-  
+
   INTEGER(KIND=1_8)              :: I1(128)
   INTEGER(KIND=I1%KIND+1)        :: I2(128)
   INTEGER(KIND=2*I2%KIND)        :: I4(128)
@@ -84,4 +74,4 @@
 
   END
 
- 
+

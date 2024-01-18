@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : sync_images_set_4.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : July 11 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SYNC IMAGES 
+!*  PRIMARY FUNCTIONS TESTED   : SYNC IMAGES
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : CMVC Feature number: 351605.22 
+!*  REFERENCE                  : CMVC Feature number: 351605.22
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
+!*  Test various forms of the image_set:
 !*
-!*  Test various forms of the image_set:  
-!*   
-!*  Image-set contains its own image index, sync with itself 
+!*  Image-set contains its own image index, sync with itself
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -39,7 +32,7 @@
   INTEGER, SAVE :: work[*]
   INTEGER :: status=0
   CHARACTER(30) :: errstr=" "
- 
+
 
   me = this_image()
   num_img = num_images()
@@ -55,9 +48,9 @@
   INTEGER :: me
 
       SYNC IMAGES([me], ERRMSG=errstr, stat=status)
-      IF ( work[me] .NE. me*j ) THEN 
+      IF ( work[me] .NE. me*j ) THEN
          print*, me, work[me], me*j
-         ERROR STOP "err 12" 
+         ERROR STOP "err 12"
       END IF
 
       IF ( status .NE. 0 ) ERROR STOP "err 16"

@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : SpeExpHostAssociation03a.f
-!*
-!*  PROGRAMMER                 : Dorra Bouhiha
 !*  DATE                       : June 14, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Speification expression - Host Association
 !*  SECONDARY FUNCTIONS TESTED : Default Initialization
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -32,8 +24,8 @@ PROGRAM SpeExpHostAssociation03a
          INTEGER, KIND :: k1 = 2
          INTEGER, LEN  :: l1 = 2
 
-         INTEGER(k1) :: I1 = k1, A1(l1) = 2*k1 
-         CHARACTER(l1) :: Carr = 'B' 
+         INTEGER(k1) :: I1 = k1, A1(l1) = 2*k1
+         CHARACTER(l1) :: Carr = 'B'
       END TYPE
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)
@@ -50,7 +42,7 @@ PROGRAM SpeExpHostAssociation03a
          TYPE(Child(k3,k2,k3,k1)) :: c1 = Child(k3,k2,k3,k1) ( )
       END TYPE
 
-      INTEGER I 
+      INTEGER I
       TYPE(NextGen) :: n1
       TYPE(NextGen(4,3,4,5,4,7)) :: n2
 
@@ -61,7 +53,7 @@ PROGRAM SpeExpHostAssociation03a
       CALL Sub15(8,8,8)
 
       n1 = NextGen ( b1 = Base(4,4)(I1 = 10, A1 = 20),  &
-                        c1 = Child(8,4,8,2)( b1 = Base(8,8)(I1 = 11, A1 = [(2*I, I =1,n1%k3)]) ) ) 
+                        c1 = Child(8,4,8,2)( b1 = Base(8,8)(I1 = 11, A1 = [(2*I, I =1,n1%k3)]) ) )
       CALL Sub11(8)
       CALL Sub12(8)
       CALL Sub13(8,11)
@@ -83,10 +75,10 @@ PROGRAM SpeExpHostAssociation03a
       CALL Sub25(4,4,22)
 
       CONTAINS
- 
+
       SUBROUTINE Sub11(N)
         INTEGER :: N
-        TYPE(Base(n1%c1%b1%k1,n1%c1%b1%l1)) :: Obj 
+        TYPE(Base(n1%c1%b1%k1,n1%c1%b1%l1)) :: Obj
 
          IF ( Obj%k1 .NE. N ) STOP 10
          IF ( Obj%l1 .NE. N ) STOP 11
@@ -96,10 +88,10 @@ PROGRAM SpeExpHostAssociation03a
          IF ( LEN(Obj%Carr)  .NE.    N ) STOP 15
          IF ( TRIM(Obj%Carr) .NE.  'B' ) STOP 16
       END SUBROUTINE Sub11
- 
+
       SUBROUTINE Sub12(N)
-        INTEGER :: N 
-        TYPE(Base(n1%c1%b1%l1,2*n1%c1%b1%k1)) :: Obj 
+        INTEGER :: N
+        TYPE(Base(n1%c1%b1%l1,2*n1%c1%b1%k1)) :: Obj
 
          IF ( Obj%k1 .NE.   N ) STOP 17
          IF ( Obj%l1 .NE. 2*N ) STOP 18
@@ -132,7 +124,7 @@ PROGRAM SpeExpHostAssociation03a
          IF ( LEN(Obj%b1%Carr)  .NE.    N ) STOP 38
          IF ( TRIM(Obj%b1%Carr) .NE.  'B' ) STOP 39
       END SUBROUTINE Sub13
- 
+
       SUBROUTINE Sub14(N, M, P)
         INTEGER :: N, M, P
         TYPE(Child(KIND(n1%c1%b1%A1(1)),n1%c1%b1%A1(1),KIND(n1%c1%b1%A1(n1%l1)),n1%c1%b1%A1(n1%l1))) :: Obj
@@ -155,7 +147,7 @@ PROGRAM SpeExpHostAssociation03a
          IF ( LEN(Obj%b1%Carr)  .NE.    N ) STOP 54
          IF ( TRIM(Obj%b1%Carr) .NE.  'B' ) STOP 55
       END SUBROUTINE Sub14
- 
+
       SUBROUTINE Sub15(N, M, P)
         INTEGER :: N, M, P, I
         TYPE(Base(KIND(n1%c1%b1%I1),LEN(n1%c1%b1%Carr))) :: Obj(n1%c1%b1%I1)
@@ -171,7 +163,7 @@ PROGRAM SpeExpHostAssociation03a
             IF ( TRIM(Obj(I)%Carr) .NE.  'B' ) STOP 63
          END DO
       END SUBROUTINE Sub15
- 
+
       SUBROUTINE Sub21(N)
         INTEGER :: N
         TYPE(Base(n2%c1%b1%k1,n2%c1%b1%l1)) :: Obj

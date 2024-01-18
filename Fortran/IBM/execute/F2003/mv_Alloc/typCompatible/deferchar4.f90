@@ -1,26 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : deferchar4.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM/TO are of allocatable array with
 !*                               deferred len of character
-!*                               TO is dummy arg of moudle procedure 
+!*                               TO is dummy arg of moudle procedure
 !*                               see 321721
 !* ===================================================================
 !*
@@ -42,7 +30,7 @@ module m
 
   contains
       subroutine sub(arg)
-          character(len =:), intent(inout), allocatable :: arg(:) 
+          character(len =:), intent(inout), allocatable :: arg(:)
           call move_alloc(ch1, arg)
       end subroutine
 end module

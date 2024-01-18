@@ -1,20 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt001.f
-!*
-!* ORIGINAL PROGRAMMER          : Ying Zhang
-!* PROGRAMMER                   : Izhak Jakov
 !* DATE                : September 9, 2015
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -79,7 +71,7 @@ program main
           & , stat=allocStat)
 
   if (allocStat /= 0) error stop "*** Not enough memory ***"
-  
+
   call cfun(cproc)
 
   contains

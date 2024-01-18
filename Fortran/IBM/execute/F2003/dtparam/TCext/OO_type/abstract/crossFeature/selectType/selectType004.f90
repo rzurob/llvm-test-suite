@@ -1,41 +1,25 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/abstract/crossFeature/selectType/selectType004.f
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: selectType004.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Select Type Construct
 !*                               Variable of poly abstract type, or non-poly extension of abstract type
@@ -58,7 +42,7 @@ module m
    contains
       procedure(printif), nopass, deferred :: print
    end type
-   
+
    type, extends(base) :: child(k2,n1)    ! (4,4,20)
        integer, kind :: k2
        integer, len  :: n1
@@ -74,26 +58,26 @@ contains
 
    integer function printchild()
       printchild = 2
-   end function   
-   
+   end function
+
 end module
 
 program selectType004
    use m
-   
+
    class(base(4)), pointer :: b1
    class(child(4,4,20)), allocatable, target :: c1
-   
+
    allocate ( c1, source = child(4,4,20)() )
-   
-   b1 => c1   
-   
+
+   b1 => c1
+
    select type ( b => b1 )
       class is (base(4))
          if (b%print() .ne. 2) error stop 1_4
          if (b%i .ne. 5) error stop 2_4
    end select
-   
+
    select type ( b => b1 )
       class is (base(4))
          error stop 3_4
@@ -101,23 +85,23 @@ program selectType004
          if (b%print() .ne. 2) error stop 4_4
          if (b%i .ne. 5) error stop 5_4
    end select
-      
+
    select type ( b => b1 )
       class default
          if (b%print() .ne. 2) error stop 6_4
          if (b%i .ne. 5) error stop 7_4
-   end select         
-   
+   end select
+
    select type ( c1 )
       class is (child(4,4,*))
          if (c1%print() .ne. 2) error stop 8_4
          if (c1%i .ne. 5)       error stop 9_4
    end select
-      
+
    select type ( c1 )
       class default
          if (c1%print() .ne. 2) error stop 10_4
          if (c1%i .ne. 5) error stop 11_4
-   end select 
-   
+   end select
+
 end program

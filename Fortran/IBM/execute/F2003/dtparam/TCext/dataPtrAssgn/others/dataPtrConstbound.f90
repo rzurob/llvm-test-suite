@@ -4,33 +4,27 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrConstbound.f 
+!*  TEST CASE NAME             : dataPtrConstbound.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
 !* - typeless literal constants as lb/ub
-!* - data-pointer is not poly, data-target is poly with different dynamic type 
+!* - data-pointer is not poly, data-target is poly with different dynamic type
 !*   the assignment target is the ancestor component of data-target
 !* - type(base) ptr => class(base) target
 !* - class(base) ptr1 => type(base) ptr
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
         module m
-		type base(k1)    ! (4) 
+		type base(k1)    ! (4)
 		    integer, kind :: k1
 		    integer(k1)      age
 		    character(:), allocatable :: name
@@ -57,10 +51,10 @@
 
 		do i = 1, 60
 			if ( mod(i,5) == 1 )  get_info(i)%age = 18
-			if ( mod(i,5) == 2 )  get_info(i)%age = 19 
-			if ( mod(i,5) == 3 )  get_info(i)%age = 20 
-			if ( mod(i,5) == 4 )  get_info(i)%age = 21 
-			if ( mod(i,5) == 0 )  get_info(i)%age = 22 
+			if ( mod(i,5) == 2 )  get_info(i)%age = 19
+			if ( mod(i,5) == 3 )  get_info(i)%age = 20
+			if ( mod(i,5) == 4 )  get_info(i)%age = 21
+			if ( mod(i,5) == 0 )  get_info(i)%age = 22
 
 			select case(mod(i,10))
 			    case(0)
@@ -83,7 +77,7 @@
 				get_info(i)%name = 'Ng'
 			    case(9)
 				get_info(i)%name = 'Stone'
-			end select	
+			end select
 
 		end do
 
@@ -97,14 +91,14 @@
            	 !    print *, get_info(i)%name, get_info(i)%age
 		!enddo
 
-		! lb is constant 
+		! lb is constant
 		b1(o'10':, B'101':) => c1
 
-		if (any(lbound(b1) .ne. (/8,5/))) stop 5 
+		if (any(lbound(b1) .ne. (/8,5/))) stop 5
 		if (any(ubound(b1) .ne. (/17,10/))) stop 7
 		if ( .not. associated(b1, c1)) stop 9
 
-		! lb/up is constant 
+		! lb/up is constant
 		b2("13"o:z'13') => b1(:,6)
 		if ( .not. associated(b2)) stop 10
 
@@ -116,11 +110,11 @@
 
 	 	select type(b2)
 	            type is (base(4))
-			do i = 1,9 
+			do i = 1,9
   	            	     print *, b2(i)%name, b2(i)%age
 			enddo
 		    class default
 			stop 21
-		end select	
+		end select
 
         End program

@@ -1,28 +1,13 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 01/10/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : dtparam (section 4.2: type parameters)
 !                               Case: Deferred type-parameters in
 !                               declaration-type-spec: pointer/allocatable
 !                               entities.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -33,7 +18,7 @@ module m
 
         real :: data(n) = 0.0
         character(l) :: name = 'default'
-    end type 
+    end type
 
     class (namedArray(:, 10)), allocatable :: na1_m(:)
 end module

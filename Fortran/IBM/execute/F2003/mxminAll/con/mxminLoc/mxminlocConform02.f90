@@ -1,27 +1,16 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAXLOC/MINLOC with named constant(array
 !*                               section) as its argument.
 !* ===================================================================
 
-program mxminlocConform02 
+program mxminlocConform02
 
       character(3), parameter :: x(4:1, 5:4, -4:0) = "abc"
       character(3), parameter :: y(12, 8, 4) = "dbx"
@@ -55,5 +44,5 @@ program mxminlocConform02
           error stop 7_4
       endif
 
-end program mxminlocConform02 
+end program mxminlocConform02
 

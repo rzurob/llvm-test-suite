@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d357448.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d357448.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 15 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. DEFECT 357448
@@ -26,10 +18,10 @@ module m
   type dtp(l)
     integer(2),len :: l
     type(dtp(l)),pointer :: dtp1=>null()
-    character(l),allocatable :: c1  
+    character(l),allocatable :: c1
   end type
   type container
-      type(dtp(:)),allocatable   :: dtp2 
+      type(dtp(:)),allocatable   :: dtp2
    end type
 end module
 program d357448

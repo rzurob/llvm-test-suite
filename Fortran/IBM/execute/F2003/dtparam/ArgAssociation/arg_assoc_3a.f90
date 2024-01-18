@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArgAssociation/arg_assoc_3a.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Feb. 20, 2009
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 361232
 !*
@@ -14,13 +10,13 @@
 !*
 !*  12.4.1 1 Actual arguments, dummy arguments, and argument association
 !*
-!*  In a reference to a type-bound procedure that has a passed-object dummy 
-!*  argument (4.5.3.3), the data-ref of the function-reference or call-stmt is 
+!*  In a reference to a type-bound procedure that has a passed-object dummy
+!*  argument (4.5.3.3), the data-ref of the function-reference or call-stmt is
 !*  associated, as an actual argument, with the passed-object dummy argument.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-  
+
 module m
     type base(n)
         integer, len :: n

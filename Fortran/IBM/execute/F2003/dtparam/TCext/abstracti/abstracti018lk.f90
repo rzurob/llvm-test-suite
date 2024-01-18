@@ -1,21 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : abstracti018lk
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti018
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-25 (original: 02/20/2006)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Abstract Interface
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: C471 An overriding binding shall
 !*  have the DEFERRED attribute only if the binding it overrides is deferred.
@@ -35,32 +28,32 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
-   
+
    type, abstract :: base
       integer :: id
    contains
       procedure(print1), deferred, pass :: print
    end type
-   
+
    type, extends(base), abstract :: child (lchild_1,kchild_1) !  lchild_1=5,kchild_1=2
       integer(4), len :: lchild_1
       integer, kind :: kchild_1
    contains
       procedure(print2), deferred, pass :: print
    end type
-      
+
    type, extends(child) :: gen3
    contains
       procedure, pass :: print => printgen3
    end type
-   
+
    abstract interface
       subroutine print1(a)
          import base
          class(base), intent(in) :: a
       end subroutine
-   end interface 
-   
+   end interface
+
    abstract interface
       subroutine print2(a)
          import child
@@ -69,25 +62,25 @@ module m
    end interface
 
 contains
-   
+
    subroutine printgen3(a)
       class(gen3(*,2)), intent(in) :: a ! tcx: (*,2)
-      print *,a%id   
+      print *,a%id
    end subroutine
-   
+
 end module
 
 program abstracti018lk
-   use m  
+   use m
    class(base), pointer :: b1
    class(child(:,2)), allocatable :: c1 ! tcx: (:,2)
-   
+
    allocate (b1, source = gen3(5,2)(3)) ! tcx: (5,2)
    allocate (c1, source = gen3(5,2)(4)) ! tcx: (5,2)
-   
+
    call b1%print()
    call c1%print()
-   
+
 end program abstracti018lk
 
 

@@ -1,18 +1,8 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Characters with deferred length type parameter
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : array character with deferred length with
 !*                               allocate statement
@@ -56,5 +46,5 @@ program deferLenAllocate008
 
    allocate ( c2(2,2), source = reshape ( source = c1((/10,1,9,2/)), shape = (/2,2/) ) )
    print *, c2, len(c2)
-   
+
 end program

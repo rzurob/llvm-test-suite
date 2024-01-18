@@ -1,31 +1,27 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
-!*  TEST CASE NAME             : 
-!*  PROGRAMMER                 : Gaby Baghdadi (adopted from David Nichols' 
+!*  TEST CASE NAME             :
 !*                               arrsec1_lenlen.f)
 !*  DATE                       : Oct 13, 2008
 !*  ORIGIN                     : XLF Development
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  REQUIRED COMPILER OPTIONS  :
 !*  DESCRIPTION
 !*
 !*      Deferred length type parameters in use with multi dimensional arrays
-!*      
 !*
 !* =============================================================================
 !2325678901232567890123256789012325678901232567890123256789012325678901232567890
 
 module m
-  
+
   type A(n)
     integer, len :: n
     real b(n)
     integer i(n,n,n)
   end type
-  
+
   type B(n)
     integer, len :: n
     real a(n)
@@ -36,7 +32,7 @@ module m
     integer, len :: n
     integer i(n,n)
   end type
-  
+
 end module
 
 use m

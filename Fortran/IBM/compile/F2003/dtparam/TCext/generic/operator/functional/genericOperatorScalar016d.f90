@@ -3,25 +3,14 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=base
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
 !*
-!*  DRIVER STANZA              : xlf95
-!*
 !*  DESCRIPTION                : Operator: type bound procedure in base and generic defined in
-!*                                         child type, 
+!*                                         child type,
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -75,12 +64,12 @@ end module
 
 program genericOperatorScalar016d
    use m
-   
+
    type(base(20,4)) :: b1, b2(3)
-   
+
    b1 = base(20,4)(1)
    b2 = base(20,4)(2)
-   
+
    b2 = b1 + b2
 
 end program

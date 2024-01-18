@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefInqRANGE.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefInqRANGE.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 04, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,26 +19,25 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  a reference to a specification inquiry 
-!* 
+!*  a reference to a specification inquiry
+!*
 !*  -  RANGE
-!* 
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM  InitExpDefInqRANGE 
+  PROGRAM  InitExpDefInqRANGE
   IMPLICIT NONE
   INTEGER :: I, J, K
 
- 
+
   INTEGER(1),  PARAMETER :: I1(1:0) = 0
-  INTEGER(2),  PARAMETER :: I2(0:0) = -1 
+  INTEGER(2),  PARAMETER :: I2(0:0) = -1
   INTEGER(4),  PARAMETER :: I4 = 10
-  INTEGER(8),  PARAMETER :: I8(-2147483648:-2147483647, 2147483646:2147483647) = 0 
+  INTEGER(8),  PARAMETER :: I8(-2147483648:-2147483647, 2147483646:2147483647) = 0
 
   INTEGER  :: TI1(16, 16)  = RESHAPE((/(RANGE(I1), I=1,256)/), (/16,16/))
   INTEGER  :: TI2(16, 16)  = RESHAPE((/(RANGE(I2), I=1,256)/), (/16,16/))
@@ -53,7 +46,7 @@
 
   REAL(4),   PARAMETER :: R4 = 10
   REAL(8),   PARAMETER :: R8(-2147483648:-2147483647, 2147483646:2147483647) = 1
-  REAL(16),  PARAMETER :: R6(1:0) = -1 
+  REAL(16),  PARAMETER :: R6(1:0) = -1
 
   INTEGER  :: TR4(1, 2) = RESHAPE((/RANGE(R4), INT( MIN(LOG10(HUGE(R4)),-LOG10(TINY(R4))))/), (/1,2/))
   INTEGER  :: TR8(1, 2) = RESHAPE((/RANGE(R8), INT( MIN(LOG10(HUGE(R8)),-LOG10(TINY(R8))))/), (/1,2/))
@@ -61,7 +54,7 @@
 
   COMPLEX(4),   PARAMETER :: Z4 = 10
   COMPLEX(8),   PARAMETER :: Z8(-2147483648:-2147483647, 2147483646:2147483647) = 1
-  COMPLEX(16),  PARAMETER :: Z6(1:0) = -1 
+  COMPLEX(16),  PARAMETER :: Z6(1:0) = -1
 
   INTEGER  :: TZ4(1, 2) = RESHAPE((/RANGE(Z4), RANGE(REAL(Z4))/), (/1,2/))
   INTEGER  :: TZ8(1, 2) = RESHAPE((/RANGE(Z8), RANGE(REAL(Z8))/), (/1,2/))
@@ -84,4 +77,4 @@
   END
 
 
- 
+

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg4.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg4.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg4.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg4.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !* Explicit dummy procedure - Characteristics
 !* Non intrinsic elemental proc is illegal
 !* ()
@@ -68,14 +62,14 @@
     TYPE(DT)    :: ModFun
     PROCEDURE(IFun),  POINTER :: Ptr
       ptr => Arg%ProcPtr ! avoid the violation to pure func
-      ModFun = DT(Arg%C, Ptr) 
+      ModFun = DT(Arg%C, Ptr)
     END FUNCTION
 
     PURE FUNCTION IFun(Arg)
     CLASS(DT), INTENT(IN)        :: Arg
     TYPE(DT)                     :: IFun
     PROCEDURE(ModFun),  POINTER  :: Ptr
-      ptr => Arg%ProcPtr 
+      ptr => Arg%ProcPtr
       IFun = DT(Arg%C, Ptr)
     END FUNCTION
 
@@ -86,15 +80,15 @@
   CLASS(DT), INTENT(IN) :: Arg
   TYPE(DT)              :: ExtFun
   PROCEDURE(ModFun),  POINTER  :: Ptr
-    ptr => Arg%ProcPtr 
+    ptr => Arg%ProcPtr
     ExtFun = DT(Arg%C, Ptr)
   END FUNCTION
 
-  PROGRAM Arg4 
+  PROGRAM Arg4
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
   PROCEDURE(IFun) :: ExtFun
-  PROCEDURE(IFun), POINTER :: ProcPtr 
+  PROCEDURE(IFun), POINTER :: ProcPtr
 
   INTERFACE
     PURE FUNCTION IFun1(Arg)
@@ -123,7 +117,7 @@
     IF (.NOT. ASSOCIATED(V%ProcPtr, Arg)) STOP 12
 
     V%C = "321"
-    V%ProcPtr => IFun 
+    V%ProcPtr => IFun
     U = V%Proc()
     IF (U%C .NE. "321")                    STOP 21
     IF (.NOT. ASSOCIATED(U%ProcPtr, IFun)) STOP 22
@@ -140,7 +134,7 @@
     IF (.NOT. ASSOCIATED(V%ProcPtr, Arg)) STOP 32
 
     V%C = "321"
-    V%ProcPtr => IFun 
+    V%ProcPtr => IFun
     U = V%Proc()
     IF (U%C .NE. "321")                    STOP 41
     IF (.NOT. ASSOCIATED(U%ProcPtr, IFun)) STOP 42

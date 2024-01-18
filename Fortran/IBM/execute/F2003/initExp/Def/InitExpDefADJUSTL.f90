@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefADJUSTL.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefADJUSTL.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
+!*
 !*  - ADJUSTL
 !*  (318833)
 !*
@@ -35,7 +28,7 @@
 
 
 
-  PROGRAM InitExpDefADJUSTL 
+  PROGRAM InitExpDefADJUSTL
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -47,16 +40,16 @@
     CHARACTER*(LEN(ADJUSTL("12 ")))  :: C1(3)=(/(ADJUSTL(CHAR(I)), I=1,3)/)
   END TYPE
 
-  TYPE(DT)  :: T 
-  TYPE(DT1) :: T1  
+  TYPE(DT)  :: T
+  TYPE(DT1) :: T1
 
   CHARACTER*(LEN(ADJUSTL("012"))) :: &
          C(LEN(ADJUSTL("012")):LEN(ADJUSTL("     "))) =(/(ADJUSTL(CHAR(I)), I=1,3)/)
- 
+
   TYPE(DT1), PARAMETER :: Const(LEN(ADJUSTL(" 123 "))) =   &
                           (/(DT1(C=ADJUSTL("123"),C1=ADJUSTL("321")), I=1,5)/)
 
- 
+
   IF (T%C       .NE. "12 "   )                                 STOP 11
   IF (LEN(T%C)  .NE. 3   )                                     STOP 12
 
@@ -77,4 +70,4 @@
 
   END
 
- 
+

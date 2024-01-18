@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Associate Constructor: Unlimited Polymorphic Array Entities
@@ -69,8 +58,8 @@ use m
    allocate ( b2(2,2) , source = reshape( source = (/ child ( 121.0 , 122.0 ), child ( 123.0 , 124.0 ), &
                                                      child ( 125.0 , 126.0 ), child ( 127.0 , 128.0 )/), shape = (/2,2/) ) )
    allocate ( u1(3), source = b1 )
-   allocate ( u2(2,2), source = b2 ) 
-   
+   allocate ( u2(2,2), source = b2 )
+
    associate ( g => u1((/1,2,3/)) )
       select type ( g )
          class is ( base )

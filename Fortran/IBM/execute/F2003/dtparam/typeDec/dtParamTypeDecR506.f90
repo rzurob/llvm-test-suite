@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecR506
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 09, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
 !*  R506 initialization is = initialization-expr
-!*                         or => null-init 
+!*                         or => null-init
 !*
-!*  (336635/340788/345390) 
+!*  (336635/340788/345390)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,12 +45,12 @@
   END TYPE
 
 
-  TYPE(DT(KIND=4, LEN=1)), PARAMETER :: T1(10) = DT(I=-4, C0="A", R=-4, C="B", T=DT0()) 
+  TYPE(DT(KIND=4, LEN=1)), PARAMETER :: T1(10) = DT(I=-4, C0="A", R=-4, C="B", T=DT0())
 
-  TYPE(DT(4,     LEN=T1%LEN))        :: T2(SIZE(T1))  =  [[[T1]]] 
-  TYPE(DT(4,       L=T1%L)), TARGET  :: T3(SIZE(T1))  =  [(T1(i), I=1, SIZE(T1))] 
-  TYPE(DT(4,       L=T1%L)), POINTER :: T4 => NULL() 
-  TYPE(DT(4,       L=T1%L)), POINTER :: T5(:) => NULL() 
+  TYPE(DT(4,     LEN=T1%LEN))        :: T2(SIZE(T1))  =  [[[T1]]]
+  TYPE(DT(4,       L=T1%L)), TARGET  :: T3(SIZE(T1))  =  [(T1(i), I=1, SIZE(T1))]
+  TYPE(DT(4,       L=T1%L)), POINTER :: T4 => NULL()
+  TYPE(DT(4,       L=T1%L)), POINTER :: T5(:) => NULL()
 
 
   IF ( T1%K               .NE.   4          ) STOP 11

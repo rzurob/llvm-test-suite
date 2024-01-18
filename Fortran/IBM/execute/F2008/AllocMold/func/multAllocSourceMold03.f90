@@ -1,19 +1,11 @@
 !*  ==================================================================
-!*  XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!*  ==================================================================
 !*
-!*  TEST CASE TITLE            : multAllocSourceMold03
-!*
-!*  PROGRAMMER                 : Izhak Jakov
 !*  DATE                       : June 2, 2015
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -22,40 +14,39 @@
 !*
 !*  DESCRIPTION                : Multiple allocate polymorphic types
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program main
   implicit none
-  
+
   class(*), pointer :: u
   class(*), pointer :: u2(:,:)
-  
+
   integer(kind=4)   :: s
-  
+
   type zero
     integer :: i
   end type
-  
+
   type, extends(zero) :: one
     real(kind=4) :: r4
     real(kind=8) :: r8
   end type
-  
+
   type, extends(one) :: two
     character(len=1)  :: c1
     character(len=16) :: c16
   end type
-  
+
   type, extends(two) :: three
     complex(kind=4)  :: x4
     complex(kind=16) :: x16
   end type
-  
+
   type, extends(three) :: four
     logical :: l
   end type
-  
+
   type five
     integer               :: i = -77
     real                  :: r = -98327493.432
@@ -70,25 +61,25 @@ program main
 
   type(one),    pointer             :: o1, o2
   class(one),   allocatable, target :: oo
-                
+
   type(two),    pointer             :: t1, t2
   class(two),   allocatable, target :: ot, at2o(:,:)
-  
+
   type(three),  pointer             :: h1, h2, ah2a(:,:), ah2b(:,:)
   class(three), allocatable, target :: oh    , ah2o(:,:)
-  
+
   type(four),  pointer              :: f1, f2
   class(four), allocatable, target  :: of
 
   type(five),  pointer              :: c1, c2, ac1a(:), ac1b(:), ac3a(:,:,:), ac3b(:,:,:)
   class(five), allocatable, target  :: oc    , ac1o(:)         , ac3o(:,:,:)
-  
-  !Zero  
+
+  !Zero
   allocate(z1, z2, oz, u, source=zero(-5), stat=s)
   if (s    /= 0)  error stop(10)
   if (z1%i /= -5) error stop(11)
   if (z2%i /= -5) error stop(12)
-  
+
   select type (oz)
   type is (zero)
     if (oz%i /= -5) error stop(910)
@@ -102,7 +93,7 @@ program main
     error stop (602)
   end select
   deallocate(oz, u)
-  
+
   !One
   allocate(o1, o2, oo, oz, u, source=one(i=3, r4=1.1_4, r8=-2.9_8), stat=s)
   if (s     /= 0)        error stop(20)
@@ -112,7 +103,7 @@ program main
   if (o2%i  /= 3)        error stop(24)
   if (o2%r4 /= 1.1_4)    error stop(25)
   if (o2%r8 /= -2.9_8)   error stop(26)
-  
+
   select type (oo)
   type is (one)
     if (oo%i  /= 3)      error stop(920)
@@ -137,9 +128,9 @@ program main
   class default
     error stop (605)
   end select
-  
+
   deallocate(oo, oz, u)
- 
+
   !Two
   allocate(t1, t2, ot, oo, oz, u,               &
          & source=two(i=0, r4=-1.1_4, r8=2.9_8, &
@@ -155,7 +146,7 @@ program main
   if (t2%r8  /= 2.9_8)            error stop(38)
   if (t2%c1  /= "")               error stop(39)
   if (t2%c16 /= "Fortran Test")   error stop(40)
-  
+
   select type (ot)
   type is (two)
     if (ot%i   /= 0)              error stop(930)
@@ -163,34 +154,34 @@ program main
     if (ot%r8  /= 2.9_8)          error stop(932)
     if (ot%c1  /= "")             error stop(933)
     if (ot%c16 /= "Fortran Test") error stop(934)
-  class default                              
-    error stop (606)                         
-  end select                                 
-  select type (oo)                           
-  type is (two)                              
-    if (oo%i   /= 0)              error stop(935)    
-    if (oo%r4  /= -1.1_4)         error stop(936)    
-    if (oo%r8  /= 2.9_8)          error stop(937)    
-    if (oo%c1  /= "")             error stop(938)    
-    if (oo%c16 /= "Fortran Test") error stop(939)    
-  class default                              
-    error stop (607)                         
-  end select                                 
-  select type (oz)                           
-  type is (two)                              
+  class default
+    error stop (606)
+  end select
+  select type (oo)
+  type is (two)
+    if (oo%i   /= 0)              error stop(935)
+    if (oo%r4  /= -1.1_4)         error stop(936)
+    if (oo%r8  /= 2.9_8)          error stop(937)
+    if (oo%c1  /= "")             error stop(938)
+    if (oo%c16 /= "Fortran Test") error stop(939)
+  class default
+    error stop (607)
+  end select
+  select type (oz)
+  type is (two)
     if (oz%i   /= 0)              error stop(940)
-    if (oz%r4  /= -1.1_4)         error stop(941)  
-    if (oz%r8  /= 2.9_8)          error stop(942)  
-    if (oz%c1  /= "")             error stop(943)  
-    if (oz%c16 /= "Fortran Test") error stop(944)  
-  class default                              
+    if (oz%r4  /= -1.1_4)         error stop(941)
+    if (oz%r8  /= 2.9_8)          error stop(942)
+    if (oz%c1  /= "")             error stop(943)
+    if (oz%c16 /= "Fortran Test") error stop(944)
+  class default
     error stop (608)
   end select
   select type (u)
   type is (two)
     if (u%i   /= 0)               error stop(945)
     if (u%r4  /= -1.1_4)          error stop(946)
-    if (u%r8  /= 2.9_8)           error stop(947)  
+    if (u%r8  /= 2.9_8)           error stop(947)
     if (u%c1  /= "")              error stop(948)
     if (u%c16 /= "Fortran Test")  error stop(949)
   class default
@@ -226,11 +217,11 @@ program main
     if (oh%c16 /= "")               error stop(954)
     if (oh%x4  /= (-9.1_4,4.0_4))   error stop(955)
     if (oh%x16 /= (0.0_16,-1.2_16)) error stop(956)
-  class default                                
-    error stop (610)                           
-  end select                                   
-  select type (ot)                             
-  type is (three)                              
+  class default
+    error stop (610)
+  end select
+  select type (ot)
+  type is (three)
     if (ot%i   /= 8)                error stop(957)
     if (ot%r4  /= -81.1_4)          error stop(958)
     if (ot%r8  /= 28.89_8)          error stop(959)
@@ -238,7 +229,7 @@ program main
     if (ot%c16 /= "")               error stop(961)
     if (ot%x4  /= (-9.1_4,4.0_4))   error stop(962)
     if (ot%x16 /= (0.0_16,-1.2_16)) error stop(963)
-  class default                                
+  class default
     error stop (611)
   end select
   select type (oo)
@@ -250,7 +241,7 @@ program main
     if (oo%c16 /= "")               error stop(968)
     if (oo%x4  /= (-9.1_4,4.0_4))   error stop(969)
     if (oo%x16 /= (0.0_16,-1.2_16)) error stop(970)
-  class default                                
+  class default
     error stop (612)
   end select
   select type (oz)
@@ -386,7 +377,7 @@ program main
   !Five
   allocate(c1, c2, oc, source=five(i=0, r=-2.2, c="C", x=(0,0), &
                                  & l=.TRUE., o=of), stat=s)
-  
+
   if (s        /= 0)                 error stop(110)
   if (c1%i     /= 0)                 error stop(111)
   if (c1%r     /= -2.2)              error stop(112)
@@ -442,22 +433,22 @@ program main
   class default
     error stop (623)
   end select
-  
+
   deallocate(z1, z2, o1, o2, t1, t2, h1, h2, f1, f2, c1, c2)
-  
+
   !Mold
   allocate(z1, z2, mold=oz, stat=s)
   if (s /= 0)  error stop(201)
-  
+
   allocate(o1, o2, mold=oo, stat=s)
   if (s /= 0)  error stop(202)
   if (kind(o1%r4) /= 4) error stop(211)
   if (kind(o2%r8) /= 8) error stop(212)
-  
+
   allocate(t1, t2, mold=ot, stat=s)
   if (s /= 0)  error stop(203)
   if (kind(t1%r4)  /= 4)  error stop(213)
-  if (kind(t2%r8)  /= 8)  error stop(214) 
+  if (kind(t2%r8)  /= 8)  error stop(214)
   if (len(t1%c1)   /= 1)  error stop(215)
   if (len(t2%c16)  /= 16) error stop(216)
 
@@ -488,7 +479,7 @@ program main
   if (associated(c1%o) .NEQV. .FALSE.)       error stop(232)
 
   !2D Arrays of "three"
-  allocate(ah2o(3,4))  
+  allocate(ah2o(3,4))
   ah2o = oh
   allocate(ah2a, ah2b, az2o, at2o, source=ah2o)
   if (ah2a(1,1)%i   /= -8)                error stop(351)
@@ -538,17 +529,17 @@ program main
   end select
 
   !1D Arrays of "Five"
-  allocate(ac1o(5))  
+  allocate(ac1o(5))
   ac1o = oc
   allocate(ac1a, ac1b, source=ac1o(2:4))
-  
+
   if (ac1a(2)%i /= 0)                 error stop(511)
   if (ac1a(2)%r /= -2.2)              error stop(71)
   if (ac1a(2)%c /= "C")               error stop(513)
   if (ac1a(2)%x /= (0,0))             error stop(514)
   if (ac1a(2)%l .NEQV. .TRUE.)        error stop(515)
   select type (o => ac1a(2)%o)
-  type is (four)  
+  type is (four)
     if (o%i   /= -8)                  error stop(516)
     if (o%r4  /= 81.1_4)              error stop(517)
     if (o%r8  /= 28.89_8)             error stop(518)
@@ -596,12 +587,12 @@ program main
   class default
     error stop (626)
   end select
-  
+
 !3D Sub-Arrays of "Five"
-  allocate(ac3o(5,2:2,2))  
+  allocate(ac3o(5,2:2,2))
   ac3o = oc
   allocate(ac3a, ac3b, source=ac3o(2:4,2:2,1:1))
-  
+
   if (ac3a(1,1,1)%i /= 0)           error stop(551)
   if (ac3a(1,1,1)%r /= -2.2)        error stop(552)
   if (ac3a(1,1,1)%c /= "C")         error stop(553)
@@ -659,9 +650,9 @@ program main
 
   !Mold for arrays and sub-array
   deallocate(ah2a, ah2b, at2o, az2o)
-  
+
   allocate(ah2a, ah2b, at2o, az2o, u2, mold=ah2o)
-  
+
   if (size(ah2a)      /=   12)     error stop(241)
   if (any(shape(ah2a) /= (/3,4/))) error stop(242)
   if (rank(ah2b)      /=    2)     error stop(243)
@@ -690,7 +681,7 @@ program main
     if (lbound(o,2)  /=    1)     error stop(260)
     if (ubound(o,1)  /=    3)     error stop(261)
     if (ubound(o,2)  /=    4)     error stop(262)
-  class default                                
+  class default
     error stop (633)
   end select
   select type (o => u2)
@@ -705,7 +696,7 @@ program main
   class default
     error stop (634)
   end select
-  
+
   deallocate(ac1a, ac1b)
   allocate(ac1a, ac1b, mold=ac1o(2:4))
 
@@ -714,10 +705,10 @@ program main
   if (rank(ac1b)      /=   1)    error stop(253)
   if (lbound(ac1b,1)  /=   1)    error stop(254)
   if (ubound(ac1a,1)  /=   3)    error stop(255)
-  
+
   deallocate(ac3a, ac3b)
   allocate(ac3a, ac3b, mold=ac3o(2:4,1:1,1:1))
-  
+
   if (size(ac3a)      /=     3)      error stop(261)
   if (any(shape(ac3a) /= (/3,1,1/))) error stop(262)
   if (rank(ac3b)      /=     3)      error stop(263)
@@ -727,7 +718,7 @@ program main
   if (ubound(ac3a,1)  /=     3)      error stop(267)
   if (ubound(ac3b,2)  /=     1)      error stop(268)
   if (ubound(ac3a,3)  /=     1)      error stop(269)
-  
+
   if (any(ac3a%i                  /=   -77))           error stop(271)
   if (any(ac3b%r                  /=   -98327493.432)) error stop(272)
   if (any(ac3a%c                  /=   "&"))           error stop(273)
@@ -736,8 +727,8 @@ program main
   if (associated(ac3b(1,1,1)%o) .NEQV. .FALSE.)        error stop(276)
   if (associated(ac3a(2,1,1)%o) .NEQV. .FALSE.)        error stop(277)
   if (associated(ac3b(3,1,1)%o) .NEQV. .FALSE.)        error stop(278)
-  
-  deallocate(z1, z2, o1, o2, t1, t2, h1, h2, f1, f2, c1, c2, &  
+
+  deallocate(z1, z2, o1, o2, t1, t2, h1, h2, f1, f2, c1, c2, &
            & ac1a, ac1b, ah2a, ah2b, ac3a, ac3b,             &
            & oz, oo, ot, oh, of, oc, ac1o, ah2o, ac3o)
 

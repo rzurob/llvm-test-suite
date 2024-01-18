@@ -1,23 +1,15 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ROUND specifier= 
-!*                             
+!*  PRIMARY FUNCTIONS TESTED   : ROUND specifier=
 !*
-!*  DESCRIPTION                : test round with inquire by file and 
-!*                               inquire by unit. 
-!*    
+!*  DESCRIPTION                : test round with inquire by file and
+!*                               inquire by unit.
+!*
 !* ===================================================================
 
-  program roundSpecifierInquire01 
+  program roundSpecifierInquire01
     use ISO_FORTRAN_ENV
     implicit none
     character(:), allocatable:: r_mode(:)
@@ -26,10 +18,10 @@
 
     !inquire by unit
 
-    inquire(OUTPUT_UNIT, round=r_mode(1)) 
+    inquire(OUTPUT_UNIT, round=r_mode(1))
     if(r_mode(1) .ne. 'PROCESSOR_DEFINED') error stop 1_4
 
-    open(20, form='formatted', access='direct', recl=20) 
+    open(20, form='formatted', access='direct', recl=20)
 
     inquire(20, round=r_mode(2))
 
@@ -48,5 +40,5 @@
 
     close(20)
     close(30)
-  
-  end program roundSpecifierInquire01 
+
+  end program roundSpecifierInquire01

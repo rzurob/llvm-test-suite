@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : structureConstr002ll
 !*
-!*  PROGRAMMER                 : David Forster (derived from structureConstr002 by Robert Ma)
 !*  DATE                       : 2007-10-03 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2 (Data Transfer input/output list)
 !*                               - output item is an structure constructor (with type hierarchy)
@@ -31,12 +23,12 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m1
-   
+
    type :: base (lbase_1) ! lbase_1=3
       integer, len :: lbase_1
       character(lbase_1) :: c1 = ''
    end type
-   
+
    type, extends(base) :: child (lchild_1) ! lchild_1=4
       integer, len :: lchild_1
       character(lchild_1) :: c2 = ''
@@ -46,8 +38,8 @@ end module
 
 
 program structureConstr002ll
-   use m1   
-  
+   use m1
+
    interface write(unformatted)
       subroutine writeUnformatted2 (dtv, unit, iostat, iomsg)
          import child
@@ -57,7 +49,7 @@ program structureConstr002ll
          character(*),  intent(inout) :: iomsg
       end subroutine
    end interface
-  
+
    ! declaration of variables
 
    integer :: stat
@@ -65,24 +57,24 @@ program structureConstr002ll
    character (9) :: c1
 
    ! allocation of variables
-   
+
    open (unit = 1, file ='structureConstr002ll.data', form='unformatted', access='sequential')
-   
+
    ! I/O operations
-   
+
    write (1, iostat=stat, iomsg=msg )      child(3,4)(c1='ibm',c2='xlfo' ) ! tcx: (3,4)
-      
+
    rewind 1
-   
+
    read (1, iostat=stat, iomsg=msg ) c1
       if (stat /= 0 ) error stop 101_4
 
    ! check if the values are set correctly
-      
+
    if ( c1 /= 'ibmXxlfoZ' ) error stop 2_4
-   
+
    ! close the file appropriately
-   
+
    close ( 1, status ='delete' )
 
 end program
@@ -95,10 +87,10 @@ use m1
    character(*), intent(inout) :: iomsg
 
    write (unit, iostat=iostat, iomsg=iomsg ) dtv%c1
-   
+
    ! add a mark at the end of record, so we know DTIO is used.
    write (unit, iostat=iostat, iomsg=iomsg ) "X"
-   
+
 end subroutine
 
 subroutine writeUnformatted2 (dtv, unit, iostat, iomsg)
@@ -111,20 +103,20 @@ use m1
          integer,  intent(in) :: unit
          integer,  intent(out) :: iostat
          character(*),  intent(inout) :: iomsg
-      end subroutine   
+      end subroutine
    end interface
-   
+
    class(child(*,*)), intent(in) :: dtv ! tcx: (*,*)
    integer, intent(in) :: unit
    integer, intent(out) :: iostat
    character(*), intent(inout) :: iomsg
- 
+
    write (unit, iostat=iostat, iomsg=iomsg ) dtv%base
    write (unit, iostat=iostat, iomsg=iomsg ) dtv%c2
-   
+
    ! add a mark at the end of record, so we know DTIO is used.
-   write (unit, iostat=iostat, iomsg=iomsg ) "Z"  
-        
+   write (unit, iostat=iostat, iomsg=iomsg ) "Z"
+
 end subroutine
 
 

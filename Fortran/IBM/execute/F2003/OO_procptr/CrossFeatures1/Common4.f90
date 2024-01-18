@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Common4.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Common4.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Common4.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Common4.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 29, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Common block -
 !*  A procedure pointer shall be storage associated only with another
 !*  procedure pointer; either both interfaces shall be explicit or
-!*  both interfaces shall be implicit. If the interfaces are explicit, 
+!*  both interfaces shall be implicit. If the interfaces are explicit,
 !*  the characteristics shall be the same. If the interfaces are
 !*  mplicit, either both shall be subroutines or both shall be
 !*  functions with the same type and type parameters.
@@ -56,13 +50,13 @@
     FUNCTION Fun()
       INTEGER :: Fun
     END FUNCTION
-  END INTERFACE 
+  END INTERFACE
 
   PROCEDURE(INTEGER), POINTER :: ProcPtr1
   PROCEDURE(INTEGER), POINTER :: ProcPtr2
 
-  COMMON ProcPtr1 
-  COMMON /blk/ ProcPtr2 
+  COMMON ProcPtr1
+  COMMON /blk/ ProcPtr2
 
   INTERFACE
     FUNCTION Fun1()
@@ -77,32 +71,32 @@
   INTEGER :: ModFun
     ModFun = -1
   END FUNCTION
- 
+
   END MODULE
 
   FUNCTION ExtFun()
   INTEGER :: ExtFun
     ExtFun = -2
   END FUNCTION
- 
-  FUNCTION ExtFun1()
-  USE M, ONLY: Fun 
-  PROCEDURE(Fun), POINTER :: ProcPtr
-  PROCEDURE(Fun), POINTER :: ExtFun1 
-  COMMON ProcPtr
-    ExtFun1 => ProcPtr 
-  END FUNCTION
- 
-  FUNCTION ExtFun2()
-  USE M, ONLY: Fun 
-  PROCEDURE(Fun), POINTER :: ProcPtr
-  PROCEDURE(Fun), POINTER :: ExtFun2 
-  COMMON /blk/ ProcPtr
-    ExtFun2 => ProcPtr 
-  END FUNCTION
- 
 
-  PROGRAM Common3 
+  FUNCTION ExtFun1()
+  USE M, ONLY: Fun
+  PROCEDURE(Fun), POINTER :: ProcPtr
+  PROCEDURE(Fun), POINTER :: ExtFun1
+  COMMON ProcPtr
+    ExtFun1 => ProcPtr
+  END FUNCTION
+
+  FUNCTION ExtFun2()
+  USE M, ONLY: Fun
+  PROCEDURE(Fun), POINTER :: ProcPtr
+  PROCEDURE(Fun), POINTER :: ExtFun2
+  COMMON /blk/ ProcPtr
+    ExtFun2 => ProcPtr
+  END FUNCTION
+
+
+  PROGRAM Common3
   USE M
 
   PROCEDURE(Fun)              :: ExtFun

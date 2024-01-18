@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5 Data transfer statements
 !*                               C920: if REC= appears, shall not specify END=, namelist
@@ -57,7 +41,7 @@ end module
 
 program C920_001
    use m1
-   
+
    interface read(unformatted)
       subroutine readUnformatted (dtv, unit, iostat, iomsg)
       import base
@@ -89,7 +73,7 @@ program C920_001
    write (1, rec=5) b1
 
    read (1, rec=5, end=300 ) b2          !<- specify END= with REC= (IBM extension <= allowed!! )
-   
+
 300 print *,'IBM extension'
 
    close ( 1, status = 'delete' )

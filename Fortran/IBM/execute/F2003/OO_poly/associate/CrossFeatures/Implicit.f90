@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  Implicit.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Implicit 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Implicit
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 09, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,12 +30,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is an entity with implicit type 
-!*    () 
+!*    The selector is an entity with implicit type
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   MODULE M
     TYPE :: DT
       INTEGER :: Id = 1
@@ -58,11 +52,11 @@
     END FUNCTION
 
   END MODULE
- 
-  PROGRAM Implicit 
+
+  PROGRAM Implicit
 
   USE M
-  IMPLICIT TYPE(DT)(A) 
+  IMPLICIT TYPE(DT)(A)
 
   ASSOCIATE( As => As )
 
@@ -70,7 +64,7 @@
     IF ( As%GetID() .NE. 1 ) STOP 31
 
     As%ID = 2
- 
+
     IF ( As%ID      .NE. 2 ) STOP 40
     IF ( As%GetID() .NE. 2 ) STOP 41
 

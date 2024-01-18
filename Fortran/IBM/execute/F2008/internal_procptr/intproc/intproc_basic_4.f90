@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_basic_4.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : April 21 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,8 +11,7 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*  Test the basic functionality -- Mixed case 
+!*  Test the basic functionality -- Mixed case
 !*  pasing internal procedure around main/module/external procedure
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -65,7 +57,7 @@
 
   CALL Extsub1(main_int1)
   CALL Modsub(main_int1)
-  
+
   CONTAINS
 
   SUBROUTINE main_int()
@@ -96,7 +88,7 @@
     SUBROUTINE intsub(proc)
     PROCEDURE() :: proc
       i = 2
-      j = 2 
+      j = 2
     END SUBROUTINE
   END SUBROUTINE
 

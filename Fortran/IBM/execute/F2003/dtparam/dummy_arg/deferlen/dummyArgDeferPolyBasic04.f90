@@ -1,34 +1,26 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyBasic04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyBasic04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 18 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 18 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  1. polymorphic allocatable derived type is array 
+!*  1. polymorphic allocatable derived type is array
 !*  2. parent type and child type both have allocatable derived type component with deferred length parameter
-!*  3. pass allocatable component in last procedure, and modify component value, and verify result of actual argument  
+!*  3. pass allocatable component in last procedure, and modify component value, and verify result of actual argument
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type nest(l)
      integer,len  :: l
      character(l),allocatable :: c
-  end type 
+  end type
   type base(l1)
       integer,len  :: l1
       type(nest(:)),allocatable :: nest1
@@ -43,7 +35,7 @@ module m
 
     subroutine sub1(arg)
 
-      class(base(:)),allocatable, intent(inout) :: arg(:) 
+      class(base(:)),allocatable, intent(inout) :: arg(:)
       select type(arg)
          type is(child(*,*))
             call sub2(arg)
@@ -57,26 +49,26 @@ module m
 
       call sub3(arg(5)%nest1,arg(5)%nest2,1)
       call sub3(arg(6)%nest1,arg(6)%nest2,2)
-       
+
     end subroutine
 
     subroutine sub3(nest1,nest2,flag)
 
-      type(nest(*)),intent(inout) :: nest1 
-      type(nest(*)),intent(inout) :: nest2 
-      integer,intent(in) :: flag 
+      type(nest(*)),intent(inout) :: nest1
+      type(nest(*)),intent(inout) :: nest2
+      integer,intent(in) :: flag
 
-      if(flag .eq. 1) then 
+      if(flag .eq. 1) then
          if(nest1%c /= "abcdefg")                   error stop 10_4
          if(nest2%c /= "aabbccddeeffg")             error stop 11_4
          nest1%c = "xyz"
-         nest2%c = "xxxyyyzzz" 
+         nest2%c = "xxxyyyzzz"
       else if(flag .eq. 2) then
          if(nest1%c /= "1234567")                   error stop 12_4
          if(nest2%c /= "1122334455667")             error stop 13_4
          nest1%c = "789"
          nest2%c = "777888999"
-      end if 
+      end if
     end subroutine
 
 end module

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatBasic05c.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatBasic05c.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 8 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 8 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test READ & WRITE statement with different edit descriptors
@@ -42,7 +34,7 @@ module m
    contains
       subroutine readdata(arg)
          class(base(4,*)),pointer,intent(inout) :: arg(:)
-         integer :: ios 
+         integer :: ios
 
          allocate(gen3(k1=4,l1=2,l2=3,k3=4,l3=2) :: arg(2:2))
 
@@ -54,7 +46,7 @@ module m
               write(*,*) "fail to open the file"
               write(*,*) "iostat=",ios
               write(*,*) "iomsg=",msg
-              error stop 102_4 
+              error stop 102_4
          else
              select type(arg)
                 type is(gen3(k1=4,l1=*,l2=*,k3=4,l3=*))
@@ -65,11 +57,11 @@ module m
                     write(*,'(f8.3/e9.3)') arg(2)%r1
                     write(*,'(f6.1/e8.3/e15.5/e15.5,/e15.3e3/f4.0)') arg(2)%x1
 
-                    rewind 10 
+                    rewind 10
 
                     associate(x=>arg(2)%comp)
 
-                      read(10,fmt=101) x 
+                      read(10,fmt=101) x
 
                       write(*,*) "second write"
                       write(*,'(f8.3/e9.3)') x%r1
@@ -115,7 +107,7 @@ program formatBasic05c
 
      class default
          error stop 101_4
-  end select   
+  end select
 
   close(10)
 

@@ -1,43 +1,38 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal016bkk.f
 !*  TEST CASE NAME             : type-bound procedure ffinal016bkk
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal016b by Catherine Sun)
 !*  DATE                       : 2007-11-21 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines 
-!*    
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
    module mod
       type t1 (kt1_1) ! kt1_1=4
          integer, kind :: kt1_1
-         real(kt1_1), allocatable :: p1 
+         real(kt1_1), allocatable :: p1
       end type
 
       type, extends(t1) :: t2 (kt2_1) ! kt2_1=4
          integer, kind :: kt2_1
-         real(kt2_1), allocatable :: p2 
+         real(kt2_1), allocatable :: p2
       contains
          final :: finalize_t2
       end type
 
       type, extends(t2) :: t3
-         real(kt2_1), allocatable :: p3 
+         real(kt2_1), allocatable :: p3
       contains
          final :: finalize_t3
-      end type 
+      end type
 
       type(t1(4)), pointer :: dt1  ! tcx: (4)
       type(t2(4,4)), pointer :: dt2  ! tcx: (4,4)
@@ -49,7 +44,7 @@
          if (allocated(x%p1))    deallocate(x%p1)
          if (allocated(x%p2))    deallocate(x%p2)
       end subroutine
- 
+
       subroutine finalize_t3(x)
          type(t3(4,4)) :: x ! tcx: (4,4)
          if (allocated(x%p3))        deallocate(x%p3)

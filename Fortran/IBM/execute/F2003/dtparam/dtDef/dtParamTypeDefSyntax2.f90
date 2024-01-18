@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDefSyntax2
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 23, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  Make use of type parameters from the parent component 
-!*
-!*
+!*  Make use of type parameters from the parent component
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamTypeDefSyntax2 
+  PROGRAM dtParamTypeDefSyntax2
   IMPLICIT REAL(T)
   PARAMETER (Kind1=1)
-  
+
   TYPE :: DT0
     INTEGER :: Kind=2
   END TYPE
@@ -55,8 +47,8 @@
   END TYPE
 
   TYPE, EXTENDS(DT1) :: DT3(KP1, KP2, KP3)
-    INTEGER(Kind1), LEN :: KP3 = Const%Kind 
-    INTEGER(Kind1), LEN :: KP2 = Const%Kind  
+    INTEGER(Kind1), LEN :: KP3 = Const%Kind
+    INTEGER(Kind1), LEN :: KP2 = Const%Kind
     INTEGER(Kind1), LEN :: KP1 = Const%Kind
   END TYPE
 
@@ -71,12 +63,12 @@
 
   TYPE, EXTENDS(DT4) :: DT6(KP1)
     INTEGER, KIND :: KP1
-    TYPE(DT4(KP1, KP1, KP1)) ::X1 
-    TYPE(DT4(TP1, TP1, TP1)) ::X2 
+    TYPE(DT4(KP1, KP1, KP1)) ::X1
+    TYPE(DT4(TP1, TP1, TP1)) ::X2
   END TYPE
 
- 
-  TYPE (DT1(1, 1,  127))            :: T1 
+
+  TYPE (DT1(1, 1,  127))            :: T1
   TYPE (DT2)                         :: T2
   TYPE (DT3(KP1=1, KP2=1, KP3=1))    :: T3
   TYPE (DT4)                         :: T4

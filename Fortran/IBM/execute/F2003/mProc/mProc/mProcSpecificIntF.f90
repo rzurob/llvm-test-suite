@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcSpecificIntF.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcSpecificIntF.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 02, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Any procedure may be referenced via its specific interface if 
-!*  the specific interface is accessible. 
+!*  Any procedure may be referenced via its specific interface if
+!*  the specific interface is accessible.
 !*
 !*  ()
 !*
@@ -40,7 +33,7 @@
   TYPE :: DT
     INTEGER :: ID
   END TYPE
- 
+
   TYPE, EXTENDS(DT) :: DT1
   END TYPE
 
@@ -48,44 +41,44 @@
 
   MODULE M1
   USE M
- 
-  INTERFACE Fun 
+
+  INTERFACE Fun
     PROCEDURE ModSub
-  END INTERFACE  
+  END INTERFACE
 
   CONTAINS
 
   SUBROUTINE ModSub(Arg1, Arg2)
-  TYPE(DT), INTENT(INOUT) :: Arg1 
-  TYPE(DT), INTENT(IN)    :: Arg2 
-    Arg1 = Arg2 
-  END SUBROUTINE 
+  TYPE(DT), INTENT(INOUT) :: Arg1
+  TYPE(DT), INTENT(IN)    :: Arg2
+    Arg1 = Arg2
+  END SUBROUTINE
 
   SUBROUTINE ModSub1(Arg1, Arg2)
-  TYPE(DT1), INTENT(INOUT) :: Arg1 
-  TYPE(DT1), INTENT(IN)    :: Arg2 
-    Arg1 = Arg2 
-  END SUBROUTINE 
+  TYPE(DT1), INTENT(INOUT) :: Arg1
+  TYPE(DT1), INTENT(IN)    :: Arg2
+    Arg1 = Arg2
+  END SUBROUTINE
 
   END MODULE
 
 
-  PROGRAM mProcSpecificIntF 
+  PROGRAM mProcSpecificIntF
   USE M
-  USE M1, ModSub11 => ModSub1, Fun1 => Fun, ModSub1=>ModSub1 
+  USE M1, ModSub11 => ModSub1, Fun1 => Fun, ModSub1=>ModSub1
 
   PROCEDURE(ModSub11), POINTER :: ProcPtr
 
 
-  INTERFACE Fun1 
+  INTERFACE Fun1
     MODULE PROCEDURE ModSub1
-    PROCEDURE        ModSub11 
-    PROCEDURE        ModSub1 
+    PROCEDURE        ModSub11
+    PROCEDURE        ModSub1
   END INTERFACE
 
-  INTERFACE Fun2 
+  INTERFACE Fun2
     PROCEDURE ModSub
-    PROCEDURE ProcPtr 
+    PROCEDURE ProcPtr
   END INTERFACE
 
   TYPE(DT)  :: T

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Assign1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Assign1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Assign1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Assign1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 16, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,16 +30,16 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  A derived-type intrinsic assignment 
-!*  (Mem fault- 305097)  
+!*
+!*  A derived-type intrinsic assignment
+!*  (Mem fault- 305097)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
 
-    INTERFACE 
+    INTERFACE
       FUNCTION IToI(Arg)
        INTEGER :: Arg
        INTEGER :: Fun
@@ -62,7 +56,7 @@
     END TYPE
 
     INTERFACE ASSIGNMENT ( = )
-      MODULE PROCEDURE PToP 
+      MODULE PROCEDURE PToP
     END INTERFACE ASSIGNMENT ( = )
 
     CONTAINS
@@ -78,20 +72,20 @@
     TYPE(Dt), INTENT (IN)  :: Arg2
       Arg1%Id  = Arg2%Id
       ALLOCATE(Arg1%BComp)
-      Arg1%BComp%ProcPtr => NULL() 
+      Arg1%BComp%ProcPtr => NULL()
     END SUBROUTINE
- 
+
   END MODULE
 
 
-  PROGRAM Assign1 
+  PROGRAM Assign1
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT) :: V
   PROCEDURE(IToI), POINTER :: ProcPtr
 
-  ProcPtr => Fun 
+  ProcPtr => Fun
   V = DT(-1, Base(ProcPtr))
 
   IF (V%Id .NE. -1 )                 STOP 11

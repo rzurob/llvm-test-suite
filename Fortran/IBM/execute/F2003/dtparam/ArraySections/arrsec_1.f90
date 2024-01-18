@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArraySections/arrsec_1.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jul. 09, 2008
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 353925
 !*
@@ -14,8 +10,8 @@
 !*
 !*  6.2.2.3 Array sections
 !*  9-10:
-!*  In an array-section having a section-subscript-list, each subscript-triplet 
-!*  and vector-subscript in the section subscript list indicates a sequence of 
+!*  In an array-section having a section-subscript-list, each subscript-triplet
+!*  and vector-subscript in the section subscript list indicates a sequence of
 !*  subscripts, which may be empty.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

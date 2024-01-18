@@ -1,11 +1,6 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/abstract/C503/localVar002.f
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -20,22 +15,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: non-polymorphic abstract type entities in modules (scalar, array, pointer, allocatable)
 !*  KEYWORD(S)                 :
@@ -53,25 +37,25 @@ module m
       integer, kind :: k1
       integer(k1)   :: i = 5
    end type
-   
+
    type, extends(base) :: child(k2,n1)    ! (4,4,20)
        integer, kind :: k2
        integer, len  :: n1
    end type
-   
+
 end module
 
 module m1
    use m, base => base
-   
+
    type(base(4)) :: b1
    type(base(4)), dimension(5) :: b2
    type(base(4)), pointer :: b3
-   type(base(4)), allocatable, dimension(:) :: b4  
+   type(base(4)), allocatable, dimension(:) :: b4
 
 end module
 
 program localVar002
 end program
-   
-   
+
+

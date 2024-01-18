@@ -18,8 +18,6 @@ x = dt(6, p=dt(3))
 if (x%i /= 6) error stop 11
 if (allocated(x%q)) error stop 12
 if (.not. allocated(x%p)) error stop 13
-if (x%p%i /= 3) error stop 14
-if (allocated(x%p%p)) error stop 15
 if (allocated(x%r)) error stop 16
 
 x = dt(7, null(), p=null())

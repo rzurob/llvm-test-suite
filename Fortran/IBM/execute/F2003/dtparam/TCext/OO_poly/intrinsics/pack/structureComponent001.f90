@@ -3,13 +3,9 @@
 ! opt variations: -qnok -qnol -qdefaultpv -qreuse=none
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/pack
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/21/2005
 ! PRIMARY FUNCTIONS TESTED   : pack
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : ARRAY is a structure component, which
 !                              is non-poly array. The object containing
 !                              the component is a scalar.

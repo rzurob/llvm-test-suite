@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Select-Type Constructor: Unlimited Polymorphic Array Entities (read)
@@ -62,7 +51,7 @@ use m
 
    class(*), allocatable  :: u1(:)
    class(*), pointer      :: u2(:,:)
-   
+
    character(81) :: fmt = "(DT'_u1-4'(7,2), DT'_u1-3'(8,3), DT'_u1-2'(9,4), DT'_u1-1'(9,3) )"
 
    open (1, file = 'selectType104.1', form='formatted', access='sequential' )
@@ -91,7 +80,7 @@ use m
    deallocate ( u1, u2 )
    allocate ( child :: u2(2,2) )
    allocate ( child :: u1(4) )
- 
+
    select type ( g => u1(2:4:2) )
       class is ( child )
          read ( 1, "(DT'_u1-1'(7,2,8,3), DT'_u1-2'(8,3,9,4))", iostat = stat, iomsg = msg ) g  !<= two elements

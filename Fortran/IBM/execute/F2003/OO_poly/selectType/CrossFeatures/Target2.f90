@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Target2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Target2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Target2 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Target2
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Target 
-!*  
-!* 
+!*
+!*  Target
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -70,7 +62,7 @@
 
   END MODULE
 
-  PROGRAM Target2 
+  PROGRAM Target2
   USE M
   IMPLICIT NONE
   TYPE(DT), TARGET :: V(4,4)
@@ -109,13 +101,13 @@
     P1 => U%DT1%C1
     P1 = "-1"
     P0 => U%DT1%DT0%C0
-    P0 = "-0" 
+    P0 = "-0"
 
   CLASS DEFAULT
     STOP 40
   END SELECT
 
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END
 

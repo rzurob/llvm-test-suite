@@ -1,13 +1,8 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
-!* TEST CASE TITLE            : OO_poly/intrinsics/reshape/typeBound001.f
-!* PROGRAMMER                 : Yong Du
 !* DATE                       : 11/07/2004
 !* ORIGIN                     :
 !* PRIMARY FUNCTIONS TESTED   : reshape
-!* DRIVER STANZA              : xlf90
 !* DESCRIPTION                : Call the intrinsic inquiry functions
 !*   inside the type bound procedures. Cross testing OPTIONAL.
 !* =====================================================================

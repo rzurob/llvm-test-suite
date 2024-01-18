@@ -4,20 +4,14 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrMinvalChar.f 
+!*  TEST CASE NAME             : dataPtrMinvalChar.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -64,13 +58,13 @@
 		select type ( y => x%p)
 		    type is (character(*))
 
-			y = y(8:1:-1) 
+			y = y(8:1:-1)
 
                 	if ( any ( lbound(x%p) .ne. (/1/) )) stop 22
 	                if ( any ( ubound(x%p) .ne. (/8/) )) stop 32
 
 			print *, (/ (y(i), i=1,8)/)
-			print *, Minval(y) 
+			print *, Minval(y)
 
 		    class default
 			stop 42

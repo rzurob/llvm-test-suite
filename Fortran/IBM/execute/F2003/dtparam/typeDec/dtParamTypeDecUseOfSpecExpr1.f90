@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecUseOfSpecExpr1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 11, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  
 !*  If a type parameter in a declaration-type-spec or in a char-length in an entity-decl is defined by an
-!*  expression that is not an initialization expression, the type parameter value is established on entry to 
-!*  the procedure and is not affected by any redefinition or undefinition of the variables in 
+!*  expression that is not an initialization expression, the type parameter value is established on entry to
+!*  the procedure and is not affected by any redefinition or undefinition of the variables in
 !*  the specification expression during execution of the procedure.
-!* 
 !*
-!*     
-!*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -71,7 +60,7 @@
   SUBROUTINE S(J, T)
   USE M
   INTEGER :: J
-  TYPE(DT(1,J)) :: T(J) 
+  TYPE(DT(1,J)) :: T(J)
 
   J = 0
 
@@ -79,25 +68,25 @@
   IF (T%L        .NE. 100 )              STOP 12
   IF (SIZE(T)    .NE. 100 )              STOP 13
   IF (ANY (T%I   .NE. [(I,I=1, 100 )] )) STOP 14
-  
+
   END SUBROUTINE
 
   FUNCTION F(J, T)
   !FUNCTION F(J, T)
-  USE M 
+  USE M
   INTEGER ::K, J
-  TYPE(DT(2,J)) :: T(J) 
+  TYPE(DT(2,J)) :: T(J)
   TYPE(DT(2,J)) :: F
   DIMENSION  :: F(J)
 
-  K = J 
+  K = J
   J = -1000
 
   IF (T%K        .NE. 2   )              STOP 21
   IF (T%L        .NE. 1000 )             STOP 22
   IF (SIZE(T)    .NE. 1000 )             STOP 23
   IF (ANY (T%I   .NE. [(I,I=1, 1000)] )) STOP 24
-  
+
   F = T(K:1:-1)
 
   END FUNCTION

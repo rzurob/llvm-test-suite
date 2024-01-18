@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrC724_1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrC724_1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 03, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  C724 (R739) An expr shall be a reference to a function whose result is a data pointer. 
+!*  C724 (R739) An expr shall be a reference to a function whose result is a data pointer.
 !*
 !*  (323066)
 !*
@@ -35,10 +28,10 @@
 
   PROGRAM dataPtrC724_1
   IMPLICIT NONE
-  
+
   INTEGER              :: I, J
   LOGICAL(1)           :: L(0:1023) = .TRUE.
-  COMPLEX, TARGET      :: C(-1:1023) = (1.0, -1.0) 
+  COMPLEX, TARGET      :: C(-1:1023) = (1.0, -1.0)
 
   TYPE :: DT
     INTEGER :: ID
@@ -59,7 +52,7 @@
   CLASS DEFAULT
     STOP 14
   END SELECT
- 
+
   !Ptr(LBOUND(F2(C,  LBOUND(C,1)),1):UBOUND(F2(C, LBOUND(C,1)),1)) => F2(C, LBOUND(C,1))
   Ptr(LBOUND(C,1):UBOUND(C,1)) => F2(C, LBOUND(C,1))
   IF (ANY(LBOUND(Ptr) .NE. (/-1   /) )) STOP 21
@@ -72,8 +65,8 @@
   END SELECT
   IF ( .NOT. ASSOCIATED(Ptr, C))        STOP 25
 
-  ALLOCATE(PtrDT(1:513), SOURCE=DT(-1)) 
-  Ptr(LBOUND(F3(PtrDT), 1):UBOUND(F3(PtrDT), 1)) => F3(PtrDT) 
+  ALLOCATE(PtrDT(1:513), SOURCE=DT(-1))
+  Ptr(LBOUND(F3(PtrDT), 1):UBOUND(F3(PtrDT), 1)) => F3(PtrDT)
   IF (ANY(LBOUND(Ptr) .NE. (/1    /) )) STOP 31
   IF (ANY(UBOUND(Ptr) .NE. (/513  /) )) STOP 32
   SELECT TYPE (Ptr)
@@ -90,22 +83,22 @@
   CLASS(*) :: Arg(:)
   INTEGER  :: LB
   CLASS(*), POINTER :: F1(:)
-    ALLOCATE(F1(LB:LB-1+SIZE(Arg)), SOURCE=Arg) 
+    ALLOCATE(F1(LB:LB-1+SIZE(Arg)), SOURCE=Arg)
   END FUNCTION
- 
+
   FUNCTION F2(Arg, LB)
   INTEGER           :: LB
   CLASS(*), TARGET  :: Arg(LB:)
   CLASS(*), POINTER :: F2(:)
-    F2(LBOUND(Arg,1):) => Arg 
+    F2(LBOUND(Arg,1):) => Arg
   END FUNCTION
- 
+
   FUNCTION F3(Arg)
   CLASS(DT), POINTER :: Arg(:)
   CLASS(DT), POINTER :: F3(:)
-    F3(LBOUND(Arg,1):UBOUND(Arg,1)) => Arg 
+    F3(LBOUND(Arg,1):UBOUND(Arg,1)) => Arg
   END FUNCTION
- 
+
   END
 
 

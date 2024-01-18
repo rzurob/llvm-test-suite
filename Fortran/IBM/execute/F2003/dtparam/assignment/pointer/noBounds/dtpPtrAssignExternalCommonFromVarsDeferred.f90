@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpPtrAssignExternalCommonFromVarsDeferred
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-11-12
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment without Lower Bounds Specification or Remap
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 360669
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -84,7 +78,7 @@ module dtpPtrAssignExternalCommonFromVarsDeferredmod
   type(base(:)), pointer      :: b_5_modp
   type(derived(:,8)), pointer :: d_58_modp
   type(d2(:,8,4,:)), pointer  :: d2_5841_modp
-  
+
 end module dtpPtrAssignExternalCommonFromVarsDeferredmod
 
 
@@ -510,7 +504,7 @@ program dtpPtrAssignExternalCommonFromVarsDeferred
   type(d2(5,8,4,1)), target  :: d2_5841t = d2(5,8,4,1)('defij',9.87654321D-12,.true._8, &
                                                        [-1111111111111_8,-2222222222222_8,-3333333333333_8,-4444444444444_8,-5555555555555_8], &
                                                        reshape([(1111_4*i,i=1,5)],[5,1]),derived(1,4)('y',9.87654E-12,.true._4,[-12345678_4]))
-  
+
 
   call localTest
   call hostAssociatedTest

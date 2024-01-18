@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass115.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass115.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -58,7 +46,7 @@
 !*                                     with integer, integer*1, integer*2
 !*                                     integer*4, integer*8 and byte
 !*                                     data types
-!* 
+!*
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -73,27 +61,27 @@
       implicit none
 
       integer, target :: a = 2
-      integer, pointer :: b 
+      integer, pointer :: b
 
       integer*4, target :: a4 = 8
-      integer*4, pointer :: b4 
+      integer*4, pointer :: b4
 
-      integer*8, target :: a8 = 10 
-      integer*8, pointer :: b8 
+      integer*8, target :: a8 = 10
+      integer*8, pointer :: b8
 
-      integer*1, target :: a1 = 10 
-      integer*1, pointer :: b1 
+      integer*1, target :: a1 = 10
+      integer*1, pointer :: b1
 
-      integer*2, target :: a2 = 10 
-      integer*2, pointer :: b2 
+      integer*2, target :: a2 = 10
+      integer*2, pointer :: b2
 
-      byte, target :: ab1 = 10 
-      byte, pointer :: ab2 
+      byte, target :: ab1 = 10
+      byte, pointer :: ab2
 
       b => a
       b4 => a4
       b8 => a8
-      b1 => a1 
+      b1 => a1
       b2 => a2
       ab2 => ab1
 
@@ -102,7 +90,7 @@
          error stop 1
       endif
       end associate
-  
+
       associate ( arg1 => b2, arg2 => a2 )
       if(arg1 .ne. arg2)then
          error stop 2
@@ -122,4 +110,4 @@
       end associate
 
       end
-      
+

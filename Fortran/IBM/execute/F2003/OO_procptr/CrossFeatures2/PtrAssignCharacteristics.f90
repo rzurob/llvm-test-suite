@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignCharacteristics.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignCharacteristics.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignCharacteristics.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignCharacteristics.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
-!*  proc-pointer-object is not pure while proc-target may be pure 
-!*  (315181) 
+!*
+!*  proc-pointer-object is not pure while proc-target may be pure
+!*  (315181)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -48,7 +42,7 @@
     ALLOCATE(ExtFun, SOURCE=Arg)
   END FUNCTION
 
-  PROGRAM PtrAssignCharacteristics 
+  PROGRAM PtrAssignCharacteristics
   IMPLICIT NONE
 
   TYPE :: DT
@@ -70,8 +64,8 @@
   END INTERFACE
 
   PROCEDURE(ExtF1), POINTER :: ProcPtr
-  PROCEDURE(ExtF2)          :: ExtFun 
- 
+  PROCEDURE(ExtF2)          :: ExtFun
+
   INTEGER :: i
 
   ProcPtr => ExtFun
@@ -80,7 +74,7 @@
   IF ( .NOT. ASSOCIATED(ProcPtr, ExtFun) )  STOP 22
   IF ( .NOT. ASSOCIATED(ProcPtr, ProcPtr))  STOP 23
 
-  SELECT TYPE ( As => ProcPtr(DT(DT(12345678_8)) )) 
+  SELECT TYPE ( As => ProcPtr(DT(DT(12345678_8)) ))
   TYPE IS (DT)
     SELECT TYPE ( As => As%V)
     TYPE IS (DT)
@@ -97,5 +91,5 @@
     STOP 34
   END SELECT
 
-  END 
+  END
 

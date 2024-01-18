@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_INT32_T, C_INT64_T
@@ -237,7 +223,7 @@ integer(C_INT32_T) function fnt1(a,b)
 
    integer(C_INT32_T) :: a(5)
    integer(C_INT64_T) :: b(5)
-   
+
    do i = 1, 5
       if ( a(i) /= i ) error stop 52
       a(i) = i+1
@@ -297,7 +283,7 @@ integer(C_INT32_T) function fnt5(aa,bb)
 
    integer(C_INT32_T) :: aa(10,5)
    integer(C_INT64_T) :: bb(10,5)
-   
+
    do i = 1, 5
       do j = 1, 10
          if ( aa(j,i) /= i+j-1 ) error stop 64
@@ -331,7 +317,7 @@ integer(C_INT32_T) function fnt7(aa,bb)
 
    integer(C_INT32_T), intent(inout) :: aa(10,5)
    integer(C_INT64_T), intent(inout) :: bb(10,5)
-   
+
    do i = 1, 5
       do j = 1, 10
          if ( aa(j,i) /= i+j-1 ) error stop 72
@@ -349,7 +335,7 @@ integer(C_INT32_T) function fnt8(aa,bb)
 
    integer(C_INT32_T), intent(out) :: aa(10,5)
    integer(C_INT64_T), intent(out) :: bb(10,5)
-   
+
    do i = 1, 5
       do j = 1, 10
          aa(j,i) = i+j

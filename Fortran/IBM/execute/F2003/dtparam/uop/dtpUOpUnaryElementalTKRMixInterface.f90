@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUOpUnaryElementalTKRMixInterface
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2009-02-11
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : User-Defined Operators
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 361989
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -184,7 +178,7 @@ program dtpUOpUnaryElementalTKRMixInterface
 
   use dtpUOpUnaryElementalTKRMixInterfacemod
   implicit none
-  
+
   type(dk(2)) :: xk2a, xk2b, xk2arr(1)
   type(dk(4)) :: xk4a, xk4b, xk4arr(1,2,3)
   type(dl(5)) :: xla, xlb, xlc, xld
@@ -199,7 +193,7 @@ program dtpUOpUnaryElementalTKRMixInterface
   xk2arr = dk(2)(5)
   xk4a   = dk(4)(11)
   xk4b   = dk(4)(12)
-  xk4arr = reshape([(dk(4)(1000000+i), i=1,6)],[1,2,3]) 
+  xk4arr = reshape([(dk(4)(1000000+i), i=1,6)],[1,2,3])
 
   xla    = dl(5)(['A','b','C','d','E'])
   xlb    = dl(5)(['f','G','h','I','j'])

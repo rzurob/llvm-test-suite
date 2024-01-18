@@ -1,22 +1,10 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : complex8a.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : TO is of unlimit poly
 !*                               FROM is of complex(4)
@@ -30,11 +18,11 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 
-     program main 
+     program main
 
           complex(4) :: c1(:)
           allocatable c1
-          class(*), allocatable :: c2(:) 
+          class(*), allocatable :: c2(:)
 
           logical precision_x8
           allocate(complex*16  :: c2(5) )
@@ -53,5 +41,5 @@
                   if ( .not. precision_x8 (c2(2), (20.0000,1.0000) )) error stop 61_4
                class default
                    stop 31
-          end select 
+          end select
 end

@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dummyArg005al
 !*
-!*  PROGRAMMER                 : David Forster (derived from dummyArg005a by Robert Ma)
 !*  DATE                       : 2007-09-14 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try input item to be an non-polymorphic array dummy argument
@@ -112,7 +104,7 @@ program dummyArg005al
 
    call myread (1, stat, msg, b2, c2 )
    call myread1 (1, stat, msg, b3, c3 )
-   
+
    print *, b2
    print *, c2
    print *, b3

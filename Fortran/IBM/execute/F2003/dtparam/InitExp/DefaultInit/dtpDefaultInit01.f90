@@ -1,21 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : dtpDefaultInit01
-!*  TEST CASE TITLE            : init-expr (Default Initialization)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : May 21, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Default Initialization with Structure
 !*                               Constructors
 !*  SECONDARY FUNCTIONS TESTED : Generic Function References
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE
@@ -67,7 +61,7 @@ MODULE mExt
     IMPLICIT NONE
 
     TYPE, EXTENDS(tBase) :: tExt
-        CLASS(tBase(kBase,lBase)), POINTER :: next => NULL( )        
+        CLASS(tBase(kBase,lBase)), POINTER :: next => NULL( )
     END TYPE tExt
 
 END MODULE mExt

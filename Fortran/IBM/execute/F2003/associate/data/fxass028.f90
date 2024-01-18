@@ -1,14 +1,8 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass028.f
 ! %VERIFY:
 ! %STDIN:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass028.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -54,9 +42,9 @@
 !*
 !*  CONDITIONS TESTED          : Listed below.
 !*
-!*  DESCRIPTION                : Test: ASSOCIATE with expressions 
-!*                                     with nested derived types  
-!*                                     with integer, complex, real 
+!*  DESCRIPTION                : Test: ASSOCIATE with expressions
+!*                                     with nested derived types
+!*                                     with integer, complex, real
 !*                                     data types.
 !*
 !* ===================================================================
@@ -82,11 +70,11 @@
       end type der
 
       type nest_der
-       type(der)  der_type 
+       type(der)  der_type
       end type nest_der
-   
-      type(nest_der) der_t 
-      type(der) d_t 
+
+      type(nest_der) der_t
+      type(der) d_t
 
       der_t%der_type%i4 = 5
       der_t%der_type%r4 = 140.8
@@ -112,7 +100,7 @@
             if (.not. precision_x8(d_t%x,der_t%der_type%x)) error stop 7
 
 !-----------   ASSOCIATE with INTEGER expressions ----------------
-       d_t%i4 = 12   
+       d_t%i4 = 12
        associate ( dertype => der_t%der_type%i4)
             dertype = d_t%i4
        end associate

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrArrSec1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrArrSec1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 15, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  the array section
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,22 +29,22 @@
   MODULE M
 
   TYPE :: DT
-    INTEGER, PRIVATE :: ID0=0 
-    INTEGER :: ID 
+    INTEGER, PRIVATE :: ID0=0
+    INTEGER :: ID
   END TYPE
 
   END MODULE
 
 
-  PROGRAM dataPtrArrSec1 
+  PROGRAM dataPtrArrSec1
   USE M
   IMPLICIT NONE
 
   CLASS(*), POINTER :: Arr(:, :), Arr1(:)
   CLASS(*), POINTER :: Ptr(:, :), Ptr1(:)
   INTEGER            :: I, J, K, N
- 
-  N = 100 
+
+  N = 100
   ALLOCATE(Arr(N,N), SOURCE=DT(ID=-1))
   ALLOCATE(Arr1(N*N), SOURCE=DT(ID=-2))
 
@@ -66,12 +58,12 @@
     Arr1%ID = (/(i, i=1, 10000)/)
   END SELECT
 
-  DO I =1, N/3 
-  DO J =I, N/3 
+  DO I =1, N/3
+  DO J =I, N/3
   DO K =1, 3
 
     Ptr => Arr
-    Ptr(I:, J:) => Ptr(N:I:-K, N:J:-K) 
+    Ptr(I:, J:) => Ptr(N:I:-K, N:J:-K)
     IF (.NOT. ASSOCIATED(Ptr,  Arr(N:I:-K, N:J:-K) ))      STOP 11
     IF (ANY( LBOUND(Ptr) .NE. (/I , J/)))                  STOP 12
     IF (ANY( UBOUND(Ptr) .NE. (/(N-I)/K+I, (N-J)/K+J/)))      STOP 13
@@ -86,7 +78,7 @@
       STOP 15
     END SELECT
 
-    Ptr1 => Arr1 
+    Ptr1 => Arr1
     Ptr(I:J, I:J) => Ptr1(N*N::-K)
     IF (.NOT. ASSOCIATED(Ptr))                   STOP 20
     IF (SIZE(Ptr)         .NE. (J-I+1)*(J-I+1))  STOP 21

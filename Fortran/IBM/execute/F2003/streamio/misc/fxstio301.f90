@@ -1,36 +1,30 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fort.* 
-! %COMPOPTS: 
-! %GROUP: fxstio301.f 
+! %PRECMD: rm -f fort.*
+! %COMPOPTS:
+! %GROUP: fxstio301.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio301.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 25, 2003
 !*
 !*  Primary Function Tested    : Impilictly-connected file with stream
-!*                               I/O 
+!*                               I/O
 !*
 !*  Description                : using implicit connection to connect
-!*                               a file to a unit. 
+!*                               a file to a unit.
 !*
 !***********************************************************************
 
 !* Declare and initialize Variables.
-  
+
    integer ios
    integer*1 int1 /127/, int11         !* max value for integer*1
    integer*2 int2 /-128/, int21        !* min value for integer*2
@@ -38,7 +32,7 @@
    integer*8 int8 /1000000000/, int81
 
    real*4  real4 /3.402823E+38/       !* Approximate absolute max
-   real*8  real8 /2.225074D-308/      !* Appoximate absolute nonzero min 
+   real*8  real8 /2.225074D-308/      !* Appoximate absolute nonzero min
    real*16 real16 /1.797693Q+308/     !* Appoximate absolute max
    real*4  real41
    real*8  real81
@@ -72,11 +66,11 @@
       iostat=ios, err=100)
    write(6, iostat=ios, err=200) int1, int2, int4, int8
    rewind(6, iostat=ios, err=500)
-   read (6, iostat=ios, err=400) int11, int21, int41, int81 
+   read (6, iostat=ios, err=400) int11, int21, int41, int81
 
    if ((int1 .ne. int11) .or. (int2 .ne. int21) .or. &
        (int4 .ne. int41) .or. (int8 .ne. int81))  then
-       stop 1 
+       stop 1
    endif
    close(6, status='delete')
 
@@ -89,9 +83,9 @@
    read(6, iostat=ios, err=400) complex81, complex161, complex321
    if ((.not.precision_x8(complex81, (3.4E30, 0.1E-1))) .or. &
        (.not.precision_x6(complex161, (3.4D28, 0.1D-1))) .or. &
-       (.not.precision_x3(complex321, (3.4Q30, 0.1Q-1)))) stop 3 
+       (.not.precision_x3(complex321, (3.4Q30, 0.1Q-1)))) stop 3
 !  if ((complex8 .ne. complex81) .or. (complex16 .ne. complex161) .or. &
-!      (complex32 .ne. complex321))  stop 3 
+!      (complex32 .ne. complex321))  stop 3
    close(6, status='delete')
 
 !* TEST3 : logical
@@ -99,26 +93,26 @@
 !  close(6)
    open(6, access='stream', form='unformatted', action='readwrite', &
       iostat=ios, err=100)
-   write(6, iostat=ios, err=200) log1, log2, log4, log8 
+   write(6, iostat=ios, err=200) log1, log2, log4, log8
    rewind(6, iostat=ios, err=500)
    read(6, iostat=ios, err=400 ) log11, log21, log41, log81
    if ((log11 .neqv. .true.) .or. (log21 .neqv. .false.) .or. &
-      (log41 .neqv. .true.) .or. (log81 .neqv. .false.)) stop 5 
+      (log41 .neqv. .true.) .or. (log81 .neqv. .false.)) stop 5
    close(6, status='delete')
 
 !* TEST6 : byte
 !  close(6)
    open(6, access='stream', form='unformatted', action='readwrite', &
       iostat=ios, err=100)
-   write(6, iostat=ios, err=200) byte1 
+   write(6, iostat=ios, err=200) byte1
    rewind(6, iostat=ios, err=500)
    read(6, iostat=ios, err=400) byte11
-   if (byte1 .ne. byte11) stop 6 
+   if (byte1 .ne. byte11) stop 6
    close(6, status='delete')
 
 stop
 
-100 stop 100 
+100 stop 100
 200 stop 200
 300 stop 300
 400 stop 400

@@ -33,7 +33,6 @@ use m
     end do
 end
 
-
 function getBaseVal (b)
 use m, only: base
     type(base(*)), intent(in) :: b

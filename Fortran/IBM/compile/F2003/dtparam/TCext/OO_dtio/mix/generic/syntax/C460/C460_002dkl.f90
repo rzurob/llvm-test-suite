@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C460_002dkl
 !*
-!*  PROGRAMMER                 : David Forster (derived from C460_002d by Robert Ma)
 !*  DATE                       : 2007-08-13 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures (generic-binding)
 !*                               Syntax Check: C460 Each binding-name in binding-name-list
@@ -41,7 +33,7 @@ module m
          generic :: write(unformatted) => write
          final :: write
    end type
-   
+
    type base2 (kbase2_1) ! kbase2_1=4
       integer, kind :: kbase2_1
       integer(kbase2_1) :: c

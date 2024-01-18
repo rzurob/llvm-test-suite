@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f231.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -79,28 +76,28 @@ call sub1_lg(l1,3)
 if (any (l1 .NEQV. l1_r)) error stop 14
 
 call sub1_dvt(dvt1,3)
-do doCounter=1,SIZEOFA	  
+do doCounter=1,SIZEOFA
 	if (dvt1(doCounter)%i1 		.ne. 	dvt1_r(doCounter)%i1) 			error stop 151
 	if (.not. precision_r4 (dvt1(doCounter)%r1,dvt1_r(doCounter)%r1)) 	error stop 152
-	if (dvt1(doCounter)%l1 		.NEQV. 	dvt1_r(doCounter)%l1) 			error stop 153	
+	if (dvt1(doCounter)%l1 		.NEQV. 	dvt1_r(doCounter)%l1) 			error stop 153
 	if (.not. precision_x8 (dvt1(doCounter)%c1,dvt1_r(doCounter)%c1)) 	error stop 154
 	if (dvt1(doCounter)%char1 	.ne. 	dvt1_r(doCounter)%char1) 		error stop 155
-end do	
+end do
 
 contains
-  
+
 subroutine sub1_int(arg,arg2)
 	integer arg2
     integer*4 :: arg(3*arg2)
 	value arg
 	if (any (arg .ne. i1)) error stop 110
-	
+
 	if (size(arg) .ne. SIZEOFA) error stop 111
 	if ( any(lbound(arg) .ne. 1)) error stop 112
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 113
 	if (rank(arg) .ne. 1) error stop 114
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 115
-	arg = 200	
+	arg = 200
 end subroutine
 
 subroutine sub1_r(arg,arg2)
@@ -109,13 +106,13 @@ subroutine sub1_r(arg,arg2)
 	value arg
 	do doCounter=1,size(arg)
 		if (.not. precision_r4(arg(doCounter),r1(doCounter))) error stop 210
-	end do	
-	
+	end do
+
 	if (size(arg) .ne. SIZEOFA) error stop 211
 	if ( any(lbound(arg) .ne. 1)) error stop 212
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 213
 	if (rank(arg) .ne. 1) error stop 214
-	if (any(shape(arg) .ne. SIZEOFA)) error stop 215	
+	if (any(shape(arg) .ne. SIZEOFA)) error stop 215
 	arg=4*atan(1.0)
 end subroutine
 
@@ -125,28 +122,28 @@ subroutine sub1_com(arg,arg2)
 	value arg
 	do doCounter=1,size(arg)
 		if (.not. precision_x8(arg(doCounter),com1(doCounter))) error stop 310
-	end do	
-	
+	end do
+
 	if (size(arg) .ne. SIZEOFA) error stop 311
 	if ( any(lbound(arg) .ne. 1)) error stop 312
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 313
 	if (rank(arg) .ne. 1) error stop 314
-	if (any(shape(arg) .ne. SIZEOFA)) error stop 315	
+	if (any(shape(arg) .ne. SIZEOFA)) error stop 315
 	arg=(5*atan(1.0),7*atan(1.0))
-end subroutine	
+end subroutine
 
 subroutine sub1_char(arg,arg2)
 	integer arg2
     character(SIZEOFA) :: arg(3*arg2)
 	value arg
-	if (any (arg .ne. c1)) error stop 410	
-	
+	if (any (arg .ne. c1)) error stop 410
+
 	if (size(arg) .ne. SIZEOFA) error stop 411
 	if ( any(lbound(arg) .ne. 1)) error stop 412
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 413
 	if (rank(arg) .ne. 1) error stop 414
-	if (any(shape(arg) .ne. SIZEOFA)) error stop 415	
-	arg = "abcdefghij"	
+	if (any(shape(arg) .ne. SIZEOFA)) error stop 415
+	arg = "abcdefghij"
 end subroutine
 
 subroutine sub1_lg(arg,arg2)
@@ -154,32 +151,32 @@ subroutine sub1_lg(arg,arg2)
     logical :: arg(3*arg2)
 	value arg
 	if (any (arg .NEQV. l1)) error stop 510
-	
+
 	if (size(arg) .ne. SIZEOFA) error stop 511
 	if ( any(lbound(arg) .ne. 1)) error stop 512
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 513
 	if (rank(arg) .ne. 1) error stop 514
-	if (any(shape(arg) .ne. SIZEOFA)) error stop 515	
+	if (any(shape(arg) .ne. SIZEOFA)) error stop 515
 	arg = .false.
-end subroutine	
+end subroutine
 
 subroutine sub1_dvt(arg,arg2)
 	integer arg2
     type(t1) :: arg(3*arg2)
 	value arg
-	do doCounter=1,size(arg)	  
+	do doCounter=1,size(arg)
 		if (arg(doCounter)%i1 		.ne. 	dvt1(doCounter)%i1) 		error stop 601
 		if (.not. precision_r4 (arg(doCounter)%r1,dvt1(doCounter)%r1)) 	error stop 602
-		if (arg(doCounter)%l1 		.NEQV. 	dvt1(doCounter)%l1) 		error stop 603	
+		if (arg(doCounter)%l1 		.NEQV. 	dvt1(doCounter)%l1) 		error stop 603
 		if (.not. precision_x8 (arg(doCounter)%c1,dvt1(doCounter)%c1)) 	error stop 604
 		if (arg(doCounter)%char1 	.ne. 	dvt1(doCounter)%char1) 		error stop 605
-	end do		
-	
+	end do
+
 	if (size(arg) .ne. SIZEOFA) error stop 611
 	if ( any(lbound(arg) .ne. 1)) error stop 612
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 613
 	if (rank(arg) .ne. 1) error stop 614
-	if (any(shape(arg) .ne. SIZEOFA)) error stop 615	
+	if (any(shape(arg) .ne. SIZEOFA)) error stop 615
 	arg	= t1(400,4*atan(1.0),.false.,(3*atan(1.0),7*atan(1.0)),"6pq94jv382")
 end subroutine
 

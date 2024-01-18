@@ -1,17 +1,11 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound_f005a.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : September 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
@@ -32,10 +26,10 @@ program main
 			integer :: n
 		end subroutine
 	end interface
-	
+
 	arr1 = lcobound(caf)
 	arr2 = ucobound(caf)
-	
+
 	if ( any(arr1 .ne. [1,1,1]) ) then
 		print *, arr1
 		error stop 11
@@ -45,9 +39,9 @@ program main
 		error stop 12
 	end if
 	sync all
-	
+
 	call sub1(caf, n)
-	
+
 end
 
 
@@ -56,10 +50,10 @@ subroutine sub1(caf, n)
 	integer(1) :: caf(2,2)[2,1,*]
 	integer :: n
 	integer :: arr1(n), arr2(n)
-	
+
 	arr1 = lcobound(caf)
-	arr2 = ucobound(caf)	
-	
+	arr2 = ucobound(caf)
+
 	if ( any(arr1 .ne. [1,1,1]) ) then
 		print *, arr1
 		error stop 13
@@ -69,6 +63,6 @@ subroutine sub1(caf, n)
 		error stop 14
 	end if
 	sync all
-	
+
 end subroutine
 

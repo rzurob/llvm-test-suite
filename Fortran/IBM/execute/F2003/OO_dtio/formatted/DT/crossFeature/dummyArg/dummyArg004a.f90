@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Argument Association: assumed shape
@@ -95,9 +84,9 @@ use m
    b3 => b2(1:4:3)
 
    call bar ( b3 )
-   allocate ( b3(3), source = (/ child(131, 132), child(133, 134), child(135, 136) /) ) 
+   allocate ( b3(3), source = (/ child(131, 132), child(133, 134), child(135, 136) /) )
    call bar ( b3 )
-   
+
 end program
 
 subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)

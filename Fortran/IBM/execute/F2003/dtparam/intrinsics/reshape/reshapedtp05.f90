@@ -1,29 +1,18 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case IBM INTERNAL USE ONLY
-!* ===================================================================
-!* ===================================================================
-!*
-!* TEST CASE TITLE : Test for DTP with RESHAPE
 !*
 !* TEST CASE NAME : reshapedtp05.f
 !*
 !* CREATED BY : Pooja Dayanand
 !* MODIFIED BY : Andy Sheung
 !* DATE : Jul31, 2008
-!* ORIGIN : AIX Compiler Development, Toronto Lab
 !*
 !* DESCRIPTION:
 !* RESHAPE constructs an array of a specified shape from the elements
 !* of a given array.
 !* CASE:
-!*  05) Applying reshape with PAD and ORDER to DT with integer component with KIND DTP 
+!*  05) Applying reshape with PAD and ORDER to DT with integer component with KIND DTP
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

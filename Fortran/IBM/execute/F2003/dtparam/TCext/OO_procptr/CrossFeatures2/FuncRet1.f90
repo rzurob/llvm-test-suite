@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: FuncRet1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: FuncRet1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRet1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRet1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 28, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Function Return - Derived types 
+!*
+!*  Function Return - Derived types
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -69,8 +63,8 @@
       LOGICAL(K12)  :: L4Arr(1)
       LOGICAL(K13)  :: L8Arr(1)
 
-      CHARACTER(N1) :: CharArr(1) 
-  
+      CHARACTER(N1) :: CharArr(1)
+
     END TYPE
 
   END MODULE
@@ -90,7 +84,7 @@
 
   PROGRAM FuncRet1
   USE M
-  IMPLICIT TYPE(DT(1,2,4,8,4,8,16,8,16,1,2,4,8,3))(P) 
+  IMPLICIT TYPE(DT(1,2,4,8,4,8,16,8,16,1,2,4,8,3))(P)
 
   INTERFACE
     FUNCTION Fun(Arg)
@@ -100,9 +94,9 @@
     END FUNCTION
   END INTERFACE
 
-  PROCEDURE(Fun)                :: ExtFun 
+  PROCEDURE(Fun)                :: ExtFun
   PROCEDURE(Fun),       POINTER :: ProcPtr3
- 
+
   TYPE(DT(1,2,4,8,4,8,16,8,16,1,2,4,8,3)), PARAMETER ::  Const=DT(1,2,4,8,4,8,16,8,16,1,2,4,8,3)(                  &
   &                                                  &
   &                            (/-1_1/),             &
@@ -122,7 +116,7 @@
   &                            (/.TRUE._4/),         &
   &                            (/.TRUE._8/),         &
   &                                                  &
-  &                            (/"abc"/)  )           
+  &                            (/"abc"/)  )
 
 
 
@@ -134,7 +128,7 @@
   CALL IntSub( ProcPtr3(Const), Const)
 
   CONTAINS
-  
+
   SUBROUTINE IntSub(Arg1, Arg2)
   CLASS(DT(1,2,4,8,4,8,16,8,16,1,2,4,8,*)) :: Arg1
   TYPE(DT(1,2,4,8,4,8,16,8,16,1,2,4,8,*))  :: Arg2
@@ -147,13 +141,13 @@
     IF (ANY(Arg1%I4Arr .NE. Arg2%I4Arr)) STOP 14
     IF (ANY(Arg1%I8Arr .NE. Arg2%I8Arr)) STOP 18
 
-    IF (ANY(Arg1%R4Arr  .NE. Arg2%R4Arr))  STOP 24 
-    IF (ANY(Arg1%R8Arr  .NE. Arg2%R8Arr))  STOP 28 
-    IF (ANY(Arg1%R16Arr .NE. Arg2%R16Arr)) STOP 216 
-  
-    IF (ANY(Arg1%C8Arr  .NE. Arg2%C8Arr))  STOP 38 
-    IF (ANY(Arg1%C16Arr .NE. Arg2%C16Arr)) STOP 316 
-  
+    IF (ANY(Arg1%R4Arr  .NE. Arg2%R4Arr))  STOP 24
+    IF (ANY(Arg1%R8Arr  .NE. Arg2%R8Arr))  STOP 28
+    IF (ANY(Arg1%R16Arr .NE. Arg2%R16Arr)) STOP 216
+
+    IF (ANY(Arg1%C8Arr  .NE. Arg2%C8Arr))  STOP 38
+    IF (ANY(Arg1%C16Arr .NE. Arg2%C16Arr)) STOP 316
+
     IF (ANY(Arg1%L1Arr .NEQV. Arg2%L1Arr)) STOP 41
     IF (ANY(Arg1%L2Arr .NEQV. Arg2%L2Arr)) STOP 42
     IF (ANY(Arg1%L4Arr .NEQV. Arg2%L4Arr)) STOP 44

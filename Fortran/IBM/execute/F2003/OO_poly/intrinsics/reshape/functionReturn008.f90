@@ -1,12 +1,7 @@
 !*********************************************************************
-!* =================================================================== 
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!* =================================================================== 
-!* TEST CASE TITLE            : intrinsics/reshape/functionReturn008.f
-!* PROGRAMMER                 : Yong Du
+!* ===================================================================
 !* DATE                       : 11/02/2004
 !* PRIMARY FUNCTIONS TESTED   : reshape
-!* DRIVER STANZA              : xlf90
 !* DESCRIPTION                : SOURCE is the return value of an
 !*                              external function call. Cross testing
 !*                              with finalization.

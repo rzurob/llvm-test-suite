@@ -1,51 +1,43 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_Interface04a
 !*                               DTP - Generic Interface
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
-!*  SECONDARY FUNCTIONS TESTED : Resolution based on KIND type parameter 
+!*  SECONDARY FUNCTIONS TESTED : Resolution based on KIND type parameter
 !*                               for polymorphic objects
 !*                               IMPLICIT mapping
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
 !*  DESCRIPTION                :
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
-        INTEGER((k1-2)/2) :: data  
-      END TYPE Base 
+        INTEGER((k1-2)/2) :: data
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child1 (k2,l2)
-        INTEGER, KIND :: k2 
-        INTEGER, LEN :: l2 
-      END TYPE Child1 
+        INTEGER, KIND :: k2
+        INTEGER, LEN :: l2
+      END TYPE Child1
 
       TYPE, EXTENDS(Base) :: Child2 (k3,l3)
-        INTEGER, KIND :: k3 
-        INTEGER, LEN :: l3 
-        
+        INTEGER, KIND :: k3
+        INTEGER, LEN :: l3
+
         TYPE(Child1(k3-k1,l3,k1,l1)) :: dtv
-      END TYPE Child2 
+      END TYPE Child2
 
       INTERFACE FUNC
          FUNCTION FUNC_kind10(obj)
@@ -80,7 +72,7 @@
 
       FUNCTION FUNC_kind18(obj)
         USE MOD1, Only: Base
-        IMPLICIT CLASS(Base(18,*)) (o) 
+        IMPLICIT CLASS(Base(18,*)) (o)
         IMPLICIT CLASS(Base(18,:)) (f)
         POINTER :: FUNC_kind18
 
@@ -93,16 +85,16 @@
 !*
       PROGRAM Generic_Interface04a
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE(Child2(10,10,20,20)), TARGET :: c_simple
       TYPE(Child2(18,18,36,36)) :: c_double
       TYPE(Base(10,10))  :: b_simple
-      TYPE(Base(18,18))  :: b_double 
+      TYPE(Base(18,18))  :: b_double
 
       CLASS(*), POINTER :: upoly
-      CLASS(Base(10,:)), POINTER  :: bpoly_simple 
-      CLASS(Base(18,:)), POINTER  :: bpoly_double 
+      CLASS(Base(10,:)), POINTER  :: bpoly_simple
+      CLASS(Base(18,:)), POINTER  :: bpoly_double
 
       SELECT TYPE( A=> FUNC(b_double) )
         TYPE IS (Base(18,*))
@@ -125,17 +117,17 @@
         CLASS DEFAULT
           STOP 14
       END SELECT
-      
+
       bpoly_simple => c_simple
-      
+
       SELECT TYPE( A => FUNC(bpoly_simple) )
         CLASS IS (Base(10,*))
           IF (A%data .NE. 10) STOP 15
-      
+
         CLASS DEFAULT
           STOP 16
       END SELECT
-      
+
       SELECT TYPE( a => bpoly_simple )
         CLASS IS (Child2(10,*,20,*))
            ASSOCIATE ( b => FUNC(a%dtv) )
@@ -145,7 +137,7 @@
         CLASS DEFAULT
           STOP 18
       END SELECT
-      
+
       ALLOCATE(bpoly_double, source=c_double)
 
       ASSOCIATE ( A=> FUNC(bpoly_double) )

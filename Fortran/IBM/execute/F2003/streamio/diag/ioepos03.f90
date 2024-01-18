@@ -12,26 +12,19 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : ioepos03.f
 !
-!* PROGRAMMER                   : Helen Li
 !* DATE                         : Oct. 7, 2002
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : stream I/O: READ with POS specifier
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : open a file by 'stream' access
 !*                              : method, write it with invalid POS
 !*                              : specifier, it shouldn't be allowed.
-!*                              :
 !234567890123456789012345678901234567890123456789012345678901234567890
 program ioepos03
 

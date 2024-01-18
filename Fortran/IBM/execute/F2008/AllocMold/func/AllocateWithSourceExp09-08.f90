@@ -1,36 +1,26 @@
 !* ===================================================================
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* 
-!* TEST CASE TITLE            : AllocateWithSourceExp09-08
-!* 
-!* ORIGINAL PROGRAMMER        : Dorra Bouchiha
-!* PROGRAMMER                 : Izhak Jakov
-!* 
+!*
 !* DATE                       : June 2, 2015
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
-!* 
-!* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression 
+!*
+!* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression
 !* SECONDARY FUNCTIONS TESTED :
-!*                              
-!* 
-!* DRIVER STANZA              : xlf2003
-!* REQUIRED COMPILER OPTIONS  : 
-!* 
-!* KEYWORD(S)                 : 
+!*
+!* REQUIRED COMPILER OPTIONS  :
+!*
+!* KEYWORD(S)                 :
 !* TARGET(S)                  :
-!* NUMBER OF TESTS CONDITIONS : 
-!* 
+!* NUMBER OF TESTS CONDITIONS :
+!*
 !* DESCRIPTION                :
-!* 
+!*
 !* Defect 359514
-!* 
+!*
 !* TEST CASE ADAPTED FROM     : $(tsrcdir)/F2003/dtparam/allocate/SourceExp/AllocateWithSourceExp09.f
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithSourceExp09
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
@@ -62,7 +52,7 @@ PROGRAM AllocateWithSourceExp09
         CLASS DEFAULT
             ERROR STOP 101
       END SELECT
-      
+
       SELECT TYPE(c1)
         TYPE IS(Child(4,*,4,*))
            IF(c1%k1 .NE. 4) ERROR STOP 14
@@ -133,6 +123,6 @@ PROGRAM AllocateWithSourceExp09
            ERROR STOP 105
       END SELECT
 
-      DEALLOCATE(b1, c1, d1) 
+      DEALLOCATE(b1, c1, d1)
 
 END PROGRAM AllocateWithSourceExp09

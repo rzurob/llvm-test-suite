@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/diag/polyAssign1008d_conversionNotPermitted.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 07 August 2015
-!* ORIGIN                       : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION
@@ -31,11 +24,11 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-Program polyAssign1008d 
+Program polyAssign1008d
     Type t
       integer :: i = 10
     End Type
-    
+
     Type,Extends(t) :: t2
        !integer :: j = 20
     End Type
@@ -59,7 +52,7 @@ Program polyAssign1008d
 
     x3 = t3()
     print *, 'after x3 = t3(), x3%i=', x3%i
-    
+
     x3 = t3(12, 21)
     print *, 'after x3 = t3(12, 21), x3%i=', x3%i
 
@@ -75,6 +68,6 @@ Program polyAssign1008d
     a = t2() !<--A conversion from type t2 is not permitted.
     print *, 'a%i=', a%i
 
-    b = t2(12)! A conversion from type t2 is not permitted. 
+    b = t2(12)! A conversion from type t2 is not permitted.
     print *, 'b%i=', b%i
 End

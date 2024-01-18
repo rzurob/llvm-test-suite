@@ -1,29 +1,17 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlimitpoly4.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 05/24/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimit polymorphic,
 !*                               keyword FROM/TO provided in a reference to  MOVE_ALLOC
 !*                               FROM/TO is dummy arg
 !*                               FROM/TO has intent, save attribute
 !*                               type LOGICAL
-!*                        
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -37,17 +25,17 @@
 module m
 
     class(*), allocatable :: old1, old2
-  
+
     contains
 
         subroutine sub( arg )
 
             class(*), intent(inout), allocatable :: arg
             class(*), save, allocatable :: new
-    
+
             if ( allocated(new) ) then
                 call move_alloc(new, arg)
-                if ( allocated(new) ) stop 9 
+                if ( allocated(new) ) stop 9
             else
                 if ( allocated(arg) ) stop 10
 
@@ -59,7 +47,7 @@ module m
                 if ( allocated(arg) ) stop 11
                 if ( .not. allocated(new) ) stop 12
             endif
- 
+
         end subroutine
 end module
 
@@ -76,6 +64,6 @@ use m
         type is (logical)
             if ( old2 .neqv. .false.) stop 22
         class default
-            stop 23 
+            stop 23
     end select
 end

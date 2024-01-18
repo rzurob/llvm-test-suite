@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncULPolyAlloc.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncULPolyAlloc.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : FuncULPolyAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 14, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,26 +30,26 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a function call returning an unlimited poly allocatable 
-!*   
-!*    (299787) 
+!*    The selector is a function call returning an unlimited poly allocatable
+!*
+!*    (299787)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
     TYPE :: Base
-      INTEGER :: BaseID=1 
+      INTEGER :: BaseID=1
     END TYPE
 
     TYPE, EXTENDS(Base) :: Child
-      TYPE(Base) :: BS=Base(0) 
+      TYPE(Base) :: BS=Base(0)
       CLASS(Base), POINTER :: BSPtr=>NULL()
-      INTEGER :: ChildID=2 
+      INTEGER :: ChildID=2
     END TYPE
 
   CONTAINS
-   
+
     FUNCTION ReturnObj(Arg)
     TYPE (Child) :: Arg
     CLASS (Base), ALLOCATABLE  :: ReturnObj
@@ -68,7 +62,7 @@
   USE M
   IMPLICIT NONE
   INTEGER :: i
-  TYPE(Child), TARGET :: V=Child(BaseID=-1, ChildID=-2) 
+  TYPE(Child), TARGET :: V=Child(BaseID=-1, ChildID=-2)
 
   ASSOCIATE ( As => TRANSFER(ReturnObj(V), ReturnObj(V)) )
 
@@ -84,7 +78,7 @@
       END ASSOCIATE
 
     CLASS DEFAULT
-      STOP 88 
+      STOP 88
     END SELECT
 
   END ASSOCIATE

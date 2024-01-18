@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f210.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -64,7 +61,7 @@ call sub31_int((/ 100,100,100,100/),(/ 100,100,100,100/))
 call sub32_int((/ 100,100,100,100/),(/ 100,100,100,100/))
 
 contains
-  
+
 subroutine sub1_int(arg)
     integer*4 :: arg(:)
 	value arg
@@ -100,7 +97,7 @@ subroutine sub1_com(arg)
 	if ( any(ubound(arg) .ne. 4)) 	error stop 33
 	if (rank(arg) .ne. 1) 			error stop 34
 	if (any(shape(arg) .ne. 4)) 	error stop 35
-end subroutine	
+end subroutine
 
 subroutine sub1_char(arg)
     character(10) :: arg(:)
@@ -122,15 +119,15 @@ subroutine sub1_lg(arg)
 	if ( any(ubound(arg) .ne. 4)) 	error stop 53
 	if (rank(arg) .ne. 1) 			error stop 54
 	if (any(shape(arg) .ne. 4)) 	error stop 55
-end subroutine	
+end subroutine
 
 subroutine sub1_dvt(arg)
     type(t1) :: arg(:)
 	value arg
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (arg(doCounter)%i1 		.ne. 	dvt1_r(doCounter)%i1) 			error stop 6001
 		if (.not. precision_r4 (arg(doCounter)%r1,dvt1_r(doCounter)%r1)) 	error stop 6002
-		if (arg(doCounter)%l1 		.NEQV. 	dvt1_r(doCounter)%l1) 			error stop 6003	
+		if (arg(doCounter)%l1 		.NEQV. 	dvt1_r(doCounter)%l1) 			error stop 6003
 		if (.not. precision_x8 (arg(doCounter)%c1,dvt1_r(doCounter)%c1)) 	error stop 6004
 		if (arg(doCounter)%char1 	.ne. 	dvt1_r(doCounter)%char1) 		error stop 6005
 	end do
@@ -138,7 +135,7 @@ subroutine sub1_dvt(arg)
 	if ( any(lbound(arg) .ne. 1)) 	error stop 62
 	if ( any(ubound(arg) .ne. 4)) 	error stop 63
 	if (rank(arg) .ne. 1) 			error stop 64
-	if (any(shape(arg) .ne. 4)) 	error stop 65	
+	if (any(shape(arg) .ne. 4)) 	error stop 65
 end subroutine
 
 ! checking other invocations of dummy argument
@@ -185,7 +182,7 @@ subroutine sub21_int(arg,n)
 	if ( any(lbound(arg) .ne. 1)) 	error stop 212
 	if ( any(ubound(arg) .ne. 4)) 	error stop 213
 	if (rank(arg) .ne. 1) 			error stop 214
-	if (any(shape(arg) .ne. 4)) 	error stop 215	
+	if (any(shape(arg) .ne. 4)) 	error stop 215
 end subroutine
 
 subroutine sub22_int(arg)
@@ -196,7 +193,7 @@ subroutine sub22_int(arg)
 	if ( any(lbound(arg) .ne. 1)) 	error stop 222
 	if ( any(ubound(arg) .ne. 4)) 	error stop 223
 	if (rank(arg) .ne. 1) 			error stop 224
-	if (any(shape(arg) .ne. 4)) 	error stop 225	
+	if (any(shape(arg) .ne. 4)) 	error stop 225
 end subroutine
 
 subroutine sub23_int(arg)
@@ -207,7 +204,7 @@ subroutine sub23_int(arg)
 	if ( any(lbound(arg) .ne. 1)) 	error stop 232
 	if ( any(ubound(arg) .ne. 4)) 	error stop 233
 	if (rank(arg) .ne. 1) 			error stop 234
-	if (any(shape(arg) .ne. 4)) 	error stop 235	
+	if (any(shape(arg) .ne. 4)) 	error stop 235
 end subroutine
 
 subroutine sub24_int(arg)
@@ -218,7 +215,7 @@ subroutine sub24_int(arg)
 	if ( any(lbound(arg) .ne. 1)) 	error stop 242
 	if ( any(ubound(arg) .ne. 4)) 	error stop 243
 	if (rank(arg) .ne. 1) 			error stop 244
-	if (any(shape(arg) .ne. 4)) 	error stop 245	
+	if (any(shape(arg) .ne. 4)) 	error stop 245
 end subroutine
 
 subroutine sub31_int(arg,arg2)
@@ -230,7 +227,7 @@ subroutine sub31_int(arg,arg2)
 	if ( any(lbound(arg) .ne. 1)) 	error stop 312
 	if ( any(ubound(arg) .ne. 4)) 	error stop 313
 	if (rank(arg) .ne. 1) 			error stop 314
-	if (any(shape(arg) .ne. 4)) 	error stop 315	
+	if (any(shape(arg) .ne. 4)) 	error stop 315
 end subroutine
 
 subroutine sub32_int(arg,arg2)
@@ -242,7 +239,7 @@ subroutine sub32_int(arg,arg2)
 	if ( any(lbound(arg) .ne. 1)) 	error stop 322
 	if ( any(ubound(arg) .ne. 4)) 	error stop 323
 	if (rank(arg) .ne. 1) 			error stop 324
-	if (any(shape(arg) .ne. 4)) 	error stop 325	
+	if (any(shape(arg) .ne. 4)) 	error stop 325
 end subroutine
 
 end

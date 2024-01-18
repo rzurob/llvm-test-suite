@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : ofsk06f.f
 !*
-!*  PROGRAMMER                 : Jin Li
 !*  DATE                       : 2010-09-30
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 Omit FUNCTION and SUBROUTINE Keywords
 !*  REFERENCE                  : Feature Number 376084
@@ -15,7 +11,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  Two internal subroutines both are terminated by "END" 
+!*  Two internal subroutines both are terminated by "END"
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -33,13 +29,13 @@ C***********************************************************************
       integer  i5(5),i312(-2:0,1,2),i5b(5)
       integer, target :: Arg2t(-2:0,1,2)
 
-      integer,parameter :: p_i6(-7:-5,0:1) = 
+      integer,parameter :: p_i6(-7:-5,0:1) =
      + RESHAPE( (/ 1,2,3,4,5,7 /), (/ 3,2 /) )
 
       character*7 h32(3,2)
       character*5 h5(-2:2)
 
-       
+
 C***********************************************************************
 C*
 C*   Test A: Integer Arguments
@@ -54,7 +50,7 @@ C***********************************************************************
       CASENUM = 10
       i5 = (/ 1,2,3,4,5 /)
       i312 = RESHAPE( (/ 1,2,3,4,5,6 /), (/ 3,1,2 /) )
-      start = -2 
+      start = -2
       stop = 2
       CALL SUB1( i5,i312 )
       IF (
@@ -79,7 +75,7 @@ C***********************************************************************
       CASENUM = 20
       i5 = (/ 5,4,3,2,1 /)
       i312 = RESHAPE( (/ 3,2,1,6,5,4 /), (/ 3,1,2 /) )
-      start = -2 
+      start = -2
       stop = 2
       CALL SUB1( i5(5:1:-1),
      +i312(ubound(i312,1):lbound(i312,1):-1,:,:) )
@@ -105,7 +101,7 @@ C***********************************************************************
       CASENUM = 30
       i5 = (/ 1,5,2,4,3 /)
       i312 = RESHAPE( (/ 1,3,2,4,6,5 /), (/ 3,1,2 /) )
-      start = -2 
+      start = -2
       stop = 2
       CALL SUB1( i5((/1,3,5,4,2/)),
      +i312((/-2,0,-1/),(/1/),(/1,2/)) )
@@ -124,9 +120,9 @@ C***********************************************************************
       !- Array Constructors As Actual Arguments
       !
       CASENUM = 40
-      start = -2 
+      start = -2
       stop = 2
-      CALL SUB1( (/ 1,2,3,4,5 /), 
+      CALL SUB1( (/ 1,2,3,4,5 /),
      + RESHAPE( (/ 1,2,3,4,5,6 /), (/ 3,1,2 /) ) )
 
 C***********************************************************************
@@ -146,14 +142,14 @@ C***********************************************************************
       h5 = (/ 'aaaaa','bbbbb','ccccc','ddddd','eeeee' /)
       h32 = RESHAPE( (/ 'a1a2a3a','b1b2b3b','c1c2c3c',
      + 'd1d2d3d','e1e2e3e','f1f2f3f' /), (/ 3,2 /) )
- 
+
       CALL sub2( h5, h32 )
       IF (
      +( h5( 2) .NE. 'eeeee' ) .OR.
      +( h5( 1) .NE. 'ddddd' ) .OR.
      +( h5( 0) .NE. 'ccccc' ) .OR.
      +( h5(-1) .NE. 'bbbbb' ) .OR.
-     +( h5(-2) .NE. 'aaaaa' ) ) 
+     +( h5(-2) .NE. 'aaaaa' ) )
      +CALL ZZRC( CASENUM )
       IF (
      +( h32(1,1) .NE. 'aaaaa  ' ) .OR.
@@ -171,14 +167,14 @@ C***********************************************************************
       h5 = (/ 'eeeee','ddddd','ccccc','bbbbb','aaaaa' /)
       h32 = RESHAPE( (/ 'a1a2a3a','b1b2b3b','c1c2c3c',
      + 'd1d2d3d','e1e2e3e','f1f2f3f' /), (/ 3,2 /) )
- 
+
       CALL sub2( h5(2:-2:-1), h32(:,:) )
       IF (
      +( h5( 2) .NE. 'aaaaa' ) .OR.
      +( h5( 1) .NE. 'bbbbb' ) .OR.
      +( h5( 0) .NE. 'ccccc' ) .OR.
      +( h5(-1) .NE. 'ddddd' ) .OR.
-     +( h5(-2) .NE. 'eeeee' ) ) 
+     +( h5(-2) .NE. 'eeeee' ) )
      +CALL ZZRC( CASENUM )
       IF (
      +( h32(1,1) .NE. 'aaaaa  ' ) .OR.
@@ -196,7 +192,7 @@ C***********************************************************************
       h5 = (/ 'aaaaa','bbbbb','ccccc','ddddd','eeeee' /)
       h32 = RESHAPE( (/ 'a1a2a3a','b1b2b3b','c1c2c3c',
      + 'd1d2d3d','e1e2e3e','f1f2f3f' /), (/ 3,2 /) )
- 
+
       CALL sub2( (/ 'aaaaa','bbbbb','ccccc','ddddd','eeeee' /),
      +h32 )
 
@@ -215,7 +211,7 @@ C*   SUBROUTINE OF INTEGER ARGUMENTS
 C*
 C***********************************************************************
 
-      ! 
+      !
       !-  Explicit Shape Subroutine
       !
       subroutine sub1( arg1, arg2 )
@@ -224,9 +220,9 @@ C***********************************************************************
          integer test(6)
          !
          !- start, stop are host associated
-         !  
+         !
          integer hosttest(start:stop)
-  
+
          if (
      +   ( arg1(-2) .NE. 1 ) .OR.
      +   ( arg1(-1) .NE. 2 ) .OR.
@@ -261,7 +257,7 @@ C***********************************************************************
      +   ( test(5) .NE. 3 ) .OR.
      +   ( test(6) .NE. 6 ) )
      +   CALL ZZRC( CASENUM )
-         
+
          !
          !- Try Constructor of dummy argument
          !
@@ -276,7 +272,7 @@ C***********************************************************************
      +   ( test(5) .NE. 3 ) .OR.
      +   ( test(6) .NE. 6 ) )
      +   CALL ZZRC( CASENUM )
-         
+
          !
          !- Try Constructor of dummy argument
          !
@@ -291,7 +287,7 @@ C***********************************************************************
      +   ( test(5) .NE. 5 ) .OR.
      +   ( test(6) .NE. 6 ) )
      +   CALL ZZRC( CASENUM )
-         
+
          !
          !- Try Section of dummy arg
          !
@@ -306,7 +302,7 @@ C***********************************************************************
      +   ( test(5) .NE. 3 ) .OR.
      +   ( test(6) .NE. 3 ) )
      +   CALL ZZRC( CASENUM )
-         
+
          !
          !- Try Section of dummy arg
          !
@@ -363,8 +359,8 @@ C***********************************************************************
          arg1 = arg1 + 1
          arg2 = arg2 + 1
 
-      end 
- 
+      end
+
 C***********************************************************************
 C*
 C*   SUBROUTINE OF character ARGUMENTS
@@ -403,7 +399,7 @@ C***********************************************************************
          !
          CASENUM = CASENUM + 1
          test = '          '
-         test = (/ Arg1 // 'hello' /) 
+         test = (/ Arg1 // 'hello' /)
          IF (
      +   ( TEST(1) .NE. 'aaaaahello' ) .OR.
      +   ( TEST(2) .NE. 'bbbbbhello' ) .OR.
@@ -413,7 +409,7 @@ C***********************************************************************
      +   CALL ZZRC( CASENUM )
 
          !
-         !- Use Sections 
+         !- Use Sections
          !
          CASENUM = CASENUM + 1
          test = '          '
@@ -422,7 +418,7 @@ C***********************************************************************
          !
          test = (/ Arg1(:3) //
      +   (/  Arg2(900:902:2,2:3)(chlen-4:chlen) /),
-     +   'fifthfifth' /) 
+     +   'fifthfifth' /)
          IF (
      +   ( TEST(1) .NE. 'aaaaaa2a3a' ) .OR.
      +   ( TEST(2) .NE. 'bbbbbc2c3c' ) .OR.
@@ -445,12 +441,12 @@ C***********************************************************************
      +   ( hosttest( 0, 0) .NE. 'e1e2e3e' ) .OR.
      +   ( hosttest( 1, 0) .NE. 'f1f2f3f' ) )
      +   CALL ZZRC( CASENUM )
-         
+
          CASENUM = CASENUM + 1
          Arg2 = RESHAPE((/ Arg1 // '  ', Arg2(902,3) /),
      +    (/ 3,2 /))
 
-      end 
+      end
 
       end
 

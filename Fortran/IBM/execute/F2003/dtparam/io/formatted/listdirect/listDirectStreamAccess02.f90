@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectStreamAccess02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectStreamAccess02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 21 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 21 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test read statement with list directed IO with stream access
@@ -43,8 +35,8 @@ module m2
   use m1
   type C(k3)
     integer,kind :: k3=4
-   
-    complex(k3)  :: x1=(0.0,0.0) 
+
+    complex(k3)  :: x1=(0.0,0.0)
     integer(k3)  :: i1=-99
   end type
 
@@ -55,7 +47,7 @@ module m2
     complex(k4)  :: x2(l4)=(0.0,0.0)
     type(B(k4/2,l4*l4-1)) :: b1comp
     type(C(k4/2))  :: c1comp
- 
+
   end type
 
   contains
@@ -83,13 +75,13 @@ end module
 
 program listDirectStreamAccess02
 use m2
- 
+
    integer :: ios
    character(256) :: msg
    logical,external :: precision_x6,precision_x8,precision_r4
- 
-   ! tar has default parameter and component value 
-   type(D),target  :: tar 
+
+   ! tar has default parameter and component value
+   type(D),target  :: tar
    type(D(8,:)),pointer :: ptr=>null()
 
    ptr=>tar
@@ -115,7 +107,7 @@ use m2
    !; ; IBM ;
    !(1.2E-10,1.2) , -1234
 
-   call read(ptr,10)        
+   call read(ptr,10)
 
    !verify the results
    if(.not. precision_x6(ptr%x2(1),(-3.5_8,4.2_8) ))          stop 11
@@ -128,7 +120,6 @@ use m2
    if(.not. precision_x8(ptr%c1comp%x1,(1.2E-10,1.2) ))       stop 18
    if(ptr%c1comp%i1 /= -1234)                                 stop 19
 
+   close(10)
 
-   close(10)    
-             
 end program

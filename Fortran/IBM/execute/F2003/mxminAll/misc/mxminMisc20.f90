@@ -1,37 +1,25 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAXVAL/MINVAL with zero-sized array
-!*              
 !*
 !* ===================================================================
 
-program mxminMisc20 
+program mxminMisc20
 
    type dt
      character*2 zz(3:-1, 4:2, 9:2)
-   end type 
+   end type
 
    character*(5)   x1_arr(3:1), x2_arr(1:0, 4:3), x3_arr(2:1,4:2,7:3)
    character*5     v1, v2
 
-   type(dt) :: obj 
+   type(dt) :: obj
 
    v1 = 'sssss'
    v2 = 'sssss'
@@ -46,7 +34,7 @@ program mxminMisc20
    if(ichar(v2) .ne. 127) then
         error stop 2_4
    endif
-  
+
    if(len(maxval(x1_arr)) .ne. 5) then
         error stop 3_4
    endif
@@ -58,7 +46,7 @@ program mxminMisc20
    v1 = 'xxxxx'
    v2 = 'xxxxx'
 
-   v1 = maxval(x2_arr) 
+   v1 = maxval(x2_arr)
    v2 = minval(x2_arr)
 
    if(ichar(v1) .ne. 0) then
@@ -81,7 +69,7 @@ program mxminMisc20
    v2 = 'hhhhh'
 
    v1 = maxval(x3_arr)
-   v2 = minval(x3_arr) 
+   v2 = minval(x3_arr)
 
    if(ichar(v1) .ne. 0) then
         error stop 9_4
@@ -115,5 +103,5 @@ program mxminMisc20
       error stop 16_4
    endif
 
-end program mxminMisc20 
+end program mxminMisc20
 

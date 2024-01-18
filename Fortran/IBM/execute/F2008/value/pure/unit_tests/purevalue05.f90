@@ -1,17 +1,12 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue05.f
-!*  TEST CASE TITLE : F2008: VALUE attr allowed for dummy args of PURE proc
-!*  PROGRAMMER      : Gaby Baghdadi
 !*  DATE            : 2010-12-01
-!*  ORIGIN          : XL Fortran Compiler Development, IBM Torolab
 !*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
-!*  - same as purevalue04.f, except dummy args that are declared with value 
+!*  - same as purevalue04.f, except dummy args that are declared with value
 !*    attribute are also declared as intent(in); same behavior is expected
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890123456789

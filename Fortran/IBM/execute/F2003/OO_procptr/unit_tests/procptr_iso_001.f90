@@ -9,7 +9,7 @@
        end interface
 
        type(c_funptr) :: aaa
-       real mmm, nnn 
+       real mmm, nnn
        type dd
          procedure(real), nopass, pointer :: pp1
          procedure(real), nopass, pointer :: pp2
@@ -23,10 +23,10 @@
 
        mmm = ddobj%pp1()
        nnn = ddobj%pp2()
-       
-       if (mmm .ne. nnn) stop 11 
+
+       if (mmm .ne. nnn) stop 11
        end
-       
+
        real function foo()
           foo = 1.34
        end function

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_7
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 02, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
 !*  -- A reference to any other standard intrinsic function where each argument
 !*     is a restricted expression
-!*    MAXVAL/MINVAL 
+!*    MAXVAL/MINVAL
 !*
-!*  (340649) 
+!*  (340649)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -49,10 +42,10 @@
   CONTAINS
 
   SUBROUTINE ModSub(T1)
-  TYPE(DT(K=4,          L=*)) :: T1(:)  
+  TYPE(DT(K=4,          L=*)) :: T1(:)
 
-  TYPE(DT(4,     L=MAXVAL(ICHAR(T1%C),   1)))  :: T2(SIZE(T1)) 
-  TYPE(DT(4,     L=MINVAL([len(T1%C),99], 1)))  :: T3(SIZE(T1))  
+  TYPE(DT(4,     L=MAXVAL(ICHAR(T1%C),   1)))  :: T2(SIZE(T1))
+  TYPE(DT(4,     L=MINVAL([len(T1%C),99], 1)))  :: T3(SIZE(T1))
 
   IF ( T1%K               .NE.   4          )     STOP 11
   IF ( T1%L               .NE.   1          )     STOP 12

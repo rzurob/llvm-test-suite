@@ -1,9 +1,7 @@
 !#######################################################################
-! SCCS ID Information
 ! OO_dtio/unformatted/section9.5.2/write/dummyArg003a.f, xlftest.OO_dtio, tstdev, 1.1
 ! Extract Date/Time: 05/02/17 14:27:58
 ! Checkin Date/Time: 04/12/03 18:06:11
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +16,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try output item to be an unlimited polymorphic array
@@ -131,7 +118,7 @@ program dummyArg003a
    call myWrite2 (1, stat, msg, 160, b3(1,1:2) )
    call myWrite2 (1, stat, msg, 140, b4((/2,4,3/)) )
 
-  
+
    read (1, iostat=stat, iomsg=msg, pos=60  )              c2
    read (1, iostat=stat, iomsg=msg, pos=1   )              c4
 

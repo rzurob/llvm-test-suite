@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDefSyntax3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 28, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*  Many type parameters 
-!*
-!*
+!*  Many type parameters
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamTypeDefSyntax3 
-  
+  PROGRAM dtParamTypeDefSyntax3
+
   TYPE :: DT1(   &
     & K1, &
     & K2, &
@@ -66,7 +58,7 @@
     & K29, &
     & K30, &
     & K31, &
-    & K32  )  
+    & K32  )
 
     INTEGER, KIND :: K1
     INTEGER, KIND :: K2
@@ -100,10 +92,10 @@
     INTEGER, KIND :: K30
     INTEGER, KIND :: K31
     INTEGER, KIND :: K32
-    
+
   END TYPE
 
-  
+
   TYPE :: DT2(   &
     & L1, &
     & L2, &
@@ -170,7 +162,7 @@
     INTEGER, LEN :: L30
     INTEGER, LEN :: L31
     INTEGER, LEN :: L32
-    
+
   END TYPE
 
   TYPE (DT1 (          &
@@ -197,41 +189,41 @@
   IF ( T1%K2 .NE. 2 .OR. T2%L2 .NE. 2 ) STOP 12
   IF ( T1%K3 .NE. 4 .OR. T2%L3 .NE. 4 ) STOP 13
   IF ( T1%K4 .NE. 8 .OR. T2%L4 .NE. 8 ) STOP 14
- 
+
   IF ( T1%K5 .NE. 1 .OR. T2%L5 .NE. 1 ) STOP 21
   IF ( T1%K6 .NE. 2 .OR. T2%L6 .NE. 2 ) STOP 22
   IF ( T1%K7 .NE. 4 .OR. T2%L7 .NE. 4 ) STOP 23
   IF ( T1%K8 .NE. 8 .OR. T2%L8 .NE. 8 ) STOP 24
- 
+
   IF ( T1%K9  .NE. 1 .OR. T2%L9  .NE. 1 ) STOP 31
   IF ( T1%K10 .NE. 2 .OR. T2%L10 .NE. 2 ) STOP 32
   IF ( T1%K11 .NE. 4 .OR. T2%L11 .NE. 4 ) STOP 33
   IF ( T1%K12 .NE. 8 .OR. T2%L12 .NE. 8 ) STOP 34
- 
+
   IF ( T1%K13 .NE. 1 .OR. T2%L13 .NE. 1 ) STOP 41
   IF ( T1%K14 .NE. 2 .OR. T2%L14 .NE. 2 ) STOP 42
   IF ( T1%K15 .NE. 4 .OR. T2%L15 .NE. 4 ) STOP 43
   IF ( T1%K16 .NE. 8 .OR. T2%L16 .NE. 8 ) STOP 44
- 
+
   IF ( T1%K17 .NE. 1 .OR. T2%L17 .NE. 1 ) STOP 51
   IF ( T1%K18 .NE. 2 .OR. T2%L18 .NE. 2 ) STOP 52
   IF ( T1%K19 .NE. 4 .OR. T2%L19 .NE. 4 ) STOP 53
   IF ( T1%K20 .NE. 8 .OR. T2%L20 .NE. 8 ) STOP 54
- 
+
   IF ( T1%K21 .NE. 1 .OR. T2%L21 .NE. 1 ) STOP 61
   IF ( T1%K22 .NE. 2 .OR. T2%L22 .NE. 2 ) STOP 62
   IF ( T1%K23 .NE. 4 .OR. T2%L23 .NE. 4 ) STOP 63
   IF ( T1%K24 .NE. 8 .OR. T2%L24 .NE. 8 ) STOP 64
- 
+
   IF ( T1%K25 .NE. 1 .OR. T2%L25 .NE. 1 ) STOP 71
   IF ( T1%K26 .NE. 2 .OR. T2%L26 .NE. 2 ) STOP 72
   IF ( T1%K27 .NE. 4 .OR. T2%L27 .NE. 4 ) STOP 73
   IF ( T1%K28 .NE. 8 .OR. T2%L28 .NE. 8 ) STOP 74
- 
+
   IF ( T1%K29 .NE. 1 .OR. T2%L29 .NE. 1 ) STOP 81
   IF ( T1%K30 .NE. 2 .OR. T2%L30 .NE. 2 ) STOP 82
   IF ( T1%K31 .NE. 4 .OR. T2%L31 .NE. 4 ) STOP 83
   IF ( T1%K32 .NE. 8 .OR. T2%L32 .NE. 8 ) STOP 84
- 
+
   END
 

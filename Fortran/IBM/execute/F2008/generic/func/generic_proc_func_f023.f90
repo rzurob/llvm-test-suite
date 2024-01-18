@@ -1,21 +1,13 @@
-!######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/generic/func/generic_proc_ffunc_f023.f
 !*  TYPE                       : Functional test
 !*  FEATURE                    : #917301 F2008: Generic resolution extensions
 !*  RTC Master Story           : 17301: F2008: Generic resolution extensions (master story)
 !*                               https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/17301
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 29 June 2012
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               :
 !*
@@ -68,8 +60,8 @@ contains
          procedure(type(base)) :: x
          class(Base), intent(inout) :: dt_var
          type (Base) :: z(10)
-     
-         z%i = dt_var%i 
+
+         z%i = dt_var%i
          z  = x(z)
          dt_var%i = sum(z%i) - 4
          print *, "   inside proc_fsub()"

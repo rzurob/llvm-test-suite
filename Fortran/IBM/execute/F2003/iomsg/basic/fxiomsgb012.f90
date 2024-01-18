@@ -5,44 +5,34 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgb012.f
 ! %VERIFY: fort.18:fxiomsgb012.vf
-! %STDIN: 
-! %STDOUT: 
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
 
-
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : OPEN file again with different unit number.
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
-!*  PRIMARY FUNCTIONS TESTED   : OPEN 
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  ORIGIN                     : AIX Compiler Development,
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  PRIMARY FUNCTIONS TESTED   : OPEN
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 1
 !*
 !*  DESCRIPTION                : A file is created and connected to a unit, then
-!*                               open again with a different unit number, this 
+!*                               open again with a different unit number, this
 !*                               will cause an recoverable I/O  error.
-!*
 !*
 !*  TEST CONDITIONS            : 1) Create and connect a file to one unit, then
 !*                                  open again with another unit number.
-!*                               
-!*                              
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*  MM/DD/YY:  Init:  Comments:
@@ -50,11 +40,9 @@
 !*
 !*********************************************************************
 
-
       program fxiomsgb012
 
       implicit none
-
 
       integer*4       ios
 
@@ -62,15 +50,12 @@
 
       character*300   errmsg
 
-
-
 !
 ! Initialize Return Code routine to SUCCESS...
 !
 
       case_id = 0
       call zzrc( case_id )
-
 
 !
 ! TestCase 1..
@@ -84,7 +69,7 @@
     & 'FORMATTED', err = 10, iostat = ios, iomsg = errmsg )
 
       call zzrc( case_id )
-      
+
 10    write ( 18, * ) errmsg
 
       if (ios .ne.24) error stop 1000

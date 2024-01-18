@@ -27,7 +27,7 @@ integer :: j3(3) = maxloc(reshape((/'aa', 'cc', 'cc', 'bb', 'aa', 'cc', 'bb', 'a
 
 integer :: j4(3) = maxloc(reshape((/'a', 'b', 'c', 'b', 'a', 'b', 'c', 'b'/), (/2,2,2/)), &
                           reshape((/.true., .true., .false., .true., &
-                                    .true., .true., .true., .true./), (/2,2,2/)), & 
+                                    .true., .true., .true., .true./), (/2,2,2/)), &
                           back = .true.)
 
 integer :: j5(3) = maxloc(reshape((/'a', 'b', 'c', 'b', 'a', 'b', 'c', 'b'/), (/2,2,2/)), &
@@ -56,7 +56,7 @@ integer :: j10(2,2) = maxloc(reshape((/'a', 'c', 'b', 'c', 'a', 'c', 'b', 'c'/),
                              2, back = .true.)
 
 integer :: j11(2,2) = maxloc(reshape((/'a', 'c', 'b', 'c', 'a', 'c', 'b', 'c'/), (/2,2,2/)), &
-                             2, back = .false.) 
+                             2, back = .false.)
 
 integer :: j12(2,2) = maxloc(reshape((/'a', 'c', 'b', 'c', 'a', 'c', 'b', 'c'/), (/2,2,2/)), 2, &
                              reshape((/.true., .true., .false., .true., &
@@ -66,8 +66,8 @@ integer :: j12(2,2) = maxloc(reshape((/'a', 'c', 'b', 'c', 'a', 'c', 'b', 'c'/),
 integer :: j13(2,2) = maxloc(reshape((/'a', 'c', 'b', 'c', 'a', 'c', 'b', 'c'/), (/2,2,2/)), 1, &
                              reshape((/.true., .true., .false., .true., &
                                        .true., .true., .true., .true./), (/2,2,2/)), &
-                             back =.false.)  
-                         
+                             back =.false.)
+
 integer :: j14(2,2) = maxloc(reshape((/'a', 'c', 'c', 'b', 'a', 'c', 'c', 'b'/), (/2,2,2/)), 1, &
                              .true., 4, .true.)
 

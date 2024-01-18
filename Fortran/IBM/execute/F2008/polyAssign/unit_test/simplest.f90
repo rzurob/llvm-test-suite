@@ -6,8 +6,8 @@ Program test
      integer :: j=2
     End Type
     Class(t),allocatable:: x
-    allocate (x,source=t()) 
+    allocate (x,source=t())
     !x=t()
     print *, x%i
-   
+
 End

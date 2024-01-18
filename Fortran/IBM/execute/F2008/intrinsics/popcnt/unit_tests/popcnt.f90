@@ -48,4 +48,4 @@
        if (res10 /= 7) error stop 10
        if (res11 /= 11) error stop 11
 
-       end 
+       end

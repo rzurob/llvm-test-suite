@@ -4,7 +4,7 @@
 ! %PRECMD:
 ! %COMPOPTS: -qstrict
 ! %GROUP:  rem01.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT: rem01.out
 ! %EXECARGS:
@@ -13,20 +13,13 @@
 !**********************************************************************
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : IEEE Modules -- ieee_rem
-!*
-!*  PROGRAMMER                 : Rafik Zurob
 !*  DATE                       : August, 2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ieee_rem 
+!*  PRIMARY FUNCTIONS TESTED   : ieee_rem
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -46,21 +39,21 @@
       real*4,  parameter :: RINF = z"7f800000"
       real*8,  parameter :: DINF = z"7ff0000000000000"
       real*16, parameter :: QINF = z"fff00000000000000000000000000000"
-      
+
       real*4,  parameter :: RNANQ = z"7ff00000"
       real*8,  parameter :: DNANQ = z"fff8000000000000"
       real*16, parameter :: QNANQ = z"fff80000000000000000000000000000"
 
 
       call ieee_set_flag(ieee_all, .false.)
-      
+
       xr = RINF
       yr = 2.0
       yr = ieee_rem(xr,yr)
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yr
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xr = 2.0
@@ -70,7 +63,7 @@
       print *, val
       print *, yr
       print *, ""
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xr = 0.0
@@ -79,7 +72,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yr
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xr = 2.0
@@ -89,7 +82,7 @@
       print *, val
       print *, yr
       print *, ""
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xr = RNANQ
@@ -98,7 +91,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yr
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xr = RNANQ
@@ -107,7 +100,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yr
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xr = 2.0
@@ -117,7 +110,7 @@
       print *, val
       print *, yr
       print *, ""
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xr = RINF
@@ -126,7 +119,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yr
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xr = 0.0
@@ -136,7 +129,7 @@
       print *, val
       print *, yr
       print *, ""
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xr = RNANQ
@@ -145,7 +138,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yr
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xr = RNANQ
@@ -154,7 +147,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yr
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xr = RINF
@@ -163,7 +156,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yr
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xr = 0.0
@@ -173,10 +166,10 @@
       print *, val
       print *, yr
       print *, ""
-      
+
       ! Test real*8 x, real*8 y
       print *, "(real*8 x, real*8 y)"
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = DINF
@@ -185,7 +178,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yd
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = 2.0
@@ -195,7 +188,7 @@
       print *, val
       print *, yd
       print *, ""
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = 0.0
@@ -204,7 +197,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yd
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = 2.0
@@ -214,7 +207,7 @@
       print *, val
       print *, yd
       print *, ""
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = DNANQ
@@ -223,7 +216,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yd
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = DNANQ
@@ -232,7 +225,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yd
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = 2.0
@@ -242,7 +235,7 @@
       print *, val
       print *, yd
       print *, ""
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = DINF
@@ -251,7 +244,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yd
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = 0
@@ -261,7 +254,7 @@
       print *, val
       print *, yd
       print *, ""
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = DNANQ
@@ -270,7 +263,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yd
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = DNANQ
@@ -279,7 +272,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yd
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = DINF
@@ -288,7 +281,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yd
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xd = 0.0
@@ -301,7 +294,7 @@
 
       ! Test real*16 x, real*16 y
       print *, "(real*16 x, real*16 y)"
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = QINF
@@ -310,7 +303,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yq
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = 2.0
@@ -320,7 +313,7 @@
       print *, val
       print *, yq
       print *, ""
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = 0.0
@@ -329,7 +322,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yq
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = 2.0
@@ -339,7 +332,7 @@
       print *, val
       print *, yq
       print *, ""
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = QNANQ
@@ -348,7 +341,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yq
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = QNANQ
@@ -357,7 +350,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yq
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = 2.0
@@ -367,7 +360,7 @@
       print *, val
       print *, yq
       print *, ""
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = QINF
@@ -376,7 +369,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yq
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = 0
@@ -386,7 +379,7 @@
       print *, val
       print *, yq
       print *, ""
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = QNANQ
@@ -395,7 +388,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yq
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = QNANQ
@@ -404,7 +397,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yq
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = QINF
@@ -413,7 +406,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yq
-      
+
       call ieee_set_flag(ieee_all, .false.)
 
       xq = 0.0
@@ -422,7 +415,7 @@
       call ieee_get_flag(ieee_all, val)
       print *, val
       print *, yq
-      print *, ""      
+      print *, ""
 
 
 end

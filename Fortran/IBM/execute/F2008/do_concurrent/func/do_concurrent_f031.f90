@@ -1,19 +1,14 @@
 !*********************************************************************
 !  ===================================================================
-!  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!  ===================================================================
 !
 !  TEST CASE NAME             : do_concurrent_f031.f
-!  TEST CASE TITLE            :
 !
-!  PROGRAMMER                 : Bernard Kan
 !  DATE                       : Sept 21, 2015
-!  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !
 !  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT Construct
 !  SECONDARY FUNCTIONS TESTED : PURE Function
 !
-!  DESCRIPTION                : 
+!  DESCRIPTION                :
 !   Use implicitly declared variables as indeces in a DO CONCURRENT construct.
 !   The varlable could be specified with the implicit keyword or not specified
 !   Also covers the use of DO CONCURRENT in various scopes
@@ -124,7 +119,6 @@ contains
     test2 = .true.
   END FUNCTION
 
-    
   MODULE PROCEDURE test7
     implicit INTEGER(x-z)
     DO CONCURRENT( x = 1:100, mod_func1(l1a(x)) )
@@ -135,13 +129,13 @@ contains
        FORALL ( y = 1:10, submod_func1(l1a(y)) )
           i1b(x,y) = x + y
        END FORALL
- 
+
        DO CONCURRENT (y=1:10, (r1b(x,y) > 1))
           r1b(x,y) = 99
        END DO
- 
+
        forall ( y=1:10:2 ) r1a(x,y) = real(x+y)
- 
+
        DO CONCURRENT(y=1:10, (r1b(x,y) > 1))
           r1c(x,y) = 99
        END DO
@@ -238,7 +232,7 @@ PROGRAM do_concurrent_f031
    PRINT *,CASENUM
 
    r1a = 0.0
-   
+
    call test3( r1a, l1a )
 
    print *,r1a
@@ -265,7 +259,7 @@ PROGRAM do_concurrent_f031
    r1b(:,::2)  = 1.0
    r1b(:,2::2) = 2.0
    r1c = 0.0
-   
+
    call test5( r1b, r1c, l1a)
 
    print *,r1c
@@ -342,6 +336,6 @@ SUBROUTINE test5( r1b, r1c, l1a )
        r1c(i,j) = -99
      END DO
    END DO
-END SUBROUTINE 
+END SUBROUTINE
 
 !----------------------------------------------------

@@ -1,18 +1,10 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : contiguous09d.f
-!*
-!*  PROGRAMMER                 : David Nichols
 !*  DATE                       : June 24, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS simply contiguous
 !*                               6.5.4 & 12.5.2.7
-!*
-!*  DRIVER STANZA              : xlf2008
 !*
 !*  DESCRIPTION                : Testing proper diagnostics of
 !*                               the F2008 CONTIGUOUS simply contig
@@ -24,14 +16,14 @@
       program contiguous09d
 
        ! C1239 (R1223) If an actual argument is a nonpointer array that
-       !  has the ASYNCHRONOUS or VOLATILE attribute but is not simply 
+       !  has the ASYNCHRONOUS or VOLATILE attribute but is not simply
        !  contiguous (6.5.4), and the corresponding dummy argument has
-       !  either the VOLATILE or ASYNCHRONOUS attribute, that dummy 
-       !  argument shall be an assumed-shape array that does not have 
+       !  either the VOLATILE or ASYNCHRONOUS attribute, that dummy
+       !  argument shall be an assumed-shape array that does not have
        !  the CONTIGUOUS attribute.
        integer, volatile :: iv(10)
 
-       ! C1240 (R1223) If an actual argument is an array pointer that 
+       ! C1240 (R1223) If an actual argument is an array pointer that
        !  has the ASYNCHRONOUS or VOLATILE attribute but does not have
        !  the CONTIGUOUS attribute, and the corresponding dummy argument
        !  has either the VOLATILE or ASYNCHRONOUS attribute, that dummy
@@ -50,16 +42,16 @@
        contains
         subroutine sub_arg_volatile(assumed)
           ! C1239 (R1223) If an actual argument is a nonpointer array that
-          !  has the ASYNCHRONOUS or VOLATILE attribute but is not simply 
+          !  has the ASYNCHRONOUS or VOLATILE attribute but is not simply
           !  contiguous (6.5.4), and the corresponding dummy argument has
-          !  either the VOLATILE or ASYNCHRONOUS attribute, that dummy 
-          !  argument shall be an assumed-shape array that does not have 
+          !  either the VOLATILE or ASYNCHRONOUS attribute, that dummy
+          !  argument shall be an assumed-shape array that does not have
           !  the CONTIGUOUS attribute.
           integer, volatile, contiguous :: assumed (:)
         end subroutine
 
         subroutine sub_arg_asynch(assumed, ptr)
-          ! C1240 (R1223) If an actual argument is an array pointer that 
+          ! C1240 (R1223) If an actual argument is an array pointer that
           !  has the ASYNCHRONOUS or VOLATILE attribute but does not have
           !  the CONTIGUOUS attribute, and the corresponding dummy argument
           !  has either the VOLATILE or ASYNCHRONOUS attribute, that dummy

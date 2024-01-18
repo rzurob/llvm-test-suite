@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpAttrSpecStmtSave1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 13, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  -- SAVE statement 
-!*  
-!*   common block 
-!* 
+!*  -- SAVE statement
+!*
+!*   common block
+!*
 !* (337927)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,7 +41,7 @@
     INTEGER, KIND    :: K1=0
     INTEGER, LEN     :: L1=0
     SEQUENCE
-    CHARACTER(L1+3)      :: C1 = "DT1" 
+    CHARACTER(L1+3)      :: C1 = "DT1"
   END TYPE
 
   TYPE :: DT2(K2,L2)
@@ -62,8 +53,8 @@
     REAL   (K2)          :: R=K2
     LOGICAL(K2)          :: L=.TRUE._1
     COMPLEX(K2)          :: Z=CMPLX(K2, K2, K2)
-    TYPE(DT0(K2, L2))    :: T0(L2) 
-    TYPE(DT2(K2, L2)), POINTER  :: Ptr 
+    TYPE(DT0(K2, L2))    :: T0(L2)
+    TYPE(DT2(K2, L2)), POINTER  :: Ptr
   END TYPE
 
   INTEGER,   PARAMETER   :: N=1024
@@ -74,7 +65,7 @@
   DIMENSION      :: T0(N), T2(N)
   DIMENSION      :: T1(N)
 
-  SAVE  MyBlock 
+  SAVE  MyBlock
   COMMON /MyBlock/T0,T1,T2
 
 
@@ -86,7 +77,7 @@
                                    L = .TRUE.,     &
                                    Z = (1.,-1.),   &
                                    Ptr  = NULL(),  &
-                                   T0=DT0(8,7)() ) 
+                                   T0=DT0(8,7)() )
 
 
   END MODULE
@@ -95,7 +86,7 @@
   USE M
 
 
-  DO I=1, N 
+  DO I=1, N
 
     IF ( T0(I)%L0     .NE. 3         )  STOP 30
     IF ( T1(I)%L1     .NE. 5         )  STOP 32
@@ -124,8 +115,8 @@
   USE M
   IMPLICIT NONE
   INTEGER I
- 
-  INTERFACE 
+
+  INTERFACE
     SUBROUTINE ExtSub()
     END SUBROUTINE
   END INTERFACE

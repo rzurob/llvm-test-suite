@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,21 +13,13 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c05g.f
-!* TEST CASE TITLE              : BIND(C) attribute/statement
-!*
-!* PROGRAMMER                   : Yubin Liao 
 !* DATE                         : Jan. 1, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Test: BINC(C) attribute/statement
@@ -93,11 +80,11 @@ program fxbind_c05g
        function exfun_comp1(l1) result(l2) bind(c)
            implicit complex*8 (l)
        end function exfun_comp1
-       
+
        function exfun_comp2(m1) result(m2) bind(c)
            implicit complex*16 (m)
        end function exfun_comp2
-       
+
    end interface
 
    logical precision_R4, precision_R6, precision_R8
@@ -113,7 +100,7 @@ program fxbind_c05g
    implicit real*16  (g)
 
    implicit logical*1 (h)
-   
+
 
    implicit character*1 (n)
 
@@ -122,35 +109,35 @@ program fxbind_c05g
 
    a1 = 5
    a2 = 8
-   
+
    b1 = 15
    b2 = 18
-   
+
    c1 = 11
    c2 = 14
-   
+
    d1 = 17
    d2 = 20
 
    e1 = 4.80
    e2 = 9.6
-   
+
    f1 = 140.8
    f2 = 281.6
-   
+
    g1 = 1600.3
    g2 = 3200.6
 
    h1 = .false.
    h2 = .true.
-   
-   
+
+
    n1 = 'a'
    n2 = 'd'
 
    l1 = (0.0, 0.0)
    l2 = (1.0, 1.0)
-   
+
    m1 = (0.0D0, 0.0D0)
    m2 = (1.0D0, 1.0D0)
 
@@ -190,7 +177,7 @@ program fxbind_c05g
         error stop 30
       endif
 
-    
+
 
     n3 = exfun_char(n1)
     print *, n3
@@ -202,10 +189,10 @@ program fxbind_c05g
       if(.not. precision_x8(l3,l2))then
         error stop 50
       end if
-      
+
     m3 = exfun_comp2(m1)
       if(.not. precision_x16(m3,m2))then
         error stop 51
       end if
 
-end 
+end

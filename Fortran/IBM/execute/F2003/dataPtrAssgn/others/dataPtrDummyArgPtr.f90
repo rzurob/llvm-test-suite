@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrDummyArgPtr.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -26,9 +20,9 @@
 module m
 
     type base
-	integer :: x 
+	integer :: x
 	contains
-	    procedure :: func => basefunc 
+	    procedure :: func => basefunc
     end type
 
     contains
@@ -39,14 +33,14 @@ module m
 	    type(base), pointer :: basefunc(:)
 
 	    allocate(basefunc(a%x), source = (/ (base(i),i=1,a%x) /) )
-	
+
 	    if ( .not. associated(basefunc) ) stop 3
-	    p( a%x : ) => basefunc(a%x/2:) 
+	    p( a%x : ) => basefunc(a%x/2:)
 
 	end function
 
 end module
- 
+
     program main
 	use m
 
@@ -54,7 +48,7 @@ end module
 	type(base), pointer :: b2(:)
 	type(base), pointer :: p1(:)
 
-	allocate(b2(10))	
+	allocate(b2(10))
 
         b1%x = 20
 
@@ -65,8 +59,8 @@ end module
         if ( ubound(p1,1) /= 30 ) stop 17
 	print *, p1%x
 
-	if ( lbound(b2,1) /= 20 ) stop 21 
-        if ( ubound(b2,1) /= 30 ) stop 23 
+	if ( lbound(b2,1) /= 20 ) stop 21
+        if ( ubound(b2,1) /= 30 ) stop 23
 	print *, b2%x
 
     end program

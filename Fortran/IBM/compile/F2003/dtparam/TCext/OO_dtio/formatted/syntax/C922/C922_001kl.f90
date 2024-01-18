@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C922_001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from C922_001 by Robert Ma)
 !*  DATE                       : 2007-07-23 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: C922
 !*                                        EOR= specifier appears, then an ADVANCE= specifier shall also appear
@@ -71,11 +63,11 @@ program C922_001kl
    open (1, file = 'C922_001kl.1', form='formatted', access='sequential' )
 
    allocate ( b1, source = base(4)(123) ) ! tcx: (4)
-   
+
    write ( 1, "(DT)", ADVANCE="no" ) b1
-   
+
    rewind 1
-   
+
    read ( 1, "(DT)",  EOR=10, iostat = stat ) b1
 
 10 close ( 1, status = 'delete' )

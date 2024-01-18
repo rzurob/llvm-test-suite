@@ -1,16 +1,11 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: localVar004.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: polymorphic abstract type entities in main program (scalar, array, pointer, allocatable)
 !*  KEYWORD(S)                 :
@@ -50,10 +34,10 @@ module m
    type , abstract:: base
       integer :: i = 5
    end type
-   
+
    type, extends(base) :: child
    end type
-   
+
 end module
 
 program localVar004
@@ -61,13 +45,12 @@ program localVar004
 
    class(base), pointer :: b3
    class(base), allocatable, dimension(:) :: b4
-   
+
    allocate( child :: b4(4) )
    allocate(b3, source =child(4) )
-   
+
    if (b3%i .ne. 4 ) error stop 1_4
    if (size(b4) .ne. 4 ) error stop 2_4
-   
+
 end program
-   
-   
+

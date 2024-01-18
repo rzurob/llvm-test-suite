@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : PointerDummyBasic.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Ren Jian Gang
 !*  DATE                       : May 13, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
@@ -16,7 +12,6 @@
 !*
 !*  REFERENCE                  : Feature Number 916820
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -58,7 +53,7 @@ t1 = 5
 t2 = 7
 call sub(t1, t2) ! Hello World 12
 
-t1 = 100 
+t1 = 100
 t2 = -200
 call sub(t1, t2) ! Hello World -100
 
@@ -94,19 +89,19 @@ call log(l1, l2)
 contains
   real function minfloat(r1, r2)
     real, pointer, intent(in) :: r1, r2
-        
+
     minfloat = r1 - r2
   end
-  
+
   subroutine cmp(c1, c2)
     complex, pointer, intent(in) :: c1, c2
-        
+
         print "(f4.1)", c1%RE * c2%RE + c1%IM * c2%IM
   end
-  
+
   subroutine log(l1, l2)
     logical, target :: l1, l2
-  
+
     call logproc(l1, l2)
   end subroutine
 end
@@ -123,7 +118,7 @@ end subroutine
 
 subroutine logproc(l1, l2)
   logical, pointer, intent(in) :: l1, l2
-  
+
   print *, l1 .and. l2
   print *, l2 .or. l1
 end subroutine

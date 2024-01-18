@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitComp5 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitComp5
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Default initialization for component 
+!*  SECONDARY FUNCTIONS TESTED : Default initialization for component
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +19,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  BLOCK DATA 
-!*  
+!*  BLOCK DATA
 !*
-!*  (340424) 
+!*  (340424)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  BLOCK DATA 
+  BLOCK DATA
 
-! C589 (R558) If a common-block-object is of a derived type, it shall be a 
+! C589 (R558) If a common-block-object is of a derived type, it shall be a
 ! sequence type (4.5.1) or a  type with the BIND attribute and it shall
 ! have no default initialization.
     TYPE :: DT(K, L)
@@ -58,15 +50,15 @@
               R=(/(-T%K, I=1,T%K)/),              &
               Z=(/((-T%K,T%K), I=1,T%K)/),        &
               C="??????????",                     &
-              LL=(/(.FALSE._4, I=1,T%L)/)         )      
+              LL=(/(.FALSE._4, I=1,T%L)/)         )
 
-   
+
     COMMON /CB/ TT
 
   END BLOCK DATA
 
 
-  PROGRAM dtParamInitComp5 
+  PROGRAM dtParamInitComp5
 
   TYPE :: DT(K, L)
     INTEGER(1), KIND :: K=0
@@ -82,7 +74,7 @@
   TYPE(DT(L=4,K=4))  :: T(3)
 
   COMMON /CB/ T
- 
+
   IF ( T%K         .NE. 4 )                  STOP 43
   IF ( T%L         .NE. 4 )                  STOP 44
 

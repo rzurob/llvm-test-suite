@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,21 +13,13 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c01d.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Test:BINC(C) attribute with binding labels and
@@ -87,7 +74,7 @@ program fxbind_c01d
 
    logical precision_R4, precision_R6, precision_R8
    logical precision_x8, precision_x16
-   
+
 !**********************************************************
 !        Initialization of variables                      *
 !**********************************************************
@@ -96,7 +83,7 @@ program fxbind_c01d
    integer*2 ai2 /15/, bi2 /18/
    integer*4 ai4 /11/, bi4 /14/
    integer*8 ai8 /17/, bi8 /20/
- 
+
    real*4   ar4 /4.80/, br4 /9.6/
    real*8   ar8 /140.8/, br8 /281.6/
    real*16  ar16 /1600.3/, br16 /3200.6/
@@ -108,11 +95,11 @@ program fxbind_c01d
 
    complex*8   ac8 /(0.0, 0.0)/, bc8 /(1.0, 1.0)/
    complex*16  ac16 /(0.0D0, 0.0D0)/, bc16 /(1.0D0, 1.0D0)/
-   
+
    character*1 ach1 /'a'/, bch1 /'d'/
 
    byte  ab1 /8/, bb1 /10/
- 
+
 !**********************************************************
 !        Calling C from Fortran with integer data type
 !                and check the results
@@ -177,7 +164,7 @@ program fxbind_c01d
 !                and check the Results
 !**********************************************************
    call extsub_comp(ac8, ac16)
-   
+
       if(.not. precision_x8(ac8,bc8))then
         error stop 61
       endif
@@ -185,6 +172,6 @@ program fxbind_c01d
       if(.not. precision_x16(ac16,bc16))then
         error stop 62
       endif
-      
 
-end 
+
+end

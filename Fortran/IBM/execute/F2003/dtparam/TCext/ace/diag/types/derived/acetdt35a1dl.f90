@@ -3,17 +3,13 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acetdt35a1dl
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt35a1d
 !*                               by David Forster)
 !*  DATE                       : 2007-11-20 (original: 2007-09-07
 !*                               (from original 2006-11-13))
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*
@@ -22,7 +18,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : AC, assignment, undefined variable

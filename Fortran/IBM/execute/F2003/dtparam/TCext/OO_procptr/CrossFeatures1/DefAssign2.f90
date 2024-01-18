@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: DefAssign2.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : DefAssign2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : DefAssign2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 17, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,13 +34,13 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Defined assignment - where 
-!*  () 
+!*
+!*  Defined assignment - where
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
 
   MODULE M
 
@@ -115,11 +109,11 @@
 
 
   END MODULE
- 
 
-  PROGRAM DefAssign2 
+
+  PROGRAM DefAssign2
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   INTEGER :: I
   TYPE(Base(4,20)) :: B1(511), B2(511)
@@ -138,7 +132,7 @@
   END WHERE
   DO I=1, 511
     IF (.NOT. ASSOCIATED(D1(I)%BComp%ProcPtr, Fun)) STOP 22
-    IF (D1(I)%Id .NE. -1) STOP 23   
+    IF (D1(I)%Id .NE. -1) STOP 23
   END DO
 
   BTar = Base(4,20)(RetPtr(Fun))
@@ -155,15 +149,15 @@
   END WHERE
   DO I=1, 511
     IF (.NOT. ASSOCIATED(D2(I)%BComp%ProcPtr, Fun)) STOP 42
-    IF (D2(I)%Id .NE. 3) STOP 43   
+    IF (D2(I)%Id .NE. 3) STOP 43
   END DO
 
   CONTAINS
 
   FUNCTION RetPtr(Arg)
   PROCEDURE(CToC), POINTER :: RetPtr
-  PROCEDURE(CToC) :: Arg 
-    RetPtr => Arg 
+  PROCEDURE(CToC) :: Arg
+    RetPtr => Arg
   END FUNCTION
 
   END

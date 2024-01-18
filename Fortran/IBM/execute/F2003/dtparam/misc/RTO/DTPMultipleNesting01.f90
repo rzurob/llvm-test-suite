@@ -1,34 +1,26 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTPMultipleNesting01 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : February 05, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Run Time Offset (RTO)
 !*  SECONDARY FUNCTIONS TESTED :
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : Default initialization 
+!*  KEYWORD(S)                 : Default initialization
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* Testing multilevel type nesting and accessing the components of the inner types 
-!*  - 3 levels of nesting 
-!*  - 2 levels of extension 
+!* Testing multilevel type nesting and accessing the components of the inner types
+!*  - 3 levels of nesting
+!*  - 2 levels of extension
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
@@ -43,12 +35,12 @@ MODULE Mod
         INTEGER, LEN  :: l2 = 10
 
         INTEGER(k1)                 :: Iarr(l1) = -3
-        CLASS(Base(k2,l2)), POINTER :: ptr   
+        CLASS(Base(k2,l2)), POINTER :: ptr
       END TYPE Child
 
       TYPE Branch  (q3,n1,n2,n3)
         INTEGER, KIND :: q3 = KIND(0)
-        INTEGER, LEN  :: n1 = 2, n2 = 2, n3 = 2 
+        INTEGER, LEN  :: n1 = 2, n2 = 2, n3 = 2
 
         TYPE(Child(q3,n1,q3,n2)) :: cmp1(n3)
         TYPE(Child(q3,n2,q3,n2)) :: cmp2(n3)
@@ -56,7 +48,7 @@ MODULE Mod
 END MODULE Mod
 PROGRAM DTPMultipleNesting01
       USE Mod
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE(Branch(4,2,5,10)) :: b0
       INTEGER :: i, stat
@@ -86,7 +78,7 @@ PROGRAM DTPMultipleNesting01
 
         ALLOCATE( Base(4,5) :: b0%cmp1(i)%ptr, STAT=stat, ERRMSG=errmsg )
         IF ( stat                           .NE.        0 )  STOP 26
-        IF ( b0%cmp1(i)%ptr%l1              .NE.        5 )  STOP 27 
+        IF ( b0%cmp1(i)%ptr%l1              .NE.        5 )  STOP 27
 
         IF ( LEN(b0%cmp1(i)%ptr%Carr)       .NE.        5 )  STOP 28
         IF ( ANY((b0%cmp1(i)%ptr%Carr)      .NE. 'AAAAA') )  STOP 29
@@ -95,7 +87,7 @@ PROGRAM DTPMultipleNesting01
         IF ( LBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        1 )  STOP 31
         IF ( UBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        5 )  STOP 32
         IF ( ANY((b0%cmp1(i)%ptr%Rarr)      .NE.       4) )  STOP 33
-      END DO 
+      END DO
 
       IF ( SIZE(b0%cmp2)          .NE.   10 )    STOP 34
       IF ( LBOUND(b0%cmp2, 1)     .NE.    1 )    STOP 35
@@ -117,7 +109,7 @@ PROGRAM DTPMultipleNesting01
 
         ALLOCATE( b0%cmp2(i)%ptr, source = Base(4,5)('XLFtest', 8) , STAT=stat, ERRMSG=errmsg )
         IF ( stat                           .NE.        0 )  STOP 47
-        IF ( b0%cmp2(i)%ptr%l1              .NE.        5 )  STOP 48 
+        IF ( b0%cmp2(i)%ptr%l1              .NE.        5 )  STOP 48
 
         IF ( LEN(b0%cmp2(i)%ptr%Carr)       .NE.        5 )  STOP 49
         IF ( ANY((b0%cmp2(i)%ptr%Carr)      .NE. 'XLFte') )  STOP 50
@@ -126,6 +118,6 @@ PROGRAM DTPMultipleNesting01
         IF ( LBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        1 )  STOP 52
         IF ( UBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        5 )  STOP 53
         IF ( ANY((b0%cmp2(i)%ptr%Rarr)      .NE.       8) )  STOP 54
-      END DO 
+      END DO
 
 END PROGRAM DTPMultipleNesting01

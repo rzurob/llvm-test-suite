@@ -1,42 +1,36 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
 ! %GROUP: ftybn020o.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : ftybn020o.f
-!*  TEST CASE TITLE            : type-bound procedure
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : private type bound procedure 
+!*  DATE                       :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : private type bound procedure
 !*
 !*  SECONDARY FUNCTIONS TESTED : pass, non_overridable
 !*
 !*  DESCRIPTION                : the accessiblity of a type-bound procedure
 !*                               is not affected by a PRIVATE statement
 !*                               in the component-part, the accessiblity
-!*                               of a data component is not affected by a 
+!*                               of a data component is not affected by a
 !*                               PRIVATE statemnt in the type-bound-procedure
-!*                               -part. 
-!*    
+!*                               -part.
+!*
 !*======================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
-   
+
     module mod
 
     type base
@@ -61,7 +55,7 @@
          end function
 
     end module
-   
+
     use mod
 
     c1%name = 'c1'

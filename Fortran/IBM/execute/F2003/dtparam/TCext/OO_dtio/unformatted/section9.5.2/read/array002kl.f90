@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : array002kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from array002 by Robert Ma)
 !*  DATE                       : 2007-09-13 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2 Input Statement
 !*                                        Try array entity with explicit array components (Input)
@@ -76,12 +68,12 @@ program array002kl
    type(base(4,:,:)), pointer      :: b2(:) ! tcx: (4,:,:)
    type(base(4,3,2))               :: b3(2,2) ! tcx: (4,3,2)
    class(base(4,:,:)), pointer     :: b4(:,:) ! tcx: (4,:,:)
-  
+
    c1 = 'abc'
    c2 = 'def'
    c3 = 'ghi'
    c4 = 'jkl'
-   
+
    i1 = (/ 1, 2 /)
    i2 = (/ 3, 4 /)
    i3 = (/ 5, 6 /)

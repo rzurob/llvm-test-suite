@@ -1,23 +1,14 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE     : C Interop: Assumed-length Character arguments
-!*
-!*
-!*
-!*  PROGRAMMER          : Umme Hunny
 !*  DATE                : June, 1, 2014
-!*  ORIGIN              : AIX Compiler Development, Toronto Lab
 !*  FEATURE             : RTC Master Story:
 !*                        C Interop: Assumed-length Character arguments
 !*                        (master story) (72333)
 !*
-!*  FEATURE             : C Interop: Assumed-length Character arguments 
+!*  FEATURE             : C Interop: Assumed-length Character arguments
 !* ===================================================================
-!23456789012345678901234567890123456789012345678901234567890123456789012     
+!23456789012345678901234567890123456789012345678901234567890123456789012
       subroutine check_c_to_f(c_arg1, c_len1, test_no1) bind(c)
         use, intrinsic :: iso_c_binding
         character(*), optional :: c_arg1
@@ -25,8 +16,8 @@
         character(c_len1) c_test
         if(test_no1 .NE. 7) then
         if(c_len1 .NE. LEN(c_arg1)) then
-            
-           error STOP 1        
+
+           error STOP 1
         endif
         if(RANK(c_arg1) .NE. 0) then
            error STOP 2
@@ -40,7 +31,7 @@
         if(c_arg1 .NE. c_test) then
            print *, c_arg1
            error STOP 3
-        endif 
+        endif
         else
            if(PRESENT(c_arg1)) then
                error STOP 7

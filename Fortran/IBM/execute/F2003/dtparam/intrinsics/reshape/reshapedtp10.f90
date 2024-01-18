@@ -1,23 +1,12 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case IBM INTERNAL USE ONLY
-!* ===================================================================
-!* ===================================================================
-!*
-!* TEST CASE TITLE : Test for DTP with RESHAPE
 !*
 !* TEST CASE NAME : reshapedtp10.f
 !*
 !* CREATED BY : Pooja Dayanand
 !* MODIFIED BY : Andy Sheung
 !* DATE : Jul31, 2008
-!* ORIGIN : AIX Compiler Development, Toronto Lab
 !*
 !* DESCRIPTION:
 !* RESHAPE constructs an array of a specified shape from the elements
@@ -33,12 +22,12 @@ type dtp (k1, n)
   integer(k1) ::  i(n)
 end type
 
-type dt 
+type dt
   integer :: j (2,4)
 end type
 
 type (dtp(4,6)) :: dtp1 = dtp(4,6)((/1, 2, 3, 4, 5, 6/))
-type (dt) dt1 
+type (dt) dt1
 
 dt1%j = reshape(dtp1%i, (/2, 4/), (/8/), (/2, 1/))
 

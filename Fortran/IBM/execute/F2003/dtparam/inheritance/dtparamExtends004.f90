@@ -23,7 +23,6 @@ use m
     logical(4) precision_r4, precision_r8
     type (child(4, 2, 8, 30)) c1
 
-
     !! assign the values to the components of c1_m and c1
     c1_m%data = (/(i*1.1d0, i = 1, c1_m%l1)/)
     c1_m%id = 10

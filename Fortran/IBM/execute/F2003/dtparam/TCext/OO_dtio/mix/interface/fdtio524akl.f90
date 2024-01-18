@@ -1,16 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 
 !*  TEST CASE NAME             : fdtio524akl
-!*  PROGRAMMER                 : David Forster(derived from fdtio524a)
 !*  DATE                       : 2007-08-16
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*  DRIVER STANZA              : xlf2003
 
 module m
     type base (kbase_1) ! kbase_1=8
@@ -88,7 +83,6 @@ module m
     end subroutine
 end module
 
-
 program fdtio524akl
 use m
     class(base(8)), pointer :: b1 ! tcx: (8)
@@ -106,7 +100,6 @@ use m
 
     call b1%print
 end
-
 
 ! Extensions to introduce derived type parameters:
 ! type: base - added parameters (kbase_1) to invoke with (8) / declare with (8) - 4 changes

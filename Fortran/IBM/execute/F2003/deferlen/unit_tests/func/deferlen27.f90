@@ -1,27 +1,20 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Deferred Character Length
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Diagnostic test
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : Testing the function argument which has 
-!*                               deferred type parameter. 
+!*  DESCRIPTION                : Testing the function argument which has
+!*                               deferred type parameter.
 !*
 !* ===================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
 type Person
    character(:), pointer :: name
-end type   
+end type
 
 interface
    function fun(x)
@@ -34,7 +27,7 @@ end module
 
 use m
 type (Person) p
-character(:), target, allocatable :: char 
+character(:), target, allocatable :: char
 character*4 result
 allocate(character(4)::char)
 char = 'John'

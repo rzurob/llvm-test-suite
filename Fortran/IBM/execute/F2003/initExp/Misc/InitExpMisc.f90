@@ -1,22 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TESTOP CASE NAME             : InitExpMisc.f  
+!*  TESTOP CASE NAME             : InitExpMisc.f
 !*  TESTOP CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept. 11 2006
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Charber 289074 
+!*  REFERENCE                  : Feature Charber 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +20,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Misc  on pack 
-!* 
-!* (325095) 
-!* 
+!*  Misc  on pack
+!*
+!* (325095)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -62,7 +55,7 @@
   TYPE :: DT
     TYPE(DT0) :: T
   END TYPE
- 
+
 
   TYPE (DT) :: T(64)=[(                                         &
                          PACK([(DT(DT0(I)),J=1,I-1)], .TRUE.),  &
@@ -76,7 +69,7 @@
       IF (ANY( T(9*(i-1)+2:8*I)%T%ID     .NE. [(J,J=I+1,8)]))  STOP 13
   END DO
 
-  END 
+  END
 
 
- 
+
