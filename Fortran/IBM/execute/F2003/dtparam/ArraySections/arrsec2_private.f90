@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : arrsec2_private.f
-!*  PROGRAMMER                 : Gaby Baghdadi (adopted from David Nichols' 
 !*                               arrsec1_private.f)
 !*  DATE                       : Oct 13, 2008
 !*  ORIGIN                     : XLF Development
@@ -13,7 +10,6 @@
 !*
 !*     Private component within derived type which dictates the displacement
 !*     to array.
-!*      
 !*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890

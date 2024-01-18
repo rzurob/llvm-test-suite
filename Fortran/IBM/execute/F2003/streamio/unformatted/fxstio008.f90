@@ -2,34 +2,28 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f fort.*
-! %COMPOPTS: 
-! %GROUP: fxstio008.f 
+! %COMPOPTS:
+! %GROUP: fxstio008.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio008.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 07, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
 !*
 !*  Description                : Test intrinsic data types with
-!*                               parameter attribute 
+!*                               parameter attribute
 !*
 !=======================================================================
 
 !* Declare Variables.
-   
+
   implicit none
 
   integer id(2), ios
@@ -107,7 +101,7 @@
       iostat=ios, err=100)
    write(1, id=id(1), iostat=ios, err=200) cvar1
    write(1, id=id(2), iostat=ios, err=200) cpararr
- 
+
    wait(id =id(1))
    wait(id =id(2))
    rewind(1, iostat=ios, err=500)

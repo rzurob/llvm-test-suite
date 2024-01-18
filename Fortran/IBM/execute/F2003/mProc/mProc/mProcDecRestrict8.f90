@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcDecRestrict8.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcDecRestrict8.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 14, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  unAmbiguity 
+!*  unAmbiguity
 !*  (3) at least one of them shall have both
 !*  (a) A nonoptional non-passed-object dummy argument at an effective position such that
 !*      either the other procedure has no dummy argument at that effective position or the
@@ -36,9 +29,7 @@
 !*      with that name is distinguishable with it.
 !*      Further, the dummy argument that disambiguates by position shall either be the same as
 !*      or occur earlier in the argument list than the one that disambiguates by name.
-!* 
-!* 
-!*   
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -52,28 +43,28 @@
   REAL :: W,Y
   INTEGER :: X,Z, S3A
     S3A = 1
-  END FUNCTION 
+  END FUNCTION
 
   FUNCTION S3B(X,W,Z,Y)
   REAL :: W,Z
   INTEGER :: X,Y, S3B
     S3B = 2
-  ENDFUNCTION 
+  ENDFUNCTION
 
   FUNCTION F2A(X)
   REAL :: F2A,X
    F2A = X
   END FUNCTION
- 
+
   FUNCTION F2B(X,Y)
   COMPLEX :: F2B
   REAL :: X,Y
     F2B = (X,Y)
-  END FUNCTION 
+  END FUNCTION
 
   END MODULE
 
-  PROGRAM mProcDecRestrict8 
+  PROGRAM mProcDecRestrict8
   USE M
 
   INTERFACE GFace1
@@ -94,8 +85,8 @@
   PROCEDURE(S3B), POINTER  :: ProcPtr
 
   INTERFACE GFace
-    PROCEDURE Proc 
-    PROCEDURE ProcPtr 
+    PROCEDURE Proc
+    PROCEDURE ProcPtr
   END INTERFACE
 
   ProcPtr => S3B

@@ -15,16 +15,11 @@
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            :
-!*  PROGRAMMER                 : Yong Du
+!*  ===================================================================
 !*  DATE                       : 11/11/2004
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : extends_type_of(A, MOLD)
 !*  SECONDARY FUNCTIONS TESTED : same_type_as(A, B)
-!*  DRIVER STANZA              : xlf90
 !*  DESCRIPTION                : A or MOLD is the return value of a type
 !*    bound procedure call. Use abstract type and deferred bounding.
 !*

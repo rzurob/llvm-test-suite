@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: DefAssign1.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : DefAssign1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : DefAssign1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 23, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Defined assignment - elemental
-!*  (ICE on str constr) 
+!*  (ICE on str constr)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -71,54 +65,54 @@
     END FUNCTION
 
     SUBROUTINE MyAssign1 (Arg1, Arg2)
-    TYPE(Base(*,4)), INTENT(OUT) :: Arg1(:) 
-    TYPE(Base(*,4)), INTENT(IN)  :: Arg2 
+    TYPE(Base(*,4)), INTENT(OUT) :: Arg1(:)
+    TYPE(Base(*,4)), INTENT(IN)  :: Arg2
       Arg1 = Arg2
-    END SUBROUTINE 
- 
+    END SUBROUTINE
+
     SUBROUTINE MyAssign2 (Arg1, arg2)
-    TYPE(DT(*,4)),    INTENT(OUT) :: Arg1(:) 
-    TYPE(Base(*,4)),  INTENT(IN)  :: Arg2 
+    TYPE(DT(*,4)),    INTENT(OUT) :: Arg1(:)
+    TYPE(Base(*,4)),  INTENT(IN)  :: Arg2
       Arg1%Id = Arg2%Id
-      DO i=1, SIZE(Arg1) 
-        Arg1(i)%ProcPtr => ModFun 
+      DO i=1, SIZE(Arg1)
+        Arg1(i)%ProcPtr => ModFun
       END DO
-    END SUBROUTINE 
- 
+    END SUBROUTINE
+
     SUBROUTINE MyAssign3 (Arg1, Arg2)
-    TYPE(Base(*,4)), INTENT(OUT) :: Arg1(:) 
-    TYPE(DT(*,4)),   INTENT(IN)  :: Arg2 
+    TYPE(Base(*,4)), INTENT(OUT) :: Arg1(:)
+    TYPE(DT(*,4)),   INTENT(IN)  :: Arg2
       Arg1 = Arg2%Base
-    END SUBROUTINE 
- 
+    END SUBROUTINE
+
     SUBROUTINE MyAssign4 (Arg1, Arg2)
-    TYPE(DT(*,4)),  INTENT(OUT) :: Arg1(:) 
-    TYPE(DT(*,4)),  INTENT(IN)  :: Arg2 
-      Arg1%Id = Arg2%Id 
-      DO i=1, SIZE(Arg1) 
-        Arg1(i)%ProcPtr =>  Arg2%ProcPtr 
+    TYPE(DT(*,4)),  INTENT(OUT) :: Arg1(:)
+    TYPE(DT(*,4)),  INTENT(IN)  :: Arg2
+      Arg1%Id = Arg2%Id
+      DO i=1, SIZE(Arg1)
+        Arg1(i)%ProcPtr =>  Arg2%ProcPtr
       END DO
-    END SUBROUTINE 
- 
- 
+    END SUBROUTINE
+
+
   END MODULE
 
 
-  PROGRAM DefAssign1 
+  PROGRAM DefAssign1
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
     INTERFACE ASSIGNMENT ( = )
       MODULE PROCEDURE MyAssign1
       MODULE PROCEDURE MyAssign2
       MODULE PROCEDURE MyAssign3
       MODULE PROCEDURE MyAssign4
-    END INTERFACE ASSIGNMENT ( = ) 
+    END INTERFACE ASSIGNMENT ( = )
 
   INTEGER :: I
   TYPE(Base(20,4)) :: B1(511), B2(511)
   TYPE(DT(20,4))   :: D1(511), D2(511)
- 
+
   B1 = Base(20,4)(1)
   DO I=1, 511
     IF (B1(I)%Id .NE. 1) STOP 11
@@ -127,19 +121,19 @@
   D1 = Base(20,4)(2)
   DO I=1, 511
     IF (.NOT. ASSOCIATED(D1(I)%ProcPtr, ModFun)) STOP 22
-    IF (D1(I)%Id .NE. 2) STOP 23   
+    IF (D1(I)%Id .NE. 2) STOP 23
   END DO
 
-  B2 = DT(20,4)(-1, ModFun) 
+  B2 = DT(20,4)(-1, ModFun)
   DO I=1, 511
-    IF (B2(I)%Id .NE. -1) STOP 31   
+    IF (B2(I)%Id .NE. -1) STOP 31
   END DO
 
   D2 = DT(20,4)(0, NULL())
   D2 = DT(20,4)(-2, ModFun)
   DO I=1, 511
     IF (.NOT. ASSOCIATED(D2(I)%ProcPtr, ModFun)) STOP 62
-    IF (D2(I)%Id .NE. -2) STOP 63   
+    IF (D2(I)%Id .NE. -2) STOP 63
   END DO
 
 

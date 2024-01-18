@@ -1,17 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : contiguous05d.f
-!*
-!*  PROGRAMMER                 : David Nichols
 !*  DATE                       : June 24, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS statement 5.4.6
-!*
-!*  DRIVER STANZA              : xlf2008
 !*
 !*  DESCRIPTION                : Testing proper diagnostics of
 !*                               the F2008 statement

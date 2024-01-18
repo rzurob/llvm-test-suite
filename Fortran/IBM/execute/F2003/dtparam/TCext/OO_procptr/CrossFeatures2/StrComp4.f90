@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: StrComp4.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: StrComp4.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : StrComp4.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : StrComp4.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 24, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Structure component - parameter 
-!*  () 
+!*
+!*  Structure component - parameter
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -65,28 +59,28 @@
     CONTAINS
 
     FUNCTION ModFun1(Arg1, Arg2)
-    CLASS(Base(4,*)) :: Arg1 
-    REAL(4) :: ModFun1, Arg2 
+    CLASS(Base(4,*)) :: Arg1
+    REAL(4) :: ModFun1, Arg2
       ModFun1 = Arg2
     END FUNCTION
- 
+
     FUNCTION ModFun2(Arg1, Arg2)
-    CLASS(DT(4,*)) :: Arg1 
-    REAL(8) :: ModFun2, Arg2 
+    CLASS(DT(4,*)) :: Arg1
+    REAL(8) :: ModFun2, Arg2
       ModFun2 = Arg2
     END FUNCTION
- 
+
     FUNCTION ModFun3(Arg1, Arg2)
     CLASS(DT(4,*)) :: Arg1
-    PROCEDURE(ModFun1), POINTER :: ModFun3, Arg2 
+    PROCEDURE(ModFun1), POINTER :: ModFun3, Arg2
       ModFun3 => Arg2
     END FUNCTION
- 
+
   END MODULE
 
-  PROGRAM StrComp4  
+  PROGRAM StrComp4
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE(DT(4,20)),PARAMETER  :: V=DT(4,20)(Base=Base(4,20)(NULL()), ProcPtr2=NULL(), BComp=Base(4,20)(NULL()))
   PROCEDURE(ModFun1), POINTER :: ProcPtr

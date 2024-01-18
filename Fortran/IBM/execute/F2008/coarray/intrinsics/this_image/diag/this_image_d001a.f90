@@ -1,23 +1,16 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : this_image_d001a.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : July 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Invalid arguments test. Test mixing intrinsic calls
 !*                               of this_image() with variables of the same name.
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -46,5 +39,5 @@ program main
 	x = 1
 	y = 2
 	z = 3
-	num = this_image(caf, x, y, z)	
+	num = this_image(caf, x, y, z)
 end

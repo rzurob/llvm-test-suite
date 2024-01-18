@@ -5,48 +5,41 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: dcomp dtybn012.f 
+! %POSTCMD: dcomp dtybn012.f
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtybn012.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : dtybn012.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : binding attributes 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : nopass, non_overridable 
+!*  PRIMARY FUNCTIONS TESTED   : binding attributes
 !*
-!*  DESCRIPTION                : the same binding attribute shall not 
+!*  SECONDARY FUNCTIONS TESTED : nopass, non_overridable
+!*
+!*  DESCRIPTION                : the same binding attribute shall not
 !*                               appear more than once in a given
-!*                               binding-attr-list. 
-!*                            
-!*    
+!*                               binding-attr-list.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod1	      
+   module mod1
       type parent(n1,k1)    ! (20,4)
          integer, kind :: k1
          integer, len  :: n1
          integer(k1)   :: x
 	 contains
-      	 procedure, private, nopass, non_overridable, nopass, nopass, non_overridable :: bind 
-      end type 
+      	 procedure, private, nopass, non_overridable, nopass, nopass, non_overridable :: bind
+      end type
 
       type(parent(20,4)) :: dt_p
 
@@ -59,11 +52,11 @@
       call dt_p%bind(dt_p)
    end subroutine
 
-   end module     
+   end module
 
    use mod1
 
-   call test 
+   call test
 
    end
-   
+

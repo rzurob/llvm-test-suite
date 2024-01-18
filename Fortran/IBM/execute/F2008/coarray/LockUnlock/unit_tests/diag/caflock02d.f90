@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : caflockdiag2.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Ren Jian Gang
 !*  DATE                       : May 08, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
@@ -16,7 +12,6 @@
 !*
 !*  REFERENCE                  : Feature Number 387873
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -35,12 +30,12 @@ program caflock02d
   type(lock_type), save :: stack_lock[*]
 
   integer :: i
-  
+
   i = 5
 
   call lock_add(i)
   call lock_sub(i)
-  
+
   contains
     subroutine lock_add(var)
       integer, intent(out) :: var

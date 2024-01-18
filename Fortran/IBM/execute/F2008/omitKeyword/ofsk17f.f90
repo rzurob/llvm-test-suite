@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : ofsk17f.f
 !*
-!*  PROGRAMMER                 : Jin Li
 !*  DATE                       : 2010-09-30
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 Omit FUNCTION and SUBROUTINE Keywords
 !*  REFERENCE                  : Feature Number 376084
@@ -22,16 +18,16 @@
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 	module m
 	  contains
-	    subroutine sub1() 
+	    subroutine sub1()
           integer i
           i = func2()
           print *, "in sub1 "
           print *, i
 	      contains
-	      function func2() 
+	      function func2()
 	        func2 = 2
 	      end
-	    end subroutine 
+	    end subroutine
 	end
 
     program main

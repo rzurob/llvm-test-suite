@@ -1,17 +1,11 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound_f006c.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : September 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
@@ -28,7 +22,7 @@ end module
 program main
 	use modFDC
 	integer, parameter :: n = 6
-	
+
 	call sub_kind1()
 	call sub_kind2()
 	call sub_kind4()
@@ -54,8 +48,8 @@ contains
 		end if
 		sync all
 	end subroutine
-	
-	
+
+
 	subroutine sub_kind2()
 		integer, parameter :: k = 2
 		integer(k) :: alo(n), ahi(n)
@@ -75,8 +69,8 @@ contains
 		end if
 		sync all
 	end subroutine
-	
-	
+
+
 	subroutine sub_kind4()
 		integer(4) :: alo(n), ahi(n)
 
@@ -95,8 +89,8 @@ contains
 		end if
 		sync all
 	end subroutine
-	
-	
+
+
 	subroutine sub_kind8()
 		integer, parameter :: k = 8
 		integer(k) :: alo(n), ahi(n)
@@ -116,5 +110,5 @@ contains
 		end if
 		sync all
 	end subroutine
-	
+
 end

@@ -1,29 +1,24 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal015bk.f
 !*  TEST CASE NAME             : type-bound procedure ffinal015bk
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal015b by Catherine Sun)
 !*  DATE                       : 2007-11-21 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines 
-!*    
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
    module mod
       type t1 (kt1_1) ! kt1_1=4
          integer, kind :: kt1_1
-         integer(kt1_1), allocatable :: vector 
+         integer(kt1_1), allocatable :: vector
       contains
          final :: finalize_t1s
       end type
@@ -36,7 +31,7 @@
          if (allocated(x%vector))    deallocate(x%vector)
       end subroutine
    end module
- 
+
    use mod
    call example
    if(allocated(dt1%vector) .neqv. .false.)     error stop 2_4
@@ -45,7 +40,7 @@
    subroutine example()
       use mod
       allocate(dt1)
-      deallocate(dt1) 
+      deallocate(dt1)
    end subroutine
 
 

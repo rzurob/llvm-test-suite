@@ -1,26 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type04c - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : September 08, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Use association - Select case within select type
 !*                               Selector being a function call
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -37,23 +30,23 @@
 !*                       or CLASS IS ( type-spec ) [ select-construct-name ]
 !*                       or CLASS DEFAULT [ select-construct-name ]
 !*
-!* See defect 355886 
+!* See defect 355886
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
       IMPLICIT NONE
 !*
       TYPE Node  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
         CHARACTER(l1) :: tag="Empty" ! tags can be "Empty" or "Full"
         CLASS(Node(k1,l1)), POINTER :: Next => NULL()
-      END TYPE Node 
+      END TYPE Node
 
       TYPE, EXTENDS(Node) :: ExtNode
          INTEGER(k1), ALLOCATABLE :: my_arr(:)
-      END TYPE ExtNode 
+      END TYPE ExtNode
 
       INTEGER, PARAMETER :: knd1 = 2 , len1 =10 , ZERO = 0
 !*
@@ -63,11 +56,11 @@
       USE Mod1
       IMPLICIT NONE
 !*
-      CONTAINS 
+      CONTAINS
 !*
       FUNCTION foo(Obj)
-      CLASS(*), POINTER  :: foo 
-      CLASS(Node(k1=knd1,l1=len1)), POINTER :: Obj 
+      CLASS(*), POINTER  :: foo
+      CLASS(Node(k1=knd1,l1=len1)), POINTER :: Obj
 
       foo => Obj
       IF ( .NOT. ASSOCIATED(foo)) STOP 4
@@ -83,14 +76,14 @@
           IF ( .NOT. ASSOCIATED(T%Next)) STOP 5
           IF ( .NOT. ASSOCIATED(foo(T%Next))) STOP 6
 
-          IF ( .NOT. ALLOCATED(T%my_arr)) ALLOCATE (T%my_arr(len1)) 
+          IF ( .NOT. ALLOCATED(T%my_arr)) ALLOCATE (T%my_arr(len1))
           IF ( .NOT. ALLOCATED(T%my_arr)) STOP 7
 
-          Inner_SelType: SELECT TYPE ( A => foo(T%Next)) ! call to foo possible only within the select type 
+          Inner_SelType: SELECT TYPE ( A => foo(T%Next)) ! call to foo possible only within the select type
              TYPE IS (Node(knd1,*))
                 IF (A%k1 .NE. knd1) STOP 112
                 IF (A%l1 .NE. len1) STOP 113
-                   ! select case 
+                   ! select case
                       SELECT CASE (A%tag)
                         CASE ('Empty')
                           T%my_arr = (/ (0, I = 1, len1)/)
@@ -120,7 +113,7 @@
       PROGRAM Select_Type04c
       USE Mod1
       USE Mod2, ONLY: Sub1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE(ExtNode(knd1,len1))  :: ActiveNode
       TYPE(Node(knd1,len1)), TARGET :: FirstNode = (Node(knd1,len1) ())

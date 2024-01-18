@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp InTypeIs1.f 
+! %POSTCMD: tcomp InTypeIs1.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InTypeIs1 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : InTypeIs1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 24, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   Within the TYPE IS, the associating entity is not polymorphic 
+!*
+!*   Within the TYPE IS, the associating entity is not polymorphic
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -48,7 +42,7 @@
 
     TYPE  :: Zero
       INTEGER :: Id = 0
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -60,18 +54,18 @@
 
   END MODULE
 
-  PROGRAM InTypeIs1 
+  PROGRAM InTypeIs1
   USE M
   IMPLICIT NONE
   TYPE(Child) :: V(2,2)
-  
+
   CALL Sub(V)
 
   CONTAINS
- 
+
   SUBROUTINE Sub(Arg)
   CLASS(*) :: Arg(2:3,3:4)
- 
+
     SELECT TYPE (Arg=>Arg(2, 3))
     TYPE IS (Child)
       IF (.NOT. SAME_TYPE_AS(Arg, V)) STOP 20
@@ -91,7 +85,7 @@
     END SELECT
 
   END SUBROUTINE
- 
+
   END
 
 

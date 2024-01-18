@@ -1,21 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Abstractr Interface
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Functional test
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : When the type-bound procedure does not have
-!*                               a default or natural implementation, but 
-!*                               rather only a well-defined purpose and 
+!*                               a default or natural implementation, but
+!*                               rather only a well-defined purpose and
 !*                               interface. An abstract interface can be
 !*                               used for the bound procedure.
 !*
@@ -41,14 +34,14 @@ abstract interface
    end subroutine
 end interface
 
-contains 
+contains
 
 subroutine childProc (person)
    class (child), intent(in) :: person
    print *, person%name
 end subroutine
 
-end module                   
+end module
 
 program main
 use m

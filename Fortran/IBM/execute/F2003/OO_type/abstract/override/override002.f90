@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Type-bound procedure overriding
 !*                               ii) If the overridden binding is pure then the overridding binding shall also be pure
@@ -66,9 +55,9 @@ program override002
    procedure(logical) :: precision_r4
 
    allocate ( b1, source = child ( 10, 11.0 ) )
-   
+
    call b1%setid()
-   
+
    select type ( b1 )
       type is ( child )
          if ( ( b1%id /= 5 ) .or. ( .not. precision_r4(b1%rid, 11.0)) ) error stop 1_4

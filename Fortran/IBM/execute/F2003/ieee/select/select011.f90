@@ -12,15 +12,8 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : February 7, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SELECTED_REAL_KIND for special real
 !*                               numbers when -qrealsize=8 option is used.
@@ -28,8 +21,7 @@
 !*                               will be promoted.
 !*  SECONDARY FUNCTIONS TESTED : -qrealsize=8
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : -qrealsize=8 
+!*  REQUIRED COMPILER OPTIONS  : -qrealsize=8
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -54,7 +46,7 @@
         real :: a
         double precision :: b
         real*16 :: c
-	
+
         ! ieee_selected_real_kind should not set any flags. Clear all flags and
         ! check at the end that all flags are clear.
 

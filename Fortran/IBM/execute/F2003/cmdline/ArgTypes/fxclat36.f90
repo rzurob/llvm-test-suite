@@ -12,41 +12,34 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat36.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Tests command line intrinsic routines by passing sections of pointees 
+!*  DESCRIPTION                : Tests command line intrinsic routines by passing sections of pointees
 !*                             : of derivrd types from defferent modules
 !*                             : as arguments
-!*                        
-!*                    
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-      module m2  
+      module m2
 
         type COMMAND
           sequence
@@ -59,7 +52,7 @@
 
         type  LENGTH
           sequence
-          integer  :: C 
+          integer  :: C
         end type  LENGTH
 
       end module m3
@@ -68,7 +61,7 @@
 
         type  STATUS
           sequence
-          integer  :: C 
+          integer  :: C
         end type  STATUS
 
      end module m4
@@ -77,7 +70,7 @@
 
         type NUMBER
           sequence
-          integer  :: C 
+          integer  :: C
         end type NUMBER
 
       end module m5
@@ -86,7 +79,7 @@
 
         type VALUE
           sequence
-          character(2047)  :: C 
+          character(2047)  :: C
         end type VALUE
 
       end module m6
@@ -95,7 +88,7 @@
 
         type NAME
           sequence
-          character(513)  :: C 
+          character(513)  :: C
         end type NAME
 
       end module m7
@@ -104,7 +97,7 @@
 
         type TRIM_NAME
           sequence
-          logical  :: C 
+          logical  :: C
         end type TRIM_NAME
 
       end module m8
@@ -113,7 +106,7 @@
 
         type  ARGCOUNT
           sequence
-          integer  :: C 
+          integer  :: C
         end type  ARGCOUNT
 
       end module m9
@@ -160,7 +153,7 @@
       pointer (PNAME,      NAME)
       pointer (PTRIM_NAME, TRIM_NAME)
       pointer (PARGCOUNT,  ARGCOUNT)
-      
+
 
       PCOMMAND    = LOC(COMMANDee)
       PLENGTH     = LOC(LENGTHee)
@@ -173,7 +166,7 @@
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 3 ) & 
+      if ( CmdCount .ne. 3 ) &
       then
         error stop 63
       endif
@@ -188,7 +181,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         NUMBER%C = i
         call GET_COMMAND_ARGUMENT(NUMBER%C, VALUE%C(1:257), LENGTH%C, STATUS%C)
         call MyGetArg(CmdLine, NUMBER%C, Argument)
@@ -212,11 +205,11 @@
       endif
 
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 
 
 
-  
- 
+
+

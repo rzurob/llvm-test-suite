@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrDefOp.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrDefOp.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 16, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Defined operator 
+!*  Defined operator
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -68,15 +60,15 @@
   END MODULE
 
 
-  PROGRAM dataPtrDefOp 
+  PROGRAM dataPtrDefOp
   USE M
   IMPLICIT NONE
 
-  CHARACTER(7), TARGET  :: T11(100, 100),T21(10000), C1 
-  CHARACTER(:), POINTER :: Ptr(:,:) 
-  CHARACTER(8), TARGET  :: T12(100, 100),T22(10000), C2 
+  CHARACTER(7), TARGET  :: T11(100, 100),T21(10000), C1
+  CHARACTER(:), POINTER :: Ptr(:,:)
+  CHARACTER(8), TARGET  :: T12(100, 100),T22(10000), C2
   INTEGER    :: I, J, K, N
- 
+
   N = 100; K = 0
   C1 = "1234567"
   C2 = "76543210"
@@ -86,22 +78,22 @@
   T22 = C2
 
   ! N is too big
-  DO I =1, N-90 
-  DO J =I, N-90 
-    Ptr(I:, J:) => T11 + T12 
+  DO I =1, N-90
+  DO J =I, N-90
+    Ptr(I:, J:) => T11 + T12
     IF (.NOT. ASSOCIATED(Ptr))                   STOP 11
     IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 12
     IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
     IF (LEN(Ptr)         .NE. 15)                STOP 14
     IF (ANY( Ptr         .NE.  C1//C2 ))         STOP 15
 
-    Ptr(I:J, I:J) => T21 + T22 
+    Ptr(I:J, I:J) => T21 + T22
     IF (.NOT. ASSOCIATED(Ptr))                 STOP 21
     IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      STOP 22
     IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      STOP 23
     IF (LEN(Ptr)         .NE. 15)              STOP 24
     IF (ANY( Ptr         .NE.  C1//C2 ))       STOP 25
- 
+
   END DO
   END DO
 

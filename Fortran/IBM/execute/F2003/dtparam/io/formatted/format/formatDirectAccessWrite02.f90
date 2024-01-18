@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatDirectAccessWrite02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatDirectAccessWrite02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 14 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 14 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test Write statement
-!* 2. derived type has type bound procedure & generic binding 
+!* 2. derived type has type bound procedure & generic binding
 !* 3. derived type is unlimited polymorphic type
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -34,7 +26,7 @@ module m
         procedure,pass :: writeInner2
         generic  :: writeInner=>writeInner1,writeInner2
    end type
-  
+
    type outer(l2)
       integer,len :: l2
       real        :: r1(3) ! l2=3
@@ -43,16 +35,16 @@ module m
         procedure,pass :: writeOuter1
         procedure,pass :: writeOuter2
         generic :: writeOuter =>writeOuter1,writeOuter2
-   end type 
+   end type
 
    contains
-   
+
       subroutine writeInner1(this,unit)
          class(inner(*)),intent(in) :: this
          integer,intent(in)  :: unit
          select type(this)
            type is(inner(*))
-             write(unit,'(4a5/4a4)',rec=5) this 
+             write(unit,'(4a5/4a4)',rec=5) this
            class default
              stop 10
          end select
@@ -83,7 +75,7 @@ module m
            class default
              stop 12
          end select
-         
+
       end subroutine
 
       subroutine writeOuter2(this,outer,unit)
@@ -93,7 +85,7 @@ module m
 
          select type(this)
             type is(outer(*))
-               this=outer 
+               this=outer
                write(unit,'(f10.1/e15.3/f10.3)',rec=15) this%r1
                call this%comp%writeInner(outer%comp,unit)
             class default
@@ -128,7 +120,7 @@ program formatDirectAccessWrite02
      print *,"fail to open the file"
      print *,"iostat=",ios
      print *,"iomsg=",msg
-     stop 9 
+     stop 9
   else
      select type(outer1)
        type is(outer(*))
@@ -141,7 +133,7 @@ program formatDirectAccessWrite02
           end select
        class default
           stop 15
-     end select 
+     end select
 
   end if
 

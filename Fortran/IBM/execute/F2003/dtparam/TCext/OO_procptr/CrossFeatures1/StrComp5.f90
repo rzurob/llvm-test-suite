@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: StrComp5.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: StrComp5.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : StrComp5.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : StrComp5.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Structure component - Structure constructor 
+!*
+!*  Structure component - Structure constructor
 !*  (304726) (307073)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -60,15 +54,15 @@
 
     INTERFACE
       PURE SUBROUTINE Sub(Arg1, Arg2 )
-        IMPORT 
-        TYPE(DT(4)), INTENT(OUT):: Arg1 
-        PROCEDURE() :: Arg2 
-      END SUBROUTINE 
- 
+        IMPORT
+        TYPE(DT(4)), INTENT(OUT):: Arg1
+        PROCEDURE() :: Arg2
+      END SUBROUTINE
+
       PURE SUBROUTINE Sub1(Arg1, Arg2 )
-        IMPORT 
-        TYPE(Base(4)),   INTENT(OUT) :: Arg1 
-        PROCEDURE()  :: Arg2 
+        IMPORT
+        TYPE(Base(4)),   INTENT(OUT) :: Arg1
+        PROCEDURE()  :: Arg2
       END SUBROUTINE
     END INTERFACE
 
@@ -76,42 +70,42 @@
 
   PURE SUBROUTINE ToD(Arg1, Arg2 )
   USE M
-  TYPE(DT(4)), INTENT(OUT):: Arg1 
-  INTERFACE 
+  TYPE(DT(4)), INTENT(OUT):: Arg1
+  INTERFACE
      PURE SUBROUTINE S()
      END SUBROUTINE
-  END INTERFACE 
-  PROCEDURE(S) :: Arg2 
+  END INTERFACE
+  PROCEDURE(S) :: Arg2
     Arg1%BComp%ProcPtr => Arg2
-  END SUBROUTINE 
- 
+  END SUBROUTINE
+
   PURE SUBROUTINE ToB(Arg1, Arg2 )
-  USE M 
-  TYPE(Base(4)),   INTENT(OUT) :: Arg1 
-  INTERFACE 
+  USE M
+  TYPE(Base(4)),   INTENT(OUT) :: Arg1
+  INTERFACE
      PURE SUBROUTINE S()
      END SUBROUTINE
-  END INTERFACE 
-  PROCEDURE(S)  :: Arg2 
+  END INTERFACE
+  PROCEDURE(S)  :: Arg2
     Arg1%ProcPtr => Arg2
-  END SUBROUTINE 
- 
-  PROGRAM StrComp5  
-  USE M
-  IMPLICIT NONE 
+  END SUBROUTINE
 
-  PROCEDURE(Sub)  :: ToD 
-  PROCEDURE(Sub1) :: ToB 
+  PROGRAM StrComp5
+  USE M
+  IMPLICIT NONE
+
+  PROCEDURE(Sub)  :: ToD
+  PROCEDURE(Sub1) :: ToB
   TYPE(DT(4)), PARAMETER :: Para=DT(4)(Base(4)(NULL()))
 
-  PROCEDURE(),  POINTER :: ProcPtr 
+  PROCEDURE(),  POINTER :: ProcPtr
 
   TYPE(DT(4)) :: V(3)=Para, U
   INTEGER  :: I
 
   DO I=1, 3
     IF ( ASSOCIATED(V(I)%BComp%ProcPtr) ) STOP 14
-    V(I)%BComp%ProcPtr  => ToB 
+    V(I)%BComp%ProcPtr  => ToB
     IF ( .NOT. ASSOCIATED(V(I)%BComp%ProcPtr, ToB) ) STOP 24
     U%BComp = Base(4)(NULL())
     CALL V(I)%BComp%ProcPtr(U%BComp, V(I)%BComp%ProcPtr)

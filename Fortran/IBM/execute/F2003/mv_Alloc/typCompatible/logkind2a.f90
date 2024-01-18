@@ -1,22 +1,10 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : logkind2a.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is of logical*2, a component of DT
 !*                              TO is of unlimit poly, a component of DT
@@ -28,7 +16,7 @@
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-          
+
 module m
    type base
        logical(2), allocatable :: ll(:)
@@ -76,8 +64,8 @@ program main
 
            allocate(b1, source = base(mll))
 
-           call move_alloc(b1%ll,  c1%ul ) 
-           
+           call move_alloc(b1%ll,  c1%ul )
+
         end subroutine
 
 end program

@@ -1,17 +1,9 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : impliedshape05f.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : February 14, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Implied-shape arrays
-!*
-!* DRIVER STANZA              : xlf2008
 !*
 !* DESCRIPTION                : Testing proper functionality of
 !*                              implied-shape arrays of character(*)
@@ -22,61 +14,61 @@
 
       character(*), parameter :: ch4f1 (*) = &
       & [ 'abcabcdabcd', ('bcde       ',i=2,6) ]
-      
-      character(*), parameter :: ch4f2 (*) = & 
+
+      character(*), parameter :: ch4f2 (*) = &
       & [    ('aaa',i=1,5), 'bbb' ]
-      
-      character(*), parameter :: ch4f3 (*) = & 
+
+      character(*), parameter :: ch4f3 (*) = &
       & [ 'how', ('are',i=2,5), 'you' ]
-      
-      character(*), parameter :: ch4f4 (*) = & 
+
+      character(*), parameter :: ch4f4 (*) = &
       & ch4f1
-      
-      character(*), parameter :: ch4f5 (*) = & 
+
+      character(*), parameter :: ch4f5 (*) = &
       & reshape(['reshaping to [1] ','SHOULD NOT APPEAR'],[1])
-      
-      character(*), parameter :: ch4f6 (*,*) = & 
+
+      character(*), parameter :: ch4f6 (*,*) = &
       & reshape(['a','b','c','d'],[2,2])
-      
+
       character(*), parameter :: ch4f7 (*,*,*) = &
       & reshape(['a ','b ','c ','d ','e ','f ','g ','h '],[2,2,2])
-      
+
       character(KIND=1,LEN=*), parameter :: ch4f8 (*,*,*,*) = &
       & reshape(['aa   ','bb   ','ccc  ','dddd ','eeeee', &
       &          'f    ','g    ','h    ','ii   ','j    ', &
       &          'k    ','l    ','mm   ','n    ','o    ', &
       &          'p    '],[2,2,2,2])
-      
+
       character(*), parameter :: ch4f9 (*) = &
       & [ character(8) :: ('testing ',i=1,2), '1','2','3' ]
 
       ! Explicit
       character(*), parameter :: ch4f1a (6) = &
       & [ 'abcabcdabcd', ('bcde       ',i=2,6) ]
-      
-      character(*), parameter :: ch4f2a (6) = & 
+
+      character(*), parameter :: ch4f2a (6) = &
       & [    ('aaa',i=1,5), 'bbb' ]
-      
-      character(*), parameter :: ch4f3a (6) = & 
+
+      character(*), parameter :: ch4f3a (6) = &
       & [ 'how', ('are',i=2,5), 'you' ]
-      
-      character(*), parameter :: ch4f4a (6) = & 
+
+      character(*), parameter :: ch4f4a (6) = &
       & ch4f1a
-      
-      character(*), parameter :: ch4f5a (1) = & 
+
+      character(*), parameter :: ch4f5a (1) = &
       & reshape(['reshaping to [1] ','SHOULD NOT APPEAR'],[1])
-      
-      character(*), parameter :: ch4f6a (2,2) = & 
+
+      character(*), parameter :: ch4f6a (2,2) = &
       & reshape(['a','b','c','d'],[2,2])
-      
+
       character(*), parameter :: ch4f7a (2,2,2) = &
       & reshape(['a ','b ','c ','d ','e ','f ','g ','h '],[2,2,2])
-      
+
       character(KIND=1,LEN=*), parameter :: ch4f8a (2,2,2,2) = &
       & reshape([character(5) :: &
       &          'aa','bb','ccc','dddd','eeeee','f','g','h', &
       &          'ii','j','k','l','mm','n','o','p'],[2,2,2,2])
-      
+
       character(*), parameter :: ch4f9a (5) = &
       & [ ('testing ',i=1,2), '1       ','2       ','3       ' ]
 
@@ -113,7 +105,7 @@
         character(*) :: d(:,:)
         if (ANY(c .NE. d)) ERROR STOP 12
       end subroutine test_charstar2d
-      
+
       subroutine test_charstar3d (c, d)
         character(*) :: c(:,:,:)
         character(*) :: d(:,:,:)

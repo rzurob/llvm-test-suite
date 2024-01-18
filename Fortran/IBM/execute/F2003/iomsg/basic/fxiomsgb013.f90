@@ -5,51 +5,39 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgb013.f
 ! %VERIFY: fort.18:fxiomsgb013.vf
-! %STDIN: 
-! %STDOUT: 
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
 
-
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : OPEN with DIRECT access while RECL is missing
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
-!*  PRIMARY FUNCTIONS TESTED   : OPEN 
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  ORIGIN                     : AIX Compiler Development,
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  PRIMARY FUNCTIONS TESTED   : OPEN
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 1
 !*
 !*  DESCRIPTION                : Open a file with 'DIRECT' access code, but the
 !*                               RECL code is missing.
-!*                               
-!*
 !*
 !*  TEST CONDITIONS            : 1) Open a file with 'DIRECT' access code but
 !*                                  RECL is absent.
-!*                               
-!*                              
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*  MM/DD/YY:  Init:  Comments:
 !*  02/18/04   RL     Initial version
 !*
 !*********************************************************************
-
 
       program fxiomsgb013
 
@@ -59,7 +47,6 @@
       integer*4       case_id
       character*300   errmsg
       character*11     access_code
-
 
 !
 ! Initialize Return Code routine to SUCCESS...
@@ -79,7 +66,7 @@
     & err = 10, iostat = ios, iomsg = errmsg )
 
       call zzrc( case_id )
-      
+
 10    write ( 18, * ) errmsg
 
       if (ios .ne.25) error stop 1000

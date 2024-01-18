@@ -1,23 +1,10 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/dummy_arg/fArg521a2_1.f
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 02/02/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : argument association (a work-around for
 !                               fArg521a2.f with all the polymorphism removed

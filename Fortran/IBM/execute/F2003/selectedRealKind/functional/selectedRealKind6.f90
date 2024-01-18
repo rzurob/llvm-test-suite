@@ -1,23 +1,15 @@
 !***********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : selectedRealKind6
-!*  TEST CASE TITLE            :
 !*
-!*
-!*  PROGRAMMER                 : Salma Elshatanoufy
 !*  DATE                       : 08/24/2007
-!*  ORIGIN                     : XL Fortran Compiler Development, IBM Torolab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : -4 return value from SELECTED_REAL_KIND ([P, R])
 !*                               intrinsic
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
-!*
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -27,7 +19,6 @@
 !*                               case from selected_real_kind, when return
 !*                               values from selected_real_kind are passed
 !*				 as arguments to other functions.
-!*				
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -41,7 +32,7 @@
 		result = foo(selected_real_kind(16,300))
 		if (result .ne. -4 )	error stop 10_4
 
-	end program 
+	end program
 
 	integer function foo(N)
 		integer N

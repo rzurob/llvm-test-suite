@@ -2,12 +2,7 @@
 ! ftcx_dtp -ql /tstdev/OO_poly/misc/fmisc019.f
 ! opt variations: -qnol
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,26 +13,15 @@
 ! %STDIN:
 ! %STDOUT: fmisc019.out
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 10/18/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf95
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : miscellaneous item (defect 294132)
 !*
@@ -64,7 +48,7 @@ program fmisc019
     type(base(:,8)), allocatable :: y
 
     allocate (i1(0:7))
-    
+
     i1 = (/(k,k=0_8,7_8)/)
 
     x = base(20,8)(i1(::2))

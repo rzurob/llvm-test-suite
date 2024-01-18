@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d360170.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d360170.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 15 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  defect 360170
@@ -52,4 +44,4 @@ program d360170
          stop 11
   end select
 
-end program 
+end program

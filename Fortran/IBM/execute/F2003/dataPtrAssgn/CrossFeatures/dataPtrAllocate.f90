@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrAllocate.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrAllocate.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 15, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  the allocate stmt 
+!*  the allocate stmt
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,14 +29,14 @@
   MODULE M
 
   TYPE :: DT
-    INTEGER, PRIVATE :: ID0=0 
-    INTEGER :: ID 
+    INTEGER, PRIVATE :: ID0=0
+    INTEGER :: ID
   END TYPE
 
   END MODULE
 
 
-  PROGRAM dataPtrAllocate 
+  PROGRAM dataPtrAllocate
   USE M
   IMPLICIT NONE
 
@@ -52,16 +44,16 @@
   CLASS(DT), POINTER :: Ptr1(:, :)
   CLASS(*),  POINTER :: Ptr(:, :)
   INTEGER            :: I, J, K, N
- 
-  N = 10; K = 1 
+
+  N = 10; K = 1
   Arr  = DT(ID=-1)
   Arr1 = (/(DT(ID=-I), I=1, 100)/)
 
-  DO I =1, N 
-  DO J =1, N 
+  DO I =1, N
+  DO J =1, N
 
     Ptr(I:, J:) => Arr(N:I:-K, N:I:-K)
-    ALLOCATE(Ptr(I, J), SOURCE=-I) 
+    ALLOCATE(Ptr(I, J), SOURCE=-I)
     IF (.NOT. ASSOCIATED(Ptr))                 STOP 11
     IF (ANY( LBOUND(Ptr) .NE. (/1 , 1/)))      STOP 12
     IF (ANY( UBOUND(Ptr) .NE. (/I,  J/)))      STOP 13
@@ -76,11 +68,11 @@
   END DO
   END DO
 
-  DO I =1, N 
-  DO J =I, N 
+  DO I =1, N
+  DO J =I, N
 
     Ptr1(I:J, I:J) => Arr1(N*N::-K)
-    ALLOCATE(Ptr(I:J, I:J), SOURCE=Ptr1) 
+    ALLOCATE(Ptr(I:J, I:J), SOURCE=Ptr1)
     IF (.NOT. ASSOCIATED(Ptr))                 STOP 21
     IF (ANY( LBOUND(Ptr) .NE. (/I , I/)))      STOP 22
     IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      STOP 23

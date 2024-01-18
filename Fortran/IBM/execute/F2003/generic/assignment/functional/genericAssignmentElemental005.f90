@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: polymorphic elemental assignment for type component as well as type
 !*  KEYWORD(S)                 :
@@ -67,7 +56,7 @@ module m
       elemental subroutine bassgn ( a, b )
          class(base), intent(out) :: a
          type(base), intent(in) :: b
-         
+
          if ( allocated(b%in) ) then
             if ( .not. allocated(a%in) ) allocate ( a%in(size(b%in)), source = b%in )
             a%in = b%in
@@ -129,7 +118,7 @@ program genericAssignmentElemental005
    end select
 
    b2 = (/ base((/cinner(2000, 2001)/)), base((/cinner(2002, 2003), cinner(2004, 2005)/)), base( (/ inner(2006),inner(2007),inner(2008) /) ) /)
-   
+
    select type ( g=> b2(1)%in )
       type is (cinner)
          print *, g%i, g%j
@@ -143,10 +132,10 @@ program genericAssignmentElemental005
    select type ( g=> b2(3)%in )
       type is (inner)
          print *, g%i
-   end select   
+   end select
 
    b3 = (/ b2, base( (/inner(2004), inner(2005), inner(2006)/) ), base( (/cinner(2007,207), cinner(2008,208), cinner(2009,209)/) ) /)
-   
+
    select type ( g=> b3(1)%in )
       type is (cinner)
          print *, g%i, g%j

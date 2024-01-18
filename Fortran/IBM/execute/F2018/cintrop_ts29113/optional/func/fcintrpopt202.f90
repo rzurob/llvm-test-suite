@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt202.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -54,13 +47,13 @@ program testprogram
   interface
 
     integer(c_int) function realfunc(a, b, c) bind(c)
-	use iso_c_binding 
-	real(c_float) a 
+	use iso_c_binding
+	real(c_float) a
 	character(c_char) b, c
     end function
 
   end interface
- 
+
   interface
      subroutine c_sub_test1(func, dt_arr) bind(c)
         import dt1
@@ -95,4 +88,4 @@ program testprogram
   call c_sub_test1(dt_arr=dt_test_arr)
   call c_sub_test1(realfunc, dt_test_arr)
 
-end program 
+end program

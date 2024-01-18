@@ -12,24 +12,16 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dtpexpression014
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : June 2nd, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :testing expressions with derived types
-!*	
 !*
 !234567890143456789014345678901434567890143456789014345678901434567890
 
@@ -41,10 +33,9 @@ end type
 type , extends(A) :: B(kb,lb)
   integer, kind :: kb
   integer, len  :: lb
-  
+
   integer(ka+kb+ka+kb) :: c((lb-ka)*(lb/la):((ka+kb+la+lb)*(ka+kb+la+lb)),(ka+kb+la+lb):(ka*kb*la*lb),lb-la-kb-ka:((lb/la)*(kb/ka)),(kb*5):(lb*10))
- 
-  
+
 end type
 
 type(B(1,2,3,4)) :: B1

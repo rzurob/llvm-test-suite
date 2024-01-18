@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgLen_trim5
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : LEN_TRIM 
+!*  SECONDARY FUNCTIONS TESTED : LEN_TRIM
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Characteristics.
-!*    Integer. If KIND is present, the kind type parameter is that specified by the value of KIND; 
+!*    Integer. If KIND is present, the kind type parameter is that specified by the value of KIND;
 !*    otherwise the kind type parameter is that of default integer type
-!*  
-!*  () 
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -43,10 +35,10 @@
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
-     
+
   CHARACTER(32), PARAMETER :: CC(16)="1111111111111111"
 
-  DO I1 = 1, 16 
+  DO I1 = 1, 16
     IF (     LEN_TRIM(STRING=CC(I1)(:I1), KIND=LEN(CC(1)(1:1)))     .NE. I1)   STOP 11
     IF (KIND(LEN_TRIM(STRING=CC(I1)(:I1), KIND=LEN(CC(1)(1:1))))    .NE. 1)    STOP 12
     IF (     LEN_TRIM(STRING=CC(I1)(:I1), KIND=LEN(CC(1)(1:1))+1)   .NE. I1)   STOP 13
@@ -57,7 +49,7 @@
     IF (KIND(LEN_TRIM(STRING=CC(I1)(:I1), KIND=LEN(CC(1)(1:1))+7))  .NE. 8)    STOP 18
   END DO
 
-  DO I2 =1, 16 
+  DO I2 =1, 16
     IF (ANY( LEN_TRIM(STRING=CC(I2:)(:), KIND=LEN(CC(2)(2:2)))    .NE. 16))   STOP 21
     IF (KIND(LEN_TRIM(STRING=CC(I2:)(:), KIND=LEN(CC(2)(2:2))))   .NE. 1)     STOP 22
     IF (ANY( LEN_TRIM(STRING=CC(I2:)(:), KIND=LEN(CC(2)(2:2))+1)  .NE. 16))   STOP 23
@@ -68,7 +60,7 @@
     IF (KIND(LEN_TRIM(STRING=CC(I2:)(:), KIND=LEN(CC(2)(2:2))+7)) .NE. 8)     STOP 28
   END DO
 
-  DO I4 = 1, 16 
+  DO I4 = 1, 16
     IF (ANY( LEN_TRIM(STRING=CC(:I4)(I4:I4), KIND=LEN_TRIM(CC(4)(4:4)))    .NE. 1)) STOP 41
     IF (KIND(LEN_TRIM(STRING=CC(:I4)(I4:I4), KIND=LEN_TRIM(CC(4)(4:4))))   .NE. 1)  STOP 42
     IF (ANY( LEN_TRIM(STRING=CC(:I4)(I4:I4), KIND=LEN_TRIM(CC(4)(4:4))+1)  .NE. 1)) STOP 43

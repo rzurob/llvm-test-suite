@@ -12,33 +12,27 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu25.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Invoke command line procedures by external subroutines 
+!*  DESCRIPTION                : Invoke command line procedures by external subroutines
 !*                             : which are called through module internal subroutine
 !*                             : and entries with arguments defined in another module
 !*                             : (calling from module sub -> ext. sub is not a good idea any way :) )
@@ -63,15 +57,15 @@
 
       END MODULE
 
- 
+
       MODULE MOD1
- 
+
       USE MOD0
 
 
 
       CONTAINS
-      
+
       RECURSIVE FUNCTION M_COMMAND_ARGUMENT_COUNT()
 
       INTEGER M_COMMAND_ARGUMENT_COUNT
@@ -80,11 +74,11 @@
 
       M_COMMAND_ARGUMENT_COUNT = ENT_M_COMMAND_ARGUMENT_COUNT()
       RETURN
-      
+
       ENTRY ENT_M_COMMAND_ARGUMENT_COUNT
-      
+
       ENT_COMMAND_ARGUMENT_COUNT = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) & 
+      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) &
       then
         error stop 63
       endif
@@ -104,13 +98,13 @@
       CONTAINS
 
       RECURSIVE SUBROUTINE M_GET_COMMAND
- 
+
       CALL ENT_M_GET_COMMAND
       RETURN
 
 
       ENTRY ENT_M_GET_COMMAND
-     
+
       CALL GET_CMD
 
 
@@ -122,7 +116,7 @@
 
 
       MODULE MOD3
-      
+
       USE MOD0
 
 
@@ -135,7 +129,7 @@
       RETURN
 
       ENTRY ENT_M_GET_COMMAND_ARGUMENT
- 
+
       CALL GET_CMD_ARG
 
 
@@ -149,7 +143,7 @@
 
       USE MOD0
 
-     
+
       CONTAINS
 
       RECURSIVE SUBROUTINE M_GET_ENVIRONMENT_VARIABLE
@@ -157,7 +151,7 @@
       CALL ENT_M_GET_ENVIRONMENT_VARIABLE
       RETURN
 
-      
+
       ENTRY ENT_M_GET_ENVIRONMENT_VARIABLE
 
 
@@ -194,7 +188,7 @@
         CALL M_GET_COMMAND_ARGUMENT
 
         CALL M_GET_ENVIRONMENT_VARIABLE
-  
+
       END DO
 
 
@@ -202,7 +196,7 @@
 
 
       SUBROUTINE GET_CMD
-       
+
       USE MOD0
 
       call GET_COMMAND(COMMAND, LENGTH, STATUS)
@@ -220,9 +214,9 @@
       SUBROUTINE GET_CMD_ARG
 
       USE MOD0
- 
+
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)

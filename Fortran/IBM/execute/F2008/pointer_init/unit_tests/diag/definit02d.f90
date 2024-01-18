@@ -8,7 +8,7 @@ subroutine sub
   end interface
   procedure(foo) bar
 
-  integer, target, save :: t1 
+  integer, target, save :: t1
 
   type dt1
     integer, pointer :: p1 => t1

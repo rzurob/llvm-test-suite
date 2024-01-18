@@ -1,34 +1,26 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignIntrinsicComp01b.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignIntrinsicComp01b.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 2 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 2 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!* 1. Test user defined assignment with generic type bound procedure 
+!* 1. Test user defined assignment with generic type bound procedure
 !* 2. Arguments have different rank,kind type parameter.
-!* 3. Derived type has intrinsic types 
+!* 3. Derived type has intrinsic types
 !234567490123456749012345674901234567490123456749012345674901234567490
 module m
    type dtp(k1,l1)
        integer(8),kind :: k1=4
        integer,len     :: l1=3
-       
+
        character(l1)   :: c1(l1:l1)="******"
        integer(k1)     :: i1(l1:l1+1)=-99
        logical(k1)     :: g1(l1:l1+2)=.false.
@@ -45,9 +37,9 @@ module m
        subroutine assign1(dt1,dt2)
            class(dtp(4,*)),intent(inout) :: dt1
            type(dtp(4,*)),intent(in)     :: dt2
-           
+
            print *,"in assign1"
-           
+
            dt1%c1=dt2%c1
            dt1%i1=dt2%i1
            dt1%g1=dt2%g1
@@ -57,7 +49,6 @@ module m
        subroutine assign2(dt1,dt2)
            class(dtp(4,*)),intent(inout) :: dt1
            type(dtp(4,3)),intent(in)   :: dt2(:)
-
 
            print *,"in assign2"
 
@@ -89,17 +80,17 @@ program defAssignIntrinsicComp01b
 
      integer :: i
      type(dtp) :: dtp1
-    
+
      logical,external :: precision_r4
- 
+
      type(dtp) :: dtp2=dtp(c1="XLF",i1=[10,11], &
                            g1=[.true.,.false.,.true.],&
                            r1=[1.2,-3.5,6.7E-2])
-  
+
      type(dtp(4,:)),allocatable :: dtp3(:)
 
      type(dtp(8,3)),allocatable :: dtp4
- 
+
      dtp1=dtp2 ! call assign1
 
      if(any(dtp1%c1 /= "XLF"))                                       stop 10

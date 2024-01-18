@@ -4,20 +4,14 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrFuncnamebound1.f 
+!*  TEST CASE NAME             : dataPtrFuncnamebound1.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -54,8 +48,8 @@ end module
         b2%p(size(b2p%p):, ent(b2p):)  => tar(::2,::2)
 
         if ( .not. associated(b2%p, tar(::2,::2))) stop 10
-        if ( any ( lbound(b2%p) .ne. (/20,20/) )) stop 11  
+        if ( any ( lbound(b2%p) .ne. (/20,20/) )) stop 11
         if ( any ( ubound(b2%p) .ne. (/21,22 /) )) stop 12
         print *, b2%p
     end program
- 
+

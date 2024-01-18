@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsArrayPolyComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsArrayPolyComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 20 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 20 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
-!*  2. SOURCE IS POLYMORPHIC ARRAY AND HAS POLYMORPHIC COMPONENT 
+!*  2. SOURCE IS POLYMORPHIC ARRAY AND HAS POLYMORPHIC COMPONENT
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(l1)
@@ -30,7 +22,7 @@ module m
    end type
 
    type,extends(base) :: child(k2)
-     integer,kind     :: k2 
+     integer,kind     :: k2
      integer(k2)      :: i1
      class(base(:)),pointer  :: base1=>null()
    end type
@@ -55,7 +47,7 @@ program spreadSourceIsArrayPolyComp01
             b1(i)%base1=>b1(i)
         end do
   end select
-  
+
   allocate(b2(2,2),source=reshape(b1,(/2,2/)) )
 
   call verify1(spread(b1,1,5)) ! dim is 1
@@ -66,7 +58,7 @@ program spreadSourceIsArrayPolyComp01
   !   | b1(2), b1(3), b1(4), b1(5) |
   !   | b1(2), b1(3), b1(4), b1(5) |
 
-  
+
   call verify2(spread(b1,2,5)) ! dim is 2
   !   spread(..) becomes ...
   !   | b1(2), b1(2), b1(2), b1(2), b1(2) |
@@ -80,13 +72,13 @@ program spreadSourceIsArrayPolyComp01
   !   b2(2,1) - (c1="22",i1=22)
   !   b2(2,2) - (c1="44",i1=44)
   call verify3(spread(b2,1,5)) ! dim is 1
-  !   shape is 5,2,2  
+  !   shape is 5,2,2
   !   dt(x,1,1) - (x is 1 - 5) - (c1="11",i1=11)
   !   dt(x,1,2) - (x is 1 - 5) - (c1="33",i1=33)
   !   dt(x,2,1) - (x is 1 - 5) - (c1="22",i1=22)
   !   dt(x,2,2) - (x is 1 - 5) - (c1="44",i1=44)
 
-  !   | (c1="11",i1=11), (c1="33",i1=33) |   b2(1,1) , b2(1,2) 
+  !   | (c1="11",i1=11), (c1="33",i1=33) |   b2(1,1) , b2(1,2)
   !   | (c1="22",i1=22), (c1="44",i1=44) |   b2(2,1) , b2(2,2)
 
   call verify4(spread(b2,2,5)) ! dim is 2
@@ -101,7 +93,7 @@ program spreadSourceIsArrayPolyComp01
      subroutine verify1(dt)
         class(base(*)),intent(in) :: dt(:,:)
 
-        ! element order: 
+        ! element order:
         ! dt(1,1) - b1(2) - (c1="11",i1=11)
         ! dt(2,1) - b1(2)
         ! dt(3,1) - b1(2)
@@ -122,9 +114,9 @@ program spreadSourceIsArrayPolyComp01
         ! dt(3,4) - b1(5)
         ! dt(4,4) - b1(5)
         ! dt(5,4) - b1(5)
-        
+
         select type(dt)
-           type is(child(*,4)) 
+           type is(child(*,4))
              if(dt%k2 /= 4)                              error stop 10_4
              if(dt%l1 /= 2)                              error stop 11_4
              if(size(dt,1) /= 5)                         error stop 12_4
@@ -145,17 +137,17 @@ program spreadSourceIsArrayPolyComp01
                if(.not. associated(dt(i,1)%base1))       error stop 24_4
                if(.not. associated(dt(i,2)%base1))       error stop 25_4
                if(.not. associated(dt(i,3)%base1))       error stop 26_4
-               if(.not. associated(dt(i,4)%base1))       error stop 27_4 
+               if(.not. associated(dt(i,4)%base1))       error stop 27_4
 
-             end do 
+             end do
            class default
                error stop 100_4
         end select
-     end subroutine   
+     end subroutine
 
      subroutine verify2(dt)
         class(base(*)),intent(in) :: dt(:,:)
-        
+
         ! element order
         ! dt(1,1) - b1(2) - (c1="11",i1=11)
         ! dt(2,1) - b1(3) - (c1="22",i1=22)
@@ -214,8 +206,8 @@ program spreadSourceIsArrayPolyComp01
        class(base(*)),intent(in) :: dt(:,:,:)
 
        ! element order:
-       ! dt(1,1,1) - b2(1,1) - (c1="11",i1=11) 
-       ! dt(2,1,1) - b2(1,1) 
+       ! dt(1,1,1) - b2(1,1) - (c1="11",i1=11)
+       ! dt(2,1,1) - b2(1,1)
        ! dt(3,1,1) - b2(1,1)
        ! dt(4,1,1) - b2(1,1)
        ! dt(5,1,1) - b2(1,1)
@@ -272,14 +264,14 @@ program spreadSourceIsArrayPolyComp01
 
     subroutine verify4(dt)
        class(base(*)),intent(in) :: dt(:,:,:)
-       
+
        ! element order:
        ! dt(1,1,1) - (c1="11",i1=11)
        ! dt(2,1,1) - (c1="22",i1=22)
-       ! dt(1,2,1) - 
-       ! dt(2,2,1) - 
+       ! dt(1,2,1) -
+       ! dt(2,2,1) -
        ! dt(1,3,1) -
-       ! dt(2,3,1) - 
+       ! dt(2,3,1) -
        ! dt(1,4,1) -
        ! dt(2,4,1) -
        ! dt(1,5,1) -
@@ -288,7 +280,7 @@ program spreadSourceIsArrayPolyComp01
        ! dt(1,1,2) - (c1="33",i1=33)
        ! dt(2,1,2) - (c1="44",i1=44)
        ! dt(1,2,2) -
-       ! dt(2,2,2) - 
+       ! dt(2,2,2) -
        ! dt(1,3,2) -
        ! dt(2,3,2) -
        ! dt(1,4,2) -

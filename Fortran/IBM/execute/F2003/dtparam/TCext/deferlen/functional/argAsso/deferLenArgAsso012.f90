@@ -3,20 +3,10 @@
 ! opt variations: -qck -qnok -qnol -qnodeferredlp
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Characters with deferred length type parameter
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : character with deferred length
 !*                               in user-defined assignment

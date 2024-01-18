@@ -1,5 +1,5 @@
 ! Call to minloc in initialization expression with back = .true. and
-! 1. rank 1 real*16 array 
+! 1. rank 1 real*16 array
 ! 2. rank 1 real*16 array and mask
 ! 3. rank 2 real*16 array
 ! 4. rank 2 real*16 array and mask
@@ -48,7 +48,7 @@ integer :: j10(2,2) = &
                       (/2,2,2/)), 2, reshape((/.true., .true., .false., .true., &
                                                .true., .true., .true., .true./), (/2,2,2/)), &
               back =.true.)
-                          
+
 if (j1(1) .ne. 3) ERROR STOP 1
 if (j2(1) .ne. 4) ERROR STOP 2
 if (j3(1) .ne. 1 .or. j3(2) .ne. 2) ERROR STOP 3

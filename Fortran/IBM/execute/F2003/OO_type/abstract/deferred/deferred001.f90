@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Deferred Binding
 !*                                  - Private Deferred Binding in base type in 1 module
@@ -99,7 +88,7 @@ program deferred001
       type is ( child )
          if ( ( c1%base%i /= 301 ) .or. ( c1%j /= 301 ) .or. ( b1%base%i /= 301 ) .or. ( b1%j /= 301 ) ) error stop 2_4
    end select
-   
+
    call c1%setid(401)
 
    select type ( b1 )

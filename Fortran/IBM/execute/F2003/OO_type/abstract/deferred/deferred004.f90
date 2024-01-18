@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Deferred Binding
 !*                                  - non-pure Deferred Binding in base type
@@ -96,24 +85,24 @@ program deferred004
    deallocate ( b1, c1 )
 
    allocate ( c1, source = gen3( 201, 202, 203 ) )
-   
+
    b1 => c1
-   
+
    select type ( b1 )
       type is ( gen3 )
-         select type ( c1 ) 
+         select type ( c1 )
             type is ( gen3 )
                call b1%child%print()
                call c1%child%print()
                if ( ( b1%k /= 203 ) .or. ( c1%k /= 203 ) ) error stop 1_4
          end select
    end select
-  
+
    call b1%print()
 
    select type ( b1 )
       type is ( gen3 )
-         select type ( c1 ) 
+         select type ( c1 )
             type is ( gen3 )
                call b1%child%print()
                call c1%child%print()

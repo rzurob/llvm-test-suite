@@ -15,7 +15,6 @@
         real(16), parameter :: PINF_16 = z"7ff00000000000000000000000000000"
         real(16), parameter :: NINF_16 = z"fff00000000000000000000000000000"
 
-
         ! Zeros
 
         ! IEEE Single: real(4)
@@ -30,7 +29,6 @@
         real(16), parameter :: PZERO_16 = z"00000000000000000000000000000000"
         real(16), parameter :: PZERO2_16 = z"80000000000000008000000000000000"
         ! real(16) has no negative zero
-
 
         ! NaNs
 

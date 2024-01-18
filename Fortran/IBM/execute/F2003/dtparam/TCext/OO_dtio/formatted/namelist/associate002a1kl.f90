@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : associate002a1kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from associate002a1 by Robert Ma)
 !*  DATE                       : 2007-06-29 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with associate construct (Output)

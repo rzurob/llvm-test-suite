@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with assignment
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: named-constant (parameter) should still invoke the generic tb procedures
 !*  KEYWORD(S)                 :
@@ -68,7 +57,7 @@ program genericAssignmentParameter002
 
    type(base), parameter :: b1(4) = (/ ( base(10*i), i = 1, 4 ) /)
    type(child), parameter :: c1(4) = (/ ( child(100*i), i = 1, 4 ) /)
-   
+
    class(base), allocatable :: b2, b3(:)
    class(child), pointer :: c2, c3(:)
 

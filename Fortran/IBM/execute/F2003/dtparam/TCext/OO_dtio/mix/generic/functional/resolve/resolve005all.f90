@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : resolve005all
 !*
-!*  PROGRAMMER                 : David Forster (derived from resolve005a by Robert Ma)
 !*  DATE                       : 2007-08-09 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Section 9.5.3.7.3 Resolving derived-type input/output procedure references (generic binding)
 !*                                    - Generic type bound is private

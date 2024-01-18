@@ -12,20 +12,13 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc 
 !*  REQUIRED COMPILER OPTIONS  : -qfloat=complexgcc (with gcc)
 !*
 !*  DESCRIPTION                : This test case will verify that scalar variables
@@ -34,8 +27,8 @@
 !*                               Data type being tested: different types of complex
 !*
 !*                               Scope being tested:  main program
-!* 
-!*				 Similar to fxcmn_blk401.f, but this testcase will 
+!*
+!*				 Similar to fxcmn_blk401.f, but this testcase will
 !*				 test complex(C_LONG_DOUBLE_COMPLEX) as well
 !*
 !* ===================================================================

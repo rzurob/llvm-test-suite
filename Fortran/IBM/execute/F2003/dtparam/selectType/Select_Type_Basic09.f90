@@ -1,24 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type_Basic09 - SELECT TYPE 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 05, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters 
+!*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Array Constructor
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -37,24 +29,24 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Basic (k1,len1)
         INTEGER, KIND :: k1 = KIND(0.0)
         INTEGER, LEN :: len1 = 10
 
-        CHARACTER(LEN=len1) :: name(4)=(/CHARACTER(10):: 'Niels ', 'Henrik', 'David ', 'Bohr  '/) 
+        CHARACTER(LEN=len1) :: name(4)=(/CHARACTER(10):: 'Niels ', 'Henrik', 'David ', 'Bohr  '/)
       END TYPE Basic
 
       TYPE, EXTENDS(Basic) :: ExtBasic
-        CLASS(Basic(k1,:)), POINTER :: Ptr => NULL() 
+        CLASS(Basic(k1,:)), POINTER :: Ptr => NULL()
       END TYPE ExtBasic
 
       END MODULE Mod1
 
       PROGRAM Select_Type_Basic09
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       INTEGER, PARAMETER :: k1 = KIND(0.0) , len1 = 10
       CLASS(ExtBasic(k1,len1)), POINTER :: Indv(:)

@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/eoshift
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/08/2005
 ! PRIMARY FUNCTIONS TESTED   : eoshift
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : ARRAY, SHIFT, or BOUNDARY is array
 !                              element or array section. Poly and
 !                              unlimited poly.

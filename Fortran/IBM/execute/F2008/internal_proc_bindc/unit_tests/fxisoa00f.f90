@@ -5,7 +5,7 @@ integer(C_INT) function fnt1(a,b) bind(c,name="some1")
 
    integer(C_INT) :: a
    integer(C_SHORT) :: b
-   
+
    if ( a /= 5 ) error stop 20
    if ( b /= 10 ) error stop 22
 
@@ -24,7 +24,7 @@ integer(C_INT) function fnt2(a,b)
 
    integer(C_INT), value :: a
    integer(C_SHORT), value :: b
-   
+
    if ( a /= 5 ) error stop 24
    if ( b /= 10 ) error stop 26
 
@@ -39,7 +39,7 @@ integer(C_INT) function fnt3(a,b)
 
    integer(C_INT), intent(in) :: a
    integer(C_SHORT), intent(in) :: b
-   
+
    if ( a /= 5 ) error stop 28
    if ( b /= 10 ) error stop 30
 
@@ -51,7 +51,7 @@ integer(C_INT) function fnt4(a,b)
 
    integer(C_INT), intent(in), value :: a
    integer(C_SHORT), intent(in), value :: b
-   
+
    if ( a /= 5 ) error stop 32
    if ( b /= 10 ) error stop 34
 
@@ -63,7 +63,7 @@ integer(C_INT) function fnt5(a,b)
 
    integer(C_INT), intent(in) :: a
    integer(C_SHORT), intent(in) :: b
-   
+
    if ( a /= 5 ) error stop 36
    if ( b /= 10 ) error stop 38
 
@@ -75,7 +75,7 @@ integer(C_INT) function fnt6(a,b)
 
    integer(C_INT), intent(in), value :: a
    integer(C_SHORT), intent(in), value :: b
-   
+
    if ( a /= 5 ) error stop 40
    if ( b /= 10 ) error stop 42
 

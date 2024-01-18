@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a007.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -68,7 +64,7 @@ program main
 			error stop 22
 		end if
 	end do
-	
+
 	print *, floor(cafA(:)%r)
 	print *, ceiling(cafA(:)%r)
 
@@ -83,7 +79,7 @@ program main
 		print *, "expected", seti
 		error stop 23
 	end if
-	
+
 	do i = 1, 5
 		if ( .not. precision_R8(dtA(i)%r, setr(i)) ) then
 			print *, "actual", dtA%r
@@ -101,13 +97,13 @@ program main
 	cafB%a = dtB%a
 
 	if (.not. cafB%l) error stop 25
-	
+
 	if ( cafB%a%i /= dtB%a%i ) then
 		print *, "actual", cafB%a%i
 		print *, "expected", dtB%a%i
 		error stop 26
 	end if
-	
+
 	if ( .not. precision_R8(cafB%a%r, dtB%a%r) ) then
 		print *, "actual", cafB%a%r
 		print *, "expected", dtB%a%r
@@ -119,15 +115,15 @@ program main
 	dtB%l = cafB%l
 	dtB%a%i = cafB%a%i
 	dtB%a%r = cafB%a%r
-	
+
 	if (.not. cafB%l) error stop 28
-	
+
 	if (dtB%a%i /= seti(1)) then
 		print *, "actual", dtB%a%i
 		print *, "expected", seti(1)
 		error stop 29
 	end if
-	
+
 	if ( .not. precision_R8(dtB%a%r, setr(1)) ) then
 		print *, "actual", dtB%a%r
 		print *, "expected", setr(1)

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecUseOfSpecExpr_d
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 11, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  
 !*   A specification-expr in an array-spec, in a type-param-value in a declaration-type-spec corresponding to
-!*   a length type parameter, or in a char-length in an entity-decl shall be an initialization expression unless 
-!*   it is in an interface body (12.3.2.1), the specification part of a subprogram, or the declaration-type-spec 
-!*   of a FUNCTION statement (12.5.2.1). 
-!* 
+!*   a length type parameter, or in a char-length in an entity-decl shall be an initialization expression unless
+!*   it is in an interface body (12.3.2.1), the specification part of a subprogram, or the declaration-type-spec
+!*   of a FUNCTION statement (12.5.2.1).
 !*
-!*     
-!*
-!*  (336732) 
+!*  (336732)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -69,12 +58,12 @@
 
   ! The following is ok
 
-  INTERFACE 
+  INTERFACE
 
     SUBROUTINE S(J, T)
-    IMPORT 
+    IMPORT
       INTEGER :: J
-      TYPE(DT(1,J)) :: T(J) 
+      TYPE(DT(1,J)) :: T(J)
     END SUBROUTINE
 
     FUNCTION F(J)

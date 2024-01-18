@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : ofsk10f.f
 !*
-!*  PROGRAMMER                 : Jin Li
 !*  DATE                       : 2010-09-30
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 Omit FUNCTION and SUBROUTINE Keywords
 !*  REFERENCE                  : Feature Number 376084
@@ -136,7 +132,7 @@ C*---------------------------------------------------------------------
      +   ( Array(2) .NE. 2 ) .OR.
      +   ( Array(3) .NE. 3 ) )
      +   ERROR STOP 5
-  
+
          IF (
      +   ( LBOUND(Array,1) .NE. 1 ) )
      +   ERROR STOP 5
@@ -146,7 +142,7 @@ C*---------------------------------------------------------------------
          INTEGER ARRAYFCN2(3)
          INTEGER :: B(3) = (/ 1,2,3 /)
          ARRAYFCN2 = B
-      END 
+      END
 
       END
 
@@ -155,5 +151,5 @@ C*---------------------------------------------------------------------
          INTEGER :: B(3) = (/ 1,2,3 /)
          ARRAYFCN1 = B
       END FUNCTION ARRAYFCN1
-         
-         
+
+

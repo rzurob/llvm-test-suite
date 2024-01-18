@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_4
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 30, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
-!*  -- An array constructor where each element and each scalar-int-expr of 
+!*  -- An array constructor where each element and each scalar-int-expr of
 !*     each ac-implied-do control is a restricted expression
-!*   
 !*
-!*  (340524) 
+!*  (340524)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,14 +44,14 @@
     TYPE(DT0(KIND, LEN)) :: T!=DT0(KIND, LEN)()
   END TYPE
 
-  TYPE(DT(KIND=4,    LEN=SIZE([1]))), SAVE :: T0(1)  
+  TYPE(DT(KIND=4,    LEN=SIZE([1]))), SAVE :: T0(1)
   INTEGER :: I
 
   END MODULE
 
   PROGRAM dtParamTypeDecC501_4
   USE M
-  TYPE(DT(KIND=4,       LEN=LBOUND(T0, 1))) :: T1(1)  
+  TYPE(DT(KIND=4,       LEN=LBOUND(T0, 1))) :: T1(1)
 
   CALL IntSub(  )
 
@@ -67,8 +59,8 @@
 
   SUBROUTINE IntSub()
 
-  TYPE(DT(4,     LEN=SIZE([(T0%L, I=1,100)])))  :: T2(1)  
-  TYPE(DT(4,       L=SIZE([(T1%I, I=1,100)])))  :: T3(1) 
+  TYPE(DT(4,     LEN=SIZE([(T0%L, I=1,100)])))  :: T2(1)
+  TYPE(DT(4,       L=SIZE([(T1%I, I=1,100)])))  :: T3(1)
 
 
   IF ( T0%K               .NE.   4          ) STOP 41

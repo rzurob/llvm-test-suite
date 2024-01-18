@@ -1,20 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : d355425
-!*  TEST CASE TITLE            : Test Case for Defect:  355425
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : August 26, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  ABSTRACT                   : ASSOCIATE: PROCPTR: RES: Unknown Data Type
 !*                               for FUNCTION Return
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -28,7 +22,7 @@
 !*  The ASSOCIATE Construct in the Reduced Code (below) uses the Procedure
 !*  Pointer result from a FUNCTION as the selector.  When compiled, the
 !*  compiler emits the following Diagnostic:
-!*  
+!*
 !*  1517-001 (U) Data type is unknown.  Please contact your Service
 !*  Representative.  For more information visit:
 !*  http://www.ibm.com/support/docview.wss?uid=swg21110810

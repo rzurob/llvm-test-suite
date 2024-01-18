@@ -12,25 +12,18 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : bcunattr.f
 !
-!* PROGRAMMER                   : Helen Li
 !* DATE                         : May. 24, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    : -qfree=f90 -qattr -qlist -qxref=full
 !*
 !* DESCRIPTION                  : Test bind(c) variables work with
 !*                              : -qattr.
-!*                              :
 !234567890123456789012345678901234567890123456789012345678901234567890
 module mod
 character ch
@@ -47,4 +40,4 @@ ch = 'F'
 cf = 8.8
 ci = 1
 ca = 3
-end 
+end

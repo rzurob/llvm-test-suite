@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ExplicitInitExp05.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Explicit Init. Exp. 
+!*  PRIMARY FUNCTIONS TESTED   : Explicit Init. Exp.
 !*  SECONDARY FUNCTIONS TESTED : SAVE attribute
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,7 +17,7 @@
 !* Defect 364814
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -53,10 +45,10 @@ MODULE Mod
         TYPE(Child(k1,l3,k1,l3)) :: ccomp
       END TYPE
 
-      INTEGER :: I 
+      INTEGER :: I
       INTEGER, PARAMETER :: I10(10) = [(I, I = 1, 10)], I5(5) = [(I**2, I = 1, 5)]
 
-      CONTAINS  
+      CONTAINS
 
       SUBROUTINE CreateNewBase(Arg)
        CLASS(Base(4,:)), POINTER  :: Arg
@@ -101,7 +93,7 @@ PROGRAM ExplicitInitExp05
             IF ( LEN(ptr%C0)      .NE. 10 ) STOP 16
             IF ( ANY(ptr%A0   .NE. [(I, I = 1, 10)]) ) STOP 17
             IF ( TRIM(ptr%C0) .NE.      'b1constant' ) STOP 18
-       
+
          CLASS DEFAULT
             STOP 19
        END SELECT
@@ -130,7 +122,7 @@ PROGRAM ExplicitInitExp05
          CLASS DEFAULT
             STOP 37
        END SELECT
-       
+
        CALL CreateNewGrandChild(ptr)
        IF ( .NOT. ASSOCIATED(ptr) ) STOP 40
        SELECT TYPE ( ptr )
@@ -158,7 +150,7 @@ PROGRAM ExplicitInitExp05
             IF ( TRIM(ptr%C0) .NE.         'AB' ) STOP 61
             IF ( TRIM(ptr%C1) .NE.      'ABCDE' ) STOP 62
             IF ( TRIM(ptr%C2) .NE. 'n1constant' ) STOP 63
-     
+
             IF ( ptr%bcomp%k1 .NE.  4 ) STOP 64
             IF ( ptr%bcomp%l1 .NE. 10 ) STOP 65
             IF ( SIZE(ptr%bcomp%A0)     .NE. 10 ) STOP 66
@@ -167,7 +159,7 @@ PROGRAM ExplicitInitExp05
             IF ( LEN(ptr%bcomp%C0)      .NE. 10 ) STOP 69
             IF ( ANY(ptr%bcomp%A0   .NE.         -1) ) STOP 70
             IF ( TRIM(ptr%bcomp%C0) .NE. 'Base-init' ) STOP 71
-     
+
             IF ( ptr%ccomp%k1 .NE.  4 ) STOP 72
             IF ( ptr%ccomp%l1 .NE. 10 ) STOP 73
             IF ( ptr%ccomp%k2 .NE.  4 ) STOP 74
@@ -184,9 +176,9 @@ PROGRAM ExplicitInitExp05
             IF ( ANY(ptr%ccomp%A1   .NE.   -2) ) STOP 85
             IF ( TRIM(ptr%ccomp%C0) .NE.  'Base-init' ) STOP 86
             IF ( TRIM(ptr%ccomp%C1) .NE. 'Child-init' ) STOP 87
-     
+
          CLASS DEFAULT
             STOP 88
        END SELECT
-      
+
 END PROGRAM ExplicitInitExp05

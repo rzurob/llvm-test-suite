@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectIntCompWrite01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectIntCompWrite01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 8 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 8 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Derived type is polymorphic and has ultimate integer components
@@ -25,7 +17,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m1
    type,public :: base(k1,l1) !(4,3)
-     integer,kind :: k1 
+     integer,kind :: k1
      integer,len  :: l1
 
      integer(k1)  :: i1(l1)
@@ -59,7 +51,7 @@ module m2
   use m1
   type,public,extends(base) :: child(k2,l2) !(4,5)
      integer,kind :: k2
-     integer,len  :: l2     
+     integer,len  :: l2
      integer(k1+k2)  :: i3(l1:l2)
 
      contains
@@ -75,12 +67,12 @@ module m2
       integer,intent(in)  :: unit
       integer :: ios
       character(256) :: msg
-  
-      print *,"in writeChild" 
-      select type(this) 
+
+      print *,"in writeChild"
+      select type(this)
          type is(child(4,*,4,*))
             call this%base%write(unit)
-               write(unit,fmt=*,iostat=ios,iomsg=msg)  this 
+               write(unit,fmt=*,iostat=ios,iomsg=msg)  this
          class default
            stop 11
       end select
@@ -89,7 +81,7 @@ module m2
    function modifyChild(this)
       class(child(4,*,4,*)),intent(in) :: this
       class(child(4,this%l1,4,this%l2)),allocatable :: modifyChild
-      
+
       allocate(modifyChild,source=this)
       modifyChild%i1=-this%i1
       modifyChild%i2=-this%i2
@@ -126,14 +118,14 @@ program listDirectIntCompWrite01
      print *,"iostat=",ios
      print *,"iomsg=",msg
      stop 10
-  end if 
+  end if
 
   do i=lbound(child1,1),ubound(child1,1)
      call child1(i)%write(unit)
       associate(x=>child1(i)%modChild())
        call x%write(unit)
      end associate
-  end do  
+  end do
 
   do i=lbound(base1,1),ubound(base1,1)
      call base1(i)%write(unit)
@@ -145,7 +137,7 @@ program listDirectIntCompWrite01
        class default
          stop 13
      end select
-  end do 
-   
+  end do
+
   close(unit,status='keep')
 end program

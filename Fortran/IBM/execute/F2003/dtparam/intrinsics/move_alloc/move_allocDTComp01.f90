@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocDTComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocDTComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 1 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 1 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
@@ -28,11 +20,11 @@ module m
     type A(l1)
        integer,len :: l1
        character(l1),allocatable :: c1(:)
-    end type  
+    end type
     type B(l2)
        integer,len :: l2
        type(A(l2+l2)),allocatable :: a1(:)
-    end type 
+    end type
 end module
 
 program move_allocDTComp01
@@ -43,7 +35,7 @@ program move_allocDTComp01
   type(B(3)),allocatable :: b1(:)
   type(B(:)),allocatable :: b2(:)
   class(*),allocatable   :: b3(:)
-  
+
   allocate(b1(2))
 
   b1(1)%a1=[A(6)(["123","456"]),A(6)(["aaa","bbb"])]
@@ -51,9 +43,9 @@ program move_allocDTComp01
 
   call move_alloc(b1,b2)
 
-  if(allocated(b1))                              error stop 10_4 
-  if(.not. allocated(b2))                        error stop 11_4 
-  if(b2%l2 /= 3)                                 error stop 12_4 
+  if(allocated(b1))                              error stop 10_4
+  if(.not. allocated(b2))                        error stop 11_4
+  if(b2%l2 /= 3)                                 error stop 12_4
   if(b2%l2 /= 3)                                 error stop 13_4
   if(b2(1)%a1%l1 /= 6)                           error stop 14_4
   if(b2(2)%a1%l1 /= 6)                           error stop 15_4
@@ -69,7 +61,7 @@ program move_allocDTComp01
   if(allocated(b1))      deallocate(b1)
   allocate(b1(2))
   b1(1)%a1=[A(6)(["123","456"]),A(6)(["aaa","bbb"])]
-  b1(2)%a1=[A(6)(["000","111"]),A(6)(["ccc","ddd"])]  
+  b1(2)%a1=[A(6)(["000","111"]),A(6)(["ccc","ddd"])]
 
   call move_alloc(b1,b3)
   if(allocated(b1))                                   error stop 22_4

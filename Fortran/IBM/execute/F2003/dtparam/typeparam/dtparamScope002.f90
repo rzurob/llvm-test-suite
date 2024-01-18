@@ -1,29 +1,14 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 01/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : dtparam (section 16.2: scope of the type-param)
 !                               Type parameters does not affect host
 !                               associations in derived type definition: named
 !                               const, derived types, abstract interface, module
 !                               procedure and intrinsic procedures.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

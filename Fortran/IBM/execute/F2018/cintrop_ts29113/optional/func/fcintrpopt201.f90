@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt201.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -24,7 +17,7 @@
 !*  the actual argument is a disassociated POINTER or an unallocated ALLOCATABLE
 !*
 !* Dummy Argument:
-!*  dummy argument is not pointer when -qxlf2008=checkpresence 
+!*  dummy argument is not pointer when -qxlf2008=checkpresence
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -38,13 +31,13 @@
 module testmod
   interface
    subroutine c_sub_test1(arg1, arg2) bind(c)
-     use iso_c_binding 
+     use iso_c_binding
      integer(c_int), optional :: arg1
      real(c_float), optional :: arg2
    end subroutine c_sub_test1
 
    integer(c_size_t) function c_func_test2(arg1) bind(c)
-     use iso_c_binding 
+     use iso_c_binding
      integer(c_int64_t), optional :: arg1
    end function c_func_test2
   end interface
@@ -57,7 +50,7 @@ program testprogram
 
   integer(c_int), pointer :: pi_a
   integer(c_int), allocatable :: ai_a
-  
+
   real(c_float), pointer :: pr_a
   real(c_float), allocatable :: ar_a
 
@@ -81,4 +74,4 @@ program testprogram
 
   size1 = c_func_test2(ai64_a)
 
-end program 
+end program

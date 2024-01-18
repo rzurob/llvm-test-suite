@@ -1,13 +1,9 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qnock -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/intrinsics/null/functionReturn003.f
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/null
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 03/02/2005
 ! PRIMARY FUNCTIONS TESTED   : null
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : MOLD is the return value of a type bound
 !                              procedure call.
 !=======================================================================

@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : arrsec2_datatype04.f
-!*  PROGRAMMER                 : Gaby Baghdadi (adopted from David Nichols' 
 !*                               arrsec1_datatype04.f)
 !*  DATE                       : Oct 13, 2008
 !*  ORIGIN                     : XLF Development
@@ -12,7 +9,6 @@
 !*  DESCRIPTION
 !*
 !*      Array component of character type
-!*      
 !*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890
@@ -20,9 +16,9 @@
     module m
       type A(n)
         integer, len :: n
-        character h(n) 
-        character i(n+2) 
-        character j(n+4) 
+        character h(n)
+        character i(n+2)
+        character j(n+4)
       end type
     end module
 

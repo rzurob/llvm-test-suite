@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d356490_1.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d356490_1.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 19 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 19 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. DEFECT 356490 
+!* 1. DEFECT 356490
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type :: dtp (l)

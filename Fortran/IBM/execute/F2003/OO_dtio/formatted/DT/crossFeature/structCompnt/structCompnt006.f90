@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Structure Component: Array Polymorphic Derived Type Component
@@ -41,7 +30,7 @@ module m
    type container1
       class(base), pointer :: b1(:)
    end type
-   
+
    type container2
       class(child), allocatable :: b2(:,:)
    end type
@@ -81,10 +70,10 @@ use m
 
    write ( 1, "(2(DT'_con2'(6,7),DT'_con2'(5,6)),/,4(DT'_con2base'(8)))", iostat = stat, iomsg = msg )     c2%b2, c2%b2%base
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 2_4
-   
+
    deallocate ( c1%b1 )
    allocate( c1%b1(2), source = (/ child('abc','ABC'), child('def','DEF') /)  )
-   
+
    write ( 1, "(DT'_con1-1'(4,4),DT'_con1-2'(5,5)))", iostat = stat, iomsg = msg )       c1%b1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 3_4
 

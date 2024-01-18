@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecRealCmplx.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecRealCmplx.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,22 +19,20 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  intrinsic-type-spec : REAL and COMPLEX 
-!* 
+!*  intrinsic-type-spec : REAL and COMPLEX
+!*
 !*  (324642)
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypSpecRealCmplx 
+  PROGRAM InitExpTypSpecRealCmplx
   IMPLICIT NONE
 
   INTEGER :: I
-  
+
   REAL(KIND=4_8),             PARAMETER :: R4(128)=(/(-I, I=1, 128)/)
   REAL(KIND=2*R4%KIND),       PARAMETER :: R8(128)=(/(-I, I=1, 128)/)
   REAL(KIND=R8%KIND+R8%KIND), PARAMETER :: R6(128)=(/(-I, I=1, 128)/)
@@ -67,4 +59,4 @@
 
   END
 
- 
+

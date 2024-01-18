@@ -1,23 +1,14 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE     : C Interop: Assumed-length Character arguments
-!*
-!*
-!*
-!*  PROGRAMMER          : Umme Hunny
 !*  DATE                : June, 1, 2014
-!*  ORIGIN              : AIX Compiler Development, Toronto Lab
 !*  FEATURE             : RTC Master Story:
 !*                        C Interop: Assumed-length Character arguments
 !*                        (master story) (72333)
 !*
-!*  FEATURE             : C Interop: Assumed-length Character arguments 
+!*  FEATURE             : C Interop: Assumed-length Character arguments
 !* ===================================================================
-!23456789012345678901234567890123456789012345678901234567890123456789012     
+!23456789012345678901234567890123456789012345678901234567890123456789012
 
       module module1
         interface
@@ -106,19 +97,19 @@
 
 
 
-  
+
       end module
-      
+
       program assumed_lenght001
 
         use module1
- 
+
         character(5) :: a1(5)
 
-        a1 = 'F2C__'         
+        a1 = 'F2C__'
         call check_f_to_c(a1, LEN(a1), 2, SIZE(a1),1)
 
-        a1 = 'F2F__' 
+        a1 = 'F2F__'
         call check_f_to_f(a1, LEN(a1), 2, SIZE(a1), 2)
 
         a1 = 'F2F2C'
@@ -126,7 +117,7 @@
 
         a1 = 'F2F2F'
         call check_f_to_f_to_f(a1, LEN(a1), 5, SIZE(a1), 4)
- 
+
         a1 = 'F2C2F'
         call check_f_to_c_to_f(a1, LEN(a1), 5, SIZE(a1), 5)
 

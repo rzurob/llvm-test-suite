@@ -1,5 +1,5 @@
 ! Compares single-precision erfc_scaled results to saved true value files
-! from Mathematica. If max allowable ulp errors are exceeded, stops and 
+! from Mathematica. If max allowable ulp errors are exceeded, stops and
 ! prints error message. Nothing is printed for successful completion.
 
       implicit none
@@ -11,7 +11,7 @@
       integer(4) :: i1, i2
       equivalence(f1, i1)
       equivalence(f2, i2)
-      
+
       character(*), parameter :: fname = "erfc_scaled07.dat"
       integer, parameter :: u = 8
       integer(4), parameter :: MAXULPS = 1
@@ -32,7 +32,7 @@
 
         ! compute erfc_scaled
         res = erfc_scaled(x)
-        
+
         ! compute ulp error
         if ((res == true) .or. ((res .ne. res) .and. (true .ne. true))) then
             ! equal or both NaN
@@ -42,7 +42,7 @@
            f2 = true
            ulperr = i1 - i2
         end if
-        
+
         if (abs(ulperr) .gt. MAXULPS) then
            print *, "line:", line, ", ulperr =", ulperr
            print *, "input:", x
@@ -50,11 +50,10 @@
            print *, "actual output   :", res
            error stop
         end if
-        
+
       end do
 
       close(u)
-      
+
       end
 
-      

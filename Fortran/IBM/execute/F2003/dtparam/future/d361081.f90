@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361081.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361081.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 16 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 16 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -27,8 +19,8 @@ module m
   contains
     function fun(dt)
       type(A(*)) :: dt
-     ! type(A(dt%l)) :: fun  
-      implicit type(A(dt%l))(f) 
+     ! type(A(dt%l)) :: fun
+      implicit type(A(dt%l))(f)
 
       fun=dt
     end function

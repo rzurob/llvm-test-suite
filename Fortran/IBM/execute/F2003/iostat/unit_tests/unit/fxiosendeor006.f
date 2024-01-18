@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxiosendeor006.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,27 +12,20 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxiosendeor006 
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug. 18, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : is_iostat_end and is_iostat_eor intrinsics
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This tests the functionality of the intrinsic when args
 !*                               to the intrinsic are mathematical expressions.
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
-      
+
       integer :: a = 4, b = 1
 
       ! TESTING IS_IOSTAT_END
@@ -63,7 +56,7 @@
       if( IS_IOSTAT_END( a/a*b ) ) then
         error stop 9
       endif
-      if( .not. IS_IOSTAT_END( -a/a ) ) then 
+      if( .not. IS_IOSTAT_END( -a/a ) ) then
         error stop 10
       endif
       if( .not. IS_IOSTAT_END( b*3-a ) ) then

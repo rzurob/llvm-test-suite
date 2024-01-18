@@ -1,7 +1,7 @@
 module m
    type dtp(l1,l2)
       integer,len      :: l1,l2
-      character(l1+l2) :: c 
+      character(l1+l2) :: c
    end type
 
    interface
@@ -27,11 +27,11 @@ module m
 
             call inner(dtp1) ! actual argument dtp1 is target
 
-            print *,dtp1            
+            print *,dtp1
             print *,dtp2
 
             contains
- 
+
                subroutine inner(arg)
                    ! dummy argument is target
                    type(dtp(:,:)),target,allocatable :: arg(:)
@@ -46,6 +46,6 @@ module m
                    arg(ubound(arg,1)) = dtp(1,2)("789")
 
                end subroutine
-         
-      end subroutine 
+
+      end subroutine
 end module

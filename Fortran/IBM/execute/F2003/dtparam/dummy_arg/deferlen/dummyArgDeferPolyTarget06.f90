@@ -1,32 +1,24 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyTarget06.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyTarget06.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 19 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 19 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. polymorphic pointer derived type is associated with a target.
-!*  2. pass target as actual argument through multiple procedure calls, and modify target and pointer through dummy argument 
+!*  2. pass target as actual argument through multiple procedure calls, and modify target and pointer through dummy argument
 !*  3. one of dummy argument in procedure is fixed child derived type
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(l1)
-       integer,len :: l1=10 
+       integer,len :: l1=10
        character(l1) :: firstname="no name"
    end type
 
@@ -47,8 +39,8 @@ module m
           if(.not. associated(ptr))                       error stop 40_4
           if(lbound(ptr,1) /= -5)                         error stop 41_4
           if(ubound(ptr,1) /= -3)                         error stop 42_4
-          if(ptr%l1 /= 15)                                error stop 43_4 
-          
+          if(ptr%l1 /= 15)                                error stop 43_4
+
           select type(ptr)
              class is(child(*,*))
                if(ptr%l2 /= 20)                           error stop 44_4
@@ -62,7 +54,7 @@ module m
                error stop 100_4
           end select
        end subroutine
- 
+
        subroutine sub2(arg)
          class(base(:)), pointer,intent(inout) :: arg(:)
 
@@ -92,10 +84,10 @@ module m
 
           if(arg(3)%firstname /= "Surname2")             error stop 20_4
           if(arg(3)%lastname /= "Familyname2")           error stop 21_4
-          
+
           if(arg(4)%firstname /= "Surname3")             error stop 22_4
           if(arg(4)%lastname /= "Familyname3")           error stop 23_4
-      
+
          call sub4(arg)
 
        end subroutine
@@ -108,7 +100,7 @@ module m
               if(arg%l2 /= 20)                           error stop 25_4
               if(arg(1)%firstname /= "Surname1")         error stop 26_4
               if(arg(1)%lastname /= "Familyname1")       error stop 27_4
-              if(arg(2)%firstname /= "Surname2")         error stop 28_4 
+              if(arg(2)%firstname /= "Surname2")         error stop 28_4
               if(arg(2)%lastname /= "Familyname2")       error stop 29_4
               if(arg(3)%firstname /= "Surname3")         error stop 30_4
               if(arg(3)%lastname /= "Familyname3")       error stop 31_4

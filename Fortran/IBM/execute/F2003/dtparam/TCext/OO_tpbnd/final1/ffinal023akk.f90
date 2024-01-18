@@ -1,22 +1,17 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal023akk.f
 !*  TEST CASE NAME             : type-bound procedure ffinal023akk
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal023a by Catherine Sun)
 !*  DATE                       : 2007-11-26 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines: import 
-!*    
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines: import
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -47,7 +42,7 @@ use m
         import base
         integer, intent(in) :: arg1
         end subroutine
-  
+
         subroutine fChild(arg1, arg2)
         import child
         integer, intent(in) :: arg1, arg2
@@ -60,7 +55,7 @@ use m
         type (child(4,1)), intent (in) :: arg1  ! tcx: (4,1)
         print *, 'finalizeChild'
     end subroutine
- 
+
 end module
 
 use m1
@@ -71,10 +66,10 @@ use m1
 end
 
 subroutine fBase (arg1)
-use m, only : base 
+use m, only : base
    integer, intent(in) :: arg1
    type(base(4))  :: dt1   ! tcx: (4)
-end subroutine 
+end subroutine
 
 subroutine fChild (arg1, arg2)
 use m1, only : child

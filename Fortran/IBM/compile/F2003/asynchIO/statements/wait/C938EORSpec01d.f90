@@ -1,18 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : C938EORSpec01d - WAIT() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 15, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() Statement
 !*  SECONDARY FUNCTIONS TESTED : Multiple EOR= Specifiers
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WAIT(), EOR= Specifier

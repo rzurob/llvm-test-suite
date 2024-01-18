@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrArgAssociation.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrArgAssociation.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 16, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Argument  
+!*  Argument
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -46,7 +38,7 @@
 
   END MODULE
 
-  PROGRAM dataPtrArgAssociation 
+  PROGRAM dataPtrArgAssociation
   USE M
   IMPLICIT NONE
 
@@ -57,14 +49,14 @@
 
   INTERFACE
     SUBROUTINE  ExtSub2(Ptr, Arr, I, J, N)
-    IMPORT DT 
+    IMPORT DT
       TYPE(DT),  TARGET  :: Arr(:, :)
       CLASS(DT), POINTER :: Ptr(:, :)
       INTEGER            :: I, J, N
     END SUBROUTINE
 
     SUBROUTINE  ExtSub1(Ptr, Arr, I, J, N)
-    IMPORT DT1, DT 
+    IMPORT DT1, DT
       TYPE(DT1), TARGET  :: Arr(:)
       CLASS(DT), POINTER :: Ptr(:,:)
       INTEGER            :: I, J, N
@@ -74,7 +66,7 @@
 
   N = 100; K = 0
 
-  DO I =1, N 
+  DO I =1, N
   DO J =I, N
 
     Ptr(I:, J:) => Tar2
@@ -84,19 +76,19 @@
     TYPE IS (DT)
       Ptr = DT(ID=I*J)
     END SELECT
- 
+
     IF (SIZE(Ptr)  .NE. N*N )                      STOP 10
     IF (.NOT. ASSOCIATED(Ptr, Tar2))               STOP 11
     IF (ANY( LBOUND(Ptr) .NE. (/-I, -J /)))        STOP 12
     IF (ANY( UBOUND(Ptr) .NE. (/-I+N-1, -J+N-1/))) STOP 13
     IF (ANY( Tar2%ID     .NE.  I*J ))              STOP 14
- 
+
     Ptr(I:J, I:J) => Tar1
-    CALL ExtSub1(Ptr, Tar1, I, J, N) 
+    CALL ExtSub1(Ptr, Tar1, I, J, N)
 
     SELECT TYPE (Ptr)
     TYPE IS (DT1)
-      Ptr = DT1(ID=-I*J) 
+      Ptr = DT1(ID=-I*J)
     END SELECT
 
     IF (SIZE(Ptr)  .NE. (J-I+1)*(J-I+1))               STOP 20
@@ -104,7 +96,7 @@
     IF (ANY( LBOUND(Ptr) .NE. (/-J,  -J/)))            STOP 22
     IF (ANY( UBOUND(Ptr) .NE. (/-I,  -I/)))            STOP 23
     IF (ANY( Tar1(1:(J-I+1)*(J-I+1))%ID .NE.  -I*J ))  STOP 24
- 
+
   END DO
   END DO
 

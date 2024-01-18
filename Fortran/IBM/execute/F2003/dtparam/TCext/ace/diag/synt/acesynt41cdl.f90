@@ -1,15 +1,11 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acesynt41cdl
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acesynt41cd
 !*                               by David Forster)
 !*  DATE                       : 2007-11-16 (original: 2006-10-19)
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*                               (+ Array Constructor Enhancements)
@@ -19,13 +15,12 @@
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
 !*                               (original: Feature Number 289053)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : dummy argument, array constructor,
 !*                               assumed-size, call
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*

@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pointerAllocate.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                : - Pointer has contiguous attribute
 !*
-!*  DESCRIPTION                : - Pointer has contiguous attribute 
-!*                      
 !*    Dummy argument is pointer with CONTIGUOUS attribute
 !*
 !*  KEYWORD(S)                 :
@@ -42,7 +32,7 @@ PROGRAM pointerAllocate
 
       CONTAINS
 
-      SUBROUTINE Sub(Arg)           
+      SUBROUTINE Sub(Arg)
         INTEGER, POINTER, CONTIGUOUS  :: Arg(:,:,:)
         INTEGER :: I, J, K
 
@@ -57,5 +47,5 @@ PROGRAM pointerAllocate
            END DO
         END DO
       END SUBROUTINE Sub
-      
+
 END PROGRAM pointerAllocate

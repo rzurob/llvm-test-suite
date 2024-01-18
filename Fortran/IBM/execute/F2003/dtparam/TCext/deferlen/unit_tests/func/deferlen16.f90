@@ -3,21 +3,14 @@
 ! opt variations: -qck -qnok -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Deferred Character Length
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unit testing
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
-!*  DESCRIPTION                : Testing the manipulations on  
+!*  DESCRIPTION                : Testing the manipulations on
 !*                               characters with deferred length.
 !*
 !* ===================================================================
@@ -43,7 +36,7 @@ achar(1,1) = "Jim Khan"
 achar(1,2) = "Toronto"
 achar(2,1) = "Ontario"
 achar(2,2) = "Markham"
- 
+
 allocate (p%name, source = char1)
 
 p%address = char(2,2)//' '//char(2,1)

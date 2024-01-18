@@ -5,54 +5,47 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: dcomp dtybn004.f  
+! %POSTCMD: dcomp dtybn004.f
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtybn004.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : dtybn004.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : private subroutine 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : pass 
+!*  PRIMARY FUNCTIONS TESTED   : private subroutine
 !*
-!*  DESCRIPTION                : call the private subroutine in a different  
-!*                               program unit by using a public 
-!*                               type bound procedure. 
-!*                               
-!*    
+!*  SECONDARY FUNCTIONS TESTED : pass
+!*
+!*  DESCRIPTION                : call the private subroutine in a different
+!*                               program unit by using a public
+!*                               type bound procedure.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod1	      
+   module mod1
       private proc1
       type parent(k1)    ! (4)
          integer, kind :: k1
          integer(k1)   :: x
 	 contains
       	 procedure, pass :: bind => proc1
-      end type 
+      end type
 
       contains
       subroutine proc1(arg1)
          class(parent(4)) :: arg1
       end subroutine
-   end module     
+   end module
 
    use mod1
 
@@ -60,4 +53,4 @@
    call dt_p%bind()
 
    end
-   
+

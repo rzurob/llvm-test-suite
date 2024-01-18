@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : SpeExpHostAssociation04c.f
-!*
-!*  PROGRAMMER                 : Dorra Bouhiha
 !*  DATE                       : June 14, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Speification expression - Host Association
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -97,7 +89,7 @@ PROGRAM SpeExpHostAssociation04c
       CALL Sub24(4,10,3)
 
       CONTAINS
- 
+
       SUBROUTINE Sub11(N, M)
         INTEGER :: N, M
         TYPE(Base(b1%k1,b1%l1)) :: Obj
@@ -107,7 +99,7 @@ PROGRAM SpeExpHostAssociation04c
         IF ( SIZE(Obj%A1) .NE. M ) STOP 12
         IF ( LEN(Obj%C1)  .NE. M ) STOP 13
       END SUBROUTINE Sub11
- 
+
       SUBROUTINE Sub21(N, M)
         INTEGER :: N, M
         TYPE(Base(c1%poly%k1,c1%poly%l1)) :: Obj

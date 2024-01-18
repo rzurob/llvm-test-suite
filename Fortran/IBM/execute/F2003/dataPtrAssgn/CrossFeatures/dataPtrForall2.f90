@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrForall2.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrForall2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 16, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Forall 
+!*  Forall
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -55,9 +47,9 @@
   TYPE(DT), TARGET   ::  Tar2(10, 10)
   TYPE(DT1), TARGET  :: Tar1(100)
   CLASS(DT), POINTER :: T(:, :)
-  LOGICAL            :: L(10, 10) 
+  LOGICAL            :: L(10, 10)
   INTEGER            :: I, J, K, N
- 
+
   N = 10; K = 0
   ALLOCATE(T(N,N))
 
@@ -78,11 +70,11 @@
   L = .TRUE.
 
   FORALL (I=1:N, J=I:N)
-    T(I,J)%Ptr(I:J, I:J) => Tar1 
+    T(I,J)%Ptr(I:J, I:J) => Tar1
     L(I, J) = Check2(T(I,J)%Ptr, Tar1, I, J)
   END FORALL
 
-  
+
   DO I = 1, N
   DO J = I, N
     IF (.NOT. L(I, J) ) THEN
@@ -109,11 +101,11 @@
     CLASS DEFAULT
  !    Check1 = .FALSE.
     END SELECT
- 
- !  IF (.NOT. ASSOCIATED(Ptr, Tar2))             Check1 = .FALSE. 
- !  IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        Check1 = .FALSE. 
- !  IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) Check1 = .FALSE. 
- 
+
+ !  IF (.NOT. ASSOCIATED(Ptr, Tar2))             Check1 = .FALSE.
+ !  IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        Check1 = .FALSE.
+ !  IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) Check1 = .FALSE.
+
   END FUNCTION
 
   PURE FUNCTION Check2(Ptr, Arr, I, J)
@@ -131,10 +123,10 @@
       Check2 = .FALSE.
     END SELECT
 
- !  IF (.NOT. ASSOCIATED(Ptr))                 Check2 = .FALSE. 
- !  IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      Check2 = .FALSE. 
- !  IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      Check2 = .FALSE. 
- 
+ !  IF (.NOT. ASSOCIATED(Ptr))                 Check2 = .FALSE.
+ !  IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      Check2 = .FALSE.
+ !  IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      Check2 = .FALSE.
+
   END FUNCTION
 
   END

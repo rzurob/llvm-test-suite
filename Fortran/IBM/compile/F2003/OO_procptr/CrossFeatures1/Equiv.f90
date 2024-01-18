@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp Equiv.f 
+! %POSTCMD: tcomp Equiv.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Equivalence.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Equivalence.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 29, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,15 +30,15 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Equivalence 
+!*
+!*  Equivalence
 !*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM Equiv 
+  PROGRAM Equiv
 
   PROCEDURE(INTEGER), POINTER :: ProcPtr1, ProcPtr2
   PROCEDURE(),        POINTER :: ProcPtr3, ProcPtr4

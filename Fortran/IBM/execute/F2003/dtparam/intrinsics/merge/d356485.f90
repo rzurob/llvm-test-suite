@@ -1,38 +1,30 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d356485.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d356485.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 19 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 19 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. DEFECT 356485 
+!* 1. DEFECT 356485
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type base(l1)
      integer,len   :: l1
      integer       :: i1
-     character(l1) :: c1 
+     character(l1) :: c1
   end type
   type,extends(base) :: child(l2)
      integer,len   :: l2
      integer       :: i2
-     character(l2) :: c2 
+     character(l2) :: c2
   end type
   contains
      function getMergeResult(Ts,Fs,Mask)
@@ -76,7 +68,7 @@ program d354485
             print *,x%i1,x%i2
             print *,x%i1,x%i2
          class default
-           stop 4 
+           stop 4
    end select
 
 end program

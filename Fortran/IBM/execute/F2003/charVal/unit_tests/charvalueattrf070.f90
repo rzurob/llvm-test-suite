@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: charvalueattrf070.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,26 +12,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : charvalueattrf070
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Feb. 01, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the VALUE
-!*                               attribute when used with characters of 
-!*                               length other than 1. ( Feature 298120 )   
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*                               attribute when used with characters of
+!*                               length other than 1. ( Feature 298120 )
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DESCRIPTION                : test for when the proc takes more than 
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : test for when the proc takes more than
 !*                               1 arg and the actual args are longer than the dummy
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -46,127 +39,127 @@ program main
       xx = repeat('Ejk', 29)
 !     s1
       call s1(c)
-      
+
       if ( c .ne. 'AbCdAbCdAb' ) error stop 2
-      
+
       call s1('AbCdAbCdAb')
-      
+
 !     s2
       call s2(c, cc)
-      
+
       if ( c .ne. 'AbCdAbCdAb' .or. cc .ne. 'Ef' ) error stop 33
-      
+
       call s2('AbCdAbCdAb',cc)
-      
+
       if ( cc .ne. 'Ef' ) error stop 44
-      
+
       call s2('AbCdAbCdAb', 'Ef')
-      
+
       call s2(c, 'Ef')
-      
+
       if ( c .ne. 'AbCdAbCdAb' ) error stop 55
-      
+
 
 !     s3
       call s3(c, cc)
-      
+
       if ( c .ne. 'AbCdAbCdAb' .or. cc .ne. 'Ef' ) error stop 77
-      
+
       call s3('AbCdAbCdAb',cc)
-      
+
       if ( cc .ne. 'Ef' ) error stop 88
-      
+
       call s3('AbCdAbCdAb', 'Ef')
-      
+
       call s3(c, 'Ef')
-      
+
       if ( c .ne. 'AbCdAbCdAb' ) error stop 99
-      
+
       call s3(ccc, cc)
-      
+
       if ( ccc .ne. repeat('AbC',29) .or. cc .ne. 'Ef' ) error stop 111
 
 !     s4:
       call s4(c, cc)
-      
+
       if ( c .ne. 'AbCdAbCdAb' .or. cc .ne. 'Ef' ) error stop 122
-      
+
       call s4('AbCdAbCdAb',cc)
-      
+
       if ( cc .ne. 'Ef' ) error stop 133
-      
+
       call s4('AbCdAbCdAb', 'Ef')
-      
+
       call s4(c, 'Ef')
-      
+
       if ( c .ne. 'AbCdAbCdAb' ) error stop 144
-      
+
       call s4(ccc, cc)
-      
+
       if ( ccc .ne. repeat('AbC',29) .or. cc .ne. 'Ef' ) error stop 155
 
-      
+
 !     s5:
-      
+
       call s5('AbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbC',cc)
-      
+
       if ( cc .ne. 'Ef' ) error stop 166
-      
+
       call s5('AbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbC', 'Ef')
-      
+
       call s5(ccc, 'Ef')
-      
+
       if ( ccc .ne. repeat('AbC',29) ) error stop 177
-      
+
       call s5(ccc, cc)
-      
+
       if ( ccc .ne. repeat('AbC',29) .or. cc .ne. 'Ef' ) error stop 188
 
 !     s6:
-      
+
       call s6('AbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbC',cc)
-      
+
       if ( cc .ne. 'Ef' ) error stop 199
-      
+
       call s6('AbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbC', 'Ef')
-      
+
       call s6(ccc, 'Ef')
-      
+
       if ( ccc .ne. repeat('AbC',29) ) error stop 211
-      
+
       call s6(ccc, cc)
-      
+
       if ( ccc .ne. repeat('AbC',29) .or. cc .ne. 'Ef' ) error stop 222
 
 
 !     s7:
-      
+
       call s7(cc,'AbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbC')
-      
+
       if ( cc .ne. 'Ef' ) error stop 233
-      
+
       call s7('Ef','AbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbC')
-      
+
       call s7('Ef',ccc)
-      
+
       if ( ccc .ne. repeat('AbC',29) ) error stop 244
-      
+
       call s7(cc, ccc)
-      
+
       if ( ccc .ne. repeat('AbC',29) .or. cc .ne. 'Ef' ) error stop 255
 
 !     s8:
-      
+
       call s8(repeat('Ejk',29),'AbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbC')
-      
+
       call s8('EjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjk','AbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbCAbC')
-      
+
       call s8('EjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjkEjk',ccc)
-      
+
       if ( ccc .ne. repeat('AbC',29) ) error stop 244
-      
+
       call s8(xx, ccc)
-      
+
       if ( ccc .ne. repeat('AbC',29) .or. xx .ne. repeat('Ejk',29) ) error stop 255
 
       contains

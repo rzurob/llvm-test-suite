@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: non-polymorphic elemental assignment for type component as well as type
 !*  KEYWORD(S)                 :
@@ -69,20 +58,20 @@ program genericAssignmentElemental004
    type(base) :: b1
    type(base) :: b2(3)
    type(base), allocatable :: b3(:)
-   
+
    b1 = base(inner(100))
    print *, b1
-   
+
    b2 = base(inner(200))
    print *, b2
-   
+
    allocate ( b3(5) )
    b3 = base(inner(300))
    print *, b3
-   
+
    b2 = (/ base(inner(2000)), base(inner(2001)), base(inner(2002)) /)
    print *, b2
-   
+
    b3 = (/ b2, base( (/inner(2004), inner(2005), inner(2006)/) ), base( (/inner(2007), inner(2008), inner(2009)/) ) /)
    print *, b3
 

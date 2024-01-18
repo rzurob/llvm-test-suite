@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpNamelist7
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 29, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The namelist statement
-!*  Implicit typing rules 
-!* 
+!*  Implicit typing rules
+!*
 !*  (ice)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -58,7 +49,7 @@
     CHARACTER(L2) :: C(L2)=CHAR(48+K2)
     INTEGER(K2)   :: I(L2)=K2
   END TYPE
- 
+
   CONTAINS
 
   FUNCTION ModFun(Arg)
@@ -87,7 +78,7 @@
   CALL IntSub(R,S,T,1)
 
   CONTAINS
- 
+
   SUBROUTINE IntSub(R,S,T,N)
   USE M, ONLY: DT0,DT1,DT2
   TYPE(DT0(1,*)) R(:)
@@ -99,9 +90,9 @@
   NAMELIST /NL0/R, /NL1/S /NL2/T
 
   WRITE(*, NML=NL0)
-  WRITE(*, NML=NL1) 
+  WRITE(*, NML=NL1)
   WRITE(*, NML=NL2)
-  
+
   END SUBROUTINE
 
   END

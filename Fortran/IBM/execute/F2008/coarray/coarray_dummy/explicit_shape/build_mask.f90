@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 2010-08-23
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : This test case build a mask coarray field. User
 !                               chooses the first mask element.  The mask
@@ -46,7 +36,7 @@ module m
         np = num_images()
 
         if ((img < 1) .or. (img > np)) then
-            print *, img, 'is an invalid image index. Range: 1 --', np 
+            print *, img, 'is an invalid image index. Range: 1 --', np
             error stop 1
         end if
 

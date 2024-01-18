@@ -1,18 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ALLOCATE statement
 !*                             :
-!*  PROGRAMMER                 : Huiwen Li
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  FUNCTIONAL TESTED          : Finalize the object with type parameter
 !*                               - Length type parameter of dummy argument
 !*                                 must be assumed.
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

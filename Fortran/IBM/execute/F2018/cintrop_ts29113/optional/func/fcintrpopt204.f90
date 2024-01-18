@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt204.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -72,7 +65,7 @@ program test
   use iso_c_binding
   use testmod
   implicit none
-  
+
   call c_func_1()
   call c_func_1(realfunc)
 

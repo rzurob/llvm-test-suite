@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferDiag05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferDiag05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 5 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 5 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Dummy Argument with deferred length 
+!*  PRIMARY FUNCTIONS TESTED   : Dummy Argument with deferred length
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. If actual argument is scalar, the corresponding dummy argument shall be scalar
@@ -38,7 +30,7 @@ module m
     end subroutine
     subroutine sub2(arg)
        type(base(2,:)),pointer :: arg(:,:)
-    end subroutine   
+    end subroutine
 end module
 
 program dummyArgDeferDiag05
@@ -50,19 +42,19 @@ program dummyArgDeferDiag05
   type(base(2,:)),pointer              :: base2=>null()
   class(child(2,:,4,:)),allocatable    :: child1
   class(child(2,:,4,:)),pointer        :: child2=>null()
-  
+
   call sub1(base1)
   call sub2(base2)
   call sub3(child1)
   call sub4(child2)
-   
+
   contains
      subroutine sub3(arg)
          class(child(2,:,4,:)),allocatable :: arg(:)
-     end subroutine 
+     end subroutine
 
      subroutine sub4(arg)
          class(child(2,:,4,:)),pointer :: arg(:,:)
      end subroutine
- 
+
 end program

@@ -1,40 +1,26 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
 ! %PRECMD: ${TR_SRC}/scrisoa00.presh fxisonc00 cxisonc00
 ! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
-!*  SECONDARY FUNCTIONS TESTED : see below 
+!*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ISO_C_BINDING module defined named constants
 !*  TARGET(S)                  :

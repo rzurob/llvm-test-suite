@@ -1,14 +1,9 @@
 !*********************************************************************
 !  ===================================================================
-!  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!  ===================================================================
 !
 !  TEST CASE NAME             : do_concurrent_f029.f
-!  TEST CASE TITLE            :
 !
-!  PROGRAMMER                 : Bernard Kan
 !  DATE                       : Sept 21, 2015
-!  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !
 !  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT Construct
 !  SECONDARY FUNCTIONS TESTED : PURE Function

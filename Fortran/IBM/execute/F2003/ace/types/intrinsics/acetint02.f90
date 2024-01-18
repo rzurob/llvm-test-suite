@@ -1,14 +1,9 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME             : acetint02
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2006-06-08 (YYYY-MM-DD)
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : intrinsic type
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -132,7 +126,7 @@ contains
         call zzrc(int(testNumber+8,KIND4))
 
     end select
-    
+
     if (expectedType /= typeFound ) ecode = ecode + 1_4
     if (expectedKind /= kindFound ) ecode = ecode + 2_4
     if (expectedLen  /= lenFound )  ecode = ecode + 4_4

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Assign.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Assign.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Assign.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Assign.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 13, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  The evaluation of expressions within variable shall neither affect 
-!*  nor be affected by the evaluation of expr 
+!*
+!*  The evaluation of expressions within variable shall neither affect
+!*  nor be affected by the evaluation of expr
 !*  This is a user's resposobility - Make it a normal invocation onto ptroc ptr
-!*  (linux-306968) 
+!*  (linux-306968)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -63,9 +57,9 @@
   END MODULE
 
 
-  PROGRAM Assign 
+  PROGRAM Assign
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT) :: V(3)
   INTEGER   :: I
@@ -75,7 +69,7 @@
 
   I =1
   V(ProcPtr(I)) = DT(I, ProcPtr)
-  
+
   IF (I .NE. 2 )                             STOP 10
   IF (V(1)%Id .NE. 1 )                       STOP 11
   IF ( .NOT. ASSOCIATED(V(1)%ProcPtr, Fun) ) STOP 12

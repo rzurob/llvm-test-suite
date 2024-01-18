@@ -1,39 +1,23 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: dcomp fArg025d.f
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 08/20/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf95
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : argument association (C503; abstract type can
 !                               not appear in declaration-type-spec-stmt with

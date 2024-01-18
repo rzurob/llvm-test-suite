@@ -1,25 +1,17 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument113f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
 !*
-!*                                - actual argument pointer with contiguous attribute 
-!*
+!*                                - actual argument pointer with contiguous attribute
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 program AllocatableDummyArgument113f
@@ -30,10 +22,10 @@ program AllocatableDummyArgument113f
       integer, parameter :: N = 2
 
       interface
-        subroutine sub_c(arr) 
+        subroutine sub_c(arr)
           integer(1), contiguous, pointer :: arr(:,:,:,:,:,:,:,:,:,:,:,:,:,:,:)
         end subroutine
-      end interface 
+      end interface
 
       allocate(t(N,N,N,N,N,N,N,N,N,N,N,N,N,N,N))
 
@@ -45,28 +37,28 @@ program AllocatableDummyArgument113f
         if (any(ptr(:,:,:,:,:,:,:,:,:,:,:,:,:,:,i) .ne. i)) error stop 100
         if (any(t(1:N,1:N,1:N,1:N,1:N,1:N,1:N,1:N,1:N,1:N,1:N,1:N,1:N,1:N,i) .ne. i)) error stop 101
       end do
-      
+
       deallocate(t)
 end program AllocatableDummyArgument113f
 
-subroutine sub_c(arr) 
+subroutine sub_c(arr)
    integer(1), contiguous, pointer :: arr(:,:,:,:,:,:,:,:,:,:,:,:,:,:,:)
-   
+
    interface
      subroutine sub(arg) bind(c)
        integer(1) :: arg(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2)
-     end 
-   end interface 
+     end
+   end interface
 
    do i=1, 15
      if(lbound(arr,i) .ne. 1) error stop 10
      if(ubound(arr,i) .ne. 2) error stop 11
-   end do 
+   end do
 
    call sub(arr)
 
    do i=1, 2, 1
-     if (any(arr(:,:,:,:,:,:,:,:,:,:,:,:,:,:,i) .ne. i) ) error stop 12 
+     if (any(arr(:,:,:,:,:,:,:,:,:,:,:,:,:,:,i) .ne. i) ) error stop 12
    end do
 end subroutine
 
@@ -80,6 +72,6 @@ subroutine sub(arg) bind(c)
    do i=1, 15
      if(lbound(arg,i) .ne. 1) error stop 20
      if(ubound(arg,i) .ne. 2) error stop 21
-   end do 
+   end do
 
 end subroutine

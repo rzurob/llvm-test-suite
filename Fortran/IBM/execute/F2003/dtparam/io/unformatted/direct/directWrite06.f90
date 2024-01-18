@@ -1,22 +1,16 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : directWrite06
-!*  TEST CASE TITLE            : Unformatted Intrinsic Input/Output (with DTP)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : November  3, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DIRECT File Output for a Derived/Extended
 !*                               Derived Type (with Type Parameters)
 !*  SECONDARY FUNCTIONS TESTED : Derived Types are Polymorphic ALLOCATED
 !*                               Allocatables
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : READ

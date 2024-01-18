@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for derived types with BIND(C) attr.
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived types with BIND(C) attribute
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -148,7 +134,7 @@ function fun3(dtx,dty) bind(c)
    dty%var_f = .not. dtx%var_f
    dty%var_g = dtx%var_g + 1.0d0
    dty%var_h = 'B'
-   
+
    fun3 = C_LOC(dty)
 end function fun3
 !----------------------------------------------------------
@@ -178,7 +164,7 @@ function fun4(dtx,dty) bind(c)
    dty%var_f = .not. dtx%var_f
    dty%var_g = dtx%var_g + 1.0d0
    dty%var_h = 'B'
-   
+
    dtz%var_a = dty%var_a + 1.0e0
    dtz%var_b = .not. dty%var_b
    dtz%var_c = dty%var_c + 1.0q0
@@ -187,7 +173,7 @@ function fun4(dtx,dty) bind(c)
    dtz%var_f = .not. dty%var_f
    dtz%var_g = dty%var_g + 1.0d0
    dtz%var_h = 'B'
-   
+
    fun4 = C_LOC(dtz)
 end function fun4
 !----------------------------------------------------------

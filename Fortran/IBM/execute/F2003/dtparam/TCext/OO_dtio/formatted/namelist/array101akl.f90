@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : array101akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from array101a by Robert Ma)
 !*  DATE                       : 2007-06-20 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with polymorphic/nonpoly array (Input)
@@ -107,7 +99,7 @@ program array101akl
               ( b2(2,3)%i /= 999 ) .or. ( b2(2,3)%i1 /= 999 ) .or. &
               ( b2(3,3)%i /= 999 ) .or. ( b2(3,3)%i1 /= 999 ))      error stop 5_4
    end select
-   
+
    if ( ( b3(1,1)%i /= 301 ) .or. ( b3(2,1)%i /= 302 ) .or. ( b3(1,2)%i /= 303 ) .or. ( b3(2,2)%i /= 304 ) ) error stop 6_4
 
    if ( ( b4(1,1)%i /= 401 ) .or. ( b4(1,1)%i1 /= 402 ) .or. &

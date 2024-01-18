@@ -2,28 +2,22 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk037 cxcmn_blk037
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.o *.mod fxcmn_blk037 fxcmn_blk037.out
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that a single variable inside of
 !*                               BIND(C) common block with a binding label is interoperable
@@ -52,7 +46,7 @@ program fxcmn_blk037
         common /blk1/    Real1
         bind(c, name='Bnd_Lbl15') ::       /blk1/
 
-        Real1  =  -( TINY(Real1) )  
+        Real1  =  -( TINY(Real1) )
 
 ! ----------------------------------------------------------------------------
 !      1) Check values before passing to C sub-program

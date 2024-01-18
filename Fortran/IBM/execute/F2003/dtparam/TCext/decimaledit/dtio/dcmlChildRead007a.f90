@@ -2,31 +2,16 @@
 ! ftcx_dtp -qk -qnol -qnodefaultpv -qreuse=self /tstdev/F2003/decimaledit/dtio/dcmlChildRead007a.f
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=none
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 07/18/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : DECIMAL EDIT MODE
 !                               Test that the decimal edit mode set in a child's
 !                               write statement on an internal file has no
 !                               effects on other child read statements.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

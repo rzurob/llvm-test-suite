@@ -1,20 +1,15 @@
 !*********************************************************************
 !  ===================================================================
-!  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!  ===================================================================
 !
 !  TEST CASE NAME             : do_concurrent_f030.f
-!  TEST CASE TITLE            :
 !
-!  PROGRAMMER                 : Bernard Kan
 !  DATE                       : Sept 21, 2015
-!  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !
 !  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT Construct
 !  SECONDARY FUNCTIONS TESTED : PURE Function
 !
-!  DESCRIPTION                : CYCLE in a DO CONCURRENT, verify using a 
-!                               scalar-mask-expr function that skips 
+!  DESCRIPTION                : CYCLE in a DO CONCURRENT, verify using a
+!                               scalar-mask-expr function that skips
 !                               iterations
 !
 !  KEYWORD(S)                 :
@@ -233,7 +228,6 @@ PROGRAM do_concurrent_f030
      if ( MODULO(in1,3) .ne. 0) cycle
      cycle_i1a(in1) = in1
    END DO
-
 
    DO CONCURRENT( in1 = 1:100, func1(l1a(in1)) )
       FORALL ( in2 = 1:10, func1(l1a(in2)) )

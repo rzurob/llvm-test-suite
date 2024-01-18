@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrDivByte.f 
+!*  TEST CASE NAME             : dataPtrDivByte.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -63,7 +57,7 @@ program main
 	    if ( any(p/p(b) .ne. (/0,1,2,3,4,0,1,2,3,4/))) stop 24
  	class default
 	    stop 25
-    end select	
+    end select
 
 end program
 

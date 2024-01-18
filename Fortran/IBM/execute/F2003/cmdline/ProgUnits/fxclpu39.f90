@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu39.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,8 @@
 !*
 !*  DESCRIPTION                : Invoke command line procedures within module routines
 !*                             : Pass COMMAND_ARGUMENT_COUNT as optional argument through the call chain
-!*                             : (module routine -> module routine) 
-!*                             : 
-!*                             : 
+!*                             : (module routine -> module routine)
+!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -96,7 +89,7 @@
 
       M_COMMAND_ARGUMENT_COUNT_1 = COMMAND_ARGUMENT_COUNT()
 
-      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT()) & 
+      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT()) &
       then
         error stop 63
       endif
@@ -111,7 +104,7 @@
       OPTIONAL ::  GET_COMMAND
 
 
-      IF (.not.PRESENT(GET_COMMAND)) RETURN  
+      IF (.not.PRESENT(GET_COMMAND)) RETURN
 
       CALL  M_GET_COMMAND_1(GET_COMMAND=GET_COMMAND)
 
@@ -124,7 +117,7 @@
       EXTERNAL ::  GET_COMMAND
       OPTIONAL ::  GET_COMMAND
 
-      IF (.not.PRESENT(GET_COMMAND)) RETURN   
+      IF (.not.PRESENT(GET_COMMAND)) RETURN
 
       call GET_COMMAND
 
@@ -138,7 +131,7 @@
       OPTIONAL ::  GET_COMMAND_ARGUMENT
 
 
-      IF (PRESENT(GET_COMMAND_ARGUMENT)) RETURN   
+      IF (PRESENT(GET_COMMAND_ARGUMENT)) RETURN
 
       CALL  M_GET_COMMAND_ARGUMENT_1(GET_COMMAND_ARGUMENT=GET_COMMAND_ARGUMENT)
 
@@ -152,7 +145,7 @@
       EXTERNAL ::  GET_COMMAND_ARGUMENT
       OPTIONAL ::  GET_COMMAND_ARGUMENT
 
-      IF (PRESENT(GET_COMMAND_ARGUMENT)) RETURN   
+      IF (PRESENT(GET_COMMAND_ARGUMENT)) RETURN
 
       CALL  M_GET_COMMAND_ARGUMENT(GET_COMMAND_ARGUMENT=GET_COMMAND_ARGUMENT)
 
@@ -166,7 +159,7 @@
       OPTIONAL ::  GET_ENVIRONMENT_VARIABLE
 
 
-      IF (.not.PRESENT(GET_ENVIRONMENT_VARIABLE)) RETURN 
+      IF (.not.PRESENT(GET_ENVIRONMENT_VARIABLE)) RETURN
 
       CALL M_GET_ENVIRONMENT_VARIABLE_1(GET_ENVIRONMENT_VARIABLE=GET_ENVIRONMENT_VARIABLE)
 
@@ -179,9 +172,9 @@
       EXTERNAL ::  GET_ENVIRONMENT_VARIABLE
       OPTIONAL ::  GET_ENVIRONMENT_VARIABLE
 
-      IF (.not.PRESENT(GET_ENVIRONMENT_VARIABLE)) RETURN 
+      IF (.not.PRESENT(GET_ENVIRONMENT_VARIABLE)) RETURN
 
-      CALL GET_ENVIRONMENT_VARIABLE 
+      CALL GET_ENVIRONMENT_VARIABLE
 
       END SUBROUTINE
 
@@ -194,7 +187,7 @@
       USE MOD1
 
       INTEGER Junk, i
-      
+
       INTRINSIC COMMAND_ARGUMENT_COUNT
       EXTERNAL  EXT_GET_COMMAND
       EXTERNAL  EXT_GET_COMMAND_ARGUMENT
@@ -208,12 +201,12 @@
       CALL M_GET_COMMAND_ARGUMENT( GET_COMMAND_ARGUMENT=EXT_GET_COMMAND_ARGUMENT)
 
       CALL M_GET_ENVIRONMENT_VARIABLE(GET_ENVIRONMENT_VARIABLE=EXT_GET_ENVIRONMENT_VARIABLE)
-  
+
 
       END
 
 
-  
+
       SUBROUTINE EXT_GET_COMMAND
       USE MOD0
       IMPLICIT  NONE
@@ -229,7 +222,7 @@
 
       END SUBROUTINE
 
- 
+
       SUBROUTINE EXT_GET_COMMAND_ARGUMENT
       USE MOD0
       IMPLICIT NONE
@@ -237,7 +230,7 @@
       INTEGER i
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -267,7 +260,7 @@
 
       END SUBROUTINE
 
- 
+
       INCLUDE 'cmdline.include'
 
 

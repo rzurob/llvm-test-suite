@@ -1,27 +1,12 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 07/18/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : DECIMAL EDIT MODE
 !                               Test that the decimal edit mode is passed to the
 !                               child's child read statement.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -89,7 +74,7 @@ module m
 
         allocate (dtv%data)
 
-        inquire (unit, decimal=mode) 
+        inquire (unit, decimal=mode)
 
         if (mode == 'P') then
             read (unit, '(DT)', iostat=iostat, iomsg=iomsg, decimal='comma') &

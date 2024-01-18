@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  DerTypeAbs.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  DerTypeAbs.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : DerTypeAbs 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : DerTypeAbs
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 07, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,7 +31,7 @@
 !*
 !*  DESCRIPTION
 !*    The selector is of a derived type extending from an abstract type
-!*    () 
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,7 +46,7 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -71,12 +65,12 @@
 
   END MODULE
 
-    
+
   PROGRAM DerTypeAbs
-  USE M, Abs => Base, DT => Child 
+  USE M, Abs => Base, DT => Child
   IMPLICIT NONE
 
-  TYPE, EXTENDS(DT) :: T 
+  TYPE, EXTENDS(DT) :: T
   END TYPE
 
   CLASS(Abs), POINTER :: V
@@ -90,15 +84,15 @@
     SELECT TYPE (V)
     TYPE IS (T)
 
-      IF ( V%BaseId       .NE. -1 ) STOP 31 
-      IF ( V%Base%BaseId  .NE. -1 ) STOP 32 
-      IF ( V%ChildId      .NE. -2 ) STOP 33 
+      IF ( V%BaseId       .NE. -1 ) STOP 31
+      IF ( V%Base%BaseId  .NE. -1 ) STOP 32
+      IF ( V%ChildId      .NE. -2 ) STOP 33
 !     IF ( V%Base%GetId() .NE. -1 ) STOP 34  !C611
-      IF ( V%DT%GetId() .NE. -2 ) STOP 35       
+      IF ( V%DT%GetId() .NE. -2 ) STOP 35
 
     CLASS DEFAULT
       STOP 45
-    END SELECT 
+    END SELECT
 
   END ASSOCIATE
 

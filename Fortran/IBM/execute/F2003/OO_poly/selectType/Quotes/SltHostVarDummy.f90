@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltHostVarDummy.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltHostVarDummy
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 23, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is an associate name associating to a pointer
 !*    ()
 !*
@@ -46,7 +40,7 @@
   MODULE M
 
     TYPE  :: Zero
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -101,25 +95,25 @@
   CONTAINS
 
   RECURSIVE SUBROUTINE Sub(Arg1, Arg2, Cnt)
-  CLASS(Zero), OPTIONAL :: Arg1 
-  CLASS(*), OPTIONAL :: Arg2 
-  INTEGER :: Cnt 
+  CLASS(Zero), OPTIONAL :: Arg1
+  CLASS(*), OPTIONAL :: Arg2
+  INTEGER :: Cnt
   INTEGER, Save :: Sign=-1
-  
-  Sign = -Sign 
+
+  Sign = -Sign
 
   SELECT TYPE ( As => Arg1 )
-    CLASS IS (Zero) 
+    CLASS IS (Zero)
       SELECT TYPE ( Arg2 )
-        CLASS IS (Zero) 
+        CLASS IS (Zero)
           SELECT TYPE ( Arg2 )
-            CLASS IS (Base) 
+            CLASS IS (Base)
               SELECT TYPE ( Arg1 )
-                CLASS IS (Child) 
+                CLASS IS (Child)
                   SELECT TYPE ( As )
-                    CLASS IS (Child) 
+                    CLASS IS (Child)
                       SELECT TYPE ( Arg2 )
-                        CLASS IS (Child) 
+                        CLASS IS (Child)
                           IF ( As%Base%GetId() .NE.  1 * Sign ) STOP 34
                           IF ( As%GetId()      .NE.  2 * Sign ) STOP 35
                           IF ( As%BaseId       .NE.  1 * Sign ) STOP 36
@@ -144,8 +138,8 @@
   END SELECT
 
   IF (Cnt .GE. 1) CALL Sub(Arg1, Arg2, Cnt-1)
-  
+
   END SUBROUTINE
 
   END
-  
+

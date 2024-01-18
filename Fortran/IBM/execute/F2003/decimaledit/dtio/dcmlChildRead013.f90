@@ -1,27 +1,12 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 07/26/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : DECIMAL EDIT MODE
 !                               Test that the NAN and INF does not affect the
 !                               decimal edit mode in DTIO.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -86,7 +71,7 @@ use, intrinsic :: ieee_arithmetic
     class(a), allocatable :: a1(:)
 
     class(base), pointer :: b1(:)
-    
+
     integer, parameter :: arraySize  = 2*100
 
     allocate (cx1(arraySize), b1(arraySize), a1(arraySize))

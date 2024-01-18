@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrTransposeChar.f 
+!*  TEST CASE NAME             : dataPtrTransposeChar.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -39,16 +33,16 @@ program main
 	contains
             function func(ch)
 	        character(4), target, allocatable :: ch(:)
-	        character(:), pointer :: func(:,:)	
-		  
+	        character(:), pointer :: func(:,:)
+
 	        if ( .not. allocated(ch) ) stop 3
 
-	        func(3:6,2:7) => ch 
+	        func(3:6,2:7) => ch
 
 	        if ( .not. associated(func)) stop 5
 		if ( any( lbound(func) .ne. (/3,2/) )) stop 13
 		if ( any( ubound(func) .ne. (/6,7/) )) stop 13
 
-	    end function	
+	    end function
 
 end program

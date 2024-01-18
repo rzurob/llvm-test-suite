@@ -1,24 +1,12 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : realToFromPntProcPnt.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : 1.FROM/TO are of type real 
+!*  DESCRIPTION                : 1.FROM/TO are of type real
 !*                               2.TO is function name which is interface name
 !*                                  of a procedure declaration
 !*                               3.FROM associated with real pointer
@@ -52,7 +40,7 @@ end module
         use m
         procedure(func1), pointer ::  iP
         real, target, allocatable :: av
-        logical precision_R4 
+        logical precision_R4
 
         iP => func1
 
@@ -61,5 +49,5 @@ end module
         p => av
 
         if (  .not. precision_R4(iP(av), real(31)) ) stop 33
-        if ( allocated(av) ) stop 35 
-end 
+        if ( allocated(av) ) stop 35
+end

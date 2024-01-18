@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Character output with namelist formatting on internal files
@@ -81,15 +65,15 @@ program character001
 
    character(10) :: internalFile(20)
    namelist /NmL1/ b1, b2
-   
+
    allocate( b1, source = base('abcdEfghiJklmnO'))
    allocate( b2, source = base('klmnOpqrsTuvwxY'))
-   
+
    write (internalFile,NML=nml1, iostat=stat, iomsg=msg)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
-   
+
    ! check if internal files contains correct values
-   
+
    if ( internalFile(1)  /= " &NML1    " ) error stop 2_4
    if ( internalFile(2)  /= " B1= &D   " ) error stop 3_4
    if ( internalFile(3)  /= " DUM=abcdE" ) error stop 4_4

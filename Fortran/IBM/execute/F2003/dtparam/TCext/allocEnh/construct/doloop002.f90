@@ -2,30 +2,15 @@
 ! ftcx_dtp -ql -qdeferredlp /tstdev/F2003/allocEnh/construct/doloop002.f
 ! opt variations: -qnol -qnodeferredlp
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 11/2/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : allocatable enhancement
 !                               Test intrinsic assignments in do construct; some
 !                               of the assignments will involve reallocations.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

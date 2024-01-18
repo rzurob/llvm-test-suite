@@ -1,22 +1,19 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_f02.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
-!*  SECONDARY FUNCTIONS TESTED : 
-!*  ADAPTED FROM               : 
+!*  SECONDARY FUNCTIONS TESTED :
+!*  ADAPTED FROM               :
 !*
 !*  DESCRIPTION
 !*
 !*    Nest forall in forall with reused variable names in the type specifier and
-!*    verify the result of the computation.  Forall should not alter external 
+!*    verify the result of the computation.  Forall should not alter external
 !*    variable values
 !*
 !* =============================================================================

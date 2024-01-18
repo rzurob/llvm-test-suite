@@ -3,31 +3,19 @@
 ! opt variations: -qnok -qnol
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dataPtrUnpackDblPrec.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 08/31/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : data pointer enhancement 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  PRIMARY FUNCTIONS TESTED   : data pointer enhancement
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*
 !* - data-pointer of type dble precision as arg field of unpack
 !* - data-pointer is component of dummy arg
 !* - in diff scope, two DTs with same definition
-!* 
+!*
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
@@ -36,16 +24,16 @@ module m
           integer, len  :: n1
           sequence
           double precision, pointer :: p(:,:,:,:)
-      end type 
+      end type
 end module
 
-program main 
+program main
       type t(k1,n1)    ! (4,20)
           integer, kind :: k1
           integer, len  :: n1
           sequence
           double precision, pointer :: p(:,:,:,:)
-          end type 
+          end type
           type(t(4,20)) :: a1
 
       double precision, allocatable :: a(:,:,:,:)
@@ -66,13 +54,13 @@ program main
      write (*, '(2f15.10)') a1%p
 
      write (*, '(2f15.10)')  unpack((/6.5_8, 0.1_8/), &
-        Reshape((/ .true., .false. /), (/1,2,1,1/)), a1%p) 
+        Reshape((/ .true., .false. /), (/1,2,1,1/)), a1%p)
   end program
 
 subroutine sub(arg)
 use m, only : t
 
-    	  type(t(4,*)) :: arg 
+    	  type(t(4,*)) :: arg
 
     	  allocate(arg%p(1,2,2,1))
     	  arg%p = reshape((/1.2_8,2.3_8,3.4_8, 4.5_8 /), (/1,2,2,1/))

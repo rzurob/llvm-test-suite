@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : arrsec2_datatype03.f
-!*  PROGRAMMER                 : Gaby Baghdadi (adopted from David Nichols' 
 !*                               arrsec1_datatype03.f)
 !*  DATE                       : Oct 13, 2008
 !*  ORIGIN                     : XLF Development
@@ -12,7 +9,6 @@
 !*  DESCRIPTION
 !*
 !*      Array component of logical type
-!*      
 !*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890
@@ -20,9 +16,9 @@
     module m
       type A(n)
         integer, len :: n
-        logical h(n) 
-        logical i(n) 
-        logical j(n) 
+        logical h(n)
+        logical i(n)
+        logical j(n)
       end type
     end module
 

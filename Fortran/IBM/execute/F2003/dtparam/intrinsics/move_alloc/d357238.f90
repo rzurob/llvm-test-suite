@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d357238.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d357238.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 8 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 8 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. DEFECT 357238
@@ -25,7 +17,7 @@
 module m
   type B(l1)
      integer,len   :: l1
-     integer       :: i1(l1) 
+     integer       :: i1(l1)
      procedure(),nopass,pointer :: procptr=>null()
   end type
   contains
@@ -47,7 +39,7 @@ program d357238
   print *,allocated(from1),associated(from1%procptr)
   call from1%procptr
 
-  call move_alloc(from1,to1) 
+  call move_alloc(from1,to1)
 
   print *,associated(to1%procptr,sub)
   call to1%procptr()

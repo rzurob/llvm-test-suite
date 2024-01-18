@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpNamelist4
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul 07, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The namelist statement
-!*  The namelist-group-object-list following each successive appearance of the same 
+!*  The namelist-group-object-list following each successive appearance of the same
 !*  namelist-group-name in a scoping unit is treated as a continuation of the list
 !*  for that namelist-group-name
-!*  
-!* 
+!*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -63,7 +53,7 @@
     INTEGER(K2)   :: I(L2)=K2
   END TYPE
   SAVE
- 
+
   TYPE(DT0(1,3))        :: R
   TYPE(DT1(1,3,4,5))    :: S
   TYPE(DT2(1,3,4,5,8,7)):: T
@@ -89,7 +79,7 @@
   NAMELIST /NL3/ S,T  ! <- this is not the continuation of NL3 above
 
   WRITE(*, NML=NL0)
-  WRITE(*, NML=NL1) 
+  WRITE(*, NML=NL1)
   WRITE(*, NML=NL2)
   WRITE(*, NML=NL3)
 
@@ -99,15 +89,15 @@
 
   PROGRAM dtpNamelist4
   USE M, ONLY: modsub, NL0,NL1,NL2, s, t
-  NAMELIST /NL3/ S,T  ! <- this is not the continuation of NL3 from the module 
+  NAMELIST /NL3/ S,T  ! <- this is not the continuation of NL3 from the module
 
   CALL ModSub()
 
   WRITE(*, NML=NL0)
-  WRITE(*, NML=NL1) 
+  WRITE(*, NML=NL1)
   WRITE(*, NML=NL2)
   WRITE(*, NML=NL3)
-  
+
   END
 
 

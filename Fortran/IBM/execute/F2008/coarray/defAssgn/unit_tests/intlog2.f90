@@ -3,7 +3,7 @@ interface assignment (=)
     logical, intent(out) :: a
     integer, intent(in) :: b
   end subroutine
-end interface 
+end interface
 
 logical, save :: c[*]
 integer i
@@ -17,7 +17,7 @@ if (c[i]) then
   error stop 9
 end if
 end
-  
+
 subroutine myassign(a,b)
   logical, intent(out) :: a
   integer, intent(in) :: b
@@ -26,4 +26,4 @@ subroutine myassign(a,b)
   else
     a = .false.
   end if
-end subroutine 
+end subroutine

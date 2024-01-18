@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: TypeMatch1.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : TypeMatch1
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 21, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   Types specified for TYPE IS and CLASS IS are the same  
-!*   
+!*
+!*   Types specified for TYPE IS and CLASS IS are the same
+!*
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -50,7 +44,7 @@
     TYPE  :: Zero
     CONTAINS
       PROCEDURE, NoPASS   :: Called
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -101,18 +95,18 @@
   END MODULE
 
 
-  PROGRAM TypeMatch1 
+  PROGRAM TypeMatch1
   USE M
   IMPLICIT NONE
   CLASS(Base), POINTER :: V(:,:)
-   
+
     ALLOCATE(V(2:3,3:4), SOURCE=Child(BaseId=-1, ChildId=-2))
 
     ASSOCIATE  (W=>V)
     SELECT TYPE (U=>W)
-    CLASS IS (Child) 
+    CLASS IS (Child)
        STOP 42
-    CLASS IS (Base) 
+    CLASS IS (Base)
        STOP 43
     TYPE IS (Child)
       ! Check U
@@ -124,7 +118,7 @@
       IF ( ANY(U%GetId()      .NE. -2) )      STOP 36
       IF ( ANY(U%BaseId       .NE. -1) )      STOP 37
       IF ( ANY(U%ChildId      .NE. -2) )      STOP 38
-  
+
       IF ( .NOT. U%Called() ) STOP 45
 
     TYPE IS (Base)
@@ -133,7 +127,7 @@
        STOP 41
     END SELECT
     END ASSOCIATE
- 
+
   END
 
 

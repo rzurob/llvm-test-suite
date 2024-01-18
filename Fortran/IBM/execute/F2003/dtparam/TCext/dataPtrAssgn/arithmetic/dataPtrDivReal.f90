@@ -4,24 +4,18 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrDivReal.f 
+!*  TEST CASE NAME             : dataPtrDivReal.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!* - subroutine defAssgn defines a defined assignment of having an object of 
+!* - subroutine defAssgn defines a defined assignment of having an object of
 !*   a derivedtype as LHS and an object of intrinsic type as RHS. In the sub,
 !*   the pointer component of the derived-type is associated with the 2nd arg.
 !*
@@ -59,6 +53,6 @@ program main
 
     if ( .not. associated(e1%p, r1)) stop 11
     if ( lbound(e1%p,1) /= 3 ) stop 12
-    if ( ubound(e1%p,1) /= 12 ) stop 13 
+    if ( ubound(e1%p,1) /= 12 ) stop 13
     if ( .not. precision_r4(e1%p/(-1.0), (/(real(i),i=10,1,-1)/))) error stop 15_4
 end program

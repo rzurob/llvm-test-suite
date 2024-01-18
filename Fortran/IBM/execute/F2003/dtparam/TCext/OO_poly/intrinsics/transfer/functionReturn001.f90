@@ -4,15 +4,10 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY 
-!* =====================================================================
-!* TEST CASE TITLE            : intrinsics/transfer/functionReturn001.f
-!* PROGRAMMER                 : Yong Du
 !* DATE                       : 12/30/2004
 !* ORIGIN                     :
 !* PRIMARY FUNCTIONS TESTED   : transfer
 !* SECONDARY FUNCTIONS TESTED :
-!* DRIVER STANZA              : xlf90
 !* DESCRIPTION                :
 !*   SOURCE is the return value of an internal function call.
 !* KEYWORD(S)                 :

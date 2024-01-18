@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -17,23 +12,12 @@
 ! %POSTCMD: rm -f fdtio513.data
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 01/04/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf95
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : DTIO generics (DTIO used in the type-bound
 !                               procedures)

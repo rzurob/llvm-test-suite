@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgMinloc3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : MINLOC 
+!*  SECONDARY FUNCTIONS TESTED : MINLOC
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Description. Determine the location of the first element of ARRAY along dimension DIM
-!*  having the minimum value of the elements identified by MASK. 
-!*    
-!*  (325671) 
+!*  having the minimum value of the elements identified by MASK.
+!*
+!*  (325671)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,11 +37,11 @@
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
-     
+
   LOGICAL      :: MM(128)=.TRUE.
   INTEGER      :: II(128)=(/(I, I=127,0,-1)/)
 
- 
+
   DO I=1, 128
     Str1(I,:) = (/( ACHAR(I)//"  ", I=127,0,-1) /)
   END DO

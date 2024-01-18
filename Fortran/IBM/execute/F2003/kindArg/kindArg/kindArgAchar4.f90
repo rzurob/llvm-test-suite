@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgAchar4
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : ACHAR 
+!*  SECONDARY FUNCTIONS TESTED : ACHAR
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Achar is the inverse of the IACHAR function 
-!*    
-!*  (322503) 
+!*  Achar is the inverse of the IACHAR function
+!*
+!*  (322503)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -41,7 +33,7 @@
   INTEGER(2) :: I2, II2(128)
   INTEGER(4) :: I4, II4(128)
   INTEGER(8) :: I8, II8(128)
-     
+
   CHARACTER :: CC(0:127)=(/(ACHAR(I=I, KIND=1), I=0, 127)/)
   !CHARACTER :: CC(0:127)
   !CC=(/(ACHAR(I=I, KIND=1), I=0, 127)/)
@@ -93,15 +85,15 @@
 
 
 
-  IF (ANY( ACHAR(I=(/(I1, I1=0,127)/), KIND=1_8) .NE. CC)) STOP 111 
-  IF (ANY( ACHAR(I=(/(I2, I2=0,127)/), KIND=1_4) .NE. CC)) STOP 112 
-  IF (ANY( ACHAR(I=(/(I4, I4=0,127)/), KIND=1_2) .NE. CC)) STOP 113 
-  IF (ANY( ACHAR(I=(/(I8, I8=0,127)/), KIND=1_1) .NE. CC)) STOP 114 
+  IF (ANY( ACHAR(I=(/(I1, I1=0,127)/), KIND=1_8) .NE. CC)) STOP 111
+  IF (ANY( ACHAR(I=(/(I2, I2=0,127)/), KIND=1_4) .NE. CC)) STOP 112
+  IF (ANY( ACHAR(I=(/(I4, I4=0,127)/), KIND=1_2) .NE. CC)) STOP 113
+  IF (ANY( ACHAR(I=(/(I8, I8=0,127)/), KIND=1_1) .NE. CC)) STOP 114
 
-  IF (ANY( IACHAR(ACHAR(I=(/(I1, I1=0,127)/), KIND=1_8)) .NE. (/(I1, I1=0,127)/))) STOP 115 
-  IF (ANY( IACHAR(ACHAR(I=(/(I2, I2=0,127)/), KIND=1_4)) .NE. (/(I2, I2=0,127)/))) STOP 116 
-  IF (ANY( IACHAR(ACHAR(I=(/(I4, I4=0,127)/), KIND=1_2)) .NE. (/(I4, I4=0,127)/))) STOP 117 
-  IF (ANY( IACHAR(ACHAR(I=(/(I8, I8=0,127)/), KIND=1_1)) .NE. (/(I8, I8=0,127)/))) STOP 118 
+  IF (ANY( IACHAR(ACHAR(I=(/(I1, I1=0,127)/), KIND=1_8)) .NE. (/(I1, I1=0,127)/))) STOP 115
+  IF (ANY( IACHAR(ACHAR(I=(/(I2, I2=0,127)/), KIND=1_4)) .NE. (/(I2, I2=0,127)/))) STOP 116
+  IF (ANY( IACHAR(ACHAR(I=(/(I4, I4=0,127)/), KIND=1_2)) .NE. (/(I4, I4=0,127)/))) STOP 117
+  IF (ANY( IACHAR(ACHAR(I=(/(I8, I8=0,127)/), KIND=1_1)) .NE. (/(I8, I8=0,127)/))) STOP 118
 
 
   END

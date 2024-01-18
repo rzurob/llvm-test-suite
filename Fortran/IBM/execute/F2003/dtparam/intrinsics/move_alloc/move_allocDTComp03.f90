@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocDTComp03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocDTComp03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 1 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 1 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
@@ -27,12 +19,12 @@ module m
     type A(l1)
        integer,len :: l1
        character(l1) :: c1
-    end type  
+    end type
     type B(l2)
        integer,len :: l2
        type(A(l2+l2)),pointer :: a1=>null()
     end type
- 
+
 end module
 
 program move_allocDTComp03
@@ -46,7 +38,7 @@ program move_allocDTComp03
   type(A(6)),target      :: a1(3)
 
   a1=[A(6)("xlf"),A(6)("test"),A(6)("team")]
- 
+
   allocate(b1(4:6))
   b1(4)%a1=>a1(1)
   b1(5)%a1=>a1(2)
@@ -71,7 +63,7 @@ program move_allocDTComp03
   b1(4)%a1=>a1(1)
   b1(5)%a1=>a1(2)
   b1(6)%a1=>a1(3)
-  
+
   call move_alloc(b1,b3)
 
   if(allocated(b1))                                            stop 20
@@ -96,6 +88,6 @@ program move_allocDTComp03
          class(*),allocatable :: arg2(:)
 
          call move_alloc(arg1,arg2)
-     end subroutine         
+     end subroutine
 end program
 

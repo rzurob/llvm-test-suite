@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltPriComp.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltPriComp
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 14, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The type spec is specified with a type with private components 
+!*
+!*   The type spec is specified with a type with private components
 !*    (297038)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

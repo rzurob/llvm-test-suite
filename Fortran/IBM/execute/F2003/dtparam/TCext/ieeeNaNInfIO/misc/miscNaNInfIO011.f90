@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : miscNaNInfIO011.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : July 11, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -36,14 +30,14 @@
       module m
 
         implicit none
-        
+
         type :: base(n1,k1)    ! (3,4)
           integer, kind :: k1
           integer, len  :: n1
           character(n1) :: name
           real(kind=k1) :: real_arr(3) = ( (/0.0, 0.0, 0.0/) )
         end type
-        
+
         type, extends(base) :: ext_t    ! (3,4)
           complex(kind=k1) :: cx_value = (0.0, 0.0)
           contains
@@ -62,26 +56,26 @@
         end subroutine
 
       end module
-      
+
 program miscNaNInfIO011
 
       use m
       implicit none
 
       type(ext_t(3,4)) :: obj(2)
-      
+
       integer, parameter :: in = 11, out = 12
 
       open(in,  file='miscNaNInfIO011.dat', action='read')
       open(out, file='miscNaNInfIO011.out', action='write')
-      
+
       call obj(1)%reset
       call obj(2)%reset
 
       print *, obj
-      
+
       read(in, *) obj
-      
+
       ! *******************************************
       ! check for the signs of NaN values read.
       ! *******************************************
@@ -181,10 +175,10 @@ program miscNaNInfIO011
       ! *******************************************
       write(out, *) obj
 
-      
+
       close(in)
       close(out)
-      
+
       contains
 
       ! Returns true if the integer equivalence of
@@ -193,11 +187,11 @@ program miscNaNInfIO011
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
-         
+
          if ( val_eq .ge. 0 ) then
             equiv_is_negative = .false.
          else
@@ -212,9 +206,9 @@ program miscNaNInfIO011
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
 
          if ( val_eq .le. 0 ) then

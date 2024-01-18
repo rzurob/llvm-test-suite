@@ -1,22 +1,11 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*                              associate procedure pointer with C function with
 !*                              void * as argument. Actual argument in Fortran is
 !*                              one-dimensional /multidimensional array.
@@ -28,7 +17,7 @@ program procptrBindcProc31
 
    type dt
        type(C_FUNPTR) :: cptr
-       type(C_FUNPTR) :: cpptr 
+       type(C_FUNPTR) :: cpptr
    end type
 
    interface
@@ -64,7 +53,7 @@ program procptrBindcProc31
       x(i) = i
    end do
 
-   pc = C_LOC(x) 
+   pc = C_LOC(x)
    if ( .not. C_ASSOCIATED(pc) ) error stop 1_4
    if ( .not. C_ASSOCIATED(pc, C_LOC(x)) ) error stop 2_4
 
@@ -94,8 +83,8 @@ program procptrBindcProc31
 
    allocate(y(db,db))
 
-   do i = 1, db 
-      do j = 1, db 
+   do i = 1, db
+      do j = 1, db
          y(i,j) = i+j
       end do
    end do
@@ -119,8 +108,8 @@ program procptrBindcProc31
    call fpptr(pcc)
    if (.not. C_ASSOCIATED(pcc) ) error stop 27_4
 
-   do i = 1, db 
-      do j = 1, db 
+   do i = 1, db
+      do j = 1, db
          if ( pxy2(i,j) /= i+j+1 ) error stop 30_4
       end do
    end do

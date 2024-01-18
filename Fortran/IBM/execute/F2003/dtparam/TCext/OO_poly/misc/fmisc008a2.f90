@@ -2,42 +2,26 @@
 ! ftcx_dtp -ql -qnodeferredlp /tstdev/OO_poly/misc/fmisc008a2.f
 ! opt variations: -qnol -qdeferredlp
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fmisc008a2.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 09/13/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf95
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : miscellaneous items (defect 292722)
 !*

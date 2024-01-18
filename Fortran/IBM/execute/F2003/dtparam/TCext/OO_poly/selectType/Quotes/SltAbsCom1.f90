@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: SltAbsCom1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: SltAbsCom1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltAbsCom1
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 14, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +34,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is specified with a poly abstract component
 !*    (Comp failed)
 !*
@@ -59,7 +53,7 @@
       INTEGER(K1)  :: ChildId = 2
       CLASS(Base(K1)), POINTER :: BasePtr(:)=>NULL()
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     TYPE, ABSTRACT,  EXTENDS(Child) :: Abs    ! (4)
@@ -85,17 +79,17 @@
   USE M
   IMPLICIT NONE
 
-  CLASS(Base(4)) ,ALLOCATABLE :: Var 
+  CLASS(Base(4)) ,ALLOCATABLE :: Var
   TYPE(Child(4)), TARGET :: Tar(4)
 
   ALLOCATE(Var, SOURCE=Child(4)())
- 
+
   SELECT TYPE (Var)
      TYPE IS (Child(4))
 
-      Var%BasePtr => Tar 
+      Var%BasePtr => Tar
       SELECT TYPE ( As => Var%BasePtr )
-        CLASS DEFAULT 
+        CLASS DEFAULT
           STOP 40
         TYPE IS (Child(4))
           IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 41
@@ -109,6 +103,6 @@
     CLASS DEFAULT
       STOP 20
   END SELECT
-  
+
   END
 

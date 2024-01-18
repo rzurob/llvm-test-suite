@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsArrayDTComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsArrayDTComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 18 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 18 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.14
@@ -39,7 +31,7 @@ module m
      type(second(l3)) :: second1(2:l3+1)
      type(first(2*k3)) :: first1(0:k3)
    end type
-   
+
 end module
 
 program spreadSourceIsArrayDTComp02
@@ -48,7 +40,7 @@ program spreadSourceIsArrayDTComp02
 
   type(third(1,2)) :: third1(2:5)=    &
     [third(1,2) (first1=[first(2)(i1=1),first(2)(i1=-1)],      &
-                 second1=[second(2)(c1="+1") ,second(2)(c1="-1") ] ), & 
+                 second1=[second(2)(c1="+1") ,second(2)(c1="-1") ] ), &
      third(1,2) (first1=[first(2)(i1=2),first(2)(i1=-2)],      &
                  second1=[second(2)(c1="+2") ,second(2)(c1="-2") ] ), &
      third(1,2) (first1=[first(2)(i1=3),first(2)(i1=-3)],      &
@@ -57,7 +49,7 @@ program spreadSourceIsArrayDTComp02
                  second1=[second(2)(c1="+4") ,second(2)(c1="-4") ] ) ]
 
   type(third(1,2)),pointer :: third2(:,:)
-  
+
   allocate(third2(2,2),source=reshape(third1,(/2,2/)) )
 
   call verify1(spread(third1,1,5)) ! dim is 1
@@ -68,7 +60,7 @@ program spreadSourceIsArrayDTComp02
   !   | third1(2), third1(3), third1(4), third1(5) |
   !   | third1(2), third1(3), third1(4), third1(5) |
 
-  
+
   call verify2(spread(third1,2,5)) ! dim is 2
   !   spread(..) becomes ...
   !   | third1(2), third1(2), third1(2), third1(2), third1(2) |
@@ -84,26 +76,26 @@ program spreadSourceIsArrayDTComp02
   !   third2(1,2) - (first1=[first(2)(i1=3),first(2)(i1=-3)],
   !                  second1=[second(2)(c1="+3"),second(2)(c1="-3") ] )
   !   third2(2,1) - (first1=[first(2)(i1=2),first(2)(i1=-2)],
-  !                  second1=[second(2)(c1="+2"),second(2)(c1="-2") ] ) 
+  !                  second1=[second(2)(c1="+2"),second(2)(c1="-2") ] )
   !   third2(2,2) - (first1=[first(2)(i1=4),first(2)(i1=-4)],
-  !                  second1=[second(2)(c1="+4"),second(2)(c1="-4") ] ) 
+  !                  second1=[second(2)(c1="+4"),second(2)(c1="-4") ] )
 
   call verify3(spread(third2,1,5)) ! dim is 1
 
-  !   shape is 5,2,2  
-  !   dt(x,1,1) - (x is 1 - 5) - 
+  !   shape is 5,2,2
+  !   dt(x,1,1) - (x is 1 - 5) -
   !               (first1=[first(2)(i1=1),first(2)(i1=-1)],
   !                second1=[second(2)(c1="+1"),second(2)(c1="-1") ] )
-  !     
-  !   dt(x,1,2) - (x is 1 - 5) - 
+  !
+  !   dt(x,1,2) - (x is 1 - 5) -
   !               (first1=[first(2)(i1=3),first(2)(i1=-3)],
   !                second1=[second(2)(c1="+3"),second(2)(c1="-3") ] )
-  ! 
-  !   dt(x,2,1) - (x is 1 - 5) - 
+  !
+  !   dt(x,2,1) - (x is 1 - 5) -
   !               (first1=[first(2)(i1=2),first(2)(i1=-2)],
   !                second1=[second(2)(c1="+2"),second(2)(c1="-2") ] )
-  !         
-  !   dt(x,2,2) - (x is 1 - 5) - 
+  !
+  !   dt(x,2,2) - (x is 1 - 5) -
   !               (first1=[first(2)(i1=4),first(2)(i1=-4)],
   !                second1=[second(2)(c1="+4"),second(2)(c1="-4") ] )
 
@@ -131,8 +123,8 @@ program spreadSourceIsArrayDTComp02
      subroutine verify1(dt)
         type(third(1,*)),intent(in) :: dt(:,:)
         integer :: i
-        ! element order: 
-        ! dt(1,1) - third1(2) - 
+        ! element order:
+        ! dt(1,1) - third1(2) -
         !            (first1=[first(2)(i1=1),first(2)(i1=-1)],
         !             second1=[second(2)(c1="+1"),second(2)(c1="-1") ] )
         ! dt(2,1) - third1(2)
@@ -140,8 +132,8 @@ program spreadSourceIsArrayDTComp02
         ! dt(4,1) - third1(2)
         ! dt(5,1) - third1(2)
         ! dt(1,2) - third1(3) -
-        !           (first1=[first(2)(i1=2),first(2)(i1=-2)],     
-        !            second1=[second(2)(c1="+2"),second(2)(c1="-2") ] )    
+        !           (first1=[first(2)(i1=2),first(2)(i1=-2)],
+        !            second1=[second(2)(c1="+2"),second(2)(c1="-2") ] )
         ! dt(2,2) - third1(3)
         ! dt(3,2) - third1(3)
         ! dt(4,2) - third1(3)
@@ -160,7 +152,7 @@ program spreadSourceIsArrayDTComp02
         ! dt(3,4) - third1(5)
         ! dt(4,4) - third1(5)
         ! dt(5,4) - third1(5)
- 
+
         if(dt%k3 /= 1)                             error stop 10_4
         if(dt%l3 /= 2)                             error stop 11_4
         if(size(dt,1) /= 5)                        error stop 12_4
@@ -171,7 +163,7 @@ program spreadSourceIsArrayDTComp02
           if(lbound(dt(i,1)%first1,1) /= 0)        error stop 16_4
           if(ubound(dt(i,1)%first1,1) /= 1)        error stop 17_4
           if(lbound(dt(i,1)%second1,1) /= 2)       error stop 18_4
-          if(ubound(dt(i,1)%second1,1) /= 3)       error stop 19_4     
+          if(ubound(dt(i,1)%second1,1) /= 3)       error stop 19_4
 
           if(any(dt(i,1)%first1%i1 /= [1,-1]))     error stop 20_4
           if(any(dt(i,2)%first1%i1 /= [2,-2]))     error stop 21_4
@@ -182,15 +174,15 @@ program spreadSourceIsArrayDTComp02
           if(any(dt(i,2)%second1%c1 /= ["+2","-2"]))       error stop 25_4
           if(any(dt(i,3)%second1%c1 /= ["+3","-3"]))       error stop 26_4
           if(any(dt(i,4)%second1%c1 /= ["+4","-4"]))       error stop 27_4
-        end do 
-     end subroutine   
+        end do
+     end subroutine
 
      subroutine verify2(dt)
         type(third(1,*)),intent(in) :: dt(:,:)
         integer :: i
-        
+
         ! element order
-        ! dt(1,1) - third1(2) - 
+        ! dt(1,1) - third1(2) -
         !            (first1=[first(2)(i1=1),first(2)(i1=-1)],
         !             second1=[second(2)(c1="+1"),second(2)(c1="-1") ] )
         ! dt(2,1) - third1(3) -
@@ -199,7 +191,7 @@ program spreadSourceIsArrayDTComp02
         ! dt(3,1) - third1(4) -
         !           (first1=[first(2)(i1=3),first(2)(i1=-3)],
         !            second1=[second(2)(c1="+3"),second(2)(c1="-3") ] )
-        ! dt(4,1) - third1(5) - 
+        ! dt(4,1) - third1(5) -
         !           (first1=[first(2)(i1=4),first(2)(i1=-4)],
         !            second1=[second(2)(c1="+4"),second(2)(c1="-4") ] )
         ! dt(1,2) - third1(2)
@@ -247,15 +239,15 @@ program spreadSourceIsArrayDTComp02
        type(third(1,*)),intent(in) :: dt(:,:,:)
        integer :: i
        ! element order:
-       ! dt(1,1,1) - third2(1,1) -  
+       ! dt(1,1,1) - third2(1,1) -
        !            (first1=[first(2)(i1=1),first(2)(i1=-1)],
        !             second1=[second(2)(c1="+1"),second(2)(c1="-1") ] )
-       ! dt(2,1,1) - third2(1,1) 
+       ! dt(2,1,1) - third2(1,1)
        ! dt(3,1,1) - third2(1,1)
        ! dt(4,1,1) - third2(1,1)
        ! dt(5,1,1) - third2(1,1)
 
-       ! dt(1,2,1) - third2(2,1) - 
+       ! dt(1,2,1) - third2(2,1) -
        !           (first1=[first(2)(i1=2),first(2)(i1=-2)],
        !            second1=[second(2)(c1="+2"),second(2)(c1="-2") ] )
        ! dt(2,2,1) - third2(2,1)
@@ -309,32 +301,32 @@ program spreadSourceIsArrayDTComp02
     subroutine verify4(dt)
        type(third(1,*)),intent(in) :: dt(:,:,:)
        integer :: i
-       
+
        ! element order:
-       ! dt(1,1,1) - 
+       ! dt(1,1,1) -
        !            (first1=[first(2)(i1=1),first(2)(i1=-1)],
        !             second1=[second(2)(c1="+1"),second(2)(c1="-1") ] )
-       ! dt(2,1,1) - 
+       ! dt(2,1,1) -
        !           (first1=[first(2)(i1=2),first(2)(i1=-2)],
        !            second1=[second(2)(c1="+2"), second(2)(c1="-2") ] )
        ! dt(1,2,1) -
-       ! dt(2,2,1) - 
-       ! dt(1,3,1) - 
-       ! dt(2,3,1) - 
-       ! dt(1,4,1) - 
-       ! dt(2,4,1) - 
+       ! dt(2,2,1) -
+       ! dt(1,3,1) -
+       ! dt(2,3,1) -
+       ! dt(1,4,1) -
+       ! dt(2,4,1) -
        ! dt(1,5,1) -
        ! dt(2,5,1) -
 
-       ! dt(1,1,2) - 
+       ! dt(1,1,2) -
        !           (first1=[first(2)(i1=3),first(2)(i1=-3)],
        !            second1=[second(2)(c1="+3"),second(2)(c1="-3") ] )
-       ! dt(2,1,2) - 
+       ! dt(2,1,2) -
        !           (first1=[first(2)(i1=4),first(2)(i1=-4)],
        !            second1=[second(2)(c1="+4"),second(2)(c1="-4") ] )
        ! dt(1,2,2) -
-       ! dt(2,2,2) - 
-       ! dt(1,3,2) - 
+       ! dt(2,2,2) -
+       ! dt(1,3,2) -
        ! dt(2,3,2) -
        ! dt(1,4,2) -
        ! dt(2,4,2) -

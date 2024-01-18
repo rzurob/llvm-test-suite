@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with private polymorphic component (output)
@@ -98,13 +82,13 @@ module m
       class(data), intent(in) :: dtv
       getdata = dtv%i
    end function
-   
+
    subroutine start()
       allocate ( b1, source = base( d=data(101)))
       allocate ( b2, source = base( d=data(102)))
       allocate ( b3%d, source = data(103) )
    end subroutine
-   
+
    subroutine write(unit)
       integer, intent(in) :: unit
       write (unit, n123, iostat = stat, iomsg = msg )
@@ -118,9 +102,9 @@ use m
 
    open (1, file = 'access001b.1', form='formatted', access='sequential' )
    call start()
-   
+
    call write (1)
-   
+
 end program
 
 
@@ -150,7 +134,7 @@ use m, only: base, data
    if ( size(v_list, 1) /= 0 ) error stop 3_4
 
    write (unit, *, iostat=iostat, iomsg = iomsg )   dtv%get()
-   
+
    if ( ( iostat /= 0 ) .or. ( iomsg /= 'datawrite' ) ) error stop 4_4
 
    iomsg = 'dtiowrite'

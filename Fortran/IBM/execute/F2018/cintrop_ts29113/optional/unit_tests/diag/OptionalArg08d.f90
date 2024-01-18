@@ -1,21 +1,14 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : OptionalArg08
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 12, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Diagnostics for C-interop OPTIONAL argument
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Diagnostic test for when a BIND(C)
 !*                               optional argument is used in an ENTRY
@@ -23,7 +16,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      
+
       subroutine foo(a)
         implicit none
         integer, optional :: a

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  C809AssoName1.f  
-! %VERIFY: 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  C809AssoName1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT:  
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C809AssoName1
-!*  TEST CASE TITLE            : C809
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 20, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : Associate name 
+!*  SECONDARY FUNCTIONS TESTED : Associate name
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     The associate name must only be declared once in the ASSOCIATE statement  
-!*     Reuse the same associate name 
+!*     The associate name must only be declared once in the ASSOCIATE statement
+!*     Reuse the same associate name
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
   MODULE M
 
     TYPE, ABSTRACT :: Base
@@ -49,8 +43,8 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: Id = 0
     CONTAINS
-      PROCEDURE, NOPASS :: PrintType => PrintChild 
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, NOPASS :: PrintType => PrintChild
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -76,7 +70,7 @@
       IF (As%Id .NE. 1) STOP 50
       IF (As%GetId() .NE. 1) STOP 51
       As%Id = 2
- 
+
       ASSOCIATE ( As => As  )
         IF (As%Id .NE. 2) STOP 52
         IF (As%GetId() .NE. 2) STOP 53

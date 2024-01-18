@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeAsActualArg02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeAsActualArg02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 18 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 18 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE AND FSOURCE ARE POLYMORPHIC TYPE
 !* 4. DERIVED TYPE HAS TYPE-BOUND PROCEDURE
 !* 5. PASS MERGE AS ARGUMENT
@@ -43,9 +35,9 @@ module m
       character(:),allocatable :: c2(:)
       contains
          procedure :: getChildInfo
-         procedure :: resetChild 
+         procedure :: resetChild
    end type
-  
+
    contains
       function resetChild(dt)
           class(child(2,*,4,*)),intent(in) :: dt
@@ -55,14 +47,14 @@ module m
               resetChild%c1=["00","11","22"]
               resetChild%i2=[2*dt%i2(1),3*dt%i2(2)]
               resetChild%c2=["333","444","555","666"]
-               
-      end function 
+
+      end function
 
       function getChildInfo(dt)
           class(child(2,*,4,*)),intent(in) :: dt
           type(child(2,dt%l1,4,dt%l2))  :: getChildInfo
           getChildInfo=dt
-      end function 
+      end function
 end module
 
 program mergeAsActualArg02
@@ -75,8 +67,8 @@ program mergeAsActualArg02
 
    allocate(b1,source=child(2,3,4,5)([1,2],["ab","de"], &
                       [3,4],["x","y"]) )
-   allocate(b2,source=child(2,3,4,5)([11,22],["red  ","blue ","green"], & 
-                                     [33,44],["aaa","bbb","ccc"])) 
+   allocate(b2,source=child(2,3,4,5)([11,22],["red  ","blue ","green"], &
+                                     [33,44],["aaa","bbb","ccc"]))
 
 
    call check(merge(b1,b2,.true.),1)
@@ -87,7 +79,7 @@ program mergeAsActualArg02
       subroutine check(dt,flag)
           class(base(2,*)),intent(in) :: dt
           integer :: flag
- 
+
           select type(dt)
               type is(child(2,*,4,*))
                   if(dt%k1 /= 2)                         error stop 10_4
@@ -107,8 +99,8 @@ program mergeAsActualArg02
                       if(any(dt%c1 /= ["ab","de"]))      error stop 22_4
                       if(any(dt%c2 /= ["x","y"]))        error stop 23_4
                       if(dt%c1%len /= 2)                 error stop 24_4
-                      if(dt%c2%len /= 1)                 error stop 25_4 
-                     
+                      if(dt%c2%len /= 1)                 error stop 25_4
+
                   else
                       if(any(dt%i1 /= [11,22]))          error stop 26_4
                       if(any(dt%i2 /= [33,44]))          error stop 27_4
@@ -175,11 +167,11 @@ program mergeAsActualArg02
                   if(any(ch%c2 /= ["333","444","555","666"]))  error stop 83_4
                   if(ch%c1%len /= 2)                     error stop 84_4
                   if(ch%c2%len /= 3)                    error stop 85_4
-              class default 
+              class default
                  error stop 100_4
 
-          end select 
-          
+          end select
+
       end subroutine
 
 end program

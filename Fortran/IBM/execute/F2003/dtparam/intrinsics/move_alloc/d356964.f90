@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d356964.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d356964.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 1 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 1 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. DEFECT 356964
@@ -52,7 +44,7 @@ program d356964
   print *,b1(1)%a1(1)%c1,b1(1)%a1(2)%c1
   print *,b1(2)%a1(1)%c1,b1(2)%a1(2)%c1
 
-  b2=b1 
+  b2=b1
 
   print *,b2(1)%a1%l1
   print *,b2(2)%a1%l1

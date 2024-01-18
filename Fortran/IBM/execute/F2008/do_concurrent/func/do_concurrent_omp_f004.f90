@@ -1,19 +1,11 @@
-!#######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/do_concurrent/func/do_concurrent_omp_f004.f
 !*  TYPE                       : Functional test
 !*  FEATURE                    : RTC 17293 - F2008: DO CONCURRENT Construct
 !*
-!*  PROGRAMMER                 : Nicole Negherbon
 !*  DATE                       : August 12, 2015
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  DRIVER STANZA              : xlf2008_r
 !*  REQUIRED COMPILER OPTIONS  : -qsmp
 !*
 !*  DESCRIPTION                : verifies correct processing with different Thread Wait Policy
@@ -56,7 +48,7 @@ contains
                                             j4=(-10002),(-10004),(-2)),&
                                             j5=1,-2,(-2))
     end subroutine sub3
-end module mod      
+end module mod
 
 
 program main
@@ -82,7 +74,7 @@ implicit none
    if (omp_get_nested()) then
       th_limit = omp_get_thread_limit()
       th_num=sqrt(real(th_limit))
-      if ((th_num**2) > th_limit ) then 
+      if ((th_num**2) > th_limit ) then
          print *," Incorrect thread num calc when omp nested - th_limit=",th_limit," th_num=",th_num
          error stop 17
       end if

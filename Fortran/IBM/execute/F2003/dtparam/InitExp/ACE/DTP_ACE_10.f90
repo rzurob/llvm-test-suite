@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_ACE_10.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification 
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -22,7 +14,7 @@
 !*
 !*  DESCRIPTION                :
 !*
-!* Defect : 364760   
+!* Defect : 364760
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
@@ -47,7 +39,7 @@ MODULE Mod
         INTEGER, KIND :: k3 = 4
         INTEGER, LEN  :: l3 = 2
 
-        INTEGER(k3) :: A21(l3) = -4, A22(l3+2) = -5 
+        INTEGER(k3) :: A21(l3) = -4, A22(l3+2) = -5
         TYPE(DT1(k3,l3)) :: cmp(l3)
       END TYPE
 

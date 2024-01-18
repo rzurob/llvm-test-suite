@@ -1,27 +1,16 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Nested1.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Nested subroutine call
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                :
 !*
-!*  DESCRIPTION                : 
-!*       
-!*                      
-!*    - Inner most subroutine has assumed shape array dummy argument 
-!*      with CONTIGUOUS attribute 
+!*    - Inner most subroutine has assumed shape array dummy argument
+!*      with CONTIGUOUS attribute
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -40,7 +29,7 @@ PROGRAM Nested1
       INTEGER, POINTER :: ptr(:,:,:)
 
       I3D = RESHAPE( SOURCE = [(I, I=1,1000)], SHAPE = [10,10,10] )
-      ptr => I3D 
+      ptr => I3D
 
       CALL Sub(ptr)
 
@@ -68,10 +57,10 @@ PROGRAM Nested1
 
       CONTAINS
 
-      SUBROUTINE Sub(Arg)           
+      SUBROUTINE Sub(Arg)
         INTEGER, TARGET, OPTIONAL, CONTIGUOUS :: Arg(:,:,:)
         INTEGER, POINTER :: Ptr(:,:,:)
-        INTEGER :: test 
+        INTEGER :: test
 
         IF (PRESENT(Arg)) THEN
             IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 20
@@ -83,7 +72,7 @@ PROGRAM Nested1
         IF ( .NOT. ASSOCIATED(ptr)    ) ERROR STOP 21
         IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 22
 
-        CALL SubSub(ptr, test) 
+        CALL SubSub(ptr, test)
 
         IF ( .NOT. ASSOCIATED(ptr)    ) ERROR STOP 23
         IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 24
@@ -91,7 +80,7 @@ PROGRAM Nested1
 
         IF (.NOT. PRESENT(Arg)) DEALLOCATE(ptr)
       END SUBROUTINE Sub
-      
+
       SUBROUTINE SubSub(Arg, x)
         INTEGER :: Arg(10,10,10), x
 

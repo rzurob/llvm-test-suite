@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgVerify3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 06, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : VERIFY 
+!*  SECONDARY FUNCTIONS TESTED : VERIFY
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Verify that a set of characters contains all the characters in a string by identifying the position
 !*  of the first character in a string of characters that does not appear in a given set of characters.
-!* 
-!*    
-!*  (322430) 
+!*
+!*  (322430)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -44,8 +35,8 @@
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
-     
-  CHARACTER(2)    :: CC(1:127) = (/(ACHAR(0)//ACHAR(0), I=1,127)/) 
+
+  CHARACTER(2)    :: CC(1:127) = (/(ACHAR(0)//ACHAR(0), I=1,127)/)
   INTEGER         :: II(1:127) = (/(I, I=1,127)/)
 
   DO I1 = 1, 127
@@ -62,7 +53,7 @@
     IF (VERIFY(STRING=Str(I2)(:), SET=CC(I2), KIND=2_8 ) .NE. 1) STOP 24
   END DO
 
-  DO I4 =1, 127 
+  DO I4 =1, 127
     IF (VERIFY(STRING=Str(I4)(:2), SET=CC(I4), KIND=4_1 ) .NE. 1) STOP 41
     IF (VERIFY(STRING=Str(I4)(:2), SET=CC(I4), KIND=4_2 ) .NE. 1) STOP 42
     IF (VERIFY(STRING=Str(I4)(:2), SET=CC(I4), KIND=4_4 ) .NE. 1) STOP 43

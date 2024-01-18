@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FunctionResult07.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : March 25, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly         
+!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,7 +17,7 @@
 !* Defect:  362586
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -33,7 +25,7 @@ MODULE Mod
         INTEGER, LEN  :: l1
 
         INTEGER(k1) :: A0(l1)
-        CHARACTER(l1) :: name 
+        CHARACTER(l1) :: name
         INTEGER(k1) :: A1(l1)
       END TYPE
 
@@ -47,12 +39,12 @@ MODULE Mod
       CONTAINS
 
       FUNCTION foo(Arg)
-        CLASS(Base(4,:)), POINTER :: Arg 
+        CLASS(Base(4,:)), POINTER :: Arg
         CLASS(Base(4,:)), POINTER :: foo
- 
+
         foo => Arg
- 
-      END FUNCTION   
+
+      END FUNCTION
 END MODULE
 PROGRAM FunctionResult07
       USE Mod
@@ -66,7 +58,7 @@ PROGRAM FunctionResult07
       c1%A1 = 2
       c1%b_cmp = ( Base(4,12) ( 3, 'XLF', 4) )
 
-      b1 => c1 
+      b1 => c1
       SELECT TYPE ( b1 )
         CLASS IS (Child(4,*,4,*))
           IF ( b1%name   .NE. 'IBM' ) STOP 10
@@ -95,7 +87,7 @@ PROGRAM FunctionResult07
            STOP 24
       END SELECT
 
-      ASSOCIATE ( a => foo (b2) ) 
+      ASSOCIATE ( a => foo (b2) )
         SELECT TYPE ( a )
           CLASS IS (Child(4,*,4,*))
             IF ( a%name   .NE. 'IBM' ) STOP 25
@@ -108,5 +100,5 @@ PROGRAM FunctionResult07
           CLASS DEFAULT
              STOP 31
         END SELECT
-      END ASSOCIATE 
+      END ASSOCIATE
 END PROGRAM FunctionResult07

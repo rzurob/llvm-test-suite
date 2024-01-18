@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgAchar7
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : ACHAR 
+!*  SECONDARY FUNCTIONS TESTED : ACHAR
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Entities with different attubute used for kind arg - function return 
-!*    
-!*  () 
+!*  Entities with different attubute used for kind arg - function return
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -41,7 +33,7 @@
   INTEGER(2), POINTER     :: I2, II2(:), K2
   INTEGER(4), ALLOCATABLE :: I4, II4(:), K4
   INTEGER(8), POINTER     :: I8, II8(:), K8
-     
+
 ! CHARACTER :: CC=(/(ACHAR(I=I, KIND=1), I=0, 127)/)
 
   TYPE :: DT
@@ -55,7 +47,7 @@
 
   CHARACTER :: CC(0:127)
   CC=(/(ACHAR(I=I, KIND=1), I=0, 127)/)
- 
+
   ALLOCATE(I1)
   ALLOCATE(I2)
   ALLOCATE(I4)

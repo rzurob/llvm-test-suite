@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  FinalArrConstr.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FinalArrConstr 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FinalArrConstr
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 14, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -41,11 +35,11 @@
 !*
 !*  DESCRIPTION
 !*   The finalization-Array  constructor (Interp-301240)
-!*    () 
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   MODULE M
 
     INTEGER :: INDEX=0
@@ -62,7 +56,7 @@
       INTEGER(K1)   :: Id = 0
       CHARACTER(N1) :: C  = " "
       LOGICAL(K1)   :: L  = .FALSE.
- 
+
       CONTAINS
       PROCEDURE, PASS   :: GetId
       PROCEDURE, PASS   :: GetC
@@ -81,54 +75,54 @@
       Fin(Index) = 1
       PRINT *, "Base Finalization"
     END SUBROUTINE
- 
+
     SUBROUTINE Final(Obj)
     TYPE(DT(4,*)) :: Obj
       Index = Index + 1
       Fin(Index) = 2
       PRINT *, "DT Finalization"
     END SUBROUTINE
- 
+
     SUBROUTINE FinalArr(ObjArr)
     TYPE(DT(4,*)) :: ObjArr(:)
       Index = Index + 1
       Fin(Index) = 3
       PRINT *, "DT ARR Finalization"
     END SUBROUTINE
- 
+
     ELEMENTAL FUNCTION GetId(Arg)
-    IMPLICIT CLASS(DT(4,*))(A) 
+    IMPLICIT CLASS(DT(4,*))(A)
     INTENT(IN) :: Arg
     INTEGER    :: GetId
       GetId = Arg%Id
     END FUNCTION
 
     ELEMENTAL FUNCTION GetC(Arg)
-    IMPLICIT CLASS(DT(4,*))(A) 
+    IMPLICIT CLASS(DT(4,*))(A)
     INTENT(IN) :: Arg
     CHARACTER  :: GetC
       GetC = Arg%C
     END FUNCTION
 
     ELEMENTAL FUNCTION GetL(Arg)
-    IMPLICIT CLASS(DT(4,*))(A) 
+    IMPLICIT CLASS(DT(4,*))(A)
     INTENT(IN) :: Arg
     LOGICAL    :: GetL
       GetL = Arg%L
     END FUNCTION
 
   END MODULE
- 
-  PROGRAM FinalArrConstr 
+
+  PROGRAM FinalArrConstr
 
   USE M
-  IMPLICIT TYPE(DT(4,3))(F) 
+  IMPLICIT TYPE(DT(4,3))(F)
 
-  TYPE(DT(4,3)), TARGET :: V =  DT(4,3)(ID=-1, C="!", L=.TRUE.) 
+  TYPE(DT(4,3)), TARGET :: V =  DT(4,3)(ID=-1, C="!", L=.TRUE.)
 
-  Fin = -1 
+  Fin = -1
 
-  ASSOCIATE ( As => (/Fun(V),Fun(V),Fun(V)/) ) 
+  ASSOCIATE ( As => (/Fun(V),Fun(V),Fun(V)/) )
 
     IF ( ANY(SHAPE(As) .NE. (/3/)) ) STOP 30
 
@@ -140,7 +134,7 @@
 
     IF ( ANY(As%L       .NEQV. .TRUE. )) STOP 60
     IF ( ANY(As%GetL()  .NEQV. .TRUE. )) STOP 61
-    
+
     INDEX = 1
     Fin ( Index ) = 0  ! Finalization starts
     PRINT *, "Finalization starts"
@@ -160,5 +154,5 @@
   END FUNCTION
 
 
-  END 
+  END
 

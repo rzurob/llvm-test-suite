@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : PointerDummyPoly.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Ren Jian Gang
 !*  DATE                       : June 4, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
@@ -16,7 +12,6 @@
 !*
 !*  REFERENCE                  : Feature Number 916820
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -53,27 +48,27 @@ module m
 contains
   subroutine dt_foo(a)
     class(dt), pointer, intent(in) :: a
-    
+
     select type(item => a)
       type is (dt)
         print *, "dt: ", item%i
       type is (et)
         print *, "et: ", item%i, item%j
       type is (ft)
-        print *, "ft: ", item%i, item%k  
+        print *, "ft: ", item%i, item%k
     end select
   end subroutine
-  
+
   subroutine any_foo(a)
     class(*), pointer, intent(in) :: a
-    
+
     select type(item => a)
       type is (dt)
         print *, "dt: ", item%i
       type is (et)
         print *, "et: ", item%i, item%j
       type is (ft)
-        print *, "ft: ", item%i, item%k  
+        print *, "ft: ", item%i, item%k
       type is (integer)
         print *, "integer: ", item
     end select

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgScan6
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 28, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : SCAN 
+!*  SECONDARY FUNCTIONS TESTED : SCAN
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Value.
 !*  Case (ii): If BACK is present with the value true and if STRING contains at least one
 !*  character that is in SET, the value of the result is the position of the rightmost
 !*  character of STRING that is in SET.
-!* 
-!*    
-!*  () 
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

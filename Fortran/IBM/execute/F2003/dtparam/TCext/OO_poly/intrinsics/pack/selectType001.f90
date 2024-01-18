@@ -3,13 +3,9 @@
 ! opt variations: -qnok -qnol -qnodeferredlp -qreuse=base
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/pack
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/21/2005
 ! PRIMARY FUNCTIONS TESTED   : pack
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : ARRAY is an associate name of a select
 !                              type construct. Associate name is non
 !                              poly.

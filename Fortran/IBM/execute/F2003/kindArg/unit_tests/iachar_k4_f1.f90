@@ -1,20 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : iachar_k4_f1.f
 !*
-!*  PROGRAMMER                 : Vince Yuen
 !*  DATE                       : Apr 10, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support KIND Argument for new intrinsics
 !*
 !*  KEYWORD(S)                 : KIND
 !*
-!*  DESCRIPTION                : test iachar functionality with kind = 4 
-!*                               specified (with and without keyword), 
+!*  DESCRIPTION                : test iachar functionality with kind = 4
+!*                               specified (with and without keyword),
 !*                               -qintsize=8
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

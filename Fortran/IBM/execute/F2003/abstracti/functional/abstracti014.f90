@@ -11,16 +11,11 @@
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            :
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquida
+!*  ===================================================================
 !*  DATE                       : 02/20/2006
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : reshape
 !*  SECONDARY FUNCTIONS TESTED :
-!*  DRIVER STANZA              : xlf90
 !*  DESCRIPTION                : SOURCE is the return value of a type
 !*    bound procedure call. Use abstract type and deferred bounding.
 !*

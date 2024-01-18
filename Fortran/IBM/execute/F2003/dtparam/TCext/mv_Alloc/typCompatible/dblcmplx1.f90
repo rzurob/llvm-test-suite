@@ -3,24 +3,12 @@
 ! opt variations: -qnok -ql
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dblcmplx1.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is of type double complex
 !*                               TO is of unlimited poly
@@ -36,7 +24,7 @@ module m
       type  :: base(k1)    ! (4)
           integer, kind :: k1
           class(*), allocatable :: d1
-      end type 
+      end type
 
       type, extends(base) :: child    ! (4)
           double complex, allocatable :: d2
@@ -78,7 +66,7 @@ use m
     call sub(b)
 
     select type ( x => b%d1)
-          type is (double complex) 
+          type is (double complex)
               if ( .not. precision_R8(x, cmplx(2,4,8)) ) stop 33
           class default
               stop 41

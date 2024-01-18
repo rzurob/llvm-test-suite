@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fdtedit004adkl
 !*
-!*  PROGRAMMER                 : David Forster (derived from fdtedit004ad by Robert Ma)
 !*  DATE                       : 2007-06-07 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Test if compiler complains when v_list
@@ -75,7 +67,7 @@ use m
 
    allocate ( b1, source = base(4)(100) )
 
-   write ( 1, fmt=10 ) b1 
+   write ( 1, fmt=10 ) b1
 
    rewind 1
 

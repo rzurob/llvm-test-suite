@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpImplicit2
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 22, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The implicit statement
-!*  tests its scope 
-!* 
+!*  tests its scope
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -107,7 +98,7 @@
   RP => RT
   SP => ST
   TP => TT
-  
+
   IF ( RP%ModFun()       .NE. RP%L0        ) STOP 31
 
   IF ( SIZE( SP%R )      .NE. S%L1         ) STOP 32

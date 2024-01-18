@@ -1,22 +1,16 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : aceCompPtrFunctionReturn01
-!*  TEST CASE TITLE            : Basic (non-Polymorphic) Array Constructors
 !*                               with DTP
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : November 21, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor contains a Derived Type
 !*                               with a Non-Polymorphic POINTER Component
 !*  SECONDARY FUNCTIONS TESTED : and is a FUNCTION Return Value
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

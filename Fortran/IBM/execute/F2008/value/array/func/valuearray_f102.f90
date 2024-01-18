@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f102.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -48,7 +45,7 @@ call sub32(i1,i1)
 if (any (i1 .ne. i1_r)) error stop 3201
 
 contains
-  
+
 subroutine sub11(arg,n)
     integer*2 :: arg(n)
 	integer n
@@ -59,8 +56,8 @@ subroutine sub11(arg,n)
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 1113
 	if (rank(arg) .ne. 1) error stop 1114
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 1115
-	arg = 200	
-end subroutine	
+	arg = 200
+end subroutine
 
 subroutine sub12(arg)
     integer*2 :: arg(10)
@@ -71,8 +68,8 @@ subroutine sub12(arg)
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 1213
 	if (rank(arg) .ne. 1) error stop 1214
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 1215
-	arg = 200	
-end subroutine	
+	arg = 200
+end subroutine
 
 subroutine sub13(arg)
     integer*2 :: arg(SIZEOFA)
@@ -83,8 +80,8 @@ subroutine sub13(arg)
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 1313
 	if (rank(arg) .ne. 1) error stop 1314
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 1315
-	arg = 200	
-end subroutine	
+	arg = 200
+end subroutine
 
 subroutine sub14(arg)
     integer*2 :: arg(:)
@@ -95,7 +92,7 @@ subroutine sub14(arg)
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 1413
 	if (rank(arg) .ne. 1) error stop 1414
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 1415
-	arg = 200	
+	arg = 200
 end subroutine
 
 subroutine sub21(arg,n)
@@ -108,7 +105,7 @@ subroutine sub21(arg,n)
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 2113
 	if (rank(arg) .ne. 1) error stop 2114
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 2115
-	arg = 200	
+	arg = 200
 end subroutine
 
 subroutine sub22(arg)
@@ -120,7 +117,7 @@ subroutine sub22(arg)
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 2213
 	if (rank(arg) .ne. 1) error stop 2214
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 2215
-	arg = 200	
+	arg = 200
 end subroutine
 
 subroutine sub23(arg)

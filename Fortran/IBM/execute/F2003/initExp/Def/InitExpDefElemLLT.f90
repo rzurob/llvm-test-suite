@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemLLT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemLLT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  LLT 
+!*
+!*  -  LLT
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -36,7 +29,7 @@
 
 
   PROGRAM  InitExpDefElemLLT
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
   TYPE :: DT0
@@ -49,7 +42,7 @@
     PROCEDURE(), POINTER, NOPASS :: ProcPtr =>NULL()
   END TYPE
 
-  TYPE(DT0), PARAMETER :: C(16)=DT0(R=NULL()) 
+  TYPE(DT0), PARAMETER :: C(16)=DT0(R=NULL())
 
   TYPE :: DT
     LOGICAL :: C1(16)=LLT(STRING_B=(/C%C1/), STRING_A=(/C%C2(1:0)/))
@@ -60,7 +53,7 @@
     LOGICAL :: C6(16)=LLT(STRING_B=(/C%C1//C%C3/), STRING_A=(/C%C1(:)//C%C3(1:1)/))
     LOGICAL :: C7(16)=LLT(STRING_B=(/C%C2(1:6)/),  STRING_A=(/C%C2(1:6)/))
   END TYPE
- 
+
   TYPE(DT) :: T
 
   IF( ANY( T%C1  .NEQV. .FALSE. ))       STOP 11

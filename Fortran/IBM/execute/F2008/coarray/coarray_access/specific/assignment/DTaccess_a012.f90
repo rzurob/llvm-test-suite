@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a012.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -28,7 +24,7 @@ module modVAN
 	end type
 
 	integer, parameter :: intish = 12
-	real, parameter :: realish = 3433.6454 
+	real, parameter :: realish = 3433.6454
 	character(3), parameter :: charish = "BIT"
 	complex, parameter :: plexish = (1.2,-1.1)
 	logical, parameter :: logish = .true.
@@ -68,37 +64,37 @@ contains
 				cafa10%ch = (/"PHI", "BOS", "VAN", "DET"/)
 				cafa10(:)%cx = cxvar
 				cafa10(:)%l = lvar
-				
+
 
 				if ( (cafa%i /= intish) .or. (cafa%r /= realish) .or. (cafa%ch /= charish) .or. (cafa%cx /= plexish) .or. (cafa%l .eqv. logish) ) then
 					print *, cafa
 					error stop 15
 				end if
-				
+
 				if ( any(cafa10%i /= [1,5,2,ivar]) ) then
 					print *, "expected", [1,5,2,ivar]
 					print *, "actual", cafa10%i
 					error stop 16
 				end if
-				
+
 				if ( any(cafa10%r /= [rvar, rvar, rvar, rvar]) ) then
 					print *, "expected", [rvar, rvar, rvar, rvar]
 					print *, "actual", cafa10%r
 					error stop 17
 				end if
-				
+
 				if ( any(cafa10%ch <> ["PHI", "BOS", "VAN", "DET"]) ) then
 					print *, "expected", ["PHI", "BOS", "VAN", "DET"]
 					print *, "actual", cafa10%ch
 					error stop 18
 				end if
-				
+
 				if ( any(cafa10%cx .ne. [(cxvar, i = 1,4)]) ) then
 					print *, "expected", [(cxvar, i = 1,4)]
 					print *, "actual", cafa10%cx
 					error stop 19
 				end if
-				
+
 				if ( any(cafa10%l .neqv. [.true., .true., .true., .true.]) ) then
 					print *, "expected", [.true., .true., .true., .true.]
 					print *, "actual", cafa10%l
@@ -112,7 +108,7 @@ contains
 				chvar = cafa%ch
 				cxvar = cafa%cx
 				lvar = cafa%l
-				
+
 				iarr = cafa10%i
 				rarr = cafa10%r
 				charr = cafa10%ch
@@ -123,7 +119,7 @@ contains
 					print *, ivar, rvar, chvar, cxvar, lvar
 					error stop 25
 				end if
-				
+
 				if ( any(iarr /= cafa10%i) ) then
 					print *, iarr
 					error stop 26
@@ -132,17 +128,17 @@ contains
 					print *, rarr
 					error stop 27
 				end if
-				
+
 				if ( any(charr /= cafa10%ch) )  then
 					print *, charr
 					error stop 28
 				end if
-				
+
 				if ( any(cxarr /= cafa10%cx) )  then
 					print *, cxarr
 					error stop 29
 				end if
-				
+
 				if ( any(larr .neqv. cafa10%l) )  then
 					print *, ilarr
 					error stop 30
@@ -150,7 +146,7 @@ contains
 
 			end subroutine
 
-	end subroutine 
+	end subroutine
 
 end module
 

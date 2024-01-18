@@ -1,27 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : valueAttrIntrinFunc001.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 04/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Pass results of intrinsic functions
 !*				to subroutines which contain dummy args
 !*				using the value attribute. Results will be
 !*				8 byte characters
-!*                              
-!*                              
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -85,10 +73,10 @@ program valueAttrIntrinFunc001
         character(7), VALUE :: tmp, tmp2, tmp3, tmp4, tmp5
 	if (tmp /= 'zzyxqwo') error stop 11_4
         if (tmp2 /= 'abcdefg') error stop 12_4
-        if (tmp3 /= 'abababa') error stop 13_4   
+        if (tmp3 /= 'abababa') error stop 13_4
         if (tmp4 /= 'zzyxqwo') error stop 14_4
         if (tmp5 /= 'abcdefg') error stop 15_4
-        
+
 	tmp = 'xxxxxxx'
         tmp2 = 'xxxxxxx'
         tmp3 = 'xxxxxxx'

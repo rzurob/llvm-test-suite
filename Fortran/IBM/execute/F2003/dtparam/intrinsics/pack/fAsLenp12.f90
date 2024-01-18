@@ -1,28 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Adrian Green
 !*  DATE                       : July 27, 2008
 !*  ORIGIN                     : XLF Compiler Test,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !       Pack Intrinsic function with derived type parameters.
-!*  DESCRIPTION                : Description: uses external functions for matrix multiplication, 
+!*  DESCRIPTION                : Description: uses external functions for matrix multiplication,
 !*                               with an interfaced operator.  pack performed on assumed length dtp.
-!*
-!*
-!*
 !*
 module m1
 type adrow(k)
   integer, kind :: k
   real(k), pointer :: element => null()
 end type adrow
- 
+
 type admatrix (k1,l)
   integer, kind :: k1
   integer, len :: l
@@ -31,9 +22,9 @@ end type admatrix
 
 	interface operator(*)
 		module procedure vector_multi, arrayvector_multi
-	end interface 	
-	
-	! 
+	end interface
+
+	!
 contains
 
 		function vector_multi(matrixA, matrixB) result (X)
@@ -41,9 +32,9 @@ contains
 			type(admatrix(4,l=*)), intent(in) :: matrixB
 			real :: X, dotprod
 			dotprod = 0.0
-			do i = 1,3	
+			do i = 1,3
 				dotprod = dotprod + matrixA%row(i)%element*matrixB%row(i)%element
-			end do 
+			end do
 			X = dotprod
 		end function vector_multi
 
@@ -53,9 +44,9 @@ contains
 			real :: X(3)
 			do i = 1,3
 				X(i) = matrixA(i)* matrixB(i)
-			end do	
+			end do
 		end function arrayvector_multi
-		
+
 		function packer(A,field,M) result (X)
 			type (admatrix(4,l=*)), intent(in), dimension(:,:) :: A
 			type (admatrix(4,l=*)), intent(in), dimension(:) :: field
@@ -63,10 +54,10 @@ contains
 			logical, intent(in), dimension(:,:) :: M
 			allocate (X(UBOUND(pack(A,M,field),1)), SOURCE = pack(A,M,field))
 		end function packer
-		
+
 end module m1
 
-program a	
+program a
 
 use m1
 type (admatrix(4,3)) :: res(3)
@@ -83,8 +74,7 @@ real :: res2(6)
 		do i = 1,3
 			allocate(vec(k,j)%row(i)%element, SOURCE = num)
 			num = num + 1.0
-		end do 
-	end do
+		end do
 	end do
 	do i = 1,6
 		do j =1,3

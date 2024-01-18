@@ -1,5 +1,5 @@
 ! Reduced code of F2003/dtparam/TCext/OO_type/extends/fext017.scenario
-! to test (possibly) side-effect (linker error: Undefined symbol: .b1_m%type) 
+! to test (possibly) side-effect (linker error: Undefined symbol: .b1_m%type)
 ! of defect 335879
 
 module m

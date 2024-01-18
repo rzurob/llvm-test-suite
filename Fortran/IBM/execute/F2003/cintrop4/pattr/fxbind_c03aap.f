@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,45 +13,37 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c03aap.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran programs interoperate with C functions
 !*                                through a Fortran procedure interface that uses
 !*                                the BIND specification .
-!*            
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !*   - Test: BINC(C) attribute with data type complex*16.
-!*     
+!*
 !*   - The interoperable  procedure itself is  implemented as C function.
 !*   - The interoperabl Fortran procedure  has an explicit interface and
 !*     is declared with the BIND attribute.
 !*   - passing scalar arguments by REFERENCE and by VALUE
 !*   - main written in FORTRAN, Fortran calls C functions.
 !*
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. Declare the interop functions in Fortran program.
 !*          ( Create a procedural interface that corresponds to the C prototype
-!*          and bind the interface to the C function using the BIND(C) specifier). 
+!*          and bind the interface to the C function using the BIND(C) specifier).
 !*          2. Initialize the variable which will be the  actual arguments of
-!*             the interop functions. 
+!*             the interop functions.
 !*          3. Fortran  program call C function.The argument is  altered
 !*             during execution of the C Function.
-!*          4. Assertion: Check the modified auguments and return value  
+!*          4. Assertion: Check the modified auguments and return value
 !*             in Fortran to verify it is correct.
 !*
 !* ===================================================================
@@ -100,28 +87,28 @@ program fxbind_c03aap
   !                and check the Results
   !**********************************************************
   ! Test 1 : call by reference
-  ! A dummy argument without the VALUE attribute correspond 
-  ! to a formal parameter  of the prototype in C program 
+  ! A dummy argument without the VALUE attribute correspond
+  ! to a formal parameter  of the prototype in C program
   ! that is of a pointer type.
   ret16_ref = fun_complex16_ref(c16_ref)
   print *,"ret16_ref =" , ret16_ref
-  test =  ret16_ref == (10.0Q0,10.0Q0) 
+  test =  ret16_ref == (10.0Q0,10.0Q0)
   call assert(test,'Hello, the result is not correct!',20)
 
-  test = c16_ref ==(10.0Q0,10.0Q0) 
+  test = c16_ref ==(10.0Q0,10.0Q0)
   call assert(test,'Hello, the result is not correct!',21)
 
   ! Test 2 : call by value
   ! A dummy argument with the VALUE attribute  correspond
-  ! to a formal parameter of the prototype in C program that is 
+  ! to a formal parameter of the prototype in C program that is
   ! not of a pointer type.
   ret16_val = (0.0Q0,0.0Q0)
   ret16_val = fun_complex16_val(c16_val)
-  test =  ret16_val == (10.0Q0,10.0Q0) 
+  test =  ret16_val == (10.0Q0,10.0Q0)
   print *, "ret16_val=" , ret16_val
   call assert(test,'Hello, the result is not correct!',22)
-  
-  test = c16_val ==(5.0Q0,5.0Q0) 
+
+  test = c16_val ==(5.0Q0,5.0Q0)
   call assert(test,'Hello, the result is not correct!',23)
 
   print *, "The testcase fxbind_c03aad.f is run successfully."

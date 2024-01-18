@@ -1,22 +1,15 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/func/polyAssign1030f_arrDim2LHSunallocSameTypeDiffShape.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 07 August 2015
-!* ORIGIN                       : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  
+!* DESCRIPTION
 !*                              : Test polymorphic assignment LHS is unallocated, RHS is allocated, LHS and have the same type but different shape.
 !*                              : We add arrays with rank=2, LHS is unallocated, RHS is allocated.
 !*                              : Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.
@@ -31,7 +24,7 @@
 !* ===================================================================
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-   
+
 module m
    type base
       integer :: i1
@@ -47,7 +40,7 @@ Program polyAssign1030f
     allocate(base :: b4(2:12))  !different bounds and extents
     allocate(base :: a4(1:2,2:12))
     if ( allocated(b1) .neqv.  .false. ) error stop "allocated(b1) status should be false initially."
-    !b1 = base(1) 
+    !b1 = base(1)
     !if ( allocated(b1) .eqv.  .false. ) error stop "allocated(b1) status should not be false after the initiallization."
     !if (lbound(b1,1) /= 1) error stop "(lbound(b1,1) should be 1 by default"
     !if (ubound(b1,1) /= 0) error stop "ubound(b1,1) should be 0 to indicate a zero-sized array"
@@ -82,7 +75,7 @@ Program polyAssign1030f
     if (b1(12)%i1 /= 4) error stop 73
 
     if ( allocated(a1) .neqv.  .false. ) error stop "allocated(a1) status should be false initially."
-    !a1 = base(1) 
+    !a1 = base(1)
     !if ( allocated(a1) .eqv. .false. ) error stop "allocated(a1) status should not be false after the initiallization."
     !if (lbound(a1,1) /= 1) error stop "(lbound(a1,1) should be 1 by default."
     !if (ubound(a1,1) /= 0) error stop "ubound(a1,1) should be 0 to indicate a zero-sized array."

@@ -1,30 +1,22 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound02
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug 20, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Functionality of cobound intrinsics
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Testing cobound inquiry intrinsics on:
 !*                                 - scalar coarray
 !*                                 - array coarray
 !*                                 - coarray with corank 1
 !*                                 - coarray with corank > 1
-!*  
-!*  ASSUMPTION:                : Number of images is equal to 15.
 !*
+!*  ASSUMPTION:                : Number of images is equal to 15.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

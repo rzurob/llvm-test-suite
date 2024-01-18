@@ -3,22 +3,11 @@
 ! opt variations: -qnol
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : ambiguious generic interfaces
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : one is object dummy arg, the other is dummy procedure of derived type
 !*
@@ -83,7 +72,7 @@ program genericAmbiguityTypeBound033
    use genericName
 
    type(c1(20,4)) :: c1_1
-   type(b1(20,4)) :: b1_1 = b1(20,4)(100) 
+   type(b1(20,4)) :: b1_1 = b1(20,4)(100)
 
    interface
       type(b1(20,4)) function foo()
@@ -92,7 +81,7 @@ program genericAmbiguityTypeBound033
    end interface
 
    call c1_1%oneargs(b1(20,4)(10))
-   call c1_1%oneargs(b1_1)   
-   call c1_1%oneargs(foo)   
+   call c1_1%oneargs(b1_1)
+   call c1_1%oneargs(foo)
 
 end program

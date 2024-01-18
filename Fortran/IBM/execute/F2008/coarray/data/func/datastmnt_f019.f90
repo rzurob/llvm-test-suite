@@ -1,22 +1,16 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : datastmnt_f019.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : November 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Test initialization with DATA statements of derived type coarray arrays (whole).
-!*                            
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 module modCFL
@@ -88,5 +82,5 @@ subroutine sub0()
 		print *, reshape(c2%flag, [4])
 		error stop 35
 	end if
-	
+
 end subroutine

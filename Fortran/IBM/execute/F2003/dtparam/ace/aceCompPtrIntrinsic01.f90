@@ -1,23 +1,17 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : aceCompPtrIntrinsic01
-!*  TEST CASE TITLE            : Basic (non-Polymorphic) Array Constructors
 !*                               with DTP
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : November 25, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor contains a Derived Type
 !*                               with a Polymorphic POINTER Component
 !*  SECONDARY FUNCTIONS TESTED : and is the Actual Argument to an Intrinsic
 !*                               Function
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

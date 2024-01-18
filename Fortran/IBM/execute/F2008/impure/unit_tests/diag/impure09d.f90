@@ -1,26 +1,23 @@
 !*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure09d.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Paul Liu
 !*  DATE                       : 2012-03-08
 !*  ORIGIN                     : Compiler Development, IBM China Development Shanghai Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : impure procedures
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 917300
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Fortran 2008 support for the IMPURE attribute 
+!*  DESCRIPTION                : Fortran 2008 support for the IMPURE attribute
 !*                               for procedures, C737
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789

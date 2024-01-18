@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrSpreadInt.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !* - data-pointer of type integer appears in FORALL statement
@@ -24,16 +18,16 @@
 
     module m
 	type base
-	    integer, pointer :: iP(:,:) 
+	    integer, pointer :: iP(:,:)
 	end type
     end module
-		
+
     program main
 	use m
 
 	type super
 	    integer :: iT(10,10)
-	end type 
+	end type
 
 	type(base), pointer ::  b2(:)
 	type(base), target, allocatable :: b1(:)
@@ -50,7 +44,7 @@
 
 	forall ( i = 1:6)
 	    b2(i)%iP(sp(1)%it(1,1):3, 7:sp(1)%it(9,1)) => b1(i+2)%ip(2,:)
-	end forall	
+	end forall
 
 	do i = 1, 6
 	    if ( .not. associated(b2(i)%iP)) stop 22

@@ -1,13 +1,10 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_f11.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED : Nesting in omp parallel workshare, where
@@ -30,7 +27,7 @@
       integer arrayintA(l,m,n), arrayintB(l,m,n)
       logical arraylogA(l,m,n), arraylogB(l,m,n)
       character arraychaA(l,m,n), arraychaB(l,m,n)
-      
+
       real EPSILON /5.E-1/
 
       call random_number(arrayrelA)
@@ -40,13 +37,13 @@
 
       forall(integer::i=1:l,j=1:m,k=1:n, arrayrelA(i,j,k) .gt.
      + real(0.01))
-           where(arrayrelA(i,j,:) .gt. EPSILON) 
+           where(arrayrelA(i,j,:) .gt. EPSILON)
              arrayrelA(i,j,:) = 12*maxval(arrayrelA)+arrayrelB(i,j,k)
            elsewhere(arrayrelA(i,j,:) .eq. EPSILON)
              arrayrelA(i,j,:) = real(2.0)
-           elsewhere 
+           elsewhere
              arrayrelA(i,j,:) = 140*minval(arrayrelA)+arrayrelB(i,j,k)
-           end where       
+           end where
       end forall
 
 !$omp end parallel workshare
@@ -57,7 +54,7 @@
 !$omp workshare
 
       arrayintA = int(arrayrelA + sum(arrayrelA)/1000)
-      arrayintB = int(arrayrelA + sum(arrayrelA)/1000) 
+      arrayintB = int(arrayrelA + sum(arrayrelA)/1000)
 
       forall(integer(2)::i=1:l,j=1:m,k=1:n, arrayintA(i,j,k) .gt.
      + 20)
@@ -71,13 +68,13 @@
       end forall
 
 !$omp end workshare
-!$omp end parallel 
+!$omp end parallel
 
       write(*, '(20i4)') arrayintA(:,2:3,12)
 
 !$omp parallel workshare
 
-      arraycpxA = cmplx(2, 3) 
+      arraycpxA = cmplx(2, 3)
 
       forall(integer(4)::i=1:l,j=1:m)
            where(arraycpxA(i,j,:) .eq. cmplx(2, 3))
@@ -102,7 +99,7 @@
 !     arraylogB = eoshift(arraylogA, shift=(/5,9,-4/), dim=2)
       arraylogB = eoshift(arraylogA, shiftA, dim=2)
 
-      forall(integer(2)::i=1:l,j=1:m,k=1:n, arraylogA(i,j,k) 
+      forall(integer(2)::i=1:l,j=1:m,k=1:n, arraylogA(i,j,k)
      + .eqv. .true.)
            where(arraylogB(i,j,:) .eqv. .false.)
              arraylogB(i,j,:) = .true.

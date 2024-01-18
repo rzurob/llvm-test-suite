@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : acetdt60
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2006-11-24
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -208,5 +202,5 @@ program acetdt60
 
   array33 = unpack([dt:: dt(1),dt(2),dt(3),dt(4),dt(5)], reshape([logical:: T, T, F, F, T, T, F, F, T], [3,3]), reshape([dt:: dt(81), dt(64), dt(49), dt(36), dt(25), dt(16), dt(9), dt(4), dt(1)],[3,3]))
   if (any([dt:: array33] /= [dt:: dt(1), dt(2), dt(49), dt(36), dt(3), dt(4), dt(9), dt(4), dt(5)])) stop 33
-  
+
 end program acetdt60

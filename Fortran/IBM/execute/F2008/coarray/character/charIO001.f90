@@ -1,37 +1,29 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : charIO001.f
-!*  TEST CASE TITLE            : Test that reading character coarray from STDINPUT and writing character coarray to STDOUTPUT
-!*                               
 !*
-!*  PROGRAMMER                 : Ke Wen Lin 
-!*  DATE                       : April 11, 2011 
+!*  DATE                       : April 11, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test that reading character coarray from STDINPUT and writing character coarray to STDOUTPUT
-!*                              
-!*  SECONDARY FUNCTIONS TESTED :                                                      
+!*
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : No Feature Number
 !*
-!*  DRIVER STANZA              : xlf2003_r
 !*  REQUIRED COMPILER OPTIONS  : -qcaf -q64
 !*
 !*  KEYWORD(S)                 : character, CAF, io
-!*                              
-!*                              
-!*  TARGET(S)                  : read/write character coarray                     
 !*
-!*  
+!*  TARGET(S)                  : read/write character coarray
+!*
 !*  DESCRIPTION:
 !*  -----------
-!*  The testcase aim to 
+!*  The testcase aim to
 !*  1. test that reading character coarray from STDINPUT and writing character coarray to STDOUTPUT
 !*  -----------
-!*  
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program charIO001
@@ -49,22 +41,22 @@ program charIO001
     ne = num_images()
 
     sync all
-    
+
     if (ne < max(P,Q)) error stop 2
 
     if(me == P) then
         read (*,*) singleChar[P], singleChar[Q]
         read (*,*) chars5[P], chars5[Q]
     end if
-    
+
     sync all
-    
+
     if(me == P) then
         read (*,*) chars20[P], chars20[Q]
     end if
-    
+
     sync all
-    
+
     if (me == P) then
         write (*,*) singleChar[P], " ", singleChar[Q]
     else if(me == Q) then

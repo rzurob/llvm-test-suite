@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : associate102kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from associate102 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Associate Constructor: (Non-) Polymorphic Array Entities (read)
@@ -116,9 +108,9 @@ use m
          print *, b2%i
          print *, b2%j
    end select
-   
+
    print *, b3%i
-   
+
    print *, c1%i
    print *, c1%j
    print *, c2%i
@@ -126,7 +118,7 @@ use m
    print *, c3%i
    print *, c3%j
 
-   print *, rbuffer   
+   print *, rbuffer
 end program
 
 subroutine readformatted (dtv, unit, iotype, v_list, iostat, iomsg)

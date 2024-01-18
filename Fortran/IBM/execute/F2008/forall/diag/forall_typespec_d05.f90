@@ -1,34 +1,31 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_d05.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED : out-of-bounds value in the forall-triplet-spec
-!*  ADAPTED FROM               : 
+!*  ADAPTED FROM               :
 !*
 !*  DESCRIPTION
-!* 
-!*    For each integer type, declare an out-of-bounds value in 
+!*
+!*    For each integer type, declare an out-of-bounds value in
 !*    the forall-triplet-spec list --> Error message.
-!* 
+!*
 !*    Example: forall(integer(1)::i=1:16384:1)
 !*
 !*    Note: Also verifies the error message is the same in a forall loop without
 !*    a type specifier.
-!*    Note: It is found that there is an existing issue where with integer(1) 
-!*    and integer(2) types there is no error message with forall in general.  
-!*    The front end will default the literal to the maximum value allowed for 
+!*    Note: It is found that there is an existing issue where with integer(1)
+!*    and integer(2) types there is no error message with forall in general.
+!*    The front end will default the literal to the maximum value allowed for
 !*    the type specified, but the loop will be set to iterate 0 times.
 !*    Note: This is generally considered to be a user error and an error message
-!*    is not issued. 
-!*  
+!*    is not issued.
+!*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890
 

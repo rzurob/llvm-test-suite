@@ -1,39 +1,23 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: falloc005a22.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 07/27/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf95
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : ALLOCATE (transfer() in source-expr)
 !*
@@ -62,7 +46,7 @@ program falloc005a22
     allocate (cx2(2:3), source=transfer((/1.1d0, 2.2d0, 3.3d0, 4.4d0/), &
                         (0.0d0, 0.0d0)))
 
-    
+
     allocate (ch1(5), source=transfer((/65_1,66_1,67_1,68_1,69_1/), 'A', 5))
 
     if (.not. precision_x8 (cx1(1), (1.1e0,2.2e0))) error stop 1_4

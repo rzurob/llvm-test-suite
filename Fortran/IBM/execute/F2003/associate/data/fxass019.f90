@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass019.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass019.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -35,7 +23,7 @@
 !*  DESCRIPTION                : ASSOCIATE with REAL expressions
 !*                               with nested do loop and do while
 !*                               with cos intrinsic function
-!*  KEYWORD(S)                 : ASSOCIATE, real 
+!*  KEYWORD(S)                 : ASSOCIATE, real
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS            : 1
 !*  STATUS                     : done
@@ -81,7 +69,7 @@
       real*8 a8 / 9.0d0 /
       real*8 b8 / 2.09 /
       real*8 c8
-      
+
       real*16 a16 / 9.9 /
       real*16 b16 / 2.0q0 /
       real*16 c16
@@ -96,25 +84,25 @@
 !-----------   ASSOCIATE with REAL expressions ----------------
 
       k = 1
-      c = (a + b)*10 + 10.0   
+      c = (a + b)*10 + 10.0
       do count = 1, 10
          do while ( K .le. 5 )
       assoc1: associate ( arg => (a + b)*10 + 10.0 )
-         if (.not. precision_r4(arg,c)) then 
+         if (.not. precision_r4(arg,c)) then
            error stop 1
          endif
       end associate assoc1
          k = k + 1
-         end do  
+         end do
       end do
 
 !-----------   ASSOCIATE with REAL*4 expressions ----------------
       k = 1
-      c4 = cos(1.0) + 2   
+      c4 = cos(1.0) + 2
       do 15 count = 1, 10
       first: do while ( K .le. 5 )
       associate ( arg4 => cos(1.0) + 2 )
-         if (.not. precision_r4(arg4,c4)) then     
+         if (.not. precision_r4(arg4,c4)) then
            error stop 4
          endif
       end associate
@@ -126,9 +114,9 @@
 
       do count = 1, 10
          do k = 1, 5
-   
+
       associate ( arg8 => cos(1.0) )
-         if (.not. precision_r4(arg8,cos(1.0))) then    
+         if (.not. precision_r4(arg8,cos(1.0))) then
            error stop 5
          endif
       end associate
@@ -138,11 +126,11 @@
 
 !-----------   ASSOCIATE with REAL*16 expressions ----------------
 
-      c16 = (a16 + b16)*10 + 1   
+      c16 = (a16 + b16)*10 + 1
       loop1: do count = 1, 10
       loop2: do k = 1,5
       associate ( arg16 => (a16 + b16)*10 + 1 )
-         if (.not. precision_r6(arg16,c16)) then   
+         if (.not. precision_r6(arg16,c16)) then
            error stop 6
          endif
       end associate
@@ -156,7 +144,7 @@
       do count = 1, 10
 
       associate ( arg1 => (aa + bb)*10 + 1 )
-         if (.not. precision_r8(arg1,cc)) then  
+         if (.not. precision_r8(arg1,cc)) then
            error stop 7
          endif
       end associate

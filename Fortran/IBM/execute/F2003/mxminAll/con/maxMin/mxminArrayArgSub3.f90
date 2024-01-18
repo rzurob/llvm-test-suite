@@ -1,30 +1,19 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX/MIN with named constant as actual
-!*                               argument to subprogram with argument keyword 
+!*                               argument to subprogram with argument keyword
 !*                               dummy argument  with inherited length
 !*
 !* ===================================================================
 
-  program mxminArrayArgSub3 
-    
+  program mxminArrayArgSub3
+
     interface
         subroutine sub1(arg1, arg2, arg3)
             character(*):: arg1(2,3)
@@ -43,9 +32,9 @@
 
     call sub1(arg3= max(a, b, a), arg1 = min(b, c, a), arg2 = max(a,c))
 
-  end program mxminArrayArgSub3 
+  end program mxminArrayArgSub3
 
-  subroutine sub1(x, y, z) 
+  subroutine sub1(x, y, z)
        character(*) x(2,3)
        character(*) y(2,3)
        character(*) z(2,3)

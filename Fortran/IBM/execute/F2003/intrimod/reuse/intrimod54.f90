@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : INTRINSIC/NON_INTRINSIC module nature
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : January, 2004
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : -qnostrictieeemod
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -73,10 +65,10 @@
           logical val(5)
           val = get_flags()
           print *, val
-          
+
           call set_fpscr_flags(fp_overflow)
           call clr_fpscr_flags(fp_inexact)
-          
+
           val = get_flags()
           print *, val
           print *, "sub xxxx does not use ieee_exceptions"
@@ -93,15 +85,15 @@
         logical :: val(5)
         call ieee_get_flag(ieee_all,val)
         print *, val
-        
+
         call ieee_set_flag(ieee_underflow, .false.)
         call ieee_get_flag(ieee_all,val)
         print *, val
-        
+
         call xxxx
-        
+
         call ieee_get_flag(ieee_all,val)
-        print *, val        
+        print *, val
         print *, "sub yyyy uses ieee_exceptions"
       end subroutine yyyy
 
@@ -113,14 +105,14 @@
       logical val(5)
       val = get_flags()
       print *, val
-      
+
       call set_fpscr_flags(fp_underflow)
       call set_fpscr_flags(fp_inexact)
       val = get_flags()
       print *, val
-      
+
       call yyyy
-      
+
       val = get_flags()
       print *, val
       end

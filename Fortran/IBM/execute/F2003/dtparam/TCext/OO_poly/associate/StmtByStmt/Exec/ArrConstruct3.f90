@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrConstruct3.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrConstruct3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : ArrConstruct3 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : ArrConstruct3
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,8 +32,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a array constructor formed by unlimited poly entity 
-!*    (Comp failed) 
+!*    The selector is a array constructor formed by unlimited poly entity
+!*    (Comp failed)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -59,7 +53,7 @@
     TYPE, EXTENDS(Base) :: Child    ! (4,20)
       INTEGER(K1)  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -78,7 +72,7 @@
 
   END MODULE
 
-  PROGRAM ArrConstruct3 
+  PROGRAM ArrConstruct3
   USE M
   IMPLICIT NONE
 
@@ -86,19 +80,19 @@
   integer i
 
   ALLOCATE(Child(4,20) :: Var)
- 
-  ASSOCIATE ( As => (/(Var,  i=1,4)/) ) 
+
+  ASSOCIATE ( As => (/(Var,  i=1,4)/) )
   SELECT TYPE ( As )
   TYPE IS (Child(4,*))
 
     IF ( ANY (LBOUND(As)      .NE. (/1/) ) )             STOP 30
     IF ( ANY (SHAPE(As)       .NE. (/4/) ) )             STOP 32
-    IF ( ANY (As%GetID()      .NE. (/ 2, 2, 2, 2/) ) ) STOP 33 
-    IF ( ANY (As%Base%GetID() .NE. (/ 1, 1, 1, 1/) ) ) STOP 34 
+    IF ( ANY (As%GetID()      .NE. (/ 2, 2, 2, 2/) ) ) STOP 33
+    IF ( ANY (As%Base%GetID() .NE. (/ 1, 1, 1, 1/) ) ) STOP 34
 
     ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-       IF ( ANY(As0 .NE. (/ 2, 2, 2, 2/) ) ) STOP 41 
-       IF ( ANY(As1 .NE. (/ 1, 1, 1, 1/) ) ) STOP 42 
+       IF ( ANY(As0 .NE. (/ 2, 2, 2, 2/) ) ) STOP 41
+       IF ( ANY(As1 .NE. (/ 1, 1, 1, 1/) ) ) STOP 42
     END ASSOCIATE
 
     ASSOCIATE ( As2 => As%Base )
@@ -106,14 +100,14 @@
     END ASSOCIATE
 
     ASSOCIATE (As1 =>  As%GetID())
-      IF ( ANY(As1 .NE. (/ 2, 2, 2, 2/) )) STOP 60 
+      IF ( ANY(As1 .NE. (/ 2, 2, 2, 2/) )) STOP 60
     END ASSOCIATE
 
     ASSOCIATE (As1 =>  As%Base%GetID())
-      IF ( ANY(As1 .NE. (/ 1, 1, 1, 1/) )) STOP 70 
+      IF ( ANY(As1 .NE. (/ 1, 1, 1, 1/) )) STOP 70
     END ASSOCIATE
 
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 80
   END SELECT
   END ASSOCIATE

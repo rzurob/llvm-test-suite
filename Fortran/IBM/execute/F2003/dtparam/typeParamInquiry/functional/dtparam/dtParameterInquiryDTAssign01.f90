@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryDTAssign01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryDTAssign01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 23 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
-!* 3. INTRINSIC ASSIGNMENT 
-!* 4. DEFECT 354013,355327,355334 
+!* 3. INTRINSIC ASSIGNMENT
+!* 4. DEFECT 354013,355327,355334
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type A(l1,l2)
@@ -34,16 +26,16 @@ module m
    end type
 end module
 
-  program dtParameterInquiryDTAssign01 
+  program dtParameterInquiryDTAssign01
   use m
   implicit none
 
   type(A(3,2)),target :: a1=A(3,2)(c=['abc','efg'])
   type(A(:,:)),allocatable :: a2
   type(A(:,:)),allocatable :: a3
-  type(A(:,:)),pointer :: a4  
-  type(A(:,:)),pointer :: a5 
-   
+  type(A(:,:)),pointer :: a4
+  type(A(:,:)),pointer :: a5
+
   a2=a1
   if(a2%l1 /= 3)                                     error stop 10_4
   if(a2%l2 /= 2)                                     error stop 11_4
@@ -55,21 +47,21 @@ end module
   a3=a2
    !---- defect 355327---!
   if(a3%l1 /= 3)                                     error stop 15_4
-  if(a3%l2 /= 2)                                     error stop 16_4  
+  if(a3%l2 /= 2)                                     error stop 16_4
   !--- defect 354013--!
   if(a3%c%len /= len(a3%c) .or. a3%c%len /= 3)       error stop 17_4
   if(ubound(a3%c,1) /= 2)                            error stop 18_4
   !--- defect 355334---!
   if(any(a3%c /= ['abc','efg']))                     error stop 19_4
 
-  a4=>a1  
+  a4=>a1
   if(a4%l1 /= 3)                                     error stop 20_4
-  if(a4%l2 /= 2)                                     error stop 21_4  
+  if(a4%l2 /= 2)                                     error stop 21_4
   !--- defect 354013---!
   if(a4%c%len /= len(a4%c) .or. a4%c%len /= 3)       error stop 22_4
   if(ubound(a4%c,1) /= 2)                            error stop 23_4
   !--- defect 355334---!
-  if(any(a4%c /= ['abc','efg']))                     error stop 24_4  
+  if(any(a4%c /= ['abc','efg']))                     error stop 24_4
 
   a5=>a4
   if(a5%l1 /= 3)                                     error stop 25_4

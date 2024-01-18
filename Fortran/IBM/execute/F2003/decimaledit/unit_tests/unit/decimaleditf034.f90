@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf034.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,25 +12,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf034
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 04, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Changing the decimal mode for pre-connected
 !*                               units 0, 5, and 6.
@@ -42,9 +35,9 @@
       real :: rl1 = 3.14, rl2
 
       character(10) :: fmt_comma, fmt_point
-            
+
       open(unit=OUT, file='decimaleditf034.out')
-      
+
       write(0,*) rl1
       write(0,*,decimal='comma') rl1
 
@@ -66,7 +59,7 @@
       write(OUT,*) rl2
       read(5,*,decimal='point') rl2
       write(OUT,*) rl2
-      
+
       open(5, decimal='point')
       read(5,*) rl2
       write(OUT,*) rl2
@@ -83,5 +76,5 @@
       open(6, decimal='point')
       write(6,*) rl1
       write(6,*,decimal='comma') rl1
-      
+
       end

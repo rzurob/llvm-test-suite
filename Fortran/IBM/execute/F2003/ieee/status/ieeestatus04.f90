@@ -6,32 +6,26 @@
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : ieeestatus04.f
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : April 15, 2002
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ieee_get_status() 
+!*  PRIMARY FUNCTIONS TESTED   : ieee_get_status()
 !*				 ieee_set_status()
 !*
 !*  REFERENCE                  : Feature 180920
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This testcase checks  
+!*  DESCRIPTION                : This testcase checks
 !*				 ieee_get_status() and ieee_set_status()
 !*				 functions inside subroutines which are
-!*				 in modules that use IEEE. 
+!*				 in modules that use IEEE.
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -56,8 +50,8 @@
 !*
 !*	Call ieee_get_status, to get the initial status of all flags and
 !*	rounding mode - all flags should be false and rounding mode
-!*	should be ieee_nearest 
-!*      Then set all flags to true and rounding mode to ieee_up, then 
+!*	should be ieee_nearest
+!*      Then set all flags to true and rounding mode to ieee_up, then
 !*      call ieee_set_status to make sure that all flags are restored to
 !*      false, and rounding mode restored to ieee_nearest.
 !*
@@ -92,7 +86,7 @@
           if (round_value /= ieee_up)                   error stop 202
 
 
-!*  Restore the floating point status.  
+!*  Restore the floating point status.
 	  call ieee_set_status(status_value)
 
 !*  Check if all flags are restored to false, and rounding mode is
@@ -123,15 +117,15 @@
 !***********************************************************************
 !*  Test 2: Restore all flags to true and rounding mode to ieee_down.
 !*
-!*      Set all flags to true and rounding mode to ieee_down, then call 
+!*      Set all flags to true and rounding mode to ieee_down, then call
 !*      ieee_get_status to get the floating point status.
-!*	Set all flags to false and rounding mode to ieee_to_zero, 
+!*	Set all flags to false and rounding mode to ieee_to_zero,
 !*      then call ieee_set_status to make sure that all flags are
-!*      are restored to true and rounding mode is restored to ieee_down. 
+!*      are restored to true and rounding mode is restored to ieee_down.
 !*
 !***********************************************************************
 
-!*  Set all flags to true and rounding mode to ieee_down. 
+!*  Set all flags to true and rounding mode to ieee_down.
           call ieee_set_flag(ieee_all, .true.)
           call ieee_get_flag(ieee_all, flag_values)
           if (any(flag_values .neqv. .true.))           error stop 4
@@ -223,7 +217,7 @@
           if (flag_values(4) .neqv. .true.)             error stop 10
           if (flag_values(5) .neqv. .false.)            error stop 11
 
-!*  Halting flags:  Set overflow, invalid, inexact flags to 
+!*  Halting flags:  Set overflow, invalid, inexact flags to
 !*  true and keep divide_by_zero and underflow flags as false.
           call ieee_set_halting_mode(ieee_overflow, .true.)
           call ieee_set_halting_mode(ieee_invalid, .true.)
@@ -238,7 +232,7 @@
 
           call ieee_get_status(status_value)
 
-!*  Exception flags:  Change overflow, invalid, inexact flags to true; 
+!*  Exception flags:  Change overflow, invalid, inexact flags to true;
 !*  and set divide_by_zero and underflow flags as false.
 	  call ieee_set_flag(ieee_overflow, .true.)
 	  call ieee_set_flag(ieee_divide_by_zero, .false.)
@@ -309,13 +303,13 @@
 !*      Set overflow, invalid, inexact flags to true; and set
 !*      divide_by_zero and underflow flags as false.
 !*      Call ieee_get_status to get the status of all flags.
-!*      Set overflow, invalid, inexact flags to false and 
+!*      Set overflow, invalid, inexact flags to false and
 !*      divide_by_zero and underflow flags as true.
 !*      Call ieee_set_status to make sure that all flags are restored to
 !*      their values before calling ieee_get_status.
 !*
 !*      For halting flags:
-!*      Set overflow, invalid, inexact flags to false and 
+!*      Set overflow, invalid, inexact flags to false and
 !*      divide_by_zero and underflow flags to true.
 !*      Call ieee_get_status to get the status of all flags.
 !*      Then change overflow, invalid, inexact flags to true; and set
@@ -353,7 +347,7 @@
 
           call ieee_get_status(status_value)
 
-!*  Exception flags:  Change overflow, invalid, inexact flags to 
+!*  Exception flags:  Change overflow, invalid, inexact flags to
 !*  false, and divide_by_zero and underflow flags as true.
           call ieee_set_flag(ieee_overflow, .false.)
           call ieee_set_flag(ieee_divide_by_zero, .true.)

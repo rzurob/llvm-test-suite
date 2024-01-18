@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArraySections/arrsec_2.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jul. 09, 2008
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 353925
 !*
@@ -17,8 +13,8 @@
 !*
 !*  6.2.2.3 Array sections
 !*  10-13:
-!*  Each subscript in such a sequence shall be within the bounds for its 
-!*  dimension unless the sequence is empty. 
+!*  Each subscript in such a sequence shall be within the bounds for its
+!*  dimension unless the sequence is empty.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

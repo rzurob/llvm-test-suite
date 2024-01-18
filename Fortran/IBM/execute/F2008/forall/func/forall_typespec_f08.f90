@@ -1,13 +1,10 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_f08.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED : Multiple index variables in header
@@ -16,8 +13,8 @@
 !*  DESCRIPTION
 !*
 !*    Test that statements in the forall assignment evaluate the expression for
-!*    all active combinations and then these values are assigned to the 
-!*    corresponding locations.  
+!*    all active combinations and then these values are assigned to the
+!*    corresponding locations.
 !*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,13 +34,13 @@ PROGRAM fxfc027
    INTEGER i5(10,10)
    INTEGER i6(100)
    EQUIVALENCE (i5,i6)
-   
+
 
    INTEGER i7(100)
    INTEGER i8(100)
    INTEGER i9(200)
 
-   COMMON /BLOCK1/ i7,i8 
+   COMMON /BLOCK1/ i7,i8
    EQUIVALENCE (i7,i9)
 
 !-------------------------------------
@@ -57,7 +54,7 @@ PROGRAM fxfc027
       SANITY(i) = i
    END FORALL
    PRINT *,SANITY
-   
+
 !-------------------------------------
 ! Test destructive overlap for continuity
 !-------------------------------------
@@ -101,7 +98,7 @@ PROGRAM fxfc027
      i2(j,i) = i2(i,j)
   END FORALL
   PRINT *,i2
-     
+
 !-------------------------------------
 ! Test destructive array overlap
 !-------------------------------------
@@ -164,7 +161,7 @@ PROGRAM fxfc027
    END FORALL
    PRINT *,i3
    PRINT *,i4
- 
+
 
    CASENUM = 9
    PRINT *,"CASENUM = ",CASENUM

@@ -3,22 +3,11 @@
 ! opt variations: -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : ambiguious generic interfaces
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : With Class Hierarchy
 !*
@@ -195,7 +184,7 @@ module assignment
       subroutine assgn1(a, b)
          type(g22(4)), intent(out) :: a
          class(c21(4)), intent(in)  :: b
-         
+
          print *, 'assgn1'
 
       end subroutine
@@ -203,7 +192,7 @@ module assignment
       subroutine assgn2(a, b)
          class(c22(4)), intent(out) :: a
          type(b21(4)), intent(in)  :: b
-         
+
          print *, 'assgn2'
 
       end subroutine
@@ -220,34 +209,34 @@ program genericAmbiguityTypeBound024
    type(c2(4)) :: c2_1
    type(g1(4)) :: g1_1
    type(g2(4)) :: g2_1
-   
+
    type(b11(4)) :: b11_1
    type(c11(4)) :: c11_1
    type(c12(4)) :: c12_1
    type(g11(4)) :: g11_1
    type(g12(4)) :: g12_1
-   
+
    type(b21(4)) :: b21_1
    type(c21(4)) :: c21_1
    type(c22(4)) :: c22_1
    type(g21(4)) :: g21_1
    type(g22(4)) :: g22_1
-   
+
    call b1_1%twoargs(b1_1,b1_1)
    call b1_1%twoargs(b1_1,c1_1)
    call g1_1%twoargs(g1_1,c2_1)
    call b1_1%twoargs(b1_1,g1_1)
    call g2_1%twoargs(g1_1,c1_1)
-   
+
    b11_1 = c11_1 .mybin. b11_1
    b11_1 = g11_1 .mybin. g12_1
    b11_1 = b11_1 .mybin. g12_1
 
    g22_1 = c21_1
    g22_1 = g21_1
-   
+
    c22_1 = b21_1
    g22_1 = b21_1
-   
+
 
 end program

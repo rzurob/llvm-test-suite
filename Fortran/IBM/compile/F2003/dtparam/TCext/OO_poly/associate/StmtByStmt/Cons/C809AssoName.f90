@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C809AssoName.f 
+! %POSTCMD: tcomp C809AssoName.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C809AssoName
-!*  TEST CASE TITLE            : C809
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 20, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : Associate name 
+!*  SECONDARY FUNCTIONS TESTED : Associate name
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,11 +32,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     The associate name must only be declared once in the ASSOCIATE statement  
-!*     
+!*     The associate name must only be declared once in the ASSOCIATE statement
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
   MODULE M
 
     TYPE, ABSTRACT :: Base(K1,N1)    ! (4,20)
@@ -53,7 +46,7 @@
     TYPE, EXTENDS(Base) :: Child    ! (4,20)
       INTEGER(K1)  :: Id = 0
     CONTAINS
-      PROCEDURE, NOPASS :: PrintType => PrintChild 
+      PROCEDURE, NOPASS :: PrintType => PrintChild
     END TYPE
 
   CONTAINS
@@ -68,7 +61,7 @@
   USE M
   IMPLICIT NONE
   TYPE(Child(4,20)) :: V
- 
+
     ASSOCIATE ( As => Child(4,20)(), As => V  )
     END ASSOCIATE
 

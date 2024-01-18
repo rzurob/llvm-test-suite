@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound02a
 !*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY SUBTIONS TESTED   : Generic Resolution - Derived-type parameters
-!*  SECONDARY SUBTIONS TESTED : Resolution based on KIND type parameter 
-!*                               
-!*                     
+!*  SECONDARY SUBTIONS TESTED : Resolution based on KIND type parameter
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -40,44 +32,44 @@
 !* defect 340741
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
-        INTEGER(k1), ALLOCATABLE :: my_arr(:) 
+        INTEGER(k1), ALLOCATABLE :: my_arr(:)
 
-        CONTAINS 
+        CONTAINS
          PROCEDURE :: A => SUB_BASE4
          PROCEDURE :: B => SUB_BASE8
          GENERIC :: SUB =>  A, B
 
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (l2)
-        INTEGER, LEN :: l2 
+        INTEGER, LEN :: l2
 
         CLASS(Base(k1,l2)), POINTER :: Cmp
-      END TYPE Child 
+      END TYPE Child
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE SUB_BASE4(Obj)
         INTEGER :: K, N
-        CLASS(Base(4,*)), INTENT(INOUT) :: Obj 
-       
+        CLASS(Base(4,*)), INTENT(INOUT) :: Obj
+
         N = Obj%l1*Obj%k1
- 
+
         Obj%my_arr = (/ (K, K = 1, N ) /)
       END SUBROUTINE
 
       SUBROUTINE SUB_BASE8(Obj)
         INTEGER :: K, N
-        CLASS(Base(8,*)), INTENT(INOUT) :: Obj 
-       
+        CLASS(Base(8,*)), INTENT(INOUT) :: Obj
+
         N = Obj%l1*Obj%k1
- 
+
         Obj%my_arr = (/ (K, K = 1, N ) /)
       END SUBROUTINE
 
@@ -85,47 +77,47 @@
 !*
       PROGRAM Generic_TypeBound02a
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE(Child(4,10,5)) :: child1
       TYPE(Child(8,10,5)) :: child2
       TYPE(Child(4,5,10)), TARGET :: tgt1
       TYPE(Child(8,5,10)), TARGET :: tgt2
-      TYPE(Base(4,5))  :: base1 
-      TYPE(Base(8,5))  :: base2 
+      TYPE(Base(4,5))  :: base1
+      TYPE(Base(8,5))  :: base2
       INTEGER :: test1, test2
 
-! The value returned by SUB depends on the KIND*LEN to make sure we pick the 
+! The value returned by SUB depends on the KIND*LEN to make sure we pick the
 ! right function when we distinguih by KIND type parameter
 
-      call base1%SUB ()  
+      call base1%SUB ()
       test1 = SUM(base1%my_arr)
 
-      call base2%SUB ()  
+      call base2%SUB ()
       test2 = SUM(base2%my_arr)
 
-      ALLOCATE(Base(4,5):: child1%Cmp)    
+      ALLOCATE(Base(4,5):: child1%Cmp)
       IF ( .NOT. ASSOCIATED(child1%Cmp)) STOP 10
 
-      ALLOCATE(Base(8,5):: child2%Cmp)    
+      ALLOCATE(Base(8,5):: child2%Cmp)
       IF ( .NOT. ASSOCIATED(child2%Cmp)) STOP 11
 
-      call child1%Cmp%SUB ()  
+      call child1%Cmp%SUB ()
       IF( SUM(child1%Cmp%my_arr) .NE. test1) STOP 12
 
-      call child2%Cmp%SUB ()  
+      call child2%Cmp%SUB ()
       IF( SUM(child2%Cmp%my_arr) .NE. test2) STOP 13
 
       child1%Cmp => tgt1
       IF ( .NOT. ASSOCIATED(child1%Cmp)) STOP 14
 
-      child2%Cmp => tgt2 
+      child2%Cmp => tgt2
       IF ( .NOT. ASSOCIATED(child2%Cmp)) STOP 15
 
-      call child1%Cmp%SUB ()  
+      call child1%Cmp%SUB ()
       IF( SUM(child1%Cmp%my_arr) .NE. test1) STOP 16
 
-      call child2%Cmp%SUB ()  
+      call child2%Cmp%SUB ()
       IF( SUM(child2%Cmp%my_arr) .NE. test2) STOP 17
 
       CALL SUB1(child1%Cmp)
@@ -137,16 +129,16 @@
       SUBROUTINE Sub1 (Arg)
       CLASS(Base(4,5)), POINTER ::  Arg
 
-      ALLOCATE(Base(4,5):: Arg)    
+      ALLOCATE(Base(4,5):: Arg)
       IF ( .NOT. ASSOCIATED(Arg)) STOP 18
 
-      call Arg%SUB ()  
+      call Arg%SUB ()
       IF( SUM(Arg%my_arr) .NE. test1) STOP 19
 
       Arg => tgt1
       IF ( .NOT. ASSOCIATED(Arg)) STOP 20
 
-      call Arg%SUB ()  
+      call Arg%SUB ()
       IF( SUM(Arg%my_arr) .NE. test1) STOP 21
 
       END SUBROUTINE SUB1
@@ -156,16 +148,16 @@
 
 
       !ALLOCATE(Base(8,*):: Arg)    ! problem with TYPESPEC see defect 340741
-      ALLOCATE(Arg)    
+      ALLOCATE(Arg)
       IF ( .NOT. ASSOCIATED(Arg)) STOP 22
 
-      call Arg%SUB ()    
+      call Arg%SUB ()
       IF( SUM(Arg%my_arr) .NE. test2) STOP 23
 
       Arg => tgt2
       IF ( .NOT. ASSOCIATED(Arg)) STOP 24
 
-      call Arg%SUB ()  
+      call Arg%SUB ()
       IF( SUM(Arg%my_arr) .NE. test2) STOP 25
 
       END SUBROUTINE SUB2

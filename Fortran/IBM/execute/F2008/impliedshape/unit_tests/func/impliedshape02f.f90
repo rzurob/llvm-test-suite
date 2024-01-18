@@ -1,17 +1,9 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : impliedshape02f.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : February 14, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Implied-shape arrays
-!*
-!* DRIVER STANZA              : xlf2008
 !*
 !* DESCRIPTION                : Testing proper functionality of
 !*                              implied-shape arrays in modules
@@ -36,7 +28,7 @@
            & reshape([1,2,3,4,5,6,7,8],[2,2,2])
       integer, parameter :: i4d4 (*,*,*,*) = &
            & reshape([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],[2,2,2,2])
-       
+
       integer, parameter :: i4c1a (6) = [ 1, (i,i=2,6)    ]
       integer, parameter :: i4c2a (6) = [    (i,i=1,5), 6 ]
       integer, parameter :: i4c3a (6) = [ 1, (i,i=2,5), 6 ]
@@ -73,7 +65,7 @@
       real, parameter :: r4d4a (2,2,2,2) = &
            & reshape([1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0, &
                     & 11.0,12.0,13.0,14.0,15.0,16.0],[2,2,2,2])
-                    
+
 
       ! Double Precision
       double precision, parameter :: dp4c1 (*) = [ 1.0, (i,i=2,6)    ]
@@ -159,10 +151,10 @@
       logical, parameter :: l4d2 (*,*) = &
            & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2])
       logical, parameter :: l4d3 (*,*,*) = &
-           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., & 
+           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., &
            &          .FALSE.,.TRUE.,.FALSE.,.TRUE.],[2,2,2])
       logical, parameter :: l4d4 (*,*,*,*) = &
-           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., & 
+           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2,2,2])
@@ -175,10 +167,10 @@
       logical, parameter :: l4d2a (2,2) = &
            & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2])
       logical, parameter :: l4d3a (2,2,2) = &
-           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., & 
+           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., &
            &          .FALSE.,.TRUE.,.FALSE.,.TRUE.],[2,2,2])
       logical, parameter :: l4d4a (2,2,2,2) = &
-           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., & 
+           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2,2,2])
@@ -195,7 +187,7 @@
            & reshape([1,2,3,4,5,6,7,8],[2,2,2])
       byte, parameter :: b4d4 (*,*,*,*) = &
            & reshape([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],[2,2,2,2])
-      
+
       byte, parameter :: b4c1a (6) = [ 1, (i,i=2,6)    ]
       byte, parameter :: b4c2a (6) = [    (i,i=1,5), 6 ]
       byte, parameter :: b4c3a (6) = [ 1, (i,i=2,5), 6 ]

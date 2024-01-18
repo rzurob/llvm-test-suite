@@ -1,22 +1,16 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : privateComponent01
-!*  TEST CASE TITLE            : variable selector with a PRIVATE
 !*                               Component
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : August 21, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is a variable
 !*  SECONDARY FUNCTIONS TESTED : The Variable has a Component with the
 !*                               PRIVATE Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE

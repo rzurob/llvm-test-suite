@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: SaveArr.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: SaveArr.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SaveArr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Save 
-!*  
-!* 
+!*
+!*  Save
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -75,7 +67,7 @@
   IMPLICIT NONE
   TYPE(DT), TARGET :: V(2,2)
 
-  V = Fun() 
+  V = Fun()
     IF (ANY(V%IArr(1) .NE. 1)) STOP 21
     IF (TRIM(V(1,1)%CArr(1)) .NE. "!") STOP 22
     IF (TRIM(V(2,2)%CArr(2)) .NE. "!") STOP 23
@@ -102,7 +94,7 @@
     STOP 40
   END SELECT
 
-  END FUNCTION 
+  END FUNCTION
 
   END
 

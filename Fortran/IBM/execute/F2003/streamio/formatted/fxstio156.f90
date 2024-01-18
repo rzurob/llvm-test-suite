@@ -1,31 +1,24 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP:  fxstio156.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,19 +27,19 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/28/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/28/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
-  program fxstio156 
+  program fxstio156
 
      implicit none
      integer    ios
      integer*2, parameter    :: i2_in = 1234
      integer*2 	             :: i2_out
      integer*4, parameter    :: i4_in = -20000000
-     integer*4               :: i4_out  
+     integer*4               :: i4_out
      integer*8, parameter    :: i8_in = 1234567890
      integer*8 	             :: i8_out
      real*4, parameter       :: r4_in = -0.000001
@@ -65,28 +58,28 @@
      logical*2               :: l2_out
      logical*4, parameter    :: l4_in = .false.
      logical*4               :: l4_out
-     logical*8, parameter    :: l8_in = .true. 
+     logical*8, parameter    :: l8_in = .true.
      logical*8               :: l8_out
-     character, parameter    :: ch1_in = 'A' 
-     character               :: ch1_out  
-     character*15, parameter :: ch15_in = "New Baby Girl! " 
-     character*15            :: ch15_out  
+     character, parameter    :: ch1_in = 'A'
+     character               :: ch1_out
+     character*15, parameter :: ch15_in = "New Baby Girl! "
+     character*15            :: ch15_out
      byte, parameter         :: b_in = b'01010111'
      byte                    :: b_out
 
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
-	
 
-!********************************************************** 
+
+!**********************************************************
 !        Writing and Reading the file                     *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio156.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90, DELIM='QUOTE')
 
      WRITE(1, FMT=*, IOSTAT=ios, ERR=91) i2_in, i4_in, i8_in
-     WRITE(1, FMT=*, IOSTAT=ios, ERR=91, POS=100) & 
+     WRITE(1, FMT=*, IOSTAT=ios, ERR=91, POS=100) &
     &      r4_in, r8_in, r16_in
      WRITE(1, FMT=*, IOSTAT=ios, ERR=91, POS=400) &
     &      x8_in, x16_in, x32_in
@@ -106,9 +99,9 @@
      READ(1, FMT=*, IOSTAT=ios, ERR=92) b_out
 
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( i2_in .ne. i2_out ) error stop 10
      if ( i4_in .ne. i4_out ) error stop 11
@@ -136,12 +129,12 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 93   print *, "Error while rewinding the file: IOSTAT = ", ios
-     error stop 93 
+     error stop 93
 
    end program

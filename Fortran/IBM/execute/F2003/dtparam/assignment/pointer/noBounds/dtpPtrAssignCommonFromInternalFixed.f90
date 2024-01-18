@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpPtrAssignCommonFromInternalFixed
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2009-01-12
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment without Lower Bounds Specification or Remap
 !*
@@ -16,19 +11,18 @@
 !*
 !*  REFERENCE                  : Feature Number 360669
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
 !*  In internal procedures, via pointers with fixed length parameters, assign values to
 !*  common variables of a parameterised derived type for which there is no user-defined
 !*  assignment, and verify that the type parameters and data values are as expected.
-!*  
+!*
 !*  Note that in this series, only SEQUENCE types can be used, so no inheritance.
 !*
 !* ============================================================================

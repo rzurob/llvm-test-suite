@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try input item to be array of sequence type
@@ -85,7 +69,7 @@ program array004
 
    allocate ( b3(2), source = base (null()) )
    allocate ( b4(3), source = base (null()) )
-   
+
    allocate ( b3(1)%c, b3(2)%c, b4(1)%c, b4(2)%c, b4(3)%c, b5(1)%c, b5(2)%c, b5(3)%c, b5(4)%c, b5(5)%c )
 
    open (unit = 1, file ='array004.data', form='unformatted', access='sequential')

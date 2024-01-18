@@ -1,19 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unAllocatedAllocatable04d - Basic Tests:
 !*                               Non-CHARACTER Intrinsic Types
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : August  3, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Type Array Definition
 !*  SECONDARY FUNCTIONS TESTED : with Array Constructor Initialization
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : COMPLEX, Intrinsic CMPLX(), and Intrinsic
@@ -26,7 +20,6 @@
 !*
 !*  "unAllocatedAllocatable04d.f", 1517-006 (U) Parse stack overflow.  Expression is too long.  Reduce program size or nested references.
 !*  1501-511  Compilation failed for file unAllocatedAllocatable04d.f.
-!*
 !*
 !*  NOTE:  This may be another instance of Defect 317796 - F2003: Derived
 !*         Type Array Constructor Expression Too Long

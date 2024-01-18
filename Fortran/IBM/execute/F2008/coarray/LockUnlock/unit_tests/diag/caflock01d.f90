@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : caflockdiag1.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Ren Jian Gang
 !*  DATE                       : May 08, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
@@ -16,7 +12,6 @@
 !*
 !*  REFERENCE                  : Feature Number 387873
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -60,5 +55,5 @@ program caflock01d
   call lock_add(i)
   call lock_sub(i)
 end program
-  
-  
+
+

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemEXPONENT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemEXPONENT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  EXPONENT 
+!*
+!*  -  EXPONENT
 !*  (318985/319550)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,9 +30,9 @@
 
   PROGRAM  InitExpDefElemEXPONENT
   USE IEEE_ARITHMETIC
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J, K
- 
+
 
   TYPE :: DT0
     REAL(4)      :: XR4(4) =  4.2
@@ -47,7 +40,7 @@
     REAL(16)     :: XR6(4) =  4.2
   END TYPE
 
-  TYPE :: DT 
+  TYPE :: DT
     INTEGER :: E1(4)
     INTEGER :: E2(4)
     INTEGER :: E3(4)
@@ -96,16 +89,16 @@
 
   IF ( T3  .NE. HUGE(0)  )      STOP 31  ! seems not documented on this
 
-  IF ( TT1  .NE. HUGE(0_4) ) STOP 41 
-  IF ( TT2  .NE. HUGE(0_4) ) STOP 42 
-  IF ( TT3  .NE. HUGE(0_4) ) STOP 43 
-  IF ( TT4  .NE. HUGE(0_4) ) STOP 44 
-  IF ( TT5  .NE. HUGE(0_4) ) STOP 45 
-  IF ( TT6  .NE. HUGE(0_4) ) STOP 46 
-  IF ( TT7  .NE. HUGE(0_4) ) STOP 47 
-  IF ( TT8  .NE. HUGE(0_4) ) STOP 48 
+  IF ( TT1  .NE. HUGE(0_4) ) STOP 41
+  IF ( TT2  .NE. HUGE(0_4) ) STOP 42
+  IF ( TT3  .NE. HUGE(0_4) ) STOP 43
+  IF ( TT4  .NE. HUGE(0_4) ) STOP 44
+  IF ( TT5  .NE. HUGE(0_4) ) STOP 45
+  IF ( TT6  .NE. HUGE(0_4) ) STOP 46
+  IF ( TT7  .NE. HUGE(0_4) ) STOP 47
+  IF ( TT8  .NE. HUGE(0_4) ) STOP 48
 
 
   END
 
- 
+

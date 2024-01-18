@@ -1,23 +1,17 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : aceArrayActualArg01
-!*  TEST CASE TITLE            : Basic (non-Polymorphic) Array Constructors
 !*                               with DTP
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : November 12, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor contains Array Variables
 !*                               of Derived Type (with Type Parameters)
 !*  SECONDARY FUNCTIONS TESTED : and the Array Constructor is used as the
 !*                               Actual Argument to a SUBROUTINE
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,10 @@
 !*      * Brackets:  []
 !*      * Where the ac-value-list contains:
 !*        o Scalar Variables,
-!*        o Array Variables (with Assumed Length Parameters) 
+!*        o Array Variables (with Assumed Length Parameters)
 !*
 !*  2)  Testing the usage of an Array Constructor in various contexts:
-!*      * As the Actual Argument in a SUBROUTINE call 
+!*      * As the Actual Argument in a SUBROUTINE call
 !*
 !23456789012345678901234567890123456789012345678901234567890123456789012
 

@@ -1,24 +1,12 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : implictype.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM/TO are of a derived-type 
+!*  DESCRIPTION                : FROM/TO are of a derived-type
 !*                               use implict to specify default type
 !* ===================================================================
 !*
@@ -29,7 +17,7 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 
-     program main 
+     program main
 
           type t
              sequence
@@ -45,12 +33,12 @@
           contains
                subroutine sub
                   implicit type(t)  (n)
-               
-                  allocatable n1 
+
+                  allocatable n1
 
                   allocate(a1, source = t(10))
                   call move_alloc(a1, n1)
-                  if ( .not. allocated(n1) ) stop 21 
+                  if ( .not. allocated(n1) ) stop 21
                   if ( allocated(a1) ) stop 31
                   if ( n1%i /= 10 ) stop 41
                end subroutine

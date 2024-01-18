@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Initialization expression
 !*
-!* PROGRAMMER                 : Kelvin Li
 !* DATE                       : March 31, 2006
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : UNPACK intrinsic
 !*
@@ -36,7 +31,6 @@ logical, parameter :: msk1(12,7)= &
   &  reshape((/F, F, (T,i=1,40), (F,j=1,40), T, T/), (/12,7/))
 logical(1), parameter :: fld1(12,7)=reshape((/(F,i=1,84)/),(/12,7/))
 logical(1) :: res11(12,7)=unpack(v1, mask=msk1, field=fld1), res11a(12,7)
-
 
 logical(2), parameter :: v2(4)=(/T,F,T,T/)
 logical, parameter :: msk2(2,2)=reshape((/T,F,T,F/), (/2,2/))

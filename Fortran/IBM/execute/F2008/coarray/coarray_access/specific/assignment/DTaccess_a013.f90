@@ -1,17 +1,13 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a013.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
-!*  Assign a simple coarray to a Derived Type coarray component 
+!*  Assign a simple coarray to a Derived Type coarray component
 !*  (scalars and arrays of different kinds) and vice versa
 !*
 !* ============================================================================
@@ -28,7 +24,7 @@ module modEDM
 	end type
 
 	integer, parameter :: intish = 1080
-	real, parameter :: realish = 54.2114 
+	real, parameter :: realish = 54.2114
 	character(3), parameter :: charish = "QOTSA"
 	complex, parameter :: plexish = (1.2,-1.1)
 	logical, parameter :: logish = .false.
@@ -108,7 +104,7 @@ program main
 	chcaf = ""
 	cxcaf = (0.0, 0.0)
 	lcaf = .true.
-	
+
 	icaf = CA%i
 	rcaf = CA%r
 	chcaf = CA%ch

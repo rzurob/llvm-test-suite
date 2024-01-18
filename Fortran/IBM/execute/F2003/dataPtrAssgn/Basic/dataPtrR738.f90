@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrR738.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrR738.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  R738 bounds-remapping is lower-bound-expr : upper-bound-expr 
-!*   
+!*  R738 bounds-remapping is lower-bound-expr : upper-bound-expr
 !*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrR738 
+  PROGRAM dataPtrR738
   IMPLICIT NONE
 
   TYPE :: DT
@@ -47,7 +39,7 @@
   INTEGER(8)        :: I8
   INTEGER           :: I
 
-  I1=0; I8=7 
+  I1=0; I8=7
   DO  I=1, 8
     Arr(I)%Ptr(I1:I8) => Arr
     IF (ANY(LBOUND(Arr(I)%Ptr) .NE.   (/I1/))) STOP 11
@@ -55,10 +47,10 @@
     IF ( .NOT. ASSOCIATED(Arr(I)%Ptr, Arr))    STOP 13
   END DO
 
-  I1=1; I8=8 
-  Ptr(I1:I8) => Arr 
+  I1=1; I8=8
+  Ptr(I1:I8) => Arr
   DO  I=1, 8
-    Ptr(I)%Ptr(I1:I8) => Ptr 
+    Ptr(I)%Ptr(I1:I8) => Ptr
     IF (ANY(LBOUND(Ptr(I)%Ptr) .NE.   (/I1/))) STOP 21
     IF (ANY(UBOUND(Ptr(I)%Ptr) .NE.   (/I8/))) STOP 22
     IF ( .NOT. ASSOCIATED(Ptr(I)%Ptr, Ptr))    STOP 23

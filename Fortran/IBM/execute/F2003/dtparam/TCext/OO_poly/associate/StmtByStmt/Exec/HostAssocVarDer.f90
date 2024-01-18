@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  HostAssocVarDer.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  HostAssocVarDer.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : HostAssocVarDer 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : HostAssocVarDer
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,7 +33,7 @@
 !*
 !*  DESCRIPTION
 !*    The selector is an associate name associating to a  non poly variable of derived types
-!*    () 
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -55,12 +49,12 @@
 
     TYPE, EXTENDS(Base) :: Child    ! (4)
       INTEGER(K1)  :: ChildId = 2
-      TYPE(Base(K1)) :: BaseArr(3) 
+      TYPE(Base(K1)) :: BaseArr(3)
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
-    TYPE(Child(4))  :: V = Child(4)(BaseArr=(/Base(4)(), Base(4)(), Base(4)() /)) 
+    TYPE(Child(4))  :: V = Child(4)(BaseArr=(/Base(4)(), Base(4)(), Base(4)() /))
 
     CONTAINS
 
@@ -78,7 +72,7 @@
 
   END MODULE
 
-  PROGRAM HostAssocVarDer 
+  PROGRAM HostAssocVarDer
   USE M, U => V
   IMPLICIT NONE
 
@@ -96,11 +90,11 @@
 
   ASSOCIATE ( V => U )
   ASSOCIATE ( As => V )
-    IF ( ASSOCIATED(As%BasePtr)) STOP 49 
-    IF ( As%GetID() .NE. 2) STOP 50 
+    IF ( ASSOCIATED(As%BasePtr)) STOP 49
+    IF ( As%GetID() .NE. 2) STOP 50
     ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-       IF ( As0 .NE. 2) STOP 51 
-       IF ( As1 .NE. 1) STOP 52 
+       IF ( As0 .NE. 2) STOP 51
+       IF ( As1 .NE. 1) STOP 52
     END ASSOCIATE
     ASSOCIATE ( As2 => As%Base )
       IF ( As2%GetID() .NE. 1 ) STOP 53
@@ -108,9 +102,9 @@
 
     U%BaseId = -1
     U%ChildId = -2
-    IF ( As%BaseId .NE. -1)  STOP 71 
-    IF ( As%ChildId .NE. -2) STOP 72 
-    
+    IF ( As%BaseId .NE. -1)  STOP 71
+    IF ( As%ChildId .NE. -2) STOP 72
+
   END ASSOCIATE
   END ASSOCIATE
 

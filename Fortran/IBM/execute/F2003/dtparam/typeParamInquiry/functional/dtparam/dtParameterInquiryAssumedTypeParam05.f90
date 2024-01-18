@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryAssumedTypeParam05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryAssumedTypeParam05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 15 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
-!* 3. USE POLYMORPHIC,INHERITANCE,SELECT TYPE  
+!* 3. USE POLYMORPHIC,INHERITANCE,SELECT TYPE
 !* 4. DEFECT 355097,355108,354013
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -35,15 +27,15 @@ module m
    end type
    type,extends(base) :: child(m)
       integer(2),len     :: m
-      character(m)    :: c2(k:m) 
+      character(m)    :: c2(k:m)
    end type
 
    contains
 
    function checkresult(b)
-     class(base(2,*)),intent(in) :: b 
+     class(base(2,*)),intent(in) :: b
      class(base(2,:)),allocatable :: checkresult
-     integer :: i=0 
+     integer :: i=0
      select type(b)
        type is(base(2,*))
          if(b%k /= 2)                                        error stop 10_4
@@ -73,32 +65,32 @@ module m
          if(lbound(b%c1,1) /= 2)                             error stop 26_4
          if(ubound(b%c1,1) /= 8)                             error stop 27_4
          if(lbound(b%c2,1) /= 2)                             error stop 28_4
-         if(ubound(b%c2,1) /= 12)                            error stop 29_4 
+         if(ubound(b%c2,1) /= 12)                            error stop 29_4
 
          if(any(b%c1  /="fortran"))                          error stop 30_4
          if(any(b%c2  /="xlftest"))                          error stop 31_4
 
-         allocate(checkresult,source=b) 
+         allocate(checkresult,source=b)
 
        class is(base(2,*))
             error stop 32_4
 
        class default
-            error stop 33_4 
+            error stop 33_4
      end select
    end function
 end module
 
-  program dtParameterInquiryAssumedTypeParam05 
+  program dtParameterInquiryAssumedTypeParam05
   use m
   implicit none
-  
+
   integer :: i=0
-  class(base(k=2,l=:)),allocatable :: b1 
+  class(base(k=2,l=:)),allocatable :: b1
   class(base(k=2,l=:)),allocatable     :: b2
 
   allocate(b1,source=base(k=2,l=6)(c1="xlftest"))
-  allocate(b2,source=checkresult(b1))  
+  allocate(b2,source=checkresult(b1))
 select type(b2)
 
   type is(base(2,*))
@@ -115,7 +107,7 @@ select type(b2)
   class default
      error stop 100_4
 end select
- 
+
   deallocate(b1)
   deallocate(b2)
 
@@ -139,11 +131,11 @@ select type(b2)
   if(any(b2%c2 /= "xlftest"))                               error stop 58_4
   if(lbound(b2%c2,1) /= 2)                                  error stop 59_4
   if(ubound(b2%c2,1) /= 12)                                 error stop 60_4
-  
+
   class default
      error stop 101_4
 end select
- 
+
   deallocate(b1)
   deallocate(b2)
 

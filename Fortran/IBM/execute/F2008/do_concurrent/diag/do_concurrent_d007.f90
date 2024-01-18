@@ -1,13 +1,11 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                                IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : do_concurrent_d007.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2015-03-20
 !*  ORIGIN                     :
 !*
@@ -15,8 +13,8 @@
 !*  SECONDARY FUNCTIONS TESTED :
 !*  ADAPTED FROM               :
 !*
-!*  DESCRIPTION                : 
-!*   - A branch in a do_concurrent construct branches outside the construct 
+!*  DESCRIPTION                :
+!*   - A branch in a do_concurrent construct branches outside the construct
 !*
 !=============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890

@@ -1,10 +1,4 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass023.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -71,15 +59,15 @@
 
    program fxass23a
    implicit none
-  
+
    integer i
    integer,PARAMETER :: a(50) = (/(i,i=1,50)/)
-  
+
    !-------------------------------
    !  Test integer
    !-------------------------------
 
-   do  i = 1,50  
+   do  i = 1,50
       associate ( arg => a(i) )
       if ( arg .ne. i ) error stop 1
       end associate
@@ -89,7 +77,7 @@
    !  Test real
    !-------------------------------
 
-   do i = 1,50  
+   do i = 1,50
       associate ( ar => real(a(i)) )
       if ( ar .ne. real(i) ) error stop 11
       end associate
@@ -99,7 +87,7 @@
    !  Test complex
    !-------------------------------
 
-   do i = 1,50  
+   do i = 1,50
       associate ( ac => (real(a(i)),REAL(a(i))) )
       if ( ac .ne. ((real(i),REAL(i))) ) error stop 15
       end associate

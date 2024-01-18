@@ -12,21 +12,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenametypes001.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : rename a public operator unary with defined types
 !*
@@ -37,20 +30,20 @@ module m
       integer :: x = 0
       integer :: y = 0
       real :: r = 0.0
-      
+
    end type
 
    interface operator(.square.)
      module procedure sq
    end interface
-  
+
    interface operator(.power.)
      module procedure raise
    end interface
-   
+
    contains
 
-   
+
    function raise ( a )
       class(baseobj), intent(in) :: a
        type(baseobj) :: raise
@@ -60,7 +53,7 @@ module m
       raise%r = a%r ** 3
       print *, 'raised'
    end function
-   
+
    function sq ( a )
       class(baseobj), intent(in) :: a
       type(baseobj) :: sq
@@ -70,9 +63,9 @@ module m
       sq%r = a%r * a%r
       print *, 'sq'
    end function
-   
-  
-   
+
+
+
 
 
 end module
@@ -92,14 +85,14 @@ program mainprog
    print *, b3%x
    print *, b3%y
    print *, b3%r
-   
-  
-   
+
+
+
    b3 = .raiseit. b1
    print *, b3%x
    print *, b3%y
    print *, b3%r
 
-   
+
 
 end program

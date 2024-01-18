@@ -5,36 +5,28 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgb034.f
 ! %VERIFY: fort.18:fxiomsgb034.vf
-! %STDIN: 
-! %STDOUT: 
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
- 
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : Format statements with invalid parentheses 
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : WRITE FORMAT
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 1
 !*
-!*  DESCRIPTION                : The format command was used with unmatched 
+!*  DESCRIPTION                : The format command was used with unmatched
 !*                               parentheses.
 !*
 !*  TEST CONDITIONS            : 1) Extra left parentheses on left side.
@@ -47,23 +39,21 @@
 !*********************************************************************
 
       program fxiomsgb034
- 
+
       implicit none                     ! All variables must be Declared
- 
- 
+
       integer*4 case_id, ios            ! Test Case id under test.
- 
+
       integer*4 varint
- 
+
       character*20 form
 
       character*300 errmsg
- 
 
 !
 ! Initialize Return Code routine to SUCCESS...
 !
- 
+
       case_id = 0
       call zzrc ( case_id )
 

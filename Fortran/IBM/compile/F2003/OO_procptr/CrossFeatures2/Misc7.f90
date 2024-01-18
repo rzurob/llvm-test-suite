@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:  tcomp Misc7.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Misc7.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Misc7.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 30, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,15 +30,15 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Procedure pointer - bindc label
 !*  (306276/315101)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM Misc7 
-  IMPLICIT NONE 
+  PROGRAM Misc7
+  IMPLICIT NONE
 
   INTERFACE
     SUBROUTINE IS() BIND(C)
@@ -76,9 +70,9 @@
 
   PROCEDURE(IS1), BIND(C, NAME="is1") :: F
 
-  PROCEDURE(IS), BIND(C            )  :: IS1 
+  PROCEDURE(IS), BIND(C            )  :: IS1
 
-  PROCEDURE(IS), BIND(C, NAME="Ptr"), POINTER  :: ProcPtr 
+  PROCEDURE(IS), BIND(C, NAME="Ptr"), POINTER  :: ProcPtr
 
   PROCEDURE(IS),  BIND(C, NAME="G")   :: G
 

@@ -8,7 +8,7 @@
         real(4), parameter :: PNORMAL2_4 = 4.0_4
         real(4), parameter :: NNORMAL1_4 = -2.0_4
         real(4), parameter :: NNORMAL2_4 = -4.0_4
-        
+
         ! IEEE Double: real(8)
         real(8), parameter :: PNORMAL1_8 = 2.0_8
         real(8), parameter :: PNORMAL2_8 = 4.0_8
@@ -21,7 +21,6 @@
         real(16), parameter :: NNORMAL1_16 = -2.0_16
         real(16), parameter :: NNORMAL2_16 = -4.0_16
 
-       
         ! Infinities
 
         ! IEEE Single: real(4)
@@ -35,7 +34,6 @@
         ! IBM Extended: real(16)
         real(16), parameter :: PINF_16 = z"7ff00000000000000000000000000000"
         real(16), parameter :: NINF_16 = z"fff00000000000000000000000000000"
-
 
         ! Zeros
 
@@ -51,7 +49,6 @@
         real(16), parameter :: PZERO_16 = z"00000000000000000000000000000000"
         real(16), parameter :: PZERO2_16 = z"80000000000000008000000000000000"
         ! real(16) has no negative zero
-
 
         ! NaNs
 
@@ -69,7 +66,6 @@
         real(4), parameter :: nnans_lowest_4 = z'FF800001'
         real(4), parameter :: nnans_highest_4 = z'FFBFFFFF'
 
-
         ! IEEE Double: real(8)
         real(8), parameter :: PNANQ_8 = z"7fffffff7ff7ffff"
         real(8), parameter :: PNANS_8 = z"7ff7ffff7ff7ffff"
@@ -84,7 +80,6 @@
         real(8), parameter :: nnans_lowest_8 = z'FFF0000000000001'
         real(8), parameter :: nnans_highest_8 = z'FFF7FFFFFFFFFFFF'
 
-
         ! IEEE Double: real(16)
         real(16), parameter :: PNANQ_16 = z"7fffffff7ff7ffff0000000000000000"
         real(16), parameter :: PNANS_16 = z"7ff7ffff7ff7ffff0000000000000000"
@@ -98,7 +93,6 @@
         real(16), parameter :: pnans_highest_16 = z'7FF7FFFFFFFFFFFF0000000000000000'
         real(16), parameter :: nnans_lowest_16 = z'FFF00000000000010000000000000000'
         real(16), parameter :: nnans_highest_16 = z'FFF7FFFFFFFFFFFF0000000000000000'
-
 
         ! Denormal Values
         ! P means Positive, N means Negative
@@ -123,6 +117,5 @@
         real(16), parameter :: PTD_16 = z"00000000000000010000000000000000"
         real(16), parameter :: NHD_16 = z"800fffffffffffff0000000000000000"
         real(16), parameter :: NTD_16 = z"80000000000000010000000000000000"
-
 
         end module

@@ -1,25 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrAssociate.f 
+!*  TEST CASE NAME             : dataPtrAssociate.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
 !* - data-target is the associate name where the selector has pointer attr,
 !*   acutally, the associate name is associated with the target of the pointer.
-!*   and has TARGET attribute 
+!*   and has TARGET attribute
 !* - check if the compiler complains about it (feature 294341)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,15 +31,15 @@
                 stop 2
         end select
 
-	if ( .not. associated(ptr,tar)) stop 3 
-	if ( lbound(ptr,1) /= -10 ) stop 4 
-	if ( ubound(ptr,1) /= -1 ) stop 5 
+	if ( .not. associated(ptr,tar)) stop 3
+	if ( lbound(ptr,1) /= -10 ) stop 4
+	if ( ubound(ptr,1) /= -1 ) stop 5
 
         select type(x=>ptr)
 	    type is (integer)
-		if ( any( x .ne. (/(i,i=1,10)/))) stop 6 
+		if ( any( x .ne. (/(i,i=1,10)/))) stop 6
 	    class default
-	        stop 21	
+	        stop 21
 	end select
 
    end program

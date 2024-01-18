@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUseInvokeInterfaceFunction01
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-08-25
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTP and USE
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 355310
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -225,7 +219,7 @@ program dtpUseInvokeInterfaceFunction01
   call describe(tk_2_3)
   call describe(tl_3_3)
   print *
-  
+
   print *, "end"
 
 end program dtpUseInvokeInterfaceFunction01

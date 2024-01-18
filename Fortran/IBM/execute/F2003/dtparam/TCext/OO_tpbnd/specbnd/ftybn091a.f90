@@ -5,42 +5,36 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn091a.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn091a.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn091a.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn091a.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : overriding 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
+!*
+!*  SECONDARY FUNCTIONS TESTED : overriding
 !*
 !*  DESCRIPTION                : parent procedures are inherited.
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-      module mod	      
+      module mod
          integer :: int = 200
          character*20 :: c = "hi"
 
-      type base(n1,k1)    ! (20,4) 
+      type base(n1,k1)    ! (20,4)
          integer, kind :: k1
          integer, len  :: n1
          integer(k1)   :: x
@@ -49,7 +43,7 @@
       end type base
 
       type, extends(base) :: parent    ! (20,4)
-      end type  
+      end type
 
       contains
       subroutine proc1()
@@ -57,7 +51,7 @@
          c = "hi_again"
       end subroutine
 
-	end module     
+	end module
 
    use mod
 
@@ -75,4 +69,4 @@
    if (c .ne. "hi_again")    error stop 7
 
    end
-   
+

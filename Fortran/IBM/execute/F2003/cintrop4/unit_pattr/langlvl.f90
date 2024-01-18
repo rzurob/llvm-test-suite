@@ -23,7 +23,6 @@
         !! module variable bind(c), with NAME=
         bind(c, name='j3B') :: j3 ! err: langlvl BIND(C) modvar
 
-
       contains
         !! module SUBROUTINE/FUNCTION/ENTRY bind(c), without NAME=
         subroutine ms () bind(c)  ! err: langlvl disallows BIND(C) mod-sub
@@ -46,7 +45,6 @@
         end function
       end module
 
-
       !! external SUBROUTINE/FUNCTION/ENTRY bind(c), without NAME=
       subroutine s () bind(c)  ! err: langlvl disallows BIND(C) subroutine
       entry se () bind(c)  ! err: langlvl disallows BIND(C) subroutine-entry
@@ -66,7 +64,6 @@
       entry fe2() bind(c, name='fe2B')  ! err: langlvl BIND(C) function-entry
         fe2 = 1.0
       end function
-
 
       program p
         common /c1/ k1

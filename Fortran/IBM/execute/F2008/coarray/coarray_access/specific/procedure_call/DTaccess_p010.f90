@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_p010.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : May 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -66,7 +62,7 @@ program main
 		error stop 7
 	end if
 
-	
+
 	call twiddle3(caf%i8, a3)
 	if (caf%i8 /= a3) then
 		print *, caf%i8, a3

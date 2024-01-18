@@ -2,31 +2,16 @@
 ! ftcx_dtp -ql /tstdev/OO_tpbnd/specific/ftpbnd502d.f
 ! opt variations: -qnol
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 02/24/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : specific type bound (array section with vector
 !                               subscript is not eligible to be used as
 !                               actual-arg to be associated with dummy-arg
 !                               having intent(out) or intent(inout) attr.)
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

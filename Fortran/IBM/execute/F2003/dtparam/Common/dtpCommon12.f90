@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpCommon12 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpCommon12
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 19, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The common statement
-!* 
-!*     A procedure pointer shall be storage associated only with another procedure pointer; 
+!*
+!*     A procedure pointer shall be storage associated only with another procedure pointer;
 !*     either both interfaces shall be explicit or both interfaces shall be implicit
-!*   
-!*    -- Procedure pointers with an Explicit interface -- polimorphic 
-!* 
+!*
+!*    -- Procedure pointers with an Explicit interface -- polimorphic
+!*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -46,7 +37,7 @@
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L1=4
     INTEGER, LEN  :: L2=4
-  END TYPE 
+  END TYPE
   TYPE, EXTENDS(DT0) :: DT
     CHARACTER(L1)  :: C1(L2)
     INTEGER(K)     :: I(L2)
@@ -67,7 +58,7 @@
   END MODULE
 
 
-  PROGRAM dtpCommon12 
+  PROGRAM dtpCommon12
   USE M
   IMPLICIT NONE
 
@@ -76,7 +67,7 @@
   TYPE(DT(2,7,9)) :: T(1024)
   CHARACTER(7)    :: C1(9)
   CHARACTER(9)    :: C2(7)
-  INTEGER         :: K(9) 
+  INTEGER         :: K(9)
   INTEGER         :: I
   COMMON             C1,K,I,C2
 

@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncRetPtrDer.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncRetPtrDer.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRetPtrDer 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRetPtrDer
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,7 +32,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a func call returning a pointer of derived type 
+!*    The selector is a func call returning a pointer of derived type
 !*    (Comp Failed)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,7 +50,7 @@
       INTEGER(K1)  :: ChildId = 2
       CLASS(Child(K1)), POINTER :: ChildArr(:) => NULL()
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -75,23 +69,23 @@
 
   END MODULE
 
-  PROGRAM FunRetPtrDer 
+  PROGRAM FunRetPtrDer
   USE M
   IMPLICIT NONE
   TYPE(Child(4)), TARGET :: V = Child(4)(BaseId= -1, ChildId=-2 )
 
   ASSOCIATE ( As => Func( V ) )
-    IF ( As%GetID()      .NE. -2) STOP 50 
-    IF ( As%Base%GetID() .NE. -1) STOP 51 
-    IF ( As%BaseId       .NE. -1) STOP 52 
-    IF ( As%ChildId      .NE. -2) STOP 53 
+    IF ( As%GetID()      .NE. -2) STOP 50
+    IF ( As%Base%GetID() .NE. -1) STOP 51
+    IF ( As%BaseId       .NE. -1) STOP 52
+    IF ( As%ChildId      .NE. -2) STOP 53
 
     ASSOCIATE ( As1 => As%GetId() )
-       IF ( As1 .NE. -2) STOP 54 
+       IF ( As1 .NE. -2) STOP 54
     END ASSOCIATE
 
     IF ( .NOT. SAME_TYPE_AS(As, Child(4)()) )     STOP 55
-    IF ( .NOT. ASSOCIATED(As%ChildArr) )       STOP 56   
+    IF ( .NOT. ASSOCIATED(As%ChildArr) )       STOP 56
     IF ( .NOT. SAME_TYPE_AS(As%ChildArr, As) ) STOP 57
 
     IF ( ANY(LBOUND(As%ChildArr)  .NE. 1))     STOP 58
@@ -108,9 +102,9 @@
     CLASS(Child(4)), TARGET  :: Arg
     TYPE(Child(4)), POINTER  :: Func
 
-    Func => Arg 
+    Func => Arg
     ALLOCATE( FUNC%ChildArr(3))
- 
-  END FUNCTION 
+
+  END FUNCTION
 
   END

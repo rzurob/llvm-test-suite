@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_langlvl.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : April 21 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,8 +11,7 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -25,14 +19,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*  Langlvl test -- F03 does not support inter procedure as actual argument or 
-!*                  procedure pointer target 
+!*  Langlvl test -- F03 does not support inter procedure as actual argument or
+!*                  procedure pointer target
 !*  ( 388915)
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
-  PROGRAM intproc_langlvl 
+
+  PROGRAM intproc_langlvl
   !EXTERNAL :: procptr
   !POINTER  :: Procptr
   PROCEDURE(), POINTER :: procptr
@@ -56,7 +49,7 @@
   external proc
   PROCEDURE(), POINTER :: Intfunc
     Intfunc => proc
-  END FUNCTION 
+  END FUNCTION
 
   END
 

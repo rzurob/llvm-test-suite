@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: TypeMatch3.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : TypeMatch3
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 24, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The nearest type matchs that of selector
-!*     
+!*
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -48,12 +42,12 @@
   MODULE M
 
     TYPE  :: Zero
-    END TYPE 
-
-    TYPE, EXTENDS(Zero)  :: One 
     END TYPE
 
-    TYPE, EXTENDS(One) :: Two 
+    TYPE, EXTENDS(Zero)  :: One
+    END TYPE
+
+    TYPE, EXTENDS(One) :: Two
     END TYPE
 
     TYPE, EXTENDS(Two) :: Three
@@ -61,17 +55,17 @@
 
   END MODULE
 
-  PROGRAM TypeMatch3 
-  USE M,  One => One 
+  PROGRAM TypeMatch3
+  USE M,  One => One
   IMPLICIT NONE
   CLASS(*), POINTER :: U(:,:)
-   
+
     ALLOCATE(Two :: U(2:3,3:4) )
 
     SELECT TYPE (U)
-    CLASS IS (Zero) 
+    CLASS IS (Zero)
        STOP 40
-    CLASS IS (Three) 
+    CLASS IS (Three)
        STOP 41
     TYPE IS (Complex)
        STOP 42
@@ -87,13 +81,13 @@
       IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
       IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
       IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   STOP 34
-       
+
     TYPE IS (REAL)
        STOP 45
     CLASS DEFAULT
        STOP 46
     END SELECT
- 
+
   END
 
 

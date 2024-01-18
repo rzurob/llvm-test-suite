@@ -1,14 +1,9 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME             : acemc01
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2006-07-21
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : Interoperability, C
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -100,7 +94,7 @@ program acemc01
   integer(C_LONG_LONG)   :: llarr(5), llarr2(5), llarrExp(5)
   integer(C_INT)         :: i
 
-  
+
   if (schar_size() /= C_SIGNED_CHAR .or. short_size() /= C_SHORT .or. int_size() /= C_INT &
        .or. long_size() /= C_LONG .or. llong_size() /= C_LONG_LONG) then
      print *, "Incorrect int/short/long/long long/signed char size:"
@@ -170,7 +164,7 @@ program acemc01
                                          & long_long_int_fun(3), long_long_int_fun(4) /)
   llarrExp = (/ -1_C_LONG_LONG, 0_C_LONG_LONG, 1_C_LONG_LONG, &
                 9223372036854775807_C_LONG_LONG, -9223372036854775807_C_LONG_LONG /)
-  
+
 
   if (any(llarr /= llarrExp) .or. any(llarr2 /= llarrExp)) error stop 9_4
 

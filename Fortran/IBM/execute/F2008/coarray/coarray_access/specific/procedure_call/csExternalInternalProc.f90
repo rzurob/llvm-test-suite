@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : csExternalInternalProc
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-10-04
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray access (specific) - procedure call
 !*  SECONDARY FUNCTIONS TESTED : pass coarray actual arguments to external procedure, which passes it on and modifies or processes it in an internal procedure

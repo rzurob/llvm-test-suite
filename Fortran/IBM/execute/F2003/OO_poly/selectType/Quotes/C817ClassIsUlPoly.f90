@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: C817ClassIsUlPoly.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: C817ClassIsUlPoly.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C817ClassIsUlPoly
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 3, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C817 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C817
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -68,13 +62,13 @@
   PROGRAM C817ClassIsPoly
   USE M
   IMPLICIT NONE
- 
-  CLASS(*), POINTER :: Ptr 
+
+  CLASS(*), POINTER :: Ptr
   INTEGER, TARGET  :: Tar
 
-  Ptr  => Tar 
+  Ptr  => Tar
 
-  SELECT TYPE ( Ptr ) 
+  SELECT TYPE ( Ptr )
     TYPE IS (Level4)
       STOP 50
     CLASS IS (Level4)
@@ -85,10 +79,10 @@
       STOP 55
     CLASS IS (Level1)
       STOP 55
-      
+
     CLASS DEFAULT
     ! STOP 30
-  END SELECT 
+  END SELECT
 
   SELECT TYPE ( Ptr )
     TYPE IS (INTEGER)

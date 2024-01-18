@@ -5,42 +5,34 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgl025.f
 ! %VERIFY: fort.18:fxiomsgl025.vf
-! %STDIN: 
-! %STDOUT:  
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f message_mod.mod
 ! %END
 !***************************************************************************
- 
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : Invalid unit numbers and file types with REWIND.
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : REWIND
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 3
 !*
-!*  DESCRIPTION                : The UNIT command has to be in the range 1 
+!*  DESCRIPTION                : The UNIT command has to be in the range 1
 !*                               through 2147483647, and I/O statement REWIND
-!*                               is only for file connected for sequential 
-!*                               access, not for direct access. The REWIND 
-!8                               statement was tested in a subroutine which 
-!*                               passes in an element of a string array in a 
-!*                               derived type which is a member of another 
+!*                               is only for file connected for sequential
+!*                               access, not for direct access. The REWIND
+!8                               statement was tested in a subroutine which
+!*                               passes in an element of a string array in a
+!*                               derived type which is a member of another
 !*                               derived type, as iomsg specifier.
 !*
 !*  TEST CONDITIONS            : 1) I/O statements with unit number -9.
@@ -52,7 +44,6 @@
 !*  02/18/04   RL     Initial version
 !*
 !*********************************************************************
-
 
       MODULE message_mod
 
@@ -78,7 +69,6 @@
 
          rewind ( unit_id , err = 20, iostat =ios, iomsg = msg_var )
 
-
          call zzrc ( case_id )
 
 20       write(18,*) msg_var
@@ -87,39 +77,38 @@
 
       end subroutine
 
-
       END MODULE message_mod
 
       program fxiomsgl025
 
       use message_mod
- 
+
       implicit none                     ! All variables must be Declared
- 
+
       integer*4 case_id                 ! Test Case id under test.
       integer*4 a, ios
       character*10 varchar
       TYPE( message2 ) t_msg
- 
+
 !
 !  Unit number too small ( unit = -9 )
 !
- 
+
       a = -9
- 
+
 !
 ! TestCase 1...
 !
- 
+
       case_id = case_id + 1
- 
+
       call print_msg( a, t_msg%errmsg%errmsg(2) )
- 
+
 !
 ! Create file to rewind on ...
 !
       varchar = 'trust'
- 
+
       open ( 8, form = 'FORMATTED', access = 'DIRECT', recl = 80 )
 
       write ( 8, err = 40, rec = 1, fmt = '( A10 )' ) varchar
@@ -128,29 +117,26 @@
 
       write ( 9, err = 40, rec = 1 ) varchar
 
- 
 !
 ! TestCase 2...
 !
- 
+
       case_id = case_id + 1
- 
+
       call print_msg( 8, t_msg%errmsg%errmsg(2) )
- 
- 
+
 !
 ! TestCase 3...
 !
- 
+
       case_id = case_id + 1
- 
+
       call print_msg( 9, t_msg%errmsg%errmsg(2) )
- 
 
 ! Clean up...
- 
+
       close ( 8, status = 'DELETE' )
- 
+
       close ( 9, status = 'DELETE' )
 
       stop ' '

@@ -1,39 +1,23 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: ptrAsgn014.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing:  Pointer assignment
 !*                               a) type component to type component with array
@@ -49,14 +33,14 @@
 !* ===================================================================
 
 module m
-   
+
    type, abstract :: base
       integer :: id
       class(base), pointer :: ptr => null()
    contains
       procedure, nopass :: type => basetype
    end type
-   
+
    type, extends(base) :: child
    contains
       procedure, nopass :: type => childtype
@@ -78,32 +62,30 @@ program ptrAsgn014
 
    class(base), pointer :: b1(:), b2(:)
    class(base), allocatable, target :: b3(:)
-   
+
    type(child), target :: c1 = child(6,null())
 
    allocate( b3(2), source=(/(child(i,c1),i=5,6)/) )
-   
+
    b2 => b3
    b1 => b3
-   
-   if (.not. associated(b1,b2) ) error stop 1_4   
+
+   if (.not. associated(b1,b2) ) error stop 1_4
    if (.not. associated(b1(1)%ptr, b2(1)%ptr) ) error stop 2_4
    if (.not. associated(b1(2)%ptr, b2(2)%ptr) ) error stop 2_4
-   
+
    if ((b1(1)%ptr%type() .ne. 2) .or. (b2(1)%ptr%type() .ne. 2) ) error stop 3_4
    if ((b1(2)%ptr%type() .ne. 2) .or. (b2(2)%ptr%type() .ne. 2) ) error stop 3_4
-   
+
    nullify(b2(1)%ptr)
    nullify(b2(2)%ptr)
-   
+
    b1 => b2
-   
+
    if (b1(1)%ptr%type() .ne. 1) error stop 4_4
    if (b1(2)%ptr%type() .ne. 1) error stop 4_4
-    
-   
+
    if (b1%type() .ne. 2) error stop 5_4
    if (b2%type() .ne. 2) error stop 6_4
 
-   
 end program

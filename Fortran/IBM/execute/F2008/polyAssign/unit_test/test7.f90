@@ -8,7 +8,7 @@ Program test
     Class(*),target,allocatable:: x
     Class(*),pointer:: px
     x = t2(5,7)
-    !allocate (x,source=t()) 
+    !allocate (x,source=t())
 
     px=>x
     select type(px)

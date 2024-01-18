@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignIntrinsicComp01a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignIntrinsicComp01a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 2 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 2 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test user defined assignment with interface block
@@ -28,7 +20,7 @@ module m
    type dtp(k1,l1)
        integer(8),kind :: k1=4
        integer,len     :: l1=3
-       
+
        character(l1)    :: c1(l1:l1)="******"
        integer(k1)      :: i1(l1:l1+1)=-99
        logical(k1)      :: g1(l1:l1+2)=.false.
@@ -36,13 +28,13 @@ module m
    end type
 
    interface assignment( = )
-   
+
        module procedure assign1
        module procedure assign2
        module procedure assign3
        module procedure assign4
        module procedure assign5
-      
+
    end interface
 
    contains
@@ -50,9 +42,9 @@ module m
        subroutine assign1(dt1,dt2)
            type(dtp(4,*)),intent(inout) :: dt1
            type(dtp(4,*)),intent(in) :: dt2
-           
+
            print *,"in assign1"
-           
+
            dt1%c1=dt2%c1
            dt1%i1=dt2%i1
            dt1%g1=dt2%g1
@@ -62,7 +54,6 @@ module m
        subroutine assign2(dt1,dt2)
            class(dtp(4,3)),intent(inout) :: dt1(:)
            type(dtp(4,3)),intent(in)    :: dt2
-
 
            print *,"in assign2"
 
@@ -94,7 +85,6 @@ module m
 
            dt1=dt2(ubound(dt2,1)) ! call assign2
 
-           
        end subroutine
 
        subroutine assign5(dt1,dt2)
@@ -119,18 +109,18 @@ program defAssignIntrinsicComp01a
 
      integer :: i
      type(dtp) :: dtp1
-    
+
      logical,external :: precision_r4,precision_r8
- 
+
      type(dtp) :: dtp2=dtp(c1="XLF",i1=[10,11], &
                            g1=[.true.,.false.,.true.],&
                            r1=[1.2,-3.5,6.7E-2])
-  
+
      type(dtp(4,:)),allocatable :: dtp3,dtp4(:),dtp5(:)
      type(dtp(8,3)) :: dtp6(3)
 
      allocate(dtp(4,3) :: dtp3,dtp4(2:5),dtp5(3))
- 
+
      dtp1=dtp2 ! call assign1
 
      if(any(dtp1%c1 /= "XLF"))                                       stop 10
@@ -140,7 +130,7 @@ program defAssignIntrinsicComp01a
      if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-3.5))       stop 14
      if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),6.7E-2))       stop 15
 
-     dtp3=dtp1 ! call assign1 
+     dtp3=dtp1 ! call assign1
 
      if(any(dtp3%c1 /= "XLF"))                                       stop 16
      if(any(dtp3%i1 /= [10,11]))                                     stop 17
@@ -154,9 +144,9 @@ program defAssignIntrinsicComp01a
      do i=lbound(dtp4,1),ubound(dtp4,1)
 
      if(any(dtp4(i)%c1 /= "XLF"))                                    stop 22
-     if(any(dtp4(i)%i1 /= [10,11]))                                  stop 23 
-     if(any(dtp4(i)%g1 .neqv. [.true.,.false.,.true.]))              stop 24 
-     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-2),1.2))  stop 25 
+     if(any(dtp4(i)%i1 /= [10,11]))                                  stop 23
+     if(any(dtp4(i)%g1 .neqv. [.true.,.false.,.true.]))              stop 24
+     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-2),1.2))  stop 25
      if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-1),-3.5)) stop 26
      if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)),6.7E-2)) stop 27
 
@@ -169,32 +159,31 @@ program defAssignIntrinsicComp01a
      if(any(dtp5(i)%c1 /= "***"))                                    stop 28
      if(any(dtp5(i)%i1 /= -99))                                      stop 29
      if(any(dtp5(i)%g1 .neqv. .false.))                              stop 30
-     if(.not. precision_r4(dtp5(i)%r1(ubound(dtp5(i)%r1,1)-2),-9.9)) stop 31 
-     if(.not. precision_r4(dtp5(i)%r1(ubound(dtp5(i)%r1,1)-1),-9.9)) stop 32 
-     if(.not. precision_r4(dtp5(i)%r1(ubound(dtp5(i)%r1,1)),-9.9))   stop 33 
+     if(.not. precision_r4(dtp5(i)%r1(ubound(dtp5(i)%r1,1)-2),-9.9)) stop 31
+     if(.not. precision_r4(dtp5(i)%r1(ubound(dtp5(i)%r1,1)-1),-9.9)) stop 32
+     if(.not. precision_r4(dtp5(i)%r1(ubound(dtp5(i)%r1,1)),-9.9))   stop 33
 
      end do
 
      dtp1=[dtp3,dtp1]  ! call assign3
 
      if(any(dtp1%c1 /= "XLF"))                                       stop 34
-     if(any(dtp1%i1 /= [10,11]))                                     stop 35 
-     if(any(dtp1%g1 .neqv. [.true.,.false.,.true.]))                 stop 36 
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),1.2))        stop 37 
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-3.5))       stop 38 
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),6.7E-2))       stop 39 
+     if(any(dtp1%i1 /= [10,11]))                                     stop 35
+     if(any(dtp1%g1 .neqv. [.true.,.false.,.true.]))                 stop 36
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),1.2))        stop 37
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-3.5))       stop 38
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),6.7E-2))       stop 39
 
      dtp4=dtp5  ! call assign4
-
 
      do i=lbound(dtp4,1),ubound(dtp4,1)
 
      if(any(dtp4(i)%c1 /= "***"))                                    stop 40
-     if(any(dtp4(i)%i1 /= -99))                                      stop 41 
-     if(any(dtp4(i)%g1 .neqv. .false.))                              stop 42 
-     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-2),-9.9)) stop 43 
-     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-1),-9.9)) stop 44 
-     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)),-9.9))   stop 45 
+     if(any(dtp4(i)%i1 /= -99))                                      stop 41
+     if(any(dtp4(i)%g1 .neqv. .false.))                              stop 42
+     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-2),-9.9)) stop 43
+     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-1),-9.9)) stop 44
+     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)),-9.9))   stop 45
 
      end do
 
@@ -210,5 +199,5 @@ program defAssignIntrinsicComp01a
      if(.not. precision_r8(dtp6(i)%r1(lbound(dtp6(i)%r1,1)+2),-5._8)) stop 51
 
      end do
-      
+
 end program

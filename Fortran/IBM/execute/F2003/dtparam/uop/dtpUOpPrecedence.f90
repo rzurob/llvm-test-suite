@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUOpPrecedence
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2009-02-11
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : User-Defined Operators
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 361989
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -142,7 +136,7 @@ contains
        print *, "  ", trim(expected(i))
     end do
   end subroutine dumpEvents
-  
+
 
   subroutine recordKEvent(op, left, right, outcome)
      character(1), intent(in) :: op

@@ -1,26 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ulmtintentpnt.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : 
-!*                               TO is dummy arg with intent(out) attr 
-!*                               pointer is dummay arg with intent(inout) 
+!*  DESCRIPTION                :
+!*                               TO is dummy arg with intent(out) attr
+!*                               pointer is dummay arg with intent(inout)
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -48,9 +36,9 @@
         subroutine sub(p, to)
             class(*), pointer, intent(inout) :: p(:)
             character(:), intent(out), allocatable :: to(:)
-        
+
             p => from
-    
+
             call move_alloc (from, to)
-        end subroutine 
+        end subroutine
     end

@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : input101kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from input101 by Robert Ma)
 !*  DATE                       : 2007-07-20 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10.1.1 Namelist Input Values
 !*                                        Blanks are never used as zeros

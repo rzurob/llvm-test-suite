@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: charvalueattrf055.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,24 +12,17 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : charvalueattrf055
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 26, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the VALUE
-!*                               attribute when used with characters of 
-!*                               length other than 1. ( Feature 298120 )   
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*                               attribute when used with characters of
+!*                               length other than 1. ( Feature 298120 )
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Test that pass-by-value using VALUE attribute
 !*                               works as expected for characters of len=1.
@@ -47,15 +40,15 @@
         if( arg .ne. 'A' ) then
           error stop 1
         endif
-        
+
         arg = 'z'
-        
+
       end subroutine s1
 
       end module
-      
+
       use m
 
       call s1('A')
-      
+
       end

@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrProcPtrComp.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrProcPtrComp.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 08, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  pointer component 
+!*  pointer component
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -47,8 +39,8 @@
     INTEGER(K3), PRIVATE :: I1Tar(N1,N1)=1_1
     INTEGER(K4), PRIVATE :: I2Tar(N2)=2_1
   CONTAINS
-    PROCEDURE, NOPASS :: Fun => ModFun  
-    PROCEDURE, NOPASS :: Fun1 => ModFun1  
+    PROCEDURE, NOPASS :: Fun => ModFun
+    PROCEDURE, NOPASS :: Fun1 => ModFun1
   END TYPE
 
   TYPE (DT(1,2,1,2,10,100)), SAVE, TARGET   :: T(10,10)
@@ -59,17 +51,17 @@
   CLASS(DT(1,2,1,2,10,100)),  TARGET, INTENT(IN)  :: Arg(:,:)
   INTEGER(1), POINTER :: ModFun(:, :)
     ModFun(SIZE(Arg,1):,SIZE(Arg,2):) => Arg(1,1)%I1Tar
-  END FUNCTION 
+  END FUNCTION
 
   FUNCTION ModFun1(Arg)
   CLASS(DT(1,2,1,2,10,100)),  TARGET, INTENT(IN) :: Arg(:)
   INTEGER(2), POINTER :: ModFun1(:)
     ModFun1(LBOUND(Arg,1):UBOUND(Arg,1))  => Arg(1)%I2Tar
-  END FUNCTION 
+  END FUNCTION
 
   END MODULE
- 
-  PROGRAM dataPtrProcPtrComp 
+
+  PROGRAM dataPtrProcPtrComp
   USE M
   IMPLICIT NONE
 
@@ -80,7 +72,7 @@
   IF (ANY( T(1,1)%PtrI1                 .NE. 1_1))          STOP 14
 
   T(10,10)%PtrI2(9: )=> NULL(T(10,10)%PtrI2 )
-  T(10,10)%PtrI2(0:9 ) => T(:, 1)%Fun1(T(:, 1)) 
+  T(10,10)%PtrI2(0:9 ) => T(:, 1)%Fun1(T(:, 1))
   IF (.NOT. ASSOCIATED(T(10,10)%PtrI2))                     STOP 15
   IF (ANY( LBOUND(T(10,10)%PtrI2)         .NE. (/0 /)))     STOP 16
   IF (ANY( UBOUND(T(10,10)%PtrI2)         .NE. (/9 /)))     STOP 17

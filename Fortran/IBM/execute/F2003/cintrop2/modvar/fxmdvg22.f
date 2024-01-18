@@ -1,49 +1,38 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !************************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD:  $TR_SRC/run.sh fxmdvg22 cxmdvg22 
+! %PRECMD:  $TR_SRC/run.sh fxmdvg22 cxmdvg22
 ! %COMPOPTS:   -qmixed
-! %GROUP: redherring.f 
+! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !************************************************************************
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : fxmdvg22.f 
-!*  TEST CASE TITLE            : bind(c) attribute/statement
+!*  TEST CASE NAME             : fxmdvg22.f
 !*
-!*  PROGRAMMER                 : Kan Tian
-!*  DATE                       : Sep 14,2002 
+!*  DATE                       : Sep 14,2002
 !*
-!*  PRIMARY FUNCTIONS TESTED   :test integer(8) with bind(c) 
-!*                              attribute/statement 
+!*  PRIMARY FUNCTIONS TESTED   :test integer(8) with bind(c)
+!*                              attribute/statement
 !*                              test the effect on the binding lables
-!*                              with -qmixed option. 
+!*                              with -qmixed option.
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  :
-!*
 !*
 !*  DESCRIPTION                :
 !*                              Pass data between a C variable with external
 !*				linkage and Fortran variable has the bind(c)
-!*				attribute. 
-!*                              Verify the result of data passing. 
-!*                               
+!*				attribute.
+!*                              Verify the result of data passing.
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*
@@ -55,13 +44,13 @@
 
 
 module mod
-  use iso_c_binding 
-  
+  use iso_c_binding
+
   integer(8), bind(c,name="xaa") :: fx=1
 
-  integer(8):: fy =2 
+  integer(8):: fy =2
   bind(c,name="Xaa") :: fy
-  
+
   interface assert_eq2                   ! generic name
     module procedure assert2
   end interface
@@ -86,8 +75,8 @@ program testmix
   logical ::result
   integer(8)::basval1,basval2
 
-  basval1 =11 
-  basval2 =200 
+  basval1 =11
+  basval2 =200
   print *, "variables fx and fy are initialized in fortran: fx = ",fx, "fy = ", fy
   call csub()
   result= assert_eq2(fx,basval1)
@@ -102,5 +91,5 @@ program testmix
   if (result .eqv. .false.) then
   error stop 221
   endif
-end 
+end
 

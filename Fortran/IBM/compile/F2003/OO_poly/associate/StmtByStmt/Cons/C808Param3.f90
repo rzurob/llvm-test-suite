@@ -1,26 +1,21 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C808Param3.f 
+! %POSTCMD: tcomp C808Param3.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C808Param3
-!*  TEST CASE TITLE            : C808
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 20, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
@@ -28,7 +23,6 @@
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,7 +31,7 @@
 !*
 !*  DESCRIPTION
 !*    The selector is an associate name which is a constant
-!*    (Pass dev; print out 1 1  !??) 
+!*    (Pass dev; print out 1 1  !??)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -46,9 +40,9 @@
 
     ASSOCIATE ( As => 1 )
       ASSOCIATE ( As1 => As)
-        As1 = 2       
+        As1 = 2
         print*, As, As1
-      END ASSOCIATE 
+      END ASSOCIATE
     END ASSOCIATE
 
   END

@@ -2,42 +2,26 @@
 ! ftcx_dtp -qk -ql -qreuse=none /tstdev/OO_tpbnd/specific/ftpbnd508.f
 ! opt variations: -qck -qnok -qnol -qreuse=base
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: ftpbnd508.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 02/27/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : type-bound specific (one procedure bound to
 !*                               multiple bindings; use pass(arg))

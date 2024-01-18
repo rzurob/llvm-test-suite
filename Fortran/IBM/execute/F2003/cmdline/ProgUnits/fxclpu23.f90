@@ -12,39 +12,33 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu23.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Invoke these intrinsic procedures through multi level of 
+!*  DESCRIPTION                : Invoke these intrinsic procedures through multi level of
 !*                             : module internal function, subroutine, entries and interface
 !*                             : with COMMAND_ARGUMENT_COUNT passed as argument
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      MODULE MOD 
+      MODULE MOD
 
 
       character(2049)  :: COMMAND /'??????????????????????'/
@@ -76,10 +70,10 @@
       SUBROUTINE M_EQUIVALENCE
 
 
-      character(2049)  :: CmdLine   
-      integer          :: CmdCOunt  
-      character(513)   :: NAME      
-      logical          :: TRIM_NAME 
+      character(2049)  :: CmdLine
+      integer          :: CmdCOunt
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
 
 
       EQUIVALENCE (CmdLine,    MOD_INTF)
@@ -94,8 +88,8 @@
       TRIM_NAME= .false.
 
       ! There is no effect on globe variables
- 
-      
+
+
       END SUBROUTINE
 
 
@@ -107,7 +101,7 @@
 
       !Expecting COMMAND_ARGUMENT_COUNT
       M_COMMAND_ARGUMENT_COUNT = FUN()
-      if ( CmdCount .ne. FUN() ) & 
+      if ( CmdCount .ne. FUN() ) &
       then
         error stop 63
       endif
@@ -116,7 +110,7 @@
 
 
       SUBROUTINE M_GET_COMMAND( A)
-    
+
       INTEGER A
       INTEGER B
       INTEGER C
@@ -136,9 +130,9 @@
 
       ENTRY M_GET_COMMAND_ARGUMENT(A, B)
 
- 
+
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -182,9 +176,9 @@
 
 
       CALL  MAIN_INT_SUB
-    
- 
-      CONTAINS  
+
+
+      CONTAINS
 
       SUBROUTINE MAIN_INT_SUB
 
@@ -202,7 +196,7 @@
         CALL MOD_INTF(1, 1)
 
         CALL MOD_INTF(1, 1, 1)
-  
+
       END DO
 
       END SUBROUTINE
@@ -212,7 +206,7 @@
 
 
 
- 
+
       INCLUDE 'cmdline.include'
 
-      
+

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefSpecSIZE.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefSpecSIZE.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 03, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  a reference to a specification inquiry 
-!* 
-!*  - SIZE 
-!* 
+!*  a reference to a specification inquiry
+!*
+!*  - SIZE
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -53,20 +46,20 @@
   END MODULE
 
 
-  PROGRAM  InitExpDefSpecSIZE 
+  PROGRAM  InitExpDefSpecSIZE
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
 
-  INTEGER(8),  PARAMETER :: I8(-2147483648:-2147483647, 2147483646:2147483647) = -1 
-  LOGICAL(1),  PARAMETER :: L2(-128:-127, 126:127) = .TRUE. 
-  REAL(16),    PARAMETER :: R6(-128:-127, 126:127) = -1.0 
+  INTEGER(8),  PARAMETER :: I8(-2147483648:-2147483647, 2147483646:2147483647) = -1
+  LOGICAL(1),  PARAMETER :: L2(-128:-127, 126:127) = .TRUE.
+  REAL(16),    PARAMETER :: R6(-128:-127, 126:127) = -1.0
   COMPLEX(4),  PARAMETER :: Z4(-32768:-32767, 32766:32767) = (1.0, -1.0)
   TYPE(DT),    PARAMETER :: D(-2147483648:-2147483647, 2147483646:2147483647)=DT()
- 
+
   INTEGER,     PARAMETER :: SIZ=4
 
- 
+
   CALL SI8(I8)
   CALL SL1(L2)
   CALL SR6(R6)
@@ -77,11 +70,11 @@
 
   SUBROUTINE SI8(IArr)
   INTEGER(8)                                    :: IArr(-2147483648:-2147483647, 2147483646:2147483647)
-  INTEGER(KIND(SIZE(IArr))),          PARAMETER :: TI11= SIZE(IArr) 
-  INTEGER(KIND(SIZE(IArr, KIND=2))),  PARAMETER :: TI12= SIZE(IArr, KIND=2) 
-  INTEGER(KIND(SIZE(IArr, KIND=4))),  PARAMETER :: TI14= SIZE(IArr, KIND=4) 
-  INTEGER(KIND(SIZE(IArr, KIND=8))),  PARAMETER :: TI18= SIZE(IArr, KIND=8) 
- 
+  INTEGER(KIND(SIZE(IArr))),          PARAMETER :: TI11= SIZE(IArr)
+  INTEGER(KIND(SIZE(IArr, KIND=2))),  PARAMETER :: TI12= SIZE(IArr, KIND=2)
+  INTEGER(KIND(SIZE(IArr, KIND=4))),  PARAMETER :: TI14= SIZE(IArr, KIND=4)
+  INTEGER(KIND(SIZE(IArr, KIND=8))),  PARAMETER :: TI18= SIZE(IArr, KIND=8)
+
   IF ( KIND(TI11 )   .NE. 4 )         STOP 11
   IF (  TI11     .NE. SIZ )           STOP 12
   IF ( KIND(TI12 )   .NE. 2 )         STOP 13
@@ -92,14 +85,14 @@
   IF (  TI18     .NE. SIZ )           STOP 18
 
   END SUBROUTINE
- 
+
   SUBROUTINE SL1(LArr)
   LOGICAL(1)                                    :: LArr(-128:-127, 126:127)
-  INTEGER(KIND(SIZE(LArr))),          PARAMETER :: TL22= SIZE(LArr) 
-  INTEGER(KIND(SIZE(LArr, KIND=1))),  PARAMETER :: TL21= SIZE(LArr, KIND=1) 
-  INTEGER(KIND(SIZE(LArr, KIND=4))),  PARAMETER :: TL24= SIZE(LArr, KIND=4) 
-  INTEGER(KIND(SIZE(LArr, KIND=8))),  PARAMETER :: TL28= SIZE(LArr, KIND=8) 
- 
+  INTEGER(KIND(SIZE(LArr))),          PARAMETER :: TL22= SIZE(LArr)
+  INTEGER(KIND(SIZE(LArr, KIND=1))),  PARAMETER :: TL21= SIZE(LArr, KIND=1)
+  INTEGER(KIND(SIZE(LArr, KIND=4))),  PARAMETER :: TL24= SIZE(LArr, KIND=4)
+  INTEGER(KIND(SIZE(LArr, KIND=8))),  PARAMETER :: TL28= SIZE(LArr, KIND=8)
+
   IF ( KIND(TL21 )   .NE. 1 )        STOP 21
   IF (  TL21         .NE. SIZ )      STOP 22
   IF ( KIND(TL22 )   .NE. 4 )        STOP 23
@@ -110,13 +103,13 @@
   IF (  TL28         .NE. SIZ )      STOP 28
 
   END SUBROUTINE
- 
+
   SUBROUTINE SR6(RArr)
-  REAL(16)      :: RArr(-128:-127, 126:127)  
-  INTEGER(KIND(SIZE(RArr))),          PARAMETER :: TR44= SIZE(RArr) 
-  INTEGER(KIND(SIZE(RArr, KIND=8))),  PARAMETER :: TR48= SIZE(RArr, KIND=8) 
-  INTEGER(KIND(SIZE(RArr, KIND=1 ))), PARAMETER :: TR46= SIZE(RArr, KIND=1 ) 
- 
+  REAL(16)      :: RArr(-128:-127, 126:127)
+  INTEGER(KIND(SIZE(RArr))),          PARAMETER :: TR44= SIZE(RArr)
+  INTEGER(KIND(SIZE(RArr, KIND=8))),  PARAMETER :: TR48= SIZE(RArr, KIND=8)
+  INTEGER(KIND(SIZE(RArr, KIND=1 ))), PARAMETER :: TR46= SIZE(RArr, KIND=1 )
+
   IF ( KIND(TR44 )   .NE. 4  )       STOP 31
   IF (  TR44         .NE. SIZ )      STOP 32
   IF ( KIND(TR48 )   .NE. 8 )        STOP 33
@@ -128,10 +121,10 @@
 
   SUBROUTINE SZ4(ZArr)
   COMPLEX(4)   :: ZArr(-32768:-32767, 32766:32767)
-  INTEGER(KIND(SIZE(ZArr))),          PARAMETER :: TZ88= SIZE(ZArr) 
-  INTEGER(KIND(SIZE(ZArr, KIND=4))),  PARAMETER :: TZ84= SIZE(ZArr, KIND=4) 
-  INTEGER(KIND(SIZE(ZArr, KIND=2 ))), PARAMETER :: TZ86= SIZE(ZArr, KIND=2 ) 
- 
+  INTEGER(KIND(SIZE(ZArr))),          PARAMETER :: TZ88= SIZE(ZArr)
+  INTEGER(KIND(SIZE(ZArr, KIND=4))),  PARAMETER :: TZ84= SIZE(ZArr, KIND=4)
+  INTEGER(KIND(SIZE(ZArr, KIND=2 ))), PARAMETER :: TZ86= SIZE(ZArr, KIND=2 )
+
   IF ( KIND(TZ88 )   .NE. 4 )        STOP 41
   IF (  TZ88         .NE. SIZ )      STOP 42
   IF ( KIND(TZ84 )   .NE. 4 )        STOP 43
@@ -143,8 +136,8 @@
 
   SUBROUTINE SD(DArr)
   TYPE(DT) :: DArr(-2147483648:-2147483647, 2147483646:2147483647)
-  INTEGER,                            PARAMETER :: TDL = SIZE(D) 
-  INTEGER,                            PARAMETER :: SIZ1 = SIZE(D, DIM=1) 
+  INTEGER,                            PARAMETER :: TDL = SIZE(D)
+  INTEGER,                            PARAMETER :: SIZ1 = SIZE(D, DIM=1)
 
   IF (  TDL      .NE. SIZ )          STOP 51
   IF (  SIZ1     .NE. 2 )            STOP 52
@@ -154,4 +147,4 @@
   END
 
 
- 
+

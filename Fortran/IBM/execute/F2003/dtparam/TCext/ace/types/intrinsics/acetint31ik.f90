@@ -1,15 +1,11 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acetint31ik
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetint31i
 !*                               by David Forster)
 !*  DATE                       : 2008-01-25 (original: 2006-08-30)
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters (+ Array Constructor
 !*                               Enhancements)
@@ -18,7 +14,6 @@
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
 !*                               (original: Feature Number 289053)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : procedure pointer, integer
@@ -35,7 +30,7 @@
 module acetint31imod
 
   implicit none
-  
+
   type :: modtype (kmodtype_1) ! kmodtype_1=4
      integer, kind :: kmodtype_1
      integer(kmodtype_1) :: myval = 5

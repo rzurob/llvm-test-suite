@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dummyArg004akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from dummyArg004a by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Argument Association: assumed shape
@@ -97,9 +89,9 @@ use m
    b3 => b2(1:4:3)
 
    call bar ( b3 )
-   allocate ( b3(3), source = (/ child(4,4)(131, 132), child(4,4)(133, 134), child(4,4)(135, 136) /) ) 
+   allocate ( b3(3), source = (/ child(4,4)(131, 132), child(4,4)(133, 134), child(4,4)(135, 136) /) )
    call bar ( b3 )
-   
+
 end program
 
 subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)

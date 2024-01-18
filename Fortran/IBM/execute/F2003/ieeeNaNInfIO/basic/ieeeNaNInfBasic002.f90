@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ieeeNaNInfBasic002.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 5, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -49,11 +43,11 @@
          rl1 = 0.0 ! reset rl1
 
          read(unit,'(f15.1)',iostat=ios) rl1
-         
+
          if ( is_iostat_end(ios) ) exit
 
          if ( ieee_is_finite( rl1 ) ) call zzrc(i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
@@ -65,4 +59,4 @@
 
 
       end
-      
+

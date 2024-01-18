@@ -1,24 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dummyAssume1.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Contiguous dummy argfument 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Contiguous dummy argfument
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - 
-!*                      
+!*  DESCRIPTION                : -
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -46,7 +35,7 @@ PROGRAM dummyAssume1
 
       CONTAINS
 
-      SUBROUTINE Sub(Arg, Ptr, I, J, K)           
+      SUBROUTINE Sub(Arg, Ptr, I, J, K)
         INTEGER, CONTIGUOUS  :: Arg(:)
         INTEGER, POINTER, INTENT(OUT) :: ptr(:)
 

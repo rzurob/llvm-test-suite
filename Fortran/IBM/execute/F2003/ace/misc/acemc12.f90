@@ -1,14 +1,9 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME             : acemc12
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2006-07-21
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : Interoperability, C
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -99,7 +93,7 @@ program acemc12
   integer(4) :: errorsFound
 
   integer(C_INT)         :: i
-  
+
   errorsFound = 0
 
   if (float_size() /= C_FLOAT .or. dbl_size() /= C_DOUBLE .or. ldbl_size() /= C_LONG_DOUBLE) then
@@ -111,7 +105,7 @@ program acemc12
   end if
 
   farr = [0.0_C_FLOAT, 1.0_C_FLOAT, -0.0_C_FLOAT, &
-       & tiny(0.0_C_FLOAT), huge(0.0_C_FLOAT), & 
+       & tiny(0.0_C_FLOAT), huge(0.0_C_FLOAT), &
        & ieee_value(0.0_C_FLOAT, IEEE_QUIET_NAN),ieee_value(0.0_C_FLOAT, IEEE_POSITIVE_INF)]
   darr = [0.0_C_DOUBLE, 1.0_C_DOUBLE, -0.0_C_DOUBLE, &
        & tiny(0.0_C_DOUBLE), huge(0.0_C_DOUBLE), &

@@ -1,24 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : isContigTrue1.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS intrinsic
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : unlimited polymorphic
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - 
-!*                                
+!*  DESCRIPTION                : -
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -34,12 +23,12 @@ PROGRAM isContigTrue1
 
       INTEGER, TARGET :: Iarr(5,5)
       CLASS(*), POINTER :: ptr(:,:)
-      CONTIGUOUS :: ptr 
+      CONTIGUOUS :: ptr
 
       Iarr = 1
       IF ( .NOT. IS_CONTIGUOUS(Iarr) )       ERROR STOP 10
 
-      ptr => Iarr 
+      ptr => Iarr
       SELECT TYPE ( s => ptr )
           TYPEIS (INTEGER)
               IF ( .NOT. IS_CONTIGUOUS(s) )  ERROR STOP 60
@@ -47,14 +36,14 @@ PROGRAM isContigTrue1
           CLASS DEFAULT
               ERROR STOP 61
       END SELECT
- 
+
       CALL Sub1(Iarr)
 
       CALL Sub2(ptr)
 
       CALL Sub3(Iarr)
 
-      ptr => foo(Iarr) 
+      ptr => foo(Iarr)
 
       CONTAINS
 

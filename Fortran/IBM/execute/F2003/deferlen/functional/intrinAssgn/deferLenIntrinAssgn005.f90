@@ -1,18 +1,8 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Characters with deferred length type parameter
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : array character with deferred length with
 !*                               pointer assignment statement
@@ -53,7 +43,7 @@ program deferLenPtrAssgn008
    print *, c2, len(c2), size(c2), associated(c2, c1)
 
    c1 => c2
-   
+
    print *, c1, len(c1), size(c1), associated(c1,c2)
 
 end program

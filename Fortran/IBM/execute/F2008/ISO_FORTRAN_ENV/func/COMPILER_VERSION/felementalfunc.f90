@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : felementalfunc
 !*
-!*  PROGRAMMER                 : Morteza Ershad-Manesh
 !*  DATE                       : 2010-07-12
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
@@ -15,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 376078
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -24,7 +19,7 @@
 !*  ADAPTED FROM               :
 !*
 !*  DESCRIPTION
-!*   print the compiler version from a pure function   
+!*   print the compiler version from a pure function
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -57,7 +52,7 @@ ELEMENTAL FUNCTION PrintCompilerVersion(cmpVersion)
  CHARACTER(100),INTENT(IN):: cmpVersion
  CHARACTER(100):: PrintCompilerVersion
  CHARACTER(100):: CompilerVersion
- 
+
  PrintCompilerVersion=COMPILER_VERSION()
 
 END FUNCTION

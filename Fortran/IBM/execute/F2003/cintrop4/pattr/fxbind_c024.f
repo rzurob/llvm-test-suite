@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,27 +13,19 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c024.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute 
+!* DESCRIPTION                  : Test: BINC(C) attribute
 !*                                with different intrinsic data type,
 !*                                integer*1, logical*1
-!*                                character(1). Using module 
+!*                                character(1). Using module
 !*                                subroutine interface. Fortran calls C.
 !*                                The arguments are passed by typeless
 !*                                constants. with binding labels
@@ -55,49 +42,49 @@ module m
    implicit none
 
    interface
-       subroutine sub_int(i1, i2) bind(c, name = "extsub_int") 
+       subroutine sub_int(i1, i2) bind(c, name = "extsub_int")
            integer*1 i1
            integer*1 i2
        end subroutine sub_int
 
 
-       subroutine sub_log(l1, l2) bind(c, name = "extsub_log") 
+       subroutine sub_log(l1, l2) bind(c, name = "extsub_log")
            logical*1 l1
            logical*1 l2
        end subroutine sub_log
 
-       subroutine sub_char(ch1, ch2) bind(c, name = "extsub_char") 
+       subroutine sub_char(ch1, ch2) bind(c, name = "extsub_char")
            character*1 ch1
            character*1 ch2
        end subroutine sub_char
 
    end interface
 end module m
-  
+
    use m
    logical precision_R4, precision_R6, precision_R8
    logical precision_x8, precision_x16
-   
+
 !**********************************************************
 !        Initialization of variables                      *
 !**********************************************************
 
-   integer*1 ai1, bi1 
+   integer*1 ai1, bi1
 
-   logical*1 al1 , bl1 
-   
-   character*1 ach1 , bch1 
+   logical*1 al1 , bl1
+
+   character*1 ach1 , bch1
 
    ai1 =  0
    bi1 =  15
 
    al1 = .true.
    bl1 = .false.
-   
+
    ach1 = 'd'
    bch1 = 'a'
 
- 
+
 !**********************************************************
 !        Calling C from Fortran with integer data type
 !                and check the results
@@ -129,4 +116,4 @@ end module m
       if(ach1 .ne. bch1)then
         error stop 50
       endif
-end 
+end

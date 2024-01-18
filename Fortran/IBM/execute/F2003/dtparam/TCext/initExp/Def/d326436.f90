@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemABS.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemABS.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,13 +23,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Ref 326436 
+!*  Ref 326436
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM d326436 
+  PROGRAM d326436
 
   TYPE :: DT(N1,K1)    ! (20,4)
     INTEGER, KIND :: K1
@@ -47,8 +40,8 @@
 
   PRINT *, A
 
-  IF ( A(1)%X .NE. 1.0 ) STOP 11 
+  IF ( A(1)%X .NE. 1.0 ) STOP 11
 
   END
 
- 
+

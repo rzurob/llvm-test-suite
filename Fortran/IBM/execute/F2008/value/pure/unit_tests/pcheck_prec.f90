@@ -1,7 +1,7 @@
 ! This is a copy of /xlftest/src/zzrc/check_prec.f, modified here to declare the
 ! procedures as pure for use by the pure procedures in this bucket.
 ! It includes only the scalar versions of the precision_* routines:
-! 
+!
 module pcheck_prec
     interface prec
         module procedure precision_R4
@@ -257,7 +257,6 @@ module pcheck_prec
       temp2 = expimag*range
       high_b = temp2+expimag
       low_b = expimag - temp2
-
 
       if(expreel < 0.0D0) then
           t_log1 = ((reel.ge.high_a).and.(reel.le.low_a))

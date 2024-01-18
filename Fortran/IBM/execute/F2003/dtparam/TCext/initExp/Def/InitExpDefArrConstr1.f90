@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefArrConstr1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefArrConstr1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 17, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,11 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  an array constructor in which each element and implied-do control 
-!*  expression is an initialization expression 
-!* 
-!*  
+!*  an array constructor in which each element and implied-do control
+!*  expression is an initialization expression
+!*
 !*  (ice)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -41,7 +33,7 @@
 
 
 
-  PROGRAM InitExpDefArrConstr1 
+  PROGRAM InitExpDefArrConstr1
   IMPLICIT NONE
 
   INTEGER :: IArr(10)
@@ -49,10 +41,10 @@
   TYPE :: DT(N1,K1)    ! (20,4)
     INTEGER, KIND :: K1
     INTEGER, LEN  :: N1
-    INTEGER(K1)   :: ID(SIZE(IArr), SIZE(IArr))=SIZE(IArr) 
+    INTEGER(K1)   :: ID(SIZE(IArr), SIZE(IArr))=SIZE(IArr)
     PROCEDURE(),NOPASS, POINTER :: ProcPtr
   END TYPE
- 
+
   INTEGER :: I, J
 
   TYPE(DT(20,4))   :: Arr(SIZE(IArr), SIZE(IArr))
@@ -65,15 +57,15 @@
     TYPE(DT(N2,K2)) :: Arr(SIZE(IArr), SIZE(IArr))
   END TYPE
 
-  TYPE(DT1(4,20)) ::  Arr1(SIZE(IArr)) 
-  PARAMETER  (  Arr1=(/(DT1(4,20)(Arr), I=KIND(1_1), SIZE(IArr))/) ) 
+  TYPE(DT1(4,20)) ::  Arr1(SIZE(IArr))
+  PARAMETER  (  Arr1=(/(DT1(4,20)(Arr), I=KIND(1_1), SIZE(IArr))/) )
 
   TYPE, EXTENDS(DT) :: DT2    ! (20,4)
   END TYPE
- 
-  TYPE(DT2(20,4)), PARAMETER  :: Arr2(SIZE(IArr))=DT2(20,4)(DT=Arr1(LEN("1"))%Arr(SIZE(IArr), SIZE(IArr))) 
- 
- 
+
+  TYPE(DT2(20,4)), PARAMETER  :: Arr2(SIZE(IArr))=DT2(20,4)(DT=Arr1(LEN("1"))%Arr(SIZE(IArr), SIZE(IArr)))
+
+
   IF (ANY(LBOUND(Arr(1,10)%ID)   .NE. (/1,1/) ) )                                        STOP 11
   IF (ANY(UBOUND(Arr(10,1)%ID)   .NE. (/10,10/) ))                                       STOP 11
   IF (ANY(Arr(10,10)%ID          .NE. RESHAPE((/((I*J, I=1,10),J=1,10)/), (/10,10/))  ) ) STOP 12
@@ -90,4 +82,4 @@
 
   END
 
- 
+

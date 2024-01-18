@@ -1,20 +1,11 @@
 !+  ===================================================================
-!+  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!+  ===================================================================
-!+  ===================================================================
 !+
-!+  TEST CASE TITLE            :
-!+
-!+  PROGRAMMER                 : Robert Ma
 !+  DATE                       : 11/01/2005
-!+  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !+                             :
 !+
 !+  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
 !+                             :
 !+  SECONDARY FUNCTIONS TESTED : with Operator( )
-!+
-!+  DRIVER STANZA              : xlf95
 !+
 !+  DESCRIPTION                : Binary Operator: with pass attribute with another derived type (ambiguous)
 !+  KEYWORD(S)                 :
@@ -35,7 +26,7 @@ module m
          procedure, pass(b) :: int_base1_base
          generic :: operator(+) => int_base1_base
    end type
-   
+
    type base1
       integer :: j = -999
       contains
@@ -50,7 +41,7 @@ module m
       class(base), intent(in) :: b
       int_base1_base=10
    end function
-   
+
    integer function int_base1_base_amb ( a, b )
       class(base1), intent(in) :: a
       class(base), intent(in) :: b

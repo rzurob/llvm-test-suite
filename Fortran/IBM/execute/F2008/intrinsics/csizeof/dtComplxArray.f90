@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dtComplxArray.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 2010-10-18
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - assumed-shape dummy arg array of derived-type 
-!*                               - components of type complex 
+!*  DESCRIPTION                : - assumed-shape dummy arg array of derived-type
+!*                               - components of type complex
 !*                               - Fortran main program
 !*
 !*  KEYWORD(S)                 :
@@ -37,7 +27,7 @@ program main
     type, bind(c) :: dTypeB
          complex(C_FLOAT_COMPLEX)  :: a(2)
          complex(C_DOUBLE_COMPLEX)  :: b
-         complex(C_LONG_DOUBLE_COMPLEX)  :: c 
+         complex(C_LONG_DOUBLE_COMPLEX)  :: c
     end type dTypeB
 
     type(dTypeB) :: dt1(10,10)
@@ -60,7 +50,7 @@ program main
             type(dTypeB) :: a(10,10)
 
             print *, get_sizeB(a)
-            if ( c_sizeof(a) /= get_sizeB(a) ) error stop 10 
+            if ( c_sizeof(a) /= get_sizeB(a) ) error stop 10
 
         end subroutine
 

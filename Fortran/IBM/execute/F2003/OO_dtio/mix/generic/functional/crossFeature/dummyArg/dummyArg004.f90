@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Dummy Argument Association
@@ -107,7 +96,7 @@ end module
 program dummyArg004
    use m
 
-   type(base)              :: b1(4) = (/ base('abc'), base('def'), base('ghi'), base('jkl') /) 
+   type(base)              :: b1(4) = (/ base('abc'), base('def'), base('ghi'), base('jkl') /)
    type(base), allocatable :: b2(:,:)
    type(base), allocatable :: b3(:)
 
@@ -121,7 +110,7 @@ program dummyArg004
    call mywrite ( b3 )
 
    call mywriteext ( b3 )
- 
+
    rewind 1
 
    call myread  ( b2 )

@@ -16,21 +16,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenamediag008.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : ensure switchign target and destination yields error
 !*
@@ -41,10 +34,10 @@ module opmod
     integer, kind :: k1
     real(k1)      :: x
   end type
-  
-  
-  
-  
+
+
+
+
   interface operator(.add.)
     module procedure plus
   end interface

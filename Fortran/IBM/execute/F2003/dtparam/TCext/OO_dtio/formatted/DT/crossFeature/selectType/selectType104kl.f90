@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : selectType104kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from selectType104 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Select-Type Constructor: Unlimited Polymorphic Array Entities (read)
@@ -64,7 +56,7 @@ use m
 
    class(*), allocatable  :: u1(:)
    class(*), pointer      :: u2(:,:)
-   
+
    character(81) :: fmt = "(DT'_u1-4'(7,2), DT'_u1-3'(8,3), DT'_u1-2'(9,4), DT'_u1-1'(9,3) )"
 
    rbuffer = ''
@@ -95,7 +87,7 @@ use m
    deallocate ( u1, u2 )
    allocate ( child(4,4) :: u2(2,2) )
    allocate ( child(4,4) :: u1(4) )
- 
+
    select type ( g => u1(2:4:2) )
       class is ( child(4,4) )
          read ( 1, "(DT'_u1-1'(7,2,8,3), DT'_u1-2'(8,3,9,4))", iostat = stat, iomsg = msg ) g  !<= two elements

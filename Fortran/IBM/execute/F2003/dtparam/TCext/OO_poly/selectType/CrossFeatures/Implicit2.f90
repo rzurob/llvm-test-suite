@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Implicit2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Implicit2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Implicit 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Implicit
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!* Implicit 
+!*
+!* Implicit
 !* ()
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -76,11 +69,11 @@
     SUBROUTINE SetObj(Arg)
     CLASS(DT0(4,*)) :: Arg
       Arg%C0 = "SetDT0"
-    END SUBROUTINE 
+    END SUBROUTINE
 
   END MODULE
 
-  PROGRAM Implicit2 
+  PROGRAM Implicit2
   USE M
   IMPLICIT CLASS(*)(U)
 
@@ -89,7 +82,7 @@
   CONTAINS
 
   SUBROUTINE Sub(U)
- 
+
   SELECT TYPE (U)
   CLASS IS (DT(4,*,*,*))
     IF (TRIM(V%C0) .NE. "0") STOP 20
@@ -99,7 +92,7 @@
     U%DT0%C0 ="?"
     U%DT1%C1 ="?"
     U%C2 ="?"
-    
+
     IF (TRIM(V%C0) .NE. "?") STOP 30
     IF (TRIM(V%C1) .NE. "?") STOP 31
     IF (TRIM(V%C2) .NE. "?") STOP 32

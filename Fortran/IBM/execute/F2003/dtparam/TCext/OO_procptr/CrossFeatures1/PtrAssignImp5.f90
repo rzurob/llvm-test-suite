@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignImp5.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignImp5.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignImp5.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignImp5.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,12 +34,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  If proc-target and proc-pointer-object are functions, 
+!*
+!*  If proc-target and proc-pointer-object are functions,
 !*  they shall have the same type; corresponding type parameters
 !*  shall either both be deferred or both have the same value.
-!* 
-!*  (Mem Fault) 
+!*
+!*  (Mem Fault)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -62,8 +56,8 @@
 
   FUNCTION ExtFun(Arg)
   USE M
-  TYPE(Base(4)), POINTER :: ExtFun(:) 
-  TYPE(Base(4))          :: Arg(:) 
+  TYPE(Base(4)), POINTER :: ExtFun(:)
+  TYPE(Base(4))          :: Arg(:)
     !ALLOCATE(ExtFun(2:1+SIZE(Arg)), SOURCE=Arg)
     ALLOCATE(ExtFun(2:1+SIZE(Arg)))
     ExtFun = Arg
@@ -71,13 +65,13 @@
 
   PROGRAM PtrAssignImp5
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   INTERFACE
     FUNCTION ExtFun(Arg)
       IMPORT
-      TYPE(Base(4)), POINTER :: ExtFun(:) 
-      TYPE(Base(4))          :: Arg(:) 
+      TYPE(Base(4)), POINTER :: ExtFun(:)
+      TYPE(Base(4))          :: Arg(:)
     END FUNCTION
   END INTERFACE
 

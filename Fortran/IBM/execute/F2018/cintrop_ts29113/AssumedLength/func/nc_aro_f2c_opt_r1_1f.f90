@@ -1,31 +1,22 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE     : C Interop: Assumed-length Character arguments
-!*
-!*
-!*
-!*  PROGRAMMER          : Umme Hunny
 !*  DATE                : June, 1, 2014
-!*  ORIGIN              : AIX Compiler Development, Toronto Lab
 !*  FEATURE             : RTC Master Story:
 !*                        C Interop: Assumed-length Character arguments
 !*                        (master story) (72333)
 !*
-!*  FEATURE             : C Interop: Assumed-length Character arguments 
+!*  FEATURE             : C Interop: Assumed-length Character arguments
 !* ===================================================================
-!23456789012345678901234567890123456789012345678901234567890123456789012     
-      
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
       program assumed_lenght001
 
         interface
           subroutine check_f_to_c( c_len, test_no, c_arg1) bind(c)
-            use, intrinsic :: iso_c_binding 
+            use, intrinsic :: iso_c_binding
             character(*), optional :: c_arg1(..)
-            integer(C_INT) c_len, test_no 
+            integer(C_INT) c_len, test_no
           end subroutine
           subroutine check_f_to_f( c_len, test_no, c_arg2) bind(c)
             use, intrinsic :: iso_c_binding
@@ -49,13 +40,13 @@
           end subroutine
 
         end interface
-      
+
         character(1) :: a1(5)
 
-        a1 = 'F2C__'         
+        a1 = 'F2C__'
         call check_f_to_c(LEN(a1), 1)
 
-        a1 = 'F2F__' 
+        a1 = 'F2F__'
         call check_f_to_f(LEN(a1), 2)
 
         a1 = 'F2F2C'
@@ -75,7 +66,7 @@
         character(*), optional :: c_arg2(..)
         integer(C_INT) c_len, test_no
         character(c_len) c_test
-        if(PRESENT(c_arg2)) then 
+        if(PRESENT(c_arg2)) then
              error stop 1
         endif
       end subroutine
@@ -88,12 +79,12 @@
             character(*), optional :: c_arg1(..)
             integer(C_INT) c_len, test_no
           end subroutine
-        end interface           
-        character(*), optional :: c_arg3(..)           
-        integer(C_INT) c_len, test_no 
-        call check_f_to_c(c_len, test_no) 
+        end interface
+        character(*), optional :: c_arg3(..)
+        integer(C_INT) c_len, test_no
+        call check_f_to_c(c_len, test_no)
        end subroutine
-   
+
       subroutine check_f_to_f_to_f(c_len, test_no, c_arg3) bind(c)
         use, intrinsic :: iso_c_binding
         interface
@@ -105,7 +96,7 @@
         end interface
         character(*), optional :: c_arg3(..)
         integer(C_INT) c_len, test_no
-        call check_f_to_f(c_len, test_no) 
+        call check_f_to_f(c_len, test_no)
        end subroutine
 
 
@@ -117,4 +108,4 @@
 
 
 
-       
+

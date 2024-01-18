@@ -1,27 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : complex16a.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
+!*  DESCRIPTION                : TO is component of a derived-type, unlimited poly
+!*                               FROM is of complex*16
+!*                               rank 3
 !*
-!*  DESCRIPTION                : TO is component of a derived-type, unlimited poly              
-!*                               FROM is of complex*16 
-!*                               rank 3 
-!*                               
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -32,14 +20,14 @@
 
 module m
 
-       type A 
+       type A
           complex*16, allocatable :: a1(:,:,:)
-          class(*), allocatable :: a2(:,:,:) 
+          class(*), allocatable :: a2(:,:,:)
        end type
 
 end module
 
-program main 
+program main
 
        use m
        class(*), pointer :: p
@@ -55,13 +43,13 @@ program main
 
                if (  allocated(p%a1) ) stop 21
                if (  .not. allocated(p%a2) ) stop 23
-               if ( size(p%a2,1) /= 4 ) STOP 41 
-               if ( size(p%a2,2) /= 0 ) STOP 43 
-               if ( size(p%a2,3) /= 2 ) STOP 45 
+               if ( size(p%a2,1) /= 4 ) STOP 41
+               if ( size(p%a2,2) /= 0 ) STOP 43
+               if ( size(p%a2,3) /= 2 ) STOP 45
 
        end select
 
 
-end 
+end
 
 

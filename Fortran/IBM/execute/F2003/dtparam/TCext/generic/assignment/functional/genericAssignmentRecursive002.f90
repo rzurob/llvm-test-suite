@@ -3,22 +3,11 @@
 ! opt variations: -qnol -qdefaultpv -qnodeferredlp -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: subroutine being recursive and assigning polymorphic linked lists
 !*  KEYWORD(S)                 :
@@ -130,19 +119,19 @@ program genericAssignmentRecursive002
    end do
 
    call mynullify ( b2 )
-   
+
    allocate ( b2, source = child(20,4)( 100, null(), 1000 ) )
    allocate ( b2%next, source = child(20,4)( 200, null(), 2000 ) )
    allocate ( b2%next%next, source = child(20,4)( 300, null(), 3000 ) )
    allocate ( b2%next%next%next, source = child(20,4)( 400, null(), 4000 ) )
    allocate ( b2%next%next%next%next, source = base(20,4)( 500, null() ) )
    allocate ( b2%next%next%next%next%next, source = base(20,4)( 600, null() ) )
-   
+
    call mynullify ( b1 )
-   
+
    allocate ( child(20,4) :: b1 )
    b1 = b2
-   
+
    tmp => b1
    do while ( associated ( tmp ) )
       select type ( tmp )
@@ -154,19 +143,19 @@ program genericAssignmentRecursive002
 
       tmp => tmp%next
    end do
-   
+
    contains
-   
+
       recursive subroutine mynullify ( a )
          class(base(:,4)), pointer, intent(inout) :: a
-         
-         if ( associated ( a%next ) ) call mynullify ( a%next )
-         
-         nullify(a)
-      
-      end subroutine
-   
 
-   
+         if ( associated ( a%next ) ) call mynullify ( a%next )
+
+         nullify(a)
+
+      end subroutine
+
+
+
 
 end program

@@ -1,39 +1,33 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn096e.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn096e.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn096e.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn096e.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : pass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : inheritance 
+!*  PRIMARY FUNCTIONS TESTED   : pass binding attribute
+!*
+!*  SECONDARY FUNCTIONS TESTED : inheritance
 !*
 !*  DESCRIPTION                : parent procedures are inherited.
 !*                               inherite from a different scroping unit.
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod1	      
+   module mod1
       integer :: int = 200
       character*20 :: c = "hi"
 
@@ -41,7 +35,7 @@
          integer :: x
 	 contains
       	 procedure, pass :: bind => proc1
-      end type 
+      end type
 
       contains
       subroutine proc1(arg1)
@@ -49,14 +43,14 @@
          int = 400
          c = "hi_again"
       end subroutine
-   end module     
+   end module
 
    module mod2
    use mod1
    type, extends(parent) :: child
       integer :: y
    end type
-   end module 
+   end module
 
    use mod2
 
@@ -74,4 +68,4 @@
    if (c .ne. "hi_again")    error stop 7
 
    end
-   
+

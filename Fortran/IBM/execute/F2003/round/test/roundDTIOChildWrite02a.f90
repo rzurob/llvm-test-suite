@@ -1,13 +1,6 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 14/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND specifier with WRITE statment
 !*                               in DTIO
@@ -23,7 +16,7 @@
 
         real r
         contains
- 
+
         procedure::writeFormat
         generic :: write(formatted) => writeFormat
      end type
@@ -60,7 +53,7 @@
 
           write(unit, fmt='(20a)') r_mode
 
-          call ieee_set_rounding_mode(ieee_to_zero) 
+          call ieee_set_rounding_mode(ieee_to_zero)
 
           write(unit, fmt='(2x, f7.5)', iostat=iostat, iomsg=iomsg) dtv%r
 
@@ -119,4 +112,4 @@
     open(unit=3, file='roundDTIOChildWrite02a.out')
     write(3,*) dt1
 
-  end program roundDTIOChildWrite02a 
+  end program roundDTIOChildWrite02a

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrFuncVec.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrFuncVec.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrFuncVec
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,7 +31,7 @@
 !*
 !*  DESCRIPTION
 !*    The selector is a function return  with a vector subscript
-!*    (Comp failed) 
+!*    (Comp failed)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -48,7 +42,7 @@
   LOGICAL(8) :: Arr(5,5)=.FALSE.
   INTEGER(1) :: S1(5)=(/5,4,3,2,1/), S2(5)=(/5,5,5,5,5/), S3(4)=(/1,2,3,4/)
 
-  Arr(:,1:4) = .TRUE. 
+  Arr(:,1:4) = .TRUE.
 
   ASSOCIATE ( As => Fun(Arr(S1, S2)), As1 => Fun(Arr(S2, S2))  )
 

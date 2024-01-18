@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryArrayRealComplexComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryArrayRealComplexComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 12 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 12 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY FOR DT AND COMPONENT
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. ALLOCATABLE REAL,COMPLEX ARRAY COMPONENT
@@ -44,20 +36,20 @@ module m
      real(k1*2+k2),allocatable    :: r8(:)
      real(kind(k1+k2)*4),allocatable :: r9(:)
      real(kind(111.11)),allocatable  :: r10(:)
-     
+
      complex(4),allocatable  :: x1(:)
      complex(8),allocatable  :: x2(:)
      complex(16),allocatable :: x3(:)
      complex(2*k1),allocatable :: x4(:)
-     complex(k2),allocatable :: x5(:)  
-     complex(2*k1),allocatable :: x6(:) 
+     complex(k2),allocatable :: x5(:)
+     complex(2*k1),allocatable :: x6(:)
      complex(k1*k2),allocatable   :: x7(:)
      complex(4*k2%kind),allocatable  ::x8(:)
      complex(8*kind(k1)),allocatable :: x9(:)
      complex(2*k1+k2),allocatable    :: x10(:)
-      
-   end type 
-         
+
+   end type
+
 end module
 
   program dtParameterInquiryArrayRealComplexComp02
@@ -71,17 +63,17 @@ end module
   if(t%k2 /= 4)                                             error stop 11_4
   if(t%k1%kind /= kind(t%k1) .or. t%k1%kind /= 1)           error stop 12_4
   if(t%k2%kind /= kind(t%k2) .or. t%k2%kind /= 2)           error stop 13_4
-  
+
   if(t%l1 /=6)                                              error stop 14_4
   if(t%l2 /=2)                                              error stop 15_4
   if(t%l1%kind /= kind(t%l1) .or. t%l1%kind /= 2)           error stop 16_4
   if(t%l2%kind /= kind(t%l2) .or. t%l2%kind /= 4)           error stop 17_4
-  
+
   if(t%r1%kind /= kind(t%r1) .or. t%r1%kind /= 4)           error stop 18_4
   if(t%r2%kind /= kind(t%r2) .or. t%r2%kind /= 8)           error stop 19_4
   if(t%r3%kind /= kind(t%r3) .or. t%r3%kind /=16)           error stop 20_4
   if(t%r4%kind /= kind(t%r4) .or. t%r4%kind /= 4)           error stop 21_4
-  if(t%r5%kind /= kind(t%r5) .or. t%r5%kind /= 4)           error stop 22_4 
+  if(t%r5%kind /= kind(t%r5) .or. t%r5%kind /= 4)           error stop 22_4
   if(t%r6%kind /= kind(t%r6) .or. t%r6%kind /= 4)           error stop 23_4
   if(t%r7%kind /= kind(t%r7) .or. t%r7%kind /= 8)           error stop 24_4
   if(t%r8%kind /= kind(t%r8) .or. t%r8%kind /= 8)           error stop 25_4

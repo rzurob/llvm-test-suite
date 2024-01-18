@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -ql -qnodeferredlp /tstdev/F2003/misc/d318884.f
 ! opt variations: -qck -qnok -qnol -qdeferredlp
 
-
 !defect 318884
 module m
     type base(k1,n1)    ! (4,20)

@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : structCompnt005akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from structCompnt005a by Robert Ma)
 !*  DATE                       : 2007-08-08 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Structure Component
@@ -158,7 +150,7 @@ program structCompnt005akl
 
    read ( 1, iostat = stat, iomsg = msg )     cc1%b1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioreadc' ) )                         error stop 7_4
-   
+
    select type ( g => cc1%b1 )
       type is ( child(*,4) ) ! tcx: (*,4)
         if ( ( g(1)%c /= 'jkl' ) .or. ( g(1)%i /= 1001 ) .or. &

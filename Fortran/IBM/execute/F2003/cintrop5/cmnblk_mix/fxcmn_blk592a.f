@@ -2,35 +2,28 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk592a cxcmn_blk551
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f fxcmn_blk592a.o cxcmn_blk551.o fxcmn_blk592a
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that 3-dimensional array variables
 !*				 of all data types inside of common blocks are
-!*				 interoperable with C variables 
+!*				 interoperable with C variables
 !*
 !*				 Test:  BIND(C) statement in module procedure
 !*
@@ -42,9 +35,9 @@
 !*  MM/DD/YY:  Init:  Comments:
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
-!*					
+!*
 
-module fmod1 
+module fmod1
    implicit none
 
    CONTAINS
@@ -52,7 +45,7 @@ module fmod1
 	use iso_c_binding
         implicit none
 	logical precision_r4, precision_r8, precision_r16
- 
+
         integer i,j,k
 
         integer (kind=o'001')                           :: int_s1a(2,2,2)
@@ -99,10 +92,10 @@ module fmod1
         real ( 8 )                              	:: real_s8c(2,2,2)
         real (KIND=O'010')      			:: real_s8d(2,2,2)
 
-                                     	
-                            	
+
+
         REAL (C_LONG_DOUBLE             )                  	:: real_s16c(2,2,2)
-                               	
+
 
         REAL (C_FLOAT                   )       	:: r_C_FLOAT_s4a(2,2,2)
         REAL (C_FLOAT                   )       	:: r_C_FLOAT_s4b(2,2,2)
@@ -347,16 +340,16 @@ module fmod1
 
      end subroutine
 
-end module fmod1 
+end module fmod1
 
 
 
 program fxcmn_blk592a
-	use fmod1 
+	use fmod1
 	use iso_c_binding
         implicit none
 	logical precision_r4, precision_r8, precision_r16
- 
+
         integer i,j,k
 
         integer (kind=o'001')                           :: int_s1a(2,2,2)
@@ -403,10 +396,10 @@ program fxcmn_blk592a
         real ( 8 )                              	:: real_s8c(2,2,2)
         real (KIND=O'010')      			:: real_s8d(2,2,2)
 
-                                     	
-                            	
+
+
         REAL (C_LONG_DOUBLE             )                  	:: real_s16c(2,2,2)
-                               	
+
 
         REAL (C_FLOAT                   )       	:: r_C_FLOAT_s4a(2,2,2)
         REAL (C_FLOAT                   )       	:: r_C_FLOAT_s4b(2,2,2)
@@ -504,8 +497,8 @@ program fxcmn_blk592a
 	!*** Call module subroutine
 	call Intern_FSub()
 
-! ---------------------------------------------------------------------------- 
-! Verification 
+! ----------------------------------------------------------------------------
+! Verification
 !       - verify values passed back from module subroutine
 ! ----------------------------------------------------------------------------
 

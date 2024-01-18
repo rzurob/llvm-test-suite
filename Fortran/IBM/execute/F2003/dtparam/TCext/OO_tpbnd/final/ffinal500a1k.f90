@@ -1,21 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal500a1k
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal500a1 by Jim Xia)
 !*  DATE                       : 2007-10-11 (original: 04/01/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
-!*  SECONDARY FUNCTIONS TESTED : type bound 
+!*  SECONDARY FUNCTIONS TESTED : type bound
 !*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf90)
 !*
 !*  DESCRIPTION                :
 !*

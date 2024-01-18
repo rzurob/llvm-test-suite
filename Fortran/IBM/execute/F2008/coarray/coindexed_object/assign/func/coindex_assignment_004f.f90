@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Andy Chen
 !*  DATE                       : September 09, 2010
 !* .or.GIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Test FORALL assignment
 !*
@@ -58,7 +48,6 @@ program coindex_assignment_004f
     forall(i=1:10)
         array2(i) = caf2(i)[me]
     end forall
-
 
     do i=1, 10
         if (caf1(i)[me] .ne. array1(i)) then

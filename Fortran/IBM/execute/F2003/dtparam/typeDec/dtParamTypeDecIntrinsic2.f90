@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecIntrinsic2
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 17, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,28 +19,27 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  The basic syatax  
-!*  CHARACTER 
+!*  The basic syatax
+!*  CHARACTER
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   PROGRAM dtParamTypeDecIntrinsic2
 
-  CHARACTER(LEN=10)             :: C1(1)   = CHAR(1) 
-  CHARACTER(LEN=:), POINTER     :: C2(:)  
-  CHARACTER(LEN=:), ALLOCATABLE :: C3(:)  
+  CHARACTER(LEN=10)             :: C1(1)   = CHAR(1)
+  CHARACTER(LEN=:), POINTER     :: C2(:)
+  CHARACTER(LEN=:), ALLOCATABLE :: C3(:)
 
-  CHARACTER*(10)             :: C4(1)      = CHAR(1) 
-  CHARACTER*(:), POINTER     :: C5(:)  
-  CHARACTER*(:), ALLOCATABLE :: C6(:)  
+  CHARACTER*(10)             :: C4(1)      = CHAR(1)
+  CHARACTER*(:), POINTER     :: C5(:)
+  CHARACTER*(:), ALLOCATABLE :: C6(:)
 
-  CHARACTER(LEN=10, KIND=1)              :: C7(1)   = CHAR(1) 
-  CHARACTER(LEN=:,  KIND=1), POINTER     :: C8(:)  
-  CHARACTER(LEN=:,  KIND=1), ALLOCATABLE :: C9(:)  
+  CHARACTER(LEN=10, KIND=1)              :: C7(1)   = CHAR(1)
+  CHARACTER(LEN=:,  KIND=1), POINTER     :: C8(:)
+  CHARACTER(LEN=:,  KIND=1), ALLOCATABLE :: C9(:)
 
 
   IF ( C1%KIND            .NE.   1          ) STOP 11
@@ -103,8 +96,8 @@
   CONTAINS
 
   SUBROUTINE IntSub1(C4, Len)
-  INTEGER          :: Len 
-  CHARACTER(LEN=*) :: C4(Len)  
+  INTEGER          :: Len
+  CHARACTER(LEN=*) :: C4(Len)
 
   IF ( C4%KIND            .NE.   1               ) STOP 21
   IF ( C4%LEN             .NE.   10              ) STOP 22
@@ -114,8 +107,8 @@
   END SUBROUTINE
 
   SUBROUTINE IntSub2(C7, Len)
-  INTEGER          :: Len 
-  CHARACTER*(*) :: C7(Len)  
+  INTEGER          :: Len
+  CHARACTER*(*) :: C7(Len)
 
   IF ( C7%KIND            .NE.   1               ) STOP 41
   IF ( C7%LEN             .NE.   10              ) STOP 42
@@ -125,8 +118,8 @@
   END SUBROUTINE
 
   SUBROUTINE IntSub3(C11, Len)
-  INTEGER          :: Len 
-  CHARACTER(LEN=*, KIND=1) :: C11(Len)  
+  INTEGER          :: Len
+  CHARACTER(LEN=*, KIND=1) :: C11(Len)
 
   IF ( C11%KIND            .NE.   1               ) STOP 61
   IF ( C11%LEN             .NE.   10              ) STOP 62

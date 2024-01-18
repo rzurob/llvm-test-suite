@@ -1,22 +1,16 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Initialization expression
 !*
-!* PROGRAMMER                 : Kelvin Li
 !* DATE                       : March 31, 2006
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : SPREAD intrinsic
 !*
 !* DESCRIPTION                : langlvl message
 !* ===================================================================
 
-
 real(4), dimension(2,2) :: r4=spread((/1.0,2.0/), dim=1, ncopies=2)
 real(8), dimension(2,2) :: r8=spread((/1.0,2.0/), dim=1, ncopies=2)
 real(16), dimension(2,2) :: r16=spread((/1.0,2.0/), dim=1, ncopies=2)
- 
+
 complex(4), dimension(2,2) :: c4=spread((/(1.0,2.0),(1.0,2.0)/), dim=1, ncopies=2)
 complex(8), dimension(2,2) :: c8=spread((/(1.0,2.0),(1.0,2.0)/), dim=1, ncopies=2)
 complex(16), dimension(2,2) :: c16=spread((/(1.0,2.0),(1.0,2.0)/), dim=1, ncopies=2)

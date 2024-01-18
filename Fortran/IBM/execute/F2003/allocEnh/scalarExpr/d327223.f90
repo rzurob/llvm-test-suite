@@ -1,21 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : d327223 - expr is a Scalar and variable is
 !*                               an Array
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : October 26, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: ALLOC: Incorrect Length Type Parameter
 !*                               Result for a Scalar Assigned to a Deferred
 !*                               Length CHARACTER Array
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATABLE Attribute, Intrinsic Assignment
@@ -29,7 +23,6 @@
 !*
 !*  When the CHARACTER Literal is placed inside an Array Constructor (either
 !*  Line 44 or 45), the Length Type Parameter is correctly set.
-!*
 !*
 !*  NOTE:  The Length comparison performed below is affected by Interp
 !*  Defect d320792.

@@ -1,33 +1,21 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!* TEST CASE TITLE : Functional test for DTP dummy argument with VALUE
-!*                                                                     
 !* TEST CASE NAME              : dtParamDummyValue06.f
 !*
-!*  PROGRAMMER                 : Andy Sheung
 !*  DATE                       : July 10, 2008
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
-!*  DESCRIPTION: 
-!*  The VALUE attribute specifies a type of argument association between a 
-!*  dummy argument and an actual argument. If the dummy argument has the 
-!*  VALUE attribute, it becomes associated with a definable anonymous data 
-!*  object whose initial value is that of the actual argument. Subsequent 
-!*  changes to the value or definition status of the dummy argument do not 
+!*  DESCRIPTION:
+!*  The VALUE attribute specifies a type of argument association between a
+!*  dummy argument and an actual argument. If the dummy argument has the
+!*  VALUE attribute, it becomes associated with a definable anonymous data
+!*  object whose initial value is that of the actual argument. Subsequent
+!*  changes to the value or definition status of the dummy argument do not
 !*  affect the actual argument.
 !*
 !*  CASE:
-!*  When the actual argument is a DT with a procedure pointer component 
+!*  When the actual argument is a DT with a procedure pointer component
 !*  that has a VALUE attribute in its dummy argument
 !*
 !* ===================================================================
@@ -52,7 +40,7 @@
     IF ((T1%i.ne.88).or.(T1%ch.ne.'uvw').or.(T1%i%KIND.ne.2).or.(T1%ch%LEN.ne.3)) THEN
       print *, T1%i,T1%ch
       print *, T1%i%KIND, T1%ch%LEN
-      STOP 4 
+      STOP 4
     END IF
 
   END SUBROUTINE
@@ -108,7 +96,7 @@
     IF ((T1%i.ne.99).or.(T1%ch.ne.'xyz').or.(T1%i%KIND.ne.2).or.(T1%ch%LEN.ne.3)) THEN
       print *, T1%i,T1%ch
       print *, T1%i%KIND, T1%ch%LEN
-      STOP 5 
+      STOP 5
     END IF
 
   END SUBROUTINE

@@ -1,24 +1,12 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dblprecision.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM/TO are of type dbl precision 
+!*  DESCRIPTION                : FROM/TO are of type dbl precision
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -36,11 +24,11 @@
                   (/2,3/) ))
 
       call move_alloc(d2, d1)
- 
+
       if ( .not. allocated(d1) ) stop 11
       if ( allocated(d2) ) stop 13
 
-      if ( size(d1, 1) /= 2) stop 21 
+      if ( size(d1, 1) /= 2) stop 21
       if ( size(d1, 2) /= 3) stop 23
 
       do j = 1, 3

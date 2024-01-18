@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d362249.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d362249.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 12 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 12 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 362249
@@ -29,7 +21,7 @@ module m
   type B(l2)
     integer,len   :: l2
 
-    type(A(l2+1))       :: a1comp(l2)   
+    type(A(l2+1))       :: a1comp(l2)
     type(B(l2)),pointer :: next=>null()
   end type
 
@@ -40,7 +32,7 @@ module m
   contains
      recursive subroutine assignB(this,dt)
         class(B(3)),intent(inout) :: this
-        type(B(*)),intent(in)     :: dt  
+        type(B(*)),intent(in)     :: dt
 
         print *,"in assignB"
 
@@ -48,7 +40,7 @@ module m
 
         if(associated(this%next)) nullify(this%next)
 
-        print *,associated(dt%next)   
+        print *,associated(dt%next)
 
         if(associated(dt%next))  then
           allocate(B(dt%l2) :: this%next)

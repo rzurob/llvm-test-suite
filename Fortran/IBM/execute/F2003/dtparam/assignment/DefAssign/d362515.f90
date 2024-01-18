@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d362515.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d362515.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 22 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 22 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 362515
@@ -33,7 +25,7 @@ module m
     type B(l2)
        integer,len :: l2 ! l2=1
        integer,allocatable :: i2(:)
-       type(A(l2+1)),allocatable :: a1comp(:) 
+       type(A(l2+1)),allocatable :: a1comp(:)
        type(A(:)),pointer  :: a2comp
     end type
 end module
@@ -91,5 +83,5 @@ program d362515
      print *,b3(4)%a2comp%c1
      print *,b3(4)%a2comp%i1
      print *,b3(4)%a2comp%g1
-     
+
 end program

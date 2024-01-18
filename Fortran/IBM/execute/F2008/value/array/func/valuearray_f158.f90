@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f158.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -32,8 +29,8 @@ end type
 
 integer SIZEOFA,doCounter
 parameter (SIZEOFA = 10)
-logical, external :: precision_r4  
-logical, external :: precision_x8 
+logical, external :: precision_r4
+logical, external :: precision_x8
 
  real, target :: tar1, tar2
  real, pointer :: po1
@@ -41,7 +38,7 @@ logical, external :: precision_x8
   tar1=5*atan(1.0)
   tar2=7*atan(1.0)
   po1=>tar2
-                 
+
   dvt1%r1=atan(1.0)
 
 	do doCounter=1,SIZEOFA
@@ -51,7 +48,7 @@ logical, external :: precision_x8
 		allocate(dvt1(doCounter)%r4(2))
 		dvt1(doCounter)%r4=(/atan(1.0),2*atan(1.0)/)
 		dvt1(doCounter)%r5=(/2*atan(1.0),3*atan(1.0),5*atan(1.0)/)
-		
+
 		dvt1_r(doCounter)%r1=atan(1.0)
 		dvt1_r(doCounter)%r2=>tar1
     	dvt1_r(doCounter)%r3=>po1
@@ -59,9 +56,9 @@ logical, external :: precision_x8
 		dvt1_r(doCounter)%r4=(/atan(1.0),2*atan(1.0)/)
 		dvt1_r(doCounter)%r5=(/2*atan(1.0),3*atan(1.0),5*atan(1.0)/)
 	end do
-  
+
 call sub11(dvt1,10)
-do doCounter=1,SIZEOFA	
+do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (dvt1(doCounter)%r1		,dvt1_r(doCounter)%r1		))	error stop 1101
 		if (.not. precision_r4 (dvt1(doCounter)%r2		,dvt1_r(doCounter)%r2		))	error stop 1102
 		if (.not. precision_r4 (dvt1(doCounter)%r3		,dvt1_r(doCounter)%r3		))	error stop 1103
@@ -74,7 +71,7 @@ do doCounter=1,SIZEOFA
 end do
 
 call sub12(dvt1)
-do doCounter=1,SIZEOFA	
+do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (dvt1(doCounter)%r1		,dvt1_r(doCounter)%r1		))	error stop 1201
 		if (.not. precision_r4 (dvt1(doCounter)%r2		,dvt1_r(doCounter)%r2		))	error stop 1202
 		if (.not. precision_r4 (dvt1(doCounter)%r3		,dvt1_r(doCounter)%r3		))	error stop 1203
@@ -87,7 +84,7 @@ do doCounter=1,SIZEOFA
 end do
 
 call sub13(dvt1)
-do doCounter=1,SIZEOFA	
+do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (dvt1(doCounter)%r1		,dvt1_r(doCounter)%r1		))	error stop 1301
 		if (.not. precision_r4 (dvt1(doCounter)%r2		,dvt1_r(doCounter)%r2		))	error stop 1302
 		if (.not. precision_r4 (dvt1(doCounter)%r3		,dvt1_r(doCounter)%r3		))	error stop 1303
@@ -100,7 +97,7 @@ do doCounter=1,SIZEOFA
 end do
 
 call sub14(dvt1)
-do doCounter=1,SIZEOFA	
+do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (dvt1(doCounter)%r1		,dvt1_r(doCounter)%r1		))	error stop 1401
 		if (.not. precision_r4 (dvt1(doCounter)%r2		,dvt1_r(doCounter)%r2		))	error stop 1402
 		if (.not. precision_r4 (dvt1(doCounter)%r3		,dvt1_r(doCounter)%r3		))	error stop 1403
@@ -113,7 +110,7 @@ do doCounter=1,SIZEOFA
 end do
 
 call sub21(dvt1,10)
-do doCounter=1,SIZEOFA	
+do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (dvt1(doCounter)%r1		,dvt1_r(doCounter)%r1		))	error stop 2101
 		if (.not. precision_r4 (dvt1(doCounter)%r2		,dvt1_r(doCounter)%r2		))	error stop 2102
 		if (.not. precision_r4 (dvt1(doCounter)%r3		,dvt1_r(doCounter)%r3		))	error stop 2103
@@ -126,7 +123,7 @@ do doCounter=1,SIZEOFA
 end do
 
 call sub22(dvt1)
-do doCounter=1,SIZEOFA	
+do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (dvt1(doCounter)%r1		,dvt1_r(doCounter)%r1		))	error stop 2201
 		if (.not. precision_r4 (dvt1(doCounter)%r2		,dvt1_r(doCounter)%r2		))	error stop 2202
 		if (.not. precision_r4 (dvt1(doCounter)%r3		,dvt1_r(doCounter)%r3		))	error stop 2203
@@ -139,7 +136,7 @@ do doCounter=1,SIZEOFA
 end do
 
 call sub23(dvt1)
-do doCounter=1,SIZEOFA	
+do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (dvt1(doCounter)%r1		,dvt1_r(doCounter)%r1		))	error stop 2301
 		if (.not. precision_r4 (dvt1(doCounter)%r2		,dvt1_r(doCounter)%r2		))	error stop 2302
 		if (.not. precision_r4 (dvt1(doCounter)%r3		,dvt1_r(doCounter)%r3		))	error stop 2303
@@ -152,7 +149,7 @@ do doCounter=1,SIZEOFA
 end do
 
 call sub24(dvt1)
-do doCounter=1,SIZEOFA	
+do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (dvt1(doCounter)%r1		,dvt1_r(doCounter)%r1		))	error stop 2401
 		if (.not. precision_r4 (dvt1(doCounter)%r2		,dvt1_r(doCounter)%r2		))	error stop 2402
 		if (.not. precision_r4 (dvt1(doCounter)%r3		,dvt1_r(doCounter)%r3		))	error stop 2403
@@ -165,7 +162,7 @@ do doCounter=1,SIZEOFA
 end do
 
 call sub31(dvt1,dvt1)
-do doCounter=1,SIZEOFA	  
+do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (dvt1(doCounter)%r1		,dvt1_r(doCounter)%r1		))	error stop 3101
 		if (.not. precision_r4 (dvt1(doCounter)%r2		,dvt1_r(doCounter)%r2		))	error stop 3102
 		if (.not. precision_r4 (dvt1(doCounter)%r3		,dvt1_r(doCounter)%r3		))	error stop 3103
@@ -178,7 +175,7 @@ do doCounter=1,SIZEOFA
 end do
 
 call sub32(dvt1,dvt1)
-do doCounter=1,SIZEOFA	
+do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (dvt1(doCounter)%r1		,dvt1_r(doCounter)%r1		))	error stop 3201
 		if (.not. precision_r4 (dvt1(doCounter)%r2		,dvt1_r(doCounter)%r2		))	error stop 3202
 		if (.not. precision_r4 (dvt1(doCounter)%r3		,dvt1_r(doCounter)%r3		))	error stop 3203
@@ -203,7 +200,7 @@ subroutine sub11(arg,n)
 	t2=13*atan(1.0)
 	p1=>t2
 
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (arg(doCounter)%r1,atan(1.0))) 		error stop 11001
 		if (.not. precision_r4 (arg(doCounter)%r2,5*atan(1.0))) 	error stop 11002
 		if (.not. precision_r4 (arg(doCounter)%r3,7*atan(1.0))) 	error stop 11003
@@ -213,14 +210,14 @@ subroutine sub11(arg,n)
 		if (.not. precision_r4 (arg(doCounter)%r5(1),2*atan(1.0))) 	error stop 11015
 		if (.not. precision_r4 (arg(doCounter)%r5(2),3*atan(1.0))) 	error stop 11025
 		if (.not. precision_r4 (arg(doCounter)%r5(3),5*atan(1.0))) 	error stop 11035
-	end do	
+	end do
 
 	if (size(arg) .ne. SIZEOFA) 		error stop 111
 	if ( any(lbound(arg) .ne. 1)) 		error stop 112
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 113
 	if (rank(arg) .ne. 1) 				error stop 114
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 115
-	
+
 	do doCounter=1,SIZEOFA
 		arg(doCounter)%r1=2*atan(1.0)
 		arg(doCounter)%r2=>t1
@@ -230,7 +227,7 @@ subroutine sub11(arg,n)
 		arg(doCounter)%r4=(/5*atan(1.0),3*atan(1.0)/)
 		arg(doCounter)%r5=(/3*atan(1.0),2*atan(1.0),atan(1.0)/)
 	end do
-end subroutine	
+end subroutine
 
 subroutine sub12(arg)
     type(t1) :: arg(10)
@@ -241,7 +238,7 @@ subroutine sub12(arg)
 	t2=13*atan(1.0)
 	p1=>t2
 
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (arg(doCounter)%r1,atan(1.0))) 		error stop 12001
 		if (.not. precision_r4 (arg(doCounter)%r2,5*atan(1.0))) 	error stop 12002
 		if (.not. precision_r4 (arg(doCounter)%r3,7*atan(1.0))) 	error stop 12003
@@ -251,14 +248,14 @@ subroutine sub12(arg)
 		if (.not. precision_r4 (arg(doCounter)%r5(1),2*atan(1.0))) 	error stop 12015
 		if (.not. precision_r4 (arg(doCounter)%r5(2),3*atan(1.0))) 	error stop 12025
 		if (.not. precision_r4 (arg(doCounter)%r5(3),5*atan(1.0))) 	error stop 12035
-	end do	
+	end do
 
 	if (size(arg) .ne. SIZEOFA) 		error stop 121
 	if ( any(lbound(arg) .ne. 1)) 		error stop 122
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 123
 	if (rank(arg) .ne. 1) 				error stop 124
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 125
-	
+
 	do doCounter=1,SIZEOFA
 		arg(doCounter)%r1=2*atan(1.0)
 		arg(doCounter)%r2=>t1
@@ -279,7 +276,7 @@ subroutine sub13(arg)
 	t2=13*atan(1.0)
 	p1=>t2
 
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (arg(doCounter)%r1,atan(1.0))) 		error stop 13001
 		if (.not. precision_r4 (arg(doCounter)%r2,5*atan(1.0))) 	error stop 13002
 		if (.not. precision_r4 (arg(doCounter)%r3,7*atan(1.0))) 	error stop 13003
@@ -289,14 +286,14 @@ subroutine sub13(arg)
 		if (.not. precision_r4 (arg(doCounter)%r5(1),2*atan(1.0))) 	error stop 13015
 		if (.not. precision_r4 (arg(doCounter)%r5(2),3*atan(1.0))) 	error stop 13025
 		if (.not. precision_r4 (arg(doCounter)%r5(3),5*atan(1.0))) 	error stop 13035
-	end do	
+	end do
 
 	if (size(arg) .ne. SIZEOFA) 		error stop 131
 	if ( any(lbound(arg) .ne. 1)) 		error stop 132
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 133
 	if (rank(arg) .ne. 1) 				error stop 134
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 135
-	
+
 	do doCounter=1,SIZEOFA
 		arg(doCounter)%r1=2*atan(1.0)
 		arg(doCounter)%r2=>t1
@@ -306,7 +303,7 @@ subroutine sub13(arg)
 		arg(doCounter)%r4=(/5*atan(1.0),3*atan(1.0)/)
 		arg(doCounter)%r5=(/3*atan(1.0),2*atan(1.0),atan(1.0)/)
 	end do
-end subroutine	
+end subroutine
 
 subroutine sub14(arg)
     type(t1) :: arg(:)
@@ -317,7 +314,7 @@ subroutine sub14(arg)
 	t2=13*atan(1.0)
 	p1=>t2
 
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (arg(doCounter)%r1,atan(1.0))) 		error stop 14001
 		if (.not. precision_r4 (arg(doCounter)%r2,5*atan(1.0))) 	error stop 14002
 		if (.not. precision_r4 (arg(doCounter)%r3,7*atan(1.0))) 	error stop 14003
@@ -327,14 +324,14 @@ subroutine sub14(arg)
 		if (.not. precision_r4 (arg(doCounter)%r5(1),2*atan(1.0))) 	error stop 14015
 		if (.not. precision_r4 (arg(doCounter)%r5(2),3*atan(1.0))) 	error stop 14025
 		if (.not. precision_r4 (arg(doCounter)%r5(3),5*atan(1.0))) 	error stop 14035
-	end do	
+	end do
 
 	if (size(arg) .ne. SIZEOFA) 		error stop 141
 	if ( any(lbound(arg) .ne. 1)) 		error stop 142
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 143
 	if (rank(arg) .ne. 1) 				error stop 144
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 145
-	
+
 	do doCounter=1,SIZEOFA
 		arg(doCounter)%r1=2*atan(1.0)
 		arg(doCounter)%r2=>t1
@@ -356,7 +353,7 @@ subroutine sub21(arg,n)
 	t2=13*atan(1.0)
 	p1=>t2
 
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (arg(doCounter)%r1,atan(1.0))) 		error stop 21001
 		if (.not. precision_r4 (arg(doCounter)%r2,5*atan(1.0))) 	error stop 21002
 		if (.not. precision_r4 (arg(doCounter)%r3,7*atan(1.0))) 	error stop 21003
@@ -366,14 +363,14 @@ subroutine sub21(arg,n)
 		if (.not. precision_r4 (arg(doCounter)%r5(1),2*atan(1.0))) 	error stop 21015
 		if (.not. precision_r4 (arg(doCounter)%r5(2),3*atan(1.0))) 	error stop 21025
 		if (.not. precision_r4 (arg(doCounter)%r5(3),5*atan(1.0))) 	error stop 21035
-	end do	
+	end do
 
 	if (size(arg) .ne. SIZEOFA) 		error stop 211
 	if ( any(lbound(arg) .ne. 1)) 		error stop 212
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 213
 	if (rank(arg) .ne. 1) 				error stop 214
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 215
-	
+
 	do doCounter=1,SIZEOFA
 		arg(doCounter)%r1=2*atan(1.0)
 		arg(doCounter)%r2=>t1
@@ -394,7 +391,7 @@ subroutine sub22(arg)
 	t2=13*atan(1.0)
 	p1=>t2
 
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (arg(doCounter)%r1,atan(1.0))) 		error stop 22001
 		if (.not. precision_r4 (arg(doCounter)%r2,5*atan(1.0))) 	error stop 22002
 		if (.not. precision_r4 (arg(doCounter)%r3,7*atan(1.0))) 	error stop 22003
@@ -404,14 +401,14 @@ subroutine sub22(arg)
 		if (.not. precision_r4 (arg(doCounter)%r5(1),2*atan(1.0))) 	error stop 22015
 		if (.not. precision_r4 (arg(doCounter)%r5(2),3*atan(1.0))) 	error stop 22025
 		if (.not. precision_r4 (arg(doCounter)%r5(3),5*atan(1.0))) 	error stop 22035
-	end do	
+	end do
 
 	if (size(arg) .ne. SIZEOFA) 		error stop 221
 	if ( any(lbound(arg) .ne. 1)) 		error stop 222
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 223
 	if (rank(arg) .ne. 1) 				error stop 224
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 225
-	
+
 	do doCounter=1,SIZEOFA
 		arg(doCounter)%r1=2*atan(1.0)
 		arg(doCounter)%r2=>t1
@@ -432,7 +429,7 @@ subroutine sub23(arg)
 	t2=13*atan(1.0)
 	p1=>t2
 
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (arg(doCounter)%r1,atan(1.0))) 		error stop 23001
 		if (.not. precision_r4 (arg(doCounter)%r2,5*atan(1.0))) 	error stop 23002
 		if (.not. precision_r4 (arg(doCounter)%r3,7*atan(1.0))) 	error stop 23003
@@ -442,14 +439,14 @@ subroutine sub23(arg)
 		if (.not. precision_r4 (arg(doCounter)%r5(1),2*atan(1.0))) 	error stop 23015
 		if (.not. precision_r4 (arg(doCounter)%r5(2),3*atan(1.0))) 	error stop 23025
 		if (.not. precision_r4 (arg(doCounter)%r5(3),5*atan(1.0))) 	error stop 23035
-	end do	
+	end do
 
 	if (size(arg) .ne. SIZEOFA) 		error stop 231
 	if ( any(lbound(arg) .ne. 1)) 		error stop 232
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 233
 	if (rank(arg) .ne. 1) 				error stop 234
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 235
-	
+
 	do doCounter=1,SIZEOFA
 		arg(doCounter)%r1=2*atan(1.0)
 		arg(doCounter)%r2=>t1
@@ -470,7 +467,7 @@ subroutine sub24(arg)
 	t2=13*atan(1.0)
 	p1=>t2
 
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (arg(doCounter)%r1,atan(1.0))) 		error stop 24001
 		if (.not. precision_r4 (arg(doCounter)%r2,5*atan(1.0))) 	error stop 24002
 		if (.not. precision_r4 (arg(doCounter)%r3,7*atan(1.0))) 	error stop 24003
@@ -480,14 +477,14 @@ subroutine sub24(arg)
 		if (.not. precision_r4 (arg(doCounter)%r5(1),2*atan(1.0))) 	error stop 24015
 		if (.not. precision_r4 (arg(doCounter)%r5(2),3*atan(1.0))) 	error stop 24025
 		if (.not. precision_r4 (arg(doCounter)%r5(3),5*atan(1.0))) 	error stop 24035
-	end do	
+	end do
 
 	if (size(arg) .ne. SIZEOFA) 		error stop 241
 	if ( any(lbound(arg) .ne. 1)) 		error stop 242
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 243
 	if (rank(arg) .ne. 1) 				error stop 244
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 245
-	
+
 	do doCounter=1,SIZEOFA
 		arg(doCounter)%r1=2*atan(1.0)
 		arg(doCounter)%r2=>t1
@@ -509,7 +506,7 @@ subroutine sub31(arg,arg2)
 	t2=13*atan(1.0)
 	p1=>t2
 
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (arg(doCounter)%r1,atan(1.0))) 		error stop 31001
 		if (.not. precision_r4 (arg(doCounter)%r2,5*atan(1.0))) 	error stop 31002
 		if (.not. precision_r4 (arg(doCounter)%r3,7*atan(1.0))) 	error stop 31003
@@ -519,14 +516,14 @@ subroutine sub31(arg,arg2)
 		if (.not. precision_r4 (arg(doCounter)%r5(1),2*atan(1.0))) 	error stop 31015
 		if (.not. precision_r4 (arg(doCounter)%r5(2),3*atan(1.0))) 	error stop 31025
 		if (.not. precision_r4 (arg(doCounter)%r5(3),5*atan(1.0))) 	error stop 31035
-	end do	
+	end do
 
 	if (size(arg) .ne. SIZEOFA) 		error stop 311
 	if ( any(lbound(arg) .ne. 1)) 		error stop 312
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 313
 	if (rank(arg) .ne. 1) 				error stop 314
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 315
-	
+
 	do doCounter=1,SIZEOFA
 		arg(doCounter)%r1=2*atan(1.0)
 		arg(doCounter)%r2=>t1
@@ -548,7 +545,7 @@ subroutine sub32(arg,arg2)
 	t2=13*atan(1.0)
 	p1=>t2
 
-	do doCounter=1,SIZEOFA	  
+	do doCounter=1,SIZEOFA
 		if (.not. precision_r4 (arg(doCounter)%r1,atan(1.0))) 		error stop 32001
 		if (.not. precision_r4 (arg(doCounter)%r2,5*atan(1.0))) 	error stop 32002
 		if (.not. precision_r4 (arg(doCounter)%r3,7*atan(1.0))) 	error stop 32003
@@ -558,14 +555,14 @@ subroutine sub32(arg,arg2)
 		if (.not. precision_r4 (arg(doCounter)%r5(1),2*atan(1.0))) 	error stop 32015
 		if (.not. precision_r4 (arg(doCounter)%r5(2),3*atan(1.0))) 	error stop 32025
 		if (.not. precision_r4 (arg(doCounter)%r5(3),5*atan(1.0))) 	error stop 32035
-	end do	
+	end do
 
 	if (size(arg) .ne. SIZEOFA) 		error stop 321
 	if ( any(lbound(arg) .ne. 1)) 		error stop 322
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 323
 	if (rank(arg) .ne. 1) 				error stop 324
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 325
-	
+
 	do doCounter=1,SIZEOFA
 		arg(doCounter)%r1=2*atan(1.0)
 		arg(doCounter)%r2=>t1

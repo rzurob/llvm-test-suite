@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Intrinsic  with Derived Type Parameter
 !*
-!* PROGRAMMER                 : James Ren
 !* DATE                       : April 16, 2007
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : lbound, ubound and size intrinsics
 !*
@@ -36,4 +31,4 @@ print *, lbound(ch1%arr), ubound(ch1%arr), size(ch1%arr)
 print *, lbound(ch1%ptr), ubound(ch1%ptr), size(ch1%ptr)
 
 end
-   
+

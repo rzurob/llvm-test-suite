@@ -3,13 +3,9 @@
 ! opt variations: -qnol -qdeferredlp -qreuse=none
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_procptr/declaration2
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 06/18/2005
 ! PRIMARY FUNCTIONS TESTED   : procedure pointer declaration
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : The procedure pointer is a dummy argument
 !                              and has the OPTIONAL attribute. The
 !                              containing procedure is an external

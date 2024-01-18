@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 2010-08-11
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : test intrinsic SUM. Use co-indexed objects as
 !                               Array, data type is default integer

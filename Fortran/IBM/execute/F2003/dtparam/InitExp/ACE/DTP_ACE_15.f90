@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_ACE_15.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification
-!*  SECONDARY FUNCTIONS TESTED : Function Result + Select Type 
+!*  SECONDARY FUNCTIONS TESTED : Function Result + Select Type
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +25,7 @@ MODULE Mod
          INTEGER, KIND :: k1
          INTEGER, LEN  :: l1
 
-         INTEGER(k1) :: A1(l1) 
+         INTEGER(k1) :: A1(l1)
       END TYPE
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)
@@ -45,16 +37,16 @@ MODULE Mod
 
       CONTAINS
 
-      FUNCTION CreateNew(arg) Result(Res) 
+      FUNCTION CreateNew(arg) Result(Res)
        CLASS(Base(4,*)), INTENT(IN) :: arg(:)
        CLASS(Base(4,:)), ALLOCATABLE :: Res(:)
 
-       ALLOCATE( Res(SIZE(arg)), SOURCE = arg ) 
+       ALLOCATE( Res(SIZE(arg)), SOURCE = arg )
 
-      END FUNCTION  
+      END FUNCTION
 END MODULE
 PROGRAM DTP_ACE_15
-      USE Mod 
+      USE Mod
 
     class(base(4,:)), allocatable :: dum(:)
     allocate (dum(1), source = base(4,5)(5))
@@ -67,7 +59,7 @@ PROGRAM DTP_ACE_15
            DO I = 1, SIZE(s)
               IF ( SIZE(s(I)%A1) .NE.  5 ) STOP 14
               IF ( ANY(s(I)%A1   .NE. 5) ) STOP 15
-           END DO 
+           END DO
 
          TYPE IS (Child(4,*,4,*))
            STOP 16
@@ -90,7 +82,7 @@ PROGRAM DTP_ACE_15
            DO I = 1, SIZE(s)
               IF ( SIZE(s(I)%A1) .NE. 10) STOP 21
               IF ( ANY(s(I)%A1   .NE. [(I*J, J=1, 10)]) ) STOP 22
-           END DO 
+           END DO
 
          TYPE IS (Child(4,*,4,*))
            STOP 23
@@ -111,7 +103,7 @@ PROGRAM DTP_ACE_15
            DO I = 1, SIZE(s)
               IF ( SIZE(s(I)%A1) .NE.  3 ) STOP 28
               IF ( ANY(s(I)%A1   .NE. [1,2,3]) ) STOP 29
-           END DO 
+           END DO
 
          TYPE IS (Child(4,*,4,*))
            STOP 30
@@ -140,8 +132,8 @@ PROGRAM DTP_ACE_15
                  DO J = 1, SIZE(s(I)%poly)
                     IF ( SIZE(s(I)%poly(J)%A1) .NE.     1 ) STOP 43
                     IF ( ANY(s(I)%poly(J)%A1   .NE. [98]) ) STOP 44
-                 END DO 
-            END DO 
+                 END DO
+            END DO
 
         CLASS DEFAULT
            STOP 45

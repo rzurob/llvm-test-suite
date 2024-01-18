@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp Arg19.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg19.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg19.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  If the interface of the dummy argument is implicit and either the name of 
-!*  the dummy argument is  explicitly typed or it is referenced as a function, 
+!*
+!*  If the interface of the dummy argument is implicit and either the name of
+!*  the dummy argument is  explicitly typed or it is referenced as a function,
 !*  the dummy argument shall not be referenced as a subroutine and the actual
 !*  argument shall be a function, function procedure pointer, or dummy procedure.
 !*
@@ -57,7 +51,7 @@
   USE M
   PROCEDURE(), POINTER :: ProcPtr
   PROCEDURE(REAL), POINTER :: ProcPtr1
-  PROCEDURE() :: ExtSub 
+  PROCEDURE() :: ExtSub
 
   ProcPtr => F
 
@@ -85,7 +79,7 @@
   END SUBROUTINE
 
   END
-  
+
   SUBROUTINE ExtSub()
   END SUBROUTINE
 

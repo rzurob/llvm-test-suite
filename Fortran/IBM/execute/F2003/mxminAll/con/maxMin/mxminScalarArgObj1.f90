@@ -1,25 +1,14 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                : MAX/MIN with named constant as actual 
+!*  DESCRIPTION                : MAX/MIN with named constant as actual
 !*                               argument in procedure pointer with
-!*                               explicit interface  
+!*                               explicit interface
 !* ===================================================================
 
   module m
@@ -36,8 +25,7 @@
     end interface
   end module
 
-
-  program mxminScalarArgObj1 
+  program mxminScalarArgObj1
 
   use m
     interface
@@ -59,7 +47,7 @@
     procedure(ifacesub1), pointer :: pp1
     procedure(ifacefun1), pointer :: pp2
 
-    parameter(x="ddd", y="sss") 
+    parameter(x="ddd", y="sss")
 
     pp1 => sub1
     pp2 => fun1
@@ -70,7 +58,7 @@
           error stop 1_4
     endif
 
-  end program mxminScalarArgObj1 
+  end program mxminScalarArgObj1
 
   subroutine sub1(arg1, arg2)
     character*3 arg1
@@ -85,5 +73,4 @@
     character*3 :: fun1
     fun1 = arg
   end function
-
 

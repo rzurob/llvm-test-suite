@@ -1,13 +1,9 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qnock -qnok -ql -qreuse=self -qdefaultpv -qdeferredlp /tstdev/OO_poly/intrinsics/null/argAssociation008.f
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/null
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 03/04/2005
 ! PRIMARY FUNCTIONS TESTED   : null
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : null is an actual argument. Dummy
 !                              argument is with assumed character length.
 !=======================================================================

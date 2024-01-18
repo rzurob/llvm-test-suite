@@ -1,20 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : submodule04f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 6 December, 2012
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : submodule
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
 !*  TARGET(S)                  :
@@ -24,8 +18,8 @@
 !*
 !*   Ensure variable name reused in local scope of submodule does not
 !*   overwrite the variable in host scope
-!*   
-!*   The variable is reused in a local scope by: 
+!*
+!*   The variable is reused in a local scope by:
 !*   - redeclaration in a submodule
 !*   - redeclaration in a subroutine
 !*   - use association, with an alias in a submodule
@@ -33,7 +27,7 @@
 !*
 !*  Secondary tests:
 !*  - chain of submodules (5 levels)
-!*  - compile succeeds if an interface declares a subroutine, which is 
+!*  - compile succeeds if an interface declares a subroutine, which is
 !*    never defined in the host nor the submodules
 !* ===================================================================
 !*
@@ -47,7 +41,7 @@ MODULE m
 IMPLICIT NONE
 integer, public :: modInt = 100
 
-  INTERFACE 
+  INTERFACE
     module subroutine sub1()
     end subroutine sub1
 
@@ -56,7 +50,7 @@ integer, public :: modInt = 100
 
     module subroutine sub3()
     end subroutine sub3
-   
+
     module subroutine sub4()
     end subroutine sub4
 
@@ -95,10 +89,10 @@ END SUBMODULE subm2
 SUBMODULE (m:subm2) subm3
 USE m2, modInt => a2
 CONTAINS
-  module subroutine sub3() 
+  module subroutine sub3()
       print *, "in sub3: modInt = ", modInt
   end subroutine sub3
-  
+
   module subroutine sub4()
       USE m2, modInt => b2
       print *, "in sub4: modInt = ", modInt
@@ -107,7 +101,7 @@ END SUBMODULE
 
 SUBMODULE (m:subm3) subm4
 CONTAINS
-  module subroutine sub5() 
+  module subroutine sub5()
       integer :: modInt = 104
       print *, "in sub5: modInt = ", modInt
   end subroutine sub5
@@ -115,7 +109,7 @@ END SUBMODULE subm4
 
 SUBMODULE (m:subm4) subm5
 CONTAINS
-  module subroutine sub6() 
+  module subroutine sub6()
       call sub1                              ! expect modInt value from host scope
       call sub2                              ! expect modInt value from subm2 scope
       call sub3                              ! expect modInt value from subm3 scope

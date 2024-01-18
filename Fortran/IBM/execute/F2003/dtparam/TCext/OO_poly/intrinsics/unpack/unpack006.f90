@@ -3,13 +3,9 @@
 ! opt variations: -qnok -qnol -qreuse=base
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/unpack
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/22/2005
 ! PRIMARY FUNCTIONS TESTED   : unpack
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : VECTOR is unlimited poly. FIELD is array.
 !=======================================================================
 ! REVISION HISTORY

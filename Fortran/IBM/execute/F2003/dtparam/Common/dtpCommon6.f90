@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpCommon6 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpCommon6
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 17, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,20 +19,17 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The common statement
-!* 
+!*
 !*  The blank common blocks with different sizes
-!* 
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
- 
+
   TYPE :: DT_I(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
@@ -65,9 +56,9 @@
     T(I)%C1=CHAR(I)
     T(I)%C2=CHAR(I)
   END DO
- 
+
   END SUBROUTINE
- 
+
   SUBROUTINE Set2(I1, I2)
 
   INTEGER :: I1, I2, I
@@ -81,29 +72,29 @@
   END DO
 
   END SUBROUTINE
- 
+
   END MODULE
 
-  PROGRAM dtpCommon6 
+  PROGRAM dtpCommon6
   USE M
   IMPLICIT NONE
 
   TYPE(DT_I(2,7))  :: T(N)
- 
-  COMMON T 
+
+  COMMON T
   INTEGER I
 
   T=DT_I(2,7)(C1=CHAR(1), I=-1, C2=CHAR(2))
 
   CALL Set1(1, N1)
- 
-  DO I=1, N1 
+
+  DO I=1, N1
     IF ( ANY( T(I)%C1 .NE. CHAR(I) ) ) STOP 11
     IF ( ANY( T(I)%I  .NE. I       ) ) STOP 12
     IF ( ANY( T(I)%C2 .NE. CHAR(I) ) ) STOP 13
   END DO
 
-  DO I=N1+1, N 
+  DO I=N1+1, N
     IF ( ANY( T(I)%C1 .NE. CHAR(1) ) ) STOP 21
     IF ( ANY( T(I)%I  .NE. -1      ) ) STOP 22
     IF ( ANY( T(I)%C2 .NE. CHAR(2) ) ) STOP 23

@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpIAABasicFunction003
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2009-05-22
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment with Allocation
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 365653
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*  ADAPTED FROM               : dtpIAABasic003 (<-dtpIAABasic002<-dtpIAABasic001)
 !*
 !*  DESCRIPTION
@@ -257,7 +251,7 @@ program dtpIAABasicFunction003
   print *, 41, allocated(o1), o1%k, o1%l, len(o1%dlvar%chvar), size(o1%dlvar%iarr), o1
   print *, 42, allocated(o2), o2%k, o2%l, len(o2%dlvar%chvar), size(o2%dlvar%iarr), o2
   print *, 43, allocated(o3), o3%k, o3%l, len(o3%dlvar%chvar), size(o3%dlvar%iarr), o3
-  
+
   print *, 44, allocated(v1), v1%k, v1%l, len(v1%dlvar%chvar), size(v1%dlvar%iarr), v1
   print *, 45, allocated(v2), v2%k, v2%l, len(v2%dlvar%chvar), size(v2%dlvar%iarr), v2
   print *, 46, allocated(v3), v3%k, v3%l, len(v3%dlvar%chvar), size(v3%dlvar%iarr), v3
@@ -325,7 +319,7 @@ program dtpIAABasicFunction003
   print *, 91, allocated(o1), o1%k, o1%l, len(o1%dlvar%chvar), size(o1%dlvar%iarr), o1
   print *, 92, allocated(o2), o2%k, o2%l, len(o2%dlvar%chvar), size(o2%dlvar%iarr), o2
   print *, 93, allocated(o3), o3%k, o3%l, len(o3%dlvar%chvar), size(o3%dlvar%iarr), o3
-  
+
   print *, 94, allocated(v1), v1%k, v1%l, len(v1%dlvar%chvar), size(v1%dlvar%iarr), v1
   print *, 95, allocated(v2), v2%k, v2%l, len(v2%dlvar%chvar), size(v2%dlvar%iarr), v2
   print *, 96, allocated(v3), v3%k, v3%l, len(v3%dlvar%chvar), size(v3%dlvar%iarr), v3

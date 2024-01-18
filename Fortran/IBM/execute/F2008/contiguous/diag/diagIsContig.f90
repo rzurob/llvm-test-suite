@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : diagIsContig.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - 
-!*                               - 
+!*  DESCRIPTION                : -
+!*                               -
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -34,23 +24,23 @@ PROGRAM diagIsContig
 
       INTEGER                  :: val = 10
       INTEGER, PARAMETER       :: cte = KIND(0.0)
-      DOUBLE PRECISION         :: var 
-      COMPLEX, TARGET          :: tgt 
-      CLASS(*), POINTER        :: ptr   
-      CLASS(*), ALLOCATABLE    :: all   
+      DOUBLE PRECISION         :: var
+      COMPLEX, TARGET          :: tgt
+      CLASS(*), POINTER        :: ptr
+      CLASS(*), ALLOCATABLE    :: all
 
-      print *, IS_CONTIGUOUS(val) ! invalid 
-      print *, IS_CONTIGUOUS(cte) ! invalid 
-      print *, IS_CONTIGUOUS(var) ! invalid 
-      print *, IS_CONTIGUOUS(tgt) ! invalid 
+      print *, IS_CONTIGUOUS(val) ! invalid
+      print *, IS_CONTIGUOUS(cte) ! invalid
+      print *, IS_CONTIGUOUS(var) ! invalid
+      print *, IS_CONTIGUOUS(tgt) ! invalid
 
-      ptr => tgt   
-      print *, IS_CONTIGUOUS(ptr) ! invalid 
+      ptr => tgt
+      print *, IS_CONTIGUOUS(ptr) ! invalid
 
       ALLOCATE( REAL(8) :: all )
-      print *, IS_CONTIGUOUS(all) ! invalid 
+      print *, IS_CONTIGUOUS(all) ! invalid
 
-      print *, IS_CONTIGUOUS(foo()) ! invalid 
+      print *, IS_CONTIGUOUS(foo()) ! invalid
 
       CONTAINS
 

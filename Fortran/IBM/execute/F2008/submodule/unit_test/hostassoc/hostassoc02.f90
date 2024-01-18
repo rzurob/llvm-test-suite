@@ -9,21 +9,21 @@ module anc_mod
   real :: rr1 = 0.0
   character(:), allocatable :: cc1
 
-  type(base), save :: b1 
+  type(base), save :: b1
   private b1
 
   interface
     module subroutine mod_sub()
-    end subroutine 
+    end subroutine
   end interface
 contains
   subroutine print_mod_var()
-    print*, ii1 
-    print*, rr1 
-    if (allocated(cc1)) then 
-      print*, cc1 
+    print*, ii1
+    print*, rr1
+    if (allocated(cc1)) then
+      print*, cc1
     end if
-    print*, b1 
+    print*, b1
   end subroutine
 end module
 
@@ -34,11 +34,11 @@ implicit none
 
 contains
   subroutine s1()
-    ii1 = 5 
-    rr1 = 5.0 
+    ii1 = 5
+    rr1 = 5.0
     cc1 = "HELLO5"
-    b1%i1 = 5 
-  end subroutine 
+    b1%i1 = 5
+  end subroutine
 end submodule
 
 submodule (anc_mod:submod1) submod2
@@ -48,11 +48,11 @@ implicit none
 
 contains
   subroutine s2()
-    ii1 = 7 
-    rr1 = 7.0 
+    ii1 = 7
+    rr1 = 7.0
     cc1 = "HELLO7"
-    b1%i1 = 7 
-  end 
+    b1%i1 = 7
+  end
 end submodule
 
 submodule (anc_mod:submod2) submod3
@@ -64,38 +64,37 @@ contains
   module subroutine mod_sub()
     call s1()
     call print_mod_var()
-    print*, ii1 
-    print*, rr1 
-    if (allocated(cc1)) then 
-      print*, cc1 
+    print*, ii1
+    print*, rr1
+    if (allocated(cc1)) then
+      print*, cc1
     end if
-    print*, b1 
+    print*, b1
     call s2()
     call print_mod_var()
-    print*, ii1 
-    print*, rr1 
-    if (allocated(cc1)) then 
-      print*, cc1 
+    print*, ii1
+    print*, rr1
+    if (allocated(cc1)) then
+      print*, cc1
     end if
-    print*, b1 
+    print*, b1
     call s3()
     call print_mod_var()
-    print*, ii1 
-    print*, rr1 
-    if (allocated(cc1)) then 
-      print*, cc1 
+    print*, ii1
+    print*, rr1
+    if (allocated(cc1)) then
+      print*, cc1
     end if
-    print*, b1 
-  end subroutine 
+    print*, b1
+  end subroutine
 
   subroutine s3()
-    ii1 = 9 
-    rr1 = 9.0 
+    ii1 = 9
+    rr1 = 9.0
     cc1 = "HELLO9"
-    b1%i1 = 9 
-  end 
+    b1%i1 = 9
+  end
 end submodule
-
 
 program main
   use anc_mod

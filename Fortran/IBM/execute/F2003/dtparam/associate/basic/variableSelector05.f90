@@ -1,20 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : variableSelector05
-!*  TEST CASE TITLE            : variable selector with Derived Type Parameters
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : July  8, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is a variable
 !*  SECONDARY FUNCTIONS TESTED : variable is an Unlimited Polymorphic
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE
@@ -149,7 +143,7 @@ RECURSIVE SUBROUTINE CheckTypeParameters(rc, obj, p1, p2)
                         END IF
 
                         CALL CheckTypeParameters((rc + 10_4), o%base2, p1)
-                        
+
                     CLASS DEFAULT
                         PRINT *, '    TYPE(Unknown)'
                         CALL zzrc( (rc + 6_4) )

@@ -1,33 +1,21 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : underflowCtrl3.f
-!*
-!*  PROGRAMMER                 : Nancy Wang
 !*  DATE                       : Nov. 15 2007
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ieee_support_underflow_control(X) 
-!*                             :
+!*  PRIMARY FUNCTIONS TESTED   : ieee_support_underflow_control(X)
 !*  SECONDARY FUNCTIONS TESTED :
 !*  REFERENCE                  : Feature Number 289080
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                :    
-!*  1. test if ieee_support_underflow_control(X) returns false when passing 
-!*     a literal constant of real type argument with kind equal to 4,8,16  
-!*  2. test if ieee_support_underflow_control(X) returns false when passing 
-!*     a named constant of real type argument with kind equal to 4,8,16 
+!*  DESCRIPTION                :
+!*  1. test if ieee_support_underflow_control(X) returns false when passing
+!*     a literal constant of real type argument with kind equal to 4,8,16
+!*  2. test if ieee_support_underflow_control(X) returns false when passing
+!*     a named constant of real type argument with kind equal to 4,8,16
 !*  3. test if ieee_support_underflow_control(X) returns false when passing
-!*     a named constant of real type array argument with kind equal to 4,8,16 
+!*     a named constant of real type array argument with kind equal to 4,8,16
 !*
-!23456789012345678901234567890123456789012345678901234567890123456789012   
+!23456789012345678901234567890123456789012345678901234567890123456789012
       module m
          integer,parameter  :: k4=4
          integer,parameter  :: k8=8
@@ -41,7 +29,7 @@
                     a10=-2.5E02, a11=-2.5E02_4, a12=-2.5E02_k4, &
                     a13=-2.E-1,  a14=-2.E-1_4,  a15=-2.E-1_k4,  &
                     a16=+2E+1,   a17=+2E+1_4,   a18=+2E+1_k4,   &
-                    a19=-.2E+1,  a20=-.2E+1_4,  a21=-.2E+1_k4   ) 
+                    a19=-.2E+1,  a20=-.2E+1_4,  a21=-.2E+1_k4   )
 
          real(8):: b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,  &
                    b14,b15,b16,b17,b18,b19,b20,b21
@@ -65,8 +53,8 @@
 
          real(4),dimension(20)  :: A
          real(8),dimension(20)  :: B
-         real(16),dimension(20) :: C   
-         real(4),dimension(5,4) :: AA      
+         real(16),dimension(20) :: C
+         real(4),dimension(5,4) :: AA
          real(8),dimension(5,4) :: BB
          real(16),dimension(5,4):: CC
 
@@ -74,7 +62,7 @@
 
       program underflowCtrl3
          use,intrinsic :: ieee_arithmetic
-         use m 
+         use m
          implicit none
 
 
@@ -88,7 +76,7 @@
          BB=reshape(B,(/5,4/))
          CC=reshape(C,(/5,4/))
 
-!        pass a literal constant of real type with kind=4  
+!        pass a literal constant of real type with kind=4
          if (ieee_support_underflow_control(-2.5))         error stop 101_4
          if (ieee_support_underflow_control(-2.5_4))       error stop 102_4
          if (ieee_support_underflow_control(-2.5_k4))      error stop 103_4
@@ -151,7 +139,7 @@
          if (ieee_support_underflow_control(-.2E+136_16))  error stop 156_4
          if (ieee_support_underflow_control(-.2E+136_k16)) error stop 157_4
 
-!        pass a named constant of real type with kind=4 
+!        pass a named constant of real type with kind=4
          if (ieee_support_underflow_control(a1))           error stop 158_4
          if (ieee_support_underflow_control(a2))           error stop 159_4
          if (ieee_support_underflow_control(a3))           error stop 160_4
@@ -172,8 +160,8 @@
          if (ieee_support_underflow_control(a18))          error stop 175_4
          if (ieee_support_underflow_control(a19))          error stop 176_4
          if (ieee_support_underflow_control(a20))          error stop 177_4
-         if (ieee_support_underflow_control(a21))          error stop 178_4 
-    
+         if (ieee_support_underflow_control(a21))          error stop 178_4
+
 !        pass a named constant of real type with kind=8
          if (ieee_support_underflow_control(b1))           error stop 179_4
          if (ieee_support_underflow_control(b2))           error stop 180_4
@@ -226,6 +214,6 @@
          if (ieee_support_underflow_control(C))            error stop 223_4
          if (ieee_support_underflow_control(AA))           error stop 224_4
          if (ieee_support_underflow_control(BB))           error stop 225_4
-         if (ieee_support_underflow_control(CC))           error stop 226_4 
+         if (ieee_support_underflow_control(CC))           error stop 226_4
 
        end program

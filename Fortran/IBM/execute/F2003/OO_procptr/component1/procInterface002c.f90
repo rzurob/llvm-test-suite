@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_procptr/component1
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 04/18/2005
 ! PRIMARY FUNCTIONS TESTED   : procedure pointer component
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Do not specify proc-interface. The
 !                              procedure pointer is a dummy argument.
 !                              The actual argument is a procedure

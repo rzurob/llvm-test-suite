@@ -1,30 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : argAssocPtr002.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 04/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : Passing a char pointer to an internal 
-!*                              subroutine which dummy argument is char 
-!*				target. Test association between the two 
-!*				chars. Also, a function created within the 
-!*				subroutine which contains a char pointer. 
-!*				Test the assoication between the subroutine 
-!*				char target dummy arg, and the char pointer 
+!*  DESCRIPTION                : Passing a char pointer to an internal
+!*                              subroutine which dummy argument is char
+!*				target. Test association between the two
+!*				chars. Also, a function created within the
+!*				subroutine which contains a char pointer.
+!*				Test the assoication between the subroutine
+!*				char target dummy arg, and the char pointer
 !*				within the function.
-!*                           
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================

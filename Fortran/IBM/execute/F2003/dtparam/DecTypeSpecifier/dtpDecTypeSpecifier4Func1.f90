@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpDecTypeSpecifier4Func1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 17, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  Type Specifier used in function 
-!*  
-!*  Use association 
+!*  Type Specifier used in function
 !*
-!*  (336955) 
+!*  Use association
+!*
+!*  (336955)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -62,7 +55,7 @@
   USE M
   TYPE(DT1(4,*, K1=2, L1=*)), TARGET :: D
   CLASS(DT(4,LEN(D%C))), pointer:: ExtFun2
-    ExtFun2 => D 
+    ExtFun2 => D
   END FUNCTION
 
   FUNCTION ExtFun3(I,C)
@@ -116,7 +109,7 @@
   IF ( SIZE(B%C)         .NE.   1          ) STOP 16
   IF ( ANY(B%C           .NE.   "X"      ) ) STOP 17
 
-  C => ExtFun2(D) 
+  C => ExtFun2(D)
 
   SELECT TYPE (C)
   TYPE IS (DT1(4,*, K1=2, L1=*))

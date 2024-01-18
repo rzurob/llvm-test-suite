@@ -1,40 +1,34 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fort.* 
-! %COMPOPTS: 
-! %GROUP: fxstio026.f 
+! %PRECMD: rm -f fort.*
+! %COMPOPTS:
+! %GROUP: fxstio026.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio026.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 22, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
 !*
-!*  Description                : Test inquire statment with 
-!*                               unformatted stream I/O. 
+!*  Description                : Test inquire statment with
+!*                               unformatted stream I/O.
 !*
 !=======================================================================
 
 !* Declare Variables.
-  
+
    implicit none
 
    integer ios
    integer position /0/, filesize(2) /2*0/
-   integer number /0/, iol /0/ 
+   integer number /0/, iol /0/
    integer ivar1 /2000/
 
    real rarr1(3), rarr2(3)
@@ -67,7 +61,7 @@
    write(1, num=number, err=200) ivar1
 !  print *, iol, number
    if ( number .ne. iol )   error stop 11
-   
+
    inquire(1, access=acc, pos=position, size=filesize(1), &
       stream=str, iostat=ios, err=300)
 
@@ -111,7 +105,6 @@
    if ( filesize(1) .ne. filesize(2)) error stop 29
    close(1, status='delete')
 
-
 !* TEST3 : logical
 
    open(1, access='stream', form='unformatted', iostat=ios, &
@@ -148,7 +141,7 @@
    inquire( iolength=iol ) hvar1
    write(1, num=number, err=200) hvar1
    if ( number .ne. iol )   error stop 41
- 
+
    inquire(1, access=acc, pos=position, size=filesize(1), &
       stream=str, err=300)
 

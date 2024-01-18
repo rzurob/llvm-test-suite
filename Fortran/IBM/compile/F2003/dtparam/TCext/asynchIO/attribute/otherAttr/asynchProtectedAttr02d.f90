@@ -3,21 +3,15 @@
 ! opt variations: -qck -qreuse=self
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchProtectedAttr02d - ASYNCHRONOUS Attribute
 !*                               Interactions with Other Attributes
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : February 13, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : Interactions with the PROTECTED Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 :
@@ -39,7 +33,6 @@
 !*  ...
 !*                  or  PROTECTED
 !*
-!*
 !*  5.1.2.12 PROTECTED attribute
 !*
 !*  The PROTECTED attribute imposes limitations on the usage of module
@@ -51,7 +44,6 @@
 !*          except that it may become undefined if its target is deallocated
 !*          other than through the pointer (16.4.2.1.3) or if its target
 !*          becomes undefined by execution of a RETURN or END statement.
-!*
 !*
 !*  5.2.11 PROTECTED statement
 !*

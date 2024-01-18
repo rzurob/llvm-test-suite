@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryAssumedTypeParam03_d353958.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryAssumedTypeParam03_d353958.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 18 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 18 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
-!* 3. DEFECT 353958   
+!* 3. DEFECT 353958
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(l1,l2)

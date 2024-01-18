@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgMaxloc3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 26, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : MAXLOC 
+!*  SECONDARY FUNCTIONS TESTED : MAXLOC
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Determine the location of the first element of ARRAY along dimension DIM
-!*  having the maximum value of the elements identified by MASK. 
-!*    
-!*  (325537) 
+!*  having the maximum value of the elements identified by MASK.
+!*
+!*  (325537)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -46,10 +38,10 @@
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
-     
+
   LOGICAL      :: MM(128)=.TRUE.
 
- 
+
   DO I=1, 128
    Str1(I,:) = (/( ACHAR(I)//"  ", I=0,127) /)
   END DO

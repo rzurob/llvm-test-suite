@@ -1,31 +1,24 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP:  fxstio109.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -35,19 +28,19 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/14/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/14/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
-  program fxstio109 
+  program fxstio109
 
      implicit none
      integer       ios
      integer*2    :: i2_in = 1234
      integer*2    :: i2_out
      integer*4    :: i4_in = -20000000
-     integer*4    :: i4_out  
+     integer*4    :: i4_out
      integer*8    :: i8_in = 1234567890
      integer*8    :: i8_out
      real*4       :: r4_in = -0.000001
@@ -66,32 +59,32 @@
      logical*2    :: l2_out
      logical*4    :: l4_in = .false.
      logical*4    :: l4_out
-     logical*8    :: l8_in = .true. 
+     logical*8    :: l8_in = .true.
      logical*8    :: l8_out
-     character    :: ch1_in = 'A' 
-     character    :: ch1_out  
-     character*15 :: ch15_in = "New Baby Girl! " 
-     character*15 :: ch15_out, H_out  
+     character    :: ch1_in = 'A'
+     character    :: ch1_out
+     character*15 :: ch15_in = "New Baby Girl! "
+     character*15 :: ch15_out, H_out
      byte         :: b_in=B'01010111', O_in=O'137', Z_in=Z'EF'
      byte         :: b_out, O_out, Z_out
 
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
-	
+
 
      r16_in = huge(r16_in) / 2.Q0
 
-!********************************************************** 
+!**********************************************************
 !        Writing and Reading the file                     *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio109.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
 
      WRITE(1, FMT='(I5, I10, I20)', IOSTAT=ios, ERR=91) &
-    &      1234, -20000000, (i8_in - 8*4 + 32) 
-     WRITE(1, FMT='(F9.6,D25.17,Q40.32)', IOSTAT=ios, ERR=91) & 
-    &      -0.000001, -0.1D-1 / 0.1D309, (huge(r16_in) * (r4_in / (-0.2E-5))) 
+    &      1234, -20000000, (i8_in - 8*4 + 32)
+     WRITE(1, FMT='(F9.6,D25.17,Q40.32)', IOSTAT=ios, ERR=91) &
+    &      -0.000001, -0.1D-1 / 0.1D309, (huge(r16_in) * (r4_in / (-0.2E-5)))
      WRITE(1, FMT='(2E15.7,2D25.17,2Q40.32)', IOSTAT=ios, ERR=91) &
     &     (1.876, -98.654), &
     &     (0.1D100, -0.71D-30) - (0.1D100, -0.71D-30),  &
@@ -118,9 +111,9 @@
      READ(1, FMT='(A9, /, A)', IOSTAT=ios, ERR=92) H_out(:9), H_out(10:)
 
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( i2_in .ne. i2_out ) error stop 10
      if ( i4_in .ne. i4_out ) error stop 11
@@ -145,7 +138,7 @@
      if ( O_in .ne. O_out) error stop 25
      if ( Z_in .ne. Z_out) error stop 26
 
-      print *, H_out 
+      print *, H_out
      if ( H_out .ne. " The last one! ") error stop 27
 
      CLOSE(1, STATUS='DELETE')
@@ -153,12 +146,12 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 93   print *, "Error while rewinding the file: IOSTAT = ", ios
-     error stop 93 
+     error stop 93
 
    end program

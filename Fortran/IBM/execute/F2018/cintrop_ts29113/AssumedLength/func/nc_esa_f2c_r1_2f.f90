@@ -1,31 +1,22 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE     : C Interop: Assumed-length Character arguments
-!*
-!*
-!*
-!*  PROGRAMMER          : Umme Hunny
 !*  DATE                : June, 1, 2014
-!*  ORIGIN              : AIX Compiler Development, Toronto Lab
 !*  FEATURE             : RTC Master Story:
 !*                        C Interop: Assumed-length Character arguments
 !*                        (master story) (72333)
 !*
-!*  FEATURE             : C Interop: Assumed-length Character arguments 
+!*  FEATURE             : C Interop: Assumed-length Character arguments
 !* ===================================================================
-!23456789012345678901234567890123456789012345678901234567890123456789012     
-      
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
       program assumed_lenght001
 
         interface
         subroutine check_f_to_c(c_arg1, n, c_len, test_no) bind(c)
-            use, intrinsic :: iso_c_binding 
+            use, intrinsic :: iso_c_binding
             character(*) :: c_arg1(n)
-            integer(C_INT) n, c_len, test_no 
+            integer(C_INT) n, c_len, test_no
           end subroutine
         subroutine check_f_to_f(c_arg2, n, c_len, test_no) bind(c)
             use, intrinsic :: iso_c_binding
@@ -49,13 +40,13 @@
         end subroutine
 
         end interface
-      
+
         character(5) :: a1(10)
 
-        a1 = 'F2C__'         
+        a1 = 'F2C__'
         call check_f_to_c(a1, 3,  LEN(a1), 1)
 
-        a1 = 'F2F__' 
+        a1 = 'F2F__'
         call check_f_to_f(a1, 4, LEN(a1), 2)
 
         a1 = 'F2F2C'
@@ -97,7 +88,7 @@
         endif
         if(test_no .EQ. 4) then
            c_test = 'F2F2F'
-        endif 
+        endif
         if(test_no .EQ. 5) then
            c_test = 'F2C2F'
         endif
@@ -117,9 +108,9 @@
             character(*) :: c_arg1(n)
             integer(C_INT) c_len, test_no
           end subroutine
-        end interface           
-        character(*) :: c_arg3(n)           
-        integer(C_INT) n, c_len, test_no 
+        end interface
+        character(*) :: c_arg3(n)
+        integer(C_INT) n, c_len, test_no
         call check_f_to_c(c_arg3, n, LEN(c_arg3), test_no)
        end subroutine
 
@@ -145,4 +136,4 @@
 
 
 
-       
+

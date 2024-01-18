@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : final001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from final001 by Robert Ma)
 !*  DATE                       : 2007-08-07 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Final Subroutine
@@ -132,10 +124,10 @@ program final001kl
    allocate (base(3):: b1 ) ! tcx: base(3)
    deallocate ( b1 )       !<- finalize b1 (base('xxx'))
    c1 = child(3,4)('abc',1001)  !<- finalize c1 (child('xxx',-999)) and child('abc',1001) and base('abc') ! tcx: (3,4)
-   
+
    allocate (child(3,4):: c2(3) ) ! tcx: child(3,4)
    deallocate ( c2 )       !<- finalize c2 ((/child('xxx',-999), child('xxx',-999), child('xxx',-999)/)) and 3 base('xxx')
-   
+
 end program
 
 

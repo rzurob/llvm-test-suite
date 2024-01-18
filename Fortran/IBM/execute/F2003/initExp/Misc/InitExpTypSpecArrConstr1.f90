@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecArrConstr1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecArrConstr1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,32 +19,28 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  type-spec in array constructor 
-!* 
-!*  
-!* 
+!*  type-spec in array constructor
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypSpecArrConstr1 
+  PROGRAM InitExpTypSpecArrConstr1
   IMPLICIT NONE
 
   INTEGER :: I
   REAL(4) :: R4
   REAL(8) :: R8
   REAL(16):: R6
- 
+
   REAL(KIND=KIND(R4)),   PARAMETER :: TR4(128)=[REAL(KIND=KIND(R4)) :: (-I, I=1, 128)]
   REAL(KIND=KIND(R8)),   PARAMETER :: TR8(128)=[REAL(KIND=KIND(R8)) :: (-I, I=1, 128)]
   REAL(KIND=KIND(R6)),   PARAMETER :: TR6(128)=[REAL(KIND=KIND(R6)) :: (-I, I=1, 128)]
 
-  COMPLEX(KIND=KIND(R4)),PARAMETER :: TZ4(128)= [COMPLEX(KIND=KIND(R4)) :: (-I, I=1, 128)] 
-  COMPLEX(KIND=KIND(R8)),PARAMETER :: TZ8(128)= [COMPLEX(KIND=KIND(R8)) :: (-I, I=1, 128)] 
-  COMPLEX(KIND=KIND(R6)),PARAMETER :: TZ6(128)= [COMPLEX(KIND=KIND(R6)) :: (-I, I=1, 128)] 
+  COMPLEX(KIND=KIND(R4)),PARAMETER :: TZ4(128)= [COMPLEX(KIND=KIND(R4)) :: (-I, I=1, 128)]
+  COMPLEX(KIND=KIND(R8)),PARAMETER :: TZ8(128)= [COMPLEX(KIND=KIND(R8)) :: (-I, I=1, 128)]
+  COMPLEX(KIND=KIND(R6)),PARAMETER :: TZ6(128)= [COMPLEX(KIND=KIND(R6)) :: (-I, I=1, 128)]
 
   IF ( KIND(TR4) .NE. 4      ) STOP 12
   IF ( KIND(TR8) .NE. 8      ) STOP 13
@@ -70,4 +60,4 @@
 
   END
 
- 
+

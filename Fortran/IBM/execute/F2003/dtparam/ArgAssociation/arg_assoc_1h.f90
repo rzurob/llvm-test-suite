@@ -1,19 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArgAssociation/arg_assoc_1i.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jan. 19, 2009
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 361232
 !*
 !*  DESCRIPTION:
 !*
 !*  12.4.1 1 Actual arguments, dummy arguments, and argument association
-!*  The values of assumed type parameters of a dummy argument are assumed from 
+!*  The values of assumed type parameters of a dummy argument are assumed from
 !*  the corresponding type parameters of the associated actual argument.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

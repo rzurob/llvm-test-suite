@@ -1,21 +1,14 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : BImplTypeParam
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-12-14
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 BLOCK
 !*  SECONDARY FUNCTIONS TESTED : implicit typing (var appears in PARAMETER statement)
 !*
 !*  DESCRIPTION
-!*
-!*  
-!*
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789

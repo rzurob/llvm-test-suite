@@ -1,39 +1,23 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: selectType005.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Select Type Construct
 !*      Unlimited polymorphic allocated to be poly abstract type or nonpoly extension of abstract type
@@ -55,7 +39,7 @@ module m
    contains
       procedure, nopass :: print => printbase
    end type
-   
+
    type, extends(base) :: child
    contains
       procedure, nopass :: print => printchild
@@ -66,35 +50,34 @@ contains
    integer function printbase()
       printbase = 1
    end function
-   
+
    integer function printchild()
       printchild = 2
    end function
-   
-   
+
 end module
 
 program selectType005
    use m
-   
+
    class(*), allocatable :: u1
    class(*), pointer :: u2
-   
+
    class(base), pointer :: b1
    type(child), allocatable, target :: c1
-   
+
    allocate ( c1, source = child() )
-   b1 => c1   
-   
+   b1 => c1
+
    allocate (u1, source = b1 )
    allocate (u2, source = c1 )
-   
+
    select type ( b => u1 )
       class is (base)
          if (b%print() .ne. 2) error stop 1_4
          if (b%i .ne. 5) error stop 2_4
    end select
-   
+
    select type ( b => u1 )
       class is (base)
          error stop 3_4
@@ -102,14 +85,13 @@ program selectType005
          if (b%print() .ne. 2) error stop 4_4
          if (b%i .ne. 5) error stop 5_4
    end select
-      
-   
+
    select type ( u2 )
       class is (base)
          if (u2%print() .ne. 2) error stop 6_4
          if (u2%i .ne. 5)       error stop 7_4
    end select
-   
+
    select type ( u2 )
       class is (base)
          error stop 8_4
@@ -118,5 +100,4 @@ program selectType005
          if (u2%i .ne. 5) error stop 10_4
    end select
 
-   
 end program

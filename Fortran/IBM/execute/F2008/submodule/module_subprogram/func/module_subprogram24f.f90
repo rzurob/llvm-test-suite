@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : module_subprogram24f.f
-!*
-!* PROGRAMMER                   : Bernard Kan
 !* DATE                         : 28 May 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008 submodule
 !* SECONDARY FUNTIONS TESTED    : view a module procedure in a debugger
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -67,13 +60,13 @@ end module mod
 submodule (mod) subMod1
 contains
   module procedure displayl2
-   
+
     print *, "    i",x%i
   end
 
   module procedure displayl3
     type(dtl3), intent(in) :: x
- 
+
     print *, "      r", x%r
   end
 end submodule

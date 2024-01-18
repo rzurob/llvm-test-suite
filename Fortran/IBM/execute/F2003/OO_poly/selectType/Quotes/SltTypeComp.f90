@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltTypeComp.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltTypeComp
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 14, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The type spec is specified with a type with variuos components 
+!*
+!*   The type spec is specified with a type with variuos components
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,7 +50,7 @@
     END TYPE
 
     TYPE, EXTENDS(Base1) :: Child
-      CLASS(*), ALLOCATABLE :: UVar 
+      CLASS(*), ALLOCATABLE :: UVar
       CLASS(Base1), POINTER  :: Base2Ptr
     END TYPE
 
@@ -81,23 +75,23 @@
    CLASS IS (Child)
      STOP 22
    TYPE IS (Child)
-    
+
      IF (As%BaseId             .NE. -1  )  STOP 31
      ALLOCATE(As%BasePtr(3))
      IF (ANY(As%BasePtr%BaseId .NE. -1) )  STOP 31
-     
+
      ALLOCATE(As%Base1Ptr, SOURCE=Child(BaseArr=NULL(), UVar=NULL(), Base2Ptr=NULL()))
      SELECT TYPE(As1 => As%Base1Ptr)
        TYPE IS (Child)
-         IF ( As1%BaseId .NE. -1 ) STOP 
-         IF ( As1%Base1Id .NE. 1 ) STOP 
+         IF ( As1%BaseId .NE. -1 ) STOP
+         IF ( As1%Base1Id .NE. 1 ) STOP
        CLASS DEFAULT
-         STOP 
+         STOP
      END SELECT
 
      ALLOCATE(Child :: As%Base2Ptr)
-     IF ( As%Base2Ptr%BaseId .NE. -1 ) STOP 
-     IF ( As%Base2Ptr%Base1Id .NE. 1 ) STOP 
+     IF ( As%Base2Ptr%BaseId .NE. -1 ) STOP
+     IF ( As%Base2Ptr%Base1Id .NE. 1 ) STOP
 
   END SELECT
 

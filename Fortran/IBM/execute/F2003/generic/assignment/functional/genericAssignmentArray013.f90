@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: polymorphic array with multiple different rank
 !*                                           child type providing overridding tb
@@ -49,7 +38,7 @@ module m
          procedure, pass :: bassgn2d => cassgn2d
          procedure, pass :: bassgn3d => cassgn3d
          procedure, pass :: bassgn4d => cassgn4d
-      
+
    end type
 
    contains
@@ -240,7 +229,7 @@ program genericAssignmentArray013
 
    b0 = reshape ( source = c3, shape = (/ 4,2 /) )
    print *, b0%i
-   
+
    print *, 'CHILD=CHILD'
    c0 = c1
    print *, c0%i
@@ -261,7 +250,7 @@ program genericAssignmentArray013
    c0 = reshape ( source = c3, shape = (/ 4,2 /) )
    print *, c0%i
    print *, c0%j
-   
+
    deallocate ( b0, b1, b2, b3, b4 )
    allocate ( b0, source = c0 )
    allocate ( b1(4), source = c1 )

@@ -12,27 +12,20 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : iorw01.f
 !
-!* PROGRAMMER                   : Helen Li
 !* DATE                         : Mar. 1, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : stream I/O: OPEN, READ and WRITE
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : open a file by 'stream' access,
 !*                              : read it at specific position which
 !*                              : is pointed by POS specifier, and
 !*                              : rewrite it.
-!*                              : 
 !234567890123456789012345678901234567890123456789012345678901234567890
 program iorw01
   character(4) c

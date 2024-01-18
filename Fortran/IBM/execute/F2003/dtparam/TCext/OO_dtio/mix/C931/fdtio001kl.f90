@@ -1,21 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fdtio001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from fdtio001 by Jim Xia)
 !*  DATE                       : 2007-07-23 (original: 11/4/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
-!*  SECONDARY FUNCTIONS TESTED : DTIO 
+!*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : DTIO on generics (use of part of the
 !                               assumed-size array in defined read statement)
@@ -63,7 +55,7 @@ use m
     call xyz (b1(1), b1(2:10))
 
     if (b1(1)%i /= 1) error stop 1_4
-    
+
     do i = 2, 10, 2
         if (b1(i)%i /= i) error stop 2_4
         if (associated (b1(i+1)%i)) error stop 3_4

@@ -1,39 +1,23 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: dcomp label001.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5 Data Transfer Statement
 !*                               C913: label shall exist and label shall be in the same scope unit
@@ -61,20 +45,20 @@ contains
    function getC (a)
       class(base), intent(in) :: a
       character(3) :: getC
-      getC = a%c      
-   end function   
-   
+      getC = a%c
+   end function
+
    subroutine setC (a, char)
       class(base), intent(inout) :: a
-      character(3), intent(in) :: char      
+      character(3), intent(in) :: char
       a%c = char
-   end subroutine   
+   end subroutine
 end module
 
 
 program label001
-   use m1   
-   
+   use m1
+
    interface read(formatted)
       subroutine readFormatted (dtv, unit, iotype, v_list, iostat, iomsg)
       import base
@@ -86,19 +70,19 @@ program label001
          character(*), intent(inout) :: iomsg
       end subroutine
    end interface
-    
+
    interface write(formatted)
       subroutine writeFormatted (dtv, unit, iotype, v_list, iostat, iomsg)
       import base
          class (base), intent(in) :: dtv
          integer, intent(in) :: unit
          character(*), intent(in) :: iotype
-         integer, intent(in)  :: v_list(:)            
+         integer, intent(in)  :: v_list(:)
          integer, intent(out) :: iostat
          character(*), intent(inout) :: iomsg
       end subroutine
-   end interface   
-   
+   end interface
+
    interface read(unformatted)
       subroutine readUnformatted (dtv, unit, iostat, iomsg)
          import base
@@ -116,12 +100,12 @@ program label001
          integer,  intent(in) :: unit
          integer,  intent(out) :: iostat
          character(*),  intent(inout) :: iomsg
-      end subroutine   
+      end subroutine
    end interface
-   
+
    integer :: stat
    character(100) :: msg
-   
+
    class(base), allocatable :: b1
    class(base), pointer :: b2
 
@@ -132,9 +116,9 @@ program label001
 
    write (1, err=500, iostat=stat, iomsg=msg ) b1       !<= label does not exist
    write (1, err=800, iostat=stat, iomsg=msg ) b1       !<= label exists and is select-type-stmt
-   
+
    call mywriteunformatted (1, b1)
-   
+
    rewind 1
 
    read (1, err=500, iostat=stat, iomsg=msg )     b2    !<= label does not exist
@@ -145,7 +129,7 @@ program label001
 800 select type ( b2 )
       class is (base)
          call myreadunformatted   (1, b1)
-    end select   
+    end select
 
 contains
 
@@ -173,9 +157,9 @@ use m1
 
     character(3) :: temp
     read (unit, iostat=iostat, iomsg=iomsg ) temp
-    
+
     call dtv%setC(temp)
-    
+
 end subroutine
 
 subroutine writeUnformatted (dtv, unit, iostat, iomsg)
@@ -184,9 +168,9 @@ use m1
     integer, intent(in) :: unit
     integer, intent(out) :: iostat
     character, intent(inout) :: iomsg
-    
+
     write (unit, iostat=iostat, iomsg=iomsg ) dtv%getC()
-    
+
 end subroutine
 
 subroutine readFormatted (dtv, unit, iotype, v_list, iostat, iomsg)
@@ -194,14 +178,14 @@ use m1
     class(base), intent(inout) :: dtv
     integer, intent(in) :: unit
     character(*), intent(in) :: iotype
-    integer, intent(in)  :: v_list(:) 
+    integer, intent(in)  :: v_list(:)
     integer, intent(out) :: iostat
     character(*), intent(inout) :: iomsg
 
     character(3) :: temp
     read (unit, *, iostat=iostat, iomsg=iomsg) temp
     call dtv%setC(temp)
-    
+
 end subroutine
 
 
@@ -210,10 +194,10 @@ use m1
     class(base), intent(in) :: dtv
     integer, intent(in) :: unit
     character(*), intent(in) :: iotype
-    integer, intent(in)  :: v_list(:)     
+    integer, intent(in)  :: v_list(:)
     integer, intent(out) :: iostat
     character(*), intent(inout) :: iomsg
-      
+
     write (unit, *, iostat=iostat, iomsg=iomsg) dtv%getC()
     write (unit, *, iostat=iostat, iomsg=iomsg ) " "     !<- insert space between records
 

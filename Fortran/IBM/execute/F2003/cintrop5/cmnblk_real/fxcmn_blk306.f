@@ -2,42 +2,34 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk_qlngdbl.sh fxcmn_blk306 cxcmn_blk306
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.o *.mod fxcmn_blk306 fxcmn_blk306.out
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc
 !*  REQUIRED COMPILER OPTIONS  : -qlongdouble (with xlc)
 !*
 !*  DESCRIPTION                : This test case will verify that array variables of
-!*				 REAL data types inside of common blocks do 
-!*				 interoperate with C variables. 
+!*				 REAL data types inside of common blocks do
+!*				 interoperate with C variables.
 !*
 !*                               Similar to fxcmn_blk300.f but this testcase will
 !*                               verify 3-dimensional array variables inside of
 !*                               BIND(C) common block.
 !*
 !*				 BIND(c) common block inside of main program.
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -54,12 +46,12 @@ program fxcmn_blk306
 
 ! ----------------------------------------------------------------------------
 ! Real Array Declaration
-!	- use ISO_C_BINDING modules	
+!	- use ISO_C_BINDING modules
 !       - use non-default lower bounds (i.e test array not starting from 1)
 ! ----------------------------------------------------------------------------
 
 	integer*4 		:: i, j, k
-	integer*4,parameter 	:: N=2 
+	integer*4,parameter 	:: N=2
 
 	real , DIMENSION(-2:-1,-2:-1,-2:-1)	:: real_s4			!* real*4
 
@@ -82,7 +74,7 @@ program fxcmn_blk306
 
 	!*** Resultant matrices
         real            :: res_real_s4(8)
-        real(8)         :: res_real_s8(8)  
+        real(8)         :: res_real_s8(8)
         real(16)        :: res_real_s16(8)
         REAL            :: res_r_c_float_s4(8)
         REAL(8)         :: res_r_c_double_s8(8)
@@ -119,7 +111,7 @@ program fxcmn_blk306
         cmp_r_c_double_s8    = (/1.797693D+308, -2.225073D-308, 0.0D0, 2.225073D-308, -1.797693D+308, 1.00000D+308, -1.00000D+308, -1.00000D+100/)
 
         !*** Resultant matrices
-        res_real_s4          = RESHAPE(real_s4, (/8/)) 
+        res_real_s4          = RESHAPE(real_s4, (/8/))
         res_real_s8          = RESHAPE(real_s8, (/8/))
         res_real_s16	     = RESHAPE(real_s16, (/8/))
         res_r_c_float_s4     = RESHAPE(r_c_float_s4, (/8/))

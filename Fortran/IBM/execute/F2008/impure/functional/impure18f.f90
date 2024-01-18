@@ -1,18 +1,15 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure18f
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
-!*  
+!*
 !*  DESCRIPTION
 !*
 !* checks if an IMPURE elemental procedures works fine with a scalar argument that is
-!*   a  2-D array  
-!* 
+!*   a  2-D array
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -33,8 +30,8 @@ PROGRAM main
   end do
   end do
 
-  
-   
+
+
  do i = 1,50,5
  do j = 5,1000,3
  b(i,j) = final(a(i, j), f)
@@ -42,20 +39,20 @@ PROGRAM main
  end do
  end do
    CONTAINS
-  
- 
+
+
   IMPURE ELEMENTAL FUNCTION final (a, f1)
       IMPLICIT NONE
       INTEGER, INTENT(inout) :: f1
-      
+
       INTEGER, INTENT(INOUT) :: a
       INTEGER :: final
       INTEGER :: sum
       sum = 2
       PRINT *, "Element in the Impure function is",a
        f1 = func1(a,a)
-      
-      final = sum + f1 
+
+      final = sum + f1
   END FUNCTION final
 
 IMPURE ELEMENTAL FUNCTION func1(z,y)
@@ -75,7 +72,7 @@ PURE ELEMENTAL FUNCTION func2(x)
 END  FUNCTION func2
 
 END PROGRAM main
-   
+
 
 
 

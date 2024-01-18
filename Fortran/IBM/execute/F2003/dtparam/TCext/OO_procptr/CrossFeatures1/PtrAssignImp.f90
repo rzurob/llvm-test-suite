@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignImp.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignImp.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignImp.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignImp.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Implicit interface and explicitly typed
-!*  or referenced as a function 
-!*  (304482) 
+!*  or referenced as a function
+!*  (304482)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -70,8 +64,8 @@
   END FUNCTION
 
   PROGRAM PtrAssignImp
-  USE M 
-  IMPLICIT TYPE(Child(4,20))(C) 
+  USE M
+  IMPLICIT TYPE(Child(4,20))(C)
 
   INTERFACE
     FUNCTION ExtFun()
@@ -94,5 +88,5 @@
   W = CProcPtr()
   IF ( V%BaseComp%ID  .NE. -1 ) STOP 12
 
-  END 
+  END
 

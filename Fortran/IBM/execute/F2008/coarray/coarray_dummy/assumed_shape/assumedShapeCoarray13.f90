@@ -1,26 +1,20 @@
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : assumedShapeCoarray13.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Shahid Alam
 !*  DATE                       : 2011-02-18
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray dummy arguments assumed shape
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 386330
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -30,7 +24,6 @@
 !*  The extra or less number of images will be ignored.
 !*  Image transfers 1/3 of it's array to it's left and right neighbors.
 !*  Type used complex
-!*
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789

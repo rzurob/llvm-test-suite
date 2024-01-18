@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dummyArg002akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from dummyArg002a by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Argument Association: (non-) polymorphic scalar dummy
@@ -104,10 +96,10 @@ use m
 
    call foo ( b1 )
    call bar ( c1 )
-   
+
    deallocate ( b1 )
    allocate ( b1, source = gen3(4,4,4) ( 104, 105, 106 ) )
-   
+
    call foo ( b1 )
 
 end program

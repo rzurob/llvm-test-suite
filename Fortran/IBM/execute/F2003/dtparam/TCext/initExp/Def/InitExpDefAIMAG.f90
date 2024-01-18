@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefAIMAG.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefAIMAG.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,9 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
+!*
 !*  - AIMAG (Z) /ENUM
 !*  ()
 !*
@@ -41,24 +34,24 @@
   MODULE M
 
   ENUM, BIND(C)
-    ENUMERATOR :: Zero 
-    ENUMERATOR :: One 
-    ENUMERATOR :: Two 
+    ENUMERATOR :: Zero
+    ENUMERATOR :: One
+    ENUMERATOR :: Two
   END ENUM
 
   COMPLEX, PARAMETER :: Z=(Zero, One+Two*Two)
- 
+
   ENUM, BIND(C)
-    ENUMERATOR :: X2=INT(AIMAG((One,Two))) 
-    ENUMERATOR :: X4=INT(AIMAG((One,Two))+AIMAG((One,Two))) 
-    ENUMERATOR :: X3=INT(AIMAG((X4, One+X2))) 
-    ENUMERATOR :: X10=INT(AIMAG(2*Z)) 
+    ENUMERATOR :: X2=INT(AIMAG((One,Two)))
+    ENUMERATOR :: X4=INT(AIMAG((One,Two))+AIMAG((One,Two)))
+    ENUMERATOR :: X3=INT(AIMAG((X4, One+X2)))
+    ENUMERATOR :: X10=INT(AIMAG(2*Z))
   END ENUM
- 
+
   END MODULE
 
 
-  PROGRAM InitExpDefElemACOS 
+  PROGRAM InitExpDefElemACOS
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
@@ -70,10 +63,10 @@
   END TYPE
 
   TYPE(DT1(20,4)) :: T1
-  TYPE(DT1(20,4)) :: Arr1(One:INT(AIMAG(Z))) 
+  TYPE(DT1(20,4)) :: Arr1(One:INT(AIMAG(Z)))
   PARAMETER  (  Arr1=(/(DT1(20,4)(Z=(/Z,Z,Z,Z,Z/)), I=1,5)/) )
 
- 
+
   IF (X2             .NE. 2   )                       STOP 11
   IF (X3             .NE. 3   )                       STOP 12
   IF (X4             .NE. 4   )                       STOP 13
@@ -94,4 +87,4 @@
 
   END
 
- 
+

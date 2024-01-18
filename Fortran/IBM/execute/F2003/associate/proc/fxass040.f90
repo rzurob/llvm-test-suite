@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass040.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass040.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -73,8 +61,8 @@
 
       program fxass40a
       implicit none
- 
-      interface 
+
+      interface
       recursive function int_fun() result(c)
             integer :: c
       end function
@@ -109,10 +97,10 @@
       integer*4 c4 / 10 /
 
       integer*8 c8 / 10 /
-      
+
       byte cb / 10 /
 
-      
+
       c = int_fun()
 
       c1 = int1_fun()

@@ -2,9 +2,9 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk204 cxcmn_blk204
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT: fxcmn_blk204.out
 ! %EXECARGS:
@@ -12,32 +12,24 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that array variables of
 !*                               integer data types inside of common blocks do
-!*                               interoperate with C variables 
+!*                               interoperate with C variables
 !*
 !*                               Scope:  main program
 !*
 !*                               This testcase will test multiple common blocks with a
 !*                               single variable in them interoperated with C variables.
 !*				 (i.e. no struct used in C code)
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -54,10 +46,10 @@ program fxcmn_blk204
 ! Integers Declaration
 !      	- use decimal, binary, octal values to define type
 !     	- use KIND, SELECTED_INT_KIND, MAX, LEN
-!	- use ISO_C_BINDING modules	
+!	- use ISO_C_BINDING modules
 ! ----------------------------------------------------------------------------
 
-	integer (kind=o'001')				:: int_s1a(5) 
+	integer (kind=o'001')				:: int_s1a(5)
 	integer (LEN('k'))				:: int_s1b(5)
 
 	integer (2 )					:: int_s2a(5)
@@ -68,7 +60,7 @@ program fxcmn_blk204
 
 	integer (kind=MAX(8, 7))			:: int_s8a(5)
 	integer (kind=int((4.4e0_8,6.5e0_8))+4 ) 	:: int_s8b(5)
-	
+
 	INTEGER (C_SIGNED_CHAR 		)		:: int_C_SIGNED_CHAR(5)
 	INTEGER (C_SHORT 		)		:: int_C_SHORT(5)
 	INTEGER (C_INT 			)		:: int_C_INT(5)
@@ -166,13 +158,13 @@ program fxcmn_blk204
 !         specific values for each element in the array
 ! ----------------------------------------------------------------------------
 
-        int_s1a 			=  (/b'1111111',o'0',-128,o'177',127/)		
+        int_s1a 			=  (/b'1111111',o'0',-128,o'177',127/)
         int_s1b 			= -128
 
         int_s2a 			=  (/o'77777',o'0',-32768, 32767,b'1111111'/)
         int_s2b 			= -32768
 
-        int_s4a 			=  (/2147483647,b'1111111',-2147483648, 0, o'3641100'/) 
+        int_s4a 			=  (/2147483647,b'1111111',-2147483648, 0, o'3641100'/)
         int_s4b 			= -2147483648
 
         int_s8a 			=  (/9223372036854775807_8,b'000000000',-9223372036854775807_8, o'3641100', -2147483648_8/)
@@ -181,10 +173,10 @@ program fxcmn_blk204
         int_C_SIGNED_CHAR		= (/b'1111111',o'0',-128, o'177',127/)
         int_C_SHORT			= (/o'77777',o'0',-32768, 32767,b'1111111'/)
         int_C_INT			= (/2147483647,b'1111111',-2147483648, 0, o'3641100'/)
-        int_C_LONG			= 2147483647 
+        int_C_LONG			= 2147483647
         int_C_LONG_LONG			= -9223372036854775807_8
         int_C_SIZE_T			= (/2147483647,b'1111111',-2147483648, 0, o'3641100'/)
-        int_C_INTPTR_T			=  1000000000           
+        int_C_INTPTR_T			=  1000000000
         int_C_INTMAX_T			= (/9223372036854775807_8,b'000000000',-9223372036854775807_8, o'3641100', -2147483648_8/)
         int_C_INT8_T			= -128
         int_C_INT16_T			= (/o'77777',o'0',-32768, 32767,b'1111111'/)

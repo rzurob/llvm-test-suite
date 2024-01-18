@@ -1,13 +1,9 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qnock -qnok -ql -qreuse=none -qdeferredlp /tstdev/OO_poly/intrinsics/eoshift/argumentKeyword001.f
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/eoshift
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/03/2005
 ! PRIMARY FUNCTIONS TESTED   : eoshift
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Actual arguments are speficied using
 !                              argument keywords. Poly.
 !=======================================================================

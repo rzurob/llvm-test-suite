@@ -32,7 +32,6 @@
          f2r2 = 1
       end function
 
-
       subroutine s1 ()  ! ok: subroutine with parens
       end subroutine
 

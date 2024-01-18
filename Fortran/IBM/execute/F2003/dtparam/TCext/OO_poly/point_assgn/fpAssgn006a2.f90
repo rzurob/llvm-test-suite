@@ -2,12 +2,7 @@
 ! ftcx_dtp -qnol -qnodefaultpv -qnodeferredlp /tstdev/OO_poly/point_assgn/fpAssgn006a2.f
 ! opt variations: -qck -ql -qdefaultpv -qdeferredlp
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,26 +13,15 @@
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            :
-!*                                                                     
-!*  PROGRAMMER                 : Jim Xia
-!*  DATE                       : 02/05/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
-!*                                                                     
-!*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  ===================================================================
 !*
-!*  DRIVER STANZA              : xlf90
+!*  DATE                       : 02/05/2004
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : data pointer assignment (occurred for pointer
 !*                               component during the intrinsic assignment;

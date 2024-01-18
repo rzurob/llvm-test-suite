@@ -2,14 +2,14 @@
 ! Diagnostics
 subroutine sub
   implicit none
-  integer, target :: t1 
+  integer, target :: t1
   real, target, save :: t2(2) = [1.0, 2.0]
   integer :: t3
   integer, target, save, allocatable :: t4
 
   type dt
     integer :: i = 3
-    integer, pointer :: p1 => t1    ! error 1 
+    integer, pointer :: p1 => t1    ! error 1
     integer, pointer :: p2 => t2(2) ! error 2
     integer, pointer :: p3 => t3    ! error 3
     integer, pointer :: p4 => t4    ! error 4

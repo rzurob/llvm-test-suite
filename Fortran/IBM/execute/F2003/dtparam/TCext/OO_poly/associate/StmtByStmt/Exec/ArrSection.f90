@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrSection.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrSection.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrSection
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,8 +32,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a section of  array 
-!*    () 
+!*    The selector is a section of  array
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -59,7 +53,7 @@
     TYPE, EXTENDS(Base) :: Child    ! (4,20)
       INTEGER(K1)  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -84,19 +78,19 @@
   INTEGER :: i
 
   TYPE(Child(4,20)) :: Arr(4, 4) = RESHAPE((/(Child(4,20)(BaseId=i, ChildId=-i), i=1, 16) /), (/4,4/))
-  
+
   ASSOCIATE ( As => Arr(1:4:2, 2:4:2))
 
     IF ( ANY (LBOUND(As)      .NE. (/1,1/) ) )             STOP 30
     IF ( ANY (SHAPE(As)       .NE. (/2,2/) ) )             STOP 32
-    IF ( ANY (As%GetID()      .NE. RESHAPE((/-5,-7,-13,-15/), (/2,2/)) ) ) STOP 33 
-    IF ( ANY (As%Base%GetID() .NE. RESHAPE((/ 5, 7, 13, 15/), (/2,2/)) ) ) STOP 34 
+    IF ( ANY (As%GetID()      .NE. RESHAPE((/-5,-7,-13,-15/), (/2,2/)) ) ) STOP 33
+    IF ( ANY (As%Base%GetID() .NE. RESHAPE((/ 5, 7, 13, 15/), (/2,2/)) ) ) STOP 34
 
     IF ( ANY (SHAPE(As%BaseId) .NE. (/2,2/) ) )           STOP 35
 
     ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-       IF ( ANY(As0 .NE. RESHAPE((/-5,-7,-13,-15/), (/2,2/)) ) ) STOP 41 
-       IF ( ANY(As1 .NE. RESHAPE((/ 5, 7, 13, 15/), (/2,2/)) ) ) STOP 42 
+       IF ( ANY(As0 .NE. RESHAPE((/-5,-7,-13,-15/), (/2,2/)) ) ) STOP 41
+       IF ( ANY(As1 .NE. RESHAPE((/ 5, 7, 13, 15/), (/2,2/)) ) ) STOP 42
     END ASSOCIATE
 
     ASSOCIATE ( As2 => As%Base )
@@ -104,11 +98,11 @@
     END ASSOCIATE
 
     ASSOCIATE (As1 =>  As%GetID())
-      IF ( ANY(As1 .NE. RESHAPE((/-5,-7,-13,-15/), (/2,2/)) )) STOP 60 
+      IF ( ANY(As1 .NE. RESHAPE((/-5,-7,-13,-15/), (/2,2/)) )) STOP 60
     END ASSOCIATE
 
     ASSOCIATE (As2 =>  As%Base%GetID())
-      IF ( ANY(As2 .NE. RESHAPE((/ 5, 7, 13, 15/), (/2,2/)) )) STOP 70 
+      IF ( ANY(As2 .NE. RESHAPE((/ 5, 7, 13, 15/), (/2,2/)) )) STOP 70
     END ASSOCIATE
 
   END ASSOCIATE

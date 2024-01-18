@@ -16,23 +16,16 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : renameoperator004
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : Oct. 28, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : diagnostic testing of renaming the operator in 
+!*  DESCRIPTION                : diagnostic testing of renaming the operator in
 !*                               a USE statement. When an operator has an interface
 !*                               and a generic binding. Its generic binding cannot be
 !*                               used after its been renamed

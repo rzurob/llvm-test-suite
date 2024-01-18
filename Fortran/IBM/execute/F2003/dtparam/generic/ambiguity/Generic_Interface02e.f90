@@ -1,52 +1,44 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_Interface02e
 !*                               DTP - Generic Interface
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY SUBROUTINES TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY SUBROUTINES TESTED : Resolution based on rank
-!*                               
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
 !*  DESCRIPTION                :
 !*
-!* See defect 355371 for the ICE 
+!* See defect 355371 for the ICE
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN  :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN  :: l1
 
         CHARACTER(l1) :: base_name
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2)
-        INTEGER, KIND :: k2 
+        INTEGER, KIND :: k2
 
-        CHARACTER(l1) :: child_name  
-      END TYPE Child 
+        CHARACTER(l1) :: child_name
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen(k3)
-        INTEGER, KIND :: k3 
+        INTEGER, KIND :: k3
 
         CHARACTER(l1) :: nextg_name
       END TYPE NextGen
 
-      INTERFACE SUB  
+      INTERFACE SUB
         SUBROUTINE sub0(Obj)
            IMPORT BASE, CHILD, NEXTGEN
            CLASS(Base(4,*)) :: Obj        ! rank 0
@@ -136,19 +128,19 @@
 !*
       PROGRAM Generic_Interface02e
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       INTEGER :: I
 
       TYPE(Child(4,5,4)) :: tgt0
       CLASS(Base(4,:)), ALLOCATABLE  :: base0
-      
+
       TYPE(Child(4,5,4)), TARGET :: tgt1(10)
       CLASS(Base(4,:)), POINTER  :: base1(:)
-      
+
       TYPE(Child(4,5,4)), TARGET :: tgt2(2,2)
       CLASS(Base(4,:)), ALLOCATABLE :: base2(:,:)
-      
+
       call sub(tgt0)
       IF ( tgt0%base_name(1:4) .NE. 'sub0' ) STOP 10
 
@@ -174,7 +166,7 @@
       DEALLOCATE(base0,base1,base2)
 
       ALLOCATE(base0, source=tgt1(1))
-      base1 => tgt1 
+      base1 => tgt1
       ALLOCATE(Base(4,10) :: base2(100,100))
 
       call sub(base0)

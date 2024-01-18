@@ -1,30 +1,15 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/struct_constr/fconstr033a5.f
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 04/21/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : structure constructor (named constants used as
 !                               the source data for the allocatable structure
 !                               components in structure constructor; use
 !                               rank-one array)
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -42,7 +27,7 @@ use m
     real(8), parameter :: one(2) = 1.0_8
 
     type (base(4,20)) :: b1
-    
+
     b1 = base(4,20)(one)
 
     if (.not. allocated (b1%data)) error stop 1_4

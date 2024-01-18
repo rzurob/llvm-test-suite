@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh neg005 
+! %PRECMD: $TR_SRC/fxieee.presh neg005
 ! %COMPOPTS: -qfree=f90 -qxlf90=signedzero
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,22 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : February 6, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NEGATIVE with internal procedures.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -35,7 +26,6 @@
 !*
 !*  DESCRIPTION                : This testcase tests that values are passed
 !*                               correctly to an internal procedure.
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -112,4 +102,4 @@
         end subroutine bar3
 
 
-        end 
+        end

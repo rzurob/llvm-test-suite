@@ -21,7 +21,7 @@ MODULE M
   end subroutine
  END INTERFACE
 
-CONTAINS 
+CONTAINS
   subroutine sub2(OBJ)
    CLASS(Base1(4,*)),INTENT(IN) :: OBJ
     print*,OBJ%Num2

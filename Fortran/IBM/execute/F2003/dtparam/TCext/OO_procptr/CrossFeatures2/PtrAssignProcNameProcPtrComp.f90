@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignProcNameProcPtrcomp.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignProcNameProcPtrcomp.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignProcNameProcPtrComp.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignProcNameProcPtrComp.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 19, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,13 +34,13 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  C727 (R742) A procedure-name shall be the name of an external, module,
 !*  or dummy procedure, a specific intrinsic function listed in 13.6
 !*  and not marked with a bullet (.), or a procedure pointer.
-!* 
-!*  The target is a procedure pointer component 
-!*  () 
+!*
+!*  The target is a procedure pointer component
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -65,15 +59,15 @@
       INTEGER(K1)  :: ChildId = 2
       PROCEDURE(IFun2), PASS, POINTER :: ChildPtr=>NULL()
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
-    INTERFACE 
+    INTERFACE
 
       FUNCTION IFun1(Arg)
         IMPORT
         CLASS(Base(4))          :: Arg
-        CLASS(Base(4)), POINTER :: IFun1 
+        CLASS(Base(4)), POINTER :: IFun1
       END FUNCTION
 
       FUNCTION IFun2(Arg)
@@ -84,7 +78,7 @@
 
     END INTERFACE
 
-  CONTAINS 
+  CONTAINS
 
     ELEMENTAL FUNCTION GetChildId(Arg)
     CLASS(Child(4)), INTENT(IN) :: Arg
@@ -103,14 +97,14 @@
   FUNCTION ExtFun1(Arg)
   USE M
   CLASS(Base(4))          :: Arg
-  CLASS(Base(4)), POINTER :: ExtFun1 
+  CLASS(Base(4)), POINTER :: ExtFun1
       ALLOCATE(ExtFun1, SOURCE=Arg)
   END FUNCTION
 
   FUNCTION ExtFun2(Arg)
   USE M
   CLASS(Child(4))          :: Arg
-  CLASS(Child(4)), POINTER :: ExtFun2 
+  CLASS(Child(4)), POINTER :: ExtFun2
       ALLOCATE(ExtFun2, SOURCE=Arg)
   END FUNCTION
 
@@ -121,16 +115,16 @@
 
   TYPE (Child(4))   :: U, V
   TYPE (Base(4)) :: VBase
- 
-  PROCEDURE(IFun1), POINTER :: ProcPtr1 
+
+  PROCEDURE(IFun1), POINTER :: ProcPtr1
   PROCEDURE(IFun1)          :: ExtFun1
-  PROCEDURE(IFun2), POINTER :: ProcPtr2 
+  PROCEDURE(IFun2), POINTER :: ProcPtr2
   PROCEDURE(IFun2)          :: ExtFun2
 
-  V = Child(4)(BaseId=-1, ChildId=-2)  
+  V = Child(4)(BaseId=-1, ChildId=-2)
   V%BasePtr  => ExtFun1
   V%ChildPtr => ExtFun2
- 
+
 
   SELECT TYPE( As => V%Base%BasePtr())
   TYPE IS (Base(4))
@@ -138,7 +132,7 @@
     IF ( .NOT. ASSOCIATED(As%BasePtr, ExtFun1) ) STOP 12
   CLASS DEFAULT
     STOP 13
-  END SELECT 
+  END SELECT
 
   SELECT TYPE( As => V%ChildPtr())
   TYPE IS (Child(4))

@@ -4,14 +4,10 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !* TEST BUCKET                : intrinsics/transfer
-!* PROGRAMMER                 : Yong Du
 !* DATE                       : 10/25/2004
 !* PRIMARY FUNCTIONS TESTED   : transfer
 !* SECONDARY FUNCTIONS TESTED :
-!* DRIVER STANZA              : xlf90
 !* DESCRIPTION                :
 !*   SOURCE and/or MOLD are associate names. Selector is array
 !* section and is a structure component.

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgUbound
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 05, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : UBOUND 
+!*  SECONDARY FUNCTIONS TESTED : UBOUND
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  characteristics :: non initexp/non scalar/non int 
+!*  characteristics :: non initexp/non scalar/non int
 !*
-!*  (322381) 
+!*  (322381)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -37,13 +29,13 @@
   PROGRAM kindArgUbound
   IMPLICIT NONE
 
-  INTEGER               :: I(2) = (/0,1/) 
-  INTEGER,    PARAMETER :: II(2)= (/1,1/) 
-  REAL,       PARAMETER :: R(2) = (/1.,1./) 
-  CHARACTER,  PARAMETER :: CC(2)= (/ACHAR(1), ACHAR(1)/) 
-  LOGICAL(8), PARAMETER :: L(2) = (/.TRUE., .FALSE./) 
-  COMPLEX(8), PARAMETER :: Z(2) = (/(1.,1.), (1.,1.)/) 
-  
+  INTEGER               :: I(2) = (/0,1/)
+  INTEGER,    PARAMETER :: II(2)= (/1,1/)
+  REAL,       PARAMETER :: R(2) = (/1.,1./)
+  CHARACTER,  PARAMETER :: CC(2)= (/ACHAR(1), ACHAR(1)/)
+  LOGICAL(8), PARAMETER :: L(2) = (/.TRUE., .FALSE./)
+  COMPLEX(8), PARAMETER :: Z(2) = (/(1.,1.), (1.,1.)/)
+
   ENUM, BIND(C)
     ENUMERATOR :: ONE=1
   END ENUM
@@ -51,7 +43,7 @@
   INTEGER  :: IC(1)
 
   IC    = UBOUND(II, I(1), I(1))
-  IC(1) = UBOUND(II, DIM=I(1), KIND=II) 
+  IC(1) = UBOUND(II, DIM=I(1), KIND=II)
 
   IC = UBOUND(ARRAY=II, KIND=II)
 

@@ -3,20 +3,10 @@
 ! opt variations: -qck -qnok -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Characters with deferred length type parameter
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : scalar character with deferred length
 !*                               with index
@@ -34,7 +24,7 @@
 module m
 
    character(36), target :: c1
-   
+
    character(:), pointer :: c2
 
    type base(k1)    ! (4)
@@ -51,7 +41,7 @@ program deferLenPtrAssgn020
 
    c1 = "xxxxxxxxxxxxxxxxxxxxxxxibmxxxxxxibmx"
    print *, len(c1), index(c1, 'ibm'), index(substring="ibm", string=c1, back=.true. )
-   
+
    c2 => c1
    print *, len(c2), index(c2, 'ibm'), index(substring="ibm", string=c2, back=.true. )
 

@@ -1,47 +1,39 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with different data edit descriptor.
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*    test different ROUND mode with different data edit descriptor with
-!*    complex(8) component in derived type. 
+!*    complex(8) component in derived type.
 !*    9.4.1  The modes of a connection to an external file may be changed
 !*           by a subsequent OPEN statement that modifies the connection.
 !* ===================================================================
 
   module m
 
-    type base 
+    type base
        complex(8) w1
     end type
 
     type, extends(base):: child
-       complex(8) w2 
+       complex(8) w2
     end type
 
   end module  m
 
-  program roundX8WriteEdit02 
+  program roundX8WriteEdit02
 
     use m
 
     implicit none
- 
+
     character(18) :: r_mode(6), r_verify
     integer i
     type(child) :: c1
 
-    integer, parameter::unit = 2 
+    integer, parameter::unit = 2
 
     open(unit, file='roundX8WriteEdit02.out', action='write')
 
@@ -73,4 +65,4 @@
 
    close(unit)
 
-  end program roundX8WriteEdit02 
+  end program roundX8WriteEdit02

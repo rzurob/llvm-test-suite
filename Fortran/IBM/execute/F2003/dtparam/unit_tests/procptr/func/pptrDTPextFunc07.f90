@@ -7,7 +7,7 @@
     TYPE, EXTENDS(DT) :: DT1
       INTEGER(K)   :: I=K
       CHARACTER(L) :: C="!!!!!!!"
-      PROCEDURE(type(dt(K, L))), NOPASS, POINTER :: ProcPtr => NULL() 
+      PROCEDURE(type(dt(K, L))), NOPASS, POINTER :: ProcPtr => NULL()
     END TYPE
 
   END MODULE
@@ -16,18 +16,18 @@
   external func1
   type(dt(8, 8)) func1
   type(dt1(8, 8)) :: dt1obj
-  type(dt(8, 8)) :: dttarget 
+  type(dt(8, 8)) :: dttarget
   dt1obj%procptr => func1
   dttarget = dt1obj%procptr()
   end
-  
+
   type(dt(8, 8)) function func1()
     use m
     integer iii
-    integer jjj 
+    integer jjj
     iii = func1%k
     jjj = func1%l
     print*, iii
-    print*, jjj 
+    print*, jjj
   end function
 

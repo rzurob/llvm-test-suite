@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Misc17.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Misc17.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
-! %EXECARGS: 
-! %POSTCMD:  
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             :  Misc17.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  
-!*  Combination declaration of proc ptr 
-!*  
-!*  
+!*
+!*  Combination declaration of proc ptr
+!*
 !*  (MemFault)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -50,9 +42,9 @@
   IMPLICIT INTEGER(P)
 
   ENUM, BIND(C)
-    ENUMERATOR :: One=1 
-    ENUMERATOR :: Two 
-    ENUMERATOR :: Thr 
+    ENUMERATOR :: One=1
+    ENUMERATOR :: Two
+    ENUMERATOR :: Thr
   END ENUM
 
 
@@ -105,7 +97,7 @@
   USE M
   IMPLICIT INTEGER(P)
 
-  PROCEDURE (ModFun1)          :: ExtFun 
+  PROCEDURE (ModFun1)          :: ExtFun
   PROCEDURE(ModFun1), POINTER  :: ProcPtr
   TYPE(DT)                     :: ProcPtr
   TYPE(DT)                     :: U(10000)
@@ -116,17 +108,17 @@
   DO I  = 1, 10000
     IF ( U(I)%Id .NE. 3 )                         STOP 22
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Modfun) ) STOP 23
-    IF ( ANY(U(I)%ProcPtr((/One, Two, Thr/)) .NE. (/One, Two, Thr/) )) STOP 24 
+    IF ( ANY(U(I)%ProcPtr((/One, Two, Thr/)) .NE. (/One, Two, Thr/) )) STOP 24
   END DO
 
 
-  ProcPtr => Extfun 
+  ProcPtr => Extfun
   U = ProcPtr( (/(DT(-I, ModFun), I=1, 10000) /) )
 
   DO I  = 1, 10000
     IF ( U(I)%Id .NE. -I )                         STOP 32
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Modfun) )  STOP 33
-    IF ( ANY(U(I)%ProcPtr((/One, Two, Thr/)) .NE. (/One, Two, Thr/) )) STOP 34 
+    IF ( ANY(U(I)%ProcPtr((/One, Two, Thr/)) .NE. (/One, Two, Thr/) )) STOP 34
   END DO
 
   END

@@ -16,21 +16,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenameswitch001.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2009b
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : ensure that ops from different modules are parsed correctly
 
@@ -54,7 +47,7 @@ module opmod
       generic :: operator(.add.) => plus
 
   end type
-  
+
   contains
     function plus(a,b)
       type(modreal(20,4)) :: plus
@@ -68,7 +61,7 @@ end module
 
 module opmod2
  use opmod
- 
+
   interface operator(.plus.)
     module procedure plus2
   end interface
@@ -83,20 +76,20 @@ module opmod2
 end module
 
 program main
-use opmod 
+use opmod
 use opmod2, operator(.add.) => operator(.plus.)
   type(modreal(20,4)) :: a,z
   type(modreal2(20,4)) :: b,y
-  
+
   z=a.add.b
   print *, z%x
   y=b.add.a
   print *, y%x
   z=a.add.b.add.y
   print *, z%x
-  
-  
-  
-  
-  
+
+
+
+
+
 end program

@@ -9,5 +9,5 @@ a : block
    if (j .ne. 3) stop 2
  end block b
  if (i .ne. 2) stop 3
-end block a 
+end block a
 end

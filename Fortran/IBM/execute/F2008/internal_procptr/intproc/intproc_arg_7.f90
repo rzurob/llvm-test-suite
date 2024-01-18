@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_arg_7.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : April 25 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*
 !*  Test the argument association --
-!*    the interface of the dummy procedure is implicit and 
+!*    the interface of the dummy procedure is implicit and
 !*    the procedure is referenced as  subroutine.
-!*   
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   PROGRAM intproc_arg_7
   INTEGER :: iii
 
@@ -42,7 +33,7 @@
   CALL Extsub(intsub, 111)
 
   CONTAINS
-    SUBROUTINE intsub(Arg) 
+    SUBROUTINE intsub(Arg)
     INTEGER :: Arg
       IF (iii .NE. ARG) ERROR STOP 11
       iii = -Arg
@@ -50,17 +41,17 @@
 
   END
 
-  SUBROUTINE Extsub(proc, Arg) 
+  SUBROUTINE Extsub(proc, Arg)
   EXTERNAL :: proc
   PROCEDURE(), POINTER :: procptr
-  INTEGER :: Arg 
+  INTEGER :: Arg
     CALL proc(arg)
     CALL intsub(proc, -Arg)
     procptr => proc
     CALL procptr(Arg)
   CONTAINS
 
-  SUBROUTINE intsub(proc, Arg) 
+  SUBROUTINE intsub(proc, Arg)
   EXTERNAL :: proc
   INTEGER  :: Arg
     CALL proc(Arg)

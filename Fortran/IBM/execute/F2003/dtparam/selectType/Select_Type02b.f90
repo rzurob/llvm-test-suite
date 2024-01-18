@@ -1,25 +1,18 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type02b  - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 12, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Polymorphic argument association (external subroutines)
-!*                              
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -38,29 +31,29 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       INTEGER, PARAMETER :: knd1 = KIND(0), len1 = 10
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
         INTEGER, LEN  :: l1 = 20
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
-        CLASS(Base(k1,l1)), POINTER :: Cmp  
-      END TYPE Child 
+        CLASS(Base(k1,l1)), POINTER :: Cmp
+      END TYPE Child
 
-      TYPE, EXTENDS(Child) :: NextGen 
+      TYPE, EXTENDS(Child) :: NextGen
       END TYPE NextGen
 
       END MODULE Mod1
 
       PROGRAM Select_Type02b
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(Base(knd1,len1)), POINTER :: Ptr 
+      CLASS(Base(knd1,len1)), POINTER :: Ptr
 
       INTERFACE
          SUBROUTINE Sub1(p)
@@ -74,7 +67,7 @@ MODULE Mod1
          END SUBROUTINE Sub2
       END INTERFACE
 
-      ALLOCATE(NextGen(knd1,len1):: Ptr) 
+      ALLOCATE(NextGen(knd1,len1):: Ptr)
       IF ( .NOT. ASSOCIATED(Ptr)) STOP 10
 
       CALL sub2(Ptr)
@@ -82,13 +75,13 @@ MODULE Mod1
       SELECT TYPE ( A => Ptr)
         CLASS IS (NextGen(knd1,*))
            ! call possible within SELECT TYPE only because the dynamic type of Ptr is NextGen
-           CALL sub1(A) 
+           CALL sub1(A)
 
-           ALLOCATE(Child(knd1,len1):: A%Cmp)    
+           ALLOCATE(Child(knd1,len1):: A%Cmp)
            IF ( .NOT. ASSOCIATED(A%Cmp)) STOP 11
 
            ! call possible because dynamic type of A%Cmp extends type of Obj in sub2
-           CALL sub2(A%Cmp) 
+           CALL sub2(A%Cmp)
 
         CLASS DEFAULT
            STOP 12

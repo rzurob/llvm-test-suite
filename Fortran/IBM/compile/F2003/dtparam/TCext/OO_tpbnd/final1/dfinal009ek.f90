@@ -1,21 +1,16 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dfinal009ek.f
 !*  TEST CASE NAME             : type-bound procedure dfinal009ek
 !*
-!*  PROGRAMMER                 : David Forster (derived from dfinal009e by Catherine Sun)
 !*  DATE                       : 2007-11-13 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing the dummy argument of final 
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing the dummy argument of final
 !*                               subroutine : may not have the SAVE
 !*                               attribute.
 !*
@@ -39,12 +34,12 @@ contains
       print *, "finalizeBase"
    end subroutine
 
-end module 
+end module
 
 module m1
    use m
-   
-   type,extends(base) :: child 
+
+   type,extends(base) :: child
       integer(kbase_1) :: x
 
    contains
@@ -61,22 +56,22 @@ contains
       print *, "finalizeChild"
    end subroutine
 
-end module 
+end module
 
    use m1
- 
+
    call example
- 
- end 
-   
+
+ end
+
    subroutine example()
-      use m1 
+      use m1
       type(base(4)) :: dt1 ! tcx: (4)
 
       allocate(dt0)
       deallocate(dt0)
 
-   end subroutine 
+   end subroutine
 
 
 

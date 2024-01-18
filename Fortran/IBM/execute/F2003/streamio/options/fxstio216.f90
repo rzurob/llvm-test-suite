@@ -12,52 +12,45 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access Mode
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                : Test -qxlf77=oldboz with B, O, Z edit 
+!*  DESCRIPTION                : Test -qxlf77=oldboz with B, O, Z edit
 !*				 descriptors in Stream I/O.
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  04/01/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  04/01/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
-  program fxstio216 
+  program fxstio216
 
      implicit none
      integer    ios
-     integer*1             :: i1_in, i1_out  
-     integer*2             :: i2_in, i2_out  
-     integer*4             :: i4_in, i4_out  
-     integer*8             :: i8_in, i8_out  
-     real*4                :: r4_in, r4_out  
-     real*8                :: r8_in, r8_out  
-     real*16               :: r16_in, r16_out  
-     logical*2             :: l2_in, l2_out  
-     logical*4             :: l4_in, l4_out  
-     logical*8             :: l8_in, l8_out  
-     
+     integer*1             :: i1_in, i1_out
+     integer*2             :: i2_in, i2_out
+     integer*4             :: i4_in, i4_out
+     integer*8             :: i8_in, i8_out
+     real*4                :: r4_in, r4_out
+     real*8                :: r8_in, r8_out
+     real*16               :: r16_in, r16_out
+     logical*2             :: l2_in, l2_out
+     logical*4             :: l4_in, l4_out
+     logical*8             :: l8_in, l8_out
 
-!********************************************************** 
+
+!**********************************************************
 !       Initialization                                    *
-!********************************************************** 
+!**********************************************************
 
      i1_out = 13
      i2_out = 133
@@ -70,9 +63,9 @@
      l4_out = .true.
      l8_out = .false.
 
-!********************************************************** 
+!**********************************************************
 !      Writing and Reading the file                      *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio216.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
@@ -124,9 +117,9 @@
      READ(1, FMT='(B5, O4, Z3)', IOSTAT=ios, ERR=92) &
     &       l2_in, l4_in, l8_in
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( i1_in .ne. B'00110100') error stop 20
      if ( i2_in .ne. O'02050') error stop 21
@@ -141,11 +134,11 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 
    end program
 

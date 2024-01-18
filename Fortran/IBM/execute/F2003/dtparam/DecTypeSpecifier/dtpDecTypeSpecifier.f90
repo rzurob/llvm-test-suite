@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpDecTypeSpecifier
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 16, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  The explicit type declaration may override or confirm the implicit type 
+!*  The explicit type declaration may override or confirm the implicit type
 !*  that could  otherwise be indicated by the first letter of an entity name
-!*  
-!*  Implicit typing 
 !*
-!*  (ICE) 
+!*  Implicit typing
+!*
+!*  (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -56,12 +49,12 @@
   END TYPE
 
   PARAMETER (B=DT(1,2)(-1,"X"))
-  
+
   TYPE(DT1(8,3, K1=2, L1=2)), TARGET :: D = DT1(8,3, K1=2, L1=2)(-1, "XY")
   POINTER C
 
   ALLOCATABLE E
- 
+
   IF ( B%K               .NE.   1          ) STOP 11
   IF ( B%L               .NE.   2          ) STOP 12
   IF ( B%I%KIND          .NE.   1          ) STOP 13
@@ -87,7 +80,7 @@
 
   CLASS DEFAULT
     STOP 20
-  END SELECT 
+  END SELECT
 
   ALLOCATE(E, SOURCE=DT1(4,1, K1=2, L1=1)(-1, "XY"))
 
@@ -106,7 +99,7 @@
 
   CLASS DEFAULT
     STOP 30
-  END SELECT 
+  END SELECT
 
   END
 

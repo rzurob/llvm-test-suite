@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d353821.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d353821.f
 !*
-!*  PROGRAMMER                 : Nancy Wang   (edited by David Forster)
 !*  DATE                       : July 16 2008 (edited on August 20, 2009)
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
 !*  SECONDARY FUNCTIONS TESTED :  track defect 353821
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. DEFECT 353821
 !*
 !*  CHANGES:
@@ -63,5 +55,5 @@ end module
   if (len(t%c) /= 2) stop 3
   if (ubound(t%c,1) /= 2) stop 4
   if (kind(t%k1+t%k2) /= 2) stop 5
- 
+
   end

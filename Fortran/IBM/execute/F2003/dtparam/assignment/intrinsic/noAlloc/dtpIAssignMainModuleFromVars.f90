@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpIAssignMainModuleFromVars
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-11-12
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment without Allocation
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 358785
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -62,7 +56,7 @@ module dtpIAssignMainModuleFromVarsmod
   type(base(5))      :: b_5, b_5_a
   type(derived(5,8)) :: d_58, d_58_a
   type(d2(5,8,4,1))  :: d2_5841, d2_5841_a
-  
+
 end module dtpIAssignMainModuleFromVarsmod
 
 

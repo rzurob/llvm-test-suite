@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : intFmtNaNInfIO001.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
     & 'nan -infinity +nan(s) nan(q) -nan(_abc123)+infinity +inf -NaN(S)'
 
       character(64) :: oFile
-      
+
       character(64) :: verif_str =                                    &
     & '  NaN***   NaN(S)     -Inf NaN    NaN(Q)     Inf     Inf  NaN(S)'
-      
+
       real(4)    :: rl1, rl2
       real(8)    :: rl3, rl4
       complex(4) :: cx1
@@ -50,7 +44,7 @@
 
       write(oFile, '(f5.4, f3.1, f9.2, f9.2, f4.0, f10.1, 3f8.1)')     &
      &     rl1, cx1, real(cx1), rl2, cx2, rl3, rl4
-      
+
       if ( oFile .ne. verif_str ) error stop 1_4
-      
+
       end

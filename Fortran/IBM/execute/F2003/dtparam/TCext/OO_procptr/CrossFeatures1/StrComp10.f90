@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: StrComp10.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: StrComp10.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : StrComp10.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : StrComp10.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Procedure pointer components 
-!*  () 
+!*
+!*  Procedure pointer components
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -58,24 +52,24 @@
     TYPE  :: DT(K2,N2,K3,N3)    ! (4,20,1,3)
       INTEGER, KIND     :: K2,K3
       INTEGER, LEN      :: N2,N3
-      TYPE(Base(K3,N3)) :: BComp 
+      TYPE(Base(K3,N3)) :: BComp
     END TYPE
-   
+
     CONTAINS
- 
+
     FUNCTION ModFun(Arg)
     CHARACTER(3) :: Arg, ModFun
       ModFun = Arg
     END FUNCTION
 
   END MODULE
- 
-  PROGRAM StrComp10  
+
+  PROGRAM StrComp10
   USE M
-  IMPLICIT TYPE(DT(4,20,1,3))(P) 
+  IMPLICIT TYPE(DT(4,20,1,3))(P)
 
   INTEGER :: I
-  PROCEDURE(CHARACTER(3)),  POINTER :: ProcPtr=>NULL() 
+  PROCEDURE(CHARACTER(3)),  POINTER :: ProcPtr=>NULL()
   TYPE(DT(4,20,1,3)) :: V(512)=(/(DT(4,20,1,3)(Base(1,3)("123",NULL())), I=1, 512)/)
   TYPE(DT(4,20,1,3)) :: U(SIZE(V)), W(SIZE(V))
 
@@ -91,7 +85,7 @@
   END DO
 
   U = V
-  
+
   DO I=1, 512
     IF ( .NOT. ASSOCIATED(U(I)%BComp%ProcPtr, ModFun)) STOP 21
   END DO

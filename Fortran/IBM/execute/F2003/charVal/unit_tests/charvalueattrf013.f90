@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: charvalueattrf013.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,24 +12,17 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : charvalueattrf013
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 25, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the VALUE
-!*                               attribute when used with characters of 
-!*                               length other than 1. ( Feature 298120 )   
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*                               attribute when used with characters of
+!*                               length other than 1. ( Feature 298120 )
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Test the association of a function result with
 !*                               a character dummy argument with VALUE attribute.
@@ -48,13 +41,13 @@
       end interface
 
       character(87) :: c
-      
+
       call s1(f1())
 
       c = f1()
-      
+
       call s1(c)
-      
+
       if ( c .ne. 'XyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyXXyX' ) error stop 3
 
       end

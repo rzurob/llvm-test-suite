@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,26 +13,18 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c01h.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 1, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute 
-!*                                with derived types with different 
-!*                                intrinsic data type  
+!* DESCRIPTION                  : Test: BINC(C) attribute
+!*                                with derived types with different
+!*                                intrinsic data type
 !*                                Using external subroutine,interface.
 !*                                C calls fortran.
 !* ===================================================================
@@ -66,28 +53,28 @@ module m
 end module
 
 
-       
 
-       subroutine extsub_der(der) bind(c) 
+
+       subroutine extsub_der(der) bind(c)
          use m
          type(der_bind) :: der
-        
+
          der%i1 = der%i1 + 3
          der%i2 = der%i2 + 3
          der%i4 = der%i4 + 3
          der%i8 = der%i8 + 3
-         
+
          der%r4 = der%r4 * 2
          der%r8 = der%r8 * 2
-         
+
          der%ch1 = 'd'
-         
+
          der%l1 = .true.
-         
+
          der%x8 = (6.0, 8.0)
          der%x16 = (10.0D0, 12.0D0)
 
        end subroutine extsub_der
-       
-       
-    
+
+
+

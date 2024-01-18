@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Select Type Construct
 !*                               - type is, class is, type-spec being abstract type with rename-list
@@ -50,13 +39,13 @@ program selectType003
       type is ( abstractbase )
          error stop 1_4
    end select
-   
+
    select type ( b1 )
       type is ( abstractbase )
          error stop 2_4
       type is ( abstractchild )
          error stop 3_4
-      class default      
+      class default
    end select
 
 end program

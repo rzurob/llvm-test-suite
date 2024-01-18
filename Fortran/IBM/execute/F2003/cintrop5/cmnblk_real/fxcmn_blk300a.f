@@ -2,30 +2,23 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk300a cxcmn_blk300a
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: rm -f *.o *.mod fxcmn_blk300a 
+! %POSTCMD: rm -f *.o *.mod fxcmn_blk300a
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that scalar variables of
@@ -34,10 +27,9 @@
 !*
 !*                               Scope:  main program
 !*
-!*				 Similar to fxcmn_blk300.f; but this test case  will 
+!*				 Similar to fxcmn_blk300.f; but this test case  will
 !*				 test C_LONG_DOUBLE iso_c_binding module (so -qlongdouble
-!*				 is not used, and real*16 is not tested). 
-!*					
+!*				 is not used, and real*16 is not tested).
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -53,11 +45,11 @@ program fxcmn_blk300a
 
 ! ----------------------------------------------------------------------------
 ! Real Declaration
-!     	- use KIND, MAX, LEN, INT, MIN 
-!	- use ISO_C_BINDING modules	
+!     	- use KIND, MAX, LEN, INT, MIN
+!	- use ISO_C_BINDING modules
 ! ----------------------------------------------------------------------------
 
-	real (kind=o'004')			:: real_s4a 
+	real (kind=o'004')			:: real_s4a
 	real (LEN('Kobi'))			:: real_s4b
         real                       		:: real_s4c
         real (  4)                       	:: real_s4d
@@ -83,7 +75,7 @@ program fxcmn_blk300a
  	REAL (C_LONG_DOUBLE 		)	:: r_C_LONG_DOUBLE_s8d
 
 
-        common /blk_real/       real_s4a, real_s4b, real_s4c, real_s4d, 	& 
+        common /blk_real/       real_s4a, real_s4b, real_s4c, real_s4d, 	&
 				real_s8a, real_s8b, real_s8c, real_s8d, 	&
                                 r_C_FLOAT_s4a, r_C_FLOAT_s4b, r_C_FLOAT_s4c, r_C_FLOAT_s4d, 	&
 				r_C_DOUBLE_s8a, r_C_DOUBLE_s8b, r_C_DOUBLE_s8c, r_C_DOUBLE_s8d, &
@@ -96,9 +88,9 @@ program fxcmn_blk300a
 ! Real Initialization
 !       - use max and min possible values for +ve and -ve numbers
 ! ----------------------------------------------------------------------------
-        real_s4a 			=  3.402823E+38 
+        real_s4a 			=  3.402823E+38
         real_s4b 			=  1.175494E-38
-        real_s4c                        = -3.402823E+38 
+        real_s4c                        = -3.402823E+38
         real_s4d                        = -1.175494E-38
 
         real_s8a 			=  1.797693D+308

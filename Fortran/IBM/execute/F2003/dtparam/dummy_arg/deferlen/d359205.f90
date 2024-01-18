@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d359205.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d359205.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 20 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 20 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  DEFECT 359205 
+!*  DEFECT 359205
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(l1)
@@ -45,7 +37,7 @@ program d359205
 
   allocate(tarchild(2),source=[child(2,3)(i=[1,2]),child(2,3)(i=[-1,-2])])
 
-  select type(tarchild)     
+  select type(tarchild)
       type is(child(*,*))
          tarchild(1)%basecomp=>tarbase(2)
          tarchild(2)%basecomp=>tarbase(3)

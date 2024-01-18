@@ -1,25 +1,17 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocPtr03d
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : March, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : 26305: C-interop Allocatable/Pointer
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Diagnose the following constraint:
-!*  
+!*
 !*  If a dummy argument in an interoperable interface is of type
 !*  CHARACTER and is allocatable or a pointer, its character length
 !*  shall be deferred.

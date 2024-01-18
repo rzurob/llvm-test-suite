@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument101f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
@@ -119,7 +112,7 @@ module mod
    end subroutine sub_mod
 end module mod
 
-program AllocatableDummyArgument101f 
+program AllocatableDummyArgument101f
    use iso_c_binding
    use mod
    implicit none
@@ -256,7 +249,7 @@ contains
      t_lbound(24,1:10) = lbound(D)
      t_ubound(24,1:10) = ubound(D)
 
-!---------- call BIND(C) procedure from internal procedure 
+!---------- call BIND(C) procedure from internal procedure
    call sub_bind_c(dim1, A, B, C, D, t_size, t_shape, t_lbound, t_ubound)
 
    if ( t_size(21)          /=  t_size(31))       stop 55

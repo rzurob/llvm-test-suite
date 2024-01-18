@@ -12,37 +12,29 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dtpexpression027
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : June 2nd, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :testing expressions with derived types
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
-		
+
 type A(k1,k2)
   integer, kind :: k1
   integer, kind  :: k2
-  
+
   real((k1+k1)*(k1-2)) :: r1=cos(real(k2+k2-k1,16))
   real(k1+k1) ::  r2=sin(real(k1*k2))
   real(k1) :: r3=tan(real(k2))
   real(k2) :: r4(2:4)=(/real(k1*k2),real(k2+k1),real(k2-k1)/)
   real(k1) :: r5(k1+k2+(k1*k2)) = (/(real(k2*k1+l),l=1,k1+k2+(k1*k2))/)
-     
+
 end type
 
 type(A(4,8)) :: A1
@@ -63,4 +55,3 @@ if(any(A1%r5.ne.(/(real(32+i),i=1,44)/))) error stop 13
 
 
 end
-  

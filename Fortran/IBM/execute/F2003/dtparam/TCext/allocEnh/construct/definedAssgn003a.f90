@@ -2,31 +2,16 @@
 ! ftcx_dtp -qk -qnol -qnodefaultpv /tstdev/F2003/allocEnh/construct/definedAssgn003a.f
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=self
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 09/15/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : allocatable enhancement
 !                               Test that the type-bound defined assignment
 !                               would not apply if the defined assignment is not
 !                               elemental.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

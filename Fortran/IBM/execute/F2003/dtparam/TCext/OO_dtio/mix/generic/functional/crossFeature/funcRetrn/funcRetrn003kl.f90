@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : funcRetrn003kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from funcRetrn003 by Robert Ma)
 !*  DATE                       : 2007-08-07 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Function Return
@@ -81,7 +73,7 @@ module m
          iomsg = 'dtiowritec'
 
       end subroutine
-      
+
       class(*) function returnMeScalar(dtv)
          class(*), intent(in) :: dtv
          allocatable :: returnMeScalar
@@ -140,13 +132,13 @@ program funcRetrn003kl
          write ( 1, "(3(DT(3,6)))", iostat = stat, iomsg = msg )  i
          if ( ( stat /= 0 ) .or. ( msg /= 'dtiowritec' ) )        error stop 3_4
    end select
-   
+
    select type ( g => returnMeScalar(b1(1)) )
       class is ( base(*) ) ! tcx: (*)
          write ( 1, "(DT(3))", iostat = stat, iomsg = msg )       g
          if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteb' ) )        error stop 4_4
    end select
-   
+
    select type ( g => returnMeScalar(c1(3)) )
       class is ( base(*) ) ! tcx: (*)
          write ( 1, "(DT(3,6))", iostat = stat, iomsg = msg )       g

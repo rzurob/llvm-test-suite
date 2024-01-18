@@ -1,31 +1,26 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : faddINT16
 !*
-!*  PROGRAMMER                 : Morteza Ershad-Manesh
 !*  DATE                       : 2010-07-12
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 
+!*  REFERENCE                  : Feature Number
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
-!*  ADAPTED FROM               : 
+!*  ADAPTED FROM               :
 !*
 !*  DESCRIPTION
 !*   This test case uses INT16 from IOS_FORTRAN_ENV module.
-!*   Focus of this test case is to add two arrays togther. 
+!*   Focus of this test case is to add two arrays togther.
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -59,7 +54,7 @@ DO i=1,30
    PRINT*,"Values: ",Result(i), " != ", Result1(i)
    error stop 1_4
  ELSE
-   PRINT*,"i=",i 
+   PRINT*,"i=",i
    PRINT*,Result(i)," == ", Result1(i)
  END IF
 END DO

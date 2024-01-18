@@ -3,22 +3,11 @@
 ! opt variations: -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Derived Type Intrinsic Assignment:
 !*                                 - for allocatable component
@@ -74,9 +63,9 @@ program genericAssignmentDtIntrinAssgn025
    print *, 'b1 bounds:', lbound(c2%b1), ubound(c2%b1),  'c1 bounds:', lbound(c2%c1), ubound(c2%c1)
    print *, c3%b1%i, c3%c1%i, c3%c1%j
    print *, 'b1 bounds:', lbound(c3%b1), ubound(c3%b1),  'c1 bounds:', lbound(c3%c1), ubound(c3%c1)
-   
+
    deallocate ( c2%b1, c2%c1 )
-   
+
    allocate ( c2%b1(-1000:-998), source = (/ base(20,4)(11), base(20,4)(12), base(20,4)(13) /) )
    allocate ( c2%c1(10000:10002), source = (/ child(20,4)(14,15), child(20,4)(16,17), child(20,4)(18,19) /) )
 
@@ -91,7 +80,7 @@ program genericAssignmentDtIntrinAssgn025
    print *, 'b1 bounds:', lbound(c3%b1), ubound(c3%b1),  'c1 bounds:', lbound(c3%c1), ubound(c3%c1)
 
    deallocate ( c3%b1, c3%c1 )
-   
+
    allocate (base(20,4) :: c3%b1(10:0) )          ! zero-sized
    allocate ( c3%c1(-1:1), source = (/ child(20,4)(14,15), child(20,4)(16,17), child(20,4)(18,19) /) )
 

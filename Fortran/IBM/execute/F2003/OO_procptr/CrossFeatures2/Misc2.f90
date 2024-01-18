@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Misc2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Misc2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Misc2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Misc2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 26, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Procedure pointer - argument/enum 
+!*
+!*  Procedure pointer - argument/enum
 !*  (core-struct contr problem )
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -45,7 +39,7 @@
   MODULE M
 
   ENUM, BIND(C)
-    ENUMERATOR :: Zero 
+    ENUMERATOR :: Zero
     ENUMERATOR :: One
     ENUMERATOR :: Two
     ENUMERATOR :: Thr
@@ -55,11 +49,11 @@
     INTEGER :: Id = One
     PROCEDURE(IFun), NoPASS, POINTER :: ProcPtr
     CONTAINS
-    PROCEDURE, NoPASS :: Proc => ModFun 
+    PROCEDURE, NoPASS :: Proc => ModFun
   END TYPE
 
   ENUM, BIND(C)
-    ENUMERATOR :: Start 
+    ENUMERATOR :: Start
     ENUMERATOR :: Mon
     ENUMERATOR :: Tue
     ENUMERATOR :: Wed
@@ -87,24 +81,24 @@
 
   END MODULE
 
-  PROGRAM Misc2 
+  PROGRAM Misc2
   USE M
 
   PROCEDURE(ModFun),        POINTER :: ProcPtr1
   PROCEDURE(ProcPtr1),      POINTER :: ProcPtr2
   PROCEDURE(TYPE(DT)),      POINTER :: ProcPtr3
   TYPE(DT)                          :: Const=DT(Mon, NULL())
-  TYPE(DT)                          :: U 
+  TYPE(DT)                          :: U
 
 
-  TYPE(DT)        :: V(Thr) 
+  TYPE(DT)        :: V(Thr)
 
   Const%ProcPtr => modFun
   V = Const
- 
+
   ProcPtr1 => ModFun
   ProcPtr2 => ProcPtr1
- 
+
   U = ProcPtr1(DT(Two, ModFun) )
   IF ( U%ID .NE.  2 )                       STOP 11
   IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun)) STOP 12

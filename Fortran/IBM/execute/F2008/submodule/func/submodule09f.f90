@@ -1,21 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : submodule09f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : April 20, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                               
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  DRIVER STANZA              : xlf2008
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
@@ -25,12 +19,12 @@
 !*  DESCRIPTION                :
 !*  based on F2003/dtparam/allocate/allocBasePoly03.f
 !*
-!*  Module subroutine inside a submodule can access a variable in the 
+!*  Module subroutine inside a submodule can access a variable in the
 !*  host module scope (in this case allocate a pointer to a derived type
 !*  object defined in the host).
-!* 
+!*
 !*  Verify that the results match the values of the original test case.
-!* 
+!*
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 MODULE baseMod
@@ -97,6 +91,6 @@ PROGRAM allocBasePoly03
 
     DEALLOCATE( basePtr )
 
-    IF ( ASSOCIATED( basePtr ) )                error stop  30_4 
+    IF ( ASSOCIATED( basePtr ) )                error stop  30_4
 
 END PROGRAM allocBasePoly03

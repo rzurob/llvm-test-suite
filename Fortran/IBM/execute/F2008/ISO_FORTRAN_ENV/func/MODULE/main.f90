@@ -11,7 +11,7 @@ program main
   REAL(REAL32):: real32result
   REAL(REAL64):: real64result
   REAL(REAL128):: real128result
-  
+
   INTEGER(INT8):: int8var1,int8var2,int8resultVector
   INTEGER(INT16):: int16var1,int16var2,int16resultVector
   INTEGER(INT32):: int32var1,int32var2,int32resultVector
@@ -31,11 +31,9 @@ program main
   equivalence (real64resultVector,real64result)
   equivalence (real128resultVector,real128result)
 
- 
-
   int8var1 = 50
   int8var2 = 30
- 
+
   int16var1 = 32000
   int16var2 = 500
   int32var1 = 21473212
@@ -49,13 +47,11 @@ program main
   real64var2 = 0.707003D+19
   real128var1 = 0.797693Q+208
   real128var2 = 0.000003Q+30
-  
-
 
   OperationSuccessful = Add(int8var1,int8var2,int8resultVector)
   if (OperationSuccessful .NEQV. .true.) stop 1
   PrintSuccessful = PrintResult(OperationSuccessful, int8result)
- 
+
   OperationSuccessful = Add(int16var1,int16var2,int16resultVector)
   if (OperationSuccessful .NEQV. .true.) stop 2
   PrintSuccessful = PrintResult(OperationSuccessful, int16result)
@@ -79,7 +75,6 @@ program main
   OperationSuccessful = Add(real128var1,real128var2,real128resultVector)
   if (OperationSuccessful .NEQV. .true.) stop 7
   PrintSuccessful = PrintResult(OperationSuccessful, real128result)
- 
 
   OperationSuccessful = Mul(int8var1,int8var2,int8resultVector)
   if (OperationSuccessful .NEQV. .true.) stop 8
@@ -109,7 +104,6 @@ program main
   if (OperationSuccessful .NEQV. .true.) stop 14
   PrintSuccessful = PrintResult(OperationSuccessful, real128result)
 
-
   OperationSuccessful = Sub(int8var1,int8var2,int8resultVector)
   if (OperationSuccessful .NEQV. .true.) stop 15
   PrintSuccessful = PrintResult(OperationSuccessful, int8result)
@@ -138,7 +132,6 @@ program main
   if (OperationSuccessful .NEQV. .true.) stop 21
   PrintSuccessful = PrintResult(OperationSuccessful, real128result)
 
-
   OperationSuccessful = Div(int8var1,int8var2,int8resultVector)
   if (OperationSuccessful .NEQV. .true.) stop 22
   PrintSuccessful = PrintResult(OperationSuccessful, int8result)
@@ -166,5 +159,5 @@ program main
   OperationSuccessful = Div(real128var1,real128var2,real128resultVector)
   if (OperationSuccessful .NEQV. .true.) stop 28
   PrintSuccessful = PrintResult(OperationSuccessful, real128result)
- 
+
 end program

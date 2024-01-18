@@ -1,29 +1,21 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument501f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Calling a BIND(C) procedure defined in C from Fortran 
-!*                                - Allocate in C using CFI_allocate 
+!* DESCRIPTION                  : Calling a BIND(C) procedure defined in C from Fortran
+!*                                - Allocate in C using CFI_allocate
 !*                                - De-associate/deallocate in Fortran using => NULL(), deallocate and NULLIFY
-!*                                - Verify allocation status and values in both C and Fortran 
-!*                                  
+!*                                - Verify allocation status and values in both C and Fortran
 !*
 !* Actual Argument:
-!*  
+!*
 !* Dummy Argument:
 !*
 !* ===================================================================
@@ -51,13 +43,13 @@ end interface
 integer(c_int), allocatable :: al
 integer(c_int), pointer :: ptr => NULL()
 integer(c_int), target :: t = 6
-integer(c_int) :: q 
-     
-! call C procedures with non-allocated, non-associated vars  
+integer(c_int) :: q
+
+! call C procedures with non-allocated, non-associated vars
 call c_associate(ptr)
 call c_allocate(al)
 
-! ptr and al are now allocated/associated 
+! ptr and al are now allocated/associated
 if( .not.   allocated(al) ) ERROR STOP 10
 if( .not. associated(ptr) ) ERROR STOP 11
 
@@ -65,14 +57,14 @@ deallocate(al)
 allocate(al, source=5)
 ptr => t
 
-! call C procedures with allocated, associated vars  
+! call C procedures with allocated, associated vars
 call c_associate(ptr)
 call c_allocate(al)
 
 ptr => NULL()
 deallocate(al)
 
-! call C procedures with non-allocated, non-associated vars  
+! call C procedures with non-allocated, non-associated vars
 call c_associate(ptr)
 call c_allocate(al)
 if( .not.   allocated(al) ) ERROR STOP 12
@@ -82,14 +74,14 @@ allocate(ptr)
 ptr = 6
 al = 5
 
-! call C procedures with allocated, associated vars  
+! call C procedures with allocated, associated vars
 call c_associate(ptr)
 call c_allocate(al)
 
 NULLIFY(ptr)
 deallocate(al)
 
-! call C procedures with non-allocated, non-associated vars  
+! call C procedures with non-allocated, non-associated vars
 call c_associate(ptr)
 call c_allocate(al)
 if( .not.   allocated(al) ) ERROR STOP 14
@@ -99,7 +91,7 @@ q = 6
 allocate(ptr, source=q)
 al =q-1
 
-! call C procedures with allocated, associated vars  
+! call C procedures with allocated, associated vars
 call c_associate(ptr)
 call c_allocate(al)
 

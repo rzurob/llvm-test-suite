@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: TypeMatch6.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : TypeMatch6
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 24, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  No matching clauses 
-!*  
+!*
+!*  No matching clauses
+!*
 !*    (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -55,12 +49,12 @@
       INTEGER, KIND :: K1
       INTEGER, LEN  :: N1
       INTEGER(K1)   :: Id=1
-    END TYPE 
-
-    TYPE, EXTENDS(Zero)  :: One    ! (20,4) 
     END TYPE
 
-    TYPE, EXTENDS(One) :: Two    ! (20,4) 
+    TYPE, EXTENDS(Zero)  :: One    ! (20,4)
+    END TYPE
+
+    TYPE, EXTENDS(One) :: Two    ! (20,4)
     END TYPE
 
     TYPE, EXTENDS(Two) :: Three    ! (20,4)
@@ -68,17 +62,17 @@
 
   END MODULE
 
-  PROGRAM TypeMatch4 
+  PROGRAM TypeMatch4
   USE M,  Two=>One , DT=>Two
   IMPLICIT NONE
   CLASS(*), ALLOCATABLE :: U(:,:)
-   
+
     ALLOCATE(DT(20,4) :: U(2:3,3:4) )
 
     SELECT TYPE (One=>U)
-    TYPE IS (Zero(*,4)) 
+    TYPE IS (Zero(*,4))
       STOP 40
-    TYPE IS (Three(*,4)) 
+    TYPE IS (Three(*,4))
       STOP 41
     TYpe IS (Two(*,4))
       STOP 43
@@ -88,7 +82,7 @@
     CLASS DEFAULT
       STOP 44
     END SELECT
- 
+
   END
 
 

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: EvalFirst.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: EvalFirst.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : EvalFirst
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 04, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
-!*  The selector is evaluated prior to execution of the associate block 
-!*   
-!*    () 
+!*
+!*  The selector is evaluated prior to execution of the associate block
+!*
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,7 +41,7 @@
 
   PROGRAM EvalFirst
   IMPLICIT NONE
-  LOGICAL(8) :: LArr(0:127)=.FALSE. 
+  LOGICAL(8) :: LArr(0:127)=.FALSE.
 
   ASSOCIATE (             &
   & A1   => FUN(LArr,1),  &
@@ -231,7 +225,7 @@
     &     A125 .OR. A126 .OR. A127  )                    .EQV. .TRUE. ) STOP 22
 
     IF (ANY( LArr .NEQV. .TRUE. )) STOP  33
- 
+
   END ASSOCIATE
 
   CONTAINS

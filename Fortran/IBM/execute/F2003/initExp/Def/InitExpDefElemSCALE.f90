@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemSCALE.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemSCALE.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 14, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  SCALE 
+!*
+!*  -  SCALE
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,7 +30,7 @@
 
 
   PROGRAM  InitExpDefElemSCALE
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
 
@@ -63,22 +56,22 @@
 
 
   TYPE :: DT
-    REAL(4)  :: R4(4,4)=RESHAPE((/(3.0, I=1,16)/),(/4,4/)) 
-    REAL(8)  :: R8(4,4)=RESHAPE((/(3.0, I=1,16)/),(/4,4/)) 
-    REAL(16) :: R6(4,4)=RESHAPE((/(3.0, I=1,16)/),(/4,4/)) 
+    REAL(4)  :: R4(4,4)=RESHAPE((/(3.0, I=1,16)/),(/4,4/))
+    REAL(8)  :: R8(4,4)=RESHAPE((/(3.0, I=1,16)/),(/4,4/))
+    REAL(16) :: R6(4,4)=RESHAPE((/(3.0, I=1,16)/),(/4,4/))
   END TYPE
 
   TYPE (DT), PARAMETER :: X = DT()
   REAL(4), PARAMETER :: RR=12.
 
   REAL(KIND(RESHAPE(SOURCE=SCALE(X=X%R4, I=2_1),SHAPE=(/4,4/))))  ::   &
-   TR4(4,4)=RESHAPE(SOURCE=SCALE(X=X%R4, I=2_1),SHAPE=(/4,4/)) 
+   TR4(4,4)=RESHAPE(SOURCE=SCALE(X=X%R4, I=2_1),SHAPE=(/4,4/))
 
   REAL(KIND(RESHAPE(SOURCE=SCALE(X=X%R8, I=2_2),SHAPE=(/4,4/))))  ::   &
-   TR8(4,4)=RESHAPE(SOURCE=SCALE(X=X%R8, I=2_2),SHAPE=(/4,4/)) 
+   TR8(4,4)=RESHAPE(SOURCE=SCALE(X=X%R8, I=2_2),SHAPE=(/4,4/))
 
   REAL(KIND(RESHAPE(SOURCE=SCALE(X=X%R6, I=2_8),SHAPE=(/4,4/))))  ::   &
-   TR6(4,4)=RESHAPE(SOURCE=SCALE(X=X%R6, I=2_8),SHAPE=(/4,4/)) 
+   TR6(4,4)=RESHAPE(SOURCE=SCALE(X=X%R6, I=2_8),SHAPE=(/4,4/))
 
   REAL(4) :: T41=SCALE(X=r4Max_N, I=-1)
   REAL(4) :: T42=SCALE(X=r4Min_N, I=-1 )

@@ -1,30 +1,21 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_PARAMETER_03a.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Init Expression - PARAMETER 
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Init Expression - PARAMETER
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -59,13 +50,13 @@ PROGRAM DTP_PARAMETER_03a
 
       PARAMETER (b1 = Base ( 10, 'IBM' ))
       PARAMETER (c1 = Child ( C1 = 'Constant' ))
-      PARAMETER (n1 = NextGen ( 3, 'ABC', 6, 'DEF', 9, 'GHI' )) 
+      PARAMETER (n1 = NextGen ( 3, 'ABC', 6, 'DEF', 9, 'GHI' ))
 
       IF ( b1%k1 .NE. 4 ) STOP 10
       IF ( b1%l1 .NE. 9 ) STOP 11
       IF ( SIZE(b1%A0) .NE.  9 ) STOP 12
       IF ( LEN(b1%C0)  .NE.  9 ) STOP 13
-      IF ( ANY(b1%A0   .NE.   10) ) STOP 14 
+      IF ( ANY(b1%A0   .NE.   10) ) STOP 14
       IF ( TRIM(b1%C0) .NE. 'IBM' ) STOP 15
 
       IF ( b2%k1 .NE. 4 ) STOP 20
@@ -87,7 +78,7 @@ PROGRAM DTP_PARAMETER_03a
       IF ( ANY(c1%A1 .NE. -2) ) STOP 39
       IF ( TRIM(c1%C0) .NE. 'Base-init' ) STOP 40
       IF ( TRIM(c1%C1) .NE.  'Constant' ) STOP 41
- 
+
       IF ( c2%k1 .NE.  4 ) STOP 50
       IF ( c2%k2 .NE.  4 ) STOP 51
       IF ( c2%l1 .NE.  9 ) STOP 52
@@ -100,7 +91,7 @@ PROGRAM DTP_PARAMETER_03a
       IF ( ANY(c2%A1 .NE. -2) ) STOP 59
       IF ( TRIM(c2%C0) .NE.  'Base-init' ) STOP 60
       IF ( TRIM(c2%C1) .NE. 'Child-init' ) STOP 61
-  
+
       IF ( n1%k1 .NE.    4 ) STOP 70
       IF ( n1%k2 .NE.    4 ) STOP 71
       IF ( n1%l1 .NE.    9 ) STOP 72
@@ -118,7 +109,7 @@ PROGRAM DTP_PARAMETER_03a
       IF ( TRIM(n1%C0) .NE. 'ABC' ) STOP 84
       IF ( TRIM(n1%C1) .NE. 'DEF' ) STOP 85
       IF ( TRIM(n1%C2) .NE. 'GHI' ) STOP 86
-  
+
       IF ( n2%k1 .NE.    4 ) STOP 90
       IF ( n2%k2 .NE.    4 ) STOP 91
       IF ( n2%l1 .NE.    9 ) STOP 92
@@ -136,5 +127,5 @@ PROGRAM DTP_PARAMETER_03a
       IF ( TRIM(n2%C0) .NE.  'Base-init' ) STOP 104
       IF ( TRIM(n2%C1) .NE. 'Child-init' ) STOP 105
       IF ( TRIM(n2%C2) .NE. 'NextGen-in' ) STOP 106
-  
+
 END PROGRAM DTP_PARAMETER_03a

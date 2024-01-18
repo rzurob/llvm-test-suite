@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d362128.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d362128.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 11 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 11 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 362128
@@ -30,7 +22,7 @@ module m
      contains
          procedure :: assignA1
          procedure :: assignA2
-         generic :: assignment(=)=>assignA1,assignA2 
+         generic :: assignment(=)=>assignA1,assignA2
    end type
 
    type base(l1)
@@ -42,7 +34,7 @@ module m
    type,extends(base) :: child(k2)
      integer,kind :: k2
      logical(k2),pointer :: g1(:,:)=>null()
-     type(A(2*k2)) :: a2comp                        
+     type(A(2*k2)) :: a2comp
      contains
         procedure :: assignChild1
         procedure :: assignChild2
@@ -69,9 +61,8 @@ module m
      end subroutine
 
       subroutine assignChild2(this,dt)
-       class(child(*,4)),intent(inout) :: this 
+       class(child(*,4)),intent(inout) :: this
        type(child(*,4)),intent(in)     :: dt
-
 
      end subroutine
 

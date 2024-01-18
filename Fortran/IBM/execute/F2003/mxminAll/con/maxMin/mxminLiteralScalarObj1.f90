@@ -1,29 +1,18 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/15/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                : MAX/MIN with literal as actual 
+!*  DESCRIPTION                : MAX/MIN with literal as actual
 !*                               argument in procedure pointer with
-!*                               explicit interface  
+!*                               explicit interface
 !*                               literal is substring
 !* ===================================================================
 
-  module literalObj 
+  module literalObj
     interface
         subroutine sub1(arg1, arg2)
             character*3, intent(in) :: arg2
@@ -40,16 +29,16 @@
   program mxminLiteralScalarObj1
 
   use literalObj
- 
+
     interface
         subroutine ifacesub1(arg1, arg2)
-        use literalObj 
+        use literalObj
             character*3, intent(in) :: arg2
             character*3 arg1
         end subroutine
 
         function ifacefun1(arg)
-        use literalObj 
+        use literalObj
             character*3, intent(in) :: arg
             character*3 :: ifacefun1
         end function
@@ -82,5 +71,4 @@
     character*3 :: fun1
     fun1 = arg
   end function
-
 

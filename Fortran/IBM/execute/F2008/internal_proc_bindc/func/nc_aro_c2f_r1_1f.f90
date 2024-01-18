@@ -11,9 +11,9 @@ program fortranMain
   check_c_to_f_ptr = c_funloc(check_c_to_f)
 
   call cfun(check_c_to_f_ptr)
-  
+
   contains
-  subroutine check_c_to_f(c_arg2,c_len,test_no) bind(c) 
+  subroutine check_c_to_f(c_arg2,c_len,test_no) bind(c)
     use, intrinsic :: iso_c_binding
     character(*) :: c_arg2(..)
     integer(C_INT) c_len, test_no

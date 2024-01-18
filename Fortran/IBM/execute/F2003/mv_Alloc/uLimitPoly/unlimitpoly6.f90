@@ -1,22 +1,10 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlimitpoly6.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 05/25/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimit polymorphic,
 !*                               dummy args with volatile, optional,
@@ -38,12 +26,12 @@
 
 module m
 
-   class(*), allocatable :: from 
+   class(*), allocatable :: from
 
-   interface 
+   interface
         subroutine sub(from,to)
-            class(*), volatile, allocatable :: from 
-            class(*), optional, allocatable :: to 
+            class(*), volatile, allocatable :: from
+            class(*), optional, allocatable :: to
         end subroutine
    end interface
 end module
@@ -51,7 +39,7 @@ end module
 program main
 use m
 
-   class(*), allocatable :: to 
+   class(*), allocatable :: to
 
    call sub(from, to)
 
@@ -61,14 +49,14 @@ use m
        type is (character(*))
             if ( to /= "helloworld" ) stop 23
        class default
-            stop 22 
+            stop 22
    end select
 
 end
 
 subroutine sub(from,to)
-    class(*), volatile, allocatable :: from 
-    class(*), optional, intent(inout), allocatable :: to 
+    class(*), volatile, allocatable :: from
+    class(*), optional, intent(inout), allocatable :: to
 
     allocate(from, source="helloworld")
     if ( .not. allocated(from) ) stop 11
@@ -77,6 +65,6 @@ subroutine sub(from,to)
         call move_alloc(from, to)
         if ( allocated(from)) stop 12
     else
-        stop 13 
+        stop 13
     endif
 end subroutine

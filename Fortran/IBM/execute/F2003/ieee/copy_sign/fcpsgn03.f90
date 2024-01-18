@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Vasile Radulescu
 !*  DATE                       : February 15, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_COPY_SIGN
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  : -qfloat=nofold -qstrict
 !*
 !*  KEYWORD(S)                 :
@@ -49,7 +41,7 @@
      &  (/ huge(PINF_16), tiny(PINF_16), -tiny(PINF_16), -huge(PINF_16)/ )
 
         real(16), dimension(4) :: xnormal_res, ynormal_sgn
-        
+
         logical, dimension(5) :: actual_flag_values, original(5)
         integer :: k
 
@@ -88,7 +80,7 @@
            error stop 4
         endif
 
-!...Test with arguments of different kinds 
+!...Test with arguments of different kinds
         xr_8 = -1.0_8
         yr_4 = 2.0
 
@@ -103,7 +95,7 @@
         xr_4 = ieee_copy_sign(xr_4, yr_8)
         if ( xr_4 /= 1.0 ) then
            error stop 6
-        endif 
+        endif
 
         xr_8 = 1.0_8
         yr_4 = -2.0
@@ -155,31 +147,31 @@
            error stop 12
         endif
 
-     
+
         xr_8 = ieee_copy_sign(1.0_8, -2.0)
         if ( xr_8 /= -1.0_8 ) then
            error stop 13
-        endif 
+        endif
 
         xr_8 = -2.0_8
         xr_8 = ieee_copy_sign(xr_8, 7.0)
         if ( xr_8 /= 2.0_8 ) then
            error stop 14
         endif
-       
+
         xr_16 = -2.0_16
         xr_16 = ieee_copy_sign(xr_16, 7.0)
         if ( xr_16 /= 2.0_16 ) then
            error stop 15
         endif
-  
-   
+
+
         ynormal_sgn = -1.0_16
 
         xnormal_res = ieee_copy_sign(normal_val, ynormal_sgn)
         if (xnormal_res(1) /= -huge(PINF_16) ) then
            error stop 16
-        endif 
+        endif
         if (xnormal_res(2) /= -tiny(PINF_16) ) then
            error stop 17
         endif
@@ -201,6 +193,6 @@
 
         end
 
- 
+
 
 

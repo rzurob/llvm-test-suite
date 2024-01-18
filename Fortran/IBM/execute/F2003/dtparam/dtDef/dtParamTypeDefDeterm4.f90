@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefDeterm4   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefDeterm4
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 15, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Determination of Types 
+!*  SECONDARY FUNCTIONS TESTED : Determination of Types
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Determination of derived types - sequence types 
+!*  Determination of derived types - sequence types
 !*
 !*  (Syntax err&ice)
 !*
@@ -38,7 +31,7 @@
   TYPE :: SeqType(K, L)
     INTEGER, KIND :: K
     INTEGER, LEN  :: L
-    SEQUENCE      
+    SEQUENCE
     INTEGER(K)  :: I
     REAL(K)     :: R
     COMPLEX(K)  :: Cplx
@@ -52,7 +45,7 @@
 
   END MODULE
 
-  PROGRAM dtParamTypeDefDeterm4 
+  PROGRAM dtParamTypeDefDeterm4
   USE M, DT => SeqType
 
   CALL S()
@@ -63,7 +56,7 @@
   TYPE :: SeqType(K, L)
     INTEGER, KIND :: K
     INTEGER, LEN  :: L
-    SEQUENCE      
+    SEQUENCE
     INTEGER(K)  :: I
     REAL(K)     :: R
     COMPLEX(K)  :: Cplx
@@ -97,6 +90,6 @@
   IF ( TRIM(T2%C).NE.   TRIM("B"))       STOP 47
 
   END SUBROUTINE
- 
+
   END
 

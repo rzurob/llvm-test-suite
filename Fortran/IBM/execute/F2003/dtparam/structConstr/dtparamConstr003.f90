@@ -66,7 +66,6 @@ use m
     end associate
 end
 
-
 function genBase8 (d1)
 use m
     real(8), intent(in) :: d1(:)

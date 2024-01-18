@@ -1,23 +1,20 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_d04.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED : implicit none
-!*  ADAPTED FROM               : 
+!*  ADAPTED FROM               :
 !*
 !*  DESCRIPTION
 !*
 !*    With implicit none, the index variable must be declared.  The declaration
-!*    can be in the header with a type spec, or outside the loop.  Verify that 
-!*    there is an error message with an undeclared index and no error message 
+!*    can be in the header with a type spec, or outside the loop.  Verify that
+!*    there is an error message with an undeclared index and no error message
 !*    with a declared index.
 !*
 !* =============================================================================

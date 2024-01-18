@@ -1,26 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : valueAttrMultiArg002.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 04/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Passing characters along with multiple
 !*				 actual args of different types. character
 !*				 actual arg to be tested is 8 bytes.
-!*                              
-!*                              
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================

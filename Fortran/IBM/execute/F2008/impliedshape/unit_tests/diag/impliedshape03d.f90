@@ -1,17 +1,9 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : impliedshape03d.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : February 22, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Implied-shape arrays
-!*
-!* DRIVER STANZA              : xlf2008
 !*
 !* DESCRIPTION                : Testing proper diagnostics of
 !*                              implied-shape arrays without
@@ -36,7 +28,7 @@
            & reshape([1,2,3,4,5,6,7,8],[2,2,2])
       integer :: i4d4 (*,*,*,*) = &
            & reshape([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],[2,2,2,2])
-       
+
       ! Real
       real :: r4c1 (*) = [ 1.0, (real(i),i=2,6) ]
       real :: r4c2 (*) = [ (real(i),i=1,5), 6.0 ]
@@ -100,10 +92,10 @@
       logical :: l4d2 (*,*) = &
            & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2])
       logical :: l4d3 (*,*,*) = &
-           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., & 
+           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., &
            &          .FALSE.,.TRUE.,.FALSE.,.TRUE.],[2,2,2])
       logical :: l4d4 (*,*,*,*) = &
-           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., & 
+           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2,2,2])
@@ -119,7 +111,7 @@
            & reshape([1,2,3,4,5,6,7,8],[2,2,2])
       byte :: b4d4 (*,*,*,*) = &
            & reshape([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],[2,2,2,2])
-      
+
 
       ! Derived type
       type(base) :: tb4c1 (*) = &
@@ -157,7 +149,7 @@
            & reshape([1,2,3,4,5,6,7,8],[2,2,2])
       integer :: i4d4 (*,*,*,*) = &
            & reshape([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],[2,2,2,2])
-       
+
       ! Real
       real :: r4c1 (*) = [ 1.0, (real(i),i=2,6) ]
       real :: r4c2 (*) = [ (real(i),i=1,5), 6.0 ]
@@ -221,10 +213,10 @@
       logical :: l4d2 (*,*) = &
            & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2])
       logical :: l4d3 (*,*,*) = &
-           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., & 
+           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., &
            &          .FALSE.,.TRUE.,.FALSE.,.TRUE.],[2,2,2])
       logical :: l4d4 (*,*,*,*) = &
-           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., & 
+           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2,2,2])
@@ -240,7 +232,7 @@
            & reshape([1,2,3,4,5,6,7,8],[2,2,2])
       byte :: b4d4 (*,*,*,*) = &
            & reshape([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],[2,2,2,2])
-      
+
 
       ! Derived type
       type(base) :: tb4c1 (*) = &
@@ -277,7 +269,7 @@
            & reshape([1,2,3,4,5,6,7,8],[2,2,2])
       integer :: i4d4 (*,*,*,*) = &
            & reshape([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],[2,2,2,2])
-       
+
       ! Real
       real :: r4c1 (*) = [ 1.0, (real(i),i=2,6) ]
       real :: r4c2 (*) = [ (real(i),i=1,5), 6.0 ]
@@ -341,10 +333,10 @@
       logical :: l4d2 (*,*) = &
            & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2])
       logical :: l4d3 (*,*,*) = &
-           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., & 
+           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., &
            &          .FALSE.,.TRUE.,.FALSE.,.TRUE.],[2,2,2])
       logical :: l4d4 (*,*,*,*) = &
-           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., & 
+           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2,2,2])
@@ -360,7 +352,7 @@
            & reshape([1,2,3,4,5,6,7,8],[2,2,2])
       byte :: b4d4 (*,*,*,*) = &
            & reshape([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],[2,2,2,2])
-      
+
 
       ! Derived type
       type(base) :: tb4c1 (*) = &
@@ -397,7 +389,7 @@
            & reshape([1,2,3,4,5,6,7,8],[2,2,2])
       integer :: i4d4 (*,*,*,*) = &
            & reshape([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],[2,2,2,2])
-       
+
       ! Real
       real :: r4c1 (*) = [ 1.0, (real(i),i=2,6) ]
       real :: r4c2 (*) = [ (real(i),i=1,5), 6.0 ]
@@ -461,10 +453,10 @@
       logical :: l4d2 (*,*) = &
            & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2])
       logical :: l4d3 (*,*,*) = &
-           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., & 
+           & reshape([.FALSE.,.TRUE.,.FALSE.,.TRUE., &
            &          .FALSE.,.TRUE.,.FALSE.,.TRUE.],[2,2,2])
       logical :: l4d4 (*,*,*,*) = &
-           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., & 
+           & reshape([.TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE., &
            &          .TRUE.,.FALSE.,.TRUE.,.FALSE.],[2,2,2,2])
@@ -480,7 +472,7 @@
            & reshape([1,2,3,4,5,6,7,8],[2,2,2])
       byte :: b4d4 (*,*,*,*) = &
            & reshape([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],[2,2,2,2])
-      
+
 
       ! Derived type
       type(base) :: tb4c1 (*) = &

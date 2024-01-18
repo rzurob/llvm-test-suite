@@ -5,37 +5,29 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgm005.f
 ! %VERIFY: fort.18:fxiomsgm005.vf
-! %STDIN: 
-! %STDOUT:  
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
- 
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : FILE= is needed in the OPEN with langlvl=90std
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 1
 !*
 !*  DESCRIPTION                : Different language level has different I/O
-!*                               statement support. The FILE=specifier is 
+!*                               statement support. The FILE=specifier is
 !*                               needed on langlvl '90std' while not necessary
 !*                               on langlvl 'extended'. This test case checks
 !*                               if the iomsg is catching this error message.
@@ -50,10 +42,9 @@
 !*********************************************************************
 
       program fxiomsgm005
- 
+
       implicit none                     ! All variables must be Declared
- 
- 
+
       integer*4 case_id                 ! Test Case id under test.
       integer*4 ios
       character*400 errmsg
@@ -70,7 +61,7 @@ call setrteopts("langlvl=90std")
 !
 ! TestCase 1...
 !
- 
+
       case_id = case_id + 1
 
       open ( 18, file = 'fort.18' )
@@ -79,7 +70,7 @@ call setrteopts("langlvl=90std")
       call zzrc ( case_id )
 
 10    write ( 18, * ) errmsg
-   
+
       if ( ios <> 151 ) call zzrc ( case_id )
 
 ! Clean up...

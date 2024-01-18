@@ -1,24 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal501a3k
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal501a3 by Jim Xia)
 !*  DATE                       : 2007-11-01 (original: 04/23/2005)
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : final sub (finalization of LHS during the
 !                               intrinsic assignment)
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

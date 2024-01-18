@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD:  
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90 -qrealsize=8
 ! %GROUP: fxass095.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass087.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -96,7 +84,7 @@
 !-----------   ASSOCIATE with REAL expressions ----------------
 
            associate ( dertype => der_type%r4 )
-                  dertype = dertype*2 
+                  dertype = dertype*2
                   if (.not.precision_r8(dertype,der_type%r4)) then
                   error stop 14
                   endif

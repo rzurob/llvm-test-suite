@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,28 +13,20 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c09f.f
-!* TEST CASE TITLE              : BIND(C) attribute/statement
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute/statement 
+!* DESCRIPTION                  : Test: BINC(C) attribute/statement
 !*                                with different intrinsic data type,
 !*                                integer*1, integer*2, integer*4,
 !*                                integer*8, real*4, real*8, real*16,
-!*                                byte, character(1). Using module 
+!*                                byte, character(1). Using module
 !*                                recursive entry
 !* ===================================================================
 !*  REVISION HISTORY
@@ -51,7 +38,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
 contains
-       recursive subroutine sextsub_int(i1, i2, i4, i8, i) 
+       recursive subroutine sextsub_int(i1, i2, i4, i8, i)
            integer*1 i1
            integer*2 i2
            integer*4 i4,i
@@ -72,7 +59,7 @@ contains
            call extsub_int(i1, i2, i4, i8, i)
        end subroutine sextsub_int
 
-       recursive subroutine sextsub_real(r4, r8, r) 
+       recursive subroutine sextsub_real(r4, r8, r)
            real*4   r4
            real*8   r8
            integer*4 r
@@ -88,7 +75,7 @@ contains
            call extsub_real(r4, r8, r)
        end subroutine sextsub_real
 
-       recursive subroutine sextsub_char(ch, i) 
+       recursive subroutine sextsub_char(ch, i)
            character ch
            integer*4 i
            return
@@ -101,7 +88,7 @@ contains
            end if
         end subroutine sextsub_char
 
-       recursive subroutine sextsub_comp(co8, co16, i) 
+       recursive subroutine sextsub_comp(co8, co16, i)
            complex*8   co8
            complex*16  co16
            integer*4 i

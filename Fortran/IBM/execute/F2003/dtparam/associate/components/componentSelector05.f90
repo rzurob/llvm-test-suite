@@ -1,21 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : componentSelector05
-!*  TEST CASE TITLE            : selector is a Component of a Derived Type
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : September 12, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is the Component of a variable
 !*                               of Dervied Type
 !*  SECONDARY FUNCTIONS TESTED : The Component is a Polymorphic POINTER
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE

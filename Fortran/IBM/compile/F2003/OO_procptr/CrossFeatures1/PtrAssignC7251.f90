@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp PtrAssignC7251.f 
+! %POSTCMD: tcomp PtrAssignC7251.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : PtrAssignC7251.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 12, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,12 +30,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !* C725 (R741) the procedure-component-name shall be the name of a
 !* procedure pointer component of the declared type of variable.
-!* 
-!* 
-!*  (304382) 
+!*
+!*  (304382)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -54,7 +47,7 @@
 
   TYPE(DT), SAVE :: MV
 
-  CONTAINS 
+  CONTAINS
     FUNCTION ModFun(Arg)
     CHARACTER(1) :: ModFun, Arg
       ModFun = Arg
@@ -73,28 +66,28 @@
 
   TYPE(PDT) :: LV
 
-  PROCEDURE(CHARACTER(1)) :: ExtFun 
+  PROCEDURE(CHARACTER(1)) :: ExtFun
 
 
     MV%CharPtr => ModFun
     MV%CharPtr => ExtFun
     MV%ProcPtr => ExtFun
- 
+
     LV%Base%CharPtr => ModFun
     LV%Base%CharPtr => ExtFun
-    LV%Base%ProcPtr => MV%CharPtr 
- 
+    LV%Base%ProcPtr => MV%CharPtr
+
     LV%ProcPtr => ModFun
-    LV%ProcPtr => MV%CharPtr 
-    LV%ProcPtr => MV%ProcPtr 
- 
+    LV%ProcPtr => MV%CharPtr
+    LV%ProcPtr => MV%ProcPtr
+
     LV%Base%CharPtr => ModFun
 
   END
 
-  
+
   FUNCTION ExtFun(Arg)
   CHARACTER(1) :: ExtFun, Arg
-    ExtFun = Arg 
+    ExtFun = Arg
   END FUNCTION
 

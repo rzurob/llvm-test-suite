@@ -1,13 +1,8 @@
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : eoshiftCoarray02.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Shahid Alam
 !*  DATE                       : 2010-12-16
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF Array Intrinsics
 !*
@@ -15,12 +10,11 @@
 !*
 !*  REFERENCE                  : Feature Number 385143
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -72,7 +66,7 @@ program main
    !
    B_I = -this_image()
    M_I = eoshift(M_I, SHIFT=SIZE/2, BOUNDARY=B_I, DIM=1)
-   do row = (SIZE/2)+1, SIZE 
+   do row = (SIZE/2)+1, SIZE
       if (M_I(row) .NE. B_I) ERROR STOP 101
    end do
 

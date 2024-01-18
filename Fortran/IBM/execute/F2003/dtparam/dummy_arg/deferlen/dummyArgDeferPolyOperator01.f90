@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyOperator01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyOperator01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 23 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  1.allocatable with deferred length parameter is used as dummy argument of overriding & overiden bindings. 
+!*  1.allocatable with deferred length parameter is used as dummy argument of overriding & overiden bindings.
 !*  2. user defined operator is "*"
-!*  3. it will invoke corresponding bindings when using base or child passed-object 
+!*  3. it will invoke corresponding bindings when using base or child passed-object
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type dt(k,l)
@@ -48,14 +40,14 @@ module m
   end type
 
   contains
-   
+
      function multibase(this,arg)
        class(base(2,*)),intent(in) :: this
        class(base(2,:)),allocatable,intent(in) :: arg(:)
        class(base(2,:)),allocatable :: multibase(:)
-       
+
        allocate(base(2,20) :: multibase(size(arg,1)) )
-        
+
        multibase%dtcomp1%i1=this%dtcomp1%i1 * arg%dtcomp1%i1 * 2
      end function
 
@@ -64,7 +56,7 @@ module m
        class(base(2,:)),allocatable,intent(in) :: arg(:)
        class(base(2,:)),allocatable :: multichild(:)
 
-       allocate(child(2,5,1,10) ::multichild(size(arg,1)) ) 
+       allocate(child(2,5,1,10) ::multichild(size(arg,1)) )
        select type(multichild)
           type is(child(2,*,1,*))
              select type(arg)
@@ -91,12 +83,12 @@ program dummyArgDeferPolyOperator01
   allocate(this,source=child(2,3,1,2)(dtcomp1=dt(2,3)(i1=1), &
             dtcomp2=dt(2,3)(i1=2)) )
 
- 
+
   allocate(dtp1(2:3),source=&
       [child(2,1,1,3)(dtcomp1=dt(2,1)(i1=3),dtcomp2=dt(2,4)(i1=4)) ,&
-       child(2,1,1,3)(dtcomp1=dt(2,1)(i1=-3),dtcomp2=dt(2,4)(i1=-4)) ])  
-    
-       
+       child(2,1,1,3)(dtcomp1=dt(2,1)(i1=-3),dtcomp2=dt(2,4)(i1=-4)) ])
+
+
   allocate(result1(2),source = this * dtp1 )
 
   select type(result1)
@@ -104,10 +96,10 @@ program dummyArgDeferPolyOperator01
           if(result1%l1 /= 5)                     error stop 10_4
           if(result1%l2 /= 10)                    error stop 11_4
           if(any(result1%dtcomp1%i1 /= [3,-3]))   error stop 12_4
-          if(any(result1%dtcomp2%i1 /= [8,-8]))   error stop 13_4 
+          if(any(result1%dtcomp2%i1 /= [8,-8]))   error stop 13_4
       class default
           error stop 52_4
-  end select 
+  end select
 
   select type(this)
      type is(child(2,*,1,*))
@@ -120,5 +112,5 @@ program dummyArgDeferPolyOperator01
              error stop 53_4
         end select
   end select
-  
+
 end program

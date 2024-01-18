@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg17.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg17.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg17.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg17.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Argument association - implicit interface
-!*  dummy as actual arg 
+!*  dummy as actual arg
 !* ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -49,12 +43,12 @@
     TYPE :: Base
       CHARACTER(3) :: C
     END TYPE
- 
+
     INTERFACE
       FUNCTION IntF(Arg)
       IMPORT
-        TYPE(Base), INTENT(IN) :: Arg 
-        TYPE(Base):: IntF 
+        TYPE(Base), INTENT(IN) :: Arg
+        TYPE(Base):: IntF
       END FUNCTION
     END INTERFACE
 
@@ -62,8 +56,8 @@
 
   PURE FUNCTION ExtFun(Arg)
   USE M
-  TYPE(Base), INTENT(IN) :: Arg 
-  TYPE(Base) :: ExtFun 
+  TYPE(Base), INTENT(IN) :: Arg
+  TYPE(Base) :: ExtFun
     ExtFun = Arg
   END FUNCTION
 
@@ -80,7 +74,7 @@
 
   SUBROUTINE IntSub0(Proc)
   PROCEDURE(IntF), OPTIONAL :: Proc
- 
+
   IF ( PRESENT(Proc) ) THEN
     CALL IntSub(Proc, Proc, Proc)
   END IF

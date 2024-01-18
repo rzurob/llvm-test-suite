@@ -1,25 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : polyPntToDTfrm.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : 1.TO and pointer are of poly type of parent 
-!*                               2.FROM is of non-poly type of child 
+!*  DESCRIPTION                : 1.TO and pointer are of poly type of parent
+!*                               2.FROM is of non-poly type of child
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -33,12 +21,12 @@
     end type
 
     type, extends(A) :: B
-        character(:), allocatable :: ch 
+        character(:), allocatable :: ch
     end type
 
     class(A), target, allocatable :: a1(:)
     type(B), target, allocatable :: b1(:)
-    class(A), pointer :: p1(:) 
+    class(A), pointer :: p1(:)
     integer i
 
     allocate(a1(7), source = (/ ( A(i), i = -1, 5 ) /) )
@@ -50,7 +38,7 @@
 
     if ( .not. allocated(a1) ) stop 11
     if ( allocated(b1) ) stop 12
- 
+
     if ( .not. associated(p1, a1) ) stop 21
 
     select type (p1)

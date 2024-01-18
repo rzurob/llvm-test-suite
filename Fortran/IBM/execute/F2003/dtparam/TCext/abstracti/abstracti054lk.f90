@@ -1,21 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : abstracti054lk
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti054
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-11-01 (original: 02/20/2006)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Abstract Interface
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*
 !*  DESCRIPTION                : Testing:
 !*  - Procedure statements with abstract interface
@@ -149,7 +142,7 @@ subroutine sub(f,g)
     print *, "c4 =", c4
     print *, "pf associated, i =", i
     call dtx%gen(n,x=a4,z=c4,ret=kk)
-    print *, "kk =", kk 
+    print *, "kk =", kk
     print *, "c4 =", c4
   else
     pf => one
@@ -171,7 +164,7 @@ subroutine sub(f,g)
     i = ii + int(jj,4)
     print *, "optional arg. is present, i =", i
     call dtx%gen(n,x=a4,y=b4,z=c4,ret=kk)
-    print *, "kk =", kk 
+    print *, "kk =", kk
     print *, "c4 =", c4
   end if
 
@@ -195,7 +188,7 @@ subroutine my_tbps1(n,x,y,z,ret)
   else
     z = 2*x + int(y)
     ret = sum(x) + sum(y)
-  end if 
+  end if
 
 end subroutine my_tbps1
 
@@ -215,7 +208,7 @@ subroutine my_tbps2(n,x,y,z,ret)
   else
     z = 2*x + int(y)
     ret = sum(x) + sum(y)
-  end if 
+  end if
 
 end subroutine my_tbps2
 
@@ -235,7 +228,7 @@ subroutine one(n,x,y,z,ret)
   else
     z = 2*x + int(y)
     ret = sum(x) + sum(y)
-  end if 
+  end if
 
 end subroutine one
 
@@ -255,7 +248,7 @@ subroutine two(n,x,y,z,ret)
   else
     z = 2*x + int(y)
     ret = sum(x) + sum(y)
-  end if 
+  end if
 
 end subroutine two
 

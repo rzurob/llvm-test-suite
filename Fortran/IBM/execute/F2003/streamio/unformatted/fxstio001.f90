@@ -2,23 +2,17 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:  rm -f fort.*
-! %COMPOPTS: 
-! %GROUP: fxstio001.f 
+! %COMPOPTS:
+! %GROUP: fxstio001.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio001.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 07, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
@@ -29,16 +23,16 @@
 !=======================================================================
 
 !* Declare and initialize variables.
-   
+
    implicit none
    integer ios
    integer*1 int1 /127/ , int11        !* max value for integer*1
-   integer*2 int2 /-128/, int21        
+   integer*2 int2 /-128/, int21
    integer*4 int4 /2147483647/ , int41 !* max value for integer*4
    integer*8 int8 /1000000000/, int81
 
    real*4  real4 /3.402823E+38/,real41       !* Approximate absolute max
-   real*8  real8 /2.225074D-308/,real81      !* Appoximate absolute nonzero min 
+   real*8  real8 /2.225074D-308/,real81      !* Appoximate absolute nonzero min
    real*16 real16 /1.797693Q+308/,real61   !* Appoximate absolute max
 
    complex*8  complex8 /(3.4E30, 0.1E-1)/, complex81
@@ -49,7 +43,7 @@
    character*20 char20 /'abcdefghijklmnobpqrs'/, char201
 
    logical*1 log1 /.true./, log11
-   logical*2 log2 /.false./, log21 
+   logical*2 log2 /.false./, log21
    logical*4 log4 /.true./, log41
    logical*8 log8 /.false./, log81
    logical precision_r4, precision_r8, precision_r6
@@ -57,17 +51,16 @@
 
    byte byte1 /48/, byte11
 
-
 !* TEST1 : integer
 
    open(1, access='stream', form='unformatted', action='readwrite',&
       iostat=ios, err=100)
    write(1 , iostat=ios, err=200) int1, int2, int4, int8
    rewind(1, iostat=ios, err=500)
-   read (1, iostat=ios, err=400) int11, int21, int41, int81 
+   read (1, iostat=ios, err=400) int11, int21, int41, int81
 
    if ((int1 .ne. int11) .or. (int2 .ne. int21) .or. &
-       (int4 .ne. int41) .or. (int8 .ne. int81))     error stop 111 
+       (int4 .ne. int41) .or. (int8 .ne. int81))     error stop 111
 
    close(1, status='delete')
 
@@ -84,10 +77,9 @@
 
    if((.not. precision_r4(real4, real41)) .or. &
       (.not. precision_r8(real8, real81)) .or. &
-      (.not. precision_r6(real16,real61)))      error stop 2 
+      (.not. precision_r6(real16,real61)))      error stop 2
 
    close(1, status='delete')
-
 
 !* TEST3 : complex
 
@@ -104,7 +96,6 @@
 
    close(1, status='delete')
 
-
 !* TEST4 : character
 
    open(1, access='stream', form='unformatted', action='readwrite', &
@@ -118,12 +109,11 @@
 
    close(1, status='delete')
 
-
 !* TEST5 : logical
 
    open(1, access='stream', form='unformatted', action='readwrite', &
       iostat=ios, err=100)
-   write(1, iostat=ios, err=200) log1, log2, log4, log8 
+   write(1, iostat=ios, err=200) log1, log2, log4, log8
    rewind(1, iostat=ios, err=500)
    read(1, iostat=ios, err=400 ) log11, log21, log41, log81
    print *, log11, log21, log41, log81
@@ -133,13 +123,12 @@
 
    close(1, status='delete')
 
-
 !* TEST6 : byte
 
    open(1, access='stream', form='unformatted', action='readwrite', &
       iostat=ios, err=100)
 
-   write(1, iostat=ios, err=200) byte1 
+   write(1, iostat=ios, err=200) byte1
    rewind(1, iostat=ios, err=500)
    read(1, iostat=ios, err=400) byte11
 

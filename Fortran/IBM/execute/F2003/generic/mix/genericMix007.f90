@@ -1,23 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : Mix generic type bounds
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : with data structures
-!*
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -78,9 +66,9 @@ module m
       subroutine appendele ( ll, e )
          class(linkedlist), intent(inout) :: ll
          class(element), intent(in) :: e
-         
+
          class(element), pointer :: a
-         
+
          allocate ( a, source = e )
 
          if ( .not. associated ( ll%head ) )  then
@@ -296,57 +284,57 @@ program genericMix007
    type(linkedlist) :: a, b, c
    pointer :: b
    class(element), pointer :: tmp
-   
+
    nullify (a%head, c%head)
 
    call a%append(1)
    call a%append( element(i=2) )
    call a%append( superelement(i=3,j=4) )
-   
+
    call c%append(1)
    call c%append( element(i=2) )
    call c%append( superelement(i=3,j=4) )
-   
+
    tmp => a%head
-   
+
    do while(associated(tmp) )
       print *, tmp%i
       tmp=>tmp%next
    end do
-  
+
    allocate( b, source = a + element(1) )
 
    tmp => b%head
-   
+
    do while(associated(tmp) )
       print *, tmp%i
       tmp=>tmp%next
    end do
-   	
+
    if ( .not. c < b  ) error stop 1_4
 
-   allocate ( b, source = a + a )  
+   allocate ( b, source = a + a )
 
    tmp => b%head
-   
+
    do while(associated(tmp) )
       print *, tmp%i
       tmp=>tmp%next
    end do
 
    allocate( b, source = a - element(3) )
-   	
+
    tmp => b%head
-   
+
    do while(associated(tmp) )
       print *, tmp%i
       tmp=>tmp%next
    end do
 
    allocate( b, source = a - c )
-   	
+
    tmp => b%head
-   
+
    do while(associated(tmp) )
       print *, tmp%i
       tmp=>tmp%next

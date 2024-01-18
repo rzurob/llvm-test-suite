@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : csTypeBoundProc
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-10-04
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray access (specific) - procedure call
 !*  SECONDARY FUNCTIONS TESTED : pass coarray actual arguments to type-bound procedure (*not* as the passed-object dummy argument, obviously), which passes it on and modifies or processes it in an internal procedure
@@ -38,7 +34,7 @@ module mod
      procedure, pass :: tb41
      procedure, pass :: tb23
   end type ParmSource
-     
+
 contains
 
   subroutine tb41(arg, c1, i4)

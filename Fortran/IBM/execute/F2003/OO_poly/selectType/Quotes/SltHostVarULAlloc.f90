@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltHostVarULAlloc.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltHostVarULAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 23, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is an associate name associating to unlimited poly allocatable 
+!*
+!*   The selector is an associate name associating to unlimited poly allocatable
 !*    (ICE )
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -46,7 +40,7 @@
   MODULE M
 
     TYPE  :: Zero
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -95,12 +89,12 @@
   IMPLICIT NONE
   CLASS(*), ALLOCATABLE :: V
 
-  ALLOCATE(Child :: V) 
+  ALLOCATE(Child :: V)
 
   SELECT TYPE ( As => TRANSFER(V, V) )
     CLASS IS (Zero)
       SELECT TYPE (As)
-        CLASS IS (Child) 
+        CLASS IS (Child)
           IF ( As%Base%GetId() .NE.  1 ) STOP 34
           IF ( As%GetId()      .NE.  2 ) STOP 35
           IF ( As%BaseId       .NE.  1 ) STOP 36
@@ -123,4 +117,4 @@
   END SELECT
 
   END
-  
+

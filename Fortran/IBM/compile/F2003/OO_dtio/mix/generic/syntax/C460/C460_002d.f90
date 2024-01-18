@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures (generic-binding)
 !*                               Syntax Check: C460 Each binding-name in binding-name-list
@@ -39,7 +28,7 @@ module m
          generic :: write(unformatted) => write
          final :: write
    end type
-   
+
    type base2
       integer(4) :: c
       contains

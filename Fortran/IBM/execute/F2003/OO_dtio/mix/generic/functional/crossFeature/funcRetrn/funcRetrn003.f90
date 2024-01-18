@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Function Return
@@ -79,7 +68,7 @@ module m
          iomsg = 'dtiowritec'
 
       end subroutine
-      
+
       class(*) function returnMeScalar(dtv)
          class(*), intent(in) :: dtv
          allocatable :: returnMeScalar
@@ -138,13 +127,13 @@ program funcRetrn003
          write ( 1, "(3(DT(3,6)))", iostat = stat, iomsg = msg )  i
          if ( ( stat /= 0 ) .or. ( msg /= 'dtiowritec' ) )        error stop 3_4
    end select
-   
+
    select type ( g => returnMeScalar(b1(1)) )
       class is ( base )
          write ( 1, "(DT(3))", iostat = stat, iomsg = msg )       g
          if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteb' ) )        error stop 4_4
    end select
-   
+
    select type ( g => returnMeScalar(c1(3)) )
       class is ( base )
          write ( 1, "(DT(3,6))", iostat = stat, iomsg = msg )       g

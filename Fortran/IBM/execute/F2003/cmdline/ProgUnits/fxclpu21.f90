@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu21.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -43,10 +37,9 @@
 !*                             : module subroutines.
 !*                             : (the generic interface name will be used in the equivalence
 !*                             : statement which causes generic entities inaccessable)
-!*                             : 
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      MODULE MOD 
+      MODULE MOD
 
 
       character(2049)  :: COMMAND /'??????????????????????'/
@@ -78,10 +71,10 @@
       SUBROUTINE M_EQUIVALENCE
 
 
-      character(2049)  :: CmdLine   
-      integer          :: CmdCOunt  
-      character(513)   :: NAME      
-      logical          :: TRIM_NAME 
+      character(2049)  :: CmdLine
+      integer          :: CmdCOunt
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
 
 
       EQUIVALENCE (CmdLine,    MOD_INTF)
@@ -97,7 +90,7 @@
 
       ! There is no effect on globe variables
 
-      
+
       END SUBROUTINE
 
 
@@ -106,7 +99,7 @@
       INTEGER M_COMMAND_ARGUMENT_COUNT
 
       M_COMMAND_ARGUMENT_COUNT = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) & 
+      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) &
       then
         error stop 63
       endif
@@ -115,7 +108,7 @@
 
 
       SUBROUTINE M_GET_COMMAND(A)
-    
+
       INTEGER A
 
       call GET_COMMAND(COMMAND, LENGTH, STATUS)
@@ -136,9 +129,9 @@
 
 
       character(2047)  :: Argument
- 
+
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -198,7 +191,7 @@
         CALL MOD_INTF(1, 1)
 
         CALL MOD_INTF(1, 1, 1)
-  
+
       END DO
 
 
@@ -206,6 +199,6 @@
 
 
 
- 
+
       INCLUDE 'cmdline.include'
 

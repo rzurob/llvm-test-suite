@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp PtrAssignCharacteristics2.f 
+! %POSTCMD: tcomp PtrAssignCharacteristics2.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignCharacteristics2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignCharacteristics2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,20 +30,20 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
-!*  Characteristics are diff 
-!*  () 
+!*
+!*  Characteristics are diff
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
- 
+
   TYPE :: DT0
   END TYPE
 
   TYPE, EXTENDS(DT0) :: DT
   END TYPE
- 
+
   CONTAINS
 
   SUBROUTINE ModSub1(Arg)
@@ -65,28 +59,28 @@
   END SUBROUTINE
 
   FUNCTION ModFun1(Arg)
-  TYPE(DT)          :: ModFun1 
-  TYPE(DT0)         :: Arg 
+  TYPE(DT)          :: ModFun1
+  TYPE(DT0)         :: Arg
     ModFun1 = DT()
-  END FUNCTION 
+  END FUNCTION
 
   FUNCTION ModFun2(Arg)
-  TYPE(DT)         :: ModFun2 
-  TYPE(DT)         :: Arg 
-    ModFun2 = Arg 
-  END FUNCTION 
+  TYPE(DT)         :: ModFun2
+  TYPE(DT)         :: Arg
+    ModFun2 = Arg
+  END FUNCTION
 
   END MODULE
 
-  PROGRAM PtrAssignCharacteristics2 
+  PROGRAM PtrAssignCharacteristics2
   USE M
   IMPLICIT NONE
 
   INTERFACE
     SUBROUTINE IntF1(A)
       IMPORT
-      TYPE(DT) :: A 
-    END SUBROUTINE 
+      TYPE(DT) :: A
+    END SUBROUTINE
   END INTERFACE
 
   PROCEDURE(IntF1), POINTER :: ProcPtr1
@@ -94,8 +88,8 @@
   INTERFACE
     SUBROUTINE IntF2(A)
       IMPORT
-      TYPE(DT) :: A 
-    END SUBROUTINE 
+      TYPE(DT) :: A
+    END SUBROUTINE
   END INTERFACE
 
   PROCEDURE(IntF2), POINTER :: ProcPtr2
@@ -103,8 +97,8 @@
   INTERFACE
     SUBROUTINE IntF3(A)
       IMPORT
-      CLASS(DT0) :: A 
-    END SUBROUTINE 
+      CLASS(DT0) :: A
+    END SUBROUTINE
   END INTERFACE
 
   PROCEDURE(IntF3), POINTER :: ProcPtr3
@@ -112,9 +106,9 @@
   INTERFACE
     FUNCTION IntF4(Arg)
       IMPORT
-      TYPE(DT0)         :: IntF4 
-      TYPE(DT0)         :: Arg 
-    END FUNCTION 
+      TYPE(DT0)         :: IntF4
+      TYPE(DT0)         :: Arg
+    END FUNCTION
   END INTERFACE
 
   PROCEDURE(IntF4), POINTER :: ProcPtr4
@@ -122,9 +116,9 @@
   INTERFACE
     FUNCTION IntF5(Arg)
       IMPORT
-      CLASS(DT), POINTER :: IntF5 
-      TYPE(DT)           :: Arg 
-    END FUNCTION 
+      CLASS(DT), POINTER :: IntF5
+      TYPE(DT)           :: Arg
+    END FUNCTION
   END INTERFACE
 
   PROCEDURE(IntF5), POINTER :: ProcPtr5
@@ -140,5 +134,5 @@
   ProcPtr5 => ModFun2
 
 
-  END 
+  END
 

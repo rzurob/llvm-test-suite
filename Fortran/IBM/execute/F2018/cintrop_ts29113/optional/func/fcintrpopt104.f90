@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt104.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -65,13 +58,13 @@ program test
   use iso_c_binding
   use testmod
   implicit none
-  
-  integer, parameter :: DIM1=3, DIM2=3, DIM3=3 
+
+  integer, parameter :: DIM1=3, DIM2=3, DIM3=3
   integer totalsize
 
   integer(c_int8_t), pointer :: pci8_arr(:, :)
   real(c_double), pointer :: pcd_arr(:)
-  integer(c_int_fast8_t), pointer :: pif8_arr(:,:)  
+  integer(c_int_fast8_t), pointer :: pif8_arr(:,:)
   integer(c_long), pointer :: pl_arr(:,:,:)
   integer(c_long_long), pointer :: pll_arr(:,:)
   integer(c_int_fast16_t), pointer :: pif16_arr(:,:,:)
@@ -100,7 +93,7 @@ program test
   tll_arr = reshape ((/7,8,9,7,8,9,7,8,9/),(/DIM1, DIM2/))
   pll_arr => tll_arr
   tif16_arr = reshape ((/56,2,3,56,2,3,56,2,3,56,2,3,56,2,3,56,2,3,56,2,3,56,2,3,56,2,3/),(/DIM1, DIM2, DIM3/))
-  pif16_arr => tif16_arr 
+  pif16_arr => tif16_arr
   totalsize = func1(0,0,0)
   totalsize = func1(DIM1*DIM2*DIM3,0,0, pl_arr)
   totalsize = func1(0,DIM1*DIM2,0, arg2=pll_arr)
@@ -184,4 +177,4 @@ integer(c_int) function func1(size1, size2, size3, arg1, arg2, arg3) bind(c)
         print *, "arg3 in func1 not presnet"
    endif
 
-end function func1   
+end function func1

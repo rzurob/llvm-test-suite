@@ -2,30 +2,23 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export XLFRTEOPTS=namelist=old; cp $TR_SRC/fxstio233.in .
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio233.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: spiff fxstio233.dat $TR_SRC/fxstio233.vf && rm -f fxstio233.dat fxstio233.in 
+! %POSTCMD: spiff fxstio233.dat $TR_SRC/fxstio233.vf && rm -f fxstio233.dat fxstio233.in
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,12 +27,12 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  04/01/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  04/01/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
-  program fxstio233 
+  program fxstio233
 
      implicit none
      integer    ios
@@ -57,27 +50,27 @@
      logical*2 	l2_in, l2_out
      logical*4 	l4_in, l4_out
      logical*8 	l8_in, l8_out
-     character    ch1_in, ch1_out  
-     character*15 ch15_in, ch15_out  
-     character*20 ch25_in, ch25_out  
+     character    ch1_in, ch1_out
+     character*15 ch15_in, ch15_out
+     character*20 ch25_in, ch25_out
      byte       b_in, b_out
 
      NAMELIST /name_in1/ i1_in, i2_in, i4_in, i8_in, r4_in, r8_in, r16_in
      NAMELIST /name_in2/ d8_in, x8_in, x16_in, x32_in
-     NAMELIST /name_in3/ l2_in, l4_in, l8_in, ch1_in, ch15_in, b_in         
+     NAMELIST /name_in3/ l2_in, l4_in, l8_in, ch1_in, ch15_in, b_in
      NAMELIST /name_in4/ ch25_in
 
      NAMELIST /name_out1/ i1_out, i2_out, i4_out, i8_out, r4_out,r8_out,r16_out
      NAMELIST /name_out2/ d8_out, x8_out, x16_out, x32_out
-     NAMELIST /name_out3/ l2_out, l4_out, l8_out, ch1_out, ch15_out, b_out 
+     NAMELIST /name_out3/ l2_out, l4_out, l8_out, ch1_out, ch15_out, b_out
      NAMELIST /name_out4/ ch25_out
 
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
-	
-!********************************************************** 
+
+!**********************************************************
 !        Initialization of variables                      *
-!********************************************************** 
+!**********************************************************
 
      i1_out = 12
      i2_out = 1234
@@ -99,35 +92,35 @@
      b_out = b'01010111'
 
 
-!********************************************************** 
+!**********************************************************
 !        Writing Namelists to the file                    *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio233.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90, ACTION='WRITE')
 
-     WRITE(1, NML=name_out1, IOSTAT=ios, ERR=91)  
-     WRITE(1, name_out2, IOSTAT=ios, ERR=91)  
+     WRITE(1, NML=name_out1, IOSTAT=ios, ERR=91)
+     WRITE(1, name_out2, IOSTAT=ios, ERR=91)
      WRITE(1, NML=name_out3, IOSTAT=ios, ERR=91)
      WRITE(1, NML=name_out4, IOSTAT=ios, ERR=91)
 
      CLOSE(1)
 
-!********************************************************** 
+!**********************************************************
 !        Reading Namelists from the file                  *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio233.in', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='OLD', IOSTAT=ios, ERR=90, ACTION='READ', DELIM='QUOTE')
 
-     READ(1, NML=name_in1, IOSTAT=ios, ERR=92) 
-     READ(1, name_in2, IOSTAT=ios, ERR=92) 
-     READ(1, NML=name_in3, IOSTAT=ios, ERR=92) 
-     READ(1, NML=name_in4, IOSTAT=ios, ERR=92) 
+     READ(1, NML=name_in1, IOSTAT=ios, ERR=92)
+     READ(1, name_in2, IOSTAT=ios, ERR=92)
+     READ(1, NML=name_in3, IOSTAT=ios, ERR=92)
+     READ(1, NML=name_in4, IOSTAT=ios, ERR=92)
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( i1_in .ne. i1_out ) error stop 20
      if ( i2_in .ne. i2_out ) error stop 21
@@ -159,12 +152,12 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 93   print *, "Error while rewinding the file: IOSTAT = ", ios
-     error stop 93 
+     error stop 93
 
    end program

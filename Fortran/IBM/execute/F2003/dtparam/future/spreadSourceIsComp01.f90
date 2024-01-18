@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 26 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 26 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -26,21 +18,21 @@
 module m
 
   type inner1(k1,l1)
-     integer,kind :: k1 
+     integer,kind :: k1
      integer,len  :: l1
      integer(k1)  :: i1(0:k1)
      character(l1) :: c1(-l1:1)
-  end type 
+  end type
   type inner2(k2,l2)
      integer,kind :: k2
-     integer,len  :: l2 
+     integer,len  :: l2
      type(inner1(k2,l2)) :: inner1
   end type
   type inner3(k3,l3)
      integer,kind :: k3
      integer,len  :: l3
      type(inner2(2*k3,2*l3)) :: inner2
-  end type 
+  end type
   type outer(k4,l4)
      integer,kind :: k4
      integer,len  :: l4
@@ -54,7 +46,7 @@ program spreadSourceIsComp01
 
   type(outer(1,1))             :: outer1
   type(outer(1,:)),allocatable :: outer2
-    
+
   outer1%inner3=inner3(1,1)(inner2= &
                              inner2(2,2)(inner1= &
                              inner1(2,2)(i1=[1,2,3],c1=["a","b","c","d"])))
@@ -63,7 +55,7 @@ program spreadSourceIsComp01
 
   outer2%inner3=inner3(1,1)(inner2= &
                              inner2(2,2)(inner1= &
-                             inner1(2,2)(i1=[4,5,6],c1=["g","h","i","j"]))) 
+                             inner1(2,2)(i1=[4,5,6],c1=["g","h","i","j"])))
 
   call verify1(spread([outer1%inner3,outer2%inner3],1,4),1)
   call verify1(spread([outer1%inner3,outer2%inner3],1,4),2)
@@ -138,8 +130,8 @@ program spreadSourceIsComp01
            end associate
          end associate
        end select
-     end do  
-  end subroutine 
+     end do
+  end subroutine
 
 
   subroutine verify2(dt,dim)

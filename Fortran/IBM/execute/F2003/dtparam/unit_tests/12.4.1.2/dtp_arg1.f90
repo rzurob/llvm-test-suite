@@ -1,12 +1,7 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pointer assignment with DTP
-!*                             : 
-!*  PROGRAMMER                 : Huiwen Li
+!*                             :
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  FUNCTIONAL TESTED          : Verify the type parameter values and contents
 !*                               of type components
@@ -14,10 +9,9 @@
 !*                                -- check the array bounds
 !*                                -- check the array element and section
 !*
-!*  DRIVER STANZA              : 
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*

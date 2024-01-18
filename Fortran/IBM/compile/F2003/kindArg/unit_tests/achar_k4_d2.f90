@@ -1,13 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : achar_k4_d2.f
 !*
-!*  PROGRAMMER                 : Vince Yuen
 !*  DATE                       : Apr 10, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support KIND Argument for new intrinsics
 !*

@@ -1,19 +1,14 @@
 !***********************************************************************
-!* ===================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!* ===================================================================== 
+!* =====================================================================
 !*
 !*  TEST CASE NAME             : abstracti016k
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti016
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-25 (original: 02/20/2006)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*  DRIVER STANZA              : xlf2003
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  DESCRIPTION                : specific type bound (use the external
 !*                               procedure for the deferred binding)

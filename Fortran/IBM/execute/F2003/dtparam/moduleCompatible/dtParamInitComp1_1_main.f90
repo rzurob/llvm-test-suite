@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitComp1_1 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitComp1_1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 25, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Default initialization for component 
+!*  SECONDARY FUNCTIONS TESTED : Default initialization for component
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,22 +19,21 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* Initialize array components 
-!* -- Not array constructor 
+!* Initialize array components
+!* -- Not array constructor
 !*
-!*  (341021) 
+!*  (341021)
 !*  -- Dup of dtParamInitComp9.f to avoid ac imp do issue
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-  PROGRAM dtParamInitComp 
+  PROGRAM dtParamInitComp
   USE M
 
   TYPE(DT1(4,1))              :: T
-  TYPE(DT1(8,:)), POINTER     :: P 
+  TYPE(DT1(8,:)), POINTER     :: P
   TYPE(DT1(4,:)), ALLOCATABLE :: A
- 
+
   IF ( KIND(T%I) .NE. 4 )                 STOP 11
   IF ( SIZE(T%I) .NE. 4 )                 STOP 12
   IF ( ANY(T%I  .NE. (/(I, I=1,4)/)))     STOP 13

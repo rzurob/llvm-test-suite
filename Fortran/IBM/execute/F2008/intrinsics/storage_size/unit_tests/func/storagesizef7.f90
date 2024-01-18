@@ -2,7 +2,7 @@
 !! ISO_FORTRAN_ENV intrinsic module
 use, intrinsic :: iso_fortran_env
 integer i
-real r 
+real r
 character c
 
 if (storage_size(i) .ne. numeric_storage_size) then

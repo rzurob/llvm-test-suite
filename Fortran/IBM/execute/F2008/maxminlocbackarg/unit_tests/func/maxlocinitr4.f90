@@ -1,5 +1,5 @@
 ! Call to maxloc in initialization expression with back = .true. and
-! 1. rank 1 real*4 array 
+! 1. rank 1 real*4 array
 ! 2. rank 1 real*4 array and mask
 ! 3. rank 2 real*4 array
 ! 4. rank 2 real*4 array and mask
@@ -28,7 +28,7 @@ integer :: j5(2) = maxloc(reshape((/1.2_4, 3.4_4, 2.3_4, 3.4_4/), (/2,2/)), 2, b
 integer :: j6(2) = maxloc(reshape((/1.2_4, 3.4_4, 2.3_4, 3.4_4/), (/2,2/)), 2, &
                            reshape((/.true., .true., .false., .true./), (/2,2/)), &
                            back =.true.)
-                          
+
 integer :: j7(3) = maxloc(reshape((/1.2_4, 3.4_4, 4.5_4, 2.3_4, 1.2_4, 3.4_4, 4.5_4, 2.3_4/), (/2,2,2/)), &
                           back = .true.)
 

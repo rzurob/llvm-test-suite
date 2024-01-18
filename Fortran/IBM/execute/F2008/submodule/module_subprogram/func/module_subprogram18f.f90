@@ -1,34 +1,27 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : module_subprogram18f.f
-!*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : December 20, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*  based on enum/func/fxenum0025.f
 !*
 !*  Use enumerators in a submodule defined in host scope
-!*  
+!*
 !*  Secondary test:
 !*  - bind(c) in module function
-!*  - define multiple submodules of a submodule represented by the 
+!*  - define multiple submodules of a submodule represented by the
 !*    following tree structure with module m, submodules m1 - m6:
-!*  
+!*
 !*                   m
 !*                 /   \
 !*                /     \
@@ -36,13 +29,13 @@
 !*              m1       m2
 !*            /   \     /  \
 !*          m3    m4   m5   m6
-!*  
+!*
 !*  Verify that the results match the values of the original test case
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-! This is Lewis Carroll's Algorithm  
-! (From http://www.cs.usyd.edu.au/%7Ekev/pp/TUTORIALS/1b/carroll.html) 
+! This is Lewis Carroll's Algorithm
+! (From http://www.cs.usyd.edu.au/%7Ekev/pp/TUTORIALS/1b/carroll.html)
 
 module dayofweek
 
@@ -109,12 +102,12 @@ contains
       else if (year .eq. 1752 .and. month .eq. SEPT .and. &
                day .le. 2) then
          isOldStyle = .true.
-      
+
       else if (year .eq. 1752 .and. month .eq. SEPT .and. &
                day .lt. 14) then
          print *, 'Illegal date!'
          error stop 66
-      else   
+      else
          isOldStyle = .false.
       end if
 
@@ -129,7 +122,7 @@ contains
 
       integer, intent(in) :: year, month, day
       logical isLeapyear
-   
+
       logical isNewStyle
       isNewStyle= .not. isOldStyle(year, month, day)
 
@@ -146,7 +139,7 @@ contains
          isLeapyear = .false.
       end if
 
-   end 
+   end
 
 end submodule dow_functions2
 
@@ -157,7 +150,7 @@ contains
 
       integer century_item, century
 
-      century = year/100   
+      century = year/100
       if (isOldStyle(year, month, day)) then
          century_item=18-century
       else
@@ -186,8 +179,8 @@ contains
 
       year_item = year_item + century_item(year, month, day)
       year_item = mod(year_item, WEEK)
-   
-   end 
+
+   end
 
 end submodule dow_functions4
 
@@ -208,7 +201,7 @@ contains
 
       integer, intent(in) :: month
       integer month_item1
-   
+
       select case(month)
          case (JAN)
             month_item1=0

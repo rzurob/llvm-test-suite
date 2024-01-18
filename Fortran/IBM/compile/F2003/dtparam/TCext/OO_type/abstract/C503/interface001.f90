@@ -1,11 +1,6 @@
 ! GB DTP extension using:
 ! ftcx_dtp /tstdev/OO_type/abstract/C503/interface001.f -qck -qk -ql
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -20,22 +15,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: interface block
 !*                                        non-poly abstract type return, interface of deferred binding
@@ -55,7 +39,7 @@ type, abstract :: base(k1)    ! (4)
    integer, kind :: k1
    integer(k1)      id
 contains
-   procedure(itf), nopass, deferred :: getid   
+   procedure(itf), nopass, deferred :: getid
 end type
 
 interface

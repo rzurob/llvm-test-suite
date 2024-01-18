@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg24.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg24.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg24.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg24.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 26, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Argument association - array 
+!*
+!*  Argument association - array
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -55,13 +49,13 @@
     END TYPE
 
     IMPLICIT TYPE(Base(1,3))(P)
- 
+
     INTERFACE
       FUNCTION IntF(Arg)
       IMPORT
-        TYPE(Base(1,*)) :: Arg(:) 
-        TYPE(Base(1,3)) :: IntF(SIZE(Arg)) 
-      END FUNCTION 
+        TYPE(Base(1,*)) :: Arg(:)
+        TYPE(Base(1,3)) :: IntF(SIZE(Arg))
+      END FUNCTION
     END INTERFACE
 
   CONTAINS
@@ -96,22 +90,22 @@
 
   FUNCTION ExtFun(Arg)
   USE M
-  TYPE(Base(1,*)) :: Arg(:) 
-  TYPE(Base(1,3)) :: ExtFun(SIZE(Arg)) 
+  TYPE(Base(1,*)) :: Arg(:)
+  TYPE(Base(1,3)) :: ExtFun(SIZE(Arg))
     ExtFun = Arg
-  END FUNCTION 
+  END FUNCTION
 
 
   PROGRAM Arg24
   USE M
   IMPLICIT TYPE(Base(1,3))(P)
   PROCEDURE(IntF) :: ExtFun
-  PROCEDURE(IntF), POINTER :: ProcPtr 
+  PROCEDURE(IntF), POINTER :: ProcPtr
   INTEGER :: I
 
 
   CALL ModSub1(ExtFun, (/(Base(1,3)("123"), I=1,512 )/))
-  
+
   ProcPtr => ExtFun
   CALL ModSub2(ProcPtr, (/(Base(1,3)("321"), I=1,1024 )/))
 

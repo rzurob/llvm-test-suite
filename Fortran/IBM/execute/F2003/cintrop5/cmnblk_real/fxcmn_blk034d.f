@@ -2,45 +2,39 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk_qlngdbl.sh fxcmn_blk034d cxcmn_blk034
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.o *.mod fxcmn_blk034d fxcmn_blk034d.out
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that a single variable inside of
 !*                               BIND(C) common block with a binding label is interoperable
 !*                               with a C variable that is not in a structure.
 !*
 !*                               Data type being tested: real*16
-!*					
-!*                               Test: BIND(C) common block inside a module subroutine 
-!*					
+!*
+!*                               Test: BIND(C) common block inside a module subroutine
+!*
 !* ===================================================================
-!*  REVISION HISTORY					
-!*  MM/DD/YY:  Init:  Comments:			
+!*  REVISION HISTORY
+!*  MM/DD/YY:  Init:  Comments:
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 
-module fmod1 
+module fmod1
    implicit none
 
    CONTAINS
@@ -60,7 +54,7 @@ module fmod1
 
 
 	!-- commented out TINY(Real1), because it gives 0.20041683600089727779961080513501620E-291
-        !-- Real1  =  -( TINY(Real1) )  
+        !-- Real1  =  -( TINY(Real1) )
 
 	Real1  = -2.225073Q-308
 
@@ -84,12 +78,12 @@ module fmod1
 
      end subroutine
 
-end module fmod1 
+end module fmod1
 
 
 
 program fxcmn_blk034d
-	use fmod1 
+	use fmod1
 	use iso_c_binding
         implicit none
 	logical precision_r4, precision_r8, precision_r16

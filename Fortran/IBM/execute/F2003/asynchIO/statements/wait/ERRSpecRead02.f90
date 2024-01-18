@@ -1,13 +1,7 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ERRSpecRead02 - WAIT() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 31, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unformatted Pending Data Transfers with
 !*                               an Error Condition
@@ -15,7 +9,6 @@
 !*                               and without the ID= Specifier); IOSTAT=
 !*                               Specifier is *NOT* present
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WAIT(), ERR= Specifier, ID= Specifier
@@ -64,7 +57,7 @@ PROGRAM ERRSpecRead02
     END DO
 
 
-    WAIT(922, ERR=100) 
+    WAIT(922, ERR=100)
 
     WRITE(0, *) "WAIT() Failed to use ERR=100"
     CALL zzrc( 11 )

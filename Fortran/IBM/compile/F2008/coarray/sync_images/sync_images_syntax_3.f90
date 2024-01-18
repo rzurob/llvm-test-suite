@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : sync_images_syntax_2.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : July 11 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SYNC IMAGES 
+!*  PRIMARY FUNCTIONS TESTED   : SYNC IMAGES
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : CMVC Feature number: 351605.22 
+!*  REFERENCE                  : CMVC Feature number: 351605.22
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*  Test basic syntax : diagnostic on syntax 
-!*
-!*
+!*  Test basic syntax : diagnostic on syntax
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -38,7 +29,7 @@
   CHARACTER(30) :: errstr=" "
   INTEGER, SAVE :: images(1,1) = 1
   INTEGER, SAVE :: work[*]
-  
+
 
   SYNC IMAGES()
   SYNC IMAGES(1.)
@@ -51,7 +42,7 @@
   SYNC IMAGES(*, errmsg=errstr, status)
 
   ! The following violates rules. However FE does not check for them
-  SYNC IMAGES([1,1]) 
-  SYNC IMAGES(num_images()+1) 
+  SYNC IMAGES([1,1])
+  SYNC IMAGES(num_images()+1)
 
   END

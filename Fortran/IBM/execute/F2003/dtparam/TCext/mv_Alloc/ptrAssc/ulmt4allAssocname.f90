@@ -3,30 +3,18 @@
 ! opt variations: -qnok -qnol
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ulmt4allAssocname.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : 1.TO/FROM/pointer are all of type class(*)
-!*                               2. TO is a component as a selector associated 
-!*                                  with a associated name 
-!*                               3. test association in select type block 
-!*                               defect 322504      
+!*                               2. TO is a component as a selector associated
+!*                                  with a associated name
+!*                               3. test association in select type block
+!*                               defect 322504
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -35,14 +23,14 @@
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-    type base(k1,n1)    ! (4,20) 
+    type base(k1,n1)    ! (4,20)
         integer, kind :: k1
         integer, len  :: n1
-        class(*), allocatable :: a 
+        class(*), allocatable :: a
     end type
 
     type(base(4,20)), target :: b
-    class(*), target, allocatable :: c 
+    class(*), target, allocatable :: c
     class(*), pointer :: p
 
     allocate(integer :: b%a)
@@ -50,13 +38,13 @@
 
     p => c
 
-    call move_alloc(c, b%a) 
+    call move_alloc(c, b%a)
 
     select type ( x=> b%a )
-        type is (base(4,*))   
+        type is (base(4,*))
             if ( .not. associated(p, x) ) stop 21
-        class default 
+        class default
             stop 23
     end select
-    
+
     end

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: PtrAssignProcNameIntrin.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignProcNameIntrin.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignProcNameIntrin.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 13, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,13 +30,13 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  C727 (R742) A procedure-name shall be the name of an external, module,
 !*  or dummy procedure, a specific intrinsic function listed in 13.6
 !*  and not marked with a bullet (.), or a procedure pointer.
-!* 
-!*  Intrinsics 
-!*  () 
+!*
+!*  Intrinsics
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -51,7 +45,7 @@
   PROGRAM PtrAssignProcNameIntrin
   IMPLICIT NONE
 
-  INTERFACE 
+  INTERFACE
     REAL FUNCTION IABS(Arg)
       REAL, INTENT(IN) ::  Arg
     END FUNCTION
@@ -115,13 +109,13 @@
   PtrACOS => ACOS
   IF (PtrABS(PtrACOS(0.54030231) - 1.0) .GT. .00001 ) STOP 12
 
-  PtrAIMAG => AIMAG 
+  PtrAIMAG => AIMAG
   IF (PtrAIMAG((2.0, -1.0)) .NE. -1.0 )   STOP 13
 
-  PtrAINT => AINT 
+  PtrAINT => AINT
   IF (PtrAINT(-2.783) .NE. -2.0 )   STOP 14
 
-  PtrALOG => ALOG 
+  PtrALOG => ALOG
   IF (PtrALOG(1.0) .NE. 0.0 ) STOP 15
 
   PtrLOG10 => ALOG10
@@ -133,11 +127,11 @@
   PtrANINT => ANINT
   IF (PtrANINT(2.783) .NE. 3.0 ) STOP 18
 
-  PtrASIN => ASIN 
+  PtrASIN => ASIN
   IF (PtrABS(PtrASIN(0.84147098)-1.0) .GT. .00001 ) STOP 19
 
-  PtrATAN => ATAN 
-  IF (PtrABS(PtrATAN(1.5574077)-1.0) .GT. .00001 ) STOP 20 
+  PtrATAN => ATAN
+  IF (PtrABS(PtrATAN(1.5574077)-1.0) .GT. .00001 ) STOP 20
 
   END
 

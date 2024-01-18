@@ -16,21 +16,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenamediag013.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : ensure private generic can't be renamed
 !*
@@ -48,8 +41,8 @@ module opmod
       generic, private :: operator(.add.) => plus
 
   end type
-  
-  
+
+
 
   contains
     function plus(a,b)

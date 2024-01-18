@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatTypeBndSeqReadWrite02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatTypeBndSeqReadWrite02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 10 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test WRITE & READ statement
 !* 2. write & read in same file
 !* 3. derived type is polymorphic, use type bound procedure & generic interface
-!* 
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
 
@@ -44,7 +36,7 @@ module m
         procedure,pass :: writeChild1
         procedure,pass :: writeChild2
         procedure,pass :: readChild1
-        procedure,pass :: readChild2 
+        procedure,pass :: readChild2
         generic :: writeChild=>writeChild1,writeChild2
         generic :: readChild=>readChild1,readChild2
   end type
@@ -55,7 +47,7 @@ module m
         class(child(*,*,*)),intent(in) :: this
         ! flag here is only used for generiting different interface.
         integer,intent(in) :: flag
-       
+
         select type(this)
            type is(child(*,*,*))
                  call this%base%writeBase
@@ -63,7 +55,7 @@ module m
            class default
               stop 15
         end select
- 
+
      end subroutine
 
      subroutine writeChild2(this)
@@ -79,7 +71,7 @@ module m
 
      subroutine writeBase(this)
         class(base(*)),intent(in) :: this
-        
+
         select type(this)
            type is(base(*))
               write(10,'(3a2/2l4)') this
@@ -100,7 +92,7 @@ module m
            class default
               stop 18
         end select
-        
+
      end subroutine
 
      subroutine readChild2(this)
@@ -122,9 +114,9 @@ module m
            type is(base(*))
               read(10,'(3a2/2l4)') this
            class default
-              stop 20 
+              stop 20
         end select
- 
+
      end subroutine
 
 end module
@@ -140,7 +132,7 @@ program formatTypeBndSeqReadWrite02
 
   allocate(child(2,3,4) :: base1(-3:-2))
 
-  select type(x=>base1) 
+  select type(x=>base1)
      type is(child(*,*,*))
             x(-3)%c1=["ab","cd","ef"]
             x(-2)%c1=["12","34","56"]
@@ -163,16 +155,16 @@ program formatTypeBndSeqReadWrite02
      print *,"iostat=",ios
      return
   else
-     
+
      select type(base1)
         type is(child(*,*,*))
 
           call base1(-3)%writeChild(1)
-          call base1(-2)%writeChild() 
+          call base1(-2)%writeChild()
         class default
            stop 11
      end select
-  end if 
+  end if
 
   rewind 10
 
@@ -199,7 +191,7 @@ program formatTypeBndSeqReadWrite02
       class default
         stop 14
   end select
-  
+
   close(10)
- 
+
 end program

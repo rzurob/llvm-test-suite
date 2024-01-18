@@ -1,16 +1,8 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 20/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : assumed-shape array, VOLATILE
-!*
 !*
 !*  DESCRIPTION                : functional TC for  C1232
 !*
@@ -24,14 +16,14 @@
 
     interface
        subroutine arraySectionVolatile(x)
-           logical,VOLATILE:: x(:)          
-       end subroutine arraySectionVolatile   
+           logical,VOLATILE:: x(:)
+       end subroutine arraySectionVolatile
     end interface
 
           type base
             sequence
             logical b
-          end type base 
+          end type base
 
           type child1
             sequence
@@ -39,11 +31,11 @@
           end type
 
           type child2
-             sequence 
+             sequence
              type(child1) c2(100,100)
           end type
 
-          type(child2) y 
+          type(child2) y
 
           y%c2(50:100,10)%c1(123)%b = .true.
 
@@ -52,5 +44,5 @@
   end program volatileC1232ArraySection04
 
   subroutine arraySectionVolatile(z)
-       logical, VOLATILE:: z(:)            
+       logical, VOLATILE:: z(:)
   end subroutine arraySectionVolatile

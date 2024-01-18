@@ -3,21 +3,15 @@
 
 !************************************************************************
 !* ======================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* ======================================================================
 !*
 !*  TEST CASE NAME             : abstracti005kl_dlp_rb
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti005
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-05 (original: 02/20/2006)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Abstract Interface
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*  Try namelist formatting implicit array objects and define implicit statement inside DTIO (input)

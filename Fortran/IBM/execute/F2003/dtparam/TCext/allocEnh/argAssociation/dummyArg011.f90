@@ -2,30 +2,15 @@
 ! ftcx_dtp -ql -qdeferredlp -qreuse=none /tstdev/F2003/allocEnh/argAssociation/dummyArg011.f
 ! opt variations: -qnol -qnodeferredlp -qreuse=self
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 10/25/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : allocatable enhancement
 !                               Test the allocatable variable dummy-arg assigned
 !                               to pointer dummy-arg array.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

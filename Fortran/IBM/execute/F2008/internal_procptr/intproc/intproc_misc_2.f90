@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_misc_2.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : April 29 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,8 +11,7 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
+!*  Miscellaneous Test  --
+!*    Recursinve internal function
 !*
-!*  Miscellaneous Test  --  
-!*    Recursinve internal function 
-!*   
-!*  (388880) 
+!*  (388880)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,11 +38,11 @@
 
   CONTAINS
 
-    RECURSIVE FUNCTION  intfunc(Proc, iarg) 
+    RECURSIVE FUNCTION  intfunc(Proc, iarg)
     PROCEDURE(INTEGER) :: proc
     INTEGER, SAVE :: V
     INTEGER, TARGET :: iarg
- 
+
     IF ( mark == 1) THEN
       V = 1
       mark = 2
@@ -64,7 +57,7 @@
         intfunc = intfunc(Intfunc, V)
       END IF
     END IF
-    END FUNCTION 
+    END FUNCTION
   END
 
 

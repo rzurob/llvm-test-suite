@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectLogicalCompWrite01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectLogicalCompWrite01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 8 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 8 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Derived type has multiple layers of nested DT components, ultimate components are logical, and derived type has sequence statement
@@ -28,28 +20,28 @@ module m1
    type inner1(k1,l1)
        integer,kind :: k1
        integer,len  :: l1 ! l1=3
-       sequence       
+       sequence
        logical(k1)  :: g1(l1)
-       logical(k1)  :: g2 
+       logical(k1)  :: g2
    end type
 end module
 
 module m2
   use m1
-  
+
   type inner2(k2,l2)
      integer,kind :: k2
      integer,len  :: l2 ! l2=2
      sequence
      type(inner1(k2,l2+1)) :: inn1
-  end type 
+  end type
 
   type inner3(k3,l3)
      integer,kind :: k3
      integer,len  :: l3 ! l3=2
      sequence
      type(inner2(k3,l3))   :: inn2
-  end type 
+  end type
 
   type outer(k4,l4)
      integer,kind :: k4
@@ -69,7 +61,7 @@ module m2
         end associate
      else
         return
-     end if 
+     end if
 
      ! call recursively until write all elements
      call writeDT(dt,i+1)
@@ -79,7 +71,7 @@ module m2
    function modFun(dt)
      type(outer(8,*)),intent(in) :: dt
      type(outer(8,:)),allocatable :: modFun
-    
+
      allocate(modFun,source=dt)
      modFun%inn3%inn2%inn1%g1=.not. dt%inn3%inn2%inn1%g1
      modFun%inn3%inn2%inn1%g2=.not. dt%inn3%inn2%inn1%g2
@@ -105,7 +97,7 @@ program listDirectLogicalCompWrite01
 
   ptr=>tar
 
-  call writeDT(ptr,1) 
+  call writeDT(ptr,1)
 
   out=tar(6)
 

@@ -1,26 +1,17 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxopen-newunit07.f
-!*
-!* PROGRAMMER                   : Sarah Kouchaki-Ramezan
 !* DATE                         : Oct. 2010
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: NEWUNIT= specifier, Feature#:377344
 !* SECONDARY FUNTIONS TESTED    : READ,WRITE,REWIND
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Using array for different NEWUNIT value and
 !*                                closing one NEWUNIT value and being ensure there
 !*                                isn't any dup with opening new one
-!*
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY

@@ -15,17 +15,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : ftybn096b.f
-!*  TEST CASE TITLE            : type-bound procedure
 !*
-!*  PROGRAMMER                 : Catherine Sun
 !*  DATE                       :
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : pass binding attribute
 !*
@@ -40,7 +34,7 @@
          integer :: int = 200
          character*20 :: c = "hi"
 
-         type parent(n1,k1)    ! (20,4) 
+         type parent(n1,k1)    ! (20,4)
             integer, kind :: k1
             integer, len  :: n1
             integer(k1)   :: x

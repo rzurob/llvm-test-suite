@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpAttrSpecStmtParam1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 11, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  -- PARAMETER statement 
+!*  -- PARAMETER statement
 !*     (constant  array)
-!* 
+!*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -44,14 +35,14 @@
     INTEGER, KIND :: K0=1
     INTEGER, LEN  :: L0=1
     CONTAINS
-    PROCEDURE, NOPASS :: ModFun0 
+    PROCEDURE, NOPASS :: ModFun0
   END TYPE
 
   TYPE,  EXTENDS(DT0)  :: DT1(K1, L1)
     INTEGER, KIND :: K1=1
     INTEGER, LEN  :: L1=1
     CONTAINS
-    PROCEDURE, NOPASS :: ModFun1 
+    PROCEDURE, NOPASS :: ModFun1
   END TYPE
 
   TYPE, EXTENDS(DT1) :: DT2(K2,L2)
@@ -59,24 +50,24 @@
     INTEGER, LEN  :: L2=1
     INTEGER(K2)   :: I(L2)=K2
     CONTAINS
-    PROCEDURE, NOPASS :: ModFun2 
+    PROCEDURE, NOPASS :: ModFun2
   END TYPE
 
 
   CONTAINS
 
   FUNCTION ModFun0(Arg)
-  CLASS(DT0(1,*)), INTENT(IN) :: Arg(:) 
+  CLASS(DT0(1,*)), INTENT(IN) :: Arg(:)
   TYPE(DT0(1,Arg%L0)) ModFun0(SIZE(Arg))
-    ModFun0 = Arg 
-  END FUNCTION 
+    ModFun0 = Arg
+  END FUNCTION
 
   FUNCTION ModFun1(Arg)
-  CLASS(DT1(1,*,4,*)), INTENT(IN) :: Arg(:) 
+  CLASS(DT1(1,*,4,*)), INTENT(IN) :: Arg(:)
   COMPLEX ::  ModFun1(SIZE(Arg),2)
     ModFun1(:,1) =  (Arg%K0, Arg%L0)
     ModFun1(:,2) =  (Arg%K1, Arg%L1)
-  END FUNCTION 
+  END FUNCTION
 
   FUNCTION ModFun2(Arg)
   CLASS(DT2(1,*,4,*,8,*)), INTENT(IN) :: Arg (:)
@@ -85,8 +76,8 @@
     DO I =1, SIZE(Arg)
       IF ( SIZE( ModFun2(I)%I ) .NE. Arg%L2 ) STOP 22
       ModFun2(I)%I = -Arg(I)%I
-    END DO 
-  END FUNCTION 
+    END DO
+  END FUNCTION
 
   END MODULE
 

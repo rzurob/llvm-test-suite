@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpCommon1 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpCommon1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 11, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The common statement
-!*     
+!*
 !*     The blank common block
 !*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -57,21 +48,21 @@
     COMPLEX(K)    :: Z(L)!=(K,-K)
     TYPE(DT0(K,L)):: S
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpCommon1 
+  PROGRAM dtpCommon1
   USE M
 
   TYPE(DT0(4,5))  :: S, S1
   TYPE(DT (8,7))  :: T, T1
 
   COMMON S
-  COMMON //T 
+  COMMON //T
   COMMON S1
   COMMON //T1
 
-   
+
   IF ( S%K0              .NE. 4         ) STOP 11
   IF ( S%L0              .NE. 5         ) STOP 12
   IF ( ANY ( LBOUND(S%C) .NE. 1       ) ) STOP 13
@@ -103,23 +94,23 @@
   S = DT0(4,5)(CHAR(0))
   S1%C  =  CHAR(5)
 
-  T%R = -4 
+  T%R = -4
   T%C = CHAR(4)
   T%I = -4
   T%Z = -(4,-4)
-  T%A = .TRUE. 
-  T%S = DT0(8,7)(CHAR(4)) 
+  T%A = .TRUE.
+  T%S = DT0(8,7)(CHAR(4))
 
-  T1%R = -5 
+  T1%R = -5
   T1%C = CHAR(5)
   T1%I = -5
   T1%Z = -(5,-5)
-  T1%A = .FALSE. 
-  T1%S = DT0(8,7)(CHAR(5)) 
+  T1%A = .FALSE.
+  T1%S = DT0(8,7)(CHAR(5))
 
   CALL ExtSub()
 
-  END 
+  END
 
   SUBROUTINE ExtSub()
   USE M
@@ -150,7 +141,7 @@
   IF ( ANY ( T1%A        .NEQV. .FALSE.   ) ) STOP 45
   IF ( ANY ( T1%S%C      .NE. CHAR(5)     ) ) STOP 46
 
- 
+
   END
 
 

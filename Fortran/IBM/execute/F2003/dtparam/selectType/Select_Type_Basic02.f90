@@ -1,26 +1,20 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type_Basic02 - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : July  17, 20008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : ASSOCIATE Construct inside a SELECT TYPE Construct
 !*                               Unlimited polymorphic
 !*                               Host association
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -38,46 +32,46 @@
 !*                       or CLASS DEFAULT [ select-construct-name ]
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-      PROGRAM Select_Type_Basic02 
-      IMPLICIT NONE 
+      PROGRAM Select_Type_Basic02
+      IMPLICIT NONE
 !*
 ! DERIVED TYPE declarations
 !*
       TYPE Shape (k1,name_len)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: name_len 
-        
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: name_len
+
         REAL(k1) :: area
         CHARACTER(LEN=name_len) :: name = ''
       END TYPE Shape
 
       TYPE, EXTENDS(Shape) :: Square(k2)
-        INTEGER, KIND :: k2 
-        
+        INTEGER, KIND :: k2
+
         REAL(k2) :: width
-      END TYPE Square   
+      END TYPE Square
 
       TYPE, EXTENDS(Square) :: Rectangle
-        REAL(k2) :: height 
+        REAL(k2) :: height
       END TYPE Rectangle
 
       TYPE, EXTENDS(Shape) :: Triangle
-        REAL(k1) :: a  
-        REAL(k1) :: b  
-        REAL(k1) :: c  
-        REAL(k1) :: perimeter 
+        REAL(k1) :: a
+        REAL(k1) :: b
+        REAL(k1) :: c
+        REAL(k1) :: perimeter
       END TYPE Triangle
 !*
 ! Object declarations
 !*
       INTEGER, PARAMETER :: k1 = KIND(0.0), k2 = KIND(0.0), name_len = 20
-      CLASS(*), POINTER :: My_shape 
+      CLASS(*), POINTER :: My_shape
 
       CALL generate_shape
 
-      CONTAINS 
+      CONTAINS
 !*
-! area computation depending on the shape 
+! area computation depending on the shape
 !*
       SUBROUTINE compute_area1
 
@@ -88,8 +82,8 @@
 
       ! Initialization
       A_square%width = 10.0
-      A_square%area = -0.0 
- 
+      A_square%area = -0.0
+
       ALLOCATE(My_shape, source=A_square)
       IF ( .NOT. ALLOCATED(My_shape)) STOP 10
 
@@ -109,7 +103,7 @@
           STOP 12
 
         CLASSDEFAULT
-           print *, 'Area cannot be computed: undefined Shape' 
+           print *, 'Area cannot be computed: undefined Shape'
            STOP 13
       END SELECT
 !*
@@ -117,14 +111,14 @@
 
       SUBROUTINE compute_area2
 
-      TYPE(Triangle(k1,name_len)), TARGET :: A_triangle 
+      TYPE(Triangle(k1,name_len)), TARGET :: A_triangle
 
       A_triangle%a = 20.0
       A_triangle%b = 10.0
       A_triangle%c = 22.36
 !*
       A_triangle%area = -0.0
- 
+
       My_shape => A_triangle        !  My_shape same than the one in the main program
       IF ( .NOT. ASSOCIATED(My_shape)) STOP 20
 
@@ -138,15 +132,15 @@
            END ASSOCIATE
 
            My_shape%name = 'a triangle'
-           
+
            print *, 'My shape is ', TRIM(My_shape%name), ' and the area is', FLOOR(My_shape%area)
 
-        CLASS IS (Triangle(k1,*)) 
-           print *, 'You should not pick this' 
+        CLASS IS (Triangle(k1,*))
+           print *, 'You should not pick this'
            STOP 21
 
         CLASS DEFAULT
-           print *, 'Area cannot be computed: undefined Shape' 
+           print *, 'Area cannot be computed: undefined Shape'
            STOP 22
       END SELECT
 !*
@@ -179,7 +173,7 @@
           STOP 34
 
         CLASS DEFAULT
-           print *, 'Area cannot be computed: undefined Shape' 
+           print *, 'Area cannot be computed: undefined Shape'
            STOP 35
       END SELECT
 !*
@@ -189,12 +183,12 @@
 !*
       SUBROUTINE generate_shape
 
-        call compute_area1  
+        call compute_area1
 
-        call compute_area2 
+        call compute_area2
 
-        call compute_area3 
+        call compute_area3
 
       END SUBROUTINE generate_shape
 !*
-      END PROGRAM Select_Type_Basic02 
+      END PROGRAM Select_Type_Basic02

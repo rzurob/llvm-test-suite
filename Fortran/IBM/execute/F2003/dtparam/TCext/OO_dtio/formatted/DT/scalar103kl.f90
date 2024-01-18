@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar103kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar103 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        scalar (non-)polymorphic derived type variable with non-polymorphic component (read)
@@ -86,13 +78,13 @@ use m
 
    read ( 1, "(DT'b3'(9,10))", iostat = stat, iomsg = msg )   b3
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 3_4
-   
+
    print *, rbuffer
-   
+
    if ( ( b1%d%i /= 101 ) .or. ( b1%j /= 1001 ) )  error stop 4_4
    if ( ( b2%d%i /= 102 ) .or. ( b2%j /= 1002 ) )  error stop 5_4
    if ( ( b3%d%i /= 103 ) .or. ( b3%j /= 1003 ) )  error stop 6_4
- 
+
 
 end program
 
@@ -107,7 +99,7 @@ use m, only: base, data, rbuffer, idx
    character(*), intent(inout) :: iomsg
 
    character(30) :: fmt
-   
+
    write ( rbuffer(idx), * ) iotype, v_list
    idx = idx + 1
 

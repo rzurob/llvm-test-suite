@@ -1,38 +1,27 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : module_subprogram21f
-!*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 20 April 2013
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2008
 !*
 !*  KEYWORD(S)                 : F2008 submodule
 !*
 !*  TARGET(S)                  :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*  based on OO_dtio/mix/generic/functional/specific/specific004.f
-!*  
+!*
 !*  Use of DTIO and procedure pointer declared in a module and accessed
 !*   in different levels of descendant submodules.
-!*  
+!*
 !*  Secondary tests:
-!*  - Chain of submodule of submodule declarations (4 levels), where 
+!*  - Chain of submodule of submodule declarations (4 levels), where
 !*    each link defines part of the interface:
 !*     m - m1 - m2 - m3 - m4
 !*  - specific binding to a module procedure
 !*  - generic binding to a module procedure
-!*  
+!*
 !*  Verify that the results match the values of the original test case
 !*
 !* ===================================================================
@@ -111,7 +100,7 @@ submodule (m) msub
 
    contains
 
-      module procedure writebase 
+      module procedure writebase
          write ( unit, *, iostat = iostat , iomsg = iomsg ) dtv%c
          iomsg = 'dtiobasewrite'
       end

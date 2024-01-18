@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Initialization expression
 !*
-!* PROGRAMMER                 : Kelvin Li
 !* DATE                       : March 31, 2006
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : PRODUCT intrinsic
 !*
@@ -19,7 +14,6 @@ integer :: i
 real(4), parameter :: tolerate4 = 5.e-7
 real(8), parameter :: tolerate8 = 5.d-16
 real(16), parameter :: tolerate16 = 5.q-31
-
 
 complex :: res1=product( (/(2.0,3.0),(3.0,4.0),(4.0,-5.0)/) )
 complex, parameter,dimension(5) :: a=(/(-3.,3.),(-7.,2.),(-5.,5.),(2.,-7.),(3.,-3.)/)

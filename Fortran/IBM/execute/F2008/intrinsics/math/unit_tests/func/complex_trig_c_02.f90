@@ -37,7 +37,7 @@ complex(8), parameter :: res2(num_tests) =               &
   ]
 
 integer(4) i
-  
+
 do i = 1, num_tests
   if (res1(i) /= res2(i)) call zzrc(i)
 end do

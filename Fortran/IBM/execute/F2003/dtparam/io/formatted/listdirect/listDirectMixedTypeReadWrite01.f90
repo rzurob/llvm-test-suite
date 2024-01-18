@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectMixedTypeReadWrite01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectMixedTypeReadWrite01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 16 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 16 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test Read statement with mixed ultimate intrinsic type components
@@ -27,7 +19,7 @@ module m1
    type Inner(k1,l1)
       integer,kind :: k1 !k1=4
       integer,len  :: l1 !l1=2
-      
+
       sequence
       character(k1) :: c1(l1)="xxx"
       integer(k1)   :: i(l1+1)=-99
@@ -64,7 +56,7 @@ use m1
      subroutine  writeData(dt,unit)
        implicit type(Outer(4,*)) (D)
        integer,intent(in) :: unit
- 
+
        write(unit,'(f5.2,e13.4,/e11.4e2)') dt%r
        write(unit,'( 4(a3,"," ) )' ) dt%c2
        write(unit,'("(", f7.3, ",", f7.3 ,")" , /," (",e12.4, ",", /,e12.4e2, ")",  " , (", en12.4, ",", es12.4 , ")" )' ) dt%x
@@ -87,22 +79,21 @@ use m2
    implicit type(Outer(4,3)) (r)
 
    allocatable :: ot(:)
-   
+
    target :: ot
 
    pointer :: pt(:)
 
    allocate(Outer(4,3) :: ot(2:3))
 
-   pt=>ot  
+   pt=>ot
 
    rt%r=[-4.1_4, 0.0001, -1.5e14]
    rt%c2=["xlf ","IBM ","test","xlc "]
    rt%x=[ (-1.2_8,1.2_8), (-3.4D-3,8.6D+05), (32.7_8,7.1_8)]
-   rt%inn1%c1=["ABC","abc"] 
+   rt%inn1%c1=["ABC","abc"]
    rt%inn1%i=[ -12,45_4, -34]
    rt%inn1%g=[.true.,.false.,.true.]
-
 
    open(10,file='listDirectMixedTypeReadWrite01.dat',form='formatted',&
         access='sequential',sign='plus',action='readwrite',status='old',&
@@ -119,7 +110,7 @@ use m2
 
    rewind 10
 
-   call readData(ot,10)    
+   call readData(ot,10)
 
    ! verify the results
    if(.not. precision_r4(pt(2)%r(1),-9.9_4))               stop 11
@@ -148,7 +139,6 @@ use m2
    if(any(pt(3)%inn1%i /= [-12,45,-34] ))                  stop 29
    if(any(pt(3)%inn1%g .neqv. [.true.,.false.,.true.]))    stop 30
 
-
    close(10)
-       
+
 end program

@@ -20,7 +20,6 @@
           end function
         end interface
 
-
         !! Call directly, by-passing the Fortran overloading interface
         print*, 'rv =', f1a()
         print*, 'rv =', f1b(2.0)

@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : combinedAttr5.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 2010-09-14
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : - Combination of attributes CONTIGUOUS,
-!*                                  PROTECTED 
+!*                                  PROTECTED
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -37,9 +27,9 @@ module myMod
     logical, external :: precision_r4
 
 contains
-    subroutine sub1(arg) 
+    subroutine sub1(arg)
         real, target :: arg(10)
-        ptr => arg 
+        ptr => arg
     end subroutine
 
     subroutine update(arg)

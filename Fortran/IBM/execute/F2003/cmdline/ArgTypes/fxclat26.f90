@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxclat26 1 a 2"
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat26.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,9 +33,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing named parameter
-!*                             : and components from different STRUCTURES (Union/Map) 
-!*                             : 
-!*                             : 
+!*                             : and components from different STRUCTURES (Union/Map)
+!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -49,9 +42,9 @@
       module modtype
 
          STRUCTURE /C/
-           character(2049)      :: COMMAND 
+           character(2049)      :: COMMAND
          END STRUCTURE
-         
+
          type L
            integer              :: LENGTH
          end type L
@@ -70,7 +63,7 @@
                character(2047)  :: VALUE
              END MAP
            END UNION
-           
+
            UNION
              MAP
                REAL             :: NoUse(200)
@@ -82,7 +75,7 @@
          type A
            integer              :: ARGCOUNT
          end type A
-        
+
          RECORD /C/  C
          type(L)     L
          RECORD /S/  S
@@ -111,7 +104,7 @@
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 3 ) & 
+      if ( CmdCount .ne. 3 ) &
       then
         error stop 63
       endif
@@ -140,7 +133,7 @@
 
 
       DO i  = 0, CmdCount
-       
+
         Nu%NUMBER = i
         call MyGetArg(CmdLine, Nu%NUMBER, Argument)
 
@@ -186,8 +179,8 @@
       endif
 
 
-      END 
- 
+      END
+
 
       INCLUDE 'cmdline.include'
 

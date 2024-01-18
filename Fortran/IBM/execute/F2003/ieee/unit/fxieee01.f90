@@ -12,21 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Rafik Zurob, Marcus Yu 
 !*  DATE                       : February 4, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : IEEE_CLASS 
+!*  PRIMARY FUNCTIONS TESTED   : IEEE_CLASS
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -34,13 +26,12 @@
 !*
 !*  DESCRIPTION                :
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
         program fxieee01
-      
+
         use ieee_arithmetic
         use constants_for_ieee
-		
+
         real(4), dimension(2) :: args4
         real(8), dimension(2) :: args8
 		real(16), dimension(2) :: args16
@@ -229,7 +220,7 @@
         if (results(2) /= ieee_signaling_nan) then
             print *, "ieee_class(array) failed for NNANS_16."
         endif
-		
+
         ! Now check that no flags were turned on.
         call ieee_get_flag(ieee_all,flag_values)
         do i = 1,5

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrArrReductionFun.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrArrReductionFun.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 20, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Array reduction functions 
+!*  Array reduction functions
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM dataPtrArrReductionFun 
+  PROGRAM dataPtrArrReductionFun
   IMPLICIT NONE
 
   INTEGER, ALLOCATABLE,  TARGET  :: Tar2(:, :)
@@ -48,10 +40,10 @@
   ALLOCATE(Tar1(N*N),  SOURCE=-1)
   ALLOCATE(Tar2(N, N), SOURCE=-2)
 
-  DO I =1, N 
+  DO I =1, N
   DO J =I+1, N
-  
-    Ptr(I:, J:) => Tar2 
+
+    Ptr(I:, J:) => Tar2
     Ptr = I*J
     IF ( .NOT. ALL( Ptr .EQ.  I*J ))               STOP 31
     IF (       ANY( Ptr .NE.  I*J ))               STOP 32
@@ -59,12 +51,12 @@
     IF ( SUM( Ptr ) .NE.  I*J*N*N )                STOP 34
     CALL Check2()
 
-    Ptr(I:J, I:J) => Tar1 
+    Ptr(I:J, I:J) => Tar1
     Ptr = -I*J; Ptr(J,J) = I*J; Ptr(I,I) = -J*J
     IF ( MAXVAL( Ptr ) .NE.  I*J )                STOP 41
     IF ( MINVAL( Ptr ) .NE. -J*J )                STOP 42
     CALL Check1()
- 
+
   END DO
   END DO
 
@@ -75,14 +67,14 @@
     IF (.NOT. ASSOCIATED(Ptr))                      STOP 21
     IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))           STOP 22
     IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))           STOP 23
-  END SUBROUTINE 
+  END SUBROUTINE
 
   SUBROUTINE Check2()
     IF (SIZE(Ptr)  .NE. N*N )                    STOP 10
     IF (.NOT. ASSOCIATED(Ptr, Tar2))             STOP 11
     IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 12
     IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END
 

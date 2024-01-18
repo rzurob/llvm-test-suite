@@ -1,22 +1,16 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : DefAssign.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : DefAssign.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 23, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -24,9 +18,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Defined assignment - it is incorrect to use procptr in defined assgn 
-!*  
+!*
+!*  Defined assignment - it is incorrect to use procptr in defined assgn
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -48,35 +41,35 @@
     END FUNCTION
 
     SUBROUTINE MyAssign1 (Arg1, Arg2)
-    TYPE(DT), INTENT(OUT) :: Arg1 
-    PROCEDURE(ModFun), POINTER, INTENT(IN) :: Arg2 
+    TYPE(DT), INTENT(OUT) :: Arg1
+    PROCEDURE(ModFun), POINTER, INTENT(IN) :: Arg2
       Arg1 = Arg2(Arg1)
-    END SUBROUTINE 
- 
+    END SUBROUTINE
+
   END MODULE
 
 
-  PROGRAM DefAssign 
+  PROGRAM DefAssign
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   PROCEDURE(ModFun), POINTER :: ProcPtr
   TYPE(DT),          TARGET  :: U
 
     INTERFACE ASSIGNMENT ( = )
       MODULE PROCEDURE MyAssign1
-    END INTERFACE ASSIGNMENT ( = ) 
+    END INTERFACE ASSIGNMENT ( = )
 
   U = ProcPtr
 
-  U = RetPtr(ModFun) 
+  U = RetPtr(ModFun)
 
   CONTAINS
 
   FUNCTION RetPtr(Arg)
   PROCEDURE(ModFun), POINTER :: RetPtr
-  PROCEDURE(ModFun) :: Arg 
-    RetPtr => Arg 
+  PROCEDURE(ModFun) :: Arg
+    RetPtr => Arg
   END FUNCTION
 
   END

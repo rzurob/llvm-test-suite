@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Structure Component
@@ -176,7 +165,7 @@ program structCompnt005
 
    read ( 1, "(DT(3,4), DT(3,5), DT(3,6))", iostat = stat, iomsg = msg )     cc1%b1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioreadc' ) )                         error stop 7_4
-   
+
    select type ( g => cc1%b1 )
       type is ( child )
         if ( ( g(1)%c /= 'jkl' ) .or. ( g(1)%i /= 1001 ) .or. &

@@ -1,41 +1,33 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatNonadvancingStream01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatNonadvancingStream01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 19 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 19 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. test READ & WRITE with non-advancing IO, use stream access
-!*  2. derived type is polymorphic 
+!*  2. derived type is polymorphic
 !*  3. read or write in subroutine
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(k1,l1)
       integer,kind :: k1 ! k1=4
       integer,len  :: l1 ! l1=2
-      real(k1)     :: r1(l1) 
-      logical(k1)  :: g1(k1)  
+      real(k1)     :: r1(l1)
+      logical(k1)  :: g1(k1)
    end type
 
    type,extends(base) :: child(l2)
       integer,len     :: l2 ! l2=3
       character(k1+l2) :: c1(l1:l2)
-      integer(k1)     :: i1(l2:k1) 
+      integer(k1)     :: i1(l2:k1)
    end type
 
    contains
@@ -67,24 +59,24 @@ module m
         class(*),intent(inout) :: dt(4:)
         integer,intent(in)   :: unit
         integer :: ios,pos,eor,count
- 
+
         select type(dt)
            type is(child(4,*,*))
-              ! read r1, optinally choose data by using tab edit descriptor 
+              ! read r1, optinally choose data by using tab edit descriptor
               read(10,'(t3,f4.2,tr4,f3.2/)',advance='no',iostat=ios,&
-                       size=count)                 dt(4)%r1 
+                       size=count)                 dt(4)%r1
               if(count /= 7)                stop 14
-              
+
               ! inquire current position
               inquire(10,pos=pos)
               if(pos /= 15 )                stop 15
-              
+
               ! we reached end of first record
               ! backspace will bring in beginning of first record
-              
+
               backspace 10
 
-              ! skip first record, read second record          
+              ! skip first record, read second record
               read(10,'(2l4)',advance='no',pos=16,size=count) dt(4)%g1(1:2)
               if(count /= 8)                stop 16
 
@@ -93,7 +85,7 @@ module m
               if(pos /=24)                   stop 17
 
               ! back to beginning of second record
-              backspace 10 
+              backspace 10
 
               ! read data into g1(3:4)
               read(10,'(2l4)',advance='no',pos=16,size=count) dt(4)%g1(3:4)
@@ -102,7 +94,7 @@ module m
               inquire(10,pos=pos)
               if(pos /= 24)                 stop 19
 
-              !let's read third record 
+              !let's read third record
               !skip some character,optionally choose data to read
 
               read(10,'(t6,a2,tr4,a3)',advance='no',iostat=ios, &
@@ -120,9 +112,9 @@ module m
               inquire(10,pos=pos)
               if(pos /= 55)                stop 22
 
-              
+
               ! start to read dt(5),in fourth record
-              ! optional choose data to use and skip record marker 
+              ! optional choose data to use and skip record marker
               read(10,'(tr1,f4.1,tr2,f5.1,tr2)',advance='no',&
                        pos=55,size=count,eor=101)                      dt(5)%r1
               if(count /= 9)               stop 23
@@ -134,7 +126,7 @@ module m
               read(10,'(4l4,tr1)',advance='no',pos=69,size=count) dt(5)%g1
 
               if(count /= 16)              stop 25
-              
+
               inquire(10,pos=pos)
               if(pos /= 86)                stop 26
 
@@ -142,12 +134,12 @@ module m
               ! read the sixth record
               read(10,'(t2,a3,tr5,a4,tr2)',advance='no', &
                    pos=86,size=count) dt(5)%c1
-            
+
               if(count /= 7)               stop 27
 
               inquire(10,pos=pos)
               if(pos /= 101)               stop 28
- 
+
               ! read the seventh record
               read(10,'(tr2,i2,tr2,i2)',advance='no',pos=101, &
                    size=count) dt(5)%i1
@@ -156,17 +148,17 @@ module m
 
 
               return
-             
+
 100           print *,"end of record reached,iostat=",ios
-              stop  30 
+              stop  30
 
 101           print *,"end of record reached,iostat=",ios
-              stop  31 
-   
+              stop  31
+
            class default
               stop 11
         end select
- 
+
      end subroutine
 
 end module
@@ -187,7 +179,7 @@ program formatNonadvancingStream01
             child(4,2,3)([2.678,-13.45],[.false.,.true.,.false.,.true.],&
              ["TORONTO","MARKHAM"],[15,-16]) ] )
 
-   upoly(3:) => poly 
+   upoly(3:) => poly
 
    open(unit=10,file="formatNonadvancingStream01.dat",form='formatted',&
         action='readwrite',access='stream',position='rewind',&
@@ -198,7 +190,7 @@ program formatNonadvancingStream01
       print *,"error in opening the file"
       print *,"iostat=",ios
       print *,"iomsg=",msg
-      stop 10 
+      stop 10
    end if
 
    select type(x=>upoly(4:3:-1))
@@ -207,18 +199,18 @@ program formatNonadvancingStream01
          call writeData1(10,x)
 
          rewind 10
-          
+
          call readData1(10,x)
-                 
+
       class default
          stop 13
    end select
 
    select type(poly)
       type is(child(4,*,*))
-         write(*,'(f7.3,f6.2/4l4/2a7/2i4,:,/)',advance='yes')  poly 
+         write(*,'(f7.3,f6.2/4l4/2a7/2i4,:,/)',advance='yes')  poly
       class default
-         stop 32 
+         stop 32
    end select
 
    close(10,iostat=ios,status='keep')
@@ -226,7 +218,7 @@ program formatNonadvancingStream01
    if(ios /= 0) then
        print *,"error in closing the file"
        print *,"iostat=",ios
-       stop 33 
-   end if 
-  
+       stop 33
+   end if
+
 end program

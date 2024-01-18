@@ -1,18 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : C938UnitSpec02d - WAIT() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March  3, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() Statement
 !*  SECONDARY FUNCTIONS TESTED : Multiple UNIT= Specifiers
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WAIT(), UNIT= Specifier

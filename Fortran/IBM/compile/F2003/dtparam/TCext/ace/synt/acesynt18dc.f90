@@ -3,16 +3,12 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acesynt18dc
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acesynt18d
 !*                               by David Forster)
 !*  DATE                       : 2007-12-07 (original: 2006-09-22)
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Array Constructor Enhancements
@@ -20,7 +16,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : syntax, type specifier, array constructor

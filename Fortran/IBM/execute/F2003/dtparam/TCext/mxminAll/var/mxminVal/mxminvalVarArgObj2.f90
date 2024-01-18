@@ -2,32 +2,20 @@
 ! ftcx_dtp -qk -qdeferredlp -qreuse=base /tstdev/F2003/mxminAll/var/mxminVal/mxminvalVarArgObj2.f
 ! opt variations: -qck -qnok -qnodeferredlp -qreuse=none
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/15/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX*/MIN* intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX*/MIN* intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                : MAXVAL/MINVAL with variable and used as 
+!*  DESCRIPTION                : MAXVAL/MINVAL with variable and used as
 !*                               selector in associate construct.
-!*                                
 !*
 !* ===================================================================
 
-  program mxminvalVarArgObj2 
+  program mxminvalVarArgObj2
 
    type base(k1,n1)    ! (4,8)
      integer, kind :: k1
@@ -56,7 +44,6 @@
    y3 = "ffffffff"
 
    allocate(z(3), source=(/child(4,8)(max(maxval(x1), y1), y2), child(4,8)(minval(x3), min(x2, y2)), child(4,8)(max(x3, y3, x1),y2)/))
-
 
    call associate1(As1 = maxval(z(1)%cname))
    call associate2(As2 = minval(z(2)%bname, dim=2))
@@ -98,5 +85,5 @@
 
    end subroutine
 
-  end program mxminvalVarArgObj2 
+  end program mxminvalVarArgObj2
 

@@ -1,19 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchDimAttr01 - ASYNCHRONOUS Attribute
 !*                               Interactions with Other Attributes
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : February  8, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : Interactions with the DIMENSION Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +27,6 @@
 !*                  or  ALLOCATABLE
 !*                  or  ASYNCHRONOUS
 !*                  or  DIMENSION ( array-spec )
-!*
 !*
 !*  5.1.2.5 DIMENSION attribute
 !*

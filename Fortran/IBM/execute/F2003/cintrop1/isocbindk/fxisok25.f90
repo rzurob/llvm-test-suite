@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_CHAR, C_SIGNED_CHAR
@@ -238,7 +224,7 @@ integer(C_SIGNED_CHAR) function fnt1(a,b)
 
    character(C_CHAR) :: a(4)
    integer(C_SIGNED_CHAR) :: b(4)
-   
+
    do i = 1, 4
       if ( a(i) /= achar(iachar('A')+i-1) ) error stop 52
       a(i) = achar(iachar('A')+i+3)
@@ -298,7 +284,7 @@ integer(C_SIGNED_CHAR) function fnt5(aa,bb)
 
    character(C_CHAR) :: aa(6,4)
    integer(C_SIGNED_CHAR) :: bb(6,4)
-   
+
    do i = 1, 4
       do j = 1, 6
          if ( aa(j,i) /= achar(iachar('A')+(i-1)*6+(j-1)) ) error stop 64
@@ -332,7 +318,7 @@ integer(C_SIGNED_CHAR) function fnt7(aa,bb)
 
    character(C_CHAR), intent(inout) :: aa(6,4)
    integer(C_SIGNED_CHAR), intent(inout) :: bb(6,4)
-   
+
    do i = 1, 4
       do j = 1, 6
          if ( aa(j,i) /= achar(iachar('A')+(i-1)*6+(j-1)) ) error stop 72
@@ -350,7 +336,7 @@ integer(C_SIGNED_CHAR) function fnt8(aa,bb)
 
    character(C_CHAR), intent(out) :: aa(6,4)
    integer(C_SIGNED_CHAR), intent(out) :: bb(6,4)
-   
+
    do i = 1, 4
       do j = 1, 6
          aa(j,i) = achar(iachar('A')+(i-1)*6+j)

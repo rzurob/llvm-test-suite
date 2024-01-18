@@ -15,16 +15,11 @@
 ! %POSTCMD: dcomp diagnose002.f
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            :
-!*  PROGRAMMER                 : Yong Du
+!*  ===================================================================
 !*  DATE                       : 11/20/2004
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : reshape
 !*  SECONDARY FUNCTIONS TESTED :
-!*  DRIVER STANZA              : xlf90
 !*  DESCRIPTION                :
 !*    Diagnostic test case: SHAPE shall be of type integer, rank one,
 !*  and constant size.

@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : March 13, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SCALB with arguments as constants.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +25,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -51,14 +42,14 @@
 
         logical :: flag_values(5)
         type(ieee_status_type) :: status_value
-	
+
 !       Test positive real*4 when yi = 0
 
         call ieee_get_status(status_value)
         yi = 0
         result4 = ieee_scalb(pi, yi)
 
-        if (result4 /= pi ) error stop 1 
+        if (result4 /= pi ) error stop 1
 
 
         ! Now check that no flags were turned on.

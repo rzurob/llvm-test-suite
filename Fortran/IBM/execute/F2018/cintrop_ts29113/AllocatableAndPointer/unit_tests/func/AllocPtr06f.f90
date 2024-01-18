@@ -1,22 +1,14 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocPtr06f
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Feb, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Allocatable/Pointer
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Doing Fortran I/O when CFIs are involved
 !*
@@ -52,7 +44,7 @@
       verify1(3,1) = 5.0; verify1(3,2) = 6.0;
 
       verify2 = -verify1
-      
+
       allocate(p1(3,2))
       allocate(p2)
       allocate(al1(3,2))
@@ -80,7 +72,7 @@
         integer(c_int), pointer :: arg2
         integer(c_int), allocatable :: arg3(:,:)
         real(c_float), allocatable :: arg4
-        
+
         open(10, file="AllocPtr06f.dat")
         read(10, *) arg1
         read(10, *) arg2

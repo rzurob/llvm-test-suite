@@ -1,14 +1,9 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : acetnone10e
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2006-08-11
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : array section, logical
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -206,5 +200,5 @@ contains
     print *, "  >", arr(lbound(arr,1),lbound(arr,2),lbound(arr,3),lbound(arr,4),lbound(arr,5),lbound(arr,6)), &
              arr(ubound(arr,1),ubound(arr,2),ubound(arr,3),ubound(arr,4),ubound(arr,5),ubound(arr,6)), "<"
   end subroutine test6
-  
+
 end program acetnone10e

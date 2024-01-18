@@ -2,24 +2,11 @@
 ! ftcx_dtp -qk -ql -qdeferredlp /tstdev/F2003/decimaledit/defaultIO/dcmlCharExprRW002.f
 ! opt variations: -qnok -qnol -qnodeferredlp
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 06/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : DECIMAL EDIT MODE
 !                               C928: format presence when DECIMAL= specifier in
@@ -27,8 +14,6 @@
 !                               Use of label, * or format-control-specifier for
 !                               the IO format; also use deferred character data
 !                               as the internal file.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

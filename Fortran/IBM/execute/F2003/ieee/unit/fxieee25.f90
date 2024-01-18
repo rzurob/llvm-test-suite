@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh fxieee25 
+! %PRECMD: $TR_SRC/fxieee.presh fxieee25
 ! %COMPOPTS: -qflttrap -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,21 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Marcus Yu
 !*  DATE                       : February 5, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SET_HALTING_MODE
 !*  SECONDARY FUNCTIONS TESTED : IEEE_GET_HALTING_MODE
 !*                               IEEE_SUPPORT_HALTING_MODE
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qflttrap
 !*
 !*  KEYWORD(S)                 :
@@ -34,7 +26,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : test program will halting on IEEE_INVALID
-!*                               for real*4 
+!*                               for real*4
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 	     program fxieee25
@@ -47,12 +39,12 @@
 
 !   save the original status
 	     call ieee_get_status(status_value)
-  
+
 !  test real*4
 
          yr = 0.0
 	     xr = 0.0
-	     
+
 	     call ieee_set_halting_mode(IEEE_INVALID, .true.)
 		 ! print *, "The program will halt on IEEE_INVALID!"
 	     zr = xr / yr

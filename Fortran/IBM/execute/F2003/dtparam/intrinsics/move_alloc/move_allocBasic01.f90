@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocBasic01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocBasic01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 7 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
@@ -47,7 +39,7 @@ program move_allocBasic01
 
   interface
      subroutine sub1(arg1,arg2)
-        import 
+        import
         type(dtp(2,*)),allocatable,intent(inout) :: arg1(:)
         type(dtp(2,:)),allocatable,intent(out)   :: arg2(:)
      end subroutine
@@ -58,7 +50,7 @@ program move_allocBasic01
         type(dtp(2,2)),allocatable,intent(out)   :: arg2(:,:)
      end subroutine
 
-  end interface 
+  end interface
 
   allocate(from1(2:10),source= (/( dtp(2,2)(i1=[i,-i]),i=1,9) /) )
 
@@ -72,17 +64,17 @@ program move_allocBasic01
   if(.not. allocated(to1))                      error stop 11_4
 
   call sub1(from1,to1)
-  
+
   if(allocated(from1))                          error stop 12_4
-  if(.not. allocated(to1))                      error stop 13_4 
+  if(.not. allocated(to1))                      error stop 13_4
 
   if(to1%k /= 2)                                error stop 14_4
   if(to1%l /= 2)                                error stop 15_4
   if(lbound(to1,1) /= 2)                        error stop 16_4
   if(ubound(to1,1) /= 10)                       error stop 17_4
- 
+
   do i=2, 10
-     if(any(to1(i)%i1 /= [i-1,-(i-1)]))         error stop 18_4        
+     if(any(to1(i)%i1 /= [i-1,-(i-1)]))         error stop 18_4
   end do
 
   call sub2(from2,to2)
@@ -110,7 +102,7 @@ end program
      use m,only: dtp
      type(dtp(2,*)),allocatable,intent(inout) :: arg1(:)
      type(dtp(2,:)),allocatable,intent(out)   :: arg2(:)
-   
+
      call move_alloc(arg1,arg2)
   end subroutine
 

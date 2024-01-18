@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditd008.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,23 +12,16 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditd008
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Dec. 08, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : providing support for the DECIMAL=
 !*                               specifier and decimal edit mode control
 !*                               descriptors. Feature 289039.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qdebug=intmsg
 !*
 !*  DESCRIPTION                : This diagnostic test, checks to make sure
@@ -46,9 +39,9 @@
       complex :: my_complex
       integer :: int_arr(10)
       real    :: real_arr(10)
-      
+
 ! TESTING FOR EXTERNAL FILES:
-      
+
       ! character array not valid
       open(unit=77, file='decimaleditd008.dat', decimal=char_arr)
       read(77, *, decimal=char_arr)
@@ -69,7 +62,7 @@
       open(unit=77, file='decimaleditd008.dat', decimal=my_char)
       read(77, *, decimal=my_char)
       write(77, *, decimal=my_char) 3.14
-      
+
       ! character array element valid
       open(unit=77, file='decimaleditd008.dat', decimal=my_char_arr(1))
       read(77, *, decimal=my_char_arr(1))
@@ -114,7 +107,7 @@
       ! character string valid
       read(buffer, *, decimal=my_char)
       write(buffer, *, decimal=my_char) 3.14
-      
+
       ! character array element valid
       read(buffer, *, decimal=my_char_arr(1))
       write(buffer, *, decimal=my_char_arr(1)) 3.14
@@ -135,6 +128,6 @@
 
       ! complex not valid:
       read(buffer, *, decimal=my_complex)
-      write(buffer, *, decimal=my_complex) 3.14      
-      
+      write(buffer, *, decimal=my_complex) 3.14
+
       end

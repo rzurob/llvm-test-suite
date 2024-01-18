@@ -48,7 +48,6 @@ use m
         (.not. precision_r4(b2%data(3), 1.41e1))) error stop 2_4
 end
 
-
 type(base(4, 3)) function p1 (data)
 use m, only: base
     real(4), intent(in) :: data

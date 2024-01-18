@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : arrsec2_assumed_size.f
-!*  PROGRAMMER                 : Gaby Baghdadi (adopted from David Nichols' 
 !*                               arrsec1_assumed_size.f)
 !*  DATE                       : Oct 13, 2008
 !*  ORIGIN                     : XLF Development

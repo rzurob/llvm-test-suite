@@ -1,9 +1,9 @@
-module m1 
+module m1
   integer, parameter :: k = 8
-  integer, parameter :: k2 = 4 
+  integer, parameter :: k2 = 4
   integer :: l = 11
 
-  type dt 
+  type dt
     integer :: a = 4
   end type
 end module
@@ -14,7 +14,7 @@ end module
 
 module m3
 integer :: l = 15
-type dt 
+type dt
 end type
 end
 
@@ -22,7 +22,7 @@ module m4
 integer :: j = 7
 end module
 
-module m2 
+module m2
   interface
     module subroutine sub1(arg1, arg2, arg3, arg4, arg5)
       use m1
@@ -49,18 +49,18 @@ module m2
       pointer foo
       type(dt) :: arg7
     end
- 
+
   end interface
 
 end module
 
-submodule (m2) s1 
+submodule (m2) s1
 contains
   module procedure sub1
     print*, kind(arg1)     ! Q1
     print*, arg2%a         ! Q2
     print*, ubound(arg3)   ! Q3
-    print*, ubound(arg4)   ! Q4 
+    print*, ubound(arg4)   ! Q4
   end
 
   module procedure sub2

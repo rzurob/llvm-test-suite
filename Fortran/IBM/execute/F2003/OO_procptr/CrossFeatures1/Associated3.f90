@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Associated3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Associated3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Associated3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Associated3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 9, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  ASSOCIATED(POINTER [, TARGET]) 
+!*
+!*  ASSOCIATED(POINTER [, TARGET])
 !*   Type binding returns a procptr
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,13 +41,13 @@
 
   MODULE M
 
-    TYPE  :: Base 
-      PROCEDURE(INTEGER(8)), POINTER, NOPASS   :: ProcPtr 
+    TYPE  :: Base
+      PROCEDURE(INTEGER(8)), POINTER, NOPASS   :: ProcPtr
     END TYPE
-   
-    tYPE  :: DT 
+
+    tYPE  :: DT
       TYPE(Base) :: BaseComp
-      PROCEDURE(INTEGER(8)), POINTER, NOPASS :: ProcPtr 
+      PROCEDURE(INTEGER(8)), POINTER, NOPASS :: ProcPtr
     END TYPE
 
     CONTAINS
@@ -65,30 +59,30 @@
 
   END MODULE
 
-  
-  PROGRAM Associated3 
+
+  PROGRAM Associated3
   USE M
-  IMPLICIT NONE 
-  PROCEDURE(INTEGER(8)), POINTER :: ProcPtr => NULL() 
+  IMPLICIT NONE
+  PROCEDURE(INTEGER(8)), POINTER :: ProcPtr => NULL()
   TYPE (DT) :: V
 
   V = DT(Base(NULL()), NULL())
- 
+
   IF ( ASSOCIATED( ProcPtr) )          STOP 11
   IF ( ASSOCIATED( V%BaseComp%ProcPtr))STOP 12
   IF ( ASSOCIATED( V%ProcPtr))         STOP 13
-  
-  ProcPtr => ModFun 
+
+  ProcPtr => ModFun
   V = DT(Base(ModFun), ProcPtr)
-  
+
   IF ( .NOT. ASSOCIATED( ProcPtr, ModFun) )            STOP 21
   IF ( .NOT. ASSOCIATED( V%BaseComp%ProcPtr, ModFun) ) STOP 22
   IF ( .NOT. ASSOCIATED( V%ProcPtr, ModFun))           STOP 23
-  
+
   IF (  ProcPtr() .NE. -1 )            STOP 31
   IF (  V%BaseComp%ProcPtr() .NE. -1 ) STOP 32
   IF (  V%ProcPtr() .NE. -1 )          STOP 33
-  
-  
+
+
  END
 

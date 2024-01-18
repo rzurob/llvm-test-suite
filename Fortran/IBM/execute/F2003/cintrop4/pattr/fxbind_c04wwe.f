@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,16 +13,9 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c04wwe.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran programs interoperate with C functions
@@ -36,7 +24,6 @@
 !*                              - Interop functions contained in Module.
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -47,11 +34,11 @@
 !*     is declared with the BIND attribute.
 !*   - main written in FORTRAN, Fortran calls C functions.
 !*
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. Declare the interop functions in Fortran program.
 !*          ( Create a procedural interface that corresponds to the C prototype
-!*          and bind the interface to the C function using the BIND(C) specifier). 
-!*          2. Declare the variable in Fortran which will be the  actual 
+!*          and bind the interface to the C function using the BIND(C) specifier).
+!*          2. Declare the variable in Fortran which will be the  actual
 !*          arguments of the interop functions and Initialize the variables
 !*          and do the calculation in C .
 !*          3. Fortran  program call C function.
@@ -100,16 +87,16 @@ program fxbind_c04wwe
   !**********************************************************
   !        Initialization of variables                      *
   !**********************************************************
-  n= 5 
+  n= 5
   !**********************************************************
-  !        Calling C from Fortran 
+  !        Calling C from Fortran
   !                and check the results
   !**********************************************************
   result = stats(info,n)
   test1 =  (compare.age  == info(1).age ) .AND. &
        (compare.Weight == info(1).Weight ) .AND. &
-       (compare.Sex == info(1).Sex ) 
-  
+       (compare.Sex == info(1).Sex )
+
   test = test1 .AND. precision_R4(result,180.0e0)
   call assert(test,'Hello, the result is not correct!',22)
 end program fxbind_c04wwe

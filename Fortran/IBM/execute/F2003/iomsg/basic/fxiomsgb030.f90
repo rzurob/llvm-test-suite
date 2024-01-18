@@ -5,40 +5,31 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgb030.f
 ! %VERIFY: fort.18:fxiomsgb030.vf
-! %STDIN: 
-! %STDOUT: 
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
- 
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : FORMAT repetition counter invalid in print.
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : FORMAT WRITE
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 2
 !*
-!*  DESCRIPTION                : Some FORMAT specifiers do not allow a 
-!*                               repetition counter in I/O statements. TL 
-!*                               and BN are tested in this test case with 
+!*  DESCRIPTION                : Some FORMAT specifiers do not allow a
+!*                               repetition counter in I/O statements. TL
+!*                               and BN are tested in this test case with
 !*                               WRITE statement.
-!*
 !*
 !*  TEST CONDITIONS            : 1) Repetition specified for format code TL.
 !*                               2) Repetition specified for format code BN.
@@ -50,50 +41,46 @@
 !*********************************************************************
 
       program fxiomsgb030
- 
-      implicit none         
- 
- 
-      integer*4 case_id, ios 
- 
+
+      implicit none
+
+      integer*4 case_id, ios
+
       integer*4 varint
- 
+
       character*30 form
- 
+
       character*300 errmsg
- 
+
 !
 ! Initialize Return Code routine to SUCCESS...
 !
- 
+
       case_id = 0
       call zzrc ( case_id )
- 
- 
+
 !
 ! TestCase 1...
 !
- 
+
       case_id = case_id + 1
- 
+
       form = '( 5 TL5 )'
- 
+
       write(0, fmt = form, iostat = ios, iomsg=errmsg) varint
 
       write(18, *) errmsg
- 
- 
+
 !
 ! TestCase 2...
 !
- 
+
       case_id = case_id + 1
- 
+
       form = '( 5 BN )'
- 
+
       write(0, fmt = form, iostat = ios, iomsg=errmsg) varint
 
       write(18, *) errmsg
- 
- 
+
       end                            ! End of TestCase.

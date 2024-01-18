@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : slash001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from slash001 by Robert Ma)
 !*  DATE                       : 2007-07-20 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10.1.2 Namelist Input Values
 !*                                        When a slash is encountered, input statement should terminate.
@@ -74,12 +66,12 @@ program slash001kl
 
    read (1, n2, iostat = stat, iomsg = msg)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 2_4
-   
+
    if ( ( b1%i(1) /= 1234 ) .or. ( b1%i(2) /= 5678 ) .or. ( b1%i(3) /= 9012 ) ) error stop 3_4
    if ( ( b2%i(1) /= 1234 ) .or. ( b2%i(2) /= 5678 ) .or. ( b2%i(3) /= 9012 ) ) error stop 4_4
    if ( ( b3%i(1) /= 2345 ) .or. ( b3%i(2) /= 6789 ) .or. ( b3%i(3) /= 1234 ) ) error stop 5_4
    if ( ( b4%i(1) /= 2345 ) .or. ( b4%i(2) /= 6789 ) .or. ( b4%i(3) /= 1234 ) ) error stop 6_4
-   
+
 
 end program
 

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectAsynchronous02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectAsynchronous02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 26 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 26 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test write and read statement with asynchronous IO
@@ -31,20 +23,20 @@ module m1
       sequence
       character(k1) :: c1(l1)="****"
       integer(k1)   :: i1(l1-1:l1)=-99
-   end type 
+   end type
    type inner2(k2,l2)
       integer,kind :: k2 !k2=4
       integer,len  :: l2 !l2=4
-      
+
       sequence
-      logical(2*k2) :: g1(l2)=.false. 
+      logical(2*k2) :: g1(l2)=.false.
       type(inner1(k2,l2-1)) :: inn1
    end type
    type inner3(k3,l3)
       integer,kind :: k3 !k3=4
       integer,len  :: l3 !l3=3
 
-      sequence 
+      sequence
       real(k3)     :: r1(l3:l3+1)=-9.9
       type(inner2(k3,l3+1)) :: inn2
    end type
@@ -70,7 +62,7 @@ program listDirectAsynchronous02
   interface
 
      subroutine sub(outobj2)
-       import 
+       import
        type(outer(4,:)),pointer,intent(inout) :: outobj2(:)
      end subroutine
 
@@ -79,7 +71,7 @@ program listDirectAsynchronous02
   type(outer(4,:)),pointer :: outobj2(:)
   logical,external :: precision_r4,precision_x6
 
-  call sub(outobj2) 
+  call sub(outobj2)
 
    ! verify data
 
@@ -109,7 +101,7 @@ program listDirectAsynchronous02
    if(any(outobj2(2)%inn3%inn2%inn1%c1 /= &
              ["\'GH\'","\"EF\"","ABCD"]))                       stop 36
    if(any(outobj2(2)%inn3%inn2%inn1%i1 /= [-34,12]))            stop 37
-  
+
 end program
 
 subroutine sub(outobj2)
@@ -131,7 +123,7 @@ subroutine sub(outobj2)
    outobj1%inn3%r1= [-3.567E0,+5.7E-3]
    outobj1%inn3%inn2%g1=[.true.,.false.,.false.,.true.]
    outobj1%inn3%inn2%inn1%c1=["ABCD","\"EF\"","'GH'"]
-   outobj1%inn3%inn2%inn1%i1=[-34,+12]    
+   outobj1%inn3%inn2%inn1%i1=[-34,+12]
 
    open(10,file='listDirectAsynchronous02.dat',status='old',&
         form='formatted',access='sequential',position='append', &
@@ -148,7 +140,7 @@ subroutine sub(outobj2)
 
    write(10,*,asynchronous='yes',id=idvar1,decimal='comma') outobj1%x1(1:2)
    write(10,*,asynchronous='yes',id=idvar2,sign='plus') outobj1%x1(3)
-   
+
    wait(10,id=idvar1,iostat=ios,iomsg=msg)
 
    if(ios <> 0) then
@@ -156,7 +148,7 @@ subroutine sub(outobj2)
       print *,"iostat=",ios
       print *,"iomsg=",msg
       stop 11
-   end if  
+   end if
 
    inquire(10,id=idvar1,pending=pending1)
 
@@ -173,7 +165,7 @@ subroutine sub(outobj2)
 
    inquire(10,id=idvar2,pending=pending2)
 
-   if(pending2 .neqv. .false.)   stop 14   
+   if(pending2 .neqv. .false.)   stop 14
 
    write(10,*,asynchronous='yes',decimal='comma') outobj1%inn3%r1
    write(10,*,asynchronous='yes')  &
@@ -191,14 +183,14 @@ subroutine sub(outobj2)
    inquire(10,pending=pending1)
 
    if(pending1 .neqv. .false.)   stop 15
-  
-   ! back to beginning of first record 
+
+   ! back to beginning of first record
    rewind 10
-  
+
    ! start to read data into outobj2
- 
+
    read(10,*,asynchronous='yes',id=idvar1) outobj2(1)
- 
+
    wait(10,id=idvar1,iostat=ios,iomsg=msg)
 
    if(ios <> 0) then
@@ -228,7 +220,7 @@ subroutine sub(outobj2)
    if(pending1 .neqv. .false.)    stop 19
 
    read(10,*,asynchronous='yes') outobj2(2)%x1(1)
-   
+
    read(10,*,asynchronous='yes',decimal="comma") outobj2(2)%inn3%r1
 
    read(10,*,asynchronous='yes') outobj2(2)%inn3%inn2
@@ -242,10 +234,10 @@ subroutine sub(outobj2)
       stop 20
    end if
 
-   inquire(10,pending=pending1) 
+   inquire(10,pending=pending1)
 
    if(pending1 .neqv. .false.)    stop 21
 
-   close(10) 
+   close(10)
 
 end subroutine

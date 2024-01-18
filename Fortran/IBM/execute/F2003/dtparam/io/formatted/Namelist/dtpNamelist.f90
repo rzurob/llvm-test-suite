@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpNamelist
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 24, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The namelist statement
-!*  
-!* 
+!*
 !*  (ice)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -58,7 +48,7 @@
     CHARACTER(L2) :: C(L2)=CHAR(48+K2)
     INTEGER(K2)   :: I(L2)=K2
   END TYPE
-  
+
   CONTAINS
 
   FUNCTION ModFun(Arg)
@@ -79,10 +69,10 @@
   NAMELIST /NL0/ R, /NL1/S /NL2/T
   NAMELIST /NL/R,S,T
 
-  WRITE(*, NML=NL0) 
-  WRITE(*, NML=NL1) 
-  WRITE(*, NML=NL2) 
-  WRITE(*, NML=NL) 
+  WRITE(*, NML=NL0)
+  WRITE(*, NML=NL1)
+  WRITE(*, NML=NL2)
+  WRITE(*, NML=NL)
 
   END
 

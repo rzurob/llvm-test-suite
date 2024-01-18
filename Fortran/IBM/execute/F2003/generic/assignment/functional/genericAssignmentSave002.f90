@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with assignment
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: pass-obj specified
 !*  KEYWORD(S)                 :
@@ -75,7 +64,7 @@ program genericAssignmentSave002
    class(base), allocatable :: c1
 
    allocate ( b2, source = base(100) )
-   
+
    allocate ( c1, source = child(200) )
 
    b1 = b2
@@ -95,10 +84,10 @@ program genericAssignmentSave002
 
    b2 = b1
    print *, b2%i
-   
+
    c1 = b1
    print *, c1%i
-   
+
    b2 = b1
    print *, b2%i
 

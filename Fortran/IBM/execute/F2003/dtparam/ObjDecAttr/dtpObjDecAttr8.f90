@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr8
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 24, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  The DIMENSION attribute --  The assumed size array
-!* 
+!*
 !*  If the actual argument associated with the assumed-size dummy array is an array element
 !*  of any type other than default character with a subscript order value of r in an
-!*  array of size x, the size of the dummy array is x - r + 1 
-!* 
+!*  array of size x, the size of the dummy array is x - r + 1
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -71,12 +62,12 @@
 
   M = R
   R = -R
- 
+
   IF ( ANY( LBOUND(P1) .NE. [M] )) STOP 80
   IF ( ANY( LBOUND(P2) .NE. [M] )) STOP 81
   IF ( ANY( LBOUND(P3) .NE. [M] )) STOP 82
 
-  DO I = M, N  
+  DO I = M, N
 
     IF ( P1(I)%K0               .NE.   0          ) STOP 11
     IF ( P1(I)%L0               .NE.   0          ) STOP 12
@@ -123,15 +114,15 @@
 
   PROGRAM dtpObjDecAttr8
   USE M
- 
+
   INTEGER  :: N = 107, R=62, I
- 
+
   ALLOCATE(T1(-N:-1), SOURCE=DT0())
   ALLOCATE(T2(-N:-1), SOURCE=DT1(2,2)(I=[-1], C=["X"], X0=DT0(2,2)(), X1=NULL(), X2=NULL()))
   ALLOCATE(T3(-N:-1), SOURCE=DT1(1,1,2,2)(I=[-1,-1],C=["X","X"], X0=DT0(2,2)(), X1=NULL(), X2=NULL()))
 
   ! Start at the R_th element
-  CALL Change(N, 2, R, T1(-(N-R+1):), T2(-(N-R+1):), T3(-(N-R+1):)) 
+  CALL Change(N, 2, R, T1(-(N-R+1):), T2(-(N-R+1):), T3(-(N-R+1):))
 
   END
 

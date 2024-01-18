@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Forall1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Forall1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Forall1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Forall1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 12, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  FORALL/defined assignment
-!*  
-!*  (304672) 
+!*
+!*  (304672)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,7 +46,7 @@
     END TYPE
 
     INTERFACE ASSIGNMENT ( = )
-      MODULE PROCEDURE Assign   
+      MODULE PROCEDURE Assign
     END INTERFACE ASSIGNMENT ( = )
 
     CONTAINS
@@ -63,8 +57,8 @@
       Arg1%Id = Arg2%ID
       Arg1%ProcPtr => Arg2%ProcPtr
       Arg1%ProcPtr1 => Arg2%ProcPtr1
-    END SUBROUTINE 
- 
+    END SUBROUTINE
+
     PURE FUNCTION Fun(Arg)
     TYPE(DT) :: Fun
     TYPE(DT), INTENT(IN) :: Arg
@@ -80,9 +74,9 @@
   END MODULE
 
 
-  PROGRAM Forall1 
+  PROGRAM Forall1
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT) :: V, W(3000), U(3000)
   INTEGER :: I,  IArr(3000)
@@ -90,16 +84,16 @@
 
   V = DT(-1, Fun1, Fun1)
   ProcPtr => Fun
- 
+
   FORALL (I=V%ProcPtr1(1):V%ProcPtr1(3000):V%ProcPtr1(1))
-    IArr(I) = V%ProcPtr(-1) 
+    IArr(I) = V%ProcPtr(-1)
     U(I) = ProcPtr(V)
   END FORALL
 
   DO I=1, 3000
 
     IF ( IArr(I) .NE. -1 ) STOP 11
-   
+
     IF ( U(I)%Id .NE. -1 )                       STOP 21
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr) )        STOP 22
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Fun1) )  STOP 23
@@ -108,8 +102,8 @@
   END DO
 
   FORALL (I=V%ProcPtr1(1):V%ProcPtr1(3000):V%ProcPtr1(1))
-    W(I) = DT(1, V%ProcPtr, V%ProcPtr1) 
-    U(I) = W(I) 
+    W(I) = DT(1, V%ProcPtr, V%ProcPtr1)
+    U(I) = W(I)
   END FORALL
 
   DO I=1, 3000

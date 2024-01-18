@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_PARAMETER_05.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result 
-!*  SECONDARY FUNCTIONS TESTED : Array constructor 
+!*  PRIMARY FUNCTIONS TESTED   : Function result
+!*  SECONDARY FUNCTIONS TESTED : Array constructor
 !*
-!*
-!*  DRIVER STANZA              : xlf2002
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,7 +17,7 @@
 !* Defect 362080
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -63,7 +55,7 @@ END MODULE
 PROGRAM DTP_PARAMETER_05
       USE Mod
 
-      INTEGER, PARAMETER :: M = 10, L =5, K = 4, N = 2 
+      INTEGER, PARAMETER :: M = 10, L =5, K = 4, N = 2
 
       INTEGER, PARAMETER :: I10(M) = [(I, I = 1, M)], I5(L) = [(I**2, I = 1, L)]
 
@@ -138,8 +130,8 @@ PROGRAM DTP_PARAMETER_05
       IF ( TRIM(ntgt%ccomp%C0) .NE.        'Base-init' ) STOP 64
       IF ( TRIM(ntgt%ccomp%C1) .NE. 'Child-init' ) STOP 65
 
-      ALLOCATE( Container(K,M) :: poly ) 
-      poly%ptr => btgt 
+      ALLOCATE( Container(K,M) :: poly )
+      poly%ptr => btgt
       IF ( SIZE(poly%ptr%A0)     .NE. M ) STOP 70
       IF ( LBOUND(poly%ptr%A0,1) .NE. 1 ) STOP 71
       IF ( UBOUND(poly%ptr%A0,1) .NE. M ) STOP 72
@@ -147,8 +139,8 @@ PROGRAM DTP_PARAMETER_05
       IF ( ANY(poly%ptr%A0   .NE.         I10) ) STOP 74
       IF ( TRIM(poly%ptr%C0) .NE. 'b1constant' ) STOP 75
 
-      ALLOCATE( Container(K,M) :: poly ) 
-      poly%ptr => ctgt 
+      ALLOCATE( Container(K,M) :: poly )
+      poly%ptr => ctgt
       SELECT TYPE ( s => poly%ptr )
         CLASS IS (Child(K,*,K,*))
           IF ( SIZE(s%A0)     .NE. M ) STOP 76
@@ -168,8 +160,8 @@ PROGRAM DTP_PARAMETER_05
           STOP 88
       END SELECT
 
-      ALLOCATE( Container(K,N) :: poly ) 
-      poly%ptr => ntgt 
+      ALLOCATE( Container(K,N) :: poly )
+      poly%ptr => ntgt
       SELECT TYPE ( s => poly%ptr )
           CLASS IS (NextGen(K,*,K,*,*))
             IF ( SIZE(s%A0)     .NE. 2 ) STOP 90
@@ -190,14 +182,14 @@ PROGRAM DTP_PARAMETER_05
             IF ( TRIM(s%C0) .NE.         'AB' ) STOP 105
             IF ( TRIM(s%C1) .NE.      'ABCDE' ) STOP 106
             IF ( TRIM(s%C2) .NE. 'n1constant' ) STOP 107
-      
+
             IF ( SIZE(s%bcomp%A0)     .NE. M ) STOP 108
             IF ( LBOUND(s%bcomp%A0,1) .NE. 1 ) STOP 109
             IF ( UBOUND(s%bcomp%A0,1) .NE. M ) STOP 110
             IF ( LEN(s%bcomp%C0)      .NE. M ) STOP 111
             IF ( ANY(s%bcomp%A0   .NE.   -1) ) STOP 112
             IF ( TRIM(s%bcomp%C0) .NE. 'Base-init' ) STOP 113
-     
+
             IF ( SIZE(s%ccomp%A0)     .NE. M ) STOP 114
             IF ( SIZE(s%ccomp%A1)     .NE. M ) STOP 115
             IF ( LBOUND(s%ccomp%A0,1) .NE. 1 ) STOP 116

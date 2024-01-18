@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyOptional02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyOptional02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 21 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  use optional dummy argument as actual argument of spread intrinsic, and result of spread assign to function result.
-!*  
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(l1)
@@ -41,7 +33,7 @@ module m
             class(base(:)),pointer          :: fun1(:)
 
             if(present(arg1)) then
-               allocate(fun1(2),source=spread(arg1,1,2)) 
+               allocate(fun1(2),source=spread(arg1,1,2))
             else if(present(arg2)) then
                allocate(fun1(4),source=spread(arg2,1,4))
             else
@@ -60,7 +52,7 @@ program dummyArgDeferPolyOptional02
   class(base(:)),pointer :: pbase1=>null(),pbase2=>null(),pbase3(:)=>null()
 
   allocate(pbase1,source=child(2,3)(i=[1,2]))
-  
+
   allocate(pbase2,source=child(4,6)(i=[-1,-2,-3]))
 
   allocate(pbase3(2:3),source=fun1(pbase1))
@@ -72,7 +64,7 @@ program dummyArgDeferPolyOptional02
         end do
      class default
         error stop 50_4
-  end select 
+  end select
 
   pbase3(-1:)=>fun1(arg2=pbase2)
 
@@ -83,7 +75,7 @@ program dummyArgDeferPolyOptional02
             end do
      class default
         error stop 51_4
-  end select 
+  end select
 
   pbase3=>fun1()
 

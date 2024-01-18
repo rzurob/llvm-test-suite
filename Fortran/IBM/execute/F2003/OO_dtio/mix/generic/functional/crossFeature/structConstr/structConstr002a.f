@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Structure Constructor
@@ -142,7 +131,7 @@ program structConstr002a
    read ( 1, iostat = stat, iomsg = msg )         ( b1, b1, i=0,1 )  !<- read 4 times b1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 9_4
    if ( b1%c /= 'DEF' )  error stop 10_4
-   
+
 
 end program
 

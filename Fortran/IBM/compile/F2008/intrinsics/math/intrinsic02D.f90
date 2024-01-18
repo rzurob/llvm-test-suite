@@ -1,27 +1,21 @@
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : intrinsic02D.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Shahid Alam
 !*  DATE                       : 2010-11-10
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Math Intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : ACOS, ASIN, ATAN, COSH, SINH, TAN, TANH, ATAN, GAMMA, 
+!*  SECONDARY FUNCTIONS TESTED : ACOS, ASIN, ATAN, COSH, SINH, TAN, TANH, ATAN, GAMMA,
 !*                               ACOSH, ASINH, ATANH and LOG_GAMMA
 !*
 !*  REFERENCE                  : Feature Number 376003
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -29,7 +23,7 @@
 !*  Diagnostic test:
 !*     Checking the level (77, 90, 95, 2003 and 2008) of Fortran language.
 !*     Any level lower than 2008 should give warning message.
-!*  
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 

@@ -1,39 +1,31 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP:   fxextnp19.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f ./pubpvt.mod
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : procedure-decl-statement 
-!*                               
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : Jan 02, 2004
 !*  ORIGIN                     : AIX Compiler Development & Test
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*                              declare external procedure entity for
 !*                              different subroutines with procedure
 !*                              name as pro-interface as well as no
@@ -45,11 +37,11 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-        module pubpvt 
+        module pubpvt
 
         implicit none
 
-        interface 
+        interface
             integer function ifc_int4(arg)
               integer arg
             end function
@@ -68,7 +60,7 @@
             end subroutine
             recursive subroutine ifc_i4_recu(inta, intb)
               integer inta, intb
-            end subroutine 
+            end subroutine
             pure subroutine ifc_i4_pure(inta, intb)
               integer, intent(in)::inta
               integer, intent(out)::intb
@@ -81,7 +73,7 @@
         procedure(ifc_int4)::p_int4
         procedure(integer)::pp_int4
 
-!--------declare entities using explicit procedure name 
+!--------declare entities using explicit procedure name
 
         procedure(ifc_i4),private::p_i4
         procedure(ifc_i4_entry),private::p_i4_entry
@@ -89,7 +81,7 @@
         procedure(ifc_i4_recu),private::p_i4_recu
         procedure(ifc_i4_pure),private::p_i4_pure
 
-!--------doesn't specify procedure name 
+!--------doesn't specify procedure name
 
         procedure(),public::p1_i4
         procedure(),public::p1_i4_entry
@@ -314,7 +306,7 @@
              integer arg1, arg2, arg3
              arg1 = 10
              arg2 = arg1 + 10
-             arg3 = arg2 + 10 
+             arg3 = arg2 + 10
         end subroutine
 
         recursive subroutine p_i4_recu(int, int_res)

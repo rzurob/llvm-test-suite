@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  AssocNameExp.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  AssocNameExp.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : AssocNameExp
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,7 +33,7 @@
 !*
 !*  DESCRIPTION
 !*    The selector is expressed by associating entities
-!*    () 
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,7 +47,7 @@
     TYPE, EXTENDS(Base) :: Child    ! (4)
       INTEGER(K1)  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -72,15 +66,15 @@
   DIMENSION U(3)
 
   ASSOCIATE ( As => U  )
-    U1%BaseId  = -3 
-    U1%ChildId = -1 
- 
+    U1%BaseId  = -3
+    U1%ChildId = -1
+
     ASSOCIATE ( As1 => U1 )
       ASSOCIATE ( As2 => As%ChildID + As1%BaseId )
         IF ( ANY(As2 .NE. (/-1, -1, -1/))) STOP  30
       END ASSOCIATE
     END ASSOCIATE
- 
-  END ASSOCIATE 
+
+  END ASSOCIATE
 
   END

@@ -2,35 +2,28 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk580a cxcmn_blk550
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f fxcmn_blk580a.o cxcmn_blk550.o fxcmn_blk580a
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that 3-dimensional array variables
 !*				 of all data types inside of common blocks are
-!*				 interoperable with C variables 
+!*				 interoperable with C variables
 !*
 !*				 Test:  BIND(C) statement in module called by main program
 !*
@@ -40,11 +33,11 @@
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-module fmod1 
+module fmod1
 	use iso_c_binding
         implicit none
 	logical precision_r4, precision_r8, precision_r16
- 
+
         integer i,j,k
 
         integer (kind=o'001')                           :: int_s1a(2,2,2)
@@ -91,10 +84,10 @@ module fmod1
         real ( 8 )                              	:: real_s8c(2,2,2)
         real (KIND=O'010')      			:: real_s8d(2,2,2)
 
-                                     	
-                            	
+
+
         REAL (C_LONG_DOUBLE             )                  	:: real_s16c(2,2,2)
-                               	
+
 
         REAL (C_FLOAT                   )       	:: r_C_FLOAT_s4a(2,2,2)
         REAL (C_FLOAT                   )       	:: r_C_FLOAT_s4b(2,2,2)
@@ -150,11 +143,11 @@ module fmod1
                         int_C_INT_FAST8_T	,  &
 			int_s1b			,  &
                         int_C_INT_FAST16_T	,  &
-                        real_s4b		
+                        real_s4b
 
         bind(c) :: /Blk_All/
 
-end module fmod1 
+end module fmod1
 
 
 program fxcmn_blk580a

@@ -1,15 +1,10 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : sequentialWrite01
-!*  TEST CASE TITLE            : Unformatted Intrinsic Output (with DTP)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : October  2, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type (with Type Parameters) Output
 !*                               to a SEQUENTIAL File
@@ -17,7 +12,6 @@
 !*                               referenced via an INTERFACE (Procedure
 !*                               selected via KIND Parameter)
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WRITE

@@ -1,26 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type05d - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : September 12, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Use association - Structure constructor
 !*                               Selector being a function call
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -44,25 +37,25 @@
       IMPLICIT NONE
 !*
       TYPE Node  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
         CHARACTER(l1), ALLOCATABLE :: tag(:)
-      END TYPE Node 
+      END TYPE Node
 
       TYPE, EXTENDS(Node) :: ExtNode
         CLASS(Node(k1,l1)), POINTER :: Next => NULL()
-      END TYPE ExtNode 
+      END TYPE ExtNode
 
-      INTEGER, PARAMETER :: knd1 = 4 , len1 = 10 
+      INTEGER, PARAMETER :: knd1 = 4 , len1 = 10
 !*
-      CONTAINS 
+      CONTAINS
 !*
       FUNCTION foo(Obj)
-      CLASS(*), POINTER  :: foo 
-      CLASS(ExtNode(k1=knd1,l1=len1)) :: Obj 
+      CLASS(*), POINTER  :: foo
+      CLASS(ExtNode(k1=knd1,l1=len1)) :: Obj
 
-      ALLOCATE (foo, source= Obj) 
+      ALLOCATE (foo, source= Obj)
       IF ( .NOT. ASSOCIATED(foo)) STOP 30
 
       END FUNCTION foo
@@ -71,7 +64,7 @@
 !*
       PROGRAM Select_Type05d
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE(Node(knd1,len1)), TARGET :: FirstNode = (Node(knd1,len1) (tag = NULL() ))
       integer i
@@ -88,7 +81,7 @@
 
         CLASS IS (ExtNode(knd1,*))
                 IF (A%k1 .NE. knd1) STOP 10
-                IF (A%l1 .NE. len1) STOP 11 
+                IF (A%l1 .NE. len1) STOP 11
                 IF (A%tag(1) .NE. '0') STOP 12
                 IF (A%tag(2) .NE. '1') STOP 13
                 IF (A%tag(3) .NE. '2') STOP 14

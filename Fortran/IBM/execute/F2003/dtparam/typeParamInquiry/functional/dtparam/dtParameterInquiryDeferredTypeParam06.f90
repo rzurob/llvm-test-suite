@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryDefferredTypeParam06.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryDefferredTypeParam06.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 24 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. WITH CHARACTER COMPONENT
 !* 4. DERIVED TYPE IS ARRAY
@@ -31,14 +23,14 @@ module m
    type base(l)
       integer(2),len :: l
       character(len=l) :: c(l-1:l+1)
-   end type 
+   end type
 end module
 
-  program dtParameterInquiryDeferredTypeParam06 
+  program dtParameterInquiryDeferredTypeParam06
   use m
   implicit none
 
-  type(base(5)),target :: b1(4) 
+  type(base(5)),target :: b1(4)
   type(base(:)),allocatable :: b2(:)
   type(base(:)),pointer ::b3(:,:) =>null()
   class(base(:)),pointer :: b4(:) =>null()
@@ -50,7 +42,7 @@ end module
   if(ubound(b2,1) /=10 .or. lbound(b2,1) /= 1)                error stop 11_4
   do i=1,ubound(b2,1)
      if(b2(i)%c%len /= len(b2(i)%c) .or. b2(i)%c%len /= 5)    error stop 12_4
-  if(ubound(b2(i)%c,1) /=6 .or. lbound(b2(i)%c,1) /= 4)       error stop 13_4 
+  if(ubound(b2(i)%c,1) /=6 .or. lbound(b2(i)%c,1) /= 4)       error stop 13_4
   end do
 
   do i=1,10
@@ -59,7 +51,7 @@ end module
     if(b3(i,i+1)%l /=i)                                       error stop 14_4
     if(b3(i,i+1)%c%len /= len(b3(i,i+1)%c)                &
            .or. b3(i,i+1)%c%len /= i)                         error stop 15_4
-    if(lbound(b3(i,i+1)%c,1) /=i-1  & 
+    if(lbound(b3(i,i+1)%c,1) /=i-1  &
                 .or. ubound(b3(i,i+1)%c,1) /=i+1)             error stop 16_4
 
   end do
@@ -71,7 +63,7 @@ end module
   do i=1,ubound(b4,1)
      if(b4(i)%c%len /= len(b4(i)%c) .or. b4(i)%c%len /= 5)    error stop 19_4
   if(ubound(b4(i)%c,1) /=6 .or. lbound(b4(i)%c,1) /= 4)       error stop 20_4
-  end do  
+  end do
 
 
   b5=b3

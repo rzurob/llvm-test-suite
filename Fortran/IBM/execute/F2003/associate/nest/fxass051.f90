@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass051.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass051.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -54,7 +42,7 @@
 !*
 !*  CONDITIONS TESTED          : Listed below.
 !*
-!*  DESCRIPTION                : Test: NESTED ASSOCIATE,associate result 
+!*  DESCRIPTION                : Test: NESTED ASSOCIATE,associate result
 !*                                     with expressions and with
 !*                                     integer, integer*1, integer*2
 !*                                     integer*4, integer*8 and byte

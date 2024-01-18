@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,46 +13,38 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c03aad.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran programs interoperate with C functions
 !*                                through a Fortran procedure interface that uses
 !*                                the BIND specification .
-!*            
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !*   - Test: BINC(C) attribute with  different intrinsic data type,
 !*           complex*4,complex*8.
-!*           
+!*
 !*   - The interoperable  procedure itself is  implemented as C function.
 !*   - The interoperabl Fortran procedure  has an explicit interface and
 !*     is declared with the BIND attribute.
 !*   - passing scalar arguments by REFERENCE and by VALUE
 !*   - main written in FORTRAN, Fortran calls C functions.
 !*
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. Declare the interop functions in Fortran program.
 !*          ( Create a procedural interface that corresponds to the C prototype
-!*          and bind the interface to the C function using the BIND(C) specifier). 
+!*          and bind the interface to the C function using the BIND(C) specifier).
 !*          2. Initialize the variable which will be the  actual arguments of
-!*             the interop functions. 
+!*             the interop functions.
 !*          3. Fortran  program call C function.The argument is  altered
 !*             during execution of the C Function.
-!*          4. Assertion: Check the modified auguments and return value  
+!*          4. Assertion: Check the modified auguments and return value
 !*             in Fortran to verify it is correct.
 !*
 !* ===================================================================
@@ -119,8 +106,8 @@ program fxbind_c03aad
   !**********************************************************
 
   ! Test 1 : call by reference
-  ! A dummy argument without the VALUE attribute correspond 
-  ! to a formal parameter  of the prototype in C program 
+  ! A dummy argument without the VALUE attribute correspond
+  ! to a formal parameter  of the prototype in C program
   ! that is of a pointer type.
 
   ret4_ref = fun_complex4_ref(c4_ref,c8_ref)
@@ -129,7 +116,7 @@ program fxbind_c03aad
 
   ! Test 2 : call by value
   ! A dummy argument with the VALUE attribute  correspond
-  ! to a formal parameter of the prototype in C program that is 
+  ! to a formal parameter of the prototype in C program that is
   ! not of a pointer type.
 
   ret4_val= fun_complex4_val(c4_val,c8_val)
@@ -137,15 +124,15 @@ program fxbind_c03aad
   if (  c8_val /= (10.0d0,10.0d0) ) error stop 23
 
   ! Test 3 : call by reference
-  ! A dummy argument without the VALUE attribute correspond 
-  ! to a formal parameter  of the prototype in C program 
+  ! A dummy argument without the VALUE attribute correspond
+  ! to a formal parameter  of the prototype in C program
   ! that is of a pointer type.
   ret8_ref = fun_complex8_ref(c8second_ref)
   if (  c8second_ref /= (10.0d0,10.0d0) ) error stop 24
 
   ! Test 4 : call by value
   ! A dummy argument with the VALUE attribute  correspond
-  ! to a formal parameter of the prototype in C program that is 
+  ! to a formal parameter of the prototype in C program that is
   ! not of a pointer type.
 
   ret8_val = fun_complex8_val(c8second_val)

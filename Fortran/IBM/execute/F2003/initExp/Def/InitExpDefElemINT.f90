@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemINT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemINT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 10, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  INT 
+!*
+!*  -  INT
 !*  (319018)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -58,7 +51,7 @@
   REAL(8), PARAMETER :: r8Signaling_P_NaN = REAL(z"7FF0000000000001", KIND=8)
   REAL(8), PARAMETER :: r8Quiet_P_NaN     = REAL(z"7FF8000000000000", KIND=8)
 
-  
+
 
   INTEGER(KIND(INT((/(-1_1, I=1,128)/), KIND=1))), PARAMETER :: I11(128) = INT((/(-1_1, I=1,128)/), KIND=1)
   INTEGER(KIND(INT((/(-1_2, I=1,128)/), KIND=1))), PARAMETER :: I12(128) = INT((/(-1_2, I=1,128)/), KIND=1)
@@ -101,7 +94,7 @@
   IF ( ANY( I18    .NE. -1 ))       STOP 18
 
   IF ( KIND(I41)   .NE.  4 )        STOP 21
-  IF ( ANY( I41    .NE.  0 ))       STOP 22  
+  IF ( ANY( I41    .NE.  0 ))       STOP 22
   IF ( KIND(I42)   .NE.  4 )        STOP 23
   IF ( ANY( I42    .NE.  0 ))       STOP 24
   IF ( KIND(I43)   .NE.  4 )        STOP 25
@@ -110,7 +103,7 @@
   IF ( ANY( I44    .NE.  0 ))       STOP 28
 
   IF ( KIND(I81)   .NE.  8 )        STOP 31
-  IF ( ANY( I81    .NE.  0 ))       STOP 32  
+  IF ( ANY( I81    .NE.  0 ))       STOP 32
   IF ( KIND(I82)   .NE.  8 )        STOP 33
   IF ( ANY( I82    .NE.  0 ))       STOP 34
   IF ( KIND(I83)   .NE.  8 )        STOP 35
@@ -136,7 +129,7 @@
   IF ( KIND(IC8)   .NE.  8 )        STOP 57
   IF ( ANY( IC8    .NE.  1 ))       STOP 58
 
- 
+
 
   END
 

@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : structConstr003lk
 !*
-!*  PROGRAMMER                 : David Forster (derived from structConstr003 by Robert Ma)
 !*  DATE                       : 2007-08-08 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Structure Constructor
@@ -148,7 +140,7 @@ program structConstr003lk
 
    write ( 1, "(DT(3,5,4))", iostat = stat, iomsg = msg )    gen3(3,4)('mno', OneThousandOne, zoo ) ! tcx: (3,4)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteg' ) )         error stop 5_4
-   
+
    write ( 1, "(DT(5,5,5))", iostat = stat, iomsg = msg )   ( child(3,4) (zoo,OneThousand), gen3(3,4)('cat',OneThousandOne, zoo),i=-1,1 ) ! tcx: (3,4) ! tcx: (3,4)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteg' ) )         error stop 6_4
 

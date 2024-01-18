@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : alloctArrTar.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                : - Target is a contiguous array section
 !*
-!*  DESCRIPTION                : - Target is a contiguous array section 
-!*                      
 !*  A nonzero-sized array section is contiguous provided that
 !*     (a) its base object is contiguous,
 !*     (b) it does not have a vector subscript,
@@ -41,7 +31,7 @@ PROGRAM alloctArrTar
 
       INTEGER, ALLOCATABLE, TARGET   :: A1D(:)
       INTEGER, ALLOCATABLE, TARGET   :: A5D(:,:,:,:,:)
-      
+
       INTEGER, POINTER              :: ptr(:)
       INTEGER, POINTER              :: ptr5D(:,:,:,:,:)
 
@@ -137,7 +127,7 @@ PROGRAM alloctArrTar
       IF ( .NOT. IS_CONTIGUOUS(ptr_c) )  ERROR STOP 37
 
 !******************** rank > 1 ******************************
-      
+
       ptr5D => A5D
       IF ( .NOT. IS_CONTIGUOUS(ptr5D) )  ERROR STOP 48
 

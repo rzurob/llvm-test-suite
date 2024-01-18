@@ -1,28 +1,18 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Recursive1.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : 2010-10-18
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - Recursive subroutine call with assumed 
-!*                                   shape array where the shape changes at 
+!*  DESCRIPTION                : - Recursive subroutine call with assumed
+!*                                   shape array where the shape changes at
 !*                                   each recursive call
-!*                               - Actual argument is simply contiguous 
-!*                               - Dummy argument is an assumed shape array with 
-!*                                   CONTIGUOUS attribute 
+!*                               - Actual argument is simply contiguous
+!*                               - Dummy argument is an assumed shape array with
+!*                                   CONTIGUOUS attribute
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -40,23 +30,23 @@ PROGRAM Recursive1
 
       DO i = 1, 5
           matrix(:,i) = [10,5,3,4,6]
-      ENDDO 
+      ENDDO
 
       call SUB1( matrix )
       DO i = 1, 5
           IF ( ANY(matrix(:,i) .NE. [3,4,10,5,6]) ) STOP 10
-      ENDDO 
+      ENDDO
 
 
-      CONTAINS 
+      CONTAINS
 
       RECURSIVE SUBROUTINE SUB1( Arg1 )
-         INTEGER, CONTIGUOUS :: Arg1(:,:) 
+         INTEGER, CONTIGUOUS :: Arg1(:,:)
          INTEGER :: i1, i2, i3
-         INTEGER :: START, STOP, LOW, HIGH 
+         INTEGER :: START, STOP, LOW, HIGH
 
          IF ( UBOUND(Arg1,1) .LE. LBOUND(Arg1,1) ) RETURN
-         
+
          DO i1 = LBOUND(Arg1,2),UBOUND(Arg1,2)
             START = LBOUND(Arg1,1)
             STOP  = UBOUND(Arg1,1)

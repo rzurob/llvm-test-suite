@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d355337.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d355337.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 24 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. DEFECT 355337
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -33,7 +25,7 @@ module m
    end type
    type A(la)
       integer,len   :: la
-      type(B(2*la)) :: b2  
+      type(B(2*la)) :: b2
    end type
 end module
 

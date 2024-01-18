@@ -13,21 +13,15 @@
 ! *********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : For module nature in USE statement.
 !*                             :
-!*  PROGRAMMER                 : Daniel Chen
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  DIAGNOSES TESTED           : Can access an intrinsic module and
-!*                               a nonintrinsic module with the same 
+!*                               a nonintrinsic module with the same
 !*                               name in different scope units.
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : -c 
+!*  REQUIRED COMPILER OPTIONS  : -c
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

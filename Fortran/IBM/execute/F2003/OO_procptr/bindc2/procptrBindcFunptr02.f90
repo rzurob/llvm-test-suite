@@ -1,22 +1,11 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*                              function pointer is structure component
 !* ===================================================================
 
@@ -26,7 +15,7 @@ module fptr02
    type,bind(c) :: dt
        type(C_FUNPTR) :: fp
        integer(C_INT) :: ig
-   end type 
+   end type
 
    interface
        subroutine csub(i, cptr) bind(c)
@@ -40,23 +29,23 @@ end module fptr02
 program procptrBindcFunptr02
 
    use ISO_C_BINDING
-  
+
    use fptr02
 
    interface
        integer(C_INT) function cfun(i) bind(c)
           import C_INT
           integer(C_INT),value :: i
-       end function 
+       end function
    end interface
 
-   integer(C_INT) :: i 
+   integer(C_INT) :: i
 
    type(dt) :: dt_obj
 
-   procedure(csub), pointer :: subind 
+   procedure(csub), pointer :: subind
 
-   subind => csub   
+   subind => csub
 
    i = 20_C_INT
 
@@ -70,6 +59,6 @@ program procptrBindcFunptr02
 
    call subind(i, dt_obj)
 
-   if(i .ne. 22) error stop 4_4 
+   if(i .ne. 22) error stop 4_4
 
 end program procptrBindcFunptr02

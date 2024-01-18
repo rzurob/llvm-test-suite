@@ -2,30 +2,23 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk220 cxcmn_blk200
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.o *.mod fxcmn_blk220 fxcmn_blk220.out
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that variables of
@@ -36,7 +29,6 @@
 !*
 !*                               This testcase will test a single common block with multiple
 !*                               variables in them iteroprated with C struct variables.
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -61,10 +53,10 @@ subroutine extern_fsub()
 ! Integers Declaration
 !      	- use decimal, binary, octal values to define type
 !     	- use KIND, SELECTED_INT_KIND, MAX, LEN
-!	- use ISO_C_BINDING modules	
+!	- use ISO_C_BINDING modules
 ! ----------------------------------------------------------------------------
 
-	integer (kind=o'001')				:: int_s1a 
+	integer (kind=o'001')				:: int_s1a
 	integer (LEN('k'))				:: int_s1b
 
 	integer (2 )					:: int_s2a
@@ -75,7 +67,7 @@ subroutine extern_fsub()
 
 	integer (kind=MAX(8, 7))			:: int_s8a
 	integer (kind=int((4.4e0_8,6.5e0_8))+4 ) 	:: int_s8b
-	
+
 	INTEGER (C_SIGNED_CHAR 		)		:: int_C_SIGNED_CHAR
 	INTEGER (C_SHORT 		)		:: int_C_SHORT
 	INTEGER (C_INT 			)		:: int_C_INT
@@ -85,7 +77,7 @@ subroutine extern_fsub()
 	INTEGER (C_INTPTR_T 		)		:: int_C_INTPTR_T
 	INTEGER (C_INTMAX_T 		)		:: int_C_INTMAX_T
 	INTEGER (C_INT8_T 		)		:: int_C_INT8_T
-	INTEGER (C_INT16_T 		)		:: int_C_INT16_T 
+	INTEGER (C_INT16_T 		)		:: int_C_INT16_T
 	INTEGER (C_INT32_T 		)		:: int_C_INT32_T
 	INTEGER (C_INT64_T 		)		:: int_C_INT64_T
 	INTEGER (C_INT_LEAST8_T 	)		:: int_C_INT_LEAST8_T
@@ -144,7 +136,7 @@ subroutine extern_fsub()
         int_C_INT_LEAST32_T		= 0
         int_C_INT_LEAST64_T		= 1111111111111111111_8
         int_C_INT_FAST8_T		= b'001'		! d'1'
-        int_C_INT_FAST16_T		= o'100'		! d'64'   
+        int_C_INT_FAST16_T		= o'100'		! d'64'
         int_C_INT_FAST32_T 		= 1111111119
         int_C_INT_FAST64_T		= 9223372036854775807_8
 
@@ -187,7 +179,7 @@ subroutine extern_fsub()
 
 
 ! ----------------------------------------------------------------------------
-!  Call to C subprogram  
+!  Call to C subprogram
 ! ----------------------------------------------------------------------------
 	CALL CSUB_ALL()
 

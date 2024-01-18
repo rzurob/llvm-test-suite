@@ -1,16 +1,8 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 20/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : assumed-shape array, VOLATILE
-!*
 !*
 !*  DESCRIPTION                : functional TC for  C1232
 !*
@@ -24,12 +16,12 @@
 
    contains
        subroutine arraySectionVolatile(x)
-          character(3), VOLATILE :: x(:)      ! dummy argument is assumed  
+          character(3), VOLATILE :: x(:)      ! dummy argument is assumed
        end subroutine arraySectionVolatile    ! shape array
 
   end module m
 
-  program volatileC1232ArraySection03d 
+  program volatileC1232ArraySection03d
 
     use m
 

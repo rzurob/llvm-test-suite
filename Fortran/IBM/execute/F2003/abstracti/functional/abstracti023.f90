@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquida
 !*  DATE                       : 02/20/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Deferred Binding
 !*                                  - Elemental Deferred Binding in base type
@@ -90,7 +79,7 @@ program abstracti023
    end select
 
 
-   select type ( b1 ) 
+   select type ( b1 )
       type is ( child )
          if ( ( b1(1,1)%i /= 10 )  .or. ( b1(1,1)%j /= 10 ) .or. &
               ( b1(2,1)%i /= 10 )  .or. ( b1(2,1)%j /= 10 ) .or. &
@@ -98,9 +87,9 @@ program abstracti023
               ( b1(2,2)%i /= 101 ) .or. ( b1(2,2)%j /= 1001 ) )  error stop 1_4
       class default
          error stop 2_4
-   end select   
+   end select
 
-   select type ( b2 ) 
+   select type ( b2 )
       type is ( child )
          if ( ( b2(1,1)%i /= 20 )  .or. ( b2(1,1)%j /= 20 )   .or. &
               ( b2(2,1)%i /= 101 ) .or. ( b2(2,1)%j /= 1001 ) .or. &
@@ -108,8 +97,8 @@ program abstracti023
               ( b2(2,2)%i /= 101 ) .or. ( b2(2,2)%j /= 1001 ) )  error stop 2_4
       class default
          error stop 2_4
-   end select  
-   
+   end select
+
    if ( ( c1(1)%i /= 30 )  .or. ( c1(1)%j /= 30 )      .or. &
         ( c1(2)%i /= 101 ) .or. ( c1(2)%j /= 1001 )    .or. &
         ( c1(3)%i /= 30 )  .or. ( c1(3)%j /= 30 ) )    error stop 3_4

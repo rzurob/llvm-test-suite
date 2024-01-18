@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : structConstr003all
 !*
-!*  PROGRAMMER                 : David Forster (derived from structConstr003a by Robert Ma)
 !*  DATE                       : 2007-08-08 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Structure Constructor
@@ -151,10 +143,10 @@ program structConstr003all
    read ( 1, iostat = stat, iomsg = msg )       c4
    read ( 1, iostat = stat, iomsg = msg )       c5
    read ( 1, iostat = stat, iomsg = msg )       c6
-   
+
    if ( ( c1 /= 'abc' ) .or. ( c2 /= 'defxxx' )  .or. ( c3 /= 'ghiyyyzzz' ) .or. (c4 /= 'jklAAA' ) .or. ( c5 /= 'mnoBBBZOO' ) .or. &
         ( c6 /= 'ZOOAAAcatBBBZOOZOOAAAcatBBBZOOZOOAAAcatBBBZOO' ) ) error stop 7_4
-       
+
    close ( 1, status = 'delete' )
 
 

@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryArrayLogicalComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryArrayLogicalComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 11 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 11 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY FOR DT AND COMPONENT
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. LOGICAL ARRAY COMPONENT
@@ -41,7 +33,7 @@ module m
      logical(8) :: a4(2:k1)
 
      logical(k1) :: a5(1)
-     logical(k2) :: a6(2) 
+     logical(k2) :: a6(2)
      logical(k1+k2) :: a7(k1+k2)
      logical(1) :: a8(max(l1,l2))
      logical(1) :: a9(1)
@@ -53,8 +45,8 @@ module m
      logical(max(4,k2)) :: a15(l1:l1+l2)
      logical(4) :: a16(4)
 
-   end type 
-         
+   end type
+
 end module
 
   program dtParameterInquiryArrayLogicalComp01
@@ -71,7 +63,7 @@ end module
   if(t%a1%kind /= kind(t%a1) .or. t%a1%kind /= 1)           error stop 14_4
   if(t%a2%kind /= kind(t%a2) .or. t%a2%kind /= 2)           error stop 15_4
   if(t%a3%kind /= kind(t%a3) .or. t%a3%kind /= 4)           error stop 16_4
-  if(t%a4%kind /= kind(t%a4) .or. t%a4%kind /= 8)           error stop 17_4 
+  if(t%a4%kind /= kind(t%a4) .or. t%a4%kind /= 8)           error stop 17_4
 
   if(t%a5%kind /= kind(t%a5) .or. t%a5%kind /= 2)           error stop 18_4
   if(t%a6%kind /= kind(t%a6) .or. t%a6%kind /= 2)           error stop 19_4
@@ -86,12 +78,12 @@ end module
   if(t%a14%kind /= kind(t%a14) .or. t%a14%kind /= 2)        error stop 27_4
   if(t%a15%kind /= kind(t%a15) .or. t%a15%kind /= 4)        error stop 28_4
   if(t%a16%kind /= kind(t%a16) .or. t%a16%kind /= 4)        error stop 29_4
-   
+
   if(lbound(t%a1,1) /=1 .or. ubound(t%a1,1) /= 2)           error stop 30_4
   if(lbound(t%a2,1) /=1 .or. ubound(t%a2,1) /= t%l2)        error stop 31_4
   if(lbound(t%a2,2) /=1 .or. ubound(t%a2,2) /= t%l1)        error stop 32_4
 
-  if(lbound(t%a3,1) /=t%l1 .or. ubound(t%a3,1) /= t%l2)     error stop 33_4  
+  if(lbound(t%a3,1) /=t%l1 .or. ubound(t%a3,1) /= t%l2)     error stop 33_4
   if(lbound(t%a4,1) /=2  .or. ubound(t%a4,1) /= 2)          error stop 34_4
 
   if(lbound(t%a5,1) /=1  .or. ubound(t%a5,1) /= 1)          error stop 35_4

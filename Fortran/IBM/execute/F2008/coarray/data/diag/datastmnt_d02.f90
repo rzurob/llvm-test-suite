@@ -1,28 +1,22 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : datastmnt_d02.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : November 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Test simple initialization with DATA for integer coarray scalars.
-!*                            
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program main
 	integer, save :: caf0[*], caf2(3)[2,2,*]
 	integer, save :: caf1(2)[1:*], caf3(4)[*]
-	
+
 	data caf0/95,100/
 	data caf1/3*3/
 	data caf2/5/

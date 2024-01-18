@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadAsInitExp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadAsInitExp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 22 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 22 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -28,7 +20,7 @@ module m
   type A(l1)
     integer,len   :: l1=2
     character(l1) :: c(l1)
-  end type   
+  end type
   type B(k1)
     integer,kind :: k1=4
     integer(k1)  :: i(2)
@@ -50,10 +42,10 @@ program spreadAsInitExp02
   integer :: i,j
 
   type(c(4,2)) :: c1(2) = [c(4,2)(),c(4,2)()]
-  
+
   type(c(4,2)),parameter :: c2 = &
           c(4,2)(spread( a(2)( spread("e",1,2) ),1,2), &
-                 spread( b(4)( spread(-3,1,2) ),1,2) )    
+                 spread( b(4)( spread(-3,1,2) ),1,2) )
 
   if(c1%k2 /= 4)                                   error stop 10_4
   if(c1%l2 /= 2)                                   error stop 11_4
@@ -63,8 +55,8 @@ program spreadAsInitExp02
          if(any(c1(i)%a1(1)%c /= "c"))             error stop 14_4
          if(any(c1(i)%a1(2)%c /= "d"))             error stop 15_4
          if(any(c1(i)%b1(1)%i /= -1))              error stop 16_4
-         if(any(c1(i)%b1(2)%i /= -2))              error stop 17_4 
-  end do       
+         if(any(c1(i)%b1(2)%i /= -2))              error stop 17_4
+  end do
 
   if(c2%k2 /= 4)                                   error stop 18_4
   if(c2%l2 /= 2)                                   error stop 19_4

@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Initialization expression
 !*
-!* PROGRAMMER                 : Kelvin Li
 !* DATE                       : March 31, 2006
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : TRANSPOSE intrinsic
 !*
@@ -38,7 +33,6 @@ logical(8), parameter, dimension(13,1) :: D=reshape( &
  & (/F8, F8, T8, F8, T8, F8, F8, T8, T8, T8, &
  &   F8, T8, F8/), &
  & (/13,1/))
-
 
 logical(1), dimension(4,5) :: res1=transpose(a)
 logical(2), dimension(2,11) :: res2=transpose(B)

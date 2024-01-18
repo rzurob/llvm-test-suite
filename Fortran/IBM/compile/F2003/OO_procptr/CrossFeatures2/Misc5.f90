@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp Misc5.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Misc5.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Misc5.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 29, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Procedure pointer - Diag on the pass attr
 !*  (update vf when 312629 done)
 !*
@@ -60,7 +54,7 @@
     TYPE :: DT1
       PROCEDURE(IFun1), PASS, POINTER :: ProcPtr
     END TYPE
-    INTERFACE 
+    INTERFACE
       FUNCTION IFun1(Arg)
       IMPORT
         CLASS(DT1):: Arg(:)
@@ -73,7 +67,7 @@
     TYPE :: DT2
       PROCEDURE(IFun2), PASS, POINTER :: ProcPtr
     END TYPE
-    INTERFACE  
+    INTERFACE
       FUNCTION IFun2(Arg)
       IMPORT
         TYPE(DT2) :: Arg
@@ -90,15 +84,15 @@
       SEQUENCE
       PROCEDURE(IFun3), PASS, POINTER :: ProcPtr
     END TYPE
-    INTERFACE 
+    INTERFACE
       FUNCTION IFun3(Arg)
-        IMPORT 
+        IMPORT
         CLASS(DT2) :: Arg
         TYPE(DT2) :: IFun3
       END FUNCTION
     END INTERFACE
   END MODULE
 
-  PROGRAM Misc5 
+  PROGRAM Misc5
   END
 

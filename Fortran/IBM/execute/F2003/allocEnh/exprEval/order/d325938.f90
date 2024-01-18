@@ -1,19 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : d325938 - Order of Expression Evaluation
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : September 27, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: ACE: ICE in xlfcode with Implied-DO
 !*                               in RESHAPE() Intrinsic
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : RESHAPE() Intrinsic, Array Constructor,

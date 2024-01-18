@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignProcNameIntrin5.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignProcNameIntrin5.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignProcNameIntrin3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignProcNameIntrin3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 14, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,13 +34,13 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  C727 (R742) A procedure-name shall be the name of an external, module,
 !*  or dummy procedure, a specific intrinsic function listed in 13.6
 !*  and not marked with a bullet (.), or a procedure pointer.
-!* 
+!*
 !*  Intrinsics
-!*  (315208) 
+!*  (315208)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -59,7 +53,7 @@
 
   PROCEDURE(SIGN) :: ExtSIGN
   PROCEDURE(SIN)  :: ExtSIN
-  PROCEDURE(SINH) :: ExtSINH 
+  PROCEDURE(SINH) :: ExtSINH
   PROCEDURE(SQRT) :: ExtSQRT
   PROCEDURE(TAN)  :: ExtTan
   PROCEDURE(TANH) :: ExtTANH
@@ -71,7 +65,7 @@
     INTEGER, LEN  :: N1
     PROCEDURE(ExtSIGN),  POINTER, NOPASS :: PtrSIGN
     PROCEDURE(ExtSIN),   POINTER, NOPASS :: PtrSIN
-    PROCEDURE(ExtSINH),  POINTER, NOPASS :: PtrSINH 
+    PROCEDURE(ExtSINH),  POINTER, NOPASS :: PtrSINH
     PROCEDURE(ExtSQRT),  POINTER, NOPASS :: PtrSQRT
     PROCEDURE(ExtTAN),   POINTER, NOPASS :: PtrTan
     PROCEDURE(ExtTANH),  POINTER, NOPASS :: PtrTANH
@@ -82,19 +76,19 @@
     V%PtrSIGN => SIGN
     IF (V%PtrSIGN(-3.0, 2.0) .NE. SIGN(-3.0, 2.0) ) STOP 11
 
-    V%PtrSIN => SIN 
-    IF (ABS(V%PtrSIN(1.0) - SIN(1.0)) .GT. .00001 ) STOP 12 
+    V%PtrSIN => SIN
+    IF (ABS(V%PtrSIN(1.0) - SIN(1.0)) .GT. .00001 ) STOP 12
 
-    V%PtrSINH => SINH 
+    V%PtrSINH => SINH
     IF (ABS(V%PtrSINH(1.0) - SINH(1.0) ) .GT. .00001 ) STOP 13
 
-    V%PtrSQRT => SQRT 
+    V%PtrSQRT => SQRT
     IF (ABS(V%PtrSQRT(4.0) - SQRT(4.0) ) .GT. .00001 ) STOP 14
 
-    V%PtrTAN => TAN 
+    V%PtrTAN => TAN
     IF (ABS(V%PtrTAN(1.0) - TAN(1.0) ) .GT. .00001 ) STOP 15
 
-    V%PtrTANH => TANH 
+    V%PtrTANH => TANH
     IF (ABS(V%PtrTANH(1.0) - TANH(1.0) ) .GT. .00001 ) STOP 16
 
   END

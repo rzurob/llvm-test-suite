@@ -4,30 +4,24 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrExprbound.f 
+!*  TEST CASE NAME             : dataPtrExprbound.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!* - lb/ub are arithmetic expr, operands are intrinsic name, pure funcname, 
+!* - lb/ub are arithmetic expr, operands are intrinsic name, pure funcname,
 !*     const & variable.
-!* - data-target is a component of DT 
-!* - data pointer/target of type byte 
+!* - data-target is a component of DT
+!* - data pointer/target of type byte
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
     program main
 
 	type A(k1)    ! (4)
@@ -51,8 +45,8 @@
 
 	call sub(p,b1)
 
-	if ( .not. associated(p)) stop 7 
-	if ( any(shape(p) .eq. (/99,99 /) )) stop 11 
+	if ( .not. associated(p)) stop 7
+	if ( any(shape(p) .eq. (/99,99 /) )) stop 11
 
 	if ( any(lbound(p) .ne. (/3, 1/))) stop 31
 	if ( any(ubound(p) .ne. (/8, 2/))) stop 33
@@ -67,7 +61,7 @@
 		    type is (B(4))
 			p(len('IBM'):arg%t(3)/5+kind(4),'10'o-7:func()*B'10'-2) => arg%t
 		    class default
-			allocate(P(99,99))	
+			allocate(P(99,99))
 		end select
 
 	    end subroutine
@@ -75,6 +69,6 @@
             pure function func()
 		integer func
 		func = 2
-	    end function	
-		
+	    end function
+
  End program

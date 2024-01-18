@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: cp $TR_SRC/check_array.inc .; cp $TR_SRC/check_interface.inc .
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio102.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,20 +12,13 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access Mode
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,14 +27,14 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/03/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/03/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
   include 'check_array.inc'
 
-  program fxstio102 
+  program fxstio102
 
      implicit none
      integer    i, j, k, l, ios
@@ -51,17 +44,17 @@
      real*16    r16_in(N) , r16_out(N)
      complex*8  x8_in(N,N), x8_out(N,N)
      logical*8 	l8_in(-1:N-2,2:N+1), l8_out(N,N)
-     character    ch1_in(N,N), ch1_out(N,N)  
-     character*15 ch15_in(N), ch15_out(N)  
+     character    ch1_in(N,N), ch1_out(N,N)
+     character*15 ch15_in(N), ch15_out(N)
 
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
-	
+
      include 'check_interface.inc'
-     
-!********************************************************** 
+
+!**********************************************************
 !        Initialization of arrays                         *
-!********************************************************** 
+!**********************************************************
 
      i4_in = -20000000
      r4_in = -0.000001
@@ -71,9 +64,9 @@
      ch1_in = "A"
      ch15_in = "New Baby Girl!"
 
-!********************************************************** 
+!**********************************************************
 !       Writing and Reading the file                      *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio102.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
@@ -96,9 +89,9 @@
      READ(1, FMT='(100A1,10A16)', IOSTAT=ios, ERR=92) ch1_out, ch15_out
 
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( .not. Array_Check (i4_in, i4_out)  ) error stop 10
 
@@ -117,13 +110,13 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 93   print *, "Error while rewinding the file: IOSTAT = ", ios
-     error stop 93 
+     error stop 93
 
    end program
 

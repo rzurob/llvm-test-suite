@@ -1,25 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bndMapping2.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 2010-09-29
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - test bound-remapping, 
+!*  DESCRIPTION                : - test bound-remapping,
 !*                                   LHS is 1-dim,RHS is 2-dim
-!*                               - 
+!*                               -
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================

@@ -1,22 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_Interface04b
-!*                               DTP - Generic Interface  
+!*                               DTP - Generic Interface
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY SUBROUTINES TESTED   : Generic Resolution - Derived-type parameters
-!*  SECONDARY SUBROUTINES TESTED : distinguish by name using NOPASS  
+!*  SECONDARY SUBROUTINES TESTED : distinguish by name using NOPASS
 !*                                 kind parameter incompatible
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -24,29 +17,29 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1
-        INTEGER, LEN :: l1 
-      END TYPE Base 
+        INTEGER, LEN :: l1
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2)
-        INTEGER, KIND :: k2 
-      END TYPE Child 
+        INTEGER, KIND :: k2
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen(k3)
-        INTEGER, KIND :: k3 
+        INTEGER, KIND :: k3
       END TYPE NextGen
 
       CHARACTER(10) :: tag
 
-      INTERFACE SUB        
+      INTERFACE SUB
          module procedure sub1
          module procedure sub2
       END INTERFACE
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE sub1(Arg0,Arg1,Arg2,Arg3)
       CLASS(Base(4,*)) :: Arg0, Arg2
@@ -60,7 +53,7 @@
       END SUBROUTINE sub1
 
       SUBROUTINE sub2(Arg1,Arg0,Arg3,Arg2)
-      CLASS(Base(4,*)) :: Arg0, Arg3 
+      CLASS(Base(4,*)) :: Arg0, Arg3
       CLASS(Base(8,*)) :: Arg1, Arg2
 
       IF (Arg0%k1 .NE. Arg3%k1) STOP 12
@@ -74,12 +67,12 @@
 !*
       PROGRAM Generic_Interface04b
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       CLASS(Base(4,10)), POINTER :: b41 , b42
       CLASS(Base(8,10)), POINTER :: b81, b82
 
-! two last arguments are TKR compatible but the two last are kind distinguishable 
+! two last arguments are TKR compatible but the two last are kind distinguishable
 
       call sub(b41, b81, b42, b82)  !call to sub1
       IF ( tag .NE. "1" ) STOP 20

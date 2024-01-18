@@ -2,32 +2,17 @@
 ! ftcx_dtp -qck -qnol -qreuse=base /tstdev/F2003/decimaledit/defaultIO/dcmlCharExprRW003.f
 ! opt variations: -qnock -ql -qreuse=self -qreuse=none
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 06/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : DECIMAL EDIT MODE
 !                               Use of the namelist for the format control with
 !                               DECIMAL= specifier. test is for C928: format or
 !                               namelist MUST also present if DECIMAL= appears
 !                               in data transfer statement.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

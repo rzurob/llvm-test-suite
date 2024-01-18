@@ -1,21 +1,13 @@
-!######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/generic/func/generic_func_func_f020.f
 !*  TYPE                       : Functional test
 !*  FEATURE                    : #917301 F2008: Generic resolution extensions
 !*  RTC Master Story           : 17301: F2008: Generic resolution extensions (master story)
 !*                               https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/17301
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 29 June 2012
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               :
 !*
@@ -79,7 +71,7 @@ contains
       integer function func_int(x)
       implicit none
          integer x
-         
+
          print *, "       inside func_int()"
          func_int = x*4 -5
       end function

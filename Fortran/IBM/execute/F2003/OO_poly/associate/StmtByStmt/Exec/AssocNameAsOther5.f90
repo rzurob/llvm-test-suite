@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: AssocNameAsOther5.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: AssocNameAsOther5.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : AssocNameAsOther5 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : AssocNameAsOther5
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 28, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The associate construct name is the same as a specific interface name 
-!*   (300548-conflicting entity) 
+!*    The associate construct name is the same as a specific interface name
+!*   (300548-conflicting entity)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,41 +39,41 @@
   TYPE :: DT
     CHARACTER(8) :: C="12345678"
   END TYPE
- 
-  INTERFACE 
+
+  INTERFACE
     FUNCTION Fun(Arg)
     IMPORT DT
     CLASS(DT) :: Arg
     TYPE(DT) :: Fun
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
 
-  INTERFACE 
+  INTERFACE
     FUNCTION F(Arg)
     INTEGER :: Arg, F
     END FUNCTION
   END INTERFACE
 
   END MODULE
- 
+
 
   PROGRAM AssocNameAsOther5
-  USE M 
- 
+  USE M
+
   ASSOCIATE ( Fun => Fun(DT("87654321")) )
-    IF ( Fun%C .NE. "87654321" ) STOP 11 
+    IF ( Fun%C .NE. "87654321" ) STOP 11
      ASSOCIATE ( F => Fun%C )
-       IF ( F .NE. "87654321" ) STOP 12 
-     END ASSOCIATE 
-     IF ( F(1) .NE. 1 ) STOP 13 
-  END ASSOCIATE 
+       IF ( F .NE. "87654321" ) STOP 12
+     END ASSOCIATE
+     IF ( F(1) .NE. 1 ) STOP 13
+  END ASSOCIATE
 
 
   END
 
   FUNCTION F(Arg)
   INTEGER :: Arg, F
-    F = Arg 
+    F = Arg
   END FUNCTION
 
   FUNCTION Fun(Arg)
@@ -87,5 +81,5 @@
   CLASS(DT) :: Arg
   TYPE(DT) :: Fun
     Fun = Arg
-  END FUNCTION 
+  END FUNCTION
 

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecIntrinsic1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 17, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  The basic syatax  
-!*  intrinsic-type-spec 
+!*  The basic syatax
+!*  intrinsic-type-spec
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -37,22 +30,22 @@
   PROGRAM dtParamTypeDecIntrinsic1
 
   INTEGER(KIND=1)  :: I1(1)       = -1
-  INTEGER(KIND=2)  :: I2(I1%KIND) = I1%KIND 
-  INTEGER(KIND=4)  :: I4(I2%KIND) = I2%KIND 
-  INTEGER(KIND=8)  :: I8(I4%KIND) = I4%KIND 
- 
-  LOGICAL(KIND=1)  :: L1(1)       = .TRUE. 
-  LOGICAL(KIND=2)  :: L2(I1%KIND) = L1%KIND .EQ. L1%KIND 
-  LOGICAL(KIND=4)  :: L4(I2%KIND) = L2%KIND .EQ. L2%KIND 
-  LOGICAL(KIND=8)  :: L8(I4%KIND) = L4%KIND .EQ. L4%KIND 
- 
-  REAL(KIND=4)     :: R4(1)       = -1 
-  REAL(KIND=8)     :: R8(R4%KIND) = R4%KIND 
-  REAL(KIND=16)    :: R6(R8%KIND) = R8%KIND  
+  INTEGER(KIND=2)  :: I2(I1%KIND) = I1%KIND
+  INTEGER(KIND=4)  :: I4(I2%KIND) = I2%KIND
+  INTEGER(KIND=8)  :: I8(I4%KIND) = I4%KIND
 
-  COMPLEX(KIND=4)  :: Z4(1)       = -1 
-  COMPLEX(KIND=8)  :: Z8(Z4%KIND) = Z4%KIND 
-  COMPLEX(KIND=16) :: Z6(Z8%KIND) = Z8%KIND  
+  LOGICAL(KIND=1)  :: L1(1)       = .TRUE.
+  LOGICAL(KIND=2)  :: L2(I1%KIND) = L1%KIND .EQ. L1%KIND
+  LOGICAL(KIND=4)  :: L4(I2%KIND) = L2%KIND .EQ. L2%KIND
+  LOGICAL(KIND=8)  :: L8(I4%KIND) = L4%KIND .EQ. L4%KIND
+
+  REAL(KIND=4)     :: R4(1)       = -1
+  REAL(KIND=8)     :: R8(R4%KIND) = R4%KIND
+  REAL(KIND=16)    :: R6(R8%KIND) = R8%KIND
+
+  COMPLEX(KIND=4)  :: Z4(1)       = -1
+  COMPLEX(KIND=8)  :: Z8(Z4%KIND) = Z4%KIND
+  COMPLEX(KIND=16) :: Z6(Z8%KIND) = Z8%KIND
 
 
 

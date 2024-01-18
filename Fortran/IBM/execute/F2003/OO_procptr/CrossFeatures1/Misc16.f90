@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Misc16.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Misc16.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
-! %EXECARGS: 
-! %POSTCMD:  
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             :  Misc16.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 09, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  
-!*  Enum 
-!*  
-!*  
+!*
+!*  Enum
+!*
 !*  (Mem Fault)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -51,18 +43,18 @@
 
   ENUM, BIND(C)
     ENUMERATOR :: Mon
-    ENUMERATOR :: Tue 
-    ENUMERATOR :: Wed 
-    ENUMERATOR :: Thu 
-    ENUMERATOR :: Fri 
-    ENUMERATOR :: Sat 
-    ENUMERATOR :: Sun 
+    ENUMERATOR :: Tue
+    ENUMERATOR :: Wed
+    ENUMERATOR :: Thu
+    ENUMERATOR :: Fri
+    ENUMERATOR :: Sat
+    ENUMERATOR :: Sun
   END ENUM
 
   ENUM, BIND(C)
-    ENUMERATOR :: One 
-    ENUMERATOR :: Two 
-    ENUMERATOR :: Thr 
+    ENUMERATOR :: One
+    ENUMERATOR :: Two
+    ENUMERATOR :: Thr
   END ENUM
 
 
@@ -101,7 +93,7 @@
 
   U(1:6) = U((/Tue, Wed, Thu, Fri, Sat, Sun /) )
   IF ( ANY(U((/Tue, Wed, Thu, Fri, Sat, Sun /))%ID .NE. 2 )) STOP 12
-   
+
   ProcPtr => ModFun1
   U = ProcPtr( (/(DT(I, ModFun), I=1, 10000) /) )
 

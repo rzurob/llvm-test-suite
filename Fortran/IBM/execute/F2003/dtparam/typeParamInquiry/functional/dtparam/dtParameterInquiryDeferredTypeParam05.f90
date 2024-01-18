@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryDefferredTypeParam05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryDefferredTypeParam05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 23 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. WITHOUT COMPONENT
 !* 4. DUMMY ARGUMENT IS INTENT(IN) ALLOCATABLE OR POINTER DERIVED TYPE
@@ -31,7 +23,7 @@ module m
       integer(2),kind :: k
       integer(8),len  :: l
    end type
-   
+
    contains
 
      subroutine checkTP1(b1)
@@ -61,10 +53,10 @@ module m
      end subroutine
 end module
 
-  program dtParameterInquiryDeferredTypeParam05 
+  program dtParameterInquiryDeferredTypeParam05
   use m
   implicit none
-  
+
   type(base(4,:)),allocatable :: b1
   type(base(2,:)),pointer  :: b2=>null()
 
@@ -76,8 +68,8 @@ end module
   call setTP(b2)
 
   if(b2%k /= 2)                                              error stop 18_4
-  if(b2%l /= 5)                                              error stop 19_4 
+  if(b2%l /= 5)                                              error stop 19_4
   if(b2%k%kind /=kind(b2%k) .or. b2%k%kind /= 2)             error stop 20_4
   if(b2%l%kind /=kind(b2%l) .or. b2%l%kind /= 8)             error stop 21_4
- 
+
 end

@@ -10,7 +10,7 @@
       CHARACTER(L) :: C="!!!!"
     END TYPE
 
-    PROCEDURE(IntFun), POINTER :: ProcPtr => NULL() 
+    PROCEDURE(IntFun), POINTER :: ProcPtr => NULL()
     contains
        FUNCTION IntFun(Arg)
          CLASS(DT1(4,*)):: Arg
@@ -18,7 +18,6 @@
        END FUNCTION
 
     end module
-   
 
     use mmm
       interface
@@ -30,14 +29,14 @@
       end interface
 
     type(dt1(4,4)) :: dtobj
-    type(dt1(4,5)) :: arg1 
+    type(dt1(4,5)) :: arg1
 
     procptr => extfun
 
     dtobj = procptr(arg1)
 
     END
-    
+
     FUNCTION extFun(Arg)
       use mmm
       CLASS(DT1(4,*)):: Arg

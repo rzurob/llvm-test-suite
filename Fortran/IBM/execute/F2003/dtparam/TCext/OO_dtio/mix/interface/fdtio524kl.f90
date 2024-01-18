@@ -1,26 +1,17 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fdtio524kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from fdtio524 by Jim Xia)
 !*  DATE                       : 2007-08-16 (original: 05/05/2005)
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*  DRIVER STANZA              : xlf2003
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : DTIO generic (DTIO generic declared inside the
 !                               module becomes available to other module
 !                               procedures)
 !                               adaptation: exposed kind
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

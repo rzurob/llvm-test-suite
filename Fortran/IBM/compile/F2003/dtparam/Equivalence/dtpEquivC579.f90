@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpEquivC579 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpEquivC579
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 09, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,20 +19,17 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The equivalence statement
-!* 
+!*
 !*  C579 (R556) Each subscript or substring range expression in an equivalence-object
 !*  shall be an integer initialization expression
-!*  
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtpEquivC579 
+  PROGRAM dtpEquivC579
 
   INTEGER :: J
 
@@ -57,7 +48,7 @@
 
   EQUIVALENCE(T(I), S)
   EQUIVALENCE(S(J), R)
- 
+
   END SUBROUTINE
   END
 

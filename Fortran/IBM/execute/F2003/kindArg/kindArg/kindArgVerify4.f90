@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgVerify4
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 06, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : VERIFY 
+!*  SECONDARY FUNCTIONS TESTED : VERIFY
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*
 !*  Verify that a set of characters contains all the characters in a string by identifying the position
 !*  of the first character in a string of characters that does not appear in a given set of characters.
-!*    
-!*  (322447/323882) 
+!*
+!*  (322447/323882)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -41,7 +34,7 @@
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
-     
+
   CHARACTER(:), POINTER :: Str(:)
   CHARACTER(:), ALLOCATABLE :: CC(:)
 
@@ -84,10 +77,10 @@
   IF (ANY(VERIFY(STRING=Str, SET=CC, BACK=.TRUE., KIND=1_1 ) .NE. 2)) STOP 91
   IF (ANY(VERIFY(STRING=Str, SET=CC)                         .NE. 2)) STOP 92
 
-  IF (ANY( VERIFY(STRING=Str, SET=CC, BACK=.FALSE._1, KIND=1_8) .NE. VERIFY(STRING=Str, SET=CC))) STOP 111 
-  IF (ANY( VERIFY(STRING=Str, SET=CC, BACK=.FALSE._2, KIND=1_4) .NE. VERIFY(STRING=Str, SET=CC))) STOP 112 
-  IF (ANY( VERIFY(STRING=Str, SET=CC, BACK=.FALSE._4, KIND=1_2) .NE. VERIFY(STRING=Str, SET=CC))) STOP 113 
-  IF (ANY( VERIFY(STRING=Str, SET=CC, BACK=.FALSE._8, KIND=1_1) .NE. VERIFY(STRING=Str, SET=CC))) STOP 114 
+  IF (ANY( VERIFY(STRING=Str, SET=CC, BACK=.FALSE._1, KIND=1_8) .NE. VERIFY(STRING=Str, SET=CC))) STOP 111
+  IF (ANY( VERIFY(STRING=Str, SET=CC, BACK=.FALSE._2, KIND=1_4) .NE. VERIFY(STRING=Str, SET=CC))) STOP 112
+  IF (ANY( VERIFY(STRING=Str, SET=CC, BACK=.FALSE._4, KIND=1_2) .NE. VERIFY(STRING=Str, SET=CC))) STOP 113
+  IF (ANY( VERIFY(STRING=Str, SET=CC, BACK=.FALSE._8, KIND=1_1) .NE. VERIFY(STRING=Str, SET=CC))) STOP 114
 
   END
 

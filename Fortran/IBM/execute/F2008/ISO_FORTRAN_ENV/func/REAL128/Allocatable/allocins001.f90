@@ -2,8 +2,8 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: -qfree=f90 
-! %GROUP: allocins001.f 
+! %COMPOPTS: -qfree=f90
+! %GROUP: allocins001.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
@@ -11,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : allocins001.f
-!*  TEST CASE TITLE            : Allocatable attribute  
 !*
-!*  PROGRAMMER                 : Catherine Sun 
-!*  DATE                       : January 22, 2002 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab 
+!*  DATE                       : January 22, 2002
 !
 !*  PRIMARY FUNCTIONS TESTED   : Allocatable attribute
 !*
@@ -49,16 +43,16 @@ implicit none
 logical precision_r16
 
 real,parameter, dimension(4) :: index_array = (/0.000093Q+1,0.700693Q+308,1.797693Q+307,1.225074Q-306/)
-real(real128),allocatable :: r1 
-real(2),allocatable :: r2 
-real(4),allocatable :: r4 
+real(real128),allocatable :: r1
+real(2),allocatable :: r2
+real(4),allocatable :: r4
 
 ! Test 1 - Before allocate the reals
 
 if(allocated(r1) .or. allocated(r2) .or. &
-   allocated(r4) ) error stop 1 
- 
-! Test 2 - Allocate the reals and make sure allocation 
+   allocated(r4) ) error stop 1
+
+! Test 2 - Allocate the reals and make sure allocation
 !          status changes
 
 allocate (r1,r2,r4)
@@ -76,12 +70,12 @@ if (precision_r16(r1,10) .or. precision_r16(r2,100) .or. &
    precision_r16(r4 , 1.225074Q-306) ) error stop 3
 
 ! Test 3 - Deallocate the reals and make sure that the
-!          the reals have been deallocated 
+!          the reals have been deallocated
 
 deallocate (r1, r2, r4)
 
 if(allocated(r1) .or. allocated(r2) .or. &
-   allocated(r4) ) error stop 4 
+   allocated(r4) ) error stop 4
 
 end program allocins001
 

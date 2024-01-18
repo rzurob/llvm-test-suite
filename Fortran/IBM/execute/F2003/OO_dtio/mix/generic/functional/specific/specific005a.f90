@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures (generic-binding)
 !*                                 - Specific Binding
@@ -91,7 +80,7 @@ program specific005a
    write (1, *, iostat=stat, iomsg = msg)  b2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) )    error stop 2_4
 
-   write (1, *, iostat=stat, iomsg = msg)  c1, (/ child('JKL', 1004), child('MNO', 1005), child('PQR', 1006) /) 
+   write (1, *, iostat=stat, iomsg = msg)  c1, (/ child('JKL', 1004), child('MNO', 1005), child('PQR', 1006) /)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) )    error stop 3_4
 
    rewind 1
@@ -110,7 +99,7 @@ program specific005a
          if ( ( b1(1)%c /= 'jkl' ) .or. ( b1(2)%c /= 'mno' ) .or. ( b1(3)%c /= 'pqr' ) .or. &
               ( b2(1)%c /= 'abc' ) .or. ( b2(2)%c /= 'def' ) .or. ( b2(3)%c /= 'ghi' ) .or. &
               ( c1(1)%c /= 'JKL' ) .or. ( c1(2)%c /= 'MNO' ) .or. ( c1(3)%c /= 'PQR' ) .or. &
-              ( c1(1)%i /= 1004  ) .or. ( c1(2)%i /= 1005  ) .or. ( c1(3)%i /= 1006  ) &              
+              ( c1(1)%i /= 1004  ) .or. ( c1(2)%i /= 1005  ) .or. ( c1(3)%i /= 1006  ) &
             ) error stop 7_4
    end select
 

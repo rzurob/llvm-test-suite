@@ -12,21 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Vasile Radulescu 
 !*  DATE                       : February 15, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : IEEE_CLASS 
+!*  PRIMARY FUNCTIONS TESTED   : IEEE_CLASS
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -34,16 +26,15 @@
 !*
 !*  DESCRIPTION                : Testing IEEE_CLASS for REAL(16)
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
         program fclass03
-      
+
         use ieee_arithmetic
         use constants_for_ieee
-	
-        real(16), dimension(4) :: normal_result	
-        real(16), dimension(4) :: arrval 
+
+        real(16), dimension(4) :: normal_result
+        real(16), dimension(4) :: arrval
         type(ieee_class_type), dimension(4) :: actual_results
         logical, dimension(5) :: actual_flag_values
         integer :: k, caseid
@@ -61,20 +52,20 @@
 
 !test IEEE_CLASS for IEEE_POSITIVE_INF and IEEE_NEGATIVE_INF results
         if (ieee_class(PINF_16) /= ieee_positive_inf) then
-           call zzrc(caseid) 
+           call zzrc(caseid)
         endif
 
         if (ieee_class(NINF_16) /= ieee_negative_inf) then
            call zzrc(caseid+1)
-        endif  
+        endif
 
-!test IEEE_CLASS for IEEE_POSITIVE_NORMAL and IEEE_NEGATIVE_NORMAL results 
-         
+!test IEEE_CLASS for IEEE_POSITIVE_NORMAL and IEEE_NEGATIVE_NORMAL results
+
         if (ieee_class(huge(PINF_16)) /= ieee_positive_normal) then
-           call zzrc(caseid+2) 
+           call zzrc(caseid+2)
         endif
         if (ieee_class(tiny(PINF_16)) /= ieee_positive_normal) then
-           call zzrc(caseid+3) 
+           call zzrc(caseid+3)
         endif
         if (ieee_class(-huge(PINF_16)) /= ieee_negative_normal) then
            call zzrc(caseid+4)
@@ -108,7 +99,7 @@
            call zzrc(caseid+11)
         endif
 
-!test IEEE_CLASS with arrays for IEEE_QUIET_NAN and IEEE_SIGNALING_NAN 
+!test IEEE_CLASS with arrays for IEEE_QUIET_NAN and IEEE_SIGNALING_NAN
         arrval = (/ PNANQ_16, NNANQ_16, PNANS_16, NNANS_16 /)
         actual_results = ieee_class(arrval)
 
@@ -116,7 +107,7 @@
            call zzrc(caseid+12)
         endif
         if (actual_results(2) /= ieee_quiet_nan) then
-           call zzrc(caseid+13) 
+           call zzrc(caseid+13)
         endif
         if (actual_results(3) /= ieee_signaling_nan) then
            call zzrc(caseid+14)
@@ -191,7 +182,7 @@
            call zzrc(caseid+27)
         endif
 
-!...Check that no flags were turned on by IEEE_CLASS 
+!...Check that no flags were turned on by IEEE_CLASS
         call ieee_get_flag(ieee_all, actual_flag_values)
         do k = 1,5
            if (actual_flag_values(k) .neqv. .false. ) then

@@ -12,24 +12,18 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxmdvq21.f
 !
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 24, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    : -qfree=f90
 !*
 !* DESCRIPTION                  : Test the interoperability of logical and
-!*                              : array of logical module variable. Use the 
+!*                              : array of logical module variable. Use the
 !*                              : variables in fmain and csub which calls the
 !*                              : fsub. Use module iso_c_binding
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -65,17 +59,17 @@ call csub()
     ERROR STOP 51
   END IF
 
-  
-  
+
+
   do i = 1, 10
     IF ( lo1(i) .NEQV. .true. ) THEN
       ERROR STOP 52
     END IF
   end do
-  
+
 
   do j= 1, 2
-    do k = 1, 3 
+    do k = 1, 3
       do i = 1, 2
         IF ( lo3(k, j, i) .NEQV. .true. ) THEN
           ERROR STOP 53
@@ -92,7 +86,7 @@ call csub()
     end do
   end do
 
-end 
+end
 
 subroutine fsub()
 use mod

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPolyOptional05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPolyOptional05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 10 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* An optional dummy argument that is not present is subject to the following restrictions:
@@ -26,7 +18,7 @@
 module m
   type dtp(l1)
      integer,len     :: l1
-     character(l1)   :: c1 
+     character(l1)   :: c1
   end type
 
   contains
@@ -34,7 +26,7 @@ module m
    subroutine sub1(arg1,arg2)
       type(dtp(:)),allocatable,optional :: arg1(:)
       type(dtp(:)),allocatable          :: arg2(:)
- 
+
       if (present(arg1)) then
         print *,fun1(arg1,arg2)
       else
@@ -50,9 +42,9 @@ module m
                 if (size(arg1) /= size(arg2)) stop 10
                   fun1%c1=arg1%c1
             else
-                  fun1%c1=arg2%c1 
-            end if 
-         end function  
+                  fun1%c1=arg2%c1
+            end if
+         end function
    end subroutine
 end module
 
@@ -64,7 +56,7 @@ program dummyArgDeferNonPolyOptional05
   type(dtp(:)),allocatable :: dtp2(:)
 
   allocate(dtp1(2),source=[dtp(3)("xlf"),dtp(3)("xlc")])
-  allocate(dtp2(2),source=[dtp(3)("123"),dtp(3)("456")])  
+  allocate(dtp2(2),source=[dtp(3)("123"),dtp(3)("456")])
 
   call sub1(dtp1,dtp2)
 

@@ -1,38 +1,30 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FunctionResult04.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : March 15, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly         
+!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* Defect 363421 
+!* Defect 363421
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
         INTEGER, KIND :: k1
         INTEGER, LEN  :: l1
 
-        CHARACTER(l1) :: C0 
+        CHARACTER(l1) :: C0
         INTEGER(k1) :: A0(l1)
       END TYPE
 
@@ -44,26 +36,26 @@ MODULE Mod
 
       CONTAINS
 
-      FUNCTION func(b2) 
+      FUNCTION func(b2)
         CLASS(Base(4,*)), INTENT(IN) :: b2
-        CLASS(Base(4,:)), ALLOCATABLE :: func 
+        CLASS(Base(4,:)), ALLOCATABLE :: func
 
         SELECT TYPE ( b2 )
            CLASS IS (Base(4,*))
-              ALLOCATE (Base(4,b2%l1) :: func) 
+              ALLOCATE (Base(4,b2%l1) :: func)
               func%C0 = b2%C0
               func%A0 = b2%A0
 
            CLASS IS (Child(4,*,4,*))
-              ALLOCATE (Child(4,b2%l1,4,b2%l2) :: func) 
+              ALLOCATE (Child(4,b2%l1,4,b2%l2) :: func)
               func%C0 = b2%C0
               func%A0 = b2%A0
 
            CLASS DEFAULT
               STOP 10
         END SELECT
- 
-      END FUNCTION   
+
+      END FUNCTION
 END MODULE
 
 PROGRAM FunctionResult04
@@ -74,7 +66,7 @@ PROGRAM FunctionResult04
       TYPE(Child(4,5,4,5)) ::  c1
 
       b1 = func(Base(4,10) ( 'IBM', 2 ))
-      print*, b1 
+      print*, b1
       IF ( b1%C0     .NE. 'IBM' ) STOP 10
       IF ( ANY(b1%A0 .NE.    2) ) STOP 11
 
@@ -83,7 +75,7 @@ PROGRAM FunctionResult04
             IF ( s%C0     .NE. 'XLF' ) STOP 12
             IF ( ANY(s%A0 .NE.    3) ) STOP 13
             c1 = s
-            print*, c1 
+            print*, c1
             IF ( c1%C0     .NE. 'XLF' ) STOP 14
             IF ( ANY(c1%A0 .NE.    3) ) STOP 15
 

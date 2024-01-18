@@ -1,21 +1,11 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FINDLOC_CHARACTER
-!*
-!*  PROGRAMMER                 : Maryam Moghadas
 !*  DATE                       : 2013-05-27
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FINDLOC intrinsic
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              :
 !*
 !*  DESCRIPTION                : FINDLOC (ARRAY, VALUE, DIM [, MASK, KIND, BACK]) or
 !*                               FINDLOC (ARRAY, VALUE [, MASK, KIND, BACK])
@@ -29,7 +19,7 @@
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-PROGRAM  FINDLOC_CHARACTER 
+PROGRAM  FINDLOC_CHARACTER
 implicit none
 
 !-- all values are known at compile time:
@@ -42,13 +32,13 @@ integer, parameter :: result_a_v_d_m = findloc(arr, val, 1, m)
 integer(kind1), parameter :: result_a_v_m_k_b(*) = findloc(arr, val, m, kind1, b)
 integer, parameter :: result_a_v_m_b(*) = findloc(arr, val, m, BACK=b)
 
-!-- in the following cases FE does not know the values @ compile time: 
+!-- in the following cases FE does not know the values @ compile time:
 character(5) :: arr1(5), arr2(-3:1), arr2d(3,4), arr3d(2,4,3), val1
-logical :: mask1(5), mask2(5), mask3(-2:2),  s_mask, back1, back2, mask2d(3,4), mask3d(2,4,3) 
+logical :: mask1(5), mask2(5), mask3(-2:2),  s_mask, back1, back2, mask2d(3,4), mask3d(2,4,3)
 integer :: dim1, i, j, k, t, l
 
 arr1 = ["ab1", "ab2", "ab3", "ab2", "ab4"]
-arr2 = arr1 
+arr2 = arr1
 
 !-- initializing arr2d s.t. it has the value: ab1, ab2, ab3, ...., ab12
 do i = 1, 3
@@ -60,7 +50,7 @@ do i = 1, 3
     arr2d(i,j)= char(k) // arr2d(i,j)
     t = t / 10
   end do
-  arr2d(i,j) =  "ab" // arr2d(i,j) 
+  arr2d(i,j) =  "ab" // arr2d(i,j)
  end do
 end do
 !print *,arr2d
@@ -75,7 +65,7 @@ do i = 1, 2
      arr3d(i,j,l)= char(k) // arr3d(i,j,l)
      t = t / 10
    end do
-  arr3d(i,j,l) =  "ab" // arr3d(i,j,l) 
+  arr3d(i,j,l) =  "ab" // arr3d(i,j,l)
   end do
  end do
 end do
@@ -115,7 +105,7 @@ if (ANY(result_a_v_m_b /= findloc( ["ab1", "ab2", "ab3", "ab2","ab4"],&
                                     BACK=.TRUE.))) ERROR STOP 104
 
 if (ANY(findloc(arr, val) /= findloc(arr1, val1))) ERROR STOP 10
-!-- RTE should fix dim problem 
+!-- RTE should fix dim problem
 if (findloc(arr, val, d) /= findloc(arr1, val1, dim1)) ERROR STOP 11
 if (ANY(findloc(arr, val1) /= findloc(arr1, val))) ERROR STOP 12
 if (ANY(findloc(arr, val, m, kind1, b) /= findloc(arr1, val1, mask1, kind1, back1))) ERROR STOP 13
@@ -126,9 +116,9 @@ if (ANY(findloc(arr, val, m, BACK=b) /= findloc( ["ab1", "ab2", "ab3", "ab2","ab
 
 if (ANY(findloc(arr1, val, mask1, BACK = .false.) /= [2,1])) ERROR STOP 15
 
-if (findloc(arr1, val, 1, mask1, 4, .false.) /= 2) ERROR STOP 16 
+if (findloc(arr1, val, 1, mask1, 4, .false.) /= 2) ERROR STOP 16
 
-!--  when all args are present: 
+!--  when all args are present:
 if (findloc(arr1, val, 1, mask1, 4, .true.) /= 4) ERROR STOP 17
 !-- using the argument keywords:
 if (findloc(VALUE=val, ARRAY=arr1, BACK=.false., KIND=4, MASK=mask1, DIM=1) /= 2) STOP 18
@@ -160,7 +150,7 @@ if (findloc(arr1, "ab1", 1, mask2) /= 0) ERROR STOP 28
 !-- when BACK argument is absent:
 if (findloc(arr1, val1, 1, mask1, kind1) /= findloc(arr1, val1, 1, mask1, kind1, .false.)) ERROR STOP 29
 
-!-- when MASK is a scalar 
+!-- when MASK is a scalar
 if (findloc(arr1, val1, 1, mask1, kind1) /= findloc(arr1, val1, 1, s_mask, kind1)) ERROR STOP 30
 
 !-- test with different lower bounds of ARRAY/MASK argument:
@@ -170,7 +160,7 @@ if (findloc(arr1, val1, 1, mask3) /= findloc(arr2, val1, 1, mask1)) ERROR STOP 3
 
 !-- test with 2-dimensional array:
 if (ANY(findloc(arr2d, val ) /= [2,1])) ERROR STOP 34
-if (ANY(findloc(arr2d, val, mask2d) /= [2,2])) ERROR STOP 35 
+if (ANY(findloc(arr2d, val, mask2d) /= [2,2])) ERROR STOP 35
 if (ANY(findloc(arr2d, val, s_mask) /= [2,1])) ERROR STOP 36
 
 if (ANY(findloc(arr2d, val, 1) /= [2,2,3,0])) ERROR STOP 37
@@ -186,7 +176,7 @@ if (ANY(findloc(arr2d, val1, mask2d, BACK=.TRUE.) /= [2,2])) ERROR STOP 43
 
 if (ANY(findloc(arr2d, val1, 2) /= [0,1,3])) ERROR STOP 44
 if (ANY(findloc(arr2d, val1, 2, BACK=.FALSE.) /= [0,1,3])) ERROR STOP 45
-if (ANY(findloc(arr2d, val1, 2, BACK=.TRUE.) /= [0,2,3])) ERROR STOP 46 
+if (ANY(findloc(arr2d, val1, 2, BACK=.TRUE.) /= [0,2,3])) ERROR STOP 46
 
 !-- test with 3-dimensional array:
 if (ANY(findloc(arr3d, val1) /= [2,1,1])) ERROR STOP 47

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : intLstOutputComplex003.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -26,7 +20,7 @@
 !*  DESCRIPTION:
 !*  -----------
 !*  Test output of IEEE NaN and Inf with internal files using list-directed I/O.
-!*  In this testcase IEEE exceptional specifications are placed inside objects 
+!*  In this testcase IEEE exceptional specifications are placed inside objects
 !*  of type COMPLEX and kind 16.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -41,10 +35,10 @@
       complex(16) :: cx1, cx2, cx3, cx4
       real(16)    :: real_part, imag_part
       real(8)    :: real_eq, imag_eq
-      
+
       equivalence(real_part, real_eq)
       equivalence(imag_part, imag_eq)
-      
+
       real_eq = z'7FF7FFFFFFFFFFFF' ! +NaN(S)
       imag_eq = z'7FF0000000000000' ! +Inf
       cx1 = (real_part, imag_part)
@@ -62,7 +56,7 @@
       cx4 = (real_part, imag_part)
 
       write(iFile, *) cx1, cx2, cx3, cx4
-      
+
       if ( iFile .ne. verif_str ) error stop 1_4
-      
+
       end

@@ -1,5 +1,4 @@
 
-
 program main
   type t
     class(*), allocatable:: x

@@ -2,34 +2,28 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f fort.*
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxstio015.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio015.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 17, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
 !*
 !*  Description                : Test unformatted asynchronous stream
-!*                               I/O in OpenMP parallel region. 
+!*                               I/O in OpenMP parallel region.
 !*
 !=======================================================================
 
 !* Declare Variables.
-   
+
   implicit none
 
   integer id(11) /11*0/
@@ -41,14 +35,14 @@
   real, dimension(10,10) :: rarr1/100*0.0/, rarr2/100*0.0/
   real, dimension(10,10) :: rarr3/100*0.0/, rarr4/100*0.0/
   real, dimension(10,10) :: rarr5/100*0.0/, rarr6/100*0.0/
- 
+
   complex, dimension(10,10) :: carr1/100*(0.0,0.0)/, carr2/100*(0.0,0.0)/
   complex, dimension(10,10) :: carr3/100*(0.0,0.0)/, carr4/100*(0.0,0.0)/
   complex, dimension(10,10) :: carr5/100*(0.0,0.0)/, carr6/100*(0.0,0.0)/
 
   logical, dimension(10,10) :: larr1/100*.true./, larr2/100*.true./
   logical, dimension(10,10) :: larr3/100*.true./, larr4/100*.true./
-  logical, dimension(10,10) :: larr5/100*.true./, larr6/100*.true./ 
+  logical, dimension(10,10) :: larr5/100*.true./, larr6/100*.true./
 
 !* TEST1 : integer
 
@@ -66,11 +60,11 @@
    do i=1,10
       write (i, id=id(i)) iarr1(:,i), iarr2(:,i)
    enddo
-  
+
    do i=1,10
       wait (id=id(i))
    enddo
-   
+
    do i=1,10
       rewind(i)
    enddo
@@ -157,7 +151,7 @@
          if (rarr6(i,j)<>j+1) error stop 8
       enddo
    enddo
- 
+
    !smp$ paralleldo
    do i=1,10
       close(i)
@@ -229,8 +223,8 @@
    enddo
 
    do i = 1, 10
-      larr1(:,i) = .false. 
-      larr2(:,i) = .false. 
+      larr1(:,i) = .false.
+      larr2(:,i) = .false.
    enddo
 
    !smp$ parallel do
@@ -250,7 +244,7 @@
    do i=1,10
       write (11, id=id(11)) larr1(:,i), larr2(:,i)
    enddo
-   wait(id=id(11)) 
+   wait(id=id(11))
    rewind(11)
 
    !smp$ paralleldo
@@ -277,7 +271,6 @@
       close(i)
    enddo
    close(11)
-
 
 stop
 

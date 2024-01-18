@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for derived types with BIND(C) attr.
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived types with BIND(C) attribute
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -136,5 +122,5 @@ subroutine sub3(dtx,dty) bind(c)
    dty%var_f = dtx%var_f + 1
    dty%var_g = dtx%var_g + 1.0d0
    dty%var_h = dtx%var_h + 1
-   
+
 end subroutine sub3

@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass070.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass070.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -153,9 +141,9 @@
                   error stop 10
                   endif
            end associate
-      
+
            associate ( dertype => der_type%i2 , arg2 => d_t%i2 )
-                  dertype = dertype*2 
+                  dertype = dertype*2
                   if(dertype .ne. arg2)then
                   error stop 11
                   endif
@@ -178,21 +166,21 @@
 !-----------   ASSOCIATE with REAL expressions ----------------
 
            associate ( dertype => der_type%r4 , arg4 => d_t%r4 )
-                  dertype = dertype*2 
+                  dertype = dertype*2
                   if (.not.precision_r4(dertype,arg4)) then
                   error stop 14
                   endif
            end associate
 
            associate ( dertype => der_type%r8 , arg8 => 2)
-                  dertype = dertype * arg8 
+                  dertype = dertype * arg8
                   if (.not.precision_r8(dertype,d_t%r8)) then
                   error stop 15
                   endif
            end associate
 
            associate ( dertype => der_type%r16 , arg16 => 800.0 )
-                  dertype = dertype + arg16  
+                  dertype = dertype + arg16
                   if (.not.precision_r6(dertype,d_t%r16)) then
                   error stop 16
                   endif
@@ -209,7 +197,7 @@
 !-----------   ASSOCIATE with BYTE expressions ----------------
 
            associate ( dertype => der_type%b , ar1 => 2)
-                  dertype = dertype + ar1  
+                  dertype = dertype + ar1
                   if(dertype .ne. d_t%b)then
                   error stop 18
                   endif

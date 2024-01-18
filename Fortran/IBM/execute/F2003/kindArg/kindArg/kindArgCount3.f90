@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgCount3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : COUNT 
+!*  SECONDARY FUNCTIONS TESTED : COUNT
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +19,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Count the number of true elements of MASK along dimension DIM 
-!*    
-!*  (322520) 
+!*  Count the number of true elements of MASK along dimension DIM
+!*
+!*  (322520)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   PROGRAM kindArgCount3
   IMPLICIT NONE
-  
+
   INTEGER(1) :: I1
   LOGICAL(1) :: L1(4,4)
   INTEGER(2) :: I2
@@ -45,13 +37,13 @@
   LOGICAL(4) :: L4(4,4)
   INTEGER(8) :: I8
   LOGICAL(8) :: L8(4,4)
-     
+
   L1= .TRUE.;L1(1,1)=.FALSE.
   L2= .TRUE.;L2(2,2)=.FALSE.
   L4= .TRUE.;L4(3,3)=.FALSE.
   L8= .TRUE.;L8(4,4)=.FALSE.
 
- 
+
   DO I1 =1, 2
     IF (ANY(COUNT(L1, KIND=1_1, DIM=I1 ) .NE. (/3,4,4,4/) )) STOP 11
     IF (ANY(COUNT(L1, KIND=1_2, DIM=I1 ) .NE. (/3,4,4,4/) )) STOP 12

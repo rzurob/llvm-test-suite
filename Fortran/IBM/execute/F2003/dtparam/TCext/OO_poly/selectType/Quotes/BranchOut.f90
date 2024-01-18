@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: BranchOut.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : BranchOut
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Brach out of select type construct 
-!*  
+!*
+!*  Brach out of select type construct
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
@@ -91,22 +85,22 @@
       IF ( ANY (LBOUND(U)   .NE. (/1,1,1/) ) ) STOP 32
       IF ( ANY (UBOUND(U)   .NE. (/3,3,3/) ) ) STOP 33
       IF ( ANY(SHAPE(U)     .NE. (/3,3,3/)) )  STOP 34
-    
+
     ASSOCIATE ( W => U )
-      GOTO 3 
+      GOTO 3
 3     SELECT TYPE (U => W )
 
 4     TYPE IS (DT(*,4))
 
         IF ( ANY(U%Id      .NE. DTV%Id ) )      STOP 42
         IF ( ANY(U%GetId() .NE. DTV%GetId()))   STOP 43
-        GOTO 9     
+        GOTO 9
 
 5     CLASS DEFAULT
         STOP 51
 6     END SELECT
 9     PRINT*, "OK"
-      GOTO 10 
+      GOTO 10
 
 7   END ASSOCIATE
 8   END SELECT

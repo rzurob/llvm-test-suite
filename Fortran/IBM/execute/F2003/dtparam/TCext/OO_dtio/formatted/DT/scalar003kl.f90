@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar003kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar003 by Robert Ma)
 !*  DATE                       : 2007-06-05 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        scalar (non-)polymorphic derived type variable with non-polymorphic component
@@ -97,7 +89,7 @@ use m, only: base, data
    character(30) :: fmt
 
    if ( size(v_list) /= 2 ) error stop 4_4
-   
+
    write ( fmt, * ) "( A, I4, I4, I", v_list(1), ", I", v_list(2), ")"
    write ( unit, fmt ) iotype, v_list, dtv%d, dtv%j
 

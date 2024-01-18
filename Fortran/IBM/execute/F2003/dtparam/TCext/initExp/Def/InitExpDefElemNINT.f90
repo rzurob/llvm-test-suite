@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemNINT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemNINT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  NINT 
+!*
+!*  -  NINT
 !*  (318902/318985/319559)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -41,15 +34,15 @@
 
 
   PROGRAM  InitExpDefElemNINT
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
   TYPE :: DT(N1,K1,K2,K3)    ! (20,4,8,16)
     INTEGER, KIND :: K1,K2,K3
     INTEGER, LEN  :: N1
-    REAL(K1)      :: R4=2.4 
-    REAL(K2)      :: R8=2.5 
-    REAL(K3)      :: R6=2.6 
+    REAL(K1)      :: R4=2.4
+    REAL(K2)      :: R8=2.5
+    REAL(K3)      :: R6=2.6
   END TYPE
 
   TYPE (DT(20,4,8,16)), PARAMETER :: X(128) = DT(20,4,8,16)()

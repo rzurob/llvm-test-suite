@@ -1,33 +1,25 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocateWithSourceExp02 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : January 20, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression 
+!*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression
 !*  SECONDARY FUNCTIONS TESTED :
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* allocate-stmt is 
+!* allocate-stmt is
 !*   ALLOCATE ( [ TYPE-spec :: ] allocation-list [, alloc-opt-list ] )
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithSourceExp02
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = 4
@@ -41,7 +33,7 @@ PROGRAM AllocateWithSourceExp02
         INTEGER, LEN  :: l2 = 5
 
         CLASS(Base(k2,:)), POINTER :: Cmp => null()
-        INTEGER(k2) :: A2(2:l1-l2+1) = k1+k2 
+        INTEGER(k2) :: A2(2:l1-l2+1) = k1+k2
       END TYPE Child
 
       TYPE(Child) :: c1
@@ -78,14 +70,14 @@ PROGRAM AllocateWithSourceExp02
       CONTAINS
 
       SUBROUTINE sub2(Arg)
-        CLASS(Base(4,*)) :: Arg    
+        CLASS(Base(4,*)) :: Arg
         class(base(4,:)), pointer :: tmp
 
         SELECT TYPE ( Arg )
           CLASS IS (Child(4,*,4,*))
               IF ( ASSOCIATED(Arg%Cmp) ) STOP 40
-!              ALLOCATE( Arg%Cmp, SOURCE = Arg ) 
-              ALLOCATE( tmp, SOURCE = Arg ) 
+!              ALLOCATE( Arg%Cmp, SOURCE = Arg )
+              ALLOCATE( tmp, SOURCE = Arg )
               arg%cmp => tmp
 
           CLASS DEFAULT

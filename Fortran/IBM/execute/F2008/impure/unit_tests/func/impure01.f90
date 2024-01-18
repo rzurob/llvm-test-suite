@@ -1,28 +1,23 @@
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure01f.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Paul Liu
 !*  DATE                       : 2012-03-08
 !*  ORIGIN                     : Compiler Development, IBM China Development Shanghai Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : impure procedures
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 917300
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Fortran 2008 support for the IMPURE attribute 
+!*  DESCRIPTION                : Fortran 2008 support for the IMPURE attribute
 !*                               for procedures.An impure elemental procedure
 !*                               processes array arguments in array element order.
 !* ============================================================================
@@ -47,8 +42,8 @@
             integer :: accumulate
             integer,intent(in) :: a
           end function
-        end interface      
- 
+        end interface
+
         DATA a /10,20,30,40,50/
 
         print *, "a = ",a                ! b is garbage now, and the value will be different each run, do not print b

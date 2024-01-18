@@ -4,27 +4,21 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :dataPtrDotProduct.f 
+!*  TEST CASE NAME             :dataPtrDotProduct.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
 !* - data-target is type bound proc defined by entry function
-!* - data-pointer is entry function result 
+!* - data-pointer is entry function result
 !* - data-target is the component of a dummy arg of type bound proc
-!* 
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 module m
@@ -32,7 +26,7 @@ module m
 	integer, kind        :: k1
 	integer, len         :: n1
 	integer(k1), pointer :: p(:)
-	contains	
+	contains
 	    procedure, nopass :: ent
 	    procedure, nopass :: get_val
     end type
@@ -40,8 +34,8 @@ module m
     contains
 	function get_val(a)
 	    type(base(*,4)), intent(in) :: a
-	    integer, pointer :: res(:), get_val(:)	
-	 
+	    integer, pointer :: res(:), get_val(:)
+
 	    get_val(0:) => a%p(ubound(a%p,1):lbound(a%p,1):-1)
 
 	    if ( .not. associated(get_val)) stop 13
@@ -49,7 +43,7 @@ module m
 	    if ( any (ubound(get_val) .ne. (/ 4/))) stop 35
 
 	    return
- 
+
 	entry ent(a) result (res)
 	    if ( .not. associated(a%p)) stop 20
 	    res(1:) => a%p(1:20:2)
@@ -66,7 +60,7 @@ end module
 
 	allocate(b1%p(20), source = (/ (i,i=1,20) /) )
 
-        b1%p(2:6) => b1%ent(b1)	
+        b1%p(2:6) => b1%ent(b1)
 
 	if ( .not. associated(b1%p)) stop 12
 	if ( any (lbound(b1%p) .ne. (/ 2/))) stop 22

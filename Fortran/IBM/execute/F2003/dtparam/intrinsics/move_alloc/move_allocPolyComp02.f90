@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocPolyComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocPolyComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 3 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 3 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
@@ -67,7 +59,7 @@ program move_allocPolyComp02
   if(lbound(to1,1) /= 4)                     error stop 10_4
   if(ubound(to1,1) /= 7)                     error stop 11_4
   if(size(to1) /= 4)                         error stop 12_4
-  
+
   call move_alloc(from=from1,to=to1)
 
   if(allocated(from1))                       error stop 13_4
@@ -90,7 +82,7 @@ program move_allocPolyComp02
           class default
              error stop 101_4
        end select
-  end select 
+  end select
 
   if(to1(3)%dtp1%k1 /= 2)                    error stop 24_4
   if(to1(3)%dtp1%l1 /= 4)                    error stop 25_4

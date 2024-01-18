@@ -3,31 +3,18 @@
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=none
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlimitpolyA.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 05/31/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimit polymorphic,
-!*                               rank = 7 
+!*                               rank = 7
 !*                               zero size for some rank
-!*                               FROM and TO are components of different levels 
+!*                               FROM and TO are components of different levels
 !*                               of subobject of derived-types
-!*
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -44,7 +31,7 @@ module m
    type base(k1)    ! (4)
       integer, kind :: k1
       integer(k1)      id
-   end type 
+   end type
 
    type A(k2)    ! (4)
        integer, kind :: k2
@@ -56,17 +43,17 @@ module m
 end module
 
 program main
-use m 
+use m
 
-   type :: B(k3)    ! (4) 
+   type :: B(k3)    ! (4)
        integer, kind            :: k3
-       type(A(k3)), allocatable :: tp 
-       class(*), allocatable :: c1(:,:,:,:,:,:,:) 
+       type(A(k3)), allocatable :: tp
+       class(*), allocatable :: c1(:,:,:,:,:,:,:)
    end type
 
    type(B(4)) b1
 
-   allocate( base(4) :: b1%c1(1,0,0,0,0,0,1) ) 
+   allocate( base(4) :: b1%c1(1,0,0,0,0,0,1) )
    if ( .not. allocated(b1%c1) ) stop 21
 
    allocate( b1%tp )

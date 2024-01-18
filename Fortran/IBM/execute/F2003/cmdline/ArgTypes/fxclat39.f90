@@ -12,41 +12,34 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat39.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Tests command line intrinsic routines by passing sections of 
+!*  DESCRIPTION                : Tests command line intrinsic routines by passing sections of
 !*                             : array pointer elements of derived types from different modules
 !*                             : as arguments
-!*                        
-!*                    
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-      module m1 
+      module m1
 
         type STR
           character(2049)  :: C
@@ -57,7 +50,7 @@
       module m2
 
         type  INT
-          integer  :: C 
+          integer  :: C
         end type INT
 
       end module m2
@@ -65,7 +58,7 @@
       module m3
 
         type LOGIC
-          logical  :: C 
+          logical  :: C
         end type LOGIC
 
       end module m3
@@ -92,7 +85,7 @@
       character(2047)              :: Argument
 
 
-      
+
       allocate (PSTR(3),     &
                 PINT(4),     &
                 PLOGIC(1))
@@ -109,7 +102,7 @@
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 3 ) & 
+      if ( CmdCount .ne. 3 ) &
       then
         error stop 63
       endif
@@ -125,7 +118,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         PINT(3)%C = i
         call GET_COMMAND_ARGUMENT(PINT(3)%C, PSTR(2)%C(1025-i:1555+i), PINT(1)%C, PINT(2)%C)
         call MyGetArg(CmdLine, PINT(3)%C, Argument)
@@ -155,11 +148,11 @@
                   PINT,     &
                   PLOGIC)
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 
 
 
-  
- 
+
+

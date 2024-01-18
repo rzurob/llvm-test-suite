@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,28 +13,20 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c02p.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: module entry BINC(C) attribute 
+!* DESCRIPTION                  : Test: module entry BINC(C) attribute
 !*                                with different intrinsic data type,
 !*                                integer*1, integer*2, integer*4,
 !*                                integer*8, real*4, real*8,
-!*                                character(1). 
+!*                                character(1).
 !*                                C calls Fortran with binding lables.
 !* ===================================================================
 !*  REVISION HISTORY
@@ -52,7 +39,7 @@
 
 module m
 contains
-       subroutine sextsub_int(si1, si2, si4, si8) 
+       subroutine sextsub_int(si1, si2, si4, si8)
            integer*1 si1, i1
            integer*2 si2, i2
            integer*4 si4, i4
@@ -69,8 +56,8 @@ contains
            i8 = i8 + 3
        end subroutine sextsub_int
 
-       
-       subroutine sextsub_real(sr4, sr8) 
+
+       subroutine sextsub_real(sr4, sr8)
            real*4   sr4, r4
            real*8   sr8, r8
            sr4 = sr4 * 21
@@ -81,8 +68,8 @@ contains
            r8 = r8 * 2
        end subroutine sextsub_real
 
-       
-       subroutine sextsub_log(sl1) 
+
+       subroutine sextsub_log(sl1)
            logical*1 sl1, l1
            sl1 = .false.
            return
@@ -90,8 +77,8 @@ contains
            l1 = .true.
        end subroutine sextsub_log
 
-       
-       subroutine sextsub_comp(sco8, sco16) 
+
+       subroutine sextsub_comp(sco8, sco16)
            complex*8   sco8, co8
            complex*16  sco16, co16
            sco8 = (10.0, 10.0)
@@ -103,8 +90,8 @@ contains
            print *, co16
        end subroutine sextsub_comp
 
-       
-       subroutine sextsub_char(sch1) 
+
+       subroutine sextsub_char(sch1)
            character*1 sch1, ch1
            sch1 = 'e'
            return
@@ -112,4 +99,4 @@ contains
            ch1 = 'd'
        end subroutine sextsub_char
 
- end module m     
+ end module m

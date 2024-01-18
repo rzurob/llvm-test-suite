@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrTar2.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrTar2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 08, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  The target -- function return 
+!*  The target -- function return
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -70,7 +62,7 @@
     ExtF2(LBOUND(Arg, 1):UBOUND(Arg,1)) => Arg
   END FUNCTION
 
-  PROGRAM dataPtrTar2 
+  PROGRAM dataPtrTar2
   USE M
   IMPLICIT NONE
 
@@ -80,12 +72,12 @@
   TYPE(DT),     TARGET  :: Arr(100, 2)
   TYPE(DT),     POINTER :: Ptr(:,:)
   TYPE(DT)              :: Arr1(10,10)
-  
+
   Arr(:, 1)%I = (/(I, I=1, 100)/)
   Arr(:, 1)%C = (/(CHAR(I), I=1, 100)/)
   Arr(:, 2)%I = (/(I, I=1, 100)/)
   Arr(:, 2)%C = (/(CHAR(I), I=1, 100)/)
- 
+
   Ptr(0:, 0:) => ExtF1(Arr(::2, ::2))
   IF (.NOT. ASSOCIATED(Ptr, Arr(::2, ::2)))            STOP 11
   IF (ANY( LBOUND(Ptr) .NE. (/ 0, 0 /)))               STOP 12

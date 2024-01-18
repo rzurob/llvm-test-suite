@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  C809AssoName2.f  
-! %VERIFY: 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  C809AssoName2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT:  
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C809AssoName2
-!*  TEST CASE TITLE            : C809
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 20, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : Associate name 
+!*  SECONDARY FUNCTIONS TESTED : Associate name
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     The associate name must only be declared once in the ASSOCIATE statement  
-!*     Selector is a dummy with the same name 
+!*     The associate name must only be declared once in the ASSOCIATE statement
+!*     Selector is a dummy with the same name
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
   MODULE M
 
     TYPE, ABSTRACT :: Base
@@ -49,8 +43,8 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: Id = 0
     CONTAINS
-      PROCEDURE, NOPASS :: PrintType => PrintChild 
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, NOPASS :: PrintType => PrintChild
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -72,8 +66,8 @@
   IMPLICIT NONE
   TYPE(Child) :: V = Child(1)
 
-    V = F(V) 
-     
+    V = F(V)
+
     CONTAINS
 
     FUNCTION F(As)

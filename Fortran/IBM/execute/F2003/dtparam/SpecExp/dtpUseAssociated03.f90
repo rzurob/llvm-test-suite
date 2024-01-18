@@ -1,20 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : dtpUseAssociated03
-!*  TEST CASE TITLE            : specification-exprs with MODULE Entities
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : July  6, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Multiple levels of USE Association
 !*  SECONDARY FUNCTIONS TESTED : Where MODULE Symbols are Renamed
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

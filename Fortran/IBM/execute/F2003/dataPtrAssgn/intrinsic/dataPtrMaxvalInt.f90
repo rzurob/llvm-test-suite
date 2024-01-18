@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrMaxvalInt.f 
+!*  TEST CASE NAME             : dataPtrMaxvalInt.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -31,13 +25,13 @@
 	allocate(integer :: p(cnt))
 
 	b => p
-	
+
 	if ( .not. associated(b)) stop 2
 
 	do i = cnt , 1 , -2
 	   p(i) = i
 	   p(i-1) = i-1
-	   
+
 	   if ( i > 2) then
 		p(1:i-2) => p(i-2:1:-1)
 

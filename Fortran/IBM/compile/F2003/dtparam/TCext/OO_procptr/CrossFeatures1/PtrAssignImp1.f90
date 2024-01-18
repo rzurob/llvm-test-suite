@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:   redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:   redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp PtrAssignImp1.f 
+! %POSTCMD: tcomp PtrAssignImp1.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignImp1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignImp1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Implicit interface and explicitly typed
-!*  or referenced as a function 
-!*  () 
+!*  or referenced as a function
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -65,19 +59,19 @@
 
   SUBROUTINE ExtSub(Arg)
   USE M
-  TYPE (Child(4,*)) :: Arg 
+  TYPE (Child(4,*)) :: Arg
     Arg = Child(4,20)(Base(20,4)(-1))
-  END SUBROUTINE 
+  END SUBROUTINE
 
   PROGRAM PtrAssignImp1
-  USE M 
-  IMPLICIT TYPE(Child(4,20))(C) 
+  USE M
+  IMPLICIT TYPE(Child(4,20))(C)
 
   INTERFACE
     SUBROUTINE ExtSub(Arg)
      IMPORT Child
      TYPE (Child(4,*)) :: Arg
-    END SUBROUTINE 
+    END SUBROUTINE
   END INTERFACE
 
   PROCEDURE(TYPE(Child(4,20))),  POINTER :: ProcPtr
@@ -86,5 +80,5 @@
   ProcPtr => ExtSub
   CProcPtr => ExtSub
   PRINT*, CProcPtr(Child(4,20)(Base(20,4)(1)))
-  END 
+  END
 

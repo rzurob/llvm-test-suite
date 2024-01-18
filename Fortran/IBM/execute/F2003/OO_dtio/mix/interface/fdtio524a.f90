@@ -73,7 +73,6 @@ module m
     end subroutine
 end module
 
-
 program fdtio524a
 use m
     class(base), pointer :: b1

@@ -1,23 +1,17 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : dtpAttrSpecStmtData2a
 !*                               (based on dtpAttrSpecStmtData2)
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April 22, 2009
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

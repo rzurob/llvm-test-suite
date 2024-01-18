@@ -5,16 +5,16 @@ module anc_mod
     integer i1
   end type
 
-  type(base), allocatable :: b1 
+  type(base), allocatable :: b1
   private b1
 
   interface
     module subroutine mod_sub()
-    end subroutine 
+    end subroutine
   end interface
 contains
   subroutine print_mod_var()
-    print*, b1 
+    print*, b1
   end subroutine
 end module
 
@@ -23,12 +23,12 @@ implicit none
 contains
   subroutine s1()
     if (allocated(b1)) then
-      b1%i1 = 5 
+      b1%i1 = 5
     else
       allocate(b1)
-      b1%i1 = 5 
+      b1%i1 = 5
     end if
-  end subroutine 
+  end subroutine
 end submodule
 
 submodule (anc_mod:submod1) submod2
@@ -37,10 +37,10 @@ contains
   module procedure mod_sub
     call s1()
     call print_mod_var()
-    print*, b1 
+    print*, b1
     call s2()
     call print_mod_var()
-    print*, b1 
+    print*, b1
   end
 
   subroutine s2()
@@ -52,7 +52,7 @@ contains
       allocate(b1)
       b1%i1 = 7
     end if
-  end 
+  end
 end submodule
 
 program main

@@ -2,12 +2,7 @@
 ! ftcx_dtp -qnol -qnodeferredlp /tstdev/OO_poly/point_assgn/fpAssgn004a7.f
 ! opt variations: -qck -ql -qdeferredlp
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,26 +13,15 @@
 ! %STDIN:
 ! %STDOUT: fpAssgn004a7.out
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 03/24/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : data pointer assignment (pointer assigned to
 !*                               type bound functions; nopass binding)

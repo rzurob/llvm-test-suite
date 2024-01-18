@@ -2,25 +2,14 @@
 ! ftcx_dtp -qk -ql /tstdev/OO_procptr/bindc2/procptrBindcProc22.f
 ! opt variations: -qnok -qnol
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*                                associate procedure pointer with c function
 !*                                pointer pointing to C function with void pointer
 !*                                as its argument(in Fortran, dummy argument for C_PTR
@@ -35,7 +24,7 @@ program procptrBindcProc22
    type dt(k1,n1)    ! (4,20)
        integer, kind :: k1
        integer, len  :: n1
-       type(C_FUNPTR) :: cfunptr 
+       type(C_FUNPTR) :: cfunptr
    end type
    interface
        type(C_PTR) function cfunc(i) bind(c)
@@ -46,7 +35,7 @@ program procptrBindcProc22
 
    type(dt(4,20)) :: dtype
    real(C_LONG_DOUBLE), target :: i
-   type(C_PTR) :: j, res 
+   type(C_PTR) :: j, res
    real(C_LONG_DOUBLE), pointer :: p, pp
    logical*4 precision_R6
 

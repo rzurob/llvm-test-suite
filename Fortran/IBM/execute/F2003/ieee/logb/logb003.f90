@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : February 5, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_LOGB with arrays of real constants.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -100,7 +92,7 @@
 
         real*16, dimension(8) :: xres_16
         integer*8 :: apns(2), anns(2), apnq(2), annq(2)
-		
+
         logical, dimension(5) :: flag_values, expect_value(5)
         integer :: i
 
@@ -118,44 +110,44 @@
         expect_value = (/.false.,.true.,.true.,.false.,.false./)
 
         xres = ieee_logb(values)
-		
-        if (ires(1) /= iPNANQ_4) error stop 1 
+
+        if (ires(1) /= iPNANQ_4) error stop 1
                                      ! "ieee_logb failed for PNANS_4
 
-        if (ires(2) /= iNNANQ_4) error stop 2 
+        if (ires(2) /= iNNANQ_4) error stop 2
                                      ! "ieee_logb failed for NNANS_4
 
-        if (ires(3) /= iPNANQ_4) error stop 3 
+        if (ires(3) /= iPNANQ_4) error stop 3
                                      ! "ieee_logb failed for PNANQ_4
 
-	if (ires(4) /= iNNANQ_4) error stop 4 
+	if (ires(4) /= iNNANQ_4) error stop 4
                                      ! "ieee_logb failed for NNANQ_4
 
-	if (ires(5) /= iPINF_4) error stop 5 
+	if (ires(5) /= iPINF_4) error stop 5
                                      ! "ieee_logb failed for PINF_4
 
-	if (xres(6) /= exponent(values(6))-1 ) error stop 6 
+	if (xres(6) /= exponent(values(6))-1 ) error stop 6
 		                     ! "ieee_logb failed for PHD_4
-	    
-	if (xres(7) /= exponent(values(7))-1 ) error stop 7 
+
+	if (xres(7) /= exponent(values(7))-1 ) error stop 7
                                      ! "ieee_logb failed for PTD_4
 
-	     
-	if (ires(8) /= iNINF_4) error stop 8 
+
+	if (ires(8) /= iNINF_4) error stop 8
                                      ! "ieee_logb failed for PZERO_4
 
-	if (ires(9) /= iNINF_4) error stop 9 
-                                     ! "ieee_logb failed for NZERO_4 
-		
-	if ( xres(10) /= exponent(values(10))-1 ) error stop 9 
+	if (ires(9) /= iNINF_4) error stop 9
+                                     ! "ieee_logb failed for NZERO_4
+
+	if ( xres(10) /= exponent(values(10))-1 ) error stop 9
                                      ! "ieee_logb failed for NTD_4
 
-	if ( xres(11) /= exponent(values(11))-1 ) error stop 10 
+	if ( xres(11) /= exponent(values(11))-1 ) error stop 10
                                      ! "ieee_logb failed for NHD_4
 
-	if (ires(12) /= iPINF_4) error stop 11 
+	if (ires(12) /= iPINF_4) error stop 11
                                      ! "ieee_logb failed for NINF_4
-	 
+
 
         call ieee_get_flag(ieee_all,flag_values)
         do i =1,5
@@ -168,44 +160,44 @@
         call ieee_set_flag(ieee_all,.false.)
 
         xres_8 = ieee_logb(values_8)
-		
-	if (ires_8(1) /= iPNANQ_8) error stop 12 
+
+	if (ires_8(1) /= iPNANQ_8) error stop 12
                                      ! "ieee_logb failed for PNANS_8
 
-	if (ires_8(2) /= iNNANQ_8) error stop 13 
+	if (ires_8(2) /= iNNANQ_8) error stop 13
                                      ! "ieee_logb failed for NNAN_8
 
-	if (ires_8(3) /= iPNANQ_8) error stop 14 
+	if (ires_8(3) /= iPNANQ_8) error stop 14
                                      ! "ieee_logb failed for PNANQ_8
 
-	if (ires_8(4) /= iNNANQ_8) error stop 15 
+	if (ires_8(4) /= iNNANQ_8) error stop 15
                                      ! "ieee_logb failed for NNANQ_8
 
-	if (ires_8(5) /= iPINF_8) error stop 16 
+	if (ires_8(5) /= iPINF_8) error stop 16
                                      ! "ieee_logb failed for PINF_8
 
-	if (xres_8(6) /= exponent(values_8(6))-1) error stop 17 
+	if (xres_8(6) /= exponent(values_8(6))-1) error stop 17
                                      ! "ieee_logb failed for PHD_8
 
-	if (xres_8(7) /= exponent(values_8(7))-1) error stop 18 
+	if (xres_8(7) /= exponent(values_8(7))-1) error stop 18
                                      ! "ieee_logb failed for PTD_8
 
-	if (ires_8(8) /= iNINF_8) error stop 19 
+	if (ires_8(8) /= iNINF_8) error stop 19
                                      ! "ieee_logb failed for PZERO_8
 
-	if (ires_8(9) /= iNINF_8) error stop 20 
+	if (ires_8(9) /= iNINF_8) error stop 20
                                      ! "ieee_logb failed for NZERO_8
 
-	if (xres_8(10) /= exponent(values_8(10))-1) error stop 21 
+	if (xres_8(10) /= exponent(values_8(10))-1) error stop 21
                                      ! "ieee_logb failed for NTD_8
 
-	if (xres_8(11) /= exponent(values_8(11))-1) error stop 22 
+	if (xres_8(11) /= exponent(values_8(11))-1) error stop 22
                                      ! "ieee_logb failed for NHD_8
 
-		  
-	if (ires_8(12) /= iPINF_8) error stop 23 
+
+	if (ires_8(12) /= iPINF_8) error stop 23
                                      ! "ieee_logb failed for NINF_8
-	    
+
 
         call ieee_get_flag(ieee_all,flag_values)
         do i =1,5
@@ -219,31 +211,31 @@
         call ieee_set_flag(ieee_all,.false.)
 
         xres_16 = ieee_logb(values_16)
-		
-        if (apns(1) /= iPNANQ_16(1)) error stop 24 
+
+        if (apns(1) /= iPNANQ_16(1)) error stop 24
                                      ! "ieee_logb failed for PNANS_16
-        
-	if (anns(1) /= iNNANQ_16(1)) error stop 25 
+
+	if (anns(1) /= iNNANQ_16(1)) error stop 25
                                      ! "ieee_logb failed for NNANS_16
-	
-	if (apnq(1) /= iPNANQ_16(1)) error stop 26 
+
+	if (apnq(1) /= iPNANQ_16(1)) error stop 26
                                      ! "ieee_logb failed for PNANQ_16
-	
-	if (annq(1) /= iNNANQ_16(1)) error stop 27 
+
+	if (annq(1) /= iNNANQ_16(1)) error stop 27
                                      ! "ieee_logb failed for NNANQ_16
-	
-	if (xres_16(5) /= PINF_16) error stop 28 
+
+	if (xres_16(5) /= PINF_16) error stop 28
                                      ! "ieee_logb failed for PINF_16
-	     
-	if (xres_16(6) /= NINF_16)  error stop 29 
+
+	if (xres_16(6) /= NINF_16)  error stop 29
                                      ! "ieee_logb failed for PZERO_16
-		 
-	if (xres_16(7) /= NINF_16) error stop 30 
+
+	if (xres_16(7) /= NINF_16) error stop 30
                                      ! "ieee_logb failed for PZERO2_16
-		
-	if (xres_16(8) /= PINF_16)  error stop 31 
+
+	if (xres_16(8) /= PINF_16)  error stop 31
                                      ! "ieee_logb failed for NINF_16
-		 	 
+
 
         call ieee_get_flag(ieee_all,flag_values)
         do i =1,5

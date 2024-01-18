@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_p002.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : May 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray access (specific) - procedure call
 !*
@@ -22,7 +18,7 @@
 program main
 
 	implicit none
-	
+
 	integer(1), parameter :: min1 = -huge(0_1)-1,  max1 = huge(0_1), mid1 = 13_1
 	integer(2), parameter :: min2 = -huge(0_2)-1,  max2 = huge(0_2), mid2 = 12345_2
 	integer(4), parameter :: min4 = -huge(0_4)-1,  max4 = huge(0_4), mid4 = 898973451_4
@@ -35,9 +31,9 @@ program main
 		integer(8) :: i8
 	end type
 	type (obj), save :: caf[*]
-	
+
 	caf = obj(0, 0, 0, 0)
-	
+
 	call twiddle1(caf%i1, 0_1, min1, 1)
 	call twiddle1(caf%i1, min1, mid1, 2)
 	call twaddle1(caf, mid1, max1, 3)
@@ -50,7 +46,7 @@ program main
 		print *, "expected", mid1
 		error stop 29
 	end if
-	
+
 	call twiddle2(caf%i2, 0_2, min2, 11)
 	call twiddle2(caf%i2, min2, mid2, 12)
 	call twaddle2(caf, mid2, max2, 13)
@@ -63,7 +59,7 @@ program main
 		print *, "expected", mid2
 		error stop 39
 	end if
-	
+
 	call twiddle4(caf%i4, 0_4, min4, 21)
 	call twiddle4(caf%i4, min4, mid4, 22)
 	call twaddle4(caf, mid4, max4, 23)
@@ -76,7 +72,7 @@ program main
 		print *, "expected", mid4
 		error stop 49
 	end if
-	
+
 	call twiddle8(caf%i8, 0_8, min8, 31)
 	call twiddle8(caf%i8, min8, mid8, 32)
 	call twaddle8(caf, mid8, max8, 33)
@@ -96,7 +92,7 @@ program main
     subroutine twiddle1(a1, exp1, new1, nr)
       integer(1) :: a1, exp1, new1
       integer :: nr
-      
+
       if (a1 /= exp1) then
       	print *, a1, exp1
       	call fail(nr)
@@ -108,7 +104,7 @@ program main
       type (obj) :: a1[*]
       integer(1) :: exp1, new1
       integer :: nr
-      
+
       if (a1%i1 /= exp1) then
       	print *, a1%i1, exp1
       	call fail(nr)
@@ -133,7 +129,7 @@ program main
     subroutine twiddle2(a2, exp2, new2, nr)
       integer(2) :: a2, exp2, new2
       integer :: nr
-      
+
       if (a2 /= exp2) then
       	print *, a2, exp2
       	call fail(nr)
@@ -145,7 +141,7 @@ program main
 	 type (obj) :: a2[*]
       integer(2) :: exp2, new2
       integer :: nr
-      
+
       if (a2%i2 /= exp2) then
       	print *, a2%i2, exp2
       	call fail(nr)
@@ -170,7 +166,7 @@ program main
     subroutine twiddle4(a4, exp4, new4, nr)
       integer(4) :: a4, exp4, new4
       integer :: nr
-      
+
       if (a4 /= exp4) then
       	print *, a4, exp4
       	call fail(nr)
@@ -182,7 +178,7 @@ program main
       type (obj) :: a4[*]
       integer(4) :: exp4, new4
       integer :: nr
-      
+
       if (a4%i4 /= exp4) then
       	print *, a4%i4, exp4
       	call fail(nr)
@@ -207,7 +203,7 @@ program main
     subroutine twiddle8(a8, exp8, new8, nr)
       integer(8) :: a8, exp8, new8
       integer :: nr
-      
+
       if (a8 /= exp8) then
       	print *, a8, exp8
       	call fail(nr)
@@ -219,7 +215,7 @@ program main
       type (obj) :: a8[*]
       integer(8) :: exp8, new8
       integer :: nr
-      
+
       if (a8%i8 /= exp8) then
       	print *, a8%i8, exp8
       	call fail(nr)

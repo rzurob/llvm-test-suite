@@ -6,7 +6,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxiosendeor001.f
 ! %VERIFY:
 ! %STDIN:
@@ -16,27 +16,20 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxiosendeor001 
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug. 17, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : is_iostat_end and is_iostat_eor intrinsics
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qdebug=intmsg
 !*
 !*  DESCRIPTION                : This diagnostic test, makes sure that non-integer
 !*                               arguments to the intrinsics are flagged.
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
-      
+
       integer*1 :: int1 = -1
       integer*2 :: int2 = -1
       integer*4 :: int3 = -1
@@ -54,7 +47,7 @@
       logical*2 :: log2arr(3) = (/.true., .false., .true./)
       logical*4 :: log3arr(3) = (/.true., .false., .true./)
       logical*8 :: log4arr(3) = (/.true., .false., .true./)
-    
+
       real*4    :: rel1 = 1.2
       real*8    :: rel2 = 1.2
       real*4    :: rel1arr(3) = (/ 1.0, 2.1, 3.2 /)
@@ -64,7 +57,7 @@
       complex*16  :: cmplx2 = (1,-2)
       complex*8   :: cmplx1arr(3) = (/ (1,-2), (-1,2), (4,4) /)
       complex*16  :: cmplx2arr(3) = (/ (1,-2), (-1,2), (4,4) /)
-      
+
       character*1 :: char1 = 'x'
       character*2 :: char2 = 'x'
       character*4 :: char3 = 'x'

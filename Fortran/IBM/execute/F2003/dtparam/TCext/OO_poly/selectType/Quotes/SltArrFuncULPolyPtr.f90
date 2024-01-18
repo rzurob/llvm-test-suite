@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrFuncULPolyPtr.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrFuncULPolyPtr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is an unlimited poly array pointer from function call
-!*  
+!*
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -54,7 +48,7 @@
     TYPE  :: Zero(K1,N1)    ! (4,20)
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base(N2,K2)    ! (4,20,20,4)
       INTEGER, KIND :: K2
@@ -110,7 +104,7 @@
   TYPE(Child(4,20,20,4,20,4)), TARGET :: V(2,2)
   INTEGER :: i
   CLASS(*), POINTER :: P(:,:)
-  
+
   V%BaseId = -1
   V%ChildId = -2
 
@@ -123,10 +117,10 @@
   CLASS(*), POINTER :: Arg(:,:), Fun(:,:)
     Fun => Arg
   END FUNCTION
-    
+
   SUBROUTINE Sub(Arg)
   CLASS(*), POINTER :: Arg(:, :)
- 
+
   SELECT TYPE ( V => Fun(Arg) )
     CLASS DEFAULT
       SELECT TYPE (V)
@@ -150,9 +144,9 @@
 
   END SELECT
 
-  END SUBROUTINE 
- 
- 
+  END SUBROUTINE
+
+
   END
 
 

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrTarSize1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrTarSize1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 06, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,64 +19,62 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  The elements of the target of data-pointer-object, in array element order 
-!*  (6.2.2.2), are the first SIZE(data-pointer-object) elements of data-target. 
+!*  The elements of the target of data-pointer-object, in array element order
+!*  (6.2.2.2), are the first SIZE(data-pointer-object) elements of data-target.
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrTarSize1 
+  PROGRAM dataPtrTarSize1
   IMPLICIT NONE
 
   INTEGER              :: I
 
   INTEGER(1), POINTER  :: PtrI1(:,:) =>NULL()
   INTEGER(1), TARGET   :: PtrI1Tar(100, 10)=RESHAPE((/(-I, I=1, 1000)/), (/100,10/))
-  
+
   INTEGER(2), POINTER  :: PtrI2(:,:) =>NULL()
   INTEGER(2), TARGET   :: PtrI2Tar(100, 10)=RESHAPE((/(-I, I=1, 1000)/), (/100,10/))
-  
+
   INTEGER(4), POINTER  :: PtrI4(:,:) =>NULL()
   INTEGER(4), TARGET   :: PtrI4Tar(100, 10)=RESHAPE((/(-I, I=1, 1000)/), (/100,10/))
-  
+
   INTEGER(8), POINTER  :: PtrI8(:,:) =>NULL()
   INTEGER(8), TARGET   :: PtrI8Tar(100, 10)=RESHAPE((/(-I, I=1, 1000)/), (/100,10/))
-  
+
   REAL(4), POINTER     :: PtrR4(:,:) =>NULL()
   REAL(4), TARGET      :: PtrR4Tar(100, 10)=RESHAPE((/(-I, I=1, 1000)/), (/100,10/))
-  
+
   REAL(8), POINTER     :: PtrR8(:,:) =>NULL()
   REAL(8), TARGET      :: PtrR8Tar(100, 10)=RESHAPE((/(-I, I=1, 1000)/), (/100,10/))
-  
+
   REAL(16), POINTER    :: PtrR16(:,:) =>NULL()
   REAL(16), TARGET     :: PtrR16Tar(100, 10)=RESHAPE((/(-I, I=1, 1000)/), (/100,10/))
-  
+
   COMPLEX(4), POINTER  :: PtrC4(:,:) =>NULL()
   COMPLEX(4), TARGET   :: PtrC4Tar(100, 10)=RESHAPE((/((I,-I), I=1, 1000)/), (/100,10/))
-  
+
   COMPLEX(8), POINTER  :: PtrC8(:,:) =>NULL()
   COMPLEX(8), TARGET   :: PtrC8Tar(100, 10)=RESHAPE((/((I,-I), I=1, 1000)/), (/100,10/))
-  
+
   COMPLEX(16), POINTER :: PtrC16(:,:) =>NULL()
   COMPLEX(16), TARGET  :: PtrC16Tar(100, 10)=RESHAPE((/((I,-I), I=1, 1000)/), (/100,10/))
-  
+
   LOGICAL(1), POINTER  :: PtrL1(:,:) =>NULL()
   LOGICAL(1), TARGET   :: PtrL1Tar(100, 10)=RESHAPE((/(.TRUE., I=1, 1000)/), (/100,10/))
-  
+
   LOGICAL(2), POINTER  :: PtrL2(:,:) =>NULL()
   LOGICAL(2), TARGET   :: PtrL2Tar(100, 10)=RESHAPE((/(.TRUE., I=1, 1000)/), (/100,10/))
-  
+
   LOGICAL(4), POINTER  :: PtrL4(:,:) =>NULL()
   LOGICAL(4), TARGET   :: PtrL4Tar(100, 10)=RESHAPE((/(.TRUE., I=1, 1000)/), (/100,10/))
-  
+
   LOGICAL(8), POINTER  :: PtrL8(:,:) =>NULL()
   LOGICAL(8), TARGET   :: PtrL8Tar(100, 10)=RESHAPE((/(.TRUE., I=1, 1000)/), (/100,10/))
-  
- 
+
+
   PtrI1(10:19, 1:9 ) => PtrI1Tar(:, 1)
   IF (.NOT. ASSOCIATED(PtrI1))                    STOP 11
   IF (ANY( LBOUND(PtrI1) .NE. (/10, 1 /)))        STOP 12

@@ -1,4 +1,4 @@
-! Calls to maxloc/minloc with incorrect type of BACK argument 
+! Calls to maxloc/minloc with incorrect type of BACK argument
 
 integer :: j1(1) = maxloc((/1_1, 3_1, 3_1, 2_1/), back = 'a')
 integer :: j2(1)

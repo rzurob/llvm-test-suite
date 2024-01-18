@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : SpeExpHostAssociation03b.f
-!*
-!*  PROGRAMMER                 : Dorra Bouhiha
 !*  DATE                       : June 14, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Speification expression - Host Association
 !*  SECONDARY FUNCTIONS TESTED : Explicit Initialization
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -41,7 +33,7 @@ MODULE Mod
          INTEGER, LEN  :: l2 = 4
 
          INTEGER(k2) :: I2, A2(l2)
-         CLASS(Base(k2,l2)), POINTER :: b1 
+         CLASS(Base(k2,l2)), POINTER :: b1
       END TYPE
 
       TYPE, EXTENDS(Child) :: NextGen (k3,l3)
@@ -49,7 +41,7 @@ MODULE Mod
          INTEGER, LEN  :: l3 = 8
 
          INTEGER(k3) :: I3, A3(l3)
-         CLASS(Base(k3,l3)), POINTER :: c1 
+         CLASS(Base(k3,l3)), POINTER :: c1
       END TYPE
 
 END MODULE
@@ -57,12 +49,12 @@ PROGRAM SpeExpHostAssociation03b
       USE Mod
       IMPLICIT NONE
 
-      INTEGER I 
+      INTEGER I
       TYPE(NextGen(4,3,4,5,4,7)) :: n1 =  NextGen(4,3,4,5,4,7) (  I1 = 1, I2 = 2, I3 = 3,         &
-         A1 = [(I, I=1,3)] , A2 = [(2*I, I=1,5)], A3 = [(3*I, I=1,7)], name = 'AAA', b1 = NULL(), c1 = NULL() )     
+         A1 = [(I, I=1,3)] , A2 = [(2*I, I=1,5)], A3 = [(3*I, I=1,7)], name = 'AAA', b1 = NULL(), c1 = NULL() )
 
       ALLOCATE( n1%b1, SOURCE =  Base(4,5)( I1 = 4, A1 = [(4*I, I = 1,5)], name = 'BBBBB' ) )
-      ALLOCATE( n1%c1, SOURCE =  Base(4,7)( I1 = 10, A1 = [(10*I, I = 1,7)], name = 'CCCCCCC') ) 
+      ALLOCATE( n1%c1, SOURCE =  Base(4,7)( I1 = 10, A1 = [(10*I, I = 1,7)], name = 'CCCCCCC') )
 
       CALL Sub11(4,5)
       CALL Sub12(4,4,10)
@@ -95,7 +87,7 @@ PROGRAM SpeExpHostAssociation03b
       END SELECT
 
       CONTAINS
- 
+
       SUBROUTINE Sub11(N, M)
         INTEGER :: N, M
         TYPE(Base(n1%b1%k1,n1%b1%l1)) :: Obj
@@ -117,7 +109,7 @@ PROGRAM SpeExpHostAssociation03b
       END SUBROUTINE Sub21
 
       SUBROUTINE Sub12(N, M, P)
-        INTEGER :: N, M, P 
+        INTEGER :: N, M, P
         TYPE(Child(KIND(n1%b1%I1),n1%b1%I1,2*KIND(n1%b1%I1),2*SIZE(n1%b1%A1))) :: Obj
 
         IF ( Obj%k1 .NE.   N ) STOP 18
@@ -127,7 +119,7 @@ PROGRAM SpeExpHostAssociation03b
         IF ( SIZE(Obj%A1)  .NE. M ) STOP 22
         IF ( LEN(Obj%name) .NE. M ) STOP 23
 
-        ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%b1 )  
+        ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%b1 )
         IF ( Obj%b1%k1 .NE. 2*N ) STOP 24
         IF ( Obj%b1%l1 .NE.   P ) STOP 25
         IF ( SIZE(Obj%b1%A1)  .NE. P ) STOP 26
@@ -135,7 +127,7 @@ PROGRAM SpeExpHostAssociation03b
       END SUBROUTINE Sub12
 
       SUBROUTINE Sub22(N, M, P)
-        INTEGER :: N, M, P 
+        INTEGER :: N, M, P
         TYPE(Child(KIND(n1%c1%I1),n1%c1%I1,KIND(n1%c1%I1),2*LEN(n1%c1%name))) :: Obj
 
         IF ( Obj%k1 .NE. N ) STOP 28
@@ -145,7 +137,7 @@ PROGRAM SpeExpHostAssociation03b
         IF ( SIZE(Obj%A1)  .NE. M ) STOP 32
         IF ( LEN(Obj%name) .NE. M ) STOP 33
 
-        ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%b1 )  
+        ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%b1 )
         IF ( Obj%b1%k1 .NE. N ) STOP 34
         IF ( Obj%b1%l1 .NE. P ) STOP 35
         IF ( SIZE(Obj%b1%A1)  .NE. P ) STOP 36
@@ -163,7 +155,7 @@ PROGRAM SpeExpHostAssociation03b
         IF ( SIZE(Obj%A1)  .NE. M ) STOP 42
         IF ( LEN(Obj%name) .NE. M ) STOP 43
 
-        ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%b1 )  
+        ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%b1 )
         IF ( Obj%b1%k1 .NE. N ) STOP 44
         IF ( Obj%b1%l1 .NE. P ) STOP 45
         IF ( SIZE(Obj%b1%A1)  .NE. P ) STOP 46
@@ -181,7 +173,7 @@ PROGRAM SpeExpHostAssociation03b
         IF ( SIZE(Obj%A1)  .NE. M ) STOP 52
         IF ( LEN(Obj%name) .NE. M ) STOP 53
 
-        ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%b1 )  
+        ALLOCATE( Base(Obj%k2,Obj%l2) :: Obj%b1 )
         IF ( Obj%b1%k1 .NE. N ) STOP 54
         IF ( Obj%b1%l1 .NE. P ) STOP 55
         IF ( SIZE(Obj%b1%A1)  .NE. P ) STOP 56

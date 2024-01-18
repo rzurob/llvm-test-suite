@@ -27,13 +27,13 @@
           print *, rt
           error stop 2
         endif
-		
+
         rt = c_sizeof(ch2)
         if (rt /= 1) then
           print *, rt
           error stop 3
         endif
-		
+
         rt = c_sizeof(ch3)
         if (rt /= 1) then
           print *, rt
@@ -45,33 +45,33 @@
           print *, rt
           error stop 5
         endif
-		
+
         !integer
         rt = c_sizeof(cint1)
         if (rt /= 4) then
           print *, rt
           error stop 6
         endif
-		
+
         rt = c_sizeof(10)
         if (rt /= 4) then
           print *, rt
           error stop 7
         endif
-		
+
         !real
         rt = c_sizeof(creal1)
         if (rt /= 4) then
           print *, rt
           error stop 8
         endif
-		
+
         rt = c_sizeof(10.0d0)
         if (rt /= 8) then
           print *, rt
           error stop 9
         endif
-		
+
         rt = c_sizeof(10.0e0)
         if (rt /= 4) then
           print *, rt
@@ -84,13 +84,13 @@
           print *, rt
           error stop 11
         endif
-		
+
         rt = c_sizeof((12d0, 10.0d0))
         if (rt /= 16) then
           print *, rt
           error stop 12
         endif
-		
+
         !logical
         !see detail in logical.f
 
@@ -100,7 +100,7 @@
         call sub3(ch6)
         call sub4(ch6)
       end
-	
+
       subroutine sub0() ! substring
       use,intrinsic :: iso_c_binding
       implicit none
@@ -109,7 +109,7 @@
         character(len=1) :: str2
         character(len=20) :: str3 = "abc"
         character(len=1),parameter:: str4 ="a"
-		
+
         rt = c_sizeof(str1(1:1))
         if (rt /= 1) then
           print *, rt
@@ -121,25 +121,25 @@
           print *, rt
           error stop 14
         endif
-		
+
         rt = c_sizeof(str2(1:1))
         if (rt /= 1) then
           print *, rt
           error stop 15
         endif
-		
+
         rt = c_sizeof(str3(1:1))
         if (rt /= 1) then
           print *, rt
           error stop 16
         endif
-		
+
         rt = c_sizeof(str4)
         if (rt /= 1) then
           print *, rt
           error stop 17
         endif
-		
+
         rt = c_sizeof(str4(1:1))
         if (rt /= 1) then
           print *, rt
@@ -167,7 +167,7 @@
         j = 2
         i = c_sizeof(a(j))
         if (i /= 1) then
-          print *, i 
+          print *, i
           error stop 20
         endif
       end subroutine
@@ -180,7 +180,7 @@
         j = 2
         i = c_sizeof(a(j))
         if (i /= 1) then
-          print *, i 
+          print *, i
           error stop 21
         endif
       end subroutine

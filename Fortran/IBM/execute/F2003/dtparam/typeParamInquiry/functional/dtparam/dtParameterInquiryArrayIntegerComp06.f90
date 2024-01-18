@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryArrayIntegerComp06.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryArrayIntegerComp06.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 15 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY FOR DT AND COMPONENT
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. INTEGER POINTER ARRAY COMPONENT
@@ -34,12 +26,12 @@ module m
      integer(k1),kind :: k2=2
      integer(2),len   :: l1=4
      integer(k1+k2),len :: l2=1
-     
+
      integer(1),dimension(:,:),pointer :: i1=>null()
      integer(2),pointer :: i2(:)=>null()
      integer(k2),pointer :: i3(:)=>null()
      integer(8),pointer :: i4(:,:)=>null()
-     integer(k1+k2),dimension(:),pointer :: i5=>null() 
+     integer(k1+k2),dimension(:),pointer :: i5=>null()
      integer(k1),pointer :: i6(:)=>null()
      integer(k2),pointer :: i7(:)=>null()
      integer(1),pointer :: i8(:)=>null()
@@ -49,8 +41,8 @@ module m
      integer(2),pointer :: i12(:)=>null()
      integer(max(2,4)),pointer :: i13(:,:)=>null()
 
-   end type 
-         
+   end type
+
 end module
 
   program dtParameterInquiryArrayIntegerComp06
@@ -64,10 +56,10 @@ end module
   integer(t%k1),target :: a9(3:4)
 
   allocate(t%i1(3,3))
-  allocate(integer(2) :: t%i2(3:-4)) 
+  allocate(integer(2) :: t%i2(3:-4))
   t%i3=>a3
   allocate(integer(8) :: t%i4(-1:t%k1,(t%k2+3):7))
-  t%i5=>a5 
+  t%i5=>a5
   allocate(t%i6(2))
 
   t%i7=>t%i3
@@ -79,10 +71,10 @@ end module
   allocate(t%i12(t%k1+t%k2))
   allocate(integer(4) :: t%i13(ubound(t%i4,1),ubound(t%i4,2)))
 
-  
+
 
   if(t%k1 /= 2)                                     error stop 10_4
-  if(t%k2 /= 2)                                     error stop 11_4 
+  if(t%k2 /= 2)                                     error stop 11_4
   if(t%l1 /= 4)                                     error stop 12_4
   if(t%l2 /= 1)                                     error stop 13_4
 
@@ -104,13 +96,13 @@ end module
   if(t%i10%kind /=kind(t%i10) .or. t%i10%kind /= 4)    error stop 27_4
   if(t%i11%kind /=kind(t%i11) .or. t%i11%kind /= 4)    error stop 28_4
   if(t%i12%kind /=kind(t%i12) .or. t%i12%kind /= 2)    error stop 29_4
-  if(t%i13%kind /=kind(t%i13) .or. t%i13%kind /= 4)    error stop 30_4  
+  if(t%i13%kind /=kind(t%i13) .or. t%i13%kind /= 4)    error stop 30_4
 
   if(ubound(t%i1,1) /=3 .or. lbound(t%i1,1) /= 1)      error stop 31_4
   if(ubound(t%i1,2) /=3 .or. lbound(t%i1,2) /= 1)      error stop 32_4
   if(ubound(t%i2,1) /=0 .or. lbound(t%i2,1) /= 1)      error stop 33_4
-  
-  if(ubound(t%i3,1) /=5 .or. lbound(t%i3,1) /= 1)      error stop 34_4  
+
+  if(ubound(t%i3,1) /=5 .or. lbound(t%i3,1) /= 1)      error stop 34_4
   if(ubound(t%i4,1) /=2 .or. lbound(t%i4,1) /= -1)     error stop 35_4
   if(ubound(t%i4,2) /=7 .or. lbound(t%i4,2) /= 5)      error stop 36_4
 

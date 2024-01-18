@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with namelist and object of public/private accessibility (output)
@@ -80,7 +64,7 @@ module m
       class(base), intent(inout) :: dtv
       dtv%i = i
    end subroutine
-      
+
    integer function geti(dtv)
       class(base), intent(in) :: dtv
       geti = dtv%i
@@ -92,10 +76,10 @@ module m
       b2%i = 888
       b3%i = 999
    end subroutine
-   
+
    subroutine writeIt(unit)
       integer, intent(in) :: unit
-      write ( unit, n123, iostat = stat, iomsg = msg )      
+      write ( unit, n123, iostat = stat, iomsg = msg )
    end subroutine
 
 end module
@@ -106,13 +90,13 @@ use m
    open (1, file = 'access001a.1', form='formatted', access='sequential' )
    call start()
    call writeIt(1)
-   
+
    call b1%seti(333)
    call b2%seti(444)
    call b3%seti(555)
-   
-   call writeIt(1)   
-   
+
+   call writeIt(1)
+
 end program
 
 

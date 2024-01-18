@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt020.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -45,9 +38,9 @@ module mod_test
 
         type, bind(c) :: dt2
 	        integer(c_int_fast8_t)     :: if8(4)
-                integer(c_int_fast16_t)    :: if16 
+                integer(c_int_fast16_t)    :: if16
                 integer(c_int_fast32_t)    :: if32
-                integer(c_int_fast64_t)    :: if64 
+                integer(c_int_fast64_t)    :: if64
                 real(c_long_double)        :: ldouble(5)
 		complex(c_double_complex)  :: dc
                 type(dt1) :: d1
@@ -58,11 +51,11 @@ end module
       subroutine sub_test1(arg1, arg2, arg3) bind(C)
         use iso_c_binding
         use mod_test
-    
+
         integer(c_int)           :: arg1
         integer(c_signed_char)   :: arg2
         type(dt2), optional      :: arg3
- 
+
         print *, arg1
         print *, arg2
 

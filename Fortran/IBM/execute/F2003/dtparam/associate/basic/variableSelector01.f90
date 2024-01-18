@@ -1,21 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : variableSelector01
-!*  TEST CASE TITLE            : variable selector with Derived Type Parameters
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : July  7, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is a variable
 !*  SECONDARY FUNCTIONS TESTED : variable is a Derived Type (with Type
 !*                               Parameters)
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE

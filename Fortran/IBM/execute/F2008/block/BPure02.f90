@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : BPure02
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-12-06
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 BLOCK
 !*  SECONDARY FUNCTIONS TESTED : temporary in block in pure procedure

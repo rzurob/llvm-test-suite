@@ -1,41 +1,32 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE     : C Interop: Assumed-length Character arguments
-!*
-!*
-!*
-!*  PROGRAMMER          : Umme Hunny
 !*  DATE                : June, 1, 2014
-!*  ORIGIN              : AIX Compiler Development, Toronto Lab
 !*  FEATURE             : RTC Master Story:
 !*                        C Interop: Assumed-length Character arguments
 !*                        (master story) (72333)
 !*
-!*  FEATURE             : C Interop: Assumed-length Character arguments 
+!*  FEATURE             : C Interop: Assumed-length Character arguments
 !* ===================================================================
-!23456789012345678901234567890123456789012345678901234567890123456789012     
-      
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
       program assumed_lenght001
 
         interface
           subroutine check_f_to_c(c_arg1, c_len, test_no) bind(c)
-            use, intrinsic :: iso_c_binding 
+            use, intrinsic :: iso_c_binding
             character(*), DIMENSION(1) :: c_arg1
-            integer(C_INT) c_len, test_no 
+            integer(C_INT) c_len, test_no
           end subroutine
           FUNCTION func1 () RESULT (v_char)
-            character(11) v_char(10)          
+            character(11) v_char(10)
           END FUNCTION func1
           FUNCTION func2 (c_arg) RESULT (v_char)
             character(11) :: v_char(10)
-            character(*), DIMENSION(1) :: c_arg         
+            character(*), DIMENSION(1) :: c_arg
           END FUNCTION func2
 
-          
+
         end interface
 
         ! a) Explicit Shape array
@@ -74,10 +65,10 @@
           !"
           character(10) v_arg22(10,10,10)
           character(12) v_arg23(10,10,10)
-   
+
           character(11) v_arg24(10,10,10)
           character(11) v_arg25(10,10,10)
-          character(10) v_arg26(10,10) 
+          character(10) v_arg26(10,10)
           character(12) v_arg27(10,10,10)
           character(12) v_arg28(10,10,10)
           character(11) v_arg29(10,10)
@@ -93,13 +84,13 @@
 
           type(BASE) :: base_vtest
           type(EXT_TYPE) :: ext_vtest
-    
-          logical, dimension(1,1) :: v_mask2
- 
-         
-        
 
- 
+          logical, dimension(1,1) :: v_mask2
+
+
+
+
+
         ! Initialization
 
           v_arg1(1) = "ONES"
@@ -110,16 +101,16 @@
           v_arg6 = "SIXES"
           v_arg7 = "SEVENS"
           v_arg8 = "EIGHTS"
-          v_arg9 = "NINES" 
+          v_arg9 = "NINES"
           v_arg11 = "ELEVENS"
           v_arg12 => v_arg9
           v_arg13 => v_arg9
           v_arg14 => v_arg11
           allocate(v_arg15(8, -1:3, 5))
           v_arg15 = "FIFTEEN"
-          allocate(v_arg16(10))      
+          allocate(v_arg16(10))
           v_arg16 = "SIXTEEN"
-          allocate(character(len=16) :: v_arg17(10,10))    
+          allocate(character(len=16) :: v_arg17(10,10))
           v_arg17 = "SEVENTEEN"
           v_arg22 = "TWENTY_TWO"
           v_arg23 = "TWENTY_THREE"
@@ -134,13 +125,13 @@
           base_vtest%v_char_base = "THIRTY_ONE"
           ext_vtest%v_char_ext_type = "THIRTY_TWO"
 
-          v_mask2 = .TRUE. 
-         
-        ! F2C      
-        print *, "F2C" 
-        
+          v_mask2 = .TRUE.
+
+        ! F2C
+        print *, "F2C"
+
         !a) Character array with different attributes
-       
+
 
         !1.--- Explicti shape array
         call check_f_to_c(v_arg1, LEN(v_arg1), 1)
@@ -180,7 +171,7 @@
         call SUB29(v_arg29, "F2C")
         call SUB30(v_arg30, 6, "F2C")
 
-        
+
         !b) array component of a derived type
 
         call check_f_to_c(base_vtest%v_char_base, LEN(base_vtest%v_char_base), 31)
@@ -188,7 +179,7 @@
 
         !c) Array Section
 
-        call check_f_to_c(v_arg3(1:3), LEN(v_arg3(1:3)), 3) 
+        call check_f_to_c(v_arg3(1:3), LEN(v_arg3(1:3)), 3)
         call check_f_to_c(v_arg8(1:3, 1:3), LEN(v_arg8), 8)
 
         !d) Function return value array
@@ -198,15 +189,15 @@
         call check_f_to_c(func2("TWENTY_FIVE"), LEN(func2("TWENTY_FIVE")), 25)
 
         !e) Expressions with character array variables
-       
-        call check_f_to_c(MERGE(v_arg2, v_arg2, v_mask2), LEN(MERGE(v_arg2, v_arg2, v_mask2)),2)       
+
+        call check_f_to_c(MERGE(v_arg2, v_arg2, v_mask2), LEN(MERGE(v_arg2, v_arg2, v_mask2)),2)
         call check_f_to_c((/ 'ONE', 'ONE', 'ONE' /), 3, 1)
-        call check_f_to_c(['FOUR', 'FOUR', 'FOUR'],4, 4)        
-        
+        call check_f_to_c(['FOUR', 'FOUR', 'FOUR'],4, 4)
+
 
       contains
-    
-      ! automatic array 
+
+      ! automatic array
 
        SUBROUTINE SUB20(Y, test_type)
          INTEGER Y
@@ -279,7 +270,7 @@
        END SUBROUTINE
 
        ! assumed size
-       
+
        SUBROUTINE SUB26(ARRAY, L, test_type)
          CHARACTER(*) ARRAY(*)
          integer L
@@ -331,7 +322,7 @@
 
 
        END SUBROUTINE
- 
+
        ! Other functions
 
        FUNCTION func3() RESULT (v_char)
@@ -359,4 +350,4 @@
 
 
 
-       
+

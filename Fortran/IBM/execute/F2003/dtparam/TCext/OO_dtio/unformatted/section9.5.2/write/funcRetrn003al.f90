@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : funcRetrn003al
 !*
-!*  PROGRAMMER                 : David Forster (derived from funcRetrn003a by Robert Ma)
 !*  DATE                       : 2007-10-03 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try output item to be a function return
@@ -96,7 +88,7 @@ program funcRetrn003al
    open (unit = 1, file ='funcRetrn003al.data', form='unformatted', access='sequential')
 
    ! unformatted I/O operations
-   
+
    write (1, iostat=stat, iomsg=msg )     b1%returnMyself()
    write (1, iostat=stat, iomsg=msg )     b2%returnMyself()
    write (1, iostat=stat, iomsg=msg )     b3%returnMyself()

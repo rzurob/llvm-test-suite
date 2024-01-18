@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument352f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from C
@@ -22,8 +15,7 @@
 !*                                - Set values in Fortran
 !*                                - Verify values both in Fortran and C
 !*                                - type c_int
-!*                                - Optional Allocatable dummy argument 
-!*
+!*                                - Optional Allocatable dummy argument
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -41,7 +33,7 @@ subroutine sub_alloc(arg, value) bind(C)
             use iso_c_binding
             implicit none
             integer(c_int) :: arg
-       end     
+       end
     end interface
 
     integer(c_int), pointer :: arg
@@ -50,7 +42,7 @@ subroutine sub_alloc(arg, value) bind(C)
     if ( associated(arg) ) then
       print*, "arg is already associated!"
       ERROR STOP 10
-    else 
+    else
       allocate(arg, source=Func(value))
     endif
 
@@ -67,7 +59,7 @@ subroutine sub_alloc_clean(arg, value) bind(C)
             use iso_c_binding
             implicit none
             integer(c_int) :: arg
-       end     
+       end
     end interface
 
     integer(c_int), pointer :: arg
@@ -94,7 +86,7 @@ subroutine sub_dealloc(arg) bind(C)
     if ( .not. associated(arg) ) then
       print*, "arg is not associated!"
       ERROR STOP 20
-    else 
+    else
       deallocate(arg)
     endif
 
@@ -136,11 +128,11 @@ integer(c_int) function compute(arg,opt) bind(C)
 
     if(present(opt)) then
         if(arg .eq. opt) then
-          compute = 2*opt 
+          compute = 2*opt
         else
-          compute = opt 
+          compute = opt
         endif
     else
-        compute = 0 
+        compute = 0
     endif
 end function

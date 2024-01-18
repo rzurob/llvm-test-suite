@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDefAccess
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 01, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type definition 
+!*  SECONDARY FUNCTIONS TESTED : Derived type definition
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  The accessibility 
-!*  
+!*  The accessibility
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -41,9 +33,9 @@
 
       INTEGER(K)   :: I
       CHARACTER(L) :: C
-      
+
     CONTAINS
-      PROCEDURE, PASS :: IntFun 
+      PROCEDURE, PASS :: IntFun
     END TYPE
 
   CONTAINS
@@ -88,7 +80,7 @@
     END FUNCTION
 
 
-  END MODULE 
+  END MODULE
 
   PROGRAM dtParamTypeDefAccess
   USE M
@@ -97,8 +89,8 @@
 
 
   TYPE(DT(4,4))  :: T=DT(4,4)(-1, "1234"), Q=DT(4,4)(1, "")
-  
-  Q = T%IntFun()     
+
+  Q = T%IntFun()
   IF ( Q%I .NE. -1 )     STOP 11
   IF ( Q%C .NE. "1234" ) STOP 12
 
@@ -108,7 +100,7 @@
   IF ( Q%I .NE. -2 )     STOP 23
   IF ( Q%C .NE. "4321" ) STOP 24
 
-  Q2 = V%IntFun() 
+  Q2 = V%IntFun()
   IF ( V%I  .NE. -3 )     STOP 31
   IF ( V%C  .NE. "4321" ) STOP 32
   IF ( Q2%I .NE. -3 )     STOP 33

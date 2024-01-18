@@ -1,33 +1,25 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocateWithTypeSpec02 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : January 20, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !*  SECONDARY FUNCTIONS TESTED :
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : Deferred LEN parameter 
+!*  KEYWORD(S)                 : Deferred LEN parameter
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* allocate-stmt is 
+!* allocate-stmt is
 !*   ALLOCATE ( [ type-spec :: ] allocation-list [, alloc-opt-list ] )
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
@@ -44,7 +36,7 @@ MODULE Mod
 END MODULE Mod
 PROGRAM AllocateWithTypeSpec02
       USE Mod
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       INTEGER(8) :: i
       INTEGER(4) :: stat
@@ -61,7 +53,7 @@ PROGRAM AllocateWithTypeSpec02
 
       IF ( ALLOCATED(c1%my_arr)) STOP 14
 
-      ALLOCATE(c1%my_arr(c1%l1), SOURCE=(/(i, i = 1, c1%l1)/), STAT=stat, ERRMSG=errmsg) 
+      ALLOCATE(c1%my_arr(c1%l1), SOURCE=(/(i, i = 1, c1%l1)/), STAT=stat, ERRMSG=errmsg)
       IF (stat .NE. 0) STOP 15
       IF (size(c1%my_arr) .NE. c1%l1 ) STOP 16
 

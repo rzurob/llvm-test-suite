@@ -1,28 +1,17 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
-!*                                associate procedure pointer with c function 
+!*  DESCRIPTION                :
+!*                                associate procedure pointer with c function
 !*                                pointer pointing to function returning
-!*                                c long double. Also associate procedure 
-!*                                pointer with c function pointer pointing to 
+!*                                c long double. Also associate procedure
+!*                                pointer with c function pointer pointing to
 !*                                subroutine. Check function result as
-!*                                well as argument result. 
+!*                                well as argument result.
 !*                                c function pointer is derived type
 !*                                component.
 !* ===================================================================
@@ -33,11 +22,11 @@ program procptrBindcProc22b
 
    type dt
        type(C_FUNPTR) :: cptr
-       type(C_FUNPTR) :: cfunptr 
+       type(C_FUNPTR) :: cfunptr
    end type
    interface
        subroutine csub(i) bind(c)
-          import C_PTR 
+          import C_PTR
           type(C_PTR) :: i
        end subroutine csub
    end interface
@@ -50,7 +39,7 @@ program procptrBindcProc22b
 
    type(dt) :: dtype
    real(C_LONG_DOUBLE), target :: i
-   type(C_PTR) :: j, res 
+   type(C_PTR) :: j, res
    real(C_LONG_DOUBLE), pointer :: p, pp
    logical*4 precision_R6
 

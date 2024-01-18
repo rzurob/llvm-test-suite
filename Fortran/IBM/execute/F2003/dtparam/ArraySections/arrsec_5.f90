@@ -1,26 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArraySections/arrsec_5.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jul. 09, 2008
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 353925
 !*
 !*  DESCRIPTION:
 !*
 !*  6.2.2.3.1 Subscript triplet, 11-17:
-!*  When the stride is positive, the subscripts specified by a triplet form a 
+!*  When the stride is positive, the subscripts specified by a triplet form a
 !*  regularly spaced sequence of integers beginning with the first subscript and
-!*  proceeding in increments of the stride to the largest such integer not 
-!*  greater than the second subscript; the sequence is empty if the first 
+!*  proceeding in increments of the stride to the largest such integer not
+!*  greater than the second subscript; the sequence is empty if the first
 !*  subscript is greater than the second.
 !*
-!*  When the stride is negative, the sequence begins with the first subscript 
-!*  and proceeds in increments of the stride down to the smallest such integer 
+!*  When the stride is negative, the sequence begins with the first subscript
+!*  and proceeds in increments of the stride down to the smallest such integer
 !*  equal to or greater than the second subscript; the sequence is empty if the
 !*  second subscript is greater than the first.
 !*

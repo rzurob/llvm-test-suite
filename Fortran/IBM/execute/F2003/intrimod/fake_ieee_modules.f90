@@ -3,14 +3,14 @@
      module ieee_arithmetic
 
             type ieee_round_type
-                sequence 
+                sequence
                 integer rt
             end type
 
             type ieee_status_type
                 integer :: st = 3
             end type
-             
+
             type(ieee_round_type), parameter :: IEEE_NEAREST=ieee_round_type(2)
 
             character*40 :: c1='This is a fake ieee_arithmetic module.'
@@ -45,7 +45,7 @@
                     print *, "You've called a wrong ieee routine."
                 end function ieee_next_after
 
-                function ieee_support_datatype(r4)    
+                function ieee_support_datatype(r4)
                     real*4 r4
                     logical ieee_support_datatype
                     print *, "You've called a wrong ieee routine."
@@ -60,7 +60,6 @@
                 end function ieee_is_finite
 
         end module ieee_arithmetic
-
 
         module ieee_exceptions
 
@@ -103,7 +102,6 @@
                 end subroutine ieee_get_flag
 
         end module ieee_exceptions
-
 
         module xlf_fp_util
             integer, parameter :: FPSCR_KIND=4

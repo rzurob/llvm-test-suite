@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mult_type_bound_public_private.f 
-!*
-!*  PROGRAMMER                 : Paul Liu
 !*  DATE                       : 2011-05-20
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : within module
 !*                               public & private
@@ -63,7 +53,7 @@
         subroutine real_dog()
           print *, "real_dog"
         end subroutine
-		
+
       end module
 
       program t

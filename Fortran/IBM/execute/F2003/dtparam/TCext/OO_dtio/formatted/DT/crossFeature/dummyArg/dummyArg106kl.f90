@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dummyArg106kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from dummyArg106 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Argument Association: scalar unlimited
@@ -148,14 +140,14 @@ use m
    allocate ( u1, source = b1 )
 
    call foo ( u1 )
-   
+
    select type ( u1 )
       type is ( base(4) )
          if ( u1%i /=  104 ) error stop 10_4
    end select
-      
+
    call bar ( u1 )
-   
+
    select type ( u1 )
       type is ( base(4) )
          if ( u1%i /=  105 ) error stop 11_4
@@ -171,12 +163,12 @@ use m
    end select
    allocate ( u2, source = c1 )
    call boo ( u2 )
-   
+
    select type ( u2 )
       type is ( child(4,4) )
          if ( ( u2%i /=  203 ) .or. ( u2%j /= 204 ) ) error stop 13_4
    end select
-   
+
    print *, rbuffer
 
 end program

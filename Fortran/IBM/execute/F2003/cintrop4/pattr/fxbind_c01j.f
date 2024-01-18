@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,26 +13,18 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c01j.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute 
+!* DESCRIPTION                  : Test: BINC(C) attribute
 !*                                with different intrinsic data type,
 !*                                integer*1, integer*2, integer*4,
-!*                                integer*8, real*4, real*8, 
+!*                                integer*8, real*4, real*8,
 !*                                character(1). Using external
 !*                                subroutine,interface.C calls Fortran.
 !*                                with binding lables
@@ -86,4 +73,4 @@
            ch1 = 'd'
        end subroutine extsub_char
 
-      
+

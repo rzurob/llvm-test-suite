@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Misc15.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Misc15.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
-! %EXECARGS: 
-! %POSTCMD:  
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             :  Misc15.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 09, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  
-!*  Invocation of proc ptr 
-!*  
-!*  
+!*
+!*  Invocation of proc ptr
+!*
 !*  (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -78,7 +70,7 @@
   DO I=ProcPtr(10000), ProcPtr(1), ProcPtr(-1)
     IF (ProcPtr(ProcPtr(I)) .NE. I ) STOP 12
     SELECT CASE (ProcPtr(I))
-    CASE DEFAULT 
+    CASE DEFAULT
       IF (ProcPtr(I) .NE. I ) STOP 13
     END SELECT
   END DO
@@ -89,7 +81,7 @@
   DO I=V%ProcPtr(10000), V%ProcPtr(1), V%ProcPtr(-1)
     IF (V%ProcPtr(V%ProcPtr(I)) .NE. I ) STOP 22
     SELECT CASE (V%ProcPtr(I))
-    CASE DEFAULT 
+    CASE DEFAULT
       IF (V%ProcPtr(I) .NE. I ) STOP 23
     END SELECT
 

@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : nullActualArgAssum02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : nullActualArgAssum02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 23 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD]) 
+!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD])
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.88 
+!* 1. TEST SECTION 13.7.88
 !* 2. NULL([MOLD])
 !* 3. NULL(MOLD) IS USED AS ACTUAL ARGUMENT WHEN DUMMY ARGUMENT HAS ASSUMED LENGTH
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -30,7 +22,7 @@ module m
      integer,len :: l
      character(l),pointer     :: c1=>null()
      character(l),allocatable :: c2
-   end type 
+   end type
 end module
 
 program nullActualArgAssum02
@@ -40,7 +32,7 @@ program nullActualArgAssum02
    type(dtp(3)),pointer     :: dtp1=>null()
    type(dtp(3)),allocatable :: dtp2
    type(dtp(3)),pointer     :: dtp3(:)=>null()
-   type(dtp(3)),allocatable :: dtp4(:)  
+   type(dtp(3)),allocatable :: dtp4(:)
 
    if(associated(dtp1))                            error stop 10_4
    if(associated(dtp3))                            error stop 11_4
@@ -61,7 +53,7 @@ program nullActualArgAssum02
    if(.not. associated(dtp1))                      error stop 14_4
    if(.not. associated(dtp3))                      error stop 15_4
    if(.not. allocated(dtp2))                       error stop 16_4
-   if(.not. allocated(dtp4))                       error stop 17_4         
+   if(.not. allocated(dtp4))                       error stop 17_4
 
    if(.not. associated(dtp1%c1))                   error stop 17_4
    if(.not. associated(dtp3(1)%c1))                error stop 18_4
@@ -97,7 +89,7 @@ program nullActualArgAssum02
    call nullChar2(null(dtp4(2)%c2))
 
    call nullDTP1(null(dtp1))
-   call nullDTP3(null(dtp3)) 
+   call nullDTP3(null(dtp3))
 
    call nullDTP2(null(dtp2))
    call nullDTP4(null(dtp4))
@@ -106,26 +98,26 @@ program nullActualArgAssum02
 
       subroutine nullChar1(ch)
          character(*),pointer :: ch
-         
+
          if(associated(ch))                        error stop 29_4
-         
+
       end subroutine
 
       subroutine nullChar2(ch)
          character(*),allocatable :: ch
 
          if(allocated(ch))                         error stop 30_4
-      end subroutine 
+      end subroutine
 
       subroutine nullDTP1(dt)
-         type(dtp(*)),pointer :: dt 
+         type(dtp(*)),pointer :: dt
 
          if(associated(dt))                        error stop 31_4
 
       end subroutine
 
       subroutine nullDTP2(dt)
-         type(dtp(*)),allocatable :: dt 
+         type(dtp(*)),allocatable :: dt
 
          if(allocated(dt))                         error stop 32_4
       end subroutine

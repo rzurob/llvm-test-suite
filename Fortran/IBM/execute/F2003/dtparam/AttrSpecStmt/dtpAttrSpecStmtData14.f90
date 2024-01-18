@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpAttrSpecStmtData14
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 21, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- DATA statement
 !*
-!*  A zero-sized array or a data-implied-do with an iteration count of zero contributes 
-!*  no variables to the expanded sequence of variables 
-!*   
+!*  A zero-sized array or a data-implied-do with an iteration count of zero contributes
+!*  no variables to the expanded sequence of variables
+!*
 !*  (ice)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -71,7 +62,7 @@
                                                DT1=DT1(1,3,4,5)(1),            &
                                                  I=1,                          &
                                                  C=CHAR(1),                    &
-                                               Ptr=NULL() )                     
+                                               Ptr=NULL() )
 
   TYPE(DT0(1,3)),         PARAMETER :: C02=DT0(1,3)()
   TYPE(DT1(1,3,4,5)),     PARAMETER :: C12=DT1(1,3,4,5)(DT0=DT0(1,3)(),R=2)
@@ -79,7 +70,7 @@
                                                DT1=DT1(1,3,4,5)(1),            &
                                                  I=2,                          &
                                                  C=CHAR([1,2,3,4,5,6,7]),      &
-                                               Ptr=NULL() )                     
+                                               Ptr=NULL() )
 
   TYPE(DT0(1,3)),         PARAMETER :: C03=DT0(1,3)()
   TYPE(DT1(1,3,4,5)),     PARAMETER :: C13=DT1(1,3,4,5)(DT0=DT0(1,3)(),R=3)
@@ -87,7 +78,7 @@
                                                DT1=DT1(1,3,4,5)(1),            &
                                                  I=3,                          &
                                                  C=CHAR(3),                    &
-                                               Ptr=NULL() )                     
+                                               Ptr=NULL() )
 
   INTEGER, PARAMETER  :: N=31
   INTEGER :: I,J

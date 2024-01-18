@@ -15,8 +15,8 @@
       kkk = pp1(char1)
       if (kkk .ne. 10) stop 11
       end
-      
+
       function func1()
         procedure(len), pointer :: func1
-        func1 => len 
+        func1 => len
       end function

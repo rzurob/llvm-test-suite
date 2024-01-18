@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
-!*  TEST CASE NAME             : arrsec3_assumed_shape.f 
-!*  PROGRAMMER                 : Gaby Baghdadi (adopted from David Nichols' 
+!*  TEST CASE NAME             : arrsec3_assumed_shape.f
 !*                               arrsec1_assumed_shape.f)
 !*  DATE                       : Dec 31, 2008
 !*  ORIGIN                     : XLF Development
@@ -12,7 +9,6 @@
 !*  DESCRIPTION
 !*
 !*      Test that array sections can be passed as assumed shape arrays
-!*      
 !*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890

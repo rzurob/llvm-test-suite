@@ -3,20 +3,10 @@
 ! opt variations: -qck -qnok -qnol
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Characters with deferred length type parameter
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : scalar character with deferred length as structure component with
 !*                               derived type intrinsic assignment
@@ -51,7 +41,7 @@ program deferLenIntrinAssgn004
 
    type(base(4,20))  :: b1
    type(base1(4,20)) :: b2
-   
+
    character(0), target :: c0
    character(10), target :: c10 = "abcdefghij"
    character(50), target :: c50 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"

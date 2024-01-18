@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcC1209.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcC1209.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 01, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  C1209 (R1206) A procedure-name shall not specify a procedure that is 
+!*  C1209 (R1206) A procedure-name shall not specify a procedure that is
 !*  specified previously in any procedure-stmt in any accessible interface with
-!*  the same generic identifier. 
+!*  the same generic identifier.
 !*  This one is removed by feature 296275 -- we can test the opposite
-!*  
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -48,32 +41,32 @@
   CONTAINS
 
   FUNCTION ModFun(Arg)
-  INTEGER :: Arg, ModFun   
-    ModFun = Arg 
+  INTEGER :: Arg, ModFun
+    ModFun = Arg
   END FUNCTION
 
 
   END MODULE
 
   FUNCTION ExtProc(Arg)
-  INTEGER :: Arg, ExtProc   
-    ExtProc = Arg 
+  INTEGER :: Arg, ExtProc
+    ExtProc = Arg
   END FUNCTION
 
-  PROGRAM mProcC1209 
+  PROGRAM mProcC1209
   USE M
 
   PROCEDURE(ModFun), POINTER :: ProcPtr
   PROCEDURE(ModFun)          :: ExtProc
 
   INTERFACE Fun1
-    PROCEDURE ProcPtr 
-    PROCEDURE ProcPtr 
+    PROCEDURE ProcPtr
+    PROCEDURE ProcPtr
   END INTERFACE
 
   INTERFACE Fun2
-    PROCEDURE ExtProc 
-    PROCEDURE ExtProc 
+    PROCEDURE ExtProc
+    PROCEDURE ExtProc
   END INTERFACE
 
   IF (Fun(1)    .NE. 1 ) STOP 11

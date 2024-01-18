@@ -1,29 +1,20 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank601f.f
-!*
-!* ORIGINAL PROGRAMMER          : Dorra Bouchiha
-!* PROGRAMMER                   : Izhak Jakov
 !* DATE                : September 9, 2015
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
-!* REQUIRED COMPILER OPTIONS    : 
+!* REQUIRED COMPILER OPTIONS    :
 !*                               (use -D_DEBUG for a debug version)
 !*
 !* DESCRIPTION                  : Calling a BIND(C) procedure defined in Fortran from C
 !*                                - array is rank 1
-!*                                - CFI_attribute_other: Lower bound is always 1 on the Fortran side 
+!*                                - CFI_attribute_other: Lower bound is always 1 on the Fortran side
 !*                                - type c_int
 !*                                - nested with bind(c)=>bind(c) call
-!*
 !*
 !* Actual Argument:
 !*
@@ -44,7 +35,7 @@ program main
       use ISO_C_BINDING, ONLY : C_FUNPTR
       type(c_funptr), value:: x
     end subroutine cfun
-    
+
     subroutine sub(arr, r, s, lb, ub) bind(c)
         implicit none
         integer :: arr(..), r, s, lb, ub
@@ -54,19 +45,19 @@ program main
         integer, contiguous :: arr(..)
     end subroutine sub_contig
   end interface
-    
+
   type(c_funptr) :: cproc
   cproc = c_funloc(fcheck)
   call cfun(cproc)
-  
+
   contains
   subroutine fcheck(flag, arr) bind(c)
-      integer        :: i 
+      integer        :: i
       integer(c_int) :: flag
       integer(c_int) :: arr(..)
-  
-  !    interface 
-  !        subroutine sub(arr, r, s, lb, ub) bind(c)  
+
+  !    interface
+  !        subroutine sub(arr, r, s, lb, ub) bind(c)
   !            implicit none
   !            integer :: arr(..), r, s, lb, ub
   !        end subroutine sub
@@ -74,15 +65,15 @@ program main
   !            implicit none
   !            integer, contiguous :: arr(..)
   !        end subroutine sub_contig
-  !    end interface 
-  
-  !      /* 
+  !    end interface
+
+  !      /*
   !       flag set to 0 when lbound is 1
   !       flag set to 1 when lbound is 1
   !       flag set to 2 when lbound is 1
   !       flag set to -1 when array is not contiguous and lbound is 1
   !       */
-     
+
       if ( flag .eq. -1 ) then
           if(           is_contiguous(arr) ) ERROR STOP 11
           if( rank(arr)      .ne.        1 ) ERROR STOP 12
@@ -132,7 +123,7 @@ program main
   end subroutine fcheck
 
 end program main
-  
+
 subroutine sub(arr, r, s, lb, ub) bind(c)
     implicit none
     integer :: arr(..), r, s, lb, ub
@@ -144,7 +135,7 @@ subroutine sub(arr, r, s, lb, ub) bind(c)
     if( ubound(arr,1)  .ne.       ub ) ERROR STOP 105
 end subroutine sub
 
-subroutine sub_contig(arr) bind(c)  
+subroutine sub_contig(arr) bind(c)
     implicit none
     integer, contiguous :: arr(..)
 

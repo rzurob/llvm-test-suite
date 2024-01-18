@@ -2,30 +2,23 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f fxstio123.dat
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio123.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ, INQUIRE
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,13 +27,13 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/19/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/19/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  program fxstio123 
+  program fxstio123
 
      implicit none
      integer    ios
@@ -54,9 +47,9 @@
      character*15  access, form, asynch, stream, position
      integer    pos, old_size, new_size
 
-!********************************************************** 
+!**********************************************************
 !   Opening a new file and writing some data into it      *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio123.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='NEW', IOSTAT=ios, ERR=90, ACTION='WRITE' )
@@ -71,9 +64,9 @@
      CLOSE(1)
 
 
-!********************************************************** 
+!**********************************************************
 !   Opening the file again with POSITION='APPEND'         *
-!********************************************************** 
+!**********************************************************
 
      OPEN(2, FILE='fxstio123.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &  STATUS='OLD', IOSTAT=ios, ERR=90, ACTION='READWRITE', POSITION='APPEND')
@@ -84,88 +77,88 @@
      if ( access .ne. 'STREAM' ) error stop 20
      if ( stream .ne. 'YES' ) error stop 21
      if ( form .ne. 'FORMATTED' ) error stop 22
-     if ( asynch .ne. 'NO' ) error stop 23 
-     if ( pos .ne. 108 ) error stop 24 
-     if ( position .ne. 'APPEND' ) error stop 25 
+     if ( asynch .ne. 'NO' ) error stop 23
+     if ( pos .ne. 108 ) error stop 24
+     if ( position .ne. 'APPEND' ) error stop 25
 
 !
 !    Writing a record to the end of file
-!     
+!
      WRITE(2, FMT='(A25)', IOSTAT=ios, ERR=91) ch2_in
      INQUIRE(2, POS=pos, SIZE=new_size)
-     if ( pos .ne. 134 ) error stop 27 
-     if ( new_size .ne. old_size + 26) error stop 28 
+     if ( pos .ne. 134 ) error stop 27
+     if ( new_size .ne. old_size + 26) error stop 28
 
      READ(2, FMT='(A25)', IOSTAT=ios, ERR=92, POS=108) ch2_out
      if ( ch2_out .ne. ch2_in ) error stop 29
      INQUIRE(2, POS=pos)
-     if ( pos .ne. 134 ) error stop 30 
+     if ( pos .ne. 134 ) error stop 30
 
      CLOSE(2)
 
 
-!********************************************************** 
+!**********************************************************
 !   Opening the file again with POSITION='REWIND'         *
-!********************************************************** 
+!**********************************************************
 
      OPEN(3, FILE='fxstio123.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &  STATUS='OLD', IOSTAT=ios, ERR=90, ACTION='READWRITE', POSITION='REWIND')
 
      INQUIRE(3, POS=pos, POSITION=position, SIZE=old_size)
 
-     if ( pos .ne. 1 ) error stop 35 
-     if ( position .ne. 'REWIND' ) error stop 36 
+     if ( pos .ne. 1 ) error stop 35
+     if ( position .ne. 'REWIND' ) error stop 36
 
 !
 !    Writing a record to the beginning of file
-!     
+!
      WRITE(3, FMT='(A25)', IOSTAT=ios, ERR=91) ch2_in
      INQUIRE(3, POS=pos, SIZE=new_size)
-     if ( pos .ne. 27 ) error stop 37 
-     if ( new_size .ne. old_size ) error stop 38 
+     if ( pos .ne. 27 ) error stop 37
+     if ( new_size .ne. old_size ) error stop 38
 
      READ(3, FMT='(A25)', IOSTAT=ios, ERR=92, POS=1) ch2_out
      if ( ch2_out .ne. ch2_in ) error stop 39
      INQUIRE(3, POS=pos)
-     if ( pos .ne. 27 ) error stop 40 
+     if ( pos .ne. 27 ) error stop 40
 
      CLOSE(3)
 
-!********************************************************** 
+!**********************************************************
 !   Opening the file again with POSITION='ASIS'         *
-!********************************************************** 
+!**********************************************************
 
      OPEN(4, FILE='fxstio123.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &  STATUS='OLD', IOSTAT=ios, ERR=90, ACTION='READWRITE', POSITION='ASIS')
 
      INQUIRE(4, POS=pos, POSITION=position, SIZE=old_size)
 
-     if ( pos .ne. 1 ) error stop 45 
-     if ( position .ne. 'REWIND' ) error stop 46 
+     if ( pos .ne. 1 ) error stop 45
+     if ( position .ne. 'REWIND' ) error stop 46
 
 !
 !    Writing a record to the current position of file
-!     
+!
      WRITE(4, FMT='(A25)', IOSTAT=ios, ERR=91) ch1_in
      INQUIRE(4, POS=pos, SIZE=new_size)
-     if ( pos .ne. 27 ) error stop 47 
-     if ( new_size .ne. old_size ) error stop 48 
+     if ( pos .ne. 27 ) error stop 47
+     if ( new_size .ne. old_size ) error stop 48
 
      READ(4, FMT='(A25)', IOSTAT=ios, ERR=92, POS=1) ch1_out
      if ( ch1_out .ne. ch1_in ) error stop 49
      INQUIRE(4, POS=pos )
-     if ( pos .ne. 27 ) error stop 50 
+     if ( pos .ne. 27 ) error stop 50
 
      CLOSE(4, STATUS='DELETE')
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 93   print *, "Error while reading beyond the EOF: IOSTAT = ", ios
-     error stop 93 
+     error stop 93
 
    end program

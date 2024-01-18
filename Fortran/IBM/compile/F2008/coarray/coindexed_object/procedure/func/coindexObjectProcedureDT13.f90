@@ -1,13 +1,8 @@
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : coindexObjectProcedureDT13.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Shahid Alam
 !*  DATE                       : 2011-05-20
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coindex object Procedure Calls
 !*
@@ -15,18 +10,17 @@
 !*
 !*  REFERENCE                  : Feature Number 388003
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
 !*  This program tests the coindex object procedure calls of derived type
 !*
-!*  - Check for Codimension with deferred shape not allowed 
+!*  - Check for Codimension with deferred shape not allowed
 !*  - Check for Polymorphic co-array not yet supported
 !*
 !*  NOTE:

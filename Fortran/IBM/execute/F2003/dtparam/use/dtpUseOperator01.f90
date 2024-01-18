@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUseOperator01
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-08-25
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTP and USE
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 355310
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : user-defined operators
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -214,7 +208,7 @@ program dtpUseOperator01
   print *, "p245vb:", p245vb
   print *, "p245vc:", p245vc
   print *, "p245vd:", p245vd
-  
+
   if (p245va /= p245vd) stop 21
   if (p245va == p245vb) stop 22
   if (p245va == p245vc) stop 23
@@ -234,7 +228,7 @@ program dtpUseOperator01
   print *, "p3454vb:", p3454vb
   print *, "p3454vc:", p3454vc
   print *, "p3454vd:", p3454vd
-  
+
   if (p3454va /= p3454vd) stop 31
   if (p3454va == p3454vb) stop 32
   if (p3454va == p3454vc) stop 33
@@ -250,7 +244,7 @@ program dtpUseOperator01
   print *, "p243vb:", p243vb
   print *, "p243vc:", p243vc
   print *, "p243vd:", p243vd
-  
+
   if (p243va /= p243vd) stop 41
   if (p243va == p243vb) stop 42
   if (p243va == p243vc) stop 43

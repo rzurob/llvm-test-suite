@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : BASync
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-12-30
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 BLOCK
 !*  SECONDARY FUNCTIONS TESTED : var declared in containing scope marked as async in block
@@ -37,7 +33,7 @@ program BASync
 
   open(IN_UNIT, file="BASync.in", status="OLD", access="DIRECT", asynch="YES", recl=(ASIZE+1)*DATA_WIDTH)
   read(IN_UNIT, rec=1) i0obvious, d1obvious(1:ASIZE/2)  ! Read in 1st set of data
-                                                        ! d1obvious implicitly given the asynchronous attribute by the read 
+                                                        ! d1obvious implicitly given the asynchronous attribute by the read
 
   print *, trim(identifyType('o.d1o',d1obvious(1)))
   print *, trim(identifyType('o.i0o',i0obvious))
@@ -73,5 +69,5 @@ contains
       class default;          write(identifyType,*) label, ' invalid'
     end select
   end function
-  
+
 end program BASync

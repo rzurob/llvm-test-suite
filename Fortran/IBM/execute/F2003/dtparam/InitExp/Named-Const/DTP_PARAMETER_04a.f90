@@ -1,30 +1,21 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_PARAMETER_04a.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : PARAMETER 
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : PARAMETER
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE :: Base(k1, l1)
@@ -80,29 +71,29 @@ MODULE Mod
         IF ( Arg%k2 .NE. Obj%k2 ) STOP 22
         IF ( Arg%l2 .NE. Obj%l2 ) STOP 23
         IF ( Arg%l3 .NE. Obj%l3 ) STOP 24
-    
+
         IF ( SIZE(Arg%A0) .NE. SIZE(Obj%A0) ) STOP 25
         IF ( LEN(Arg%C0)  .NE.  LEN(Obj%C0) ) STOP 26
         IF ( LEN(Arg%C1)  .NE.  LEN(Obj%C1) ) STOP 27
         IF ( LEN(Arg%C2)  .NE.  LEN(Obj%C2) ) STOP 28
-    
+
         IF ( ANY(Arg%A0   .NE.      Obj%A0) ) STOP 29
         IF ( TRIM(Arg%C0) .NE. TRIM(Obj%C0) ) STOP 30
         IF ( TRIM(Arg%C1) .NE. TRIM(Obj%C1) ) STOP 31
         IF ( TRIM(Arg%C2) .NE. TRIM(Obj%C2) ) STOP 32
         IF ( Arg%A2       .NE.       Obj%A2 ) STOP 33
-    
+
         IF ( Arg%cmp%k1 .NE. Obj%cmp%k1 ) STOP 34
         IF ( Arg%cmp%l1 .NE. Obj%cmp%l1 ) STOP 35
         IF ( SIZE(Arg%cmp%A0) .NE. SIZE(Obj%cmp%A0) ) STOP 36
         IF ( LEN(Arg%cmp%C0)  .NE.  LEN(Obj%cmp%C0) ) STOP 37
         IF ( ANY(Arg%cmp%A0   .NE.      Obj%cmp%A0) ) STOP 38
         IF ( TRIM(Arg%cmp%C0) .NE. TRIM(Obj%cmp%C0) ) STOP 39
-    
+
         IF ( ASSOCIATED(Arg%ptr) .nEQV. ASSOCIATED(Obj%ptr) ) STOP 40
-    
+
       END SUBROUTINE
-    
+
 END MODULE
 PROGRAM DTP_PARAMETER_04a
       USE Mod
@@ -113,7 +104,7 @@ PROGRAM DTP_PARAMETER_04a
       TYPE(NextGen(4,3,4,3,3)), PARAMETER :: n1 = NextGen(4,3,4,3,3)       &
           ( C1 = "XYZ", C2 = "ZYX", A2 = 1234, ptr = null(), cmp = Base(4,3)() )
       TYPE(NextGen(4,3,4,3,3)), PARAMETER :: n2 = n1, n3 = n2
-     
+
       TYPE(Base(4,2)), TARGET :: btgt = b3
       TYPE(NextGen(4,3,4,3,3)), TARGET :: ntgt = n3
       CLASS(Base(4,:)), POINTER :: poly

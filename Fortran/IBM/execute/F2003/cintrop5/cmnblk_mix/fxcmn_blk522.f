@@ -2,35 +2,28 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk522 cxcmn_blk502
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f fxcmn_blk522.o cxcmn_blk502.o fxcmn_blk522
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that 1-dimensional array variables
 !*				 of default data types inside of common blocks are
-!*				 interoperable with C variables 
+!*				 interoperable with C variables
 !*
 !*				 Test:  BIND(C) statement with binding label in external subroutine
 !*
@@ -54,8 +47,8 @@ subroutine extern_fsub()
         implicit none
 	logical precision_r4
 
-        integer :: 	int_d(5) 
-        real :: 	real_d(5) 
+        integer :: 	int_d(5)
+        real :: 	real_d(5)
         character 	char_d(16)
 
 
@@ -63,14 +56,14 @@ subroutine extern_fsub()
 !      COMMON statement with same COMMON block repeated numourous times;
 !      BIND(C) statement with binding label with one bind entity
 ! ----------------------------------------------------------------------------
-        common /blk_d/         int_d               , /blk_d/ real_d           , /blk_d/   char_d                                                                               
+        common /blk_d/         int_d               , /blk_d/ real_d           , /blk_d/   char_d
         bind(c, Name='Bind_D') :: /blk_d/
 
 
 ! ----------------------------------------------------------------------------
-! Dafault Array Variables: 
+! Dafault Array Variables:
 !      1) Pass values into C sub-program
-!      2) Check values passed back from C sub-program after modifications 
+!      2) Check values passed back from C sub-program after modifications
 ! ----------------------------------------------------------------------------
 
 	!*** Default integer array
@@ -132,7 +125,7 @@ subroutine extern_fsub()
 	call csub_d()
 
 
-	!*** Verify values modified and passed back by C subroutine 
+	!*** Verify values modified and passed back by C subroutine
        	if ( int_d(5) .ne. 2100000009 )                          error stop 35
        	if ( int_d(4) .ne. -50 )                                 error stop 36
        	if ( int_d(3) .ne. -0 )                                  error stop 37
@@ -144,7 +137,7 @@ subroutine extern_fsub()
        	if ( .not. precision_r4( real_d(3),     -3.404443E+37 )) error stop 42
        	if ( .not. precision_r4( real_d(2),     -0.115494E-37 )) error stop 43
        	if ( .not. precision_r4( real_d(1),     1.175494E-39  )) error stop 44
-	
+
        	if ( char_d(1)   .ne.    '\f'    )                       error stop 45
        	if ( char_d(2)   .ne.    'N'     )                       error stop 46
        	if ( char_d(3)   .ne.    'o'     )                       error stop 47

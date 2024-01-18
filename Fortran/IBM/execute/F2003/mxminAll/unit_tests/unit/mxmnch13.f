@@ -3,7 +3,7 @@
 ! %MAIN: YES
 ! %PRECMD:
 ! %COMPOPTS: -qfixed
-! %GROUP: mxmnch13.f 
+! %GROUP: mxmnch13.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
@@ -12,26 +12,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mxmnch13
-!*
-!*  PROGRAMMER                 : John Zang
 !*  DATE                       : Oct. 20, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support character argument for MAX/
 !*                               MIN/MAXVAL/MINVAL/MAXLOC/MINLOC
 !*  SECONDARY FUNCTIONS TESTED : Functional test
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qfixed
 !*
 !*  DESCRIPTION                : MAX/MIN - Maximum or minimum value
 !*                               according to their collating sequence
-!*                               of ASCII characters. 
+!*                               of ASCII characters.
 !*                               MAXVAL/MINVAL - Maximum or minimum value
 !*                               of elements in a character array.
 !*                               MAXLOC/MINLOC - The location of maximum
@@ -45,7 +38,7 @@
       character(5) :: bb(2,2)
       allocate(aa(2,2),xx(2,2))
       aa = '!'
-      bb = '!' 
+      bb = '!'
       aa(2,1) = 'abc'
       bb(1,2) = 'xyz'
       xx = max(aa, bb, reshape((/'a','b','c','d'/), (/2,2/)))

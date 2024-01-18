@@ -13,18 +13,12 @@
 ! *********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : For IOMSG= variable in I/O statements.
 !*                             :
-!*  PROGRAMMER                 : Daniel Chen
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  FUNCTIONALITY TESTED       : IOMSG variable in Module.
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -41,8 +35,8 @@
               open(11, status='new')
               read(11, iomsg=iomsg_var)
             end subroutine sub
-        end module 
-        
+        end module
+
         PROGRAM MAIN
           use mod1
           call sub()

@@ -1,22 +1,16 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : deferedVariableSelector01
-!*  TEST CASE TITLE            : variable selector with Defered Length
 !*                               Parameter(s)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : July 22, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is a variable
 !*  SECONDARY FUNCTIONS TESTED : The Variable is has a Defered Length
 !*                               Parameter
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE

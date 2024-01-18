@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d355172.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d355172.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 19 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 19 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
@@ -26,12 +18,12 @@
 module m
    type B(l)
       integer,len :: l=5
-      character(:),pointer :: c1  
-      character(l)         :: c3=c2 
+      character(:),pointer :: c1
+      character(l)         :: c3=c2
    end type
 
    type :: A
-     type(B(2)) :: b 
+     type(B(2)) :: b
    end type
 end module
 

@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dummyArg002akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from dummyArg002a by Robert Ma)
 !*  DATE                       : 2007-08-07 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Dummy Argument Association
@@ -197,7 +189,7 @@ subroutine mywriteext ( dtv )
    character(200) :: msg
 
    write ( 1, iostat = stat, iomsg = msg ) dtv
-   
+
    select type ( dtv )
       type is ( base(*) ) ! tcx: (*)
          if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteb' ) ) error stop 9_4
@@ -214,7 +206,7 @@ subroutine myreadext ( dtv )
    character(200) :: msg
 
    read ( 1, iostat = stat, iomsg = msg ) dtv
-   
+
    select type ( dtv )
       type is ( base(*) ) ! tcx: (*)
          if ( ( stat /= 0 ) .or. ( msg /= 'dtioreadb' ) ) error stop 11_4

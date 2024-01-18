@@ -1,38 +1,30 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 24 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
-!* 3. DUMMY ARGUMENT IS INTENT(OUT) ALLOCATABLE OR POINTER 
+!* 3. DUMMY ARGUMENT IS INTENT(OUT) ALLOCATABLE OR POINTER
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
        type base(k1,l1)
           integer,kind :: k1
-          integer(k1%kind),len :: l1         
+          integer(k1%kind),len :: l1
        end type
-       
+
        type,extends(base) :: child(k2,l2)
-          integer(k1%kind),kind :: k2    
+          integer(k1%kind),kind :: k2
           integer(k2),len :: l2
        end type
       contains
@@ -46,7 +38,7 @@ module m
        end subroutine
 end module
 
-  program dtParameterInquirySelectTypeParam05 
+  program dtParameterInquirySelectTypeParam05
   use m
   implicit none
 
@@ -68,7 +60,7 @@ end module
   class(base(2,:)),pointer  :: p1 => null()
   class(base(2,:)),allocatable  :: a1
   type(child(a1%k1,2*5,4,3*max(3,5))),target :: a2
-  
+
   call check1(a1)
 
   select type(a1)
@@ -101,7 +93,7 @@ end module
        if(a1%l2%kind /=kind(a1%l2) .or. &
            a1%l2%kind /= 4)                             error stop 21_4
 
-  end select   
+  end select
 
 
   call check3(p1,a2)

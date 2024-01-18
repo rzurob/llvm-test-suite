@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with assignment
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: pass-obj specified with function result in assignment
 !*  KEYWORD(S)                 :
@@ -163,31 +152,31 @@ program genericAssignmentPass014
 
    i= gen_base_alloc(g1)
    print *,i
-   
+
    allocate ( b1, c1, g1 )
-   
+
    b1 = gen_base_alloc(b1)
-   
+
    c1 = gen_base_alloc(b1)
-   
+
    g1 = gen_base_alloc(b1)
-   
+
    print *, b1%i, c1%i, g1%i
-   
+
    b1 = gen_base_alloc(c1)
-   
+
    c1 = gen_base_alloc(c1)
-   
+
    g1 = gen_base_alloc(c1)
-   
+
    print *, b1%i, c1%i, c1%j, g1%i, g1%j
-   
+
    b1 = gen_base_alloc(g1)
-   
+
    c1 = gen_base_alloc(g1)
-   
+
    g1 = gen_base_alloc(g1)
-   
+
    print *, b1%i, c1%i, c1%j, g1%i, g1%j, g1%k
 
 end program

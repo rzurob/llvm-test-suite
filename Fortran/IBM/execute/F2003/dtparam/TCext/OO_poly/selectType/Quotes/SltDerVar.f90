@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltDerVar.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltTypeDerVar
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 15, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a var of derived type. This's a very basic usage 
+!*
+!*   The selector is a var of derived type. This's a very basic usage
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -58,7 +52,7 @@
     TYPE, EXTENDS(Base) :: Child    ! (4)
       INTEGER(K1)  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -81,13 +75,13 @@
   USE M
   IMPLICIT NONE
 
-  CLASS(*), ALLOCATABLE :: Var 
+  CLASS(*), ALLOCATABLE :: Var
 
   ALLOCATE(Var, SOURCE=Child(4)(BaseId=-1,ChildId=-2))
 
   SELECT TYPE (Var)
     CLASS DEFAULT
-      STOP 20   
+      STOP 20
     TYPE IS (INTEGER(4))
       STOP 21
     TYPE IS (Base(4))
@@ -97,11 +91,11 @@
     CLASS is (Child(4))
       STOP 24
     TYPE IS (Child(4))
-      IF ( Var%BaseId       .NE. -1 ) STOP 31 
-      IF ( Var%Base%BaseId  .NE. -1 ) STOP 32 
-      IF ( Var%ChildId      .NE. -2 ) STOP 33 
-      IF ( Var%Base%GetId() .NE. -1 ) STOP 34 
-      IF ( Var%GetId()      .NE. -2 ) STOP 35 
+      IF ( Var%BaseId       .NE. -1 ) STOP 31
+      IF ( Var%Base%BaseId  .NE. -1 ) STOP 32
+      IF ( Var%ChildId      .NE. -2 ) STOP 33
+      IF ( Var%Base%GetId() .NE. -1 ) STOP 34
+      IF ( Var%GetId()      .NE. -2 ) STOP 35
   END SELECT
 
 

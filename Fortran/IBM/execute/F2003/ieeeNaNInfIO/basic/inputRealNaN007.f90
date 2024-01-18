@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : inputRealNaN007.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 8, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -30,7 +24,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      use, intrinsic :: ieee_arithmetic 
+      use, intrinsic :: ieee_arithmetic
       implicit none
 
       real(4)  :: rl1
@@ -57,20 +51,20 @@
          rl1 = 0.0 ! reset rl1
 
          read(unit,'(G15.1)',iostat=ios) rl1
-         
+
          if ( is_iostat_end(ios) ) exit
 
          if ( .not. ieee_is_nan( rl1 ) ) call zzrc(1000_4+i)
 
          if ( ieee_class( rl1 ) .ne. ieee_signaling_nan ) call zzrc(2000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
          print *, "Error: No or bad input file"
          stop 1
       end if
-      
+
       rewind(unit) ! reposition the file to the beginning.
       i = 0
 
@@ -81,13 +75,13 @@
          rl2 = 0.0 ! reset rl2
 
          read(unit,'(G15.1)',iostat=ios) rl2
-         
+
          if ( is_iostat_end(ios) ) exit
 
          if ( .not. ieee_is_nan( rl2 ) ) call zzrc(3000_4+i)
 
          if ( ieee_class( rl2 ) .ne. ieee_signaling_nan ) call zzrc(4000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
@@ -105,13 +99,13 @@
          rl3 = 0.0 ! reset rl3
 
          read(unit,'(G15.1)',iostat=ios) rl3
-         
+
          if ( is_iostat_end(ios) ) exit
 
          if ( .not. ieee_is_nan( rl3equiv ) ) call zzrc(5000_4+i)
 
          if ( ieee_class( rl3equiv ) .ne. ieee_signaling_nan ) call zzrc(6000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
@@ -133,13 +127,13 @@
          rl1 = 0.0 ! reset rl1
 
          read(unit,'(G15.1)',iostat=ios) rl1
-         
+
          if ( is_iostat_end(ios) ) exit
 
          if ( .not. ieee_is_nan( rl1 ) ) call zzrc(7000_4+i)
 
          if ( ieee_class( rl1 ) .ne. ieee_quiet_nan ) call zzrc(8000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
@@ -157,13 +151,13 @@
          rl2 = 0.0 ! reset rl2
 
          read(unit,'(G15.1)',iostat=ios) rl2
-         
+
          if ( is_iostat_end(ios) ) exit
 
          if ( .not. ieee_is_nan( rl2 ) ) call zzrc(9000_4+i)
 
          if ( ieee_class( rl2 ) .ne. ieee_quiet_nan ) call zzrc(10000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
@@ -181,13 +175,13 @@
          rl3 = 0.0 ! reset rl3
 
          read(unit,'(G15.1)',iostat=ios) rl3
-         
+
          if ( is_iostat_end(ios) ) exit
 
          if ( .not. ieee_is_nan( rl3equiv ) ) call zzrc(11000_4+i)
 
          if ( ieee_class( rl3equiv ) .ne. ieee_quiet_nan ) call zzrc(12000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then

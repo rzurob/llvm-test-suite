@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC528
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 11, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
 !*  C528 (R501) If the VALUE attribute is specified, the length type parameter values
 !*  shall be omitted or specified by initialization expressions.
-!*   
-!*  
-!*  () 
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -44,7 +36,7 @@
     INTEGER(K)    :: I(L)=K
   END TYPE
 
-  INTERFACE 
+  INTERFACE
     SUBROUTINE ExtSub(T1, T2)
       TYPE :: DT(K, L)
         INTEGER, KIND :: K=4
@@ -58,7 +50,7 @@
   END INTERFACE
 
   CALL ExtSub(DT(K=1)(I=1), DT(K=2, L=3)(I=3))
- 
+
   END
 
   SUBROUTINE ExtSub(T1, T2)

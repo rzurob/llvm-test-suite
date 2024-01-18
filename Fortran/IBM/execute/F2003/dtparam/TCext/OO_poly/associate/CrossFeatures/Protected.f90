@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  Protected.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Protected 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Protected
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 09, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,11 +33,11 @@
 !*
 !*  DESCRIPTION
 !*    The selector is a protected entity
-!*    (comp failed-300949) 
+!*    (comp failed-300949)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   MODULE M
     TYPE :: DT(K1)    ! (4)
       INTEGER, KIND :: K1
@@ -52,7 +46,7 @@
       PROCEDURE, PASS   :: GetId
     END TYPE
 
-    CLASS(*), POINTER, PROTECTED :: T 
+    CLASS(*), POINTER, PROTECTED :: T
 
   CONTAINS
 
@@ -66,17 +60,17 @@
     CLASS(*), INTENT(IN) :: Arg
       ASSOCIATE( AS => Arg)
         ALLOCATE(T, SOURCE=As)
-      END ASSOCIATE 
-    END SUBROUTINE 
+      END ASSOCIATE
+    END SUBROUTINE
 
   END MODULE
- 
-  PROGRAM Protected 
+
+  PROGRAM Protected
 
   USE M
   IMPLICIT NONE
 
-  CALL Set(DT(4)(ID=-1)) 
+  CALL Set(DT(4)(ID=-1))
   ASSOCIATE( As => T )
 
     SELECT TYPE(As)
@@ -85,8 +79,8 @@
       IF ( As%ID      .NE. -1 ) STOP 30
       IF ( As%GetID() .NE. -1 ) STOP 31
 
-      CALL Set(DT(4)(ID=2)) 
- 
+      CALL Set(DT(4)(ID=2))
+
       SELECT TYPE(T)
       CLASS IS (DT(4))
 

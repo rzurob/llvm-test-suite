@@ -2,32 +2,17 @@
 ! ftcx_dtp -qck -qk -qnol -qnodefaultpv /tstdev/F2003/allocEnh/argAssociation/dummyArg009a1.f
 ! opt variations: -qnock -qnok -ql -qdefaultpv -qreuse=self
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 10/20/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : allocatable enhancement
 !                               Simple case tests for intrinsic assignment of a
 !                               derived type with allocatable component that is
 !                               of a type consistent with a type bound defined
 !                               assignment.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

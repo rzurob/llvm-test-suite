@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f206.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -118,7 +115,7 @@ call sub1_dvt(dvt1)
 							loop7: do doc7=1,SZA7
 			if (dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%i1 		.ne. 	dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%i1) 			error stop 1501
 			if (.not. precision_r4 (dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%r1,dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%r1)) 	error stop 1502
-			if (dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1 		.NEQV. 	dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1) 			error stop 1503	
+			if (dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1 		.NEQV. 	dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1) 			error stop 1503
 			if (.not. precision_x8 (dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%c1,dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%c1)) 	error stop 1504
 			if (dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%char1 	.ne. 	dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%char1) 		error stop 1505
 							end do loop7
@@ -130,19 +127,19 @@ call sub1_dvt(dvt1)
 	end do loop1
 
 contains
-  
+
 subroutine sub1_int(arg)
     integer*4 :: arg(:,:,:,:,:,:,:)
 	value arg
 	if (any (arg .ne. i1)) error stop 110
-	
+
 	if (size(arg) .ne. SZA1*SZA2*SZA3*SZA4*SZA5*SZA6*SZA7) 				error stop 101
 	if ( any(lbound(arg) .ne. (/1,1,1,1,1,1,1/))) 						error stop 102
 	if ( any(ubound(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 103
 	if (rank(arg) .ne. 7) 												error stop 104
 	if (any(shape(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 105
 
-	arg = 200	
+	arg = 200
 end subroutine
 
 subroutine sub1_r(arg)
@@ -167,7 +164,7 @@ subroutine sub1_r(arg)
 	if ( any(lbound(arg) .ne. (/1,1,1,1,1,1,1/))) 						error stop 202
 	if ( any(ubound(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 203
 	if (rank(arg) .ne. 7) 												error stop 204
-	if (any(shape(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 205	
+	if (any(shape(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 205
 	arg=4*atan(1.0)
 end subroutine
 
@@ -193,21 +190,21 @@ subroutine sub1_com(arg)
 	if ( any(lbound(arg) .ne. (/1,1,1,1,1,1,1/))) 						error stop 302
 	if ( any(ubound(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 303
 	if (rank(arg) .ne. 7) 												error stop 304
-	if (any(shape(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 305	
+	if (any(shape(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 305
 	arg=(5*atan(1.0),7*atan(1.0))
-end subroutine	
+end subroutine
 
 subroutine sub1_char(arg)
     character(10) :: arg(:,:,:,:,:,:,:)
 	value arg
-	if (any (arg .ne. c1)) error stop 113	
-	
+	if (any (arg .ne. c1)) error stop 113
+
 	if (size(arg) .ne. SZA1*SZA2*SZA3*SZA4*SZA5*SZA6*SZA7) 				error stop 401
 	if ( any(lbound(arg) .ne. (/1,1,1,1,1,1,1/))) 						error stop 402
 	if ( any(ubound(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 403
 	if (rank(arg) .ne. 7) 												error stop 404
-	if (any(shape(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 405	
-	arg = "abcdefghij"	
+	if (any(shape(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 405
+	arg = "abcdefghij"
 end subroutine
 
 subroutine sub1_lg(arg)
@@ -219,11 +216,11 @@ subroutine sub1_lg(arg)
 	if ( any(lbound(arg) .ne. (/1,1,1,1,1,1,1/))) 						error stop 502
 	if ( any(ubound(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 503
 	if (rank(arg) .ne. 7) 												error stop 504
-	if (any(shape(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 505	
+	if (any(shape(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 505
 	arg = .false.
-end subroutine	
+end subroutine
 
-subroutine sub1_dvt(arg)	
+subroutine sub1_dvt(arg)
     type(t1) :: arg(:,:,:,:,:,:,:)
 	value arg
 	loop1: do doc1=1,SZA1
@@ -235,7 +232,7 @@ subroutine sub1_dvt(arg)
 							loop7: do doc7=1,SZA7
 			if (arg(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%i1 		.ne. 	dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%i1) 			error stop 11501
 			if (.not. precision_r4 (arg(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%r1,dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%r1)) 	error stop 11502
-			if (arg(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1 		.NEQV. 	dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1) 			error stop 11503	
+			if (arg(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1 		.NEQV. 	dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1) 			error stop 11503
 			if (.not. precision_x8 (arg(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%c1,dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%c1)) 	error stop 11504
 			if (arg(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%char1 	.ne. 	dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%char1) 		error stop 11505
 							end do loop7
@@ -249,7 +246,7 @@ subroutine sub1_dvt(arg)
 	if ( any(lbound(arg) .ne. (/1,1,1,1,1,1,1/))) 						error stop 602
 	if ( any(ubound(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 603
 	if (rank(arg) .ne. 7) 												error stop 604
-	if (any(shape(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 605	
+	if (any(shape(arg) .ne. (/SZA1,SZA2,SZA3,SZA4,SZA5,SZA6,SZA7/))) 	error stop 605
 	arg	= t1(400,4*atan(1.0),.false.,(3*atan(1.0),7*atan(1.0)),"6pq94jv382")
 end subroutine
 

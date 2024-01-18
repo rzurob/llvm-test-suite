@@ -1,46 +1,32 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
 ! %PRECMD: ${TR_SRC}/scrisoi00.presh fxisoi06 cxisoi06
 ! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
-!*  SECONDARY FUNCTIONS TESTED : see below 
+!*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_INT_FAST16_T
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*
 !*	- testing C_INT_FAST16_T
 !*	- using external FORTRAN functions
@@ -53,7 +39,7 @@ integer(C_INT_FAST16_T) function fnt1(a)
    use ISO_C_BINDING
 
    integer(C_INT_FAST16_T) :: a(5)
-   
+
    do i = 1, 5
       if ( a(i) /= i ) error stop 20
       a(i) = i+1
@@ -115,7 +101,7 @@ integer(C_INT_FAST16_T) function fnt5(aa)
    use ISO_C_BINDING
 
    integer(C_INT_FAST16_T) :: aa(10,5)
-   
+
    do i = 1, 5
       do j = 1, 10
          if ( aa(j,i) /= i+j-1 ) error stop 28
@@ -158,7 +144,7 @@ integer(C_INT_FAST16_T) function fnt7(aa)
    use ISO_C_BINDING
 
    integer(C_INT_FAST16_T), intent(inout) :: aa(10,5)
-   
+
    do i = 1, 5
       do j = 1, 10
          if ( aa(j,i) /= i+j-1 ) error stop 34
@@ -173,7 +159,7 @@ integer(C_INT_FAST16_T) function fnt8(aa)
    use ISO_C_BINDING
 
    integer(C_INT_FAST16_T), intent(out) :: aa(10,5)
-   
+
    do i = 1, 5
       do j = 1, 10
          aa(j,i) = i+j

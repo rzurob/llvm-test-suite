@@ -1,31 +1,23 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_PARAMETER_06.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : PARAMETER
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* Defect: 364759 and 364814 
+!* Defect: 364759 and 364814
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE :: Base(k1, l1)
@@ -80,31 +72,31 @@ MODULE Mod
         IF ( Arg%k2 .NE. 4 ) STOP 22
         IF ( Arg%l2 .NE. 3 ) STOP 23
         IF ( Arg%l3 .NE. 3 ) STOP 24
-    
+
         IF ( SIZE(Arg%A0) .NE. 3 ) STOP 25
         IF ( LEN(Arg%C0)  .NE. 3 ) STOP 26
         IF ( LEN(Arg%C1)  .NE. 6 ) STOP 27
         IF ( LEN(Arg%C2)  .NE. 3 ) STOP 28
-    
+
         IF ( ANY(Arg%A0   .NE.   -1) ) STOP 29
         IF ( TRIM(Arg%C0) .NE. 'Bas' ) STOP 30
-        IF ( TRIM(Arg%C1) .NE. 'XYZ' ) STOP 31 
+        IF ( TRIM(Arg%C1) .NE. 'XYZ' ) STOP 31
         IF ( TRIM(Arg%C2) .NE. CHAR(Arg%k2+64) ) STOP 32
         IF ( Arg%A2       .NE. 1234 ) STOP 33
-    
+
         IF ( Arg%cmp%k1 .NE. Arg%k2 ) STOP 34
         IF ( Arg%cmp%l1 .NE. Arg%l3 ) STOP 35
         IF ( SIZE(Arg%cmp%A0) .NE. Arg%l3 ) STOP 36
         IF ( LEN(Arg%cmp%C0)  .NE. Arg%l3 ) STOP 37
         IF ( ANY(Arg%cmp%A0   .NE.   99) ) STOP 38
         IF ( TRIM(Arg%cmp%C0) .NE. 'IBM' ) STOP 39
-    
-        IF ( ASSOCIATED(Arg%ptr) ) THEN 
+
+        IF ( ASSOCIATED(Arg%ptr) ) THEN
              CALL Arg%ptr%sub1()
-        ENDIF 
-    
+        ENDIF
+
       END SUBROUTINE
-    
+
 END MODULE
 PROGRAM DTP_PARAMETER_06
       USE Mod
@@ -113,7 +105,7 @@ PROGRAM DTP_PARAMETER_06
 
       TYPE(NextGen(4,3,4,3,3)), PARAMETER :: n1 = NextGen(4,3,4,3,3)       &
           ( C1 = 'XYZ', A2 = 1234, ptr = null(), cmp = Base(4,3)(99, 'IBM') )
-     
+
       TYPE(Base(4,3)), TARGET :: btgt = b1
       TYPE(NextGen(4,3,4,3,3)), TARGET :: ntgt = n1
       CLASS(Base(4,:)), POINTER :: poly

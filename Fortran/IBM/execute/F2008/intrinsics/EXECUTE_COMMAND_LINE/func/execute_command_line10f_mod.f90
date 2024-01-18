@@ -1,4 +1,4 @@
-!*   create a module 
+!*   create a module
 MODULE Mod
       INTEGER, PARAMETER :: K = 10, P = 100
 

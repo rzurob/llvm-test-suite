@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : combinedAttr3.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-15
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : - Combination of attributes CONTIGUOUS,
 !*                                   INTENT and OPTIONAL
@@ -37,7 +27,7 @@ MODULE Mod
       TYPE :: DT0(K0, L0)
         INTEGER, KIND :: K0=4
         INTEGER, LEN  :: L0=10
-    
+
         INTEGER       :: I0(K0) = -99
       END TYPE
 
@@ -51,7 +41,7 @@ MODULE Mod
       CONTAINS
 
       SUBROUTINE Sub(Arg0, Arg1, Arg2)
-        INTEGER :: I 
+        INTEGER :: I
         TYPE(DT0), OPTIONAL, CONTIGUOUS :: Arg0(:)
         CLASS(DT0(4,*)), OPTIONAL, CONTIGUOUS, INTENT(IN) :: Arg1(:)
         CLASS(DT0(5,*)), OPTIONAL, CONTIGUOUS, INTENT(INOUT) :: Arg2(:)
@@ -93,16 +83,16 @@ PROGRAM combinedAttr3
       USE Mod
       IMPLICIT NONE
 
-      INTEGER :: I 
+      INTEGER :: I
       TYPE(DT0) :: T0(1)
       CLASS(DT0), ALLOCATABLE :: T1(:)
       CLASS(DT0(5,:)), ALLOCATABLE :: T2(:)
 
       IF ( .NOT. IS_CONTIGUOUS(T0) )     STOP 101
-      
+
       ALLOCATE( T1(1), SOURCE = DT1() )
       IF ( .NOT. IS_CONTIGUOUS(T1) )     STOP 102
-      
+
       ALLOCATE( DT0(5,12) :: T2(12) )
       IF ( .NOT. IS_CONTIGUOUS(T2) )     STOP 103
 

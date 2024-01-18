@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C811ArrSec.f 
+! %POSTCMD: tcomp C811ArrSec.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C811ArrSec
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 2, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C811 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C811
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is an array section  without ssociate-name => 
-!*    
+!*    The selector is an array section  without ssociate-name =>
+!*
 !*    (Wrong check)
 !*   Relax the err msg check to the current err msg
 !*
@@ -56,7 +50,7 @@
 
     TYPE, EXTENDS(Base) :: Child    ! (4)
     CONTAINS
-      PROCEDURE, PASS   :: GetBase  
+      PROCEDURE, PASS   :: GetBase
     END TYPE
 
     CONTAINS
@@ -73,22 +67,22 @@
       END SELECT
     END FUNCTION
 
-  END MODULE 
+  END MODULE
 
   PROGRAM C811ArrSec
   USE M
   IMPLICIT NONE
-  
+
   CLASS(Base(4)), POINTER :: Ptr(:,:)
 
   ALLOCATE( Child(4) :: Ptr(2:10, 3:12) )
- 
+
   SELECT TYPE ( Ptr(::2, ::1) )
     TYPE IS (Base(4))
       STOP 20
     CLASS DEFAULT
       STOP 30
-  END SELECT 
+  END SELECT
   STOP 40
 
   END

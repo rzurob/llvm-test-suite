@@ -12,27 +12,20 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenamediag008.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : ensure switchign target and destination yields error
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module opmod
- 
+
   interface operator(.add.)
     module procedure plus
   end interface
@@ -55,12 +48,12 @@ program main
     real, intent(in) :: a,b
     end function
   end interface
-   
+
   real :: a,b,c
   c=a.plus.b
   b=a.Plus.c
   a=b.pLuS.c
-  
+
 end program
 
 function plus2(a,b)

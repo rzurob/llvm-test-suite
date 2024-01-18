@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Function Return: Unlimited Polymorphic Scalar/Array Entities
@@ -90,13 +79,13 @@ use m
          write ( 1, "(DT'_btbound'(7,2))", iostat = stat, iomsg = msg )  g
          if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
    end select
-   
+
    select type ( g => b2%genCopy() )
       class is ( base )
          write ( 1, "(DT'_ctbound'(7,2,8,3))", iostat = stat, iomsg = msg )  g
          if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 2_4
    end select
-   
+
    select type ( g => genCopy(b3) )
       class is ( base )
          write ( 1, "(DT'mod1'(7,1),DT'mod2'(8,2,9,3))", iostat = stat, iomsg = msg )       g

@@ -3,22 +3,16 @@
 ! opt variations: -qnol -qreuse=base
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchAttrSelectType04 - ASYNCHRONOUS
 !*                               Attribute in the SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March  3, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : associate-name => selector (where selector
 !*                               implicitly has the ASYNCHRONOUS Attribute)
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 : ASYNCHRONOUS Attribute, SELECT TYPE Construct

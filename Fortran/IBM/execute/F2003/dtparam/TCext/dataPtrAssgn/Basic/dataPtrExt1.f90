@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrExt1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrExt1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,14 +23,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  If bounds-spec-list appears, it specifies the lower bounds; otherwise, the lower bound 
+!*  If bounds-spec-list appears, it specifies the lower bounds; otherwise, the lower bound
 !*  of each dimension is the result of the intrinsic function LBOUND (13.7.60)
 !*  applied to the corresponding dimension of data-target. The upper bound of each dimension
 !*  is one less than the sum of the lower bound and the extent.
-!*  
+!*
 !*  - assumed-size array
-!*  
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -48,7 +41,7 @@
     INTEGER, LEN              :: N1
     CLASS(DT0(K1,:)), POINTER :: Ptr(:,:)
   END TYPE
-  
+
   TYPE, EXTENDS(DT0) :: DT(K2,N2)    ! (4,20,4,20)
       INTEGER, KIND :: K2
       INTEGER, LEN  :: N2
@@ -57,13 +50,13 @@
   TYPE (DT(4,20,4,20)), TARGET  :: T(1000,2)
   TYPE (DT(4,:,4,:)), POINTER  :: Ptr(:, :)
 
-  END MODULE 
+  END MODULE
 
-  PROGRAM dataPtrExt1 
+  PROGRAM dataPtrExt1
   USE M
   IMPLICIT NONE
 
-  
+
   CALL IntSub(T)
 
   Ptr(0:, 0:) => T
@@ -86,7 +79,7 @@
       IF (ANY( LBOUND( Arg(I, 3)%Ptr) .NE. (/-499, -1/))) STOP 21
       IF (ANY( SHAPE(  Arg(I, 3)%Ptr) .NE. (/1000,  1/))) STOP 22
     END DO
-     
+
   END SUBROUTINE
 
 

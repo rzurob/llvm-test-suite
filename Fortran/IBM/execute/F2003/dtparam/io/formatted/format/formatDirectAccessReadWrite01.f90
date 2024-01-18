@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatDirectAccessReadWrite01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatDirectAccessReadWrite01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 15 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!* 1. READ or WRITE from or to the same file with direct access 
+!* 1. READ or WRITE from or to the same file with direct access
 !* 2. test rewrite records
 !* 3. derived type has nested derived type component
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -82,7 +74,7 @@ program formatDirectAccessReadWrite01
      if(any(outer1(4)%comp%i1/= [33]))                    stop 12
      if(any(outer1(4)%comp%log1 .neqv. [.true.,.true.]))  stop 13
 
-     if(any(outer1(5)%i2 /= [21,22]))                     stop 14 
+     if(any(outer1(5)%i2 /= [21,22]))                     stop 14
      if(any(outer1(5)%comp%i1/= [23]))                    stop 15
      if(any(outer1(5)%comp%log1 .neqv. [.false.,.true.])) stop 16
 
@@ -104,30 +96,30 @@ program formatDirectAccessReadWrite01
 
      if(any(tar1(3)%i2 /= [11,12]))                       stop 26
      if(any(tar1(3)%comp%i1/= [13]))                      stop 27
-     if(any(tar1(3)%comp%log1 .neqv. [.true.,.false.]))   stop 28    
+     if(any(tar1(3)%comp%log1 .neqv. [.true.,.false.]))   stop 28
 
      do i=lbound(tar2,1),ubound(tar2,1)
         tar2(i)%i2=-1*tar2(i)%i2
-        tar2(i)%comp%i1=-1*tar2(i)%comp%i1 
-     end do 
+        tar2(i)%comp%i1=-1*tar2(i)%comp%i1
+     end do
 
      outer1=>tar1
-     
+
      ! rewrite record 5,6,7
      write(10,'(3(3i3,2l3,:/))',rec=5) tar2
 
      read(10,'(3(3i3,2l3,:,/))',rec=5) outer1
 
      if(any(tar1(1)%i2 /= [-31,-32]))                     stop 29
-     if(any(tar1(1)%comp%i1/= [-33]))                     stop 30 
+     if(any(tar1(1)%comp%i1/= [-33]))                     stop 30
 
-     if(any(tar1(2)%i2 /= [-21,-22]))                     stop 31 
-     if(any(tar1(2)%comp%i1/= [-23]))                     stop 32 
+     if(any(tar1(2)%i2 /= [-21,-22]))                     stop 31
+     if(any(tar1(2)%comp%i1/= [-23]))                     stop 32
 
      if(any(tar1(3)%i2 /= [-11,-12]))                     stop 33
      if(any(tar1(3)%comp%i1/= [-13]))                     stop 34
-      
-  end if  
+
+  end if
 
   close(10)
 

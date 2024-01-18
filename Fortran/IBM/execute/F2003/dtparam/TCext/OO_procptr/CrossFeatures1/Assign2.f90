@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: Assign2.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Assign2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Assign2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 16, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,19 +34,19 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  A derived-type intrinsic assignment 
-!*  (Coredump) 
+!*
+!*  A derived-type intrinsic assignment
+!*  (Coredump)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
 
-    INTERFACE 
+    INTERFACE
       FUNCTION CToC(Arg)
        CHARACTER(*) :: Arg
-       CHARACTER(LEN(Arg)) ::CToC 
+       CHARACTER(LEN(Arg)) ::CToC
       END FUNCTION
     END INTERFACE
 
@@ -85,15 +79,15 @@
     TYPE(DT(*,4)), INTENT (OUT) :: Arg1
     TYPE(DT(*,4)), INTENT (IN)  :: Arg2
       Arg1%Id  = Arg2%Id
-      Arg1%BComp => Arg2%BComp 
+      Arg1%BComp => Arg2%BComp
     END SUBROUTINE
- 
+
   END MODULE
 
 
-  PROGRAM Assign2 
+  PROGRAM Assign2
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT(20,4))                :: V
   TYPE (Base(4,20)), TARGET      :: BTar
@@ -101,12 +95,12 @@
   CHARACTER(1000000)       :: Str=CHAR(40)
 
   BTar = Base(4,20)(Fun)
-  ProcPtr => Fun 
+  ProcPtr => Fun
   V = DT(20,4)(-1, BTar)
 
   IF ( V%Id .NE. -1 ) STOP 11
   IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr, Fun) ) STOP 13
-  
+
   IF (V%BComp%ProcPtr("ABC") .NE. "ABC" ) STOP 14
 
   IF (V%BComp%ProcPtr("")   .NE. "" )     STOP 15

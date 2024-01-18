@@ -1,20 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : noIDSpecPending03 - WAIT() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March  7, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() on *ALL* Pending (Unformatted) Data
 !*                               Transfer Operations for a Specific Unit
 !*  SECONDARY FUNCTIONS TESTED : Pending Data Transfer Operations for other
 !*                               Units should be unaffected
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WAIT(), ID= Specifier

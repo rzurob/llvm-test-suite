@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: BranchByExit.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : BranchByExit 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : BranchByExit
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Branch out by EXIT 
+!*
+!*  Branch out by EXIT
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -83,7 +77,7 @@
   LOGICAL :: L(2)=.FALSE.
 
     DO i=1,1
- 
+
 6   SELECT TYPE (U => Arg(S,S,S))
     CLASS DEFAULT
 
@@ -92,7 +86,7 @@
       IF ( ANY (LBOUND(U)   .NE. (/1,1,1/) ) ) STOP 32
       IF ( ANY (UBOUND(U)   .NE. (/3,3,3/) ) ) STOP 33
       IF ( ANY(SHAPE(U)     .NE. (/3,3,3/)) )  STOP 34
-    
+
     ASSOCIATE ( W => U )
 
       DO j=1,1
@@ -112,9 +106,9 @@
       END DO
 !     PRINT*, "OUT SELECT2"
       L(1) = .TRUE.
- 
+
 4   END ASSOCIATE
-    
+
     EXIT
 5   END SELECT
 

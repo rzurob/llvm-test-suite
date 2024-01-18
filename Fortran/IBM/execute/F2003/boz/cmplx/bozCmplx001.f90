@@ -1,26 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozCmplx001.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/02/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : CMPLX intrinsic
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                :Section 13.7.20 - Statement:
 !*				CMPLX (X [, Y, KIND])
 !*
-!*  Testing default X dummy argument. Default Kind type of 4                        	
-!*				
+!*  Testing default X dummy argument. Default Kind type of 4
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -56,7 +45,7 @@ program bozCmplx001
     o4 = CMPLX(O"17737777775")
     z4 = CMPLX(Z"7F7FFFFD")
 
-    if (transfer(real(b4,4), 0_4) /= B"1111111011111111111111111111101")& 
+    if (transfer(real(b4,4), 0_4) /= B"1111111011111111111111111111101")&
     error stop 7_4
 
     if (transfer(real(o4,4), 0_4) /= O"17737777775") error stop 8_4
@@ -88,7 +77,7 @@ program bozCmplx001
     if (KIND(CMPLX(O"10432657462")) /= 4) error stop 20_4
     if (KIND(CMPLX(Z"4A02F53B")) /= 4) error stop 21_4
 
-    if (KIND(CMPLX(B"1111111011111111111111111111101")) /= 4)& 
+    if (KIND(CMPLX(B"1111111011111111111111111111101")) /= 4)&
     error stop 22_4
 
     if (KIND(CMPLX(O"17737777775")) /= 4) error stop 23_4

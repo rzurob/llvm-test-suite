@@ -1,20 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : submodule05f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 6 December, 2012
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : submodule
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
 !*  TARGET(S)                  :
@@ -24,8 +18,8 @@
 !*
 !*   Ensure variable name reused in local scope of submodule does not
 !*   overwrite the variable in host scope
-!*   
-!*   The variable is reused in a local scope by: 
+!*
+!*   The variable is reused in a local scope by:
 !*   - redeclaration in a submodule
 !*   - redeclaration in a function
 !*   - use association, with an alias in a submodule
@@ -33,7 +27,7 @@
 !*
 !*   Secondary tests:
 !*   - chain of submodules (5 levels)
-!*   - compile succeeds if an interface declares a subroutine, which 
+!*   - compile succeeds if an interface declares a subroutine, which
 !*     is never defined in the host nor the submodules
 !* ===================================================================
 !*
@@ -47,7 +41,7 @@ MODULE m
 IMPLICIT NONE
 real, public :: modInt = 100.0
 
-  INTERFACE 
+  INTERFACE
     module function func1()
       real :: func1
     end function func1
@@ -59,7 +53,7 @@ real, public :: modInt = 100.0
     module function func3()
       real :: func3
     end function func3
-   
+
     module function func4()
       real :: func4
     end function func4
@@ -104,11 +98,11 @@ END SUBMODULE subm2
 SUBMODULE (m:subm2) subm3
 USE m2, modInt => a2
 CONTAINS
-  module function func3() 
+  module function func3()
       real :: func3
       func3 = modInt
   end function func3
-  
+
   module function func4()
       USE m2, modInt => b2
       real :: func4
@@ -118,7 +112,7 @@ END SUBMODULE
 
 SUBMODULE (m:subm3) subm4
 CONTAINS
-  module function func5() 
+  module function func5()
       real :: func5
       real :: modInt = 104.0
       func5 = modInt
@@ -127,7 +121,7 @@ END SUBMODULE subm4
 
 SUBMODULE (m:subm4) subm5
 CONTAINS
-  module function func6() 
+  module function func6()
       real :: func6
       logical precision_r4
       if(.not.precision_r4(func1(),100.0)) error stop 66   ! expect modInt value from host scope

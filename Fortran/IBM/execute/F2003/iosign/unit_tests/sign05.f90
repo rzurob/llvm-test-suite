@@ -13,24 +13,17 @@
 !***********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Test of SIGN= specifier
-!*      
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN= specifier
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SIGN
 !*  DESCRIPTION                : Testing the interaction of the SIGN=
 !*                               specifier with S/SP/SS edit descriptors
-!*                               in WRITE statement      
+!*                               in WRITE statement
 !*                              The S/SP/SS edit descriptors always win
 !*                              over the sign= specifier in WRITE statement
 !*

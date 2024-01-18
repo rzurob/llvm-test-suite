@@ -1,27 +1,20 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AssumedTypeObj03f
-!*
-!*  PROGRAMMER                 : Ren, Jian Gang
 !*  DATE                       : Apr 14, 2012
 !*  ORIGIN                     : Linux/AIX Compiler Development,
 !*                             : IBM Software Solutions China Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Assumed-type object
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Calling a non-BIND(C) procedure from Fortran
 !*                               where the procedure is defined in C with
 !*                               assumed-type object.
-!*                               - Actual arg is an array 
+!*                               - Actual arg is an array
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -33,10 +26,10 @@ program AssumedTypeObj03f
   integer(C_int)   :: i_int_arr2(4)
 
   interface
-    subroutine c_func_arr(a, len)  
+    subroutine c_func_arr(a, len)
       use, intrinsic :: iso_c_binding
       implicit none
-      
+
       TYPE(*) :: a(*)
       integer(c_int), value :: len
     end subroutine c_func_arr

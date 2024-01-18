@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf017.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,27 +12,20 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf017
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Dec. 21, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DESCRIPTION                : This tests the functionality of the  
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : This tests the functionality of the
 !*                               decimal edit mode in combination with
 !*                               D, E, EN, ES, F, and G edit descriptors.
 !*                               This test deals with compile-time encoding
@@ -40,7 +33,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
-      
+
       character(50), parameter :: FNAME_C = 'decimaleditf017.c.dat',   &
      &                            FNAME_P = 'decimaleditf017.p.dat',   &
      &                            FNAME_OUT = 'decimaleditf017.out'
@@ -53,7 +46,7 @@
       open(IN_P, file=FNAME_P, decimal='point')
       open(OUT, file=FNAME_OUT, decimal='point')
 
-! ***********************************************      
+! ***********************************************
 ! try reading from the file written in comma mode:
 ! ***********************************************
 
@@ -106,7 +99,7 @@
       write(OUT, '(dc, es8.2)') rl1
       write(OUT, '(es8.2)', decimal='comma') rl1
 
-      
+
       close(IN_C)
       open(IN_C, file=FNAME_C, decimal='point')
 ! same as above except use DC desc. when reading values
@@ -166,7 +159,7 @@
 ! try reading from the file written in point mode:
 ! ***********************************************
 
-      open(OUT, file=FNAME_OUT, decimal='comma', position='append')      
+      open(OUT, file=FNAME_OUT, decimal='comma', position='append')
 
       read(IN_P, '(f7.5)') rl1
       write(OUT, '(f7.5)') rl1
@@ -217,7 +210,7 @@
       write(OUT, '(es8.2)', decimal='point') rl1
       write(OUT, '(dp, es8.2)') rl1
 
-      
+
       close(IN_P)
       open(IN_P, file=FNAME_P, decimal='comma')
 ! same as above except use DP desc. when reading values

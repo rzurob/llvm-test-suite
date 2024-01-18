@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltDefOp.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltDefOp
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a poly expr with defined operator 
+!*
+!*   The selector is a poly expr with defined operator
 !*    (297388)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -52,7 +46,7 @@
     TYPE  :: Zero(K1,N1)    ! (4,20)
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4,20)
       INTEGER(K1) :: BaseId = 1
@@ -75,7 +69,7 @@
         CLASS(Base(4,*)),  INTENT(IN) :: Arg1
         CLASS(*),     INTENT(IN) :: Arg2
         CLASS(*),     POINTER    :: MyAdd
-      END FUNCTION 
+      END FUNCTION
     END INTERFACE OPERATOR ( .OP. )
 
     CONTAINS
@@ -119,21 +113,21 @@
 
   SELECT TYPE ( As=> Arg1 .OP. Arg2 )
     CLASS DEFAULT
-      STOP 30   
+      STOP 30
     TYPE is (Base(4,*))
       STOP 32
     CLASS IS (Child(4,*))
-      IF ( As%Base%GetId() .NE.  2 ) STOP 34 
+      IF ( As%Base%GetId() .NE.  2 ) STOP 34
       IF ( As%GetId()      .NE.  4 ) STOP 35
       IF ( As%BaseId       .NE.  2 ) STOP 36
       IF ( As%ChildId      .NE.  4 ) STOP 37
     CLASS IS (Zero(4,*))
-      STOP 38 
+      STOP 38
   END SELECT
   END SUBROUTINE
 
   END
-  
+
   FUNCTION MyAdd (Arg1, Arg2)
   USE M, ONLY: Base, Child
     CLASS(Base(4,*)),  INTENT(IN) :: Arg1

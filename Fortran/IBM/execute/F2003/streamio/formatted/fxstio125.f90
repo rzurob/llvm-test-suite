@@ -2,30 +2,23 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio125.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, INQUIRE
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,13 +27,12 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/20/03   BC     Initial version 
-!* 
-!234567890125456789012545678901254567890125456789012545678901254567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/20/03   BC     Initial version
+!*
+!234567890125456789012545678901254567890125456789012545678901254567890
 
-
-  program fxstio125 
+  program fxstio125
 
      implicit none
      integer      :: i, ios
@@ -64,15 +56,13 @@
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
 
-     
-!********************************************************** 
+!**********************************************************
 !   Opening a new file and writing some data into it      *
 !   while checking the file size                          *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio125.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90, ACTION='WRITE' )
-
 
      INQUIRE(1, SIZE=size)
      if ( size .ne. 0 ) error stop 20
@@ -133,10 +123,10 @@
 
      old_size = new_size
      INQUIRE(1, POS=pos)
-     pos = pos + 10 		! Leave a hole in the file 
+     pos = pos + 10 		! Leave a hole in the file
      do i = 1, N
         WRITE(1, FMT='(A1)', IOSTAT=ios, ERR=91, POS=(pos+i-1)) ch_in(i)
-     enddo 
+     enddo
      INQUIRE(1, SIZE=new_size)
      if ( new_size .ne. (old_size+10+N+1) ) error stop 32
 
@@ -145,13 +135,12 @@
      INQUIRE(1, SIZE=new_size)
      if ( new_size .ne. (old_size+24+1) ) error stop 33
 
-
      CLOSE(1)
 
-!********************************************************** 
+!**********************************************************
 !   Opening and read the same file again                  *
 !   while checking the file SIZE= specifier               *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio125.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='OLD', IOSTAT=ios, ERR=90, ACTION='READ' )
@@ -199,12 +188,10 @@
        READ(1, FMT='(A1)', SIZE=size, ADVANCE='no', IOSTAT=ios, ERR=92, &
     &                                                 POS=241+i) ch_out(i)
        if ( size .ne. 1 ) call zzrc(51 + i)
-     enddo 
+     enddo
 
      READ(1, FMT='(/A)', SIZE=size, ADVANCE='no', IOSTAT=ios, ERR=92) ch2_out
      if ( size .ne. 24 ) error stop 63
-
-
 
 !**********************************************************
 !        Checking the Results                             *
@@ -233,17 +220,15 @@
 
      if ( ch2_in .ne. ch2_out ) call zzrc(82+N)
 
-
-
      CLOSE(1, STATUS='DELETE')
 
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading the the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 
    end program

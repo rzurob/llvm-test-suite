@@ -3,16 +3,12 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acetdt41text
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt41t
 !*                               by David Forster)
 !*  DATE                       : 2008-01-17 (original: 2006-10-18)
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*
@@ -21,7 +17,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : dummy argument, array constructor

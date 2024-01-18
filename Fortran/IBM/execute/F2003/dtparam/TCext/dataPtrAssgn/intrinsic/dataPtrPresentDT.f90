@@ -4,44 +4,38 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrPresentDT.f 
+!*  TEST CASE NAME             : dataPtrPresentDT.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
 !* - data-pointer of non-poly type, type cmp with data-target of poly type
-!* - data-pointer used as arg of present 
+!* - data-pointer used as arg of present
 !* - data-pointer has allocatable attribute
-!* - after ptr =, apply intrinsin = to data-pointer p = p 
+!* - after ptr =, apply intrinsin = to data-pointer p = p
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 module m
 
-    type A(n1,k1)    ! (1,4) 
+    type A(n1,k1)    ! (1,4)
         integer, kind            :: k1
         integer, len             :: n1
         complex(k1) :: x (n1)
     end type
 
-    interface 
+    interface
 	subroutine sub(p)
-	    import A 
+	    import A
 	    type(A(:,4)), optional, pointer :: p(:)
 	end subroutine
-    end interface 
+    end interface
 end module
 
     program main
@@ -61,17 +55,17 @@ end module
 	call sub(p)
 
 	do i = 1, 5
-            write (*, '("(",f10.6,", ", f10.6, ")")') p(i)%x 
+            write (*, '("(",f10.6,", ", f10.6, ")")') p(i)%x
 	enddo
 
     end program
 
 	subroutine sub(p)
-	    use m, only: A	
+	    use m, only: A
 	    type(A(:,4)), optional, pointer :: p(:)
-	
+
 	    if ( present(p) ) then
 		p = p
-	    endif 
+	    endif
 
 	end subroutine

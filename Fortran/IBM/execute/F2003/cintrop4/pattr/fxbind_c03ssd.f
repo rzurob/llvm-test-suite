@@ -1,13 +1,8 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/runf.sh fxbind_c03ssd  
+! %PRECMD: $TR_SRC/runf.sh fxbind_c03ssd
 ! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -18,22 +13,14 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c03ssd.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
-!*                             
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -41,7 +28,6 @@
 !*   - FORTRAN code only , the interoperable function is implemented
 !*     in Fortran and called in Fortran.
 !*   - passing 1-dim  derived type  array arguments
-!*    
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -80,7 +66,7 @@ PROGRAM Survey
 
      END SUBROUTINE Read_Data
 
-     FUNCTION Stats(Data,No,M_a,F_a) 
+     FUNCTION Stats(Data,No,M_a,F_a)
        USE Personal_details
        IMPLICIT NONE
        TYPE(Person), DIMENSION (:) :: Data
@@ -111,18 +97,18 @@ SUBROUTINE Read_Data(Data,No)
   DO I=1,No,2
      Data(I)%Weight = 50. + 5*I
      Data(I)%Age = 10 + 5 *I
-     Data(I)%Sex ='F' 
+     Data(I)%Sex ='F'
   END DO
 
   DO I=2,No,2
      Data(I)%Weight = 60. + 5*I
      Data(I)%Age = 12 + 5 *I
-     Data(I)%Sex ='M' 
+     Data(I)%Sex ='M'
   END DO
 
 END SUBROUTINE Read_Data
 
-Function Stats(Data,No,M_a,F_a) 
+Function Stats(Data,No,M_a,F_a)
   USE Personal_details
   IMPLICIT NONE
   REAL :: Stats

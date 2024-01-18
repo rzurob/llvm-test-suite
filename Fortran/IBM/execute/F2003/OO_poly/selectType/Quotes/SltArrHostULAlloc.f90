@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrHostULAlloc.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrHostAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 19, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a host associate name associating to an unlimited 
+!*
+!*   The selector is a host associate name associating to an unlimited
 !*   poly allocatable array
 !*    ()
 !*
@@ -50,7 +44,7 @@
     TYPE  :: Zero
     CONTAINS
       PROCEDURE, NoPASS   :: Called
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -105,7 +99,7 @@
   USE M
   IMPLICIT NONE
   TYPE(Child) :: V(4,4)
-  
+
   V%BaseId = -1
   V%ChildId = -2
 
@@ -117,12 +111,12 @@
   CLASS(Base) :: Arg(:, :)
   CLASS(*), ALLOCATABLE :: Arr(:,:)
 
-    ALLOCATE (Arr(SIZE(Arg,1), SIZE(Arg,2)), SOURCE=Arg) 
+    ALLOCATE (Arr(SIZE(Arg,1), SIZE(Arg,2)), SOURCE=Arg)
 
     SELECT TYPE (U => Arr)
-    CLASS IS (Child) 
+    CLASS IS (Child)
     SELECT TYPE (W => U)
-    CLASS IS (Child) 
+    CLASS IS (Child)
       SELECT TYPE (V => W)
         TYPE IS (Child)
           IF ( SIZE(V)          .NE. 4 )          STOP 21
@@ -154,9 +148,9 @@
   END SELECT
   END SELECT
 
-  END SUBROUTINE 
- 
- 
+  END SUBROUTINE
+
+
   END
 
 

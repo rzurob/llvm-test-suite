@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure09d
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
 !*
 !*  DESCRIPTION
@@ -21,12 +18,12 @@
     REAL, INTENT(in) :: z
 
     REAL :: final
-    
+
     REAL :: notallowed
     final = 5+z
-    
+
    CONTAINS
-    
+
    IMPURE ELEMENTAL FUNCTION notallowed(y)
    IMPLICIT NONE
    REAL :: notallowed

@@ -4,24 +4,18 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrMergeReal.f 
+!*  TEST CASE NAME             : dataPtrMergeReal.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!* - data pointer assignment appears at if/else/endif block 
+!* - data pointer assignment appears at if/else/endif block
 !* - data-pointer is the component of an external proc dumm arg, arg of merge
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -65,8 +59,8 @@ end module
         if ( any (lbound(a%p) .ne. (/2,3/) ) ) stop 35
         if ( any (ubound(a%p) .ne. (/4,6/) ) ) stop 45
 
-	write(*, '(4f14.8)') a%p 
-	write(*, '(4f14.8)') merge(a%p, a%p, .true.) 
+	write(*, '(4f14.8)') a%p
+	write(*, '(4f14.8)') merge(a%p, a%p, .true.)
 
     end program
 
@@ -75,7 +69,7 @@ end module
                 type(base(4)) :: a
 
                 if ( any(shape(a%p) .eq. (/4,5/)) ) then
-                    a%p(-1:1,0:3) => tar 
+                    a%p(-1:1,0:3) => tar
                 else
                     a%p(2:,3:) => a%p(1:-1:-1,3:0:-1)
                 endif

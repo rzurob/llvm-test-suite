@@ -1,24 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : isContigTrue2.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS intrinsic 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS intrinsic
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - 
-!*                      
+!*  DESCRIPTION                : -
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -91,7 +80,7 @@ PROGRAM isContigTrue2
       IF ( .NOT. IS_CONTIGUOUS(I5D(1,1,1,1,1:2:-1)) )  ERROR STOP 23
 
 !******************** rank > 1 ******************************
-      
+
       IF ( .NOT. IS_CONTIGUOUS(I5D) )                     ERROR STOP 24
       IF ( .NOT. IS_CONTIGUOUS(I5D(:,:,:,:,:)) )          ERROR STOP 25
       IF ( .NOT. IS_CONTIGUOUS(I5D(:,:,:,:,1:)) )         ERROR STOP 26
@@ -107,11 +96,11 @@ PROGRAM isContigTrue2
       IF ( .NOT. IS_CONTIGUOUS(I5D(L:,L:,L:,L:,L:)) )       ERROR STOP 33
       IF ( .NOT. IS_CONTIGUOUS(I5D(L:U,L:U,L:U,:,:)) )      ERROR STOP 34
       IF ( .NOT. IS_CONTIGUOUS(I5D(L:U,L:U,L:U,L:U,L:U)) )  ERROR STOP 35
- 
+
       CALL Sub1(I1D)
       CALL Sub5(I5D)
 
-      ALLOCATE( all(10), all5D(2,2,2,2,2) ) 
+      ALLOCATE( all(10), all5D(2,2,2,2,2) )
 
       IF ( .NOT. IS_CONTIGUOUS(all) )          ERROR STOP 40
       IF ( .NOT. IS_CONTIGUOUS(all(5:)) )      ERROR STOP 41

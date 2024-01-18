@@ -1,5 +1,5 @@
 !******************************************************************
-!* DIAG: deferred length type parameter must match between 
+!* DIAG: deferred length type parameter must match between
 !*       an actual argument and a dummy argument.
 !*
 !******************************************************************
@@ -16,7 +16,7 @@
 
       call sub(basePtr, baseTarget)
 
-      contains 
+      contains
 
       subroutine sub(argPtr, argTarget)
         type(base(4, :)), pointer :: argPtr

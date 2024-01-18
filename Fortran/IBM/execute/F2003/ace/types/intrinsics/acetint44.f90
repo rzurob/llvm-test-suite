@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : acetint44
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2006-11-03
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -99,7 +93,7 @@ program acetint44
 
   ! Finish with characters:
 
-  print *, [character(1):: 'a', 'bc', 'def'] // [character(2):: 'g', '''.,', 'hij'] 
+  print *, [character(1):: 'a', 'bc', 'def'] // [character(2):: 'g', '''.,', 'hij']
   if (all([character(1):: 'a', 'bc', 'def'] > [character(2):: 'g', '''.,', 'hij'])) stop 32
   if (any([character(1):: 'a', 'b', 'd'] /= [character(2):: 'a ', 'b ', 'd '])) stop 33
   if (any(([character(1):: 'a', 'bc', 'def'] // [character(2):: 'g', '''.,', 'hij']) /= [character(3):: 'ag ', 'b''.', 'dhi'])) stop 34

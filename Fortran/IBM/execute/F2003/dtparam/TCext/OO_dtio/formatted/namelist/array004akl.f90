@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : array004akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from array004a by Robert Ma)
 !*  DATE                       : 2007-06-20 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting array objects with sequence type contain non-polymorphic component(Output)
@@ -71,7 +63,7 @@ program array004akl
    character(200) :: msg = ''
 
    namelist /nml1/ b1, b2, b3
-   
+
    allocate ( b1(4), source = (/ base(4,3)(null(),c='abc', i =101), base(4,3)(null(),c='def', i =102), base(4,3)(null(),c='ghi',i = 103), base(4,3)(null(),c='jkl',i = 104) /) )
    allocate ( b2(4), source = (/ base(4,3)(null(),c='ABC', i =105), base(4,3)(null(),c='DEF', i =106), base(4,3)(null(),c='GHI',i = 107), base(4,3)(null(),c='JKL',i = 108) /) )
    b3 = reshape( source = b2(4:1:-1) , shape = (/2,2/) )     !<- b2 in reverse order
@@ -124,7 +116,7 @@ subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)
    namelist /dtio/ dummy
 
    allocate( dummy(size(dtv%b,1)), source= (/ dtv%b /) )
-   
+
    if ( iotype /= "NAMELIST" ) error stop 3_4
    if ( size(v_list, 1) /= 0 ) error stop 4_4
 
@@ -132,7 +124,7 @@ subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)
    if ( iostat /= 0 ) error stop 5_4
    write ( unit, "(A3)", iostat = iostat ) dtv%c
    write ( unit, "(I4)", iostat = iostat ) dtv%i
-   
+
    iomsg = 'dtiowrite'
 
 end subroutine

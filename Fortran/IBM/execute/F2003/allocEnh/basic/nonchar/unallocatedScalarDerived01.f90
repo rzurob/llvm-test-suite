@@ -1,21 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unallocatedScalarDerived01 - Basic Tests:
 !*                               Non-CHARACTER Scalar Derived Type
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : August 28, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Unallocated ALLOCATABLE Scalar of Derived Type
 !*  SECONDARY FUNCTIONS TESTED : and expr is a Scalar of Derived Type with the
 !*                               same Shape and Length Type Parameter Values
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : TYPE, ALLOCATABLE Attribute, Intrinsic
@@ -28,7 +22,6 @@
 !*  7.4.1.1 General form
 !*
 !*  R734 assignment-stmt  is  variable = expr
-!*
 !*
 !*  7.4.1.3 Interpretation of intrinsic assignments
 !*
@@ -64,7 +57,7 @@ PROGRAM unallocatedScalarDerived01
     IF (.NOT. ALLOCATED( dTypeAlloc )) CALL zzrc( 20_4 )
 
     PRINT 10, dTypeAlloc%r, dTypeAlloc%c
-10  FORMAT('dTypeAlloc%r = "',F4.2,'", dTypeAlloc%c = (',F4.2,',',F4.2,')') 
+10  FORMAT('dTypeAlloc%r = "',F4.2,'", dTypeAlloc%c = (',F4.2,',',F4.2,')')
 
     IF (dTypeAlloc%r /= 1.23) CALL zzrc( 30_4 )
     IF (dTypeAlloc%c /= (4.56,7.89)) CALL zzrc( 40_4 )

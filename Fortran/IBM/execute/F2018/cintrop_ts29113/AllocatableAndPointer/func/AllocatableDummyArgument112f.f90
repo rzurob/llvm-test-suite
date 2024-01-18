@@ -1,29 +1,21 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument112f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
 !*
 !*                                - Allocatable scalar/array of various interoperable types
 !*                                - reshape()
-!*                                - Allocatable summy arg. as actual arg. associated with 
-!*                                   - allocatable array 
-!*                                   - assumed shape array 
-!*
+!*                                - Allocatable summy arg. as actual arg. associated with
+!*                                   - allocatable array
+!*                                   - assumed shape array
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 program AllocatableDummyArgument112f
@@ -32,7 +24,7 @@ program AllocatableDummyArgument112f
   real s
   real, allocatable :: a3(:,:,:,:)
 
-  interface 
+  interface
     subroutine use_reshape(arg, ul) bind(c)
       use iso_c_binding
       implicit none
@@ -51,9 +43,9 @@ program AllocatableDummyArgument112f
    allocate(a3(0:8,0:8,0:8,0:8))
    n = 7
 
-   call use_reshape(a3,n) 
+   call use_reshape(a3,n)
 
-   call reverse(a3,n) 
+   call reverse(a3,n)
 
    s = sum(a3)
    write (6,'(F24.7)') s
@@ -66,7 +58,7 @@ subroutine use_reshape(arg, ul) bind(c)
   integer i, ul
   real(c_float), allocatable :: arg(:,:,:,:)
 
-  interface 
+  interface
     subroutine check_alloc(a)
        implicit none
        real, allocatable :: a(:,:,:,:)
@@ -84,7 +76,7 @@ subroutine use_reshape(arg, ul) bind(c)
        implicit none
        real(c_float), allocatable :: a(:,:,:,:)
     end
-  end interface 
+  end interface
 
   arg(:,:,:,:)=reshape( (/(1.*i,i=1,(ul+2)*(ul+2)*(ul+2)*(ul+2))/), (/ul+2,ul+2,ul+2,ul+2/) )
 
@@ -121,7 +113,7 @@ subroutine check_alloc(a)
 
   if (lbound(a,4) .ne. 0) error stop 16
   if (ubound(a,4) .ne. 8) error stop 17
-end 
+end
 
 subroutine check_assumed(a)
   implicit none
@@ -139,7 +131,7 @@ subroutine check_assumed(a)
   if (lbound(a,4) .ne. 1) error stop 26
   if (ubound(a,4) .ne. 9) error stop 27
 
-end 
+end
 subroutine check_dim(a)
   implicit none
   real, dimension(:,:,:,:) :: a
@@ -155,7 +147,7 @@ subroutine check_dim(a)
 
   if (lbound(a,4) .ne. 1) error stop 36
   if (ubound(a,4) .ne. 9) error stop 37
-end 
+end
 
 subroutine check_alloc_c(a) bind(c)
   use iso_c_binding
@@ -173,4 +165,4 @@ subroutine check_alloc_c(a) bind(c)
 
   if (lbound(a,4) .ne. 0) error stop 46
   if (ubound(a,4) .ne. 8) error stop 47
-end 
+end

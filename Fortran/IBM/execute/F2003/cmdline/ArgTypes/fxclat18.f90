@@ -12,36 +12,29 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat18.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Tests command line intrinsic routines by passing constants with 
+!*  DESCRIPTION                : Tests command line intrinsic routines by passing constants with
 !*                             : various optional arguments as intent(in) actual arguments
 !*                             : and set intsize=2
-!*              
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -56,9 +49,9 @@
           integer                     :: STATUS
           integer                     :: NUMBER
           character(2047)             :: VALUE
-          INTEGER                     :: ARR(10) 
+          INTEGER                     :: ARR(10)
           integer                     :: ARGCOUNT
-        end type dertype 
+        end type dertype
 
       end module modtype
 
@@ -71,7 +64,7 @@
 
 
       character(4099) 	STR
-      INTEGER         	ARR(10) 
+      INTEGER         	ARR(10)
 
       character(2049)              :: CmdLine = 'fxclat18 1 a 2 b 3'
       integer                      :: CmdCount, i
@@ -89,7 +82,7 @@
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 5 ) & 
+      if ( CmdCount .ne. 5 ) &
       then
         error stop 63_4
       endif
@@ -105,7 +98,7 @@
 
       call GET_COMMAND(COMMAND, LENGTH)
       if ( (TRIM(COMMAND) .ne. TRIM(CmdLine))  .or. &
-           (LENGTH .ne. LEN(TRIM(CmdLine))))        & 
+           (LENGTH .ne. LEN(TRIM(CmdLine))))        &
       then
         error stop 65_4
       endif
@@ -118,7 +111,7 @@
 
 
       DO i  = 0, CmdCount
-       
+
         cmd%NUMBER = i
         call MyGetArg(CmdLine, cmd%NUMBER, Argument)
 
@@ -164,12 +157,12 @@
       endif
 
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 
 
-  
-        
+
+
 
 

@@ -13,14 +13,9 @@
 ! *********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
 !*                             :
-!*  PROGRAMMER                 : Daniel Chen
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  DIAGNOSES TESTED           : The file storage units of a file connected
 !*                             : for unformatted stream access can only be
@@ -33,7 +28,6 @@
 !*                             : Recoving from recoverable error conditions
 !*                             : is also tested.
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

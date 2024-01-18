@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : BExternal
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-12-07
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 BLOCK
 !*  SECONDARY FUNCTIONS TESTED : block in external procedure

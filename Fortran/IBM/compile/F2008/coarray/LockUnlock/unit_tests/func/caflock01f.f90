@@ -1,11 +1,7 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : caflock01f.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Ren Jian Gang
 !*  DATE                       : May 08, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
@@ -15,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 387873
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -26,8 +21,8 @@
 !*  -----------
 !*  CAF: LOCK/UNLOCK statements
 !*
-!234567890123456789012345678901234567890123456789012345678901234567890      
-  
+!234567890123456789012345678901234567890123456789012345678901234567890
+
 module lock_manager
   use, intrinsic :: iso_fortran_env, only: lock_type
 

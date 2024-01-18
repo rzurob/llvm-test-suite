@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypParamC435   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypParamC435
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 26, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,7 +19,6 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !* 435 (R435) Each type-param-name in the derived-type-stmt in a derived-type-def
 !* shall appear as a  type-param-name in a type-param-def-stmt in that
 !* derived-type-def.
@@ -67,7 +60,7 @@
   TYPE, EXTENDS(DT0) :: DT5(I)
   END TYPE
 
-  TYPE, EXTENDS(DT0) :: DT6(KK, LL) 
+  TYPE, EXTENDS(DT0) :: DT6(KK, LL)
     INTEGER, KIND :: KK(3)=0
     INTEGER, LEN  :: LL(1)=0
   END TYPE

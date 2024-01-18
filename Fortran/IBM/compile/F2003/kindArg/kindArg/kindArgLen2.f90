@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgLen2
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : LEN 
+!*  SECONDARY FUNCTIONS TESTED : LEN
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,21 +19,19 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  characteristics :: the keyword - KIND 
+!*  characteristics :: the keyword - KIND
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   PROGRAM kindArgLen2
 
-  INTEGER(1),    PARAMETER :: I(3) = (/1,1,1/) 
-  CHARACTER,     PARAMETER :: C(3) = (/"I","B","M"/) 
+  INTEGER(1),    PARAMETER :: I(3) = (/1,1,1/)
+  CHARACTER,     PARAMETER :: C(3) = (/"I","B","M"/)
   INTEGER,       PARAMETER :: Kind(2)=(/1,2/)
- 
+
   PRINT*, LEN(STRING=C(1), KINDD=I(1))
   PRINT*, LEN(STRING=C(2), KID=Kind(1))
   PRINT*, LEN(KIND=I(1), KIND=Kind(2))

@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_arg_1.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : April 21 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,8 +11,7 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -25,14 +19,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*  Test procedure argument asociation -- 
+!*  Test procedure argument asociation --
 !*       Diagnosis on Passing internal procedure to data dummy
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
-  PROGRAM intproc_arg_1 
+
+  PROGRAM intproc_arg_1
 
   CALL Intsub(Intsub)
   CALL Intsub1(Intsub)

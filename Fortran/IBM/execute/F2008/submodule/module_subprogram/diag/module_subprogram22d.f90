@@ -1,20 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : module_subprogram22d
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 6 December, 2012
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : submodule
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -22,7 +16,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  Compile with -qlanglvl=[77std|90std|95std|2003std] which do not 
+!*  Compile with -qlanglvl=[77std|90std|95std|2003std] which do not
 !*   support submodule, expecting (L) messages.
 !*
 !* ===================================================================
@@ -38,7 +32,7 @@ implicit none
   INTERFACE
     module subroutine sub2()
     end subroutine
-  
+
     module function func2()
       real :: func2
     end function
@@ -48,9 +42,9 @@ END MODULE m
 SUBMODULE (m) n
 CONTAINS
   module procedure func2
-    real :: func2 
+    real :: func2
     func2 = 2
-  end 
+  end
 
   module procedure sub2
   end

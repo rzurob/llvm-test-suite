@@ -1,25 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : argAssocPtr001.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 04/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : Passing a char target to an internal  
+!*  DESCRIPTION                : Passing a char target to an internal
 !*                               subroutine which has a char pointer
-!*  				 which points to that target. Test  
-!*				 associatoin between the two chars. 
+!*  				 which points to that target. Test
+!*				 associatoin between the two chars.
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -40,7 +29,7 @@ end module
 program argAssocPtr001
 
    use m
-   
+
    a = 'wxyz'
 
    call tsub(a)

@@ -1,20 +1,13 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AssumedType03d
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : June 13, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop: Assumed Type objects
 !*
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Calling a BIND(C) procedure from Fortran
@@ -28,7 +21,7 @@ module  mod
   implicit none
 
   contains
-  subroutine module_sub(c) 
+  subroutine module_sub(c)
      type(*) :: c
 
   end subroutine module_sub
@@ -37,21 +30,21 @@ end module mod
 program AssumedType03d
 use mod
 implicit none
-integer :: i 
+integer :: i
 
 i = 4
 call sub(i)
 
-contains 
+contains
 
-   subroutine sub(a) 
+   subroutine sub(a)
       type(*) :: a
 
       call inner_sub(a)
       call module_sub(a)
    end subroutine sub
 
-   subroutine inner_sub(b) 
+   subroutine inner_sub(b)
       type(*) :: b
 
    end subroutine inner_sub

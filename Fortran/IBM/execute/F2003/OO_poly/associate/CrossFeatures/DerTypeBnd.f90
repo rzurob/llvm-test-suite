@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  DerTypeBnd.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : DerTypeBnd
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 07, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     Type binding call as selector   
-!*    (ICE on rename-300859) 
+!*     Type binding call as selector
+!*    (ICE on rename-300859)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,14 +44,14 @@
     END TYPE
 
     CONTAINS
-  
+
     FUNCTION Bnd(Arg)
     INTEGER :: Bnd, Arg
       Bnd =Arg
       PRINT*, "OK"
     END FUNCTION
 
-  END MODULE 
+  END MODULE
 
   MODULE M1
   USE M0, DT0=>Base
@@ -75,7 +69,7 @@
   TYPE(DT), SAVE :: T
 
   END MODULE
-  
+
   PROGRAM DerTypeSeq
   USE M, V=>T
   IMPLICIT NONE

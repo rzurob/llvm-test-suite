@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Misc1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Misc1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Misc1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Misc1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 20, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  The intrinsic rouitne 
-!* 
-!* (304080 - wait for 11.1) -> this scenario has been covered in 
+!*
+!*  The intrinsic rouitne
+!*
+!* (304080 - wait for 11.1) -> this scenario has been covered in
 !* CrossFeatures2 for 11.1. Change the TC to the scenario of entry.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -67,7 +61,7 @@
       RETURN
     END FUNCTION
   END MODULE
-  
+
   PROGRAM Misc1
   USE M
 
@@ -76,7 +70,7 @@
       REAL :: RToR, Arg
     END FUNCTION
   END INTERFACE
-   
+
   PROCEDURE(REAL), POINTER :: ProcPtr1
   PROCEDURE(RToR), POINTER :: ProcPtr2
 
@@ -120,7 +114,7 @@
   PRINT *, ABS(-2.0)
   IF ( ProcPtr2(-2.0) .NE. ABS(-2.0)) STOP 15
 
-  END 
+  END
 
 
 !  The following is the orginal scenario
@@ -132,7 +126,7 @@
 !     REAL :: RToR, Arg
 !   END FUNCTION
 ! END INTERFACE
-   
+
 ! PROCEDURE(REAL), POINTER :: ProcPtr1
 ! PROCEDURE(RToR), POINTER :: ProcPtr2
 

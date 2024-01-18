@@ -1,25 +1,14 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 2/25/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX*/MIN* intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX*/MIN* intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX*/MIN* as actual argument passed to
 !*                               internal procedure with variable length dummy
-!*                               argument. Actual argument length is around 
+!*                               argument. Actual argument length is around
 !*                               32K long.
 !* ===================================================================
 
@@ -39,7 +28,7 @@ program mxminMisc32
   c2Arr(7) = repeat("z", 2**15-1)
 
   if(len(max(c1, c2)) .ne. 32767) error stop 1_4
-   
+
   if(min(c1, c2)(3456:3459) .ne. "aaaa") error stop 2_4
 
   x = maxloc(c1Arr)
@@ -57,7 +46,7 @@ program mxminMisc32
   contains
      subroutine submax(ch)
       character*(*) ch
-      if (ch(12000:12003) .ne. 'bbbb') error stop 6_4 
+      if (ch(12000:12003) .ne. 'bbbb') error stop 6_4
      end subroutine
 
      subroutine subminval(ch)
@@ -67,6 +56,4 @@ program mxminMisc32
      end subroutine
 
 end program mxminMisc32
-
-
 

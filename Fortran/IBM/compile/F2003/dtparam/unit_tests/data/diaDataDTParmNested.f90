@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : diaDataDTParmComp.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Zheming Gu
 !*  DATE                       : May 11,2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : support for structure constructors containing type parameters to the DATA statement.
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 333315
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -25,7 +19,7 @@
 !*
 !*  DESCRIPTION:
 !*  -----------
-!*  nested and extended type parameter and structure constructor 
+!*  nested and extended type parameter and structure constructor
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

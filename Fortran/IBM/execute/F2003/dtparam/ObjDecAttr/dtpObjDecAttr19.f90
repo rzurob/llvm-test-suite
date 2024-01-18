@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr19
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 31, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  PARAMETER -- array
-!*  
 !*
-!* 
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -43,13 +32,13 @@
     INTEGER, KIND :: K0=1
     INTEGER, LEN  :: L0=1
     CONTAINS
-    PROCEDURE, PASS(Obj) ::  CheckDT0 
+    PROCEDURE, PASS(Obj) ::  CheckDT0
   END TYPE
 
   TYPE, ABSTRACT, EXTENDS(DT0)  :: DT1(K1, L1)
     INTEGER(K0), KIND    :: K1=K0
     INTEGER(K0), LEN     :: L1=K0
-    CHARACTER(L1+3) :: C1 = "DT1" 
+    CHARACTER(L1+3) :: C1 = "DT1"
     !CONTAINS
     !PROCEDURE(CHECKDT1), NOPASS, DEFERRED :: Proc
   END TYPE
@@ -62,10 +51,10 @@
     REAL   (K2)          :: R=K2
     LOGICAL(K2)          :: L=.TRUE._1
     COMPLEX(K2)          :: Z=CMPLX(K1, K2, K2)
-    TYPE(DT0(K2, L2))           :: T0 
+    TYPE(DT0(K2, L2))           :: T0
     TYPE(DT2(K2, L2)), POINTER  :: Ptr2
     CONTAINS
-    PROCEDURE, PASS(Obj) ::  CheckDT2 
+    PROCEDURE, PASS(Obj) ::  CheckDT2
   END TYPE
 
   INTEGER, PARAMETER :: N=67
@@ -90,13 +79,13 @@
   ELEMENTAL FUNCTION CheckDT0(Obj,Arg)
   CLASS(DT0(1,*)), INTENT(IN) :: Obj
   TYPE (DT0(1,*)), INTENT(IN) :: Arg
-  LOGICAL                     :: CheckDT0 
-  
+  LOGICAL                     :: CheckDT0
+
   CheckDT0 = .false.
     IF ( Arg%K0   .NE.   Obj%K0     ) CheckDT0 = .TRUE. !STOP 11
     IF ( Arg%L0   .NE.   Obj%L0     ) CheckDT0 = .TRUE. !STOP 12
 
-  END FUNCTION 
+  END FUNCTION
 
   ELEMENTAL FUNCTION CheckDT2(Obj,Arg)
   CLASS(DT2(8,*,8,*,8,*)), INTENT(IN) :: Obj
@@ -125,7 +114,7 @@
     IF ( Arg%Ptr2%K2           .NE.   Obj%Ptr2%K2           ) CheckDT2 = .TRUE.  ! STOP 56
     IF ( Arg%Ptr2%L2           .NE.   Obj%Ptr2%L2           ) CheckDT2 = .TRUE.  ! STOP 37
 
-  END FUNCTION 
+  END FUNCTION
 
   END MODULE
 

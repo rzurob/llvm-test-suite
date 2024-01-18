@@ -1,17 +1,11 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound_f002b.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : September 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
@@ -21,7 +15,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program main
-	
+
 	real*8, save :: caf1[13:*], caf2[1:12,*], caf3[3,2,*], caf4[5:7,3:4,1:2,0:*]
 	real*8, save :: caf5[2,2,2,2,*], caf6[4,1,1,3,1,-1:*], caf7[1:2,1,-2:-1,99:99,1,1,*]
 	real*8, save :: caf8[-8:-8,-6:-6,-4:-4,-2:-2,0:0,2:2,4:6,8:*]
@@ -35,7 +29,7 @@ program main
 	print *, arr_lo, ":", arr_hi
 	deallocate(arr_lo, arr_hi)
 	sync all
-	
+
 !##### CORANK = 2
 	allocate(arr_lo(2), arr_hi(2))
 	arr_lo(1) = lcobound(caf2, 1)
@@ -55,7 +49,7 @@ program main
 	print *, arr_lo, ":", arr_hi
 	deallocate(arr_lo, arr_hi)
 	sync all
-	
+
 !##### CORANK = 4
 	allocate(arr_lo(4), arr_hi(4))
 	do i = 1, 4
@@ -65,7 +59,7 @@ program main
 	print *, arr_lo, ":", arr_hi
 	deallocate(arr_lo, arr_hi)
 	sync all
-	
+
 !##### CORANK = 5
 	allocate(arr_lo(5), arr_hi(5))
 	do i = 1, 5
@@ -75,7 +69,7 @@ program main
 	print *, arr_lo, ":", arr_hi
 	deallocate(arr_lo, arr_hi)
 	sync all
-	
+
 !##### CORANK = 6
 	allocate(arr_lo(6), arr_hi(6))
 	do i = 1, 6
@@ -95,7 +89,7 @@ program main
 	print *, arr_lo, ":", arr_hi
 	deallocate(arr_lo, arr_hi)
 	sync all
-	
+
 !##### CORANK = 8
 	allocate(arr_lo(8), arr_hi(8))
 	do i = 1, 8
@@ -105,5 +99,5 @@ program main
 	print *, arr_lo, ":", arr_hi
 	deallocate(arr_lo, arr_hi)
 	sync all
-	
+
 end

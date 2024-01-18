@@ -2,32 +2,17 @@
 ! ftcx_dtp -qk -qnol -qnodefaultpv /tstdev/F2003/decimaledit/defaultIO/decEditDesc003.f
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=self
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 06/18/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : DECIMAL EDIT MODE
 !                               Test DC/DP in write on the internal file; also test
 !                               the use of deferred character in a loop that
 !                               changes the length of the string during the
 !                               execution.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsArrayIntComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsArrayIntComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 17 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -29,18 +21,18 @@ module m
      integer,len     :: l
      integer(k)      :: i(l)
    end type
-   
+
 end module
 
 program spreadSourceIsArrayIntComp01
   use m
   implicit none
 
-  type(dtp(1,2)) :: dtp1(2:5)=[dtp(1,2)(i=[1,2]),dtp(1,2)(i=[3,4]), & 
+  type(dtp(1,2)) :: dtp1(2:5)=[dtp(1,2)(i=[1,2]),dtp(1,2)(i=[3,4]), &
                     dtp(1,2)(i=[5,6]),dtp(1,2)(i=[7,8])]
 
   type(dtp(1,2)),allocatable :: dtp2(:,:)
-  
+
   allocate(dtp2(2,2),source=reshape(dtp1,(/2,2/)) )
 
   call verify1(spread(dtp1,1,5)) ! dim is 1
@@ -51,7 +43,7 @@ program spreadSourceIsArrayIntComp01
   !   | dtp1(2), dtp1(3), dtp1(4), dtp1(5) |
   !   | dtp1(2), dtp1(3), dtp1(4), dtp1(5) |
 
-  
+
   call verify2(spread(dtp1,2,5)) ! dim is 2
   !   spread(..) becomes ...
   !   | dtp1(2), dtp1(2), dtp1(2), dtp1(2), dtp1(2) |
@@ -68,9 +60,9 @@ program spreadSourceIsArrayIntComp01
   !   dtp2(2,1) - [3,4]
   !   dtp2(2,2) - [7,8]
   call verify3(spread(dtp2,1,5)) ! dim is 1
-  !   shape is 5,2,2  
+  !   shape is 5,2,2
 
-  !   | [1,2], [5,6] |   dtp2(1,1) , dtp2(1,2) 
+  !   | [1,2], [5,6] |   dtp2(1,1) , dtp2(1,2)
   !   | [3,4], [7,8] |   dtp2(2,1) , dtp2(2,2)
   call verify4(spread(dtp2,2,5)) ! dim is 2
   !   shape is 2 5 2
@@ -84,7 +76,7 @@ program spreadSourceIsArrayIntComp01
      subroutine verify1(dt)
         type(dtp(1,*)),intent(in) :: dt(:,:)
         integer :: i
-        ! element order: 
+        ! element order:
         ! dt(1,1) - dtp1(2) - [1,2]
         ! dt(2,1) - dtp1(2)
         ! dt(3,1) - dtp1(2)
@@ -105,7 +97,7 @@ program spreadSourceIsArrayIntComp01
         ! dt(3,4) - dtp1(5)
         ! dt(4,4) - dtp1(5)
         ! dt(5,4) - dtp1(5)
- 
+
         if(dt%k /= 1)                              error stop 10_4
         if(dt%l /= 2)                              error stop 11_4
         if(size(dt,1) /= 5)                        error stop 12_4
@@ -115,13 +107,13 @@ program spreadSourceIsArrayIntComp01
           if(any(dt(i,2)%i /= [3,4]))              error stop 15_4
           if(any(dt(i,3)%i /= [5,6]))              error stop 16_4
           if(any(dt(i,4)%i /= [7,8]))              error stop 17_4
-        end do 
-     end subroutine   
+        end do
+     end subroutine
 
      subroutine verify2(dt)
         type(dtp(1,*)),intent(in) :: dt(:,:)
         integer :: i
-        
+
         ! element order
         ! dt(1,1) - dtp1(2) - [1,2]
         ! dt(2,1) - dtp1(3) - [3,4]
@@ -159,8 +151,8 @@ program spreadSourceIsArrayIntComp01
        type(dtp(1,*)),intent(in) :: dt(:,:,:)
        integer :: i
        ! element order:
-       ! dt(1,1,1) - dtp2(1,1) - [1,2] 
-       ! dt(2,1,1) - dtp2(1,1) 
+       ! dt(1,1,1) - dtp2(1,1) - [1,2]
+       ! dt(2,1,1) - dtp2(1,1)
        ! dt(3,1,1) - dtp2(1,1)
        ! dt(4,1,1) - dtp2(1,1)
        ! dt(5,1,1) - dtp2(1,1)
@@ -199,7 +191,7 @@ program spreadSourceIsArrayIntComp01
     subroutine verify4(dt)
        type(dtp(1,*)),intent(in) :: dt(:,:,:)
        integer :: i
-       
+
        ! element order:
        ! dt(1,1,1) - [1,2]
        ! dt(2,1,1) - [3,4]

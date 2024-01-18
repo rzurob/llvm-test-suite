@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgLbound7
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : UBOUND 
+!*  SECONDARY FUNCTIONS TESTED : UBOUND
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,15 +23,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
 !*  Case (i):
 !*  For an array section or for an array expression, other than a whole array or array
 !*  structure component, UBOUND (ARRAY, DIM) has a value equal to the number
 !*  of elements in the given dimension; otherwise, it has a value equal to the upper
 !*  bound for subscript DIM of ARRAY if dimension DIM of ARRAY does not have
 !*  size zero and has the value zero if dimension DIM has size zero.
-!*  -- zero extend 
-!*  () 
+!*  -- zero extend
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -46,7 +39,7 @@
   IMPLICIT NONE
 
   INTEGER :: I, I1
-  
+
   TYPE :: DT(N1,D1,D2,D3)    ! (1,2,4,8)
     INTEGER, KIND :: D1,D2,D3
     INTEGER, LEN  :: N1
@@ -66,7 +59,7 @@
   TYPE(DT(1,2,4,8))           :: T
   INTEGER, PARAMETER :: L2= 127, L1= -128
 
- 
+
   !ALLOCATE( DT1 ::  TT%Arr(L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2))
   ALLOCATE( DT1(1,2,4,8) ::  TT%Arr0(L2:L1,L2:L1,L2:L1,L2:L1,L2:L1,L2:L1,L2:L1,L2:L1,L2:L1))
 

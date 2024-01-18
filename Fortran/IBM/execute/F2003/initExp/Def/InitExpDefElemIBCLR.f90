@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemIBCLR.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemIBCLR.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  - IBCLR 
+!*
+!*  - IBCLR
 !*  (319007)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -39,7 +32,7 @@
   INTEGER(1), PARAMETER :: IA1=5
   INTEGER(1), PARAMETER :: IA2=0
   IMPLICIT INTEGER(IBCLR(POS=IA2, I=IA1))(A)
- 
+
   INTEGER :: I, J
 
   INTEGER(1), PARAMETER :: I11=3
@@ -63,16 +56,16 @@
 
    IF ( KIND(I13)  .NE. 1 )         STOP 11
    IF (      I13   .NE. 1 )         STOP 12
- 
+
    IF ( KIND(I23)  .NE. 2 )         STOP 21
    IF ( ANY( I23   .NE. 1 ))        STOP 22
- 
+
    IF ( KIND(I43)  .NE. 4 )         STOP 31
    IF ( ANY( I43   .NE. 1 ))        STOP 32
- 
+
    IF ( KIND(I83)  .NE. 8 )         STOP 41
    IF ( ANY( I83   .NE. 1 ))        STOP 42
- 
+
 
 
 

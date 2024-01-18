@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument102f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
@@ -24,8 +17,8 @@
 !*                                - Call to BIND(C) procedure from different scopes:
 !*                                main program, module and internal procedure
 !*                                - Nesting: call chain:
-!*                                non-Bind(C) => Bind(C) => non-Bind(C) 
-!*                                module/internal/main => external => internal 
+!*                                non-Bind(C) => Bind(C) => non-Bind(C)
+!*                                module/internal/main => external => internal
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -88,7 +81,7 @@ module mod
    end subroutine sub_mod
 end module mod
 
-program AllocatableDummyArgument102f 
+program AllocatableDummyArgument102f
    use iso_c_binding
    use mod
    implicit none
@@ -130,7 +123,7 @@ program AllocatableDummyArgument102f
    if ( sum(D) /= 62668800 )  error stop 7
 
 !---------- call BIND(C) procedure from main program
-   call sub_bind_c(N, M, A, B, C, D) 
+   call sub_bind_c(N, M, A, B, C, D)
 
    if ( sum(C) /= 22026240 )  error stop 8
    if ( sum(D) /= 48268800 )  error stop 9
@@ -173,8 +166,8 @@ contains
      end do
      if ( sum(C) /= 22282240 )  error stop 15
      if ( sum(D) /= 62668800 )  error stop 16
-!---------- call BIND(C) procedure from internal procedure 
-     call sub_bind_c(N, M, A, B, C, D) 
+!---------- call BIND(C) procedure from internal procedure
+     call sub_bind_c(N, M, A, B, C, D)
 
      if ( sum(C) /= 22026240 )  error stop 17
      if ( sum(D) /= 48268800 )  error stop 18
@@ -228,10 +221,10 @@ subroutine sub_bind_c(N, M, A, B, C, D) bind(c)
         end do
      end do
 
-     call sub_bind_c_int(A, B, C, D) 
+     call sub_bind_c_int(A, B, C, D)
 
 contains
-  subroutine sub_bind_c_int(A1, B1, C1, D1) 
+  subroutine sub_bind_c_int(A1, B1, C1, D1)
      integer(c_int), allocatable :: A1(:,:), B1(:,:), C1(:,:), D1(:,:,:,:,:,:,:,:,:,:)
      integer(c_int), allocatable :: A2(:,:), B2(:,:), C2(:,:), D2(:,:,:,:,:,:,:,:,:,:)
 
@@ -265,7 +258,7 @@ contains
      if ( sum(C1)           /=                       22026240 ) error stop 153
      if ( sum(D1)           /=                       48268800 ) error stop 154
 
-     ! source is actual argument 
+     ! source is actual argument
      allocate(A2, source=A1)
      allocate(B2, source=B1)
      allocate(C2, source=C1)

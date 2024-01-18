@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d357194.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d357194.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 7 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. DEFECT 357194
@@ -41,7 +33,7 @@ program d357194
   use m
   implicit none
 
-  type(C(:)),allocatable :: from1 
+  type(C(:)),allocatable :: from1
 
   allocate(from1,source=C(3)(a2=A(4)(),b1=B(2)(a1=A(8)()) ) )
 

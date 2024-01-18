@@ -12,38 +12,32 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat06.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Tests command line intrinsic routines by passing pointer components of 
+!*  DESCRIPTION                : Tests command line intrinsic routines by passing pointer components of
 !*                             : derived type as actual arguments
-!*                    
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
       module modtype
 
         type dertype
@@ -56,8 +50,8 @@
           character(513),  POINTER  :: NAME
           logical,         POINTER  :: TRIM_NAME
           integer ,        POINTER  :: ARGCOUNT
-        end type dertype 
-         
+        end type dertype
+
       end module modtype
 
 
@@ -68,11 +62,11 @@
       IMPLICIT NONE
       character(2049), TARGET  :: COMMAND
       integer,         TARGET  :: LENGTH
-      character(4099), TARGET  :: STR      
+      character(4099), TARGET  :: STR
       integer,         TARGET  :: STATUS
       integer,         TARGET  :: NUMBER
       character(2047), TARGET  :: VALUE
-      INTEGER,         TARGET  :: ARR(10)  
+      INTEGER,         TARGET  :: ARR(10)
       character(513),  TARGET  :: NAME
       logical,         TARGET  :: TRIM_NAME
       integer,         TARGET  :: ARGCOUNT
@@ -97,7 +91,7 @@
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 5 ) & 
+      if ( CmdCount .ne. 5 ) &
       then
         error stop 63
       endif
@@ -111,7 +105,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         cmd%NUMBER = i
         call GET_COMMAND_ARGUMENT(cmd%NUMBER, cmd%VALUE, cmd%LENGTH, cmd%STATUS)
         call MyGetArg(CmdLine, cmd%NUMBER, Argument)
@@ -134,8 +128,8 @@
       endif
 
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 
 
@@ -143,11 +137,11 @@
 
         character(2049)   :: COMMAND
         integer           :: LENGTH
-        character(4099)   :: STR      
+        character(4099)   :: STR
         integer           :: STATUS
         integer           :: NUMBER
         character(2047)   :: VALUE
-        INTEGER           :: ARR(10)  
+        INTEGER           :: ARR(10)
         character(513)    :: NAME
         logical           :: TRIM_NAME
         integer           :: ARGCOUNT
@@ -157,7 +151,7 @@
         DATA NAME /'CmdLine     '/
         DATA TRIM_NAME  / .true./
 
-      END BLOCK DATA 
-  
-        
+      END BLOCK DATA
+
+
 

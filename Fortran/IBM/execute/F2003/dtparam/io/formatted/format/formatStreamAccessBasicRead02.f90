@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatStreamAccessBasicRead02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatStreamAccessBasicRead02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 11 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 11 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. test READ statement with stream access
 !*  2. read in type bound procedure
-!*  3. derived type is polymorphic type 
+!*  3. derived type is polymorphic type
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
     type dt(l)
@@ -30,7 +22,7 @@ module m
       integer       :: i1(l) !l=3
       character(l)  :: c1(l)
       contains
-         procedure,pass :: readDt 
+         procedure,pass :: readDt
     end type
     type base(l1)
       integer,len :: l1
@@ -39,7 +31,7 @@ module m
       contains
          procedure,pass :: readBase
     end type
-    
+
     type,extends(base) :: child(l2)
       integer,len :: l2
       complex  :: x1(l2-1) !l2=3
@@ -51,7 +43,7 @@ module m
     integer,parameter :: DT1=1,DT2=2
 
     contains
-    
+
       subroutine readBase(this)
          class(base(*)),intent(inout) :: this
          integer :: mypos
@@ -61,17 +53,17 @@ module m
               inquire(10,pos=mypos)
               read(10,'(f5.3,f5.3)',pos=mypos) this%r1
 !              inquire(10,pos=mypos)
-              call this%dt1%readDt(DT1) 
-              call this%readChild 
+              call this%dt1%readDt(DT1)
+              call this%readChild
            class default
              stop 12
-         end select         
-      end subroutine 
+         end select
+      end subroutine
 
       subroutine readDt(this,dt)
          class(DT(*)),intent(inout) :: this
          integer :: dt
-        
+
          select type(this)
            type is(DT(*))
               if(dt .eq. DT1) then
@@ -80,7 +72,7 @@ module m
               else
                   read(10,'(a2,a3,a4)',pos=14) this%c1
                   read(10,'(bn,3i2)',pos=1) this%i1
-              end if  
+              end if
            class default
              stop 13
          end select
@@ -98,7 +90,7 @@ module m
               stop 14
          end select
       end subroutine
-    
+
 end module
 
 program formatStreamAccessBasicRead02
@@ -108,7 +100,7 @@ program formatStreamAccessBasicRead02
   class(base(:)),allocatable :: base1
   integer :: ios
   character(300) :: msg
-  
+
   allocate(child(2,3) :: base1)
 
   open(10,file='formatStreamAccessBasicRead02.in',status='old',&
@@ -119,7 +111,7 @@ program formatStreamAccessBasicRead02
     print *,"fail to open the file"
     print *,"iomsg=",msg
     print *,"iostat=",ios
-    stop 16 
+    stop 16
   else
        call base1%readBase
        select type(base1)
@@ -133,16 +125,16 @@ program formatStreamAccessBasicRead02
              write(*,'("base1%dt2%c1=[",a3,",",a3,",",a3,"]")' ) base1%dt2%c1
 
           class default
-              stop 15 
+              stop 15
        end select
   end if
 
-  
+
   close(10,iostat=ios)
-  
+
   if(ios /= 0) then
      print *,"fail to close the file,iostat=",ios
      stop 17
   end if
-    
+
 end program

@@ -1,17 +1,9 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : impliedshape08f.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : February 14, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Implied-shape arrays
-!*
-!* DRIVER STANZA              : xlf2008
 !*
 !* DESCRIPTION                : Testing proper functionality of
 !*                              implied-shape arrays as associate
@@ -157,127 +149,127 @@
 
       associate ( x => ia )
         if (ANY(x .NE. iaz)) ERROR STOP 1
-      end associate 
+      end associate
       associate ( x => ib )
         if (ANY(x .NE. ibz)) ERROR STOP 2
-      end associate 
+      end associate
       associate ( x => ic )
         if (ANY(x .NE. icz)) ERROR STOP 3
-      end associate 
+      end associate
       associate ( x => id )
         if (ANY(x .NE. idz)) ERROR STOP 4
-      end associate 
+      end associate
       associate ( x => ie )
         if (ANY(x .NE. iez)) ERROR STOP 5
-      end associate 
+      end associate
       associate ( x => if )
         if (ANY(x .NE. ifz)) ERROR STOP 6
-      end associate 
+      end associate
       associate ( x => ig )
         if (ANY(x .NE. igz)) ERROR STOP 7
-      end associate 
+      end associate
       associate ( x => ih )
         if (ANY(x .NE. ihz)) ERROR STOP 8
-      end associate 
+      end associate
 
       associate ( x => ra )
         if (ANY(x .NE. raz)) ERROR STOP 21
-      end associate 
+      end associate
       associate ( x => rb )
         if (ANY(x .NE. rbz)) ERROR STOP 22
-      end associate 
+      end associate
       associate ( x => rc )
         if (ANY(x .NE. rcz)) ERROR STOP 23
-      end associate 
+      end associate
       associate ( x => rd )
         if (ANY(x .NE. rdz)) ERROR STOP 24
-      end associate 
+      end associate
       associate ( x => re )
         if (ANY(x .NE. rez)) ERROR STOP 25
-      end associate 
+      end associate
       associate ( x => rf )
         if (ANY(x .NE. rfz)) ERROR STOP 26
-      end associate 
+      end associate
       associate ( x => rg )
         if (ANY(x .NE. rgz)) ERROR STOP 27
-      end associate 
+      end associate
       associate ( x => rh )
         if (ANY(x .NE. rhz)) ERROR STOP 28
-      end associate 
+      end associate
 
       associate ( x => ca )
         if (ANY(x .NE. caz)) ERROR STOP 31
-      end associate 
+      end associate
       associate ( x => cb )
         if (ANY(x .NE. cbz)) ERROR STOP 32
-      end associate 
+      end associate
       associate ( x => cc )
         if (ANY(x .NE. ccz)) ERROR STOP 33
-      end associate 
+      end associate
       associate ( x => cd )
         if (ANY(x .NE. cdz)) ERROR STOP 34
-      end associate 
+      end associate
       associate ( x => ce )
         if (ANY(x .NE. cez)) ERROR STOP 35
-      end associate 
+      end associate
       associate ( x => cf )
         if (ANY(x .NE. cfz)) ERROR STOP 36
-      end associate 
+      end associate
       associate ( x => cg )
         if (ANY(x .NE. cgz)) ERROR STOP 37
-      end associate 
+      end associate
       associate ( x => ch )
         if (ANY(x .NE. chz)) ERROR STOP 38
-      end associate 
+      end associate
 
       associate ( x => cha )
         if (ANY(x .NE. chaz)) ERROR STOP 41
-      end associate 
+      end associate
       associate ( x => chb )
         if (ANY(x .NE. chbz)) ERROR STOP 42
-      end associate 
+      end associate
       associate ( x => chc )
         if (ANY(x .NE. chcz)) ERROR STOP 43
-      end associate 
+      end associate
       associate ( x => chd )
         if (ANY(x .NE. chdz)) ERROR STOP 44
-      end associate 
+      end associate
       associate ( x => che )
         if (ANY(x .NE. chez)) ERROR STOP 45
-      end associate 
+      end associate
       associate ( x => chf )
         if (ANY(x .NE. chfz)) ERROR STOP 46
-      end associate 
+      end associate
       associate ( x => chg )
         if (ANY(x .NE. chgz)) ERROR STOP 47
-      end associate 
+      end associate
       associate ( x => chh )
         if (ANY(x .NE. chhz)) ERROR STOP 48
-      end associate 
+      end associate
 
       associate ( x => ta )
         if (ANY(x%a .NE. taz%a) .OR. ANY(x%b .NE. taz%b)) ERROR STOP 51
-      end associate 
+      end associate
       associate ( x => tb )
         if (ANY(x%a .NE. tbz%a) .OR. ANY(x%b .NE. tbz%b)) ERROR STOP 52
-      end associate 
+      end associate
       associate ( x => tc )
         if (ANY(x%a .NE. tcz%a) .OR. ANY(x%b .NE. tcz%b)) ERROR STOP 53
-      end associate 
+      end associate
       associate ( x => td )
         if (ANY(x%a .NE. tdz%a) .OR. ANY(x%b .NE. tdz%b)) ERROR STOP 54
-      end associate 
+      end associate
       associate ( x => te )
         if (ANY(x%a .NE. tez%a) .OR. ANY(x%b .NE. tez%b)) ERROR STOP 55
-      end associate 
+      end associate
       associate ( x => tf )
         if (ANY(x%a .NE. tfz%a) .OR. ANY(x%b .NE. tfz%b)) ERROR STOP 56
-      end associate 
+      end associate
       associate ( x => tg )
         if (ANY(x%a .NE. tgz%a) .OR. ANY(x%b .NE. tgz%b)) ERROR STOP 57
-      end associate 
+      end associate
       associate ( x => th )
         if (ANY(x%a .NE. thz%a) .OR. ANY(x%b .NE. thz%b)) ERROR STOP 58
-      end associate 
+      end associate
 
       end

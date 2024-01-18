@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : BExit
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-11-09
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 BLOCK
 !*  SECONDARY FUNCTIONS TESTED : exit statements exit to named block or nearest DO

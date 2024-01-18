@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr17
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 31, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  OPTIONAL 
-!*  
+!*  OPTIONAL
 !*
-!* 
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,7 +36,7 @@
   TYPE, ABSTRACT, EXTENDS(DT0)  :: DT1(K1, L1)
     INTEGER(K0), KIND    :: K1=K0
     INTEGER(K0), LEN     :: L1=K0
-    CHARACTER(L1+3) :: C1 = "DT1" 
+    CHARACTER(L1+3) :: C1 = "DT1"
     CONTAINS
     PROCEDURE(ModSub), NOPASS, DEFERRED :: Proc
   END TYPE
@@ -60,7 +49,7 @@
     REAL   (K2)          :: R=K2
     LOGICAL(K2)          :: L=.TRUE._1
     COMPLEX(K2)          :: Z=CMPLX(K1, K2, K2)
-    TYPE(DT0(K2, L2))           :: T0 
+    TYPE(DT0(K2, L2))           :: T0
     TYPE(DT2(k0,l0,k1,l1,K2, L2)), POINTER  :: Ptr2
     CONTAINS
     PROCEDURE, NOPASS :: Proc => ModSub
@@ -109,7 +98,7 @@
       IF ( Arg21%Ptr2%K2           .NE.   Arg22%Ptr2%K2           ) STOP 36
       IF ( Arg21%Ptr2%L2           .NE.   Arg22%Ptr2%L2           ) STOP 37
 
-    CLASS DEFAULT 
+    CLASS DEFAULT
       STOP 39
     END SELECT
 
@@ -142,7 +131,7 @@
   END IF
   END IF
 
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END MODULE
 
@@ -158,14 +147,14 @@
 
   T32%C1 = "XYZ"
   T32%C2 = "ZYX"
-  T32%I = 1234 
+  T32%I = 1234
   T32%R = 4321.
   T32%L = .TRUE.
   T32%Z = (1.,-1.)
   T32%Ptr2 => T32
 
   T22 = T32
-  
+
   T11 = T12
   allocate (T21, source = T22)
   T31 = T32

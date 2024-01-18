@@ -1,34 +1,29 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : module_for_char.f
-!*  TEST CASE TITLE            : Auxiliary module for character coarray testing 
-!*                               
-!*  PROGRAMMER                 : Ke Wen Lin 
-!*  DATE                       : March 16, 2011 
+!*
+!*  DATE                       : March 16, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Auxiliary module for character coarray testing
-!*                              
-!*  SECONDARY FUNCTIONS TESTED :                                                      
-!*                              
+!*
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REFERENCE                  : No Feature Number
 !*
-!*  DRIVER STANZA              : xlf2003_r
 !*  REQUIRED COMPILER OPTIONS  : -qcaf -q64
 !*
 !*  KEYWORD(S)                 : character, CAF
-!*                                                          
-!*  TARGET(S)                  :     
+!*
+!*  TARGET(S)                  :
 !*
 !*  DESCRIPTION:
 !*  -----------
-!*  The testcase aim to 
+!*  The testcase aim to
 !*  1. provide auxiliary module for character coarray testing
 !*  -----------
-!*  
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 module char_mod
@@ -39,7 +34,7 @@ module char_mod
 	! This method is to convert an integer number to a character
 	! such as: intValue = 123, retChar = '123'
 	subroutine getCharArray (intValue, retChar)
-	
+
 		implicit none
 		integer, intent(in)::intValue
 		character(len=3),intent(inout)::retChar
@@ -90,9 +85,9 @@ module char_mod
 		integer :: i = 0
 		verifyChars = .true.
 		do i = start_pos, end_pos, 1
-		   if(chars(i:i) /= single_char) then 
+		   if(chars(i:i) /= single_char) then
 				verifyChars = .false.
-		   end if     
+		   end if
 		end do
 	end function verifyChars
 
@@ -100,7 +95,7 @@ module char_mod
 		character(len=*), intent(inout) :: chars
 		integer, intent(in) :: start_pos, end_pos
 		character(len=1), intent(in) :: single_char
-		integer :: i     
+		integer :: i
 
 		do i = start_pos, end_pos, 1
 			chars(i:i) = single_char

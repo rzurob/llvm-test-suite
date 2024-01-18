@@ -12,36 +12,29 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu33.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Invoke command line procedures within module subroutines  
+!*  DESCRIPTION                : Invoke command line procedures within module subroutines
 !*                             : with host entity names the same as these intrinsic names
 !*                             : through use association
-!*                             :
 !*  33. Specify the host entity name the same as the procedure's generic name with use association
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -63,19 +56,19 @@
 
       character(2047)  :: Argument
 
-     
+
       INTRINSIC COMMAND_ARGUMENT_COUNT
       INTRINSIC GET_COMMAND
       INTRINSIC GET_COMMAND_ARGUMENT
-      INTRINSIC GET_ENVIRONMENT_VARIABLE 
+      INTRINSIC GET_ENVIRONMENT_VARIABLE
 
 
       END MODULE
 
-   
+
 
       MODULE MOD1
- 
+
       INTEGER COMMAND_ARGUMENT_COUNT
       INTEGER GET_COMMAND(1, 1, 1)
       INTEGER GET_COMMAND_ARGUMENT(1, 1, 1, 1)
@@ -83,12 +76,12 @@
 
 
       CONTAINS
-      
+
 
       SUBROUTINE MOD_SUB
       USE MOD0
 
-      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT()) & 
+      if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT()) &
       then
         error stop 63
       endif
@@ -102,7 +95,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -131,7 +124,7 @@
 
 
       PROGRAM fxclpu33
-      
+
       USE MOD1
 
       CALL MOD_SUB
@@ -144,4 +137,4 @@
       INCLUDE 'cmdline.include'
 
 
-  
+

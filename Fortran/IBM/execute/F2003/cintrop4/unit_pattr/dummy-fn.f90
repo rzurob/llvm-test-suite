@@ -17,7 +17,6 @@
         f0 = 3.0
       END FUNCTION
 
-
       !! user of dummy procedure argument
       SUBROUTINE s1 (dummyProc)
         INTERFACE
@@ -32,7 +31,6 @@
         PRINT*, rv
 
       END SUBROUTINE
-
 
       !! supplier of dummy procedure argument
       program m0

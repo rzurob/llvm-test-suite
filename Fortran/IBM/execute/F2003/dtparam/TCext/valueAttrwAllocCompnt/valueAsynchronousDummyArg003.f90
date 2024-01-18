@@ -3,22 +3,11 @@
 ! opt variations: -qnok -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Value Attribute for derived type containing allocatable components
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : value attribute with derived type containing allocatable components
 !*                                 - type: derived type with unlimited-polymorphic allocatable components
@@ -98,7 +87,7 @@ program valueOptionalDummyArg003
 
    type(base(4)) :: b1
    type(base(4)), allocatable :: b2
-   
+
    integer :: i
 
    b1 = base(4)(100)

@@ -1,21 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fdtio512akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from fdtio512a by Jim Xia)
 !*  DATE                       : 2007-08-16 (original: 12/07/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
-!*  SECONDARY FUNCTIONS TESTED : DTIO 
+!*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : DTIO generics (list-directed write for function
 !                               result that is a rank one poly-array pointer)

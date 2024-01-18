@@ -1,23 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrReshapeDT.f 
+!*  TEST CASE NAME             : dataPtrReshapeDT.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!* - data-pointer of derived-type, as arg of reshape 
+!* - data-pointer of derived-type, as arg of reshape
 !* - data-target is tar1%b1%a1; tar1 and a1 are scalar of DTs, b1 is array of DT
 !* - a1 has integer allocatable component
 !*
@@ -26,8 +20,8 @@
 module m
 
     type base
-	integer, allocatable :: id 
-    end type	
+	integer, allocatable :: id
+    end type
 
     type A
         type(base) :: a1
@@ -56,7 +50,7 @@ end module
 
 	print *, (/ (p1(i)%id, i= -1,8)/)
 
-	res = reshape(p1,(/2, 5/) ) 
+	res = reshape(p1,(/2, 5/) )
 
 	print *, shape(res)
 

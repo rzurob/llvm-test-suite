@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : associate004kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from associate004 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Associate Constructor: Unlimited Polymorphic Array Entities
@@ -71,8 +63,8 @@ use m
    allocate ( b2(2,2) , source = reshape( source = (/ child(4,4) ( 121.0 , 122.0 ), child(4,4) ( 123.0 , 124.0 ), &
                                                      child(4,4) ( 125.0 , 126.0 ), child(4,4) ( 127.0 , 128.0 )/), shape = (/2,2/) ) )
    allocate ( u1(3), source = b1 )
-   allocate ( u2(2,2), source = b2 ) 
-   
+   allocate ( u2(2,2), source = b2 )
+
    associate ( g => u1((/1,2,3/)) )
       select type ( g )
          class is ( base(4) )

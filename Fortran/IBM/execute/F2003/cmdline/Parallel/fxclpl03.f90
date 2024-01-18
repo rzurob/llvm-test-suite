@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpl03.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,11 +34,10 @@
 !*
 !*  DESCRIPTION                : Call command line intrinsic routines through single constructs
 !*                             : with COPYPRIVATE clause and FIRSTPRIVATE clauses
-!*                                      
-!*                          
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
 
       PROGRAM fxclpl03
 
@@ -52,19 +45,19 @@
 
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE  
-      character(513)   :: NAME  
-      logical          :: TRIM_NAME 
-      integer          :: ARGCOUNT 
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
+      integer          :: ARGCOUNT
 
 
       character(2049)      :: CmdLine  = 'fxclpl03 _______111111111111 --------11111 ++++++1111111'
       integer              :: CmdCount, i, k
       character(2047)      :: Argument
-     
+
       NAME = '??????  '
       TRIM_NAME = .false.
 
@@ -80,13 +73,13 @@
     !$OMP  PRIVATE(NAME) &
     !$OMP  PRIVATE(TRIM_NAME) &
     !$OMP  PRIVATE(ARGCOUNT) &
-    !$OMP  PRIVATE(Argument) 
+    !$OMP  PRIVATE(Argument)
 
 
     !$OMP SINGLE
-	
+
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 3 ) & 
+      if ( CmdCount .ne. 3 ) &
       then
         error stop 63
       endif
@@ -97,7 +90,7 @@
     !$OMP END SINGLE COPYPRIVATE(NAME, TRIM_NAME)    ! Carry on NAME and TRIM_NAME
 
 
-    !$OMP SINGLE	   
+    !$OMP SINGLE
 
       call GET_COMMAND(COMMAND, LENGTH, STATUS)
       if ( (TRIM(COMMAND) .ne. TRIM(CmdLine))  .or. &
@@ -110,9 +103,9 @@
     !$OMP END SINGLE COPYPRIVATE(NAME, TRIM_NAME)    ! Carry on NAME and TRIM_NAME
 
     !$OMP SINGLE
-	
+
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -129,7 +122,7 @@
     !$OMP END SINGLE COPYPRIVATE(NAME, TRIM_NAME)    ! Carry on NAME and TRIM_NAME
 
     !$OMP SINGLE
-	
+
       call GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
       if ( (TRIM(VALUE) .ne. TRIM(CmdLine))  .or. &
             (LENGTH .ne. LEN(TRIM(CmdLine)))  .or. &
@@ -138,11 +131,11 @@
          error stop 66
       endif
 
-    !$OMP END SINGLE 
+    !$OMP END SINGLE
 
     !$OMP END PARALLEL
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 

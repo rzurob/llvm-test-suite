@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Andy Chen
 !*  DATE                       : October 06, 2010
 !* .or.GIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Diagnostic Test for array: mismatching TKR on
 !*                               coindex assginment.
@@ -35,7 +25,7 @@ program coindex_assignment_002d
     integer, save    :: caf2[*]
     integer :: me, num, left, i
     logical :: l1
-    
+
     me = THIS_IMAGE()
     num = NUM_IMAGES()
 

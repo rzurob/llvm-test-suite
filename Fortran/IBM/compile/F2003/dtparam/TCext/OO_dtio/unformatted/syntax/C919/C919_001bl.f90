@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C919_001bl
 !*
-!*  PROGRAMMER                 : David Forster (derived from C919_001b by Robert Ma)
 !*  DATE                       : 2007-09-09 (original: 11/04/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5 Data Transfer Statements
 !*                               - C919: if io-unit is not a file-unit-number, then no POS= and REC=
@@ -72,7 +64,7 @@ use m
 
    write(*,*, pos=1) b1           !<- illegal to specify pos=
    read (*,*, pos=1) b2           !<- illegal to specify pos=
-   
+
 end program
 
 

@@ -1,20 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingBackspace02d - BACKSPACE Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : November 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Perform Two Unformatted Asynchronous
 !*                               WRITE() Operations on a Unit OPEN()ed
 !*                               for Write only
 !*  SECONDARY FUNCTIONS TESTED : BACKSPACE Once after each WRITE() Operation
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : BACKSPACE, WRITE(), ID= Specifier
@@ -36,7 +29,6 @@
 !*  Execution of a file positioning statement performs a wait operation
 !*  for all pending asynchronous data transfer operations for the
 !*  specified unit.
-!*
 !*
 !*  9.7.1 BACKSPACE statement
 !*

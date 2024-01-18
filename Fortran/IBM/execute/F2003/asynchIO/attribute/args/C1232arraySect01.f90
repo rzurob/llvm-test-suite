@@ -1,20 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : C1232arraySect01 - ASYNCHRONOUS
 !*                               Attribute in Array Section Arguments
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April  6, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Actual Argument is an Array Section
 !*  SECONDARY FUNCTIONS TESTED : Dummy Argument explicitly has the ASYNCHRONOUS
 !*                               Attribute and is an Assumed-Shape Array
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASYNCHRONOUS Attribute
@@ -44,7 +38,7 @@ program C1232arraySect01
             COMPLEX, ASYNCHRONOUS, DIMENSION( : ) :: theData
         end subroutine ReportData
     END INTERFACE
-    
+
     INTEGER, DIMENSION( 1000 ) :: ioID
 
     COMPLEX, DIMENSION( 1000 ) :: someData

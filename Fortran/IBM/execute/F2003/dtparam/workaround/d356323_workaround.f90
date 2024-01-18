@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d356323.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d356323.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 17 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
@@ -27,7 +19,7 @@ module m
    type A(l1)
      integer,len    :: l1
      integer(4)     :: i1
-     character(l1)  :: c1 
+     character(l1)  :: c1
    end type
    contains
       function getDT1(dt)
@@ -46,7 +38,7 @@ program d356323
    a3%i1=10
    a3%c1="123"
 
-   print *,getDT1(a3) 
+   print *,getDT1(a3)
 
    call associate_replacer (getDT1(a3))
 

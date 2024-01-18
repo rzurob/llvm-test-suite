@@ -2,8 +2,8 @@ integer, allocatable :: iii(:)
 integer, allocatable :: jjj(:)
 integer m, n
 allocate(iii(5))
-do m=1, 5 
-  iii(m) = m + 1 
+do m=1, 5
+  iii(m) = m + 1
 end do
 n = 1
 allocate(jjj, mold=iii(n+1:4))

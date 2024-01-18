@@ -11,4 +11,4 @@ type(dt(4)), target :: d1
 addr = c_loc(d1)
 
 end
-  
+

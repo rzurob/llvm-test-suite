@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp PtrAssignTarExpr1.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PrtAssignTarExpr1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PrtAssignTarExpr1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 12, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,19 +30,18 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*  C726 (R742) An expr shall be a reference to a function whose result
 !*  is a procedure pointer.
-!* 
-!* 
-!*  () 
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
 
-  CONTAINS 
+  CONTAINS
 
     FUNCTION IFun()
     INTEGER, POINTER :: IFun
@@ -83,7 +76,7 @@
   END MODULE
 
 
-  PROGRAM PrtAssignTarExpr1 
+  PROGRAM PrtAssignTarExpr1
   USE M
   IMPLICIT NONE
 
@@ -93,7 +86,7 @@
     END FUNCTION
   END INTERFACE
 
-  PROCEDURE(FunI), POINTER :: Ptr 
+  PROCEDURE(FunI), POINTER :: Ptr
 
     Ptr  => IFun()
 

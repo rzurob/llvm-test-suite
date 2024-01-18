@@ -1,25 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ptrAssgnDummyTar.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - Actual argument array pointer 
+!*  DESCRIPTION                : - Actual argument array pointer
 !*                                 with contiguous attribute
-!*                      
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -36,7 +25,7 @@ MODULE Mod
 
       CONTAINS
 
-      SUBROUTINE Sub(Arg)  
+      SUBROUTINE Sub(Arg)
         INTEGER, POINTER :: Arg(:)
         INTEGER, POINTER :: ptr(:)
 
@@ -57,7 +46,7 @@ PROGRAM ptrAssgnDummyTar
       USE Mod
 
       T1 = [(I, I=1,1024)]
-      p1 => T1 
+      p1 => T1
 
       CALL Sub(p1)
 

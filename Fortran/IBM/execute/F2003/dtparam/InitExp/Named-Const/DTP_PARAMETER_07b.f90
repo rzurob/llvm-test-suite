@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_PARAMETER_07b.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Named Constant (PARAMETER)
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,7 +17,7 @@
 !*  Defect: 355942
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -56,8 +48,8 @@ MODULE Mod
       CONTAINS
 
       SUBROUTINE CreateNewBase(Arg)
-        TYPE(Base(4,*)) :: Arg 
-        TYPE(Base(4,:)), ALLOCATABLE :: Obj 
+        TYPE(Base(4,*)) :: Arg
+        TYPE(Base(4,:)), ALLOCATABLE :: Obj
         INTEGER :: I
 
         Obj = Arg
@@ -70,8 +62,8 @@ MODULE Mod
       END SUBROUTINE
 
       SUBROUTINE CreateNewChild(Arg)
-        TYPE(Child(4,*,4,*)) :: Arg 
-        TYPE(Child(4,:,4,:)), ALLOCATABLE :: Obj 
+        TYPE(Child(4,*,4,*)) :: Arg
+        TYPE(Child(4,:,4,:)), ALLOCATABLE :: Obj
         INTEGER :: I
 
         Obj = Arg
@@ -152,9 +144,9 @@ PROGRAM DTP_PARAMETER_07b
                  ( 5, 'AB', 3, 'ABCDE', 1, 'n1constant', Base(4,10)(), Child(4,10,4,10)() )
 
       CALL CreateNewBase(b1)
-      
+
       CALL CreateNewChild(c1)
-     
+
       CALL CreateNewNextGen(n1)
-      
+
 END PROGRAM DTP_PARAMETER_07b

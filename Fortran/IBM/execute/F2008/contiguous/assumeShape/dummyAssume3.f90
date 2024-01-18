@@ -1,27 +1,17 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dummyAssume3.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                : - Target is dummy argument associated with
+!*                                 contiguous actal argument
 !*
-!*  DESCRIPTION                : - Target is dummy argument associated with 
-!*                                 contiguous actal argument 
-!*                      
 !*    Dummy is assumed shape array with CONTIGUOUS attribute
-!*    Actual is simply contiguous array pointer 
+!*    Actual is simply contiguous array pointer
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -106,7 +96,7 @@ PROGRAM dummyAssume3
         INTEGER, TARGET, CONTIGUOUS :: Arg(:,:,:)
         INTEGER :: Itot, I1up, I1low, I2up, I2low, I3up, I3low
 
-        Itot = size(Arg) 
+        Itot = size(Arg)
 
         I1up = UBOUND(Arg, 1)
         I2up = UBOUND(Arg, 2)
@@ -121,7 +111,7 @@ PROGRAM dummyAssume3
         DO I = LBOUND(Arg, 1), UBOUND(Arg, 1), 1
            DO J = LBOUND(Arg, 2), UBOUND(Arg, 2), 1
               DO K = LBOUND(Arg, 3), UBOUND(Arg, 3), 1
-                Arg(I,J,K) = I*J*K 
+                Arg(I,J,K) = I*J*K
               END DO
            END DO
         END DO

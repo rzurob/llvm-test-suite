@@ -1,21 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound_diag07
 !*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY SUBROUTINES TESTED   : Generic Resolution - Derived-type parameters
-!*  SECONDARY SUBROUTINES TESTED : distinguish by name using PASS  
-!*                     
+!*  SECONDARY SUBROUTINES TESTED : distinguish by name using PASS
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -38,30 +31,30 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k,l)
         INTEGER, KIND :: k
-        INTEGER, LEN :: l 
-      END TYPE Base 
+        INTEGER, LEN :: l
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child1 (k1)
-        INTEGER, KIND :: k1 
+        INTEGER, KIND :: k1
 
-        CONTAINS 
-         PROCEDURE, PASS(Arg0) :: sub1      
+        CONTAINS
+         PROCEDURE, PASS(Arg0) :: sub1
          PROCEDURE, PASS(Arg0) :: sub2
          GENERIC :: SUB =>  sub2, sub1
-      END TYPE Child1 
+      END TYPE Child1
 
       TYPE, EXTENDS(Base) :: Child2 (k2)
-        INTEGER, KIND :: k2 
-      END TYPE Child2 
+        INTEGER, KIND :: k2
+      END TYPE Child2
 
 
       CHARACTER(10) :: tag
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE sub1(Arg0,Arg1,Arg2,Arg3)
       CLASS(Child1(4,*,4)) :: Arg0, Arg2
@@ -75,7 +68,7 @@
       END SUBROUTINE sub1
 
       SUBROUTINE sub2(Arg1,Arg0,Arg3,Arg2)
-      CLASS(Child1(4,*,4)) :: Arg0, Arg3 
+      CLASS(Child1(4,*,4)) :: Arg0, Arg3
       CLASS(Child2(4,*,4)) :: Arg1, Arg2
 
       IF (Arg0%k .NE. Arg3%k) STOP 12

@@ -1,26 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : valueAttrDeferredLen003.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 04/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : Pass characters with run time length
-!*                               to subroutines with Value attribute 
+!*                               to subroutines with Value attribute
 !*				 dummy args. The actual argument size
 !*				will be greater than to the dummy arg size
-!*
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

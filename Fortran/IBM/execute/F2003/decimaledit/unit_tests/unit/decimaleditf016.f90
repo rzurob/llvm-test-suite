@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf016.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,36 +12,29 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf016
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Dec. 20, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DESCRIPTION                : This tests the functionality of the  
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : This tests the functionality of the
 !*                               decimal edit mode when using OPEN,
-!*                               READ and WRITE stmts during list-directed I/O 
+!*                               READ and WRITE stmts during list-directed I/O
 !*                               for objects of type COMPLEX. This testcase validates
 !*                               the behaviour when using run-time encoding
 !*                               of the DC and DP descriptors for internal files.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
-      
+
       character(50), parameter :: FNAME_OUT = 'decimaleditf016.out'
 
       integer, parameter :: OUT = 33 ! unit numbers
@@ -74,8 +67,8 @@
       complex :: rl1 = (3.14,4.13), rl2
       integer :: i
 
-      
-      
+
+
       open(unit=OUT, file=FNAME_OUT)
 
       my_fmt='(dp, 2f4.2)'

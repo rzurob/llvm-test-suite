@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ExplicitInitExp01.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
-!*  DATE                       : April 13, 2009 
+!*  DATE                       : April 13, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result 
-!*  SECONDARY FUNCTIONS TESTED : Array constructor 
+!*  PRIMARY FUNCTIONS TESTED   : Function result
+!*  SECONDARY FUNCTIONS TESTED : Array constructor
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,7 +17,7 @@
 !* Defect : 362586
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -50,21 +42,21 @@ MODULE Mod
 
       CONTAINS
 
-      CLASS(Base(4,:)) FUNCTION BuildBase(Arg) 
-        CLASS(Base(4,*)) :: Arg 
+      CLASS(Base(4,:)) FUNCTION BuildBase(Arg)
+        CLASS(Base(4,*)) :: Arg
         POINTER :: BuildBase
 
         ALLOCATE( BuildBase, SOURCE = Arg )
 
-      END FUNCTION   
+      END FUNCTION
 
-      CLASS(Child(4,:,4,:)) FUNCTION BuildChild(Arg) 
-        CLASS(Child(4,*,4,*)) :: Arg 
+      CLASS(Child(4,:,4,:)) FUNCTION BuildChild(Arg)
+        CLASS(Child(4,*,4,*)) :: Arg
         POINTER :: BuildChild
- 
+
         ALLOCATE( BuildChild, SOURCE = Arg )
- 
-      END FUNCTION   
+
+      END FUNCTION
 
       SUBROUTINE printBase (Arg)
         CLASS(Base(4,*)), INTENT(IN) :: Arg
@@ -88,10 +80,10 @@ PROGRAM ExplicitInitExp01
       USE Mod
       IMPLICIT NONE
       INTEGER, PARAMETER :: K =10 , N = 6, M = 3
-      INTEGER :: I, J 
+      INTEGER :: I, J
       TYPE(Base(4,K)) :: b1 = Base(4,K) ( [(1, I = 1, K)], [(2, I = 0, 2*K)] )
       TYPE(Child(4,M,4,N)) :: c1 =  Child(4,M,4,N) ( [(3, I = 1, M)] , &
-        [(4, I = 0, 2*M)], Base(4,N) ( [(5, I = 1, N)] , [(6, I = 0, 2*N)] ) ) 
+        [(4, I = 0, 2*M)], Base(4,N) ( [(5, I = 1, N)] , [(6, I = 0, 2*N)] ) )
       CLASS(Base(4,:)), POINTER :: upoly
 
       upoly => BuildBase(b1)
@@ -115,7 +107,7 @@ PROGRAM ExplicitInitExp01
            STOP 20
       END SELECT
 
-      upoly => BuildChild(c1) 
+      upoly => BuildChild(c1)
       IF (c1%l1 .NE. M) STOP 21
       IF (c1%l2 .NE. N) STOP 22
       IF (SIZE(c1%A0) .NE.  M) STOP 23

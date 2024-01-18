@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp  C818DupClassDefaults.f 
+! %POSTCMD: tcomp  C818DupClassDefaults.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C818DupClassDefaults
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 3, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C818 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C818
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     duplicated class default blocks 
+!*     duplicated class default blocks
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -44,21 +38,21 @@
 
   PROGRAM C818DupClassDefaults
   IMPLICIT NONE
- 
+
   CLASS(*), ALLOCATABLE :: Var
- 
+
   ALLOCATE(Var, SOURCE=1 )
 
-A:  SELECT TYPE ( Var) 
+A:  SELECT TYPE ( Var)
     CLASS DEFAULT A
     CLASS DEFAULT A
-B:    SELECT TYPE ( Var) 
+B:    SELECT TYPE ( Var)
       CLASS DEFAULT B
       CLASS DEFAULT B
-C:      SELECT TYPE ( Var) 
+C:      SELECT TYPE ( Var)
         CLASS DEFAULT C
         CLASS DEFAULT C
-D:        SELECT TYPE ( Var) 
+D:        SELECT TYPE ( Var)
           CLASS DEFAULT D
           CLASS DEFAULT D
           END SELECT D

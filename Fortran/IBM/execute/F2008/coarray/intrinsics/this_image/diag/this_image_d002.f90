@@ -1,23 +1,16 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : this_image_d002.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : July 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Invalid arguments test. First arg, if any,
 !*                               must be of type coarray.
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -72,7 +65,7 @@ program main
 	print *, this_image(cafl2)
 	print *, this_image(cafl4)
 	print *, this_image(cafl8)
-	
+
 	print *, this_image(cafch)
 	print *, this_image(cafr8(1,1))
 

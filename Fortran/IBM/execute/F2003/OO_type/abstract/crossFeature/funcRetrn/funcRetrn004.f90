@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Function subprogram (Section 12.5.2.1), class(abstract type)
 !*                                        returns polymorphic abstract base type in subfunction
@@ -48,14 +32,14 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
-   
+
    type, abstract :: base
       integer :: id
    end type
-   
+
    type, extends(base) :: child
    end type
-   
+
 
 contains
 
@@ -67,21 +51,21 @@ contains
       function innerfoo(a) result(boo)
          class(base), pointer :: boo
          class(base), intent(in) :: a
-         allocate(boo, source=a) 
+         allocate(boo, source=a)
       end function
    end function
-  
+
 end module
 
 program funcRetrn004
-   use m   
+   use m
 
    class(base), allocatable :: c
    class(base), allocatable :: b1
    allocate (b1, source = child(4))
    allocate ( c,source=foo(b1) )
-   
+
    if ( c%id .ne. 4) error stop 1_4
-   
+
 end program
 

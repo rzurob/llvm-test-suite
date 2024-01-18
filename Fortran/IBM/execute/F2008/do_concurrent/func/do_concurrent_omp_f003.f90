@@ -1,18 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_omp_f003.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon
 !*  DATE                       : August 12, 2015
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OMP 3.0 loop collapse clause
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008_r
 !*  REQUIRED COMPILER OPTIONS  : -qsmp
 !*
 !*  REFERENCE                  : omp30/loopCollapse/loopCollapse/loop_collapse_threadprivate_3.scenario
@@ -27,11 +22,11 @@
   IMPLICIT NONE
 
   INTEGER, PARAMETER :: C=32
-  INTEGER :: N 
-  INTEGER :: I, J, K, L, M, Mark=0, Junk(C)=0 
+  INTEGER :: N
+  INTEGER :: I, J, K, L, M, Mark=0, Junk(C)=0
   INTEGER, TARGET      :: T
-  INTEGER, POINTER     :: P1 
-  INTEGER, POINTER     :: P2 
+  INTEGER, POINTER     :: P1
+  INTEGER, POINTER     :: P2
   COMMON  /MyCommon/P1, P2
 !$OMP THREADPRIVATE (/MyCommon/)
 
@@ -52,7 +47,7 @@
 ! copy of a threadprivate variable or a variable in a threadprivate common block, that is
 ! not affected by any copyin clause that appears on the second region, will be retained.
 
-  T = -1 
+  T = -1
   P1 => T
   P2 => P1
 

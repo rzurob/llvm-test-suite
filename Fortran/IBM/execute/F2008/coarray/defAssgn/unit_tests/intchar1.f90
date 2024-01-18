@@ -3,7 +3,7 @@ interface assignment (=)
     character(2), intent(out) :: a[*]
     integer, intent(in) :: b
   end subroutine
-end interface 
+end interface
 
 character(2), save :: c[*]
 integer :: d = 2
@@ -22,4 +22,4 @@ subroutine myassign(a,b)
   else
     a = 'cd'
   end if
-end subroutine 
+end subroutine

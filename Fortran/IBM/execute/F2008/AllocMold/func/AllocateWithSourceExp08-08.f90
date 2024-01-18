@@ -1,26 +1,16 @@
 !* ===================================================================
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE            : AllocateWithSourceExp08-08
-!*
-!* ORIGINAL PROGRAMMER        : Dorra Bouchiha
-!* PROGRAMMER                 : Izhak Jakov
 !*
 !* DATE                       : June 2, 2015
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
-!* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression 
+!* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression
 !* SECONDARY FUNCTIONS TESTED :
-!*                              
 !*
-!* DRIVER STANZA              : xlf2003
-!* REQUIRED COMPILER OPTIONS  : 
+!* REQUIRED COMPILER OPTIONS  :
 !*
-!* KEYWORD(S)                 : 
+!* KEYWORD(S)                 :
 !* TARGET(S)                  :
-!* NUMBER OF TESTS CONDITIONS : 
+!* NUMBER OF TESTS CONDITIONS :
 !*
 !* DESCRIPTION                :
 !*
@@ -28,7 +18,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithSourceExp08
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
@@ -69,7 +59,7 @@ PROGRAM AllocateWithSourceExp08
       IF(SIZE(u_poly_arr1) .NE. 2) ERROR STOP 13
       IF(SIZE(u_poly_arr2) .NE. 2) ERROR STOP 23
 
-      SELECT TYPE ( u_poly_arr1 ) 
+      SELECT TYPE ( u_poly_arr1 )
         CLASS IS (Child(4,*,4,*))
            IF (u_poly_arr1%l1 .NE. 10) ERROR STOP 14
            IF (u_poly_arr1%l2 .NE. 5) ERROR STOP 15
@@ -78,7 +68,7 @@ PROGRAM AllocateWithSourceExp08
         CLASS DEFAULT
            ERROR STOP 17
       END SELECT
-      
+
       SELECT TYPE ( u_poly_arr1 )
         CLASS IS (Child(4,*,4,*))
             IF (u_poly_arr1%l1 .NE. 10) ERROR STOP 24

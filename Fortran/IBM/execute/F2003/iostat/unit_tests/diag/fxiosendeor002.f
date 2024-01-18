@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxiosendeor002.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,21 +12,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxiosendeor002 
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug. 17, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : is_iostat_end and is_iostat_eor intrinsics
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This diagnostic test, makes sure that only 1 argument
 !*                               is allowed to be passed to these intrinsics.

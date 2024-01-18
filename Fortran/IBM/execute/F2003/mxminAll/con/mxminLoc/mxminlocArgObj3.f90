@@ -1,28 +1,17 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 2/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX*/MIN* intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX*/MIN* intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAXLOC/MINLOC with named constant as actual
 !*                               argument in procedure pointer with explicit
-!*                               interface. 
+!*                               interface.
 !* ===================================================================
 
-  module proc_pointer 
+  module proc_pointer
     interface
         subroutine sub1(arg1, arg2)
             integer, intent(in) :: arg2(2)
@@ -36,19 +25,19 @@
     end interface
   end module proc_pointer
 
-  program mxminlocArgObj3 
+  program mxminlocArgObj3
 
     use proc_pointer
 
     interface
         subroutine ifacesub1(arg1, arg2)
-        use proc_pointer 
+        use proc_pointer
             integer, intent(in) :: arg2(2)
             integer arg1(2)
         end subroutine
 
         function ifacefun1(arg)
-        use proc_pointer 
+        use proc_pointer
             integer, intent(in) :: arg
             integer :: ifacefun1
         end function
@@ -73,8 +62,7 @@
 
     if(pp2(maxloc(y, dim=1, mask=.true.)) .ne. 10) error stop 2_4
 
-
-  end program mxminlocArgObj3 
+  end program mxminlocArgObj3
 
   subroutine sub1(arg1, arg2)
     integer arg1(2)
@@ -87,5 +75,4 @@
     integer :: fun1
     fun1 = arg
   end function
-
 

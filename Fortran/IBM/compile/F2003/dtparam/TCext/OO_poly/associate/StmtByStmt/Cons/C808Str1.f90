@@ -3,26 +3,21 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C808Str1.f 
+! %POSTCMD: tcomp C808Str1.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C808Str1
-!*  TEST CASE TITLE            : C808
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 20, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
@@ -30,7 +25,6 @@
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,23 +32,23 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a structure constructor with array component 
-!*    (Pass Exce) 
+!*    The selector is a structure constructor with array component
+!*    (Pass Exce)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
 
   PROGRAM C808Str1
   IMPLICIT NONE
-   
+
   TYPE :: T(K1)    ! (4)
     INTEGER, KIND :: K1
     INTEGER(K1)   :: Arr(3)
-  END TYPE 
+  END TYPE
 
     ASSOCIATE ( As => T(4)((/1, 2, 3/)) )
       As%Arr(1) = 4
-      print*, As%Arr(1)  
+      print*, As%Arr(1)
     END ASSOCIATE
 
   END

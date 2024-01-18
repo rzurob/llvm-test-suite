@@ -1,35 +1,29 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: dcomp dfinal001c.f
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : dfinal001c.f
-!*  TEST CASE TITLE            : type-bound procedure
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : final subroutines 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : final subroutines
+!*
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : testing final subroutines: final
-!*                               subroutines cannot be overidden 
-!*    
+!*                               subroutines cannot be overidden
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 

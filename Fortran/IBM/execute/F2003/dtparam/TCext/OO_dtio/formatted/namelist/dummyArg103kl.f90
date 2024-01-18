@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dummyArg103kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from dummyArg103 by Robert Ma)
 !*  DATE                       : 2007-07-05 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting for derived type object which is a dummy argument
@@ -95,14 +87,14 @@ program dummyArg103kl
    if ( b2%readBase(1) /= 0 ) error stop 3_4
    if ( b3%readBase(1) /= 0 ) error stop 4_4
    if ( b4%readBase(1) /= 0 ) error stop 5_4
-   
+
    select type (b1)
       type is (child(*,4)) ! tcx: (*,4)
          if ( ( b1%c /= 'abc' ) .or. (b1%i /= 1234 ) ) error stop 6_4
       class default
          error stop 7_4
    end select
-   
+
    if ( b2%c /= 'def' ) error stop 8_4
    if ( b3%c /= 'ghi' ) error stop 9_4
    if ( b4%c /= 'jkl' ) error stop 10_4

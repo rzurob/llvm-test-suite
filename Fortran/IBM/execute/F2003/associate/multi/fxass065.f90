@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass065.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass065.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -54,7 +42,7 @@
 !*
 !*  CONDITIONS TESTED          : Listed below.
 !*
-!*  DESCRIPTION                : Test: MULTIPLE ASSOCIATE with expressions 
+!*  DESCRIPTION                : Test: MULTIPLE ASSOCIATE with expressions
 !*                                     with integer, integer*1, integer*2
 !*                                     integer*4, integer*8 and byte
 !*                                     data types and do loop.
@@ -91,7 +79,7 @@
       integer*8 a8 / 9 /
       integer*8 b8 / 2 /
       integer*8 c8
-      
+
       byte ab1 / 1 /
       byte ab2 / 4 /
       byte cb
@@ -100,12 +88,12 @@
 
 !-----------   ASSOCIATE with INTEGER expressions ----------------
 
-      c = a + (b + 1)*10   
+      c = a + (b + 1)*10
       do count = 1, 10
 
       associate ( arg => a , arg1 => b , arg2 => c)
-         arg = arg + (arg1 + 1)*10  
-         if(arg .ne. a)then 
+         arg = arg + (arg1 + 1)*10
+         if(arg .ne. a)then
            error stop 1
          endif
       end associate
@@ -129,7 +117,7 @@
 
 !-----------   ASSOCIATE with INTEGER*2 expressions ----------------
 
-      c2 = a2 + (b2 + 1)*10 
+      c2 = a2 + (b2 + 1)*10
       do count = 1, 10
       associate ( ag => a2 , ag1 => b2 , ag2 => c2)
          ag = ag + (ag1 + 1)*10
@@ -142,7 +130,7 @@
 
 !-----------   ASSOCIATE with INTEGER*4 expressions ----------------
 
-      c4 = a4 + (b4 + 1)*10   
+      c4 = a4 + (b4 + 1)*10
       do count = 1, 10
       associate ( rg => a4 , rg1 => b4 , rg2 => c4)
          rg = rg + (rg1 + 1)*10

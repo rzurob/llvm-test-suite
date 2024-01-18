@@ -39,13 +39,9 @@
 "polyAssign1025d_2level.f", 1518-203 (L) Array expressions are not permitted by the FORTRAN 77 standard.
 "polyAssign1025d_2level.f", 1518-270 (L) Named constants must not be arrays in the FORTRAN 77 standard.
 "polyAssign1025d_2level.f", 1518-203 (L) Array expressions are not permitted by the FORTRAN 77 standard.
-"polyAssign1025d_2level.f", 1518-203 (L) Array expressions are not permitted by the FORTRAN 77 standard.
-"polyAssign1025d_2level.f", 1518-270 (L) Named constants must not be arrays in the FORTRAN 77 standard.
-"polyAssign1025d_2level.f", 1518-270 (L) Named constants must not be arrays in the FORTRAN 77 standard.
 "polyAssign1025d_2level.f", 1518-270 (L) Named constants must not be arrays in the FORTRAN 77 standard.
 "polyAssign1025d_2level.f", 1518-203 (L) Array expressions are not permitted by the FORTRAN 77 standard.
 "polyAssign1025d_2level.f", 1518-264 (L) Lowercase characters have been detected in the source.  Lowercase characters are not permitted by the FORTRAN 77 standard.
-"polyAssign1025d_2level.f", 1518-256 (L) The intrinsic procedure allocated (with these arguments) is not permitted by the FORTRAN 77 standard.
 "polyAssign1025d_2level.f", 1518-256 (L) The intrinsic procedure allocated (with these arguments) is not permitted by the FORTRAN 77 standard.
 "polyAssign1025d_2level.f", 1518-203 (L) Array expressions are not permitted by the FORTRAN 77 standard.
 "polyAssign1025d_2level.f", 1518-256 (L) The intrinsic procedure allocated (with these arguments) is not permitted by the FORTRAN 77 standard.

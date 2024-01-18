@@ -1,25 +1,16 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : encodingspecifier010
-!*
-!*  PROGRAMMER                 : Morteza Ershad-Manesh
 !*  DATE                       : December 12, 2007
-!*  ORIGIN                     : XL Fortran test Team,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ENCODING= specifier in I/O statements
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Diagnostic test case for ENCODING=specifier
 !*                               in OPEN statement
 !*                               with specifers set to UTF-8
-!*                              
 !*
 !234567890093456789009345678900934567890093456789009345678900934567890
 

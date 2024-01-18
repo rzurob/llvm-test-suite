@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPolyTarget04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPolyTarget04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 7 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  TEST POINTER ASSOCIATION WITH ACTUAL OR DUMMY ARGUMENT THROGH FUNCTION RESULT
@@ -25,7 +17,7 @@
 module m
    type A(l1)
      integer,len   :: l1
-     character(l1) :: c1 
+     character(l1) :: c1
    end type
    type B(l2)
      integer,len  :: l2
@@ -36,7 +28,7 @@ end module
 program dummyArgDeferNonPolyTarget04
   use m
   implicit none
-  
+
   type(B(:)),target,allocatable :: b1
   type(B(:)),pointer            :: ptr1
 
@@ -68,10 +60,10 @@ program dummyArgDeferNonPolyTarget04
     function getDT1(dt)
       type(B(:)),target,allocatable :: dt
       type(B(:)),pointer            :: getDT1
-      
+
       getDT1=>dt
     end function
-   
+
     subroutine associate1(arg)
        type(B(:)),target,allocatable :: arg
 
@@ -79,16 +71,16 @@ program dummyArgDeferNonPolyTarget04
        if(ptr1%l2 /= 3)                                     error stop 11_4
        if(ptr1%a1%l1 /= 3)                                  error stop 12_4
        if(any(ptr1%a1%c1 /= ["xlf","xlc"]))                 error stop 13_4
-    end subroutine 
+    end subroutine
 
     function getDT2(arg)
        type(B(:)),target,allocatable :: arg
-       type(B(:)),pointer :: getDT2 
+       type(B(:)),pointer :: getDT2
 
        arg%a1=[A(3)("12"),A(3)("34")]
- 
+
        getDT2=>arg
-    end function 
+    end function
 
     subroutine associate2(arg)
        type(B(:)),target,allocatable :: arg

@@ -1,22 +1,10 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : logkind8a.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is of logical*8
 !*                               To is of unlimited poly
@@ -33,7 +21,7 @@
 
       implicit logical ( a-z )
 
-      allocatable :: l1(:) 
+      allocatable :: l1(:)
 
       allocate(l1(2), source = func())
 
@@ -43,7 +31,7 @@
       contains
             function func()
                 implicit logical*8 ( a-z )
-                dimension func(2) 
+                dimension func(2)
 
                 type base
                 end type
@@ -51,11 +39,11 @@
                 type, extends(base) :: child
                 end type
 
-                class(base), allocatable ::  a1,a2 
-                class(child), pointer :: p1 
+                class(base), allocatable ::  a1,a2
+                class(child), pointer :: p1
                 class(*), allocatable :: l1(:)
                 allocatable l2(:)
-                
+
                 allocate(child::a1)
                 allocate(p1)
 
@@ -71,7 +59,7 @@
                      type is (logical*8)
                         func = l1
                      class default
-                        stop 51 
+                        stop 51
                 end select
             end function
 

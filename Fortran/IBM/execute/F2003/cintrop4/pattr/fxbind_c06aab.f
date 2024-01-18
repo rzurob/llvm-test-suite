@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,26 +13,18 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c06aab.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran programs interoperate with C functions
 !*                                through a Fortran procedure interface that uses
 !*                                the BIND specification .
 !*                              - interop functions contained in Module.
-!*              
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -49,15 +36,15 @@
 !*   - passing scalar arguments by REFERENCE and by VALUE
 !*   - main written in FORTRAN, Fortran calls C functions.
 !*   - Option : qrealsize=8
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. Declare the interop functions in Fortran program.
 !*          ( Create a procedural interface that corresponds to the C prototype
-!*          and bind the interface to the C function using the BIND(C) specifier). 
+!*          and bind the interface to the C function using the BIND(C) specifier).
 !*          2. Initialize the variable which will be the  actual arguments of
-!*             the interop functions. 
+!*             the interop functions.
 !*          3. Fortran  program call C function.The argument is  altered
 !*             during execution of the C Function.
-!*          4. Assertion: Check the modified auguments and return value  
+!*          4. Assertion: Check the modified auguments and return value
 !*             in Fortran to verify it is correct.
 !*
 !* ===================================================================
@@ -93,12 +80,12 @@ interface
     real*8,value :: x,y
     real*8 arith_real8_val
   end function  arith_real8_val
- 
+
 end interface
 end module mreal
 
 program fxbind_c06aab
- 
+
   use  mreal
   implicit none
 
@@ -110,15 +97,15 @@ program fxbind_c06aab
   real*8  ai4_val /5.0d0/, bi4_val /10.0d0/, res4_val
   real*8 ai8_ref /5.0d0/, bi8_ref /10.0d0/, res8_ref
   real*8 ai8_val /5.0d0/, bi8_val /10.0d0/, res8_val
- 
+
   !**********************************************************
   !        Calling C from Fortran with real data type
   !                and check the results
   !**********************************************************
 
   ! Test 1 : call by reference
-  ! A dummy argument without the VALUE attribute correspond 
-  ! to a formal parameter  of the prototype in C program 
+  ! A dummy argument without the VALUE attribute correspond
+  ! to a formal parameter  of the prototype in C program
   ! that is of a pointer type.
 
   res4_ref = arith_real4_ref(ai4_ref,bi4_ref)
@@ -130,7 +117,7 @@ program fxbind_c06aab
 
   ! Test 2 : call by value
   ! A dummy argument with the VALUE attribute  correspond
-  ! to a formal parameter of the prototype in C program that is 
+  ! to a formal parameter of the prototype in C program that is
   ! not of a pointer type.
 
   res4_val =arith_real4_val(ai4_val,bi4_val)
@@ -141,8 +128,8 @@ program fxbind_c06aab
   endif
 
   ! Test 3 : call by reference
-  ! A dummy argument without the VALUE attribute correspond 
-  ! to a formal parameter  of the prototype in C program 
+  ! A dummy argument without the VALUE attribute correspond
+  ! to a formal parameter  of the prototype in C program
   ! that is of a pointer type.
 
   res8_ref = arith_real8_ref(ai8_ref,bi8_ref)
@@ -154,7 +141,7 @@ program fxbind_c06aab
 
   ! Test 4 : call by value
   ! A dummy argument with the VALUE attribute  correspond
-  ! to a formal parameter of the prototype in C program that is 
+  ! to a formal parameter of the prototype in C program that is
   ! not of a pointer type.
 
   res8_val =arith_real8_val(ai8_val,bi8_val)

@@ -3,21 +3,15 @@
 ! opt variations: -qnol -qreuse=self
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : langLvlDoneSpec01 - IBM Extensions with
 !*                               Language Level Options
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April 11, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : -qlanglvl=[extended|2003pure|2003std] Option
 !*  SECONDARY FUNCTIONS TESTED : DONE= Specifier in the WAIT() Statement
 !*
-!*  DRIVER STANZA              : langLvlDoneSpec01e:  xlf2003
 !*                               langLvlDoneSpec01p:  xlf95
 !*                               langLvlDoneSpec01s:  xlf95
 !*  REQUIRED COMPILER OPTIONS  : langLvlDoneSpec01e:  -qlanglvl=extended
@@ -31,11 +25,9 @@
 !*  DESCRIPTION                :
 !*  Code which uses the IBM Extension(s) noted below.
 !*
-!*  From the XL Fortran Language Reference:
-!*
 !*  WAIT
 !*
-!*         ----------    IBM  Extension    ---------- 
+!*         ----------    IBM  Extension    ----------
 !*    Purpose
 !*      The WAIT statement may be used to wait for an asynchronous data
 !*      transfer to complete or it may be used to detect the completion
@@ -43,7 +35,7 @@
 !*
 !*      Syntax
 !*
-!*        WAIT ( wait_list )   
+!*        WAIT ( wait_list )
 !*
 !*        wait_list
 !*          is a list that must contain one ID= specifier and at most one

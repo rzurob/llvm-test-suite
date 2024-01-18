@@ -12,11 +12,11 @@ program main
   interface foo
     integer function func1(x)
       integer, pointer :: x
-    end function 
+    end function
 
     integer function func2(x)
       integer, allocatable :: x
-    end function 
+    end function
   end interface
 
   integer result

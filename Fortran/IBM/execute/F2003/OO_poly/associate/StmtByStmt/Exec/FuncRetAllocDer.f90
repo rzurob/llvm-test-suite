@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncRetAllocDer.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncRetAllocDer.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRetAllocDer 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRetAllocDer
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a func call returning an allocatable of derived type 
+!*    The selector is a func call returning an allocatable of derived type
 !*    (Comp Failed)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -53,7 +47,7 @@
       INTEGER  :: ChildId = 2
       CLASS(Base),  ALLOCATABLE :: BaseArr(:)
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -72,18 +66,18 @@
 
   END MODULE
 
-  PROGRAM FunRetAllocDer 
+  PROGRAM FunRetAllocDer
   USE M
   TYPE(Child) :: V = Child(BaseId= -1, ChildId=-2, BaseArr=NULL() )
   ASSOCIATE ( As => Func( V ) )
-    IF ( As%GetID() .NE. -2) STOP 50 
-    IF ( As%BaseId  .NE. -1) STOP 51 
-    IF ( As%ChildId .NE. -2) STOP 52 
+    IF ( As%GetID() .NE. -2) STOP 50
+    IF ( As%BaseId  .NE. -1) STOP 51
+    IF ( As%ChildId .NE. -2) STOP 52
 
     ASSOCIATE ( As1 => As%GetId() )
-       IF ( As1 .NE. -2) STOP 52 
+       IF ( As1 .NE. -2) STOP 52
     END ASSOCIATE
-   
+
     IF ( .NOT. SAME_TYPE_AS(As, Child( BaseArr=NULL())) )    STOP 53
     IF ( .NOT. SAME_TYPE_AS(As%BaseArr, As) ) STOP 54
 
@@ -99,9 +93,9 @@
     TYPE(Child), ALLOCATABLE  :: Func
 
     ALLOCATE(Func)
-    Func = Arg 
+    Func = Arg
     ALLOCATE(Child :: FUNC%BaseArr(3))
- 
-  END FUNCTION 
+
+  END FUNCTION
 
   END

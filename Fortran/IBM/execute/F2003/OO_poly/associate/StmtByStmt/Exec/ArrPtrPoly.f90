@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrPtrPoly.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrPtrPoly.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrPtrPoly
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a poly array pointer 
-!*    (ICE) 
+!*    The selector is a poly array pointer
+!*    (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,7 +46,7 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -75,7 +69,7 @@
   USE M
   IMPLICIT NONE
 
-  CLASS(*), POINTER :: Ptr(:,:)  
+  CLASS(*), POINTER :: Ptr(:,:)
 
   ALLOCATE(Child :: Ptr(2,2))
 
@@ -93,20 +87,20 @@ C:      ASSOCIATE ( As => MainAs )
 D:        SELECT TYPE ( Ptr )
           TYPE IS (Child)
 
-            IF ( ANY(As%ChildId .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 41 
-            IF ( ANY(As%BaseId  .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 42 
-            IF ( ANY(As%GetID()      .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 33 
-            IF ( ANY(As%Base%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 34 
+            IF ( ANY(As%ChildId .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 41
+            IF ( ANY(As%BaseId  .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 42
+            IF ( ANY(As%GetID()      .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 33
+            IF ( ANY(As%Base%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 34
 
             ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-              IF ( ANY(As0 .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 41 
-              IF ( ANY(As1 .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 42 
+              IF ( ANY(As0 .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 41
+              IF ( ANY(As1 .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 42
             END ASSOCIATE
 
             ASSOCIATE ( As2 => As%Base )
               IF ( ANY(As2%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) STOP 50
             END ASSOCIATE
-  
+
             ASSOCIATE ( As2 => MainAs%Base )
               IF ( ANY(As2%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) STOP 52
             END ASSOCIATE
@@ -114,7 +108,7 @@ D:        SELECT TYPE ( Ptr )
           CLASS DEFAULT
             STOP 51
         END SELECT D
- 
+
       END ASSOCIATE C
 
     CLASS DEFAULT

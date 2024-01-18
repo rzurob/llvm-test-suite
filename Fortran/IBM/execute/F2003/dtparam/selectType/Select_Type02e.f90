@@ -1,26 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type02e - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 25, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : SELECT TYPE Construct inside an ASSOCIATE Construct
 !*                               Host association - Array Constructor
-!*                       
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -39,7 +32,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 !*
 ! DERIVED TYPE declarations
 !*
@@ -48,17 +41,17 @@
         INTEGER, LEN :: len1  !5
 
         INTEGER(KIND=k1) :: my_arr(len1)
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
-        CLASS(*), ALLOCATABLE :: Cmp(:) 
-      END TYPE Child 
+        CLASS(*), ALLOCATABLE :: Cmp(:)
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen
       END TYPE NextGen
 
       INTEGER, PARAMETER :: k1 = KIND(0), len1 = 5
-  
+
       CONTAINS
 
       INTEGER FUNCTION FACT(N)
@@ -70,22 +63,22 @@
 
       PROGRAM Select_Type02e
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(Child(k1,len1)), POINTER :: child1 
-      TYPE(Child(k1,len1)), TARGET :: tgt 
+      CLASS(Child(k1,len1)), POINTER :: child1
+      TYPE(Child(k1,len1)), TARGET :: tgt
       TYPE(NextGen(k1,len1)), TARGET :: cbl
 
       INTERFACE
         SUBROUTINE sub1(Obj)
           USE Mod1
-          IMPLICIT NONE 
+          IMPLICIT NONE
           CLASS(Child(k1,len1)) :: Obj
         END SUBROUTINE sub1
 !*
         SUBROUTINE sub2(Obj)
           USE Mod1
-          IMPLICIT NONE 
+          IMPLICIT NONE
           CLASS(NextGen(k1,len1)) :: Obj
           INTEGER :: I
         END SUBROUTINE sub2
@@ -102,15 +95,15 @@
 
       CALL sub1(child1)
 
-      !dynamic TYPE of child is now NextGen     
-      child1 => cbl 
+      !dynamic TYPE of child is now NextGen
+      child1 => cbl
       IF ( .NOT. ASSOCIATED(child1)) STOP 104
       IF ( .NOT. ALLOCATED(child1%Cmp)) STOP 105
 
       SELECT TYPE (child1)
          CLASS IS (NextGen(k1,*))
             !call possible only within the SELECT TYPE
-            CALL sub2(child1) 
+            CALL sub2(child1)
 
          CLASS DEFAULT
             STOP 10
@@ -120,7 +113,7 @@
 !*
       SUBROUTINE sub1(Obj)
         USE Mod1
-        IMPLICIT NONE 
+        IMPLICIT NONE
         CLASS(Child(k1,len1)) :: Obj
 
         SELECT TYPE ( A => Obj%Cmp(1))
@@ -130,16 +123,16 @@
           TYPE IS (Base(k1,*))
             IF( SIZE(A%my_arr) /= len1) STOP 111
             IF( FACT(SIZE(A%my_arr)) /= FACT(len1) ) STOP 112
-          
+
           CLASS DEFAULT
-            STOP 21 
+            STOP 21
         END SELECT
 
       END SUBROUTINE sub1
 !*
       SUBROUTINE sub2(Obj)
         USE Mod1
-        IMPLICIT NONE 
+        IMPLICIT NONE
         CLASS(NextGen(k1,len1)) :: Obj
         INTEGER :: I
 

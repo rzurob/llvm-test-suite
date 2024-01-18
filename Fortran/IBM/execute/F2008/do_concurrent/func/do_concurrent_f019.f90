@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : do_concurrent_f019.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2015-02-26
 !*  ORIGIN                     :
 !*  FEATURE                    : F2008 DO CONCURRENT
@@ -28,43 +25,43 @@ PROGRAM fxfc032b
       SUBROUTINE sub1( n )
          INTEGER n
       END SUBROUTINE
-      
+
       SUBROUTINE sub2( n )
          INTEGER n
       END SUBROUTINE
-        
+
       SUBROUTINE sub3( n )
          INTEGER n
-      END SUBROUTINE 
-      
+      END SUBROUTINE
+
       SUBROUTINE sub4( m,n )
          INTEGER m,n
       END SUBROUTINE
-      
+
       SUBROUTINE sub4b( m,n )
          INTEGER m,n
       END SUBROUTINE
-      
+
       SUBROUTINE sub5( m,n )
          INTEGER m,n
       END SUBROUTINE
-      
+
       SUBROUTINE sub6( m,n )
          INTEGER m,n
       END SUBROUTINE
-      
+
       SUBROUTINE sub7( m,n )
          INTEGER m,n
       END SUBROUTINE
-      
+
       SUBROUTINE sub8( m,n )
          INTEGER m,n
       END SUBROUTINE
-      
+
       SUBROUTINE sub9( m,n )
          INTEGER m,n
       END SUBROUTINE
-      
+
       SUBROUTINE sub10( m,n )
          INTEGER m,n
       END SUBROUTINE
@@ -161,13 +158,13 @@ SUBROUTINE sub2( n )
    END FORALL
    PRINT *,array
 END SUBROUTINE
-  
+
 
 !-------------------------------
 ! This subroutine accepts a one
 ! dimensional array and assigns
 ! values to it.
-! 
+!
 ! Test: DO nested in DO CONCURRENT
 !
 !-------------------------------
@@ -178,12 +175,12 @@ SUBROUTINE sub3( n )
 
    array = 0
    DO CONCURRENT ( in1 = 4:ubound(array,1):4 )
-      DO in2 = 3,0,-2 
+      DO in2 = 3,0,-2
          array(in1-in2:in1-in2+1) = in1+in2
       END DO
    END DO
    PRINT *,array
-END SUBROUTINE 
+END SUBROUTINE
 
 !-------------------------------
 ! This subroutine accepts a two
@@ -287,7 +284,7 @@ SUBROUTINE sub7( m,n )
 
    array = 0
    DO CONCURRENT ( in1 = 1:ubound(array,1) )
-      DO in2 = 1,ubound(array,2) 
+      DO in2 = 1,ubound(array,2)
         array(in1,in2) = in1 + in2
       END DO
       DO CONCURRENT ( in2 = 1:ubound(array,2),in1 .EQ. in2)

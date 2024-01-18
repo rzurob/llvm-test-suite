@@ -5,7 +5,6 @@ module m
     real(8), allocatable :: d2(:)
 end module
 
-
 subroutine verifyD1D2
 use m
     logical(4) precision_r8
@@ -33,14 +32,12 @@ use m
     if (.not. precision_r8(-.152d124, d2(5))) error stop 12_4
 end subroutine
 
-
 subroutine allocateD2
 use m
     if (.not. allocated(d2)) then
         allocate(d2(10))
     end if
 end subroutine
-
 
 program commaEdit002
     integer unit
@@ -72,7 +69,6 @@ use m
 
     read (unit, *) d1(:5)
 end subroutine
-
 
 subroutine readD2 (unit)
 use m

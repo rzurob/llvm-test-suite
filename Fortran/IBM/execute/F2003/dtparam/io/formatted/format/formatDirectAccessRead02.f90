@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatDirectAccessRead02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatDirectAccessRead02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 15 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test READ statement
-!* 2. derived type has type bound procedure & generic binding 
+!* 2. derived type has type bound procedure & generic binding
 !* 3. derived type is unlimited polymorphic type
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -35,7 +27,7 @@ module m
         procedure,nopass :: readInner8
         generic  :: readInner=>readInner4,readInner8
    end type
-  
+
    type outer(k2,l2)
       integer,kind :: k2
       integer,len  :: l2
@@ -45,14 +37,14 @@ module m
         procedure,nopass :: readOuter4
         procedure,nopass :: readOuter8
         generic :: readOuter =>readOuter4,readOuter8
-   end type 
+   end type
 
    type(outer(2,3)) :: dtp
 
    contains
-   
+
       subroutine readInner4(inner4,unit)
-         class(inner(4,*)),intent(inout) :: inner4 
+         class(inner(4,*)),intent(inout) :: inner4
          integer,intent(in)  :: unit
          select type(inner4)
            type is(inner(4,*))
@@ -64,7 +56,7 @@ module m
       end subroutine
 
       subroutine readInner8(inner8,unit)
-         class(inner(8,*)),intent(inout) :: inner8 
+         class(inner(8,*)),intent(inout) :: inner8
          integer,intent(in)  :: unit
          select type(inner8)
            type is(inner(8,*))
@@ -76,21 +68,21 @@ module m
       end subroutine
 
       subroutine readOuter4(outer4,unit)
-         class(outer(4,*)),intent(inout) :: outer4 
+         class(outer(4,*)),intent(inout) :: outer4
          integer,intent(in) :: unit
 
          select type(outer4)
            type is(outer(4,*))
              read(unit,'(f9.3,/f9.3,/f9.4)',rec=5) outer4%r1
-             call dtp%comp%readInner4(outer4%comp,unit)   
+             call dtp%comp%readInner4(outer4%comp,unit)
            class default
              stop 12
          end select
-         
+
       end subroutine
 
       subroutine readOuter8(outer8,unit)
-         class(outer(8,*)),intent(inout) :: outer8 
+         class(outer(8,*)),intent(inout) :: outer8
          integer,intent(in) :: unit
 
          select type(outer8)
@@ -127,7 +119,7 @@ program formatDirectAccessRead02
      print *,"fail to open the file"
      print *,"iostat=",ios
      print *,"iomsg=",msg
-     stop 8 
+     stop 8
   else
     select type(outer4)
       type is(outer(4,*))

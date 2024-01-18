@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg11.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg11.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg11.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg11.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 23, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Explicit dummy procedure - Characteristics 
+!*
+!*  Explicit dummy procedure - Characteristics
 !*  Pure/! Ext. Elemental is illegal
 !* (Memory fault)
 !*
@@ -54,21 +48,21 @@
       INTEGER, LEN  :: N1
       CHARACTER(N1) :: C
     END TYPE
- 
+
     INTERFACE
       PURE FUNCTION IntF(Arg)
       IMPORT
-        TYPE(Base(4,*)), INTENT(IN) :: Arg 
-        TYPE(Base(4,3)):: IntF(2:4) 
+        TYPE(Base(4,*)), INTENT(IN) :: Arg
+        TYPE(Base(4,3)):: IntF(2:4)
       END FUNCTION
     END INTERFACE
- 
+
   END MODULE
 
   PURE FUNCTION ExtFun(Arg)
   USE M
-  TYPE(Base(4,*)), INTENT(IN) :: Arg 
-  TYPE(Base(4,3)) :: ExtFun(3) 
+  TYPE(Base(4,*)), INTENT(IN) :: Arg
+  TYPE(Base(4,3)) :: ExtFun(3)
     ExtFun = Arg
   END FUNCTION
 
@@ -77,16 +71,16 @@
   USE M
   IMPLICIT NONE
 
-  PROCEDURE(IntF) :: ExtFun 
- 
-  PROCEDURE(IntF), POINTER :: ProcPtr 
+  PROCEDURE(IntF) :: ExtFun
+
+  PROCEDURE(IntF), POINTER :: ProcPtr
 ! INTRINSIC :: ABS  !for 11.1
 
 
   CALL IntSub(ExtFun)
 
-  ProcPtr => ExtFun 
-  CALL IntSub(ProcPtr) 
+  ProcPtr => ExtFun
+  CALL IntSub(ProcPtr)
 
   CONTAINS
 
@@ -96,8 +90,8 @@
     INTERFACE
       FUNCTION IntF3(Arg1)
       IMPORT
-        TYPE(Base(4,*)) :: Arg1 
-        TYPE(Base(4,3)):: IntF3(2:4) 
+        TYPE(Base(4,*)) :: Arg1
+        TYPE(Base(4,3)):: IntF3(2:4)
       END FUNCTION
     END INTERFACE
 

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsArrayCharComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsArrayCharComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 17 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -31,9 +23,9 @@ module m
    type,extends(base) :: child(k,l2)
      integer(8),kind  :: k
      integer,len      :: l2
-     character(l2),pointer :: c2(:) 
+     character(l2),pointer :: c2(:)
    end type
-   
+
 end module
 
 program spreadSourceIsArrayCharComp02
@@ -46,15 +38,15 @@ program spreadSourceIsArrayCharComp02
   character(3),target :: c2_1(3)=["3","4","5"]
   character(3),target :: c2_2(3)=["-3","-4","-5"]
   character(3),target :: c2_3(3)=["33","44","55"]
-  character(3),target :: c2_4(3)=["-33","-44","-55"]  
+  character(3),target :: c2_4(3)=["-33","-44","-55"]
 
-  
-  allocate(b1(2:5),source=[child(2,2,3)(null(),c2_1),& 
+
+  allocate(b1(2:5),source=[child(2,2,3)(null(),c2_1),&
                            child(2,2,3)(null(),c2_2), &
                            child(2,2,3)(null(),c2_3),&
                            child(2,2,3)(null(),c2_4) ] )
   select type(x=>b1)
-     type is(child(*,2,*)) 
+     type is(child(*,2,*))
        allocate(x(2)%c1(2),source=["1","2"])
        allocate(x(3)%c1(2),source=["-1","-2"])
        allocate(x(4)%c1(2),source=["11","22"])
@@ -71,7 +63,7 @@ program spreadSourceIsArrayCharComp02
   !   | b1(2), b1(3), b1(4), b1(5) |
   !   | b1(2), b1(3), b1(4), b1(5) |
 
-  
+
   call verify2(spread(b1,2,5)) ! dim is 2
   !   spread(..) becomes ...
   !   | b1(2), b1(2), b1(2), b1(2), b1(2) |
@@ -81,34 +73,34 @@ program spreadSourceIsArrayCharComp02
 
 
   !   b2 is
-  !   b2(1,1) - (c1=["1","2"],c2=["3","4","5"]) 
-  !   b2(1,2) - (c1=["11","22"],c2=["33","44","55"]) 
-  !   b2(2,1) - (c1=["-1","-2"],c2=["-3","-4","-5"]) 
-  !   b2(2,2) - (c1=["-11","-22"],c2=["-33","-44","-55"]) 
+  !   b2(1,1) - (c1=["1","2"],c2=["3","4","5"])
+  !   b2(1,2) - (c1=["11","22"],c2=["33","44","55"])
+  !   b2(2,1) - (c1=["-1","-2"],c2=["-3","-4","-5"])
+  !   b2(2,2) - (c1=["-11","-22"],c2=["-33","-44","-55"])
 
   call verify3(spread(b2,1,5)) ! dim is 1
-  !   shape is 5,2,2  
+  !   shape is 5,2,2
 
 
   call verify4(spread(b2,2,5)) ! dim is 2
   !   shape is 2 5 2
   !   dt(1,x,1) - (x is 1 - 5) - (c1=["1","2"],c2=["3","4","5"])
-  !   dt(1,x,2) - (x is 1 - 5) - (c1=["11","22"],c2=["33","44","55"]) 
-  !   dt(2,x,1) - (x is 1 - 5) - (c1=["-1","-2"],c2=["-3","-4","-5"]) 
-  !   dt(2,x,2) - (x is 1 - 5) - (c1=["-11","-22"],c2=["-33","-44","-55"]) 
+  !   dt(1,x,2) - (x is 1 - 5) - (c1=["11","22"],c2=["33","44","55"])
+  !   dt(2,x,1) - (x is 1 - 5) - (c1=["-1","-2"],c2=["-3","-4","-5"])
+  !   dt(2,x,2) - (x is 1 - 5) - (c1=["-11","-22"],c2=["-33","-44","-55"])
 
   contains
 
      subroutine verify1(dt)
         class(base(*)),intent(in) :: dt(:,:)
         integer :: i
-        ! element order: 
-        ! dt(1,1) - b1(2) - (c1=["1","2"],c2=["3","4","5"]) 
+        ! element order:
+        ! dt(1,1) - b1(2) - (c1=["1","2"],c2=["3","4","5"])
         ! dt(2,1) - b1(2)
         ! dt(3,1) - b1(2)
         ! dt(4,1) - b1(2)
         ! dt(5,1) - b1(2)
-        ! dt(1,2) - b1(3) - (c1=["-1","-2"],c2=["-3","-4","-5"]) 
+        ! dt(1,2) - b1(3) - (c1=["-1","-2"],c2=["-3","-4","-5"])
         ! dt(2,2) - b1(3)
         ! dt(3,2) - b1(3)
         ! dt(4,2) - b1(3)
@@ -118,12 +110,12 @@ program spreadSourceIsArrayCharComp02
         ! dt(3,3) - b1(4)
         ! dt(4,3) - b1(4)
         ! dt(5,3) - b1(4)
-        ! dt(1,4) - b1(5) - (c1=["-11","-22"],c2=["-33","-44","-55"]) 
+        ! dt(1,4) - b1(5) - (c1=["-11","-22"],c2=["-33","-44","-55"])
         ! dt(2,4) - b1(5)
         ! dt(3,4) - b1(5)
         ! dt(4,4) - b1(5)
         ! dt(5,4) - b1(5)
- 
+
         if(dt%l1 /= 2)                                     error stop 10_4
         select type(dt)
           type is(child(*,2,*))
@@ -165,21 +157,21 @@ program spreadSourceIsArrayCharComp02
                     error stop 204_4
               end select
 
-            end do 
+            end do
           class default
              error stop 200_4
         end select
-     end subroutine   
+     end subroutine
 
      subroutine verify2(dt)
         class(base(*)),intent(in) :: dt(:,:)
         integer :: i
-        
+
         ! element order
-        ! dt(1,1) - b1(2) - (c1=["1","2"],c2=["3","4","5"]) 
-        ! dt(2,1) - b1(3) - (c1=["-1","-2"],c2=["-3","-4","-5"]) 
-        ! dt(3,1) - b1(4) - (c1=["11","22"],c2=["33","44","55"]) 
-        ! dt(4,1) - b1(5) - (c1=["-11","-22"],c2=["-33","-44","-55"]) 
+        ! dt(1,1) - b1(2) - (c1=["1","2"],c2=["3","4","5"])
+        ! dt(2,1) - b1(3) - (c1=["-1","-2"],c2=["-3","-4","-5"])
+        ! dt(3,1) - b1(4) - (c1=["11","22"],c2=["33","44","55"])
+        ! dt(4,1) - b1(5) - (c1=["-11","-22"],c2=["-33","-44","-55"])
         ! dt(1,2) - b1(2)
         ! dt(2,2) - b1(3)
         ! dt(3,2) - b1(4)
@@ -240,32 +232,32 @@ program spreadSourceIsArrayCharComp02
             end do
           class default
             error stop 205_4
-        end select        
+        end select
      end subroutine
 
     subroutine verify3(dt)
        class(base(*)),intent(in) :: dt(:,:,:)
        integer :: i
        ! element order:
-       ! dt(1,1,1) - b2(1,1) - (c1=["1","2"],c2=["3","4","5"]) 
-       ! dt(2,1,1) - b2(1,1) 
+       ! dt(1,1,1) - b2(1,1) - (c1=["1","2"],c2=["3","4","5"])
+       ! dt(2,1,1) - b2(1,1)
        ! dt(3,1,1) - b2(1,1)
        ! dt(4,1,1) - b2(1,1)
        ! dt(5,1,1) - b2(1,1)
 
-       ! dt(1,2,1) - b2(2,1) - (c1=["-1","-2"],c2=["-3","-4","-5"]) 
+       ! dt(1,2,1) - b2(2,1) - (c1=["-1","-2"],c2=["-3","-4","-5"])
        ! dt(2,2,1) - b2(2,1)
        ! dt(3,2,1) - b2(2,1)
        ! dt(4,2,1) - b2(2,1)
        ! dt(5,2,1) - b2(2,1)
 
-       ! dt(1,1,2) - b2(1,2) - (c1=["11","22"],c2=["33","44","55"]) 
+       ! dt(1,1,2) - b2(1,2) - (c1=["11","22"],c2=["33","44","55"])
        ! dt(2,1,2) - b2(1,2)
        ! dt(3,1,2) - b2(1,2)
        ! dt(4,1,2) - b2(1,2)
        ! dt(5,1,2) - b2(1,2)
 
-       ! dt(1,2,2) - b2(2,2) - (c1=["-11","-22"],c2=["-33","-44","-55"]) 
+       ! dt(1,2,2) - b2(2,2) - (c1=["-11","-22"],c2=["-33","-44","-55"])
        ! dt(2,2,2) - b2(2,2)
        ! dt(3,2,2) - b2(2,2)
        ! dt(4,2,2) - b2(2,2)
@@ -324,27 +316,27 @@ program spreadSourceIsArrayCharComp02
     subroutine verify4(dt)
        class(base(*)),intent(in) :: dt(:,:,:)
        integer :: i
-       
-       ! element order:
-       ! dt(1,1,1) - (c1=["1","2"],c2=["3","4","5"]) 
-       ! dt(2,1,1) - (c1=["-1","-2"],c2=["-3","-4","-5"]) 
-       ! dt(1,2,1) -  
-       ! dt(2,2,1) - 
-       ! dt(1,3,1) - 
-       ! dt(2,3,1) - 
-       ! dt(1,4,1) - 
-       ! dt(2,4,1) - 
-       ! dt(1,5,1) - 
-       ! dt(2,5,1) - 
 
-       ! dt(1,1,2) - (c1=["11","22"],c2=["33","44","55"]) 
-       ! dt(2,1,2) - (c1=["-11","-22"],c2=["-33","-44","-55"])  
-       ! dt(1,2,2) - 
-       ! dt(2,2,2) - 
+       ! element order:
+       ! dt(1,1,1) - (c1=["1","2"],c2=["3","4","5"])
+       ! dt(2,1,1) - (c1=["-1","-2"],c2=["-3","-4","-5"])
+       ! dt(1,2,1) -
+       ! dt(2,2,1) -
+       ! dt(1,3,1) -
+       ! dt(2,3,1) -
+       ! dt(1,4,1) -
+       ! dt(2,4,1) -
+       ! dt(1,5,1) -
+       ! dt(2,5,1) -
+
+       ! dt(1,1,2) - (c1=["11","22"],c2=["33","44","55"])
+       ! dt(2,1,2) - (c1=["-11","-22"],c2=["-33","-44","-55"])
+       ! dt(1,2,2) -
+       ! dt(2,2,2) -
        ! dt(1,3,2) -
-       ! dt(2,3,2) - 
+       ! dt(2,3,2) -
        ! dt(1,4,2) -
-       ! dt(2,4,2) - 
+       ! dt(2,4,2) -
        ! dt(1,5,2) -
        ! dt(2,5,2) -
 

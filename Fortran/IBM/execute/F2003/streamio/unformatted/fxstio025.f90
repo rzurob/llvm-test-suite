@@ -1,43 +1,37 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f  fort.* 
-! %COMPOPTS: 
-! %GROUP: fxstio025.f 
+! %PRECMD: rm -f  fort.*
+! %COMPOPTS:
+! %GROUP: fxstio025.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio025.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 19, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
 !*
-!*  Description                : Test NUM in unformatted stream     
-!*                               access READ/WRITE statements.       
-!*                               Default integer will be used to   
+!*  Description                : Test NUM in unformatted stream
+!*                               access READ/WRITE statements.
+!*                               Default integer will be used to
 !*                               test this specifier.
 !*
 !=======================================================================
 
 !* Declare Variables.
-  
+
    implicit none
 
    integer position /0/, filesize /0/
-   integer number /0/, iol /0/ 
+   integer number /0/, iol /0/
    integer iarr1(3)
-   integer ivar1 /-20000000/, ivar2 
+   integer ivar1 /-20000000/, ivar2
    integer, parameter :: ipararr(3) = (/-2147483648, 0, 2147483647/)
 
    real rarr1(3), rarr2(3)
@@ -76,7 +70,7 @@
 
    rewind(1)
    inquire( iolength=iol ) ivar2
-   read(1, num=number, err=300) ivar2 
+   read(1, num=number, err=300) ivar2
    if ( number .ne. iol )   error stop 13
 
    inquire( iolength=iol ) iarr1
@@ -105,7 +99,7 @@
 
    rewind(1)
    inquire( iolength=iol ) rvar2
-   read(1, num=number, err=300) rvar2 
+   read(1, num=number, err=300) rvar2
    if ( number .ne. iol )   error stop 23
 
    inquire( iolength=iol ) rarr1
@@ -132,7 +126,7 @@
 
    rewind(1)
    inquire( iolength=iol ) lvar2
-   read(1, num=number, err=300) lvar2 
+   read(1, num=number, err=300) lvar2
    if ( number .ne. iol )   error stop 33
 
    inquire( iolength=iol ) larr1
@@ -160,7 +154,7 @@
 
    rewind(1)
    inquire( iolength=iol ) hvar2
-   read(1, num=number, err=300) hvar2 
+   read(1, num=number, err=300) hvar2
    if ( number .ne. iol )   error stop 43
 
    inquire( iolength=iol ) harr1

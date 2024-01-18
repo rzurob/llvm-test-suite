@@ -3,18 +3,18 @@
       implicit none
 
       interface
-        subroutine sub10(arr10, i, j) 
+        subroutine sub10(arr10, i, j)
           use, intrinsic :: iso_c_binding
-          implicit none            
-          real(c_float) arr10(1:, :, 1:)            
+          implicit none
+          real(c_float) arr10(1:, :, 1:)
           integer i, j
-        end subroutine         
-      end interface            
+        end subroutine
+      end interface
 
       real(c_float) arrx1(30)
       real(c_float) arrx2(4, 6, 8)
       real(c_float) arrx3(2, 8)
-	  
+
       call sub0(3, 4)
       call sub1(4, 5)
       call sub2(3, arrx1)
@@ -47,7 +47,7 @@
       rt = c_sizeof(arr0(i:5, j:10))
       if (rt /= 32 * size(arr0(i:5, j:10))) error stop 5
 
-      end subroutine 
+      end subroutine
 
       subroutine sub1(col, row) ! Explicit-shape Auto arrays
       use, intrinsic :: iso_c_binding
@@ -75,7 +75,7 @@
       rt = c_sizeof(arr1(i:5, j:3))
       if (rt /= 1 * size(arr1(i:5, j:3))) error stop 10
 
-      end subroutine 
+      end subroutine
 
       subroutine sub2(row, arr2) ! Explicit-shape Adjustable arrays
       use, intrinsic :: iso_c_binding
@@ -120,8 +120,8 @@
 
       rt = c_sizeof(arr10*kind(4))
       if (rt /= 4 * size(arr10)) error stop 19
-      end subroutine 
-      
+      end subroutine
+
       subroutine sub11(arr11, i, j) ! element or section of Assumed-size arrays
       use, intrinsic :: iso_c_binding
       implicit none
@@ -135,7 +135,7 @@
       rt = c_sizeof(arr11(i+1, j+2))
       if (rt /= 4) error stop 21
 
-      end subroutine 
+      end subroutine
 
       subroutine sub12(i, j) ! element or section of Deferred-shape arrays
       use, intrinsic :: iso_c_binding
@@ -160,11 +160,11 @@
 
       rt = c_sizeof(arr12_2(i+1, j+2))
       if (rt /= 1) error stop 24
-      
+
       rt = c_sizeof(4+arr12_1)
       if (rt /= 4 * size(arr12_1)) error stop 25
 
       rt = c_sizeof(arr12_1*kind(4))
       if (rt /= 4 * size(arr12_1)) error stop 26
-	  
-      end subroutine 
+
+      end subroutine

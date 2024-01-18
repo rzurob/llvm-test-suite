@@ -1,30 +1,24 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fort.* 
+! %PRECMD: rm -f fort.*
 ! %COMPOPTS: -qautodbl=dblpad4
-! %GROUP: fxstio208.f 
+! %GROUP: fxstio208.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio208.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 25, 2003
 !*
-!*  Primary Function Tested    : options with stream I/O 
+!*  Primary Function Tested    : options with stream I/O
 !*
 !*  Description                : Test POS, NUM, SIZE specifer in READ
-!*                               WRITE & INQURE statments with      
+!*                               WRITE & INQURE statments with
 !*                               -qautodbl=dblpad4 in stream I/O
 !*
 !***********************************************************************
@@ -57,7 +51,7 @@
          x16_var,  x8_var, r4_var, i8_var
 
       call sub1(x16, x8, r4, i8, 2)
-      
+
 stop
 
 100 print *, "open error: iostat = ", ios
@@ -99,7 +93,7 @@ stop
          if(fpos   .ne. (num(1)*4+1)) error stop 225
             close(1)
          else if (flag .eq. 2) then
-            read(2, fmt='(2E15.7)', iostat=ios, err=400) x16_var 
+            read(2, fmt='(2E15.7)', iostat=ios, err=400) x16_var
             read(2, fmt='(2E15.7)', iostat=ios, err=400) x8_var
             read(2, fmt='(D25.17)', iostat=ios, err=400) r4_var
             read(2, fmt='(I20)',    iostat=ios, err=400) i8_var
@@ -112,7 +106,7 @@ stop
             if(fpos  .ne. 4*16+1)    error stop 227
             close(2)
          endif
-       
+
 stop
 
 100 print *, "open error: iostat = ", ios
@@ -127,6 +121,4 @@ stop
     error stop 500
 
       end
-
-
 

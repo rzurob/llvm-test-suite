@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsArrayDTComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsArrayDTComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 18 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 18 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -38,7 +30,7 @@ module m
      type(first(2*k3)) :: first1
      type(second(2*l3)) :: second1
    end type
-   
+
 end module
 
 program spreadSourceIsArrayDTComp01
@@ -46,16 +38,16 @@ program spreadSourceIsArrayDTComp01
   implicit none
 
   type(third(1,2)) :: third1(2:5)=[third(1,2)(first1=first(2)(i1=1),       &
-                                              second1=second(4)(c1="111") ),& 
-                                   third(1,2)(first1=first(2)(i1=2),       & 
+                                              second1=second(4)(c1="111") ),&
+                                   third(1,2)(first1=first(2)(i1=2),       &
                                               second1=second(4)(c1="222") ),&
                                    third(1,2)(first1=first(2)(i1=3),       &
                                               second1=second(4)(c1="333") ),&
                                    third(1,2)(first1=first(2)(i1=4),       &
-                                              second1=second(4)(c1="444"))] 
+                                              second1=second(4)(c1="444"))]
 
   type(third(1,2)),pointer :: third2(:,:)
-  
+
   allocate(third2(2,2),source=reshape(third1,(/2,2/)) )
 
   call verify1(spread(third1,1,5)) ! dim is 1
@@ -66,7 +58,7 @@ program spreadSourceIsArrayDTComp01
   !   | third1(2), third1(3), third1(4), third1(5) |
   !   | third1(2), third1(3), third1(4), third1(5) |
 
-  
+
   call verify2(spread(third1,2,5)) ! dim is 2
   !   spread(..) becomes ...
   !   | third1(2), third1(2), third1(2), third1(2), third1(2) |
@@ -77,13 +69,13 @@ program spreadSourceIsArrayDTComp01
 
   !   third2 is
   !   third2(1,1) - (first(2)(i1=1),second(4)(c1="111") )
-  !   third2(1,2) - (first(2)(i1=3),second(4)(c1="333") ) 
-  !   third2(2,1) - (first(2)(i1=2),second(4)(c1="222") ) 
-  !   third2(2,2) - (first(2)(i1=4),second(4)(c1="444") ) 
+  !   third2(1,2) - (first(2)(i1=3),second(4)(c1="333") )
+  !   third2(2,1) - (first(2)(i1=2),second(4)(c1="222") )
+  !   third2(2,2) - (first(2)(i1=4),second(4)(c1="444") )
 
   call verify3(spread(third2,1,5)) ! dim is 1
 
-  !   shape is 5,2,2  
+  !   shape is 5,2,2
   !   dt(x,1,1) - (x is 1 - 5) - (first(2)(i1=1),second(4)(c1="111") )
   !   dt(x,1,2) - (x is 1 - 5) - (first(2)(i1=3),second(4)(c1="333") )
   !   dt(x,2,1) - (x is 1 - 5) - (first(2)(i1=2),second(4)(c1="222") )
@@ -101,7 +93,7 @@ program spreadSourceIsArrayDTComp01
      subroutine verify1(dt)
         type(third(1,*)),intent(in) :: dt(:,:)
         integer :: i
-        ! element order: 
+        ! element order:
         ! dt(1,1) - third1(2) - (first(2)(i1=1),second(4)(c1="111") )
         ! dt(2,1) - third1(2)
         ! dt(3,1) - third1(2)
@@ -135,13 +127,13 @@ program spreadSourceIsArrayDTComp01
           if(dt(i,2)%second1%c1 /= "222")          error stop 19_4
           if(dt(i,3)%second1%c1 /= "333")          error stop 20_4
           if(dt(i,4)%second1%c1 /= "444")          error stop 21_4
-        end do 
-     end subroutine   
+        end do
+     end subroutine
 
      subroutine verify2(dt)
         type(third(1,*)),intent(in) :: dt(:,:)
         integer :: i
-        
+
         ! element order
         ! dt(1,1) - third1(2) - (first(2)(i1=1),second(4)(c1="111") )
         ! dt(2,1) - third1(3) - (first(2)(i1=2),second(4)(c1="222") )
@@ -185,8 +177,8 @@ program spreadSourceIsArrayDTComp01
        type(third(1,*)),intent(in) :: dt(:,:,:)
        integer :: i
        ! element order:
-       ! dt(1,1,1) - third2(1,1) - (first(2)(i1=1),second(4)(c1="111") ) 
-       ! dt(2,1,1) - third2(1,1) 
+       ! dt(1,1,1) - third2(1,1) - (first(2)(i1=1),second(4)(c1="111") )
+       ! dt(2,1,1) - third2(1,1)
        ! dt(3,1,1) - third2(1,1)
        ! dt(4,1,1) - third2(1,1)
        ! dt(5,1,1) - third2(1,1)
@@ -224,31 +216,31 @@ program spreadSourceIsArrayDTComp01
          if(dt(i,1,1)%second1%c1 /= "111")        error stop 39_4
          if(dt(i,2,1)%second1%c1 /= "222")        error stop 40_4
          if(dt(i,1,2)%second1%c1 /= "333")        error stop 41_4
-         if(dt(i,2,2)%second1%c1 /= "444")        error stop 42_4 
+         if(dt(i,2,2)%second1%c1 /= "444")        error stop 42_4
        end do
     end subroutine
 
     subroutine verify4(dt)
        type(third(1,*)),intent(in) :: dt(:,:,:)
        integer :: i
-       
+
        ! element order:
        ! dt(1,1,1) - (first(2)(i1=1),second(4)(c1="111") )
        ! dt(2,1,1) - (first(2)(i1=2),second(4)(c1="222") )
        ! dt(1,2,1) -
-       ! dt(2,2,1) - 
-       ! dt(1,3,1) - 
-       ! dt(2,3,1) - 
-       ! dt(1,4,1) - 
-       ! dt(2,4,1) - 
+       ! dt(2,2,1) -
+       ! dt(1,3,1) -
+       ! dt(2,3,1) -
+       ! dt(1,4,1) -
+       ! dt(2,4,1) -
        ! dt(1,5,1) -
        ! dt(2,5,1) -
 
        ! dt(1,1,2) - (first(2)(i1=3),second(4)(c1="333") )
-       ! dt(2,1,2) - (first(2)(i1=4),second(4)(c1="444") ) 
+       ! dt(2,1,2) - (first(2)(i1=4),second(4)(c1="444") )
        ! dt(1,2,2) -
-       ! dt(2,2,2) - 
-       ! dt(1,3,2) - 
+       ! dt(2,2,2) -
+       ! dt(1,3,2) -
        ! dt(2,3,2) -
        ! dt(1,4,2) -
        ! dt(2,4,2) -

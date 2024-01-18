@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 21 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. SELECT TYPE IN MAIN PROGRAM
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -36,19 +28,19 @@ module m
    type,extends(base)  :: child(k2,l2)
       integer(1),kind :: k2=4
       integer(8),len   :: l2=3
-      real(k2)   :: r(l2) 
+      real(k2)   :: r(l2)
    end type
 
 end module
 
-  program dtParameterInquirySelectTypeParam01 
+  program dtParameterInquirySelectTypeParam01
   use m
   implicit none
-  
+
 
   class(base(2,:)),allocatable :: a1
   class(base(4,:)),pointer     :: p1=>null()
-  type(child(k1=4,l1=7,k2=8,l2=9)),target :: t1 
+  type(child(k1=4,l1=7,k2=8,l2=9)),target :: t1
 
   allocate(base() :: a1)
   select type(a1)
@@ -59,13 +51,13 @@ end module
        if(a1%k1%kind /=kind(a1%k1) .or. a1%k1%kind /= 1)      error stop 11_4
        if(a1%l1%kind /=kind(a1%l1) .or. a1%l1%kind /= 8)      error stop 12_4
        if(a1%c%kind /=kind(a1%c) .or. a1%c%kind /= 1)         error stop 13_4
-       if(a1%i%kind /=kind(a1%i) .or. a1%i%kind /= 2)         error stop 14_4 
+       if(a1%i%kind /=kind(a1%i) .or. a1%i%kind /= 2)         error stop 14_4
        if(ubound(a1%c,1) /=a1%l1 .or. lbound(a1%c,1) /=a1%k1) error stop 15_4
        if(ubound(a1%i,1) /=a1%l1 .or. lbound(a1%i,1) /=1)     error stop 16_4
      class is(base(2,*))
        error stop 17_4
      class default
-       error stop 18_4 
+       error stop 18_4
   end select
 
   deallocate(a1)
@@ -100,7 +92,7 @@ end module
   allocate(base(4,10) :: p1)
   select type(p1)
      type is(base(4,*))
-       print *,"p1 is base" 
+       print *,"p1 is base"
        if(p1%k1 /=4)                                          error stop 35_4
        if(p1%l1 /=10)                                         error stop 36_4
        if(p1%k1%kind /=kind(p1%k1) .or. p1%k1%kind /= 1)      error stop 37_4
@@ -112,8 +104,8 @@ end module
      class is(base(4,*))
        error stop 43_4
      class default
-       error stop 44_4     
-  end select  
+       error stop 44_4
+  end select
 
   p1=>t1
 

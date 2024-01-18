@@ -1,14 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : allocatedLBound04 - Basic Tests:
 !*                               Non-CHARACTER Intrinsic Types
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : August  1, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is
 !*                               an Allocated ALLOCATABLE of Intrinsic
@@ -17,7 +12,6 @@
 !*                               as the Lower Bound for an N-Dimension Array
 !*                               (1<= N <= 7) -- N == 7
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATABLE Attribute, Intrinsic Assignment
@@ -29,7 +23,6 @@
 !*  7.4.1.1 General form
 !*
 !*  R734 assignment-stmt  is  variable = expr
-!*
 !*
 !*  7.4.1.3 Interpretation of intrinsic assignments
 !*

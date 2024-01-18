@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Misc18.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Misc18.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
-! %EXECARGS: 
-! %POSTCMD:  
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             :  Misc18.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  
-!*  Rename entities in module 
-!*  
+!*
+!*  Rename entities in module
+!*
 !* (305850) (306564)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -100,13 +93,13 @@
 
   PROGRAM Misc18
   USE M, EFun => ExtFun,     &
-       & MFun => ModFun,     & 
+       & MFun => ModFun,     &
        & IntF => ModFun1,    &
        & Ptr  => ProcPtr,    &
        & T    => DT,         &
        & U    => V
 
-  IMPLICIT NONE 
+  IMPLICIT NONE
   interface
   FUNCTION ModFun1(Arg)
   import
@@ -119,21 +112,21 @@
   INTEGER         :: I
   TYPE (T)        :: V1(3), V2(3)
 
-  U = T(-1, MFun)   
+  U = T(-1, MFun)
 
   DO I  = 1, 10000
     IF ( U(I)%Id .NE. -1 )                             STOP 22
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, MFun) )        STOP 23
-    IF ( ANY(U(I)%ProcPtr((/1,2,3/)) .NE. (/1,2,3/) )) STOP 24 
+    IF ( ANY(U(I)%ProcPtr((/1,2,3/)) .NE. (/1,2,3/) )) STOP 24
   END DO
 
-  Ptr => EFun 
+  Ptr => EFun
   U = Ptr( (/(T(-I, MFun), I=1, 10000) /) )
 
   DO I  = 1, 10000
     IF ( U(I)%Id .NE. -I )                       STOP 32
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, MFun) )  STOP 33
-    IF ( ANY(U(I)%ProcPtr((/1,2,3/)) .NE. (/1,2,3/) )) STOP 34 
+    IF ( ANY(U(I)%ProcPtr((/1,2,3/)) .NE. (/1,2,3/) )) STOP 34
   END DO
 
   V1 = ExtFun((/T(-1, MFun),T(-1, MFun), T(-1, MFun)/))

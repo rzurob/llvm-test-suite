@@ -1,21 +1,17 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : submodule14f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : April 20, 2013
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 SUBMODULE  BLOCK
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION
 !*  based on F2008/block/BInModProc.f
 !*
-!*  Define a block in a module function, testing compatibility with the F2008 
+!*  Define a block in a module function, testing compatibility with the F2008
 !*   BLOCK feature.
 !*
 !*  Secondary tests:

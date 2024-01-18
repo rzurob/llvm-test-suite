@@ -1,13 +1,8 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!* =====================================================================
-!* TEST CASE TITLE            : intrinsics/transpose/structureComponent005.f
-!* PROGRAMMER                 : Yong Du
 !* DATE                       : 12/31/2004
 !* ORIGIN                     :
 !* PRIMARY FUNCTIONS TESTED   : transpose
-!* DRIVER STANZA              : xlf90
 !* DESCRIPTION                :
 !*   MATRIX is an object containing a structure component, which is
 !* a poly scalar.

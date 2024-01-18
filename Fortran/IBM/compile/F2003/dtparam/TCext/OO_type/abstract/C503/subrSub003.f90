@@ -1,41 +1,25 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/abstract/C503/subrSub003.f
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: dcomp subrSub003.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Subroutine subprogram (Section 12.5.2.1)
 !*                               prefix shall not contain declaration-type-spec
@@ -51,28 +35,28 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
-   
+
    type, abstract :: base(k1)    ! (4)
       integer, kind :: k1
       integer(k1)   :: id
    contains
       procedure(fooinf), nopass, deferred :: foo
    end type
-   
+
    type, extends(base) :: child(k2,n1)    ! (4,4,20)
        integer, kind :: k2
        integer, len  :: n1
    contains
       procedure, nopass :: foo
    end type
-   
+
    interface
       subroutine fooinf(dtv)
          import base
          type(base(4)) :: dtv
       end subroutine
    end interface
-   
+
 contains
    subroutine foo(dtv)
       type(base(4)) :: dtv

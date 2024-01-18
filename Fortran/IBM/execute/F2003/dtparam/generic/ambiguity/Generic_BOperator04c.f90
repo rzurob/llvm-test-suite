@@ -1,22 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_BOperator04c
 !*                               DTP - Generic Operator (binary)
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Resolution by type incompatibility
-!*                               Function result is polymorphic 
-!*                     
+!*                               Function result is polymorphic
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -24,24 +17,24 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base (k,l)
-        INTEGER, KIND :: k 
-        INTEGER, LEN :: l 
+        INTEGER, KIND :: k
+        INTEGER, LEN :: l
 
         INTEGER :: value
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child1 (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
-      END TYPE Child1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
+      END TYPE Child1
 
       TYPE, EXTENDS(Base) :: Child2 (k2,l2)
-        INTEGER, KIND :: k2 
-        INTEGER, LEN :: l2 
-      END TYPE Child2 
+        INTEGER, KIND :: k2
+        INTEGER, LEN :: l2
+      END TYPE Child2
 
       TYPE, EXTENDS(Child1) :: NextGen1 (k13,l13)
         INTEGER, KIND :: k13
@@ -58,9 +51,9 @@
          module procedure mut21
       END INTERFACE
 
-      CONTAINS 
+      CONTAINS
 !*
-      CLASS(Base(4,:)) FUNCTION mut11(arg1,arg2) 
+      CLASS(Base(4,:)) FUNCTION mut11(arg1,arg2)
       CLASS(Child1(4,*,4,*)), INTENT(IN) :: arg1
       CLASS(Base(4,*)), INTENT(IN) :: arg2
       ALLOCATABLE :: mut11
@@ -70,7 +63,7 @@
 
       END FUNCTION mut11
 
-      CLASS(Base(4,:)) FUNCTION mut21(arg1,arg2) 
+      CLASS(Base(4,:)) FUNCTION mut21(arg1,arg2)
       CLASS(Child2(4,*,4,*)), INTENT(IN) :: arg1
       CLASS(Base(4,*)), INTENT(IN) :: arg2
       ALLOCATABLE :: mut21
@@ -92,9 +85,9 @@
 
       ALLOCATABLE :: C1, B1, K1, N1, M1
 
-      ALLOCATE (Base(4,100) :: B1) 
+      ALLOCATE (Base(4,100) :: B1)
 
-!*  first argument Child1, call to mut11 
+!*  first argument Child1, call to mut11
 
       SELECT TYPE ( a => (C1 * B1) )
         CLASS IS (BASE(4,*))
@@ -136,7 +129,7 @@
           STOP 19
       END SELECT
 
-!*  first argument NextGen1, call to mut11 
+!*  first argument NextGen1, call to mut11
 
       SELECT TYPE ( a => (N1 * B1) )
         CLASS IS (BASE(4,*))
@@ -178,7 +171,7 @@
           STOP 29
       END SELECT
 
-!*  first argument NextGen2, call to mut21 
+!*  first argument NextGen2, call to mut21
 
       SELECT TYPE ( a => (M1 * B1) )
         CLASS IS (BASE(4,*))
@@ -220,7 +213,7 @@
           STOP 39
       END SELECT
 
-!*  first argument Child2, call to mut21 
+!*  first argument Child2, call to mut21
 
       SELECT TYPE ( a => (K1 * B1) )
         CLASS IS (BASE(4,*))

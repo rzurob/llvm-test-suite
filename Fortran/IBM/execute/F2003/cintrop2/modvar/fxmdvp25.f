@@ -12,20 +12,14 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxmdvp25.f
 !
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 24, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    : -qfree=f90
 !*
 !* DESCRIPTION                  : Test the interoperability of logical and
@@ -62,17 +56,17 @@ integer :: i, j, k
     ERROR STOP 51
   END IF
 
-  
-  
+
+
   do i = 1, 10
     IF ( lo1(i) .NEQV. .false. ) THEN
       ERROR STOP 52
     END IF
   end do
-  
+
 
   do j= 1, 2
-    do k = 1, 3 
+    do k = 1, 3
       do i = 1, 2
         IF ( lo3(k, j, i) .NEQV. .false. ) THEN
           ERROR STOP 53
@@ -88,11 +82,11 @@ integer :: i, j, k
      end if
     end do
   end do
-  
-lo  = .true.  
+
+lo  = .true.
 lo1 = .true.
 lo2 = .true.
 lo3 = .true.
 
 
-end 
+end

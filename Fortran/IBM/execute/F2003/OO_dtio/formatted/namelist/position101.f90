@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try position edit descriptors (T, TL, TR, X) inside DTIO (Input)
@@ -87,7 +71,7 @@ program position101
 
    read (1,NML=nml, iostat=stat, iomsg=msg)
    if (( stat /=  0 ) .or. ( msg /= 'dtioread' ) ) error stop 1_4
-   
+
    if ( ( b1%name /= 'abc' ) .or. ( b1%id /= 101 ) ) error stop 2_4
    if ( ( b2%name /= 'def' ) .or. ( b2%id /= 102 ) ) error stop 3_4
    if ( ( b3%name /= 'ghi' ) .or. ( b3%id /= 103 ) ) error stop 4_4

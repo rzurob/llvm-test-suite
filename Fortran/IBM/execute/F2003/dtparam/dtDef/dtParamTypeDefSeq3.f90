@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefSeq3 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefSeq3
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 12, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Sequence Type 
+!*  SECONDARY FUNCTIONS TESTED : Sequence Type
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Parameterized sequence type - caracter 
+!*  Parameterized sequence type - caracter
 !*
 !*  (Syntax err/ice/340185)
 !*
@@ -73,8 +66,8 @@
 
   CHARACTER(4),     TARGET      :: CTar = "abcd", CArr(4)="abcd"
   TYPE(Seq1(4, 4)), TARGET      :: T1
-  TYPE(Seq2(4, :)), POINTER     :: T2 
-  TYPE(Seq3(4, 4)), ALLOCATABLE, TARGET      :: T3  
+  TYPE(Seq2(4, :)), POINTER     :: T2
+  TYPE(Seq3(4, 4)), ALLOCATABLE, TARGET      :: T3
   TYPE(Seq4(4, 4)), POINTER     :: T4(:)
 
   T1 = Seq1(4, 4)("1234", CTar)

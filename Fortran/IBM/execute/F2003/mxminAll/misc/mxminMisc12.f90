@@ -1,26 +1,15 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                : MAX*/MIN* with assumed-size array 
+!*  DESCRIPTION                : MAX*/MIN* with assumed-size array
 !* ===================================================================
 
-program mxminMisc12 
+program mxminMisc12
 
    character*3  x(2,3), y(3,4,5,6)
 
@@ -59,6 +48,5 @@ program mxminMisc12
           endif
         end subroutine
 
-end program mxminMisc12 
-
+end program mxminMisc12
 

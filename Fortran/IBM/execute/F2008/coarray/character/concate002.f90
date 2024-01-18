@@ -1,35 +1,30 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : concate002.f
-!*  TEST CASE TITLE            : Test the concatenation of different length character coarray
-!*                               
-!*  PROGRAMMER                 : Ke Wen Lin 
-!*  DATE                       : March 17, 2011 
+!*
+!*  DATE                       : March 17, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test the concatenation of different length character coarray
-!*                              
-!*  SECONDARY FUNCTIONS TESTED :                                                      
-!*                              
+!*
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REFERENCE                  : No Feature Number
 !*
-!*  DRIVER STANZA              : xlf2003_r
 !*  REQUIRED COMPILER OPTIONS  : -qcaf -q64
 !*
 !*  KEYWORD(S)                 : character, CAF
-!*                              
-!*  TARGET(S)                  : zero-length character                           
+!*
+!*  TARGET(S)                  : zero-length character
 !*
 !*  DESCRIPTION:
 !*  -----------
-!*  The testcase aim to 
+!*  The testcase aim to
 !*  1. test the concatenation of different length character coarray.
 !*  2. verify that result when different length character coarray concatenate with other local character or characters on other images.
 !*  -----------
-!*  
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program concate002
@@ -37,7 +32,7 @@ program concate002
 	implicit none
 
 	integer, parameter  :: P = 1, Q = 2
-		
+
 	character (len=5), 		save :: coStr1[*] ! 1..9 *   5
 	character (len=10), 	save :: coStr2[*] ! O/E  *  10
 	character (len=100), 	save :: coStr3[*] ! 1..9 * 100
@@ -65,7 +60,7 @@ program concate002
 
 	if ( MOD(me,2) == 0) then
 		parity_char = "E"
-	else 
+	else
 		parity_char = "O"
 	end if
 
@@ -85,7 +80,7 @@ program concate002
 	coConcateStr = ""
 
 	sync all
-	
+
 		!*****************************************************!
 		!******  #####  MISC CONCATENATION #####  ******!
 		!******  co     // local
@@ -95,11 +90,11 @@ program concate002
 		!******  co[me] // co[P]
 		!******  co     // co
 		!******  co     // co[me]
-		!******  co[me] // co[me] 
+		!******  co[me] // co[me]
 		!******  #####  SELF CONCATENATION #####  ******!
-		!******  co     // co 
-		!******  co     // co[me] 
-		!******  co[me] // co[me] 
+		!******  co     // co
+		!******  co     // co[me]
+		!******  co[me] // co[me]
 		!*****************************************************!
 
 	!!! ************  coarray // local  ************ !!!
@@ -257,10 +252,10 @@ program concate002
 	if(.NOT.( (len_trim(concateStr) == 10) .AND. (verifyChars(concateStr,1,10,unit_char)))) then
 		error stop 29
 	end if
-	
+
 	! ************** blend images **************!
-	
-	if (ne > MAX_IMAGE) then 
+
+	if (ne > MAX_IMAGE) then
 		ne = MAX_IMAGE
 	end if
 
@@ -268,40 +263,40 @@ program concate002
 	localImageIndexStr = imageIndexStr
 
 	sync all
-	
+
 	! when current image is P, concatenate all the other images
 	if(me == P) then
 
 		concateStr = ""
-		
+
 		do i = 1, ne
 			concateStr = trim(concateStr) // coStr1[i]
-		end do 
-			
+		end do
+
 		if(len_trim(concateStr) /= (ne * 5)) then
-			error stop 41        
+			error stop 41
 		end if
 
 		do i = 1, ne
 		   verifyConcateStr((i-1)*5+1:i*5) = coStr1[i]
 		end do
 
-		if(concateStr /= verifyConcateStr) then 
+		if(concateStr /= verifyConcateStr) then
 		   error stop 42
 		end if
-		
-	! when current is not P, change P 		
+
+	! when current is not P, change P
 	else if (me /= P) then
-			
-		if(me == Q) then 
+
+		if(me == Q) then
 			coConcateStr[P] = coStr1[P]//coStr1[Q]
 			if(.NOT.( (len_trim(coConcateStr[P]) == 10) .AND. (verifyChars(coConcateStr[P],1,5,P_unit_char)) &
 			  .AND. (verifyChars(coConcateStr[P],6,10,Q_unit_char)) )) then
 				error stop 43
 			end if
-			
+
 			coConcateStr[P] = trim(coConcateStr[P])//coStr2[Q]//coStr2[P]
-			
+
 			if(.NOT.( (len_trim(coConcateStr[P]) == 30) .AND. (verifyChars(coConcateStr[P],1,5,P_unit_char)) &
 			  .AND. (verifyChars(coConcateStr[P],6,10,Q_unit_char))  &
 			  .AND. (verifyChars(coConcateStr[P],11,20,Q_parity_char)) &
@@ -309,34 +304,34 @@ program concate002
 				error stop 44
 			end if
 		end if
-		
+
 	end if
 
 	sync all
-	
+
 	! concatenation between any two images
 	do i = 1, ne
 		coConcateStr = ""
-		
+
 		coConcateStr = coStr2//coStr2[i]
-		
+
 		if(len_trim(coConcateStr) /= 20) then
 			error stop 45
 		end if
-		
+
 		if(.NOT. (verifyChars(coConcateStr,1,10,parity_char))) then
 			error stop 46
 		end if
-		
+
 		if (MOD(i,2) == 0) then
 			if(.NOT. (verifyChars(coConcateStr,11,20,Q_parity_char))) then
 				error stop 47
 			end if
-		else 
+		else
 			if(.NOT. (verifyChars(coConcateStr,11,20,P_parity_char))) then
 				error stop 48
 			end if
 		end if
-	end do 
+	end do
 
 end program concate002

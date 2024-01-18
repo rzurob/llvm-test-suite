@@ -2,23 +2,11 @@
 ! ftcx_dtp -qck /tstdev/F2003/mv_Alloc/unit_tests/MoveAllocDiag23.f
 ! opt variations: -qnock
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : MoveAllocDiag23
-!*
-!*  PROGRAMMER                 : Rob James
 !*  DATE                       : 04/28/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  DESCRIPTION                : Diagnostic test for MOVE_ALLOC
 !*

@@ -1,7 +1,7 @@
 !*********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90 -qstrict
 ! %GROUP: fpscrmix01lx.f
 ! %VERIFY:
@@ -12,13 +12,8 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : IEEE modules - FPSCR save and restore
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : April 15, 2002
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ieee_get_flag()
 !*				 ieee_set_flag()
@@ -29,15 +24,14 @@
 !*
 !*  REFERENCE                  : Feature 180920
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This testcase checks to see if FPSCR
-!*				 save and restore is properly done in 
+!*				 save and restore is properly done in
 !*				 subroutines inside modules that use IEEE.
 !*
-!*				 The main program calls subroutine from 
-!*				 module, and module also calls subroutine 
+!*				 The main program calls subroutine from
+!*				 module, and module also calls subroutine
 !*				 from other module.
 !*
 !* ===================================================================
@@ -132,7 +126,7 @@
 !*	In this module, initial floating point status is verified,
 !*	then modified and the modification is verified.
 !*
-!*	The modified values are passed to another soubroutine 
+!*	The modified values are passed to another soubroutine
 !* 	from another module that uses IEEE, then the floating point
 !*	status returned from that subroutine is verified.
 !*
@@ -151,7 +145,7 @@
 !* ---------------------------------------------------------------------
 !*	Get the initial value of all flags and rounding mode -
 !*	all flags should be false and rounding mode should be ieee_nearest
-!*      Then set all flags to true and rounding mode to ieee_up. 
+!*      Then set all flags to true and rounding mode to ieee_up.
 !* ---------------------------------------------------------------------
 
 !*  Check if initially all flags are false and rounding mode is ieee_nearest
@@ -180,9 +174,9 @@
 !* ---------------------------------------------------------------------
 !*      Call a subroutine from another module that uses IEEE.
 !*      Check the value of all flags and rounding mode.
-!*      All exception flags should be true, halting mode should be false  
+!*      All exception flags should be true, halting mode should be false
 !*      and rounding mode should be ieee_up.
-!*      This is because exception flags cannot be cleared and 
+!*      This is because exception flags cannot be cleared and
 !*	halting mode and rounding mode cannot be modified on exit from
 !*	procedure.
 !* ---------------------------------------------------------------------
@@ -191,7 +185,7 @@
 	  call ext_sub3()
 
 !*  Check to see that flags are not cleared, and that halting mode
-!*  flags and rounding mode are the same as when entering into the 
+!*  flags and rounding mode are the same as when entering into the
 !*  subroutine.
           call ieee_get_flag(ieee_all, flag_values)
           if (any(flag_values .neqv. .true.))           error stop 7
@@ -211,7 +205,7 @@
 !*
 !*      In this module, floating point status is modified in the first
 !*	subroutine and then passed to the second subroutine in this
-!*	module. Floating point status is verified on entry into the 
+!*	module. Floating point status is verified on entry into the
 !*	second subroutine.
 !*
 !***********************************************************************
@@ -237,7 +231,7 @@
           if (round_value /= ieee_nearest)              error stop 12
 
 !*  Set all exception flags to true, halting mode are kept false
-!*  and rounding mode is set to ieee_down. 
+!*  and rounding mode is set to ieee_down.
           call ieee_set_flag(ieee_all, .true.)
           call ieee_get_flag(ieee_all, flag_values2)
           if (any(flag_values2 .neqv. .true.))           error stop 13
@@ -275,14 +269,14 @@
 !***********************************************************************
 !* module sub4mod:
 !*
-!*	The exception flags are modified in the subroutine that is in 
+!*	The exception flags are modified in the subroutine that is in
 !*	this module and then modified again.
-!*	On return from this subroutine, all exception flags will be set 
+!*	On return from this subroutine, all exception flags will be set
 !*	true, since they are not allowed to be cleared on exit from a
 !*	procedure.
 !*
-!*	Halting flags and rounding mode will also be modified, but they will 
-!* 	not change on return from this subroutine (they will be the same 
+!*	Halting flags and rounding mode will also be modified, but they will
+!* 	not change on return from this subroutine (they will be the same
 !*	as when entering the subroutine).
 !*
 !***********************************************************************
@@ -302,11 +296,11 @@
 !*      For exception flags:
 !*      Set overflow, invalid, inexact flags to true; and set
 !*      divide_by_zero and underflow flags as false.
-!*      Then set overflow, invalid, inexact flags to false and 
+!*      Then set overflow, invalid, inexact flags to false and
 !*      divide_by_zero and underflow flags as true.
 !*
 !*      For halting flags:
-!*      Set overflow, invalid, inexact flags to false and 
+!*      Set overflow, invalid, inexact flags to false and
 !*      divide_by_zero and underflow flags to true.
 !*      Then change overflow, invalid, inexact flags to true; and set
 !*      divide_by_zero and underflow flags as false.
@@ -356,7 +350,7 @@
           call ieee_get_halting_mode(ieee_all, hlt_values4)
           if (any(hlt_values4 .neqv. .false.))           error stop 80
 
-!*  Exception flags:  Change overflow, invalid, inexact flags to 
+!*  Exception flags:  Change overflow, invalid, inexact flags to
 !*  false, and divide_by_zero and underflow flags as true.
           call ieee_set_flag(ieee_overflow, .false.)
           call ieee_set_flag(ieee_divide_by_zero, .true.)
@@ -413,7 +407,7 @@
 
           call ext_sub1()
 !*  Check on return that exception flags are set, and halting mode flags
-!*  and rounding mode are the same as when entering the subroutine. 
+!*  and rounding mode are the same as when entering the subroutine.
           call ieee_get_flag(ieee_all, flag_values)
           if (any(flag_values .neqv. .true.))        	error stop 63
 
@@ -426,7 +420,7 @@
 
           call ext_sub2a()
 !*  Check on return, the exception flags are set, and halting mode flags
-!*  and rounding mode are the same as when entering the subroutine. 
+!*  and rounding mode are the same as when entering the subroutine.
           call ieee_get_flag(ieee_all, flag_values)
           if (any(flag_values .neqv. .true.))          	error stop 66
 
@@ -439,7 +433,7 @@
 
           call ext_sub2b()
 !*  Check on return, the exception flags are set, and halting mode flags
-!*  and rounding mode are the same as when entering the subroutine. 
+!*  and rounding mode are the same as when entering the subroutine.
           call ieee_get_flag(ieee_all, flag_values)
           if (any(flag_values .neqv. .true.))         	error stop 69
 
@@ -452,7 +446,7 @@
 
           call ext_sub4()
 !*  Check on return, the exception flags are set, and halting mode flags
-!*  and rounding mode are the same as when entering the subroutine. 
+!*  and rounding mode are the same as when entering the subroutine.
           call ieee_get_flag(ieee_all, flag_values)
           if (any(flag_values .neqv. .true.))          	error stop 72
 

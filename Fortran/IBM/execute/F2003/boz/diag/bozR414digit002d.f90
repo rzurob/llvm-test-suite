@@ -1,22 +1,10 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozR414digit002d.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 01/19/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : hex-constant	is Z ’ hex-digit [ hex-digit ] ... ’
 !*				or Z " hex-digit [ hex-digit ] ... "
-!*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                :
 !*  KEYWORD(S)                 :

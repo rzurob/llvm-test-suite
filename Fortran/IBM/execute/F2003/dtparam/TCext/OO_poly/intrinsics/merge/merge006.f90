@@ -13,16 +13,11 @@
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            :
-!*  PROGRAMMER                 : Yong Du
+!*  ===================================================================
 !*  DATE                       : 01/21/2005
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : merge
 !*  SECONDARY FUNCTIONS TESTED :
-!*  DRIVER STANZA              : xlf90
 !*  DESCRIPTION                :
 !*    TSOURCE is scalar/array
 !*    FSOURCE is scalar/array

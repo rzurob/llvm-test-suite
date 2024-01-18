@@ -1,16 +1,13 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure08f
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
-!*  
+!*
 !*  DESCRIPTION
 !*
-!*  checks if an IMPURE elemental procedure works with a variable declared with a SAVE attribute 
+!*  checks if an IMPURE elemental procedure works with a variable declared with a SAVE attribute
 !*  whose value is later on changed wihthin the function and printed
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -35,7 +32,7 @@ b(i) = func1(a(i), finalsum)
 
    INTEGER FUNCTION func1(z, s)
    INTEGER :: z
-    
+
     INTEGER :: s
     func1 = func2(z, s)
   END FUNCTION func1
@@ -43,14 +40,14 @@ b(i) = func1(a(i), finalsum)
    INTEGER  FUNCTION func2(y, s)
     INTEGER :: y
     INTEGER :: s
-    
+
     func2 = final(y, s)
- END FUNCTION func2 
+ END FUNCTION func2
 
 
 
   IMPURE ELEMENTAL FUNCTION final (a, sum)
-    
+
     INTEGER :: a
     INTEGER :: final
     INTEGER :: sum
@@ -59,7 +56,7 @@ b(i) = func1(a(i), finalsum)
     incrementsum = incrementsum + 1
     print*, "new increment=", incrementsum
     final = sum+a
-    
+
   END FUNCTION final
 
 END PROGRAM main

@@ -1,30 +1,19 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX/MIN as actual argument passed to
 !*                               subprogram with variable  and literal
-!*                               as MAX/MIN argument. Forcus on 
+!*                               as MAX/MIN argument. Forcus on
 !*                               escape character
 !*
 !* ===================================================================
 
-program mxminMisc03 
+program mxminMisc03
 
    interface
        subroutine sub1(arg)
@@ -32,10 +21,10 @@ program mxminMisc03
        end subroutine sub1
        function fun1(arg)
          character*1 arg, fun1
-       end function 
+       end function
    end interface
 
-   character*1 a, b, c, d, e, f, g, h, i, ver 
+   character*1 a, b, c, d, e, f, g, h, i, ver
    a = '\b'
    b = '\f'
    c = '\n'
@@ -61,7 +50,7 @@ program mxminMisc03
        error stop 4_4
    endif
 
-   if(ichar(min('\b','\f','\n','\t','\0','\'','\"','\\','\x')) .ne. 0) then 
+   if(ichar(min('\b','\f','\n','\t','\0','\'','\"','\\','\x')) .ne. 0) then
        error stop 5_4
    endif
 
@@ -69,7 +58,7 @@ program mxminMisc03
         error stop 6_4
    endif
 
-end program mxminMisc03 
+end program mxminMisc03
 
    subroutine sub1(arg)
      character*1 arg
@@ -80,5 +69,5 @@ end program mxminMisc03
 
    function fun1(arg)
      character*1 arg, fun1
-     fun1 = arg 
+     fun1 = arg
    end function fun1

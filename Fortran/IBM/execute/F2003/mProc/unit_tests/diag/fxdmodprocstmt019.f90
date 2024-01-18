@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxdmodprocstmt019.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,25 +12,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxdmodprocstmt019
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Sept. 22, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : generalization of module procedure
 !*                               stmts, by making the MODULE keyword
 !*                               optional. These statements are called
 !*                               procedure statements in F2003.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case checks the nesting of
 !*                               interfaces and combination of proc
@@ -40,7 +33,7 @@
       implicit none
 
       ! explicit interface for aa
-      interface 
+      interface
          subroutine aa(arg)
            real :: arg
          end subroutine aa
@@ -75,5 +68,5 @@
          end subroutine sub
 
       end interface
-      
+
       end

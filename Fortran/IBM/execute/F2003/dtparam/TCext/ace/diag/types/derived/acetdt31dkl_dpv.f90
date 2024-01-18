@@ -3,16 +3,12 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acetdt31dkl_dpv
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt31d
 !*                               by David Forster)
 !*  DATE                       : 2007-11-20 (original: 2006-08-30)
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*
@@ -21,7 +17,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : procedure pointer, derived type

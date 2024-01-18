@@ -1,22 +1,17 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal024hkl2.f
 !*  TEST CASE NAME             : type-bound procedure ffinal024hkl2
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal024h by Catherine Sun)
 !*  DATE                       : 2007-11-27 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines: import 
-!*    
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines: import
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -49,7 +44,7 @@ use m
         import base
         class(base(4)), intent(inout) :: arg1 ! tcx: (4)
         end subroutine
-    end interface 
+    end interface
 
     contains
 
@@ -57,7 +52,7 @@ use m
         type (child(4,*)), intent (in) :: arg1  ! tcx: (4,*)
         print *, 'finalizeChild'
     end subroutine
- 
+
 end module
 
 module m2
@@ -85,13 +80,13 @@ use m2, only : dt
    type(base(4)), intent(inout) :: arg1 ! tcx: (4)
    class(dt(4,4)), allocatable  :: t1(:)   ! tcx: (4,4)
    allocate(t1(2))
-   allocate(t1(1)%dt_b) 
+   allocate(t1(1)%dt_b)
    allocate(child(4,7):: t1(1)%dt_c(2)) ! tcx: child(4,7)
    allocate(t1(2)%dt_b)
    allocate(child(4,7):: t1(2)%dt_c(2)) ! tcx: child(4,7)
    deallocate(t1(1)%dt_b, t1(1)%dt_c)
    deallocate(t1(2)%dt_b, t1(2)%dt_c)
-end subroutine 
+end subroutine
 
 
 

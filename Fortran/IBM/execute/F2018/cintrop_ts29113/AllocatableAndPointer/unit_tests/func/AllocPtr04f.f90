@@ -1,24 +1,16 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocPtr04f
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Feb, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Allocatable/Pointer
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : Try passing a non-contiguous pointer  
+!*  DESCRIPTION                : Try passing a non-contiguous pointer
 !*                               array to C for printing.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -46,18 +38,18 @@
       ! Test 1
       p => t
       call print2dfarr(p, 1)
-      
+
       ! Test 2
       p => t(::2,:)
       call print2dfarr(p, 2)
-      
+
       ! Test 3
       p => NULL()
       call print2dfarr(p, 3)
 
       ! Test 4
       i = 2
-      p => t(:, i:COLS:i)      
+      p => t(:, i:COLS:i)
       call print2dfarr(p, 4)
 
       ! Test 5
@@ -76,4 +68,4 @@
       end
 
 
-      
+

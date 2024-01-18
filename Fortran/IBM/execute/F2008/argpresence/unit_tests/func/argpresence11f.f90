@@ -1,20 +1,12 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : argpresence11f.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : March 2, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Argument Presence Enhancement
 !*
-!* DRIVER STANZA              : xlf2008
-!*
 !* DESCRIPTION                : Testing proper functionality of
-!*                              argument presence 
+!*                              argument presence
 !*                              components as allocatables/pointers
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

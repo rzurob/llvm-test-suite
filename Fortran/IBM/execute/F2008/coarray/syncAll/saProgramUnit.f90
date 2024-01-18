@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : saProgramUnit
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-07-26
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF SYNC ALL
 !*  SECONDARY FUNCTIONS TESTED : synchronisation from different contexts in program unit
@@ -34,7 +30,7 @@ program saProgramUnit
    integer :: out, self, rightBuddy, leftBuddy, nImages, i, j, aBuddy, eFoundInImage, testcount, istat
    logical :: eFound
    character(100) :: emsg
-   
+
    !! Preamble: make sure all information is available
    arrived  = 0
    errorsFound = 0

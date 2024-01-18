@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyTarget08.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyTarget08.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 20 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 20 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!* 
+!*
 !* 1. if a dummy argument is declared to be a pointer,it may be matched by an actual argument that also is a pointer, and the characteristics of both arguments shall agree. if the actual pointer has an associated target, this target becomes accessible via the dummy pointer. If the dummy pointer becomes associated with a different target during execution of the procedure,this target will be accessible via actual pointer after the procedure completes execution.
 !*
 !* 2. When execuation of a procedure completes, any pointer that remains defined and that is associated with a dummy argument that has the target attributes and is either a scalar or an assummed-shape array, remains associated with the corresponding actual argument if the actual argument has the target attribute and is not an array section with a vector subscript
@@ -46,7 +38,7 @@ program dummyArgDeferPolyTarget08
 
   class(base(:)),target,allocatable :: tarchild(:)
 
-  type(base(3)),target    :: tarbase(2:3) 
+  type(base(3)),target    :: tarbase(2:3)
 
   tarbase=[base(3)(i=[3,4,5]),base(3)(i=[-3,-4,-5])]
 
@@ -74,7 +66,7 @@ program dummyArgDeferPolyTarget08
   if(any(pbase(0)%i /= [-3,-4,-5]))                        error stop 23_4
 
   contains
- 
+
     subroutine sub(arg)
        class(base(:)),pointer :: arg(:)
 
@@ -86,14 +78,14 @@ program dummyArgDeferPolyTarget08
        select type(arg)
          type is(child(*,*))
           if(.not. associated(arg(5)%basecomp,tarbase(2))) error stop 15_4
-          if(.not. associated(arg(6)%basecomp,tarbase(3))) error stop 16_4 
+          if(.not. associated(arg(6)%basecomp,tarbase(3))) error stop 16_4
           if(any(arg(5)%basecomp%i /= [3,4,5]))            error stop 17_4
           if(any(arg(6)%basecomp%i /= [-3,-4,-5]))         error stop 18_4
          class default
           error stop 101_4
        end select
-       
-       arg(-1:0)=>tarbase 
+
+       arg(-1:0)=>tarbase
     end subroutine
 
 end program

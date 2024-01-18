@@ -1,19 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : d325937 - Order of Expression Evaluation
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : September 27, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: ACE: ICE in ASTI with Implied-DO
 !*                               using CHARACTER Substring
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : Array Constructor, Implied-DO

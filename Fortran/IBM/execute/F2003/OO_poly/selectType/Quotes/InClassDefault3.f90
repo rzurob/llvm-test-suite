@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: InClassDefault3.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : InClassDefault3
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Within the CLASS DEFAULT, the associating entity is polymorphic   
+!*
+!*  Within the CLASS DEFAULT, the associating entity is polymorphic
 !*  and has the same declared type as the selector
-!*  check type parameters 
+!*  check type parameters
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,9 +50,9 @@
   CHARACTER(1025) :: C(2:3,3:4)
   CHARACTER(1025) :: Str
 
-  Str(:) = '!' 
+  Str(:) = '!'
   C = Str
-  
+
 
   CALL Sub(Int(2:3,3:4))
   CALL Sub(Cplx(2:3,3:4))
@@ -71,9 +65,9 @@
   CLASS(*) :: Arg(2:3,3:4)
 
     SELECT TYPE (U => Arg)
-    CLASS DEFAULT 
+    CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30 
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30
       IF ( SIZE(U)          .NE. 4 )          STOP 31
       IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
       IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
@@ -92,12 +86,12 @@
         IF ( KIND(U) .NE. 8 )                  STOP 38
 
       TYPE IS (LOGICAL(8))
-        IF ( ANY(U   .NEQV. .TRUE._8) )   STOP 40 
-        IF ( KIND(U) .NE. 8 )             STOP 41 
+        IF ( ANY(U   .NEQV. .TRUE._8) )   STOP 40
+        IF ( KIND(U) .NE. 8 )             STOP 41
 
       TYPE IS (CHARACTER(*))
-        IF ( ANY(U  .NE. Str) )   STOP 42 
-        IF ( LEN(U) .NE. 1025 )   STOP 43 
+        IF ( ANY(U  .NE. Str) )   STOP 42
+        IF ( LEN(U) .NE. 1025 )   STOP 43
 
       CLASS DEFAULT
         STOP 51
@@ -107,7 +101,7 @@
     END SELECT
 
   END SUBROUTINE
- 
+
   END
 
 

@@ -1,14 +1,8 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfixed 
+! %PRECMD:
+! %COMPOPTS: -qfixed
 ! %GROUP: fxass029.f
 ! %VERIFY:
 ! %STDIN:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass029.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -54,9 +42,9 @@
 !*
 !*  CONDITIONS TESTED          : Listed below.
 !*
-!*  DESCRIPTION                : Test: ASSOCIATE with expressions 
+!*  DESCRIPTION                : Test: ASSOCIATE with expressions
 !*                                     with derived types with integer
-!*                                     logical, complex, real, byte 
+!*                                     logical, complex, real, byte
 !*                                     and character data types
 !*
 !* ===================================================================
@@ -94,7 +82,7 @@
       allocate    ( der_type%r4 )
       allocate    ( der_type%x )
 
-      der_type = der (5,140.8,(1.0,2.0),.false.,'a',8 )      
+      der_type = der (5,140.8,(1.0,2.0),.false.,'a',8 )
       d_t = der (8,9.6,(2.0,4.0),.true.,'b',10 )
 !----------------- ASSOCIATE with DERIVED TYPES  -----------------------
 
@@ -109,7 +97,7 @@
       end associate
 
       associate ( dertype => der_type )
-            d_t = dertype 
+            d_t = dertype
       end associate
             if(d_t%i4 .ne. der_type%i4) error stop 7
             if(d_t%l4 .neqv. der_type%l4) error stop 8

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg10.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg10.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg10.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg10.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 23, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Explicit dummy procedure - Characteristics 
+!*
+!*  Explicit dummy procedure - Characteristics
 !*  Bound
 !* ()
 !*
@@ -47,31 +41,31 @@
 
     TYPE :: Base
       CHARACTER(3) :: C
-      TYPE(Base), POINTER :: BPtr 
+      TYPE(Base), POINTER :: BPtr
     END TYPE
- 
+
     INTERFACE
       FUNCTION IntF(Arg)
       IMPORT
-        TYPE(Base) :: Arg 
-        TYPE(Base):: IntF(2:4) 
+        TYPE(Base) :: Arg
+        TYPE(Base):: IntF(2:4)
       END FUNCTION
     END INTERFACE
- 
+
     INTERFACE
       FUNCTION IntF1(Arg)
       IMPORT
-        TYPE(Base) :: Arg 
-        TYPE(Base):: IntF1(3) 
+        TYPE(Base) :: Arg
+        TYPE(Base):: IntF1(3)
       END FUNCTION
     END INTERFACE
- 
+
   END MODULE
 
   FUNCTION ExtFun(Arg)
   USE M
-  TYPE(Base) :: Arg 
-  TYPE(Base) :: ExtFun(3) 
+  TYPE(Base) :: Arg
+  TYPE(Base) :: ExtFun(3)
     ExtFun = Arg
   END FUNCTION
 
@@ -80,8 +74,8 @@
   USE M
   IMPLICIT NONE
 
-  PROCEDURE(IntF) :: ExtFun 
-  PROCEDURE(IntF1), POINTER :: ProcPtr 
+  PROCEDURE(IntF) :: ExtFun
+  PROCEDURE(IntF1), POINTER :: ProcPtr
 
   CALL IntSub(ExtFun)
 
@@ -94,7 +88,7 @@
     IMPLICIT TYPE(Base)(A)
     PROCEDURE(IntF1) :: Arg
     TYPE(Base) :: V(3)
-    TYPE(Base), TARGET :: Tar=Base("abc", NULL()) 
+    TYPE(Base), TARGET :: Tar=Base("abc", NULL())
       V = Arg(Base("123", Tar))
       IF (ANY(V%C .NE. "123"))              STOP 11
       IF (.NOT. ASSOCIATED(V(2)%BPtr, Tar)) STOP 12
@@ -107,7 +101,7 @@
     IMPLICIT TYPE(Base)(A)
     PROCEDURE(IntF), POINTER :: Arg
     TYPE(Base) :: V(3)
-    TYPE(Base), TARGET :: Tar=Base("abc", NULL()) 
+    TYPE(Base), TARGET :: Tar=Base("abc", NULL())
       V = Arg(Base("123", Tar))
       IF (ANY(V%C .NE. "123"))              STOP 21
       IF (.NOT. ASSOCIATED(V(2)%BPtr, Tar)) STOP 22

@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgCount6
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : COUNT 
+!*  SECONDARY FUNCTIONS TESTED : COUNT
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,11 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Entities with different attubute used for kind arg - associate/select type 
-!*    
-!*  (322578) 
+!*  Entities with different attubute used for kind arg - associate/select type
+!*
+!*  (322578)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -48,7 +40,7 @@
     INTEGER(D3)   :: K4
     INTEGER(D4)   :: K8
   END TYPE
- 
+
   TYPE(DT(20,1,2,4,8)), PARAMETER :: T=DT(20,1,2,4,8)(1,2,4,8)
 
   INTEGER(1) :: I1
@@ -85,7 +77,7 @@
   END SELECT
   END SELECT
   END SELECT
- 
+
 
   ASSOCIATE (T1=>MM1, T2=>MM2, T4=>MM4, T8=>MM8)
   SELECT TYPE(M1=>T1)
@@ -96,7 +88,7 @@
   TYPE IS (LOGICAL(4))
   SELECT TYPE(M8=>T8)
   TYPE IS (LOGICAL(8))
- 
+
   DO I1 = 1, 126
     IF (     COUNT(M1(I1,:), KIND=T%K1%KIND )               .NE. 1)          STOP 11
     IF (KIND(COUNT(M1(I1,:), KIND=T%K1%KIND ))              .NE. T%K1%KIND)  STOP 12
@@ -143,16 +135,16 @@
 
   CLASS DEFAULT
     STOP 91
-  END SELECT 
+  END SELECT
   CLASS DEFAULT
     STOP 92
-  END SELECT 
+  END SELECT
   CLASS DEFAULT
     STOP 93
-  END SELECT 
+  END SELECT
   CLASS DEFAULT
     STOP 94
-  END SELECT 
+  END SELECT
 
   END ASSOCIATE
 

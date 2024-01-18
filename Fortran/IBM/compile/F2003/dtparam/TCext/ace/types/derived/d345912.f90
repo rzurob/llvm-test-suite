@@ -1,19 +1,13 @@
 !**********************************************************************
 !* ====================================================================
-!* XL Fortran Test Case                           IBM INTERNAL USE ONLY
-!* ====================================================================
 !*
 !*  TEST CASE NAME             : d345912
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt09kl_dlp)
 !*  DATE                       : 2008-01-16
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Array Constructor Enhancement
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DEFECT ABSTRACT            : DTPARAM: DTIO: DUMMYARG: Invalid Diagnostic
 !*                               for Extended Type

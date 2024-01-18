@@ -4,14 +4,10 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !* TEST BUCKET                : intrinsics/transfer
-!* PROGRAMMER                 : Yong Du
 !* DATE                       : 12/21/2004
 !* PRIMARY FUNCTIONS TESTED   : transfer
 !* SECONDARY FUNCTIONS TESTED :
-!* DRIVER STANZA              : xlf90
 !* DESCRIPTION                :
 !*   SOURCE or MOLD is function return of reshape. Poly and unlimited
 !* poly.

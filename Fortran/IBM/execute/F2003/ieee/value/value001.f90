@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : February 12, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_VALUE
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +25,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -74,7 +65,7 @@
         values = ieee_value(values, ctypes)
 
         do i = 1, 10
-           if (ieee_class(values(i)) /= ctypes(i)) call zzrc(i+10) 
+           if (ieee_class(values(i)) /= ctypes(i)) call zzrc(i+10)
         end do
 
         call ieee_get_flag(ieee_all,flag_values)

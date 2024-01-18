@@ -1,25 +1,18 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : submodule23f.f
-!*
-!* PROGRAMMER                   : Bernard Kan
 !* DATE                         : 28 May 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008 submodule
 !* SECONDARY FUNTIONS TESTED    : bind(c) in a module function or subroutine
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !* based on cintrop_ts29113/optional/func/fcintrpopt040.f
 !*
-!* Calling a BIND(C) module function or subroutine from C that is 
+!* Calling a BIND(C) module function or subroutine from C that is
 !*   defined in Fortran in a submodule
 !*
 !* ===================================================================

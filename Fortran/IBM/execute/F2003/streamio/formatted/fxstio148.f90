@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio148.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,45 +12,38 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access Mode
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                : Test Control Edit Descriptors (/,:,$,',",BN,BZ) 
+!*  DESCRIPTION                : Test Control Edit Descriptors (/,:,$,',",BN,BZ)
 !*				 in formatted stream I/O.
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/26/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/26/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  program fxstio148 
+  program fxstio148
 
      implicit none
      integer    ios, i
-     character*30  ch_in1, ch_out1  
-     character*30  ch_in2, ch_out2  
-     character*30  ch_in3, ch_out3  
-     character*30  ch_in4, ch_out4  
-     character*30  ch_in5, ch_out5  
-     character*30  ch_in6, ch_out6  
-     character*30  ch_in7, ch_out7  
+     character*30  ch_in1, ch_out1
+     character*30  ch_in2, ch_out2
+     character*30  ch_in3, ch_out3
+     character*30  ch_in4, ch_out4
+     character*30  ch_in5, ch_out5
+     character*30  ch_in6, ch_out6
+     character*30  ch_in7, ch_out7
 
      integer*1     i1_out
      integer*2     i2_out
@@ -67,9 +60,9 @@
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
 
-!********************************************************** 
+!**********************************************************
 !      Initialization                                     *
-!********************************************************** 
+!**********************************************************
 
      ch_in1 = "This is the first record!"
      ch_in2 = "This is the second record!"
@@ -79,14 +72,14 @@
      ch_in6 = " 2345   3.14   -.1D23  230  "
      ch_in7 = "0.1E-2 0.8E+2 0.4Q-2  0.7Q+2  "
 
-     do i = 1, 5  
+     do i = 1, 5
          rec_count(i) = i
      end do
 
-     
-!********************************************************** 
+
+!**********************************************************
 !      Writing and Reading the file                      *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio148.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
@@ -105,9 +98,9 @@
 
      WRITE(1, FMT='(A)', IOSTAT=ios, ERR=91) ch_in7(21:)
 
-     WRITE(1, FMT='("1101     367 ", $)', IOSTAT=ios, ERR=91) 
+     WRITE(1, FMT='("1101     367 ", $)', IOSTAT=ios, ERR=91)
 
-     WRITE(1, FMT='("  F             ", $)', IOSTAT=ios, ERR=91) 
+     WRITE(1, FMT='("  F             ", $)', IOSTAT=ios, ERR=91)
 
      WRITE(1, FMT="(/'This is the last record')", IOSTAT=ios, ERR=91)
 
@@ -130,14 +123,14 @@
     &      x8_out, x32_out
 
      READ(1, FMT='(BZ, B8, O5, Z4)', IOSTAT=ios, ERR=92 ) &
-    &      i1_out, i2_out, b_out 
+    &      i1_out, i2_out, b_out
 
      READ(1, FMT='(A)', IOSTAT=ios, ERR=92 ) ch_out7
 
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( ch_in1 .ne. ch_out1 ) error stop 20
      if ( ch_in2 .ne. ch_out2 ) error stop 21
@@ -164,11 +157,11 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 
    end program
 

@@ -4,31 +4,25 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrTypcmptble.f 
+!*  TEST CASE NAME             : dataPtrTypcmptble.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!* - if ptr is not poly, target is poly with different dynamic type, the 
+!* - if ptr is not poly, target is poly with different dynamic type, the
 !*  assignment target is the ancestor component of target
 !* - ptr is of type(base); tar's dynamic type is of class(child), its declared
 !*  type is of class(base);
-!* - ptr is of class(*); tar is of class(child) 
+!* - ptr is of class(*); tar is of class(child)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
    program main
 
 	type base(k1)    ! (4)
@@ -40,32 +34,32 @@
 	    integer, kind             :: k2
 	    integer, len              :: n1
 	    character(kind=k2,len=n1) :: ch
-	end type	
+	end type
 
 	type(base(4)), pointer :: p(:)
 	class(base(4)), target,  allocatable :: t(:)
 	class(*), pointer :: q(:)
- 
+
 	allocate(t(200), source = (/ ( child(4,1,3)(i,'IBM'),i=1,200 ) /) )
 
 	p(1:t(100)%id) => t(200:1:-1)
 
 	if ( .not. associated(p)) stop 1
-	if ( lbound(p,1) /= 1) stop 3 
-	if ( ubound(p,1) /= 100) stop 5 
+	if ( lbound(p,1) /= 1) stop 3
+	if ( ubound(p,1) /= 100) stop 5
 
 	q(20:) => p
-	
+
 	if ( .not. associated(q,p)) stop 11
 	if ( lbound(q,1) /= 20) stop 13
-	if ( ubound(q,1) /= 119) stop 15 
+	if ( ubound(q,1) /= 119) stop 15
 
 	select type (q)
 	    type is (child(4,1,*))
-		stop 21	
+		stop 21
 	    type is (base(4))
 		print *, (/ (q(i)%id, i=lbound(q,1),ubound(q,1) ) /)
-	    class default 
+	    class default
 	 	stop 23
 	end select
 

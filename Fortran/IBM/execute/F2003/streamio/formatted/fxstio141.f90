@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: cp $TR_SRC/check_array.inc .; cp $TR_SRC/check_interface.inc .
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio141.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,20 +12,13 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access Mode
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,22 +27,22 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/24/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/24/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
   include 'check_array.inc'
 
-  program fxstio141 
+  program fxstio141
 
      implicit none
      integer    i, j, k, l, ios
      integer, parameter    :: N = 10
-     character             :: ch1_in, ch1_out  
-     character*25          :: ch25_in, ch25_out  
-     character             :: ch1_arr_in(N,N), ch1_arr_out(N,N)  
-     character*25          :: ch25_arr_in(N), ch25_arr_out(N)  
+     character             :: ch1_in, ch1_out
+     character*25          :: ch25_in, ch25_out
+     character             :: ch1_arr_in(N,N), ch1_arr_out(N,N)
+     character*25          :: ch25_arr_in(N), ch25_arr_out(N)
      character, pointer    :: ch1_pin, ch1_pout
      character, target     :: ch1_tin, ch1_tout
      character*25, pointer :: ch25_arr_pin(:), ch25_arr_pout(:)
@@ -64,10 +57,10 @@
      character*25              :: ch25_ltrl_out2
 
      include 'check_interface.inc'
-     
-!********************************************************** 
+
+!**********************************************************
 !       Allocation, Association & Initialization          *
-!********************************************************** 
+!**********************************************************
 
      allocate(ch1_all_in, ch1_all_out)
      allocate(ch25_all_in(N,N), ch25_all_out(N,N))
@@ -87,23 +80,23 @@
      ch25_all_in = "{[(@#$%^&*|:<>?,./\;'`)]}"
 
 
-!********************************************************** 
+!**********************************************************
 !      Writing and Reading the file                      *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio141.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
 
      WRITE(1, FMT='(A25)', IOSTAT=ios, ERR=91) "This is the first record!"
      WRITE(1, FMT='(A1)', IOSTAT=ios, ERR=91, ADVANCE='no') ch1_in
-     WRITE(1, FMT='(A26)', IOSTAT=ios, ERR=91) ch25_in 
-     WRITE(1, FMT='(100A1)', IOSTAT=ios, ERR=91) ch1_arr_in 
-     WRITE(1, FMT='(10A)', IOSTAT=ios, ERR=91) ch25_arr_in 
-     WRITE(1, FMT='(A1)', IOSTAT=ios, ERR=91) ch1_pin 
-     WRITE(1, FMT='(10A26)', IOSTAT=ios, ERR=91) ch25_arr_tin 
-     WRITE(1, FMT='(A1)', IOSTAT=ios, ERR=91) ch1_all_in 
-     WRITE(1, FMT='(100A25)', IOSTAT=ios, ERR=91) ch25_all_in 
-     WRITE(1, FMT='(A1)', IOSTAT=ios, ERR=91) ch1_par_in 
+     WRITE(1, FMT='(A26)', IOSTAT=ios, ERR=91) ch25_in
+     WRITE(1, FMT='(100A1)', IOSTAT=ios, ERR=91) ch1_arr_in
+     WRITE(1, FMT='(10A)', IOSTAT=ios, ERR=91) ch25_arr_in
+     WRITE(1, FMT='(A1)', IOSTAT=ios, ERR=91) ch1_pin
+     WRITE(1, FMT='(10A26)', IOSTAT=ios, ERR=91) ch25_arr_tin
+     WRITE(1, FMT='(A1)', IOSTAT=ios, ERR=91) ch1_all_in
+     WRITE(1, FMT='(100A25)', IOSTAT=ios, ERR=91) ch25_all_in
+     WRITE(1, FMT='(A1)', IOSTAT=ios, ERR=91) ch1_par_in
      WRITE(1, FMT='(A20, 5H AIX.)', IOSTAT=ios, ERR=91) ch25_par_in
      WRITE(1, FMT='(25HThis is the last record!!)', IOSTAT=ios, ERR=91)
 
@@ -122,9 +115,9 @@
      READ(1, FMT='(A20)', IOSTAT=ios, ERR=92) ch25_ltrl_out2
 
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( ch25_ltrl_out1 .ne. "This is the first record!" ) error stop 19
      if ( ch25_in .ne. ch25_out) error stop 20
@@ -145,13 +138,13 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 93   print *, "Error while rewinding the file: IOSTAT = ", ios
-     error stop 93 
+     error stop 93
 
    end program
 

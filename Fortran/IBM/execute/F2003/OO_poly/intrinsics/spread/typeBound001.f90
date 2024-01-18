@@ -11,20 +11,14 @@
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            :
-!*  PROGRAMMER                 : Yong Du
+!*  ===================================================================
 !*  DATE                       : 01/18/2005
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : spread
 !*  SECONDARY FUNCTIONS TESTED :
-!*  DRIVER STANZA              : xlf90
 !*  DESCRIPTION                :
 !*    Cross testing type bound.
 !*    Non-poly
-!*    
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

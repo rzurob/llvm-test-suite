@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam04_d354300.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquirySelectTypeParam04_d354300.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 25 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 25 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
-!* 3. DEFECT 354300 
+!* 3. DEFECT 354300
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
 
@@ -33,7 +25,7 @@ module m
     end type
 
     type,extends(base) :: child(k2,l2)
-          integer(kind(k1)),kind :: k2   
+          integer(kind(k1)),kind :: k2
           integer,len :: l2
     end type
 
@@ -45,7 +37,7 @@ module m
          select type(dt)
            type is(base(2,*))
              print *,"dt is base"
-           type is(child(2,*,4,*))  
+           type is(child(2,*,4,*))
              print *,"dt is child"
            class default
              print *,"should not come here"
@@ -54,7 +46,7 @@ module m
 
 end module
 
-  program dtParameterInquirySelectTypeParam04_d354300 
+  program dtParameterInquirySelectTypeParam04_d354300
   use m
   implicit none
 

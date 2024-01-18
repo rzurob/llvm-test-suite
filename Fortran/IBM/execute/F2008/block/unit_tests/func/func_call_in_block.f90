@@ -9,5 +9,5 @@ contains
   subroutine sub(n)
     integer, intent(inout) :: n
     n = 10
-  end 
+  end
 end

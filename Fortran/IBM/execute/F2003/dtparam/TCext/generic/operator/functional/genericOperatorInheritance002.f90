@@ -3,22 +3,11 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=base
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Operator: testing the statement: (pg. 62 ln 1-2)
 !*                                         If a generic binding specified in a type definition has the same generic-spec as an inherited binding, it
@@ -118,13 +107,13 @@ program genericOperatorInheritance002
    end select
 
    deallocate ( c2 )
-   
+
    allocate ( c2, source = c1 + c1 )
    print *, c2%i, c2%j
-   
+
    deallocate ( b2 )
    allocate ( b2, source = c1 + b1 )
-   
+
    print *, b2%i
 
 

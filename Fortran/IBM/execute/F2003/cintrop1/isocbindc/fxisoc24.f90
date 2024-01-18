@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_INT8_T, C_INT16_T
@@ -124,7 +110,7 @@ integer(C_INT8_T) function fnt1(a,b)
 
    integer(C_INT8_T) :: a
    integer(C_INT16_T) :: b
-   
+
    if ( a /= 5 ) error stop 36
    if ( b /= 10 ) error stop 38
 
@@ -139,7 +125,7 @@ integer(C_INT8_T) function fnt2(a,b)
 
    integer(C_INT8_T), value :: a
    integer(C_INT16_T), value :: b
-   
+
    if ( a /= 5 ) error stop 40
    if ( b /= 10 ) error stop 42
 
@@ -154,7 +140,7 @@ integer(C_INT8_T) function fnt3(a,b)
 
    integer(C_INT8_T), intent(in) :: a
    integer(C_INT16_T), intent(in) :: b
-   
+
    if ( a /= 5 ) error stop 44
    if ( b /= 10 ) error stop 46
 
@@ -166,7 +152,7 @@ integer(C_INT8_T) function fnt4(a,b)
 
    integer(C_INT8_T), intent(in), value :: a
    integer(C_INT16_T), intent(in), value :: b
-   
+
    if ( a /= 5 ) error stop 48
    if ( b /= 10 ) error stop 50
 

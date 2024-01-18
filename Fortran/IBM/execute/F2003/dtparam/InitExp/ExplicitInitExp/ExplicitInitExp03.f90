@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ExplicitInitExp03.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 13, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result 
-!*  SECONDARY FUNCTIONS TESTED : Array constructor 
+!*  PRIMARY FUNCTIONS TESTED   : Function result
+!*  SECONDARY FUNCTIONS TESTED : Array constructor
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,7 +17,7 @@
 !* Defect : 359977
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -34,7 +26,7 @@ MODULE Mod
 
         INTEGER(k1)   :: A0(l1) = -1
         CHARACTER(l1) :: C0(l1) = 'XLF'
-        REAL(k1)      :: R0(l1) = -0.1 
+        REAL(k1)      :: R0(l1) = -0.1
 
         CONTAINS
         PROCEDURE :: print => printBase
@@ -70,16 +62,16 @@ END MODULE
 PROGRAM ExplicitInitExp03
       USE Mod
 
-      INTEGER, PARAMETER :: M = 3, K = 4 
+      INTEGER, PARAMETER :: M = 3, K = 4
       TYPE(Base(K,M)), PARAMETER :: bconst = Base(K,M) &
-                  ( [(I, I = 1, M)], [(CHAR(I+64), I = 1, M)], [(I/REAL(M), I = 1, M)] ) 
-      TYPE(Child(K,2*M,K,M-1)) :: c1 = Child(K,2*M,K,M-1) & 
-                  ( [(2*I, I = 1, 2*M)], [(CHAR(I+64), I = 1, 2*M)], [(COS(I/REAL(M)), I = 1, 2*M)], bconst ) 
+                  ( [(I, I = 1, M)], [(CHAR(I+64), I = 1, M)], [(I/REAL(M), I = 1, M)] )
+      TYPE(Child(K,2*M,K,M-1)) :: c1 = Child(K,2*M,K,M-1) &
+                  ( [(2*I, I = 1, 2*M)], [(CHAR(I+64), I = 1, 2*M)], [(COS(I/REAL(M)), I = 1, 2*M)], bconst )
 
-      CLASS(Base(K,:)), POINTER :: poly 
+      CLASS(Base(K,:)), POINTER :: poly
       LOGICAL(4), EXTERNAL :: precision_r4
 
-      call bconst%print 
+      call bconst%print
       IF ( SIZE(bconst%A0) .NE. M ) STOP 10
       IF ( SIZE(bconst%C0) .NE. M ) STOP 11
       IF ( SIZE(bconst%R0) .NE. M ) STOP 12
@@ -95,8 +87,8 @@ PROGRAM ExplicitInitExp03
         IF ( .NOT. precision_r4(bconst%R0(I), I/REAL(M)) ) STOP 21
       END DO
 
-      ALLOCATE( poly, source = bconst) 
-      call poly%print 
+      ALLOCATE( poly, source = bconst)
+      call poly%print
       IF ( SIZE(poly%A0) .NE. M ) STOP 22
       IF ( SIZE(poly%C0) .NE. M ) STOP 23
       IF ( SIZE(poly%R0) .NE. M ) STOP 24
@@ -112,8 +104,8 @@ PROGRAM ExplicitInitExp03
         IF ( .NOT. precision_r4(poly%R0(I), I/REAL(M)) ) STOP 33
       END DO
 
-      poly%C0 = 'IBM'  
-      call poly%print 
+      poly%C0 = 'IBM'
+      call poly%print
       IF ( SIZE(poly%A0) .NE. M ) STOP 34
       IF ( SIZE(poly%C0) .NE. M ) STOP 35
       IF ( SIZE(poly%R0) .NE. M ) STOP 36
@@ -126,11 +118,11 @@ PROGRAM ExplicitInitExp03
       IF ( ANY(poly%A0 .NE.  [(I, I = 1, M)]) ) STOP 43
       IF ( ANY(poly%C0 .NE.            'IBM') ) STOP 44
       DO I = 1, M
-        IF ( .NOT. precision_r4(poly%R0(I), I/REAL(M)) ) STOP 45 
+        IF ( .NOT. precision_r4(poly%R0(I), I/REAL(M)) ) STOP 45
       END DO
 
       poly%R0 = [0.3, 0.33, 0.333]
-      call poly%print 
+      call poly%print
       IF ( SIZE(poly%A0) .NE. M ) STOP 46
       IF ( SIZE(poly%C0) .NE. M ) STOP 47
       IF ( SIZE(poly%R0) .NE. M ) STOP 48
@@ -142,11 +134,11 @@ PROGRAM ExplicitInitExp03
       IF ( UBOUND(poly%R0,1) .NE. M ) STOP 55
       IF ( ANY(poly%A0 .NE.     [(I, I = 1, M)]) ) STOP 56
       IF ( ANY(poly%C0 .NE.               'IBM') ) STOP 57
-      IF ( .NOT. precision_r4(poly%R0(1), 0.3)   ) STOP 58 
-      IF ( .NOT. precision_r4(poly%R0(2), 0.33)  ) STOP 58 
-      IF ( .NOT. precision_r4(poly%R0(3), 0.333) ) STOP 58 
+      IF ( .NOT. precision_r4(poly%R0(1), 0.3)   ) STOP 58
+      IF ( .NOT. precision_r4(poly%R0(2), 0.33)  ) STOP 58
+      IF ( .NOT. precision_r4(poly%R0(3), 0.333) ) STOP 58
 
-      call c1%print 
+      call c1%print
       IF ( SIZE(c1%A0) .NE. 2*M ) STOP 59
       IF ( SIZE(c1%C0) .NE. 2*M ) STOP 60
       IF ( SIZE(c1%R0) .NE. 2*M ) STOP 61
@@ -159,7 +151,7 @@ PROGRAM ExplicitInitExp03
       IF ( ANY(c1%A0 .NE.            [(2*I, I = 1, 2*M)]) ) STOP 68
       IF ( ANY(c1%C0 .NE.     [(CHAR(I+64), I = 1, 2*M)]) ) STOP 69
       DO I = 1, 2*M
-        IF ( .NOT. precision_r4(c1%R0(I), COS(I/REAL(M))) ) STOP 70 
+        IF ( .NOT. precision_r4(c1%R0(I), COS(I/REAL(M))) ) STOP 70
       END DO
 
       IF ( SIZE(c1%cmp1%A0) .NE. M ) STOP 71
@@ -174,11 +166,11 @@ PROGRAM ExplicitInitExp03
       IF ( ANY(c1%cmp1%A0 .NE.          [(I, I = 1, M)]) ) STOP 80
       IF ( ANY(c1%cmp1%C0 .NE. [(CHAR(I+64), I = 1, M)]) ) STOP 81
       DO I = 1, M
-        IF ( .NOT. precision_r4(c1%cmp1%R0(I), I/REAL(M))) STOP 82 
+        IF ( .NOT. precision_r4(c1%cmp1%R0(I), I/REAL(M))) STOP 82
       END DO
 
-      ALLOCATE( poly, source = c1 ) 
-      call poly%print 
+      ALLOCATE( poly, source = c1 )
+      call poly%print
       SELECT TYPE ( poly )
           TYPE IS (Child(4,*,4,*))
             IF ( SIZE(poly%A0) .NE. 2*M ) STOP 83
@@ -193,7 +185,7 @@ PROGRAM ExplicitInitExp03
             IF ( ANY(poly%A0 .NE.            [(2*I, I = 1, 2*M)]) ) STOP 92
             IF ( ANY(poly%C0 .NE.     [(CHAR(I+64), I = 1, 2*M)]) ) STOP 93
             DO I = 1, 2*M
-              IF ( .NOT. precision_r4(poly%R0(I), COS(I/REAL(M))) ) STOP 94 
+              IF ( .NOT. precision_r4(poly%R0(I), COS(I/REAL(M))) ) STOP 94
             END DO
 
             IF ( SIZE(poly%cmp1%A0) .NE. M ) STOP 95
@@ -212,7 +204,7 @@ PROGRAM ExplicitInitExp03
             END DO
 
           CLASS DEFAULT
-             STOP 107 
+             STOP 107
       END SELECT
 
 END PROGRAM ExplicitInitExp03

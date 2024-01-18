@@ -1,13 +1,9 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qnock -qnok -ql -qreuse=none -qdeferredlp /tstdev/OO_poly/intrinsics/cshift/cshift003.f
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/cshift
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 01/27/2005
 ! PRIMARY FUNCTIONS TESTED   : cshift
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : ARRAY is unlimited poly. SHIFT is scalar
 !                              or array. DIM is present or not.
 !=======================================================================

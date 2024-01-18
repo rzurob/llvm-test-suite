@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : csModuleVariable
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-10-04
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray access (specific) - assignment
 !*  SECONDARY FUNCTIONS TESTED : in procedures internal to module procedure, assign to and query module coarray variables

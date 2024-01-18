@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf006.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,36 +12,29 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf006
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Dec. 16, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DESCRIPTION                : This tests the functionality of the  
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : This tests the functionality of the
 !*                               decimal edit mode when using OPEN,
-!*                               READ and WRITE stmts during list-directed I/O 
+!*                               READ and WRITE stmts during list-directed I/O
 !*                               for objects of type REAL. This testcase validates
 !*                               the behaviour when using run-time encoding
 !*                               of the DECIMAL= specifier for internal files.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       implicit none
-      
+
       character(50), parameter :: FNAME_OUT = 'decimaleditf006.out'
 
       integer, parameter :: OUT = 33 ! unit numbers
@@ -57,7 +50,7 @@
      &   '9,891029359'/)
 
       character(50) :: buffer ! acts as the internal file
-      
+
       character(10) :: decim_mode
 
       real :: rl1 = 3.14, rl2

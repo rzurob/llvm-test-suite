@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  HostAssocVarDummy.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  HostAssocVarDummy.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : HostAssocVarDummy
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,7 +31,7 @@
 !*
 !*  DESCRIPTION
 !*    The selector is an associate name associating to a nonpoly dummy variable of derived types
-!*    () 
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,7 +47,7 @@
       INTEGER  :: ChildId = 2
       TYPE(Base), POINTER :: BaseComp
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -75,29 +69,29 @@
   PROGRAM HostAssocVarDummy
   USE M
   IMPLICIT NONE
- 
+
   TYPE(Child) :: V
 
   CALL Sub(V, V)
- 
+
   CONTAINS
 
   SUBROUTINE Sub(Arg1, Arg2)
   IMPLICIT NONE
-  TYPE(Child) :: Arg1, Arg2  
- 
+  TYPE(Child) :: Arg1, Arg2
+
   ASSOCIATE ( T1 => Arg1, T2 => Arg2 )
     IF ( T1%GetId() .NE. T2%GetId() ) STOP 30
     Arg1%ChildId = -2
-    IF ( T1%GetId() .NE. T2%GetId() ) STOP 31 
+    IF ( T1%GetId() .NE. T2%GetId() ) STOP 31
     IF ( T1%Base%GetId() .NE. T2%Base%GetId() ) STOP 32
-  
+
     ASSOCIATE ( As1 => T1, As2 => T2 )
       Arg1%BaseId  = -1
       Arg2%ChildID = -2
       IF ( As1%BaseId  .NE. -1 ) STOP 40
       IF ( As2%ChildId .NE. -2 ) STOP 41
-      IF ( As1%GetId() .NE. As2%GetId() ) STOP 42 
+      IF ( As1%GetId() .NE. As2%GetId() ) STOP 42
       IF ( As1%Base%GetId() .NE. As2%Base%GetId() ) STOP 43
     END ASSOCIATE
 
@@ -106,14 +100,14 @@
       As2%ChildID = 2
       IF ( Arg1%BaseId  .NE. 1 ) STOP 50
       IF ( Arg2%ChildId .NE. 2 ) STOP 51
-      IF ( Arg1%GetId() .NE. Arg2%GetId() ) STOP 52 
-      IF ( Arg1%Base%GetId() .NE. Arg2%Base%GetId() ) STOP 53 
+      IF ( Arg1%GetId() .NE. Arg2%GetId() ) STOP 52
+      IF ( Arg1%Base%GetId() .NE. Arg2%Base%GetId() ) STOP 53
     END ASSOCIATE
 
 
   END ASSOCIATE
 
-  
+
   END SUBROUTINE
 
   END

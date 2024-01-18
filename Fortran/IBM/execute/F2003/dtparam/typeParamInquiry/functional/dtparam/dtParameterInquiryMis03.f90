@@ -1,33 +1,26 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryMis03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryMis03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 26 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 26 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
+!*  REFERENCE                  :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  REQUIRED COMPILER OPTIONS  : -qfree=f90 
+!*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
-!* 3. COMPLICATED EXPRESSION AS LENGTH TYPE PARAMETER  
+!* 3. COMPLICATED EXPRESSION AS LENGTH TYPE PARAMETER
 !* 4. DEFECT 354585,354602
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -36,7 +29,7 @@ module m
    end type
 end module
 
-  program dtParameterInquiryMis03 
+  program dtParameterInquiryMis03
   use m
   implicit none
 
@@ -66,7 +59,7 @@ end module
   print *, i1*2 + lbound(i2,1) + ubound(i2,1) + &
            i2%kind + kind(i2)  + max(4,int(2_8)) + &
            b1%l + b1%l%kind + kind(b1%l) + &
-           getlen(b1) + kind(c1) 
+           getlen(b1) + kind(c1)
 
   if(b2%l /= 40)                                      error stop 11_4
 

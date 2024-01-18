@@ -3,24 +3,12 @@
 ! opt variations: -qnock -qnok -qnol -qnodeferredlp
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : sameDTpolyDT1.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is of an non-poly DT, an optional dummy
 !*                               arg of a type bound proc
@@ -40,21 +28,21 @@ module m
       type  :: base(k1,n1)    ! (4,20)
           integer, kind :: k1
           integer, len  :: n1
-          character(:), allocatable :: ch 
+          character(:), allocatable :: ch
           contains
-              procedure :: get_alloc  => func 
-      end type 
+              procedure :: get_alloc  => func
+      end type
 
-      contains 
+      contains
          function func(arg, brg)
-            class(base(4,*)) :: arg 
+            class(base(4,*)) :: arg
             class(base(4,:)) :: func
-            type(base(4,:)), optional, allocatable :: brg 
+            type(base(4,:)), optional, allocatable :: brg
             allocatable func
 
-            call move_alloc(brg,func) 
-            
-         end function 
+            call move_alloc(brg,func)
+
+         end function
 
 end module
 
@@ -72,5 +60,5 @@ end module
           class default
              STOP 23
       end select
-             
+
       end

@@ -1,23 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : isContigFalse6.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS intrinsic
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : ASSOCIATE and SELECTTYPE constructs 
+!*  SECONDARY FUNCTIONS TESTED : ASSOCIATE and SELECTTYPE constructs
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - Selector in ASSOCIATE construct or SELECTTYPE 
+!*  DESCRIPTION                : - Selector in ASSOCIATE construct or SELECTTYPE
 !*                                 construct is not contiguous
 !*                               - IS_CONTIGUOUS should return .False.
 !*
@@ -33,7 +23,7 @@
 MODULE Mod
       IMPLICIT NONE
 
-      TYPE :: Base(K1,N1)  
+      TYPE :: Base(K1,N1)
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
 

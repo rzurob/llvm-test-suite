@@ -4,14 +4,10 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !* TEST BUCKET                : intrinsics/transpose
-!* PROGRAMMER                 : Yong Du
 !* DATE                       : 12/31/2004
 !* PRIMARY FUNCTIONS TESTED   : transpose
 !* SECONDARY FUNCTIONS TESTED : finalization
-!* DRIVER STANZA              : xlf90
 !* DESCRIPTION                : Cross testing finalization.
 !* ===================================================================
 !* REVISION HISTORY

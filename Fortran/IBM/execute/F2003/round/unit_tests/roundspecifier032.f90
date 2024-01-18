@@ -12,25 +12,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : roundspecifier032
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : Dec. 20, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND= specifier in I/O statements
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : functional testing of round edit descriptor in 
+!*  DESCRIPTION                : functional testing of round edit descriptor in
 !*                               READ, WRITE statements with
-!*                               es edit descriptor 
+!*                               es edit descriptor
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 real(4) :: num1, num2, num3, num4
@@ -55,9 +48,9 @@ namelist /namelist_real/ num1, num2, num3, num4, num5, num6, num7, num8, num9, n
   if (num10 .ne. z'4019CFA84384E97EBCC9A114DE4D0D70') error stop 10
   if (num11 .ne. z'C019CFA84384E97E3CC9A114DE4CF5AB') error stop 11
   if (num12 .ne. z'C019CFA84384E97E3CC9A114DE4D0D70') error stop 12
-  
+
   rewind 2
-  
+
  read(2,nml=namelist_real, round='down')
 
   if (num1 .ne. z'40CE7D13') error stop 13
@@ -72,9 +65,9 @@ namelist /namelist_real/ num1, num2, num3, num4, num5, num6, num7, num8, num9, n
   if (num10 .ne. z'4019CFA84384E97D3CA97BAC86CBCA3D') error stop 22
   if (num11 .ne. z'C019CFA84384E97DBCA97BAC86CC2950') error stop 23
   if (num12 .ne. z'C019CFA84384E97DBCA97BAC86CBCA3D') error stop 24
-  
+
   rewind 2
-  
+
   read(2,nml=namelist_real, round='zero')
 
   if (num1 .ne. z'40CE7D13') error stop 25
@@ -89,9 +82,9 @@ namelist /namelist_real/ num1, num2, num3, num4, num5, num6, num7, num8, num9, n
   if (num10 .ne. z'4019CFA84384E97D3CA97BAC86CBCA3D') error stop 34
   if (num11 .ne. z'C019CFA84384E97DBCA97BAC86CC2950') error stop 35
   if (num12 .ne. z'C019CFA84384E97DBCA97BAC86CBCA3D') error stop 36
-  
+
   rewind 2
-  
+
     read(2,nml=namelist_real, round='nearest')
 
   if (num1 .ne. z'40CE7D13') error stop 37
@@ -106,9 +99,9 @@ namelist /namelist_real/ num1, num2, num3, num4, num5, num6, num7, num8, num9, n
   if (num10 .ne. z'4019CFA84384E97D3CA97BAC86CBCA3E') error stop 46
   if (num11 .ne. z'C019CFA84384E97DBCA97BAC86CC2951') error stop 47
   if (num12 .ne. z'C019CFA84384E97DBCA97BAC86CBCA3E') error stop 48
-  
+
   rewind 2
-  
+
     read(2,nml=namelist_real, round='compatible')
 
   if (num1 .ne. z'40CE7D13') error stop 49
@@ -123,9 +116,9 @@ namelist /namelist_real/ num1, num2, num3, num4, num5, num6, num7, num8, num9, n
   if (num10 .ne. z'4019CFA84384E97D3CA97BAC86CBCA3E') error stop 58
   if (num11 .ne. z'C019CFA84384E97DBCA97BAC86CC2951') error stop 59
   if (num12 .ne. z'C019CFA84384E97DBCA97BAC86CBCA3E') error stop 60
-  
+
   rewind 2
-  
+
   read(2,nml=namelist_real, round='processor_defined')
 
   if (num1 .ne. z'40CE7D13') error stop 61
@@ -140,5 +133,5 @@ namelist /namelist_real/ num1, num2, num3, num4, num5, num6, num7, num8, num9, n
   if (num10 .ne. z'4019CFA84384E97D3CA97BAC86CBCA3E') error stop 70
   if (num11 .ne. z'C019CFA84384E97DBCA97BAC86CC2951') error stop 71
   if (num12 .ne. z'C019CFA84384E97DBCA97BAC86CBCA3E') error stop 72
-  
+
 end

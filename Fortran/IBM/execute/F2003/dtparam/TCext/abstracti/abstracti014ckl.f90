@@ -3,16 +3,13 @@
 
 !************************************************************************
 !* ======================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  TEST CASE NAME             : abstracti014ckl
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti014
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-24 (original: 02/20/2006)
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : reshape
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*  DRIVER STANZA              : xlf2003 (original: xlf90)
 !*  DESCRIPTION                : SOURCE is the return value of a type
 !*  bound procedure call. Use abstract type and deferred bounding.
 !*

@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypInq1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypInq1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,18 +23,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Type Parameter Inquiry on intrinsic types 
-!* 
-!* (324775/324382) 
-!*  
+!*  Type Parameter Inquiry on intrinsic types
+!*
+!* (324775/324382)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypInq1 
+  PROGRAM InitExpTypInq1
   IMPLICIT NONE
 
   INTEGER(1), parameter :: I1c(1) = 1
@@ -86,10 +78,10 @@
 
     CHARACTER(C%LEN) :: CC=ACHAR(C%KIND)
   END TYPE
- 
+
   TYPE(DT(20,1,2,4,8)), PARAMETER ::  T=DT(20,1,2,4,8)()
- 
- 
+
+
   IF (T%I1    .NE. 1  ) STOP 11
   IF (T%I2    .NE. 2  ) STOP 12
   IF (T%I4    .NE. 4  ) STOP 14
@@ -114,4 +106,4 @@
 
   END
 
- 
+

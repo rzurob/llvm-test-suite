@@ -12,21 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : February 7, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SELECTED_REAL_KIND with different
 !*                               numbers of arguments.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -42,7 +34,6 @@
 !* 5.Test the function with one available argument
 !* 6.Test the function with one unavailable argument
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 	program selected_arg
@@ -52,7 +43,7 @@
 
         logical :: flag_values(5)
         integer ::  i, zi, P, R
-	
+
         ! ieee_selected_real_kind should not set any flags. Clear all flags and
         ! check at the end that all flags are clear.
 
@@ -64,7 +55,7 @@
            do R = 0, 37
               zi = ieee_selected_real_kind(P, R)
               if (zi /= -1) error stop 1
-                                 !"ieee_selected_real_kind  failed 
+                                 !"ieee_selected_real_kind  failed
            end do
 
         ! Now check that no flags were turned on.
@@ -80,7 +71,7 @@
            do R = 38,307
               zi = ieee_selected_real_kind(P, R)
               if (zi /= -1) error stop 2
-                                 !"ieee_selected_real_kind  failed 
+                                 !"ieee_selected_real_kind  failed
            end do
 
         ! Now check that no flags were turned on.
@@ -97,7 +88,7 @@
            do P = 0,6
               zi = ieee_selected_real_kind(P, R)
               if (zi /= -2) error stop 3
-                                 !"ieee_selected_real_kind  failed 
+                                 !"ieee_selected_real_kind  failed
            end do
 
         ! Now check that no flags were turned on.
@@ -112,7 +103,7 @@
            do P = 7,15
               zi = ieee_selected_real_kind(P, R)
               if (zi /= -2) error stop 4
-                                 !"ieee_selected_real_kind  failed 
+                                 !"ieee_selected_real_kind  failed
            end do
 
         ! Now check that no flags were turned on.
@@ -127,7 +118,7 @@
            do P = 16,31
               zi = ieee_selected_real_kind(P, R)
               if (zi /= -2) error stop 5
-                                 !"ieee_selected_real_kind  failed 
+                                 !"ieee_selected_real_kind  failed
            end do
 
         ! Now check that no flags were turned on.

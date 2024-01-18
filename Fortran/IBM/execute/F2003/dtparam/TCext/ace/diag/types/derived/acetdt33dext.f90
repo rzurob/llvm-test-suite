@@ -3,16 +3,12 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acetdt33d
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt33d
 !*                               by David Forster)
 !*  DATE                       : 2007-11-28 (original: 2006-09-27)
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*
@@ -21,7 +17,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

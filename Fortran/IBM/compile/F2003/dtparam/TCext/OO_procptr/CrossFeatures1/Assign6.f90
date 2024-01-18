@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp Assign6.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Assign6.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Assign6.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 16, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,20 +34,19 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  
-!*  defined op on proc ptr - illegal 
-!*  (ICE-306492)(306935) 
+!*
+!*  defined op on proc ptr - illegal
+!*  (ICE-306492)(306935)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
 
-    INTERFACE 
+    INTERFACE
       FUNCTION CToC(Arg)
        CHARACTER(*) :: Arg
-       CHARACTER(LEN(Arg)) :: CToc 
+       CHARACTER(LEN(Arg)) :: CToc
       END FUNCTION
     END INTERFACE
 
@@ -79,24 +72,24 @@
     END FUNCTION
 
     FUNCTION MyAdd (Arg1, Arg2)
-    PROCEDURE(CToC), POINTER, INTENT(IN) :: Arg1 
-    PROCEDURE(CToC), POINTER, INTENT(IN) :: Arg2 
-    PROCEDURE(CToC), POINTER :: MyAdd 
-    
+    PROCEDURE(CToC), POINTER, INTENT(IN) :: Arg1
+    PROCEDURE(CToC), POINTER, INTENT(IN) :: Arg2
+    PROCEDURE(CToC), POINTER :: MyAdd
+
     IF ( ASSOCIATED(Arg1)) THEN
       MyAdd => Arg1
     ELSE
       MyAdd => Arg2
     END IF
- 
-    END FUNCTION 
- 
+
+    END FUNCTION
+
   END MODULE
 
 
-  PROGRAM Assign6 
+  PROGRAM Assign6
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   INTERFACE OPERATOR ( + )
     MODULE PROCEDURE  MyAdd
@@ -108,46 +101,46 @@
   ProcPtr => RetPtr(Fun) + NULL(ProcPtr)
 ! IF (ProcPtr("ABC") .NE. "ABC" ) STOP 14
 
-  ProcPtr => NULL(ProcPtr) + RetPtr(Fun) 
+  ProcPtr => NULL(ProcPtr) + RetPtr(Fun)
 ! IF (ProcPtr("123") .NE. "123" ) STOP 15
 
-  ProcPtr => RetPtr(Fun) + RetPtr(Fun) 
+  ProcPtr => RetPtr(Fun) + RetPtr(Fun)
 ! IF (ProcPtr("0123456789") .NE. "0123456789" ) STOP 16
 
-  ProcPtr => RetPtr(NULL(Fun)) + RetPtr(Fun) 
+  ProcPtr => RetPtr(NULL(Fun)) + RetPtr(Fun)
 ! IF (ProcPtr("xyz") .NE. "xyz" ) STOP 17
 
-  ProcPtr => NULL(ProcPtr) + RetPtr(NULL(ProcPtr)) 
+  ProcPtr => NULL(ProcPtr) + RetPtr(NULL(ProcPtr))
 ! IF (ASSOCIATED(ProcPtr)) STOP 18
 
   V%BComp%ProcPtr => RetPtr(Fun) + NULL(ProcPtr)
 ! IF (V%BComp%ProcPtr("ABC") .NE. "ABC" ) STOP 24
 
-  V%BComp%ProcPtr => NULL(ProcPtr) + RetPtr(ProcPtr) 
+  V%BComp%ProcPtr => NULL(ProcPtr) + RetPtr(ProcPtr)
 ! IF (V%BComp%ProcPtr("123") .NE. "123" ) STOP 25
 
-  V%BComp%ProcPtr => RetPtr(Fun) + RetPtr(Fun) 
+  V%BComp%ProcPtr => RetPtr(Fun) + RetPtr(Fun)
 ! IF (V%BComp%ProcPtr("0123456789") .NE. "0123456789" ) STOP 26
 
-  V%BComp%ProcPtr => RetPtr(NULL(ProcPtr)) + RetPtr(Fun) 
+  V%BComp%ProcPtr => RetPtr(NULL(ProcPtr)) + RetPtr(Fun)
 ! IF (V%BComp%ProcPtr("xyz") .NE. "xyz" ) STOP 27
 
-  V%BComp%ProcPtr => NULL(ProcPtr) + RetPtr(NULL(ProcPtr)) 
+  V%BComp%ProcPtr => NULL(ProcPtr) + RetPtr(NULL(ProcPtr))
 ! IF (ASSOCIATED(V%BComp%ProcPtr)) STOP 28
 
   V%BComp%ProcPtr => RetPtr(Fun) + NULL(ProcPtr)
 ! IF (V%BComp%ProcPtr("ABC") .NE. "ABC" ) STOP 24
 
-  V%BComp%ProcPtr => NULL(ProcPtr) + RetPtr(Fun) 
+  V%BComp%ProcPtr => NULL(ProcPtr) + RetPtr(Fun)
 ! IF (V%BComp%ProcPtr("123") .NE. "123" ) STOP 25
 
-  V%BComp%ProcPtr => RetPtr(Fun) + RetPtr(Fun) 
+  V%BComp%ProcPtr => RetPtr(Fun) + RetPtr(Fun)
 ! IF (V%BComp%ProcPtr("0123456789") .NE. "0123456789" ) STOP 26
 
-  V%BComp%ProcPtr => RetPtr(NULL(ProcPtr)) + RetPtr(Fun) 
+  V%BComp%ProcPtr => RetPtr(NULL(ProcPtr)) + RetPtr(Fun)
 ! IF (V%BComp%ProcPtr("xyz") .NE. "xyz" ) STOP 27
 
-  V%BComp%ProcPtr => NULL(ProcPtr) + RetPtr(NULL(ProcPtr)) 
+  V%BComp%ProcPtr => NULL(ProcPtr) + RetPtr(NULL(ProcPtr))
 ! IF (ASSOCIATED(V%BComp%ProcPtr)) STOP 28
 
 
@@ -155,8 +148,8 @@
 
   FUNCTION RetPtr(Arg)
   PROCEDURE(CToC), POINTER :: RetPtr
-  PROCEDURE(CToC) :: Arg 
-    RetPtr => Arg 
+  PROCEDURE(CToC) :: Arg
+    RetPtr => Arg
   END FUNCTION
 
   END

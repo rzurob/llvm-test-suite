@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrTypBndGenName.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!* 
-!*  -- Generic name 
+!*  -- Generic name
 !*  (323671/325783)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -39,40 +31,40 @@
   TYPE :: DT
     CHARACTER :: ID
     CONTAINS
-    GENERIC    :: GName => ModFun 
+    GENERIC    :: GName => ModFun
     PROCEDURE  :: ModFun
   END TYPE
- 
-  INTERFACE  GName 
+
+  INTERFACE  GName
   ELEMENTAL  FUNCTION ExtFun(Arg1, Arg2)
-      IMPORT DT 
-      TYPE(DT), INTENT(IN) :: Arg1 
-      TYPE(DT), INTENT(IN) :: Arg2 
-      CHARACTER            :: ExtFun 
+      IMPORT DT
+      TYPE(DT), INTENT(IN) :: Arg1
+      TYPE(DT), INTENT(IN) :: Arg2
+      CHARACTER            :: ExtFun
     END FUNCTION
     PROCEDURE ExtFun
   END INTERFACE
- 
+
   CONTAINS
 
   ELEMENTAL FUNCTION ModFun(Arg)
-  CLASS(DT), INTENT(IN) :: Arg 
-  CHARACTER             :: ModFun 
-    ModFun = Arg%ID 
-  END FUNCTION 
+  CLASS(DT), INTENT(IN) :: Arg
+  CHARACTER             :: ModFun
+    ModFun = Arg%ID
+  END FUNCTION
 
   END MODULE
 
   ELEMENTAL FUNCTION ExtFun(Arg1, Arg2)
   USE Mod, ONLY: DT
-  TYPE(DT), INTENT(IN) :: Arg1 
-  TYPE(DT), INTENT(IN) :: Arg2 
-  CHARACTER            :: ExtFun 
+  TYPE(DT), INTENT(IN) :: Arg1
+  TYPE(DT), INTENT(IN) :: Arg2
+  CHARACTER            :: ExtFun
     ExtFun =  Arg2%ID
-  END FUNCTION 
+  END FUNCTION
 
 
-  PROGRAM dataPtrTypBndGenName 
+  PROGRAM dataPtrTypBndGenName
   USE Mod
   IMPLICIT NONE
 

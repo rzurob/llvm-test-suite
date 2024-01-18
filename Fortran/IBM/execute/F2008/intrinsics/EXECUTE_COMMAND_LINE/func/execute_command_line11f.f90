@@ -1,23 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : execute_command_line11f.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-12-15
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : EXECUTE_COMMAND_LINE intrinsic
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED :  
-!*                                
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*
 !*  EXECUTE_COMMAND_LINE(COMMAND [, WAIT, EXITSTAT, CMDSTAT, CMDMSG ])
 !*
@@ -37,13 +27,13 @@ PROGRAM execute_command_line11f
       IMPLICIT NONE
       INTEGER :: I
 
-      CALL EXECUTE_COMMAND_LINE('./execute_command_line11f_pre') 
+      CALL EXECUTE_COMMAND_LINE('./execute_command_line11f_pre')
 
       open(unit=20, file='file02')
       DO I = 1, 100
          write(20, *) I
       END DO
-      
+
       close(20)
 
       CALL EXECUTE_COMMAND_LINE('diff file01 file02 > test')

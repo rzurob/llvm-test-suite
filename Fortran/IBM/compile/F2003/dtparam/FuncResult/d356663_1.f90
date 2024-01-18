@@ -4,17 +4,17 @@
         LOGICAL :: F0(l1) = .True.
       END TYPE
 
-      TYPE, EXTENDS(Base) :: Child 
+      TYPE, EXTENDS(Base) :: Child
         CLASS(*), POINTER :: Ptr
       END TYPE
 
       CLASS(Base(:)), POINTER :: b_poly
 
-      ALLOCATE( Child(10) :: b_poly ) 
+      ALLOCATE( Child(10) :: b_poly )
 
       SELECT TYPE ( s => func(b_poly) )
         CLASS IS (Child(*))
-           ALLOCATE(Base(10) :: s%ptr) 
+           ALLOCATE(Base(10) :: s%ptr)
 
         CLASS DEFAULT
            STOP 19
@@ -23,10 +23,10 @@
       CONTAINS
 
       FUNCTION func(Arg)
-        CLASS(*) :: Arg, func 
-        POINTER  :: func 
+        CLASS(*) :: Arg, func
+        POINTER  :: func
 
           ALLOCATE(func, SOURCE = Arg)
- 
-      END FUNCTION   
-END 
+
+      END FUNCTION
+END

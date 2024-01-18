@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltFuncULPolyAlloc.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltFuncULPolyAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is a poly func call returning a unlimited poly allocatable.
 !*    (Comp failed)
 !*
@@ -46,7 +40,7 @@
   MODULE M
 
     TYPE  :: Zero
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -97,8 +91,8 @@
   INTERFACE
     FUNCTION Func(Arg)
       CLASS(*) :: Arg
-      CLASS(*), POINTER :: Func 
-    END FUNCTION 
+      CLASS(*), POINTER :: Func
+    END FUNCTION
   END INTERFACE
 
 
@@ -112,24 +106,24 @@
   ASSOCIATE ( As => Ptr )
   SELECT TYPE ( As => Func(As))
     CLASS DEFAULT
-      STOP 30   
+      STOP 30
     TYPE is (CHARACTER(*))
-      STOP 31 
+      STOP 31
     TYPE is (Base)
       STOP 32
     TYPE is (REAL)
-      STOP 33 
+      STOP 33
     CLASS IS (Child)
-      IF ( As%Base%GetId() .NE.  10 ) STOP 34 
+      IF ( As%Base%GetId() .NE.  10 ) STOP 34
       IF ( As%GetId()      .NE. -10 ) STOP 35
       IF ( As%BaseId       .NE.  10 ) STOP 36
       IF ( As%ChildId      .NE. -10 ) STOP 37
     CLASS IS (Zero)
-      STOP 38 
+      STOP 38
   END SELECT
   END ASSOCIATE
 
-  END  
+  END
 
   FUNCTION Func(Arg)
   USE M
@@ -137,7 +131,7 @@
   CLASS(*), ALLOCATABLE :: Func
 
   SELECT TYPE (Arg)
-    CLASS DEFAULT 
+    CLASS DEFAULT
       ALLOCATE(Func, SOURCE=IntF(Arg))
   END SELECT
 
@@ -150,4 +144,4 @@
   END FUNCTION
 
   END FUNCTION
- 
+

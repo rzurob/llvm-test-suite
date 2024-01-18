@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypParamDef4   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypParamDef4
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Type param def stmt - kind selector/init expr  
-!*  
+!*  Type param def stmt - kind selector/init expr
+!*
 !*  (Init expr?/340245)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -55,7 +48,7 @@
 
   END MODULE
 
-  PROGRAM  dtParamTypParamDef4 
+  PROGRAM  dtParamTypParamDef4
   USE M
 
   TYPE(DT1(K1=4, L1=8, L=8, K=4)) :: T

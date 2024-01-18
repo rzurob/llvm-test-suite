@@ -1,28 +1,17 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/coarray/error_stop/diag/error_stop_bval_1.f
 !*  TYPE                       : Duagnostic test
 !*  FEATURE                    : #351605.31 CAF - ERROR STOP statement
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 28 August 2010
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  DRIVER STANZA              : xlf  _r
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               :
 !*
-!*  DESCRIPTION                : Test that the error message is issued when 
-!*                               the ERROR STOP stop code is not scalar constant 
+!*  DESCRIPTION                : Test that the error message is issued when
+!*                               the ERROR STOP stop code is not scalar constant
 !*                               expression of character or integer type
 !*
 !* ===================================================================

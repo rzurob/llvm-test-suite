@@ -2,30 +2,23 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio124.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ, INQUIRE
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,13 +27,12 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/19/03   BC     Initial version 
-!* 
-!234567890124456789012445678901244567890124456789012445678901244567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/19/03   BC     Initial version
+!*
+!234567890124456789012445678901244567890124456789012445678901244567890
 
-
-  program fxstio124 
+  program fxstio124
 
      implicit none
      integer    ios
@@ -53,9 +45,9 @@
 
      integer    pos, old_size, new_size
 
-!********************************************************** 
+!**********************************************************
 !   Opening a new file and writing some data into it      *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio124.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90, ACTION='WRITE' )
@@ -69,10 +61,9 @@
 
      CLOSE(1)
 
-
-!*************************************************************** 
+!***************************************************************
 ! Opening the file again to test ENDFILE, BACKSPACE and REWIND *
-!*************************************************************** 
+!***************************************************************
 
      OPEN(2, FILE='fxstio124.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &  STATUS='OLD', IOSTAT=ios, ERR=90)
@@ -81,7 +72,7 @@
      if ( old_size .ne. 106 ) error stop 15
 !
 !    Read the 5th record and put EOF after that
-!     
+!
      READ(2, FMT='(L5)', IOSTAT=ios, ERR=92, POS=76) l4_out
      if ( l4_out .neqv. l4_in ) error stop 16
      INQUIRE(2, POS=pos)
@@ -95,7 +86,7 @@
      if ( POS .ne. 82) error stop 19
 
 !
-!    Testing BACKSPACE 
+!    Testing BACKSPACE
 !
      BACKSPACE(2)
      INQUIRE(2, POS=pos)
@@ -129,7 +120,7 @@
 
 !
 !    Testing REWIND
-!     
+!
      READ(2, FMT='(L5)', IOSTAT=ios, ERR=92, POS=76) l4_out
      INQUIRE(2, POS=pos)
      if ( POS .ne. 82) error stop 30
@@ -137,17 +128,16 @@
      INQUIRE(2, POS=pos)
      if ( POS .ne. 1) error stop 31
 
-
      CLOSE(2, STATUS='DELETE')
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 93   print *, "Error while reading beyond the EOF: IOSTAT = ", ios
-     error stop 93 
+     error stop 93
 
    end program

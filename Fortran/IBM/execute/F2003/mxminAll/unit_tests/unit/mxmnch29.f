@@ -3,7 +3,7 @@
 ! %MAIN: YES
 ! %PRECMD:
 ! %COMPOPTS: -qfixed
-! %GROUP: mxmnch29.f 
+! %GROUP: mxmnch29.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
@@ -12,26 +12,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mxmnch29
-!*
-!*  PROGRAMMER                 : John Zang
 !*  DATE                       : Oct. 20, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support character argument for MAX/
 !*                               MIN/MAXVAL/MINVAL/MAXLOC/MINLOC
 !*  SECONDARY FUNCTIONS TESTED : Functional test
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qfixed
 !*
 !*  DESCRIPTION                : MAX/MIN - Maximum or minimum value
 !*                               according to their collating sequence
-!*                               of ASCII characters. 
+!*                               of ASCII characters.
 !*                               MAXVAL/MINVAL - Maximum or minimum value
 !*                               of elements in a character array.
 !*                               MAXLOC/MINLOC - The location of maximum
@@ -42,7 +35,7 @@
       implicit none
       character(10) aa(2,3,4)
       character(10), allocatable :: xx(:,:)
-      integer, allocatable :: yy(:) 
+      integer, allocatable :: yy(:)
       integer l(3), h(3), s(3)
 
       l(1) = 1
@@ -50,7 +43,7 @@
       s(1) = 1
       l(2) = 1
       h(2) = 3
-      s(2) = 1 
+      s(2) = 1
       l(3) = 2
       h(3) = 3
       s(3) = 1
@@ -81,7 +74,7 @@
 
       h(2) = 2
       l(3) = 1
-      h(3) = 4 
+      h(3) = 4
       allocate(xx(2,4))
       xx = maxval(aa(l(1):h(1):s(1),l(2):h(2):s(2),l(3):h(3):s(3)),
      + dim=2,mask=aa(:,1:2,:) .ne. 'a')
@@ -107,7 +100,7 @@
       s(1) = 1
       l(2) = 1
       h(2) = 3
-      s(2) = 1 
+      s(2) = 1
       l(3) = 2
       h(3) = 3
       s(3) = 1

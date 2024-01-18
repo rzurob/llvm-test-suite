@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatAsynSequential03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatAsynSequential03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 24 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test asynchronous READ & WRITE with sequential access and non-advancing IO
@@ -43,7 +35,7 @@ module m
      integer,len  :: l3 ! l3=3
      sequence
      character(k3+l3) :: c1
-     type(inner2(k3,l3)) :: in2 
+     type(inner2(k3,l3)) :: in2
   end type
 
 end module
@@ -61,17 +53,17 @@ program formatAsynSequential03
          access='sequential',asynchronous='yes',recl=100,&
          position='rewind',iostat=ios,iomsg=msg)
 
- 
+
   if(ios /= 0) then
      print *,"fail to open the file"
      print *,"iostat=",ios
      print *,"iomsg=",msg
      stop 11
-  end if 
+  end if
 
   ! trigger asynchornous write
   do i=1,10
-     write(10,'(a5,3l2,4i4/)',asynchronous='yes',& 
+     write(10,'(a5,3l2,4i4/)',asynchronous='yes',&
           id=idvar(i),advance='no')  &
          outer(2,3)(c1="hello",in2=inner2(2,3)( &
           g1=[.true.,.false.,.true.],in1=inner1(4,4)(i1=[11,12,-13,-14]) ))
@@ -90,7 +82,7 @@ program formatAsynSequential03
   do i=1,10
 
    read(10,'(a2,tr3,3l2,4(tr3,i1)/)',asynchronous='yes',&
-        id=idvar(i),advance='no') out(i) 
+        id=idvar(i),advance='no') out(i)
   end do
 
   do i=1,10

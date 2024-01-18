@@ -1,11 +1,11 @@
-!In module procedure interface body, the type parameter, bounds of one argument 
-!  may depend on another dummy argument. That dependency should be available in 
+!In module procedure interface body, the type parameter, bounds of one argument
+!  may depend on another dummy argument. That dependency should be available in
 !  the corresponding separate module subprogram.
 
 module mmm
   type base(k, l)
     integer, kind :: k
-    integer, len :: l 
+    integer, len :: l
     integer :: i = 4
   end type
 end module
@@ -18,7 +18,7 @@ module nnn
       integer :: yyy = 5
       type(base(4, :)) :: foo
       allocatable :: foo
-      integer, intent(in) :: arg1 
+      integer, intent(in) :: arg1
       integer, intent(in) :: arg2(arg1-4:arg1+2+kind(arg1))
     end
   end interface
@@ -53,5 +53,4 @@ program mod_subprog
   b1 = foo(j, i)
   print*, b1
 end
- 
 

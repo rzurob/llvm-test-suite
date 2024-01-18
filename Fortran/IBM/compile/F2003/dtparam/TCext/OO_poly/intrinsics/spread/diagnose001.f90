@@ -15,16 +15,11 @@
 ! %POSTCMD: dcomp diagnose001.f
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            :
-!*  PROGRAMMER                 : Yong Du
+!*  ===================================================================
 !*  DATE                       : 01/04/2004
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : spread
 !*  SECONDARY FUNCTIONS TESTED :
-!*  DRIVER STANZA              : xlf90
 !*  DESCRIPTION                :
 !*    Diagnose test case.
 !*    The rank of SOURCE shall be less than 20.

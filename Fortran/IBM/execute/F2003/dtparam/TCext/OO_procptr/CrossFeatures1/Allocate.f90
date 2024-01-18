@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Allocate.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Allocate.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Allocate.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Allocate.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 9, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  The allocate stmt 
-!*   
-!*  (304081) 
+!*
+!*  The allocate stmt
+!*
+!*  (304081)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -63,7 +57,7 @@
             TYPE(DT(*,4))  :: Arg
         end function
     end interface
-  
+
     CONTAINS
 
     FUNCTION ModFun()
@@ -73,12 +67,12 @@
 
   END MODULE
 
-  PROGRAM Allocate 
+  PROGRAM Allocate
   USE M
-  IMPLICIT NONE 
-  
+  IMPLICIT NONE
+
   procedure(proc), pointer :: ProcPtr=>NULL()
-!  PROCEDURE(TYPE(DT(20,4))), POINTER :: ProcPtr=>NULL() 
+!  PROCEDURE(TYPE(DT(20,4))), POINTER :: ProcPtr=>NULL()
   TYPE ( DT(20,4) ),         POINTER :: V
 !  PROCEDURE(TYPE(DT(20,4)))          :: Fun
   procedure(proc) :: fun
@@ -86,14 +80,14 @@
   ProcPtr => Fun
 
   !ALLOCATE(V, SOURCE=ProcPtr(DT(-1, ModFun))) ! not 10.1
-  ALLOCATE(V) 
+  ALLOCATE(V)
   V = ProcPtr(DT(20,4)(-1, ModFun))
-  IF ( .NOT. ASSOCIATED(V) )                 STOP 11 
-  IF ( V%Id .NE. -1 )                        STOP 12 
-  IF ( .NOT. ASSOCIATED(V%ProcPtr, ModFun) ) STOP 13 
+  IF ( .NOT. ASSOCIATED(V) )                 STOP 11
+  IF ( V%Id .NE. -1 )                        STOP 12
+  IF ( .NOT. ASSOCIATED(V%ProcPtr, ModFun) ) STOP 13
 
   DEALLOCATE(V)
- 
+
   END
 
   FUNCTION Fun(Arg)
@@ -104,4 +98,4 @@
     if (arg%n1 /= 20) stop 100
     Fun = Arg
   END FUNCTION
- 
+

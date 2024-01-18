@@ -1,22 +1,16 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : datastmnt_f009.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : November 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Test simple initialization with DATA for array coarray elements.
-!*                            
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program main
@@ -28,12 +22,12 @@ program main
 	data caf2(1,1,1), caf2(1,1,2), caf2(1,2,1), caf2(1,2,2), &
 		caf2(2,1,1), caf2(2,1,2), caf2(2,2,1), caf2(2,2,2) /1,2,3,4,5,6,7,8/
 	data caf3(1),caf3(2),caf4(1),caf4(2)/10.,20.,30.0,40.25/
-	
+
 	call output()
-	
+
 contains
 
-	subroutine output()	
+	subroutine output()
 		print *, caf1
 		sync all
 		print *, caf2
@@ -42,5 +36,5 @@ contains
 		sync all
 		print *, caf4
 	end subroutine
-	
+
 end

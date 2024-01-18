@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsScalarPolyComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsScalarPolyComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 15 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -37,12 +29,12 @@ module m
    type,extends(base) :: child(k2,l2)
       integer(2),kind :: k2
       integer(2),len  :: l2
-      character(l1+l2) :: c2(k1:k2) 
+      character(l1+l2) :: c2(k1:k2)
    end type
    type container(k,l)
       integer,kind :: k
       integer,len  :: l
-      class(base(k,l)),allocatable :: poly1  
+      class(base(k,l)),allocatable :: poly1
    end type
 end module
 
@@ -67,7 +59,7 @@ program spreadSourceIsScalarPolyComp01
 
   allocate(contain1%poly1,source=base(2,1)(i1=10,c1="xlf"))
   call verify(spread(contain1,1,111) )
- 
+
   contains
     subroutine verify(dt)
        type(container(2,*)),intent(in) :: dt(:)
@@ -79,7 +71,7 @@ program spreadSourceIsScalarPolyComp01
           select type(x=>dt(i)%poly1)
              type is(child(2,*,4,*))
                 if(x%k1 /= 2)                              error stop 12_4
-                if(x%l1 /= 1)                              error stop 13_4 
+                if(x%l1 /= 1)                              error stop 13_4
                 if(x%k2 /= 4)                              error stop 14_4
                 if(x%l2 /= 3)                              error stop 15_4
                 if(x%c1 /= "a")                            error stop 16_4
@@ -97,7 +89,7 @@ program spreadSourceIsScalarPolyComp01
              class default
                 error stop 100_4
            end select
-       end do 
+       end do
 
-    end subroutine  
+    end subroutine
 end program

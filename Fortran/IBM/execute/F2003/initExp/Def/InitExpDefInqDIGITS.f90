@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefInqDIGITS.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefInqDIGITS.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 03, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,26 +19,25 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  a reference to a specification inquiry 
-!* 
+!*  a reference to a specification inquiry
+!*
 !*  -  DIGITS
-!* 
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM          InitExpDefInqDIGITS 
+  PROGRAM          InitExpDefInqDIGITS
   IMPLICIT NONE
   INTEGER :: I, J, K
 
-  
+
   INTEGER(1),  PARAMETER :: I1(-2147483648:-2147483647, 2147483646:2147483647) = 0
   INTEGER(2),  PARAMETER :: I2 = 10
   INTEGER(4),  PARAMETER :: I4(-2147483648:-2147483647, 2147483646:2147483647) = 1
-  INTEGER(8),  PARAMETER :: I8 = -1 
+  INTEGER(8),  PARAMETER :: I8 = -1
 
   INTEGER  :: TI1  = DIGITS(I1)
   INTEGER  :: TI2  = DIGITS(I2)
@@ -75,4 +68,4 @@
   END
 
 
- 
+

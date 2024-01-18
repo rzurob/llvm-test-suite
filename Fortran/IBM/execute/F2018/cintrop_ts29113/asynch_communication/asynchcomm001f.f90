@@ -1,18 +1,15 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             :/cintrop_ts29113/asynch_communication/asynchcomm001f.f
-!* FEATURE NAME                : C_Interop_Asynch_Communication   
+!* FEATURE NAME                : C_Interop_Asynch_Communication
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2013-10-07
 !*
 !*  DESCRIPTION
 !*
 !* Checks the functionalilty of C_interop ASYNCHRONOUS Communication with a scalar asynch argument.
-!* 
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 module mymod
@@ -33,7 +30,7 @@ integer :: nt, rank, len, mpierror, rc, i
 integer :: status(MPI_STATUS_SIZE)
 integer, parameter :: TAG_SEND_ARR = 10, TAG_RES_READY = 11
 
-integer :: reqs(2) 
+integer :: reqs(2)
 
 
 ! initialization
@@ -52,25 +49,25 @@ integer :: reqs(2)
        end if
 
 ! assuming there are 2 tasks in the MPI_COMM_WORLD; task 0 sends b to task 1 and calcuates the square root of a (after which it alters b)
-! task 1 calculates the square of b and sends the result to task 0 
+! task 1 calculates the square of b and sends the result to task 0
 b0 = 5
 if (rank .eq. 0) then
 
 a0 = 100
 b0 = 50
-	block 
-	
+	block
+
 	ASYNCHRONOUS :: b0
-      IF (.not. precision_r4 (b0, 50.00000000)) error STOP 1   
+      IF (.not. precision_r4 (b0, 50.00000000)) error STOP 1
 	!if (b0 .ne. 50.00000000) error STOP 1
 	call MPI_ISEND(b0, 1 , MPI_REAL, 1, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(1), mpierror)
 	! While waiting for the data to be sent, do some calculations:
 	result1 = sqrt(a0)
 	call MPI_WAIT(reqs(1), status, mpierror)
 	b0 = a0*2 !Now that b0 has been sent we can alter its value
-	
+
 	end block
-	
+
 !get the result from task 1
 call MPI_RECV(res0, 1, MPI_REAL, 1, TAG_RES_READY, MPI_COMM_WORLD, status, mpierror)
 
@@ -81,7 +78,7 @@ if (res0 .ne. 2500.000000) error STOP 3
 
 else !(if task# =1)
 	block
-	
+
 	ASYNCHRONOUS :: b1
 	call MPI_IRECV(b1, 1 , MPI_REAL, 0, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(2), mpierror)
     call MPI_WAIT(reqs(2), status, mpierror)

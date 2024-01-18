@@ -1,23 +1,11 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ReallocAssignScalarCharacter07
-!*
-!*  PROGRAMMER                 : Rob James
 !*  DATE                       : June 12, 2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  DESCRIPTION                : Testing reallocation on assignment,
-!*                               with a scalar, deferred-length 
+!*                               with a scalar, deferred-length
 !*                               character on the left-hand side.
 !*
 !* ===================================================================

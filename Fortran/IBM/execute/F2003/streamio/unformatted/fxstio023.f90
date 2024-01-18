@@ -2,23 +2,17 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f fort.*
-! %COMPOPTS: 
-! %GROUP: fxstio023.f 
+! %COMPOPTS:
+! %GROUP: fxstio023.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio023.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 18, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
@@ -31,7 +25,7 @@
 !=======================================================================
 
 !* Declare Variables.
-    
+
   implicit none
 
   integer position, filesize
@@ -275,7 +269,7 @@
    if (harr1(2) .ne. hpararr(2)) error stop 525
    if (harr1(3) .ne. hpararr(3)) error stop 535
 
-   close(1, status='delete') 
+   close(1, status='delete')
 
 !* TEST6 : byte
 

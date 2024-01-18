@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d356495.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d356495.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 20 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 20 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. DEFECT 356495 
+!* 1. DEFECT 356495
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type :: dtp(k,l)
@@ -37,7 +29,7 @@ program d356495
    implicit none
 
    type(dtp(2,4)),parameter :: dtp2(2)=[dtp(2,4)(i=[-1,1],c=["c","d"] ), &
-               dtp(2,4)(i=[1,2],c(2)=["a","b"]) ]  !<===syntax error at c(2) 
+               dtp(2,4)(i=[1,2],c(2)=["a","b"]) ]  !<===syntax error at c(2)
 
 end program
 

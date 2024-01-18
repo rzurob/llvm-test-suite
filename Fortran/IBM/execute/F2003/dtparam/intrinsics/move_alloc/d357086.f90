@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d357086.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d357086.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 6 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 6 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. DEFECT 357086
@@ -25,8 +17,8 @@
 module m
    type base(l1)
       integer,len :: l1
-      character(l1),pointer :: ch1=>null()   
-      character(l1),allocatable :: ch2     
+      character(l1),pointer :: ch1=>null()
+      character(l1),allocatable :: ch2
    end type
    type,extends(base) :: child
       class(*),pointer :: baseComp=>null()
@@ -47,11 +39,11 @@ program d357086
   select type(from1)
      type is(child(*))
         from1%baseComp=>from1
-        if(from1%ch2 /= "123")      stop 2   
+        if(from1%ch2 /= "123")      stop 2
         if(.not. associated(from1%baseComp,from1))   stop 3
      class default
-         stop 4 
+         stop 4
   end select
 
-end program 
+end program
 

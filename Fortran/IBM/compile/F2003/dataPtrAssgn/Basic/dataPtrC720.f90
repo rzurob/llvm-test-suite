@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrC720.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrC720.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  C720 (R735) If bounds-remapping-list is specified, data-target shall have rank one;
-!*  otherwise, the ranks of data-pointer-object and data-target shall be the same. 
-!*   
+!*  otherwise, the ranks of data-pointer-object and data-target shall be the same.
 !*
 !*  ()
 !*

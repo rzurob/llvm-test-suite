@@ -3,15 +3,11 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acetint32idext
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetint32id
 !*                               by David Forster)
 !*  DATE                       : 2007-12-03 (original: 2006-08-30)
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*
@@ -20,7 +16,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : procedure pointer, integer

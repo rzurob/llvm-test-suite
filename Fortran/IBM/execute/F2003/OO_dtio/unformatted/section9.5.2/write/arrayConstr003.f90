@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2 (Data Transfer input/output list)
 !*                               - output item is an array constructor with unlimited polymorphic variables
@@ -94,7 +78,7 @@ program arrayConstr002
    allocate ( u2(3), source = (/ child('ABC',106), child('DEF',107), child('GHI',108)/) )
    allocate ( u4, source = child('JKL',101) )
    allocate ( u6(2,2), source = reshape ( source = (/ child('MNO',102), child('PQR', 103), child('STU',104), child('VWX',105) /), shape = (/2,2 /)) )
-   
+
    open (unit = 1, file ='arrayConstr002.data', form='unformatted', access='sequential')
 
    ! I/O operations
@@ -122,7 +106,7 @@ program arrayConstr002
                end select
          end select
    end select
-   
+
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 2_4
 
    rewind 1

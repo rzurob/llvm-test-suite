@@ -1,15 +1,10 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Intrinsic  with Derived Type Parameter
 !*
-!* PROGRAMMER                 : James Ren
 !* DATE                       : April 19, 2007
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : lbound, ubound, shape and len intrinsics
 !*
-!* DESCRIPTION                : SELECT TYPE 
+!* DESCRIPTION                : SELECT TYPE
 !* ===================================================================
 
 implicit none
@@ -34,7 +29,6 @@ allocate(character(15) :: tar(1)%char(10, 20))
 c%ptr => tar
 allocate(ptr(20), source = c%ptr(1)%char(1, :))
 print *, lbound(ptr), ubound(ptr), size(ptr), shape(ptr)
-
 
 c%ptr(1)%dechar => c%ptr(1)%char
 print *, len(c%ptr(1)%dechar )

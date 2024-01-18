@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcTypBndDTIOReadU.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcTypBndDTIOReadU.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 08, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Interaction with type bound generics 
-!*  
-!*  -- DTIO/READ(UNFORMATTED) 
+!*  Interaction with type bound generics
+!*
+!*  -- DTIO/READ(UNFORMATTED)
 !*  (317038)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -43,15 +36,15 @@
     GENERIC    :: READ(UNFORMATTED) => ReadUF
     PROCEDURE  :: ReadUF
   END TYPE
- 
+
   TYPE :: DT1
     CHARACTER :: ID
   END TYPE
- 
+
   TYPE :: DT2
     CHARACTER :: ID
   END TYPE
- 
+
   TYPE :: DT3
     CHARACTER :: ID
   CONTAINS
@@ -59,52 +52,52 @@
     PROCEDURE  :: ReadUF3
   END TYPE
 
-  INTERFACE READ(UNFORMATTED) 
- !  PROCEDURE ReadUF 
-  END INTERFACE  
+  INTERFACE READ(UNFORMATTED)
+ !  PROCEDURE ReadUF
+  END INTERFACE
 
-  INTERFACE READ(UNFORMATTED) 
-    PROCEDURE ReadUF3 
-  END INTERFACE  
+  INTERFACE READ(UNFORMATTED)
+    PROCEDURE ReadUF3
+  END INTERFACE
 
   CONTAINS
 
   SUBROUTINE ReadUF(Dtv, Unit, IOStat, IOMSG)
-  CLASS(DT),         INTENT(INOUT) :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    READ(Unit) DTV%ID  
-  END SUBROUTINE 
+  CLASS(DT),         INTENT(INOUT) :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    READ(Unit) DTV%ID
+  END SUBROUTINE
 
   SUBROUTINE ReadUF1(Dtv, Unit, IOStat, IOMSG)
-  CLASS(DT1),        INTENT(INOUT) :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    READ(Unit) DTV%ID  
-  END SUBROUTINE 
+  CLASS(DT1),        INTENT(INOUT) :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    READ(Unit) DTV%ID
+  END SUBROUTINE
 
   SUBROUTINE ReadUF2(Dtv, Unit, IOStat, IOMSG)
-  CLASS(DT2),        INTENT(INOUT) :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    READ(Unit) DTV%ID  
-  END SUBROUTINE 
+  CLASS(DT2),        INTENT(INOUT) :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    READ(Unit) DTV%ID
+  END SUBROUTINE
 
   SUBROUTINE ReadUF3(Dtv, Unit, IOStat, IOMSG)
-  CLASS(DT3),        INTENT(INOUT) :: DTV 
-  INTEGER,           INTENT(IN)    :: Unit 
-  INTEGER,           INTENT(OUT)   :: IOSTAT 
-  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG 
-    READ(Unit) DTV%ID  
-  END SUBROUTINE 
+  CLASS(DT3),        INTENT(INOUT) :: DTV
+  INTEGER,           INTENT(IN)    :: Unit
+  INTEGER,           INTENT(OUT)   :: IOSTAT
+  CHARACTER (LEN=*), INTENT(INOUT) :: IOMSG
+    READ(Unit) DTV%ID
+  END SUBROUTINE
 
   END MODULE
 
 
-  PROGRAM mProcTypBndDTIOReadU 
+  PROGRAM mProcTypBndDTIOReadU
   USE M
 
   CALL IntSub(ReadUF1)
@@ -116,11 +109,11 @@
   PROCEDURE(ReadUF2), POINTER  :: ProcPtr
 
   INTERFACE READ(UNFORMATTED)
-    PROCEDURE Proc 
+    PROCEDURE Proc
   END INTERFACE
 
-  INTERFACE READ(UNFORMATTED) 
-    PROCEDURE ProcPtr 
+  INTERFACE READ(UNFORMATTED)
+    PROCEDURE ProcPtr
   END INTERFACE
 
   TYPE(DT)  :: T

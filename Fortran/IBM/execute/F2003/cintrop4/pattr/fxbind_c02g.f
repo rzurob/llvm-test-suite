@@ -1,7 +1,4 @@
 ! ********************************************************************* ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
 ! *********************************************************************
 !**********************************************************************
 ! %START
@@ -17,28 +14,20 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c02g.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute 
+!* DESCRIPTION                  : Test: BINC(C) attribute
 !*                                with different intrinsic data type,
 !*                                integer*1, integer*2, integer*4,
 !*                                integer*8, real*4, real*8, real*16,
-!*                                byte, character(1). Using module 
+!*                                byte, character(1). Using module
 !*                                subroutine,interface.C calls Fortran.
 !* ===================================================================
 !*  REVISION HISTORY
@@ -53,7 +42,7 @@ module m
 
 contains
 
-       subroutine extsub_int(i1, i2, i4, i8) bind(c) 
+       subroutine extsub_int(i1, i2, i4, i8) bind(c)
            integer*1 i1
            integer*2 i2
            integer*4 i4
@@ -64,19 +53,19 @@ contains
            i8 = i8 + 3
        end subroutine extsub_int
 
-       subroutine extsub_real(r4, r8) bind(c) 
+       subroutine extsub_real(r4, r8) bind(c)
            real*4   r4
            real*8   r8
            r4 = r4 * 2
            r8 = r8 * 2
        end subroutine extsub_real
 
-       subroutine extsub_log(l1) bind(c) 
+       subroutine extsub_log(l1) bind(c)
            logical*1 l1
            l1 = .true.
        end subroutine extsub_log
 
-       subroutine extsub_comp(co8, co16) bind(c) 
+       subroutine extsub_comp(co8, co16) bind(c)
            complex*8   co8
            complex*16  co16
            co8 = (1.0, 1.0)
@@ -88,4 +77,4 @@ contains
            ch1 = 'd'
        end subroutine extsub_char
 
-end module m      
+end module m

@@ -1,21 +1,17 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : module_subprogram13f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : April 20, 2013
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 SUBMODULE BLOCK
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION
 !*  based on F2008/block/BInInt2ModProc.f
 !*
-!*  Define a block in a module subroutine, testing compatibility with the F2008 
+!*  Define a block in a module subroutine, testing compatibility with the F2008
 !*   BLOCK feature
 !*
 !*  Secondary tests:
@@ -70,7 +66,7 @@ end module mod
 
 submodule (mod) submod
 
-contains 
+contains
 
   module procedure fun
 
@@ -85,7 +81,7 @@ contains
         end block
       end function inner
 
-    end 
+    end
 
 end submodule submod
 

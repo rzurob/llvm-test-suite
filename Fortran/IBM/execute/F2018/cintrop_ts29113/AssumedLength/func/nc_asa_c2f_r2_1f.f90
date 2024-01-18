@@ -1,4 +1,4 @@
-      subroutine check_c_to_f(c_arg2,c_len, extent, test_no) bind(c) 
+      subroutine check_c_to_f(c_arg2,c_len, extent, test_no) bind(c)
         use, intrinsic :: iso_c_binding
         character(*) :: c_arg2(2,2)
         integer(C_INT) c_len,extent, test_no
@@ -23,7 +23,7 @@
         endif
        i = LBOUND(c_arg2,1)
        DO WHILE (i .LE. extent)
-        if( c_arg2(i,i) .NE. c_test) then        
+        if( c_arg2(i,i) .NE. c_test) then
          error STOP 4
          endif
         i = i+1
@@ -59,6 +59,4 @@
         character(c_len) c_test
         call check_f_to_c(c_arg2,c_len,extent, test_no)
       end subroutine
-
-
 

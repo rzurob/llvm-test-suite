@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryDefferredTypeParam08.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryDefferredTypeParam08.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 24 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. WITHOUT COMPONENT
 !* 4. DUMMY ARGUMENT IS INTENT(INOUT) ALLOCATABLE OR POINTER DERIVED TYPE
@@ -31,7 +23,7 @@ module m
       integer(2),kind :: k
       integer(8),len  :: l
    end type
-   
+
    contains
 
      subroutine setTP1(b1)
@@ -40,7 +32,7 @@ module m
         if(allocated(b1))  then
            print *,b1%k,b1%k%kind,kind(b1%k)
            print *,b1%l,b1%l%kind,kind(b1%l)
-           print *,"reallocate" 
+           print *,"reallocate"
            deallocate(b1)
            allocate(base(4,len("abc")) :: b1)
         else
@@ -51,8 +43,8 @@ module m
 
      subroutine setTP2(b2)
         type(base(2,:)),pointer,intent(inout) :: b2
-        
-        print *,"in setTP2" 
+
+        print *,"in setTP2"
         if(associated(b2)) then
            print *,b2%k,b2%k%kind,kind(b2%k)
            print *,b2%l,b2%l%kind,kind(b2%l)
@@ -67,23 +59,23 @@ module m
 
 end module
 
-  program dtParameterInquiryDeferredTypeParam08 
+  program dtParameterInquiryDeferredTypeParam08
   use m
   implicit none
-  
+
   type(base(4,:)),allocatable :: b1
   type(base(2,:)),pointer  :: b2=>null()
-  
+
   call setTP1(b1)
   allocate(base(4,10) :: b1)
-  call setTP1(b1) 
+  call setTP1(b1)
   print *,b1%k,b1%k%kind,kind(b1%k)
   print *,b1%l,b1%l%kind,kind(b1%l)
 
-  call setTP2(b2)  
+  call setTP2(b2)
   allocate(base(2,int(3.3)) :: b2)
   call setTP2(b2)
   print *,b2%k,b2%k%kind,kind(b2%k)
-  print *,b2%l,b2%l%kind,kind(b2%l) 
+  print *,b2%l,b2%l%kind,kind(b2%l)
 
 end

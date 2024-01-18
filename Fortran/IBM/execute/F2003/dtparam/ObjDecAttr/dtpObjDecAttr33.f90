@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr33
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 06, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  -- VOLATILE 
-!*  
-!*  An allocatable object with the VOLATILE attribute may additionally have its allocation 
+!*  -- VOLATILE
+!*
+!*  An allocatable object with the VOLATILE attribute may additionally have its allocation
 !*  status, dynamic type and type parameters, and array bounds changed by means not
 !*  specified by the program.
 !*
 !*  Here we will change the properties by a FORTRAN thread.
-!* 
+!*
 !*  (ice)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -64,7 +55,7 @@
     REAL   (K2)          :: R=K2
     LOGICAL(K2)          :: L=.TRUE._1
     COMPLEX(K2)          :: Z=CMPLX(K1, K2, K2)
-    TYPE(DT0(K2, L2))    :: T0(L2) 
+    TYPE(DT0(K2, L2))    :: T0(L2)
     TYPE(DT2(K0,L0,K1,L1,K2, L2)), POINTER  :: Ptr
     CONTAINS
     PROCEDURE, NOPASS :: Proc => ModFun0
@@ -109,7 +100,7 @@
                   !busy spin loop works -- code updated 2008-06-19
 
   TYPE(f_pthread_t)      ::  Thread1, thread2
-  TYPE(f_pthread_attr_t) ::  Attr 
+  TYPE(f_pthread_attr_t) ::  Attr
 
   EXTERNAL MyThread1, mythread2
 
@@ -126,15 +117,15 @@
 
   DO WHILE ( Mutex .EQ. 0 ) !<-- NOTE from JX: this is a busy spin loop
     j = j+1
-  END DO 
+  END DO
 
   ! Verification
   IF ( .NOT. ALLOCATED(T) ) STOP 11
   IF ( SIZE( T )  .NE. N  ) STOP 12
-  
+
   SELECT TYPE (T)
   TYPE IS (DT0(1,*))
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 14
   END SELECT
 
@@ -184,7 +175,7 @@
 
   SUBROUTINE MyThread1(I)
   USE M
-  INTEGER I 
+  INTEGER I
     PRINT *, "The main has been waiting for ", i , "times!"
     CALL  sleep_(1)
     ! Allocating
@@ -195,12 +186,12 @@
 
   SUBROUTINE MyThread2(I)
   USE M
-  INTEGER I 
+  INTEGER I
     PRINT *, "The main has been waiting for ", i , "times!"
     CALL  sleep_(1)
-    !Change the type 
+    !Change the type
     DEALLOCATE(T)
-    ALLOCATE( T(N:2*N-1), SOURCE=CT) 
+    ALLOCATE( T(N:2*N-1), SOURCE=CT)
     Mutex = 1
   END SUBROUTINE
 

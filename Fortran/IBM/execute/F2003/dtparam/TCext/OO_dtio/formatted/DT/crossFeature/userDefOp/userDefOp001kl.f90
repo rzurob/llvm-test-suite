@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : userDefOp001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from userDefOp001 by Robert Ma)
 !*  DATE                       : 2007-06-07 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        User Defined Operator: ensure using DT Edit descriptor can invoke DTIO inside
@@ -140,7 +132,7 @@ subroutine myAsgn(a,b)
          character(*),  intent(inout) :: iomsg
       end subroutine
    end interface
-   
+
    if ( .not. same_type_as ( a, b ) ) error stop 4_4
 
    select type ( b )
@@ -155,7 +147,7 @@ subroutine myAsgn(a,b)
               error stop 5_4
         end select
    end select
-   
+
    write ( 1, "(DT(5,5),' = ',DT(6,6))", iostat = stat, iomsg = msg )   a, b
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 6_4
 

@@ -1,26 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d353485.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d353485.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept 08 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept 08 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. DEFECT 353485 
+!* 1. TEST SECTION 6.1.3
+!* 2. DEFECT 353485
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -40,8 +30,8 @@ program d353485
    if(t%k /= 2)                                     error stop 10_4
    if(t%k%kind /= kind(t%k) .or. t%k%kind /= 4)     error stop 11_4
    if(t%r1%kind /= kind(t%r1) .or. t%r1%kind /= 4)  error stop 12_4
-   if(t%r2%kind /= kind(t%r2) .or. t%r2%kind /= 4)  error stop 13_4 
-   if(t%r3%kind /= kind(t%r3) .or. t%r3%kind /= 4)  error stop 14_4      
+   if(t%r2%kind /= kind(t%r2) .or. t%r2%kind /= 4)  error stop 13_4
+   if(t%r3%kind /= kind(t%r3) .or. t%r3%kind /= 4)  error stop 14_4
 
-end    
+end
 

@@ -1,29 +1,18 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 2/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  TC to test maxval/minval with Hollerith 
+!*  DESCRIPTION                :  TC to test maxval/minval with Hollerith
 !*                                constant using -qctyplss.
 !* ===================================================================
 
 @process ctyplss
 
-program mxminvalCtyplssHollerith 
+program mxminvalCtyplssHollerith
 
    call sub_val1(%val("P"))
 
@@ -33,9 +22,9 @@ program mxminvalCtyplssHollerith
    call sub_val1(%val(minval((/1HZ, 1HP/))))
 #else
    call sub_val2(%val(minval((/1HZ, 1HP/))))
-#endif	
+#endif
 
-end program mxminvalCtyplssHollerith 
+end program mxminvalCtyplssHollerith
 
    subroutine sub_ref(%ref(i))
        integer*4 i
@@ -52,5 +41,5 @@ end program mxminvalCtyplssHollerith
        integer*4 j
        print '(z8)', reverse_byte_order(j)
    end subroutine
-#endif	
+#endif
 

@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unpolyPtrSelector.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 2010-09-22
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : - CONTIGUOUS array pointer of type class(*)
-!*                               - is slector of select type 
+!*                               - is slector of select type
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -35,7 +25,7 @@ module mod
     type base
         integer x
     end type
- 
+
 end module
 
 program main
@@ -55,9 +45,9 @@ program main
         if ( i == 2 )  ptr => tar2
 
         select type(ptr)
-            type is (integer) 
+            type is (integer)
                 if ( any(ptr .ne. (/11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30/))) stop 11
-            type is (base) 
+            type is (base)
                 if ( any(ptr%x .ne. [12,14,16,18,20,22,24,26,28,30])) stop 21
         end select
 

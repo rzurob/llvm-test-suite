@@ -1,34 +1,24 @@
 !* ===================================================================
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* 
-!* TEST CASE TITLE            : AllocateWithSourceExp02-08 
-!* 
-!* ORIGINAL PROGRAMMER        : Dorra Bouchiha
-!* PROGRAMMER                 : Izhak Jakov
-!* 
+!*
 !* DATE                       : May 15, 2015
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
-!* 
-!* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression 
+!*
+!* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression
 !* SECONDARY FUNCTIONS TESTED :
-!*                              
-!* 
-!* DRIVER STANZA              : xlf2003
-!* REQUIRED COMPILER OPTIONS  : 
-!* 
-!* KEYWORD(S)                 : 
+!*
+!* REQUIRED COMPILER OPTIONS  :
+!*
+!* KEYWORD(S)                 :
 !* TARGET(S)                  :
-!* NUMBER OF TESTS CONDITIONS : 
-!* 
+!* NUMBER OF TESTS CONDITIONS :
+!*
 !* DESCRIPTION                :
-!* 
+!*
 !* TEST CASE ADAPTED FROM     : $(tsrcdir)/F2003/dtparam/allocate/SourceExp/AllocateWithSourceExp02.f
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithSourceExp02
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = 4
@@ -66,7 +56,7 @@ PROGRAM AllocateWithSourceExp02
       IF ( UBOUND(c2%A2,1) .NE.   6 ) ERROR STOP 36
       IF ( ANY(c2%A2       .NE.  8) ) ERROR STOP 37
       IF ( ASSOCIATED(c2%Cmp)       ) ERROR STOP 38
-      
+
       CALL sub2(c1, c2)
 
       SELECT TYPE ( s => c1%Cmp )
@@ -100,7 +90,7 @@ PROGRAM AllocateWithSourceExp02
         CLASS DEFAULT
            ERROR STOP 49
       END SELECT
-      
+
       CONTAINS
 
       SUBROUTINE sub2(arg1, arg2)
@@ -114,7 +104,7 @@ PROGRAM AllocateWithSourceExp02
             SELECT TYPE ( arg2 )
               CLASS IS (Child(4,*,4,*))
                 IF ( ASSOCIATED(arg1%Cmp) ) ERROR STOP 51
-                ALLOCATE( tmp1, tmp2, SOURCE = arg1 ) 
+                ALLOCATE( tmp1, tmp2, SOURCE = arg1 )
                 arg1%cmp => tmp1
                 arg2%cmp => tmp2
               CLASS DEFAULT

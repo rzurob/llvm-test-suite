@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt031.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -65,7 +58,7 @@ integer(c_int) function func_dt_arr1(dt_a0, dt_a1, dt_a2) bind(c)
   type(dt2), intent(inout) :: dt_a2(2,2)
   integer i, j, k
 
-  if ( dt_a0%a /= 50 ) then 
+  if ( dt_a0%a /= 50 ) then
       print *, "F error: dt_a0%a = ", dt_a0%a
       error stop 10
   endif
@@ -79,7 +72,7 @@ integer(c_int) function func_dt_arr1(dt_a0, dt_a1, dt_a2) bind(c)
   do j = 1, 2
     do i = 1, 2
       do k = 1, 2
-         if ( dt_a2(i, j)%a(k) /= (i+j+k) ) then 
+         if ( dt_a2(i, j)%a(k) /= (i+j+k) ) then
              print *, "F error dt2:a : ", i, j, k, dt_a2(i, j)%a(k)
              error stop 20
          endif
@@ -89,12 +82,12 @@ integer(c_int) function func_dt_arr1(dt_a0, dt_a1, dt_a2) bind(c)
                  print *, "F error dt2.dt1.a : ", i, j, k, dt_a2(i, j)%d1%a(k)
 		 error stop 30
          endif
-         if ( dt_a2(i, j)%d1%d0%a /= (i+j+998) ) then 
+         if ( dt_a2(i, j)%d1%d0%a /= (i+j+998) ) then
                 print *, "F error dt2.dt1.dt0.a : ", i, j, dt_a2(i, j)%d1%d0%a
 		error stop 40
          endif
       end do
     end do
   end do
-  
+
 end function func_dt_arr1

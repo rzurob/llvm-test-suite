@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : modeDecimalNaNInfIO001.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 28, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -34,29 +28,29 @@
       implicit none
 
       integer, parameter :: in = 11, out = 12
-      
+
       real(4) :: rl1, rl2
       real(8) :: rl3, rl4
       real(16) :: rl5
       complex(4) :: cx1
       complex(8) :: cx2
-      
+
       integer :: ios = 0
-      
+
       open(in, file='modeDecimalNaNInfIO001.dat', action='read')
       open(out, file='modeDecimalNaNInfIO001.out', action='write')
-      
-      do 
-         
+
+      do
+
          ! reset variables
          rl1 = 0.0; rl2 = 0.0; rl3 = 0.0; rl4 = 0.0; rl5 = 0.0
          cx1 = (0.0, 0.0); cx2 = (0.0, 0.0)
 
          read(in, *, decimal='comma', iostat=ios)                      &
      &        rl1, rl2, rl3, rl4, cx1, cx2, rl5
-         
+
          if ( is_iostat_end(ios) ) exit
-         
+
          write(out,*, decimal='comma') rl5, cx2, cx1, rl4, rl3, rl2, rl1
          write(out,*, decimal='point') rl5, cx2, cx1, rl4, rl3, rl2, rl1
 

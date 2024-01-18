@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemMOD.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemMOD.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  MOD 
+!*
+!*  -  MOD
 !*  (319209)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -41,7 +34,7 @@
 
 
   PROGRAM  InitExpDefElemMOD
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
 
@@ -55,7 +48,7 @@
     INTEGER(K4)   :: I8=-8
     REAL(K5)      :: R4=8.
     REAL(K6)      :: R8=8.
-    REAL(K7)      :: R6=8. 
+    REAL(K7)      :: R6=8.
   END TYPE
 
   TYPE (DT0(20,1,2,4,8,4,8,16)), PARAMETER  :: T(128)=DT0(20,1,2,4,8,4,8,16)()
@@ -69,8 +62,8 @@
   REAL(KIND(MOD(P=T%R8, A=-5._8))),    PARAMETER  :: TR8(128) = MOD(P=T%R8, A=-5._8)
   REAL(KIND(MOD(P=T%R6, A=-5._16))),   PARAMETER  :: TR6(128) = MOD(P=T%R6, A=-5._16)
 
-  INTEGER :: Cnt1=COUNT(MOD(P=T%I8, A=-5_8) .NE. -3) 
-  INTEGER :: Cnt2=COUNT(MOD(P=T%R6, A=-5._16) .NE.  3) 
+  INTEGER :: Cnt1=COUNT(MOD(P=T%I8, A=-5_8) .NE. -3)
+  INTEGER :: Cnt2=COUNT(MOD(P=T%R6, A=-5._16) .NE.  3)
 
 
   IF ( KIND(TI1)  .NE.    1 ) STOP 11

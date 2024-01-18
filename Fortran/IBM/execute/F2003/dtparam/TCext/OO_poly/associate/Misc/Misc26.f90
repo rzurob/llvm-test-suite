@@ -5,7 +5,7 @@
 ! %MAIN: YES
 ! %PRECMD:
 ! %COMPOPTS: -qfree=f90
-! %GROUP: Misc26.f 
+! %GROUP: Misc26.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
@@ -14,15 +14,10 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : Misc26
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 16, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
@@ -30,7 +25,6 @@
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,10 +32,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*  
-!*  Dev complains the init expre 
-!*  (300174) 
-!*  
+!*
+!*  Dev complains the init expre
+!*  (300174)
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 

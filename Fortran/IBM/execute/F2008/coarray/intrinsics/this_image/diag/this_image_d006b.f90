@@ -1,23 +1,16 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : this_image_d006b.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : July 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Test out of bounds values for the 2nd arg
 !*                               of this_image intrinsic.
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -36,7 +29,7 @@ program main
 	logical*4, save :: l4, cafl4[1,2,3,4,5,6,7,8,*]
 	logical*8, save :: l8, cafl8(55)[0:*]
 
-	
+
 !##### VALID
 	num = this_image(cafi1, 1)
 	num = this_image(cafi2, 2)
@@ -45,8 +38,8 @@ program main
 	num = this_image(cafr8, 5)
 	num = this_image(cafr4, 6)
 	num = this_image(cafx4, 7)
-	
-	
+
+
 !##### INVALID
 	num = this_image(cafx8, 8)
 	num = this_image(cafch, 9)

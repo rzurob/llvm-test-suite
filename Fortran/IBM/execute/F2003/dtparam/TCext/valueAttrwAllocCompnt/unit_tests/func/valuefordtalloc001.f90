@@ -16,21 +16,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : valuefordtalloc001
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : Dec. 20, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : value attribute for derived types with allocatable components
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : functional testing of value attribute
 !*                               for derived types with allocatable
@@ -43,16 +36,16 @@
     integer, len             :: n1
     integer(k1), allocatable :: x
   end type
-  
+
   type(A(20,4)) :: A1
-  
+
   allocate(A1%x)
-  
+
   A1%x=5
-  
+
   call sub(A1)
   if(A1%x .ne. 5) error stop 1
-  
+
    contains
      subroutine sub(A2)
        type(A(20,4)), value :: A2

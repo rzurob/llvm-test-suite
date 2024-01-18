@@ -3,22 +3,11 @@
 ! opt variations: -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Binary Operator: with pass attribute (+)
 !*  KEYWORD(S)                 :
@@ -83,7 +72,7 @@ program genericOperatorPass001
 
    type(base(4)) :: b1
    class(base(4)), allocatable :: b2
-   
+
    allocate ( b2 , source = base(4)(20))
 
    b1 = base(4)(5) + 10
@@ -94,7 +83,7 @@ program genericOperatorPass001
 
    b1 = base(4)(100) + 200 + base(4)(300) + 400 + 500 + base(4)(600)
    print *, b1%i
-   
+
    b1 = b2 + 40 + b1 + 60 + base(4)(100) + 80 + base(4)(40) + 100
    print *, b1%i
 

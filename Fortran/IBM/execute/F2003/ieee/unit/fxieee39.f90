@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh fxieee39 
+! %PRECMD: $TR_SRC/fxieee.presh fxieee39
 ! %COMPOPTS: -qflttrap -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,21 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Marcus Yu
 !*  DATE                       : February 5, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SET_HALTING_MODE
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qflttrap
 !*
 !*  KEYWORD(S)                 :
@@ -34,7 +25,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Test set_halting_mode to false for real*4
-!*                               
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 	     program fxieee39
@@ -61,17 +51,17 @@
 	     !print *, "The program will not halt on IEEE_INVALID!"
 	     zr = xr / yr
 		 tmp = zr
-         
-		 xr = huge(1.0) 
+
+		 xr = huge(1.0)
 	     call ieee_set_halting_mode(IEEE_OVERFLOW, .false.)
 	     !print *, "The program will not halt on IEEE_OVERFLOW!"
-         zr = 2.0 * xr 
+         zr = 2.0 * xr
 		 tmp = zr
 
 	     xr = tiny(1.0)
 		 call ieee_set_halting_mode(IEEE_UNDERFLOW, .false.)
 	     !print *, "The program will not halt on IEEE_OVERFLOW!"
-         zr = 0.5 * xr 
+         zr = 0.5 * xr
 		 tmp = zr
 
          xr = z"00000001"
@@ -80,8 +70,8 @@
          call ieee_set_halting_mode(IEEE_INEXACT, .false.)
 		 !print *, "The program will not halt on IEEE_INEXACT!"
 		 zr = xr / yr
-         tmp = zr         
-      
+         tmp = zr
+
 ! restore the original falgs.
         call ieee_set_status(status_value)
 

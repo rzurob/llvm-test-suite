@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecVec.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecVec.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  vector subscript 
-!* 
-!*  
-!* 
+!*  vector subscript
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypSpecVec 
+  PROGRAM InitExpTypSpecVec
   IMPLICIT NONE
 
   INTEGER :: I
@@ -59,7 +49,7 @@
   INTEGER,  PARAMETER :: IR(128)=[(I, I=-1, -128, -1)]
   LOGICAL,  PARAMETER :: LR(128)=[(.FALSE., .TRUE., I=-1, -128, -2)]
 
- 
+
   INTEGER(KIND=1), PARAMETER :: I1(128)=IV8(S8)
   INTEGER(KIND=2), PARAMETER :: I2(128)=IV4(S4)
   INTEGER(KIND=4), PARAMETER :: I4(128)=IV2(S2)
@@ -92,4 +82,4 @@
 
   END
 
- 
+

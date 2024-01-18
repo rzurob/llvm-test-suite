@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeCharComp03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeCharComp03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 11 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 11 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE,FSOURCE ARE DERIVED TYPE ARRAY OR SCALAR
-!* 4. DERIVED TYPE HAS ALLOCATABLE CHARACTER ARRAY COMPONENT 
+!* 4. DERIVED TYPE HAS ALLOCATABLE CHARACTER ARRAY COMPONENT
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type A(l)
@@ -37,7 +29,7 @@ program mergeCharComp03
    use m
    implicit none
 
-     
+
    type(A(4)),target :: a1
    type(A(4)),target :: a2(2)
    type(A(:)),allocatable :: a3(:)
@@ -45,9 +37,9 @@ program mergeCharComp03
    character(:),allocatable :: c1(:)
    type(A(:)),pointer:: a5
    type(A(:)),pointer :: a6(:)
-   
-   allocate(a1%c1(2),source=["12","34"]) 
-   a1=merge(a1,A(4)(["56","78"]),.false.)     
+
+   allocate(a1%c1(2),source=["12","34"])
+   a1=merge(a1,A(4)(["56","78"]),.false.)
 
    if(a1%l /= 4)                                            error stop 10_4
    if(any(a1%c1 /= ["56","78"]) )                           error stop 11_4
@@ -82,7 +74,7 @@ program mergeCharComp03
 
    if(a6%l /= 4)                                           error stop 23_4
    if(any(a6(1)%c1 /= ["56","78"]))                        error stop 24_4
-   if(any(a6(2)%c1 /= ["ghi","jkl"]))                      error stop 25_4  
+   if(any(a6(2)%c1 /= ["ghi","jkl"]))                      error stop 25_4
 
    a3=merge([A(1)(['a','b']),A(1)(['c','d'] )], &
             A(1)(['1','2']),[.true.,.false.] )
@@ -91,5 +83,5 @@ program mergeCharComp03
    if(any(a3(1)%c1 /= ['a','b']))                          error stop 28_4
    if(any(a3(2)%c1 /= ['1','2']))                          error stop 29_4
 
-         
+
 end program

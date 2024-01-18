@@ -1,13 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : volatileUt09b.f
 !*
-!*  PROGRAMMER                 : Vince Yuen
 !*  DATE                       : May 26, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Supporting VOLATILE for F2003
 !*

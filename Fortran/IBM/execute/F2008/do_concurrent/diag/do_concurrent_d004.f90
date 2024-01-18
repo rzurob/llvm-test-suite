@@ -1,13 +1,11 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                                IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : do_concurrent_d004.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2015-03-20
 !*  ORIGIN                     :
 !*
@@ -15,10 +13,10 @@
 !*  SECONDARY FUNCTIONS TESTED :
 !*  ADAPTED FROM               :
 !*
-!*  DESCRIPTION                : 
-!*   - do-stmt is a label-do-stmt, but the corresponding end-do is not 
+!*  DESCRIPTION                :
+!*   - do-stmt is a label-do-stmt, but the corresponding end-do is not
 !*     identified with the same label
-!*   - do-stmt is not a label-do-stmt, but the corresponding end-do is 
+!*   - do-stmt is not a label-do-stmt, but the corresponding end-do is
 !*     identified with a label
 !*   - nesting the above, also interaction with other name-able constructions
 !*
@@ -51,7 +49,7 @@
         end if NamedIf5
         NestedNamed1: DO CONCURRENT (integer :: i = 0:1)
         END DO NestedNamed1
-      END DO 
+      END DO
 
       DO CONCURRENT (integer :: j = 0:1)
         NestedNamed2: DO CONCURRENT (integer :: i = 0:1)
@@ -62,7 +60,7 @@
 
       NamedOuter1: DO CONCURRENT (integer :: j = 0:1)
         UnnamedNested1: DO CONCURRENT (integer :: i = 0:1)
-        END DO 
+        END DO
         NamedIf7: if (i.eq.0) then
         end if NamedIf7
       END DO NamedOuter1
@@ -80,7 +78,7 @@
       UnnamedDo: DO j = 0,1
         NamedDoConcurrent: DO CONCURRENT( integer :: i = 0:1)
         END DO NamedDoConcurrent
-      END DO 
+      END DO
 
       UnnamedIf: if (i .eq. 0) then
         NamedDoConcurrent2: DO CONCURRENT( integer :: i = 0:1)

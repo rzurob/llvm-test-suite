@@ -12,24 +12,16 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ptrassign062
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : March 31, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :functional testing of bounds-remapping and bounds-spec
-!*                              
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -40,11 +32,11 @@
   integer :: num=1
   integer :: fsource(9,10)
   logical :: mask(9,10), l=.true.
-  
-  
+
+
   allocate(tar1(90), source=(/(i,i=1,90)/))
   allocate(tar2(11:19,11:20))
-  
+
   do i=11,20
     do j=11,19
       tar2(j,i)=num
@@ -52,22 +44,22 @@
     end do
   end do
   num=1
-    
+
   do i=1,10
     do j=1,9
       fsource(j,i)=1
     end do
   end do
-  
+
   do i=1,10
     do j=1,9
       mask(j,i)=l
       l=.false.
     end do
   end do
-  
+
   ptr1(11:19,11:20)=>tar1
-  
+
   if(lbound(ptr1, dim=1).ne. 11) error stop 1
   if(lbound(ptr1, dim=2).ne. 11) error stop 2
   if(ubound(ptr1, dim=1).ne. 19) error stop 3
@@ -81,7 +73,7 @@
       num=num+1
     end do
   end do
-   
+
   if(any(cshift(ptr1,2).ne.cshift(tar2,2))) error stop 7
   if(any(eoshift(ptr1,3).ne.eoshift(tar2,3))) error stop 8
   if(any(merge(ptr1,fsource,mask).ne.merge(tar2,fsource,mask))) error stop 9
@@ -90,11 +82,11 @@
   if(any(reshape(ptr1,(/56/)).ne.reshape(tar2,(/56/)))) error stop 12
   if(any(spread(ptr1,2,2).ne.spread(tar2,2,2))) error stop 13
   if(any(unpack(ptr1(15,:),mask,0).ne.unpack(tar2(15,:),mask,0))) error stop 14
-  
-  
 
-  
-  
+
+
+
+
 end
-  
-  
+
+

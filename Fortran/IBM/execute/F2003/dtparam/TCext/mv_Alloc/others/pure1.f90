@@ -3,30 +3,18 @@
 ! opt variations: -qnok -qnol -qnodeferredlp
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pure1.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimited polymorphic,
 !*                               rank 1
-!*				 FROM is local var, TO is component of derive-type  
-!*                               TO is finalized 
-!*                        
+!*				 FROM is local var, TO is component of derive-type
+!*                               TO is finalized
+!*
 !* ===================================================================
 !*
 !*  REVISION HISTORY

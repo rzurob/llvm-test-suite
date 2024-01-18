@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : input101dkl
 !*
-!*  PROGRAMMER                 : David Forster (derived from input101d by Robert Ma)
 !*  DATE                       : 2007-07-20 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: derived type containing allocatable component requires DTIO (do not provide DTIO)
 !*  KEYWORD(S)                 :
@@ -79,15 +71,15 @@ use m, only: data
    integer, intent(in)     :: v_list(:)
    integer, intent(out) :: iostat
    character(*), intent(inout) :: iomsg
-   
+
    type(data(4)) :: d1 ! tcx: (4)
    namelist /nml/ d1
 
    if ( iotype /= 'NAMELIST' ) error stop 3_4
    if ( size(v_list,1) /= 0 )  error stop 4_4
-   
+
    read (unit, nml, iostat=iostat )
-    
+
    dtv%i = d1%i
    iomsg = 'dtioread'
 

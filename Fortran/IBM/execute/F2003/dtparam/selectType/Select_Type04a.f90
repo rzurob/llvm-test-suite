@@ -1,26 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type04a - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 26, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Use association
 !*                               Selector being a function call
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -42,24 +35,24 @@
       IMPLICIT CLASS(Base(2,5))(D)
 !*
       TYPE Base  (k1,len1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: len1 
-      END TYPE Base 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: len1
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
-        CLASS(Base(k1,len1)), POINTER :: Cmp 
-      END TYPE Child 
+        CLASS(Base(k1,len1)), POINTER :: Cmp
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen
       END TYPE NextGen
 
       INTEGER, PARAMETER :: k1 = 2 , len1 = 5
 !*
-      CONTAINS 
+      CONTAINS
 !*
       FUNCTION foo(Obj)
       CLASS(*)  :: Obj
-      CLASS(*), ALLOCATABLE  :: foo 
+      CLASS(*), ALLOCATABLE  :: foo
 
       ALLOCATE(foo, source=Obj)
       IF ( .NOT. ALLOCATED(foo)) STOP 10
@@ -67,8 +60,8 @@
       END FUNCTION foo
 
       FUNCTION Dfoo(Obj)
-      POINTER  :: Dfoo 
-      CLASS(Base(2,5)), POINTER :: Obj 
+      POINTER  :: Dfoo
+      CLASS(Base(2,5)), POINTER :: Obj
 
       Dfoo => Obj
       IF ( .NOT. ASSOCIATED(Dfoo)) STOP 11
@@ -79,16 +72,16 @@
 !*
       PROGRAM Select_Type04a
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       INTEGER :: I, J
-      TYPE(Child(k1,len1)) :: child1 
+      TYPE(Child(k1,len1)) :: child1
       TYPE(Base(k1,len1)), TARGET :: tgt = (Base(k1,len1) ())
 
       child1%Cmp  => tgt
       IF ( .NOT. ASSOCIATED(child1%Cmp)) STOP 12
 
-     
+
       Test_foo : SELECT TYPE ( A => foo(child1))
         TYPE IS (Child(k1,*))
            IF (A%k1 .NE. k1) STOP 100

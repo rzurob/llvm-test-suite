@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: EvalFstArrPoly.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: EvalFstArrPoly.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : EvalFstArrPoly
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 9, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : selector expression 
+!*  SECONDARY FUNCTIONS TESTED : selector expression
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector expr is evaluated first 
+!*
+!*   The selector expr is evaluated first
 !*   Poly array constructed with  funcion calls
 !*    (ICe)
 !*
@@ -89,9 +83,9 @@
     CLASS DEFAULT
       STOP 30
     TYPE IS (Child)
-      IF ( ANY(As%GetId() .NE. -2) )      STOP 41 
-      IF ( ANY(As%Base%GetId() .NE. -1) ) STOP 42 
-      IF ( ANY(SHAPE(As) .NE. (/3/) ) )   STOP 43 
+      IF ( ANY(As%GetId() .NE. -2) )      STOP 41
+      IF ( ANY(As%Base%GetId() .NE. -1) ) STOP 42
+      IF ( ANY(SHAPE(As) .NE. (/3/) ) )   STOP 43
   END SELECT
 
 
@@ -105,9 +99,9 @@
       TYPE IS (Child)
         Fun%BaseId=-1
         Fun%ChildId=-2
-    END SELECT 
+    END SELECT
 
-  END FUNCTION 
+  END FUNCTION
 
   END
 

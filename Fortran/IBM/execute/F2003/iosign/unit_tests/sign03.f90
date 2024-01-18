@@ -13,18 +13,11 @@
 !***********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Test of SIGN= specifier
-!*      
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN=specifier in INQUIRE
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SIGN
@@ -32,12 +25,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*  DESCRIPTION                : Testing the functionality of the
 !*                               SIGN= specifier used in INQUIRE statement
-!*                               1 If no sign= specifier is specified, the 
+!*                               1 If no sign= specifier is specified, the
 !*                                 PROCESSOR_DEFINED is the default
 !*                                 SIGN mode
 !*                               2 If the connection isn't for formatted
 !*                                 output or there is no connection,
-!*                                 it is assigned value: UNDEFINED      
+!*                                 it is assigned value: UNDEFINED
 !*
 !* ===================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890

@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank112f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : August  25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank object
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
@@ -40,12 +33,12 @@ module mod
      subroutine sub_bind_c(arr, test) bind(C)
          implicit none
          integer :: test
-         integer, allocatable :: arr(..) 
+         integer, allocatable :: arr(..)
      end subroutine sub_bind_c
      subroutine sub(arr, test)
          implicit none
          integer :: test
-         integer, allocatable :: arr(..) 
+         integer, allocatable :: arr(..)
      end subroutine sub
      subroutine sub_ext(arg, flag) bind(C)
          integer, allocatable :: arg(..)
@@ -74,7 +67,7 @@ module mod
    end subroutine sub_mod
 end module mod
 
-program AssumedRank110f 
+program AssumedRank110f
    use mod
    implicit none
    integer :: i, j, k
@@ -162,12 +155,12 @@ subroutine sub_ext(arg, flag) bind(C)
        subroutine sub_bind_c(arr, test) bind(C)
            implicit none
            integer :: test
-           integer, allocatable :: arr(..) 
+           integer, allocatable :: arr(..)
        end subroutine sub_bind_c
        subroutine sub(arr, test)
            implicit none
            integer :: test
-           integer, allocatable :: arr(..) 
+           integer, allocatable :: arr(..)
        end subroutine sub
      end interface
 
@@ -182,11 +175,11 @@ end subroutine sub_ext
 
 subroutine sub_bind_c(arr, test) bind(C)
      implicit none
-     ! Dummy arg. 
+     ! Dummy arg.
      integer :: test
-     integer, allocatable :: arr(..) 
-     ! Internal variables 
-     integer, parameter :: dim1 = 5 
+     integer, allocatable :: arr(..)
+     ! Internal variables
+     integer, parameter :: dim1 = 5
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -195,8 +188,8 @@ subroutine sub_bind_c(arr, test) bind(C)
      #endif
 
      if (.not. allocated(arr))  ERROR STOP 101
-     if (DEBUG_MODE) then 
-        print*, test 
+     if (DEBUG_MODE) then
+        print*, test
         print*, size(arr)
         print*, shape(arr)
         print*, rank(arr)
@@ -244,11 +237,11 @@ end subroutine sub_bind_c
 
 subroutine sub(arr, test)
      implicit none
-     ! Dummy arg. 
+     ! Dummy arg.
      integer :: test
-     integer, allocatable :: arr(..) 
-     ! Internal variables 
-     integer, parameter :: dim1 = 5 
+     integer, allocatable :: arr(..)
+     ! Internal variables
+     integer, parameter :: dim1 = 5
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -257,8 +250,8 @@ subroutine sub(arr, test)
      #endif
 
      if (.not. allocated(arr))  ERROR STOP 201
-     if (DEBUG_MODE) then 
-        print*, test 
+     if (DEBUG_MODE) then
+        print*, test
         print*, size(arr)
         print*, shape(arr)
         print*, rank(arr)

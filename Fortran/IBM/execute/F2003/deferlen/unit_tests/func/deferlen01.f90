@@ -1,19 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Deferred Character Length
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unit testing
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
-!*  DESCRIPTION                : Testing the allocatable attributes on  
+!*  DESCRIPTION                : Testing the allocatable attributes on
 !*                               characters with deferred length.
 !*
 !* ===================================================================
@@ -45,7 +38,7 @@ p%name = "Ken"
 if ((char .ne. "John") .or. (p%name .ne. "Ken")) error stop 3
 
 ! Test 3 - testing the deallocate
- 
+
 deallocate(char, p%name)
 if(allocated(char) .or. allocated(p%name)) error stop 4
 

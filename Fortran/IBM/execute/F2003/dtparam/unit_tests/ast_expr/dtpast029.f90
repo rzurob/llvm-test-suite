@@ -12,33 +12,25 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dtpexpression029
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : June 2nd, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :testing expressions with derived types
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
-	
+
 type A(k1,k2,l)
   integer, kind :: k1
   integer, kind :: k2
   integer, len :: l
-     
-   character(len=l) ::c1 = "abcdefg"  
+
+   character(len=l) ::c1 = "abcdefg"
    character(len=l-6) :: c2=achar(k1*k2*11)
    character(len=k2*k1) ::c3=repeat(achar(k1*k2*11),k2*k1)
    character(len=l+3) :: c4(k1*k1:5*k2)=(/(achar(i),i=k1*k1,5*k2)/)
@@ -63,4 +55,4 @@ if(ubound(A1%c5,1).ne.7) error stop 12
 if(any(A1%c4.ne.(/(achar(i),i=4,20)/))) error stop 13
 if(any(A1%c5.ne.(/"W","X","Y","Z"/))) error stop 14
 end
-  
+

@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArraySections/arrsec_1_20.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jul. 09, 2008
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 353925
 !*
@@ -16,7 +12,7 @@
 !*  - Array sections of a polymorphic PDT array as dummy arguments
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-  
+
 module m
     type base(k,n)
         integer, kind :: k
@@ -72,18 +68,18 @@ contains
         ! subscript-triplet:
         print *, dta(1:ub:1)%id
         print *, dta(:ub)%id
-        
+
         dta(:ub)%id = (/6,7,8,9,10/)
         dta(4:1:-2)%id = (/1,2/)
         print *, dta(:ub)%id
         ! empty:
         print *, size(dta(4:1:2)%id)
         print *, dta(4:2:1)%id
-        
+
         ! vector-subscript:
         dta((/1,2,3,4,5/))%id = (/1,2,3,4,5/)
         print *,dta(:ub)%id
-        
+
         dta((/3,1,4,2,5/))%id = (/8,6,9,7,5/)
         print *,dta(:ub)%id
     end subroutine

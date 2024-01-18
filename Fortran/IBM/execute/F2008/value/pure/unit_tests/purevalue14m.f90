@@ -1,13 +1,8 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue14m.f
-!*  TEST CASE TITLE : F2008: VALUE attr allowed for dummy args of PURE proc
-!*  PROGRAMMER      : Gaby Baghdadi
 !*  DATE            : 2010-12-01
-!*  ORIGIN          : XL Fortran Compiler Development, IBM Torolab
 !*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
@@ -26,12 +21,12 @@ pure subroutine sub1 (a)
 end subroutine
 
 module m
-    interface 
+    interface
         pure integer function func2 (a,b)
             integer, intent(in) :: a
             integer, value :: b
         end function
-    
+
         pure subroutine sub2 (a,b)
             integer, intent(in) :: a
             integer, value :: b
@@ -62,7 +57,7 @@ contains
         a = 0; c = 0; e = 0
     end subroutine
 end module
-    
+
 pure integer function func2 (a,b)
     integer, intent(in) :: a
     integer, value :: b

@@ -1,16 +1,11 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : dtpPtrAssignBoundsRemap03
-!*  TEST CASE TITLE            : POINTER Assignment (with Bounds Specification
 !*                               and Remapping)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 12, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Bounds Remapping for a non-Polymorphic
 !*                               instance of a Container Type Array to a
@@ -19,7 +14,6 @@
 !*                               of data-pointer-object and data-target
 !*                               is an Array Section
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATE

@@ -1,14 +1,8 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : critical_f013.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : January 2011
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
 !*  SECONDARY FUNCTIONS TESTED :
@@ -23,17 +17,17 @@
 program main
 	integer(8), save :: coarray(100000)[*]
 	integer(8) :: n, t
-	
+
 	interface
 		subroutine sub(caf, num, me)
 			integer(8) :: caf(100000)[*], num, me
 		end subroutine
 	end interface
-	
+
 	coarray = -1
 	t = this_image()
 	n = num_images()
-	
+
 	if (n > 2) then
 		call sub(coarray, n, t)
 	end if
@@ -43,7 +37,7 @@ end
 subroutine sub(caf, num, me)
 	integer(8) :: caf(100000)[*]
 	integer(8) :: res, num, me
-	
+
 	res = 0
 	sync all
 

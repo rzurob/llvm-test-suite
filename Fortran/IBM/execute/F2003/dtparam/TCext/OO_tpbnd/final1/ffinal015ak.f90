@@ -1,22 +1,17 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal015ak.f
 !*  TEST CASE NAME             : type-bound procedure ffinal015ak
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal015a by Catherine Sun)
 !*  DATE                       : 2007-11-21 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
-!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
-!*  DESCRIPTION                : testing final subroutines 
-!*    
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
+!*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
+!*
+!*  DESCRIPTION                : testing final subroutines
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -32,8 +27,8 @@
          integer, kind :: kt2_1
          integer(kt2_1), pointer :: vector(:) => null()
       contains
-         final :: finalize_t1v 
-      end type 
+         final :: finalize_t1v
+      end type
 
       type t3 (kt3_1) ! kt3_1=4
          integer, kind :: kt3_1
@@ -51,13 +46,13 @@
          type(t1(4)) :: x ! tcx: (4)
          if (associated(x%vector))    deallocate(x%vector)
       end subroutine
- 
+
       subroutine finalize_t1v(x)
          type(t2(4)) :: x(1:3) ! tcx: (4)
          do i = lbound(x, 1), ubound(x, 1)
             if (associated(x(i)%vector)) &
                deallocate(x(i)%vector)
-         end do  
+         end do
       end subroutine
       elemental subroutine finalize_t2e(x)
          type(t3(4)), intent(inout) :: x ! tcx: (4)

@@ -1,38 +1,31 @@
 !*********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument309f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from C
 !*
 !*                                - Allocate (a, source=b) with a and b both having a C descriptor
 !*                                - Assumed-shape dummy argument
-!*                                - type c_float 
+!*                                - type c_float
 !*                                - Nesting of calls
 !*                                   Bind(c) ==> Non-bind(c)
 !*                                   Bind(c) ==> bind(c) ==> Non-bind(c)
 !*                                   Bind(c) ==> bind(c) ==> bind(c)
-!*                                - Matmul: the last dimension of the first 
-!*                                          array must be equal to the first 
+!*                                - Matmul: the last dimension of the first
+!*                                          array must be equal to the first
 !*                                          dimension of the second array
 !*                                - Verify values both in Fortran and C
 !* Fortran array:
 !*   - dim 1 is number of rows
-!*   - dim2 is number of columns 
-!*   - Column order 
+!*   - dim2 is number of columns
+!*   - Column order
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -52,7 +45,7 @@ subroutine sub_alloc(tgt, src) bind(C)
     logical                    :: res
 
     interface
-       subroutine modify_values(arg) 
+       subroutine modify_values(arg)
            implicit none
            real, allocatable :: arg(:,:)
        end subroutine
@@ -110,15 +103,15 @@ subroutine sub_dealloc(arg) bind(C)
     if ( allocated(arg) ) ERROR STOP 31
 end subroutine sub_dealloc
 
-subroutine modify_values(arg) 
+subroutine modify_values(arg)
     implicit none
     real, allocatable :: arg(:,:)
-    real :: y(2,3) 
+    real :: y(2,3)
     integer :: i, j
 
 !*********************************************
-!          y = 3 2 1     
-!             -2 4 1         
+!          y = 3 2 1
+!             -2 4 1
 !*********************************************
 
     if( .not. allocated(arg) ) ERROR STOP 40
@@ -131,7 +124,7 @@ subroutine modify_values(arg)
     if( ubound(arg,2) /= ubound(y,2) )  ERROR STOP 44
     if( any(arg       /=          y) )  ERROR STOP 45
 
-    !modify an arbitary value 
+    !modify an arbitary value
     arg(1,3) = -arg(2,3)
 end subroutine modify_values
 
@@ -139,9 +132,9 @@ logical(c_bool) function func(a,b) bind(C)
     use iso_c_binding
     implicit none
     real(c_float), allocatable :: a(:), b(:,:), r(:)
-    real :: x(3), y(2,3) 
+    real :: x(3), y(2,3)
 
-    interface 
+    interface
        subroutine my_matmul(a,b,r)
            implicit none
            real(4), allocatable :: a(:), b(:,:), r(:)
@@ -150,7 +143,7 @@ logical(c_bool) function func(a,b) bind(C)
            implicit none
            real(4), allocatable :: a(:), b(:,:), r(:)
        end subroutine my_matmul_c
-    end interface 
+    end interface
 
     func = .true.
 
@@ -160,25 +153,25 @@ logical(c_bool) function func(a,b) bind(C)
     if (any(b /= y) ) ERROR STOP 51
 
     call my_matmul(a,b,r)
-! if result is good, return true. Otherwise False 
+! if result is good, return true. Otherwise False
 !*********************************************
-! expected result: 
-!   12.  1. 
+! expected result:
+!   12.  1.
 !*********************************************
-    if (any(r /= [12., 1.]) ) then 
+    if (any(r /= [12., 1.]) ) then
         func = .false.
         ERROR STOP 52
    end if
 
     call my_matmul_c(a,b,r)
-    if (any(r /= [12., 1.]) ) then 
+    if (any(r /= [12., 1.]) ) then
         func = .false.
         ERROR STOP 53
    end if
 end function func
 !***************************************************
-! If a dummy argument in an interoperable interface is allocatable, 
-! assumed-shape, (...)  or a data pointer, the corresponding formal 
+! If a dummy argument in an interoperable interface is allocatable,
+! assumed-shape, (...)  or a data pointer, the corresponding formal
 ! parameter is interpreted as the address of a C descriptor
 ! for the effecctive argument in a reference to the procedure.
 !***************************************************
@@ -188,7 +181,7 @@ logical(c_bool) function ffunc(a,b) bind(C)
     !real(c_float) :: a(:)   ! assumed shape array not supported yet
     real(c_float), pointer :: a(:)
     real(c_float), allocatable :: b(:,:), r(:)
-    real :: x(3), y(2,3) 
+    real :: x(3), y(2,3)
 
 
     ffunc = .true.
@@ -198,7 +191,7 @@ logical(c_bool) function ffunc(a,b) bind(C)
     if (any(b /= y) ) ERROR STOP 61
 
     r = matmul(b,a)
-    if (any(r /= [12., 3.]) ) then 
+    if (any(r /= [12., 3.]) ) then
         ffunc = .false.
         ERROR STOP 62
    end if

@@ -1,25 +1,16 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : polyAssumedAsscoiate.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS intrinsic
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : - ASSOCIATE construct 
-!*                               - polymorphic contiguous assumed 
-!*                                 shape array dummy argument 
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED : - ASSOCIATE construct
+!*                               - polymorphic contiguous assumed
+!*                                 shape array dummy argument
 !*
-!*  DESCRIPTION                : - 
-!*                               - 
+!*  DESCRIPTION                : -
+!*                               -
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -37,19 +28,19 @@ MODULE Mod
         INTEGER, KIND :: K0 = 4
         INTEGER, LEN  :: L0 = 10
 
-        INTEGER(K0) :: I0(K0) = -1 
+        INTEGER(K0) :: I0(K0) = -1
       END TYPE
 
       CONTAINS
 
       SUBROUTINE Sub(Arg)
-        INTEGER :: I 
+        INTEGER :: I
         CLASS(Base(4,*)), CONTIGUOUS :: Arg(:)
 
         IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 10
 
         DO I = 1, SIZE(Arg)
-           ASSOCIATE( a => Arg(I) )                 
+           ASSOCIATE( a => Arg(I) )
              IF ( .NOT.  IS_CONTIGUOUS(a%I0) )  ERROR STOP 11
              IF ( a%K0       .NE.   4 ) ERROR STOP 12
              IF ( a%L0       .NE.  10 ) ERROR STOP 13
@@ -68,17 +59,17 @@ PROGRAM polyAssumedAsscoiate
       CLASS(Base(4,:)), POINTER      :: ptr(:)
       CLASS(Base), ALLOCATABLE       :: upoly(:)
 
-      CALL Sub(Iarr) 
-      CALL Sub(Iarr(:5)) 
-      CALL Sub(Iarr(:5:1)) 
+      CALL Sub(Iarr)
+      CALL Sub(Iarr(:5))
+      CALL Sub(Iarr(:5:1))
 
-      ptr => Iarr 
-      CALL Sub(ptr) 
-      CALL Sub(ptr(:5)) 
-      CALL Sub(ptr(:5:1)) 
+      ptr => Iarr
+      CALL Sub(ptr)
+      CALL Sub(ptr(:5))
+      CALL Sub(ptr(:5:1))
 
-      ALLOCATE( upoly(10), SOURCE = Iarr ) 
-      CALL Sub(upoly) 
-      CALL Sub(upoly(:5)) 
-      CALL Sub(upoly(:5:1)) 
+      ALLOCATE( upoly(10), SOURCE = Iarr )
+      CALL Sub(upoly)
+      CALL Sub(upoly(:5))
+      CALL Sub(upoly(:5:1))
 END PROGRAM polyAssumedAsscoiate

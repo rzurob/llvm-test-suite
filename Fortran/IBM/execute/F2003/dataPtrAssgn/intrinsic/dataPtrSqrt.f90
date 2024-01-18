@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrSqrt.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -40,17 +34,17 @@ program main
 
     associate(x => tar)
         d1%ptr(1:3, 1:5) => x(16:2:-1)
-    end associate 
+    end associate
 
     if ( .not. associated(d1%ptr)) stop 5
-    if ( any(lbound(d1%ptr) .ne. (/1,1/))) stop 6 
-    if ( any(ubound(d1%ptr) .ne. (/3,5/))) stop 7 
+    if ( any(lbound(d1%ptr) .ne. (/1,1/))) stop 6
+    if ( any(ubound(d1%ptr) .ne. (/3,5/))) stop 7
 
     select type(x=>d1%ptr)
 	type is (real)
-            write(*, '(5f12.8)') sqrt(x) 
+            write(*, '(5f12.8)') sqrt(x)
 	class default
-	    stop 10 
+	    stop 10
     end select
 
 end program

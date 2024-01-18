@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : lstOutputComplex002.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 23, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -39,9 +33,9 @@
       complex(8)   :: cx1, cx2
       integer      :: i1 = 11
       character(3) :: c1='IBM'
-      
+
       open(out, file='lstOutputComplex002.out', action='write')
-      
+
       rl1 = z'7FF7FFFFFFFFFFFF' ! positive NaN(S)
       rl2 = z'7FF0000000000000' ! positive Inf
       rl3 = z'FFF7FFFFFFFFFFFF' ! negative NaN(S)
@@ -59,7 +53,7 @@
       i1 = 12
       c1 = 'ibm'
       write(out,*) c1, cx1, i1, cx2
-      
+
       rl1 = z'7FFFFFFFFFFFFFFF' ! positive NaN(Q)
       rl2 = z'7FF0000000000000' ! positive Inf
       rl3 = z'FFF7FFFFFFFFFFFF' ! negative NaN(S)

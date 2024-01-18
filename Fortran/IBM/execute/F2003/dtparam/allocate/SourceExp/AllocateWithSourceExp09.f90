@@ -1,35 +1,27 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocateWithSourceExp09 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : January 20, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression 
+!*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression
 !*  SECONDARY FUNCTIONS TESTED :
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* allocate-stmt is 
+!* allocate-stmt is
 !*   ALLOCATE ( [ TYPE-spec :: ] allocation-list [, alloc-opt-list ] )
 !*
 !*  Defect 359514
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithSourceExp09
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
@@ -46,7 +38,7 @@ PROGRAM AllocateWithSourceExp09
         CLASS(Base(k2,:)), POINTER :: b_cmp
       END TYPE Child
 
-      CLASS(*), POINTER :: c1, b1 
+      CLASS(*), POINTER :: c1, b1
 
       ALLOCATE(Base(4,9) :: b1)
 
@@ -100,6 +92,6 @@ PROGRAM AllocateWithSourceExp09
             STOP 103
       END SELECT
 
-      DEALLOCATE(b1,c1) 
+      DEALLOCATE(b1,c1)
 
 END PROGRAM AllocateWithSourceExp09

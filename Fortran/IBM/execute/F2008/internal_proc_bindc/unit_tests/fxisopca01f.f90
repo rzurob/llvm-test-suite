@@ -15,12 +15,11 @@ program fxisopca01
       end subroutine sub4
    end interface
 
-
    type(C_PTR) :: cp
    type(C_FUNPTR) :: psubc
-   !procedure(subce) :: proc_subc  
-   psubc = C_FUNLOC(subc) 
-   
+   !procedure(subce) :: proc_subc
+   psubc = C_FUNLOC(subc)
+
    call sub4(psubc)
 
    contains

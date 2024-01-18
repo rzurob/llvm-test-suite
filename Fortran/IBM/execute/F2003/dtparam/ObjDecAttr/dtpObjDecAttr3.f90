@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 22, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  The DIMENSION attribute --  Explicit-shape array
-!*   
+!*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -60,7 +51,7 @@
 
   P3 = T3
 
-  DO I = 1, N 
+  DO I = 1, N
 
     IF ( P1(I)%K0               .NE.   0          ) STOP 11
     IF ( P1(I)%L0               .NE.   0          ) STOP 12
@@ -99,7 +90,7 @@
 
   PROGRAM dtpObjDecAttr3
   USE M
-  
+
   T3 = DT1(1,1,2,2)(I=[-1,-1],C=["X","X"])
   CALL Check(107, [(DT0(), I=1,107)],[(DT1(2,2)(I=[-1], C=["X"]), I=1,107)])
 

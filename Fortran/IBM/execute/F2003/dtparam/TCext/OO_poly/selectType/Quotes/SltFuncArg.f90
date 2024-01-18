@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltFuncArg.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltFuncArg
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 05, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a function return with associate name as argument 
+!*
+!*   The selector is a function return with associate name as argument
 !*    (297706)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -52,7 +46,7 @@
     TYPE  :: Zero(K1,N1)    ! (4,20)
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4,20)
       INTEGER(K1) :: BaseId = 1
@@ -107,9 +101,9 @@
 
   CONTAINS
 
-  
+
   RECURSIVE FUNCTION Fun(Arg)
-  CLASS(Zero(4,*)), TARGET ::Arg 
+  CLASS(Zero(4,*)), TARGET ::Arg
   CLASS(Zero(4,:)), POINTER :: Fun
 
   IF(Cnt .GT. 1 ) THEN
@@ -119,11 +113,11 @@
   ELSE
 
   ALLOCATE(Child(4,20) :: Fun)
- 
+
   SELECT TYPE ( As0 => Arg )
     CLASS IS (Zero(4,*))
       SELECT TYPE (As => As0)
-        TYPE IS (Child(4,*)) 
+        TYPE IS (Child(4,*))
           IF ( As%Base%GetId() .NE. 1 ) STOP 34
           IF ( As%GetId()      .NE. 2 ) STOP 35
           IF ( As%BaseId       .NE. 1 ) STOP 36
@@ -147,7 +141,7 @@
 
   END IF
 
-  END FUNCTION 
+  END FUNCTION
 
   END
-  
+

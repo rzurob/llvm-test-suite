@@ -12,32 +12,24 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dtpexpression018a
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : June 2nd, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :testing expressions with derived types
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
 type A(k,l)
   integer, kind :: k=4
   integer, len  :: l=3
-  
-  real(2*k-k) :: b(l:2*l,l+k)  
+
+  real(2*k-k) :: b(l:2*l,l+k)
 end type
 end module
 

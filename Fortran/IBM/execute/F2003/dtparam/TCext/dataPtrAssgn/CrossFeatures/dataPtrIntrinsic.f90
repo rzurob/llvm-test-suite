@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrIntrinsic.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrIntrinsic.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,16 +23,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  intrinsic types 
+!*  intrinsic types
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrIntrinsic 
+  PROGRAM dataPtrIntrinsic
   IMPLICIT NONE
 
   TYPE :: DT(K1,K2,K3,K4,K5,K6,K7,K8,K9,K10,K11,K12,K13,K14,N1)    ! (1,2,4,8,4,8,16,4,8,16,1,2,4,8,1)
@@ -48,21 +40,21 @@
     INTEGER(K2), POINTER     :: PtrI2(:,:) =>NULL()
     INTEGER(K3), POINTER     :: PtrI4(:,:) =>NULL()
     INTEGER(K4), POINTER     :: PtrI8(:,:) =>NULL()
-  
+
     REAL(K5), POINTER        :: PtrR4(:,:) =>NULL()
     REAL(K6), POINTER        :: PtrR8(:,:) =>NULL()
     REAL(K7), POINTER        :: PtrR16(:,:) =>NULL()
-  
+
     COMPLEX(K8), POINTER     :: PtrC4(:,:) =>NULL()
     COMPLEX(K9), POINTER     :: PtrC8(:,:) =>NULL()
     COMPLEX(K10), POINTER    :: PtrC16(:,:)=>NULL()
-  
+
     LOGICAL(K11), POINTER    :: PtrL1(:,:) =>NULL()
     LOGICAL(K12), POINTER    :: PtrL2(:,:) =>NULL()
     LOGICAL(K13), POINTER    :: PtrL4(:,:) =>NULL()
     LOGICAL(K14), POINTER    :: PtrL8(:,:) =>NULL()
- 
-    CHARACTER(N1), POINTER   :: PtrC1(:,:) =>NULL() 
+
+    CHARACTER(N1), POINTER   :: PtrC1(:,:) =>NULL()
   END TYPE
 
   TYPE :: DT1(K15,K16,K17,K18,K19,K20,K21,K22,K23,K24,K25,K26,K27,K28,N2)    ! (1,2,4,8,4,8,16,4,8,16,1,2,4,8,1)
@@ -72,26 +64,26 @@
     INTEGER(K16)  :: PtrI2Tar(100, 100)=-2_2
     INTEGER(K17)  :: PtrI4Tar(100, 100)=-4_4
     INTEGER(K18)  :: PtrI8Tar(100, 100)=-8_8
-  
+
     REAL(K19)     :: PtrR4Tar(100, 100)=-4.0_4
     REAL(K20)     :: PtrR8Tar(100, 100)=-8.0_8
     REAL(K21)     :: PtrR16Tar(100, 100)=-16.0_16
-  
+
     COMPLEX(K22)  :: PtrC4Tar(100, 100)=(4.0_4, -4.0_4)
     COMPLEX(K23)  :: PtrC8Tar(100, 100)=(8.0_8, -8.0_8)
     COMPLEX(K24)  :: PtrC16Tar(100, 100)=(16.0_16, -16.0_16)
-  
+
     LOGICAL(K25)  :: PtrL1Tar(100, 100)=.TRUE._1
     LOGICAL(K26)  :: PtrL2Tar(100, 100)=.TRUE._2
     LOGICAL(K27)  :: PtrL4Tar(100, 100)=.TRUE._4
     LOGICAL(K28)  :: PtrL8Tar(100, 100)=.TRUE._8
-  
+
     CHARACTER(N2) :: PtrC1Tar(100, 100)= "1"
   END TYPE
 
-  TYPE (DT(1,2,4,8,4,8,16,4,8,16,1,2,4,8,1))          :: P 
+  TYPE (DT(1,2,4,8,4,8,16,4,8,16,1,2,4,8,1))          :: P
   TYPE (DT1(1,2,4,8,4,8,16,4,8,16,1,2,4,8,1)), TARGET :: T
- 
+
   P%PtrI1(10:19, 1:9 ) => T%PtrI1Tar(:, 10)
   IF (.NOT. ASSOCIATED(P%PtrI1))                    STOP 11
   IF (ANY( LBOUND(P%PtrI1) .NE. (/10, 1 /)))        STOP 12

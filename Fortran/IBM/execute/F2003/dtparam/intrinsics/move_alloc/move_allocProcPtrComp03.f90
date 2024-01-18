@@ -1,23 +1,15 @@
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocProcPtrComp03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocProcPtrComp03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 8 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 8 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
@@ -41,11 +33,11 @@ module m
        integer :: int,fun1
        fun1=int
     end function
- 
+
     function fun2(dt)
        class(base(*)),intent(in) :: dt
        class(base(dt%l1)),allocatable :: fun2
-         
+
        select type(dt)
          type is(child(*,*))
             allocate(fun2,source=dt)
@@ -59,21 +51,21 @@ program move_allocProcPtrComp03
 
   use m
   implicit none
- 
+
   class(base(:)),allocatable   :: from1
-  type(child(:,:)),allocatable :: child1   
+  type(child(:,:)),allocatable :: child1
   class(base(:)),allocatable   :: to1
-  integer :: result1 
+  integer :: result1
   class(*),allocatable :: result2
- 
+
   allocate(child1,source=child(2,3)(i1=[1,2],i2=[3,4,5]))
-  
+
   child1%procptr1=>fun1
   child1%procptr2=>fun2
 
   allocate(from1,source=child1)
 
-  if(.not. allocated(from1))                              error stop 10_4 
+  if(.not. allocated(from1))                              error stop 10_4
   select type(from1)
      type is(child(*,*))
        if(from1%l1 /= 2)                                  error stop 11_4
@@ -86,7 +78,7 @@ program move_allocProcPtrComp03
        if(.not. associated(from1%procptr2,fun2))          error stop 18_4
      class default
        error stop 101_4
-  end select 
+  end select
 
   call move_alloc(from1,to1)
 
@@ -105,7 +97,7 @@ program move_allocProcPtrComp03
 
        result1=to1%procptr1(5)
        allocate(result2,source=to1%procptr2(to1))
-       
+
        if(result1 /= 5)                                   error stop 28_4
        select type(x=>result2)
            type is(child(*,*))
@@ -120,7 +112,7 @@ program move_allocProcPtrComp03
             if(.not. associated(x%procptr2,fun2))         error stop 36_4
            class default
             error stop 102_4
-       end select 
+       end select
       class default
           error stop 103_4
   end select

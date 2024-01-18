@@ -3,21 +3,15 @@
 ! opt variations: -qnol -qreuse=self -qreuse=base
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : openActionSpec02 - ASYNCHRONOUS=
 !*                               Specifier in I/O Statements
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : February 21, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS= Specifier in OPEN() Statement
 !*  SECONDARY FUNCTIONS TESTED : ACTION=Write Specifier in OPEN() Statement
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : OPEN(), ASYNCHRONOUS= Specifier,
@@ -38,7 +32,6 @@
 !*  9.4.5.2 ACTION= specifier in the OPEN statement
 !*
 !*  The scalar-default-char-expr shall evaluate to READ, WRITE, or READWRITE.
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

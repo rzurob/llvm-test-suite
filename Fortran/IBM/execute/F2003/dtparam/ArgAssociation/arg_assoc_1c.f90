@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArgAssociation/arg_assoc_1c.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jan. 19, 2009
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 361232
 !*
@@ -26,7 +22,7 @@ type, extends(base) :: dt
     type(base(n+1)) :: bcomp2
     type(base(n+2)) :: bcomp3
     type(base(n+3)) :: bcomp4
-    integer :: b(n+4)    
+    integer :: b(n+4)
 end type
 
 type(dt(4)) :: x

@@ -1,20 +1,10 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : James Ren
 !*  DATE                       : 06/07/2007
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : function return with DTP
 !*
@@ -22,12 +12,12 @@
 !*  TARGET(S)                  :
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
-! defect 337716      
+! defect 337716
 
 module m
 type base(baseLen1, baseLen2)
    integer, len  :: baseLen1, baseLen2
-   integer :: baseId(baseLen1 * baseLen2)   
+   integer :: baseId(baseLen1 * baseLen2)
 end type
 
    contains
@@ -45,5 +35,5 @@ end module
 use m
    type (base(:, :)), allocatable :: ptr
    allocate (ptr, source = func(4,6))
-   print *, ptr%baseId   
+   print *, ptr%baseId
 end

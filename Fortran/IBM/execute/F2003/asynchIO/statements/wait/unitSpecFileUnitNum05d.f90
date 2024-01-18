@@ -1,13 +1,7 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unitSpecFileUnitNum05d - WAIT() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March  3, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() Statement
 !*  SECONDARY FUNCTIONS TESTED : ID= Specifier where the UNIT= Specifier
@@ -16,7 +10,6 @@
 !*                               b) was not opened for asynchronous,
 !*                               c) has no file connected to it
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WAIT(), UNIT= Specifier, ID= Specifier
@@ -49,7 +42,6 @@
 !*  has no file connected to it, or was not opened for asynchronous
 !*  input/output is permitted, provided that the WAIT statement has no
 !*  ID= specifier;
-!*
 !*
 !*  9.4 File connection
 !*

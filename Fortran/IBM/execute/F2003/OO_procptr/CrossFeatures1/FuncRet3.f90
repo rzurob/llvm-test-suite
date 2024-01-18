@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: FuncRet3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: FuncRet3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRet3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRet3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 26, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Function Return - Pointer 
+!*
+!*  Function Return - Pointer
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -63,8 +57,8 @@
       LOGICAL(4) :: L4Arr(1)
       LOGICAL(8) :: L8Arr(1)
 
-      CHARACTER(3)  ::CharArr(1) 
-  
+      CHARACTER(3)  ::CharArr(1)
+
     END TYPE
 
   END MODULE
@@ -75,12 +69,12 @@
   TYPE(DT), POINTER :: ExtFun(:)
     !ALLOCATE(ExtFun(SIZE(Arg)), SOURCE=Arg) ! not 10.1
     ALLOCATE(ExtFun(SIZE(Arg)))
-    ExtFun = Arg 
+    ExtFun = Arg
   END FUNCTION
 
   PROGRAM FuncRet3
   USE M
-  IMPLICIT TYPE(DT)(P) 
+  IMPLICIT TYPE(DT)(P)
 
   INTERFACE
     FUNCTION Fun(Arg)
@@ -90,11 +84,11 @@
     END FUNCTION
   END INTERFACE
 
-  PROCEDURE(Fun)                  :: ExtFun 
+  PROCEDURE(Fun)                  :: ExtFun
   PROCEDURE(Fun),         POINTER :: ProcPtr1
   PROCEDURE(ExtFun),      POINTER :: ProcPtr2
   PROCEDURE(ProcPtr2),    POINTER :: ProcPtr3
- 
+
   TYPE(DT), PARAMETER ::  Const=DT(                  &
   &                                                  &
   &                            (/-1_1/),             &
@@ -114,7 +108,7 @@
   &                            (/.TRUE._4/),         &
   &                            (/.TRUE._8/),         &
   &                                                  &
-  &                            (/"abc"/)  )           
+  &                            (/"abc"/)  )
 
 
   TYPE(DT), PARAMETER :: ConstArr(3)=Const
@@ -125,14 +119,14 @@
   ProcPtr1 => ExtFun
   CALL IntSub( ProcPtr1(ConstArr),ConstArr )
 
-  ProcPtr2 => ProcPtr1 
+  ProcPtr2 => ProcPtr1
   CALL IntSub( ProcPtr2(ConstArr),ConstArr )
 
-  ProcPtr3 => ProcPtr2 
+  ProcPtr3 => ProcPtr2
   CALL IntSub( ProcPtr3(ConstArr),ConstArr )
 
   CONTAINS
-  
+
   SUBROUTINE IntSub(Arg1, Arg2)
   TYPE(DT) :: Arg1(:), Arg2(:)
 
@@ -143,13 +137,13 @@
     IF (ANY(Arg1(I)%I4Arr .NE. Arg2(I)%I4Arr)) STOP 14
     IF (ANY(Arg1(I)%I8Arr .NE. Arg2(I)%I8Arr)) STOP 18
 
-    IF (ANY(Arg1(I)%R4Arr  .NE. Arg2(I)%R4Arr))  STOP 24 
-    IF (ANY(Arg1(I)%R8Arr  .NE. Arg2(I)%R8Arr))  STOP 28 
-    IF (ANY(Arg1(I)%R16Arr .NE. Arg2(I)%R16Arr)) STOP 216 
-  
-    IF (ANY(Arg1(I)%C8Arr  .NE. Arg2(I)%C8Arr))  STOP 38 
-    IF (ANY(Arg1(I)%C16Arr .NE. Arg2(I)%C16Arr)) STOP 316 
-  
+    IF (ANY(Arg1(I)%R4Arr  .NE. Arg2(I)%R4Arr))  STOP 24
+    IF (ANY(Arg1(I)%R8Arr  .NE. Arg2(I)%R8Arr))  STOP 28
+    IF (ANY(Arg1(I)%R16Arr .NE. Arg2(I)%R16Arr)) STOP 216
+
+    IF (ANY(Arg1(I)%C8Arr  .NE. Arg2(I)%C8Arr))  STOP 38
+    IF (ANY(Arg1(I)%C16Arr .NE. Arg2(I)%C16Arr)) STOP 316
+
     IF (ANY(Arg1(I)%L1Arr .NEQV. Arg2(I)%L1Arr)) STOP 41
     IF (ANY(Arg1(I)%L2Arr .NEQV. Arg2(I)%L2Arr)) STOP 42
     IF (ANY(Arg1(I)%L4Arr .NEQV. Arg2(I)%L4Arr)) STOP 44

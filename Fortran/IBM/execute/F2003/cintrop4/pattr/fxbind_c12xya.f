@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,16 +13,9 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c12xya.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Test dummy procedure
@@ -35,13 +23,11 @@
 !*                                Fortran call C function.
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !*   - Test: Provide an explicit interface to the dummy procedure.
 !*
-!* 
 !* ===================================================================
 !*  REVISION HISTORY
 !*
@@ -54,15 +40,15 @@
 PROGRAM test_integrate
   !
   !  Purpose:
-  !    To test subroutine integrate, which integrates a function.  
+  !    To test subroutine integrate, which integrates a function.
   !    The function to be integrated is passed to the subroutine
   !    as a calling argument.  This driver routine will integrate
-  !    the function with step sizes dx of 0.001. 
-  ! 
+  !    the function with step sizes dx of 0.001.
+  !
   IMPLICIT NONE
   INTERFACE
      FUNCTION test_fun(x) BIND(C)
-       REAL :: test_fun, x 
+       REAL :: test_fun, x
      END FUNCTION test_fun
   END INTERFACE
 
@@ -79,14 +65,14 @@ PROGRAM test_integrate
   ! Initialize step sizes
   dx = 0.001
 
-  ! Call subroutine "integrate" with each step size, and print  
-  ! out the results.  
+  ! Call subroutine "integrate" with each step size, and print
+  ! out the results.
   DO i = 1, 7
      CALL integrate ( test_fun, x1, x2, dx, area, error )
   END DO
 
   ! Write out results.
-  WRITE (*,1000) 
+  WRITE (*,1000)
 1000 FORMAT ('0','  Step Size',5X,'Area',/, &
        ' ','  =========',5X,'====')
 
@@ -125,7 +111,7 @@ SUBROUTINE integrate ( f, x1, x2, dx, area, error )
   ! First, check to make sure that x1 <= x2.
   errchk: IF ( x1 > x2 ) THEN
      error = 1
-  ELSE 
+  ELSE
      ! Clear error flag and area.
      error = 0
      area = 0

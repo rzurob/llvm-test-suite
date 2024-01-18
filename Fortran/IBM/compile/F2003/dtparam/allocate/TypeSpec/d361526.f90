@@ -23,7 +23,7 @@
          SELECT TYPE ( Arg )
               CLASS IS (Child(*,*))
                  !ALLOCATE(Base(Arg%l2) :: Arg%b_cmp)           !<---- use this line, tc passes
-                 ALLOCATE(Child(Arg%l2,Arg%l2) :: Arg%b_cmp)    
+                 ALLOCATE(Child(Arg%l2,Arg%l2) :: Arg%b_cmp)
          END SELECT
 
       END SUBROUTINE alloc_comp

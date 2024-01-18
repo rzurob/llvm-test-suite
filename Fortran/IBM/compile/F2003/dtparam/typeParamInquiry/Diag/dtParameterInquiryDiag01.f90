@@ -1,32 +1,24 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryDiag01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryDiag01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 24 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER IS NOT VARIABLE,CAN NEVER BE ASSIGNED TO 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER IS NOT VARIABLE,CAN NEVER BE ASSIGNED TO
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(k,l)
-      integer(2),kind :: k  
+      integer(2),kind :: k
       integer(8),len  :: l
       character(l)    :: c
    end type
@@ -60,9 +52,9 @@ end module
   t2%l=2
   t2%l%kind=8
   t2%c%kind=t2%k
-  t2%c%len=t2%l 
+  t2%c%len=t2%l
   t3%l=2
-  t3%l%kind=kind(t3%l)  
+  t3%l%kind=kind(t3%l)
   t3%c%len=len(t3%c)
 
 

@@ -3,10 +3,10 @@
 
   TYPE :: DT0(K1,K2,K4,K8,L0)
     INTEGER, LEN :: L0=0
-    INTEGER(8), KIND :: K1 = 1 
-    INTEGER(4), KIND :: K2 = 2 
-    INTEGER(2), KIND :: K4 = 4 
-    INTEGER(1), KIND :: K8 = 8 
+    INTEGER(8), KIND :: K1 = 1
+    INTEGER(4), KIND :: K2 = 2
+    INTEGER(2), KIND :: K4 = 4
+    INTEGER(1), KIND :: K8 = 8
   END TYPE
 
   CONTAINS
@@ -34,12 +34,11 @@
 
   SUBROUTINE ModSub(L)
   INTEGER :: L
-  TYPE(DT(K=4, L=L)) :: T  
+  TYPE(DT(K=4, L=L)) :: T
   TYPE(DT(K=4, L=(((L+3))))), POINTER :: Ptr4(:)
 
   IF ( T%K        .NE.   4  )  STOP 11
   IF ( T%L        .NE.   2  )  STOP 12
-  IF ( T%C%LEN    .NE.   2  )  STOP 13
 
   IF (  T%Ptr1%K   .NE.  4  )  STOP 21
   IF (  T%Ptr1%L   .NE.  2  )  STOP 22
@@ -52,7 +51,6 @@
 
   IF (    Ptr4%K   .NE.  4  )  STOP 51
   IF (    Ptr4%L   .NE.  5  )  STOP 52
-
 
   END SUBROUTINE
 

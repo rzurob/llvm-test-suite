@@ -4,25 +4,19 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrMulInt.f 
+!*  TEST CASE NAME             : dataPtrMulInt.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!* - data-ptr is a component of derived-type BASE that has type bound defined = 
-!* - type base is a component type of derived-type EXTEND 
+!* - data-ptr is a component of derived-type BASE that has type bound defined =
+!* - type base is a component type of derived-type EXTEND
 !* - derived-type intrinsic assignment for objects of type EXTEND
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -33,7 +27,7 @@ module m
     integer, len         :: n1
     integer(k1), pointer :: p(:)
     contains
-       procedure :: defAssgn 
+       procedure :: defAssgn
        generic :: assignment(=) => defAssgn
   end type
 
@@ -47,7 +41,7 @@ module m
        subroutine defAssgn(out, in)
 	   class(base(*,4)), intent(inout) :: out
 	   type(base(*,4)), intent(in) :: in
-       end subroutine 
+       end subroutine
 end module
 
 program main
@@ -59,17 +53,17 @@ program main
 
     e1%bval%p(size(e2%bval%p):) =>  e2%bval%p(10:1:-1)
 
-    if ( .not. associated(e1%bval%p, e2%bval%p(10:1:-1))) stop 1 
+    if ( .not. associated(e1%bval%p, e2%bval%p(10:1:-1))) stop 1
     if ( lbound(e1%bval%p,1) /= 10 ) stop 2
-    if ( ubound(e1%bval%p,1) /= 19 ) stop 3 
+    if ( ubound(e1%bval%p,1) /= 19 ) stop 3
 
     print *, e2%bval%p
-    print *, e1%bval%p 
+    print *, e1%bval%p
 
     e1 = e2
 
-    print *, e2%bval%p * 2 
-    print *, e1%bval%p * (/ (2, i=1,10 ) /) 
+    print *, e2%bval%p * 2
+    print *, e1%bval%p * (/ (2, i=1,10 ) /)
 
 end program
 

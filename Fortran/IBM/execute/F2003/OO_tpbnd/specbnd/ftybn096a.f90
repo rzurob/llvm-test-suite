@@ -11,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : ftybn096a.f
-!*  TEST CASE TITLE            : type-bound procedure
 !*
-!*  PROGRAMMER                 : Catherine Sun
 !*  DATE                       :
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : pass binding attribute
 !*

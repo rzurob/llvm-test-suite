@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpImplicit7
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 26, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED CLASS PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The implicit statement
-!*  polymorphism -- the mix of deferred and assumed type parameters 
-!* 
+!*  polymorphism -- the mix of deferred and assumed type parameters
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -43,13 +34,13 @@
     INTEGER, LEN  :: L0=1
     CONTAINS
     PROCEDURE :: ModFun
-  END TYPE 
+  END TYPE
 
   TYPE,  EXTENDS(DT0)  :: DT1(K1, L1)
     INTEGER(K0), KIND :: K1=1
     INTEGER(K0), LEN  :: L1=1
     REAL(K1) :: R(L1)=K1
-  END TYPE 
+  END TYPE
 
   TYPE, EXTENDS(DT1) :: DT2(K2,L2)
     INTEGER(K1), KIND :: K2=1
@@ -57,8 +48,8 @@
     CHARACTER(L2) :: C(L2)=CHAR(K2)
     INTEGER(K2)   :: I(L2)=K2
     CLASS(DT2(K0,L0,K1,L0,K2,L2)), POINTER :: Ptr=>NULL()
-  END TYPE 
-  
+  END TYPE
+
   INTERFACE
     SUBROUTINE ExtSub(R,S,T, N)
     IMPORT

@@ -1,14 +1,9 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: $TR_SRC/run.sh fxbind_c04efa  cxbind_c04efa
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -18,42 +13,33 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c04efa.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran Entry in function called from C
-!*                              - interop functions contained in Module. 
+!*                              - interop functions contained in Module.
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !*   - Test: BINC(C) attribute with  different intrinsic data type,
 !*           integer*1, integer*2,integer*4,integer*8.
-!*           
-!*   - The interoperable  procedure itself is  implemented using Fortran 
-!*     function Entry Statement.  
+!*
+!*   - The interoperable  procedure itself is  implemented using Fortran
+!*     function Entry Statement.
 !*   - passing scalar arguments by REFERENCE and by VALUE
 !*   - primary entry point have bind(c) attribute  and an alternate
 !*     entry point do not have bind(c) attribute.
 !*   - main written in C, C  calls FORTRAN functions.
 !*
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. C program call the Fortran function has a primary entry
 !*             point and an alternate entry point.
 !*          2. Assertion: Check the return value from Fortran Function
 !*             and argument in C to verify it is correct.
-!*             
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -74,7 +60,7 @@ contains
     a = a + 1
     b = b + 1
     return
-    entry ent_int1 (a, b) 
+    entry ent_int1 (a, b)
     a = a + 1
     b = b + 1
     ent_int1 = a + b
@@ -90,7 +76,7 @@ contains
     a = a + 1
     b = b + 1
     return
-    entry ent_int2 (a, b) 
+    entry ent_int2 (a, b)
     a = a + 1
     b = b + 1
     ent_int2 = a + b
@@ -106,7 +92,7 @@ contains
     a = a + 1
     b = b + 1
     return
-    entry ent_int4 (a, b) 
+    entry ent_int4 (a, b)
     a = a + 1
     b = b + 1
     ent_int4 = a + b
@@ -122,7 +108,7 @@ contains
     a = a + 1
     b = b + 1
     return
-    entry ent_int8 (a, b) 
+    entry ent_int8 (a, b)
     a = a + 1
     b = b + 1
     ent_int8 = a + b
@@ -138,7 +124,7 @@ contains
     b = b +1
     fn_intval1 = a * b
     return
-    entry ent_intval1 (a, b) 
+    entry ent_intval1 (a, b)
     a = a +1
     b = b +1
     ent_intval1 = a + b
@@ -154,7 +140,7 @@ contains
     b = b +1
     fn_intval2 = a * b
     return
-    entry ent_intval2 (a, b) 
+    entry ent_intval2 (a, b)
     a = a +1
     b = b +1
     ent_intval2 = a + b
@@ -170,7 +156,7 @@ contains
     b = b +1
     fn_intval4 = a * b
     return
-    entry ent_intval4 (a, b) 
+    entry ent_intval4 (a, b)
     a = a +1
     b = b +1
     ent_intval4 = a + b
@@ -186,7 +172,7 @@ contains
     b = b +1
     fn_intval8 = a * b
     return
-    entry ent_intval8 (a, b) 
+    entry ent_intval8 (a, b)
     a = a +1
     b = b +1
     ent_intval8 = a + b

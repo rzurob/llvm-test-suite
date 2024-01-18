@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: StrComp4.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: StrComp4.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : StrComp4.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : StrComp4.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Structure component - Paramter 
-!*  () 
+!*
+!*  Structure component - Paramter
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -59,12 +53,12 @@
       INTEGER(K2)    :: ChildID=2
       TYPE(Base(K2)) :: BComp=Base(K2)(-1, NULL())
     END TYPE
- 
+
   END MODULE
 
-  PROGRAM StrComp4  
+  PROGRAM StrComp4
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE(DT(4)), PARAMETER :: Para=DT(4)(-2,              &
                            &     Base(4)(-3, NULL()))

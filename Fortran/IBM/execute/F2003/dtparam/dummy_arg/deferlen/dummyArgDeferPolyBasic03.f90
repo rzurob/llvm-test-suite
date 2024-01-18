@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyBasic03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyBasic03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 17 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  1. polymorphic allocatable derived type is array 
+!*  1. polymorphic allocatable derived type is array
 !*  2. parent type and child type both have derived type component
 !*  3. length type parameter of derived type component are expression.
 !*  4. actual argument has been allocated to child type, dummy argument has intent(in) attribute, verify dummy argument result in last level of procedure call
@@ -29,7 +21,7 @@ module m
   type nest(l)
      integer,len  :: l
      character(l) :: c
-  end type 
+  end type
   type base(l1)
       integer,len  :: l1
       type(nest(2*l1+1)) :: nest1
@@ -44,14 +36,14 @@ module m
 
     subroutine sub1(arg)
 
-      class(base(*)),intent(in) :: arg(:) 
+      class(base(*)),intent(in) :: arg(:)
       call sub2(arg)
     end subroutine
 
     subroutine sub2(arg)
 
       class(base(*)),intent(in) :: arg(5:)
-      
+
       select type(arg)
         class is(child(*,*))
           call sub3(arg)
@@ -64,7 +56,7 @@ module m
     subroutine sub3(arg)
 
       type(child(*,*)),intent(in) :: arg(:)
-     
+
       if(lbound(arg,1) /= 1)                 error stop 10_4
       if(ubound(arg,1) /= 2)                 error stop 11_4
       if(arg%l1 /= 3)                        error stop 12_4
@@ -87,7 +79,7 @@ program dummyArgDeferPolyBasic03
   class(base(3)),allocatable :: base1(:)
 
   allocate( child(3,4) :: base1(0:1))
-  
+
   base1(0)%nest1 = nest(7)("abcdefg")
   base1(1)%nest1 = nest(7)("1234567")
 

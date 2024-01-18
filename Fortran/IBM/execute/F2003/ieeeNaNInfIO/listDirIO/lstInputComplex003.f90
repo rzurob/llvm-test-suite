@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : lstInputComplex003.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 23, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -45,7 +39,7 @@
       ! 16-bytes real part of each complex number
       real(16)      :: rl1r, rl2r, rl3r, rl4r, rl5r, rl6r, rl7r, rl8r, &
      &                 rl9r, rl10r
-      
+
       ! 8-bytes equivalence of the imaginary part of each complex number
       real(8)       :: rl1ie, rl2ie, rl3ie, rl4ie, rl5ie, rl6ie, rl7ie,&
      &                 rl8ie, rl9ie, rl10ie
@@ -63,7 +57,7 @@
      &                ii9r, ii10r
       integer      :: i1
       character(3) :: c1
-      
+
       integer(4) :: ios = 0, count = 0
 
       logical precision_r8
@@ -80,9 +74,9 @@
       equivalence(rl10i, ii10i, rl10ie)
       equivalence(rl10r, ii10r, rl10re)
 
-      
+
       open(in, file='lstInputComplex003.dat', action='read')
-      
+
       do
          count = count + 1
 
@@ -97,26 +91,26 @@
          ! read in the values
          read(in,*, iostat=ios)                                       &
      &        cx1, cx2, cx3, cx4, i1, cx5, cx6, c1, cx7, cx8, cx9, cx10
-         
+
          if ( is_iostat_end(ios) ) exit ! end of file - leave the loop
-         
+
          ! validate the values read into the variables one by one
          ! The 2 least significant digits of the return value indicate
-         ! which item in the input list caused the error. 
+         ! which item in the input list caused the error.
          ! The most significant digits represent the input count number.
-         
-         
+
+
          ! checking cx1: (+inf, +inf)
          rl1r = qreal(cx1)
          rl1i = qimag(cx1)
-         
+
          if( ieee_is_finite(rl1re) .or. ( ii1r .le. 0 ) )              &
      &        call zzrc( (count*100_4) + 1_4 )
 
          if( ieee_is_finite(rl1ie) .or. ( ii1i .le. 0 ) )              &
      &        call zzrc( (count*100_4) + 2_4 )
-         
-         
+
+
          ! checking cx2: (-inf, -inf)
          rl2r = qreal(cx2)
          rl2i = qimag(cx2)
@@ -186,7 +180,7 @@
          ! checking cx7: (+inf, -nan(s))
          rl7r = qreal(cx7)
          rl7i = qimag(cx7)
-         
+
          if ( ieee_is_finite(rl7re) .or. ( ii7r .le. 0 ) )             &
      &        call zzrc( (count*100_4) + 15_4 )
 
@@ -213,19 +207,19 @@
 
          if ( .not. precision_r8(rl9re, -2.0_8) )                      &
      &        call zzrc( (count*100_4) + 19_4 )
-         
+
          if ( ( .not. ieee_is_nan(rl9ie) ) .or.                        &
      &        ( ieee_class(rl9ie) .ne. ieee_signaling_nan ) .or.       &
      &        ( ii9i .ge. 0 ) ) call zzrc( (count*100_4) + 20_4 )
-         
-         
+
+
          ! checking cx10: (-inf, +3.0)
          rl10r = qreal(cx10)
          rl10i = qimag(cx10)
 
          if ( ieee_is_finite(rl10re) .or. ( ii10r .ge. 0 ) )           &
      &        call zzrc( (count*100_4) + 21_4 )
-         
+
          if ( .not. precision_r8(rl10ie, 3.0_8) )                      &
      &        call zzrc( (count*100_4) + 22_4 )
 
@@ -235,7 +229,7 @@
          print *, "Error: No or bad input file"
          stop 1
       end if
-      
+
       close(in)
 
       end

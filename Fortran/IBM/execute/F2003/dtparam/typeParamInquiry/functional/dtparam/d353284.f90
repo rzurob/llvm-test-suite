@@ -1,26 +1,18 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d353284.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d353284.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : September 01 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : September 01 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. DEFECT 353284
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -29,7 +21,7 @@ module m
          integer,kind :: k1
          integer(k1*4),kind :: k2
 
-         integer :: i=k2%kind 
+         integer :: i=k2%kind
    end type
 end module
 

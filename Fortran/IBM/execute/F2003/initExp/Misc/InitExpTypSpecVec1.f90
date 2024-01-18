@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecVec1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecVec1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  vector subscript 
-!* 
-!*  
-!* 
+!*  vector subscript
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypSpecVec1 
+  PROGRAM InitExpTypSpecVec1
   IMPLICIT NONE
 
   INTEGER :: I
@@ -57,7 +47,7 @@
   REAL,     PARAMETER :: RR(128)=[(I,      I=-1, -128, -1)]
   COMPLEX,  PARAMETER :: ZR(128)=[((I,-I), I=-1, -128, -1)]
 
- 
+
   REAL(KIND=4),  PARAMETER :: R4(128)=RV4(S1)
   REAL(KIND=8),  PARAMETER :: R8(128)=RV8(S2)
   REAL(KIND=16), PARAMETER :: R6(128)=RV6(S8)
@@ -79,4 +69,4 @@
 
   END
 
- 
+

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp PtrAssignTarExpr1.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PrtAssignTarExpr1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PrtAssignTarExpr1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 12, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,19 +30,18 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*  C726 (R742) An expr shall be a reference to a function whose result
 !*  is a procedure pointer.
-!* 
-!* 
-!*  (306632) 
+!*
+!*  (306632)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
 
-  CONTAINS 
+  CONTAINS
 
     FUNCTION IFun()
     INTEGER, POINTER :: IFun
@@ -82,7 +75,7 @@
     LOGICAL, POINTER :: LFun
       !ALLOCATE(LFun, SOURCE=.TRUE.)
       ALLOCATE(LFun)
-      LFun = .TRUE.     
+      LFun = .TRUE.
     END FUNCTION
 
     FUNCTION BFun()
@@ -95,16 +88,16 @@
   END MODULE
 
 
-  PROGRAM PrtAssignTarExpr1 
+  PROGRAM PrtAssignTarExpr1
   USE M
   IMPLICIT NONE
 
-  PROCEDURE(INTEGER),          POINTER :: IPtr 
-  PROCEDURE(REAL),             POINTER :: RPtr 
-  PROCEDURE(CHARACTER),        POINTER :: CPtr 
-  PROCEDURE(DOUBLE PRECISION), POINTER :: DPtr 
-  PROCEDURE(LOGICAL),          POINTER :: LPtr 
-  PROCEDURE(Byte),             POINTER :: BPtr 
+  PROCEDURE(INTEGER),          POINTER :: IPtr
+  PROCEDURE(REAL),             POINTER :: RPtr
+  PROCEDURE(CHARACTER),        POINTER :: CPtr
+  PROCEDURE(DOUBLE PRECISION), POINTER :: DPtr
+  PROCEDURE(LOGICAL),          POINTER :: LPtr
+  PROCEDURE(Byte),             POINTER :: BPtr
 
     IPtr  => IFun()
 

@@ -1,22 +1,10 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cmplxFromUlmtToProcPnt.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : 1.FROM is of type complex(4)
 !*                               2.TO and pointer are of type class(*)
@@ -32,7 +20,7 @@
 
 program main
 
-        interface 
+        interface
             subroutine sub(a1, a2)
                 complex(4), allocatable :: a1(:)
                 class(*), allocatable :: a2(:)
@@ -64,7 +52,7 @@ program main
                  if ( .not. precision_x8 (p(2),(20.0000,1.0000))) &
                             error stop 31_4
             class default
-                 stop 41 
+                 stop 41
         end select
 end program
 

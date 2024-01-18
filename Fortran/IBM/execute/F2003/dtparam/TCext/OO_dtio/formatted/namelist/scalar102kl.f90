@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar102kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar102 by Robert Ma)
 !*  DATE                       : 2007-07-10 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting inside DTIO procedure (input)
@@ -78,7 +70,7 @@ program scalar102kl
    if (( stat /=  0 ) .or. ( msg /= 'dtioread' ) ) error stop 3_4
    read  (1,*, iostat=stat, iomsg=msg)      b5
    if (( stat /=  0 ) .or. ( msg /= 'dtioread' ) ) error stop 4_4
-   
+
    if ( b1%c /= 'ABC' )  error stop 5_4
    if ( b2%c /= 'DEF' )  error stop 6_4
    if ( b3%c /= 'GHI' )  error stop 7_4
@@ -98,12 +90,12 @@ subroutine readformatted (dtv, unit, iotype, v_list, iostat, iomsg)
    character(*), intent(inout) :: iomsg
    character(3), target :: c
    namelist /nml1/ c
-   
+
    if ( iotype /= "LISTDIRECTED" ) error stop 7_4
    if ( size(v_list, 1) /= 0 ) error stop 8_4
 
    read (unit, nml1, iostat=iostat )
-   
+
    allocate( dtv%c, source = c )
 
    iomsg = 'dtioread'

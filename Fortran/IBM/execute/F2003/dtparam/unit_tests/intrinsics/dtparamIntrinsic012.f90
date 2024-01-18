@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Intrinsic  with Derived Type Parameter
 !*
-!* PROGRAMMER                 : James Ren
 !* DATE                       : April 19, 2007
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : lbound, ubound, shape and size intrinsics
 !*
@@ -25,7 +20,7 @@ type, extends(base) :: child(num3)
    type(base(baseKind, baseLen1, baseLen2)) :: ptr(num3)
 end  type
 
-type (child(8, 5, 10, 50)) :: c 
+type (child(8, 5, 10, 50)) :: c
 
 if (lbound(c%ptr, dim=1) .ne. 1) error stop 1
 if (ubound(c%ptr, dim = 1) .ne. 50) error stop 2

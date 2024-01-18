@@ -3,7 +3,7 @@
       Module xlfutility
         integer(4), parameter :: TIME_SIZE = 8
 
-      contains 
+      contains
           integer(4) function alarm_(time, func)
             integer(4), intent(in) ::  time
             integer(4) func
@@ -114,7 +114,7 @@
 
           integer(4) function getgid_()
             print *, "You've caled a fake xlfutility module function."
-            getgid_=1313 
+            getgid_=1313
           end function getgid_
 
           subroutine getlog_(name)
@@ -232,7 +232,7 @@
 
           real(8) function timef()
             print *, "You've caled a fake xlfutility module function."
-            timef=13.13 
+            timef=13.13
           end function timef
 
           function time_()
@@ -253,7 +253,7 @@
             print *, "You've caled a fake xlfutility module function."
             usleep_=1313
           end function usleep_
-     
+
           integer(4) function ftell_(lunit)
             integer(4), intent(in) :: lunit
             print *, "You've caled a fake xlfutility module function."
@@ -265,6 +265,5 @@
             print *, "You've caled a fake xlfutility module function."
             ftell64_=1313
           end function ftell64_
-
 
       end module

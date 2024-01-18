@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryMis04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryMis04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
-!* 3. GET LENGTH PARAMETER AT RUN TIME, USE READ   
+!* 3. GET LENGTH PARAMETER AT RUN TIME, USE READ
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(l)
@@ -31,7 +23,7 @@ module m
    end type
 end module
 
-  program dtParameterInquiryMis04 
+  program dtParameterInquiryMis04
   use m
   implicit none
 
@@ -49,9 +41,9 @@ end module
         return
      else
         allocate(base(l=length1) :: b1(bound1))
-        write (*,fmt='(3i6)') i,b1%l,ubound(b1,1)   
-     endif 
-  enddo 
+        write (*,fmt='(3i6)') i,b1%l,ubound(b1,1)
+     endif
+  enddo
 
   do i=1,3
      read (*, fmt ='(2i6)',iostat=ios,iomsg=errmsg) length2,bound2
@@ -63,5 +55,5 @@ end module
         write (*,fmt='(3i6)') i,b2%l,ubound(b2,1)
      endif
   enddo
-  
+
 end

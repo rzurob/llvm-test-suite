@@ -1,45 +1,38 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
 ! %GROUP: ftybn020f.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : ftybn020f.f
-!*  TEST CASE TITLE            : type-bound procedure
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : private derived type 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : non_overridable 
+!*  PRIMARY FUNCTIONS TESTED   : private derived type
 !*
-!*  DESCRIPTION                : testing the type bound procedure  
-!*                               which within a private derived type 
-!*                               
-!*    
+!*  SECONDARY FUNCTIONS TESTED : non_overridable
+!*
+!*  DESCRIPTION                : testing the type bound procedure
+!*                               which within a private derived type
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod1	      
+   module mod1
       type,private :: parent
          integer :: x
 	 contains
       	 procedure, pass, non_overridable :: bind => proc1
-      end type 
+      end type
 
    type(parent) :: dt_p
 
@@ -48,13 +41,13 @@
          class(parent) :: arg1
          arg1%x = 200
       end subroutine
-   
-   end module     
+
+   end module
 
    use mod1
    call dt_p%bind()
-   
+
    if ( dt_p%x .ne. 200) error stop 2_4
 
    end
-   
+

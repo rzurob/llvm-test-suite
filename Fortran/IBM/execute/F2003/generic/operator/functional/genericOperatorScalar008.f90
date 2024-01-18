@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Operator: Scalar with type within types
 !*  KEYWORD(S)                 :
@@ -77,5 +66,5 @@ program genericOperatorScalar008
 
    allocate ( b3, source = ( b1 + b2 + b2 ) )
    if ( b3%b1%i /= 830 )  error stop 3_4
-   
+
 end program

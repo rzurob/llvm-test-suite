@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : sync_images_app_6.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : July 11 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SYNC IMAGES 
+!*  PRIMARY FUNCTIONS TESTED   : SYNC IMAGES
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : CMVC Feature number: 351605.22 
+!*  REFERENCE                  : CMVC Feature number: 351605.22
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
+!*  Sync image small application :
 !*
-!*  Sync image small application :  
-!*  
 !*  Mixed Use of sync images(index_arr) with sync images(index)
-!*  
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   PROGRAM sync_images_app_6
   IMPLICIT NONE
   INTEGER :: num_img, me, i, j
@@ -45,23 +38,23 @@
 
   IF (num_img .EQ. 1) STOP
 
-  DO i=1, num_img 
+  DO i=1, num_img
     IF (me .EQ. i) THEN
-      work = i 
-      SYNC IMAGES([(j, j=1,i-1),(j, j=i+1,num_img)]) 
+      work = i
+      SYNC IMAGES([(j, j=1,i-1),(j, j=i+1,num_img)])
       IF (work .NE. i) ERROR STOP "err 11"
       IF (work[mod(i,num_img)+1] .NE. i) ERROR STOP "err 12"
-    ELSE 
-      CALL intsub(work, i) 
-      SYNC IMAGES(i) 
+    ELSE
+      CALL intsub(work, i)
+      SYNC IMAGES(i)
       IF (work .NE. i) ERROR STOP "err 13"
          !print*, "before if ", me, work[mod(i,num_img)+1], i
-      IF (work[mod(i,num_img)+1] .NE. i) THEN 
+      IF (work[mod(i,num_img)+1] .NE. i) THEN
          print*, me, work[mod(i,num_img)+1], i
-         ERROR STOP "err 14" 
+         ERROR STOP "err 14"
       END IF
     END IF
-    SYNC IMAGES(*) 
+    SYNC IMAGES(*)
   END DO
 
   CONTAINS

@@ -1,26 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrPackOther.f 
+!*  TEST CASE NAME             : dataPtrPackOther.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
 !* - data-targets are assumed-shape arrays, dummy args of external proc
 !* - data-pointers are module vars, associated with targets in external proc
 !* - type logical, real, & complex
-!*       
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 module m
@@ -43,7 +37,7 @@ end module
 
             subroutine sub3(a)
 		complex, target :: A(:,:)
-	    end subroutine	
+	    end subroutine
         end interface
 
         logical, target :: lt(1:5,11:13,21:22)
@@ -56,7 +50,7 @@ end module
 
         call sub1(lt)
 
-	call foo(11,rt) 
+	call foo(11,rt)
 
 	call foo(ct)
 
@@ -73,13 +67,13 @@ end module
         print *, lbound(cp)
         print *, ubound(cp)
 
-	! verify the value of lp, rp, cp 
+	! verify the value of lp, rp, cp
 	print *, lp
 	print *, pack(lp,lp)
-        write(*, '(5f10.3)') rp 
+        write(*, '(5f10.3)') rp
         write(*, '(6f10.3)') pack(rp, (/ ( i*7 > i*i , i=1,10 ) /) )
 	write (*, '("(",f10.3,", ", f10.3, ")")')  cp
-	write (*, '("(",f10.3,", ", f10.3, ")")')  pack(cp, .true.) 
+	write (*, '("(",f10.3,", ", f10.3, ")")')  pack(cp, .true.)
 
     end program
 
@@ -107,4 +101,4 @@ end module
 	cp(ubound(a,1):ubound(a,1), lbound(a,2):ubound(a,2)) &
 		 => a(2, ubound(a,2):lbound(a,2):-1)
 
-    end subroutine	
+    end subroutine

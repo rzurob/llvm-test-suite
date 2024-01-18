@@ -1,23 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound07
 !*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : apparent ambiguity between elemental and nonelemental procedure
 !*                               The reference is to the nonelemental procedure
-!*                               
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -40,42 +32,42 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
-        CONTAINS 
-         PROCEDURE :: foo1      
+        CONTAINS
+         PROCEDURE :: foo1
          PROCEDURE :: foo2
          GENERIC :: FUNC =>  foo1, foo2
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2)
-        INTEGER, KIND :: k2 
-      END TYPE Child 
+        INTEGER, KIND :: k2
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen(k3)
-        INTEGER, KIND :: k3 
+        INTEGER, KIND :: k3
       END TYPE NextGen
 
-      CONTAINS 
+      CONTAINS
 !*
       ELEMENTAL FUNCTION foo1(Obj,Arg)
-      CLASS(Base(4,*)), INTENT(IN) :: Obj, Arg         ! Arg: rank is 0 
+      CLASS(Base(4,*)), INTENT(IN) :: Obj, Arg         ! Arg: rank is 0
       CHARACTER(20)  :: foo1
-      
-      foo1 = "ele"       
+
+      foo1 = "ele"
 
       END FUNCTION foo1
 
       FUNCTION foo2(Obj,Arg)
-      CLASS(Base(4,*)), INTENT(IN) :: Obj, Arg(*)      ! Arg: rank is 1 
+      CLASS(Base(4,*)), INTENT(IN) :: Obj, Arg(*)      ! Arg: rank is 1
       !TYPE(Base(4,20)) :: foo2
       CHARACTER(20)  :: foo2
 
-      foo2 = "non-ele"       
+      foo2 = "non-ele"
 
       END FUNCTION foo2
 
@@ -83,9 +75,9 @@
 !*
       PROGRAM Generic_TypeBound07
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(Base(4,:)), POINTER :: poly1 
+      CLASS(Base(4,:)), POINTER :: poly1
       TYPE(Child(4,5,4)), TARGET :: tgt1
       TYPE(Base(4,5))  :: base1
       TYPE(NextGen(4,10,4,4)) :: nxtg
@@ -102,26 +94,26 @@
       CLASS(NextGen(4,:,4,4)), POINTER :: ptr_nxtg(:)
 
 !*
-!  The following will call foo1 
+!  The following will call foo1
 !*
       IF( base1%FUNC(base1) .NE. "ele" ) STOP 10
       IF( base1%FUNC(tgt1) .NE. "ele" ) STOP 11
       IF( base1%FUNC(nxtg) .NE. "ele" ) STOP 12
 
-      ALLOCATE(Base(4,10):: poly1)      
+      ALLOCATE(Base(4,10):: poly1)
       IF( poly1%FUNC(base1) .NE. "ele" ) STOP 13
       IF( poly1%FUNC(tgt1) .NE. "ele" ) STOP 14
       IF( poly1%FUNC(nxtg) .NE. "ele" ) STOP 15
       IF( poly1%FUNC(poly1) .NE. "ele" ) STOP 16
 
-      poly1 => tgt1                       
+      poly1 => tgt1
       IF( poly1%FUNC(base1) .NE. "ele" ) STOP 17
       IF( poly1%FUNC(tgt1) .NE. "ele" ) STOP 18
       IF( poly1%FUNC(nxtg) .NE. "ele" ) STOP 19
       IF( poly1%FUNC(poly1) .NE. "ele" ) STOP 20
 
 !*
-!  The following will call foo2 
+!  The following will call foo2
 !*
       IF( nxtg%FUNC(arr_child) .NE. "non-ele" ) STOP 21
       IF( poly1%FUNC(arr_child) .NE. "non-ele" ) STOP 22

@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Adrian Green
 !*  DATE                       : July 27, 2008
 !*  ORIGIN                     : XLF Compiler Test,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !       Pack Intrinsic function with derived type parameters.
-!*  DESCRIPTION                : PACK uses pack with a derived type component with a deffered length parameter 
+!*  DESCRIPTION                : PACK uses pack with a derived type component with a deffered length parameter
 !*								Derived type has real and integer array components
-!*
-!*
 !*
 module m1
 	type dtp(l)
@@ -64,7 +56,7 @@ res = pack (point, mask1, vec)
 print *, "comp"
 do i = 1,8
 	print *, res(i)%comp(1), '  ', res(i)%comp(2), '  ', res(i)%comp(3)
-end do 
+end do
 print *, "com"
 do i = 1,8
 	print *, res(i)%com

@@ -20,10 +20,10 @@
        if (ccc .ne. "YES") then
          error stop 2
        end if
-       
+
        if (ll .neqv. .false.) then
          error stop 3
-       end if 
+       end if
 
        close(11, status="delete")
        end

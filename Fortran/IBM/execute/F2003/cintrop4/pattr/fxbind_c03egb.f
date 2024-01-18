@@ -1,14 +1,9 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: $TR_SRC/run.sh fxbind_c03egb cxbind_c03egb
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -18,36 +13,28 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c03egb.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran Entry in function called from C
-!*            
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !*   - Test: BINC(C) attribute with  different intrinsic data type,
 !*           real*4,real*8.
-!*   - The interoperable  procedure itself is  implemented using Fortran 
-!*     function Entry Statement.  
+!*   - The interoperable  procedure itself is  implemented using Fortran
+!*     function Entry Statement.
 !*   - primary entry point do not  have bind(c) attribute  and an alternate
 !*     entry point  have bind(c) attribute.
 !*   - passing scalar arguments by REFERENCE and by VALUE
 !*   - main written in C, C  calls FORTRAN functions.
 !*
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. C program call the Fortran function has a primary entry
 !*            point and an alternate entry point.
 !*          2. Assertion: Check the return value  in C
@@ -62,7 +49,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-function fn_real4 (a, b) 
+function fn_real4 (a, b)
   real(4), intent(inout) :: a
   real(4), intent(inout) :: b
   real(4)             :: fn_real4
@@ -78,7 +65,7 @@ function fn_real4 (a, b)
   return
 end function fn_real4
 
-function fn_real8 (a, b) 
+function fn_real8 (a, b)
   real(8), intent(inout) :: a
   real(8), intent(inout) :: b
   real(8)             :: fn_real8
@@ -94,7 +81,7 @@ function fn_real8 (a, b)
   return
 end function fn_real8
 
-function fn_realval4 (a, b) 
+function fn_realval4 (a, b)
   real(4), value :: a
   real(4), value :: b
   real(4)             :: fn_realval4
@@ -110,7 +97,7 @@ function fn_realval4 (a, b)
   return
 end function fn_realval4
 
-function fn_realval8 (a, b) 
+function fn_realval8 (a, b)
   real(8), value :: a
   real(8), value :: b
   real(8)             :: fn_realval8

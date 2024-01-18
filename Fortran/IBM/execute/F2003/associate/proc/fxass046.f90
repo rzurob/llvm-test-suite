@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass046.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass046.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -56,7 +44,7 @@
 !*
 !*  DESCRIPTION                : Test: ASSOCIATE with expressions with
 !*                                     real data types. calling recursive
-!*                                     subrouitne using module.using 
+!*                                     subrouitne using module.using
 !*                                     associate in inside the subroutine.
 !*                                     the subroutine.
 !*
@@ -70,8 +58,8 @@
 !* ===================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890
       module act
- 
-      interface 
+
+      interface
       recursive subroutine real_sub(a,c)
             real a
             real, intent(out) :: c
@@ -112,24 +100,24 @@
       real*16 c16 / 2.0q0 /
 
       logical :: precision_r4, precision_r6, precision_r8
- 
+
       call real_sub(a,c)
-         if(c .eq. 0.0)then 
+         if(c .eq. 0.0)then
            error stop 10
          endif
 
       call real4_sub(a4,c4)
-         if(c4 .eq. 0.0)then 
+         if(c4 .eq. 0.0)then
            error stop 13
          endif
 
       call real8_sub(a8,c8)
-         if(c8 .eq. 0.0_8)then 
+         if(c8 .eq. 0.0_8)then
            error stop 14
          endif
 
       call real16_sub(a16,c16)
-         if(c16 .eq. 0.0_16)then 
+         if(c16 .eq. 0.0_16)then
            error stop 15
          endif
 
@@ -140,7 +128,7 @@
             real a
             real, intent(out) :: c
             logical :: precision_r4, precision_r6, precision_r8
-            
+
             c = a*2 + 1.0
             if ( a .le. 1.0) then
               associate ( arg => a*2 + 1.0 )

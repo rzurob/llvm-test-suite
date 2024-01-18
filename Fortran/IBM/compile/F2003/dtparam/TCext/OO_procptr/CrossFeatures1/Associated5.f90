@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp Associated5.f 
+! %POSTCMD: tcomp Associated5.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Associated5.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Associated5.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 9, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Procedure pointer with data target. 
-!*   
-!*  () 
+!*
+!*  Procedure pointer with data target.
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -56,29 +50,29 @@
     END TYPE
   END MODULE
 
-  PROGRAM Associated5 
+  PROGRAM Associated5
   USE M
-  IMPLICIT NONE 
-  
-  PROCEDURE(TYPE(DT(20,4))), POINTER :: ProcPtr=>NULL() 
+  IMPLICIT NONE
+
+  PROCEDURE(TYPE(DT(20,4))), POINTER :: ProcPtr=>NULL()
   TYPE ( DT(20,4) ),   TARGET        :: V
 
   TYPE(DT(:,4)), POINTER    :: DataPtr=>NULL()
-  PROCEDURE (TYPE(DT(20,4))) :: Fun 
+  PROCEDURE (TYPE(DT(20,4))) :: Fun
 
-  PROCEDURE(TYPE(DT(20,4))), POINTER :: ProcPtr1=>NULL() 
+  PROCEDURE(TYPE(DT(20,4))), POINTER :: ProcPtr1=>NULL()
   TYPE(DT(:,4)),            POINTER :: DataPtr1=>NULL()
 
 
 
-  ProcPtr => V 
+  ProcPtr => V
 
   DataPtr => Fun
 
   ProcPtr1 => DataPtr1
 
   DataPtr1 => ProcPtr1
-   
+
   END
 
   FUNCTION Fun()
@@ -86,4 +80,4 @@
   TYPE (DT(20,4)) :: Fun
     Fun = DT(20,4)(-1)
   END FUNCTION
- 
+

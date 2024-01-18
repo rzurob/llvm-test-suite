@@ -1,21 +1,18 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f001.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon 
 !*  DATE                       : 2015-02-26
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*
-!*  DESCRIPTION                : - Various kinds of integer variables in DO 
-!*                                 CONCURRENT loops including nested DO 
-!*                                 CONCURRENT loops 
-!*                               - concurrent-limit contains a variable with the 
+!*  DESCRIPTION                : - Various kinds of integer variables in DO
+!*                                 CONCURRENT loops including nested DO
+!*                                 CONCURRENT loops
+!*                               - concurrent-limit contains a variable with the
 !*                                 parameter attribute
-!*                               - scalar-mask-expr contains arrays of various 
+!*                               - scalar-mask-expr contains arrays of various
 !*                                 integer types and logicals
 !*                               - index-name declared in DO CONCURRENT
 !*                                 construct using parameter as kind definition
@@ -36,7 +33,7 @@
         logical :: lvar = .true.
 
         do concurrent (i = 1:20:3, j = 1:300:10)
-        end do 
+        end do
 
         if (i .ne. 100) then
           print *, "do concurrent incrementer modified an external scope variable"
@@ -47,9 +44,9 @@
         if (j .ne. 200) then
           print *, "do concurrent incrementer modified an external scope variable"
           print *, "j: ", j
-          error stop 2 
+          error stop 2
         else
-          do concurrent (i=m:25:m, j=1:m, k=5:m*5:4) 
+          do concurrent (i=m:25:m, j=1:m, k=5:m*5:4)
             i_res(i/5) = i_arr(i/5)
           end do
 
@@ -88,7 +85,7 @@
           error stop 6
         end if
 
-        i_res2 = 0 
+        i_res2 = 0
 
         do concurrent (i = 1:5, j=1:5, lvar .eqv. .true.)
           i_res2(i,j) = i_arr(i) + 10
@@ -111,9 +108,9 @@
         do concurrent (i = 1:10)
           i_res3(i) = i
           do concurrent (j = 1:10)
-            i_res4(j) = j*10 
+            i_res4(j) = j*10
           end do
-        end do      
+        end do
 
         if ( any(i_res3 .ne. (/1,2,3,4,5,6,7,8,9,10/)) .or. &
             &any(i_res4 .ne. (/10,20,30,40,50,60,70,80,90,100/)) ) then
@@ -154,7 +151,7 @@
           print *, "i_res5(4,:): ", i_res5(4,:)
           print *, "i_res5(5,:): ", i_res5(5,:)
           error stop 9
-        end if 
+        end if
 
         i_res3 = 0
         i_res4 = 0
@@ -173,7 +170,7 @@
           print *, "i_res3: ", i_res3
           print *, "i_res4: ", i_res4
           error stop 10
-        end if 
+        end if
 
         i_res2 = 0
         i_res5 = 0
@@ -206,8 +203,8 @@
           print *, "i_res5(3,:): ", i_res5(3,:)
           print *, "i_res5(4,:): ", i_res5(4,:)
           print *, "i_res5(5,:): ", i_res5(5,:)
-          error stop 11 
-        end if 
+          error stop 11
+        end if
 
         i_res3 = 0
         i_res4 = 0
@@ -252,5 +249,5 @@
           print *, "i_res2(5,:): ", i_res2(5,:)
           error stop 14
         end if
- 
+
       end

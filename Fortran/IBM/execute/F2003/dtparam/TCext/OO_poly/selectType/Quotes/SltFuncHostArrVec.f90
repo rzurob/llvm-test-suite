@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltFuncHostArrVec.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltFuncHostArrVec
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 21, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a function call with a host associate name associating to  
-!*   an array with a vector subscript 
+!*
+!*   The selector is a function call with a host associate name associating to
+!*   an array with a vector subscript
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,7 +50,7 @@
         INTEGER, LEN  :: N1
     CONTAINS
       PROCEDURE, NoPASS   :: Called
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base(N2,K2)    ! (4,20,20,4)
       INTEGER, KIND :: K2
@@ -115,14 +109,14 @@
   USE M
   IMPLICIT NONE
   TYPE(Child(4,20,20,4,20,4))  :: V(-20:13,4)
-  
+
   CALL Sub(V(1:2, 2:3))
   ASSOCIATE  (W=>V(1, 2:2))
     IF ( ANY(W%Base%GetId() .NE. -1) ) STOP 54
     IF ( ANY(W%GetId()      .NE. -2) ) STOP 55
     IF ( ANY(W%BaseId       .NE. -1) ) STOP 56
     IF ( ANY(W%ChildId      .NE. -2) ) STOP 57
-  END ASSOCIATE 
+  END ASSOCIATE
 
   CONTAINS
 
@@ -143,7 +137,7 @@
     IF ( .NOT. PRESENT(Arg) ) STOP 11
 
     SELECT TYPE (U => Arg(S1,S2))
-    CLASS IS (Child(4,*,*,4,*,4)) 
+    CLASS IS (Child(4,*,*,4,*,4))
       SELECT TYPE (W => Fun(U))
       TYPE IS (Child(4,*,*,4,*,4))
           ! Check U
@@ -155,7 +149,7 @@
           IF ( ANY(U%GetId()      .NE. -2) )      STOP 36
           IF ( ANY(U%BaseId       .NE. -1) )      STOP 37
           IF ( ANY(U%ChildId      .NE. -2) )      STOP 38
-  
+
           !Check W
           IF ( SIZE(W)          .NE. 4 )          STOP 41
           IF ( ANY (LBOUND(W)   .NE. (/2, 2/) ) ) STOP 42
@@ -176,9 +170,9 @@
 
   END SELECT
 
-  END SUBROUTINE 
- 
- 
+  END SUBROUTINE
+
+
   END
 
 

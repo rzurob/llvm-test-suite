@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgScan7
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 28, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : INDEX 
+!*  SECONDARY FUNCTIONS TESTED : INDEX
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Value.
 !*  Case (iii): The value of the result 1 is zero if no character of STRING is in SET or if the
 !*  length of STRING or SET is zero.
-!* 
-!* 
-!*    
-!*  () 
+!*
+!*  ()
 !*
 !234767890123456789012345678901234567890123456789012345678901234567890
 
@@ -185,6 +175,6 @@
 
 
   END ASSOCIATE
- 
+
   END
 

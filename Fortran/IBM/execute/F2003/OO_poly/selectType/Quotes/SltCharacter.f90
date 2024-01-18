@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: SltCharacter.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: SltCharacter.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltCharacter
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is of character 
+!*
+!*   The selector is of character
 !*    (comp failed)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -55,56 +49,56 @@
   Ptr => C
 
   SELECT TYPE ( As => Ptr )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 30
   TYPE IS (CHARACTER(*))
     IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 31
     IF ( LBOUND(As, 1)    .NE. 1       )   STOP 32
     IF ( ANY(As        .NE. "1") )  STOP 32
   TYPE IS (REAL )
-    STOP 34 
+    STOP 34
   END SELECT
- 
+
   Ptr => C1
- 
+
   SELECT TYPE ( Ptr )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 40
   TYPE IS ( CHARACTER(*) )
     IF ( ANY(SHAPE(Ptr) .NE. (/4/))  )  STOP 42
     IF ( LBOUND(Ptr, 1) .NE. 1       )  STOP 43
     IF ( ANY( Ptr       .NE. "2")    )  STOP 44
   TYPE IS (DOUBLE PRECISION )
-    STOP 45 
+    STOP 45
   END SELECT
-  
+
   Ptr => C2
 
   SELECT TYPE ( As => Ptr(::3) )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 50
   TYPE IS ( CHARACTER(  *) )
     IF ( ANY(SHAPE(As) .NE. (/2/))  )   STOP 51
     IF ( LBOUND(As, 1) .NE. 1       )   STOP 52
     IF ( ANY(As        .NE. "12") )     STOP 52
   TYPE IS (INTEGER)
-    STOP 54 
+    STOP 54
   END SELECT
 
   Ptr => C1
-  
+
   SELECT TYPE ( As => Ptr(3:3) )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     SELECT TYPE ( As => As(1) )
     CLASS DEFAULT
       STOP 60
     TYPE IS ( CHARACTER(*))
       IF ( As   .NE. "2" )  STOP 62
     TYPE IS (BYTE     )
-      STOP 64 
+      STOP 64
     END SELECT
   END SELECT
-  
-  
+
+
   END
 

@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpl50.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,28 +33,27 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Call command line intrinsic routines within forall construct
-!*                             : in parallel region with workshare directive 
-!*                         
-!*  
+!*                             : in parallel region with workshare directive
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD
 
-        character(513)   :: NAME  
-        logical          :: TRIM_NAME 
-        character(2049)  :: CmdLine 
-          
+        character(513)   :: NAME
+        logical          :: TRIM_NAME
+        character(2049)  :: CmdLine
+
         COMMON /sargs/CmdLine, NAME, TRIM_NAME
 
-      END MODULE 
+      END MODULE
 
 
-      BLOCK DATA 
+      BLOCK DATA
 
-        character(513)   :: NAME  
-        logical          :: TRIM_NAME 
-        character(2049)  :: CmdLine 
-          
+        character(513)   :: NAME
+        logical          :: TRIM_NAME
+        character(2049)  :: CmdLine
+
         COMMON /sargs/CmdLine, NAME, TRIM_NAME
 
         DATA CmdLine /"fxclpl50 1 a"/, NAME /'CmdLine   '/, TRIM_NAME /.true./
@@ -75,7 +68,7 @@
       IMPLICIT NONE
 
 
-      INTERFACE 
+      INTERFACE
 
         PURE LOGICAL FUNCTION SF_GET_CMD()
         END FUNCTION
@@ -89,16 +82,16 @@
 
       END INTERFACE
 
- 
+
       INTEGER  CMD_ARG_COUNT
       LOGICAL  GET_CMD
-      LOGICAL  GET_CMD_ARG 
+      LOGICAL  GET_CMD_ARG
       LOGICAL  GET_ENV_VAR
- 
+
 
       GET_CMD()       =  SF_GET_CMD()
       GET_CMD_ARG()   =  SF_GET_CMD_ARG(COMMAND_ARGUMENT_COUNT())
-      GET_ENV_VAR()   =  SF_GET_ENV_VAR() 
+      GET_ENV_VAR()   =  SF_GET_ENV_VAR()
 
 
       LOGICAL  NumOfExec(10), LJunk(10)
@@ -107,56 +100,56 @@
 
      NumOfExec = .true.
 
-    !$OMP  PARALLEL  
+    !$OMP  PARALLEL
 
     !$OMP WORKSHARE
-      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.) 
+      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.)
         Junk(I) = COMMAND_ARGUMENT_COUNT()
       END FORALL
     !$OMP END WORKSHARE
 
-        if ( ANY(Junk .ne. 2 ) ) & 
+        if ( ANY(Junk .ne. 2 ) ) &
         then
           error stop 73
         endif
 
 
     !$OMP WORKSHARE
-      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.) 
-       LJunk(I) = GET_CMD() 
+      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.)
+       LJunk(I) = GET_CMD()
       END FORALL
     !$OMP END WORKSHARE
 
-       if ( ANY(LJunk .eqv. .false. ) ) & 
+       if ( ANY(LJunk .eqv. .false. ) ) &
        then
          error stop 74
        endif
 
     !$OMP WORKSHARE
-      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.) 
+      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.)
        LJunk(I) = GET_CMD_ARG()
       END FORALL
     !$OMP END WORKSHARE
 
-       if ( ANY(LJunk .eqv. .false. ) ) & 
+       if ( ANY(LJunk .eqv. .false. ) ) &
        then
          error stop 75
        endif
 
     !$OMP WORKSHARE
-      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.) 
-       LJunk(I) = GET_ENV_VAR() 
+      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.)
+       LJunk(I) = GET_ENV_VAR()
       END FORALL
     !$OMP END WORKSHARE
 
-       if ( ANY(LJunk .eqv. .false. ) ) & 
+       if ( ANY(LJunk .eqv. .false. ) ) &
        then
          error stop 76
        endif
 
-    !$OMP END PARALLEL  
+    !$OMP END PARALLEL
 
-      END 
+      END
 
 
       FUNCTION SF_GET_CMD()
@@ -166,29 +159,29 @@
       LOGICAL SF_GET_CMD
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE 
-      integer          :: ARGCOUNT 
-          
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
+
 
       integer              :: CmdCount
       character(2047)      :: Argument
       integer              :: i, j
- 
+
       SF_GET_CMD = .true.
 
       call GET_COMMAND(COMMAND, LENGTH, STATUS)
       if ( (TRIM(COMMAND) .ne. TRIM(CmdLine))  .or. &
            (LENGTH .ne. LEN(TRIM(CmdLine)))    .or. &
            (STATUS .ne. 0) )                        &
-      then 
-        SF_GET_CMD = .false. 
+      then
+        SF_GET_CMD = .false.
         ! error stop 64
       endif
 
-      END FUNCTION 
+      END FUNCTION
 
       FUNCTION SF_GET_CMD_ARG(CmdCount)
 
@@ -197,20 +190,20 @@
       LOGICAL SF_GET_CMD_ARG
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE 
-      integer          :: ARGCOUNT 
-          
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
+
       integer              :: CmdCount
       character(2047)      :: Argument
       integer              :: i, j
- 
+
       SF_GET_CMD_ARG = .true.
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -229,23 +222,23 @@
 
 
 
-      FUNCTION SF_GET_ENV_VAR() 
+      FUNCTION SF_GET_ENV_VAR()
 
       USE MOD
 
       LOGICAL SF_GET_ENV_VAR
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE 
-      integer          :: ARGCOUNT 
-          
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
+
       integer              :: CmdCount
       character(2047)      :: Argument
       integer              :: i, j
- 
+
       SF_GET_ENV_VAR = .true.
       call GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
       if ( (TRIM(VALUE) .ne. TRIM(CmdLine))  .or. &
@@ -258,6 +251,6 @@
 
 
       END FUNCTION
- 
+
       INCLUDE 'cmdline.include'
 

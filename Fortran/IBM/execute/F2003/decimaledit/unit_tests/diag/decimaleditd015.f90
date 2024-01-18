@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditd015.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,26 +12,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditd015
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Dec. 09, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : providing support for the DECIMAL=
 !*                               specifier and decimal edit mode control
 !*                               descriptors. Feature 289039.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qdebug=intmsg
 !*
-!*  DESCRIPTION                : This diagnostic test, checks different 
+!*  DESCRIPTION                : This diagnostic test, checks different
 !*                               invalid forms of the dc and dp descriptors.
 !*                               This test is for compile-time encoding.
 !*
@@ -49,5 +42,5 @@
       write(*,"(dp4.2,f4.2)") 3.14
       write(*,"(dp.,f4.2)") 3.14
       write(*,"(.dc,f4.2)") 3.14
-      
+
       end

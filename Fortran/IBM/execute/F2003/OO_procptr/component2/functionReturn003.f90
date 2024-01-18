@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_procptr/component2
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 06/18/2005
 ! PRIMARY FUNCTIONS TESTED   : procedure pointer component
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : The target of a procedure pointer is
 !                              specified by function return. Do not
 !                              specify proc-interface. Associate the
@@ -82,8 +78,8 @@ use m
     allocate(b1, SOURCE=Base(5))
     c1%pp1 => func1(b1)
     if(.NOT. associated(c1%pp1)) error stop 2_4
-  
-    print *, "func2", c1%pp1(b1) 
+
+    print *, "func2", c1%pp1(b1)
 
     c1%pp1 => null()
     if(associated(c1%pp1)) error stop 3_4

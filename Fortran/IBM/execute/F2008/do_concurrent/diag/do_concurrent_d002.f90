@@ -1,13 +1,11 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                                IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : do_concurrent_d002.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2015-03-20
 !*  ORIGIN                     :
 !*
@@ -15,7 +13,7 @@
 !*  SECONDARY FUNCTIONS TESTED :
 !*  ADAPTED FROM               :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*    - index-name is not an integer
 !*      - single index
 !*      - multiple index
@@ -52,7 +50,7 @@
       DO CONCURRENT (r1 = 0:1, i = 0:1)
       END DO
 
-      DO CONCURRENT (r1_1 = 0:1, i = 0:1) 
+      DO CONCURRENT (r1_1 = 0:1, i = 0:1)
       END DO
 
       DO CONCURRENT (r2_1 = 0:1, i = 0:1 )

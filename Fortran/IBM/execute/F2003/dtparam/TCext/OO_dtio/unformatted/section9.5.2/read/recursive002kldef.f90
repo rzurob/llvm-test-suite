@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : recursive002kldef
 !*
-!*  PROGRAMMER                 : David Forster (derived from recursive002 by Robert Ma)
 !*  DATE                       : 2007-09-17 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2
 !*                                        Try linked list data structure with class hierarchy and container with recursive DTIO
@@ -80,7 +72,7 @@ program recursive002kldef
    allocate ( ll%head%next%next, source = base(3)() ) ! tcx: (3)
    allocate ( ll%head%next%next%next, source = child(3,4)() ) ! tcx: (3,4)
    allocate ( ll%head%next%next%next%next, source = child(3,4) () ) ! tcx: (3,4)
-   	
+
    open (1, file = 'recursive002kldef.1', form='unformatted', access='sequential' )
 
    write (1, iostat=stat, iomsg = msg)      'abc', 'def', 1001, 'ghi', 'jkl', 1002, 'mno', 1003
@@ -98,7 +90,7 @@ program recursive002kldef
             print *, "BASE:  ", dummy%c
          type is (child(*,4)) ! tcx: (*,4)
             print *, "CHILD: ", dummy%c, dummy%i
-      end select            
+      end select
       dummy => dummy%next
    end do
 
@@ -118,7 +110,7 @@ program recursive002kldef
             print *, "BASE:  ", dummy%c
          type is (child(*,4)) ! tcx: (*,4)
             print *, "CHILD: ", dummy%c, dummy%i
-      end select            
+      end select
       dummy => dummy%next
    end do
 

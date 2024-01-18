@@ -1,23 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound_diag01
 !*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
-!*  SECONDARY FUNCTIONS TESTED : Diagnostic test case 
+!*  SECONDARY FUNCTIONS TESTED : Diagnostic test case
 !*                               both procedure have the same number of arguments
 !*                               and the arguments are type compatible
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -40,30 +33,30 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
-        CONTAINS 
-         PROCEDURE, PASS :: foo1      
-         GENERIC :: FUNC =>  foo1 
-      END TYPE Base 
+        CONTAINS
+         PROCEDURE, PASS :: foo1
+         GENERIC :: FUNC =>  foo1
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2)
-        INTEGER, KIND :: k2 
-      END TYPE Child 
+        INTEGER, KIND :: k2
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen(k3)
-        INTEGER, KIND :: k3 
+        INTEGER, KIND :: k3
 
-        CONTAINS 
+        CONTAINS
          PROCEDURE, PASS :: foo2
          GENERIC :: FUNC =>  foo2
       END TYPE NextGen
 
-      CONTAINS 
+      CONTAINS
 !*
       CLASS(Base(4,:)) FUNCTION foo1(Obj)
       CLASS(Base(4,*)) :: Obj  ! Obj is polymorphic and could have the dynamic type NextGen

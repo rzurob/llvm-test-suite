@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignAllocComp02a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignAllocComp02a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 7 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 7 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test defined assignment with interface block
@@ -35,7 +27,7 @@ module m
   type B(k2,l2)
        integer,kind :: k2=2
        integer,len  :: l2=3
-       integer(k2)  :: i1(l2) 
+       integer(k2)  :: i1(l2)
        type(A(2*k2,l2)) :: a2comp
   end type
 
@@ -51,11 +43,11 @@ module m
      module procedure assignC1,assignC2,assignC3,&
                       assignA1,assignA2,assignB1,assignB2
   end interface
- 
+
   contains
 
      subroutine assignC1(this,dt)
-        type(C(2,:)),allocatable,intent(inout) :: this(:) 
+        type(C(2,:)),allocatable,intent(inout) :: this(:)
         type(C(2,*)),intent(in)  :: dt(:)
 
         print *,"in assignC1"
@@ -68,7 +60,7 @@ module m
            this(i)%a1comp=dt(i)%a1comp ! call assignA1
            this(i)%b1comp=dt(i)%b1comp ! call assignB
         end do
- 
+
      end subroutine
 
      subroutine assignC2(this,dt)
@@ -107,11 +99,11 @@ module m
         type(A(2,*)),intent(inout) :: this
         type(A(2,*)),intent(in)    :: dt
 
-        allocate(this%c1(size(dt%c1)),source=dt%c1) 
+        allocate(this%c1(size(dt%c1)),source=dt%c1)
 
-        this%g1=dt%g1 
+        this%g1=dt%g1
 
-     end subroutine    
+     end subroutine
 
      subroutine assignB1(this,dt)
          type(B(2,*)),intent(inout)  :: this
@@ -120,7 +112,7 @@ module m
          print *,"in assignB1"
 
          this%i1=dt%i1          ! call intrinsic assignment
-         this%a2comp=dt%a2comp  ! call assignA2 
+         this%a2comp=dt%a2comp  ! call assignA2
 
      end subroutine
 
@@ -131,10 +123,10 @@ module m
          print *,"in assignB2"
 
          do i=lbound(this,1),ubound(this,1)
-           
+
            this(i)%i1=dt(i)%i1          ! call intrinsic assignment
            this(i)%a2comp=dt(i)%a2comp  ! call assignA2
-        
+
          end do
 
      end subroutine
@@ -147,15 +139,14 @@ module m
 
         this%c1=dt%c1 ! call intrinsic assignment
         this%g1=dt%g1 ! call intrinsic assignment
-   
-     end subroutine
 
+     end subroutine
 
      subroutine verify1(dt)
         type(C(2,*)),intent(in) :: dt
 
         if(dt%k3 /= 2)                                    stop 10
-        if(dt%l3 /= 2)                                    stop 11 
+        if(dt%l3 /= 2)                                    stop 11
         if(dt%a1comp%k1 /= 2)                             stop 12
         if(dt%a1comp%l1 /= 1)                             stop 13
         if(any(dt%a1comp(1)%c1 /= ["AB","CD","EF"]))      stop 14
@@ -163,14 +154,14 @@ module m
         if(any(dt%a1comp(1)%g1 .neqv. .true.))            stop 16
         if(any(dt%a1comp(2)%g1 .neqv. .false.))           stop 17
         if(dt%b1comp%k2 /= 2 )                            stop 18
-        if(dt%b1comp%l2 /= 2 )                            stop 19 
+        if(dt%b1comp%l2 /= 2 )                            stop 19
         if(any(dt%b1comp%i1 /= [1,2]))                    stop 20
         if(dt%b1comp%a2comp%k1 /= 4)                      stop 21
         if(dt%b1comp%a2comp%l1 /= 2)                      stop 22
         if(any(dt%b1comp%a2comp%c1 /= ["WOOD","FOOD","MOOD"]))  stop 23
         if(any(dt%b1comp%a2comp%g1 .neqv. [.true.,.false.]))    stop 24
 
-     end subroutine 
+     end subroutine
 
      subroutine verify2(dt)
         type(C(2,*)),intent(in) :: dt
@@ -226,7 +217,7 @@ program defAssignAllocComp02a
    use m
 
    implicit none
- 
+
    type(A(2,:)),allocatable :: aobj1(:)
 
    type(B(2,2)),allocatable :: bobj1(:)
@@ -239,7 +230,7 @@ program defAssignAllocComp02a
 
    type(C(2,2)),allocatable :: cobj4
 
-   ! call assignC1 
+   ! call assignC1
    cobj1=[C(2,2)(a1comp=[A(2,1)(c1=["AB","CD","EF"],g1=[.true.]), &
                          A(2,1)(c1=["NICE","WELL"],g1=[.false.])] , &
                  b1comp=B(2,2)(i1=[1,2],a2comp=A(4,2) &
@@ -262,10 +253,10 @@ program defAssignAllocComp02a
 
    call verify2(cobj3(1))
 
-   call verify2(cobj3(2))   
+   call verify2(cobj3(2))
 
    ! call assignC3
-   cobj4=cobj2  
+   cobj4=cobj2
 
    call verify1(cobj4)
 
@@ -282,5 +273,5 @@ program defAssignAllocComp02a
    bobj1(0:1)=[cobj1(1)%b1comp,cobj1(2)%b1comp]
 
    call verify4(bobj1)
- 
+
 end program

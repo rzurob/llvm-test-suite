@@ -6,34 +6,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg16.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg16.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg16.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg16.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -41,9 +35,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Argument association -
-!*  Implicit interface 
+!*  Implicit interface
 !* ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,22 +50,22 @@
       INTEGER, LEN              :: N1
       CHARACTER(kind=K1,len=N1) :: C
     END TYPE
- 
+
     INTERFACE
       FUNCTION IntF(Arg)
       IMPORT
-        TYPE(Base(1,*)), INTENT(IN) :: Arg 
-        TYPE(Base(1,3)):: IntF 
+        TYPE(Base(1,*)), INTENT(IN) :: Arg
+        TYPE(Base(1,3)):: IntF
       END FUNCTION
     END INTERFACE
 
- 
+
   END MODULE
 
   PURE FUNCTION ExtFun(Arg)
   USE M
-  TYPE(Base(1,*)), INTENT(IN) :: Arg 
-  TYPE(Base(1,3)) :: ExtFun 
+  TYPE(Base(1,*)), INTENT(IN) :: Arg
+  TYPE(Base(1,3)) :: ExtFun
     ExtFun = Arg
   END FUNCTION
 

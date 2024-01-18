@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu09.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,14 +33,13 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Call command line procedures through external subroutine
-!*                             : which is used for the defined assignment(=) 
-!*                             : with derived type of actual arguments defined in module 
-!*                             : and allocated inside the subroutine 
-!*                             :
+!*                             : which is used for the defined assignment(=)
+!*                             : with derived type of actual arguments defined in module
+!*                             : and allocated inside the subroutine
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD
- 
+
       TYPE DT
 
       character(2049)   :: COMMAND
@@ -75,12 +68,12 @@
         END SUBROUTINE
       END INTERFACE
 
-      TYPE(DT), ALLOCATABLE :: A 
-      TYPE(DT)              :: B 
+      TYPE(DT), ALLOCATABLE :: A
+      TYPE(DT)              :: B
 
 
       A = B
-                  
+
       DEALLOCATE(A)
 
       END
@@ -92,7 +85,7 @@
       TYPE(DT), ALLOCATABLE, INTENT(OUT) :: B
       TYPE(DT),              INTENT(IN)  :: A
 
-      
+
       character(2049)              :: CmdLine = 'fxclpu09 1 a'
       integer                      :: CmdCount, i
       character(2047)              :: Argument
@@ -102,7 +95,7 @@
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 2 ) & 
+      if ( CmdCount .ne. 2 ) &
       then
         error stop 63
       endif
@@ -117,7 +110,7 @@
 
 
       DO i  = 0, CmdCount
-       
+
         B%NUMBER = i
         call GET_COMMAND_ARGUMENT(B%NUMBER, B%VALUE, B%LENGTH, B%STATUS)
         call MyGetArg(CmdLine, B%NUMBER, Argument)
@@ -147,7 +140,7 @@
 
       END SUBROUTINE
 
- 
+
       INCLUDE 'cmdline.include'
 
 

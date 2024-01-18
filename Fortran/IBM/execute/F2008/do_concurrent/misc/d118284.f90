@@ -1,7 +1,6 @@
 
    implicit none
 
-
    integer CASENUM
    integer in1,in2
 
@@ -20,7 +19,6 @@
    REAL r1b(100,10)
 
    REAL r1c(100,10)
-
 
    !--------------------------------
    ! End of Variable Declarations
@@ -54,7 +52,7 @@
    r1b(:,2::2) = 2.0
    r1c = 0.0
 
-   DO CONCURRENT( in1 = 1:100, func1(l1a(in1)) ) 
+   DO CONCURRENT( in1 = 1:100, func1(l1a(in1)) )
       i1a(in1) = in1
    END DO
 

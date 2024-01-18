@@ -1,24 +1,17 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank113f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : August  25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank object
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
 !*
-!*                                - implicit typing 
+!*                                - implicit typing
 !*                                - Call to BIND(C)/Non-BIND(C) procedure from different scopes:
 !*                                main program, module, external and internal procedure
 !*                                - Interface block appears in a module
@@ -38,11 +31,11 @@ module mod
    interface
      subroutine sub_bind_c(Iarg, test) bind(C)
          integer :: test
-         allocatable Iarg(..) 
+         allocatable Iarg(..)
      end subroutine sub_bind_c
      subroutine sub(Iarg, test)
          integer :: test
-         allocatable Iarg(..) 
+         allocatable Iarg(..)
      end subroutine sub
      subroutine sub_ext(Iarg, flag) bind(C)
          allocatable Iarg(..)
@@ -71,7 +64,7 @@ module mod
    end subroutine sub_mod
 end module mod
 
-program AssumedRank110f 
+program AssumedRank110f
    use mod
    integer :: i, j, k
    integer, allocatable :: sumv, A(:), B(:,:), C(:,:,:), D(:,:,:,:,:,:,:,:,:,:)
@@ -156,11 +149,11 @@ subroutine sub_ext(Iarg, flag) bind(C)
      interface
        subroutine sub_bind_c(Iarg, test) bind(C)
            integer :: test
-           allocatable Iarg(..) 
+           allocatable Iarg(..)
        end subroutine sub_bind_c
        subroutine sub(Iarg, test)
            integer :: test
-           allocatable Iarg(..) 
+           allocatable Iarg(..)
        end subroutine sub
      end interface
 
@@ -174,11 +167,11 @@ subroutine sub_ext(Iarg, flag) bind(C)
 end subroutine sub_ext
 
 subroutine sub_bind_c(Iarg, test) bind(C)
-     ! Dummy Iarg. 
+     ! Dummy Iarg.
      integer :: test
-     allocatable Iarg(..) 
-     ! Internal variables 
-     integer, parameter :: dim1 = 5 
+     allocatable Iarg(..)
+     ! Internal variables
+     integer, parameter :: dim1 = 5
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -187,8 +180,8 @@ subroutine sub_bind_c(Iarg, test) bind(C)
      #endif
 
      if (.not. allocated(Iarg))  ERROR STOP 101
-     if (DEBUG_MODE) then 
-        print*, test 
+     if (DEBUG_MODE) then
+        print*, test
         print*, size(Iarg)
         print*, shape(Iarg)
         print*, rank(Iarg)
@@ -235,11 +228,11 @@ subroutine sub_bind_c(Iarg, test) bind(C)
 end subroutine sub_bind_c
 
 subroutine sub(Iarg, test)
-     ! Dummy Iarg. 
+     ! Dummy Iarg.
      integer :: test
-     allocatable Iarg(..) 
-     ! Internal variables 
-     integer, parameter :: dim1 = 5 
+     allocatable Iarg(..)
+     ! Internal variables
+     integer, parameter :: dim1 = 5
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -248,8 +241,8 @@ subroutine sub(Iarg, test)
      #endif
 
      if (.not. allocated(Iarg))  ERROR STOP 201
-     if (DEBUG_MODE) then 
-        print*, test 
+     if (DEBUG_MODE) then
+        print*, test
         print*, size(Iarg)
         print*, shape(Iarg)
         print*, rank(Iarg)

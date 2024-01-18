@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgIndex3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : INDEX 
+!*  SECONDARY FUNCTIONS TESTED : INDEX
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Returns the starting position of a substring within a string.
-!*    
-!*  (322620) 
+!*
+!*  (322620)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -43,8 +35,8 @@
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
-     
-  CHARACTER    :: CC(0:127) = (/(ACHAR(I), I=0,127)/) 
+
+  CHARACTER    :: CC(0:127) = (/(ACHAR(I), I=0,127)/)
   INTEGER      :: II(128) = (/(I, I=0,127)/)
 
   DO I1 = 0, 127
@@ -61,7 +53,7 @@
     IF (INDEX(STRING=Str(I2), SUBSTRING=CC(I2), KIND=2_8 ) .NE. 1) STOP 24
   END DO
 
-  DO I4 =0, 127 
+  DO I4 =0, 127
     IF (INDEX(STRING=Str(I4), SUBSTRING=CC(I4), KIND=4_1 ) .NE. 1) STOP 41
     IF (INDEX(STRING=Str(I4), SUBSTRING=CC(I4), KIND=4_2 ) .NE. 1) STOP 42
     IF (INDEX(STRING=Str(I4), SUBSTRING=CC(I4), KIND=4_4 ) .NE. 1) STOP 43

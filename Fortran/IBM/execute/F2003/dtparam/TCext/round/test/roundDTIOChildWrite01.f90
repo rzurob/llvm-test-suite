@@ -2,20 +2,13 @@
 ! ftcx_dtp -ql /tstdev/F2003/round/test/roundDTIOChildWrite01.f
 ! opt variations: -qnol
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 14/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ROUND specifier with DTIO 
+!*  PRIMARY FUNCTIONS TESTED   : ROUND specifier with DTIO
 !*
-!*  DESCRIPTION                : test differnt round= mode specified 
+!*  DESCRIPTION                : test differnt round= mode specified
 !*                               in parent's OPEN, and carried over to
 !*                               child.
 !* ===================================================================
@@ -29,7 +22,7 @@
         real(k2)         r8
         real(k3)         r16
         contains
- 
+
         procedure::writeFormat
         generic :: write(formatted) => writeFormat
      end type
@@ -86,4 +79,4 @@
     open(unit=3, file='roundDTIOChildWrite01.out', round="compatible")
     write(3,*) dt1
 
-  end program roundDTIOChildWrite01 
+  end program roundDTIOChildWrite01

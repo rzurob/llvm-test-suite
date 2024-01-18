@@ -1,20 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : C1233pointerArray06d - ASYNCHRONOUS
 !*                               Attribute with Pointer Array Actual Arguments
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April  8, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Actual Argument is a Pointer Array
 !*  SECONDARY FUNCTIONS TESTED : Dummy Argument implicitly has the ASYNCHRONOUS
 !*                               Attribute, and is a Explicit Shape Array
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASYNCHRONOUS Attribute, POINTER Attribute,

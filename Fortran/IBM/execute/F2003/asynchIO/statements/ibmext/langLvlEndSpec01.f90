@@ -1,20 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : langLvlEndSpec01 - IBM Extensions with
 !*                               Language Level Options
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April 11, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : -qlanglvl=[extended|2003pure|2003std] Option
 !*  SECONDARY FUNCTIONS TESTED : END= Specifier in the READ() Statements (I/O
 !*                               on a Direct File)
 !*
-!*  DRIVER STANZA              : langLvlEndSpec01e:  xlf2003
 !*                               langLvlEndSpec01p:  xlf95
 !*                               langLvlEndSpec01s:  xlf95
 !*  REQUIRED COMPILER OPTIONS  : langLvlEndSpec01e:  -qlanglvl=extended
@@ -28,7 +22,6 @@
 !*  DESCRIPTION                :
 !*  The END= Specifier should not be useable when a Direct File is being
 !*  accessed.  Code which uses the IBM Extension(s) noted below.
-!*
 !*
 !*  From the F2003 Standard:
 !*
@@ -50,9 +43,6 @@
 !*  condition occurs during execution of an input/output statement that
 !*  contains either an END= specifier or an IOSTAT= specifier, and an error
 !*  condition does not occur then ...
-!*
-!*
-!*  From the XL Fortran Language Reference:
 !*
 !*  READ
 !*

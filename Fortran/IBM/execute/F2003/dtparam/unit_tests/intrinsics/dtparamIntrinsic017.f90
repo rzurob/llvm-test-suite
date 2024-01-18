@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Intrinsic  with Derived Type Parameter
 !*
-!* PROGRAMMER                 : James Ren
 !* DATE                       : April 19, 2007
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : lbound and ubound intrinsics
 !*
@@ -33,7 +28,7 @@ subroutine sub(arg1, arg2)
    n = ubound(c%arr1, dim=1)
    do i = m, n
       c%arr1(i) = abs(i*i - size(c%arr1))
-   end do   
+   end do
 
    allocate(c%arr2(arg1*arg2), source = c%arr1)
    if (lbound(c%arr2, dim=1) .ne. m) error stop 1

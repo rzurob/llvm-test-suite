@@ -2,23 +2,20 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: $TR_SRC/intrimod33.presh
-! %COMPOPTS: -I/tmp/intrimod33 
+! %COMPOPTS: -I/tmp/intrimod33
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod33.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
-!*  Description      : Use NON_INTRINSIC modules with same name as an 
+!*  Description      : Use NON_INTRINSIC modules with same name as an
 !*                     INTRINSIC with -I option to specify the path for
 !*                     .mod files of NON_INTRINSIC modules.
 !*
@@ -56,7 +53,7 @@
          do k = 1, 5
             if (flag_values(k) .neqv. .false. ) stop 10
          enddo
-           
+
          if (ieee_support_datatype(PINF_4) .AND. &
  	     ieee_support_datatype(NINF_4)) then
             if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) stop 12
@@ -76,7 +73,7 @@
          call ieee_set_status(status_value)
 
          call set_fpscr_flags(flags(1))
-         call clr_fpscr_flags(flags(5)) 
+         call clr_fpscr_flags(flags(5))
          if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
          if ( get_fpscr_flags(flags(5)) .eq. 0 ) stop 18
 

@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : autoobj82
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 31, 2009
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTPARAM: Automatic objects
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 333321
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*
 !*  the "base" type has array components
-!*
-!*  
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 ! It is now RTO issue! wait for Daniel's fix
 
-  PROGRAM autoobj82 
+  PROGRAM autoobj82
   CALL sub(4)
 
   CONTAINS

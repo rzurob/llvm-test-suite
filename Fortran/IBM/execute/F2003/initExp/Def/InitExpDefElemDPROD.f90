@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemDPROD.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemDPROD.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  DPROD 
+!*
+!*  -  DPROD
 !*  (318967)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -36,9 +29,9 @@
 
 
   PROGRAM  InitExpDefElemDPROD
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J, K
- 
+
 
   TYPE :: DT0
     REAL(4)      :: XR4(4,4) = -2.0
@@ -46,16 +39,16 @@
   END TYPE
 
   TYPE(DT0), PARAMETER :: P=DT0()
- 
-  TYPE :: DT 
-    REAL(KIND(DPROD(P%XR4, P%XRR4)))       :: TR44(4,4) = DPROD(P%XR4, P%XRR4) 
+
+  TYPE :: DT
+    REAL(KIND(DPROD(P%XR4, P%XRR4)))       :: TR44(4,4) = DPROD(P%XR4, P%XRR4)
   END TYPE
 
   TYPE(DT) :: T
 
   TYPE(DT0), PARAMETER :: PP(4)=DT0()
- 
-  TYPE :: DT1 
+
+  TYPE :: DT1
     REAL(KIND(DPROD(PP(1)%XR4, PP(2)%XRR4)))    &
         :: TR44(4) = DPROD( (/(PP(I)%XR4(I,I), I=1,4)/), (/(PP(I)%XRR4, I=1,4)/))
   END TYPE
@@ -71,4 +64,4 @@
 
   END
 
- 
+

@@ -1,37 +1,29 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeIntComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeIntComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 13 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 13 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE,FSOURCE ARE DERIVED TYPE SCALAR OR ARRAY
 !* 4. COMPONENT ARE SCALAR INTEGER AND LOGICAL COMPONENT
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type A(k)
      integer(2),kind :: k=8
-     
+
      integer(k) :: i=k
-     logical(k) :: l=.false.    
+     logical(k) :: l=.false.
   end type
 end module
 
@@ -43,12 +35,12 @@ program mergeIntComp02
    logical :: mask1(6)=[.true.,.false.,.true.,.false.,.true.,.false.]
    logical :: mask2(2,3)
 
-   type(A),target  :: a1 
+   type(A),target  :: a1
    type(A),pointer :: a2
    type(A),allocatable :: a3,b3
    type(A),allocatable :: a4(:)
 
-   type(A(4)),target :: a5(6)=(/(A(4)(i),i=1,6)/) 
+   type(A(4)),target :: a5(6)=(/(A(4)(i),i=1,6)/)
    type(A(4)),target :: a6(2,3)
    type(A(4)),pointer :: a7(:)=>null()
    type(A(4)),allocatable :: a8(:,:)
@@ -58,7 +50,7 @@ program mergeIntComp02
    a2=>a1
    a3=a1
 
-   b3=getMyDT1(merge(a1,a3,.false.)) 
+   b3=getMyDT1(merge(a1,a3,.false.))
 
    if(b3%k /= 8)                                          error stop 10_4
    if(b3%k%kind /= 2)                                     error stop 11_4
@@ -66,7 +58,7 @@ program mergeIntComp02
    if(b3%i%kind /= 8)                                     error stop 13_4
    if(b3%l .neqv. .false.)                                error stop 14_4
    if(b3%l%kind /= 8)                                     error stop 15_4
-   
+
    if(merge(a1%i,a2%i,.false.) /= 8)                      error stop 16_4
    if(merge(a1%l,a3%l,.false.) .neqv. .false.)            error stop 17_4
 
@@ -75,7 +67,7 @@ program mergeIntComp02
    if(b3%l .neqv. .true.)                                 error stop 19_4
 
    a4=getMyDT2(merge([A(),A(i=2,l=.true.)], &
-             [A(i=3,l=.false.),A()],[.false.,.true.]))   
+             [A(i=3,l=.false.),A()],[.false.,.true.]))
 
    if(size(a4,1) /= 2)                                    error stop 20_4
    if(a4%k /= 8)                                          error stop 21_4
@@ -87,10 +79,10 @@ program mergeIntComp02
 
    if( any(merge([a4(1)%i,a4(2)%i], &
       [3_8,2_8],.true.) /= [3_8,2_8]))                    error stop 27_4
-   
-   if( any(merge([a4(1)%l,a4(2)%l],[.false._8,.true._8], &  
+
+   if( any(merge([a4(1)%l,a4(2)%l],[.false._8,.true._8], &
       .true.) .neqv.[.false._8,.true._8]))               error stop 28_4
- 
+
    a6=reshape(a5,(/2,3/))
    a7=>a5
    a8=reshape((/(A(4)(i+10,mask1(i)),i=1,6)/),(/2,3/))
@@ -133,7 +125,7 @@ program mergeIntComp02
            type(A)    :: getMyDT1
 
            getMyDT1=dt
-      end function    
+      end function
 
       function getMyDT2(dt)
            type(A),intent(in) :: dt(:)

@@ -1,21 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal514a18dk
 !*
-!*  PROGRAMMER                 : David Forster (derived from ffinal514a18d by Jim Xia)
 !*  DATE                       : 2007-11-07 (original: 06/11/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
-!*  SECONDARY FUNCTIONS TESTED : type bound 
+!*  SECONDARY FUNCTIONS TESTED : type bound
 !*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : final sub (derived types with allocatable or
 !                               pointer component not allowed in IO, only DTIO)

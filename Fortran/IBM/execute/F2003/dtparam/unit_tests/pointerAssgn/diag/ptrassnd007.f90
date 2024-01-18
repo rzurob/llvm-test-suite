@@ -3,15 +3,15 @@
 
         real(k) :: data(n) = 1.0
       end type
- 
+
       type, extends(base) :: child (x, y)
         integer, kind :: x
-        integer, len :: y 
+        integer, len :: y
       end type
 
       type, extends(child) :: gchild (p, q)
-        integer, kind :: p 
-        integer, len :: q 
+        integer, kind :: p
+        integer, len :: q
       end type
 
       class(base(4, 20)), pointer :: basePtr

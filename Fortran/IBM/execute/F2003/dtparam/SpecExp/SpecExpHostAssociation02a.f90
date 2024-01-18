@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : SpecExpHostAssociation02a.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : June 14, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Specification expression - Host Association
 !*  SECONDARY FUNCTIONS TESTED : Default Initialization
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -32,8 +24,8 @@ PROGRAM SpecExpHostAssociation02a
          INTEGER, KIND :: k1 = 4
          INTEGER, LEN  :: l1 = 1
 
-         INTEGER(k1) :: I1 = k1, A1(l1) = 2*k1 
-         CHARACTER(l1) :: C1 = 'B' 
+         INTEGER(k1) :: I1 = k1, A1(l1) = 2*k1
+         CHARACTER(l1) :: C1 = 'B'
       END TYPE
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)
@@ -53,7 +45,7 @@ PROGRAM SpecExpHostAssociation02a
       CALL Sub15(8)
       CALL Sub16(8)
 
-      c1 = Child ( b_cmp = Base(8,8) (I1 = 10, A1 = 20) ) 
+      c1 = Child ( b_cmp = Base(8,8) (I1 = 10, A1 = 20) )
       CALL Sub11(8)
       CALL Sub12(8)
       CALL Sub13(10)
@@ -68,7 +60,7 @@ PROGRAM SpecExpHostAssociation02a
       CALL Sub25(8)
       CALL Sub26(8)
 
-      c2 = Child(4,3,8,5) ( b_cmp = Base(8,8) (I1 = 11, A1 = 22) ) 
+      c2 = Child(4,3,8,5) ( b_cmp = Base(8,8) (I1 = 11, A1 = 22) )
       CALL Sub21(8)
       CALL Sub22(8)
       CALL Sub23(11)
@@ -77,10 +69,10 @@ PROGRAM SpecExpHostAssociation02a
       CALL Sub26(8)
 
       CONTAINS
- 
+
       SUBROUTINE Sub11(N)
-        INTEGER :: N 
-        TYPE(Base(c1%b_cmp%k1,c1%b_cmp%l1)) :: Obj 
+        INTEGER :: N
+        TYPE(Base(c1%b_cmp%k1,c1%b_cmp%l1)) :: Obj
 
          IF ( Obj%k1 .NE. N ) STOP 10
          IF ( Obj%l1 .NE. N ) STOP 11
@@ -90,10 +82,10 @@ PROGRAM SpecExpHostAssociation02a
          IF ( LEN(Obj%C1)  .NE.    N ) STOP 15
          IF ( TRIM(Obj%C1) .NE.  'B' ) STOP 16
       END SUBROUTINE Sub11
- 
+
       SUBROUTINE Sub12(N)
-        INTEGER :: N 
-        TYPE(Base(c1%b_cmp%l1,2*c1%b_cmp%k1)) :: Obj 
+        INTEGER :: N
+        TYPE(Base(c1%b_cmp%l1,2*c1%b_cmp%k1)) :: Obj
 
          IF ( Obj%k1 .NE.   N ) STOP 17
          IF ( Obj%l1 .NE. 2*N ) STOP 18
@@ -103,10 +95,10 @@ PROGRAM SpecExpHostAssociation02a
          IF ( LEN(Obj%C1)  .NE.  2*N ) STOP 22
          IF ( TRIM(Obj%C1) .NE.  'B' ) STOP 23
       END SUBROUTINE Sub12
- 
+
       SUBROUTINE Sub13(N)
-        INTEGER :: N 
-        TYPE(Base(l1=c1%b_cmp%I1)) :: Obj 
+        INTEGER :: N
+        TYPE(Base(l1=c1%b_cmp%I1)) :: Obj
 
          IF ( Obj%k1 .NE. 4 ) STOP 24
          IF ( Obj%l1 .NE. N ) STOP 25
@@ -116,10 +108,10 @@ PROGRAM SpecExpHostAssociation02a
          IF ( LEN(Obj%C1)  .NE.   N ) STOP 29
          IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 30
       END SUBROUTINE Sub13
- 
+
       SUBROUTINE Sub14(N)
-        INTEGER :: N 
-        TYPE(Base(l1=c1%b_cmp%A1(1))) :: Obj 
+        INTEGER :: N
+        TYPE(Base(l1=c1%b_cmp%A1(1))) :: Obj
 
          IF ( Obj%k1 .NE. 4 ) STOP 31
          IF ( Obj%l1 .NE. N ) STOP 32
@@ -129,10 +121,10 @@ PROGRAM SpecExpHostAssociation02a
          IF ( LEN(Obj%C1)  .NE.   N ) STOP 36
          IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 37
       END SUBROUTINE Sub14
- 
+
       SUBROUTINE Sub15(N)
-        INTEGER :: N 
-        TYPE(Base(KIND(c1%b_cmp%I1),KIND(c1%b_cmp%I1))) :: Obj 
+        INTEGER :: N
+        TYPE(Base(KIND(c1%b_cmp%I1),KIND(c1%b_cmp%I1))) :: Obj
 
          IF ( Obj%k1 .NE. N ) STOP 38
          IF ( Obj%l1 .NE. N ) STOP 39
@@ -142,10 +134,10 @@ PROGRAM SpecExpHostAssociation02a
          IF ( LEN(Obj%C1)  .NE.    N ) STOP 43
          IF ( TRIM(Obj%C1) .NE.  'B' ) STOP 44
       END SUBROUTINE Sub15
- 
+
       SUBROUTINE Sub16(N)
-        INTEGER :: N 
-        TYPE(Base(l1=LEN(c1%b_cmp%C1))) :: Obj 
+        INTEGER :: N
+        TYPE(Base(l1=LEN(c1%b_cmp%C1))) :: Obj
 
          IF ( Obj%k1 .NE. 4 ) STOP 45
          IF ( Obj%l1 .NE. N ) STOP 46
@@ -155,10 +147,10 @@ PROGRAM SpecExpHostAssociation02a
          IF ( LEN(Obj%C1)  .NE.   N ) STOP 50
          IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 51
       END SUBROUTINE Sub16
- 
+
       SUBROUTINE Sub21(N)
-        INTEGER :: N 
-        TYPE(Base(l1=c2%b_cmp%l1)) :: Obj 
+        INTEGER :: N
+        TYPE(Base(l1=c2%b_cmp%l1)) :: Obj
 
          IF ( Obj%k1 .NE. 4 ) STOP 52
          IF ( Obj%l1 .NE. N ) STOP 53
@@ -168,10 +160,10 @@ PROGRAM SpecExpHostAssociation02a
          IF ( LEN(Obj%C1)  .NE.   N ) STOP 57
          IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 58
       END SUBROUTINE Sub21
- 
+
       SUBROUTINE Sub22(N)
-        INTEGER :: N 
-        TYPE(Base(l1=c2%b_cmp%k1)) :: Obj 
+        INTEGER :: N
+        TYPE(Base(l1=c2%b_cmp%k1)) :: Obj
 
          IF ( Obj%k1 .NE. 4 ) STOP 59
          IF ( Obj%l1 .NE. N ) STOP 60
@@ -181,10 +173,10 @@ PROGRAM SpecExpHostAssociation02a
          IF ( LEN(Obj%C1)  .NE.   N ) STOP 64
          IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 65
       END SUBROUTINE Sub22
- 
+
       SUBROUTINE Sub23(N)
-        INTEGER :: N 
-        TYPE(Base(l1=c2%b_cmp%I1)) :: Obj 
+        INTEGER :: N
+        TYPE(Base(l1=c2%b_cmp%I1)) :: Obj
 
          IF ( Obj%k1 .NE. 4 ) STOP 66
          IF ( Obj%l1 .NE. N ) STOP 67
@@ -194,10 +186,10 @@ PROGRAM SpecExpHostAssociation02a
          IF ( LEN(Obj%C1)  .NE.   N ) STOP 71
          IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 72
       END SUBROUTINE Sub23
- 
+
       SUBROUTINE Sub24(N)
-        INTEGER :: N 
-        TYPE(Base(l1=c2%b_cmp%A1(1))) :: Obj 
+        INTEGER :: N
+        TYPE(Base(l1=c2%b_cmp%A1(1))) :: Obj
 
          IF ( Obj%k1 .NE. 4 ) STOP 73
          IF ( Obj%l1 .NE. N ) STOP 74
@@ -207,10 +199,10 @@ PROGRAM SpecExpHostAssociation02a
          IF ( LEN(Obj%C1)  .NE.   N ) STOP 78
          IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 79
       END SUBROUTINE Sub24
- 
+
       SUBROUTINE Sub25(N)
-        INTEGER :: N 
-        TYPE(Base(l1=KIND(c2%b_cmp%I1))) :: Obj 
+        INTEGER :: N
+        TYPE(Base(l1=KIND(c2%b_cmp%I1))) :: Obj
 
          IF ( Obj%k1 .NE. 4 ) STOP 80
          IF ( Obj%l1 .NE. N ) STOP 81
@@ -220,10 +212,10 @@ PROGRAM SpecExpHostAssociation02a
          IF ( LEN(Obj%C1)  .NE.   N ) STOP 85
          IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 86
       END SUBROUTINE Sub25
- 
+
       SUBROUTINE Sub26(N)
-        INTEGER :: N 
-        TYPE(Base(l1=LEN(c2%b_cmp%C1))) :: Obj 
+        INTEGER :: N
+        TYPE(Base(l1=LEN(c2%b_cmp%C1))) :: Obj
 
          IF ( Obj%k1 .NE. 4 ) STOP 87
          IF ( Obj%l1 .NE. N ) STOP 88
@@ -233,5 +225,5 @@ PROGRAM SpecExpHostAssociation02a
          IF ( LEN(Obj%C1)  .NE.   N ) STOP 92
          IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 93
       END SUBROUTINE Sub26
- 
+
 END PROGRAM SpecExpHostAssociation02a

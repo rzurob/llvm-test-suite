@@ -1,23 +1,12 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  diagnostic TC on INTENT for 
-!*                                C_F_PROCPOINTER 
+!*  DESCRIPTION                :  diagnostic TC on INTENT for
+!*                                C_F_PROCPOINTER
 !* ===================================================================
 
 program procptrBindMproc03d
@@ -36,12 +25,12 @@ program procptrBindMproc03d
    call sub(cfptr, pfptr)
 
    contains
- 
+
       subroutine sub(arg1, arg2)
-         type(C_FUNPTR), intent(out) :: arg1  
+         type(C_FUNPTR), intent(out) :: arg1
          procedure(csub), intent(in), pointer :: arg2
- 
-         call C_F_PROCPOINTER(arg1, arg2) 
+
+         call C_F_PROCPOINTER(arg1, arg2)
 
       end subroutine
 

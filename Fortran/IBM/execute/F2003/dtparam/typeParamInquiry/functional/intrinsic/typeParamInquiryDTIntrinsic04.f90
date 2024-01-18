@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryDTIntrinsic04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryDTIntrinsic04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 7 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
 !* 3. INQUIRY TYPE PARAMETER OF DUMMY ARGUMENT
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -35,7 +27,7 @@ module m
      logical :: l1
      logical(1) :: l2(2)
      character(len=3) :: c1
-     character(len=2) :: c2(3) 
+     character(len=2) :: c2(3)
 
      character(:),allocatable :: c3
      character(:),allocatable :: c4(:)
@@ -56,19 +48,19 @@ end module
   type(base),target  :: b4
 
   allocate(b2)
-  
-  b3=>b4 
- 
+
+  b3=>b4
+
   call sub(b1)
   call sub(b2)
   call sub(b3)
- 
+
   contains
      subroutine sub(dt)
         type(base) :: dt
-       
+
         allocate(dt%c3,source="hello")
-        allocate(character(3):: dt%c4(2:5)) 
+        allocate(character(3):: dt%c4(2:5))
         allocate(dt%c5,source="xlftest")
         allocate(dt%c6(1:3),source=["ab","cd","ef"])
 

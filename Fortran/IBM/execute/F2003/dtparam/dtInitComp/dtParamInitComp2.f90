@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitComp2 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitComp2
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 25, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Default initialization for component 
+!*  SECONDARY FUNCTIONS TESTED : Default initialization for component
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* Initialization with data stmt 
-!*  
+!* Initialization with data stmt
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -55,7 +47,7 @@
       LOGICAL(K)   :: LL(L)!=.TRUE.
       TYPE(DT0(K,L))  :: T(K)
     CONTAINS
-      PROCEDURE, PASS :: IntFun 
+      PROCEDURE, PASS :: IntFun
     END TYPE
 
   CONTAINS
@@ -69,7 +61,7 @@
   END MODULE
 
 
-  PROGRAM dtParamInitComp2 
+  PROGRAM dtParamInitComp2
   USE M
 
   INTEGER, PARAMETER :: K=4
@@ -86,7 +78,7 @@
               T=DT0(T%K,T%L)(-T%K) ) &
          /
 
- 
+
   IF ( KIND(T%I) .NE. K )                 STOP 11
   IF ( SIZE(T%I) .NE. K )                 STOP 12
   IF ( ANY(T%I  .NE. (/(-T%K, I=1,4)/)))  STOP 13

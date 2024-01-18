@@ -1,20 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : derivedTypeArrayConstructor01d - ASYNCHRONOUS
 !*                               Attribute in the ASSOCIATE Construct
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March  1, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : associate-name => selector (where selector
 !*                               implicitly has the ASYNCHRONOUS Attribute)
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 : ASYNCHRONOUS Attribute, ASSOCIATE Construct

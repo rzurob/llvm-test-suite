@@ -2,35 +2,28 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk_qlngdbl.sh fxcmn_blk515 cxcmn_blk505
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f fxcmn_blk515.o cxcmn_blk505.o fxcmn_blk515
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that scalar variables
 !*				 of all data types inside of common blocks are
-!*				 interoperable with C variables 
+!*				 interoperable with C variables
 !*
 !*				 Test:  BIND(C) statement in internal subroutine
 !*
@@ -157,7 +150,7 @@ program fxcmn_blk515
                         int_C_INT_FAST8_T	,  &
 			int_s1b			,  &
                         int_C_INT_FAST16_T	,  &
-                        real_s4b		
+                        real_s4b
 
         bind(c) :: /Blk_All/
 

@@ -1,27 +1,18 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type_Basic03 - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : July  18, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
-!*  SECONDARY FUNCTIONS TESTED : Argument Association 
-!*                               
-!*                               
-!*                               
+!*  SECONDARY FUNCTIONS TESTED : Argument Association
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -40,8 +31,8 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       PROGRAM Select_Type_Basic03
-      IMPLICIT NONE 
- 
+      IMPLICIT NONE
+
       TYPE Shape (k1,len1)
         INTEGER(1), KIND :: k1
         INTEGER(1), LEN :: len1
@@ -55,7 +46,7 @@
       END TYPE Square
 
       TYPE, EXTENDS(Square) :: Rectangle
-        REAL(k1) :: height 
+        REAL(k1) :: height
       END TYPE Rectangle
 !*
 ! Object declarations
@@ -67,56 +58,56 @@
       TYPE(Square(k1,len1)), TARGET :: A_square
       TYPE(Square(8,50)), TARGET :: A_dsquare
 !*
-! Initialization 
+! Initialization
 !*
       A_square%width = 10.0D0 + 0.3D-7
       A_dsquare%width = 10.0D0 + 0.3D-7
- 
+
       A_square%name = 'a square'
       A_dsquare%name = 'a square'
- 
+
       ALLOCATE(My_shape, source = A_square)
       IF ( .NOT. ASSOCIATED(My_shape)) STOP 10
 
       My_kind=k1
-  
+
       CALL compute_area(My_kind,My_shape)
-      
+
       ALLOCATE (My_shape , SOURCE = Rectangle(k1,len1)(area=0.0,name='rectangle',width=12.5000002D0,height=8.00000012D0))
       IF ( .NOT. ASSOCIATED(My_shape)) STOP 11
-      
+
       CALL compute_area(My_kind,My_shape)
-      
+
       My_kind=8
 
       ALLOCATE(My_shape, source = A_dsquare)
       IF ( .NOT. ASSOCIATED(My_shape)) STOP 12
-      
+
       CALL compute_area(My_kind,My_shape)
 
       ALLOCATE (My_shape , SOURCE = Rectangle(2*k1,len1/2)(area=0.0,name='rectangle',width=12.5000002D0,height=8.00000012D0))
       IF ( .NOT. ASSOCIATED(My_shape)) STOP 13
 
       CALL compute_area(My_kind,My_shape)
- 
-      CONTAINS 
+
+      CONTAINS
 !*
-! area computation 
+! area computation
 !*
       SUBROUTINE compute_area(My_kind,My_shape)
 
       INTEGER(1), INTENT(IN) ::  My_kind
-      CLASS(*), INTENT(INOUT), POINTER :: My_shape 
- 
+      CLASS(*), INTENT(INOUT), POINTER :: My_shape
+
       SELECT TYPE (A => My_shape)
         CLASS IS (Square(4,*))
-          IF (My_kind .NE. 4) STOP 20 
+          IF (My_kind .NE. 4) STOP 20
           print *, 'My shape may or may not be a square: More tests needed'
 
  		! Nested SELECT TYPE
             	SELECT TYPE (A)
                   TYPE IS (Square(4,*))
-                    IF (My_kind .NE. 4) STOP 31 
+                    IF (My_kind .NE. 4) STOP 31
                     A%area = A%width**2
 
                     print *, 'My shape is ', TRIM(A%name), ' and the area is', CEILING(A%area)
@@ -126,7 +117,7 @@
                     A%area = A%width*A%height
 
                     print *, 'My shape is ', TRIM(A%name), ' and the area is', CEILING(A%area)
-                   
+
                   CLASS DEFAULT
                     print *, 'area cannot be computed: Undefined Shape'
                     STOP 33
@@ -134,7 +125,7 @@
  		! END Nested SELECT TYPE
 
         CLASS IS (Rectangle(4,*))
-          IF (My_kind .NE. 4) STOP 21 
+          IF (My_kind .NE. 4) STOP 21
           print *, 'My shape may or may not be a rectangle: More tests needed'
 
  		! Nested SELECT TYPE
@@ -144,7 +135,7 @@
                     A%area = A%width*A%height
 
                     print *, 'My shape is ', TRIM(A%name), ' and the area is', CEILING(A%area)
-                   
+
                   CLASS DEFAULT
                     print *, 'area cannot be computed: Undefined Shape'
                     STOP 43
@@ -153,23 +144,23 @@
 
 
         CLASS IS (Shape(8,*))
-          IF (My_kind .NE. 8) STOP 22 
+          IF (My_kind .NE. 8) STOP 22
           print *, 'My shape may be a square or a rectangle: More tests needed'
 
  		! Nested SELECT TYPE
             	SELECT TYPE (A)
                   TYPE IS (Square(8,*))
-                    IF (My_kind .NE. 8) STOP 51 
+                    IF (My_kind .NE. 8) STOP 51
           	    A%area = A%width**2
 
                     print *, 'My shape is ', TRIM(A%name), ' and the area is precisely', CEILING(A%area)
 
                   TYPE IS (Rectangle(8,*))
-                    IF (My_kind .NE. 8) STOP 52 
+                    IF (My_kind .NE. 8) STOP 52
                     A%area = A%width*A%height
 
                     print *, 'My shape is ', TRIM(A%name), ' and the area is precisely', CEILING(A%area)
-                   
+
                     CLASS DEFAULT
                        print *, 'area cannot be computed: Undefined Shape'
                        STOP 53
@@ -177,7 +168,7 @@
  		! END Nested SELECT TYPE
 
         CLASS DEFAULT
-           print *, 'area cannot be computed: Undefined Shape' 
+           print *, 'area cannot be computed: Undefined Shape'
            STOP 23
       END SELECT
 !*

@@ -1,41 +1,32 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Adrian Green
 !*  DATE                       : July 27, 2008
 !*  ORIGIN                     : XLF Compiler Test,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !       Transpose Intrinsic function with derived type parameters.
-!*  DESCRIPTION                : Description: uses external functions for matrix multiplication, 
+!*  DESCRIPTION                : Description: uses external functions for matrix multiplication,
 !*                               with an interfaced operator.
-!*
-!*
-!*
 !*
 module m1
 type base
-    integer :: element 
+    integer :: element
 end type base
- 
+
 type, extends(base) :: child
 	integer :: elem
 end type child
 
 	interface operator(*)
 		module procedure matrix_multi, matrix_scalarmulti
-	end interface 
-	
+	end interface
+
 	interface operator(+)
 		module procedure matrix_addition
 	end interface
-	
+
 contains
-	
+
 		subroutine equality_check(matrixA, matrixB)
 			type(child), intent(in) :: matrixA(:,:)
 			type(child), intent(in) :: matrixB(:,:)
@@ -46,11 +37,11 @@ contains
 			do i=1, ubound(matrixA,2)
 				do j=1, ubound(matrixA,1)
 					if (matrixA(j,i)%element /= matrixB(j,i)%element) then
-						print *, "error occured in number", err_check, "call to equality_check" 
+						print *, "error occured in number", err_check, "call to equality_check"
 						STOP 2
 					end if
 					if (matrixA(j,i)%elem /= matrixB(j,i)%elem) then
-						print *, "error occured in number", err_check, "call to equality_check" 
+						print *, "error occured in number", err_check, "call to equality_check"
 						STOP 3
 					end if
 				end do
@@ -61,20 +52,20 @@ contains
 			type(child), intent(in) :: matrixA(:,:)
 			type(child), intent(in) :: matrixB(:,:)
 			type(child) :: X(ubound(matrixA,1), ubound(matrixA,2))
-			
+
 			do i=1, ubound(matrixA,2)
 				do j=1,ubound(matrixA,1)
 					X(j,i)%element = matrixA(j,i)%element + matrixB(j,i)%element
 					X(j,i)%elem = matrixA(j,i)%elem + matrixB(j,i)%elem
 				end do
 			end do
-		end function matrix_addition	
-		
+		end function matrix_addition
+
 		function matrix_multi(matrixA, matrixB) result(X)
 			type(child), intent(in) :: matrixA(:,:)
 			type(child), intent(in) :: matrixB(:,:)
 			type(child) :: X(ubound(matrixA,1),ubound(matrixB,2))
-			
+
 			do i=1, ubound(matrixB,2)
 				do j=1,ubound(matrixA,1)
 					X(j,i)%element=0
@@ -85,15 +76,15 @@ contains
 						X(j,i)%element = X(j,i)%element + matrixA(j,k)%element * matrixB(k,i)%element
 						X(j,i)%elem = X(j,i)%elem + matrixA(j,k)%elem * matrixB(k,i)%elem
 					end do
-				end do 
+				end do
 			end do
 	  	end function matrix_multi
-		
+
 		function matrix_scalarmulti(matrixA, constant) result (X)
 			type(child), intent(in) :: matrixA(:,:)
 			integer, intent(in) :: constant
 			type(child) :: X(ubound(matrixA,1), ubound(matrixA,2))
-			
+
 			do i = 1, ubound(matrixA,2)
 				do j = 1, ubound(matrixA,1)
 					X(j,i)%element = constant * matrixA(j,i)%element
@@ -101,10 +92,10 @@ contains
 				end do
 			end do
 		end function matrix_scalarmulti
-		
+
 end module m1
 
-program a	
+program a
 
 !Test transpose primarily through mathematical properties
 
@@ -125,7 +116,7 @@ err_check = 0
 			num = num + 1
 		end do
 	end do
-	
+
 	num = 1
 	do k =1,ubound(matrix2,1)
 		do j = 1,ubound(matrix2,2)
@@ -134,22 +125,22 @@ err_check = 0
 			num = num + 2
 		end do
 	end do
-	
+
 	!! Att = A
 	call equality_check(matrix1, transpose(transpose(matrix1)))
 	call equality_check(matrix2, transpose(transpose(matrix2)))
-	
+
 	!!At + Bt =(A+B)t
 	call equality_check(transpose(matrix1+matrix2), transpose(matrix1)+transpose(matrix2))
-		
+
 	!!(AB)t = BtAt
 	call equality_check(transpose(matrix1*transpose(matrix2)), matrix2*transpose(matrix1))
 	call equality_check(transpose(matrix2*transpose(matrix1)), matrix1*transpose(matrix2))
-	
+
 	!!(cAt) = cAt
 	constant = 10
 	matrix2 = matrix1*constant
 	call equality_check(transpose(matrix1*constant), transpose(matrix1)*constant)
 	call equality_check(transpose(matrix2*constant), transpose(matrix2)*constant)
-	
+
 end program a

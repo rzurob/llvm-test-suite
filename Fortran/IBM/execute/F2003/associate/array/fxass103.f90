@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass103.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass103.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -77,29 +65,29 @@
 
       logical, dimension(2) ::  log, res_l
 
-      logical*1, dimension(3) :: log1 
+      logical*1, dimension(3) :: log1
 
       logical*2, dimension(4) :: log2
 
       logical*4, dimension(5) :: log4
-      
+
       log( 1 ) = .true.
       log( 2 ) = .false.
 
       log1( 1 ) = .true.
-      log1( 2 ) = .false. 
+      log1( 2 ) = .false.
       log1( 3 ) = .true.
 
       log2( 1 ) = .false.
-      log2( 2 ) = .false. 
-      log2( 3 ) = .false. 
+      log2( 2 ) = .false.
+      log2( 3 ) = .false.
       log2( 4 ) = .false.
 
       log4( 1 ) = .true.
-      log4( 2 ) = .false. 
+      log4( 2 ) = .false.
       log4( 3 ) = .true.
-      log4( 4 ) = .false. 
-      log4( 5 ) = .false. 
+      log4( 4 ) = .false.
+      log4( 5 ) = .false.
 
       associate ( arg => (log(1) .eqv. log(2)) )
            if(arg .neqv. .false.)then

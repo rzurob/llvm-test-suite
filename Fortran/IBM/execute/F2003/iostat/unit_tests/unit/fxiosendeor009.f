@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxiosendeor009.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,21 +12,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxiosendeor009 
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug. 19, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : is_iostat_end and is_iostat_eor intrinsics
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This tests the functionality of the intrinsic when args
 !*                               to the intrinsic are constat arrays of integers
@@ -34,7 +27,7 @@
       implicit none
 
       integer,parameter::arg1(10)=(/-1,-2,-3,-4,-5,-6,10,100,-100,0/)
-      
+
       write(*,*) IS_IOSTAT_END( arg1 )
       write(*,*) IS_IOSTAT_END( (/-5,-4,-3,-2,-1,0,1,2,3,4,5/) )
       write(*,*)

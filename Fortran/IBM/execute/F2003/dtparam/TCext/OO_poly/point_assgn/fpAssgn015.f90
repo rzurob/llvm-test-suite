@@ -2,42 +2,26 @@
 ! ftcx_dtp -qnol /tstdev/OO_poly/point_assgn/fpAssgn015.f
 ! opt variations: -ql
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fpAssgn015.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT: fpAssgn015.out
 ! %EXECARGS:
 ! %POSTCMD: spiff -r1.e-7 fpAssgn015.out $TR_SRC/fpAssgn015.vf
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 05/14/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf95
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : data pointer assignment (one dimensional array
 !                               pointer assigned to array section from

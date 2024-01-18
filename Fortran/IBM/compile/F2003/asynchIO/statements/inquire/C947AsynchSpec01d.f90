@@ -1,19 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : C947AsynchSpec01d - INQUIRE() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 20, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INQUIRE() Statements with the ASYNCHRONOUS=,
 !*                               ID=, and PENDING= Specifiers
 !*  SECONDARY FUNCTIONS TESTED : Multiple instances of each Specifier
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : INQUIRE(), ASYNCHRONOUS= Specifier, ID=
@@ -60,14 +53,14 @@ PROGRAM C947AsynchSpec01d
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
         CALL zzrc( 1 )
-    END IF 
+    END IF
 
 
     WRITE(2468, ASYNCHRONOUS='yes', ID=ioID, IOSTAT=iStat, IOMSG=iMsg) 2468
     IF (iStat /= 0) THEN
         WRITE(0, *) "WRITE() <", iStat, "> ", iMsg
         CALL zzrc( 2 )
-    END IF 
+    END IF
 
 
     !
@@ -78,7 +71,7 @@ PROGRAM C947AsynchSpec01d
     IF (iStat /= 0) THEN
         WRITE(0, *) "INQUIRE() <", iStat, "> ", iMsg
         CALL zzrc( 3 )
-    END IF 
+    END IF
 
 
     !
@@ -89,7 +82,7 @@ PROGRAM C947AsynchSpec01d
     IF (iStat /= 0) THEN
         WRITE(0, *) "INQUIRE() <", iStat, "> ", iMsg
         CALL zzrc( 4 )
-    END IF 
+    END IF
 
 
     !
@@ -100,13 +93,13 @@ PROGRAM C947AsynchSpec01d
     IF (iStat /= 0) THEN
         WRITE(0, *) "INQUIRE() <", iStat, "> ", iMsg
         CALL zzrc( 5 )
-    END IF 
+    END IF
 
 
     CLOSE(2468, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
         CALL zzrc( 6 )
-    END IF 
+    END IF
 
 END PROGRAM C947AsynchSpec01d

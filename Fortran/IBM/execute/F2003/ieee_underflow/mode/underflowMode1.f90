@@ -1,35 +1,24 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : underflowMode1.f
-!*
-!*  PROGRAMMER                 : Nancy Wang
 !*  DATE                       : Nov. 15 2007
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ieee_set_underflow_mode(gradual) 
+!*  PRIMARY FUNCTIONS TESTED   : ieee_set_underflow_mode(gradual)
 !*                             : ieee_get_underflow_mode(gradual)
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                :    
+!*  DESCRIPTION                :
 !*  test if above 2 intrinsics conform with Fortran 2003 standard from argument perspective, pass different valid arguments to SET and GET subroutines
-!* 
-!23456789012345678901234567890123456789012345678901234567890123456789012   
-      
+!*
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
       program underflowMode1
          use,intrinsic :: ieee_arithmetic
          implicit none
-   
+
          logical :: underflowmode
          logical,pointer :: p_underflowmode=>null()
-         logical,allocatable ::a_underflowmode 
+         logical,allocatable ::a_underflowmode
          real    :: r
          double precision :: d
          integer,parameter :: k = kind(underflowmode)
@@ -46,8 +35,8 @@
          lp2=.false.
          la1=.true.
          la2=.false.
-         
-!        pass a default logical argument to SET subroutine 
+
+!        pass a default logical argument to SET subroutine
 !        pass a default logical argument to GET subroutine
          if(ieee_support_underflow_control(r)) then
             call ieee_set_underflow_mode(mode1)
@@ -72,7 +61,7 @@
          endif
 
 !        pass a default logical named constant argument to SET subroutine
-!        pass an allocatable of default logical argument to GET subroutine 
+!        pass an allocatable of default logical argument to GET subroutine
          if(ieee_support_underflow_control(r)) then
             call ieee_set_underflow_mode(mode5)
             call ieee_get_underflow_mode(a_underflowmode)
@@ -83,8 +72,8 @@
             error stop 109_4
          endif
 
-!        pass a default logical literal constant argument to SET subroutine 
-!        pass a default logical argument to GET subroutine 
+!        pass a default logical literal constant argument to SET subroutine
+!        pass a default logical argument to GET subroutine
          if(ieee_support_underflow_control(r)) then
             call ieee_set_underflow_mode(.true.)
             call ieee_get_underflow_mode(underflowmode)
@@ -96,7 +85,7 @@
          endif
 
 !        pass a logical literal constant argument to SET subroutine
-!        pass a pointer of default logical argument to GET subroutine  
+!        pass a pointer of default logical argument to GET subroutine
          if(ieee_support_underflow_control(d)) then
             call ieee_set_underflow_mode(.true._k)
             call ieee_get_underflow_mode(p_underflowmode)
@@ -108,7 +97,7 @@
          endif
 
 !        pass a pointer of default logical argument to SET subroutine
-!        pass an allocatable of default logical argument to GET subroutine     
+!        pass an allocatable of default logical argument to GET subroutine
          if(ieee_support_underflow_control(2.5)) then
             call ieee_set_underflow_mode(lp1)
             call ieee_get_underflow_mode(a_underflowmode)
@@ -119,7 +108,7 @@
             error stop 118_4
          endif
 
-!        pass an allocatable of default logical argument to SET subroutine 
+!        pass an allocatable of default logical argument to SET subroutine
 !        pass a default logical argument to GET subroutine
          if(ieee_support_underflow_control()) then
             call ieee_set_underflow_mode(la1)
@@ -130,7 +119,7 @@
             if(underflowmode .neqv. .false.) error stop 120_4
             error stop 121_4
          endif
- 
+
          deallocate(lp1,lp2)
          deallocate(la1,la2)
          nullify(lp1,lp2)

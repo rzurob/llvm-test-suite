@@ -2,42 +2,33 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk_qlngdbl.sh fxcmn_blk334 cxcmn_blk304
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.o *.mod fxcmn_blk334 fxcmn_blk334.out
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc
 !*  REQUIRED COMPILER OPTIONS  : -qlongdouble (with xlc)
 !*
 !*  DESCRIPTION                : This test case will verify that array variables of
-!*				 REAL data types inside of common blocks do 
-!*				 interoperate with C variables inside Fortran  module called by main 
+!*				 REAL data types inside of common blocks do
+!*				 interoperate with C variables inside Fortran  module called by main
 !*				 program.
-!*
 !*
 !*                               This testcase will test multiple common blocks with a
 !*                               single variable in them interoperated with C variables.
 !*                               (i.e. no struct used in C code)
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -45,21 +36,21 @@
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-module fmod1 
+module fmod1
 	use iso_c_binding
         implicit none
 
 ! ----------------------------------------------------------------------------
 ! Real Array Declaration
 !     	- use KIND, MAX, LEN, INT
-!	- use ISO_C_BINDING modules	
+!	- use ISO_C_BINDING modules
 !       - use non-default lower bounds (i.e test array not starting from 1)
 ! ----------------------------------------------------------------------------
 
 	integer*4 		:: i
-	integer*4,parameter 	:: N=5 
+	integer*4,parameter 	:: N=5
 
-	real (kind=o'004'), DIMENSION(-5:-1)	:: real_s4a 
+	real (kind=o'004'), DIMENSION(-5:-1)	:: real_s4a
 	real (LEN('Kobi'))			:: real_s4b(N)
         real                        		:: real_s4c(-2:2)
 
@@ -84,7 +75,7 @@ module fmod1
 ! Multiple COMMON statements with one variable in one BIND(C) statements
 ! ----------------------------------------------------------------------------
 
-        common /blk_real_s4a/          real_s4a 
+        common /blk_real_s4a/          real_s4a
         common /blk_real_s4b/          real_s4b
         common /blk_real_s4c/          real_s4c
 
@@ -120,7 +111,7 @@ module fmod1
         , /blk_r_C_FLOAT_s4c/           &
         , /blk_r_C_DOUBLE_s8a/          &
         , /blk_r_C_DOUBLE_s8b/          &
-        , /blk_r_C_DOUBLE_s8c/          
+        , /blk_r_C_DOUBLE_s8c/
 
 end module fmod1
 
@@ -135,9 +126,9 @@ program fxcmn_blk334
 !       - use max and min possible values for +ve and -ve numbers
 ! ----------------------------------------------------------------------------
 
-        real_s4a 			=  (/3.402823E+38, -1.175494E-38, 0.0, 1.175494E-38, -3.402823E+38/) 
+        real_s4a 			=  (/3.402823E+38, -1.175494E-38, 0.0, 1.175494E-38, -3.402823E+38/)
         real_s4b 			=  -1.175494E-38
-        real_s4c 			=  (/3.402823E+38, -1.175494E-38, 0.0, 1.175494E-38, -3.402823E+38/) 
+        real_s4c 			=  (/3.402823E+38, -1.175494E-38, 0.0, 1.175494E-38, -3.402823E+38/)
 
         real_s8a 			=  (/1.797693D+308, -2.225073D-308, 0.0D0, 2.225073D-308, -1.797693D+308/)
         real_s8b 			=  (/1.797693D+308, -2.225073D-308, 0.0D0, 2.225073D-308, -1.797693D+308/)

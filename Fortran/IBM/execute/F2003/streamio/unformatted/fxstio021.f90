@@ -1,8 +1,8 @@
 ! %START
-! %MAIN: YES     
-! %PRECMD: rm -f fort.*  
-! %COMPOPTS: 
-! %GROUP: fxstio021.f 
+! %MAIN: YES
+! %PRECMD: rm -f fort.*
+! %COMPOPTS:
+! %GROUP: fxstio021.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
@@ -10,21 +10,17 @@
 ! %POSTCMD:
 ! %END
 !--===================================================================
-!  AIX XL FORTRAN V5R1 Test Case            IBM Internal Use Only
-!--===================================================================
 !*
-!*  TEST CASE TITLE           : fxstio021.f
+!*  PROGAMMER                 : Catherine Sun
 !*
-!*  PROGAMMER                 : Catherine Sun 
+!*  Creation Date             : March 18, 2003
 !*
-!*  Creation Date             : March 18, 2003 
-!*
-!*  Primary Function Tested   : Unformatted stream access I/O 
+!*  Primary Function Tested   : Unformatted stream access I/O
 !*
 !*  Description               : Test position of storage units of a file
-!*                              opened for unformatted access with 
-!*                              writing and reading different positions  
-!*                              using POS specifier.      
+!*                              opened for unformatted access with
+!*                              writing and reading different positions
+!*                              using POS specifier.
 !*
 !=======================================================================
 
@@ -36,7 +32,7 @@
   integer Acol1(3), Acol2(3), Acol3(3)
   integer int /10/
   integer, parameter :: para=100
-  integer, allocatable :: hol 
+  integer, allocatable :: hol
 
   integer*1 A1(3,3)
   integer*1 arr11(3), arr12(3), arr13(3), arr110(9)
@@ -51,11 +47,10 @@
   integer*4 Acol41(3), Acol42(3), Acol43(3)
   integer*4 int4 /10/
   integer*4, parameter :: para4=100
-  integer*4, allocatable :: hol4 
-  integer*4, pointer :: int_ptr 
+  integer*4, allocatable :: hol4
+  integer*4, pointer :: int_ptr
   integer*4, target  :: int_tar /10/
-  integer*4 :: int_pointee 
-
+  integer*4 :: int_pointee
 
   integer*8 A8(3,3)
   integer*8 arr81(3), arr82(3), arr83(3), arr810(9)
@@ -75,10 +70,10 @@
   do i=1,3
     do j=1,3
        A(i,j) = i * 100 + j * 10
-    end do 
+    end do
   end do
 
-  ! open 4 synchronous stream I/O 
+  ! open 4 synchronous stream I/O
   open(1, form='unformatted', access='stream', err=999)
   open(2, form='unformatted', access='stream', err=999)
   open(3, form='unformatted', access='stream', err=999)
@@ -88,19 +83,19 @@
   Acol2 = (/(A(i,2),i=1,3)/)
   Acol3 = (/(A(i,3),i=1,3)/)
 
-  write (1) a                  
+  write (1) a
   write (2, pos=int) &
  & Acol1(1), Acol1(2), Acol1(3)                     !write col 1 to unit 2
   write (3, pos=para ) (Acol2(j), j=1,3)            !write col 2 to unit 3
   write (4, pos=hol) Acol3               !write col 3 to unit 4
-  
+
   rewind(1)
   rewind(2)
   rewind(3)
   rewind(4)
 
   read(1) arr10
-  read(2, pos=int) & 
+  read(2, pos=int) &
  & arr1(1), arr1(2), arr1(3)              !read col 1 into arr1
   read(3, pos=para) arr2           !read col 2 into arr2
   read(4, pos=hol) arr3    !read col 3 into arr3
@@ -114,11 +109,11 @@
            if ((arr10(i) .ne. A(i-3,2)) .and. &
            &  (arr2(i-3) .ne. A(i-3,2))) call zzrc(i)
         case (7:9)
-           if ((arr10(i) .ne. A(i-6,3)) .and. & 
+           if ((arr10(i) .ne. A(i-6,3)) .and. &
            &  (arr3(i-6) .ne. A(i-6,3))) call zzrc(i)
      end select
   end do
- 
+
   close(1)
   close(2)
   close(3)
@@ -133,7 +128,7 @@
     end do
   end do
 
-  ! open 4 synchronous stream I/O 
+  ! open 4 synchronous stream I/O
   open(1, form='unformatted', access='stream', err=999)
   open(2, form='unformatted', access='stream', err=999)
   open(3, form='unformatted', access='stream', err=999)
@@ -180,7 +175,7 @@
   close(4)
 ! ---------------------- End of Integer*1 Testing ----------------------
 
-! ------------------------- Integer*2 Testing -------------------------- 
+! ------------------------- Integer*2 Testing --------------------------
 
   do i=1,3
     do j=1,3

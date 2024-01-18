@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: FuncRet2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: FuncRet2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRet2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRet2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 26, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +34,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Function Return - array
 !*  (314988)
 !*  327080 points out TC problem.
@@ -70,11 +64,11 @@
       LOGICAL(K3), ALLOCATABLE :: L4Arr(:)
       LOGICAL(K4), ALLOCATABLE :: L8Arr(:)
 
-      CHARACTER(N1)            :: CharArr(1) 
- 
+      CHARACTER(N1)            :: CharArr(1)
+
       PROCEDURE(ModFun), PASS, POINTER :: ProcPtr=>NULL()
       CONTAINS
-      PROCEDURE, PASS :: Proc => ModFun 
+      PROCEDURE, PASS :: Proc => ModFun
 
     END TYPE
 
@@ -88,7 +82,7 @@
     FUNCTION ModFun(Arg)
     CLASS(DT(1,2,4,8,16,*)) :: Arg
     CLASS(*), POINTER :: ModFun
-      ALLOCATE(ModFun, SOURCE=Arg) 
+      ALLOCATE(ModFun, SOURCE=Arg)
     END FUNCTION
 
   END MODULE
@@ -98,12 +92,12 @@
   TYPE(DT1(1,2,4,8,16,*)) :: Arg(:)
   !CLASS(*), POINTER :: ExtFun(:)   ! --> too many calls to this lead to huge mem leak.
   CLASS(*), ALLOCATABLE :: ExtFun(:)
-    ALLOCATE(ExtFun(SIZE(Arg)), SOURCE=Arg) 
+    ALLOCATE(ExtFun(SIZE(Arg)), SOURCE=Arg)
   END FUNCTION
 
   PROGRAM FuncRet2
   USE M
-  IMPLICIT TYPE(DT1(1,2,4,8,16,3))(P) 
+  IMPLICIT TYPE(DT1(1,2,4,8,16,3))(P)
   integer, parameter :: arraySize = 10
 
   INTERFACE
@@ -114,11 +108,11 @@
     END FUNCTION
   END INTERFACE
 
-  PROCEDURE(Fun)                  :: ExtFun 
+  PROCEDURE(Fun)                  :: ExtFun
   PROCEDURE(Fun),         POINTER :: ProcPtr1
   PROCEDURE(ExtFun),      POINTER :: ProcPtr2
   PROCEDURE(ProcPtr2),    POINTER :: ProcPtr3
- 
+
   TYPE(DT1(1,2,4,8,16,3))        :: Arr(arraySize)
   TYPE(DT(1,2,4,8,16,3)), TARGET :: Tar
   TYPE(DT(1,2,4,8,16,3))         ::  Const
@@ -142,11 +136,11 @@
   &                            (/.TRUE._4/),         &
   &                            (/.TRUE._8/),         &
   &                                                  &
-  &                            (/"abc"/), NULL()     )           
+  &                            (/"abc"/), NULL()     )
 
 
   Const%ProcPtr => ModFun
-  Tar = Const 
+  Tar = Const
   Arr = DT1(1,2,4,8,16,3)(DT=Const, T1=Const, T2=Tar)
 
   CALL IntSub( ExtFun(Arr), Arr)
@@ -154,10 +148,10 @@
   ProcPtr1 => ExtFun
   CALL IntSub( ProcPtr1(Arr),Arr )
 
-  ProcPtr2 => ProcPtr1 
+  ProcPtr2 => ProcPtr1
   CALL IntSub( ProcPtr2(Arr),Arr )
 
-  ProcPtr3 => ProcPtr2 
+  ProcPtr3 => ProcPtr2
   CALL IntSub( ProcPtr3(Arr),Arr )
 
   DO I=1, 1
@@ -166,7 +160,7 @@
   END DO
 
   CONTAINS
-  
+
   SUBROUTINE IntSub(Arg1, Arg2)
   CLASS(*)  :: Arg1(:)
   TYPE(DT1(1,2,4,8,16,*)) :: Arg2(:)
@@ -181,13 +175,13 @@
       IF (ANY(Arg1(I)%T1%I4Arr .NE. Arg2(I)%T1%I4Arr)) STOP 14
       IF (ANY(Arg1(I)%T1%I8Arr .NE. Arg2(I)%T1%I8Arr)) STOP 18
 
-      IF (ANY(Arg1(I)%T1%R4Arr  .NE. Arg2(I)%T1%R4Arr))  STOP 24 
-      IF (ANY(Arg1(I)%T1%R8Arr  .NE. Arg2(I)%T1%R8Arr))  STOP 28 
-      IF (ANY(Arg1(I)%T1%R16Arr .NE. Arg2(I)%T1%R16Arr)) STOP 26 
-  
-      IF (ANY(Arg1(I)%T1%C8Arr  .NE. Arg2(I)%T1%C8Arr))  STOP 38 
-      IF (ANY(Arg1(I)%T1%C16Arr .NE. Arg2(I)%T1%C16Arr)) STOP 36 
-  
+      IF (ANY(Arg1(I)%T1%R4Arr  .NE. Arg2(I)%T1%R4Arr))  STOP 24
+      IF (ANY(Arg1(I)%T1%R8Arr  .NE. Arg2(I)%T1%R8Arr))  STOP 28
+      IF (ANY(Arg1(I)%T1%R16Arr .NE. Arg2(I)%T1%R16Arr)) STOP 26
+
+      IF (ANY(Arg1(I)%T1%C8Arr  .NE. Arg2(I)%T1%C8Arr))  STOP 38
+      IF (ANY(Arg1(I)%T1%C16Arr .NE. Arg2(I)%T1%C16Arr)) STOP 36
+
       IF (ANY(Arg1(I)%T1%L1Arr .NEQV. Arg2(I)%T1%L1Arr)) STOP 41
       IF (ANY(Arg1(I)%T1%L2Arr .NEQV. Arg2(I)%T1%L2Arr)) STOP 42
       IF (ANY(Arg1(I)%T1%L4Arr .NEQV. Arg2(I)%T1%L4Arr)) STOP 44
@@ -209,13 +203,13 @@
       IF (ANY(Arg1(I)%T2%I4Arr .NE. Arg2(I)%T2%I4Arr)) STOP 14
       IF (ANY(Arg1(I)%T2%I8Arr .NE. Arg2(I)%T2%I8Arr)) STOP 18
 
-      IF (ANY(Arg1(I)%T2%R4Arr  .NE. Arg2(I)%T2%R4Arr))  STOP 24 
-      IF (ANY(Arg1(I)%T2%R8Arr  .NE. Arg2(I)%T2%R8Arr))  STOP 28 
-      IF (ANY(Arg1(I)%T2%R16Arr .NE. Arg2(I)%T2%R16Arr)) STOP 26 
-  
-      IF (ANY(Arg1(I)%T2%C8Arr  .NE. Arg2(I)%T2%C8Arr))  STOP 38 
-      IF (ANY(Arg1(I)%T2%C16Arr .NE. Arg2(I)%T2%C16Arr)) STOP 36 
-  
+      IF (ANY(Arg1(I)%T2%R4Arr  .NE. Arg2(I)%T2%R4Arr))  STOP 24
+      IF (ANY(Arg1(I)%T2%R8Arr  .NE. Arg2(I)%T2%R8Arr))  STOP 28
+      IF (ANY(Arg1(I)%T2%R16Arr .NE. Arg2(I)%T2%R16Arr)) STOP 26
+
+      IF (ANY(Arg1(I)%T2%C8Arr  .NE. Arg2(I)%T2%C8Arr))  STOP 38
+      IF (ANY(Arg1(I)%T2%C16Arr .NE. Arg2(I)%T2%C16Arr)) STOP 36
+
       IF (ANY(Arg1(I)%T2%L1Arr .NEQV. Arg2(I)%T2%L1Arr)) STOP 41
       IF (ANY(Arg1(I)%T2%L2Arr .NEQV. Arg2(I)%T2%L2Arr)) STOP 42
       IF (ANY(Arg1(I)%T2%L4Arr .NEQV. Arg2(I)%T2%L4Arr)) STOP 44

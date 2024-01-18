@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : saExternNMain
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-07-26
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF SYNC ALL
 !*  SECONDARY FUNCTIONS TESTED : external procedures and main program
@@ -43,7 +39,7 @@ program saExternNMain
    integer :: out, self, rightBuddy, leftBuddy, nImages, i, j, aBuddy, eFoundInImage, testcount, istat
    logical :: eFound
    character(100) :: emsg
-   
+
    interface
       integer function fun(out,self,rightBuddy,emsg)
         integer, intent(in)  :: out, self, rightBuddy

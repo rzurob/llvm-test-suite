@@ -1,26 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArgAssociation/arg_assoc_d2.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jan. 19, 2009
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 361232
 !*
 !*  DESCRIPTION:
 !*
 !*  12.4.1.2
-!*  An actual argument associated with a dummy argument that is allocatable or 
-!*  a pointer shall have deferred the same type parameters as the dummy 
+!*  An actual argument associated with a dummy argument that is allocatable or
+!*  a pointer shall have deferred the same type parameters as the dummy
 !*  argument.
 !*
-!*  If the dummy argument is a pointer, the actual argument shall be a pointer 
-!*  and the nondeferred type parameters and ranks shall agree. If a dummy 
-!*  argument is allocatable, the actual argument shall be allocatable and the 
-!*  nondeferred type parameters and ranks shall agree. 
+!*  If the dummy argument is a pointer, the actual argument shall be a pointer
+!*  and the nondeferred type parameters and ranks shall agree. If a dummy
+!*  argument is allocatable, the actual argument shall be allocatable and the
+!*  nondeferred type parameters and ranks shall agree.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

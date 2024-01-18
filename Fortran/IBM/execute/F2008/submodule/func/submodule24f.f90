@@ -1,36 +1,29 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : submodule24f.f
-!*
-!* PROGRAMMER                   : Bernard Kan
 !* DATE                         : 28 May 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008 submodule
 !* SECONDARY FUNTIONS TESTED    : view a module subroutine in a debugger
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !* based on debug/func/dummyarg21
 !*
-!* Test that the dummy arguments and function result of the separate 
+!* Test that the dummy arguments and function result of the separate
 !* module subprogram are visible in the debugger with -g
-!* 
+!*
 !* Note that this test will be restricted to verifying the visibility
-!* of the specified arguments, since the debugger output values are 
-!* inconsistent even without submodule. 
+!* of the specified arguments, since the debugger output values are
+!* inconsistent even without submodule.
 !*
 !* ===================================================================
 !*  REVISION HISTORY
 !*
 !*  MM/DD/YY:  Init:  Comments:
-!*  
+!*
 !* ===================================================================
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -73,7 +66,7 @@ contains
 
   module procedure displayl3
     type(dtl3), intent(in) :: x
- 
+
     print *, "      r", x%r
   end
 end submodule

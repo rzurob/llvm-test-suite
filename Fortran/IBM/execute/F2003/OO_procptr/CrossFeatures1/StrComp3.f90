@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: StrComp3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: StrComp3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : StrComp3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : StrComp3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Structure component - initialization-expr 
-!*  () 
+!*
+!*  Structure component - initialization-expr
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -60,9 +54,9 @@
   END MODULE
 
 
-  PROGRAM StrComp3  
+  PROGRAM StrComp3
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE(DT) :: U
   TYPE(DT) :: V=DT(-2,     &

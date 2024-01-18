@@ -1,13 +1,9 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : F2003/dtparam/procPtr/
-! PROGRAMMER                 : Morteza Ershad-Manesh
 ! DATE                       : 07/31/2008
-! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component 
-! DRIVER STANZA              : xlfF2003
+! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component
 ! DESCRIPTION                : Use of  procedure declaration statement with Interface declared in another module
-!                                          
+!
 !=======================================================================
 ! REVISION HISTORY
 !                   MM/DD/YY :
@@ -20,7 +16,7 @@ program procdeclfn17
  USE FunInterface
  USE FunImplemention
  USE TypeDef
- 
+
  PROCEDURE(ICREATE_LIST),pointer :: procptr1=>NULL()
  PROCEDURE(IPRINT_LIST),pointer :: procptr2=>NULL()
  PROCEDURE(IINIT_List),pointer :: procptr3=>NULL()
@@ -32,7 +28,7 @@ program procdeclfn17
  procptr2=>PRINT_LIST
  procptr3=>INIT_List
  procptr4=>CSHIFT_ARRAYS
- 
+
  print*,"Initial List"
  procptrRC=procptr1(LastItem,CurrentItem,NumberofListItem)
  print*,"Populating the List"

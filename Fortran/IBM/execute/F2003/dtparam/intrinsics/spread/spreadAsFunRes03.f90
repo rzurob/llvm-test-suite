@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadAsFunRes03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadAsFunRes03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 21 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
 !*  2. USE SPREAD AS FUNCTION RESULT,PASS SOURCE,DIM,NCOPIES AS ACTUAL ARGUMENT
 !*  3. USE DIFFERENT FUNCTION (INTERAL,EXTERNAL)
-!*  4. SOURCE HAS DIFFERENT DIMENSIONS   
+!*  4. SOURCE HAS DIFFERENT DIMENSIONS
 !*  5. SOURCE IS POLYMORPHIC
 !*  6. DEFECT 357751
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -41,7 +33,7 @@ module m
    contains
       function getSpreadResult3(source,dim,ncopies)
           class(base(2)),intent(in) :: source(:,:)
-          class(base(2)),allocatable:: getSpreadResult3(:,:,:) 
+          class(base(2)),allocatable:: getSpreadResult3(:,:,:)
           integer,intent(in) :: dim,ncopies
 
           if(ncopies >= 1) then
@@ -65,7 +57,7 @@ module m
                 error stop 201_4
           end if
       end function
-   
+
 end module
 
 program spreadAsFunRes03
@@ -74,7 +66,7 @@ program spreadAsFunRes03
 
   interface
      function getSpreadResult2(source,dim,ncopies)
-        import 
+        import
         class(base(2)),intent(in) :: source(:)
         integer,intent(in) :: dim,ncopies
         class(base(2)),allocatable :: getSpreadResult2(:,:)
@@ -90,7 +82,7 @@ program spreadAsFunRes03
   integer,target :: i1(4),i2(4),i3(4),i4(4)
 
   allocate(base1,source=child(2,3)([1,2,3],c=["1","2","3"]) )
- 
+
   allocate(base2(5),source=getSpreadResult1(base1,1,5))
 
   select type(x=>base2)
@@ -105,7 +97,7 @@ program spreadAsFunRes03
       end do
     class default
       error stop 100_4
-  end select  
+  end select
 
   if(allocated(base2))  deallocate(base2)
 
@@ -115,7 +107,7 @@ program spreadAsFunRes03
                               child(2,3)([-4,-5,-6],["-4","-5","-6"]) ] )
 
   allocate(base3(5,4),source=getSpreadResult2(base2,1,5))
-  
+
   select type(x=>base3)
     type is(child(2,*))
       do i=1,5
@@ -138,7 +130,7 @@ program spreadAsFunRes03
 
   if(allocated(base3))  deallocate(base3)
 
-  allocate(base3(4,5),source=getSpreadResult2(base2,2,5))  
+  allocate(base3(4,5),source=getSpreadResult2(base2,2,5))
 
   select type(x=>base3)
     type is(child(2,*))
@@ -235,19 +227,19 @@ program spreadAsFunRes03
   end select
 
   contains
-   
+
      function getSpreadResult1(source,dim,ncopies)
-  
+
           class(base(2)),intent(in)  :: source
           integer,intent(in) :: dim,ncopies
-          class(base(2)),allocatable :: getSpreadResult1(:) 
+          class(base(2)),allocatable :: getSpreadResult1(:)
           if(ncopies >= 1) then
              allocate(getSpreadResult1(ncopies), &
                      source=spread(source,dim,ncopies)  )
           else
              error stop 204_4
           end if
-     end function 
+     end function
 end program
 
 function getSpreadResult2(source,dim,ncopies)
@@ -270,4 +262,4 @@ function getSpreadResult2(source,dim,ncopies)
      else
        error stop 203_4
    end if
-end function  
+end function

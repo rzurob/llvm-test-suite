@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryScalarComp05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryScalarComp05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 12 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 12 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. SCALAR LOGICAL COMPONENT
@@ -29,15 +21,15 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 module m
-   logical,parameter :: l_const1=.false. 
+   logical,parameter :: l_const1=.false.
    logical,parameter :: l_const2=.true.
- 
+
    type base(k1,k2,k3,k4,l1,l2,l3)
         integer(1),kind       :: k1
         integer(k1),kind      :: k2
         integer(k1%kind),kind :: k3
         integer(selected_int_kind(k1)),kind :: k4
-        
+
         integer,len                      :: l1
         integer(kind=k1%kind),len        :: l2
         integer(int(4.2)),len            :: l3
@@ -50,7 +42,7 @@ module m
         logical(k1+k2)    :: l_6=l_const2
         logical(selected_int_kind(k1)) :: l_7= .not.(l_const1)
         logical(ichar(char(1)))        :: l_8=.not.(l_const2)
- 
+
    end type
 end module
 
@@ -63,15 +55,15 @@ end module
   if(t%k2 /= 2 )                                              error stop 11_4
   if(t%k3 /= 3 )                                              error stop 12_4
   if(t%k4 /= 4 )                                              error stop 13_4
-  
+
   if(t%k1%kind /= kind(t%k1) .or. t%k1%kind /= 1)             error stop 14_4
   if(t%k2%kind /= kind(t%k2) .or. t%k2%kind /= 2)             error stop 15_4
   if(t%k3%kind /= kind(t%k3) .or. t%k3%kind /= 1)             error stop 16_4
   if(t%k4%kind /= kind(t%k4) .or. t%k4%kind /= 1)             error stop 17_4
 
-  if(t%l1 /= 4)                                               error stop 18_4 
+  if(t%l1 /= 4)                                               error stop 18_4
   if(t%l2 /= 5)                                               error stop 19_4
-  if(t%l3 /= 6)                                               error stop 20_4  
+  if(t%l3 /= 6)                                               error stop 20_4
 
   if(t%l1%kind /= kind(t%l1) .or. t%l1%kind /= 4)             error stop 21_4
   if(t%l2%kind /= kind(t%l2) .or. t%l2%kind /= 1)             error stop 22_4
@@ -84,10 +76,10 @@ end module
   if(t%l_5 .neqv. .false.)                                    error stop 28_4
   if(t%l_6 .neqv. .true.)                                     error stop 29_4
   if(t%l_7 .neqv. .true.)                                     error stop 30_4
-  if(t%l_8 .neqv. .false.)                                    error stop 31_4  
+  if(t%l_8 .neqv. .false.)                                    error stop 31_4
 
-  if(t%l_1%kind /= kind(t%l_1) .or. t%l_1%kind /= 4)          error stop 32_4   
-  if(t%l_2%kind /= kind(t%l_2) .or. t%l_2%kind /= 2)          error stop 33_4 
+  if(t%l_1%kind /= kind(t%l_1) .or. t%l_1%kind /= 4)          error stop 32_4
+  if(t%l_2%kind /= kind(t%l_2) .or. t%l_2%kind /= 2)          error stop 33_4
   !-- defect 353531--!
   if(t%l_3%kind /= kind(t%l_3) .or. t%l_3%kind /= 2)          error stop 34_4
   if(t%l_4%kind /= kind(t%l_4) .or. t%l_4%kind /= 4)          error stop 35_4

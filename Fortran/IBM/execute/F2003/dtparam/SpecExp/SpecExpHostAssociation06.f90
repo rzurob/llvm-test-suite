@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : SpecExpHostAssociation06.f
-!*
-!*  PROGRAMMER                 : Dorra Bouhiha
 !*  DATE                       : June 14, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Specification expression - Host Association
-!*  SECONDARY FUNCTIONS TESTED : Specification expression in Function Result 
+!*  SECONDARY FUNCTIONS TESTED : Specification expression in Function Result
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -44,7 +36,7 @@ MODULE Mod
 
          INTEGER(k2) :: A2(l2)
          CHARACTER(l2) :: C2
-         CLASS(Base(k2,l2)), POINTER :: cmp1 
+         CLASS(Base(k2,l2)), POINTER :: cmp1
       END TYPE
 END MODULE
 PROGRAM SpecExpHostAssociation06
@@ -67,9 +59,9 @@ PROGRAM SpecExpHostAssociation06
       ptr => foo12(b1)
       SELECT TYPE ( ptr )
          TYPE IS (Child(4,*,4,*))
-           IF ( ptr%k1 .NE. b1%k1 ) STOP 20 
+           IF ( ptr%k1 .NE. b1%k1 ) STOP 20
            IF ( ptr%l1 .NE. b1%l1 ) STOP 21
-           IF ( ptr%k2 .NE. b1%k1 ) STOP 20 
+           IF ( ptr%k2 .NE. b1%k1 ) STOP 20
            IF ( ptr%l2 .NE. b1%l1 ) STOP 21
            IF ( ptr%I1 .NE. b1%I1 ) STOP 21
            IF ( ANY(ptr%A1   .NE.      b1%A1) ) STOP 21
@@ -82,15 +74,15 @@ PROGRAM SpecExpHostAssociation06
       END SELECT
 
 
-      c1 = Child(4,1,4,10)( 8, [88], 'X', [(99*I, I = 1,10)], 'XLFtest', NULL() ) 
-      ALLOCATE( c1%cmp1, SOURCE = Base(4,10)( 3, [(7*I, I = 1,10)], 'IBM' ) ) 
+      c1 = Child(4,1,4,10)( 8, [88], 'X', [(99*I, I = 1,10)], 'XLFtest', NULL() )
+      ALLOCATE( c1%cmp1, SOURCE = Base(4,10)( 3, [(7*I, I = 1,10)], 'IBM' ) )
       ptr => foo21(c1)
       ptr => foo22(c1)
 
       CONTAINS
- 
-      FUNCTION foo11(this) Result(Res) 
-        CLASS(Base(4,*)) :: this 
+
+      FUNCTION foo11(this) Result(Res)
+        CLASS(Base(4,*)) :: this
         TYPE(Base(b1%k1,b1%l1)), POINTER :: Res
 
         ALLOCATE( Res )
@@ -98,14 +90,14 @@ PROGRAM SpecExpHostAssociation06
         IF ( Res%l1 .NE. this%l1  ) STOP 11
         IF ( SIZE(Res%A1) .NE.this%l1  ) STOP 12
         IF ( LEN(Res%C1)  .NE. this%l1 ) STOP 13
-        
+
         Res%I1 = this%I1
         Res%A1 = this%A1
         Res%C1 = this%C1
       END FUNCTION foo11
- 
-      FUNCTION foo12(this) Result(Res) 
-        CLASS(Base(4,*)) :: this 
+
+      FUNCTION foo12(this) Result(Res)
+        CLASS(Base(4,*)) :: this
         TYPE(Child(KIND(b1%I1),UBOUND(b1%A1,1),b1%k1,b1%l1)), POINTER :: Res
 
         ALLOCATE( Res )
@@ -117,7 +109,7 @@ PROGRAM SpecExpHostAssociation06
         IF ( LEN(Res%C1)  .NE. SIZE(this%A1) ) STOP 19
         IF ( SIZE(Res%A2) .NE.       this%l1 ) STOP 20
         IF ( LEN(Res%C2)  .NE.       this%l1 ) STOP 21
-        
+
         Res%I1 = this%I1
         Res%A1 = this%A1
         Res%A2 = 2*this%A1

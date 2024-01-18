@@ -7,4 +7,4 @@
     equivalence (i, j)
   end block
 
-end 
+end

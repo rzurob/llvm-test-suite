@@ -2,26 +2,18 @@
 ! ftcx_dtp -qnol /tstdev/F2003/volatile/test/volatileOtherAttr05.f
 ! opt variations: -ql
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 12/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : VOLATILE with SAVE attribute 
-!*                                
+!*  PRIMARY FUNCTIONS TESTED   : VOLATILE with SAVE attribute
 !*
-!*  DESCRIPTION                :  
-!*            functional test VOLATILE compatible with SAVE attribute 
+!*  DESCRIPTION                :
+!*            functional test VOLATILE compatible with SAVE attribute
 !* ===================================================================
 
    module m
-      type dt(k1)    ! (4) 
+      type dt(k1)    ! (4)
          integer, kind :: k1
          integer(k1)      x
       end type
@@ -30,12 +22,12 @@
 
       function func(y)
         type(dt(4)), intent(in) :: y
-        type(dt(4)), pointer :: func 
+        type(dt(4)), pointer :: func
 
         type(dt(4)), target, SAVE, VOLATILE::tmp
 
         tmp%x = y%x
-    
+
         func=>tmp
       end function
    end module

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrFuncRet.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrFuncRet.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 20, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Function return 
+!*  Function return
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM dataPtrFuncRet 
+  PROGRAM dataPtrFuncRet
   IMPLICIT NONE
 
   INTEGER,  TARGET  :: Tar2(100, 100)
@@ -48,13 +40,13 @@
       INTEGER  :: I, J, N
       CLASS(*), POINTER :: ExtFun1(:, :)
       INTEGER, TARGET  :: Arr(N*N)
-    END FUNCTION 
+    END FUNCTION
 
     FUNCTION ExtFun2(Arr, I, J, N)
       INTEGER  :: I, J, N
       CLASS(*), POINTER :: ExtFun2(:, :)
       INTEGER, TARGET  :: Arr(N, N)
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
 
 
@@ -62,9 +54,9 @@
   Tar1 = -1
   Tar2 = -2
 
-  DO I =1, N 
+  DO I =1, N
   DO J =I, N
-  
+
     Ptr => ExtFun2(Tar2(1,1), I, J, N)
     IF (.NOT. ASSOCIATED(Ptr, Tar2))             STOP 11
 
@@ -75,11 +67,11 @@
       IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 12
       IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
       IF (ANY( Tar2     .NE.  I*J ))               STOP 14
-    CLASS DEFAULT 
+    CLASS DEFAULT
       STOP 15
     END SELECT
 
-    Ptr => ExtFun1(Tar1(1), I, J, N) 
+    Ptr => ExtFun1(Tar1(1), I, J, N)
     IF (.NOT. ASSOCIATED(Ptr))                      STOP 21
 
     SELECT TYPE( Ptr )
@@ -89,10 +81,10 @@
       IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))           STOP 22
       IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))           STOP 23
       IF (ANY( Tar1(1:(J-I+1)*(J-I+1)) .NE.  -I*J ))  STOP 24
-    CLASS DEFAULT 
+    CLASS DEFAULT
       STOP 15
     END SELECT
- 
+
   END DO
   END DO
 
@@ -103,13 +95,13 @@
   CLASS(*), POINTER :: ExtFun1(:, :)
   INTEGER, TARGET  :: Arr(N*N)
     ExtFun1(I:J, I:J) => Arr
-  END FUNCTION 
+  END FUNCTION
 
   FUNCTION ExtFun2(Arr, I, J, N)
   INTEGER  :: I, J, N
   CLASS(*), POINTER :: ExtFun2(:, :)
   INTEGER, TARGET  :: Arr(N, N)
     ExtFun2(I:, J:) => Arr
-  END FUNCTION 
+  END FUNCTION
 
 

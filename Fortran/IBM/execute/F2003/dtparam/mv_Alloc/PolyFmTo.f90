@@ -1,25 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : PolyFmTo.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM is of poly type child with kind and len 
-!*                               TO is of poly type base with len 
+!*  DESCRIPTION                : FROM is of poly type child with kind and len
+!*                               TO is of poly type base with len
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -30,7 +18,7 @@
 
 module m
 
-   type base ( l) 
+   type base ( l)
        integer, len :: l
        character(l), allocatable :: ch1
        character(:), allocatable :: ch2
@@ -38,8 +26,8 @@ module m
 
    type, extends(base) :: child(k)
        integer, kind :: k
-       character(l) :: ch(k) 
-       integer(k+1), allocatable :: id(:) 
+       character(l) :: ch(k)
+       integer(k+1), allocatable :: id(:)
    end type
 
 end module
@@ -54,10 +42,10 @@ use m
 
    allocate( child(l=8, k=7) :: b1 )
 
- 
+
    call move_alloc(c1, b1)
 
-   if ( .not. allocated(b1) ) stop 21 
+   if ( .not. allocated(b1) ) stop 21
    if ( allocated(c1) ) stop 23
 
    select type (b1)

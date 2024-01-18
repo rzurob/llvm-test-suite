@@ -1,22 +1,16 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : codimension_f001b.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : October 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Test codimension attribute with a dummy coarray.
-!*                            
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program main
@@ -28,7 +22,7 @@ program main
 	integer :: a, b
 
 	real, save :: caf5[-10:*]
-	integer, save :: caf6(3,3,1)[1:5,*]	
+	integer, save :: caf6(3,3,1)[1:5,*]
 	real, save :: caf7(1)[0:1,-1:0,10:*]
 	complex, save, codimension[*] :: caf8
 
@@ -38,7 +32,7 @@ program main
 			complex, codimension[-1:*] :: c2
 		end subroutine
 	end interface
-	
+
 	a = fun1(caf1, caf2)
 	a = fun1(caf5, caf6)
 	call sub1(caf3, caf4)
@@ -51,7 +45,7 @@ contains
 		integer, codimension[1:2,0:*] :: cafb(3,3,1)
 		real :: a, b
 		integer :: c(2), d(2)
-		
+
 		!### Test Bounds
 		a = lcobound(cafa, 1)
 		b = ucobound(cafa, 1)
@@ -74,7 +68,7 @@ contains
 			error stop 14
 		end if
 		sync all
-		
+
 		!### Test assignment
 		cafa = 10.0
 		cafb = int(cafa) + 1
@@ -87,7 +81,7 @@ contains
 			print *, caf2, num
 			error stop 16
 		end if
-		
+
 		fun1 = 1
 	end function
 end
@@ -97,7 +91,7 @@ subroutine sub1(caf3, caf4)
 	real, codimension[2,2,*], dimension(1) :: caf3
 	complex, codimension[-1:*] :: caf4
 	integer :: num, a, b, c(3)
-	
+
 	!### Test Bounds
 	num = num_images()
 	a = lcobound(caf4, 1)
@@ -110,14 +104,14 @@ subroutine sub1(caf3, caf4)
 		print *, b, num - 2
 		error stop 18
 	end if
-	
+
 	c = lcobound(caf3)
 	if ( any(c .ne. [1,1,1]) ) then
 		print *, c
 		error stop 19
 	end if
 	sync all
-	
+
 	!### Test assignment
 	caf3 = 1.0
 	if ( any(caf3 .ne. [1.0]) ) then

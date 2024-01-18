@@ -12,43 +12,37 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxcllf21.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Call command line intrinsic routines through  
+!*  DESCRIPTION                : Call command line intrinsic routines through
 !*                             : a call chain of internal / external functions by do loops
-!*       
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD
 
-      character(513)   :: NAME  
-      logical          :: TRIM_NAME 
-      character(2049)  :: CmdLine 
-          
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
+      character(2049)  :: CmdLine
+
 
       DATA CmdLine    /'fxcllf21 /a/s/d/f/g/h/ a-s-d-f-g q=w=e=r=t='/
       DATA NAME       /'CmdLine   '/
@@ -56,11 +50,11 @@
 
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE  
-      integer          :: ARGCOUNT 
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
 
 
       DATA COMMAND    / '????? '/
@@ -130,15 +124,15 @@
 
       SUBROUTINE SUB0
 
-      IF ( COMMAND_ARGUMENT_COUNT() .ne. 3)                      call zzrc( 72 ) 
-                                                    
-      IF ( EXT_COMMAND_ARGUMENT_COUNT( ))                        call zzrc( 73 )     
-                                  
-      IF ( EXT_GET_COMMAND( ))                                   call zzrc( 74 )     
+      IF ( COMMAND_ARGUMENT_COUNT() .ne. 3)                      call zzrc( 72 )
 
-      IF ( EXT_GET_COMMAND_ARGUMENT( COMMAND_ARGUMENT_COUNT()))  call zzrc( 75 )     
+      IF ( EXT_COMMAND_ARGUMENT_COUNT( ))                        call zzrc( 73 )
 
-      IF (EXT_GET_ENVIRONMENT_VARIABLE( ))                       call zzrc( 76 )     
+      IF ( EXT_GET_COMMAND( ))                                   call zzrc( 74 )
+
+      IF ( EXT_GET_COMMAND_ARGUMENT( COMMAND_ARGUMENT_COUNT()))  call zzrc( 75 )
+
+      IF (EXT_GET_ENVIRONMENT_VARIABLE( ))                       call zzrc( 76 )
 
 
       END SUBROUTINE
@@ -155,7 +149,7 @@
 
          EXT_COMMAND_ARGUMENT_COUNT = .false.
          CmdCount = COMMAND_ARGUMENT_COUNT()
-         if ( CmdCount .ne. 3 ) & 
+         if ( CmdCount .ne. 3 ) &
          then
            EXT_COMMAND_ARGUMENT_COUNT = .true.
            error stop 63 ! Normally never returns if get here
@@ -193,7 +187,7 @@
           NUMBER = i
           call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
           call MyGetArg(CmdLine, NUMBER, Argument)
- 
+
           if ( (TRIM(VALUE) .ne. TRIM(Argument))       .or. &
                (LENGTH      .ne. LEN(TRIM(Argument)))  .or. &
                (STATUS      .ne. 0) )                       &

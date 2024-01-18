@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass105.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass105.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on IMPLICIT array data types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -56,9 +44,9 @@
 !*
 !*  DESCRIPTION                : Test: ASSOCIATE with expression and with
 !*                                     single dimention array
-!*                                     with using implicit type with 
+!*                                     with using implicit type with
 !*                                     integer*(1,2,4), logical*(1,2,4)
-!*                                     real*(4,8,16), double presion 
+!*                                     real*(4,8,16), double presion
 !*                                     byte and character data types.
 !*
 !* ===================================================================
@@ -122,7 +110,7 @@
       dimension tval( 3 )
 
       logical :: precision_r4, precision_r8, precision_r6
-      logical :: precision_x3, precision_x6, precision_x8 
+      logical :: precision_x3, precision_x6, precision_x8
 
       aval( 1 ) = 1
       bval( 1 ) = 2
@@ -208,7 +196,7 @@
            endif
       end associate
 
-      r = rval( 1 ) + rval( 2 ) - rval( 3 )  
+      r = rval( 1 ) + rval( 2 ) - rval( 3 )
       associate ( value4 => rval( 1 ) + rval( 2 ) - rval( 3 ) )
            if (.not.precision_x6(value4,r)) then
            error stop 4

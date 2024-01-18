@@ -1,20 +1,12 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : intrinsictype17f.F
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : March 10, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
-!* PRIMARY FUNCTIONS TESTED   : Intrinsic types in TYPE spec 
-!*
-!* DRIVER STANZA              : xlf2008
+!* PRIMARY FUNCTIONS TESTED   : Intrinsic types in TYPE spec
 !*
 !* DESCRIPTION                : Testing proper functionality of
-!*                              vector types in TYPE spec 
+!*                              vector types in TYPE spec
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

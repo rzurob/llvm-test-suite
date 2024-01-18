@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxopen-newunit12.f
-!*
-!* PROGRAMMER                   : Sarah Kouchaki-Ramezan
 !* DATE                         : Oct. 2010
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: NEWUNIT= specIFier, Feature#:377344
 !* SECONDARY FUNTIONS TESTED    : READ,WRITE,REWIND
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Testing NEWUNIT with List-directed
@@ -64,22 +57,22 @@
 !**********************************************************
 
      IF ( i1_in .ne. i1_out ) THEN
-     PRINT *, i1_in,i1_out 
+     PRINT *, i1_in,i1_out
      ERROR STOP 10_4
      END IF
 
      IF ( i2_in .ne. i2_out ) THEN
-     PRINT *, i2_in,i2_out 
+     PRINT *, i2_in,i2_out
      ERROR STOP 11_4
      END IF
 
      IF ( i4_in .ne. i4_out ) THEN
-     PRINT *, i4_in,i4_out 
+     PRINT *, i4_in,i4_out
      ERROR STOP 12_4
      END IF
 
      IF ( i8_in .ne. i8_out ) THEN
-     PRINT *, i8_in,i8_out 
+     PRINT *, i8_in,i8_out
      ERROR STOP 13_4
      END IF
 

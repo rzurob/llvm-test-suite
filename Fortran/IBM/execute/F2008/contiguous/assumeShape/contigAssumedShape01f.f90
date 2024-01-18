@@ -1,28 +1,17 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : CopyInOut1.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2011-08-20
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : copy-in/out for assumed shape arrays
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                :
 !*
-!*  DESCRIPTION                : 
-!*       
-!*                      
 !*    - Outer most subroutine has assumed shape array dummy argument with contiguous attribute
-!*    - Second subroutine has explit shape array dummy argument 
-!*    - Inner most subroutine has assumed shape array dummy argument with contiguous attribute 
+!*    - Second subroutine has explit shape array dummy argument
+!*    - Inner most subroutine has assumed shape array dummy argument with contiguous attribute
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -50,16 +39,16 @@ PROGRAM CopyInOut1
 
       CONTAINS
 
-      SUBROUTINE Sub1(Arg)           
+      SUBROUTINE Sub1(Arg)
         INTEGER, CONTIGUOUS :: Arg(:)
 
         IF (          .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 10
         IF ( ANY(Arg .NE. [(I, I = 1,125,50)]) ) ERROR STOP 11
 
-        CALL SubSub1(Arg) 
+        CALL SubSub1(Arg)
         CALL SubSub2(Arg,size(Arg))
       END SUBROUTINE Sub1
-      
+
       SUBROUTINE Sub2(Arg)
         INTEGER, CONTIGUOUS, INTENT(IN) :: Arg(:)
 
@@ -70,12 +59,12 @@ PROGRAM CopyInOut1
         CALL SubSub2(Arg,size(Arg))
       END SUBROUTINE Sub2
 
-      SUBROUTINE Sub3(Arg)           
+      SUBROUTINE Sub3(Arg)
         INTEGER :: Arg(:)
 
         IF ( ANY(Arg .NE. [(I, I = 1,125,50)]) ) ERROR STOP 14
 
-        CALL SubSub1(Arg) 
+        CALL SubSub1(Arg)
         CALL SubSub2(Arg,size(Arg))
       END SUBROUTINE Sub3
 
@@ -86,7 +75,7 @@ PROGRAM CopyInOut1
         IF ( ANY(Arg .NE. [(I, I = 1,125,50)]) ) ERROR STOP 16
 
         DO I = 1, 3
-             IF ( Arg(I)    .NE.  (50*(I-1)+1) ) ERROR STOP 17 
+             IF ( Arg(I)    .NE.  (50*(I-1)+1) ) ERROR STOP 17
         ENDDO
 
         CALL SubSubSub(Arg)
@@ -99,7 +88,7 @@ PROGRAM CopyInOut1
         IF ( ANY(Arg .NE. [(I, I = 1,125,50)]) ) ERROR STOP 19
 
         DO I = 1, n
-             IF ( Arg(I)    .NE.  (50*(I-1)+1) ) ERROR STOP 20 
+             IF ( Arg(I)    .NE.  (50*(I-1)+1) ) ERROR STOP 20
         ENDDO
 
         CALL SubSubSub(Arg)

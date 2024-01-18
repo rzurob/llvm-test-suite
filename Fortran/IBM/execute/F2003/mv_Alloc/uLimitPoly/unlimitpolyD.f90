@@ -1,29 +1,16 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlimitpolyD.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimit polymorphic,
-!*                               FROM/TO are same object thr two dummy  
-!*                               arguments with the same object 
+!*                               FROM/TO are same object thr two dummy
+!*                               arguments with the same object
 !*                               FROM/TO has intent(inout) attribute
 !*                               MOVE_ALLOC called in a external procedure
-!*                        
 !*
 !*                              20081219: the test case violates the aliasing
 !                               rule in Fortran: it's required NOT to change an
@@ -42,13 +29,13 @@
 module m
 
     class(*), allocatable :: o1(:,:,:,:,:,:)
- 
-    interface 
+
+    interface
            subroutine sub( arg1, arg2 )
                class(*), intent(inout), allocatable :: arg1(:,:,:,:,:,:)
                class(*), intent(inout), allocatable :: arg2(:,:,:,:,:,:)
         end subroutine
-    end interface 
+    end interface
 
 end module
 
@@ -58,7 +45,7 @@ use m
     class(*), dimension(:,:,:,:,:,:), allocatable :: p1
 
     allocate( character(8) ::  o1(2,2,2,2,2,2) )
-    
+
     call sub (o1, p1)
 
     if ( allocated(o1) ) stop 21
@@ -80,6 +67,6 @@ subroutine sub( arg1, arg2 )
 
      class(*), intent(inout), allocatable :: arg1(:,:,:,:,:,:)
      class(*), intent(inout), allocatable :: arg2(:,:,:,:,:,:)
-   
+
      call move_alloc(arg1, arg2)
 end subroutine

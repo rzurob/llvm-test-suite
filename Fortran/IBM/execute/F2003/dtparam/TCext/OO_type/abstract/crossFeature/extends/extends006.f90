@@ -1,11 +1,6 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/abstract/crossFeature/extends/extends006.f
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -20,22 +15,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Extends keyword, ensure parent component accessibility
 !*                                        parent component and parent's component have private accessibility
@@ -56,14 +40,14 @@ module m
    contains
       procedure, pass :: print => printbase
    end type
-   
+
    type, extends(base) :: child(k2)    ! (4,4)
       integer, kind :: k2
       integer(k2)   :: r
    end type
-   
+
    class(child(4,4)), allocatable :: c1
-      
+
 contains
    subroutine printbase(a)
       class(base(4)), intent(in) :: a
@@ -74,9 +58,9 @@ end module
 
 program extends006
    use m
-   
+
    allocate(c1, source = child(4,4)(r=7))
    print *,c1%r
-   call c1%print()   
+   call c1%print()
 
-end program   
+end program

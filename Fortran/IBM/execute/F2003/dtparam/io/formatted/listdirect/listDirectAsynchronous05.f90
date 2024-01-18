@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectAsynchronous05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectAsynchronous05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 27 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 27 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test Read statement with asynchronous IO
@@ -33,7 +25,7 @@ subroutine sub
    type A(k1,l1)
       integer,kind :: k1=2
       integer,len  :: l1=2
-      
+
       character(l1) :: c1="**"
       character(k1) :: c2(l1)="##"
       integer(k1)   :: i1=-99
@@ -42,25 +34,25 @@ subroutine sub
    type B(k2,l2)
       integer,kind :: k2=2
       integer,len  :: l2=4
-      
-      logical(k2)   :: g1(l2-1:l2,l2:l2+1)=.false. 
+
+      logical(k2)   :: g1(l2-1:l2,l2:l2+1)=.false.
       integer(2*k2) :: i2(l2-1:l2,1)=-99
    end type
 
    type base(k3,l3)
        integer,kind :: k3=2
        integer,len  :: l3=3
-      
+
        type(A(k3,l3-1)) :: a1comp(l3:l3+1)
    end type
 
    type,extends(base) :: child(k4,l4)
        integer,kind :: k4=2
        integer,len  :: l4=3
-       
+
        type(B(k4,l4+1)) :: b1comp
    end type
-   
+
    type(child(2,3,2,3)) :: obj1(2)
 
    class(base(2,3)),allocatable :: obj3(:)
@@ -143,40 +135,40 @@ subroutine sub
        subroutine  readData(dt)
           class(base(2,3)),allocatable,intent(inout) :: dt(:)
           class(base(2,obj1%l3)),allocatable :: obj2(:)
-          
+
           integer :: ios
           character(256) :: msg
- 
+
           allocate(dt(size(obj1)),source=obj1)
 
           open(10,file='listDirectAsynchronous05.dat',status='old',&
                form='formatted',access='sequential',position='rewind',&
                asynchronous='yes',iostat=ios,iomsg=msg)
-        
+
           if(ios <> 0) then
               print *,"fail to open the file"
               print *,"iostat=",ios
               print *,"iomsg=",msg
-              stop 10  
-          end if 
+              stop 10
+          end if
 
           select type(dt)
               type is(child(2,*,2,*))
 
-                 read(10,*,asynchronous='yes') dt(lbound(dt,1)) 
+                 read(10,*,asynchronous='yes') dt(lbound(dt,1))
 
                  read(10,*,asynchronous='yes') dt(lbound(dt,1)+1)
 
               class default
 
-                 stop 11 
+                 stop 11
 
           end select
 
           ! dt is the pending input/output storage sequence
           call set_auto(dt,obj2)
-           
-          wait(10) 
+
+          wait(10)
 
           select type(obj2)
 
@@ -188,18 +180,18 @@ subroutine sub
           write(*,*) obj2(lbound(obj2,1) + 1)
           write(*,*)
           write(*,*) obj2(lbound(obj2,1))%a1comp, &
-                     obj2(lbound(obj2,1))%b1comp 
+                     obj2(lbound(obj2,1))%b1comp
           write(*,*) obj2(lbound(obj2,1) + 1)%a1comp,&
                      obj2(lbound(obj2,1) + 1)%b1comp
           write(*,*)
           write(*,*) obj2(lbound(obj2,1))%a1comp(3)%c1, &
                      obj2(lbound(obj2,1))%a1comp(3)%c2, &
-                     obj2(lbound(obj2,1))%a1comp(3)%i1, & 
+                     obj2(lbound(obj2,1))%a1comp(3)%i1, &
                      obj2(lbound(obj2,1))%a1comp(4)%c1, &
                      obj2(lbound(obj2,1))%a1comp(4)%c2, &
                      obj2(lbound(obj2,1))%a1comp(4)%i1, &
                      obj2(lbound(obj2,1))%b1comp%g1,    &
-                     obj2(lbound(obj2,1))%b1comp%i2 
+                     obj2(lbound(obj2,1))%b1comp%i2
           write(*,*) obj2(lbound(obj2,1)+1)%a1comp(3)%c1, &
                      obj2(lbound(obj2,1)+1)%a1comp(3)%c2, &
                      obj2(lbound(obj2,1)+1)%a1comp(3)%i1, &
@@ -208,7 +200,7 @@ subroutine sub
                      obj2(lbound(obj2,1)+1)%a1comp(4)%i1, &
                      obj2(lbound(obj2,1)+1)%b1comp%g1,    &
                      obj2(lbound(obj2,1)+1)%b1comp%i2
-          
+
           write(*,*)
 
           write(*,*) obj2(lbound(obj2,1))%a1comp(3)%c1, &
@@ -247,10 +239,9 @@ subroutine sub
 
           end select
 
+          close(10)
 
-          close(10)     
-           
-       end subroutine   
+       end subroutine
 
        ! dt has asynchronous attribute
        subroutine set_auto(dt,obj2)

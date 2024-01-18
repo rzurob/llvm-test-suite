@@ -1,46 +1,32 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
 ! %PRECMD: ${TR_SRC}/scrison00.presh fxison00 cxison00
 ! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
-!*  SECONDARY FUNCTIONS TESTED : see below 
+!*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_FLOAT_COMPLEX, C_DOUBLE_COMPLEX
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*
 !*	- testing C_FLOAT_COMPLEX and C_DOUBLE_COMPLEX
 !*	- using external FORTRAN functions
@@ -54,7 +40,7 @@ complex(C_FLOAT_COMPLEX) function fnt1(a,b)
 
    complex(C_FLOAT_COMPLEX) :: a
    complex(C_DOUBLE_COMPLEX) :: b
-   
+
    if ( a /= (5.0e0,5.0e0) ) error stop 20
    if ( b /= (10.0d0,10.0d0) ) error stop 22
 
@@ -69,7 +55,7 @@ complex(C_FLOAT_COMPLEX) function fnt2(a,b)
 
    complex(C_FLOAT_COMPLEX), value :: a
    complex(C_DOUBLE_COMPLEX), value :: b
-   
+
    if ( a /= (5.0e0,5.0e0) ) error stop 24
    if ( b /= (10.0d0,10.0d0) ) error stop 26
 
@@ -84,7 +70,7 @@ complex(C_FLOAT_COMPLEX) function fnt3(a,b)
 
    complex(C_FLOAT_COMPLEX), intent(in) :: a
    complex(C_DOUBLE_COMPLEX), intent(in) :: b
-   
+
    if ( a /= (5.0e0,5.0e0) ) error stop 28
    if ( b /= (10.0d0,10.0d0) ) error stop 30
 
@@ -96,7 +82,7 @@ complex(C_FLOAT_COMPLEX) function fnt4(a,b)
 
    complex(C_FLOAT_COMPLEX), intent(in), value :: a
    complex(C_DOUBLE_COMPLEX), intent(in), value :: b
-   
+
    if ( a /= (5.0e0,5.0e0) ) error stop 32
    if ( b /= (10.0d0,10.0d0) ) error stop 34
 
@@ -108,7 +94,7 @@ complex(C_FLOAT_COMPLEX) function fnt5(a,b)
 
    complex(C_FLOAT_COMPLEX), intent(in) :: a
    complex(C_DOUBLE_COMPLEX), intent(in) :: b
-   
+
    if ( a /= (5.0e0,5.0e0) ) error stop 36
    if ( b /= (10.0d0,10.0d0) ) error stop 38
 
@@ -120,7 +106,7 @@ complex(C_FLOAT_COMPLEX) function fnt6(a,b)
 
    complex(C_FLOAT_COMPLEX), intent(in), value :: a
    complex(C_DOUBLE_COMPLEX), intent(in), value :: b
-   
+
    if ( a /= (5.0e0,5.0e0) ) error stop 40
    if ( b /= (10.0d0,10.0d0) ) error stop 42
 

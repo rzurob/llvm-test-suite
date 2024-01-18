@@ -4,31 +4,25 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrStructcompbound.f 
+!*  TEST CASE NAME             : dataPtrStructcompbound.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
 !* - components of DT as lb/ub
-!* - lb/ub have different kind type parameter value 
-!* - data-pointer and data-target are of type logical 
+!* - lb/ub have different kind type parameter value
+!* - data-pointer and data-target are of type logical
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
    module m
-		type A(k1)    ! (1) 
+		type A(k1)    ! (1)
 		    integer, kind            :: k1
 		    integer(k1), allocatable :: lb
 		end type
@@ -36,7 +30,7 @@
 		type B(k2,k3)    ! (2,1)
             integer, kind        :: k2,k3
             integer(k2), pointer :: ub
-            type(A(k3))          :: aa 
+            type(A(k3))          :: aa
 		end type
 
         type, extends(A) :: C(k4)    ! (1,8)
@@ -53,17 +47,17 @@
         logical, allocatable , target :: l1(:)
         logical, pointer :: p1(:,:)
 
-        allocate(l1(50), source = (/(mod(i,2)==0 , i=1,50 ) /) ) 
+        allocate(l1(50), source = (/(mod(i,2)==0 , i=1,50 ) /) )
 	if ( .not. allocated(l1) ) stop 3
 
         allocate(b1)
-	if ( .not. associated(b1) ) stop 4 
+	if ( .not. associated(b1) ) stop 4
 
         allocate(b1%ub, source = 24_2)
-	if ( .not. associated(b1%ub) ) stop 5 
+	if ( .not. associated(b1%ub) ) stop 5
 
         allocate(b1%aa%lb, source = 8_1)
-	if ( .not. allocated(b1%aa%lb) ) stop 6 
+	if ( .not. allocated(b1%aa%lb) ) stop 6
 
         allocate(C(1,8)::a1)
         if ( .not. allocated(a1) ) stop 7
@@ -72,13 +66,13 @@
             type is (C(1,8))
                 a1%ub = 13
                 a1%lb = 17
-                p1(b1%aa%lb:a1%ub, a1%lb:b1%ub) => l1(1_8:50_4) 
+                p1(b1%aa%lb:a1%ub, a1%lb:b1%ub) => l1(1_8:50_4)
             class default
-                stop 13 
+                stop 13
         end select
 
 	if ( .not. associated(p1)) stop 9
-	if (any(lbound(p1) .ne. (/8,17/))) stop 5 
+	if (any(lbound(p1) .ne. (/8,17/))) stop 5
 	if (any(ubound(p1) .ne. (/13,24/))) stop 7
         print *, p1
 

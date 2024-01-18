@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Structure Constructor: Scalar Sequence Type Entities
@@ -68,7 +57,7 @@ use m
 
    write ( 1, "(A4,A4,A4,A4)", iostat = stat, iomsg = msg )                    base('ghi','GHI'),base('jkl','JKL') !<- shall not call DTIO procedure
    if ( ( stat /= 0 ) .or. ( msg /= '' ) ) error stop 3_4
-   
+
 end program
 
 subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)

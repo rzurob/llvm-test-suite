@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : nmlOutputReal003.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 19, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -46,9 +40,9 @@
       equivalence(rl4, rl4eq)
 
       namelist /mynml/ rl1, i1, rl2, c1, rl3, i2, rl4, c2
-      
+
       open(out, file='nmlOutputReal003.out', action='write')
-      
+
       rl1 = 0
       rl2 = 0
       rl3 = 0
@@ -65,7 +59,7 @@
       rl3eq = z'FFFFFFFFFFFFFFFF' ! negative NaN(Q)
       rl4eq = z'FFF0000000000000' ! negative Inf
       write(out,nml=mynml)
-      
+
       rl1eq = z'7FFFFFFFFFFFFFFF' ! positive NaN(Q)
       rl2eq = z'7FF0000000000000' ! positive Inf
       rl3eq = z'FFF7FFFFFFFFFFFF' ! negative NaN(S)

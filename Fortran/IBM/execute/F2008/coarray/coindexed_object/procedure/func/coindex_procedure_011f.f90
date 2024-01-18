@@ -1,26 +1,16 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Andy Chen
 !*  DATE                       : October 04, 2010
 !* .or.GIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Test internal procedures (function and
 !                                subroutine).Argument type: array and scalar.
 !                                corank = 4, explicit shape, assumed-size and
-!                                assumed-shape 
+!                                assumed-shape
 !*
 !*  KEY.or.(S)                 :
 !*  TARGET(S)                  :
@@ -59,8 +49,8 @@ program coindex_procedure_011f
     array1 = [((i*me*1.0), i=1,10)]
 
     sync all
-    
-    do i = 1, 4 
+
+    do i = 1, 4
         do j = 5, 8
             l = image_index(caf1, [1,i,1,j])
             if ( intreturn(caf1[1,i,1,j]) .ne. l*2) then
@@ -69,11 +59,11 @@ program coindex_procedure_011f
         end do
     end do
 
-    do i = 1, 2 
+    do i = 1, 2
         do j = 1, 2
             do k = 1,2
                 do l = 1,2
-                    n = image_index(caf2, [i,j,k,l]) 
+                    n = image_index(caf2, [i,j,k,l])
                     do m = 1, 10
                         if ( intreturn(caf2(m)[i,j,k,l]) .ne. m*n*2) then
                             error stop 2
@@ -83,9 +73,8 @@ program coindex_procedure_011f
             end do
         end do
     end do
-    
 
-    do i = 1, 2 
+    do i = 1, 2
         do j = 1, 2
             do k = 1,2
                 do l = 1,2
@@ -97,11 +86,11 @@ program coindex_procedure_011f
         end do
     end do
 
-    do i = 1, 2 
+    do i = 1, 2
         do j = 1, 2
             do k = 1,2
                 do l = 1,2
-                    n = image_index(caf3, [i,j,k,l]) 
+                    n = image_index(caf3, [i,j,k,l])
                     sum1 = 0.0
                     sum2 = 0.0
                     do m=1,10
@@ -114,7 +103,7 @@ program coindex_procedure_011f
                         print *, "++++++++++++++++++++++++"
                         print *, sum1, sum2, sum3
                         error stop 4
-                    end if 
+                    end if
                 end do
             end do
         end do
@@ -138,7 +127,7 @@ program coindex_procedure_011f
         do i1 = 1,size(x)
             mysum = mysum + x(i1)
         end do
-        print *, "mysum=",mysum 
+        print *, "mysum=",mysum
         return
     end subroutine
 
@@ -151,7 +140,7 @@ program coindex_procedure_011f
             y = y + x(i1)
         end do
         print *, "y=", y
-        arraysum2 = y 
+        arraysum2 = y
     end function
 
 end program

@@ -1,23 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound_diag05
 !*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY SUBROUTINES TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY SUBROUTINES TESTED : Resolution for polymorphic objects
-!*                                 based on the number of arguments 
+!*                                 based on the number of arguments
 !*                                 ambiguous PASS and NOPASS
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -40,19 +33,19 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
 
-        CONTAINS 
+        CONTAINS
          PROCEDURE, NOPASS :: sub0
-         PROCEDURE, PASS :: sub1      
+         PROCEDURE, PASS :: sub1
          GENERIC :: SUB =>  sub0, sub1
-      END TYPE Base 
+      END TYPE Base
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE sub0
       CLASS(Base(4,:)), POINTER  :: pntr

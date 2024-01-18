@@ -1,16 +1,8 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : pointer array, VOLATILE
-!*
 !*
 !*  DESCRIPTION                : funtional TC for  C1233
 !*
@@ -36,11 +28,10 @@
 
     call ExplicitArray(ptrArray)
 
-  end program volatileC1233PointerArray02 
+  end program volatileC1233PointerArray02
 
   subroutine ExplicitArray(x)
        integer, pointer :: x(:,:)        !dummy argument is pointer array
        VOLATILE::x
   end subroutine ExplicitArray
-
 

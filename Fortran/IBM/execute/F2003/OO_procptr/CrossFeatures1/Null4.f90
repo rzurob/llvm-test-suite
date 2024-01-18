@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Null4.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Null4.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Null4.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Null4.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 11, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*   null()
-!*   Actual argument/DATA statement 
-!*  (same to 306255) 
+!*   Actual argument/DATA statement
+!*  (same to 306255)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -60,9 +54,9 @@
 
   END MODULE
 
-  PROGRAM Null4 
+  PROGRAM Null4
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT), PARAMETER :: V=DT(-1, NULL())
 
@@ -72,9 +66,9 @@
   PROCEDURE(Fun), POINTER :: ProcPtr4
 
   DATA  ProcPtr1 / NULL()/,           &
-      & ProcPtr2 / NULL()/,           & 
+      & ProcPtr2 / NULL()/,           &
       & ProcPtr3 / NULL()/,           &
-      & ProcPtr4 / NULL()/  
+      & ProcPtr4 / NULL()/
 
   TYPE(DT) :: W1,W2, W3(3), W4(1)
 
@@ -97,17 +91,17 @@
 
 
   CALL IntSub(NULL(), DT(-1, NULL()), DT(-1, NULL(V%ProcPtr)), NULL(ProcPtr1))
-  
+
   CALL IntSub1(DT(-1, NULL()),                                    &
               & DT(-1, NULL(V%ProcPtr)),                          &
               &(/DT(-1, NULL()),DT(-1, NULL()),DT(-1, NULL()) /), &
               & (/DT(-1, NULL(W3(1)%ProcPtr)) /))
-  
+
   CONTAINS
 
   SUBROUTINE IntSub(Arg1, Arg2, Arg3, Arg4)
   PROCEDURE(Fun), POINTER :: Arg1, Arg4
-  TYPE (DT) ::Arg2, Arg3 
+  TYPE (DT) ::Arg2, Arg3
 
   IF ( ASSOCIATED(Arg1) )         STOP 21
   IF ( ASSOCIATED(Arg2%ProcPtr) ) STOP 22
@@ -117,7 +111,7 @@
   END SUBROUTINE
 
   SUBROUTINE IntSub1(Arg1, Arg2, Arg3, Arg4)
-  TYPE (DT) ::Arg1, Arg2, Arg3(:), Arg4(1) 
+  TYPE (DT) ::Arg1, Arg2, Arg3(:), Arg4(1)
 
   IF ( ASSOCIATED(Arg1%ProcPtr) )    STOP 31
   IF ( ASSOCIATED(Arg2%ProcPtr) )    STOP 32

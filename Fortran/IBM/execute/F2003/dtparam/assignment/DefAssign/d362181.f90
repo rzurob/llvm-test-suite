@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d362181.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d362181.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 12 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 12 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 362181
@@ -35,7 +27,7 @@ module m
   end type
 
   interface assignment(=)
-    module procedure assignA,assignB 
+    module procedure assignA,assignB
   end interface
 
   contains
@@ -59,7 +51,7 @@ module m
         do i=1,2
            this(i)%i1=dt(i)%i1
            print *,dt(i)%i1,dt(i)%a2comp%c1,dt(i)%a2comp%c3
-           this(i)%a2comp=dt(i)%a2comp               
+           this(i)%a2comp=dt(i)%a2comp
            print *,this(i)%i1,this(i)%a2comp%c1,this(i)%a2comp%c3
         end do
      end subroutine

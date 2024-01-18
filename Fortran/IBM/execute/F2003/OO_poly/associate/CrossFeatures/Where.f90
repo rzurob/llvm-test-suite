@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  Where.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Where 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Where
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 09, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,11 +31,11 @@
 !*
 !*  DESCRIPTION
 !*    The where stmt
-!*    () 
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   MODULE M
     TYPE :: DT
       INTEGER :: Id = 1
@@ -52,18 +46,18 @@
   CONTAINS
 
     ELEMENTAL FUNCTION GetId(Arg)
-    IMPLICIT CLASS(DT)(A) 
+    IMPLICIT CLASS(DT)(A)
     INTENT(IN) :: Arg
     INTEGER    :: GetId
       GetId = Arg%Id
     END FUNCTION
 
   END MODULE
- 
-  PROGRAM Where 
+
+  PROGRAM Where
 
   USE M
-  IMPLICIT TYPE(DT)(A) 
+  IMPLICIT TYPE(DT)(A)
   DIMENSION :: Arr(2:4)
 
   ASSOCIATE ( As => (/DT(-3), DT(-3), DT(-3)/) )
@@ -77,7 +71,7 @@
 
   ASSOCIATE ( As => Arr )
     WHERE ((/.TRUE., .TRUE., .TRUE. /) )
-      As%ID = -2 
+      As%ID = -2
     END WHERE
   END ASSOCIATE
 
@@ -86,7 +80,7 @@
 
   ASSOCIATE ( As => Arr )
     WHERE ((/.TRUE., .TRUE., .TRUE. /) )
-      As%ID = As%ID + 1 
+      As%ID = As%ID + 1
     END WHERE
   END ASSOCIATE
 
@@ -95,7 +89,7 @@
 
   ASSOCIATE ( As => Arr(:) )
     WHERE ( As(:)%ID < 0 )
-      As%ID = As%ID + 5 
+      As%ID = As%ID + 5
     END WHERE
   END ASSOCIATE
 

@@ -3,22 +3,16 @@
 ! opt variations: -qnok -qnol -qdefaultpv -qreuse=self
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : d327618 - expr is a Scalar and variable is
 !*                               an Array
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : November  2, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: IMPDO: Derived Type with ALLOCATABLE
 !*                               Component not Allocated in Array Constructor
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATABLE Attribute, Intrinsic Assignment

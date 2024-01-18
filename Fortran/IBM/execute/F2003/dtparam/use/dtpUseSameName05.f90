@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUseSameName05
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-09-08
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTP and USE
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 355310
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -119,5 +113,5 @@ contains
     print *, arg1, arg1 % p, arg2, arg2 % p, arg3, arg3 % p, arg4, arg4 % p
            ! B2    2         B2D2  2         B2BB  4         B2B   3
   end subroutine mytest3
- 
+
 end program dtpUseSameName05

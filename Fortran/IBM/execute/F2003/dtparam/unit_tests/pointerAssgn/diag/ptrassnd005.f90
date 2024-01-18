@@ -8,10 +8,10 @@
 
         real(k) :: data(n) = 1.0
       end type
- 
+
       type, extends(base) :: child (x, y, p, q)
         integer, kind :: x, y
-        integer, len :: p, q 
+        integer, len :: p, q
         integer(x) :: arr(p) = 5
       end type
 

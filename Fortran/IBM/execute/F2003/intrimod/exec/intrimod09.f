@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: ../ieeeconsts.f ../fake_ieee_modules.f intrimod09.f
 ! %VERIFY: intrimod09.out:fakeout1.vf
 ! %STDIN:
@@ -11,10 +11,7 @@
 ! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod09.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
@@ -35,7 +32,7 @@
 
          use, intrinsic :: ieee_arithmetic
          use, intrinsic :: xlf_fp_util
-         implicit none 
+         implicit none
 
          interface
             subroutine real_ieee(rt_nearest, flags)
@@ -70,7 +67,7 @@
                use, non_intrinsic :: xlf_fp_util
                type fake_ieee_round_type
                    sequence
-                   integer rt 
+                   integer rt
                end type
                type(fake_ieee_round_type), intent(in) :: rt_nearest
                integer(fpscr_kind), dimension(5) :: flags
@@ -88,7 +85,7 @@
 !.... Fake types for fake_ieee subroutine
          type fake_ieee_round_type
                 sequence
-                integer rt 
+                integer rt
          end type
          type(fake_ieee_round_type), parameter :: FAKE_IEEE_NEAREST = &
                                                  fake_ieee_round_type(2)
@@ -99,7 +96,7 @@
          do k = 1, 5
             if (flag_values(k) .neqv. .false. ) stop 10
          enddo
-         
+
          if (ieee_support_datatype(PINF_4) .AND. &
  	     ieee_support_datatype(NINF_4)) then
             if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) stop 12
@@ -120,16 +117,16 @@
 
 !... Testing xlf_fp_util module
          call set_fpscr_flags(flags(1))
-         call clr_fpscr_flags(flags(5)) 
+         call clr_fpscr_flags(flags(5))
          if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
          if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 18
 
-         call fake_ieee(FAKE_IEEE_NEAREST, fake_flags) 
+         call fake_ieee(FAKE_IEEE_NEAREST, fake_flags)
       end subroutine real_ieee
 
 
 !... Calling some fake ieee routines. The fake ieee module must have been accessed.
-      subroutine fake_ieee(rt_nearest, flags) 
+      subroutine fake_ieee(rt_nearest, flags)
   	 use, non_intrinsic :: ieee_arithmetic
 	 use, non_intrinsic :: ieee_exceptions
          use, non_intrinsic :: constants_for_ieee
@@ -137,7 +134,7 @@
 
          real*4 yr
          type(ieee_round_type) :: rtype
-         type(ieee_round_type), intent(in) :: rt_nearest 
+         type(ieee_round_type), intent(in) :: rt_nearest
          type(ieee_status_type) :: status_value
          logical :: flag_values(5)
          integer(fpscr_kind), dimension(5) :: flags
@@ -146,7 +143,7 @@
          do k = 1, 5
             if (flag_values(k) .neqv. .false. ) stop 30
          enddo
-           
+
          if (ieee_support_datatype(PINF_4) .AND. &
  	     ieee_support_datatype(NINF_4)) then
             if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) stop 32
@@ -166,7 +163,7 @@
          call ieee_set_status(status_value)
 
          call set_fpscr_flags(flags(1))
-         call clr_fpscr_flags(flags(5)) 
+         call clr_fpscr_flags(flags(5))
          if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 37
          if ( get_fpscr_flags(flags(5)) .eq. 0 ) stop 38
 

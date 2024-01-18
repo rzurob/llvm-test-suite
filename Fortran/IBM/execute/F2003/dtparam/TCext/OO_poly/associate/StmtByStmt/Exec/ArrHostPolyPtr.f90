@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrHostPolyPtr.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrHostPolyPtr.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrHostPolyPtr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 14, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,9 +32,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a host associate name 
-!*  
-!*    () 
+!*    The selector is a host associate name
+!*
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,7 +46,7 @@
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4,20)
       INTEGER(K1) :: BaseId = 1
@@ -102,7 +96,7 @@
   USE M
   IMPLICIT NONE
   TYPE(Child(4,20)), TARGET :: Tar
- 
+
   CLASS(Child(4,:)), POINTER :: Arr(:)
 
   ALLOCATE(Arr(3), SOURCE=Child(4,20)(ChildId=-2, BaseId=-1))
@@ -124,12 +118,12 @@
   SUBROUTINE Sub(Arr)
   CLASS(Child(4,:)), POINTER :: Arr(:)
   TYPE (Child(4,20)) :: V(SIZE(Arr))
- 
+
   ASSOCIATE ( As => V )
   ASSOCIATE ( As => Fun(Arr, As))
     SELECT TYPE ( As )
     CLASS IS (Child(4,*))
-   
+
           IF (ANY(SHAPE(As) .NE. (/3/)))      STOP 33
           IF ( ANY(As%Base%GetId() .NE. -1) ) STOP 34
           IF ( ANY(As%GetId()      .NE. -2) ) STOP 35
@@ -145,7 +139,7 @@
           IF ( ANY(As%ChildId      .NE. 2 ) ) STOP 47
 
 
-    CLASS DEFAULT 
+    CLASS DEFAULT
       STOP 38
 
   END SELECT
@@ -163,6 +157,6 @@
   END SUBROUTINE
 
   END
-  
+
 
 

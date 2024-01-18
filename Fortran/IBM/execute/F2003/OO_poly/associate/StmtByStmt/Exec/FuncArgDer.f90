@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncArgDer.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncArgDer.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncArgDer 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncArgDer
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The associating entity of derived type is used as actual argument 
+!*    The associating entity of derived type is used as actual argument
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -53,7 +47,7 @@
       INTEGER  :: ChildId = 2
       CLASS(Child),  POINTER :: ChildComp  => NULL()
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -72,17 +66,17 @@
 
   END MODULE
 
-  PROGRAM FuncArgDer 
+  PROGRAM FuncArgDer
   USE M
   TYPE (Child) :: V
 
   ASSOCIATE ( As1 => V )
   ASSOCIATE ( As => As1 )
     CALL Sub(As, As1)
-    IF ( V%GetID()      .NE. -2) STOP 50 
+    IF ( V%GetID()      .NE. -2) STOP 50
     IF ( V%ChildId      .NE. -2) STOP 51
-    IF ( V%Base%GetID() .NE. -1) STOP 52 
-    IF ( V%BaseId       .NE. -1) STOP 53 
+    IF ( V%Base%GetID() .NE. -1) STOP 52
+    IF ( V%BaseId       .NE. -1) STOP 53
   END ASSOCIATE
   END ASSOCIATE
 
@@ -96,8 +90,8 @@
     IF (Arg%Base%GetId() .NE. 1 ) STOP 21
 
     Arg1%BaseId = -1
-    Arg1%ChildId = -2 
- 
-  END SUBROUTINE 
+    Arg1%ChildId = -2
+
+  END SUBROUTINE
 
   END

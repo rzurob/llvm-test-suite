@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeUnlimitedPolyComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeUnlimitedPolyComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 17 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. DERIVED TYPE HAS EXTENDED TYPE
 !* 4. COMPONENT IS UNLIMTED POLYMORPHIC ARRAY
 !* 5. TSOURCE AND FSOURCE ARE UNLIMITED POLYMORPHIC ARRAY
@@ -48,8 +40,8 @@ program mergeUnlimitedPolyComp02
    implicit none
 
    class(*),pointer     :: poly1(:)=>null()
-   class(*),allocatable :: poly2(:)   
-    
+   class(*),allocatable :: poly2(:)
+
    type(B(2,3,4)),target    :: b1(2) =  &
        [B(2,3,4)(i=10,c1="123",c2="456",poly=null()) , &
         B(2,3,4)(i=20,c1="AAA",c2="BBB",poly=null()) ]
@@ -60,11 +52,11 @@ program mergeUnlimitedPolyComp02
 
    allocate(b1(1)%poly(2),source=b1(1)%A)
    allocate(b1(2)%poly(2),source=b1(2)%A)
-   allocate(b2(1)%poly(2),source=b2(1)%A) 
+   allocate(b2(1)%poly(2),source=b2(1)%A)
    allocate(b2(2)%poly(2),source=b2(2)%A)
-  
+
    poly1(2:3)=>b1
-   allocate(poly2(2),source=b2) 
+   allocate(poly2(2),source=b2)
 
    associate(x=>merge(poly1,poly2,[.true.,.false.]))
       select type(y=>x)

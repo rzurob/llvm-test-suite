@@ -25,7 +25,7 @@ implicit none
 
 interface foo
   subroutine sub1(x)
-    import s1 
+    import s1
     procedure(s1) x
   end subroutine
 

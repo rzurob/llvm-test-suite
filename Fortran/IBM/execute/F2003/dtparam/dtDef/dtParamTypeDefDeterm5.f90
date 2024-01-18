@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefDeterm5   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefDeterm5
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 15, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Determination of Types 
+!*  SECONDARY FUNCTIONS TESTED : Determination of Types
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Determination of derived types - sequence types 
+!*  Determination of derived types - sequence types
 !*
 !*  (Syntax err&ice/340207)
 !*
@@ -38,7 +31,7 @@
   TYPE :: DT(K, L)
     INTEGER, KIND :: K
     INTEGER, LEN  :: L
-    SEQUENCE      
+    SEQUENCE
     INTEGER(K)  :: I
     REAL(K)     :: R
     COMPLEX(K)  :: Cplx
@@ -52,7 +45,7 @@
 
   END MODULE
 
-  PROGRAM dtParamTypeDefDeterm5 
+  PROGRAM dtParamTypeDefDeterm5
   USE M, ONLY : T0, T1, T2
   IMPLICIT TYPE(DT(8, 4))(T)
 

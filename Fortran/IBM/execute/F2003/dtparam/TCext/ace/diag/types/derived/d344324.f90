@@ -1,22 +1,13 @@
 !**********************************************************************
 !* ====================================================================
-!* XL Fortran Test Case                           IBM INTERNAL USE ONLY
-!* ====================================================================
 !*
 !*  TEST CASE NAME             : d344324
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt35cdk_4)
-!*
 !*  DATE                       : 2007-11-28
-!*
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Array Constructor Enhancement
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DEFECT ABSTRACT            : DTPARAM: ICE: Derived Type with Type Parameters
 !*                               in Array Constructor (within an I/O Statement)
@@ -43,5 +34,5 @@ program d344324
   implicit none
 
   print *, [ADerived(4)::] ! tcx: (4,4,4,1)
-  
+
 end program d344324

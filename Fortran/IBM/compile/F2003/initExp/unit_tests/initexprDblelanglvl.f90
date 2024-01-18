@@ -1,17 +1,11 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Initialization expression
 !*
-!* PROGRAMMER                 : Kelvin Li
 !* DATE                       : March 31, 2006
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : DBLE
 !*
 !* DESCRIPTION                : langlvl message
 !* ===================================================================
-
 
 integer(1), parameter :: i1=4
 integer(2), parameter :: i2=24

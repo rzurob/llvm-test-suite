@@ -16,12 +16,7 @@
       end
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Ren Jian Gang
 !*  DATE                       : Dec 06, 2010
 !*  ORIGIN                     : AIX Compiler Development,
 !*                             : IBM China Development Shanghai Lab
@@ -30,13 +25,8 @@
 !     A message is emitted for langlvl error for execute_command_line intrinsic
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :  -qlanglvl=2003std
 !*
 !*  DESCRIPTION                :
-!*
-!*
-!*
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

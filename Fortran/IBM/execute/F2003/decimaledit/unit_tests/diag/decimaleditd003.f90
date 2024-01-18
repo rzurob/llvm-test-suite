@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditd003.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,34 +12,27 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditd003
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Dec. 02, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : providing support for the DECIMAL=
 !*                               specifier and decimal edit mode control
 !*                               descriptors. Feature 289039.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qdebug=intmsg  -qlanglvl=xxxxx
 !*  REQUIRED RUNTIME OPTIONS   :
 !*
-!*  DESCRIPTION                : This diagnostic test, checks various    
+!*  DESCRIPTION                : This diagnostic test, checks various
 !*                               langlvls to make sure use of DC and DP
 !*                               descriptors gets flagged when 77/95/95 std
 !*                               or 90/95 pure is used. This only tests
 !*                               compile-tme encoding of the descriptors.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-      
+
       CHARACTER(10) BUFFER
       CHARACTER(10) TMP
 
@@ -55,7 +48,7 @@
       READ(BUFFER, '(DC, F4.2)') TMP
       WRITE(BUFFER, 100) 3.14
       READ(BUFFER, 100) TMP
-      
+
  100  FORMAT(DC, F4.2)
 
 ! TESTING DP EDIT DESCRIPTOR:
@@ -70,7 +63,7 @@
       READ(BUFFER, '(DP, F4.2)') TMP
       WRITE(BUFFER, 200) 3.14
       READ(BUFFER, 200) TMP
-      
+
  200  FORMAT(DP, F4.2)
-      
+
       END

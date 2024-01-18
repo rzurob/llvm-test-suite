@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass020.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass020.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -69,7 +57,7 @@
       program fxass20a
       implicit none
 
-      logical(4), parameter :: T = .true. 
+      logical(4), parameter :: T = .true.
       logical(8), parameter :: F = .false.
 
       logical a / .true.  /
@@ -89,16 +77,16 @@
 
       logical*8 a8 / .true. /
       logical*8 b8 / .false. /
-      
+
       integer count,k
 
 !-----------   ASSOCIATE with LOGICAL expressions ----------------
       k = 1
-      c = .false.   
+      c = .false.
       do count = 1, 10
-        do while ( K .le. 5 ) 
+        do while ( K .le. 5 )
       associate ( arg => a .eqv. b )
-         if(arg .neqv. c)then 
+         if(arg .neqv. c)then
            error stop 1
          endif
       end associate
@@ -108,7 +96,7 @@
 
 !-----------   ASSOCIATE with LOGICAL*1 expressions ----------------
 
-      c1 = .true.   
+      c1 = .true.
       do 15 count = 1, 10
        first: do while ( K .le. 5 )
       associate ( arg1 => a1 .neqv. b1 )
@@ -116,7 +104,7 @@
            error stop 2
          endif
       end associate
-        
+
       k = k + 1
       end do first
  15   end do
@@ -124,7 +112,7 @@
 
 !-----------   ASSOCIATE with LOGICAL*2 expressions ----------------
 
-      c2 = .false.   
+      c2 = .false.
       do count = 1, 10
          do k = 1, 5
       associate ( arg2 => a2 .eqv. b2 )

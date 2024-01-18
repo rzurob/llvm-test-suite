@@ -1,20 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArgAssociation/arg_assoc_1f.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jan. 19, 2009
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 361232
 !*
 !*  DESCRIPTION:
 !*
 !*  12.4.1 1 Actual arguments, dummy arguments, and argument association
-!* 
-!*  - If an argument keyword appears, the actual argument is associated with 
+!*
+!*  - If an argument keyword appears, the actual argument is associated with
 !*    the dummy argument whose name is the same as the argument keyword
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

@@ -1,36 +1,29 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/func/polyAssign1001fa_2levelInverse.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 07 August 2015
-!* ORIGIN                       : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !* SECONDARY FUNTIONS TESTED    : LHS of intrinsic assignment with function return
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test whether the variable of an intrinsic assignment is polymorphic. 
+!* DESCRIPTION                  : Test whether the variable of an intrinsic assignment is polymorphic.
 !*                              : Variables should be allocated and assigned with the correspinding dynamic type.
 !*                              : We test polymorphic assignment to two levels of extensible derived types described as bellow.
 !*                              : This test from low level to high-level polymorphic assignment.
 !*---------------------------------------------------------------------
-!* t is the base derived type, and t2 and t3 are extensibe derived   
+!* t is the base derived type, and t2 and t3 are extensibe derived
 !* t2 and t3 are extensibe derived type of t
 !*
-!*                           t                                       
-!*                          / \                                       
-!*                         /   \                                      
-!*                        /     \                                     
-!*                       t2     t3                                 
-!*                                  
+!*                           t
+!*                          / \
+!*                         /   \
+!*                        /     \
+!*                       t2     t3
+!*
 !---------------------------------------------------------------------
 !* ===================================================================
 !*  REVISION HISTORY
@@ -41,7 +34,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-Program polyAssign1001fa 
+Program polyAssign1001fa
     Type t
       integer :: i = 10
     End Type

@@ -15,16 +15,11 @@
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            :
-!*  PROGRAMMER                 : Yong Du
+!*  ===================================================================
 !*  DATE                       : 10/26/2004
 !*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : extends_type_of(A, MOLD)
 !*  SECONDARY FUNCTIONS TESTED : same_type_as(A, B)
-!*  DRIVER STANZA              : xlf90
 !*  DESCRIPTION                :
 !*    MOLD: unlimited polymorphic but not disassociated pointer or
 !*          unallocated allocatable. Dynamic type is not extensible.
@@ -47,7 +42,7 @@ module m
         integer, kind :: k1
         integer, len  :: n1
     end type
-                    
+
     type, extends(AbstractParent) :: Base(n2,k2)    ! (4,20,20,4)
         integer, kind :: k2
         integer, len  :: n2

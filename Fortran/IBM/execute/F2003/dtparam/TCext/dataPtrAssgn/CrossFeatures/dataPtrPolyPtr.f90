@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrPolyPtr.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrPolyPtr.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 09, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,16 +23,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Poly pointers 
+!*  Poly pointers
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrPolyPtr 
+  PROGRAM dataPtrPolyPtr
   IMPLICIT NONE
 
   TYPE :: DT(K1)    ! (4)
@@ -51,7 +43,7 @@
   INTEGER  :: I, J
   TYPE(DT(4)), TARGET :: T(10,10)
 
-  T%ID = RESHAPE((/(I, I=1,100)/), (/10,10/)) 
+  T%ID = RESHAPE((/(I, I=1,100)/), (/10,10/))
 
   DO J=1, 10
   DO I=1, 10
@@ -61,7 +53,7 @@
     !T(I, J)%Ptr2 => T(:, :)
   END DO
   END DO
-  
+
   DO J=1, 10
   DO I=1, 10
     IF (.NOT. ASSOCIATED(T(I,J)%Ptr1, T))                    STOP 11
@@ -88,13 +80,13 @@
 
   DO J=1, 10
   DO I=1, 10
-    T(I, J)%Ptr1(0:,0:) => T(I, J)%Ptr2 
+    T(I, J)%Ptr1(0:,0:) => T(I, J)%Ptr2
     !T(I, J)%Ptr1 => T
   END DO
   END DO
-  
+
   DO J=1, 1
-  DO I=1, 9 
+  DO I=1, 9
     IF (.NOT. ASSOCIATED(T(I,J)%Ptr1, T(I,J)%Ptr2))          STOP 31
     IF (ANY( LBOUND(T(I,J)%Ptr1)         .NE. (/0, 0 /)))    STOP 32
     IF (ANY( UBOUND(T(I,J)%Ptr1)         .NE. (/9, 0 /)))    STOP 33

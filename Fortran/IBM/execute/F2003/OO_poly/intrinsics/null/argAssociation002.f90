@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/null
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 03/02/2005
 ! PRIMARY FUNCTIONS TESTED   : null
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : null is an actual argument. Dummy
 !                              argument is a pointer or allocatable,
 !                              poly.

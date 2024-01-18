@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass117.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass117.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -56,7 +44,7 @@
 !*
 !*  DESCRIPTION                : Test: ASSOCIATE with POINTER
 !*                                     with complex, complex(4)
-!*                                     complex*8, complex*16 
+!*                                     complex*8, complex*16
 !*                                     data types.
 !*
 !* ===================================================================
@@ -73,30 +61,30 @@
       implicit none
 
       complex, target :: a = (1.0e0, 2.0e0)
-      complex, pointer :: b 
+      complex, pointer :: b
 
       complex(4), target :: a4 = (2.0e0, 3.0e0)
-      complex(4), pointer :: b4 
+      complex(4), pointer :: b4
 
-      complex*8, target :: a8 = (1.0e0, 2.0e0) 
-      complex*8, pointer :: b8 
+      complex*8, target :: a8 = (1.0e0, 2.0e0)
+      complex*8, pointer :: b8
 
       complex*16, target :: a16 = (1.0d0, 2.0d0)
-      complex*16, pointer :: b16 
+      complex*16, pointer :: b16
 
       logical :: precision_x3, precision_x6, precision_x8
 
       b => a
       b4 => a4
       b8 => a8
-      b16 => a16 
+      b16 => a16
 
       associate ( arg => b )
       if (.not.precision_x8(arg,a)) then
          error stop 1
       endif
       end associate
-  
+
       associate ( arg3 => (b4 * 3) + 2, arg4 => b8 )
       if (.not.precision_x8(arg3,((a4 * 3) + 2))) then
          error stop 4
@@ -114,4 +102,4 @@
       end associate
 
       end
-      
+

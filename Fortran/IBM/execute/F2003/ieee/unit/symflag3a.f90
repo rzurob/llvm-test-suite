@@ -12,28 +12,19 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Rafik Zurob
 !*  DATE                       : March, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Save and Restore 
+!*  PRIMARY FUNCTIONS TESTED   : Save and Restore
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : test save and restore
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -73,10 +64,10 @@
           logical val(5)
           val = get_flags()
           print *, val
-          
+
           call set_fpscr_flags(fp_overflow)
           call clr_fpscr_flags(fp_inexact)
-          
+
           val = get_flags()
           print *, val
           print *, "sub xxxx does not use ieee_exceptions"
@@ -93,15 +84,15 @@
         logical :: val(5)
         call ieee_get_flag(ieee_all,val)
         print *, val
-        
+
         call ieee_set_flag(ieee_underflow, .false.)
         call ieee_get_flag(ieee_all,val)
         print *, val
-        
+
         call xxxx
-        
+
         call ieee_get_flag(ieee_all,val)
-        print *, val        
+        print *, val
         print *, "sub yyyy uses ieee_exceptions"
       end subroutine yyyy
 
@@ -113,14 +104,14 @@
       logical val(5)
       val = get_flags()
       print *, val
-      
+
       call set_fpscr_flags(fp_underflow)
       call set_fpscr_flags(fp_inexact)
       val = get_flags()
       print *, val
-      
+
       call yyyy
-      
+
       val = get_flags()
       print *, val
       end

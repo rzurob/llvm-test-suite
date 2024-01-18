@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: IO1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: IO1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : IO1 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : IO1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,22 +34,21 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!* IO 
+!*
+!* IO
 !* ()
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM IO1 
+  PROGRAM IO1
   IMPLICIT CLASS(DT(4,1,63))(U)
   IMPLICIT CLASS(*)(V)
-  TYPE :: DT(K1,K2,N1)    ! (4,1,63) 
+  TYPE :: DT(K1,K2,N1)    ! (4,1,63)
     INTEGER, KIND             :: K1,K2
     INTEGER, LEN              :: N1
     INTEGER(K1)               :: Int
-    CHARACTER(kind=K2,len=N1) :: C 
+    CHARACTER(kind=K2,len=N1) :: C
   END TYPE
   INTEGER :: i
   CHARACTER(3000) :: C="321", a

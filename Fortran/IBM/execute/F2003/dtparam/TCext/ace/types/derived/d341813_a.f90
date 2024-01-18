@@ -1,19 +1,13 @@
 !**********************************************************************
 !* ====================================================================
-!* XL Fortran Test Case                           IBM INTERNAL USE ONLY
-!* ====================================================================
 !*
 !*  TEST CASE NAME             : d341813_a
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt61l_dlp)
 !*  DATE                       : 2008-01-24
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Array Constructor Enhancement
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DEFECT ABSTRACT            : DTPARAM: ICE: AugLoadArrayExpr: Unexpected
 !*                               opcode: 50

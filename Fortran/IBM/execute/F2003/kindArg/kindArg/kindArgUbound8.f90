@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgUbound8
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 05, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : UBOUND 
+!*  SECONDARY FUNCTIONS TESTED : UBOUND
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  -- assumed-size array, Dim < n, n is the rank of the array.
-!* 
-!*  (322407) 
+!*
+!*  (322407)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -38,7 +30,7 @@
   IMPLICIT NONE
 
   INTEGER :: I, I1
-  
+
   TYPE :: DT
     CHARACTER :: C
     LOGICAL(2):: L
@@ -53,11 +45,11 @@
   END TYPE
 
   TYPE(DT1)          :: TT
-  TYPE(DT )          :: T 
+  TYPE(DT )          :: T
   INTEGER, PARAMETER :: L1=-1
   INTEGER, PARAMETER :: L2=-0
-  INTEGER, PARAMETER :: S=2**9 
-   
+  INTEGER, PARAMETER :: S=2**9
+
 
   CALL IntSub((/(DT1(NULL(),NULL()), I=1, 2**9)/), (/DT1::/))
 

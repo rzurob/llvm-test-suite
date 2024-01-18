@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemTAN.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemTAN.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 14, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  TAN 
+!*
+!*  -  TAN
 !*  (318967)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,19 +30,19 @@
 
 
   PROGRAM  InitExpDefElemTAN
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
 
-  REAL(4), PARAMETER :: r4N_1           = -1._4 
+  REAL(4), PARAMETER :: r4N_1           = -1._4
   REAL(4), PARAMETER :: r4N_Zero        = REAL(z"80000000", KIND=4)
   REAL(4), PARAMETER :: r4P_Zero        = REAL(z"00000000", KIND=4)
-  REAL(4), PARAMETER :: r4P_1           = 1.0_4 
+  REAL(4), PARAMETER :: r4P_1           = 1.0_4
 
-  REAL(8), PARAMETER :: r8N_1           = -1._8 
+  REAL(8), PARAMETER :: r8N_1           = -1._8
   REAL(8), PARAMETER :: r8N_Zero        = REAL(z"8000000000000000", KIND=8)
   REAL(8), PARAMETER :: r8P_Zero        = REAL(z"0000000000000000", KIND=8)
-  REAL(8), PARAMETER :: r8P_1           = 1.0_8 
+  REAL(8), PARAMETER :: r8P_1           = 1.0_8
 
 
 

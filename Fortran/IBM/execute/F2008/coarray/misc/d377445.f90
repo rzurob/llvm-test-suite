@@ -1,4 +1,4 @@
-      ! this is a small test case for the copy-in/copy-out 
+      ! this is a small test case for the copy-in/copy-out
       ! coindexed objects.
 
       integer, save :: coarr(-1:8)[*]
@@ -10,7 +10,7 @@
       if (this_image() == 1) then
          call foo(coarr(:)[10], 1)
          call foo(coarr[5], 2)
-      end if      
+      end if
 
       sync all
 

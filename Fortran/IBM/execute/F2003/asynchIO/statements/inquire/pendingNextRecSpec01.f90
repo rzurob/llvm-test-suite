@@ -1,18 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingNextRecSpec01 - INQUIRE() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 24, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Data Transfers
 !*  SECONDARY FUNCTIONS TESTED : INQUIRE() with the NEXTREC= Specifier
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : READ(), INQUIRE(), NEXTREC= Specifier

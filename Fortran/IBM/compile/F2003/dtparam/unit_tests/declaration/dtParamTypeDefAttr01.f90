@@ -6,7 +6,6 @@ type dt(k)
 end type
 type(dt(4)) a
 
-
 type dt2
   integer, kind :: k   ! Error 2
   integer, len :: l    ! Error 3

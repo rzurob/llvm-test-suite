@@ -3,22 +3,11 @@
 ! opt variations: -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Value Attribute for derived type containing allocatable components
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : value attribute with derived type containing allocatable components
 !*                                 - type: derived type with inttrinsic allocatable components
@@ -72,7 +61,7 @@ program valueAllocatableComponentGenericTB001
    use m
 
    type(base(4)) :: b1
-   
+
    b1 = base(4)(-999)
 
    print *, b1%i

@@ -5,46 +5,39 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn092c.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn092c.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn092c.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn092c.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : accessibility 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
 !*
-!*  DESCRIPTION                : testing the accessiblity of parent's 
+!*  SECONDARY FUNCTIONS TESTED : accessibility
+!*
+!*  DESCRIPTION                : testing the accessiblity of parent's
 !*                               type-bound procedures are overrided by
 !*                               the multiple generations extended types.
-!*                             
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-      module mod	      
+      module mod
 
       integer :: int = 200
       character*20 :: c = "hi"
 
-      type base(k1)    ! (4) 
+      type base(k1)    ! (4)
          integer, kind :: k1
          integer(k1)   :: x
 	 contains
@@ -54,9 +47,9 @@
       type, extends(base) :: parent    ! (4)
       contains
       	 procedure, nopass :: bind_b => proc1
-      end type  
+      end type
 
-      type, extends(parent) :: child    ! (4) 
+      type, extends(parent) :: child    ! (4)
       contains
          procedure, nopass, public :: bind_b => proc1
       end type
@@ -67,7 +60,7 @@
          c = "hi_again"
       end subroutine
 
-   end module     
+   end module
 
    use mod
 
@@ -80,4 +73,4 @@
    if (c .ne. "hi_again")    error stop 9
 
    end
-   
+

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_12
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 03, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
-!*  --  on subscript, section subscript, substring starting point, and 
+!*  --  on subscript, section subscript, substring starting point, and
 !*      substring ending point
-!*    
-!*   
+!*
 !*   (340466)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,10 +34,10 @@
 
   TYPE :: DT0(K1,K2,K4,K8,L0)
     INTEGER,     LEN :: L0=0
-    INTEGER(8), KIND :: K1 = 1 
-    INTEGER(4), KIND :: K2 = 2 
-    INTEGER(2), KIND :: K4 = 4 
-    INTEGER(1), KIND :: K8 = 8 
+    INTEGER(8), KIND :: K1 = 1
+    INTEGER(4), KIND :: K2 = 2
+    INTEGER(2), KIND :: K4 = 4
+    INTEGER(1), KIND :: K8 = 8
     CHARACTER(LEN=L0):: C
   END TYPE
 
@@ -77,7 +69,7 @@
 
   SUBROUTINE ModSub(L)
   INTEGER :: L
-  TYPE(DT(K=4, L=L)) :: T  
+  TYPE(DT(K=4, L=L)) :: T
   integer :: k = 4
 
   IF ( T%K        .NE.   4  )  STOP 11
@@ -109,7 +101,7 @@
 
   END MODULE
 
-  
+
   PROGRAM dtParamTypeDecC501_12
   USE M1
 

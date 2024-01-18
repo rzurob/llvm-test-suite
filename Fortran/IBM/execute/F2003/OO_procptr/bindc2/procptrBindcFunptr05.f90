@@ -1,26 +1,15 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*                              function pointer which points to C function with int
-!*                              argument and void return, as actual argument 
+!*                              argument and void return, as actual argument
 !*                              passed directly to C  through procedure
-!*                              pointer reference. 
+!*                              pointer reference.
 !* ===================================================================
 
 module fptr05
@@ -37,26 +26,26 @@ end module fptr05
 program procptrBindcFunptr05
 
    use ISO_C_BINDING
-  
+
    use fptr05
 
    interface
        subroutine swap(i, j) bind(c)
           import C_INT
           integer(C_INT) :: i, j
-       end subroutine 
+       end subroutine
    end interface
 
-   integer(C_INT) :: i 
+   integer(C_INT) :: i
 
-   procedure(csub), pointer :: subind 
+   procedure(csub), pointer :: subind
 
-   subind => csub   
+   subind => csub
 
    i = 34_C_INT
 
    call subind(i, C_FUNLOC(swap))
 
-   if(i .ne. 22) error stop 1_4 
+   if(i .ne. 22) error stop 1_4
 
 end program procptrBindcFunptr05

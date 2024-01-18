@@ -2,24 +2,13 @@
 ! ftcx_dtp -qk -ql /tstdev/F2003/mxminAll/misc/mxminMisc31.f
 ! opt variations: -qck -qnok -qnol
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 2/25/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX*/MIN* intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX*/MIN* intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX*/MIN* as actual argument passed to
 !*                               dummy procedure with variable length dummy
@@ -72,5 +61,4 @@ end program mxminMisc31
         if(maxloc((/arg1,arg2, arg4, arg5/),dim=1) .ne. 3) error stop 7_4
        end subroutine
   end subroutine
-
 

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Misc30.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Misc30.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Misc30 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Misc30
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 09, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,15 +30,15 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   The association 
-!*    () 
+!*   The association
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM Misc30 
+  PROGRAM Misc30
   IMPLICIT NONE
-  
+
   INTEGER :: i=1
 
   ASSOCIATE ( A1 => i )
@@ -54,7 +48,7 @@
     A1 = 2
     IF ( A1 .NE. 2 .OR. A2 .NE. 2 ) STOP 21
   END ASSOCIATE
- 
+
   ASSOCIATE ( A2 => A1+A1 )
     IF ( A1 .NE. 2 .OR. A2 .NE. 4 ) STOP 30
     i = 3
@@ -71,7 +65,7 @@
   IF ( i .NE. 5 ) STOP 51
 
   END ASSOCIATE
-   
-  END 
+
+  END
 
 

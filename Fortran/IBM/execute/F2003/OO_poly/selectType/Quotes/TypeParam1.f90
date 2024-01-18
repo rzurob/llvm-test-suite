@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  TypeParam1.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : TypeParam1
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,15 +30,15 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  the length type parameter 
-!*  () 
+!*
+!*  the length type parameter
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
     TYPE :: DT
-      CHARACTER(4), ALLOCATABLE  :: CArr(:) 
+      CHARACTER(4), ALLOCATABLE  :: CArr(:)
       CONTAINS
       PROCEDURE, PASS(Obj)   :: GetStr
     END TYPE
@@ -52,16 +46,16 @@
   CONTAINS
 
     ELEMENTAL FUNCTION GetStr(Num, Obj)
-    CLASS(DT), INTENT(IN)    :: Obj 
+    CLASS(DT), INTENT(IN)    :: Obj
     INTEGER, INTENT(IN)      :: Num
-    CHARACTER(LEN(Obj%CArr)) :: GetStr 
-      GetStr = Obj%CArr(Num) 
+    CHARACTER(LEN(Obj%CArr)) :: GetStr
+      GetStr = Obj%CArr(Num)
     END FUNCTION
 
   END MODULE
 
 
-  PROGRAM TypeParam1 
+  PROGRAM TypeParam1
   USE M
   IMPLICIT NONE
 
@@ -69,7 +63,7 @@
   CLASS(DT), POINTER :: Ptr(:,:,:)
   INTEGER :: S(2)=(/1,2/), I, J
 
-  ! Ptr => Dtv 
+  ! Ptr => Dtv
     ALLOCATE(Ptr(2,2,2), SOURCE=DT(CArr=(/"1234","4321"/)))
 
     SELECT TYPE (U => Ptr(S,S,S))

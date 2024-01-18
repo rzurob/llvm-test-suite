@@ -1,26 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : byte2.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM is of type byte 
+!*  DESCRIPTION                : FROM is of type byte
 !*                               TO is of unlimit poly
-!*                               move_alloc is called in module procedure            
+!*                               move_alloc is called in module procedure
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -55,8 +43,8 @@
       call sub(b)
 
       if ( allocated(g) ) stop 11
-      if ( .not. allocated(b) ) stop 21 
-      
+      if ( .not. allocated(b) ) stop 21
+
       select type (b)
           type is (byte)
               if ( b /= 127 ) stop 31

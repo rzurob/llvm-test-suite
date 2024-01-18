@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgSize4
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : SIZE 
+!*  SECONDARY FUNCTIONS TESTED : SIZE
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,27 +19,25 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Size the number of true elements of ARRAY along dimension DIM 
-!*    
-!*  () 
+!*  Size the number of true elements of ARRAY along dimension DIM
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   PROGRAM kindArgSize4
   IMPLICIT NONE
-  
+
   CLASS(*), ALLOCATABLE    :: CC(:,:,:,:,:,:,:,:,:)
 
   TYPE :: DT
   END TYPE
 
   INTEGER :: I
-     
+
   ALLOCATE(CHARACTER(128) :: CC(1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9))
- 
+
   DO I =1, 9
     IF (SIZE(CC, KIND=1_1, DIM=I ) .NE. 1 ) STOP 11
     IF (SIZE(CC, KIND=1_2, DIM=I ) .NE. 1 ) STOP 12
@@ -60,7 +52,7 @@
 
   DEALLOCATE(CC)
   ALLOCATE(COMPLEX(16) :: CC(0:0,0:0,0:0,0:0,0:0,0:0,0:0,0:0,0:0))
- 
+
   DO I =1, 9
     IF (SIZE(CC, KIND=1_1, DIM=I ) .NE. 1 ) STOP 31
     IF (SIZE(CC, KIND=1_2, DIM=I ) .NE. 1 ) STOP 32
@@ -75,7 +67,7 @@
 
   DEALLOCATE(CC)
   ALLOCATE(DT :: CC(-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0,-1:0))
- 
+
   DO I =1, 9
     IF (SIZE(CC, KIND=1_1, DIM=I ) .NE. 2 ) STOP 51
     IF (SIZE(CC, KIND=1_2, DIM=I ) .NE. 2 ) STOP 52

@@ -2,24 +2,19 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: -qfree=f90 -qnoswapomp 
+! %COMPOPTS: -qfree=f90 -qnoswapomp
 ! %GROUP: ../fake_omp_lib_module.f intrimod73.f
 ! %VERIFY: intrimod73.out:intrimod73.vf
 ! %STDIN:
 ! %STDOUT: intrimod73.out
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : intrimod73.f
 !*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : January 14, 2004
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSIC/NON_INTRINSIC module nature.
 !*
@@ -27,20 +22,20 @@
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                : Test OpenMP run-time routines & Lock routines 
+!*  DESCRIPTION                : Test OpenMP run-time routines & Lock routines
 !*                             : with -qnoswapomp and INTRINSIC module nature.
 !*
 !* ===================================================================
-!*  
+!*
 !*  REVISION HISTORY
-!*  
+!*
 !*  MM/DD/YY:  Init:  Comments:
 !*  02/25/02   BC     Initial Version
 !*  11/18/02   BC     Modified to run successfully with both 32-bit and 64-bit
 !*                    processes (defect 232225)
 !*  14/01/04   BC     Modified and reused with INTRINSIC module nature
 !*                    Original testcase : omp_run/misc/fxompmisc24.f
-!*      
+!*
 !* ===================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890
 !
@@ -111,12 +106,12 @@ program intrimod73
    endif
 
 
-end program 
+end program
 
 
 subroutine OMP_SET_NUM_THREADS(nthread)
    integer nthread
-   print *,"This is OMP_SET_NUM_THREADS called with num_thread = ", nthread   
+   print *,"This is OMP_SET_NUM_THREADS called with num_thread = ", nthread
 end subroutine OMP_SET_NUM_THREADS
 
 subroutine OMP_SET_DYNAMIC(lvar)
@@ -132,73 +127,73 @@ end subroutine OMP_SET_NESTED
 function OMP_GET_NUM_THREADS()
    integer omp_get_num_threads
    print *,"This is OMP_GET_NUM_THREADS"
-   omp_get_num_threads = 911 
+   omp_get_num_threads = 911
 end function OMP_GET_NUM_THREADS
 
 function OMP_GET_MAX_THREADS()
    integer omp_get_max_threads
    print *,"This is OMP_GET_MAX_THREADS"
-   omp_get_max_threads = 747 
+   omp_get_max_threads = 747
 end function OMP_GET_MAX_THREADS
 
 function OMP_GET_THREAD_NUM()
    integer omp_get_thread_num
    print *,"This is OMP_GET_THREAD_NUM"
-   omp_get_thread_num = 777 
+   omp_get_thread_num = 777
 end function OMP_GET_THREAD_NUM
 
 function OMP_GET_NUM_PROCS()
    integer omp_get_num_procs
    print *,"This is OMP_GET_NUM_PROCS"
-   omp_get_num_procs = 888 
+   omp_get_num_procs = 888
 end function OMP_GET_NUM_PROCS
 
 function OMP_IN_PARALLEL()
    logical omp_in_parallel
    print *,"This is OMP_IN_PARALLEL"
-   omp_in_parallel = .true. 
+   omp_in_parallel = .true.
 end function OMP_IN_PARALLEL
 
 function OMP_GET_DYNAMIC()
    logical omp_get_dynamic
    print *,"This is OMP_GET_DYNAMIC"
-   omp_get_dynamic = .false. 
+   omp_get_dynamic = .false.
 end function OMP_GET_DYNAMIC
 
 function OMP_GET_NESTED()
    logical omp_get_nested
    print *,"This is OMP_GET_NESTED"
-   omp_get_nested = .true. 
+   omp_get_nested = .true.
 end function OMP_GET_NESTED
 
 subroutine OMP_INIT_LOCK(svar)
-   use, intrinsic :: omp_lib,only: OMP_LOCK_KIND 
+   use, intrinsic :: omp_lib,only: OMP_LOCK_KIND
    integer(kind=OMP_LOCK_KIND) svar
    print *, "This is OMP_INIT_LOCK called with value = ", svar
 end subroutine OMP_INIT_LOCK
 
 subroutine OMP_SET_LOCK(svar)
-   use, intrinsic :: omp_lib,only: OMP_LOCK_KIND 
+   use, intrinsic :: omp_lib,only: OMP_LOCK_KIND
    integer(kind=OMP_LOCK_KIND) svar
    print *, "This is OMP_SET_LOCK called with value = ", svar
 end subroutine OMP_SET_LOCK
 
 subroutine OMP_UNSET_LOCK(svar)
-   use, intrinsic :: omp_lib,only: OMP_LOCK_KIND 
+   use, intrinsic :: omp_lib,only: OMP_LOCK_KIND
    integer(kind=OMP_LOCK_KIND) svar
    print *, "This is OMP_UNSET_LOCK called with value = ", svar
 end subroutine OMP_UNSET_LOCK
 
 subroutine OMP_DESTROY_LOCK(svar)
-   use, intrinsic :: omp_lib,only: OMP_LOCK_KIND 
+   use, intrinsic :: omp_lib,only: OMP_LOCK_KIND
    integer(kind=OMP_LOCK_KIND) svar
    print *, "This is OMP_DESTROY_LOCK called with value = ", svar
 end subroutine OMP_DESTROY_LOCK
 
 function OMP_TEST_LOCK(svar)
-   use, intrinsic :: omp_lib,only: OMP_LOCK_KIND 
+   use, intrinsic :: omp_lib,only: OMP_LOCK_KIND
    integer(kind=OMP_LOCK_KIND) svar
-   logical omp_test_lock 
+   logical omp_test_lock
    print *, "This is OMP_TEST_LOCK called with value = ", svar
    omp_test_lock = .false.
 end function OMP_TEST_LOCK

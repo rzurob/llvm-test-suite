@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,29 +13,21 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c09j.f
-!* TEST CASE TITLE              : BIND(C) attribute/statement
-!*
-!* PROGRAMMER                   : Yubin Liao 
 !* DATE                         : Sep. 1, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Test: BINC(C) attribute/statement
 !*                                with different intrinsic data type,
 !*                                integer*1, integer*2, integer*4,
 !*                                integer*8, real*4, real*8, real*16,
-!*                                byte, character(1). Using module 
-!*                                recursive function. 
+!*                                byte, character(1). Using module
+!*                                recursive function.
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -61,7 +48,7 @@ contains
               a2 = 2 + exfun_int1(a1)
             else
               a2 = a1
-            end if 
+            end if
        end function exfun_int1
 
        recursive function exfun_int2(b1) result(b2) BIND(C)
@@ -130,9 +117,9 @@ contains
               l2 = (1.0, 2.0) + exfun_comp1(l1,i)
             else
               l2 = l1
-            end if 
+            end if
        end function exfun_comp1
-       
+
        recursive function exfun_comp2(m1, i) result(m2) bind(c)
             complex*16 :: m1
             integer i
@@ -144,4 +131,4 @@ contains
               m2 = m1
             end if
        end function exfun_comp2
- end module m      
+ end module m

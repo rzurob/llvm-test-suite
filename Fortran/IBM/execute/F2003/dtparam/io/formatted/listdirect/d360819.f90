@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d360819.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d360819.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 9 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -29,7 +21,7 @@ module m
   contains
    function Fun(dt)
      type(dtp(3)),intent(in) :: dt
-     type(dtp(:)),allocatable :: Fun 
+     type(dtp(:)),allocatable :: Fun
 
      allocate(Fun,source=dt)
    end function
@@ -40,8 +32,8 @@ program d360819
   implicit none
 
   type(dtp(3)) :: obj=dtp(3)(99)
-  print *,"|",Fun(obj),"|"      
-  associate(x=>Fun(obj))       
-    print *,"|",x%i,"|",x,"|" 
+  print *,"|",Fun(obj),"|"
+  associate(x=>Fun(obj))
+    print *,"|",x%i,"|",x,"|"
   end associate
 end program

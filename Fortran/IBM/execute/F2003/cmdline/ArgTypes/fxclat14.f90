@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat14.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,29 +33,28 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing  components of
-!*                             : allocatable derived type  initialized with specific values 
+!*                             : allocatable derived type  initialized with specific values
 !*                             : as actual arguments
-!*                             
-!*                           
+!*
 
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
       module modtype
 
         type dertype
           character(2049)  :: COMMAND /'!!!!!!!!!!!!!!!!!!!!!!!!!11111'/
           integer      	   :: LENGTH       /2222/
-          character(4099)  :: STR   /'???????????????????????????????'/  ! take spaces 
+          character(4099)  :: STR   /'???????????????????????????????'/  ! take spaces
           integer          :: STATUS    /3333/
           integer          :: NUMBER  /4444/
           character(2047)  :: VALUE   /'=========================================='/
-          INTEGER          :: ARR(10) /10*100/ ! take spaces 
+          INTEGER          :: ARR(10) /10*100/ ! take spaces
           character(513)   :: NAME  /'CmdLine     '/
           logical          :: TRIM_NAME / .true./
           integer          :: ARGCOUNT  /5555/
-        end type dertype 
-         
+        end type dertype
+
       end module modtype
 
 
@@ -80,7 +73,7 @@
       allocate(cmd)
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 2 ) & 
+      if ( CmdCount .ne. 2 ) &
       then
         error stop 63
       endif
@@ -94,7 +87,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         cmd%NUMBER = i
         call GET_COMMAND_ARGUMENT(cmd%NUMBER, cmd%VALUE, cmd%LENGTH, cmd%STATUS)
         call MyGetArg(CmdLine, cmd%NUMBER, Argument)
@@ -117,7 +110,7 @@
       endif
 
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 

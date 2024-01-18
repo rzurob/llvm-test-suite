@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpCVMGT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpCVMGT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!* 
 !*  CVMGT -- an IBM extension
-!* 
+!*
 !*  (324400)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -49,8 +41,8 @@
   !COMPLEX(4),  PARAMETER  :: Z4(128)=(/((1.,0.),(0.,1.), I=1,128,2)/)
   !COMPLEX(8),  PARAMETER  :: Z8(128)=(/((1.,0.),(0.,1.), I=1,128,2)/)
   !COMPLEX(16), PARAMETER  :: Z6(128)=(/((1.,0.),(0.,1.), I=1,128,2)/)
-  !CHARACTER,   PARAMETER  :: C1(128)=(/(ACHAR(1), ACHAR(0), I=1,128,2)/) 
-  !CHARACTER,   PARAMETER  :: C2(128)=(/(ACHAR(0), ACHAR(1), I=1,128,2)/) 
+  !CHARACTER,   PARAMETER  :: C1(128)=(/(ACHAR(1), ACHAR(0), I=1,128,2)/)
+  !CHARACTER,   PARAMETER  :: C2(128)=(/(ACHAR(0), ACHAR(1), I=1,128,2)/)
 
   !INTEGER(1),  PARAMETER  :: II1(128)=(/(0,1, I=1,128,2)/)
   !INTEGER(2),  PARAMETER  :: II2(128)=(/(0,1, I=1,128,2)/)
@@ -66,8 +58,8 @@
   !COMPLEX(4),  PARAMETER  :: ZZ4(128)=(/((0.,1.),(1.,0.), I=1,128,2)/)
   !COMPLEX(8),  PARAMETER  :: ZZ8(128)=(/((0.,1.),(1.,0.), I=1,128,2)/)
   !COMPLEX(16), PARAMETER  :: ZZ6(128)=(/((0.,1.),(1.,0.), I=1,128,2)/)
-  !CHARACTER,   PARAMETER  :: CC1(128)=(/(ACHAR(0), ACHAR(1), I=1,128,2)/) 
-  !CHARACTER,   PARAMETER  :: CC2(128)=(/(ACHAR(1), ACHAR(0), I=1,128,2)/) 
+  !CHARACTER,   PARAMETER  :: CC1(128)=(/(ACHAR(0), ACHAR(1), I=1,128,2)/)
+  !CHARACTER,   PARAMETER  :: CC2(128)=(/(ACHAR(1), ACHAR(0), I=1,128,2)/)
 
   !INTEGER(1),  PARAMETER  :: MI1(128)=(/(-1,0, I=1,128,2)/)
   !INTEGER(2),  PARAMETER  :: MI2(128)=(/(-1,0, I=1,128,2)/)
@@ -83,8 +75,8 @@
   !COMPLEX(4),  PARAMETER  :: MZ4(128)=(/((1.,0.),(0.,1.), I=1,128,2)/)
   !COMPLEX(8),  PARAMETER  :: MZ8(128)=(/((1.,0.),(0.,1.), I=1,128,2)/)
   !COMPLEX(16), PARAMETER  :: MZ6(128)=(/((1.,0.),(0.,1.), I=1,128,2)/)
-  !CHARACTER,   PARAMETER  :: C1(128)=(/(ACHAR(1), ACHAR(0), I=1,128,2)/) 
-  !CHARACTER,   PARAMETER  :: C2(128)=(/(ACHAR(0), ACHAR(1), I=1,128,2)/) 
+  !CHARACTER,   PARAMETER  :: C1(128)=(/(ACHAR(1), ACHAR(0), I=1,128,2)/)
+  !CHARACTER,   PARAMETER  :: C2(128)=(/(ACHAR(0), ACHAR(1), I=1,128,2)/)
 
 
   END MODULE
@@ -92,17 +84,17 @@
 
   PROGRAM  InitExpCVMGT
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   INTEGER ::  J
 
  !INTEGER(KIND())  :: III1(128)
- !INTEGER(KIND(CVMGT(TSOURCE=I2, FSOURCE=II2, MASK=MI4)))  :: III2(128) 
- !INTEGER(KIND(CVMGT(TSOURCE=I4, FSOURCE=II4, MASK=MI8)))  :: III4(128) 
- !INTEGER(KIND(CVMGT(TSOURCE=I8, FSOURCE=II8, MASK=MI2)))  :: III8(128) 
- !REAL(KIND(CVMGT(TSOURCE=R4, FSOURCE=RR4, MASK=MR4)))     :: RRR4(128) 
+ !INTEGER(KIND(CVMGT(TSOURCE=I2, FSOURCE=II2, MASK=MI4)))  :: III2(128)
+ !INTEGER(KIND(CVMGT(TSOURCE=I4, FSOURCE=II4, MASK=MI8)))  :: III4(128)
+ !INTEGER(KIND(CVMGT(TSOURCE=I8, FSOURCE=II8, MASK=MI2)))  :: III8(128)
+ !REAL(KIND(CVMGT(TSOURCE=R4, FSOURCE=RR4, MASK=MR4)))     :: RRR4(128)
  !REAL(KIND(CVMGT(TSOURCE=R8, FSOURCE=RR8, MASK=MR8)))     :: RRR8(128)
- !REAL(KIND(CVMGT(TSOURCE=R6, FSOURCE=RR6, MASK=MR4)))     :: RRR6(128) 
+ !REAL(KIND(CVMGT(TSOURCE=R6, FSOURCE=RR6, MASK=MR4)))     :: RRR6(128)
  !LOGICAL(KIND(L1))  :: LLL1(128)
   LOGICAL(KIND(L2))  :: LLL2(128) = CVMGT(TSOURCE=L2, FSOURCE=LL2, MASK=ML8)
   LOGICAL(KIND(L4))  :: LLL4(128) = CVMGT(TSOURCE=L4, FSOURCE=LL4, MASK=ML2)
@@ -132,25 +124,25 @@
 ! IF ( KIND(ZZZ8)   .NE.  8 ) STOP 42
 ! IF ( KIND(ZZZ6)   .NE.  16) STOP 43
 
-! IF ( ANY (III1    .NE. 1 )) STOP 51 
-! IF ( ANY (III2    .NE. 1 )) STOP 52 
-! IF ( ANY (III4    .NE. 1 )) STOP 53 
-! IF ( ANY (III8    .NE. 1 )) STOP 54 
+! IF ( ANY (III1    .NE. 1 )) STOP 51
+! IF ( ANY (III2    .NE. 1 )) STOP 52
+! IF ( ANY (III4    .NE. 1 )) STOP 53
+! IF ( ANY (III8    .NE. 1 )) STOP 54
 
-! IF ( ANY (RRR4    .NE. 1 )) STOP 61 
-! IF ( ANY (RRR8    .NE. 1 )) STOP 62 
-! IF ( ANY (RRR6    .NE. 1 )) STOP 63 
+! IF ( ANY (RRR4    .NE. 1 )) STOP 61
+! IF ( ANY (RRR8    .NE. 1 )) STOP 62
+! IF ( ANY (RRR6    .NE. 1 )) STOP 63
 
-! IF ( ANY (LLL1    .NEQV. .TRUE. )) STOP 71 
-  IF ( ANY (LLL2    .NEQV. .TRUE. )) STOP 72 
-  IF ( ANY (LLL4    .NEQV. .TRUE. )) STOP 73 
-  IF ( ANY (LLL8    .NEQV. .TRUE. )) STOP 74 
+! IF ( ANY (LLL1    .NEQV. .TRUE. )) STOP 71
+  IF ( ANY (LLL2    .NEQV. .TRUE. )) STOP 72
+  IF ( ANY (LLL4    .NEQV. .TRUE. )) STOP 73
+  IF ( ANY (LLL8    .NEQV. .TRUE. )) STOP 74
 
-! IF ( ANY (ZZZ4    .NE. (1.,0.) )) STOP 81 
-! IF ( ANY (ZZZ8    .NE. (1.,0.) )) STOP 82 
-! IF ( ANY (ZZZ6    .NE. (1.,0.) )) STOP 83 
+! IF ( ANY (ZZZ4    .NE. (1.,0.) )) STOP 81
+! IF ( ANY (ZZZ8    .NE. (1.,0.) )) STOP 82
+! IF ( ANY (ZZZ6    .NE. (1.,0.) )) STOP 83
 
-! IF ( ANY (CCC     .NE. ACHAR(1) )) STOP 99 
+! IF ( ANY (CCC     .NE. ACHAR(1) )) STOP 99
 
   END
 

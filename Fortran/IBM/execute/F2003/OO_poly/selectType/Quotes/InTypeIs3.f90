@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: InTypeIs3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: InTypeIs3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InTypeIs3 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : InTypeIs3
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 24, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,27 +30,27 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Within TYPE IS, test intrinsic type with diff kind parameter 
+!*
+!*  Within TYPE IS, test intrinsic type with diff kind parameter
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM InTypeIs3 
+  PROGRAM InTypeIs3
   IMPLICIT NONE
   INTEGER(4) :: V(3,3)=0
- 
+
   V(1:3:2,1:3:2) = -1
 
   CALL Sub(V(1:3:2,1:3:2))
 
   CONTAINS
- 
+
   SUBROUTINE Sub(Arg)
   CLASS(*) :: Arg(2:3,3:4)
- 
+
     SELECT TYPE (Arg=>Arg(2, 3))
     TYPE IS (INTEGER(1))
       STOP 22
@@ -86,7 +80,7 @@
     END SELECT
 
   END SUBROUTINE
- 
+
   END
 
 

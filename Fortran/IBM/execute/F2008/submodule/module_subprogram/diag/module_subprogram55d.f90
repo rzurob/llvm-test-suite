@@ -1,20 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : module_subprogram54d
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 6 December, 2012
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : submodule
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -22,7 +16,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  Adding a prefix such as elemental, pure, impure, recursive, etc, 
+!*  Adding a prefix such as elemental, pure, impure, recursive, etc,
 !*   in the MODULE PROCEDURE statement.
 !*
 !* ===================================================================
@@ -39,7 +33,7 @@ implicit none
     impure module subroutine impsub(x)
       integer x
     end subroutine
-  
+
     module impure function impfunc(x)
       integer x
       real :: func2
@@ -48,7 +42,7 @@ implicit none
     elemental module subroutine elemsub(x)
       integer, intent(in) :: x
     end subroutine
-  
+
     module elemental function elemfunc(x)
       integer, intent(in) :: x
       real :: func2
@@ -68,7 +62,7 @@ CONTAINS
   impure module procedure impsub
     a = 2 * x
   end procedure impsub
- 
+
   ! for a function
   elemental module procedure elemfunc
     func2 = 3 * x

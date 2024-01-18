@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquida
 !*  DATE                       : 02/20/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing SIGN specifier with the OPEN, READ and
 !*  WRITE stmts for internal files. Testing integer variables.
@@ -43,7 +32,7 @@ program iosign086
   close(1)
 
   write (str,*,sign='plus') i2,i,i4,i8
-  write (*,*) str 
+  write (*,*) str
 
   write (*,*) "\nTest 2\n"
 
@@ -52,7 +41,7 @@ program iosign086
   close(1)
 
   write (str,*,sign='plus') i2,i,i4,i8
-  write (*,*) str 
+  write (*,*) str
 
   write (*,*) "\nTest 3\n"
 
@@ -61,7 +50,7 @@ program iosign086
   close(1)
 
   write (str,*,sign='suppress') i2,i,i4,i8
-  write (*,*) str 
+  write (*,*) str
 
 end program iosign086
 

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecArrConstr.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecArrConstr.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +19,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Type Spec in arr constructor 
-!* 
-!* (324676) 
-!* 
+!*  Type Spec in arr constructor
+!*
+!* (324676)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypSpecArrConstr 
+  PROGRAM InitExpTypSpecArrConstr
   IMPLICIT NONE
 
   INTEGER :: I
@@ -47,7 +39,7 @@
   INTEGER(8), ALLOCATABLE :: I8
 
   INTEGER                 :: II(128)= (/(-I, I=0, 127)/)
- 
+
   INTEGER(1),   PARAMETER :: TI1(128)=(/ INTEGER(KIND=I1%KIND) :: (-I, I=0, 127)/)
   INTEGER(2),   PARAMETER :: TI2(128)=(/ INTEGER(KIND=I2%KIND) :: (-I, I=0, 127)/)
   INTEGER(4),   PARAMETER :: TI4(128)=(/ INTEGER(KIND=I4%KIND) :: (-I, I=0, 127)/)
@@ -80,4 +72,4 @@
 
   END
 
- 
+

@@ -29,7 +29,6 @@
         return
       end subroutine
 
-
       !!! BIND(C) w/ NAME= and non-default name
       subroutine sn1 BIND(C, name='S1')  ! err: sub w/out parens, NAME=non-default
         return
@@ -46,7 +45,6 @@
       subroutine sn4 (a, b) BIND(C, name='S4')  ! ok: sub w/ parens and 2 args, NAME=non-default
         return
       end subroutine
-
 
       !!! BIND(C) w/ NAME= and default name
       subroutine sd1 BIND(C, name='sd1')  ! err: sub w/out parens, NAME=default

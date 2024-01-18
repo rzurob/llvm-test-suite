@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemExp.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemExp.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  Exp 
+!*
+!*  -  Exp
 !*  (318967)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -36,32 +29,32 @@
 
 
   PROGRAM  InitExpDefElemExp
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J, K
- 
+
 
   TYPE :: DT0
     REAL(4)      :: XR4(4,4) =  1.0
     REAL(8)      :: XR8      =  1.0
     REAL(16)     :: XR6      =  1.0
-    COMPLEX(4)   :: XZ4(4,4) =  (1., 1.) 
-    COMPLEX(8)   :: XZ8      =  (1., 1.) 
-    COMPLEX(16)  :: XZ6(4,4) =  (1., 1.) 
+    COMPLEX(4)   :: XZ4(4,4) =  (1., 1.)
+    COMPLEX(8)   :: XZ8      =  (1., 1.)
+    COMPLEX(16)  :: XZ6(4,4) =  (1., 1.)
   END TYPE
 
   REAL, PARAMETER :: R=EXP(1.)
   COMPLEX, PARAMETER :: Z=EXP((1., 1.))
 
   TYPE(DT0), PARAMETER :: P=DT0()
- 
-  TYPE :: DT 
-    REAL(KIND(EXP(P%XR4)))       :: TR4(4,4) = EXP(P%XR4) 
-    REAL(KIND(EXP(P%XR8)))       :: TR8(4,4) = EXP(P%XR8) 
-    REAL(KIND(EXP(P%XR6)))       :: TR6(4,4) = EXP(P%XR6) 
 
-    COMPLEX(KIND(EXP(P%XZ4)))    :: TZ4(4,4) = RESHAPE((/(EXP(P%XZ4), I=1,16)/), (/4,4/)) 
-    COMPLEX(KIND(EXP(P%XZ8)))    :: TZ8(4,4) = RESHAPE((/(EXP(P%XZ8), I=1,16)/), (/4,4/)) 
-    COMPLEX(KIND(EXP(P%XZ6)))    :: TZ6(4,4) = RESHAPE((/(EXP(P%XZ6), I=1,16)/), (/4,4/)) 
+  TYPE :: DT
+    REAL(KIND(EXP(P%XR4)))       :: TR4(4,4) = EXP(P%XR4)
+    REAL(KIND(EXP(P%XR8)))       :: TR8(4,4) = EXP(P%XR8)
+    REAL(KIND(EXP(P%XR6)))       :: TR6(4,4) = EXP(P%XR6)
+
+    COMPLEX(KIND(EXP(P%XZ4)))    :: TZ4(4,4) = RESHAPE((/(EXP(P%XZ4), I=1,16)/), (/4,4/))
+    COMPLEX(KIND(EXP(P%XZ8)))    :: TZ8(4,4) = RESHAPE((/(EXP(P%XZ8), I=1,16)/), (/4,4/))
+    COMPLEX(KIND(EXP(P%XZ6)))    :: TZ6(4,4) = RESHAPE((/(EXP(P%XZ6), I=1,16)/), (/4,4/))
   END TYPE
 
   TYPE(DT) :: T
@@ -85,4 +78,4 @@
 
   END
 
- 
+

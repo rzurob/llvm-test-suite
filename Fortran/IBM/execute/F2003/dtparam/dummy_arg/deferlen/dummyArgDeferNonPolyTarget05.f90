@@ -1,43 +1,35 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPolyTarget05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPolyTarget05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 7 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1.IF DUMMY AERGUMENT HAS THE TARGET ATTRIBUTE AND THE CORRESPONDING ACTUAL ARGUMENT DOES NOT HAVE THE TARGET ATTRIBUTE OR IS ARRAY SECTION WITH VECTOR SUBSCRIPT,ANY POINTER ASSOCIATE WITH DUMMY ARGUMENT BECOME UNDEFINED WHEN EXECUTION OF THE PROCEDURE COMPLETES.
-!* 2. VERIFY LOCAL POINTER WHICH IS ASSOCIATED WITH DUMMY ARGUMENT DURING PROCEDURE EXECUTION 
+!* 2. VERIFY LOCAL POINTER WHICH IS ASSOCIATED WITH DUMMY ARGUMENT DURING PROCEDURE EXECUTION
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type dtp(l1)
      integer,len   :: l1
-     character(l1) :: c1 
+     character(l1) :: c1
    end type
 end module
 
 program dummyArgDeferNonPolyTarget05
   use m
   implicit none
-  
+
   interface
 
   subroutine check1(arg)
-   import 
+   import
    type(dtp(:)),target,allocatable :: arg
   end subroutine
 
@@ -58,12 +50,12 @@ program dummyArgDeferNonPolyTarget05
   call check1(dtp1)
 
   if(dtp1%c1 /= "xlc")                           error stop 14_4
- 
+
   call check2(dtp2)
 
   if(dtp2(-2)%c1 /= "123")                       error stop 23_4
-  if(dtp2(-1)%c1 /= "456")                       error stop 24_4 
- 
+  if(dtp2(-1)%c1 /= "456")                       error stop 24_4
+
 end program
 
 subroutine check1(arg)
@@ -80,10 +72,10 @@ subroutine check1(arg)
    if(temp2%l1 /= 3)                              error stop 12_4
    if(temp2%c1 /= "xlf")                          error stop 13_4
 
-   nullify(temp1,temp2)    
+   nullify(temp1,temp2)
 
    arg%c1 = "xlc"
-      
+
 end subroutine
 
 subroutine check2(arg)

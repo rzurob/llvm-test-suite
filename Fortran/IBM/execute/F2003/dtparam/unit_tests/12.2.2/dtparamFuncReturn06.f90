@@ -1,20 +1,10 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : James Ren
 !*  DATE                       : 06/07/2007
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : function return with DTP
 !*
@@ -22,7 +12,7 @@
 !*  TARGET(S)                  :
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
-! defect 337711      
+! defect 337711
 
 module m
    type base(l)
@@ -45,5 +35,5 @@ use m
 
    type (base(:)), pointer :: ptr
    allocate(ptr, source = func(10))
-   if (ptr%p /= 10) stop 1   
+   if (ptr%p /= 10) stop 1
 end

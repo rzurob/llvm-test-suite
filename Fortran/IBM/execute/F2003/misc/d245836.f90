@@ -1,33 +1,18 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 04/03/2007
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : defect 245836 (or 190336)
 !                               reduced test case from original TC given in
 !                               defect 245836.  Defect 190336 was opened against
 !                               aix.os: _xlqdiv is not threadsafe.
 !*
-!*
-!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-    
+
    program fxpr003e
    implicit none
    complex(4) diff
@@ -39,7 +24,7 @@
          complex ext_func
       end function
    end interface
- 
+
     diff = ext_func(2, 4, 8, 100)
 
     if (.not. precision_x8(diff, cmplx(1,100))) error stop 1_4

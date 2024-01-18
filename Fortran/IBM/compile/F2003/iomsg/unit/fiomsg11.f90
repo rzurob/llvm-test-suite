@@ -13,18 +13,12 @@
 ! *********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : For IOMSG= variable in I/O statements.
 !*                             :
-!*  PROGRAMMER                 : Daniel Chen
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  DIAGNOSES TESTED           : IOMSG variable cannot be protected
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 
         Module mod1
           character(191), protected :: iomsg_var
-        end module 
-        
+        end module
+
         Program fiomsg11
           use mod1
           open(11, status='scratch', iomsg=iomsg_var)

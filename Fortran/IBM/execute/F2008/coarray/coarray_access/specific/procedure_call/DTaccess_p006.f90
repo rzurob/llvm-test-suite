@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_p006.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : May 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -30,7 +26,7 @@ program main
 		character(3) :: c3
 	end type
 	type (item), save :: caf[*]
-	
+
 	caf = item(' ', '   ')
 
 	call twiddle1(caf%c1,  ' ', a1, 1)
@@ -65,7 +61,7 @@ program main
 	subroutine twiddle1(a1, exp1, new1, nr)
 		character(1) :: a1, exp1, new1
 		integer :: nr
-		
+
 		if (a1 /= exp1) then
 			print *, "|", a1, "|"
 			print *, "|", exp1, "|"
@@ -78,7 +74,7 @@ program main
 		type (item) :: a1[*]
 		character(1) :: exp1, new1
 		integer :: nr
-		
+
 		if (a1%c1 /= exp1) then
 			print *, "|", a1%c1, "|"
 			print *, "|", exp1, "|"
@@ -117,7 +113,7 @@ program main
 		type (item) :: a3[*]
 		character(3) :: exp3, new3
 		integer :: nr
-		
+
 		if (a3%c3 /= exp3) then
 			print *, "|", a3%c3, "|"
 			print *, "|", exp3, "|"

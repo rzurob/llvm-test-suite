@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemLOG10.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemLOG10.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  LOG10 
+!*
+!*  -  LOG10
 !*  (319120)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -47,7 +40,7 @@
   CONTAINS
 
     FUNCTION ModFun(Arg1, Arg2, Arg3)
-      REAL(16) :: ModFun 
+      REAL(16) :: ModFun
       REAL(4) :: Arg1
       REAL(8) :: Arg2
       REAL(16):: Arg3
@@ -60,7 +53,7 @@
 
   PROGRAM  InitExpDefElemLOG10
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
 
@@ -68,9 +61,9 @@
     FUNCTION F(Arg1, Arg2, Arg3)
       IMPORT
       REAL(INT(LOG10(R(128)%R6))) :: F
-      REAL(INT(LOG10(R(128)%R4))) :: Arg1 
-      REAL(INT(LOG10(R(128)%R8))) :: Arg2 
-      REAL(INT(LOG10(R(128)%R6))) :: Arg3 
+      REAL(INT(LOG10(R(128)%R4))) :: Arg1
+      REAL(INT(LOG10(R(128)%R8))) :: Arg2
+      REAL(INT(LOG10(R(128)%R6))) :: Arg3
     END FUNCTION
   END INTERFACE
 

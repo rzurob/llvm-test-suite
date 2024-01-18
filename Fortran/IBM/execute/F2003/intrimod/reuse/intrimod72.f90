@@ -1,33 +1,28 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90 -qsmp -F:xlf95_r
 ! %GROUP: intrimod72.f
-! %VERIFY: 
-! %STDIN: 
-! %STDOUT: 
+! %VERIFY:
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.mod
 ! %END
 !**********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  TEST CASE TITLE            : intrimod72.f
-!*                                                                     
-!*  PROGRAMMER                 : Bahram Chehrazy
+!*  ===================================================================
+!*
 !*  DATE                       : January 13, 2004
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*                                                                      
-!*  PRIMARY FUNCTIONS TESTED   : Various OMP Lock routines mixed with 
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Various OMP Lock routines mixed with
 !*                               user threads.
-!*                               
+!*
 !*  REQUIRED COMPILER OPTIONS  : -qsmp -qfree=f90
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  DESCRIPTION                : Verify that user defined interface take
 !*                               precedence over the pre-defined interface
 !*                               (OMP_LIB). This test case should fail with

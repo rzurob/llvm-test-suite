@@ -3,26 +3,14 @@
 ! opt variations: -qck -qnodeferredlp
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mixunlmtpolyDT2.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM is of an nonpoly DT 
+!*  DESCRIPTION                : FROM is of an nonpoly DT
 !*                               TO is of unlmited poly
 !*                               both are dummy args
 !* ===================================================================
@@ -40,7 +28,7 @@ module m
           integer, len  :: n1
           integer(k1)   :: id
           character(n1) :: name
-      end type 
+      end type
 
       contains
           subroutine sub(a, b)

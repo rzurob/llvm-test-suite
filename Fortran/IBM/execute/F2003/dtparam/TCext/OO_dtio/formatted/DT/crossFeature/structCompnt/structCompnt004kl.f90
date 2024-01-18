@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : structCompnt004kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from structCompnt004 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Structure Component: Scalar Sequence Derived Type Component
@@ -76,7 +68,7 @@ use m1
 
    type(container(3))               :: c1
    type(container(:)), allocatable  :: c2
-   
+
    c1 = container(3)(b1=base(3)(d1=data(3)('ABC'),d2=data(3)('DEF')))
    allocate ( c2 , source = container(3)(b1=base(3)(d1=data(3)('GHI'),d2=data(3)('JKL'))) )
 

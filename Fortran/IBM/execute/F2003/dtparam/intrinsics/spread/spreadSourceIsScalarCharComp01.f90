@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsScalarCharComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsScalarCharComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 13 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 13 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -55,7 +47,7 @@ program spreadSourceIsScalarCharComp01
   type(container(:)),allocatable :: contain4(:)
 
   contain1=container(3)(ch2="123",mychar1=mychar(2,4)(ch1="xlf"//"test"))
-  
+
   allocate(contain2,source=container(3)("456",mychar(2,4)("abcdef")) )
 
   allocate(contain3(-3:-1),source=spread(contain1,1,contain1%l3))
@@ -72,7 +64,7 @@ program spreadSourceIsScalarCharComp01
   if(contain3%mychar1%ch1%len /= 6)             error stop 19_4
   if(any(contain3%mychar1%ch1 /= "xlftes"))     error stop 20_4
 
-  contain4=spread(contain2,1,5)  
+  contain4=spread(contain2,1,5)
 
   if(.not. allocated(contain4))                 error stop 21_4
   if(lbound(contain4,1) /= 1)                   error stop 22_4
@@ -85,5 +77,5 @@ program spreadSourceIsScalarCharComp01
   if(contain4%mychar1%l2 /= 4)                  error stop 29_4
   if(contain4%mychar1%ch1%len /= 6)             error stop 30_4
   if(any(contain4%mychar1%ch1 /= "abcdef"))     error stop 31_4
-        
+
 end program

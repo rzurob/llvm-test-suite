@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,21 +13,13 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c05i.f
-!* TEST CASE TITLE              : BIND(C) attribute/statement
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Test: BINC(C) attribute/statement
@@ -101,12 +88,12 @@
            implicit complex*8 (l)
            l2 = l1 + (1.0, 1.0)
        end function exfun_comp1
-       
+
        function exfun_comp2(m1) result(m2) bind(c)
            implicit complex*16 (m)
            m2 = m1 + (1.0D0, 1.0D0)
        end function exfun_comp2
-       
-   
 
- 
+
+
+

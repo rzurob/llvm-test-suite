@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : SpecExpHostAssociation06a.f
-!*
-!*  PROGRAMMER                 : Dorra Bouhiha
 !*  DATE                       : June 14, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Specification expression - Host Association
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -23,7 +15,6 @@
 !*  DESCRIPTION                :
 !*
 !*  An objet designator with a base object that is made accessible by host association
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM SpeExpHostAssociation07
@@ -41,12 +32,12 @@ PROGRAM SpeExpHostAssociation07
          INTEGER, KIND :: k2 = 4
          INTEGER, LEN  :: l2 = 4
 
-         TYPE(Base(k2,l2)) :: b1 
+         TYPE(Base(k2,l2)) :: b1
       END TYPE
 
-      CALL Sub11() 
-      CALL Sub21() 
-      CALL Sub31() 
+      CALL Sub11()
+      CALL Sub21()
+      CALL Sub31()
 
       CONTAINS
 

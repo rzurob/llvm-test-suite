@@ -1,14 +1,9 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: $TR_SRC/run.sh fxbind_c04efb  cxbind_c04efb
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -18,36 +13,28 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c04efb.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran Entry in function called from C
 !*                              - interop functions contained in Module.
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !*   - Test: BINC(C) attribute with  different intrinsic data type,
 !*           real*4,real*8.
-!*   - The interoperable  procedure itself is  implemented using Fortran 
-!*     function Entry Statement.  
+!*   - The interoperable  procedure itself is  implemented using Fortran
+!*     function Entry Statement.
 !*   - primary entry point have bind(c) attribute  and an alternate
 !*     entry point do not have bind(c) attribute.
 !*   - passing scalar arguments by REFERENCE and by VALUE
 !*   - main written in C, C  calls FORTRAN functions.
 !*
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. C program call the Fortran function has a primary entry
 !*            point and an alternate entry point.
 !*          2. Assertion: Check the return value  in C
@@ -74,7 +61,7 @@ function fn_real4 (a, b) bind(c)
   a = a + 1.0e0
   b = b + 1.0e0
   return
-  entry ent_real4 (a, b) 
+  entry ent_real4 (a, b)
   a = a + 1.0e0
   b = b + 1.0e0
   ent_real4 = a + b
@@ -90,7 +77,7 @@ function fn_real8 (a, b) bind(c)
   a = a + 1.0d0
   b = b + 1.0d0
   return
-  entry ent_real8 (a, b) 
+  entry ent_real8 (a, b)
   a = a + 1.0d0
   b = b + 1.0d0
   ent_real8 = a + b
@@ -106,7 +93,7 @@ function fn_realval4 (a, b) bind(c)
   b = b +1.0e0
   fn_realval4 = a * b
   return
-  entry ent_realval4 (a, b) 
+  entry ent_realval4 (a, b)
   a = a +1.0e0
   b = b +1.0e0
   ent_realval4 = a + b
@@ -122,7 +109,7 @@ function fn_realval8 (a, b) bind(c)
   b = b +1.0d0
   fn_realval8 = a * b
   return
-  entry ent_realval8 (a, b) 
+  entry ent_realval8 (a, b)
   a = a +1.0d0
   b = b +1.0d0
   ent_realval8 = a + b

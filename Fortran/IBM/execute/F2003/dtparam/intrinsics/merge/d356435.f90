@@ -1,33 +1,25 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d356435.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d356435.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 19 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 19 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. DEFECT 356435 
+!* 1. DEFECT 356435
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type A(l)
      integer,len  :: l
-     character(l) :: c1(2) 
-     logical      :: l1(2) 
+     character(l) :: c1(2)
+     logical      :: l1(2)
    end type
 end module
 

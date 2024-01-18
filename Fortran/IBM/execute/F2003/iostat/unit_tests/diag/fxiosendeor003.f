@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxiosendeor003.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,21 +12,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxiosendeor003 
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug. 17, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : is_iostat_end and is_iostat_eor intrinsics
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This diagnostic test, makes sure that the intrinsic
 !*                               is not allowed as an argument to a function.
@@ -37,23 +30,23 @@
 
       write(*,*) caller(-2, is_iostat_end) ! should be flagged, since this intrin
                                            ! is not allowed as actual argument
- 
+
       write(*,*) caller(-2, is_iostat_eor) ! should be flagged, since this intrin
                                            ! is not allowed as actual argument
 
       contains
 
       logical function caller(a, func)
-      
+
         integer :: a
-      
-        interface 
+
+        interface
            logical function func(i)
            integer, intent(in) :: i
            end function func
         end interface
 
       caller = func(a)
-  
+
       end function caller
       end

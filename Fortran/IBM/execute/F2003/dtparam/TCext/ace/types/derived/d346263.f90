@@ -1,19 +1,13 @@
 !**********************************************************************
 !* ====================================================================
-!* XL Fortran Test Case                           IBM INTERNAL USE ONLY
-!* ====================================================================
 !*
 !*  TEST CASE NAME             : d346263
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt55klk)
 !*  DATE                       : 2008-01-24
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Array Constructor Enhancement
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DEFECT ABSTRACT            : DTPARAM: ACE: AC-IMPDO: ICE: In xlfentry
 !*                               (Signal 11)

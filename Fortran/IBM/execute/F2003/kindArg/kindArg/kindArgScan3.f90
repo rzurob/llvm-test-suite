@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgScan3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 28, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : SCAN 
+!*  SECONDARY FUNCTIONS TESTED : SCAN
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Description. Scan a string for any one of the characters in a set of characters. 
-!*    
-!*  (322781/323955) 
+!*  Description. Scan a string for any one of the characters in a set of characters.
+!*
+!*  (322781/323955)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -43,7 +35,7 @@
   INTEGER(2) :: I2
   INTEGER(4) :: I4
   INTEGER(8) :: I8
-     
+
 
   DO I1 = 1, 127
     IF (SCAN(STRING=Str(I1), SET=Set(I1), KIND=1_1 ) .NE. 2) STOP 11
@@ -59,7 +51,7 @@
     IF (SCAN(STRING=Str(I2), SET=Set(I2), KIND=2_8 ) .NE. 2) STOP 24
   END DO
 
-  DO I4 = 1, 127 
+  DO I4 = 1, 127
     IF (SCAN(STRING=Str(I4), SET=Set(I4), KIND=4_1 ) .NE. 2) STOP 41
     IF (SCAN(STRING=Str(I4), SET=Set(I4), KIND=4_2 ) .NE. 2) STOP 42
     IF (SCAN(STRING=Str(I4), SET=Set(I4), KIND=4_4 ) .NE. 2) STOP 43
@@ -91,7 +83,7 @@
     IF (SCAN(STRING=Str(I2), SET=Set(I2), BACK=.TRUE., KIND=2_8 ) .NE. 2) STOP 124
   END DO
 
-  DO I4 = 1, 127 
+  DO I4 = 1, 127
     IF (SCAN(STRING=Str(I4), SET=Set(I4), BACK=.TRUE., KIND=4_1 ) .NE. 2) STOP 141
     IF (SCAN(STRING=Str(I4), SET=Set(I4), BACK=.TRUE., KIND=4_2 ) .NE. 2) STOP 142
     IF (SCAN(STRING=Str(I4), SET=Set(I4), BACK=.TRUE., KIND=4_4 ) .NE. 2) STOP 143

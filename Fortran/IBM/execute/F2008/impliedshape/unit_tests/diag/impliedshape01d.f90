@@ -1,21 +1,13 @@
 !* =
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =
 !*
-!* TEST CASE TITLE            : impliedshape01d.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : February 22, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : Implied-shape arrays
 !*
-!* DRIVER STANZA              : xlf2008
-!*
 !* DESCRIPTION                : Testing proper diagnostics of
 !*                              implied-shape arrays. RHS is
-!*                              scalar                        
+!*                              scalar
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -70,7 +62,7 @@
       byte, parameter :: b4d2 (*,*) = 2
       byte, parameter :: b4d3 (*,*,*) = 3
       byte, parameter :: b4d4 (*,*,*,*) = b
-      
+
       type(base), parameter :: tb4d1 (*) = base(1,2)
       type(base), parameter :: tb4d2 (*,*) = base(3,4)
       type(base), parameter :: tb4d3 (*,*,*) = base(5,6)

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  VarPtrPoly.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  VarPtrPoly.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : VarPtrPoly 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : VarPtrPoly
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a allocatable polymorphic  variable 
-!*    The selector is a allocatable unlimited polymorphic  variable 
+!*    The selector is a allocatable polymorphic  variable
+!*    The selector is a allocatable unlimited polymorphic  variable
 !*    (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -53,11 +47,11 @@
 
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
-      TYPE(Base),  POINTER :: BaseComp 
-      TYPE(Child), POINTER :: ChildPtr => NULL() 
+      TYPE(Base),  POINTER :: BaseComp
+      TYPE(Child), POINTER :: ChildPtr => NULL()
     CONTAINS
-      PROCEDURE, NOPASS :: PrintType => PrintChild 
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, NOPASS :: PrintType => PrintChild
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -87,13 +81,13 @@
 
   ALLOCATE( Child :: U)
   ASSOCIATE ( As => U )
-    IF ( As%GetID() .NE. 2) STOP 50 
-    IF ( As%BaseId  .NE. 1) STOP 51 
+    IF ( As%GetID() .NE. 2) STOP 50
+    IF ( As%BaseId  .NE. 1) STOP 51
 
    ASSOCIATE ( As1 => As%BaseId )
-       IF ( As1 .NE. 1) STOP 52 
+       IF ( As1 .NE. 1) STOP 52
     END ASSOCIATE
-   
+
     ALLOCATE(As%BasePtr)
     IF ( As%BasePtr%BaseID .NE. 1 ) STOP 71
     DEALLOCATE(As%BasePtr)
@@ -109,7 +103,7 @@
 
         IF ( As%GetID() .NE. 2) STOP 60
         IF ( As%ChildId .NE. 2) STOP 61
-     
+
         ALLOCATE(As%ChildPtr)
         IF ( As%ChildPtr%GetID() .NE. 2 ) STOP 72
         DEALLOCATE(As%ChildPtr)
@@ -127,13 +121,13 @@
 
     SELECT TYPE ( As )
       TYPE IS (Child)
-        IF ( As%GetID() .NE. 2)      STOP 49 
-        IF ( As%ChildId .NE. 2)      STOP 90 
-        IF ( As%BaseId  .NE. 1)      STOP 91 
-        IF ( As%Base%GetId() .NE. 1) STOP 92 
+        IF ( As%GetID() .NE. 2)      STOP 49
+        IF ( As%ChildId .NE. 2)      STOP 90
+        IF ( As%BaseId  .NE. 1)      STOP 91
+        IF ( As%Base%GetId() .NE. 1) STOP 92
 
         ASSOCIATE ( As1 => As%BaseId )
-          IF ( As1 .NE. 1) STOP 52 
+          IF ( As1 .NE. 1) STOP 52
         END ASSOCIATE
 
         IF ( .NOT. SAME_TYPE_AS(As, Child(BaseComp=NULL())) ) STOP 53

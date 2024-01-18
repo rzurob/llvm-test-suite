@@ -1,11 +1,6 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/abstract/C503/interface004.f
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -20,22 +15,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: interface block
 !*                                        poly abstract type return, interface of an external procedure
@@ -73,14 +57,14 @@ end module
 
 program interface004
    use m
-   
+
    class(base(4)), pointer :: b1
-   type(child(4,4,20)) :: c1 = child(4,4,20)(5) 
+   type(child(4,4,20)) :: c1 = child(4,4,20)(5)
    procedure(itf) :: getbase
-   
+
    b1 => getbase(c1)
    if(b1%id .ne. 5) error stop 1_4
-   
+
 end program
 
 class(base(4)) function getbase(a)

@@ -1,27 +1,12 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 05/04/2007
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : derived type parameter
 !                               specific type bound (Nopass binding for using
 !                               pointer dummy-arg.)
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -116,7 +101,7 @@ use m1
     if (.not. same_type_as(p2, point(8,3)(0))) error stop 3_4
 
     if ((.not. precision_r8(p2%coord(1), 2.2d0)) .or. &
-        (.not. precision_r8(p2%coord(2), 1.2d0)) .or. & 
+        (.not. precision_r8(p2%coord(2), 1.2d0)) .or. &
         (.not. precision_r8(p2%coord(3), 0.2d0))) error stop 4_4
 
     deallocate (p1, p2)
@@ -149,7 +134,7 @@ use m1
     if (.not. same_type_as(p2, colorPoint(8,3,4)(1))) error stop 10_4
 
     if ((.not. precision_r8(p2%coord(1), 2.2d0)) .or. &
-        (.not. precision_r8(p2%coord(2), 1.2d0)) .or. & 
+        (.not. precision_r8(p2%coord(2), 1.2d0)) .or. &
         (.not. precision_r8(p2%coord(3), 0.2d0))) error stop 11_4
 
     select type (p2)

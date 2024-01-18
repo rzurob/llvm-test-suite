@@ -1,22 +1,11 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*                                associate procedure pointer with c function
 !*                                pointer pointing to C function with void pointer
 !*                                as its argument(in Fortran, dummy argument for C_PTR
@@ -29,7 +18,7 @@ program procptrBindcProc22
    use ISO_C_BINDING,ONLY : C_F_PROCPOINTER, C_FUNPTR, C_LONG_DOUBLE, C_FUNLOC, C_ASSOCIATED, C_LOC, C_PTR
 
    type dt
-       type(C_FUNPTR) :: cfunptr 
+       type(C_FUNPTR) :: cfunptr
    end type
    interface
        type(C_PTR) function cfunc(i) bind(c)
@@ -40,7 +29,7 @@ program procptrBindcProc22
 
    type(dt) :: dtype
    real(C_LONG_DOUBLE), target :: i
-   type(C_PTR) :: j, res 
+   type(C_PTR) :: j, res
    real(C_LONG_DOUBLE), pointer :: p, pp
    logical*4 precision_R6
 

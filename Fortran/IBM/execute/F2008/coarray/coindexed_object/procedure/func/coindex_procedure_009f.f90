@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Andy Chen
 !*  DATE                       : September 14, 2010
 !* .or.GIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Test procedures pointers(exteranl function and
 !                                subroutine). corank=2
@@ -99,7 +89,7 @@ program coindex_procedure_009f
     if ( .not. precision_r4(sum1, sum2)) then
         print *, 'sum1=',sum1,' sum2=',sum2
         error stop 4
-    end if 
+    end if
 end program
 
 integer function intreturn(x)
@@ -115,7 +105,7 @@ end function
 subroutine arraysum(x, mysum)
     real, intent(in) ::x(:)
     real, intent(out) ::mysum
-    do i = 1,10 
+    do i = 1,10
         mysum = mysum + x(i)
     end do
     return

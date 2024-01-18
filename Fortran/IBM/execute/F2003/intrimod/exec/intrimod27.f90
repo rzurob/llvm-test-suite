@@ -1,24 +1,21 @@
 ! ************************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f mod1.mod 
+! %PRECMD: rm -f mod1.mod
 ! %COMPOPTS: -qhalt=w
 ! %GROUP: intrimod27.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f mod1.mod
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod27.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
-!*  Description      : Use INTRINSIC module with the same name CRITICAL 
+!*  Description      : Use INTRINSIC module with the same name CRITICAL
 !*                     SECTION. No error message should be issued.
 !*
 !*************************************************************************
@@ -55,7 +52,7 @@
                yr = 0.
 !SMP$  PARALLEL DO private(rr)
                do i = 1, 100
-                   rr = log(real(i)) 
+                   rr = log(real(i))
 !SMP$  CRITICAL (ieee_arithmetic)
                    yr = yr + ieee_rint(rr)
 !SMP$  END CRITICAL (ieee_arithmetic)
@@ -102,14 +99,14 @@
 !... Testing CRITICAL section with same name as an INTRINSIC module
 
                yr = 0.
-!SMP$  PARALLEL DO private(rr) 
+!SMP$  PARALLEL DO private(rr)
                do i = 1, 100
-                   rr = log(real(i)) 
-!SMP$  CRITICAL (xlf_fp_util) 
+                   rr = log(real(i))
+!SMP$  CRITICAL (xlf_fp_util)
                    yr = yr + ieee_rint(rr)
 !SMP$  END CRITICAL (xlf_fp_util)
                end do
-!SMP$  END PARALLEL DO  
+!SMP$  END PARALLEL DO
 
                if (yr /= 360.0) stop 12
                call ieee_set_status(status_value)
@@ -121,7 +118,7 @@
 
 
 
-            logical function fun1() 
+            logical function fun1()
                use, intrinsic :: ieee_arithmetic
                use, intrinsic :: ieee_exceptions
                use, intrinsic :: xlf_fp_util

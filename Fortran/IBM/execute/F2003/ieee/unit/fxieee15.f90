@@ -1,8 +1,8 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh fxieee15 
-! %COMPOPTS: -qintsize=8 -qfree=f90 
+! %PRECMD: $TR_SRC/fxieee.presh fxieee15
+! %COMPOPTS: -qintsize=8 -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Marcus Yu
 !*  DATE                       : February 11, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SUPPORT dtyp, denormal, divide
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +25,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 	     program fxieee15
@@ -68,7 +59,7 @@
         ! get original flags
         call ieee_get_flag(ieee_all, original)
 	!	call ieee_set_flag(ieee_all, .false.)
-		
+
 ! test ieee_support_datatype
         if (ieee_support_datatype()) print *, "ieee datatype error."
 
@@ -89,19 +80,19 @@
               print *, "ieee datatype error in real*16."
            endif
         enddo
-				
+
 		if (ieee_support_datatype(values) .neqv. .true.) then
 		    print *, "ieee datatype error in real*4."
 		endif
-		
+
 		if (ieee_support_datatype(values_8) .neqv. .true.) then
            print *, "ieee datatype error in real*8."
 		endif
-		
+
         if (ieee_support_datatype(values_16)) then
 		   print *, "ieee datatype error in real*16."
-        endif		
-		
+        endif
+
 ! test ieee_support_denormal
         if (ieee_support_denormal()) print *, "denormal error."
 
@@ -110,33 +101,33 @@
 		   if (l_flag .eqv. .false.) then
 		      print *, "denormal error in real*4."
 		   end if
-        enddo		
-		
+        enddo
+
         do i = 1, 2
 		   l_flag = ieee_support_denormal(values_8(i))
 		   if (l_flag .eqv. .false.) then
 			  print *, "denormal error in real*8."
 		   end if
         enddo
-		
+
         do i = 1, 2
 		  l_flag = ieee_support_denormal(values_16(i))
 		   if (l_flag .eqv. .true.) then
 		      print *, "denormal error in real*16."
 		   end if
-        enddo		
+        enddo
 
         if (ieee_support_denormal(values) .eqv. .false.) then
 		   print *, "denormal error in real*4."
         endif
- 
+
         if (ieee_support_denormal(values_8) .eqv. .false.) then
 		   print *, "denormal error in real*8."
-        endif		 
- 
+        endif
+
         if (ieee_support_denormal(values_16) .eqv. .true.) then
 		   print *, "denormal error in real*16."
-        endif	
+        endif
 
 ! test support_divide
         if (ieee_support_divide()) print *, "divide error."
@@ -162,7 +153,7 @@
         if (ieee_support_divide(values) .neqv. .true.) then
            print *, "divide error in real*4."
         end if
-        
+
 		if (ieee_support_divide(values_8) .neqv. .true.) then
 		   print *, "divide error in real*8."
         end if
@@ -170,7 +161,7 @@
         if (ieee_support_divide(values_16) .eqv. .true.) then
 		   print *, "divide error in real*16."
         end if
-		
+
 		call ieee_get_flag(ieee_all, f_values)
 		do i = 1, 5
 		   if (f_values(i) .eqv. .true.) print *, "error, exception ", i, " was set"

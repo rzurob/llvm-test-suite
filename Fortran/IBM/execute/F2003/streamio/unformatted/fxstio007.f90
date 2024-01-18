@@ -2,34 +2,28 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f fort.*
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxstio007.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio007.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 07, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
 !*
-!*  Description                : Test allocatable objects with 
-!*                               stream I/O          
+!*  Description                : Test allocatable objects with
+!*                               stream I/O
 !*
 !=======================================================================
 
 !* Declare Variables.
-   
+
    implicit none
 
   integer id(2), ios
@@ -66,7 +60,7 @@
   allocate(harr(3), hvar1, hvar2)
   allocate(barr(3), bvar1, bvar2)
 
-!* initialize the variable 
+!* initialize the variable
   ivar1 = -20000000
   rvar1 = -1.2e-30
   cvar1 = (-1.175494e-38,3.402823e38)
@@ -81,7 +75,7 @@
       iostat=ios, err=100)
    write(1, id=id(1), iostat=ios, err=200) ivar1
    write(1, id=id(2), iostat=ios, err=200) ipararr
-   
+
    wait(id =id(1))
    wait(id =id(2))
    rewind(1, iostat=ios, err=500)
@@ -107,7 +101,7 @@
    write(1, id = id(2), iostat=ios, err=200) rpararr
    wait(id =id(1))
    wait(id =id(2))
-   rewind(1, iostat=ios, err=500)  
+   rewind(1, iostat=ios, err=500)
 
    read(1, id=id(1), iostat=ios, err=400) rvar2
    read(1, id=id(2), iostat=ios, err=400) rarr
@@ -126,7 +120,7 @@
       iostat=ios, err=100)
    write(1, id=id(1), iostat=ios, err=200) cvar1
    write(1, id=id(2), iostat=ios, err=200) cpararr
-  
+
    wait(id =id(1))
    wait(id =id(2))
    rewind(1, iostat=ios, err=500)

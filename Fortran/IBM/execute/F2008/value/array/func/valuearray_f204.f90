@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f204.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -83,22 +80,22 @@ if (any (l1 .NEQV. l1_r)) error stop 14
 
 call sub1_dvt(dvt1)
 	do doCounter=1,SIZEOFA
-		do doCounter2=1,SIZEOFA  
+		do doCounter2=1,SIZEOFA
 			if (dvt1(doCounter,doCounter2)%i1 		.ne. 	dvt1_r(doCounter,doCounter2)%i1) 			error stop 1501
 			if (.not. precision_r4 (dvt1(doCounter,doCounter2)%r1,dvt1_r(doCounter,doCounter2)%r1)) 	error stop 1502
-			if (dvt1(doCounter,doCounter2)%l1 		.NEQV. 	dvt1_r(doCounter,doCounter2)%l1) 			error stop 1503	
+			if (dvt1(doCounter,doCounter2)%l1 		.NEQV. 	dvt1_r(doCounter,doCounter2)%l1) 			error stop 1503
 			if (.not. precision_x8 (dvt1(doCounter,doCounter2)%c1,dvt1_r(doCounter,doCounter2)%c1)) 	error stop 1504
 			if (dvt1(doCounter,doCounter2)%char1 	.ne. 	dvt1_r(doCounter,doCounter2)%char1) 		error stop 1505
 		end do
 	end do
 
 contains
-  
+
 subroutine sub1_int(arg)
     integer*4 :: arg(:,:)
 	value arg
 	if (any (arg .ne. i1)) error stop 110
-	
+
 	!print*, "size", size(arg)
 	!print*, "lbound", lbound(arg)
 	!print*, "ubound", ubound(arg)
@@ -112,20 +109,20 @@ subroutine sub1_int(arg)
 	!print*, "ubound", SIZEOFA
 	!print*, "rank", 2
 	!print*, "shape", shape(arg)
-	
+
 	if (size(arg) .ne. SIZEOFA**2) 		error stop 101
 	if ( any(lbound(arg) .ne. 1)) 		error stop 102
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 103
 	if (rank(arg) .ne. 2) 				error stop 104
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 105
-	arg = 200	
+	arg = 200
 end subroutine
 
 subroutine sub1_r(arg)
     real :: arg(:,:)
 	value arg
 	do doCounter=1,SIZEOFA
-		do doCounter2=1,SIZEOFA 
+		do doCounter2=1,SIZEOFA
 			if (.not. precision_r4(arg(doCounter,doCounter2),r1(doCounter,doCounter2))) error stop 111
 		end do
 	end do
@@ -133,7 +130,7 @@ subroutine sub1_r(arg)
 	if ( any(lbound(arg) .ne. 1)) 		error stop 202
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 203
 	if (rank(arg) .ne. 2) 				error stop 204
-	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 205	
+	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 205
 	arg=4*atan(1.0)
 end subroutine
 
@@ -141,7 +138,7 @@ subroutine sub1_com(arg)
     complex*8 :: arg(:,:)
 	value arg
 	do doCounter=1,SIZEOFA
-		do doCounter2=1,SIZEOFA 
+		do doCounter2=1,SIZEOFA
 			if (.not. precision_x8(arg(doCounter,doCounter2),com1(doCounter,doCounter2))) error stop 112
 		end do
 	end do
@@ -151,18 +148,18 @@ subroutine sub1_com(arg)
 	if (rank(arg) .ne. 2) 				error stop 304
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 305
 	arg=(5*atan(1.0),7*atan(1.0))
-end subroutine	
+end subroutine
 
 subroutine sub1_char(arg)
     character(SIZEOFA) :: arg(:,:)
 	value arg
-	if (any (arg .ne. c1)) error stop 113	
+	if (any (arg .ne. c1)) error stop 113
 	if (size(arg) .ne. SIZEOFA**2) 		error stop 401
 	if ( any(lbound(arg) .ne. 1)) 		error stop 402
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 403
 	if (rank(arg) .ne. 2) 				error stop 404
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 405
-	arg = "abcdefghij"	
+	arg = "abcdefghij"
 end subroutine
 
 subroutine sub1_lg(arg)
@@ -175,20 +172,20 @@ subroutine sub1_lg(arg)
 	if (rank(arg) .ne. 2) 				error stop 504
 	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 505
 	arg = .false.
-end subroutine	
+end subroutine
 
-subroutine sub1_dvt(arg)	
+subroutine sub1_dvt(arg)
     type(t1) :: arg(:,:)
 	value arg
 	do doCounter=1,SIZEOFA
-		do doCounter2=1,SIZEOFA   
+		do doCounter2=1,SIZEOFA
 			if (arg(doCounter,doCounter2)%i1 		.ne. 	dvt1(doCounter,doCounter2)%i1) 			error stop 11501
 			if (.not. precision_r4 (arg(doCounter,doCounter2)%r1,dvt1(doCounter,doCounter2)%r1)) 	error stop 11502
-			if (arg(doCounter,doCounter2)%l1 		.NEQV. 	dvt1(doCounter,doCounter2)%l1) 			error stop 11503	
+			if (arg(doCounter,doCounter2)%l1 		.NEQV. 	dvt1(doCounter,doCounter2)%l1) 			error stop 11503
 			if (.not. precision_x8 (arg(doCounter,doCounter2)%c1,dvt1(doCounter,doCounter2)%c1)) 	error stop 11504
 			if (arg(doCounter,doCounter2)%char1 	.ne. 	dvt1(doCounter,doCounter2)%char1) 		error stop 11505
 		end do
-	end do	
+	end do
 	if (size(arg) .ne. SIZEOFA**2) 		error stop 601
 	if ( any(lbound(arg) .ne. 1)) 		error stop 602
 	if ( any(ubound(arg) .ne. SIZEOFA)) error stop 603

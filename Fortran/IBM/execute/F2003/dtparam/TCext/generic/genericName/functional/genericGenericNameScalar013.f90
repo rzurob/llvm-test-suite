@@ -3,22 +3,11 @@
 ! opt variations: -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with generic-name
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : generic-name: scalar derived type calling
 !*                                             multiple (public, private) generic binding pointing to same and different spec bindings
@@ -73,7 +62,7 @@ module m
          call a%a(a)
 
       end subroutine
-      
+
       subroutine callprivatebindingC(a)
          class(base(4)), intent(in) :: a
 
@@ -81,7 +70,7 @@ module m
          call a%c(200)
 
       end subroutine
-      
+
       subroutine callprivatespecbinding(a)
          class(base(4)), intent(in) :: a
 
@@ -111,7 +100,7 @@ program genericGenericNameScalar013
 
    call b1%d()
    call b1%d(base(4)(300))
-   
+
    call callprivatespecbinding(base(4)(500))
 
 end program

@@ -2,43 +2,36 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk072a cxcmn_blk072
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.o *.mod fxcmn_blk072a fxcmn_blk072a.out
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : March 19, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc 
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This test case will verify that 1-dimensional array 
-!*				 variables inside of common blocks are interoperable 
+!*  DESCRIPTION                : This test case will verify that 1-dimensional array
+!*				 variables inside of common blocks are interoperable
 !*				 with C variables that are not inside of a structure.
 !*
 !*                               Data type being tested:  INTEGER(C_INTMAX_T)
-!*					
-!*                               Test: BIND(C) common block in internal subroutine 
-!*					
+!*
+!*                               Test: BIND(C) common block in internal subroutine
+!*
 !* ===================================================================
-!*  REVISION HISTORY					
-!*  MM/DD/YY:  Init:  Comments:			
+!*  REVISION HISTORY
+!*  MM/DD/YY:  Init:  Comments:
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -63,17 +56,17 @@ program fxcmn_blk072a
 	INTEGER (C_INTMAX_T 		)		:: int_C_INTMAX_T(5)
 
 ! ----------------------------------------------------------------------------
-! One COMMON statement with one common block in one BIND(C) statement  
+! One COMMON statement with one common block in one BIND(C) statement
 ! ----------------------------------------------------------------------------
 
-	COMMON     /blk_int_C_INTMAX_T/     int_C_INTMAX_T      
-	bind(c, Name ='_______________________________________________________________________')  :: /blk_int_C_INTMAX_T/  
+	COMMON     /blk_int_C_INTMAX_T/     int_C_INTMAX_T
+	bind(c, Name ='_______________________________________________________________________')  :: /blk_int_C_INTMAX_T/
 
 ! ----------------------------------------------------------------------------
 ! Integer Initialization
 ! ----------------------------------------------------------------------------
 
-	int_C_INTMAX_T                  = (/9223372036854775807_8,b'000000000',-9223372036854775807_8, o'3641100', -2147483648_8/)  
+	int_C_INTMAX_T                  = (/9223372036854775807_8,b'000000000',-9223372036854775807_8, o'3641100', -2147483648_8/)
 
 ! ----------------------------------------------------------------------------
 ! Integer Verification

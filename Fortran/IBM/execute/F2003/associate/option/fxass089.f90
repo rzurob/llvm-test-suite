@@ -1,14 +1,8 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: $TR_SRC/fxassint.presh fxass089
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass089.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -40,7 +28,6 @@
 !*
 !*  STRUCTURE                  : Main program
 !*  EXECUTABLE                 : Yes
-!*
 !*
 !*  INPUTS                     : None
 !*  OUTPUTS                    : None
@@ -60,7 +47,7 @@
 !*                                     with derived types with integer
 !*                                     logical, complex, real, byte
 !*                                     and character data types
-!*                                     using function statement and 
+!*                                     using function statement and
 !*                                     different -qintsize options.
 !* ===================================================================
 !*
@@ -129,10 +116,10 @@
          error stop 5
       endif
 
-      if(arg%ch .ne.'string')then 
+      if(arg%ch .ne.'string')then
          error stop 6
       endif
-    
+
       end associate
-           
+
       end

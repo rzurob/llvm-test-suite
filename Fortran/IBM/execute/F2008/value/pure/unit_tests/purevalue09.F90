@@ -1,13 +1,8 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue09.f
-!*  TEST CASE TITLE : F2008: VALUE attr allowed for dummy args of PURE proc
-!*  PROGRAMMER      : Gaby Baghdadi
 !*  DATE            : 2010-12-01
-!*  ORIGIN          : XL Fortran Compiler Development, IBM Torolab
 !*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
@@ -17,33 +12,33 @@
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
 integer(C_INT) pure function foo ( &
-        dc_signed_char, & 
-        dc_short, & 
-        dc_int, & 
-        dc_long, & 
-        dc_long_long, & 
-        dc_size_t, & 
-        dc_intptr_t, & 
-        dc_intmax_t, & 
-        dc_int8_t, & 
-        dc_int16_t, & 
-        dc_int32_t, & 
-        dc_int64_t, & 
-        dc_int_least8_t, & 
-        dc_int_least16_t, & 
-        dc_int_least32_t, & 
-        dc_int_least64_t, & 
-        dc_int_fast8_t, & 
-        dc_int_fast16_t, & 
-        dc_int_fast32_t, & 
-        dc_int_fast64_t, & 
-        dc_float, & 
-        dc_double, & 
-        dc_long_double, & 
-        dc_float_Complex, & 
-        dc_double_Complex, & 
-        dc_long_double_complex, & 
-        dc__Bool, & 
+        dc_signed_char, &
+        dc_short, &
+        dc_int, &
+        dc_long, &
+        dc_long_long, &
+        dc_size_t, &
+        dc_intptr_t, &
+        dc_intmax_t, &
+        dc_int8_t, &
+        dc_int16_t, &
+        dc_int32_t, &
+        dc_int64_t, &
+        dc_int_least8_t, &
+        dc_int_least16_t, &
+        dc_int_least32_t, &
+        dc_int_least64_t, &
+        dc_int_fast8_t, &
+        dc_int_fast16_t, &
+        dc_int_fast32_t, &
+        dc_int_fast64_t, &
+        dc_float, &
+        dc_double, &
+        dc_long_double, &
+        dc_float_Complex, &
+        dc_double_Complex, &
+        dc_long_double_complex, &
+        dc__Bool, &
         dc_char )
 
     use, intrinsic :: ISO_C_BINDING
@@ -52,13 +47,13 @@ integer(C_INT) pure function foo ( &
     integer(C_SIGNED_CHAR), value :: dc_signed_char       ! kind=1
     integer(C_SHORT), value :: dc_short                   ! kind=2
     integer(C_INT), value :: dc_int                       ! kind=4
-    integer(C_LONG), value :: dc_long                     ! kind=4 with -q32, 
+    integer(C_LONG), value :: dc_long                     ! kind=4 with -q32,
                                                           ! kind=8 with -q64
     integer(C_LONG_LONG), value :: dc_long_long           ! kine=8
-    integer(C_SIZE_T), value :: dc_size_t                 ! kind=4 with -q32, 
+    integer(C_SIZE_T), value :: dc_size_t                 ! kind=4 with -q32,
                                                           ! kind=8 with -q64
 
-    integer(C_INTPTR_T), value :: dc_intptr_t             ! kind=4 with -q32, 
+    integer(C_INTPTR_T), value :: dc_intptr_t             ! kind=4 with -q32,
                                                           ! kind=8 with -q64
     integer(C_INTMAX_T), value :: dc_intmax_t             ! kind=8
     integer(C_INT8_T), value :: dc_int8_t                 ! kind=1
@@ -85,10 +80,10 @@ integer(C_INT) pure function foo ( &
 
     logical(C_BOOL), value :: dc__Bool                    ! kind=1
     character(C_CHAR), value :: dc_char                   ! kind=1
-    
+
     integer :: tmp
     tmp = 1
-    
+
     if (dc_signed_char /= ichar('a')) tmp = tmp/0
     if (dc_short /= x'1234') tmp = tmp/0
     if (dc_int /= x'567890ab') tmp = tmp/0
@@ -117,7 +112,7 @@ integer(C_INT) pure function foo ( &
     if (dc_int_fast16_t /= x'789a') tmp = tmp/0
     if (dc_int_fast32_t /= x'890abcde') tmp = tmp/0
     if (dc_int_fast64_t /= x'4567890123456789') tmp = tmp/0
-    
+
     if (.not. (prec(dc_float, 1.2_4/3.4_4))) tmp = tmp/0
     if (.not. (prec(dc_double, 5.6_8/7.8_8))) tmp = tmp/0
     if (.not. (prec(dc_long_double,9.1_16/11.12_16))) tmp = tmp/0
@@ -125,35 +120,35 @@ integer(C_INT) pure function foo ( &
     if (.not. (prec(dc_double_Complex,(17.18_8,19.20_8)))) tmp = tmp/0
     if (.not. (prec(dc_long_double_Complex,(21.22_16,23.24_16)))) tmp = tmp/0
 
-    if (.not. dc__Bool) tmp = tmp/0 
+    if (.not. dc__Bool) tmp = tmp/0
     if (dc_char /= 'c') tmp = tmp/0
 
-    dc_signed_char = 0 
-    dc_short = 0 
-    dc_int = 0 
-    dc_long = 0 
-    dc_long_long = 0 
-    dc_size_t = 0 
-    dc_intptr_t = 0 
-    dc_intmax_t = 0 
-    dc_int8_t = 0 
-    dc_int16_t = 0 
-    dc_int32_t = 0 
-    dc_int64_t = 0 
-    dc_int_least8_t = 0 
-    dc_int_least16_t = 0 
-    dc_int_least32_t = 0 
-    dc_int_least64_t = 0 
-    dc_int_fast8_t = 0 
-    dc_int_fast16_t = 0 
-    dc_int_fast32_t = 0 
-    dc_int_fast64_t = 0 
-    dc_float = 0 
-    dc_double = 0 
-    dc_long_double = 0 
-    dc_float_Complex = (0.0,0.0) 
-    dc_double_Complex = (0.0,0.0) 
-    dc_long_double_complex = (0.0,0.0) 
+    dc_signed_char = 0
+    dc_short = 0
+    dc_int = 0
+    dc_long = 0
+    dc_long_long = 0
+    dc_size_t = 0
+    dc_intptr_t = 0
+    dc_intmax_t = 0
+    dc_int8_t = 0
+    dc_int16_t = 0
+    dc_int32_t = 0
+    dc_int64_t = 0
+    dc_int_least8_t = 0
+    dc_int_least16_t = 0
+    dc_int_least32_t = 0
+    dc_int_least64_t = 0
+    dc_int_fast8_t = 0
+    dc_int_fast16_t = 0
+    dc_int_fast32_t = 0
+    dc_int_fast64_t = 0
+    dc_float = 0
+    dc_double = 0
+    dc_long_double = 0
+    dc_float_Complex = (0.0,0.0)
+    dc_double_Complex = (0.0,0.0)
+    dc_long_double_complex = (0.0,0.0)
     dc__Bool = .false.
     dc_char = ''
 
@@ -164,32 +159,32 @@ end function foo
 
 pure subroutine sub ( &
         dc_int_result, &
-        dc_short, & 
-        dc_int, & 
-        dc_long, & 
-        dc_long_long, & 
-        dc_size_t, & 
-        dc_intptr_t, & 
-        dc_intmax_t, & 
-        dc_int8_t, & 
-        dc_int16_t, & 
-        dc_int32_t, & 
-        dc_int64_t, & 
-        dc_int_least8_t, & 
-        dc_int_least16_t, & 
-        dc_int_least32_t, & 
-        dc_int_least64_t, & 
-        dc_int_fast8_t, & 
-        dc_int_fast16_t, & 
-        dc_int_fast32_t, & 
-        dc_int_fast64_t, & 
-        dc_float, & 
-        dc_double, & 
-        dc_long_double, & 
-        dc_float_Complex, & 
-        dc_double_Complex, & 
-        dc_long_double_complex, & 
-        dc__Bool, & 
+        dc_short, &
+        dc_int, &
+        dc_long, &
+        dc_long_long, &
+        dc_size_t, &
+        dc_intptr_t, &
+        dc_intmax_t, &
+        dc_int8_t, &
+        dc_int16_t, &
+        dc_int32_t, &
+        dc_int64_t, &
+        dc_int_least8_t, &
+        dc_int_least16_t, &
+        dc_int_least32_t, &
+        dc_int_least64_t, &
+        dc_int_fast8_t, &
+        dc_int_fast16_t, &
+        dc_int_fast32_t, &
+        dc_int_fast64_t, &
+        dc_float, &
+        dc_double, &
+        dc_long_double, &
+        dc_float_Complex, &
+        dc_double_Complex, &
+        dc_long_double_complex, &
+        dc__Bool, &
         dc_char )
 
     use, intrinsic :: ISO_C_BINDING
@@ -198,13 +193,13 @@ pure subroutine sub ( &
     integer(C_INT), intent(out) :: dc_int_result
     integer(C_SHORT), value :: dc_short                   ! kind=2
     integer(C_INT), value :: dc_int                       ! kind=4
-    integer(C_LONG), value :: dc_long                     ! kind=4 with -q32, 
+    integer(C_LONG), value :: dc_long                     ! kind=4 with -q32,
                                                           ! kind=8 with -q64
     integer(C_LONG_LONG), value :: dc_long_long           ! kine=8
-    integer(C_SIZE_T), value :: dc_size_t                 ! kind=4 with -q32, 
+    integer(C_SIZE_T), value :: dc_size_t                 ! kind=4 with -q32,
                                                           ! kind=8 with -q64
 
-    integer(C_INTPTR_T), value :: dc_intptr_t             ! kind=4 with -q32, 
+    integer(C_INTPTR_T), value :: dc_intptr_t             ! kind=4 with -q32,
                                                           ! kind=8 with -q64
     integer(C_INTMAX_T), value :: dc_intmax_t             ! kind=8
     integer(C_INT8_T), value :: dc_int8_t                 ! kind=1
@@ -231,10 +226,10 @@ pure subroutine sub ( &
 
     logical(C_BOOL), value :: dc__Bool                    ! kind=1
     character(C_CHAR), value :: dc_char                   ! kind=1
-    
+
     integer :: tmp
     tmp = 1
-    
+
     if (dc_short /= x'1234') tmp = tmp/0
     if (dc_int /= x'567890ab') tmp = tmp/0
 
@@ -262,7 +257,7 @@ pure subroutine sub ( &
     if (dc_int_fast16_t /= x'789a') tmp = tmp/0
     if (dc_int_fast32_t /= x'890abcde') tmp = tmp/0
     if (dc_int_fast64_t /= x'4567890123456789') tmp = tmp/0
-    
+
     if (.not. (prec(dc_float, 1.2_4/3.4_4))) tmp = tmp/0
     if (.not. (prec(dc_double, 5.6_8/7.8_8))) tmp = tmp/0
     if (.not. (prec(dc_long_double,9.1_16/11.12_16))) tmp = tmp/0
@@ -270,34 +265,34 @@ pure subroutine sub ( &
     if (.not. (prec(dc_double_Complex,(17.18_8,19.20_8)))) tmp = tmp/0
     if (.not. (prec(dc_long_double_Complex,(21.22_16,23.24_16)))) tmp = tmp/0
 
-    if (.not. dc__Bool) tmp = tmp/0 
+    if (.not. dc__Bool) tmp = tmp/0
     if (dc_char /= 'c') tmp = tmp/0
 
-    dc_short = 0 
-    dc_int = 0 
-    dc_long = 0 
-    dc_long_long = 0 
-    dc_size_t = 0 
-    dc_intptr_t = 0 
-    dc_intmax_t = 0 
-    dc_int8_t = 0 
-    dc_int16_t = 0 
-    dc_int32_t = 0 
-    dc_int64_t = 0 
-    dc_int_least8_t = 0 
-    dc_int_least16_t = 0 
-    dc_int_least32_t = 0 
-    dc_int_least64_t = 0 
-    dc_int_fast8_t = 0 
-    dc_int_fast16_t = 0 
-    dc_int_fast32_t = 0 
-    dc_int_fast64_t = 0 
-    dc_float = 0 
-    dc_double = 0 
-    dc_long_double = 0 
-    dc_float_Complex = (0.0,0.0) 
-    dc_double_Complex = (0.0,0.0) 
-    dc_long_double_complex = (0.0,0.0) 
+    dc_short = 0
+    dc_int = 0
+    dc_long = 0
+    dc_long_long = 0
+    dc_size_t = 0
+    dc_intptr_t = 0
+    dc_intmax_t = 0
+    dc_int8_t = 0
+    dc_int16_t = 0
+    dc_int32_t = 0
+    dc_int64_t = 0
+    dc_int_least8_t = 0
+    dc_int_least16_t = 0
+    dc_int_least32_t = 0
+    dc_int_least64_t = 0
+    dc_int_fast8_t = 0
+    dc_int_fast16_t = 0
+    dc_int_fast32_t = 0
+    dc_int_fast64_t = 0
+    dc_float = 0
+    dc_double = 0
+    dc_long_double = 0
+    dc_float_Complex = (0.0,0.0)
+    dc_double_Complex = (0.0,0.0)
+    dc_long_double_complex = (0.0,0.0)
     dc__Bool = .false.
     dc_char = ''
 

@@ -1,21 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : allocCharacter04 - Basic Tests: CHARACTER
 !*                               Intrinsic Type
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : June 27, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Allocated ALLOCATABLE Array of Type CHARACTER
 !*  SECONDARY FUNCTIONS TESTED : and expr is a Scalar of Type CHARACTER with
 !*                               a different Length Type Parameter Value
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATABLE Attribute, Intrinsic Assignment
@@ -27,7 +21,6 @@
 !*  7.4.1.1 General form
 !*
 !*  R734 assignment-stmt  is  variable = expr
-!*
 !*
 !*  7.4.1.3 Interpretation of intrinsic assignments
 !*

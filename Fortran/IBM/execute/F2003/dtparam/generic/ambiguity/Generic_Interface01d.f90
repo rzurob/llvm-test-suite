@@ -1,22 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_Interface01d
 !*                               DTP - Generic Interface
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Resolution for polymorphic objects
 !*                               based on the number of arguments
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -24,25 +17,25 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN  :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN  :: l1
 
        INTEGER(k1), ALLOCATABLE :: base_arr(:)
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2,k3,l2,l3)
         INTEGER, KIND :: k2, k3
         INTEGER, LEN  :: l2, l3
 
         INTEGER(k2) :: child_arr(l1+l2)
-      END TYPE Child 
+      END TYPE Child
 
       TYPE, EXTENDS(Child) :: NextGen(k4,l4)
-        INTEGER, KIND :: k4 
-        INTEGER, LEN  :: l4 
+        INTEGER, KIND :: k4
+        INTEGER, LEN  :: l4
 
         INTEGER(k1+k3) :: nextg_arr(l1+l3)
       END TYPE NextGen
@@ -98,7 +91,7 @@
       CLASS(Child(4,:,4,4,:,:)) FUNCTION foo2(Obj,Arg)
         USE MOD1, Only: Base, Child, NextGen
         CLASS(Child(4,*,4,4,*,*)) :: Obj
-        CLASS(Base(4,*)) :: Arg 
+        CLASS(Base(4,*)) :: Arg
         ALLOCATABLE :: foo2
         INTEGER :: I , K
 
@@ -126,15 +119,15 @@
 !*
       PROGRAM Generic_Interface01d
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(Base(4,:)), POINTER :: poly1 
+      CLASS(Base(4,:)), POINTER :: poly1
       TYPE(Child(4,5,4,4,1,1)), TARGET :: tgt1
-      TYPE(Base(4,5))  :: base1 
+      TYPE(Base(4,5))  :: base1
       TYPE(child(4,10,4,4,100,100)) :: child1
       TYPE(NextGen(4,10,4,4,1,1,4,1)) :: dtv
 
-      SELECT TYPE ( A => FUNC(base1) ) 
+      SELECT TYPE ( A => FUNC(base1) )
           TYPE IS (Base(4,*))
             IF( size(A%base_arr)  .NE. A%l1 ) STOP 10
             IF( ANY(A%base_arr .NE. 1000 )) STOP 11
@@ -143,9 +136,9 @@
            STOP 12
       END SELECT
 
-      ALLOCATE(Base(4,10):: poly1)    
-  
-      SELECT TYPE ( A => FUNC(poly1) )   ! dynamic type BASE call foo1 
+      ALLOCATE(Base(4,10):: poly1)
+
+      SELECT TYPE ( A => FUNC(poly1) )   ! dynamic type BASE call foo1
           TYPE IS (Base(4,*))
             IF( size(A%base_arr)  .NE. 10) STOP 13
             IF( ANY(A%base_arr .NE. 1000 )) STOP 14
@@ -154,7 +147,7 @@
            STOP 15
       END SELECT
 
-      poly1 => tgt1                     
+      poly1 => tgt1
 
       SELECT TYPE ( A => FUNC(poly1) )     ! dynamic type Child call foo1
           TYPE IS (Child(4,*,4,4,*,*))
@@ -167,9 +160,9 @@
            STOP 20
       END SELECT
 
-      ALLOCATE(NextGen(4,10,4,4,1,1,4,1):: poly1) 
-  
-      SELECT TYPE ( A => FUNC(poly1) )    ! dynamic type NextGen call foo1 
+      ALLOCATE(NextGen(4,10,4,4,1,1,4,1):: poly1)
+
+      SELECT TYPE ( A => FUNC(poly1) )    ! dynamic type NextGen call foo1
           TYPE IS (NextGen(4,*,4,4,*,*,4,*))
             IF( size(A%base_arr)  .NE. A%l3) STOP 21
             IF( ANY(A%base_arr .NE. 1 )) STOP 22
@@ -182,9 +175,9 @@
            STOP 27
       END SELECT
 
-      SELECT TYPE ( A => poly1) 
+      SELECT TYPE ( A => poly1)
           CLASSIS (NextGen(4,*,4,4,*,*,4,*))
-             SELECT TYPE ( B => FUNC(A,A) )  
+             SELECT TYPE ( B => FUNC(A,A) )
                 TYPE IS (NextGen(4,*,4,4,*,*,4,*))
                   IF( size(B%base_arr)  .NE. B%l4) STOP 28
                   IF( ANY(B%base_arr .NE. 5 )) STOP 29

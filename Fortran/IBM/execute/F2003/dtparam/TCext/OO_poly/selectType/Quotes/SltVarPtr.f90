@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltVarPtr.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltTypeVarPtr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a poly pointer var. 
+!*
+!*   The selector is a poly pointer var.
 !*    (Wrong result:297129 )
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -66,7 +60,7 @@
       INTEGER, LEN  :: N3
       INTEGER(K3)   :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -89,18 +83,18 @@
   USE M
   IMPLICIT NONE
 
-  CLASS(*), POINTER :: Ptr 
+  CLASS(*), POINTER :: Ptr
 
   ALLOCATE(Child(4,20,20,4,20,4) :: Ptr)
   Ptr => Ptr
 
   SELECT TYPE ( Ptr )
-    CLASS DEFAULT 
+    CLASS DEFAULT
 
       ASSOCIATE ( As => Ptr  )
       SELECT TYPE (As)
         CLASS DEFAULT
-          STOP 20   
+          STOP 20
         TYPE IS (CHARACTER(*))
           STOP 21
         TYPE IS (Base(4,*,*,4))
@@ -110,8 +104,8 @@
         CLASS is (Child(4,*,*,4,*,4))
           STOP 24
         TYPE IS (Child(4,*,*,4,*,4))
-          IF ( As%Base%GetId() .NE. 1 ) STOP 34 
-          IF ( As%GetId()      .NE. 2 ) STOP 35 
+          IF ( As%Base%GetId() .NE. 1 ) STOP 34
+          IF ( As%GetId()      .NE. 2 ) STOP 35
       END SELECT
       END ASSOCIATE
 

@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             :/cintrop_ts29113/asynch_communication/asynchcomm017f.f
-!* FEATURE NAME                : C_Interop_Asynch_Communication 
-!*  PROGRAMMER                 : Tapti Vaid
+!* FEATURE NAME                : C_Interop_Asynch_Communication
 !*  DATE                       : 2013-10-07
 !*
 !*  DESCRIPTION
@@ -14,7 +11,7 @@
 !* Defined in: module
 !* Made asynchronous in: internal subroutine
 !* Used for asynch communication in: internal subroutine
-!* 
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -26,7 +23,7 @@ include 'mpif.h'
 real :: a0, res1=0, result1=0
 real :: b0, b1
 
-contains 
+contains
 subroutine mpi_communication()
 
 USE, INTRINSIC :: ISO_FORTRAN_ENV
@@ -36,7 +33,7 @@ integer :: nt, rank, len, mpierror, rc, i
 integer :: status(MPI_STATUS_SIZE)
 integer, parameter :: TAG_SEND_ARR = 10, TAG_RES_READY = 11
 
-integer :: reqs(2) 
+integer :: reqs(2)
 
 
 ! initialization
@@ -57,21 +54,21 @@ integer :: reqs(2)
 if (rank .eq. 0) then
 a0 = 100
 
-	block 
+	block
 
-	asynchronous :: b0 
+	asynchronous :: b0
 	b0 = 50
 	call MPI_ISEND(b0, 1 , MPI_REAL, 1, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(1), mpierror)
 	! While waiting for the data to be sent, do some calculations:
 	result1 = sqrt(a0)
 	call MPI_WAIT(reqs(1), status, mpierror)
 	b0 = a0*2 !Now that a0 has been sent we can alter its value
-	
+
 end block
 !get the result from task 1
 
 call MPI_RECV(b0, 1, MPI_REAL, 1, TAG_RES_READY, MPI_COMM_WORLD, status, mpierror)
-if (.not. precision_r4(result1 , 10.00000000)) error STOP 1 
+if (.not. precision_r4(result1 , 10.00000000)) error STOP 1
 if (.not. precision_r4(b0 , 2500.000000)) error STOP 2
 
 

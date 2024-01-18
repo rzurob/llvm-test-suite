@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUOpIntrinsicTypesNamed
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2009-02-11
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : User-Defined Operators
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 361989
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -200,7 +194,7 @@ program dtpUOpIntrinsicTypesNamed
   call resetEvents
   xk4d = xk4a .addit. 2 .addit. xk4b
   call testEvents("xk4d = xk4a .addit. 2 .addit. xk4b", [event(PLUS,12,2,14), event(PLUSK,14,2,16)])
-  
+
   call resetEvents
   xk4d = ((xk4a .addit. 2) .addit. xk4b)
   call testEvents("xk4d = ((xk4a .addit. 2) .addit. xk4b)", [event(PLUS,12,2,14), event(PLUSK,14,2,16)])

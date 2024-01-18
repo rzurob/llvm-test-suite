@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass016.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass016.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -84,7 +72,7 @@
       complex*8 a8 / (1.0e0, 2.0e0) /
       complex*8 b8 / (3.0e0, 4.0e0) /
       complex*8 c8
-      
+
       complex*16 a16 / (1.0d0, 2.0d0) /
       complex*16 b16 / (3.0d0, 4.0d0) /
       complex*16 c16
@@ -102,7 +90,7 @@
 
 !-----------   ASSOCIATE with COMPLEX expressions ----------------
       count = 1
-      c = a + b   
+      c = a + b
       FIRST: do while (count .LE. 10)
 
       associate ( arg => a + b )
@@ -116,7 +104,7 @@
 
 !-----------   ASSOCIATE with COMPLEX*4 expressions ----------------
 
-      c4 = a4 + b4   
+      c4 = a4 + b4
       count = 1
       do while (count .LE. 10)
 
@@ -146,7 +134,7 @@
 
 !-----------   ASSOCIATE with COMPLEX*16 expressions ----------------
 
-      c16 = a16 + b16   
+      c16 = a16 + b16
       count = 1
       do while (count .LE. 10)
 
@@ -160,7 +148,7 @@
 
 !-----------   ASSOCIATE with COMPLEX*32 expressions ----------------
 
-      c32 = a32 + b32   
+      c32 = a32 + b32
       count = 1
       second: do while (count .LE. 10)
 

@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryResParam01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryResParam01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 26 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 26 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. FUNCTION RESULT IS INTEGER TYPE PARAMETER
-!* 4. TYPE PARAMETER HAS DEFAULT INITIALIZATION 
+!* 4. TYPE PARAMETER HAS DEFAULT INITIALIZATION
 !* 5. DEFECT 354417
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -37,10 +29,10 @@ module m
      contains
        integer function getTotalParam1(dt)
           type(base(2,4,*,*)),intent(in) :: dt
-          
+
           getTotalParam1=dt%k1+dt%k2+dt%l1+dt%l2
        end function
-  
+
        integer function getTotalParam2(k1,k2,l1,l2)
            real :: k1,k2,l1,l2
 
@@ -48,13 +40,13 @@ module m
        end function
 end module
 
-  program dtParameterInquiryResParam01 
+  program dtParameterInquiryResParam01
   use m
   implicit none
- 
+
   interface
     function getKindParamKind1(dt) result (res)
-        import 
+        import
         type(base(2,4,*,*)),intent(in) :: dt
         integer(dt%k1%kind) res
      end function
@@ -73,7 +65,7 @@ end module
   end function
 
   function getKind4(dt)
-      import 
+      import
       type(base(2,4,*,*)),intent(in) :: dt
       integer(dt%k2) :: getKind4
 
@@ -86,25 +78,25 @@ end module
 
   function getKind6(k2)
       import
-      integer(k2%kind) :: k2  
+      integer(k2%kind) :: k2
       integer(k2%kind) :: getKind6
 
   end function
 
   function getLenKind1(dt)
-      import 
+      import
       type(base(2,4,*,*)),intent(in) :: dt
       integer(kind(dt%l1)) :: getLenKind1
   end function
 
   function getLenKind2(dt)
-      import 
+      import
       type(base(2,4,*,*)),intent(in) :: dt
       integer(dt%l2%kind) :: getLenKind2
   end function
 
-  end interface 
-  
+  end interface
+
   interface getTotalParam
       module procedure getTotalParam1,getTotalParam2
   end interface
@@ -132,7 +124,7 @@ end module
   contains
      integer(b1%k1%kind) function getkind1()
         getkind1=b1%k1
-     end function    
+     end function
      integer(kind(b1%k2)) function getkind2()
         getkind2=b1%k2
      end function
@@ -147,7 +139,7 @@ end
 
   function getKindParamKind1(dt) result(res)
       use m
-      type(base(2,4,*,*)),intent(in) :: dt 
+      type(base(2,4,*,*)),intent(in) :: dt
       integer(dt%k1%kind) res
       res=dt%k1%kind
   end function
@@ -176,13 +168,13 @@ end
   end function
 
   integer(8) function getKind5(k1)
-      use m 
+      use m
       integer(8) :: k1
       getKind5=k1
   end function
 
   function getKind6(k2)
-      use m 
+      use m
       integer(k2%kind) :: k2
       integer(k2%kind) :: getKind6
       getKind6=k2

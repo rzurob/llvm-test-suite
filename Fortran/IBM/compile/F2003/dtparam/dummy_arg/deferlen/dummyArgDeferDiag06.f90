@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferDiag06.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferDiag06.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 5 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 5 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Dummy Argument with deferred length 
+!*  PRIMARY FUNCTIONS TESTED   : Dummy Argument with deferred length
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. If the procedure is nonelemental and is referenced by a generic name or a defined operator or defined assignment, the ranks of the actual arguments and corresponding dummy arguments shall agree
@@ -30,12 +22,12 @@ module m
     integer(k1)  :: i1
   end type
 
-  interface sub 
+  interface sub
      module procedure sub1,sub2
   end interface
-  
+
   interface assignment(=)
-     module procedure assig1,assig2  
+     module procedure assig1,assig2
   end interface
 
   contains
@@ -74,12 +66,12 @@ program dummyArgDeferDiag06
   implicit none
 
   type(base(2,:)),dimension(:),allocatable :: base1
-  type(base(2,:)),dimension(:,:),pointer   :: base2=>null() 
+  type(base(2,:)),dimension(:,:),pointer   :: base2=>null()
 
-  call sub(base1) 
+  call sub(base1)
   call sub(base2)
-  
-  base1=1 
+
+  base1=1
   base2=1
 
 end program

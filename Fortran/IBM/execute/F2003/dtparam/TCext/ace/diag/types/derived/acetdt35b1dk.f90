@@ -1,16 +1,12 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acetdt35b1dk
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt35b1d
 !*                               by David Forster)
 !*  DATE                       : 2007-11-29 (original: 2007-09-07
 !*                               (from original 2006-11-13))
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters Array Constructor
 !*                               Enhancements
@@ -20,12 +16,11 @@
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
 !*                               (original: Feature Number 289053)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : AC, print, undefined variable
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*

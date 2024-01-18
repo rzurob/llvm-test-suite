@@ -12,20 +12,14 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxmdvn15.f
 !
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 24, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    : -qfree=f90
 !*
 !* DESCRIPTION                  : Test the interoperability of logical and
@@ -46,7 +40,7 @@ logical(1), bind(c, name = "kk") :: lo3(3, 2, 2)
 
 logical(1), dimension(10 ,10), bind(c, name = "KK") :: lo2
 
-logical(1), dimension(10, 10), bind(c, name = "lo2") :: KK 
+logical(1), dimension(10, 10), bind(c, name = "lo2") :: KK
 
 end module
 
@@ -69,17 +63,17 @@ call csub()
     ERROR STOP 51
   END IF
 
-  
-  
+
+
   do i = 1, 10
     IF ( lo1(i) .NEQV. .false. ) THEN
       ERROR STOP 52
     END IF
   end do
-  
+
 
   do j= 1, 2
-    do k = 1, 3 
+    do k = 1, 3
       do i = 1, 2
         IF ( lo3(k, j, i) .NEQV. .false. ) THEN
           ERROR STOP 53
@@ -95,7 +89,7 @@ call csub()
      end if
     end do
   end do
-  
+
   do i = 1, 2
     do j = 1, 2
      if ( KK(i,j) .NEQV. .true. ) then
@@ -104,4 +98,4 @@ call csub()
     end do
   end do
 
-end 
+end

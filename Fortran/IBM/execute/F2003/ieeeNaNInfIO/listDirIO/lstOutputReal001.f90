@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : lstOutputReal001.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 23, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -38,9 +32,9 @@
       real(4)      :: rl1, rl2, rl3, rl4
       integer      :: i1 = 11, i2 = 22
       character(3) :: c1='IBM', c2='xlf'
-      
+
       open(out, file='lstOutputReal001.out', action='write')
-      
+
       rl1 = b'01111111101111111111111111111111' ! positive NaN(S)
       rl2 = b'01111111100000000000000000000000' ! positive Inf
       rl3 = b'11111111101111111111111111111111' ! negative NaN(S)
@@ -54,7 +48,7 @@
       i1 = 13; i2 = 14
       c1 = 'ibm'; c2='XLF'
       write(out,*) c1, rl1, i1, rl2, i2, rl3, c2, rl4
-      
+
       rl1 = b'01111111111111111111111111111111' ! positive NaN(Q)
       rl2 = b'01111111100000000000000000000000' ! positive Inf
       rl3 = b'11111111101111111111111111111111' ! negative NaN(S)

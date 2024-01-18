@@ -1,27 +1,20 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AssumedTypeObj02f
-!*
-!*  PROGRAMMER                 : Ren, Jian Gang
 !*  DATE                       : Apr 14, 2012
 !*  ORIGIN                     : Linux/AIX Compiler Development,
 !*                             : IBM Software Solutions China Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Assumed-type object
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Calling a non-BIND(C) procedure from Fortran
 !*                               where the procedure is defined in C with
 !*                               assumed-type object.
-!*                               - Actual arg is of type intrinsic 
+!*                               - Actual arg is of type intrinsic
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -35,10 +28,10 @@ program AssumedTypeObj02f
   integer(c_long_long) :: i_long_long
 
   interface
-    subroutine c_func(a, flag)  
+    subroutine c_func(a, flag)
       use, intrinsic :: iso_c_binding
       implicit none
-      
+
       TYPE(*) :: a
       integer(c_int), value :: flag
     end subroutine c_func

@@ -1,20 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : submodule21d
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 6 December, 2012
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : submodule
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -38,7 +32,7 @@ implicit none
   INTERFACE
     module subroutine sub2()
     end subroutine
-  
+
     module function func2()
       real :: func2
     end function
@@ -48,7 +42,7 @@ END MODULE m
 SUBMODULE (m) n
 CONTAINS
   module function func2()
-    real :: func2 
+    real :: func2
     func2 = 2
   end function
 END SUBMODULE n
@@ -60,7 +54,7 @@ CONTAINS
   end subroutine
 
   module function func2()
-    real :: func2 
+    real :: func2
     func2 = 2
   end function
 END MODULE

@@ -1,20 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : arraySection01
-!*  TEST CASE TITLE            : selector is an Array Section
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : August 27, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : The ASSOCIATE Construct
 !*  SECONDARY FUNCTIONS TESTED : selector is an Array Section
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE

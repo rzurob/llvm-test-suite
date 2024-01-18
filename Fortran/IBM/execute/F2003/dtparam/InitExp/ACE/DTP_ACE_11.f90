@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_ACE_11.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -32,7 +24,7 @@ MODULE Mod
          INTEGER, KIND :: k1
          INTEGER, LEN  :: l1
 
-         INTEGER(k1) :: A1(l1) 
+         INTEGER(k1) :: A1(l1)
        END TYPE
 
        TYPE :: Container (k2,l2)
@@ -55,7 +47,7 @@ MODULE Mod
 
         IF (SIZE(arg) .GE. 1) then
             IF (.NOT. ALLOCATED(temp)) then
-                temp = arg 
+                temp = arg
             ELSE
                 temp = [temp, arg]
             END IF
@@ -69,10 +61,10 @@ MODULE Mod
     END SUBROUTINE
 END MODULE
 PROGRAM DTP_ACE_11
-      USE Mod 
+      USE Mod
       IMPLICIT NONE
-      INTEGER :: I 
-      TYPE(Container(4,:)), ALLOCATABLE :: c1  
+      INTEGER :: I
+      TYPE(Container(4,:)), ALLOCATABLE :: c1
       TYPE(Base(4,:)), ALLOCATABLE :: b1(:)
 
       ALLOCATE (Container(4,10) :: c1)
@@ -83,14 +75,14 @@ PROGRAM DTP_ACE_11
       IF ( SIZE(b1)    .NE.  3 ) STOP 12
       DO I = 1, SIZE(b1)
          IF ( SIZE(b1(I)%A1) .NE. 10 ) STOP 13
-      END DO 
+      END DO
 
       c1 = b1
       IF ( .NOT. ALLOCATED(c1%poly) ) STOP 14
       IF ( SIZE(c1%poly)    .NE.  6 ) STOP 15
       DO I = 1, SIZE(c1%poly)
          IF ( SIZE(c1%poly(I)%A1) .NE. 10 ) STOP 16
-      END DO 
+      END DO
       print*, c1%poly
 
       c1 = b1(3:1:-2)
@@ -98,7 +90,7 @@ PROGRAM DTP_ACE_11
       IF ( SIZE(c1%poly)    .NE.  3 ) STOP 18
       DO I = 1, SIZE(c1%poly)
          IF ( SIZE(c1%poly(I)%A1) .NE. 10 ) STOP 19
-      END DO 
+      END DO
       print*, c1%poly
 
 END PROGRAM DTP_ACE_11

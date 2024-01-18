@@ -1,23 +1,12 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : TC for C_F_PROCPOINTER:
-!* 
+!*
 !*                               function pointer is an array of pointers
 !*                               associated with procedure pointer through
 !*                               C_F_PROCPOINTER. Procedure pointer and
@@ -29,7 +18,7 @@ module fptr02
    type(C_FUNPTR), bind(c) :: cptr(2)
 end module fptr02
 
-program procptrBindMproc02 
+program procptrBindMproc02
 
    use ISO_C_BINDING
 
@@ -37,15 +26,15 @@ program procptrBindMproc02
 
    interface
        subroutine csub1(x) bind(c)
-          import 
-          integer(C_INT) :: x 
+          import
+          integer(C_INT) :: x
        end subroutine csub1
    end interface
 
    interface
        subroutine csub2(y) bind(c)
           import
-          integer(C_INT) :: y 
+          integer(C_INT) :: y
        end subroutine csub2
    end interface
 
@@ -78,5 +67,5 @@ program procptrBindMproc02
    if(arg1 .ne. 10) error stop 1_4
    if(arg2 .ne. 20) error stop 2_4
 
-end program procptrBindMproc02 
+end program procptrBindMproc02
 

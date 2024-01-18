@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatTypeBndSeqWrite01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatTypeBndSeqWrite01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 9 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 9 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test WRITE & PRINT statement in type bound procedure
@@ -29,8 +21,8 @@ module m
      integer(8),len  :: l1
      integer(k1)     :: i(l1-1:l1+1) ! l1=2
      contains
-        procedure,pass :: writeInner 
-        procedure,pass :: printInner 
+        procedure,pass :: writeInner
+        procedure,pass :: printInner
    end type
 
    type outer(k2,l2)
@@ -44,11 +36,11 @@ module m
    end type
 
    contains
-    
+
       subroutine writeInner(this)
           class(inner(8,*)),intent(in) :: this
-          
-          print *,"in writeInner"    
+
+          print *,"in writeInner"
           select type(this)
              type is(inner(8,*))
                write(*, '(ss,i7/g7.3/i7.3)') this
@@ -74,7 +66,7 @@ module m
           class(outer(4,*)),intent(in) :: this
           print *,"in writeOuter"
           select type(this)
-             type is(outer(4,*))          
+             type is(outer(4,*))
                 write(*, '(a5/a5/a5,sp,/i7/g7.3/i7.3)') this
                 call this%comp%writeInner
              class default
@@ -87,10 +79,10 @@ module m
           print *,"in printOuter"
           select type(this)
              type is(outer(4,*))
-                print '(a5/a5/a5,sp,/b16/o24/z10)', this 
+                print '(a5/a5/a5,sp,/b16/o24/z10)', this
                 call this%comp%printInner
              class default
-                 error stop 102_4 
+                 error stop 102_4
           end select
       end subroutine
 
@@ -102,13 +94,13 @@ program formatTypeBndSeqWrite01
 
   type(outer(4,2)),target :: tar1
   type(outer(4,:)),pointer :: outer1=>null()
- 
+
   tar1%c=["foo","red","pot"]
 
   tar1%comp=inner(8,3)(i=[123,-456,789])
 
   outer1=>tar1
-   
+
   call outer1%writeOuter
 
   call outer1%printOuter

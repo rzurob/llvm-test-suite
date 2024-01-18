@@ -1,4 +1,4 @@
-      subroutine check_c_to_f(c_arg2,n, c_len, test_no) bind(c) 
+      subroutine check_c_to_f(c_arg2,n, c_len, test_no) bind(c)
         use, intrinsic :: iso_c_binding
         character(*) :: c_arg2(n+2)
         integer(C_INT) n,c_len, test_no
@@ -33,7 +33,7 @@
            error STOP 6
           endif
           i = i+1
-        END DO 
+        END DO
       end subroutine
 
       subroutine check_c_to_f_to_f(c_arg2,n, c_len, test_no) bind(c)
@@ -65,6 +65,4 @@
         character(c_len) c_test
         call check_f_to_c(c_arg2,n, c_len, test_no)
       end subroutine
-
-
 

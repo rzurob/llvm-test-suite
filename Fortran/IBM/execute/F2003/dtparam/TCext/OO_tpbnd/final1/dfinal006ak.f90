@@ -1,23 +1,18 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dfinal006ak.f
 !*  TEST CASE NAME             : type-bound procedure dfinal006ak
 !*
-!*  PROGRAMMER                 : David Forster (derived from dfinal006a by Catherine Sun)
 !*  DATE                       : 2007-11-12 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
 !*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : testing final subroutines:
 !*                               dup "final" keyword
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -29,7 +24,7 @@ module m
         procedure, nopass :: final
         final  :: final
     end type
-    
+
     contains
     subroutine final (b1)
        type(base(4)), intent(in) :: b1  ! tcx: (4)

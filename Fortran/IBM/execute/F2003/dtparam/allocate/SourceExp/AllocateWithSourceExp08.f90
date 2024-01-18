@@ -1,33 +1,25 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocateWithSourceExp08 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : January 20, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression 
+!*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Source Expression
 !*  SECONDARY FUNCTIONS TESTED :
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* allocate-stmt is 
+!* allocate-stmt is
 !*   ALLOCATE ( [ TYPE-spec :: ] allocation-list [, alloc-opt-list ] )
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 PROGRAM AllocateWithSourceExp08
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
@@ -60,7 +52,7 @@ PROGRAM AllocateWithSourceExp08
       ALLOCATE(u_poly2(SIZE(foo_array(c))), SOURCE = foo_array(c) )
       IF(SIZE(u_poly2) .NE. 2) STOP 13
 
-      SELECT TYPE ( u_poly2 ) 
+      SELECT TYPE ( u_poly2 )
         CLASS IS (Child(4,*,4,*))
            IF (u_poly2%l1 .NE. 10) STOP 14
            IF (u_poly2%l2 .NE. 5) STOP 15

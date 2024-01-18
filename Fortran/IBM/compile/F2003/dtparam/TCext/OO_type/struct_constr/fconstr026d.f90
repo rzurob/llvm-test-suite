@@ -1,23 +1,12 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/struct_constr/fconstr026d.f
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            :
-!*                                                                     
-!*  PROGRAMMER                 : Jim Xia
+!*  ===================================================================
+!*
 !*  DATE                       : 02/17/2005
 !*  ORIGIN                     :
-!*                             :
-!*                                                                     
+!*
 !*  DESCRIPTION                : structure constructor (unnamed objects from
 !*                               structure constructor can not be used to
 !*                               initialize the pointer components)

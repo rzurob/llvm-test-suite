@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozInt002.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 01/23/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : INT intrinsic using KIND parameter
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : A boz-literal-constant shall appear
 !*				 as the actual argument associated with
@@ -40,7 +29,7 @@ program bozInt002
       ! Two Bytes
       if (INT(B'1010110011011100') /= B'1010110011011100') &
       error stop 1_4
-      
+
       if (INT(O'66334') /= O'66334') error stop 2_4
       if (INT(Z'6CDC') /= Z'6CDC') error stop 3_4
 

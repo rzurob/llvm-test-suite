@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d357502.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d357502.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 15 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. DEFECT 357502
@@ -59,7 +51,7 @@ program d357502
 
          do i=lbound(dt,1),ubound(dt,1)
             print *,dt(i)%first2(1)%c1
-            print *,dt(i)%first2(2)%c1 
+            print *,dt(i)%first2(2)%c1
             print *,dt(i)%second2(2)%first1%c1
             print *,dt(i)%second2(3)%first1%c1
          end do

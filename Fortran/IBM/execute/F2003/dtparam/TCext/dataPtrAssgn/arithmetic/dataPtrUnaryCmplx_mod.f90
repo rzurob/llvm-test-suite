@@ -4,7 +4,7 @@
 
   module m
 
-      type A(n1,k1,k2,k3)    ! (20,4,8,16) 
+      type A(n1,k1,k2,k3)    ! (20,4,8,16)
           integer, kind            :: k1,k2,k3
           integer, len             :: n1
           complex(k1), allocatable :: c4(:)

@@ -1,39 +1,23 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: ptrAsgn003.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing:  Pointer assignment
 !*                               a) Scalar pointer and target
@@ -49,13 +33,13 @@
 !* ===================================================================
 
 module m
-   
+
    type, abstract :: base
       integer :: id
    contains
       procedure, nopass :: type => basetype
    end type
-   
+
    type, extends(base) :: child
    contains
       procedure, nopass :: type => childtype
@@ -70,7 +54,7 @@ contains
    integer function childtype()
       childtype = 2
    end function
-   
+
 end module
 
 program ptrAsgn003
@@ -79,27 +63,27 @@ program ptrAsgn003
    class(base), pointer :: b1, b2
    class(child), pointer :: c1
    class(child), allocatable, target :: c2
-   
+
    allocate (c2, source = child(5))
-   
+
    c1 => c2
    b2 => c2
    b1 => c1
-   
+
    if (.not. associated(b1,b2) ) error stop 1_4
-   
+
    if (b1%type() .ne. 2) error stop 2_4
    if (b2%type() .ne. 2) error stop 3_4
-   
+
    nullify(c1,b2)
-   
+
    b1 => b2
-   
+
    if (b1%type() .ne. 1) error stop 4_4
-   if (b2%type() .ne. 1) error stop 5_4 
+   if (b2%type() .ne. 1) error stop 5_4
 
    b1 => c1
-    
+
    if (b1%type() .ne. 1) error stop 6_4
-   
+
 end program

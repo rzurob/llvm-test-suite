@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d359315.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d359315.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 24 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  DEFECT 359315 
+!*  DEFECT 359315
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type dt(l)
@@ -39,7 +31,7 @@ module m
      function multichild(this,arg)
        class(child(*,*)),intent(in) :: this
        class(base(:)),allocatable,intent(in) :: arg(:)
-       class(base(:)),allocatable :: multichild(:) 
+       class(base(:)),allocatable :: multichild(:)
 
        allocate(child(1,3) ::multichild(size(arg,1)) )
        select type(multichild)

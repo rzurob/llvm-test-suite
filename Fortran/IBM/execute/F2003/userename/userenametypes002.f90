@@ -12,21 +12,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenamenest004.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : rename a public operator binary nested module, multiple renames
 !*
@@ -37,7 +30,7 @@ module m
       integer :: x = 0
       integer :: y = 0
       real :: r = 0.0
-      
+
    end type
 
    interface operator(.multiply.)
@@ -49,7 +42,7 @@ module m
    interface operator(.add.)
      module procedure addit2
    end interface
-   
+
    contains
 
    function addit ( a, b )
@@ -62,7 +55,7 @@ module m
       addit%r = a%r + b%r
       print *, 'add'
    end function
-   
+
    function mult ( a, b )
       class(baseobj), intent(in) :: a
       type(baseobj), intent(in)  :: b
@@ -73,7 +66,7 @@ module m
       mult%y = a%r * b%r
       print *, 'mult'
    end function
-   
+
    function div ( a, b )
       class(baseobj), intent(in) :: a
       type(baseobj), intent(in)  :: b
@@ -84,7 +77,7 @@ module m
       div%r = a%r / b%r
       print *, 'div'
    end function
-   
+
    function addit2 ( a, b )
       class(baseobj), intent(in) :: a
       type(baseobj), intent(in)  :: b
@@ -95,7 +88,7 @@ module m
       addit2%r = a%r + b%r
       print *, 'add2'
    end function
-   
+
    function mult2 ( a, b )
       class(baseobj), intent(in) :: a
       type(baseobj), intent(in)  :: b
@@ -106,7 +99,7 @@ module m
       mult2%r = a%r * b%r
       print *, 'mult2'
    end function
-   
+
    function div2 ( a, b )
       class(baseobj), intent(in) :: a
       type(baseobj), intent(in)  :: b
@@ -117,7 +110,7 @@ module m
       div2%r = a%r / b%r
       print *, 'div2'
    end function
-   
+
 
 
 end module
@@ -137,17 +130,17 @@ program mainprog
    print *, b3%x
    print *, b3%y
    print *, b3%r
-   
+
    b3 = b2 .divit. b1
    print *, b3%x
    print *, b3%y
    print *, b3%r
-   
+
    b3 = b2 .multit. b1
    print *, b3%x
    print *, b3%y
    print *, b3%r
 
-   
+
 
 end program

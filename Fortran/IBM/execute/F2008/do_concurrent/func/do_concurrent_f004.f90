@@ -1,23 +1,21 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                              IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f004.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon
 !*  DATE                       : 2015-03-26
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*
-!*  DESCRIPTION                : - Various kinds of integers, reals and double 
-!*                                 allocatable arrays in DO CONCURRENT loops 
+!*  DESCRIPTION                : - Various kinds of integers, reals and double
+!*                                 allocatable arrays in DO CONCURRENT loops
 !*                                 including nested DO CONCURRENT loops
-!*                               - concurrent-limit contains a variable with 
+!*                               - concurrent-limit contains a variable with
 !*                                 the parameter attribute
-!*                               - scalar-mask-expr contains logicals and 
+!*                               - scalar-mask-expr contains logicals and
 !*                                 allocatable arrays of various real kinds
 !*                               - Use of functions inside DO CONCURRENT loops
 !*                               - Use of functions in the scalar-mask-expr
@@ -76,7 +74,7 @@
           i_res2(i,j) = log10(real(10**j,8))
         end do
 
-        i_res2_result(1,:) = 0.0d0 
+        i_res2_result(1,:) = 0.0d0
         i_res2_result(2,:) = (/1.0d0, 2.0d0, 0.0d0, 4.0d0, 0.0d0/)
         i_res2_result(3,:) = 0.0d0
         i_res2_result(4,:) = (/1.0d0, 2.0d0, 0.0d0, 4.0d0, 0.0d0/)
@@ -235,7 +233,7 @@
         i_arr3 = (/10.0d0,20.0d0,30.0d0,40.0d0,50.0d0,60.0d0,70.0d0,80.0d0,90.0d0,100.0d0/)
 
         do concurrent (i = 1:m*2, lvar .eqv. .true.)
-          i_res3(i) = sqrt(i_arr4(i)) 
+          i_res3(i) = sqrt(i_arr4(i))
           do concurrent (j = 100:1000:100, (abs(-1.0d0*i_arr3(j/100)) >= 30.0d0) .and. (abs(-1.0d0*i_arr3(j/100)) <= 80.0d0))
             i_res4(j/100) = sqrt(i_arr4(j/100))
             do concurrent (k = 1:5, l = 1:5)
@@ -266,7 +264,7 @@
           end if
         end do
 
-        i_res2_result(1,:) = (/0.5d0, 0.5d0, 1.5d0, 0.5d0, 0.5d0/) 
+        i_res2_result(1,:) = (/0.5d0, 0.5d0, 1.5d0, 0.5d0, 0.5d0/)
         i_res2_result(2,:) = (/0.5d0, 0.5d0, 4.5d0, 4.5d0, 0.5d0/)
         i_res2_result(3,:) = (/1.5d0, 4.5d0, 1.5d0, 4.5d0, 10.5d0/)
         i_res2_result(4,:) = (/0.5d0, 4.5d0, 4.5d0, 4.5d0, 0.5d0/)

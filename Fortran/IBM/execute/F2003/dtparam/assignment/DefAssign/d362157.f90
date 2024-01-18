@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d362157.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d362157.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 11 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 11 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 362157
@@ -25,23 +17,23 @@
 module m1
   type A(l1)
      integer,len :: l1
-     character(l1) :: c3(l1) 
+     character(l1) :: c3(l1)
   end type
 end module
 
 module m2
-  use m1,TA=>A     
+  use m1,TA=>A
 end module
 
 module m3
-  use m2,XA=>TA      
+  use m2,XA=>TA
   type C(l3)
     integer,len :: l3
-    type(XA(l3))  :: a3comp 
+    type(XA(l3))  :: a3comp
   end type
 
   contains
-    subroutine assignC(this,dt)                 
+    subroutine assignC(this,dt)
        class(C(*)),intent(inout) :: this(:)
        type(C(*)),intent(in)     :: dt
 
@@ -49,11 +41,10 @@ module m3
 end module
 
 program d362157
-   use m1; use m2; use m3,XC=>C  
+   use m1; use m2; use m3,XC=>C
    implicit none
 
    type(XC(3)) :: cobj1
 
 end program
-
 

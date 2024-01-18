@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrC719.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrC719.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,17 +23,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  C719 (R735) If bounds-remapping-list is specified, the number of bounds-remappings
-!*  shall equal the rank of data-pointer-object. 
-!*   
+!*  shall equal the rank of data-pointer-object.
 !*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrC719 
+  PROGRAM dataPtrC719
   IMPLICIT NONE
 
   TYPE :: DT(K1)    ! (4)
@@ -64,7 +56,7 @@
   Ptr20(1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1,1:1) => Arr
 
 
- 
+
   END
 
 

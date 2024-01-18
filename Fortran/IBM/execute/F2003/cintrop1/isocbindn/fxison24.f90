@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_FLOAT_COMPLEX, C_DOUBLE_COMPLEX
@@ -124,7 +110,7 @@ complex(C_FLOAT_COMPLEX) function fnt1(a,b)
 
    complex(C_FLOAT_COMPLEX) :: a
    complex(C_DOUBLE_COMPLEX) :: b
-   
+
    if ( a /= (5.0e0,5.0e0) ) error stop 36
    if ( b /= (10.0d0,10.0d0) ) error stop 38
 
@@ -139,7 +125,7 @@ complex(C_FLOAT_COMPLEX) function fnt2(a,b)
 
    complex(C_FLOAT_COMPLEX), value :: a
    complex(C_DOUBLE_COMPLEX), value :: b
-   
+
    if ( a /= (5.0e0,5.0e0) ) error stop 40
    if ( b /= (10.0d0,10.0d0) ) error stop 42
 
@@ -154,7 +140,7 @@ complex(C_FLOAT_COMPLEX) function fnt3(a,b)
 
    complex(C_FLOAT_COMPLEX), intent(in) :: a
    complex(C_DOUBLE_COMPLEX), intent(in) :: b
-   
+
    if ( a /= (5.0e0,5.0e0) ) error stop 44
    if ( b /= (10.0d0,10.0d0) ) error stop 46
 
@@ -166,7 +152,7 @@ complex(C_FLOAT_COMPLEX) function fnt4(a,b)
 
    complex(C_FLOAT_COMPLEX), intent(in), value :: a
    complex(C_DOUBLE_COMPLEX), intent(in), value :: b
-   
+
    if ( a /= (5.0e0,5.0e0) ) error stop 48
    if ( b /= (10.0d0,10.0d0) ) error stop 50
 

@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryWithoutComp03_d353615.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryWithoutComp03_d353615.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 10 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. DIFFERENT TYPE PARAMETER
-!* 4. WITHOUT COMPONENT,DEFAULT INTIALIZATION 
+!* 4. WITHOUT COMPONENT,DEFAULT INTIALIZATION
 !* 5. DEFECT 353615
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -53,4 +45,4 @@ end module
   if(t%l2%kind /= kind(t%l2) .or. t%l2%kind /=2)  error stop 17_4
 
 
-  end     
+  end

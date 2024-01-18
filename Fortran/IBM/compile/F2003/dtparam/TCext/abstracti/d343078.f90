@@ -1,22 +1,13 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : d343078
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti014ckl)
-!*
 !*  DATE                       : 2007-10-24
-!*
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Abstract Interface
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DEFECT ABSTRACT            : DTPARAM:ICE:Syntax Error in ABSTRACT INTERFACE
 !*                               FUNCTION Return

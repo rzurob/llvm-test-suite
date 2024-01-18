@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass022.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass022.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -55,8 +43,8 @@
 !*
 !*  CONDITIONS TESTED          : Listed below.
 !*
-!*  DESCRIPTION                : Test: ASSOCIATE with expressions and 
-!*                                     with integer constant array 
+!*  DESCRIPTION                : Test: ASSOCIATE with expressions and
+!*                                     with integer constant array
 !*                                     and do loop. test with intrinsic
 !*                                     function real.
 !* ===================================================================
@@ -78,7 +66,7 @@
       real c(50)
 
       do i = 1,10
-       if ( b(i) == d(i) ) then 
+       if ( b(i) == d(i) ) then
             associate ( arg => b(i) )
             if(arg .ne. b(i) )then
             error stop 2
@@ -88,7 +76,7 @@
       elseif ( b(i) < d(i) ) then
              c(i) = real(i)
              associate ( arg1 => real(i) )
-             if(arg1 .ne. c(i))then 
+             if(arg1 .ne. c(i))then
              error stop 3
              end if
              end associate
@@ -100,6 +88,6 @@
              end if
              end associate
       end if
-      end do 
+      end do
       end
 

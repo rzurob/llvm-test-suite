@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadAsActualArg01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadAsActualArg01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 23 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
-!*  2. USE GENERIC BINDING WITH SPREAD AS ACTUAL ARGUMENT 
+!*  2. USE GENERIC BINDING WITH SPREAD AS ACTUAL ARGUMENT
 !*  3  USE ELEMENTAL PROCEDURE
 !*  4. KIND TYPE PARAMETER IS DIFFERENT
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -35,7 +27,7 @@ module m
         procedure,nopass :: spread2=>getSpread2
         procedure,nopass :: spread3=>getSpread3
         generic :: spread=>spread1,spread2,spread3
-  end type 
+  end type
 
   contains
 
@@ -74,11 +66,11 @@ program spreadAsActualArg01
   type(dtp(4,4,:,:)),allocatable :: dtp2,dtp2_0
   type(dtp(4,4,:,:)),allocatable :: dtp2_1(:)
   type(dtp(4,4,:,:)),allocatable :: dtp2_2(:,:)
-  
+
   type(dtp(1,1,:,:)),allocatable :: dtp3,dtp3_0
   type(dtp(1,1,:,:)),allocatable :: dtp3_1(:)
   type(dtp(1,1,:,:)),allocatable :: dtp3_2(:,:)
- 
+
   integer :: dim
 
   allocate(dtp(2,2,1,2) :: dtp1)
@@ -96,7 +88,7 @@ program spreadAsActualArg01
   if(size(dtp1_1,1) /= 2)                                   error stop 12_4
   do i=1,2
      if(any(dtp1_1(i)%i /= [1,2]))                          error stop 13_4
-  end do 
+  end do
 
   dtp2_1=dtp2%spread(spread(dtp2,1,2))
   if(dtp2_1%k1 /= 4 .or. dtp2_1%k2 /= 4)                    error stop 14_4
@@ -122,7 +114,7 @@ program spreadAsActualArg01
   do i=1,3
      if(any(dtp1_2(i,1)%i /= [1,2]))                         error stop 25_4
      if(any(dtp1_2(i,2)%i /= [1,2]))                         error stop 26_4
-  end do 
+  end do
 
   dtp1_2=dtp1%spread(spread(spread(dtp1,1,2),2,3))
 

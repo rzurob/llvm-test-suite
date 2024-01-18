@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dummyArg001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from dummyArg001 by Robert Ma)
 !*  DATE                       : 2007-08-07 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Dummy Argument Association
@@ -147,7 +139,7 @@ program dummyArg001kl
 
    call myreadext ( b2, 10, 10 )
 
-   if ( b2%c /= 'ghi' ) error stop 4_4   
+   if ( b2%c /= 'ghi' ) error stop 4_4
 
 
    close ( 1, status ='delete')

@@ -1,67 +1,61 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: dcomp ftybn093d.f ftybn093d.vf 
+! %POSTCMD: dcomp ftybn093d.f ftybn093d.vf
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn093d.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn093d.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : overriding 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
 !*
-!*  DESCRIPTION                : The overriding binding and the overriden 
+!*  SECONDARY FUNCTIONS TESTED : overriding
+!*
+!*  DESCRIPTION                : The overriding binding and the overriden
 !*                               binding shall satisfy the following
 !*                               condition: both shall be functions having
 !*                               the same result characteristics.
-!*                             
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-      module mod	      
+      module mod
 
-      type base 
+      type base
          integer :: x
       contains
       	 procedure, pass :: bind_b => proc1
       end type
 
-      type, extends(base) :: child 
+      type, extends(base) :: child
       contains
          procedure, pass :: bind_b => proc2
-      end type  
+      end type
 
       contains
-      function proc1(arg1) result(arg2) 
+      function proc1(arg1) result(arg2)
           class(base), intent(in) :: arg1
           integer :: arg2
-          arg2 = 100 
-      end function 
-     
-      function proc2(arg1) result(arg2) 
+          arg2 = 100
+      end function
+
+      function proc2(arg1) result(arg2)
           class(child), intent(in) :: arg1
           character*20 :: arg2
-          arg2 = "hello" 
-      end function 
+          arg2 = "hello"
+      end function
 
-   end module     
+   end module
 
    end
-   
+

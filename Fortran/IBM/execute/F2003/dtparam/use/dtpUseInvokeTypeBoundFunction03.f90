@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUseInvokeTypeBoundFunction01
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-08-25
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTP and USE
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 355310
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -160,7 +154,7 @@ program dtpUseInvokeTypeBoundFunction01
   print *, "start"
 
   print *, tkl42ConstSum, tk4ConstSum, tkl21ConstSum, tk2ConstSum, tl2ConstSum
-  
+
   tkl_45_1 % ifld     = [(i, i=0,4)]
   tk_4_1 % ifld       = 100000010
   tl_5_1 % ifld       = [(i, i=22,26)]

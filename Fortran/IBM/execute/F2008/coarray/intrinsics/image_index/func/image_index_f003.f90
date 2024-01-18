@@ -1,14 +1,8 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : image_index_f003.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : August 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
 !*  SECONDARY FUNCTIONS TESTED :
@@ -33,7 +27,7 @@ program main
 	sync all
 	print *, image_index(caf1, [5])
 	sync all
-	print *, image_index(caf1, [6])	
+	print *, image_index(caf1, [6])
 
 	sync all
 	call sub1()

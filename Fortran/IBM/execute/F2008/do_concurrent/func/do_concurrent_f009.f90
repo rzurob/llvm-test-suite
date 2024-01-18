@@ -1,24 +1,21 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f009.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon 
 !*  DATE                       : 2015-06-08
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*
-!*  DESCRIPTION                : - DO CONCURRENT loops with variables of 
-!*                                 user-defined types declared without the 
-!*                                 ALLOCATABLE or POINTER attribute with 
+!*  DESCRIPTION                : - DO CONCURRENT loops with variables of
+!*                                 user-defined types declared without the
+!*                                 ALLOCATABLE or POINTER attribute with
 !*                                 nonpointer default-initialized subcomponents
 !*                               - User-defined types containing reals, logicals,
 !*                                 characters, complex and doubles
-!*                               - scalar-mask-expr contains logicals and 
+!*                               - scalar-mask-expr contains logicals and
 !*                                 user-defined data types
-!*                               - Select statement inside DO CONCURRENT loop 
+!*                               - Select statement inside DO CONCURRENT loop
 !*                                 with user-defined data types inside
 !*
 !* =============================================================================
@@ -53,7 +50,7 @@
         implicit none
 
         logical, external :: precision_x6, precision_x8, precision_r4, precision_r8
- 
+
         type (realType) :: dtRealType
         type (complexType) :: dtComplexType
         type (logicalType) :: dtLogicalType
@@ -85,9 +82,9 @@
         if ( .not. precision_r4(dtRealType%real4,111.5e0) ) then
           print *, "select statement in do concurrent loop in else block produces incorrect results"
           print *, "dtRealType%real4: ", dtRealType%real4
-          error stop 2 
+          error stop 2
         end if
- 
+
         real8_result = (/25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,245.6d0,823.44d0/)
         do x = 1,10
           if ( .not. precision_r8(dtRealType%real8(x),real8_result(x)) ) then
@@ -103,13 +100,13 @@
           dtComplexType%comp8(int2, int4) = (3.0d0, 5.0d0)
         end do
 
-        if ( .not. precision_x8(dtComplexType%comp8(3,:),(3.0d0, 5.0d0)) ) then 
+        if ( .not. precision_x8(dtComplexType%comp8(3,:),(3.0d0, 5.0d0)) ) then
           print *, "do concurrent with DTP mask produces incorrect result"
           print *, "dtComplexType%comp8(3,:): ", dtComplexType%comp8(3,:)
           error stop 3
         end if
-      
-        dtMixType%char4(2) = "fail" 
+
+        dtMixType%char4(2) = "fail"
         dtRealType%real8 = 65.5d0
         do concurrent (int1 = 1:5, dtLogicalType%log1 .eqv. .true.)
           if (int1 == 3) then
@@ -121,9 +118,9 @@
               dtComplexType%comp16(int2,int4_2-2,int8/100) = (2.0q0,5.0q0)*(int2,1.0q0)
             end do
           end do
-        end do 
+        end do
 
-        if ( .not. precision_r8(dtMixType%doub,15.5d1) ) then 
+        if ( .not. precision_r8(dtMixType%doub,15.5d1) ) then
           print *, "3-level nested do concurrent with multiple indices and DTP masks produced incorrect results"
           print *, "failure in first, outer-most loop"
           print *, "dtMixType%doub: ", dtMixType%doub

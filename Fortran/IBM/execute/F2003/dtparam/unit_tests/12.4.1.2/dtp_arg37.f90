@@ -1,18 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Argument association with DTP
 !*                             :
-!*  PROGRAMMER                 : Huiwen Li
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  DIAGNOSTIC TESTED          : Function return is an allocatable to a derived
 !*                               type object with non-constant type parameters
 !*
-!*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,7 +32,7 @@ contains
 
 function func1(nn)
 integer nn
-! function result is an allocatable and defined as 'Base' type with 
+! function result is an allocatable and defined as 'Base' type with
 ! non-constant type parameter
 type(Base(4, nn)), allocatable :: func1
 

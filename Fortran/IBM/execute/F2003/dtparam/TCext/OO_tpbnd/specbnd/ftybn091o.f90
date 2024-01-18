@@ -5,55 +5,49 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn091o.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn091o.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn091o.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn091o.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : overriding 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
 !*
-!*  DESCRIPTION                : testing parent procedures are overriden, 
-!*    
+!*  SECONDARY FUNCTIONS TESTED : overriding
+!*
+!*  DESCRIPTION                : testing parent procedures are overriden,
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod	      
+   module mod
       integer :: int = 200
       character*20 :: c = "hi"
 
-      type parent(n1,k1)    ! (20,4) 
+      type parent(n1,k1)    ! (20,4)
          integer, kind :: k1
          integer, len  :: n1
          integer(k1)   :: x
 	 contains
       	 procedure, nopass :: bind => proc1
-      end type 
+      end type
 
-      type, extends(parent) :: child    ! (20,4) 
+      type, extends(parent) :: child    ! (20,4)
       contains
          procedure, nopass :: bind => proc1
-      end type  
+      end type
 
-      type, extends(child) :: thirGen    ! (20,4) 
+      type, extends(child) :: thirGen    ! (20,4)
       contains
          procedure, nopass :: bind => proc2
       end type
@@ -69,7 +63,7 @@
          c = "hi"
       end subroutine
 
-	end module     
+	end module
 
    use mod
 
@@ -93,4 +87,4 @@
    if (c .ne. "hi")    error stop 9
 
    end
-   
+

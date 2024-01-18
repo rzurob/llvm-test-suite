@@ -1,29 +1,14 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 07/19/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : DECIMAL EDIT MODE
 !                               Decimal mode on child read on internal file,
 !                               where the parent is also on the same internal
 !                               file: test that the child read statement on
 !                               internal file is in default (POINT) mode.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -110,7 +95,7 @@ use m
             1.22, 3, (i*1.11, i*2.11, i=1,3), -1.21
 
     allocate (b1(10))
-    
+
     read (string, '(dc, dt)') b1(1)
 
     if (.not. associated(b1(1)%data)) error stop 1_4

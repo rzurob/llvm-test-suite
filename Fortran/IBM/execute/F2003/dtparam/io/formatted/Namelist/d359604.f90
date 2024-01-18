@@ -13,7 +13,7 @@
       CONTAINS
 
       SUBROUTINE sub1(arg1)
-        TYPE(Base(*))  :: arg1   
+        TYPE(Base(*))  :: arg1
 
        NAMELIST /NML1/arg1
 

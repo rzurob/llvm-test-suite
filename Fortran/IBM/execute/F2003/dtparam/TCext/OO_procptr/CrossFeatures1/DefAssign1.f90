@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: DefAssign1.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : DefAssign1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : DefAssign1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 17, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,19 +34,19 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Defined assignment - elemental
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
 
-    INTERFACE 
+    INTERFACE
       FUNCTION CToC(Arg)
        CHARACTER(*) :: Arg
-       CHARACTER(LEN(Arg)) :: CToC 
+       CHARACTER(LEN(Arg)) :: CToC
       END FUNCTION
     END INTERFACE
 
@@ -72,7 +66,7 @@
       MODULE PROCEDURE MyAssign2
       MODULE PROCEDURE MyAssign3
       MODULE PROCEDURE MyAssign4
-    END INTERFACE ASSIGNMENT ( = ) 
+    END INTERFACE ASSIGNMENT ( = )
 
     CONTAINS
 
@@ -83,48 +77,48 @@
     END FUNCTION
 
     ELEMENTAL SUBROUTINE MyAssign1 (Arg1, Arg2)
-    TYPE(Base(4)), INTENT(OUT) :: Arg1 
-    TYPE(Base(4)), INTENT(IN)  :: Arg2 
+    TYPE(Base(4)), INTENT(OUT) :: Arg1
+    TYPE(Base(4)), INTENT(IN)  :: Arg2
       Arg1%ProcPtr => Arg2%ProcPtr
-    END SUBROUTINE 
- 
+    END SUBROUTINE
+
     ELEMENTAL SUBROUTINE MyAssign2 (Arg1, arg2)
-    TYPE(DT(4)),    INTENT(OUT) :: Arg1 
-    TYPE(Base(4)),  INTENT(IN)  :: Arg2 
+    TYPE(DT(4)),    INTENT(OUT) :: Arg1
+    TYPE(Base(4)),  INTENT(IN)  :: Arg2
       Arg1%Id = -1
       IF ( .NOT. ASSOCIATED(Arg1%BComp)) THEN
         ALLOCATE(Arg1%BComp)
       END IF
-      Arg1%BComp%ProcPtr => Arg2%ProcPtr 
-    END SUBROUTINE 
- 
+      Arg1%BComp%ProcPtr => Arg2%ProcPtr
+    END SUBROUTINE
+
     ELEMENTAL SUBROUTINE MyAssign3 (Arg1, Arg2)
-    TYPE(Base(4)), INTENT(OUT) :: Arg1 
-    TYPE(DT(4)),   INTENT(IN)  :: Arg2 
+    TYPE(Base(4)), INTENT(OUT) :: Arg1
+    TYPE(DT(4)),   INTENT(IN)  :: Arg2
       Arg1%ProcPtr => Arg2%BComp%ProcPtr
-    END SUBROUTINE 
- 
+    END SUBROUTINE
+
     ELEMENTAL SUBROUTINE MyAssign4 (Arg1, Arg2)
-    TYPE(DT(4)),  INTENT(OUT) :: Arg1 
-    TYPE(DT(4)),  INTENT(IN)  :: Arg2 
+    TYPE(DT(4)),  INTENT(OUT) :: Arg1
+    TYPE(DT(4)),  INTENT(IN)  :: Arg2
       ALLOCATE(Arg1%BComp)
       Arg1%BComp%ProcPtr => Arg2%BComp%ProcPtr
-      Arg1%Id = -Arg2%Id 
-    END SUBROUTINE 
- 
- 
+      Arg1%Id = -Arg2%Id
+    END SUBROUTINE
+
+
   END MODULE
 
 
-  PROGRAM DefAssign1 
+  PROGRAM DefAssign1
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   INTEGER :: I
   TYPE(Base(4)) :: B1(511), B2(511)
   TYPE(DT(4))   :: D1(511), D2(511)
   TYPE(Base(4)), TARGET  :: BTar
- 
+
   B1 = Base(4)(Fun)
   DO I=1, 511
     IF (.NOT. ASSOCIATED(B1(I)%ProcPtr, Fun)) STOP 11
@@ -133,7 +127,7 @@
   D1 = Base(4)(Fun)
   DO I=1, 511
     IF (.NOT. ASSOCIATED(D1(I)%BComp%ProcPtr, Fun)) STOP 22
-    IF (D1(I)%Id .NE. -1) STOP 23   
+    IF (D1(I)%Id .NE. -1) STOP 23
   END DO
 
   BTar =  Base(4)(RetPtr(Fun))
@@ -146,7 +140,7 @@
   D2 = DT(4)(-3, BTar)
   DO I=1, 511
     IF (.NOT. ASSOCIATED(D2(I)%BComp%ProcPtr, Fun)) STOP 42
-    IF (D2(I)%Id .NE. 3) STOP 43   
+    IF (D2(I)%Id .NE. 3) STOP 43
   END DO
 
 
@@ -154,8 +148,8 @@
 
   FUNCTION RetPtr(Arg)
   PROCEDURE(CToC), POINTER :: RetPtr
-  PROCEDURE(CToC) :: Arg 
-    RetPtr => Arg 
+  PROCEDURE(CToC) :: Arg
+    RetPtr => Arg
   END FUNCTION
 
   END

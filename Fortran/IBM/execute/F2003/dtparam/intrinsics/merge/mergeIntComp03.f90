@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeIntComp03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeIntComp03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 13 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 13 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE,FSOURCE ARE POLYMORPHIC
 !* 4. DERIVED TYPE HAS EXTENDED TYPE
 !* 5. COMPONENT ARE SCALAR INTEGER OR ARRAY
@@ -49,7 +41,7 @@ program mergeIntComp03
    class(base),pointer     :: poly2
    class(*),allocatable    :: poly3
    class(*),pointer        :: poly4
-   
+
    allocate(poly1,source=child())
    allocate(poly2,source=child(4,8,3)(i1=2,i2=5))
    allocate(poly3,source=child(2,1,4)(i1=9,i2=(/(i,i=1,4)/) ))
@@ -58,20 +50,20 @@ program mergeIntComp03
    call check1(merge(poly1,poly2,.true.),1)
    call check1(merge(poly1,poly2,.false.),2)
    call check2(merge(poly3,poly4,.true.),1)
-   call check2(merge(poly3,poly4,.false.),2) 
+   call check2(merge(poly3,poly4,.false.),2)
 
    contains
      subroutine check1(dt,flag)
         class(base),intent(in) :: dt
         integer,intent(in)  :: flag
-        
+
         select type(dt)
            type is(child(4,8,*))
                  if(dt%k1 /= 4)                         error stop 10_4
                  if(dt%k2 /= 8)                         error stop 11_4
                  if(dt%k1%kind /= 2)                    error stop 13_4
                  if(dt%k2%kind /= 4)                    error stop 14_4
-              if(flag .eq. 1) then 
+              if(flag .eq. 1) then
                  if(dt%l /= 3)                          error stop 15_4
                  if(dt%l%kind /= 2)                     error stop 16_4
                  if(dt%i1 /= 4)                         error stop 17_4
@@ -84,14 +76,14 @@ program mergeIntComp03
                  if(dt%i1 /= 2)                         error stop 23_4
                  if(size(dt%i2,1) /= 3)                 error stop 24_4
                  if(dt%i2%kind /= 8)                    error stop 25_4
-                 if(any(dt%i2 /= 5))                    error stop 26_4   
+                 if(any(dt%i2 /= 5))                    error stop 26_4
               end if
            class is(base(4))
                error stop 100_4
            class default
                error stop 101_4
         end select
-     end subroutine 
+     end subroutine
      subroutine check2(dt,flag)
         class(*),intent(in) :: dt
         integer,intent(in)  :: flag

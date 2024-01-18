@@ -1,20 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : module_subprogram52f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 6 December, 2012
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : submodule
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
 !*  TARGET(S)                  :
@@ -24,8 +18,8 @@
 !*
 !*   Ensure variable name reused in local scope of submodule does not
 !*   overwrite the variable in host scope
-!*   
-!*   The variable is reused in a local scope by: 
+!*
+!*   The variable is reused in a local scope by:
 !*   - redeclaration in a submodule
 !*   - redeclaration in a subroutine
 !*   - use association, with an alias in a submodule
@@ -33,7 +27,7 @@
 !*
 !*  Secondary tests:
 !*  - chain of submodules (5 levels)
-!*  - compile succeeds if an interface declares a subroutine, which is 
+!*  - compile succeeds if an interface declares a subroutine, which is
 !*    never defined in the host nor the submodules
 !* ===================================================================
 !*
@@ -62,7 +56,7 @@ use t
 IMPLICIT NONE
 integer, public :: modInt = 100
 
-  INTERFACE 
+  INTERFACE
     !In module procedure interface body, the type parameter, bounds of one argument
     !  may depend on another dummy argument. That dependency should be available in
     !  the corresponding separate module subprogram even through several descendants
@@ -91,7 +85,7 @@ integer, public :: modInt = 100
       integer, intent(in) :: arg2(arg1:arg1+modInt)
       type(base) :: arg3
     end subroutine sub3
-   
+
     module subroutine sub4()
     end subroutine sub4
 
@@ -119,7 +113,7 @@ CONTAINS
       print *, "in sub1: lbound = ", lbound(arg2)
       print *, "in sub1: ubound = ", ubound(arg2)
       print *, "in sub1: modInt = ", modInt
-    end 
+    end
 END SUBMODULE subm
 
 SUBMODULE (m:subm) subm2
@@ -145,7 +139,7 @@ CONTAINS
       print *, "in sub3: arg3%i = ", arg3%i
       print *, "in sub3: modInt = ", modInt
   end procedure
-  
+
   module procedure sub4
       USE m2, modInt => b2
       print *, "in sub4: modInt = ", modInt
@@ -157,7 +151,7 @@ CONTAINS
   module procedure sub5
       integer :: modInt = 104
       print *, "in sub5: modInt = ", modInt
-  end 
+  end
 END SUBMODULE subm4
 
 SUBMODULE (m:subm3) subm5
@@ -178,7 +172,7 @@ CONTAINS
       call sub5                              ! expect modInt value from sub5 scope
       print *, "in sub6: modInt = ", modInt  ! expect modInt value from subm3 scope
       call  helper1()
-  end 
+  end
 
   subroutine helper1()
       use t !-- required according to Daniel, since it wont be propogated by the use in interface

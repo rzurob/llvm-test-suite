@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Final1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Final1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Final1 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Final1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !* Finalization
 !* (ICE-299454)
 !* (Finalization earlier-301357)
@@ -51,22 +45,22 @@
       CHARACTER(513) :: C0="0"
       CONTAINS
       PROCEDURE, PASS  :: GetChar
-      Final :: FinalDT0 
+      Final :: FinalDT0
     END TYPE
 
     TYPE,  EXTENDS(DT0) :: DT1
       CHARACTER(513) :: C1="1"
       CONTAINS
-      Final :: FinalDT1 
+      Final :: FinalDT1
     END TYPE
 
     TYPE, EXTENDS(DT1) :: DT
       CHARACTER(513) :: C2="2"
       CONTAINS
-      Final :: FinalDT 
+      Final :: FinalDT
     END TYPE
 
-    LOGICAL :: Final(0:2) = .FALSE. 
+    LOGICAL :: Final(0:2) = .FALSE.
 
     CONTAINS
 
@@ -114,11 +108,11 @@
         CLASS DEFAULT
           SELECT TYPE (V)
             TYPE IS (DT)
-  
+
               IF (TRIM(V%C0) .NE. "-0") STOP 30
               IF (TRIM(V%C1) .NE. "-1") STOP 31
               IF (TRIM(V%C2) .NE. "-2") STOP 32
-    
+
               IF (TRIM(V%DT0%GetChar()) .NE. "-0") STOP 40
               IF (TRIM(V%DT1%GetChar()) .NE. "-1") STOP 41
               IF (TRIM(V%GetChar())     .NE. "-2") STOP 42
@@ -136,7 +130,7 @@
     CLASS DEFAULT
       STOP 62
   END SELECT
-  
+
   ! Finalization on DT structure constructor
   IF (ANY(Final) .NEQV. .TRUE.) STOP 63
 

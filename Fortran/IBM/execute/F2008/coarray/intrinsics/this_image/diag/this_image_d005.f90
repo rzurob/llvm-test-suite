@@ -1,23 +1,16 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : this_image_d005.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : July 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Return type testing. This_image returns a rank 1
 !*				 integer array when 1 arg is properly provided.
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,7 +46,7 @@ program main
 	cx4 = this_image(lcaf)
 	cx8 = this_image(cxcaf)
 	aicaf = this_image(icaf)
-	
+
 
 !!!! Invalid
 	l1 = this_image(rcaf)

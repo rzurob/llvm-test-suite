@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpEquivC582 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpEquivC582
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 09, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The equivalence statement
-!* 
+!*
 !*  C582 (R555) If an equivalence-object is of a sequence derived type that is not a numeric sequence or
 !*  character sequence type, all of the objects in the equivalence set shall be of the same type with
 !*  the same type parameter values.
-!*  (THere is an IBM extension on this)  
+!*  (THere is an IBM extension on this)
 !*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -60,21 +51,21 @@
     COMPLEX(KZ)                :: Z(L)=(KZ,-KZ)
 
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpEquivC582 
+  PROGRAM dtpEquivC582
   USE M
 
   INTEGER, PARAMETER :: N=95
 
-  TYPE(DT (16,2,1,8,8,7))  :: T(N), S(N), R(N) 
+  TYPE(DT (16,2,1,8,8,7))  :: T(N), S(N), R(N)
 
   EQUIVALENCE(T, R)
   EQUIVALENCE(R, S)
 
   DO I=1, N
- 
+
   IF ( ANY ( LBOUND(T(I)%R) .NE. 1          ) ) STOP 20
   IF ( SIZE( T(I)%R )       .NE. 7            ) STOP 21
   IF ( KIND( T(I)%R )       .NE. 16           ) STOP 22
@@ -95,18 +86,18 @@
   IF ( SIZE( T(I)%A )       .NE. 7            ) STOP 37
   IF ( KIND( T(I)%A )       .NE. 8            ) STOP 38
   IF ( ANY ( T(I)%A         .NEQV. .TRUE.   ) ) STOP 39
- 
+
   IF ( ANY ( LBOUND(T(I)%Z) .NE. 1          ) ) STOP 41
   IF ( SIZE( T(I)%Z )       .NE. 7            ) STOP 42
   IF ( KIND( T(I)%Z )       .NE. 8            ) STOP 43
   IF ( ANY ( T(I)%Z         .NE. (8, -8)    ) ) STOP 43
 
-  R(I)%R = -T(I)%R 
+  R(I)%R = -T(I)%R
   T(I)%C = CHAR(0)
   R(I)%I = -T(I)%I
   T(I)%Z = -T(I)%Z
   R(I)%A = .NOT. T(I)%A
- 
+
   IF ( ANY ( LBOUND(S(I)%R) .NE. 1          ) ) STOP 50
   IF ( SIZE( S(I)%R )       .NE. 7            ) STOP 51
   IF ( KIND( S(I)%R )       .NE. 16           ) STOP 52
@@ -127,7 +118,7 @@
   IF ( SIZE( S(I)%A )       .NE. 7            ) STOP 67
   IF ( KIND( S(I)%A )       .NE. 8            ) STOP 68
   IF ( ANY ( S(I)%A         .NEQV. .FALSE.  ) ) STOP 69
- 
+
   IF ( ANY ( LBOUND(S(I)%Z) .NE. 1          ) ) STOP 71
   IF ( SIZE( S(I)%Z )       .NE. 7            ) STOP 72
   IF ( KIND( S(I)%Z )       .NE. 8            ) STOP 73
@@ -135,7 +126,7 @@
 
 
   END DO
- 
+
   END
 
 

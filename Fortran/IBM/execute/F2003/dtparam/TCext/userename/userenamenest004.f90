@@ -16,21 +16,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenamenest004.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : rename a public operator binary nested module, multiple renames
 !*
@@ -49,7 +42,7 @@ module m
    interface operator(.add.)
    		module procedure mybadd2
    end interface
-   
+
    contains
 
    function mybadd ( a, b )
@@ -64,7 +57,7 @@ module m
       print *, 'mybadd'
 
    end function
-   
+
    function mybadd2 ( a, b )
       integer, intent(in) :: a
       integer, intent(in)  :: b
@@ -72,12 +65,12 @@ module m
       integer :: mybadd2
 
       mybadd2 = a + b + 1000
-      
+
 
       print *, 'mybadd2'
 
    end function
-   
+
 
 
 end module

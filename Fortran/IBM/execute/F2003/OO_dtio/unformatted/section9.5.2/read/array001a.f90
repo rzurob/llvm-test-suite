@@ -1,9 +1,7 @@
 !#######################################################################
-! SCCS ID Information
 ! OO_dtio/unformatted/section9.5.2/read/array001a.f, xlftest.OO_dtio, tstdev, 1.2
 ! Extract Date/Time: 05/06/15 10:09:31
 ! Checkin Date/Time: 05/04/06 10:22:11
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +16,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try input item to be polymorphic arrays with array section
@@ -116,7 +103,7 @@ program array001a
    open (unit = 1, file ='array001a.data', form='unformatted', access='stream')
 
    ! unformatted I/O operations
-   
+
    write (1, iostat=stat, iomsg=msg, pos=31 )             'ghiGHIdefDEFjklJKLabcABC'
    write (1, iostat=stat, iomsg=msg, pos=19 )             'ABCabcDEFdef'
    write (1, iostat=stat, iomsg=msg, pos=13 )             'stuSTU'
@@ -136,7 +123,7 @@ program array001a
       msg = ''
 
    ! check if the values are set correctly
-   
+
    if ( ( b1(1)%c /= 'abc' ) .or. ( b1(1)%getC() /= 'ABC' ) .or.            &       !<- getC() invokes getcc()
         ( b1(2)%c /= 'def' ) .or. ( b1(2)%getC() /= 'DEF' ) .or.            &
         ( b1(3)%c /= 'ghi' ) .or. ( b1(3)%getC() /= 'GHI' ) .or.            &

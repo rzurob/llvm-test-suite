@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f207.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -124,13 +121,13 @@ dvt1_f = func1_dvt(dvt1)
 							loop7: do doc7=1,SZA7
 	if (dvt1_f(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%i1 		.ne. 	dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%i1) 			error stop 1501
 	if (.not. precision_r4 (dvt1_f(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%r1,dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%r1)) 	error stop 1502
-	if (dvt1_f(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1 		.NEQV. 	dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1) 			error stop 1503	
+	if (dvt1_f(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1 		.NEQV. 	dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1) 			error stop 1503
 	if (.not. precision_x8 (dvt1_f(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%c1,dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%c1)) 	error stop 1504
 	if (dvt1_f(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%char1 	.ne. 	dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%char1) 		error stop 1505
-	
+
 	if (dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%i1 		.eq. 	dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%i1) 		error stop 2501
 	if (precision_r4 (dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%r1,dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%r1)) 	error stop 2502
-	if (dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1 		.EQV. 	dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1) 		error stop 2503	
+	if (dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1 		.EQV. 	dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1) 		error stop 2503
 	if (precision_x8 (dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%c1,dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%c1)) 	error stop 2504
 	if (dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%char1 	.eq. 	dvt1_r(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%char1) 	error stop 2505
 							end do loop7
@@ -142,13 +139,13 @@ dvt1_f = func1_dvt(dvt1)
 	end do loop1
 
 contains
-  
+
 integer*4 function func1_int(arg)
     integer*4 :: arg(:,:,:,:,:,:,:)
 	value arg
 	if (any (arg .ne. i1)) error stop 110
 	arg = 100
-	func1_int = 100	
+	func1_int = 100
 end
 
 real function func1_r(arg)
@@ -193,14 +190,14 @@ complex*8 function func1_com(arg)
 	end do loop1
 	arg =(atan(1.0),2*atan(1.0))
 	func1_com=(atan(1.0),2*atan(1.0))
-end	
+end
 
 character(10) function func1_char(arg)
     character(10) :: arg(:,:,:,:,:,:,:)
 	value arg
-	if (any (arg .ne. c1)) error stop 113	
+	if (any (arg .ne. c1)) error stop 113
 	arg = "1234567890"
-	func1_char = "1234567890"	
+	func1_char = "1234567890"
 end
 
 logical function func1_lg(arg)
@@ -209,7 +206,7 @@ logical function func1_lg(arg)
 	if (any (arg .NEQV. l1)) error stop 114
 	arg = .true.
 	func1_lg = .true.
-end	
+end
 
 type(t1) function func1_dvt(arg)
     type(t1) :: arg(:,:,:,:,:,:,:)
@@ -220,10 +217,10 @@ type(t1) function func1_dvt(arg)
 				loop4: do doc4=1,SZA4
 					loop5: do doc5=1,SZA5
 						loop6: do doc6=1,SZA6
-							loop7: do doc7=1,SZA7	  
+							loop7: do doc7=1,SZA7
 		if (arg(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%i1 		.ne. 	dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%i1) 		error stop 11501
 		if (.not. precision_r4 (arg(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%r1,dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%r1)) 	error stop 11502
-		if (arg(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1 		.NEQV. 	dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1) 		error stop 11503	
+		if (arg(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1 		.NEQV. 	dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%l1) 		error stop 11503
 		if (.not. precision_x8 (arg(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%c1,dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%c1)) 	error stop 11504
 		if (arg(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%char1 	.ne. 	dvt1(doc1,doC2,doc3,doC4,doc5,doC6,doC7)%char1) 		error stop 11505
 							end do loop7

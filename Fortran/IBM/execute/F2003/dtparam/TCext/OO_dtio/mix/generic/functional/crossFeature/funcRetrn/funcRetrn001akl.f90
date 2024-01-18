@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : funcRetrn001akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from funcRetrn001a by Robert Ma)
 !*  DATE                       : 2007-08-07 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Function Return
@@ -120,12 +112,12 @@ program funcRetrn001akl
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowritec' ) ) error stop 3_4
 
    rewind 1
-   
+
    read ( 1, iostat = stat, iomsg = msg )    cc1
    read ( 1, iostat = stat, iomsg = msg )    cc2
    read ( 1, iostat = stat, iomsg = msg )    cc3, i1
    if ( ( cc1 /= 'abc' ) .or. ( cc2 /= 'def' ) .or. ( cc3 /= 'ghi' ) .or. ( i1 /= 10001 ) )  error stop 4_4
-   
+
 
 end program
 

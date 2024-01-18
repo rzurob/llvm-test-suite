@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Usage of GENERIC BINDING
 !*                                  - Recursive unformatted I/O with linked-list that contains
@@ -37,7 +26,7 @@ module m
          procedure, pass :: write => writei
          procedure, pass :: read => readi
          generic :: write(unformatted) => write
-         generic :: read(unformatted)  => read      
+         generic :: read(unformatted)  => read
    end type
 
    type base

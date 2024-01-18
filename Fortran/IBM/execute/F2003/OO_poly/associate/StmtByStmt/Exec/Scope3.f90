@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Scope3.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Scope3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Scope3 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Scope3
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*  Scope 
-!*  () 
+!*  Scope
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,10 +39,10 @@
     COMPLEX(8) :: A(3:6) = (-1.0_8, 1.0_8), B(4)=(1.0_8, -1.0_8)
   END MODULE
 
-  PROGRAM Scope 
+  PROGRAM Scope
   USE M
   IMPLICIT NONE
- 
+
   ASSOCIATE ( A => B )
     IF ( ANY(LBOUND(A) .NE. (/1/) ) )          STOP 11
     IF ( ANY(SHAPE(A)  .NE. (/4/) ) )          STOP 12
@@ -58,7 +52,7 @@
     IF ( ANY(LBOUND(A) .NE. (/1/) ) )          STOP 41
     IF ( ANY(SHAPE(A)  .NE. (/4/) ) )          STOP 42
     IF ( ANY(A         .NE. (2.0_8,-2.0_8) ) ) STOP 43
- 
+
   END ASSOCIATE
 
   IF ( ANY(LBOUND(A) .NE. (/3/) ) )          STOP 51
@@ -68,5 +62,5 @@
   IF ( ANY(LBOUND(B) .NE. (/1/) ) )          STOP 61
   IF ( ANY(SHAPE(B)  .NE. (/4/) ) )          STOP 62
   IF ( ANY(B         .NE. (2.0_8,-2.0_8) ) ) STOP 63
-  
+
   END

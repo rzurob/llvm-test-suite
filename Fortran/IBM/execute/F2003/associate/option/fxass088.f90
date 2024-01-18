@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90 -qrealsize=8
 ! %GROUP: fxass088.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass088.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -54,8 +42,8 @@
 !*
 !*  CONDITIONS TESTED          : Listed below.
 !*
-!*  DESCRIPTION                : Test: ASSOCIATE with expressions 
-!*                                     with real data type and using 
+!*  DESCRIPTION                : Test: ASSOCIATE with expressions
+!*                                     with real data type and using
 !*                                     different -qrealsize options.
 !* ===================================================================
 !*
@@ -78,7 +66,7 @@
 
       real a8 / 9.0 /
       real b8 / 2.09 /
-      
+
       real a16 / 9.9 /
       real b16 / 2.0 /
       real c16
@@ -117,7 +105,7 @@
 
 !-----------   ASSOCIATE with REAL*16 expressions ----------------
 
-      c16 = (a16 + b16)*10.0 + 1.0   
+      c16 = (a16 + b16)*10.0 + 1.0
 
       associate ( arg16 => (a16 + b16)*10.0 + 1.0 )
          if (.not.precision_r8(arg16,c16)) then

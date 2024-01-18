@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecIntrinsic3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 17, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  The basic syatax 
-!*  intrinsic-type-spec -- diagnostic 
+!*  The basic syatax
+!*  intrinsic-type-spec -- diagnostic
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -40,15 +33,15 @@
   INTEGER, PARAMETER :: LEN  = 1
 
   !these are fine
-  INTEGER(KIND=KIND)  :: I2 
+  INTEGER(KIND=KIND)  :: I2
   CHARACTER(LEN=LEN)  :: C
 
 
   INTEGER(LEN=4)  :: I1
- 
-  LOGICAL(LEN=1)  :: L1 
- 
-  REAL(LEN=1)     :: R4 
+
+  LOGICAL(LEN=1)  :: L1
+
+  REAL(LEN=1)     :: R4
 
   COMPLEX(LEN=1)  :: Z4
 

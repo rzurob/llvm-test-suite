@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh fxieee40 
+! %PRECMD: $TR_SRC/fxieee.presh fxieee40
 ! %COMPOPTS: -qflttrap -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,21 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Marcus Yu
 !*  DATE                       : February 5, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SET_HALTING_MODE
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qflttrap
 !*
 !*  KEYWORD(S)                 :
@@ -34,13 +25,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Test set_halting_mode to false for real*8
-!*                               
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 	     program fxieee40
 
          use ieee_exceptions
-  
+
   		 real*8 :: xr_8, yr_8, zr_8, r8, tmp_8
 	     type(ieee_status_type) :: status_value
 
@@ -67,7 +57,7 @@
 	    ! print *, "The program will not halt on IEEE_OVERFLOW!"
          zr_8 = 2.0_8 * xr_8
 		 tmp_8 = zr_8
-		 
+
 		 xr_8 = tiny(PINF_8)
 	     call ieee_set_halting_mode(IEEE_UNDERFLOW, .false.)
 	    ! print *, "The program will not halt on IEEE_OVERFLOW!"
@@ -80,7 +70,7 @@
 		 ! print *, "The program will not halt on IEEE_INEXACT!"
         zr_8 = xr_8 / yr_8
 		tmp_8 = zr_8
-        
+
 ! restore the original falgs.
         call ieee_set_status(status_value)
 

@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        array polymorphic derived type variable
@@ -59,7 +48,7 @@ use m
    class(base), pointer      :: b2(:,:)
    class(child), allocatable :: c1
    class(child), pointer     :: c2
-   
+
    dimension :: c1(:)
    dimension :: c2(:,:)
 
@@ -103,7 +92,7 @@ use m, only: base, child
    character(20) :: fmt
 
    write ( unit, * ) 'iotype:', iotype
-   
+
    select type ( dtv )
       type is (base)
          write ( unit, * ) ' empty v_list'

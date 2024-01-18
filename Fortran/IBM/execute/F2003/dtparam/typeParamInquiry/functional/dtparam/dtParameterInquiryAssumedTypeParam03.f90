@@ -1,31 +1,23 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryAssumedTypeParam03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryAssumedTypeParam03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 17 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. ACTUAL ARGUMENT IS ALLOCATABLE AND POINTER
-!* 4. USE MODULE PROCEDURE 
-!* 5. DEFECT 353958 353191  
+!* 4. USE MODULE PROCEDURE
+!* 5. DEFECT 353958 353191
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type mytype(k1,k2,l1,l2)
@@ -33,7 +25,7 @@ module m
       integer(4),kind :: k2
       integer(2),len  :: l1
       integer(4),len  :: l2
-      
+
       integer(k1) :: i1(l1:l2)
       integer(k2) :: i2(l2:l1)
    end type
@@ -45,10 +37,10 @@ module m
       type(mytype(k1=4,k2=8,l1=b%l1,l2=b%l2))  :: getMytype
       getMytype = b
    end function
-   
+
 end module
 
-  program dtParameterInquiryAssumedTypeParam03 
+  program dtParameterInquiryAssumedTypeParam03
   use m
   implicit none
 
@@ -98,7 +90,7 @@ end module
   if(t3%l1%kind /= kind(t3%l1) .or. t3%l1%kind /= 2)        error stop 36_4
   if(t3%l2%kind /= kind(t3%l2) .or. t3%l2%kind /= 4)        error stop 37_4
   if(lbound(t3%i1,1) /=t3%l1 .or. ubound(t3%i1,1) /=t3%l2)  error stop 38_4
-  if(lbound(t3%i2,1) /=1 .or. ubound(t3%i2,1) /=0)          error stop 39_4   
+  if(lbound(t3%i2,1) /=1 .or. ubound(t3%i2,1) /=0)          error stop 39_4
 
 
   allocate(t4,source=getMytype(t3))

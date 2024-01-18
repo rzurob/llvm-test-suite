@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcAssign.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcAssign.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 01, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  A generic interface block specifies a generic interface for each of the
-!*  procedures in the interface block. The PROCEDURE statement lists procedure 
+!*  procedures in the interface block. The PROCEDURE statement lists procedure
 !*  pointers, external procedures, du mmy procedures, or module procedures
 !*  that have this generic interface. A generic interface is always explicit.
-!*  -- Defined assignment 
+!*  -- Defined assignment
 !*  (316834)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,7 +35,7 @@
   TYPE :: DT
     INTEGER :: ID
   END TYPE
- 
+
   TYPE, EXTENDS(DT) :: DT1
   END TYPE
 
@@ -56,51 +49,51 @@
 
   MODULE M1
   USE M
- 
-  INTERFACE ASSIGNMENT(=) 
+
+  INTERFACE ASSIGNMENT(=)
     PROCEDURE ModSub
-  END INTERFACE  
+  END INTERFACE
 
   CONTAINS
 
   SUBROUTINE ModSub(Arg1, Arg2)
-  TYPE(DT), INTENT(INOUT) :: Arg1 
-  TYPE(DT), INTENT(IN)    :: Arg2 
-    Arg1%ID = Arg2%ID 
-  END SUBROUTINE 
+  TYPE(DT), INTENT(INOUT) :: Arg1
+  TYPE(DT), INTENT(IN)    :: Arg2
+    Arg1%ID = Arg2%ID
+  END SUBROUTINE
 
   SUBROUTINE ModSub1(Arg1, Arg2)
-  TYPE(DT1), INTENT(INOUT) :: Arg1 
-  TYPE(DT1), INTENT(IN)    :: Arg2 
-    Arg1 = Arg2 
-  END SUBROUTINE 
+  TYPE(DT1), INTENT(INOUT) :: Arg1
+  TYPE(DT1), INTENT(IN)    :: Arg2
+    Arg1 = Arg2
+  END SUBROUTINE
 
   SUBROUTINE ModSub2(Arg1, Arg2)
-  TYPE(DT2), INTENT(INOUT) :: Arg1 
-  TYPE(DT2), INTENT(IN)    :: Arg2 
-    Arg1 = Arg2 
-  END SUBROUTINE 
+  TYPE(DT2), INTENT(INOUT) :: Arg1
+  TYPE(DT2), INTENT(IN)    :: Arg2
+    Arg1 = Arg2
+  END SUBROUTINE
 
   END MODULE
 
   SUBROUTINE ExtSub(Arg1, Arg2)
   USE M
-  TYPE(DT3), INTENT(INOUT) :: Arg1 
-  TYPE(DT3), INTENT(IN)    :: Arg2 
+  TYPE(DT3), INTENT(INOUT) :: Arg1
+  TYPE(DT3), INTENT(IN)    :: Arg2
     Arg1 = Arg2
-  END SUBROUTINE 
+  END SUBROUTINE
 
 
-  PROGRAM mProcAssign 
+  PROGRAM mProcAssign
   USE M
   USE M1
 
-  INTERFACE ASSIGNMENT(=) 
+  INTERFACE ASSIGNMENT(=)
     SUBROUTINE ExtSub(Arg1, Arg2)
-      IMPORT 
-      TYPE(DT3), INTENT(INOUT) :: Arg1 
-      TYPE(DT3), INTENT(IN)    :: Arg2 
-    END SUBROUTINE 
+      IMPORT
+      TYPE(DT3), INTENT(INOUT) :: Arg1
+      TYPE(DT3), INTENT(IN)    :: Arg2
+    END SUBROUTINE
   END INTERFACE
 
   INTERFACE ASSIGNMENT(=)
@@ -116,11 +109,11 @@
   PROCEDURE(ModSub2), POINTER  :: ProcPtr
 
   INTERFACE ASSIGNMENT(=)
-    PROCEDURE Proc 
+    PROCEDURE Proc
   END INTERFACE
 
   INTERFACE ASSIGNMENT(=)
-    PROCEDURE ProcPtr 
+    PROCEDURE ProcPtr
   END INTERFACE
 
   TYPE(DT) :: T=DT(-1)

@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar011l
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar011 by Robert Ma)
 !*  DATE                       : 2007-07-31 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with (non-) polymorphic zero sized derived type scalar object
@@ -63,7 +55,7 @@ program scalar011l
    type(base(0))               :: b3 ! tcx: (0)
    type(base(:)), pointer      :: b4 ! tcx: (:)
    type(base(:)), allocatable  :: b5    ! tcx: (:)
-   
+
    namelist /nml/ b1, b2
    namelist /nml/ b3, b4, b5
 

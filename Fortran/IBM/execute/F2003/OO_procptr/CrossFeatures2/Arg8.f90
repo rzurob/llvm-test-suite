@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg8.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg8.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg8.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg8.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!* Argument association - intent 
+!*
+!* Argument association - intent
 !* ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -52,13 +46,13 @@
 
     CONTAINS
 
-    PURE FUNCTION ModFun(Arg) 
+    PURE FUNCTION ModFun(Arg)
     TYPE(DT), INTENT(IN) :: Arg
     TYPE(DT)             ::  ModFun
       ModFun=Arg
     END FUNCTION
 
-    PURE FUNCTION IFun(Arg) 
+    PURE FUNCTION IFun(Arg)
     TYPE(DT), INTENT(IN) :: Arg
     TYPE(DT)             :: IFun
       IFun=Arg
@@ -71,7 +65,7 @@
   IMPLICIT NONE
   PROCEDURE(IFun), POINTER :: ProcPtr
 
-  ProcPtr => Modfun 
+  ProcPtr => Modfun
   CALL ModSub1(ProcPtr, Modfun)
   CALL ModSub2(ProcPtr, ModFun)
   CALL ModSub3(ProcPtr, ModFun)
@@ -82,9 +76,9 @@
     SUBROUTINE ModSub1(ProcPtr, Proc)
     PROCEDURE(IFun), POINTER, INTENT(IN) :: ProcPtr
     PROCEDURE(IFun)                      :: Proc
-    TYPE(DT)                             :: V 
-      IF (.NOT. ASSOCIATED(ProcPtr, ModFun)) STOP 11 
-      V = ProcPtr(DT("1"))   
+    TYPE(DT)                             :: V
+      IF (.NOT. ASSOCIATED(ProcPtr, ModFun)) STOP 11
+      V = ProcPtr(DT("1"))
       IF ( V%C .NE. "1" ) STOP 12
     END SUBROUTINE
 
@@ -92,11 +86,11 @@
     IMPLICIT TYPE(DT) (P)
     PROCEDURE(TYPE(DT)), POINTER, INTENT(INOUT) :: ProcPtr
     PROCEDURE()                                 :: Proc
-    TYPE(DT)                                    :: V 
+    TYPE(DT)                                    :: V
       V=Proc(DT("2"))
       ProcPtr => Proc
-      IF (.NOT. ASSOCIATED(ProcPtr, ModFun)) STOP 21 
-      V = ProcPtr(DT("1"))   
+      IF (.NOT. ASSOCIATED(ProcPtr, ModFun)) STOP 21
+      V = ProcPtr(DT("1"))
       IF ( V%C .NE. "1" ) STOP 22
     END SUBROUTINE
 
@@ -104,10 +98,10 @@
     IMPLICIT TYPE(DT) (P)
     PROCEDURE(), POINTER, INTENT(OUT) :: ProcPtr
     PROCEDURE(TYPE(DT))               :: Proc
-    TYPE(DT)                          :: V 
+    TYPE(DT)                          :: V
       ProcPtr => Proc
-      IF (.NOT. ASSOCIATED(ProcPtr, ModFun)) STOP 31 
-      V = ProcPtr(DT("1"))   
+      IF (.NOT. ASSOCIATED(ProcPtr, ModFun)) STOP 31
+      V = ProcPtr(DT("1"))
       IF ( V%C .NE. "1" ) STOP 32
     END SUBROUTINE
 

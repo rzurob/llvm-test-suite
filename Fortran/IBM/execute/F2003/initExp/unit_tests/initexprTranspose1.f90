@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Initialization expression
 !*
-!* PROGRAMMER                 : Kelvin Li
 !* DATE                       : March 31, 2006
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : TRANSPOSE intrinsic
 !*
@@ -31,7 +26,6 @@ integer(4), parameter, dimension(2,2) :: C=reshape( &
 integer(8), parameter, dimension(7,1) :: D=reshape( &
  & (/664313279, 394649677, 614318288, 1318726915, 451536740, 969358293, 1261183769/), &
  & (/7,1/))
-
 
 integer(1), dimension(4,3) :: res1=transpose(a)
 integer(2), dimension(2,11) :: res2=transpose(B)

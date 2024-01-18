@@ -1,21 +1,18 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f020.scenario
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2015-08-31
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*  ADAPTED FROM               : hpf_forall/construct/fxfc034b.scenario
 !*
 !*  DESCRIPTION
 !*
-!*    Test the DO CONCURRENT construct nested inside other loop structures 
+!*    Test the DO CONCURRENT construct nested inside other loop structures
 !*    and vice versa
 !*
 !* =============================================================================
@@ -24,7 +21,7 @@
 PROGRAM fxfc034b
 
    INTEGER CASENUM,in1,in2,in3
-   
+
    integer,parameter :: p1=-1,p2=3
 
    INTEGER i1(100)
@@ -65,43 +62,43 @@ PROGRAM fxfc034b
       SUBROUTINE sub1( array,n )
          INTEGER n,array(n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub2( array,n )
          INTEGER n,array(-10:n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub3( array,n )
          INTEGER n,array(n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub4( array,m,n )
          INTEGER m,n,array(m,n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub4b( array,m,n )
          INTEGER m,n,array(m,n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub5( array,m,n )
          INTEGER m,n,array(-5:m,-2:n)
       END SUBROUTINE
-   
+
       SUBROUTINE sub6( array,m,n )
          INTEGER m,n,array(-5:m,-2:n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub7( array,m,n )
          INTEGER m,n,array(m,n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub8( array,m,n )
          INTEGER m,n,array(m,n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub9( array,m,n )
          INTEGER m,n,array(m,n)
       END SUBROUTINE
-      
+
       SUBROUTINE sub10( array,m,n )
          INTEGER m,n,array(m,n)
          INTEGER in1,in2
@@ -249,7 +246,7 @@ PROGRAM fxfc034b
 
    CASENUM = 22
    PRINT *,"CASENUM=",CASENUM
-   i22 = 0 
+   i22 = 0
    in1 = -51
    in2 = 51
    in3 = 2
@@ -338,13 +335,13 @@ SUBROUTINE sub2( array,n )
       forall ( in2 = in1:in1 ) array(in2) = array(in1) + in2
    END DO
 END SUBROUTINE
-  
+
 
 !-------------------------------
 ! This subroutine accepts a one
 ! dimensional array and assigns
 ! values to it.
-! 
+!
 ! Test: FORALL-construct
 !
 !-------------------------------
@@ -358,7 +355,7 @@ SUBROUTINE sub3( array,n )
          array(in1-in2:in1-in2+1) = in1+in2
       END FORALL
    END DO
-END SUBROUTINE 
+END SUBROUTINE
 
 !-------------------------------
 ! This subroutine accepts a two
@@ -413,7 +410,7 @@ SUBROUTINE sub5( array,m,n )
      array(in1,in2) = in1+in2
    END DO
 
-   DO CONCURRENT ( integer::in1 = -5:m, in2 = -2:n, array(in1,in2) .GT. 0 ) 
+   DO CONCURRENT ( integer::in1 = -5:m, in2 = -2:n, array(in1,in2) .GT. 0 )
       array(in1,in2) = -99
    END DO
 END SUBROUTINE
@@ -454,7 +451,7 @@ SUBROUTINE sub7( array,m,n )
    INTEGER in1,in2
 
    DO CONCURRENT( integer::in1 = 1:m )
-      DO in2 = 1,n 
+      DO in2 = 1,n
         array(in1,in2) = in1 + in2
       END DO
       DO CONCURRENT ( integer*4::in2 = 1:n,in1 .EQ. in2)
@@ -477,8 +474,8 @@ SUBROUTINE sub8( array,m,n )
    INTEGER m,n,array(m,n)
    INTEGER in1,in2
 
-   DO in1 = 1,m 
-      DO CONCURRENT ( integer ::in2 = 3:n:3 ) 
+   DO in1 = 1,m
+      DO CONCURRENT ( integer ::in2 = 3:n:3 )
          array(in1,in2-2:in2) = (/ in1,in2,in1+in2 /)
       END DO
    END DO

@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FunctionResult10.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : March 25, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Function result
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +28,8 @@ MODULE Mod
       INTERFACE foo
         FUNCTION foo(Arg)
           IMPORT Base
-          CLASS(Base(4,*)) :: Arg   
-          TYPE(Base(4,Arg%l1)) :: Obj, foo 
+          CLASS(Base(4,*)) :: Arg
+          TYPE(Base(4,Arg%l1)) :: Obj, foo
         END FUNCTION
       END INTERFACE
 
@@ -48,14 +40,14 @@ PROGRAM FunctionResult10
       TYPE(Base(4,5)) :: b1, b2 = Base(4,5)("Bohr")
       CLASS(Base(4,:)), POINTER :: ptr
 
-      print *, foo(b1)         
+      print *, foo(b1)
 
-      print *, foo(b2)         
+      print *, foo(b2)
 
       call ASSOCIATE_replacer ( a = foo(Base(4,6)("Henrik")) )
-      ALLOCATE ( ptr, SOURCE = Base(4,11) ("Schrodinger") ) 
+      ALLOCATE ( ptr, SOURCE = Base(4,11) ("Schrodinger") )
 
-      print *, foo(ptr)         
+      print *, foo(ptr)
 
       contains
 
@@ -67,9 +59,9 @@ PROGRAM FunctionResult10
 
 END PROGRAM FunctionResult10
 FUNCTION foo(Arg)
-  USE Mod, ONLY: Base 
+  USE Mod, ONLY: Base
   CLASS(Base(4,*)) :: Arg
-  TYPE(Base(4,Arg%l1)) :: Obj, foo 
-    Obj = Arg             
-    foo = Obj 
+  TYPE(Base(4,Arg%l1)) :: Obj, foo
+    Obj = Arg
+    foo = Obj
 END FUNCTION

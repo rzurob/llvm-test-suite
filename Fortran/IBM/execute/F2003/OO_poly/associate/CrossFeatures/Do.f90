@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  Do.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Do 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Do
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,11 +31,11 @@
 !*
 !*  DESCRIPTION
 !*    The Do stmt
-!*    (ICE-301000) 
+!*    (ICE-301000)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   MODULE M
     TYPE :: DT
       INTEGER   :: Id = 1
@@ -56,32 +50,32 @@
   CONTAINS
 
     ELEMENTAL FUNCTION GetId(Arg)
-    IMPLICIT CLASS(DT)(A) 
+    IMPLICIT CLASS(DT)(A)
     INTENT(IN) :: Arg
     INTEGER    :: GetId
       GetId = Arg%Id
     END FUNCTION
 
     ELEMENTAL FUNCTION GetC(Arg)
-    IMPLICIT CLASS(DT)(A) 
+    IMPLICIT CLASS(DT)(A)
     INTENT(IN) :: Arg
     CHARACTER  :: GetC
       GetC = Arg%C
     END FUNCTION
 
     ELEMENTAL FUNCTION GetL(Arg)
-    IMPLICIT CLASS(DT)(A) 
+    IMPLICIT CLASS(DT)(A)
     INTENT(IN) :: Arg
     LOGICAL    :: GetL
       GetL = Arg%L
     END FUNCTION
 
   END MODULE
- 
-  PROGRAM Do 
+
+  PROGRAM Do
 
   USE M
-  IMPLICIT TYPE(DT)(A) 
+  IMPLICIT TYPE(DT)(A)
   DIMENSION :: Arr(2:130)
   LOGICAL(8) :: LArr(2:130)
   INTEGER :: i
@@ -91,7 +85,7 @@
   ASSOCIATE ( As => As%ID )
   ASSOCIATE ( As1 => Arr(2)%ID, As2 => As(129) )
     DO As1=2, As2
-      Arr(As1)%L = .TRUE. 
+      Arr(As1)%L = .TRUE.
     END DO
   END ASSOCIATE
   END ASSOCIATE
@@ -104,7 +98,7 @@
   ASSOCIATE ( As => As%ID )
   ASSOCIATE ( As1 => Arr(2)%ID, As2 => As(129) )
     DO As1=2, As2
-      Arr(As1)%L = .TRUE. 
+      Arr(As1)%L = .TRUE.
     END DO
   END ASSOCIATE
   END ASSOCIATE
@@ -118,7 +112,7 @@
   ASSOCIATE ( As => As%ID )
   ASSOCIATE ( As1 => As(129), As2 => 130 )
     DO As1=2, As2
-      Arr(As1)%C = CHAR(As1) 
+      Arr(As1)%C = CHAR(As1)
     END DO
   END ASSOCIATE
   END ASSOCIATE

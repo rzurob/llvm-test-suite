@@ -1,13 +1,8 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/runf.sh fxbind_c03opb 
+! %PRECMD: $TR_SRC/runf.sh fxbind_c03opb
 ! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -18,22 +13,14 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c03opb.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
-!*                             
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -41,10 +28,10 @@
 !*   - FORTRAN code only , the interoperable function is implemented
 !*     in Fortran and called in Fortran.
 !*   - External procedure ( Fun/Entry), the interfaces is implicit.
-!*   - Primary entry point have bind(c) attribute while 
+!*   - Primary entry point have bind(c) attribute while
 !*     an alternate entry point do not have bind(c) attribute.
 !*   - Datatype :real
-!*   
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*
@@ -84,14 +71,14 @@ FUNCTION eval3 ( x, result ) BIND(C) ! Global-Scope function with bind(c)
   REAL, SAVE :: a, b, c, d
 
   ! Calculate result
-  result = a + b**x + c*x**2 + d*x**3 
+  result = a + b**x + c*x**2 + d*x**3
 
   RETURN
 
   ! Entry INITL specifies the values of a, b, c, and d
   ! to be used when evaluating the polynomial.
 
-  ENTRY initl(a1, b1, c1, d1)  !Global-Scope function-entry 
+  ENTRY initl(a1, b1, c1, d1)  !Global-Scope function-entry
   a = a1
   b = b1
   c = c1

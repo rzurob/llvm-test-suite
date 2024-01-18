@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: interface block
 !*                                        poly abstract type return, interface of an external procedure
@@ -68,14 +52,14 @@ end module
 
 program interface004
    use m
-   
+
    class(base), pointer :: b1
-   type(child) :: c1 = child(5) 
+   type(child) :: c1 = child(5)
    procedure(itf) :: getbase
-   
+
    b1 => getbase(c1)
    if(b1%id .ne. 5) error stop 1_4
-   
+
 end program
 
 class(base) function getbase(a)

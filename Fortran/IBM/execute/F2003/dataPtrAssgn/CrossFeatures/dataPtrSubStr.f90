@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrSubStr.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrSubStr.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 15, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  substring 
+!*  substring
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrSubStr 
+  PROGRAM dataPtrSubStr
   IMPLICIT NONE
   CHARACTER(513), TARGET  :: Arr(100, 100), Arr1(10000)
   CHARACTER               :: C
@@ -51,12 +43,12 @@
   CHARACTER(*), TARGET          :: Arr(N, N), Arr1(N*N)
   CHARACTER(LEN(Arr)), POINTER  :: Ptr(:, :)
   INTEGER                       :: I, J, N
-  
 
-  DO I =1, 100 
-  DO J =I, 100 
 
-    Ptr(I:, J:) => Arr(I:, J:)(1:LEN(Str)) 
+  DO I =1, 100
+  DO J =I, 100
+
+    Ptr(I:, J:) => Arr(I:, J:)(1:LEN(Str))
     IF (.NOT. ASSOCIATED(Ptr, Arr(I:, J:) ))    STOP 11
     IF (ANY( LBOUND(Ptr) .NE. (/I , J/)))       STOP 12
     IF (ANY( UBOUND(Ptr) .NE. (/N,  N/)))       STOP 13

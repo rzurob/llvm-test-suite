@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try output item function return of some transformational intrinsic functions
@@ -58,7 +42,7 @@ module m1
 end module
 
 program funcRetrn002a
-   use m1   
+   use m1
 
    interface write(unformatted)
       subroutine writeUnformatted (dtv, unit, iostat, iomsg)
@@ -67,17 +51,17 @@ program funcRetrn002a
          integer,  intent(in) :: unit
          integer,  intent(out) :: iostat
          character(*),  intent(inout) :: iomsg
-      end subroutine   
+      end subroutine
    end interface
-     
+
    ! declaration of variables
    integer :: stat
    character(200) :: msg
    character(16)   :: c1, c2
    logical :: mergemask(2,2) = reshape( source = (/ .true. , .false. , .true. , .false. /), shape = (/2,2/) )
-   
+
    open (unit = 1, file ='funcRetrn002a.data', form='unformatted', access='sequential')
-   
+
    ! unformatted I/O operations
 
    write (1, iostat=stat, iomsg=msg )             transpose(reshape( source = (/ base('ABC'), &
@@ -85,16 +69,16 @@ program funcRetrn002a
    write (1, iostat=stat, iomsg=msg )             spread ( (/ base('123') , base('456') /), dim=1, ncopies=2 ) !<- writes '123123456456' to file
 
    rewind 1
-   
+
    read (1, iostat=stat, iomsg=msg )              c1
    read (1, iostat=stat, iomsg=msg )              c2
 
-   
+
    ! check if the values are set correctly
 
    if ( c1 /= 'ABCZGHIZDEFZJKLZ' )                  error stop 4_4
    if ( c2 /= '123Z123Z456Z456Z' )                  error stop 5_4
-  
+
 end program
 
 subroutine writeUnformatted (dtv, unit, iostat, iomsg)
@@ -106,5 +90,5 @@ use m1
 
     write (unit, iostat=iostat, iomsg=iomsg ) dtv%c
     write (unit, iostat=iostat, iomsg=iomsg ) 'Z'   !<- write 'Z' at the end of record so we know DTIO is called
-    
+
 end subroutine

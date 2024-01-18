@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : array001all
 !*
-!*  PROGRAMMER                 : David Forster (derived from array001a by Robert Ma)
 !*  DATE                       : 2007-09-13 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try input item to be polymorphic arrays with array section
@@ -100,7 +92,7 @@ program array001all
    open (unit = 1, file ='array001all.data', form='unformatted', access='stream')
 
    ! unformatted I/O operations
-   
+
    write (1, iostat=stat, iomsg=msg, pos=31 )             'ghiGHIdefDEFjklJKLabcABC'
    write (1, iostat=stat, iomsg=msg, pos=19 )             'ABCabcDEFdef'
    write (1, iostat=stat, iomsg=msg, pos=13 )             'stuSTU'
@@ -120,7 +112,7 @@ program array001all
       msg = ''
 
    ! check if the values are set correctly
-   
+
    if ( ( b1(1)%c /= 'abc' ) .or. ( b1(1)%getC() /= 'ABC' ) .or.            &       !<- getC() invokes getcc()
         ( b1(2)%c /= 'def' ) .or. ( b1(2)%getC() /= 'DEF' ) .or.            &
         ( b1(3)%c /= 'ghi' ) .or. ( b1(3)%getC() /= 'GHI' ) .or.            &

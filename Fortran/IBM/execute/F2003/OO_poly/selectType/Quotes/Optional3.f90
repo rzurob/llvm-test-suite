@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: Optional3.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Optional3 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Optional3
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  The associating entity's optional attribute. 
-!*  dummy array section 
+!*
+!*  The associating entity's optional attribute.
+!*  dummy array section
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -49,7 +43,7 @@
     TYPE :: DT
       INTEGER :: Id = 1
       CONTAINS
-      PROCEDURE, PASS   :: GetId 
+      PROCEDURE, PASS   :: GetId
     END TYPE
 
   CONTAINS
@@ -62,7 +56,7 @@
   END MODULE
 
 
-  PROGRAM Optional3 
+  PROGRAM Optional3
   USE M
   IMPLICIT NONE
 
@@ -78,12 +72,12 @@
   CLASS(*), TARGET, OPTIONAL  :: Arg(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2)
   INTEGER :: S(2)=(/1,2/)
 
-    IF ( .NOT. PRESENT(Arg)) RETURN 
- 
-    SELECT TYPE (U => Arg(1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2))
-    CLASS DEFAULT 
+    IF ( .NOT. PRESENT(Arg)) RETURN
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))        STOP 30 
+    SELECT TYPE (U => Arg(1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2,1:2))
+    CLASS DEFAULT
+
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))        STOP 30
       IF ( SIZE(U)          .NE. 2**18 )      STOP 31
       IF ( ANY (LBOUND(U)   .NE. (/1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/) ) ) STOP 32
       IF ( ANY (UBOUND(U)   .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/) ) ) STOP 33
@@ -94,9 +88,9 @@
       SELECT TYPE (U => W )
 
       TYPE IS (DT)
-        DTVPtr => DTV 
-        IF ( ANY(U%Id      .NE. DTVPtr%Id ) )      STOP 42 
-        IF ( ANY(U%GetId() .NE. DTVPtr%GetId()))   STOP 43 
+        DTVPtr => DTV
+        IF ( ANY(U%Id      .NE. DTVPtr%Id ) )      STOP 42
+        IF ( ANY(U%GetId() .NE. DTVPtr%GetId()))   STOP 43
 
       CLASS DEFAULT
         STOP 51
@@ -104,7 +98,7 @@
 
     END ASSOCIATE
     END SELECT
-  
+
   END SUBROUTINE
 
   END

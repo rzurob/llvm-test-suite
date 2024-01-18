@@ -5,41 +5,32 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgl021.f
 ! %VERIFY: fort.18:fxiomsgl021.vf
-! %STDIN: 
-! %STDOUT: 
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
- 
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : Negative reptition counter in FORMAT
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : WRITE  FORMAT
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 2
 !*
-!*  DESCRIPTION                : Negative reptition counter in FORMAT is not 
+!*  DESCRIPTION                : Negative reptition counter in FORMAT is not
 !*                               allowed in I/O statements. The WRITE statement
 !*                               with negative reptition was tested in a sub-
-!*                               routine which passes in a string as the iomsg 
+!*                               routine which passes in a string as the iomsg
 !*                               specifier.
-!*
 !*
 !*  TEST CONDITIONS            : 1) Negative repetition counter for I format cd
 !*                               2) Negative repetition counter for X format cd
@@ -51,47 +42,43 @@
 !*********************************************************************
 
       program fxiomsgl021
- 
+
       implicit none                     ! All variables must be Declared
- 
- 
+
       integer*4 case_id, ios            ! Test Case id under test.
- 
+
       integer*4 varint/100/
- 
+
       character*20 form
 
       character*300 errmsg
- 
+
 !
 ! Initialize Return Code routine to SUCCESS...
 !
- 
+
       case_id = 0
       call zzrc ( case_id )
- 
- 
+
 !
 ! TestCase 1...
 !
- 
+
       case_id = case_id + 1
- 
+
       form = '( -50  ( I5 ) )'
- 
+
       call print_msg( form, errmsg )
 
- 
 !
 ! TestCase 2...
 !
- 
-      case_id = case_id + 1
- 
-      form = '( -50 ( 5X ) )'
- 
-      call print_msg( form, errmsg )
 
+      case_id = case_id + 1
+
+      form = '( -50 ( 5X ) )'
+
+      call print_msg( form, errmsg )
 
    contains
 
@@ -102,7 +89,7 @@
          write(0, fmt = form_var, iostat = ios, iomsg=msg_var ) varint
 
          write(18,*) msg_var
-         
+
       end subroutine
- 
+
       end                            ! End of TestCase.

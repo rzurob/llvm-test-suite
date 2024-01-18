@@ -1,16 +1,8 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 20/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : assumed-shape array, VOLATILE
-!*
 !*
 !*  DESCRIPTION                : diagnostic TC for  C1232
 !*
@@ -20,18 +12,18 @@
 !*                dummy argument shall be an assumed-shape array.
 !* ===================================================================
 
-  program volatileC1232ArraySection04d 
+  program volatileC1232ArraySection04d
 
     interface
        subroutine arraySectionVolatile(x)
-           logical,VOLATILE:: x(51)          ! dummy argument is explicit 
-       end subroutine arraySectionVolatile   ! array 
+           logical,VOLATILE:: x(51)          ! dummy argument is explicit
+       end subroutine arraySectionVolatile   ! array
     end interface
 
           type base
             sequence
             logical b
-          end type base 
+          end type base
 
           type child1
             sequence
@@ -39,11 +31,11 @@
           end type
 
           type child2
-             sequence 
+             sequence
              type(child1) c2(100,100)
           end type
 
-          type(child2) y 
+          type(child2) y
 
           y%c2(50:100,10)%c1(123)%b = .true.
 

@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryIntrinsicAssum03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryIntrinsicAssum03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 10 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
 !* 3. DUMMY ARGUMENT HAS ASSUMED LENGTH
 !* 4. TEST FUNCTION RESULT
 !* 5. DEFECT 354846
@@ -30,7 +22,7 @@
 module m
 
      character(len=*),parameter :: c1="xlftest"
-     character(len=*),parameter :: c3(3)=["abc","def","ghi"] 
+     character(len=*),parameter :: c3(3)=["abc","def","ghi"]
 end module
 program typeParamInquiryIntrinsicAssum03
     use m
@@ -39,7 +31,7 @@ program typeParamInquiryIntrinsicAssum03
     character(:),allocatable :: c2
     character(:),pointer :: c4(:) =>null()
     character(:),pointer :: c5=>null()
-    
+
     allocate(c2,source=getchar1(c1))
     if(c2%len /= len(c2) .or. c2%len /= 14)            error stop 10_4
     if(c2 /= "xlftestxlftest")                         error stop 11_4
@@ -57,9 +49,9 @@ program typeParamInquiryIntrinsicAssum03
 
     deallocate(c2)
     allocate(c2,source=getchar3(c1(1:3),c1(4:)))
-    if(c2%len /= len(c2) .or. c2%len /= 7)             error stop 17_4 
+    if(c2%len /= len(c2) .or. c2%len /= 7)             error stop 17_4
     if(c2 /= "xlftest")                                error stop 18_4
-    
+
     deallocate(c4)
     c4=>getchar4(c3,['123','456','789'])
     if(c4%len /= len(c4) .or. c4%len /= 6)             error stop 19_4
@@ -88,8 +80,8 @@ program typeParamInquiryIntrinsicAssum03
 
     function getchar1(ch)
        character(*),intent(in) :: ch
-       character(ch%len+len(ch)) :: getchar1   
-       getchar1=ch//ch 
+       character(ch%len+len(ch)) :: getchar1
+       getchar1=ch//ch
     end function
 
     function getchar2(ch)
@@ -103,7 +95,7 @@ program typeParamInquiryIntrinsicAssum03
        character(*),intent(in) :: ch1,ch2
        character(:),pointer :: getchar3
        allocate(getchar3,source=ch1//ch2)
-       
+
     end function
 
     function getchar4(ch1,ch2)

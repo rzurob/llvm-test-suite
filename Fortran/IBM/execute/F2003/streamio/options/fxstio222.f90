@@ -1,29 +1,23 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fort.* 
+! %PRECMD: rm -f fort.*
 ! %COMPOPTS: -qalign=struct=port
-! %GROUP: fxstio222.f 
+! %GROUP: fxstio222.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio222.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 31, 2003
 !*
-!*  Primary Function Tested    : -qalign=struct=port option 
+!*  Primary Function Tested    : -qalign=struct=port option
 !*
-!*  Description                : Test stream I/O with port aligned 
+!*  Description                : Test stream I/O with port aligned
 !*                               Record-structure
 !*
 !=======================================================================
@@ -44,7 +38,7 @@
     character chara(3)
     byte      bta(3)
     logical   loga(3)
-  end structure 
+  end structure
 
   structure /dt3/
     integer   inta2(2,2)
@@ -52,20 +46,20 @@
     complex   compa2(2,2)
     character chara2(2,2)
     byte      bta2(2,2)
-    logical   loga2(2,2)  
-  end structure 
+    logical   loga2(2,2)
+  end structure
 
   record/dt1/ a1, b1
   record/dt2/ a2, b2
   record/dt3/ a3, b3
-  
+
   a1 = dt1(100, 1.0, (1.0, 2.0), "abc", &
     "A", .true.)
 
   a2 = dt2((/1, 0, -10/), (/100.0, 0.0, -1.0/),  &
     (/(20.0e1, 30.0e1), (0.0e0, 0.0e0), (-21.0e0, -31.0e0)/), &
     (/"A", " ", "m"/), (/"b", "1", "."/),  &
-    (/.false.,  .true., .false./))        
+    (/.false.,  .true., .false./))
 
   a3 = dt3(reshape((/a2%inta(1), a2%inta(2),a2%inta(3), a1%int/), &
     (/2,2/)), reshape((/a2%ra(1), a2%ra(2), a2%ra(3), a1%r/), &
@@ -84,7 +78,7 @@
   write (1, iostat=ios, err=200) a1
   write (2, iostat=ios, err=200) a2
   write (3, iostat=ios, err=200) a3
- 
+
 !* Test dt1
   rewind(1, iostat=ios, err=500)
   read (1,iostat=ios, err=400) b1
@@ -102,7 +96,7 @@
   rewind(2, iostat=ios, err=500)
   read(2, iostat=ios, err=400) b2
   caseid =20
-  
+
   do i = 1, 3
      if(a2%inta(i) .ne. b2%inta(i))          call zzrc(i*caseid+1)
      if(a2%ra(i) .ne. b2%ra(i))              call zzrc(i*caseid+2)

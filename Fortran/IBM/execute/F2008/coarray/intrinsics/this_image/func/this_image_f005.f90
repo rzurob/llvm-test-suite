@@ -1,23 +1,16 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : this_image_f003.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : July 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This_image(caf, n) should produce a value that 
+!*  DESCRIPTION                : This_image(caf, n) should produce a value that
 !*				 matches the nth element from this_image(caf).
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -46,8 +39,8 @@ program main
 		end if
 	end do
 	deallocate(arr)
-	
-	
+
+
 !##### corank=2
 	allocate(arr(2))
 	arr = this_image(caf2)
@@ -62,7 +55,7 @@ program main
 	end do
 	deallocate(arr)
 
-	
+
 !##### corank=3
 	allocate(arr(5))
 	arr = this_image(caf3)

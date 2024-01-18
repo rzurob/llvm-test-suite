@@ -1,20 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingRewind04d - REWIND Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 29, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unformatted READ() Pending Data Transfers
 !*                               with an end-of-file Condition
 !*  SECONDARY FUNCTIONS TESTED : REWIND Statement; neither the ERR= nor
 !*                               IOSTAT= Specifiers are *NOT* present
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : READ(), REWIND, ERR= Specifier, IOSTAT=
@@ -40,7 +33,6 @@
 !*  raised during the wait operation, the actions are in accordance with the
 !*  specifiers of the statement that performs the wait operation.
 !*
-!*
 !*  9.7 File positioning statements
 !*
 !*  R925 rewind-stmt     is  REWIND file-unit-number
@@ -54,7 +46,6 @@
 !*  Execution of a file positioning statement performs a wait operation
 !*  for all pending asynchronous data transfer operations for the
 !*  specified unit.
-!*
 !*
 !*  9.7.3 REWIND statement
 !*

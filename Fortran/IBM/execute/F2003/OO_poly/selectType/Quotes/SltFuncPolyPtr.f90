@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltFuncPolyPtr.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltFuncPolyPtr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is a poly func call returning a pointer entity.
 !*    ()
 !*
@@ -46,7 +40,7 @@
   MODULE M
 
     TYPE  :: Zero
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -97,69 +91,69 @@
   INTERFACE
     FUNCTION Func(Arg)
       CLASS(*) :: Arg
-      CLASS(*), POINTER :: Func 
-    END FUNCTION 
+      CLASS(*), POINTER :: Func
+    END FUNCTION
   END INTERFACE
 
 
   SELECT TYPE ( As => Func(Zero()))
-    CLASS IS (Zero) 
-      STOP 20   
+    CLASS IS (Zero)
+      STOP 20
     TYPE is (CHARACTER(*))
-      STOP 21 
+      STOP 21
     TYPE is (Base)
-      IF ( As%GetId() .NE. 1 ) STOP 22 
+      IF ( As%GetId() .NE. 1 ) STOP 22
       IF ( As%BaseId  .NE. 1 ) STOP 23
-    CLASS DEFAULT 
-      STOP 24 
+    CLASS DEFAULT
+      STOP 24
   END SELECT
 
   SELECT TYPE ( As => Func(Func(Func(Zero()))))
     CLASS DEFAULT
-      STOP 30   
+      STOP 30
     TYPE is (CHARACTER(*))
-      STOP 31 
+      STOP 31
     TYPE is (Base)
       STOP 32
     TYPE is (REAL)
-      STOP 33 
+      STOP 33
     CLASS IS (Child)
-      IF ( As%Base%GetId() .NE. 1 ) STOP 34 
+      IF ( As%Base%GetId() .NE. 1 ) STOP 34
       IF ( As%GetId()      .NE. 2 ) STOP 35
       IF ( As%BaseId       .NE. 1 ) STOP 36
       IF ( As%ChildId      .NE. 2 ) STOP 37
     CLASS IS (Zero)
-      STOP 38 
+      STOP 38
   END SELECT
 
   SELECT TYPE ( As => Func(123))
     CLASS DEFAULT
-      STOP 40   
+      STOP 40
     TYPE is (CHARACTER(*))
       IF (As .NE. "UNKNOWN!" ) STOP  41
     TYPE is (Base)
       STOP 42
-    CLASS IS (Base) 
-      STOP 43 
+    CLASS IS (Base)
+      STOP 43
   END SELECT
 
 
 
-  END  
- 
+  END
+
   FUNCTION Func(Arg)
   USE M
   CLASS(*) :: Arg
-  CLASS(*), POINTER :: Func 
- 
+  CLASS(*), POINTER :: Func
+
   SELECT TYPE (Arg)
     CLASS IS (Zero)
       ALLOCATE(Func, SOURCE=Base())
     CLASS IS (Base)
       ALLOCATE(Func, SOURCE=Child(Base=Arg))
     CLASS IS (Child)
-      ALLOCATE(Func, SOURCE=Arg) 
+      ALLOCATE(Func, SOURCE=Arg)
     CLASS DEFAULT
       ALLOCATE(Func, SOURCE="UNKNOWN!")
   END SELECT
-  END FUNCTION 
+  END FUNCTION

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrHostDummy1.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrHostDummy1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrHostDummy1
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 16, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a host associate name 
-!*    Selector is a nonploy dummy array 
-!*    () 
+!*    The selector is a host associate name
+!*    Selector is a nonploy dummy array
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -48,7 +42,7 @@
 
     TYPE  :: Zero
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -103,7 +97,7 @@
 
   V(1::2) = (/(Child(ChildID=-2, BaseID=-1), i=1, 3)/)
   V(2::2) = (/(Child(ChildID= 0, BaseID= 0), i=1, 3)/)
- 
+
   CALL SWAP(V(1::2), V(2::2) )
 
   IF ( ANY(V(1::2)%BaseID  .NE. 0) ) STOP 20
@@ -115,13 +109,13 @@
 
   SUBROUTINE SWAP(Arr1, Arr2)
   TYPE(Child), INTENT(INOUT) :: Arr1(:), Arr2(:)
-  TYPE(Child)  :: Temp(3) 
- 
+  TYPE(Child)  :: Temp(3)
+
   ASSOCIATE ( As1 => Arr1, As2 => Arr2 )
     IF (ANY(SHAPE(As1) .NE. (/3/)))            STOP 32
 
     ASSOCIATE ( As => As1(:) )
-   
+
       IF (ANY(SHAPE(As) .NE. (/3/)))      STOP 33
       IF ( ANY(As%Base%GetId() .NE. -1) ) STOP 34
       IF ( ANY(As%GetId()      .NE. -2) ) STOP 35
@@ -139,7 +133,7 @@
     END ASSOCIATE
 
     ASSOCIATE ( As => As2(:) )
-   
+
       IF (ANY(SHAPE(As) .NE. (/3/)))     STOP 53
       IF ( ANY(As%Base%GetId() .NE. 0) ) STOP 54
       IF ( ANY(As%GetId()      .NE. 0) ) STOP 55
@@ -160,11 +154,11 @@
 
     Temp = Arr1
     Arr1 = Arr2
-    Arr2 = temp 
+    Arr2 = temp
 
   END SUBROUTINE
 
   END
-  
+
 
 

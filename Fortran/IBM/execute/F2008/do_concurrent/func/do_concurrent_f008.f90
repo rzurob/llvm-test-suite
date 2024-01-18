@@ -1,20 +1,17 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f008.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon 
 !*  DATE                       : 2015-05-14
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*
-!*  DESCRIPTION                : - Various kinds of real, complex, double, 
-!*                                 logical and character arrays and scalars in 
-!*                                 DO CONCURRENT loops including nested DO 
+!*  DESCRIPTION                : - Various kinds of real, complex, double,
+!*                                 logical and character arrays and scalars in
+!*                                 DO CONCURRENT loops including nested DO
 !*                                 CONCURRENT loops
-!*                               - scalar-mask-expr contains logicals and 
+!*                               - scalar-mask-expr contains logicals and
 !*                                 character arrays
 !*                               - DATA statements used to initialize values
 !*                               - Select statements inside DO CONCURRENT loop
@@ -25,8 +22,8 @@
         implicit none
 
         logical, external :: precision_x6, precision_x8, precision_r4, precision_r8
-    
-        integer :: i, j, x, y, z 
+
+        integer :: i, j, x, y, z
         integer*1 :: int1
         integer*2 :: int2
         integer*4 :: int4, int4_2
@@ -85,18 +82,18 @@
             end select
           end do
         end if
-     
-        real8_result = (/25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,245.6d0,823.44d0/) 
+
+        real8_result = (/25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,25.4d0,245.6d0,823.44d0/)
         if ( .not. precision_r4(real4,111.5e0) ) then
           print *, "select statement in do concurrent loop in else block produces incorrect results"
           print *, "real4: ", real4
           error stop 3
-        end if 
+        end if
 
         do x = 1,10
           if ( .not. precision_r8(real8(x),real8_result(x)) ) then
             print *, "select statement in do concurrent loop in else block produces incorrect results"
-            print *, "x: ", x 
+            print *, "x: ", x
             print *, "real8: ", real8
             error stop 3
           end if
@@ -114,13 +111,13 @@
             if ( .not. precision_x8(comp8(x,y),comp8_result(x,y)) ) then
               print *, "do concurrent with mask initialized with DATA statement produces incorrect result"
               print *, "x: ", x
-              print *, "y: ", y 
+              print *, "y: ", y
               print *, "comp8: ", comp8
               error stop 4
             end if
           end do
         end do
-      
+
         char4(2) = "fail"
         real8 = 65.5d0
         do concurrent (int1 = 1:3, log1 .eqv. .true.)
@@ -130,12 +127,12 @@
           do concurrent (int4 = 100:300:100, (log2 .eqv. .false.) .and. (char4(int4/100) .eq. 'pass'))
             real8(int4/100) = real(int4,8)*0.5d0
             do concurrent (int2 = 1:3, int4_2 = 3:5, int8 = 100:300:100, log4 .eqv. .false.)
-              comp16(int2,int4_2-2,int8/100) = (2.0q0,5.0q0)*(int2,1.0q0) 
+              comp16(int2,int4_2-2,int8/100) = (2.0q0,5.0q0)*(int2,1.0q0)
             end do
           end do
-        end do 
+        end do
 
-        if ( .not. precision_r8(doub,15.5d1) ) then 
+        if ( .not. precision_r8(doub,15.5d1) ) then
           print *, "3-level nested do concurrent with multiple indices and masks initialized with DATA statements produced incorrect results"
           print *, "failure in first, outer-most loop"
           print *, "doub: ", doub

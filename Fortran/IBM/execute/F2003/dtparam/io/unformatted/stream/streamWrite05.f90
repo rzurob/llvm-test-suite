@@ -1,21 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : streamWrite05
-!*  TEST CASE TITLE            : Unformatted Intrinsic Input/Output (with DTP)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : October 27, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : STREAM File Output of a Derived/Extended
 !*                               Derived Type (with Type Parameters)
 !*  SECONDARY FUNCTIONS TESTED : Base Derived Type has a PRIVATE Component
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WRITE, READ

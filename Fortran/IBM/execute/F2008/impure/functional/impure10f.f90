@@ -1,13 +1,10 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure10f
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
-!*  
+!*
 !*  DESCRIPTION
 !*
 !* an IMPURE elemental procedure calls a PURE elemental procedure within itself
@@ -25,7 +22,7 @@ PROGRAM main
   b(1:2500:5) = final(a(1:2500:5), f(1:2500:5))
 
   CONTAINS
- 
+
   IMPURE ELEMENTAL FUNCTION final (a, f1)
       INTEGER, INTENT(INOUT) :: f1
       INTEGER, INTENT(IN) :: a
@@ -35,7 +32,7 @@ PROGRAM main
       sum = 2
       f1 = func1(a)
       print*,"Element inside impure is", f1
-      final = sum + f1 
+      final = sum + f1
   END FUNCTION final
 
   PURE ELEMENTAL FUNCTION func1(z)

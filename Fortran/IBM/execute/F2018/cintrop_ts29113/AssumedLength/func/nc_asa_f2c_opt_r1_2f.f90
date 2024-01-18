@@ -1,31 +1,22 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE     : C Interop: Assumed-length Character arguments
-!*
-!*
-!*
-!*  PROGRAMMER          : Umme Hunny
 !*  DATE                : June, 1, 2014
-!*  ORIGIN              : AIX Compiler Development, Toronto Lab
 !*  FEATURE             : RTC Master Story:
 !*                        C Interop: Assumed-length Character arguments
 !*                        (master story) (72333)
 !*
-!*  FEATURE             : C Interop: Assumed-length Character arguments 
+!*  FEATURE             : C Interop: Assumed-length Character arguments
 !* ===================================================================
-!23456789012345678901234567890123456789012345678901234567890123456789012     
-      
+!23456789012345678901234567890123456789012345678901234567890123456789012
+
       program assumed_lenght001
 
         interface
           subroutine check_f_to_c(c_len,n, extent, test_no,c_arg1 ) bind(c)
-            use, intrinsic :: iso_c_binding 
+            use, intrinsic :: iso_c_binding
             character(*), optional :: c_arg1(n:*)
-            integer(C_INT) c_len, n, extent, test_no 
+            integer(C_INT) c_len, n, extent, test_no
           end subroutine
           subroutine check_f_to_f(c_len,n, extent, test_no, c_arg2) bind(c)
             use, intrinsic :: iso_c_binding
@@ -49,13 +40,13 @@
           end subroutine
 
         end interface
-      
+
         character(5) :: a1(5)
 
-        a1 = 'F2C__'         
+        a1 = 'F2C__'
         call check_f_to_c( LEN(a1), 5, SIZE(a1),1)
 
-        a1 = 'F2F__' 
+        a1 = 'F2F__'
         call check_f_to_f(LEN(a1), 5, SIZE(a1), 2)
 
         a1 = 'F2F2C'
@@ -63,7 +54,7 @@
 
         a1 = 'F2F2F'
         call check_f_to_f_to_f(LEN(a1),10, SIZE(a1), 4)
- 
+
         a1 = 'F2C2F'
         call check_f_to_c_to_f(LEN(a1),10, SIZE(a1), 5)
 
@@ -88,9 +79,9 @@
             character(*), optional :: c_arg1(n:*)
             integer(C_INT) c_len,n, extent, test_no
           end subroutine
-        end interface           
-        character(*), optional :: c_arg3(n:*)           
-        integer(C_INT) c_len,n, extent, test_no 
+        end interface
+        character(*), optional :: c_arg3(n:*)
+        integer(C_INT) c_len,n, extent, test_no
         call check_f_to_c(c_len,n, extent, test_no)
        end subroutine
 
@@ -115,4 +106,4 @@
 
 
 
-       
+

@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : csComplexArg
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-10-04
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray access (specific) - procedure call
 !*  SECONDARY FUNCTIONS TESTED : pass COMPLEX scalar coarray actual argument to procedure which examines it and modifies it

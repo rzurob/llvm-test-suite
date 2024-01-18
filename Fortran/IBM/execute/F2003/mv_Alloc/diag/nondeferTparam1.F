@@ -1,27 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : nondeferTparam1.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is dummy arg of type character(:) with
 !*                                  deferred type parameter arg2*(:)
 !*                               TO is dummy arg of type character(:) with
-!*                                  assumed type parameter arg1*(*) 
+!*                                  assumed type parameter arg1*(*)
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -46,6 +34,6 @@ contains
         call move_alloc(arg2, arg1)
         print *, arg1
 
-    end subroutine 
+    end subroutine
 
  end

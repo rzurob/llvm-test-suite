@@ -2,30 +2,19 @@
 ! ftcx_dtp -ql -qreuse=base /tstdev/F2003/mxminAll/con/mxminLoc/mxminlocArgObj1.f
 ! opt variations: -qnol -qreuse=none
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 2/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX*/MIN* intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX*/MIN* intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAXLOC/MINLOC with named constant as actual
 !*                               argument to struct constructor.
 !* ===================================================================
 
-  program mxminlocArgObj1 
+  program mxminlocArgObj1
 
      type base(n1,k1)    ! (20,4)
          integer, kind :: k1
@@ -37,12 +26,12 @@
           integer(k1) :: cname(2)
      end type
 
-     type, extends(child) :: parent    ! (20,4) 
+     type, extends(child) :: parent    ! (20,4)
           integer(k1) :: pname(3)
      end type
-    
+
      type(base(20,4))   :: bdt
-     type(child(20,4))  :: cdt    
+     type(child(20,4))  :: cdt
      type(parent(20,4)) :: pdt
 
     integer v(3)
@@ -52,7 +41,7 @@
 
      m(1,2) = .false.
 
-     bdt = base(20,4)(minloc(x,dim=1,mask=.true.))     
+     bdt = base(20,4)(minloc(x,dim=1,mask=.true.))
 
      cdt = child(20,4)(base = bdt , cname = maxloc(y, dim=2))
 
@@ -62,18 +51,18 @@
 
      if(any(cdt%cname .ne. 3)) error stop 2_4
 
-     v = pdt%pname 
+     v = pdt%pname
 
      if(v(1) .ne. 2 .or. v(2) .ne. 2 .or. v(3) .ne. 1) error stop 3_4
 
      call sub(pdt)
 
      contains
-         
+
          subroutine sub(arg)
             class(*), intent(in) :: arg
             integer v(3)
-             
+
             select type (arg)
                type is (base(*,4))
                   error stop 4_4
@@ -82,8 +71,8 @@
                class default
                   error stop 6_4
             end select
-                   
+
          end subroutine
 
-  end program mxminlocArgObj1 
+  end program mxminlocArgObj1
 

@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Intrinsic  with Derived Type Parameter
 !*
-!* PROGRAMMER                 : James Ren
 !* DATE                       : April 19, 2007
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : real, cos and matmul intrinsics
 !*
@@ -23,7 +18,7 @@ end type
 real(kind = 8) :: arr(4,5), brr(5,4), res(4,4), res1(4,4)
 integer i, j, k
 type (base(8,5, 4)):: b
-type (base(8,4,5)) :: c 
+type (base(8,4,5)) :: c
 do i = 1, 4
    do j = 1, 5
       arr(i,j) = sqrt(real(i * j))

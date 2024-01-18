@@ -1,44 +1,36 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPolyBasic02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPolyBasic02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 6 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 6 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  1. DERIVED TYPE HAS INTEGER AND CHARACTER ARRAY COMPONENT 
+!*  1. DERIVED TYPE HAS INTEGER AND CHARACTER ARRAY COMPONENT
 !*  2. DUMMY ARGUMENT IS SCALAR OR ARRAY
-!*  3. USE MODULE SUBROUTINE, EXTERNAL SUBROUTINE,INTERNAL SUBROUTINE 
+!*  3. USE MODULE SUBROUTINE, EXTERNAL SUBROUTINE,INTERNAL SUBROUTINE
 !*  4. VERIFY ALLOCATION AND ASSOCIATION STATUS AND COMPONENT VALUES
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type dtp(k1,k2,l1,l2)
      integer,kind    :: k1
      integer(2),kind :: k2
-     integer,len     :: l1 
+     integer,len     :: l1
      integer(2),len  :: l2
-     
+
      integer(k1)      :: i1(k1:k2)
      character(l1+l2) :: c1(l1:l2)
 
   end type
 
   type(dtp(2,4,2,3)),target      :: tar1=&
-                   dtp(2,4,2,3)(i1= [1,2,3],c1=["123","456"])  
+                   dtp(2,4,2,3)(i1= [1,2,3],c1=["123","456"])
 
   contains
 
@@ -52,11 +44,11 @@ module m
       else
          deallocate(arg)
       endif
-   end subroutine   
+   end subroutine
 
    subroutine modsub2(arg)
       type(dtp(2,4,:,:)),pointer :: arg(:)
-      
+
       if(.not. associated(arg)) then
          allocate(dtp(2,4,2,3)  :: arg(3))
          arg = &
@@ -65,8 +57,8 @@ module m
                dtp(2,4,2,3)(i1=[7,8,9],c1=["444","555"]) ]
       else
          deallocate(arg)
-      endif      
-   end subroutine 
+      endif
+   end subroutine
 end module
 
 program dummyArgDeferNonPolyBasic02
@@ -89,14 +81,14 @@ program dummyArgDeferNonPolyBasic02
 
   end subroutine
 
-  end interface  
+  end interface
   integer :: i
   type(dtp(2,4,:,:)),allocatable :: dtp1
-  type(dtp(2,4,:,:)),pointer     :: dtp2(:)=>null()   
+  type(dtp(2,4,:,:)),pointer     :: dtp2(:)=>null()
   type(dtp(2,4,:,:)),allocatable :: dtp3(:)
   type(dtp(2,4,:,:)),pointer     :: dtp4=>null()
 
- 
+
   call modsub1(dtp1)
   if(.not. allocated(dtp1))                  error stop 10_4
   if(dtp1%l1 /= 2)                           error stop 11_4
@@ -106,7 +98,7 @@ program dummyArgDeferNonPolyBasic02
   if(lbound(dtp1%i1,1) /= 2)                 error stop 15_4
   if(ubound(dtp1%i1,1) /= 4)                 error stop 16_4
   if(lbound(dtp1%c1,1) /= 2)                 error stop 17_4
-  if(ubound(dtp1%c1,1) /= 3)                 error stop 18_4 
+  if(ubound(dtp1%c1,1) /= 3)                 error stop 18_4
   if(dtp1%c1%len /= 5)                       error stop 19_4
 
   call modsub1(dtp1)
@@ -130,7 +122,7 @@ program dummyArgDeferNonPolyBasic02
     if(lbound(dtp2(i)%c1,1) /= 2)            error stop 32_4
     if(ubound(dtp2(i)%c1,1) /= 3)            error stop 33_4
     if(dtp2(i)%c1%len /= 5)                  error stop 34_4
-  end do 
+  end do
 
   call modsub2(dtp2)
   if(associated(dtp2))                       error stop 35_4
@@ -214,7 +206,7 @@ program dummyArgDeferNonPolyBasic02
   if(dtp4%c1%len /= 5)                       error stop 86_4
 
   call intsub2(dtp4)
-  if(associated(dtp4))                       error stop 87_4  
+  if(associated(dtp4))                       error stop 87_4
 
   contains
 
@@ -233,14 +225,14 @@ program dummyArgDeferNonPolyBasic02
 
   subroutine intsub2(arg)
     type(dtp(2,4,:,:)),pointer :: arg
-    
+
     if(.not. associated(arg) ) then
        allocate(arg,source= &
                    dtp(2,4,2,3)(i1=[1,2,3],c1=["123","456"]) )
     else
        deallocate(arg)
     end if
-  end subroutine   
+  end subroutine
 end program
 
   subroutine extsub1(arg)
@@ -253,7 +245,7 @@ end program
              dtp(2,4,2,3)(i1=[4,5,6],c1=["222","333"]), &
              dtp(2,4,2,3)(i1=[7,8,9],c1=["444","555"])]
      else
-        deallocate(arg) 
+        deallocate(arg)
      end if
   end subroutine
 
@@ -261,11 +253,11 @@ end program
      use m
 
      type(dtp(2,4,:,:)),pointer       :: arg
-     
+
      if(.not. associated(arg)) then
         arg=>tar1
      else
 
-        arg=>null() 
-     end if 
+        arg=>null()
+     end if
   end subroutine

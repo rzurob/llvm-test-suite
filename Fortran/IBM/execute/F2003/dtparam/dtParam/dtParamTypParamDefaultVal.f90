@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypParamDefaultVal   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypParamDefaultVal
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 15, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  If a type-param-decl has a scalar-int-initialization-expr, the type
-!*  parameter has a default value which is specified by the expression. 
+!*  parameter has a default value which is specified by the expression.
 !*
 !*  (init expr contains type paramters?)
 !*
@@ -35,7 +28,7 @@
 
 
 
-  PROGRAM dtParamTypParamDefaultVal  
+  PROGRAM dtParamTypParamDefaultVal
 
   PARAMETER (I1Max= 127)
   PARAMETER (I1Min=-128)

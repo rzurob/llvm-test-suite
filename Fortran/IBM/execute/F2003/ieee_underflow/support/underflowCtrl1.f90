@@ -1,33 +1,23 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : underflowCtrl1.f
-!*
-!*  PROGRAMMER                 : Nancy Wang
 !*  DATE                       : Nov. 15 2007
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ieee_support_underflow_control() 
+!*  PRIMARY FUNCTIONS TESTED   : ieee_support_underflow_control()
 !*                             : ieee_support_underflow_control(X)
 !*  SECONDARY FUNCTIONS TESTED :
 !*  REFERENCE                  : Feature Number 289080
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                :    
+!*  DESCRIPTION                :
 !*  1. test if ieee_support_underflow_control() returns false without argument
 !*  2. test if ieee_support_underflow_control(X) returns false when passing a
 !*     real type argument with KIND equal to 4,8,16 respectively
 !*  3. test if ieee_support_underflow_control(X) returns false when passing a
-!*     pointer of real type argument with KIND equal to 4,8,16 respectively 
+!*     pointer of real type argument with KIND equal to 4,8,16 respectively
 !*  4. test if ieee_support_underflow_control(X) returns false when passing an
-!*     allocatable of real type argument 
-!* 
-!23456789012345678901234567890123456789012345678901234567890123456789012   
+!*     allocatable of real type argument
+!*
+!23456789012345678901234567890123456789012345678901234567890123456789012
       module m
 
          real(4) r1_4
@@ -49,7 +39,7 @@
       end module m
       program underflowCtrl1
          use,intrinsic :: ieee_arithmetic
-         use m 
+         use m
          implicit none
 
          if (.not. associated(rp1_4))  rp1_4=>rt1_4
@@ -57,25 +47,25 @@
          if (.not. associated(rp1_16)) rp1_16=>rt1_16
          rp2_4=>rp1_4
          rp2_8=>rp1_8
-         rp2_16=>rp1_16 
+         rp2_16=>rp1_16
          allocate(ra_4)
          allocate(ra_8)
          allocate(ra_16)
 
-!        pass no argument 
-         if (ieee_support_underflow_control()) error stop 101_4 
+!        pass no argument
+         if (ieee_support_underflow_control()) error stop 101_4
 
-!        pass a real type argument with KIND=4 
-         if (ieee_support_underflow_control(r1_4)) error stop 102_4 
+!        pass a real type argument with KIND=4
+         if (ieee_support_underflow_control(r1_4)) error stop 102_4
 
 !        pass a real type argument with KIND=8
-         if (ieee_support_underflow_control(r1_8)) error stop 103_4 
+         if (ieee_support_underflow_control(r1_8)) error stop 103_4
 
 !        pass a real type argument with KIND=16
-         if (ieee_support_underflow_control(r1_16)) error stop 104_4 
+         if (ieee_support_underflow_control(r1_16)) error stop 104_4
 
 !        pass a pointer of real type argument with KIND=4
-         if (ieee_support_underflow_control(rp1_4)) error stop 105_4 
+         if (ieee_support_underflow_control(rp1_4)) error stop 105_4
 
 !        pass a pointer of real type argument with KIND=4
          if (ieee_support_underflow_control(rp2_4)) error stop 106_4
@@ -103,6 +93,6 @@
 
          nullify(rp2_4,rp2_8,rp2_16)
          nullify(rp1_4,rp1_8,rp1_16)
-         deallocate(ra_4,ra_8,ra_16) 
+         deallocate(ra_4,ra_8,ra_16)
 
        end program

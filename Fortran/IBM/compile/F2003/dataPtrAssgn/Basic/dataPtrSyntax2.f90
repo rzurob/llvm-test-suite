@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrSyntax2.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrSyntax2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : Syntax 
+!*  SECONDARY FUNCTIONS TESTED : Syntax
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -26,10 +20,10 @@
 !*  DESCRIPTION
 !*
 !*  Syntax checking:
-!* 
-!*  R735 pointer-assignment-stmt is 
-!*    data-pointer-object (bounds-remapping-list ) => data-target 
-!*  R738 bounds-remapping is lower-bound-expr : upper-bound-expr 
+!*
+!*  R735 pointer-assignment-stmt is
+!*    data-pointer-object (bounds-remapping-list ) => data-target
+!*  R738 bounds-remapping is lower-bound-expr : upper-bound-expr
 !*
 !*  ()
 !*
@@ -41,10 +35,10 @@
 
   TYPE :: DT0
   END TYPE
-  
+
   TYPE(DT0), TARGET  :: Arr1(-100:-1)
   TYPE(DT0), TARGET  :: Arr2(-9:0, 10)
-  TYPE(DT0), POINTER :: Ptr1(:), Ptr2(:,:) 
+  TYPE(DT0), POINTER :: Ptr1(:), Ptr2(:,:)
 
 
 

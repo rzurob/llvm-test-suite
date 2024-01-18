@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf039.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,25 +12,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf039
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 05, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This testcase tests the behaviour when
 !*                               reading a file containing data with mixed
@@ -46,22 +39,22 @@
       real :: rl1
 
       character(50) :: buffer, my_fmt
-      
+
       logical precision_r4
-      
+
       ! first try DECIMAL= specifier
       open(IN, file=FNAME_IN)
-      
+
       ! read everything from input files and test the value read
       read(IN, *) rl1
       if( .not. precision_r4( rl1, 14.1 ) ) error stop 1
-      
+
       read(IN, *, decimal='comma') rl1
       if( .not. precision_r4( rl1, 1.973 ) ) error stop 2
 
       read(IN, *) rl1
       if( .not. precision_r4( rl1, 1.14 ) ) error stop 3
-      
+
       my_fmt='comma'
       read(IN, *, decimal=my_fmt) rl1
       if( .not. precision_r4( rl1, 12345.1 ) ) error stop 4
@@ -70,12 +63,12 @@
 
       ! now try DC and DP descriptors:
       open(IN, file=FNAME_IN)
-      
+
       ! read everything from input files and test the value read
       read(IN, 11) rl1
  11   format(dp, f4.1)
       if( .not. precision_r4( rl1, 14.1 ) ) error stop 5
-      
+
       read(IN, 12) rl1
  12   format(dc, f5.3)
       if( .not. precision_r4( rl1, 1.973 ) ) error stop 6
@@ -83,8 +76,8 @@
       my_fmt='(dp, f4.2)'
       read(IN, my_fmt) rl1
       if( .not. precision_r4( rl1, 1.14 ) ) error stop 7
-      
-      
+
+
       read(IN, 13) rl1
  13   format(dc, f7.1)
       if( .not. precision_r4( rl1, 12345.1 ) ) error stop 8

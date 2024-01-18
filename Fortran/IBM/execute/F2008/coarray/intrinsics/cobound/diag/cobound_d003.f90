@@ -1,27 +1,21 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound_d003.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : September 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : Invalid argument testing of the first 
+!*  DESCRIPTION                : Invalid argument testing of the first
 !*                               argument of lcobound/ucobound.
-!*                            
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program main
-	
+
 	integer*1, save :: i1, cafi1[*]
 	integer*2, save :: i2, cafi2[*]
 	integer*4, save :: i4, cafi4[*]
@@ -36,7 +30,7 @@ program main
 	logical*4, save :: l4, cafl4[*]
 	logical*8, save :: l8, cafl8(55)[*]
 
-	
+
 !### lcobound
 	print *, lcobound(i1)
 	print *, lcobound(i2)
@@ -53,12 +47,12 @@ program main
 	print *, lcobound(l4)
 	print *, lcobound(l8)
 	print *, lcobound(ch)
-	
+
 	print *, lcobound(cafi4[1])			!valid
 	print *, lcobound(cafx4[1])			!valid
 	print *, lcobound(cafl8(9)[1])		        !valid
-	
-	
+
+
 !### ucobound
 	print *, ucobound(i1)
 	print *, ucobound(i2)
@@ -75,9 +69,9 @@ program main
 	print *, ucobound(l4)
 	print *, ucobound(l8)
 	print *, ucobound(ch)
-	
+
 	print *, ucobound(cafl1[1])			!valid
 	print *, ucobound(cafi8[1])			!valid
 	print *, ucobound(cafx4(1,1,1)[1])		!valid
-	
+
 end

@@ -23,7 +23,6 @@
         endif
       end function
 
-
       program p1
         interface
           recursive function sum (a)  bind(C, name='sumB')

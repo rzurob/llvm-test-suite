@@ -1,13 +1,7 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingIDSpec05 - INQUIRE() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 21, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Perform Unformatted Asynchronous I/O
 !*                               Operations on a Unit
@@ -15,7 +9,6 @@
 !*                               Specifier ID= Specifier on Specific
 !*                               Pending Data Transfers
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : READ(), WRITE(), INQUIRE(), PENDING=
@@ -45,12 +38,10 @@
 !*  C950 (R930) If an ID= specifier appears, a PENDING= specifier shall
 !*              also appear.
 !*
-!*
 !*  9.9.1.13 ID= specifier in the INQUIRE statement
 !*
 !*  The value of the expression specified in the ID= specifier shall be the
 !*  identifier of a pending data transfer operation for the specified unit.
-!*
 !*
 !*  9.9.1.20 PENDING= specifier in the INQUIRE statement
 !*

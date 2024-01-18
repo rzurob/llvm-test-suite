@@ -2,32 +2,20 @@
 ! ftcx_dtp -qk -qdeferredlp -qreuse=base /tstdev/F2003/mxminAll/con/maxMin/mxminArrayArgObj2.f
 ! opt variations: -qck -qnok -qnodeferredlp -qreuse=none
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                : MAX/MIN with named constant as selector 
-!*                               in associate construct 
-!*                                
+!*  DESCRIPTION                : MAX/MIN with named constant as selector
+!*                               in associate construct
 !*
 !* ===================================================================
 
-  program mxminArrayArgObj2 
+  program mxminArrayArgObj2
 
    type base(k1,n1)    ! (4,3)
      integer, kind :: k1
@@ -76,5 +64,5 @@
         endif
 
    end subroutine
-  end program mxminArrayArgObj2 
+  end program mxminArrayArgObj2
 

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d358773.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d358773.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 13 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 13 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  DEFECT 358773
@@ -29,9 +21,9 @@ module m
   end type
   contains
    function fun1(arg1)
-       type(dtp(*)),intent(in)   :: arg1(2) 
-       type(dtp(3))              :: fun1(2)  
- 
+       type(dtp(*)),intent(in)   :: arg1(2)
+       type(dtp(3))              :: fun1(2)
+
        fun1=arg1
    end function
 end module

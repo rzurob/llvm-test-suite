@@ -1,13 +1,9 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/intrinsics/null/associate001.f
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/null
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 03/01/2005
 ! PRIMARY FUNCTIONS TESTED   : null
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Return of null used in the selector of
 !                              associate construct. Non-poly.
 !=======================================================================

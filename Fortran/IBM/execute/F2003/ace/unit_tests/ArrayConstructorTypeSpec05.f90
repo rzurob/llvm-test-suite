@@ -1,20 +1,8 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ArrayConstructorTypeSpec05.f
-!*
-!*  PROGRAMMER                 : Rob James
 !*  DATE                       : 09/14/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  DESCRIPTION                : Testing array constructors with type
 !*                               specifications as actual arguments.

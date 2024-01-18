@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : recursive002kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from recursive002 by Robert Ma)
 !*  DATE                       : 2007-06-05 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        recursively write a polymorphic linked list
@@ -99,10 +91,10 @@ use m, only: base, child, write(formatted), idx
    character(20) :: fmt
 
    write ( unit, * ) 'element number', idx, ' iotype:', iotype, ' v_list:', v_list
-   
+
    write ( fmt, * ) '(I', v_list(1),')'
    write ( unit, fmt, iostat = iostat )    dtv%i
-   
+
    select type ( dtv )
       type is ( child(4,4) )
          write ( fmt, * ) '(I', v_list(2),')'

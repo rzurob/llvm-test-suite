@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrAlloc.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 06, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is an array of allocatable 
+!*
+!*   The selector is an array of allocatable
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -52,7 +46,7 @@
     TYPE  :: Zero(K1,N1)    ! (4,20)
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4,20)
       INTEGER(K1) :: BaseId = 1
@@ -102,7 +96,7 @@
   USE M
   IMPLICIT NONE
   TYPE(Child(4,20)), TARGET :: Tar
- 
+
   CLASS(Zero(4,:)), POINTER :: Arr(:)
 
   ALLOCATE(Arr(3), SOURCE=Child(4,20)(ChildId=-2, BaseId=-1))
@@ -110,7 +104,7 @@
   SELECT TYPE ( As => Arr(:))
     CLASS IS (Child(4,*))
       SELECT TYPE (As => As(:))
-        TYPE IS (Child(4,*)) 
+        TYPE IS (Child(4,*))
           IF ( ANY(As%Base%GetId() .NE. -1) ) STOP 34
           IF ( ANY(As%GetId()      .NE. -2) ) STOP 35
           IF ( ANY(As%BaseId       .NE. -1) ) STOP 36
@@ -136,4 +130,4 @@
   END SELECT
 
   END
-  
+

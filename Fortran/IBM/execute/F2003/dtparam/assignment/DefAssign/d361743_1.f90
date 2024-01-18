@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361743_1.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361743_1.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 5 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 5 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. defect 361743
@@ -33,7 +25,7 @@ module m
    end type
    contains
       subroutine sub(dt)
-         class(base(3)),intent(in)  :: dt  
+         class(base(3)),intent(in)  :: dt
 
          if(any(dt%c1 /= "xlf"))   stop 10
       end subroutine
@@ -45,9 +37,9 @@ program d361743_1
 
      allocate(obj(3))
 
-     obj=child(3)(c1="xlf",i1=-10) 
+     obj=child(3)(c1="xlf",i1=-10)
 
-     call sub(obj(1)%base)  
+     call sub(obj(1)%base)
 
      if(any(obj(1)%i1 /= -10))      stop 11
 

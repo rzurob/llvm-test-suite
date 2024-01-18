@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C819NotSame.f 
+! %POSTCMD: tcomp C819NotSame.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C819NotSame
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 2, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C819 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C819
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The select type construct name is not consistent. 
-!*    
+!*    The select type construct name is not consistent.
+!*
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -49,7 +43,7 @@
 
   TYPE :: Base
   END TYPE
- 
+
   CLASS(*),   POINTER :: Ptr
   TYPE(Base), TARGET  :: Tar
 
@@ -57,12 +51,12 @@
 
 0 SELECT : SELECT TYPE ( Ptr )
 1   TYPE IS (Base) SELECT
-11    PRINT*, "OK!"  
-2   CLASS IS (Base) END 
+11    PRINT*, "OK!"
+2   CLASS IS (Base) END
 22    STOP 20
 3   CLASS DEFAULT
 33    STOP 30
-4 END SELECT END 
+4 END SELECT END
 
 
   END

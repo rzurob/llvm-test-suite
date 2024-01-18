@@ -1,9 +1,6 @@
 !**********************************************************************
-!* ==================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!* ==================================================================== 
+!* ====================================================================
 !*  TEST CASE NAME             : abstracti015lk
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti015
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-25 (original: 02/20/2006)
 !*  ORIGIN                     :
@@ -11,7 +8,6 @@
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters transfer
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*  DRIVER STANZA              : xlf2003 (original: xlf90)
 !*
 !*  DESCRIPTION                :
 !*  Cross testing type bound. Deferred binding.

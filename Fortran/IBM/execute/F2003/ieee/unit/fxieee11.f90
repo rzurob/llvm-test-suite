@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Marcus Yu
 !*  DATE                       : March 13, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_REM
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +25,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 	     program fxieee11
@@ -66,66 +57,66 @@
         real*16, dimension(4) :: results_16
 
         logical, dimension(5) :: flag_values
-       
+
 !       Test real*4
         xr_4 = 4.0
         yr_4 = 3.0
         zr_4 = ieee_rem(xr_4, yr_4)
-        if (zr_4 /= 1.0 ) then 
+        if (zr_4 /= 1.0 ) then
 		   print *, "ieee_rem failed real*4."
 		   print *, zr_4
-		endif   
+		endif
 
 !       Test real*8
         xr_8 = 3d0
         yr_8 = 2d0
         zr_8 = ieee_rem(xr_8, yr_8)
-        if (zr_8 /= -1.0 ) then 
+        if (zr_8 /= -1.0 ) then
 		    print *, "ieee_rem failed real*8."
 			print *, zr_8
-		end if	
+		end if
 
 !       test real*16
         xr_16 = 5q0
         yr_16 = 2q0
         zr_16 = ieee_rem(xr_16, yr_16)
-        if (zr_16 /= 1.0 ) then 
+        if (zr_16 /= 1.0 ) then
 		    print *, "ieee_rem failed real*16."
-			print *, zr_16 
-		endif	
+			print *, zr_16
+		endif
 
 !       Test array of kind 4
         results = ieee_rem(xvalues, yvalues)
 		do i = 1, 4
 		   n = xvalues(i) / yvalues(i)
 		   zr_4 = xvalues(i) - n *yvalues(i)
-		   if (results(i) /= zr_4) then 
+		   if (results(i) /= zr_4) then
 		      print *, "ieee_rem error in kind 4 array, ", i
               print *, n, xvalues(i) / yvalues(i), xvalues(i), yvalues(i)
 		      print *, results(i), zr_4
 		   end if
-		enddo      
-		
+		enddo
+
 !       Test array of kind 8
         results_8 = ieee_rem(xvalues_8, yvalues_8)
 		do i = 1, 4
 		   n8 = xvalues_8(i) / yvalues_8(i)
 		   zr_8 = xvalues_8(i) - n8 *yvalues_8(i)
-		   if (results_8(i) /= zr_8) then 
+		   if (results_8(i) /= zr_8) then
 		      print *, "ieee_rem error in kind 8 array, ", i
 		      print *, results_8(i), zr_8
 		   end if
-		enddo 		
-		
+		enddo
+
 !       Test array of kind 16
         results_16 = ieee_rem(xvalues_16, yvalues_16)
 		do i = 1, 4
 		   zr_16 = xvalues_16(i) - yvalues_16(i) * iqint(xvalues_16(i)/yvalues_16(i))
-		   if (results_16(i) /= zr_16) then 
+		   if (results_16(i) /= zr_16) then
 		      print *, "ieee_rem error in kind 16 array, ", i
 		      print *, results_16(i), zr_16
 		   end if
-		enddo    
-		     
+		enddo
+
         end program
 

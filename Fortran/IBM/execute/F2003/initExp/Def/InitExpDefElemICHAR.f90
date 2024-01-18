@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemICHAR.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemICHAR.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  ICHAR 
+!*
+!*  -  ICHAR
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -36,15 +29,15 @@
 
 
   PROGRAM  InitExpDefElemICHAR
-  IMPLICIT REAL(ICHAR(CHAR(16)))(R) 
+  IMPLICIT REAL(ICHAR(CHAR(16)))(R)
   INTEGER :: I, j
 
   INTEGER,   PARAMETER :: R16=16
 
-  CHARACTER, PARAMETER ::  C(128) = (/(ACHAR(I), I=0,127)/) 
-  INTEGER,   PARAMETER ::  K(128) = (/(I, I=0,127)/) 
+  CHARACTER, PARAMETER ::  C(128) = (/(ACHAR(I), I=0,127)/)
+  INTEGER,   PARAMETER ::  K(128) = (/(I, I=0,127)/)
 
-  TYPE :: DT 
+  TYPE :: DT
     INTEGER :: I(128)
   END TYPE
 
@@ -59,7 +52,7 @@
   TYPE(DT)   ::  T3=DT(ICHAR(KIND=1, C=(/(ACHAR(I),ACHAR(I+1), I=0,127,2)/)))
 
   IF ( KIND(R)     .NE. 16  )       STOP 10
-   
+
   IF ( ANY( I1     .NE. K  ) )      STOP 11
   IF ( ANY( T1%I   .NE. K  ) )      STOP 12
 

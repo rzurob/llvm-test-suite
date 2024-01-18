@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d358698.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d358698.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 10 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  DEFECT 358698
@@ -44,7 +36,7 @@ program d358698
   call sub(a1,c1)
   contains
     subroutine sub(arg1,arg2)
-       type(A(*)),intent(in)   :: arg1(1:) 
+       type(A(*)),intent(in)   :: arg1(1:)
        character(*),intent(in) :: arg2(1:)
 
        print *,shape(arg1),lbound(arg1,1),ubound(arg1,1)

@@ -39,16 +39,16 @@
         rt = c_sizeof(real1+int2)
         if (rt /= c_float) error stop 2
 
-        rt = c_sizeof(real2+int1) 
+        rt = c_sizeof(real2+int1)
         if (rt /= c_long_double) error stop 3
 
         rt = c_sizeof(int1+real1)
         if (rt /= c_float) error stop 4
 
-        rt = c_sizeof(func1(3)) 
+        rt = c_sizeof(func1(3))
         if (rt /= c_float) error stop 5
 
-        rt = c_sizeof(func1(3)+func2()) 
+        rt = c_sizeof(func1(3)+func2())
         if (rt /= c_double) error stop 6
 
         rt = c_sizeof(iarr*kind(iarr))
@@ -80,7 +80,7 @@
 
         rt = c_sizeof(str1//str0)
         if (rt /= 1) error stop 16
-		
+
         call sub0()
       end
 
@@ -100,9 +100,9 @@
       function func3()
         use, intrinsic :: iso_c_binding
         integer(c_long_long) func3(3)
-        func3 = 1 
+        func3 = 1
       end function
-	  
+
       subroutine sub0() ! expression and function reference
       use, intrinsic :: iso_c_binding
       implicit none
@@ -132,7 +132,7 @@
         rt = c_sizeof(func12()-3)
         if (rt /= c_long_long * 3 * 6) error stop 20
       end subroutine
-	  
+
       function func11()
       use, intrinsic :: iso_c_binding
       integer(c_long_long), pointer, dimension(:) :: func11

@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncTypBnd.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncTypBnd.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncTypBnd 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncTypBnd
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,7 +32,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a type bound function call 
+!*    The selector is a type bound function call
 !*    (Incorrect result :stop 60)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -50,14 +44,14 @@
       INTEGER(K1)   :: BaseId = 1
     CONTAINS
       PROCEDURE, PASS   :: GetId => GetBaseId
-      PROCEDURE, PASS   :: ReturnBase 
+      PROCEDURE, PASS   :: ReturnBase
     END TYPE
 
     TYPE, EXTENDS(Base) :: Child    ! (4)
       INTEGER(K1)  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
-      PROCEDURE, PASS   :: ReturnChild 
+      PROCEDURE, PASS   :: GetId => GetChildId
+      PROCEDURE, PASS   :: ReturnChild
     END TYPE
 
     CONTAINS
@@ -97,33 +91,33 @@
 
   PROGRAM FuncTypBnd
   USE M
-  TYPE(Child(4)) :: V 
+  TYPE(Child(4)) :: V
 
   ASSOCIATE ( As => V )
   ASSOCIATE ( As1 => As%ReturnBase() )
   ASSOCIATE ( As2 => As%Base%ReturnBase() )
   ASSOCIATE ( As3 => As%ReturnChild() )
-   
+
     As%BaseId  = 1
     As%ChildId = 2
-    IF ( As1%GetID()          .NE. -2) STOP 51 
+    IF ( As1%GetID()          .NE. -2) STOP 51
     SELECT TYPE (As1)
       TYPE IS (Child(4))
-        IF ( As1%Base%GetID() .NE. -1) STOP 50 
-      CLASS DEFAULT 
+        IF ( As1%Base%GetID() .NE. -1) STOP 50
+      CLASS DEFAULT
         STOP 52
     END SELECT
 
     As%BaseId  = 1
     As%ChildId = 2
-    IF ( As2%GetID() .NE. -1) STOP 60 
+    IF ( As2%GetID() .NE. -1) STOP 60
 
     As%BaseId  = 1
     As%ChildId = 2
     SELECT TYPE (As3)
       TYPE IS (Child(4))
-        IF ( As3%GetID()      .NE. -2) STOP 70 
-        IF ( As3%Base%GetID() .NE. -1) STOP 80 
+        IF ( As3%GetID()      .NE. -2) STOP 70
+        IF ( As3%Base%GetID() .NE. -1) STOP 80
       CLASS DEFAULT
         STOP 90
     END SELECT

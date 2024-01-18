@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        scalar (non-)polymorphic derived type variable with non-polymorphic component
@@ -95,7 +84,7 @@ use m, only: base, data
    character(30) :: fmt
 
    if ( size(v_list) /= 2 ) error stop 4_4
-   
+
    write ( fmt, * ) "( A, I4, I4, I", v_list(1), ", I", v_list(2), ")"
    write ( unit, fmt ) iotype, v_list, dtv%d, dtv%j
 

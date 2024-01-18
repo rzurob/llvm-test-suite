@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcElemental.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcElemental.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 03, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Elemental 
-!* 
-!*   
+!*  Elemental
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -40,55 +32,55 @@
   TYPE :: DT
     INTEGER :: ID
   END TYPE
- 
-  INTERFACE Fun 
+
+  INTERFACE Fun
     PROCEDURE ModFun
   END INTERFACE
 
   PRIVATE ModFun
- 
+
   CONTAINS
 
   ELEMENTAL FUNCTION ModFun(Arg)
-  CLASS(DT), INTENT(IN)   :: Arg 
+  CLASS(DT), INTENT(IN)   :: Arg
   TYPE(DT)  :: ModFun
-    ModFun =  Arg 
-  END FUNCTION 
+    ModFun =  Arg
+  END FUNCTION
 
   ELEMENTAL FUNCTION ModFun1(Arg, Arg1)
-  CLASS(DT), INTENT(IN) :: Arg, Arg1 
+  CLASS(DT), INTENT(IN) :: Arg, Arg1
   TYPE(DT)  :: ModFun1
-    ModFun1 = Arg 
-  END FUNCTION 
+    ModFun1 = Arg
+  END FUNCTION
 
   END MODULE
 
   ELEMENTAL FUNCTION ExtFun(Arg, Arg1)
   USE M, ONLY : DT
-  CLASS(DT), INTENT(IN) :: Arg, Arg1 
+  CLASS(DT), INTENT(IN) :: Arg, Arg1
   TYPE(DT)  :: ExtFun
-    ExtFun = Arg 
-  END FUNCTION 
+    ExtFun = Arg
+  END FUNCTION
 
 
-  PROGRAM mProcElemental 
+  PROGRAM mProcElemental
   USE M
 
-  PROCEDURE(ModFun1) :: ExtFun 
+  PROCEDURE(ModFun1) :: ExtFun
 
   INTERFACE Fun
-    PROCEDURE ExtFun 
+    PROCEDURE ExtFun
   END INTERFACE
 
   TYPE(DT) :: T(1000), T1(1000)
   INTEGER  :: I
 
   T  = Fun((/(DT(I), I=1, 1000)/))
-  T1 = Fun((/(DT(I), I=11, 1010)/), T) 
- 
+  T1 = Fun((/(DT(I), I=11, 1010)/), T)
+
   IF ( ANY(T%ID  .NE. (/(I, I=1, 1000)/)) )  STOP 11
   IF ( ANY(T1%ID  .NE. (/(I, I=11, 1010)/)) )  STOP 12
- 
+
 
   END
 

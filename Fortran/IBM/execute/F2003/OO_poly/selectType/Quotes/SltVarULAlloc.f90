@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltVarULAlloc.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SlttVarULAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is an unlimited  poly allocatable
 !*    ()
 !*
@@ -56,7 +50,7 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -90,16 +84,16 @@
 
       SELECT TYPE ( Var )
         CLASS DEFAULT
-          STOP 20   
+          STOP 20
         CLASS is (Base)
           STOP 24
         TYPE is (INTEGER(1))
           STOP 24
         CLASS is (Child)
-          IF ( Var%BaseId       .NE. -1 ) STOP 31 
-          IF ( Var%ChildId      .NE. -2 ) STOP 32 
-          IF ( Var%Base%GetId() .NE. -1 ) STOP 33 
-          IF ( Var%GetId()      .NE. -2 ) STOP 34 
+          IF ( Var%BaseId       .NE. -1 ) STOP 31
+          IF ( Var%ChildId      .NE. -2 ) STOP 32
+          IF ( Var%Base%GetId() .NE. -1 ) STOP 33
+          IF ( Var%GetId()      .NE. -2 ) STOP 34
     END SELECT
   END SELECT
 

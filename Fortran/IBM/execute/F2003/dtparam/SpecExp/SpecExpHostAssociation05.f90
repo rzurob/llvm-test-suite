@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : SpecExpHostAssociation05.f
-!*
-!*  PROGRAMMER                 : Dorra Bouhiha
 !*  DATE                       : June 14, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Specification expression - Host Association
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -24,7 +16,6 @@
 !*
 !*  An objet designator with a base object that is made accessible by host association
 !*  Polymorphic base object
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
@@ -44,7 +35,7 @@ MODULE Mod
 
          INTEGER(k2) :: A2(l2)
          CHARACTER(l2) :: C2
-         TYPE(Base(k2,l2)) :: cmp1 
+         TYPE(Base(k2,l2)) :: cmp1
       END TYPE
 
       TYPE, EXTENDS(Child) :: NextGen (k3,l3)
@@ -87,11 +78,11 @@ PROGRAM SpecExpHostAssociation05
       CALL Sub23(c1)
       CALL Sub24(c1)
 
-      ALLOCATE( n1, SOURCE = NextGen(4,100,4,50,4,25) ( I1 = 8, A1 = [(I, I = 1,100)], C1 = 'Base',   & 
+      ALLOCATE( n1, SOURCE = NextGen(4,100,4,50,4,25) ( I1 = 8, A1 = [(I, I = 1,100)], C1 = 'Base',   &
                                                                 A2 = [(I, I = 1,50)], C2 = 'Child',   &
                                                               A3 = [(I, I = 1,25)], C3 = 'NextGen',   &
                                                    cmp1 = Base(4,50)(3, [(7*I, I = 1,50)], 'Base1'),  &
-                                                   cmp2 = Base(4,25)(3, [(7*I, I = 1,25)], 'Base2') ) ) 
+                                                   cmp2 = Base(4,25)(3, [(7*I, I = 1,25)], 'Base2') ) )
       IF ( .NOT. ASSOCIATED(n1) ) STOP 08
       CALL Sub31(n1)
       CALL Sub32(n1)
@@ -99,9 +90,9 @@ PROGRAM SpecExpHostAssociation05
       CALL Sub34(n1)
 
       CONTAINS
- 
+
       SUBROUTINE Sub11(this)
-        CLASS(Base(4,*)) :: this 
+        CLASS(Base(4,*)) :: this
         CLASS(Base(b1%k1,b1%l1)), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
@@ -110,9 +101,9 @@ PROGRAM SpecExpHostAssociation05
         IF ( SIZE(Obj%A1) .NE. this%l1 ) STOP 12
         IF ( LEN(Obj%C1)  .NE. this%l1 ) STOP 13
       END SUBROUTINE Sub11
- 
+
       SUBROUTINE Sub21(this)
-        CLASS(Child(4,*,4,*)) :: this 
+        CLASS(Child(4,*,4,*)) :: this
         CLASS(Base(c1%cmp1%k1,c1%cmp1%l1)), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
@@ -123,7 +114,7 @@ PROGRAM SpecExpHostAssociation05
       END SUBROUTINE Sub21
 
       SUBROUTINE Sub31(this)
-        CLASS(NextGen(4,*,4,*,4,*)) :: this 
+        CLASS(NextGen(4,*,4,*,4,*)) :: this
         CLASS(Base(n1%cmp2%k1,n1%cmp2%l1)), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
@@ -134,7 +125,7 @@ PROGRAM SpecExpHostAssociation05
       END SUBROUTINE Sub31
 
       SUBROUTINE Sub12(this)
-        CLASS(Base(4,*)) :: this 
+        CLASS(Base(4,*)) :: this
         CLASS(Child(KIND(b1%I1),b1%I1,2*KIND(b1%I1),2*SIZE(b1%A1))), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
@@ -154,7 +145,7 @@ PROGRAM SpecExpHostAssociation05
       END SUBROUTINE Sub12
 
       SUBROUTINE Sub22(this)
-        CLASS(Child(4,*,4,*)) :: this 
+        CLASS(Child(4,*,4,*)) :: this
         CLASS(Child(KIND(c1%cmp1%I1),c1%cmp1%I1,2*KIND(c1%cmp1%I1),2*SIZE(c1%cmp1%A1))), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
@@ -174,7 +165,7 @@ PROGRAM SpecExpHostAssociation05
       END SUBROUTINE Sub22
 
       SUBROUTINE Sub32(this)
-        CLASS(NextGen(4,*,4,*,4,*)) :: this 
+        CLASS(NextGen(4,*,4,*,4,*)) :: this
         CLASS(Child(KIND(n1%cmp2%I1),n1%cmp2%I1,2*KIND(n1%cmp2%I1),2*SIZE(n1%cmp2%A1))), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
@@ -194,7 +185,7 @@ PROGRAM SpecExpHostAssociation05
       END SUBROUTINE Sub32
 
       SUBROUTINE Sub13(this)
-        CLASS(Base(4,*)) :: this 
+        CLASS(Base(4,*)) :: this
         CLASS(NextGen(KIND(b1%A1(1)),b1%A1(1),KIND(b1%A1(2)),b1%A1(2),KIND(b1%A1(3)),b1%A1(3))), &
                                                                                   ALLOCATABLE :: Obj
 
@@ -224,7 +215,7 @@ PROGRAM SpecExpHostAssociation05
       END SUBROUTINE Sub13
 
       SUBROUTINE Sub23(this)
-        CLASS(Child(4,*,4,*)) :: this 
+        CLASS(Child(4,*,4,*)) :: this
         CLASS(NextGen(KIND(c1%cmp1%A1(1)),c1%cmp1%A1(1),KIND(c1%cmp1%A1(2)),c1%cmp1%A1(2),  &
                                         KIND(c1%cmp1%A1(3)),c1%cmp1%A1(3))), ALLOCATABLE :: Obj
 
@@ -254,7 +245,7 @@ PROGRAM SpecExpHostAssociation05
       END SUBROUTINE Sub23
 
       SUBROUTINE Sub33(this)
-        CLASS(NextGen(4,*,4,*,4,*)) :: this 
+        CLASS(NextGen(4,*,4,*,4,*)) :: this
         CLASS(NextGen(KIND(n1%cmp2%A1(1)),n1%cmp2%A1(1),KIND(n1%cmp2%A1(2)),n1%cmp2%A1(2),  &
                                         KIND(n1%cmp2%A1(3)),n1%cmp2%A1(3))), ALLOCATABLE :: Obj
 
@@ -285,7 +276,7 @@ PROGRAM SpecExpHostAssociation05
 
       SUBROUTINE Sub14(this)
         INTEGER :: I
-        CLASS(Base(4,*)) :: this 
+        CLASS(Base(4,*)) :: this
         TYPE(Base(KIND(b1%I1),LEN(b1%C1))) :: Obj(b1%I1)
 
         IF ( SIZE(Obj) .NE. this%I1 ) STOP 118
@@ -299,7 +290,7 @@ PROGRAM SpecExpHostAssociation05
 
       SUBROUTINE Sub24(this)
         INTEGER :: I
-        CLASS(Child(4,*,4,*)) :: this 
+        CLASS(Child(4,*,4,*)) :: this
         TYPE(Base(KIND(c1%cmp1%I1),LEN(c1%cmp1%C1))) :: Obj(c1%cmp1%I1)
 
         IF ( SIZE(Obj) .NE. this%cmp1%I1 ) STOP 123
@@ -313,7 +304,7 @@ PROGRAM SpecExpHostAssociation05
 
       SUBROUTINE Sub34(this)
         INTEGER :: I
-        CLASS(NextGen(4,*,4,*,4,*)) :: this 
+        CLASS(NextGen(4,*,4,*,4,*)) :: this
         TYPE(Base(KIND(n1%cmp2%I1),LEN(n1%cmp2%C1))) :: Obj(n1%cmp2%I1)
 
         IF ( SIZE(Obj) .NE. this%cmp2%I1 ) STOP 01

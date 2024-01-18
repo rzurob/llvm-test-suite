@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,24 +13,16 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c13g.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: subroutine with BINd(C) attribute 
+!* DESCRIPTION                  : Test: subroutine with BINd(C) attribute
 !*                                with allocatable intrinsic data type,
 !*                                integer*1, integer*2, integer*4,
 !*                                integer*8, real*4, real*8, real*16,
@@ -54,7 +41,7 @@ program fxbind_c01a
    implicit none
 
    interface
-       subroutine extsub_int(i1, i2, i4, i8) bind(c) 
+       subroutine extsub_int(i1, i2, i4, i8) bind(c)
            integer*1 i1
            integer*2 i2
            integer*4 i4
@@ -66,16 +53,16 @@ program fxbind_c01a
            real*8   r8
        end subroutine extsub_real
 
-       subroutine extsub_log(l1) bind(c) 
+       subroutine extsub_log(l1) bind(c)
            logical*1 l1
        end subroutine extsub_log
 
-       subroutine extsub_comp(co8, co16) bind(c) 
+       subroutine extsub_comp(co8, co16) bind(c)
            complex*8   co8
            complex*16  co16
        end subroutine extsub_comp
 
-       subroutine extsub_char(ch1) bind(c) 
+       subroutine extsub_char(ch1) bind(c)
            character*1 ch1
        end subroutine extsub_char
 
@@ -83,31 +70,31 @@ program fxbind_c01a
 
    logical precision_R4, precision_R6, precision_R8
    logical precision_x8, precision_x16
-   
+
 !**********************************************************
 !        Initialization of variables                      *
 !**********************************************************
    integer*1, allocatable :: ai1
-   integer*2, allocatable :: ai2 
-   integer*4, allocatable :: ai4 
-   integer*8, allocatable :: ai8 
- 
-   real*4, allocatable ::   ar4 
-   real*8, allocatable ::   ar8 
-   real*16, allocatable ::  ar16 
+   integer*2, allocatable :: ai2
+   integer*4, allocatable :: ai4
+   integer*8, allocatable :: ai8
+
+   real*4, allocatable ::   ar4
+   real*8, allocatable ::   ar8
+   real*16, allocatable ::  ar16
 
    logical*1, allocatable :: al1
- 
-   complex*8, allocatable ::   ac8 
-   complex*16, allocatable ::  ac16 
 
-   character*1, allocatable :: ach1 
-    
+   complex*8, allocatable ::   ac8
+   complex*16, allocatable ::  ac16
+
+   character*1, allocatable :: ach1
+
    integer*1  bi1 /8/
    integer*2  bi2 /18/
    integer*4  bi4 /14/
    integer*8  bi8 /20/
- 
+
    real*4    br4 /9.6/
    real*8    br8 /281.6D0/
    real*16   br16 /3200.6/
@@ -116,15 +103,15 @@ program fxbind_c01a
 
    complex*8    bc8 /(1.0, 1.0)/
    complex*16   bc16 /(1.0D0, 1.0D0)/
-   
+
    character*1 bch1 /'d'/
-   
+
    allocate(ai1, ai2, ai4, ai8)
    ai1 = 5
    ai2 = 15
    ai4 = 11
    ai8 = 17
-  
+
    allocate(ar4, ar8, ar16)
    ar4 = 4.80
    ar8 = 140.8D0
@@ -205,7 +192,7 @@ program fxbind_c01a
 !                and check the Results
 !**********************************************************
    call extsub_comp(ac8, ac16)
-   
+
       if(.not. precision_x8(ac8,bc8))then
         error stop 61
       endif
@@ -213,5 +200,5 @@ program fxbind_c01a
       if(.not. precision_x16(ac16,bc16))then
         error stop 62
       endif
-      
-end 
+
+end

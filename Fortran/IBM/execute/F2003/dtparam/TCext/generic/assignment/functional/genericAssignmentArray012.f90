@@ -3,22 +3,11 @@
 ! opt variations: -qnol -qdeferredlp -qreuse=base
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: polymorphic array with multiple different rank
 !*  KEYWORD(S)                 :
@@ -196,7 +185,7 @@ program genericAssignmentArray012
 
    b0 = reshape ( source = c3, shape = (/ 4,2 /) )
    print *, b0%i
-   
+
    c0 = c1
    print *, c0%i
    print *, c0%j
@@ -216,7 +205,7 @@ program genericAssignmentArray012
    c0 = reshape ( source = c3, shape = (/ 4,2 /) )
    print *, c0%i
    print *, c0%j
-   
+
    deallocate ( b0, b1, b2, b3, b4 )
    allocate ( b0, source = c0 )
    allocate ( b1(4), source = c1 )

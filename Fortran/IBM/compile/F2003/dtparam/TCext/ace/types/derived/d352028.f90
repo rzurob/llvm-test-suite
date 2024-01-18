@@ -1,19 +1,13 @@
 !**********************************************************************
 !* ====================================================================
-!* XL Fortran Test Case                           IBM INTERNAL USE ONLY
-!* ====================================================================
 !*
 !*  TEST CASE NAME             : d352028
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt476bdl)
 !*  DATE                       : 2008-06-03
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Array Constructor Enhancement
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DEFECT ABSTRACT            : DTPARAM: ACE: DIAG: Duplicate Diagnostics
 !*                               Emitted

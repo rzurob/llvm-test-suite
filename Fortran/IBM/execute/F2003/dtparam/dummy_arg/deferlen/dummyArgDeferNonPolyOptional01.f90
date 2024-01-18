@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPolyOptional01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPolyOptional01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 10 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  1. one of dummy argument is allocatable or pointer derived type, another dummy argument has optional  attribute,  allocate different component value depends on optional arguments presenting or not. 
-!*   
+!*  1. one of dummy argument is allocatable or pointer derived type, another dummy argument has optional  attribute,  allocate different component value depends on optional arguments presenting or not.
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type dtp(k1,l1)
@@ -43,7 +35,7 @@ program dummyArgDeferNonPolyOptional01
 
   name=[character(6) :: "Robert","Tom","Lisa"]
 
-  allocate(dtp1,source= dtp(2,6)([1,2,3],name) ) 
+  allocate(dtp1,source= dtp(2,6)([1,2,3],name) )
 
   call sub1(dtp1,name)
 
@@ -62,7 +54,7 @@ program dummyArgDeferNonPolyOptional01
   call sub2(dtp2)
   if(any(dtp2%id /= [1,2,3]))                          error stop 16_4
   if(any(dtp2%name /= ["uname1","uname2","uname3"]))   error stop 17_4
-  
+
   contains
 
      subroutine sub1(dtp,name)
@@ -78,8 +70,8 @@ program dummyArgDeferNonPolyOptional01
            allocate(dtp,source= &
                dtp(2,6)([1,2,3],["uname1","uname2","uname3"]) )
         end if
-         
-     end subroutine   
+
+     end subroutine
 
      subroutine sub2(dtp,name)
         type(dtp(2,:)),pointer :: dtp

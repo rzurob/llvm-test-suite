@@ -7,4 +7,4 @@
          write(10, *) I
       END DO
       close(10)
-END 
+END

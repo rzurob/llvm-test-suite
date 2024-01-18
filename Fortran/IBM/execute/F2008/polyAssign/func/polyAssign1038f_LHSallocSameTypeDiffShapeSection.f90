@@ -1,23 +1,16 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/func/polyAssign1038f_LHSallocSameTypeDiffShapeSection.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 07 August 2015
-!* ORIGIN                       : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                 
-!*                              : Test section array operation for polymorphic assignment for arrays with the same type and different shape. 
+!* DESCRIPTION
+!*                              : Test section array operation for polymorphic assignment for arrays with the same type and different shape.
 !*                              : Test the situations that all arrays on the LHS and RHS are allocated, but LHS and RHS have different shapes, i.e. same rank but different extents.
 !*                              : Test whether the array of an intrinsic assignment is allowed to be polymorphic for different dynamic type, extents, and bounds.
 !*                              : We test array polymorphic assignment to two levels of extensible derived types with integer type inside.
@@ -29,7 +22,7 @@
 !* ===================================================================
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-   
+
 module m
    type base
       integer :: i1
@@ -75,7 +68,7 @@ Program polyAssign1038f
     if (b4(11)%i1 /= 4) error stop 28
     if (b4(12)%i1 /= 4) error stop 29
 
-    b1(2:10:2)=b4(2:6) 
+    b1(2:10:2)=b4(2:6)
     if (lbound(b1,1) /= 2 ) error stop 31
     if (ubound(b1,1) /= 11 ) error stop 32
     if (b1(2)%i1 /= 4) error stop 33

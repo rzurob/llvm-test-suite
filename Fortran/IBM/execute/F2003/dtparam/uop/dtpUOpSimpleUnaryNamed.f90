@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUOpSimpleUnaryNamed
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2009-02-11
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : User-Defined Operators
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 361989
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -200,7 +194,7 @@ program dtpUOpSimpleUnaryNamed
 
   use dtpUOpSimpleUnaryNamedmod
   implicit none
-  
+
     type(dk(2)) :: xk2a, xk2b, xk2c, xk2d
     type(dk(4)) :: xk4a, xk4b, xk4c, xk4d
 

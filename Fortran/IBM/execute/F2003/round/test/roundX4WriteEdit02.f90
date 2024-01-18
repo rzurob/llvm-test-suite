@@ -1,33 +1,25 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with different data edit descriptor.
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*    test different ROUND mode using different data edit descriptor with
-!*    complex(4). test scenarios where descriptor takes precedence over 
+!*    complex(4). test scenarios where descriptor takes precedence over
 !*    specifier.
 !*    9.4.1  The modes of a connection to an external file may be changed
 !*           by a subsequent OPEN statement that modifies the connection.
 !* ===================================================================
 
-  program roundX4WriteEdit02 
+  program roundX4WriteEdit02
 
     implicit none
- 
-    character(18) :: r_mode 
+
+    character(18) :: r_mode
     complex w1, w2
 
-    integer, parameter::unit = 2 
+    integer, parameter::unit = 2
 
     ! round in up mode
 
@@ -99,4 +91,4 @@
 
    close(unit)
 
-  end program roundX4WriteEdit02 
+  end program roundX4WriteEdit02

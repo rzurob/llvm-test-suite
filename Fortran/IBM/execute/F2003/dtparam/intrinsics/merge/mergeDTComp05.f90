@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeDTComp05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeDTComp05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 16 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 16 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
-!* 3. DERIVED TYPE  HAS EXTENED TYPE 
-!* 4. EXTENDED DRIVED TYPE HAS POLYMORPHIC TYPE 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
+!* 3. DERIVED TYPE  HAS EXTENED TYPE
+!* 4. EXTENDED DRIVED TYPE HAS POLYMORPHIC TYPE
 !* 5. TSOURCE AND FSOURCE ARE POLYMORPHIC TYPE
 !* 6. USE ASSOCIATE
 !* 7. DEFECT 355334 356228
@@ -33,13 +25,13 @@ module m
     type base(k1,l1)
        integer,kind  :: k1
        integer,len   :: l1
-       character(l1) :: c1(k1) 
+       character(l1) :: c1(k1)
     end type
     type,extends(base) :: child(l2)
        integer,len   :: l2
        character(l2) :: c2
        class(base(2,:)),pointer     :: base1=>null()
-    end type 
+    end type
 
 end module
 
@@ -87,7 +79,7 @@ program mergeDTComp05
                end associate
             class default
                error stop 100_4
-       end select 
+       end select
    end associate
 
    associate(x=>merge(b1,b2,.false.))
@@ -118,7 +110,7 @@ program mergeDTComp05
                error stop 102_4
        end select
    end associate
-  
+
    select type(x=>b1)
        type is(child(2,*,*))
           select type(y=>merge(x%base1,x%base1,.true.))
@@ -131,8 +123,8 @@ program mergeDTComp05
                 error stop 105_4
           end select
        class default
-           error stop 104_4 
-   end select 
+           error stop 104_4
+   end select
 
    select type(x=>b2)
        type is(child(2,*,*))
@@ -147,7 +139,7 @@ program mergeDTComp05
           end select
        class default
           error stop 106_4
-   end select       
+   end select
 
 
 end program

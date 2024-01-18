@@ -13,7 +13,7 @@
 
       basePtr => baseTarget
 
-      print*, lbound(basePtr%arr) 
+      print*, lbound(basePtr%arr)
       print*, ubound(basePtr%arr)
 
       end

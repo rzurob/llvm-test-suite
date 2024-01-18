@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrWholeArr1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrWholeArr1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 15, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  the whole array 
+!*  the whole array
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -44,15 +36,15 @@
     INTEGER, KIND :: K1
     INTEGER, LEN  :: N1
     SEQUENCE
-    INTEGER(K1)   :: ID 
+    INTEGER(K1)   :: ID
   END TYPE
 
   TYPE(DT(:,4)),  POINTER :: Ptr(:, :)
-  
+
   END MODULE
 
 
-  PROGRAM dataPtrWholeArr1 
+  PROGRAM dataPtrWholeArr1
   USE M, ONLY :  Ptr
   IMPLICIT NONE
 
@@ -65,16 +57,16 @@
 
   TYPE(DT(20,4)),  TARGET  :: Arr(100, 100), Arr1(10000)
   INTEGER            :: I, J, N
- 
-  N = 100 
+
+  N = 100
   Arr  = DT(20,4)(-1)
-  Arr1 = DT(20,4)(-2) 
+  Arr1 = DT(20,4)(-2)
 
 
-  DO I =1, N 
-  DO J =I, N 
+  DO I =1, N
+  DO J =I, N
 
-    Ptr(I:, J:) => Arr 
+    Ptr(I:, J:) => Arr
     IF (.NOT. ASSOCIATED(Ptr,  Arr ))           STOP 11
     IF (ANY( LBOUND(Ptr) .NE. (/I , J/)))       STOP 12
     IF (ANY( UBOUND(Ptr) .NE. (/I+N-1,J+N-1/))) STOP 13

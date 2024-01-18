@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcRecursive.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcRecursive.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 03, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Recursive 
-!* 
-!*   
+!*  Recursive
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -46,17 +38,17 @@
     INTEGER, LEN  :: N1
     CHARACTER(N1) :: ID
   END TYPE
- 
+
   PROCEDURE(ModFun1), POINTER  :: ProcPtr
 
-  INTERFACE Fun 
+  INTERFACE Fun
     RECURSIVE FUNCTION ExtFun(Arg, Arg1, Arg2)
       IMPORT  DT
       CLASS(DT(4,*)), INTENT(IN) :: Arg, Arg1, Arg2
       TYPE(DT(4,20))  :: ExtFun
     END FUNCTION
   END INTERFACE
- 
+
   CONTAINS
 
   SUBROUTINE ModInit()
@@ -64,64 +56,64 @@
   END SUBROUTINE
 
   RECURSIVE FUNCTION ModFun(Arg)
-  CLASS(DT(4,*)), INTENT(IN)   :: Arg 
+  CLASS(DT(4,*)), INTENT(IN)   :: Arg
   TYPE(DT(4,20))  :: ModFun
   INTEGER, SAVE :: Count = 0
     IF (Count .NE. 4 ) THEN
-    ModFun%ID = "ModFun-" // Arg%ID 
+    ModFun%ID = "ModFun-" // Arg%ID
     ELSE
       Count=Cout + 1
       ModFun = ModFun(Arg)
     END IF
-  END FUNCTION 
+  END FUNCTION
 
   RECURSIVE FUNCTION ModFun1(Arg, Arg1)
-  CLASS(DT(4,*)), INTENT(IN) :: Arg, Arg1 
+  CLASS(DT(4,*)), INTENT(IN) :: Arg, Arg1
   TYPE(DT(4,20))  :: ModFun1
   INTEGER, SAVE :: Count = 0
     IF (Count .NE. 4 ) THEN
-      ModFun1%ID = "ModFun1-" // Arg%ID 
+      ModFun1%ID = "ModFun1-" // Arg%ID
     ELSE
       Count=Cout + 1
       ModFun1 = ModFun1(Arg, Arg1)
     END IF
-  END FUNCTION 
+  END FUNCTION
 
   END MODULE
 
   RECURSIVE FUNCTION ExtFun(Arg, Arg1, Arg2)
   USE M, ONLY : DT
-  CLASS(DT(4,*)), INTENT(IN) :: Arg, Arg1, Arg2 
+  CLASS(DT(4,*)), INTENT(IN) :: Arg, Arg1, Arg2
   TYPE(DT(4,20))  :: ExtFun
   INTEGER, SAVE :: Count = 0
     IF (Count .NE. 4 ) THEN
-      ExtFun%ID = "ExtFun-" // Arg%ID 
+      ExtFun%ID = "ExtFun-" // Arg%ID
     ELSE
       Count=Cout + 1
       ExtFun = ExtFun(Arg, Arg1, Arg2)
     END IF
-  END FUNCTION 
+  END FUNCTION
 
 
-  PROGRAM mProcRecursive 
+  PROGRAM mProcRecursive
   USE M
 
-  INTERFACE Fun 
+  INTERFACE Fun
     PROCEDURE ModFun
-    PROCEDURE ProcPtr 
+    PROCEDURE ProcPtr
   END INTERFACE
- 
+
   TYPE(DT(4,20)) :: T, T1, T2
 
   CALL ModInit()
 
   T  = Fun(DT(4,20)("0"))
-  T1 = Fun(DT(4,20)("00"), DT(4,20)("1")) 
+  T1 = Fun(DT(4,20)("00"), DT(4,20)("1"))
   T2 = Fun(DT(4,20)("000"), DT(4,20)("1"), DT(4,20)("2"))
- 
+
   IF (T%ID     .NE. "ModFun-0" )   STOP 11
   IF (T1%ID    .NE. "ModFun1-00" ) STOP 12
   IF (T2%ID    .NE. "ExtFun-000" ) STOP 13
- 
+
   END
 

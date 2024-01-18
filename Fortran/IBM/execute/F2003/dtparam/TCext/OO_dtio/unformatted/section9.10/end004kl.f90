@@ -1,25 +1,17 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : end004kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from end004 by Robert Ma)
 !*  DATE                       : 2007-09-10 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
-!*
 !*  DESCRIPTION                : Testing: Section 9.10: Error, end-of-record, and end-of-file conditions
 !*                               - If an end-of-file condition occurs during execution of an input/output
-!*                                 statement that contains enither an END= nor and IOSTAT= specifier, 
+!*                                 statement that contains enither an END= nor and IOSTAT= specifier,
 !*                                 execution of the program is terminated (sequential access)
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -37,7 +29,7 @@ module m1
       integer, len :: lbase_1
       character(lbase_1) :: c = ''
    end type
-   
+
    type, extends(base) :: child (kchild_1) ! kchild_1=4
       integer, kind :: kchild_1
       integer(kchild_1) :: cc = -1
@@ -50,7 +42,7 @@ module m1
          integer,  intent(in) :: unit
          integer,  intent(out) :: iostat
          character(*),  intent(inout) :: iomsg
-      end subroutine   
+      end subroutine
    end interface
 
    interface read(unformatted)
@@ -60,38 +52,38 @@ module m1
          integer,  intent(in) :: unit
          integer,  intent(out) :: iostat
          character(*),  intent(inout) :: iomsg
-      end subroutine   
+      end subroutine
    end interface
-     
+
 end module
 
 
 program end004kl
-   use m1   
+   use m1
    use ISO_FORTRAN_ENV
-     
+
    ! declaration of variables
    class(base(:)), allocatable :: b1(:) ! tcx: (:)
 
    integer :: stat
    character(200) :: msg
-   
+
    ! allocation of variables
-   
+
    allocate (b1(3), source = (/ child(1,4)('a',1), child(1,4)('b',2), child(1,4)('c',3) /) ) ! tcx: (1,4) ! tcx: (1,4) ! tcx: (1,4)
-   
+
    open (unit = 1, file ='end004kl.1', form='unformatted', access='sequential')
-      
+
    ! unformatted I/O operations
 
    write ( 1, iostat = stat, iomsg = msg )     b1(1:3:2)
-   
+
    rewind 1
-   
+
    print *, "Before Program termination"
    read ( 1, iomsg = msg )                     b1       !<- end of file reached and no iostat= nor end=, program terminates here
    print *, "ERROR"
-      
+
 end program
 
 subroutine readUnformatted (dtv, unit, iostat, iomsg)
@@ -102,12 +94,12 @@ use m1, only: base, child
    character(*), intent(inout) :: iomsg
 
    read (unit, iomsg=iomsg, iostat=iostat ) dtv%c
-   
+
    select type(dtv)
       type is (child(*,4)) ! tcx: (*,4)
          read (unit, iomsg=iomsg, iostat=iostat ) dtv%cc
    end select
-   
+
 end subroutine
 
 subroutine writeUnformatted (dtv, unit, iostat, iomsg)
@@ -118,7 +110,7 @@ use m1, only: base, child
    character(*), intent(inout) :: iomsg
 
    write (unit, iomsg=iomsg, iostat=iostat ) dtv%c
-   
+
    select type(dtv)
       type is (child(*,4)) ! tcx: (*,4)
          write (unit, iomsg=iomsg, iostat=iostat ) dtv%cc

@@ -12,36 +12,29 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu13.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Invoke command line procedures through the main with  
-!*                             : pointers from different modules as actual arguments 
+!*  DESCRIPTION                : Invoke command line procedures through the main with
+!*                             : pointers from different modules as actual arguments
 !*                             : ( pointer association with host associated targets)
-!*                             :              
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD0
@@ -59,7 +52,7 @@
       MODULE MOD2
       character(513)            :: NAME
       logical                   :: TRIM_NAME
-      character(2049)           :: CmdLine 
+      character(2049)           :: CmdLine
       END MODULE
 
       module MOD
@@ -95,7 +88,7 @@
       CmdLine = 'fxclpu13 \\~\\^ ------AAAAA====== \\^\\~'
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 3 ) & 
+      if ( CmdCount .ne. 3 ) &
       then
         error stop 63
       endif
@@ -109,7 +102,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -136,6 +129,6 @@
 
 
 
- 
+
       INCLUDE 'cmdline.include'
 

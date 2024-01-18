@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure01d
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
 !*
 !*  DESCRIPTION
@@ -24,7 +21,7 @@ PROGRAM main
     INTEGER, PARAMETER :: n = 5
       REAL :: a(n), b(n)
       INTEGER :: i
-      a = (/ (i, i = 1, n) /)  
+      a = (/ (i, i = 1, n) /)
       b = foo(a)
 
   contains
@@ -34,7 +31,7 @@ PROGRAM main
       real, intent(in) :: a
       foo = a+1
       print *, a
-     
+
     END FUNCTION foo
 
 

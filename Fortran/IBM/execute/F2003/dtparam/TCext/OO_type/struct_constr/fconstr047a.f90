@@ -2,42 +2,26 @@
 ! ftcx_dtp -qck -qnol -qdefaultpv -qreuse=self /tstdev/OO_type/struct_constr/fconstr047a.f
 ! opt variations: -qnock -ql -qnodefaultpv -qreuse=none
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fconstr047a.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 04/13/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf95
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : structure constructor (with default
 !*                               initialization)
@@ -88,7 +72,7 @@ use m
 
     b1 = B(4) (i1)
 
-    if ((b1%attr%id /=0) .or. (b1%attr%name /= 'default') .or. b1%attr%flag & 
+    if ((b1%attr%id /=0) .or. (b1%attr%name /= 'default') .or. b1%attr%flag &
         .or. (b1%data /= 1000)) error stop 3_4
 
     b2 = B(4) (attr = A(4,1,20) (name = 'no-name'))

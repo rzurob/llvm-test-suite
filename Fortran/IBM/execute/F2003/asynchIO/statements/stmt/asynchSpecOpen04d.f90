@@ -1,20 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchSpecOpen04d - ASYNCHRONOUS= Specifier
 !*                               in I/O Statements
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : January 23, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS= Specifier in OPEN() Statement
 !*  SECONDARY FUNCTIONS TESTED : scalar-default-char-expr is 'NO',
 !*                               ASYNCHRONOUS I/O is *NOT* allowed
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : OPEN(), ASYNCHRONOUS= Specifier
@@ -58,7 +52,7 @@ PROGRAM asynchSpecOpen04d
     !
     !  (Secondary Test)  The value for the ASYNCHRONOUS= Specifier is
     !  case insensitive.
-    !  
+    !
     OPEN(8, ACTION='WRITE', ASYNCHRONOUS='nO',&
                 &IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN

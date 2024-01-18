@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : array101kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from array101 by Robert Ma)
 !*  DATE                       : 2007-06-04 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        array non-polymorphic derived type variable (read)
@@ -78,11 +70,11 @@ use m
 
    read ( 1, "(DT'b3-1'(5), DT'b3-2'(10), DT'b3-3'(15))", iostat = stat, iomsg = msg )    b3
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 3_4
-   
+
    if ( ( b1(1)%i /= 100 ) .or. ( b1(2)%i /= 101 ) .or. ( b1(3)%i /= 102 ) )                                 error stop 4_4
    if ( ( b2(1,1)%i /= 200 ) .or. ( b2(2,1)%i /= 201 ) .or. ( b2(1,2)%i /= 202 ) .or. ( b2(2,2)%i /= 203 ) ) error stop 5_4
    if ( ( b3(1)%i /= 300 ) .or. ( b3(2)%i /= 301 ) .or. ( b3(3)%i /= 302 ) .or. ( b3(4)%i /= 303 ) )         error stop 6_4
-   
+
    print *, rbuffer
 
 end program

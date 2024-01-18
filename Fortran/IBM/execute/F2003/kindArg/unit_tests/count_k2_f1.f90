@@ -1,26 +1,22 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : count_k2_f1.f
 !*
-!*  PROGRAMMER                 : Vince Yuen
 !*  DATE                       : Apr 10, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support KIND Argument for new intrinsics
 !*
 !*  KEYWORD(S)                 : KIND
 !*
-!*  DESCRIPTION                : test count functionality with various 
+!*  DESCRIPTION                : test count functionality with various
 !*                               combos of opt args, kind = 2 specified
 !*                               (with and without keyword), -qintsize=4
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
            integer :: k1, k2, k3, k4, k5, r1, r2, r3, r4, r5
-           logical(1) :: array(5) = (/.TRUE., .TRUE., .FALSE., .TRUE., .TRUE./) 
+           logical(1) :: array(5) = (/.TRUE., .TRUE., .FALSE., .TRUE., .TRUE./)
 
            k1 = kind(count((/.TRUE., .FALSE., .TRUE./)));
            if (k1 .ne. 4) error stop 1

@@ -1,24 +1,12 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : intkind2a.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM/TO are of type integer(2) 
+!*  DESCRIPTION                : FROM/TO are of type integer(2)
 !*                               called in associate construct
 !*
 !* ===================================================================
@@ -45,7 +33,7 @@
             type(base) :: b1
             class(A), allocatable :: a1
         end type
-      end module  
+      end module
 
 
       use n
@@ -57,10 +45,10 @@
 
       allocate(p1, source = child( base(x), A(y)) )
 
-      associate ( x => p1%b1 ) 
+      associate ( x => p1%b1 )
           associate ( y => p1%a1 )
               call move_alloc(x%i1, y%j1)
-              if ( allocated(x%i1) ) stop 21 
+              if ( allocated(x%i1) ) stop 21
               if ( .not. allocated(y%j1) ) stop 23
           end associate
       end associate

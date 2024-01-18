@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpATAND.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpATAND.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 17, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  ATAND  -- An IBM extension
-!*  
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM InitExpATAND 
+  PROGRAM InitExpATAND
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -55,7 +48,7 @@
 
   TYPE(DT) :: T
   LOGICAL precision_R6, precision_R8
-   
+
   IF (KIND(T%R4)     .NE. 4   )                       STOP 11
   IF (SIZE(T%R4)     .NE. 45  )                       STOP 12
   IF ( ANY(T%R4      .NE. -45.0))                     STOP 13
@@ -84,4 +77,4 @@
 
   END
 
- 
+

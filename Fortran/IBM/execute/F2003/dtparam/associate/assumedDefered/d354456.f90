@@ -1,20 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : d354456
-!*  TEST CASE TITLE            : Test Case for Defect:  354456
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : July 29, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  ABSTRACT                   : DTPARAM: ICE: POLY: In xlfcode with Polymorphic
 !*                               POINTER Argument in the ASSOCIATED() Intrinsic
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

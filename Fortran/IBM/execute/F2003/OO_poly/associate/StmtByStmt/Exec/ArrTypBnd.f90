@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrTypBnd.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrTypBnd.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrTypBnd
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a type bound function call 
-!*    () 
+!*    The selector is a type bound function call
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,14 +41,14 @@
       INTEGER :: BaseId = 1
     CONTAINS
       PROCEDURE, PASS   :: GetId => GetBaseId
-      PROCEDURE, NoPASS :: SetId 
-      PROCEDURE, PASS   :: GetObj 
+      PROCEDURE, NoPASS :: SetId
+      PROCEDURE, PASS   :: GetObj
     END TYPE
 
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -84,15 +78,15 @@
     END FUNCTION
 
     SUBROUTINE SetId(Obj, Id)
-    CLASS(Base)  :: Obj(:,:) 
+    CLASS(Base)  :: Obj(:,:)
     INTEGER      :: Id
       SELECT TYPE (Obj)
       TYPE IS (Base)
         Obj%BaseId = Id
       TYPE IS (Child)
         Obj%ChildId = Id
-      END SELECT 
-    END SUBROUTINE 
+      END SELECT
+    END SUBROUTINE
 
   END MODULE
 
@@ -103,7 +97,7 @@
   CLASS(*), ALLOCATABLE :: Arr(:,:)
 
   ALLOCATE(Arr(5,5), SOURCE=Child(BaseID=-1, ChildID=-2))
- 
+
   ASSOCIATE ( As => Arr(2:3, 4:5) )
   SELECT TYPE (As )
   CLASS IS ( Child)
@@ -113,12 +107,12 @@
     IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             STOP 30
     IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             STOP 32
 
-    IF ( ANY (As%Base%GetID()  .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 33 
-    IF ( ANY (As%GetID()       .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 34 
+    IF ( ANY (As%Base%GetID()  .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 33
+    IF ( ANY (As%GetID()       .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 34
 
     ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-       IF ( ANY(As0 .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 41 
-       IF ( ANY(As1 .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 42 
+       IF ( ANY(As0 .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 41
+       IF ( ANY(As1 .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 42
     END ASSOCIATE
 
     ASSOCIATE ( As2 => As%Base )
@@ -126,18 +120,18 @@
     END ASSOCIATE
 
     ASSOCIATE (As =>  As%GetID())
-      IF ( ANY(As .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) )) STOP 60 
+      IF ( ANY(As .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) )) STOP 60
     END ASSOCIATE
 
     ASSOCIATE (As =>  As%Base%GetID())
-      IF ( ANY(As .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) STOP 70 
+      IF ( ANY(As .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) STOP 70
     END ASSOCIATE
-  
+
     ASSOCIATE (As =>  As%Base%GetObj())
-      IF ( ANY(As%BaseId       .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) STOP 71 
-      IF ( ANY(As%Base%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) STOP 72 
+      IF ( ANY(As%BaseId       .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) STOP 71
+      IF ( ANY(As%Base%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) STOP 72
     END ASSOCIATE
-  
+
     CALL As%SetId(As%Base, 1)
     CALL As%SetId(As, 2)
 

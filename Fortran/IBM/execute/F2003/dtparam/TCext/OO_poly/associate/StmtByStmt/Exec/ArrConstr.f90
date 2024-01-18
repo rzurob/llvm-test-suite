@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrConstr.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrConstr.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrConstr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,7 +33,7 @@
 !*
 !*  DESCRIPTION
 !*    The selector an array constructor
-!*    (Wrong bound-299594) 
+!*    (Wrong bound-299594)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,13 +44,13 @@
       INTEGER(K1)   :: BaseId = 1
     CONTAINS
       PROCEDURE, PASS   :: GetId => GetBaseId
-      PROCEDURE, NoPASS   :: SetId 
+      PROCEDURE, NoPASS   :: SetId
     END TYPE
 
     TYPE, EXTENDS(Base) :: Child    ! (4)
       INTEGER(K1)  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -74,7 +68,7 @@
     END FUNCTION
 
     SUBROUTINE SetId(Obj, Id)
-    CLASS(Base(4))  :: Obj(:,:) 
+    CLASS(Base(4))  :: Obj(:,:)
     INTEGER      :: Id
 
       SELECT TYPE (Obj)
@@ -82,8 +76,8 @@
         Obj%BaseId = Id
       TYPE IS (Child(4))
         Obj%ChildId = Id
-      END SELECT 
-    END SUBROUTINE 
+      END SELECT
+    END SUBROUTINE
 
   END MODULE
 
@@ -92,18 +86,18 @@
   IMPLICIT NONE
   INTEGER :: i
   LOGICAL(8) :: Mask(2,2) = .TRUE.
-   
+
   ASSOCIATE ( As => RESHAPE((/(Child(4)(BaseId=i, ChildId=-i), i=1,4 )/), (/2,2/) ))
 
     IF ( ANY (LBOUND(As)      .NE. (/1,1/) ) )             STOP 30
     IF ( ANY (SHAPE(As).NE. (/2,2/) ) )             STOP 32
 
-    IF ( ANY (As%Base%GetID()      .NE. RESHAPE((/ 1, 2, 3, 4/), (/2,2/)) ) ) STOP 33 
-    IF ( ANY (As%GetID() .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) ) ) STOP 34 
+    IF ( ANY (As%Base%GetID()      .NE. RESHAPE((/ 1, 2, 3, 4/), (/2,2/)) ) ) STOP 33
+    IF ( ANY (As%GetID() .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) ) ) STOP 34
 
     ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-       IF ( ANY(As0 .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) ) ) STOP 41 
-       IF ( ANY(As1 .NE. RESHAPE((/ 1, 2, 3, 4/), (/2,2/)) ) ) STOP 42 
+       IF ( ANY(As0 .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) ) ) STOP 41
+       IF ( ANY(As1 .NE. RESHAPE((/ 1, 2, 3, 4/), (/2,2/)) ) ) STOP 42
     END ASSOCIATE
 
     ASSOCIATE ( As2 => As%Base )
@@ -111,17 +105,17 @@
     END ASSOCIATE
 
     ASSOCIATE (As =>  As%GetID())
-      IF ( ANY(As .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) )) STOP 60 
+      IF ( ANY(As .NE. RESHAPE((/-1,-2,-3,-4/), (/2,2/)) )) STOP 60
     END ASSOCIATE
 
     ASSOCIATE (As =>  As%Base%GetID())
-      IF ( ANY(As .NE. RESHAPE((/ 1, 2, 3, 4/), (/2,2/)) )) STOP 70 
+      IF ( ANY(As .NE. RESHAPE((/ 1, 2, 3, 4/), (/2,2/)) )) STOP 70
     END ASSOCIATE
-  
+
     ASSOCIATE ( As => MERGE(1, 2, 1>0))
       IF ( As .NE. 1 ) STOP 55
     END ASSOCIATE
- 
+
     ASSOCIATE ( As => (MERGE(As, As, Mask )) )
       IF ( ANY (LBOUND(As) .NE. (/1,1/) ) )    STOP 50
       IF ( ANY (SHAPE(As)  .NE. (/2,2/) ) )    STOP 52

@@ -1,21 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : streamRead08
-!*  TEST CASE TITLE            : Unformatted Intrinsic Input/Output (with DTP)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : November  4, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : STREAM File Input for a Derived/Extended
 !*                               Derived Type (with Type Parameters)
 !*  SECONDARY FUNCTIONS TESTED : Derived Types are ALLOCATED POINTERs
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : READ

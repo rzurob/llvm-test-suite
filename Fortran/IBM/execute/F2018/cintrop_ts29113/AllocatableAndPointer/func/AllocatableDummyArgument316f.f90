@@ -1,25 +1,18 @@
 !*********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument316f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from C
 !*
 !*                                - a => b with only b having a C descriptor
-!*                                - complex      
+!*                                - complex
 !*                                - Nesting of calls
 !*                                   Bind(c) ==> Non-bind(c)
 !*                                - Verify values both in Fortran and C
@@ -78,9 +71,9 @@ subroutine update_all(arg) bind(c)
     if(         .not. allocated(arg) ) ERROR STOP 30
     arg = [(int_2_complex(i),i=1,2*size(arg))]
 
-    contains 
+    contains
 
-    function int_2_complex(sel) 
+    function int_2_complex(sel)
         complex(c_float_complex) :: int_2_complex
         integer(c_int), value :: sel
 

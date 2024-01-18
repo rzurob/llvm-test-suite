@@ -1,14 +1,8 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : critical_f015.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : February 2011
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
 !*  SECONDARY FUNCTIONS TESTED :
@@ -36,7 +30,7 @@ program main
 	integer :: res
 	real, parameter :: val = 3.141596
 	logical :: precision_r4
-	
+
 	caf = phase(0, 0)
 	res = 0
 	sync all
@@ -52,7 +46,7 @@ program main
 						print *, caf(1)[1]%x, caf(100000)[1]%x
 						error stop 15
 					end if
-					
+
 					if ( caf(1)[1]%y /= caf(100000)[1]%y ) then
 						print *, caf(1)[1]%y, caf(100000)[1]%y
 						error stop 16
@@ -63,7 +57,7 @@ program main
 			if ( caf(1)[1]%x /= caf(100000)[1]%x ) then
 				res = res + 1
 			end if
-			
+
 			if ( caf(1)%x /= caf(100000)%x ) then
 				res = res + 1
 			end if

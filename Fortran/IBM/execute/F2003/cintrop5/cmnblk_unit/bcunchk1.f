@@ -12,35 +12,28 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : bcunchk1.f
 !
-!* PROGRAMMER                   : Helen Li
 !* DATE                         : July 28, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
-!* REQUIRED COMPILER OPTIONS    : 
+!* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Test bind(c) common blocks work with
 !*                              : -qextchk
-!*                              :
 !* ===================================================================
 !*  REVISION HISTORY
 !*  MM/DD/YY:  Init:  Comments:
-!*  06/28/04    KV    - corrected incorrect ineroperability of "character(1) z" 
+!*  06/28/04    KV    - corrected incorrect ineroperability of "character(1) z"
 !*                      with "char z[1]" - defect 285281
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 program bcunchk1
 implicit none
-integer x 
+integer x
 real y
 character z
 common /blk/ x, y, z

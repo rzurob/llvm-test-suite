@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitComp9 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitComp9
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : June 06, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Default initialization for component 
+!*  SECONDARY FUNCTIONS TESTED : Default initialization for component
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
 !*  The default initialization does not imply that the object has the SAVE attribute.
-!*  
-!*  
 !*
-!* () 
+!* ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,7 +43,7 @@
   END MODULE
 
 
-  PROGRAM dtParamInitComp9 
+  PROGRAM dtParamInitComp9
   USE M
 
 
@@ -71,7 +62,7 @@
   IF ( T%L        .NE. 4 )                   STOP 12
   IF ( T%K1       .NE. 4 )                   STOP 13
   IF ( T%L1       .NE. 4 )                   STOP 14
-  
+
   IF ( KIND(T%I)   .NE. 4 )                STOP 21
   IF ( SIZE(T%I)   .NE. 4 )                STOP 22
   IF ( ANY(T%I     .NE. 4))                STOP 23
@@ -79,11 +70,11 @@
   IF ( KIND(T%R)   .NE. 4 )                STOP 31
   IF ( SIZE(T%R)   .NE. 4 )                STOP 32
   IF ( ANY(T%R     .NE. 4))                STOP 33
- 
+
   T%I = -4
   T%R = -4.
 
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END
 
@@ -97,7 +88,7 @@
   IF ( T%L        .NE. 4 )                 STOP 12
   IF ( T%K1       .NE. 8 )                 STOP 13
   IF ( T%L1       .NE. 4 )                 STOP 14
-  
+
   IF ( KIND(T%I)   .NE. 8 )                STOP 21
   IF ( SIZE(T%I)   .NE. 4 )                STOP 22
 
@@ -116,5 +107,5 @@
   T%I = -4
   T%R = -4.
 
-  END SUBROUTINE 
+  END SUBROUTINE
 

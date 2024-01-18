@@ -1,22 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :UNPACK DTP INTRINSIC FUNCTION
-!*
-!*  PROGRAMMER                 : Adrian Green
 !*  DATE                       : July 27, 2008
 !*  ORIGIN                     : XLF Compiler Test,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !       Pack Intrinsic function with derived type parameters.
 !*  DESCRIPTION                : Uses unpack with a derived type containing a pointer and
 !*                              a real component with a 3x3 array.
-!*
-!*
-!*
-!*
 !*
 
 module m1
@@ -27,7 +17,7 @@ type adrow(k)
 end type adrow
 end module m1
 
-program a	
+program a
 
 use m1
 type (adrow(4)) :: vec(6)

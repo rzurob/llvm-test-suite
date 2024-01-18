@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypParamIntrinAssgn   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypParamIntrinAssgn
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  If necessary, the value is converted according to the rules of intrinsic 
+!*  If necessary, the value is converted according to the rules of intrinsic
 !*  assignment (7.4.1.3) to a value of the same kind as the type parameter.
 !*  (failed at KIND(K1))
 !*
@@ -34,7 +27,7 @@
 
 
 
-  PROGRAM dtParamTypParamIntrinAssgn 
+  PROGRAM dtParamTypParamIntrinAssgn
 
   TYPE :: DT0(K1, K2, K, K4, K8)
     INTEGER(KIND=1_2), KIND :: K1=1_2

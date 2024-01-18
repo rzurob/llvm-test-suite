@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,24 +13,16 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c11f.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute 
+!* DESCRIPTION                  : Test: BINC(C) attribute
 !*                                with different intrinsic data type
 !*                                with attribute intent, target,
 !*                                integer*1, integer*2, integer*4,
@@ -54,8 +41,8 @@
 
 module m
 contains
-   
-       subroutine sextsub_int(i1, i2, i4, i8, i81) 
+
+       subroutine sextsub_int(i1, i2, i4, i8, i81)
            integer*1, intent(in), target  :: i1
            integer*2, intent(in), target  :: i2
            integer*4, intent(in), target  :: i4
@@ -67,17 +54,17 @@ contains
            i81 = i1 + i2 + i4 + i8
        end subroutine sextsub_int
 
-       subroutine sextsub_real(r4, r8, r161) 
+       subroutine sextsub_real(r4, r8, r161)
            real*4, intent(in), target   ::  r4
            real*8, intent(in), target   ::  r8
            real*8, intent(out) :: r161
            r161 = 0.0D0
            return
        entry extsub_real(r4, r8, r161) bind(c)
-           r161 = r4 + r8 
+           r161 = r4 + r8
        end subroutine sextsub_real
 
-       subroutine sextsub_log(l1, l11) 
+       subroutine sextsub_log(l1, l11)
            logical*1, intent(in), target :: l1
            logical*1, intent(out) ::  l11
            l11 = .true.
@@ -86,7 +73,7 @@ contains
            l11 = l1
        end subroutine sextsub_log
 
-       subroutine sextsub_comp(co8, co16, co81, co161) 
+       subroutine sextsub_comp(co8, co16, co81, co161)
            complex*8, intent(in), target   ::  co8
            complex*16, intent(in), target  ::  co16
            complex*8, intent(out) ::  co81
@@ -99,7 +86,7 @@ contains
            co161 = co16
        end subroutine sextsub_comp
 
-       subroutine sextsub_char(ch1, ch11) 
+       subroutine sextsub_char(ch1, ch11)
            character*1, intent(in), target  :: ch1
            character*1, intent(out) ::  ch11
            ch11 = 'z'

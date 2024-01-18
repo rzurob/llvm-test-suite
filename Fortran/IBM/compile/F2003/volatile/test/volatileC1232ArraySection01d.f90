@@ -1,13 +1,6 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : array section, VOLATILE
 !*
@@ -19,12 +12,12 @@
 !*                dummy argument shall be an assumed-shape array.
 !* ===================================================================
 
-  program volatileC1232ArraySection01d 
+  program volatileC1232ArraySection01d
 
     interface
        subroutine arraySectionVolatile(x)
          integer, VOLATILE :: x(4)
-       end subroutine arraySectionVolatile 
+       end subroutine arraySectionVolatile
     end interface
 
     integer y(16)
@@ -37,6 +30,6 @@
   subroutine arraySectionVolatile(x)
 
     integer, VOLATILE ::x(4)                  ! dummy argument is
-    print *, x                                ! explicit array 
-    
-  end subroutine arraySectionVolatile 
+    print *, x                                ! explicit array
+
+  end subroutine arraySectionVolatile

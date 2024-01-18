@@ -1,16 +1,8 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : pointer array, VOLATILE
-!*
 !*
 !*  DESCRIPTION                : diagnostic TC for  C1233
 !*
@@ -20,7 +12,7 @@
 !*        a pointer array.
 !* ===================================================================
 
-  program volatileC1233PointerArray02d 
+  program volatileC1233PointerArray02d
 
     interface
         subroutine ExplicitArray(x)
@@ -35,10 +27,9 @@
 
     call ExplicitArray(ptrArray)
 
-  end program volatileC1233PointerArray02d 
+  end program volatileC1233PointerArray02d
 
   subroutine ExplicitArray(x)
        integer, VOLATILE :: x(*)     ! dummy argument is assumed size array
   end subroutine ExplicitArray
-
 

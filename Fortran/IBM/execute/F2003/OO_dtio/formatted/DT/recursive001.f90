@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        recursively write a non-polymorphic linked list
@@ -46,7 +35,7 @@ module m
          character(*),  intent(inout) :: iomsg
       end subroutine
    end interface
-   
+
    integer(4) :: idx
 
 end module
@@ -67,12 +56,12 @@ use m
    allocate ( head%next%next, source = base(null(), 300) )
    allocate ( head%next%next%next, source = base(null(), 400) )
    allocate ( head%next%next%next%next, source = base(null(), 500) )
-   
+
    idx = 1
 
    write ( 1, fmt, iostat = stat, iomsg = msg )              head
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
-   
+
    fmt = "(DT'_ll'(15))"
 
    write ( 1, fmt, iostat = stat, iomsg = msg )              head
@@ -93,10 +82,10 @@ use m, only: base, write(formatted), idx
    character(20) :: fmt
 
    write ( unit, * ) 'element number', idx, ' iotype:', iotype, ' v_list:', v_list
- 
+
    write ( fmt, * ) '(I', v_list(1),',/)'
    write ( unit, fmt, iostat = iostat )    dtv%i
-   
+
    if ( associated ( dtv%next ) ) then
       idx = idx + 1
       write ( fmt, * ) '(DT(',v_list(1),'))'

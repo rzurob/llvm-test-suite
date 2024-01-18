@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxumodprocstmt014.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,29 +12,22 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxumodprocstmt014
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Sept. 22, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : generalization of module procedure
 !*                               stmts, by making the MODULE keyword
 !*                               optional. These statements are called
 !*                               procedure statements in F2003.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This functional test, makes sure that
 !*                               if the identifier in a procedure stmt
-!*                               refers to a module procedure, it 
+!*                               refers to a module procedure, it
 !*                               behaves as expected, when it is called
 !*                               using the generic interface in which
 !*                               the proc stmt appears in.
@@ -55,18 +48,18 @@
       subroutine s1()
         print*, "s1"
       end subroutine s1
-      
+
       integer function f1(arg)
          integer :: arg
          f1 = arg
       end function f1
 
-      
+
       end module m
-      
+
       use m
-      
+
       call gen1()
       print *, gen2(3)
-      
+
       end

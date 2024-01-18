@@ -2,43 +2,36 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk122b cxcmn_blk122
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.o *.mod fxcmn_blk122b fxcmn_blk122b.out
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : March 19, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc 
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This test case will verify that 3-dimensional array 
-!*				 variables inside of common blocks are interoperable 
+!*  DESCRIPTION                : This test case will verify that 3-dimensional array
+!*				 variables inside of common blocks are interoperable
 !*				 with C variables that are not inside of a structure.
 !*
 !*                               Data type being tested:  INTEGER(C_INT_FAST16_T)
-!*					
-!*                               Test: BIND(C) common block in external subroutine 
-!*					
+!*
+!*                               Test: BIND(C) common block in external subroutine
+!*
 !* ===================================================================
-!*  REVISION HISTORY					
-!*  MM/DD/YY:  Init:  Comments:			
+!*  REVISION HISTORY
+!*  MM/DD/YY:  Init:  Comments:
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -61,47 +54,47 @@ subroutine extern_fsub()
 ! Integer Declaration
 ! ----------------------------------------------------------------------------
 
-         INTEGER (C_INT_FAST16_T         )               :: int_C_INT_FAST16_T(2,2,2)  !** not supported on AIX5.1 and below 
+         INTEGER (C_INT_FAST16_T         )               :: int_C_INT_FAST16_T(2,2,2)  !** not supported on AIX5.1 and below
 
 
-	!*** Resultant Matrix 
-         INTEGER(C_INT_FAST16_T)         :: res_C_INT_FAST16_T(8) 
+	!*** Resultant Matrix
+         INTEGER(C_INT_FAST16_T)         :: res_C_INT_FAST16_T(8)
 
-	!*** Comparison Matrix 
-         INTEGER(C_INT_FAST16_T)         :: cmp_C_INT_FAST16_T(8) 
+	!*** Comparison Matrix
+         INTEGER(C_INT_FAST16_T)         :: cmp_C_INT_FAST16_T(8)
 
-	!*** Temporary Matrix (for comparison purposes) 
-         INTEGER(C_INT_FAST16_T)         :: tmp_c_int_fast16_t(2,2,2) 
+	!*** Temporary Matrix (for comparison purposes)
+         INTEGER(C_INT_FAST16_T)         :: tmp_c_int_fast16_t(2,2,2)
 
 ! ----------------------------------------------------------------------------
-! One COMMON statement with one common block in one BIND(C) statement that has a binding label  
+! One COMMON statement with one common block in one BIND(C) statement that has a binding label
 ! ----------------------------------------------------------------------------
 
-          common /blk_int_C_INT_FAST16_T/  int_C_INT_FAST16_T 
+          common /blk_int_C_INT_FAST16_T/  int_C_INT_FAST16_T
 
-          bind(c,Name='_') ::    /blk_int_C_INT_FAST16_T/ 
+          bind(c,Name='_') ::    /blk_int_C_INT_FAST16_T/
 
 ! ----------------------------------------------------------------------------
 ! Integer Initialization
 ! ----------------------------------------------------------------------------
 
-         int_C_INT_FAST16_T      =  o'100'               ! d'64'     ! Only for AIX52, Mac, and Linux 
+         int_C_INT_FAST16_T      =  o'100'               ! d'64'     ! Only for AIX52, Mac, and Linux
 
-         cmp_c_int_fast16_t =  (/64, 64, 64, 64, 64, 64, 64, 64/)          
+         cmp_c_int_fast16_t =  (/64, 64, 64, 64, 64, 64, 64, 64/)
 
 ! ----------------------------------------------------------------------------
 ! Integer Verification
 ! - verify assigned values before passing to C
 ! ----------------------------------------------------------------------------
 
-         !*** Reshape 3-disensional array to 1-dimensional array for easier comparison 
-         res_C_INT_FAST16_T  =    RESHAPE( int_C_INT_FAST16_T, (/8/)) 
+         !*** Reshape 3-disensional array to 1-dimensional array for easier comparison
+         res_C_INT_FAST16_T  =    RESHAPE( int_C_INT_FAST16_T, (/8/))
 
-         do i = 1, 8   
+         do i = 1, 8
 
-           if ( res_C_INT_FAST16_T(i)     .ne.    cmp_C_INT_FAST16_T(i))           call zzrc(10+i) 
+           if ( res_C_INT_FAST16_T(i)     .ne.    cmp_C_INT_FAST16_T(i))           call zzrc(10+i)
 
-         end do     
+         end do
 
 
 ! ----------------------------------------------------------------------------
@@ -109,13 +102,13 @@ subroutine extern_fsub()
 ! - switch first dimension with the third for comparison purposes
 ! ----------------------------------------------------------------------------
 
-         do k = 1, 2 
-            do j = 1, 2 
-               do i = 1, 2 
-                 tmp_c_int_fast16_t(i,j,k)  =           int_c_int_fast16_t(k,j,i) 
-             end do 
-           end do 
-         end do 
+         do k = 1, 2
+            do j = 1, 2
+               do i = 1, 2
+                 tmp_c_int_fast16_t(i,j,k)  =           int_c_int_fast16_t(k,j,i)
+             end do
+           end do
+         end do
 
 ! ----------------------------------------------------------------------------
 ! Call to C subprogram
@@ -129,16 +122,16 @@ subroutine extern_fsub()
 ! - verify values passed back from C
 ! ----------------------------------------------------------------------------
 
-         !*** Reshape 3-dimensional resultant array into 1-dimensional resultant array for easier comparison 
-         res_C_INT_FAST16_T  =    RESHAPE( int_C_INT_FAST16_T, (/8/)) 
+         !*** Reshape 3-dimensional resultant array into 1-dimensional resultant array for easier comparison
+         res_C_INT_FAST16_T  =    RESHAPE( int_C_INT_FAST16_T, (/8/))
 
-         !*** Reshape 3-dimensional temporary array into 1-dimensional comparison array 
-         cmp_C_INT_FAST16_T  =   RESHAPE( tmp_C_INT_FAST16_T, (/8/)) 
+         !*** Reshape 3-dimensional temporary array into 1-dimensional comparison array
+         cmp_C_INT_FAST16_T  =   RESHAPE( tmp_C_INT_FAST16_T, (/8/))
 
-         do i = 1, 8   
+         do i = 1, 8
 
-           if ( res_C_INT_FAST16_T(i)    .ne.    cmp_C_INT_FAST16_T(i))          call zzrc(20+i) 
+           if ( res_C_INT_FAST16_T(i)    .ne.    cmp_C_INT_FAST16_T(i))          call zzrc(20+i)
 
-         end do    
+         end do
 
    end subroutine

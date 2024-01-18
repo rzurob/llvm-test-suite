@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: C922
 !*                                        EOR= specifier appears, then an ADVANCE= specifier shall also appear
@@ -70,11 +59,11 @@ program C922_001
    open (1, file = 'C922_001.1', form='formatted', access='sequential' )
 
    allocate ( b1, source = base(123) )
-   
+
    write ( 1, "(DT)", ADVANCE="no" ) b1
-   
+
    rewind 1
-   
+
    read ( 1, "(DT)",  EOR=10, iostat = stat ) b1
 
 10 close ( 1, status = 'delete' )

@@ -1,28 +1,20 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank603f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : October 27, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
-!* REQUIRED COMPILER OPTIONS    : 
+!* REQUIRED COMPILER OPTIONS    :
 !*                               (use -D_DEBUG for a debug version)
 !*
 !* DESCRIPTION                  : Calling a BIND(C) procedure defined in Fortran from C
-!*                                - array of various ranks 
-!*                                - CFI_attribute_other: Lower bound is always 1 on the Fortran side 
-!*                                - type c_int8_t 
+!*                                - array of various ranks
+!*                                - CFI_attribute_other: Lower bound is always 1 on the Fortran side
+!*                                - type c_int8_t
 !*                                - nested with bind(c)=>bind(c) call
-!*
 !*
 !* Actual Argument:
 !*
@@ -38,18 +30,18 @@
 subroutine fcheck(flag, arr) bind(c)
     use iso_c_binding
     implicit none
-    integer  i 
+    integer  i
     integer(c_int) flag
     integer(c_int8_t) arr(..)
 
-    interface 
-        subroutine sub(arr, r, s, lb, ub) bind(c)  
+    interface
+        subroutine sub(arr, r, s, lb, ub) bind(c)
             use iso_c_binding
             implicit none
             integer(c_int8_t) arr(..)
             integer :: r, s, lb, ub
         end subroutine sub
-    end interface 
+    end interface
 
 !    /* Non-allocatable non-pointer assumed rank object:
 !       lower boud is 0 on the C-side and 1 on the Fortran side

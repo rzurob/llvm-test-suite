@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  IntrinInt.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  IntrinInt.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : IntrinInt 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : IntrinInt
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 07, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,40 +31,40 @@
 !*
 !*  DESCRIPTION
 !*    The selector is of int type with various kinds
-!*    () 
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM IntrinInt 
+  PROGRAM IntrinInt
   IMPLICIT NONE
 
   ASSOCIATE ( As => 1_1 )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As       .NE. 1_1 ) STOP 20 
+      IF ( As       .NE. 1_1 ) STOP 20
     END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE ( As => 2_2 )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As       .NE. 2_2 ) STOP 22 
+      IF ( As       .NE. 2_2 ) STOP 22
     END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE ( As => 4_4 )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As       .NE. 4_4 ) STOP 24 
+      IF ( As       .NE. 4_4 ) STOP 24
     END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE ( As => 8_8 )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As       .NE. 8_8 ) STOP 28 
+      IF ( As       .NE. 8_8 ) STOP 28
     END ASSOCIATE
   END ASSOCIATE
 
   CONTAINS
-  
+
   FUNCTION Fun(Arg)
   CLASS(*) :: Arg
   INTEGER, ALLOCATABLE  :: Fun
@@ -80,13 +74,13 @@
     CLASS DEFAULT
       STOP 99
     TYPE IS (INTEGER(1))
-      ALLOCATE (Fun, SOURCE=INT(Arg, 4)) 
+      ALLOCATE (Fun, SOURCE=INT(Arg, 4))
     TYPE IS (INTEGER(2))
-      ALLOCATE (Fun, SOURCE=INT(Arg, 4)) 
+      ALLOCATE (Fun, SOURCE=INT(Arg, 4))
     TYPE IS (INTEGER(4))
-      ALLOCATE (Fun, SOURCE=INT(Arg, 4)) 
+      ALLOCATE (Fun, SOURCE=INT(Arg, 4))
     TYPE IS (INTEGER(8))
-      ALLOCATE (Fun, SOURCE=INT(Arg, 4)) 
+      ALLOCATE (Fun, SOURCE=INT(Arg, 4))
     END SELECT
     END ASSOCIATE
 

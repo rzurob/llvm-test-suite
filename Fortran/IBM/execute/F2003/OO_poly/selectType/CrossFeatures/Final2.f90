@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Final2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Final2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Final2 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Final2
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !* Finalization
 !* (ICE)
 !* The selector is an array constructor- no finalization yet?
@@ -51,22 +45,22 @@
       CHARACTER(513) :: C0="0"
       CONTAINS
       PROCEDURE, PASS  :: GetChar
-      Final :: FinalDT0 
+      Final :: FinalDT0
     END TYPE
 
     TYPE,  EXTENDS(DT0) :: DT1
       CHARACTER(513) :: C1="1"
       CONTAINS
-      Final :: FinalDT1 
+      Final :: FinalDT1
     END TYPE
 
     TYPE, EXTENDS(DT1) :: DT
       CHARACTER(513) :: C2="2"
       CONTAINS
-      Final :: FinalDT 
+      Final :: FinalDT
     END TYPE
 
-    LOGICAL :: Final(0:2) = .FALSE. 
+    LOGICAL :: Final(0:2) = .FALSE.
 
     CONTAINS
 
@@ -130,7 +124,7 @@
   CLASS DEFAULT
     STOP 50
   END SELECT
-    IF (ANY(Final)) STOP 60   
+    IF (ANY(Final)) STOP 60
   END SELECT
     IF (ANY(Final)) STOP 61
   END SELECT
@@ -138,7 +132,7 @@
  !IF (ANY(Final .NEQV. .TRUE. )) STOP 62
   IF (ANY(Final))                STOP 62  ! No finalization on array constructor!
 
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END
 

@@ -1,27 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pure3.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimit polymorphic,
 !*                               dummy args
 !*                               move_alloc is called inside pure subroutine
-!*                        
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -38,7 +26,7 @@ module m
         contains
             final :: f1
             final :: f1_1
-    end type 
+    end type
 
     type, extends(shape) :: point
         integer x
@@ -47,21 +35,21 @@ module m
            final :: f2
     end type
 
-    class(*), allocatable :: z1(:,:) 
-  
+    class(*), allocatable :: z1(:,:)
+
     contains
 
         pure subroutine f1(x)
            type(shape), intent(in) :: x(:,:)
-        end subroutine 
+        end subroutine
 
         pure subroutine f1_1(x)
            type(shape), intent(in) :: x
-        end subroutine 
+        end subroutine
 
         pure subroutine f2(x)
            type(point), intent(in) :: x(:,:)
-        end subroutine 
+        end subroutine
 
 end module
 
@@ -71,9 +59,9 @@ use m
     class(*), allocatable :: x1(:,:), y1(:,:)
     integer i
 
-    allocate(x1(2,2), source = reshape((/ (point(4-i,i+4),i=-2,4,2) /), (/2,2/))) 
+    allocate(x1(2,2), source = reshape((/ (point(4-i,i+4),i=-2,4,2) /), (/2,2/)))
 
-    allocate(y1(1,2), source = reshape((/(shape(), i=1,2)/),(/1,2/))) 
+    allocate(y1(1,2), source = reshape((/(shape(), i=1,2)/),(/1,2/)))
 
     call move_alloc (x1, y1)
 
@@ -88,7 +76,7 @@ use m
             print *, z1%x
             print *, z1%y
         class default
-            stop 33 
+            stop 33
     end select
 
 end

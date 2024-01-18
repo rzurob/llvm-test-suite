@@ -1,34 +1,22 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!* TEST CASE TITLE : Functional test for DTP dummy argument with VALUE
-!*                                                                     
 !* TEST CASE NAME              : dtParamDummyValue11j.f
 !*
-!*  PROGRAMMER                 : Andy Sheung
 !*  DATE                       : July 10, 2008
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
-!*  DESCRIPTION: 
-!*  The VALUE attribute specifies a type of argument association between a 
-!*  dummy argument and an actual argument. If the dummy argument has the 
-!*  VALUE attribute, it becomes associated with a definable anonymous data 
-!*  object whose initial value is that of the actual argument. Subsequent 
-!*  changes to the value or definition status of the dummy argument do not 
+!*  DESCRIPTION:
+!*  The VALUE attribute specifies a type of argument association between a
+!*  dummy argument and an actual argument. If the dummy argument has the
+!*  VALUE attribute, it becomes associated with a definable anonymous data
+!*  object whose initial value is that of the actual argument. Subsequent
+!*  changes to the value or definition status of the dummy argument do not
 !*  affect the actual argument.
 !*
 !*  CASE:
 !*  When having an array of DT, and the array is allocatable, and the array
-!*  is allocatable pointer array, and an array element is passed as an 
+!*  is allocatable pointer array, and an array element is passed as an
 !*  actual argument
 !*
 !* ===================================================================
@@ -58,12 +46,12 @@
   CHTar1 = 'abc'
   CHTar2 = 'xyz'
 
-  DO j = 1, n 
+  DO j = 1, n
     TArr(j)%INTPtr => INTTar1
     TArr(j)%CHPtr => CHTar1
   END DO
 
-  Do j = 1, n 
+  Do j = 1, n
     CALL Sub1(TArr(j))
     IF ((TArr(j)%INTPtr.ne.11).or.(TArr(j)%CHPtr.ne.'abc').or.(TArr(j)%INTPtr%KIND.ne.2).or.(TArr(j)%CHPtr%LEN.ne.3))  THEN
       print *, TArr(j)%INTPtr, TArr(j)%CHPtr

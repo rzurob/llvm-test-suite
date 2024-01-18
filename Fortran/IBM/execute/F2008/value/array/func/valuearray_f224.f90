@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f225.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -39,13 +36,13 @@ call sub1_real(real(com1))
 call sub1_imag(aimag(com1))
 	do doCounter=1,SIZEOFA
 		if (.not. precision_r4(com1(doCounter),com1_r(doCounter))) error stop 12
-	end do	
+	end do
 
-call sub1_all(com1)	
+call sub1_all(com1)
 	do doCounter=1,SIZEOFA
 		if (.not. precision_r4(com1(doCounter),com1_r(doCounter))) error stop 13
-	end do	
-	
+	end do
+
 contains
 
 subroutine sub1_real(arg)
@@ -53,14 +50,14 @@ subroutine sub1_real(arg)
 	value arg
 	do doCounter=1,size(arg)
 		if (.not. precision_r4(arg(doCounter),real(com1(doCounter)))) error stop 110
-	end do	
-			
+	end do
+
 	if (size(arg) .ne. SIZEOFA) 			error stop 111
 	if ( any(lbound(arg) .ne. 1)) 	error stop 112
 	if ( any(ubound(arg) .ne. SIZEOFA)) 	error stop 113
 	if (rank(arg) .ne. 1) 			error stop 114
-	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 115	
-	
+	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 115
+
 	arg=3*atan(1.0)
 end subroutine
 
@@ -69,13 +66,13 @@ subroutine sub1_imag(arg)
 	value arg
 	do doCounter=1,size(arg)
 		if (.not. precision_r4(arg(doCounter),aimag(com1(doCounter)))) error stop 210
-	end do	
-			
+	end do
+
 	if (size(arg) .ne. SIZEOFA) 			error stop 211
 	if ( any(lbound(arg) .ne. 1)) 	error stop 212
 	if ( any(ubound(arg) .ne. SIZEOFA)) 	error stop 213
 	if (rank(arg) .ne. 1) 			error stop 214
-	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 215	
+	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 215
 	arg=3*atan(1.0)
 end subroutine
 
@@ -85,14 +82,14 @@ subroutine sub1_all(arg)
 	do doCounter=1,size(arg)
 		if (.not. precision_r4(arg(doCounter)%re,real(com1(doCounter)))) error stop 3101
 		if (.not. precision_r4(arg(doCounter)%im,aimag(com1(doCounter)))) error stop 3102
-	end do	
-	
+	end do
+
 	if (size(arg) .ne. SIZEOFA) 	error stop 311
 	if ( any(lbound(arg) .ne. 1)) 	error stop 312
 	if ( any(ubound(arg) .ne. SIZEOFA)) 	error stop 313
 	if (rank(arg) .ne. 1) 			error stop 314
-	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 315	
+	if (any(shape(arg) .ne. SIZEOFA)) 	error stop 315
 	arg=(3*atan(1.0),7*atan(1.0))
-end subroutine	
+end subroutine
 
 end

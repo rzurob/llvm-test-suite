@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : typeParamInquiryIntrinsicAssum01_d352994.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Nancy Wang
 !*  DATE                       : August 10 2008
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  :
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*
 !*  DESCRIPTION
 !*

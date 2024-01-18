@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass008.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass008.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -90,7 +78,7 @@
       integer*8 a8 / 9 /
       integer*8 b8 / 2 /
       integer*8 c8
-      
+
       byte ab1 / 1 /
       byte ab2 / 4 /
       byte cb
@@ -99,11 +87,11 @@
 
 !-----------   ASSOCIATE with INTEGER expressions ----------------
 
-      c = (a + b)*10 + 1   
+      c = (a + b)*10 + 1
       do count = 1, 10
 
       associate ( arg => (a + b)*10 + 1 )
-         if(arg .ne. c)then 
+         if(arg .ne. c)then
            error stop 1
          endif
       end associate
@@ -112,7 +100,7 @@
 
 !-----------   ASSOCIATE with INTEGER*1 expressions ----------------
 
-      c1 = (a1 + b1)*10_1 + 1_1   
+      c1 = (a1 + b1)*10_1 + 1_1
       do count = 1, 10
 
       associate ( arg1 => (a1 + b1)*10_1 + 1_1 )
@@ -126,7 +114,7 @@
 
 !-----------   ASSOCIATE with INTEGER*2 expressions ----------------
 
-      c2 = (a2 + b2)*10_2 + 1_2   
+      c2 = (a2 + b2)*10_2 + 1_2
       do count = 1, 10
 
       associate ( arg2 => (a2 + b2)*10_2 + 1_2 )
@@ -139,7 +127,7 @@
 
 !-----------   ASSOCIATE with INTEGER*4 expressions ----------------
 
-      c4 = (a4 + b4)*10 + 1   
+      c4 = (a4 + b4)*10 + 1
       do count = 1, 10
 
       associate ( arg4 => (a4 + b4)*10 + 1 )

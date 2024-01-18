@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatInternalFile03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatInternalFile03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 10 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. test READ & WRITE in internal file
-!*  2. derived type has nested derived type component, and both derived type has sequence property 
+!*  2. derived type has nested derived type component, and both derived type has sequence property
 !*  3. internal file is default character array pointer with deffered length parameter
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -30,7 +22,7 @@ module m
      integer,len   :: l1 !l1=3
      sequence
      logical(k1)   :: log(l1)
-     real(k1+k1)   :: r(l1) 
+     real(k1+k1)   :: r(l1)
   end type
 
   type outer(k2,l2)
@@ -65,10 +57,10 @@ program formatInternalFile03
   outer1%comp(2)%log=[.false.,.true.,.false.]
   outer1%comp(2)%r=[1.23,1.234E+02,-88.23]
 
-  write(buffer,'(sp,2i4,/3a3/,2(3l3/,f5.2,e12.3,f7.2,:,/) )') outer1 
+  write(buffer,'(sp,2i4,/3a3/,2(3l3/,f5.2,e12.3,f7.2,:,/) )') outer1
 
   do i=0,5
-     write(*,'(a30)') buffer(i) 
+     write(*,'(a30)') buffer(i)
   end do
 
   read(buffer,'(2i4/3a3/,2(3l3/f5.2,e12.3,f7.2,:/))') outer2

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Do2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Do2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Do2 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Do2
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,23 +30,22 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!* Do 
+!*
+!* Do
 !* ()
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM Do2 
+  PROGRAM Do2
   IMPLICIT CLASS(DT)(U)
   IMPLICIT CLASS(*)(V)
-  TYPE :: DT 
+  TYPE :: DT
     INTEGER :: Int
-    CHARACTER(3) :: C 
+    CHARACTER(3) :: C
   END TYPE
   INTEGER :: i
- 
+
   CALL Sub((/(DT(Int=6, C="123"), i=1,16)/), 6)
 
   CONTAINS
@@ -67,10 +60,10 @@
     IF (ANY(U%Int   .NE. 6))      STOP 20
     IF (ANY(U%C     .NE. "123"))   STOP 21
     IF (ANY(SHAPE(U).NE. (/16/)))  STOP 22
-      i = 0  
+      i = 0
       DO While ( i <= U(1)%Int)
         I =i + 1
-        CONTINUE 
+        CONTINUE
       END DO
 
   CLASS DEFAULT
@@ -84,7 +77,7 @@
       i = 0
       DO While (I <= V )
         I = I + 1
-        CONTINUE 
+        CONTINUE
       END DO
   END SELECT
 

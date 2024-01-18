@@ -1,49 +1,43 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn096c.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn096c.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn0926c.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn0926c.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : pass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : inheritence 
+!*  PRIMARY FUNCTIONS TESTED   : pass binding attribute
+!*
+!*  SECONDARY FUNCTIONS TESTED : inheritence
 !*
 !*  DESCRIPTION                : parent procedures are inherited.
-!*                               with two levels inheritance. 
-!*    
+!*                               with two levels inheritance.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod	      
+   module mod
       integer :: int = 200
       character*20 :: c = "hi"
 
-      type parent 
+      type parent
          integer :: x
          contains
          procedure, pass :: bind => proc1
-      end type 
+      end type
 
-      type, extends(parent) :: child 
+      type, extends(parent) :: child
       end type
 
       type, extends(child) :: thirdGen
@@ -56,7 +50,7 @@
          c = "hi_again"
       end subroutine
 
-   end module     
+   end module
 
    use mod
 
@@ -80,4 +74,4 @@
    if (int .ne. 400)      error stop 8
    if (c .ne. "hi_again")    error stop 9
    end
-   
+

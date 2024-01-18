@@ -1,25 +1,18 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type_Basic04 - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : July  21, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : ASSOCIATE Construct inside a SELECT TYPE Construct
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -38,7 +31,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       PROGRAM Select_Type_Basic04
-      IMPLICIT NONE 
+      IMPLICIT NONE
 !*
 ! DERIVED TYPE declarations
 !*
@@ -52,10 +45,10 @@
 
       TYPE, EXTENDS(Shape) :: Square
         REAL(KIND=k1) :: width
-      END TYPE Square   
+      END TYPE Square
 
       TYPE, EXTENDS(Square) :: Rectangle
-        REAL(KIND=k1) :: height 
+        REAL(KIND=k1) :: height
       END TYPE Rectangle
 
       TYPE, EXTENDS(Shape) :: Triangle
@@ -127,9 +120,9 @@
       TYPE(Square(k1,name_len)), ALLOCATABLE :: A_square
 !*
       ALLOCATE(A_square)
-      
+
       A_square%width = 10.0D0
- 
+
       ALLOCATE(My_shape, source = A_square)
       IF ( .NOT. ALLOCATED(My_shape)) STOP 10
 
@@ -145,7 +138,7 @@
           STOP 11
 
         CLASSDEFAULT
-          print *, 'area cannot be computed: Undefined Shape' 
+          print *, 'area cannot be computed: Undefined Shape'
           STOP 12
       END SELECT
 !*

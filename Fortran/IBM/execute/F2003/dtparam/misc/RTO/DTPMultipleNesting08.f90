@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTPMultipleNesting08
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : February 15, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Run Time Offset (RTO)
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : Default initialization
@@ -61,53 +53,53 @@ MODULE Mod
 
       SUBROUTINE Select_type(Arg)
         CLASS(*) :: Arg
- 
+
         SELECT TYPE ( Arg )
           CLASS IS (NextGen1(4,*))
             IF ( Arg%l1 .NE. 513 ) STOP 10
-    
+
             IF ( LEN(Arg%C0) .NE.  513 ) STOP 11
             IF ( LEN(Arg%C1) .NE. 1026 ) STOP 12
             IF ( LEN(Arg%C2) .NE. 2052 ) STOP 13
-    
+
             IF ( SIZE(Arg%F0) .NE.  513 ) STOP 14
             IF ( SIZE(Arg%F1) .NE. 1026 ) STOP 15
             IF ( SIZE(Arg%F2) .NE. 2052 ) STOP 16
-    
+
             IF ( LBOUND(Arg%F0,1) .NE.  1 ) STOP 17
             IF ( LBOUND(Arg%F1,1) .NE.  1 ) STOP 18
             IF ( LBOUND(Arg%F2,1) .NE.  1 ) STOP 19
-    
+
             IF ( UBOUND(Arg%F0,1) .NE.  513 ) STOP 20
             IF ( UBOUND(Arg%F1,1) .NE. 1026 ) STOP 21
             IF ( UBOUND(Arg%F2,1) .NE. 2052 ) STOP 22
-    
+
             Arg%Child%C0 = "A"
             Arg%Child%C1 = "B"
             Arg%C2       = "C"
             Arg%Child%F0 = .True.
             Arg%Child%F1 = .True.
             Arg%F2       = .True.
-    
+
           CLASS IS (NextGen2(4,*))
             IF ( Arg%l1 .NE. 513 ) STOP 23
-    
+
             IF ( LEN(Arg%C0) .NE.  513 ) STOP 24
             IF ( LEN(Arg%C1) .NE. 1026 ) STOP 25
             IF ( LEN(Arg%C2) .NE. 2052 ) STOP 26
-    
+
             IF ( SIZE(Arg%F0) .NE.  513 ) STOP 27
             IF ( SIZE(Arg%F1) .NE. 1026 ) STOP 28
             IF ( SIZE(Arg%F2) .NE. 2052 ) STOP 29
-    
+
             IF ( LBOUND(Arg%F0,1) .NE.  1 ) STOP 30
             IF ( LBOUND(Arg%F1,1) .NE.  1 ) STOP 31
             IF ( LBOUND(Arg%F2,1) .NE.  1 ) STOP 32
-    
+
             IF ( UBOUND(Arg%F0,1) .NE.  513 ) STOP 33
             IF ( UBOUND(Arg%F1,1) .NE. 1026 ) STOP 34
             IF ( UBOUND(Arg%F2,1) .NE. 2052 ) STOP 35
-    
+
             Arg%Base%C0  = "E"
             Arg%Child%C1 = "F"
             Arg%C2       = "G"
@@ -125,15 +117,15 @@ MODULE Mod
                    IF ( LEN(p%C0) .NE.  513 ) STOP 42
                    IF ( LEN(p%C1) .NE. 1026 ) STOP 43
                    IF ( LEN(p%C2) .NE. 2052 ) STOP 44
-    
+
                    IF ( SIZE(p%F0) .NE.  513 ) STOP 45
                    IF ( SIZE(p%F1) .NE. 1026 ) STOP 46
                    IF ( SIZE(p%F2) .NE. 2052 ) STOP 47
-    
+
                    IF ( LBOUND(p%F0,1) .NE.  1 ) STOP 48
                    IF ( LBOUND(p%F1,1) .NE.  1 ) STOP 49
                    IF ( LBOUND(p%F2,1) .NE.  1 ) STOP 50
-    
+
                    IF ( UBOUND(p%F0,1) .NE.  513 ) STOP 51
                    IF ( UBOUND(p%F1,1) .NE. 1026 ) STOP 52
                    IF ( UBOUND(p%F2,1) .NE. 2052 ) STOP 53
@@ -153,20 +145,20 @@ MODULE Mod
             ASSOCIATE ( p => Arg%cmp2 )
               SELECT TYPE ( p )
                  CLASS IS (NextGen2(4,*))
-                   IF ( p%l1 .NE. 513 ) STOP 55 
+                   IF ( p%l1 .NE. 513 ) STOP 55
 
                    IF ( LEN(p%C0) .NE.  513 ) STOP 56
                    IF ( LEN(p%C1) .NE. 1026 ) STOP 57
                    IF ( LEN(p%C2) .NE. 2052 ) STOP 58
-    
+
                    IF ( SIZE(p%F0) .NE.  513 ) STOP 59
                    IF ( SIZE(p%F1) .NE. 1026 ) STOP 60
                    IF ( SIZE(p%F2) .NE. 2052 ) STOP 61
-    
+
                    IF ( LBOUND(p%F0,1) .NE.  1 ) STOP 62
                    IF ( LBOUND(p%F1,1) .NE.  1 ) STOP 63
                    IF ( LBOUND(p%F2,1) .NE.  1 ) STOP 64
-    
+
                    IF ( UBOUND(p%F0,1) .NE.  513 ) STOP 65
                    IF ( UBOUND(p%F1,1) .NE. 1026 ) STOP 66
                    IF ( UBOUND(p%F2,1) .NE. 2052 ) STOP 67
@@ -174,15 +166,15 @@ MODULE Mod
                    p%C0 = "K"
                    p%C1 = "L"
                    p%C2 = "M"
-                   p%F0 = .True. 
-                   p%F1 = .True. 
-                   p%F2 = .True. 
+                   p%F0 = .True.
+                   p%F1 = .True.
+                   p%F2 = .True.
 
                  CLASS DEFAULT
                    STOP 122
               END SELECT
             END ASSOCIATE
-    
+
           CLASS DEFAULT
             STOP 69
         END SELECT

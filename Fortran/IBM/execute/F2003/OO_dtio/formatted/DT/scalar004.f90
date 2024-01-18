@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        scalar (non-)polymorphic derived type variable with polymorphic component
@@ -62,8 +51,8 @@ use m
 
    class(base), allocatable :: b1
    type(base), pointer      :: b2
-   type(base)               :: b3 
-   
+   type(base)               :: b3
+
    integer :: stat
    character(150) :: msg
    character(30) :: fmt = "(DT'b1'(5,6,7))"
@@ -113,7 +102,7 @@ use m, only: base, data
 
    write ( fmt, * ) "( A, I4, I", v_list(1), ", DT'data'(", (v_list(i), "," ,i=2,size(v_list)-1), v_list(size(v_list)),") )"
    write ( unit, fmt, iomsg = iomsg ) iotype, v_list(1), dtv%k, dtv%d
-   
+
    if ( iomsg /= 'datawrite' ) error stop 4_4
 
    iomsg = 'dtiowrite'

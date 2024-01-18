@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatBasic03a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatBasic03a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 5 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 5 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. derived type has integer componnet and nested derived type component which has ultimate integer component
@@ -28,7 +20,7 @@ module m
      integer,kind :: k1
      integer,len  :: l1
      integer(k1) :: i1(l1)
-  end type 
+  end type
   type inner2(k2,l2)
      integer,kind :: k2
      integer,len  :: l2
@@ -40,23 +32,23 @@ module m
      integer,kind :: k3
      integer,len  :: l3
      integer(k3)  :: i3(l3)
-     type(inner2(2*k3,l3+1)) :: comp2 
+     type(inner2(2*k3,l3+1)) :: comp2
   end type
 
   contains
 
     function getResult(arg)
       class(outer(2,*)),intent(in) :: arg(:)
-      type(outer(arg%k3,arg%l3)),allocatable   :: getResult(:) 
+      type(outer(arg%k3,arg%l3)),allocatable   :: getResult(:)
 
-      getResult=arg 
+      getResult=arg
     end function
 
     subroutine write1(arg)
       type(outer(2,*)),intent(in) :: arg(:)
- 
+
       print '("|",B64.32,"|")',  arg
-    end subroutine 
+    end subroutine
 
     subroutine write2(arg)
       type(outer(2,*)),intent(in) :: arg(:)
@@ -84,7 +76,7 @@ program formatBasic03a
          inner2(4,2)(i2=[202,303],comp1=inner1(8,3)(i1=[404,505,606])) ), &
           outer(2,1)(i3=[-101],comp2= &
        inner2(4,2)(i2=[-202,-303],comp1=inner1(8,3)(i1=[-404,-505,-606])) ) ]
-          
+
   outer3=outer1
 
   outer2(0:1)=>outer3

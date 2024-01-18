@@ -12,21 +12,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : iofilenamelineno009
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : March 1, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Display file name and line no in I/O failures
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :Test that file name and line no are displayed for
 !*                              I/O failures at runtime
@@ -37,19 +30,19 @@
   real :: j
   character(10) :: k
   character(20) :: format
- 
+
   namelist /nml_1/ i,j,k
- 
+
   call setrteopts("errloc=yes")
-  
+
   open(2,file='iofilenamelineno009.nml')
-  
+
   read(2,nml=nml_1, round='processor_defined', decimal='point', blank='null', pad='yes')
- 
+
   format='unformatted'
-  
+
   open(unit=2,file='iofilenamelineno002.dat', form=format)
- 
+
   read(2,fmt='(i8)',decimal='point', round='down', blank='null') i
-  
+
 end

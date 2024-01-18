@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_misc_13.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May 04, 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,8 +11,7 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -25,10 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*
-!*  Miscellaneous Test  -- 
-!*   Access local variable through data pointer 
-!*  
+!*  Miscellaneous Test  --
+!*   Access local variable through data pointer
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -41,23 +33,23 @@
   INTEGER, TARGET :: iii(1000)
   INTEGER, POINTER :: Ptr(:)
     ptr => iii
-    iii = -Iarg 
-    !CALL set(iii, Iarg) 
-    CALL sub(set,ptr, Iarg) 
-    IF (ANY(iii .NE. Iarg)) ERROR STOP 13 
-    !CALL Check(iii, Iarg) 
-    CALL sub(Check, ptr, Iarg) 
+    iii = -Iarg
+    !CALL set(iii, Iarg)
+    CALL sub(set,ptr, Iarg)
+    IF (ANY(iii .NE. Iarg)) ERROR STOP 13
+    !CALL Check(iii, Iarg)
+    CALL sub(Check, ptr, Iarg)
   END BLOCK
   CONTAINS
 
     SUBROUTINE set(arr, iarg)
     INTEGER, POINTER :: arr(:)
-      arr = iarg 
+      arr = iarg
     END SUBROUTINE
 
     SUBROUTINE check(arr, iarg)
     INTEGER, POINTER :: arr(:)
-      IF (ANY(arr .NE. Iarg)) ERROR STOP 12 
+      IF (ANY(arr .NE. Iarg)) ERROR STOP 12
     END SUBROUTINE
 
     SUBROUTINE sub(proc, arr, iarg)
@@ -76,24 +68,24 @@
   INTEGER, TARGET :: iii(1000)
   INTEGER, POINTER :: Ptr(:)
     ptr => iii
-    iii = -Iarg 
-    !CALL set(iii, Iarg) 
-    CALL sub(set,ptr, Iarg) 
-    IF (ANY(iii .NE. Iarg)) ERROR STOP 13 
-    !CALL Check(iii, Iarg) 
-    CALL sub(Check, ptr, Iarg) 
+    iii = -Iarg
+    !CALL set(iii, Iarg)
+    CALL sub(set,ptr, Iarg)
+    IF (ANY(iii .NE. Iarg)) ERROR STOP 13
+    !CALL Check(iii, Iarg)
+    CALL sub(Check, ptr, Iarg)
   END BLOCK
 
   CONTAINS
 
     SUBROUTINE set(arr, iarg)
     INTEGER, POINTER :: arr(:)
-      arr = iarg 
+      arr = iarg
     END SUBROUTINE
 
     SUBROUTINE check(arr, iarg)
     INTEGER, POINTER :: arr(:)
-      IF (ANY(arr .NE. Iarg)) ERROR STOP 12 
+      IF (ANY(arr .NE. Iarg)) ERROR STOP 12
     END SUBROUTINE
 
     SUBROUTINE sub(proc, arr, iarg)

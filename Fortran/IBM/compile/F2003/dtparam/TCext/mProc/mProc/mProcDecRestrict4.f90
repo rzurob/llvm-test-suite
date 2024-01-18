@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcDecRestrict4.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcDecRestrict4.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 10, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,12 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Within a scoping unit, if two procedures have the same dtio-generic-spec (12.3.2.1), 
+!*  Within a scoping unit, if two procedures have the same dtio-generic-spec (12.3.2.1),
 !*  their dtv arguments shall be type incompatible or have different kind type parameters.
-!*  
 !*
-!*  
 !*  (317262)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -80,7 +71,7 @@
 
 
   END MODULE
- 
+
   PROGRAM mProcDecRestrict4
   USE M
 
@@ -89,21 +80,21 @@
   SUBROUTINE IntSub(Proc)
   PROCEDURE(ReadF1) :: Proc
 
-  INTERFACE READ(FORMATTED) 
+  INTERFACE READ(FORMATTED)
     PROCEDURE ProcPtr
   END INTERFACE
 
-  INTERFACE READ(FORMATTED) 
-    PROCEDURE Proc 
+  INTERFACE READ(FORMATTED)
+    PROCEDURE Proc
   END INTERFACE
 
   ! the following is ok
-  INTERFACE READ(FORMATTED) 
-    PROCEDURE ReadF 
+  INTERFACE READ(FORMATTED)
+    PROCEDURE ReadF
   END INTERFACE
 
   END SUBROUTINE
- 
+
   END
 
 

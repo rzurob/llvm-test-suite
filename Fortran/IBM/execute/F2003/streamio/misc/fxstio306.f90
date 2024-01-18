@@ -1,39 +1,33 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fort.* 
-! %COMPOPTS: 
-! %GROUP: fxstio306.f 
+! %PRECMD: rm -f fort.*
+! %COMPOPTS:
+! %GROUP: fxstio306.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio306.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 31, 2003
 !*
-!*  Primary Function Tested    : Size of the files with holes inside 
+!*  Primary Function Tested    : Size of the files with holes inside
 !*
-!*  Description                : Test size of the stream files with  
-!*                               holes inside by using the inquire  
+!*  Description                : Test size of the stream files with
+!*                               holes inside by using the inquire
 !*                               statment.
 !*
 !=======================================================================
 
 !* Declare Variables.
-  
+
    integer ios
    integer posi /1024/, fsize(20) /20*0/
-   integer iol /0/ 
+   integer iol /0/
    integer ivar1 /2000/
    complex*8 cvar1 /(-1.175494e-38,3.402823e38)/
    character*1 hvar1 /'a'/
@@ -48,7 +42,7 @@
    inquire(1, size=fsize(1), iostat=ios, err=300)
 
 !* creat a hole with 1020 bytes in the file, the file will occupy
-!* 2 blocks after the write    
+!* 2 blocks after the write
    write(1, pos=posi, iostat=ios, err=200) ivar1
 
    inquire(1, size=fsize(2), iostat=ios, err=300)

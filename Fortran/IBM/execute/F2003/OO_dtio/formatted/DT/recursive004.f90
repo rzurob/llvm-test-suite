@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        derived type containing linked list component
@@ -132,7 +121,7 @@ use m, only: base, child, write(formatted)
    character(*), intent(inout) :: iomsg
 
    character(25) :: fmt
-   
+
    write ( unit, *, iostat = iostat )      'iotype:', iotype
    write ( fmt, * ) '(I', v_list(1),')'
    write ( unit, fmt, iostat = iostat )    dtv%i

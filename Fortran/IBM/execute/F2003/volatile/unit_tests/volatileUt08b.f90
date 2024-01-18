@@ -1,13 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : volatileUt08b.f
 !*
-!*  PROGRAMMER                 : Vince Yuen
 !*  DATE                       : May 26, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Supporting VOLATILE for F2003
 !*
@@ -15,9 +11,9 @@
 !*
 !*  DESCRIPTION                : C1232
 !*
-!* (C1232) If an actual argument is an array section or an  
+!* (C1232) If an actual argument is an array section or an
 !* assumed-shape array, and the corresponding dummy argument has either
-!* the VOLATILE or ASYNCHRONOUS attribute, that dummy argument shall be 
+!* the VOLATILE or ASYNCHRONOUS attribute, that dummy argument shall be
 !* an assumed-shape array.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

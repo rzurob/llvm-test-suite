@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncRetPolyAllocDer.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncRetPolyAllocDer.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRetPolyAllocDer 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRetPolyAllocDer
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,8 +32,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a func call returning a poly allocatable 
-!*    of derived type 
+!*    The selector is a func call returning a poly allocatable
+!*    of derived type
 !*    (Comp Failed)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -55,9 +49,9 @@
 
     TYPE, EXTENDS(Base) :: Child    ! (4)
       INTEGER(K1)  :: ChildId = 2
-      CLASS(Base(K1)),  ALLOCATABLE :: BaseArr(:) 
+      CLASS(Base(K1)),  ALLOCATABLE :: BaseArr(:)
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -76,7 +70,7 @@
 
   END MODULE
 
-  PROGRAM FunRetPolyAllocDer 
+  PROGRAM FunRetPolyAllocDer
   USE M
   TYPE(Child(4)) :: V = Child(4)(BaseId= -1, ChildId=-2, BaseArr=NULL() )
 
@@ -84,13 +78,13 @@
   SELECT TYPE( As )
   TYPE IS (Child(4))
 
-    IF ( As%GetID() .NE. -2) STOP 50 
-    IF ( As%BaseId  .NE. -1) STOP 51 
+    IF ( As%GetID() .NE. -2) STOP 50
+    IF ( As%BaseId  .NE. -1) STOP 51
 
     ASSOCIATE ( As1 => As%GetId() )
-       IF ( As1 .NE. -2) STOP 52 
+       IF ( As1 .NE. -2) STOP 52
     END ASSOCIATE
-   
+
     IF ( .NOT. SAME_TYPE_AS(As, Child(4)(BaseArr=NULL())) )         STOP 53
     IF ( .NOT. SAME_TYPE_AS(As%BaseArr, As%Base) ) STOP 54
 
@@ -104,7 +98,7 @@
 
   CLASS DEFAULT
     STOP 60
-  END SELECT 
+  END SELECT
   END ASSOCIATE
 
   CONTAINS
@@ -117,11 +111,11 @@
 
     SELECT TYPE(Func)
       TYPE IS (Child(4))
-        Func = Arg 
+        Func = Arg
         ALLOCATE( FUNC%BaseArr(3))
-      CLASS DEFAULT 
+      CLASS DEFAULT
         STOP 20
-    END SELECT 
-  END FUNCTION 
+    END SELECT
+  END FUNCTION
 
   END

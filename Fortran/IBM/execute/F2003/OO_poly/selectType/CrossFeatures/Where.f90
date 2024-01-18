@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Where.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Where.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Where 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Where
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,21 +30,20 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!* Where 
+!*
+!* Where
 !* ()
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM Where 
+  PROGRAM Where
   IMPLICIT CLASS(DT)(U)
-  TYPE :: DT 
+  TYPE :: DT
    COMPLEX :: Cplx=(1.0, -1.0)
   END TYPE
   INTEGER :: i
- 
+
   CALL Sub((/(DT(Cplx=(-1.0,1.0)), i=1,16)/))
 
   CONTAINS
@@ -63,9 +56,9 @@
 
     IF (ANY(U%Cplx .NE. (-1.0, 1.0))) STOP 20
     IF (ANY(SHAPE(U).NE. (/16/))) STOP 21
-   
+
     WHERE ( U%Cplx .EQ. (-1.0,1.0))
-      U%Cplx = (1.0, -1.0) 
+      U%Cplx = (1.0, -1.0)
     END WHERE
 
     IF (ANY(U%Cplx .NE. (1.0, -1.0))) STOP 22

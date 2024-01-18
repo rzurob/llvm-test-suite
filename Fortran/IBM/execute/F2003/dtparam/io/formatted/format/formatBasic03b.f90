@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatBasic03b.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatBasic03b.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 5 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 5 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. derived type is polymorphic type,which has ultimate integer component
@@ -38,7 +30,7 @@ module m
 
   type,extends(child) :: gen3(l3)
      integer,len  :: l3
-     type(child(l3-2,l3-1)) :: comp 
+     type(child(l3-2,l3-1)) :: comp
   end type
 
   contains

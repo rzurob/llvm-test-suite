@@ -1,26 +1,17 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : diagC448.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-11-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS Attribute   
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : - 
-!*                               - 
-!*  DRIVER STANZA              :
+!*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS Attribute
+!*  SECONDARY FUNCTIONS TESTED : -
+!*                               -
 !*
-!*  DESCRIPTION                : - 
-!*                               - 
+!*  DESCRIPTION                : -
+!*                               -
 !*  C448:
-!*       If the CONTIGUOUS attribute is specifed, the component shall be an array 
+!*       If the CONTIGUOUS attribute is specifed, the component shall be an array
 !*       with the POINTER attribute.
 !*
 !*  KEYWORD(S)                 :

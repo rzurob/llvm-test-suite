@@ -6,7 +6,7 @@
         integer*8 :: cosubs(2), res, me
 
         if (num_images .lt. 2) stop 1
-        
+
         res = 0
         me = this_image()
         coarr(10) = me

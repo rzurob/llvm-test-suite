@@ -1,19 +1,15 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : arrsec2_class.f
-!*  PROGRAMMER                 : Gaby Baghdadi (adopted from David Nichols' 
 !*                               arrsec1_class.f)
 !*  DATE                       : Oct 13, 2008
 !*  ORIGIN                     : XLF Development
 !*  PRIMARY FUNCTIONS TESTED   : Array sections
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*  DESCRIPTION
 !*
 !*      Array sections contained within polymorphic types
-!*      
 !*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890

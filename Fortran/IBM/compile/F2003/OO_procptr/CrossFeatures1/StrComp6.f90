@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp StrComp6.f 
+! %POSTCMD: tcomp StrComp6.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : StrComp6.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : StrComp6.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  A data-target shall correspond to a nonprocedure pointer component; 
+!*
+!*  A data-target shall correspond to a nonprocedure pointer component;
 !*  a proc-target shall correspond to a procedure pointer component
-!*  (Err Msg wrong) 
+!*  (Err Msg wrong)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,28 +44,28 @@
     END TYPE
 
     TYPE :: DT
-      TYPE(Base)          :: BaseComp=BASE(NULL()) 
+      TYPE(Base)          :: BaseComp=BASE(NULL())
       TYPE(Base), POINTER :: BasePtr=>NULL()
       PROCEDURE()    , NOPASS, POINTER :: ProcPtr1=>NULL()
       PROCEDURE(TYPE(Base)), NOPASS, POINTER :: ProcPtr2=>NULL()
     END TYPE
-   
+
     CONTAINS
- 
+
     FUNCTION ModFun(Arg)
     TYPE(Base) :: Arg, ModFun
       ModFun = Arg
     END FUNCTION
 
   END MODULE
- 
-  PROGRAM StrComp6  
+
+  PROGRAM StrComp6
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE(DT), TARGET  :: DTTar
   TYPE(DT), POINTER :: DTPtr
-  PROCEDURE(TYPE(DT)),  POINTER :: ProcPtr=>NULL() 
+  PROCEDURE(TYPE(DT)),  POINTER :: ProcPtr=>NULL()
 
 
   TYPE(DT) :: V

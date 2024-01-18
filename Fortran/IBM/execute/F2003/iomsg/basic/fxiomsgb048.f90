@@ -5,38 +5,29 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgb048.f
 ! %VERIFY:
-! %STDIN: 
-! %STDOUT:  
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
- 
 
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : INQUIRE with No Error condition
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : INQUIRE
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 1
 !*
 !*  DESCRIPTION                : INQUIRE with No Error condition to check if the
 !*                               iomsg specifier remains unchanged.
-!*
 !*
 !*  TEST CONDITIONS            : 1) INQUIRE on direct file with No Error cond.
 !*
@@ -48,10 +39,9 @@
 !*********************************************************************
 
       program fxiomsgb048
- 
+
       implicit none                     ! All variables must be Declared
- 
- 
+
       integer*4 case_id                 ! Test Case id under test.
 
       integer*4 ios
@@ -60,7 +50,6 @@
 
       logical*4  there
 
-
 !
 ! Initialize Return Code routine to SUCCESS...
 !
@@ -68,22 +57,19 @@
       case_id = 0
       call zzrc ( case_id )
 
- 
 !
 ! TestCase 1...
 !
- 
+
       case_id = case_id + 1
 
       errmsg = 'abc'
- 
+
       open ( 8, file='trust', err = 10, access = 'DIRECT', recl = 2 )
 
       inquire ( 8, exist=there, iostat = ios, iomsg = errmsg )
- 
+
       if ( errmsg <> 'abc' ) call zzrc ( case_id )
-
-
 
 ! Clean up...
 

@@ -12,57 +12,49 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpl44.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                :  Call command line intrinsic routines within a main through multiple 
+!*  DESCRIPTION                :  Call command line intrinsic routines within a main through multiple
 !*                             :  single construct with arguments specified as components od derived types
-!*                             :  
-!*             
-!*                           
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
       PROGRAM fxclp44
-      
+
       IMPLICIT NONE
 
-    
+
       TYPE DerC
-        character(513)   :: NAME  
-        logical          :: TRIM_NAME 
-        character(2049)  :: CmdLine 
+        character(513)   :: NAME
+        logical          :: TRIM_NAME
+        character(2049)  :: CmdLine
       END TYPE
 
-      TYPE DerT 
+      TYPE DerT
         character(2049)  :: COMMAND
-        integer          :: LENGTH     
-        integer          :: STATUS  
-        integer          :: NUMBER 
-        character(2047)  :: VALUE  
+        integer          :: LENGTH
+        integer          :: STATUS
+        integer          :: NUMBER
+        character(2047)  :: VALUE
         integer          :: ARGCOUNT
       END TYPE
 
@@ -80,10 +72,10 @@
 
    !$OMP PARALLEL             &
    !$OMP DEFAULT(PRIVATE)     &
-   !$OMP FIRSTPRIVATE(C) 
+   !$OMP FIRSTPRIVATE(C)
 
          CmdCount = COMMAND_ARGUMENT_COUNT()
-         if ( CmdCount .ne. 4 ) & 
+         if ( CmdCount .ne. 4 ) &
          then
            error stop 63
          endif
@@ -124,10 +116,10 @@
        endif
    !$OMP END SINGLE
 
-   !$OMP END PARALLEL   
+   !$OMP END PARALLEL
 
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 

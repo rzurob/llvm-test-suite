@@ -1,20 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchSpecOpen02d - ASYNCHRONOUS= Specifier
 !*                               in I/O Statements
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : January 23, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS= Specifier in OPEN() Statement
 !*  SECONDARY FUNCTIONS TESTED : scalar-default-char-expr is neither 'YES'
 !*                               nor 'NO'
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : OPEN(), ASYNCHRONOUS= Specifier

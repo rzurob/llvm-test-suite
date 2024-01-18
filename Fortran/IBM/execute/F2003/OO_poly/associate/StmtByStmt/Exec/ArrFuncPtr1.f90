@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrFuncPtr1.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrFuncPtr1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrFuncPtr1
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,7 +31,7 @@
 !*
 !*  DESCRIPTION
 !*    The selector is a function return  of array pointer .
-!*    section and recursive 
+!*    section and recursive
 !*
 !*   (Shape of func return-299686)
 !*
@@ -98,7 +92,7 @@
       END SELECT
     END SUBROUTINE
 
-    RECURSIVE FUNCTION ReturnArr(Arg) RESULT(Res) 
+    RECURSIVE FUNCTION ReturnArr(Arg) RESULT(Res)
     TYPE (Child), Target :: Arg(:, :)
     TYPE (Child), POINTER :: Res(:, :)
     LOGICAL, SAVE  :: Exit=.TRUE.
@@ -146,7 +140,7 @@
       IF ( TRIM(As(1,1)%C)  .NE. "!" )                   STOP 48
 
     END ASSOCIATE
- 
+
   END ASSOCIATE
 
   END

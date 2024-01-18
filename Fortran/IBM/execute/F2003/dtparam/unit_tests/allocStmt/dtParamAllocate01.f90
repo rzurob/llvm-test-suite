@@ -1,17 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ALLOCATE statement
 !*                             :
-!*  PROGRAMMER                 : Huiwen Li
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  FUNCTIONAL TESTED          : allocate non-poly object with SOURCE=
 !*                               expression.
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -19,7 +13,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !* ===================================================================
-!*
 !*
 !*  MM/DD/YY:  Init:  Comments: Defect 323310
 !* ===================================================================

@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,31 +13,22 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c08ffc
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
-!* PRIMARY FUNCTIONS TESTED     :Interoperable Functions with 
+!* PRIMARY FUNCTIONS TESTED     :Interoperable Functions with
 !*                               I/O operation.
-!*            
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
-!*   - Test: The fortran subroutine write the numbers 1 through N 
-!*     to a file,call the flush_ procedure to save any buffer 
+!*   - Test: The fortran subroutine write the numbers 1 through N
+!*     to a file,call the flush_ procedure to save any buffer
 !*     for that file. Write Formatted data in Fortran and read
 !*     formatted data in C.
-!*          
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -74,7 +60,7 @@ SUBROUTINE creat_file () BIND(C)
      ! File exists.  Should replace it.
      WRITE (*,*) 'Output file exists.  Overwrite it! '
 
-     ! It's OK.  Open file.           
+     ! It's OK.  Open file.
      OPEN (UNIT=8, FILE=file_name, STATUS='REPLACE', ACTION='WRITE')
 
   END IF exists

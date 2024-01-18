@@ -5,7 +5,7 @@
       real(8) :: r8, r8_res
       real(16) :: r16, r16_res
       logical precision_r16
-      
+
       ! erfc_scaled(+Inf) == 0
       r4 = 1.0_4/0.0_4
       r8 = 1.0_8/0.0_8
@@ -16,7 +16,7 @@
       if (r4_res .ne. 0.0) error stop 1
       if (r8_res .ne. 0.0) error stop 2
       if (.NOT. precision_r16(r16_res, 0.0_16)) error stop 3
-      
+
       ! erfc_scaled(-Inf) == +Inf
       r4 = -1.0_4/0.0_4
       r8 = -1.0_8/0.0_8

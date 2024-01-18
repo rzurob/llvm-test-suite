@@ -1,16 +1,8 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 20/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : assumed-shape array, VOLATILE
-!*
 !*
 !*  DESCRIPTION                : diagnostic TC for  C1232
 !*
@@ -22,10 +14,10 @@
 
   program volatileC1232ArraySection08d
 
-    interface 
+    interface
        subroutine arraySectionVolatile(x)
-          character(3), VOLATILE :: x(*)      
-       end subroutine arraySectionVolatile   
+          character(3), VOLATILE :: x(*)
+       end subroutine arraySectionVolatile
     end interface
 
     type dt
@@ -51,5 +43,5 @@
 
   subroutine arraySectionVolatile(x)
        character(3), VOLATILE :: x(*)
-  end subroutine arraySectionVolatile   
+  end subroutine arraySectionVolatile
 

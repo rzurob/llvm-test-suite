@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp Protected2.f 
+! %POSTCMD: tcomp Protected2.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Protected 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Protected
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!* Protected 
+!*
+!* Protected
 !* ()
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -68,15 +61,15 @@
     SUBROUTINE SetObj(Arg)
     CLASS(DT0) :: Arg
       Arg%C0 = "SetDT0"
-    END SUBROUTINE 
+    END SUBROUTINE
 
   END MODULE
 
-  PROGRAM Protected2 
+  PROGRAM Protected2
   USE M
   IMPLICIT NONE
-  CLASS(*), POINTER :: Ptr 
- 
+  CLASS(*), POINTER :: Ptr
+
   Ptr => V
 
   SELECT TYPE (Ptr)
@@ -86,7 +79,7 @@
     STOP 40
   END SELECT
 
-  IF (V%C1 .NE. "1" ) STOP 40 
+  IF (V%C1 .NE. "1" ) STOP 40
 
   END
 

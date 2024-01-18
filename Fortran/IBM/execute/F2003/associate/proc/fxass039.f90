@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass039.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass039.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -71,8 +59,8 @@
 
       program fxass39a
       implicit none
- 
-      interface 
+
+      interface
       recursive subroutine real_sub(a,c)
             real a
             real, intent(out) :: c
@@ -107,24 +95,24 @@
       real*16 a16 / 5.0 /
       real*16 c16 / 2.0q0 /
 
- 
+
       call real_sub(a,c)
-         if(c .eq. 0.0)then 
+         if(c .eq. 0.0)then
            error stop 10
          endif
 
       call real4_sub(a4,c4)
-         if(c4 .eq. 0.0)then 
+         if(c4 .eq. 0.0)then
            error stop 13
          endif
 
       call real8_sub(a8,c8)
-         if(c8 .eq. 0.0)then 
+         if(c8 .eq. 0.0)then
            error stop 14
          endif
 
       call real16_sub(a16,c16)
-         if(c16 .eq. 0.0)then 
+         if(c16 .eq. 0.0)then
            error stop 15
          endif
 

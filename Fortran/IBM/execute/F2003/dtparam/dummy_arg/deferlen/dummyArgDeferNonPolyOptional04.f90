@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPolyOptional04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPolyOptional04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 10 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  An optional dummy argument that is not present is subject to the following restriction:
@@ -42,13 +34,13 @@ program dummyArgDeferNonPolyOptional04
 
   dtp1=[dtp(2,6)([1,2,3],["Robert","Michel","Grigor"]), &
         dtp(2,6)([4,5,6],["David","Nancy","Dorra"]), &
-        dtp(2,6)([7,8,9],["Gaby","Glen","Kobi"])]  
+        dtp(2,6)([7,8,9],["Gaby","Glen","Kobi"])]
 
   allocate(dtp3,source=dtp1(1))
 
   dtp2=outer1(dtp1)
 
-  if(size(dtp2) /= 3)                                         error stop 9_4 
+  if(size(dtp2) /= 3)                                         error stop 9_4
   if(dtp2%l1 /= 6)                                            error stop 10_4
   if(any(dtp2(1)%id  /= [1,2,3]))                             error stop 11_4
   if(any(dtp2(2)%id  /= [4,5,6]))                             error stop 12_4
@@ -67,23 +59,23 @@ program dummyArgDeferNonPolyOptional04
   if(dtp4%l1 /= 6)                                            error stop 20_4
   if(any(dtp4%id  /= [1,2,3]))                                error stop 21_4
   if(any(dtp4%name /= ["Robert","Michel","Grigor"]))          error stop 22_4
-  
+
   deallocate(dtp4)
   allocate(dtp4,source=outer2())
   if(dtp4%l1 /= 6)                                            error stop 23_4
   if(any(dtp4%id  /= [1,2,3]))                                error stop 24_4
   if(any(dtp4%name /= ["uname1","uname2","uname3"]))          error stop 25_4
- 
+
   contains
 
     function outer1(arg)
        type(dtp(2,:)),optional,allocatable :: arg(:)
-       type(dtp(2,:)),allocatable :: outer1(:) 
+       type(dtp(2,:)),allocatable :: outer1(:)
        if(present(arg)) then
            outer1=inner1(arg)
        else
            outer1=[dtp(2,6)([1,2,3],["uname1","uname2","uname3"])]
-       end if 
+       end if
     end function
 
     function inner1(arg)

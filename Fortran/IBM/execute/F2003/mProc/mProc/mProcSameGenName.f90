@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcSameGenName.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcSameGenName.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 14, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!* If a generic invocation applies to both a specific procedure from an interface and an accessible 
-!* generic intrinsic procedure, it is the specific procedure from the interface that is referenced. 
-!* 
-!* 
-!*   
+!* If a generic invocation applies to both a specific procedure from an interface and an accessible
+!* generic intrinsic procedure, it is the specific procedure from the interface that is referenced.
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -41,26 +32,26 @@
   CONTAINS
 
   FUNCTION ModFun(Arg)
-  REAL :: ModFun, Arg 
-    ModFun = Arg 
-  END FUNCTION 
+  REAL :: ModFun, Arg
+    ModFun = Arg
+  END FUNCTION
 
   FUNCTION ModFun1(Arg)
-  REAL :: ModFun1, Arg 
-    ModFun1 = Arg 
-  END FUNCTION 
+  REAL :: ModFun1, Arg
+    ModFun1 = Arg
+  END FUNCTION
 
   END MODULE
 
-  PROGRAM mProcSameGenName 
+  PROGRAM mProcSameGenName
   USE M
 
-  INTERFACE Mod 
-    PROCEDURE ModFun 
+  INTERFACE Mod
+    PROCEDURE ModFun
   END INTERFACE
 
-  INTERFACE Abs 
-    PROCEDURE ModFun1 
+  INTERFACE Abs
+    PROCEDURE ModFun1
   END INTERFACE
 
   IF ( Mod(1.1)  .NE. 1.1   )               STOP 21

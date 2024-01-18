@@ -13,19 +13,13 @@
 ! *********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : For module nature in USE statement.
 !*                             :
-!*  PROGRAMMER                 : Daniel Chen
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  DIAGNOSES TESTED           : The binding lable cannot be
 !*                               the same as a nonintrinsic module.
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -c
 !*
 !*  KEYWORD(S)                 :
@@ -38,15 +32,15 @@
        Module ieee_exceptions
          integer aa
        end module
-       
+
        Module ieee_arithmetic
          integer bb
        end module
 
-       subroutine ieee_exceptions() bind(c) 
+       subroutine ieee_exceptions() bind(c)
          use, intrinsic ::  ieee_exceptions
        end subroutine ieee_exceptions
 
-       subroutine sub1() bind(c, name="ieee_arithmetic") 
+       subroutine sub1() bind(c, name="ieee_arithmetic")
          use, intrinsic ::  ieee_arithmetic
        end subroutine sub1

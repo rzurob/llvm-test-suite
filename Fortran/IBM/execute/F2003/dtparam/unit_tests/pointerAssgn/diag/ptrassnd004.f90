@@ -3,7 +3,7 @@
 
         real(k) :: data(n) = 1.0
       end type
- 
+
       type, extends(base) :: child (x, y)
         integer, kind :: x=8, y=20
         integer(x) :: arr(y) = 5

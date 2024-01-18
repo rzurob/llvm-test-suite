@@ -1,31 +1,23 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectStreamAccess04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectStreamAccess04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 22 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 22 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!* 1. Test Read statement with list directed IO and stream access 
+!* 1. Test Read statement with list directed IO and stream access
 !* 2. Derived type is polymorphic type
 !234567490123456749012345674901234567490123456749012345674901234567490
 module m1
    type base(k1,l1)
-      integer,kind  :: k1=4 
+      integer,kind  :: k1=4
       integer,len   :: l1=2
 
       character(k1) :: c1(l1:k1)="****"
@@ -34,8 +26,8 @@ module m1
 
    type,extends(base) :: child(k2,l2)
       integer,kind  :: k2=8
-      integer,len   :: l2=4 
-      
+      integer,len   :: l2=4
+
       real(k2)      :: r1(l1:l2)=0.
       complex(2*k2) :: x1(l1:l2)=(0.,0.)
    end type
@@ -65,14 +57,14 @@ module m2
       subroutine read1(dt,unit)
          class(base(4,:)),allocatable,intent(inout) :: dt
          integer,intent(in) :: unit
-         integer :: mypos 
+         integer :: mypos
 
          allocate(gen3(4,2,8,4,2,5) :: dt)
 
          select type(dt)
             type is(gen3(4,*,8,*,2,*))
-                inquire(unit,pos=mypos)  
-                if(mypos /= 1)             stop 12 
+                inquire(unit,pos=mypos)
+                if(mypos /= 1)             stop 12
                 read(unit,*,pos=mypos) dt
             class default
                stop 11
@@ -100,11 +92,11 @@ program listDirectStreamAccess04
 
    logical,external :: precision_r8,precision_x3
    integer :: ios,i
-   character(256) :: msg       
+   character(256) :: msg
 
    implicit class(base(4,:)) (T)
    implicit class(base) (S)
-   
+
    allocatable :: t1,s1,t2(:)
 
    allocate(gen3(4,2,8,4,2,5) :: s1)
@@ -122,7 +114,7 @@ program listDirectStreamAccess04
    call read1(t1,10)
 
    ! verify t1
-    
+
    select type(t1)
       type is(gen3(4,*,8,*,2,*))
 
@@ -134,7 +126,7 @@ program listDirectStreamAccess04
         if(.not. precision_x3(t1%x1(2),(2.1Q2,-2.1Q-1)))       stop 20
         if(.not. precision_x3(t1%x1(3),(0.005_16,-3.008_16)))  stop 21
         if(.not. precision_x3(t1%x1(4),(-3.7_16,4.0_16)))      stop 22
-    
+
         if(t1%g1(2,4) .neqv. .true.)                           stop 23
         if(t1%g1(3,4) .neqv. .false.)                          stop 24
         if(t1%g1(2,5) .neqv. .false.)                          stop 25
@@ -151,7 +143,7 @@ program listDirectStreamAccess04
       type is(gen3(4,*,8,*,2,*))
 
         if(any(s1%c1 /= ["****","xlft","'xy'"] ))             stop 28
-        if(any(s1%i1 /= [-99,-7]))                             stop 29 
+        if(any(s1%i1 /= [-99,-7]))                             stop 29
         if(.not. precision_r8(s1%r1(2),-3.2D2))                stop 30
         if(.not. precision_r8(s1%r1(3),0.4_8))                 stop 31
         if(.not. precision_r8(s1%r1(4),1.11_8))                stop 32
@@ -206,7 +198,6 @@ program listDirectStreamAccess04
           stop 41
    end select
 
-   
    close(10)
 
 end program

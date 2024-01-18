@@ -13,10 +13,10 @@ Program test
     !y = t2()
     !z = t()
     !allocate(a,b)
-    allocate (x,y,source=t()) 
+    allocate (x,y,source=t())
     allocate (z, source=t2())
     print *, y%i
     print *, x%i
     print *, z%i
-   
+
 End

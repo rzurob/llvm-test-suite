@@ -1,38 +1,30 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectInternalFile01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectInternalFile01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 23 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 23 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!* 1. Read external records into internal file(default character array), and 
-!*   read records from internal file into derived type, and verify results, 
-!*   use list directed IO with external file and internal file 
+!* 1. Read external records into internal file(default character array), and
+!*   read records from internal file into derived type, and verify results,
+!*   use list directed IO with external file and internal file
 !* 2. Derived type is polymorphic type and has 2 dimensional array components
 !234567490123456749012345674901234567490123456749012345674901234567490
 module m1
    type base(k1,l1)
      integer,kind :: k1
      integer,len  :: l1
-     
+
      character(k1+1) :: c1(l1:l1+1,l1:l1+1)="***"
    end type
-   
+
    type,extends(base) :: child(k2,l2)
      integer,kind :: k2
      integer,len  :: l2
@@ -44,7 +36,7 @@ end module
 
 module m2
   use m1
-  
+
   type,extends(child) :: gen3(k3,l3)
      integer,kind :: k3
      integer,len  :: l3
@@ -62,15 +54,14 @@ module m2
 
 end module
 
-
 program listDirectInternalFile01
   use m2
-  implicit none 
+  implicit none
 
-  logical,external :: precision_r8,precision_x6 
+  logical,external :: precision_r8,precision_x6
   integer :: ios,i
   character(256) :: msg
-  
+
   character(40) :: buffer(3:19)
 
   class(base(2,:)),pointer :: ptr=>null()
@@ -110,7 +101,7 @@ program listDirectInternalFile01
       if(ubound(ptr%x1,1) /= 6 .or. ubound(ptr%x1,2) /= 8)  stop 18
       if(lbound(ptr%g1,1) /= 10 .or. lbound(ptr%g1,2) /= 10) stop 19
       if(ubound(ptr%g1,1) /= 11 .or. ubound(ptr%g1,2) /= 11) stop 20
-    
+
       read(buffer(3),fmt=*) ptr%c1(3,3)
       read(buffer(4),fmt=*) ptr%c1(4,3)
       read(buffer(5),*)     ptr%c1(3,4)
@@ -132,11 +123,11 @@ program listDirectInternalFile01
       read(buffer(17),*)    ptr%g1(11,10)
       read(buffer(18),*)    ptr%g1(10,11)
       read(buffer(19),*)    ptr%g1(11,11)
-   
+
       class default
         stop 10
- 
-  end select    
+
+  end select
 
   ! verify results
 
@@ -150,7 +141,7 @@ program listDirectInternalFile01
          if(tar%i1(2,3) /= -12 )                    stop 26
          if(tar%i1(3,3) /= 57 )                     stop 27
          if(tar%i1(4,3) /= 22 )                     stop 28
-        
+
          if(.not. precision_r8(tar%r1(6,6),-3.4D-2 ))  stop 29
          if(.not. precision_r8(tar%r1(6,7),2.4_8))     stop 30
          if(.not. precision_r8(tar%r1(6,8),-3._8))     stop 31
@@ -168,8 +159,8 @@ program listDirectInternalFile01
 
          stop 21
 
-  end select 
+  end select
 
   close(10)
-              
+
 end program

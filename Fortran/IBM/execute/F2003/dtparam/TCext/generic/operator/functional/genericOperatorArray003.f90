@@ -3,22 +3,11 @@
 ! opt variations: -qnock -qnol -qnodeferredlp
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator( )
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Binary Operator: Scalar to Array (**,//)
 !*  KEYWORD(S)                 :
@@ -132,7 +121,7 @@ program genericOperatorScalar003
    print *, b1%i
    print *, b2%i
    print *, b3%i
-   
+
    b2(4)%i = 4
 
    allocate ( b4(2,2), source = reshape ( source = ( b2 ** b2 ) , shape = (/2,2/) ) )
@@ -144,14 +133,14 @@ program genericOperatorScalar003
 
    print *, c2%c
    print *, c3%c
-   
+
    c4 = c2 // c3
-   
+
    print *, c4%c
-   
+
    deallocate ( b3 )
    allocate ( b3(4), source = c2 ** c3 )
    print *, b3%i
 
-   
+
 end program

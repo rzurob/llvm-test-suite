@@ -3,13 +3,9 @@
 ! opt variations: -ql
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/unpack
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/22/2005
 ! PRIMARY FUNCTIONS TESTED   : unpack
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Diagnose test case. MASK shall be of
 !                              type logical.
 !=======================================================================

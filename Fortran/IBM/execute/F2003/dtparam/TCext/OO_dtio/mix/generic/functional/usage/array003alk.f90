@@ -1,23 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : array003alk
 !*
-!*  PROGRAMMER                 : David Forster (derived from array003a by Robert Ma)
 !*  DATE                       : 2007-08-12 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : Usage of GENERIC BINDING
-!*                                  - array derived type variable containing polymorphic 
+!*                                  - array derived type variable containing polymorphic
 !*                                    components which has DTIO with unformatted I/O
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -40,7 +32,7 @@ module m
          generic :: write(unformatted) => write
          generic :: read(unformatted)  => read
    end type
-   
+
    type, extends(base) :: child
       character(lbase_1) :: d = 'xxx'
       contains
@@ -188,17 +180,17 @@ program array003alk
       type is ( child(*) ) ! tcx: (*)
          if ( ( b2(1,1)%i /= 201 ) .or. ( g%c /= 'ABC' ) .or. ( g%d /= 'abc' ) )   error stop 6_4
    end select
-   
+
    select type ( g => b2(2,1)%b )
       type is ( child(*) ) ! tcx: (*)
          if ( ( b2(2,1)%i /= 202 ) .or. ( g%c /= 'DEF' ) .or. ( g%d /= 'def' ) )   error stop 7_4
    end select
-   
+
    select type ( g => b2(1,2)%b )
       type is ( child(*) ) ! tcx: (*)
          if ( ( b2(1,2)%i /= 203 ) .or. ( g%c /= 'GHI' ) .or. ( g%d /= 'ghi' ) )   error stop 8_4
    end select
-   
+
    select type ( g => b2(2,2)%b )
       type is ( child(*) ) ! tcx: (*)
          if ( ( b2(2,2)%i /= 204 ) .or. ( g%c /= 'JKL' ) .or. ( g%d /= 'jkl' ) )   error stop 9_4

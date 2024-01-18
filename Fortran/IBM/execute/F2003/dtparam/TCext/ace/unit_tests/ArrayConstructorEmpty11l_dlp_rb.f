@@ -3,15 +3,11 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : ArrayConstructorEmpty11l_dlp_rb
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from
 !*                               ArrayConstructorEmpty11 by Rob James)
 !*  DATE                       : 2008-01-29 (original: 09/14/2006)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  DESCRIPTION                : Testing empty array constructors.
 !*

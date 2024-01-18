@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : SpeExpHostAssociation04a.f
-!*
-!*  PROGRAMMER                 : Dorra Bouhiha
 !*  DATE                       : June 14, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Specification expression - Host Association
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -55,7 +47,7 @@ PROGRAM SpeExpHostAssociation04a
          TYPE(Base(k3,l3)) :: cmp2
       END TYPE
 
-      INTEGER I 
+      INTEGER I
       TYPE(Base(4,:)), ALLOCATABLE :: poly
 
       ALLOCATE( poly, SOURCE = Base(4,5)( I1 = 4, A1 = [(4*I, I = 1,5)], C1 = 'BBBBB' ) )
@@ -71,9 +63,9 @@ PROGRAM SpeExpHostAssociation04a
       CALL Sub12(4,10,14)
       CALL Sub13(4,10,20,30)
       CALL Sub14(4,7,10)
- 
+
       CONTAINS
- 
+
       SUBROUTINE Sub11(N, M)
         INTEGER :: N, M
         TYPE(Base(poly%k1,poly%l1)) :: Obj
@@ -85,7 +77,7 @@ PROGRAM SpeExpHostAssociation04a
       END SUBROUTINE Sub11
 
       SUBROUTINE Sub12(N, M, P)
-        INTEGER :: N, M, P 
+        INTEGER :: N, M, P
         TYPE(Child(KIND(poly%I1),poly%I1,2*KIND(poly%I1),2*SIZE(poly%A1))) :: Obj
 
         IF ( Obj%k1 .NE.   N ) STOP 14

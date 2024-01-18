@@ -1,22 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TESTOP CASE NAME             : InitExpNumRelOP.f  
+!*  TESTOP CASE NAME             : InitExpNumRelOP.f
 !*  TESTOP CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept. 07 2006
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +20,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!* Numeric relational operation 
-!* 
-!* TYPE parameter convered to that of x + y before eval 
-!* 
+!* Numeric relational operation
+!*
+!* TYPE parameter convered to that of x + y before eval
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpNumRelOP 
+  PROGRAM InitExpNumRelOP
   IMPLICIT NONE
 
   INTEGER     :: I
@@ -48,27 +41,27 @@
   LOGICAL :: L1(128) = 1/R4 < 1/R8  .EQV. REAL(1/R4, 8)  < 1/R8
   LOGICAL :: L2(128) = 1/R4 < 1/R6  .EQV. REAL(1/R4, 16) < 1/R6
   LOGICAL :: L3(128) = 1/R8 < 1/R6  .EQV. REAL(1/R8, 16) < 1/R6
- 
+
   LOGICAL :: L4(128) = 1/R4 <= 1/R8  .EQV. REAL(1/R4, 8)  <= 1/R8
   LOGICAL :: L5(128) = 1/R4 <= 1/R6  .EQV. REAL(1/R4, 16) <= 1/R6
   LOGICAL :: L6(128) = 1/R8 <= 1/R6  .EQV. REAL(1/R8, 16) <= 1/R6
- 
+
   LOGICAL :: L7(128) = 1/R4 > 1/R8  .EQV. REAL(1/R4, 8)  > 1/R8
   LOGICAL :: L8(128) = 1/R4 > 1/R6  .EQV. REAL(1/R4, 16) > 1/R6
   LOGICAL :: L9(128) = 1/R8 > 1/R6  .EQV. REAL(1/R8, 16) > 1/R6
- 
+
   LOGICAL :: L11(128) = 1/R4 >= 1/R8  .EQV. REAL(1/R4, 8)  >= 1/R8
   LOGICAL :: L12(128) = 1/R4 >= 1/R6  .EQV. REAL(1/R4, 16) >= 1/R6
   LOGICAL :: L13(128) = 1/R8 >= 1/R6  .EQV. REAL(1/R8, 16) >= 1/R6
- 
+
   LOGICAL :: L14(128) = 1/R4 == 1/R8  .EQV. REAL(1/R4, 8)  == 1/R8
   LOGICAL :: L15(128) = 1/R4 == 1/R6  .EQV. REAL(1/R4, 16) == 1/R6
   LOGICAL :: L16(128) = 1/R8 == 1/R6  .EQV. REAL(1/R8, 16) == 1/R6
- 
+
   LOGICAL :: L17(128) = 1/R4 /= 1/R8  .EQV. REAL(1/R4, 8)  /= 1/R8
   LOGICAL :: L18(128) = 1/R4 /= 1/R6  .EQV. REAL(1/R4, 16) /= 1/R6
   LOGICAL :: L19(128) = 1/R8 /= 1/R6  .EQV. REAL(1/R8, 16) /= 1/R6
- 
+
 
   IF ( ANY( .NOT. L1  ) ) STOP 11
   IF ( ANY( .NOT. L2  ) ) STOP 12
@@ -93,7 +86,7 @@
 
 
 
-  END 
+  END
 
 
- 
+

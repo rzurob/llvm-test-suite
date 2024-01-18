@@ -1,14 +1,12 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL
 !USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : do_concurrent_f002.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2015-03-24
 !*  ORIGIN                     :
 !*
@@ -21,7 +19,7 @@
 !*                               - functions inside loops/nested loops
 !*                               - scalar-mask-expr is a pure subroutine
 !*                               --- inside submodule subroutines
-!*                               --- variable scope can be in: 
+!*                               --- variable scope can be in:
 !*                                   - host
 !*                                   - module
 !*                                   - module subroutine
@@ -40,9 +38,9 @@
 !*                               /  subMod_rightChild_leftChild   \
 !*                              /                                  \
 !*                             /                     subMod_rightChild_rightChild
-!*                    subMod_leftChild                          
-!*                     /            \                            
-!*  subMod_leftChild_leftChild subMod_leftChild_rightChild 
+!*                    subMod_leftChild
+!*                     /            \
+!*  subMod_leftChild_leftChild subMod_leftChild_rightChild
 !=============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890
       module baseMod
@@ -110,7 +108,7 @@
                 print *, "k: ", k
                 error stop 2
               end if
-    
+
               if ( any(i_res .ne. i_arr) ) then
                 print *, "array variable assignment by function in do concurrent loop in else block returning bad result"
                 print *, "i_res: ", i_res
@@ -124,11 +122,11 @@
         contains
           module subroutine do_test1()
             i_arr2 = (/10.5, 20.5, 30.5, 40.5, 50.5/)
-    
+
             do concurrent (i = 1:5, j = 1:5, mod(100.0,i_arr2(i)) > 15.1 .AND. mod(100.0,i_arr(j)) < 30.6)
               i_res2(i,j) = log10(real(10**j,8))
             end do
-    
+
             if ( any(i_res2(1,:) .ne. 0.0) .OR. &
                 &any(i_res2(2,:) .ne. (/1.0, 2.0, 0.0, 4.0, 0.0/)) .OR. &
                 &any(i_res2(3,:) .ne. 0.0) .OR. &
@@ -147,10 +145,10 @@
 
       submodule (baseMod:subMod) subMod_leftChild
         contains
-    
+
          module procedure do_test2
             i_res2 = 0.0
-    
+
             do concurrent (i = 1:5, j=1:5, lvar .eqv. .TRUE.)
               i_res2(i,j) = mod(100.5_8,real(i*j,8))
             end do
@@ -241,11 +239,11 @@
       submodule (baseMod:subMod_leftChild) subMod_leftChild_rightChild
         contains
           module procedure do_test5
-    
+
             i_res3 = 0.0d0
             i_res4 = 0.0d0
             i_arr3 = (/10.5,20.5,30.5,40.5,50.5,11.5,22.5,33.5,44.5,55.5/)
-    
+
             do concurrent (i = 1:10, lvar .eqv. .TRUE.)
               i_res3(i) = sqrt(i_arr4(i))
               do concurrent (j = 1:10, mod(100.0d0,i_arr3(j)) > 0.154d2)
@@ -269,11 +267,11 @@
           module real function do_test6()
             do_test6 = do_test6_helper()
           end function
-  
+
           real function do_test6_helper()
             i_res2 = 0.0
             i_res5 = 0.0d0
-    
+
             do concurrent (i = 1:5, j = 1:5, abs(-1*i_arr(i)) > 12.0 .AND. abs(-1*i_arr(j)) < 50.0)
               i_res2(i,j) = mod(100.5_8,real(i*j,8))
               do concurrent (k = 1:5, l = 1:5, abs(-1*i_arr(k)) > 26.5 .AND. abs(-1*i_arr(l)) < 40.0)
@@ -313,15 +311,15 @@
           module procedure do_test7
             do_test7 = do_test7_helper()
           end procedure
- 
+
           complex function do_test7_helper()
             i_res3 = 0.0d0
             i_res4 = 0.0d0
             i_res2 = 0.0
             i_arr3 = (/10.0,20.0,30.0,40.0,50.0,60.0,70.0,80.0,90.0,100.0/)
-    
+
             do concurrent (i = 1:m*2, lvar .eqv. .TRUE.)
-              i_res3(i) = sqrt(i_arr4(i)) 
+              i_res3(i) = sqrt(i_arr4(i))
               do concurrent (j = 100:1000:100, abs(-1*i_arr3(j/100)) >= 30.0 .AND. abs(-1*i_arr3(j/100)) <= 80.0)
                 i_res4(j/100) = sqrt(i_arr4(j/100))
                 do concurrent (k = 1:5, l = 1:5)

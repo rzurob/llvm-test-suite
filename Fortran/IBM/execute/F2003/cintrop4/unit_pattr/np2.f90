@@ -29,7 +29,6 @@
          f2e = 2
       end function
 
-
       !! BIND(C) on function and function-entry without parens:
       function f3 bind(C)  ! err: no-parens btw function and bind-no-name
          f3 = 1

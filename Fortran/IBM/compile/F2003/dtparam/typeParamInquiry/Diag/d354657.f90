@@ -2,24 +2,16 @@
 !*  ===================================================================
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : d354657.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Nancy Wang
 !*  DATE                       : August 6 2008
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  :
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*
 !*  DESCRIPTION
 !*
@@ -30,7 +22,7 @@
 
 module m
    contains
-      character function getchar() 
+      character function getchar()
          getchar='A'
       end function
 end module
@@ -40,6 +32,6 @@ program d354657
     implicit none
     integer i
 
-     associate(x=>getchar(i))     
+     associate(x=>getchar(i))
      end associate
 end

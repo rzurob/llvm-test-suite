@@ -1,39 +1,31 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocateWithTypeSpec13 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : January 20, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !*  SECONDARY FUNCTIONS TESTED :
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : Deferred len type parameter 
+!*  KEYWORD(S)                 : Deferred len type parameter
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* allocate-stmt is 
+!* allocate-stmt is
 !*   ALLOCATE ( [ type-spec :: ] allocation-list [, alloc-opt-list ] )
 !*
-!* Defect 361702 
+!* Defect 361702
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN  :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN  :: l1
 
         REAL(k1)      :: data(l1)
       END TYPE Base
@@ -43,15 +35,15 @@ MODULE Mod
         INTEGER, LEN  :: l2
 
         REAL(k2)      :: mat(l2,l1)
-        CLASS(Base(k2,l2-l1)), ALLOCATABLE :: b_cmp    
+        CLASS(Base(k2,l2-l1)), ALLOCATABLE :: b_cmp
       END TYPE Child
 
       TYPE, EXTENDS(Base) :: Branch  (k3,l3,l4,l5)
-        INTEGER, KIND :: k3 
+        INTEGER, KIND :: k3
         INTEGER, LEN  :: l3, l4, l5
 
-        CLASS(Base(k3,l4)), ALLOCATABLE :: left   
-        CLASS(Base(k3,l5)), ALLOCATABLE :: right  
+        CLASS(Base(k3,l4)), ALLOCATABLE :: left
+        CLASS(Base(k3,l5)), ALLOCATABLE :: right
       END TYPE Branch
 END MODULE Mod
 PROGRAM AllocateWithTypeSpec13
@@ -73,7 +65,7 @@ PROGRAM AllocateWithTypeSpec13
 
       DEALLOCATE(upoly)
 
-!*   Child 
+!*   Child
 
       ALLOCATE(Child(4,8,4,16) :: upoly)
       CALL verify_type(upoly)
@@ -83,7 +75,7 @@ PROGRAM AllocateWithTypeSpec13
 
       DEALLOCATE(upoly)
 
-!*   Branch 
+!*   Branch
 
       ALLOCATE(Branch(4,10,4,5,8,8) :: upoly)
       CALL verify_type(upoly)
@@ -96,9 +88,9 @@ PROGRAM AllocateWithTypeSpec13
       CONTAINS
 
       SUBROUTINE verify_type(Arg)
-         CLASS(*) :: Arg    
+         CLASS(*) :: Arg
 
-         SELECT TYPE ( Arg )  
+         SELECT TYPE ( Arg )
               CLASS IS (Base(4,*))
                  tag = 'Base'
                  IF (Arg%l1 .NE. 8) STOP 20
@@ -125,14 +117,14 @@ PROGRAM AllocateWithTypeSpec13
       END SUBROUTINE verify_type
 
       SUBROUTINE alloc_comp(Arg)
-         CLASS(*), ALLOCATABLE :: Arg    
+         CLASS(*), ALLOCATABLE :: Arg
 
-         SELECT TYPE ( Arg )  
+         SELECT TYPE ( Arg )
               CLASS IS (Base(4,*))
 
               CLASS IS (Child(4,*,4,*))
                  IF ( ALLOCATED(Arg%b_cmp)) STOP 40
-                 ALLOCATE(Child(4,Arg%l2-Arg%l1,4,Arg%l2) :: Arg%b_cmp) 
+                 ALLOCATE(Child(4,Arg%l2-Arg%l1,4,Arg%l2) :: Arg%b_cmp)
 
                  CALL verify_type(Arg%b_cmp)
                  IF (tag .NE. 'Child') STOP 41
@@ -140,8 +132,8 @@ PROGRAM AllocateWithTypeSpec13
               CLASS IS (Branch(4,*,4,*,*,*))
                  IF ( ALLOCATED(Arg%left)) STOP 42
                  IF ( ALLOCATED(Arg%right)) STOP 43
-                 ALLOCATE(Branch(4,Arg%l4,4,Arg%l1-Arg%l3,Arg%l4,Arg%l4) :: Arg%left)  
-                 ALLOCATE(Branch(4,Arg%l5,4,Arg%l1-Arg%l3,Arg%l5,Arg%l5) :: Arg%right) 
+                 ALLOCATE(Branch(4,Arg%l4,4,Arg%l1-Arg%l3,Arg%l4,Arg%l4) :: Arg%left)
+                 ALLOCATE(Branch(4,Arg%l5,4,Arg%l1-Arg%l3,Arg%l5,Arg%l5) :: Arg%right)
 
                  CALL verify_type(Arg%left)
                  IF (tag .NE. 'Branch') STOP 44

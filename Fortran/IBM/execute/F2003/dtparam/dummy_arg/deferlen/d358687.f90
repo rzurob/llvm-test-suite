@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d358687.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d358687.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 10 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  DEFECT 358687
@@ -29,7 +21,7 @@ module m
    end type
    type B(l2)
      integer,len  :: l2
-     type(A(:)),allocatable :: a1 
+     type(A(:)),allocatable :: a1
    end type
 end module
 
@@ -41,7 +33,7 @@ program d358687
   type(B(:)),allocatable :: b1
   type(A(3)) :: a1=A(3)("xlf")
 
-  b1=B(3)(a1) 
+  b1=B(3)(a1)
 
   print *,b1%l2,b1%a1%l1,"|",b1%a1%c1,"|"
 

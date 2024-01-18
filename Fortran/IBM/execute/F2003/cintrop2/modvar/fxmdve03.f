@@ -1,41 +1,31 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !************************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD:  $TR_SRC/run.sh fxmdve03 cxmdve03 
-! %COMPOPTS:   
-! %GROUP: redherring.f 
+! %PRECMD:  $TR_SRC/run.sh fxmdve03 cxmdve03
+! %COMPOPTS:
+! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !************************************************************************
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : fxmdve03.f 
-!*  TEST CASE TITLE            : bind(c) attribute/statement
+!*  TEST CASE NAME             : fxmdve03.f
 !*
-!*  PROGRAMMER                 : Kan Tian
-!*  DATE                       : Sep 14,2002 
+!*  DATE                       : Sep 14,2002
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test 1  dimension integer array variables,
-!*                               the combination of type and kind type 
+!*                               the combination of type and kind type
 !*                               parameter ,with bind(c) attribute/statement,
 !*                               is interoperate with  corresponding C type.
-!*                             
+!*
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DEPENDENCIES               : External routine ZZRC
@@ -45,12 +35,12 @@
 !*  DESCRIPTION                :
 !*                              Pass data between a C array with external
 !*				linkage and Fortran array has the bind(c)
-!*				attribute. 
-!*                              Verify the result of data passing. 
-!*                              
+!*				attribute.
+!*                              Verify the result of data passing.
+!*
 !*                              Define 1 dimension array variable in
 !*                              the module mod and the varibles are
-!*                              accessed by other fortran  program units and 
+!*                              accessed by other fortran  program units and
 !*                              c code.
 !*                              The array sorting  SUBROUTINE REARRANGE is
 !*                              encapsulated in the module named
@@ -59,9 +49,9 @@
 !*                              and the subroutine  REARRANGE initialize
 !*                              the varibles, then call C function to check
 !*                              if the value is passed to C code correctly,
-!*                              then modify the value of the variables in C 
+!*                              then modify the value of the variables in C
 !*                              code and passed back to Fortran surbroutine
-!*                              REARRANGE, then sort the  array  and 
+!*                              REARRANGE, then sort the  array  and
 !*                              pass back the value to Fortran main program
 !*                              to check the correctness.
 !* ===================================================================
@@ -97,7 +87,7 @@ MODULE ORDER_AN_ARRAY
   !
 CONTAINS
   !
-  SUBROUTINE REARRANGE 
+  SUBROUTINE REARRANGE
     USE MOD
     LOGICAL, ALLOCATABLE :: MASK(:)
     INTEGER :: I, N
@@ -128,7 +118,7 @@ CONTAINS
   END SUBROUTINE REARRANGE
 
 
-  ! 
+  !
   SUBROUTINE EXCHANGE (X,Y)
     USE ISO_C_BINDING
     integer(C_LONG_LONG):: X,Y
@@ -148,7 +138,7 @@ PROGRAM RANDOM_ARRAY_ORDERED
   basval1 = -100
   basval2 = 500
   !
-  CALL REARRANGE 
+  CALL REARRANGE
   result= assert_eq2(A(1),basval1) .AND.assert_eq2(A(5),basval2)
   if (result .eqv. .FALSE.) then
      error stop 230

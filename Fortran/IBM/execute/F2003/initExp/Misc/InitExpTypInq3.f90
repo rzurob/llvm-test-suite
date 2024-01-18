@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypInq3.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypInq3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 28, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +19,16 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  Type Parameter Inquiry on derived types  in array constructor
-!* 
-!*  
-!* (324561) 
+!*
+!* (324561)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypInq3 
+  PROGRAM InitExpTypInq3
   IMPLICIT NONE
 
   INTEGER :: I
@@ -50,7 +42,7 @@
   END TYPE
 
   TYPE, EXTENDS(DT0) :: DT(L128)
-    INTEGER, LEN ::L128 
+    INTEGER, LEN ::L128
   END TYPE
 
   TYPE(DT(K1=1,K2=2,K4=4,K8=8,K6=16, L128=128)), PARAMETER :: DTP=DT(K1=1,K2=2,K4=4,K8=8,K6=16, L128=128)()
@@ -76,10 +68,10 @@
 
     CHARACTER(DTP%L128) :: CC(DTP%K1)=(/(CHAR(DTP%L128), I=1, DTP%K1)/)
   END TYPE
- 
+
   TYPE(DTT), PARAMETER ::  T=DTT()
- 
- 
+
+
   IF (SIZE(T%I1)    .NE. 1  ) STOP 11
   IF (SIZE(T%I2)    .NE. 2  ) STOP 12
   IF (SIZE(T%I4)    .NE. 4  ) STOP 14
@@ -123,4 +115,4 @@
 
   END
 
- 
+

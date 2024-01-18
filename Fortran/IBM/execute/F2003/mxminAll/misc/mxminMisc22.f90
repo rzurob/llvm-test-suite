@@ -1,24 +1,12 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX*/MIN* with zero-length char
-!*                              
 !*
 !* ===================================================================
 
@@ -38,9 +26,9 @@ program mxminMisc22
         error stop 3_4
    endif
 
-   if(len(max("", '')) .ne. 0 ) then 
+   if(len(max("", '')) .ne. 0 ) then
         error stop 4_4
    endif
-    
-end program mxminMisc22 
+
+end program mxminMisc22
 

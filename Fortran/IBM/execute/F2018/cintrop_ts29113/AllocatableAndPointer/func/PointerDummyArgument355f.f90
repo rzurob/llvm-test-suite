@@ -1,27 +1,19 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : PointerDummyArgument355f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : July 27, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
-!* REQUIRED COMPILER OPTIONS    : 
+!* REQUIRED COMPILER OPTIONS    :
 !*                               (use -D_DEBUG for a debug version)
 !*
 !* DESCRIPTION                  : Calling a BIND(C) procedure defined in Fortran from C
 !*                                - Assoociate in C using CFI_setpointer
 !*                                - De-associate in Fortran using NULLIFY
 !*                                - Verify association status and values in both C and Fortran
-!*
 !*
 !* Actual Argument:
 !*
@@ -37,10 +29,10 @@
 subroutine fcheck(flag, ptr) bind(c)
     use :: iso_c_binding, only: c_int
     implicit none
-    integer :: i 
+    integer :: i
     integer(c_int) :: flag
     integer(c_int), pointer :: ptr(:)
-   
+
     if( flag .eq. 0 ) then
         if(          associated(ptr) ) ERROR STOP 10
     elseif ( flag .eq. -1 ) then
@@ -74,7 +66,7 @@ subroutine fdisassociate(ptr) bind(c)
     use :: iso_c_binding, only: c_int
     implicit none
     integer(c_int), pointer :: ptr(:)
-   
+
     if( .not. associated(ptr) ) ERROR STOP 50
     NULLIFY(ptr)
     if(       associated(ptr) ) ERROR STOP 51

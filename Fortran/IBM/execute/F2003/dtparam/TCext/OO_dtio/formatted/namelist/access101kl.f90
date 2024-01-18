@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : access101kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from access101 by Robert Ma)
 !*  DATE                       : 2007-06-20 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with namelist and object of public/private accessibility (Input)
@@ -77,7 +69,7 @@ module m
       integer, intent(in) :: unit
       read ( unit, n123, iostat = stat, iomsg = msg )
    end subroutine
-   
+
    subroutine check()
       if ( ( b1%i /= 2 )  .or. ( b2%i /= 1 ) .or. ( b3%i /= 3 ) ) error stop 1_4
    end subroutine
@@ -90,9 +82,9 @@ use m
 
    call start()
    call read123(1)
-   
+
    if ( (stat /= 0 ) .or. (msg /= 'dtioread' ) ) error stop 2_4
-   
+
    call check()
 
 end program
@@ -110,10 +102,10 @@ use m, only: base
    integer(4) :: i
    if ( iotype /= "NAMELIST" ) error stop 3_4
    if ( size(v_list, 1) /= 0 ) error stop 4_4
-   
+
    read (unit, *, iostat=iostat )   i
-   
-   call dtv%seti(i) 
+
+   call dtv%seti(i)
 
    iomsg = 'dtioread'
 

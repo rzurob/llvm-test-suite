@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDefSyntax4
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 28, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -33,14 +27,14 @@
 
 
   MODULE M
-  
+
   TYPE :: DT1(K)
-    SEQUENCE 
+    SEQUENCE
     INTEGER, KIND :: K
   END TYPE
 
   TYPE :: DT2(K)
-    PRIVATE 
+    PRIVATE
     INTEGER, KIND :: K
   END TYPE
 
@@ -50,7 +44,7 @@
   END TYPE
 
   TYPE :: DT4(L)
-    PRIVATE 
+    PRIVATE
     INTEGER, LEN :: L
   END TYPE
 
@@ -60,7 +54,7 @@
   END TYPE
 
   TYPE :: DT6(K)
-    CONTAINS 
+    CONTAINS
     PROCEDURE, NOPASS :: P => S
     INTEGER, KIND :: K
   END TYPE
@@ -72,6 +66,6 @@
 
   END MODULE
 
-  PROGRAM dtParamTypeDefSyntax4 
+  PROGRAM dtParamTypeDefSyntax4
   END
 

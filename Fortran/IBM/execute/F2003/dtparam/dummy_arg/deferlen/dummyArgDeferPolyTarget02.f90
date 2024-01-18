@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyTarget02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyTarget02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 19 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 19 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. actual argument is a pointer which points to target,the bound is remapped.
@@ -27,7 +19,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(l1)
-       integer,len :: l1=10 
+       integer,len :: l1=10
        character(l1) :: firstname="no name"
    end type
 
@@ -42,11 +34,11 @@ module m
           class(base(:)),pointer,intent(inout) :: arg(:)
 
           if(lbound(arg,1) /= -5)                  error stop 10_4
-          if(ubound(arg,1) /= -3)                  error stop 11_4     
+          if(ubound(arg,1) /= -3)                  error stop 11_4
 
           call sub2(arg)
        end subroutine
- 
+
        subroutine sub2(arg)
           class(base(*)), target,intent(inout) :: arg(2:)
           select type(arg)
@@ -74,14 +66,14 @@ module m
 
           if(arg(2)%firstname /= "David")          error stop 20_4
           if(arg(2)%lastname /= "Forster")         error stop 21_4
-             
+
           if(arg(3)%firstname /= "Jim")            error stop 22_4
           if(arg(3)%lastname /= "Xia")             error stop 23_4
 
           arg=(/child(arg%l1,arg%l2)(), &
                 child(arg%l1,arg%l2)(), &
                 child(arg%l1,arg%l2)() /)
-          
+
        end subroutine
 
 end module
@@ -94,7 +86,7 @@ program dummyArgDeferPolyTarget02
 
   type(child(:,:)),pointer   :: pchild(:)=>null()
 
-  type(child(15,20)),target  :: tchild(3) 
+  type(child(15,20)),target  :: tchild(3)
 
   tchild=[child(15,20)(firstname="Nancy",lastname="Wang"), &
           child(15,20)(firstname="David",lastname="Forster"), &

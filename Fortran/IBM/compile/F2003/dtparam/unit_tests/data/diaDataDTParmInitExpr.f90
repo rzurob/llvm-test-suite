@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : diaDataDTParmInitExpr.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Zheming Gu
 !*  DATE                       : May 11,2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : support for structure constructors containing type parameters to the DATA statement.
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 333315
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -26,8 +20,7 @@
 !*  DESCRIPTION:
 !*  -----------
 !*  KIND and LEN type parameter is not scalar init-expr, or is assumed
-!*  or deferred in 
-!*
+!*  or deferred in
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

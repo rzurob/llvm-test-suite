@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadMis01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadMis01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 23 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -65,7 +57,7 @@ program spreadMis01
       select type(x=>dtp2(2)%base1)
          type is(child(*,*))
               if(x%c1 /= "00")                      error stop 16_4
-              if(x%c2 /= "11")                      error stop 17_4 
+              if(x%c2 /= "11")                      error stop 17_4
          class default
             error stop 101_4
       end select
@@ -78,11 +70,11 @@ program spreadMis01
       end select
     class default
        error stop 100_4
-  end select 
+  end select
 
   dtp3=spread(merge([child(2,3)("aa","bb"),child(2,3)("cc","dd",tar1)], &
                      [child(2,3)("55","66"),child(2,3)("77","88")], &
-                     [ .false. , .true.] ),1,5 ) 
+                     [ .false. , .true.] ),1,5 )
   do i=1, 5
     if(dtp3(i,1)%c1 /= "55")                         error stop 20_4
     if(dtp3(i,1)%c2 /= "66")                         error stop 21_4
@@ -93,9 +85,9 @@ program spreadMis01
     select type(x=>dtp3(i,2)%base1)
        type is(child(*,*))
           if(x%c1 /= "00")                           error stop 26_4
-          if(x%c2 /= "11")                           error stop 27_4 
+          if(x%c2 /= "11")                           error stop 27_4
        class default
          error stop 103_4
     end select
-  end do 
+  end do
 end program

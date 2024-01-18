@@ -1,31 +1,24 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP:  fxstio121.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ, INQUIRE
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,12 +27,12 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/17/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/17/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
-  program fxstio121 
+  program fxstio121
 
      implicit none
      integer    i, ios, A
@@ -58,12 +51,12 @@
      logical*2 	l2_in, l2_out
      logical*4 	l4_in, l4_out
      logical*8 	l8_in, l8_out
-     character    ch1_in, ch1_out  
-     character*15 ch15_in, ch15_out  
+     character    ch1_in, ch1_out
+     character*15 ch15_in, ch15_out
      byte       b_in(N), b_out(N)
 
      integer, parameter :: IO_POS=1     ! Parameter as position variable
-     integer, pointer :: pos_pointer    ! F90 pointer as position variable 
+     integer, pointer :: pos_pointer    ! F90 pointer as position variable
      integer, target  :: pos_target
      integer          :: pos_pte
      integer, target  :: pos_array(N)   ! Array elements as position variable
@@ -73,10 +66,10 @@
 
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
-	
-!********************************************************** 
+
+!**********************************************************
 !        Initialization of variables                      *
-!********************************************************** 
+!**********************************************************
 
      i1_in = 12
      i2_in = 1234
@@ -100,22 +93,22 @@
      enddo
 
      pos_target = 115
-     pos_pointer => pos_target		
+     pos_pointer => pos_target
      A = 320
-     pos_ptr = LOC(A) 
+     pos_ptr = LOC(A)
      pos_array(N-1) = 141
      pos_array(N) = 303
-     pos_arr_ptr => pos_array(N-1:N) 
+     pos_arr_ptr => pos_array(N-1:N)
 
-!********************************************************** 
+!**********************************************************
 !      Writing to the file at different positions         *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio121.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
 
 
-     WRITE(1, FMT='(I2, I5, I10, I20)', POS=IO_POS, IOSTAT=ios, ERR=91) & 
+     WRITE(1, FMT='(I2, I5, I10, I20)', POS=IO_POS, IOSTAT=ios, ERR=91) &
     &     i1_in, i2_in, i4_in, i8_in
 
      WRITE(1, FMT='(D25.17)', POS=230/2, IOSTAT=ios, ERR=91) d8_in
@@ -126,19 +119,19 @@
      WRITE(1, FMT='(3L5)', POS=ABS(-303), IOSTAT=ios, ERR=91) &
     &      l2_in, l4_in, l8_in
 
-     WRITE(1, FMT='(F9.6,D25.17,Q40.32)', POS=39, IOSTAT=ios, ERR=91) & 
+     WRITE(1, FMT='(F9.6,D25.17,Q40.32)', POS=39, IOSTAT=ios, ERR=91) &
     &      r4_in, r8_in, r16_in
 
-     do i = 1, N 
+     do i = 1, N
         WRITE(1, FMT='(B8)', POS=340+(i-1)*8, IOSTAT=ios, ERR=91) b_in(i)
-     enddo 
+     enddo
 
      WRITE(1, FMT='(A1,A16)',POS=320 , IOSTAT=ios, ERR=91) ch1_in, ch15_in
 
 
-!********************************************************** 
+!**********************************************************
 !      Reading from the file at different positions       *
-!********************************************************** 
+!**********************************************************
 
      READ(1, FMT='(F9.6,D25.17,Q40.32)', POS=39, IOSTAT=ios, ERR=92) &
     &     r4_out, r8_out, r16_out
@@ -153,7 +146,7 @@
      READ(1, FMT='(2E15.7,2D25.17,2Q40.32)',POS=pos_arr_ptr(1), &
     &      IOSTAT=ios,ERR=92) x8_out, x16_out, x32_out
 
-     do i = 412, 340, -8  
+     do i = 412, 340, -8
          READ(1, FMT='(B8)', POS=i, IOSTAT=ios, ERR=92) b_out((i-340)/8 + 1)
      enddo
 
@@ -162,9 +155,9 @@
 
 
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( i1_in .ne. i1_out ) error stop 10
      if ( i2_in .ne. i2_out ) error stop 11
@@ -199,12 +192,12 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 93   print *, "Error while rewinding the file: IOSTAT = ", ios
-     error stop 93 
+     error stop 93
 
    end program

@@ -1,7 +1,7 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qxlf77=gedit77
 ! %GROUP:  fxstio215.f
 ! %VERIFY:
@@ -12,51 +12,44 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access Mode
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                : Test -qxlf77=gedit77 with G edit descriptors 
+!*  DESCRIPTION                : Test -qxlf77=gedit77 with G edit descriptors
 !*				 in formatted stream output.
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  04/01/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  04/01/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
-  program fxstio215 
+  program fxstio215
 
      implicit none
-     integer    ios 
+     integer    ios
 
-     real*4                :: r4_in, r4_out  
-     real*8                :: r8_in, r8_out  
-     real*16               :: r16_in, r16_out  
-     complex*8             :: x8_in, x8_out  
-     complex*16            :: x16_in, x16_out  
-     complex*32            :: x32_in, x32_out  
+     real*4                :: r4_in, r4_out
+     real*8                :: r8_in, r8_out
+     real*16               :: r16_in, r16_out
+     complex*8             :: x8_in, x8_out
+     complex*16            :: x16_in, x16_out
+     complex*32            :: x32_in, x32_out
      real*4                :: r4_ltrl_in
      complex*8             :: x8_ltrl_in
 
 
-!********************************************************** 
+!**********************************************************
 !       Initialization                                    *
-!********************************************************** 
+!**********************************************************
 
      r4_out = -0.099995
      r8_out = 99.5
@@ -66,9 +59,9 @@
      x32_out = (-0.1Q-309, 0.1Q309)
 
 
-!********************************************************** 
+!**********************************************************
 !      Writing and Reading the file                      *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio215.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
@@ -86,9 +79,9 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 
    end program
 

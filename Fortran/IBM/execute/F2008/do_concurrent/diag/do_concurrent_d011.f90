@@ -1,13 +1,11 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                                IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : do_concurrent_d002.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2015-03-20
 !*  ORIGIN                     :
 !*
@@ -15,7 +13,7 @@
 !*  SECONDARY FUNCTIONS TESTED :
 !*  ADAPTED FROM               :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*   - do concurrent loop inside a forall statement should be invalid
 !*   - verify message consistency with having a do loop inside a forall
 !*     statement

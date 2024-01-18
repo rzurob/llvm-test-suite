@@ -4,33 +4,28 @@ c************************************************************************
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qstrict -qrndsngl -qnomaf
 ! %GROUP: fxepmp01.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f *.mod
 ! %END
 !************************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : User-defined Elemental Procedures
 !*
-!*  PROGRAMMER                 : Claudio Rossi
 !*  DATE                       : September 1, 1998
-!*  MODIFIED BY                :                 
-!*  DATE                       :                 
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
+!*  MODIFIED BY                :
+!*  DATE                       :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*  REFERENCE                  : 
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION                :  Use complex array pointers,
-!*  passed as actual arguments from module procedures, to external 
+!*  passed as actual arguments from module procedures, to external
 !*  user-defined elemental procedures.
-!*  The main program, uses the module, and makes calls to the module          
+!*  The main program, uses the module, and makes calls to the module
 !*  procedures.
-!*                               
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*  MM/DD/YY:  Init:  Comments:
@@ -45,7 +40,6 @@ c************************************************************************
       contains
 c *****************************************
       subroutine sub1
-c *****************************************
 c *****************************************
       interface
 c *****************************************
@@ -82,7 +76,7 @@ c *****************************************
       complex, dimension(5) :: cres1a, c1a
       complex*16, target, dimension(5,5,5,5) :: comp16a, cres16a
 c *****************************************
-c Assign the pointer to the appropriate arrays 
+c Assign the pointer to the appropriate arrays
 c *****************************************
       cptr1a => comp1a
       cptr16a => comp16a
@@ -115,7 +109,7 @@ c *****************************************
          do k=1,5
            do l=1,5
              do m=1,5
-       if (cres16a(j,k,l,m) .ne. 
+       if (cres16a(j,k,l,m) .ne.
      +      Flogn(cptr16a(j,k,l,m),i)) then
          error stop 2
        end if
@@ -128,9 +122,7 @@ c *****************************************
 c *****************************************
       end subroutine sub1
 c *****************************************
-c *****************************************
       subroutine sub2
-c *****************************************
 c *****************************************
       interface
 c *****************************************
@@ -164,7 +156,7 @@ c *****************************************
       complex*8, target, dimension(5,5) :: comp8a, cres8a, c8a
       complex*32, target, dimension(5,5,5,5,5,5,5) :: comp32a, cres32a
 c *****************************************
-c Assign the pointer to the appropriate arrays 
+c Assign the pointer to the appropriate arrays
 c *****************************************
       cptr8a => comp8a
       cptr32a => comp32a
@@ -200,7 +192,7 @@ c *****************************************
                do n=1,5
                  do o=1,5
                    do p=1,5
-       if (cres32a(j,k,l,m,n,o,p) .ne. 
+       if (cres32a(j,k,l,m,n,o,p) .ne.
      +      Finv(cptr32a(j,k,l,m,n,o,p))) then
          error stop 11
        end if

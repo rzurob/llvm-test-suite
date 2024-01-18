@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : assumeSizeTar.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment 
-!*                             :
+!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
 !*  SECONDARY FUNCTIONS TESTED : Target is assumed-size array
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - 
-!*                               - 
+!*  DESCRIPTION                : -
+!*                               -
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

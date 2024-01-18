@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncRetDer.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncRetDer.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRetDer 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRetDer
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a func call returning a value of derived type 
+!*    The selector is a func call returning a value of derived type
 !*    (Comp failed)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -53,7 +47,7 @@
       INTEGER  :: ChildId = 2
       CLASS(Child),  POINTER :: ChildComp  => NULL()
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -72,18 +66,18 @@
 
   END MODULE
 
-  PROGRAM FunRetDer 
+  PROGRAM FunRetDer
   USE M
 
   ASSOCIATE ( As => Func(Child(BaseId= -1, ChildId=-2 )) )
-    IF ( As%GetID() .NE. -2) STOP 50 
-    IF ( As%BaseId  .NE. -1) STOP 51 
+    IF ( As%GetID() .NE. -2) STOP 50
+    IF ( As%BaseId  .NE. -1) STOP 51
     IF ( As%ChildId .NE. -2) STOP 61
 
     ASSOCIATE ( As1 => As%GetId() )
-       IF ( As1 .NE. -2) STOP 52 
+       IF ( As1 .NE. -2) STOP 52
     END ASSOCIATE
-   
+
     IF ( .NOT. SAME_TYPE_AS(As, Child()) ) STOP 53
     IF ( As%ChildComp%BaseId  .NE. 1)      STOP 54
     IF ( As%ChildComp%GetId() .NE. 2)      STOP 55
@@ -95,9 +89,9 @@
     CLASS(Child) :: Arg
     TYPE(Child)  :: Func
 
-    Func = Arg 
+    Func = Arg
     ALLOCATE(FUNC%ChildComp)
- 
-  END FUNCTION 
+
+  END FUNCTION
 
   END

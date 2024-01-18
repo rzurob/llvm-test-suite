@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C813TypeIs.f 
+! %POSTCMD: tcomp C813TypeIs.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C813TypeIs
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 3, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C813 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C813
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is an associating entity 
+!*    The selector is an associating entity
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -55,7 +49,7 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -77,22 +71,22 @@
   PROGRAM C813TypeIs
   USE M
   IMPLICIT NONE
- 
+
   CONTAINS
- 
+
   SUBROUTINE Sub(Arg)
   CLASS(Child) :: Arg
 
   SELECT TYPE (Arg)
   TYPE IS (Child)
-    SELECT TYPE (  As => Arg) 
+    SELECT TYPE (  As => Arg)
       TYPE IS (Base)
         STOP 51
       CLASS DEFAULT
         STOP 31
-    END SELECT 
-  END SELECT 
-  
+    END SELECT
+  END SELECT
+
   END SUBROUTINE
 
   END

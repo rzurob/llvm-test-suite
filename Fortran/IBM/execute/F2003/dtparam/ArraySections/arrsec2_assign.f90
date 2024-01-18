@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : arrsec2_assign.f
-!*  PROGRAMMER                 : Gaby Baghdadi (adopted from David Nichols' 
 !*                               arrsec1_assign.f)
 !*  DATE                       : Oct 13, 2008
 !*  ORIGIN                     : XLF Development
@@ -12,7 +9,6 @@
 !*  DESCRIPTION
 !*
 !*      Test array sections generate the proper store operations
-!*      
 !*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890

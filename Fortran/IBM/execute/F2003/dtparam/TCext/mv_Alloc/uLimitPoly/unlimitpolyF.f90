@@ -3,30 +3,18 @@
 ! opt variations: -qnok -qnol -qnodeferredlp
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unlimitpolyF.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM and TO are unlimited polymorphic,
 !*                               rank 1
-!*				 FROM is local var, TO is component of derive-type  
-!*                               TO is finalized 
-!*                        
+!*				 FROM is local var, TO is component of derive-type
+!*                               TO is finalized
+!*
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -49,7 +37,7 @@ module m
     contains
         subroutine finalA(arg)
             type(A(*,4)), intent(in)  :: arg(:)
-            numA = numA + 1 
+            numA = numA + 1
         end subroutine
 end module
 

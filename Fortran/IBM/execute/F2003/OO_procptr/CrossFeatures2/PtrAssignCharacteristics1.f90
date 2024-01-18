@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignCharacteristics1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignCharacteristics1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignCharacteristics1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignCharacteristics1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,13 +30,13 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
-!*  proc-pointer-object is not elemental while proc-target may be elemental 
-!*  (315208) 
+!*
+!*  proc-pointer-object is not elemental while proc-target may be elemental
+!*  (315208)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-  PROGRAM PtrAssignCharacteristics1 
+  PROGRAM PtrAssignCharacteristics1
   IMPLICIT NONE
 
   ! The characteristics is the same as ABS
@@ -57,26 +51,26 @@
   INTRINSIC ABS
 
   CALL IntSub(ABS)
-  
+
   CONTAINS
 
   SUBROUTINE IntSub(Func)
-  PROCEDURE(F)          :: Func 
+  PROCEDURE(F)          :: Func
   PROCEDURE(F), POINTER :: ProcPtr
 
   IF (Func(-2.0) .NE. 2.0 ) STOP 11
-  
-  ProcPtr => ABS
-  IF (ProcPtr(-2.0) .NE. 2.0 )  STOP 12 
-  IF (ProcPtr(2.0)  .NE. 2.0 )  STOP 12 
-  IF (ProcPtr(-0.0) .NE. 0.0 )  STOP 13 
 
-  ProcPtr => Func 
-  IF (ProcPtr(+2.0) .NE. 2.0 )                  STOP 22 
-  IF (ProcPtr(ProcPtr(-1.0)) .NE. 1.0 )         STOP 22 
-  IF (ProcPtr(-10000.0) .NE. Func(-10000.0) )   STOP 23 
+  ProcPtr => ABS
+  IF (ProcPtr(-2.0) .NE. 2.0 )  STOP 12
+  IF (ProcPtr(2.0)  .NE. 2.0 )  STOP 12
+  IF (ProcPtr(-0.0) .NE. 0.0 )  STOP 13
+
+  ProcPtr => Func
+  IF (ProcPtr(+2.0) .NE. 2.0 )                  STOP 22
+  IF (ProcPtr(ProcPtr(-1.0)) .NE. 1.0 )         STOP 22
+  IF (ProcPtr(-10000.0) .NE. Func(-10000.0) )   STOP 23
 
   END SUBROUTINE
 
-  END 
+  END
 

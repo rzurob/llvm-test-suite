@@ -1,39 +1,23 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fext008.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            :
-!*                                                                     
-!*  PROGRAMMER                 : Jim Xia
-!*  DATE                       : Nov. 07, 2003
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
-!*                                                                     
-!*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  ===================================================================
 !*
-!*  DRIVER STANZA              : xlf90
+!*  DATE                       : Nov. 07, 2003
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : reference of parent components via full name
 !*                               or short-hand name.  Parent/extended in the
@@ -64,7 +48,7 @@ module m
     type (child) :: c1_m
 
     contains
-    
+
     ! in this subroutine parent components accessed via short-hand name
     subroutine initializeC1_m
         c1_m%id = 10

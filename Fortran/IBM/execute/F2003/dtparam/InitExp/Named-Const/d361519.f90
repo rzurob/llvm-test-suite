@@ -10,11 +10,11 @@
 
       print*, foo(b2)
 
-      CONTAINS 
+      CONTAINS
 
       FUNCTION foo(Arg)
         CLASS(Base(*)) :: Arg
-        TYPE(Base(:)), ALLOCATABLE :: foo 
-          foo = Arg 
+        TYPE(Base(:)), ALLOCATABLE :: foo
+          foo = Arg
       END FUNCTION
-END 
+END

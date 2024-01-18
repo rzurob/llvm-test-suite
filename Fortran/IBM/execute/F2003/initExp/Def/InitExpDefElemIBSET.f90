@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemIBSET.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemIBSET.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 10, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  - IBSET 
+!*
+!*  - IBSET
 !*  (319007)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -40,7 +33,7 @@
   PARAMETER ( IA2=3 )
   IMPLICIT INTEGER(IBSET(POS=IA2, I=IA1))(A)
 
- 
+
   INTEGER :: I, J
 
   INTEGER(1), PARAMETER :: I11=0
@@ -65,27 +58,27 @@
 
   IF ( KIND(I13)  .NE. 1 )         STOP 11
   IF (      I13   .NE. 1 )         STOP 12
- 
+
   IF ( KIND(I23)  .NE. 2 )         STOP 21
   IF ( ANY( I23   .NE. 2 ))        STOP 22
- 
+
   IF ( KIND(I43)  .NE. 4 )         STOP 31
   IF ( ANY( I43   .NE. 4 ))        STOP 32
 
   IF ( KIND(I83)  .NE. 8 )         STOP 41
   IF ( ANY( I83   .NE. 8 ))        STOP 42
- 
+
   ALLOCATE(IPtr, SOURCE=-1_2)
 
   SELECT TYPE ( As => IPtr)
   TYPE IS (INTEGER(IBSET(POS=0, I=0)))
-    STOP 51 
+    STOP 51
   TYPE IS (INTEGER(IBSET(POS=1, I=0)))
-    PRINT*, As 
+    PRINT*, As
   TYPE IS (INTEGER(IBSET(POS=2, I=0)))
-    STOP 52 
+    STOP 52
   TYPE IS (INTEGER(IBSET(POS=3, I=0)))
-    STOP 53 
+    STOP 53
   CLASS DEFAULT
     STOP 54
   END SELECT

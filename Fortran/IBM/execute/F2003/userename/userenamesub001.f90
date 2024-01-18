@@ -12,21 +12,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenamesub001.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : rename a public operator unary that uses a renamed operator
 !*
@@ -44,12 +37,12 @@ module m
    interface operator(.add.)
    		module procedure mybadd2
    end interface
-   
+
    contains
 
    function mybadd ( a )
       class(baseobj), intent(in) :: a
-      
+
       type(baseobj) :: mybadd
 
       mybadd%y = a%x + a%y
@@ -58,18 +51,18 @@ module m
       print *, 'mybadd'
 
    end function
-   
+
    function mybadd2 ( a )
       integer, intent(in) :: a
       integer :: mybadd2
 
       mybadd2 = a + 1000
-      
+
 
       print *, 'mybadd2'
 
    end function
-   
+
 
 
 end module
@@ -79,16 +72,16 @@ use m, operator (.plus.) => operator(.add.)
   interface operator(.addten.)
   module procedure addten
   end interface
-  
+
   contains
-  
+
   function addten (a)
     class(baseobj), intent(in) :: a
     type(baseobj) :: addten
     addten= .add. a
     addten%y=addten%y+10
     addten%x=addten%x+10
-    
+
     print *,"addten"
   end function
 end module

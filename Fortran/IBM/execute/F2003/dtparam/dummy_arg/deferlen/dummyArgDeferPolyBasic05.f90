@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyBasic05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyBasic05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 27 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 27 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  test derived type with procedure pointer component which associate with function with pointer or target dummy argument
@@ -28,7 +20,7 @@ module m
     integer  :: i1(l1)
     procedure(fun1),nopass,pointer :: procbase=>null()
   end type
-  
+
   type,extends(base) :: child(l2)
     integer,len :: l2
     integer :: i2(l1:l2)
@@ -43,12 +35,12 @@ module m
         fun1=>arg
         fun1%i1=arg%i1*2
      end function
-   
+
      function fun2(arg)
         class(base(*)),target,intent(in) :: arg
         class(base(:)),pointer :: fun2
-       
-        fun2=>arg 
+
+        fun2=>arg
         select type(arg)
            type is(child(*,*))
               select type(fun2)
@@ -75,12 +67,12 @@ program dummyArgDeferPolyBasic05
 
   if(.not. associated(base1%procbase,fun1))           error stop 10_4
 
-  if(.not. associated(base1%procbase(base1),base1))   error stop 11_4 
+  if(.not. associated(base1%procbase(base1),base1))   error stop 11_4
 
   if(any(base1%i1 /= [2,4]))                          error stop 12_4
   associate(x=>base1%procbase(base1))
      if(x%l1 /= 2)                                    error stop 13_4
-     if(any(x%i1 /= [4,8]))                           error stop 14_4    
+     if(any(x%i1 /= [4,8]))                           error stop 14_4
   end associate
 
   select type(base1)
@@ -96,9 +88,9 @@ program dummyArgDeferPolyBasic05
                class default
                   error stop 102_4
             end select
-         end associate 
+         end associate
        class default
           error stop 103_4
   end select
-  
+
 end program

@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemDBLE.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemDBLE.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  DBLE 
+!*
+!*  -  DBLE
 !*  (318967)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -61,8 +54,8 @@
   END TYPE
 
   TYPE(DT0(1,2,4,8,4,8,16,4,8,16)), PARAMETER :: P=DT0(1,2,4,8,4,8,16,4,8,16)()
- 
-  TYPE :: DT(K11)    ! (4) 
+
+  TYPE :: DT(K11)    ! (4)
     INTEGER, KIND :: K11
     REAL(KIND(DBLE(P%XI1)))   :: TI1(4,4) = DBLE(P%XI1)
     REAL(KIND(DBLE(P%XI2)))   :: TI2(4,4) = DBLE(P%XI1)
@@ -106,4 +99,4 @@
 
   END
 
- 
+

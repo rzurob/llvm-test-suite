@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh fxieee34 
+! %PRECMD: $TR_SRC/fxieee.presh fxieee34
 ! %COMPOPTS: -qflttrap -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,29 +12,21 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Marcus Yu
 !*  DATE                       : February 5, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SET_HALTING_MODE
 !*  SECONDARY FUNCTIONS TESTED : IEEE_GET_HALTING_MODE
 !*                               IEEE_SUPPORT_HALTING_MODE
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qflttrap
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : test program will halting on devide_by_zero 
-!*                               for real*16 
+!*  DESCRIPTION                : test program will halting on devide_by_zero
+!*                               for real*16
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 	     program fxieee34
@@ -56,7 +48,7 @@
          call ieee_set_halting_mode(IEEE_DIVIDE_BY_ZERO, .true.)
 		! print *, "The program will halt on IEEE_DIVIDE_BY_ZERO!"
 		 zr = xr / yr
-		
+
 ! restore the original falgs.
         call ieee_set_status(status_value)
 

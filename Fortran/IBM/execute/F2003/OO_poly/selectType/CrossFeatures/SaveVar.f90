@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: SaveVar.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: SaveVar.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SaveVar
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Save 
-!*  
-!* 
+!*
+!*  Save
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -71,7 +63,7 @@
 
   END MODULE
 
-  PROGRAM SaveVar 
+  PROGRAM SaveVar
   USE M
   IMPLICIT NONE
   TYPE(DT), TARGET :: V(2,2)
@@ -86,7 +78,7 @@
 
   IF(i .EQ. 5) THEN
     ALLOCATE(U(2,2))
-  END IF 
+  END IF
   SELECT TYPE( U )
   CLASS IS (DT)
 
@@ -94,14 +86,14 @@
     IF (TRIM(U(1,1)%CArr(1)) .NE. CHAR(ICHAR("0")+i)) STOP 22
     IF (TRIM(U(2,2)%CArr(2)) .NE. CHAR(ICHAR("0")+i)) STOP 23
 
-    U%IArr(1) = i-1 
-    U%IArr(2) = i-1 
-    U%CArr(1) = CHAR(ICHAR("0")+i-1) 
+    U%IArr(1) = i-1
+    U%IArr(2) = i-1
+    U%CArr(1) = CHAR(ICHAR("0")+i-1)
     U%CArr(2) = CHAR(ICHAR("0")+i-1)
 
     IF (I .GT. 1) THEN
       CALL Sub(i-1)
-    END IF     
+    END IF
   CLASS DEFAULT
     STOP 40
   END SELECT

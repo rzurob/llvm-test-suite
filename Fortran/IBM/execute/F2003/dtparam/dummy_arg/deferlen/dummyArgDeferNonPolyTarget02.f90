@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPolyTarget02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPolyTarget02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 7 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. if a dummy argument is declared to be a pointer,it may be matched by an actual argument that also is a pointer, and the characteristics of both arguments shall agree. if the actual pointer has an associated target, this target becomes accessible via the dummy pointer. If the dummy pointer becomes associated with a different target during execution of the procedure,this target will be accessible via actual pointer after the procedure completes execution.
@@ -35,19 +27,19 @@ module m
 
    type(dtp(2,:)),allocatable,target :: tar3
    type(dtp(2,:)),allocatable,target :: tar4(:)
- 
+
    contains
       subroutine associate3(ptr)
          type(dtp(2,:)),pointer :: ptr(:)
- 
-         if(ptr%l1 /= 4)                                      error stop 20_4 
+
+         if(ptr%l1 /= 4)                                      error stop 20_4
          if(lbound(ptr,1) /= -1)                              error stop 21_4
          if(ubound(ptr,1) /= 1)                               error stop 22_4
          if(any(ptr(-1)%log1 .neqv. .true.))                  error stop 23_4
          if(any(ptr(0)%log1 .neqv. .false.))                  error stop 24_4
          if(any(ptr(1)%log1 .neqv. .true.))                   error stop 25_4
-         
-         ptr(-2:)=>tar4(0:1)     
+
+         ptr(-2:)=>tar4(0:1)
       end subroutine
 
       subroutine associate4(ptr)
@@ -61,7 +53,7 @@ module m
          if(any(temp(1)%log1 .neqv. [.false.,.true.,.false.])) error stop 34_4
          if(any(temp(2)%log1 .neqv. [.true.,.false.,.true.]))  error stop 35_4
 
-         nullify(ptr) 
+         nullify(ptr)
       end subroutine
 
 end module
@@ -72,14 +64,14 @@ program dummyArgDeferNonPolyTarget02
 
   interface
      subroutine associate2(ptr)
-        import 
+        import
         type(dtp(2,:)),pointer :: ptr
-     end subroutine 
+     end subroutine
   end interface
 
   type(dtp(2,:)),allocatable,target :: tar1
   type(dtp(2,:)),pointer            :: ptr1=>null()
-  
+
   type(dtp(2,:)),allocatable,target :: tar2(:)
   type(dtp(2,:)),pointer            :: ptr2(:)=>null()
 
@@ -96,9 +88,9 @@ program dummyArgDeferNonPolyTarget02
 
   ptr1=>tar1
 
-  call associate1(ptr1)   
- 
-  if(ptr1%l1 /= 4)                                       error stop 13_4 
+  call associate1(ptr1)
+
+  if(ptr1%l1 /= 4)                                       error stop 13_4
   if(any(ptr1%log1 .neqv. .true.))                       error stop 14_4
 
   call associate2(ptr1)
@@ -107,7 +99,7 @@ program dummyArgDeferNonPolyTarget02
 
   ptr2=>tar4
 
-  call associate3(ptr2) 
+  call associate3(ptr2)
 
   if(ptr2%l1 /= 4)                                        error stop 26_4
   if(lbound(ptr2,1) /= -2)                                error stop 27_4
@@ -116,20 +108,20 @@ program dummyArgDeferNonPolyTarget02
   if(any(ptr2(-1)%log1 .neqv. .true.))                    error stop 30_4
 
   ptr2=>tar2
- 
+
   call associate4(ptr2)
 
-  if(associated(ptr2))                                    error stop 36_4 
+  if(associated(ptr2))                                    error stop 36_4
   contains
-   
+
   subroutine associate1(ptr)
-      type(dtp(2,:)),pointer :: ptr 
+      type(dtp(2,:)),pointer :: ptr
       if(.not. associated(ptr,tar1))                     error stop 10_4
       if(ptr%l1 /= 3)                                    error stop 11_4
       if(any(ptr%log1 .neqv. [.false.,.true.,.false.]))  error stop 12_4
 
       ptr=>tar3
-         
+
   end subroutine
 
 
@@ -139,18 +131,18 @@ subroutine associate2(ptr)
    use m
 
    type(dtp(2,:)),pointer :: ptr
-   type(dtp(2,:)),target,allocatable  :: temp 
-   
+   type(dtp(2,:)),target,allocatable  :: temp
+
    if(ptr%l1 /= 4)                                       error stop 16_4
-   if(any(ptr%log1 .neqv. .true.))                       error stop 17_4 
+   if(any(ptr%log1 .neqv. .true.))                       error stop 17_4
 
    temp=dtp(2,3)([.true.,.false.,.true.])
- 
-   ptr=>temp 
-   
+
+   ptr=>temp
+
    if(ptr%l1 /= 3)                                       error stop 18_4
    if(any(ptr%log1 .neqv. [.true.,.false.,.true.]))      error stop 19_4
 
-   nullify(ptr) 
+   nullify(ptr)
 
 end subroutine

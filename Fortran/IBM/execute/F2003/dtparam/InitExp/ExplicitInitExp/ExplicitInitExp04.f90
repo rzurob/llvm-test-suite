@@ -1,30 +1,21 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ExplicitInitExp04.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 13, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result 
-!*  SECONDARY FUNCTIONS TESTED : Array constructor 
+!*  PRIMARY FUNCTIONS TESTED   : Function result
+!*  SECONDARY FUNCTIONS TESTED : Array constructor
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -53,12 +44,12 @@ END MODULE
 PROGRAM ExplicitInitExp04
       USE Mod
 
-      INTEGER, PARAMETER :: M = 5, K = 4 
+      INTEGER, PARAMETER :: M = 5, K = 4
       TYPE(Base), PARAMETER :: bconst = Base(K,2*M) &
-                  ( [(I, I = 1, 2*M)], [(CHAR(I+64), I = 1, 2*M)], [(I, I = 1, 2*M)] ) 
+                  ( [(I, I = 1, 2*M)], [(CHAR(I+64), I = 1, 2*M)], [(I, I = 1, 2*M)] )
       TYPE(NextGen(K,M,K,2*M,2*M)) :: n1 = NextGen(K,M,K,2*M,2*M) &
-                  ( [(2*I, I = 1, M)], [(CHAR(I+64), I = 1, M)], [(I, I = 1, M)], bconst, NULL() ) 
-      CLASS(Base(K,:)), POINTER :: poly 
+                  ( [(2*I, I = 1, M)], [(CHAR(I+64), I = 1, M)], [(I, I = 1, M)], bconst, NULL() )
+      CLASS(Base(K,:)), POINTER :: poly
 
       IF ( SIZE(n1%A0) .NE. M ) STOP 10
       IF ( SIZE(n1%C0) .NE. M ) STOP 11
@@ -132,7 +123,7 @@ PROGRAM ExplicitInitExp04
              IF ( ANY(poly%cmp1%A1 .NE.          [(I, I = 1, 2*M)]) ) STOP 73
 
              IF ( .NOT. ALLOCATED(poly%cmp2) ) STOP 74
-      
+
              IF ( SIZE(poly%cmp2%A0) .NE. 2*M ) STOP 75
              IF ( SIZE(poly%cmp2%C0) .NE. 2*M ) STOP 76
              IF ( SIZE(poly%cmp2%A1) .NE. 2*M ) STOP 77
@@ -145,7 +136,7 @@ PROGRAM ExplicitInitExp04
              IF ( ANY(poly%cmp2%A0 .NE.          [(I, I = 1, 2*M)]) ) STOP 84
              IF ( ANY(poly%cmp2%C0 .NE. [(CHAR(I+64), I = 1, 2*M)]) ) STOP 85
              IF ( ANY(poly%cmp2%A1 .NE.          [(I, I = 1, 2*M)]) ) STOP 86
-       
+
           CLASS DEFAULT
              STOP 87
       END SELECT

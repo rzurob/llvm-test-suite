@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass072.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass072.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -83,7 +71,7 @@
       real*8 a8 / 9.0d0 /
       real*8 b8 / 2.09 /
       real*8 c8
-      
+
       real*16 a16 / 9.9 /
       real*16 b16 / 2.0q0 /
       real*16 c16
@@ -98,7 +86,7 @@
 
 !-----------   ASSOCIATE with REAL expressions ----------------
 
-      c = (a + b)*10 + 10.0   
+      c = (a + b)*10 + 10.0
       do count = 1, 10
 
       associate ( arg => (a + b)*10 + 10.0 , argc => c)
@@ -111,7 +99,7 @@
 
 !-----------   ASSOCIATE with REAL*4 expressions ----------------
 
-      c4 = (a4 + b4)*10 + 1   
+      c4 = (a4 + b4)*10 + 1
       do count = 1, 10
 
       associate ( arg4 => (a4 + b4)*10 + 1 , arc4 => c4 )
@@ -137,7 +125,7 @@
 
 !-----------   ASSOCIATE with REAL*16 expressions ----------------
 
-      c16 = (a16 + b16)*10 + 1   
+      c16 = (a16 + b16)*10 + 1
       do count = 1, 10
 
       associate ( arg16 => (a16 + b16)*10 + 1 , arc16 => c16 )

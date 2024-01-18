@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : BMMArithmetic
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-12-14
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 BLOCK
 !*  SECONDARY FUNCTIONS TESTED : mixed-mode arithmetic
@@ -52,7 +48,7 @@ program BMMArithmetic
     print *, v3 + v4, v3 - v4, v3 * v4, v3 / v4 ! I::I
     print *, v1 + v4, v1 - v4, v1 * v4, v1 / v4 ! R::I
   end block
-  
+
   ! Now use some host-associated and some local:
   block
     integer(4) :: v3

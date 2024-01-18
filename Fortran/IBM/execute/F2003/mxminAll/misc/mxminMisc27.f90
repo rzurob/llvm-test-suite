@@ -1,27 +1,16 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
+!*  DESCRIPTION                : MAX*/MIN* with where
 !*
-!*  DESCRIPTION                : MAX*/MIN* with where 
-!*                                
 !* ===================================================================
 
-program mxminMisc27 
+program mxminMisc27
 
     character*3 x(3, 4, 5, 6), y(3,4,5,6)
     integer x_v(4,5,6), y_v(4,5,6)
@@ -29,14 +18,14 @@ program mxminMisc27
     logical z(4,5,6)
 
     x = 'ccc'
- 
+
     y = 'ddd'
 
     y_v = 11
 
     where(maxval(x, dim=1, mask=.true.) > "aaa")
 
-     x_v = maxloc(x, dim=1) 
+     x_v = maxloc(x, dim=1)
 
     end where
 
@@ -50,16 +39,15 @@ program mxminMisc27
         error stop 2_4
     endif
 
-    where(x < y) 
+    where(x < y)
        x = max(x, y)
     elsewhere
        x = min(x, y)
-    end where 
+    end where
 
     if(any(x .ne. "ddd")) then
        error stop 3_4
     endif
 
-end program mxminMisc27 
-
+end program mxminMisc27
 

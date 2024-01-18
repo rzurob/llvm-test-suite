@@ -1,27 +1,22 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM REALERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : fdivideREAL128
 !*
-!*  PROGRAMMER                 : Morteza Ershad-Manesh
 !*  DATE                       : 2010-07-12
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 376078
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
-!*  ADAPTED FROM               : 
+!*  ADAPTED FROM               :
 !*
 !*  DESCRIPTION
 !*   This test case uses REAL128 from IOS_FORTRAN_ENV module.
@@ -66,7 +61,7 @@ DO i=1,30
    PRINT*,"Values: ",Result(i), " != ", Result1(i)
    error stop 1_4
  ELSE
-   PRINT*,"i=",i 
+   PRINT*,"i=",i
    PRINT*,Result(i)," == ", Result1(i)
  END IF
 END DO

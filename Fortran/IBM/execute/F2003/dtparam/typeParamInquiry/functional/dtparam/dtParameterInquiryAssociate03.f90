@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryAssociate03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryAssociate03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 18 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 18 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. USE ASSOCIATE
 !* 4. ASSOCIATE TO EXPRESSION
@@ -35,7 +27,7 @@ module m
   end type
 end module
 
-program dtParameterInquiryAssociate03 
+program dtParameterInquiryAssociate03
   use m
   implicit none
 
@@ -44,7 +36,7 @@ program dtParameterInquiryAssociate03
 
   allocate(b1,source=base(2,4)(c1=['abcd','efgh','ijkl']))
 
-  associate(  x=>b1%l1   + b1%l2+ & 
+  associate(  x=>b1%l1   + b1%l2+ &
               b1%l1%kind + kind(b1%l1) + &
               b1%l2%kind + kind(b1%l2) + &
               b1%c1%len  + len(b1%c1)  + &   ! defect 354013
@@ -80,5 +72,5 @@ program dtParameterInquiryAssociate03
         associate(x=>b%l1+b%l2)
            getlen=2*x
         end associate
-    end function  
+    end function
 end

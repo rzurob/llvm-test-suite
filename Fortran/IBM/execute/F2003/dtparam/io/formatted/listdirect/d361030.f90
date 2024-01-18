@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361030.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361030.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 16 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 16 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -39,7 +31,7 @@ module m
   contains
       subroutine read(unit,obj)
          integer,intent(in) :: unit
-         type(int3(*)),intent(inout) :: obj  
+         type(int3(*)),intent(inout) :: obj
          print *,obj
          read(unit,fmt=*) obj
          print *,obj

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferDiag03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferDiag03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 4 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 4 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Dummy Argument with deferred length 
+!*  PRIMARY FUNCTIONS TESTED   : Dummy Argument with deferred length
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. If the dummy argument is a pointer, the actual argument shall be a pointer and nondeferred type parameters and ranks shall agree. if dummy argument is allocatable and nondeferred type parameters and ranks shall agree.
@@ -35,7 +27,7 @@ module m
     end subroutine
     subroutine sub2(arg)
        type(dtp(2,3,:)),pointer :: arg
-    end subroutine   
+    end subroutine
 end module
 
 program dummyArgDeferDiag03
@@ -46,23 +38,23 @@ program dummyArgDeferDiag03
   interface
 
   subroutine sub3(arg)
-     import 
+     import
      type(dtp(2,3,:)),allocatable :: arg(:)
   end subroutine
 
   subroutine sub4(arg)
-     import 
+     import
      type(dtp(2,3,:)),pointer :: arg(:,:)
   end subroutine
 
-  end interface 
-   
+  end interface
+
   type(dtp(3,4,:)),allocatable :: dtp1
   type(dtp(3,4,:)),pointer     :: dtp2=>null()
   type(dtp(2,3,:)),allocatable :: dtp3(:,:)
-  type(dtp(2,3,:)),pointer     :: dtp4(:) 
+  type(dtp(2,3,:)),pointer     :: dtp4(:)
 
-  call sub1(dtp1) 
+  call sub1(dtp1)
   call sub2(dtp2)
   call sub3(dtp3)
   call sub3(dtp4)

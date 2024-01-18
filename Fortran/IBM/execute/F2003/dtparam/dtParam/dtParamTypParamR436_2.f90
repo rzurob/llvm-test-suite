@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypParamR436_2   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypParamR436_2
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  R436 type-param-decl is type-param-name [ = scalar-int-initialization-expr ] 
-!*  -Structure constructor  
+!*  R436 type-param-decl is type-param-name [ = scalar-int-initialization-expr ]
+!*  -Structure constructor
 !*  (failed)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamTypParamR436_2 
+  PROGRAM dtParamTypParamR436_2
   IMPLICIT NONE
 
   INTEGER :: I
@@ -80,7 +73,7 @@
   IF (T2%Arr1(K)%L        .NE. K  )          STOP 28
   IF (ANY(T2%Arr1(K)%Arr  .NE. -K) )         STOP 29
 
-  
+
 
 
   END

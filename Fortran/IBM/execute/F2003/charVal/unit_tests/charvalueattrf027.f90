@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: charvalueattrf027.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,35 +12,28 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : charvalueattrf027
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 25, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the VALUE
-!*                               attribute when used with characters of 
-!*                               length other than 1. ( Feature 298120 )   
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*                               attribute when used with characters of
+!*                               length other than 1. ( Feature 298120 )
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Test VALUE attr in internal procs.
 !*                               This tests characters of lengh 87.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 program main
-      
+
       character(87) :: x
       x = "AaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaA"
       call s1(x)
-      
+
       if( x .ne. repeat('AaA', 29) ) error stop 4
 
       call s1("AaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaAAaA")

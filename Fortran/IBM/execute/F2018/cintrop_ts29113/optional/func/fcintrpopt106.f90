@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt106.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -58,7 +51,7 @@ program test
   end function
   subroutine arg2(y,z) bind(c)
      use iso_c_binding
-     real(c_float) y, z 
+     real(c_float) y, z
      optional z
   end subroutine
  end interface
@@ -117,11 +110,11 @@ subroutine sub2(func1,func2, dt) bind(c)
 
         if(present(func1)) then
             i=10
-            if(int(func1(i)+0.5).ne.20) print *, "error in func1" 
+            if(int(func1(i)+0.5).ne.20) print *, "error in func1"
         else
 	    print *, "func1 is not presented"
         endif
-    
+
         if(present(func2)) then
             call func2(9.0)
             call func2(9.0,1.0)

@@ -1,25 +1,18 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type03b - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 26, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Use association
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -40,27 +33,27 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
+        INTEGER, KIND :: k1
         INTEGER, LEN :: l1
 
-        CHARACTER(LEN=l1) :: Ctext(l1) 
-      END TYPE Base 
+        CHARACTER(LEN=l1) :: Ctext(l1)
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
         CLASS(Base(k1,l1)), POINTER :: Cmp
-      END TYPE Child 
+      END TYPE Child
 
       INTEGER, PARAMETER :: knd1 = 4, len1 = 10
       INTEGER :: I
 
-      CONTAINS 
+      CONTAINS
 
       SUBROUTINE sub1(Arg, Tgt)
       CLASS(*), POINTER, INTENT(INOUT) :: Arg
-      TYPE(Base(k1=knd1,l1=len1)), TARGET :: Tgt 
+      TYPE(Base(k1=knd1,l1=len1)), TARGET :: Tgt
       TYPE(Base(k1=knd1,l1=len1)), TARGET :: Obj = ( Base(knd1,len1) (Ctext=(/ ('', I = 1, len1) /)) )
 
       ALLOCATE( Arg, SOURCE = ( Child(k1=knd1,l1=len1) ( Ctext=(/ ('AAA', I = 1, len1) /), Cmp = Obj) ) )
@@ -72,7 +65,7 @@ MODULE Mod1
            A%Ctext=(/ 'I am not c', 'ertain wha', 't the lang', 'uage for s', 'cientific ' ,'computatio', &
               & 'n will loo', 'k like by ', 'the 21st c', 'entury... ' /)
            IF ( .NOT. ASSOCIATED(A%Cmp, Obj) ) STOP 11
-           A%Cmp => Tgt  ! pointer re-assignment inside select type construct 
+           A%Cmp => Tgt  ! pointer re-assignment inside select type construct
 
         CLASS IS (Base(knd1,*))
           STOP 12
@@ -88,9 +81,9 @@ END MODULE Mod1
 !*
 PROGRAM Select_Type03b
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(*), POINTER :: dtv 
+      CLASS(*), POINTER :: dtv
       TYPE(Base(k1=knd1,l1=len1)), TARGET :: cbl = ( Base(knd1,len1) (Ctext=(/ ('BBB', I = 1, len1) /)) )
 
       CALL sub1(dtv, cbl)

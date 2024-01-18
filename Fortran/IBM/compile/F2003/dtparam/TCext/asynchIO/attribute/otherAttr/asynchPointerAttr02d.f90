@@ -3,21 +3,15 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=self -qreuse=base
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchPointerAttr02d - ASYNCHRONOUS Attribute
 !*                               Interactions with Other Attributes
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : February  9, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : Interactions with the POINTER Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 :
@@ -38,7 +32,6 @@
 !*                  or  ASYNCHRONOUS
 !*  ...
 !*                  or  POINTER
-!*
 !*
 !*  5.2.10 POINTER statement
 !*

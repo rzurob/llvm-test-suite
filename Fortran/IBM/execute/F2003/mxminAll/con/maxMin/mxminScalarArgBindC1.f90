@@ -1,25 +1,14 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
+!*  DESCRIPTION                : MAX/MIN with named constant as
+!*                               argument to BindC
 !*
-!*  DESCRIPTION                : MAX/MIN with named constant as 
-!*                               argument to BindC 
-!*                               
 !* ===================================================================
 
    module mbind1
@@ -30,19 +19,19 @@
          end function func1
       end interface
    end module mbind1
-      
+
   program mxminScalarArgBindC1
-    
+
    use ISO_C_BINDING
    use mbind1
 
-   character(C_CHAR) :: x, y 
+   character(C_CHAR) :: x, y
 
    integer ret
 
    parameter(x = "c")
    parameter(y = "d")
- 
+
    ret = func1(%ref(min(x, y)), %ref(max(x, y)))
 
   end program mxminScalarArgBindC1

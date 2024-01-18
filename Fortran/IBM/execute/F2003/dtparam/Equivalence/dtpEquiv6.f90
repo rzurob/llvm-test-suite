@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpEquiv6 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpEquiv6
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 06, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The equivalence statement
-!* 
-!*   Nagative parameter values and array component bound 
-!*  
+!*
+!*   Nagative parameter values and array component bound
+!*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,45 +36,45 @@
     SEQUENCE
     REAL          :: R(L:0)=K
   END TYPE
- 
+
   TYPE :: DT_C(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     CHARACTER(L)  :: C(L:0)=CHAR(48+K)
   END TYPE
- 
+
   TYPE :: DT_I(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     INTEGER       :: I(L:0)=K
   END TYPE
- 
+
   TYPE :: DT_L(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     LOGICAL       :: A(L:0)=.TRUE.
   END TYPE
- 
+
   TYPE :: DT_Z(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
     SEQUENCE
     COMPLEX       :: Z(L:0)=(K,-K)
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpEquiv6 
+  PROGRAM dtpEquiv6
   USE M
 
-  TYPE(DT_R(-16,-7)) R 
-  TYPE(DT_C(-1,-5))  C 
-  TYPE(DT_I(-2,-7))  I 
-  TYPE(DT_L(-8,-2))  L 
-  TYPE(DT_Z(-4,-9))  Z 
+  TYPE(DT_R(-16,-7)) R
+  TYPE(DT_C(-1,-5))  C
+  TYPE(DT_I(-2,-7))  I
+  TYPE(DT_L(-8,-2))  L
+  TYPE(DT_Z(-4,-9))  Z
 
 
   REAL(16)          :: R1(8)
@@ -92,7 +83,7 @@
   LOGICAL(8)        :: L1(3)
   COMPLEX(16)       :: Z1(10)
 
-  
+
   EQUIVALENCE(R, R1)
   EQUIVALENCE(C, C1)
   EQUIVALENCE(I, I1)

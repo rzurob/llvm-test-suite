@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp Null1.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Null1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Null1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*   null()
 !*   The characteristics
-!*  (err msg - 305625) 
+!*  (err msg - 305625)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -65,9 +59,9 @@
 
   END MODULE
 
-  PROGRAM NullTest 
+  PROGRAM NullTest
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT(4)) :: V
   PROCEDURE(INTEGER),    POINTER :: ProcPtr=>NULL()
@@ -79,23 +73,23 @@
   END INTERFACE
 
 
-  V%ProcPtr => NULL(Fun) 
-  ProcPtr => NULL(ExtFun) 
+  V%ProcPtr => NULL(Fun)
+  ProcPtr => NULL(ExtFun)
 
   ProcPtr => ExtFun
-  ProcPtr => NULL(ProcPtr) 
+  ProcPtr => NULL(ProcPtr)
 
-  V%ProcPtr => Fun 
-  ProcPtr => NULL(V%ProcPtr) 
+  V%ProcPtr => Fun
+  ProcPtr => NULL(V%ProcPtr)
 
-  ProcPtr => ExtFun 
-  V%ProcPtr => NULL(ProcPtr) 
+  ProcPtr => ExtFun
+  V%ProcPtr => NULL(ProcPtr)
 
-  V%ProcPtr => Fun 
-  V%ProcPtr => NULL(V%ProcPtr) 
+  V%ProcPtr => Fun
+  V%ProcPtr => NULL(V%ProcPtr)
 
-  ProcPtr => Fun 
-  ProcPtr1 => NULL(ProcPtr) 
+  ProcPtr => Fun
+  ProcPtr1 => NULL(ProcPtr)
 
   END
 

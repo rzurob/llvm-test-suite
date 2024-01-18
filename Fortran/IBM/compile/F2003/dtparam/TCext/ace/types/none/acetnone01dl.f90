@@ -3,16 +3,12 @@
 
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acetnone01dl
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetnone01d
 !*                               by David Forster)
 !*  DATE                       : 2008-01-25 (original: 2006-07-26)
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*
@@ -20,7 +16,6 @@
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
 !*                               (original: Feature Number 289053)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : array constructor, diagnostic

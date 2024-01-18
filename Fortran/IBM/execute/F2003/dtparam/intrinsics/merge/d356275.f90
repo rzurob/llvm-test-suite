@@ -1,36 +1,28 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d356275.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d356275.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 17 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. DEFECT 356275 
+!* 1. DEFECT 356275
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type A(l)
       integer,len  :: l
-      character(l) :: c1 
+      character(l) :: c1
    end type
    type,extends(A) :: B(m)
       integer,len  :: m
-      character(m) :: c2  
+      character(m) :: c2
    end type
 end module
 
@@ -51,7 +43,7 @@ program d356275
                 if(y%l /= 3)                              error stop 11_4
                 if(y%m /= 4)                              error stop 12_4
                 if(any(y%c1 /= "123"))                    error stop 13_4
-                if(any(y%c2 /= "456"))                    error stop 14_4 
+                if(any(y%c2 /= "456"))                    error stop 14_4
              class default
                 error stop 100_4
           end select

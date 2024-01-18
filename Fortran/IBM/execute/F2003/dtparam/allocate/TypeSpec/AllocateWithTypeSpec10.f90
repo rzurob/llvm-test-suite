@@ -1,37 +1,29 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AllocateWithTypeSpec10 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : January 20, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !*  SECONDARY FUNCTIONS TESTED :
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : Component with deferred len type parameter 
+!*  KEYWORD(S)                 : Component with deferred len type parameter
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
-!* allocate-stmt is 
+!* allocate-stmt is
 !*   ALLOCATE ( [ type-spec :: ] allocation-list [, alloc-opt-list ] )
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN  :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN  :: l1
 
         CHARACTER(3*l1) :: status
         CHARACTER(l1) :: tag
@@ -41,15 +33,15 @@ MODULE Mod
         INTEGER, KIND :: k2
         INTEGER, LEN  :: l2
 
-        TYPE(Base(k2,:)), POINTER :: b_cmp   
+        TYPE(Base(k2,:)), POINTER :: b_cmp
       END TYPE Child
 
       TYPE, EXTENDS(Child) :: Branch  (k3,l3,l4,l5)
-        INTEGER, KIND :: k3 
+        INTEGER, KIND :: k3
         INTEGER, LEN  :: l3, l4, l5
 
-        TYPE(Base(k3,:)), POINTER :: left   
-        TYPE(Base(k3,:)), POINTER :: right 
+        TYPE(Base(k3,:)), POINTER :: left
+        TYPE(Base(k3,:)), POINTER :: right
       END TYPE Branch
 END MODULE Mod
 PROGRAM AllocateWithTypeSpec10
@@ -69,7 +61,7 @@ PROGRAM AllocateWithTypeSpec10
       CALL alloc_comp(b1)
       IF (b1%status .NE. '0 allocation done') STOP 12
 
-!*   Child 
+!*   Child
 
       ALLOCATE(Child(4,10,4,8) :: b1)
       CALL verify_type_param(b1)
@@ -78,7 +70,7 @@ PROGRAM AllocateWithTypeSpec10
       CALL alloc_comp(b1)
       IF (b1%status .NE. '1 allocation done') STOP 14
 
-!*   Branch 
+!*   Branch
 
       ALLOCATE(Branch(4,10,4,8,4,5,8,8) :: b1)
       CALL verify_type_param(b1)
@@ -92,9 +84,9 @@ PROGRAM AllocateWithTypeSpec10
       CONTAINS
 !*
       SUBROUTINE verify_type_param(Arg)
-         CLASS(*) :: Arg    
+         CLASS(*) :: Arg
 
-         SELECT TYPE ( Arg )  
+         SELECT TYPE ( Arg )
               CLASS IS (Base(4,*))
                  Arg%tag = 'Base'
                  IF (Arg%l1 .NE. 8) STOP 20
@@ -119,15 +111,15 @@ PROGRAM AllocateWithTypeSpec10
       END SUBROUTINE verify_type_param
 
       SUBROUTINE alloc_comp(Arg)
-         CLASS(Base(4,*)) :: Arg    
+         CLASS(Base(4,*)) :: Arg
 
-         SELECT TYPE ( Arg )  
+         SELECT TYPE ( Arg )
               CLASS IS (Base(4,*))
                  Arg%status = '0 allocation done'
 
               CLASS IS (Child(4,*,4,*))
                  IF ( ASSOCIATED(Arg%b_cmp)) STOP 30
-                 ALLOCATE(Base(4,Arg%l2) :: Arg%b_cmp) 
+                 ALLOCATE(Base(4,Arg%l2) :: Arg%b_cmp)
 
                  Arg%status = '1 allocation done'
 
@@ -139,9 +131,9 @@ PROGRAM AllocateWithTypeSpec10
                  IF ( ASSOCIATED(Arg%left)) STOP 33
                  IF ( ASSOCIATED(Arg%right)) STOP 34
 
-                 ALLOCATE(Base(4,Arg%l2) :: Arg%b_cmp) 
-                 ALLOCATE(Base(4,Arg%l4) :: Arg%left) 
-                 ALLOCATE(Base(4,Arg%l5) :: Arg%right) 
+                 ALLOCATE(Base(4,Arg%l2) :: Arg%b_cmp)
+                 ALLOCATE(Base(4,Arg%l4) :: Arg%left)
+                 ALLOCATE(Base(4,Arg%l5) :: Arg%right)
 
                  Arg%status = '3 allocations done'
 

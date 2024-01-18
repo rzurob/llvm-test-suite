@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpAttrSpecStmtData15
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 21, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- DATA statement
 !*
 !*  A data-stmt-constant with a repeat factor of zero contributes no data-stmt
-!*  constants to the expanded sequence of scalar data-stmt-constants 
-!*   
+!*  constants to the expanded sequence of scalar data-stmt-constants
+!*
 !*  (ice)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -71,7 +62,7 @@
                                                DT1=DT1(1,3,4,5)(R=1),          &
                                                  I=1,                          &
                                                  C=CHAR(1),                    &
-                                               Ptr=NULL() )                     
+                                               Ptr=NULL() )
 
   TYPE(DT0(1,3)),         PARAMETER :: C02=DT0(1,3)()
   TYPE(DT1(1,3,4,5)),     PARAMETER :: C12=DT1(1,3,4,5)(DT0=DT0(1,3)(),R=2)
@@ -79,7 +70,7 @@
                                                DT1=DT1(1,3,4,5)(R=2),          &
                                                  I=2,                          &
                                                  C=CHAR([1,2,3,4,5,6,7]),      &
-                                               Ptr=NULL() )                     
+                                               Ptr=NULL() )
 
   TYPE(DT0(1,3)),         PARAMETER :: C03=DT0(1,3)()
   TYPE(DT1(1,3,4,5)),     PARAMETER :: C13=DT1(1,3,4,5)(DT0=DT0(1,3)(),R=3)
@@ -87,7 +78,7 @@
                                                DT1=DT1(1,3,4,5)(R=3),          &
                                                  I=3,                          &
                                                  C=CHAR(3),                    &
-                                               Ptr=NULL() )                     
+                                               Ptr=NULL() )
 
   INTEGER, PARAMETER  :: N=3
   INTEGER :: I,J
@@ -106,7 +97,7 @@
 
   INTEGER :: IArr(N)=0
 
-  ! S1 and S2 are not affected, but I can not verify them     
+  ! S1 and S2 are not affected, but I can not verify them
 ! DO I=1, N
 ! DO J=1, N
 

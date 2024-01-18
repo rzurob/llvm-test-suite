@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Associated2.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Associated2.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Associated2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Associated2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 2, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,17 +34,17 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  ASSOCIATED(POINTER [, TARGET]) 
-!*  on proc pointer components 
-!*  (304566) 
+!*
+!*  ASSOCIATED(POINTER [, TARGET])
+!*  on proc pointer components
+!*  (304566)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
   CONTAINS
-  
+
   FUNCTION FInt()
     INTEGER FInt
     FInt = -1
@@ -63,25 +57,25 @@
 
   FUNCTION FCmp()
     COMPLEX ::  FCmp
-    FCmp = (-1.0, 1.0) 
+    FCmp = (-1.0, 1.0)
   END FUNCTION
 
   FUNCTION FChar()
     CHARACTER FChar
-    FChar = "!" 
+    FChar = "!"
   END FUNCTION
 
   FUNCTION FLog()
-    LOGICAL FLog 
-    FLog = .TRUE. 
+    LOGICAL FLog
+    FLog = .TRUE.
   END FUNCTION
 
   END MODULE
- 
-  PROGRAM Associated2 
+
+  PROGRAM Associated2
   USE M
-  IMPLICIT NONE 
- 
+  IMPLICIT NONE
+
   TYPE :: DT(K1,N1)    ! (4,20)
     INTEGER, KIND :: K1
     INTEGER, LEN  :: N1
@@ -90,7 +84,7 @@
     PROCEDURE(COMPLEX),   POINTER, NOPASS :: PtrCmp
     PROCEDURE(CHARACTER), POINTER, NOPASS :: PtrChar
     PROCEDURE(LOGICAL),   POINTER, NOPASS :: PtrLog
-  END TYPE 
+  END TYPE
 
   TYPE (DT(4,20)) :: V(3)=DT(4,20)(NULL(), NULL(), NULL(), NULL(), NULL())
   INTEGER   :: I
@@ -112,6 +106,6 @@
     IF ( .NOT. ASSOCIATED( V(I)%PtrChar )) STOP 24
     IF ( .NOT. ASSOCIATED( V(I)%PtrLog ))  STOP 25
   END DO
- 
+
   END
 

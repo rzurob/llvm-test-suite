@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Structure Component: Scalar Non-polymorphic Derived Type Component
@@ -41,11 +30,11 @@ module m
    type container1
       type(base) :: b1
    end type
-   
+
    type container2
       type(base), pointer :: b2
    end type
-   
+
    type container3
       type(child), allocatable :: b3
    end type
@@ -69,25 +58,25 @@ use m
          character(*),  intent(inout) :: iomsg
       end subroutine
    end interface
-   
+
    type(container1)               :: c1
    class(container2), allocatable :: c2
    class(container3), pointer     :: c3
-   
+
    c1 = container1(base('ABC'))
    allocate( c2, source = container2(null()))
    allocate( c2%b2, source = base('DEF') )
-   
+
    allocate( c3, source = container3(child('GHI','JKL')))
 
    open (1, file = 'structCompnt001.1', form='formatted', access='sequential' )
 
    write ( 1, "(DT'_con1'(4))", iostat = stat, iomsg = msg )       c1%b1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
-   
+
    write ( 1, "(DT'_con2'(5))", iostat = stat, iomsg = msg )       c2%b2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 2_4
-   
+
    write ( 1, "(DT'_con3'(6,7),DT'_con3base'(8))", iostat = stat, iomsg = msg )     c3%b3, c3%b3%base
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 3_4
 

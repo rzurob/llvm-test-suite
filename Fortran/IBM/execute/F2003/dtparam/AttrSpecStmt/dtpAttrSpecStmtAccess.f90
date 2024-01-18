@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpAttrSpecStmtAccess
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 08, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  -- Accessibility 
-!*  
+!*  -- Accessibility
+!*
 !*  C549 (R519) Each use-name shall be the name of a named variable, procedure,
 !*  derived type, named constant, or namelist group.
 !*
-!* 
 !*  (337747)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -42,7 +32,7 @@
   MODULE M
 
   PRIVATE
-  PUBLIC DT0, DT1, DT2 
+  PUBLIC DT0, DT1, DT2
   PUBLIC N, T, Mutex, CT
   PUBLIC  MyThread1, MyThread2
 
@@ -68,7 +58,7 @@
     REAL   (K2)          :: R=K2
     LOGICAL(K2)          :: L=.TRUE._1
     COMPLEX(K2)          :: Z=CMPLX(K1, K2, K2)
-    TYPE(DT0(K2, L2))    :: T0(L2) 
+    TYPE(DT0(K2, L2))    :: T0(L2)
     TYPE(DT2(K0,L0,K1,L1,K2, L2)), POINTER  :: Ptr
     CONTAINS
     PROCEDURE, NOPASS :: Proc => ModFun0
@@ -115,7 +105,7 @@
   VOLATILE  T
 
   TYPE(f_pthread_t)      ::  Thread1, thread2
-  TYPE(f_pthread_attr_t) ::  Attr 
+  TYPE(f_pthread_attr_t) ::  Attr
 
 
   res = f_pthread_attr_init(Attr)
@@ -140,10 +130,10 @@
   IF ( .NOT. ASSOCIATED(T) ) STOP 11
   IF ( SIZE( T )  .NE. N   ) STOP 12
   if (Mutex /= 1) stop 13
-  
+
   SELECT TYPE (T)
   TYPE IS (DT0(1,*))
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 14
   END SELECT
 
@@ -205,9 +195,9 @@
   INTEGER I
     PRINT *, "The main has been waiting for ", i , "times!"
     CALL  sleep_(i)
-    !Change the type 
+    !Change the type
     DEALLOCATE(T)
-    ALLOCATE( T(N:2*N-1), SOURCE=CT) 
+    ALLOCATE( T(N:2*N-1), SOURCE=CT)
     Mutex = 1
   END SUBROUTINE
 

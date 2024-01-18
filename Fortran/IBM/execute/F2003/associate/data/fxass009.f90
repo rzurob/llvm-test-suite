@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass009.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass009.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -54,7 +42,7 @@
 !*
 !*  CONDITIONS TESTED          : Listed below.
 !*
-!*  DESCRIPTION                : Test: ASSOCIATE with expressions 
+!*  DESCRIPTION                : Test: ASSOCIATE with expressions
 !*                                     with real, real*4, real*8, real*16
 !*                                     double precision data types with
 !*                                     do loop.
@@ -82,7 +70,7 @@
       real*8 a8 / 9.0d0 /
       real*8 b8 / 2.09 /
       real*8 c8
-      
+
       real*16 a16 / 9.9 /
       real*16 b16 / 2.0q0 /
       real*16 c16
@@ -90,13 +78,13 @@
       double precision aa / 1.0d0 /
       double precision bb / 4.0d0 /
       double precision cc
-      
+
       logical precision_r4, precision_r8, precision_r6
       integer count
 
 !-----------   ASSOCIATE with REAL expressions ----------------
 
-      c = (a + b)*10 + 10.0   
+      c = (a + b)*10 + 10.0
       do count = 1, 10
 
       associate ( arg => (a + b)*10 + 10.0 )
@@ -109,7 +97,7 @@
 
 !-----------   ASSOCIATE with REAL*4 expressions ----------------
 
-      c4 = (a4 + b4)*10 + 1   
+      c4 = (a4 + b4)*10 + 1
       do count = 1, 10
 
       associate ( arg4 => (a4 + b4)*10 + 1 )
@@ -136,7 +124,7 @@
 
 !-----------   ASSOCIATE with REAL*16 expressions ----------------
 
-      c16 = (a16 + b16)*10 + 1   
+      c16 = (a16 + b16)*10 + 1
       do count = 1, 10
 
       associate ( arg16 => (a16 + b16)*10 + 1 )

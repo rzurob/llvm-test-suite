@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpEquiv 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpEquiv
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 05, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The equivalence statement
-!* 
-!* 
+!*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,10 +43,10 @@
     INTEGER(K)   :: I(L)=K
     TYPE(DT0(K,L)):: S
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpEquiv 
+  PROGRAM dtpEquiv
   USE M
 
   TYPE(DT0(1,3)) :: R, R1
@@ -64,7 +54,7 @@
 
   EQUIVALENCE(R, R1)
   EQUIVALENCE(T, T1)
- 
+
   IF ( R%K0  .NE. 1   ) STOP 11
   IF ( R%L0  .NE. 3   ) STOP 12
   IF ( R1%K0 .NE. 1   ) STOP 13
@@ -80,14 +70,14 @@
   IF ( ANY ( LBOUND(T%I) .NE. 1          ) ) STOP 27
   IF ( SIZE( T%I )       .NE. 7            ) STOP 28
   IF ( ANY ( T%I         .NE. 8          ) ) STOP 29
- 
+
   IF ( T%S%K0 .NE. 8   ) STOP 31
   IF ( T%S%L0 .NE. 7   ) STOP 32
 
-  T%R = -T%R 
+  T%R = -T%R
   T%C = CHAR(0)
   T%I = -T%I
- 
+
   IF ( ANY ( LBOUND(T1%R) .NE. 1          ) ) STOP 40
   IF ( SIZE( T1%R )       .NE. 7            ) STOP 41
   IF ( ANY ( T1%R         .NE. -8         ) ) STOP 42
@@ -98,7 +88,7 @@
   IF ( ANY ( LBOUND(T1%I) .NE. 1          ) ) STOP 47
   IF ( SIZE( T1%I )       .NE. 7            ) STOP 48
   IF ( ANY ( T1%I         .NE. -8         ) ) STOP 49
- 
+
   END
 
 

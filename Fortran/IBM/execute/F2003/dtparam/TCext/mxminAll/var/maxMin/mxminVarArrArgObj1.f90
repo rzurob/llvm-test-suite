@@ -2,24 +2,13 @@
 ! ftcx_dtp -qk -qreuse=base /tstdev/F2003/mxminAll/var/maxMin/mxminVarArrArgObj1.f
 ! opt variations: -qck -qnok -qreuse=none
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/15/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX/MIN with variable as actual
 !*                               argument to struct constructor.
@@ -27,24 +16,24 @@
 !*                               select type construct
 !* ===================================================================
 
-  program mxminVarArrArgObj1 
+  program mxminVarArrArgObj1
 
      type base(k1,n1)    ! (4,5)
          integer, kind :: k1
          integer, len  :: n1
-         character(n1) :: bname(2,3) 
+         character(n1) :: bname(2,3)
      end type
 
      type, extends(base) :: child    ! (4,5)
           character(n1) :: cname(2,3)
      end type
 
-     type, extends(child) :: parent    ! (4,5) 
+     type, extends(child) :: parent    ! (4,5)
           character(n1) :: pname(2,3)
      end type
 
      type(base(4,5))   :: bdt
-     type(child(4,5))  :: cdt    
+     type(child(4,5))  :: cdt
      type(parent(4,5)) :: pdt
 
      character*3 x(2,3)
@@ -57,9 +46,9 @@
           error stop 1_4
      endif
 
-     bdt = base(4,5)(max(x, y))     
+     bdt = base(4,5)(max(x, y))
 
-     cdt = child(4,5)(base = bdt , cname = min(x, y)) 
+     cdt = child(4,5)(base = bdt , cname = min(x, y))
 
      pdt = parent(4,5)(child = cdt, pname = max(min(x,y), max(x,y)))
 
@@ -78,12 +67,12 @@
      call sub(pdt)
 
      contains
-         
+
          subroutine sub(arg)
             class(*), intent(in) :: arg
             character*5 v(2,3)
-            v = "zzzab" 
-             
+            v = "zzzab"
+
             select type (arg)
                type is (base(4,*))
                   error stop 4_4
@@ -94,7 +83,7 @@
                class default
                   error stop 6_4
             end select
-                   
+
          end subroutine
 
-  end program mxminVarArrArgObj1 
+  end program mxminVarArrArgObj1

@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignDataPtrComp03b.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignDataPtrComp03b.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 11 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 11 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test defined assignment with generic binding
 !* 2. Derived type has derived type pointer components
-!* 3. Rename derived type with USE statement 
+!* 3. Rename derived type with USE statement
 !234567490123456749012345674901234567490123456749012345674901234567490
 module m1
   type A(l1)
@@ -32,7 +24,7 @@ module m1
      character(l1) :: c3(l1)
      contains
         procedure :: assignA
-        generic   :: assignment(=)=>assignA 
+        generic   :: assignment(=)=>assignA
   end type
 
   contains
@@ -58,13 +50,13 @@ module m2
   use m1,TA=>A
   type B(l2)
      integer,len :: l2 !l2=2
-     integer     :: i1(l2-1:l2+1) 
-     type(TA(l2-1)),pointer :: a1comp 
+     integer     :: i1(l2-1:l2+1)
+     type(TA(l2-1)),pointer :: a1comp
      type(TA(l2-1)):: a2comp
      contains
        procedure :: assignB
        generic   :: assignment(=)=>assignB
-  end type 
+  end type
 
   contains
 
@@ -83,11 +75,11 @@ module m2
 end module
 
 module m3
-  use m2,XA=>TA,XB=>B 
+  use m2,XA=>TA,XB=>B
   type C(l3)
     integer,len :: l3 ! l3=1
     type(XA(l3)),pointer   :: a3comp=>null()
-    type(XB(l3+1)),pointer :: b1comp(:)=>null()  
+    type(XB(l3+1)),pointer :: b1comp(:)=>null()
     contains
         procedure :: assignC
         generic   :: assignment(=)=>assignC
@@ -119,18 +111,18 @@ program defAssignDataPtrComp03b
 
    character(1),target :: c1(7)=["X","L","F","T","E","S","T"]
 
-   type(XC(2)) :: cobj1(1) 
+   type(XC(2)) :: cobj1(1)
 
    type(XC(:)),allocatable,target :: cobj2
 
    type(XA(1)),target :: a3comp1
-   
+
    type(XA(:)),allocatable,target :: a3comp2(:)
 
-   type(XA(1)),allocatable,target :: a3comp3(:) 
+   type(XA(1)),allocatable,target :: a3comp3(:)
 
    type(XB(:)),allocatable,target :: b1comp1(:)
-  
+
    type(XB(2)),target  :: b1comp2(2)
 
    ! call assignA
@@ -138,7 +130,7 @@ program defAssignDataPtrComp03b
 
    !--- verify a3comp1---!
    if(any(a3comp1%c3 /= "A"))                            stop 12
- 
+
    ! call assignA
    a3comp1=XA(1)(c1(1),c1(2:6),c1(7:7))
 
@@ -160,8 +152,8 @@ program defAssignDataPtrComp03b
    if(a3comp2(2)%c1 /= "T")                               stop 19
    if(any(a3comp2(2)%c2 /= ["S","E","T","F","L"]))        stop 20
    if(any(a3comp2(2)%c3 /= "X"))                          stop 21
-   
-   ! call assignA       
+
+   ! call assignA
    a3comp3=a3comp2(2)
 
    !--- verify a3comp3---!
@@ -183,9 +175,8 @@ program defAssignDataPtrComp03b
    if(any(b1comp1(1)%a2comp%c2 /= ["S","E","T","F","L"]))  stop 29
    if(any(b1comp1(1)%a2comp%c3 /= "X"))                    stop 30
 
-   if(any(b1comp1(1)%i1 /= [1,2,3]))                       stop 31  
+   if(any(b1comp1(1)%i1 /= [1,2,3]))                       stop 31
 
- 
    ! call assignB
    b1comp1(2)=XB(2)([-1,-2,-3],a3comp2(1),a3comp2(2))
 
@@ -203,7 +194,7 @@ program defAssignDataPtrComp03b
    ! call assignB
    ! reverse component
    b1comp1=b1comp1(2:1:-1)
-   
+
    !--- verify b1comp1--!
   if(b1comp1(2)%a1comp%c1 /= "X")                            stop 39
   if(any(b1comp1(2)%a1comp%c2 /= ["L","F","T","E","S"]))     stop 40
@@ -224,7 +215,6 @@ program defAssignDataPtrComp03b
   if(any(b1comp1(1)%a2comp%c3 /= "X"))                       stop 51
 
   if(any(b1comp1(1)%i1 /= [-1,-2,-3]))                       stop 52
-
 
    ! call assignB
    b1comp2=b1comp1(1)
@@ -250,11 +240,10 @@ program defAssignDataPtrComp03b
 
   if(any(b1comp2(2)%i1 /= [-1,-2,-3]))                        stop 66
 
-
    allocate(XC(2) :: cobj2)
 
    ! call assignC
-   cobj1=[XC(1)(a3comp1,b1comp1)]   
+   cobj1=[XC(1)(a3comp1,b1comp1)]
 
    !--- verify cobj1---!
 
@@ -287,7 +276,7 @@ program defAssignDataPtrComp03b
    end associate
 
    ! call assignC
-   cobj2=XC(1)(a3comp1,b1comp1) 
+   cobj2=XC(1)(a3comp1,b1comp1)
 
    !--- verify cobj2---!
    associate(x=>cobj2)
@@ -318,9 +307,8 @@ program defAssignDataPtrComp03b
 
    end associate
 
-  
    ! call assignC
-   cobj1=XC(1)(a3comp1,b1comp1)    
+   cobj1=XC(1)(a3comp1,b1comp1)
 
    !--- verify cobj1---!
 
@@ -352,5 +340,4 @@ program defAssignDataPtrComp03b
 
    end associate
 
-   
 end program

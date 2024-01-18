@@ -1,39 +1,23 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fmisc010b.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 08/10/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              : xlf95
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : miscellaneous items (defect 277245; problem #3:
 !                               structure constructor in an implied-do in array
@@ -63,7 +47,7 @@ end module
 
 program fmisc010b
 use m
-    type (base) :: b1(2:11) 
+    type (base) :: b1(2:11)
 
     type (base1) :: b11 (3)
 
@@ -80,5 +64,5 @@ use m
     if (any (b11(1)%data /= (/1/))) error stop 3_4
     if (any (b11(2)%data /= (/1, 2/))) error stop 4_4
     if (any (b11(3)%data /= (/1, 2, 3/))) error stop 5_4
-end 
+end
 

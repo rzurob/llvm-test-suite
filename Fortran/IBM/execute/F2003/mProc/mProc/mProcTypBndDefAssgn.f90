@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcTypBndDefAssgn.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcTypBndDefAssgn.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 01, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !* Interaction with type bound generic
-!* 
-!*  -- Defined assignment 
+!*
+!*  -- Defined assignment
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -59,47 +52,47 @@
   CONTAINS
 
   SUBROUTINE ModSub(Arg1, Arg2)
-  TYPE(DT), INTENT(INOUT) :: Arg1 
-  CLASS(DT), INTENT(IN)    :: Arg2 
-    Arg1%ID = "ModSub-"//Arg2%ID 
-  END SUBROUTINE 
+  TYPE(DT), INTENT(INOUT) :: Arg1
+  CLASS(DT), INTENT(IN)    :: Arg2
+    Arg1%ID = "ModSub-"//Arg2%ID
+  END SUBROUTINE
 
   SUBROUTINE ModSub1(Arg1, Arg2)
-  TYPE(DT1), INTENT(INOUT) :: Arg1 
-  CLASS(DT1), INTENT(IN)    :: Arg2 
-    Arg1%ID =  "ModSub1-"//Arg2%ID 
-  END SUBROUTINE 
+  TYPE(DT1), INTENT(INOUT) :: Arg1
+  CLASS(DT1), INTENT(IN)    :: Arg2
+    Arg1%ID =  "ModSub1-"//Arg2%ID
+  END SUBROUTINE
 
   SUBROUTINE ModSub2(Arg1, Arg2)
-  TYPE(DT2), INTENT(INOUT) :: Arg1 
-  CLASS(DT2), INTENT(IN)    :: Arg2 
-    Arg1%ID = "ModSub2-"//Arg2%ID 
-  END SUBROUTINE 
+  TYPE(DT2), INTENT(INOUT) :: Arg1
+  CLASS(DT2), INTENT(IN)    :: Arg2
+    Arg1%ID = "ModSub2-"//Arg2%ID
+  END SUBROUTINE
 
   END MODULE
 
   SUBROUTINE ExtSub(Arg1, Arg2)
   USE M
-  TYPE(DT3), INTENT(INOUT) :: Arg1 
-  TYPE(DT3), INTENT(IN)    :: Arg2 
+  TYPE(DT3), INTENT(INOUT) :: Arg1
+  TYPE(DT3), INTENT(IN)    :: Arg2
     Arg1%ID = "ExtSub-"//Arg2%ID
-  END SUBROUTINE 
+  END SUBROUTINE
 
 
-  PROGRAM mProcTypBndDefAssgn 
+  PROGRAM mProcTypBndDefAssgn
   USE M
 
-  INTERFACE ASSIGNMENT(=) 
+  INTERFACE ASSIGNMENT(=)
     SUBROUTINE ExtSub(Arg1, Arg2)
-      IMPORT 
-      TYPE(DT3), INTENT(INOUT) :: Arg1 
-      TYPE(DT3), INTENT(IN)    :: Arg2 
-    END SUBROUTINE 
+      IMPORT
+      TYPE(DT3), INTENT(INOUT) :: Arg1
+      TYPE(DT3), INTENT(IN)    :: Arg2
+    END SUBROUTINE
   END INTERFACE
 
   INTERFACE ASSIGNMENT(=)
     PROCEDURE ExtSub
-!   PROCEDURE ModSub 
+!   PROCEDURE ModSub
   END INTERFACE
 
   CALL IntSub(ModSub1)
@@ -111,11 +104,11 @@
   PROCEDURE(ModSub2), POINTER  :: ProcPtr
 
   INTERFACE ASSIGNMENT(=)
-    PROCEDURE Proc 
+    PROCEDURE Proc
   END INTERFACE
 
   INTERFACE ASSIGNMENT(=)
-    PROCEDURE ProcPtr 
+    PROCEDURE ProcPtr
   END INTERFACE
 
   TYPE(DT)  :: T

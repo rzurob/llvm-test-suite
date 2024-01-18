@@ -1,59 +1,51 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeAsActualArg01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeAsActualArg01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 17 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
-!* 3. DERIVED TYPE HAVE DT COMPONENT 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
+!* 3. DERIVED TYPE HAVE DT COMPONENT
 !* 4. USE MERGE AS ACTUAL ARGUMENT
 !* 5. TSOURCE AND FSOURCE ARE DERIVED TYPE SCALAR
-!* 6. DEFECT 355942 
+!* 6. DEFECT 355942
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type B(k2,l2)
      integer(8),kind  :: k2
      integer(8),len   :: l2
 
-     integer(k2)      :: i2 
+     integer(k2)      :: i2
      character(l2)    :: c2
-   end type 
+   end type
 
    type A(k1,l1)
      integer(2),kind  :: k1
      integer,len      :: l1
-     
+
      integer(k1)       :: i1
      character(l1)     :: c1
 
-     type(B(2,l1))     :: b1     
+     type(B(2,l1))     :: b1
    end type
 
    contains
 
       function getDT1(dt)
          type(A(4,*)),intent(in)  :: dt
-         type(A(4,dt%l1))         :: getDT1 
+         type(A(4,dt%l1))         :: getDT1
 
-         getDT1=dt 
+         getDT1=dt
       end function
 end module
 
@@ -72,7 +64,7 @@ program mergeAsActualArg01
 
    allocate(a1,source=A(4,5)(i1=2*a3%i1, c1="123"(1:2)//"9", &
                b1=B(2,5)(i2=2*a3%b1%i2,  c2="456"(1:2)//"0" ) ) )
-                                          
+
    print *,a1%c1%len
    a2=a3
 
@@ -84,7 +76,7 @@ program mergeAsActualArg01
     function getDT2(dt)
       type(B(2,*)),intent(in) :: dt
       type(B(2,dt%l2))      :: getDT2
-     
+
       getDT2=dt
     end function
 
@@ -125,7 +117,7 @@ program mergeAsActualArg01
                        x%i2%kind /= 2)              error stop 48_4
       if(x%c2%len /= len(x%c2) .or.  &
                        x%c2%len /= 5)               error stop 49_4
-    end subroutine 
+    end subroutine
 
     subroutine check3(x)
       type(B(2,*)),intent(in) :: x

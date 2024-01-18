@@ -1,21 +1,13 @@
-!######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/generic/func/generic_proc_func_f006.f
 !*  TYPE                       : Functional test
 !*  FEATURE                    : #917301 F2008: Generic resolution extensions
 !*  RTC Master Story           : 17301: F2008: Generic resolution extensions (master story)
 !*                               https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/17301
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 29 June 2012
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               :
 !*
@@ -153,7 +145,7 @@ end program
       implicit none
          integer :: x
          integer :: y(10)
-    
+
          x = (sum(y)*3) + y(5)
           print *,"       -- inside sub_int()"
       end subroutine

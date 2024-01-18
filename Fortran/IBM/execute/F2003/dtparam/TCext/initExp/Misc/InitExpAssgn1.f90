@@ -4,23 +4,18 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TESTOP CASE NAME             : InitExpAssgn1.f  
+!*  TESTOP CASE NAME             : InitExpAssgn1.f
 !*  TESTOP CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept. 07 2006
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Charber 289074 
+!*  REFERENCE                  : Feature Charber 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,11 +24,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  Assignment on derived type
-!* 
-!*
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -59,7 +50,7 @@
 
   END MODULE
 
-  PROGRAM InitExpAssgn1 
+  PROGRAM InitExpAssgn1
   USE M
   IMPLICIT NONE
 
@@ -76,7 +67,7 @@
     INTEGER, LEN                      :: N3
     TYPE(DT1(K11,N3,K12,K13,K14,K15)) :: T
   END TYPE
- 
+
   TYPE (DT(4,20,1,2,8,16)) :: T(128)=[(DT(4,20,1,2,8,16)(DT1(4,20,1,2,8,16)(DT0(20,1,2,4,8,16)())), I=0,127)]
 
   TYPE :: DTT1(K16,N4,K17,K18,K19,K20)    ! (4,20,1,2,8,16)
@@ -101,7 +92,7 @@
     IF ( ANY( T(I)%T%T1%I2  .NE. [(J,J=0,127)]  ) ) STOP 12
     IF ( ANY( T(I)%T%T1%I4  .NE. [(J,J=0,127)]  ) ) STOP 13
     IF ( ANY( T(I)%T%T1%I8  .NE. [(J,J=0,127)]  ) ) STOP 14
- 
+
     IF ( ANY( T(I)%T%T1%R4  .NE. [(J,J=0,127)]  ) ) STOP 21
     IF ( ANY( T(I)%T%T1%R8  .NE. [(J,J=0,127)]  ) ) STOP 22
     IF ( ANY( T(I)%T%T1%R6  .NE. [(J,J=0,127)]  ) ) STOP 23
@@ -109,7 +100,7 @@
     IF ( ANY( T(I)%T%T1%Z4  .NE. [((J,-J),J=0,127)]  ) ) STOP 31
     IF ( ANY( T(I)%T%T1%Z8  .NE. [((J,-J),J=0,127)]  ) ) STOP 32
     IF ( ANY( T(I)%T%T1%Z6  .NE. [((J,-J),J=0,127)]  ) ) STOP 33
-  END DO 
+  END DO
 
   DO I =1, 4
   DO J =1, 4
@@ -118,7 +109,7 @@
     IF ( ANY( TT(I)%T(J)%T1(K)%I2  .NE. [(J,J=0,127)]  ) ) STOP 42
     IF ( ANY( TT(I)%T(J)%T1(K)%I4  .NE. [(J,J=0,127)]  ) ) STOP 43
     IF ( ANY( TT(I)%T(J)%T1(K)%I8  .NE. [(J,J=0,127)]  ) ) STOP 44
- 
+
     IF ( ANY( TT(I)%T(J)%T1(K)%R4  .NE. [(J,J=0,127)]  ) ) STOP 51
     IF ( ANY( TT(I)%T(J)%T1(K)%R8  .NE. [(J,J=0,127)]  ) ) STOP 52
     IF ( ANY( TT(I)%T(J)%T1(K)%R6  .NE. [(J,J=0,127)]  ) ) STOP 53
@@ -126,11 +117,11 @@
     IF ( ANY( TT(I)%T(J)%T1(K)%Z4  .NE. [((J,-J),J=0,127)]  ) ) STOP 61
     IF ( ANY( TT(I)%T(J)%T1(K)%Z8  .NE. [((J,-J),J=0,127)]  ) ) STOP 62
     IF ( ANY( TT(I)%T(J)%T1(K)%Z6  .NE. [((J,-J),J=0,127)]  ) ) STOP 63
-  END DO 
-  END DO 
-  END DO 
+  END DO
+  END DO
+  END DO
 
-  END 
+  END
 
 
- 
+

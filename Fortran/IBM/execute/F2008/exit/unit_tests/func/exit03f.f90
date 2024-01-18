@@ -1,17 +1,9 @@
 !* =================================================================== &
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =================================================================== &
 !*
-!* TEST CASE TITLE            : exit03f.f
-!*
-!* PROGRAMMER                 : David Nichols
 !* DATE                       : March 8, 2011
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : EXIT Statement
-!*
-!* DRIVER STANZA              : xlf2008
 !*
 !* DESCRIPTION                : Testing proper functionality of
 !*                              EXIT statement from named constructs
@@ -28,7 +20,7 @@
       DO j=1, 10
         a1 : ASSOCIATE ( x => j )
           if (x .EQ. 3) then
-            EXIT 
+            EXIT
           else
             i = i + 1
           endif
@@ -40,7 +32,7 @@
       DO j=1,10
         b1 : BLOCK
           if (j .EQ. 4) then
-            EXIT 
+            EXIT
           else
             i = i + 1
           endif
@@ -52,13 +44,13 @@
       DO j=1,10
         d1 : DO k=1, 10
           if (j .EQ. 5 .AND. k .EQ. 1) then
-            EXIT 
+            EXIT
           elseif (k .EQ. 1) then
             i = i + 1
           endif
         ENDDO d1
         if (j .EQ. 5) then
-          EXIT 
+          EXIT
         endif
       ENDDO
 
@@ -67,7 +59,7 @@
       DO j=1,10
         i1 : IF (i .EQ. (j-1)) then
           if (j .EQ. 6) then
-            EXIT 
+            EXIT
           else
             i = i + 1
           endif
@@ -83,8 +75,8 @@
           EXIT sc1
         CASE (6) sc1
           if (j .NE. 6) then
-            EXIT 
-          else 
+            EXIT
+          else
             i = i + 1
             EXIT sc1
           endif
@@ -101,7 +93,7 @@
           ERROR STOP 8
         TYPE IS (integer) st1
           if (j .EQ. 8) then
-            EXIT 
+            EXIT
           else
             i = i + 1
           endif

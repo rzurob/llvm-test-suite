@@ -1,13 +1,9 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/intrinsics/cshift/structureComponent001.f
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/cshift
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/02/2005
 ! PRIMARY FUNCTIONS TESTED   : cshift
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : ARRAY is a structure component, which
 !                              is non-poly array. The object containing
 !                              the component is a scalar.

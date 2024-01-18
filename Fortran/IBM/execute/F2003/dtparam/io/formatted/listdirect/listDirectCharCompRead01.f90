@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectCharCompRead01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectCharCompRead01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 12 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 12 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. Derived type has ultimate scalar character components
@@ -28,13 +20,13 @@ module m1
      integer,len     :: l1
      character(l1)   :: ch1
      character(l1+1) :: ch2
-  end type 
+  end type
 end module
 
 module m2
 use m1
   type TCHAR2(l2)
-     integer,len   :: l2 
+     integer,len   :: l2
      character(l2) :: ch3
      type(TCHAR1(l2+1))  :: tch1
   end type
@@ -61,7 +53,7 @@ program listDirectCharCompRead01
      stop 10
   end if
 
-  ! read first line, it has blank separator,blanks are 1 or more space or tab 
+  ! read first line, it has blank separator,blanks are 1 or more space or tab
   read(10,*) t2
 
   if(t2(1)%ch3 /= "We")            stop 11
@@ -94,9 +86,9 @@ program listDirectCharCompRead01
   ! set value for t2(1)
   t2(1)%ch3="123"
   t2(1)%tch1%ch1="456"
-  t2(1)%tch1%ch2="789" 
-  
-  ! read third line,separator are blank, comma, slash 
+  t2(1)%tch1%ch2="789"
+
+  ! read third line,separator are blank, comma, slash
   read(10,*) t2
 
   if(t2(-1)%ch3 /= "x**")          stop 23
@@ -131,8 +123,8 @@ program listDirectCharCompRead01
   if(t2(2)%tch1%ch2 /= "mo\"rn\"")     stop 37
 
 !  write(*,*) "|",t2(1)%ch3,"|",t2(1)%tch1%ch1,"|",t2(1)%tch1%ch2,"|"
-!  write(*,*) "|",t2(2)%ch3,"|",t2(2)%tch1%ch1,"|",t2(2)%tch1%ch2,"|" 
-  
+!  write(*,*) "|",t2(2)%ch3,"|",t2(2)%tch1%ch1,"|",t2(2)%tch1%ch2,"|"
+
   close(10)
 
 end program

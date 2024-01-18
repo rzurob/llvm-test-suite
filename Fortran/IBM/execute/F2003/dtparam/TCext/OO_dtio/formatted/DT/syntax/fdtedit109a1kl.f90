@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fdtedit109a1kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from fdtedit109a1 by Robert Ma)
 !*  DATE                       : 2007-06-08 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        When editors in format specification are used up and there are
@@ -90,7 +82,7 @@ use m
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) )   error stop 1_4
 
    if ( b1%i /= 101 )                                error stop 2_4
-   
+
    select type ( b2 )
       type is (child(4,4))
          if ( ( b2%i /= 102 ) .or. ( b2%j /= 103 ) ) error stop 3_4
@@ -101,7 +93,7 @@ use m
    if ( ( c1%i /= 201 ) .or. ( c1%j /= 202 ) )       error stop 5_4
    if ( ( c2%i /= 203 ) .or. ( c2%j /= 204 ) )       error stop 6_4
    if ( ( c3%i /= 205 ) .or. ( c3%j /= 206 ) )       error stop 7_4
-   
+
    print *, rbuffer
 
 end program

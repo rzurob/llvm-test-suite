@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrHostPtr.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrHostPtr.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrHostPtr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 14, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,9 +32,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a host associate name 
-!*  
-!*    () 
+!*    The selector is a host associate name
+!*
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,7 +46,7 @@
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4,20)
       INTEGER(K1) :: BaseId = 1
@@ -102,7 +96,7 @@
   USE M
   IMPLICIT NONE
   TYPE(Child(4,20)), TARGET :: Tar
- 
+
   CLASS(Child(4,:)), POINTER :: Arr(:)
 
   ALLOCATE(Arr(3), SOURCE=Child(4,20)(ChildId=-2, BaseId=-1))
@@ -113,7 +107,7 @@
 
   SUBROUTINE Sub(Arr1)
   CLASS(Child(4,:)), POINTER :: Arr1(:)
-  
+
   ASSOCIATE ( As => Arr1(:))
     SELECT TYPE ( As => As)
     CLASS IS (Child(4,*))
@@ -132,9 +126,9 @@
           IF ( ANY(As%BaseId       .NE. 1 ) ) STOP 46
           IF ( ANY(As%ChildId      .NE. 2 ) ) STOP 47
 
-      END ASSOCIATE 
+      END ASSOCIATE
 
-    CLASS DEFAULT 
+    CLASS DEFAULT
       STOP 38
 
   END SELECT
@@ -144,6 +138,6 @@
   END SUBROUTINE
 
   END
-  
+
 
 

@@ -5,44 +5,37 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
 ! %GROUP: ftybn021c.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn021c.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn021c.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!*  
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : overriding 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
 !*
-!*  DESCRIPTION                : public the private binding procedure of  
+!*  SECONDARY FUNCTIONS TESTED : overriding
+!*
+!*  DESCRIPTION                : public the private binding procedure of
 !*                               parent in extended type. Binding procedure
 !*                               with dummy arguments.
-!*                             
-!*                            
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 
-	module mod	      
+	module mod
    private
-		type, private :: base(n1,k1)    ! (20,4) 
+		type, private :: base(n1,k1)    ! (20,4)
       integer, kind       :: k1
       integer, len        :: n1
       integer(k1), public :: x
@@ -58,7 +51,7 @@
  		procedure, nopass :: bind_parent => proc2
 		end type
 
-      type, extends(parent), public :: child(k3,n3)    ! (20,4,4,20,4,20) 
+      type, extends(parent), public :: child(k3,n3)    ! (20,4,4,20,4,20)
           integer, kind :: k3
           integer, len  :: n3
       contains
@@ -69,19 +62,19 @@
       contains
       integer function proc1(arg1)
       type(child(*,4,4,*,4,*)) :: arg1
-         proc1 = arg1%x 
+         proc1 = arg1%x
       end function proc1
 
       integer function proc2(arg1)
       type(child(*,4,4,*,4,*)) :: arg1
-         proc2 = 2 * arg1%x 
+         proc2 = 2 * arg1%x
       end function proc2
 
       integer function proc3(arg1)
       type(child(*,4,4,*,4,*)) :: arg1
-         proc3 = 3 * arg1%x 
+         proc3 = 3 * arg1%x
       end function proc3
-	end module     
+	end module
 
    use mod
 
@@ -94,10 +87,10 @@
    if(child_dt1%bind(child_dt1) .ne. 3 * child_dt1%x)   error stop 2
    if(child_dt1%bind_child(child_dt1) .ne. 3 * child_dt1%x) error stop 3
    if(child_dt1%bind_parent(child_dt1) .ne.2 * child_dt1%x) error stop 4
- 
-! print *, base_dt1%bind() 
+
+! print *, base_dt1%bind()
 ! print *, parent_dt1%bind()
 ! print *, child_dt1%bind()
 
   end
-   
+

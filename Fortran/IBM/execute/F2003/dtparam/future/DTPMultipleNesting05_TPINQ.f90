@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTPMultipleNesting05
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : February 25, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Run Time Offset (RTO)
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : Default initialization
@@ -23,41 +15,41 @@
 !*  DESCRIPTION                :
 !*
 !* defect 361707
-!* 
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 MODULE Mod
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN  :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN  :: l1
 
         CHARACTER(l1)      :: tag(l1)
-        INTEGER(k1), ALLOCATABLE :: my_arr(:)  
+        INTEGER(k1), ALLOCATABLE :: my_arr(:)
       END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)
         INTEGER, KIND :: k2
         INTEGER, LEN  :: l2
 
-        CLASS(Base(k2,l2)), ALLOCATABLE :: b1   
+        CLASS(Base(k2,l2)), ALLOCATABLE :: b1
       END TYPE Child
 
       TYPE, EXTENDS(Child) :: Branch  (k3,l3,l4,l5)
-        INTEGER, KIND :: k3 
+        INTEGER, KIND :: k3
         INTEGER, LEN  :: l3, l4, l5
 
-        TYPE(Base(k3,l4)) :: cmp1   
-        TYPE(Base(k3,l5)) :: cmp2 
+        TYPE(Base(k3,l4)) :: cmp1
+        TYPE(Base(k3,l5)) :: cmp2
       END TYPE Branch
 
       CONTAINS
 
       SUBROUTINE verify_type_param(Arg)
-         CLASS(Base(4,*)) :: Arg    
+         CLASS(Base(4,*)) :: Arg
 
-         SELECT TYPE ( Arg )  
+         SELECT TYPE ( Arg )
               CLASS IS (Base(4,*))
                  Arg%tag = 'Base'
                  IF (Arg%l1 .NE. 8) STOP 20
@@ -81,19 +73,19 @@ MODULE Mod
 
       END SUBROUTINE verify_type_param
 
-      SUBROUTINE verify_my_arr(Arr, k) 
-         INTEGER :: k, Arr(:)  
- 
-         IF ( ANY(Arr .NE. k))  STOP 100 
+      SUBROUTINE verify_my_arr(Arr, k)
+         INTEGER :: k, Arr(:)
 
-      END SUBROUTINE verify_my_arr    
+         IF ( ANY(Arr .NE. k))  STOP 100
+
+      END SUBROUTINE verify_my_arr
 END MODULE Mod
 
 PROGRAM DTPMultipleNesting05
       USE Mod
       IMPLICIT NONE
 
-      INTEGER :: i 
+      INTEGER :: i
       CLASS(Base(4,:)), POINTER :: upoly
 
       IF ( ASSOCIATED(upoly) ) STOP 10
@@ -105,10 +97,10 @@ PROGRAM DTPMultipleNesting05
       IF (ANY(upoly%tag .NE. 'Base')) STOP 11
 
       ALLOCATE( upoly%my_arr(upoly%l1), SOURCE = (/(1, i = 1, upoly%l1)/) )
-      IF ( SIZE(upoly%my_arr) .NE. 8 ) STOP 30 
-      CALL verify_my_arr( upoly%my_arr, 1 ) 
+      IF ( SIZE(upoly%my_arr) .NE. 8 ) STOP 30
+      CALL verify_my_arr( upoly%my_arr, 1 )
 
-!*   Child 
+!*   Child
 
       ALLOCATE(Child(4,10,4,8) :: upoly)
       CALL verify_type_param(upoly)
@@ -117,24 +109,24 @@ PROGRAM DTPMultipleNesting05
       SELECT TYPE ( upoly )
          CLASS IS (Child(4,*,4,*))
              ALLOCATE( upoly%my_arr(upoly%l2), SOURCE = (/(2, i = 1, upoly%l2)/) )
-             IF ( SIZE(upoly%my_arr) .NE. 8 ) STOP 31 
+             IF ( SIZE(upoly%my_arr) .NE. 8 ) STOP 31
 
              IF ( ALLOCATED(upoly%b1) ) STOP 32
-             ALLOCATE( Base(4,upoly%l2) :: upoly%b1 ) 
+             ALLOCATE( Base(4,upoly%l2) :: upoly%b1 )
              CALL verify_type_param(upoly%b1)
              IF (ANY(upoly%b1%tag .NE. 'Base')) STOP 33
 
              ALLOCATE( upoly%b1%my_arr(upoly%b1%l1), SOURCE = (/(3, i = 1, upoly%b1%l1)/) )
-             IF ( SIZE(upoly%b1%my_arr) .NE. 8 ) STOP 34 
+             IF ( SIZE(upoly%b1%my_arr) .NE. 8 ) STOP 34
 
-             CALL verify_my_arr( upoly%b1%my_arr, 3 ) 
-             CALL verify_my_arr( upoly%my_arr, 2 ) 
+             CALL verify_my_arr( upoly%b1%my_arr, 3 )
+             CALL verify_my_arr( upoly%my_arr, 2 )
 
          CLASS DEFAULT
              STOP 35
       END SELECT
 
-!*   Branch 
+!*   Branch
 
       ALLOCATE(Branch(4,10,4,8,4,5,8,8) :: upoly)
       CALL verify_type_param(upoly)
@@ -147,15 +139,15 @@ PROGRAM DTPMultipleNesting05
 
             IF ( ALLOCATED(upoly%b1) ) STOP 36
 
-            ALLOCATE( Base(4,upoly%l2) :: upoly%b1) 
+            ALLOCATE( Base(4,upoly%l2) :: upoly%b1)
             ALLOCATE( upoly%b1%my_arr(upoly%b1%l1), SOURCE = (/(5, i = 1, upoly%b1%l1)/) )
-            IF ( SIZE(upoly%b1%my_arr) .NE. 8) STOP 39 
+            IF ( SIZE(upoly%b1%my_arr) .NE. 8) STOP 39
 
             ALLOCATE( upoly%cmp1%my_arr(upoly%cmp1%l1), SOURCE = (/(6, i = 1, upoly%cmp1%l1)/) )
-            IF ( SIZE(upoly%cmp1%my_arr) .NE. 8 ) STOP 40 
+            IF ( SIZE(upoly%cmp1%my_arr) .NE. 8 ) STOP 40
 
             ALLOCATE( upoly%cmp2%my_arr(upoly%cmp2%l1), SOURCE = (/(7, i = 1, upoly%cmp2%l1)/) )
-            IF ( SIZE(upoly%cmp2%my_arr) .NE. 8 ) STOP 41 
+            IF ( SIZE(upoly%cmp2%my_arr) .NE. 8 ) STOP 41
 
             CALL verify_type_param(upoly%b1)
             IF ( ANY(upoly%b1%tag .NE. 'Base') ) STOP 42
@@ -166,10 +158,10 @@ PROGRAM DTPMultipleNesting05
             CALL verify_type_param(upoly%cmp2)
             IF ( ANY(upoly%cmp2%tag .NE. 'Base') ) STOP 44
 
-            CALL verify_my_arr( upoly%cmp2%my_arr, 7 ) 
-            CALL verify_my_arr( upoly%cmp1%my_arr, 6 ) 
-            CALL verify_my_arr(upoly%b1%my_arr, 5) 
-            CALL verify_my_arr( upoly%my_arr, 4 ) 
+            CALL verify_my_arr( upoly%cmp2%my_arr, 7 )
+            CALL verify_my_arr( upoly%cmp1%my_arr, 6 )
+            CALL verify_my_arr(upoly%b1%my_arr, 5)
+            CALL verify_my_arr( upoly%my_arr, 4 )
          CLASS DEFAULT
              STOP 45
       END SELECT

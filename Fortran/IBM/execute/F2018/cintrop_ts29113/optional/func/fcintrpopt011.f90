@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt011.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -58,7 +51,7 @@ subroutine sub_testf_1(code, func_co) bind(c)
         code = 'n'
         print *, "sub_testf_1 func_co not present"
    endif
-       
+
    print *, code
 
 end subroutine
@@ -73,7 +66,7 @@ subroutine sub_testf_2(code,func_co_2) bind(c)
         use, intrinsic :: iso_c_binding
         character(c_char), intent(inout)::arg
         end function
-	   
+
 	subroutine sub_testf_1(code1, func_co) bind(c)
    	use, intrinsic :: iso_c_binding
    	character(c_char), intent(inout) :: code1
@@ -110,5 +103,5 @@ character(c_char) function realfunc(a1) bind(c)
   print *, a1
   realfunc='r'
 
-end function 
+end function
 

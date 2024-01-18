@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
-!*  TEST CASE NAME             : arrsec3_explicit_shape.f 
-!*  PROGRAMMER                 : Gaby Baghdadi (adopted from David Nichols' 
+!*  TEST CASE NAME             : arrsec3_explicit_shape.f
 !*                               arrsec1_explicit_shape.f)
 !*  DATE                       : Dec 31, 2008
 !*  ORIGIN                     : XLF Development
@@ -13,7 +10,6 @@
 !*
 !*      Test array sections of explicit shaped arrays within derived types
 !*      Shape is known at compile time.
-!*      
 !*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890

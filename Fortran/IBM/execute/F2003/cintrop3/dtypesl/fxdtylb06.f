@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for derived types with BIND(C) attr.
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived types with BIND(C) attribute
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -96,9 +82,9 @@ subroutine sub1(dt) bind(c)
    use mxdtylb06
    type(dt3) :: dt
 
-   if ( dt%var_a /= 2.0e0 .or. dt%vdt2%var_a /= 2.0d0 .or. & 
+   if ( dt%var_a /= 2.0e0 .or. dt%vdt2%var_a /= 2.0d0 .or. &
                           (dt%vdt2%vdt1%var_a .neqv. .false.) ) error stop 20
-   if ( (dt%var_b .neqv. .false.) .or. (dt%vdt2%var_b .neqv. .false.) .or. & 
+   if ( (dt%var_b .neqv. .false.) .or. (dt%vdt2%var_b .neqv. .false.) .or. &
                           dt%vdt2%vdt1%var_b /= 4.0d0 ) error stop 22
    if ( dt%var_c /= 6.0q0 .or. dt%vdt2%var_c /= 6.0d0 .or. &
                           (dt%vdt2%vdt1%var_c /= 'A') ) error stop 24
@@ -148,9 +134,9 @@ subroutine sub2(dt) bind(c)
    use mxdtylb06
    type(dt3), value :: dt
 
-   if ( dt%var_a /= 2.0e0 .or. dt%vdt2%var_a /= 2.0d0 .or. & 
+   if ( dt%var_a /= 2.0e0 .or. dt%vdt2%var_a /= 2.0d0 .or. &
                           (dt%vdt2%vdt1%var_a .neqv. .false.) ) error stop 36
-   if ( (dt%var_b .neqv. .false.) .or. (dt%vdt2%var_b .neqv. .false.) .or. & 
+   if ( (dt%var_b .neqv. .false.) .or. (dt%vdt2%var_b .neqv. .false.) .or. &
                           dt%vdt2%vdt1%var_b /= 4.0d0 ) error stop 38
    if ( dt%var_c /= 6.0q0 .or. dt%vdt2%var_c /= 6.0d0 .or. &
                           (dt%vdt2%vdt1%var_c /= 'A') ) error stop 40

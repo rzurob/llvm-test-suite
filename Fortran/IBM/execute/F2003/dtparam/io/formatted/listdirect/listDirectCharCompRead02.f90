@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectCharCompRead02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : listDirectCharCompRead02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 12 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 12 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Derived type is polymorphic type and has character array components
-!* 2. Test Read statement with list directed input, inputs are delimited character sequence 
+!* 2. Test Read statement with list directed input, inputs are delimited character sequence
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m1
    type base(l1)
@@ -38,9 +30,9 @@ use m1
     end type
 
     contains
-      function alloFun(arg)   
+      function alloFun(arg)
           class(base(*)),allocatable,intent(in) :: arg(:)
-          class(base(:)),pointer :: alloFun(:) 
+          class(base(:)),pointer :: alloFun(:)
 
           allocate(alloFun(size(arg,1)),source=arg)
 
@@ -54,7 +46,7 @@ program listDirectCharCompRead02
   interface
 
      subroutine readData(unit,dummyarg)
-       import 
+       import
        integer,intent(in) :: unit
        class(base(*)),allocatable,intent(in) ::  dummyarg(:)
 
@@ -62,7 +54,7 @@ program listDirectCharCompRead02
 
   end interface
 
-  integer :: unit=1024,ios 
+  integer :: unit=1024,ios
   character(256) :: msg
 
   class(base(3)),allocatable,target :: base1(:)
@@ -81,7 +73,7 @@ program listDirectCharCompRead02
      stop 10
   end if
 
-  call readData(unit,base1)  
+  call readData(unit,base1)
 
   ptr(-1:)=>alloFun(base1)
 
@@ -109,9 +101,9 @@ program listDirectCharCompRead02
         stop 27
   end select
 
-  
+
   close(unit)
-  
+
 end program
 
 subroutine readData(unit,dummyarg)
@@ -137,7 +129,7 @@ subroutine readData(unit,dummyarg)
            !4'
            !" , ; /"
 
-           read(unit,*)   x 
+           read(unit,*)   x
 
 !           print *,"|",x(1)%c1(3),"|",x(1)%c1(4),"|"
 !           print *,"|",x(1)%c2(3),"|",x(1)%c2(4),"|",x(1)%c2(5),"|"
@@ -148,6 +140,6 @@ subroutine readData(unit,dummyarg)
 
        class default
           stop 11
-   end select    
+   end select
 
 end subroutine

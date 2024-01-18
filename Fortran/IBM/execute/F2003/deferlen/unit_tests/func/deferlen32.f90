@@ -1,22 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Deferred Character Length
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unit testing
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  DESCRIPTION                : Testing the intrinsics with deferred
 !*                               lenght characters:
 !*                               1. ADJUSTL
-!*                               2. ADJUSTR      
+!*                               2. ADJUSTR
 !*
 !* ===================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,14 +35,14 @@
       if (ADJUSTR(pchar(4:17)) .ne. '       ABCDEFG') then
          rc = rc + 4
       endif
-      
+
       allocate (character(10)::ch_var)
       ch_var = '  012345  '     ! Centre justified
 
       if (ADJUSTL(ch_var//'345') .ne. '012345  345') then
          rc = rc + 5
       endif
-      
+
       if (ADJUSTR(ch_var//'345') .ne. '  012345  345') then
          rc = rc + 6
       endif
@@ -77,7 +70,7 @@
       if (ADJUSTR(ch_var(1:10)) .ne. '    012345') then
          rc = rc + 12
       endif
-       
+
       deallocate(ch_var)
       call zzrc(rc)
 

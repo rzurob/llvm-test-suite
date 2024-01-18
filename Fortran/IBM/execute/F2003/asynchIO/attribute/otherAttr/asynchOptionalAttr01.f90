@@ -1,19 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchOptionalAttr01 - ASYNCHRONOUS Attribute
 !*                               Interactions with Other Attributes
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : February  9, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : Interactions with the OPTIONAL Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 :
@@ -35,7 +29,6 @@
 !*  ...
 !*                  or OPTIONAL
 !*
-!*
 !*  5.1.2.9 OPTIONAL attribute
 !*
 !*  The OPTIONAL attribute specifies that the dummy argument need not be
@@ -54,7 +47,7 @@ PROGRAM asynchOptionalAttr01
             IMPLICIT NONE
             COMPLEX, OPTIONAL :: optArg
         END SUBROUTINE OptionalArg
-        
+
         SUBROUTINE OptionalArgAsynch( optArgAsynch )
             IMPLICIT NONE
             COMPLEX, OPTIONAL, ASYNCHRONOUS :: optArgAsynch

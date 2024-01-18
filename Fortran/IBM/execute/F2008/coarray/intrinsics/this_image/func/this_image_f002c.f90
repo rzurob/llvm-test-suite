@@ -1,17 +1,11 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : this_image_f002c.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : July 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
@@ -24,7 +18,7 @@
 program main
 	real(4), save :: caf[*]
 	integer :: cnt
-	
+
 	cnt = this_image(caf, 1)
 	if (cnt > num_images()) then
 		print *, cnt, num_images()
@@ -34,17 +28,17 @@ program main
 
 	call sub1(num_images())
 	call sub2()
-	
+
 contains
 
 	subroutine sub2()
 		real(8), save :: caf(2,2,2)[1,1,10:11,15:*]
 		integer, allocatable :: lb(:)
 		integer :: num, n
-		
+
 		lb = lcobound(caf)
 		num = num_images()
-		
+
 		do i = 1, size(lb)
 			n = this_image(caf, i)
 
@@ -69,7 +63,7 @@ contains
 		end do
 		sync all
 	end subroutine
-end 
+end
 
 
 subroutine sub1(num)
@@ -84,7 +78,7 @@ subroutine sub1(num)
 		print *, lb, ":", ub
 		error stop 12
 	end if
-	
+
 	do i = 1, size(lb)
 		n = this_image(caf, i)
 

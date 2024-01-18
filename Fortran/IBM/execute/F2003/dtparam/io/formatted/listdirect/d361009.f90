@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361009.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361009.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 16 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 16 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -27,12 +19,12 @@ module m
   end type
   contains
       subroutine sub(arg)
-         type(A(*)),intent(in) :: arg(:)     
-         print *,lbound(arg,1),ubound(arg,1) 
+         type(A(*)),intent(in) :: arg(:)
+         print *,lbound(arg,1),ubound(arg,1)
          do i=1,2
-           print *,arg(i)%i  
+           print *,arg(i)%i
          end do
-         print *,arg        
+         print *,arg
       end subroutine
 end module
 

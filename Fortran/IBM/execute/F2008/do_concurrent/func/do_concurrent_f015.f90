@@ -1,23 +1,21 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                              IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f015.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon
 !*  DATE                       : 2015-06-25
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*
-!*  DESCRIPTION                : - DO CONCURRENT loops (including nested DO 
-!*                                 CONCURRENT loops) inside external 
+!*  DESCRIPTION                : - DO CONCURRENT loops (including nested DO
+!*                                 CONCURRENT loops) inside external
 !*                                 subroutines and functions (in same file)
-!*                               - concurrent-limit contains a variable with 
+!*                               - concurrent-limit contains a variable with
 !*                                 the parameter attribute
-!*                               - scalar-mask-expr contains logicals and 
+!*                               - scalar-mask-expr contains logicals and
 !*                                 user-defined procedures
 !*
 !=============================================================================
@@ -153,15 +151,15 @@
             print *, "2-level nested do concurrent with mask produced incorrect results"
             print *, "x: ", x
             print *, "i_res2: ", i_res2
-            error stop 3 
+            error stop 3
           end if
         end do
 
         i_res3 = 0.0d0
         call sub2(j,k,i_arr)
         i_res3 = func2(j,k,i_arr)
-   
-        i_res3_result(1,:) = 0.0d0 
+
+        i_res3_result(1,:) = 0.0d0
         i_res3_result(2,:) = 0.0d0
         i_res3_result(3,:) = (/4.0d0,4.0d0,4.0d0,0.0d0,0.0d0/)
         i_res3_result(4,:) = (/5.0d0,5.0d0,5.0d0,0.0d0,0.0d0/)
@@ -287,8 +285,8 @@ subroutine sub2(j,l,i_arr)
   logical, external :: precision_r8
 
   allocate(i_res2(5,5),i_arr2(10))
- 
-  i_res = 0.0d0 
+
+  i_res = 0.0d0
   i_res2 = 0.0d0
   i_arr2 = (/4.0d0,9.0d0,16.0d0,25.0d0,36.0d0,49.0d0,64.0d0,81.0d0,100.0d0,121.0d0/)
 
@@ -345,9 +343,9 @@ subroutine sub3(i_arr2)
   logical, external :: precision_r8
 
   allocate(i_res2(10), i_arr(10))
- 
+
   i_res = 0.0d0
-  i_res2 = 0.0d0 
+  i_res2 = 0.0d0
   i_arr = (/4.0d0,9.0d0,16.0d0,25.0d0,36.0d0,49.0d0,64.0d0,81.0d0,100.0d0,121.0d0/)
 
   do concurrent (i = 1:10, lvar .eqv. .true.)

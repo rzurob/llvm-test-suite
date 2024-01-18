@@ -1,24 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type_Basic08 - SELECT TYPE 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : July  24, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -36,7 +28,6 @@
 !*                       or CLASS DEFAULT [ select-construct-name ]
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-!*####################################################################
 !*#                FIRST MODULE : DECLARATIONS OF TYPES              #
 !*####################################################################
       MODULE Mod1
@@ -78,21 +69,21 @@
       USE Mod1, Sq => Square, Rec => Rectangle, Tri => Triangle
       IMPLICIT NONE
 
-      CONTAINS 
+      CONTAINS
 !*
-! area computation depending on the shape 
+! area computation depending on the shape
 !*
       SUBROUTINE compute_square_area
 
-      CLASS(Sq(k1,len1)), ALLOCATABLE :: My_shape 
+      CLASS(Sq(k1,len1)), ALLOCATABLE :: My_shape
       TYPE(Sq(k1,len1)), ALLOCATABLE :: A_square
 
       ALLOCATE(A_square)
-      
+
       A_square%width = 10.0
- 
+
       ALLOCATE(My_shape, source=A_square)
- 
+
       IF ( .NOT. ALLOCATED(My_shape)) STOP 10
 
       SELECT TYPE (My_shape)
@@ -103,11 +94,11 @@
           print *, 'My shape is ', TRIM(My_shape%name), ' and the area is', FLOOR(My_shape%area)
 
         TYPE IS (Rec(k1,*))
-           print *, 'You should not pick this' 
+           print *, 'You should not pick this'
            STOP 11
 
         CLASSDEFAULT
-           print *, 'Area cannot be computed: undefined Shape' 
+           print *, 'Area cannot be computed: undefined Shape'
            STOP 12
       END SELECT
 !*
@@ -118,7 +109,7 @@
 
       SELECT TYPE (My_shape)
         TYPE IS (Sq(k1,*))
-           print *, 'You should not pick this' 
+           print *, 'You should not pick this'
            STOP 13
 
         TYPE IS (Rec(k1,*))
@@ -128,11 +119,11 @@
           print *, 'My shape is ', TRIM(My_shape%name), ' and the area is', FLOOR(My_shape%area)
 
         CLASS IS (Sq(k1,*))
-           print *, 'You should not pick this' 
+           print *, 'You should not pick this'
            STOP 14
 
         CLASS IS (Rec(k1,*))
-           print *, 'You should not pick this' 
+           print *, 'You should not pick this'
            STOP 15
 
         CLASSDEFAULT
@@ -146,7 +137,7 @@
       SUBROUTINE compute_triangle_area
 
       REAL :: p
-      CLASS(Tri(k1,len1)), POINTER :: My_shape 
+      CLASS(Tri(k1,len1)), POINTER :: My_shape
       TYPE(Tri(k1,len1)), TARGET :: A_triangle
 
       A_triangle%a = 20.0
@@ -154,8 +145,8 @@
       A_triangle%c = 22.36
 !*
       A_triangle%area = -0.0
- 
-      My_shape => A_triangle       
+
+      My_shape => A_triangle
       IF ( .NOT. ASSOCIATED(My_shape)) STOP 20
 
       SELECT TYPE (My_shape)
@@ -167,15 +158,15 @@
            END ASSOCIATE
 
            My_shape%name = 'a triangle'
-           
+
            print *, 'My shape is ', TRIM(My_shape%name), ' and the area is', FLOOR(My_shape%area)
 
-        CLASS IS (Tri(k1,*)) 
-           print *, 'You should not pick this' 
+        CLASS IS (Tri(k1,*))
+           print *, 'You should not pick this'
            STOP 21
 
         CLASSDEFAULT
-           print *, 'Area cannot be computed: undefined Shape' 
+           print *, 'Area cannot be computed: undefined Shape'
            STOP 22
       END SELECT
 !*
@@ -186,9 +177,9 @@
 !*
       SUBROUTINE generate_shape
 
-        call compute_square_area 
+        call compute_square_area
 
-        call compute_triangle_area 
+        call compute_triangle_area
 
       END SUBROUTINE generate_shape
 !*

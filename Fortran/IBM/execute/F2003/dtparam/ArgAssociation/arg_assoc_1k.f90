@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArgAssociation/arg_assoc_1k.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Mar. 18, 2009
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 361232
 !*
@@ -80,7 +76,7 @@ contains
         p2%dta = [(i,i=11,13)]
         p2%dtb = 'XYZ'
         p2%compa = base(3)('ABC',[(i,i=11,19)])
-        p2%dtc => autotar 
+        p2%dtc => autotar
         p2%compb => p1
     end subroutine
 end

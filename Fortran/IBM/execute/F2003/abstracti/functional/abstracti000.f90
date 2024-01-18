@@ -1,23 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquida
 !*  DATE                       : 02/20/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
-!*                               scalar polymorphic derived type variable with 
+!*                               scalar polymorphic derived type variable with
 !*                               abstract type
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

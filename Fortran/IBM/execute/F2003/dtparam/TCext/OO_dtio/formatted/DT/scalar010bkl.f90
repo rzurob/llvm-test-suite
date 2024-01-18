@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar010bkl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar010b by Robert Ma)
 !*  DATE                       : 2007-06-05 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        io-implied-do inside DTIO for derived type components
@@ -106,7 +98,7 @@ use m, only: base, data
    character(*), intent(inout) :: iomsg
 
    character(60) :: fmt
-   
+
    write ( unit, * ) iotype, v_list
    write ( fmt, * ) '(', ( 'DT(',i,'),',i=1,size(dtv%d)-1 ) ,' DT(', size(dtv%d), '), 1X, I4)'
    write ( unit, fmt, iomsg = iomsg ) (dtv%d(i),i=1,size(dtv%d)), dtv%k
@@ -128,7 +120,7 @@ use m, only: data
    character(*), intent(inout) :: iomsg
 
    character(40) :: fmt = ''
-   
+
    write ( unit, "(/)" )
    write ( unit, * ) 'iotype: ', iotype, ' v_list: ', v_list
    write ( unit, "(I4)" )  dtv%i

@@ -1,20 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchSpecDataXfer08d - ASYNCHRONOUS=
 !*                               Specifier in I/O Statements
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March  1, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS=variable Specifier in Data
 !*                               Transfer Statement
 !*  SECONDARY FUNCTIONS TESTED : File OPEN()ed with ASYNCHRONOUS=variable
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : READ(), WRITE(), ASYNCHRONOUS= Specifier

@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : PointerDummyDiag1.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Ren Jian Gang
 !*  DATE                       : June 4, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
@@ -16,7 +12,6 @@
 !*
 !*  REFERENCE                  : Feature Number 916820
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -54,7 +49,7 @@ t1 = 5
 t2 = 7
 call sub(t1, t2) ! Hello World 12
 
-t1 = 100 
+t1 = 100
 t2 = -200
 call sub(t1, t2) ! Hello World -100
 
@@ -75,7 +70,7 @@ r2 = 4.0
 contains
   real function minfloat(r1, r2)
     real, pointer, intent(in) :: r1, r2
-        
+
     minfloat = r1 - r2
   end
 end

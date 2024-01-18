@@ -1,31 +1,23 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeUnlimitedPolyComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeUnlimitedPolyComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 16 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 16 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. DERIVED TYPE HAS EXTENDED TYPE
 !* 4. COMPONENT IS UNLIMTED POLYMORPHIC
-!* 5. TSOURCE AND FSOURCE ARE UNLIMITED POLYMORPHIC 
+!* 5. TSOURCE AND FSOURCE ARE UNLIMITED POLYMORPHIC
 !* 6. DEFECT 356275 355334
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -48,16 +40,16 @@ program mergeUnlimitedPolyComp01
    implicit none
 
    class(*),pointer     :: poly1=>null()
-   class(*),allocatable :: poly2   
-    
+   class(*),allocatable :: poly2
+
    type(B(2,3,4)),target    :: b1=B(2,3,4)(i=10,c1="123",c2="456",poly=null())
    type(B(2,3,4))           :: b2=B(2,3,4)(i=20,c1="000",c2="111",poly=null())
 
    allocate(b1%poly,source=b1%A)
-   allocate(b2%poly,source=b2%A) 
-  
+   allocate(b2%poly,source=b2%A)
+
    poly1=>b1
-   allocate(poly2,source=b2) 
+   allocate(poly2,source=b2)
 
    associate(x=>merge(poly1,poly2,.true.))
       select type(y=>x)
@@ -154,7 +146,7 @@ program mergeUnlimitedPolyComp01
             if(y /= "123456")                            error stop 34_4
          class default
             error stop 106_4
-      end select      
+      end select
    end associate
 
    associate(x=>merge([b1%poly,b1%poly],[b2%poly,b2%poly],[.false.,.true.]))
@@ -164,6 +156,6 @@ program mergeUnlimitedPolyComp01
          class default
             error stop 107_4
       end select
-   end associate  
+   end associate
 
 end program

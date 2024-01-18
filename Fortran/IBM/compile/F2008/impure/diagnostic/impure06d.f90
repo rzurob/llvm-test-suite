@@ -1,17 +1,14 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure06d
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
-!*  
+!*
 !*  DESCRIPTION
 !*
 !* diagnostic TC to make sure IMPURE elemental feature does not work with FORALL
-!*  
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -24,15 +21,15 @@ PROGRAM main
   INTEGER :: i
   REAL :: a(n), b(n)
   a = (/ (i, i = 1, n) /)
-  
-forall (i=500:2500) 
+
+forall (i=500:2500)
 b(i) = func2(a(i))
-   
+
   end forall
 
 forall (i=500:2500)
 b(i) = func1(a(i))
-   
+
   end forall
 
   CONTAINS

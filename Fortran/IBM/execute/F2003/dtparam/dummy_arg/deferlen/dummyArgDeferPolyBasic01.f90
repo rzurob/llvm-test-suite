@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyBasic01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyBasic01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 13 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 13 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. dummy argument is intent(out) polymorphic allocatable with deferred length, modify actual argument through last level of procedure call , and verify actual arugment's type and component value
@@ -26,21 +18,21 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type base(k1,l1)
-      integer,kind :: k1 
+      integer,kind :: k1
       integer,len  :: l1
   end type
 
   type,extends(base) :: child(k2,l2)
       integer,kind :: k2
       integer,len  :: l2
-      integer(k1+k2)  :: i1(l1:l2)  
+      integer(k1+k2)  :: i1(l1:l2)
   end type
 
   contains
 
     subroutine sub1(arg)
 
-      class(base(2,:)),allocatable,intent(out) :: arg 
+      class(base(2,:)),allocatable,intent(out) :: arg
 
       call sub2(arg)
 
@@ -50,7 +42,7 @@ module m
     subroutine sub2(arg)
 
       class(base(2,:)),allocatable,intent(out) :: arg
-      
+
       call sub3(arg)
 
     end subroutine
@@ -64,9 +56,9 @@ module m
       select type(arg)
          type is (child(2,*,2,*))
             arg%i1=[-1,-2,-3]
-         type is (base(2,*))  
+         type is (base(2,*))
             error stop 10_4
-      end select 
+      end select
     end subroutine
 
 end module
@@ -83,7 +75,7 @@ program dummyArgDeferPolyBasic01
      type is(child(2,*,2,*))
           print *,"it is child"
           print *,base1%i1
-     type is(base(2,*)) 
+     type is(base(2,*))
           error stop 11_4
-  end select 
+  end select
 end program

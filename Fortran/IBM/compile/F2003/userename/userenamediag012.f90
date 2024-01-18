@@ -12,29 +12,22 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenamediag011.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : ensure renaming an operator to one within a different modules to same name gives error
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module opmod
 
-  
-  
+
+
   interface operator(.addreal.)
     module procedure plusreal
   end interface
@@ -50,7 +43,7 @@ end module
 
 module opmod2
 
-   
+
   interface operator(.add.)
     module procedure plus
   end interface
@@ -67,18 +60,18 @@ end module
 
 program main
 
-   
 
- use opmod 
+
+ use opmod
  use opmod2 ,  operator(.thisisprobablywaytoomanyletterstouseasanameforanoperatorundertherulesgoverningfortranstandard.) => operator(.add.)
 
- 
- 
+
+
 
   real :: a=1.0,b=2.0,c
   real :: d=1.0,e=2.0,f
   c=a.thisisprobablywaytoomanyletterstouseasanameforanoperatorundertherulesgoverningfortranstandard.b
-  
-  
-  
+
+
+
 end program

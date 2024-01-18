@@ -3,24 +3,12 @@
 ! opt variations: -qnok -qnol -qdeferredlp
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : deferFrmCmpPntUlmCmpTo.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is of type character(:)
 !*                               TO is of class(*), component of DT
@@ -35,10 +23,10 @@
 
 module m
     character(:, kind=1), pointer :: p1(:)
-    character(len=:), allocatable, target :: from(:,:) 
+    character(len=:), allocatable, target :: from(:,:)
 end module
 
-program main 
+program main
 use m
     type ::  base(k1,n1)    ! (4,20)
         integer, kind :: k1
@@ -62,7 +50,7 @@ use m
     select type (x => a%to)
         type is (character(*))
             if ( .not. associated(a%p2, x)  ) stop 21
-            print *, x 
+            print *, x
     end select
 end
 

@@ -1,23 +1,16 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound01d
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug 20, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Diagnostic
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DESCRIPTION                : Test semantic checking for non-coarray 
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : Test semantic checking for non-coarray
 !*                               entities being passed to COBOUND intrinsics.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

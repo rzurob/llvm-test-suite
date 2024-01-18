@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/pack
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/22/2005
 ! PRIMARY FUNCTIONS TESTED   : pack
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : ARRAY is a dummy argument. Dummy
 !                              argument is a pointer or allocatable,
 !                              poly, and is array.

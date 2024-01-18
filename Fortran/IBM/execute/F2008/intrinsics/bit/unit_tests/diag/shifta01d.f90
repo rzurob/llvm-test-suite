@@ -1,29 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : shifta01d.f
-!*
-!*  PROGRAMMER                 : Maryam Moghadas
 !*  DATE                       : 2013-02-27
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SHIFTA intrinsics
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              :
 !*
 !*  DESCRIPTION                : SHIFTA(I, SHIFT)
 !*
 !*  Test the compilation fails if:
 !*
-!*  * first argument is not an integer type, 
+!*  * first argument is not an integer type,
 !*  * second argument not a nonnegative integer type less than or equal to the BIT-SIZE(I)
-!*
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -46,11 +35,5 @@ program shifta_test
  print *, SHIFTA(2, 35)
  print *, SHIFTA(INT(2,1), 10)
 
-end 
-
-
-
-
-
-
+end
 

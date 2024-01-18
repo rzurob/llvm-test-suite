@@ -1,23 +1,17 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : aceStrConstrSelector02
-!*  TEST CASE TITLE            : Basic (non-Polymorphic) Array Constructors
 !*                               with DTP
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : November 13, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor contains Structure
 !*                               Constructors (with Type Parameters)
 !*  SECONDARY FUNCTIONS TESTED : and the Array Constructor is used as the
 !*                               selector in an ASSOCIATE Construct
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

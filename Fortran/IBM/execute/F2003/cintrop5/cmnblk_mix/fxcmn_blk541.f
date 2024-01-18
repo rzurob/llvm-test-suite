@@ -2,35 +2,28 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk541 cxcmn_blk501
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: rm -f fxcmn_blk541.o cxcmn_blk501.o fxcmn_blk541
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that 1-dimensional array variables
 !*				 of default data types inside of common blocks are
-!*				 interoperable with C variables 
+!*				 interoperable with C variables
 !*
 !*				 Test:  BIND(C) statement in module procedure
 !*
@@ -39,9 +32,9 @@
 !*  MM/DD/YY:  Init:  Comments:
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
-!*					
+!*
 
-module fmod1 
+module fmod1
    implicit none
 
    CONTAINS
@@ -50,8 +43,8 @@ module fmod1
         implicit none
 	logical precision_r4
 
-        integer :: 	int_d(5) 
-        real :: 	real_d(5) 
+        integer :: 	int_d(5)
+        real :: 	real_d(5)
         character 	char_d(16)
 
 
@@ -59,12 +52,12 @@ module fmod1
 !      COMMON statement with same COMMON block repeated numourous times;
 !      BIND(C) statement with one bind entity
 ! ----------------------------------------------------------------------------
-        common /blk_d/         int_d               , /blk_d/ real_d           , /blk_d/   char_d                                                                               
+        common /blk_d/         int_d               , /blk_d/ real_d           , /blk_d/   char_d
         bind(c) :: /blk_d/
 
 
 ! ----------------------------------------------------------------------------
-! Dafault Array Initialization  
+! Dafault Array Initialization
 ! ----------------------------------------------------------------------------
 
 	!*** Default integer array
@@ -149,7 +142,7 @@ module fmod1
        	if ( .not. precision_r4( real_d(3),     -3.404443E+37 )) error stop 42
        	if ( .not. precision_r4( real_d(2),     -0.115494E-37 )) error stop 43
        	if ( .not. precision_r4( real_d(1),     1.175494E-39  )) error stop 44
-	
+
        	if ( char_d(1)   .ne.    '\f'    )                       error stop 45
        	if ( char_d(2)   .ne.    'N'     )                       error stop 46
        	if ( char_d(3)   .ne.    'o'     )                       error stop 47
@@ -169,18 +162,18 @@ module fmod1
 
      end subroutine
 
-end module fmod1 
+end module fmod1
 
 
 
 program fxcmn_blk541
-	use fmod1 
+	use fmod1
 	use iso_c_binding
         implicit none
 	logical precision_r4
 
-        integer :: 	int_d(5) 
-        real :: 	real_d(5) 
+        integer :: 	int_d(5)
+        real :: 	real_d(5)
         character 	char_d(16)
 
 
@@ -188,14 +181,14 @@ program fxcmn_blk541
 !      COMMON statement with same COMMON block repeated numourous times;
 !      BIND(C) statement with one bind entity
 ! ----------------------------------------------------------------------------
-        common /blk_d/         int_d               , /blk_d/ real_d           , /blk_d/   char_d                                                                               
+        common /blk_d/         int_d               , /blk_d/ real_d           , /blk_d/   char_d
         bind(c) :: /blk_d/
 
 	!*** Call module subroutine
 	call Intern_FSub()
 
-! ---------------------------------------------------------------------------- 
-! Verification 
+! ----------------------------------------------------------------------------
+! Verification
 !       - verify values passed back from module subroutine
 ! ----------------------------------------------------------------------------
 
@@ -210,7 +203,7 @@ program fxcmn_blk541
        	if ( .not. precision_r4( real_d(3),     -3.404443E+37 )) error stop 162
        	if ( .not. precision_r4( real_d(2),     -0.115494E-37 )) error stop 163
        	if ( .not. precision_r4( real_d(1),     1.175494E-39  )) error stop 164
-	
+
        	if ( char_d(1)   .ne.    '\f'    )                       error stop 165
        	if ( char_d(2)   .ne.    'N'     )                       error stop 166
        	if ( char_d(3)   .ne.    'o'     )                       error stop 167

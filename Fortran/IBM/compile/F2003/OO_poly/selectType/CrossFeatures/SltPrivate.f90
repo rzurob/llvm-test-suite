@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp SltPrivate.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : SltPrivate 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : SltPrivate
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 28, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,40 +30,40 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Diagnostic : The selector is a private  component 
-!* 
-!*  () 
+!*
+!*  Diagnostic : The selector is a private  component
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
     TYPE  :: DT0
-      INTEGER(4)      :: IArr(2)=-1 
-      CHARACTER(1025), PRIVATE :: CArr(2)="!" 
+      INTEGER(4)      :: IArr(2)=-1
+      CHARACTER(1025), PRIVATE :: CArr(2)="!"
     END TYPE
 
     TYPE, ABSTRACT :: DT1
       CLASS(DT0), POINTER, PRIVATE :: Ptr
     END TYPE
-  
+
     TYPE, EXTENDS(DT1) :: DT
       PRIVATE
     END TYPE
-  
+
   END MODULE
 
   PROGRAM SltPrivate
   USE M
   IMPLICIT NONE
   TYPE(DT0), TARGET :: V
- 
+
   TYPE (DT)  :: U
 
   CALL Sub(U)
 
   CONTAINS
- 
+
   SUBROUTINE Sub(U)
   CLASS(DT1) :: U
 
@@ -77,8 +71,8 @@
   CLASS IS (DT)
     SELECT TYPE (U => U%DT1%Ptr)
     CLASS IS (DT0)
-    END SELECT 
-  END SELECT 
+    END SELECT
+  END SELECT
 
   END SUBROUTINE
 

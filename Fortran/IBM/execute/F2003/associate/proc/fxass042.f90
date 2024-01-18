@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass042.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass042.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -69,8 +57,8 @@
 
       program fxass42a
       implicit none
- 
-      interface 
+
+      interface
       recursive function real_fun(a) result (c)
             real a
             real :: c
@@ -105,24 +93,24 @@
       real*16 a16 / 5.0 /
       real*16 c16 / 2.0q0 /
 
- 
-      c = real_fun(a) 
-         if(c .eq. 0.0)then 
+
+      c = real_fun(a)
+         if(c .eq. 0.0)then
            error stop 10
          endif
 
       c4 = real4_fun(a4)
-         if(c4 .eq. 0.0)then 
+         if(c4 .eq. 0.0)then
            error stop 13
          endif
 
       c8 = real8_fun(a8)
-         if(c8 .eq. 0.0)then 
+         if(c8 .eq. 0.0)then
            error stop 14
          endif
 
       c16 = real16_fun(a16)
-         if(c16 .eq. 0.0)then 
+         if(c16 .eq. 0.0)then
            error stop 15
          endif
 
@@ -133,7 +121,7 @@
             real a,b
             real :: c
             logical :: precision_r4, precision_r6, precision_r8
-            b = 4.4 
+            b = 4.4
             if ( a .le. 1.0) then
               associate ( arg => a*2 + b )
               if (.not.precision_r4(arg,(a*2 + b))) then

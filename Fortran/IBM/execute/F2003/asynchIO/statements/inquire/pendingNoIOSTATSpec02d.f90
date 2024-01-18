@@ -1,20 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingNoIOSTATSpec02d - INQUIRE() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 29, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Data Transfers with an Error Condition
 !*  SECONDARY FUNCTIONS TESTED : INQUIRE() with the PENDING=, and ERR=
 !*                               Specifiers; the IOSTAT= Specifier is *NOT*
 !*                               present
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : INQUIRE(), PENDING= Specifier, ERR=
@@ -46,12 +39,10 @@
 !*  C950 (R930) If an ID= specifier appears, a PENDING= specifier shall
 !*              also appear.
 !*
-!*
 !*  9.9.1.13 ID= specifier in the INQUIRE statement
 !*
 !*  The value of the expression specified in the ID= specifier shall be the
 !*  identifier of a pending data transfer operation for the specified unit.
-!*
 !*
 !*  9.9.1.20 PENDING= specifier in the INQUIRE statement
 !*

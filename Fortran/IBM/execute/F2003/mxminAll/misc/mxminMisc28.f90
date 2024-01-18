@@ -1,28 +1,16 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX*/MIN* in formatted I/O
 !*
-!*
 !* ===================================================================
 
-program mxminMisc28 
+program mxminMisc28
 
   integer :: io_stat
 
@@ -38,7 +26,7 @@ program mxminMisc28
 
   charArr(1:4,1:2,2:3) = 'Zui'
   charArr(4,2:3,3:5) = 'Zzz'
-  charArr(4,3:,5:) = 'zTY'    
+  charArr(4,3:,5:) = 'zTY'
 
   logArr = .true.
   logArr(1:3,2:5,4:) = .false.
@@ -57,7 +45,6 @@ program mxminMisc28
      end if
 
   deallocate(charArr)
- 
-end program mxminMisc28 
 
+end program mxminMisc28
 

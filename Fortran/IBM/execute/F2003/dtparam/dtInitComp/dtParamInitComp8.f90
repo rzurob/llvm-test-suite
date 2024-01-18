@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitComp8 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitComp8
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : June 06, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Default initialization for component 
+!*  SECONDARY FUNCTIONS TESTED : Default initialization for component
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  Explicit initialization in a type declaration statement overrides default initialization  
-!*  
-!*  
+!*  Explicit initialization in a type declaration statement overrides default initialization
 !*
-!* () 
+!* ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,7 +44,7 @@
       PROCEDURE(IntFun), POINTER :: ProcPtr => NULL()
       LOGICAL(K)   :: LL(L)=.TRUE._8
     CONTAINS
-      PROCEDURE, PASS :: IntFun 
+      PROCEDURE, PASS :: IntFun
     END TYPE
 
     TYPE :: DT2(K2,L2)
@@ -66,7 +57,7 @@
                 Z=(/((-K2,K2), I=1,K2)/),          &
                 C="??????????",                    &
                 ProcPtr=NULL(),                    &
-                LL=(/(.FALSE._4, I=1,K2)/)   )    
+                LL=(/(.FALSE._4, I=1,K2)/)   )
     END TYPE
 
   CONTAINS
@@ -80,7 +71,7 @@
   END MODULE
 
 
-  PROGRAM dtParamInitComp8 
+  PROGRAM dtParamInitComp8
   USE M
 
   TYPE(DT2(K2=4, L2=4)) :: T=DT2(K2=4, L2=4) ( &
@@ -116,7 +107,7 @@
 
   IF ( ASSOCIATED(T%t%ProcPtr) )              STOP 57
 
- 
+
 
   END
 

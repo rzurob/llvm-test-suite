@@ -1,13 +1,11 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                                IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : do_concurrent_d009.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2015-03-20
 !*  ORIGIN                     :
 !*
@@ -15,8 +13,8 @@
 !*  SECONDARY FUNCTIONS TESTED :
 !*  ADAPTED FROM               :
 !*
-!*  DESCRIPTION                : 
-!*   - A reference to IEEE_GET_FLAG, IEEE_SET_HALTING_MODE, IEEE_GET_HALTING_MODE 
+!*  DESCRIPTION                :
+!*   - A reference to IEEE_GET_FLAG, IEEE_SET_HALTING_MODE, IEEE_GET_HALTING_MODE
 !*     from IEEE_EXCEPTIONS appears in a do concurrent construct
 !*
 !=============================================================================

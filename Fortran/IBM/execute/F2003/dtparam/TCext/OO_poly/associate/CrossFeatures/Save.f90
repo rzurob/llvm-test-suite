@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  Save.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Save 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Save
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 09, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,8 +32,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is an entity  with save 
-!*    (300942) 
+!*    The selector is an entity  with save
+!*    (300942)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -48,7 +42,7 @@
     TYPE :: Base(K1)    ! (4)
       INTEGER, KIND :: K1
       INTEGER(K1)   :: BaseId = 1
-      CLASS(*), ALLOCATABLE :: Unknown(:) 
+      CLASS(*), ALLOCATABLE :: Unknown(:)
       CONTAINS
       PROCEDURE,nopass :: Bnd
     END TYPE
@@ -58,7 +52,7 @@
     END TYPE
 
     CONTAINS
-  
+
     ELEMENTAL FUNCTION Bnd(Arg)
     INTEGER, INTENT(IN) :: Arg
     INTEGER :: Bnd
@@ -66,16 +60,16 @@
     END FUNCTION
 
   END MODULE
-  
-  PROGRAM Save 
+
+  PROGRAM Save
 
   USE M, DT=>Child
   IMPLICIT NONE
 
   TYPE(DT(4)) :: V(3)
- 
+
   V = DT(4)(ChildID=2, BaseID=1, Unknown=(/"123","123"/))
- 
+
   CALL Sub(V)
 
   IF ( ANY(V%BaseID  .NE.  -1 ) )  STOP 51
@@ -95,20 +89,20 @@
   END SELECT
 
   CONTAINS
- 
+
   SUBROUTINE Sub(Arg)
   CLASS(DT(4))       :: Arg(3)
-  TYPE(DT(4)), SAVE :: T(3)=DT(4)(ChildID=-2, BaseID=-1, Unknown=NULL()) 
-  TYPE(DT(4))        :: Temp(3) 
+  TYPE(DT(4)), SAVE :: T(3)=DT(4)(ChildID=-2, BaseID=-1, Unknown=NULL())
+  TYPE(DT(4))        :: Temp(3)
 
   ASSOCIATE ( As1 => T, As2 => Arg)
   SELECT TYPE (As2)
   TYPE IS (DT(4))
 
-      Temp = As2 
+      Temp = As2
       As2  = As1
       As1  = Temp
- 
+
   CLASS DEFAULT
     STOP 98
   END SELECT

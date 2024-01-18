@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp Common2.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Common2.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Common2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 28, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Common block -
 !*  A variable-name or proc-pointer-name shall not be a name made accessible
-!*  by use association. 
+!*  by use association.
 !*  (304369-invalid. Overwriting the host ones)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -47,22 +41,22 @@
   MODULE M
 
   PROCEDURE(), POINTER :: ProcPtr
-  INTEGER              :: I 
-  COMMON ProcPtr 
+  INTEGER              :: I
+  COMMON ProcPtr
 
- 
+
   END MODULE
 
-  PROGRAM Common2 
+  PROGRAM Common2
   USE M
 
-  COMMON ProcPtr 
-   
+  COMMON ProcPtr
+
   CONTAINS
 
   SUBROUTINE IntSub()
   COMMON ProcPtr  !no complain here
-  END SUBROUTINE 
+  END SUBROUTINE
 
 
   END
@@ -72,7 +66,7 @@
   COMMON ProcPtr
 
   CONTAINS
-  
+
   SUBROUTINE IntSub()
   COMMON ProcPtr  !no complain here
   END SUBROUTINE

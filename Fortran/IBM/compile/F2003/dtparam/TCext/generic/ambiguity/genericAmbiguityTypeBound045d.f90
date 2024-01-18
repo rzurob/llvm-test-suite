@@ -3,25 +3,13 @@
 ! opt variations: -qnol
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : ambiguious generic interfaces
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : deferred binding using same interface, and deferred binding in another type and optional dummy args
-!*
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -84,7 +72,7 @@ module genericName
          class(g1(*,4)), intent(in) :: a
          class(b1(*,4)), intent(in) :: b, c
          optional :: c
-         
+
       end subroutine
 
 

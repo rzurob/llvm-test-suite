@@ -1,16 +1,8 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : pointer array, VOLATILE
-!*
 !*
 !*  DESCRIPTION                : diagnostic TC for  C1233
 !*
@@ -20,7 +12,7 @@
 !*        a pointer array.
 !* ===================================================================
 
-  program volatileC1233PointerArray01d 
+  program volatileC1233PointerArray01d
 
     interface
         subroutine ExplicitArray(x)
@@ -36,10 +28,9 @@
 
     deallocate(ptrArray)
 
-  end program volatileC1233PointerArray01d 
+  end program volatileC1233PointerArray01d
 
   subroutine ExplicitArray(x)
        class(*), VOLATILE :: x(2,2)     ! dummy arg. is explicit shape array
   end subroutine ExplicitArray
-
 

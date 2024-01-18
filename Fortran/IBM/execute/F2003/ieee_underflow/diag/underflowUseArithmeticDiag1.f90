@@ -1,29 +1,18 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : underflowUseArithmeticDiag1.f
-!*
-!*  PROGRAMMER                 : Nancy Wang
 !*  DATE                       : Nov. 15 2007
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ieee_support_underflow_control() 
+!*  PRIMARY FUNCTIONS TESTED   : ieee_support_underflow_control()
 !*                             : ieee_support_underflow_control(X)
 !*  SECONDARY FUNCTIONS TESTED : ieee_set_underflow_mode(gradual)
 !*                               ieee_get_underflow_mode(gradual)
 !*  REFERENCE                  : Feature Number 289080
 !*
+!*  DESCRIPTION                :
+!*  test if compiler issues a suitable error message when above intrinsics are referenced in program without using intrinsic ieee_arithmetic module, currently compiler will successfully let following program pass, defect 342560 was opened to track this, there is no verification file now
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                :   
-!*  test if compiler issues a suitable error message when above intrinsics are referenced in program without using intrinsic ieee_arithmetic module, currently compiler will successfully let following program pass, defect 342560 was opened to track this, there is no verification file now 
-!* 
-!23456789012345678901234567890123456789012345678901234567890123456789012   
+!23456789012345678901234567890123456789012345678901234567890123456789012
       program underflowUseArithmeticDiag1
         implicit none
         real    :: r
@@ -31,5 +20,5 @@
         if(ieee_support_underflow_control(r)) then
            call ieee_set_underflow_mode(.true.)
            call ieee_get_underflow_mode(currentMode)
-        endif         
+        endif
        end program

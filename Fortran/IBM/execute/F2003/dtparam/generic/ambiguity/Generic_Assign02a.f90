@@ -1,21 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_Assign02a
-!*                               DTP - Generic Assignment      
+!*                               DTP - Generic Assignment
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : October 02, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
-!*  SECONDARY FUNCTIONS TESTED : Resolution by kind parameter 
-!*                     
+!*  SECONDARY FUNCTIONS TESTED : Resolution by kind parameter
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -23,19 +16,19 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base (k,l)
-        INTEGER, KIND :: k 
-        INTEGER, LEN :: l 
+        INTEGER, KIND :: k
+        INTEGER, LEN :: l
 
         INTEGER :: value
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child1 (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN :: l1 
-      END TYPE Child1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN :: l1
+      END TYPE Child1
 
       TYPE, EXTENDS(Child1) :: NextGen1 (k3,l3)
         INTEGER, KIND :: k3
@@ -47,7 +40,7 @@
          module procedure assgn2
       END INTERFACE
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE assgn1(this,obj)
       CLASS(Child1(4,*,4,*)), INTENT(OUT) :: this
@@ -68,7 +61,7 @@
       END MODULE Mod1
 !*
       PROGRAM Generic_Assign02a
-      USE MOD1  
+      USE MOD1
       IMPLICIT TYPE(Base(4,10))(B)
       IMPLICIT TYPE(Child1(4,1,4,1))(C)
       IMPLICIT TYPE(NextGen1(4,1,4,1,8,1))(N)
@@ -97,12 +90,12 @@
       IF (K2%value .NE. 8) STOP 17
       K2 = M1
       IF (K2%value .NE. 8) STOP 18
-      
+
       M2 = D1
       IF (M2%value .NE. 8) STOP 19
       M2 = K1
       IF (M2%value .NE. 8) STOP 20
       M2 = M1
       IF (M2%value .NE. 8) STOP 21
-      
+
       END PROGRAM Generic_Assign02a

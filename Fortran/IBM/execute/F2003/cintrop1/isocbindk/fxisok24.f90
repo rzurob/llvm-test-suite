@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_CHAR, C_SIGNED_CHAR
@@ -125,7 +111,7 @@ integer(C_SIGNED_CHAR) function fnt1(a,b)
 
    character(C_CHAR) :: a
    integer(C_SIGNED_CHAR) :: b
-   
+
    if ( a /= 'A' ) error stop 36
    if ( b /= iachar('B') ) error stop 38
 
@@ -140,7 +126,7 @@ integer(C_SIGNED_CHAR) function fnt2(a,b)
 
    character(C_CHAR), value :: a
    integer(C_SIGNED_CHAR), value :: b
-   
+
    if ( a /= 'A' ) error stop 40
    if ( b /= iachar('B') ) error stop 42
 
@@ -155,7 +141,7 @@ integer(C_SIGNED_CHAR) function fnt3(a,b)
 
    character(C_CHAR), intent(in) :: a
    integer(C_SIGNED_CHAR), intent(in) :: b
-   
+
    if ( a /= 'A' ) error stop 44
    if ( b /= iachar('B') ) error stop 46
 
@@ -167,7 +153,7 @@ integer(C_SIGNED_CHAR) function fnt4(a,b)
 
    character(C_CHAR), intent(in), value :: a
    integer(C_SIGNED_CHAR), intent(in), value :: b
-   
+
    if ( a /= 'A' ) error stop 48
    if ( b /= iachar('B') ) error stop 50
 

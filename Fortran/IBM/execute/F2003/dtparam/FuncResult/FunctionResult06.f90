@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FunctionResult06.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : March 25, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly         
+!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,14 +17,14 @@
 !* Defect: 355394.3
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
         INTEGER, KIND :: k1
         INTEGER, LEN  :: l1
 
-        INTEGER(k1) :: A0(l1), A1(2*l1), A2(l1,l1) 
+        INTEGER(k1) :: A0(l1), A1(2*l1), A2(l1,l1)
       END TYPE
 
       TYPE,  EXTENDS(Base) :: Child (k2,l2)
@@ -52,19 +44,19 @@ MODULE Mod
       CONTAINS
 
       CLASS(*) FUNCTION BuildUpoly(Arg)
-        CLASS(*) :: Arg 
+        CLASS(*) :: Arg
         POINTER :: BuildUpoly
- 
+
         ALLOCATE( BuildUpoly, SOURCE = Arg )
- 
-      END FUNCTION   
+
+      END FUNCTION
 END MODULE
 
 PROGRAM FunctionResult06
       USE Mod
       IMPLICIT NONE
 
-      CLASS(*), POINTER :: upoly 
+      CLASS(*), POINTER :: upoly
 
       upoly => BuildUpoly( Base(4,10) ( 1, 2, 3 ) )
       SELECT TYPE ( upoly )

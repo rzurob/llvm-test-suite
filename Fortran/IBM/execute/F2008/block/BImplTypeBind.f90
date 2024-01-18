@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : BImplTypeBind
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-12-14
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 BLOCK
 !*  SECONDARY FUNCTIONS TESTED : implicit typing (var appears in BIND statement)
@@ -112,5 +108,5 @@ contains
       class default;          print *, label, ' unknown'
     end select
   end subroutine
-  
+
 end program BImplTypeBind

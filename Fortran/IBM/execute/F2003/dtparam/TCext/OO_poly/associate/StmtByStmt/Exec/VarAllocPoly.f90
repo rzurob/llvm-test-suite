@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  VarAllocPoly.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  VarAllocPoly.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : VarAllocPoly 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : VarAllocPoly
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,8 +32,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a allocatable polymorphic  variable 
-!*    The selector is a allocatable unlimited polymorphic  variable 
+!*    The selector is a allocatable polymorphic  variable
+!*    The selector is a allocatable unlimited polymorphic  variable
 !*    (ICE @  DEALLOCATE(As%BaseComp)
 !*    (295070)
 !*    (298103-Segment fault on allocating V )
@@ -56,10 +50,10 @@
 
     TYPE, EXTENDS(Base) :: Child    ! (4)
       INTEGER(K1)  :: ChildId = 2
-      TYPE(Base(K1)), ALLOCATABLE :: BaseComp 
+      TYPE(Base(K1)), ALLOCATABLE :: BaseComp
     CONTAINS
-      PROCEDURE, NOPASS :: PrintType => PrintChild 
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, NOPASS :: PrintType => PrintChild
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -89,11 +83,11 @@
 
   ALLOCATE( Child(4) :: U)
   ASSOCIATE ( As => U )
-    IF ( As%GetID() .NE. 2) STOP 50 
-    IF ( As%BaseId  .NE. 1) STOP 51 
+    IF ( As%GetID() .NE. 2) STOP 50
+    IF ( As%BaseId  .NE. 1) STOP 51
 
     ASSOCIATE ( As1 => As%BaseId )
-       IF ( As1 .NE. 1) STOP 52 
+       IF ( As1 .NE. 1) STOP 52
     END ASSOCIATE
 
     IF ( .NOT. SAME_TYPE_AS(As, Child(4)(BaseComp=NULL())) ) STOP 53
@@ -121,13 +115,13 @@
 
     SELECT TYPE ( As )
       TYPE IS (Child(4))
-        IF ( As%GetID() .NE. 2)      STOP 49 
-        IF ( As%ChildId .NE. 2)      STOP 50 
-        IF ( As%BaseId  .NE. 1)      STOP 51 
-        IF ( As%Base%GetId() .NE. 1) STOP 52 
+        IF ( As%GetID() .NE. 2)      STOP 49
+        IF ( As%ChildId .NE. 2)      STOP 50
+        IF ( As%BaseId  .NE. 1)      STOP 51
+        IF ( As%Base%GetId() .NE. 1) STOP 52
 
         ASSOCIATE ( As1 => As%BaseId )
-         IF ( As1 .NE. 1) STOP 52 
+         IF ( As1 .NE. 1) STOP 52
         END ASSOCIATE
 
         IF ( .NOT. SAME_TYPE_AS(As, Child(4)(BaseComp=NULL())) ) STOP 53

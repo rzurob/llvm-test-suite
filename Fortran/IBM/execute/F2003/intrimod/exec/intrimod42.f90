@@ -1,25 +1,22 @@
 ! ************************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/intrimod42.presh intrimod42 
+! %PRECMD: $TR_SRC/intrimod42.presh intrimod42
 ! %COMPOPTS: -qhalt=w -qmodule=mangle81
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod42.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Testing backward compatibility with XLF8.1.
-!*                     Calling module procedures where the modules are 
+!*                     Calling module procedures where the modules are
 !*                     pre-compiled with 8.1 and the mainline is compiled
 !*                     with Post 8.1 using the Option "-qmodule=mangle81".
 !*
@@ -87,5 +84,5 @@
          if ( get_fpscr_flags(flags(5)) .eq. 0 ) stop 38
 
 
-      end 
+      end
 

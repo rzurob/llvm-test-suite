@@ -1,21 +1,11 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Andy Chen
 !*  DATE                       : October 5, 2010
 !* .or.GIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Test external procedures (function and
 !                                subroutine).Argument type: array and scalar.
@@ -55,7 +45,7 @@ program coindex_procedure_012f
     caf3 = [((i*me*1.0), i=1,10)]
 
     sync all
-    
+
     sum1 = 0.0
     sum2 = 0.0
 
@@ -68,7 +58,7 @@ program coindex_procedure_012f
     if ( .not. precision_r4(sum1*2.0, sum2+sum3)) then
         print *, 'sum1=',sum1,' sum2=',sum2,' sum3=', sum3
         error stop 1
-    end if 
+    end if
 
 end program
 
@@ -90,5 +80,5 @@ real(4) function arraysum2(x, n)
     do i = 1, n
         y = y + x(i)
     end do
-    arraysum2 = y 
+    arraysum2 = y
 end function

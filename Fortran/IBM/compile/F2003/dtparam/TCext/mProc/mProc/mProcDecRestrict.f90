@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcDecRestrict.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mProcDecRestrict.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 07, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement 
+!*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 296676 
+!*  REFERENCE                  : Feature Number 296676
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,12 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  If a generic procedure is accessed from a module, the rules apply to all the specific  
-!*  versions even if some of them are inaccessible by their specific names 
-!*  
+!*  If a generic procedure is accessed from a module, the rules apply to all the specific
+!*  versions even if some of them are inaccessible by their specific names
 !*
-!* 
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -47,27 +38,27 @@
     CHARACTER(kind=K1,len=N1) :: ID
   CONTAINS
     GENERIC    :: ASSIGNMENT(=) => ModSub
-    PROCEDURE, PASS(Arg2)  :: ModSub 
+    PROCEDURE, PASS(Arg2)  :: ModSub
   END TYPE
- 
+
   CONTAINS
 
   SUBROUTINE ModSub(Arg1, Arg2)
-  TYPE(DT(1,*)),          INTENT(OUT)   :: Arg1 
-  CLASS(DT(1,*)),         INTENT(IN)    :: Arg2 
+  TYPE(DT(1,*)),          INTENT(OUT)   :: Arg1
+  CLASS(DT(1,*)),         INTENT(IN)    :: Arg2
   END SUBROUTINE
 
   SUBROUTINE ModSub1(Arg1, Arg2)
-  TYPE(DT(1,*)),          INTENT(OUT)  :: Arg1 
-  CLASS(DT(1,*)),         INTENT(IN)   :: Arg2 
+  TYPE(DT(1,*)),          INTENT(OUT)  :: Arg1
+  CLASS(DT(1,*)),         INTENT(IN)   :: Arg2
   END SUBROUTINE
 
   END MODULE
-  
+
   MODULE M1
   USE M, ONLY: DT, ModSub1
 
-  INTERFACE ASSIGNMENT(=) 
+  INTERFACE ASSIGNMENT(=)
     PROCEDURE ModSub1
   END INTERFACE
 
@@ -76,7 +67,7 @@
   MODULE M2
   USE M, ONLY : ModSub, ModSub1
 
-  INTERFACE  ASSIGNMENT(=) 
+  INTERFACE  ASSIGNMENT(=)
     PROCEDURE ModSub
     PROCEDURE ModSub1
   END INTERFACE
@@ -88,13 +79,13 @@
 
   PROCEDURE(ModSub), POINTER :: ProcPtr
 
-  INTERFACE  ASSIGNMENT(=) 
-    PROCEDURE ProcPtr 
+  INTERFACE  ASSIGNMENT(=)
+    PROCEDURE ProcPtr
   END INTERFACE
 
   END MODULE
 
-  PROGRAM mProcDecRestrict 
+  PROGRAM mProcDecRestrict
 
   END
 

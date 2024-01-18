@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemBTEST.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemBTEST.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 24, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
+!*
 !*  - BTEST
 !*  ()
 !*
@@ -35,7 +28,7 @@
 
 
 
-  PROGRAM InitExpDefElemBTEST 
+  PROGRAM InitExpDefElemBTEST
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -93,52 +86,52 @@
   LOGICAL(4), PARAMETER    :: S88(2,2)=BTEST(2_8, A8)
 
 
- 
-  IF ( .NOT. L1 )      STOP 11 
-  IF ( .NOT. L2 )      STOP 12 
-  IF ( .NOT. L4 )      STOP 13 
-  IF ( .NOT. L8 )      STOP 14 
 
-  IF (ANY( T11 .NEQV. R1  ) )    STOP 21 
-  IF (ANY( T12 .NEQV. R1  ) )    STOP 22 
-  IF (ANY( T14 .NEQV. R1  ) )    STOP 23 
-  IF (ANY( T18 .NEQV. R1  ) )    STOP 24 
+  IF ( .NOT. L1 )      STOP 11
+  IF ( .NOT. L2 )      STOP 12
+  IF ( .NOT. L4 )      STOP 13
+  IF ( .NOT. L8 )      STOP 14
 
-  IF (ANY( T21 .NEQV. R1  ) )    STOP 31 
-  IF (ANY( T22 .NEQV. R1  ) )    STOP 32 
-  IF (ANY( T24 .NEQV. R1  ) )    STOP 33 
-  IF (ANY( T28 .NEQV. R1  ) )    STOP 34 
+  IF (ANY( T11 .NEQV. R1  ) )    STOP 21
+  IF (ANY( T12 .NEQV. R1  ) )    STOP 22
+  IF (ANY( T14 .NEQV. R1  ) )    STOP 23
+  IF (ANY( T18 .NEQV. R1  ) )    STOP 24
 
-  IF (ANY( T41 .NEQV. R1  ) )    STOP 41 
-  IF (ANY( T42 .NEQV. R1  ) )    STOP 42 
-  IF (ANY( T44 .NEQV. R1  ) )    STOP 43 
-  IF (ANY( T48 .NEQV. R1  ) )    STOP 44 
+  IF (ANY( T21 .NEQV. R1  ) )    STOP 31
+  IF (ANY( T22 .NEQV. R1  ) )    STOP 32
+  IF (ANY( T24 .NEQV. R1  ) )    STOP 33
+  IF (ANY( T28 .NEQV. R1  ) )    STOP 34
 
-  IF (ANY( T81 .NEQV. R1  ) )    STOP 51 
-  IF (ANY( T82 .NEQV. R1  ) )    STOP 52 
-  IF (ANY( T84 .NEQV. R1  ) )    STOP 53 
-  IF (ANY( T88 .NEQV. R1  ) )    STOP 54 
+  IF (ANY( T41 .NEQV. R1  ) )    STOP 41
+  IF (ANY( T42 .NEQV. R1  ) )    STOP 42
+  IF (ANY( T44 .NEQV. R1  ) )    STOP 43
+  IF (ANY( T48 .NEQV. R1  ) )    STOP 44
 
-  IF (ANY( S11 .NEQV. R2  ) )    STOP 61 
-  IF (ANY( S12 .NEQV. R2  ) )    STOP 62 
-  IF (ANY( S14 .NEQV. R2  ) )    STOP 63 
-  IF (ANY( S18 .NEQV. R2  ) )    STOP 64 
+  IF (ANY( T81 .NEQV. R1  ) )    STOP 51
+  IF (ANY( T82 .NEQV. R1  ) )    STOP 52
+  IF (ANY( T84 .NEQV. R1  ) )    STOP 53
+  IF (ANY( T88 .NEQV. R1  ) )    STOP 54
 
-  IF (ANY( S21 .NEQV. R2  ) )    STOP 71 
-  IF (ANY( S22 .NEQV. R2  ) )    STOP 72 
-  IF (ANY( S24 .NEQV. R2  ) )    STOP 73 
-  IF (ANY( s28 .NEQV. R2  ) )    STOP 74 
+  IF (ANY( S11 .NEQV. R2  ) )    STOP 61
+  IF (ANY( S12 .NEQV. R2  ) )    STOP 62
+  IF (ANY( S14 .NEQV. R2  ) )    STOP 63
+  IF (ANY( S18 .NEQV. R2  ) )    STOP 64
 
-  IF (ANY( S41 .NEQV. R2  ) )    STOP 81 
-  IF (ANY( S42 .NEQV. R2  ) )    STOP 82 
-  IF (ANY( S44 .NEQV. R2  ) )    STOP 83 
-  IF (ANY( S48 .NEQV. R2  ) )    STOP 84 
+  IF (ANY( S21 .NEQV. R2  ) )    STOP 71
+  IF (ANY( S22 .NEQV. R2  ) )    STOP 72
+  IF (ANY( S24 .NEQV. R2  ) )    STOP 73
+  IF (ANY( s28 .NEQV. R2  ) )    STOP 74
 
-  IF (ANY( S81 .NEQV. R2  ) )    STOP 91 
-  IF (ANY( S82 .NEQV. R2  ) )    STOP 92 
-  IF (ANY( S84 .NEQV. R2  ) )    STOP 93 
-  IF (ANY( S88 .NEQV. R2  ) )    STOP 94 
+  IF (ANY( S41 .NEQV. R2  ) )    STOP 81
+  IF (ANY( S42 .NEQV. R2  ) )    STOP 82
+  IF (ANY( S44 .NEQV. R2  ) )    STOP 83
+  IF (ANY( S48 .NEQV. R2  ) )    STOP 84
+
+  IF (ANY( S81 .NEQV. R2  ) )    STOP 91
+  IF (ANY( S82 .NEQV. R2  ) )    STOP 92
+  IF (ANY( S84 .NEQV. R2  ) )    STOP 93
+  IF (ANY( S88 .NEQV. R2  ) )    STOP 94
 
   END
 
- 
+

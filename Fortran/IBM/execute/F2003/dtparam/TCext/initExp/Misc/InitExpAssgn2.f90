@@ -4,23 +4,18 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TESTOP CASE NAME             : InitExpAssgn2.f  
+!*  TESTOP CASE NAME             : InitExpAssgn2.f
 !*  TESTOP CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept. 07 2006
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Charber 289074 
+!*  REFERENCE                  : Feature Charber 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,11 +24,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Init with Null 
-!* 
+!*  Init with Null
+!*
 !* (325078)
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -55,13 +48,13 @@
     COMPLEX(X3), POINTER   :: Z4(:)
     COMPLEX(X4), POINTER   :: Z8(:)
     COMPLEX(X5), POINTER   :: Z6(:)
- 
+
     CHARACTER(N1), POINTER :: C(:)
   END TYPE
 
   END MODULE
 
-  PROGRAM InitExpAssgn2 
+  PROGRAM InitExpAssgn2
   USE M
   IMPLICIT NONE
 
@@ -71,21 +64,21 @@
     INTEGER, KIND                 :: X6,X7,X8,X9,X10
     INTEGER, LEN                  :: N2,N3
     TYPE(DT0(X7,X8,X6,X9,X10,N3)) :: T1=DT0(X7,X8,X6,X9,X10,1)(      &
-                 I1=NULL(),  &  
-                 I2=NULL(),  &  
-                 I4=NULL(),  &  
-                 I8=NULL(),  &  
-                 R4=NULL(),  &  
-                 R8=NULL(),  &  
-                 R6=NULL(),  &  
-                 Z4=NULL(),  &  
-                 Z8=NULL(),  &  
-                 Z6=NULL(),  &  
-                 C =NULL()   &  
+                 I1=NULL(),  &
+                 I2=NULL(),  &
+                 I4=NULL(),  &
+                 I8=NULL(),  &
+                 R4=NULL(),  &
+                 R8=NULL(),  &
+                 R6=NULL(),  &
+                 Z4=NULL(),  &
+                 Z8=NULL(),  &
+                 Z6=NULL(),  &
+                 C =NULL()   &
                        )
   END TYPE
 
- 
+
   TYPE (DT(4,20,1,2,8,16,1)) :: T(128)=[(DT(4,20,1,2,8,16,1)(T1=DT0(1,2,4,8,16,1)( &
                  I1=NULL(),  &
                  I2=NULL(),  &
@@ -120,7 +113,7 @@
   END DO
 
 
-  END 
+  END
 
 
- 
+

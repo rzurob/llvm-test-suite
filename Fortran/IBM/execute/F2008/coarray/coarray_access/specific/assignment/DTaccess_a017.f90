@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a017.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -23,7 +19,7 @@ module modMTL
 		integer(2), pointer :: i2
 	end type
 	type(A), save :: CAFA[0:2,0:*]
-	
+
 	type B
 		integer(4), pointer :: i4(:)
 		integer(8), pointer :: i8
@@ -54,7 +50,7 @@ program main
 	iatgt4 = [integer(4) :: mid1, mid2, mid4, mid8, mid1]
 	t8 = mid8
 
-	
+
 	! test assignment to coarrays
 	CAFA%i1 => iatgt1
 	CAFA%i2 => t2
@@ -66,26 +62,26 @@ program main
 		print *, "expected", mid1, mid1, mid1, mid1, mid1
 		error stop 21
 	end if
-	
+
 	if (CAFA%i2 /= mid2) then
 		print *, "actual", CAFA%i2
 		print *, "expected", mid2
 		error stop 22
 	end if
-	
+
 	if ( any(CAFB%i4 /= [integer(4) :: mid1, mid2, mid4, mid8, mid1]) ) then
 		print *, "actual", CAFB%i4
 		print *, "expected", mid1, mid2, mid4, mid8, mid1
 		error stop 23
 	end if
-	
+
 	if (CAFB%i8 /= mid8) then
 		print *, "actual", CAFB%i8
 		print *, "expected", mid8
 		error stop 24
 	end if
 
-	
+
 	! test assignment from coarrays (first, reset targets)
 	nullify(CAFA%i1)
 	nullify(CAFA%i2)
@@ -97,7 +93,7 @@ program main
 	CAFA%i2 = mid2
 	CAFB%i4 = [integer(4) :: mid4, 0, mid4, 0, mid4]
 	CAFB%i8 = mid8
-	
+
 	pa1 => CAFA%i1
 	t2 = CAFA%i2
 	iatgt4 = CAFB%i4
@@ -108,19 +104,19 @@ program main
 		print *, "expected", mid8, mid4, mid2, mid1, mid1
 		error stop 31
 	end if
-	
+
 	if ( t2 /= mid2 ) then
 		print *, "actual", t2
 		print *, "expected", mid2
 		error stop 32
 	end if
-	
+
 	if ( any(iatgt4 .ne. [integer(4) :: mid4, 0, mid4, 0, mid4]) ) then
 		print *, "actual", iatgt4
 		print *, "expected", mid4, 0, mid4, 0, mid4
 		error stop 33
 	end if
-	
+
 	if ( p8 /= mid8 ) then
 		print *, "actual", t8
 		print *, "expected", mid8

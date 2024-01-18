@@ -4,24 +4,21 @@
 ! %PRECMD: rm -f ieee_*.mod xlf_fp_util.mod
 ! %COMPOPTS: -qextname -qhalt=w
 ! %GROUP: intrimod34d.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod34d.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use INTRINSIC module in a NON_INTRINSIC module with
 !*                     the same name.
 !*                     Generic interface is used in the NON_INTRINSIC module
-!*                     -qextname is also used. 
+!*                     -qextname is also used.
 !*
 !*************************************************************************
 !*  REVISION HISTORY
@@ -32,7 +29,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !
 
-!.... A NON_INTRINSIC module with the same name as the INTRINSIC module 
+!.... A NON_INTRINSIC module with the same name as the INTRINSIC module
 !.... 'xlf_fp_util'. The INTRINSIC module is refrenced in a generic interface.
        module ieee_arithmetic
 
@@ -87,7 +84,7 @@
          do k = 1, 5
             if (flag_values(k) .neqv. .false. ) stop 10
          enddo
-         
+
          call ieee_get_status(status_value)
          call ieee_set_rounding_mode(rt_nearest)
          call ieee_get_rounding_mode(rtype)
@@ -97,19 +94,19 @@
          call ieee_set_status(status_value)
 
          call set_fpscr_flags(flags(1))
-         call clr_fpscr_flags(flags(5)) 
+         call clr_fpscr_flags(flags(5))
          if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
          if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 18
 
       end subroutine sub1
 
 
-      subroutine sub2(rt_nearest) 
+      subroutine sub2(rt_nearest)
   	 use, intrinsic :: ieee_arithmetic
 
          real*4 yr
          type(ieee_round_type) :: rtype
-         type(ieee_round_type), intent(in) :: rt_nearest 
+         type(ieee_round_type), intent(in) :: rt_nearest
          type(ieee_status_type) :: status_value
          logical :: flag_values(5)
 
@@ -117,7 +114,7 @@
          do k = 1, 5
             if (flag_values(k) .neqv. .false. ) stop 30
          enddo
-           
+
          call ieee_get_status(status_value)
          call ieee_set_rounding_mode(rt_nearest)
          call ieee_get_rounding_mode(rtype)

@@ -1,21 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : abstracti051kk
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from abstracti051
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-11-01 (original: 02/20/2006)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Abstract Interface
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*
 !*  DESCRIPTION                : Testing:
 !*  - Procedure statements with abstract interface
@@ -262,7 +255,7 @@ integer function my_tbpf(n,x,y,z,w)
   else
     z = 2*x + int(y)
     my_tbpf = sum(x) + sum(y)
-  end if 
+  end if
 
 end function my_tbpf
 
@@ -286,7 +279,7 @@ subroutine my_tbps(n,x,y,z,w,ret)
   else
     z = 2*x + int(y)
     ret = sum(x) + sum(y)
-  end if 
+  end if
 
 end subroutine my_tbps
 
@@ -309,7 +302,7 @@ integer function one(n,x,y,z,w)
   else
     z = 2*x + int(y)
     one = sum(x) + sum(y)
-  end if 
+  end if
 
 end function one
 
@@ -333,7 +326,7 @@ subroutine two(n,x,y,z,w,ret)
   else
     z = 2*x + int(y)
     ret = sum(x) + sum(y)
-  end if 
+  end if
 
 end subroutine two
 

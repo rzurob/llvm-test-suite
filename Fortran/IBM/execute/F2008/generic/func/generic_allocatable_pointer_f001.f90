@@ -1,25 +1,17 @@
-!#######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/generic/func/generic_allocatable_pointer_f001.f
 !*  TYPE                       : Functional test
 !*  FEATURE                    : #917301 F2008: Generic resolution extensions
 !*  RTC Master Story           : 17301: F2008: Generic resolution extensions (master story)
 !*                               https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/17301
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 29 June 2012
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  DRIVER STANZA              : xlf2008 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !* ===================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -29,7 +21,7 @@ implicit none
       subroutine i1_alloc_sub(x,y)
          integer*1,allocatable ::x
          integer*1 y
-      end  subroutine 
+      end  subroutine
       subroutine i1_ptr_sub(x,y)
          integer*1, pointer ::x
          integer*1 y
@@ -322,7 +314,7 @@ implicit none
      i1_ptr => i1_tgt
 
      call alloc_ptr_sub(i1_alloc, i1_res)
-     if (i1_res /= 77) error stop 1 
+     if (i1_res /= 77) error stop 1
      call alloc_ptr_sub(i1_ptr, i1_res)
      if (i1_res /= 44) error stop 2
      i1_res = alloc_ptr_func(i1_alloc)

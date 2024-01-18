@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM LEADZERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpLEADZ.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpLEADZ.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 24, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!* 
-!* 
-!* LEADZ -- An IBM extension 
-!*  
+!* LEADZ -- An IBM extension
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -54,17 +44,17 @@
 
   IF ( KIND(IR1)   .NE.  1 )                    STOP 11
   IF ( ANY( IR1    .NE.  (/(I,I=8,0,-1)/)) )    STOP 12
- 
+
   IF ( KIND(IR2)   .NE.  2 )                    STOP 21
   IF ( ANY( IR2    .NE.  (/(I,I=16,0,-1)/)) )   STOP 22
- 
+
   IF ( KIND(IR4)   .NE.  4 )                    STOP 41
   IF ( ANY( IR4    .NE.  (/(I,I=32,0,-1)/)) )   STOP 42
- 
+
   IF ( KIND(IR8)   .NE.  8 )                    STOP 81
   IF ( ANY( IR8    .NE.  (/(I,I=64,0,-1)/)) )   STOP 82
- 
- 
+
+
 
   END
 

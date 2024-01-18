@@ -1,12 +1,9 @@
 
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             :/cintrop_ts29113/asynch_communication/asynchcomm019f.f
-!* FEATURE NAME                : C_Interop_Asynch_Communication 
-!*  PROGRAMMER                 : Tapti Vaid
+!* FEATURE NAME                : C_Interop_Asynch_Communication
 !*  DATE                       : 2013-10-07
 !*
 !*  DESCRIPTION
@@ -15,7 +12,7 @@
 !* Defined in: module 1 (used by module 2)
 !* Made asynchronous in: module 1
 !* Used for asynch communication in: main (uses module 2)
-!* 
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -26,7 +23,7 @@ module mymod_1
 implicit none
 include 'mpif.h'
 real :: a0,  res1=0, result1=0
-real, ASYNCHRONOUS  :: b0, b1 
+real, ASYNCHRONOUS  :: b0, b1
 end module mymod_1
 
 module mymod_2
@@ -47,7 +44,7 @@ integer :: nt, rank, len, mpierror, rc, i
 integer :: status(MPI_STATUS_SIZE)
 integer, parameter :: TAG_SEND_ARR = 10, TAG_RES_READY = 11
 
-integer :: reqs(2) 
+integer :: reqs(2)
 ! initialization
        call MPI_INIT(mpierror)
        if (mpierror .ne. MPI_SUCCESS) then
@@ -67,16 +64,16 @@ if (rank .eq. 0) then
 b0 = 50
 a0 = 100
 
-	block 
-	
+	block
+
 	call MPI_ISEND(b0, 1 , MPI_REAL, 1, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(1), mpierror)
 	! While waiting for the data to be sent, do some calculations:
 	result1 = sqrt(a0)
     call MPI_WAIT(reqs(1), status, mpierror)
 	b0 = a0*2 !Now that b0 has been sent we can alter its value
-		
+
 	end block
-	
+
 !get the result from task 1
 call MPI_RECV(b0, 1, MPI_REAL, 1, TAG_RES_READY, MPI_COMM_WORLD, status, mpierror)
 if (.not. precision_r4(result1 , 10.00000000)) error STOP 1
@@ -92,7 +89,7 @@ else !(if task# =1)
     call MPI_SEND(res1, 1, MPI_REAL, 0, TAG_RES_READY, MPI_COMM_WORLD, mpierror)
 
     end block
-   
+
 end if
 
 call MPI_FINALIZE(mpierror)

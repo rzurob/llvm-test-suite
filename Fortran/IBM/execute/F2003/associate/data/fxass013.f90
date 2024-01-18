@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass013.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass013.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -86,7 +74,7 @@
 
       integer*8 a8 / 9 /
       integer*8 b8 / 2 /
-      
+
       byte ab1 / 1 /
       byte ab2 / 4 /
 
@@ -94,11 +82,11 @@
 
 !-----------   ASSOCIATE with INTEGER expressions ----------------
 
-      do while (count .LE. 10) 
+      do while (count .LE. 10)
 
       associate ( arg => a )
-         arg = arg + (b + 1)*10  
-         if(arg .ne. a)then 
+         arg = arg + (b + 1)*10
+         if(arg .ne. a)then
            error stop 1
          endif
       end associate
@@ -108,10 +96,10 @@
 
 !-----------   ASSOCIATE with INTEGER*1 expressions ----------------
       count = 1
-      FIRST: do while (count .LE. 10) 
+      FIRST: do while (count .LE. 10)
 
       associate ( arg1 => a1 )
-         arg1 = arg1 + (b1 + 1)*10  
+         arg1 = arg1 + (b1 + 1)*10
          if(arg1 .ne. a1)then
            error stop 2
          endif
@@ -124,10 +112,10 @@
 !-----------   ASSOCIATE with INTEGER*2 expressions ----------------
 
       count = 1
-      do while (count .LE. 10) 
+      do while (count .LE. 10)
 
       associate ( arg2 => a2 )
-         arg2 = arg2 + (b2 + 1)*10    
+         arg2 = arg2 + (b2 + 1)*10
          if(arg2 .ne. a2)then
            error stop 3
          endif
@@ -139,10 +127,10 @@
 !-----------   ASSOCIATE with INTEGER*4 expressions ----------------
 
       count = 1
-      second: do while (count .LE. 10) 
+      second: do while (count .LE. 10)
 
       associate ( arg4 => a4 )
-         arg4 = arg4 + (b4 + 1)*10  
+         arg4 = arg4 + (b4 + 1)*10
          if(arg4 .ne. a4)then
            error stop 4
          endif
@@ -154,10 +142,10 @@
 !-----------   ASSOCIATE with INTEGER*8 expressions ----------------
 
       count = 1
-      do while (count .LE. 10) 
+      do while (count .LE. 10)
 
       associate ( arg8 => a8 )
-         arg8 = arg8 + (b8 + 1)*10  
+         arg8 = arg8 + (b8 + 1)*10
          if(arg8 .ne. a8)then
            error stop 5
          endif
@@ -169,10 +157,10 @@
 !-----------   ASSOCIATE with BYTE expressions ----------------
 
       count = 1
-      third: do while (count .LE. 10) 
+      third: do while (count .LE. 10)
 
       associate ( arg_1 => ab1 )
-         arg_1 = arg_1 + (ab2 + 1)*10  
+         arg_1 = arg_1 + (ab2 + 1)*10
          if(arg_1 .ne. ab1)then
            error stop 6
          endif

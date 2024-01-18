@@ -1,15 +1,11 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acetnone09lll
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetnone09
 !*                               by David Forster)
 !*  DATE                       : 2008-01-29 (original: 2006-08-09)
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters (+ Array Constructor
 !*                               Enhancements)
@@ -20,7 +16,6 @@
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
 !*                               (original: Feature Number 289053)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : polymorphic, select type

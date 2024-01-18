@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fcintrpopt105.f
-!*
-!* PROGRAMMER                   : Ying Zhang
 !* DATE                         : June 25, 2012
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : 399982 - C Interop: Optional Argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -74,13 +67,13 @@ end module testmod
 program test
   use testmod
   implicit none
-  
+
   integer, parameter :: DIM1=2, DIM2=3
   logical res
   integer i,j
 
   integer(c_int32_t) ci32_arr(5)
-  type(dt0), allocatable, target :: dt0_arr(:,:) 
+  type(dt0), allocatable, target :: dt0_arr(:,:)
 
   type(dt1) :: dt1_arr(DIM1, DIM2)
   integer(c_int_fast64_t) cif64_arr(2,5)
@@ -95,7 +88,7 @@ program test
   call sub1(ci32_arr, DIM1*DIM2)
   call sub1(size=DIM1*DIM2, arg2=dt0_arr)
 
-  do i=1, DIM1 
+  do i=1, DIM1
     do j=1, DIM2
        dt1_arr(i, j)%ia = i
        dt1_arr(i, j)%d0%ia = j+100

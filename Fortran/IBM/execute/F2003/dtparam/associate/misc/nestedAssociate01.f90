@@ -1,20 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : nestedAssociate01
-!*  TEST CASE TITLE            : Multiple Nested ASSOCIATE Constructs
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : August 22, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : The ASSOCIATE Construct
 !*  SECONDARY FUNCTIONS TESTED : Multiple Nesting of ASSOCIATE Constructs
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASSOCIATE

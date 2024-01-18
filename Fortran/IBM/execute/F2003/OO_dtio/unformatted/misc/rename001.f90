@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Use Association with rename
 !*  KEYWORD(S)                 :
@@ -122,19 +106,19 @@ program rename001
                if ( (stat /= 0 ) .or. ( msg /= 'dtiowrite') )   error stop 4_4
       end select
    end associate
-   
+
    rewind 3
-   
+
    read (3, iostat = stat, iomsg = msg, pos = 1)     c1
    read (3, iostat = stat, iomsg = msg, pos = 4)     c2
    read (3, iostat = stat, iomsg = msg, pos = 7)     c3
    read (3, iostat = stat, iomsg = msg, pos = 10)    c4
-   
+
    if ( c1 /= 'abc' )       error stop 5_4
    if ( c2 /= 'def' )       error stop 6_4
    if ( c3 /= 'ghi' )       error stop 7_4
    if ( c4 /= 'ghidefabc' ) error stop 8_4
-  
+
 end program
 
 subroutine readUnformatted (dtv, unit, iostat, iomsg)

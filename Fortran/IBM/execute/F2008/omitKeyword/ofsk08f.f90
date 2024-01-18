@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : ofsk08f.f
 !*
-!*  PROGRAMMER                 : Jin Li
 !*  DATE                       : 2010-09-30
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 Omit FUNCTION and SUBROUTINE Keywords
 !*  REFERENCE                  : Feature Number 376084
@@ -28,7 +24,7 @@ C*
 C***********************************************************************
 
       INTEGER CASENUM,I
-  
+
       LOGICAL precision_r4
       LOGICAL precision_x8
 
@@ -136,10 +132,10 @@ C-----------------------------------
      +( RESULTi42(3,2) .NE. 7 ) .OR.
      +( RESULTi42(4,2) .NE. 8 ) )
      +CALL ZZRC( CASENUM )
-       
+
 C---------------------------------
 C-
-C- Automatic Shape Dimensions 
+C- Automatic Shape Dimensions
 C- (passing the Dimension As an
 C-  actual Argument)
 C-
@@ -181,7 +177,7 @@ C-----------------------------------
 
 C---------------------------------
 C-
-C- Assumed Shape Dimensions 
+C- Assumed Shape Dimensions
 C- (passing the Dimension As an
 C-  actual Argument)
 C-
@@ -199,7 +195,7 @@ C-----------------------------------
      +            b"01000000100000000000000000000000",
      +            b"01000000101000000000000000000000" /)
      +            + 0.0 /)
-      RESULTr5 = assumshap1( 5, 
+      RESULTr5 = assumshap1( 5,
      +arr_r5( (/ b"01",b"10",b"11",b"10",b"01" /) ) )
       if (
      +( .NOT. precision_r4( RESULTr5(1), 1.0 ) ) .OR.
@@ -232,14 +228,14 @@ C-----------------------------------
      +CALL ZZRC(CASENUM)
 C---------------------------------
 C-
-C- Assumed Size  Dimensions 
+C- Assumed Size  Dimensions
 C- (passing the Dimension As an
 C-  actual Argument)
 C-
 C-----------------------------------
 
 !
-!- Dimension is an Integer Value 
+!- Dimension is an Integer Value
 !
       CASENUM = 30
       RESULTi5 = 0
@@ -289,14 +285,14 @@ C-----------------------------------
      +CALL ZZRC( CASENUM )
 C---------------------------------
 C-
-C- Deferred Shape Dimensions 
+C- Deferred Shape Dimensions
 C- (passing the Dimension As an
 C-  actual Argument)
 C-
 C-----------------------------------
 
 !
-!- Dimension is an Integer Value 
+!- Dimension is an Integer Value
 !
       CASENUM = 40
       RESULTch5 = '          '
@@ -311,7 +307,7 @@ C-----------------------------------
      +CALL ZZRC( CASENUM )
 
 ***********************************************************************
-      
+
 
       CONTAINS
 
@@ -324,7 +320,7 @@ C-----------------------------------
          enddo
          IF ( UBOUND(explicit1,1) .NE. n ) CALL ZZRC( CASENUM )
          IF ( UBOUND(Arg1     ,1) .NE. n ) CALL ZZRC( CASENUM )
-      END 
+      END
 
       FUNCTION explicit1b( n, Arg1 )
          INTEGER n
@@ -332,7 +328,7 @@ C-----------------------------------
          INTEGER, DIMENSION( n ) :: Arg1
          INTEGER i
          do i = 1,n
-             explicit1b(i-n-1) = Arg1(i) 
+             explicit1b(i-n-1) = Arg1(i)
          enddo
          IF ( UBOUND(explicit1b,1) .NE. -1 ) CALL ZZRC( CASENUM )
          IF ( LBOUND(explicit1b,1) .NE. -n ) CALL ZZRC( CASENUM )
@@ -359,7 +355,7 @@ C-----------------------------------
          COMPLEX, DIMENSION( n ) :: automatic1, Arg1, Temp
          INTEGER i
          do i = 1,n
-             Temp(i) = Arg1(i)       
+             Temp(i) = Arg1(i)
              automatic1(i) = Temp(i)
          enddo
          IF ( UBOUND(automatic1,1) .NE. n ) CALL ZZRC( CASENUM )
@@ -419,8 +415,8 @@ C-----------------------------------
          do i = 1,n
             assumsize1(i) = Arg1(i)
          enddo
-      END 
-    
+      END
+
       FUNCTION assumsize2( m,n, Arg2 )
          INTEGER m,n
          INTEGER, DIMENSION(-m+1:0,*) :: Arg2
@@ -444,8 +440,8 @@ C-----------------------------------
          do i = 1, n
             deferred1(i) = Arg1(i)
          enddo
-      END 
- 
+      END
+
       FUNCTION deferred2( m,n, Arg1a )
          INTEGER m,n
          character*10, DIMENSION( :,: ) :: Arg1a

@@ -13,31 +13,21 @@
 !************************************************************************
       subroutine sub ()
         ENTRY area
-      end                 
+      end
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : 
-!*
-!*  PROGRAMMER                 : Paul Liu
 !*  DATE                       : Oct 26, 2010
 !*  ORIGIN                     : AIX Compiler Development,
 !*                             : IBM China Development Shanghai Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !     A message is emitted for obsolescent ENTRY statement only when using -qlanglvl=2008pure
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :  -qlanglvl=2008pure
 !*                             :  -qlanglvl=2008std
 !*
-!*  DESCRIPTION                : 
-!*
-!*
-!*
-!*
+!*  DESCRIPTION                :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

@@ -1,36 +1,28 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : FunctionResult03.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : March 15, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly         
+!*  PRIMARY FUNCTIONS TESTED   : Function result - unlimited poly
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
         INTEGER, KIND :: k1
         INTEGER, LEN  :: l1
 
-        CHARACTER(l1) :: C0 = '0' 
+        CHARACTER(l1) :: C0 = '0'
         LOGICAL       :: F0(l1) = .True.
       END TYPE
 
@@ -38,7 +30,7 @@ MODULE Mod
         INTEGER, KIND :: k2
         INTEGER, LEN  :: l2
 
-        INTEGER(k2) :: A0(l2) = -1 
+        INTEGER(k2) :: A0(l2) = -1
       END TYPE
 
       TYPE, EXTENDS(Child) :: NextGen (l3,l4)
@@ -51,12 +43,12 @@ MODULE Mod
       CONTAINS
 
       FUNCTION func(Arg)
-        CLASS(*) :: Arg, func 
-        POINTER  :: func 
+        CLASS(*) :: Arg, func
+        POINTER  :: func
 
           ALLOCATE(func, SOURCE = Arg)
- 
-      END FUNCTION   
+
+      END FUNCTION
 END MODULE
 
 PROGRAM FunctionResult03
@@ -65,7 +57,7 @@ PROGRAM FunctionResult03
 
       CLASS(*), POINTER :: u_poly
 
-      ALLOCATE( NextGen(4,1,4,2,5,10) :: u_poly ) 
+      ALLOCATE( NextGen(4,1,4,2,5,10) :: u_poly )
       SELECT TYPE ( s => func(u_poly) )
         CLASS IS (NextGen(4,*,4,*,*,*))
            IF ( s%k1       .NE.   4 ) STOP 20

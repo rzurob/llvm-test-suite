@@ -1,22 +1,15 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AssumedTypeObj05f
-!*
-!*  PROGRAMMER                 : Ren, Jian Gang
 !*  DATE                       : Apr 14, 2012
 !*  ORIGIN                     : Linux/AIX Compiler Development,
 !*                             : IBM Software Solutions China Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop Assumed-type object
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Calling a non-BIND(C) procedure from Fortran
 !*                               where the procedure is defined in C with
@@ -50,16 +43,16 @@ program AssumedTypeObj05f
       TYPE(*) :: c_intr1
       integer :: i
 
-      interface 
+      interface
         integer function c_func_print_str(c_intr1)
           TYPE(*) :: c_intr1
         end function
-      end interface      
+      end interface
 
       i = c_func_print_str(c_intr1)
-     
+
       if (i <> 15) then
         ERROR STOP 1
-      end if 
+      end if
     end
 end

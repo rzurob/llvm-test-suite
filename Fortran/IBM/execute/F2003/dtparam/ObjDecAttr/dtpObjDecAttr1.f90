@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 22, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  -- the allocatable attribute 
-!*  test assignment 
+!*  -- the allocatable attribute
+!*  test assignment
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,8 +43,8 @@
   TYPE(DT1(2,2)), ALLOCATABLE, PRIVATE :: P2
   TYPE(DT1(1,1,K1=2,L1=2)), ALLOCATABLE, PRIVATE :: P3
 
-  TYPE(DT0)          :: T1 
-  TYPE(DT1(2,2))     :: T2 
+  TYPE(DT0)          :: T1
+  TYPE(DT1(2,2))     :: T2
   TYPE(DT1(1,1,2,2)) :: T3
 
   CONTAINS
@@ -67,7 +58,7 @@
   P1 = T1
   P2 = T2
   P3 = T3
-     
+
   END SUBROUTINE
 
   SUBROUTINE Check()
@@ -108,7 +99,7 @@
 
   PROGRAM dtpObjDecAttr1
   USE M
-  
+
   CALL Assgn()
   CALL Check()
 

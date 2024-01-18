@@ -5,33 +5,25 @@
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: fxiomsgm007.f
 ! %VERIFY: fort.18:fxiomsgm007.vf
-! %STDIN: 
-! %STDOUT: 
+! %STDIN:
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !***************************************************************************
 
-
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            : Declare iomsg_var exactly length as actual msg
-!*                                                                     
-!*  PROGRAMMER                 : Rayson Liu
+!*  ===================================================================
+!*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development, 
-!*                             : IBM Software Solutions Toronto Lab     
-!*                                                                      
+!*  ORIGIN                     : AIX Compiler Development,
+!*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS : 1
 !*
 !*  DESCRIPTION                : Declaring an iomsg variable exactly length as
@@ -47,43 +39,38 @@
 !*
 !*********************************************************************
 
-
       program fxiomsgm007
 
-      implicit none     
- 
- 
-      integer*4 case_id, ios            ! Test Case id under test.
- 
-      character*149  errmsg             ! Message 1526-006's length is 149
+      implicit none
 
+      integer*4 case_id, ios            ! Test Case id under test.
+
+      character*149  errmsg             ! Message 1526-006's length is 149
 
 !
 ! Initialize Return Code routine to SUCCESS...
 !
- 
+
       case_id = 0
       call zzrc ( case_id )
- 
+
 !
 ! TestCase 1...
 !
- 
-      case_id = case_id + 1
 
+      case_id = case_id + 1
 
       open ( 9, status = 'OLD', access = 'SEQUENTIAL', form =  &
   &    'FORMATTED', err = 100, iostat = ios, iomsg = errmsg )
- 
+
       call zzrc ( case_id )
 
- 
-100   write( 18, * )  errmsg 
+100   write( 18, * )  errmsg
 
       if ( ios <> 6 ) call zzrc ( case_id )
 
 ! Clean up....
- 
+
       close ( 9, status = 'DELETE' )
- 
+
       end                            ! End of TestCase.

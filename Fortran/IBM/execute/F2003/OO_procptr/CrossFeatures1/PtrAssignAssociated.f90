@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignAssociated.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignAssociated.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignAssociated.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignAssociated.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,38 +30,37 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
-!* 
-!*  The procedure pointer's status 
-!*  () 
+!*
+!*  The procedure pointer's status
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
-  
+
   TYPE :: DT
     INTEGER, ALLOCATABLE :: IArr(:)
     CHARACTER(3)         :: Str
   END TYPE
- 
-  CONTAINS 
+
+  CONTAINS
 
     FUNCTION ModFun(Arg)
     TYPE(DT)            :: Arg(:)
-    TYPE(DT), POINTER   :: ModFun(:) 
+    TYPE(DT), POINTER   :: ModFun(:)
       !ALLOCATE(ModFun(SIZE(Arg)), SOURCE=Arg) ! not 10.1
       ALLOCATE(ModFun(SIZE(Arg)))
-      ModFun = Arg 
+      ModFun = Arg
     END FUNCTION
 
   END MODULE
 
 
-  PROGRAM PtrAssignAssociated 
+  PROGRAM PtrAssignAssociated
   USE M
   IMPLICIT NONE
- 
+
   INTERFACE
     FUNCTION IFun(Arg)
     IMPORT
@@ -76,8 +69,8 @@
     END FUNCTION
   END INTERFACE
 
-  PROCEDURE(IFun), POINTER :: ProcPtr 
-  PROCEDURE(IFun), POINTER :: ProcPtr1 
+  PROCEDURE(IFun), POINTER :: ProcPtr
+  PROCEDURE(IFun), POINTER :: ProcPtr1
   INTEGER :: i
 
   !ProcPtr => NULL()
@@ -88,19 +81,19 @@
   IF ( ASSOCIATED(ProcPtr, ProcPtr) )       STOP 13
 ! IF ( ASSOCIATED(ProcPtr, NULL()) )        STOP 14
   IF ( ASSOCIATED(ProcPtr, NULL(ProcPtr)) ) STOP 15
- 
+
   ProcPtr => ModFun
   IF ( .NOT. ASSOCIATED(ProcPtr) )          STOP 21
   IF ( .NOT. ASSOCIATED(ProcPtr, ModFun) )  STOP 22
 
-  ASSOCIATE ( As => ProcPtr( (/DT((/(i, i=1,256)/), "IBM")/)) ) 
+  ASSOCIATE ( As => ProcPtr( (/DT((/(i, i=1,256)/), "IBM")/)) )
     IF ( ANY( As(1)%IARR .NE. (/(i, i=1,256)/)))    STOP 31
     IF ( As(1)%Str       .NE. "IBM" )               STOP 32
   END ASSOCIATE
 
   NULLIFY(ProcPtr)
 
-  ProcPtr1 => NULL() 
+  ProcPtr1 => NULL()
   ProcPtr => ProcPtr1
 
   IF ( ASSOCIATED(ProcPtr) ) STOP 41
@@ -109,13 +102,13 @@
 ! IF ( ASSOCIATED(ProcPtr, NULL()) )        STOP 44
   IF ( ASSOCIATED(ProcPtr, NULL(ProcPtr)) ) STOP 45
 
-  ProcPtr1  => ModFun 
+  ProcPtr1  => ModFun
   ProcPtr => ProcPtr1
 
   IF ( .NOT. ASSOCIATED(ProcPtr) )         STOP 51
   IF ( .NOT. ASSOCIATED(ProcPtr, ModFun) ) STOP 52
 
-  ASSOCIATE ( As => ProcPtr((/ DT((/(i, i=1,25600)/), "IBM")/)) ) 
+  ASSOCIATE ( As => ProcPtr((/ DT((/(i, i=1,25600)/), "IBM")/)) )
     IF ( ANY( As(1)%IARR .NE. (/(i, i=1,25600)/) ))   STOP 61
     IF ( As(1)%Str       .NE. "IBM" )                 STOP 62
   END ASSOCIATE

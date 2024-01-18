@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ArrFuncPolyAllocSec.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ArrFuncPolyAllocSec.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : ArrFuncPolyAllocSec
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 14, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,8 +33,8 @@
 !*
 !*  DESCRIPTION
 !*    The selector is a function call returning an allocatable array section
-!*  
-!*    (ICE) 
+!*
+!*    (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -48,19 +42,19 @@
   MODULE M
     TYPE :: Base(K1)    ! (4)
       INTEGER, KIND :: K1
-      SEQUENCE 
-      INTEGER(K1)   :: BaseID=1 
+      SEQUENCE
+      INTEGER(K1)   :: BaseID=1
     END TYPE
 
     TYPE :: Child(K2)    ! (4)
       INTEGER, KIND  :: K2
       SEQUENCE
-      TYPE(Base(K2)) :: BS 
-      INTEGER(K2)    :: ChildID=2 
+      TYPE(Base(K2)) :: BS
+      INTEGER(K2)    :: ChildID=2
     END TYPE
 
   CONTAINS
-   
+
     FUNCTION ReturnArr(Arg)
     TYPE (Child(4)) :: Arg(:)
     TYPE (Child(4)), ALLOCATABLE :: ReturnArr(:)
@@ -82,11 +76,11 @@
     IF ( ANY (SHAPE(As)   .NE. (/555/) ) )   STOP 32
     IF ( ANY (As%ChildID    .NE. -2 ))         STOP 33
     IF ( ANY (As%BS%BaseID  .NE. -1 ))         STOP 34
-   
+
     ASSOCIATE (A => As(1::2) )
       IF ( ANY (As%ChildID    .NE. -2 ))         STOP 33
       IF ( ANY (As%BS%BaseID  .NE. -1 ))         STOP 34
-    END ASSOCIATE 
+    END ASSOCIATE
   END ASSOCIATE
 
   END

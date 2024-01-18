@@ -3,24 +3,12 @@
 ! opt variations: -qnok -qnol
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : dblcmplx.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM/TO are of type double complex
 !*                               see defect 321912
@@ -37,15 +25,15 @@
           integer, len  :: n1
           sequence
           double complex, allocatable :: d1(:,:,:), d2(:,:,:)
-      end type 
+      end type
       type(base(4,20)) :: b
 
-      interface 
+      interface
            subroutine sub(arg,brg)
                   type :: base(k1,n1)    ! (4,20)
                       integer, kind :: k1
                       integer, len  :: n1
-                      sequence 
+                      sequence
                       double complex, allocatable :: d1(:,:,:), d2(:,:,:)
                   end type
                   type(base(4,*)) brg
@@ -71,14 +59,14 @@
           type :: base(k1,n1)    ! (4,20)
               integer, kind :: k1
               integer, len  :: n1
-              sequence 
+              sequence
               double complex, allocatable :: d1(:,:,:), d2(:,:,:)
           end type
           type(base(4,*)) brg
           double complex, optional, allocatable :: arg(:,:,:)
 
-          call move_alloc(arg,brg%d1) 
-                  
+          call move_alloc(arg,brg%d1)
+
           if ( .not. allocated(brg%d1)) stop 21
-          if ( allocated(arg) ) stop 23 
+          if ( allocated(arg) ) stop 23
       end subroutine

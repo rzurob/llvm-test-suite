@@ -5,4 +5,4 @@
     integer j
     common i, j
   end block
-end 
+end

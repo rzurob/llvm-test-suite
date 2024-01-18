@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryIntrinsicAssum02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryIntrinsicAssum02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 13 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 13 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
 !* 3. DUMMY ARGUMENT HAS ASSUMED LENGTH AND HAS INTENT(INOUT) ATTRIBUTE
 !* 4. DEFECT 352994,354606
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -32,13 +24,13 @@ module m
    character(:),pointer :: c(:)
    character(:),allocatable :: d(:)
    character(len=7) :: e="xlftest"
-   character(len=*),parameter :: f(3)=['abcd','efgh','ijkl'] 
+   character(len=*),parameter :: f(3)=['abcd','efgh','ijkl']
 end module
 program typeParamInquiryIntrinsicAssum02
     use m
     implicit none
 
-    allocate(a,source="xlf"//"test") 
+    allocate(a,source="xlf"//"test")
     b="xlf"//"test"
 
     call test1(a)
@@ -81,10 +73,10 @@ program typeParamInquiryIntrinsicAssum02
     if(e%len /= len(b) .or. e%len /= 7)                     error stop 46_4
     if(e%kind /= kind(e) .or. e%kind /=1)                   error stop 47_4
 
-    
+
     allocate(c(size(f)),source=f)
-    d=c 
-    
+    d=c
+
     call test3(c)
     if(any(c /= ['seed','weed','wate']))                    error stop 48_4
     if(c%len /= len(c) .or. c%len /= 4)                     error stop 49_4
@@ -98,11 +90,11 @@ program typeParamInquiryIntrinsicAssum02
     deallocate(c)
     allocate(c(size(f)),source=f)
     d=c
-   
+
     call test4(c(1:2))
     if(any(c /= ['seed','weed','ijkl']))                    error stop 54_4
     if(c%len /= len(c) .or. c%len /= 4)                     error stop 55_4
-    if(c%kind /= kind(c) .or. c%kind /= 1)                  error stop 56_4    
+    if(c%kind /= kind(c) .or. c%kind /= 1)                  error stop 56_4
 
      call test4(d(1:2))
 
@@ -114,14 +106,14 @@ program typeParamInquiryIntrinsicAssum02
     contains
 
       subroutine test1(arg)
-         character(*),intent(inout) :: arg 
+         character(*),intent(inout) :: arg
 
-           if(arg%len /= len(arg) .or. arg%len /=7)          error stop 10_4 
+           if(arg%len /= len(arg) .or. arg%len /=7)          error stop 10_4
            if(arg%kind /= kind(arg) .or. arg%kind /=1)       error stop 11_4
            if(len(arg(1:3))    /=3)                          error stop 12_4
            if(arg /= "xlftest")                              error stop 13_4
          arg="Hello"
-      end subroutine         
+      end subroutine
 
       subroutine test2(arg)
          character(*),intent(inout) :: arg
@@ -151,9 +143,9 @@ program typeParamInquiryIntrinsicAssum02
           if(arg%kind /= kind(arg) .or. arg%kind /=1)        error stop 23_4
           if(ubound(arg,1) /= 2)                             error stop 24_4
           if(any(arg /= ['abcd','efgh']))                    error stop 25_4
-          arg=['seeds','weeds'] 
-          
-     end subroutine      
+          arg=['seeds','weeds']
+
+     end subroutine
 
 end
 

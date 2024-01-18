@@ -36,7 +36,6 @@
         return
       end function
 
-
       !!! BIND(C) w/ NAME= and non-default name
       function fn1 BIND(C, name='F1')  ! err: fn w/out parens
         fn1 = 0.0
@@ -57,7 +56,6 @@
         fn4 = 0.0
         return
       end function
-
 
       !!! BIND(C) w/ NAME= and default name
       function fd1 BIND(C, name='fd1')  ! err: fn w/out parens

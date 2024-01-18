@@ -1,24 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pointer.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 2010-10-18
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
-!*  DRIVER STANZA              :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : - test type(C_PTR) which is interoperable
-!*                                 with C pointer type 
+!*                                 with C pointer type
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -37,7 +27,7 @@ program main
 
         integer(C_SIZE_T) function get_ptrsize(x) bind(c)
             use, intrinsic :: iso_c_binding
-            type(C_PTR) x 
+            type(C_PTR) x
         end function get_ptrsize
 
     end interface
@@ -46,7 +36,7 @@ program main
 
     type(C_PTR) :: ptr
 
-    ptr = C_LOC(arr) 
+    ptr = C_LOC(arr)
 
     if ( c_sizeof(ptr) /= get_ptrsize(ptr) ) error stop 10
 

@@ -1,19 +1,11 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with READ/WRITE statement
-!*                             
 !*
-!*  DESCRIPTION                : 
-!*                 test different ROUND mode during stream access with 
+!*  DESCRIPTION                :
+!*                 test different ROUND mode during stream access with
 !*                 derived type. Also test using substring as specifier.
 !* ===================================================================
 
@@ -35,7 +27,7 @@
     type(dtReal) :: dReal
     type(dt) :: dv(6)
 
-    integer, parameter::unit = 2 
+    integer, parameter::unit = 2
 
     open(unit, access="stream", form="formatted", status="replace",   &
          file="roundRealRWEdit06.dat")
@@ -45,7 +37,7 @@
              "processor_defined", "compatible       "/)
 
     vw = (/ z'3FF4003D80049C48', z'BFF4003D80049C47',             &
-             z'400921FB54442AF5',z'4005BF0A8B144A43' /) 
+             z'400921FB54442AF5',z'4005BF0A8B144A43' /)
 
     vw1 = (/ z'3FF4003D80049C48', z'3FF4003D80049C47',            &
              z'3FF4003D80049C47', z'3FF4003D80049C47',            &
@@ -66,11 +58,11 @@
     write(unit,'(RP, f16.14, f17.14, f16.14, f16.14)', pos=1)     &
      dtReal((/1.250058651037551D0,-1.250058651037551D0,           &
        3.141592653589551D0, 2.718281828457551D0/))
-    
+
     read(unit,'(f16.14,f17.14,f16.14,f16.14)',round='it is up'(7:8),&
            & pos=1) dReal
 
-    do i = 1, 4 
+    do i = 1, 4
        if(vw(i) .ne. dReal%r(i)) call zzrc(i)
     end do
 

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: AssignProcNameIntrin3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: AssignProcNameIntrin3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : AssignProcNameIntrin3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : AssignProcNameIntrin3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 13, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,13 +30,13 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  C727 (R742) A procedure-name shall be the name of an external, module,
 !*  or dummy procedure, a specific intrinsic function listed in 13.6
 !*  and not marked with a bullet (.), or a procedure pointer.
-!* 
+!*
 !*  Intrinsics
-!*  (315305) 
+!*  (315305)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -100,7 +94,7 @@
 
   PROGRAM AssignProcNameIntrin3
   IMPLICIT NONE
-  
+
   PROCEDURE(DLOG)   :: ExtDLOG
   PROCEDURE(DLOG10) :: ExtDLOG10
   PROCEDURE(DMOD)   :: ExtDMOD
@@ -131,7 +125,7 @@
 
   IF (ABS(ExtDSQRT(4.0D0) - 2.D0) .GT. .00001 ) STOP 19
 
-  IF (ABS(ExtDTAN(1.0D0) - 1.5574077D0) .GT. .00001 ) STOP 20 
+  IF (ABS(ExtDTAN(1.0D0) - 1.5574077D0) .GT. .00001 ) STOP 20
 
   END
 

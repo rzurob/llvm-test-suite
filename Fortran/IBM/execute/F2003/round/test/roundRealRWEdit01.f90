@@ -1,30 +1,22 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with READ/WRITE statement
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*          test different rounding mode with external file for data
-!*          input and output data transfer. 
+!*          input and output data transfer.
 !* ===================================================================
 
-  program roundRealRWEdit01 
+  program roundRealRWEdit01
 
     implicit none
 
-    character(18) :: r_mode 
+    character(18) :: r_mode
     real*8 rd1, rd2
 
-    integer, parameter::unit_r = 2 
+    integer, parameter::unit_r = 2
     integer, parameter::unit_w = 3
 
     rd1 = 0.0D0
@@ -41,7 +33,7 @@
 
     if(transfer(rd2, 0_8) .ne. -4615063488913246836_8) error stop 2_4
 
-    ! edit descriptor takes precedence over specifier in one data transfer 
+    ! edit descriptor takes precedence over specifier in one data transfer
     ! statement
 
     write(unit_w, '(a10,1x,RU,f15.13,1x,f16.13)',round="down") "round up", &
@@ -115,4 +107,4 @@
     close(unit_r)
     close(unit_w)
 
-  end program roundRealRWEdit01 
+  end program roundRealRWEdit01

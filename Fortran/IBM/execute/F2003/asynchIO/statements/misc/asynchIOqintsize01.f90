@@ -1,18 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchIOqintsize01 - Miscellaneous Tests
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April 12, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Asynchronous I/O
 !*  SECONDARY FUNCTIONS TESTED : Default/-qintsize=[2|4|8]
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : asynchIOqintsize01:   None (Default)
 !*                               asynchIOqintsize01a:  -qintsize=2
 !*                               asynchIOqintsize01b:  -qintsize=4

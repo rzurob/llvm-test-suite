@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr29
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 04, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  -- TARGET 
-!*  
+!*  -- TARGET
 !*
-!* 
 !*  (337627)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,7 +36,7 @@
   TYPE, ABSTRACT, EXTENDS(DT0)  :: DT1(K1, L1)
     INTEGER(K0), KIND    :: K1=K0
     INTEGER(K0), LEN     :: L1=5
-    CHARACTER(L1+3)      :: C1 = "DT1" 
+    CHARACTER(L1+3)      :: C1 = "DT1"
     CONTAINS
     PROCEDURE(ModFun0), NOPASS, DEFERRED :: Proc
   END TYPE
@@ -60,7 +49,7 @@
     REAL   (K2)          :: R=K2
     LOGICAL(K2)          :: L=.TRUE._1
     COMPLEX(K2)          :: Z=CMPLX(K1, K2, K2)
-    TYPE(DT0(K2, L2))    :: T0(L2) 
+    TYPE(DT0(K2, L2))    :: T0(L2)
     TYPE(DT2(K0,L0,K1,L1,K2, L2)), POINTER  :: Ptr
     CONTAINS
     PROCEDURE, NOPASS :: Proc => ModFun0
@@ -76,17 +65,17 @@
   CONTAINS
 
   FUNCTION ModFun0(Arg)
-  CLASS(DT0(1,1)), TARGET, INTENT(IN)  :: Arg(:) 
-  CLASS(DT0(1,1)), POINTER             :: ModFun0(:) 
-    ModFun0 => Arg 
-  END FUNCTION 
+  CLASS(DT0(1,1)), TARGET, INTENT(IN)  :: Arg(:)
+  CLASS(DT0(1,1)), POINTER             :: ModFun0(:)
+    ModFun0 => Arg
+  END FUNCTION
 
   SUBROUTINE ModSub(L0, L1, L2, S, Status)
   IMPLICIT NONE
 
   INTEGER L0, Status, I
-  INTEGER(1) L1 
-  INTEGER(4) L2 
+  INTEGER(1) L1
+  INTEGER(4) L2
 
   !TYPE(DT(1,L0,4,L1,8,L2)), VALUE :: S   ! --> C528
   TYPE(DT(K0=1,K1=4,K2=8)), VALUE :: S   ! --> C528
@@ -120,7 +109,7 @@
         IF ( As(I)%Ptr%K2            .NE.    8       )  STOP 53
         IF ( As(I)%Ptr%L2            .NE.    7       )  STOP 54
       END DO
-    CLASS DEFAULT 
+    CLASS DEFAULT
        STOP 99
     END SELECT
 
@@ -165,7 +154,7 @@
                                    L = .TRUE.,     &
                                    Z = (1.,-1.),   &
                                    Ptr  = NULL(),  &
-                                   T0=DT0(8,7)() ) 
+                                   T0=DT0(8,7)() )
 
   CALL ModSub(T%L0, T%L1, T%L2, T, 1)
 

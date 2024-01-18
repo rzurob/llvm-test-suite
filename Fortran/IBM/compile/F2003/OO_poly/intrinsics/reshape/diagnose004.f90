@@ -1,12 +1,7 @@
 !* =====================================================================
-!* XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!* =====================================================================
-!* TEST CASE TITLE            : OO_poly/intrinsics/reshape/diagnose004.f
-!* PROGRAMMER                 : Yong Du
 !* DATE                       : 12/08/2004
 !* ORIGIN                     :
 !* PRIMARY FUNCTIONS TESTED   : reshape
-!* DRIVER STANZA              : xlf90
 !* DESCRIPTION                :
 !*   Diagnostic test case: PAD shall be of the same type and type
 !* parameters as SOURCE. (Note: people are still debating this

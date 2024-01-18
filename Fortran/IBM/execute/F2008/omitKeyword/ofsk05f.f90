@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : ofsk05f.f
 !*
-!*  PROGRAMMER                 : Jin Li
 !*  DATE                       : 2010-09-30
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 Omit FUNCTION and SUBROUTINE Keywords
 !*  REFERENCE                  : Feature Number 376084
@@ -34,7 +30,7 @@ module m
       integer pure function puregetl ( dtv )
          class(base(4)), intent(in) :: dtv
          puregetl = dtv%l
-      end 
+      end
 
       subroutine sub ( dtv, c )
          class(base(4)), intent(inout) :: dtv

@@ -1,13 +1,8 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/runf.sh fxbind_c03ssc  
+! %PRECMD: $TR_SRC/runf.sh fxbind_c03ssc
 ! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -18,22 +13,14 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c03ssc.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
-!*                             
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -41,7 +28,7 @@
 !*   - FORTRAN code only , the interoperable function is implemented
 !*     in Fortran and called in Fortran.
 !*   - passing 1-dim complex  array arguments
-!*    
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*
@@ -96,9 +83,9 @@ function  maxval_dc ( array, nvals, value_max) bind(c)
   IMPLICIT NONE
   INTEGER, PARAMETER :: dbl = 16
   ! List of calling arguments:
-  INTEGER, INTENT(IN) :: nvals                             
-  COMPLEX(dbl), INTENT(IN), DIMENSION(nvals) :: array   
-  REAL(4), INTENT(OUT) :: value_max                        
+  INTEGER, INTENT(IN) :: nvals
+  COMPLEX(dbl), INTENT(IN), DIMENSION(nvals) :: array
+  REAL(4), INTENT(OUT) :: value_max
   INTEGER:: maxval_dc
 
   !  List of local variables:

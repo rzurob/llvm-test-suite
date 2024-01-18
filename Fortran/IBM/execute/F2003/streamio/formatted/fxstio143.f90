@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: cp $TR_SRC/check_array.inc .; cp $TR_SRC/check_interface.inc .
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio143.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,20 +12,13 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access Mode
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,28 +27,28 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/24/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/24/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
   include 'check_array.inc'
 
-  program fxstio143 
+  program fxstio143
 
      implicit none
      integer    i, j, k, l, ios
      integer, parameter    :: N = 10
-     integer*1             :: i1_in, i1_out  
-     integer*2             :: i2_in, i2_out  
-     integer*4             :: i4_in, i4_out  
-     integer*8             :: i8_in, i8_out  
-     logical*1             :: l1_in, l1_out  
-     logical*2             :: l2_in, l2_out  
-     logical*4             :: l4_in, l4_out  
-     logical*8             :: l8_in, l8_out  
-     integer*4             :: i4_arr_in(N), i4_arr_out(N)  
-     logical*4             :: l4_arr_in(N), l4_arr_out(N)  
+     integer*1             :: i1_in, i1_out
+     integer*2             :: i2_in, i2_out
+     integer*4             :: i4_in, i4_out
+     integer*8             :: i8_in, i8_out
+     logical*1             :: l1_in, l1_out
+     logical*2             :: l2_in, l2_out
+     logical*4             :: l4_in, l4_out
+     logical*8             :: l8_in, l8_out
+     integer*4             :: i4_arr_in(N), i4_arr_out(N)
+     logical*4             :: l4_arr_in(N), l4_arr_out(N)
      integer*8, parameter  :: i8_par_out = 1234567890
      integer*8             :: i8_par_in
      logical*8, parameter  :: l8_par_out = .true._8
@@ -66,10 +59,10 @@
      logical*8             :: l8_ltrl_in
 
      include 'check_interface.inc'
-     
-!********************************************************** 
+
+!**********************************************************
 !       Initialization                                    *
-!********************************************************** 
+!**********************************************************
 
      i1_out = 13
      i2_out = 133
@@ -81,14 +74,14 @@
      l8_out = .false.
 
      do i=1,N
-        i4_arr_out(i) = i 
+        i4_arr_out(i) = i
      enddo
 
      l4_arr_out = .true.
 
-!********************************************************** 
+!**********************************************************
 !      Writing and Reading the file                      *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio143.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
@@ -105,13 +98,13 @@
      do i = 1, N
         WRITE(1, FMT='(I10)', IOSTAT=ios, ERR=91, ADVANCE='no') i4_arr_out(i)
         WRITE(1, FMT='(L5)', IOSTAT=ios, ERR=91, ADVANCE='yes') l4_arr_out(i)
-     enddo 
- 
+     enddo
+
      WRITE(1, FMT='(I12.12)', IOSTAT=ios, ERR=91, ADVANCE='no') i8_par_out
      WRITE(1, FMT='(L1)', IOSTAT=ios, ERR=91, ADVANCE='yes') l8_par_out
 
      WRITE(1, FMT='(I8)', IOSTAT=ios, ERR=91, ADVANCE='no') 9876543_4
-     WRITE(1, FMT='(L2, 15H .true. .false.)', IOSTAT=ios, ERR=91, ADVANCE='no') & 
+     WRITE(1, FMT='(L2, 15H .true. .false.)', IOSTAT=ios, ERR=91, ADVANCE='no') &
     &     .false._4
 
      ENDFILE(1)
@@ -128,7 +121,7 @@
      do i = 1, N
         READ(1, FMT='(I10)', IOSTAT=ios, ERR=92, ADVANCE='no') i4_arr_in(i)
         READ(1, FMT='(L5)', IOSTAT=ios, ERR=92, ADVANCE='yes') l4_arr_in(i)
-     enddo 
+     enddo
 
      READ(1, FMT='(I12)', IOSTAT=ios, ERR=92, ADVANCE='no') i8_par_in
      READ(1, FMT='(L1)', IOSTAT=ios, ERR=92) l8_par_in
@@ -136,9 +129,9 @@
      READ(1, FMT='(L2, 2L7)', IOSTAT=ios, ERR=92) &
     &      l2_ltrl_in, l4_ltrl_in, l8_ltrl_in
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( i1_in .ne. i1_out) error stop 20
      if ( i2_in .ne. i2_out) error stop 21
@@ -162,11 +155,11 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 
    end program
 

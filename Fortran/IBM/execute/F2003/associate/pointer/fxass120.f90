@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass120.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass120.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -99,22 +87,22 @@
       if( arg(1) .ne. p1(1) ) error stop 1
       if( arg(2) .ne. p1(2) ) error stop 11
       if( arg(3) .ne. p1(3) ) error stop 21
-      end associate 
- 
+      end associate
+
       second: associate ( arg2 => dt )
 
-      if( arg2%i1 .ne. 1 )then 
+      if( arg2%i1 .ne. 1 )then
         error stop 3
-      endif 
-      if( arg2%i_arr1(1) .ne. 1 )then 
+      endif
+      if( arg2%i_arr1(1) .ne. 1 )then
         error stop 4
-      endif 
-      if( arg2%i_arr1(2) .ne. 2 )then 
+      endif
+      if( arg2%i_arr1(2) .ne. 2 )then
         error stop 5
-      endif 
-      if( arg2%i_arr1(3) .ne. 3 )then 
+      endif
+      if( arg2%i_arr1(3) .ne. 3 )then
         error stop 6
-      endif 
+      endif
 
       if( arg2%arri3(1) .ne. p3%arri3(1) ) error stop 7
       if( arg2%arri3(2) .ne. p3%arri3(2) ) error stop 8
@@ -134,13 +122,13 @@
 
         do i = lbound(ptr2, 1), ubound(ptr2, 1)
          third: associate ( arg1 => ptr2(i) )
-         if( arg1 .ne. p2(i) )then 
+         if( arg1 .ne. p2(i) )then
            error stop 2
-         endif 
+         endif
          end associate third
         enddo
 
       end associate second
 
       end
-      
+

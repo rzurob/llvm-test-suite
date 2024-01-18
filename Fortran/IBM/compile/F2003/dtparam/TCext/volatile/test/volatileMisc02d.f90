@@ -2,24 +2,17 @@
 ! ftcx_dtp -qnol /tstdev/F2003/volatile/test/volatileMisc02d.f
 ! opt variations: -ql
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 06/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :  VOLATILE
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*          VOLATILE should be specified before  the derived type name
-!*     is used.              
+!*     is used.
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
    program volatileMisc02d
 
    type volatile(k1)    ! (4)
@@ -32,4 +25,4 @@
    volatile :: volatile
 
    end program volatileMisc02d
- 
+

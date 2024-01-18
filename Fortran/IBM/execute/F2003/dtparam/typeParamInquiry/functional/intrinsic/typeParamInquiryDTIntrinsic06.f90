@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryDTIntrinsic06.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryDTIntrinsic06.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 7 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 7 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
-!* 3. INQUIRY THROUGH TYPE-BOUND PROCEDURE 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
+!* 3. INQUIRY THROUGH TYPE-BOUND PROCEDURE
 !* 4. COMPONENT IS PRIVATE
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,7 +29,7 @@ module m
      logical :: l1
      logical(1) :: l2(2)
      character(len=3) :: c1
-     character(len=2) :: c2(3) 
+     character(len=2) :: c2(3)
 
      character(:),allocatable :: c3
      character(:),allocatable :: c4(:)
@@ -48,7 +40,7 @@ module m
      contains
 
          procedure,pass :: getDT => sub
-    
+
    end type
 
      contains
@@ -77,7 +69,7 @@ module m
         if(dt%c4%len  /= len(dt%c4)  .or. dt%c4%len  /= 3) error stop 23_4
         if(dt%c5%len  /= len(dt%c5)  .or. dt%c5%len  /= 7) error stop 24_4
         if(dt%c6%len  /= len(dt%c6)  .or. dt%c6%len  /= 2) error stop 25_4
-     end subroutine    
+     end subroutine
 
 end module
 
@@ -91,11 +83,11 @@ end module
   type(base),target  :: b4
 
   allocate(b2)
-  
-  b3=>b4 
- 
+
+  b3=>b4
+
   call b1%getDT
   call b2%getDT
   call b3%getDT
- 
+
 end

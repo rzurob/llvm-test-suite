@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrAssumSiz3.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrAssumSiz3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 10, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,28 +19,26 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Assumed size array of character 
-!*  
-!*  
+!*  Assumed size array of character
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM dataPtrAssumSiz3 
+  PROGRAM dataPtrAssumSiz3
   IMPLICIT NONE
 
   CHARACTER(2), TARGET :: Arr(10,10)
-  CHARACTER(100), TARGET :: C 
+  CHARACTER(100), TARGET :: C
   INTEGER                :: I
 
 
-  Arr = "12" 
+  Arr = "12"
   CALL S(Arr(1, 1), 10, 0, 19)
 
-  DO I=1, 100, 2 
+  DO I=1, 100, 2
     C(I:I) ="1"
     C(I+1:I+1) ="2"
   END DO

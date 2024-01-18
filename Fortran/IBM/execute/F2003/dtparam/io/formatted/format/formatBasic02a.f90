@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatBasic02a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatBasic02a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 3 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 3 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. drived type has multiple character scalar and array component.
-!*  2. test PRINT statement with function result 
-!*  3. use different edit descriptor such as repeat count,control edit descriptor like trn,tln,nx and : 
+!*  2. test PRINT statement with function result
+!*  3. use different edit descriptor such as repeat count,control edit descriptor like trn,tln,nx and :
 !*  4. also test format control reversion
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -53,13 +45,13 @@ program formatBasic02a
   type(base(3,5)),target :: tbase1(2:3)
   type(base(:,:)),target,allocatable :: tbase2(:)
 
-  
+
   tbase1=[base(3,5)(c1="xlf",c2=["-123+","-456+","-789+"],c3=["abcde"]), &
           base(3,5)(c1="ON",c2=["000","111","222"],c3=["ibmcanada"])]
 
   tbase2=[base(3,5)(c1="roger",c2=["intern","cable ","televi"], &
-           c3=["xyz"]),tbase1(2)] 
-          
+           c3=["xyz"]),tbase1(2)]
+
 
   pbase1=>tbase1
 
@@ -68,9 +60,9 @@ program formatBasic02a
   print *,"-----100 : pbase1"
   print 100, getResult(pbase1)
   print *,"-----101 : tbase1"
-  print 101, getResult(tbase1) 
+  print 101, getResult(tbase1)
   print *,"-----102 : tbase1"
-  print 102, tbase1 
+  print 102, tbase1
 
   print *,"-----100 : pbase1"
   print 100, pbase1(3:2:-1)

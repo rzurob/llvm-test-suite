@@ -1,54 +1,48 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: dcomp ftybn091s.f 
+! %POSTCMD: dcomp ftybn091s.f
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn091s.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn091s.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : non_overridable 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
 !*
-!*  DESCRIPTION                : testing the parent procedures are    
-!*                               overridden, with multiple levels     
-!*                               overridden. 
-!*    
+!*  SECONDARY FUNCTIONS TESTED : non_overridable
+!*
+!*  DESCRIPTION                : testing the parent procedures are
+!*                               overridden, with multiple levels
+!*                               overridden.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod	      
+   module mod
       integer :: int = 200
       character*20 :: c = "hi"
 
-      type parent 
+      type parent
          integer :: x
 	 contains
       	 procedure, nopass, non_overridable :: bind => proc1
          procedure, nopass :: bind_r => proc2
-      end type 
+      end type
 
-      type, extends(parent) :: child 
+      type, extends(parent) :: child
       contains
          procedure, nopass, non_overridable :: bind => proc1
-      end type  
+      end type
 
       type, extends(child) :: thirGen
       contains
@@ -60,7 +54,7 @@
          procedure, nopass, non_overridable :: bind => proc1
       end type
 
-      type, extends(fourGen) :: fifGen 
+      type, extends(fourGen) :: fifGen
       contains
          procedure, nopass, non_overridable :: bind => proc1
       end type
@@ -76,7 +70,7 @@
          c = ""
       end subroutine
 
-   end module     
+   end module
 
    end
-   
+

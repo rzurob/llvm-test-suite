@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  Misc22.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
-! %EXECARGS: 
-! %POSTCMD: 
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             :  Misc21.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 14, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  
-!*  Procedure pointer component with implicit interface 
-!*  
-!*  
+!*
+!*  Procedure pointer component with implicit interface
+!*
 !*  (Failed: implicit interface problem)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -48,7 +40,7 @@
 
   MODULE M
   LOGICAL L
- 
+
   CONTAINS
 
   FUNCTION F()
@@ -66,7 +58,7 @@
 
   PROGRAM Misc22
   USE M
-  IMPLICIT INTEGER(P) 
+  IMPLICIT INTEGER(P)
 
   TYPE :: DT
     PROCEDURE(INTEGER), POINTER, NOPASS :: ProcPtr

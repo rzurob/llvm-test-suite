@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,25 +13,17 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c08ffb
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran programs interoperate with C functions
 !*                                through a Fortran procedure interface that uses
 !*                                the BIND specification .
-!*            
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -44,8 +31,6 @@
 !*   - The interoperable  procedure itself is  implemented using C
 !*     Function.
 !*   - Test BIND(C) attribute with I/O in External Fortran Procedure.
-!*
-!*  
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -77,7 +62,7 @@ PROGRAM FILE2
   inquire (FILE=start_name, EXIST=lexist)
 
   ! if the file exist ,  saving the old one under a new name.
-  
+
   if (lexist) then
      command = 'mv' // ' ' // start_name // ' ' // old_name
      call system (command)
@@ -85,7 +70,7 @@ PROGRAM FILE2
 
   SUM = 0
 
-  ! Call C subroutine to create the file 
+  ! Call C subroutine to create the file
   !  containing ten one or two digits  numbers, each on a different line.
 
   call  create_file

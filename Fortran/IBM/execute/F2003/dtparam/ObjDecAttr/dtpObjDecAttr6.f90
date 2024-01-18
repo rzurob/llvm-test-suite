@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr6
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 23, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  The DIMENSION attribute --  The deferred shape array
-!*  The bounds of the array target or allocatable array are unaffected by any 
+!*  The bounds of the array target or allocatable array are unaffected by any
 !*  subsequent redefinition or undefinition of variables involved in the bounds'
-!*  specification expressions. 
+!*  specification expressions.
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -66,7 +57,7 @@
   M = N
   N = -N + 1
   L = -L + 1
- 
+
   IF ( ANY( LBOUND(P1) .NE. [-M, m] )) STOP 60
   IF ( ANY( LBOUND(P2) .NE. [-M, m] )) STOP 61
   IF ( ANY( LBOUND(P3) .NE. [-M, m] )) STOP 62
@@ -75,8 +66,8 @@
   IF ( SIZE( P2 ) .NE. m*m ) STOP 71
   IF ( SIZE( P3 ) .NE. m*m ) STOP 72
 
-  DO I = -M, -1 
-  DO J = M, 2*M-1 
+  DO I = -M, -1
+  DO J = M, 2*M-1
 
     IF ( P1(I,J)%K0               .NE.   0          ) STOP 11
     IF ( P1(I,J)%L0               .NE.   0          ) STOP 12
@@ -118,12 +109,12 @@
   USE M
   implicit none
   integer, parameter :: n = 107
-  
+
   ALLOCATE(T1(-N:-1,N), SOURCE=DT0())
   ALLOCATE(T2(-N:-1,N), SOURCE=DT1(2,2)(I=[-1], C=["X"]))
   ALLOCATE(T3(-N:-1,N), SOURCE=DT1(1,1,2,2)(I=[-1,-1],C=["X","X"]))
 
-  CALL Change(n, 2, T1, T2, T3) 
+  CALL Change(n, 2, T1, T2, T3)
 
   END
 

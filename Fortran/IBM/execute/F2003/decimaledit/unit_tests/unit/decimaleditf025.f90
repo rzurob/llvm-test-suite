@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: decimaleditf025.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,30 +12,23 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : decimaleditf025
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 03, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature
 !*                               289039 ). This feature affects the decimal
 !*                               symbol and value separator during I/O.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DESCRIPTION                : This tests the functionality of the  
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : This tests the functionality of the
 !*                               decimal edit mode when doing I/O with
-!*                               arrays of REALs. Both internal and external 
-!*                               files are tested. This testcase tests the 
+!*                               arrays of REALs. Both internal and external
+!*                               files are tested. This testcase tests the
 !*                               compile-time encoding of DECIMAL= specifier.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -51,14 +44,14 @@
       integer, parameter :: NUM_TESTS = 4 ! number of records in each input files
 
       character(50) :: buffer
-      
+
       integer :: i
-      
+
       ! open the unit with the mode in which data has been written to each file
       open(IN_C, file=FNAME_C, decimal='comma')
       open(IN_P, file=FNAME_P, decimal='point')
       open(OUT, file=FNAME_OUT, decimal='point')
-      
+
       write(OUT, *, decimal='point') rl1
 
       ! read everything from input files and output it to OUT
@@ -83,7 +76,7 @@
       open(IN_C, file=FNAME_C, decimal='point')
       open(IN_P, file=FNAME_P, decimal='comma')
       open(OUT, file=FNAME_OUT, decimal='comma', position='append')
-      
+
       write(OUT, *, decimal='point') rl1
 
       ! read everything from input files and output it to OUT

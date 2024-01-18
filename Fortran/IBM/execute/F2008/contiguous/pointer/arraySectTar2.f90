@@ -1,27 +1,17 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : arraySectTar2.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
+!*  DESCRIPTION                : - Target is dummy argument associated with
+!*                                 contiguous actal argument
 !*
-!*  DESCRIPTION                : - Target is dummy argument associated with 
-!*                                 contiguous actal argument 
-!*                      
 !*    Dummy is assumed shape array with CONTIGUOUS attribute
-!*    Actual is contiguous array 
+!*    Actual is contiguous array
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :

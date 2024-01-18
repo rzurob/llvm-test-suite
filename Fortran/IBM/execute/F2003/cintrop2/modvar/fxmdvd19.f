@@ -1,48 +1,36 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
 ! %PRECMD: ${TR_SRC}/rundev.sh fxmdvd19 cxmdvd19a cxmdvd19b cxmdvd19c
 ! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bind(c) attribute/statement
-!*
-!*  PROGRAMMER                 : Kan Tian 
-!*  DATE                       : Nov 20, 2003 
+!*  DATE                       : Nov 20, 2003
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test derived types (up to three levels nested)
 !*                               integer variables, the combination of type
 !*                               and kind type  parameter,
 !*                               with bind(c) attribute/statement,
-!*                               is interoperate with  corresponding C type. 
+!*                               is interoperate with  corresponding C type.
 !*
-!*  SECONDARY FUNCTIONS TESTED : see below 
+!*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_INT, C_INT_FAST64_T
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*
 !*	- testing C_INT and C_INT_FAST64_T
 !*	- Use multiple C code files in the testcases.
@@ -140,7 +128,7 @@ program p1
 
   !Nested Structure Constructors
   dtc = dt2(dt1(dt0(5,10),5,10),5,10)
-  
+
   call csub3(dtc)
 
   if (dtc%a /= 2) error stop 229

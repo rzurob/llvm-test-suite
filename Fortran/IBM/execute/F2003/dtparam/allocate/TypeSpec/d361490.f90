@@ -1,7 +1,7 @@
      TYPE Base  (l1)
         INTEGER, LEN  :: l1
 
-        CHARACTER(l1) :: tag   
+        CHARACTER(l1) :: tag
       END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (l2)

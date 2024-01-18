@@ -2,24 +2,11 @@
 ! ftcx_dtp -qnol -qreuse=self /tstdev/F2003/decimaledit/dtio/dcmlChildWrite003.f
 ! opt variations: -qck -ql -qreuse=none
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 06/30/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : DECIMAL EDIT MODE
 !                               Inquire statement on unit during the child data
@@ -29,8 +16,6 @@
 !                               unit is set to -1 and the INQUIRE stmt will
 !                               return UNDEFINED for decimal edit mode (treated
 !                               as if no connection is made).
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

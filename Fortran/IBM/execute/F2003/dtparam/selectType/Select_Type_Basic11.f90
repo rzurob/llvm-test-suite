@@ -1,24 +1,16 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type_Basic11 - SELECT TYPE 
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 13, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters 
-!*  SECONDARY FUNCTIONS TESTED : Argument Association / Use Asociation 
-!*                               
+!*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
+!*  SECONDARY FUNCTIONS TESTED : Argument Association / Use Asociation
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -37,10 +29,10 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
     MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Basic (k1,len1)
-        INTEGER, KIND :: k1 = 4 
+        INTEGER, KIND :: k1 = 4
         INTEGER, LEN :: len1 = 10
       END TYPE Basic
 
@@ -53,9 +45,9 @@
 
     END MODULE Mod1
 
-    PROGRAM Select_Type_Basic11 
+    PROGRAM Select_Type_Basic11
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       INTERFACE
          SUBROUTINE Sub1(k,p)
@@ -88,11 +80,11 @@
           STOP 13
       END SELECT
 
-    END PROGRAM Select_Type_Basic11 
+    END PROGRAM Select_Type_Basic11
 
     SUBROUTINE Sub1(N,T)
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       INTEGER, INTENT(IN) :: N
       REAL, ALLOCATABLE, TARGET :: tgt(:)
@@ -101,8 +93,8 @@
       tgt = (/ (1., I = 1, N)/)
 
       SELECT TYPE(A=>T)
-        TYPE IS (ExtBasic(k1,*)) 
-           A%Ptr => tgt 
+        TYPE IS (ExtBasic(k1,*))
+           A%Ptr => tgt
            IF ( SIZE(A%Ptr) .NE. N) STOP 20
            IF ( INT(SUM(A%Ptr(:))) .NE. N) STOP 21
 

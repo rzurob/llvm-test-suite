@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat30.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,16 +33,15 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Pass COMMAND_ARGUMENT_COUNT as arguments to other routines
-!*                              
-!*   
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       PROGRAM fxclat30
 
-                                                    
-      INTRINSIC COMMAND_ARGUMENT_COUNT                                                     
-      INTRINSIC GET_COMMAND                 !Generic Name                             
-      INTRINSIC GET_COMMAND_ARGUMENT        !Generic Name                                               
+
+      INTRINSIC COMMAND_ARGUMENT_COUNT
+      INTRINSIC GET_COMMAND                 !Generic Name
+      INTRINSIC GET_COMMAND_ARGUMENT        !Generic Name
       INTRINSIC GET_ENVIRONMENT_VARIABLE    !Generic Name
 
       character(2049)              :: CmdLine = 'fxclat30 111 2222 33333--== 254-24-345-3245'
@@ -56,21 +49,21 @@
       character(2047),target       :: Argument, TNAME, COMMAND
 
 
-     if ( ICOMMAND_ARGUMENT_COUNT(COMMAND_ARGUMENT_COUNT ) .ne. 4) & 
+     if ( ICOMMAND_ARGUMENT_COUNT(COMMAND_ARGUMENT_COUNT ) .ne. 4) &
       then
         error stop 63
       endif
 
-     if ( JCOMMAND_ARGUMENT_COUNT(COMMAND_ARGUMENT_COUNT ) .ne. 4) & 
+     if ( JCOMMAND_ARGUMENT_COUNT(COMMAND_ARGUMENT_COUNT ) .ne. 4) &
       then
         error stop 64
       endif
-     
-     if ( KCOMMAND_ARGUMENT_COUNT(COMMAND_ARGUMENT_COUNT ) .ne. 4) & 
+
+     if ( KCOMMAND_ARGUMENT_COUNT(COMMAND_ARGUMENT_COUNT ) .ne. 4) &
       then
         error stop 65
       endif
- 
+
       CONTAINS
 
         FUNCTION KCOMMAND_ARGUMENT_COUNT(FUN)
@@ -81,8 +74,8 @@
 
         END FUNCTION
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 
 
@@ -104,4 +97,4 @@
 
 
 
-               
+

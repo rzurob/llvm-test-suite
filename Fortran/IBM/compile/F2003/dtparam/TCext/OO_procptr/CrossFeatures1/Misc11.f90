@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90 -qsuppress=1514-008
-! %GROUP:  redherring.f 
-! %VERIFY:  
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
-! %EXECARGS: 
-! %POSTCMD:  tcomp Misc11.f 
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:  tcomp Misc11.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             :  Misc11.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 08, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,18 +34,17 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  
-!* Implicit stmt 
-!* ! in the derived type definition construct, the typing rule is not applied. 
-!*  
+!*
+!* Implicit stmt
+!* ! in the derived type definition construct, the typing rule is not applied.
+!*
 !*  (CHaracteristics check , ice-306550)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
- 
+
   IMPLICIT INTEGER(P)
 
   TYPE :: DT(N1,K1)    ! (20,4)

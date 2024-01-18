@@ -1,26 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : valueAttrCharArg003.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 04/03/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
+!*  DESCRIPTION                : Test 16 byte character variables with
+!*                               subroutines attempting to alter the
+!*				 variables with and without the value
+!*				 attribute.
 !*
-!*  DESCRIPTION                : Test 16 byte character variables with 
-!*                               subroutines attempting to alter the 
-!*				 variables with and without the value 
-!*				 attribute.                               
-!*                              
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================

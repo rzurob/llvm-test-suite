@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignDataPtrComp01a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignDataPtrComp01a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 9 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 9 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test defined assignment with interface block
 !* 2. Components are pointers to intrinsic type
-!* 3. Use Entry statement 
+!* 3. Use Entry statement
 !234567490123456749012345674901234567490123456749012345674901234567490
 module m
    type dtp(k1,l1)
@@ -32,7 +24,7 @@ module m
       character(l1),pointer :: cptr1(:)=>null()
       character(:),pointer  :: cptr2(:)=>null()
       integer(k1),pointer   :: iptr(:)=>null()
-      logical(k1),pointer   :: gptr(:)=>null() 
+      logical(k1),pointer   :: gptr(:)=>null()
 
    end type
 
@@ -42,17 +34,17 @@ module m
    end interface
 
    contains
-       
+
         subroutine assignDT1(this,dt)
             type(dtp(4,*)),intent(inout) :: this
             type(dtp(4,*)),intent(in)    :: dt
 
-            print *,"in assignDT1"            
+            print *,"in assignDT1"
             this%cptr1=>dt%cptr1
             this%cptr2=>dt%cptr2
             this%iptr=>dt%iptr
             this%gptr=>dt%gptr
- 
+
         end subroutine
 
         subroutine assignDT2(this,dt)
@@ -88,7 +80,7 @@ module m
             integer,intent(in)           :: int(:)
             logical,intent(in)           :: log(:)
 
-            print *,"in assignChar" 
+            print *,"in assignChar"
             allocate(this%cptr1(size(char)),source=char)
             allocate(character(2*char%len) :: this%cptr2(size(char)))
 
@@ -101,7 +93,7 @@ module m
             print *,"in assignInt"
 
             allocate(this%iptr(size(int)))
- 
+
             this%iptr=int
 
             goto 100
@@ -109,7 +101,7 @@ module m
             entry assignLog(this,log)
 
             print *,"in assignLog"
-       
+
             allocate(this%gptr(size(log)))
 
             this%gptr=log
@@ -117,7 +109,7 @@ module m
 100         return
 
         end subroutine
- 
+
 end module
 
 program defAssignDataPtrComp01a
@@ -136,9 +128,9 @@ program defAssignDataPtrComp01a
      integer,target :: itar(6) = [1,2,3,4,5,6]
      logical,target :: gtar(4) = [.true.,.false.,.true.,.false.]
 
-     ! call assignDT2 
+     ! call assignDT2
      tar1=[dtp(4,3)(ctar1(1:2),ctar2(1:2),itar(1:4),gtar(1:3)), &
-           dtp(4,3)(ctar1(3:5),ctar2(3:4),itar(5:6),gtar(4:4)) ]  
+           dtp(4,3)(ctar1(3:5),ctar2(3:4),itar(5:6),gtar(4:4)) ]
 
      ! verify tar1
      if(tar1(1)%cptr1%len /= 3)                          stop 10
@@ -161,7 +153,7 @@ program defAssignDataPtrComp01a
      if(any(tar1(2)%iptr /= [5,6]))                      stop 20
      if(any(tar1(2)%gptr .neqv. [.false.]))              stop 21
 
-     allocate(dtp(4,3) :: ptr1(3:4)) 
+     allocate(dtp(4,3) :: ptr1(3:4))
 
      ! call assignDT2
      ptr1=tar1(2:1:-1)
@@ -213,20 +205,20 @@ program defAssignDataPtrComp01a
      if(any(ptr3(1)%gptr .neqv. [.false.,.false.]))     stop 43
 
      allocate(dtp(ptr3%k1,ptr3%l1) :: ptr2)
-   
+
      ! call assignChar
-     ptr2=ctar1(2:3)      
+     ptr2=ctar1(2:3)
 
      ! call assignInt
      ptr2=itar
 
      ! call assignLog
-     ptr2=gtar(1:4:2)       
+     ptr2=gtar(1:4:2)
 
      !verify ptr2
      if(ptr2%cptr1%len /= 3)                            stop 44
      if(any(ptr2%cptr1 /= ["cat","get"]))               stop 45
      if(any(ptr2%cptr2 /= ["catcat","getget"]))         stop 46
      if(any(ptr2%iptr /=  [1,2,3,4,5,6]))               stop 47
-     if(any(ptr2%gptr .neqv. [.true.,.true.]))          stop 48                                
+     if(any(ptr2%gptr .neqv. [.true.,.true.]))          stop 48
 end program

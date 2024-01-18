@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_FLOAT, C_DOUBLE
@@ -124,7 +110,7 @@ real(C_FLOAT) function fnt1(a,b)
 
    real(C_FLOAT) :: a
    real(C_DOUBLE) :: b
-   
+
    if ( a /= 5.0e0 ) error stop 36
    if ( b /= 10.0d0 ) error stop 38
 
@@ -139,7 +125,7 @@ real(C_FLOAT) function fnt2(a,b)
 
    real(C_FLOAT), value :: a
    real(C_DOUBLE), value :: b
-   
+
    if ( a /= 5.0e0 ) error stop 40
    if ( b /= 10.0d0 ) error stop 42
 
@@ -154,7 +140,7 @@ real(C_FLOAT) function fnt3(a,b)
 
    real(C_FLOAT), intent(in) :: a
    real(C_DOUBLE), intent(in) :: b
-   
+
    if ( a /= 5.0e0 ) error stop 44
    if ( b /= 10.0d0 ) error stop 46
 
@@ -166,7 +152,7 @@ real(C_FLOAT) function fnt4(a,b)
 
    real(C_FLOAT), intent(in), value :: a
    real(C_DOUBLE), intent(in), value :: b
-   
+
    if ( a /= 5.0e0 ) error stop 48
    if ( b /= 10.0d0 ) error stop 50
 

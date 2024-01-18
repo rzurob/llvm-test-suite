@@ -1,23 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*
 !*  DESCRIPTION                : Usage of GENERIC BINDING
-!*                                  - array derived type variable containing polymorphic 
+!*                                  - array derived type variable containing polymorphic
 !*                                    components which has DTIO with unformatted I/O
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -39,7 +28,7 @@ module m
          generic :: write(unformatted) => write
          generic :: read(unformatted)  => read
    end type
-   
+
    type, extends(base) :: child
       character(3) :: d = 'xxx'
       contains
@@ -186,17 +175,17 @@ program array003a
       type is ( child )
          if ( ( b2(1,1)%i /= 201 ) .or. ( g%c /= 'ABC' ) .or. ( g%d /= 'abc' ) )   error stop 6_4
    end select
-   
+
    select type ( g => b2(2,1)%b )
       type is ( child )
          if ( ( b2(2,1)%i /= 202 ) .or. ( g%c /= 'DEF' ) .or. ( g%d /= 'def' ) )   error stop 7_4
    end select
-   
+
    select type ( g => b2(1,2)%b )
       type is ( child )
          if ( ( b2(1,2)%i /= 203 ) .or. ( g%c /= 'GHI' ) .or. ( g%d /= 'ghi' ) )   error stop 8_4
    end select
-   
+
    select type ( g => b2(2,2)%b )
       type is ( child )
          if ( ( b2(2,2)%i /= 204 ) .or. ( g%c /= 'JKL' ) .or. ( g%d /= 'jkl' ) )   error stop 9_4

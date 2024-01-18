@@ -1,20 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          BM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : nitExpIntrinOpRelation.f  
+!*  TEST CASE NAME             : nitExpIntrinOpRelation.f
 !*  TEST CASE TTLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 29, 2006
-!*  ORGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTONS TESTED : 
+!*  SECONDARY FUNCTONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
 !*  DRVER STANZA              :
 !*  REQURED COMPILER OPTIONS  : -qfree=f90
@@ -25,18 +21,15 @@
 !*
 !*  DESCRPTION
 !*
-!*  
-!*  .EQ., .NEQV. 
-!*  .GT., .GE., .LT., .LE. 
-!*  
-!* 
+!*  .EQ., .NEQV.
+!*  .GT., .GE., .LT., .LE.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM nitExpIntrinOpRelation 
+  PROGRAM nitExpIntrinOpRelation
   IMPLICIT NONE
 
   INTEGER :: I
@@ -96,4 +89,4 @@
 
   END
 
- 
+

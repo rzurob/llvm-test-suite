@@ -1,23 +1,14 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE     : C Interop: Assumed-length Character arguments
-!*
-!*
-!*
-!*  PROGRAMMER          : Umme Hunny
 !*  DATE                : June, 1, 2014
-!*  ORIGIN              : AIX Compiler Development, Toronto Lab
 !*  FEATURE             : RTC Master Story:
 !*                        C Interop: Assumed-length Character arguments
 !*                        (master story) (72333)
 !*
-!*  FEATURE             : C Interop: Assumed-length Character arguments 
+!*  FEATURE             : C Interop: Assumed-length Character arguments
 !* ===================================================================
-!23456789012345678901234567890123456789012345678901234567890123456789012     
+!23456789012345678901234567890123456789012345678901234567890123456789012
 
       module module1
             interface
@@ -48,7 +39,7 @@
           end subroutine
 
         end interface
-        contains 
+        contains
         subroutine test_all
         character(5) :: a1(5)
 
@@ -69,7 +60,7 @@
 
         end subroutine
 
-      end module      
+      end module
       program assumed_lenght001
          use module1
          call test_all()
@@ -81,7 +72,7 @@
         integer(C_INT) c_len,n, extent, test_no
         character(c_len) c_test
         if(c_len .NE. LEN(c_arg2)) then
-           error STOP 1        
+           error STOP 1
         endif
         if(RANK(c_arg2) .NE. 1) then
            error STOP 2
@@ -101,7 +92,7 @@
           c_test = 'F2C2F'
         endif
 
-        DO WHILE (i .LE. (extent+2*n))          
+        DO WHILE (i .LE. (extent+2*n))
           if(c_arg2(i) .NE. c_test) then
            error STOP 4
           endif
@@ -117,9 +108,9 @@
             character(*) :: c_arg1(2*n+1:*)
             integer(C_INT) c_len,n, extent, test_no
           end subroutine
-        end interface           
-        character(*) :: c_arg3(2*n+1:*)           
-        integer(C_INT) c_len,n, extent, test_no 
+        end interface
+        character(*) :: c_arg3(2*n+1:*)
+        integer(C_INT) c_len,n, extent, test_no
         call check_f_to_c(c_arg3,LEN(c_arg3),n, extent, test_no)
        end subroutine
 
@@ -144,4 +135,4 @@
 
 
 
-       
+

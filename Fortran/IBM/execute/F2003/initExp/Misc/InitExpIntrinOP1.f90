@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpIntrinOP1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpIntrinOP1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 29 2006
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OP1TIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,30 +19,28 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Characteristics of intrinsic op on entities of zero size 
-!* 
-!*  (324911/325918/328083) 
-!* 
+!*  Characteristics of intrinsic op on entities of zero size
+!*
+!*  (324911/325918/328083)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpIntrinOP1 
+  PROGRAM InitExpIntrinOP1
 
   INTEGER(KIND=1)  :: I1(128)=KIND([INTEGER(1)::])
   INTEGER(KIND=2)  :: I2(128)=KIND(0_2 + I1(1:0))
   INTEGER(KIND=4)  :: I4(128)=KIND(I2(1:0) + 0_4 )
   INTEGER(KIND=8)  :: I8(128)=KIND(0_4 + I4(1:0) + 0_8)
 
-  LOGICAL(KIND=1)  :: L1(128)=.FALSE._1 
+  LOGICAL(KIND=1)  :: L1(128)=.FALSE._1
   LOGICAL(KIND=2)  :: L2(128)=.FALSE._2
   LOGICAL(KIND=4)  :: L4(128)=.FALSE._4
   LOGICAL(KIND=8)  :: L8(128)=.FALSE._8
 
-  INTEGER(KIND=1)  :: IL1(128)=KIND([LOGICAL(1) ::]) 
+  INTEGER(KIND=1)  :: IL1(128)=KIND([LOGICAL(1) ::])
   INTEGER(KIND=2)  :: IL2(128)=KIND(.TRUE._1  .OR. L1(1:0))
   INTEGER(KIND=4)  :: IL4(128)=KIND( L2(1:0)  .OR. .TRUE._1 .OR. .FALSE._4 )
   INTEGER(KIND=8)  :: IL8(128)=KIND(.FALSE._1 .OR. .TRUE._2 .OR. L8(1:0))
@@ -61,7 +53,7 @@
   INTEGER :: Z8(128)= KIND(0._8 + Z4(1:0))
   INTEGER :: Z6(128)= KIND(R8(1:0) + (0._4, 0._4) + 0._16 )
 
- 
+
 
   IF ( ANY(I1   .NE. 1 ) ) STOP 11
   IF ( ANY(I2   .NE. 2 ) ) STOP 12
@@ -82,7 +74,7 @@
   IF ( ANY(Z6   .NE. 16) ) STOP 43
 
 
-  END 
+  END
 
 
- 
+

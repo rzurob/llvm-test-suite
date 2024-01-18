@@ -1,39 +1,23 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fext025.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            :
-!*                                                                     
-!*  PROGRAMMER                 : Jim Xia
-!*  DATE                       : Nov. 07, 2003
-!*  ORIGIN                     : XL Fortran Development, Toronto Lab
-!*                             :
-!*                                                                     
-!*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  ===================================================================
 !*
-!*  DRIVER STANZA              : xlf90
+!*  DATE                       : Nov. 07, 2003
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : an extended type introduced via use and only
 !*                               the extended type is exposed

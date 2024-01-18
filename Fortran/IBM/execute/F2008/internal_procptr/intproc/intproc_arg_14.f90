@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME           : intproc_arg_14.f
-!*  TEST CASE TITLE          :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : April 27 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : CMVC Feature number 303977
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*
 !*  Test the argument association --
-!*    The actual argument is an internal function reference 
-!*    which returns a procedure pointer 
-!*  
-!*  
-!*  
+!*    The actual argument is an internal function reference
+!*    which returns a procedure pointer
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -46,7 +36,7 @@
 
     SUBROUTINE Check(Arg)
     INTEGER Arg
-      IF ( iii .NE. Arg) ERROR STOP 11 
+      IF ( iii .NE. Arg) ERROR STOP 11
     END SUBROUTINE
 
   END MODULE
@@ -57,19 +47,19 @@
   PROCEDURE(), POINTER  :: Procptr
 
     iii = 0
-    DO I=1, 100 
-      procptr => intset 
+    DO I=1, 100
+      procptr => intset
       CALL Check(i-1)
       CALL intsub(Intfunc(Procptr), i)
       CALL Check(i)
     END DO
-    
+
     CONTAINS
 
     SUBROUTINE intsub(Proc, Arg)
     PROCEDURE(intset), POINTER, INTENT(IN), OPTIONAL :: Proc
     INTEGER :: Arg
-      IF ( PRESENT(proc) ) THEN 
+      IF ( PRESENT(proc) ) THEN
         CALL Proc(Arg)
       ELSE
         ERROR STOP 12
@@ -78,7 +68,7 @@
 
     SUBROUTINE intset(Arg)
     INTEGER :: Arg
-      iii = Arg 
+      iii = Arg
     END SUBROUTINE
 
     FUNCTION intfunc(proc)
@@ -89,10 +79,10 @@
       ELSE
         ERROR STOP 12
       END IF
-    END FUNCTION 
+    END FUNCTION
 
   END SUBROUTINE
- 
+
   PROGRAM intproc_arg_14
   EXTERNAL Extsub
     CALL Extsub()

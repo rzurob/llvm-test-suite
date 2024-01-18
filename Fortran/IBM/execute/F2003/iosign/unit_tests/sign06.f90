@@ -13,18 +13,11 @@
 !***********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Test of SIGN= specifier
-!*      
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN=specifier in namelist output
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SIGN
@@ -38,7 +31,7 @@
 implicit none
 real r
 integer m
-namelist /nl/ r, m     
+namelist /nl/ r, m
 r = 10.5
 m = 20
 

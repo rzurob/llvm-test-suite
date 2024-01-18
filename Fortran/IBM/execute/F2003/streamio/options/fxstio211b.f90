@@ -1,29 +1,23 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f fort.* 
+! %PRECMD: rm -f fort.*
 ! %COMPOPTS: -qposition=appendunknown:appendold
-! %GROUP: fxstio211b.f 
+! %GROUP: fxstio211b.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio211b.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 25, 2003
 !*
-!*  Primary Function Tested    : options with stream I/O 
+!*  Primary Function Tested    : options with stream I/O
 !*
-!*  Description                : Test -qpostion=appendunknown option 
+!*  Description                : Test -qpostion=appendunknown option
 !*
 !***********************************************************************
 !* in following cases, the default value for the position=specifer is
@@ -32,9 +26,9 @@
 !*    option specifies appendunknown
 !* 2. the status=specifer is old and the -qposition compiler option
 !*    specifies appendold.
-      
+
   integer ios
-  integer fsize(2) /2*0/ 
+  integer fsize(2) /2*0/
   integer ivar1 /-20000000/
   integer, parameter :: ipararr(3) = (/-2147483648, 0, 2147483647/)
 
@@ -113,7 +107,7 @@
    inquire(1, size=fsize(2), iostat=ios, err=300)
 
    if (fsize(2) .ne. 3*fsize(1))     error stop 31
-   close(1, status='delete') 
+   close(1, status='delete')
 
 !* TEST4 : byte
 

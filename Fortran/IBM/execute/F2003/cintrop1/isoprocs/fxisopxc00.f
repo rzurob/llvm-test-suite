@@ -1,46 +1,32 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
 ! %PRECMD: ${TR_SRC}/scrison00.presh fxisopxc00 cxisopxc00
 ! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
-!*  SECONDARY FUNCTIONS TESTED : see below 
+!*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_LONG_DOUBLE_COMPLEX
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*
 !*	- testing interoperable kind type parameter C_LONG_DOUBLE_COMPLEX
 !*      - testing procedures C_LOC, C_ASSOCIATED and C_F_POINTER
@@ -72,7 +58,7 @@ program fxisopxc00
    complex(C_LONG_DOUBLE_COMPLEX), allocatable, target :: al, bl(:), cl(:,:)
    complex(C_LONG_DOUBLE_COMPLEX), pointer :: pa, pb(:), pc(:,:)
    type(C_PTR) :: cp
-   
+
 !! Test 1
 
    a = cmplx(5.0d0,5.0d0)
@@ -188,7 +174,7 @@ program fxisopxc00
 !! Test 5
 
    allocate(bl(DIMB))
- 
+
    do i = 1, DIMB
       bl(i) = cmplx(i,i,C_LONG_DOUBLE_COMPLEX)
    end do

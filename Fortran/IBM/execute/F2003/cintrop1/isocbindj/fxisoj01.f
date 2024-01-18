@@ -1,46 +1,32 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
 ! %PRECMD: ${TR_SRC}/scrisoa00.presh fxisoj01 cxisoj01
 ! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
-!*  SECONDARY FUNCTIONS TESTED : see below 
+!*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              : 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_SIZE_T, C_INTPTR_T
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*
 !*	- testing C_SIZE_T and C_INTPTR_T
 !*	- using external FORTRAN subroutines
@@ -54,7 +40,7 @@ subroutine sub1(a,b)
 
    integer(C_SIZE_T) :: a
    integer(C_INTPTR_T) :: b
-   
+
    if ( a /= 5 ) error stop 20
    if ( b /= 10 ) error stop 22
 
@@ -68,7 +54,7 @@ subroutine sub2(a,b)
 
    integer(C_SIZE_T), value :: a
    integer(C_INTPTR_T), value :: b
-   
+
    if ( a /= 5 ) error stop 24
    if ( b /= 10 ) error stop 26
 
@@ -82,7 +68,7 @@ subroutine sub3(a,b)
 
    integer(C_SIZE_T), intent(in) :: a
    integer(C_INTPTR_T), intent(in) :: b
-   
+
    if ( a /= 5 ) error stop 28
    if ( b /= 10 ) error stop 30
 
@@ -93,7 +79,7 @@ subroutine sub4(a,b)
 
    integer(C_SIZE_T), intent(in), value :: a
    integer(C_INTPTR_T), intent(in), value :: b
-   
+
    if ( a /= 5 ) error stop 32
    if ( b /= 10 ) error stop 34
 
@@ -104,7 +90,7 @@ subroutine sub5(a,b)
 
    integer(C_SIZE_T), intent(in) :: a
    integer(C_INTPTR_T), intent(in) :: b
-   
+
    if ( a /= 5 ) error stop 36
    if ( b /= 10 ) error stop 38
 
@@ -115,7 +101,7 @@ subroutine sub6(a,b)
 
    integer(C_SIZE_T), intent(in), value :: a
    integer(C_INTPTR_T), intent(in), value :: b
-   
+
    if ( a /= 5 ) error stop 40
    if ( b /= 10 ) error stop 42
 

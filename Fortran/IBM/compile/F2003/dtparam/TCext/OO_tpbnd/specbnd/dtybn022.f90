@@ -5,49 +5,43 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: dcomp dtybn022.f 
+! %POSTCMD: dcomp dtybn022.f
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtybn022.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : dtybn022.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : private type bound procedure 
+!*  DATE                       :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : private type bound procedure
 !*
 !*  SECONDARY FUNCTIONS TESTED : pass, non_overridable
 !*
-!*  DESCRIPTION                : testing the non_overridable attribute.    
-!*    
+!*  DESCRIPTION                : testing the non_overridable attribute.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod1	      
+   module mod1
       type, private :: parent(n1,k1)    ! (20,4)
          integer, kind :: k1
          integer, len  :: n1
          integer(k1)   :: x
 	 contains
       	 procedure, pass, non_overridable :: bind => proc1
-      end type 
+      end type
 
    type, extends(parent) :: child    ! (20,4)
    end type
- 
+
    type, extends(child) :: thirGen    ! (20,4)
       contains
       procedure  :: bind => proc2
@@ -74,7 +68,7 @@
       end subroutine
 
    subroutine test
-      call dt_p%bind() 
+      call dt_p%bind()
       call dt_test%dt_c%bind()
       if (dt_p%x .ne. 100)  error stop 2_4
       if (dt_test%dt_c%x .ne. 100)  error stop 3_4

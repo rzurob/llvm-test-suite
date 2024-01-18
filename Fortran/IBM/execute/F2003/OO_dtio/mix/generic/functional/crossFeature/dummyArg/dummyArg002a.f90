@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Dummy Argument Association
@@ -195,7 +184,7 @@ subroutine mywriteext ( dtv )
    character(200) :: msg
 
    write ( 1, iostat = stat, iomsg = msg ) dtv
-   
+
    select type ( dtv )
       type is ( base )
          if ( ( stat /= 0 ) .or. ( msg /= 'dtiowriteb' ) ) error stop 9_4
@@ -212,7 +201,7 @@ subroutine myreadext ( dtv )
    character(200) :: msg
 
    read ( 1, iostat = stat, iomsg = msg ) dtv
-   
+
    select type ( dtv )
       type is ( base )
          if ( ( stat /= 0 ) .or. ( msg /= 'dtioreadb' ) ) error stop 11_4

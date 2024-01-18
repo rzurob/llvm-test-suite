@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemLOGICAL.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemLOGICAL.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  LOGICAL 
+!*
+!*  -  LOGICAL
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -41,7 +34,7 @@
 
 
   PROGRAM  InitExpDefElemLOGICAL
-  !IMPLICIT LOGICAL(KIND(LOGICAL(L)))(L) 
+  !IMPLICIT LOGICAL(KIND(LOGICAL(L)))(L)
   INTEGER :: I, J
 
   LOGICAL, PARAMETER :: L (128)=.TRUE.

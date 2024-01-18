@@ -1,18 +1,8 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Characters with deferred length type parameter
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : scalar character with deferred length
 !*                               with formatted I/O (namelist)
@@ -50,13 +40,13 @@ program deferLenPtrAssgn013
 
    write ( 1, abc, iostat = stat, iomsg = msg )
    if ( ( stat /= 0 ) .or. ( msg /= '' ) ) error stop 1_4
-   
+
    allocate ( c3, source ="IBM" )
-   
+
    c2 => c3
    c1 => c2
    write ( 1, abc, iostat = stat, iomsg = msg )
 
    if ( ( stat /= 0 ) .or. ( msg /= '' ) ) error stop 2_4
-   
+
 end program

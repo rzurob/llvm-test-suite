@@ -1,25 +1,18 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type03a - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 26, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Use association
-!*                               
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -40,23 +33,23 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
         INTEGER, LEN  :: l1 = 20
 
         INTEGER(k1) :: my_arr(l1)
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
         CLASS(Base(k1,l1)), POINTER :: Cmp
-      END TYPE Child 
+      END TYPE Child
 
       INTEGER, PARAMETER :: knd1 = KIND(0), len1 = 10, sum_c = 55
       INTEGER :: I
 
-      CONTAINS 
+      CONTAINS
 
       SUBROUTINE sub1(Obj)
          CLASS(Child(knd1,:)), ALLOCATABLE, INTENT(INOUT) :: Obj
@@ -78,14 +71,14 @@ MODULE Mod1
 
       SUBROUTINE sub2(Obj)
          CLASS(Child(knd1,:)), ALLOCATABLE, INTENT(INOUT) :: Obj
-         TYPE(Base(knd1,len1)), TARGET :: tgt = Base(knd1,len1) ( my_arr=(/ (1, I = 1, len1) /) ) ! has the SAVE attribute 
+         TYPE(Base(knd1,len1)), TARGET :: tgt = Base(knd1,len1) ( my_arr=(/ (1, I = 1, len1) /) ) ! has the SAVE attribute
 
-         Obj%Cmp => tgt   
+         Obj%Cmp => tgt
          IF ( .NOT. ASSOCIATED(Obj%Cmp) ) STOP 20
 
          ASSOCIATE ( p => Obj%Cmp%my_arr )
-            IF ( SUM(p) .NE. len1 ) STOP 21  
-            IF ( ANY(p  .NE. 1   )) STOP 22  
+            IF ( SUM(p) .NE. len1 ) STOP 21
+            IF ( ANY(p  .NE. 1   )) STOP 22
          END ASSOCIATE
       END SUBROUTINE sub2
 
@@ -95,7 +88,7 @@ MODULE Mod1
          SELECT TYPE ( A => Arg )
            TYPE IS (Child(knd1,*))
              ASSOCIATE ( p => A%my_arr )
-               IF ( SUM(p) .NE. sum_c ) STOP 30 
+               IF ( SUM(p) .NE. sum_c ) STOP 30
                DO I = 1, len1
                   IF ( p(I) .NE.    I ) STOP 31
                END DO
@@ -119,9 +112,9 @@ END MODULE Mod1
 !*
 PROGRAM Select_Type03a
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(Child(knd1,:)), ALLOCATABLE :: dtv 
+      CLASS(Child(knd1,:)), ALLOCATABLE :: dtv
 
       CALL sub1(dtv)
       IF ( .NOT. ALLOCATED(dtv) ) STOP 101

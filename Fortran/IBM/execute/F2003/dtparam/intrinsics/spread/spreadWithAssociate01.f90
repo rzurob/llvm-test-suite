@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadWithAssociate01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadWithAssociate01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 24 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 24 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -98,9 +90,9 @@ program spreadWithAssociate01
       if(x(i)%c1%len /= 3)                       error stop 13_4
       if(x(i)%first1%k1 /= 8)                    error stop 14_4
       if(x(i)%first1%i1 /= 1)                    error stop 15_4
-    end do 
+    end do
   end subroutine
-  
+
 !   associate (x=>spread(second2,1,5))
    subroutine associate16_23 (x)
       type(second(*)), intent(in) :: x(:,:)

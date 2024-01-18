@@ -1,12 +1,8 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : F2003/dtparam/procPtr/
-! PROGRAMMER                 : Morteza Ershad-Manesh
 ! DATE                       : 08/05/2008
-! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component 
-! DRIVER STANZA              : xlfF2003
-! DESCRIPTION                : Use of  procedure declaration statement & procedure component with NO/PASS attr. 
+! PRIMARY FUNCTIONS TESTED   : procedure declaration statement & procedure component
+! DESCRIPTION                : Use of  procedure declaration statement & procedure component with NO/PASS attr.
 !=======================================================================
 ! REVISION HISTORY
 !                   MM/DD/YY :
@@ -23,7 +19,7 @@ INTERFACE
    	   INTEGER(KIND=4),SAVE    :: NumCalled =1
  END SUBROUTINE
 END INTERFACE
-  TYPE Base(k1,LEN1) 
+  TYPE Base(k1,LEN1)
    INTEGER, KIND   :: k1
    INTEGER, LEN    :: LEN1
    INTEGER(K1)     :: I
@@ -32,24 +28,24 @@ END INTERFACE
    PROCEDURE(PrntChar4a), NOPASS,POINTER :: procptr2 => null()
    CONTAINS
    PROCEDURE, PASS(Base1)  :: procptr1 => PrntChar6
-  END TYPE 
-  
+  END TYPE
+
   TYPE,EXTENDS(Base) :: Base2
    PROCEDURE(PrntChar4),NOPASS,POINTER  :: procptr4 => null()
    CONTAINS
    PROCEDURE, PASS(Base1a)  :: procptr3 => PrntChar7
   END TYPE
-  
+
  CONTAINS
  SUBROUTINE PrntChar4b ()
    	   INTEGER(KIND=4),SAVE    :: NumCalled =1
 	   print*,"In PrntChar4b, NumCalled ",NumCalled
  END SUBROUTINE
- 
+
    SUBROUTINE PrntChar6 (Base1)
 	CLASS(Base(4,*)),INTENT(IN) :: Base1
     INTEGER(KIND=4),SAVE    :: NumCalled =1
-	
+
 	SELECT TYPE (Base1)
 	  TYPE IS (Base(4,*))
 	   print*,"In PrntChar6, Got the following String from the passed object: ",Base1%OurChar
@@ -58,11 +54,11 @@ END INTERFACE
 	   print*,"UNKNOWN TYPE"
 	END SELECT
    END SUBROUTINE
- 
+
     SUBROUTINE PrntChar7 (Base1a)
 	CLASS(Base2(4,*)),INTENT(INOUT) :: Base1a
     INTEGER(KIND=4),SAVE    :: NumCalled =1
-	
+
 	SELECT TYPE (Base1a)
 	  TYPE IS (Base2(4,*))
 	   print*,"In PrntChar7, Got the following String from the passed object: ",Base1a%OurChar
@@ -71,7 +67,7 @@ END INTERFACE
 	   print*,"UNKNOWN TYPE"
 	END SELECT
    END SUBROUTINE
- 
+
 END MODULE
 
 MODULE m
@@ -84,12 +80,12 @@ USE types
    print*,"PrntChar4 has been called,",NumCalled," times"
    NumCalled=NumCalled+1
  END SUBROUTINE
- 
+
  SUBROUTINE AsstPtr(a)
   TYPE(Base(4,20)),INTENT(INOUT) :: a
    a%procptr=>PrntChar5
  END SUBROUTINE
- 
+
  SUBROUTINE PrntChar1 (a)
    TYPE(Base(4,20)),INTENT(INOUT) :: a
    a%procptr2=>PrntChar5
@@ -97,7 +93,7 @@ USE types
    print*,"Is procptr associated? ", associated(a%procptr)
    call a%procptr2()
  END SUBROUTINE
- 
+
  SUBROUTINE PrntChar2 (b)
   TYPE(Base(4,20)),INTENT(INOUT) :: b
   INTEGER, SAVE :: N=2
@@ -107,7 +103,7 @@ USE types
   call b%procptr2()
    N=N+1
  END SUBROUTINE
- 
+
  SUBROUTINE PrntChar3 (b)
   TYPE(Base(4,20)),INTENT(INOUT) :: b
   INTEGER, SAVE :: N=2
@@ -116,20 +112,20 @@ USE types
   print*,"Is procptr associated? ", associated(b%procptr)
   call b%procptr2()
   N=N+1
- END SUBROUTINE 
+ END SUBROUTINE
 
  SUBROUTINE callprntValue2(b)
   TYPE(Base(4,20)),INTENT(INOUT) :: b
-  PROCEDURE(PrntChar2),POINTER :: ptr   ! RETURN TYPE OF OUR FN IS A POINTER 
+  PROCEDURE(PrntChar2),POINTER :: ptr   ! RETURN TYPE OF OUR FN IS A POINTER
   ptr=>PrntChar2
   b%i=20
   call ptr(b)
  END SUBROUTINE
- 
+
  FUNCTION ChangePtr(i)
    INTEGER,INTENT(IN) :: i
-   PROCEDURE(PrntChar1),POINTER :: ChangePtr   ! RETURN TYPE OF OUR FN IS A POINTER 
-     
+   PROCEDURE(PrntChar1),POINTER :: ChangePtr   ! RETURN TYPE OF OUR FN IS A POINTER
+
    IF ( i .EQ. 1) THEN
     ChangePtr=>PrntChar1
    ELSE IF (i .EQ. 2) THEN
@@ -138,12 +134,12 @@ USE types
     ChangePtr=>PrntChar2
    ENDIF
   END FUNCTION
-  
+
    FUNCTION ChangePtr2(i,c)
    INTEGER,INTENT(IN) :: i
    CLASS(Base(4,*)),INTENT(IN):: c
-   PROCEDURE(PrntChar1),POINTER :: ChangePtr2   ! RETURN TYPE OF OUR FN IS A POINTER 
-   
+   PROCEDURE(PrntChar1),POINTER :: ChangePtr2   ! RETURN TYPE OF OUR FN IS A POINTER
+
 
    SELECT TYPE (c)
     TYPE IS (Base(4,*))
@@ -151,9 +147,9 @@ USE types
     CLASS IS (Base(4,*))
 	 print*,"CLASS IS BASE(4,",c%LEN1,")"
    END SELECT
-   
+
    	  ChangePtr2=>PrntChar3
-   
+
   END FUNCTION
 END MODULE
 
@@ -165,15 +161,15 @@ USE M
  TYPE(Base(4,20)),TARGET :: n
  TYPE(Base2(4,20)),TARGET :: n2
  CLASS(Base(4,20)),POINTER :: x
- 
+
   n=Base(4,20)(15, "ABCDEFGHIJ")
   n2%OurChar=n%OurChar
   n2%I=n%LEN1
-  
+
  print*,"Before association"
  procptr1 => ChangePtr(1)
  call procptr1(n)
- 
+
  procptr1 => ChangePtr(3)
  call procptr1(n)
 
@@ -194,6 +190,6 @@ USE M
  call n2%procptr3()
  n2%procptr2=>PrntChar4b
  call n2%procptr2
- 
+
 END PROGRAM procdeclfn07
 

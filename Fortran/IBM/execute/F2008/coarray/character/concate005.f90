@@ -1,35 +1,30 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : concate005.f
-!*  TEST CASE TITLE            : Test the concatenation of character component of derived type coarray
-!*                               
-!*  PROGRAMMER                 : Ke Wen Lin 
-!*  DATE                       : March 24, 2011 
+!*
+!*  DATE                       : March 24, 2011
 !*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test the concatenation of character component of derived type coarray
-!*                              
-!*  SECONDARY FUNCTIONS TESTED :                                                      
-!*                              
+!*
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REFERENCE                  : No Feature Number
 !*
-!*  DRIVER STANZA              : xlf2003_r
 !*  REQUIRED COMPILER OPTIONS  : -qcaf -q64
 !*
 !*  KEYWORD(S)                 : character, CAF
-!*                              
-!*  TARGET(S)                  : character component of derived type 
+!*
+!*  TARGET(S)                  : character component of derived type
 !*
 !*  DESCRIPTION:
 !*  -----------
-!*  The testcase aim to 
+!*  The testcase aim to
 !*  1. test the concatenation of character component of derived type coarray
-!*  
+!*
 !*  -----------
-!*  
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
@@ -38,19 +33,19 @@ program concate005
 	implicit none
 
 	integer, parameter  :: P = 1, Q = 2
-	
-	type co_dt_type 
+
+	type co_dt_type
 		character (len=5) 	:: coStr1
 		character (len=10) 	:: coStr2
 		character (len=100) :: coStr3
-		
+
 		!allocatable and pointer components of a Derived Type coarray will not be supported for now
-		!character (len=:), allocatable :: coStr2 
+		!character (len=:), allocatable :: coStr2
 		!character (len=:), pointer :: coStr3
 	end type
 
-	type lo_dt_type 
-		character (len=5) 	:: loStr1 
+	type lo_dt_type
+		character (len=5) 	:: loStr1
 		character (len=100) :: loStr2
 	end type
 
@@ -77,7 +72,7 @@ program concate005
 
 	if ( MOD(me,2) == 0) then
 		parity_char = "E"
-	else 
+	else
 		parity_char = "O"
 	end if
 
@@ -89,7 +84,7 @@ program concate005
 	co_dt%coStr1 = repeat(unit_char,5)
 	co_dt%coStr2 = repeat(parity_char,10)
 	co_dt%coStr3 = repeat(unit_char,100)
-	
+
 	!allocate(co_dt%coStr2,source=(repeat(parity_char,10)))
 	!allocate(co_dt%coStr3,source=(repeat(unit_char,100)))
 
@@ -100,7 +95,7 @@ program concate005
 	coConcateStr = ""
 
 	sync all
-	
+
 	!!! ************  coarray // local  ************ !!!
 	concateStr = ""
 	concateStr = co_dt%coStr1//lo_dt%loStr1 ! 5+5
@@ -261,7 +256,7 @@ program concate005
 
 	! ************** blend images ************** !
 
-	if (ne > MAX_IMAGE) then 
+	if (ne > MAX_IMAGE) then
 		ne = MAX_IMAGE
 	end if
 
@@ -269,40 +264,40 @@ program concate005
 	localImageIndexStr = imageIndexStr
 
 	sync all
-	
+
 	! when current image is P, concatenate all the other images
 	if(me == P) then
 
 		concateStr = ""
-		
+
 		do i = 1, ne
 			concateStr = trim(concateStr) // co_dt[i]%coStr1
-		end do 
-			
+		end do
+
 		if(len_trim(concateStr) /= (ne * 5)) then
-			error stop 41        
+			error stop 41
 		end if
 
 		do i = 1, ne
 		   verifyConcateStr((i-1)*5+1:i*5) = co_dt[i]%coStr1
 		end do
 
-		if(concateStr /= verifyConcateStr) then 
+		if(concateStr /= verifyConcateStr) then
 		   error stop 42
 		end if
-		
-	! when current is not P, change P 				
-	else if (me /= P) then 
-			
-		if(me == Q) then 
+
+	! when current is not P, change P
+	else if (me /= P) then
+
+		if(me == Q) then
 			coConcateStr[P] = co_dt[P]%coStr1//co_dt[Q]%coStr1
 			if(.NOT.( (len_trim(coConcateStr[P]) == 10) .AND. (verifyChars(coConcateStr[P],1,5,P_unit_char)) &
 			  .AND. (verifyChars(coConcateStr[P],6,10,Q_unit_char)) )) then
 				error stop 43
 			end if
-			
+
 			coConcateStr[P] = trim(coConcateStr[P])//co_dt[Q]%coStr2//co_dt[P]%coStr2
-			
+
 			if(.NOT.( (len_trim(coConcateStr[P]) == 30) .AND. (verifyChars(coConcateStr[P],1,5,P_unit_char)) &
 			  .AND. (verifyChars(coConcateStr[P],6,10,Q_unit_char))  &
 			  .AND. (verifyChars(coConcateStr[P],11,20,Q_parity_char)) &
@@ -310,34 +305,34 @@ program concate005
 				error stop 44
 			end if
 		end if
-		
+
 	end if
 
 	sync all
-	
+
 	! concatenation between any two images
 	do i = 1, ne
 		coConcateStr = ""
-		
+
 		coConcateStr = co_dt%coStr2//co_dt[i]%coStr2
-		
+
 		if(len_trim(coConcateStr) /= 20) then
 			error stop 45
 		end if
-		
+
 		if(.NOT. (verifyChars(coConcateStr,1,10,parity_char))) then
 			error stop 46
 		end if
-		
+
 		if (MOD(i,2) == 0) then
 			if(.NOT. (verifyChars(coConcateStr,11,20,Q_parity_char))) then
 				error stop 47
 			end if
-		else 
+		else
 			if(.NOT. (verifyChars(coConcateStr,11,20,P_parity_char))) then
 				error stop 48
 			end if
 		end if
-	end do 
+	end do
 
 end program concate005

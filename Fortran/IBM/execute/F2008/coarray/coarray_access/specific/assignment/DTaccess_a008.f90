@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a008.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -53,27 +49,27 @@ program DTaccess_a008
     	print *, caf
     	error stop 21
     end if
-    
+
     if ( any(cafar%i1 /= [1,1,2,3,5,8,13,21,34,min1]) ) then
     	print *, cafar(:)%i1
     	error stop 22
     end if
-    
+
     if ( any(cafar(:)%i2 /= [min2,0_2,min2,0_2,min2,0_2,min2,0_2,min2,0_2]) ) then
     	print *, cafar(:)%i2
     	error stop 23
     end if
-    	
+
     if ( any(cafar(:)%i4 /= [0_4,min4,0_4,min4,0_4,min4,0_4,min4,0_4,min4]) ) then
-    	print *, cafar(:)%i4 
+    	print *, cafar(:)%i4
     	error stop 24
-    end if	
-    
+    end if
+
     if ( any(cafar(:)%i8 /= [min8,0_8,min8,0_8,min8,0_8,min8,0_8,min8,0_8]) ) then
     	print *, cafar(:)%i8
     	error stop 25
     end if
-    
+
     call sub0()
 end
 

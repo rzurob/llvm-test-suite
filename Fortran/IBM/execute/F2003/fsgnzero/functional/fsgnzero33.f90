@@ -1,23 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquida
 !*  DATE                       : 05/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : Testing f(z) = sqrt(z) = sqrt(|z|)*exp(i*tht/2)
-!*                               where: 
+!*                               where:
 !*                                 z = x + i*y
 !*                                 tht = atan2(y/x)
 !*                               when

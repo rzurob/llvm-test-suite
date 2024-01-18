@@ -1,20 +1,14 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : d354468
-!*  TEST CASE TITLE            : Test Case for Defect:  354468
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : July 29, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  ABSTRACT                   : DTPARAM: ICE: DIAG: POLY: SELTYPE: Invalid Type
 !*                               (with Length Parameter) in Type Guard Statement
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

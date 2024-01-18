@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/value/array/func/valuearray_f130.f
 !*
-!*  PROGRAMMER                 : Cezar Lutac 
 !*  DATE                       : 2015-09-24
 !*
 !*  PRIMARY FUNCTIONS TESTED   : VALUE(F2008 extension) - dummy argument arrays allowed with value
@@ -69,12 +66,12 @@ call sub32(r1,r1)
 	end do
 
 contains
-  
+
 subroutine sub11(arg,n)
     complex :: arg(n)
 	integer n
 	value arg
-	
+
 	do doCounter=1,SIZEOFA
 		if (.not. precision_x8(arg(doCounter),r1(doCounter))) error stop 1110
 	end do
@@ -84,11 +81,11 @@ subroutine sub11(arg,n)
 	if (rank(arg) .ne. 1) error stop 1114
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 1115
 	arg=(4*atan(1.0),4*atan(1.0))
-end subroutine	
+end subroutine
 subroutine sub12(arg)
     complex :: arg(10)
 	value arg
-	
+
 	do doCounter=1,SIZEOFA
 		if (.not. precision_x8(arg(doCounter),r1(doCounter))) error stop 1210
 	end do
@@ -98,12 +95,12 @@ subroutine sub12(arg)
 	if (rank(arg) .ne. 1) error stop 1214
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 1215
 	arg=(4*atan(1.0),4*atan(1.0))
-end subroutine		
+end subroutine
 
 subroutine sub13(arg)
     complex :: arg(SIZEOFA)
 	value arg
-	
+
 	do doCounter=1,SIZEOFA
 		if (.not. precision_x8(arg(doCounter),r1(doCounter))) error stop 1310
 	end do
@@ -113,12 +110,12 @@ subroutine sub13(arg)
 	if (rank(arg) .ne. 1) error stop 1314
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 1315
 	arg=(4*atan(1.0),4*atan(1.0))
-end subroutine	
+end subroutine
 
 subroutine sub14(arg)
     complex :: arg(:)
 	value arg
-	
+
 	do doCounter=1,SIZEOFA
 		if (.not. precision_x8(arg(doCounter),r1(doCounter))) error stop 1410
 	end do
@@ -128,13 +125,13 @@ subroutine sub14(arg)
 	if (rank(arg) .ne. 1) error stop 1414
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 1415
 	arg=(4*atan(1.0),4*atan(1.0))
-end subroutine	
+end subroutine
 
 subroutine sub21(arg,n)
 	integer n
 	complex, DIMENSION(n) :: arg
 	value arg
-	
+
 	do doCounter=1,SIZEOFA
 		if (.not. precision_x8(arg(doCounter),r1(doCounter))) error stop 2110
 	end do
@@ -144,12 +141,12 @@ subroutine sub21(arg,n)
 	if (rank(arg) .ne. 1) error stop 2114
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 2115
 	arg=(4*atan(1.0),4*atan(1.0))
-end subroutine	
+end subroutine
 
 subroutine sub22(arg)
 	complex, DIMENSION(10) :: arg
 	value arg
-	
+
 	do doCounter=1,SIZEOFA
 		if (.not. precision_x8(arg(doCounter),r1(doCounter))) error stop 2210
 	end do
@@ -159,12 +156,12 @@ subroutine sub22(arg)
 	if (rank(arg) .ne. 1) error stop 2214
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 2215
 	arg=(4*atan(1.0),4*atan(1.0))
-end subroutine	
+end subroutine
 
 subroutine sub23(arg)
 	complex, DIMENSION(SIZEOFA) :: arg
 	value arg
-	
+
 	do doCounter=1,SIZEOFA
 		if (.not. precision_x8(arg(doCounter),r1(doCounter))) error stop 2310
 	end do
@@ -174,12 +171,12 @@ subroutine sub23(arg)
 	if (rank(arg) .ne. 1) error stop 2314
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 2315
 	arg=(4*atan(1.0),4*atan(1.0))
-end subroutine	
+end subroutine
 
 subroutine sub24(arg)
 	complex, DIMENSION(:) :: arg
 	value arg
-	
+
 	do doCounter=1,SIZEOFA
 		if (.not. precision_x8(arg(doCounter),r1(doCounter))) error stop 2410
 	end do
@@ -189,13 +186,13 @@ subroutine sub24(arg)
 	if (rank(arg) .ne. 1) error stop 2414
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 2415
 	arg=(4*atan(1.0),4*atan(1.0))
-end subroutine	
+end subroutine
 
 subroutine sub31(arg,arg2)
 	complex arg2(:)
 	complex arg(size(arg2))
 	value arg
-	
+
 	do doCounter=1,SIZEOFA
 		if (.not. precision_x8(arg(doCounter),r1(doCounter))) error stop 3110
 	end do
@@ -205,13 +202,13 @@ subroutine sub31(arg,arg2)
 	if (rank(arg) .ne. 1) error stop 3114
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 3115
 	arg=(4*atan(1.0),4*atan(1.0))
-end subroutine	
+end subroutine
 
 subroutine sub32(arg,arg2)
 	complex arg2(:)
 	complex , DIMENSION (size(arg2)) :: arg
 	value arg
-	
+
 	do doCounter=1,SIZEOFA
 		if (.not. precision_x8(arg(doCounter),r1(doCounter))) error stop 3210
 	end do
@@ -221,6 +218,6 @@ subroutine sub32(arg,arg2)
 	if (rank(arg) .ne. 1) error stop 3214
 	if (any(shape(arg) .ne. SIZEOFA)) error stop 3215
 	arg=(4*atan(1.0),4*atan(1.0))
-end subroutine	
+end subroutine
 
 end

@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : position102kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from position102 by Robert Ma)
 !*  DATE                       : 2007-07-06 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try position edit descriptors (T, TL, TR, X) with multiple level of namelist DTIO(Output)
@@ -163,7 +155,7 @@ subroutine containerreadformatted(dtv, unit, iotype, v_list, iostat, iomsg )
    type(data(4)), allocatable :: d1 ! tcx: (4)
    namelist /containerdtio/ d1
    allocate(d1)
-   
+
    if ( iotype /= "NAMELIST" ) error stop 8_4
    if ( size(v_list, 1) /= 0 ) error stop 9_4
 

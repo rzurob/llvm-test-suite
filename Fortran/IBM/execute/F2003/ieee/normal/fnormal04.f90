@@ -12,21 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Vasile Radulescu
 !*  DATE                       : February 15, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NORMAL 
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NORMAL
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  : -qfloat=nans:nofold -qrealsize=4
 !*
 !*  KEYWORD(S)                 :
@@ -39,10 +30,10 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
         program fnormal04
-      
+
         use ieee_arithmetic
         use constants_for_ieee
-       
+
         real, dimension(5) :: normal_result
         real, parameter :: normal_pos1 = tiny(1.0)
         real, parameter :: normal_pos2 = huge(1.0)
@@ -73,11 +64,11 @@
         test_ninf = NINF_4
         if (ieee_support_datatype(test_pinf) .AND. ieee_support_datatype(test_ninf)) then
            if (ieee_is_normal(test_pinf) .eqv. .true. ) then
-              error stop 1  
+              error stop 1
            endif
 
            if (ieee_is_normal(test_ninf) .eqv. .true. ) then
-              error stop 2 
+              error stop 2
            endif
         endif
 
@@ -85,7 +76,7 @@
         test_phd = PHD_4
         test_ptd = PTD_4
         test_nhd = NHD_4
-        test_ntd = NTD_4       
+        test_ntd = NTD_4
         if (ieee_support_datatype(test_phd) .AND. ieee_support_datatype(test_ptd)) then
            if (ieee_is_normal(test_phd) .eqv. .true. ) then
               error stop 3
@@ -94,7 +85,7 @@
               error stop 4
            endif
         endif
-        
+
         if (ieee_support_datatype(test_nhd) .AND. ieee_support_datatype(test_ntd)) then
            if (ieee_is_normal(test_nhd) .eqv. .true.) then
               error stop 5
@@ -107,7 +98,7 @@
 !...test with PZERO and NZERO values
         test_pzero = PZERO_4
         test_nzero = NZERO_4
-              
+
         if (ieee_support_datatype(test_pzero) .AND. ieee_support_datatype(test_nzero)) then
            if (ieee_is_normal(test_pzero) .neqv. .true.) then
               error stop 7
@@ -124,12 +115,12 @@
            endif
         endif
 
-       if (ieee_support_datatype(normal_pos2)) then    
+       if (ieee_support_datatype(normal_pos2)) then
            if (ieee_is_normal(normal_pos2) .neqv. .true.) then
               error stop 10
            endif
        endif
-        
+
 !...test with arrays
         arrval = (/ PNANQ_4, PNANS_4, NNANQ_4, NNANS_4 /)
         if (ieee_support_datatype(arrval)) then
@@ -208,7 +199,7 @@
            endif
         endif
 
- 
+
         test_nnanq_highest = nnanq_highest_4
         if (ieee_support_datatype(test_nnanq_highest)) then
            if ( ieee_is_normal(test_nnanq_highest) .eqv. .true. ) then
@@ -218,7 +209,7 @@
 
 !...test the range values for NANS
 !...lowest range values
-      
+
         test_pnans_lowest = pnans_lowest_4
         if (ieee_support_datatype(test_pnans_lowest)) then
            if ( ieee_is_normal(test_pnans_lowest) .eqv. .true. ) then
@@ -234,7 +225,7 @@
         endif
 
 !...highest range values
-        
+
         test_pnans_highest = pnans_highest_4
         if (ieee_support_datatype(test_pnans_highest)) then
            if ( ieee_is_normal(test_pnans_highest) .eqv. .true. ) then

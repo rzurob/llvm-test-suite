@@ -1,24 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : bozDble005.f
-!*
-!*  PROGRAMMER                 : Vicram Uppal
 !*  DATE                       : 02/06/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.4.1: boz-literal-constant
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : DBLE intrinsic
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Section 13.7.29: DBLE(A)
 !*			The result has the value REAL (A, KIND (0.0D0))
-!*		
+!*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !* ===================================================================
@@ -48,12 +37,12 @@ program bozDble005
     error stop 2_4
 
     testD = DBLE(O"777434343434343434345362143434343434343434")
-    if (testI(1) /= O'377616161616161616162') error stop 3_4 
-    if (testI(2) /= O"1362143434343434343434") error stop 4_4 
-    
+    if (testI(1) /= O'377616161616161616162') error stop 3_4
+    if (testI(2) /= O"1362143434343434343434") error stop 4_4
+
     testD = DBLE(Z"3fffcd343866873bbc990cb9e52aa19d")
-    if (testI(1) /= Z'3FFFCD343866873B') error stop 5_4  
-    if (testI(2) /= Z"BC990CB9E52AA19D") error stop 6_4  
+    if (testI(1) /= Z'3FFFCD343866873B') error stop 5_4
+    if (testI(2) /= Z"BC990CB9E52AA19D") error stop 6_4
 
     !Upper Bound
     testD = &

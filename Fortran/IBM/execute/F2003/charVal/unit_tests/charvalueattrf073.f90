@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: charvalueattrf073.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,26 +12,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : charvalueattrf073
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Feb. 01, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the VALUE
-!*                               attribute when used with characters of 
-!*                               length other than 1. ( Feature 298120 )   
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*                               attribute when used with characters of
+!*                               length other than 1. ( Feature 298120 )
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DESCRIPTION                : test for when the proc takes more than 
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : test for when the proc takes more than
 !*                               1 arg and the actual arg is a substring
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -44,7 +37,7 @@ program main
 
       call s1(c(3:3), x)
       if ( c .ne. 'abcdefghij' .or. x .ne. 'try' ) error stop 9
-      
+
       call s1(c(3:5), x)
       if ( c .ne. 'abcdefghij' .or. x .ne. 'try') error stop 10
 
@@ -57,7 +50,7 @@ program main
 
       call s2(c(3:5), x)
       if ( c .ne. 'abcdefghij' .or. x .ne. 'try' ) error stop 13
-      
+
       call s2(c(3:8), x)
       if ( c .ne. 'abcdefghij' .or. x .ne. 'try') error stop 14
 
@@ -70,7 +63,7 @@ program main
 
       call s3(c(3:5), x)
       if ( c .ne. 'abcdefghij' .or. x .ne. 'try' ) error stop 17
-      
+
       call s3(c(3:6), x)
       if ( c .ne. 'abcdefghij' .or. x .ne. 'try') error stop 18
 
@@ -83,7 +76,7 @@ program main
 
       call s4(c(3:5), x)
       if ( c .ne. 'abcdefghij' .or. x .ne. 'try' ) error stop 21
-      
+
       call s4(c(3:8), x)
       if ( c .ne. 'abcdefghij' .or. x .ne. 'try') error stop 22
 

@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass118.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass118.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -75,19 +63,19 @@
       implicit none
 
       logical, target :: a = .true.
-      logical, pointer :: b 
+      logical, pointer :: b
 
       logical*1, target :: a1 = .false.
       logical*1, pointer :: b1
 
       logical*2, target :: a2 = .true.
-      logical*2, pointer :: b2 
+      logical*2, pointer :: b2
 
       logical*4, target :: a4 = .false.
-      logical*4, pointer :: b4 
+      logical*4, pointer :: b4
 
-      logical*8, target :: a8 = .true. 
-      logical*8, pointer :: b8 
+      logical*8, target :: a8 = .true.
+      logical*8, pointer :: b8
 
       character*4, target :: ab1 = 'abcd'
       character*4, pointer :: ab2
@@ -104,12 +92,12 @@
          error stop 1
       endif
       end associate
-  
+
       associate ( arg1 => b1, arg2 => b2, arg3 => (.true. .eqv. b4), arg4 => b8 )
       if(arg1 .neqv. a1)then
          error stop 2
       endif
-      
+
       if(arg2 .neqv. a2)then
          error stop 3
       endif
@@ -130,4 +118,4 @@
       end associate
 
       end
-      
+

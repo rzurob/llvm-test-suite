@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUseOperator03
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-08-25
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTP and USE
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 355310
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : user-defined operators
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -354,7 +348,7 @@ program dtpUseOperator03
   print *, "p245vb:", p245vb
   print *, "p245vc:", p245vc
   print *, "p245vd:", p245vd
-  
+
   p3454va = ThreeParms(4,5,4)(1080045576_4,'abcdex',[(i**3,i=1021,1025)], &
                               [4.1,5.3,9.1e10,-3.3,14.1e-5])
   p3454vb = ThreeParms(4,5,4)(1080045576_4,'abcdex',[(i**3,i=1021,1025)], &
@@ -368,7 +362,7 @@ program dtpUseOperator03
   print *, "p3454vb:", p3454vb
   print *, "p3454vc:", p3454vc
   print *, "p3454vd:", p3454vd
-  
+
 
   p243va = TwoParms(4,3)(1080045576_4,'abcx',[(i**3,i=1021,1023)])
   p243vb = TwoParms(4,3)(1080045576_4,'defx',[(i**3,i=1021,1023)])
@@ -400,7 +394,7 @@ program dtpUseOperator03
   print *, "p285vb:", p285vb
   print *, "p285vc:", p285vc
   print *, "p285vd:", p285vd
-  
+
   p3858va = ThreeParms(8,5,8)(1080045576_4,'abcdex',[(i**3,i=1021,1025)], &
                               [4.1,5.3,9.1e10,-3.3,14.1e-5])
   p3858vb = ThreeParms(8,5,8)(1080045576_4,'abcdex',[(i**3,i=1021,1025)], &
@@ -432,7 +426,7 @@ program dtpUseOperator03
   print *, "p3858vb:", p3858vb
   print *, "p3858vc:", p3858vc
   print *, "p3858vd:", p3858vd
-  
+
 
   p283va = TwoParms(8,3)(1080045576_4,'abcx',[(i**3,i=1021,1023)])
   p283vb = TwoParms(8,3)(1080045576_4,'defx',[(i**3,i=1021,1023)])

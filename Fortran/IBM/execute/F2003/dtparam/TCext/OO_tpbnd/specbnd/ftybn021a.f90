@@ -5,31 +5,25 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn021a.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn021a.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn021a.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn021a.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : overriding 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
+!*
+!*  SECONDARY FUNCTIONS TESTED : overriding
 !*
 !*  DESCRIPTION                : Testing the nopass binding attribute,
 !*                               the binding procedures wit one dummy
@@ -39,8 +33,8 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 
-	module mod	      
-		type base(k1)    ! (4) 
+	module mod
+		type base(k1)    ! (4)
       integer, kind :: k1
       integer(k1)   :: x
 		contains
@@ -52,7 +46,7 @@
  		procedure, nopass :: bind => proc2
 		end type
 
-      type, extends(parent) :: child    ! (4) 
+      type, extends(parent) :: child    ! (4)
       contains
       procedure, nopass :: bind => proc3
       end type
@@ -65,14 +59,14 @@
 
       integer function proc2(arg1)
      	   type(child(4)), intent(in) :: arg1
-         proc2 = arg1%x 
+         proc2 = arg1%x
       end function proc2
 
       integer function proc3(arg1)
          type(child(4)), intent(in) :: arg1
-         proc3 = arg1%x 
+         proc3 = arg1%x
       end function proc3
-	end module     
+	end module
 
    use mod
 
@@ -89,4 +83,4 @@
    if(child_dt1%bind(child_dt1) .ne. child_dt1%x) error stop 4
 
    end
-   
+

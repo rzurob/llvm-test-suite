@@ -1,40 +1,32 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : nullGeneric04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : nullGeneric04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 23 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD]) 
+!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD])
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.88 
+!* 1. TEST SECTION 13.7.88
 !* 2. NULL([MOLD])
-!* 3. MOLD IS ALLOCATABLE 
-!* 4. NULL(MOLD) IS USED AS ACTUAL ARGUMENT OF GENERIC TYPE-BOUND PROCEDURE 
+!* 3. MOLD IS ALLOCATABLE
+!* 4. NULL(MOLD) IS USED AS ACTUAL ARGUMENT OF GENERIC TYPE-BOUND PROCEDURE
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type dtp(k,l)
       integer,kind :: k=8
       integer,len  :: l=20
-      
+
       integer(k)   :: i=99
       contains
          procedure,nopass :: sub1
-         procedure,nopass :: sub2 
+         procedure,nopass :: sub2
          procedure,nopass :: sub3
          generic :: sub => sub1,sub2,sub3
    end type
@@ -64,7 +56,7 @@ module m
          else
             print *,"dtp is not allocated"
          endif
- 
+
     end subroutine
 
     subroutine sub3(dt1,dt2)
@@ -84,7 +76,7 @@ module m
          else
             print *,"dtp2 is not allocated"
          endif
-    end subroutine 
+    end subroutine
 end module
 
 program nullGeneric04
@@ -93,7 +85,7 @@ program nullGeneric04
 
    integer :: j
 
-   type(dtp)  :: obj 
+   type(dtp)  :: obj
 
    type(dtp(2,3))  :: tar1(3)=(/ (dtp(2,3)(j),j=1,3) /)
    type(dtp(4,6))  :: tar2(3)=(/ (dtp(4,6)(j),j=11,13) /)
@@ -112,8 +104,8 @@ program nullGeneric04
    call obj%sub(dtp1)
    call obj%sub(dtp2)
    call obj%sub(dtp1,dtp2)
-  
-   print *,"3---" 
+
+   print *,"3---"
    call obj%sub(null(dtp1))
    call obj%sub(null(dtp2))
    call obj%sub(null(dtp1),null(dtp2))

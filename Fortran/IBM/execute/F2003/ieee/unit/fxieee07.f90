@@ -12,21 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Marcus Yu
 !*  DATE                       : February 6, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NAN
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qintsize
 !*
 !*  KEYWORD(S)                 :
@@ -34,7 +25,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
         program fxieee07
@@ -134,7 +124,7 @@
               print *, "ieee_is_nan(array) failed for NNANS_4."
            endif
         endif
-        
+
         ! Now check that no flags were turned on.
         call ieee_get_flag(ieee_all,flag_values)
         do i = 1,5
@@ -212,7 +202,7 @@
               print *, "ieee_is_nan(array) failed for NNANS_8."
            endif
         end if
-        
+
         ! Now check that no flags were turned on.
         call ieee_get_flag(ieee_all,flag_values)
         do i = 1,5

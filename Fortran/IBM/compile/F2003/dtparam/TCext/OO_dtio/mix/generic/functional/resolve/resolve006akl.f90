@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : resolve006akl
 !*
-!*  PROGRAMMER                 : David Forster (derived from resolve006a by Robert Ma)
 !*  DATE                       : 2007-08-09 (original: 04/26/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Section 9.5.3.7.3 Resolving derived-type input/output procedure references (generic binding)
 !*                                    - Make both generic type bound and interface available
@@ -126,19 +118,19 @@ program resolve006akl
 
    write ( 1, iostat = stat, iomsg = msg ) b1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
-   
+
    rewind 1
-   
+
    read ( 1, iostat = stat, iomsg = msg )  b2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) )  error stop 2_4
-   
+
    dummy => b2
-   
+
    do while ( associated(dummy ) )
       print *, dummy%c
-      dummy => dummy%next   
+      dummy => dummy%next
    end do
-   
+
    close ( 1, status ='delete')
 
 end program

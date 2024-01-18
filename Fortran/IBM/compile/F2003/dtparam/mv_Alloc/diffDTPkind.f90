@@ -1,25 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : diffDTPkind.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : 
-!*                               DTP kind for TO and FROM are different 
+!*  DESCRIPTION                :
+!*                               DTP kind for TO and FROM are different
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -36,6 +24,6 @@ end type
     class(t(4)), allocatable :: TO
     type(t(8)), allocatable :: FROM
 
-    call move_alloc(FROM, TO) 
+    call move_alloc(FROM, TO)
 
     end

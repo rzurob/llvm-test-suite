@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  HostAssocConstStruct1.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  HostAssocConstStruct1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : HostAssocConstStruct1 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : HostAssocConstStruct1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,12 +32,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is an associte name associating to a constant structure (component) 
-!*    Test if a const can be changed by type bound procedures 
+!*    The selector is an associte name associating to a constant structure (component)
+!*    Test if a const can be changed by type bound procedures
 !*   (Comp failed)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
 
   MODULE M
     TYPE :: Base(K1)    ! (4)
@@ -60,7 +54,7 @@
 
   END MODULE
 
-  PROGRAM HostAssocConstStruct1 
+  PROGRAM HostAssocConstStruct1
   USE M
   IMPLICIT NONE
 

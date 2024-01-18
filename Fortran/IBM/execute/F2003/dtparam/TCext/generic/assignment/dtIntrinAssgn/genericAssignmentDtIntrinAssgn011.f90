@@ -3,22 +3,11 @@
 ! opt variations: -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=self
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Derived Type Intrinsic Assignment:
 !*                                      - try a derived type containing an derived type scalar and array
@@ -69,7 +58,7 @@ program genericAssignmentDtIntrinAssgn011
    use m
 
    type(container(4,:)), pointer ::  c1
-   type(container(4,:)) ::  c2 
+   type(container(4,:)) ::  c2
    type(container(4,20)) ::  c3
 
    allocatable :: c2

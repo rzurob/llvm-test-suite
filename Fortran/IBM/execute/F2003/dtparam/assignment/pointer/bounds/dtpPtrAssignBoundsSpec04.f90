@@ -1,22 +1,16 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : dtpPtrAssignBoundsSpec04
-!*  TEST CASE TITLE            : POINTER Assignment (with Bounds Specification
 !*                               and Remapping)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : June  8, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Bounds Specification for an array of Derived
 !*                               Type (with Type Parameters)
 !*  SECONDARY FUNCTIONS TESTED : Where data-target is data-pointer-object
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : nmlMixNaNInfIO001.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -43,19 +37,19 @@
       real(16)    :: rl3
 
       integer :: ios = 0
-      
+
       namelist /nan/ rl1, cx1, rl2, cx2, rl3, cx3
-      
+
       open(in,  file='nmlMixNaNInfIO001.dat', action='read')
       open(out, file='nmlMixNaNInfIO001.out', action='write')
-      
+
       do
          read(in, nml=nan, iostat=ios)
 
          if ( is_iostat_end(ios) ) exit
-         
+
          write(out, nml=nan)
-         
+
       end do
 
       close(in)

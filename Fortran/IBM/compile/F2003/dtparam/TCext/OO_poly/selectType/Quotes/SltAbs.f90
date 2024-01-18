@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp SltAbs.f 
+! %POSTCMD: tcomp SltAbs.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltAbs
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 14, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The type quard is specified with an abstract type 
+!*
+!*   The type quard is specified with an abstract type
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -58,7 +52,7 @@
     TYPE, EXTENDS(Base) :: Child    ! (4)
       INTEGER(K1)  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     TYPE, ABSTRACT,  EXTENDS(Child) :: Abs    ! (4)
@@ -87,18 +81,18 @@
   CLASS(Base(4)), POINTER :: Ptr(:)
   TYPE(Child(4)), TARGET :: Tar(4)
 
-  Ptr => Tar 
+  Ptr => Tar
 
   SELECT TYPE ( As => Ptr )
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 20
   TYPE IS (Abs(4))
-    STOP 30 
+    STOP 30
   TYPE IS (Base(4))
-    STOP 30 
+    STOP 30
   TYPE IS (Child(4))
   END SELECT
- 
-  
+
+
   END
 

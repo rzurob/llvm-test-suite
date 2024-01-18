@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUOpPointerInterface
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2009-02-11
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : User-Defined Operators
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 361989
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -29,7 +23,7 @@
 !*  and using them, define generic bindings for binary operators.  Verify that the
 !*  correct function is invoked when the operation appears as a dummy argument.
 !*
-!*  Note that only an "Interface" version of this test case exists, since 
+!*  Note that only an "Interface" version of this test case exists, since
 !*  passed-object dummy arguments cannot be pointers.
 !*
 !* ============================================================================
@@ -152,7 +146,7 @@ program dtpUOpPointerInterface
 
   use dtpUOpPointerInterfacemod
   implicit none
-  
+
   type(dk(2)), target  :: xk2a, xk2b, xk2_21, xk2_22
   class(dk(2)), pointer :: xk2ap, xk2bp
   type(dk(4)), target  :: xk4a, xk4b, xk4_23, xk4_24

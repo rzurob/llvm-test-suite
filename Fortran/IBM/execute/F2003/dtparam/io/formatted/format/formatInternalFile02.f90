@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatInternalFile02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatInternalFile02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 10 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. test READ & WRITE in internal file(string buffer)
@@ -29,7 +21,7 @@ module m
   type base(k1,l1)
      integer,kind  :: k1 !k1=2
      integer,len   :: l1 !l1=3
-     integer(k1)   :: i(l1-1) 
+     integer(k1)   :: i(l1-1)
   end type
 
   type,extends(base) :: child(l2)
@@ -66,23 +58,23 @@ program formatInternalFile02
        access='sequential',sign='suppress',iostat=ios)
 
   if(ios /= 0) then
-    print *,"fail to open the file, iostat=",ios 
-    stop 11 
+    print *,"fail to open the file, iostat=",ios
+    stop 11
   else
      select type(base1)
         type is(child(2,*,*))
-            write(10,'(sp,2i4,/3a3/3l3/f5.2,e12.3,f7.2)') base1 
+            write(10,'(sp,2i4,/3a3/3l3/f5.2,e12.3,f7.2)') base1
         class default
            stop 12
      end select
   end if
 
   rewind(10)
- 
+
   read(10,'(a30/a30/a30/a30)')  (buffer(i),i=0,3)
 
   do i=0,3
-     write(*,'(a30)') buffer(i) 
+     write(*,'(a30)') buffer(i)
   end do
 
   select type(base2)
@@ -94,6 +86,6 @@ program formatInternalFile02
          stop 13
   end select
 
-  close(10) 
+  close(10)
 
 end program

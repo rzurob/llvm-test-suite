@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  HostAssocVarImplicit.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  HostAssocVarImplicit.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : HostAssocVarImplicit 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : HostAssocVarImplicit
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,7 +31,7 @@
 !*
 !*  DESCRIPTION
 !*    The selector is an associate name associating to a non-poly variable of implied type
-!*    (Comp failed) 
+!*    (Comp failed)
 !*  (This time the init values of componets are wrong)
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,7 +47,7 @@
       INTEGER  :: ChildId = 2
       TYPE(Base) :: BaseComp = Base(0)
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -78,28 +72,28 @@
 
   ASSOCIATE ( T1 => U, T2 => U  )
 
-    IF ( As%GetID()   .NE. 2) STOP 40 
-    IF ( As%ChildID   .NE. 2) STOP 41 
-    IF ( As%BaseID    .NE. 1) STOP 42 
+    IF ( As%GetID()   .NE. 2) STOP 40
+    IF ( As%ChildID   .NE. 2) STOP 41
+    IF ( As%BaseID    .NE. 1) STOP 42
 
     U%BaseId  = -1
     U%ChildId = -2
 
-    IF ( T2%GetID()   .NE. -2) STOP 50 
-    IF ( T2%ChildID   .NE. -2) STOP 51 
-    IF ( T2%BaseID    .NE. -1) STOP 52 
+    IF ( T2%GetID()   .NE. -2) STOP 50
+    IF ( T2%ChildID   .NE. -2) STOP 51
+    IF ( T2%BaseID    .NE. -1) STOP 52
 
     ASSOCIATE ( As1 => T1, As2 => T1 )
-      IF ( As1%GetID()   .NE. -2) STOP 60 
-      IF ( As2%ChildID   .NE. -2) STOP 61 
-      IF ( As2%BaseID    .NE. -1) STOP 62 
+      IF ( As1%GetID()   .NE. -2) STOP 60
+      IF ( As2%ChildID   .NE. -2) STOP 61
+      IF ( As2%BaseID    .NE. -1) STOP 62
 
       As2%BaseId  = 1
       As2%ChildId = 2
 
-      IF ( U%GetID()   .NE. 2) STOP 70 
-      IF ( U%ChildID   .NE. 2) STOP 71 
-      IF ( U%BaseID    .NE. 1) STOP 72 
+      IF ( U%GetID()   .NE. 2) STOP 70
+      IF ( U%ChildID   .NE. 2) STOP 71
+      IF ( U%BaseID    .NE. 1) STOP 72
     END ASSOCIATE
 
   END ASSOCIATE

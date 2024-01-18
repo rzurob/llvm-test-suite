@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with scalar component with deferred shape array component (Input)
@@ -137,7 +121,7 @@ subroutine readformatted (dtv, unit, iotype, v_list, iostat, iomsg)
 
    if ( iotype /= "NAMELIST" ) error stop 8_4
    if ( size(v_list, 1) /= 0 ) error stop 9_4
-   
+
    allocate ( b(size(dtv%b,1) ) )
    read (unit, "(A3)", iostat=iostat )        dtv%c
 
@@ -147,11 +131,11 @@ subroutine readformatted (dtv, unit, iotype, v_list, iostat, iomsg)
         read (unit, nml, iostat=iostat, iomsg = iomsg )
         if ( ( iomsg /= 'dtioread1' ) .or. ( iostat /= 0 ) ) error stop 10_4
    end if
-   
+
    if ( allocated (dtv%b) ) then
       deallocate(dtv%b)
    end if
-   
+
    allocate ( dtv%b(size(b,1)), source=b )
 
 
@@ -169,7 +153,7 @@ subroutine readformatteddata (dtv, unit, iotype, v_list, iostat, iomsg)
    integer, intent(out) :: iostat
    character(*), intent(inout) :: iomsg
    integer(4), allocatable :: i
-   
+
    namelist /n3/ i
 
    if ( iotype /= "NAMELIST" ) error stop 11_4
@@ -178,7 +162,7 @@ subroutine readformatteddata (dtv, unit, iotype, v_list, iostat, iomsg)
    allocate ( i )
 
    read (unit, n3, iostat=iostat )
-   
+
    if (iostat /= 0) error stop 13_4
 
    dtv%i = i

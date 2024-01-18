@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Section 4.5.4 Type Bound Procedures (generic-binding)
 !*                               Syntax Check: C464 If generic-spec is dtio-generic-spec, the interface of each binding
@@ -65,7 +54,7 @@ module m
 
       subroutine uwrite (dtv, unit, iostat, iomsg)
          class(base), intent(inout) :: dtv       !<- should be intent(in)
-         integer, intent(in) :: unit 
+         integer, intent(in) :: unit
          integer, intent(inout) :: iostat        !<- should be intent(out)
          character(*), intent(in) :: iomsg       !<- should be intent(inout)
 

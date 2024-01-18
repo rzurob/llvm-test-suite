@@ -3,13 +3,9 @@
 ! opt variations: -qnok -qnol -qdeferredlp
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_procptr/component
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 04/18/2005
 ! PRIMARY FUNCTIONS TESTED   : procedure pointer component
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Specify procedure interface using
 !                              interface-name. The procedure pointer
 !                              is a dummy argument, and the associated

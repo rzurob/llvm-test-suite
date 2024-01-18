@@ -1,19 +1,13 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrSMP.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -38,18 +32,18 @@ program main
 
     !$omp parallel do lastprivate(p)
     do  i = 1, NTHR
-        tar(i) = NTHR+1 - i 
+        tar(i) = NTHR+1 - i
         p(i:) => tar
     enddo
 
     if ( .not. associated(p, tar)) stop 1
-    if ( lbound(p, 1) /= NTHR) stop 2 
-    if ( ubound(p, 1) /= (NTHR*2)-1) stop 3 
+    if ( lbound(p, 1) /= NTHR) stop 2
+    if ( ubound(p, 1) /= (NTHR*2)-1) stop 3
 #ifdef bg4thd
-    if ( any (tar .ne. (/(i,i=3,1,-1)/)))  stop 4 
-    if ( any (p .ne. (/(i,i=3,1,-1)/)))  stop 5 
+    if ( any (tar .ne. (/(i,i=3,1,-1)/)))  stop 4
+    if ( any (p .ne. (/(i,i=3,1,-1)/)))  stop 5
 #else
-    if ( any (tar .ne. (/(i,i=10,1,-1)/)))  stop 4 
-    if ( any (p .ne. (/(i,i=10,1,-1)/)))  stop 5 
+    if ( any (tar .ne. (/(i,i=10,1,-1)/)))  stop 4
+    if ( any (p .ne. (/(i,i=10,1,-1)/)))  stop 5
 #endif
 end program

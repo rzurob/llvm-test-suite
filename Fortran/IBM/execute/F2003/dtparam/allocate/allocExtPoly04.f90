@@ -1,15 +1,10 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : allocExtPoly04
-!*  TEST CASE TITLE            : ALLOCATE() Statement with DTP
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : January 13, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : The ALLOCATE Statement has an allocation-list
 !*                               that is a Polymorphic of an Extended Derived
@@ -17,7 +12,6 @@
 !*  SECONDARY FUNCTIONS TESTED : and the allocation-list contains an Array
 !*                               Function Return Value
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATE

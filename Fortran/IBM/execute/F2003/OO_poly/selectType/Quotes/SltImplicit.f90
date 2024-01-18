@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltImplicit.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltImplicit
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is a poly var of implicit type
 !*    ()
 !*
@@ -56,7 +50,7 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -73,7 +67,7 @@
       GetBaseId = Arg%BaseId
     END FUNCTION
 
-    SUBROUTINE Conv(CArg1, Carg2) 
+    SUBROUTINE Conv(CArg1, Carg2)
     IMPLICIT TYPE(Child)(C)
        CArg2 = CArg1
     END SUBROUTINE
@@ -84,7 +78,7 @@
   USE M
   IMPLICIT TYPE(Child)(C)
 
-  CLASS(Child), POINTER :: Ptr 
+  CLASS(Child), POINTER :: Ptr
 
   ALLOCATE(Ptr, SOURCE=C)
   SELECT TYPE (Ptr)
@@ -92,19 +86,19 @@
       Ptr%BaseId = -1
       Ptr%ChildId = -2
   END SELECT
- 
+
   CALL Conv(C, Ptr)
 
   SELECT TYPE ( As => Ptr )
     CLASS DEFAULT
-      STOP 20   
+      STOP 20
     CLASS is (Child)
       STOP 24
     TYPE IS (Child)
-      IF ( As%BaseId       .NE. 1 ) STOP 31 
-      IF ( As%ChildId      .NE. 2 ) STOP 32 
-      IF ( As%Base%GetId() .NE. 1 ) STOP 33 
-      IF ( As%GetId()      .NE. 2 ) STOP 34 
+      IF ( As%BaseId       .NE. 1 ) STOP 31
+      IF ( As%ChildId      .NE. 2 ) STOP 32
+      IF ( As%Base%GetId() .NE. 1 ) STOP 33
+      IF ( As%GetId()      .NE. 2 ) STOP 34
 
   END SELECT
 

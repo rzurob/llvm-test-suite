@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpDecTypeSpecifierCls2
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 18, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  A polymorphic dummy is associated with the actual argument 
+!*  A polymorphic dummy is associated with the actual argument
 !*  with which it is type compatible
-!* 
-!*  -- The dynamic type 
-!* 
 !*
-!*  (ICE) 
+!*  -- The dynamic type
+!*
+!*  (ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -52,8 +44,8 @@
   END TYPE
 
 
-  TYPE(DT0), TARGET :: T1=DT0() 
-  TYPE(DT1(2,2)), TARGET :: T2=DT1(2,2)() 
+  TYPE(DT0), TARGET :: T1=DT0()
+  TYPE(DT1(2,2)), TARGET :: T2=DT1(2,2)()
   TYPE(DT1(1,1,2,2)), TARGET :: T3 = DT1(1,1,2,2)(I=-1)
 
   CALL S1(T1)

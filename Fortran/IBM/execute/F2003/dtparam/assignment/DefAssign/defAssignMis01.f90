@@ -1,35 +1,27 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignMis01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignMis01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 20 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 20 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test defined assignment with interface block
 !* 2. Dummy argument in defined assignment procedure is allocatable or pointer with deferred length parameter
-!* 3. RHS has vector subscripts  
+!* 3. RHS has vector subscripts
 !234567490123456749012345674901234567490123456749012345674901234567490
 module m
     type A(l1)
        integer,len  :: l1 ! l1=2
        character(2) :: c1(l1)
        integer      :: i1(l1)
-       logical,pointer :: g1(:) 
+       logical,pointer :: g1(:)
     end type
 
     type B(l2)
@@ -45,7 +37,7 @@ module m
     end interface
 
     contains
- 
+
       subroutine assignA1(this,dt)
          type(A(:)),allocatable,intent(inout) :: this(:)
          type(A(*)),intent(in) :: dt(:)
@@ -53,12 +45,12 @@ module m
 
          print *," in assignA1"
          if(allocated(this))     deallocate(this)
-    
+
          allocate(A(2) :: this(size(dt)))
-      
-         do i=1,size(dt) 
+
+         do i=1,size(dt)
             this(i)=dt(i) ! invoke intrinsic assignment
-         end do 
+         end do
 
       end subroutine
 
@@ -93,7 +85,7 @@ module m
          ! this%a1comp has non-deferred length type parameter, interface mismatches assignA1,invoke intrinsic assignment instead
          this%a1comp=dt%a1comp ! invoke intrinsic assignment
          this%a2comp=dt%a2comp ! invoke assignA2
-       
+
       end subroutine
 
 end module
@@ -112,7 +104,7 @@ program defAssignMis01
 
      type(B(:)),pointer :: b1,b2(:), b22(:)
 
-     type(B(:)),allocatable,target :: b3(:) 
+     type(B(:)),allocatable,target :: b3(:)
 
      print *,"****TEST  1****"
      !invoke assignA1
@@ -164,9 +156,9 @@ program defAssignMis01
      if(any(a3(4)%g1 .neqv. [.false.,.true.]))                  stop 36
      if(any(a3(1)%g1 .neqv. [.false.,.false.,.true.,.false.]))  stop 37
      if(any(a3(3)%g1 .neqv. [.true.]))                          stop 38
-    
-      print *,"****TEST  4****" 
-      ! invoke assignB1      
+
+      print *,"****TEST  4****"
+      ! invoke assignB1
       allocate (b22(4), source= &
         [B(1)([-1,-2,-3],a2(1:4:2),a1) , &
          B(1)([-4,-5],a2(2:4:2),a2(1)), &
@@ -189,8 +181,8 @@ program defAssignMis01
      if(any(a3(4)%g1 .neqv. [.false.,.true.]))                  stop 49
      if(any(a3(1)%g1 .neqv. [.false.,.false.,.true.,.false.]))  stop 50
      if(any(a3(3)%g1 .neqv. [.true.]))                          stop 51
-     
-     print *,"****TEST  5****" 
+
+     print *,"****TEST  5****"
       !no interface matches, invoke intrinsic assignment
       b3=[B(1)([-1,-2,-3],a2(1:4:2),a1) , &
           B(1)([-4,-5],a2(2:4:2),a2(1)), &
@@ -219,7 +211,7 @@ program defAssignMis01
 
      if(any(b3(1)%a2comp%c1 /= ["cd","CD"]))                     stop 67
      if(any(b3(1)%a2comp%i1 /= [3,4]))                           stop 68
-     if(any(b3(1)%a2comp%g1 .neqv. [.false.,.true.]))            stop 69 
+     if(any(b3(1)%a2comp%g1 .neqv. [.false.,.true.]))            stop 69
 
      if(any(b3(2)%a1comp(1)%c1 /= ["cd","CD"]))                  stop 70
      if(any(b3(2)%a1comp(1)%i1 /= [3,4]))                        stop 71
@@ -227,9 +219,9 @@ program defAssignMis01
 
      if(any(b3(2)%a1comp(2)%c1 /= ["gh","GH"]))                  stop 73
      if(any(b3(2)%a1comp(2)%i1 /= [7,8]))                        stop 74
-     if(any(b3(2)%a1comp(2)%g1 .neqv. .true. ))                  stop 75 
+     if(any(b3(2)%a1comp(2)%g1 .neqv. .true. ))                  stop 75
 
-     if(any(b3(2)%a2comp%c1 /= ["ab","AB"]))                     stop 76    
+     if(any(b3(2)%a2comp%c1 /= ["ab","AB"]))                     stop 76
      if(any(b3(2)%a2comp%i1 /= [1,2]))                           stop 77
      if(any(b3(2)%a2comp%g1 .neqv. [.true.,.false.,.false.]))    stop 78
 
@@ -253,10 +245,10 @@ program defAssignMis01
 !      b2=b3(vec) !<-- this call is illegal, b3(vec) will be out of scope after
 !      the call to assignB1
      call foo (b3(vec)) !<-- the workaround
-     
+
       print *,"****TEST  7****"
       !invoke assignB2
-      b1=b3(3) 
+      b1=b3(3)
 
      if(any(b1%a1comp(1)%c1 /= ["gh","GH"]))                     stop 130
      if(any(b1%a1comp(1)%i1 /= [7,8]))                           stop 131

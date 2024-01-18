@@ -1,25 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type02c - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August  12, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Allocation of a pointer inside the SELECT TYPE Construct
 !*                               Argument association (external subroutines)
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -38,27 +32,27 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
       INTEGER, PARAMETER :: knd1 = KIND(0), len1 = 10
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = knd1
-        INTEGER, LEN  :: l1 = len1 
+        INTEGER, LEN  :: l1 = len1
 
         INTEGER(KIND=k1) :: my_arr(l1)
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
         CLASS(Base(k1,l1)), POINTER :: Cmp
-      END TYPE Child 
+      END TYPE Child
 
 END MODULE Mod1
 
 PROGRAM Select_Type02c
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(*), ALLOCATABLE :: child1 
+      CLASS(*), ALLOCATABLE :: child1
 
       INTERFACE
          SUBROUTINE Sub2(q)
@@ -78,7 +72,7 @@ END PROGRAM Select_Type02c
 
 SUBROUTINE sub2(Obj)
       USE Mod1
-      CLASS(*), ALLOCATABLE :: Obj 
+      CLASS(*), ALLOCATABLE :: Obj
       TYPE(Base(knd1,len1)), TARGET :: tgt
       INTEGER :: I
 
@@ -88,7 +82,7 @@ SUBROUTINE sub2(Obj)
         CLASS IS (Child(knd1,*))
            A%Cmp => tgt
            IF ( .NOT. ASSOCIATED(A%Cmp) ) STOP 20
-           CALL sub1(A%Cmp) 
+           CALL sub1(A%Cmp)
 
         CLASS IS (Base(knd1,*))
            STOP 21

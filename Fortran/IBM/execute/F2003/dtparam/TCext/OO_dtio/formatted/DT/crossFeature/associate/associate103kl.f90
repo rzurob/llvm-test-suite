@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : associate103kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from associate103 by Robert Ma)
 !*  DATE                       : 2007-06-06 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Associate Constructor: Unlimited Polymorphic Scalar Entities (read)
@@ -121,7 +113,7 @@ use m
             if ( ( .not. precision_r4( d%i, 201.0 ) )  .or. &
                  ( .not. precision_r4( d%j, 202.0 ) ) )           error stop 8_4
          class default
-            error stop 9_4                 
+            error stop 9_4
       end select
    end associate
 

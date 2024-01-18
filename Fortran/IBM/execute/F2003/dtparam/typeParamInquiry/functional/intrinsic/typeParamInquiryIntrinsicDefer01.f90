@@ -1,42 +1,34 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryIntrinsicDefer01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryIntrinsicDefer01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : June 27 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : June 27 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
 !* 3. DEFERRED TYPE PARAMETER INQUIRY
-!* 4. ALLOCATABLE AND POINTER SCALAR 
+!* 4. ALLOCATABLE AND POINTER SCALAR
 !* 5. USE ASSIGNMENT
 !* 6. DEFECT 352957
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 module m
-   character(:),allocatable :: a2 
+   character(:),allocatable :: a2
    character(:),pointer :: p2=>null()
-end module 
+end module
 program typeParamInquiryIntrinsicDefer01
     use m
     implicit none
-    
+
     character(:),allocatable :: a1
     character(:),pointer :: p1=>null()
     character(len=*),parameter :: c1='xlftest'
@@ -60,23 +52,23 @@ program typeParamInquiryIntrinsicDefer01
 
     a2="Hi"
     if(a2%len /= len(a2) .or. a2%len /= 2)              error stop 11_4
-  
+
     a2="Hi,Hi,Hi"(4:5)
     if(a2%len /= len(a2) .or. a2%len /= 2)              error stop 12_4
     if(a2 /= "Hi")                                      error stop 13_4
- 
+
     a2(:)=''
     a1=a2
     if(a1%len /= len(a1) .or. a1%len /= 2)              error stop 14_4
     if(a2%len /= len(a2) .or. a2%len /= 2)              error stop 15_4
-   
+
     a2=''
     if(a2%len /= len(a2) .or. a2%len /= 0 )             error stop 16_4
-    
+
     p1=>c3
     p2=>p1(2:4)
     if(p1%len /= len(p1) .or. p1%len /= 7)              error stop 17_4
-    if(p2%len /= len(p2) .or. p2%len /= 3)              error stop 18_4 
+    if(p2%len /= len(p2) .or. p2%len /= 3)              error stop 18_4
     if(p1 /= 'hello')                                   error stop 19_4
     if(p2 /= 'ell')                                     error stop 20_4
 

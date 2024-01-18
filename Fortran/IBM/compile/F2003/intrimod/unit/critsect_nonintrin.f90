@@ -13,19 +13,13 @@
 ! *********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : For module nature in USE statement.
 !*                             :
-!*  PROGRAMMER                 : Daniel Chen
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  DIAGNOSES TESTED           : The name of a critical section cannot
 !*                               be the same as a nonintrinsic module.
 !*
-!*  DRIVER STANZA              : xlf90_r
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -56,5 +50,5 @@
 !SMP$  END PARALLEL DO
 
           if (yr /= 360.0) stop 12
-       end 
+       end
 

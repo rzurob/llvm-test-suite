@@ -3,13 +3,9 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=none
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/unpack
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/25/2005
 ! PRIMARY FUNCTIONS TESTED   : unpack
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : VECTOR, MASK, or FIELD is function return
 !                              of cshift. Poly and unlimited poly.
 !=======================================================================

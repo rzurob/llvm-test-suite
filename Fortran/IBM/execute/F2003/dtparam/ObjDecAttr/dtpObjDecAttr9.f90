@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpObjDecAttr9
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 28, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  The DIMENSION attribute --  The assumed size array
-!* 
-!*  -- The appearance of the whole assumed size array. 
-!* 
+!*
+!*  -- The appearance of the whole assumed size array.
+!*
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -76,7 +67,7 @@
   R = -R
 
   ! Pass the assumed size array
-  CALL Change1(N, 2, M, P1, P2, P3) 
+  CALL Change1(N, 2, M, P1, P2, P3)
 
   END SUBROUTINE
 
@@ -89,12 +80,12 @@
 
   M = R
   R = -R
- 
+
   IF ( ANY( LBOUND(P1) .NE. M )) STOP 80
   IF ( ANY( LBOUND(P2) .NE. M )) STOP 81
   IF ( ANY( LBOUND(P3) .NE. M )) STOP 82
 
-  DO I = M, N  
+  DO I = M, N
 
     IF ( P1(I)%K0               .NE.   0          ) STOP 11
     IF ( P1(I)%L0               .NE.   0          ) STOP 12
@@ -140,15 +131,15 @@
 
   PROGRAM dtpObjDecAttr9
   USE M
- 
+
   INTEGER  :: N = 107, R=62, I
- 
+
   ALLOCATE(T1(-N:-1), SOURCE=DT0())
   ALLOCATE(T2(-N:-1), SOURCE=DT2(2,2)(I=[-1], C=["X"], X0=DT0(2,2)(), X1=NULL(), X2=NULL()))
   ALLOCATE(T3(-N:-1), SOURCE=DT2(1,1,K2=2,L2=2)(I=[-1,-1],C=["X","X"], X0=DT0(2,2)(), X1=NULL(), X2=NULL()))
 
   ! Start at the R_th element
-  CALL Change0(N, 2, R, T1(-(N-R+1):-1), T2(-(N-R+1):-1), T3(-(N-R+1):-1)) 
+  CALL Change0(N, 2, R, T1(-(N-R+1):-1), T2(-(N-R+1):-1), T3(-(N-R+1):-1))
 
   END
 

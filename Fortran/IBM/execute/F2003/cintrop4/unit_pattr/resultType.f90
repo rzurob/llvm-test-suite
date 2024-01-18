@@ -35,7 +35,6 @@
         entry g3 () bind(C, name='g3_b') result(g3r)  ! 1 err: fer non-interop
           g3r = 'aa'
 
-
         ! fn-entry non-interop by IMPLICIT keyword
         !
         entry f1e1 () bind(C, name='f1e1_b')  ! 1 err: fe non-interop
@@ -53,7 +52,6 @@
         character*2 f2
         f2 = 'aa'
       end function
-
 
       ! fn-result non-interop by IMPLICIT keyword
       ! where fn-entry is also implicitly non-interop
@@ -77,7 +75,6 @@
         character*2 r1
         r1 = 'aa'
       end function
-
 
       program p1
 

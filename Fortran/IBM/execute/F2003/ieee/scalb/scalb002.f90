@@ -12,29 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : March 14, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SCALB with complex numbers.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : This testcase tests that the real 
+!*  DESCRIPTION                : This testcase tests that the real
 !* parts of complex numbers can be used as arguments for this function.
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,7 +44,7 @@
         logical :: flag_values(5)
         logical :: flag_value
         type(ieee_status_type) :: status_value
-		
+
 ! Test positive real(4) / imaginary(4) of complex for yi = 0
 
         !*  Get the current value of the floating point status
@@ -70,7 +61,7 @@
         enddo
 
 	result_4 = 2.0_4**yi*real(cx)
-        if (result4 /= result_4) error stop 1 
+        if (result4 /= result_4) error stop 1
 
         !*  Restore the floating point status.
         call ieee_set_status(status_value)

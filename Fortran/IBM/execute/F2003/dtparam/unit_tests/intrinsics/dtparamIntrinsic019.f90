@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Intrinsic  with Derived Type Parameter
 !*
-!* PROGRAMMER                 : James Ren
 !* DATE                       : April 19, 2007
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : all, any and abs intrinsics
 !*
@@ -20,10 +15,9 @@ end type
 type, extends(base) :: child(n)
    integer, len :: n
    real(k) :: arr2(n)
-   type(base(k, l, m)), pointer :: ptb 
-end type    
+   type(base(k, l, m)), pointer :: ptb
+end type
 end module
-
 
 use m
 implicit none
@@ -38,8 +32,8 @@ do i = 1, c%l
    do j =1, c%m
       k = k + 1
       arr(k) = abs(cos(real(k))) * 10.0
-   end do   
-end do   
+   end do
+end do
 
 allocate (c%arr1(b%l * c%m), source = arr)
 allocate (b%arr1(c%l * b%m), source =c%arr1)

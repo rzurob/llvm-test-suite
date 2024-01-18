@@ -12,37 +12,31 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxmdvn01.f
 !
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 24, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    : -qfree=f90
 !*
 !* DESCRIPTION                  : Test the interoperability of real module
 !*                              : variable with diffrent kind parameter.
-!*                              : Test case tests the scalar and array 
-!*                              : of 1, 2 and 3 dimension bind c module 
+!*                              : Test case tests the scalar and array
+!*                              : of 1, 2 and 3 dimension bind c module
 !*                              : variable of real, real4, real8. The value
 !*                              : of variables are initialized in Fortran,
 !*                              : then call C subroutine. In C subroutine,
-!*                              : the value of variables are checked. If is 
+!*                              : the value of variables are checked. If is
 !*                              : not equal to the initialized values in
-!*                              : Fortran, test case exit with non_zero 
+!*                              : Fortran, test case exit with non_zero
 !*                              : number. Then, C subroutine change the value
 !*                              : of the variables and return to Fortran main.
 !*                              : After that, values of the variables are
 !*                              : checked in Fortran main to verify value have
-!*                              : been changed in C subroutine. The C 
+!*                              : been changed in C subroutine. The C
 !*                              : subroutine is complied by xlc under AIX, and
 !*                              : both xlc and gcc under MACOS, SLES and REDHAT.
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -133,15 +127,15 @@ do i = 1, 10
 print *,i, d1(i),2.0D0, c1(i),2.0D0
     IF(.not.precision_r4(a1(i), 2.0) .or. &
        .not.precision_r4(b1(i),2.0) .or. &
-       .not.precision_r8(c1(i),2.0D0) .or. & 
+       .not.precision_r8(c1(i),2.0D0) .or. &
        .not.precision_r16(d1(i),2.0Q0)) THEN
       ERROR STOP 54
     END IF
 end do
-  
+
 
 do j= 1, 10
- do k = 1, 10 
+ do k = 1, 10
   IF(.not.precision_r4(a2(k,j),2.0) .or. &
      .not.precision_r4(b2(k,j),2.0) .or. &
     .not.precision_r8(c2(k,j),2.0D0) .or. &
@@ -163,4 +157,4 @@ do i = 1, 2
     end do
 end do
 
-end 
+end

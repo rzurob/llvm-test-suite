@@ -1,21 +1,15 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mt_static2.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : December 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : Test memory of coarray data is properly 
+!*  DESCRIPTION                : Test memory of coarray data is properly
 !*                               stored across internal units.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -23,22 +17,22 @@
 program main
 	implicit none
 	real :: x
-	
+
 	if (this_image() == 1) then
 		x = f1()
 	else
 		x = f2()
 	end if
-	
+
 contains
 
 	real function f1()
 		real, save :: caf[*]
-		
+
 		print *, "begin f1:", caf
 		caf[1] = this_image()
 		sync all
-		
+
 		if (caf[1] /= this_image()) then	! should be "1"
 			print *, caf[1]
 			error stop 21
@@ -47,7 +41,7 @@ contains
 
 	real function f2()
 		real, save :: caf[*]
-		
+
 		print *, "begin f2:", caf
 		caf[1] = this_image()
 		sync all

@@ -12,20 +12,14 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxmdvn10.f
 !
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 24, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    : -qfree=f90
 !*
 !* DESCRIPTION                  : Test the interoperability of complex module
@@ -88,7 +82,7 @@ if(.not.precision_x8(a,(0.0,1.0)) .or. &
    .not.precision_x16(cc,(0.0D0,1.0D0)) .or. &
    .not.precision_x32(d,(0.0Q0,1.0Q0)) .or. &
    .not.precision_x32(dd,(0.0Q0,1.0Q0)) ) then
-   
+
       error stop 50
 end if
 
@@ -134,11 +128,11 @@ do i = 1, 10
      .not.precision_x8(b1(i),(1.0,3.0)) .or. &
      .not.precision_x16(c1(i),(1.0D0,3.0D0)) .or. &
      .not.precision_x32(d1(i),(1.0Q0,3.0Q0)) ) THEN
-     
+
         ERROR STOP 54
   END IF
 end do
-  
+
 
 do j= 1, 10
    do i = 1, 10
@@ -162,4 +156,4 @@ do i = 1, 2
    end do
 end do
 
-end 
+end

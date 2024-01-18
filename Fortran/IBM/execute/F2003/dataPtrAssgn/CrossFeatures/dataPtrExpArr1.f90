@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrExpArr1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrExpArr1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 09, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Explicit shape array 
+!*  Explicit shape array
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM dataPtrExpArr1  
+  PROGRAM dataPtrExpArr1
   IMPLICIT NONE
 
   INTEGER,      TARGET  :: IArr(0:9,0:9)
@@ -44,7 +36,7 @@
   CLASS(*),     POINTER :: IPtr(:,:)
   CLASS(*),     POINTER :: CPtr(:,:)
 
-  INTEGER           :: N, L, U 
+  INTEGER           :: N, L, U
 
   IArr = -1
   CArr = "123"
@@ -60,7 +52,7 @@
   SELECT TYPE (IPtr)
   TYPE IS (INTEGER)
     IF (ANY( IPtr               .NE.   -1))         STOP 14
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 15
   END SELECT
 
@@ -72,7 +64,7 @@
   SELECT TYPE (IPtr)
   TYPE IS (INTEGER)
     IF (ANY( IPtr               .NE.   -1))         STOP 24
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 25
   END SELECT
 
@@ -84,7 +76,7 @@
   SELECT TYPE (CPtr)
   TYPE IS (CHARACTER(*))
     IF (ANY( CPtr               .NE.  "123"))       STOP 34
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 35
   END SELECT
 
@@ -96,7 +88,7 @@
   SELECT TYPE (CPtr)
   TYPE IS (CHARACTER(*))
     IF (ANY( CPtr               .NE. "123"))        STOP 44
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 45
   END SELECT
 
@@ -105,18 +97,18 @@
 
   SUBROUTINE S(Ptr, Arr, N, L, U)
   CLASS(*), TARGET  :: Arr(L:U,L:U)
-  INTEGER           :: N, L, U 
+  INTEGER           :: N, L, U
   CLASS(*), POINTER :: Ptr(:, :)
 
   N = 10000000 ! not affect Arr
 
-  Ptr(L:, L:) => Arr 
+  Ptr(L:, L:) => Arr
 
   END SUBROUTINE
 
   SUBROUTINE S1(Ptr, Arr, N, L, U)
   CLASS(*), TARGET  :: Arr(L:U,L:U)
-  INTEGER           :: N, L, U 
+  INTEGER           :: N, L, U
   CLASS(*), POINTER :: Ptr(:, :)
 
   N = 10000000 ! not affect Arr
@@ -126,7 +118,7 @@
   TYPE IS (INTEGER)
   TYPE IS (CHARACTER(*))
   CLASS DEFAULT
-    STOP 55 
+    STOP 55
   END SELECT
 
   END SUBROUTINE

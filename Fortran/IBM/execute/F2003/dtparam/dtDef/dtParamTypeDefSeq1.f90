@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefSeq1 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefSeq1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 12, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Sequence Type 
+!*  SECONDARY FUNCTIONS TESTED : Sequence Type
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Parameterized sequence type 
+!*  Parameterized sequence type
 !*
 !*  (ICE)
 !*
@@ -75,7 +68,7 @@
   TYPE(Seq1(4, 4)) :: T1
   TYPE(Seq2(4, 4)) :: T2
   TYPE(Seq3(4, 4)) :: T3
- 
+
   IF ( T0%K .NE. 4 ) STOP 11
   IF ( T0%L .NE. 4 ) STOP 11
 

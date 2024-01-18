@@ -1,22 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d361393.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d361393.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Jan. 24 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Jan. 24 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
@@ -33,7 +26,7 @@ module m
       integer,kind  :: k2=8
       integer,len   :: l2=4
 
-      real(k2)      :: r1(l1:l2)=1. 
+      real(k2)      :: r1(l1:l2)=1.
    end type
 
    type,extends(child) :: gen3(k3,l3)
@@ -53,7 +46,7 @@ end module
       type is(gen3(4,*,8,*,2,*))
 
         if(t1%g1(2,4) .neqv. .false.)          stop 1
-        if(.not. precision_r8(t1%r1(2),1._8))  stop 2 
+        if(.not. precision_r8(t1%r1(2),1._8))  stop 2
 
       class default
         stop 3

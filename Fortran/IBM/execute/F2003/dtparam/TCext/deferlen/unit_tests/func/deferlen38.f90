@@ -3,21 +3,14 @@
 ! opt variations: -qck -qnol
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Deferred Character Length
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unit testing
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : Testing the structure constructor related 
+!*  DESCRIPTION                : Testing the structure constructor related
 !*                               with characters with deferred length
 !*
 !* ===================================================================
@@ -33,7 +26,7 @@ end module
 
 use m
     type (base(20,4)) :: b1
- 
+
     character(:), allocatable :: char1
     allocate(character(4):: char1)
     char1 = '1234'

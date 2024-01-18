@@ -1,17 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : critical04d.f
-!*
-!*  PROGRAMMER                 : David Nichols
 !*  DATE                       : Oct 13, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CRITICAL Construct
-!*
-!*  DRIVER STANZA              : xlf2008
 !*
 !*  DESCRIPTION                : Testing proper diagnostics of
 !*                               the F2008 CRITICAL Construct
@@ -31,20 +23,20 @@
 100     print *, "in critical"
       end critical
 
-      ! C811 A branch (8.2) within a CRITICAL construct shall not have a branch 
-      !      target that is outside the construct. 
+      ! C811 A branch (8.2) within a CRITICAL construct shall not have a branch
+      !      target that is outside the construct.
 
       critical
         goto 200
       end critical
 200   print *, "broken out!"
 
-      ! 8.1.5.2 Execution of the CRITICAL construct is completed when execution 
-      !         of its block is completed. A procedure invoked, directly or 
+      ! 8.1.5.2 Execution of the CRITICAL construct is completed when execution
+      !         of its block is completed. A procedure invoked, directly or
       !         indirectly, from a CRITICAL construct shall not execute an image
       !         control statement
 
-       
+
       ! R831 cycle-stmt   is   CYCLE [ do-construct-name ]
       ! C821 (R831) A cycle-stmt shall not appear within a CRITICAL or DO
       !             CONCURRENT construct if it belongs to an outer construct.
@@ -64,7 +56,7 @@
       end do
 
       ! R850 exit-stmt   is   EXIT [ construct-name ]
-      ! C845 An exit-stmt shall not appear within a CRITICAL or DO CONCURRENT 
+      ! C845 An exit-stmt shall not appear within a CRITICAL or DO CONCURRENT
       !      construct if it belongs to that construct or an outer construct.
       crit_exit : critical
         exit crit_exit

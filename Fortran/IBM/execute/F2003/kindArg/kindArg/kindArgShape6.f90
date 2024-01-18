@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgShape6
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : SHAPE 
+!*  SECONDARY FUNCTIONS TESTED : SHAPE
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  Result Value. The value of the result is the shape of SOURCE. 
+!*  Result Value. The value of the result is the shape of SOURCE.
 !*
-!*  
-!*    
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -47,8 +38,8 @@
   SUBROUTINE IntSub(K)
 
   INTEGER :: II(4)=1
-  INTEGER :: I0(4)=(/0,1,1,1/) 
- 
+  INTEGER :: I0(4)=(/0,1,1,1/)
+
   CLASS(*) :: K(1:1, 2:2, 4:4, 8:8)
   CLASS(DT), POINTER :: T(:,:,:,:)
 

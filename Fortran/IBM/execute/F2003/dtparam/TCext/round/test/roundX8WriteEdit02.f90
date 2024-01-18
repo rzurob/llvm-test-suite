@@ -2,30 +2,22 @@
 ! ftcx_dtp -ql -qreuse=none /tstdev/F2003/round/test/roundX8WriteEdit02.f
 ! opt variations: -qnol -qreuse=base
 
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with different data edit descriptor.
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*    test different ROUND mode with different data edit descriptor with
-!*    complex(8) component in derived type. 
+!*    complex(8) component in derived type.
 !*    9.4.1  The modes of a connection to an external file may be changed
 !*           by a subsequent OPEN statement that modifies the connection.
 !* ===================================================================
 
   module m
 
-    type base(n1,k1)    ! (20,8) 
+    type base(n1,k1)    ! (20,8)
        integer, kind :: k1
        integer, len  :: n1
        complex(k1)      w1
@@ -34,22 +26,22 @@
     type, extends(base):: child(n2,k2)    ! (20,8,20,8)
        integer, kind :: k2
        integer, len  :: n2
-       complex(k2)      w2 
+       complex(k2)      w2
     end type
 
   end module  m
 
-  program roundX8WriteEdit02 
+  program roundX8WriteEdit02
 
     use m
 
     implicit none
- 
+
     character(18) :: r_mode(6), r_verify
     integer i
     type(child(20,8,20,8)) :: c1
 
-    integer, parameter::unit = 2 
+    integer, parameter::unit = 2
 
     open(unit, file='roundX8WriteEdit02.out', action='write')
 
@@ -81,4 +73,4 @@
 
    close(unit)
 
-  end program roundX8WriteEdit02 
+  end program roundX8WriteEdit02

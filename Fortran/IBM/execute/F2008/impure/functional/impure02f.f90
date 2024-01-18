@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure02f
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
 !*
 !*  DESCRIPTION
@@ -15,8 +12,8 @@
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
-PROGRAM main 
-  IMPLICIT NONE 
+PROGRAM main
+  IMPLICIT NONE
 
   INTEGER, PARAMETER :: n = 3000
   INTEGER, PARAMETER :: m = 3000
@@ -29,15 +26,15 @@ PROGRAM main
   end do
 
   b(2:2000, 3:10) = final(a(2:2000, 3:10))
- 
-  
+
+
  CONTAINS
 
-IMPURE ELEMENTAL FUNCTION final (a) 
-    INTEGER, INTENT(IN) :: a 
+IMPURE ELEMENTAL FUNCTION final (a)
+    INTEGER, INTENT(IN) :: a
      INTEGER :: final
      PRINT *, "Element inside impure is",a
     final = a+1
   END FUNCTION final
- 
-END PROGRAM main 
+
+END PROGRAM main

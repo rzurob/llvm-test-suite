@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : arrsec3_datatypes.f
-!*  PROGRAMMER                 : Gaby Baghdadi (adopted from David Nichols' 
 !*                               arrsec1_datatype00-06.f)
 !*  DATE                       : Dec 31, 2008
 !*  ORIGIN                     : XLF Development
@@ -12,7 +9,6 @@
 !*  DESCRIPTION
 !*
 !*  Array components of byte, character, complex, real, logical, integer types
-!*      
 !*
 !* =============================================================================
 !2345678901234567890123456789012345678901234567890123456789012345678901234567890
@@ -30,9 +26,9 @@
 
       type A(n)
         integer, len :: n
-        integer h(n) 
+        integer h(n)
         type(ARRSC(n)) :: i(n)
-        integer j(n) 
+        integer j(n)
       end type
     end module
 

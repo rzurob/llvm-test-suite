@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefSELECTED_INT_KIND.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefSELECTED_INT_KIND.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,30 +19,29 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an tranformational intrinsic
-!* 
-!*  -  SELECTED_INT_KIND 
+!*
+!*  -  SELECTED_INT_KIND
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM   InitExpDefSELECTED_INT_KIND 
+  PROGRAM   InitExpDefSELECTED_INT_KIND
   IMPLICIT NONE
   INTEGER :: I, J, K
 
 
-  INTEGER, PARAMETER :: TK0       = SELECTED_INT_KIND(0) 
-  INTEGER, PARAMETER :: TK2       = SELECTED_INT_KIND(2) 
-  INTEGER, PARAMETER :: TK4       = SELECTED_INT_KIND(4) 
-  INTEGER, PARAMETER :: TK8       = SELECTED_INT_KIND(8) 
-  INTEGER, PARAMETER :: TK16      = SELECTED_INT_KIND(16) 
-  INTEGER, PARAMETER :: TK32      = SELECTED_INT_KIND(32) 
+  INTEGER, PARAMETER :: TK0       = SELECTED_INT_KIND(0)
+  INTEGER, PARAMETER :: TK2       = SELECTED_INT_KIND(2)
+  INTEGER, PARAMETER :: TK4       = SELECTED_INT_KIND(4)
+  INTEGER, PARAMETER :: TK8       = SELECTED_INT_KIND(8)
+  INTEGER, PARAMETER :: TK16      = SELECTED_INT_KIND(16)
+  INTEGER, PARAMETER :: TK32      = SELECTED_INT_KIND(32)
   INTEGER, PARAMETER :: TKX(33)   =(/(SELECTED_INT_KIND(I) , I=0,32)/)
   INTEGER, PARAMETER :: Check(33) =    &
-       (/1,1,1,2,2,4,4,4,4,4,8,8,8,8,8,8,8,8,8,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1/) 
+       (/1,1,1,2,2,4,4,4,4,4,8,8,8,8,8,8,8,8,8,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1/)
   INTEGER, PARAMETER :: TK        =KIND((/(SELECTED_INT_KIND(I) , I=0,32)/))
 
   IF (TK0             .NE.   1 )                   STOP 10
@@ -63,4 +56,4 @@
   END
 
 
- 
+

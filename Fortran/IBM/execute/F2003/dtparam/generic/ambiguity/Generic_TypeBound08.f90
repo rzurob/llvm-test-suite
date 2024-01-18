@@ -1,22 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Generic_TypeBound08
-!*                               DTP - Generic Type-Bound 
+!*                               DTP - Generic Type-Bound
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : November 2, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Resolution for intrinsic function
-!*                               based on type and kind 
-!*                     
+!*                               based on type and kind
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : GENERIC
 !*
@@ -39,27 +32,27 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
-        INTEGER, KIND :: k1 
-        INTEGER, LEN  :: l1 
+        INTEGER, KIND :: k1
+        INTEGER, LEN  :: l1
 
         INTEGER(k1) :: base_arr(l1)
 
         CONTAINS
          PROCEDURE, PASS :: SIZE_OBJ4
          GENERIC :: SIZE =>  SIZE_OBJ4
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)
-        INTEGER, KIND :: k2 
-        INTEGER, LEN  :: l2 
+        INTEGER, KIND :: k2
+        INTEGER, LEN  :: l2
 
         INTEGER(k1) :: child_arr(l1+l2)
-      END TYPE Child 
+      END TYPE Child
 
-      CONTAINS 
+      CONTAINS
 
       INTEGER FUNCTION SIZE_OBJ4(Obj)
         CLASS(Base(4,*)) :: Obj
@@ -87,10 +80,10 @@
 !*
       MODULE Mod2
       USE MOD1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE, EXTENDS(Child) :: NextGen(k3,l3,l4)
-        INTEGER, KIND :: k3 
+        INTEGER, KIND :: k3
         INTEGER, LEN  :: l3 , l4
 
         INTEGER(k1) :: nextg_arr(l1+l2+l3)
@@ -100,7 +93,7 @@
          GENERIC :: SIZE =>  SIZE_OBJ8
       END TYPE NextGen
 
-      CONTAINS 
+      CONTAINS
 
       INTEGER FUNCTION SIZE_OBJ8(Obj)
         CLASS(NextGen(8,*,4,*,4,*,*)) :: Obj
@@ -118,42 +111,42 @@
 !*
       PROGRAM Generic_TypeBound08
       USE MOD2
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(Base(4,:)), POINTER :: ptr1 
+      CLASS(Base(4,:)), POINTER :: ptr1
       TYPE(Child(4,5,4,10)), TARGET :: tgt1
-      TYPE(Base(4,5))  :: base1 
+      TYPE(Base(4,5))  :: base1
       TYPE(NextGen(8,10,4,1,4,1,1)) :: dtv
 
-      
-      IF ( base1%size() .NE. size_obj4(base1) ) STOP 10 
-      IF ( base1%size() .NE. size(base1%base_arr) ) STOP 11 
 
-      ALLOCATE(Base(4,10):: ptr1)    
+      IF ( base1%size() .NE. size_obj4(base1) ) STOP 10
+      IF ( base1%size() .NE. size(base1%base_arr) ) STOP 11
+
+      ALLOCATE(Base(4,10):: ptr1)
       IF ( .NOT. ASSOCIATED(ptr1)) STOP 12
-  
-      SELECT TYPE (ptr1)   
+
+      SELECT TYPE (ptr1)
           TYPE IS (Base(4,*))
-           IF (ptr1%size() .NE. size_obj4(ptr1)) STOP 13 
-           IF (ptr1%size() .NE. size(ptr1%base_arr)) STOP 14 
+           IF (ptr1%size() .NE. size_obj4(ptr1)) STOP 13
+           IF (ptr1%size() .NE. size(ptr1%base_arr)) STOP 14
 
           CLASS DEFAULT
            STOP 15
       END SELECT
 
-      ptr1 => tgt1                     
+      ptr1 => tgt1
       IF ( .NOT. ASSOCIATED(ptr1)) STOP 16
 
-      SELECT TYPE (ptr1)   
+      SELECT TYPE (ptr1)
           TYPE IS (Child(4,*,4,*))
-           IF (ptr1%size() .NE. size_obj4(ptr1)) STOP 17 
-           IF (ptr1%size() .NE. (size(ptr1%base_arr)+size(ptr1%child_arr)) )STOP 18 
+           IF (ptr1%size() .NE. size_obj4(ptr1)) STOP 17
+           IF (ptr1%size() .NE. (size(ptr1%base_arr)+size(ptr1%child_arr)) )STOP 18
 
           CLASS DEFAULT
            STOP 19
       END SELECT
 
-      IF ( dtv%size() .NE. size_obj8(dtv) ) STOP 20 
-      IF ( dtv%size() .NE. (size(dtv%base_arr)+size(dtv%child_arr)+size(dtv%nextg_arr)) ) STOP 21 
+      IF ( dtv%size() .NE. size_obj8(dtv) ) STOP 20
+      IF ( dtv%size() .NE. (size(dtv%base_arr)+size(dtv%child_arr)+size(dtv%nextg_arr)) ) STOP 21
 
       END PROGRAM Generic_TypeBound08

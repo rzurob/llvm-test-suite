@@ -1,21 +1,10 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/15/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX/MIN with variable as actual
 !*                               argument to subprogram - with optional
@@ -40,17 +29,17 @@
                 error stop 9_4
            endif
         end subroutine
-  end module subVarArg2 
+  end module subVarArg2
 
-  program mxminVarArrArgSub2 
-    
-    use subVarArg2 
+  program mxminVarArrArgSub2
+
+    use subVarArg2
 
     interface
         function func1(carg, n)
-          character(*), dimension(*) :: carg 
+          character(*), dimension(*) :: carg
           character(n), dimension(2*n) :: func1
-        end function 
+        end function
     end interface
 
     character*3 x(6), z1(2,3) , z2(2,3)
@@ -71,7 +60,7 @@
 
     if(any(max(x, y) .ne. "ddd")) then
           error stop 2_4
-    endif 
+    endif
 
     ! function return as argument
 
@@ -95,8 +84,8 @@
             character(*), dimension(*) :: carg
             integer iarg
             character*3  carray(iarg)
-            character*3, parameter :: darg(6) = "zzz" 
-             
+            character*3, parameter :: darg(6) = "zzz"
+
             carray = "xxx"
 
             if(any(max(carg(1:6), carray, darg) .ne. "zzz")) then
@@ -106,12 +95,12 @@
                    error stop 6_4
             endif
 
-         end subroutine 
+         end subroutine
 
-  end program mxminVarArrArgSub2 
+  end program mxminVarArrArgSub2
 
   function func1(carg, n)
-       character(*), dimension(*) :: carg 
+       character(*), dimension(*) :: carg
        character(n), dimension(2*n) :: func1
        do i = 1, 2*n
            func1(i) = carg(i)

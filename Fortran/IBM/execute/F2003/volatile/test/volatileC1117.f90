@@ -1,13 +1,6 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Block Data, VOLATILE
 !*
@@ -19,16 +12,16 @@
 !*        SAVE, TARGET, USE, VOLATILE, and type declaration statements.
 !* ===================================================================
 
-  program volatileC1117 
+  program volatileC1117
 
     integer x
     integer, VOLATILE:: y
 
-    common /cmblk/ x, y 
+    common /cmblk/ x, y
 
-  end program volatileC1117 
+  end program volatileC1117
 
-  block data bk 
+  block data bk
 
     integer x
     integer, VOLATILE:: y

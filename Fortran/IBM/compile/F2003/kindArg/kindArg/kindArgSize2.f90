@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgSize2
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : SIZE 
+!*  SECONDARY FUNCTIONS TESTED : SIZE
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,20 +19,18 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  characteristics :: the keyword - KIND 
+!*  characteristics :: the keyword - KIND
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   PROGRAM kindArgSize2
 
-  LOGICAL        :: ARRAY(3) = (/.TRUE., .TRUE., .TRUE./) 
-  INTEGER(1),    PARAMETER :: KIND(3) = (/1,1,1/) 
-  
+  LOGICAL        :: ARRAY(3) = (/.TRUE., .TRUE., .TRUE./)
+  INTEGER(1),    PARAMETER :: KIND(3) = (/1,1,1/)
+
   PRINT*, SIZE(Array, KINDD=I(1), DIM=1)
   PRINT*, SIZE(Array, KIn=kind(1))
   PRINT*, SIZE(dim=1, KIND=1)

@@ -1,24 +1,16 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedLen05d.f
-!*
-!* PROGRAMMER                   : Maryam Moghadas
 !* DATE                         : June  27, 2014
 !* ORIGIN                       : AIX/Linux Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed Length object
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :  -qdebug=BCASSUMEDLEN (should be removed later)
 !*
-!* DESCRIPTION                  : verify that our compiler falgs Assumed Length 
-!*                                object in bind(c) routine with -qlanglvl=2008std 
-!*
+!* DESCRIPTION                  : verify that our compiler falgs Assumed Length
+!*                                object in bind(c) routine with -qlanglvl=2008std
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -32,7 +24,7 @@ interface
   subroutine sub_1(arg1) bind(c)
    character(*) :: arg1(5)
   end subroutine
-end interface 
+end interface
 
 character(2) :: arr(10)
 

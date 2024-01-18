@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d359059.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d359059.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 18 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 18 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  DEFECT 359059 
+!*  DEFECT 359059
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type inner(l)
@@ -29,7 +21,7 @@ module m
 
   type outer(l2)
       integer,len  :: l2
-      type(inner(2*l2)) :: inner1 
+      type(inner(2*l2)) :: inner1
   end type
 end module
 
@@ -42,7 +34,7 @@ program d359059
 
   allocate(outer(4) :: obj(0:1))
 
-  select type(obj)       
+  select type(obj)
     type is(outer(*))
        obj(0)%inner1 = inner(8)()
        obj(1)%inner1 = inner(8)()

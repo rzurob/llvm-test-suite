@@ -1,23 +1,11 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ReallocAssignArray04
-!*
-!*  PROGRAMMER                 : Rob James
 !*  DATE                       : June 5, 2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
-!*  DESCRIPTION                : Testing reallocation on assignment 
-!*                               with a variable as the right-hand 
+!*  DESCRIPTION                : Testing reallocation on assignment
+!*                               with a variable as the right-hand
 !*                               side of the assignment.
 !*
 !* ===================================================================

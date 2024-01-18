@@ -1,7 +1,7 @@
        ! C480: Each keyword must be the name of a type parameter
        !       of the type.
        type dt(k,l)
-         integer, kind :: k =0 
+         integer, kind :: k =0
          integer, len :: l
          integer i
        end type

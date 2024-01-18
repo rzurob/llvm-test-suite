@@ -1,22 +1,16 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : sequentialReadWrite04
-!*  TEST CASE TITLE            : Unformatted Intrinsic Input/Output (with DTP)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : October  8, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SEQUENTIAL File I/O for a base Derived Type
 !*                               and a Container Derived Type
 !*  SECONDARY FUNCTIONS TESTED : I/O is performed via Type-Bound Procedures
 !*                               (on a per-element basis)
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WRITE, READ

@@ -1,22 +1,10 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : intkind8a.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is of type integer*8
 !*                               TO is of unlimit poly, function return name
@@ -35,18 +23,18 @@ module m
           integer*8, allocatable :: i1
           contains
               procedure :: get_alloc  => func
-      end type 
+      end type
 
-      contains 
+      contains
          class(*) function func(arg, brg)
             class(base) :: arg
-            class(*), optional, allocatable :: brg 
+            class(*), optional, allocatable :: brg
             allocatable func
 
-            allocate(brg, source= arg ) 
-            call move_alloc(brg,func) 
+            allocate(brg, source= arg )
+            call move_alloc(brg,func)
 
-            if ( .not. allocated(func)) stop 13 
+            if ( .not. allocated(func)) stop 13
          end function
 
 end module
@@ -67,6 +55,6 @@ end module
              STOP 23
       end select
 
-      if ( allocated(c) ) stop 31             
+      if ( allocated(c) ) stop 31
 
       end

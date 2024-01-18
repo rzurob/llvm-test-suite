@@ -1,13 +1,11 @@
 !*******************************************************************************
 !*
 !============================================================================
-!*  XL Fortran Test Case                              IBM INTERNAL USE ONLY
 !*
 !============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f018.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon
 !*  DATE                       : 2015-07-03
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
@@ -103,7 +101,7 @@
         i_res3 = 0.0d0
         call sub2(j,k,i_arr)
         i_res3 = func2(j,k,i_arr)
-  
+
         i_res3_result(1,:) = 0.0d0
         i_res3_result(2,:) = 0.0d0
         i_res3_result(3,:) = (/4.0d0,4.0d0,4.0d0,0.0d0,0.0d0/)
@@ -120,7 +118,7 @@
             end if
           end do
         end do
- 
+
         i_res = 0.0d0
         i_arr2 = (/10.0d0,20.0d0,30.0d0,40.0d0,50.0d0,60.0d0,70.0d0,80.0d0,90.0d0,100.0d0/)
         call sub1(i,j,k,i_arr2)
@@ -229,8 +227,8 @@
             logical, external :: precision_r8
 
             allocate(i_res2(5,5),i_arr2(10))
- 
-            i_res = 0.0d0 
+
+            i_res = 0.0d0
             i_res2 = 0.0d0
             i_arr2 = (/4.0d0,9.0d0,16.0d0,25.0d0,36.0d0,49.0d0,64.0d0,81.0d0,100.0d0,121.0d0/)
 
@@ -287,9 +285,9 @@
             logical, external :: precision_r8
 
             allocate(i_res2(10), i_arr(10))
- 
+
             i_res = 0.0d0
-            i_res2 = 0.0d0 
+            i_res2 = 0.0d0
             i_arr = (/4.0d0,9.0d0,16.0d0,25.0d0,36.0d0,49.0d0,64.0d0,81.0d0,100.0d0,121.0d0/)
 
             do concurrent (i = 1:10, lvar .eqv. .true.)

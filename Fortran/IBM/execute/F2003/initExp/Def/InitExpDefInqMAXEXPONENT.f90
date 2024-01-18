@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefInqMAXEXPONENT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefInqMAXEXPONENT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 03, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,32 +19,31 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  a reference to a specification inquiry 
-!* 
-!*  - MAXEXPONENT 
-!* 
+!*  a reference to a specification inquiry
+!*
+!*  - MAXEXPONENT
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM       InitExpDefInqMAXEXPONENT 
+  PROGRAM       InitExpDefInqMAXEXPONENT
   IMPLICIT NONE
   INTEGER :: I, J, K
 
- 
+
   REAL(4),   PARAMETER :: R4 = 10
   REAL(8),   PARAMETER :: R8(-2147483648:-2147483647, 2147483646:2147483647) = 1
-  REAL(16),  PARAMETER :: R6(1:0) = -1 
+  REAL(16),  PARAMETER :: R6(1:0) = -1
 
   INTEGER  :: TR4(128)  = (/(MAXEXPONENT(R4), I=1,128)/)
   INTEGER  :: TR8(128)  = (/(MAXEXPONENT(R8), I=1,128)/)
   INTEGER  :: TR6(128)  = (/(MAXEXPONENT(R6), I=1,128)/)
 
 
-!???IEEE 
+!???IEEE
 !  IF ( ANY ( TR4  .NE. 127  )  )   STOP 11
 !  IF ( ANY ( TR8  .NE. 1023 )  )   STOP 12
 !  IF ( ANY ( TR6  .NE. 1023 )  )   STOP 13
@@ -63,4 +56,4 @@
   END
 
 
- 
+

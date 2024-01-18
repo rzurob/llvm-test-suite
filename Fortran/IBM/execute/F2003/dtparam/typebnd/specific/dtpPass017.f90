@@ -67,7 +67,6 @@ use m
     end function
 end module
 
-
 program dtpPass017
 use m1
     implicit none
@@ -140,8 +139,6 @@ use m1
 
     if (.not. precision_r8(cas2%data(1)%data(2), &
             sqrt(1.0d0*coSize + 1.0d3*imgNo))) error stop 11_4
-
-
 
     !! verify cas1, cas2 in a different way
     d1 = [(cas%data(i)%data, i = 1, imgNo)]

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemNOT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemNOT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 14, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  NOT 
+!*
+!*  -  NOT
 !*  (319227)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,24 +30,24 @@
 
 
   PROGRAM  InitExpDefElemNOT
-  IMPLICIT NONE 
+  IMPLICIT NONE
   INTEGER :: I, J
 
   TYPE :: DT
-    INTEGER(1) :: I1(4,4)=RESHAPE((/(INT(z"05", KIND=1), I=1,16)/),(/4,4/)) 
-    INTEGER(2) :: I2(4,4)=RESHAPE((/(INT(z"0005", KIND=2), I=1,16)/),(/4,4/)) 
-    INTEGER(4) :: I4(4,4)=RESHAPE((/(INT(z"00000005", KIND=4), I=1,16)/),(/4,4/)) 
-    INTEGER(8) :: I8(4,4)=RESHAPE((/(INT(z"0000000000000005", KIND=8), I=1,16)/),(/4,4/)) 
+    INTEGER(1) :: I1(4,4)=RESHAPE((/(INT(z"05", KIND=1), I=1,16)/),(/4,4/))
+    INTEGER(2) :: I2(4,4)=RESHAPE((/(INT(z"0005", KIND=2), I=1,16)/),(/4,4/))
+    INTEGER(4) :: I4(4,4)=RESHAPE((/(INT(z"00000005", KIND=4), I=1,16)/),(/4,4/))
+    INTEGER(8) :: I8(4,4)=RESHAPE((/(INT(z"0000000000000005", KIND=8), I=1,16)/),(/4,4/))
   END TYPE
 
   TYPE (DT), PARAMETER :: X = DT()
 
-  INTEGER :: I1(4,4)=RESHAPE((/(INT(z"FA", KIND=1), I=1,16)/),(/4,4/)) 
-  INTEGER :: I2(4,4)=RESHAPE((/(INT(z"FFFA", KIND=2), I=1,16)/),(/4,4/)) 
-  INTEGER :: I4(4,4)=RESHAPE((/(INT(z"FFFFFFFA", KIND=4), I=1,16)/),(/4,4/)) 
+  INTEGER :: I1(4,4)=RESHAPE((/(INT(z"FA", KIND=1), I=1,16)/),(/4,4/))
+  INTEGER :: I2(4,4)=RESHAPE((/(INT(z"FFFA", KIND=2), I=1,16)/),(/4,4/))
+  INTEGER :: I4(4,4)=RESHAPE((/(INT(z"FFFFFFFA", KIND=4), I=1,16)/),(/4,4/))
   INTEGER :: I8(4,4)=RESHAPE((/(INT(z"FFFFFFFFFFFFFFFA", KIND=8), I=1,16)/),(/4,4/))
 
- 
+
   INTEGER(KIND(NOT(I=X%I1)))    :: TI1(4,4) = NOT(I=X%I1)  ! -6
   INTEGER(KIND(NOT(I=X%I2)))    :: TI2(4,4) = NOT(I=X%I2)
   INTEGER(KIND(NOT(I=X%I4)))    :: TI4(4,4) = NOT(I=X%I4)

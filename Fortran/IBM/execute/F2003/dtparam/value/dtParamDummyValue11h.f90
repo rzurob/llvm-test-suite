@@ -1,34 +1,22 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!* TEST CASE TITLE : Functional test for DTP dummy argument with VALUE
-!*                                                                     
 !* TEST CASE NAME              : dtParamDummyValue11h.f
 !*
-!*  PROGRAMMER                 : Andy Sheung
 !*  DATE                       : July 10, 2008
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
-!*  DESCRIPTION: 
-!*  The VALUE attribute specifies a type of argument association between a 
-!*  dummy argument and an actual argument. If the dummy argument has the 
-!*  VALUE attribute, it becomes associated with a definable anonymous data 
-!*  object whose initial value is that of the actual argument. Subsequent 
-!*  changes to the value or definition status of the dummy argument do not 
+!*  DESCRIPTION:
+!*  The VALUE attribute specifies a type of argument association between a
+!*  dummy argument and an actual argument. If the dummy argument has the
+!*  VALUE attribute, it becomes associated with a definable anonymous data
+!*  object whose initial value is that of the actual argument. Subsequent
+!*  changes to the value or definition status of the dummy argument do not
 !*  affect the actual argument.
 !*
 !*  CASE:
-!*  When having an array of DT, and the array is allocatable, and the array 
-!*  is allocatable, and an array element of DT which has an allocatable 
+!*  When having an array of DT, and the array is allocatable, and the array
+!*  is allocatable, and an array element of DT which has an allocatable
 !*  component is passed as an actual argument
 !*
 !* ===================================================================
@@ -51,11 +39,11 @@
 
   ALLOCATE(TArr(n,n))
 
-  DO k1 = 1, n 
-  DO j1 = 1, n 
+  DO k1 = 1, n
+  DO j1 = 1, n
     ALLOCATE(TArr(j1,k1)%INTArr(m,m))
     ALLOCATE(TArr(j1,k1)%CHArr(m,m))
-    DO k2 = 1, m 
+    DO k2 = 1, m
     DO j2 = 1, m
       TArr(j1,k1)%INTArr(j2,k2) = 11
       TArr(j1,k1)%CHArr(j2,k2) = 'abc'
@@ -64,8 +52,8 @@
   END DO
   END DO
 
-  DO k1 = 1, n 
-  Do j1 = 1, n 
+  DO k1 = 1, n
+  Do j1 = 1, n
     CALL Sub1(TArr(j1,k1), j1, k1, m)
   END DO
   END DO
@@ -100,7 +88,7 @@
     INTEGER :: j1, k1, j2, k2, m
 
     DO k2 = 1, m
-    DO j2 = 1, m 
+    DO j2 = 1, m
 
     IF ((T1%INTArr(j2,k2).ne.11).or.(T1%CHArr(j2,k2).ne.'abc').or.(T1%INTArr(j2,k2)%KIND.ne.2).or.(T1%CHArr(j2,k2)%LEN.ne.3)) THEN
       print *, j1, k1, j2, k2

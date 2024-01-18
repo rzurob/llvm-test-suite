@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Forall.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Forall.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Forall.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Forall.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 12, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  FORALL/HEADER 
-!*  
-!*  (ICE-304566) 
+!*
+!*  FORALL/HEADER
+!*
+!*  (ICE-304566)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -65,9 +59,9 @@
 
   END MODULE
 
-  PROGRAM Forall 
+  PROGRAM Forall
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT(4)) :: V, W(30000), U(30000)
   INTEGER :: I
@@ -76,7 +70,7 @@
   V%Id = -1
   V%ProcPtr => Fun
   ProcPtr => Fun
- 
+
   FORALL (I=V%ProcPtr(1):ProcPtr(30000):V%ProcPtr(1))
     W(I) = V
     U(I)%ProcPtr => ProcPtr
@@ -88,7 +82,7 @@
     IF ( .NOT. ASSOCIATED(W(I)%ProcPtr) ) STOP 12
     IF ( .NOT. ASSOCIATED(W(I)%ProcPtr, Fun) ) STOP 13
     IF ( .NOT. ASSOCIATED(W(I)%ProcPtr, ProcPtr) ) STOP 14
-   
+
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr) ) STOP 22
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Fun) ) STOP 23
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, ProcPtr) ) STOP 24
@@ -96,8 +90,8 @@
   END DO
 
   FORALL (I=ProcPtr(1):ProcPtr(30000):ProcPtr(1))
-    W(I) = DT(4)(-1, PRocPtr) 
-    U(I) = W(I) 
+    W(I) = DT(4)(-1, PRocPtr)
+    U(I) = W(I)
   END FORALL
 
   DO I=1, 30000
@@ -106,7 +100,7 @@
     IF ( .NOT. ASSOCIATED(W(I)%ProcPtr) ) STOP 32
     IF ( .NOT. ASSOCIATED(W(I)%ProcPtr, Fun) ) STOP 33
     IF ( .NOT. ASSOCIATED(W(I)%ProcPtr, ProcPtr) ) STOP 34
-   
+
     IF ( W(I)%Id .NE. -1 ) STOP 41
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr) ) STOP 42
     IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Fun) ) STOP 43

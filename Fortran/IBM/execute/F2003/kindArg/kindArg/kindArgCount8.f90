@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgCount8
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : COUNT 
+!*  SECONDARY FUNCTIONS TESTED : COUNT
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  entities with different attubute used for kind arg - dummy
-!*    
-!*  () 
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -70,7 +62,7 @@
   INTEGER(4), INTENT(IN), OPTIONAL :: K4
   INTEGER(8), INTENT(IN), OPTIONAL :: K8
 
- 
+
   DO I1 = 1, 126
     IF (     COUNT(M1(I1,:), KIND=KIND(K1) )    .NE. 1)   STOP 11
     IF (KIND(COUNT(M1(I1,:), KIND=KIND(K1) ))   .NE. K1)  STOP 12

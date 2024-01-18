@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 24, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
 !*  -- An object designator with a base object that is a dummy argument that
 !*     has neither the OPTIONAL nor the INTENT (OUT) attribute
 !*
-!*  (340444) 
+!*  (340444)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -59,10 +52,10 @@
   CONTAINS
 
   SUBROUTINE IntSub(T1)
-  TYPE(DT(KIND=4,          LEN=4)) :: T1(1)  
+  TYPE(DT(KIND=4,          LEN=4)) :: T1(1)
 
-  TYPE(DT(4,     LEN=T1(1)%DT0%K))  :: T2(1)  =  DT(4, LEN=T1(1)%DT0%K)() 
-  TYPE(DT(4,        L=T1%LEN))      :: T3(1)  =  DT(4, L=T1%LEN)() 
+  TYPE(DT(4,     LEN=T1(1)%DT0%K))  :: T2(1)  =  DT(4, LEN=T1(1)%DT0%K)()
+  TYPE(DT(4,        L=T1%LEN))      :: T3(1)  =  DT(4, L=T1%LEN)()
 
 
   IF ( T1%K               .NE.   4          ) STOP 11

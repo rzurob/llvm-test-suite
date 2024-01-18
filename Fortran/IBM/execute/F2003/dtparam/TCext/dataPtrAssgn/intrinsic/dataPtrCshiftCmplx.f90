@@ -4,20 +4,14 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrCshiftCmplx.f 
+!*  TEST CASE NAME             : dataPtrCshiftCmplx.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !*
@@ -36,8 +30,8 @@ module m
             complex(k1), allocatable :: c3_t(:)
 	end type
 
-	type(base(20,16)), protected, target :: bT 
- 
+	type(base(20,16)), protected, target :: bT
+
         contains
             subroutine init()
 
@@ -54,7 +48,7 @@ module m
         	complex*16, pointer :: b(:)
         	complex(16), pointer :: c(:)
 
-	  	
+
 		a(kind(c):) => c8_t(1:25:2)
 		b(ubound(a,1):) => c6_t(5:1:-1)
 		c(int(real(c8_t(1)),1):4_4) => bT%c3_t(2:10:2)
@@ -70,7 +64,7 @@ program main
         complex*16, pointer :: c6_p(:)
         complex(16), pointer :: c3_p(:)
 
-	call init 
+	call init
 
 	call associate(c8_p, c6_p, c3_p)
 
@@ -87,10 +81,10 @@ program main
 	write (*, '("(",f10.6,", ", f10.6, ")")') c6_p
 	write (*, '("(",f10.6,", ", f10.6, ")")') c3_p
 
-	print *, "calling to cshift ..."	
+	print *, "calling to cshift ..."
 
-	write (*, '("(",f10.6,", ", f10.6, ")")') cshift(c8_p, -1) 
+	write (*, '("(",f10.6,", ", f10.6, ")")') cshift(c8_p, -1)
 	write (*, '("(",f10.6,", ", f10.6, ")")') cshift(c6_p,0)
 	write (*, '("(",f10.6,", ", f10.6, ")")') cshift(c3_p, 1)
-	
+
     end program

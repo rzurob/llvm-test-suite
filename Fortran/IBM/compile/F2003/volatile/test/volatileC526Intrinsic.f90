@@ -1,13 +1,6 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTENT, VOLATILE
 !*
@@ -17,11 +10,11 @@
 !*         ,INTRINSIC OR INTENT(IN) shall not be specified.
 !* ===================================================================
 
-  program volatileC526Intrinsic 
+  program volatileC526Intrinsic
 
-     intrinsic sin 
+     intrinsic sin
 
-     VOLATILE sin 
+     VOLATILE sin
 
-  end program volatileC526Intrinsic 
+  end program volatileC526Intrinsic
 

@@ -1,10 +1,10 @@
-!!! Test derived type with type parameter 
+!!! Test derived type with type parameter
 
 integer result
 
 type base (k, l)
   integer, kind :: k
-  integer, len :: l 
+  integer, len :: l
   integer(k) :: i1(l)
   real, allocatable :: r1
   character(l) :: c1
@@ -84,5 +84,4 @@ result = storage_size(arg5)
 if (result .ne. (sizeof(arg5(1)) * 8)) then
 error stop 8_4
 end if
-end
 end

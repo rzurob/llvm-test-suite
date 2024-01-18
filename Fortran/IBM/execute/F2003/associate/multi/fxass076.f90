@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass076.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass076.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -54,12 +42,11 @@
 !*
 !*  CONDITIONS TESTED          : Listed below.
 !*
-!*  DESCRIPTION                : Test: MULTIPLE NESTED ASSOCIATE 
+!*  DESCRIPTION                : Test: MULTIPLE NESTED ASSOCIATE
 !*                                     with expressions and with
 !*                                     integer, integer*1, integer*2
 !*                                     integer*4, integer*8 and byte
 !*                                     data types and do loop.
-!*
 !*
 !* ===================================================================
 !*
@@ -98,7 +85,7 @@
       byte ab2 / 4 /
       byte cb
 
-      c = a + (b + 1)*10 
+      c = a + (b + 1)*10
       c1 = a1 + (b1 + 1)*10
       c2 = a2 + (b2 + 1)*10
       c4 = a4 + (b4 + 1)*10
@@ -141,9 +128,9 @@
       assc: associate ( arg => a , arb => (b + 1)*10 )
        arg = arg + (b + 1)*10
         assc1: associate ( arg1 => a1 ,arb1 => (b1 + 1_1)*10_1 )
-         arg1 = arg1 + (b1 + 1)*10 
+         arg1 = arg1 + (b1 + 1)*10
           assc2: associate ( arg2 => a2 , arb2 => (b2 + 1_2)*10_2 )
-           arg2 = arg2 + (b2 + 1)*10 
+           arg2 = arg2 + (b2 + 1)*10
             assc3: associate ( arg4 => a4 , arb4 => (b4 + 1)*10 )
              arg4 = arg4 + (b4 + 1)*10
               assc4: associate ( arg8 => a8 , arb8 => (b8 + 1)*10 )

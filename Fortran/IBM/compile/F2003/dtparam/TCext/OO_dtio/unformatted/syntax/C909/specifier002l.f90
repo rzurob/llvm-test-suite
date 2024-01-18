@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : specifier002l
 !*
-!*  PROGRAMMER                 : David Forster (derived from specifier002 by Robert Ma)
 !*  DATE                       : 2007-09-09 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5 Data Transfer Statement
 !*                               C909: no specifier shall appear more than once in READ or WRITE
@@ -119,7 +111,7 @@ use m1
    integer, intent(in)  :: v_list(:)
    integer, intent(out) :: iostat
    character(*), intent(inout) :: iomsg
-   
+
    read (unit, "(A3)", advance='no', advance='no', iostat=iostat, iomsg=iomsg) dtv%c
 
 end subroutine

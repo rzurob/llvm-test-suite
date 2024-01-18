@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting inside DTIO procedure (input)
@@ -95,7 +79,7 @@ program scalar102
    if (( stat /=  0 ) .or. ( msg /= 'dtioread' ) ) error stop 3_4
    read  (1,*, iostat=stat, iomsg=msg)      b5
    if (( stat /=  0 ) .or. ( msg /= 'dtioread' ) ) error stop 4_4
-   
+
    if ( b1%c /= 'ABC' )  error stop 5_4
    if ( b2%c /= 'DEF' )  error stop 6_4
    if ( b3%c /= 'GHI' )  error stop 7_4
@@ -115,12 +99,12 @@ subroutine readformatted (dtv, unit, iotype, v_list, iostat, iomsg)
    character(*), intent(inout) :: iomsg
    character(3), target :: c
    namelist /nml1/ c
-   
+
    if ( iotype /= "LISTDIRECTED" ) error stop 7_4
    if ( size(v_list, 1) /= 0 ) error stop 8_4
 
    read (unit, nml1, iostat=iostat )
-   
+
    allocate( dtv%c, source = c )
 
    iomsg = 'dtioread'

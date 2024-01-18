@@ -1,25 +1,20 @@
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dfinal003k.f
 !*  TEST CASE NAME             : type-bound procedure dfinal003k
 !*
-!*  PROGRAMMER                 : David Forster (derived from dfinal003 by Catherine Sun)
 !*  DATE                       : 2007-11-12 (original: )
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines 
-!*  SECONDARY FUNCTIONS TESTED : type bound 
+!*
+!*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines
+!*  SECONDARY FUNCTIONS TESTED : type bound
 !*  REFERENCE                  : Feature Number 289057(.TCx.tbnd)
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : testing final subroutines: a final-
 !*                               subroutine-name shall be the name of
 !*                               a module procedure with exactly one
 !*                               dummy argument.
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -30,7 +25,7 @@ module m
         contains
         final :: finalizeBase !* expect an error message here
     end type
-    
+
     type, extends(base) :: child
     contains
        final :: finalizeChild !FE supress error message here since the parent is aleady in error

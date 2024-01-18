@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecDT4
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 19, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  The basic syatax  
-!*  TYPE IS ( derived-type-spec ) 
-!*  for associate name 
-!*  () 
+!*  The basic syatax
+!*  TYPE IS ( derived-type-spec )
+!*  for associate name
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,8 +43,8 @@
     REAL(K), PRIVATE     :: R=K
   END TYPE
 
-  CLASS(DT0(8_8, L=:        )), POINTER       :: T3(:) 
-  CLASS(DT(8_8,  L=:,  LEN=:)), ALLOCATABLE   :: T4(:) 
+  CLASS(DT0(8_8, L=:        )), POINTER       :: T3(:)
+  CLASS(DT(8_8,  L=:,  LEN=:)), ALLOCATABLE   :: T4(:)
 
   CONTAINS
 
@@ -103,7 +96,7 @@
   END TYPE
 
   END MODULE
- 
+
   PROGRAM dtParamTypeDecDT4
   USE M
   USE M1

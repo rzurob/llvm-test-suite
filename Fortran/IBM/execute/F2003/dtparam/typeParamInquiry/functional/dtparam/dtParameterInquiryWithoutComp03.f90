@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryWithoutComp03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryWithoutComp03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       :  
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. DIFFERENT TYPE PARAMETER
-!* 4. WITHOUT COMPONENT,DEFAULT INTIALIZATION 
+!* 4. WITHOUT COMPONENT,DEFAULT INTIALIZATION
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -35,8 +27,8 @@ module m
      integer(1),kind :: k1=k
      integer(selected_int_kind(4)),kind :: k2=selected_int_kind(4)
      integer(int(2.2)+max(1,2)),kind :: k3=int(2.2)+max(1,2)
-     integer(8),kind :: k4=kind('a')  
-  
+     integer(8),kind :: k4=kind('a')
+
      integer(1),len  :: l1=kind(k1+k2)
      integer(selected_int_kind(4)),len :: l2=selected_int_kind(4)
      integer(k+3),len       :: l3=k+3
@@ -51,9 +43,9 @@ end module
 
   if(t%k1 /= 5)                                   error stop 10_4
   if(t%k2 /= 2)                                   error stop 11_4
-  if(t%k3 /= 4)                                   error stop 12_4 
+  if(t%k3 /= 4)                                   error stop 12_4
   if(t%k4 /= 1)                                   error stop 13_4
-  
+
   if(t%l1 /= 2)                                   error stop 14_4
   if(t%l2 /= 2)                                   error stop 15_4
   if(t%l3 /= 8)                                   error stop 16_4
@@ -70,4 +62,4 @@ end module
   if(t%l4%kind /= kind(t%l4) .or. t%l4%kind /=4)  error stop 25_4
 
 
-  end     
+  end

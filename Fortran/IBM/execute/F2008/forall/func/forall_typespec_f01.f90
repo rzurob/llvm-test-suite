@@ -1,21 +1,18 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_f01.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
-!*  SECONDARY FUNCTIONS TESTED : nesting forall in another block 
-!*  ADAPTED FROM               : 
+!*  SECONDARY FUNCTIONS TESTED : nesting forall in another block
+!*  ADAPTED FROM               :
 !*
 !*  DESCRIPTION
 !*
-!*    Reuse an external variable as a FORALL index variable --> FORALL should 
+!*    Reuse an external variable as a FORALL index variable --> FORALL should
 !*    not alter its value.
 !*    FORALL nested in another block --> FORALL should not alter an index value
 !*
@@ -35,12 +32,12 @@ else
 
   forall(integer*1 :: i = 1:3:1)
   end forall
-  
+
   if (i .ne. 10) then
     print *, "forall construct in an else block  modified an external scope variable"
     error stop 22
   end if
-  
+
   forall(integer*1 :: i = 1:4:1) a(i) = i
 
   if (i .ne. 10) then
@@ -56,7 +53,7 @@ block
 
   ! forall should not modify this local i
   forall(integer*1 :: i = 1:4:1) a(i) = i
-  
+
   if (i .ne. -1) then
     print *, "forall assignment in a block modified an external scope variable"
     error stop 44

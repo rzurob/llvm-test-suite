@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for ISO_C_BINDING module
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : C_FLOAT_COMPLEX, C_DOUBLE_COMPLEX
@@ -237,7 +223,7 @@ complex(C_FLOAT_COMPLEX) function fnt1(a,b)
 
    complex(C_FLOAT_COMPLEX) :: a(5)
    complex(C_DOUBLE_COMPLEX) :: b(5)
-   
+
    do i = 1, 5
       if ( a(i) /= cmplx(i,i,C_FLOAT_COMPLEX) ) error stop 52
       a(i) = cmplx(i+1,i+1,C_FLOAT_COMPLEX)
@@ -297,7 +283,7 @@ complex(C_FLOAT_COMPLEX) function fnt5(aa,bb)
 
    complex(C_FLOAT_COMPLEX) :: aa(10,5)
    complex(C_DOUBLE_COMPLEX) :: bb(10,5)
-   
+
    do i = 1, 5
       do j = 1, 10
          if ( aa(j,i) /= cmplx(i+j-1,i+j-1,C_FLOAT_COMPLEX) ) error stop 64
@@ -331,7 +317,7 @@ complex(C_FLOAT_COMPLEX) function fnt7(aa,bb)
 
    complex(C_FLOAT_COMPLEX), intent(inout) :: aa(10,5)
    complex(C_DOUBLE_COMPLEX), intent(inout) :: bb(10,5)
-   
+
    do i = 1, 5
       do j = 1, 10
          if ( aa(j,i) /= cmplx(i+j-1,i+j-1,C_FLOAT_COMPLEX) ) error stop 72
@@ -349,7 +335,7 @@ complex(C_FLOAT_COMPLEX) function fnt8(aa,bb)
 
    complex(C_FLOAT_COMPLEX), intent(out) :: aa(10,5)
    complex(C_DOUBLE_COMPLEX), intent(out) :: bb(10,5)
-   
+
    do i = 1, 5
       do j = 1, 10
          aa(j,i) = cmplx(i+j,i+j,C_FLOAT_COMPLEX)

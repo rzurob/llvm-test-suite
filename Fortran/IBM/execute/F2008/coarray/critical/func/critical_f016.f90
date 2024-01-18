@@ -1,14 +1,8 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : critical_f016.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : February 2011
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
 !*  SECONDARY FUNCTIONS TESTED :
@@ -23,7 +17,7 @@
 program main
 
 	integer :: n, cur
-	
+
 	n = num_images()
 	cur = this_image()
 	call sub0(n, cur)
@@ -32,7 +26,7 @@ contains
 
 	subroutine sub0(num, me)
 		integer :: num, me
-	
+
 		type dt
 			integer :: x, y
 		end type
@@ -40,7 +34,7 @@ contains
 		type (dt), save :: cafdt[1,1:2,1:*]
 		cafdt = dt(1, 1)
 		sync all
-			
+
 		critical
 			cafdt[1,1,1]%x = cafdt[1,1,1]%x * (-1)
 			!cafdt[1,1,2]%y = cafdt[1,2,1]%x
@@ -49,7 +43,7 @@ contains
 		end critical
 
 		sync all
-		
+
 		if (this_image() == 1) then
 			print *, cafdt[1,1,1]		!(1, 1)
 			print *, cafdt[1,2,1]		!(17, 15)
@@ -57,5 +51,5 @@ contains
 			print *, cafdt[1,2,2]		!(9, 10)
 		end if
 	end subroutine
-	
+
 end

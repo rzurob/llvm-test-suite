@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocToIsPoly01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocToIsPoly01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 6 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 6 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
@@ -29,9 +21,9 @@ module m
       integer,len :: l1
       character(l1) :: c1(l1)
       character(:),allocatable :: c2(:)
-   end type 
+   end type
    type,extends(base) :: child(l2)
-      integer,len :: l2 
+      integer,len :: l2
       character(l2),pointer :: c3(:)=>null()
    end type
 end module
@@ -69,13 +61,13 @@ program move_allocToIsPoly01
         if(any(x%c3 /= ["xlf","ibm","xlc"]))     error stop 16_4
      class default
         error stop 100_4
-  end select    
+  end select
 
   allocate(from2,source=child(2,3)(["00","11"],["22","33"]))
 
   select type(from2)
     type is(child(*,*))
-        allocate(from2%c3(3),source=["44","55","66"]) 
+        allocate(from2%c3(3),source=["44","55","66"])
   end select
 
   call move_alloc(from2,to2)
@@ -99,7 +91,7 @@ program move_allocToIsPoly01
   allocate(child%c3(2), source=["x","y"])
 
   allocate(from3,source=child)
-  
+
   call move_alloc(from3, to2)
 
   if(allocated(from3))                           error stop 24_4
@@ -114,7 +106,7 @@ program move_allocToIsPoly01
         if(any(x%c3 /= ["x","y"]))               error stop 30_4
      class default
         error stop 102_4
-  end select  
+  end select
 
 end program
 

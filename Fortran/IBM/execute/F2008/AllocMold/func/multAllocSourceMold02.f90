@@ -1,19 +1,11 @@
 !*  ==================================================================
-!*  XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!*  ==================================================================
 !*
-!*  TEST CASE TITLE            : multAllocSourceMold02
-!*
-!*  PROGRAMMER                 : Izhak Jakov
 !*  DATE                       : June 2, 2015
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -23,7 +15,6 @@
 !*  DESCRIPTION                : Multiple allocate arrays of
 !*                               intrinsic types from source
 !*
-!*
 !* Defect 112510
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -31,7 +22,7 @@
 program main
 
   integer(kind=4) :: s
-  
+
   real(kind=8), pointer             :: pr1(:),pr2(:)
   real(kind=8), allocatable, target :: tr1(:)
 
@@ -46,7 +37,7 @@ program main
 
   complex(kind=8), pointer             :: px1(:), px2(:), px3(:)
   complex(kind=8), allocatable, target :: tx(:)
-  
+
   logical, pointer             :: pl1(:), pl2(:), pl3(:)
   logical, allocatable, target :: tl(:)
 
@@ -72,19 +63,19 @@ program main
   if (pr1(3).ne.0.4_8)  error stop(3)
   if (pr1(4).ne.-1.2_8) error stop(4)
   if (pr1(5).ne.0.0_8)  error stop(5)
-  
+
   if (pr2(1).ne.2.0_8)  error stop(6)
   if (pr2(2).ne.-9.1_8) error stop(7)
   if (pr2(3).ne.0.4_8)  error stop(8)
   if (pr2(4).ne.-1.2_8) error stop(9)
   if (pr2(5).ne.0.0_8)  error stop(10)
- 
- !Real Numbers of kind=4 
+
+ !Real Numbers of kind=4
   allocate(tr2(3:7))
   tr2=(/2.0_4, -9.1_4, 0.4_4, 0.0_4, 14.0_4/)
   pr6=>tr2
   allocate(pr3, pr4, pr5, source=pr6)
-  
+
   if (pr3(3).ne.+2.0_4) error stop(11)
   if (pr3(4).ne.-9.1_4) error stop(12)
   if (pr3(5).ne.+0.4_4) error stop(13)
@@ -112,7 +103,7 @@ program main
  !Complex Numbers
   allocate(tx(4))
   tx=(/(2.0_8,16.0_8), (-9.1_8,4.0_8), (0.4_8,-1.2_8), (0.0_8,0.0_8)/)
-  
+
   px3=>tx
   allocate(px1, px2, source=px3)
 
@@ -120,12 +111,12 @@ program main
   if (px1(2).ne.(-9.1_8,4.0_8)) error stop(32)
   if (px1(3).ne.(0.4_8,-1.2_8)) error stop(33)
   if (px1(4).ne.(+0.0_8,0.0_8)) error stop(34)
-  
+
   if (px2(1).ne.(2.0_8,16.0_8)) error stop(35)
   if (px2(2).ne.(-9.1_8,4.0_8)) error stop(36)
   if (px2(3).ne.(0.4_8,-1.2_8)) error stop(37)
   if (px2(4).ne.(+0.0_8,0.0_8)) error stop(38)
-  
+
   if (px3(1).ne.(2.0_8,16.0_8)) error stop(39)
   if (px3(2).ne.(-9.1_8,4.0_8)) error stop(40)
   if (px3(3).ne.(0.4_8,-1.2_8)) error stop(41)
@@ -151,7 +142,7 @@ program main
   if (pi3(-3).ne.-9) error stop(52)
   if (pi3(-2).ne.-0) error stop(53)
   if (pi3(-1).ne.99) error stop(54)
-  
+
  !Logicals
   allocate(tl(6))
   tl=(/.TRUE., .FALSE., .TRUE., .TRUE., .FALSE., .TRUE./)
@@ -179,13 +170,13 @@ program main
   if (pl3(4).neqv..TRUE.)  error stop(66)
   if (pl3(5).neqv..FALSE.) error stop(67)
   if (pl3(6).neqv..TRUE.)  error stop(68)
-  
+
  !Character -- Commented out due to defect 112510: https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/112510
 !  tc = "Fortran Test"
   allocate(tc(4))
   tc = "Fortran Test"
   pc3=>tc
-  
+
   allocate(pc1, pc2, source=pc3)
 
   if (pc1(1).ne."Fo")  error stop(63)
@@ -199,7 +190,7 @@ program main
   if (pc3(1).ne."Fo")  error stop(63)
   if (pc3(2).ne."Fo") error stop(64)
   if (pc3(3).ne."Fo")  error stop(65)
-  !Why is this working for 
+  !Why is this working for
   !real*8, allocatable, target :: z(:)
   !but not for character*16, target, allocatable :: tc(:)
   !??
@@ -207,12 +198,12 @@ program main
  !Integers
   allocate(tm(3))
   tm(2) = custom(idno=90, funds=30174984.43E4, special="$",  &
-        & imNumber=(0,-96.12), hungry=.FALSE.) 
+        & imNumber=(0,-96.12), hungry=.FALSE.)
 
   tm(3) = custom(idno=0, funds=-30174984.43E-4, special="!", &
         & imNumber=(-1,-96.12), hungry=.TRUE.)
-  
-  
+
+
   pm3=>tm
   allocate(pm1, pm2, source=pm3)
 
@@ -227,7 +218,7 @@ program main
   if (pm1(3)%idno /= 0 .or. pm1(3)%funds /= -30174984.43E-4           &
     & .or. pm1(3)%special /= "!" .or. pm1(3)%imNumber /= (-1,-96.12)  &
     & .or. pm1(3)%hungry.neqv..TRUE.) error stop (71)
-  
+
   if (pm2(1)%idno /= -77 .or. pm2(1)%funds /= -98327493.432           &
     & .or. pm2(1)%special /= "&" .or. pm2(1)%imNumber /= (-32.0,16.0) &
     & .or. pm2(1)%hungry.neqv..FALSE.) error stop (72)
@@ -237,7 +228,7 @@ program main
   if (pm2(3)%idno /= 0 .or. pm2(3)%funds /= -30174984.43E-4           &
     & .or. pm2(3)%special /= "!" .or. pm2(3)%imNumber /= (-1,-96.12)  &
     & .or. pm2(3)%hungry.neqv..TRUE.) error stop (74)
-    
+
   if (pm3(1)%idno /= -77 .or. pm3(1)%funds /= -98327493.432           &
     & .or. pm3(1)%special /= "&" .or. pm3(1)%imNumber /= (-32.0,16.0) &
     & .or. pm3(1)%hungry.neqv..FALSE.) error stop (75)
@@ -247,9 +238,9 @@ program main
   if (pm3(3)%idno /= 0 .or. pm3(3)%funds /= -30174984.43E-4           &
     & .or. pm3(3)%special /= "!" .or. pm3(3)%imNumber /= (-1,-96.12)  &
     & .or. pm3(3)%hungry.neqv..TRUE.) error stop (77)
-    
-  
-  
+
+
+
   deallocate(pr1, pr2, pr3, pr4, pr5, pi1, pi2, px1, px2, &
            & pl1, pl2, pm1, pm2) !pc1, pc2, pc3)
 
@@ -261,21 +252,21 @@ program main
   if (any(shape(pr2).ne.(/3/))) error stop(202)
   if (ubound(pr1,1) .ne.  3   ) error stop(203)
   if (lbound(pr2,1) .ne.  1   ) error stop(204)
-  
+
   allocate(pr3, pr4, pr5, pr6, mold=tr2, stat=s)
   if (s /= 0)  error stop(222)
-  
+
   allocate(pi1, pi2, pi3, mold=ti, stat=s)
   if (s /= 0)  error stop(233)
-  
+
   allocate(px1, px2, px3, mold=tx, stat=s)
   if (s /= 0)  error stop(244)
-  
+
   allocate(pl1, pl2, pl3, mold=tl(3:5), stat=s)
   if (s /= 0)  error stop(255)
   if (lbound(pl1,1)      .ne.         1     ) error stop(253)
   if (ubound(pl2,1)      .ne.         3     ) error stop(254)
-  
+
   allocate(pm1, pm2, pm3, mold=tm(1:2), stat=s)
   if (s                   /=          0     ) error stop(260)
   if (size(pm1)          .ne.         2     ) error stop(261)
@@ -285,14 +276,14 @@ program main
   if (any(pm2%idno       .ne.       -77    )) error stop(265)
   if (any(pm3%funds      .ne. -98327493.432)) error stop(266)
   if (any(pm1%special    .ne.       "&"    )) error stop(267)
-  if (any(pm2%imnumber   .ne.  (-32.0,16.0))) error stop(268)  
+  if (any(pm2%imnumber   .ne.  (-32.0,16.0))) error stop(268)
   if (any(pm3%hungry     .neqv.   .FALSE.  )) error stop(269)
-  
+
   allocate(pc1, pc2, pc3, mold=tc, stat=s)
   if (s /= 0)  error stop(206)
-  
+
   deallocate(pr1, pr2, pr3, pr4, pr5, pr6, pc1, pc2, pc3, &
            & pi1, pi2, pi3, px1, px2, px3, pl1, pl2, pl3, pm1, pm2, pm3, &
            & tr1, tr2, ti, tx, tl, tm, tc)
-           
+
 end program main

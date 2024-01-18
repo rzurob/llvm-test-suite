@@ -7,7 +7,7 @@
     TYPE, EXTENDS(DT) :: DT1
       INTEGER(K)   :: I=K
       CHARACTER(L) :: C="!!!!!!!"
-      PROCEDURE(IntFun), NOPASS, POINTER :: ProcPtr => NULL() 
+      PROCEDURE(IntFun), NOPASS, POINTER :: ProcPtr => NULL()
     END TYPE
 
   CONTAINS
@@ -25,7 +25,7 @@
   type(dt1(8, 7)) :: dt1obj
   type(dt1(4, 15)) :: dt1obj2
 
-  dt1obj%procptr => IntFun 
+  dt1obj%procptr => IntFun
   jjj= dt1obj%procptr(dt1obj2)
   print*, jjj
   end

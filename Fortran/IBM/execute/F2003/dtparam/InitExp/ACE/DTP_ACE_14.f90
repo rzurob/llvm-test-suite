@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_ACE_14.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : May 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification 
+!*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification
 !*  SECONDARY FUNCTIONS TESTED : ASSOCIATE construct
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -22,7 +14,7 @@
 !*
 !*  DESCRIPTION                :
 !*
-!* Defect : 344948  
+!* Defect : 344948
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
@@ -47,7 +39,7 @@ MODULE Mod
         INTEGER, KIND :: k3 = 4
         INTEGER, LEN  :: l3 = 2
 
-        INTEGER(k3) :: A21(l3) = -4, A22(l3+2) = -5 
+        INTEGER(k3) :: A21(l3) = -4, A22(l3+2) = -5
         TYPE(DT1(k3,l3)) :: dcmp(l3)
       END TYPE
 END MODULE
@@ -59,7 +51,7 @@ PROGRAM DTP_ACE_14
       INTEGER :: I, J, P
 
 !      ASSOCIATE ( a => [DT2(K,M) :: DT2(K,M) (11, 22, [DT1(K,M) :: DT1(K,M)([ &
-!          (I, I = 1, M-1)], Base(K,M)()), DT1(K,M)(3, Base(K,M)(1, 2)), DT1(K,M)(bcmp=Base(K,M)() )] )] ) 
+!          (I, I = 1, M-1)], Base(K,M)()), DT1(K,M)(3, Base(K,M)(1, 2)), DT1(K,M)(bcmp=Base(K,M)() )] )] )
 
       call associate1 ([DT2(K,M) :: DT2(K,M) (11, 22, [DT1(K,M) :: DT1(K,M)([ &
                 (I, I = 1, M-1)], Base(K,M)()), DT1(K,M)(3, Base(K,M)(1, 2)), &
@@ -68,7 +60,7 @@ PROGRAM DTP_ACE_14
       contains
 
 !      subroutine ASSOCIATE1 ( a => [DT2(K,M) :: DT2(K,M) (11, 22, [DT1(K,M) :: DT1(K,M)([ &
-!          (I, I = 1, M-1)], Base(K,M)()), DT1(K,M)(3, Base(K,M)(1, 2)), DT1(K,M)(bcmp=Base(K,M)() )] )] ) 
+!          (I, I = 1, M-1)], Base(K,M)()), DT1(K,M)(3, Base(K,M)(1, 2)), DT1(K,M)(bcmp=Base(K,M)() )] )] )
       subroutine ASSOCIATE1 ( a)
          type(dt2(k,m)) :: a(:)
          DO I = 1, SIZE(a)
@@ -86,7 +78,7 @@ PROGRAM DTP_ACE_14
            IF ( ANY(a(I)%dcmp(2)%A1 .NE.                 3) ) STOP 22
            IF ( ANY(a(I)%dcmp(3)%A1 .NE.                -3) ) STOP 23
 
-           ASSOCIATE ( b => a(I)%dcmp ) 
+           ASSOCIATE ( b => a(I)%dcmp )
            IF ( SIZE(b) .NE. M ) STOP 24
            DO J = 1, SIZE(b)
                 IF ( b(J)%k2 .NE. a(I)%k3 ) STOP 30
@@ -112,9 +104,9 @@ PROGRAM DTP_ACE_14
                     IF ( ANY(b(3)%bcmp(P)%A02       .NE. -2) ) STOP 49
                 END DO
            END DO
-           END ASSOCIATE 
+           END ASSOCIATE
          END DO
-         ASSOCIATE ( c => [a, a] ) 
+         ASSOCIATE ( c => [a, a] )
          IF ( SIZE(c) .NE. 2 ) STOP 50
          DO I = 1, SIZE(c)
               IF ( c(I)%k3 .NE. K ) STOP 51
@@ -157,7 +149,7 @@ PROGRAM DTP_ACE_14
                 END DO
               END DO
          END DO
-         END ASSOCIATE 
-      END subroutine 
+         END ASSOCIATE
+      END subroutine
 
 END PROGRAM DTP_ACE_14

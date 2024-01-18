@@ -1,20 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : C1117asynchAttr01 - ASYNCHRONOUS
 !*                               Attribute in Block Data Program Units
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April 11, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Block Data Program Unit
 !*  SECONDARY FUNCTIONS TESTED : Data Object explicitly has the ASYNCHRONUS
 !*                               Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : BLOCK DATA, ASYNCHRONOUS Attribute

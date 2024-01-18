@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !***********************************************************************
 ! %START
 ! %MAIN:
@@ -17,23 +12,14 @@
 ! %POSTCMD:
 ! %END
 !***********************************************************************
-!***********************************************************************
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for derived types with BIND(C) attr.
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquide
 !*  DATE                       : 4/23/2002
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived types with BIND(C) attribute
 !*  SECONDARY FUNCTIONS TESTED : see below
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -271,7 +257,7 @@ function fun3(dtx,dty) bind(c)
 
    if ( dtx%var_a /= 4.0e0 .or. dtx%vdt2%var_a /= 4.0d0 .or. &
                             (dtx%vdt2%vdt1%var_a .neqv. .false.) ) error stop 52
-   if ( (dtx%var_b .neqv. .false.) .or. (dtx%vdt2%var_b .neqv. .false.) .or. & 
+   if ( (dtx%var_b .neqv. .false.) .or. (dtx%vdt2%var_b .neqv. .false.) .or. &
                             dtx%vdt2%vdt1%var_b /= 8.0d0 ) error stop 54
    if ( dtx%var_c /= 12.0q0 .or. dtx%vdt2%var_c /= 12.0d0 .or. &
                              (dtx%vdt2%vdt1%var_c /= 'A') ) error stop 56

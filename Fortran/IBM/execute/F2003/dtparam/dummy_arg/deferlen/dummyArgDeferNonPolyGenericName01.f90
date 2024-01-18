@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPolyGenericName01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPolyGenericName01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 22 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 22 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  dummy argument in type-bound procedure is allocatable with deferred length parameter, invoke different specific procedure when passing different number of dummy argument through generic name
@@ -28,10 +20,10 @@ module m
       integer,len  :: l1=3
       integer(k1)  :: i(l1)=99
       contains
-         procedure,nopass :: define1 
+         procedure,nopass :: define1
          procedure,nopass :: define2
          procedure,nopass :: define3
-         generic :: define=>define1,define2,define3 
+         generic :: define=>define1,define2,define3
    end type
 
    contains
@@ -41,13 +33,13 @@ module m
          allocate(dtp(2,4) :: arg(-3:-1))
          arg=[dtp(2,4)([1,2,3,4]),&
               dtp(2,4)([-1,-2,-3,-4]),&
-              dtp(2,4)([-5,-2,-1,-4])] 
+              dtp(2,4)([-5,-2,-1,-4])]
       end subroutine
 
       subroutine define2(arg1,arg2)
          type(dtp(2,:)),allocatable,intent(out) :: arg1(:)
-         type(dtp(2,*)),intent(in)              :: arg2(:) 
-        
+         type(dtp(2,*)),intent(in)              :: arg2(:)
+
          arg1=arg2
       end subroutine
 
@@ -69,7 +61,7 @@ program dummyArgDeferNonPolyGenericName01
   use m
   implicit none
 
-  type(dtp)  :: dt 
+  type(dtp)  :: dt
 
   type(dtp(2,:)),allocatable :: dtp1(:)
   type(dtp(2,3))             :: dtp2(2)
@@ -93,6 +85,6 @@ program dummyArgDeferNonPolyGenericName01
 
   if(dtp1%l1 /= 3)                                 error stop 17_4
   if(any(dtp1(1)%i /= [11,13,15]))                 error stop 18_4
-  if(any(dtp1(2)%i /= -9))                         error stop 19_4 
-    
+  if(any(dtp1(2)%i /= -9))                         error stop 19_4
+
 end program

@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : GENERIC BINDING:
 !*                                  Cross Feature: Function Return
@@ -111,12 +100,12 @@ program funcRetrn001a
    if ( ( stat /= 0 ) .or. ( msg /= 'dtiowritec' ) ) error stop 3_4
 
    rewind 1
-   
+
    read ( 1, iostat = stat, iomsg = msg )    cc1
    read ( 1, iostat = stat, iomsg = msg )    cc2
    read ( 1, iostat = stat, iomsg = msg )    cc3, i1
    if ( ( cc1 /= 'abc' ) .or. ( cc2 /= 'def' ) .or. ( cc3 /= 'ghi' ) .or. ( i1 /= 10001 ) )  error stop 4_4
-   
+
 
 end program
 

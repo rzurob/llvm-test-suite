@@ -1,24 +1,17 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound05d
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug 20, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Diagnostic
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DESCRIPTION                : Diagnostic: Value of KIND must be a 
-!*                               valid value for an integer KIND type 
+!*  REQUIRED COMPILER OPTIONS  :
+!*
+!*  DESCRIPTION                : Diagnostic: Value of KIND must be a
+!*                               valid value for an integer KIND type
 !*                               parameter.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

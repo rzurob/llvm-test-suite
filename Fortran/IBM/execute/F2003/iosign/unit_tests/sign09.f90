@@ -8,23 +8,16 @@
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: diff sign09.err $TR_SRC/sign09.vf; 
+! %POSTCMD: diff sign09.err $TR_SRC/sign09.vf;
 ! %END
 !***********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Test of SIGN= specifier
-!*      
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN= specifier
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SIGN
@@ -33,7 +26,7 @@
 !*  DESCRIPTION                : Testing the error messages of the
 !*                               sign= specifier used in RTE
 !*                             1 The sign= specifier in OPEN statement
-!*                               for unformatted connection 
+!*                               for unformatted connection
 !*                             2 The invalid sign= value in OPEN
 !*                             3 The invalid sign= value in WRITE
 !*                             4 The invalid sign= value for namelist output
@@ -43,7 +36,7 @@
 implicit none
 character(20):: ch, smode, m, n
 character (500) ::a(3)
-namelist /nl/ m, n      
+namelist /nl/ m, n
 ch="unformatted"
 smode="aaaa"
 m="AB"
@@ -60,7 +53,7 @@ open (1, file = "sign10.out", sign=smode)
 write (1, *, sign=smode) m
 
 !* The invalid sign= value in namelist output
-write (1, nl, sign=smode) 
+write (1, nl, sign=smode)
 close(1)
 
 write (a, nl, sign=smode)

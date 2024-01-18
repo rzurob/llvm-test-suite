@@ -1,24 +1,16 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
-!*
-!* TEST CASE TITLE              : F2008/polyAssign/func/polyAssign1043f_LHSunlimiArrSec.f
 !*
 !* FEATURE                      : F2008: LHS of intrinsic assignment is allowed to be polymorphic (96086)
 !*                                https://compjazz.torolab.ibm.com:9443/jazz/resource/itemName/com.ibm.team.workitem.WorkItem/96086
-!* PROGRAMMER                   : Aaron Liu
 !* DATE                         : 05 August 2015
-!*  ORIGIN                      : IBM XL Compiler Development, IBM Software Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: LHS of intrinsic assignment is allowed to be polymorphic
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : LHS is an unlimited polymorphic array section, RHS is an integer.
 !*                              : LHS of intrinsic assignment is allowed to be polymorphic for array sections.
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -51,4 +43,4 @@ select type(b1)
   class default
     !print*, "indefault"
 end select
-end 
+end

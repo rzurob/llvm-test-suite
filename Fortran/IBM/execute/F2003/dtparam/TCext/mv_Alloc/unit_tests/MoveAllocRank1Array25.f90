@@ -2,24 +2,11 @@
 ! ftcx_dtp -ql /tstdev/F2003/mv_Alloc/unit_tests/MoveAllocRank1Array25.f
 ! opt variations: -qnol
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : MoveAllocRank1Array25
-!*
-!*  PROGRAMMER                 : Rob James
 !*  DATE                       : 04/28/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : Use of MOVE_ALLOC with allocatable
 !*                               rank-1 arrays

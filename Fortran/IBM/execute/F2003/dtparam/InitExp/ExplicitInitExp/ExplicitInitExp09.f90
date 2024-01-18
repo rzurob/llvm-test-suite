@@ -1,22 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ExplicitInitExp09.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Explicit Init. Expression 
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Explicit Init. Expression
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
+!*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
@@ -25,7 +17,7 @@
 !* Defect 364814
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-MODULE Mod 
+MODULE Mod
       IMPLICIT NONE
 
       TYPE Base (k1,l1)
@@ -53,14 +45,14 @@ MODULE Mod
         TYPE(Child(k1,l3,k1,l3)) :: ccomp
       END TYPE
 
-      INTERFACE 
-         SUBROUTINE CreateNew(Arg) 
+      INTERFACE
+         SUBROUTINE CreateNew(Arg)
             IMPORT BASE, CHILD, NEXTGEN
-            CLASS(Base(4,*)) :: Arg 
+            CLASS(Base(4,*)) :: Arg
             CLASS(Base(4,:)), POINTER :: Obj
          END SUBROUTINE CreateNew
       END INTERFACE
- 
+
 END MODULE
 PROGRAM ExplicitInitExp09
        USE Mod
@@ -75,11 +67,11 @@ PROGRAM ExplicitInitExp09
                  (5, 'AB', 3, 'ABCDE', 1, 'n1constant', Base(4,10)(), Child(4,10,4,10)())
 
        CALL CreateNew(b1)
-       
+
        CALL CreateNew(c1)
-       
+
        CALL CreateNew(n1)
-      
+
 END PROGRAM ExplicitInitExp09
 SUBROUTINE CreateNew(Arg)
        USE Mod, ONLY: BASE, CHILD, NEXTGEN

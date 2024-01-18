@@ -1,21 +1,14 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Deferred Character Length
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unit testing
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : Testing the MAX/MIN(LOC/VAL), TRIM 
-!*                               intrinsics related with characters 
-!*                               with deferred length 
+!*  DESCRIPTION                : Testing the MAX/MIN(LOC/VAL), TRIM
+!*                               intrinsics related with characters
+!*                               with deferred length
 !*
 !* ===================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -34,27 +27,27 @@ name(4) = "Carol"
 
 if (min(name(1),name(3)) .ne. "John") then
    error stop 1
-end if   
+end if
 
 if (max(name(2),name(4)) .ne. "Carol") then
    error stop 2
-end if   
+end if
 
 if ((minloc(name, dim=1) .ne. 2) .or. (maxloc(name, dim=1) .ne. 3)) then
    error stop 3
-end if   
+end if
 
 if ((minval(name) .ne. " Smith") .or. maxval(name) .ne. ("Kenneth")) then
    error stop 4
-end if   
+end if
 
 if (trim(name(1)) .ne. "John") then
    error stop 5
-end if   
+end if
 
 if (trim(name(2)) .ne. " Smith") then
    error stop 6
-end if   
+end if
 
 deallocate(name)
 

@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AssumedRank101f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : August  25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank object
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
@@ -22,8 +15,8 @@
 !*                                - Call to BIND(C) / Non-Bind(C) procedure from different scopes:
 !*                                      main program, module and internal procedure
 !*                                - Interface block appears in a module
-!*                                - Actual arg is assumed shape array  
-!*                                - LBOUND, UBOUND, SHAPE, SIZE, RANK 
+!*                                - Actual arg is assumed shape array
+!*                                - LBOUND, UBOUND, SHAPE, SIZE, RANK
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -41,7 +34,7 @@ module mod
        use iso_c_binding
        implicit none
        integer :: test, dim
-       integer(c_int) :: arr(..) 
+       integer(c_int) :: arr(..)
      end subroutine sub_bind_c
      subroutine sub_dim_bind_c(test, dim, arr) bind(C)
        use iso_c_binding
@@ -53,7 +46,7 @@ module mod
        use iso_c_binding
        implicit none
        integer :: test, dim
-       integer(c_int) :: arr(..) 
+       integer(c_int) :: arr(..)
      end subroutine sub
      subroutine sub_dim(test, dim, arr)
        use iso_c_binding
@@ -98,7 +91,7 @@ module mod
    end subroutine sub_mod
 end module mod
 
-program AssumedRank101f 
+program AssumedRank101f
    use iso_c_binding
    use mod
    implicit none
@@ -164,7 +157,7 @@ subroutine sub_bind_c(test, dim, arr) bind(C)
      use iso_c_binding
      implicit none
      integer :: test, dim, N
-     integer(c_int) :: arr(..) 
+     integer(c_int) :: arr(..)
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -173,8 +166,8 @@ subroutine sub_bind_c(test, dim, arr) bind(C)
      #endif
 
      N = dim
-     if (DEBUG_MODE) then 
-        print*, "flag:", test 
+     if (DEBUG_MODE) then
+        print*, "flag:", test
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -217,11 +210,11 @@ subroutine sub_bind_c(test, dim, arr) bind(C)
      endif
 end subroutine sub_bind_c
 
-subroutine sub(test, dim, arr) 
+subroutine sub(test, dim, arr)
      use iso_c_binding
      implicit none
      integer :: test, dim, N
-     integer(c_int) :: arr(..) 
+     integer(c_int) :: arr(..)
 
      #if defined (TC_DEBUG)
       logical :: DEBUG_MODE = .TRUE.
@@ -230,8 +223,8 @@ subroutine sub(test, dim, arr)
      #endif
 
      N = dim
-     if (DEBUG_MODE) then 
-        print*, "flag:", test 
+     if (DEBUG_MODE) then
+        print*, "flag:", test
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -287,8 +280,8 @@ subroutine sub_dim_bind_c(test, dim, arr) bind(C)
      #endif
 
      N = dim
-     if (DEBUG_MODE) then 
-        print*, "flag:", test 
+     if (DEBUG_MODE) then
+        print*, "flag:", test
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)
@@ -344,8 +337,8 @@ subroutine sub_dim(test, dim, arr)
      #endif
 
      N = dim
-     if (DEBUG_MODE) then 
-        print*, "flag:", test 
+     if (DEBUG_MODE) then
+        print*, "flag:", test
         print*, "size:", size(arr)
         print*, "shape:", shape(arr)
         print*, "rank:", rank(arr)

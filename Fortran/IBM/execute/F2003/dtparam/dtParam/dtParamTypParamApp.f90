@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dtParamTypParamApp  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dtParamTypParamApp
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 15, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*   type parameter may be used as a primary in a specification expression (7.1.6)
-!*   in the derived-type-def. 
+!*   in the derived-type-def.
 !*
 !*  (failed at 11&ICE/336206)
 !*
@@ -35,7 +28,7 @@
 
   MODULE M
   CONTAINS
-  
+
   FUNCTION CF()
   CHARACTER(3) CF
     CF="123"
@@ -48,14 +41,14 @@
 
   END MODULE
 
-  PROGRAM dtParamTypParamApp 
+  PROGRAM dtParamTypParamApp
   USE M
   IMPLICIT NONE
 
   TYPE :: DT0(K1, K2, K, K8)
     INTEGER(KIND=1), KIND :: K1
     INTEGER(KIND=2), KIND :: K2
-    INTEGER,         KIND :: K 
+    INTEGER,         KIND :: K
     INTEGER(KIND=8), KIND :: K8
 
     CHARACTER(LEN=1) :: C1(K1) = "1"
@@ -67,7 +60,7 @@
   TYPE :: DT1(L1, L2, L, L8)
     INTEGER(KIND=1), LEN :: L1
     INTEGER(KIND=2), LEN :: L2
-    INTEGER,         LEN :: L 
+    INTEGER,         LEN :: L
     INTEGER(KIND=8), LEN :: L8
 
     CHARACTER(LEN=L1) :: C1(L1) = "1"

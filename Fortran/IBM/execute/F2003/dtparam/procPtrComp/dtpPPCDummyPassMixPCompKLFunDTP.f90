@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpPPCDummyPassMixPCompKLFunDTP
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2009-03-23
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Procedure Pointers as Components
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 363426
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*  ADAPTED FROM               : dtpPPCDummyPassMixInterfaceKLFunDTP (<-dtpPPCLocalPassMixInterfaceKLFunDTP<-dtpPPCLocalNPassDTPInterfaceKLFunDTP<-dtpPPCLocalNPassDTPInterfaceKLFunIntr<-dtpPPCLocalNPassDTPInterfaceKLSub<-dtpPPCBasicNoPassSubroutine)
 !*
 !*  DESCRIPTION
@@ -237,7 +231,7 @@ contains
     call display(t2b % p2(2_2), 2)
     call display(t4p % p4(dt(4,3)("tuv",2345)), 4)
     print *
-    
+
     call display(t1a % p1(0_1,""), 1)
     call display(t1b % p1(0_1,""), 1)
     call display(t1c % p1(0_1,""), 1)

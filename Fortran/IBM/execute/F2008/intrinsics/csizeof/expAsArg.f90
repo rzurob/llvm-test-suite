@@ -1,23 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : expAsArg.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 2010-12-01
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - test expressions as actual arg of c_sizeof 
+!*  DESCRIPTION                : - test expressions as actual arg of c_sizeof
 !*                               - test literal as actual arg of c_sizeof
 !*                               - test literal defined by parameter attr as actual arg of c_sizeof
 !*                               - test argument has default type and parameter
@@ -41,7 +31,7 @@ program main
     real(c_float)             rA
 
     type, bind(c) :: dType
-        complex(c_float_complex)   c4(2) 
+        complex(c_float_complex)   c4(2)
     end type
 
 
@@ -49,12 +39,12 @@ program main
 
         integer(C_SIZE_T) function get_size_r4(x) bind(c)
             use, intrinsic :: iso_c_binding
-            real(c_float) x 
+            real(c_float) x
         end function get_size_r4
 
         integer(C_SIZE_T) function get_size_r8(x) bind(c)
             use, intrinsic :: iso_c_binding
-            real(c_double) x 
+            real(c_double) x
         end function get_size_r8
 
         integer(C_SIZE_T) function get_size_i2(x) bind(c)
@@ -69,10 +59,10 @@ program main
 
         integer(C_SIZE_T) function get_size_c4(x) bind(c)
             use, intrinsic :: iso_c_binding
-            complex(c_float_complex) x(2) 
+            complex(c_float_complex) x(2)
         end function get_size_c4
- 
-    end interface 
+
+    end interface
 
     type(dType) :: dt
 
@@ -83,7 +73,7 @@ program main
 
     ! argument of c_sizeof is expression
     if ( c_sizeof(iA+rA) /= get_size_r4(iA+rA) ) error stop 21
-    if ( c_sizeof(kind(iB)*iB) /= get_size_i8(kind(iB)*iB) ) error stop 31 
+    if ( c_sizeof(kind(iB)*iB) /= get_size_i8(kind(iB)*iB) ) error stop 31
     if ( c_sizeof(dt%c4) /= get_size_c4(dt%c4) ) error stop 41
 
     ! argument of c_sizeof is literal
@@ -93,5 +83,5 @@ program main
     ! argument of c_sizeof is default real type and paramenter
     if ( c_sizeof(4.0) /= get_size_r4(4.0) ) error stop 71
 
- 
+
 end program

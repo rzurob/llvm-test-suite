@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp Intent.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Intent.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Intent.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 26, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Intent - pointer assignment and nullify 
-!*  
+!*
+!*  Intent - pointer assignment and nullify
+!*
 !*  (304243/ICE)
 !*  (304645)
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -49,22 +43,22 @@
     TYPE :: Base
       CHARACTER(3) :: C
     END TYPE
- 
+
     INTERFACE
       SUBROUTINE IntF(Arg1, Arg2)
       IMPORT
-        TYPE(Base), INTENT(IN)  :: Arg2 
-        TYPE(Base), INTENT(OUT) :: Arg1 
-      END SUBROUTINE 
+        TYPE(Base), INTENT(IN)  :: Arg2
+        TYPE(Base), INTENT(OUT) :: Arg1
+      END SUBROUTINE
     END INTERFACE
   END MODULE
 
 
-  PROGRAM Intent 
+  PROGRAM Intent
   USE M
-  IMPLICIT NONE 
-  PROCEDURE(IntF)          :: ExtSub 
-  PROCEDURE(IntF), POINTER :: ProcPtr 
+  IMPLICIT NONE
+  PROCEDURE(IntF)          :: ExtSub
+  PROCEDURE(IntF), POINTER :: ProcPtr
 
   ProcPtr => ExtSub
   CALL ModSub1(ProcPtr, ExtSub)
@@ -74,24 +68,24 @@
 
   CONTAINS
 
-    SUBROUTINE ModSub1(ProcPtr, Proc) 
+    SUBROUTINE ModSub1(ProcPtr, Proc)
     PROCEDURE(IntF), POINTER, INTENT(IN) :: ProcPtr
     PROCEDURE(IntF)                      :: Proc
       ProcPtr => Proc
-    END SUBROUTINE 
+    END SUBROUTINE
 
-    SUBROUTINE ModSub2(ProcPtr, Proc) 
+    SUBROUTINE ModSub2(ProcPtr, Proc)
     PROCEDURE(), POINTER, INTENT(IN) :: ProcPtr
     PROCEDURE()                  :: Proc
       NULLIFY(ProcPtr)
-    END SUBROUTINE 
+    END SUBROUTINE
 
-    SUBROUTINE ModSub3(ProcPtr, Proc) 
+    SUBROUTINE ModSub3(ProcPtr, Proc)
     PROCEDURE(), POINTER, INTENT(IN) :: ProcPtr
     PROCEDURE(IntF)                  :: Proc
       NULLIFY(ProcPtr)
-      ProcPtr => Proc 
-    END SUBROUTINE 
+      ProcPtr => Proc
+    END SUBROUTINE
 
   END
 

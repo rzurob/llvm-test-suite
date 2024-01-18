@@ -3,13 +3,9 @@
 ! opt variations: -qnol -qreuse=base
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/unpack
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/25/2005
 ! PRIMARY FUNCTIONS TESTED   : unpack
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : VECTOR or FIELD is a dummy argument. Dummy
 !                              argument is a pointer or allocatable,
 !                              unlimited poly, and is array.

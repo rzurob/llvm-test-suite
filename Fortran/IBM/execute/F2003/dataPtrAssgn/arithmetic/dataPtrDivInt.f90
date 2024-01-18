@@ -1,23 +1,17 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrDivInt.f 
+!*  TEST CASE NAME             : dataPtrDivInt.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION
 !*
-!* - data-ptr is a component of derived-type that has a type bound defined = 
+!* - data-ptr is a component of derived-type that has a type bound defined =
 !* - data pointer assgn applied in the subroutine for the type bound defined =
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -26,7 +20,7 @@ module m
   type base
     integer, pointer :: p(:)
     contains
-       procedure :: defAssgn 
+       procedure :: defAssgn
        generic :: assignment(=) => defAssgn
   end type
 
@@ -39,7 +33,7 @@ module m
 	   class(base), intent(inout) :: out
 	   type(base), intent(in) :: in
 	   out%p(2:) => in%p(::2)
-       end subroutine 
+       end subroutine
 end module
 
 program main
@@ -51,15 +45,15 @@ program main
 
     e1%bval%p(size(e2%bval%p):) =>  e2%bval%p(10:1:-1)
 
-    if ( .not. associated(e1%bval%p, e2%bval%p(10:1:-1))) stop 1 
+    if ( .not. associated(e1%bval%p, e2%bval%p(10:1:-1))) stop 1
     if ( lbound(e1%bval%p,1) /= 10 ) stop 2
-    if ( ubound(e1%bval%p,1) /= 19 ) stop 3 
+    if ( ubound(e1%bval%p,1) /= 19 ) stop 3
 
     e1 = e2
 
-    if ( .not. associated(e1%bval%p, e2%bval%p(::2))) stop 11 
+    if ( .not. associated(e1%bval%p, e2%bval%p(::2))) stop 11
     if ( lbound(e1%bval%p,1) /= 2 ) stop 12
-    if ( ubound(e1%bval%p,1) /= 6 ) stop 13 
+    if ( ubound(e1%bval%p,1) /= 6 ) stop 13
 
     if ( any ( e1%bval%p / (/(i, i=1,9,2 ) /) .ne. (/(i, i=1,9,2 ) /))) stop 20
 

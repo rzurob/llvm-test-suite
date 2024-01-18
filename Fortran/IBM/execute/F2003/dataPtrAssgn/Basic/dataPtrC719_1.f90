@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrC719_1.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrC719_1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  C719 (R735) If bounds-remapping-list is specified, the number of bounds-remappings
-!*  shall equal the rank of data-pointer-object. 
-!*   
+!*  shall equal the rank of data-pointer-object.
+!*
 !*  -20 Dimensions
 !*  ()
 !*
@@ -50,12 +43,12 @@
     END FUNCTION
   END MODULE
 
-  PROGRAM dataPtrC719_1 
+  PROGRAM dataPtrC719_1
   USE M
   IMPLICIT NONE
 
-  TYPE(DT),   TARGET  ::     T(0:0,0:0)=DT(1) 
-  TYPE(DT),   TARGET  ::     T1(0:0)=DT(1) 
+  TYPE(DT),   TARGET  ::     T(0:0,0:0)=DT(1)
+  TYPE(DT),   TARGET  ::     T1(0:0)=DT(1)
   CLASS(DT ), POINTER :: Ptr20(:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:,:)
 
 
@@ -74,7 +67,7 @@
   IF (ANY(LBOUND(Ptr20) .NE. (/0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1 /))) STOP 31
   IF (ANY(UBOUND(Ptr20) .NE. (/0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1 /))) STOP 32
   IF (ANY(Ptr20%GetId() .NE. 1))                                            STOP 33
- 
+
   END
 
 

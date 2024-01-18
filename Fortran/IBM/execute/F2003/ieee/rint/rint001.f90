@@ -12,22 +12,13 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : March 13, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_RINT  with arrays
 !*  SECONDARY FUNCTIONS TESTED : IEEE_SET_ROUNDING_MODE
 !*                               IEEE_GET_ROUNDING_MODE
 !*
-!*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +31,6 @@
 !* 2.Test rounding to zero
 !* 3.Test rounding to +INF
 !* 4.Test rounding to -INF
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
            program fxieee05

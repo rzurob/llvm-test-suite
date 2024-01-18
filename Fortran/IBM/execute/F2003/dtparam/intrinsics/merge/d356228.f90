@@ -1,32 +1,24 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d356228.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d356228.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 16 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 16 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. DEFECT 356228 
+!* 1. DEFECT 356228
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
     type base(l1)
        integer,len   :: l1
-       character(l1) :: c1(2)  
+       character(l1) :: c1(2)
     end type
     type,extends(base) :: child
        class(base(:)),pointer     :: base1=>null()
@@ -53,7 +45,7 @@ program d356228
 
    select type(x=>b1)
       type is(child(*))
-         select type(y=>x%base1)  
+         select type(y=>x%base1)
             type is(child(*))
               if(y%l1 /= 4)                                  error stop 10_4
               if(any(y%c1 /= ["12","34"]))                   error stop 11_4

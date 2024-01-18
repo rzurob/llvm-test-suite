@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Associated1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Associated1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Associated1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Associated1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 28, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  ASSOCIATED(POINTER [, TARGET]) 
-!*  on proc pointer components 
-!*  () 
+!*
+!*  ASSOCIATED(POINTER [, TARGET])
+!*  on proc pointer components
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -60,32 +54,32 @@
 
     FUNCTION Char1(Arg)
     CHARACTER(1) :: Char1, Arg
-      Char1 = "1" 
+      Char1 = "1"
     END FUNCTION
 
     FUNCTION Char2(Arg)
     CHARACTER(2) :: Char2, Arg
-      Char2 = "2" 
+      Char2 = "2"
     END FUNCTION
 
     FUNCTION Char3(Arg)
     CHARACTER(1025) :: Char3, Arg
-      Char3 = "1025" 
+      Char3 = "1025"
     END FUNCTION
 
   END MODULE
 
   FUNCTION Char4(Arg)
   CHARACTER(511) :: Char4, Arg
-    Char4 = "511" 
+    Char4 = "511"
   END FUNCTION
 
-  
-  PROGRAM Associated1 
+
+  PROGRAM Associated1
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
   PROCEDURE(CHARACTER(2)), POINTER :: ProcPtrChar2
- 
+
 
   ProcPtrChar2 => Char2
   CALL IntSub(Char1, ProcPtrChar2 )
@@ -109,9 +103,9 @@
     PROCEDURE(CHARACTER(2)),    POINTER, NOPASS :: PtrChar2  => NULL()
     PROCEDURE(CHARACTER(1025)), POINTER, NOPASS :: PtrChar3  => NULL()
     PROCEDURE(CHARACTER(511)),  POINTER, NOPASS :: PtrChar4  => NULL()
-  END TYPE 
+  END TYPE
 
-  TYPE (DT(4)) :: V 
+  TYPE (DT(4)) :: V
 
   IF ( ASSOCIATED( V%PtrChar0 ))           STOP 10
   IF ( ASSOCIATED( V%PtrChar1 ))           STOP 11
@@ -119,8 +113,8 @@
   IF ( ASSOCIATED( V%PtrChar3 ))           STOP 13
   IF ( ASSOCIATED( V%PtrChar4 ))           STOP 14
 
-  V = DT(4)(Char0, Proc, ProcPtr, Char3, Char4 ) 
- 
+  V = DT(4)(Char0, Proc, ProcPtr, Char3, Char4 )
+
   IF ( .NOT. ASSOCIATED( V%PtrChar0 ))     STOP 20
   IF ( .NOT. ASSOCIATED( V%PtrChar1 ))     STOP 21
   IF ( .NOT. ASSOCIATED( V%PtrChar2 ))     STOP 22

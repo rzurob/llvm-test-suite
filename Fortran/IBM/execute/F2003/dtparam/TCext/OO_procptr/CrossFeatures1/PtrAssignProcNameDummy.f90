@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignProcNameDummy.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignProcNameDummy.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignProcNameDummy.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignProcNameDummy.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 13, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,12 +34,11 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  C727 (R742) A procedure-name shall be the name of an external, module,
 !*  or dummy procedure, a specific intrinsic function listed in 13.6
 !*  and not marked with a bullet (.), or a procedure pointer.
-!* 
-!* 
+!*
 !*  (304414/300958/319887)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,7 +49,7 @@
   TYPE ::DT0(N1,K1)    ! (20,1)
     INTEGER, KIND            :: K1
     INTEGER, LEN             :: N1
-    INTEGER(K1), ALLOCATABLE :: IArr(:) 
+    INTEGER(K1), ALLOCATABLE :: IArr(:)
   END TYPE
 
   TYPE :: DT(K2,N2,K3)    ! (4,20,1)
@@ -65,12 +58,12 @@
     TYPE(DT0(N2,K3)) :: Base
   END TYPE
 
-  CONTAINS 
+  CONTAINS
 
     FUNCTION ModFun(Arg)
     TYPE(DT(4,*,1)) :: Arg
-    TYPE(DT(4,20,1)) :: ModFun 
-      ModFun = Arg 
+    TYPE(DT(4,20,1)) :: ModFun
+      ModFun = Arg
     END FUNCTION
 
   END MODULE
@@ -79,14 +72,14 @@
   PROGRAM PtrAssignProcNameDummy
   USE M
   IMPLICIT NONE
-  PROCEDURE(IFun)          :: ExtFun 
-  PROCEDURE(IFun), POINTER :: Ptr 
+  PROCEDURE(IFun)          :: ExtFun
+  PROCEDURE(IFun), POINTER :: Ptr
 
-  INTERFACE 
+  INTERFACE
     FUNCTION IFun(Arg)
       IMPORT
       TYPE(DT(4,*,1)) :: Arg
-      TYPE(DT(4,20,1)) :: IFun 
+      TYPE(DT(4,20,1)) :: IFun
     END FUNCTION
   END INTERFACE
 
@@ -103,8 +96,8 @@
 
   SUBROUTINE IntSub(Proc)
 
-  PROCEDURE(IFun)          :: Proc 
-  PROCEDURE(IFun), POINTER :: Ptr 
+  PROCEDURE(IFun)          :: Proc
+  PROCEDURE(IFun), POINTER :: Ptr
   TYPE (DT(4,20,1))                :: V(3)
   INTEGER                  :: i
 
@@ -121,7 +114,7 @@
   FUNCTION ExtFun(Arg)
   USE M
   TYPE(DT(4,*,1)) :: Arg
-  TYPE(DT(4,20,1)) :: ExtFun 
+  TYPE(DT(4,20,1)) :: ExtFun
     ExtFun = Arg
   END FUNCTION
 

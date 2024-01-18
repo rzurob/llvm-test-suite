@@ -1,38 +1,32 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn092a.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn092a.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn092a.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn092a.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : pass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : pass binding attribute
+!*
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : parent procedures are inherited.
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-      module mod	      
+      module mod
          integer :: int = 200
          character*20 :: c = "hi"
 
@@ -40,10 +34,10 @@
          integer :: x
          contains
          procedure, pass :: bind => proc1
-      end type 
+      end type
 
-      type, extends(parent) :: child 
-      end type  
+      type, extends(parent) :: child
+      end type
 
       contains
       subroutine proc1(arg1)
@@ -52,7 +46,7 @@
          c = "hi_again"
       end subroutine
 
-   end module     
+   end module
 
    use mod
 
@@ -73,4 +67,4 @@
    if (c .ne. "hi_again")    error stop 7
 
    end
-   
+

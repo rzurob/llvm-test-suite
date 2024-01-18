@@ -1,15 +1,10 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : streamReadWrite08
-!*  TEST CASE TITLE            : Unformatted Intrinsic Input/Output (with DTP)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : October 28, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unformatted STREAM File I/O with a Family
 !*                               of Derived Types (Grand Parent, Parents,
@@ -18,7 +13,6 @@
 !*                               Arguments (from within a SELECT TYPE
 !*                               Construct)
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WRITE, READ

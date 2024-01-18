@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : sync_images_app_7.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : July 11 2011
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SYNC IMAGES 
+!*  PRIMARY FUNCTIONS TESTED   : SYNC IMAGES
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : CMVC Feature number: 351605.22 
+!*  REFERENCE                  : CMVC Feature number: 351605.22
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,16 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
+!*  Sync image small application :
 !*
-!*  Sync image small application :  
-!*  
-!*  Synchronizes with both of its neighbors in a circular fashion. 
-!*  Segment order preserved with neighbors. 
+!*  Synchronizes with both of its neighbors in a circular fashion.
+!*  Segment order preserved with neighbors.
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
   PROGRAM sync_images_app_7
   IMPLICIT NONE
   INTEGER :: num_img, me, i, j
@@ -46,27 +39,27 @@
 
   IF (num_img == 1) THEN
     SYNC IMAGES(1)
-    STOP 
+    STOP
   ELSE IF (num_img == 2) THEN
     IF ( me == 1) THEN
       SYNC IMAGES(2)
     ELSE
       SYNC IMAGES(1)
     END IF
-    STOP 
+    STOP
   END IF
 
   left = me - 1
   IF (left == 0) left = num_img
   right = mod(me, num_img) + 1
 
-  DO i=1, num_img 
-      CALL intsub(work, i) 
-      SYNC IMAGES([left, right]) 
+  DO i=1, num_img
+      CALL intsub(work, i)
+      SYNC IMAGES([left, right])
       IF (work .NE. i) ERROR STOP "err 11"
       IF (work[left]  .NE. i) ERROR STOP "err 12"
       IF (work[right] .NE. i) ERROR STOP "err 13"
-      SYNC IMAGES([right, left]) 
+      SYNC IMAGES([right, left])
   END DO
 
   CONTAINS

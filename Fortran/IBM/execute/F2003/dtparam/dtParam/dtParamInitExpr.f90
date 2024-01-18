@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitExpr   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitExpr
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Init expression for type parameters 
-!*  
+!*  Init expression for type parameters
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamInitExpr 
+  PROGRAM dtParamInitExpr
   IMPLICIT NONE
 
   INTEGER :: I
@@ -42,7 +35,7 @@
   TYPE DT1(K1, K2, K3)
     INTEGER,          KIND :: K1
     INTEGER(KIND=K1), KIND :: K2=MAXVAL((/1, 2*K1/))
-    INTEGER(KIND=K2), KIND :: K3=MAXVAL((/4*K1,2*K2/)) 
+    INTEGER(KIND=K2), KIND :: K3=MAXVAL((/4*K1,2*K2/))
   END TYPE
 
 

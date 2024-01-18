@@ -1,23 +1,13 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/coarray/stop/func/stop_f023.f
 !*  TYPE                       : Functional test
 !*  FEATURE                    : #351605.31 CAF - STOP statement
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 19 Oct 2010
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               :
 !*
 !*  DESCRIPTION                : Basic case for STOP initiating normal termination
@@ -36,7 +26,7 @@ program stop_prog
 
    interface
       subroutine extrn_s_es(oImage)
-        integer :: oImage    
+        integer :: oImage
       end subroutine extrn_s_es
    end interface
 
@@ -59,7 +49,7 @@ program stop_prog
   sync all
   call sleep_(mod(selfImage,8)*3)
   if (selfImage == endImage) then
-     call extrn_s_es(selfImage) 
+     call extrn_s_es(selfImage)
   else
      do i=1, iter
         co_sum = co_sum + coarr_1(i) + selfImage
@@ -80,7 +70,7 @@ end program stop_prog
 
 subroutine extrn_s_es(oImage)
   implicit none
-  integer :: oImage    
+  integer :: oImage
 
   print *, "   . . . Inside end image #", oImage
   if (num_images() > 0)  stop "The main stop"

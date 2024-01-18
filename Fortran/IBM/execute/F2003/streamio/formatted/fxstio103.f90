@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: cp $TR_SRC/check_array.inc .; cp $TR_SRC/check_interface.inc .
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio103.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,38 +12,31 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access Mode
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ, BACKSPACE
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : Test array sections, assumed-shap array and
 !*				 deffered-shape array, allocatable array and
-!*                               pointer array with formatted synchronous 
+!*                               pointer array with formatted synchronous
 !*                               stream I/O.
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/10/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/10/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
   include 'check_array.inc'
 
-  program fxstio103 
+  program fxstio103
 
      implicit none
      integer    i, j, k, l, ios
@@ -53,29 +46,29 @@
      real*16    r16_in(N) , r16_out(N)
      complex*16 x16_in(N,N), x16_out(N,N)
      logical*4, allocatable :: l4_in(:,:), l4_out(:,:)
-     character*15, pointer :: ch15_pin(:), ch15_pout(:)  
-     character*15, target  :: ch15_tin(N), ch15_tout(N)  
+     character*15, pointer :: ch15_pin(:), ch15_pout(:)
+     character*15, target  :: ch15_tin(N), ch15_tout(N)
 
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
-	
+
      include 'check_interface.inc'
-     
-     interface 
+
+     interface
         function write_it( arg1, arg2 ) result(ios)
-            real*16    arg1(:) 
-            complex*16 arg2(:,:) 
+            real*16    arg1(:)
+            complex*16 arg2(:,:)
         end function write_it
 
         function read_it( arg1, arg2 ) result(ios)
-            real*16    arg1(:) 
-            complex*16 arg2(:,:) 
+            real*16    arg1(:)
+            complex*16 arg2(:,:)
         end function read_it
      end interface
 
-!********************************************************** 
+!**********************************************************
 !        Initialization of arrays                         *
-!********************************************************** 
+!**********************************************************
 
      i8_in = -20000000
      r8_in = -0.00000000000001
@@ -85,12 +78,12 @@
      l4_in = .true.
      ch15_tin = "New Baby Girl!!"
 
-     ch15_pin => ch15_tin 
+     ch15_pin => ch15_tin
      ch15_pout => ch15_tout
 
-!********************************************************** 
+!**********************************************************
 !       Writing and Reading the file                      *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio103.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
@@ -113,13 +106,13 @@
 !
 !   Testing Assumed-shape arrays
 !
-     ios = write_it( r16_in, x16_in )   
+     ios = write_it( r16_in, x16_in )
      if ( ios .ne. 0 ) goto 91
 
      BACKSPACE(1, IOSTAT=ios, ERR=93)
      BACKSPACE(1, IOSTAT=ios, ERR=93)
 
-     ios = read_it( r16_out, x16_out )   
+     ios = read_it( r16_out, x16_out )
      if ( ios .ne. 0 ) goto 91
 
 !
@@ -142,9 +135,9 @@
      READ(1, FMT='(10A16)', IOSTAT=ios, ERR=92) ch15_pout
 
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( .not. Array_Check (i8_in, i8_out) ) error stop 10
 
@@ -163,21 +156,21 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 93   print *, "Error while rewinding the file: IOSTAT = ", ios
-     error stop 93 
+     error stop 93
 
    end program
 
 
 
    function write_it( arg1, arg2 ) result(ios)
-       real*16    arg1(:) 
-       complex*16 arg2(:,:) 
+       real*16    arg1(:)
+       complex*16 arg2(:,:)
        integer ios
 
        WRITE(1, FMT='(10Q40.32)', IOSTAT=ios) arg1
@@ -187,8 +180,8 @@
    end function write_it
 
    function read_it( arg1, arg2 ) result(ios)
-       real*16    arg1(:) 
-       complex*16 arg2(:,:) 
+       real*16    arg1(:)
+       complex*16 arg2(:,:)
        integer ios
 
        READ(1, FMT='(10Q40.32)', IOSTAT=ios) arg1

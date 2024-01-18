@@ -1,13 +1,10 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_f07.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED : Verify that the compiler can declare the index
@@ -15,8 +12,8 @@
 !*  ADAPTED FROM               : from hpf_forall/construct/fxfc015b.scenario
 !*
 !*  DESCRIPTION
-!*  
-!*    Test a PURE function as the scalar-mask-expr in a forall-construct.  It 
+!*
+!*    Test a PURE function as the scalar-mask-expr in a forall-construct.  It
 !*    also contains coverage with the WHERE construct.
 !*
 !* =============================================================================
@@ -35,10 +32,10 @@ PROGRAM fxfc015b
 
    REAL r1a(-20:20,-5:5)
 
-   REAL r1b(-20:20,-5:5) 
+   REAL r1b(-20:20,-5:5)
 
    REAL r1c(-20:20,20)
-  
+
    REAL r1d(-20:20,20)
 
    !--------------------------------
@@ -96,12 +93,12 @@ PROGRAM fxfc015b
 
    r1b = 0.0
    FORALL ( integer::in1 = -20:20, func2(in1) )
-      FORALL ( integer(4)::in2 = -5:5, func2(in2) ) 
+      FORALL ( integer(4)::in2 = -5:5, func2(in2) )
          r1b(in1,in2) = in1 + in2
          r1b(in1,-in2) = in1 + in2
       END FORALL
    END FORALL
- 
+
    print *,r1b
 
    !-------------------------------
@@ -115,7 +112,7 @@ PROGRAM fxfc015b
    FORALL ( integer::in1 = -20:20, func2(in1) )
       WHERE ( r1c(in1,:) > 1.0 ) r1c(in1,:) = 99
    END FORALL
-    
+
    print *,r1c
 
    !-------------------------------
@@ -134,7 +131,7 @@ PROGRAM fxfc015b
    END FORALL
 
    print *,r1d
-   
+
 
    !-------------------------------
    !  Test all
@@ -159,7 +156,7 @@ PROGRAM fxfc015b
          r1b(in1,in2) = in1 + in2
          r1b(in1,-in2) = in1 + in2
       END FORALL
-      WHERE ( r1c(in1,:) > 1.0 ) r1c(in1,:) = 99 
+      WHERE ( r1c(in1,:) > 1.0 ) r1c(in1,:) = 99
       WHERE ( r1d(in1,:) > 1.0 )
          r1d(in1,:) = 99
          r1d(in1,:) = r1d(in1,:) + 1

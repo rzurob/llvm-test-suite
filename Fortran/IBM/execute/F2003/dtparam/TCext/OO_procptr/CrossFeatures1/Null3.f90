@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Null3.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Null3.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Null3.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Null3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,7 +34,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*   null()
 !*   Initialization/a structure constructor
 !*  (305627) (306255)
@@ -65,9 +59,9 @@
 
   END MODULE
 
-  PROGRAM Null3 
+  PROGRAM Null3
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE (DT(4)), PARAMETER :: V=DT(4)(-1, NULL())
 
@@ -77,20 +71,20 @@
   PROCEDURE(Fun), POINTER :: ProcPtr4=>NULL()
 
   TYPE (DT(4)) :: W1=DT(4)(-1, NULL())
-  TYPE (DT(4)) :: W2(3)=DT(4)(-1, NULL(V%ProcPtr)) 
-  TYPE (DT(4)) :: W3(3)=(/DT(4)(-1, NULL()),DT(4)(-1, NULL()),DT(4)(-1, NULL()) /) 
-  TYPE (DT(4)) :: W4(1)=(/DT(4)(-1, NULL()) /) 
+  TYPE (DT(4)) :: W2(3)=DT(4)(-1, NULL(V%ProcPtr))
+  TYPE (DT(4)) :: W3(3)=(/DT(4)(-1, NULL()),DT(4)(-1, NULL()),DT(4)(-1, NULL()) /)
+  TYPE (DT(4)) :: W4(1)=(/DT(4)(-1, NULL()) /)
 
   IF ( ASSOCIATED(ProcPtr1) ) STOP 11
   IF ( ASSOCIATED(ProcPtr2) ) STOP 12
   IF ( ASSOCIATED(ProcPtr3) ) STOP 13
   IF ( ASSOCIATED(ProcPtr4) ) STOP 14
 
-  ProcPtr1 => Fun 
-  ProcPtr2 => Fun 
-  ProcPtr3 => Fun 
+  ProcPtr1 => Fun
+  ProcPtr2 => Fun
+  ProcPtr3 => Fun
   ProcPtr4 => Fun
- 
+
   ProcPtr1=>NULL()
   ProcPtr2=>NULL(ProcPtr1)
   ProcPtr3=>NULL(V%ProcPtr)
@@ -107,14 +101,14 @@
   IF ( ASSOCIATED(W4(1)%ProcPtr) ) STOP 34
 
   W1%ProcPtr => Fun
-  W2 = DT(4)(-1, Fun) 
-  W3 = DT(4)(-1, Fun) 
-  W4 = DT(4)(-1, Fun) 
+  W2 = DT(4)(-1, Fun)
+  W3 = DT(4)(-1, Fun)
+  W4 = DT(4)(-1, Fun)
 
-  W1 = DT(4)(-1, NULL()) 
-  W2 = DT(4)(-1, NULL(W1%ProcPtr)) 
-  W3 = (/DT(4)(-1, NULL()),DT(4)(-1, NULL()),DT(4)(-1, NULL()) /) 
-  W4 = (/DT(4)(-1, NULL(W3(1)%ProcPtr)) /) 
+  W1 = DT(4)(-1, NULL())
+  W2 = DT(4)(-1, NULL(W1%ProcPtr))
+  W3 = (/DT(4)(-1, NULL()),DT(4)(-1, NULL()),DT(4)(-1, NULL()) /)
+  W4 = (/DT(4)(-1, NULL(W3(1)%ProcPtr)) /)
 
   IF ( ASSOCIATED(W1%ProcPtr) )    STOP 41
   IF ( ASSOCIATED(W2(2)%ProcPtr) ) STOP 42

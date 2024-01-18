@@ -2,7 +2,6 @@
 ! ftcx_dtp -qnol /tstdev/F2003/misc/d320634.f
 ! opt variations: -qck -ql
 
-
 module m
     type base(k1)    ! (4)
         integer, kind :: k1

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : outputComplexInf006.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 9, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -30,7 +24,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      use, intrinsic :: ieee_arithmetic 
+      use, intrinsic :: ieee_arithmetic
       implicit none
 
       complex(4)  :: cx1
@@ -46,7 +40,7 @@
       equivalence(rl3i, rl3iequiv)
 
       open(unit, file='outputComplexInf006.out', action='write')
-      
+
       ! Write out complex(4) with real and imaginary parts consisting of
       ! combinations of positive and negative infinity values
 
@@ -118,6 +112,6 @@
 
 
       close(unit)
-      
+
       end
 

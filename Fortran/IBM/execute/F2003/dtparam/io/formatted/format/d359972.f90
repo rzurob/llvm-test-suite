@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d359972.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d359972.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 10 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 10 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  defect 359972
@@ -35,8 +27,8 @@ module m
           class(outer(4,*)),intent(in) :: this
           select type(this)
              type is(outer(4,*))
-              write(*,'(a5/a5/a5)') this    
-              write(*,'(a5/a5/a5)') this%c 
+              write(*,'(a5/a5/a5)') this
+              write(*,'(a5/a5/a5)') this%c
              class default
                 stop
           end select

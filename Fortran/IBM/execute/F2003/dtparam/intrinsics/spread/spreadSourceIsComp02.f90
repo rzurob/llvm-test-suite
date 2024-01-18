@@ -1,34 +1,26 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 26 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 26 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
 !*  2. SOURCE IS DERIVED TYPE COMPONENT
-!*  3. AND SOURCE IS POLYMORPHIC  
+!*  3. AND SOURCE IS POLYMORPHIC
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type base(l1)
      integer,len       :: l1
      class(*),pointer  :: poly1(:)=>null()
-  end type 
+  end type
   type,extends(base) :: child(l2)
      integer,len     :: l2
      class(base(:)),pointer :: poly2(:)=>null()
@@ -43,7 +35,7 @@ program spreadSourceIsComp02
   type(child(2,3)),target :: child1
   type(child(2,3)),target :: child2
   type(child(2,3)),target,allocatable :: tar(:)
-  integer :: i,j  
+  integer :: i,j
 
   class(base(2)),pointer  :: base1=>null()
 
@@ -80,7 +72,7 @@ program spreadSourceIsComp02
                  end select
 
                 end do
-               end associate 
+               end associate
 
                associate (y=>spread(x(i,2)%poly1,1,3))
                 do j=1,3
@@ -108,9 +100,9 @@ program spreadSourceIsComp02
                end associate
             end do
            type is(base(*))
-              error stop 100_4 
+              error stop 100_4
           class default
-              error stop 101_4 
+              error stop 101_4
         end select
       end associate
 
@@ -122,9 +114,9 @@ program spreadSourceIsComp02
              class default
                error stop 107_4
            end select
-           
+
            select type(y=>x(i,2))
-             type is(character(*))          
+             type is(character(*))
                 if(y /= "456")                    error stop 20_4
              class default
                 error stop 108_4

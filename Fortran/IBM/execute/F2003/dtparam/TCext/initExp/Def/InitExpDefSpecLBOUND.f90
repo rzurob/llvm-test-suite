@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefSpecLBOUND.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefSpecLBOUND.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,11 +23,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  a reference to a specification inquiry 
-!* 
+!*  a reference to a specification inquiry
+!*
 !*  - LBOUND
-!* 
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -59,18 +52,18 @@
   END MODULE
 
 
-  PROGRAM  InitExpDefSpecLBOUND 
+  PROGRAM  InitExpDefSpecLBOUND
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
 
-  INTEGER(1),     PARAMETER :: I1(-2147483648:-2147483647, 2147483646:2147483647) = -1 
-  LOGICAL(2),     PARAMETER :: L2(-128:-127, 126:127) = .TRUE. 
-  REAL(4),        PARAMETER :: R4(-128:-127, 126:127) = -1.0 
+  INTEGER(1),     PARAMETER :: I1(-2147483648:-2147483647, 2147483646:2147483647) = -1
+  LOGICAL(2),     PARAMETER :: L2(-128:-127, 126:127) = .TRUE.
+  REAL(4),        PARAMETER :: R4(-128:-127, 126:127) = -1.0
   COMPLEX(8),     PARAMETER :: Z8(-32768:-32767, 32766:32767) = (1.0, -1.0)
   TYPE(DT(4,20)), PARAMETER :: D(-2147483648:-2147483647, 2147483646:2147483647)=DT(4,20)()
- 
- 
+
+
   INTEGER(1), PARAMETER :: LB1(2)=(/-128,  126/)
   INTEGER(1), PARAMETER :: UB1(2)=(/-127,  127/)
   INTEGER(2), PARAMETER :: LB2(2)=(/-32768, 32766/)
@@ -81,26 +74,26 @@
   INTEGER(8), PARAMETER :: UB8(2)=(/-2147483647, 2147483647/)
 
 
-  INTEGER(KIND(LBOUND(I1))),          PARAMETER :: TI11(2)= LBOUND(I1) 
-  INTEGER(KIND(LBOUND(I1, KIND=2))),  PARAMETER :: TI12(2)= LBOUND(L2, KIND=2) 
-  INTEGER(KIND(LBOUND(I1, KIND=4))),  PARAMETER :: TI14(2)= LBOUND(I1, KIND=4) 
-  INTEGER(KIND(LBOUND(I1, KIND=8))),  PARAMETER :: TI18(2)= LBOUND(I1, KIND=8) 
- 
-  INTEGER(KIND(LBOUND(L2))),          PARAMETER :: TL22(2)= LBOUND(L2) 
-  INTEGER(KIND(LBOUND(L2, KIND=1))),  PARAMETER :: TL21(2)= LBOUND(L2, KIND=1) 
-  INTEGER(KIND(LBOUND(L2, KIND=4))),  PARAMETER :: TL24(2)= LBOUND(L2, KIND=4) 
-  INTEGER(KIND(LBOUND(L2, KIND=8))),  PARAMETER :: TL28(2)= LBOUND(L2, KIND=8) 
- 
-  INTEGER(KIND(LBOUND(R4))),          PARAMETER :: TR44(2)= UBOUND(R4) 
-  INTEGER(KIND(LBOUND(R4, KIND=8))),  PARAMETER :: TR48(2)= UBOUND(R4, KIND=8) 
-  INTEGER(KIND(LBOUND(R4, KIND=1))),  PARAMETER :: TR46(2)= UBOUND(R4, KIND=1) 
- 
-  INTEGER(KIND(LBOUND(Z8))),          PARAMETER :: TZ88(2)= UBOUND(Z8) 
-  INTEGER(KIND(LBOUND(Z8, KIND=4))),  PARAMETER :: TZ84(2)= UBOUND(Z8, KIND=4) 
-  INTEGER(KIND(LBOUND(Z8, KIND=2))),  PARAMETER :: TZ86(2)= UBOUND(Z8, KIND=2) 
- 
-  INTEGER,                            PARAMETER :: TDL(2) = LBOUND(D) 
-  INTEGER,                            PARAMETER :: TDU(2) = UBOUND(D) 
+  INTEGER(KIND(LBOUND(I1))),          PARAMETER :: TI11(2)= LBOUND(I1)
+  INTEGER(KIND(LBOUND(I1, KIND=2))),  PARAMETER :: TI12(2)= LBOUND(L2, KIND=2)
+  INTEGER(KIND(LBOUND(I1, KIND=4))),  PARAMETER :: TI14(2)= LBOUND(I1, KIND=4)
+  INTEGER(KIND(LBOUND(I1, KIND=8))),  PARAMETER :: TI18(2)= LBOUND(I1, KIND=8)
+
+  INTEGER(KIND(LBOUND(L2))),          PARAMETER :: TL22(2)= LBOUND(L2)
+  INTEGER(KIND(LBOUND(L2, KIND=1))),  PARAMETER :: TL21(2)= LBOUND(L2, KIND=1)
+  INTEGER(KIND(LBOUND(L2, KIND=4))),  PARAMETER :: TL24(2)= LBOUND(L2, KIND=4)
+  INTEGER(KIND(LBOUND(L2, KIND=8))),  PARAMETER :: TL28(2)= LBOUND(L2, KIND=8)
+
+  INTEGER(KIND(LBOUND(R4))),          PARAMETER :: TR44(2)= UBOUND(R4)
+  INTEGER(KIND(LBOUND(R4, KIND=8))),  PARAMETER :: TR48(2)= UBOUND(R4, KIND=8)
+  INTEGER(KIND(LBOUND(R4, KIND=1))),  PARAMETER :: TR46(2)= UBOUND(R4, KIND=1)
+
+  INTEGER(KIND(LBOUND(Z8))),          PARAMETER :: TZ88(2)= UBOUND(Z8)
+  INTEGER(KIND(LBOUND(Z8, KIND=4))),  PARAMETER :: TZ84(2)= UBOUND(Z8, KIND=4)
+  INTEGER(KIND(LBOUND(Z8, KIND=2))),  PARAMETER :: TZ86(2)= UBOUND(Z8, KIND=2)
+
+  INTEGER,                            PARAMETER :: TDL(2) = LBOUND(D)
+  INTEGER,                            PARAMETER :: TDU(2) = UBOUND(D)
 
 
 
@@ -142,4 +135,4 @@
   END
 
 
- 
+

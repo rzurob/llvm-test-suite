@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefInqIEEE_SUPPORT_SQRT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefInqIEEE_SUPPORT_SQRT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 05, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an IEEE inquiry function
-!* 
+!*
 !*  -  IEEE_SUPPORT_SQRT
-!* 
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -60,7 +53,7 @@
 
   LOGICAL  :: T= IEEE_SUPPORT_SQRT()
 
-  
+
   IF ( .NOT.  IEEE_SUPPORT_SQRT(T4)  )   STOP 11
   IF ( .NOT.  IEEE_SUPPORT_SQRT(T8)  )   STOP 12
   IF (        IEEE_SUPPORT_SQRT(T6)  )   STOP 13
@@ -78,4 +71,4 @@
   END
 
 
- 
+

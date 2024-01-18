@@ -1,25 +1,14 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Nested4.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : 2010-12-03
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CONTIGUOUS attribute
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
 !*  DESCRIPTION                : - test nesting with contiguous/not contiguous
-!*                                actual and dummy argument 
-!*
+!*                                actual and dummy argument
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -32,34 +21,34 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 PROGRAM Nested4
       IMPLICIT NONE
- 
+
       INTEGER, PARAMETER :: N = 4
       INTEGER :: I, I1(N), I2(2*N)
       INTEGER, TARGET :: tgt1(N)
-      INTEGER, POINTER :: ptr1(:), ptr2(:) 
+      INTEGER, POINTER :: ptr1(:), ptr2(:)
       INTEGER, POINTER, CONTIGUOUS :: ptrc(:)
-      LOGICAL :: Flag 
+      LOGICAL :: Flag
 
       I1 = [(2*I,I=1,N)]
       I2 = [(-2*I,I=1,2*N)]
-      tgt1 = I1 - 1 
-      ptr1 => tgt1 
-      ptrc => tgt1 
+      tgt1 = I1 - 1
+      ptr1 => tgt1
+      ptrc => tgt1
 
       ALLOCATE( ptr2(N), SOURCE = [(-2*I+1,I=1,N)] )
 
 ! Calls to Sub_explicit_target: Dummy argument is explicit shape with TARGET attribute
-! actual is explicit shape array 
+! actual is explicit shape array
 
-      Flag = IS_CONTIGUOUS(I1) 
+      Flag = IS_CONTIGUOUS(I1)
       CALL Sub_explicit_target(I1,N,flag)
       IF ( ANY(I1 .NE. [(2*I, I=1,N)]) )              ERROR STOP 10
-      
-      Flag = IS_CONTIGUOUS(I2(1:N)) 
+
+      Flag = IS_CONTIGUOUS(I2(1:N))
       CALL Sub_explicit_target(I2(1:N),N,flag)
       IF ( ANY(I2 .NE. [(-2*I, I=1,2*N)]) )           ERROR STOP 11
-      
-      Flag = IS_CONTIGUOUS(I2(1:2*N:1)) 
+
+      Flag = IS_CONTIGUOUS(I2(1:2*N:1))
       CALL Sub_explicit_target(I2(1:2*N:1),2*N,flag)
       IF ( ANY(I2 .NE. [(-2*I, I=1,2*N)]) )           ERROR STOP 12
 
@@ -86,18 +75,18 @@ PROGRAM Nested4
       IF ( ANY(ptr2 .NE. [(-2*I+1, I=1,N)]) )         ERROR STOP 16
 
 ! Calls to Sub_assumed_target: Dummy argument is assumed shape with TARGET and CONTIGUOUS attribute
-! actual is explicit shape array 
+! actual is explicit shape array
 
-      Flag = IS_CONTIGUOUS(I1) 
+      Flag = IS_CONTIGUOUS(I1)
       CALL Sub_assumed_target(I1,flag)
       IF ( ANY(I1 .NE. [(2*I, I=1,N)]) )              ERROR STOP 17
 
-      Flag = IS_CONTIGUOUS(I2(1:N)) 
+      Flag = IS_CONTIGUOUS(I2(1:N))
       CALL Sub_assumed_target(I2(1:N),flag)
       IF ( ANY(I2 .NE. [(-2*I, I=1,2*N)]) )           ERROR STOP 18
 
-      Flag = IS_CONTIGUOUS(I2(1:2*N:1)) 
-      CALL Sub_assumed_target(I2(1:2*N:1),flag) 
+      Flag = IS_CONTIGUOUS(I2(1:2*N:1))
+      CALL Sub_assumed_target(I2(1:2*N:1),flag)
       IF ( ANY(I2 .NE. [(-2*I, I=1,2*N)]) )           ERROR STOP 19
 
 ! Actual is explicit shape array with TARGET attribute
@@ -122,16 +111,16 @@ PROGRAM Nested4
       CALL Sub_assumed_target(ptr2,flag)
       IF ( ANY(ptr2 .NE. [(-2*I+1, I=1,N)]) )         ERROR STOP 23
 
-! Calls to Sub_pointer: Dummy argument CONTIGUOUS pointer 
-! actual is associated array pointer with CONTIGUOUS attribute 
+! Calls to Sub_pointer: Dummy argument CONTIGUOUS pointer
+! actual is associated array pointer with CONTIGUOUS attribute
 
       Flag = IS_CONTIGUOUS(ptrc)
-      CALL Sub_pointer(ptrc,flag)            
+      CALL Sub_pointer(ptrc,flag)
       IF ( ANY(ptrc .NE. [(2*I-1, I=1,N)]) )          ERROR STOP 24
 
       DEALLOCATE(ptr2)
 
-      CONTAINS 
+      CONTAINS
 
       SUBROUTINE Sub_explicit_target(Arg,N,test)
          INTEGER, INTENT(IN), TARGET :: Arg(N)
@@ -140,7 +129,7 @@ PROGRAM Nested4
          LOGICAL :: test
 
          pObj => Arg
-         IF ( IS_CONTIGUOUS(Arg) .NEQV. .true. )  ERROR STOP 30 
+         IF ( IS_CONTIGUOUS(Arg) .NEQV. .true. )  ERROR STOP 30
       END SUBROUTINE Sub_explicit_target
 
       SUBROUTINE Sub_assumed_target(Arg,test1)
@@ -153,7 +142,7 @@ PROGRAM Nested4
          pObj => Arg
          test2 = IS_CONTIGUOUS(Arg)
          IF ( test1 .NEQV. test2 )       ERROR STOP 31
-         CALL Sub_explicit_target(Arg,N,test2) 
+         CALL Sub_explicit_target(Arg,N,test2)
       END SUBROUTINE Sub_assumed_target
 
       SUBROUTINE Sub_pointer(Arg,test1)
@@ -166,7 +155,7 @@ PROGRAM Nested4
          pObj => Arg
          test2 = IS_CONTIGUOUS(Arg)
          IF ( test1 .NEQV. test2 )       ERROR STOP 32
-         CALL Sub_explicit_target(Arg,N,test2) 
-      END SUBROUTINE Sub_pointer 
+         CALL Sub_explicit_target(Arg,N,test2)
+      END SUBROUTINE Sub_pointer
 
 END PROGRAM Nested4

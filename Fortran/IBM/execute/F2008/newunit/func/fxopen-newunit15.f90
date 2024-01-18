@@ -1,26 +1,19 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxopen-newunit15.f
-!*
-!* PROGRAMMER                   : Sarah Kouchaki-Ramezan
 !* DATE                         : Oct. 2010
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: NEWUNIT= specifier, Feature#:377344
 !* SECONDARY FUNTIONS TESTED    : READ,WRITE,REWIND
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Passing NEWUNIT value to external
 !*                                subroutine with formatted write,
 !*                                read,rewind using FILE in open
 !*                                statement.
-!*                                
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*

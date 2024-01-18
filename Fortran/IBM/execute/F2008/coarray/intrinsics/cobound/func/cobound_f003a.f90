@@ -1,17 +1,11 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : cobound_f003a.f
-!*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : September 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Coarray
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
@@ -21,17 +15,17 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program main
-	
+
 	real, save :: caf1(1,2,3,4,5,6,7,8,9)[1,2,3,4,5,6,7,8,9,*]
 	real, save :: caf2[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,*]
 	real, save :: caf3[1:2,0:1,9:10,10000:10001,-100:-99,*]
 	integer, allocatable :: arr1(:), arr2(:)
 
-	
+
 	allocate(arr1(10), arr2(10))
 	arr1 = lcobound(caf1)
 	arr2 = ucobound(caf1)
-	
+
 	if ( any(arr1 .ne. [1,1,1,1,1,1,1,1,1,1]) ) then
 		print *, arr1
 		error stop 11
@@ -42,12 +36,12 @@ program main
 	end if
 	deallocate(arr1, arr2)
 	sync all
-	
-	
+
+
 	allocate(arr1(20), arr2(20))
 	arr1 = lcobound(caf2)
 	arr2 = ucobound(caf2)
-	
+
 	if ( any(arr1 .ne. [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]) ) then
 		print *, arr1
 		error stop 13
@@ -58,12 +52,12 @@ program main
 	end if
 	deallocate(arr1, arr2)
 	sync all
-	
-	
+
+
 	allocate(arr1(6), arr2(6))
 	arr1 = lcobound(caf3)
 	arr2 = ucobound(caf3)
-	
+
 	if ( any(arr1 .ne. [1,0,9,10000,-100,1]) ) then
 		print *, arr1
 		error stop 15
@@ -74,5 +68,5 @@ program main
 	end if
 	deallocate(arr1, arr2)
 	sync all
-	
+
 end

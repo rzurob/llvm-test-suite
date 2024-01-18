@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Misc29.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Misc29.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : Misc29
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 17, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*  
-!*  Limits on TYPE IS/CLASS IS 
+!*
+!*  Limits on TYPE IS/CLASS IS
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -45,7 +39,7 @@
 
   PROGRAM Misc29
 
-  TYPE :: DT0 
+  TYPE :: DT0
   END TYPE
 
   TYPE, EXTENDS(DT0) :: DT1
@@ -201,7 +195,7 @@
   END TYPE
 
   ! When the DT?? goes further,
-  ! 1517-006 (U) Parse stack overflow.  Expression is too long. 
+  ! 1517-006 (U) Parse stack overflow.  Expression is too long.
   !  Reduce program size or nested references
 
   CLASS(*), ALLOCATABLE :: V
@@ -414,7 +408,7 @@
     CLASS IS (DT49)
       STOP 49
     TYPE IS  (DT50)
-      PRINT *,  "OK!" 
+      PRINT *,  "OK!"
     CLASS IS (DT50)
       STOP 50
 

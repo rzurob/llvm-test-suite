@@ -3,24 +3,12 @@
 ! opt variations: -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=self -qreuse=base
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : diffDTpolyDT1.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : TO is of a parent poly DT
 !*                               FROM is of a child non-poly DT, component of DT
@@ -36,19 +24,19 @@
       type A(n1,k1)    ! (20,4)
           integer, kind        :: k1
           integer, len         :: n1
-          integer(k1), pointer :: ip => null() 
-      end type 
-      
+          integer(k1), pointer :: ip => null()
+      end type
+
       type , extends(A) :: B(k2,n2)    ! (20,4,4,20)
           integer, kind               :: k2
           integer, len                :: n2
-          class(A(:,k2)), allocatable :: p 
-      end type 
+          class(A(:,k2)), allocatable :: p
+      end type
 
       type(A(:,4)), allocatable ::  a1
-      class(A(:,4)), allocatable :: a2 
-      
-      type(B(20,4,4,20)) ::  b1 
+      class(A(:,4)), allocatable :: a2
+
+      type(B(20,4,4,20)) ::  b1
       type(B(:,4,4,:)), allocatable :: b2
 
       integer , target :: id, id1, id2, id3
@@ -58,9 +46,9 @@
 
       id1 = 21
       allocate(a2, source = A(20,4)(id1))
-  
-      id2 = 31 
-      allocate(b2, source = B(20,4,4,20)(id2,a2)) 
+
+      id2 = 31
+      allocate(b2, source = B(20,4,4,20)(id2,a2))
 
       id3 = 41
       b1 = B(20,4,4,20)(id3, a1)
@@ -76,7 +64,7 @@
               select type ( y => x%p)
                   type is (A(*,4))
                       if ( y%ip /= 21 ) stop 23
-                  class default 
+                  class default
                       stop 25
               end select
           class default

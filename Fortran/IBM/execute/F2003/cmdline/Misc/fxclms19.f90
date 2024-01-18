@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclms19.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -41,25 +35,23 @@
 !*  DESCRIPTION                : Test command line intrinsic routines by passing a command
 !*                             : through a script file which contains the command composed
 !*                             : of multiple lines
-!*                             :  
-!*                                        
-!*                          
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
 
       PROGRAM fxclms18
 
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE  
-      character(513)   :: NAME  
-      logical          :: TRIM_NAME 
-      integer          :: ARGCOUNT 
-    
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
+      integer          :: ARGCOUNT
+
       !The command line:
       !fxclms19 \
       !012345678901234567890123456789012345678901234567890123456789 \
@@ -76,23 +68,23 @@
       &============================================================ &
       &____________________________________________________________'
 
-      character(60)   :: Option(5)  
+      character(60)   :: Option(5)
 
       integer          :: CmdCount = 5
       integer          :: i, k
       character(2047)  :: Argument
 
 
-      Option(1) = '012345678901234567890123456789012345678901234567890123456789' 
-      Option(2) = '------------------------------------------------------------' 
-      Option(3) = '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++' 
-      Option(4) = '============================================================' 
-      Option(5) = '____________________________________________________________' 
+      Option(1) = '012345678901234567890123456789012345678901234567890123456789'
+      Option(2) = '------------------------------------------------------------'
+      Option(3) = '++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+      Option(4) = '============================================================'
+      Option(5) = '____________________________________________________________'
 
 
-      do k=1, 3 
+      do k=1, 3
 
-        if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) & 
+        if ( CmdCount .ne. COMMAND_ARGUMENT_COUNT() ) &
         then
           error stop 63
         endif
@@ -124,10 +116,10 @@
         end do
 
 
-      end do  
+      end do
 
 
-      END 
- 
+      END
+
 
 

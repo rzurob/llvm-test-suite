@@ -12,29 +12,22 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : bcdachk1.f
 !
-!* PROGRAMMER                   : Helen Li
 !* DATE                         : July 28, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
-!* REQUIRED COMPILER OPTIONS    : 
+!* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Test bind(c) common blocks work with
 !*                              : -qextchk
-!*                              :
 !234567890123456789012345678901234567890123456789012345678901234567890
 program bcdachk1
 implicit none
-integer x 
+integer x
 real y, z
 common /blk/ x, y, z
 bind(c) :: /blk/

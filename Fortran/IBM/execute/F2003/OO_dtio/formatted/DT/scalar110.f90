@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 21/03/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        io-implied-do with scalar derived type variable (read)
@@ -89,7 +78,7 @@ use m
    read ( 1, "(DT'b3-1'(10),DT'b3-2'(20))", iostat = stat, iomsg = msg )    (b3, i= 10,13)
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 5_4
    if ( ( b3%i /= 300 ) .or. ( b3%j /= 301 ) )  error stop 6_4
-   
+
    print *, rbuffer
 
 end program

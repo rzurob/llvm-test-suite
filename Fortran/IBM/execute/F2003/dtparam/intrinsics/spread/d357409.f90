@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d357409.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d357409.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 14 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 14 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   :  
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  DEFECT 357409
@@ -41,6 +33,6 @@ program d357409
   type(container(:)),pointer :: contain3(:)=>null()
 
   allocate(contain3(3),source=container(3)("123",mychar(3)(ch1="xlf")) )
-  if(any(contain3%mychar1%ch1 /= "xlf"))    stop  
-        
+  if(any(contain3%mychar1%ch1 /= "xlf"))    stop
+
 end program

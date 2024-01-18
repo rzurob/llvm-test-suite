@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : nullGeneric05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : nullGeneric05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 23 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD]) 
+!*  PRIMARY FUNCTIONS TESTED   : NULL([MOLD])
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.88 
+!* 1. TEST SECTION 13.7.88
 !* 2. NULL([MOLD])
-!* 3. MOLD IS POLYMORPHIC POINTER 
-!* 4. NULL(MOLD) IS USED AS ACTUAL ARGUMENT OF GENERIC TYPE-BOUND PROCEDURE 
+!* 3. MOLD IS POLYMORPHIC POINTER
+!* 4. NULL(MOLD) IS USED AS ACTUAL ARGUMENT OF GENERIC TYPE-BOUND PROCEDURE
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
    type base(k1)
@@ -40,7 +32,7 @@ module m
        integer,kind :: k2=1
        integer(k2)  :: j=-1
    end type
-  
+
    contains
 
        subroutine bsub1(dt)
@@ -51,11 +43,11 @@ module m
                 type is(base(2))
                    print *,"dt is associated"
                    print *,"dt is base"
-                   print *,dt%k1,dt%i 
+                   print *,dt%k1,dt%i
                 type is(child(2,1))
                    print *,"dt is associated"
                    print *,"dt is child"
-                   print *,dt%k1,dt%k2,dt%i,dt%j 
+                   print *,dt%k1,dt%k2,dt%i,dt%j
                 class default
                    error stop 100_4
              end select
@@ -134,7 +126,7 @@ program nullGeneric05
    class(base),pointer :: b1=>null()
 
    type(child(2,4)),target :: c1
-  
+
    class(base(2)),pointer  :: dtp1=>null()
    class(base(4)),pointer  :: dtp2=>null()
 
@@ -146,16 +138,16 @@ program nullGeneric05
    call b1%sub(dtp1)
    call b1%sub(dtp2)
    call b1%sub(dtp1,dtp2)
-   
+
    call b1%sub(null(dtp1))
    call b1%sub(null(dtp2))
    call b1%sub(null(dtp1),null(dtp2))
 
    allocate(dtp1,source=child(2,1)(i=3,j=-3))
    allocate(dtp2,source=child(4,8)(i=4,j=-4))
- 
+
    call b1%sub(dtp1)
-   call b1%sub(dtp2) 
+   call b1%sub(dtp2)
    call b1%sub(dtp1,dtp2)
 
    call b1%sub(null(dtp1))

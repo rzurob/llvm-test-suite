@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp Misc6.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Misc6.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Misc6.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 31, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,16 +30,16 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*  
-!* Implicit interface on Arg1 
+!*
+!* Implicit interface on Arg1
 !* (Ref-304507)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
   MODULE M
 
   CONTAINS
-  
+
   FUNCTION FChar(Arg)
   CHARACTER :: Arg
   CHARACTER :: FChar
@@ -54,7 +48,7 @@
 
   END MODULE
 
-  PROGRAM Misc6 
+  PROGRAM Misc6
   USE M
   CHARACTER(5) :: C
   PROCEDURE(), POINTER :: ProcPtr

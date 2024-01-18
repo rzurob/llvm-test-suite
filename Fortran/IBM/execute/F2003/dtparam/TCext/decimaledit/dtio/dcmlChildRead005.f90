@@ -2,31 +2,16 @@
 ! ftcx_dtp -ql -qdeferredlp /tstdev/F2003/decimaledit/dtio/dcmlChildRead005.f
 ! opt variations: -qnol -qnodeferredlp -qreuse=self
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 07/17/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : DECIMAL EDIT MODE
 !                               Test that change of decimal mode during one
 !                               particular child read will NOT affect other read
 !                               statements.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -106,7 +91,7 @@ use m
     fmt = '(dp, i5,1x, e15.8, ' // separators(1,2) // ', dc, e15.8,' // &
             separators(2,2) // ', e15.8,' // separators(3,2) // ')'
 
-    write (1, fmt) (i, i*1.2e0, cmplx(i*2.3, (i*4.3)**2), i=1,10) 
+    write (1, fmt) (i, i*1.2e0, cmplx(i*2.3, (i*4.3)**2), i=1,10)
 
     fmt = '(10(i5,1x, e15.8, ' // separators(1,1) // ', dp, e15.8,' // &
             separators(2,1) // ', e15.8,' // separators(3,1) // ', dc))'

@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : SpeExpHostAssociation04b.f
-!*
-!*  PROGRAMMER                 : Dorra Bouhiha
 !*  DATE                       : June 14, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Specification expression - Host Association
-!*  SECONDARY FUNCTIONS TESTED : Defined assignment 
+!*  SECONDARY FUNCTIONS TESTED : Defined assignment
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -47,7 +39,7 @@ MODULE Mod
 
          INTEGER(k2) :: A2(l2)
          CHARACTER(l2) :: C2
-         TYPE(Base(k2,l2)) :: cmp1 
+         TYPE(Base(k2,l2)) :: cmp1
 
          CONTAINS
          PROCEDURE, PASS :: assgnChild
@@ -90,7 +82,7 @@ PROGRAM SpeExpHostAssociation04b
       USE Mod
       IMPLICIT NONE
 
-      INTEGER I 
+      INTEGER I
       CLASS(Child(4,:,4,:)), ALLOCATABLE :: poly
 
       ALLOCATE( poly, SOURCE = Child(4,3,4,6)( 1, [(I, I = 1,3)], 'AAA', [(2*I, I = 1,6)], 'BBBBBB',   &
@@ -107,7 +99,7 @@ PROGRAM SpeExpHostAssociation04b
       CALL Sub12(4,4,12)
       CALL Sub13(4,4,8,12)
       CALL Sub14(4,6,4)
- 
+
       DEALLOCATE(poly)
       ALLOCATE( Child(4,5,4,10) :: poly )
       poly = Child(4,5,4,10)( 5, [(5*I, I = 1,5)], 'XLF', [(10*I, I = 1,10)], 'IBM', Base(4,10)( 11, [(11*I, I = 1,10)], 'test') )
@@ -117,9 +109,9 @@ PROGRAM SpeExpHostAssociation04b
       CALL Sub12(4,11,20)
       CALL Sub13(4,11,22,33)
       CALL Sub14(4,10,11)
- 
+
       CONTAINS
- 
+
       SUBROUTINE Sub11(N, M)
         INTEGER :: N, M
         TYPE(Base(poly%cmp1%k1,poly%cmp1%l1)) :: Obj

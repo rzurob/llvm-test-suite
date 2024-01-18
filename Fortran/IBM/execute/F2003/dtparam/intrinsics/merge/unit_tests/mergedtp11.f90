@@ -3,7 +3,7 @@
 
 type dt (k)
   integer, kind :: k
-  integer(k), allocatable :: i 
+  integer(k), allocatable :: i
 end type
 
 type dtp (k1)

@@ -1,20 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : structCompnt101kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from structCompnt101 by Robert Ma)
 !*  DATE                       : 2007-06-07 (original: 21/03/2005)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
 !*                                        Structure Component: Scalar Non-polymorphic Derived Type Component (read)
@@ -99,7 +91,7 @@ use m
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 3_4
 
    print *, rbuffer
-   
+
    if ( c1%b1%c /= 'ABC' ) error stop 4_4
    if ( c2%b2%c /= 'DEF' ) error stop 5_4
    if ( ( c3%b3%c /= 'MNO' ) .or. ( c3%b3%cc /= 'JKL' ) )error stop 6_4

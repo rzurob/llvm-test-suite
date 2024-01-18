@@ -1,19 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : asynchBindAttr01 - ASYNCHRONOUS Attribute
 !*                               Interactions with Other Attributes
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : February  8, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : Interactions with the BIND Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qattr=full
 !*
 !*  KEYWORD(S)                 :
@@ -35,7 +29,6 @@
 !*  ...
 !*                  or  language-binding-spec
 !*
-!*
 !*  5.1.2.4 BIND attribute for data entities
 !*
 !*  The BIND attribute for a variable or common block specifies that it is
@@ -44,7 +37,6 @@
 !*
 !*  R509 language-binding-spec  is  BIND (C [, NAME =&
 !*                                      &scalar-char-initialization-expr ])
-!*
 !*
 !*  5.2.4 BIND statement
 !*

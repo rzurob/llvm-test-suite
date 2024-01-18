@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  AttrOptionalPtr.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  AttrOptionalPtr.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : AttrOptional
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb 22, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,10 +32,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*   The selector has the optional attribute
-!*   
-!*    () 
+!*
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -53,7 +47,7 @@
         INTEGER, KIND :: K1
         INTEGER, LEN  :: N1
       private
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4,20)
       INTEGER(K1) :: BaseId = 1
@@ -111,8 +105,8 @@
   CONTAINS
 
   SUBROUTINE Sub(Arg)
-  OPTIONAL               :: Arg 
-  TYPE (Child(4,:)),  POINTER :: Arg 
+  OPTIONAL               :: Arg
+  TYPE (Child(4,:)),  POINTER :: Arg
   CLASS (Zero(4,:)),  POINTER :: PtrZ
   CLASS (Base(4,:)),  POINTER :: PtrB
   CLASS (Child(4,:)), POINTER :: PtrC
@@ -121,10 +115,10 @@
   ASSOCIATE (Arg=>Arg ,  As => Arg )
   ASSOCIATE (As => Arg )
 
-    PtrZ => As%Base%Zero 
-    PtrB => As%Base 
-    PtrC => As 
- 
+    PtrZ => As%Base%Zero
+    PtrB => As%Base
+    PtrC => As
+
     IF ( .NOT. ASSOCIATED(PtrZ) ) STOP 20
     IF ( .NOT. ASSOCIATED(PtrB) ) STOP 21
     IF ( .NOT. ASSOCIATED(PtrC) ) STOP 22
@@ -138,10 +132,10 @@
     IF ( PtrC%GetId()       .NE. -2 ) STOP 33
 
     ASSOCIATE ( As => W%Base )
-     
-      PtrZ => As%Zero 
-      PtrB => As 
- 
+
+      PtrZ => As%Zero
+      PtrB => As
+
       IF ( .NOT. ASSOCIATED(PtrZ) ) STOP 20
       IF ( .NOT. ASSOCIATED(PtrB) ) STOP 21
 

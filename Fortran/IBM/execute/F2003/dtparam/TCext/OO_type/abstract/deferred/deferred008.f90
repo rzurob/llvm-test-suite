@@ -1,25 +1,14 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql /tstdev/OO_type/abstract/deferred/deferred008.f
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*
 !*  DESCRIPTION                : Testing: Deferred Binding
-!*                                  - Deferred Binding child inheriting deferred binding from parent type 
+!*                                  - Deferred Binding child inheriting deferred binding from parent type
 !*                                    and see if poly abstract type child can invoke deferred binding
 !*
 !*  KEYWORD(S)                 :

@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxclpu17 //\? //\? ///"
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,38 +12,31 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpuf17.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Declare variables mixed with other data within 
+!*  DESCRIPTION                : Declare variables mixed with other data within
 !*                             : blank common block
-!*                             : Invoke procedures inside int. func and int. subs   
-!*                             : 
+!*                             : Invoke procedures inside int. func and int. subs
 !*                             :   (blank common block and host association)
-!*  
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
@@ -51,23 +44,23 @@
       IMPLICIT NONE
 
 
-      character(513)   :: NAME 
-      character(513)   :: NAME1 
-      logical          :: TRIM_NAME 
+      character(513)   :: NAME
+      character(513)   :: NAME1
+      logical          :: TRIM_NAME
       character(2049)  :: CmdLine
-      character(2049)  :: CmdLine1  
+      character(2049)  :: CmdLine1
       integer          :: CmdCount
 
       COMMON /sargs/CmdLine,CmdLine1, NAME, NAME1, TRIM_NAME, CmdCount
 
       character(2049)  :: COMMAND
       character(2049)  :: COMMAND1
-      integer          :: LENGTH     
-      integer          :: STATUS  
+      integer          :: LENGTH
+      integer          :: STATUS
       integer          :: NUMBER
-      character(2047)  :: VALUE1  
-      character(2047)  :: VALUE 
-      integer          :: ARGCOUNT 
+      character(2047)  :: VALUE1
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
 
       COMMON /cargs/COMMAND, COMMAND1, LENGTH, STATUS, NUMBER, VALUE1, VALUE, ARGCOUNT
 
@@ -114,15 +107,15 @@
       NAME1    = '22222222222222222222222222222'
       CmdLine1 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
       COMMAND1 = 'yyyyyyyyyyyyyyyyyyyyyy'
-      VALUE1   = 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv' 
+      VALUE1   = 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv'
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 3 ) & 
+      if ( CmdCount .ne. 3 ) &
       then
         error stop 63
       endif
- 
+
       INTF_CMD_ARG_COUNT = CmdCount
 
       END FUNCTION
@@ -134,14 +127,14 @@
       NAME1    = '22222222222222222222222222222'
       CmdLine1 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
       COMMAND1 = 'yyyyyyyyyyyyyyyyyyyyyy'
-      VALUE1   = 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv' 
+      VALUE1   = 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv'
 
 
       call GET_COMMAND(COMMAND, LENGTH, STATUS)
       if ( (TRIM(COMMAND) .ne. TRIM(CmdLine))  .or. &
            (LENGTH .ne. LEN(TRIM(CmdLine)))    .or. &
            (STATUS .ne. 0) )                        &
-      then 
+      then
          error stop 64
       endif
 
@@ -157,11 +150,11 @@
       NAME1    = '22222222222222222222222222222'
       CmdLine1 = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
       COMMAND1 = 'yyyyyyyyyyyyyyyyyyyyyy'
-      VALUE1   = 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv' 
- 
+      VALUE1   = 'vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv'
+
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -178,7 +171,7 @@
 
 
 
-      SUBROUTINE INTS_GET_ENV_VAR() 
+      SUBROUTINE INTS_GET_ENV_VAR()
 
 
       NAME1    = '22222222222222222222222222222'
@@ -201,6 +194,6 @@
       END
 
 
- 
+
       INCLUDE 'cmdline.include'
 

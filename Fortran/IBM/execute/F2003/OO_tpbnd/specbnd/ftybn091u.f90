@@ -1,54 +1,48 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn091u.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn091u.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn091u.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn091u.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
+!*
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : testing nopass binding has no effects
-!*                               on state of the calling object 
-!*    
+!*                               on state of the calling object
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod	      
+   module mod
       integer :: int = 200
       character*20 :: c = "hi"
 
-      type parent 
+      type parent
          integer :: x
 	 contains
       	 procedure, nopass :: bind => proc1
-      end type 
+      end type
 
-      type, extends(parent) :: child 
+      type, extends(parent) :: child
       contains
          procedure, nopass :: bind => proc1
-      end type  
+      end type
 
-      type, extends(child) :: thirGen 
+      type, extends(child) :: thirGen
       contains
          procedure, nopass :: bind => proc2
       end type
@@ -56,7 +50,7 @@
       type(parent) :: dt_p = parent(10)
       type(child) :: dt_c = child(20)
       type(thirGen) :: dt_g3 = thirGen(30)
- 
+
       contains
       subroutine proc1()
          int = 400
@@ -69,7 +63,7 @@
       end subroutine
 
    end module
-   
+
    use mod
 
    if (int .ne. 200)       error stop 2
@@ -78,7 +72,7 @@
    call dt_p%bind()
    if (int .ne. 400)       error stop 4
    if (c .ne. "hi_again") error stop 5
-   if (dt_p%x .ne. 10)     error stop 55 
+   if (dt_p%x .ne. 10)     error stop 55
 
    call proc2()
    call dt_c%bind()
@@ -93,4 +87,4 @@
 
    end
 
-   
+

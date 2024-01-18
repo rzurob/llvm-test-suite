@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemCHAR.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemCHAR.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 24, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
+!*
 !*  - CHAR
 !*  ()
 !*
@@ -35,7 +28,7 @@
 
 
 
-  PROGRAM  InitExpDefElemCHAR 
+  PROGRAM  InitExpDefElemCHAR
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -47,11 +40,11 @@
   CHARACTER(3), PARAMETER :: C3(3)=CHAR(IC1(:))//CHAR(IC2(:))//CHAR(IC3(:))
   CHARACTER(3), PARAMETER :: C4(3)=(/C3(1:2), C3(3:3)/)
 
-  INTERFACE 
+  INTERFACE
     FUNCTION ExtFun(Arg) BIND(C, NAME=CHAR(ICHAR("c")))
       CHARACTER(1) :: ExtFun, Arg
     END FUNCTION
-  END INTERFACE 
+  END INTERFACE
 
   IF (ANY( IC1                   .NE. ICHAR("1"))) STOP 11
   IF (ANY( IC2                   .NE. ICHAR("2"))) STOP 11
@@ -61,7 +54,7 @@
   IF (ANY( C3                    .NE. "123"))      STOP 14
   IF (ANY( C4                    .NE. "123"))      STOP 15
   IF ( ExtFun(CHAR(ICHAR("1")) ) .NE. "1")         STOP 16
- 
+
   END
 
   FUNCTION ExtFun(Arg) BIND(C, NAME=CHAR(ICHAR("c")))
@@ -69,4 +62,4 @@
     ExtFun = Arg
   END FUNCTION
 
- 
+

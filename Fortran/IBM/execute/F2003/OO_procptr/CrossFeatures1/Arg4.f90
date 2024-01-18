@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg4.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg4.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg4.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg4.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 20, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Dummy procedure - procedure pointer, 
+!*
+!*  Dummy procedure - procedure pointer,
 !*                    or a function returning a procedure pointer
 !*  (304016) (306443)
 !*
@@ -47,23 +41,23 @@
 
     TYPE :: Base
       CHARACTER(3) :: C
-      TYPE(Base), POINTER :: BPtr 
+      TYPE(Base), POINTER :: BPtr
     END TYPE
- 
+
     INTERFACE
       FUNCTION IntF(Arg)
       IMPORT
-        TYPE(Base) :: Arg, IntF 
+        TYPE(Base) :: Arg, IntF
       END FUNCTION
     END INTERFACE
- 
+
   END MODULE
 
   MODULE M
   USE M0
 
     CONTAINS
- 
+
     FUNCTION ModFun(Arg)
     TYPE(Base) :: Arg, ModFun
       ModFun = Arg
@@ -71,9 +65,9 @@
 
     SUBROUTINE ModSub(Fun1, Fun2)
     IMPLICIT TYPE(Base)(F)
-    PROCEDURE(IntF) :: Fun1 
-    PROCEDURE(  ) :: Fun2 
-    TYPE(Base), TARGET :: Tar=Base("TAR", NULL()) 
+    PROCEDURE(IntF) :: Fun1
+    PROCEDURE(  ) :: Fun2
+    TYPE(Base), TARGET :: Tar=Base("TAR", NULL())
     TYPE(Base) :: V, U
     PROCEDURE(IntF), POINTER :: ProcPtr1
     PROCEDURE(IntF), POINTER :: ProcPtr2
@@ -82,7 +76,7 @@
     ProcPtr1 => Fun1
     IF ( .NOT. ASSOCIATED(ProcPtr1, Fun2)) STOP 71
 
-    ProcPtr2 => ProcPtr1 
+    ProcPtr2 => ProcPtr1
     IF ( .NOT. ASSOCIATED(ProcPtr2, Fun1)) STOP 72
 
     V = Fun1(Base("abc", Tar))
@@ -103,7 +97,7 @@
 
     END SUBROUTINE
 
-     
+
   END MODULE
 
   FUNCTION ExtFun(Arg)
@@ -116,14 +110,14 @@
   USE M
   PROCEDURE(IntF) :: Arg
   PROCEDURE(IntF), POINTER :: RetPtr
-    RetPtr => Arg 
+    RetPtr => Arg
   END FUNCTION
 
- 
-  PROGRAM Arg4 
+
+  PROGRAM Arg4
   USE M
-  IMPLICIT NONE 
- 
+  IMPLICIT NONE
+
   INTERFACE
     FUNCTION RetPtr(Arg)
       IMPORT
@@ -131,7 +125,7 @@
       PROCEDURE(IntF), POINTER :: RetPtr
     END FUNCTION
   END INTERFACE
- 
+
   PROCEDURE(IntF), POINTER :: ProcPtr
   PROCEDURE(IntF) :: ExtFun
 

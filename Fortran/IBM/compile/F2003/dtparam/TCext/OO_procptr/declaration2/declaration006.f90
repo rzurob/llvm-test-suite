@@ -3,13 +3,9 @@
 ! opt variations: -qnol -qreuse=base
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_procptr/declaration2
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 06/18/2005
 ! PRIMARY FUNCTIONS TESTED   : procedure pointer declaration
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Assiign the procedure pointer to a
 !                              non-intrinsic elemental procedure.
 !                              Poly or unlimited poly.

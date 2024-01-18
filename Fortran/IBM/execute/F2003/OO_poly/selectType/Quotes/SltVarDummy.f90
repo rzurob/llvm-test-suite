@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltVarDummy.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltTypeVarDummy
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 16, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a poly dummy. 
+!*
+!*   The selector is a poly dummy.
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,7 +50,7 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -76,13 +70,13 @@
     SUBROUTINE Sub(Arg1, Arg2)
     CLASS(*) Arg1, Arg2
       SELECT TYPE (Arg1)
-        TYPE IS(Child) 
+        TYPE IS(Child)
           SELECT TYPE (Arg2)
             CLASS IS (Base)
               STOP 30
-            TYPE IS (Child) 
+            TYPE IS (Child)
               Arg2 = Arg1
-            CLASS DEFAULT 
+            CLASS DEFAULT
               STOP 20
           END SELECT
         CLASS DEFAULT
@@ -96,7 +90,7 @@
   USE M
   IMPLICIT NONE
 
-  CLASS(*), POINTER :: Ptr 
+  CLASS(*), POINTER :: Ptr
 
   ALLOCATE(Child :: Ptr)
 
@@ -104,7 +98,7 @@
 
   SELECT TYPE ( As => Ptr )
     CLASS DEFAULT
-      STOP 20   
+      STOP 20
     TYPE IS (CHARACTER(*))
       STOP 21
     TYPE IS (Base)
@@ -114,10 +108,10 @@
     CLASS is (Child)
       STOP 24
     TYPE IS (Child)
-      IF ( As%BaseId       .NE. -1 ) STOP 31 
-      IF ( As%ChildId      .NE. -2 ) STOP 32 
-      IF ( As%Base%GetId() .NE. -1 ) STOP 33 
-      IF ( As%GetId()      .NE. -2 ) STOP 34 
+      IF ( As%BaseId       .NE. -1 ) STOP 31
+      IF ( As%ChildId      .NE. -2 ) STOP 32
+      IF ( As%Base%GetId() .NE. -1 ) STOP 33
+      IF ( As%GetId()      .NE. -2 ) STOP 34
 
   END SELECT
 

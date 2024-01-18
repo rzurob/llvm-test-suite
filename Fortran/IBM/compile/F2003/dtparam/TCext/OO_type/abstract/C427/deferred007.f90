@@ -1,24 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: if the type definition contains or inherits
 !*                                        a deferred binding, ABSTRACT shall appear. (C427)
-!*                                        vii)	if deferred type bound is map to a generic DTIO type bound, see 
+!*                                        vii)	if deferred type bound is map to a generic DTIO type bound, see
 !*                                              if extended type not defined to be abstract will be catched by compiler
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -50,7 +39,7 @@ module m1
          character(*), intent(inout) :: iomsg
       end subroutine
    end interface
-   
+
    type, extends(b1) :: b2(k2)
       integer, kind :: k2
    end type

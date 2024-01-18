@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: BranchToTypeGuard.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : BranchToTypeGuard 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : BranchToTypeGuard
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 27, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,17 +34,17 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Diagnostic: Brach to Typeguard Statement 
+!*
+!*  Diagnostic: Brach to Typeguard Statement
 !*  As the error message like
 !*
-!*  1511-122 (E) Unconditional GO TO statement refers to statement inside a DO-loop, 
+!*  1511-122 (E) Unconditional GO TO statement refers to statement inside a DO-loop,
 !*  IF block, CASE construct, SELECT TYPE construct, ASSOCIATE construct, WHERE constructi
 !*  or FORALL construct with label 7.  Transfer of control into a DO-loop, IF block, i
 !*  CASE construct, SELECT TYPE construct, ASSOCIATE construct, WHERE construct or FORALL
 !*  construct is not permitted.
- 
-!*  the wrong goto statement will be ignored. 
+
+!*  the wrong goto statement will be ignored.
 !*  Branch to TYPE GUARD statement
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -78,7 +72,7 @@
   END MODULE
 
 
-  PROGRAM BranchToTypeGuard 
+  PROGRAM BranchToTypeGuard
   USE M
   IMPLICIT NONE
 
@@ -101,17 +95,17 @@
       IF ( ANY (LBOUND(U)   .NE. (/1,1,1/) ) ) STOP 32
       IF ( ANY (UBOUND(U)   .NE. (/3,3,3/) ) ) STOP 33
       IF ( ANY(SHAPE(U)     .NE. (/3,3,3/)) )  STOP 34
-      GOTO 1 
-    
+      GOTO 1
+
     ASSOCIATE ( W => U )
-          
+
 2     SELECT TYPE (U => W )
 
 7     TYPE IS (DT(*,4))
 
         IF ( ANY(U%Id      .NE. DTV%Id ) )      STOP 42
         IF ( ANY(U%GetId() .NE. DTV%GetId()))   STOP 43
-        GOTO 7     
+        GOTO 7
 
 3     CLASS DEFAULT
         STOP 51

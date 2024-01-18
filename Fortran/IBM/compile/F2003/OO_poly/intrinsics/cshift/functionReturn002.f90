@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_poly/intrinsics/cshift
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 02/02/2005
 ! PRIMARY FUNCTIONS TESTED   : cshift
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Diagnostic test case. When return value
 !                              of cshift is poly, it shall not be
 !                              processed by regular IO.

@@ -1,13 +1,7 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingNoIOSTATSpec04d - INQUIRE() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 31, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Data Transfers with an end-of-file
 !*                               Condition
@@ -15,7 +9,6 @@
 !*                               ID=, ERR=, and IOSTAT= Specifiers are *NOT*
 !*                               present
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : INQUIRE(), PENDING= Specifier
@@ -42,7 +35,6 @@
 !*  ...
 !*                     or  PENDING = scalar-default-logical-variable
 !*  ...
-!*
 !*
 !*  9.9.1.20 PENDING= specifier in the INQUIRE statement
 !*

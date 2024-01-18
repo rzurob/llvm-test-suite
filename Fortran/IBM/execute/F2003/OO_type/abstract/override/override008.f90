@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Type-bound procedure overriding
 !*                               viii)if the overridden binding is PRIVATE, then the overridding binding can be PUBLIC
@@ -69,17 +58,17 @@ program override008
 
    allocate ( c2, source = child(1,2) )
    allocate ( b1, source = child(10, 20 ) )
-   
+
    call c1%setid(12)
    call c2%setid(13)
-   
+
    select type ( b1 )
       type is ( child )
          call b1%setid(100)
          if ( ( b1%id /= 100 ) .or. ( b1%rid /= 20 ) ) error stop 1_4
    end select
-   
+
    if ( ( c1%id /= 12 ) .or. ( c1%rid /= -999 ) ) error stop 2_4
    if ( ( c2%id /= 13 ) .or. ( c2%rid /= 2 ) )    error stop 3_4
-   
+
 end program

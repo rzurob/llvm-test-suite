@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeDTComp03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeDTComp03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 15 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 15 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE,FSOURCE ARE DERIVED TYPE SCALAR OR COMPONENT
 !* 4. DERIVED TYPE HAS ALLOCATABLE OR POINTER DT COMPONENT
 !* 5. ! USE ASSOCIATE
@@ -37,7 +29,7 @@ module m
        integer,len   :: l2
        character(l2) :: cb(l2)
        type(A(:)),allocatable :: type1
-       type(A(:)),pointer     :: type2=>null()  
+       type(A(:)),pointer     :: type2=>null()
    end type
 end module
 
@@ -72,7 +64,7 @@ program mergeDTComp03
     type(A(*)), intent(in) :: x
       if(x%l1 /=  4)                                      error stop 10_4
       if(x%ca%len /= 4)                                   error stop 11_4
-      if(size(x%ca) /= 4)                                 error stop 12_4 
+      if(size(x%ca) /= 4)                                 error stop 12_4
       if(any(x%ca /= "123"))                              error stop 13_4
    end subroutine
 
@@ -106,7 +98,7 @@ program mergeDTComp03
       if(x%l2 /= 3)                                       error stop 22_4
       if(any(x%cb /= "xlf"))                              error stop 23_4
       if(x%cb%len /= len(x%cb) .or. x%cb%len /= 3)        error stop 24_4
-      if(size(x%cb) /= 3)                                 error stop 25_4 
+      if(size(x%cb) /= 3)                                 error stop 25_4
       if(x%type1%l1 /= 4)                                 error stop 26_4
       if(any(x%type1%ca /= "123"))                        error stop 27_4
       if(len(x%type1%ca) /= len(x%type1%ca) .or. &
@@ -117,9 +109,9 @@ program mergeDTComp03
       if(any(x%type2%ca /= "456"))                        error stop 31_4
       if(len(x%type1%ca) /= len(x%type1%ca) .or. &
            len(x%type1%ca) /= 4)                          error stop 32_4
-      if(size(x%type1%ca,1) /= 4)                         error stop 33_4 
+      if(size(x%type1%ca,1) /= 4)                         error stop 33_4
    end subroutine
-  
+
 !   associate6(x=>merge(b1,b2,.false.))
    subroutine associate6(x)
     type(B(*)), intent(in) :: x

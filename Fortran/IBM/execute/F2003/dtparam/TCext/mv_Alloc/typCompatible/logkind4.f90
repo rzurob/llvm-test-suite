@@ -3,26 +3,14 @@
 ! opt variations: -qnok -qnol
 
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : logkind4.f
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM is of logical, TO of unlimit poly 
+!*  DESCRIPTION                : FROM is of logical, TO of unlimit poly
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -63,4 +51,4 @@
               class default
                   stop 21
        end select
-       end 
+       end

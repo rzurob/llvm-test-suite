@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxclpu11 +1 +2 +3 +4"
-! %COMPOPTS:  -qfree=f90  
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,52 +12,45 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu11.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Invoke command line intrinsic routines through entries  
+!*  DESCRIPTION                : Invoke command line intrinsic routines through entries
 !*                             : with different interfaces
-!*                             :  
-!*           
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
- 
+
       PROGRAM fxclpu11
 
       IMPLICIT NONE
 
 
-      character(513)  :: NAME  
+      character(513)  :: NAME
       logical         :: TRIM_NAME
       character(2049) :: CmdLine
-          
-      INTEGER         :: i 
+
+      INTEGER         :: i
       COMMON      CmdLine
- 
-      INTERFACE 
+
+      INTERFACE
 
         FUNCTION ENT_CMD_ARG_COUNT()
           LOGICAL                      :: ENT_CMD_ARG_COUNT
@@ -71,17 +64,17 @@
 
         FUNCTION ENT_GET_CMD_ARG(  &
           NAME,                    &
-          TRIM_NAME              ) 
+          TRIM_NAME              )
           character(513), INTENT(IN)   :: NAME
-          logical, INTENT(IN)          :: TRIM_NAME 
+          logical, INTENT(IN)          :: TRIM_NAME
           LOGICAL                      :: ENT_GET_CMD_ARG
         END FUNCTION
 
         FUNCTION ENT_GET_ENV_VAR(  &
           NAME,                    &
-          TRIM_NAME              ) 
+          TRIM_NAME              )
           character(513), INTENT(IN)   :: NAME
-          logical, INTENT(IN)          :: TRIM_NAME 
+          logical, INTENT(IN)          :: TRIM_NAME
           LOGICAL                      :: ENT_GET_ENV_VAR
         END FUNCTION
 
@@ -111,41 +104,41 @@
       END
 
 
- 
+
       FUNCTION EF_CMD   ( &
         NAME,             &
-        TRIM_NAME       ) 
+        TRIM_NAME       )
 
       character(513),  INTENT(IN)   :: NAME
-      logical,         INTENT(IN)   :: TRIM_NAME 
+      logical,         INTENT(IN)   :: TRIM_NAME
 
-      LOGICAL EF_CMD 
+      LOGICAL EF_CMD
       LOGICAL ENT_CMD_ARG_COUNT
       LOGICAL ENT_GET_COMMAND
       LOGICAL ENT_GET_CMD_ARG
       LOGICAL ENT_GET_ENV_VAR
 
       character(2049), AUTOMATIC  :: COMMAND
-      integer,         AUTOMATIC  :: LENGTH     
-      integer,         AUTOMATIC  :: STATUS  
-      integer,         AUTOMATIC  :: NUMBER 
-      character(2047), AUTOMATIC  :: VALUE  
-      integer,         AUTOMATIC  :: ARGCOUNT 
+      integer,         AUTOMATIC  :: LENGTH
+      integer,         AUTOMATIC  :: STATUS
+      integer,         AUTOMATIC  :: NUMBER
+      character(2047), AUTOMATIC  :: VALUE
+      integer,         AUTOMATIC  :: ARGCOUNT
       character(2047), AUTOMATIC  :: Argument
 
 
       integer, AUTOMATIC          :: CmdCount
       integer, AUTOMATIC          :: i
 
-      character(2049)             :: CmdLine 
+      character(2049)             :: CmdLine
       COMMON CmdLine
 
       INTERFACE
 
       PURE SUBROUTINE MyGetArg(CmdLine, Number, Arg)
         character*(*), intent(in)  :: CmdLine
-        integer,       intent(out) :: Number 
-        character*(*), intent(in)  :: Arg 
+        integer,       intent(out) :: Number
+        character*(*), intent(in)  :: Arg
       END SUBROUTINE
 
       END INTERFACE
@@ -155,13 +148,13 @@
       RETURN
 
 
-      ENTRY ENT_CMD_ARG_COUNT( ) 
+      ENTRY ENT_CMD_ARG_COUNT( )
 
 
       ENT_CMD_ARG_COUNT = .true.
 
-      CmdCount = COMMAND_ARGUMENT_COUNT() 
-      if ( CmdCount .ne. 4 ) & 
+      CmdCount = COMMAND_ARGUMENT_COUNT()
+      if ( CmdCount .ne. 4 ) &
       then
         ENT_CMD_ARG_COUNT = .false.
         !all zzrc(63)
@@ -187,13 +180,13 @@
 
       ENTRY ENT_GET_CMD_ARG(   &
         NAME,                  &
-        TRIM_NAME          ) 
+        TRIM_NAME          )
 
-      CmdCount = COMMAND_ARGUMENT_COUNT() 
+      CmdCount = COMMAND_ARGUMENT_COUNT()
       ENT_GET_CMD_ARG = .true.
 
       DO i  = 0, CmdCount
-       
+
         NUMBER = i
         call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
         call MyGetArg(CmdLine, NUMBER, Argument)
@@ -231,7 +224,7 @@
       END FUNCTION
 
 
- 
+
       INCLUDE 'cmdline.include'
 
 

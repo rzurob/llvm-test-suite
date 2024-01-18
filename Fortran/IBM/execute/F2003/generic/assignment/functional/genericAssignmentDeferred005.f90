@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: deferred elemental binding being generic assignment
 !*  KEYWORD(S)                 :
@@ -105,7 +94,7 @@ program genericAssignmentDeferred005
          print *, b1%i
          print *, b1%j
    end select
-   
+
    b2 = c1
 
    select type ( b2 )
@@ -113,7 +102,7 @@ program genericAssignmentDeferred005
          print *, b2%i
          print *, b2%j
    end select
-   
+
    b2 = c3(2, (/1,2,1 /) )
 
    select type ( b2 )
@@ -121,9 +110,9 @@ program genericAssignmentDeferred005
          print *, b2%i
          print *, b2%j
    end select
-   
+
    b3 = c3
-   
+
    select type ( b3 )
       type is ( child )
          print *, b3%i

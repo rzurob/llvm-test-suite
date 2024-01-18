@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : acesyntc497d
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2006-11-19
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements
 !*
@@ -16,17 +11,15 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ac-implied-do, ac-do-variable
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
 !*  Test ac-implied-do's with repetition of variables.
-!*
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -97,7 +90,7 @@ program acesyntc497d
   print *, [complex::   (((cmplx(j,j), j=1,2), i=1,2), i=1,2)]
   print *, [character:: (((char(i), j=1,2), i=1,2), i=1,2)]
   print *, [logical::   (((logical(i==j), j=1,2), i=1,2), i=1,2)]
-  
+
   darr = [derived::   (((derived(), i=1,2), j=1,2), i=1,1)]
   larr = [logical::   (((i==j, i=1,2), j=1,2), i=1,1)]
   carr = [character:: (((char(i), i=1,2), j=1,2), i=1,1)]

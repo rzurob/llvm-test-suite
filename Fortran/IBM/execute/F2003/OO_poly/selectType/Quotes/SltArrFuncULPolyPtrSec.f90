@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrFuncULPolyPtrSec.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrFuncULPolyPtrSec
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 19, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is an unlimited poly array pointer from function call
-!*  forming an array section 
+!*  forming an array section
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -50,7 +44,7 @@
     TYPE  :: Zero
     CONTAINS
       PROCEDURE, NoPASS   :: Called
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -71,8 +65,8 @@
     FUNCTION Called()
     LOGICAL :: Called
       Called =.true.
-    END FUNCTION 
-    
+    END FUNCTION
+
     ELEMENTAL FUNCTION GetChildId(Arg)
     CLASS(Child), INTENT(IN) :: Arg
     INTEGER                  :: GetChildId
@@ -107,7 +101,7 @@
   TYPE(Child), TARGET :: V(2,2)
   INTEGER :: i
   CLASS(*), POINTER :: P(:,:)
-  
+
   V%BaseId = -1
   V%ChildId = -2
 
@@ -120,10 +114,10 @@
   CLASS(*), POINTER :: Arg(:,:), Fun(:,:)
     Fun => Arg
   END FUNCTION
-    
+
   SUBROUTINE Sub(Arg)
   CLASS(*), POINTER :: Arg(:, :)
- 
+
   SELECT TYPE ( V => Fun(Arg) )
     CLASS DEFAULT
       SELECT TYPE (V => V(2:1:1,:))
@@ -146,9 +140,9 @@
 
   END SELECT
 
-  END SUBROUTINE 
- 
- 
+  END SUBROUTINE
+
+
   END
 
 

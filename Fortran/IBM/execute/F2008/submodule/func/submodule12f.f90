@@ -1,39 +1,29 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : submodule12f
-!*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 02/20/2013
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             
-!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  KEYWORD(S)                 : F2008 Submodule sub module
 !*
 !*  TARGET(S)                  :
 !*
-!*  DESCRIPTION                : 
-!*  based on F2003/abstracti/abstracti005 
+!*  DESCRIPTION                :
+!*  based on F2003/abstracti/abstracti005
 !*
 !*  Define module m, which uses module n.  Define submodule nsub which
 !*   extends n and uses m.  This should not cause a circular reference.
 !*
 !*  Secondary tests:
-!*   - n contains abstract interfaces defined in nsub, m, and not in 
+!*   - n contains abstract interfaces defined in nsub, m, and not in
 !*     the module/submodule.
-!*   - through using m, the main program still accesses the function 
+!*   - through using m, the main program still accesses the function
 !*     declared in the interface.
 !*
 !*  Verify that the results match the values of the original test case.
-!* 
+!*
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -61,7 +51,7 @@ module n
          class(abstractdata), intent(in) :: dtv
       end function
    end interface
-   interface 
+   interface
       module integer function get (dtv)
          class(data), intent(in) :: dtv
       end function
@@ -104,7 +94,7 @@ end module m
 
 submodule (n) nsub
 !should not cause circular reference
-use m 
+use m
 contains
 
    module integer function get (dtv)

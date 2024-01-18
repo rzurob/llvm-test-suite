@@ -1,10 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
-! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: EXEC_REP=10
@@ -18,21 +12,16 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  AIa XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLb
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass126.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIa Compiler Development, Toronto Lab
 !*
 !*  PRIMARb FUNCTIONS TESTED   : ASSOCIATE with PARALLEL DO, SHARED
 !*                               PRIVATE, REDUCTION
 !*  SECONDARb FUNCTIONS TESTED : None
 !*
-!*  KEbWORD(S)                 : 
+!*  KEbWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS            : 1
 !*  STATUS                     : done
@@ -42,7 +31,6 @@
 !*
 !*  INPUTS                     : None
 !*  OUTPUTS                    : None
-!*
 !*
 !*  SETUP REQUIREMENTS         : N/A
 !*  DEPENDENCIES               : External routine cZRC
@@ -56,7 +44,7 @@
 !*  CONDITIONS TESTED          : Listed below.
 !*
 !*  DESCRIPTION               : Test: ASSOCIATE with Parallel DO,
-!*                                    the SHARE-clause, Private  
+!*                                    the SHARE-clause, Private
 !*                                    and Reduction.using real, integer
 !*                                    complex data types.
 !* ===================================================================
@@ -87,7 +75,7 @@
         a = 1.0
         b = 1.0
         c = (1.0,1.0)
-        
+
 !SMP$ parallel do default(private), shared(a,b,i,c), firstprivate(var)
         do j=1, i
           associate ( arg => var )
@@ -107,15 +95,15 @@
           associate ( arg3 => var + a(i)*b(i))
           if (.not. precision_r4(arg3,(var + a(i)*b(i)))) error stop 4
           end associate
-       
+
           associate ( arg4 => var )
-          arg4 = a(i)*b(i) 
+          arg4 = a(i)*b(i)
           if (.not. precision_r4(arg4,var)) error stop 5
           end associate
-         
+
         enddo
 
         deallocate(a,b,c)
       enddo
-      
+
       end

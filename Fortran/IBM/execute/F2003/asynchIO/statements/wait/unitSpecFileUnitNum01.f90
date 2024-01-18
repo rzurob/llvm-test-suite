@@ -1,18 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : unitSpecFileUnitNum01 - WAIT() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March  3, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() Statement
 !*  SECONDARY FUNCTIONS TESTED : UNIT= Specifier Value is a scalar-int-expr
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WAIT(), UNIT= Specifier
@@ -38,7 +31,6 @@
 !*  C939 (R922) A file-unit-number shall be specified; if the optional
 !*              characters UNIT= are omitted, the file-unit-number shall
 !*              be the first item in the wait-spec-list.
-!*
 !*
 !*  9.4 File connection
 !*

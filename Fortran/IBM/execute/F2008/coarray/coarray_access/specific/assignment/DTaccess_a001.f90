@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : DTaccess_a001.f
 !*
-!*  PROGRAMMER                 : Francesco Cassullo
 !*  DATE                       : March 2011
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  DESCRIPTION
 !*
@@ -86,7 +82,7 @@ program main
 	caf%i2 = v2
 	caf%i4 = v4
 	caf%i8 = v8
-	
+
 	! arrays will have some intermediate values, some max values
 	cafar(:)%i1 = [1,1,2,3,5,8,13,21,34,v1]
 	cafar(:)%i2 = mid2

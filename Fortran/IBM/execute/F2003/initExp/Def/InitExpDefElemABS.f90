@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemABS.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemABS.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  a reference to an elemental intrinsic function that is not a hardware-specific, 
+!*  a reference to an elemental intrinsic function that is not a hardware-specific,
 !*  service/utility, floating-point status/control, or vector intrinsic function, where each
 !*  argument is an initialization expression;
-!*  -- ABS  
+!*  -- ABS
 !*  (318859)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -39,7 +32,7 @@
 
   TYPE :: DT
     INTEGER    :: I=ABS(-1)+ABS(-2)
-    COMPLEX(8) :: Cmpx=ABS((-3.0, -4.0)) 
+    COMPLEX(8) :: Cmpx=ABS((-3.0, -4.0))
     PROCEDURE(),NOPASS, POINTER :: ProcPtr=>NULL()
     CONTAINS
     PROCEDURE, PASS ::  ModSub
@@ -48,15 +41,15 @@
   TYPE(DT), PARAMETER :: Param=DT(I=ABS(-4.1))
 
   CONTAINS
-  
+
   SUBROUTINE ModSub(Arg)
   CLASS(DT) :: Arg
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END MODULE
 
 
-  PROGRAM InitExpDefElemABS 
+  PROGRAM InitExpDefElemABS
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
@@ -65,16 +58,16 @@
     TYPE(DT) :: Comp=DT(I=ABS(-Param%I))
   END TYPE
 
-  TYPE(DT1) ::  T1,Arr1(ABS(-Param%I):INT(ABS(-Param%Cmpx))) 
+  TYPE(DT1) ::  T1,Arr1(ABS(-Param%I):INT(ABS(-Param%Cmpx)))
   PARAMETER  (  Arr1=(/(DT1(DT(I=ABS(-I), Cmpx=(I, -I))),&
-                       I=ABS(-Param%I), INT(ABS(-Param%Cmpx)))/)  ) 
+                       I=ABS(-Param%I), INT(ABS(-Param%Cmpx)))/)  )
 
   TYPE, EXTENDS(DT) :: DT2
   END TYPE
- 
-  TYPE(DT2) :: Arr2(INT(ABS(-Param%Cmpx)))=DT2(DT=DT(I=ABS(-1), Cmpx=(1_2, -1_2))) 
 
- 
+  TYPE(DT2) :: Arr2(INT(ABS(-Param%Cmpx)))=DT2(DT=DT(I=ABS(-1), Cmpx=(1_2, -1_2)))
+
+
   IF (Param%I    .NE. 4   )                STOP 11
   IF (Param%Cmpx .NE. 5.0 )                STOP 12
 
@@ -96,4 +89,4 @@
 
   END
 
- 
+

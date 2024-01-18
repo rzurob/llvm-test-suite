@@ -12,21 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Vasile Radulescu
 !*  DATE                       : February 15, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_FINITE 
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                               
+!*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_FINITE
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  : -qfloat=nans:nofold
 !*
 !*  KEYWORD(S)                 :
@@ -35,15 +26,14 @@
 !*
 !*  DESCRIPTION                : Testing IEEE_IS_FINITE for REAL(16).
 !*
-!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
         program fxfinite03
-      
+
         use ieee_arithmetic
         use constants_for_ieee
-        
-        real(16) plus_nanq, minus_nanq, plus_nans, minus_nans       
+
+        real(16) plus_nanq, minus_nanq, plus_nans, minus_nans
         real(16), parameter :: pos_r1 = tiny(1.0_16)
         real(16), parameter :: pos_r2 = huge(1.0_16)
         real(16), dimension(4) :: arrval
@@ -65,7 +55,7 @@
 !...test with PINF and NINF values
         if (ieee_support_datatype(PINF_16) .AND. ieee_support_datatype(NINF_16)) then
            if (ieee_is_finite(PINF_16) .OR. ieee_is_finite(NINF_16)) then
-              error stop 2 
+              error stop 2
            endif
         endif
 
@@ -78,7 +68,7 @@
               error stop 4
            endif
        endif
- 
+
        if (ieee_support_datatype(NHD_16) .AND. ieee_support_datatype(NTD_16)) then
            if (ieee_is_finite(NHD_16) .neqv. .true.) then
               error stop 5
@@ -88,7 +78,7 @@
            endif
        endif
 
-!...test with PZERO_16 and PZERO2_16 values       
+!...test with PZERO_16 and PZERO2_16 values
         if (ieee_support_datatype(PZERO_16) .AND. ieee_support_datatype(PZERO2_16)) then
            if (ieee_is_finite(PZERO_16) .neqv. .true.) then
               error stop 7
@@ -98,14 +88,14 @@
            endif
         endif
 
-!...test with positive normal 
+!...test with positive normal
         if (ieee_support_datatype(pos_r1)) then
            if (ieee_is_finite(pos_r1) .neqv. .true. ) then
               error stop 9
            endif
         endif
 
-       if (ieee_support_datatype(pos_r2)) then    
+       if (ieee_support_datatype(pos_r2)) then
            if (ieee_is_finite(pos_r2) .neqv. .true.) then
               error stop 10
            endif

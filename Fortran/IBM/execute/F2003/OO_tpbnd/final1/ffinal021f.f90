@@ -1,35 +1,29 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
+! %PRECMD: rm -f *.mod
 ! %COMPOPTS:  -qfree=f90
-! %GROUP: ffinal021f.f 
+! %GROUP: ffinal021f.f
 ! %VERIFY: ffinal021f.out:ffinal021f.vf
 ! %STDIN:
-! %STDOUT: ffinal021f.out 
+! %STDOUT: ffinal021f.out
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : ffinal021f.f
-!*  TEST CASE TITLE            : type-bound procedure
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : final subroutines 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : final subroutines
 !*
-!*  DESCRIPTION                : testing final subroutines: 
+!*  SECONDARY FUNCTIONS TESTED :
+!*
+!*  DESCRIPTION                : testing final subroutines:
 !*                               derived type with pointer attribute.
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
@@ -39,7 +33,7 @@ module m
     contains
         final :: finalizeBase
     end type
-    
+
     type, extends(base) :: child
     contains
        final :: finalizeChild
@@ -70,7 +64,7 @@ subroutine example
 use m
     type(base), pointer :: dt1
     type(child), pointer  :: dt2
-   
+
     print *, "example"
 
 end subroutine

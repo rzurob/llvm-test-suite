@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgScan8
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 28, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : INDEX 
+!*  SECONDARY FUNCTIONS TESTED : INDEX
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  
-!*  Long string(128*128*8) 
-!*    
-!*  () 
+!*  Long string(128*128*8)
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -42,13 +33,13 @@
   INTEGER(8) :: I8
 
   INTEGER   :: I, J
-  CHARACTER(LEN=128*128*8) :: C 
-  CHARACTER(LEN=128*128*8) :: CC(8) 
-  
+  CHARACTER(LEN=128*128*8) :: C
+  CHARACTER(LEN=128*128*8) :: CC(8)
+
 
   DO I=1, LEN(C)
-    C(I:I)= ACHAR(MOD(I,128)) 
-    CC(:)(I:I)= ACHAR(MOD(I,128)) 
+    C(I:I)= ACHAR(MOD(I,128))
+    CC(:)(I:I)= ACHAR(MOD(I,128))
   END DO
 
 

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp Common1.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Common1.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Common1.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 28, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Common block - diaignosis on C588
 !*  (304771)
 !*
@@ -54,22 +48,22 @@
 
  END MODULE
 
-  PROGRAM Common1 
+  PROGRAM Common1
   USE M
 
   PROCEDURE(CF), POINTER, BIND(C) :: ProcPtr
   COMMON ProcPtr
 
-  PROCEDURE(CF)          :: ExtFun 
-  COMMON ExtFun 
+  PROCEDURE(CF)          :: ExtFun
+  COMMON ExtFun
 
-   
+
   CONTAINS
 
   SUBROUTINE IntSub(ProcPtr)
   PROCEDURE(CF), POINTER,  BIND(C) :: ProcPtr
   COMMON ProcPtr
-  END SUBROUTINE 
+  END SUBROUTINE
 
 
   END

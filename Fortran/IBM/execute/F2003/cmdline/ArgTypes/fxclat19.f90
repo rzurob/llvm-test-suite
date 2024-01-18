@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: export CmdLine="fxclat19   1 -2 --3"
-! %COMPOPTS:  -qfree=f90 
+! %COMPOPTS:  -qfree=f90
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,36 +12,29 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat19.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Tests command line intrinsic routines by passing constants which are  
+!*  DESCRIPTION                : Tests command line intrinsic routines by passing constants which are
 !*                             : out of range with various optional arguments as intent(in) actual arguments
 !*                             : Key arguments are not in normal order
-!*       
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -65,7 +58,7 @@
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 3 ) & 
+      if ( CmdCount .ne. 3 ) &
       then
         error stop 63
       endif
@@ -94,11 +87,11 @@
       endif
 
 
-       
+
       NUMBER = CmdCount + 1  ! Out of Range
 
       call GET_COMMAND_ARGUMENT(LENGTH=LENGTH, NUMBER=NUMBER,  STATUS=STATUS, VALUE=VALUE)
-   
+
       if ( STATUS .eq. 0)        &
       then
         error stop 67
@@ -116,9 +109,9 @@
         error stop 69
       endif
 
-  
-      call GET_ENVIRONMENT_VARIABLE('_Cmd_Line_   ', VALUE, LENGTH, STATUS, .true.) 
-      ! no such environment variable	
+
+      call GET_ENVIRONMENT_VARIABLE('_Cmd_Line_   ', VALUE, LENGTH, STATUS, .true.)
+      ! no such environment variable
 
       if ( STATUS .eq. 0)        &
       then
@@ -132,9 +125,9 @@
       endif
 
 
-      END 
- 
+      END
 
 
-  
- 
+
+
+

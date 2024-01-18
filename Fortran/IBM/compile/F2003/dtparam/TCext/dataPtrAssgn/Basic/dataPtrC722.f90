@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrC722.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dataPtrC722.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  C722 (R736) A data-pointer-component-name shall be the name of a component of variable
-!*  that is a data pointer. 
-!*   
+!*  that is a data pointer.
 !*
 !*  ()
 !*
@@ -59,9 +51,9 @@
 
   TYPE(DT(4,1,3)),   TARGET  :: Arr(1)
 
-  ASSOCIATE (As => Arr(1)%Ptr) 
+  ASSOCIATE (As => Arr(1)%Ptr)
     AS(1:) => Arr
-    As(1:1) => Arr 
+    As(1:1) => Arr
   END ASSOCIATE
 
   Arr(1)%ProcPtr(1:) => Arr(1)%Ptr

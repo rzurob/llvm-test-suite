@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgILbound3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : LBOUND 
+!*  SECONDARY FUNCTIONS TESTED : LBOUND
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,25 +19,23 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  Returns all the lower bounds or a specified lower bound of an array 
-!*    
-!*  (322642) 
+!*  Returns all the lower bounds or a specified lower bound of an array
+!*
+!*  (322642)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   PROGRAM kindArgILbound3
   IMPLICIT NONE
-  
+
   INTEGER(1) :: I1
   INTEGER(2) :: I2
   INTEGER(4) :: I4, I
   INTEGER(8) :: I8
-     
-  CHARACTER(:), ALLOCATABLE    :: CC(:,:,:,:,:,:,:,:,:) 
-  !CHARACTER(128)    :: CC(1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9) 
+
+  CHARACTER(:), ALLOCATABLE    :: CC(:,:,:,:,:,:,:,:,:)
+  !CHARACTER(128)    :: CC(1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9)
   INTEGER           :: II(9) = (/(I, I=1,9)/)
 
   ALLOCATE(CHARACTER(128) :: CC(1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9))

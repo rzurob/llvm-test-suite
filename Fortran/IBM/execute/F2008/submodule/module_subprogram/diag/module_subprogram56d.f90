@@ -1,20 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : module_subprogram56d
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 6 December, 2012
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : submodule
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -38,14 +32,13 @@ implicit none
     module subroutine sub2(x)
       integer x
     end subroutine
-  
+
     module function func2(x)
       integer x
       real :: func2
     end function
   END INTERFACE
 END MODULE m
-
 
 SUBMODULE (m) n
 CONTAINS
@@ -56,7 +49,7 @@ CONTAINS
 
   module procedure sub2
     integer x
-    a = x 
+    a = x
   end
- 
+
 END SUBMODULE n

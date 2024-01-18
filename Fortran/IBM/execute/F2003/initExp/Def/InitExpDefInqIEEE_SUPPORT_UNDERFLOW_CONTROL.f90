@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefInqIEEE_SUPPORT_UNDERFLOW_CONTROL.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefInqIEEE_SUPPORT_UNDERFLOW_CONTROL.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 05, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,20 +19,18 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an IEEE inquiry function
-!* 
-!*  -  IEEE_SUPPORT_UNDERFLOW_CONTROL 
-!* 
-!*  (319323) -- 
-!*  According to feature 289080, XL Fortran does not support the underflow control 
+!*
+!*  -  IEEE_SUPPORT_UNDERFLOW_CONTROL
+!*
+!*  (319323) --
 !*  and this function always returns false
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM  InitExpDefInqIEEE_SUPPORT_UNDERFLOW_CONTROL 
+  PROGRAM  InitExpDefInqIEEE_SUPPORT_UNDERFLOW_CONTROL
   USE IEEE_ARITHMETIC
   IMPLICIT NONE
   INTEGER :: I, J, K
@@ -62,7 +54,7 @@
 
   LOGICAL  :: T= IEEE_SUPPORT_UNDERFLOW_CONTROL()
 
-  
+
   IF (  IEEE_SUPPORT_UNDERFLOW_CONTROL(X=T4)  )   STOP 11
   IF (  IEEE_SUPPORT_UNDERFLOW_CONTROL(T8)  )     STOP 12
   IF (  IEEE_SUPPORT_UNDERFLOW_CONTROL(X=T6)  )   STOP 13
@@ -80,4 +72,4 @@
   END
 
 
- 
+

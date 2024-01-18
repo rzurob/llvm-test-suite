@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpCOSD.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpCOSD.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 17, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,10 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!* 
 !*  COSD  -- An IBM extension
-!*  
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,15 +36,15 @@
   END TYPE
 
   CONTAINS
-  
+
   SUBROUTINE ModSub(Arg)
   CLASS(DT) :: Arg
-  END SUBROUTINE 
+  END SUBROUTINE
 
   END MODULE
 
 
-  PROGRAM InitExpCOSD 
+  PROGRAM InitExpCOSD
   USE M
   IMPLICIT NONE
   INTEGER :: I, J, K
@@ -61,19 +52,19 @@
   TYPE(DT), PARAMETER :: Param=DT()
 
 
-  TYPE(DT) ::  T,Arr1(1) 
+  TYPE(DT) ::  T,Arr1(1)
   PARAMETER  (  Arr1=(/DT(R4=(/COSD(X=60.)/), R8=(/COSD(X=120.D0)/), R6=(/COSD(X=240.Q0)/))/) )
 
   TYPE, EXTENDS(DT) :: DT1
   END TYPE
- 
+
   TYPE(DT1) :: Arr2(1) =(/DT1(DT=DT(R4=(/COSD(X=360.)/), R8=(/COSD(X=-360.0)/), R6=(/COSD(X=0.Q0)/)))/)
 
   TYPE(DT) ::  T1=DT(R8=(/DCOSD(X=360.D0)/), R6=(/QCOSD(X=360.Q0)/))
 
-  LOGICAL precision_R8 
-  LOGICAL precision_R6 
- 
+  LOGICAL precision_R8
+  LOGICAL precision_R6
+
   IF (KIND(T%R4)     .NE.  4 )                    STOP 11
   IF ( ANY(T%R4      .NE.  0.5))                  STOP 12
 
@@ -119,4 +110,4 @@
 
   END
 
- 
+

@@ -1,15 +1,10 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : dtpUseAssociated05a
-!*  TEST CASE TITLE            : specification-exprs with MODULE Entities
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : July 13, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Two MODULEs USE Associated with a Subprogram
 !*                               with a common USE Associated MOUDLE wtih
@@ -17,7 +12,6 @@
 !*  SECONDARY FUNCTIONS TESTED : Where specification-exprs contain simple
 !*                               calculations
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

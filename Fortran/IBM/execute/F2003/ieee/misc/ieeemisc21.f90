@@ -12,27 +12,21 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : ieeemisc21.f
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : April 15, 2002
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : nint()
 !*				 ieee_invalid
 !*
 !*  REFERENCE                  : Feature 180920
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This testcase verifies that when an 
-!*				 invalid argument is passed to the 
+!*  DESCRIPTION                : This testcase verifies that when an
+!*				 invalid argument is passed to the
 !*				 NINT function, ieee_invalid flag
-!*				 is set to true.  
-!*				 The testcase also verifies that the other 
+!*				 is set to true.
+!*				 The testcase also verifies that the other
 !*				 flags remain clear and false.
 !*
 !* ===================================================================
@@ -46,7 +40,7 @@
 	  implicit none
 
 	  logical*4 flag_values(5)
-	
+
           integer                 int0,int00,int000,int0000,int00000
           integer*1               int1, int11,int111
           integer*2               int2, int22,int222
@@ -70,7 +64,7 @@
 !***********************************************************************
 
 !***********************************************************************
-!*  Check to see that positive infinity will cause IEEE invalid exception 
+!*  Check to see that positive infinity will cause IEEE invalid exception
 !*  flag to signal. No other flags should be triggered.
 !***********************************************************************
 !*  default integer and real(4) positive infinity

@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxiosendeor013.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,21 +12,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxiosendeor013
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Aug. 19, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : is_iostat_end and is_iostat_eor intrinsics
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This tests the functionality of the intrinsic when args
 !*                               to the intrinsic are arrays sections and the intrinsics
@@ -44,9 +37,9 @@
       logical :: cmp(4)
 
       logical :: res1end(4) = IS_IOSTAT_END(arr(2:5))
-      
+
       logical :: res1eor(4) = IS_IOSTAT_EOR(arr(2:5))
-      
+
       cmp = cmpend .eqv. res1end
       do i = 1, 4
          if( .not. cmp(i) ) then

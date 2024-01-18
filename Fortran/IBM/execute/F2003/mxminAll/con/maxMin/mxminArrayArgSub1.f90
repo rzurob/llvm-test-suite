@@ -1,27 +1,15 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX/MIN with named constant as actual
 !*                               argument to subprogram - no optional
 !*                               argument
 !*
-!*                
 !*                               inside sub. argument of max/min is assumed-size!*                               array, automatic array and assumed length array
 !*
 !* ===================================================================
@@ -42,17 +30,17 @@
                 error stop 9_4
            endif
         end subroutine
-  end module 
+  end module
 
-  program mxminArrayArgSub1 
-    
+  program mxminArrayArgSub1
+
     use subArg
 
     interface
         function func1(carg, n)
-          character(*), dimension(*) :: carg 
+          character(*), dimension(*) :: carg
           character(n), dimension(2*n) :: func1
-        end function 
+        end function
     end interface
 
     character*3 x(4), z1(2,3) , z2(2,3)
@@ -67,7 +55,7 @@
 
     if(any(max(x, y) .ne. "ddd")) then
           error stop 2_4
-    endif 
+    endif
 
     call sub1(max(x,y), 4)
 
@@ -86,8 +74,8 @@
             character(*), dimension(*) :: carg
             integer iarg
             character*3  carray(iarg)
-            character*3, parameter::darg(4) = "zzz" 
-             
+            character*3, parameter::darg(4) = "zzz"
+
             carray = "xxx"
 
             if(any(max(carg(1:4), carray, darg) .ne. "zzz")) then
@@ -97,15 +85,15 @@
                    error stop 6_4
             endif
 
-         end subroutine 
+         end subroutine
 
-  end program mxminArrayArgSub1 
+  end program mxminArrayArgSub1
 
   function func1(carg, n)
-       character(*), dimension(*) :: carg 
+       character(*), dimension(*) :: carg
        character(n), dimension(2*n) :: func1
        do i = 1, 2*n
            func1(i) = carg(i)
        end do
   end function
-   
+

@@ -3,7 +3,7 @@
 ! %MAIN: YES
 ! %PRECMD:
 ! %COMPOPTS: -qfixed
-! %GROUP: mxmnch22.f 
+! %GROUP: mxmnch22.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
@@ -12,26 +12,19 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : mxmnch22
-!*
-!*  PROGRAMMER                 : John Zang
 !*  DATE                       : Oct. 20, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support character argument for MAX/
 !*                               MIN/MAXVAL/MINVAL/MAXLOC/MINLOC
 !*  SECONDARY FUNCTIONS TESTED : Functional test
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  : -qfixed
 !*
 !*  DESCRIPTION                : MAX/MIN - Maximum or minimum value
 !*                               according to their collating sequence
-!*                               of ASCII characters. 
+!*                               of ASCII characters.
 !*                               MAXVAL/MINVAL - Maximum or minimum value
 !*                               of elements in a character array.
 !*                               MAXLOC/MINLOC - The location of maximum
@@ -54,17 +47,17 @@
       bb = '!'
       bb(87, 34) = '8734'
       bb(3, 92) = '0392'
-      if (maxval(bb) /= '8734') error stop 3 
+      if (maxval(bb) /= '8734') error stop 3
 
       bb = z'7f'
       bb(87, 34) = '8734'
       bb(3, 92) = '0392'
-      if (minval(bb) /= '0392') error stop 4 
+      if (minval(bb) /= '0392') error stop 4
 
       if (len(maxval(aa(0:-1))) /= 10) error stop 5
       if (len(minval(aa(0:-1))) /= 10) error stop 6
 
-      do i = 1, 10 
+      do i = 1, 10
         if (maxval(aa(0:-1))(i:i) /= '\0') call zzrc(7+i)
         if (minval(aa(0:-1))(i:i) /= z'7f') call zzrc(8+i)
         if (maxval(bb, mask=bb .eq. 'abcde')(i:i) /= '\0')

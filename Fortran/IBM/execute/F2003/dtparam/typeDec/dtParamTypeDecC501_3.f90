@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_3
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 24, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,13 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
-!*  -- An object designator with a base object that is made accessible 
+!*  -- An object designator with a base object that is made accessible
 !*     by use association or host association
-!*   
 !*
-!*  () 
+!*  ()
 !   JX:2008-06-11: try to fix it. Only can guess what's the original test
 !   intention.
 !*
@@ -56,7 +48,7 @@
     TYPE(DT0(KIND, LEN)) :: T!=DT0(KIND, KIND-3)()
   END TYPE
 
-  TYPE(DT(KIND=4,          LEN=1)), SAVE :: T0(1)  
+  TYPE(DT(KIND=4,          LEN=1)), SAVE :: T0(1)
   INTEGER :: I
   COMMON /A/I
 
@@ -66,7 +58,7 @@
 
   PROGRAM dtParamTypeDecC501_3
   USE M
-  TYPE(DT(KIND=4,          LEN=1)) :: T1(1)  
+  TYPE(DT(KIND=4,          LEN=1)) :: T1(1)
 
   i = 1
   CALL IntSub( [DT(KIND=4_1, LEN=1_8)(t=t01)] )
@@ -76,14 +68,14 @@
   SUBROUTINE IntSub(T1)
   type(dt(len=*)) t1(1)
 
-  TYPE(DT(4,     LEN=T0(1)%I))  :: T2(1)!  =  DT(4, LEN=T0(1)%DT0%I)() 
-  TYPE(DT(4,     L=T1%LEN))      :: T3(1)!  =  DT(4, L=T1%LEN)() 
+  TYPE(DT(4,     LEN=T0(1)%I))  :: T2(1)!  =  DT(4, LEN=T0(1)%DT0%I)()
+  TYPE(DT(4,     L=T1%LEN))      :: T3(1)!  =  DT(4, L=T1%LEN)()
 
   INTEGER :: J ! J is in common block A. However this was rejected. 336160
   EQUIVALENCE(J,I)
   COMMON /A/J  ! This was added after rejection
 
-  TYPE(DT(4,        L=J))      :: T4(1)!  =  DT(4, L=J)() 
+  TYPE(DT(4,        L=J))      :: T4(1)!  =  DT(4, L=J)()
 
   IF ( T1%K               .NE.   4          ) STOP 11
   IF ( T1%L               .NE.   1          ) STOP 12

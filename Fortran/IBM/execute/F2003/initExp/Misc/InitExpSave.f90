@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpSave.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpSave.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 29 2006
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,18 +19,14 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  The save attribute 
-!* 
-!*  
-!* 
+!*  The save attribute
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpSave 
+  PROGRAM InitExpSave
 
   INTERFACE
     SUBROUTINE ExtSub(Arg1, Arg2)
@@ -55,7 +45,7 @@
   SUBROUTINE ExtSub(Arg1, Arg2)
   INTEGER :: Arg1
   LOGICAL :: Arg2
- 
+
   INTEGER(KIND=1)  :: I1(128)=1
   INTEGER(KIND=2)  :: I2(128)=1
   INTEGER(KIND=4)  :: I4(128)=1
@@ -75,7 +65,7 @@
   COMPLEX(16):: Z6(128)=(1.,-1.)
 
   CHARACTER(LEN=1, KIND=1) :: C(128)=ACHAR(1)
- 
+
 
   IF ( ANY(I1   .NE. Arg1 ) ) STOP 11
   IF ( ANY(I2   .NE. Arg1 ) ) STOP 12
@@ -115,9 +105,9 @@
   Z8 = Z8 + (1, -1)
   Z6 = Z6 + (1, -1)
 
-  C = ACHAR(IACHAR(C) + 1) 
+  C = ACHAR(IACHAR(C) + 1)
 
   END SUBROUTINE
 
 
- 
+

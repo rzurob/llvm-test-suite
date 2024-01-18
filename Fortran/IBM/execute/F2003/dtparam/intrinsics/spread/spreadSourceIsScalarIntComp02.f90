@@ -1,26 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsScalarIntComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsScalarIntComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 13 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 13 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
-!*  1. SECTION 13.7.114 
+!*  1. SECTION 13.7.114
 !*  2. SOURCE IS SCALAR
 !*  3. IF SOURCE IS SCALAR, EACH ELEMENT OF THE RESULT HAS A VALUE EQUAL TO SOURCE
 !*  4. IF SOURCE IS SCALAR,THE SHAPE OF RESULT IS (MAX(NCOPIES,0)
@@ -33,7 +25,7 @@ module m
       integer,len  :: l
       integer(k)   :: i1(l-1:l+1)
       integer(2*k),pointer ::i2(:)=>null()
-      integer(k),allocatable :: i3(:) 
+      integer(k),allocatable :: i3(:)
    end type
 end module
 
@@ -46,7 +38,7 @@ program spreadSourceIsScalarIntComp02
   type(dtp(2,3))             :: dtp1
   type(dtp(2,:)),allocatable :: dtp2(:)
   type(dtp(2,:)),pointer     :: dtp3(:)
-  
+
   dtp1=dtp(2,3)(i1=[1,2,3],i3=[-4,-5,-6,-7])
   allocate(dtp1%i2(3:7),source=(/(-i,i=1,5)/))
 
@@ -61,10 +53,10 @@ program spreadSourceIsScalarIntComp02
        if(any(x(i)%i2 /= [-1,-2,-3,-4,-5]))               error stop 16_4
        if(lbound(x(i)%i3,1) /= 1)                         error stop 17_4
        if(ubound(x(i)%i3,1) /= 4)                         error stop 18_4
-       if(any(x(i)%i3 /= [-4,-5,-6,-7]))                  error stop 19_4       
+       if(any(x(i)%i3 /= [-4,-5,-6,-7]))                  error stop 19_4
     end do
     dtp2=x
-  end associate    
+  end associate
 
   if(size(dtp2,1) /= 33)                                  error stop 20_4
   if(dtp2%l /= 3 .or. dtp2%k /= 2)                        error stop 21_4

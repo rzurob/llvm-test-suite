@@ -1,23 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquida
 !*  DATE                       : 02/20/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
-!*
 !*  DESCRIPTION                : Testing: Section 10.6.5 DT edit descriptor
-!*                               scalar polymorphic derived type variable with 
+!*                               scalar polymorphic derived type variable with
 !*                               abstract type (read)
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -105,9 +94,9 @@ use m
 
    read ( 1, "(DT'c2'(10,5))", iostat = stat, iomsg = msg )  c2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioread' ) ) error stop 3_4
-   
+
    print *, rbuffer
-   
+
    select type ( b1 )
       type is ( child )
          if ( ( b1%i /= 200 ) .or. ( b1%c /= 'abc' ) )  error stop 4_4
@@ -130,7 +119,7 @@ use m, only: base, child, rbuffer, idx
 
    character(20) :: fmt
    character(3) :: tmp
-   
+
    write ( rbuffer(idx), * ) iotype, v_list
    idx = idx + 1
 

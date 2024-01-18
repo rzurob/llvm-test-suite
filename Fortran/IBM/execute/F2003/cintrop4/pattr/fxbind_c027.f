@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,26 +13,18 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c027.f
-!* TEST CASE TITLE              : BIND(C) attribute
-!*
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Jan. 1, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute 
+!* DESCRIPTION                  : Test: BINC(C) attribute
 !*                                with C_ptr type of integer, real
-!*                                logical(1), character(1). Using module 
+!*                                logical(1), character(1). Using module
 !*                                subroutine. C calls Fortran.
 !*                                with binding labels
 !* ===================================================================
@@ -52,12 +39,12 @@
 module m
 contains
        subroutine sub_int(i1, i2) bind(c, name = "extsub_int")
-           use iso_c_binding 
+           use iso_c_binding
            type(C_PTR) :: i1
            type(C_PTR) :: i2
            i1 = i2
        end subroutine sub_int
-      
+
        subroutine sub_real(r4) bind(c, name = "extsub_real")
            use iso_c_binding
            logical precision_r4
@@ -69,14 +56,14 @@ contains
            end if
        end subroutine sub_real
 
-       subroutine sub_log(l1, l2) bind(c, name = "extsub_log") 
+       subroutine sub_log(l1, l2) bind(c, name = "extsub_log")
            use iso_c_binding
            type(C_PTR) ::  l1
            type(c_ptr) ::  l2
            l1 = l2
        end subroutine sub_log
 
-       subroutine sub_char(ch1, ch2) bind(c, name = "extsub_char") 
+       subroutine sub_char(ch1, ch2) bind(c, name = "extsub_char")
            use iso_c_binding
            type(C_PTR) ::  ch1
            type(c_ptr) ::  ch2

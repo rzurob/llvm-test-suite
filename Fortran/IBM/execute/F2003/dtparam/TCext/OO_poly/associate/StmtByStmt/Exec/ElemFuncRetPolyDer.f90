@@ -3,34 +3,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  ElemFuncRetPolyDer.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  ElemFuncRetPolyDer.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : ElemFuncRetPolyDer 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : ElemFuncRetPolyDer
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -38,8 +32,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is an elemental func call returning a poly var 
-!*    of derived type 
+!*    The selector is an elemental func call returning a poly var
+!*    of derived type
 !*    ( Comp Failed)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,7 +50,7 @@
     TYPE, EXTENDS(Base) :: Child    ! (4)
       INTEGER(K1)  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -75,12 +69,12 @@
 
   END MODULE
 
-  PROGRAM ElemFuncRetPolyDer  
+  PROGRAM ElemFuncRetPolyDer
   USE M
-  Type(Child(4)) :: V(2, 2) 
-  
+  Type(Child(4)) :: V(2, 2)
+
   ASSOCIATE ( As => Func( V ) )
-    IF ( .NOT. ALL ( SHAPE(As) .EQ. (/2,2/)) ) STOP 81 
+    IF ( .NOT. ALL ( SHAPE(As) .EQ. (/2,2/)) ) STOP 81
     IF( ANY(As%BaseId       .NE. -1) ) STOP 46
     IF( ANY(As%Base%GetId() .NE. -1) ) STOP 47
     IF( ANY(As%GetId()      .NE. -2) ) STOP 48
@@ -96,9 +90,9 @@
     ASSOCIATE ( As => Arg)
       SELECT TYPE (As )
       TYPE IS (Child(4))
-        Func = Child(4)(BaseId=-1, ChildId=-2) 
+        Func = Child(4)(BaseId=-1, ChildId=-2)
       END SELECT
     END ASSOCIATE
-  END FUNCTION 
+  END FUNCTION
 
   END

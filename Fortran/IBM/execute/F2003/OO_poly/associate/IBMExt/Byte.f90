@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Byte.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Byte.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Byte 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Byte
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 05, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,13 +30,13 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is of byte 
-!*    () 
+!*    The selector is of byte
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM Byte 
+  PROGRAM Byte
   IMPLICIT NONE
 
   CLASS(*),   POINTER :: BPtr
@@ -53,43 +47,43 @@
 
   ASSOCIATE ( As => B  )
     IF ( As .NE. 1_1 ) STOP 11
-  END ASSOCIATE 
+  END ASSOCIATE
 
   BPtr => C
   ASSOCIATE ( As => BPtr  )
     SELECT TYPE ( As )
     CLASS DEFAULT
-      STOP 20 
+      STOP 20
     TYPE IS (CHARACTER(*))
       IF ( As .NE. "!" ) STOP 21
       AS = "1"
       IF ( C .NE. "1" ) STOP 22
     END SELECT
-  END ASSOCIATE 
+  END ASSOCIATE
 
   BPtr => I
   ASSOCIATE ( As => BPtr  )
     SELECT TYPE ( As )
     CLASS DEFAULT
-      STOP 30 
+      STOP 30
     TYPE IS (INTEGER(1))
       IF ( As .NE. -1 ) STOP 31
       AS = 1
       IF ( I .NE. 1 ) STOP 32
     END SELECT
-  END ASSOCIATE 
+  END ASSOCIATE
 
   BPtr => L
   ASSOCIATE ( As => BPtr  )
     SELECT TYPE ( As )
     CLASS DEFAULT
-      STOP 40 
+      STOP 40
     TYPE IS (LOGICAL(1))
       IF ( .NOT. As ) STOP 41
-      AS = .FALSE. 
+      AS = .FALSE.
       IF ( L ) STOP 42
     END SELECT
-  END ASSOCIATE 
+  END ASSOCIATE
 
   BPtr => B
   ASSOCIATE ( As => BPtr  )
@@ -107,6 +101,6 @@
       AS = -1
       IF ( B .NE. -1 ) STOP 52
     END SELECT
-  END ASSOCIATE 
+  END ASSOCIATE
 
   END

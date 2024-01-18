@@ -1,13 +1,6 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 30/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTENT, VOLATILE
 !*
@@ -25,13 +18,13 @@
           VOLATILE b
         end subroutine
      end interface
- 
-    real x 
+
+    real x
     procedure(sub) :: subnew
     procedure(sub), pointer :: p
 
     x = 3.0
-    p => subnew 
+    p => subnew
 
     call p(x)
 

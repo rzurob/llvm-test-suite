@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  redherring.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp C812ArrConstr.f 
+! %POSTCMD: tcomp C812ArrConstr.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : C812ArrConstr 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : C812ArrConstr
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 3, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Constraint C812 
+!*  SECONDARY FUNCTIONS TESTED : Constraint C812
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,12 +30,12 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is an array constructor, the corresponding associate name 
+!*    The selector is an array constructor, the corresponding associate name
 !*    appears in variable denifition context
-!*    () 
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
 
 
   MODULE M
@@ -55,7 +49,7 @@
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -75,12 +69,12 @@
   END MODULE
 
 
-  PROGRAM C812ArrConstr 
+  PROGRAM C812ArrConstr
   USE M
   IMPLICIT NONE
   CLASS(*), ALLOCATABLE :: AllocV
 
-  ALLOCATE( Child :: AllocV) 
+  ALLOCATE( Child :: AllocV)
 
   SELECT TYPE ( As => (/AllocV, AllocV, AllocV/) )
     TYPE IS (INTEGER)
@@ -88,9 +82,9 @@
     CLASS DEFAULT
       STOP 30
     TYPE IS (Child)
-      As = Child(ChildId = -2) 
+      As = Child(ChildId = -2)
       STOP 50
-  END SELECT 
+  END SELECT
   STOP 40
 
   END

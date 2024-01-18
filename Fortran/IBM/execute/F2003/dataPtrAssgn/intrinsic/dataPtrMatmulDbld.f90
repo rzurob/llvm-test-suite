@@ -1,25 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dataPtrMatmulCmplx.f
 !*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : Aug 31, 2006
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION
 !* - double precsion/complex pointers variable as args of matmul
 !* - pointer of type double precision, target of type real*8
-!* - pointer of type double complex, target of type complex*16 
-!* - lb of data-pointer is pointer of integer*1 
+!* - pointer of type double complex, target of type complex*16
+!* - lb of data-pointer is pointer of integer*1
 !* - data-pointers initialized by data statement
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -45,15 +39,15 @@ end module
 	complex*16, target :: c16P(2) = (/(2.0D+01,1.0D+01), &
 		(1.0D+01,2.0D+01) /)
 	integer*1, pointer :: intP
- 
+
         DATA b1%p, a1%p / null(), null() /
 
 	if (associated(b1%p)) stop 1
 	if (associated(a1%p)) stop 2
 
-	! double complex pointer, complex*16 target 
-	a1%p(0:1,1:1) => c16P 
-	if ( .not. associated(a1%p) ) stop 5 
+	! double complex pointer, complex*16 target
+	a1%p(0:1,1:1) => c16P
+	if ( .not. associated(a1%p) ) stop 5
 	if ( any ( lbound(a1%p) .ne. (/ 0, 1/) )) stop 7
 	if ( any ( ubound(a1%p) .ne. (/ 1, 1/) )) stop 9
 

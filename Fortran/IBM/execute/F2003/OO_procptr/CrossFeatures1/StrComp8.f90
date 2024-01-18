@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: StrComp8.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: StrComp8.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : StrComp8.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : StrComp8.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Procedure pointer components 
-!*  (FaileD - 267618) 
+!*
+!*  Procedure pointer components
+!*  (FaileD - 267618)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -50,11 +44,11 @@
     END TYPE
 
     INTERFACE Base
-      FUNCTION ExtFun(C, ProcPtr) 
+      FUNCTION ExtFun(C, ProcPtr)
         IMPORT
         TYPE(Base)                    :: ExtFun
         CHARACTER(3)                  :: C
-        PROCEDURE(CHARACTER(3))       :: Proc 
+        PROCEDURE(CHARACTER(3))       :: Proc
       END FUNCTION
     END INTERFACE
 
@@ -64,22 +58,22 @@
   CHARACTER(3) :: CFun
     CFun = "OK!"
   END FUNCTION
- 
+
   END MODULE
- 
+
   FUNCTION ExtFun(C, Proc)
   USE M, ONLY: Base
 
   TYPE(Base)                 :: ExtFun
   CHARACTER(3)               :: C
   PROCEDURE(CHARACTER(3))    :: Proc
-    ExtFun%ProcPtr => Proc 
-    ExtFun%C = C 
+    ExtFun%ProcPtr => Proc
+    ExtFun%C = C
   END FUNCTION
 
-  PROGRAM StrComp8  
+  PROGRAM StrComp8
   USE M, ONLY: Base, CFun
-  IMPLICIT CHARACTER(3)(P) 
+  IMPLICIT CHARACTER(3)(P)
 
   TYPE(Base)  :: U
 

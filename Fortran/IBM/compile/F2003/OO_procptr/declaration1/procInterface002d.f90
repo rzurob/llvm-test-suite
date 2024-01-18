@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_procptr/declaration1
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 04/18/2005
 ! PRIMARY FUNCTIONS TESTED   : procedure pointer declaration
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Do not specify proc-interface. The
 !                              associated procedure is either an
 !                              internal function or an internal

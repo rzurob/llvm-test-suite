@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatAsynSequential01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatAsynSequential01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 21 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 21 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test asynchronous IO with sequential access method
-!* 2. derived type has nested component which has sequence property 
+!* 2. derived type has nested component which has sequence property
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type inner(k1,l1)
@@ -29,7 +21,7 @@ module m
      integer,len  :: l1 ! l1=3
      sequence
      complex(2*k1) :: x1
-     character(l1+1) :: c1(l1)     
+     character(l1+1) :: c1(l1)
   end type
 
   type outer(k2,l2)
@@ -41,7 +33,7 @@ module m
   end type
 
   contains
-   
+
     subroutine readData(unit,dt)
        integer,intent(in) :: unit
        type(outer(4,*)),asynchronous,intent(inout) :: dt(:)
@@ -53,7 +45,7 @@ module m
        read(unit,fmt='(f7.2,f7.3)',asynchronous="yes") dt(1)%comp%x1
        read(unit,fmt='(3a4)',asynchronous="yes") dt(1)%comp%c1
 
-       ! execute other statement 
+       ! execute other statement
        if(dt%l2 /= 2)        stop 17
        if(dt%comp%l1 /= 3)   stop 18
 
@@ -73,14 +65,14 @@ module m
        wait(unit,id=idvar)
 
        call writeDT(dt(2))
-  
+
        contains
 
              subroutine writeDT(dt)
                 type(outer(4,*)),intent(in) :: dt
 
                 write(*,'(4i5/2l2/f7.2,f7.3/3a4)') dt
-             end subroutine 
+             end subroutine
     end subroutine
 
 end module
@@ -119,7 +111,7 @@ program formatAsynSequential01
      print *,"fail to open the file"
      print *,"iostat=",ios
      print *,"iomsg=",msg
-     
+
      stop 10
   end if
 
@@ -136,7 +128,7 @@ program formatAsynSequential01
   wait(10,id=idvar1)
   wait(10,id=idvar2)
 
-   
+
   inquire(10,pending=pending1,asynchronous=asychar1,id=idvar1)
   inquire(10,pending=pending2,asynchronous=asychar2,id=idvar2)
 

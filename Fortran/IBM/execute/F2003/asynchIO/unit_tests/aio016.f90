@@ -19,6 +19,6 @@
          error stop 2
        end if
 
-       close(11, status="delete") 
+       close(11, status="delete")
 
        end

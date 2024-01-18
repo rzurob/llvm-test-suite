@@ -4,17 +4,14 @@
 ! %PRECMD:
 ! %COMPOPTS: -qhalt=w
 ! %GROUP: intrimod20a.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod20a.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
@@ -54,7 +51,7 @@
                do k = 1, 5
                   if (flag_values(k) .neqv. .false. ) stop 10
                enddo
-           
+
                call ieee_get_status(status_value)
                call ieee_set_rounding_mode(rt_nearest)
                call ieee_get_rounding_mode(rtype)
@@ -64,14 +61,14 @@
                call ieee_set_status(status_value)
 
                call set_fpscr_flags(flags(1))
-               call clr_fpscr_flags(flags(5)) 
+               call clr_fpscr_flags(flags(5))
                if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
                if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 18
 
             end subroutine sub1
 
 
-            logical function fun1() 
+            logical function fun1()
 
                flags = (/ fp_overflow, fp_div_by_zero, fp_invalid, &
      &               fp_underflow, fp_inexact /)
@@ -80,7 +77,7 @@
                do k = 1, 5
                   if (flag_values(k) .neqv. .false. ) stop 30
                enddo
-           
+
                call ieee_get_status(status_value)
                call ieee_set_rounding_mode(rt_nearest)
                call ieee_get_rounding_mode(rtype)
@@ -90,7 +87,7 @@
                call ieee_set_status(status_value)
 
                call set_fpscr_flags(flags(1))
-               call clr_fpscr_flags(flags(5)) 
+               call clr_fpscr_flags(flags(5))
                if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 37
                if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 38
 

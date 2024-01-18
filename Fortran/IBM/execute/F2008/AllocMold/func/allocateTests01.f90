@@ -1,19 +1,11 @@
 !* ==================================================================
-!* XL Fortran Test Case                          IBM INTERNAL USE ONL
-!* ==================================================================
 !*
-!* TEST CASE TITLE            : allocateTests01.f
-!*
-!* PROGRAMMER                 : Izhak Jakov
 !* DATE                       : June 2, 2015
 !* ORIGIN                     : AIX Compiler Development,
-!*                            : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !* SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!* DRIVER STANZA              : xlf2008
 !* REQUIRED COMPILER OPTIONS  :
 !*
 !* KEYWORD(S)                 :
@@ -23,11 +15,10 @@
 !* DESCRIPTION                : Modified unit test to verify the
 !*                              the print statements
 !*
-!*
 !* Defect 112510
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-  
+
 MODULE M
 
   TYPE ONE
@@ -36,7 +27,7 @@ MODULE M
 
   TYPE  :: Zero
     PRIVATE
-  END TYPE 
+  END TYPE
 
   TYPE, EXTENDS(Zero)  :: Base
     INTEGER :: BaseId = 1
@@ -70,15 +61,15 @@ program main
 
   allocate(b1, b3, source=one(id=90), stat=q)
   if (q.ne.0) error stop(10)
-  print *, "B1 = ", b1%id, nl, "B3 = ", b3%id 
-  
+  print *, "B1 = ", b1%id, nl, "B3 = ", b3%id
+
   allocate(w,x, source=Child(BaseID=-1, ChildID=-2), stat=q)
   if (q.ne.0) error stop(20)
   allocate(y,z, mold=Child(BaseID=-1, ChildID=-2), stat=q)
   if (q.ne.0) error stop(30)
   print *, "W = ", w, nl, "X = ", x
   print *, "Y = ", y, nl, "Z = ", z
- 
+
   allocate(a(2,2,2), b, source=(3.0_16,4.0_16), stat=q)
   if (q.ne.0) error stop(40)
   allocate(c, mold=g, stat=q)
@@ -93,40 +84,40 @@ program main
   if ( ubound(c,2) .NE.   3 ) error stop(904)
   if ( lbound(d,1) .NE.   1 ) error stop(905)
   if ( ubound(d,1) .NE.   1 ) error stop(906)
-  
+
   allocate(p4,p7, mold=22, stat=q)
   if (q.ne.0) error stop(55)
   print *, "P4 =", p4, nl, "P7 =", p7
-  
+
   p4=-22
   allocate(p3)
   p3=p4
-  print *, "P3 =", p3        
+  print *, "P3 =", p3
   allocate(p1,p2, source=p3, stat=q)
   if (q.ne.0) error stop(60)
   print *, "P1 =", p1, nl, "P2 =", p2
- 
-  print *, "P7 =", p7 
+
+  print *, "P7 =", p7
   p7=p4
   print *, "P7 =", p7
   allocate(p5,p6, mold=p7, stat=q)
   if (q.ne.0) error stop(70)
   print *, "P5 =", p5, nl, "P6 =", p6
-  
+
   allocate (b2, b4, source=b1, stat=q)
   if (q.ne.0) error stop(80)
   print *, "B2 =", b2%id, nl, "B4 =", b4%id
-  
+
   allocate (b2, b4, mold=b3, stat=q)
   if (q.ne.0) error stop(90)
   print *, "B2 =", b2%id, nl, "B4 =", b4%id
-  
+
   k = 59
 
   allocate (i,j, source=k, stat=q)
   if (q.ne.0) error stop(100)
   print *, "I =", i, nl, "J =", j
-  
+
   deallocate(i,j)
   allocate (i, mold=-3, stat=q)
   if (q.ne.0) error stop(110)
@@ -140,7 +131,7 @@ program main
   if (q.ne.0) error stop(120)
   if (.not. allocated(i)) error stop(125)
   if (.not. allocated(j)) error stop(128)
-          
+
   deallocate(i,j)
   allocate (i,j,mold=2, stat=q)
   if (q.ne.0) error stop(130)

@@ -1,55 +1,47 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with different data edit descriptor.
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*    test different ROUND mode with different data edit descriptor with
 !*    real*4.
 !* ===================================================================
 
-  program roundR4WriteEdit01 
+  program roundR4WriteEdit01
 
     implicit none
- 
-    character(18) :: r_mode 
+
+    character(18) :: r_mode
     real w1, w2, w3, w4
 
-    integer, parameter::unit = 2 
+    integer, parameter::unit = 2
 
     ! round in up mode
 
     open(unit, file='roundR4WriteEdit01.out', action='write', round="up")
 
-    w1 = 1.250058651 
+    w1 = 1.250058651
     w2 = -1.250058651
     w3 = 3.141592653589
-    w4 = 2.718281828459 
+    w4 = 2.718281828459
 
-    write(unit, '(4x,f7.5, 1x, f8.5)') w1, w2 
+    write(unit, '(4x,f7.5, 1x, f8.5)') w1, w2
 
     inquire(unit, round=r_mode)
 
     if(r_mode .ne. 'UP') then
        error stop 1_4
     endif
- 
+
     write(unit, '(f13.6, 1x, en13.6, 1x, es13.6, 1x, g13.5, 1x, d13.5, &
     & 1x, e13.5)') w3, w4, w3, w4, w3, w4
 
     inquire(unit, round=r_mode)
 
     if(r_mode .ne. 'UP') then
-       error stop 2_4 
+       error stop 2_4
     endif
 
     ! round in down mode
@@ -182,4 +174,4 @@
 
     close(unit)
 
-  end program roundR4WriteEdit01 
+  end program roundR4WriteEdit01

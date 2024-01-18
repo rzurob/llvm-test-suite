@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecImplicit2.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpecImplicit2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,24 +19,20 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  intrinsic-type-spec in implicit stmt 
-!* 
-!*  
-!* 
+!*  intrinsic-type-spec in implicit stmt
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypSpecImplicit2 
+  PROGRAM InitExpTypSpecImplicit2
   IMPLICIT  CHARACTER(KIND=KIND(0_1))           (A)
   IMPLICIT  CHARACTER(LEN=A%LEN+1, KIND=A%KIND) (B)
   IMPLICIT  CHARACTER(B%LEN+1,     KIND=B%KIND) (C)
 
   INTEGER :: I
-  
+
   DIMENSION    :: A(128)
   PARAMETER      (A=[(CHAR(I), I=0, 127)])
   DIMENSION    :: B(128)
@@ -64,4 +54,4 @@
 
   END
 
- 
+

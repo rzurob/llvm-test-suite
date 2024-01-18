@@ -1,21 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : valueAttrMaxLen001 - VALUE Attribute
 !*                               (CHARACTER Length > 1)
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April 25, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Dummy Argument of Type Character of Maximum
 !*                               Length (approx. 256Mb) (actually 127Mb --
 !*                               refer to the NOTE below)
 !*  SECONDARY FUNCTIONS TESTED : Dummy Argument has the VALUE Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : VALUE Attribute
@@ -64,12 +58,10 @@
 !*              parameter values shall be omitted or specified by
 !*              initialization expressions.
 !*
-!*
 !*  5.1.2.15 VALUE attribute
 !*
 !*  The VALUE attribute specifies a type of argument association (12.4.1.2)
 !*  for a dummy argument.
-!*
 !*
 !*  5.2.14 VALUE statement
 !*
@@ -78,13 +70,12 @@
 !*  The VALUE statement specifies the VALUE attribute (5.1.2.15) for a list
 !*  of dummy arguments.
 !*
-!*
 !*  12.4.1.2 Actual arguments associated with dummy data objects
 !*
 !*  If the dummy argument has the VALUE attribute it becomes associated with
 !*  a definable anonymous data object whose initial value is that of the
 !*  actual argument. Subsequent changes to the value or definition status of
-!*  the dummy argument do not affect the actual argument. 
+!*  the dummy argument do not affect the actual argument.
 !*
 !*  NOTE 12.22
 !*  Fortran argument association is usually similar to call by reference and

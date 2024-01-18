@@ -12,20 +12,14 @@
 ! %END
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         INBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxmdvp07.f
 !
-!* PROGRAMMER                   : Yubin Liao
 !* DATE                         : Sep. 24, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    : -qfree=f90
 !*
 !* DESCRIPTION                  : Test the interoperability of real module
@@ -109,10 +103,10 @@ do i = 1, 10
       ERROR STOP 54
     END IF
 end do
-  
+
 
 do j= 1, 10
-   do k = 1, 10 
+   do k = 1, 10
       IF(.not.precision_r4(w2(k,j),2.0) .or. &
          .not.precision_r4(x2(k,j),2.0) .or. &
          .not.precision_r8(y2(k,j),2.0D0) .or. &
@@ -161,4 +155,4 @@ z2 = 0.0Q0
 z3 = 0.0Q0
 
 
-end 
+end

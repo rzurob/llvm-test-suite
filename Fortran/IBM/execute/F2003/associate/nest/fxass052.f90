@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass052.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass052.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -55,7 +43,7 @@
 !*  CONDITIONS TESTED          : Listed below.
 !*
 !*  DESCRIPTION                : Test: NESTED ASSOCIATE
-!*                                     with expressions and with 
+!*                                     with expressions and with
 !*                                     real, real*4, real*8, real*16
 !*                                     double precision data types.
 !*
@@ -99,7 +87,7 @@
       c8 = a8 + (b8 + 1)*10.0
       c16 = a16 + (b16 + 1)*10.0
       cc = aa + (bb + 1)*10.0
- 
+
 !-----------   ASSOCIATE with REAL expressions ----------------
 
       assoc: associate ( arg => a )

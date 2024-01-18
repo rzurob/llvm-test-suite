@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/28/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Abstract type with IMPLICIT STATEMENT
 !*                                        IMPLICIT legal polymorphic non-abstract type that is extension of abstract type
@@ -48,34 +32,34 @@
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
-   
+
    type, abstract :: base(k1)
       integer, kind :: k1
       integer(k1) :: id
    end type
-   
+
    type, extends(base) :: child(k2)
       integer, kind :: k2
    end type
-   
+
 end module
 
 program implicit006
-   use m  
+   use m
    IMPLICIT class(child(4,4)) (A-F)
-   
+
    pointer Aa
    allocatable Bb
 
    type(child(4,4)) :: c1 = child(4,4)(5)
    class(child(4,4)), allocatable :: c2
-   
-   allocate(c2, source = child(4,4)(5) ) 
-   
+
+   allocate(c2, source = child(4,4)(5) )
+
    allocate(Aa, source = c1)
    allocate(Bb, source = c2)
-      
+
    if ( Aa%id .ne. c1%id ) error stop 1_4
    if ( Bb%id .ne. c1%id ) error stop 2_4
-      
+
 end program

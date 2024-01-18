@@ -12,21 +12,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc 
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that scalar variables
 !*                               inside of common blocks are interoperable with C variables.
@@ -35,12 +28,11 @@
 !*
 !*                               Scope being tested:  main program
 !*
-!*				 Test one COMMON statements with multiple 
+!*				 Test one COMMON statements with multiple
 !*				 common blocks in one BIND(C) statement
 !*
 !*                               Similar to fxcmn_blk403.f, but this testcase will
 !*                               test complex(C_LONG_DOUBLE_COMPLEX) as well
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -110,7 +102,7 @@ program fxcmn_blk403a
         ,   /blk_cmplx_LONG_DOUBLE_COMPLEX_a/               cmplx_LONG_DOUBLE_COMPLEX_a &
         ,   /blk_cmplx_LONG_DOUBLE_COMPLEX_b/               cmplx_LONG_DOUBLE_COMPLEX_b &
         ,   /blk_cmplx_LONG_DOUBLE_COMPLEX_c/               cmplx_LONG_DOUBLE_COMPLEX_c &
-        ,   /blk_cmplx_LONG_DOUBLE_COMPLEX_d/               cmplx_LONG_DOUBLE_COMPLEX_d        
+        ,   /blk_cmplx_LONG_DOUBLE_COMPLEX_d/               cmplx_LONG_DOUBLE_COMPLEX_d
 
 
 
@@ -134,7 +126,7 @@ program fxcmn_blk403a
        ,  /blk_cmplx_LONG_DOUBLE_COMPLEX_a/  &
        ,  /blk_cmplx_LONG_DOUBLE_COMPLEX_b/  &
        ,  /blk_cmplx_LONG_DOUBLE_COMPLEX_c/  &
-       ,  /blk_cmplx_LONG_DOUBLE_COMPLEX_d/ 
+       ,  /blk_cmplx_LONG_DOUBLE_COMPLEX_d/
 
 
 

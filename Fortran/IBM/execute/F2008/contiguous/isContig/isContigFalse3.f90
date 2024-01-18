@@ -1,24 +1,13 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : isContigFalse3.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS intrinsic 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS intrinsic
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              :
-!*
-!*  DESCRIPTION                : - 
-!*                      
+!*  DESCRIPTION                : -
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -32,20 +21,20 @@
 MODULE Mod1
       IMPLICIT NONE
 
-      TYPE DT0  
-        CHARACTER(10) :: C0 
+      TYPE DT0
+        CHARACTER(10) :: C0
       END TYPE DT0
 
       TYPE DT1 (k1,l1)
         INTEGER, KIND :: k1 = 4
         INTEGER, LEN  :: l1 = 10
 
-        INTEGER(k1) :: I1 
+        INTEGER(k1) :: I1
         CHARACTER(k1) :: C1
       END TYPE DT1
 
       TYPE DT2 (l1)
-        INTEGER, LEN  :: l1 = 10    
+        INTEGER, LEN  :: l1 = 10
 
         CHARACTER(l1) :: C2
       END TYPE DT2

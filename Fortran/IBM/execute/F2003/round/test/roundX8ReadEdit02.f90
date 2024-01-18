@@ -1,18 +1,10 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 24/07/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ROUND with READ statement
-!*                             
 !*
-!*  DESCRIPTION                : 
+!*  DESCRIPTION                :
 !*           test round for complex(8) during READ with derived type
 !*           component.
 !*           10.6.1.2.6. The rounding mode can be specified by a data
@@ -20,7 +12,7 @@
 !*           edit descriptor.
 !* ===================================================================
 
-  program roundX8ReadEdit02 
+  program roundX8ReadEdit02
 
     implicit none
 
@@ -28,10 +20,10 @@
       complex(8) rd
     end type
 
-    character(18) :: r_mode 
+    character(18) :: r_mode
     type(dt) :: dtype
 
-    integer, parameter::unit_r = 2 
+    integer, parameter::unit_r = 2
 
     dtype%rd = (0.0D0, 0.0D0)
 
@@ -43,7 +35,7 @@
 
     inquire(unit_r, round=r_mode)
 
-    if(r_mode .ne. 'UP') error stop 1_4 
+    if(r_mode .ne. 'UP') error stop 1_4
 
     if(transfer(dreal(dtype%rd), 0_8) .ne. 4608308547941528973_8)then
            error stop 2_4
@@ -59,7 +51,7 @@
 
     open(unit_r, file='roundX8ReadEdit02.dat', action='read', round="down")
 
-    read(unit_r, '(2f15.13)') dtype%rd 
+    read(unit_r, '(2f15.13)') dtype%rd
 
     inquire(unit_r, round=r_mode)
 
@@ -80,7 +72,7 @@
 
     open(unit_r, file='roundX8ReadEdit02.dat', action='read')
 
-    read(unit_r, '(2f15.13)') dtype%rd 
+    read(unit_r, '(2f15.13)') dtype%rd
 
     inquire(unit_r, round=r_mode)
 
@@ -100,7 +92,7 @@
 
     open(unit_r, file='roundX8ReadEdit02.dat', action='read', round="zero")
 
-    read(unit_r, '(2f15.13)') dtype%rd 
+    read(unit_r, '(2f15.13)') dtype%rd
 
     inquire(unit_r, round=r_mode)
 
@@ -120,7 +112,7 @@
 
     open(unit_r, file='roundX8ReadEdit02.dat', action='read', round="nearest")
 
-    read(unit_r, '(2f15.13)') dtype%rd 
+    read(unit_r, '(2f15.13)') dtype%rd
 
     inquire(unit_r, round=r_mode)
 
@@ -141,7 +133,7 @@
     open(unit_r, file='roundX8ReadEdit02.dat', action='read',      &
        & round="processor_defined")
 
-    read(unit_r, '(2f15.13)') dtype%rd 
+    read(unit_r, '(2f15.13)') dtype%rd
 
     inquire(unit_r, round=r_mode)
 
@@ -162,7 +154,7 @@
     open(unit_r, file='roundX8ReadEdit02.dat', action='read',      &
       & round="compatible")
 
-    read(unit_r, '(2f15.13)') dtype%rd 
+    read(unit_r, '(2f15.13)') dtype%rd
 
     inquire(unit_r, round=r_mode)
 
@@ -178,4 +170,4 @@
 
     close(unit_r)
 
-  end program roundX8ReadEdit02 
+  end program roundX8ReadEdit02

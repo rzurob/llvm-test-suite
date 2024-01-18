@@ -1,18 +1,14 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArraySections/r616.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jul. 09, 2008
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 353925
 !*
 !*  DESCRIPTION:
 !*  Tests R616 (array-element) and C617 (R616):
-!*  Every part-ref shall have rank zero and the last part-ref shall contain a 
+!*  Every part-ref shall have rank zero and the last part-ref shall contain a
 !*  subscript-list
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -37,7 +33,7 @@ integer, parameter :: N = 3
 type (dt2(:)), dimension(10:12), allocatable :: arrdt(:)
 allocate(dt2(N) :: arrdt(10:12));
 
-! Array-element: every part-ref shall have rank zero and the last part-ref 
+! Array-element: every part-ref shall have rank zero and the last part-ref
 ! shall contain a subscript-list:
 arrdt(10)%arr2(3)%arr1(2,3) = 5
 print *,kind(arrdt(10)%arr2(3)%arr1(2,3))

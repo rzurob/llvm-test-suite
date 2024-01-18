@@ -1,25 +1,17 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : AssumedType04d
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : June 13, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop: Assumed Type objects
 !*
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2008
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Assumed type object as the first argument of
 !*    IS_CONTIGUOUS, LBOUND, UBOUND, PRESENT, SHAPE, RANK, SIZE and C_LOC
-!*                              
 !*
 !**********************************************************************
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -29,12 +21,12 @@ module  mod
   contains
   function mod_fnc1(a) result(res)
      type(*), optional :: a
-     logical :: res 
+     logical :: res
 
      res = present(a)
-  end function mod_fnc1 
+  end function mod_fnc1
 
-  subroutine module_sub1(a,b,c) 
+  subroutine module_sub1(a,b,c)
      type(*), optional :: a
      type(*), target :: b(:)
      type(*) :: c(:)
@@ -54,15 +46,15 @@ end module mod
 program AssumedType04d
 implicit none
 
-contains 
+contains
 
-  logical function fnc1(a) 
+  logical function fnc1(a)
      type(*), optional :: a
 
      fnc1 = present(a)
-  end function fnc1 
+  end function fnc1
 
-  subroutine sub1(a,b,c) 
+  subroutine sub1(a,b,c)
      type(*), optional :: a
      type(*), target :: b(:)
      type(*) :: c(:)

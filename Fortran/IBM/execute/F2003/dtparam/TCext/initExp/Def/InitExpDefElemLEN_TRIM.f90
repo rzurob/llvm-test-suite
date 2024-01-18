@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemLEN_TRIM.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemLEN_TRIM.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,10 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an elemental intrinsic
-!* 
-!*  -  LEN_TRIM 
+!*
+!*  -  LEN_TRIM
 !*  (318833)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -40,8 +33,8 @@
 
 
   PROGRAM  InitExpDefElemLEN_TRIM
-!  IMPLICIT INTEGER(KIND(LEN_TRIM(C%C1)))(A) 
-  IMPLICIT INTEGER(KIND(LEN_TRIM("   ")))(A) 
+!  IMPLICIT INTEGER(KIND(LEN_TRIM(C%C1)))(A)
+  IMPLICIT INTEGER(KIND(LEN_TRIM("   ")))(A)
   INTEGER :: I, J
 
   TYPE :: DT(K1,N1)    ! (4,10)
@@ -53,7 +46,7 @@
     CHARACTER(N1) :: C4="123456789"//CHAR(0)
   END TYPE
 
-  TYPE(DT(4,10)), PARAMETER :: C(128)=DT(4,10)() 
+  TYPE(DT(4,10)), PARAMETER :: C(128)=DT(4,10)()
 
   INTEGER(KIND(LEN_TRIM(C%C1))), PARAMETER :: TC1(128) = LEN_TRIM(C%C1)
   INTEGER(KIND(LEN_TRIM(C%C2))), PARAMETER :: TC2(128) = LEN_TRIM(C%C2)

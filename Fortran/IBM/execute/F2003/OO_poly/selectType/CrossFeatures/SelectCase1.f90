@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: SelectCase1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: SelectCase1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : SelectCase1 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : SelectCase1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 04, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,22 +30,21 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!* Select Case 
+!*
+!* Select Case
 !* (ICE)
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM SelectCase1 
+  PROGRAM SelectCase1
   IMPLICIT CLASS(*)(U)
-  TYPE :: DT 
+  TYPE :: DT
     INTEGER :: Int
-    CHARACTER(3) :: C 
+    CHARACTER(3) :: C
   END TYPE
   INTEGER :: i
- 
+
   CALL Sub(6_8)
 
   CONTAINS
@@ -61,8 +54,8 @@
 A:SELECT TYPE (U)
   TYPE IS (INTEGER(4))
     STOP 30
-  TYPE IS (INTEGER(8)) 
-  
+  TYPE IS (INTEGER(8))
+
 B:  SELECT CASE (U)
     CASE (:5_8)
       STOP 20

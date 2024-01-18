@@ -1,15 +1,11 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : acetdt01bkkl
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetdt01b
 !*                               by David Forster)
 !*  DATE                       : 2007-12-11 (original: 2006-09-13)
 !*  ORIGIN                     : Compiler Development,
-!*                               IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*                               (+ Array Constructor Enhancements)
@@ -20,13 +16,12 @@
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
 !*                               (original: Feature Number 289053)
 !*
-!*  DRIVER STANZA              : xlf2003 (original: xlf2003)
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : derived type, defined assignment, elemental,
 !*                               component
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -106,7 +101,7 @@ contains
     class (dt(4)), intent(in) :: that ! tcx: (4)
     this % datum = 2 * that % datum
   end subroutine dtAssignDt
- 
+
   subroutine init(pc, dtv, id, datum)
     class (pContainer(4,*)), intent(inout) :: pc ! tcx: (4,*)
     class (dt(4)), intent(inout), target :: dtv ! tcx: (4)

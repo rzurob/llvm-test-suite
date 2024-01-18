@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: ../ieeeconsts.f ../fake_ieee_modules.f intrimod11.f
 ! %VERIFY: intrimod11.out:../emptyout.vf
 ! %STDIN:
@@ -11,10 +11,7 @@
 ! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
 ! %END
 !************************************************************************
-!************************************************************************
 !*
-!*  FORTRAN TEST CASE            IBM INTERNAL USE ONLY
-!*  Test Case Title  : INTRINSIC/NON_INTRINSIC module nature
 !*  Test Case Name   : intrimod11.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
@@ -32,7 +29,7 @@
 
        module mod1
 
-         use, intrinsic :: xlf_fp_util, only:fpscr_kind     
+         use, intrinsic :: xlf_fp_util, only:fpscr_kind
 
          interface
             subroutine sub1(rt_nearest, flags)
@@ -49,11 +46,11 @@
 
        program intrimod11
 
-         use mod1     
+         use mod1
          use, intrinsic :: ieee_arithmetic, only : IEEE_NEAREST
          use, intrinsic :: xlf_fp_util, only : fp_overflow, fp_div_by_zero, &
      &               fp_invalid, fp_underflow, fp_inexact
-         implicit none 
+         implicit none
 
          flags = (/ fp_overflow, fp_div_by_zero, fp_invalid, &
      &               fp_underflow, fp_inexact /)
@@ -70,7 +67,7 @@
      &        ieee_set_rounding_mode, ieee_get_rounding_mode, ieee_rint,    &
      &        ieee_round_type, ieee_status_type, ieee_set_status
          use, non_intrinsic :: constants_for_ieee, only: PINF_4, NINF_4,    &
-     &                         PHD_4, PTD_4 
+     &                         PHD_4, PTD_4
          use, intrinsic :: xlf_fp_util, only : fp_overflow, fp_div_by_zero, &
      &               fp_invalid, fp_underflow, fp_inexact, fpscr_kind,      &
      &               set_fpscr_flags, clr_fpscr_flags, get_fpscr_flags
@@ -87,7 +84,7 @@
          do k = 1, 5
             if (flag_values(k) .neqv. .false. ) stop 10
          enddo
-         
+
          if (ieee_support_datatype(PINF_4) .AND. &
  	     ieee_support_datatype(NINF_4)) then
             if (ieee_is_finite(PINF_4) .OR. ieee_is_finite(NINF_4)) stop 12
@@ -107,7 +104,7 @@
 
 !... Testing xlf_fp_util module
          call set_fpscr_flags(flags(1))
-         call clr_fpscr_flags(flags(5)) 
+         call clr_fpscr_flags(flags(5))
          if ( get_fpscr_flags(flags(1)) .eq. 0 ) stop 17
          if ( get_fpscr_flags(flags(5)) .ne. 0 ) stop 18
 

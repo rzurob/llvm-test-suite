@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrExpArr.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrExpArr.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 09, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,17 +19,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Explicit shape array 
+!*  Explicit shape array
 !*
-!*  
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
-  PROGRAM dataPtrExpArr  
+  PROGRAM dataPtrExpArr
   IMPLICIT NONE
 
   INTEGER,      TARGET :: IArr(10,10)
@@ -51,13 +43,13 @@
 
   SUBROUTINE S(Arr, N, L, U)
   CLASS(*), TARGET  :: Arr(N, N)
-  INTEGER           :: N, L, U 
+  INTEGER           :: N, L, U
   CLASS(*), POINTER :: Ptr(:, :)
 
 
   N = 10000000 ! not affect Arr
 
-  Ptr(L:, L:) => Arr 
+  Ptr(L:, L:) => Arr
   IF (.NOT. ASSOCIATED(Ptr, Arr))                  STOP 11
   IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    STOP 12
   IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))    STOP 13
@@ -66,7 +58,7 @@
     IF (ANY( Ptr               .NE.   -1))         STOP 14
   TYPE IS (CHARACTER(*))
     IF (ANY( Ptr               .NE.  "123"))       STOP 15
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 16
   END SELECT
 
@@ -79,11 +71,11 @@
     IF (ANY( Ptr               .NE.   -1))         STOP 24
   TYPE IS (CHARACTER(*))
     IF (ANY( Ptr               .NE.  "123"))       STOP 25
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 16
   END SELECT
 
- 
+
   END SUBROUTINE
 
   END

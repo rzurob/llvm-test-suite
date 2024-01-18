@@ -16,23 +16,16 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : renameoperator007
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : Oct. 28, 2005
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : functional testing of renaming the operator in 
+!*  DESCRIPTION                : functional testing of renaming the operator in
 !*                               a USE statement
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -48,7 +41,7 @@ module mod
   interface operator (.add.)
     procedure addition
   end interface
-  
+
   interface operator (.plus.)
     procedure plus
   end interface
@@ -59,7 +52,7 @@ module mod
       type(real_num(*,4)), intent(in) :: a,b
       addition%x = a%x+b%x
     end function addition
-    
+
     function plus(a,b)
       integer :: plus
       integer, intent(in) :: a,b
@@ -80,5 +73,5 @@ use mod  , operator(.plus.) => operator(.add.), operator(.add.) => operator(.plu
   d=1
   e=2
   f=d.add.e
-  
+
 end program

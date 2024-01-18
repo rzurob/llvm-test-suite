@@ -1,44 +1,38 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn091g.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn091g.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn091g.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn091g.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : overriding 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
+!*
+!*  SECONDARY FUNCTIONS TESTED : overriding
 !*
 !*  DESCRIPTION                : parent procedures are inherited.
 !*                               with two levels inheritance.
 !*                               inherite from a different scoping units.
-!*    
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-	module mod	      
+	module mod
       integer :: int = 200
       character*20 :: c = "hi"
 
-		type base 
+		type base
          integer :: x
 		contains
       	procedure, nopass :: bind_b => proc1
@@ -55,8 +49,8 @@
          int = 0
          c = ""
       end subroutine
-	end module     
-   
+	end module
+
    module mod1
    use mod
    type, extends(base) :: parent
@@ -65,7 +59,7 @@
 
    module mod2
    use mod1
-   type, extends(parent) :: child 
+   type, extends(parent) :: child
    end type
    end module
 
@@ -88,4 +82,4 @@
    if (int .ne. 400)      error stop 8
    if (c .ne. "hi_again")    error stop 9
    end
-   
+

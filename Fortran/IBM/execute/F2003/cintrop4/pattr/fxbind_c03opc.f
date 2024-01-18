@@ -1,13 +1,8 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/runf.sh fxbind_c03opc 
+! %PRECMD: $TR_SRC/runf.sh fxbind_c03opc
 ! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -18,22 +13,14 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c03opc.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
-!*                             
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -44,7 +31,7 @@
 !*   - Primary entry point have  bind(c) attribute while  alternate
 !*     entry point do not have bind(c) attribute.
 !*   - Datatype :complex
-!*   
+!*
 !* ===================================================================
 !*  REVISION HISTORY
 !*

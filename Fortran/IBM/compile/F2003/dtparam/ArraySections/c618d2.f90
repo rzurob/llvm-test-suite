@@ -1,12 +1,8 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : F2003/dtparam/ArraySections/c618d2.f
-!*  PROGRAMMER                 : Gaby Baghdadi
 !*  DATE                       : Jul. 09, 2008
-!*  ORIGIN                     : Compiler Development, IBM Toronto Lab
 !*  PRIMARY FUNCTIONS TESTED   : Constraint C618 (R617)
 !*  REFERENCE                  : Feature Number 353925
 !*
@@ -14,9 +10,9 @@
 !*
 !*  Tests constraint C618 (R617) in a PDT with array components defined with
 !*  len type parameter size:
-!*  Tests constraint C618 (R617) in a PDT: In an array-section, exactly one 
-!*  part-ref shall have nonzero rank, and either the final part-ref shall have 
-!*  a section-subscript-list with nonzero rank or another part-ref shall have 
+!*  Tests constraint C618 (R617) in a PDT: In an array-section, exactly one
+!*  part-ref shall have nonzero rank, and either the final part-ref shall have
+!*  a section-subscript-list with nonzero rank or another part-ref shall have
 !*  nonzero rank.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

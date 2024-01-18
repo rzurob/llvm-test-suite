@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrNonDeferParam3.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtrNonDeferParam3.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 06, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,19 +23,18 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  If data-pointer-object has nondeferred type parameters that correspond to deferred
 !*  type parameters of data-target, data-target shall not be a pointer
-!*  with undefined association status. 
+!*  with undefined association status.
 !*
-!*  -- associated 
-!*  (not include type paramter for derived type) 
+!*  -- associated
+!*  (not include type paramter for derived type)
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtrNonDeferParam3 
+  PROGRAM dataPtrNonDeferParam3
   IMPLICIT NONE
 
   TYPE :: DT(K1,N1,K2,N2,K3,N3,K4,N4)    ! (1,4,1,2,1,2,1,1)
@@ -49,19 +42,19 @@
     INTEGER, LEN                       :: N1,N2,N3,N4
     CHARACTER(kind=K1,len=N1), POINTER :: PtrC4(:,:) =>NULL()
     CHARACTER(:), POINTER :: PtrC4Tar(:, :)
-  
+
     CHARACTER(:), POINTER :: PtrC3(:,:) =>NULL()
     CHARACTER(:), POINTER :: PtrC3Tar(:, :)
-  
+
     CHARACTER(kind=K2,len=N2), POINTER :: PtrC2(:,:) =>NULL()
     CHARACTER(kind=K3,len=N3), POINTER :: PtrC2Tar(:, :)
-  
+
     CHARACTER(:), POINTER :: PtrC1(:,:) =>NULL()
     CHARACTER(kind=K4,len=N4), POINTER :: PtrC1Tar(:, :)
   END TYPE
 
   TYPE (DT(1,4,1,2,1,2,1,1)) :: T
- 
+
 
   ALLOCATE(T%PtrC4Tar(100, 100), SOURCE="1234")
   T%PtrC4(0:, 0:) => T%PtrC4Tar

@@ -1,19 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Abstractr Interface
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Functional test
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : The procedure name inside an abstract 
+!*  DESCRIPTION                : The procedure name inside an abstract
 !*                               interface is treated as a local identifier.
 !*                               It can be the same as a common block name.
 !*
@@ -23,7 +16,7 @@ abstract interface
    integer function fun(a)
      real a
    end function
-end interface    
+end interface
 integer var, arg, num
 common /fun/ var
 var = 10

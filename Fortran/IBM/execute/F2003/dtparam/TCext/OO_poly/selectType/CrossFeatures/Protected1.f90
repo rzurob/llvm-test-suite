@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Protected1.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Protected1.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Protected 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Protected
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!* Protected 
-!* (Comp failed-299257) 
-!* 
+!*
+!* Protected
+!* (Comp failed-299257)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -68,29 +61,29 @@
       CHARACTER(kind=K1,len=N3) :: C2="2"
     END TYPE
 
-    TYPE(DT(1,513,1025,2049)),  SAVE, TARGET,  PROTECTED :: Tar 
-    CLASS(DT(1,:,:,:)), SAVE, POINTER, PROTECTED :: PPtr 
+    TYPE(DT(1,513,1025,2049)),  SAVE, TARGET,  PROTECTED :: Tar
+    CLASS(DT(1,:,:,:)), SAVE, POINTER, PROTECTED :: PPtr
 
     CONTAINS
 
     SUBROUTINE SetObj(Arg)
     CLASS(DT0(1,*)) :: Arg
       Arg%C0 = "SetDT0"
-    END SUBROUTINE 
+    END SUBROUTINE
 
     SUBROUTINE SetPtr(Ptr, Tar)
-    TYPE(DT(1,*,*,*)), TARGET  :: Tar 
-    CLASS(DT(1,:,:,:)), POINTER :: Ptr 
-      Ptr => Tar 
-    END SUBROUTINE 
+    TYPE(DT(1,*,*,*)), TARGET  :: Tar
+    CLASS(DT(1,:,:,:)), POINTER :: Ptr
+      Ptr => Tar
+    END SUBROUTINE
 
   END MODULE
 
-  PROGRAM Protected1 
+  PROGRAM Protected1
   USE M
   IMPLICIT NONE
 
-  CALL SetPtr(PPtr, Tar) 
+  CALL SetPtr(PPtr, Tar)
 
   SELECT TYPE (Ptr => PPtr)
   CLASS IS (DT(1,*,*,*))

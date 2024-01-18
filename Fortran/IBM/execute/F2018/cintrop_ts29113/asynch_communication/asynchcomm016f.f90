@@ -1,11 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             :/cintrop_ts29113/asynch_communication/asynchcomm016f.f
-!* FEATURE NAME                : C_Interop_Asynch_Communication 
-!*  PROGRAMMER                 : Tapti Vaid
+!* FEATURE NAME                : C_Interop_Asynch_Communication
 !*  DATE                       : 2013-10-07
 !*
 !*  DESCRIPTION
@@ -14,7 +11,7 @@
 !* Defined in: module
 !* Made asynchronous in: main
 !* Used for asynch communication in: main
-!* 
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -24,7 +21,7 @@ module mymod
 implicit none
 include 'mpif.h'
 real :: a0, res1=0, result1=0
-real :: b0, b1 
+real :: b0, b1
 end module mymod
 
 program asynch
@@ -36,7 +33,7 @@ LOGICAL precision_r4
 integer :: nt, rank, len, mpierror, rc, i
 integer :: status(MPI_STATUS_SIZE)
 integer, parameter :: TAG_SEND_ARR = 10, TAG_RES_READY = 11
-integer :: reqs(2) 
+integer :: reqs(2)
 
 ! initialization
        call MPI_INIT(mpierror)
@@ -57,7 +54,7 @@ if (rank .eq. 0) then
 b0 = 50
 a0 = 100
 
-	block 
+	block
 
 	asynchronous :: b0
 	call MPI_ISEND(b0, 1 , MPI_REAL, 1, TAG_SEND_ARR, MPI_COMM_WORLD, reqs(1), mpierror)
@@ -65,7 +62,7 @@ a0 = 100
 	result1 = sqrt(a0)
     call MPI_WAIT(reqs(1), status, mpierror)
 	b0 = a0*2 !Now that b0 has been sent we can alter its value
-	
+
 	end block
 
 !get the result from task 1
@@ -86,6 +83,6 @@ else !(if task# =1)
 
     end block
 end if
- 
+
 call MPI_FINALIZE(mpierror)
 end

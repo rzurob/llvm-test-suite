@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: fpscrrnd05.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,24 +12,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : IEEE modules - FPSCR save and restore
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : March 30, 2002
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*				 ieee_get_rounding_mode()
 !*				 ieee_set_rounding_mode()
 !*
 !*  REFERENCE                  : Feature 180920
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This is a FPSCR testcase. 
+!*  DESCRIPTION                : This is a FPSCR testcase.
 !*				 In this testcase, main program that uses IEEE
 !*				 calls subroutines which itself calls another
 !*				 subroutine from a module.
@@ -38,11 +32,11 @@
 !*                               entry into subroutine called by main program.
 !*
 !*				 Rule:
-!*  				 1) When returning from a procedure that 
+!*  				 1) When returning from a procedure that
 !*				 uses IEEE, the settings for
-!*  				 rounding mode return to the values 
+!*  				 rounding mode return to the values
 !*				 they had at procedure entry.
-!*				 
+!*
 !*                               2) Calls to procedures that do not use
 !*                               IEEE from procedures that do, the
 !*                               floating-point status will not change.
@@ -133,11 +127,11 @@ end module
 	  implicit none
 
           interface
-            subroutine ext_sub101() 
+            subroutine ext_sub101()
 	  	use ieee_arithmetic
             end subroutine
 
-            subroutine ext_sub201() 
+            subroutine ext_sub201()
 	  	use xlf_fp_util
             end subroutine
           end interface
@@ -152,7 +146,7 @@ end module
 
 !***********************************************************************
 !*** Rounding mode is ieee_up on entry into subroutine;
-!*** so on return rounding mode will be ieee_up. 
+!*** so on return rounding mode will be ieee_up.
 !***********************************************************************
 
 !*  Main program uses IEEE, and calls subroutine that uses IEEE.
@@ -177,7 +171,7 @@ end module
 !* ---------------------------------------------------------------------
 
 !*  Main program uses IEEE, and calls subroutine that uses IEEE,
-!*  which calls other subroutines that do or don't use IEEE 
+!*  which calls other subroutines that do or don't use IEEE
 !*  from modules.
 	  call ext_sub101()
           call ieee_get_rounding_mode(round_value)
@@ -260,7 +254,7 @@ end module
 !* ---------------------------------------------------------------------
 
 !***  Subroutines that do not use IEEE modules.
-!*  Rule:  When returning from a procedure that does not use IEEE, 
+!*  Rule:  When returning from a procedure that does not use IEEE,
 !*         the settings for rounding mode will return the last value
 !*         when the procedure exits.
 

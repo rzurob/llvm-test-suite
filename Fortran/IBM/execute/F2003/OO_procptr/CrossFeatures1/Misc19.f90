@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  Misc19.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  Misc19.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
-! %EXECARGS: 
-! %POSTCMD:  
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             :  Misc19.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,11 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  
-!*  Stucture cnstructor overwritting 
-!*  
-!*  
+!*
+!*  Stucture cnstructor overwritting
+!*
 !*  (Jim-267618)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -49,7 +41,7 @@
 
   Module M
 
-  TYPE :: DT 
+  TYPE :: DT
     SEQUENCE
     INTEGER                      :: ID
     PROCEDURE(), POINTER, NOPASS :: ProcPtr
@@ -71,7 +63,7 @@
   TYPE :: DT
     SEQUENCE
     INTEGER                             :: ID
-    PROCEDURE(INTEGER), POINTER, NOPASS :: ProcPtr 
+    PROCEDURE(INTEGER), POINTER, NOPASS :: ProcPtr
   END TYPE
 
   TYPE(DT) :: Arg(:)
@@ -83,7 +75,7 @@
 
   PROGRAM Misc19
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   INTERFACE  DT
 
@@ -104,8 +96,8 @@
   IF ( U%Id .NE. -1 )                          STOP 22
   IF ( .NOT. ASSOCIATED(U%ProcPtr, ModSub) )   STOP 23
 
-  V = DT((/(DT(-1, ModSub), i=1,3000)/) )   
-  DO I  = 1, 3000 
+  V = DT((/(DT(-1, ModSub), i=1,3000)/) )
+  DO I  = 1, 3000
     IF ( V(I)%Id .NE. -1 )                          STOP 32
     IF ( .NOT. ASSOCIATED(V(I)%ProcPtr, ModSub) )   STOP 33
   END DO

@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  redherring.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:  tcomp DerTypeComp.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : DerTypeComp
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 07, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -41,8 +35,8 @@
 !*
 !*  DESCRIPTION
 !*    Illegal usage on componet:
-!*    Abstract/private componet as selector   
-!*    () 
+!*    Abstract/private componet as selector
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -54,7 +48,7 @@
       INTEGER(K1)   :: BaseId = 1
     END TYPE
 
-  END MODULE 
+  END MODULE
 
   MODULE M1
   USE M0, DT0=>Base
@@ -72,7 +66,7 @@
   TYPE(DT(20,4)), SAVE :: T
 
   END MODULE
-  
+
   PROGRAM DerTypeSeq
   USE M, V=>T
   IMPLICIT NONE

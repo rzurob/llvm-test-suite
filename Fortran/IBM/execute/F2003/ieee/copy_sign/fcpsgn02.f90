@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Vasile Radulescu
 !*  DATE                       : February 15, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_COPY_SIGN
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  : -qfloat=nofold -qstrict
 !*
 !*  KEYWORD(S)                 :
@@ -60,7 +52,7 @@
         real(8), dimension(4) :: xnormal_res, ynormal_sgn
         real(8), dimension(2) :: xzero_res, yzero_sgn
         real(8), dimension(4) :: xdenorm_res, ydenorm_sgn
-        
+
         integer*8, dimension(2) :: iinf_res
         integer*8, dimension(4) :: inormal_res
         integer*8, dimension(2) :: izero_res
@@ -108,7 +100,7 @@
            error stop 4
         endif
 
-!...Test with arguments of different kinds 
+!...Test with arguments of different kinds
         xr_8 = -1.0_8
         yr_4 = 2.0
         if (ieee_support_datatype(xr_8) .and. ieee_support_datatype(yr_4)) then
@@ -124,7 +116,7 @@
            xr_4 = ieee_copy_sign(xr_4, yr_8)
            if ( xr_4 /= 1.0 ) then
               error stop 6
-           endif 
+           endif
         endif
 
         xr_8 = 1.0_8
@@ -180,26 +172,26 @@
               error stop 12
            endif
         endif
-     
+
         xr_8 = ieee_copy_sign(1.0_8, -2.0)
         if ( xr_8 /= -1.0_8 ) then
            error stop 13
-        endif 
+        endif
 
         xr_8 = -2.0_8
         xr_8 = ieee_copy_sign(xr_8, 7.0)
         if ( xr_8 /= 2.0_8 ) then
            error stop 14
         endif
-       
+
         xr_16 = -2.0_16
         xr_16 = ieee_copy_sign(xr_16, 7.0)
         if ( xr_16 /= 2.0_16 ) then
            error stop 15
         endif
-  
-!...Test with arrays and negative second argument  
-    
+
+!...Test with arrays and negative second argument
+
         yinf_sgn = -1.1_8
       if (ieee_support_datatype(inf_val) .and. ieee_support_datatype(yinf_sgn) &
      &      .and. ieee_support_datatype(xinf_res)) then
@@ -211,14 +203,14 @@
               error stop 17
            endif
       endif
-   
+
         ynormal_sgn = -1.0_8
        if (ieee_support_datatype(normal_val)  &
      &   .and. ieee_support_datatype(xnormal_res)) then
            xnormal_res = ieee_copy_sign(normal_val, ynormal_sgn)
            if (xnormal_res(1) /= -huge(PINF_8) ) then
               error stop 18
-           endif 
+           endif
            if (xnormal_res(2) /= -tiny(PINF_8) ) then
               error stop 19
            endif
@@ -241,7 +233,7 @@
               error stop 23
            endif
         endif
- 
+
         ydenorm_sgn = -1.0_8
         if (ieee_support_datatype(denormal_val) .and.  &
      &      ieee_support_datatype(xdenorm_res)) then
@@ -270,6 +262,6 @@
 
         end
 
- 
+
 
 

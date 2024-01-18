@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : cdaasRankChg
 !*
-!*  PROGRAMMER                 : dforster
 !*  DATE                       : 2010-09-29
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray dummy arguments - assumed size
 !*  SECONDARY FUNCTIONS TESTED : different rank (and dimensions) - actual vs. dummy

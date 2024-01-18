@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Alberto Alvarez-Mesquida
 !*  DATE                       : 02/20/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting implicit array objects and define implicit statement inside DTIO (Output)
@@ -53,13 +37,13 @@ module m
    contains
       procedure(inf),deferred, pass :: get
    end type
-   
+
    type, extends(abstractdata) :: data
       integer(4) :: i
    contains
       procedure, pass :: get
    end type
-   
+
    type :: base
       character(3) ::  c
       class(abstractdata), allocatable :: d
@@ -71,7 +55,7 @@ module m
          class(abstractdata), intent(in) :: dtv
       end function
    end interface
-   
+
    interface write(formatted)
       subroutine writeformatted(dtv, unit, iotype, v_list, iostat, iomsg )
          import base
@@ -92,9 +76,9 @@ module m
          character(*),  intent(inout) :: iomsg
       end subroutine
    end interface
-   
+
 contains
-  
+
    integer function get (dtv)
       class(data), intent(in) :: dtv
       get = dtv%i
@@ -124,7 +108,7 @@ program abstracti002
    allocate ( b2(3), source = (/ base(c='b21',d=data(2001)), base(c='b22',d=data(2002)), base(c='b23',d=data(2003)) /) )
    allocate ( z3(3), source = b2 )
    allocate ( z4(2,2), source = reshape ( source = (/ b1, b1 /), shape = (/2,2/) ) )
-   
+
    write (1,NML=nml1, iostat=stat, iomsg=msg)
    if (( stat /=  0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
 
@@ -135,9 +119,9 @@ end program abstracti002
 
 subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)
    use m, only: base, abstractdata, write(formatted), writeformatteddata
-   
+
    implicit class(abstractdata) (X)
-   
+
    class(base), intent(in) :: dtv
    integer, intent(in) :: unit
    character(*), intent(in) :: iotype
@@ -152,11 +136,11 @@ subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)
    if ( size(v_list, 1) /= 0 ) error stop 4_4
 
    write (unit, *, iostat=iostat )        dtv%c
-   
+
    if ( iostat /= 0 ) error stop 5_4
-   
+
    allocate ( x1, source = dtv%d )
-   write (unit, dtio, iostat=iostat )        
+   write (unit, dtio, iostat=iostat )
 
    iomsg = 'dtiowrite'
 

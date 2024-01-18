@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : inputComplexInf002.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : June 8, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -30,7 +24,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-      use, intrinsic :: ieee_arithmetic 
+      use, intrinsic :: ieee_arithmetic
       implicit none
 
       complex(4)  :: cx1
@@ -62,7 +56,7 @@
          cx1 = (0.0, 0.0) ! reset cx1
 
          read(unit,'(2E15.1)',iostat=ios) cx1
-         
+
          if ( is_iostat_end(ios) ) exit
 
          rl4r = real(cx1)
@@ -73,14 +67,14 @@
 
          if ( ieee_is_negative( rl4r ) .or.                   &
      &        ieee_is_negative( rl4i ) ) call zzrc(2000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
          print*, "Error: No or bad input file"
          stop 1
       end if
-      
+
       rewind(unit) ! reposition the file to the beginning.
       i = 0
 
@@ -91,7 +85,7 @@
          cx2 = (0.0, 0.0) ! reset cx2
 
          read(unit,'(2E15.1)',iostat=ios) cx2
-         
+
          if ( is_iostat_end(ios) ) exit
 
          rl8r = dreal(cx2)
@@ -102,14 +96,14 @@
 
          if ( ieee_is_negative( rl8r ) .or.                   &
      &        ieee_is_negative( rl8i ) ) call zzrc(4000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
          print*, "Error: No or bad input file"
          stop 1
       end if
-      
+
       rewind(unit) ! reposition the file to the beginning.
       i = 0
 
@@ -121,7 +115,7 @@
          cx3 = (0.0, 0.0) ! reset cx3
 
          read(unit,'(2E15.1)',iostat=ios) cx3
-         
+
          if ( is_iostat_end(ios) ) exit
 
          rl6r = qreal(cx3)
@@ -139,7 +133,7 @@
          print*, "Error: No or bad input file"
          stop 1
       end if
-      
+
       close(unit)
       i = 0
 
@@ -154,7 +148,7 @@
          cx1 = (0.0, 0.0) ! reset cx1
 
          read(unit,'(2E15.1)',iostat=ios) cx1
-         
+
          if ( is_iostat_end(ios) ) exit
 
          rl4r = real(cx1)
@@ -165,14 +159,14 @@
 
          if ( .not. ( ieee_is_negative( rl4r ) .and.                   &
      &                ieee_is_negative( rl4i ) ) ) call zzrc(8000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
          print*, "Error: No or bad input file"
          stop 1
       end if
-      
+
       rewind(unit) ! reposition the file to the beginning.
       i = 0
 
@@ -183,7 +177,7 @@
          cx2 = (0.0, 0.0) ! reset cx2
 
          read(unit,'(2E15.1)',iostat=ios) cx2
-         
+
          if ( is_iostat_end(ios) ) exit
 
          rl8r = dreal(cx2)
@@ -194,14 +188,14 @@
 
          if ( .not. ( ieee_is_negative( rl8r ) .and.                   &
      &                ieee_is_negative( rl8i ) ) ) call zzrc(10000_4+i)
-                  
+
       end do
 
       if ( i .le. 1 ) then
          print*, "Error: No or bad input file"
          stop 1
       end if
-      
+
       rewind(unit) ! reposition the file to the beginning.
       i = 0
 
@@ -213,7 +207,7 @@
          cx3 = (0.0, 0.0) ! reset cx3
 
          read(unit,'(2E15.1)',iostat=ios) cx3
-         
+
          if ( is_iostat_end(ios) ) exit
 
          rl6r = qreal(cx3)
@@ -231,7 +225,7 @@
          print*, "Error: No or bad input file"
          stop 1
       end if
-      
+
       close(unit)
 
 

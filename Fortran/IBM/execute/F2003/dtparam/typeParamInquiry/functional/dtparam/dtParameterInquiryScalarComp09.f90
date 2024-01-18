@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryScalarComp09.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryScalarComp09.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 8 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 8 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. ALLOCATABLE SCALAR LOGICAL,COMPLEX,REAL COMPONENT
@@ -38,7 +30,7 @@ module m
      integer(2),len         :: l2
      integer(2*2),len       :: l3
      integer(k4%kind),len   :: l4
-     
+
      logical(1),allocatable    :: a1
      logical(2),allocatable    :: a2
      logical(4),allocatable    :: a3
@@ -60,23 +52,23 @@ module m
      real(k3%kind),allocatable                  :: r9
      real(kind(real(3.0,kind=8))),allocatable   ::r10
 
-     complex,allocatable     :: x1 
+     complex,allocatable     :: x1
      complex(8),allocatable  :: x2
-     complex(16),allocatable :: x3  
+     complex(16),allocatable :: x3
      complex(selected_real_kind(9,10)),allocatable :: x4
      complex(kind((1.2e0,3.0e-1))),allocatable     :: x5
-     complex(kind(cmplx(12,kind=8))),allocatable   :: x6 
+     complex(kind(cmplx(12,kind=8))),allocatable   :: x6
 
    end type
 end module
 
-  program dtParameterInquiryScalarComp09 
+  program dtParameterInquiryScalarComp09
   use m
   implicit none
 
   type(base(1,2,3,4,5,6,7,8))  :: t
 
- 
+
   if(t%k1 /= 1)                                                error stop 10_4
   if(t%k2 /= 2)                                                error stop 11_4
   if(t%k3 /= 3)                                                error stop 12_4

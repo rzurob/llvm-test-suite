@@ -1,18 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : imageindex01.f
-!*
-!*  PROGRAMMER                 : Xing Xue
 !*  DATE                       : July 31, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IMAGE_INDEX intrinsic
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95_r
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : functional testing of the IMAGE_INDEX
@@ -22,7 +15,7 @@
 
   program ImageIndex01
   integer, save:: a[*], b(10)[10,-2:*], c(10,10)[10,0:9,0:*]
-  
+
   integer me
   integer ImageIndexAVector(1)
   integer ImageIndexBVector(2)
@@ -35,13 +28,13 @@
   ! case i
   ! image_index() takes an array as the argument SUB
   me = this_image()
-  ImageIndexAVector = [me] 
-  ImageIndexA = image_index(a, ImageIndexAVector) 
+  ImageIndexAVector = [me]
+  ImageIndexA = image_index(a, ImageIndexAVector)
   print *,me,': image_index(a, [me])=',ImageIndexA
-  ImageIndexBVector = [me,-2] 
+  ImageIndexBVector = [me,-2]
   ImageIndexB = image_index(B, ImageIndexBVector)
   print *,me,': image_index(b, [me,-2])=',ImageIndexB
-  ImageIndexCVector = [me,0,0] 
+  ImageIndexCVector = [me,0,0]
   ImageIndexC = image_index(C, ImageIndexCVector)
   print *,me,': image_index(c, [me,0,0])=',ImageIndexC
 
@@ -70,6 +63,6 @@ sync all
 end
 
 function foo(a)
-  integer foo, a 
+  integer foo, a
   foo = a
 end function foo

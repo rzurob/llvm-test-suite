@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpNamelist2
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 29, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The namelist statement
 !*  The order in which the variables are specified in the NAMELIST statement determines
 !*  the order in which the values appear on output.
-!* 
+!*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -61,7 +52,7 @@
     INTEGER(K2)   :: I(L2)=K2
   END TYPE
   SAVE
- 
+
   CONTAINS
 
   FUNCTION ModFun(Arg)
@@ -82,7 +73,7 @@
   CALL IntSub([R,R,R],[S,S,S],[T,T,T],3)
 
   CONTAINS
- 
+
   SUBROUTINE IntSub(r,s,t,N)
   INTEGER N
   TYPE(DT0(1,*))        :: R(N)
@@ -95,10 +86,10 @@
   NAMELIST /NL3/ T,R,S
 
   WRITE(*, NML=NL0)
-  WRITE(*, NML=NL1) 
+  WRITE(*, NML=NL1)
   WRITE(*, NML=NL2)
   WRITE(*, NML=NL3)
-  
+
   END SUBROUTINE
 
   END

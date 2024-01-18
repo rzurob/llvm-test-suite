@@ -1,21 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : actArgArraySectVectSub01d - ASYNCHRONOUS
 !*                               Attribute in Array Section Arguments
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April  6, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Actual Argument is an Array Section (with
 !*                               a Vector Subscript)
 !*  SECONDARY FUNCTIONS TESTED : Dummy Argument Specification explicitly
 !*                               includes the ASYNCHRONOUS Attribute
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ASYNCHRONOUS Attribute

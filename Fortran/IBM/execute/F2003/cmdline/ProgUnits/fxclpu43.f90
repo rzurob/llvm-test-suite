@@ -12,26 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpu43.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -39,9 +33,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Invoke command line procedures through pure procedures
-!*                             : 
-!*                             : 
-!*                             : 
+!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -65,7 +57,7 @@
 
 
         character(50)    :: Argument
- 
+
       END TYPE
 
 
@@ -79,7 +71,7 @@
       IMPLICIT NONE
 
 
-      INTERFACE 
+      INTERFACE
 
         PURE LOGICAL FUNCTION PF_GET_CMD()
         END FUNCTION
@@ -92,7 +84,7 @@
 
       END INTERFACE
 
- 
+
       LOGICAL  NumOfExec(10), LJunk(10)
       INTEGER  Junk(10), I
 
@@ -101,51 +93,51 @@
 
       NumOfExec = .true.
 
-      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.) 
+      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.)
         Junk(I) = COMMAND_ARGUMENT_COUNT()
       END FORALL
 
 
-      if ( ANY(Junk .ne. A.CmdCount ) ) & 
+      if ( ANY(Junk .ne. A.CmdCount ) ) &
       then
         error stop 73
       endif
 
 
-      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.) 
-        LJunk(I) = PF_GET_CMD() 
+      FORALL (I = 1:10, NumOfExec(I) .eqv. .true.)
+        LJunk(I) = PF_GET_CMD()
       END FORALL
 
 
-       if ( ANY(LJunk .eqv. .false. ) ) & 
+       if ( ANY(LJunk .eqv. .false. ) ) &
        then
          error stop 74
        endif
 
 
-       FORALL (I = 1:10, NumOfExec(I) .eqv. .true.) 
+       FORALL (I = 1:10, NumOfExec(I) .eqv. .true.)
          LJunk(I) = PF_GET_CMD_ARG()
        END FORALL
 
 
-       if ( ANY(LJunk .eqv. .false. ) ) & 
+       if ( ANY(LJunk .eqv. .false. ) ) &
        then
          error stop 75
        endif
 
-       FORALL (I = 1:10, NumOfExec(I) .eqv. .true.) 
-         LJunk(I) = PF_GET_ENV_VAR() 
+       FORALL (I = 1:10, NumOfExec(I) .eqv. .true.)
+         LJunk(I) = PF_GET_ENV_VAR()
        END FORALL
 
 
-       if ( ANY(LJunk .eqv. .false. ) ) & 
+       if ( ANY(LJunk .eqv. .false. ) ) &
        then
          error stop 76
        endif
 
 
 
-      END 
+      END
 
 
       PURE FUNCTION PF_GET_CMD()
@@ -157,28 +149,28 @@
 
 
       integer   :: i, j
- 
+
       PF_GET_CMD = .true.
 
       call GET_COMMAND(A%COMMAND, A%LENGTH, A%STATUS)
       if ( (TRIM(A%COMMAND) .ne. TRIM(A%CmdLine))  .or. &
            (A%LENGTH .ne. LEN(TRIM(A%CmdLine)))    .or. &
            (A%STATUS .ne. 0) )                          &
-      then 
-        PF_GET_CMD = .false. 
+      then
+        PF_GET_CMD = .false.
         ! error stop 64
       endif
 
-      END FUNCTION 
+      END FUNCTION
 
 
-      PURE FUNCTION PF_GET_CMD_ARG() 
+      PURE FUNCTION PF_GET_CMD_ARG()
 
       USE MOD
 
       LOGICAL PF_GET_CMD_ARG
 
-      INTERFACE 
+      INTERFACE
         pure SUBROUTINE MyGetArg(CmdLine, Num, Arg)
           CHARACTER*(*), INTENT(in)  :: CmdLine
           CHARACTER*(*), INTENT(out) ::  Arg
@@ -188,11 +180,11 @@
 
       TYPE(CMD), AUTOMATIC  :: A
       integer            :: i, j
- 
+
       PF_GET_CMD_ARG = .true.
 
       DO i  = 0, A%CmdCount
-       
+
         A%NUMBER = i
         call GET_COMMAND_ARGUMENT(A%NUMBER, A%VALUE, A%LENGTH, A%STATUS)
         call MyGetArg(A%CmdLine, A%NUMBER, A%Argument)
@@ -211,7 +203,7 @@
 
 
 
-      PURE FUNCTION PF_GET_ENV_VAR() 
+      PURE FUNCTION PF_GET_ENV_VAR()
 
       USE MOD
 
@@ -219,7 +211,7 @@
       TYPE(CMD)  :: A
 
       integer   :: i, j
- 
+
       PF_GET_ENV_VAR = .true.
       call GET_ENVIRONMENT_VARIABLE(A%NAME, A%VALUE, A%LENGTH, A%STATUS, A%TRIM_NAME)
       if ( (TRIM(A%VALUE) .ne. TRIM(A%CmdLine))   .or. &
@@ -232,6 +224,6 @@
 
 
       END FUNCTION
- 
+
       INCLUDE 'cmdline.include'
 

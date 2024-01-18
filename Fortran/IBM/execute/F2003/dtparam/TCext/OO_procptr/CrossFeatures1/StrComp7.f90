@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: StrComp7.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: StrComp7.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : StrComp7.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : StrComp7.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 18, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Procedure pointer components 
-!*  () 
+!*
+!*  Procedure pointer components
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -61,21 +55,21 @@
       TYPE(Base(K3,N2)) :: BComp
       PROCEDURE(CHARACTER(3)), NOPASS, POINTER :: ProcPtr
     END TYPE
-   
+
     CONTAINS
- 
+
     FUNCTION ModFun(Arg)
     CHARACTER(3) :: Arg, ModFun
       ModFun = Arg
     END FUNCTION
 
   END MODULE
- 
-  PROGRAM StrComp7  
-  USE M, B=>Base, D=>DT, IntF=>ModFun 
-  IMPLICIT CHARACTER(3)(P) 
 
-  PROCEDURE(IntF),  POINTER :: ProcPtr=>NULL() 
+  PROGRAM StrComp7
+  USE M, B=>Base, D=>DT, IntF=>ModFun
+  IMPLICIT CHARACTER(3)(P)
+
+  PROCEDURE(IntF),  POINTER :: ProcPtr=>NULL()
   TYPE(D(4,1,3))  :: U
 
   ProcPtr => IntF

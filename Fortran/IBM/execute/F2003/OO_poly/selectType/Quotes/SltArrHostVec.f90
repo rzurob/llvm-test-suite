@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrHostVec.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrHostVec
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 19, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,7 +30,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is a host associate name with a vector subscript
 !*    ()
 !*
@@ -49,7 +43,7 @@
     TYPE  :: Zero
     CONTAINS
       PROCEDURE, NoPASS   :: Called
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -104,7 +98,7 @@
   USE M
   IMPLICIT NONE
   TYPE(Child) :: V(4,4)
-  
+
   V%BaseId = -1
   V%ChildId = -2
 
@@ -114,8 +108,8 @@
 
   SUBROUTINE Sub(Arg)
   CLASS(Base) :: Arg(:, :)
-  INTEGER     :: Vec1(2)=(/2,1/) 
-  INTEGER     :: Vec2(2)=(/1,2/) 
+  INTEGER     :: Vec1(2)=(/2,1/)
+  INTEGER     :: Vec2(2)=(/1,2/)
 
     SELECT TYPE (V => Arg(Vec1, Vec2))
     CLASS DEFAULT
@@ -144,9 +138,9 @@
 
   END SELECT
 
-  END SUBROUTINE 
- 
- 
+  END SUBROUTINE
+
+
   END
 
 

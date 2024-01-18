@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : SpecExpHostAssociation01b.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : June 14, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Specification expression - Host Association
-!*  SECONDARY FUNCTIONS TESTED : Named Constant 
+!*  SECONDARY FUNCTIONS TESTED : Named Constant
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -32,20 +24,20 @@ MODULE Mod
          INTEGER, KIND :: k1 = 4
          INTEGER, LEN  :: l1 = 1
 
-         INTEGER :: I1, A1(l1) 
-         CHARACTER(l1) :: C1 
+         INTEGER :: I1, A1(l1)
+         CHARACTER(l1) :: C1
       END TYPE
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)
          INTEGER, KIND :: k2 = 8
          INTEGER, LEN  :: l2 = 1
 
-         TYPE(Base(k2,l2)) :: b_cmp 
+         TYPE(Base(k2,l2)) :: b_cmp
       END TYPE
 
 END MODULE
 PROGRAM SpecExpHostAssociation01b
-      USE Mod 
+      USE Mod
       IMPLICIT TYPE (Child) (c)
 
       PARAMETER (c1 = Child ( 10, 20 , 'B', Base(8,1) (30, 40, 'C') ))

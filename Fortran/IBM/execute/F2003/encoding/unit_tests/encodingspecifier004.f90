@@ -1,19 +1,12 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : encodingspecifier004
-!*
-!*  PROGRAMMER                 : Thomas Tewoldemedhin
 !*  DATE                       : April 29, 2007
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ENCODING= specifier in I/O statements
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : diagnostic testing of the ENCODING= specifier

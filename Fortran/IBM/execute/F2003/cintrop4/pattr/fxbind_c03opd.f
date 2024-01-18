@@ -1,13 +1,8 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/runf.sh fxbind_c03opd 
+! %PRECMD: $TR_SRC/runf.sh fxbind_c03opd
 ! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -18,22 +13,14 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c03opd.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable procedure.
-!*                             
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
@@ -55,7 +42,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 MODULE Personal_details
-  use iso_c_binding 
+  use iso_c_binding
   IMPLICIT NONE
   TYPE, BIND(C):: Person
      REAL:: Weight
@@ -84,7 +71,7 @@ PROGRAM testentry
 
 END PROGRAM testentry
 
-SUBROUTINE eval3 ( x, result ) bind(c) ! Global-Scope SUBROUTINE 
+SUBROUTINE eval3 ( x, result ) bind(c) ! Global-Scope SUBROUTINE
   !
   !     Declare calling arguments
   USE Personal_details
@@ -94,10 +81,10 @@ SUBROUTINE eval3 ( x, result ) bind(c) ! Global-Scope SUBROUTINE
   ! Declare local variables
   ! The SAVE attribute forces the program
   ! to retain the value of a procedure variable
-  ! from one call to the next. 
-  TYPE (Person),save :: data 
+  ! from one call to the next.
+  TYPE (Person),save :: data
 
-  ! assign one instance of a derived type to 
+  ! assign one instance of a derived type to
   ! another instance of the same derived type.
 
   result = data
@@ -108,7 +95,7 @@ SUBROUTINE eval3 ( x, result ) bind(c) ! Global-Scope SUBROUTINE
   ! Entry INITL specifies the values of data
   ! to be used when evaluating the SUBROUTINE eval3 .
 
-  ENTRY initl(a1)   !Global-Scope SUBROUTINE-entry 
+  ENTRY initl(a1)   !Global-Scope SUBROUTINE-entry
   data = a1
 
   RETURN

@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : associate002al
 !*
-!*  PROGRAMMER                 : David Forster (derived from associate002a by Robert Ma)
 !*  DATE                       : 2007-09-14 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer Input/Output list
 !*                               - try to read associate-name, and associate name is of unlimited polymorphic array
@@ -141,7 +133,7 @@ program associate002al
                select type ( a => g(2)%u )
                   type is (character(*))
                      print *, a
-               end select 
+               end select
          end select
       end associate
 
@@ -155,7 +147,7 @@ program associate002al
    end associate
 
    ! check values
-   
+
    select type ( b1 )
       type is (base(*)) ! tcx: (*)
          select type (g => b1(1,1)%u)

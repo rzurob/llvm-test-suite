@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/27/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: C469 non_overridable and deferred shall not both appear in the same binding-attr-list
 !*                                        override non_overridable binding with deferred binding
@@ -49,19 +33,19 @@
 
 
 module m
-   
+
    type, abstract :: base(k1)
       integer, kind :: k1
       integer(k1) :: id
    contains
       procedure, non_overridable, nopass :: print
    end type
-   
+
    interface
       subroutine printif()
       end subroutine
-   end interface 
-   
+   end interface
+
    type, abstract, extends(base) :: child(k2)
       integer, kind :: k2
    contains
@@ -74,5 +58,5 @@ contains
 end module
 
 program nonOverride002
- 
+
 end program

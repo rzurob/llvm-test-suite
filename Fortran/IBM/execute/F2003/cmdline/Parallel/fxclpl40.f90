@@ -12,36 +12,29 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclpl40.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct 1, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Call command line intrinsic routines within an external recursive sub  
-!*                             : which is invoked within a section contruct 
-!*               
-!*                           
+!*  DESCRIPTION                : Call command line intrinsic routines within an external recursive sub
+!*                             : which is invoked within a section contruct
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
@@ -52,26 +45,26 @@
 
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE  
-      character(513)   :: NAME  
-      logical          :: TRIM_NAME 
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
       integer          :: ARGCOUNT
 
-      character(2049)  :: CmdLine 
-          
+      character(2049)  :: CmdLine
+
       integer                      :: CmdCount, i, k
       character(2047)              :: Argument
 
 
       CmdLine = 'fxclpl40 \\^$'
- 
+
       NAME = 'CmdLine   '
       TRIM_NAME = .true.
 
-     
+
 
 
 if ( Num > 1 )   &
@@ -79,7 +72,7 @@ then
    call REC_SUB( Num - 1)
 else
         CmdCount = COMMAND_ARGUMENT_COUNT()
-        if ( CmdCount .ne. 1 ) & 
+        if ( CmdCount .ne. 1 ) &
         then
           error stop 63
         endif
@@ -119,10 +112,10 @@ end if
       END SUBROUTINE
 
 
- 
+
 
       PROGRAM fxclp16
-      
+
       IMPLICIT NONE
 
       integer i
@@ -145,7 +138,7 @@ end if
 
 
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 

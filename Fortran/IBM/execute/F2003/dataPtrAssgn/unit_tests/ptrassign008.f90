@@ -12,31 +12,23 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ptrassign069
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : March 31, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                :functional testing of bounds-remapping and bounds-spec
-!*                              
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 real, pointer :: ptr1(:)
 real, target  :: tar1(100)
 
-interface 
+interface
   subroutine ptrassign(ptr,tar)
     real, pointer :: ptr(:)
     real, target  :: tar(:)
@@ -64,15 +56,14 @@ end
 subroutine ptrassign(ptr,tar)
   real, pointer :: ptr(:)
   real, target  :: tar(:)
-  
+
   ptr(10:)=>tar
-  
+
   if(lbound(ptr, dim=1).ne. 10) error stop 1
   if(ubound(ptr, dim=1).ne. 109) error stop 2
   if(any(shape(ptr).ne.(/100/))) error stop 3
   if(.not.associated(ptr,tar)) error stop 4
-  
-  
+
+
 end subroutine
-  
-  
+

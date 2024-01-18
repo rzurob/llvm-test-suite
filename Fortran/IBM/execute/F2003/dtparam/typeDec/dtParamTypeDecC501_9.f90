@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_9
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 02, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
-!*  -- A type parameter of the derived type being defined 
-!*   
+!*  -- A type parameter of the derived type being defined
+!*
 !*   (336400)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,7 +35,7 @@
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=1
     CHARACTER(LEN=L)  :: C
-    TYPE(DT(K, L=L)),   POINTER  :: Ptr1 
+    TYPE(DT(K, L=L)),   POINTER  :: Ptr1
     TYPE(DT(K, L=L+1)), POINTER  :: Ptr2 => NULL()
     TYPE(DT(K, L=L+2)), POINTER  :: Ptr3(:) => NULL()
   END TYPE
@@ -57,8 +50,8 @@
 
   SUBROUTINE ModSub(L)
   INTEGER :: L
-  TYPE(DT(K=4, L=L)) :: T  
-  TYPE(DT(K=4, L=ModFun(L+3))), POINTER :: Ptr4(:) 
+  TYPE(DT(K=4, L=L)) :: T
+  TYPE(DT(K=4, L=ModFun(L+3))), POINTER :: Ptr4(:)
 
   allocate (t%ptr1, t%ptr2, t%ptr3(1))
 
@@ -83,7 +76,7 @@
 
   END MODULE
 
-  
+
   PROGRAM dtParamTypeDecC501_9
   USE M
 

@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with (non-) polymorphic zero sized derived type scalar object
@@ -78,8 +62,8 @@ program scalar111
    class(base), pointer     :: b2
    type(base)               :: b3
    type(base), pointer      :: b4
-   type(base), allocatable  :: b5   
-   
+   type(base), allocatable  :: b5
+
    namelist /nml1/ b1
    namelist /nml2/ b2
    namelist /nml3/ b3
@@ -100,7 +84,7 @@ program scalar111
    if (( stat /=  1001 ) .or. ( msg /= 'dtioread' ) ) error stop 4_4
    read (1,NML=nml5, iostat=stat, iomsg=msg)
    if (( stat /=  1001 ) .or. ( msg /= 'dtioread' ) ) error stop 5_4
-         
+
 end program
 
 
@@ -120,7 +104,7 @@ subroutine readformatted (dtv, unit, iotype, v_list, iostat, iomsg)
    select type ( dtv )
       type is (base)
          iostat = 1001
-      type is (child) 
+      type is (child)
          iostat = 1002
    end select
    iomsg = 'dtioread'

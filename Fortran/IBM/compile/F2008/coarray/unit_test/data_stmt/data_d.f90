@@ -1,22 +1,15 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : data_d.f
-!*
-!*  PROGRAMMER                 : Feng Ye 
 !*  DATE                       : June 2, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Coarray in data stmt 
+!*  PRIMARY FUNCTIONS TESTED   : Coarray in data stmt
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : 
 !*  REQUIRED COMPILER OPTIONS  : -qcaf
 !*
-!*  DESCRIPTION                : 
-!*                 
+!*  DESCRIPTION                :
+!*
 !*     C565: A data-stmt-object or data-i-do-object shall not be a coindexed variable.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890

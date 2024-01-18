@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgShape7
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 29, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : SHAPE 
+!*  SECONDARY FUNCTIONS TESTED : SHAPE
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  Result Value. The value of the result is the shape of SOURCE. 
+!*  Result Value. The value of the result is the shape of SOURCE.
 !*
-!*  - scalar 
-!*    
-!*  () 
+!*  - scalar
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

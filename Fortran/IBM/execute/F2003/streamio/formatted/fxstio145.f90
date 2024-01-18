@@ -1,31 +1,24 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP:  fxstio145.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access Mode
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
@@ -34,44 +27,44 @@
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/24/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/24/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
-  program fxstio145 
+  program fxstio145
 
      implicit none
      integer    ios , pos
-     integer*2             :: i2_in, i2_out  
-     integer*4             :: i4_in, i4_out  
-     integer*8             :: i8_in, i8_out  
-     real*4                :: r4_in, r4_out  
-     real*8                :: r8_in, r8_out  
-     real*16               :: r16_in, r16_out  
-     complex*8             :: x8_in, x8_out  
-     complex*16            :: x16_in, x16_out  
-     complex*32            :: x32_in, x32_out  
-     logical*2             :: l2_in, l2_out  
-     logical*4             :: l4_in, l4_out  
-     logical*8             :: l8_in, l8_out  
+     integer*2             :: i2_in, i2_out
+     integer*4             :: i4_in, i4_out
+     integer*8             :: i8_in, i8_out
+     real*4                :: r4_in, r4_out
+     real*8                :: r8_in, r8_out
+     real*16               :: r16_in, r16_out
+     complex*8             :: x8_in, x8_out
+     complex*16            :: x16_in, x16_out
+     complex*32            :: x32_in, x32_out
+     logical*2             :: l2_in, l2_out
+     logical*4             :: l4_in, l4_out
+     logical*8             :: l8_in, l8_out
      character             :: ch1_in, ch1_out
      character*25          :: ch25_in, ch25_out
-     byte                  :: b_in, b_out 
+     byte                  :: b_in, b_out
      integer*4             :: i4_ltrl_in
      logical*4             :: l4_ltrl_in
      real*4                :: r4_ltrl_in
      complex*8             :: x8_ltrl_in
      character             :: ch1_ltrl_in
      character*20          :: ch20_ltrl_in
-     byte                  :: b_ltrl_in 
+     byte                  :: b_ltrl_in
 
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
 
-!********************************************************** 
+!**********************************************************
 !       Initialization                                    *
-!********************************************************** 
+!**********************************************************
 
      i2_out = 133
      i4_out = 0
@@ -90,9 +83,9 @@
      b_out = 120
 
 
-!********************************************************** 
+!**********************************************************
 !      Writing and Reading the file                      *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio145.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90)
@@ -141,9 +134,9 @@
      READ(1, FMT='(G2)', IOSTAT=ios, ERR=92, POS=363) b_ltrl_in
 
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( i2_in .ne. i2_out) error stop 21
      if ( i4_in .ne. i4_out) error stop 22
@@ -176,11 +169,11 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 
    end program
 

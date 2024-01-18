@@ -12,37 +12,29 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxclat28.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Tests command line intrinsic routines by passing integer 
+!*  DESCRIPTION                : Tests command line intrinsic routines by passing integer
 !*                             : pointees of derived type and set integer default size=8
-!*                             
-!*                          
-!*                    
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       module modtype
@@ -57,8 +49,8 @@
           character(513),  ALLOCATABLE  :: NAME
           logical,         ALLOCATABLE  :: TRIM_NAME
           integer,         ALLOCATABLE  :: ARGCOUNT
-        end type dertype 
-         
+        end type dertype
+
       end module modtype
 
 
@@ -92,30 +84,30 @@
       POINTER(PNAME,      NAME)
       POINTER(PTRIM_NAME, TRIM_NAME)
       POINTER(PARGCOUNT,  ARGCOUNT)
-    
-      
+
+
       allocate (cmd%COMMAND, cmd%LENGTH, cmd%STATUS, cmd%NUMBER, cmd%VALUE, cmd%NAME, cmd%TRIM_NAME, cmd%ARGCOUNT)
 
       PCOMMAND   = LOC(cmd%COMMAND)
-      PLENGTH    = LOC(cmd%LENGTH)     
-      PSTATUS    = LOC(cmd%STATUS)     
-      PNUMBER    = LOC(cmd%NUMBER)     
-      PVALUE     = LOC(cmd%VALUE)     
-      PNAME      = LOC(cmd%NAME)     
-      PTRIM_NAME = LOC(cmd%TRIM_NAME)     
-      PARGCOUNT  = LOC(cmd%ARGCOUNT)     
+      PLENGTH    = LOC(cmd%LENGTH)
+      PSTATUS    = LOC(cmd%STATUS)
+      PNUMBER    = LOC(cmd%NUMBER)
+      PVALUE     = LOC(cmd%VALUE)
+      PNAME      = LOC(cmd%NAME)
+      PTRIM_NAME = LOC(cmd%TRIM_NAME)
+      PARGCOUNT  = LOC(cmd%ARGCOUNT)
 
       if  (.not.allocated(cmd%COMMAND)    .or. .not.allocated(cmd%LENGTH) .or. &
            .not.allocated(cmd%STATUS)     .or. .not.allocated(cmd%NUMBER) .or. &
            .not.allocated(cmd%VALUE)      .or. .not.allocated(cmd%NAME)   .or. &
-           .not.allocated(cmd%TRIM_NAME)  .or. .not.allocated(cmd%ARGCOUNT))   & 
+           .not.allocated(cmd%TRIM_NAME)  .or. .not.allocated(cmd%ARGCOUNT))   &
       then
         call zzrcy4(62)
       endif
 
 
       CmdCount = COMMAND_ARGUMENT_COUNT()
-      if ( CmdCount .ne. 4 ) & 
+      if ( CmdCount .ne. 4 ) &
       then
         call zzrcy4(63)
       endif
@@ -128,7 +120,7 @@
       endif
 
       DO i  = 0, CmdCount
-       
+
         cmd%NUMBER = i
         call GET_COMMAND_ARGUMENT(cmd%NUMBER, cmd%VALUE, cmd%LENGTH, cmd%STATUS)
         call MyGetArg(CmdLine, cmd%NUMBER, Argument)
@@ -162,8 +154,8 @@
         call zzrcy4(68)
       endif
 
-      END 
- 
+      END
+
       INCLUDE 'cmdline.include'
 
       ! Currently ZZRC only support default int size !
@@ -179,4 +171,4 @@
 
 
 
-  
+

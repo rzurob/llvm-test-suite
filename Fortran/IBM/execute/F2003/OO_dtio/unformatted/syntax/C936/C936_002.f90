@@ -1,39 +1,23 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: C936_002.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/04/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: CLASS(derived-type-spec) in DTIO subroutine
 !*                                        shall be invoked for extensible type
@@ -50,12 +34,12 @@
 
 module m
     type, abstract :: base
-        character(3) :: i 
+        character(3) :: i
     end type
-    
+
     type, extends(base) :: child
-    end type    
-    
+    end type
+
 end module
 
 program C936_002
@@ -70,7 +54,7 @@ use m
             character(*), intent(inout) :: iomsg
         end subroutine
     end interface
-    
+
     interface write(unformatted)
         subroutine unformattedWrite (dtv, unit, iostat, iomsg)
         use m
@@ -83,30 +67,30 @@ use m
 
     integer :: stat
     character(20) :: errmsg = ""
-    
+
     class(base), allocatable :: b1
     class(base), pointer     :: b2
-             
+
     open(1, file='C936_002.data', access='sequential', form='unformatted')
-   
+
     allocate (b1 , source= child('IBM'))
     allocate (b2 , source= child('FUN'))
-    
+
     write(1, iostat=stat, iomsg=errmsg ) b1
     if (stat /= 0)                 error stop 1_4
     if (errmsg /= "" )             error stop 2_4
-    
+
     rewind 1
-    
+
     read (1, iostat=stat) b2
     if (stat /= 0)                 error stop 3_4
 
     if ( b2%i /= 'IBM' )           error stop 4_4
-    
+
     ! close the file appropriately
-   
+
     close ( 1, status ='delete' )
-       
+
 end program
 
 
@@ -118,7 +102,7 @@ use m
     character(*), intent(inout) :: iomsg
 
     character(3) :: temp
- 
+
     read (unit, iostat=iostat, iomsg=iomsg ) temp
     dtv%i = temp
 
@@ -131,7 +115,7 @@ use m
     integer, intent(in) :: unit
     integer, intent(out) :: iostat
     character(*), intent(inout) :: iomsg
-    
+
     write (unit, iostat=iostat, iomsg=iomsg ) dtv%i
-       
+
 end subroutine

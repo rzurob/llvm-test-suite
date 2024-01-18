@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpDecTypeSpecifierCls1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 18, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
 !*  A polymorphic pointer is associated with objects with which it is type compatible
-!* 
-!*  -- The dynamic type 
-!* 
 !*
-!*  (systax err) 
+!*  -- The dynamic type
+!*
+!*  (systax err)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -54,8 +46,8 @@
   CLASS(DT0(2,2)), POINTER :: P2
   CLASS(DT1(1,1,K1=2,L1=2)), POINTER :: P3
 
-  TYPE(DT0), TARGET :: T1=DT0() 
-  TYPE(DT1(2,2)), TARGET :: T2=DT1(2,2)() 
+  TYPE(DT0), TARGET :: T1=DT0()
+  TYPE(DT1(2,2)), TARGET :: T2=DT1(2,2)()
   TYPE(DT1(1,1,2,2)), TARGET :: T3 = DT1(1,1,2,2)(I=-1)
 
 

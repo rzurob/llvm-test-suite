@@ -3,13 +3,9 @@
 ! opt variations: -ql -qreuse=none
 
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_procptr/component2
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 06/18/2005
 ! PRIMARY FUNCTIONS TESTED   : procedure pointer component
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Specify procedure interface using
 !                              interface-name, which is an external
 !                              procedure. Poly, scalar or array.
@@ -72,7 +68,7 @@ use m2
         type is (Base(4))
             print *, "func1 Base", b
         type is (Child(4))
-            print *, "func1 Child", b%Base, b%j 
+            print *, "func1 Child", b%Base, b%j
         class default
             error stop 1_4
     end select
@@ -84,7 +80,7 @@ use m2
         type is (Base(4))
             print *, "func1 Base", b
         type is (Child(4))
-            print *, "func1 Child", b%Base, b%j 
+            print *, "func1 Child", b%Base, b%j
         class default
             error stop 2_4
     end select
@@ -97,7 +93,7 @@ use m2
         type is (Base(4))
             print *, "sub1 Base", b
         type is (Child(4))
-            print *, "sub1 Child", b%Base, b%j 
+            print *, "sub1 Child", b%Base, b%j
         class default
             error stop 3_4
     end select

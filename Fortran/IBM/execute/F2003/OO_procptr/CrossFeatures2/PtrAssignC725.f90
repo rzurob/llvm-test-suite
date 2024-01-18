@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: PtrAssignC725.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: PtrAssignC725.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : PtrAssignC725.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 12, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,18 +30,17 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*  Procedure component reference
 !*  proc-component-ref is variable % procedure-component-name
-!* 
-!*  () 
+!*
+!*  ()
 !*
 ! *********************************************************************
 
-
   MODULE M0
 
-    INTERFACE 
+    INTERFACE
       FUNCTION IntF(Arg)
         CHARACTER(1) :: IntF, Arg
       END FUNCTION
@@ -74,7 +67,6 @@
     TYPE(DT), SAVE :: MV
 
   END MODULE
-
 
   PROGRAM  PtrAssignC725
   USE M
@@ -111,9 +103,7 @@
   PV%DT0%ProcPtr0 => ExtFun
   IF ( PV%DT0%ProcPtr0('9') .NE. '9' )        STOP 24
 
-
   END
-
 
   FUNCTION ExtFun(Arg)
   CHARACTER(1) :: ExtFun, Arg

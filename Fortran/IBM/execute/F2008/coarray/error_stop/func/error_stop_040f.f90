@@ -1,24 +1,13 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/coarray/error_stop/func/error_stop_040f.f
 !*  TYPE                       : Functional test
 !*  FEATURE                    : #351605.31 CAF - ERROR STOP statement
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 28 August 2010
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  DRIVER STANZA              : xlf  _r
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               :
 !*
 !*  DESCRIPTION                : ERROR STOP interrupts ordered image work

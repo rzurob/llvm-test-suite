@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamInitComp10 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamInitComp10
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : June 06, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Default initialization for component 
+!*  SECONDARY FUNCTIONS TESTED : Default initialization for component
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,12 +19,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  Default initialization for Components  
-!*  
-!*  
+!*  Default initialization for Components
 !*
-!* (340302/340309) 
+!* (340302/340309)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -58,11 +49,11 @@
   END MODULE
 
 
-  PROGRAM dtParamInitComp10 
+  PROGRAM dtParamInitComp10
   USE M
 
   CLASS(*), POINTER     :: Ptr
-  CLASS(*), ALLOCATABLE :: Alloc 
+  CLASS(*), ALLOCATABLE :: Alloc
 
   ALLOCATE(DT1::Ptr)
 
@@ -73,12 +64,12 @@
     IF ( As%L        .NE. 4 )                   STOP 12
     IF ( As%K1       .NE. 4 )                   STOP 13
     IF ( As%L1       .NE. 4 )                   STOP 14
- 
+
     IF ( As%T%K      .NE. 4 )                   STOP 15
     IF ( As%T%L      .NE. 4 )                   STOP 16
     IF ( As%T1%K     .NE. 4 )                   STOP 17
     IF ( As%T1%L     .NE. 4 )                   STOP 18
- 
+
     IF ( KIND(As%T%I)   .NE. 4 )                STOP 21
     IF ( SIZE(As%T%I)   .NE. 4 )                STOP 22
     IF ( ANY(As%T%I     .NE. 4))                STOP 23
@@ -86,27 +77,27 @@
     IF ( KIND(As%T%R)   .NE. 4 )                STOP 31
     IF ( SIZE(As%T%R)   .NE. 4 )                STOP 32
     IF ( ANY(As%T%R     .NE. 4))                STOP 33
- 
+
   CLASS DEFAULT
     STOP 55
   END SELECT
- 
+
 
   ALLOCATE(DT1(K1=8,L1=8)::Alloc)
 
   SELECT TYPE( As => Alloc)
-  TYPE IS (DT1(K1=8,L1=*, L=*)) 
+  TYPE IS (DT1(K1=8,L1=*, L=*))
 
     IF ( As%K        .NE. 4 )                   STOP 41
     IF ( As%L        .NE. 4 )                   STOP 42
     IF ( As%K1       .NE. 8 )                   STOP 43
     IF ( As%L1       .NE. 8 )                   STOP 44
- 
+
     IF ( As%T%K      .NE. 4 )                   STOP 45
     IF ( As%T%L      .NE. 4 )                   STOP 46
     IF ( As%T1%K     .NE. 8 )                   STOP 47
     IF ( As%T1%L     .NE. 8 )                   STOP 48
- 
+
     IF ( KIND(As%T%I)   .NE. 4 )                STOP 51
     IF ( SIZE(As%T%I)   .NE. 4 )                STOP 52
     IF ( ANY(As%T%I     .NE. 4))                STOP 53
@@ -114,7 +105,7 @@
     IF ( KIND(As%T%R)   .NE. 4 )                STOP 61
     IF ( SIZE(As%T%R)   .NE. 4 )                STOP 62
     IF ( ANY(As%T%R     .NE. 4))                STOP 63
- 
+
     IF ( KIND(As%T1%I)   .NE. 8 )                STOP 51
     IF ( SIZE(As%T1%I)   .NE. 8 )                STOP 52
     IF ( ANY(As%T1%I     .NE. 8))                STOP 53
@@ -122,11 +113,11 @@
     IF ( KIND(As%T1%R)   .NE. 8 )                STOP 61
     IF ( SIZE(As%T1%R)   .NE. 8 )                STOP 62
     IF ( ANY(As%T1%R     .NE. 8))                STOP 63
- 
+
   CLASS DEFAULT
-    STOP 77 
+    STOP 77
   END SELECT
- 
+
 
   END
 

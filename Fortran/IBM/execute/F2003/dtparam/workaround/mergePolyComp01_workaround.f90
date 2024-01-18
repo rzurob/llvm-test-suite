@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergePolyComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergePolyComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 22 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 22 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. COMPONENTS ARE POLYMORPHIC ALLOCATABLE OR POINTER
 !* 4. !DEFECT 356156 --- and get rid of associate constructs
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -32,9 +24,9 @@ module m
       integer,len  :: l1
 
       integer(2*k1) :: i1
-      character(2*l1) :: c1 
+      character(2*l1) :: c1
    end type
-   
+
    type B(k2,l2)
       integer,kind :: k2
       integer,len  :: l2
@@ -56,7 +48,7 @@ program mergePolyComp01
    allocate(b1%a2,source=A(2,3)(i1=2,c1="456"))
 
    allocate(b2,source=B(2,3)(null(),null()))
-   allocate(b2%a1,source=A(2,3)(i1=-1,c1="000")) 
+   allocate(b2%a1,source=A(2,3)(i1=-1,c1="000"))
    allocate(b2%a2,source=A(2,3)(i1=-2,c1="111"))
 
    b3=>b1
@@ -81,9 +73,9 @@ program mergePolyComp01
               if(y%i1%kind /= 4)                  error stop 14_4
               if(y%c1%len /= 6)                   error stop 15_4
               if(y%i1 /= 1)                       error stop 16_4
-              if(y%c1 /= "123")                   error stop 17_4              
+              if(y%c1 /= "123")                   error stop 17_4
            class default
-             error stop 100_4 
+             error stop 100_4
        end select
 
        select type(y=>x%a2)
@@ -94,7 +86,7 @@ program mergePolyComp01
               if(y%c1%len /= 6)                   error stop 21_4
               if(y%i1 /= 2)                       error stop 22_4
               if(y%c1 /= "456")                   error stop 23_4
-          class default 
+          class default
              error stop 101_4
        end select
 
@@ -114,7 +106,7 @@ program mergePolyComp01
               if(y%c1%len /= 6)                   error stop 29_4
               if(y%i1 /= -1)                      error stop 30_4
               if(y%c1 /= "000")                   error stop 31_4
-          class default 
+          class default
               error stop 102_4
        end select
 
@@ -159,7 +151,7 @@ program mergePolyComp01
               if(y%i1 /= -2)                      error stop 50_4
               if(y%c1 /= "111")                   error stop 51_4
           class default
-              error stop 105_4 
+              error stop 105_4
        end select
 
        select type(y=>x(2)%a1)
@@ -214,7 +206,7 @@ program mergePolyComp01
               if(y%c1%len /= 6)                   error stop 75_4
               if(y%i1 /= 2)                       error stop 76_4
               if(y%c1 /= "456")                   error stop 77_4
-           class default 
+           class default
               error stop 109_4
        end select
 

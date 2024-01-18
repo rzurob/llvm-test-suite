@@ -1,14 +1,9 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: $TR_SRC/run.sh fxbind_c03ega  cxbind_c03ega
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
@@ -18,42 +13,33 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c03ega.f
-!* TEST CASE TITLE              : BIND(C) for Fortran procedures 
-!*
-!* PROGRAMMER                   : Kan Tian
 !* DATE                         : Jan, 7, 2004
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran Entry in function called from C
-!*            
+!*
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf95
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  :
 !*   - Test: BINC(C) attribute with  different intrinsic data type,
 !*           integer*1, integer*2,integer*4,integer*8.
-!*           
-!*   - The interoperable  procedure itself is  implemented using Fortran 
-!*     function Entry Statement.  
+!*
+!*   - The interoperable  procedure itself is  implemented using Fortran
+!*     function Entry Statement.
 !*   - passing scalar arguments by REFERENCE and by VALUE
-!*   - primary entry point do not have  bind(c) attribute and 
+!*   - primary entry point do not have  bind(c) attribute and
 !*     alternate entry point have bind(c) attribute.
 !*   - main written in C, C  calls FORTRAN functions.
 !*
-!*  ALGORITHM :  
+!*  ALGORITHM :
 !*          1. C program call the Fortran function has a primary entry
 !*             point and an alternate entry point.
 !*          2. Assertion: Check the return value from Fortran Function
 !*             and argument in C to verify it is correct.
-!*             
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -64,7 +50,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-function fn_int1 (a, b) 
+function fn_int1 (a, b)
   integer(1), intent(inout) :: a
   integer(1), intent(inout) :: b
   integer(1)             :: fn_int1
@@ -80,7 +66,7 @@ function fn_int1 (a, b)
   return
 end function fn_int1
 
-function fn_int2 (a, b) 
+function fn_int2 (a, b)
   integer(2), intent(inout) :: a
   integer(2), intent(inout) :: b
   integer(2)             :: fn_int2
@@ -96,7 +82,7 @@ function fn_int2 (a, b)
   return
 end function fn_int2
 
-function fn_int4 (a, b) 
+function fn_int4 (a, b)
   integer(4), intent(inout) :: a
   integer(4), intent(inout) :: b
   integer(4)             :: fn_int4
@@ -112,7 +98,7 @@ function fn_int4 (a, b)
   return
 end function fn_int4
 
-function fn_int8 (a, b) 
+function fn_int8 (a, b)
   integer(8), intent(inout) :: a
   integer(8), intent(inout) :: b
   integer(8)             :: fn_int8
@@ -128,7 +114,7 @@ function fn_int8 (a, b)
   return
 end function fn_int8
 
-function fn_intval1 (a, b) 
+function fn_intval1 (a, b)
   integer(1), value :: a
   integer(1), value :: b
   integer(1)             :: fn_intval1
@@ -144,7 +130,7 @@ function fn_intval1 (a, b)
   return
 end function fn_intval1
 
-function fn_intval2 (a, b) 
+function fn_intval2 (a, b)
   integer(2), value :: a
   integer(2), value :: b
   integer(2)             :: fn_intval2
@@ -160,7 +146,7 @@ function fn_intval2 (a, b)
   return
 end function fn_intval2
 
-function fn_intval4 (a, b) 
+function fn_intval4 (a, b)
   integer(4), value :: a
   integer(4), value :: b
   integer(4)             :: fn_intval4
@@ -176,7 +162,7 @@ function fn_intval4 (a, b)
   return
 end function fn_intval4
 
-function fn_intval8 (a, b) 
+function fn_intval8 (a, b)
   integer(8), value :: a
   integer(8), value :: b
   integer(8)             :: fn_intval8

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP:  ArrConstr.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : ArrConstr 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : ArrConstr
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 07, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    The selector is a nested arr constructor 
-!*    () 
+!*    The selector is a nested arr constructor
+!*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,7 +39,7 @@
 
      TYPE, ABSTRACT :: Base
       INTEGER :: BaseId = 1
-      CLASS(*), ALLOCATABLE :: Unknown(:) 
+      CLASS(*), ALLOCATABLE :: Unknown(:)
       CONTAINS
       PROCEDURE,nopass :: Bnd
     END TYPE
@@ -55,7 +49,7 @@
     END TYPE
 
     CONTAINS
-  
+
     ELEMENTAL FUNCTION Bnd(Arg)
     INTEGER, INTENT(IN) :: Arg
     INTEGER :: Bnd
@@ -63,7 +57,7 @@
     END FUNCTION
 
   END MODULE
-  
+
   PROGRAM DerTypeArrConstr
   USE M, DT=>Child
   IMPLICIT NONE
@@ -81,8 +75,8 @@
       IF ( ANY(SHAPE(As) .NE. (/2/) ) )  STOP 30
       IF ( ANY(As        .NE. "123" ) )  STOP 31
     CLASS DEFAULT
-      STOP 33     
-    END SELECT 
+      STOP 33
+    END SELECT
 
   END ASSOCIATE
 

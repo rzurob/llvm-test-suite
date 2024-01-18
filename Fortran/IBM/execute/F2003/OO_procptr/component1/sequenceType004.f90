@@ -1,11 +1,7 @@
 !=======================================================================
-! XL Fortran Test Case                             IBM INTERNAL USE ONLY
-!=======================================================================
 ! TEST BUCKET                : OO_procptr/component1
-! PROGRAMMER                 : Yong Du
 ! DATE                       : 04/18/2005
 ! PRIMARY FUNCTIONS TESTED   : procedure pointer component
-! DRIVER STANZA              : xlf90
 ! DESCRIPTION                : Declare a procedure pointer component for
 !                              sequence type. Do not specify
 !                              proc-interface. Associate the procedure

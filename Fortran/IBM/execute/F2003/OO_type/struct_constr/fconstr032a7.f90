@@ -1,27 +1,12 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 02/22/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : structure constructor (allocatable components'
 !                               allocations in structure constructor; data
 !                               source is array sections and pointer arrays)
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -46,7 +31,7 @@ use m
     class (child), pointer :: c2(:)
 
     c1 = (/(child(i, name='test'), i=1, 10)/)
-    
+
     c2 => c1(::3)
 
     associate (x => container (c1(2::2)))

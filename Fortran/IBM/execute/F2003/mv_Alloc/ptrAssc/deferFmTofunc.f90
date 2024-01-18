@@ -1,31 +1,19 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : deferFmTofunc.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM & pointer have deferred type parameter 
+!*  DESCRIPTION                : FROM & pointer have deferred type parameter
 !*			         TO of type character(8), ext function name
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 module m
- 	character(:), pointer :: p 
-end module 
+ 	character(:), pointer :: p
+end module
 
 use m
         character(:), allocatable :: a
@@ -58,4 +46,4 @@ end
                    stop 25
 		endif
 
-            end function 
+            end function

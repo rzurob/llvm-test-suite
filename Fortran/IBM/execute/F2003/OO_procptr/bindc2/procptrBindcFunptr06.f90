@@ -1,28 +1,17 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
+!*  DESCRIPTION                :
 !*                              function pointer which points to C function with int
-!*                              argument and an int return, as actual argument 
+!*                              argument and an int return, as actual argument
 !*                              passed to interoperable subprogram through procedure
 !*                              pointer reference. Use C_F_PROCPOINTER to
 !*                              associate procedure pointer with c address of
-!*                              procedure. 
+!*                              procedure.
 !* ===================================================================
 
 module fptr06
@@ -39,17 +28,17 @@ end module fptr06
 program procptrBindcFunptr06
 
    use ISO_C_BINDING
-  
+
    use fptr06
 
    interface
        integer(C_INT) function cfun(i) bind(c)
           import C_INT
           integer(C_INT), value :: i
-       end function 
+       end function
    end interface
 
-   integer(C_INT) :: i 
+   integer(C_INT) :: i
 
    procedure(csub), pointer :: subind =>null()
 
@@ -61,6 +50,6 @@ program procptrBindcFunptr06
 
    call subind(i, C_FUNLOC(cfun))
 
-   if(i .ne. 22) error stop 3_4 
+   if(i .ne. 22) error stop 3_4
 
 end program procptrBindcFunptr06

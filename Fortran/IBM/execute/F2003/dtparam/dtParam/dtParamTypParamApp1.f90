@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dtParamTypParamApp1  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             :  dtParamTypParamApp1
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Derived type parameters 
+!*  SECONDARY FUNCTIONS TESTED : Derived type parameters
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,26 +19,25 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  A kind type parameter may also be used as a primary in an initialization expression (7.1.7)
-!*  in the derived-type-def. 
+!*  in the derived-type-def.
 !*
 !*  (ice)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dtParamTypParamApp1 
+  PROGRAM dtParamTypParamApp1
   IMPLICIT NONE
 
   TYPE :: DT0(K1, K2, K, K8)
     INTEGER(KIND=1), KIND :: K1
     INTEGER(KIND=2), KIND :: K2
-    INTEGER,         KIND :: K 
+    INTEGER,         KIND :: K
     INTEGER(KIND=8), KIND :: K8
 
-    CHARACTER(LEN=1) :: C1(K1) = CHAR(1) 
-    CHARACTER(LEN=2) :: C2(K2) = CHAR(2) 
+    CHARACTER(LEN=1) :: C1(K1) = CHAR(1)
+    CHARACTER(LEN=2) :: C2(K2) = CHAR(2)
     CHARACTER(LEN=4)  :: C (K)  = CHAR(4)
     CHARACTER(LEN=8) :: C8(K8) = CHAR(8)
   END TYPE

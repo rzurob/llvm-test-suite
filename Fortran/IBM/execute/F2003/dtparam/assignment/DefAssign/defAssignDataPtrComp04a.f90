@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignDataPtrComp04a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignDataPtrComp04a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 12 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 12 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test defined assignment with interface block
@@ -34,19 +26,19 @@ module m1
       integer(k1)   :: i1(l1+1)=-99
       character(l1) :: c1(l1) ="****"
       logical(k1)   :: g1(l1)=.false.
-   end type 
+   end type
 
 end module
 
 module m2
   use m1,XA=>A
   type B(k2,l2)
-    integer,kind :: k2 
+    integer,kind :: k2
     integer,len  :: l2 ! l2=3
 
     integer(2*k2)  :: id
     type(XA(2*k2,l2+1)) :: a1comp(3)
-    type(B(k2,l2)),pointer :: next=>null() 
+    type(B(k2,l2)),pointer :: next=>null()
   end type
 
   interface assignment(=)
@@ -99,7 +91,7 @@ module m2
         type(B(1,*)),intent(in)     :: dt
 
         print *,"in assignB2"
-   
+
         this%id = dt%id
 
         do i=lbound(this%a1comp,1),ubound(this%a1comp,1)
@@ -131,12 +123,11 @@ module m2
 
         if(associated(dt%next)) then
             allocate(this%next)
-            this%next=dt%next  ! recursive call 
-        end if       
+            this%next=dt%next  ! recursive call
+        end if
 
      end subroutine
 
-          
 end module
 
 program defAssignDataPtrComp04a
@@ -148,8 +139,8 @@ program defAssignDataPtrComp04a
     ! won't invoke defined assignment since it is static initialization
     type(XA(4,4)) :: aobj1=XA(4,4)()
     type(XA(2,4)) :: aobj2=XA(2,4)()
- 
-    type(XB(2,3)),pointer :: bobj1 
+
+    type(XB(2,3)),pointer :: bobj1
 
     type(XB(1,3)),pointer :: bobj2
 
@@ -167,8 +158,8 @@ program defAssignDataPtrComp04a
     if(any(aobj1%i1 /= 99))                                  stop 12
     if(any(aobj1%c1 /= "****"))                              stop 13
     if(any(aobj1%g1 .neqv. .true.))                          stop 14
-    
-    print *,"*****TEST   2*****"       
+
+    print *,"*****TEST   2*****"
     !invoke assignA2
     aobj2=XA(2,4)()
 
@@ -179,7 +170,6 @@ program defAssignDataPtrComp04a
     if(any(aobj2%c1 /= "****"))                              stop 18
     if(any(aobj2%g1 .neqv. .false.))                         stop 19
 
-    
     print *,"*****TEST   3*****"
     ! invoke assignA1
     aobj1=XA(4,4)([1,2,3,4,5], &
@@ -192,7 +182,6 @@ program defAssignDataPtrComp04a
     if(any(aobj1%i1 /= [-1,-2,-3,-4,-5]))                    stop 22
     if(any(aobj1%c1 /= ["EFGH","efgh","ABCD","abcd"]))       stop 23
     if(any(aobj1%g1 .neqv. [.false.,.true.,.false.,.true.])) stop 24
-
 
     print *,"*****TEST   4*****"
     ! invoke assignA2
@@ -231,7 +220,6 @@ program defAssignDataPtrComp04a
     if(any(x(2)%g1 .neqv. [.true.,.false.,.true.,.false.]))  stop 40
 
     end associate
-
 
     print *,"*****TEST   6*****"
     allocate(bobj2)
@@ -283,11 +271,11 @@ program defAssignDataPtrComp04a
     if(any(x(2)%g1 .neqv. [.false.,.true.,.false.,.true.]))  stop 62
 
     end associate
-  
-    print *,"*****TEST   8*****" 
+
+    print *,"*****TEST   8*****"
     allocate(XB(1,3) :: bobj4)
 
-    ! invoke assignB2 
+    ! invoke assignB2
     bobj4=bobj2
 
     !--- verify bobj4---!
@@ -320,13 +308,13 @@ program defAssignDataPtrComp04a
     allocate(XB(2,3) :: bobj3)
 
     !invoke assignB1
-    bobj3=bobj1 
+    bobj3=bobj1
     !--- verify bobj3--!
     if(.not. associated(bobj3))                             stop 74
     if(.not. associated(bobj3%next))                        stop 75
     if(.not. associated(bobj3%next%next))                   stop 76
     if(.not. associated(bobj3%next%next%next))              stop 77
-    
+
     associate(x=>bobj3%next%next%next%a1comp)
 
     if(x%k1 /= 4)                                            stop 78
@@ -338,20 +326,19 @@ program defAssignDataPtrComp04a
     if(any(x(2)%i1 /= [-1,-2,-3,-4,-5]))                     stop 83
     if(any(x(2)%c1 /= ["EFGH","efgh","ABCD","abcd"]))        stop 84
     if(any(x(2)%g1 .neqv. [.false.,.true.,.false.,.true.]))  stop 85
-       
+
     end associate
 
-    print *,"*****TEST  10*****" 
+    print *,"*****TEST  10*****"
     allocate(bobj2%next,source=XB(1,3)(100,getA2(aobj2),null()) )
     allocate(bobj2%next%next,source=XB(1,3)(200,getA2(aobj2),null()))
     allocate(bobj2%next%next%next,source=XB(1,3)(300,getA2(aobj2),null()))
 
-
     deallocate(bobj4)
-    
+
     allocate(bobj4)
 
-    ! invoke assignB2    
+    ! invoke assignB2
     bobj4=bobj2
 
     !--- verify bobj4---!
@@ -373,7 +360,6 @@ program defAssignDataPtrComp04a
     if(any(x(2)%c1 /= ["stte","STTE","amte","AMTE"]))        stop 96
     if(any(x(2)%g1 .neqv. [.true.,.false.,.false.,.true.]))  stop 97
 
-    end associate 
-
+    end associate
 
 end program

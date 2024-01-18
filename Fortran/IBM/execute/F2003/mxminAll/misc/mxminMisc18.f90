@@ -1,31 +1,20 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
+!*  DESCRIPTION                : MAX*/MIN* inside parallel region
 !*
-!*  DESCRIPTION                : MAX*/MIN* inside parallel region 
-!*                                
 !* ===================================================================
 
-program mxminMisc18 
+program mxminMisc18
 
     character*3 x(3, 4), y(2,3,4,6), x_v(3,4), y_v(2,3,4,6), v_x
     integer i_v(2)
- 
+
     x = "aaa"
     y = "fff"
 
@@ -33,7 +22,7 @@ program mxminMisc18
  !$omp workshare
    !$omp critical(region1)
 
-      x_v = max(x, "ccc") 
+      x_v = max(x, "ccc")
 
    !$omp end critical(region1)
 
@@ -45,10 +34,10 @@ program mxminMisc18
  !$omp barrier
 
  !$omp workshare
- 
+
      v_x = maxval(x)
 
- !$omp end workshare  
+ !$omp end workshare
 
  !$omp workshare
 
@@ -61,7 +50,7 @@ program mxminMisc18
     if(any(x_v .ne. "ccc")) then
         error stop 1_4
     endif
-    
+
     if(any(y_v .ne. "ddd")) then
         error stop 2_4
     endif
@@ -73,6 +62,6 @@ program mxminMisc18
     if(v_x .ne. "aaa") then
         error stop 4_4
     endif
- 
+
 end program mxminMisc18
 

@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : arrsec3_allocatable.f
-!*  PROGRAMMER                 : Gaby Baghdadi (adopted from David Nichols' 
 !*                               arrsec1_allocatable.f)
 !*  DATE                       : Dec 31, 2008
 !*  ORIGIN                     : XLF Development
@@ -12,7 +9,7 @@
 !*  DESCRIPTION
 !*
 !*      Deferred length parameters
-!*      Deferred size array components 
+!*      Deferred size array components
 !*      with varying displacements into a type
 !*
 !* =============================================================================

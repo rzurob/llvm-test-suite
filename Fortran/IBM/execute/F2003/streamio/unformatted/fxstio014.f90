@@ -1,35 +1,29 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxstio014.presh   
-! %COMPOPTS: 
+! %PRECMD: $TR_SRC/fxstio014.presh
+! %COMPOPTS:
 ! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio014.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 17, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
 !*
 !*  Description                : Test unformatted synchronous stream
-!*                               I/O in OpenMP parallel region. 
+!*                               I/O in OpenMP parallel region.
 !*
 !=======================================================================
 
 !* Declare Variables.
-   
+
   implicit none
 
   integer i, j, k, ios
@@ -40,14 +34,14 @@
   real, dimension(3,3) :: rarr1/9*0.0/, rarr2/9*0.0/
   real, dimension(3,3) :: rarr3/9*0.0/, rarr4/9*0.0/
   real, dimension(3,3) :: rarr5/9*0.0/, rarr6/9*0.0/
- 
+
   complex, dimension(3,3) :: carr1/9*(0.0,0.0)/, carr2/9*(0.0,0.0)/
   complex, dimension(3,3) :: carr3/9*(0.0,0.0)/, carr4/9*(0.0,0.0)/
   complex, dimension(3,3) :: carr5/9*(0.0,0.0)/, carr6/9*(0.0,0.0)/
 
   logical, dimension(3,3) :: larr1/9*.true./, larr2/9*.true./
   logical, dimension(3,3) :: larr3/9*.true./, larr4/9*.true./
-  logical, dimension(3,3) :: larr5/9*.true./, larr6/9*.true./ 
+  logical, dimension(3,3) :: larr5/9*.true./, larr6/9*.true./
 
 !* TEST1 : integer
 
@@ -64,7 +58,7 @@
    do i=1,3
       write (i) iarr1(:,i), iarr2(:,i)
    enddo
-   
+
    !omp$ parallel do
    do i=1,3
       write (4) iarr1(:,i), iarr2(:,i)
@@ -73,7 +67,7 @@
    do i=1,4
       rewind(i , iostat=ios, err=500)
    enddo
- 
+
    !omp$ paralleldo
    do i=1,3
       read (i) iarr3(:,i), iarr4(:,i)
@@ -104,7 +98,7 @@
       open(i, form='unformatted', access='stream', iostat=ios, err=100)
    enddo
 
-   do i = 1,3 
+   do i = 1,3
       rarr1(:,i) = i
       rarr2(:,i) = rarr1(:,i) + 1
    enddo
@@ -141,7 +135,7 @@
          if (rarr6(i,j)<>j+1) error stop 8
       enddo
    enddo
- 
+
    !omp$ paralleldo
    do i=1,4
       close(i, status='delete')
@@ -153,7 +147,7 @@
       open(i, form='unformatted', access='stream', iostat=ios, err=100)
    enddo
 
-   do i = 1,3 
+   do i = 1,3
       carr1(:,i) = i
       carr2(:,i) = carr1(:,i) + 1
    enddo
@@ -202,9 +196,9 @@
       open(i, form='unformatted', access='stream', iostat=ios, err=100)
    enddo
 
-   do i = 1,3 
-      larr1(:,i) = .false. 
-      larr2(:,i) = .false. 
+   do i = 1,3
+      larr1(:,i) = .false.
+      larr2(:,i) = .false.
    enddo
 
    !omp$ parallel do
@@ -216,7 +210,7 @@
    do i=1,3
       write (4) larr1(:,i), larr2(:,i)
    enddo
- 
+
    do i=1,4
       rewind(i, iostat=ios, err=500)
    enddo

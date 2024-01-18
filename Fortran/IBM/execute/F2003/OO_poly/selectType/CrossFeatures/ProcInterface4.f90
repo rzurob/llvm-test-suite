@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ProcInterface4.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: ProcInterface4.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : ProcInterface 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : ProcInterface
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 02, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,10 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!* Procedure Interface 
+!*
+!* Procedure Interface
 !* ()
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -63,7 +56,7 @@
 
     CONTAINS
 
-    FUNCTION GetInt(Arg) 
+    FUNCTION GetInt(Arg)
     CLASS(DT0) :: Arg
     INTEGER(8), ALLOCATABLE :: GetInt
       SELECT TYPE (Arg)
@@ -84,7 +77,7 @@
   USE M
   IMPLICIT CLASS(DT)(U)
 
-  INTERFACE 
+  INTERFACE
     FUNCTION UFun(UArg)
       CLASS(*), POINTER :: UFun
       CLASS(*) :: UArg

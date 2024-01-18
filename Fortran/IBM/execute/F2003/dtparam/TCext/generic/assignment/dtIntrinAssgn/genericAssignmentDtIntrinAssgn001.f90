@@ -3,22 +3,11 @@
 ! opt variations: -qck -qnok -qnol -qdefaultpv -qdeferredlp -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Derived Type Intrinsic Assignment:
 !*                                  - Perform generic type bound assignment for the type
@@ -89,20 +78,20 @@ program genericAssignmentDtIntrinAssgn001
    type(base(20,4,3)) :: b1
    type(base(20,4,3)), allocatable :: b2
    type(base(20,4,3)), pointer :: b3
-   
+
    type(com2(4,3)), parameter :: c2 = com2(4,3)('ftn')
-   
+
    b1 = base(20,4,3)( 10, com1(20,4)(20), com2(4,3)('ibm') )
    print *, b1
-   
+
    allocate ( b2, b3 )
-   
+
    b2 = base(20,4,3)( 30, com1(20,4)(40), c2 )
    print *, b2
-   
+
    b3 = b1
    print *, b3
-   
+
    b2 = b3
    print *, b2
 

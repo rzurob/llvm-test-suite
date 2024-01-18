@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatDirectAccessWrite01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : formatDirectAccessWrite01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Dec. 14 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Dec. 14 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO 
+!*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. test Write statement with direct access
@@ -31,9 +23,9 @@ module m
       integer(k1) :: int(l1)
    end type
 
-   type,extends(base) :: child(l2)   
+   type,extends(base) :: child(l2)
       integer,len     :: l2 !l2= 4
-      character(l1+l2) :: char(l1:l2) 
+      character(l1+l2) :: char(l1:l2)
    end type
 
    type,extends(child) :: gen3(l3)
@@ -42,7 +34,7 @@ module m
    end type
 
    contains
- 
+
       subroutine writeData(dt,unit)
          class(base(2,*)),intent(in) :: dt(:)
          integer,intent(in) :: unit
@@ -66,14 +58,14 @@ module m
            stop 12
      end select
 
-      end subroutine      
+      end subroutine
 end module
 
 program formatDirectAccessWrite01
   use m
   implicit none
 
-  integer        :: ios 
+  integer        :: ios
   character(300) :: msg
 
   class(base(2,:)),pointer :: base1(:)=>null()
@@ -87,10 +79,10 @@ program formatDirectAccessWrite01
          base1(-1)%log=[.true.,.false.,.true.]
          base1(0)%int=[-11,-12,-13]
          base1(0)%char=["MARKHAM","TORONTO"]
-         base1(0)%log=[.false.,.true.,.false.]  
+         base1(0)%log=[.false.,.true.,.false.]
       class default
          stop 11
-  end select 
+  end select
 
   open(10,file="formatDirectAccessWrite01.out",form='formatted',&
        status='new',action='write',access='direct', &
@@ -102,9 +94,9 @@ program formatDirectAccessWrite01
      print *,"iostat=",ios
      print *,"iomsg=",msg
      stop  10
-  else 
+  else
      call writeData(base1,10)
-  end if  
+  end if
 
   close(10)
 

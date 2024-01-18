@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpIAssignFunctionResultFromModulePolymorphic
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-11-12
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment without Allocation
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 358785
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -95,7 +89,7 @@ contains
     type(D2(3,4,8,3)) ::  derivedFun4D2 = D2(3,4,8,3)('mno',123.456_4,.true.,[-1111111112,-2122222223,-1333333334], &
                                                       reshape([(1113_2*i,i=1,9)],[3,3]), &
                                                       derived(3,8)('uvw',11246.81321D34,.true.,[7654321234567_8,0_8,-12345677654321_8]))
-    target :: derivedFun4a, derivedFun4D2 
+    target :: derivedFun4a, derivedFun4D2
     save   :: derivedFun4a, derivedFun4D2
     select case (n)
     case(1); derivedFun4 => derivedFun4a
@@ -114,7 +108,7 @@ contains
     type(D2(5,8,4,5)) :: derivedFun8D2 = D2(5,8,4,5)('qrstu',1.23456789D12,.false., &
                                                      [-1111111111311_8,-2222222232222_8,-3333233333333_8,-4444444434444_8,-5555555535555_8], &
                                                      reshape([(1114_2*i,i=1,25)],[5,5]),derived(5,4)('hijkl',109.654E-12,.true.,[-12341118_4,0,0,0,0]))
-    target :: derivedFun8a, derivedFun8D2 
+    target :: derivedFun8a, derivedFun8D2
     save   :: derivedFun8a, derivedFun8D2
     select case (n)
     case(1); derivedFun8 => derivedFun8a

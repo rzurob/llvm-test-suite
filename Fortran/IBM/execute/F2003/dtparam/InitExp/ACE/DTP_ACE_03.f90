@@ -1,19 +1,11 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : DTP_ACE_03.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha
 !*  DATE                       : April 24, 2009
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification 
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -21,7 +13,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod
@@ -32,7 +23,7 @@ MODULE Mod
         INTEGER, LEN  :: l1 = 10
 
         INTEGER(k1) :: A01(l1) = -1, A02(l1+1) = -2
-        REAL(k1)    :: R0 = -0.1 
+        REAL(k1)    :: R0 = -0.1
       END TYPE
 
       TYPE, EXTENDS(Base) :: Child (k2,l2)
@@ -45,7 +36,7 @@ MODULE Mod
       TYPE,  EXTENDS(Child) :: NextGen (l3)
         INTEGER, LEN  :: l3 = 2
 
-        INTEGER(k2) :: A31(l1) = -4, A32(l1+l2) = -5 
+        INTEGER(k2) :: A31(l1) = -4, A32(l1+l2) = -5
         TYPE(Base(k1,l3)) :: bcomp
       END TYPE
 
@@ -110,7 +101,7 @@ PROGRAM DTP_ACE_03
              STOP 44
       END SELECT
 
-      ALLOCATE( poly(1), SOURCE = [(NextGen(4,10,4,5,2)(11, 22, 0.12, 33, 44, 55, & 
+      ALLOCATE( poly(1), SOURCE = [(NextGen(4,10,4,5,2)(11, 22, 0.12, 33, 44, 55, &
                                 & Base(4,2)(88, 99, 0.89) ), I=1,1)] )
       SELECT TYPE ( poly )
           TYPE IS (NextGen(4,*,4,*,*))

@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass104.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass104.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE on INTRINSIC Data Types
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -77,7 +65,7 @@
       character*5, dimension(3) :: char1
       character*6, dimension(2) :: char2
       character*12, dimension(3) :: res_c
-    
+
       byte, dimension(2) :: byt1, byt2
 
       char1( 1 ) = 'white'
@@ -93,7 +81,7 @@
       res_c(1) = 'white flower'
       res_c(2) = 'brown cookie'
       res_c(3) = 'green flower'
-   
+
       associate ( arg1 => (char1(1) //' '// char2(1)) )
            if(arg1 .ne. res_c(1))then
            error stop 1

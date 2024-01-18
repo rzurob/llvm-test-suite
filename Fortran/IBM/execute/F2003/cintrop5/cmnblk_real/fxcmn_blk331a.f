@@ -2,35 +2,28 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk331a cxcmn_blk301a
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: rm -f *.o *.mod fxcmn_blk331a 
+! %POSTCMD: rm -f *.o *.mod fxcmn_blk331a
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block wiht BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : This test case will verify that scalar variables of
-!*				 REAL data types inside of common blocks do 
-!*				 interoperate with C variables inside Fortran module called by main 
+!*				 REAL data types inside of common blocks do
+!*				 interoperate with C variables inside Fortran module called by main
 !*				 program.
 !*
 !*                               This test case  will
@@ -43,17 +36,17 @@
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-module fmod1 
+module fmod1
 	use iso_c_binding
         implicit none
 
 ! ----------------------------------------------------------------------------
 ! Real Declaration
-!     	- use KIND, MAX, LEN, INT, MIN 
-!	- use ISO_C_BINDING modules	
+!     	- use KIND, MAX, LEN, INT, MIN
+!	- use ISO_C_BINDING modules
 ! ----------------------------------------------------------------------------
 
-	real (kind=o'004')			:: real_s4a 
+	real (kind=o'004')			:: real_s4a
 	real (LEN('Kobi'))			:: real_s4b
         real                       		:: real_s4c
         real (  4)                       	:: real_s4d
@@ -83,7 +76,7 @@ module fmod1
 ! Multiple COMMON statements with one variable in one BIND(C) statements
 ! ----------------------------------------------------------------------------
 
-        common /blk_real_s4a/          real_s4a 
+        common /blk_real_s4a/          real_s4a
         common /blk_real_s4b/          real_s4b
         common /blk_real_s4c/          real_s4c
         common /blk_real_s4d/          real_s4d
@@ -109,7 +102,7 @@ module fmod1
         common /blk_r_C_LONG_DOUBLE_s8d/          r_C_LONG_DOUBLE_s8d
 
 
-        bind(c) ::  			& 
+        bind(c) ::  			&
           /blk_real_s4a/                &
         , /blk_real_s4b/                &
         , /blk_real_s4c/                &
@@ -131,7 +124,7 @@ module fmod1
         , /blk_r_C_LONG_DOUBLE_s8c/     &
         , /blk_r_C_LONG_DOUBLE_s8d/
 
-end module fmod1 
+end module fmod1
 
 
 program fxcmn_blk331a
@@ -145,9 +138,9 @@ program fxcmn_blk331a
 !       - use max and min possible values for +ve and -ve numbers
 ! ----------------------------------------------------------------------------
 
-        real_s4a 			=  3.402823E+38 
+        real_s4a 			=  3.402823E+38
         real_s4b 			=  1.175494E-38
-        real_s4c                        = -3.402823E+38 
+        real_s4c                        = -3.402823E+38
         real_s4d                        = -1.175494E-38
 
         real_s8a 			=  1.797693D+308

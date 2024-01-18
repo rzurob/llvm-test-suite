@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2 Input Statement
 !*                                        Try array entity with explicit array components (Input)
@@ -91,12 +75,12 @@ program array002
    type(base), pointer      :: b2(:)
    type(base)               :: b3(2,2)
    class(base), pointer     :: b4(:,:)
-  
+
    c1 = 'abc'
    c2 = 'def'
    c3 = 'ghi'
    c4 = 'jkl'
-   
+
    i1 = (/ 1, 2 /)
    i2 = (/ 3, 4 /)
    i3 = (/ 5, 6 /)

@@ -1,24 +1,16 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxopen-newunit09.f
-!*
-!* PROGRAMMER                   : Sarah Kouchaki-Ramezan
 !* DATE                         : Oct. 2010
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008: NEWUNIT= specifier, Feature#:377344
 !* SECONDARY FUNTIONS TESTED    : READ,WRITE,REWIND
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : NEWUNIT with,BACKSPACE,READ,WRITE,REWIND
 !*                                FILE,FLUSH,STATUS='replace'
-!*
 !*
 !* ===================================================================
 !*  REVISION HISTORY
@@ -32,7 +24,7 @@
     PROGRAM FXOPEN_NEWUNIT09
     IMPLICIT NONE
 
-    INTEGER i /0/,j /0/,IVAR         
+    INTEGER i /0/,j /0/,IVAR
     INTEGER Iarray(5,5)
 
     OPEN (NEWUNIT=IVAR,  status='scratch')
@@ -57,7 +49,7 @@
     print *,  Iarray(3,3)
 
     REWIND(IVAR)
-    
+
     READ(IVAR, * ) i
     print *, i,Iarray(1,1)
     READ(IVAR, *) j

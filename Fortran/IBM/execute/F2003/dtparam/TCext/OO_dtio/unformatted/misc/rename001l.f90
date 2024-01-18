@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : rename001l
 !*
-!*  PROGRAMMER                 : David Forster (derived from rename001 by Robert Ma)
 !*  DATE                       : 2007-09-10 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003 (original: xlf95)
 !*
 !*  DESCRIPTION                : Testing: Use Association with rename
 !*  KEYWORD(S)                 :
@@ -105,19 +97,19 @@ program rename001l
                if ( (stat /= 0 ) .or. ( msg /= 'dtiowrite') )   error stop 4_4
       end select
    end associate
-   
+
    rewind 3
-   
+
    read (3, iostat = stat, iomsg = msg, pos = 1)     c1
    read (3, iostat = stat, iomsg = msg, pos = 4)     c2
    read (3, iostat = stat, iomsg = msg, pos = 7)     c3
    read (3, iostat = stat, iomsg = msg, pos = 10)    c4
-   
+
    if ( c1 /= 'abc' )       error stop 5_4
    if ( c2 /= 'def' )       error stop 6_4
    if ( c3 /= 'ghi' )       error stop 7_4
    if ( c4 /= 'ghidefabc' ) error stop 8_4
-  
+
 end program
 
 subroutine readUnformatted (dtv, unit, iostat, iomsg)

@@ -12,20 +12,12 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : March 14, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SCALB with internal procedures.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -33,7 +25,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : IEEE_SCALB(x,i) = 2**i*x
-!*  This testcase tests that values are passed correctly to the dummy 
+!*  This testcase tests that values are passed correctly to the dummy
 !*  arguments of an internal procedure.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -42,7 +34,7 @@
 
         use ieee_arithmetic
 	implicit none
-        
+
         real*4 :: xar4(2),ar4
         integer :: iar(2)
 	real*8 ::  xar8(2),ar8
@@ -50,12 +42,12 @@
         logical :: flag_values(5)
         type(ieee_status_type) :: status_value
 
-		
+
 	xar4 = (/16, 18/)
 	iar = (/5, 10/)
 	xar8 = (/16_8, 18_8/)
         xar16 = (/126.0_16, 168.0_16/)
-     
+
 !Test real*4
 
         call ieee_get_status(status_value)

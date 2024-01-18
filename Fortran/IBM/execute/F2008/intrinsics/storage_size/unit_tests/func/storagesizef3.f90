@@ -63,4 +63,4 @@ if (result .ne. (sizeof(arg4(1)) * 8)) then
 error stop 7_4
 end if
 end subroutine sub4
-end 
+end

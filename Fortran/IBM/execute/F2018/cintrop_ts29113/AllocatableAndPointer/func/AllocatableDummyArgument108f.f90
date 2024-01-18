@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument108f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from Fortran
@@ -22,8 +15,8 @@
 !*                                - Call to BIND(C) procedure from different scopes:
 !*                                main program, module and internal procedure
 !*                                - Nesting: call chain:
-!*                                non-Bind(C) => Bind(C) => non-Bind(C) 
-!*                                module/internal/main => external => external 
+!*                                non-Bind(C) => Bind(C) => non-Bind(C)
+!*                                module/internal/main => external => external
 !*                                - Formatted I/O
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -71,7 +64,7 @@ module mod
    end subroutine sub_mod
 end module mod
 
-program AllocatableDummyArgument108f 
+program AllocatableDummyArgument108f
    use iso_c_binding, only: c_int
    use mod
    implicit none
@@ -199,7 +192,7 @@ contains
      if (.not. allocated(f)) error stop 17
      if (.not. allocated(g)) error stop 18
 
-!---------- call BIND(C) procedure from internal procedure 
+!---------- call BIND(C) procedure from internal procedure
      call sub_bind_c(a,b,c,d,e,f,g)
 
   end subroutine sub_int
@@ -246,11 +239,11 @@ subroutine sub_bind_c(a,b,c,d,e,f,g) bind(C)
      do i = 1+3, 12-3, 3
       do j = 1+3, 12-3, 3
        d(i,j) = dot_product(d(:,j+3), b(:  ,i))
-       e(i,j) = dot_product(e(:,j-3), e(:  ,i)) 
+       e(i,j) = dot_product(e(:,j-3), e(:  ,i))
        f(i,j) = dot_product(f(:,j+3), f(i-3,:))
       enddo
      enddo
-  
+
      call sub_io(10,c,d,e,f)
 end subroutine sub_bind_c
 

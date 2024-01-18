@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadMis02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadMis02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 23 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 23 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -28,7 +20,7 @@ module m
      integer,kind :: k
      integer,len  :: l
      integer(k)   :: i(l-1:l+1)
-  end type 
+  end type
 end module
 
 program spreadMis02
@@ -37,20 +29,20 @@ program spreadMis02
 
   type(dt(2,3)) :: dt1=dt(2,3)(i=[1,2,3])
   type(dt(2,:)),allocatable :: dt2(:) , dt3(:,:)
- 
+
   if(any(shape(spread(dt1,1,0)) /= 0))               stop 1
   if(lbound(spread(dt1,1,0),1) /= 1)                 stop 2
   if(ubound(spread(dt1,1,0),1) /= 0)                 stop 3
 
   dt2=spread(dt1,1,2)
 
-  if(any(shape(spread(dt2,1,0)) /= [0,2]))           stop 4 
-  if(lbound(spread(dt2,1,0),1) /= 1)                 stop 5 
-  if(ubound(spread(dt2,1,0),1) /= 0)                 stop 6 
+  if(any(shape(spread(dt2,1,0)) /= [0,2]))           stop 4
+  if(lbound(spread(dt2,1,0),1) /= 1)                 stop 5
+  if(ubound(spread(dt2,1,0),1) /= 0)                 stop 6
 
-  if(any(shape(spread(dt2,2,0)) /= [2,0]))           stop 7 
-  if(lbound(spread(dt2,2,0),2) /= 1)                 stop 8 
-  if(ubound(spread(dt2,2,0),2) /= 0)                 stop 9 
+  if(any(shape(spread(dt2,2,0)) /= [2,0]))           stop 7
+  if(lbound(spread(dt2,2,0),2) /= 1)                 stop 8
+  if(ubound(spread(dt2,2,0),2) /= 0)                 stop 9
 
   dt3=spread(dt2,1,3)
 
@@ -65,6 +57,6 @@ program spreadMis02
   if(any(shape(spread(dt3,3,0)) /= [3,2,0]))         stop 16
   if(lbound(spread(dt3,3,0),3) /= 1)                 stop 17
   if(ubound(spread(dt3,3,0),3) /= 0)                 stop 18
- 
+
 
 end program

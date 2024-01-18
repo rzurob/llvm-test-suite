@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrFuncULPolyAlloc.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrFuncULAlloc
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 19, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
+!*
 !*   The selector is an unlimited allocatable  array pointer from function call
-!*  
+!*
 !*    (ICE-298416)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -55,7 +49,7 @@
         INTEGER, KIND :: K1
     CONTAINS
       PROCEDURE, NoPASS   :: Called
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4)
       INTEGER(K1) :: BaseId = 1
@@ -110,7 +104,7 @@
   USE M
   IMPLICIT NONE
   TYPE(Child(4)), TARGET :: V(2,2)
-  
+
   V%BaseId = -1
   V%ChildId = -2
 
@@ -123,10 +117,10 @@
   CLASS(*), ALLOCATABLE :: Fun(:,:)
     ALLOCATE(Fun(SIZE(Arg,1),SIZE(Arg,2)), SOURCE=Arg)
   END FUNCTION
-    
+
   SUBROUTINE Sub(Arg)
   CLASS(*) :: Arg(:, :)
- 
+
   SELECT TYPE ( V => Fun(Arg) )
     CLASS DEFAULT
       SELECT TYPE (V => V)
@@ -156,9 +150,9 @@
 
   END SELECT
 
-  END SUBROUTINE 
- 
- 
+  END SUBROUTINE
+
+
   END
 
 

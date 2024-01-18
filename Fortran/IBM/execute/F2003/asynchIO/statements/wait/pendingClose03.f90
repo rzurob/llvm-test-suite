@@ -1,20 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : pendingClose03 - CLOSE() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : April 12, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Data Transfers with an Error
 !*                               Condition
 !*  SECONDARY FUNCTIONS TESTED : CLOSE() with the ERR= Specifier;  both
 !*                               with and without the IOSTAT= Specifier
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : CLOSE(), ERR= Specifier, IOSTAT= Specifier
@@ -40,13 +33,11 @@
 !*                   or  ERR = label
 !*                   or  STATUS = scalar-default-char-expr
 !*
-!*
 !*  9.6.1 WAIT statement
 !*
 !*  NOTE 9.51
 !*  The CLOSE, INQUIRE, and file positioning statements may also perform wait
 !*  operations.
-!*
 !*
 !*  9.6.2 Wait operation
 !*

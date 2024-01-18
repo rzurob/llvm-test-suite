@@ -1,28 +1,16 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/05/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX/MIN intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX/MIN intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAX*/MIN* with assumed length char. array.
 !*
-!*
 !* ===================================================================
 
-program mxminMisc09 
+program mxminMisc09
 
     interface
          function fun1(str, n)
@@ -31,8 +19,8 @@ program mxminMisc09
          end function
          subroutine sub1(str, n)
              character(*), dimension(*) :: str
-             character(n), dimension(n) :: ver 
-         end subroutine 
+             character(n), dimension(n) :: ver
+         end subroutine
 
     end interface
 
@@ -47,7 +35,7 @@ program mxminMisc09
 
     call sub1(min(str1, str2), 3)
 
-end program mxminMisc09 
+end program mxminMisc09
 
     function fun1(str, n)
          character(*), dimension(*) :: str
@@ -59,13 +47,12 @@ end program mxminMisc09
 
     subroutine sub1(str, n)
          character(*), dimension(*) :: str
-         character(n), dimension(n) :: ver 
+         character(n), dimension(n) :: ver
          do i = 1, n
              ver(i) = str(i)
         end do
         if(any(ver .ne. 'aaa')) then
            error stop 2_4
         endif
-    end subroutine 
-
+    end subroutine
 

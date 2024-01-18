@@ -3,5 +3,5 @@ Program test
      integer :: i=4
     End Type
     Class(*),allocatable:: x
-    allocate (x,source=t()) 
+    allocate (x,source=t())
 End

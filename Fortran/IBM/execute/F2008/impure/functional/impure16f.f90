@@ -1,17 +1,14 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure16f
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
-!*  
+!*
 !*  DESCRIPTION
 !*
-!* Uses IMPURE elemental procedure in a module as a subroutine.  
-!* 
+!* Uses IMPURE elemental procedure in a module as a subroutine.
+!*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
 
@@ -23,7 +20,7 @@ IMPLICIT NONE
 INTEGER, PARAMETER :: n = 3000
   INTEGER :: i
   INTEGER :: z(n), b(n), sum = 2.2
-    
+
   CONTAINS
 
      SUBROUTINE  func1(z)
@@ -50,10 +47,10 @@ PROGRAM main
   IMPLICIT NONE
 
   z = (/ (i, i = 1, n) /)
-  
+
 do i = 1,2500,5
 call  func1(z(i))
-   
+
   end do
 
 END PROGRAM main

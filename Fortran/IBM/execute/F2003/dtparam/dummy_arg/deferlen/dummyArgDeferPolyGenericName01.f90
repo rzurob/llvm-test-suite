@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyGenericName01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferPolyGenericName01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 22 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 22 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. base type & child type both have character component
 !*  2. type-bound procedure has no pass attribute
-!*  3. base type & child type has same generic and nongeneric binding name 
-!*  4. dummy argument for type-bound procedure has different rank,argument list 
+!*  3. base type & child type has same generic and nongeneric binding name
+!*  4. dummy argument for type-bound procedure has different rank,argument list
 !*  5. test overriding & overriden binding
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -51,16 +43,16 @@ module m
   contains
     subroutine bdefine1(arg)
         class(base(2,:)),allocatable,intent(inout)   :: arg(:)
-        if(any(arg%c1 /= ["123","456"]))           error stop 11_4 
+        if(any(arg%c1 /= ["123","456"]))           error stop 11_4
         arg(-1)%c1="red"
-        arg(0)%c1="RED" 
+        arg(0)%c1="RED"
     end subroutine
 
     subroutine bdefine2(ptr,tar)
-        class(base(2,:)),pointer,intent(inout):: ptr 
-        class(child(2,*,*)),target,intent(in) :: tar 
-        
-        ptr=>tar  
+        class(base(2,:)),pointer,intent(inout):: ptr
+        class(child(2,*,*)),target,intent(in) :: tar
+
+        ptr=>tar
     end subroutine
 
     subroutine bdefine3(ptr,tar)
@@ -80,14 +72,14 @@ module m
            class default
              error stop 50_4
         end select
-         
+
     end subroutine
 
     subroutine cdefine2(ptr,tar)
-        class(base(2,:)),pointer,intent(inout) :: ptr 
-        class(child(2,*,*)),target,intent(in) :: tar 
+        class(base(2,:)),pointer,intent(inout) :: ptr
+        class(child(2,*,*)),target,intent(in) :: tar
 
-        ptr=>tar 
+        ptr=>tar
     end subroutine
 
     subroutine cdefine3(ptr,tar)
@@ -115,7 +107,7 @@ program dummyArgDeferPolyGenericName01
           child(2,3,4)(c1="456",c2="1234567")] )
 
   call dt%define(base1)
-  
+
   call dt%base%define(base1)
 
   select type(base1)
@@ -125,7 +117,7 @@ program dummyArgDeferPolyGenericName01
      class default
         error stop 51_4
   end select
- 
+
   tar1=[child(2,4,6)(c1="IBM",c2="CANADA"), &
         child(2,4,6)(c1="xlf",c2="compil")]
 
@@ -148,7 +140,7 @@ program dummyArgDeferPolyGenericName01
 
   call dt%base%define(ptr1,tar1)
 
-  if(.not. associated(ptr1,tar1(2:1:-1)))              error stop 22_4 
+  if(.not. associated(ptr1,tar1(2:1:-1)))              error stop 22_4
 
   select type(ptr1)
     type is(child(2,*,*))
@@ -160,17 +152,17 @@ program dummyArgDeferPolyGenericName01
       if(any(ptr1%c2 /=["compil","CANADA"]))           error stop 28_4
     class default
       error stop 29_4
-  end select    
+  end select
 
   if(associated(ptr2,tar1(1)))                         error stop 30_4
- 
-  if(associated(ptr2,tar1(2)))                         error stop 31_4 
 
-  call dt%define(ptr2,tar1(2)) 
+  if(associated(ptr2,tar1(2)))                         error stop 31_4
+
+  call dt%define(ptr2,tar1(2))
 
   if(.not. associated(ptr2,tar1(2)))                   error stop 32_4
- 
-  select type(ptr2) 
+
+  select type(ptr2)
      type is(child(2,*,*))
        if(ptr2%l1 /= 4)                                error stop 33_4
        if(ptr2%l2 /= 6)                                error stop 34_4
@@ -192,6 +184,6 @@ program dummyArgDeferPolyGenericName01
        if(ptr2%c2 /= "CANADA")                         error stop 41_4
      class default
        error stop 53_4
-  end select        
+  end select
 
 end program

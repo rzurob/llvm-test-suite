@@ -1,20 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : NEWUNIT with BACKSPACE,READ,WRITE
-!* TEST CASE TITLE              : - NEWUNIT comes with FILE
-!*
-!* PROGRAMMER                   : Sarah Kouchaki-Ramezan
 !* DATE                         : Sep. 2010
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : NEWUNIT in OPEN()
 !* SECONDARY FUNTIONS TESTED    : BACKSPACE,READ,WRITE,WAIT
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Execution of a file positioning statement

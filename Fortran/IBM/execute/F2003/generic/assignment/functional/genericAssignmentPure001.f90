@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Assignment(=)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : assignment: pure subroutine with scalar and class hierarchy
 !*  KEYWORD(S)                 :
@@ -82,36 +71,36 @@ end module
 
 program genericAssignmentPure001
    use m
-   
+
    class(base), pointer  :: b1
    class(child), pointer :: c1
-   
+
    type(base) :: b2
    type(child) :: c2
-   
+
    allocate ( b1, c1 )
-   
+
    b2 = base(100)
    c2 = child(1000, 2000)
-   
+
    print *, b2
    print *, c2
 
    b1 = b2
    c1 = c2
-   
+
    print *, b1%i
    print *, c1%i, c1%j
 
    c1 = -1000
    c2 = -1000
-   
+
    print *, c1%i, c1%j
    print *, c2%i, c2%j
-   
+
    deallocate ( b1 )
    allocate ( child :: b1 )
-   
+
    b1 = c1
    select type ( b1 )
       type is ( child )

@@ -1,31 +1,23 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeCharComp04.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeCharComp04.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 12 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 12 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
-!* 3. TSOURCE,FSOURCE ARE POLYMORPHIC  
-!* 4. DERIVED TYPE HAS CHARACTER ARRAY POINTER COMPONENT 
-!* 5. DERIVED TYPE HAS EXTENDED TYPE 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
+!* 3. TSOURCE,FSOURCE ARE POLYMORPHIC
+!* 4. DERIVED TYPE HAS CHARACTER ARRAY POINTER COMPONENT
+!* 5. DERIVED TYPE HAS EXTENDED TYPE
 !* 6. DEFECT 356111
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -35,7 +27,7 @@ module m
   end type
   type,extends(A) :: B(l2)
      integer(2),len :: l2=4
-     character(l1+l2) :: c2="xlftest" 
+     character(l1+l2) :: c2="xlftest"
   end type
 end module
 
@@ -44,25 +36,25 @@ program mergeCharComp04
    implicit none
 
    class(A),pointer ::a1
-   class(A),allocatable :: b1     
-   class(*),pointer :: c1 
+   class(A),allocatable :: b1
+   class(*),pointer :: c1
 
    class(A(:)),pointer      :: a2(:)
    class(A(:)),allocatable  :: b2(:)
    class(*),pointer         :: c2(:)
 
    character(7),target      :: ch1(4)=["abcd","efgh","ijkl","mnop"]
-   
+
    allocate(a1,source=B(3,5)(ch1,"aaa"))
    allocate(b1,source=B(3,5)(ch1(1:2),"bbb"))
    c1=>a1
 
    allocate(a2(2),source=[B(4,6)(ch1(1:2),"aa1"),B(4,6)(ch1(3:4),"aa2")])
-   
-   allocate(b2(2),source=[B(4,6)(ch1(3:3)(2:3),"bb1"),B(4,6)(ch1(4:4)(2:3),"bb2")]) 
-   c2=>a2 
- 
- 
+
+   allocate(b2(2),source=[B(4,6)(ch1(3:3)(2:3),"bb1"),B(4,6)(ch1(4:4)(2:3),"bb2")])
+   c2=>a2
+
+
    select type(x=>merge(a1,b1,.true.))
       type is(B(*,*))
          if(x%l1 /= 3)                                error stop 10_4
@@ -130,11 +122,11 @@ program mergeCharComp04
          if(x%l1 /= 4)                                error stop 40_4
          if(x%l2 /= 6)                                error stop 41_4
          if(any(x(1)%c1 /= ["abcd","efgh"]))          error stop 42_4
-         if(any(x(2)%c1 /= ["ijkl","mnop"]))          error stop 43_4 
+         if(any(x(2)%c1 /= ["ijkl","mnop"]))          error stop 43_4
          if(x(1)%c1%len /= 7)                         error stop 44_4
          if(x(2)%c1%len /= 7)                         error stop 45_4
          if(any(x%c2 /= ["aa1","aa2"]))               error stop 46_4
-          if(x%c2%len /= 10)                          error stop 47_4          
+          if(x%c2%len /= 10)                          error stop 47_4
       class is(B(*,*))
          error stop 108_4
       class default

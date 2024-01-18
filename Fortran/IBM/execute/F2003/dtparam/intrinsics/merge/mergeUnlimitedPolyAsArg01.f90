@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeUnlimitedPolyAsArg01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : mergeUnlimitedPolyAsArg01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 22 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 22 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
 !* 3. TSOURCE AND FSOURCE ARE UNLIMITED POLYMORPHIC ALLOCATABLE
 !* 4. DEFECT 356275
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -30,7 +22,7 @@ module m
   type base(k1,l1)
      integer,kind :: k1
      integer,len  :: l1
-    
+
      integer(k1)   :: i1
      character(l1) :: c1
   end type
@@ -38,7 +30,7 @@ module m
   type,extends(base) :: child(k2,l2)
      integer(2),kind :: k2
      integer(2),len  :: l2
-    
+
      integer(k2) :: i2
      character(l2) :: c2
   end type
@@ -59,7 +51,7 @@ program mergeUnlimitedPolyAsArg01
 
    mask1=[.true.,.false.,.true.,.false.,.true.,.false.]
    mask2=reshape(mask1,(/2,3/))
- 
+
    chld1=[( (child(4,3,2,6)(i1=k,c1=char(k+64),i2=k+10,c2=char(k+96))),k=1,6 )]
 
    chld2=[( (child(4,3,2,6)(i1=-k,c1=char(k+70),i2=-k-10,c2=char(k+102))),k=1,6 )]
@@ -73,11 +65,11 @@ program mergeUnlimitedPolyAsArg01
    allocate(poly2(6),source=chld2)
 
    allocate(poly3(2,3),source=chld3)
-   
+
    allocate(poly4(2,3),source=chld4)
 
    allocate(poly5(1:1),source=merge(poly1(1:1),poly2(1:1),.true.))
-   
+
    select type(poly5)
      type is(child(4,*,2,*))
        if(size(poly5,1) /= 1)                  error stop 10_4
@@ -104,7 +96,7 @@ program mergeUnlimitedPolyAsArg01
    end select
 
    if(allocated(poly5))  deallocate(poly5)
-   
+
    allocate(poly5(1:1),source=merge(poly1(1:1),poly2(1:1),.false.))
 
 
@@ -166,7 +158,7 @@ program mergeUnlimitedPolyAsArg01
 
    allocate(poly5(6),source=merge(poly1,poly2,.not. mask1))
 
-   
+
    select type(poly5)
      type is(child(4,*,2,*))
         if(size(poly5,1) /= 6)                  error stop 70_4
@@ -195,7 +187,7 @@ program mergeUnlimitedPolyAsArg01
    if(allocated(poly6))    deallocate(poly6)
 
    allocate(poly6(2,3),source=merge(poly3,poly4,mask2))
- 
+
    select type(poly6)
       type is(child(4,*,2,*))
         if(size(poly6,1) /= 2)                  error stop 89_4
@@ -224,12 +216,12 @@ program mergeUnlimitedPolyAsArg01
      class default
         error stop 205_4
 
-  end select    
+  end select
 
    if(allocated(poly6))  deallocate(poly6)
 
    allocate(poly6(2,3),source=merge(poly3,poly4,.not. mask2))
-  
+
    select type(poly6)
       type is(child(4,*,2,*))
            if(size(poly6,1) /= 2)                  error stop 120_4

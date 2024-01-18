@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrHostDummy.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrHostDummy
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 20, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,9 +30,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a host associate name associating to a 
-!*   poly dummy array 
+!*
+!*   The selector is a host associate name associating to a
+!*   poly dummy array
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -50,7 +44,7 @@
     TYPE  :: Zero
     CONTAINS
       PROCEDURE, NoPASS   :: Called
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base
       INTEGER :: BaseId = 1
@@ -105,8 +99,8 @@
   USE M
   IMPLICIT NONE
   CLASS(Base), POINTER :: V(:,:)
-  
-  ALLOCATE(V(3,3), SOURCE=Child(BaseId=-1, ChildId=-2)) 
+
+  ALLOCATE(V(3,3), SOURCE=Child(BaseId=-1, ChildId=-2))
 
   CALL Sub(V(1:2, 2:3))
   SELECT TYPE  (W=>V(1:2, 2:3))
@@ -115,7 +109,7 @@
     IF ( ANY(W%GetId()      .NE. 2) ) STOP 55
     IF ( ANY(W%BaseId       .NE. 1) ) STOP 56
     IF ( ANY(W%ChildId      .NE. 2) ) STOP 57
-  END SELECT 
+  END SELECT
 
   CONTAINS
 
@@ -125,9 +119,9 @@
     IF ( .NOT. PRESENT(Arg) ) STOP 11
 
     SELECT TYPE (U => Arg(:,:2))
-    CLASS IS (Child) 
+    CLASS IS (Child)
     SELECT TYPE (W => U)
-    CLASS IS (Child) 
+    CLASS IS (Child)
       SELECT TYPE (V => W)
         TYPE IS (Child)
           IF ( SIZE(V)          .NE. 4 )          STOP 21
@@ -159,9 +153,9 @@
   END SELECT
   END SELECT
 
-  END SUBROUTINE 
- 
- 
+  END SUBROUTINE
+
+
   END
 
 

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsScalarProcPtrComp02.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : spreadSourceIsScalarProcPtrComp02.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 16 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 16 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES) 
+!*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.114
@@ -45,13 +37,13 @@ module m
       subroutine sub1(int)
          integer,intent(inout) :: int
 
-         print *," in sub1" 
+         print *," in sub1"
          int=99
       end subroutine
 
       subroutine sub2(int)
          integer,intent(inout) :: int
-     
+
          print *,"in sub2"
          int=-99
       end subroutine
@@ -92,11 +84,11 @@ program spreadSourceIsScalarProcPtrComp02
 
          call b2(i)%ptr1(arg)
          if(arg /= 99)                                       error stop 16_4
-         
+
          call b2(i)%ptr2(arg)
-         if(arg /= -99)                                      error stop 17_4 
+         if(arg /= -99)                                      error stop 17_4
        end do
       class default
          error stop 101_4
-  end select   
+  end select
 end program

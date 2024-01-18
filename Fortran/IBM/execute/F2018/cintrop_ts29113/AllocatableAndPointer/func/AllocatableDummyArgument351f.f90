@@ -1,19 +1,12 @@
 ! *********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : AllocatableDummyArgument301f.f
-!*
-!* PROGRAMMER                   : Dorra Bouchiha
 !* DATE                         : January 25, 2013
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: ALLOCATABLE and POINTER dummy argument
 !* SECONDARY FUNTIONS TESTED    :
 !*
-!* DRIVER STANZA                :
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Calling a Fortran BIND(C) procedure from C
@@ -39,18 +32,18 @@ subroutine sub_int(arg, flag, value) bind(C)
     logical(c_bool), optional   :: flag
 
 
-    if( present(value)) then 
+    if( present(value)) then
        if ( associated(arg) ) then
-          if( arg .NE. value) ERROR STOP 10 
+          if( arg .NE. value) ERROR STOP 10
           if ( present(flag) ) flag = .true._C_BOOL
-       else 
+       else
          if ( present(flag) ) flag = .false._C_BOOL
        endif
-    else 
+    else
        if ( associated(arg) ) then
          if ( present(flag) ) flag = .true._C_BOOL
          arg = -1
-       else 
+       else
          if ( present(flag) ) flag = .false._C_BOOL
        endif
     end if
@@ -65,7 +58,7 @@ subroutine get_val(arg, value) bind(C)
             use iso_c_binding
             implicit none
             integer(c_int) :: arg
-       end     
+       end
     end interface
 
     integer(c_int), pointer :: arg, src
@@ -74,7 +67,7 @@ subroutine get_val(arg, value) bind(C)
     allocate(src, source = value)
     if ( associated(arg) ) then
        arg = Func(src)
-    else 
+    else
        ERROR STOP 20
     endif
 end subroutine get_val

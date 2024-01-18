@@ -1,26 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type02d - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 25, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Nested SELECT TYPE Construct
 !*                               Argument association (external subroutines)
-!*                     
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -41,18 +34,18 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 MODULE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       TYPE Base  (k1,l1)
         INTEGER, KIND :: k1 = KIND(0)
         INTEGER, LEN  :: l1 = 20
 
         INTEGER(KIND=k1) :: my_arr(l1)
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
         CLASS(*), POINTER :: Cmp
-      END TYPE Child 
+      END TYPE Child
 
       INTEGER, PARAMETER :: knd1 = KIND(0), len1 = 10
 
@@ -60,7 +53,7 @@ END MODULE Mod1
 
 PROGRAM Select_Type02d
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
       INTERFACE
          SUBROUTINE Sub2(q)
@@ -70,8 +63,8 @@ PROGRAM Select_Type02d
       END INTERFACE
 
       CLASS(*), POINTER :: pntr
-    
-      ALLOCATE( Child(knd1,len1):: pntr )    
+
+      ALLOCATE( Child(knd1,len1):: pntr )
       IF (.NOT. ASSOCIATED(pntr)) STOP 10
 
       CALL sub2(pntr)
@@ -82,10 +75,10 @@ END PROGRAM Select_Type02d
 
 SUBROUTINE sub2(Obj)
       USE Mod1
-      IMPLICIT NONE 
+      IMPLICIT NONE
 
-      CLASS(*), INTENT(INOUT) :: Obj  
-      TYPE(Base(knd1,len1)), TARGET :: tgt 
+      CLASS(*), INTENT(INOUT) :: Obj
+      TYPE(Base(knd1,len1)), TARGET :: tgt
       INTEGER :: K, sum1
 
       tgt = Base(knd1,len1)( my_arr = ((/ (K, K = 1, len1) /)) )
@@ -95,7 +88,7 @@ SUBROUTINE sub2(Obj)
         TYPE IS (Child(knd1,*))
            A%Cmp => tgt
            IF ( .NOT. ASSOCIATED(A%Cmp) ) STOP 11
-           ASSOCIATE ( p => A%Cmp) 
+           ASSOCIATE ( p => A%Cmp)
               CALL sub1(p)
            END ASSOCIATE
 
@@ -109,7 +102,7 @@ SUBROUTINE sub2(Obj)
            STOP 22
       END SELECT
 
-      CONTAINS 
+      CONTAINS
 
       SUBROUTINE sub1(Obj)
 
@@ -130,9 +123,9 @@ SUBROUTINE sub2(Obj)
                 IF ( SIZE(A%my_arr)      .NE. len1 ) STOP 13
                 IF ( UBOUND(A%my_arr, 1) .NE. len1 ) STOP 14
                 IF ( LBOUND(A%my_arr, 1) .NE.    1 ) STOP 15
-        
+
               CLASS DEFAULT
-                STOP 41 
+                STOP 41
             END SELECT
            !* End nested SELECT TYPE
 

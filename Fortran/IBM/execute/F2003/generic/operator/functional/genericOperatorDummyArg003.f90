@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with Operator
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : operator: poly dummy arguments being the operand
 !*  KEYWORD(S)                 :
@@ -57,7 +46,7 @@ module m
       print *, 'badd'
 
    end function
-   
+
    class(base) function cadd ( a, b )
       class(child), intent(in) :: a
       class(base), intent(in) :: b
@@ -85,36 +74,36 @@ program genericOperatorDummyArg003
 
    class(base), allocatable :: b1, b2
    class(child), pointer :: c1, c2
-   
+
    allocate ( b1, source = add ( base(200), child(300,400)))
    select type ( b1 )
       type is ( base )
          print *, b1%i
    end select
-   
+
    allocate ( b2, source = add ( child(100,200), base(300) ) )
    select type ( b2 )
       type is ( child )
          print *, b2%i, b2%j
    end select
-   
+
    deallocate ( b1 )
    allocate ( b1, source = add ( child(200, 300), child(300,400)))
    select type ( b1 )
       type is ( child )
          print *, b1%i, b1%j
    end select
-   
+
    allocate ( c1, source = child(50,100))
    allocate ( c2, source = child(500,1000) )
-   
+
    deallocate ( b2 )
    allocate ( b2, source = add ( c1, c2 ) )
    select type ( b2 )
       type is ( child )
          print *, b2%i, b2%j
    end select
-   
+
    contains
 
       class(base) function add(a, b)

@@ -11,7 +11,7 @@ type dtp (l3, l4)
   type(dt(l3, l4)) :: d1
 end type
 
-type (dtp(2,3)) dtp1, dtp2, res 
+type (dtp(2,3)) dtp1, dtp2, res
 
 logical :: mask(2,3) = reshape((/.true., .false., .true., .false., .true., &
                                  .false./), (/2,3/))

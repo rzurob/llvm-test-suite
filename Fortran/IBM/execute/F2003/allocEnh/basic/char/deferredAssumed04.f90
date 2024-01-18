@@ -1,14 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : deferredAssumed04 - Basic Tests:
 !*                               CHARACTER Intrinsic Type
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : September 22, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is
 !*                               a Deferred Length Unallocated/Allocated
@@ -17,7 +12,6 @@
 !*  SECONDARY FUNCTIONS TESTED : expr is an Assumed Length Allocated
 !*                               ALLOCATABLE of Type CHARACTER
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : ALLOCATABLE Attribute, Intrinsic Assignment
@@ -29,7 +23,6 @@
 !*  7.4.1.1 General form
 !*
 !*  R734 assignment-stmt  is  variable = expr
-!*
 !*
 !*  7.4.1.3 Interpretation of intrinsic assignments
 !*
@@ -117,7 +110,7 @@ SUBROUTINE Expected(length, assumed, rcBase)
     IF (.NOT. ALLOCATED( deferred ))    CALL zzrc( (rcBase + 1_4) )
 
     PRINT *, length, LEN( deferred ), LEN_TRIM( deferred ),&
-                            "'", deferred, "' (", assumed, ")" 
+                            "'", deferred, "' (", assumed, ")"
 
     IF (LEN( deferred ) /= length)      CALL zzrc( (rcBase + 2_4) )
     IF (LEN_TRIM( deferred ) /= length) CALL zzrc( (rcBase + 3_4) )

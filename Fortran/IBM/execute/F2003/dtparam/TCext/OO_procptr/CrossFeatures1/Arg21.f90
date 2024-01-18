@@ -6,34 +6,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Arg21.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Arg21.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Arg21.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Arg21.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 26, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -41,7 +35,7 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
+!*
 !*  Argument association - Implicit interface
 !*  If the dummy argument is referenced as a subroutine, the actual argumenti
 !*  shall be  a subroutine, subroutine procedure pointer, or dummy procedure.
@@ -57,24 +51,24 @@
       INTEGER, LEN              :: N1
       CHARACTER(kind=K1,len=N1) :: C
     END TYPE
- 
+
     INTERFACE
       SUBROUTINE IntF(Arg1, Arg2)
       IMPORT
-        TYPE(Base(1,*)), INTENT(IN)  :: Arg2 
-        TYPE(Base(1,*)), INTENT(OUT) :: Arg1 
-      END SUBROUTINE 
+        TYPE(Base(1,*)), INTENT(IN)  :: Arg2
+        TYPE(Base(1,*)), INTENT(OUT) :: Arg1
+      END SUBROUTINE
     END INTERFACE
 
- 
+
   END MODULE
 
   SUBROUTINE ExtSub(Arg1, Arg2)
   USE M
-  TYPE(Base(1,*)), INTENT(IN)  :: Arg2 
-  TYPE(Base(1,*)), INTENT(OUT) :: Arg1 
+  TYPE(Base(1,*)), INTENT(IN)  :: Arg2
+  TYPE(Base(1,*)), INTENT(OUT) :: Arg1
     Arg1 = Arg2
-  END SUBROUTINE 
+  END SUBROUTINE
 
 
   PROGRAM Arg20
@@ -87,15 +81,15 @@
 
   CONTAINS
 
-  SUBROUTINE IntSub1() 
-  PROCEDURE(IntF) :: ExtSub 
-    CALL IntSub3(ExtSub, ExtSub) 
-  END SUBROUTINE 
+  SUBROUTINE IntSub1()
+  PROCEDURE(IntF) :: ExtSub
+    CALL IntSub3(ExtSub, ExtSub)
+  END SUBROUTINE
 
-  SUBROUTINE IntSub2() 
-  PROCEDURE(IntF) :: ExtSub 
-    CALL IntSub4(ExtSub) 
-  END SUBROUTINE 
+  SUBROUTINE IntSub2()
+  PROCEDURE(IntF) :: ExtSub
+    CALL IntSub4(ExtSub)
+  END SUBROUTINE
 
   SUBROUTINE IntSub3(Proc0, Proc1)
   IMPLICIT TYPE(Base(1,3))(P)

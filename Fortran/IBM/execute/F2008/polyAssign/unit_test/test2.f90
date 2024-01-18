@@ -1,5 +1,4 @@
 
-
 program main
   type t
     class(*), allocatable:: x
@@ -18,8 +17,8 @@ program main
   integer :: i
   do i=1,10,1
     x1 = retPoly(p)
-    !if (allocated(x1)) then 
-    !  deallocate(x1) 
+    !if (allocated(x1)) then
+    !  deallocate(x1)
     !end if
     !allocate (x1, source = retPoly(p))
     !print *, "storage size x1"
@@ -42,8 +41,8 @@ program main
         print *, "type of p is t"
     end select
   end do
- 
-  contains 
+
+  contains
   function retPoly(p)
     class(*), pointer :: p
     class(t), allocatable :: retPoly
@@ -54,5 +53,5 @@ program main
       class default
         retPoly = t(null)
     end select
-  end function    
+  end function
 end

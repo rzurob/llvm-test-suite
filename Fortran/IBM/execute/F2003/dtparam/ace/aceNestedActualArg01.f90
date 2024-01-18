@@ -1,16 +1,11 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : aceNestedActualArg01
-!*  TEST CASE TITLE            : Basic (non-Polymorphic) Array Constructors
 !*                               with DTP
 !*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : November 21, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor contains Nested Array
 !*                               Constructors for a Derived Type (with
@@ -18,7 +13,6 @@
 !*  SECONDARY FUNCTIONS TESTED : and is the Acutal Argument to a User
 !*                               Defined FUNCTION
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

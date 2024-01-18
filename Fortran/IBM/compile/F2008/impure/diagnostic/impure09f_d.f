@@ -1,13 +1,10 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : impure09f
 !*
-!*  PROGRAMMER                 : Tapti Vaid
 !*  DATE                       : 2012-04-16
-!*  
+!*
 !*  DESCRIPTION
 !*
 !*  checks if an IMPURE elemental procedure works with File Handling using read, write,
@@ -30,7 +27,7 @@ call reading (a)
 
   IMPURE ELEMENTAL subroutine  writing (z)
     REAL::Z
-    
+
     REAL :: i
     OPEN (7, FILE = 'DummyData.txt' ,  STATUS = 'NEW')
     DO 10 i=1 , 100
@@ -38,21 +35,21 @@ call reading (a)
  10   CONTINUE
    CLOSE (7)
   END subroutine writing
- 
+
 IMPURE ELEMENTAL subroutine reading (y)
    REAL :: y
    REAL :: i
    CHARACTER(LEN=500) :: output
-  OPEN (7, FILE = 'DummyData.txt') 
-   DO 10 i=2,50       
+  OPEN (7, FILE = 'DummyData.txt')
+   DO 10 i=2,50
     READ(7,*) output
       print*, output
     10    CONTINUE
-    
+
     CLOSE (7)
-   
+
   END subroutine reading
-    
-  
+
+
 
 END PROGRAM main

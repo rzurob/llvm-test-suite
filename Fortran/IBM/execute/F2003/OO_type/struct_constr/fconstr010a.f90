@@ -1,39 +1,23 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
 ! %PRECMD: rm -f *.mod
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fconstr010a.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
-!*                                                                     
-!*  TEST CASE TITLE            :
-!*                                                                     
-!*  PROGRAMMER                 : Jim Xia
-!*  DATE                       : Nov. 12, 2003
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
-!*                                                                     
-!*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  ===================================================================
 !*
-!*  DRIVER STANZA              : xlf90
+!*  DATE                       : Nov. 12, 2003
+!*
+!*  PRIMARY FUNCTIONS TESTED   :
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : structure constructor (NOT all components have
 !*                               default initialization, leading components

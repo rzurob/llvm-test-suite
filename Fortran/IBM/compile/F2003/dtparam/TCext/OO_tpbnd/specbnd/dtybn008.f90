@@ -5,58 +5,51 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: 
+! %PRECMD:
+! %COMPOPTS:
 ! %GROUP: redherring.f
-! %VERIFY: 
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
-! %EXECARGS: 
-! %POSTCMD: dcomp dtybn008.f 
+! %STDOUT:
+! %EXECARGS:
+! %POSTCMD: dcomp dtybn008.f
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtybn007.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : dtybn007.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : private subroutine 
+!*  DATE                       :
+!*
+!*  PRIMARY FUNCTIONS TESTED   : private subroutine
 !*
 !*  SECONDARY FUNCTIONS TESTED : nopass , non_overridable
 !*
 !*  DESCRIPTION                : testing the private type bound
 !*                               procedure within a private derived
-!*                               type. 
-!*                               
-!*    
+!*                               type.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod1	      
+   module mod1
       type,private :: parent(k1)    ! (4)
          integer, kind :: k1
          integer(k1)   :: x
 	 contains
       	 procedure, private, nopass, non_overridable :: bind => proc1
-      end type 
+      end type
 
    type(parent(4)) :: dt_p
 
       contains
       subroutine proc1()
       end subroutine
-   
-   end module     
+
+   end module
 
    use mod1
    call dt_p%bind()
 
    end
-   
+

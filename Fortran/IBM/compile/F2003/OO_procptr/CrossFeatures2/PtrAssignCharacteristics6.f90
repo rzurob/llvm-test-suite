@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: tcomp PtrAssignCharacteristics6.f 
+! %POSTCMD: tcomp PtrAssignCharacteristics6.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : PtrAssignCharacteristics6.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : PtrAssignCharacteristics6.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar. 25, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,76 +30,76 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*    
+!*
 !*  Characteristics are diff
 !*  On function results: type/type parameters/defered parameters/polymorphic
-!*  /pointer-allocabable/procedure pointer/rank/shape/the exact dependence of 
+!*  /pointer-allocabable/procedure pointer/rank/shape/the exact dependence of
 !*  an array bound or type parameteron other entites
-!* 
-!*  () 
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
 
   TYPE::DT
-  END TYPE 
+  END TYPE
 
   CONTAINS
 
   FUNCTION IntFun1()
   CLASS(*), POINTER :: IntFun1
     ALLOCATE(IntFun1, SOURCE=-1)
-  END FUNCTION 
+  END FUNCTION
 
   FUNCTION IntFun2(Arg)
   CLASS(DT), POINTER  :: IntFun2(:), Arg(:)
-    ALLOCATE(IntFun2(SIZE(Arg)), SOURCE=Arg) 
-  END FUNCTION 
+    ALLOCATE(IntFun2(SIZE(Arg)), SOURCE=Arg)
+  END FUNCTION
 
   FUNCTION IntFun3()
     CLASS(DT), POINTER :: IntFun3
-    ALLOCATE(IntFun3, SOURCE=DT()) 
-  END FUNCTION 
+    ALLOCATE(IntFun3, SOURCE=DT())
+  END FUNCTION
 
   FUNCTION IntFun4()
   CLASS(DT), POINTER :: IntFun4
-    ALLOCATE(IntFun4, SOURCE=DT()) 
-  END FUNCTION 
+    ALLOCATE(IntFun4, SOURCE=DT())
+  END FUNCTION
 
   FUNCTION IntFun5(Arg)
   TYPE(DT) :: IntFun5
   PROCEDURE(TYPE(DT)), POINTER :: Arg
     IntFun5 = Arg()
-  END FUNCTION 
+  END FUNCTION
 
   FUNCTION IntFun6(Arg)
   INTEGER :: IntFun6
-  CLASS(DT) :: Arg(:,:) 
-    IntFun6 = 1 
-  END FUNCTION 
+  CLASS(DT) :: Arg(:,:)
+    IntFun6 = 1
+  END FUNCTION
 
   FUNCTION IntFun7(Arg)
   INTEGER :: IntFun7
   CLASS(DT) :: Arg(2:2)
-    IntFun7 = 1 
-  END FUNCTION 
+    IntFun7 = 1
+  END FUNCTION
 
   FUNCTION IntFun8()
   TYPE(DT) :: IntFun8(3)
-    IntFun8 = DT() 
-  END FUNCTION 
+    IntFun8 = DT()
+  END FUNCTION
 
   FUNCTION IntFun9(M,N)
       INTEGER :: M,N
       TYPE(DT) :: IntFun9(N)
-    IntFun9 = DT() 
-  END FUNCTION 
+    IntFun9 = DT()
+  END FUNCTION
 
 
   END MODULE
 
-  PROGRAM PtrAssignCharacteristics6 
+  PROGRAM PtrAssignCharacteristics6
   USE M
   IMPLICIT NONE
 
@@ -113,9 +107,9 @@
     FUNCTION F1()
       IMPORT DT
       CLASS(DT), POINTER :: F1
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
- 
+
   PROCEDURE(F1), POINTER :: ProcPtr1
 
   INTERFACE
@@ -123,27 +117,27 @@
       IMPORT DT
       CLASS(DT), POINTER :: F2(:)
       CLASS(DT)          :: Arg(3)
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
- 
+
   PROCEDURE(F2), POINTER :: ProcPtr2
 
   INTERFACE
     FUNCTION F3()
       IMPORT DT
       TYPE(DT), POINTER :: F3
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
- 
+
   PROCEDURE(F3), POINTER :: ProcPtr3
 
   INTERFACE
     FUNCTION F4()
       IMPORT DT
       CLASS(DT), ALLOCATABLE :: F4
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
- 
+
   PROCEDURE(F4), POINTER :: ProcPtr4
 
   INTERFACE
@@ -151,19 +145,19 @@
       IMPORT DT
       TYPE(DT) :: F5
       PROCEDURE(TYPE(DT)) :: Arg
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
- 
+
   PROCEDURE(F5), POINTER :: ProcPtr5
 
   INTERFACE
     FUNCTION F6()
       IMPORT DT
       INTEGER :: IntFun6
-      CLASS(DT), POINTER :: Arg(:) 
-    END FUNCTION 
+      CLASS(DT), POINTER :: Arg(:)
+    END FUNCTION
   END INTERFACE
- 
+
   PROCEDURE(F6), POINTER :: ProcPtr6
 
   INTERFACE
@@ -171,18 +165,18 @@
       IMPORT DT
       INTEGER :: F7
       CLASS(DT) :: Arg(1:1, 2:2)
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
- 
+
   PROCEDURE(F7), POINTER :: ProcPtr7
 
   INTERFACE
     FUNCTION F8()
       IMPORT DT
       TYPE(DT) :: F8(4)
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
- 
+
   PROCEDURE(F8), POINTER :: ProcPtr8
 
   INTERFACE
@@ -190,9 +184,9 @@
       IMPORT DT
       INTEGER :: M,N
       TYPE(DT) :: F9(M)
-    END FUNCTION 
+    END FUNCTION
   END INTERFACE
- 
+
   PROCEDURE(F9), POINTER :: ProcPtr9
 
 
@@ -214,5 +208,5 @@
 
   ProcPtr9 => IntFun9
 
-  END 
+  END
 

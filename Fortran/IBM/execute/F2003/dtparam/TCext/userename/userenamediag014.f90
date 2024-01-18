@@ -16,21 +16,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : userenamediag014.f
-!*
-!*  PROGRAMMER                 : Rob Wheeler *  DATE                       :
 !Mar. 30, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Rename operator in  USE statement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : ensure renaming to an ambiguous private type bound yields error
 !*
@@ -47,7 +40,7 @@ module opmod
       generic, private :: operator(.add.) => plus
 
   end type
-  
+
   interface operator(.adda.)
     module procedure plus2
   end interface
@@ -58,7 +51,7 @@ module opmod
       class(modreal(4)), intent(in) :: a,b
       plus%x = a%x+b%x*2.0
     end function plus
-    
+
     function plus2(a,b)
       type(modreal(4)) :: plus2
       class(modreal(4)), intent(in) :: a,b

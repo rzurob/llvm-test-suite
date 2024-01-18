@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: FuncRet5.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: FuncRet5.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRet5.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRet5.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 26, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  Function Return - Procedure pointer 
+!*
+!*  Function Return - Procedure pointer
 !*  (ICE-314926/(315012/316119)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -52,10 +46,10 @@
       INTEGER, KIND :: K1
       PROCEDURE(IFun), PASS, POINTER :: ProcPtr
       CONTAINS
-      PROCEDURE, PASS :: Proc => ModFun 
+      PROCEDURE, PASS :: Proc => ModFun
     END TYPE
 
-    INTERFACE 
+    INTERFACE
       FUNCTION IFun(Arg)
         IMPORT DT
         CLASS(DT(4)) :: Arg
@@ -79,25 +73,25 @@
     FUNCTION ModFun(Arg)
     CLASS(DT(4)) :: Arg
     PROCEDURE(IFun), POINTER :: ModFun
-      ModFun => Arg%ProcPtr 
+      ModFun => Arg%ProcPtr
     END FUNCTION
 
   END MODULE
 
   PROGRAM FuncRet5
   USE M
-  IMPLICIT TYPE(DT1(4))(P) 
+  IMPLICIT TYPE(DT1(4))(P)
 
   PROCEDURE(ModFun),        POINTER :: ProcPtr1
   PROCEDURE(ProcPtr1),      POINTER :: ProcPtr2
   TYPE(DT(4))                       ::  Const=DT(4)(  NULL()), T
 
 
-  TYPE(DT1(4))        :: V(10000) 
+  TYPE(DT1(4))        :: V(10000)
   TYPE(DT(4)), TARGET :: Tar
 
   Const%ProcPtr => ModFun1
-  Tar = Const 
+  Tar = Const
   V = DT1(4)(ModFun1, Const, Tar)
 
   IF (.NOT. ASSOCIATED(V(1)%PROCPTR, ModFun1)) STOP 33
@@ -118,7 +112,7 @@
   END DO
 
   CONTAINS
-  
+
   SUBROUTINE IntSub(Arg1, Arg2)
   PROCEDURE(ModFun1), POINTER :: Arg1
   PROCEDURE(ModFun1)          :: Arg2

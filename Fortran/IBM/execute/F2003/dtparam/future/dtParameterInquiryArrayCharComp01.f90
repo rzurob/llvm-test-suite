@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryArrayCharComp01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParameterInquiryArrayCharComp01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 17 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 17 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
+!* 1. TEST SECTION 6.1.3
 !* 2. TYPE PARAMETER INQUIRY FOR DT AND COMPONENT
 !* 3. DIFFERENT TYPE PARAMETER
 !* 4. CHARACTER ARRAY COMPONENT
@@ -32,10 +24,10 @@ module m
    type base(k1,k2,l1,l2)
       integer(1),kind :: k1=2
       integer(k1),kind :: k2=2
-   
+
       integer(k1),len :: l1=k1
       integer(k2),len :: l2=k2
-      
+
       character(4) :: c1(3)
       character(len=k1) :: c2(k1)
       character(len=k1+k2),dimension(2,3) :: c3(1,2)
@@ -46,13 +38,13 @@ module m
       character(4) :: c8(k1%kind+k2%kind)  ! defect 353566
       character(kind(k1+k2)) :: c9(kind(k1+k2)) ! defect 353821
       character(kind(k1)+kind(k2)) :: c10(kind(k1)+kind(k2)) ! defect 353615
-      character(len=l1+l2) :: c11(l1+l2) 
+      character(len=l1+l2) :: c11(l1+l2)
       character(l1)    :: c12(l2)
       character(kind(l1)) :: c13(kind(l1)) ! defect 355124
       character(l2%kind)  :: c14(l2%kind)
       character(kind(l1+l2))       :: c15(kind(l1+l2)) ! defect 355124
       character(kind(l1)+kind(l2)) :: c16(kind(l1)+kind(l2)) ! 355124
-      character(l1%kind+l2%kind) :: c17(l1%kind+l2%kind)   !defect 353566 
+      character(l1%kind+l2%kind) :: c17(l1%kind+l2%kind)   !defect 353566
       character(l1+k1),dimension(l1:l1+k1) :: c18 ! defect 353331
       character(kind(l2+k2)),dimension(kind(l2+k2)) :: c19 ! defect 355124
       character(kind(l2)+k2) :: c20(kind(l2)+k2) ! defect 355124
@@ -60,8 +52,8 @@ module m
       character(max(l1,l2)) :: c22(l1:l2) ! defect 353810
       character(4*k1) :: c23(k1,k2)
 
-   end type 
-         
+   end type
+
 end module
 
   program dtParameterInquiryArrayCharComp01
@@ -75,7 +67,7 @@ end module
   if(t%l1 /= 2)                                         error stop 12_4
   if(t%l2 /= 2)                                         error stop 13_4
 
-  if(t%k1%kind /= kind(t%k1) .or. t%k1%kind /= 1)       error stop 14_4 
+  if(t%k1%kind /= kind(t%k1) .or. t%k1%kind /= 1)       error stop 14_4
   if(t%k2%kind /= kind(t%k2) .or. t%k2%kind /= 2)       error stop 15_4
   if(t%l1%kind /= kind(t%l1) .or. t%l1%kind /= 2)       error stop 16_4
   if(t%l2%kind /= kind(t%l2) .or. t%l2%kind /= 2)       error stop 17_4
@@ -108,7 +100,7 @@ end module
   if(t%c21%kind /= kind(t%c21) .or. t%c21%kind /= 1)    error stop 40_4
 
   if(t%c1%len  /= len(t%c1)  .or. t%c1%len /= 4)        error stop 42_4
-  if(t%c2%len  /= len(t%c2)  .or. t%c2%len /= 2)        error stop 43_4 
+  if(t%c2%len  /= len(t%c2)  .or. t%c2%len /= 2)        error stop 43_4
   if(t%c3%len  /= len(t%c3)  .or. t%c3%len /= 4)        error stop 44_4
   if(t%c4%len  /= len(t%c4)  .or. t%c4%len /= 2)        error stop 45_4
   if(t%c5%len  /= len(t%c5)  .or. t%c5%len /= 2)        error stop 46_4

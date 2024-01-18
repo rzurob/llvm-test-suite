@@ -4,23 +4,18 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TESTOP CASE NAME             : InitExpData.f  
+!*  TESTOP CASE NAME             : InitExpData.f
 !*  TESTOP CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept. 11 2006
-!*  ORIGIN                     : Compiler Development IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Charber 289074 
+!*  REFERENCE                  : Feature Charber 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,13 +24,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  Data Stmt  - Suggested by Jim
-!*   
-!* (325509) 
+!*
+!* (325509)
 !   2008/06/11: JX: after reviewing the case, decide to replace the complicated
 !   init-expr in DATA statement with something more straightforward.
-!* 
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -56,7 +49,7 @@
 
   TYPE(DT(4)) :: T1(0:127)
   TYPE(DT(4)) :: T2(0:127)
-  
+
   DATA (T1(I), I=0,127) /128*DT(4)(Subscript=[(J,J=0,127)])/
   DATA (T2(I), I=0,127) /128*DT(4)(Subscript=[(J,J=0,127)])/
 
@@ -68,4 +61,4 @@
   END
 
 
- 
+

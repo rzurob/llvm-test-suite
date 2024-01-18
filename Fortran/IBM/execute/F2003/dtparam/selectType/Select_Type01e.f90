@@ -1,26 +1,19 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Select_Type01e - SELECT TYPE 
 !*                               DTP-SELECT TYPE Construct
 !*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : August 11, 2008
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SELECT TYPE Construct - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : SELECT TYPE Construct inside an ASSOCIATE Construct
 !*                               Host association - Array Constructor
-!*                       
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SELECT TYPE Construct
 !*  TARGET(S)                  :
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                :
 !*
@@ -39,7 +32,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
       PROGRAM Select_Type01e
-      IMPLICIT NONE 
+      IMPLICIT NONE
 !*
 ! DERIVED TYPE declarations
 !*
@@ -48,16 +41,16 @@
         INTEGER, LEN :: len1  !5
 
         INTEGER(KIND=k1) :: my_arr(len1)
-      END TYPE Base 
+      END TYPE Base
 
       TYPE, EXTENDS(Base) :: Child
-        CLASS(*), ALLOCATABLE :: Cmp(:) 
-      END TYPE Child 
+        CLASS(*), ALLOCATABLE :: Cmp(:)
+      END TYPE Child
 
       INTEGER, PARAMETER :: k1 = KIND(0), len1 = 5
       INTEGER :: I, J
-      CLASS(Child(k1,len1)), POINTER :: child1 
-      TYPE(Child(k1,len1)), TARGET :: tgt 
+      CLASS(Child(k1,len1)), POINTER :: child1
+      TYPE(Child(k1,len1)), TARGET :: tgt
 
       ALLOCATE(Base(k1,len1):: tgt%Cmp(2))
 
@@ -69,7 +62,7 @@
 
       CALL sub2
 
-      CONTAINS 
+      CONTAINS
 !*
       SUBROUTINE sub1
 
@@ -80,9 +73,9 @@
         TYPE IS (Base(k1,*))
           print*, SIZE(A%my_arr)
           print*, FACT(SIZE(A%my_arr))
-          
+
         CLASS DEFAULT
-           STOP 11 
+           STOP 11
       END SELECT
 
       END SUBROUTINE sub1
@@ -111,7 +104,7 @@
 !*
       INTEGER FUNCTION FACT(N)
         INTEGER :: K, N
-      
+
         FACT = PRODUCT ((/ (K, K = 2, N) /))
       END FUNCTION
 

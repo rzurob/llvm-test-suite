@@ -1,24 +1,15 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : isContigTrue9.f
-!*
-!*  PROGRAMMER                 : Dorra Bouchiha 
 !*  DATE                       : 2010-10-25
 !*  ORIGIN                     :
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS intrinsic
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : - ASSOCIATE and SELECTTYPE
 !*                               - complex type
-!*  DRIVER STANZA              :
 !*
-!*  DESCRIPTION                : - 
-!*                               - 
+!*  DESCRIPTION                : -
+!*                               -
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -40,7 +31,7 @@ PROGRAM isContigTrue9
       COMPLEX, POINTER               :: pcube(:,:,:)
       CLASS(*), ALLOCATABLE          :: up_cube(:,:,:)
 
-!*    Data pointer assignment 
+!*    Data pointer assignment
 
       ptr => Zarr                                                 ! contiguous
       IF ( .NOT. IS_CONTIGUOUS(ptr) )  ERROR STOP 10
@@ -70,7 +61,7 @@ PROGRAM isContigTrue9
         IF ( IS_CONTIGUOUS(a) .NEQV. IS_CONTIGUOUS(ptr(2:10:1)) )  ERROR STOP 20
       END ASSOCIATE
 
-!*    Allocatable array 
+!*    Allocatable array
 
       ALLOCATE(COMPLEX(8):: upoly(10))                            ! contiguous
       IF ( .NOT. IS_CONTIGUOUS(upoly) )  ERROR STOP 30
@@ -101,7 +92,7 @@ PROGRAM isContigTrue9
       END ASSOCIATE
 
 !*
-      DEALLOCATE(upoly) 
+      DEALLOCATE(upoly)
       ALLOCATE(upoly(10), SOURCE=Zarr)
       IF ( .NOT. IS_CONTIGUOUS(upoly) )  ERROR STOP 50
 

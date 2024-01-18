@@ -1,6 +1,6 @@
        integer iii
        character(10) ccc
-       logical :: ll = .false. 
+       logical :: ll = .false.
 
        open(11, form="unformatted", asynchronous="yes", access="sequential")
        write(11, id=iii, asynchronous="yes" ) "abcd"
@@ -19,10 +19,10 @@
        if (ccc .ne. "YES") then
          error stop 2
        end if
-       
+
        if (ll .neqv. .false.) then
          error stop 3
-       end if 
+       end if
 
        close(11, status="delete")
        end

@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpUseSimpleIO01
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-10-07
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DTP and USE
 !*
@@ -16,17 +11,15 @@
 !*
 !*  REFERENCE                  : Feature Number 355310
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
 !*  Verify that objects are read in correctly.
-!*
 !*
 !* ============================================================================
 !234567890123456789012345678901234567890123456789012345678901234567890123456789
@@ -34,7 +27,7 @@
 module dtpUseSimpleIO01Basemod
 
   implicit none
-  
+
   type :: Basic
      integer :: iComp = -1
   end type Basic
@@ -80,7 +73,7 @@ program dtpUseSimpleIO01
   type (Derived(8))                 :: d8a
   type (Derived2(8))                :: d28a
   type (Derived3(8,3))              :: d383a
-  
+
   read *, ba
   read *, d4a
   read *, d24a

@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferNonPolyDefAssign01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dummyArgDeferNonPolyDefAssign01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Nov. 22 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Nov. 22 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH 
+!*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. derived type has integer and character component
@@ -41,7 +33,7 @@ module m
          class(dtp(2,*)),intent(inout) :: this
          type(dtp(2,*)),intent(in) :: arg
          this%i1=arg%i1+1
-         this%c1=arg%c1//"Q"   
+         this%c1=arg%c1//"Q"
       end subroutine
 
       elemental subroutine dtassign2(this,arg)
@@ -67,7 +59,7 @@ program dummyArgDeferNonPolyDefAssign01
   allocate(RHS1(2:3),source=[dtp(2,4)(i1=1,c1="abcd"),dtp(2,4)(i1=2,c1="efgh")])
 
   allocate(RHS2(4:5),source=[dtp(4,3)(i1=3,c1="123"),dtp(4,3)(i1=4,c1="456")])
- 
+
   LHS=RHS1
 
   if(lbound(lhs,1) /= -1)                           error stop 10_4
@@ -75,8 +67,8 @@ program dummyArgDeferNonPolyDefAssign01
   if(lhs%k1 /= 2)                                   error stop 12_4
   if(lhs%l1 /= 5)                                   error stop 13_4
   if(any(lhs%i1 /= [2,3]))                          error stop 14_4
-  if(any(lhs%c1 /= ["abcdQ","efghQ"]))              error stop 15_4 
-  
+  if(any(lhs%c1 /= ["abcdQ","efghQ"]))              error stop 15_4
+
   LHS=RHS2
 
   if(lbound(lhs,1) /= -1)                           error stop 16_4
@@ -85,5 +77,5 @@ program dummyArgDeferNonPolyDefAssign01
   if(lhs%l1 /= 5)                                   error stop 19_4
   if(any(lhs%i1 /= [5,6]))                          error stop 20_4
   if(any(lhs%c1 /= ["1239","4569"]))                error stop 21_4
-          
+
 end program

@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: FuncRet.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: FuncRet.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRet.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRet.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 26, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,8 +30,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  FuncTion Return - intrinsic types 
+!*
+!*  FuncTion Return - intrinsic types
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -130,7 +124,7 @@
   END MODULE
 
 
-  PROGRAM FuncRet 
+  PROGRAM FuncRet
   USE M
 
   INTERFACE
@@ -221,43 +215,43 @@
 
 
   ProcPtrI1 => Int1
-  IF ( ANY(ProcPtrI1((/-1_1/)) .NE. (/-1_1/) )) STOP 11 
+  IF ( ANY(ProcPtrI1((/-1_1/)) .NE. (/-1_1/) )) STOP 11
 
   ProcPtrI2 => Int2
-  IF ( ANY(ProcPtrI2((/-2_2/)) .NE. (/-2_2/) )) STOP 12 
+  IF ( ANY(ProcPtrI2((/-2_2/)) .NE. (/-2_2/) )) STOP 12
 
   ProcPtrI4 => Int4
-  IF ( ANY(ProcPtrI4((/-4_4/)) .NE. (/-4_4/) )) STOP 14 
+  IF ( ANY(ProcPtrI4((/-4_4/)) .NE. (/-4_4/) )) STOP 14
 
   ProcPtrI8 => Int8
-  IF ( ANY(ProcPtrI8((/-8_8/)) .NE. (/-8_8/) )) STOP 18 
+  IF ( ANY(ProcPtrI8((/-8_8/)) .NE. (/-8_8/) )) STOP 18
 
-  ProcPtrR4 => Real4 
-  IF ( ANY(ProcPtrR4((/-4.0_4/)) .NE. (/-4.0_4/) )) STOP 24 
+  ProcPtrR4 => Real4
+  IF ( ANY(ProcPtrR4((/-4.0_4/)) .NE. (/-4.0_4/) )) STOP 24
 
-  ProcPtrR8 => Real8 
-  IF ( ANY(ProcPtrR8((/-8.0_8/)) .NE. (/-8.0_8/) )) STOP 28 
+  ProcPtrR8 => Real8
+  IF ( ANY(ProcPtrR8((/-8.0_8/)) .NE. (/-8.0_8/) )) STOP 28
 
-  ProcPtrR16 => Real16 
-  IF ( ANY(ProcPtrR16((/-16.0_16/)) .NE. (/-16.0_16/) )) STOP 216 
+  ProcPtrR16 => Real16
+  IF ( ANY(ProcPtrR16((/-16.0_16/)) .NE. (/-16.0_16/) )) STOP 216
 
-  ProcPtrC8 => Complex8 
-  IF ( ANY(ProcPtrC8((/(8.0_8, -8.0_8)/)) .NE. (/(8.0_8, -8.0_8)/) )) STOP 38 
+  ProcPtrC8 => Complex8
+  IF ( ANY(ProcPtrC8((/(8.0_8, -8.0_8)/)) .NE. (/(8.0_8, -8.0_8)/) )) STOP 38
 
-  ProcPtrC16 => Complex16 
-  IF ( ANY(ProcPtrC16((/(16.0_16, -16.0_16)/)) .NE. (/(16.0_16, -16.0_16)/) )) STOP 316 
+  ProcPtrC16 => Complex16
+  IF ( ANY(ProcPtrC16((/(16.0_16, -16.0_16)/)) .NE. (/(16.0_16, -16.0_16)/) )) STOP 316
 
   ProcPtrL1 => Log1
-  IF ( ANY(ProcPtrL1((/.TRUE._1/)) .NEQV. (/.TRUE._1/) )) STOP 41 
+  IF ( ANY(ProcPtrL1((/.TRUE._1/)) .NEQV. (/.TRUE._1/) )) STOP 41
 
   ProcPtrL2 => Log2
-  IF ( ANY(ProcPtrL2((/.TRUE._2/)) .NEQV. (/.TRUE._2/) )) STOP 42 
+  IF ( ANY(ProcPtrL2((/.TRUE._2/)) .NEQV. (/.TRUE._2/) )) STOP 42
 
   ProcPtrL4 => Log4
-  IF ( ANY(ProcPtrL4((/.FALSE._4/)) .NEQV. (/.FALSE._4/) )) STOP 44 
+  IF ( ANY(ProcPtrL4((/.FALSE._4/)) .NEQV. (/.FALSE._4/) )) STOP 44
 
   ProcPtrL8 => Log8
-  IF ( ANY(ProcPtrL8((/.FALSE._8/)) .NEQV. (/.FALSE._8/) )) STOP 48 
+  IF ( ANY(ProcPtrL8((/.FALSE._8/)) .NEQV. (/.FALSE._8/) )) STOP 48
 
 
   END

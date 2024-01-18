@@ -1,13 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : daBasicCC
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2010-12-20
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2008 CAF coarray defined assignment
 !*  SECONDARY FUNCTIONS TESTED : simple test of same type but mismatched rank, dummy args are coarrays

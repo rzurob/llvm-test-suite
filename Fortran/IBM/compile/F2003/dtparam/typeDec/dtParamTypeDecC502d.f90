@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC502d
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 24, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  
-!* C502 (R502) In a declaration-type-spec that uses the CLASS keyword, 
-!* derived-type-spec shall specify an extensible type 
+!* C502 (R502) In a declaration-type-spec that uses the CLASS keyword,
+!* derived-type-spec shall specify an extensible type
 !*
-!*     
-!*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -45,7 +35,7 @@
   END TYPE
 
   CLASS(DT(K=4)), ALLOCATABLE  :: T
- 
+
   CONTAINS
 
   SUBROUTINE IntSub(Arg)

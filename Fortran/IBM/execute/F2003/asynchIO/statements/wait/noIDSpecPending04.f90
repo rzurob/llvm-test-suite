@@ -1,20 +1,13 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : noIDSpecPending04 - WAIT() Statement
-!*
-!*  PROGRAMMER                 : Glen Mateer
 !*  DATE                       : March 14, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() with ID= Specifier on Pending
 !*                               (Formatted) Data Transfer Operations
 !*  SECONDARY FUNCTIONS TESTED : WAIT() on *ALL* Remaining Pending Data
 !*                               Transfer Operations for the Specified Unit
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : WAIT(), ID= Specifier
@@ -25,7 +18,6 @@
 !*  Since Asynchronous Formatted I/O has been implemented differently from
 !*  Asynchronous Unformatted I/O, all of the WAIT() Statments below should
 !*  be Successful.
-!*
 !*
 !*  9.6.1 WAIT statement
 !*

@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtriPolyPtr.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dataPtriPolyPtr.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Feb. 05, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289075 
+!*  REFERENCE                  : Feature Number 289075
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,16 +23,15 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  If data-pointer-object is polymorphic (5.1.1.2), it assumes the dynamic type
-!*  of data-target. 
-!*  
+!*  of data-target.
+!*
 !*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-  PROGRAM dataPtriPolyPtr 
+  PROGRAM dataPtriPolyPtr
   IMPLICIT NONE
 
   TYPE :: DT0(K1,N1)    ! (4,20)

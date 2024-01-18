@@ -48,7 +48,6 @@
       end module
 #endif
 
-
       subroutine f1f_via_f
 #ifdef MOD
         use emapfn
@@ -68,7 +67,6 @@
         rv = f1_f ()
         print*, 'rv =',  rv
       end subroutine
-
 
       subroutine f1c_via_f
 #ifdef MOD

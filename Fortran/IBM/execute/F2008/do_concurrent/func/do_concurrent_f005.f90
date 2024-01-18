@@ -1,19 +1,16 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f005.f
 !*
-!*  PROGRAMMER                 : Nicole Negherbon 
 !*  DATE                       : 2015-03-26
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)
 !*
-!*  DESCRIPTION                : - Various kinds of integer pointers in DO 
-!*                                 CONCURRENT loops including nested DO 
+!*  DESCRIPTION                : - Various kinds of integer pointers in DO
+!*                                 CONCURRENT loops including nested DO
 !*                                 CONCURRENT loops
-!*                               - concurrent-limit contains a variable with the 
+!*                               - concurrent-limit contains a variable with the
 !*                                 parameter attribute
 !*                               - scalar-mask-expr contains integer and logical
 !*                                 pointers
@@ -33,13 +30,13 @@
         integer*2, target :: i_res3(10) = 0, i_res4(10) = 0, i_res5(5,5) = 0
         integer*1, target :: value = 0
         logical, target :: lvar = .true.
-        
+
         integer, pointer :: p_i_res(:), p_i_arr(:), p_i_arr2(:)
         integer*4, pointer :: p_i_arr3(:), p_i_res2(:,:)
         integer*2, pointer :: p_i_res3(:), p_i_res4(:), p_i_res5(:,:)
         integer*1, pointer :: p_value
         logical, pointer :: p_lvar
-        
+
         allocate(i_arr3(10), i_res2(5,5))
         i_arr3 = 10
         i_res2 = 0
@@ -57,14 +54,14 @@
 
         if ( .false. ) then
         else
-          do concurrent (i=m:25:m, j=1:m, k=5:m*5:4) 
+          do concurrent (i=m:25:m, j=1:m, k=5:m*5:4)
             p_i_res(i/5) = p_i_arr(i/5)
           end do
 
           if ( any(p_i_res .ne. p_i_arr) ) then
             print *, "array variable assignment in do concurrent loop in else block returning bad result"
             print *, "p_i_res: ", p_i_res
-            error stop 1 
+            error stop 1
           end if
         end if
 
@@ -89,7 +86,7 @@
           error stop 2
         end if
 
-        i_res2 = 0 
+        i_res2 = 0
 
         do concurrent (i = 1:5, j=1:5, p_lvar .eqv. .true.)
           p_i_res2(i,j) = p_i_arr(i) + 10
@@ -106,22 +103,22 @@
           print *, "i_res2(3,:): ", i_res2(3,:)
           print *, "i_res2(4,:): ", i_res2(4,:)
           print *, "i_res2(5,:): ", i_res2(5,:)
-          error stop 3 
+          error stop 3
         end if
 
         do concurrent (i = 1:10)
           p_i_res3(i) = i
           do concurrent (j = 1:10)
-            p_i_res4(j) = j*10 
+            p_i_res4(j) = j*10
           end do
-        end do      
+        end do
 
         if ( any(i_res3 .ne. (/1,2,3,4,5,6,7,8,9,10/)) .or. &
             &any(i_res4 .ne. (/10,20,30,40,50,60,70,80,90,100/)) ) then
           print *, "2-level nested do concurrent produced incorrect results"
           print *, "i_res3: ", i_res3
           print *, "i_res4: ", i_res4
-          error stop 4 
+          error stop 4
         end if
 
         i_res2 = 0
@@ -155,7 +152,7 @@
           print *, "i_res5(4,:): ", i_res5(4,:)
           print *, "i_res5(5,:): ", i_res5(5,:)
           error stop 5
-        end if 
+        end if
 
         i_res3 = 0
         i_res4 = 0
@@ -174,7 +171,7 @@
           print *, "i_res3: ", i_res3
           print *, "i_res4: ", i_res4
           error stop 6
-        end if 
+        end if
 
         i_res2 = 0
         i_res5 = 0
@@ -208,8 +205,8 @@
           print *, "i_res5(3,:): ", i_res5(3,:)
           print *, "i_res5(4,:): ", i_res5(4,:)
           print *, "i_res5(5,:): ", i_res5(5,:)
-          error stop 7 
-        end if 
+          error stop 7
+        end if
 
         i_res3 = 0
         i_res4 = 0
@@ -255,5 +252,5 @@
           print *, "i_res2(5,:): ", i_res2(5,:)
           error stop 10
         end if
- 
+
       end

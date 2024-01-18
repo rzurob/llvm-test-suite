@@ -1,41 +1,31 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !************************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD:  $TR_SRC/run.sh fxmdvb04 cxmdvb04 
-! %COMPOPTS:   
-! %GROUP: redherring.f 
+! %PRECMD:  $TR_SRC/run.sh fxmdvb04 cxmdvb04
+! %COMPOPTS:
+! %GROUP: redherring.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !************************************************************************
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Support for  Module Variable with Bind(C)
 !*                               (Test bind(c) attribute/statement)
 !*
-!*  PROGRAMMER                 : Kan Tian
-!*  DATE                       : Sep 2,2002 
+!*  DATE                       : Sep 2,2002
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test 2 dimensions integer array variables,
-!                                the combination of type and kind type 
+!                                the combination of type and kind type
 !                                parameter ,with bind(c) attribute/statement,
-!                                is interoperate with  corresponding C type. 
-!*                             
+!                                is interoperate with  corresponding C type.
+!*
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf90
 !*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               : External routine ZZRC
 !*
@@ -43,16 +33,16 @@
 !*  DESCRIPTION                :
 !*                              Pass data between a C variable with external
 !*				linkage and Fortran variable has the bind(c)
-!*				attribute. 
+!*				attribute.
 !*                              Verify the result of data passing.
 !*
 !*  DESCRIPTION                :
 !*                              Pass data between a C array with external
 !*				linkage and Fortran array has the bind(c)
-!*				attribute. 
-!*                              Verify the result of data passing. 
-!*                               
-!*  ALGORITHM                  :  
+!*				attribute.
+!*                              Verify the result of data passing.
+!*
+!*  ALGORITHM                  :
 !*          1. Declare the interop variable in Fortran Module.
 !*          2. Initialize the variable in  C main program.
 !*          3. C program call Fortran Subroutine to pass the variable value
@@ -63,7 +53,7 @@
 !*          6. Assertion 2: In C program ,Check the new value is correct
 !*             passed from Fortran.
 !*             if not, return the value other than "0" and program stops.
-!*             otherwise, return "0" and program end.               
+!*             otherwise, return "0" and program end.
 !* ===================================================================
 !*  REVISION HISTORY
 !*

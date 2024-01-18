@@ -18,7 +18,6 @@
         f1 = a1 + 1
       end function
 
-
       program main
         dimension a(5)
 

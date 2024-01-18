@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,29 +13,21 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c09a.f
-!* TEST CASE TITLE              : BIND(C) attribute/statement
-!*
-!* PROGRAMMER                   : Yubin Liao 
 !* DATE                         : Jan. 1, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
-!* DESCRIPTION                  : Test: BINC(C) attribute/statement 
+!* DESCRIPTION                  : Test: BINC(C) attribute/statement
 !*                                with different intrinsic data type,
 !*                                integer*1, integer*2, integer*4,
 !*                                integer*8, real*4, real*8, real*16,
 !*                                byte, character(1). Using module
-!*                                subroutine. 
+!*                                subroutine.
 !*                                Subroutines are RECURSIVE.
 !* ===================================================================
 !*  REVISION HISTORY
@@ -51,17 +38,17 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
  module m
- contains 
+ contains
      recursive subroutine extsub_int(i1, i2, i4, i8, i) BIND(C)
            integer*1 i1
            integer*2 i2
            integer*4 i4,i
            integer*8 i8
-           
+
            if ( i <= 0) then
              return
            end if
-   
+
            i1 = i1 + 1
            i2 = i2 + 1
            i4 = i4 + 1
@@ -78,7 +65,7 @@
            if (r <= 0 ) then
              return
            end if
-           
+
            r4 = r4 - 1
            r8 = r8 - 1
            r  = r  - 1
@@ -89,7 +76,7 @@
            character ch
            integer i
 	   if ( i > 0) then
-              i = i - 1 
+              i = i - 1
               call extsub_char(ch, i)
            else
               ch = 'd'
@@ -100,11 +87,11 @@
            complex*8   co8
            complex*16  co16
            integer*4 i
-  
+
            if ( i <= 0 ) then
              return
            end if
-           
+
            co8 = co8 - (1.0, 2.0)
            co16 = co16 - (1.0d0, 2.0D0)
            i = i - 1

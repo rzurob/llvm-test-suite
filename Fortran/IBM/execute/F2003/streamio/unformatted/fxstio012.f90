@@ -2,34 +2,28 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:  rm -f fort.*
-! %COMPOPTS: -qposition=appendold 
-! %GROUP: fxstio012.f 
+! %COMPOPTS: -qposition=appendold
+! %GROUP: fxstio012.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxstio012.f 
-!*
-!*  PROGRAMMER                 : Catherine Sun
-!*  
 !*  Creation Date              : Mar 07, 2003
 !*
 !*  Primary Function Tested    : Unformatted stream access I/O
 !*
-!*  Description                : Test Unformatted Stream I/O on an OLD file 
+!*  Description                : Test Unformatted Stream I/O on an OLD file
 !*                               created with Direct access I/O
 !*
 !=======================================================================
 
 !* Declare Variables.
-   
+
   implicit none
 
   integer id(10), ios
@@ -64,7 +58,7 @@
       recl=100000, iostat=ios, err=100, status='unknown')
    write(1, id=id(1), iostat=ios, err=200, rec=1) ivar1
    write(1, id=id(2), iostat=ios, err=200, rec=2) ipararr
-   
+
    wait(id =id(1))
    wait(id =id(2))
    close(1)
@@ -185,7 +179,6 @@
 
    close(1, status='delete')
 
-
 !* TEST4 : logical
    open(1, access='direct', form='unformatted', asynch='yes', &
       recl=100000, iostat=ios, err=100, status='unknown')
@@ -224,7 +217,6 @@
    if (larr2(2) .neqv. lpararr(2)) error stop 45
 
    close(1, status='delete')
-
 
 !* TEST5 : character
 
@@ -268,7 +260,7 @@
    if (harr2(2) .ne. hpararr(2)) error stop 56
    if (harr2(3) .ne. hpararr(3)) error stop 57
 
-   close(1, status='delete') 
+   close(1, status='delete')
 
 !* TEST6 : byte
 

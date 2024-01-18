@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocToHasTargetAttribute03.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocToHasTargetAttribute03.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 2 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 2 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
-!*  2. IF TO HAS THE TARGET ATTRIBUTE,ANY POINTER ASSOCIATED WITH FROM ON ENTRY MOVE_ALLOC BECOMES CORRESPONDINGLY ASSOCIATED WITH TO. 
-!*  3. FROM AND TO ARE POLYMORPHIC 
+!*  2. IF TO HAS THE TARGET ATTRIBUTE,ANY POINTER ASSOCIATED WITH FROM ON ENTRY MOVE_ALLOC BECOMES CORRESPONDINGLY ASSOCIATED WITH TO.
+!*  3. FROM AND TO ARE POLYMORPHIC
 !*  4. DEFECT 357030
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -32,11 +24,11 @@ module m
   end type
   type base(l1)
      integer,len  :: l1
-     type(any(l1)) :: any1 
+     type(any(l1)) :: any1
   end type
   type,extends(base) :: child(l2)
      integer,len  :: l2
-     type(any(l2)) :: any2 
+     type(any(l2)) :: any2
   end type
 end module
 
@@ -47,8 +39,8 @@ program move_allocToHasTargetAttribute03
 
   class(base(:)),target,allocatable :: from1
   class(base(:)),pointer            :: point1=>null()
-  class(base(:)),pointer            :: point2=>null()  
-  class(base(:)),target,allocatable :: to1 
+  class(base(:)),pointer            :: point2=>null()
+  class(base(:)),target,allocatable :: to1
 
   type(child(3,5)) :: child1=child(3,5)(any1=any(3)(c="123"), &
                                         any2=any(5)(c="456") )
@@ -67,7 +59,7 @@ program move_allocToHasTargetAttribute03
   ! After move_alloc, point1 has undefined associated status
   !if(.not. associated(point1,from1))                error stop 12_4
 
-  if(.not. associated(point2))                      error stop 13_4     
+  if(.not. associated(point2))                      error stop 13_4
 
   select type(x=>to1)
      type is(child(*,*))
@@ -116,7 +108,7 @@ program move_allocToHasTargetAttribute03
   end select
 
   contains
-     
+
      function fun()
         type(child(:,:)),allocatable  :: fun
         class(base(:)),target,allocatable :: temp
@@ -128,10 +120,10 @@ program move_allocToHasTargetAttribute03
         if(.not. allocated(temp))                  error stop 27_4
         if(.not. associated(point1,temp))          error stop 28_4
         select type(temp)
-           type is(child(*,*)) 
+           type is(child(*,*))
                allocate(fun,source=temp)
            class default
               error stop 104_4
         end select
-     end function 
+     end function
 end program

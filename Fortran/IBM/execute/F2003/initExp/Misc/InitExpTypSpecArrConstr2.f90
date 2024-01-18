@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpeArrConstr2.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpTypSpeArrConstr2.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Aug. 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,22 +19,20 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  intrinsic-type-spec in array constructor 
-!* 
-!*  
-!* (325905) 
+!*  intrinsic-type-spec in array constructor
+!*
+!* (325905)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
 
 
-  PROGRAM InitExpTypSpeArrConstr2 
+  PROGRAM InitExpTypSpeArrConstr2
   IMPLICIT NONE
 
   INTEGER :: I
-  
+
   CHARACTER(1), POINTER :: C(:)
 
   CHARACTER(KIND=C%KIND)            :: C1(128)=[CHARACTER(KIND=C%KIND)            ::(CHAR(I), I=0, 127)]
@@ -61,4 +53,4 @@
 
   END
 
- 
+

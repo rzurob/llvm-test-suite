@@ -13,18 +13,11 @@
 !***********************************************************************
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Test of SIGN= specifier
-!*      
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN=specifier in list-directed output
 !*
-!*  DRIVER STANZA              : xlf90/95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : SIGN
@@ -46,7 +39,7 @@ open (1, file="sign07.out")
 !* The sign mode of nameslist output is set to plus *!
 write(1, *, sign="plus") r, m
 
-!* The sign mode of nameslist output is set to suppress *!      
+!* The sign mode of nameslist output is set to suppress *!
 write(1, *, sign="suppress") r, m
 
 !* The sign mode of nameslist output is set to processor_defined *!

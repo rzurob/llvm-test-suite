@@ -1,14 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpCommon5 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtpCommon5
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jul. 13, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
@@ -16,7 +11,6 @@
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,24 +19,20 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The common statement
-!* 
-!*  The storage sequence formed by data objects in the common block is extended to include 
-!*  all storage units of any storage sequence associated with it by equivalence association. 
+!*
+!*  The storage sequence formed by data objects in the common block is extended to include
+!*  all storage units of any storage sequence associated with it by equivalence association.
 !*  The sequence may be extended only by adding storage units beyond the last storage unit.
 !*  Data objects associated with an entity in a common block are considered to be in that common block
 !*
-!* 
 !*  ()
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   MODULE M
- 
+
   TYPE :: DT_I(K,L)
     INTEGER, KIND :: K=4
     INTEGER, LEN  :: L=4
@@ -51,44 +41,44 @@
     INTEGER(K)    :: I(L)!=K
     CHARACTER(L)  :: C2(L)
   END TYPE
- 
+
   END MODULE
 
-  PROGRAM dtpCommon5 
+  PROGRAM dtpCommon5
   USE M
   IMPLICIT NONE
 
-  TYPE(DT_I(2,7))  :: S(11), T(10) 
+  TYPE(DT_I(2,7))  :: S(11), T(10)
   COMMON /BLK/S
   EQUIVALENCE (S(11), T(1))
   INTEGER I
 
-  
-  
+
+
   DO I=1, 11
     S(I)%I  = I
     S(I)%C1=CHAR(0)
     S(I)%C2=CHAR(0)
   END DO
- 
+
   DO I=1, 10
     T(I)%I  = I+10
     T(I)%C1=CHAR(0)
     T(I)%C2=CHAR(0)
   END DO
- 
+
 
   CALL ExtSub()
 
-  END 
+  END
 
   SUBROUTINE ExtSub()
-  USE M 
+  USE M
 
   TYPE(DT_I(2,7))  :: T
   COMMON /BLK/T(20)
 
-  DO I=1, 10 
+  DO I=1, 10
     IF ( ANY( T(I)%C1 .NE. CHAR(0) ) ) STOP 11
     IF ( ANY( T(I)%I  .NE. I       ) ) STOP 12
     IF ( ANY( T(I)%C2 .NE. CHAR(0) ) ) STOP 13

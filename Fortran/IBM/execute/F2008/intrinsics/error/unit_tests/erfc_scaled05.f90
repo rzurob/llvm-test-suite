@@ -20,11 +20,6 @@ do while (x <= 20.05d0)
 end do
 end
 
-
-
-
-
-
       logical function IsInfinity_R8*4(value)
         implicit none
         real*8     value
@@ -40,7 +35,6 @@ end
       return
       end
 
-
       logical function IsNan_R8*4(value)
         implicit none
         real*8     value
@@ -55,7 +49,6 @@ end
 
       return
       end
-
 
       logical function precision_range_R8*4(val_first, val_second, range)
         implicit none

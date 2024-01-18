@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecDT1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Apr. 17, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,11 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  The basic syatax  
-!*  TYPE ( derived-type-spec ) 
+!*  The basic syatax
+!*  TYPE ( derived-type-spec )
 !*
-!*  (335685) 
+!*  (335685)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -44,17 +37,17 @@
 
   TYPE, EXTENDS(DT0) :: DT(KIND, LEN)
     INTEGER(1), KIND     :: KIND=K
-    INTEGER(2), LEN      :: LEN=1 
+    INTEGER(2), LEN      :: LEN=1
     INTEGER(KIND)        :: I=KIND
     CHARACTER(LEN)       :: C=CHAR(KIND)
     TYPE(DT0(KIND, LEN)) :: T=DT0(KIND, 1)()
   END TYPE
 
-  TYPE(DT(KIND=2, LEN=1))   :: T1(1)  =  DT(KIND=2_1, LEN=1_8)() 
-  TYPE(DT(2_8,    LEN=1))   :: T2(1)  =  DT(K=2_8, KIND=2_1, LEN=1)() 
+  TYPE(DT(KIND=2, LEN=1))   :: T1(1)  =  DT(KIND=2_1, LEN=1_8)()
+  TYPE(DT(2_8,    LEN=1))   :: T2(1)  =  DT(K=2_8, KIND=2_1, LEN=1)()
 
-  TYPE(DT(2_8,    L=:)),   POINTER       :: T3(:) 
-  TYPE(DT(2_8,    LEN=:)), ALLOCATABLE   :: T4(:) 
+  TYPE(DT(2_8,    L=:)),   POINTER       :: T3(:)
+  TYPE(DT(2_8,    LEN=:)), ALLOCATABLE   :: T4(:)
 
   IF ( T1%K               .NE.   1          ) STOP 11
   IF ( T1%L               .NE.   1          ) STOP 12
@@ -93,8 +86,8 @@
   CONTAINS
 
   SUBROUTINE IntSub(T5, T6)
-  TYPE(DT(2_8,    L=*))            :: T5(:) 
-  TYPE(DT(K=2, KIND=2_8, LEN=*))   :: T6(:) 
+  TYPE(DT(2_8,    L=*))            :: T5(:)
+  TYPE(DT(K=2, KIND=2_8, LEN=*))   :: T6(:)
 
   IF ( T5%K               .NE.   2          ) STOP 51
   IF ( T5%L               .NE.   1          ) STOP 52

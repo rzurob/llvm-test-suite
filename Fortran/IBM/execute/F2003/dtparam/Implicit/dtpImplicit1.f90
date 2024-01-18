@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpImplicit1
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 22, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,13 +19,10 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
 !*  -- The implicit statement
-!*  tests its scope 
-!* 
+!*  tests its scope
+!*
 !*  (ICE)
-!*   
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -61,7 +52,7 @@
 
   POINTER :: RP
 
-  INTERFACE 
+  INTERFACE
     SUBROUTINE ExtSub(R)
     END SUBROUTINE
   END INTERFACE
@@ -77,13 +68,13 @@
   USE M
   IMPLICIT TYPE(DT1(1,3,4,5))(S)
 
-  TYPE(DT0(1,3)), TARGET :: RT  
+  TYPE(DT0(1,3)), TARGET :: RT
 
   RP => RT
   IF ( .NOT. ASSOCIATED(RP) ) STOP 71
   RR = -1
   IF ( RR .NE. -1 ) STOP 72
-  
+
   CALL ExtSub(RR)
   IF ( RR .NE. 1 ) STOP 73
 
@@ -112,12 +103,12 @@
   IF ( ANY (T%C         .NE. CHAR(T%K2) ) ) STOP 29
 
 
-  S =  DT1(1,3,4,5)([1,2,3,4,5]) 
+  S =  DT1(1,3,4,5)([1,2,3,4,5])
   T =  DT2(1,3,4,5,8,7)(                  &
            DT1=DT1(1,3,4,5)([1,2,3,4,5]), &
              I=[1,2,3,4,5,6,7],           &
              C=CHAR([1,2,3,4,5,6,7]),     &
-            Ptr=NULL() )                  
+            Ptr=NULL() )
 
 
 

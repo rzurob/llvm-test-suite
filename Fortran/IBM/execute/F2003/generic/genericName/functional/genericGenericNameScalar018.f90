@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with generic-name
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : generic-name: scalar derived type calling
 !*                                             generic binding containing dummy args of different ranks
@@ -100,7 +89,7 @@ program genericGenericNameScalar018
    class(base), allocatable :: b0, b1(:), b2(:,:), b3(:,:,:), b4(:,:,:,:)
 
    ! when unallocated
-   
+
    call b0%anyD()
    call b0%anyD(b0)
    call b0%anyD(b1)
@@ -114,9 +103,9 @@ program genericGenericNameScalar018
    call b4%anyD(b0)
 
    ! when allocated
-   
+
    allocate ( b0, b1(1), b2(1,1), b3(1,1,1), b4(1,1,1,1) )
-   
+
    call b0%anyD()
    call b0%anyD(b0)
    call b0%anyD(b1)
@@ -130,7 +119,7 @@ program genericGenericNameScalar018
    call b4%anyD(b0)
 
    deallocate ( b0, b1, b2, b3, b4)
-   
+
    allocate ( child :: b0, b1(1), b2(1,1), b3(1,1,1), b4(1,1,1,1) )
 
    call b0%anyD()

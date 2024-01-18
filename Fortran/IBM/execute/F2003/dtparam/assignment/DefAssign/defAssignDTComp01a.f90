@@ -1,28 +1,20 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignDTComp01a.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : defAssignDTComp01a.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Feb. 2 2009 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Feb. 2 2009
 !*
-!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT 
+!*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !* 1. Test Defined assignment with interface block
 !* 2. Defined subroutines are elemental subroutines
-!* 3. Derived type has DT components 
+!* 3. Derived type has DT components
 !234567490123456749012345674901234567490123456749012345674901234567490
 module m
   type A(l1)
@@ -54,12 +46,12 @@ module m
          type(A(*)),intent(inout) :: this
          class(*),intent(in) :: arg
          select type(arg)
-            type is(A(*)) 
-               this%i1=arg%i1   
+            type is(A(*))
+               this%i1=arg%i1
             type is(integer)
                this%i1=arg
          end select
-     end subroutine  
+     end subroutine
 
      elemental subroutine assignB(this,arg)
          class(B(*)),intent(inout) :: this
@@ -91,7 +83,7 @@ program defAssignDTComp01a
      implicit none
 
      call sub
-      
+
 end program
 
 subroutine sub
@@ -104,19 +96,19 @@ subroutine sub
   allocatable :: a1(:),b1(:),c1(:)
 
   allocate(A(2) :: a1(2:3))
-  allocate(b1(3:4)) 
+  allocate(b1(3:4))
   allocate(C(3) :: c1(2))
 
   a1=[A(2)([-11,-12]) ,A(2)([11,12])] ! call assignA
 
   if(any(a1(2)%i1 /= [-11,-12]))                         stop 11
-  if(any(a1(3)%i1 /= [11,12]))                           stop 12      
+  if(any(a1(3)%i1 /= [11,12]))                           stop 12
 
   a1(2)=A(2)([-1,-2])  ! call assignA
   a1(3)=A(2)([1,2]) ! call assignA
 
   if(any(a1(2)%i1 /= [-1,-2]))                           stop 13
-  if(any(a1(3)%i1 /= [1,2]))                             stop 14 
+  if(any(a1(3)%i1 /= [1,2]))                             stop 14
 
   a1=[10,-10]   ! call assignA
 
@@ -129,7 +121,7 @@ subroutine sub
   if(any(b1(3)%c1 /= ["abc","def","ghi","jkl"]))          stop 17
   if(any(b1(4)%c1 /= ["ABC","DEF","GHI","JKL"]))          stop 18
 
-  ! switch b1(4) and b1(5)  
+  ! switch b1(4) and b1(5)
   bb=b1(3)    ! call assignB
   b1(3)=b1(4) ! call assignB
   b1(4)=bb    ! call assignB
@@ -148,7 +140,7 @@ subroutine sub
        C(3) ([.false.,.true.,.false.], &
             [A(2)([5,-5]),A(2)([6,-6])], &
             [B(4)(["XLF","IBM","XLC","LAB"]), &
-             B(4)(["xlf","ibm","xlc","lab"]) ]) ] 
+             B(4)(["xlf","ibm","xlc","lab"]) ]) ]
 
   if(any(c1(1)%g1 .neqv. [.true.,.false.,.true.] ))        stop 23
   if(any(c1(1)%a1comp(2)%i1 /= 10 ))                       stop 24
@@ -183,5 +175,5 @@ subroutine sub
   if(any(a1(3)%i1 /= [6,-6] ))                             stop 44
   if(any(b1(3)%c1 /= ["XLF","IBM","XLC","LAB"]))           stop 45
   if(any(b1(4)%c1 /= ["xlf","ibm","xlc","lab"]))           stop 46
- 
+
 end subroutine

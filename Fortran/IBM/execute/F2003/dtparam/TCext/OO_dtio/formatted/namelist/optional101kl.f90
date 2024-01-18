@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : optional101kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from optional101 by Robert Ma)
 !*  DATE                       : 2007-07-06 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with optional attribute (output)
@@ -89,18 +81,18 @@ program optional101kl
    character(200) :: msg = ''
    class(base(4)), allocatable :: b1 ! tcx: (4)
    class(base(4)), pointer     :: b2 ! tcx: (4)
-   
+
    open (1, file = 'optional101kl.1', form='formatted', access='stream' )
-   
+
    allocate( b1, b2 )
-   
+
    call read(1, b1)
    if ( b1%i /= 1002 ) error stop 4_4
    call read(1, b2=b2)
    if ( b2%i /= 1003 ) error stop 5_4
    call read(1, b1, b2)
    if ( ( b1%i /= 1004 ) .or. ( b2%i /= 1005 ) ) error stop 6_4
-   
+
    call read1(1, b1)
    if ( b1%i /= 1006 ) error stop 7_4
    call read1(1, b2=b2)

@@ -1,13 +1,10 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : forall_typespec_f016.f
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     : 
+!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED : Use of PURE functions in the forall body
@@ -15,7 +12,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*    Test PURE functions in the forall_body of the FORALL construct.  
+!*    Test PURE functions in the forall_body of the FORALL construct.
 !*    Also test FORALL in a PURE function.
 !*
 !* =============================================================================
@@ -37,9 +34,9 @@ PROGRAM fxfc016
    USE mod
 
    INTEGER CASENUM,in1,in2,in3
-   
+
    INTEGER i1(20,20)
-  
+
    INTEGER i2(-20:20)
 
    TYPE (dt) dt3(100),dt3b(50)
@@ -53,11 +50,11 @@ PROGRAM fxfc016
          INTEGER, INTENT(IN) :: i
          INTEGER, INTENT(IN) :: j
       END FUNCTION func1
-      
+
       PURE INTEGER FUNCTION func2( array )
          INTEGER, INTENT(IN), DIMENSION(:) :: array
       END FUNCTION
-      
+
       PURE FUNCTION func3( array, i )
          TYPE dt
             SEQUENCE
@@ -74,14 +71,14 @@ PROGRAM fxfc016
          INTEGER,INTENT(IN) :: value,n
          INTEGER :: func4(n)
       END FUNCTION
-      
+
       PURE FUNCTION func5( array )
          INTEGER, INTENT(IN) :: array(:)
          INTEGER func5(size(array))
       END FUNCTION
 
    END INTERFACE
-   
+
 !-------------------------------------
 ! Test PURE scalar function
 !-------------------------------------
@@ -218,10 +215,10 @@ END FUNCTION
 
 PURE FUNCTION func4( value, n )
    USE mod
-   INTEGER,INTENT(IN) :: value,n 
+   INTEGER,INTENT(IN) :: value,n
    INTEGER :: func4(n)
    INTEGER I
- 
+
    func4 = (/(i,i=value,value+n-1)/)
 END FUNCTION
 

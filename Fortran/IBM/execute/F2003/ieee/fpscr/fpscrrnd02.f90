@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: -qfree=f90 
+! %COMPOPTS: -qfree=f90
 ! %GROUP: fpscrrnd02.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,37 +12,31 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : IEEE modules - FPSCR save and restore
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : March 30, 2002
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : ieee_arithmetic 
+!*  PRIMARY FUNCTIONS TESTED   : ieee_arithmetic
 !*				 ieee_get_rounding_mode()
 !*				 ieee_set_rounding_mode()
 !*
 !*  REFERENCE                  : Feature 180920
 !*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  DESCRIPTION                : This is a FPSCR testcase. 
+!*  DESCRIPTION                : This is a FPSCR testcase.
 !*				 In this testcase, main program that uses IEEE
-!*				 calls internal subroutines which itself calls 
+!*				 calls internal subroutines which itself calls
 !*				 other subroutines which are internal or external.
 !*
 !*                               Rounding mode is ieee_down on
 !*                               entry into subroutine called by main program.
 !*
 !*				 Rule:
-!*  				 1) When returning from a procedure that 
+!*  				 1) When returning from a procedure that
 !*				 uses IEEE, the settings for
-!*  				 rounding mode return to the values 
+!*  				 rounding mode return to the values
 !*				 they had at procedure entry.
-!*				 
+!*
 !*                               2) Calls to procedures that do not use
 !*                               IEEE from procedures that do, the
 !*                               floating-point status will not change.
@@ -66,7 +60,7 @@
 
 !***********************************************************************
 !*** Rounding mode is ieee_down on entry into subroutine;
-!*** so on return rounding mode will be ieee_down. 
+!*** so on return rounding mode will be ieee_down.
 !***********************************************************************
 
 !*  Main program uses IEEE, and calls subroutine that uses IEEE.
@@ -91,7 +85,7 @@
 !*  Subroutine that use IEEE modules calls other subroutines.
 !***********************************************************************
         subroutine int_sub101()
-	
+
 !***  Subroutines that use IEEE modules.
           call ieee_get_rounding_mode(round_value)
           if (round_value /= ieee_down)              error stop 10

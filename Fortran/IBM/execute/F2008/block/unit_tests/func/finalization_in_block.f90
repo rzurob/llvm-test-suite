@@ -17,6 +17,6 @@ use m
 block
 type(dt) j
 j%i = 12
-end block 
+end block
 
-end 
+end

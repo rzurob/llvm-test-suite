@@ -1,21 +1,13 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : optional001kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from optional001 by Robert Ma)
 !*  DATE                       : 2007-07-06 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with optional attribute (output)
@@ -79,7 +71,7 @@ contains
       end if
 
    end subroutine
-   
+
 end module
 
 program optional001kl
@@ -105,7 +97,7 @@ program optional001kl
    call write1(1, b1, b2)
 
 contains
-   
+
    subroutine write1(unit, b1, b2)
       integer, intent(in) :: unit
 

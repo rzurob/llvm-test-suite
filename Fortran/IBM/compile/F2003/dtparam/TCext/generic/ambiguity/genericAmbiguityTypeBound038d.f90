@@ -3,22 +3,11 @@
 ! opt variations: -ql
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : ambiguious generic interfaces
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : ambiguous with optional args, one procedure has more arguments than the other
 !*
@@ -62,7 +51,7 @@ module genericName
          type(c1(4)) :: x
          type(c1(4)) :: y
          class(b1(4)), optional, intent(in) :: z
-         
+
          print *, 'twoargs2'
 
       end subroutine

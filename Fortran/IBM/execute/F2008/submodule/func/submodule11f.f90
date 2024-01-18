@@ -1,21 +1,15 @@
 !***********************************************************************
 !* =====================================================================
-!* XL Fortran Test Case                            IBM INTERNAL USE ONLY
-!* =====================================================================
 !*
 !*  TEST CASE NAME             : submodule11f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Bernard Kan
 !*  DATE                       : April 20, 2013
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : 
-!*                               
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  DRIVER STANZA              : xlf2008
+!*  SECONDARY FUNCTIONS TESTED :
+!*
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : F2008 submodule
@@ -24,8 +18,8 @@
 !*
 !*  DESCRIPTION                :
 !*  based on F2003/dtparam/allocate/allocBaseVariable03.f
-!*  
-!*  Derived type is defined with a generic function pointer to functions 
+!*
+!*  Derived type is defined with a generic function pointer to functions
 !*  declared in an interface and defined in a submodule.
 !*
 !*  Verify that the results match the values of the original test case.
@@ -52,7 +46,7 @@ MODULE typeMod
             GENERIC :: NewBase => NewBase2, NewBase4, NewBase8
 
     END TYPE base
-    
+
     INTERFACE
 
         MODULE FUNCTION NewBase2(this, rc)
@@ -145,11 +139,11 @@ PROGRAM allocBaseVariable03
     TYPE(base(2,-1,0)), POINTER :: b3
 
 
-    IF ( ASSOCIATED( b1 ) )                 error stop  10_4 
+    IF ( ASSOCIATED( b1 ) )                 error stop  10_4
 
     b1 => b1%NewBase( 11_4 )
 
-    IF (.NOT. ASSOCIATED( b1 ))             error stop  12_4 
+    IF (.NOT. ASSOCIATED( b1 ))             error stop  12_4
 
     IF (b1%k /= 4)                          error stop  13_4
     IF (KIND( b1%array ) /= 4)              error stop  14_4

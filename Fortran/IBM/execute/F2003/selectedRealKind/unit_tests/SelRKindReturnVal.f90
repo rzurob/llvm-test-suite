@@ -1,24 +1,18 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SelRKindReturnVal.f
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Zheming Gu
 !*  DATE                       : June 05, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic function
 !*                               selected_real_kind(p,r)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 324332
 !*
-!*  DRIVER STANZA              :
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -32,7 +26,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 program SelRKindReturnVal
-      
+
 
 print *,selected_real_kind(2,2)
 print *,selected_real_kind(11,294)

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefREPEAT.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefREPEAT.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 30, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to an tranformational intrinsic
-!* 
+!*
 !*  - REPEAT
 !*  ()
 !*
@@ -35,12 +28,12 @@
 
 
 
-  PROGRAM InitExpDefREPEAT 
+  PROGRAM InitExpDefREPEAT
   IMPLICIT NONE
   INTEGER :: I, J, K
 
 
-  
+
   INTEGER, PARAMETER :: TK0 = KIND(REPEAT("123", 0))
   INTEGER, PARAMETER :: TK1 = KIND(REPEAT("123", 100000))
 
@@ -76,4 +69,4 @@
   END
 
 
- 
+

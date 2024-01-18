@@ -1,56 +1,50 @@
 !**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: rm -f *.mod 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: ftybn096j.f 
-! %VERIFY: 
+! %PRECMD: rm -f *.mod
+! %COMPOPTS: -qfree=f90
+! %GROUP: ftybn096j.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn096j.f 
-!*  TEST CASE TITLE            : type-bound procedure
+!*  TEST CASE NAME             : ftybn096j.f
 !*
-!*  PROGRAMMER                 : Catherine Sun
-!*  DATE                       : 
-!*  ORIGIN                     : IBM Software Solutions Toronto Lab
-!* 
-!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute 
+!*  DATE                       :
 !*
-!*  SECONDARY FUNCTIONS TESTED : overriding 
+!*  PRIMARY FUNCTIONS TESTED   : nopass binding attribute
+!*
+!*  SECONDARY FUNCTIONS TESTED : overriding
 !*
 !*  DESCRIPTION                : testing a procedure is bound to both
 !*                                parent and child types,
-!*                                but with different binding-names. 
-!*    
+!*                                but with different binding-names.
+!*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
-   module mod	      
+   module mod
       integer :: int = 200
       character*20 :: c = "hi"
 
-      type parent 
+      type parent
          integer :: x
 	 contains
       	 procedure, pass(arg3) :: bind => proc1
          procedure, pass :: bind_r => proc2
-      end type 
+      end type
 
-      type, extends(parent) :: child 
+      type, extends(parent) :: child
       contains
          procedure, pass(arg2) :: bind_c => proc1
-      end type  
+      end type
 
-      type, extends(child) :: thirGen 
+      type, extends(child) :: thirGen
       contains
          procedure, pass :: bind_3g => proc1
       end type
@@ -71,7 +65,7 @@
          int = 0
          c = "hello"
       end subroutine
-   end module     
+   end module
 
    use mod
 
@@ -97,6 +91,6 @@
    call dt_3g%bind_r(dt_c, dt_3g)
    if (int .ne. 0) error stop 10
    if (c .ne. "hello") error stop 11
- 
+
    end
-   
+

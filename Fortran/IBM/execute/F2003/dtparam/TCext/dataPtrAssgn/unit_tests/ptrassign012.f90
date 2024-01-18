@@ -16,24 +16,16 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ptrassign012
-!*
-!*  PROGRAMMER                 : Michael Selvanayagam
 !*  DATE                       : March 31, 2006s
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=polymorphic
 !*
 !*  DESCRIPTION                :C717 functional
-!*                              
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -43,22 +35,22 @@
     integer, len  :: n1
     real(k1)      :: num1
   end type
-  
+
   type dt2(n2,k2)    ! (20,4)
     integer, kind :: k2
     integer, len  :: n2
     sequence
     integer(k2)   :: num2
   end type
-  
-   
+
+
   class(*), pointer :: ptr1(:)
   class(*), target, allocatable :: arr1(:)
   class(*), pointer :: ptr2(:)
   type(dt2(:,4)), pointer :: ptr3(:)
-  
+
   allocate(arr1(5), source=(/1,1,1,1,1/))
-  
+
   ptr1(5:)=>arr1
   if(.not.associated(ptr1,arr1)) error stop 1
   ptr2(6:)=>ptr1

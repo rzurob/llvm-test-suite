@@ -1,23 +1,12 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 3/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure Pointer with BindC
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DESCRIPTION                :  
-!*                                associate procedure pointer with c function 
+!*  DESCRIPTION                :
+!*                                associate procedure pointer with c function
 !*                                pointer pointing to C function. Dummy
 !*                                argument is with value attribute.
 !* ===================================================================
@@ -28,11 +17,11 @@ program procptrBindcProc04b
 
    type dt
        type(C_FUNPTR) :: cptr
-       type(C_FUNPTR) :: cfunptr 
+       type(C_FUNPTR) :: cfunptr
    end type
    interface
        subroutine csub(i) bind(c)
-          import C_PTR 
+          import C_PTR
           type(C_PTR), value :: i
        end subroutine csub
    end interface
@@ -45,14 +34,14 @@ program procptrBindcProc04b
 
    type(dt) :: dtype
    integer(C_INT), target :: i
-   type(C_PTR) :: j, res 
+   type(C_PTR) :: j, res
    integer(C_INT), pointer :: p, pp
 
    procedure(csub),pointer :: fptr => null()
    procedure(cfunc), pointer :: funptr => null()
 
    i = max(23_C_INT, 34_C_INT)
-   j = C_LOC(i) 
+   j = C_LOC(i)
    if ( .not. C_ASSOCIATED(j) ) error stop 1_4
    if ( .not. C_ASSOCIATED(j, C_LOC(i)) ) error stop 2_4
 
@@ -61,7 +50,6 @@ program procptrBindcProc04b
    dtype%cptr = C_FUNLOC(csub)
    if(.not. C_ASSOCIATED(dtype%cptr)) error stop 11_4
    if(.not. C_ASSOCIATED(dtype%cptr, C_FUNLOC(csub))) error stop 12_4
-
 
    ! derived type component as CPTR in C_F_PROCPOINTER
    if(ASSOCIATED(fptr)) error stop 13_4
@@ -76,7 +64,7 @@ program procptrBindcProc04b
    call fptr(j)
    if ( .not. C_ASSOCIATED(j) ) error stop 15_4
 
-   if (p /= 34 ) error stop 17_4 
+   if (p /= 34 ) error stop 17_4
    call C_F_POINTER(j,p)
    if ( p /= 34 ) error stop 19_4
 

@@ -2,30 +2,15 @@
 ! ftcx_dtp -ql -qnodefaultpv -qdeferredlp /tstdev/OO_poly/point_assgn/fpAssgn003d2.f
 ! opt variations: -qnol -qdefaultpv -qnodeferredlp
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 04/06/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : data pointer assignment (for associated()
 !                               intrinsic TARGET must be of a type that is
 !                               allowed in a data pointer assignment statement)
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012

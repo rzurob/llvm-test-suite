@@ -1,14 +1,9 @@
 !******************************************************************************
 !*  ===========================================================================
-!*  XL Fortran Test Case                                  IBM INTERNAL USE ONLY
-!*  ===========================================================================
 !*
 !*  TEST CASE NAME             : acetint30c
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2006-08-03
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 289053
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 : intrinsic type, typeless, hollerith, real(8)
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -101,7 +95,7 @@ program acetint30c
   call check(20, (/real(8):: b'110000101100001011000010110000101100001011000010110000101100001', &
                              o'605413026054130260541', z'6161616161616161'/))
 
-   
+
   r8Base = (/real(8):: 0.0_4, 1.0_4, IEEE_VALUE(0.0_4,IEEE_POSITIVE_INF)/)
 
   ! We can't represent the above values easily (at all?) with hollerith constants,
@@ -181,7 +175,7 @@ program acetint30c
   call check(120, (/real(8):: (b'110000101100001011000010110000101100001011000010110000101100001', &
                                o'605413026054130260541', z'6161616161616161',i=1,1)/))
 
-   
+
   r8Base = (/real(8):: (0.0_4, 1.0_4, IEEE_VALUE(0.0_4,IEEE_POSITIVE_INF),i=1,1)/)
 
   ! We can't represent the above values easily (at all?) with hollerith constants,

@@ -1,22 +1,14 @@
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : OptionalArg12f
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : May 23, 2012
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop OPTIONAL argument
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf2008
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Calling a BIND(C) procedure from Fortran
 !*                               where the actual argument is an optional
@@ -40,7 +32,7 @@
       integer(c_int), pointer :: ptr
       integer(c_int), target :: targ
       integer(c_int), allocatable :: al
-      
+
       ptr => targ
       call y(ptr)
       call y()
@@ -82,6 +74,6 @@
       subroutine x(a) bind(C)
         use, intrinsic :: iso_c_binding
         integer(c_int), optional :: a
-        
+
         print *, "  x::present?", present(a)
       end

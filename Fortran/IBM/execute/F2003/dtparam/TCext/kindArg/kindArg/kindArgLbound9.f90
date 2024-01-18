@@ -4,23 +4,17 @@
 
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgLbound9
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 22, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : LBOUND 
+!*  SECONDARY FUNCTIONS TESTED : LBOUND
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -29,11 +23,9 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  -qintsize 
-!*    
-!*  () 
+!*  -qintsize
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -60,13 +52,13 @@
   END TYPE
 
   TYPE(DT1(4,20))          :: TT
-  INTEGER            :: I 
+  INTEGER            :: I
   INTEGER, PARAMETER :: L2= -127, L1= -128
 
 
   ALLOCATE( DT1(4,20) ::  TT%Arr(L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2,L1:L2))
 
-  DO I = 1, 9 
+  DO I = 1, 9
     IF (     LBOUND(ARRAY=TT%Arr, DIM=I, KIND=KIND(I))   .NE. L1)               STOP 11
     IF (KIND(LBOUND(ARRAY=TT%Arr, DIM=I, KIND=KIND(I)))  .NE. KIND(I))          STOP 12
   END DO
@@ -77,7 +69,7 @@
 
   ALLOCATE( DT1(4,20) ::  TT%Arr0(L2:L1,L2:L1,L2:L1,L2:L1,L2:L1,L2:L1,L2:L1,L2:L1,L2:L1))
 
-  DO I = 1, 9 
+  DO I = 1, 9
     IF (     LBOUND(ARRAY=TT%Arr0, DIM=I, KIND=KIND(I))   .NE.  1)               STOP 31
     IF (KIND(LBOUND(ARRAY=TT%Arr0, DIM=I, KIND=KIND(I)))  .NE. KIND(I))          STOP 32
   END DO

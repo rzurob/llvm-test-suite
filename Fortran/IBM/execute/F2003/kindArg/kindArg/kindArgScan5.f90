@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case            IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgScan5
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 28, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : INDEX 
+!*  SECONDARY FUNCTIONS TESTED : INDEX
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,15 +19,12 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
 !*  Result Value.
 !*  Case (i): If BACK is absent or is present with the value false and if STRING contains at
-!*  least one character that is in SET, the value of the result is the position of the leftmost 
+!*  least one character that is in SET, the value of the result is the position of the leftmost
 !*  character of STRING that is in SET.
-!* 
-!*    
-!*  () 
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -95,11 +86,11 @@
   IF (KIND(SCAN(STRING=CC, SET=CC(:)(7:7), BACK=.FALSE., KIND=KIND(K1)))  .NE. 1)          STOP 68
 
 
-  CLASS DEFAULT 
+  CLASS DEFAULT
     STOP 88
   END SELECT
   END ASSOCIATE
 
- 
+
   END
 

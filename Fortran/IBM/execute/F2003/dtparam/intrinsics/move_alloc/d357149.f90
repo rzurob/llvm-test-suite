@@ -1,23 +1,15 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d357149.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d357149.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 6 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 6 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. DEFECT 357149
@@ -25,7 +17,7 @@
 module m
    type base(l1)
       integer,len  :: l1
-      integer :: i1(l1) 
+      integer :: i1(l1)
    end type
    type,extends(base) :: child(l2)
       integer,len    :: l2
@@ -39,7 +31,7 @@ program d357149
 
   integer :: i
 
-  class(base(3)),allocatable:: from1(:) 
+  class(base(3)),allocatable:: from1(:)
 
   allocate(child(3,5) :: from1(3:6))
   select type(from1)
@@ -49,7 +41,7 @@ program d357149
           from1(i)%i2=[3,4,5]
           print *,lbound(from1(i)%i1,1),ubound(from1(i)%i1,1)
           print *,lbound(from1(i)%i2,1),ubound(from1(i)%i2,1)
-          print *,from1(i)%i1,i 
+          print *,from1(i)%i1,i
           print *,from1(i)%i2,i
        end do
     class default

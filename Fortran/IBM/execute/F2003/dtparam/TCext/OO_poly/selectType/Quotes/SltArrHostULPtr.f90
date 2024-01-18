@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrHostULPtr.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrHostULPtr
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 19, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,8 +34,8 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a host associate name associating to an unlimited 
+!*
+!*   The selector is a host associate name associating to an unlimited
 !*   poly array pointer
 !*    ()
 !*
@@ -55,7 +49,7 @@
         INTEGER, KIND :: K1
     CONTAINS
       PROCEDURE, NoPASS   :: Called
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4)
       INTEGER(K1) :: BaseId = 1
@@ -110,7 +104,7 @@
   USE M
   IMPLICIT NONE
   TYPE(Child(4)), TARGET :: V(4,4)
-  
+
   V%BaseId = -1
   V%ChildId = -2
 
@@ -125,9 +119,9 @@
     Arr => Arg(::2, 3:4)
 
     SELECT TYPE (U => Arr)
-    CLASS IS (Child(4)) 
+    CLASS IS (Child(4))
     SELECT TYPE (W => U)
-    CLASS IS (Child(4)) 
+    CLASS IS (Child(4))
       SELECT TYPE (V => W)
         TYPE IS (Child(4))
           IF ( SIZE(V)          .NE. 4 )          STOP 21
@@ -159,9 +153,9 @@
   END SELECT
   END SELECT
 
-  END SUBROUTINE 
- 
- 
+  END SUBROUTINE
+
+
   END
 
 

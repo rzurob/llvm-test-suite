@@ -1,7 +1,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: iostateofread1.f
 ! %VERIFY:
 ! %STDIN:
@@ -11,21 +11,14 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : iostateofread1 
-!*
-!*  PROGRAMMER                 : Rob Wheeler
 !*  DATE                       : Jan 20, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : is_iostat_eor 
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*  PRIMARY FUNCTIONS TESTED   : is_iostat_eor
+!*  SECONDARY FUNCTIONS TESTED : None
 !*
-!*  DRIVER STANZA              : xlf
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Ensure that basic funcationailty works for instrinsic when reads a file via command line
 
@@ -40,22 +33,22 @@
 	DO I=1,N
 		READ(10,*,IOSTAT=ios)X(I),Y(I)
 		iarr(i)=ios
-	END DO   
+	END DO
 	READ(10,*,iostat=ios)X(I),Y(I)
 	iarr(4)=ios
 	if (is_iostat_end(ios)) then
 	  print *, "end of the file reached"
 	endif
-	CLOSE(UNIT=10) 
+	CLOSE(UNIT=10)
 	END SUBROUTINE Readin
-	
+
 	PROGRAM readvals
 	IMPLICIT NONE
 	REAL,DIMENSION(1:100)::A,B
 	INTEGER :: Nos,I
 	integer, dimension(1:100)::iostatarr
 	CHARACTER(LEN=20)::Filename
-	
+
 	INTERFACE
 	SUBROUTINE Readin(Name,X,Y,N,iarr)
 		IMPLICIT NONE
@@ -65,7 +58,7 @@
 		CHARACTER (LEN=20),INTENT(IN)::Name
 	END SUBROUTINE Readin
 	END INTERFACE
-	
+
 	PRINT *,' Type in the name of the data file'
 	READ '(A)' , Filename
 	PRINT *,' Input the number of items in the file'

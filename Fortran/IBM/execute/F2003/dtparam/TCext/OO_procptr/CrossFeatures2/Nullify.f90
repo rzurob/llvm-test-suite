@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: Nullify.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: Nullify.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : Nullify.f 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : Nullify.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 10, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer 
+!*  PRIMARY FUNCTIONS TESTED   : Procedure pointer
 !*
-!*  SECONDARY FUNCTIONS TESTED : Pointer assignment 
+!*  SECONDARY FUNCTIONS TESTED : Pointer assignment
 !*
-!*  REFERENCE                  : Feature 289058 
+!*  REFERENCE                  : Feature 289058
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*   
-!*  The nullify stmt 
-!*   
-!*  () 
+!*
+!*  The nullify stmt
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -55,7 +49,7 @@
       INTEGER(K1)   :: Id
       PROCEDURE(INTEGER), POINTER, NOPASS :: ProcPtr=>NULL()
     CONTAINS
-      PROCEDURE, NoPASS   :: BindProc => ProcFun 
+      PROCEDURE, NoPASS   :: BindProc => ProcFun
     END TYPE
 
     CHARACTER(10) :: Mark
@@ -65,7 +59,7 @@
     FUNCTION ProcFun(Arg)
     PROCEDURE(INTEGER), POINTER :: ProcFun
     PROCEDURE(INTEGER)          :: Arg
-      ProcFun => Arg 
+      ProcFun => Arg
     END FUNCTION
 
     FUNCTION Fun(Arg)
@@ -76,9 +70,9 @@
 
   END MODULE
 
-  PROGRAM Nullify 
+  PROGRAM Nullify
   USE M
-  IMPLICIT NONE 
+  IMPLICIT NONE
 
   TYPE(DT(20,4))                :: V
   PROCEDURE(INTEGER), POINTER :: ProcPtr1=>NULL()
@@ -97,18 +91,18 @@
   NULLIFY(ProcPtr1)
   IF ( ASSOCIATED( ProcPtr1 ))        STOP 23
 
-  ProcPtr2 => ExtSub 
+  ProcPtr2 => ExtSub
   IF ( .NOT. ASSOCIATED( ProcPtr2 ))  STOP 31
   CALL ProcPtr2("12345")
-  IF ( Mark .NE. "12345")             STOP 32 
+  IF ( Mark .NE. "12345")             STOP 32
   NULLIFY(ProcPtr2)
   IF ( ASSOCIATED( ProcPtr2 ))        STOP 33
 
-  ProcPtr1 => V%BindProc(Fun) 
+  ProcPtr1 => V%BindProc(Fun)
   IF ( .NOT. ASSOCIATED( ProcPtr1 ))  STOP 42
   IF (  ProcPtr1(-2)   .NE. -2)       STOP 44
 
-  V%ProcPtr => V%BindProc(Fun) 
+  V%ProcPtr => V%BindProc(Fun)
   IF ( .NOT. ASSOCIATED( V%ProcPtr))  STOP 52
   IF (  V%ProcPtr(-2)   .NE. -2)      STOP 54
 
@@ -122,7 +116,7 @@
   SUBROUTINE ExtSub(Arg)
   USE M
   IMPLICIT NONE
-  CHARACTER(*) :: Arg 
+  CHARACTER(*) :: Arg
     Mark = Arg
   END SUBROUTINE
 

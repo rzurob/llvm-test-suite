@@ -2,44 +2,37 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP:  fxstio151.f
 ! %VERIFY:
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : I/O Stream Access
-!*
-!*  PROGRAMMER                 : Bahram Chehrazy
 !*  DATE                       : March 2003
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
-!*
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE, READ
 !*
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DESCRIPTION                : Test List-Directed Stream I/O with 
-!*                               differet interinsic data types 
+!*  DESCRIPTION                : Test List-Directed Stream I/O with
+!*                               differet interinsic data types
 !*
 !* ===================================================================
 !*  REVISION HISTORY
-!*  MM/DD/YY:  Init:  Comments: 
-!*  03/27/03   BC     Initial version 
-!* 
-!234567890123456789012345678901234567890123456789012345678901234567890 
+!*  MM/DD/YY:  Init:  Comments:
+!*  03/27/03   BC     Initial version
+!*
+!234567890123456789012345678901234567890123456789012345678901234567890
 
-  program fxstio151 
+  program fxstio151
 
      implicit none
      integer    ios
@@ -57,16 +50,16 @@
      logical*2 	l2_in, l2_out
      logical*4 	l4_in, l4_out
      logical*8 	l8_in, l8_out
-     character    ch1_in, ch1_out  
-     character*15 ch15_in, ch15_out  
+     character    ch1_in, ch1_out
+     character*15 ch15_in, ch15_out
      byte       b_in, b_out
 
      logical precision_R4, precision_R8, precision_R6
      logical precision_x8, precision_x6, precision_x3
-	
-!********************************************************** 
+
+!**********************************************************
 !        Initialization of variables                      *
-!********************************************************** 
+!**********************************************************
 
      i1_in = 12
      i2_in = 1234
@@ -87,9 +80,9 @@
      b_in = b'01010111'
 
 
-!********************************************************** 
+!**********************************************************
 !        Writing and Reading the file                     *
-!********************************************************** 
+!**********************************************************
 
      OPEN(1, FILE='fxstio151.dat', FORM='FORMATTED', ACCESS='STREAM', &
     &     STATUS='REPLACE', IOSTAT=ios, ERR=90, DELIM="QUOTE")
@@ -126,9 +119,9 @@
 
      READ(1, FMT=*, IOSTAT=ios, ERR=92) b_out
 
-!********************************************************** 
+!**********************************************************
 !        Checking the Results                             *
-!********************************************************** 
+!**********************************************************
 
      if ( i1_in .ne. i1_out ) error stop 10
      if ( i2_in .ne. i2_out ) error stop 11
@@ -159,12 +152,12 @@
      return
 
 90   print *, "Error while openning the file: IOSTAT = ", ios
-     error stop 90 
+     error stop 90
 91   print *, "Error while writing to the file: IOSTAT = ", ios
-     error stop 91 
+     error stop 91
 92   print *, "Error while reading from the file: IOSTAT = ", ios
-     error stop 92 
+     error stop 92
 93   print *, "Error while rewinding the file: IOSTAT = ", ios
-     error stop 93 
+     error stop 93
 
    end program

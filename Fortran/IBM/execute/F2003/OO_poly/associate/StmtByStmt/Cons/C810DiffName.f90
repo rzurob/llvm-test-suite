@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: C810DiffName.f 
-! %VERIFY: 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: C810DiffName.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT:  
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : C810DiffName
-!*  TEST CASE TITLE            : C809
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Oct. 20, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : Associate construct name 
+!*  SECONDARY FUNCTIONS TESTED : Associate construct name
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,19 +31,19 @@
 !*
 !*  DESCRIPTION
 !*     C810 : The associate construct shall have the same name
-!*     - Different names 
+!*     - Different names
 !*    (Pass comp-the msg is :
-!*    1516-246 (E) The construct name for the END ASSOCIATE statement is missing. 
+!*    1516-246 (E) The construct name for the END ASSOCIATE statement is missing.
 !*    The statement will be matched with the previous ASSOCIATE statement)
-!*   
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
- 
+
 
   PROGRAM C810DiffName
   IMPLICIT NONE
 
  As:   ASSOCIATE ( As  => "abc"(1:3) )
-      IF ( As .NE. "abc" ) STOP 50 
+      IF ( As .NE. "abc" ) STOP 50
     END ASSOCIATE
 
   END

@@ -24,7 +24,6 @@
         bind(c) :: cmp, ar
       end module
 
-
       program p1
         use modvar2
 

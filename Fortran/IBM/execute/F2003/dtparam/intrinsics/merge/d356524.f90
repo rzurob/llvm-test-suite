@@ -1,29 +1,21 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : d356524.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : d356524.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Sept. 22 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Sept. 22 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 13.7.75 
-!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK) 
-!* 3. DEFECT 356524 
+!* 1. TEST SECTION 13.7.75
+!* 2. INTRINSICS:MERGE(TSOURCE,FSOURCE,MASK)
+!* 3. DEFECT 356524
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
   type base(k1,l1)
@@ -50,7 +42,7 @@ program d356524
 
    integer :: k
 
-   class(base(4,:)),allocatable :: poly1(:),poly5(:) 
+   class(base(4,:)),allocatable :: poly1(:),poly5(:)
 
    type(child(4,3,2,6))  :: chld1(6)
 

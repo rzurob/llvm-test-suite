@@ -1,32 +1,20 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : kindTPwithinit1.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : B is extended from A, each type specifies a
-!*				 kind parameter 
+!*				 kind parameter
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 
 
         type A (k1)
             integer, kind :: k1 = 4
-            integer(k1) :: a1 
+            integer(k1) :: a1
         end type
 
         type, extends(A) :: B (k2)

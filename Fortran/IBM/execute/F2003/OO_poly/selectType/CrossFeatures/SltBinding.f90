@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: SltBinding.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: SltBinding.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltBinding
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 28, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -36,17 +30,17 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  The selector is a binding func call  
-!* 
-!*  () 
+!*
+!*  The selector is a binding func call
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
   MODULE M
     TYPE  :: DT0
-      INTEGER(4)      :: IArr(2)=-1 
-      CHARACTER(1025) :: CArr(2)="!" 
+      INTEGER(4)      :: IArr(2)=-1
+      CHARACTER(1025) :: CArr(2)="!"
     END TYPE
 
     TYPE, ABSTRACT, EXTENDS(DT0) :: DT1
@@ -54,7 +48,7 @@
       CONTAINS
       PROCEDURE, NoPASS   :: GetObj
     END TYPE
-  
+
     TYPE, EXTENDS(DT1) :: DT
       PRIVATE
     END TYPE
@@ -66,7 +60,7 @@
     CLASS(*), POINTER  :: GetObj
       GetObj => Arg
     END FUNCTION
-  
+
   END MODULE
 
   PROGRAM SltBinding
@@ -77,7 +71,7 @@
   CALL Sub(V)
 
   CONTAINS
- 
+
   SUBROUTINE Sub(U)
   CLASS(DT), TARGET :: U
 
@@ -90,12 +84,12 @@
       IF (ANY(U%IArr .NE. -1)) STOP 21
       IF (TRIM(U%CArr(1)) .NE. "!") STOP 22
       IF (TRIM(U%CArr(2)) .NE. "!") STOP 23
-    CLASS DEFAULT 
+    CLASS DEFAULT
       STOP 30
-    END SELECT 
+    END SELECT
   CLASS DEFAULT
     STOP 31
-  END SELECT 
+  END SELECT
 
   END SUBROUTINE
 

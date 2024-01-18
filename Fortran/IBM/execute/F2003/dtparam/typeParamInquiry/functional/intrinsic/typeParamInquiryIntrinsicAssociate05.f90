@@ -1,30 +1,22 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryIntrinsicAssociate05.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryIntrinsicAssociate05.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : August 8 2008  
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : August 8 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
-!* 3. TYPE PARAMETER INQUIRY INSIDE ASSOCIATE 
-!* 4. ASSOCIATE WITH POINTER, ALLOCATABLE,POLYMORPHIC 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
+!* 3. TYPE PARAMETER INQUIRY INSIDE ASSOCIATE
+!* 4. ASSOCIATE WITH POINTER, ALLOCATABLE,POLYMORPHIC
 !* 5. DEFECT 354781
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -37,19 +29,19 @@ program typeParamInquiryIntrinsicAssociate05
     class(*),pointer :: p4(:)
     character(:),allocatable :: c1
     character(:),allocatable :: c2(:)
-  
+
     character(len=7),target :: c3="xlftest"
     character(len=3),target:: c4(3)=['abc','efg','hij']
 
-  
-    !----- test 1-----! 
+
+    !----- test 1-----!
     allocate(p1,source="xlftest")
-    associate(x=>p1) 
+    associate(x=>p1)
        if(x /="xlftest")                                    error stop 10_4
        if(x%len /= len(x) .or. x%len /= 7)                  error stop 11_4
-    end associate 
+    end associate
 
-!     print *,p1(1:3),p1(1:3)%len,len(p1(1:3))    
+!     print *,p1(1:3),p1(1:3)%len,len(p1(1:3))
      !--- defect 354781--!
     associate(x=>p1(1:3))
        if(x /="xlf")                                        error stop 12_4
@@ -68,21 +60,21 @@ program typeParamInquiryIntrinsicAssociate05
        if(x /= "xlf team")                                  error stop 16_4
        if(x%len /= len(x) .or. x%len /= 8)                  error stop 17_4
     end associate
-   
-     !----- test 2-----! 
-     allocate(p2(3),source=["ab","cd","ef"]) 
+
+     !----- test 2-----!
+     allocate(p2(3),source=["ab","cd","ef"])
      associate(x=>p2)
         if(any(x /= ["ab","cd","ef"]))                      error stop 18_4
         if(x%len /= 2)                                      error stop 19_4
      end associate
-  
+
 !     print *,p2(1:2)
      associate(x=>p2(1:2))
         if(any(x /= ["ab","cd"]))                           error stop 20_4
         if(x%len /= 2)                                      error stop 21_4
      end associate
 
-!     print *,p2(1)(2:2),len(p2(1)(2:2)) 
+!     print *,p2(1)(2:2),len(p2(1)(2:2))
      !---- defect 354781---!
      associate(x=>p2(1)(2:2))
         if(any(x /= ["b"]))                                  error stop 22_4
@@ -111,7 +103,7 @@ program typeParamInquiryIntrinsicAssociate05
          if(any(x /=["a1"]))                                  error stop 30_4
          if(x%len /= len(x) .or. x%len /= 2)                 error stop 31_4
      end associate
-     
+
      !---- test 3-----!
      allocate(c1,source="xlftest")
      associate(x=>c1)

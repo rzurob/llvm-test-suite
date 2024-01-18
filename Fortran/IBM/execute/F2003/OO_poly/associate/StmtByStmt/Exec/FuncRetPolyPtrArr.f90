@@ -1,34 +1,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP:  FuncRetPolyPtrArr.f  
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP:  FuncRetPolyPtrArr.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD:  
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : FuncRetPolyPtrArr 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : FuncRetPolyPtrArr
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Nov. 02, 2004
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Associate
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 219934
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -37,7 +31,7 @@
 !*
 !*  DESCRIPTION
 !*    The selector is a func call returning a poly array pointer
-!*    of derived type 
+!*    of derived type
 !*    ( ICE)
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -46,16 +40,16 @@
 
     TYPE :: Base
       INTEGER :: BaseId = 1
-      CLASS(*),  POINTER :: BaseComp(:,:) => NULL() 
+      CLASS(*),  POINTER :: BaseComp(:,:) => NULL()
     CONTAINS
       PROCEDURE, PASS   :: GetId => GetBaseId
     END TYPE
 
     TYPE, EXTENDS(Base) :: Child
       INTEGER  :: ChildId = 2
-      CLASS(*),  POINTER :: ChildComp(:, :) => NULL() 
+      CLASS(*),  POINTER :: ChildComp(:, :) => NULL()
     CONTAINS
-      PROCEDURE, PASS   :: GetId => GetChildId 
+      PROCEDURE, PASS   :: GetId => GetChildId
     END TYPE
 
     CONTAINS
@@ -85,7 +79,7 @@
         IF( ANY(As%GetId()  .NE. -2 )) STOP 46
 
         SELECT TYPE(As => As(1,1)%ChildComp)
-        TYPE IS (Child) 
+        TYPE IS (Child)
           IF( ANY(As%GetID() .NE. -2) ) STOP 47
         END SELECT
 
@@ -94,15 +88,15 @@
 
         SELECT TYPE ( As1 => As(2,2)%BaseComp )
         TYPE IS (Child)
-          IF ( ANY( As1%BaseId  .NE. RESHAPE((/-1, -1, -1, -1/),(/2,2/)) ) ) STOP 74 
-          IF ( ANY( As1%ChildId .NE. RESHAPE((/-2, -2, -2, -2/),(/2,2/)) ) ) STOP 73 
+          IF ( ANY( As1%BaseId  .NE. RESHAPE((/-1, -1, -1, -1/),(/2,2/)) ) ) STOP 74
+          IF ( ANY( As1%ChildId .NE. RESHAPE((/-2, -2, -2, -2/),(/2,2/)) ) ) STOP 73
         CLASS DEFAULT
             STOP 70
         END SELECT
 
         SELECT TYPE ( As1 => As(2,1)%ChildComp )
-          TYPE IS (Child) 
-            IF ( ANY( As1%ChildId .NE. RESHAPE((/-2, -2, -2, -2/),(/2,2/)) ) ) STOP 72 
+          TYPE IS (Child)
+            IF ( ANY( As1%ChildId .NE. RESHAPE((/-2, -2, -2, -2/),(/2,2/)) ) ) STOP 72
           CLASS DEFAULT
             STOP 71
         END SELECT
@@ -124,17 +118,17 @@
     FUNC => Arg
     SELECT TYPE (As => Func )
       TYPE IS (Child)
-        DO i = 1, SIZE(Arg(:,1)) 
-        DO j = 1, SIZE(Arg(1,:)) 
+        DO i = 1, SIZE(Arg(:,1))
+        DO j = 1, SIZE(Arg(1,:))
           AS(i, j)%BaseComp  => Arg
           AS(i, j)%ChildComp => Arg
-        END DO 
-        END DO 
+        END DO
+        END DO
       CLASS DEFAULT
         STOP 77
     END SELECT
 
-  END FUNCTION 
+  END FUNCTION
 
   END
 

@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 09/27/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: C471 An overriding binding shall have the DEFERRED attribute only if the binding
 !*                                        it overrides is deferred.
@@ -55,18 +39,18 @@ module m1
    contains
       procedure, nopass :: print1 => printbase
    end type
-   
+
    type, extends(base), abstract :: child(k2)
       integer, kind :: k2
    contains
-      procedure(printif), deferred,  nopass :: print1     
+      procedure(printif), deferred,  nopass :: print1
    end type
-      
+
    interface
       subroutine printif()
       end subroutine
-   end interface 
-   
+   end interface
+
 contains
    subroutine printbase()
       print *,"hello"

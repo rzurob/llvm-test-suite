@@ -1,7 +1,7 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh neg007 
+! %PRECMD: $TR_SRC/fxieee.presh neg007
 ! %COMPOPTS: -qfree=f90 -qxlf90=signedzero
 ! %GROUP: redherring.f
 ! %VERIFY:
@@ -12,30 +12,20 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2K IEEE Modules
-!*
-!*  PROGRAMMER                 : Alexandru Mihaileanu
 !*  DATE                       : February 6, 2002
-!*  ORIGIN                     : XL Fortran Development
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_IS_NEGATIVE with arrays of reals.
 !*  SECONDARY FUNCTIONS TESTED :
 !*
-!*
-!*  DRIVER STANZA              : xlf95
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : IEEE_IS_NEGATIVE has real arrays as 
+!*  DESCRIPTION                : IEEE_IS_NEGATIVE has real arrays as
 !*                               arguments.
-!*
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -143,7 +133,7 @@
         ! Now check that no flags were turned on.
         call ieee_get_flag(ieee_all,flag_values)
         do i = 1,5
-            if (flag_values(i) .neqv. .false.)call zzrc(i+700) 
+            if (flag_values(i) .neqv. .false.)call zzrc(i+700)
         end do
 
         end program

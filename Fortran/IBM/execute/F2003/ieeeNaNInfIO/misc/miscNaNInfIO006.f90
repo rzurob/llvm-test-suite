@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : miscNaNInfIO006.f
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : July 6, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Handling IEEE Infinity and NAN in real/complex editing
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature Number 311684
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qxlf2003=nooldnaninf
 !*
 !*  KEYWORD(S)                 :
@@ -34,12 +28,12 @@
       implicit none
 
       integer, parameter :: f_unit = 11
-      
+
       real(kind=4) :: real_part, imag_part
       complex(4)   :: cx
 
       open(f_unit, file='miscNaNInfIO006.dat', access='direct',        &
-     &     form='formatted', status='replace', recl=20) 
+     &     form='formatted', status='replace', recl=20)
 
       ! write 3 records in some non-sequencial order
 
@@ -51,7 +45,7 @@
 
       ! (-Inf,+NaN(S))
       write(f_unit, '(sp, 2f10.4)', rec=2)  (z'FF800000', z'7F8FFFFF')
-      
+
 
       ! read the values from the records and verify the results
 
@@ -81,10 +75,10 @@
       if ( ( .not. ieee_is_nan(imag_part) ) .or.                       &
      &     ( ieee_class(imag_part) .ne. ieee_signaling_nan ) .or.      &
      &     ( .not. equiv_is_positive(imag_part) ) ) error stop 4_4
-      
-      
+
+
       cx  = (0.0, 0.0)
-      read(f_unit, '(2f10.1)', rec=3) cx ! should be (+NaN(S),+NaN(Q)) 
+      read(f_unit, '(2f10.1)', rec=3) cx ! should be (+NaN(S),+NaN(Q))
 
       real_part = real(cx)
       imag_part = imag(cx)
@@ -97,10 +91,10 @@
      &     ( ieee_class(imag_part) .ne. ieee_quiet_nan ) .or.          &
      &     ( .not. equiv_is_positive(imag_part) ) ) error stop 6_4
 
-      
-      
+
+
       ! write a few IEEE NaNs and Infs with deferent forms and check the sign
-      
+
       write(f_unit, '(a20)', rec=4)  '   -NaN(Q)   -NaN(S)'
       write(f_unit, '(a20)', rec=5)  '    -NaN()      -NaN'
       write(f_unit, '(a20)', rec=6)  '   -nAn(_)+NAN(_a12)'
@@ -115,11 +109,11 @@
       if ( ( .not. ieee_is_nan(real_part) ) .or.                       &
      &     ( ieee_class(real_part) .ne. ieee_quiet_nan ) .or.          &
      &     ( .not. equiv_is_negative(real_part) ) ) error stop 7_4
- 
+
       if ( ( .not. ieee_is_nan(imag_part) ) .or.                       &
      &     ( ieee_class(imag_part) .ne. ieee_signaling_nan ) .or.      &
      &     ( .not. equiv_is_negative(imag_part) ) ) error stop 8_4
- 
+
       cx  = (0.0, 0.0)
       read(f_unit, '(2f10.5)', rec=5) cx ! should be (-NaN(Q),-NaN(Q))
 
@@ -129,11 +123,11 @@
       if ( ( .not. ieee_is_nan(real_part) ) .or.                       &
      &     ( ieee_class(real_part) .ne. ieee_quiet_nan ) .or.          &
      &     ( .not. equiv_is_negative(real_part) ) ) error stop 9_4
- 
+
       if ( ( .not. ieee_is_nan(imag_part) ) .or.                       &
      &     ( ieee_class(imag_part) .ne. ieee_quiet_nan ) .or.          &
      &     ( .not. equiv_is_negative(imag_part) ) ) error stop 10_4
-    
+
       cx  = (0.0, 0.0)
       read(f_unit, '(2f10.5)', rec=6) cx ! should be (-NaN(Q),+NaN(Q))
 
@@ -143,7 +137,7 @@
       if ( ( .not. ieee_is_nan(real_part) ) .or.                       &
      &     ( ieee_class(real_part) .ne. ieee_quiet_nan ) .or.          &
      &     ( .not. equiv_is_negative(real_part) ) ) error stop 11_4
- 
+
       if ( ( .not. ieee_is_nan(imag_part) ) .or.                       &
      &     ( ieee_class(imag_part) .ne. ieee_quiet_nan ) .or.          &
      &     ( .not. equiv_is_positive(imag_part) ) ) error stop 12_4
@@ -157,12 +151,12 @@
 
       if ( ieee_is_finite(real_part) .or. ieee_is_negative(real_part) )&
      &     error stop 13_4
-      
+
       if ( ieee_is_finite(imag_part) .or.                              &
      &     .not. ieee_is_negative(imag_part) ) error stop 14_4
-      
 
-      close(f_unit)      
+
+      close(f_unit)
 
       contains
 
@@ -172,11 +166,11 @@
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
-         
+
          if ( val_eq .ge. 0 ) then
             equiv_is_negative = .false.
          else
@@ -191,9 +185,9 @@
 
          real(4)    :: val, tmp_val
          integer(4) :: val_eq
-         
+
          equivalence(tmp_val, val_eq)
-         
+
          tmp_val = val
 
          if ( val_eq .le. 0 ) then
@@ -203,5 +197,5 @@
          end if
 
       end function
-      
+
       end

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDefSeq2 
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : dtParamTypeDefSeq2
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Dec. 12, 2005
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Sequence Type 
+!*  SECONDARY FUNCTIONS TESTED : Sequence Type
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,8 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
-!*  Parameterized sequence type - pointer/allocatable 
+!*  Parameterized sequence type - pointer/allocatable
 !*
 !*  (Syntax err/ice/339653)
 !*
@@ -73,8 +66,8 @@
   END TYPE
 
   TYPE(Seq0(4, 4)), TARGET      :: T0
-  TYPE(Seq1(4, 4)), TARGET      :: T1(1) 
-  TYPE(Seq2(4, 4)), POINTER     :: T2 
+  TYPE(Seq1(4, 4)), TARGET      :: T1(1)
+  TYPE(Seq2(4, 4)), POINTER     :: T2
   TYPE(Seq2(4, 4)), TARGET      :: T3(2,2) =Seq2(4, 4)(NULL(), NULL())
   TYPE(Seq3(4, 4)), ALLOCATABLE :: T4
 
@@ -99,7 +92,7 @@
   IF ( T2%Comp2%I    .NE. -1 )        STOP 37
   IF ( ASSOCIATED(T2%Comp2%R))        STOP 38
   IF ( T2%Comp2%Cplx .NE. (1., -1.) ) STOP 39
-  IF ( T2%Comp2%LL   .NEQV. .FALSE. ) STOP 40 
+  IF ( T2%Comp2%LL   .NEQV. .FALSE. ) STOP 40
   IF ( T2%Comp2%C    .NE. "B"  )      STOP 41
 
   ALLOCATE(T4, SOURCE=Seq3(4, 4)([T0], T1, T1))

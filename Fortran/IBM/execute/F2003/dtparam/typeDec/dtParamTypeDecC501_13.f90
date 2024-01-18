@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtParamTypeDecC501_13
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : May. 04, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,11 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*  C501 (R501) In a declaration-type-spec, every type-param-value that is 
+!*  C501 (R501) In a declaration-type-spec, every type-param-value that is
 !*  not a colon or an asterisk shall be a specification-expr
 !*
-!*  -- Finalization 
-!*     
-!*    
-!*   
+!*  -- Finalization
+!*
 !*   ()
 !  NOTE: JX: the finalization is supposed to happen; but it's down to the lowest
 !  priority for compiler to implement it. Ignore it for now (2008-06-11).
@@ -44,11 +35,11 @@
 
   TYPE :: DT(K,K1,K2,K4,K8,L)
     INTEGER,     LEN :: L=0
-    INTEGER,    KIND :: K = 4 
-    INTEGER(8), KIND :: K1 = 1 
-    INTEGER(4), KIND :: K2 = 2 
-    INTEGER(2), KIND :: K4 = 4 
-    INTEGER(1), KIND :: K8 = 8 
+    INTEGER,    KIND :: K = 4
+    INTEGER(8), KIND :: K1 = 1
+    INTEGER(4), KIND :: K2 = 2
+    INTEGER(2), KIND :: K4 = 4
+    INTEGER(1), KIND :: K8 = 8
     CHARACTER(LEN=L) :: C
     CONTAINS
     FINAL :: Final1, Final2
@@ -60,21 +51,21 @@
   CONTAINS
 
   SUBROUTINE Final1(Arg)
-  TYPE(DT(L=*)) :: Arg 
+  TYPE(DT(L=*)) :: Arg
     PRINT *, "Finalization1 processed!"
     LFinal1 = .true.
-  END SUBROUTINE 
+  END SUBROUTINE
 
   SUBROUTINE Final2(Arg)
-  TYPE(DT(K=2,L=*)) :: Arg(10) 
+  TYPE(DT(K=2,L=*)) :: Arg(10)
     PRINT *, "Finalization10 processed!"
-    LFinal2 = .true. 
-  END SUBROUTINE 
+    LFinal2 = .true.
+  END SUBROUTINE
 
   SUBROUTINE ModSub(L)
   INTEGER :: L
-  TYPE(DT(K=4, L=SIZE([DT(L=L)("?")]))) :: T1  
-  TYPE(DT(K=4, L=SIZE([(DT(K=2)(''),i=1,10)]))) :: T2  
+  TYPE(DT(K=4, L=SIZE([DT(L=L)("?")]))) :: T1
+  TYPE(DT(K=4, L=SIZE([(DT(K=2)(''),i=1,10)]))) :: T2
 
   IF ( .NOT. LFinal1   )  STOP 11
   IF ( .NOT. LFinal2   )  STOP 12
@@ -99,7 +90,7 @@
 
   END MODULE
 
-  
+
   PROGRAM dtParamTypeDecC501_13
   USE M
 

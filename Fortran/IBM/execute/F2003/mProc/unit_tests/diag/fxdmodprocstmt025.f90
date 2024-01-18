@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: fxdmodprocstmt025.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,25 +12,18 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : fxdmodprocstmt025
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : April. 11, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : generalization of module procedure
 !*                               stmts, by making the MODULE keyword
 !*                               optional. These statements are called
 !*                               procedure statements in F2003.
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : A procedure appearing in the procedure dcl
 !*                               stmt should be allowed in proc stmt if
@@ -39,10 +32,10 @@
 !*                               appears after the interface block.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-      
+
 ! the following are prohibited
-      procedure(integer) :: xx 
-      
+      procedure(integer) :: xx
+
       interface gen1
         procedure xx
       end interface
@@ -54,7 +47,7 @@
       end interface
 
 
-! the following are prohibited      
+! the following are prohibited
       interface gen11
         procedure xxx
       end interface
@@ -70,12 +63,12 @@
 ! the following are fine:
       interface gen111
         procedure xxxx
-      end interface 
-      
+      end interface
+
       procedure(sub1) :: xxxx
-      
+
       procedure(sub1) :: yyyy
-      
+
       interface gen222
         procedure yyyy
       end interface
@@ -83,5 +76,5 @@
       contains
       subroutine sub1()
       end subroutine
-      
+
       end

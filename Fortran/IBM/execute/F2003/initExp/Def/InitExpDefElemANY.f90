@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemANY.f  
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : InitExpDefElemANY.f
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Mar 27, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement 
+!*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : Feature Number 289074 
+!*  REFERENCE                  : Feature Number 289074
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,9 +19,8 @@
 !*
 !*  DESCRIPTION
 !*
-!*  
 !*  a reference to a transformational intrinsic
-!* 
+!*
 !*  - ANY
 !*  ()
 !*
@@ -35,7 +28,7 @@
 
 
 
-  PROGRAM  InitExpDefElemANY 
+  PROGRAM  InitExpDefElemANY
   IMPLICIT NONE
   INTEGER :: I, J, K
 
@@ -63,7 +56,7 @@
   LOGICAL(2), PARAMETER   :: Z2(1:0, 2)= .FALSE.
   LOGICAL(4), PARAMETER   :: Z4(1:0, 2)= .FALSE.
   LOGICAL(8), PARAMETER   :: Z8(1:0, 2)= .FALSE.
- 
+
   LOGICAL(KIND(ANY(Z1))), PARAMETER  :: T21(3)=ANY(Z1)
   LOGICAL(KIND(ANY(Z2))), PARAMETER  :: T22(3)=ANY(Z2)
   LOGICAL(KIND(ANY(Z4))), PARAMETER  :: T24(3)=ANY(Z4)
@@ -121,4 +114,4 @@
   END
 
 
- 
+

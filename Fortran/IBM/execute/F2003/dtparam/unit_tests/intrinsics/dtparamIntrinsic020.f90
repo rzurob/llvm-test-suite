@@ -1,16 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Intrinsic with DTP
-!*
-!*  PROGRAMMER                 : James Ren
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Unit test
 !*
-!*  DRIVER STANZA              : xlf2003
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTIONS               : Testing CSHIFT intrinsic function
@@ -41,8 +34,8 @@ do i = 1, 3
    do j =1, 3
       k = k + 1
       if (res1(j, i) /= res2(j, i)) call zzrc(k)
-   end do   
-end do   
+   end do
+end do
 
 res2 = reshape((/"G","E","C","A","H","F","D","B","I"/), (/3,3/))
 res1 = cshift(b%char2, shift=(/-1,1, 0/), dim=2)
@@ -51,6 +44,6 @@ do i = 1, 3
    do j =1, 3
       k = k + 1
       if (res1(j, i) /= res2(j, i)) call zzrc(k+10)
-   end do   
-end do   
+   end do
+end do
 end

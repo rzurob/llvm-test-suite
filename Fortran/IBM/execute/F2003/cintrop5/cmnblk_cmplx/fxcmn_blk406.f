@@ -12,20 +12,13 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  TEST CASE TITLE            : Common block with BIND(C)
 !*
-!*  PROGRAMMER                 : Kobi Vinayagamoorthy
 !*  DATE                       : February 13, 2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*
-!*
 !*  REFERENCE                  : Feature 239812
 !*
-!*  DRIVER STANZA              : xlf95, xlc, gcc 
 !*  REQUIRED COMPILER OPTIONS  : -qfloat=complexgcc (with gcc), -qlongdouble (with xlc)
 !*
 !*  DESCRIPTION                : This test case will verify that 3-dimensional array variables
@@ -201,22 +194,22 @@ program fxcmn_blk406
         if ( .not. precision_x8 ( cmplx_8b(k,j,i)               , ( -300.119 , -300.119 ) ))     error stop 61
         if ( .not. precision_x8 ( cmplx_8c(k,j,i)               , (  1000.009 , -1000.009 ) ))   error stop 62
         if ( .not. precision_x8 ( cmplx_8d(k,j,i)              , ( -1000.009  , 1000.009 ) ))   error stop 63
-     
+
         if ( .not. precision_x8 ( cmplx_16a(k,j,i)              , ( 1234300.11911D0 ,1234300.11911D0 ) ))     error stop 64
         if ( .not. precision_x8 ( cmplx_16b(k,j,i)              , ( -1234300.11911D0 ,-1234300.11911D0 ) ))   error stop 65
         if ( .not. precision_x8 ( cmplx_16c(k,j,i)              , ( 12341000.00911D0 ,-12341000.00911D0 ) ))    error stop 66
         if ( .not. precision_x8 ( cmplx_16d(k,j,i)              , ( -12341000.00911D0 ,12341000.00911D0 ) ))    error stop 67
-    
+
         if ( .not. precision_x32 ( cmplx_32a(k,j,i)              , (  987654321300.11998Q0  , 987654321300.11998Q0 ) ))     error stop 68
         if ( .not. precision_x32 ( cmplx_32b(k,j,i)              , ( -987654321300.11998Q0  ,-987654321300.11998Q0 ) ))     error stop 69
         if ( .not. precision_x32 ( cmplx_32c(k,j,i)              , (  9876543211000.00998Q0  ,-9876543211000.00998Q0 ) ))   error stop 70
         if ( .not. precision_x32 ( cmplx_32d(k,j,i)              , ( -9876543211000.00998Q0  , 9876543211000.00998Q0 ) ))   error stop 71
-    
+
         if ( .not. precision_x8 ( cmplx_FLOAT_COMPLEX_a(k,j,i)   , (  300.119  , 300.119 ) ))       error stop 72
         if ( .not. precision_x8 ( cmplx_FLOAT_COMPLEX_b(k,j,i)   , ( -300.119  ,-300.119 ) ))       error stop 73
         if ( .not. precision_x8 ( cmplx_FLOAT_COMPLEX_c(k,j,i)   , (  1000.009 , -1000.009 ) ))     error stop 74
         if ( .not. precision_x8 ( cmplx_FLOAT_COMPLEX_d(k,j,i)   , ( -1000.009 ,  1000.009 ) ))     error stop 75
-    
+
         if ( .not. precision_x16 ( cmplx_DOUBLE_COMPLEX_a(k,j,i) , ( 1234300.11911D0 ,1234300.11911D0 ) ))      error stop 76
         if ( .not. precision_x16 ( cmplx_DOUBLE_COMPLEX_b(k,j,i) , ( -1234300.11911D0 ,-1234300.11911D0 ) ))    error stop 77
         if ( .not. precision_x16 ( cmplx_DOUBLE_COMPLEX_c(k,j,i) , ( 12341000.00911D0 ,-12341000.00911D0 ) ))     error stop 78
@@ -227,7 +220,7 @@ program fxcmn_blk406
       end do
 
 
-    
+
 
 end program
 

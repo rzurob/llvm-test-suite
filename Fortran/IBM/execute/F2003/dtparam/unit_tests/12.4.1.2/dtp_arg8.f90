@@ -1,18 +1,12 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : Argument association with DTP
 !*                             :
-!*  PROGRAMMER                 : Huiwen Li
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  FUNCTIONAL TESTED          : Pass pointer and or allocatable argument
 !*                               with deferred type parameters to explicit
 !*                               explicit type parameter dummy argument
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -50,7 +44,7 @@ type(base_type(4, 4)) :: pa
 if (pa%k /= 4) stop 1
 if (pa%d /= 4) stop 2
 if (any(pa%element .ne. (-8))) stop 8 ! - failed. Refer to Defect 321635.
-if (pa%avar /= 12) stop 12 
+if (pa%avar /= 12) stop 12
 end subroutine
 
 end

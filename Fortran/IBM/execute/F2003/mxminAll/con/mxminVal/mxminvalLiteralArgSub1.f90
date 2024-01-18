@@ -1,25 +1,14 @@
-!#######################################################################
-!*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : William Zhang 
 !*  DATE                       : 1/15/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 13.7.71[3,4,6,8,9]:
-!*                               character argument for MAX*/MIN* intrinsics 
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*
+!*                               character argument for MAX*/MIN* intrinsics
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : MAXVAL/MINVAL with literal as actual
-!*                               argument to subprogram. Using typeless, 
-!*                               byte or integer as DIM and MASK. 
+!*                               argument to subprogram. Using typeless,
+!*                               byte or integer as DIM and MASK.
 !* ===================================================================
 @process intlog
 
@@ -35,18 +24,18 @@
           if(any(ichar(arg(1:2)) .ne. 127)) error stop 3_4
         end subroutine
 
-  end module ArgLiteralSub1 
+  end module ArgLiteralSub1
 
 @process intlog
-  program mxminvalLiteralArgSub1 
-    
-    use ArgLiteralSub1 
+  program mxminvalLiteralArgSub1
+
+    use ArgLiteralSub1
 
     interface
         function func1(carg, n)
-          character(*),dimension(*) :: carg 
+          character(*),dimension(*) :: carg
           character(n),dimension(n) :: func1
-        end function 
+        end function
     end interface
 
     character*2 v(2)
@@ -75,19 +64,19 @@
             character(*) :: carg
             integer iarg
             character*3  carray(iarg)
-             
+
             carray = "xxx"
             carray(3) = "yyy"
-          
+
             if(carg .ne. "aaa") error stop 5_4
 
             if(maxval(max(carray, carg, carray(1))) .ne. "yyy") then
                 error stop 6_4
             endif
 
-         end subroutine 
+         end subroutine
 
-  end program mxminvalLiteralArgSub1 
+  end program mxminvalLiteralArgSub1
 
   function func1(carg, n)
        character(*),dimension(*) :: carg

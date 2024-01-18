@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 04/26/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Usage of GENERIC BINDING
 !*                                  - scalar non-polymorphic derived type entity without DTIO
@@ -102,11 +91,11 @@ program scalar002
 
    read ( 1, *, iostat = stat, iomsg = msg )                  c2
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioreadb' ) )          error stop 6_4
-   
+
    read ( 1, "(I5,1X,DT)", iostat = stat, iomsg = msg )       c1
    if ( ( stat /= 0 ) .or. ( msg /= 'dtioreadb' ) )          error stop 7_4
 
-   if ( ( c1%i /= 1002 ) .or. ( c1%b%c /= 'def' ) .or. & 
+   if ( ( c1%i /= 1002 ) .or. ( c1%b%c /= 'def' ) .or. &
         ( c2%i /= 1001 ) .or. ( c2%b%c /= 'abc' ) )           error stop 8_4
 
    close ( 1, status ='delete')

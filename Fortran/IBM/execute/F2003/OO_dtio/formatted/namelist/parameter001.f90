@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,22 +13,11 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
 !*                                        Try namelist formatting with dummy argument
@@ -70,7 +54,7 @@ module m
    end interface
 
    contains
-   
+
    subroutine writeNamedConst ( unit, b1 )
       integer, intent(in) :: unit
       class(base), intent(in) :: b1
@@ -99,7 +83,7 @@ use m
 
    call writeNamedConst(1, b1)
    call writeNamedConst(1, b2)
-   
+
 end program
 
 
@@ -117,7 +101,7 @@ use m, only: base, child
    if ( size(v_list, 1) /= 0 ) error stop 7_4
 
    write (unit, "('i=',I4,1X)", iostat=iostat )          dtv%i
-   
+
    select type (dtv)
       type is (child)
          write (unit, "('r=',f8.3,1X)", iostat=iostat )  dtv%r

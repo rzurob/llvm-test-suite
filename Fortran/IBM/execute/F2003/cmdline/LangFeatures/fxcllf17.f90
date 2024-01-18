@@ -12,43 +12,37 @@
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxcllf17.f
-!*  TEST CASE TITLE            : Command Line Intrinsic Procedures
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Sept 18, 2003
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()
 !*                            	: GET_COMMAND(COMMAND, LENGTH, STATUS)
 !*                            	: GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
 !*                             	: GET_ENVIRONMENT_VARIABLE(NAME, VALUE, LENGTH, STATUS, TRIM_NAME)
 !*
-!*  SECONDARY FUNCTIONS TESTED : 
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  REFERENCE                  : Feature 252525
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
 !*  NUMBER OF TESTS CONDITIONS :
 !*
-!*  DESCRIPTION                : Call command line intrinsic routines through  
+!*  DESCRIPTION                : Call command line intrinsic routines through
 !*                             : multiple levels of module subroutines
-!*    
+!*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD
 
-      character(513)   :: NAME  
-      logical          :: TRIM_NAME 
-      character(2049)  :: CmdLine 
-          
+      character(513)   :: NAME
+      logical          :: TRIM_NAME
+      character(2049)  :: CmdLine
+
 
       DATA CmdLine    /'fxcllf17 \\// //\\'/
       DATA NAME       /'CmdLine   '/
@@ -56,11 +50,11 @@
 
 
       character(2049)  :: COMMAND
-      integer          :: LENGTH     
-      integer          :: STATUS  
-      integer          :: NUMBER 
-      character(2047)  :: VALUE  
-      integer          :: ARGCOUNT 
+      integer          :: LENGTH
+      integer          :: STATUS
+      integer          :: NUMBER
+      character(2047)  :: VALUE
+      integer          :: ARGCOUNT
 
 
       DATA COMMAND    / '????? '/
@@ -81,20 +75,20 @@
 
       SUBROUTINE MOD_SUB
 
-      IF ( REC_COMMAND_ARGUMENT_COUNT( COMMAND_ARGUMENT_COUNT()))   call zzrc( 73 )     
-                                  
-      IF ( REC_GET_COMMAND( COMMAND_ARGUMENT_COUNT()))              call zzrc( 74 )     
+      IF ( REC_COMMAND_ARGUMENT_COUNT( COMMAND_ARGUMENT_COUNT()))   call zzrc( 73 )
 
-      IF ( REC_GET_COMMAND_ARGUMENT( COMMAND_ARGUMENT_COUNT()))     call zzrc( 75 )     
+      IF ( REC_GET_COMMAND( COMMAND_ARGUMENT_COUNT()))              call zzrc( 74 )
 
-      IF (REC_GET_ENVIRONMENT_VARIABLE( COMMAND_ARGUMENT_COUNT()))  call zzrc( 76 )     
+      IF ( REC_GET_COMMAND_ARGUMENT( COMMAND_ARGUMENT_COUNT()))     call zzrc( 75 )
+
+      IF (REC_GET_ENVIRONMENT_VARIABLE( COMMAND_ARGUMENT_COUNT()))  call zzrc( 76 )
 
 
       END SUBROUTINE
 
 
       RECURSIVE FUNCTION REC_COMMAND_ARGUMENT_COUNT(Num)
-      
+
       LOGICAL REC_COMMAND_ARGUMENT_COUNT
       INTEGER Num
 
@@ -102,7 +96,7 @@
       THEN
          REC_COMMAND_ARGUMENT_COUNT = .false.
          CmdCount = COMMAND_ARGUMENT_COUNT()
-         if ( CmdCount .ne. 2 ) & 
+         if ( CmdCount .ne. 2 ) &
          then
            REC_COMMAND_ARGUMENT_COUNT = .true.
            error stop 63 ! Normally never returns if get here
@@ -116,7 +110,7 @@
 
 
       RECURSIVE FUNCTION REC_GET_COMMAND(Num)
-     
+
       LOGICAL REC_GET_COMMAND
       INTEGER Num
 
@@ -139,7 +133,7 @@
 
 
       RECURSIVE FUNCTION REC_GET_COMMAND_ARGUMENT(Num)
-     
+
       LOGICAL REC_GET_COMMAND_ARGUMENT
       INTEGER Num
 
@@ -150,7 +144,7 @@
           NUMBER = i
           call GET_COMMAND_ARGUMENT(NUMBER, VALUE, LENGTH, STATUS)
           call MyGetArg(CmdLine, NUMBER, Argument)
- 
+
           if ( (TRIM(VALUE) .ne. TRIM(Argument))       .or. &
                (LENGTH      .ne. LEN(TRIM(Argument)))  .or. &
                (STATUS      .ne. 0) )                       &
@@ -169,7 +163,7 @@
 
 
       RECURSIVE FUNCTION REC_GET_ENVIRONMENT_VARIABLE(Num)
-    
+
       LOGICAL REC_GET_ENVIRONMENT_VARIABLE
       INTEGER Num
 
@@ -198,12 +192,12 @@
 
 
       PROGRAM fxcllf17
- 
+
 
       USE MOD
 
 
-      CALL MOD_SUB  
+      CALL MOD_SUB
 
 
       END

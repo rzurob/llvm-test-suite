@@ -1,17 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : contiguous01f.f
-!*
-!*  PROGRAMMER                 : David Nichols
 !*  DATE                       : June 24, 2010
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS 
-!*
-!*  DRIVER STANZA              : xlf2008
+!*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS
 !*
 !*  DESCRIPTION                : Testing proper functionality of
 !*                               the F2008 intrinsic IS_CONTIGUOUS
@@ -98,9 +90,9 @@
         cpac => cpa
         print *, IS_CONTIGUOUS(ipa), IS_CONTIGUOUS(ipac)
         print *, IS_CONTIGUOUS(cpa), IS_CONTIGUOUS(cpac)
-        
+
         ipac => ita ! it and ct are contiguous due to 5.7.3.2.2
-        cpac => cta 
+        cpac => cta
         !print *, IS_CONTIGUOUS(ipac), IS_CONTIGUOUS(ita)
         print *, IS_CONTIGUOUS(cpac), IS_CONTIGUOUS(cta)
 
@@ -108,7 +100,7 @@
         !! (a) its base object is contiguous,
         ipac => ita(1:5:1)
         print *, IS_CONTIGUOUS(ipac), IS_CONTIGUOUS(ita(1:5:1))
-        
+
         ! (b) it does not have a vector subscript,
         print *, IS_CONTIGUOUS(ita([1,2,3,4,5]))
 
@@ -117,18 +109,18 @@
         !     that are consecutive in array element order,
         ipac => ita(1:5)
         print *, IS_CONTIGUOUS(ipac), IS_CONTIGUOUS(ita(1:5))
-        
+
         ! (d) if the array is of type character and a substring-range
         !     appears, the substring-range specifies all
         !     of the characters of the parent-string (6.4.1),
         cpac => cta(1:5)
         print *, IS_CONTIGUOUS(cpac), IS_CONTIGUOUS(cta(1:5))
-        
+
         ! (e) only its final part-ref has nonzero rank, and
         !     scalar%scalar%array(section)
         ipac => bpc(1)%bipc(1:5)
         print *, IS_CONTIGUOUS(ipac), IS_CONTIGUOUS(bpc(1)%bipc(1:5))
-        
+
         !! (f) it is not the real or imaginary part (6.4.4) of an array
         !!     of type complex.
         !!
@@ -147,7 +139,7 @@
         print *, IS_CONTIGUOUS(cpac), IS_CONTIGUOUS(cta(1:0))
 
         !! - the object is not of a derived type that has no ultimate
-        !!   components other than zero-sized arrays and characters 
+        !!   components other than zero-sized arrays and characters
         !!   with length zero.
         ipac => itz ! Contiguous
         print *, IS_CONTIGUOUS(ipac), IS_CONTIGUOUS(itz)
@@ -242,7 +234,7 @@
         ! - that is not a complex-part-designator ,
         !     Not in plan:
         !     call simply_contig_sub(complextype%re)
-        
+
         ! - whose final part-ref has nonzero rank,
         print *, IS_CONTIGUOUS(bpc%bipc(1)) ! Fail
 
@@ -293,7 +285,7 @@
 
         subroutine sub_arg_contig (assumed,assumed2,ptr)
           integer, contiguous                         :: assumed  (:)
-          integer, contiguous                         :: assumed2 (0:) 
+          integer, contiguous                         :: assumed2 (0:)
           integer, contiguous, pointer                :: ptr (:)
           print *, IS_CONTIGUOUS(assumed), IS_CONTIGUOUS(assumed2), &
                    & IS_CONTIGUOUS(ptr)

@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : kindArgAchar2
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2006
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics 
+!*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics
 !*
-!*  SECONDARY FUNCTIONS TESTED : ACHAR 
+!*  SECONDARY FUNCTIONS TESTED : ACHAR
 !*
-!*  REFERENCE                  : Feature Number 289083 
+!*  REFERENCE                  : Feature Number 289083
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,20 +19,18 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!*   
-!*  characteristics :: the keyword - KIND 
+!*  characteristics :: the keyword - KIND
 !*
-!*  () 
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
   PROGRAM kindArgAchar2
 
-  INTEGER(1),    PARAMETER :: I(3) = (/1,1,1/) 
-  INTEGER(1),    PARAMETER :: KIND(3) = (/1,1,1/) 
-  
+  INTEGER(1),    PARAMETER :: I(3) = (/1,1,1/)
+  INTEGER(1),    PARAMETER :: KIND(3) = (/1,1,1/)
+
   PRINT*, ACHAR(1_1, KINDD=I(1))
   PRINT*, ACHAR(I=1_1, KID=kind(1))
   PRINT*, ACHAR(KIND=I(1), KIND=2)

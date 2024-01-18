@@ -2,7 +2,7 @@
 ! %START
 ! %MAIN: YES
 ! %PRECMD:
-! %COMPOPTS: 
+! %COMPOPTS:
 ! %GROUP: charvalueattrf060.f
 ! %VERIFY:
 ! %STDIN:
@@ -12,24 +12,17 @@
 ! %END
 !**********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : charvalueattrf060
-!*
-!*  PROGRAMMER                 : Bardia Mahjour
 !*  DATE                       : Jan. 26, 2006
 !*  ORIGIN                     : AIX Compiler Development,
-!*                             : IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the VALUE
-!*                               attribute when used with characters of 
-!*                               length other than 1. ( Feature 298120 )   
-!*                                                   
-!*  SECONDARY FUNCTIONS TESTED : None 
+!*                               attribute when used with characters of
+!*                               length other than 1. ( Feature 298120 )
 !*
-!*  DRIVER STANZA              : xlf90
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  SECONDARY FUNCTIONS TESTED : None
+!*
+!*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  DESCRIPTION                : Test that pass-by-value using VALUE attribute
 !*                               works as expected for characters of length 3.
@@ -48,7 +41,7 @@
            character(3), value :: c3
          end subroutine
       end interface
-      
+
       character(3) :: x1, x2, x3, x4
       x1 = 'AaA'
       x2 = 'BbB'
@@ -62,7 +55,7 @@
       if( x2 .ne. 'BbB' ) error stop 10
       if( x3 .ne. 'vVv' ) error stop 11
       if( x4 .ne. 'DdD' ) error stop 12
-      
+
       call s1(x1, 'BbB', 'CcC', x4)
       if( x1 .ne. 'AaA' ) error stop 13
       if( x4 .ne. 'DdD' ) error stop 14
@@ -80,17 +73,17 @@
       if( x2 .ne. 'uUu' ) error stop 16
       if( x3 .ne. 'CcC' ) error stop 17
       if( x4 .ne. 'wWw' ) error stop 18
-      
+
       x1 = 'AaA'
       x4 = 'DdD'
       call s2(x1, 'BbB', 'CcC', x4)
       if( x1 .ne. 'tTt' ) error stop 19
       if( x4 .ne. 'wWw' ) error stop 20
-      
+
       x3 = 'CcC'
       call s2('AaA', 'BbB', x3, 'DdD')
       if( x3 .ne. 'CcC' ) error stop 21
-      
+
       end
 
          subroutine s1(c1, c2, c3, c4)

@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
-! %GROUP: redherring.f 
-! %VERIFY:  
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
+! %GROUP: redherring.f
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
 ! %POSTCMD: tcomp SltPrivate.f
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : SltPrivate 
-!*  TEST CASE TITLE            : 
+!*  TEST CASE NAME             : SltPrivate
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 28, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,10 +34,10 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*  Diagnostic : The selector is a private  component 
-!* 
-!*  () 
+!*
+!*  Diagnostic : The selector is a private  component
+!*
+!*  ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -51,32 +45,32 @@
     TYPE  :: DT0(K1,N1)    ! (4,1025)
       INTEGER, KIND          :: K1
       INTEGER, LEN           :: N1
-      INTEGER(K1)            :: IArr(2)=-1 
-      CHARACTER(N1), PRIVATE :: CArr(2)="!" 
+      INTEGER(K1)            :: IArr(2)=-1
+      CHARACTER(N1), PRIVATE :: CArr(2)="!"
     END TYPE
 
     TYPE, ABSTRACT :: DT1(K2)    ! (4)
       INTEGER, KIND                      :: K2
       CLASS(DT0(K2,:)), POINTER, PRIVATE :: Ptr
     END TYPE
-  
+
     TYPE, EXTENDS(DT1) :: DT    ! (4)
       PRIVATE
     END TYPE
-  
+
   END MODULE
 
   PROGRAM SltPrivate
   USE M
   IMPLICIT NONE
   TYPE(DT0(4,1025)), TARGET :: V
- 
+
   TYPE (DT(4))  :: U
 
   CALL Sub(U)
 
   CONTAINS
- 
+
   SUBROUTINE Sub(U)
   CLASS(DT1(4)) :: U
 
@@ -84,8 +78,8 @@
   CLASS IS (DT(4))
     SELECT TYPE (U => U%DT1%Ptr)
     CLASS IS (DT0(4,*))
-    END SELECT 
-  END SELECT 
+    END SELECT
+  END SELECT
 
   END SUBROUTINE
 

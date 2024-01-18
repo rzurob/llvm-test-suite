@@ -2,31 +2,16 @@
 ! ftcx_dtp -qk -qnol -qnodefaultpv -qreuse=self /tstdev/F2003/allocEnh/argAssociation/dummyArg013.f
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=none
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Jim Xia
 !*  DATE                       : 10/31/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*
 !*
 !*  DESCRIPTION                : allocatable enhancement
 !                               Further test that the defined type-bound
 !                               assignment is invoked during the intrinsic
 !                               assignment.
-!*
-!*
 !*
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
@@ -88,7 +73,7 @@ use m1
     co1 = co2
 
     !! verify  co1 and co2
-    if ((lbound(co1,1) /= 0) .or. (ubound(co1,1) /= 29)) error stop 1_4 
+    if ((lbound(co1,1) /= 0) .or. (ubound(co1,1) /= 29)) error stop 1_4
 
     do i = 0, 29
         if ((.not. allocated(co1(i)%data)) .or. &

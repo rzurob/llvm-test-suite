@@ -1,26 +1,14 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : compDTP4ToFm.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/13/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
-!*
-!*  DRIVER STANZA              : xlf2003
+!*  SECONDARY FUNCTIONS TESTED :
 !*
 !*  DESCRIPTION                : FROM is of poly type which component is of
 !*				    DTP derived-type
-!*                               TO is of class(*) 
+!*                               TO is of class(*)
 !* ===================================================================
 !*
 !*  REVISION HISTORY
@@ -36,7 +24,7 @@ module m
         integer, kind :: k
 
         character(l), allocatable :: ch
-        integer(k) :: id(l) 
+        integer(k) :: id(l)
    end type
 
    type B(l)
@@ -48,7 +36,7 @@ end module
 
 use m
 
- 
+
    class(B(8)), allocatable :: b1(:)
    class(*), allocatable :: b2(:)
 
@@ -62,16 +50,16 @@ use m
 
    select type (b2)
         type is (B(*))
-            select type ( x => b2(1)%a1)  
+            select type ( x => b2(1)%a1)
                 type is ( A(*,1))
                     print *, x%ch
                     print *, x%id
-            end select 
+            end select
 
-            select type ( x => b2(2)%a1)  
+            select type ( x => b2(2)%a1)
                 type is ( A(*,1))
                     print *, x%ch
                     print *, x%id
-            end select 
-   end select 
+            end select
+   end select
 end

@@ -3,22 +3,11 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=none
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : ambiguious generic interfaces
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : two argument with pass-arg to be first arg specified (for generic-name, operator, and assignment tb)
 !*                                  - one arg polymorphic, the other polymorphic extended type with pointer/allocatable attribute
@@ -58,13 +47,13 @@ module genericName
          class(base(*,4)), allocatable, intent(in) :: b
 
       end subroutine
-      
+
       subroutine printb(a, b)
          class(child(*,4)), intent(in) :: a
          class(child(*,4)), allocatable, intent(in) :: b
 
       end subroutine
-      
+
 end module
 
 module binoperator

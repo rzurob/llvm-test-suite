@@ -3,22 +3,11 @@
 ! opt variations: -qck -qnodeferredlp
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : GENERICS
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : with generic name
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : Generic type bound call appearing in spec-expr for character lengths
 !*  KEYWORD(S)                 :
@@ -66,18 +55,18 @@ program genericGenericNameSpecExpr002
    use m
 
    character(26) :: c = "abcdefghijklmnopqrstuvwxyz"
-   
+
    type(base(4,30)) :: b1
    class(base(4,:)), pointer :: b2
-   
+
    allocate ( b2, source = base(4,30)(10,'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx') )
    b1 = base(4,30)( 12, 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' )
-   
+
    call sub ( b1, c )
    if ( b1%c /= 'abcdefghijklxxxxxxxxxxxxxxxxxx' ) error stop 1_4
-   
+
    call sub ( b2, c(13:26) )
-   
+
    if ( b2%c /= 'mnopqrstuvxxxxxxxxxxxxxxxxxxxx' ) error stop 2_4
 
 end program

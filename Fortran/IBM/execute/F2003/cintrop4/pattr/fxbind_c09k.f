@@ -1,9 +1,4 @@
 ! *********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-! *********************************************************************
 !**********************************************************************
 ! %START
 ! %MAIN: YES
@@ -18,21 +13,13 @@
 ! %END
 !**********************************************************************
 !* ===================================================================
-!* XL Fortran Test Case                         IBM INTERNAL USE ONLY
-!* ===================================================================
 !*
-!* TEST CASE TITLE              : fxbind_c09k.f
-!* TEST CASE TITLE              : BIND(C) attribute/statement
-!*
-!* PROGRAMMER                   : Yubin Liao 
 !* DATE                         : Sep. 1, 2003
 !* ORIGIN                       : AIX Complier Development
-!*                              : IBM Software Solutions Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
 !*
-!* DRIVER STANZA                : xlf90
 !* REQUIRED COMPILER OPTIONS    :
 !*
 !* DESCRIPTION                  : Test: BINC(C) attribute/statement
@@ -52,7 +39,7 @@
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 
-       recursive function sexfun_int1(a1) result(a2) 
+       recursive function sexfun_int1(a1) result(a2)
             integer*1 :: a1
             integer*1 a2
             a2 = -1
@@ -63,10 +50,10 @@
               a2 = 2 + exfun_int1(a1)
             else
               a2 = a1
-            end if 
+            end if
        end function sexfun_int1
 
-       recursive function sexfun_int2(b1) result(b2) 
+       recursive function sexfun_int2(b1) result(b2)
              integer*2 :: b1
              integer*2 b2
              b2 = -1
@@ -80,7 +67,7 @@
              end if
        end function sexfun_int2
 
-       recursive function sexfun_int4(c1) result(c2) 
+       recursive function sexfun_int4(c1) result(c2)
              integer*4  :: c1
              integer*4 c2
              c2 = -1
@@ -94,7 +81,7 @@
              end if
        end function sexfun_int4
 
-       recursive function sexfun_int8(d1) result(d2) 
+       recursive function sexfun_int8(d1) result(d2)
             integer*8  :: d1
             integer*8 d2
             d2 = -1
@@ -108,7 +95,7 @@
             end if
        end function sexfun_int8
 
-       recursive function sexfun_real4(e1,i) result(e2) 
+       recursive function sexfun_real4(e1,i) result(e2)
             real*4 :: e1
             integer i
             real*4 e2
@@ -123,7 +110,7 @@
             end if
        end function sexfun_real4
 
-       recursive function sexfun_real8(f1, i) result(f2) 
+       recursive function sexfun_real8(f1, i) result(f2)
             real*8  :: f1
             integer i
             real*8 f2
@@ -139,7 +126,7 @@
        end function sexfun_real8
 
 
-       recursive function sexfun_comp1(l1, i) result(l2) 
+       recursive function sexfun_comp1(l1, i) result(l2)
             complex*8 :: l1
             integer i
             complex*8 l2
@@ -151,10 +138,10 @@
               l2 = (1.0, 2.0) + exfun_comp1(l1,i)
             else
               l2 = l1
-            end if 
+            end if
        end function sexfun_comp1
-       
-       recursive function sexfun_comp2(m1, i) result(m2) 
+
+       recursive function sexfun_comp2(m1, i) result(m2)
             complex*16 :: m1
             integer i
             complex*16 m2
@@ -168,4 +155,4 @@
               m2 = m1
             end if
        end function sexfun_comp2
-       
+

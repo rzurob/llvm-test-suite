@@ -2,25 +2,13 @@
 ! ftcx_dtp -ql /tstdev/F2003/allocEnh/unit_tests/ReallocAssignArray12.f
 ! opt variations: -qnol
 
-!#######################################################################
 ! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : ReallocAssignArray12
-!*
-!*  PROGRAMMER                 : Rob James
 !*  DATE                       : June 5, 2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
-!*  DESCRIPTION                : Testing reallocation on assignment, 
+!*  DESCRIPTION                : Testing reallocation on assignment,
 !*                               with an array section on the right-
 !*                               hand side of the assignment.
 !*

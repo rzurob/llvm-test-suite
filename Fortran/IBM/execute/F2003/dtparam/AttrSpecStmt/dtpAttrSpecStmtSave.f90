@@ -1,22 +1,16 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : dtpAttrSpecStmtSave
-!*  TEST CASE TITLE            :
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jun. 12, 2007
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*
-!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration 
+!*  SECONDARY FUNCTIONS TESTED : Data Object Declaration
 !*
 !*  REFERENCE                  : Feature Number 289057
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90
 !*
 !*  KEYWORD(S)                 :
@@ -25,14 +19,7 @@
 !*
 !*  DESCRIPTION
 !*
-!*   
-!* 
-!*  -- SAVE statement 
-!*  
-!*  
-!* 
-!*  
-!*   
+!*  -- SAVE statement
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
@@ -48,7 +35,7 @@
   TYPE, EXTENDS(DT0)  :: DT1(K1, L1)
     INTEGER(K0), KIND    :: K1=K0
     INTEGER(K0), LEN     :: L1=K0
-    CHARACTER(L1+3)      :: C1 = "DT1" 
+    CHARACTER(L1+3)      :: C1 = "DT1"
   END TYPE
 
   TYPE, EXTENDS(DT1) :: DT2(K2,L2)
@@ -59,8 +46,8 @@
     REAL   (K2)          :: R=K2
     LOGICAL(K2)          :: L=.TRUE._1
     COMPLEX(K2)          :: Z=CMPLX(K1, K2, K2)
-    TYPE(DT0(K2, L2))    :: T0(L2) 
-    TYPE(DT2(K0,L0,K1,L1,K2, L2)), POINTER  :: Ptr 
+    TYPE(DT0(K2, L2))    :: T0(L2)
+    TYPE(DT2(K0,L0,K1,L1,K2, L2)), POINTER  :: Ptr
     CONTAINS
     PROCEDURE, NOPASS :: Proc => ModFun0
   END TYPE
@@ -77,15 +64,15 @@
                                    L = .TRUE.,     &
                                    Z = (1.,-1.),   &
                                    Ptr  = NULL(),  &
-                                   T0=DT0(8,7)() ) 
+                                   T0=DT0(8,7)() )
 
   CONTAINS
 
   FUNCTION ModFun0(Arg)
-  CLASS(DT0(1,1)), TARGET, INTENT(IN)  :: Arg(:) 
-  CLASS(DT0(1,1)), POINTER             :: ModFun0(:) 
-    ModFun0 => Arg 
-  END FUNCTION 
+  CLASS(DT0(1,1)), TARGET, INTENT(IN)  :: Arg(:)
+  CLASS(DT0(1,1)), POINTER             :: ModFun0(:)
+    ModFun0 => Arg
+  END FUNCTION
 
   END MODULE
 
@@ -110,7 +97,7 @@
     T2 = CT
   ELSE
 
-  DO I=1, N 
+  DO I=1, N
 
     IF ( T0(I)%L0     .NE. 3         )  STOP 30
     IF ( T1(I)%L0     .NE. 3         )  STOP 31
@@ -144,8 +131,8 @@
   USE M
   IMPLICIT NONE
   INTEGER I
- 
-  INTERFACE 
+
+  INTERFACE
     SUBROUTINE ExtSub(L)
     LOGICAL L
     END SUBROUTINE

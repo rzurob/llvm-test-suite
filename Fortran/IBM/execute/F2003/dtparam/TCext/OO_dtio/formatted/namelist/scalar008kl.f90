@@ -1,24 +1,16 @@
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : scalar008kl
 !*
-!*  PROGRAMMER                 : David Forster (derived from scalar008 by Robert Ma)
 !*  DATE                       : 2007-07-08 (original: 11/08/2004)
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO
 !*  REFERENCE                  : Feature Number 289057(.TCx.dtio)
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
 !*  DESCRIPTION                : Testing: Section 10.10 Namelist formatting
-!*                                        Try namelist formatting for derived type object, 
+!*                                        Try namelist formatting for derived type object,
 !*                                        and invoke external procedure namelist formatting (Output)
 !*  KEYWORD(S)                 :
 !*  TARGET(S)                  :
@@ -75,7 +67,7 @@ program scalar008kl
    allocate(b2, source = base(4,3)(c='def',i=2) ) ! tcx: (4,3)
    b3 =  base(4,3)(c='ghi',i=3) ! tcx: (4,3)
    allocate(b4, source = base(4,3)(c='jkl',i=4) ) ! tcx: (4,3)
-   
+
    write (1,NML=nml1, iostat=stat, iomsg=msg)
    if (( stat /=  0 ) .or. ( msg /= 'dtiowrite' ) ) error stop 1_4
 
@@ -114,9 +106,9 @@ subroutine writeChar (unit,c)
    integer, intent(in) :: unit
    character(*), intent(in) :: c
    namelist /nmlc/ c
-   
+
    write (unit,nmlc,iostat=iostat )
-   
+
 end subroutine
 
 

@@ -1,13 +1,7 @@
 !**********************************************************************
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!**********************************************************************
-!**********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
+! %PRECMD:
 ! %COMPOPTS: -qfree=f90
 ! %GROUP: fxass099.f
 ! %VERIFY:
@@ -17,17 +11,11 @@
 ! %POSTCMD:
 ! %END
 !**********************************************************************
-!**********************************************************************
-!*  ===================================================================
-!*  AIX XL FORTRAN/6000 TEST CASE                 IBM INTERNAL USE ONLY
 !*  ===================================================================
 !*
 !*  TEST CASE NAME             : fxass099.f
-!*  TEST CASE TITLE            : ASSOCIATE
 !*
-!*  PROGRAMMER                 : Sarah Kouchaki-Ramezan
 !*  DATE                       : Feb 5,2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASSOCIATE with array
 !*  SECONDARY FUNCTIONS TESTED : None
@@ -43,7 +31,6 @@
 !*  INPUTS                     : None
 !*  OUTPUTS                    : None
 !*
-!*
 !*  SETUP REQUIREMENTS         : N/A
 !*  DEPENDENCIES               : External routine ZZRC
 !*  REQUIRED COMPILER OPTIONS  : None
@@ -55,8 +42,8 @@
 !*
 !*  CONDITIONS TESTED          : Listed below.
 !*
-!*  DESCRIPTION                : Test: ASSOCIATE with subroutine and 
-!*                                     array sections with do loop 
+!*  DESCRIPTION                : Test: ASSOCIATE with subroutine and
+!*                                     array sections with do loop
 !*                                     and integer data types.
 !*
 !* ===================================================================
@@ -72,18 +59,18 @@
       program fxass099
 
       implicit none
-          
+
        integer :: a(20), c(20), i, j
-       integer :: arr(1:3) 
+       integer :: arr(1:3)
        integer, dimension(3,2) :: arr32
 
        a(1:20:2) = (/ (i,i=1,10,1) /)
        a(2:20:2) = (/ (i,i=10,100,10) /)
        c = a
 
-       arr = (/ 4.0,5.0,6.0 /)       
+       arr = (/ 4.0,5.0,6.0 /)
        arr32 =  reshape( (/ 1,2,3,4,5,6 /), (/ 3,2 /) )
- 
+
       associate ( arg1 => arr(2) )
            if(arg1 .ne. arr(2))then
            error stop 4
@@ -102,7 +89,7 @@
            if(arg4(2) .ne. 3) error stop 7
            if(arg4(3) .ne. 4) error stop 8
       end associate
-      
+
       associate ( arg5 => a(1:20) )
            do i = 1,20
            if(arg5(i) .ne. c(i)) error stop 9

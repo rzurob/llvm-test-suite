@@ -3,20 +3,10 @@
 ! opt variations: -qck -qnok -qnol -qdeferredlp
 
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 05/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Characters with deferred length type parameter
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : scalar character with deferred length scalar
 !*                               with finalization
@@ -60,24 +50,24 @@ program deferLenAllocate025
    use m
 
    class(base(4,20)), allocatable :: b1
-   
+
    character(:), pointer :: c
-   
+
    allocate ( c, source = 'aaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbcccccccccccccccccccccccccc' )
 
    allocate ( b1, source = base(4,20)() )
    allocate ( b1%c, source = 'abcdefghijkl' )
 
    deallocate ( b1 )
-   
+
    allocate ( b1 )
 
    allocate ( b1%c, source = '' )
    deallocate ( b1 )
-   
+
    allocate ( b1 )
    b1%c => c
-   
+
    deallocate ( b1 )
 
 end program

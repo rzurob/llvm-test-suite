@@ -1,9 +1,4 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
@@ -14,26 +9,15 @@
 ! %STDIN:
 ! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/08/2004
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED :
-!*
-!*  DRIVER STANZA              : xlf95
 !*
 !*  DESCRIPTION                : Testing: Section 9.5.2: Data Transfer input/output list
 !*                               - Try output item to be a function return
@@ -55,23 +39,23 @@ module m1
          procedure, pass :: getC
          procedure, pass :: setC
    end type
-   
+
 contains
    function getC (a)
       class(base), intent(in) :: a
       character(3) :: getC
-      getC = a%c      
-   end function   
-   
+      getC = a%c
+   end function
+
    subroutine setC (a, char)
       class(base), intent(inout) :: a
-      character(3), intent(in) :: char      
+      character(3), intent(in) :: char
       a%c = char
-   end subroutine   
+   end subroutine
 end module
 
 program funcRetrn001
-   use m1   
+   use m1
 
    interface write(unformatted)
       subroutine writeUnformatted (dtv, unit, iostat, iomsg)
@@ -80,20 +64,20 @@ program funcRetrn001
          integer,  intent(in) :: unit
          integer,  intent(out) :: iostat
          character(*),  intent(inout) :: iomsg
-      end subroutine   
+      end subroutine
    end interface
-  
+
    ! interface for external polymorphic function return function
-   
+
    interface
       function foo ()
          import base
          class(base), pointer :: foo
       end function
-   end interface   
-   
+   end interface
+
    procedure(type(base)) :: boo
-   
+
    ! declaration of variables
    integer :: stat
    character(200) :: msg
@@ -101,38 +85,38 @@ program funcRetrn001
    character(4)   :: c2
    character(8)   :: c3, c4
    class(base), allocatable :: b1
-   
+
    ! allocation of variables
-   
+
    allocate(b1, source = base('ibm'))
-   
+
    open (unit = 1, file ='funcRetrn001.data', form='unformatted', access='sequential')
-   
+
    ! unformatted I/O operations
-   
+
    write (1, iostat=stat, iomsg=msg )             b1%getC()         !<- write 'ibm' to file (type bound)
    write (1, iostat=stat, iomsg=msg )             foo()             !<- external function with polymorphic return
    write (1, iostat=stat, iomsg=msg )             foo(), boo()      !<- external function with non-polymorphic return
    write (1, iostat=stat, iomsg=msg )             foo(), bar()      !<- internal function with polymorphic return
-   
+
    rewind 1
-   
+
    read (1, iostat=stat, iomsg=msg )              c1
    read (1, iostat=stat, iomsg=msg )              c2
    read (1, iostat=stat, iomsg=msg )              c3
    read (1, iostat=stat, iomsg=msg )              c4
-   
+
    ! check if the values are set correctly
-   
+
    if ( c1 /= 'ibm' )                       error stop 1_4
    if ( c2 /= 'fooZ' )                      error stop 2_4
    if ( c3 /= 'fooZbooZ' )                  error stop 3_4
    if ( c4 /= 'fooZbarZ' )                  error stop 4_4
-   
+
    ! close the file appropriately
-   
+
    close ( 1, status ='delete' )
-   
+
 contains
    function bar()
       class(base), pointer :: bar
@@ -149,7 +133,7 @@ use m1
 
     write (unit, iostat=iostat, iomsg=iomsg ) dtv%getC()
     ! add a mark at the end of record, so we know DTIO is used.
-    write (unit, iostat=iostat, iomsg=iomsg ) "Z" 
+    write (unit, iostat=iostat, iomsg=iomsg ) "Z"
 end subroutine
 
 function foo()

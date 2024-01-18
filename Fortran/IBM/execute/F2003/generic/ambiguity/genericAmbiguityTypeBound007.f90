@@ -1,20 +1,9 @@
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            :
-!*
-!*  PROGRAMMER                 : Robert Ma
 !*  DATE                       : 11/01/2005
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Section 4.5.4: Generic Type Bound Procedure
-!*                             :
 !*  SECONDARY FUNCTIONS TESTED : ambiguious generic interfaces
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DESCRIPTION                : one argument with nopass (for generic-name tb)
 !*                                  - with class hierarchy: one base type and two types extending it, and defined ambiguous tb in extended types
@@ -79,9 +68,9 @@ program genericAmbiguityTypeBound007
       type is ( childa )
          call b1%print(b1)
    end select
-   
+
    deallocate ( b1 )
-   
+
    allocate ( childb :: b1 )
 
    select type ( b1 )

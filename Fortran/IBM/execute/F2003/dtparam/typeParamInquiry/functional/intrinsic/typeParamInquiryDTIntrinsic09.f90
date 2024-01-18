@@ -1,41 +1,33 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryDTIntrinsic09.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : typeParamInquiryDTIntrinsic09.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : July 8 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : July 8 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*
-!* 1. TEST SECTION 6.1.3 
-!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE 
-!* 3. USE EXTENDS 
+!* 1. TEST SECTION 6.1.3
+!* 2. TYPE PARAMETER INQUIRY FOR INTRINSIC TYPE
+!* 3. USE EXTENDS
 !* 4. COMPONENT IS SCALAR
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
-   type first 
+   type first
       integer(2) :: i=0
       character(:),allocatable :: c1
    end type first
-   type,extends(first) :: second 
+   type,extends(first) :: second
       character(:),pointer :: c2 => null()
    end type
-   type,extends(second) :: third 
+   type,extends(second) :: third
       real :: r=0.
    end type
 
@@ -47,13 +39,13 @@ program typeParamInquiryDTIntrinsic09
 
   character(len("3rd")),target :: t3="3rd"
   character(len("2nd")),target :: t2="2nd"
-  class(first),pointer :: p 
+  class(first),pointer :: p
 
   type(first),target   :: dt1
   type(second),target  :: dt2
-  type(third),target   :: dt3 
-  
-  p=>dt3 
+  type(third),target   :: dt3
+
+  p=>dt3
 
   call sub(p)
 
@@ -107,8 +99,8 @@ program typeParamInquiryDTIntrinsic09
               dt%i=1
               allocate(dt%c1,source="first")
            class default
-              print *,"should not come here" 
-        end select 
+              print *,"should not come here"
+        end select
 
-     end subroutine 
+     end subroutine
 end

@@ -1,27 +1,19 @@
 !*********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocToHasTargetAttribute01.f   
-!*  TEST CASE TITLE            :
+!*  TEST CASE NAME             : move_allocToHasTargetAttribute01.f
 !*
-!*  PROGRAMMER                 : Nancy Wang 
-!*  DATE                       : Oct. 2 2008 
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
+!*  DATE                       : Oct. 2 2008
 !*
-!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO) 
+!*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)
 !*
-!*  SECONDARY FUNCTIONS TESTED :  
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REFERENCE                  : 
-!*
-!*  DRIVER STANZA              : xlf2003
-!*
+!*  REFERENCE                  :
 !*
 !*  DESCRIPTION
 !*  1. SECTION 13.7.82
-!*  2. IF TO HAS THE TARGET ATTRIBUTE,ANY POINTER ASSOCIATED WITH FROM ON ENTRY MOVE_ALLOC BECOMES CORRESPONDINGLY ASSOCIATED WITH TO. 
+!*  2. IF TO HAS THE TARGET ATTRIBUTE,ANY POINTER ASSOCIATED WITH FROM ON ENTRY MOVE_ALLOC BECOMES CORRESPONDINGLY ASSOCIATED WITH TO.
 !*  3. FROM AND TO ARE SCALAR
 !234567890123456789012345678901234567890123456789012345678901234567890
 module m
@@ -42,11 +34,11 @@ program move_allocToHasTargetAttribute01
 
   use m
   implicit none
-  
+
   class(*),pointer     :: point1=>null()
   type(B(8,:)),pointer :: point2=>null()
- 
-  type(B(8,4)),target,allocatable :: from1 
+
+  type(B(8,4)),target,allocatable :: from1
   type(B(8,:)),target,allocatable :: to1
 
   from1=B(8,4)(a1=A(8,4)(i1=11,c1="xlf"))
@@ -56,7 +48,7 @@ program move_allocToHasTargetAttribute01
 
   if(allocated(from1))                                 error stop 10_4
   if(.not. allocated(to1))                             error stop 11_4
-  
+
   if(.not. associated(point1,to1))                     error stop 12_4
   select type(point1)
       type is(B(8,*))
@@ -65,12 +57,12 @@ program move_allocToHasTargetAttribute01
          if(point1%a1%k1 /= 8)                         error stop 15_4
          if(point1%a1%l1 /= 4)                         error stop 16_4
          if(point1%a1%i1%kind /= 8)                    error stop 17_4
-         if(point1%a1%c1%len /= 4)                     error stop 18_4 
+         if(point1%a1%c1%len /= 4)                     error stop 18_4
          if(point1%a1%i1 /= 11)                        error stop 19_4
          if(point1%a1%c1 /= "xlf")                     error stop 20_4
       class default
          error stop 100_4
-  end select    
+  end select
 
   from1= B(8,4)(a1=A(8,4)(i1=-11,c1="test"))
 

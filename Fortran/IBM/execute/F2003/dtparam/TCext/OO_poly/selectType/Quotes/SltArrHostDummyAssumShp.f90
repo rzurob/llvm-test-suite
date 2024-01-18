@@ -5,34 +5,28 @@
 ! *********************************************************************
 ! %START
 ! %MAIN: YES
-! %PRECMD: 
-! %COMPOPTS: -qfree=f90 
+! %PRECMD:
+! %COMPOPTS: -qfree=f90
 ! %GROUP: SltArrHostDummyAssumShp.f
-! %VERIFY:  
+! %VERIFY:
 ! %STDIN:
-! %STDOUT: 
+! %STDOUT:
 ! %EXECARGS:
-! %POSTCMD: 
+! %POSTCMD:
 ! %END
 ! *********************************************************************
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
 !*  TEST CASE NAME             : SltArrHostDummyAssumShp
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : Feng Ye
 !*  DATE                       : Jan. 20, 2005
-!*  ORIGIN                     : AIX Compiler Development, IBM Software Solutions Toronto Lab
 !*
-!*  PRIMARY FUNCTIONS TESTED   : Select Type 
+!*  PRIMARY FUNCTIONS TESTED   : Select Type
 !*
-!*  SECONDARY FUNCTIONS TESTED : Selector 
+!*  SECONDARY FUNCTIONS TESTED : Selector
 !*
 !*  REFERENCE                  : Feature 219934.OO_poly
 !*
-!*  DRIVER STANZA              :
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :
@@ -40,9 +34,9 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
-!*     
-!*   The selector is a host associate name associating to a 
-!*   poly assumed shape dummy array 
+!*
+!*   The selector is a host associate name associating to a
+!*   poly assumed shape dummy array
 !*    ()
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
@@ -56,7 +50,7 @@
         INTEGER, LEN  :: N1
     CONTAINS
       PROCEDURE, NoPASS   :: Called
-    END TYPE 
+    END TYPE
 
     TYPE, EXTENDS(Zero)  :: Base    ! (4,20)
       INTEGER(K1) :: BaseId = 1
@@ -111,8 +105,8 @@
   USE M
   IMPLICIT NONE
   CLASS(Base(4,:)), POINTER :: V(:,:)
-  
-  ALLOCATE(V(33,33), SOURCE=Child(4,20)(BaseId=-1, ChildId=-2)) 
+
+  ALLOCATE(V(33,33), SOURCE=Child(4,20)(BaseId=-1, ChildId=-2))
 
   CALL Sub(V(1:2, 2:3), V(2:3, 1:2))
   SELECT TYPE  (W=>V(1:2, 2:3) )
@@ -121,19 +115,19 @@
     IF ( ANY(W%GetId()      .NE. 2) ) STOP 55
     IF ( ANY(W%BaseId       .NE. 1) ) STOP 56
     IF ( ANY(W%ChildId      .NE. 2) ) STOP 57
-  END SELECT 
+  END SELECT
 
   CONTAINS
 
   SUBROUTINE Sub(Arg1, Arg2)
-  CLASS(Base(4,*)), OPTIONAL :: Arg1(-20:, 10:), Arg2(:,:) 
+  CLASS(Base(4,*)), OPTIONAL :: Arg1(-20:, 10:), Arg2(:,:)
 
     IF ( .NOT. PRESENT(Arg1) ) STOP 11
 
     SELECT TYPE (U => Arg1(::1,:))
-    CLASS IS (Child(4,*)) 
+    CLASS IS (Child(4,*))
     SELECT TYPE (W => U(1:2,:) )
-    CLASS IS (Child(4,*)) 
+    CLASS IS (Child(4,*))
       SELECT TYPE (V => W)
         TYPE IS (Child(4,*))
 
@@ -166,9 +160,9 @@
   END SELECT
   END SELECT
 
-  END SUBROUTINE 
- 
- 
+  END SUBROUTINE
+
+
   END
 
 

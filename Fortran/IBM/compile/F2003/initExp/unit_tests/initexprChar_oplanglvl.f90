@@ -1,11 +1,6 @@
 !* ===================================================================
-!* XL FORTRAN TEST CASE                          IBM INTERNAL USE ONLY
-!* ===================================================================
-!* TEST CASE TITLE            : Initialization expression
 !*
-!* PROGRAMMER                 : Kelvin Li
 !* DATE                       : March 31, 2006
-!* ORIGIN                     : XL Compiler Development, Toronto Lab
 !*
 !* PRIMARY FUNCTIONS TESTED   : LGE, LGT, LLE and LLT intrinsics
 !*
@@ -31,7 +26,6 @@ logical(8) :: i8llt=llt(A, B)
 logical(2) :: i2lle=lle(A, B)
 logical(4) :: i4lle=lle(A, B)
 logical(8) :: i8lle=lle(A, B)
-
 
 end
 

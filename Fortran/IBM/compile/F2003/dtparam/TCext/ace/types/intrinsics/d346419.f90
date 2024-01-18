@@ -1,19 +1,13 @@
 !**********************************************************************
 !* ====================================================================
-!* XL Fortran Test Case                           IBM INTERNAL USE ONLY
-!* ====================================================================
 !*
 !*  TEST CASE NAME             : d346415
 !*
-!*  PROGRAMMER                 : Glen Mateer (derived from acetint57kl)
 !*  DATE                       : 2008-01-28
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Array Constructor Enhancement
 !*  REFERENCE                  : Feature Number 289057(.F2003TCx)
-!*
-!*  DRIVER STANZA              : xlf2003
 !*
 !*  DEFECT ABSTRACT            : DTPARAM: INTEXP: ACE: 1516-044 Incorrect Output
 !*
@@ -34,7 +28,6 @@
 !*
 !*           10 |              (realConsts(1), realConsts(2))]
 !*              ...............a..............................
-!*  a - "acetint57kl.f", line 10.15: 1516-044 (S) A conversion from type COMPLEX*16 is not permitted.
 !*  a - "acetint57kl.f", line 10.15: 1516-044 (S) A conversion from type COMPLEX*16 is not permitted.
 !*
 !*  If Line 9 is modified to replace the Derived Type Parameter with a

@@ -1,5 +1,5 @@
 ! Call to minloc an exec statement with back = .true. and
-! 1. rank 1 integer*2 array 
+! 1. rank 1 integer*2 array
 ! 2. rank 1 integer*2 array and mask
 ! 3. rank 2 integer*2 array
 ! 4. rank 2 integer*2 array and mask
@@ -42,7 +42,7 @@ j9 = minloc(reshape((/2_2, 4_2, 1_2, 4_2, 2_2, 4_2, 4_2, 3_2/), (/2,2,2/)), 2, b
 j10 = minloc(reshape((/2_2, 4_2, 1_2, 4_2, 2_2, 4_2, 4_2, 3_2/), (/2,2,2/)), 2, &
              reshape((/.true., .true., .false., .true., &
                        .true., .true., .true., .true./), (/2,2,2/)), back =.true.)
-                          
+
 if (j1(1) .ne. 3) ERROR STOP 1
 if (j2(1) .ne. 4) ERROR STOP 2
 if (j3(1) .ne. 1 .or. j3(2) .ne. 2) ERROR STOP 3

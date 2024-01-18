@@ -1,24 +1,12 @@
 ! *********************************************************************
-!*  =================================================================== 
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY 
-!*  =================================================================== 
-!*  =================================================================== 
+!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : intkind2b.f 
-!*
-!*  PROGRAMMER                 : Michelle Zhang 
 !*  DATE                       : 06/01/2006
-!*  ORIGIN                     : AIX Compiler Development, Toronto Lab
-!*                             :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC (FROM, TO)
-!*                             :
-!*  SECONDARY FUNCTIONS TESTED : 
-!*                              
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  DRIVER STANZA              : xlf2003
-!*
-!*  DESCRIPTION                : FROM/TO are of type integer(2) 
+!*  DESCRIPTION                : FROM/TO are of type integer(2)
 !*                               default kind becomes 2 by -qintsize = 2
 !* ===================================================================
 !*
@@ -38,9 +26,9 @@
       allocate(j1(3), source = (/ 30_2, 20_2, 10_2 /) )
 
       call move_alloc(j1, b1%i1)
-      if ( .not. allocated( b1%i1) ) stop 21 
+      if ( .not. allocated( b1%i1) ) stop 21
       if ( allocated( j1 ) ) stop 23
 
-      print *, b1%i1 
+      print *, b1%i1
 
       end

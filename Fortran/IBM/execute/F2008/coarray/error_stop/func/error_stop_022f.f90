@@ -1,24 +1,13 @@
 !#######################################################################
-! SCCS ID Information
-! %W%, %I%
-! Extract Date/Time: %D% %T%
-! Checkin Date/Time: %E% %U%
-!#######################################################################
 !*
 !*  ===================================================================
-!*  XL Fortran Test Case                          IBM INTERNAL USE ONLY
-!*  ===================================================================
 !*
-!*  TEST CASE TITLE            : F2008/coarray/error_stop/func/error_stop_022f.f
 !*  TYPE                       : Functional test
 !*  FEATURE                    : #351605.31 CAF - ERROR STOP statement
 !*
-!*  PROGRAMMER                 : Grigor Nikolov
 !*  DATE                       : 28 August 2010
-!*  ORIGIN                     : XLF Test -  IBM Toronto Lab
 !*
-!*  DRIVER STANZA              : xlf  _r
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*  DEPENDENCIES               :
 !*
 !*  DESCRIPTION                : Basic case for ERROR STOP interrupting the work
@@ -48,7 +37,7 @@ program error_stop_prog
   sync all
   call sleep_(mod(selfImage,8)*3)
   if (selfImage == endImage) then
-     f_ret = inter_f_es() 
+     f_ret = inter_f_es()
      print *, "  Ret code:", f_ret
   else
      do i=1, iter

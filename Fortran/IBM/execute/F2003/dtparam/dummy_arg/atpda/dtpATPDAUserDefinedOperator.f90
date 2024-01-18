@@ -1,14 +1,9 @@
 !*******************************************************************************
 !*  ============================================================================
-!*  XL Fortran Test Case                                   IBM INTERNAL USE ONLY
-!*  ============================================================================
 !*
 !*  TEST CASE NAME             : dtpATPDAUserDefinedOperator
-!*  TEST CASE TITLE            : 
 !*
-!*  PROGRAMMER                 : David Forster
 !*  DATE                       : 2008-10-15
-!*  ORIGIN                     : Compiler Development, IBM Software Solutions Toronto Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Assumed type parameters and dummy arguments
 !*
@@ -16,12 +11,11 @@
 !*
 !*  REFERENCE                  : Feature Number 357495
 !*
-!*  DRIVER STANZA              : xlf2003
-!*  REQUIRED COMPILER OPTIONS  : 
+!*  REQUIRED COMPILER OPTIONS  :
 !*
-!*  KEYWORD(S)                 : 
-!*  TARGET(S)                  : 
-!*  NUMBER OF TESTS CONDITIONS : 
+!*  KEYWORD(S)                 :
+!*  TARGET(S)                  :
+!*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION
 !*
@@ -200,7 +194,7 @@ program dtpATPDAUserDefinedOperator
                             Student(4,6,8)("Alex   Borodin ",2345678), &
                             Student(4,6,8)("Hilde  v.Bingen",3456789), &
                             Student(4,6,8)("Isaac  Newton  ",4567890)])
-  w4_2 = Workshop(4,3,6,12)([Student(4,6,12)("Pyotr  Tschaikovsky",1234567), & 
+  w4_2 = Workshop(4,3,6,12)([Student(4,6,12)("Pyotr  Tschaikovsky",1234567), &
                              Student(4,6,12)("Alex   Borodin     ",2345678), &
                              Student(4,6,12)("Hilde  von Bingen  ",3456789)])
 

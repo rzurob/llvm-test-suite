@@ -1,7 +1,6 @@
 
   MODULE M
 
-    
   TYPE :: DT(K1,N1)    ! (4,20)
       INTEGER, KIND :: K1
       INTEGER, LEN  :: N1
