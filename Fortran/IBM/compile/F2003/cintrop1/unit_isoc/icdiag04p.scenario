@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop1/unit_isoc/icdiag04p.scenario
+#FEATURE = cintrop1 tests - regression run bucket
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)icdiag04p.F
+#OPTS      =  -qdebug=intmsg:shutup
+#OUTPUT    = icdiag04p$(OBJ)
+#STDERR    = icdiag04p.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)icdiag04p$(product).Fvf) icdiag04p.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

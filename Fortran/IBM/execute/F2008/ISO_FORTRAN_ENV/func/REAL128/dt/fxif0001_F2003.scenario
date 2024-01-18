@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME= fxif0001.scenario
 #FEATURE = ISO_FORTRAN_ENV ( test case adopted form derived_types/if)
-#CREATOR = Morteza Ershad-Manesh
 #DATE    = 20100818
 #TEST_TYPE=sanity
 #ENDDOC

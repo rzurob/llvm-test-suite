@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/diag/types/intrinsics/acetint32ldl.scenario
+#FEATURE	= Derived Type Parameters (+Array Constructor Enhancement -	\
+				Procedure Pointers are not Acceptable Data --
+				implied-do (LOGICAL))
+#DATE		= 20071203
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint32ldl.f
+#OUTPUT		= acetint32ldl$(OBJ)
+#STDERR		= acetint32ldl.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)acetint32ldl$(product)vf) acetint32ldl.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

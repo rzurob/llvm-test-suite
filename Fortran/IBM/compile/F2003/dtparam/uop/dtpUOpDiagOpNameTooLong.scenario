@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpDiagOpNameTooLong.scenario
 #FEATURE   = User-Defined Operators - diagnostic for name longer than 63 characters
-#CREATOR   = DF Manual Update
 #DATE      = 20090209
 #TEST_TYPE = sanity
 #ENDDOC

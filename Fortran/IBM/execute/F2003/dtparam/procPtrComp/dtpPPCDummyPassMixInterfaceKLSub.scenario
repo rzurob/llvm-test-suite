@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/procPtrComp/dtpPPCDummyPassMixInterfaceKLSub.scenario
 #FEATURE   = Procedure Pointers as Components - pointer to PASS subroutines from DTP with K+L param with other args of mixed types via dummy arg
-#CREATOR   = DF Manual Update
 #DATE      = 20090323
 #TEST_TYPE = sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/typeParamInquiry/functional/dtparam/d353194.scenario
 #FEATURE   = Type Parameter Inquiry(354612)
-#CREATOR   = Nancy Wang
 #DATE      = August 11 2008
 #TEST_TYPE = Functional
 #ENDDOC

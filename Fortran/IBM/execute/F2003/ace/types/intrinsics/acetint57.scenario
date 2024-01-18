@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint57.scenario
 #FEATURE	= Array constructor enhancement - default initialization of derived type _component_ (intrinsics)
-#CREATOR	= DF Manual Update
 #DATE		= 20061123
 #TEST_TYPE	= sanity
 #ENDDOC

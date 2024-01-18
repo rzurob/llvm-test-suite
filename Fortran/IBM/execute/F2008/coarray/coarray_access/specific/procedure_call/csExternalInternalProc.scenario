@@ -3,7 +3,6 @@
 #NAME           = F2008/coarray/coarray_access/specific/procedure_call/csExternalInternalProc
 #FEATURE        = CAF coarray access (specific) - procedure call - pass coarray actual arguments to external procedure, which passes it on and modifies or processes it in an internal procedure
 
-#CREATOR        = DF
 #DATE           = 2010-10-04
 #TEST_TYPE      = functional
 #ENDDOC

@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME      = streamio/misc/fxstio308.scenario
 #FEATURE   = streamio tests - regression run bucket
-#CREATOR   = automated conversion script
 #DATE      = 20081130
 #TEST_TYPE = sanity
 #ENDDOC

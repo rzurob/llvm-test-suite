@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/synt/acesynt04.scenario
 #FEATURE	= Array constructor enhancement syntax tests
-#CREATOR	= DF Manual Update
 #DATE		= 20060704
 #TEST_TYPE	= sanity
 #ENDDOC
@@ -13,8 +12,6 @@
 #INPUT		= $(tcasedir)acesynt04.f
 #OUTPUT		= acesynt04$(OBJ)
 #STDERR		= acesynt04.stderr
-! E's and W's still produce a 0 error code, so don't need this: !#VALIDRCS	= $(RC_COMP_E)
-! Until [] are implemented, this will error out.
 #ENDCMD
 
 #CMD		= XLDIFF

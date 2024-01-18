@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/allocate/allocBaseVariable01.scenario
 #FEATURE	= ALLOCATE() Statement with DTP
-#CREATOR	= Glen Mateer
 #DATE		= 20081204
 #TEST_TYPE	= functional
 #ENDDOC

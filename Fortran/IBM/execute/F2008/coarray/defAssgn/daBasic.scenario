@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/coarray/defAssgn/daBasic.scenario
 #FEATURE   = F2008 CAF coarray defined assignment - simple test of same type but mismatched rank
-#CREATOR   = DF
 #DATE      = 20101220
 #TEST_TYPE = functional
 #ENDDOC

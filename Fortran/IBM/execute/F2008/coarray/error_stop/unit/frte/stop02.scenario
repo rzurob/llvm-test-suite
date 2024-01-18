@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = stop02.scenario
 #FEATURE   = 351605.31.2
-#CREATOR   = Xing Xue
 #DATE      = 08-10-10
 #TEST_TYPE = Functional
 #ENDDOC
@@ -32,8 +31,5 @@
 #STDERR   =  stop02.err
 #ENDCMD
 
-!#CMD      = DIFF
-!#INPUT    = stop02.err $(tcasedir)stop02.vf
-!#ENDCMD
 #ENDCONTROL
 #ENDSCENARIO

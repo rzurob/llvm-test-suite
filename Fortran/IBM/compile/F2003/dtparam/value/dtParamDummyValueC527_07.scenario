@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = dtParamDummyValueC527_07.scenario
 #FEATURE   = Derived Type Parameters - Dummy args with VALUE attribute
-#CREATOR   = Rick Sawyer
 #DATE      = 20080513
 #TEST_TYPE = unit
 #ENDDOC

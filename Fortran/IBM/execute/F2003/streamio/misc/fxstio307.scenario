@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/streamio/misc/fxstio307.scenario
 #FEATURE = streamio tests - regression run bucket
-#CREATOR = LZ Manual conversion
 #DATE    = 20040923
 #TEST_TYPE=sanity
 #ENDDOC
@@ -20,15 +19,10 @@
 #VALIDRCS  = 0
 #ENDCMD
 
-! # We have to redirect STDIN, STDOUT, STDERR to some file otherwise it will
-! # be by default redirected to /dev/null by the Load_levelor. This causes
-! # run-time error when the testcase trys to open /dev/null (B.C. -defect 249979)
-! Valid line : touch stdin.txt
 
 #CMD       = TOUCH
 #INPUT     = stdin.txt
 #ENDCMD
-! Valid line : ./$1 < stdin.txt > /tmp/stdout.txt 2>&1
 
 #CMD       = RUN
 #INPUT     = ./fxstio307
@@ -37,8 +31,6 @@
 #VALIDRCS  = 0
 #STDERR    = stderr.txt
 #ENDCMD
-! Valid line : rm -f stdin.txt stdin.txt
-! Valid line : rm -f $1
 
 #ENDCONTROL
 #ENDSCENARIO

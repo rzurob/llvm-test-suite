@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/use/dtpUseSelectType02.scenario
 #FEATURE   = DTP and USE - select type
-#CREATOR   = DF Manual Update
 #DATE      = 20080903
 #TEST_TYPE = sanity
 #ENDDOC

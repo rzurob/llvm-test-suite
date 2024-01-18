@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/dtparam/TCext/OO_dtio/formatted/DT/array104kl.scenario
 #FEATURE = OO_dtio and derived type parameters
-#CREATOR = David Forster (derived from work by Robert Ma)
 #DATE    = 20070618
 #TEST_TYPE=sanity
 #ENDDOC

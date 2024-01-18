@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/coarray/stop/cnst_expr/stop_f2008caf_05d.scenario
 #FEATURE   = Constant expression as stop code in STOP statement
-#CREATOR   = Shahid Alam
 #DATE      = 20101026
 #TEST_TYPE = diagnostic
 #ENDDOC
@@ -32,7 +31,6 @@
 #INPUT     = stop_f2008caf_05d$(EXE)
 #STDOUT    = stop_f2008caf_05d.out
 #STDERR    = stop_f2008caf_05d.out
-!#VALIDRCS  = 121
 #ENDCMD
 
 #CMD       = GREP

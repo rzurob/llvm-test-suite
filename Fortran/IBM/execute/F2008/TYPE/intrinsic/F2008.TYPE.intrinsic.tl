@@ -1,1 +1,2 @@
-.im unit_tests/F2008.TYPE.intrinsic.unit_tests.tl
+.im func/F2008.TYPE.intrinsic.func.tl
+.im diag/F2008.TYPE.intrinsic.diag.tl

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/misc/acemc04.scenario
 #FEATURE	= Array constructor enhancement - Interoperability with C: values from C functions (character, logical)
-#CREATOR	= DF Manual Update
 #DATE		= 20060922
 #TEST_TYPE	= sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/round/test/roundR16ReadEdit02.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of round/*
 #DATE      = 20071102
 #TEST_TYPE = functional
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABasicPointer007a.scenario
 #FEATURE   = Intrinsic Assignment with Allocation - allocate basic DTP variable (container) with allocatable components via intrinsic assignment (pointer source)
-#CREATOR   = DF Manual Update
 #DATE      = 20090522
 #TEST_TYPE = sanity
 #ENDDOC

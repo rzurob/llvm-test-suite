@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/cintrop4/unit_pattr/by-val.scenario
 #FEATURE = cintrop4 tests - regression run bucket
-#CREATOR = ST Manual conversion
 #DATE    = 2000504
 #TEST_TYPE=sanity
 #ENDDOC

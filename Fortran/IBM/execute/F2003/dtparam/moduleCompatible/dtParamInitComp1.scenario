@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME=       dtParamInitComp1.scenario
 #FEATURE=
-#CREATOR=    MZ adapted from dtParamInitComp1.f
 #DATE=       20100504
 #TEST_TYPE=  FUNCTIONAL
 #ENDDOC

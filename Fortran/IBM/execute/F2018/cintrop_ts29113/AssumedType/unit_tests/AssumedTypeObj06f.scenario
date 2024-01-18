@@ -1,11 +1,8 @@
-! %W%
-! %G%, %U%, %I% sccsid
 #BEGINSCENARIO
 
 #BEGINDOC
 #NAME       = AssumedTypeObj06f.scenario
 #FEATURE    = 926303 - C Interop: Assumed-type objects
-#CREATOR    = Ren, Jian Gang
 #DATE       = Apr 2012
 #TEST_TYPE  = Functional
 #ENDDOC

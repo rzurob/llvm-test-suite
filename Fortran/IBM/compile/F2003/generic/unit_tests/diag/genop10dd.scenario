@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/unit_tests/diag/genop10dd.scenario
+#FEATURE = Generic Bindings
+#DATE    = 20051118
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)genop10dd.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#OUTPUT    = genop10dd$(OBJ)
+#STDERR    = genop10dd.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)genop10dd$(product)vf) genop10dd.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

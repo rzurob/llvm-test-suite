@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpSimpleBinaryComponentMixedType.scenario
 #FEATURE   = User-Defined Operators - correct operator is applied with mixed type results and involvement of intrinsic types
-#CREATOR   = DF Manual Update
 #DATE      = 20090211
 #TEST_TYPE = sanity
 #ENDDOC

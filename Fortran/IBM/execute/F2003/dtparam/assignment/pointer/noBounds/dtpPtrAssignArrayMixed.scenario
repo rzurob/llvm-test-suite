@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpPtrAssignArrayMixed.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via pointers with mixed deferred and fixed length parameters, assign scalars to arrays in main program
-#CREATOR   = DF Manual Update
 #DATE      = 20090112
 #TEST_TYPE = sanity
 #ENDDOC

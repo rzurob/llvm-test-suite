@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/cintrop1/unit_isoc/icdp31121.scenario
 #FEATURE = cintrop1 tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC

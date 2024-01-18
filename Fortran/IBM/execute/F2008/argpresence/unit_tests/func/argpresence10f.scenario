@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME       = F2008/argpresence/unit_tests/func/argpresence10f.f
 #FEATURE    = F386700
-#CREATOR    = David Nichols
 #DATE       = 20110302
 #TEST_TYPE  = Functional
 #ENDDOC

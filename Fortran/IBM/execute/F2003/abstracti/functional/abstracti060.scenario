@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = pdo_ext/reduction/abstracti060.scenario
 #FEATURE = pdo_ext tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC

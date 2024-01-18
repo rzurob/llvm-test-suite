@@ -1,7 +1,6 @@
 #BEGINSCENARIO
 #BEGINDOC
 #NAME=/tstdev/OO_procptr/bindc2/procptrBindMproc01d.f
-#CREATOR = William Zhang
 #ENDDOC
 
 #BEGINENV

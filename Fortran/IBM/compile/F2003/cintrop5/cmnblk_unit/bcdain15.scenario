@@ -1,0 +1,43 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop5/cmnblk_unit/bcdain15.scenario
+#FEATURE = cintrop5 tests - regression run bucket
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOURCE_FORM)  $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF95_COMPLINK
+#INPUT     = $(tcasedir)bcdain15.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#STDERR    = bcdain15.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = bcdain15.err $($(tcasedir)bcdain15$(product)vf1)
+#ENDCMD
+
+#CMD       = XLF95_COMPLINK
+#INPUT     = $(tcasedir)bcdain15.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qmixed
+#STDERR    = bcdain15.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = bcdain15.err $($(tcasedir)bcdain15$(product)vf2)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

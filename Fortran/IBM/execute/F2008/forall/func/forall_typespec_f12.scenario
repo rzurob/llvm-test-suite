@@ -2,14 +2,12 @@
 
 #BEGINDOC
 #NAME             = forall_typespec_f12.scenario
-#CREATOR          = Bernard Kan
 #FEATURE          = 400906 Support typespec on FORALL
 #DATE             = June 18, 2012
 #TEST_TYPE        = DIAGNOSTIC
 #ENDDOC
 
 #BEGINENV
-!#REQUIRED_XOPTS   = $(XLF_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(XLF_COMPILE^OPT_OPTIMIZE_FOR_SMP_OMP)
 #REQUIRED_PRODUCT = bgq
 #ENDENV
 

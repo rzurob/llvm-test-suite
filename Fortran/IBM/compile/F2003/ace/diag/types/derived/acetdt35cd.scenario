@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/derived/acetdt35cd.scenario
+#FEATURE	= Array constructor enhancement print DT lacking user-defined print routine where it is required
+#DATE		= 20061116
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt35cd.f
+#OUTPUT		= acetdt35cd$(OBJ)
+#STDERR		= acetdt35cd.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $(tcasedir)acetdt35cd.vf acetdt35cd.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

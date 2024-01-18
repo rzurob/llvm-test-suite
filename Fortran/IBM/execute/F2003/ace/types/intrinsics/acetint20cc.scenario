@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint20cc.scenario
 #FEATURE	= Array constructor enhancement - Intrinsic type specifier (CHARACTER) in subroutine call, init expr in kind and len
-#CREATOR	= DF Manual Update
 #DATE		= 20061010
 #TEST_TYPE	= sanity
 #ENDDOC

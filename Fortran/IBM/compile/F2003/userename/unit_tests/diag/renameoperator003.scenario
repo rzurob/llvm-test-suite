@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=renameoperator003.scenario
+#FEATURE = Renaming the operator in a use statement
+#DATE    = 20051028
+#TEST_TYPE=unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)renameoperator003.f
+#OPTS      = -qxlf2003=polymorphic
+#STDERR    = renameoperator003.err
+#OUTPUT    = renameoperator003$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = renameoperator003.err $($(tcasedir)renameoperator003$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

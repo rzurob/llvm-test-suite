@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/OO_poly/misc/fmisc015.scenario
 #FEATURE = OO_poly tests - regression run bucket
-#CREATOR = Jim Xia
 #DATE    = 20050118
 #TEST_TYPE=sanity
 #ENDDOC
@@ -14,7 +13,6 @@
 
 #BEGINCONTROL
 
-! This chunk was DCOMP
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)fmisc015.f

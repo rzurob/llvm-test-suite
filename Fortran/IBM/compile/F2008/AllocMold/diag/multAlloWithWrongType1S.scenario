@@ -1,0 +1,22 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = multAlloWithWrongType1S.f
+#FEATURE   = DTP - Allocate with source expression
+#DATE      = 20150629
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)multAlloWithWrongType1S.f
+#OUTPUT    = multAlloWithWrongType1S$(OBJ)
+#STDERR    = multAlloWithWrongType1S.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)multAlloWithWrongType1S.vf multAlloWithWrongType1S.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

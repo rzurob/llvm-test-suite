@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /syncAll/saExternNMain.scenario
 #FEATURE   = CAF SYNC ALL - external procedures and main program
-#CREATOR   = DF
 #DATE      = 20100727
 #TEST_TYPE = functional
 #ENDDOC

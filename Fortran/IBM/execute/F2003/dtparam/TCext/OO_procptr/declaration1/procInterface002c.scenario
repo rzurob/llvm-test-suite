@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/OO_procptr/declaration1/procInterface002c.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of OO_procptr/*
 #DATE      = 20071130
 #TEST_TYPE = functional
 #ENDDOC

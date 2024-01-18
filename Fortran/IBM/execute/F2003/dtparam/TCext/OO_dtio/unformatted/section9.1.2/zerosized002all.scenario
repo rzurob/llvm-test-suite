@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=.../F2003/dtparam/TCext/OO_dtio/unformatted/section9.1.2/zerosized002all.scenario
 #FEATURE = OO_dtio tests + derived type parameters
-#CREATOR = David Forster (derived from work by Robert Ma)
 #DATE    = 20070910
 #TEST_TYPE=sanity
 #ENDDOC

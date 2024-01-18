@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2008/newunit/unit_tests/diag/newunit01d.scenario
+#FEATURE = NEWUNIT= specifier
+#DATE    = 20100510
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINENV
+#INVALID_XOPTS  = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)newunit01d.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>)
+#OUTPUT    = newunit01d$(OBJ)
+#STDERR    = newunit01d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)newunit01d$(product)vf) newunit01d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=userenamediag011.scenario
 #FEATURE = Renaming the operator in a use statement
-#CREATOR = Rob Wheeler
 #DATE    = 20060330
 #TEST_TYPE=
 #ENDDOC

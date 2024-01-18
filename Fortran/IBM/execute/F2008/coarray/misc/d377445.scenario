@@ -3,19 +3,16 @@
 #BEGINDOC
 #NAME       = d377445.scenario
 #FEATURE    = copy-in/copy-out for coindexed arguments
-#CREATOR    = Bardia Mahjour
 #DATE       = September 2010
 #TEST_TYPE  = unit test
 #ENDDOC
 
-! Scenario Environment Tags
 #BEGINENV
 #BEGINDEFS
 #ENDDEFS
 #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
 #ENDENV
 
-! Scenario Control Tags
 #BEGINCONTROL
 
 #CMD       = F_COMPILE

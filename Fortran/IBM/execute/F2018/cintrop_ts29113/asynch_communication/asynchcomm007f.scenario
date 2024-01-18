@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = cintrop_ts29113/asynch_communication/asynchcomm007f.scenario
 #FEATURE   = C_Interop_Asynch_Communication
-#CREATOR   = Tapti Vaid
 #DATE      = 2013-10-07
 #TEST_TYPE = functional
 #KEYWORDS =  C_Interop  ASYNCH

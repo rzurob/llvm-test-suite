@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignInternalCommonFromVarsFixed.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via pointers with fixed length parameter, assign variables to variables in common in internal procedures
-#CREATOR   = DF Manual Update
 #DATE      = 20081112
 #TEST_TYPE = sanity
 #ENDDOC

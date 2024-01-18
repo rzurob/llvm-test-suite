@@ -3,7 +3,6 @@
 #NAME		= F2003/dtparam/TCext/ace/types/derived/acetdt476edlk.scenario
 #FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement	\
 			   Derived Type Specifier Tests)
-#CREATOR	= Glen Mateer (based on work by David Forster)
 #DATE		= 20080122
 #TEST_TYPE	= Diagnostic
 #ENDDOC

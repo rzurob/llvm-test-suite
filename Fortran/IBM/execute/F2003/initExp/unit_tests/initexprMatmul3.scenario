@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = initexprMatmul3.f
 #FEATURE   =
-#CREATOR   = Kelvin Li
 #DATE      = March 31, 2006
 #TEST_TYPE = Unit Test
 #ENDDOC

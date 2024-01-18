@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/coarray/defAssgn/daAll_DT.scenario
 #FEATURE   = F2008 CAF coarray defined assignment - LHS is any non-char coarray intrinsic type, RHS is noncoarray derived type
-#CREATOR   = DF
 #DATE      = 20101220
 #TEST_TYPE = functional
 #ENDDOC

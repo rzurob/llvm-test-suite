@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=iofilenamelineno017.scenario
 #FEATURE = Display file name and line no. for I/O failures
-#CREATOR = Michael Selvanayagam
 #DATE    = 20170301
 #TEST_TYPE=unit test
 #ENDDOC

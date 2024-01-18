@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/iosign/iosign091.scenario
 #FEATURE = Abstract Interface Tests
-#CREATOR = Alberto Alvarez
 #DATE    = 20060220
 #TEST_TYPE=sanity
 #ENDDOC

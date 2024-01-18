@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/mProc/unit_tests/unit/fxumodprocstmt008.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of mProc/*
 #DATE      = 20071106
 #TEST_TYPE = functional
 #ENDDOC
@@ -15,9 +14,6 @@
 #OUTPUT    = fxumodprocstmt008$(OBJ)
 #VALIDRCS  = 0
 #ENDCMD
-! NOTE: error messages are emitted, but we don't
-! care about them, as long as compilation is
-! successful.
 
 #CMD       = XLF90_LINK
 #INPUT     = fxumodprocstmt008$(OBJ)

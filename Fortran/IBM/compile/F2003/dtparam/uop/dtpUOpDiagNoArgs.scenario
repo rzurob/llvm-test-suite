@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpDiagNoArgs.scenario
 #FEATURE   = User-Defined Operators - diagnostic for no args
-#CREATOR   = DF Manual Update
 #DATE      = 20090209
 #TEST_TYPE = sanity
 #ENDDOC

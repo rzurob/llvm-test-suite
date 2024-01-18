@@ -4,7 +4,6 @@
 #FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
 				Default Initialization of Derived Type _component_			\
 				(Derived Type))
-#CREATOR	= Glen Mateer (derived from work by David Forster)
 #DATE		= 20080123
 #TEST_TYPE	= Functional
 #ENDDOC

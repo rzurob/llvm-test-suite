@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetdt61.scenario
 #FEATURE	= Array constructor enhancement rank remapped pointers in AC
-#CREATOR	= DF Manual Update
 #DATE		= 20061126
 #TEST_TYPE	= sanity
 #ENDDOC

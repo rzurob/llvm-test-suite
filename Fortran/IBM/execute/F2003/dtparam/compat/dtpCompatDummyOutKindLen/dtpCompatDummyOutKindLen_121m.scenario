@@ -2,8 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/compat/dtpCompatDummyOutKindLen/dtpCompatDummyOutKindLen_121m.scenario
 #FEATURE   = Broken Compatability Warning - DTP code expects "old" code to copy extended type with both KIND and LEN type parameters (fail)
-! - manual compile, v12.1
-#CREATOR   = DF Manual Update
 #DATE      = 20090613
 #TEST_TYPE = sanity
 #ENDDOC
@@ -14,20 +12,8 @@
 
 #BEGINCONTROL
 
-! Compile "post-DTP" files with the latest version of the latest compiler,
-! link with manually compiled (with 12.1 gold) object files, and run.
-! An error message should be generated.
 
-!!Since the files are manually compiled already, we do not need this step:
-!! Caution: do not just uncomment the next few lines: the name of the output
-!! file contains the product chain, which can't be good - it's just there for
-!! consistency with the next step, and to document the process.
-!#CMD      = V121_XLF2003_COMPILE
-!#INPUT    = $(tcasedir)dtpCompatDummyOutKindLenPreDTP.f
-!#OUTPUT   = $(dtpCompatDummyOutKindLenPreDTP.121$(Q32_64_MODE)$(product)$(OBJ))
-!#ENDCMD
 
-!!BUT: we do need the .mod file, which we copy here:
 #CMD       = COPY
 #INPUT     = $($(tcasedir)dtpcompatdummyoutkindlenpredtpmod.121$(Q32_64_MODE)$(product).mod)
 #OUTPUT    = dtpcompatdummyoutkindlenpredtpmod.mod

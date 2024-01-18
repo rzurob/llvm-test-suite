@@ -1,0 +1,32 @@
+
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      selectorFm.f
+#FEATURE=
+#DATE=
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)selectorFm.f
+#OUTPUT    = selectorFm$(OBJ)
+#STDERR    = selectorFm.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    selectorFm.err $($(tcasedir)selectorFm$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

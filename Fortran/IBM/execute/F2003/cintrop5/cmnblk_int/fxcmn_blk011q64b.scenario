@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= cintrop5/cmnblk_int/fxcmn_blk011q64b.scenario
 #FEATURE	= cintrop5 tests - regression run bucket
-#CREATOR	= CPR Manual Update
 #DATE		= 20060816
 #TEST_TYPE	= sanity
 #ENDDOC

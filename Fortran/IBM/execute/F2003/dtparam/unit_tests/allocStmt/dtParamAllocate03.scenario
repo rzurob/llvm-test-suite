@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=       dtParamAllocate03.f
 #FEATURE= DTP for ALLOCATE statement
-#CREATOR=    Huiwen Li
 #DATE=       07-04-20
 #TEST_TYPE=  FUNCTIONAL
 #ENDDOC

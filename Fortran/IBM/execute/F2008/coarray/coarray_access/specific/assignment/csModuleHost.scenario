@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_access/specific/assignment/csModuleHost
 #FEATURE        = CAF coarray access (specific) - assignment - in procedures internal to module procedure, assign host-associated constants and variables of various intrinsic types to host-associated coarray variables and assign coarray variables to host-associated variables
-#CREATOR        = DF
 #DATE           = 2010-10-04
 #TEST_TYPE      = functional
 #ENDDOC

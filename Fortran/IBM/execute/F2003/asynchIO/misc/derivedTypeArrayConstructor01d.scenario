@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/asynchIO/misc/derivedTypeArrayConstructor01d.scenario
 #FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
-#CREATOR	= GM Manual Creation
 #DATE		= 20060301
 #TEST_TYPE	= sanity
 #ENDDOC

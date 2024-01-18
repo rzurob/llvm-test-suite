@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/generic/ambiguity/genericAmbiguityTypeBound010d_int8.scenario
 #FEATURE = generic tests
-#CREATOR = Robert Ma
 #DATE    = 20051215
 #TEST_TYPE=sanity
 #ENDDOC

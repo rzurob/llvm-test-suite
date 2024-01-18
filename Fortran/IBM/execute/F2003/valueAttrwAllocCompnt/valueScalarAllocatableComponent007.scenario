@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/home/robertma/tc/F2007/valueAttrDTwAllocatableComponents/valueScalarAllocatableComponent007.scenario
 #FEATURE = value attribute with DT containing allocatable components test cases
-#CREATOR = Robert Ma
 #DATE    = 20071215
 #TEST_TYPE=sanity
 #ENDDOC

@@ -1,11 +1,9 @@
 #BEGINSCENARIO
 
-! Scenario Documentation
 #BEGINDOC
 #NAME      = F2008/do_concurrent/func/do_concurrent_f028.scenario
 #FEATURE   = RTC STORY 17293 - F2008: DO CONCURRENT construct
 #PURPOSE   = Test the DO CONCURRENT construct
-#CREATOR   = Bernard Kan
 #DATE      = March 27, 2015
 #TEST_TYPE = FUNCTIONAL
 #KEYWORD   = DO CONCURRENT

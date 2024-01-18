@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/diag/module_subprogram12d.scenario
+#FEATURE   = F2008 Submodule
+#DATE      = 20121212
+#TEST_TYPE = Diagnostic
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD          = F_COMPILE
+#INPUT        = $(tcasedir)module_subprogram12d.f
+#OUTPUT       = module_subprogram12d$(OBJ)
+#STDOUT       = module_subprogram12d.out
+#STDERR       = module_subprogram12d.out
+#VALIDRCS     = $(RC_COMP_E)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = module_subprogram12d.out $($(tcasedir)module_subprogram12d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

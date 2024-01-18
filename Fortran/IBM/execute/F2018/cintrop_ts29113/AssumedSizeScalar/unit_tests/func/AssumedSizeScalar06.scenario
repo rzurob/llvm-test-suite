@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME       = AssumedSizeScalar06.scenario
 #FEATURE    = Scalar corresponds to assumed-type and assumed-size dummy
-#CREATOR    = Daniel Chen
 #DATE       = 20140603
 #TEST_TYPE  = Functional
 #KEYWORDS   = C Interop, Assumed-type, Assumed-size

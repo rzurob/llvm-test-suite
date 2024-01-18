@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=       fkindcharacter
 #FEATURE=    ISO_FORTRAN_ENV (376078)
-#CREATOR=    Morteza Ershad-Manesh
 #DATE=       10-07-12
 #TEST_TYPE=  FUNCTIONAL
 #ENDDOC

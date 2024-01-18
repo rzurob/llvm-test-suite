@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = OO_dtio/mix/C931/fdtioC621_001d.scenario
 #FEATURE = OO_dtio/mix tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20050118
 #TEST_TYPE=sanity
 #ENDDOC

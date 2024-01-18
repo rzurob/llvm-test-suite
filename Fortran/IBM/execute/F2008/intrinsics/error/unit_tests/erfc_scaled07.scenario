@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=F2008/intrinsics/error/unit_tests/erfc_scaled07.scenario
 #FEATURE = F2008 ERFC_SCALED intrinsic
-#CREATOR = Robert Enenkel & Bardia Mahjour
 #DATE    = 20111114
 #TEST_TYPE=unit
 #ENDDOC

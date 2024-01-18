@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/allocEnh/typeConversion/exprIsIntrinsicFunc04.scenario
 #FEATURE	= Intrinsic Assignment -- Intrinsic Type Conversion
-#CREATOR	= GM Manual Creation
 #DATE		= 20061106
 #TEST_TYPE	= functional
 #ENDDOC

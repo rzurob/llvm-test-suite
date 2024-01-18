@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /syncAll/saBasicMessage.scenario
 #FEATURE   = CAF SYNC ALL - errmsg variable is not altered on no error
-#CREATOR   = DF
 #DATE      = 20100727
 #TEST_TYPE = functional
 #ENDDOC

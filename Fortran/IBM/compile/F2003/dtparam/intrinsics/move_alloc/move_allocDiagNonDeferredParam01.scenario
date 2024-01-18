@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/intrinsics/move_alloc/move_allocDiagNonDeferredParam01.scenario
 #FEATURE   = 355754
-#CREATOR   = Nancy Wang
 #DATE      = Sept. 29 2008
 #TEST_TYPE = Diagnostic
 #ENDDOC

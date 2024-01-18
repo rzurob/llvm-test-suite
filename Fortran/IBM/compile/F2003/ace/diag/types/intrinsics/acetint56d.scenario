@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/types/intrinsics/acetint56d.scenario
+#FEATURE	= Array constructor enhancement - AC as function return value (character)
+#DATE		= 20061123
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetint56d.f
+#OUTPUT		= acetint56d$(OBJ)
+#STDERR		= acetint56d.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $($(tcasedir)acetint56d$(product)vf) acetint56d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/usage/recursive003kl.scenario
 #FEATURE = OO_dtio tests + derived type parameters
-#CREATOR = David Forster (derived from work by Robert Ma)
 #DATE    = 20070813
 #TEST_TYPE=sanity
 #ENDDOC

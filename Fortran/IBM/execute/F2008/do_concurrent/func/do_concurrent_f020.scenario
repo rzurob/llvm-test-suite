@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = do_concurrent_f020.scenario
 #REFERENCE = /tst91/hpf_forall/construct/fxfc034b.scenario
-#CREATOR   = Bernard Kan
 #DATE      = 20150831
 #TEST_TYPE = Functional
 #ENDDOC

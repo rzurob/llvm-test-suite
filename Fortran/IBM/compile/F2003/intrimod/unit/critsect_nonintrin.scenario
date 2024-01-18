@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/intrimod/unit/critsect_nonintrin.scenario
 #FEATURE = intrimod tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC
@@ -19,7 +18,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) -qdebug=intmsg $(F_COMPIL
 
 #BEGINCONTROL
 
-! This chunk was DCOMP
 
 #CMD       = XLF95_COMPILE
 #INPUT     = $(tcasedir)critsect_nonintrin.f

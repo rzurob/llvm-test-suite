@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME     = image_index_f001a.scenario
 #FEATURE  = CAF Intrinsics
-#CREATOR  = Francesco Cassullo
 #DATE     = August 2010
 #TEST_TYPE= FUNCTIONAL
 #ENDDOC
@@ -34,7 +33,7 @@
 	#INPUT     = image_index_f001a$(EXE)
 	#STDOUT    = image_index_f001a.out
 	#ENDCMD
-	
+
 	#CMD       = DIFF
 	#INPUT     = $($(tcasedir)image_index_f001a$(product)vf) image_index_f001a.out
 	#ENDCMD

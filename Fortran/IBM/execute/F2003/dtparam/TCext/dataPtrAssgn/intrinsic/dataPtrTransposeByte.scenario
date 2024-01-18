@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/dataPtrAssgn/intrinsic/dataPtrTransposeByte.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of dataPtrAssgn/*
 #DATE      = 20071216
 #TEST_TYPE = functional
 #ENDDOC

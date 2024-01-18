@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/derived/acetdt03.scenario
 #FEATURE	= Array constructor enhancement - derived TS with defined assignment, no parameters
-#CREATOR	= DF Manual Update
 #DATE		= 20060905
 #TEST_TYPE	= sanity
 #ENDDOC

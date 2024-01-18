@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/allocate/allocContainerPoly02.scenario
 #FEATURE	= ALLOCATE() Statement with DTP
-#CREATOR	= Glen Mateer
 #DATE		= 20090107
 #TEST_TYPE	= functional
 #ENDDOC

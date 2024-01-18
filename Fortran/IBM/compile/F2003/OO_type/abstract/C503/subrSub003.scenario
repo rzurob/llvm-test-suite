@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/OO_type/abstract/C503/subrSub003.scenario
 #FEATURE = OO_type/abstract tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20050118
 #TEST_TYPE=sanity
 #ENDDOC
@@ -17,7 +16,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOUR
 
 #BEGINCONTROL
 
-! This chunk was DCOMP
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)subrSub003.f

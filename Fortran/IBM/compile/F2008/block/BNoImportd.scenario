@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/block/BNoImportd
 #FEATURE        = F2008 - BLOCK - IMPORT statements are not allowed
-#CREATOR        = DF
 #DATE           = 2010-11-05
 #TEST_TYPE      = diagnostic
 #ENDDOC

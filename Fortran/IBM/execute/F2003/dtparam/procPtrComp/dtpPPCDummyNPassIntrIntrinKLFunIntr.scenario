@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/procPtrComp/dtpPPCDummyNPassIntrIntrinKLFunIntr.scenario
 #FEATURE   = Procedure Pointers as Components - reference to nopass implicit intrinsic function with intrinsic dummy argument(s), DTP w/ K+L parameters, interface from intrinsic procedure, ref via dummy arg
-#CREATOR   = DF Manual Update
 #DATE      = 20090323
 #TEST_TYPE = sanity
 #ENDDOC

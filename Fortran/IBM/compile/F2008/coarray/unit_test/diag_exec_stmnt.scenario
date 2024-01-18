@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME     = diag_exec_stmnt.scenario
 #FEATURE  =
-#CREATOR  = Francesco Cassullo
 #DATE     = December 2010
 #TEST_TYPE= DIAGNOSTIC
 #ENDDOC

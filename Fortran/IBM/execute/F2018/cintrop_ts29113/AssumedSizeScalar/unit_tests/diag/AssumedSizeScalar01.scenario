@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=cintrop_ts29113/AssumedSizeScalar/unit_tests/diag/AssumedSizeScalar01.scenario
 #FEATURE   = Scalar corresponds to assumed-type and assumed-size dummy
-#CREATOR   = Daniel Chen
 #DATE      = 20140603
 #TEST_TYPE = unit
 #KEYWORDS  = C Interop, Assumed-type, Assumed-size

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = F2008/impure/unit_tests/func/impure07.scenario
 #FEATURE = 917300 impure procedures
-#CREATOR = Paul Liu
 #DATE    = 20120308
 #TEST_TYPE=FUNCTIONAL
 #ENDDOC

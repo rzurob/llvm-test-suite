@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=F2003/dtparam/TCext/OO_tpbnd/final1/ffinal024ikl2.scenario
 #FEATURE = OO_tpbnd tests - regression run bucket + derived type parameters
-#CREATOR = automated conversion script
 #DATE    = 20071127
 #TEST_TYPE=sanity
 #ENDDOC

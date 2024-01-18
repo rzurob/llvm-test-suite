@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME     = cobound_f004b.scenario
 #FEATURE  = CAF Intrinsics
-#CREATOR  = Francesco Cassullo
 #DATE     = September 2010
 #TEST_TYPE= FUNCTIONAL
 #ENDDOC

@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/diag/types/derived/acetdt35dl_dlp_dpv_rs.scenario
+#FEATURE	= Derived Type Parameters (+ Array constructor enhancement --	\
+				AC's in Static Initialisation)
+#DATE		= 20071130
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt35dl_dlp_dpv_rs.f
+#OUTPUT		= acetdt35dl_dlp_dpv_rs$(OBJ)
+#STDERR		= acetdt35dl_dlp_dpv_rs.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)acetdt35dl_dlp_dpv_rs$(product)vf)	\
+			  acetdt35dl_dlp_dpv_rs.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

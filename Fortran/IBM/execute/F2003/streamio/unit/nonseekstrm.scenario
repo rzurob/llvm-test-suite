@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/streamio/unit/nonseekstrm.scenario
 #FEATURE = streamio tests - regression run bucket
-#CREATOR = ST Manual conversion
 #DATE    = 20050106
 #TEST_TYPE=sanity
 #ENDDOC

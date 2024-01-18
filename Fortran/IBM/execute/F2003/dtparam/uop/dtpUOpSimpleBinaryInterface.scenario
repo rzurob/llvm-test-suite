@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpSimpleBinaryInterface.scenario
 #FEATURE   = User-Defined Operators - correct binary operator functions are used for given type and kind (single operator, generic interface)
-#CREATOR   = DF Manual Update
 #DATE      = 20090211
 #TEST_TYPE = sanity
 #ENDDOC

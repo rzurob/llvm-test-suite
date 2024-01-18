@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/use/dtpUsePointer01.scenario
 #FEATURE   = DTP and USE - use pointers to DTP objects
-#CREATOR   = DF Manual Update
 #DATE      = 20081008
 #TEST_TYPE = sanity
 #ENDDOC

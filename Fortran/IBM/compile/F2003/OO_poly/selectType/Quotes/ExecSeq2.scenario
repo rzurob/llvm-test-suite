@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME=      ExecSeq2.f
 #FEATURE= SELECT TYPE STATEMENT
-#CREATOR=   Feng Ye
 #DATE=      11-01-05
 #TEST_TYPE= DIAGNOSTIC
 #ENDDOC
@@ -17,7 +16,6 @@
 #OPTS=     $(OPT_FREE_SOURCE_FORM)
 #INPUT=    $(tcasedir)ExecSeq2.f
 #STDERR=   ExecSeq2.err
-!#VALIDRCS= 1
 #ENDCMD
 
 #CMD=      XLDIFF

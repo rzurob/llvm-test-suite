@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=roundspecifier024.scenario
 #FEATURE = Round Specifier
-#CREATOR = Michael Selvanayagam
 #DATE    = 20060501
 #TEST_TYPE=unit test
 #ENDDOC

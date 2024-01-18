@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=dtparamdefop03d.scenario
 #FEATURE = Generic interfaces and bindings with derived type parameters
-#CREATOR = Rafik Zurob
 #DATE    = 20060313
 #TEST_TYPE=unit
 #ENDDOC
@@ -14,7 +13,6 @@ TR_SRC=$(tcasedir)
 #ENDENV
 #BEGINCONTROL
 
-! This chunk was DCOMP
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)dtparamdefop03d.f

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/diag/R521StructComp01d.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#DATE		= 20060117
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)R521StructComp01d.f
+#OUTPUT		= R521StructComp01d$(OBJ)
+#STDERR		= R521StructComp01d.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)R521StructComp01d$(product)vf) R521StructComp01d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

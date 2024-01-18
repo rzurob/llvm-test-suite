@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/misc/RTO/DTPMultipleNesting08a.scenario
 #FEATURE   = DTP - RTO coverage
-#CREATOR   = Dorra Bouchiha
 #DATE      = 20090215
 #TEST_TYPE = functional
 #ENDDOC

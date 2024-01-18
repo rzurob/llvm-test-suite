@@ -3,7 +3,6 @@
 #NAME      = cintrop_ts29113/AssumedRank/func/d92989.scenario
 #FEATURE   = C Interop, Assumed Rank
 #FEATURE   = RTC 92989: ASSUMED_RANK: copy_in BIF does not work properly for non-contiguous actual argument
-#CREATOR   = Grigor Nikolov from Tarique Islam's TC
 #DATE      = 20140730
 #TEST_TYPE = defect
 #KEYWORDS  = C Interop, Assumed Rank, CFI functions

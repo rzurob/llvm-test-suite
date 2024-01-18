@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/derived/acetdt09kl_dlp.scenario
 #FEATURE	= Array constructor enhancement derived type polymorphism tests
-#CREATOR	= Glen Mateer (derived from work by DF Manual Update)
 #DATE		= 20080114
 #TEST_TYPE	= Functional
 #ENDDOC

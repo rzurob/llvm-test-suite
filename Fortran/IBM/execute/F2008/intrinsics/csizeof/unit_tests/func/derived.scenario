@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/intrinsics/csizeof/unit_tests/func/derived.scenario
 #FEATURE   = F2008 ISO_C_BINDING - C_SIZEOF
-#CREATOR   = Paul Liu, Rafik Zurob
 #DATE      = 20101226
 #TEST_TYPE = unit tests
 #ENDDOC

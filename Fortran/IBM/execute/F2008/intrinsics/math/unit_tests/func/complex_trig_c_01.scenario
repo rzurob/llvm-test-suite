@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/intrinsics/math/unit_tests/func/complex_trig_c_01.scenario
 #FEATURE   = Math intrinsic functions
-#CREATOR   = Rafik Zurob
 #DATE      = 20110105
 #TEST_TYPE = unit tests
 #ENDDOC

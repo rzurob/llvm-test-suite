@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/OO_dtio/formatted/namelist/dummyArg007a1.scenario
 #FEATURE = OO_dtio tests
-#CREATOR = Robert Ma
 #DATE    = 20041215
 #TEST_TYPE=sanity
 #ENDDOC

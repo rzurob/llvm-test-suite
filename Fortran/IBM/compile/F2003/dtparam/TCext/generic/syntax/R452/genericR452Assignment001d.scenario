@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/generic/syntax/R452/genericR452Assignment001d.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of generic/*
 #DATE      = 20071130
 #TEST_TYPE = functional
 #ENDDOC

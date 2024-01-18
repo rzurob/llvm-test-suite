@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/impure/diagnostic/impure01d.scenario
 #FEATURE   = F2008 IMPURE - IMPURE elemental procedures in F2008
-#CREATOR   = Tapti Vaid
 #DATE      = 20120413
 #TEST_TYPE = diagnostic
 #KEYWORDS =  F2008, IMPURE

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME = $(tcasedir)ExecCmdLineErrCmd.scenario
 #FEATURE = unit_tests - regression run bucket
-#CREATOR = Ren Jian Gang
 #DATE    = December 05, 2010
 #TEST_TYPE = Diagnostic
 #ENDDOC
@@ -31,7 +30,6 @@
 #VALIDRCS =  $(RC_FAIL)
 #ENDCMD
 
-! Valid line : "1525-610 Error encountered while attempting to execute the command:"
 #CMD      =  GREP
 #INPUT    =  "1525-610" ExecCmdLineErrCmd.err
 #ENDCMD

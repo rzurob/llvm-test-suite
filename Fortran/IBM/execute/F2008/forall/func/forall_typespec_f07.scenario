@@ -3,7 +3,6 @@
 #NAME      = forall_typespec_f07.scenario
 #REFERENCE = /tst91/hpf_forall/construct/fxfc015b.scenario
 #FEATURE   = 400906 Support typespec on FORALL
-#CREATOR   = Bernard Kan
 #DATE      = 20120621
 #TEST_TYPE = functional
 #ENDDOC

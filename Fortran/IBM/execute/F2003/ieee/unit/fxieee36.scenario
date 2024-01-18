@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/ieee/unit/fxieee36.scenario
 #FEATURE = ieee tests - regression run bucket
-#CREATOR = CPR&SH Manual conversion
 #DATE    = 20041208
 #TEST_TYPE=sanity
 #ENDDOC

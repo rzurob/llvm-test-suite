@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/generic/unit_tests/diag/assign07d.scenario
+#FEATURE   = 289057.TCext.OO
+#DATE      = 20071116
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)assign07d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#OUTPUT    = assign07d$(OBJ)
+#STDERR    = assign07d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)assign07d$(product)vf) assign07d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

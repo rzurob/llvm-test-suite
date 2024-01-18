@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = coarray_dummy/scalar/cdasStgAssoc.scenario
 #FEATURE   = CAF coarray dummy arguments - scalar - storage association
-#CREATOR   = DF
 #DATE      = 2010-11-17
 #TEST_TYPE = functional
 #ENDDOC

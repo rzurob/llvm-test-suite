@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/impliedshape/unit_tests/diag/impliedshape02d.scenario
+#FEATURE    = F385594 - Implied-shape Arrays
+#DATE       = 20110214
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)impliedshape02d.f
+#STDERR     = impliedshape02d.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = impliedshape02d.out $($(tcasedir)impliedshape02d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

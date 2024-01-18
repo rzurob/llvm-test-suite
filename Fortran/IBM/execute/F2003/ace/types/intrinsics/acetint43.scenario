@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint43.scenario
 #FEATURE	= Array constructor enhancement statement function invocations as ac_values
-#CREATOR	= DF Manual Update
 #DATE		= 20061102
 #TEST_TYPE	= sanity
 #ENDDOC

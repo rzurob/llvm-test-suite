@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=       fcompOptions
 #FEATURE=    ISO_FORTRAN_ENV (376078)
-#CREATOR=    Morteza Ershad-Manesh
 #DATE=       10-07-12
 #TEST_TYPE=  FUNCTIONAL
 #ENDDOC
@@ -65,7 +64,6 @@
 #STDOUT = fcompOptions1.sed.1
 #ENDCMD
 
-! Adding this sed line to remove the duplicate lines
 #CMD    = SED
 #OPTS   = -e '$!N; /^\(.*\)\n\1$/!P; D'
 #INPUT  = fcompOptions1.sed.1

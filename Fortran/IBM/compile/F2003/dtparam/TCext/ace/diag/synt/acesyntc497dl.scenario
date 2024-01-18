@@ -1,0 +1,25 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/diag/synt/acesyntc497dl.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement	\
+			   ac-do-variables in Nested implied-do's should not be		\
+			   Repeated)
+#DATE		= 20071116
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesyntc497dl.f
+#OUTPUT		= acesyntc497dl$(OBJ)
+#STDERR		= acesyntc497dl.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)acesyntc497dl$(product)vf) acesyntc497dl.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

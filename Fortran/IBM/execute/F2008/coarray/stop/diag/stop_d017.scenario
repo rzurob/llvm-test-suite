@@ -1,11 +1,8 @@
-! %W%
-! %G%, %U%, %I% sccsid
 #BEGINSCENARIO
 
 #BEGINDOC
 #NAME       = F2008/coarray/stop/diag/stop_d017.scenario
 #FEATURE    = CAF: STOP statement (feature #351605.31)
-#CREATOR    = Grigor Nikolov
 #DATE       = 20101019
 #TEST_TYPE  = Diagnostic
 #ENDDOC
@@ -15,10 +12,8 @@
 #ENDDEFS
 #ENDENV
 
-! Scenario Control Tags
 #BEGINCONTROL
 
-! -----------------------------------
 #CMD        = F_COMPILE
 #OPTS       = $(OPT_NOCOARRAY)
 #INPUT      = $(tcasedir)stop_d001_1.f
@@ -55,7 +50,6 @@
 #VALIDRCS   = 1
 #ENDCMD
 
-! -----------------------------------
 #CMD        = F_COMPILE
 #OPTS       = $(OPT_NOCOARRAY)
 #INPUT      = $(tcasedir)stop_d001_2.f
@@ -98,7 +92,6 @@
 #VALIDRCS   = 1
 #ENDCMD
 
-! -----------------------------------
 #CMD        = F_COMPILE
 #OPTS       = $(OPT_NOCOARRAY)
 #INPUT      = $(tcasedir)stop_d001_3.f

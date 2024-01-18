@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=decimaleditd001.f
 #FEATURE = diagnostic for decimal= specifier and dp and dc edit descriptors.
-#CREATOR = Bardia Mahjour
 #DATE    = 20051125
 #TEST_TYPE=diag test
 #ENDDOC

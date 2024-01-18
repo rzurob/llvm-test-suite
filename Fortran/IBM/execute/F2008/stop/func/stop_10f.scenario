@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/stop/stop_10f.scenario
 #FEATURE   = Constant expression as stop code in STOP statement
-#CREATOR   = Shahid Alam
 #DATE      = 20101020
 #TEST_TYPE = functional
 #ENDDOC

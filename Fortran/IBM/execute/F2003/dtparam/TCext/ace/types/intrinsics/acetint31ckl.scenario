@@ -3,7 +3,6 @@
 #NAME		= F2003/dtparam/TCext/ace/types/intrinsics/acetint31ckl.scenario
 #FEATURE	= Derived Type Parameters (+ Array constructor enhancement --	\
 			   Procedure Pointers can be Invoked for Data (Character))
-#CREATOR	= Glen Mateer (based on work by David Forster)
 #DATE		= 20070125
 #TEST_TYPE	= Functional
 #ENDDOC

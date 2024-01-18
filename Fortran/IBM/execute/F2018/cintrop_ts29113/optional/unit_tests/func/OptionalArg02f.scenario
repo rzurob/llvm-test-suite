@@ -1,11 +1,8 @@
-! %W%
-! %G%, %U%, %I% sccsid
 #BEGINSCENARIO
 
 #BEGINDOC
 #NAME       = OptionalArg02f.scenario
 #FEATURE    = 399982 - C Interop: Optional Argument
-#CREATOR    = Bardia Mahjour
 #DATE       = May 2012
 #TEST_TYPE  = Functional
 #ENDDOC

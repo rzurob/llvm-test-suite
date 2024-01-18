@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=F2008/intrinsics/hypot/unit_tests/hypot01a.scenario
 #FEATURE = F2008 HYPOT intrinsic
-#CREATOR = Rafik Zurob
 #DATE    = 20110701
 #TEST_TYPE=unit
 #ENDDOC

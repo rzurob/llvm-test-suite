@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/TCext/ace/types/intrinsics/d346419.scenario
 #FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement)
-#CREATOR	= Glen Mateer
 #DATE		= 20080128
 #TEST_TYPE	= Diagnostic
 #ENDDOC

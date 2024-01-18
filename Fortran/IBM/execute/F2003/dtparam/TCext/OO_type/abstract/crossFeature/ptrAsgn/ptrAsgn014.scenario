@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/OO_type/abstract/crossFeature/ptrAsgn/ptrAsgn014.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB extension of OO_type/abstract/crossFeature/ptrAsgn/ptrAsgn014.scenario
 #DATE      = 20070613
 #TEST_TYPE = functional
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetnone07c.scenario
 #FEATURE	= Array constructor enhancement no type specifier BOZ + complex
-#CREATOR	= DF Manual Update
 #DATE		= 20060802
 #TEST_TYPE	= sanity
 #ENDDOC

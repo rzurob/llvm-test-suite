@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=       complex_i32
 #FEATURE=    ISO_FORTRAN_ENV (376078)
-#CREATOR=    Morteza Ershad-Manesh
 #DATE=       10-07-12
 #TEST_TYPE=  FUNCTIONAL
 #ENDDOC
@@ -60,10 +59,6 @@
 #ENDCMD
 
 
-! Due to precision issue we will use two different files to verify
-! the results:
-! complex_i32.vf is for noopt runs
-! complex_i32_highopts.vf is for -O2 or higher
 
 #IF in($(F_COMPILE^OPT_OPTIMIZE_LEVEL3)) || in($(F_COMPILE^OPT_OPTIMIZE_LEVEL4)) || in($(F_COMPILE^OPT_OPTIMIZE_LEVEL5))
 

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = cintrop4/pattr/fxbind_c03wwd.scenario
 #FEATURE   = cintrop4 tests - regression run bucket
-#CREATOR   = SH Manual conversion
 #DATE      = 20041208
 #TEST_TYPE = sanity
 #ENDDOC

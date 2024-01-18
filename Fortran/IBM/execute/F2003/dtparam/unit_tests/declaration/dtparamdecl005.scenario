@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/dtparam/unit_tests/declaration/dtparamdecl005.scenario
 #FEATURE = type parameters
-#CREATOR = chris tandy
 #DATE    = 20050920
 #TEST_TYPE=sanity
 #ENDDOC

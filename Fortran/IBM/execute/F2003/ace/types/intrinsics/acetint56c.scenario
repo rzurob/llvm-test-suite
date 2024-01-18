@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint56c.scenario
 #FEATURE	= Array constructor enhancement - AC as function return value (character)
-#CREATOR	= DF Manual Update
 #DATE		= 20061123
 #TEST_TYPE	= sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/F2003/boz/real/bozReal004.scenario
 #FEATURE = boz-literal-constant in REAL intrinsic
-#CREATOR = Vicram Uppal
 #DATE    = 20060201
 #TEST_TYPE=sanity
 #ENDDOC

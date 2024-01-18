@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/future/d341784.scenario
 #FEATURE   = defect 370244 to track 341784
-#CREATOR   = Gaby Baghdadi
 #DATE      = 20091001
 #TEST_TYPE = diagnostic
 #ENDDOC

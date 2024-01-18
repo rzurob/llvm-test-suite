@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint62.scenario
 #FEATURE	= Array constructor enhancement pointer with specified lower bound in AC
-#CREATOR	= DF Manual Update
 #DATE		= 20061126
 #TEST_TYPE	= sanity
 #ENDDOC

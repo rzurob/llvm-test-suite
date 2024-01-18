@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2008/submodule/func/module_subprogram08f.scenario
 #FEATURE	= F2008 submodule
-#CREATOR	= Bernard Kan
 #DATE		= 20130220
 #TEST_TYPE	= functional
 #KEYWORDS       = F2008, submodule, F2008 submodule

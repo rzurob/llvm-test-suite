@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/aix811/streamio/diag/iorecl01.scenario
+#FEATURE = streamio tests - regression run bucket
+#DATE    = 20041203
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOURCE_FORM) -qdebug=intmsg  $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)iorecl01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg
+#OUTPUT    = iorecl01$(OBJ)
+#STDERR    = iorecl01.out
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = iorecl01$(OBJ)
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#ENDCMD
+
+
+
+#CMD       = XLDIFF
+#INPUT     = iorecl01.out $($(tcasedir)iorecl01$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

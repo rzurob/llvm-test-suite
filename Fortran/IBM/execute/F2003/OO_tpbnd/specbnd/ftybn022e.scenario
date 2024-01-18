@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/OO_tpbnd/specbnd/ftybn022e.scenario
 #FEATURE = OO_tpbnd tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20050118
 #TEST_TYPE=sanity
 #ENDDOC

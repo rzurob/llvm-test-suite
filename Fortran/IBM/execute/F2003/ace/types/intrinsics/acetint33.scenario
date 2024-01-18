@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint33.scenario
 #FEATURE	= Array constructor enhancement - intrinsic TS: as selector in ASSOCIATE construct
-#CREATOR	= DF Manual Update
 #DATE		= 20060927
 #TEST_TYPE	= sanity
 #ENDDOC

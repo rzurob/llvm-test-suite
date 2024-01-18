@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME     = image_index_f003.scenario
 #FEATURE  = CAF Intrinsics
-#CREATOR  = Francesco Cassullo
 #DATE     = August 2010
 #TEST_TYPE= FUNCTIONAL
 #ENDDOC

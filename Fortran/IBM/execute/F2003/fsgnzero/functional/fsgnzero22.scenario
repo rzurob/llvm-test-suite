@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/sgnzero/fsgnzero22.scenario
 #FEATURE = F2003/sgnzero tests
-#CREATOR = automated conversion script
 #DATE    = 20060411
 #TEST_TYPE=sanity
 #ENDDOC

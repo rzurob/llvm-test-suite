@@ -4,7 +4,6 @@
 #FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
 			   Procedure Pointers can be Invoked in implied-do for data		\
 			   (Derived Type))
-#CREATOR	= Glen Mateer (based on work by David Forster)
 #DATE		= 20080114
 #TEST_TYPE	= Functional
 #ENDDOC

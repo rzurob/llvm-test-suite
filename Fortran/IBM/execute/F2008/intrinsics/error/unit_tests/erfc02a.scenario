@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=F2008/intrinsics/error/unit_tests/erfc02a.scenario
 #FEATURE = ERF and ERFC are now part of F2008
-#CREATOR = Rafik Zurob
 #DATE    = 20110302
 #TEST_TYPE=unit
 #ENDDOC

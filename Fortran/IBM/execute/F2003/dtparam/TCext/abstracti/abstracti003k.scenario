@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/TCext/abstracti/abstracti003k.scenario
 #FEATURE	= Abstract Interface Tests + derived type parameters
-#CREATOR	= Glen Mateer (derived from work by  Alberto Alvarez-Mesquida)
 #DATE		= 20070914
 #TEST_TYPE	= Functional
 #ENDDOC

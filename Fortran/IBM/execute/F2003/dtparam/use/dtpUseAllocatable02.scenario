@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/use/dtpUseAllocatable02.scenario
 #FEATURE   = DTP and USE - allocatable with no type specifier, but deferred length parameters
-#CREATOR   = DF Manual Update
 #DATE      = 20081007
 #TEST_TYPE = sanity
 #ENDDOC

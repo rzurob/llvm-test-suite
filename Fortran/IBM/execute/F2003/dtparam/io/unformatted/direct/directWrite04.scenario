@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/io/unformatted/direct/directWrite04.scenario
 #FEATURE	= Unformatted Intrinsic I/O (with Derived Type Parameters)
-#CREATOR	= Glen Mateer
 #DATE		= 20081006
 #TEST_TYPE	= functional
 #ENDDOC

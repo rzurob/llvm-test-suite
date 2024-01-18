@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/block/BBlockToBlock01.scenario
 #FEATURE   = vars declared in two blocks do not interfere
-#CREATOR   = DF
 #DATE      = 2010-12-06
 #TEST_TYPE = functional
 #ENDDOC

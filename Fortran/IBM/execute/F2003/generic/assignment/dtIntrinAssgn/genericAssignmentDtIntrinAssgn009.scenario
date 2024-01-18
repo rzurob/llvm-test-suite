@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2009/generic/assignment/functional/genericAssignmentDtIntrinAssgn009.scenario
 #FEATURE = generic tests
-#CREATOR = Robert Ma
 #DATE    = 20091215
 #TEST_TYPE=sanity
 #ENDDOC

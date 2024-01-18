@@ -3,19 +3,16 @@
 #BEGINDOC
 #NAME       = d380757c.scenario
 #FEATURE    = Character coarray assignment and concatenation
-#CREATOR    = Bardia Mahjour
 #DATE       = Feb 2011
 #TEST_TYPE  = unit test
 #ENDDOC
 
-! Scenario Environment Tags
 #BEGINENV
 #BEGINDEFS
 #ENDDEFS
 #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
 #ENDENV
 
-! Scenario Control Tags
 #BEGINCONTROL
 
 #CMD       = F_COMPILE
@@ -37,12 +34,12 @@
 	#INPUT     = d380757c$(EXE)
 	#STDOUT    = d380757c.out.unsorted
 	#ENDCMD
-	
+
 	#CMD       = SORT
 	#INPUT     = d380757c.out.unsorted
 	#STDOUT    = d380757c.out.sorted
 	#ENDCMD
-	
+
 	#CMD       = DIFF
 	#INPUT     = d380757c.out.sorted $(tcasedir)d380757c.vf
 	#ENDCMD

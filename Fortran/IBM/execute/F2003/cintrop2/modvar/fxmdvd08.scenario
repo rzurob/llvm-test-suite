@@ -4,7 +4,6 @@
 #REFERENCE	= fdpr/cinterop/fxmdvd08.scenario
 #REF_TYPE	= FDPR -- XL FORTRAN/C Interoperability Tests
 #FEATURE = cintrop2 tests - regression run bucket
-#CREATOR	= CPR Manual Update
 #DATE		= 20060711
 #TEST_TYPE=sanity
 #ENDDOC

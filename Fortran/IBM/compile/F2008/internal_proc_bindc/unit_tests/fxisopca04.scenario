@@ -4,7 +4,6 @@
 #NAME       = F2008: BIND attribute on internal procedures (33410)
 #COMPONENT  = xlftest
 #DATE       = May 19, 2015
-#CREATOR    = Charu Jain
 #TEST_TYPE  = Unit Test
 #ENDDOC
 

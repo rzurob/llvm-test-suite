@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/coarray/stop/cnst_expr/stop_f2008caf_12f.scenario
 #FEATURE   = Constant expression as stop code in STOP statement
-#CREATOR   = Shahid Alam
 #DATE      = 20101026
 #TEST_TYPE = functional
 #ENDDOC

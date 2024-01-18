@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=release/F2003/volatile/volatileC1232ArraySection06d.f
 #FEATURE = VOLATILE 255728
-#CREATOR = William Zhang
 #DATE    = 05/30/2006
 #TEST_TYPE= diagnostic
 #ENDDOC

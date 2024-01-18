@@ -2,9 +2,7 @@
 #BEGINSCENARIO
 #BEGINDOC
 #NAME = F2003/dtparam/future/dtParameterInquiryArrayIntegerComp05.scenario
-! based on original F2003/dtparam/typeParamInquiry/functional/dtparam/dtParameterInquiryArrayIntegerComp05.scenario
 #FEATURE  = Type Parameter Inquiry(354612)
-#CREATOR  = Nancy Wang (edited by David Forster)
 #DATE     = July 15 2008
 #TEST_TYPE= Functional
 #ENDDOC

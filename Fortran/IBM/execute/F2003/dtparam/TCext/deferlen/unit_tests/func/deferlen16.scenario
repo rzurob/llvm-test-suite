@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/deferlen/unit_tests/func/deferlen16.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of deferlen/*
 #DATE      = 20071213
 #TEST_TYPE = functional
 #ENDDOC

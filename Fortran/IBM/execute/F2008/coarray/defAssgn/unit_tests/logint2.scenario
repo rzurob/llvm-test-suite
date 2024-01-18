@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=F2008/coarray/defAssgn/unit_tests/logint2.scenario
 #FEATURE = Coarray defined assignment
-#CREATOR = Pooja Dayanand
 #DATE    = 20101014
 #TEST_TYPE=unit test
 #ENDDOC
@@ -32,7 +31,7 @@
 	#INPUT     = logint2$(EXE)
 	#STDOUT    = logint2.out
 	#ENDCMD
-	
+
 	#CMD       = DIFF
 	#INPUT     = logint2.out $(tcasedir)logint2.vf
 	#ENDCMD

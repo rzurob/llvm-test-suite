@@ -1,11 +1,8 @@
-! %W%
-! %G%, %U%, %I% sccsid
 #BEGINSCENARIO
 
 #BEGINDOC
 #NAME       = F2008/coarray/stop/diag/stop_d021.scenario
 #FEATURE    = CAF: STOP statement (feature #351605.31)
-#CREATOR    = Grigor Nikolov
 #DATE       = 20101019
 #TEST_TYPE  = Diagnostic
 #ENDDOC
@@ -16,13 +13,11 @@
   #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
 #ENDENV
 
-! Scenario Control Tags
 #BEGINCONTROL
 
 #CMD       = SET_DYN_ENV
 #ENDCMD
 
-! -----------------------------------
 #CMD        = F_COMPILE
 #INPUT      = $(tcasedir)stop_d001_1.f
 #OUTPUT     = stop_d001_1$(OBJ)
@@ -62,7 +57,6 @@
 #VALIDRCS   = 1
 #ENDCMD
 
-! -----------------------------------
 #CMD        = F_COMPILE
 #INPUT      = $(tcasedir)stop_d001_2.f
 #OUTPUT     = stop_d001_2$(OBJ)
@@ -100,7 +94,6 @@
 #INPUT      = stop_d001_2.err
 #ENDCMD
 
-! -----------------------------------
 #CMD        = F_COMPILE
 #INPUT      = $(tcasedir)stop_d001_3.f
 #OUTPUT     = stop_d001_3$(OBJ)
@@ -139,7 +132,6 @@
 #VALIDRCS   = 1
 #ENDCMD
 
-! -----------------------------------
 #CMD        = F_COMPILE
 #INPUT      = $(tcasedir)stop_d001_4.f
 #OUTPUT     = stop_d001_4$(OBJ)
@@ -177,7 +169,6 @@
 #INPUT      = stop_d001_4.err
 #ENDCMD
 
-! -----------------------------------
 #CMD        = F_COMPILE
 #INPUT      = $(tcasedir)stop_d001_5.f
 #OUTPUT     = stop_d001_5$(OBJ)
@@ -215,7 +206,6 @@
 #INPUT      = stop_d001_5.err
 #ENDCMD
 
-! -----------------------------------
 #CMD        = F_COMPILE
 #INPUT      = $(tcasedir)stop_d001_6.f
 #OUTPUT     = stop_d001_6$(OBJ)

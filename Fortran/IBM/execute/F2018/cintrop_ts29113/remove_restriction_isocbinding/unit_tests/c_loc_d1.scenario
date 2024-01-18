@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=c_loc_d1.scenario
 #FEATURE = noninteroperable array actual to C_LOC issue langlvl for F2008
-#CREATOR = Daniel Chen
 #DATE    = 20140731
 #TEST_TYPE=unit
 #ENDDOC

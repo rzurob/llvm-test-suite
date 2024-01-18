@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_access/specific/assignment/csCharacterComponent
 #FEATURE        = CAF coarray access (specific) - assignment - in main program, assign character component of derived type variables to coarray variables and vice-versa
-#CREATOR        = DF
 #DATE           = 2010-10-04
 #TEST_TYPE      = functional
 #ENDDOC

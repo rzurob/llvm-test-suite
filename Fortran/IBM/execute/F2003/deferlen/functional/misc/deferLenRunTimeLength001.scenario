@@ -2,10 +2,9 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/deferlen/functional/misc/deferLenRunTimeLength001.scenario
 #FEATURE = character with deferred length type parameter
-#CREATOR = Robert Ma
 #DATE    = 20060501
 #TEST_TYPE=sanity
-#ENDDOC	
+#ENDDOC
 
 #BEGINENV
 #BEGINDEFS

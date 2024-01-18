@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/derived/acetdt476gd.scenario
 #FEATURE	= Array constructor enhancement derived type specifier tests
-#CREATOR	= DF Manual Update
 #DATE		= 20060720
 #TEST_TYPE	= sanity
 #ENDDOC

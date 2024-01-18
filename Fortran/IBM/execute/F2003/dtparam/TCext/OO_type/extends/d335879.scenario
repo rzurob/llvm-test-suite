@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/OO_type/extends/d335879.scenario
 #FEATURE   = OO_type tests - regression run bucket
-#CREATOR   = GB (for defect 335879)
 #DATE      = 20070420
 #TEST_TYPE = functional
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/TCext/abstracti/abstracti004l.scenario
 #FEATURE	= Derived Type Parameters (using the Abstract Interface Tests)
-#CREATOR	= Glen Mateer (derived from work by Alberto Alvarez-Mesquida)
 #DATE		= 20070924
 #TEST_TYPE	= sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/AllocMold/allocateTests01.f
 #FEATURE   = DTP - Allocate with type-spec
-#CREATOR   = Izhak Jakov
 #DATE      = 20150604
 #TEST_TYPE = functional
 #ENDDOC

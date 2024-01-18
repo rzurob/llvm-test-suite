@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/block/BImplType.scenario
 #FEATURE   = F2008 BLOCK - implicit typing rules
-#CREATOR   = DF Manual Update
 #DATE      = 20101214
 #TEST_TYPE = functional
 #ENDDOC

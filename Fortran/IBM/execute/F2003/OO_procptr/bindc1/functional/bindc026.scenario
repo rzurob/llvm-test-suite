@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/OO_procptr/bindc1/functional/bindc026.scenario
 #FEATURE = OO_dtio tests
-#CREATOR = Robert Ma
 #DATE    = 20060111 added product to .vf, CPR
 #TEST_TYPE=sanity
 #ENDDOC

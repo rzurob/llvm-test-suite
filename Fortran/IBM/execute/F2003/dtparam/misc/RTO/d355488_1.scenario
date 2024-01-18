@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/misc/RTO/d355488_1.f
 #FEATURE   = DTP - RTO coverage
-#CREATOR   = Dorra Bouchiha
 #DATE      = 20090209
 #TEST_TYPE = functional
 #ENDDOC

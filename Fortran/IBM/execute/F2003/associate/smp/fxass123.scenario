@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/associat/smp/fxass123.scenario
 #FEATURE = associat tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC
@@ -31,7 +30,6 @@ EXEC_REP=10
 #OUTPUT    = fxass123$(EXE)
 #ENDCMD
 
-! Reflecting influence of EXEC_REP setting
 
 #CMD       = RUN
 #INPUT     = fxass123$(EXE)

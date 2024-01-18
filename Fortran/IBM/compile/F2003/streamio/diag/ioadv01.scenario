@@ -1,0 +1,39 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/streamio/diag/ioadv01.scenario
+#FEATURE = streamio tests - regression run bucket
+#DATE    = 20041123
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF95_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOURCE_FORM) -qdebug=intmsg  $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)ioadv01.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg
+#OUTPUT    = ioadv01$(OBJ)
+#STDERR    = ioadv01.out
+#ENDCMD
+
+#CMD       = XLF95_LINK
+#INPUT     = ioadv01$(OBJ)
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#ENDCMD
+
+
+
+#CMD       = XLDIFF
+#INPUT     = ioadv01.out $($(tcasedir)ioadv01$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

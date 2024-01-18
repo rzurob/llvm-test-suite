@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABasicInternal006.scenario
 #FEATURE   = Intrinsic Assignment with Allocation - allocate basic DTP variable (container) with indirectly allocatable components via intrinsic assignment (in internal subroutine)
-#CREATOR   = DF Manual Update
 #DATE      = 20090522
 #TEST_TYPE = sanity
 #ENDDOC

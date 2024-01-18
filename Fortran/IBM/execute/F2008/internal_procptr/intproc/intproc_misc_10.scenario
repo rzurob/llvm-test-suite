@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=       intproc_misc_10.f
 #FEATURE=
-#CREATOR=    Feng Ye
 #DATE=       11-05-03
 #TEST_TYPE=  FUNCTIONAL
 #KEYWORDS=  F2008, internal procedure, dummy, procedure pointer target
@@ -10,7 +9,6 @@
 
 #BEGINENV
 #TIME_REQ=60
-!390181
 #REQUIRED_PRODUCT= FUTURE_DEVELOPMENT
 #ENDENV
 

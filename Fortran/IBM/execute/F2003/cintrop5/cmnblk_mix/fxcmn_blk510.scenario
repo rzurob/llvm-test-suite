@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=cintrop5/cmnblk_mix/fxcmn_blk510.scenario
 #FEATURE = cintrop5 tests - regression run bucket
-#CREATOR = Manual conversion CPR
 #DATE    = 20060828
 #TEST_TYPE=sanity
 #ENDDOC
@@ -12,7 +11,6 @@
 FTCARG="fxcmn_blk510"
 CTCARG="cxcmn_blk509"
 #ENDDEFS
-!#INVALID_PRODUCT= sles,rhel,mac
 #ENDENV
 
 #BEGINCONTROL

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=exit_stmt_in_block2.scenario
 #FEATURE = F2008 BLOCK construct
-#CREATOR = Pooja Dayanand
 #DATE    = 20101021
 #ENDDOC
 

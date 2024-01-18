@@ -4,7 +4,6 @@
 #NAME_OLD  = F2008/impurefunctional//impure14f.scenario
 #FEATURE   = F2008 IMPURE - IMPURE elemental procedures in F2008
 #FEATURE   = 96144: F08_0024:ELEMENTAL:dummy arg without VALUE must have INTENT specified.
-#CREATOR   = Grigor Nikolov
 #DATE      = 20150323
 #TEST_TYPE = diagnostic
 #KEYWORDS  = F2008, IMPURE, ELEMENTAL

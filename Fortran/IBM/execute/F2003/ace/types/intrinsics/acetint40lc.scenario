@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2004/ace/types/intrinsics/acetint40lc.scenario
 #FEATURE	= Array constructor enhancement - call subroutine with AC of logical constants of different kinds
-#CREATOR	= DF Manual Update
 #DATE		= 2006c06c14
 #TEST_TYPE	= sanity
 #ENDDOC

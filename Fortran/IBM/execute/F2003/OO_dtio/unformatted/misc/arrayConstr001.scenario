@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/OO_dtio/unformatted/misc/arrayConstr001.scenario
 #FEATURE = OO_dtio
-#CREATOR = Robert Ma
 #DATE    = 20050118
 #TEST_TYPE=sanity
 #ENDDOC

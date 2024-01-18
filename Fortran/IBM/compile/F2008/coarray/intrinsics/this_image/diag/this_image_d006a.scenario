@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = this_image_d006a.scenario
+#FEATURE  = CAF Intrinsics
+#DATE     = July 2010
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_COARRAY_IMAGES<4>) $(OPT_COARRAY_DNODES<1>)
+#INPUT     = $(tcasedir)this_image_d006a.f
+#OUTPUT    = this_image_d006a$(OBJ)
+#STDOUT    = this_image_d006a.err
+#STDERR    = this_image_d006a.err
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)this_image_d006a$(product)vf) this_image_d006a.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

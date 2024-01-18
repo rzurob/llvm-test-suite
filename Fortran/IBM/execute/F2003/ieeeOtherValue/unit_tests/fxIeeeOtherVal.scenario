@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003ieeeOtherValue/unit_tests/fxIeeeOtherVal.scenario
 #FEATURE   = 338353
-#CREATOR   = Zheming Gu
 #DATE      = July 8,2007
 #TEST_TYPE = functional test
 #ENDDOC

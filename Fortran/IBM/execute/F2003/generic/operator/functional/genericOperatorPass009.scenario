@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/generic/operator/functional/genericOperatorPass009.scenario
 #FEATURE   =
-#CREATOR   = Gaby Baghdadi (for defect 345243)
 #DATE      = 20080102
 #TEST_TYPE = functional
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/use/d356677d.scenario
 #FEATURE	= IMPORT statement must appear in an interface
-#CREATOR	= DF Manual Update
 #DATE		= 20070109
 #TEST_TYPE	= sanity
 #ENDDOC

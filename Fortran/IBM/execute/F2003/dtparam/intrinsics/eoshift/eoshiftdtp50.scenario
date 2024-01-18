@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME= eoshiftdtp50.scenario
 #FEATURE= eoshift with parameterized derived types
-#CREATOR= dayanand
 #DATE= 20085016
 #TEST_TYPE= functional
 #ENDDOC

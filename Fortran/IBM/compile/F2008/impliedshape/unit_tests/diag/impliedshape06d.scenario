@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/impliedshape/unit_tests/diag/impliedshape06d.scenario
+#FEATURE    = F385594 - Implied-shape Arrays
+#DATE       = 20110214
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)impliedshape06d.f
+#OPTS       = $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_DISABLE_MSG_NUM<1518-317>)
+#STDERR     = impliedshape06d.out
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = impliedshape06d.out $($(tcasedir)impliedshape06d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

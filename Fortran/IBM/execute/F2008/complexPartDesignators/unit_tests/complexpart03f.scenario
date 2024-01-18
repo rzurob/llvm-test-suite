@@ -1,11 +1,8 @@
-! %W%
-! %G%, %U%, %I% sccsid
 #BEGINSCENARIO
 
 #BEGINDOC
 #NAME       = F2008/complexPartDesignators/unit_tests/complexpart03f.scenario
 #FEATURE    = F383634 - Complex part designator
-#CREATOR    = David Nichols
 #DATE       = 20110104
 #TEST_TYPE  = Functional
 #ENDDOC
@@ -13,7 +10,6 @@
 #BEGINENV
 #BEGINDEFS
 #ENDDEFS
-  !#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
 #ENDENV
 
 #BEGINCONTROL

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/submodule/diag/submodule09d.scenario
 #FEATURE   = F2008 Submodule
-#CREATOR   = Bernard Kan
 #DATE      = 20121208
 #TEST_TYPE = Diagnostic
 #KEYWORDS  = F2008, submodule, F2008 submodule

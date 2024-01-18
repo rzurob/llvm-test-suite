@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/coarray/coarray_dummy/assumed_shape/assumedShapeCoarray22.scenario
 #FEATURE   =
-#CREATOR   = Shahid Alam
 #DATE      = 20110222
 #TEST_TYPE = functional
 #ENDDOC

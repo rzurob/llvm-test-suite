@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME	   = F2003/asynchIO/statements/wait/futurePending01.scenario
 #FEATURE   = Asynchronous I/O -- CLOSE Statement
-#CREATOR   = GM Manual Creation
 #DATE	   = 20060324
 #TEST_TYPE = sanity
 #ENDDOC

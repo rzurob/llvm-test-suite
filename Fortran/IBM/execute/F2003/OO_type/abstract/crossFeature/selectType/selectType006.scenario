@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/OO_type/abstract/crossFeature/selectType/selectType006.scenario
 #FEATURE = OO_type/abstract/crossFeature tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20050118
 #TEST_TYPE=sanity
 #ENDDOC

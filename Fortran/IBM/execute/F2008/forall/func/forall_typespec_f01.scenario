@@ -2,7 +2,6 @@
 
 #BEGINDOC
 #NAME             = forall_typespec_f01.scenario
-#CREATOR          = Bernard Kan
 #FEATURE          = 400906 Support typespec on FORALL
 #DATE             = June 18, 2012
 #TEST_TYPE        = DIAGNOSTIC

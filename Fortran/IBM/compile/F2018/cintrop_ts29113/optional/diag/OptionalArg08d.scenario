@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/cintrop_ts29113/optional/unit_tests/diag/OptionalArg08d.scenario
+#FEATURE = BIND(C) Optional arguments
+#DATE    = 20120612
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)OptionalArg08d.f
+#OPTS      =
+#OUTPUT    = OptionalArg08d$(OBJ)
+#STDERR    = OptionalArg08d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)OptionalArg08d$(product)vf) OptionalArg08d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

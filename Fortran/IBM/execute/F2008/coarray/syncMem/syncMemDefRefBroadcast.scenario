@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/syncMemDefRefBroadcast
 #FEATURE        = CAF SYNC MEMORY - P broadcasts values to all images, syncs, then each checks itself
-#CREATOR        = DF
 #DATE           = 2010-09-17
 #TEST_TYPE      = functional
 #ENDDOC

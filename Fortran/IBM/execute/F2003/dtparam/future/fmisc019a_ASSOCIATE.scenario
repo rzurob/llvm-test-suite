@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/OO_poly/misc/fmisc019a_ASSOCIATE.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of OO_poly/*
 #DATE      = 20071002
 #TEST_TYPE = functional
 #ENDDOC

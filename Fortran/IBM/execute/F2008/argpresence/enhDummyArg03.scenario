@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/../enhDummyArg03.scenario
 #FEATURE   = Enhancement to determining dummy argument presence
-#CREATOR   = Shahid Alam
 #DATE      = 20110808
 #TEST_TYPE = functional
 #ENDDOC

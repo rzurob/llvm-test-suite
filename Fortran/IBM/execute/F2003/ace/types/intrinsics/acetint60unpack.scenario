@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint60unpack.scenario
 #FEATURE	= Array constructor enhancement - array construction intrinsics
-#CREATOR	= DF Manual Update
 #DATE		= 20061124
 #TEST_TYPE	= sanity
 #ENDDOC

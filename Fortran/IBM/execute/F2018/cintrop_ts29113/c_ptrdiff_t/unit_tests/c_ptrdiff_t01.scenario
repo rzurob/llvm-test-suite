@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/cintrop_ts29113/misc/c_ptrdiff_t01.scenario
 #FEATURE = TS29113 C_PTRDIFF_T constant
-#CREATOR = Rafik Zurob
 #DATE    = 20150313
 #TEST_TYPE=unit
 #ENDDOC

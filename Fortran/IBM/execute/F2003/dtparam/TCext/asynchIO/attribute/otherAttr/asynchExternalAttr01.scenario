@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/asynchIO/attribute/otherAttr/asynchExternalAttr01.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of asynchIO/*
 #DATE      = 20071221
 #TEST_TYPE = functional
 #ENDDOC
@@ -15,17 +14,11 @@
 
 #BEGINCONTROL
 
-!
-!  asynchExternalAttr01m.f -- Module File
-!
 #CMD		= F_COMPILE
 #INPUT		= $(tcasedir)asynchExternalAttr01m.f
 #OUTPUT		= asynchExternalAttr01m$(OBJ)
 #ENDCMD
 
-!
-!  asynchExternalAttr01b.f -- Block Data File
-!
 #CMD		= F_COMPILE
 #OPTS		= $(OPT_SHOW_ATTRIBUTES_USED_ALL)
 #INPUT		= $(tcasedir)asynchExternalAttr01b.f

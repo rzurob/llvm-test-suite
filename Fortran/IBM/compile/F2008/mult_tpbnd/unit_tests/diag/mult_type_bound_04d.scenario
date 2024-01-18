@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/mult_tpbnd/unit_tests/diag/mult_type_bound_04d.scenario
+#FEATURE = 916819 F2008:Multiple type-bound procedures in a single procedure stmt
+#DATE    = 20110525
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)mult_type_bound_04d.f
+#OUTPUT    = mult_type_bound_04d$(OBJ)
+#STDERR    = mult_type_bound_04d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)mult_type_bound_04d.vf mult_type_bound_04d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

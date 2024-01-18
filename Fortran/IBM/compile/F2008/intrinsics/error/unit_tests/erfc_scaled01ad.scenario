@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=F2008/intrinsics/error/unit_tests/erfc_scaled01ad.scenario
 #FEATURE = F2008 ERFC_SCALED intrinsic
-#CREATOR = Rafik Zurob
 #DATE    = 20110501
 #TEST_TYPE=unit
 #ENDDOC

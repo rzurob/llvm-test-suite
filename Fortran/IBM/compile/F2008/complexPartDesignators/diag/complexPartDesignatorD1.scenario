@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/complexPartDesignator/diag/complexPartDesignatorD1.scenario
+#FEATURE   = Complex Part Designator
+#DATE      = 20110117
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)complexPartDesignatorD1.f
+#OUTPUT    = complexPartDesignatorD1$(OBJ)
+#STDOUT    = complexPartDesignatorD1.out
+#STDERR    = complexPartDesignatorD1.out
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)complexPartDesignatorD1.vf complexPartDesignatorD1.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

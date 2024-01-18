@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/OO_dtio/unformatted/section9.5.2/read/dummyArg002a.scenario
 #FEATURE = OO_dtio/unformatted/section9.5.2 tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20050118
 #TEST_TYPE=sanity
 #ENDDOC

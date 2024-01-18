@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_access/specific/procedure_call/DTaccess_p014
 #FEATURE        = CAF coarray access (specific) - procedure call
-#CREATOR        = Francesco Cassullo
 #DATE           = June 2011
 #TEST_TYPE      = functional
 #ENDDOC

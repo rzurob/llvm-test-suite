@@ -3,20 +3,17 @@
 #BEGINDOC
 #NAME       = F2008/do_concurrent/func/do_concurrent_omp_f004.scenario
 #FEATURE    = RTC 17293 - F2008: DO CONCURRENT Construct
-#CREATOR    = Nicole Negherbon
 #DATE       = August 12, 2015
 #REFERENCE  = omp30/misc/wait_policy/omp_wait_policy_02f.scenario
 #TEST_TYPE  = FUNCTIONAL
 #KEYWORDS   = DO CONCURRENT, OMP, PARALLEL, THREAD_WAIT_POLICY
 #ENDDOC
 
-! Scenario Environment Tags
 #BEGINENV
 #BEGINDEFS
 #ENDDEFS
 #ENDENV
 
-! Scenario Control Tags
 #BEGINCONTROL
 
 #CMD        = XLF2008_R_COMPILE

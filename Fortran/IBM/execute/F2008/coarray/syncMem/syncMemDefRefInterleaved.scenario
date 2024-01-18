@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/syncMem/syncMemDefRefInterleaved.scenario
 #FEATURE        = CAF SYNC MEMORY - simple test of definition preceding reference
-#CREATOR        = DF
 #DATE           = 2010-09-07
 #TEST_TYPE      = functional
 #ENDDOC

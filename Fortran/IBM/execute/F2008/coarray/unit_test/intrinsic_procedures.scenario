@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME	 = intrinsic_procedures.scenario
 #FEATURE = THIS_IMAGE intrinsic
-#CREATOR = Xing Xue
 #DATE    = 20090731
 #TEST_TYPE=unit test
 #ENDDOC
@@ -39,7 +38,7 @@
 	#INPUT     = intrinsic_procedures.out
 	#STDOUT    = intrinsic_procedures.out1
 	#ENDCMD
-	
+
 	#CMD       = DIFF
 	#INPUT     = intrinsic_procedures.out1 $($(tcasedir)intrinsic_procedures$(product)vf)
 	#ENDCMD

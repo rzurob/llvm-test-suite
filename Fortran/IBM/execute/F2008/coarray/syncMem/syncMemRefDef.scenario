@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/syncMemRefDef
 #FEATURE        = CAF SYNC MEMORY - coarray variable reference precedes (re)definition
-#CREATOR        = DF
 #DATE           = 2010-09-22
 #TEST_TYPE      = sanity
 #ENDDOC

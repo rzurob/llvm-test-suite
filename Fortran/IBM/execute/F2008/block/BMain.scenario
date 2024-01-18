@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /block/BMain.scenario
 #FEATURE   = F2008 BLOCK - in main program
-#CREATOR   = DF
 #DATE      = 2010-11-17
 #TEST_TYPE = functional
 #ENDDOC

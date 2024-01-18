@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME       = F2008/exit/unit_tests/func/exit01d.scenario
 #FEATURE    = F386895 - F2008 Exit Statement
-#CREATOR    = David Nichols
 #DATE       = 20110308
 #TEST_TYPE  = Diagnostic
 #ENDDOC

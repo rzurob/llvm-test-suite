@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME= F2003/dtparam/typeParamInquiry/functional/intrinsic/typeParamInquiryDTIntrinsic03.scenario
 #FEATURE= Type Parameter Inquiry(354612)
-#CREATOR=   Nancy Wang
 #DATE= July 6 2008
 #TEST_TYPE=  Functional
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = modeRoundNaNInfIO001.f
 #FEATURE   = 311684
-#CREATOR   = Bardia Mahjour
 #DATE      = July 7, 2006
 #TEST_TYPE = FUNCTIONAL
 #ENDDOC

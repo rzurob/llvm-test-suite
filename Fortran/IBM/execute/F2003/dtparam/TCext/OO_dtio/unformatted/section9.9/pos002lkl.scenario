@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=F2003/dtparam/TCext/OO_dtio/unformatted/section9.9/pos002lkl.scenario
 #FEATURE = OO_dtio/unformatted tests - regression run bucket + derived type parameters
-#CREATOR = automated conversion script
 #DATE    = 20071002
 #TEST_TYPE=sanity
 #ENDDOC

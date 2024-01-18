@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_access/specific/procedure_call/csLogicalArg
 #FEATURE        = CAF coarray access (specific) - procedure call - pass LOGICAL scalar coarray actual argument to procedure which examines it and modifies it
-#CREATOR        = DF
 #DATE           = 2010-10-04
 #TEST_TYPE      = functional
 #ENDDOC

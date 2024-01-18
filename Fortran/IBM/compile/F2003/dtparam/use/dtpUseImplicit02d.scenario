@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/use/dtpUseImplicit02d.scenario
 #FEATURE	= USEd type in implicit statement
-#CREATOR	= DF Manual Update
 #DATE		= 20070109
 #TEST_TYPE	= sanity
 #ENDDOC

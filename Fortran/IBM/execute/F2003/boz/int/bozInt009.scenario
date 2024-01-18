@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/F2003/boz/int/bozInt009.scenario
 #FEATURE = boz-literal-constant in INT intrinsic
-#CREATOR = Vicram Uppal
 #DATE    = 20070103
 #TEST_TYPE=sanity
 #ENDDOC

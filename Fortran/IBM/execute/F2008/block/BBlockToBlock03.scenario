@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/block/BBlockToBlock03.f
 #FEATURE   = var declared in first and simply used in second are not the same
-#CREATOR   = DF
 #DATE      = 2010-12-06
 #TEST_TYPE = functional
 #ENDDOC

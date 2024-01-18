@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=       complex_r32
 #FEATURE=    ISO_FORTRAN_ENV (376078)
-#CREATOR=    Morteza Ershad-Manesh
 #DATE=       10-07-12
 #TEST_TYPE=  FUNCTIONAL
 #ENDDOC
@@ -63,9 +62,6 @@
 
 
 
-!due to precision issue we will use two different verification file
-!complex_r32.vf will be used for Noopt
-!complex_r32_highopts.vf will be used for O2 or higher
 
 #IF in($(F_COMPILE^OPT_OPTIMIZE_LEVEL3)) || in($(F_COMPILE^OPT_OPTIMIZE_LEVEL4)) || in($(F_COMPILE^OPT_OPTIMIZE_LEVEL5))
 

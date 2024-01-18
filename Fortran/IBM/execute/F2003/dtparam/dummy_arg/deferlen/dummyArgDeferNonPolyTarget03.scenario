@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/dummy_arg/deferlen/dummyArgDeferNonPolyTarget03.scenario
 #FEATURE   = 358458
-#CREATOR   = Nancy Wang
 #DATE      = Nov. 7 2008
 #TEST_TYPE = Functional
 #ENDDOC

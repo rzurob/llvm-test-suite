@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=decimaleditd004.f
 #FEATURE = diagnostic for decimal= specifier and dp and dc edit descriptors.
-#CREATOR = Bardia Mahjour
 #DATE    = 20051202
 #TEST_TYPE=diag test
 #ENDDOC
@@ -59,7 +58,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 #OPTS      = -b
 #ENDCMD
 
-! extended should not result in any messages.
 #CMD       = RUN
 #ENVAR     = XLFRTEOPTS=$(XLFRTEOPTS):langlvl=90ext
 #INPUT     = decimaleditd004$(EXE)

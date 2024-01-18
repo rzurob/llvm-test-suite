@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/OO_poly/func_return/ffuncRet001.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of OO_poly/*
 #DATE      = 20070920
 #TEST_TYPE = functional
 #ENDDOC

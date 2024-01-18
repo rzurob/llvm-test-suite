@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/functional/crossFeature/structConstr/structConstr003al2.scenario
 #FEATURE = OO_dtio tests + derived type parameters
-#CREATOR = David Forster (derived from work by Robert Ma)
 #DATE    = 20070808
 #TEST_TYPE=sanity
 #ENDDOC

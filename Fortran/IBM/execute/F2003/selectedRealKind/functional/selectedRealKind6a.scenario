@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME     = F2003/selectedRealKind/functional/selectedRealKind6a.scenario
 #FEATURE  = SELECTED_REAL_KIND tests
-#CREATOR  = Salma Elshatanoufy
 #DATE     = 20070827
 #TEST_TYPE= functional
 #ENDDOC

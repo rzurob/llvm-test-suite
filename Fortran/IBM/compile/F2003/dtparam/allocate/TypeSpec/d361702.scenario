@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/allocate/TypeSpec/d361702.f
 #FEATURE   = DTP - Allocate with type-spec
-#CREATOR   = Dorra Bouchiha
 #DATE      = 20090126
 #TEST_TYPE = functional
 #ENDDOC

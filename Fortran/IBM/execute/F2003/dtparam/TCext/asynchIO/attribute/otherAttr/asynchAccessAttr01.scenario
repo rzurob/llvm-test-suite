@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/asynchIO/attribute/otherAttr/asynchAccessAttr01.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of asynchIO/*
 #DATE      = 20071218
 #TEST_TYPE = functional
 #ENDDOC

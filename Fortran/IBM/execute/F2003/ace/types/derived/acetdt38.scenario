@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/derived/acetdt38.scenario
 #FEATURE	= Array constructor enhancement AC in I/O, as output-item, using DTIO, incl. polymorphism
-#CREATOR	= DF Manual Update
 #DATE		= 20061116
 #TEST_TYPE	= sanity
 #ENDDOC

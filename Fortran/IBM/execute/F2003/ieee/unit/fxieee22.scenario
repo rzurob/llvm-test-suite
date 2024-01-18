@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/ieee/unit/fxieee22.scenario
 #FEATURE = ieee tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC
@@ -17,33 +16,26 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FLOAT_NAN
 
 #BEGINCONTROL
 
-! Deconstructing a SCRIPT : PREdeconSCRIPT
-! Valid line : $KILL $COMPILER -c $TR_SRC/ieeeconsts.f $OPTIONS
 
 #CMD       = XLF95_COMPILE
 #INPUT     = $(tcasedir)ieeeconsts.f
 #OPTS      = $(OPT_FLOAT_NANS_SUPPORT) $(OPT_FREE_SOURCE_FORM)
 #ENDCMD
-! Valid line : $KILL $COMPILER -I./ $TR_SRC/$1.f -o $1 $OPTIONS
 
 #CMD       = XLF95_COMPLINK
 #INPUT     = $(tcasedir)fxieee22.f
 #OPTS      = $(OPT_FLOAT_NANS_SUPPORT) $(OPT_FREE_SOURCE_FORM)
 #OUTPUT    = fxieee22$(EXE)
 #ENDCMD
-! Valid line : $1 > $1.res
 
 #CMD       = RUN
 #INPUT     = ./fxieee22
 #STDOUT    = fxieee22.res
 #ENDCMD
-! Valid line : diff $1.res $TR_SRC/correctout.vf
 
 #CMD       = DIFF
 #INPUT     = fxieee22.res $($(tcasedir)correctout$(product)vf)
 #ENDCMD
-! Valid line : rm -f $1 $1.res
-! Valid line : rm -f constants_for_ieee.mod ieeeconsts.o
 
 #ENDCONTROL
 #ENDSCENARIO

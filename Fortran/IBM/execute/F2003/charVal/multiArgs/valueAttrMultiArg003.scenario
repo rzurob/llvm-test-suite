@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/F2003/charVal/multiArgs/valueAttrMultiArg003.scenario
 #FEATURE = Value Attribute with characters > 1
-#CREATOR = Vicram Uppal
 #DATE    = 20060403
 #TEST_TYPE=functional
 #ENDDOC

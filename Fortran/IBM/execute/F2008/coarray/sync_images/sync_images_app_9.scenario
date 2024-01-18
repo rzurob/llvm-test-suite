@@ -1,24 +1,19 @@
-  ! %W%
-  ! %G%, %U%, %I% sccsid
   #BEGINSCENARIO
 
   #BEGINDOC
   #NAME       = sync_images_app_9.scenario
   #FEATURE    = SYNC IMAGES
-  #CREATOR    = FENG YE
   #DATE       = 2011-07-11
   #TEST_TYPE  = FUNCTIONAL
   #KEYWORDS   = SYNC, IMAGES, F2008
   #ENDDOC
 
-  ! Scenario Environment Tags
   #BEGINENV
   #BEGINDEFS
   #ENDDEFS
     #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
   #ENDENV
 
-  ! Scenario Control Tags
   #BEGINCONTROL
 
   #CMD       = F_COMPILE

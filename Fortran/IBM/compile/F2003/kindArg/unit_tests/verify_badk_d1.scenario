@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=verify_badk_d1.scenario
 #FEATURE = Support new Kind Parameter for Several Intrinsics
-#CREATOR = Vince Yuen
 #DATE    = 20060414
 #TEST_TYPE=diagnostic ut
 #ENDDOC

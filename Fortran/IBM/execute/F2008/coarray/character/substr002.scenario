@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/coarray/character/substr002.scenario
 #FEATURE   = character coarray
-#CREATOR   = Ke Wen Lin
 #DATE      = 20110412
 #TEST_TYPE = functional
 #ENDDOC

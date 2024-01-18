@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    =  F2008/intrinsics/csizeof/
 #FEATURE =  F2008 ISO_C_BINDING C_SIZEOF function 381475
-#CREATOR =  Michelle Zhang
 #DATE    =  2011/01/14
 #TEST_TYPE= diagnostic
 #ENDDOC

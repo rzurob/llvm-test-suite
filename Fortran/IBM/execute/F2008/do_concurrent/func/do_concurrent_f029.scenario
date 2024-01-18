@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/do_concurrent/do_concurrent_f029.scenario
 #FEATURE   = F2008 DO CONCURRENT
-#CREATOR   = Bernard Kan
 #DATE      = 20150921
 #TEST_TYPE = Functional
 #KEYWORDS  = F2008 DO CONCURRENT
@@ -29,7 +28,6 @@ PROCS=4
 #ENDCMD
 
 #CMD       = XLF90_LINK
-!#OPTS      =  $(OPT_FREE_SOURCE_FORM)
 #INPUT     = do_concurrent_f029a$(OBJ) do_concurrent_f029$(OBJ)
 #OUTPUT    = do_concurrent_f029$(EXE)
 #ENDCMD

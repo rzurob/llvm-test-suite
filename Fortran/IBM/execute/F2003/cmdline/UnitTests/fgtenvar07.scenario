@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME	   = cmdline/UnitTests/fgtenvar07.scenario
 #FEATURE   = cmdline tests - regression run bucket
-#CREATOR   = automated conversion script
 #DATE      = 2081110
 #TEST_TYPE = sanity
 #ENDDOC

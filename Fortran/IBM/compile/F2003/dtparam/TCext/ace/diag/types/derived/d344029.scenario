@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/diag/types/derived/d344029.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement)
+#DATE		= 20071120
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d344029.f
+#OUTPUT		= d344029$(OBJ)
+#STDOUT		= d344029.out
+#STDERR		= d344029.out
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)d344029$(product)vf) d344029.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

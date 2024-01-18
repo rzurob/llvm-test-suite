@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/critical/diag/critical02d.scenario
+#FEATURE    = F381021 - Critical Unit Tests
+#DATE       = 20101013
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)critical02d.f
+#OUTPUT     = critical02d$(OBJ)
+#STDOUT     = critical02d.out
+#STDERR     = critical02d.err
+#VALIDRCS   = $(RC_COMP_E)
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = critical02d.err $($(tcasedir)critical02d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

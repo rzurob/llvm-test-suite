@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = ffuncRet005a1.scenario
 #FEATURE   =
-#CREATOR   = MZ adapted from dtparam/TCext/OO_poly/func_return/ffuncRet005a1.f
 #DATE      = 20100504
 #TEST_TYPE = functional
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2004/deferlen/functional/allocate/deferLenAllocate004d.scenario
 #FEATURE = deferlen tests
-#CREATOR = Robert Ma
 #DATE    = 20060501
 #TEST_TYPE=sanity
 #ENDDOC

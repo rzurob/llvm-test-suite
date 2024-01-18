@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /syncAll/saBasicMessageOne.scenario
 #FEATURE   = CAF SYNC ALL - errmsg variable is not altered on no error - one image
-#CREATOR   = DF
 #DATE      = 20100727
 #TEST_TYPE = functional
 #ENDDOC
@@ -11,7 +10,6 @@
 #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
 #ENDENV
 
-! Just like saBasicMessage, but limited to a single image
 
 #BEGINCONTROL
 

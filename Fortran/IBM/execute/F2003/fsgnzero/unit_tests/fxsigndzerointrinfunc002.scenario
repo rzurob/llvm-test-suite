@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=fxsigndzerointrinfnuc002.scenario
 #FEATURE = functional testing of signed zeros as args to ATAN2, LOG and SQRT intrinsics
-#CREATOR = Michael Selvanayagam
 #DATE    = 20050826
 #TEST_TYPE=unit test
 #ENDDOC

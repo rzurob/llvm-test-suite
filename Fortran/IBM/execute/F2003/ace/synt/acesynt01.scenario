@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/synt/acesynt01.scenario
 #FEATURE	= Array constructor enhancement syntax tests
-#CREATOR	= DF Manual Update
 #DATE		= 20060609
 #TEST_TYPE	= sanity
 #ENDDOC

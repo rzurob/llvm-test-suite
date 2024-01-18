@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/allocEnh/exprEval/order/diffKindVectorIndex03.scenario
 #FEATURE	= Intrinsic Assignment -- Order of Expression Evaluation
-#CREATOR	= GM Manual Creation
 #DATE		= 20061011
 #TEST_TYPE	= functional
 #ENDDOC

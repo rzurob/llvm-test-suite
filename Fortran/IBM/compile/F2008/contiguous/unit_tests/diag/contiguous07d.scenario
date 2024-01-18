@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/contiguous/diag/contiguous07d.scenario
+#FEATURE    = F375705 - F2008: support CONTIGUOUS attribute & IS_CONTIGUOUS intrinsic
+#DATE       = 20100920
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)contiguous07d.f
+#OUTPUT     = contiguous07d$(OBJ)
+#STDOUT     = contiguous07d.out
+#STDERR     = contiguous07d.err
+#VALIDRCS   = $(RC_COMP_E)
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = contiguous07d.err $($(tcasedir)contiguous07d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

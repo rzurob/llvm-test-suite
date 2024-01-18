@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/cintrop1/unit_isoc/icfres02.scenario
 #FEATURE = cintrop1 tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC
@@ -17,16 +16,11 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 
 #BEGINCONTROL
 
-! Deconstructing a POSTCMD SCRIPT : POSTdeconSCRIPT
-! #!/bin/sh
-! Valid line : ${COMPILER} ${TR_SRC}/icfres$1.f -o icfres$1 ${OPTIONS}
 
 #CMD       = XLF95_COMPLINK
 #INPUT     = $(tcasedir)icfres02.f
 #OUTPUT    = icfres02$(EXE)
 #ENDCMD
-! Valid line : rm -f icfres$1 m.mod
-! Valid line : exit ${RETVAL}
 
 #ENDCONTROL
 #ENDSCENARIO

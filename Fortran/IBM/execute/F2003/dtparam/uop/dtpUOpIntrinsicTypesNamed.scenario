@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpIntrinsicTypesNamed.scenario
 #FEATURE   = User-Defined Operators - involvement of intrinsic types and named operators
-#CREATOR   = DF Manual Update
 #DATE      = 20090211
 #TEST_TYPE = sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint35.scenario
 #FEATURE	= Array constructor enhancement intrinsic AC's in static initialisation
-#CREATOR	= DF Manual Update
 #DATE		= 20061114
 #TEST_TYPE	= sanity
 #ENDDOC

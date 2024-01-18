@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint30b.scenario
 #FEATURE	= Array constructor enhancement intrinsic type specifier BOZ + real 4
-#CREATOR	= DF Manual Update
 #DATE		= 20060804
 #TEST_TYPE	= functional
 #ENDDOC

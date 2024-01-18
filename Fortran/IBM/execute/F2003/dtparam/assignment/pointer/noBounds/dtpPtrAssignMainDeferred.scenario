@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpPtrAssignMainDeferred.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign via pointers with deferred length in main program
-#CREATOR   = DF Manual Update
 #DATE      = 20090112
 #TEST_TYPE = sanity
 #ENDDOC

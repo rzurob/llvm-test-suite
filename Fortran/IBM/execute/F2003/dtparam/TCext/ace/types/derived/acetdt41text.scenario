@@ -3,7 +3,6 @@
 #NAME		= F2003/dtparam/TCext/ace/types/intrinsics/acetdt41text.scenario
 #FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
 				AC Containing Dummy Arguments, Including Arrays (Derived Types))
-#CREATOR	= Glen Mateer (derived from work by David Forster)
 #DATE		= 20080117
 #TEST_TYPE	= Functional
 #ENDDOC

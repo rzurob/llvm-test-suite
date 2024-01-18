@@ -2,13 +2,11 @@
 #BEGINDOC
 #NAME=cintrop4/unit_pattr/extchk.scenario
 #FEATURE = cintrop4 tests - regression run bucket
-#CREATOR = CPR Manual update
 #DATE    = 20060810
 #TEST_TYPE=sanity
 #ENDDOC
 
 #BEGINENV
-!OPTIONS=$(? XOPTS) -qdebug=intmsg  $(COMP_LIBS)
 #ENDENV
 
 #BEGINCONTROL

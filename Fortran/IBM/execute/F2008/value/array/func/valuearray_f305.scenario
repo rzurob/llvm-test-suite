@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME      = F2008/value/array/func/valuearray_f305.scenario
 #FEATURE   = VALUE(F2008 extension) - dummy argument arrays allowed with value
-#CREATOR   = Cezar Lutac
 #DATE      = 20150924
 #TEST_TYPE = functional
 #KEYWORDS  = F2008, value, arrays, array

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = cintrop_ts29113/AssumedLength/func/AssumedLen401f.scenario
 #FEATURE   = C Interop, Assumed Length
-#CREATOR   = Maryam Moghadas
 #DATE      = 2014-06-25
 #TEST_TYPE = functional
 #KEYWORDS  = C Interop, Assumed Length

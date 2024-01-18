@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=static_stmt_in_pure_block.scenario
+#FEATURE = F2008 BLOCK construct
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)static_stmt_in_pure_block.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#STDERR    = static_stmt_in_pure_block.out
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = static_stmt_in_pure_block.out $(tcasedir)static_stmt_in_pure_block.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

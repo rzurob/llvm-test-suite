@@ -1,0 +1,36 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop2/unit_modvar/bcunattr.scenario
+#FEATURE = cintrop2 tests - regression run bucket
+#DATE    = 20060724
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD    = XLF95_COMPILE
+#INPUT  = $(tcasedir)bcunattr.f
+#OPTS   = $(OPT_FREE_SOURCE_FORM) $(OPT_SHOW_ATTRIBUTES_USED) $(OPT_GEN_BASIC_LISTING) $(OPT_SHOW_XREF_ALL_VARIABLES)
+#OUTPUT = bcunattr$(OBJ)
+#ENDCMD
+
+#CMD    = XLF95_LINK
+#INPUT  = bcunattr$(OBJ)
+#OPTS   = $(OPT_FREE_SOURCE_FORM) $(OPT_SHOW_ATTRIBUTES_USED) $(OPT_GEN_BASIC_LISTING) $(OPT_SHOW_XREF_ALL_VARIABLES)
+#OUTPUT = bcunattr$(EXE)
+#ENDCMD
+
+#CMD    = AWK
+#INPUT  = '/IDENTIFIER NAME/,/End of Compilation/' bcunattr.lst
+#STDOUT = bcunattr.attrlst
+#ENDCMD
+
+#CMD    = XLDIFF
+#INPUT  = bcunattr.attrlst $(tcasedir)bcunattr.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

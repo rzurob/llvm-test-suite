@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME      = F2011/do_concurrent/diag/do_concurrent_d011.scenario
+#FEATURE   = RTC STORY 17293 - F2011: DO CONCURRENT construct
+#PURPOSE   = Test the DO CONCURRENT construct
+#DATE      = March 27, 2015
+#TEST_TYPE = DIAGNOSTIC
+#KEYWORD   = F2011 DO CONCURRENT
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD      = F_COMPILE
+#INPUT    = $(tcasedir)do_concurrent_d011.f
+#STDOUT   = do_concurrent_d011.out
+#STDERR   = do_concurrent_d011.out
+#VALIDRCS = $(RC_COMP_S)
+#ENDCMD
+
+#CMD      = XLDIFF
+#INPUT    = do_concurrent_d011.out $($(tcasedir)do_concurrent_d011$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

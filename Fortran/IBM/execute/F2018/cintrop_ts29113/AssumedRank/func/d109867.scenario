@@ -3,7 +3,6 @@
 #NAME      = cintrop_ts29113/AssumedRank/func/d109867.scenario
 #FEATURE   = C Interop, Assumed Rank
 #FEATURE   = RTC 109867: ASSUMED_RANK : Wrong Rank value or ICE  found if the Fortran callee dummy contains CONTIGUOUS attribute
-#CREATOR   = Wei Li from Daniel Chen's TC
 #DATE      = 201504
 #TEST_TYPE = defect
 #KEYWORDS  = C Interop, Assumed Rank

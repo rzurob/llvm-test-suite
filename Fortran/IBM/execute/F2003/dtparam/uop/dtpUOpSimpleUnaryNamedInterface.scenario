@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpSimpleUnaryNamedInterface.scenario
 #FEATURE   = User-Defined Operators - correct unary operator functions are used for given type and kind (single named operator)(in interface)
-#CREATOR   = DF Manual Update
 #DATE      = 20090211
 #TEST_TYPE = sanity
 #ENDDOC

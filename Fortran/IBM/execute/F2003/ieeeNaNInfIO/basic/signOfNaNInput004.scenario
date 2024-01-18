@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = signOfNaNInput004.f
 #FEATURE   = 311684
-#CREATOR   = Bardia Mahjour
 #DATE      = June 20, 2006
 #TEST_TYPE = FUNCTIONAL
 #ENDDOC

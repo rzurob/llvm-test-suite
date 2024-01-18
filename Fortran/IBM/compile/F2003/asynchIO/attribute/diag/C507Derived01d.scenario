@@ -1,0 +1,26 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/asynchIO/attribute/diag/C507Derived01d.scenario
+#FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
+#DATE		= 20060117
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINENV
+#INVALID_PRODUCT= bgl
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)C507Derived01d.f
+#OUTPUT		= C507Derived01d$(OBJ)
+#STDERR		= C507Derived01d.stderr
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)C507Derived01d$(product)vf) C507Derived01d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

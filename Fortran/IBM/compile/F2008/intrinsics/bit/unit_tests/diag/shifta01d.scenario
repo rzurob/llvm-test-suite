@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      =
+#FEATURE   =
+#DATE      = 20130227
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)shifta01d.f
+#OUTPUT    = shifta01d$(OBJ)
+#STDERR    = shifta01d.err
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = shifta01d.err $(tcasedir)shifta01d.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/TCext/abstracti/abstracti008l.scenario
 #FEATURE	= Abstract Interface Tests + derived type parameters
-#CREATOR	= automated conversion script
 #DATE		= 20071015
 #TEST_TYPE	= Functional
 #ENDDOC

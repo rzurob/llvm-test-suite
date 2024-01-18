@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME= cshiftdtp49.scenario
 #FEATURE= cshift with parameterized derived types
-#CREATOR= Andy Sheung
 #DATE= 200807
 #TEST_TYPE= functional
 #ENDDOC

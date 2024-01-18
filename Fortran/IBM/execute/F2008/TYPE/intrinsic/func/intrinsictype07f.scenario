@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/TYPE/intrinsic/unit_tests/func/intrinsictype07f.scenario
+#FEATURE    = F386894 - F2008: Intrinsic types in TYPE spec
+#DATE       = 20110310
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#OPTS       = '-WF,-DITYPE=TYPE(complex),-DIVAL=3.0'
+#INPUT      = $(tcasedir)intrinsictype01f.F
+#OUTPUT     = intrinsictype07f$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = intrinsictype07f$(OBJ)
+#OUTPUT     = intrinsictype07f$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = intrinsictype07f$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

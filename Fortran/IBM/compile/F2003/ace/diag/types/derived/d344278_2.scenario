@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/diag/types/derived/d344278_2.scenario
+#FEATURE	= Array Constructor Enhancement
+#DATE		= 20080205
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)d344278_2.f
+#OPTS       = -qdebug=noline070112:shutup
+#OUTPUT		= d344278_2$(OBJ)
+#STDOUT		= d344278_2.out
+#STDERR		= d344278_2.out
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)d344278_2$(product)vf) d344278_2.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

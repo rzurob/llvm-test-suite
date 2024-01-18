@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/block/BInIntProc.scenario
 #FEATURE   = F2008 BLOCK - block in different contexts (internal procedure)
-#CREATOR   = DF Manual Update
 #DATE      = 20101214
 #TEST_TYPE = functional
 #ENDDOC

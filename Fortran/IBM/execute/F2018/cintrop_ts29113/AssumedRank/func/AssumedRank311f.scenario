@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = cintrop_ts29113/AssumedRank/func/AssumedRank311f.scenario
 #FEATURE   = C Interop, Assumed Rank
-#CREATOR   = Dorra Bouchiha
 #DATE      = 2013-10-18
 #TEST_TYPE = functional
 #KEYWORDS  = C Interop, Assumed Rank, CFI functions

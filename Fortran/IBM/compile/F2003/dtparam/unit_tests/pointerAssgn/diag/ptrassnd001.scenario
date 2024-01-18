@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=     ptrassnd001.f
+#FEATURE=
+#DATE=      04/07
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD=      F_COMPILE
+#OPTS=     $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg
+#INPUT=    $(tcasedir)ptrassnd001.f
+#STDERR=   ptrassnd001.err
+#VALIDRCS= $(RC_COMP_E)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    ptrassnd001.err $($(tcasedir)ptrassnd001$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO

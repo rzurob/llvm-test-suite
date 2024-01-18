@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = datastmnt_d03.scenario
+#FEATURE  = CAF Intrinsics
+#DATE     = November 2010
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)datastmnt_d03.f
+#OUTPUT    = datastmnt_d03$(OBJ)
+#STDOUT    = datastmnt_d03.out
+#STDERR    = datastmnt_d03.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)datastmnt_d03$(product)vf) datastmnt_d03.out
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

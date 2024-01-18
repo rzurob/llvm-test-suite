@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint32r.scenario
 #FEATURE	= Array constructor enhancement - procedure pointers can be invoked in implied-do for data (real)
-#CREATOR	= DF Manual Update
 #DATE		= 20060830
 #TEST_TYPE	= sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/streamio/unformatted/fxstio014.scenario
 #FEATURE = streamio tests - regression run bucket
-#CREATOR = CPR Manual conversion
 #DATE    = 20041208
 #TEST_TYPE=sanity
 #ENDDOC

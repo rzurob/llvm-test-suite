@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=      dtParamTypeDefExtends01.scenario
 #FEATURE=   Derived Type Parameters - declarations
-#CREATOR=   Rafik Zurob
 #DATE=      20060519
 #TEST_TYPE= unit
 #ENDDOC

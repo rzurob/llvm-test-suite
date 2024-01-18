@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/generic/ambiguity/genericAmbiguityTypeBound007.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of generic/ambiguity/*
 #DATE      = 20071113
 #TEST_TYPE = functional
 #ENDDOC

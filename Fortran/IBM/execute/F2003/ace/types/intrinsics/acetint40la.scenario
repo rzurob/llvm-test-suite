@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2004/ace/types/intrinsics/acetint40la.scenario
 #FEATURE	= Array constructor enhancement - assign AC with logical constants of different kinds
-#CREATOR	= DF Manual Update
 #DATE		= 20060614
 #TEST_TYPE	= sanity
 #ENDDOC

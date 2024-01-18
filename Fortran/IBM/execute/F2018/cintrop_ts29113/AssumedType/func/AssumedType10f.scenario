@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = cintrop_ts29113/AssumedType/func/AssumedType10f.scenario
 #FEATURE   = C Interop: Assumed Type
-#CREATOR   = Dorra Bouchiha
 #DATE      = 2012-06-20
 #TEST_TYPE = functional
 #KEYWORDS  = C Interop, Assumed Type

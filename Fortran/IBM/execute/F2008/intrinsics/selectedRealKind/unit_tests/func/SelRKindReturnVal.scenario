@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/intrinsics/selectedRealKind/unit_tests/func/SelRKindReturnVal.scenario
 #FEATURE   = 376076
-#CREATOR   = Ren Jian Gang
 #DATE      = November 05, 2010
 #TEST_TYPE = FUNCTIONAL
 #ENDDOC

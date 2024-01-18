@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=data_module.scenario
 #FEATURE = Coarray in data
-#CREATOR = Feng Ye
 #DATE    = 20100602
 #TEST_TYPE=unit test
 #ENDDOC

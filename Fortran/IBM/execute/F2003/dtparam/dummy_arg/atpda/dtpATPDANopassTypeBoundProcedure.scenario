@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/dummy_arg/atpda/dtpATPDANopassTypeBoundProcedure.scenario
 #FEATURE   = Assumed type parameters and dummy arguments - nopass typebound procedure
-#CREATOR   = DF Manual Update
 #DATE      = 20081015
 #TEST_TYPE = sanity
 #ENDDOC

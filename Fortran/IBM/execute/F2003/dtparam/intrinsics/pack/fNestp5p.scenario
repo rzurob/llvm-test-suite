@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = F2003/dtparam/intrinsics/pack/fNestp5p.scenario
 #FEATURE = dtp intrinsics
-#CREATOR = Adrian Green
 #DATE    = 20080821
 #TEST_TYPE=functional
 #ENDDOC

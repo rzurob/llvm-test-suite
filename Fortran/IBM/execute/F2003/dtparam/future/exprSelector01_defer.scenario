@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/associate/basic/exprSelector01_defer.scenario
 #FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters)
-#CREATOR	= Glen Mateer
 #DATE		= 20080708
 #TEST_TYPE	= functional
 #ENDDOC

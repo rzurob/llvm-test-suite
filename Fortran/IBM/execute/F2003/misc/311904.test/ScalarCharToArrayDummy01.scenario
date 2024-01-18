@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=ScalarCharToArrayDummy01
 #FEATURE = Passing a scalar character to an array dummy
-#CREATOR = Rob James
 #DATE    = 20060427
 #TEST_TYPE=Functional unit test
 #ENDDOC

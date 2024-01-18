@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=comblk_name_in_save_in_block.scenario
+#FEATURE = F2008 BLOCK construct
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)comblk_name_in_save_in_block.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#STDERR    = comblk_name_in_save_in_block.out
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = comblk_name_in_save_in_block.out $(tcasedir)comblk_name_in_save_in_block.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

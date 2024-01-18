@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=F2008/intrinsics/csizeof/unit_tests/diag/csizeof_01d.scenario
+#FEATURE = F2008 ISO_C_BINDING - C_SIZEOF
+#DATE    = 20101226
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)csizeof_01d.f
+#OUTPUT    = csizeof_01d$(OBJ)
+#STDERR    = csizeof_01d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)csizeof_01d$(product)vf) csizeof_01d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

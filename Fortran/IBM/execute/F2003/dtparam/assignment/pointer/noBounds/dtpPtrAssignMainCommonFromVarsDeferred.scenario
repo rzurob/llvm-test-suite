@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignMainCommonFromVarsDeferred.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via pointers with deferred length parameter, assign variables to variables in common in main
-#CREATOR   = DF Manual Update
 #DATE      = 20081112
 #TEST_TYPE = sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/submodule/func/submodule07f.scenario
 #FEATURE   = F2008 Submodule
-#CREATOR   = Bernard Kan
 #DATE      = 20121206
 #TEST_TYPE = Functional
 #KEYWORDS  = F2008, submodule, F2008 submodule, OMP3.1, OMP4.0, Atomic Capture, OpenMP

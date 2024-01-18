@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/asynchIO/attribute/misc/C1117asynchAttr01.scenario
 #FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
-#CREATOR	= GM Manual Creation
 #DATE		= 20060411
 #TEST_TYPE	= sanity
 #ENDDOC

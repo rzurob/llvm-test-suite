@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME      = cmdline/LangFeatures/fxcllf17.scenario
 #FEATURE   = cmdline tests - regression run bucket
-#CREATOR   = SH Manual conversion
 #DATE      = 20081110
 #TEST_TYPE = sanity
 #ENDDOC

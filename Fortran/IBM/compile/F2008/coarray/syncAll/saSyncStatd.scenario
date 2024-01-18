@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /syncAll/saSyncStatd.scenario
 #FEATURE   = sync all - diagnostic message on incorrect sync-stat entry
-#CREATOR   = DF
 #DATE      = 20100727
 #TEST_TYPE = diagnostic
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/allocate/SourceExp/AllocateWithSourceExp01.f
 #FEATURE   = DTP - Allocate with source expression
-#CREATOR   = Dorra Bouchiha
 #DATE      = 20090126
 #TEST_TYPE = functional
 #ENDDOC

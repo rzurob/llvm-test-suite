@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/generic/genericName/functional/genericGenericNameArray006d.scenario
 #FEATURE = OO_dtio tests
-#CREATOR = Robert Ma
 #DATE    = 20051215
 #TEST_TYPE=sanity
 #ENDDOC

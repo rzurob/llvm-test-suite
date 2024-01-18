@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/unit_tests/data/diaDataDTParmInitExpr.scenario
 #FEATURE	= 333315
-#CREATOR	= Zheming Gu
 #DATE		= May 11,2007
 #TEST_TYPE	= diagnostic test
 #ENDDOC

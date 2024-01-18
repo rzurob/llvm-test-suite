@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2012/generic/assignment/functional/genericAssignmentPass012.scenario
 #FEATURE = OO_dtio tests
-#CREATOR = Robert Ma
 #DATE    = 20041215
 #TEST_TYPE=sanity
 #ENDDOC

@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/coarray/error_stop/diag/error_stop_032d.scenario
+#FEATURE    = CAF: ERROR STOP statement (feature #351605.31)
+#DATE       = 20100828
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#OPTS       = $(OPT_NOCOARRAY)
+#INPUT      = $(tcasedir)error_stop_do_label.f
+#OUTPUT     = error_stop_do_label$(OBJ)
+#STDOUT     = error_stop_do_label_nocaf.out
+#STDERR     = error_stop_do_label_nocaf.err
+#VALIDRCS   = $(RC_COMP_E)
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = error_stop_do_label_nocaf.err $($(tcasedir)error_stop_do_label_nocaf$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/ieeeOtherValue/unit_tests/diaIeeeValue.scenario
 #FEATURE   = 338353
-#CREATOR   = Zheming Gu
 #DATE      = July 8,2007
 #TEST_TYPE = diagnostic test
 #ENDDOC

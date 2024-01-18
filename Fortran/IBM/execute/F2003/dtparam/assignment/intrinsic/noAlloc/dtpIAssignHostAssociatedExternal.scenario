@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignHostAssociatedExternal.scenario
 #FEATURE   = Intrinsic Assignment without Allocation - assign to host associated variables in external subprogram
-#CREATOR   = DF Manual Update
 #DATE      = 20081112
 #TEST_TYPE = sanity
 #ENDDOC

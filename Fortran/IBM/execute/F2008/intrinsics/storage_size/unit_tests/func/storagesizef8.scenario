@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=storagesizef8.scenario
 #FEATURE = STORAGE_SIZE intrinsic
-#CREATOR = Daniel Chen
 #DATE    = 20140828
 #TEST_TYPE=unit
 #ENDDOC

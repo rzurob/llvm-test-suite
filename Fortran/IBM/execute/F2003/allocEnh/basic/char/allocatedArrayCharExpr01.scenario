@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/allocEnh/basic/char/allocatedArrayCharExpr01.scenario
 #FEATURE	= Intrinsic Assignment -- Basic Tests: CHARACTER Intrinsic Type
-#CREATOR	= GM Manual Creation
 #DATE		= 20060915
 #TEST_TYPE	= functional
 #ENDDOC

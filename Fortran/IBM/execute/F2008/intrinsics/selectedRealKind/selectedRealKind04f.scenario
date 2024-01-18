@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME     = F2008/intrinsics/selectedRealKind/selectedRealKind04f.scenario
 #FEATURE  = SELECTED_REAL_KIND tests
-#CREATOR  = Jin Li
 #DATE     = 20101020
 #TEST_TYPE= functional
 #ENDDOC

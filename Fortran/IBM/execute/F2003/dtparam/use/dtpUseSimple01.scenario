@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/use/dtpUseSimple01.scenario
 #FEATURE   = DTP and USE - reference any module types in declarations
-#CREATOR   = DF Manual Update
 #DATE      = 20080919
 #TEST_TYPE = sanity
 #ENDDOC

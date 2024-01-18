@@ -1,3 +1,0 @@
-allocMoldEnhdiag01.scenario
-allocMoldEnhdiag02.scenario
-allocMoldEnhdiag03.scenario

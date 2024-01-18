@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/diag/types/derived/acetdt50dkl_dlp.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement -	\
+				Incompatible AC in SOURCE of ALLOCATE)
+#DATE		= 20071130
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt50dkl_dlp.f
+#OUTPUT		= acetdt50dkl_dlp$(OBJ)
+#STDERR		= acetdt50dkl_dlp.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)acetdt50dkl_dlp$(product)vf) acetdt50dkl_dlp.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

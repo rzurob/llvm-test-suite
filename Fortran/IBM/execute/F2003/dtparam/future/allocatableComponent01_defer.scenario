@@ -3,7 +3,6 @@
 #NAME		= F2003/dtparam/associate/components/allocatableComponent01_defer.scenario
 #FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters) --	\
 				Component Attributes
-#CREATOR	= Glen Mateer
 #DATE		= 20080818
 #TEST_TYPE	= functional
 #ENDDOC

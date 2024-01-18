@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint34f.scenario
 #FEATURE	= Array constructor enhancement - vector subscript in LHS of assignment statement
-#CREATOR	= DF Manual Update
 #DATE		= 20061024
 #TEST_TYPE	= sanity
 #ENDDOC

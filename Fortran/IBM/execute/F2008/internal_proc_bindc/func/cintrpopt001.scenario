@@ -2,8 +2,6 @@
 #BEGINDOC
 #NAME      = cintrop_ts29113/optional/func/fcintrpopt001.scenario
 #FEATURE   = 399982 - C Interop: Optional Argument
-!old#CREATOR = Ying Zhang
-#CREATOR   = Izhak Jakov
 #DATE      = 2012-05-01
 #TEST_TYPE = functional
 #KEYWORDS  = C Interop, Optional

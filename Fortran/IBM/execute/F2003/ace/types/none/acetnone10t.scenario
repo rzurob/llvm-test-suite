@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/none/acetnone10t.scenario
 #FEATURE	= Array constructor enhancement arrays and array sections (derived)
-#CREATOR	= DF Manual Update
 #DATE		= 20060814
 #TEST_TYPE	= sanity
 #ENDDOC

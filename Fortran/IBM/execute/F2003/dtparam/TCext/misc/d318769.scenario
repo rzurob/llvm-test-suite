@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/misc/d318769.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of misc/*
 #DATE      = 20071126
 #TEST_TYPE = functional
 #ENDDOC

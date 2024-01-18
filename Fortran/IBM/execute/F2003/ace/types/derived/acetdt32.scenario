@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/derived/acetdt32.scenario
 #FEATURE	= Array constructor enhancement - procedure pointers can be invoked in implied-do for data (derived type)
-#CREATOR	= DF Manual Update
 #DATE		= 20060901
 #TEST_TYPE	= sanity
 #ENDDOC

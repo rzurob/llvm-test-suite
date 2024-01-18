@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/block/BInInt2ModProc.scenario
 #FEATURE   = F2008 BLOCK - block in different contexts (internal of module)
-#CREATOR   = DF Manual Update
 #DATE      = 20101214
 #TEST_TYPE = functional
 #ENDDOC

@@ -1,0 +1,153 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/arg.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#DATE    = 20060814
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=1,-DIMPL=1,-DOPT=1
+#INPUT     = $(tcasedir)arg.F
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=1,-DIMPL=1,-DOPT=2
+#INPUT     = $(tcasedir)arg.F
+#STDERR    = arg.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = arg.out $(tcasedir)arg-112.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=1,-DIMPL=1,-DOPT=3
+#INPUT     = $(tcasedir)arg.F
+#STDERR    = arg.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = arg.out $(tcasedir)arg-112.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=1,-DIMPL=1,-DOPT=4
+#INPUT     = $(tcasedir)arg.F
+#STDERR    = arg.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = arg.out $(tcasedir)arg-112.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=1,-DIMPL=2,-DOPT=1
+#INPUT     = $(tcasedir)arg.F
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=1,-DIMPL=2,-DOPT=2
+#INPUT     = $(tcasedir)arg.F
+#STDERR    = arg.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = arg.out $(tcasedir)arg-112.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=1,-DIMPL=2,-DOPT=3
+#INPUT     = $(tcasedir)arg.F
+#STDERR    = arg.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = arg.out $(tcasedir)arg-112.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=2,-DIMPL=1,-DOPT=1
+#INPUT     = $(tcasedir)arg.F
+#STDERR    = arg.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = arg.out $(tcasedir)arg-211.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=2,-DIMPL=1,-DOPT=2
+#INPUT     = $(tcasedir)arg.F
+#STDERR    = arg.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = arg.out $(tcasedir)arg-212.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=2,-DIMPL=1,-DOPT=3
+#INPUT     = $(tcasedir)arg.F
+#STDERR    = arg.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = arg.out $(tcasedir)arg-213.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=2,-DIMPL=1,-DOPT=4
+#INPUT     = $(tcasedir)arg.F
+#STDERR    = arg.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = arg.out $(tcasedir)arg-214.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=2,-DIMPL=2,-DOPT=1
+#INPUT     = $(tcasedir)arg.F
+#STDERR    = arg.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = arg.out $(tcasedir)arg-221.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=2,-DIMPL=2,-DOPT=2
+#INPUT     = $(tcasedir)arg.F
+#STDERR    = arg.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -WF,-DARG=2,-DIMPL=2,-DOPT=3
+#INPUT     = $(tcasedir)arg.F
+#STDERR    = arg.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = arg.out $(tcasedir)arg-223.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

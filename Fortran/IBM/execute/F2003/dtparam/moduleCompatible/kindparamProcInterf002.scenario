@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = kindparamProcInterf002.scenario
 #FEATURE   =
-#CREATOR   = MZ adapted from F2003/dtparam/typeparam/kindparamProcInterf002.f
 #DATE      = 20100504
 #TEST_TYPE = functional
 #ENDDOC
