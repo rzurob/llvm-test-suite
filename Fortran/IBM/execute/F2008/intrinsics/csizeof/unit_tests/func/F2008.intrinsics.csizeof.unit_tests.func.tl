@@ -1,7 +1,0 @@
-bit_test.scenario
-char_constant.scenario
-csizeof_array.scenario
-derived.scenario
-func_expression.scenario
-intrinsicTypes.scenario
-logical.scenario

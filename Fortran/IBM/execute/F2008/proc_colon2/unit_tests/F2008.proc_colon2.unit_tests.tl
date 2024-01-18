@@ -1,5 +1,0 @@
-proc_colon2_1ad.scenario
-proc_colon2_1bd.scenario
-proc_colon2_1cd.scenario
-proc_colon2_2ad.scenario
-proc_colon2_2bd.scenario

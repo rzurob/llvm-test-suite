@@ -1,2 +1,0 @@
-contiguous10d.scenario
-contiguous02f.scenario

@@ -1,8 +1,0 @@
-mult_type_bound_01d.scenario
-mult_type_bound_02d.scenario
-mult_type_bound_03d.scenario
-mult_type_bound_04d.scenario
-mult_type_bound_05d.scenario
-mult_type_bound_06d.scenario
-mult_type_bound_07d.scenario
-mult_type_bound_08d.scenario

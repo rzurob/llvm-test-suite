@@ -1,9 +1,0 @@
-complexPartDesignatorF1.scenario
-complexPartDesignatorF2.scenario
-complexPartDesignatorF3.scenario
-complexPartDesignatorF4.scenario
-complexPartDesignatorF5.scenario
-complexPartDesignatorF6.scenario
-complexPartDesignatorF7.scenario
-complexPartDesignatorF8.scenario
-complexPartDesignatorF9.scenario

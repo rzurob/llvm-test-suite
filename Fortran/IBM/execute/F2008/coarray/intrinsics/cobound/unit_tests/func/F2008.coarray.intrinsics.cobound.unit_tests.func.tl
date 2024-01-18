@@ -1,9 +1,0 @@
-cobound01.scenario
-cobound02.scenario
-cobound03.scenario
-cobound04.scenario
-cobound05.scenario
-cobound06.scenario
-cobound07.scenario
-cobound08.scenario
-cobound09.scenario

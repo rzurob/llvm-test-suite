@@ -1,1 +1,0 @@
-volatile_coarray_in_block.scenario

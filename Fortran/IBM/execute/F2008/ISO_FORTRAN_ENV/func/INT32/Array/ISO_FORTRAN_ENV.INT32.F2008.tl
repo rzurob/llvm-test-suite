@@ -1,5 +1,0 @@
-faddINT32.scenario
-fdivideINT32.scenario
-fgeneralINT32.scenario
-fmultiplyINT32.scenario
-fsubtractINT32.scenario

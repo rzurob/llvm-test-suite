@@ -1,3 +1,0 @@
-! automatically generated
-multipleChildStmt001.scenario
-multipleChildStmt002.scenario

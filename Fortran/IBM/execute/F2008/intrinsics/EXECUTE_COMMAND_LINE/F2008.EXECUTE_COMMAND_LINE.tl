@@ -1,7 +1,0 @@
-#BEGINENV
-#INVALID_PRODUCT = bgl
-#ENDENV
-
-.im unit_tests/F2008.EXECUTE_COMMAND_LINE.unit_tests.tl
-.im diag/F2008.EXECUTE_COMMAND_LINE.diag.tl
-.im func/F2008.EXECUTE_COMMAND_LINE.func.tl

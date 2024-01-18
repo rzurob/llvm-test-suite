@@ -1,2 +1,0 @@
-PointerDummy01d.scenario	
-PointerDummy02d.scenario

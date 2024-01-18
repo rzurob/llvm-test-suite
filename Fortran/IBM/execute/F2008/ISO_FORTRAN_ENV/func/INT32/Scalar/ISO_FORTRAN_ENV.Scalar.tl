@@ -1,8 +1,0 @@
-faddINT32.scenario
-faddINT32intsize.scenario
-fdivINT32.scenario
-fdivINT32intsize.scenario
-fmulINT32.scenario
-fmulINT32intsize.scenario
-fsubINT32.scenario
-fsubINT32intsize.scenario

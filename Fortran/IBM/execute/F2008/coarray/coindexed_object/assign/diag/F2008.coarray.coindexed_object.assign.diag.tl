@@ -1,4 +1,0 @@
-coindex_assignment_001d.scenario
-coindex_assignment_002d.scenario
-coindex_assignment_003d.scenario
-coindex_assignment_004d.scenario

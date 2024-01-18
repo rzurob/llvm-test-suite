@@ -1,1 +1,0 @@
-AssumedSizeScalar01.scenario

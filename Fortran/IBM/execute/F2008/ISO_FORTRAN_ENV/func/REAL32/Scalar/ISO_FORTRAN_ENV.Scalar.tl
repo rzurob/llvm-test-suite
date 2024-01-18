@@ -1,8 +1,0 @@
-faddREAL32.scenario
-faddREAL32realsize.scenario
-fdivREAL32.scenario
-fdivREAL32realsize.scenario
-fmulREAL32.scenario
-fmulREAL32realsize.scenario
-fsubREAL32.scenario
-fsubREAL32realsize.scenario

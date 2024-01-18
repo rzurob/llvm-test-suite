@@ -1,4 +1,0 @@
-! automatically generated
-genericC463Assignment001d.scenario
-genericC463Assignment002d.scenario
-genericC463Assignment003d.scenario

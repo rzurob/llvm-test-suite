@@ -1,5 +1,0 @@
-! automatically generated
-renameoperator003.scenario
-renameoperator004.scenario
-renameoperator005.scenario
-renameoperator006.scenario

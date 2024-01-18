@@ -1,9 +1,0 @@
-AssumedRank01d.scenario
-AssumedRank02d.scenario
-AssumedRank03d.scenario
-AssumedRank04d.scenario
-AssumedRank05d.scenario
-AssumedRank06d.scenario
-AssumedRank07d.scenario
-AssumedRank08d.scenario
-AssumedRank09d.scenario

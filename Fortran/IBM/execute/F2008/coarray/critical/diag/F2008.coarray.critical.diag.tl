@@ -1,3 +1,0 @@
-critical_d01.scenario
-critical_d02.scenario
-critical_d03.scenario

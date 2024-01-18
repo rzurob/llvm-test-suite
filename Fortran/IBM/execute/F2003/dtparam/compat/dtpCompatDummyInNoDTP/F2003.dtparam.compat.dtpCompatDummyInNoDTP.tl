@@ -1,5 +1,0 @@
-dtpCompatDummyInNoDTP_111.scenario
-dtpCompatDummyInNoDTP_111m.scenario
-dtpCompatDummyInNoDTP_111r.scenario
-dtpCompatDummyInNoDTP_121.scenario
-dtpCompatDummyInNoDTP_121m.scenario

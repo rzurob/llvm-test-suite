@@ -1,5 +1,0 @@
-! automatically generated
-arrayConstr001.scenario
-arrayConstr001a.scenario
-arrayConstr002.scenario
-arrayConstr002a.scenario

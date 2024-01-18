@@ -1,2 +1,0 @@
-PassInterProcDiag.scenario
-PassInterProcPtrDiag.scenario

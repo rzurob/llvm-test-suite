@@ -1,6 +1,0 @@
-dshiftl_dshiftr01f.scenario
-maskl01f.scenario
-maskr01f.scenario
-merge_bits01f.scenario
-shifta01f.scenario
-shiftl_shiftr01f.scenario

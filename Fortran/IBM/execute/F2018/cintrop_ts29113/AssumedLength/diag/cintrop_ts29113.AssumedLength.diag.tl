@@ -1,3 +1,0 @@
-Assumed_Length01d.scenario
-Assumed_Length02d.scenario
-Assumed_Length03d.scenario

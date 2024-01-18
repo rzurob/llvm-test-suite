@@ -1,5 +1,0 @@
-faddREAL32.scenario
-fdivideREAL32.scenario
-fgeneralREAL32.scenario
-fmultiplyREAL32.scenario
-fsubtractREAL32.scenario

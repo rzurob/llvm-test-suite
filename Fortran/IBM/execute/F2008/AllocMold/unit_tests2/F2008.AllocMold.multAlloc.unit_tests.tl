@@ -1,8 +1,0 @@
-AllocateWithSourceEx03.scenario
-AllocateWithSourceEx03_1.scenario
-AllocateWithSourceEx03_simple.scenario
-SimpleAllocateWithSourceEx03.scenario
-SimpleAllocateWithSourceEx03_1.scenario
-allocateTests.scenario
-allocfun001.scenario
-varInSource.scenario

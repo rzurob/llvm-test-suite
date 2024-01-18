@@ -1,7 +1,0 @@
-! automatically generated
-structConstr001.scenario
-structConstr001a.scenario
-structConstr002.scenario
-structConstr002a.scenario
-structConstr003.scenario
-structConstr003a.scenario

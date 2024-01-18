@@ -1,3 +1,0 @@
-fmodule.scenario
-fmodule_F2003.scenario
-fmodule_mixed.scenario

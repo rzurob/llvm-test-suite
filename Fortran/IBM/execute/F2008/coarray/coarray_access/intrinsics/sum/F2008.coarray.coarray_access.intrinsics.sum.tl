@@ -1,6 +1,0 @@
-sumCoarray01.scenario
-sumCoarray02.scenario
-sumCoarray03.scenario
-sumCoarray04.scenario
-sumCoarray05.scenario
-d380564.scenario

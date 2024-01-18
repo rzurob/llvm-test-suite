@@ -1,6 +1,0 @@
-! automatically generated
-genericC461Assignment001d.scenario
-genericC461Operator001d.scenario
-genericC461Operator002d.scenario
-genericC461Operator003d.scenario
-genericC461GenericName001.scenario

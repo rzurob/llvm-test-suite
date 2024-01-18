@@ -1,5 +1,0 @@
-fcomplex_i32_mixed.scenario
-fcomplex_i64_mixed.scenario
-fcomplex_r128_mixed.scenario
-fcomplex_r32_mixed.scenario
-fcomplex_r64_mixed.scenario

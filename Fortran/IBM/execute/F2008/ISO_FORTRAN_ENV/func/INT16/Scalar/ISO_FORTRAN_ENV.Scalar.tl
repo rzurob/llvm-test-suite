@@ -1,8 +1,0 @@
-faddINT16.scenario
-faddINT16intsize.scenario
-fdivINT16.scenario
-fdivINT16intsize.scenario
-fmulINT16.scenario
-fmulINT16intsize.scenario
-fsubINT16.scenario
-fsubINT16intsize.scenario

@@ -1,9 +1,0 @@
-charlog1.scenario
-intchar1.scenario
-intlog1.scenario
-intlog2.scenario
-intlog3.scenario
-logint1.scenario
-logint2.scenario
-logint3.scenario
-logint4.scenario

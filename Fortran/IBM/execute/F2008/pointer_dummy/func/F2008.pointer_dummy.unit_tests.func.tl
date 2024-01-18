@@ -1,6 +1,0 @@
-PointerDummyBasic.scenario
-PointerDummyCharacter.scenario
-PointerDummyArray.scenario
-PointerDummyDerived.scenario
-PointerDummyPoly.scenario
-PointerDummyProcPtr.scenario

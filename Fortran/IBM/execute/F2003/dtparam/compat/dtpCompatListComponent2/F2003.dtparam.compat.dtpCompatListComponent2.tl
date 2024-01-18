@@ -1,5 +1,0 @@
-dtpCompatListComponent2_111.scenario
-dtpCompatListComponent2_111m.scenario
-dtpCompatListComponent2_111r.scenario
-dtpCompatListComponent2_121.scenario
-dtpCompatListComponent2_121m.scenario

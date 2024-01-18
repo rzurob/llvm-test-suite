@@ -1,5 +1,0 @@
-dtpCompatDummyInGrandChild_111.scenario
-dtpCompatDummyInGrandChild_111m.scenario
-dtpCompatDummyInGrandChild_111r.scenario
-dtpCompatDummyInGrandChild_121.scenario
-dtpCompatDummyInGrandChild_121m.scenario
