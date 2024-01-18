@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = dtparamCompDecl001a.scenario
 #FEATURE =
-#CREATOR = MZ adapted from F2003/dtparam/component/dtparamCompDecl001a.f
 #DATE    = 20100504
 #TEST_TYPE= functional
 #ENDDOC

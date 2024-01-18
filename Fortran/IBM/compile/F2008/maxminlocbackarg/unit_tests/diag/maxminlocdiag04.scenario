@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME= maxminlocdiag04.scenario
+#FEATURE = back argument for maxloc/minloc
+#DATE    = 20120629
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF90_COMPILE
+#OPTS      = $(OPT_SET_LANG_LEVEL<90std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#INPUT     = $(tcasedir)maxminlocdiag04.f
+#STDERR    = maxminlocdiag04.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = maxminlocdiag04.out $(tcasedir)maxminlocdiag04.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

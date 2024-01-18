@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/ace/aceStrConstrSelector02.scenario
 #FEATURE	= Basic (non-Polymorphic) Array Constructors with DTP
-#CREATOR	= Glen Mateer
 #DATE		= 20081113
 #TEST_TYPE	= functional
 #ENDDOC

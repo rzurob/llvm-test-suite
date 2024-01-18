@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /syncAll/saMainNModule.scenario
 #FEATURE   = CAF SYNC ALL - synchronisation from main program and module procedures
-#CREATOR   = DF
 #DATE      = 20100727
 #TEST_TYPE = functional
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/submodule/func/submodule18f.scenario
 #FEATURE   = F2008 submodule
-#CREATOR   = Bernard Kan
 #DATE      = 20130220
 #TEST_TYPE = functional
 #KEYWORDS  = F2008, submodule, F2008 submodule
@@ -16,7 +15,6 @@
 #BEGINCONTROL
 
 #CMD       = XLF90_COMPILE
-!#OPTS      = $(OPT_SET_LANG_LEVEL<2003pure>)
 #INPUT     = $(tcasedir)submodule18f.f
 #OUTPUT    = submodule18f$(OBJ)
 #ENDCMD

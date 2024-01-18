@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = dtpPass018.scenario
 #FEATURE   =
-#CREATOR   = MZ adapted from F2003/dtparam/typebnd/specific/dtpPass018.f
 #DATE      = 20100504
 #TEST_TYPE = functional
 #ENDDOC

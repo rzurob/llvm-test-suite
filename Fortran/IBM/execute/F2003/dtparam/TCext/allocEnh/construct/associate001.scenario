@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/allocEnh/construct/associate001.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of allocEnh/*
 #DATE      = 20071219
 #TEST_TYPE = functional
 #ENDDOC

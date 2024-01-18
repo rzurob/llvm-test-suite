@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/encoding/unit_tests/encodingspecifier008.scenario
 #FEATURE	= Encoding Specifier
-#CREATOR	= Thomas Tewoldemedhin
 #DATE		= 20070430
 #TEST_TYPE	= unit test
 #ENDDOC

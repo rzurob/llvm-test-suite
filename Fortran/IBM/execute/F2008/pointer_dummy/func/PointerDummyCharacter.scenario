@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = $(tcasedir)PointerDummyCharacter.scenario
+#FEATURE   = 916820
+#DATE      = May 13, 2011
+#TEST_TYPE = FUNCTIONAL
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD      =  F_COMPILE
+#INPUT    =  $(tcasedir)PointerDummyCharacter.f
+#OUTPUT   =  PointerDummyCharacter$(OBJ)
+#ENDCMD
+
+#CMD      =  F_LINK
+#INPUT    =  PointerDummyCharacter$(OBJ)
+#OUTPUT   =  PointerDummyCharacter$(EXE)
+#ENDCMD
+
+#CMD      =  RUN
+#INPUT    =  PointerDummyCharacter$(EXE)
+#STDOUT   =  PointerDummyCharacter.out
+#ENDCMD
+
+#CMD      = DIFF
+#INPUT    = PointerDummyCharacter.out $(tcasedir)PointerDummyCharacter.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

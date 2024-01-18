@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/block/BMMArithmetic.scenario
 #FEATURE   = F2008 BLOCK - mixed-mode arithmetic
-#CREATOR   = DF Manual Update
 #DATE      = 20101214
 #TEST_TYPE = functional
 #ENDDOC

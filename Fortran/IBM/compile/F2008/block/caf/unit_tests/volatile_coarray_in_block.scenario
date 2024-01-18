@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=volatile_coarray_in_block.scenario
 #FEATURE = F2008 BLOCK construct
-#CREATOR = Pooja Dayanand
 #DATE    = 20101021
 #TEST_TYPE=unit test
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/procPtrComp/d364030.scenario
 #FEATURE   = derived from dtpPPCPassKindLenFunDTPMixedArgsContained
-#CREATOR   = DF Manual Update
 #DATE      = 20090323
 #TEST_TYPE = sanity
 #ENDDOC

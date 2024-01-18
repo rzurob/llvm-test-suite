@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tstdev/F2003/generic/unit_tests/diag/assign07d.scenario
+#FEATURE = Generic Bindings
+#DATE    = 20051118
+#TEST_TYPE=unit
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+
+#CMD       = XLF2003_COMPILE
+#INPUT     = $(tcasedir)assign07d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) -qdebug=intmsg:shutup
+#OUTPUT    = assign07d$(OBJ)
+#STDERR    = assign07d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)assign07d$(product)vf) assign07d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

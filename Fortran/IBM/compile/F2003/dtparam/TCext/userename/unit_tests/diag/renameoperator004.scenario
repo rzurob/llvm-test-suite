@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2003/dtparam/TCext/userename/unit_tests/diag/renameoperator004.scenario
+#FEATURE   = 289057.TCext.OO
+#DATE      = 20071102
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)renameoperator004.f
+#OPTS      = -qxlf2003=polymorphic
+#STDERR    = renameoperator004.err
+#OUTPUT    = renameoperator004$(OBJ)
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = renameoperator004.err $($(tcasedir)renameoperator004$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

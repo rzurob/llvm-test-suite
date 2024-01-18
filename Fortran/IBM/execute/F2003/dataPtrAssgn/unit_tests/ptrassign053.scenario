@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=ptrassign053.scenario
 #FEATURE = Pointer Assignment Enhancement
-#CREATOR = Michael Selvanayagam
 #DATE    = 20060501
 #TEST_TYPE=unit test
 #ENDDOC

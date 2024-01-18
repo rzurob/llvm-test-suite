@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=dtparamimplicit04.scenario
 #FEATURE = Implicit statement with derived type parameters
-#CREATOR = Rafik Zurob
 #DATE    = 20060313
 #TEST_TYPE=unit
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /syncAll/saProgramUnit.scenario
 #FEATURE   = CAF SYNC ALL - synchronisation from different contexts in program unit
-#CREATOR   = DF
 #DATE      = 20100727
 #TEST_TYPE = functional
 #ENDDOC

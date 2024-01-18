@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME       = F2008/coarray/critical/func/critical_f020.scenario
 #FEATURE    = 381021
-#CREATOR    = Francesco Cassullo
 #DATE       = Jan 2011
 #TEST_TYPE  = Functional
 #ENDDOC

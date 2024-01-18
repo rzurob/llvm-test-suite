@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint10cd.scenario
 #FEATURE	= Array constructor enhancement Intrinsic type specifier with incorrect KIND in assignment (CHARACTER)
-#CREATOR	= DF Manual Update
 #DATE		= 20060824
 #TEST_TYPE	= sanity
 #ENDDOC

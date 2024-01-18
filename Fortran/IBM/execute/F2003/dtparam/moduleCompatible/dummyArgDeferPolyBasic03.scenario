@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = ArgDeferPolyBasic03.scenario
 #FEATURE   =
-#CREATOR   = MZ adapted from dtparam/dummy_arg/deferlen/dummyArgDeferPolyBasic03.f
 #DATE      = 20100504
 #TEST_TYPE = Functional
 #ENDDOC

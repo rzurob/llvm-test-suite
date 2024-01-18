@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/allocEnh/pointer/ptrToVarScalarAsExpr02.scenario
 #FEATURE	= Intrinsic Assignment -- variable is a POINTER
-#CREATOR	= GM Manual Creation
 #DATE		= 20061025
 #TEST_TYPE	= functional
 #ENDDOC

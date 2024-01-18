@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME	 = F2008/coarray/defAssgn/unit_tests/intlog1.scenario
 #FEATURE = Coarray defined assignment
-#CREATOR = Pooja Dayanand
 #DATE    = 20101014
 #TEST_TYPE=unit test
 #ENDDOC

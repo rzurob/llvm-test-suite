@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME = F2008/do_concurrent/func/do_concurrent_omp_f008.scenario
 #FEATURE = RTC 17293 - F2008: DO CONCURRENT construct
-#CREATOR = Nicole Negherbon
 #DATE    = August 25, 2015
 #TEST_TYPE = FUNCTIONAL
 #REFERENCE = threadprivate/exec/fxthp0207.scenario

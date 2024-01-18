@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /block/BUse02.scenario
 #FEATURE   = F2008 - BLOCK - USE: definitions available to block
-#CREATOR   = DF
 #DATE      = 2010-11-15
 #TEST_TYPE = functional
 #ENDDOC

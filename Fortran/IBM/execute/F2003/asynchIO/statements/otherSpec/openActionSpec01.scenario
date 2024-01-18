@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/asynchIO/statements/stmt/openActionSpec01.scenario
 #FEATURE	= Asynchronous I/O -- ASYNCHRONOUS= Specifier in I/O Statements
-#CREATOR	= GM Manual Creation
 #DATE		= 20060217
 #TEST_TYPE	= sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/allocEnh/scalarExpr/scalarFuncResultExpr02.scenario
 #FEATURE	= Intrinsic Assignment -- expr is a Scalar and variable is an Array
-#CREATOR	= GM Manual Creation
 #DATE		= 20061031
 #TEST_TYPE	= functional
 #ENDDOC

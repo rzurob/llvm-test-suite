@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint51.scenario
 #FEATURE	= Array constructor enhancement compatible types of values in ac-implied-do are allowed
-#CREATOR	= DF Manual Update
 #DATE		= 20061116
 #TEST_TYPE	= sanity
 #ENDDOC

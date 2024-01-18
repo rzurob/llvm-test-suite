@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/ieee/hlt_mode/fi3ehltmod18.scenario
 #FEATURE = ieee tests - regression run bucket
-#CREATOR = CPR Manual conversion
 #DATE    = 20041200
 #TEST_TYPE=sanity
 #ENDDOC
@@ -45,7 +44,7 @@
 	#OPTS	= "FP * " fi3ehltmod18.err
 	#STDOUT	= fi3ehltmod18.grep
 	#ENDCMD
-	
+
 	#CMD	= DIFF
 	#OPTS	= fi3ehltmod18.grep $(tcasedir)fi3ehltmod18.vf
 	#ENDCMD
@@ -54,7 +53,7 @@
 	#OPTS	= "SIGFPE * " fi3ehltmod18.err
 	#STDOUT	= fi3ehltmod18.grep
 	#ENDCMD
-	
+
 	#CMD	= DIFF
 	#OPTS	= fi3ehltmod18.grep $(tcasedir)fxi3e.lx.vf
 	#ENDCMD

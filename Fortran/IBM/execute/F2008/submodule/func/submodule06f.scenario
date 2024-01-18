@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/submodule/func/submodule06f.scenario
 #FEATURE   = F2008 Submodule
-#CREATOR   = Bernard Kan
 #DATE      = 20621206
 #TEST_TYPE = Functional
 #KEYWORDS  = F2008, submodule, F2008 submodule
@@ -48,7 +47,6 @@
 #OPTS         = m_b.smod submodule06af$(OBJ)
 #ENDCMD
 
-! now compile a new m_b.smod file and replace the existing one, without recompiling the entire program
 #CMD          = COPY
 #INPUT        = $(tcasedir)submodule06cf.f
 #OUTPUT       = submodule06af.f

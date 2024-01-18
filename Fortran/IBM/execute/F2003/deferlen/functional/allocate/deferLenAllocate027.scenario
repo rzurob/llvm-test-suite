@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/deferlen/functional/allocate/deferLenAllocate027.scenario
 #FEATURE = character with deferred length type parameter
-#CREATOR = Robert Ma
 #DATE    = 20270501
 #TEST_TYPE=sanity
 #ENDDOC

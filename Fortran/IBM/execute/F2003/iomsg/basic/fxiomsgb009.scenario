@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = iomsg/basic/fxiomsgb009.scenario
 #FEATURE = iomsg tests - regression run bucket
-#CREATOR = CPR Manual conversion
 #DATE    = 20041200
 #TEST_TYPE=sanity
 #ENDDOC

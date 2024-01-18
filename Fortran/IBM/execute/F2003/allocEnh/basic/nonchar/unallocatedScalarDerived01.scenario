@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/allocEnh/basic/nonchar/unallocatedScalarDerived01.scenario
 #FEATURE	= Intrinsic Assignment-Basic Tests:Non-CHARACTER Scalar Derived Type
-#CREATOR	= GM Manual Creation
 #DATE		= 20060828
 #TEST_TYPE	= functional
 #ENDDOC

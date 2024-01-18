@@ -4,7 +4,6 @@
 #BEGINDOC
 #NAME=      mProcC1255.f
 #FEATURE=
-#CREATOR=   Feng Ye
 #DATE=      02-28-06
 #TEST_TYPE= DIAGNOSTIC
 #ENDDOC
@@ -18,7 +17,6 @@
 #OPTS=     $(OPT_FREE_SOURCE_FORM)
 #INPUT=    $(tcasedir)mProcC1255.f
 #STDERR=   mProcC1255.err
-!#VALIDRCS= $(RC_COMP_E)
 #ENDCMD
 
 #CMD=      XLDIFF

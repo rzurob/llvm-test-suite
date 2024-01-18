@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/none/acetnone06b.scenario
 #FEATURE	= Array constructor enhancement hollerith literals
-#CREATOR	= DF Manual Update
 #DATE		= 20060809
 #TEST_TYPE	= sanity
 #ENDDOC

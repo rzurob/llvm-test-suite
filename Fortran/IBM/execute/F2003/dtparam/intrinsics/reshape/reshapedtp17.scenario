@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME= reshapedtp17.scenario
 #FEATURE= reshape with parameterized derived types
-#CREATOR= dayanand
 #DATE= 2008010
 #TEST_TYPE= functional
 #ENDDOC

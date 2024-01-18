@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=charvalueattrf066.scenario
 #FEATURE = functional test for VALUE attr used for characters of length other than 1 ( feature 298120 ).
-#CREATOR = Bardia Mahjour
 #DATE    = 20060201
 #TEST_TYPE=unit test
 #ENDDOC

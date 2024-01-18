@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/use/dtpUseInvokeInternalFunction03.scenario
 #FEATURE   = DTP and USE - internal procedure invocation
-#CREATOR   = DF Manual Update
 #DATE      = 20080903
 #TEST_TYPE = sanity
 #ENDDOC

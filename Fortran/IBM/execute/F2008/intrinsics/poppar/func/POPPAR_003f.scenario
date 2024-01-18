@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=F2008/intrinsics/poppar/func/POPPAR_003f.scenario
 #FEATURE = F2008 POPPAR and POPCNT
-#CREATOR = Denis Navotniy
 #DATE    = 20101130
 #TEST_TYPE=functional
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = $(tcasedir)ExecCmdLineOutSize8.scenario
 #FEATURE   = 381472
-#CREATOR   = Ren Jian Gang
 #DATE      = December 05, 2010
 #TEST_TYPE = FUNCTIONAL
 #ENDDOC

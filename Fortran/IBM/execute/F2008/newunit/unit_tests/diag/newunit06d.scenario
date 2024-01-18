@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2008/newunit/unit_tests/diag/newunit06d.scenario
 #FEATURE = NEWUNIT= specifier
-#CREATOR = Rafik Zurob
 #DATE    = 20100816
 #TEST_TYPE=unit
 #ENDDOC

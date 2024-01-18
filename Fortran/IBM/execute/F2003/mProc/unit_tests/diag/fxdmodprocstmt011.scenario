@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=fxdmodprocstmt011.scenario
 #FEATURE = diagnostic for generalization of mod proc stmts in F2003
-#CREATOR = Bardia Mahjour
 #DATE    = 20050922
 #TEST_TYPE=diag test
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint03c.scenario
 #FEATURE	= Array constructor enhancement - correct values from different elements
-#CREATOR	= DF Manual Update
 #DATE		= 20060614
 #TEST_TYPE	= sanity
 #ENDDOC

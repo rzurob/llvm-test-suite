@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=.../F2003/dtparam/TCext/OO_dtio/mix/generic/syntax/R452/R452_003d.scenario
 #FEATURE = OO_dtio tests + derived type parameters
-#CREATOR = David Forster (derived from work by Robert Ma)
 #DATE    = 20070813
 #TEST_TYPE=sanity
 #ENDDOC
@@ -17,7 +16,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOUR
 
 #BEGINCONTROL
 
-! This chunk was DCOMP
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)R452_003dkl.f

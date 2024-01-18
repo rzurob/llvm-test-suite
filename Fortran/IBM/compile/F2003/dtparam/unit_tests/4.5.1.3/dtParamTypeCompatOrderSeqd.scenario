@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=      dtParamTypeCompatOrderSeqd.scenario
 #FEATURE=   Derived Type Parameters - determination of derived types
-#CREATOR=   Rafik Zurob
 #DATE=      20060619
 #TEST_TYPE= unit
 #ENDDOC

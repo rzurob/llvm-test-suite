@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2008/value/pure/unit_tests/purevalue02.scenario
 #FEATURE = VALUE attribute for dummy args of PURE procedures
-#CREATOR = Rafik Zurob
 #DATE    = 20100826
 #TEST_TYPE=unit
 #ENDDOC

@@ -3,19 +3,16 @@
 #BEGINDOC
 #NAME       = d382726.scenario
 #FEATURE    = coindex being an indexed array element
-#CREATOR    = Bardia Mahjour
 #DATE       = November 2010
 #TEST_TYPE  = unit test
 #ENDDOC
 
-! Scenario Environment Tags
 #BEGINENV
 #BEGINDEFS
 #ENDDEFS
 #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
 #ENDENV
 
-! Scenario Control Tags
 #BEGINCONTROL
 
 #CMD       = F_COMPILE

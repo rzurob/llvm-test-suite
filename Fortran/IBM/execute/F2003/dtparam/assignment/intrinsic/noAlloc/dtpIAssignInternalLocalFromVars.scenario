@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignInternalLocalFromVars.scenario
 #FEATURE   = Intrinsic Assignment without Allocation - assign variables to local variables in internal subprogram
-#CREATOR   = DF Manual Update
 #DATE      = 20081112
 #TEST_TYPE = sanity
 #ENDDOC

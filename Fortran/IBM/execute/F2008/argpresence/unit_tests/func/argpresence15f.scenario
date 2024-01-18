@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME       = F2008/argpresence/unit_tests/func/argpresence15f.f
 #FEATURE    = F386700
-#CREATOR    = Bardia Mahjour
 #DATE       = 20110825
 #TEST_TYPE  = Functional
 #ENDDOC

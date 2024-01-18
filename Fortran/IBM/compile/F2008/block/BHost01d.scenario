@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /block/BHost01d.scenario
 #FEATURE   = host association diagnostic
-#CREATOR   = DF
 #DATE      = 2010-11-15
 #TEST_TYPE = diagnostic
 #ENDDOC

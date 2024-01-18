@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/use/dtpUseNamelistWrite01.scenario
 #FEATURE   = DTP and USE - namelist output
-#CREATOR   = DF Manual Update
 #DATE      = 20081008
 #TEST_TYPE = sanity
 #ENDDOC

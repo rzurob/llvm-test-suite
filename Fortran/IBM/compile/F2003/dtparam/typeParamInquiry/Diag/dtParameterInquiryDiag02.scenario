@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME     = F2003/dtparam/typeParamInquiry/Diag/dtParameterInquiryDiag02.scenario
 #FEATURE  = Type Parameter Inquiry(354612)
-#CREATOR  = Nancy Wang
 #DATE     = August 21 2008
 #TEST_TYPE= Diagnostic
 #ENDDOC

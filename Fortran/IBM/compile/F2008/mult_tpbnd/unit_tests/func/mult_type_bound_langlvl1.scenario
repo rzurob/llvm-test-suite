@@ -2,15 +2,12 @@
 #BEGINDOC
 #NAME    = F2008/mult_tpbnd/unit_tests/func/mult_type_bound_langlvl1.scenario
 #FEATURE = 916819 F2008:Multiple type-bound procedures in a single procedure stmt
-#CREATOR = Paul Liu
 #DATE    = 20110525
 #TEST_TYPE=FUNCTIONAL
 #ENDDOC
 
 #BEGINCONTROL
 
-! langlvl test $(OPT_SET_LANG_LEVEL<2003std>)
-! use $(OPT_ENABLE_MSG_NUM<1518-317>) to suppress the messages caused by $(OPT_OPTIMIZE_FOR_SMP)
 
 #CMD       = XLF2003_COMPILE
 #INPUT     = $(tcasedir)mult_type_bound_nopass1.f

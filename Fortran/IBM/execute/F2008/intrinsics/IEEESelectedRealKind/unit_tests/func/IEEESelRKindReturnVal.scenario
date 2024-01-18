@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/intrinsics/IEEESelectedRealKind/unit_tests/func/IEEESelRKindReturnVal.scenario
 #FEATURE   = 376076
-#CREATOR   = Ren Jian Gang
 #DATE      = November 05, 2010
 #TEST_TYPE = FUNCTIONAL
 #ENDDOC

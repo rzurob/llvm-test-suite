@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = OO_dtio/formatted/syntax/fdtio002d.scenario
 #FEATURE = OO_dtio/formatted tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20050118
 #TEST_TYPE=sanity
 #ENDDOC

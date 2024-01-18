@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_access/specific/assignment/csAssociate
 #FEATURE        = CAF coarray access (specific) - assignment - in ASSOCIATE construct, assign associate-name to coarray variables and vice-versa (and probably play with DT components)
-#CREATOR        = DF
 #DATE           = 2010-10-04
 #TEST_TYPE      = functional
 #ENDDOC

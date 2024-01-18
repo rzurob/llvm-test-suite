@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/block/BVolatile02.scenario
 #FEATURE   = F2008 BLOCK - very long variable name in volatile statement in block
-#CREATOR   = DF Manual Update
 #DATE      = 20101214
 #TEST_TYPE = functional
 #ENDDOC
@@ -25,7 +24,6 @@
 #OUTPUT    = BVolatile02$(EXE)
 #ENDCMD
 
-! Make sure it works
 #CMD       = RUN
 #INPUT     = BVolatile02$(EXE)
 #ENDCMD

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/Named-Const/DTP_PARAMETER_09.scenario
 #FEATURE   = DTP - PARAMETER
-#CREATOR   = Dorra Bouchiha
 #DATE      = 20090524
 #TEST_TYPE = functional
 #ENDDOC

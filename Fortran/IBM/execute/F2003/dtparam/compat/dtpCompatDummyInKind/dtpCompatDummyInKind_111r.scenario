@@ -2,14 +2,11 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/compat/dtpCompatDummyInKind/dtpCompatDummyInKind_111.scenario
 #FEATURE   = Broken Compatability Warning - DTP code calls subroutine, passing in reference to extended type with KIND type parameter
-! - latest PTF, v. 11.1
-#CREATOR   = DF Manual Update
 #DATE      = 20090613
 #TEST_TYPE = sanity
 #ENDDOC
 
 #BEGINENV
-! See F2003/dtparam/compat/README for details (especially if this TC produces a NORESOURCES error).
 #REQUIRED_PRODUCT = rhel
 #REQUIRED_RESOURCES = RHEL5UP
 #INVALID_PRODUCT=linuxle
@@ -17,10 +14,6 @@
 
 #BEGINCONTROL
 
-! Compile "pre-DTP" files with the latest 11.1 PTF compiler,
-! compile "post-DTP" files with the latest version of the latest compiler for RHEL,
-! link with the latest version of the latest compiler,
-! run:  DTP with KIND parameters alone generates no error message
 
 #CMD       = V111_XLF2003_COMPILE_RHEL
 #INPUT     = $(tcasedir)dtpCompatDummyInKindPreDTP.f

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/misc/d343568.scenario
 #FEATURE   = Defect 343568
-#CREATOR   = Gaby Baghdadi
 #DATE      = 20071107
 #TEST_TYPE = functional
 #ENDDOC

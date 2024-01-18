@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2008/impliedshape/func/implied02.scenario
 #FEATURE = F2008 Implied-shape arrays
-#CREATOR = Rafik Zurob
 #DATE    = 20110225
 #TEST_TYPE=unit
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=cintrop2/unit_modvar/bcun0007.scenario
 #FEATURE = cintrop2 tests - regression run bucket
-#CREATOR = Manual conversion CPR
 #DATE    = 20060724
 #TEST_TYPE=sanity
 #ENDDOC

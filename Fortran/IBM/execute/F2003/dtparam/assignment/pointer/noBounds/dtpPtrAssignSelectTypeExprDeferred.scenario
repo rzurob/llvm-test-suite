@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignSelectTypeExprDeferred.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign from expr in select type using pointers with deferred length parameters
-#CREATOR   = DF Manual Update
 #DATE      = 20081201
 #TEST_TYPE = sanity
 #ENDDOC

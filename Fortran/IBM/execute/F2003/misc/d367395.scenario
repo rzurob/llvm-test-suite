@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/misc/d367395.scenario
 #FEATURE   = Defect 367395 - for reduced code in defect 346625
-#CREATOR   = GB
 #DATE      = 20090713
 #TEST_TYPE = functional
 #ENDDOC

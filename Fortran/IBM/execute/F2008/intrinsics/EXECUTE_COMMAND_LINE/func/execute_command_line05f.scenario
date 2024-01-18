@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/intrinsics/EXECUTE_COMMAND_LINE/func/execute_command_line05f.scenario
 #FEATURE   =
-#CREATOR   = Dorra Bouchiha
 #DATE      = 20101215
 #TEST_TYPE = functional
 #ENDDOC
@@ -36,7 +35,6 @@
 #INPUT    = execute_command_line05f.out $($(tcasedir)execute_command_line05f$(product)vf)
 #ENDCMD
 
-! should not get error from XLF
 #CMD      = GREP
 #INPUT    = "1525-610" execute_command_line05f.err
 #VALIDRCS = $(RC_FAIL)

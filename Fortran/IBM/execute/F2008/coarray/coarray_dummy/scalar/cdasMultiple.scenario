@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_dummy/assumed_size/cdasMultiple
 #FEATURE        = CAF coarray dummy arguments - scalar - multiple images
-#CREATOR        = DF
 #DATE           = 2010-09-30
 #TEST_TYPE      = functional
 #ENDDOC

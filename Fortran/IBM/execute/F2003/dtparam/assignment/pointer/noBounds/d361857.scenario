@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/pointer/noBounds/d361857.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - problems due to defect 361857
-#CREATOR   = DF Manual Update
 #DATE      = 20090121
 #TEST_TYPE = sanity
 #ENDDOC

@@ -2,14 +2,12 @@
 #BEGINDOC
 #NAME    = entry1.scenario
 #FEATURE = 378690 F2008: ENTRY statements are obsolescent
-#CREATOR = Paul Liu
 #DATE    = 20101026
 #TEST_TYPE=FUNCTIONAL
 #ENDDOC
 
 #BEGINCONTROL
 
-!suppress 1518-317 then the test cases pass when $(OPT_OPTIMIZE_FOR_SMP) is used
 
 #CMD       = XLF2008_COMPILE
 #INPUT     = $(tcasedir)entry.f

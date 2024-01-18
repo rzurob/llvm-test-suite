@@ -1,0 +1,103 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/result.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#DATE    = 20060810
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg
+#INPUT     = $(tcasedir)result.F
+#STDERR    = result.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = result.out $(tcasedir)result.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)result.F
+#STDERR    = result.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = result.out $(tcasedir)result.-qfixed.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg -WF,-DARG=0
+#INPUT     = $(tcasedir)result.F
+#STDERR    = result.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = result.out $(tcasedir)result-0.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg $(OPT_FIXED_SOURCE_FORM) -WF,-DARG=0
+#INPUT     = $(tcasedir)result.F
+#STDERR    = result.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = result.out $(tcasedir)result-0.-qfixed.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg -WF,-DARG=1
+#INPUT     = $(tcasedir)result.F
+#STDERR    = result.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = result.out $(tcasedir)result-1.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg $(OPT_FIXED_SOURCE_FORM) -WF,-DARG=1
+#INPUT     = $(tcasedir)result.F
+#STDERR    = result.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = result.out $(tcasedir)result-1.-qfixed.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg -WF,-DARG=3
+#INPUT     = $(tcasedir)result.F
+#STDERR    = result.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = result.out $(tcasedir)result-3.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg $(OPT_FIXED_SOURCE_FORM) -WF,-DARG=3
+#INPUT     = $(tcasedir)result.F
+#STDERR    = result.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = result.out $(tcasedir)result-3.-qfixed.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

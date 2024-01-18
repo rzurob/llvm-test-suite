@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/intrinsics/math/sinhIntrinsicF1.scenario
 #FEATURE   = Math intrinsic functions
-#CREATOR   = Shahid Alam
 #DATE      = 20101116
 #TEST_TYPE = functional
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/OO_poly/allocate/falloc506.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB extension of OO_poly/*
 #DATE      = 20070820
 #TEST_TYPE = functional
 #ENDDOC
@@ -18,7 +17,6 @@
 #VALIDRCS  = $(RC_ANY)
 #ENDCMD
 
-! this is for -g or -g0-g9 and is only needed for aix
 #IF ( in ($(F_COMPILE^OPT_GEN_DEBUG_INFO)) || in ($$(F_COMPILE^OPT_GEN_DEBUG_INFO_LEVEL<[0-9]>)) ) && on (aix)
 
 #CMD       = GREP

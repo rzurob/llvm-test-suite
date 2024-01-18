@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=t05b.scenario
 #FEATURE = empty CONTAINS
-#CREATOR = J. Liu
 #DATE    = 20100510
 #TEST_TYPE=unit test
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/intrinsics/EXECUTE_COMMAND_LINE/func/execute_command_line03f.scenario
 #FEATURE   =
-#CREATOR   = Dorra Bouchiha
 #DATE      = 20101215
 #TEST_TYPE = functional
 #ENDDOC
@@ -33,7 +32,6 @@
         #VALIDRCS =  $(RC_FAIL)
 	#ENDCMD
 
-        ! Valid line : "1525-610 Error encountered while attempting to execute the command:"
         #CMD      = GREP
         #INPUT    = "1525-610" execute_command_line03f_$(i).err
         #ENDCMD

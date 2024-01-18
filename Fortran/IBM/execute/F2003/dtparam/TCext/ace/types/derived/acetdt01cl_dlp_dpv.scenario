@@ -4,7 +4,6 @@
 #FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement --	\
 			   No-Parameter Derived TS Allocatable Component with Defined	\
 			   Assignment via Elementals
-#CREATOR	= Glen Mateer (derived from work by David Forster)
 #DATE		= 20080114
 #TEST_TYPE	= Functional
 #ENDDOC

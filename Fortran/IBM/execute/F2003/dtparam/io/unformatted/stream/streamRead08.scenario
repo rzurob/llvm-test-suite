@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/io/unformatted/stream/streamRead08.scenario
 #FEATURE	= Unformatted Intrinsic I/O (with Derived Type Parameters)
-#CREATOR	= Glen Mateer
 #DATE		= 20081104
 #TEST_TYPE	= functional
 #ENDDOC

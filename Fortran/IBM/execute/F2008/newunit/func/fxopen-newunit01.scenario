@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=     /tst141/F2008/newunit/func/fxopen-newunit01.scenario
 #FEATURE =  FEATURE 377344 (NEWUNIT) - regression run bucket
-#CREATOR =  Sarah Kouchanki Ramezan
 #DATE    =  Oct. 2010
 #TEST_TYPE= TESTCASE
 #ENDDOC

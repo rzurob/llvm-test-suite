@@ -2,17 +2,12 @@
 #BEGINDOC
 #NAME    = F2008/mult_tpbnd/unit_tests/func/mult_type_bound_public_private.scenario
 #FEATURE = 916819 F2008:Multiple type-bound procedures in a single procedure stmt
-#CREATOR = Paul Liu
 #DATE    = 20110525
 #TEST_TYPE=FUNCTIONAL
 #ENDDOC
 
 #BEGINCONTROL
 
-! within module
-! public & private
-! procedure, public, nopass :: foo => real_foo,fox => real_fox
-! procedure, private,nopass :: dog => real_dog, cat => real_cat
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)mult_type_bound_public_private.f

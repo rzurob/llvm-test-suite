@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = F2003/volatile/test/volatileC1232ArraySection04a.scenario
 #FEATURE = VOLATILE 255728
-#CREATOR = William Zhang
 #DATE    = 05/30/2006
 #TEST_TYPE= functional
 #ENDDOC

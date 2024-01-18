@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignExternalLocalFromVarsDeferred.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign variables to local variables via deferred-length pointers in an external subprogram
-#CREATOR   = DF Manual Update
 #DATE      = 20081112
 #TEST_TYPE = sanity
 #ENDDOC

@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=goto_into_block.scenario
+#FEATURE = F2008 BLOCK construct
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)goto_into_block.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#STDERR    = goto_into_block.out
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = goto_into_block.out $(tcasedir)goto_into_block.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/tst91/cintrop4/unit_pattr/bindfuncmsg.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#DATE    = 20040928
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF95_COMPILE
+#INPUT     = $(tcasedir)bindfuncmsg.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)  -qdebug=intmsg:shutup
+#OUTPUT    = bindfuncmsg$(OBJ)
+#STDERR    = bindfuncmsg.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)bindfuncmsg$(product)vf) bindfuncmsg.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

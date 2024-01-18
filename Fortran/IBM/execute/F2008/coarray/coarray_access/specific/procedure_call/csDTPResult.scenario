@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_dummy/assumed_size/csDTPResult
 #FEATURE        = CAF coarray access (specific) - procedure call - function accepts coarray actual argument and returns derived type object (i.e., constructs the derived type object from data stored in coarray variables)
-#CREATOR        = DF
 #DATE           = 2010-10-15
 #TEST_TYPE      = functional
 #ENDDOC

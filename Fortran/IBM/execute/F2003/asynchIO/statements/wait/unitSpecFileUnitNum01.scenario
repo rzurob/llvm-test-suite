@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/asynchIO/statements/wait/unitSpecFileUnitNum01.scenario
 #FEATURE	= Asynchronous I/O -- WAIT() Statement
-#CREATOR	= GM Manual Creation
 #DATE		= 20060303
 #TEST_TYPE	= sanity
 #ENDDOC

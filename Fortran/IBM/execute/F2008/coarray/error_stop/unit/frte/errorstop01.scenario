@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = errorstop01.scenario
 #FEATURE   = 351605.31.2
-#CREATOR   = Xing Xue
 #DATE      = 08-10-10
 #TEST_TYPE = Functional
 #ENDDOC
@@ -40,10 +39,7 @@
 			-e '/ERROR: 0031-250  task [0-9]*: Terminated/d'
 	#STDOUT   = errorstop01.err2
 	#ENDCMD
-	
-!	#CMD      = DIFF
-!	#INPUT    = errorstop01.err2 $(tcasedir)errorstop01.vf
-!	#ENDCMD
+
 #ENDFOR
 
 #ENDCONTROL

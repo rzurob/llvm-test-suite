@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = ieee/value/value002.scenario
 #FEATURE = ieee tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC

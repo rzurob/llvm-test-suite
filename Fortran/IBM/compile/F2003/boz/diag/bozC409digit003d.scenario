@@ -1,0 +1,29 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=/F2003/boz/int/bozC409digit003d.scenario
+#FEATURE = boz-literal-constant
+#DATE    = 20060119
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)bozC409digit003d.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#OUTPUT    = bozC409digit003d$(OBJ)
+#STDERR    = bozC409digit003d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = bozC409digit003d.err $($(tcasedir)bozC409digit003d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

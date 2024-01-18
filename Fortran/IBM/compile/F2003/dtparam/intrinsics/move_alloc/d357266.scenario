@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/intrinsics/move_alloc/d357266.scenario
 #FEATURE   = 355754
-#CREATOR   = Nancy Wang
 #DATE      = Oct. 8 2008
 #TEST_TYPE = Diagnostic
 #ENDDOC

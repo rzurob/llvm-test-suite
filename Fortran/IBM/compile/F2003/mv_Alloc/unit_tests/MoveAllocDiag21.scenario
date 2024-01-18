@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=move_alloc/MoveAllocDiag21
 #FEATURE = MOVE_ALLOC intrinsic procedure
-#CREATOR = Rob James
 #DATE    = 20060428
 #TEST_TYPE=Diagnostic unit test
 #ENDDOC

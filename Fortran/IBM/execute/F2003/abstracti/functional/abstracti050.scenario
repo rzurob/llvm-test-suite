@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/abstracti/abstracti050.scenario
 #FEATURE = Abstract Interface Tests
-#CREATOR = automated conversion script
 #DATE    = 20060220
 #TEST_TYPE=sanity
 #ENDDOC

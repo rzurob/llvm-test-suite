@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/asynchIO/statements/ibmext/langLvlAsynchSpec01s.scenario
 #FEATURE	= Asynchronous I/O -- IBM Extensions with Language Level Options
-#CREATOR	= GM Manual Creation
 #DATE		= 20060411
 #TEST_TYPE	= sanity
 #ENDDOC

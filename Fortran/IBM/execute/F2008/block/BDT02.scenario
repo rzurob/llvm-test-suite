@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /block/BDT02.scenario
 #FEATURE   = derived type redefinition within block
-#CREATOR   = DF
 #DATE      = 2010-11-15
 #TEST_TYPE = functional
 #ENDDOC

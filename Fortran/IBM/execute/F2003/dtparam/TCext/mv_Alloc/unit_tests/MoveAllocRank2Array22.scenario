@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/mv_Alloc/unit_tests/MoveAllocRank2Array22.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of mv_Alloc/*
 #DATE      = 20071106
 #TEST_TYPE = functional
 #ENDDOC

@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/TYPE/intrinsic/unit_tests/func/intrinsictype18f.scenario
+#FEATURE    = F386894 - F2008: Intrinsic types in TYPE spec
+#DATE       = 20110310
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)intrinsictype18f.F
+#OUTPUT     = intrinsictype18f$(OBJ)
+#ENDCMD
+
+#CMD        = F_LINK
+#INPUT      = intrinsictype18f$(OBJ)
+#OUTPUT     = intrinsictype18f$(EXE)
+#ENDCMD
+
+#CMD        = RUN
+#INPUT      = intrinsictype18f$(EXE)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

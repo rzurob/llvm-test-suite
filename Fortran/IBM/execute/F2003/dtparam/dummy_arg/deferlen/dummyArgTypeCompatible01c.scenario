@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/dummy_arg/deferlen/dummyArgTypeCompatible01c.scenario
 #FEATURE   = 358458
-#CREATOR   = Nancy Wang
 #DATE      = Nov. 14 2008
 #TEST_TYPE = Functional
 #ENDDOC

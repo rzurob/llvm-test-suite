@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/use/dtpUseInvokeTypeBoundFunction03.scenario
 #FEATURE   = DTP and USE - module procedure
-#CREATOR   = DF Manual Update
 #DATE      = 20080903
 #TEST_TYPE = sanity
 #ENDDOC

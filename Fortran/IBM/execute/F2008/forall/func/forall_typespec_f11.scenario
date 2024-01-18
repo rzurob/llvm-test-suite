@@ -3,13 +3,11 @@
 #NAME	   = forall_typespec_f11.scenario
 #REFERENCE = wkshare/test/fxws12h.scenario
 #FEATURE   = 400906 Support typespec on FORALL
-#CREATOR   = Bernard Kan
 #DATE      = 20120621
 #TEST_TYPE = Functional
 #ENDDOC
 
 #BEGINENV
-!#REQUIRED_XOPTS=$(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
 #ENDENV
 
 #BEGINCONTROL

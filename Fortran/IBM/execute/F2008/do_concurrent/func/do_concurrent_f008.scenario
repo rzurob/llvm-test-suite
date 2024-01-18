@@ -1,19 +1,14 @@
 #BEGINSCENARIO
 
-! Scenario Documentation
 #BEGINDOC
 #NAME      = F2008/do_concurrent/func/do_concurrent_f008.scenario
 #FEATURE   = RTC STORY 17293 - F2008: DO CONCURRENT construct
 #PURPOSE   = Test the DO CONCURRENT construct
-#CREATOR   = Nicole Negherbon
 #DATE      = May 14, 2015
 #TEST_TYPE = FUNCTIONAL
 #KEYWORD   = DO CONCURRENT
 #ENDDOC
 
-! Test case tests scalars and arrays of real,
-! double, logical, complex and character types initialized with DATA
-! statements in DO CONCURRENT loops and in scalar-mask-expr.
 
 #BEGINENV
   #INVALID_PRODUCT = noR16support

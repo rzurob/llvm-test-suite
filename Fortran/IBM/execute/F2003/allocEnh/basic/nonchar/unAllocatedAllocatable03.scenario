@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/allocEnh/basic/nonchar/unAllocatedAllocatable03.scenario
 #FEATURE	= Intrinsic Assignment -- Basic Tests: Non-CHARACTER Intrinsic Types
-#CREATOR	= GM Manual Creation
 #DATE		= 20060802
 #TEST_TYPE	= functional
 #ENDDOC

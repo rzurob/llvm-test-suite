@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint09i.scenario
 #FEATURE	= Array constructor enhancement - data pointers in AC's with intrinsic type specifiers (integer)
-#CREATOR	= DF Manual Update
 #DATE		= 20061024
 #TEST_TYPE	= sanity
 #ENDDOC

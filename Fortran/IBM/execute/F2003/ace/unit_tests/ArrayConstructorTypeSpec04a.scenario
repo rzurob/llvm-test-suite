@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=ArrayConstructor/ArrayConstructorTypeSpec04
 #FEATURE = Array constructor enhancements
-#CREATOR = Rob James
 #DATE    = 20060915
 #TEST_TYPE=Unit test
 #ENDDOC

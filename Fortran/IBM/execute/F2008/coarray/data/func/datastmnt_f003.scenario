@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME     = datastmnt_f003.scenario
 #FEATURE  = CAF Intrinsics
-#CREATOR  = Francesco Cassullo
 #DATE     = November 2010
 #TEST_TYPE= FUNCTIONAL
 #ENDDOC
@@ -28,7 +27,7 @@
 #CMD       = SET_DYN_ENV
 #ENDCMD
 
-#FOR i = 1 TO 1	
+#FOR i = 1 TO 1
 	#CMD       = MPRUN
 	#INPUT     = datastmnt_f003$(EXE)
 	#ENDCMD

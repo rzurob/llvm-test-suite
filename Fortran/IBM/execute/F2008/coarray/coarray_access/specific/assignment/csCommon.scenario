@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_access/specific/assignment/csCommon
 #FEATURE        = CAF coarray access (specific) - assignment - assign values in variables in common to coarray variables and vice-versa
-#CREATOR        = DF
 #DATE           = 2010-10-04
 #TEST_TYPE      = functional
 #ENDDOC

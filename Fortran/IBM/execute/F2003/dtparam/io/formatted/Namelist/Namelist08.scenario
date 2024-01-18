@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/io/formatted/Namelist/Namelist08.scenario
 #FEATURE   = DTP - Namelist
-#CREATOR   = Dorra Bouchiha
 #DATE      = 20081119
 #TEST_TYPE = functional
 #ENDDOC

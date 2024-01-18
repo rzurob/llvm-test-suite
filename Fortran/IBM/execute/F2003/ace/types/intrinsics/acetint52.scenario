@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint52.scenario
 #FEATURE	= Array constructor enhancement - ac-do-variable name scope
-#CREATOR	= DF Manual Update
 #DATE		= 20061117
 #TEST_TYPE	= sanity
 #ENDDOC

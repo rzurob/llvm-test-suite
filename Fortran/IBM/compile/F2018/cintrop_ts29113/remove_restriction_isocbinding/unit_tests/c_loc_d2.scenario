@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=c_lod_d2.scenario
 #FEATURE = noninteroperable dtype with len parm is not allowed
-#CREATOR = Daniel Chen
 #DATE    = 20140731
 #TEST_TYPE=unit
 #ENDDOC

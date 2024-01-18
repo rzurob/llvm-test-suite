@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint54.scenario
 #FEATURE	= Array constructor enhancement - enumerators
-#CREATOR	= DF Manual Update
 #DATE		= 20061123
 #TEST_TYPE	= sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = FuncPrefix.f
 #DEFECT    = 317953
-#CREATOR   = Zheming Gu
 #DATE      = Feb 09, 2007
 #TEST_TYPE = FUNCTIONAL
 #ENDDOC

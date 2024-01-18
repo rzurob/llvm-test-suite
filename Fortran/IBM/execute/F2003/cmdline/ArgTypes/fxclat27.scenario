@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = cmdline/ArgTypes/fxclat27.scenario
 #FEATURE = cmdline tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041204
 #TEST_TYPE=sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=       complex16.f
 #FEATURE=    move_alloc
-#CREATOR=    Michelle Zhang
 #DATE=       June 9, 2006
 #TEST_TYPE=  FUNCTIONAL
 #ENDDOC

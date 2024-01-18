@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/InitExp/ACE/DTP_ACE_15.scenario
 #FEATURE   = DTP - Array constructor with TypeSpec
-#CREATOR   = Dorra Bouchiha
 #DATE      = 20090514
 #TEST_TYPE = functional
 #ENDDOC

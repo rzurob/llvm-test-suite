@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = typeParamOrder005.scenario
 #FEATURE   =
-#CREATOR   = MZ adapted from F2003/dtparam/dtSpec/typeParamOrder005.f
 #DATE      = 20100504
 #TEST_TYPE = functional
 #ENDDOC

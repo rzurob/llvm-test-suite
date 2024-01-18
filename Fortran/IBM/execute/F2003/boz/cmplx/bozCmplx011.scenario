@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/F2003/boz/cmplx/bozCmplx011.scenario
 #FEATURE = boz-literal-constant in CMPLX intrinsic
-#CREATOR = Vicram Uppal
 #DATE    = 20060207
 #TEST_TYPE=sanity
 #ENDDOC

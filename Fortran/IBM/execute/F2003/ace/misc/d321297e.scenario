@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/misc/d321297e.scenario
 #FEATURE	= INQUIRE: Defect #321297: "F2003: ICE: INQUIRE with many specifiers"
-#CREATOR	= DF Manual Update
 #DATE		= 20061006
 #TEST_TYPE	= sanity
 #ENDDOC
@@ -28,7 +27,6 @@
 #INPUT		= d321297e$(EXE)
 #ENDCMD
 
-! Too many INQUIRE results are processor-dependent for us to check reliably
 
 #ENDCONTROL
 #ENDSCENARIO

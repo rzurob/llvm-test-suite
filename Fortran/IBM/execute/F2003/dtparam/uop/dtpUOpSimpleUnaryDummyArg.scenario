@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpSimpleUnaryDummyArg.scenario
 #FEATURE   = User-Defined Operators - unary ops appearing as dummy arguments
-#CREATOR   = DF Manual Update
 #DATE      = 20090211
 #TEST_TYPE = sanity
 #ENDDOC

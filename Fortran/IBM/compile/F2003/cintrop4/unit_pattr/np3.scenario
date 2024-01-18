@@ -1,0 +1,37 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=cintrop4/unit_pattr/np3.scenario
+#FEATURE = cintrop4 tests - regression run bucket
+#DATE    = 20060811
+#TEST_TYPE=sanity
+#ENDDOC
+
+#BEGINENV
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg
+#INPUT     = $(tcasedir)np3.f
+#STDERR    = np3.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = np3.out $(tcasedir)np3.vf
+#ENDCMD
+
+#CMD       = XLF95_COMPILE
+#OPTS      = -qdebug=intmsg $(OPT_FIXED_SOURCE_FORM)
+#INPUT     = $(tcasedir)np3.f
+#STDERR    = np3.out
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = np3.out $(tcasedir)np3.-qfixed.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

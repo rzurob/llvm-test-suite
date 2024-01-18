@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignModuleCommonFromVarsFixed.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign variables to variables in common in module procedure (with fixed length parameter)
-#CREATOR   = DF Manual Update
 #DATE      = 20081112
 #TEST_TYPE = sanity
 #ENDDOC

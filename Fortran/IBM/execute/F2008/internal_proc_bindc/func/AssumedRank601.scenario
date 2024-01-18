@@ -2,8 +2,6 @@
 #BEGINDOC
 #NAME      = AssumedRank601.scenario
 #FEATURE   = C Interop, Assumed Rank
-!old#CREATOR = Dorra Bouchiha
-#CREATOR   = Izhak Jakov
 #DATE      = 2013-10-18
 #TEST_TYPE = functional
 #KEYWORDS  = C Interop, Assumed Rank, CFI functions

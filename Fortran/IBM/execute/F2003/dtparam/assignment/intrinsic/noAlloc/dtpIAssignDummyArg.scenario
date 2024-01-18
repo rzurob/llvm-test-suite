@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignDummyArg.scenario
 #FEATURE   = Intrinsic Assignment without Allocation - assign to a dummy arg
-#CREATOR   = DF Manual Update
 #DATE      = 20081112
 #TEST_TYPE = sanity
 #ENDDOC

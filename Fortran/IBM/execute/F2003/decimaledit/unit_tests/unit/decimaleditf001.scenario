@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=decimaleditf001.scenario
 #FEATURE = functional test for decimal edit mode introduced in F2003 std.
-#CREATOR = Bardia Mahjour
 #DATE    = 20051215
 #TEST_TYPE=unit test
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/intrin/schedtype/abstracti059.scenario
 #FEATURE = intrin tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC

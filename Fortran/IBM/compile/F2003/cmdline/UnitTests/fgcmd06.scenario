@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/cmdline/UnitTests/fgcmd06.scenario
 #FEATURE = cmdline tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041204
 #TEST_TYPE=sanity
 #ENDDOC
@@ -17,7 +16,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) -qdebug=intmsg $(F_COMPIL
 
 #BEGINCONTROL
 
-! This chunk was DCOMP
 
 #CMD       = XLF95_COMPILE
 #INPUT     = $(tcasedir)fgcmd06.f

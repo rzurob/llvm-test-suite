@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME= volatileUt02aNO.scenario
 #FEATURE = Supporting VOLATILE for F2003
-#CREATOR = Vince Yuen
 #DATE    = 20060606
 #TEST_TYPE= ut
 #ENDDOC

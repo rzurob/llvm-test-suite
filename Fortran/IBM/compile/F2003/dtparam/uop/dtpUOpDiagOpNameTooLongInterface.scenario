@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpDiagOpNameTooLongInterface.scenario
 #FEATURE   = User-Defined Operators - diagnostic for name longer than 63 characters (generic interface)
-#CREATOR   = DF Manual Update
 #DATE      = 20090209
 #TEST_TYPE = sanity
 #ENDDOC

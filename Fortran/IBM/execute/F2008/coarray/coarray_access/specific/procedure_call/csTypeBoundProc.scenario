@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_access/specific/procedure_call/csTypeBoundProc
 #FEATURE        = CAF coarray access (specific) - procedure call - pass coarray actual arguments to type-bound procedure (*not* as the passed-object dummy argument, obviously), which passes it on and modifies or processes it in an internal procedure
-#CREATOR        = DF
 #DATE           = 2010-10-04
 #TEST_TYPE      = functional
 #ENDDOC

@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/types/none/acetnone12dkl.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement -	\
+				no TS, All ac_values of	Different Numeric Types)
+#DATE		= 20071203
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetnone12dkl.f
+#OUTPUT		= acetnone12dkl$(OBJ)
+#STDERR		= acetnone12dkl.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)acetnone12dkl$(product)vf) acetnone12dkl.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

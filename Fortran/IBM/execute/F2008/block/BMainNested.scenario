@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /block/BMainNested.scenario
 #FEATURE   = F2008 BLOCK - nested blocks in main program
-#CREATOR   = DF
 #DATE      = 2010-11-17
 #TEST_TYPE = functional
 #ENDDOC

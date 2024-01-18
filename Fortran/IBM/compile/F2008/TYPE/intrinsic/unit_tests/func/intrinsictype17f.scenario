@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME       = F2008/TYPE/intrinsic/unit_tests/func/intrinsictype17f.scenario
 #FEATURE    = F386894 - F2008: Intrinsic types in TYPE spec
-#CREATOR    = David Nichols
 #DATE       = 20110310
 #TEST_TYPE  = Functional
 #ENDDOC

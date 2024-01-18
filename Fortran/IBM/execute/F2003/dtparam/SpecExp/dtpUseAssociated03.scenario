@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/InitExp/StructConstr/dtpUseAssociated03.scenario
 #FEATURE	= specification-exprs with MODULE Entities
-#CREATOR	= Glen Mateer
 #DATE		= 20090706
 #TEST_TYPE	= functional
 #ENDDOC

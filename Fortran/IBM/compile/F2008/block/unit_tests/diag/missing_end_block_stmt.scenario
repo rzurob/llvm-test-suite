@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=missing_end_block_stmt.scenario
+#FEATURE = F2008 BLOCK construct
+#DATE    = 20101021
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+#ENDDEFS
+#ENDENV
+#BEGINCONTROL
+
+#CMD       = XLF_COMPILE
+#INPUT     = $(tcasedir)missing_end_block_stmt.f
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#STDERR    = missing_end_block_stmt.out
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = missing_end_block_stmt.out $(tcasedir)missing_end_block_stmt.vf
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = cintrop_ts29113/AllocatableAndPointer/func/PointerDummyArgument355f.scenario
 #FEATURE   = C Interop, Allocatable, Pointer
-#CREATOR   = Dorra Bouchiha
 #DATE      = 2013-07-27
 #TEST_TYPE = functional
 #KEYWORDS  = C Interop, Allocatable, Pointer

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/abstracti/abstracti019.scenario
 #FEATURE = Abstract Interface Tests
-#CREATOR = automated conversion script
 #DATE    = 20060220
 #TEST_TYPE=sanity
 #ENDDOC
@@ -17,7 +16,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOUR
 
 #BEGINCONTROL
 
-! This chunk was DCOMP
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)abstracti019.f

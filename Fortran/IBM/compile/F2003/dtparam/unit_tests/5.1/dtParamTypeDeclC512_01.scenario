@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=      dtParamTypeDeclC512_01.scenario
 #FEATURE=   Derived Type Parameters - Derived type declaration
-#CREATOR=   Rafik Zurob
 #DATE=      20060711
 #TEST_TYPE= unit
 #ENDDOC

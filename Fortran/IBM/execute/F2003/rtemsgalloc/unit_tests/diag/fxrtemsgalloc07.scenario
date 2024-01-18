@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=fxrtemsgalloc07.scenario
 #FEATURE = diagnostic for providing file name and line # when allocate/deallocate stmt fails at runtime.
-#CREATOR = Bardia Mahjour
 #DATE    = 20051031
 #TEST_TYPE=diag test
 #ENDDOC

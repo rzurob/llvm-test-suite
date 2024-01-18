@@ -1,0 +1,27 @@
+#BEGINSCENARIO
+
+#BEGINENV
+#BEGINDEFS
+TR_SRC=$(tcasedir)
+COMPILER=$(tproddir)$(XLF2008_INVOC)
+OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+
+#CMD       = XLF2008_COMPILE
+#INPUT     = $(tcasedir)allocMoldEnhdiag02.f
+#OPTS      = $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
+#OUTPUT    = allocMoldEnhdiag02$(OBJ)
+#STDERR    = allocMoldEnhdiag02.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)allocMoldEnhdiag02.vf allocMoldEnhdiag02.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

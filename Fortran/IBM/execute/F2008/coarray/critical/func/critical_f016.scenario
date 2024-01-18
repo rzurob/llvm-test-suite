@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME       = F2008/coarray/critical/func/critical_f016.scenario
 #FEATURE    = 381021
-#CREATOR    = Francesco Cassullo
 #DATE       = Feb 2011
 #TEST_TYPE  = Functional
 #ENDDOC
@@ -35,7 +34,7 @@
 	#INPUT   = critical_f016$(EXE)
 	#STDOUT  = critical_f016$(i).out
 	#ENDCMD
-	
+
 	#CMD     = DIFF
 	#INPUT   = $($(tcasedir)critical_f016$(product)vf) critical_f016$(i).out
 	#ENDCMD

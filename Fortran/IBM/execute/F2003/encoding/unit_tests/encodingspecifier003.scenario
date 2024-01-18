@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/encoding/unit_tests/encodingspecifier003.scenario
 #FEATURE	= Round Specifier
-#CREATOR	= Thomas Tewoldemedhin
 #DATE		= 20070401
 #TEST_TYPE	= unit test
 #ENDDOC

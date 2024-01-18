@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=      intproc_misc_5.f
 #FEATURE=
-#CREATOR=   Feng Ye
 #DATE=      11-05-02
 #TEST_TYPE= DIAGNOSTIC
 #KEYWORDS=  F2008, internal procedure, dummy, procedure pointer target

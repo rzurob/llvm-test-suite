@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/do_concurrent/do_concurrent_f032.scenario
 #FEATURE   = F2008 DO CONCURRENT
-#CREATOR   = Bernard Kan
 #DATE      = 20150921
 #TEST_TYPE = Functional
 #KEYWORDS  = F2008 DO CONCURRENT

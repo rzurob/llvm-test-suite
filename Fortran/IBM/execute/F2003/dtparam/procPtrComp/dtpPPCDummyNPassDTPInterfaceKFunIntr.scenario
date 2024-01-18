@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/procPtrComp/dtpPPCDummyNPassDTPInterfaceKFunIntr.scenario
 #FEATURE   = Procedure Pointers as Components - reference to function returning intrinsic, with DTP dummy args but no passed-object dummy arg, invoke as arg
-#CREATOR   = DF Manual Update
 #DATE      = 20090325
 #TEST_TYPE = sanity
 #ENDDOC

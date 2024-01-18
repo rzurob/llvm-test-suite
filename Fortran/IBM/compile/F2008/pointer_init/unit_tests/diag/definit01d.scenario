@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME           = F2008/pointer_init/unit_tests/diag/definit01d.scenario
+#FEATURE        = RTC 160700 F2008: Pointer initialization
+#DATE           = 20190715
+#TEST_TYPE      = Diagnostic
+#KEYWORDS       = F2008 pointer initialization
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)definit01d.f
+#STDERR     = definit01d.err
+#VALIDRCS   = $(RC_COMP_S)
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = $($(tcasedir)definit01d$(product)vf) definit01d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

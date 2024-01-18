@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/syncMemDefRefSimple
 #FEATURE        = CAF SYNC MEMORY - simple remote definition and reference
-#CREATOR        = DF
 #DATE           = 2010-09-17
 #TEST_TYPE      = functional
 #ENDDOC

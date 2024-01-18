@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME= F2003/dtparam/intrinsics/merge/mergePointerAsArg01.scenario
 #FEATURE= 355754
-#CREATOR= Nancy Wang
 #DATE   = Sept. 21 2008
 #TEST_TYPE= Functional
 #ENDDOC

@@ -1,0 +1,32 @@
+
+
+#BEGINSCENARIO
+#BEGINDOC
+#NAME=      arrsectFm.f
+#FEATURE=
+#DATE=
+#TEST_TYPE=
+#ENDDOC
+
+#BEGINENV
+#TIME_REQ=60
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
+#INPUT     = $(tcasedir)arrsectFm.f
+#OUTPUT    = arrsectFm$(OBJ)
+#STDERR    = arrsectFm.err
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+#CMD=      XLDIFF
+#INPUT=    arrsectFm.err $($(tcasedir)arrsectFm$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+
+#ENDSCENARIO
+
+

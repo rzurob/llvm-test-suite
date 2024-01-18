@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/derived/acetdt01b.scenario
 #FEATURE	= Array constructor enhancement - no-parameter derived TS pointer component with defined assignment via elementals
-#CREATOR	= DF Manual Update
 #DATE		= 20060918
 #TEST_TYPE	= sanity
 #ENDDOC

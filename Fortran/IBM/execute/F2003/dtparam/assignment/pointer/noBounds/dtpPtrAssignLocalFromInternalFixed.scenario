@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignLocalFromInternalFixed.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via fixed-length parameter pointers, assign to local variables in internal subprogram
-#CREATOR   = DF Manual Update
 #DATE      = 20081112
 #TEST_TYPE = sanity
 #ENDDOC

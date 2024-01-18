@@ -4,8 +4,6 @@
 #NAME       = C Interop: Assumed-length Character arguments  (405423)
 #COMPONENT  = xlftest.cinterop_ts29113.assumed_length
 #DATE       = February 04, 2015
-!old#CREATOR = Umme Hunny
-#CREATOR   = Izhak Jakov
 #TEST_TYPE  = Functional
 #ENDDOC
 

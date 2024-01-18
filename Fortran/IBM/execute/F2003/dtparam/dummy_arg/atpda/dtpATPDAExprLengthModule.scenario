@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/atpda/dtpATPDAExprLengthModule.scenario
 #FEATURE   = Assumed type parameters and dummy arguments - test the length passed in
-#CREATOR   = DF Manual Update
 #DATE      = 20081015
 #TEST_TYPE = sanity
 #ENDDOC

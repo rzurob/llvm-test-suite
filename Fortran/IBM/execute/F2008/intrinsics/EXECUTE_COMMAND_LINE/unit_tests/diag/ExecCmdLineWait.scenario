@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME = $(tcasedir)ExecCmdLineWait.scenario
 #FEATURE = unit_tests - regression run bucket
-#CREATOR = Ren Jian Gang
 #DATE    = December 05, 2010
 #TEST_TYPE = Diagnostic
 #ENDDOC

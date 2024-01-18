@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/asynchIO/attribute/args/C1232arraySect02d.scenario
 #FEATURE	= Asynchronous I/O -- ASYNCHRONOUS Attribute
-#CREATOR	= GM Manual Creation
 #DATE		= 20060406
 #TEST_TYPE	= sanity
 #ENDDOC

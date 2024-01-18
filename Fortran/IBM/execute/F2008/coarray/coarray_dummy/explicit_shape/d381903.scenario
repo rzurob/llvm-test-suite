@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=
 #FEATURE =
-#CREATOR = Jim Xia
 #DATE    =
 #TEST_TYPE=
 #ENDDOC
@@ -25,7 +24,6 @@
 #OUTPUT    = d381903$(EXE)
 #ENDCMD
 
-! SMP mode
 #CMD       = RUN
 #ENVAR     = CAF_NUM_IMAGES=4
 #INPUT     = d381903$(EXE)
@@ -36,7 +34,6 @@
 #INPUT     = d381903.out $(tcasedir)d381903.vf
 #ENDCMD
 
-! fully distr mode
 #CMD       = RUN
 #ENVAR     = CAF_NUM_IMAGES=4
 #ENVAR     = MP_PROCS=4
@@ -48,7 +45,6 @@
 #INPUT     = d381903.out $(tcasedir)d381903.vf
 #ENDCMD
 
-! hybrid mode
 #CMD       = RUN
 #ENVAR     = CAF_NUM_IMAGES=4
 #ENVAR     = MP_PROCS=2

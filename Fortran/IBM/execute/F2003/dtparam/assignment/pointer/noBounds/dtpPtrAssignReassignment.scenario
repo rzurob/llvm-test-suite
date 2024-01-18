@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignReassignment.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - verify that pointers with deferred length parameters reflect parameters of target, even after reassignment
-#CREATOR   = DF Manual Update
 #DATE      = 20090121
 #TEST_TYPE = sanity
 #ENDDOC

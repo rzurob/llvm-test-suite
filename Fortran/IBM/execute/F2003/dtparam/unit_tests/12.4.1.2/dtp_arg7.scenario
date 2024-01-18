@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=       dtp_arg7.f
 #FEATURE=    DTP for argument association
-#CREATOR=    Huiwen Li
 #DATE=       06-06-12
 #TEST_TYPE=  FUNCTIONAL
 #ENDDOC

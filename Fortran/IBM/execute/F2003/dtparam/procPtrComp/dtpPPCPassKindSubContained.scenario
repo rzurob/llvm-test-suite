@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/procPtrComp/dtpPPCPassKindSubContained.scenario
 #FEATURE   = Procedure Pointers as Components - interface spec'd by contained procedures (PASS, subroutines, kind param, mixed type args)
-#CREATOR   = DF Manual Update
 #DATE      = 20090323
 #TEST_TYPE = sanity
 #ENDDOC

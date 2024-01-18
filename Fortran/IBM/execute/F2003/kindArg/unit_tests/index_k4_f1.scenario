@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=index_k4_f1.scenario
 #FEATURE = Support new Kind Parameter for Several Intrinsics
-#CREATOR = Vince Yuen
 #DATE    = 20060414
 #TEST_TYPE=functional ut
 #ENDDOC

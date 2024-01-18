@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /syncAll/saBasicSync.scenario
 #FEATURE   = CAF SYNC ALL - basic test of synchronisation
-#CREATOR   = DF
 #DATE      = 20100727
 #TEST_TYPE = functional
 #ENDDOC

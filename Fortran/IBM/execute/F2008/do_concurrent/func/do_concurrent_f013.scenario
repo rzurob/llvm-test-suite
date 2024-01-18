@@ -1,17 +1,14 @@
 #BEGINSCENARIO
 
-! Scenario Documentation
 #BEGINDOC
 #NAME      = F2008/do_concurrent/func/do_concurrent_f013.scenario
 #FEATURE   = RTC STORY 17293 - F2008: DO CONCURRENT construct
 #PURPOSE   = Test the DO CONCURRENT construct
-#CREATOR   = Nicole Negherbon
 #DATE      = June 25, 2015
 #TEST_TYPE = FUNCTIONAL
 #KEYWORD   = DO CONCURRENT
 #ENDDOC
 
-! Blocks with DO CONCURRENT loops inside them and user-defined data types
 
 #BEGINENV
   #INVALID_PRODUCT = noR16support

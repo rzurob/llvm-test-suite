@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/asynchIO/statements/wait/pendingError02.scenario
 #FEATURE	= Asynchronous I/O -- WAIT() Statement
-#CREATOR	= GM Manual Creation
 #DATE		= 20060317
 #TEST_TYPE	= sanity
 #ENDDOC

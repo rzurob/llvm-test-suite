@@ -1,11 +1,8 @@
-! %W%
-! %G%, %U%, %I% sccsid
 #BEGINSCENARIO
 
 #BEGINDOC
 #NAME       = F2008/critical/diag/critical01f.scenario
 #FEATURE    = F381021 - Critical Unit Tests
-#CREATOR    = David Nichols
 #DATE       = 20101025
 #TEST_TYPE  = Functional
 #ENDDOC

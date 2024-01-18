@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME=       dataPtrVolatile.f
 #FEATURE=
-#CREATOR=    Feng Ye
 #DATE=       02-14-06
 #TEST_TYPE=  FUNCTIONAL
 #ENDDOC

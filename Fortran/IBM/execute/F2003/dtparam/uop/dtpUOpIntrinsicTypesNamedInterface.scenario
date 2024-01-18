@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpIntrinsicTypesNamedInterface.scenario
 #FEATURE   = User-Defined Operators - involvement of intrinsic types and named operators (generic interface)
-#CREATOR   = DF Manual Update
 #DATE      = 20090211
 #TEST_TYPE = sanity
 #ENDDOC

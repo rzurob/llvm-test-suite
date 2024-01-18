@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/allocEnh/exprEval/order/arrayExprVectorIndex07.scenario
 #FEATURE	= Intrinsic Assignment -- Order of Expression Evaluation
-#CREATOR	= GM Manual Creation
 #DATE		= 20061003
 #TEST_TYPE	= functional
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=     fxsf000p.scenario
 #FEATURE = ISO_FORTRAN_ENV (Test case adopted from pointer/sf/)
-#CREATOR = Morteza Ershad-Manesh
 #DATE    = 20100810
 #TEST_TYPE=sanity
 #ENDDOC

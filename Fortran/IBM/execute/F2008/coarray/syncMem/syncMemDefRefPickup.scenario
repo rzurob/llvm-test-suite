@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/syncMemDefRefPickup
 #FEATURE        = CAF SYNC MEMORY - many-to-one access
-#CREATOR        = DF
 #DATE           = 2010-09-20
 #TEST_TYPE      = functional
 #ENDDOC

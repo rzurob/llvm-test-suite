@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetnone09.scenario
 #FEATURE	= Array constructor enhancement no type specifier polymorphism tests
-#CREATOR	= DF Manual Update
 #DATE		= 20060726
 #TEST_TYPE	= sanity
 #ENDDOC

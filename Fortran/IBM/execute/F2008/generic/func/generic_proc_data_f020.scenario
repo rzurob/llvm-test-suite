@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME		= F2008/generic/func/generic_proc_data_f020.scenario
 #FEATURE        = #917301 F2008: Generic resolution extensions
-#CREATOR        = Grigor Nikolov
 #DATE           = 20120629
 #TEST_TYPE      = Functional
 #KEYWORDS       = F2008 GENERIC resolution
@@ -14,7 +13,6 @@
 #ENDDEFS
 #ENDENV
 
-! Scenario Control Tags
 #BEGINCONTROL
 
 #CMD		= F_COMPILE

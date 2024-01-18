@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME		= F2008/pointer_init/unit_tests/func/pointerinit03.scenario
 #FEATURE        = RTC 160700 F2008: Pointer initialization
-#CREATOR        = Rafik Zurob
 #DATE           = 20190715
 #TEST_TYPE      = Functional
 #KEYWORDS       = F2008 pointer initialization

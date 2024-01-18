@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=.../F2003/dtparam/TCext/OO_dtio/formatted/syntax/C575/C575_001a.scenario
 #FEATURE = OO_dtio + derived type parameters
-#CREATOR = David Forster (derived from work by Robert Ma)
 #DATE    = 20070723
 #TEST_TYPE=sanity
 #ENDDOC

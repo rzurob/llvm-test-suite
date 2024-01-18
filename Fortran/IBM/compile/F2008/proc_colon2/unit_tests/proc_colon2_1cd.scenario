@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2008/proc_colon2/unit_tests/proc_colon2_1cd.scenario
 #FEATURE = The :: separator is allowed in module procedure statements
-#CREATOR = Rafik Zurob
 #DATE    = 20121017
 #TEST_TYPE=unit
 #ENDDOC

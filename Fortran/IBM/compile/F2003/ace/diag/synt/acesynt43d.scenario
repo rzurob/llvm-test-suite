@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/diag/synt/acesynt43d.scenario
+#FEATURE	= Array constructor enhancement statement function invocation
+#DATE		= 20061103
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesynt43d.f
+#OUTPUT		= acesynt43d$(OBJ)
+#STDERR		= acesynt43d.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $($(tcasedir)acesynt43d$(product)vf) acesynt43d.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

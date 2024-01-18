@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME    = F2008/impure/unit_tests/diag/impure02d.scenario
+#FEATURE = 917300 impure procedures
+#DATE    = 20120308
+#TEST_TYPE=FUNCTIONAL
+#ENDDOC
+
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)impure02d.f
+#OUTPUT    = impure02d$(OBJ)
+#STDERR    = impure02d.err
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $(tcasedir)impure02d.vf impure02d.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

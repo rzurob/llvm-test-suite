@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABasicFunction003.scenario
 #FEATURE   = Intrinsic Assignment with Allocation - allocate basic DTP variable (container) via function in intrinsic assignment statement
-#CREATOR   = DF Manual Update
 #DATE      = 20090522
 #TEST_TYPE = sanity
 #ENDDOC

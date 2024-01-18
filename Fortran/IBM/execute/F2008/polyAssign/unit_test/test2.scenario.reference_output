@@ -2,8 +2,7 @@
 #BEGINDOC
 #NAME      = F2008/polyAssign/polyUnitTests/test2.scenario
 #FEATURE   = LHS of intrinsic assignment is allowed to be polymorphic
-#CREATOR   = Aaron Liu
-#DATE      = 20150707 
+#DATE      = 20150707
 #TEST_TYPE = functional
 #ENDDOC
 

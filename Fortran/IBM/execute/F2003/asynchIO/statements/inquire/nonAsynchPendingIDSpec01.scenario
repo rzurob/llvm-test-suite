@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME	   = F2003/asynchIO/statements/inquire/nonAsynchPendingIDSpec01.scenario
 #FEATURE   = Asynchronous I/O -- INQUIRE Statement
-#CREATOR   = GM Manual Creation
 #DATE	   = 20060322
 #TEST_TYPE = sanity
 #ENDDOC

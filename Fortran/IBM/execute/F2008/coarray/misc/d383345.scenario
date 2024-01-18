@@ -3,19 +3,16 @@
 #BEGINDOC
 #NAME       = d383345.scenario
 #FEATURE    = TIF intrinsics inlined by ASTI
-#CREATOR    = Bardia Mahjour
 #DATE       = November 2010
 #TEST_TYPE  = unit test
 #ENDDOC
 
-! Scenario Environment Tags
 #BEGINENV
 #BEGINDEFS
 #ENDDEFS
 #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
 #ENDENV
 
-! Scenario Control Tags
 #BEGINCONTROL
 
 #CMD       = F_COMPILE
@@ -37,12 +34,12 @@
 	#INPUT     = d383345$(EXE)
 	#STDOUT    = d383345.out.unsorted
 	#ENDCMD
-	
+
 	#CMD       = SORT
 	#INPUT     = d383345.out.unsorted
 	#STDOUT    = d383345.out.sorted
 	#ENDCMD
-	
+
 	#CMD       = DIFF
 	#INPUT     = d383345.out.sorted $(tcasedir)d383345.vf
 	#ENDCMD

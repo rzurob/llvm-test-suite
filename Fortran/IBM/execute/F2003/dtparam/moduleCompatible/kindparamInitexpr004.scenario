@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = kindparamInitexpr004.scenario
 #FEATURE   =
-#CREATOR   = MZ adapted from dtparam/typeparam/kindparamInitexpr004.f
 #DATE      = 20100504
 #TEST_TYPE = functional
 #ENDDOC

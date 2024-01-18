@@ -3,19 +3,16 @@
 #BEGINDOC
 #NAME       = cobound06.scenario
 #FEATURE    = Cobound inquiry intrinsics
-#CREATOR    = Bardia Mahjour
 #DATE       = August 2010
 #TEST_TYPE  = unit test
 #ENDDOC
 
-! Scenario Environment Tags
 #BEGINENV
 #BEGINDEFS
 #ENDDEFS
 #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
 #ENDENV
 
-! Scenario Control Tags
 #BEGINCONTROL
 
 #CMD       = F_COMPILE
@@ -37,7 +34,7 @@
 	#INPUT     = cobound06$(EXE)
 	#STDOUT    = cobound06.out
 	#ENDCMD
-	
+
 	#CMD	   = DIFF
 	#INPUT     = cobound06.out $($(tcasedir)cobound06$(product)vf)
 	#ENDCMD

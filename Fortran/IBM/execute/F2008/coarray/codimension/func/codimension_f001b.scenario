@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME     = codimension_f001b.scenario
 #FEATURE  = CAF Intrinsics
-#CREATOR  = Francesco Cassullo
 #DATE     = October 2010
 #TEST_TYPE= FUNCTIONAL
 #ENDDOC

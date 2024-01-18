@@ -2,17 +2,12 @@
 #BEGINDOC
 #NAME    = F2008/mult_tpbnd/unit_tests/func/mult_type_bound_non_override.scenario
 #FEATURE = 916819 F2008:Multiple type-bound procedures in a single procedure stmt
-#CREATOR = Paul Liu
 #DATE    = 20110525
 #TEST_TYPE=FUNCTIONAL
 #ENDDOC
 
 #BEGINCONTROL
 
-! within module
-! more than 2 type bound procedures
-! non_overridable attribute
-! procedure, non_overridable, nopass :: foo => real_foo,fox => real_fox,bar => real_bar, cat => real_cat
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)mult_type_bound_non_override.f

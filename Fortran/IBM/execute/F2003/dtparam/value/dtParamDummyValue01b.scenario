@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = dtParamDummyValue01b.scenario
 #FEATURE        = Derived Type Parameter - VALUE Attribute
-#CREATOR        = Andy Sheung
 #DATE           = July 2008
 #TEST_TYPE      = functional
 #ENDDOC

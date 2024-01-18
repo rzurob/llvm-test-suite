@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME=       338155.f
 #FEATURE=
-#CREATOR=    Feng Ye
 #DATE=       06-26-12
 #TEST_TYPE=  DIAGNOSTIC
 #ENDDOC
@@ -17,7 +16,6 @@
 #CMD=      F_COMPILE
 #INPUT=    $(tcasedir)338155.f
 #STDERR=   338155.err
-!#VALIDRCS= $(RC_COMP_E)
 #ENDCMD
 
 #CMD=      XLDIFF

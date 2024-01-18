@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=
 #FEATURE = CAF coarray dummy arguments - scalar - defect 380692
-#CREATOR = Jim Xia
 #DATE    =
 #TEST_TYPE=
 #ENDDOC

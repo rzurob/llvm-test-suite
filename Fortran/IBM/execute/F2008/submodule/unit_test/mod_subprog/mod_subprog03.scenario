@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = submodule/unit_test/mod_subprog/mod_subprog03.scenario
 #FEATURE   = F2008 Submodule
-#CREATOR   = Daniel Chen
 #DATE      = 20131120
 #TEST_TYPE = unit test
 #KEYWORDS  = F2008, submodule, F2008 submodule

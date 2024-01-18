@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/diag/diagC530.scenario
+#FEATURE   =
+#DATE      = 20101028
+#TEST_TYPE = functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)diagC530.f
+#OUTPUT    = diagC530$(OBJ)
+#STDOUT    = diagC530.out
+#STDERR    = diagC530.err
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = diagC530.err $($(tcasedir)diagC530$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/coarray/error_stop/cnst_expr/error_stop_f2008caf_06d.scenario
 #FEATURE   = Constant expression as stop code in ERROR STOP statement
-#CREATOR   = Shahid Alam
 #DATE      = 20101026
 #TEST_TYPE = diagnostic
 #ENDDOC

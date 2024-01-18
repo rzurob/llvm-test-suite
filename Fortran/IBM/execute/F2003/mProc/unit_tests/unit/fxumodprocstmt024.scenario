@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=fxdmodprocstmt024.scenario
 #FEATURE = functional for generalization of mod proc stmts in F2003
-#CREATOR = Bardia Mahjour
 #DATE    = 20060411
 #TEST_TYPE=diag test
 #ENDDOC

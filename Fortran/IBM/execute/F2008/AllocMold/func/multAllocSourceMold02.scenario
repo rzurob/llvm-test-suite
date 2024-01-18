@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/AllocMold/multAllocSourceMold02.f
 #FEATURE   = DTP - Allocate with source expression
-#CREATOR   = Izhak Jakov
 #DATE      = 20150605
 #TEST_TYPE = functional
 #ENDDOC

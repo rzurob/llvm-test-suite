@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_dummy/assumed_size/cdaasBasic
 #FEATURE        = CAF dummy arguments - assumed size - access only, same bounds in actual and dummy
-#CREATOR        = DF
 #DATE           = 2010-09-24
 #TEST_TYPE      = functional
 #ENDDOC

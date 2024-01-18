@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/OO_poly/allocate/falloc513a2.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB extension of OO_poly/*
 #DATE      = 20070820
 #TEST_TYPE = functional
 #ENDDOC

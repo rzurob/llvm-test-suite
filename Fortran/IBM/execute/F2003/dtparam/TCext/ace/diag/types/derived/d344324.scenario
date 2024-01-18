@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/TCext/ace/diag/types/derived/d344324.scenario
 #FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement)
-#CREATOR	= Glen Mateer
 #DATE		= 20071129
 #TEST_TYPE	= Functional
 #ENDDOC

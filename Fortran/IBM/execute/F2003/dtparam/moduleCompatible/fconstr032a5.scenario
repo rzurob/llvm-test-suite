@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = fconstr032a5.scenario
 #FEATURE   =
-#CREATOR   = MZ adapted from dtparam/TCext/OO_type/struct_constr/fconstr032a5.f
 #DATE      = 20100504
 #TEST_TYPE = functional
 #ENDDOC

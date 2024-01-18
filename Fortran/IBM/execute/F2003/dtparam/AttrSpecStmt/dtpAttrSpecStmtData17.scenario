@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/AttrSpecStmt/dtpAttrSpecStmtData17.scenario
 #FEATURE	= Data Object Declaration
-#CREATOR	= Glen Mateer
 #DATE		= 20090511
 #TEST_TYPE	= functional
 #ENDDOC

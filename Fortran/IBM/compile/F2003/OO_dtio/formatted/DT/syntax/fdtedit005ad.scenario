@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/OO_dtio/formatted/DT/syntax/fdtedit005ad.scenario
 #FEATURE = OO_dtio tests
-#CREATOR = Robert Ma
 #DATE    = 20041215
 #TEST_TYPE=sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=dtparamdefop07.scenario
 #FEATURE = Generic interfaces and bindings with derived type parameters
-#CREATOR = Rafik Zurob
 #DATE    = 20060313
 #TEST_TYPE=unit
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/procPtrComp/dtpPPCLocalPassMixInterfaceKLFunDTP.scenario
 #FEATURE   = Procedure Pointers as Components - reference to pass function with mixed dummy args, K+L, DTP result
-#CREATOR   = DF Manual Update
 #DATE      = 20090324
 #TEST_TYPE = sanity
 #ENDDOC

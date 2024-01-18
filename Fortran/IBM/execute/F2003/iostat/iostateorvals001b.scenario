@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=iostateorvals001b.scenario
 #FEATURE = 299314
-#CREATOR = Rob Wheeler
 #DATE    = 20060109
 #TEST_TYPE=fvt
 #ENDDOC

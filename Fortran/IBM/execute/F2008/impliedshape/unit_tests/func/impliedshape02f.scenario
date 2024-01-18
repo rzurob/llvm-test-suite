@@ -1,11 +1,8 @@
-! %W%
-! %G%, %U%, %I% sccsid
 #BEGINSCENARIO
 
 #BEGINDOC
 #NAME       = F2008/impliedshape/unit_tests/func/impliedshape02f.scenario
 #FEATURE    = F385594 - Implied-shape Arrays
-#CREATOR    = David Nichols
 #DATE       = 20110214
 #TEST_TYPE  = Functional
 #ENDDOC

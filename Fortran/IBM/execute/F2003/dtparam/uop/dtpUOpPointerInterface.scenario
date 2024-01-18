@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpPointerInterface.scenario
 #FEATURE   = User-Defined Operators - pointers to derived types
-#CREATOR   = DF Manual Update
 #DATE      = 20090211
 #TEST_TYPE = sanity
 #ENDDOC

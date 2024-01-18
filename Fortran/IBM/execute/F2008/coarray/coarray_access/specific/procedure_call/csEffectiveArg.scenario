@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_access/specific/procedure_call/csEffectiveArg
 #FEATURE        = CAF coarray access (specific) - procedure call - procedure invokes procedure with a coarray variable as the effective argument
-#CREATOR        = DF
 #DATE           = 2010-10-04
 #TEST_TYPE      = functional
 #ENDDOC

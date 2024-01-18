@@ -3,7 +3,6 @@
 #NAME		= F2003/dtparam/InitExp/DefaultInit/dtpDefaultInit01.scenario
 #FEATURE	= init-expr (DATA Statement, Structure Constructor, and		\
 				Default Initialization)
-#CREATOR	= Glen Mateer
 #DATE		= 20090521
 #TEST_TYPE	= functional
 #ENDDOC

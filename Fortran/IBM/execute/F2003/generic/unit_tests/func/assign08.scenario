@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/generic/unit_tests/func/assign08.scenario
 #FEATURE = Generic Bindings
-#CREATOR = Rafik Zurob
 #DATE    = 20051118
 #TEST_TYPE=unit
 #ENDDOC

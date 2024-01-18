@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignCommonFromModuleDeferredChk.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign to common variables in module procedures, then check values via pointers with deferred length parameters
-#CREATOR   = DF Manual Update
 #DATE      = 20090126
 #TEST_TYPE = sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/procPtrComp/dtpPPCLocalNPassDTPModKLFunDTP.scenario
 #FEATURE   = Procedure Pointers as Components - reference to function without passed-object dummy argument (K+L), DTP result(mod)
-#CREATOR   = DF Manual Update
 #DATE      = 20090324
 #TEST_TYPE = sanity
 #ENDDOC

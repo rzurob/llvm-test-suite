@@ -2,14 +2,12 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/dataPtrAssgn/unit_tests/ptrassign001d.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of dataPtrAssgn/*
 #DATE      = 20071217
 #TEST_TYPE = functional
 #ENDDOC
 
 #BEGINCONTROL
 
-! Add in $(OPT_ENABLE_MSG_NUM<1518-317>) in order to avoid extra error messages in $(OPT_OPTIMIZE_FOR_SMP) or $(OPT_OPTIMIZE_FOR_SMP_NOOPT)
 #CMD       = XLF95_COMPILE
 #OPTS      = $(OPT_SET_LANG_LEVEL<95std>) $(OPT_ENABLE_MSG_NUM<1518-317>)
 #INPUT     = $(tcasedir)ptrassign001d.f

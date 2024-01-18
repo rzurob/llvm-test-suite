@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = stop_diag1a.scenario
+#FEATURE    = F2008 extension to stop code
+#DATE       = 20100929
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#INVALID_XOPTS = $(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+  #CMD        = XLF2003_COMPILE
+  #INPUT      = $(tcasedir)stop_diag1.f
+  #OPTS       = $(OPT_ENABLE_MSG_NUM<1516-267>)
+  #STDERR     = stop_diag1a.err
+  #VALIDRCS   = 1
+  #ENDCMD
+
+  #CMD        = XLDIFF
+  #INPUT      = stop_diag1a.err $(tcasedir)stop_diag1a.vf
+  #ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

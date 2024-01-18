@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME=      Misc5.f
 #FEATURE= SELECT TYPE STATEMENT
-#CREATOR=   Feng Ye
 #DATE=      11-01-05
 #TEST_TYPE= DIAGNOSTIC
 #ENDDOC
@@ -20,9 +19,6 @@
 #VALIDRCS= 1
 #ENDCMD
 
-!#CMD=      XLDIFF
-!#INPUT=    Misc5.err $($(tcasedir)Misc5$(product)vf)
-!#ENDCMD
 
 #ENDCONTROL
 

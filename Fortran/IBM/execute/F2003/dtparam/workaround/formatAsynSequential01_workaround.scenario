@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/io/formatted/format/formatAsynSequential01_workaround.scenario
 #FEATURE   = 359704
-#CREATOR   = Nancy Wang
 #DATE      = Dec. 21 2008
 #TEST_TYPE = Functional
 #ENDDOC

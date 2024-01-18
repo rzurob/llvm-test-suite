@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/selectedCharName/unit_tests/SelCKind004.scenario
 #FEATURE   = 317648
-#CREATOR   = Zheming Gu
 #DATE      = August 02, 2006
 #TEST_TYPE = Functional Unit Test
 #ENDDOC

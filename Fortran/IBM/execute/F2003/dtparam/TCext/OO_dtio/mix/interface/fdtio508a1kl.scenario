@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=.../F2003/dtparam/TCext/OO_dtio/mix/interface/fdtio508a1kl.f
 #FEATURE = OO_dtio + derived type parameters
-#CREATOR = David Forster (derived from work by Jim Xia)
 #DATE    = 20070814
 #TEST_TYPE=
 #ENDDOC

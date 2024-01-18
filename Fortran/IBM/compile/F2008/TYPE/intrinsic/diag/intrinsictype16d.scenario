@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/TYPE/intrinsic/unit_tests/diag/intrinsictype16d.scenario
+#FEATURE    = F386894 - F2008: Intrinsic types in TYPE spec
+#DATE       = 20110310
+#TEST_TYPE  = Functional
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)intrinsictype16d.F
+#STDERR     = intrinsictype16d.out
+#VALIDRCS   = 1
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = intrinsictype16d.out $($(tcasedir)intrinsictype16d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

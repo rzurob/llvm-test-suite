@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=bozlitargsIntrnFunc004.scenario
 #FEATURE = diagnostic testing of boz-literal constants as args to REAL, INT, CMPLX and DBLE intrinsics
-#CREATOR = Michael Selvanayagam
 #DATE    = 20050826
 #TEST_TYPE=unit test
 #ENDDOC

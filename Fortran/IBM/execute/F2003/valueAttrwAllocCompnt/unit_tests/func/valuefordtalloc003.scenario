@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=valuefordtalloc003.scenario
 #FEATURE = Value attribute for derived types with allocatable components
-#CREATOR = Michael Selvanayagam
 #DATE    = 20060120
 #TEST_TYPE=unit test
 #ENDDOC

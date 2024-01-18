@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/use/dtpUseSC01.scenario
 #FEATURE   = DTP and USE - structure constructor
-#CREATOR   = DF Manual Update
 #DATE      = 20080903
 #TEST_TYPE = sanity
 #ENDDOC

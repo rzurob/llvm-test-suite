@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/OO_procptr/bindc1/functional/bindc018.scenario
 #FEATURE = OO_dtio tests
-#CREATOR = Robert Ma
 #DATE    = 20041215
 #TEST_TYPE=sanity
 #ENDDOC

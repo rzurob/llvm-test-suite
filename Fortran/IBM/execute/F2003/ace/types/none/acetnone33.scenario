@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/none/acetnone33.scenario
 #FEATURE	= Array constructor enhancement - unltd polymorphic AC in ASSOCIATE construct
-#CREATOR	= DF Manual Update
 #DATE		= 20061121
 #TEST_TYPE	= sanity
 #ENDDOC

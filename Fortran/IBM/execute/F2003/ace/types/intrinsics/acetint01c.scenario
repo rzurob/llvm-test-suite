@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint01c.scenario
 #FEATURE	= Array constructor enhancement intrinsic type specifier tests
-#CREATOR	= DF Manual Update
 #DATE		= 20060613
 #TEST_TYPE	= sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=fpscrstop033.f
 #FEATURE = STOP should show FPSCR exception information. ( Feature 296350 )
-#CREATOR = Bardia Mahjour
 #DATE    = 20060216
 #TEST_TYPE=unit test
 #ENDDOC

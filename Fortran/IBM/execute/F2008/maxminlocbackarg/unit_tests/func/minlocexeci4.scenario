@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME= minlocexeci4.scenario
 #FEATURE = back argument for maxloc/minloc
-#CREATOR = Pooja Dayanand
 #DATE    = 20120629
 #TEST_TYPE = functional
 #ENDDOC

@@ -1,11 +1,8 @@
-! %W%
-! %G%, %U%, %I% sccsid
 #BEGINSCENARIO
 
 #BEGINDOC
 #NAME       = OptionalArg11f.scenario
 #FEATURE    = 399982 - C Interop: Optional Argument
-#CREATOR    = Bardia Mahjour
 #DATE       = May 2012
 #TEST_TYPE  = Functional
 #ENDDOC
@@ -18,7 +15,6 @@
 #OUTPUT    = OptionalArg11f_c$(OBJ)
 #ENDCMD
 
-! Test with -qxlf2008=nocheckpresence
 #CMD       = F_COMPILE
 #OPTS      = -qxlf2008=nocheckpresence
 #INPUT     = $(tcasedir)OptionalArg11f.f
@@ -41,7 +37,6 @@
 #INPUT     = OptionalArg11f.out $($(tcasedir)OptionalArg11f$(product)vf)
 #ENDCMD
 
-! Test with -qxlf2008=checkpresence
 #CMD       = F_COMPILE
 #OPTS      = -qxlf2008=checkpresence
 #INPUT     = $(tcasedir)OptionalArg11f.f

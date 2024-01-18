@@ -1,11 +1,9 @@
 #BEGINSCENARIO
 
-! Scenario Documentation
 #BEGINDOC
 #NAME      = F2008/do_concurrent/func/d118284.scenario
 #FEATURE   = RTC DEFECT 118284
 #PURPOSE   = Test the DO CONCURRENT construct
-#CREATOR   = Bernard Kan
 #DATE      = Oct10, 2015
 #TEST_TYPE = FUNCTIONAL
 #KEYWORD   = DO CONCURRENT

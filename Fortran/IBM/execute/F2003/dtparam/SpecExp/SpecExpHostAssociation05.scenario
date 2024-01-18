@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/SpecExp/SpecExpHostAssociation05.scenario
 #FEATURE   = DTP - Specification expression - Host Association
-#CREATOR   = Dorra Bouchiha
 #DATE      = 20090614
 #TEST_TYPE = functional
 #ENDDOC

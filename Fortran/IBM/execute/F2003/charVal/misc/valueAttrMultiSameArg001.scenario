@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/charVal/misc/valueAttrMultiSameArg001.scenario
 #FEATURE	= VALUE Attribute -- Character Length > 1
-#CREATOR	= GM Manual Creation
 #DATE		= 20060425
 #TEST_TYPE	= functional
 #ENDDOC

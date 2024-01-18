@@ -1,0 +1,28 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME       = F2008/internal_procptr/PassInterProcPtrDiag.scenario
+#FEATURE    = 303977
+#DATE       = 20110306
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINENV
+#INVALID_XOPTS  = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD        = F2003_COMPILE
+#INPUT      = $(tcasedir)PassInterProcPtrDiag.f
+#OPTS       = $(OPT_SET_LANG_LEVEL<2003std>)
+#STDERR     = PassInterProcPtrDiag.err
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = $($(tcasedir)PassInterProcPtrDiag$(product)vf) PassInterProcPtrDiag.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = intrimod/exec/intrimod23a.scenario
 #FEATURE = intrimod tests - regression run bucket
-#CREATOR = automated conversion script - fixed CPR 20090120
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC

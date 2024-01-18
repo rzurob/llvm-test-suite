@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/internal_procptr/PassInterProcNest.scenario
 #FEATURE   = 303977
-#CREATOR   = Ren Jian Gang
 #DATE      = March 01, 2011
 #TEST_TYPE = FUNCTIONAL
 #ENDDOC

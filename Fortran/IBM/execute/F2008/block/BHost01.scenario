@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /block/BHost01.f
 #FEATURE   = F2008 - BLOCK - host association
-#CREATOR   = DF
 #DATE      = 2010-11-15
 #TEST_TYPE = functional
 #ENDDOC

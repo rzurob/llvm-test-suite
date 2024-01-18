@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME     = F2008/do_concurrent/func/do_concurrent_omp_f002.f
 #FEATURE  = RTC 17293 - F2008: DO CONCURRENT Construct
-#CREATOR  = Nicole Negherbon
 #DATE     = August 12, 2015
 #TEST_TYPE = FUNCTIONAL
 #REFERENCE = omp30/loopCollapse/loopCollapse/loop_collapse_task_21.scenario

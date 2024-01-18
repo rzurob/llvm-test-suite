@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_access/specific/procedure_call/csDiffCoboundsArg
 #FEATURE        = CAF coarray access (specific) - procedure call - scalar coarray dummy argument with same corank, but different cobounds as actual argument
-#CREATOR        = DF
 #DATE           = 2010-10-04
 #TEST_TYPE      = functional
 #ENDDOC

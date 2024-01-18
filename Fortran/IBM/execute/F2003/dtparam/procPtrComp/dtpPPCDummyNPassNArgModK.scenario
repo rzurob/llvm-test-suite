@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/procPtrComp/dtpPPCDummyNPassNArgModK.scenario
 #FEATURE   = Procedure Pointers as Components - interface spec'd by contained procedures (NOPASS, no args, subroutines & functions, kind param), ref via dummy arg
-#CREATOR   = DF Manual Update
 #DATE      = 20090323
 #TEST_TYPE = sanity
 #ENDDOC

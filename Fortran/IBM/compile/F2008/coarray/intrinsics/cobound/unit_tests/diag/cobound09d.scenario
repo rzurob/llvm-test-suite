@@ -1,0 +1,32 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = cobound09d.scenario
+#FEATURE    = Cobound inquiry intrinsics
+#DATE       = August 2010
+#TEST_TYPE  = unit test
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+  #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)cobound09d.f
+#OPTS      = -c
+#STDOUT    = cobound09d.err
+#STDERR    = cobound09d.err
+#VALIDRCS  = 1
+#ENDCMD
+
+#CMD	   = XLDIFF
+#INPUT     = cobound09d.err $($(tcasedir)cobound09d$(product)vf)
+#OPTS      =
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

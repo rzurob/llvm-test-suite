@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/allocate/MoldExp/AllocateWithMoldExp02-08.f
 #FEATURE   = DTP - Allocate with mold expression
-#CREATOR   = Izhak Jakov
 #DATE      = 20150619
 #TEST_TYPE = functional
 #ENDDOC

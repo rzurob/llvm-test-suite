@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/allocEnh/basic/nonchar/unallocatedLBoundDerived03.scenario
 #FEATURE	=Intrinsic Assignment-Basic Tests:Non-CHARACTER Array of Derived Type
-#CREATOR	= GM Manual Creation
 #DATE		= 20060831
 #TEST_TYPE	= functional
 #ENDDOC

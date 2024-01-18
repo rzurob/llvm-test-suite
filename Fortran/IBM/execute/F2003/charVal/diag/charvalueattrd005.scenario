@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=charvalueattrd005.f
 #FEATURE = diagnostic for VALUE attribute for characters with length other than 1. (feature 298120).
-#CREATOR = Bardia Mahjour
 #DATE    = 20060124
 #TEST_TYPE=diag test
 #ENDDOC

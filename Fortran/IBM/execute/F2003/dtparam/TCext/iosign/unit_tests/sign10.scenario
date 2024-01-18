@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/iosign/unit_tests/sign10.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of F2003/iosign/*
 #DATE      = 20071107
 #TEST_TYPE = functional
 #ENDDOC

@@ -1,18 +1,14 @@
 #BEGINSCENARIO
 
-! Scenario Documentation
 #BEGINDOC
 #NAME      = F2008/do_concurrent/func/do_concurrent_f005.scenario
 #FEATURE   = RTC STORY 17293 - F2008: DO CONCURRENT construct
 #PURPOSE   = Test the DO CONCURRENT construct
-#CREATOR   = Nicole Negherbon
 #DATE      = March 27, 2015
 #TEST_TYPE = FUNCTIONAL
 #KEYWORD   = DO CONCURRENT
 #ENDDOC
 
-! Test case tests DO CONCURRENT loops and nested DO CONCURRENT loops up to
-! 3 levels deep with integer pointers in DO CONCURRENT loops.
 
 #BEGINENV
 #BEGINDEFS

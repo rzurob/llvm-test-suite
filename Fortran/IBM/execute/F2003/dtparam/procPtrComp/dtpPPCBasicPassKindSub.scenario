@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/procPtrComp/dtpPPCBasicPassKindSub.scenario
 #FEATURE   = Procedure Pointers as Components - pointer to PASS functions from DTP with kind param
-#CREATOR   = DF Manual Update
 #DATE      = 20090323
 #TEST_TYPE = sanity
 #ENDDOC

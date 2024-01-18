@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME      = ieee/finite/fxfinite03.scenario
 #FEATURE   = ieee tests - regression run bucket
-#CREATOR   = automated conversion script
 #DATE      = 20081220
 #TEST_TYPE = sanity
 #ENDDOC

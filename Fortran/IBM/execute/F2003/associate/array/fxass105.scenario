@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/associat/array/fxass105.scenario
 #FEATURE = associat tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC

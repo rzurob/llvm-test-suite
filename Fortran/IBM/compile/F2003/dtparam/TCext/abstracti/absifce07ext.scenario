@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/TCext/abstracti/absifce07ext.scenario
 #FEATURE	= Derived Type Parameters(+Abstract Interface Diagnostic Test Cases)
-#CREATOR	= Glen Mateer (derived from work by James Ren)
 #DATE		= 20071106
 #TEST_TYPE	= Diagnostic
 #ENDDOC

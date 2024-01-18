@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = F2003/allocEnh/unit_tests/ReallocAssignArrayCharacter08.scenario
 #FEATURE = Reallocation on assignment to an allocatable object
-#CREATOR = Rob James
 #DATE    = 20060609
 #TEST_TYPE=Functional unit test
 #ENDDOC

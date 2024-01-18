@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = AllocPtr16f
 #FEATURE   = C Interop: Allocatable and Pointer
-#CREATOR   = Bardia Mahjour
 #DATE      = 2013-03-01
 #TEST_TYPE = functional
 #KEYWORDS  = C Interop, Allocatable, Pointer

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=fxiosendeor004.scenario
 #FEATURE = diagnostic test for is_iostat_end and is_iostat_eor
-#CREATOR = Bardia Mahjour
 #DATE    = 20050817
 #TEST_TYPE=unit test
 #ENDDOC
@@ -19,7 +18,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 
 #BEGINCONTROL
 
-! for $(OPT_SET_LANG_LEVEL<77std>)
 #CMD       = XLF90_COMPILE
 #INPUT     = $(tcasedir)fxiosendeor004.f
 #OPTS      = $(OPT_FIXED_SOURCE_FORM) $(OPT_SET_LANG_LEVEL<77std>) -qdebug=intmsg $(OPT_ZEROSIZE_OFF) $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
@@ -33,7 +31,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 #OPTS      = -b
 #ENDCMD
 
-! for $(OPT_SET_LANG_LEVEL<90std>)
 #CMD       = XLF90_COMPILE
 #INPUT     = $(tcasedir)fxiosendeor004.f
 #OPTS      = $(OPT_SET_LANG_LEVEL<90std>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
@@ -48,7 +45,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 #ENDCMD
 
 
-! for $(OPT_SET_LANG_LEVEL<90pure>)
 #CMD       = XLF90_COMPILE
 #INPUT     = $(tcasedir)fxiosendeor004.f
 #OPTS      = $(OPT_SET_LANG_LEVEL<90pure>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
@@ -63,7 +59,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 #ENDCMD
 
 
-! for $(OPT_SET_LANG_LEVEL<95std>)
 #CMD       = XLF90_COMPILE
 #INPUT     = $(tcasedir)fxiosendeor004.f
 #OPTS      = $(OPT_SET_LANG_LEVEL<95std>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
@@ -78,7 +73,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 #ENDCMD
 
 
-! for $(OPT_SET_LANG_LEVEL<95pure>)
 #CMD       = XLF90_COMPILE
 #INPUT     = $(tcasedir)fxiosendeor004.f
 #OPTS      = $(OPT_SET_LANG_LEVEL<95pure>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
@@ -93,7 +87,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 #ENDCMD
 
 
-! for $(OPT_SET_LANG_LEVEL<90ext>) which is equivalent of extended.
 #CMD       = XLF90_COMPILE
 #INPUT     = $(tcasedir)fxiosendeor004.f
 #OPTS      = $(OPT_SET_LANG_LEVEL<90ext>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
@@ -108,7 +101,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 #ENDCMD
 
 
-! for $(OPT_SET_LANG_LEVEL<extended>)
 #CMD       = XLF90_COMPILE
 #INPUT     = $(tcasedir)fxiosendeor004.f
 #OPTS      = $(OPT_SET_LANG_LEVEL<extended>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
@@ -122,7 +114,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 #OPTS      = -b
 #ENDCMD
 
-! for $(OPT_SET_LANG_LEVEL<2003std>)
 #CMD       = XLF90_COMPILE
 #INPUT     = $(tcasedir)fxiosendeor004.f
 #OPTS      = $(OPT_SET_LANG_LEVEL<2003std>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)
@@ -136,7 +127,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 #OPTS      = -b
 #ENDCMD
 
-! for $(OPT_SET_LANG_LEVEL<2003pure>)
 #CMD       = XLF90_COMPILE
 #INPUT     = $(tcasedir)fxiosendeor004.f
 #OPTS      = $(OPT_SET_LANG_LEVEL<2003pure>) -qdebug=intmsg $(OPT_ENABLE_MSG_NUM<1518-317:1518-318>)

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/TCext/abstracti/abstracti011ext2.scenario
 #FEATURE	= Derived Type Parameters + Abstract Interface Tests
-#CREATOR	= Glen Mateer (derived from work by automated conversion script)
 #DATE		= 20071017
 #TEST_TYPE	= Functional
 #ENDDOC

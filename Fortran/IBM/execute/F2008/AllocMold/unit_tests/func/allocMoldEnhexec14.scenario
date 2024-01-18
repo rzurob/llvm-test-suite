@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME = allocMoldEnhexec14.scenario
 #FEATURE = Allocate stmt f2008 enhancement
-#CREATOR = Daniel Chen
 #DATE    = 20111108
 #TEST_TYPE=sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = outputComplexInf005.f
 #FEATURE   = 311684
-#CREATOR   = Bardia Mahjour
 #DATE      = June 9, 2006
 #TEST_TYPE = FUNCTIONAL
 #ENDDOC

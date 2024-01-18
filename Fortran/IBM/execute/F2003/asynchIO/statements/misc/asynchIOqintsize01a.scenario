@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/asynchIO/statements/misc/asynchIOqintsize01a.scenario
 #FEATURE	= Asynchronous I/O -- Miscellaneous
-#CREATOR	= GM Manual Creation
 #DATE		= 20060412
 #TEST_TYPE	= sanity
 #ENDDOC

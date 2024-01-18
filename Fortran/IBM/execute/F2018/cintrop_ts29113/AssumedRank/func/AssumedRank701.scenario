@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = cintrop_ts29113/AssumedRank/func/AssumedRank701.scenario
 #FEATURE   = C Interop, Assumed Rank
-#CREATOR   = Rafik Zurob
 #DATE      = 2014-04-22
 #TEST_TYPE = functional
 #KEYWORDS  = C Interop, Assumed Rank, generic

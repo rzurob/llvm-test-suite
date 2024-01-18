@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= /F2003/encoding/unit_tests/encodingspecifier010.scenario
 #FEATURE	= ENCODING SPECIFIER
-#CREATOR	= Robert Jackiewicz
 #DATE		= 2007/08/23
 #TEST_TYPE	= Functional
 #ENDDOC

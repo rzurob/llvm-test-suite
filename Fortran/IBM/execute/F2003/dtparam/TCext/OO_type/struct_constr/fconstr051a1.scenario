@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/OO_type/struct_constr/fconstr051a1.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB extension of OO_type/*
 #DATE      = 20070710
 #TEST_TYPE = functional
 #ENDDOC

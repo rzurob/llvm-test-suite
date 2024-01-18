@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME=      dataPtrDeallocArrSec.f
 #FEATURE=
-#CREATOR=   Feng Ye
 #DATE=      Jul-17-06
 #TEST_TYPE= DIAGNOSTIC
 #ENDDOC

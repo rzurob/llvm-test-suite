@@ -4,7 +4,6 @@
 #BEGINDOC
 #NAME      = F2008/impure/functional/impure17f.scenario
 #FEATURE   = F2008 IMPURE elemental procedures
-#CREATOR   = Tapti Vaid
 #DATE      = 20120413
 #TEST_TYPE = functional
 #KEYWORDS =  F2008, IMPURE

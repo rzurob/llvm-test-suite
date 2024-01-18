@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = ieee/class/fclass01.scenario
 #FEATURE = ieee tests - regression run bucket
-#CREATOR = YZ Manual Conversion
 #DATE    = 20070125
 #TEST_TYPE=sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/asynchIO/statements/dtio/bothAsynchSpec01.scenario
 #FEATURE	= Asynchronous I/O -- Derived-Type I/O (DTIO)
-#CREATOR	= GM Manual Creation
 #DATE		= 20060412
 #TEST_TYPE	= sanity
 #ENDDOC

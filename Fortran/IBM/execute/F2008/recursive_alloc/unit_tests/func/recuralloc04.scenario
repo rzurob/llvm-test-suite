@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME		= F2008/recursive_alloc/unit_tests/func/recuralloc04.scenario
 #FEATURE        = RTC 146334 F2008: Omitting an allocatable component in a structure constructor
-#CREATOR        = Rafik Zurob
 #DATE           = 20190725
 #TEST_TYPE      = Functional
 #KEYWORDS       = F2008 recursive allocatable component

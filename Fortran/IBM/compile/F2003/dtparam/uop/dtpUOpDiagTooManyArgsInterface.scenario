@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpDiagTooManyArgsInterface.scenario
 #FEATURE   = User-Defined Operators - diagnostic for > 2 args (generic interface)
-#CREATOR   = DF Manual Update
 #DATE      = 20090209
 #TEST_TYPE = sanity
 #ENDDOC

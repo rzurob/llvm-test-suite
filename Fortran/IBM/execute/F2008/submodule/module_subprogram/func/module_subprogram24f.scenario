@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/submodule/module_subprogram/func/module_subprogram24f.scenario
 #FEATURE   = F2008 submodule
-#CREATOR   = Bernard Kan
 #DATE      = 20130516
 #TEST_TYPE = Functional
 #KEYWORDS  = F2008 Submodule
@@ -39,7 +38,6 @@ XLFRTEOPTS=buffering=disable_preconn
 #STDOUT    = module_subprogram24f.out
 #ENDCMD
 
-! ensure submodule is recognized in the debugger
 #CMD       = GREP
 #IF on(aix)
 #OPTS      = "module_subprogram24f.__(mod)submod1_NMOD__&&_(mod)submod1.__mod_NMOD_displayl2"

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/generic/operator/functional/genericOperatorScalar010.scenario
 #FEATURE = OO_dtio tests
-#CREATOR = Robert Ma
 #DATE    = 20051122
 #TEST_TYPE=sanity
 #ENDDOC

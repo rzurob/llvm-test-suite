@@ -1,0 +1,33 @@
+#BEGINSCENARIO
+
+#BEGINDOC
+#NAME       = F2008/exit/unit_tests/func/exit04d.scenario
+#FEATURE    = F386895 - F2008 Exit Statement
+#DATE       = 20110308
+#TEST_TYPE  = Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)exit04d.f
+#OPTS       = $(OPT_SET_LANG_LEVEL<2003std>) $(OPT_DISABLE_MSG_NUM<1518-317>)
+#STDERR     = exit04d.out
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = exit04d.out $($(tcasedir)exit04ad$(product)vf)
+#ENDCMD
+
+#CMD        = F_COMPILE
+#INPUT      = $(tcasedir)exit04d.f
+#OPTS       = $(OPT_SET_LANG_LEVEL<2008std>) $(OPT_DISABLE_MSG_NUM<1518-317>)
+#STDERR     = exit04d.out
+#ENDCMD
+
+#CMD        = XLDIFF
+#INPUT      = exit04d.out $($(tcasedir)exit04bd$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

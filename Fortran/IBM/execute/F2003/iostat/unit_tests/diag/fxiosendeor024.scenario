@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=fxiosendeor024.scenario
 #FEATURE = diagnostic test for is_iostat_end and is_iostat_eor
-#CREATOR = Bardia Mahjour
 #DATE    = 20050817
 #TEST_TYPE=unit test
 #ENDDOC
@@ -17,8 +16,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 
 #BEGINCONTROL
 
-! Deconstructing a POSTCMD SCRIPT : POSTdeconSCRIPT
-! Valid line : $COMPILER $(OPT_FIXED_SOURCE_FORM) -qdebug=intmsg -c -Q -O $OPTIONS $TR_SRC/$1.f -lxlfzz2  -c > $1.out 2>&1
 
 #CMD       = XLF_COMPILE
 #INPUT     = $(tcasedir)fxiosendeor024.f
@@ -27,7 +24,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 #STDERR    = fxiosendeor024.out
 #VALIDRCS  = $(RC_ANY)
 #ENDCMD
-! Valid line : diff $1.out $TR_SRC/$1.vf
 
 #CMD       = DIFF
 #INPUT     = fxiosendeor024.out $($(tcasedir)fxiosendeor024$(product)vf)

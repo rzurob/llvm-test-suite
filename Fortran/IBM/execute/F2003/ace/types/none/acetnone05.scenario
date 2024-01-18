@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetnone05.scenario
 #FEATURE	= Array constructor enhancement - no type specifier, character lengths in assign
-#CREATOR	= DF Manual Update
 #DATE		= 20060728
 #TEST_TYPE	= sanity
 #ENDDOC

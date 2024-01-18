@@ -2,12 +2,10 @@
 #BEGINDOC
 #NAME      = initexprVerifylanglvl.f
 #FEATURE   =
-#CREATOR   = Kelvin Li
 #DATE      = March 31, 2006
 #TEST_TYPE = Unit Test
 #ENDDOC
 
-! $(OPT_OPTIMIZE_FOR_SMP) $(OPT_OPTIMIZE_FOR_SMP_NOOPT) added by William Chan to prevent smp from being ran
 #BEGINENV
 #TIME_REQ = 60
 #INVALID_XOPTS = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP_NOOPT)

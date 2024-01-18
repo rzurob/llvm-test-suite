@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignDummyArgDeferred.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - via dummy arg pointers (with deferred length parameter), assign values to variables
-#CREATOR   = DF Manual Update
 #DATE      = 20081112
 #TEST_TYPE = sanity
 #ENDDOC

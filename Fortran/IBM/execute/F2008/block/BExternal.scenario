@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/block/BExternal.scenario
 #FEATURE   = block in external procedure
-#CREATOR   = DF
 #DATE      = 2010-12-07
 #TEST_TYPE = functional
 #ENDDOC

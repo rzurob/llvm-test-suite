@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/block/BImplTypeSave.scenario
 #FEATURE   = F2008 BLOCK - implicit typing (var appears in SAVE statement)
-#CREATOR   = DF Manual Update
 #DATE      = 20101214
 #TEST_TYPE = functional
 #ENDDOC

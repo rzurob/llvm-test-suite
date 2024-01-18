@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/block/BAllowedOps.scenario
 #FEATURE   = allowed operations
-#CREATOR   = DF
 #DATE      = 2010-11-15
 #TEST_TYPE = functional
 #ENDDOC
@@ -15,7 +14,6 @@
 #STDERR   = BAllowedOps.err
 #ENDCMD
 
-! Make sure there are no syntax errors:
 #CMD      = XLDIFF
 #INPUT    = $($(tcasedir)BAllowedOps$(product)vf0) BAllowedOps.err
 #ENDCMD

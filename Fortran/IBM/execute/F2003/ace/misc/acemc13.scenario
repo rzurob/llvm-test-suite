@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/misc/acemc13.scenario
 #FEATURE	= Array constructor enhancement - Interoperability with C: values to C functions (complex)
-#CREATOR	= DF Manual Update
 #DATE		= 20060922
 #TEST_TYPE	= sanity
 #ENDDOC
@@ -19,7 +18,6 @@
   C_OPTS  =$(XLC_COMPILE^OPT_BIGGER_LONG_DOUBLE) -qfloat=nocomplexgcc -qfloat=nogcclongdouble $(C_COMPILER_OPTS)
 #ENDIF
 #ENDDEFS
-!#INVALID_PRODUCT= rhel
 #ENDENV
 
 #BEGINCONTROL

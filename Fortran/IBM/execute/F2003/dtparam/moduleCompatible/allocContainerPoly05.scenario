@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= allocContainerPoly05.scenario
 #FEATURE	=
-#CREATOR	= MZ adapted from F2003/dtparam/allocate/allocContainerPoly05.f
 #DATE		= 20100504
 #TEST_TYPE	= functional
 #ENDDOC

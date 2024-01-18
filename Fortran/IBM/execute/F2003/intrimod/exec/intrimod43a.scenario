@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/intrimod/exec/intrimod43a.scenario
 #FEATURE = intrimod tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC
@@ -18,11 +17,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 
 #BEGINCONTROL
 
-! Deconstructing a SCRIPT : PREdeconSCRIPT
-! PRECMD Deconstruction was aborted !
-!#CMD       = SCRIPT_RUN
-!#INPUT     = $TR_SRC/intrimod43a.presh
-!#ENDCMD
 
 #IF in($(F_COMPILE^OPT_GEN_64BIT_COMPILER_MODE))
 	#CMD		= COPY
@@ -55,7 +49,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 #VALIDRCS	 = $(RC_ANY)
 #ENDCMD
 
-! Verify that suitable error messages mention missing symbols:
 
 #CMD          	 = EGREP
 #OPTS		 = '(undefined reference|1586-206|ld: 0711-317) .*__my_mod_MOD_sub1'

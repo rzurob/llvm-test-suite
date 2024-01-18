@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/generic/operator/functional/genericOperatorRecursive001.scenario
 #FEATURE = generic tests
-#CREATOR = Robert Ma
 #DATE    = 20051122
 #TEST_TYPE=sanity
 #ENDDOC

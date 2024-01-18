@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/InitExp/ExplicitInitExp/ExplicitInitExp06_workaround.scenario
 #FEATURE   = DTP - Explicit Init. Expression
-#CREATOR   = Dorra Bouchiha
 #DATE      = 20090424
 #TEST_TYPE = functional
 #ENDDOC

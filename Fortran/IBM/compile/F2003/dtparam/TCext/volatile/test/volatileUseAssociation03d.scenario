@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/volatile/test/volatileUseAssociation03d.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of volatile/*
 #DATE      = 20071101
 #TEST_TYPE = functional
 #ENDDOC

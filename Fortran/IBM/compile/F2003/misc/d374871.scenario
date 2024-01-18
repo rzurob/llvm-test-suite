@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/misc/d374871.scenario
 #FEATURE	= catch defect 374871
-#CREATOR	= DF
 #DATE		= 20100203
 #TEST_TYPE	= sanity
 #ENDDOC

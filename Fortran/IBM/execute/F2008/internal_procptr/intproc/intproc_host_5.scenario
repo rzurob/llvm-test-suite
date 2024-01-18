@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=       intproc_host_5.f
 #FEATURE=
-#CREATOR=    Feng Ye
 #DATE=       11-04-28
 #TEST_TYPE=  FUNCTIONAL
 #KEYWORDS=  F2008, internal procedure, dummy, procedure pointer target

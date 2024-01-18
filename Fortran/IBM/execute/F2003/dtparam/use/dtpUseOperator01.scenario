@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/use/dtpUseOperator01.scenario
 #FEATURE   = DTP and USE - user-defined operators
-#CREATOR   = DF
 #DATE      = 20080825
 #TEST_TYPE = sanity
 #ENDDOC

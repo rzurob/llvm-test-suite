@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME= F2003/dtparam/intrinsics/null/nullProcPtr01.scenario
 #FEATURE= 355754
-#CREATOR= Nancy Wang
 #DATE   = Sept. 26 2008
 #TEST_TYPE= Functional
 #ENDDOC

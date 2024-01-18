@@ -10,7 +10,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 
 #BEGINCONTROL
 
-! This chunk was DCOMP
 
 #CMD       = XLF90_COMPILE
 #INPUT     = $(tcasedir)procptr_intrin_006.f

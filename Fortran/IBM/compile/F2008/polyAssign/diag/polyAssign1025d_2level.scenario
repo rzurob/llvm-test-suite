@@ -1,0 +1,70 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/polyAssign/diag/polyAssign1025d_2level.f
+#FEATURE   = LHS of intrinsic assignment is allowed to be polymorphic
+#DATE      = 20150901
+#TEST_TYPE = diagnostic
+#KEYWORDS  = F2008, polymorphic, LHS, intrinsic assignment
+#ENDDOC
+
+#BEGINENV
+#INVALID_XOPTS = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $$(F_COMPILE^OPT_OPTIMIZE_FOR_SMP<.*>)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD          = F_COMPILE
+#OPTS         = $(OPT_SET_LANG_LEVEL<77std>)
+#INPUT        = $(tcasedir)polyAssign1025d_2level.f
+#OUTPUT       = polyAssign1025d_2level$(OBJ)
+#STDOUT       = polyAssign1025d_2level.f77.out
+#STDERR       = polyAssign1025d_2level.f77.out
+#VALIDRCS     = $(RC_ANY)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = $($(tcasedir)polyAssign1025d_2level.f77$(product)vf) polyAssign1025d_2level.f77.out
+#ENDCMD
+
+#CMD          = F_COMPILE
+#OPTS         = $(OPT_SET_LANG_LEVEL<90std>)
+#INPUT        = $(tcasedir)polyAssign1025d_2level.f
+#OUTPUT       = polyAssign1025d_2level$(OBJ)
+#STDOUT       = polyAssign1025d_2level.f90.out
+#STDERR       = polyAssign1025d_2level.f90.out
+#VALIDRCS     = $(RC_ANY)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = polyAssign1025d_2level.f90.out $($(tcasedir)polyAssign1025d_2level.f90$(product)vf)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#OPTS         = $(OPT_SET_LANG_LEVEL<95std>)
+#INPUT        = $(tcasedir)polyAssign1025d_2level.f
+#OUTPUT       = polyAssign1025d_2level$(OBJ)
+#STDOUT       = polyAssign1025d_2level.f95.out
+#STDERR       = polyAssign1025d_2level.f95.out
+#VALIDRCS     = $(RC_ANY)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = polyAssign1025d_2level.f95.out $($(tcasedir)polyAssign1025d_2level.f95$(product)vf)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#OPTS         = $(OPT_SET_LANG_LEVEL<2003std>)
+#INPUT        = $(tcasedir)polyAssign1025d_2level.f
+#OUTPUT       = polyAssign1025d_2level$(OBJ)
+#STDOUT       = polyAssign1025d_2level.f2003.out
+#STDERR       = polyAssign1025d_2level.f2003.out
+#VALIDRCS     = $(RC_ANY)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = polyAssign1025d_2level.f2003.out $($(tcasedir)polyAssign1025d_2level.f2003$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

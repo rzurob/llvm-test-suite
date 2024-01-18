@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/OO_procptr/bindc1/syntax/C1505/C1505_001d.scenario
 #FEATURE = OO_dtio tests
-#CREATOR = Robert Ma
 #DATE    = 20041215
 #TEST_TYPE=sanity
 #ENDDOC

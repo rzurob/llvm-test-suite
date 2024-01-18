@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpBinaryAssociationInterface.scenario
 #FEATURE   = User-Defined Operators - correct association in expressions with repeated binary operations (left-to-right for all but **) (generic interface)
-#CREATOR   = DF Manual Update
 #DATE      = 20090211
 #TEST_TYPE = sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/OO_poly/misc/fmisc010b1.scenario
 #FEATURE = OO_poly tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20050118
 #TEST_TYPE=sanity
 #ENDDOC

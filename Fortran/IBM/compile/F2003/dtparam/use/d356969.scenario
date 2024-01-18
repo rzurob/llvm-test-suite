@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/use/d356969.scenario
 #FEATURE   = DTP and USE (actually, internal function prefix)
-#CREATOR   = DF
 #DATE      = 20080825
 #TEST_TYPE = sanity
 #ENDDOC

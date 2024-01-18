@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME		= F2008/recursive_alloc/unit_tests/func/recuralloc01.scenario
 #FEATURE        = RTC 28056 F2008: Recursive allocatable types
-#CREATOR        = Rafik Zurob
 #DATE           = 20190725
 #TEST_TYPE      = Functional
 #KEYWORDS       = F2008 recursive allocatable component

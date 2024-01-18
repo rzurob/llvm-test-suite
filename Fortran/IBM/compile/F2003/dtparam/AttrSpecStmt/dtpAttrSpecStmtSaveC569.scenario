@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME=       dtpAttrSpecStmtSaveC569.f
 #FEATURE=
-#CREATOR=    Feng Ye
 #DATE=       06-06-12
 #TEST_TYPE=  DIAGNOSTIC
 #ENDDOC
@@ -17,7 +16,6 @@
 #CMD=      F_COMPILE
 #INPUT=    $(tcasedir)dtpAttrSpecStmtSaveC569.f
 #STDERR=   dtpAttrSpecStmtSaveC569.err
-!#VALIDRCS= $(RC_COMP_E)
 #ENDCMD
 
 #CMD=      XLDIFF

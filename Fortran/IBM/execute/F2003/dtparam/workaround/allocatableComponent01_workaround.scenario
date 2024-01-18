@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/associate/components/allocatableComponent01_workaround.scenario
 #FEATURE	= ASSOCIATE Contruct (with Derived Type Parameters)
-#CREATOR	= Glen Mateer
 #DATE		= 20080818
 #TEST_TYPE	= functional
 #ENDDOC

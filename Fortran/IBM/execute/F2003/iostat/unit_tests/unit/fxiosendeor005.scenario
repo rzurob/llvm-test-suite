@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=fxiosendeor005.scenario
 #FEATURE = functional testing of is_iostat_end and is_iostat_eor
-#CREATOR = Bardia Mahjour
 #DATE    = 20050818
 #TEST_TYPE=unit test
 #ENDDOC

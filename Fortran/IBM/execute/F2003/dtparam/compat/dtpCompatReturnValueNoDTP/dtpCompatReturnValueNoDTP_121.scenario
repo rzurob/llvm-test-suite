@@ -2,8 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/compat/dtpCompatReturnValueNoDTP/dtpCompatReturnValueNoDTP_121.scenario
 #FEATURE   = Broken Compatability Warning - DTP code returns pointer to extended type with no type parameters
-! - latest PTF, v. 12.1
-#CREATOR   = DF Manual Update
 #DATE      = 20090613
 #TEST_TYPE = sanity
 #ENDDOC
@@ -17,10 +15,6 @@
 
 #BEGINCONTROL
 
-! Compile "pre-DTP" files with the latest 12.1 PTF compiler,
-! compile "post-DTP" files with the latest version of the latest compiler,
-! link with the latest version of the latest compiler,
-! run:  Since no DTP data is actually defined, no error message should be generated.
 
 #CMD       = V121_XLF2003_COMPILE
 #INPUT     = $(tcasedir)dtpCompatReturnValueNoDTPPreDTP.f

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/assignment/pointer/bounds/dtpPtrAssignBoundsSpec02.scenario
 #FEATURE	= POINTER Assignment (with Bounds Specification/Remapping)
-#CREATOR	= Glen Mateer
 #DATE		= 20090327
 #TEST_TYPE	= functional
 #ENDDOC

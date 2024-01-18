@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpBinaryMixedDummyArgInterface.scenario
 #FEATURE   = User-Defined Operators - mixed result types, binary ops appear as dummy arguments, more complex expressions (generic interface)
-#CREATOR   = DF Manual Update
 #DATE      = 20090211
 #TEST_TYPE = sanity
 #ENDDOC

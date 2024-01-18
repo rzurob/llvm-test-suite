@@ -4,7 +4,6 @@
 #NAME       = C Interop: Simple fortran to c and back to fortran internal proceduce
 #COMPONENT  = xlftest.cinterop_ts29f2c2internalf3.assumed_length
 #DATE       = June 30, 2015
-#CREATOR    = Izhak Jakov
 #TEST_TYPE  = Functional
 #ENDDOC
 

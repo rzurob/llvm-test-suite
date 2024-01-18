@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/OO_procptr/bindc2/procptrBindcProc28b.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of OO_procptr/*
 #DATE      = 20071009
 #TEST_TYPE = functional
 #ENDDOC

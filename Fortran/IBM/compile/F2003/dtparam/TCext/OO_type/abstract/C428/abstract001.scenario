@@ -2,14 +2,12 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/OO_type/abstract/C428/abstract001.scenario
 #FEATURE   = OO_type/abstract tests - regression run bucket
-#CREATOR   = GB copy from OO_type/abstract/C428/abstract001.scenario
 #DATE      = 20070426
 #TEST_TYPE = functional
 #ENDDOC
 
 #BEGINCONTROL
 
-! This chunk was DCOMP
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)abstract001.f

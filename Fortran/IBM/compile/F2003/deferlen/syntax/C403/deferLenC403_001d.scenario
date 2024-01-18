@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/deferlen/syntax/C403/deferLenC403_001d.scenario
 #FEATURE = deferlen tests
-#CREATOR = Robert Ma
 #DATE    = 20060501
 #TEST_TYPE=sanity
 #ENDDOC

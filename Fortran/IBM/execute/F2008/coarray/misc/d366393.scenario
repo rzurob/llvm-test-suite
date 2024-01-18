@@ -3,19 +3,16 @@
 #BEGINDOC
 #NAME       = d366393.scenario
 #FEATURE    = assumed shape dummy coarray
-#CREATOR    = Bardia Mahjour
 #DATE       = September 2010
 #TEST_TYPE  = unit test
 #ENDDOC
 
-! Scenario Environment Tags
 #BEGINENV
 #BEGINDEFS
 #ENDDEFS
 #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
 #ENDENV
 
-! Scenario Control Tags
 #BEGINCONTROL
 
 #CMD       = F_COMPILE
@@ -37,12 +34,12 @@
 	#INPUT     = d366393$(EXE)
 	#STDOUT    = d366393.out
 	#ENDCMD
-	
+
 	#CMD       = SORT
 	#INPUT     = d366393.out
 	#STDOUT    = d366393.out.sorted
 	#ENDCMD
-	
+
 	#CMD       = DIFF
 	#INPUT     = d366393.out.sorted $($(tcasedir)d366393$(product)vf)
 	#ENDCMD

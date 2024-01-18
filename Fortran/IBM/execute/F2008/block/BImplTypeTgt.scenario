@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/block/BImplTypeTgt.scenario
 #FEATURE   = F2008 BLOCK - implicit typing (var appears in TARGET statement)
-#CREATOR   = DF Manual Update
 #DATE      = 20101214
 #TEST_TYPE = functional
 #ENDDOC

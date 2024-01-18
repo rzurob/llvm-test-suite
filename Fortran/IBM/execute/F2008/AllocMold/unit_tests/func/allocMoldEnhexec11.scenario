@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME = allocMoldEnhexec11.scenario
 #FEATURE = Allocate stmt f2008 enhancement
-#CREATOR = Charu Jain
 #DATE    = 20150702
 #TEST_TYPE=sanity
 #ENDDOC

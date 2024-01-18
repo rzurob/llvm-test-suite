@@ -2,17 +2,12 @@
 #BEGINDOC
 #NAME    = F2008/mult_tpbnd/unit_tests/func/mult_type_bound_deferred.scenario
 #FEATURE = 916819 F2008:Multiple type-bound procedures in a single procedure stmt
-#CREATOR = Paul Liu
 #DATE    = 20110525
 #TEST_TYPE=FUNCTIONAL
 #ENDDOC
 
 #BEGINCONTROL
 
-! within module
-! deferred attribute
-! in base type: procedure(iface), deferred, pass :: foo,bar
-! in extend type: procedure, pass :: foo=> real_foo, bar => real_bar
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)mult_type_bound_deferred.f

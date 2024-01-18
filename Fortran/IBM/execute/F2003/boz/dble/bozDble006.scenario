@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/F2003/boz/cmplx/bozDble006.scenario
 #FEATURE = boz-literal-constant in DBLE intrinsic
-#CREATOR = Vicram Uppal
 #DATE    = 20060207
 #TEST_TYPE=sanity
 #ENDDOC

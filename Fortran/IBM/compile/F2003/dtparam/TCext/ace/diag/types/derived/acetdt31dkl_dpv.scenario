@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/dtparam/TCext/ace/diag/types/derived/acetdt31dkl_dpv.scenario
+#FEATURE	= Derived Type Parameters (+ Array Constructor Enhancement	\
+			   - Procedure Pointers are not	Acceptable Data (Derived Type)
+#DATE		= 20071120
+#TEST_TYPE	= Diagnostic
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acetdt31dkl_dpv.f
+#OUTPUT		= acetdt31dkl_dpv$(OBJ)
+#STDERR		= acetdt31dkl_dpv.stderr
+#VALIDRCS	= $(RC_COMP_S)
+#ENDCMD
+
+#CMD		= XLDIFF
+#INPUT		= $($(tcasedir)acetdt31dkl_dpv$(product)vf) acetdt31dkl_dpv.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

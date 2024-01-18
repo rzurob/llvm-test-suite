@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=fxumodprocstmt008.scenario
 #FEATURE = functional test for generalization of mod proc stmts in F2003
-#CREATOR = Bardia Mahjour
 #DATE    = 20050922
 #TEST_TYPE=unit test
 #ENDDOC
@@ -23,9 +22,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 #OUTPUT    = fxumodprocstmt008$(OBJ)
 #VALIDRCS  = 0
 #ENDCMD
-! NOTE: error messages are emitted, but we don't
-! care about them, as long as compilation is
-! successful.
 
 #CMD       = XLF90_LINK
 #INPUT     = fxumodprocstmt008$(OBJ)

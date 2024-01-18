@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/intrinsic/noAlloc/dtpIAssignFunctionResultFromModule.scenario
 #FEATURE   = Intrinsic Assignment without Allocation - assign to function result in module procedure
-#CREATOR   = DF Manual Update
 #DATE      = 20081112
 #TEST_TYPE = sanity
 #ENDDOC

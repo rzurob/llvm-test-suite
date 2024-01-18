@@ -1,0 +1,31 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/contiguous/diag/diagC1241.scenario
+#FEATURE   =
+#DATE      = 20101028
+#TEST_TYPE = diagnostic
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#ENDENV
+
+#BEGINCONTROL
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)diagC1241.f
+#OUTPUT    = diagC1241$(OBJ)
+#STDOUT    = diagC1241.out
+#STDERR    = diagC1241.err
+#VALIDRCS  = $(RC_COMP_E)
+#ENDCMD
+
+
+#CMD       = XLDIFF
+#INPUT     = diagC1241.err $($(tcasedir)diagC1241$(product)vf)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO
+

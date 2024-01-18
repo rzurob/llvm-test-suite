@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = F2003/dtparam/TCext/OO_tpbnd/final/ffinal514a18_1.scenario
 #FEATURE = OO_tpbnd tests - regression run bucket + derived type parameters
-#CREATOR = automated conversion script
 #DATE    = 20071107
 #TEST_TYPE=sanity
 #ENDDOC
@@ -35,7 +34,6 @@
 #ENDCMD
 
 #IF on(bgq)
-! Create the local copies on BG/Q, which removes fs visibility on partitions
   #CMD       = COPY
   #INPUT     = $($(tcasedir)ffinal514a18_1$(product)vf1) file.vf1
   #ENDCMD
@@ -48,7 +46,6 @@
 #CMD       = RUN
 #INPUT     = mydiff$(EXE)
 #IF on(bgq)
-! Use the local files on BG/Q
   #OPTS      = ffinal514a18_1kk.out file.vf1 file.vf2
 #ELSE
   #OPTS      = ffinal514a18_1kk.out $($(tcasedir)ffinal514a18_1$(product)vf1) $($(tcasedir)ffinal514a18_1$(product)vf2)

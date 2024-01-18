@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = cmdline/ProgUnits/fxclpu33.scenario
 #FEATURE = cmdline tests - regression run bucket
-#CREATOR = SH Manual conversion
 #DATE    = 20041206
 #TEST_TYPE=sanity
 #ENDDOC

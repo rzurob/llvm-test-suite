@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME     = datastmnt_f009.scenario
 #FEATURE  = CAF Intrinsics
-#CREATOR  = Francesco Cassullo
 #DATE     = November 2010
 #TEST_TYPE= FUNCTIONAL
 #ENDDOC

@@ -2,16 +2,12 @@
 #BEGINDOC
 #NAME    = F2008/mult_tpbnd/unit_tests/func/mult_type_bound_nopass4.scenario
 #FEATURE = 916819 F2008:Multiple type-bound procedures in a single procedure stmt
-#CREATOR = Paul Liu
 #DATE    = 20110525
 #TEST_TYPE=FUNCTIONAL
 #ENDDOC
 
 #BEGINCONTROL
 
-! within module
-! nopass attribute
-! procedure,nopass :: foo=>real_foo,bar=>real_bar
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)mult_type_bound_nopass4.f

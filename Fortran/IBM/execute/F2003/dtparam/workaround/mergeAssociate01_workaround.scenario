@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME= F2003/dtparam/intrinsics/merge/mergeAssociate01_workaround.scenario
 #FEATURE= 355754
-#CREATOR= Nancy Wang
 #DATE   = Sept. 22 2008
 #TEST_TYPE= Functional
 #ENDDOC

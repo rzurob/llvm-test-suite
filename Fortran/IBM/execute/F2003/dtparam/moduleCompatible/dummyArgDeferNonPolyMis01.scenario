@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = dummyArgDeferNonPolyMis01.scenario
 #FEATURE   =
-#CREATOR   = MZ adapted from dtparam/dummy_arg/deferlen/dummyArgDeferNonPolyMis01.f
 #DATE      = 20100504
 #TEST_TYPE = Functional
 #ENDDOC

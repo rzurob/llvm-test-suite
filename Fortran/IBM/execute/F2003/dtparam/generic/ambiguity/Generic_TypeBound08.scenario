@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /tstdev/F2003/dtparam/generic/ambiguity/Generic_TypeBound08.scenario
 #FEATURE   =
-#CREATOR   = Dorra Bouchiha
 #DATE      = 20081102
 #TEST_TYPE = functional
 #ENDDOC

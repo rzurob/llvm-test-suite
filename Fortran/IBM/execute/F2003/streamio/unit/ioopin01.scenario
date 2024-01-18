@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/streamio/unit/ioopin01.scenario
 #FEATURE = streamio tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC
@@ -18,39 +17,28 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOUR
 
 #BEGINCONTROL
 
-! Deconstructing a SCRIPT : PREdeconSCRIPT
-! Valid line : cp -r $TR_SRC/existStreamFile .
 
 #CMD       = COPY
 #INPUT     = -r $(tcasedir)existStreamFile .
 #ENDCMD
-! Valid line : cp -r $TR_SRC/fileWithHole .
 
 #CMD       = COPY
 #INPUT     = -r $(tcasedir)fileWithHole .
 #ENDCMD
-! Valid line : ${COMPILER} $TR_SRC/$1.f ${OPTIONS}
 
 #CMD       = XLF95_COMPLINK
 #INPUT     = $(tcasedir)ioopin01.f
 #OPTS      = $(OPT_FREE_SOURCE_FORM)
 #ENDCMD
-! Valid line : a.out > $1.out
 
 #CMD       = RUN
 #INPUT     = ./a.out
 #STDOUT    = ioopin01.out
 #ENDCMD
-! Valid line : xldiff $1.out $TR_SRC/$1.vf
 
 #CMD       = XLDIFF
 #INPUT     = ioopin01.out $($(tcasedir)ioopin01$(product)vf)
 #ENDCMD
-! Valid line : rm -r a.out
-! Valid line : rm -r $1.out
-! Valid line : rm -r *.mod
-! Valid line : rm -r newStreamFile
-! Valid line : exit 0
 
 #ENDCONTROL
 #ENDSCENARIO

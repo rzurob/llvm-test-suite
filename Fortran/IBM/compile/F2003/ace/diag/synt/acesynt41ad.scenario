@@ -1,0 +1,23 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME		= F2003/ace/diag/synt/acesynt41ad.scenario
+#FEATURE	= Array constructor enhancement AC containing assumed-size array (assignment)
+#DATE		= 20061019
+#TEST_TYPE	= sanity
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD		= F_COMPILE
+#INPUT		= $(tcasedir)acesynt41ad.f
+#OUTPUT		= acesynt41ad$(OBJ)
+#STDERR		= acesynt41ad.stderr
+#VALIDRCS       = $(RC_COMP_S)
+#ENDCMD
+
+#CMD            = XLDIFF
+#INPUT          = $(tcasedir)acesynt41ad.vf acesynt41ad.stderr
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

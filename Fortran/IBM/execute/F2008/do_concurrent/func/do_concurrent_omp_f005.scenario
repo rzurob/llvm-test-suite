@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2008/do_concurrent/func/do_concurrent_omp_f005.scenario
 #FEATURE   = RTC 17293 - F2008: DO CONCURRENT Construct
-#CREATOR   = Nicole Negherbon
 #DATE      = August 12, 2015
 #REFERENCE = omp30/misc/private/PreservingPrivateVarOriginalValue06.scenario
 #TEST_TYPE = functional

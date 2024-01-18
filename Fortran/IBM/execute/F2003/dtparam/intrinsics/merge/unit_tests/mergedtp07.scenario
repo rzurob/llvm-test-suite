@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME= mergedtp07.scenario
 #FEATURE= merge with parameterized derived types
-#CREATOR= dayanand
 #DATE= 20080906
 #TEST_TYPE= functional
 #ENDDOC

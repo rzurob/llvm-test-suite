@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2004/ace/types/intrinsics/acetint04c.scenario
 #FEATURE	= Array constructor enhancement - assign AC with constants to int array
-#CREATOR	= DF Manual Update
 #DATE		= 20060614
 #TEST_TYPE	= sanity
 #ENDDOC

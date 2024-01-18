@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=       PtrAssignProcNameIntrin5.f
 #FEATURE= PROCEDURE POINTER
-#CREATOR=    Feng Ye
 #DATE=       06-06-05
 #TEST_TYPE=  FUNCTIONAL
 #ENDDOC

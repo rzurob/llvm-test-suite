@@ -1,0 +1,70 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = F2008/submodule/diag/module_subprogram22d.scenario
+#FEATURE   = F2008 Submodule
+#DATE      = 20121208
+#TEST_TYPE = Diagnostic
+#KEYWORDS  = F2008, submodule, F2008 submodule
+#ENDDOC
+
+#BEGINENV
+#INVALID_XOPTS = $(F_COMPILE^OPT_OPTIMIZE_FOR_SMP) $$(F_COMPILE^OPT_OPTIMIZE_FOR_SMP<.*>)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD          = F_COMPILE
+#OPTS         = $(OPT_SET_LANG_LEVEL<77std>)
+#INPUT        = $(tcasedir)module_subprogram22d.f
+#OUTPUT       = module_subprogram22d$(OBJ)
+#STDOUT       = module_subprogram22d.f77.out
+#STDERR       = module_subprogram22d.f77.out
+#VALIDRCS     = $(RC_COMP_E)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = module_subprogram22d.f77.out $($(tcasedir)module_subprogram22d.f77$(product)vf)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#OPTS         = $(OPT_SET_LANG_LEVEL<90std>)
+#INPUT        = $(tcasedir)module_subprogram22d.f
+#OUTPUT       = module_subprogram22d$(OBJ)
+#STDOUT       = module_subprogram22d.f90.out
+#STDERR       = module_subprogram22d.f90.out
+#VALIDRCS     = $(RC_COMP_E)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = module_subprogram22d.f90.out $($(tcasedir)module_subprogram22d.f90$(product)vf)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#OPTS         = $(OPT_SET_LANG_LEVEL<95std>)
+#INPUT        = $(tcasedir)module_subprogram22d.f
+#OUTPUT       = module_subprogram22d$(OBJ)
+#STDOUT       = module_subprogram22d.f95.out
+#STDERR       = module_subprogram22d.f95.out
+#VALIDRCS     = $(RC_COMP_E)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = module_subprogram22d.f95.out $($(tcasedir)module_subprogram22d.f95$(product)vf)
+#ENDCMD
+
+#CMD          = F_COMPILE
+#OPTS         = $(OPT_SET_LANG_LEVEL<2003std>)
+#INPUT        = $(tcasedir)module_subprogram22d.f
+#OUTPUT       = module_subprogram22d$(OBJ)
+#STDOUT       = module_subprogram22d.f2003.out
+#STDERR       = module_subprogram22d.f2003.out
+#VALIDRCS     = $(RC_COMP_E)
+#ENDCMD
+
+#CMD          = XLDIFF
+#INPUT        = module_subprogram22d.f2003.out $($(tcasedir)module_subprogram22d.f2003$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO
+

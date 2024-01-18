@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/mProc/mProc/mProcTypBndDefOp.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of mProc/*
 #DATE      = 20071106
 #TEST_TYPE = functional
 #ENDDOC

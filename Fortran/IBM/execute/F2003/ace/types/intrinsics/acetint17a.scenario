@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint17a.scenario
 #FEATURE	= Array constructor enhancement - generics in AC via interface (minus acimpdo)
-#CREATOR	= DF Manual Update
 #DATE		= 20070907
 #TEST_TYPE	= sanity
 #ENDDOC

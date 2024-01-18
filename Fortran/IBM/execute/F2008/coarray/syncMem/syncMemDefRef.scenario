@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/syncMemDefRef
 #FEATURE        = CAF SYNC MEMORY - simple test of definition preceding reference - split
-#CREATOR        = DF
 #DATE           = 2010-09-10
 #TEST_TYPE      = functional
 #ENDDOC

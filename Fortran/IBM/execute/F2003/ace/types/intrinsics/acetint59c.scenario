@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/intrinsics/acetint59c.scenario
 #FEATURE	= Array constructor enhancement self-referential assignment, including array sections (characters)
-#CREATOR	= DF Manual Update
 #DATE		= 20061124
 #TEST_TYPE	= sanity
 #ENDDOC

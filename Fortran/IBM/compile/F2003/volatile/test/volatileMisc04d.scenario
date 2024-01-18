@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=release/F2003/volatile/volatileMisc04d.f
 #FEATURE = VOLATILE 255728
-#CREATOR = William Zhang
 #DATE    = 06/12/2006
 #TEST_TYPE= diagnostic
 #ENDDOC

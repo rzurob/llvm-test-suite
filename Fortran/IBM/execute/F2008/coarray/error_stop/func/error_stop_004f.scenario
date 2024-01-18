@@ -1,11 +1,8 @@
-! %W%
-! %G%, %U%, %I% sccsid
 #BEGINSCENARIO
 
 #BEGINDOC
 #NAME       = F2008/coarray/error_stop/func/error_stop_004f.scenario
 #FEATURE    = CAF: ERROR STOP statement (feature #351605.31)
-#CREATOR    = Grigor Nikolov
 #DATE       = 20100828
 #TEST_TYPE  = Functional
 #ENDDOC
@@ -16,7 +13,6 @@
   #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
 #ENDENV
 
-! Scenario Control Tags
 #BEGINCONTROL
 
 #CMD        = F_COMPILE

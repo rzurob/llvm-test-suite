@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/allocEnh/refToVar/exprIsArraySection06.scenario
 #FEATURE	= Intrinsic Assignment -- variable and/or expr Reference variable
-#CREATOR	= GM Manual Creation
 #DATE		= 20061019
 #TEST_TYPE	= functional
 #ENDDOC

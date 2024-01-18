@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tst91/cintrop1/isocbindq/fxisoq27a.scenario
 #FEATURE = cintrop1 tests - regression run bucket
-#CREATOR = automated conversion script
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC
@@ -18,19 +17,15 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS)   $(COMP_LIBS)
 
 #BEGINCONTROL
 
-! Deconstructing a SCRIPT : PREdeconSCRIPT
-! Valid line : ${COMPILER} $TR_SRC/$1.f -c ${OPTIONS}
 
 #CMD       = XLF95_COMPILE
 #INPUT     = $(tcasedir)fxisoq27a.f
 #ENDCMD
-! Valid line : ${COMPILER} $1.o ${OPTIONS} -o $1
 
 #CMD       = XLF95_COMPLINK
 #OPTS      = fxisoq27a.o
 #OUTPUT    = fxisoq27a$(EXE)
 #ENDCMD
-! Valid line : ./$1
 
 #CMD       = RUN
 #INPUT     = ./fxisoq27a

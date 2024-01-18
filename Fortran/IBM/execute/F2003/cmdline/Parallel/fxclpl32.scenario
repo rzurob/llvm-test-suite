@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME      = cmdline/Parallel/fxclpl32.scenario
 #FEATURE   = cmdline tests - regression run bucket
-#CREATOR   = automated conversion script
 #DATE      = 20081013
 #TEST_TYPE = sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = cmdline/UnitTests/fgcmdarg07.scenario
 #FEATURE = cmdline tests - regression run bucket
-#CREATOR = automated conversion script - fixed CPR 20090121
 #DATE    = 20041204
 #TEST_TYPE=sanity
 #ENDDOC

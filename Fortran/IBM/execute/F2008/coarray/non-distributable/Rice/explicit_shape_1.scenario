@@ -1,11 +1,8 @@
-! %W%
-! %G%, %U%, %I% sccsid
 #BEGINSCENARIO
 
 #BEGINDOC
 #NAME       = explicit_shape_1.scenario
 #FEATURE    =
-#CREATOR    = Jin Li
 #DATE       = 2010-10-27
 #TEST_TYPE  = unit test
 #ENDDOC

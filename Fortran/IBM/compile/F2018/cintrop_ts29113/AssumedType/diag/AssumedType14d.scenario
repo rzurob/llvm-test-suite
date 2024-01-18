@@ -1,0 +1,24 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedType/diag/AssumedType14d.scenario
+#FEATURE   = C Interop: Assumed Type
+#DATE      = 2012-06-20
+#TEST_TYPE = diagnostic
+#KEYWORDS  = C Interop, Assumed Type
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedType14d.f
+#OUTPUT    = AssumedType14d$(OBJ)
+#STDERR    = AssumedType14d.err
+#VALIDRCS  = $(RC_COMP_S)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = AssumedType14d.err $($(tcasedir)AssumedType14d$(product)vf)
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

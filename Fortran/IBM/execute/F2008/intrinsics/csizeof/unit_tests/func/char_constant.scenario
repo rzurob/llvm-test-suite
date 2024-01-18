@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = F2008/intrinsics/csizeof/unit_tests/func/char_constant.scenario
 #FEATURE = F2008 ISO_C_BINDING - C_SIZEOF
-#CREATOR = Paul Liu
 #DATE    = 20101226
 #TEST_TYPE=FUNCTIONAL
 #ENDDOC

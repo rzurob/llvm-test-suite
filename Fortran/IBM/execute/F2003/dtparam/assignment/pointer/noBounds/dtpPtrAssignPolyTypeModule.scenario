@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignPolyTypeModule.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - dynamic type of polymorphic data-pointer assumes that of data-target
-#CREATOR   = DF Manual Update
 #DATE      = 20090203
 #TEST_TYPE = sanity
 #ENDDOC

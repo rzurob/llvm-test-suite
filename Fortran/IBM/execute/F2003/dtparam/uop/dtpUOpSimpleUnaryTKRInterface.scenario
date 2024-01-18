@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpSimpleUnaryTKRInterface.scenario
 #FEATURE   = User-Defined Operators - correct unary operators are used for a given TKR (generic interface)
-#CREATOR   = DF Manual Update
 #DATE      = 20090211
 #TEST_TYPE = sanity
 #ENDDOC

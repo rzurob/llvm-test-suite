@@ -4,7 +4,6 @@
 #BEGINDOC
 #NAME=      InitExpDefElemNotAllowed.f
 #FEATURE=
-#CREATOR=   Feng Ye
 #DATE=      03-20-06
 #TEST_TYPE= DIAGNOSTIC
 #ENDDOC

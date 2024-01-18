@@ -1,0 +1,21 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME      = cintrop_ts29113/AssumedRank/diag/AssumedRank07d.scenario
+#FEATURE   = C Interop, Assumed Rank
+#DATE      = 2013-10-22
+#TEST_TYPE = diagnostic
+#KEYWORDS  = C Interop, Assumed Rank
+#ENDDOC
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)AssumedRank07d.f
+#OUTPUT    = AssumedRank07d$(OBJ)
+#STDERR    = AssumedRank07d.out
+#VALIDRCS  = $(RC_ANY)
+#ENDCMD
+
+
+#ENDCONTROL
+#ENDSCENARIO

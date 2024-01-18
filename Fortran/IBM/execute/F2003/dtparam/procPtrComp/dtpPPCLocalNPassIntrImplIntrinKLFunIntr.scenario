@@ -2,16 +2,12 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/procPtrComp/dtpPPCLocalNPassIntrImplIntrinKLFunIntr.scenario
 #FEATURE   = Procedure Pointers as Components - reference to nopass implicit intrinsic function with intrinsic dummy argument(s), DTP w/ K+L parameters
-#CREATOR   = DF Manual Update
 #DATE      = 20090323
 #TEST_TYPE = sanity
 #ENDDOC
 
 #BEGINCONTROL
 
-! The following compile will generate warning messages about using different arguments for
-! what appear to be the same procedure invocation, but it is not in fact the same procedure,
-! and the warnings can be safely ignored.
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)dtpPPCLocalNPassIntrImplIntrinKLFunIntr.f

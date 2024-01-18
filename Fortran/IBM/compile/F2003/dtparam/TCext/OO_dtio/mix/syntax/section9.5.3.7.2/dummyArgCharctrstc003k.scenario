@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=.../F2003/dtparam/TCext/OO_dtio/mix/syntax/section9.5.3.7.2/dummyArgCharctrstc003k.scenario
 #FEATURE = OO_dtio/mix/syntax/section9.5.3.7.2 tests - regression run bucket + derived type parameters
-#CREATOR = automated conversion script
 #DATE    = 20070909
 #TEST_TYPE=sanity
 #ENDDOC
@@ -17,7 +16,6 @@ OPTIONS=$(F_COMPILE^OPT_SET_LANG_LANG_MSGS) $(? XOPTS) $(F_COMPILE^OPT_FREE_SOUR
 
 #BEGINCONTROL
 
-! This chunk was DCOMP
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)dummyArgCharctrstc003k.f

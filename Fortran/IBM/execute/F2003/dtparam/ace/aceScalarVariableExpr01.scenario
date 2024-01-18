@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/dtparam/ace/aceScalarVariableExpr01.scenario
 #FEATURE	= Basic (non-Polymorphic) Array Constructors with DTP
-#CREATOR	= Glen Mateer
 #DATE		= 20081107
 #TEST_TYPE	= functional
 #ENDDOC

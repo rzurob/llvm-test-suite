@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/mxminAll/misc/mxminMisc21.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of mxminAll/*
 #DATE      = 20071105
 #TEST_TYPE = functional
 #ENDDOC

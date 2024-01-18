@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME    = F2003/dtparam/procPtr/fprocdeclfn15.scenario
 #FEATURE = Procedure Declaration statement
-#CREATOR = Morteza Ershad-Manesh
 #DATE    = 20080811
 #TEST_TYPE=sanity
 #ENDDOC

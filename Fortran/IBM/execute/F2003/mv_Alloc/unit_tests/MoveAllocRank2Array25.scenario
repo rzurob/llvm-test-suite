@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=move_alloc/MoveAllocRank2Array25
 #FEATURE = MOVE_ALLOC intrinsic procedure
-#CREATOR = Rob James
 #DATE    = 20060428
 #TEST_TYPE=Functional unit test
 #ENDDOC

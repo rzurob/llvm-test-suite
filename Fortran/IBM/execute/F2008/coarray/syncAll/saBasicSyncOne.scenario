@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /syncAll/saBasicSyncOne.scenario
 #FEATURE   = CAF SYNC ALL - basic test of synchronisation - one image
-#CREATOR   = DF
 #DATE      = 20100727
 #TEST_TYPE = functional
 #ENDDOC
@@ -11,7 +10,6 @@
 #REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
 #ENDENV
 
-! Just like saBasicSync, but limited to a single image
 
 #BEGINCONTROL
 

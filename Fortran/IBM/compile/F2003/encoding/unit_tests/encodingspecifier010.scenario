@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/encoding/unit_tests/encodingspecifier010.scenario
 #FEATURE	= Encoding Specifier
-#CREATOR	= Morteza Ershad-Manesh
 #DATE		= 20071207
 #TEST_TYPE	= unit test
 #ENDDOC

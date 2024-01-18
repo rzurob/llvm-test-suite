@@ -3,7 +3,6 @@
 #BEGINDOC
 #NAME       = stop_unit2.scenario
 #FEATURE    = F2008 extension to stop code
-#CREATOR    = Tarique Islam
 #DATE       = 20100929
 #TEST_TYPE  = Functional
 #ENDDOC

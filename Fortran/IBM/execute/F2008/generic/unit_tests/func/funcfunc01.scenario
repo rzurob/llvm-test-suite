@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/generic/unit_tests/func/funcfunc01.scenario
 #FEATURE = Generic extensions
-#CREATOR = Rafik Zurob
 #DATE    = 20120620
 #TEST_TYPE=unit
 #ENDDOC

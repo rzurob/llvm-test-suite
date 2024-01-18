@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=qcafsum.scenario
 #FEATURE = Coarray access
-#CREATOR = Xing Xue
 #DATE    = 20090731
 #TEST_TYPE=unit test
 #ENDDOC

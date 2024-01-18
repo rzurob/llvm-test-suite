@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/assignment/pointer/noBounds/dtpPtrAssignFunctionResultFromModulePolymorphicDeferred.scenario
 #FEATURE   = Pointer Assignment without Lower Bounds Specification or Remap - assign polymorphic module function results with deferred-length type parameters
-#CREATOR   = DF Manual Update
 #DATE      = 20081112
 #TEST_TYPE = sanity
 #ENDDOC

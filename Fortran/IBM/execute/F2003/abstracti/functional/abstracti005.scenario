@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/abstracti/abstracti005.scenario
 #FEATURE = Abstract Interface Tests
-#CREATOR = Robert Ma
 #DATE    = 20060220
 #TEST_TYPE=sanity
 #ENDDOC

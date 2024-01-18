@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAABounds007.scenario
 #FEATURE   = Intrinsic Assignment with Allocation - allocate basic DTP array (container) with allocatable components via intrinsic assignment and check lower and upper bounds
-#CREATOR   = DF Manual Update
 #DATE      = 20090522
 #TEST_TYPE = sanity
 #ENDDOC

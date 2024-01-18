@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=/tstdev/F2003/generic/assignment/functional/genericAssignmentScalar007.scenario
 #FEATURE = GENERIC tests
-#CREATOR = Robert Ma
 #DATE    = 20041215
 #TEST_TYPE=sanity
 #ENDDOC
@@ -16,7 +15,7 @@ TR_SRC=$(tcasedir)
 
 #CMD       = F_COMPILE
 #INPUT     = $(tcasedir)genericAssignmentScalar007.f
-#OPTS      = $(OPT_FREE_SOURCE_FORM)	
+#OPTS      = $(OPT_FREE_SOURCE_FORM)
 #OUTPUT    = genericAssignmentScalar007$(OBJ)
 #ENDCMD
 

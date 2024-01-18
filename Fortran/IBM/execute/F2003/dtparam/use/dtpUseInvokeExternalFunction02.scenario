@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/use/dtpUseInvokeExternalFunction02.scenario
 #FEATURE   = DTP and USE - external procedure invocation
-#CREATOR   = DF
 #DATE      = 20080825
 #TEST_TYPE = sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=dtpast023a.scenario
 #FEATURE =
-#CREATOR = Michael Selvanayagam
 #DATE    = 20060331
 #TEST_TYPE=unit test
 #ENDDOC
@@ -31,4 +30,3 @@ TR_SRC=$(tcasedir)
 
 #ENDCONTROL
 #ENDSCENARIO
-	

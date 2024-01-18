@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/TCext/OO_poly/selectType/Quotes/SltArrHostULPtr.scenario
 #FEATURE   = 289057.TCext.OO
-#CREATOR   = GB DTP extension of OO_poly/*
 #DATE      = 20071004
 #TEST_TYPE = functional
 #ENDDOC

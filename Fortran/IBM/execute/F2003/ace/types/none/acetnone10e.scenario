@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/types/none/acetnone10e.scenario
 #FEATURE	= Array constructor enhancement arrays and array sections as content (logical)
-#CREATOR	= DF Manual Update
 #DATE		= 20060811
 #TEST_TYPE	= sanity
 #ENDDOC
@@ -12,13 +11,8 @@
 #CMD		= F_COMPILE
 #INPUT		= $(tcasedir)acetnone10e.f
 #OUTPUT		= acetnone10e$(OBJ)
-!#STDERR		= acetnone10e.stderr
-!#VALIDRCS       = $(RC_COMP_S)
 #ENDCMD
 
-!#CMD            = XLDIFF
-!#INPUT          = $(tcasedir)acetnone10e.vf acetnone10e.stderr
-!#ENDCMD
 
 #CMD		= F_LINK
 #INPUT		= acetnone10e$(OBJ)

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=      dtParamImplicitIface02.scenario
 #FEATURE=   Derived Type Parameters - Implicit interface specification
-#CREATOR=   Rafik Zurob
 #DATE=      20060621
 #TEST_TYPE= unit
 #ENDDOC

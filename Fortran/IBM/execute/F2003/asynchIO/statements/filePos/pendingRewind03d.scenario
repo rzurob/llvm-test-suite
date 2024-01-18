@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/asynchIO/statements/filePos/pendingRewind03d.scenario
 #FEATURE	= Asynchronous I/O -- REWIND Statement
-#CREATOR	= GM Manual Creation
 #DATE		= 20060329
 #TEST_TYPE	= sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/ace/synt/acesynt02d.scenario
 #FEATURE	= Array constructor enhancement syntax tests
-#CREATOR	= DF Manual Update
 #DATE		= 20060704
 #TEST_TYPE	= sanity
 #ENDDOC
@@ -18,7 +17,6 @@
 #ENDCMD
 
 
-!         FIXME   The .vf file is only an approximation.
 
 #CMD		= XLDIFF
 #INPUT		= $(tcasedir)acesynt02d.vf acesynt02d.stderr

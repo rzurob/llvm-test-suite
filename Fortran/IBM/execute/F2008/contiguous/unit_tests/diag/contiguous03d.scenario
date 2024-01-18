@@ -1,11 +1,8 @@
-! %W%
-! %G%, %U%, %I% sccsid
 #BEGINSCENARIO
 
 #BEGINDOC
 #NAME       = F2008/contiguous/diag/contiguous03d.scenario
 #FEATURE    = F375705 - F2008: support CONTIGUOUS attribute & IS_CONTIGUOUS intrinsic
-#CREATOR    = David Nichols
 #DATE       = 20100920
 #TEST_TYPE  = Diagnostic
 #ENDDOC

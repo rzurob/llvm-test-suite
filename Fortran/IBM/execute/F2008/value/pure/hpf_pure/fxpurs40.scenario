@@ -3,7 +3,6 @@
 #NAME    = F2008/value/pure/unit_tests/hpf_pure/fxpurs40.scenario
 #FEATURE = 384867 \
            F2008: VALUE attribute allowed for dummy args of PURE procedures
-#CREATOR = Gaby Baghdadi (copy of /tstdev/hpf_pure/fxpurs40.scenario)
 #DATE    = 20101201
 #TEST_TYPE=sanity
 #ENDDOC

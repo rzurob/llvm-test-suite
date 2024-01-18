@@ -1,0 +1,30 @@
+#BEGINSCENARIO
+#BEGINDOC
+#NAME     = critical_d03.scenario
+#FEATURE  = 381021
+#DATE     = Jan 2011
+#TEST_TYPE= DIAGNOSTIC
+#ENDDOC
+
+#BEGINENV
+#BEGINDEFS
+#ENDDEFS
+#REQUIRED_XOPTS=$(F_COMPILE^OPT_COARRAY)
+#ENDENV
+
+#BEGINCONTROL
+
+#CMD       = F_COMPILE
+#INPUT     = $(tcasedir)critical_d03.f
+#OUTPUT    = critical_d03$(OBJ)
+#STDOUT    = critical_d03.err
+#STDERR    = critical_d03.err
+#VALIDRCS  = $(RC_FAIL)
+#ENDCMD
+
+#CMD       = XLDIFF
+#INPUT     = $($(tcasedir)critical_d03$(product)vf) critical_d03.err
+#ENDCMD
+
+#ENDCONTROL
+#ENDSCENARIO

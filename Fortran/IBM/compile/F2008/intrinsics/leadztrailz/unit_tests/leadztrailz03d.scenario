@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=F2008/intrinsics/leadztrailz/unit_tests/leadztrailz03d.scenario
 #FEATURE = F2008 LEADZ and TRAILZ intrinsics
-#CREATOR = Rafik Zurob
 #DATE    = 20110504
 #TEST_TYPE=unit
 #ENDDOC

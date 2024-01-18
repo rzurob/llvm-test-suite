@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/assignment/intrinsic/alloc/dtpIAAArrayFunction007a.scenario
 #FEATURE   = Intrinsic Assignment with Allocation - assign allocated DTP (container) with allocatable components returned from array function
-#CREATOR   = DF Manual Update
 #DATE      = 20090522
 #TEST_TYPE = sanity
 #ENDDOC

@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = F2003/dtparam/use/dtpUseSameName03.scenario
 #FEATURE   = DTP and USE - USE in contained context
-#CREATOR   = DF Manual Update
 #DATE      = 20080908
 #TEST_TYPE = sanity
 #ENDDOC

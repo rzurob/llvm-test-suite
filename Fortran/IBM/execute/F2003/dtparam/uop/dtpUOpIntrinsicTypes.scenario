@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME      = /F2003/dtparam/uop/dtpUOpIntrinsicTypes.scenario
 #FEATURE   = User-Defined Operators - involvement of intrinsic types (a+b+2+3 where a,b are type T should become plusTI(plusTI(plusTT(a,b),2),3), say)
-#CREATOR   = DF Manual Update
 #DATE      = 20090211
 #TEST_TYPE = sanity
 #ENDDOC

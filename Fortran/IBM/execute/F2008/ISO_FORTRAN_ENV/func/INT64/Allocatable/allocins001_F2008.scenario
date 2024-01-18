@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=     allocins001.scenario
 #FEATURE = ISO_FORTRAN_ENV (Test case adopted from allocat/intrinsic/ bucket)
-#CREATOR = Morteza Ershad-Manesh
 #DATE    = 20041123
 #TEST_TYPE=sanity
 #ENDDOC

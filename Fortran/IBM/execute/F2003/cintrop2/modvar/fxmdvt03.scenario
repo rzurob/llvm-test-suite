@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME=cintrop2/modvar/fxmdvt03.scenario
 #FEATURE = cintrop2 tests - regression run bucket
-#CREATOR = CPR Manual conversion
 #DATE    = 20060712
 #TEST_TYPE=sanity
 #ENDDOC

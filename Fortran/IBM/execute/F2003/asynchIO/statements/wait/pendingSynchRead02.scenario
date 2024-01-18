@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME		= F2003/asynchIO/statements/otherSpec/pendingSynchRead02.scenario
 #FEATURE	= Asynchronous I/O -- Wait Operation
-#CREATOR	= GM Manual Creation
 #DATE		= 20060328
 #TEST_TYPE	= sanity
 #ENDDOC

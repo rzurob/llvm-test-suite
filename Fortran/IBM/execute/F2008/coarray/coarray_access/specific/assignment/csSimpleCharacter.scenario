@@ -2,7 +2,6 @@
 #BEGINDOC
 #NAME           = F2008/coarray/coarray_access/specific/assignment/csSimpleCharacter
 #FEATURE        = CAF coarray access (specific) - assignment - assign simple values to character coarray scalars and arrays
-#CREATOR        = DF
 #DATE           = 2010-10-04
 #TEST_TYPE      = functional
 #ENDDOC
