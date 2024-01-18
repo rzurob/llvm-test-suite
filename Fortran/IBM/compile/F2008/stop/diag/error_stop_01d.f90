@@ -41,10 +41,10 @@ program main
    do i = 1, N
       if (i.GT.5) then
          ERROR STOP N - 1         ! - No error
-	  end if
+   end if
       if (i.GT.N) then
          ERROR STOP i - 1         ! - Error
-	  end if
+   end if
    end do
 
 end program main
