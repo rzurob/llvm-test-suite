@@ -3,21 +3,7 @@
 ! opt variations: -ql -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp SltAbs.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : SltAbs
 !*
 !*  DATE                       : Dec. 14, 2004
 !*

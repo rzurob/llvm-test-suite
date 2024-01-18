@@ -1,21 +1,7 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/associate/StmtByStmt/Exec/AssocNameAsOther.f
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP:  redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp AssocNameAsOther.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : AssocNameAsOther
 !*
 !*  DATE                       : Nov. 02, 2004
 !*

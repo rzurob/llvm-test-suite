@@ -4,11 +4,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acetdt32d_dpv_rs
-!*
 !*                               by David Forster)
 !*  DATE                       : 2007-11-20 (original: 2006-08-30)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*

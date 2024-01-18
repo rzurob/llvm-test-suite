@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : streamInquire01
-!*
 !*  DATE                       : October 28, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IOLENGTH= Specifier for the INQUIRE
 !*                               Statement

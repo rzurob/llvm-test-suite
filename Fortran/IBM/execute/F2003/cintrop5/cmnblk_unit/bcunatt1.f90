@@ -1,21 +1,8 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: ${TR_SRC}/bcunext.sh bcunatt1
-! %COMPOPTS: -qfree=f90 -qattr -qxref=full -qlist
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !* ===================================================================
 !*
 !
 !* DATE                         : Sept. 08, 2003
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED

@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxcllf44 -. -, -= --"
-! %COMPOPTS:  -qfixed=132
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxcllf44
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxcllf42.f
 !*
 !*  DATE                       : Oct 1, 2003
 !*

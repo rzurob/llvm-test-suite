@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP:  redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp C819MultiNames.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : C819MultiNames
 !*
 !*  DATE                       : Dec. 2, 2004
 !*

@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectStreamAccess01.f
-!*
 !*  DATE                       : Jan. 20 2009
 !*
 !*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO

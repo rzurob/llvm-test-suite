@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : August 22, 2007
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ENCODING= specifier in I/O statements
 !*  SECONDARY FUNCTIONS TESTED : None

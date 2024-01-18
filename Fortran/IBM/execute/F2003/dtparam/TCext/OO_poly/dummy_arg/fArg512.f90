@@ -1,6 +1,5 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=all /tstdev/OO_poly/dummy_arg/fArg512.f
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

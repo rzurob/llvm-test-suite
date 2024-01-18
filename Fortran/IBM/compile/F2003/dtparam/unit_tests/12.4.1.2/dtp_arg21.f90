@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  DIAGNOSTIC TESTED          : Length type parameter of passed-object
 !*                               dummy argument of binding procedure
 !*                               must be assumed

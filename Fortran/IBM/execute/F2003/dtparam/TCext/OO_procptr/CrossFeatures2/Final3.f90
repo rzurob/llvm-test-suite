@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=self -qreuse=base
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: Final3.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : Final3.f
 !*
 !*  DATE                       : Jun. 25, 2005
 !*

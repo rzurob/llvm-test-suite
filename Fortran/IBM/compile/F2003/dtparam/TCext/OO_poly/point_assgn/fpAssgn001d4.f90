@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -ql /tstdev/OO_poly/point_assgn/fpAssgn001d4.f
 ! opt variations: -qnok -qnol
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

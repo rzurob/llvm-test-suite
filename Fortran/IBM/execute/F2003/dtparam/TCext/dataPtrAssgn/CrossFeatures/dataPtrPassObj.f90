@@ -5,8 +5,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrPassObj.f
-!*
 !*  DATE                       : Feb. 09, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement

@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpAttrSpecStmtData10
-!*
 !*  DATE                       : Jun. 20, 2007
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS

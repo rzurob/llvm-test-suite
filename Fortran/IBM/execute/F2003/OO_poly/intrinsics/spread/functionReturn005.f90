@@ -1,19 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: functionReturn005.f
-! %VERIFY: functionReturn005.out:functionReturn005.vf
-! %STDIN:
-! %STDOUT: functionReturn005.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 01/18/2005
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : spread
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql -qdeferredlp /tstdev/F2003/allocEnh/argAssociation/dummyArg010.f
 ! opt variations: -qnol -qnodeferredlp -qreuse=self
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

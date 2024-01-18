@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_omp_f006.f
-!*
 !*  DATE                       : August 24, 2015
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT in OMP directives

@@ -1,8 +1,6 @@
 ! *********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : fdtio523kl
-!*
 !*  DATE                       : 2007-08-16 (original: 03/18/2005)
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO

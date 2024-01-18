@@ -5,8 +5,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcDecRestrict5.f
-!*
 !*  DATE                       : Mar. 10, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement

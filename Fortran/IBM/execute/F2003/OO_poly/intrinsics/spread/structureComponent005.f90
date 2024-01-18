@@ -1,19 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: structureComponent005.f
-! %VERIFY: structureComponent005.out:structureComponent005.vf
-! %STDIN:
-! %STDOUT: structureComponent005.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 01/18/2005
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : spread
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

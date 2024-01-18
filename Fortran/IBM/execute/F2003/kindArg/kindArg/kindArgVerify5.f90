@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : kindArgVerify5
-!*
 !*  DATE                       : Jul. 06, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics

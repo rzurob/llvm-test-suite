@@ -3,7 +3,6 @@
 !*                               DTP - Namelist
 !*
 !*  DATE                       : November 17, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Namelist with Intrinsic IO
 !*  SECONDARY FUNCTIONS TESTED : Child2 encloses Child1

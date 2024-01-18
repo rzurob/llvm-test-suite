@@ -1,21 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: asystrm.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  DIAGNOSES TESTED           : A unit connected for STREAM access
 !*                             : is used for asynchronous I/O.

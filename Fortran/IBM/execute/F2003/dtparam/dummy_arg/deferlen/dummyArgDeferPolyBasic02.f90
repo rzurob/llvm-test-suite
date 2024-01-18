@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArgDeferPolyBasic02.f
-!*
 !*  DATE                       : Nov. 17 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DUMMY ARGUMENT WITH DEFERRED LENGTH

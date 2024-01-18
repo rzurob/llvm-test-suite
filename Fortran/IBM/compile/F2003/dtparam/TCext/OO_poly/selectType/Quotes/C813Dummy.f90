@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qnodeferredlp -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP:  redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp C813Dummy.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : C813dummy
 !*
 !*  DATE                       : Dec. 3, 2004
 !*

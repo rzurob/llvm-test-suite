@@ -3,21 +3,7 @@
 ! opt variations: -qnol
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp Nullify2.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : Nullify2.f
 !*
 !*  DATE                       : May. 10, 2005
 !*

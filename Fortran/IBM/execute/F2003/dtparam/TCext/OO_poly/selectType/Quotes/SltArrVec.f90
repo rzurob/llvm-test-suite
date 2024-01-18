@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: SltArrVec.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : SltArrVec
 !*
 !*  DATE                       : Jan. 07, 2005
 !*

@@ -2,7 +2,6 @@
 ! ftcx_dtp -qnol /tstdev/F2003/allocEnh/unit_tests/ReallocAssignArray14.f
 ! opt variations: -ql
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

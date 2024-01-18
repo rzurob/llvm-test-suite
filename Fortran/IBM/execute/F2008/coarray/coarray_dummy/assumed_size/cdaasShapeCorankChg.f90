@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : cdaasShapeCorankChg
-!*
 !*  DATE                       : 2010-09-29
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray dummy arguments - assumed size

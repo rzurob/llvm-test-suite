@@ -1,21 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qdebug=intmsg
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: dcomp fgcmdarg04.f
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  DIAGNOSES TESTED           : A variable that is INTENT(IN) cannot
 !*                             : be passed as INTENT(OUT) argument.

@@ -1,8 +1,6 @@
 !***********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : selectedRealKind02d.f
-!*
 !*  DATE                       : 10/20/2010
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Expected error message should be emitted when

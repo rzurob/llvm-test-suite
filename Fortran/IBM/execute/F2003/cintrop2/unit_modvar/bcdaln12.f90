@@ -1,21 +1,8 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: ${TR_SRC}/bcdamix.sh bcdaln12
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !* ===================================================================
 !*
 !
 !* DATE                         : July. 18, 2003
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED

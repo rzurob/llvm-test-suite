@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : d357490
-!*
 !*  DATE                       : October 15, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  ABSTRACT                   : DTPARAM: ASTI: ICE: IO: Unformatted WRITE
 !*                               of First Element of Array Dummy Argument

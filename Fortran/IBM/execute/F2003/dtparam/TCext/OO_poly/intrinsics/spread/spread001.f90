@@ -3,21 +3,8 @@
 ! opt variations: -qnol
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: spread001.f
-! %VERIFY: spread001.out:spread001.vf
-! %STDIN:
-! %STDOUT: spread001.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 01/05/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : spread
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

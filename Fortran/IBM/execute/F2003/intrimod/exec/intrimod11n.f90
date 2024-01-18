@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: ../ieeeconsts.f ../fake_ieee_modules.f intrimod11n.f
-! %VERIFY: intrimod11n.out:fakeout1.vf
-! %STDIN:
-! %STDOUT: intrimod11n.out
-! %EXECARGS:
-! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod11n.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use NON_INTRINSIC ieee modules with ONLY clause.

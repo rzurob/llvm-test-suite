@@ -1,18 +1,5 @@
 ! GB DTP extension using:
 ! ftcx_dtp /tstdev/OO_type/abstract/C503/interface001.f -qck -qk -ql
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: dcomp interface001.f
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

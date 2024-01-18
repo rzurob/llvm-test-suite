@@ -1,8 +1,6 @@
 !**********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : acetint15d
-!*
 !*  DATE                       : 2006-06-08 (YYYY-MM-DD)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor Enhancements

@@ -1,21 +1,8 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: ${TR_SRC}/fxmdvn01.sh fxmdvp24 cxmdvp08
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !* ===================================================================
 !*
 !
 !* DATE                         : Sep. 24, 2003
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED

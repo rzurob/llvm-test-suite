@@ -1,19 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: reshape010.f
-! %VERIFY: reshape010.out:reshape010.vf
-! %STDIN:
-! %STDOUT: reshape010.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 11/20/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : reshape
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

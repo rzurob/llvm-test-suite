@@ -1,21 +1,8 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: ${TR_SRC}/unextchk.sh bcunchk4 comc3
-! %COMPOPTS: -qfree=f90 -qextchk -qsuppress=1586-347
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !* ===================================================================
 !*
 !
 !* DATE                         : July 28, 2003
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED

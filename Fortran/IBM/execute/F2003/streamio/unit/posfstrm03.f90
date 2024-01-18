@@ -1,21 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: posfstrm03.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  DIAGNOSES TESTED           : Writing an empty record with no record
 !*                             : marker has no effect.

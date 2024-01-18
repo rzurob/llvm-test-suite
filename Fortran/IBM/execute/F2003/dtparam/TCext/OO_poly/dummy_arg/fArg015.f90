@@ -1,18 +1,5 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/dummy_arg/fArg015.f
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fArg015.f
-! %VERIFY: fArg015.out:fArg015.vf
-! %STDIN:
-! %STDOUT: fArg015.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

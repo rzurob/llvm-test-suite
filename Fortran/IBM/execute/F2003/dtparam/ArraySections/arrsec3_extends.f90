@@ -1,10 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : arrsec3_extends.f
 !*                               arrsec1_extends.f)
 !*  DATE                       : Dec 31, 2008
-!*  ORIGIN                     : XLF Development
 !*  PRIMARY FUNCTIONS TESTED   : Array sections
 !*  DESCRIPTION
 !*

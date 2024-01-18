@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2010-08-25
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*  SECONDARY FUNCTIONS TESTED :

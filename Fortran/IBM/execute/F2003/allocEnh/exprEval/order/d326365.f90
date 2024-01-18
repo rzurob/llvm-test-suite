@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : October  6, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: IMPDO: No Output for Allocated
 !*                               ALLOCATABLE CHARACTER Array

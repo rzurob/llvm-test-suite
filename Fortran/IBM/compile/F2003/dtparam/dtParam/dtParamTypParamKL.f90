@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypParamKL
-!*
 !*  DATE                       : Jan. 27, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS

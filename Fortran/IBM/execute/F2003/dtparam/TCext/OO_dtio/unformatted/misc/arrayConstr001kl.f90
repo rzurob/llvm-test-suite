@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : arrayConstr001kl
-!*
 !*  DATE                       : 2007-09-10 (original: 11/08/2004)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters

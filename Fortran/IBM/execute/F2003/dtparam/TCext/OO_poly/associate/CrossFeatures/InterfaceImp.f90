@@ -3,21 +3,7 @@
 ! opt variations: -qnock -qreuse=self
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP:  InterfaceImp.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : InterfaceImp
 !*
 !*  DATE                       : Mar. 10, 2005
 !*

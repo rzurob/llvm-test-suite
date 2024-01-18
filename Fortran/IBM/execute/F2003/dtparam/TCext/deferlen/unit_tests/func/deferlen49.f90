@@ -4,8 +4,6 @@
 
 !*  ===================================================================
 !*
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  PRIMARY FUNCTIONS TESTED   : Unit testing
 !*
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90

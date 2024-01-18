@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclpu14 .////////, AAAAAAA, ,"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpu14
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpuf14.f
 !*
 !*  DATE                       : Oct 1, 2003
 !*

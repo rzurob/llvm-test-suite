@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -ql -qnodefaultpv -qnodeferredlp -qreuse=self /tstdev/F2003/misc/d318769.f
 ! opt variations: -qck -qnok -qnol -qdefaultpv -qdeferredlp -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

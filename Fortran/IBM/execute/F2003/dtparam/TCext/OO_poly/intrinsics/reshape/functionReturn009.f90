@@ -3,21 +3,8 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: functionReturn009.f
-! %VERIFY: functionReturn009.out:functionReturn009.vf
-! %STDIN:
-! %STDOUT: functionReturn009.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 11/11/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : reshape
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                : SOURCE is the return value of a

@@ -1,10 +1,7 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ExecCmdLineOutSize2.f
-!*
 !*  DATE                       : December 05, 2010
-!*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic function
 !*                               execute_command_line(command,wait,exitstat,cmdstat,cmdmsg)

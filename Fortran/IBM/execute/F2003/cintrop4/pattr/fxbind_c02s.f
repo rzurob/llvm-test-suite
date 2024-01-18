@@ -1,21 +1,8 @@
 ! *********************************************************************
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: EXEC_REP=1; $TR_SRC/fxbindc.sh fxbind_c02s bind_c01s
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !* ===================================================================
 !*
 !* DATE                         : Jan. 1, 2004
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED

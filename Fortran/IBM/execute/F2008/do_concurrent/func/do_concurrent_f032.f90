@@ -1,8 +1,6 @@
 !*********************************************************************
 !  ===================================================================
 !
-!  TEST CASE NAME             : do_concurrent_f032.f
-!
 !  DATE                       : Sept 21, 2015
 !
 !  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT Construct

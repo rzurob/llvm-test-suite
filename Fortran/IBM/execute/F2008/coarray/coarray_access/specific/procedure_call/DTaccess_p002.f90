@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : DTaccess_p002.f
-!*
 !*  DATE                       : May 2011
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray access (specific) - procedure call

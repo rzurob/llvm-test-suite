@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryDefferredTypeParam08.f
-!*
 !*  DATE                       : July 24 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY

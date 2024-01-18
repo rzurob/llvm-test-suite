@@ -1,11 +1,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acetnone02slk
-!*
 !*                               by David Forster)
 !*  DATE                       : 2008-01-29 (original: 2006-07-27)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters (+ Array Constructor
 !*                               Enhancements)

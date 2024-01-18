@@ -3,21 +3,7 @@
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=self
 
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: ftybn020j.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : ftybn020j.f
 !*
 !*  DATE                       :
 !*

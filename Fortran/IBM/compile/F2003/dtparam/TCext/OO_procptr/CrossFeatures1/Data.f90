@@ -3,21 +3,7 @@
 ! opt variations: -qnol
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90 -qsuppress=1514-008
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp Data.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : Data.f
 !*
 !*  DATE                       : May. 12, 2005
 !*

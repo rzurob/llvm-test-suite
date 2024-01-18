@@ -1,19 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: merge012.f
-! %VERIFY: merge012.out:merge012.vf
-! %STDIN:
-! %STDOUT: merge012.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 01/25/2005
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : merge
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

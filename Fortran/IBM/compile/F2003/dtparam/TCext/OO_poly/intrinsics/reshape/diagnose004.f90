@@ -4,7 +4,6 @@
 
 !* =====================================================================
 !* DATE                       : 12/08/2004
-!* ORIGIN                     :
 !* PRIMARY FUNCTIONS TESTED   : reshape
 !* DESCRIPTION                :
 !*   Diagnostic test case: PAD shall be of the same type and type

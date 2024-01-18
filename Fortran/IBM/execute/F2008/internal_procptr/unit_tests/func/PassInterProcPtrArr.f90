@@ -1,10 +1,7 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : PassInterProcPtrArr.f
-!*
 !*  DATE                       : February 25, 2011
-!*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*

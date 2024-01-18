@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpPPCDummyNPassIntrInterfaceKFunIntr
-!*
 !*  DATE                       : 2009-03-25
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Procedure Pointers as Components

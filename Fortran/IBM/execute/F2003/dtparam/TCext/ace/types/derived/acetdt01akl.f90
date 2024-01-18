@@ -1,11 +1,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acetdt01akl
-!*
 !*                               by David Forster)
 !*  DATE                       : 2007-12-07 (original: 2006-09-13)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*                               (+ Array Constructor Enhancements)

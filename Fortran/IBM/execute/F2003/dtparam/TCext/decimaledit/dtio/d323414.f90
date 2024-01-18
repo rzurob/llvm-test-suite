@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -ql -qnodefaultpv -qdeferredlp /tstdev/F2003/decimaledit/dtio/d323414.f
 ! opt variations: -qnok -qnol -qdefaultpv -qnodeferredlp
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclat03 abr,cd ef-gh -ijkl mnopq- -rst-   --uvw 1a2b xyz"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclat03
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclat03.f
 !*
 !*  DATE                       : Sept 18, 2003
 !*

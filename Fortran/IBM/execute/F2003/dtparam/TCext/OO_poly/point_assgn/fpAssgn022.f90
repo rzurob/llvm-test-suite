@@ -2,19 +2,6 @@
 ! ftcx_dtp -qk -ql -qnodeferredlp -qreuse=none /tstdev/OO_poly/point_assgn/fpAssgn022.f
 ! opt variations: -qck -qnok -qnol -qdeferredlp -qreuse=base
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fpAssgn022.f
-! %VERIFY: fpAssgn022.out:fpAssgn022.vf
-! %STDIN:
-! %STDOUT: fpAssgn022.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

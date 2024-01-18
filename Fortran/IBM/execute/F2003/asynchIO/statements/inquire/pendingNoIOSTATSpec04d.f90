@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 31, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Data Transfers with an end-of-file
 !*                               Condition

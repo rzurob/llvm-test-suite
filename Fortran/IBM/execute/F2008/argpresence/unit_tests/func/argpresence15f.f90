@@ -1,7 +1,6 @@
 !* =================================================================== &
 !*
 !* DATE                       : Aug 25, 2011
-!* ORIGIN                     : AIX Compiler Development,
 !*
 !* PRIMARY FUNCTIONS TESTED   : Argument Presence Enhancement
 !*

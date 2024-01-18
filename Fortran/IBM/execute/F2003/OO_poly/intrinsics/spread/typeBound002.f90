@@ -1,19 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: typeBound002.f
-! %VERIFY: typeBound002.out:typeBound002.vf
-! %STDIN:
-! %STDOUT: typeBound002.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 01/18/2005
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : spread
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

@@ -1,20 +1,7 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: decimaleditf025.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : Jan. 03, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Validate the functionality of the decimal
 !*                               edit mode in Fortran 2003 std ( Feature

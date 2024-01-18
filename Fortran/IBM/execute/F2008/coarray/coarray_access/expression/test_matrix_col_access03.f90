@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       :
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : similar test to test_matrix_col_access01
 !*  SECONDARY FUNCTIONS TESTED :

@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : kindArgMaxloc3
-!*
 !*  DATE                       : Jun. 26, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics

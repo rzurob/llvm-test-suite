@@ -1,18 +1,5 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=all /tstdev/OO_poly/class/fclass011a1.f
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fclass011a1.f
-! %VERIFY: fclass011a1.out:fclass011a1.vf
-! %STDIN:
-! %STDOUT: fclass011a1.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

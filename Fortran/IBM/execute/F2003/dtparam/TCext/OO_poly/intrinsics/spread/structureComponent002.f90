@@ -3,21 +3,8 @@
 ! opt variations: -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=self -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: structureComponent002.f
-! %VERIFY: structureComponent002.out:structureComponent002.vf
-! %STDIN:
-! %STDOUT: structureComponent002.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 01/18/2005
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : spread
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

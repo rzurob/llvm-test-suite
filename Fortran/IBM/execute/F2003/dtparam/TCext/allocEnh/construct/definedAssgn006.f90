@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck -qk -ql -qnodefaultpv -qdeferredlp -qreuse=self /tstdev/F2003/allocEnh/construct/definedAssgn006.f
 ! opt variations: -qnock -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

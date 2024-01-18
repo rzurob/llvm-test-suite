@@ -1,21 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qintsize=4 -qfixed
-! %GROUP: fgcmdarg10.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS: aa bbb cccc
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  FUNCTIONALITY TESTED       : If the NUMBER is invalid, VALUE is
 !*                             : filled with blanks. LENGTH is assigned

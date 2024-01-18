@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpPtrAssignCommonFromModuleDeferred
-!*
 !*  DATE                       : 2009-01-26
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment without Lower Bounds Specification or Remap

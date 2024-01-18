@@ -1,8 +1,6 @@
 ! *********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ffinal501akl
-!*
 !*  DATE                       : 2007-11-01 (original: 02/10/2005)
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO

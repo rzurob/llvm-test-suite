@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk548a cxcmn_blk508
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f fxcmn_blk548a.o cxcmn_blk508.o fxcmn_blk548a
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*

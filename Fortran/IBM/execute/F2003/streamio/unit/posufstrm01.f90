@@ -1,21 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: posufstrm01.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  DIAGNOSES TESTED           : The POS specifier can not be less
 !*                             : than one.
@@ -24,7 +9,6 @@
 !*                             : access.
 !*                             : Data transfer statements with
 !*                             : unformatted stream access.
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

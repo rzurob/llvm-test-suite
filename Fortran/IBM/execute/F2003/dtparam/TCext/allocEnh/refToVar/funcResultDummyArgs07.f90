@@ -7,7 +7,6 @@
 !*                               expr Contain References to variable
 !*
 !*  DATE                       : October 23, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Allocated ALLOCATABLE Array of Derived

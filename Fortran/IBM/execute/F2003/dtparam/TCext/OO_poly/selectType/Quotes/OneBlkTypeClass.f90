@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: OneBlkTypeClass.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : OneBlkTypeClass
 !*
 !*  DATE                       : Dec. 13, 2004
 !*

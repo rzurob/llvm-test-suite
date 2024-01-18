@@ -1,21 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: diastrm03.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  DIAGNOSES TESTED           : The POS specifier can only appear in
 !*                             : input/output statements that specify a
@@ -25,7 +10,6 @@
 !*                             : that cannot be positioned.
 !*                             : Recovering from recoverable error
 !*                             : conditions is also tested.
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

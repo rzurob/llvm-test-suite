@@ -1,20 +1,7 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: fpscrstop056.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : Feb. 16, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : When STOP stmt is executed and a floating-
 !*                               point exception is occurred, an informational

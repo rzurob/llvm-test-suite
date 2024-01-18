@@ -3,21 +3,7 @@
 ! opt variations: -qck -qreuse=self
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP:  IntFile.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : IntFile
 !*
 !*  DATE                       : Mar. 10, 2005
 !*

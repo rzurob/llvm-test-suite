@@ -1,16 +1,4 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: symflag3.f
-! %VERIFY: symflag3.out:symflag3.vf
-! %STDIN:
-! %STDOUT: symflag3.out
-! %EXECARGS:
-! %POSTCMD: rm m2.mod m.mod
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : March, 2002

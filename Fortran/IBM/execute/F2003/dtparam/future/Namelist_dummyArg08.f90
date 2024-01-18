@@ -3,7 +3,6 @@
 !*                               DTP - Namelist
 !*
 !*  DATE                       : November 25, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY SUBROUTINES TESTED   : Namelist with Intrinsic IO
 !*  SECONDARY SUBROUTINES TESTED : None

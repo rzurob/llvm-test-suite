@@ -2,7 +2,6 @@
 ! ftcx_dtp -qnol /tstdev/F2003/allocEnh/construct/associate004.f
 ! opt variations: -ql
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

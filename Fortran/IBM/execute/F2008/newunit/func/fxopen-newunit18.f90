@@ -2,7 +2,6 @@
 !* ===================================================================
 !*
 !* DATE                         : Sep. 2010
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     : NEWUNIT in OPEN()
 !* SECONDARY FUNTIONS TESTED    : BACKSPACE,READ,WRITE,WAIT

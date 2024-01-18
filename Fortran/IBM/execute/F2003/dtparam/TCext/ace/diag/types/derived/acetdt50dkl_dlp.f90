@@ -4,11 +4,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acetdt50dkl_dlp
-!*
 !*                               by David Forster)
 !*  DATE                       : 2007-11-30 (original: 2006-11-16)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*

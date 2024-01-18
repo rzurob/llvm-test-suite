@@ -3,22 +3,9 @@
 ! opt variations: -qck
 
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: fxiosendeor001.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : Aug. 17, 2005
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : is_iostat_end and is_iostat_eor intrinsics
 !*  SECONDARY FUNCTIONS TESTED : None

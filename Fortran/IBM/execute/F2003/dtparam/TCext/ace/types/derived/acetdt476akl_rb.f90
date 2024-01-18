@@ -4,11 +4,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acetdt476akl_rb
-!*
 !*                               by David Forster)
 !*  DATE                       : 2008-01-17 (original: 2006-07-19)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*

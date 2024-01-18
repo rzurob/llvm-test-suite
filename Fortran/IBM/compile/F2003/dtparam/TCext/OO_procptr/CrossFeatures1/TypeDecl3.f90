@@ -3,21 +3,7 @@
 ! opt variations: -ql
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp TypeDecl3.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             :  TypeDecl3.f
 !*
 !*  DATE                       : Jun. 07, 2005
 !*

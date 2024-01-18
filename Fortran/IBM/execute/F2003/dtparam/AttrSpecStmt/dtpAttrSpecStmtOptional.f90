@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpAttrSpecStmtOptional
-!*
 !*  DATE                       : Jun. 11, 2007
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS

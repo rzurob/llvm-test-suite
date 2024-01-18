@@ -1,21 +1,8 @@
 ! *********************************************************************
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/rundat.sh fxbind_c08mfa  cxbind_c08mfa
-! %COMPOPTS:
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !* ===================================================================
 !*
 !* DATE                         : Jan, 7, 2004
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     : Interoperable procedure contained
 !*                                in module.

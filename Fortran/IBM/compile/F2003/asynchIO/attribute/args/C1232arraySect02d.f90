@@ -3,7 +3,6 @@
 !*                               Attribute in Array Section Arguments
 !*
 !*  DATE                       : April  6, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Actual Argument is an Array Section
 !*  SECONDARY FUNCTIONS TESTED : Dummy Argument explicitly has the ASYNCHRONOUS

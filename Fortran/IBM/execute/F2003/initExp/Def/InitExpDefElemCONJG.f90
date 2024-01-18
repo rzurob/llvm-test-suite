@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefElemCONJG.f
-!*
 !*  DATE                       : Mar 25, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement

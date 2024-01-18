@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: EvalFstFunc.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : EvalFstFunc
 !*
 !*  DATE                       : Dec. 9, 2004
 !*

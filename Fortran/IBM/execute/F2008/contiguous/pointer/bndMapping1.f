@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2010-10-25
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Bound remapping
 !*  SECONDARY FUNCTIONS TESTED :

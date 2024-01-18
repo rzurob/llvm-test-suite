@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql -qreuse=none /tstdev/OO_poly/misc/fmisc015a2.f
 ! opt variations: -qnol -qreuse=self
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

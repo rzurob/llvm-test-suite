@@ -1,7 +1,5 @@
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : enhDummyArg01.f
-!*
 !*  DATE                       : 2011-08-08
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Enhancement to determining dummy argument presence

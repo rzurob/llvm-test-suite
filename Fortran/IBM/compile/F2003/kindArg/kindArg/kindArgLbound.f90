@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : kindArgLbound
-!*
 !*  DATE                       : Jun. 21, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics

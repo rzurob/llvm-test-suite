@@ -7,7 +7,6 @@
 !*                               Non-CHARACTER Array of Derived Type
 !*
 !*  DATE                       : August 29, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Unallocated ALLOCATABLE Array of Derived Type

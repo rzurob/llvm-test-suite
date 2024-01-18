@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql -qnodefaultpv -qdeferredlp -qreuse=none /tstdev/F2003/decimaledit/dtio/modeInquire002.f
 ! opt variations: -qck -qnol -qdefaultpv -qnodeferredlp -qreuse=self
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

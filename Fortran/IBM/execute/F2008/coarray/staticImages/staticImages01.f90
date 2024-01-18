@@ -1,7 +1,5 @@
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : staticImages01.f
-!*
 !*  DATE                       : 2011-01-20
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF Static number of Images

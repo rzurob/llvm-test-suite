@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParamTypeDecUseOfSpecExpr1
-!*
 !*  DATE                       : May. 11, 2007
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS

@@ -3,21 +3,8 @@
 ! opt variations: -ql -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: reshape023.f
-! %VERIFY: reshape023.out:reshape023.vf
-! %STDIN:
-! %STDOUT: reshape023.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 12/05/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : reshape
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

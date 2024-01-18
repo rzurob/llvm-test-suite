@@ -1,19 +1,7 @@
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: iostatinteof001.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : Jan 16, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : is_iostat_end is_iostat_eor
 !*  SECONDARY FUNCTIONS TESTED : None

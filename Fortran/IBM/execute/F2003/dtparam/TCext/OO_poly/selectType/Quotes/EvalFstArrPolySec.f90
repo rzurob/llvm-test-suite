@@ -3,21 +3,7 @@
 ! opt variations: -qnok -ql -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: EvalFstArrPolySec.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : EvalFstArrPolySec
 !*
 !*  DATE                       : Dec. 13, 2004
 !*

@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  DIAGNOSTIC TESTED          : Actual argument doesn't match the dummy
 !*                               argument.
 !*                               - Actual argument and dummy argument need

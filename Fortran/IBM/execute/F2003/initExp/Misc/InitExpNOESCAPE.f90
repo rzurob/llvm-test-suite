@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpNOESCAPE.f
-!*
 !*  DATE                       : Aug. 25, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement

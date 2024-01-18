@@ -4,21 +4,7 @@
 ! opt variations: -qnok -qnol -qnodeferredlp
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: Final4.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : Final4.f
 !*
 !*  DATE                       : Jun. 25, 2005
 !*

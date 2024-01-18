@@ -1,21 +1,9 @@
 ! *********************************************************************
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:  EXEC_REP=10
-! %COMPOPTS: -qfixed -qsmp -F:xlf90_r
-! %GROUP: fxass123.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !**********************************************************************
 !* ===================================================================
 !*
 !* DATE                         : Feb. 13, 2004
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED

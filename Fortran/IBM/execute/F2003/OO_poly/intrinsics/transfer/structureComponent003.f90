@@ -1,19 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: structureComponent003.f
-! %VERIFY: structureComponent003.out:structureComponent003.vf
-! %STDIN:
-! %STDOUT: structureComponent003.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 12/21/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : transfer
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

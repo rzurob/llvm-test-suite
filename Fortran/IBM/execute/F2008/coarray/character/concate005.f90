@@ -1,10 +1,7 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : concate005.f
-!*
 !*  DATE                       : March 24, 2011
-!*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test the concatenation of character component of derived type coarray
 !*

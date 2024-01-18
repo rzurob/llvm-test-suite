@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90 -qstrict
-! %GROUP: fpscrflg04.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT: fpscrflg04.out
-! %EXECARGS:
-! %POSTCMD: rm -f fpscrflg04.out withieee.mod
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*

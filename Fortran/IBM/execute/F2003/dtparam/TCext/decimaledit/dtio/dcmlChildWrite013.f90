@@ -2,7 +2,6 @@
 ! ftcx_dtp -qnol /tstdev/F2003/decimaledit/dtio/dcmlChildWrite013.f
 ! opt variations: -ql
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

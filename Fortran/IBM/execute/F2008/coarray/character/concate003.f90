@@ -1,10 +1,7 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : concate003.f
-!*
 !*  DATE                       : March 22, 2011
-!*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test the concatenation of character coarray variables in modules
 !*

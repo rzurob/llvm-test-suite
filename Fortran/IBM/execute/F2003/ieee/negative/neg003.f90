@@ -1,16 +1,4 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh neg003
-! %COMPOPTS: -qfree=f90 -qxlf90=signedzero
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f *.mod
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : February 6, 2002

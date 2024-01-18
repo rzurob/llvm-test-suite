@@ -3,22 +3,10 @@
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=none
 
 !****************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: ptrassign065.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : March 31, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement
 !*  SECONDARY FUNCTIONS TESTED : None

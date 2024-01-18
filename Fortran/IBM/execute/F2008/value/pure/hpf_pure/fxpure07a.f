@@ -1,23 +1,9 @@
 @process free(f90)
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: PROCS=4
-! %COMPOPTS: -qstrict
-! %GROUP: fxpure07a.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT: fxpure07a.out
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/fxpure.pstsh fxpure07a
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : fxpure07a
-!*
 !*  DATE                       : Oct 26, 1995
-!*  ORIGIN                     : PPS Languages, Poughkeepsie, NY
 !*
 !*  PRIMARY FUNCTIONS TESTED   : PURE
 !*  SECONDARY FUNCTIONS TESTED :

@@ -3,21 +3,7 @@
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: FuncRet5.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : FuncRet5.f
 !*
 !*  DATE                       : May. 26, 2005
 !*

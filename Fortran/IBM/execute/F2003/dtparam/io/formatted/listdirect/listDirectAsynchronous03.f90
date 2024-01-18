@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectAsynchronous03.f
-!*
 !*  DATE                       : Jan. 26 2009
 !*
 !*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO

@@ -3,21 +3,7 @@
 ! opt variations: -ql -qdefaultpv -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: SltAbsCom1.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : SltAbsCom1
 !*
 !*  DATE                       : Dec. 14, 2004
 !*

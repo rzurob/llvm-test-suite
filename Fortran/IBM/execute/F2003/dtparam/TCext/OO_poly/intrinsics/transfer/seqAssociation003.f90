@@ -3,21 +3,8 @@
 ! opt variations: -ql -qdefaultpv -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: seqAssociation003.f
-! %VERIFY: seqAssociation003.out:seqAssociation003.vf
-! %STDIN:
-! %STDOUT: seqAssociation003.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 12/29/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : transfer
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

@@ -2,19 +2,6 @@
 ! ftcx_dtp -qck -qk -qnol -qdefaultpv -qreuse=self /tstdev/OO_type/struct_constr/fconstr047a1.f
 ! opt variations: -qnock -qnok -ql -qnodefaultpv -qreuse=none
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fconstr047a1.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

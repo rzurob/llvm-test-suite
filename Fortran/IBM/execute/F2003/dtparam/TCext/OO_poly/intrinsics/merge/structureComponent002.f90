@@ -1,21 +1,8 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/intrinsics/merge/structureComponent002.f
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: structureComponent002.f
-! %VERIFY: structureComponent002.out:structureComponent002.vf
-! %STDIN:
-! %STDOUT: structureComponent002.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 01/25/2005
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : merge
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

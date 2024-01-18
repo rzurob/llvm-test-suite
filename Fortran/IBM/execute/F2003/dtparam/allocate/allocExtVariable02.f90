@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : allocExtVariable02
-!*
 !*  DATE                       : December 15, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : The ALLOCATE Statement has an allocation-list
 !*                               that is an Extended Derived Type

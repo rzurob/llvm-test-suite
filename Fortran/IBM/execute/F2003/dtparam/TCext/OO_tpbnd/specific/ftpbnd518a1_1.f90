@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -qnol /tstdev/OO_tpbnd/specific/ftpbnd518a1_1.f
 ! opt variations: -qnok -ql
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

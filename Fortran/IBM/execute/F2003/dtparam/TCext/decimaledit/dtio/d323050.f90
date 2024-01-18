@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck -qk -qnol /tstdev/F2003/decimaledit/dtio/d323050.f
 ! opt variations: -qnock -qnok -ql
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/vfloop.sh
-! %COMPOPTS:
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !***********************************************************************
 
   !!! Fortran interface with args defined by ISO_C_BINDING types.

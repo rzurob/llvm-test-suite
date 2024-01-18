@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qnodeferredlp
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: SltArrPtr.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : SltArrPtr
 !*
 !*  DATE                       : Jan. 06, 2005
 !*

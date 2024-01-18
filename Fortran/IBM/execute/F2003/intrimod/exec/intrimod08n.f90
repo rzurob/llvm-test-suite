@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: ../ieeeconsts.f ../fake_ieee_modules.f intrimod08n.f
-! %VERIFY: intrimod08n.out:intrimod08n.vf
-! %STDIN:
-! %STDOUT: intrimod08n.out
-! %EXECARGS:
-! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod08n.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use NON_INTRINSIC modules with same name as an

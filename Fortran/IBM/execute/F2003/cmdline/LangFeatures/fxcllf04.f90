@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxcllf04 \? \$ABC"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxcllf04
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxcllf04.f
 !*
 !*  DATE                       : Oct 1, 2003
 !*
@@ -33,7 +19,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Call COMMAND_ARGUMENT_COUNT  in selector of  selectcase statement
-!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

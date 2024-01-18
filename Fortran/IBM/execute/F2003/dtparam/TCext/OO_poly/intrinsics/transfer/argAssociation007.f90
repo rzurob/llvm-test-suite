@@ -3,21 +3,8 @@
 ! opt variations: -qnol -qdefaultpv -qnodeferredlp -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: argAssociation007.f
-! %VERIFY: argAssociation007.out:argAssociation007.vf
-! %STDIN:
-! %STDOUT: argAssociation007.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 12/29/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : transfer
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

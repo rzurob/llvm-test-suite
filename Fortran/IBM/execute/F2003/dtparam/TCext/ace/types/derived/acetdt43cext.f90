@@ -4,11 +4,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acetdt43cext
-!*
 !*                               by David Forster)
 !*  DATE                       : 2008-01-17 (original: 2006-11-08)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*

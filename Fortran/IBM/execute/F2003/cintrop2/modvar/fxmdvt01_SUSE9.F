@@ -2,7 +2,6 @@
 !*
 !
 !* DATE                         : Sep. 24, 2003
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED

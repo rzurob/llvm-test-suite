@@ -3,21 +3,8 @@
 ! opt variations: -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=self -qreuse=base
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: structureComponent002.f
-! %VERIFY: structureComponent002.out:structureComponent002.vf
-! %STDIN:
-! %STDOUT: structureComponent002.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 12/31/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : transpose
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

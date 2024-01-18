@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : typeParamInquiryDTIntrinsic06.f
-!*
 !*  DATE                       : July 7 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY

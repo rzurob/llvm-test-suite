@@ -1,7 +1,5 @@
 !**********************************************************************
 !*
-!*  TEST CASE NAME             : submodule22f
-!*
 !*  DATE                       : 25 April 2013
 !*
 !*  PRIMARY FUNCTIONS TESTED   :

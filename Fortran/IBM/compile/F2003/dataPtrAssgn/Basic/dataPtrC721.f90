@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             :  dataPtrC721.f
-!*
 !*  DATE                       : Feb. 02, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement

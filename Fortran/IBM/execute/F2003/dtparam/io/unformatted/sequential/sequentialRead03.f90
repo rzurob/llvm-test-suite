@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : sequentialRead03
-!*
 !*  DATE                       : October 22, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Data Transfer from a SEQUENTIAL File
 !*  SECONDARY FUNCTIONS TESTED : input-item-list is an Extended Derived Type

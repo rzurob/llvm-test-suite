@@ -3,21 +3,7 @@
 ! opt variations: -qnok -ql
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP:  redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp C813ArrZero.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : C813ArrZero
 !*
 !*  DATE                       : Dec. 3, 2004
 !*

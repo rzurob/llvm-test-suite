@@ -2,7 +2,6 @@
 !* ===================================================================
 !*
 !* DATE                         : August  25, 2013
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed rank object
 !* SECONDARY FUNTIONS TESTED    :

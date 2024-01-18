@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -qnol -qnodefaultpv /tstdev/F2003/misc/d318782.f
 ! opt variations: -qnok -ql -qdefaultpv
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

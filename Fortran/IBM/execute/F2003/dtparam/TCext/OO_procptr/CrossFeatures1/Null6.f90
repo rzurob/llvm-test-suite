@@ -3,21 +3,7 @@
 ! opt variations: -qnol -qdeferredlp
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: Null6.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : Null6.f
 !*
 !*  DATE                       : May. 11, 2005
 !*

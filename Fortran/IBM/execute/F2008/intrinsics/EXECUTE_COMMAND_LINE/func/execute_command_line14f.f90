@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2010-12-14
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : EXECUTE_COMMAND_LINE intrinsic
 !*  SECONDARY FUNCTIONS TESTED :

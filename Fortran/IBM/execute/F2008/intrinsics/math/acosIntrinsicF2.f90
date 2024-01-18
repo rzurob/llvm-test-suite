@@ -1,7 +1,5 @@
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : acosIntrinsicF2.f
-!*
 !*  DATE                       : 2010-11-16
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Math Intrinsics

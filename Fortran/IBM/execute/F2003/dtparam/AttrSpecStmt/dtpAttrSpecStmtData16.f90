@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpAttrSpecStmtData16
-!*
 !*  DATE                       : May  4, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*  SECONDARY FUNCTIONS TESTED :

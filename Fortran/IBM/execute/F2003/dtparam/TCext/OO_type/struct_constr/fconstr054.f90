@@ -2,7 +2,6 @@
 ! ftcx_dtp -qnol /tstdev/OO_type/struct_constr/fconstr054.f
 ! opt variations: -ql
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

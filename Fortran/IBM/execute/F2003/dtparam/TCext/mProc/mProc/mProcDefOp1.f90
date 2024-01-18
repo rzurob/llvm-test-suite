@@ -5,8 +5,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcDefOp1.f
-!*
 !*  DATE                       : Aug. 09, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement

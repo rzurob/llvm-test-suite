@@ -5,8 +5,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpDefEOSHIFT.f
-!*
 !*  DATE                       : Mar 28, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement

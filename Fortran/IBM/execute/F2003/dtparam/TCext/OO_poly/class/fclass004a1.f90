@@ -2,19 +2,6 @@
 ! ftcx_dtp -qk -ql -qnodefaultpv -qdeferredlp -qreuse=none /tstdev/OO_poly/class/fclass004a1.f
 ! opt variations: -qck -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=self -qreuse=base
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fclass004a1.f
-! %VERIFY: fclass004a1.out:fclass004a1.vf
-! %STDIN:
-! %STDOUT: fclass004a1.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

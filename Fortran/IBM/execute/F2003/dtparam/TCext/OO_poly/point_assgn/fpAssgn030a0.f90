@@ -2,19 +2,6 @@
 ! ftcx_dtp -qck -qnol /tstdev/OO_poly/point_assgn/fpAssgn030a0.f
 ! opt variations: -qnock -ql
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fpAssgn030a0.f
-! %VERIFY: fpAssgn030a0.out:fpAssgn030a0.vf
-! %STDIN:
-! %STDOUT: fpAssgn030a0.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

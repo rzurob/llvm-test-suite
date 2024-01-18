@@ -1,16 +1,4 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/fxi3e2.presh fxfinite08
-! %COMPOPTS: -qfloat=nans:nofold -qautodbl=dblpad8 -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : February 15, 2002

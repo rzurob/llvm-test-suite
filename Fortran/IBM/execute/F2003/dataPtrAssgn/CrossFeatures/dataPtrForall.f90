@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrForall.f
-!*
 !*  DATE                       : Feb. 17, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement

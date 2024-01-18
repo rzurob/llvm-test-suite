@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpTypSpecArrConstr.f
-!*
 !*  DATE                       : Aug. 30, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement

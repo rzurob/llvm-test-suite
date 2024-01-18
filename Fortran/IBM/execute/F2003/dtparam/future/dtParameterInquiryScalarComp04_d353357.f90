@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtParameterInquiryScalarComp04_d353357.f
-!*
 !*  DATE                       : July 11 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : TYPE PARAMETER INQUIRY

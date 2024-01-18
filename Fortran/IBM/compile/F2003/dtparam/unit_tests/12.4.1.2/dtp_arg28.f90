@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  DIAGNOSTIC TESTED          : Actual argument doesn't match the dummy
 !*                               argument.
 !*                               - the non-deferred length type parameters

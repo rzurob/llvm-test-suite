@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 28, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INQUIRE() using the FILE= Specifier for a
 !*                               File that has *NOT* been OPEN()ed

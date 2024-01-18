@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpIAssignSelectTypeVar
-!*
 !*  DATE                       : 2008-12-01
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment without Allocation

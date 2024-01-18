@@ -3,21 +3,7 @@
 ! opt variations: -qnol -qnodeferredlp
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: Optional3.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : Optional3
 !*
 !*  DATE                       : Jan. 25, 2005
 !*

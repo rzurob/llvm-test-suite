@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrPresentDT.f
-!*
 !*  DATE                       : Aug 31, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement

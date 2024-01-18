@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dataPtrTypBndGenName.f
-!*
 !*  DATE                       : Jul. 31, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment Enhancement

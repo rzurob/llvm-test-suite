@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclpl51 \!\[ABCDE\] ---------\@ 1234"
-! %COMPOPTS:  -qfree=f90  -qnosave
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpl51
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpl51.f
 !*
 !*  DATE                       : Oct 1, 2003
 !*

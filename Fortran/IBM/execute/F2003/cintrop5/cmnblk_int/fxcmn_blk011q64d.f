@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: ${TR_SRC}/cmn_blk_Q64.sh fxcmn_blk011q64d cxcmn_blk011q64
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f fxcmn_blk011q64d.o cxcmn_blk011q64.o fxcmn_blk011q64d
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*

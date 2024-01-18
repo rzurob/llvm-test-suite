@@ -1,16 +1,4 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh select010
-! %COMPOPTS: -qfree=f90 -qstrict -qautodbl=dblpad
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : February 7, 2002

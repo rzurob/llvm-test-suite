@@ -3,21 +3,7 @@
 ! opt variations: -qnock -qnodeferredlp
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP:  TypeParam1.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : TypeParam1
 !*
 !*  DATE                       : Jan. 27, 2005
 !*

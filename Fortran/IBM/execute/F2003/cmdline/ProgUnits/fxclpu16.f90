@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclpu16 %, %, %1 %3"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpu16
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpu16.f
 !*
 !*  DATE                       : Sept 18, 2003
 !*
@@ -35,7 +21,6 @@
 !*  DESCRIPTION                : Call command line procedures through external functions
 !*                             : which are used for the defined operators
 !*                             : with actual arguments defined in derived type in module
-!*                             :
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD

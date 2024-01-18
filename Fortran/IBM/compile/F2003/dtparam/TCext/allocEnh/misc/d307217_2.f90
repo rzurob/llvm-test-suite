@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql -qdeferredlp /tstdev/F2003/allocEnh/misc/d307217_2.f
 ! opt variations: -qnol -qnodeferredlp
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

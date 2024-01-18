@@ -1,8 +1,6 @@
 ! *********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ffinal514a11kl
-!*
 !*  DATE                       : 2007-11-02 (original: 02/11/2005)
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : DTIO

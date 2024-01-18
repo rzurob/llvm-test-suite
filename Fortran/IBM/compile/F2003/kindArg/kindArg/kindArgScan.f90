@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : kindArgScan
-!*
 !*  DATE                       : Jun. 28, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : New Kind argumnet for existing intrinsics

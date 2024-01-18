@@ -5,8 +5,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : InitExpLGAMMA.f
-!*
 !*  DATE                       : Aug. 22, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Fortran 2003 Initialization Expression Enhancement

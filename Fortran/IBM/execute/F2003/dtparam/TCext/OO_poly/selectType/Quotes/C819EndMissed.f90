@@ -3,21 +3,7 @@
 ! opt variations: -qnok -ql
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: C819EndMissed.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : C819EndMissed
 !*
 !*  DATE                       : Dec. 2, 2004
 !*

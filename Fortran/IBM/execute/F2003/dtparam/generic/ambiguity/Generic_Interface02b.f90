@@ -3,7 +3,6 @@
 !*                               DTP - Generic Interface
 !*
 !*  DATE                       : October 02, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY SUBTIONS TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY SUBTIONS TESTED : Resolution based on KIND type parameter

@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpPtrAssignSelectTypeVarFixed
-!*
 !*  DATE                       : 2008-12-01
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment without Lower Bounds Specification or Remap

@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : allocBaseVariable01
-!*
 !*  DATE                       : December  4, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : The ALLOCATE Statement has an allocation-list
 !*                               that is a Base Derived Type

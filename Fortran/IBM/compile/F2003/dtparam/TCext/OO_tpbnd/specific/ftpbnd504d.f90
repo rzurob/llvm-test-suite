@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck -ql -qreuse=base /tstdev/OO_tpbnd/specific/ftpbnd504d.f
 ! opt variations: -qnock -qnol -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

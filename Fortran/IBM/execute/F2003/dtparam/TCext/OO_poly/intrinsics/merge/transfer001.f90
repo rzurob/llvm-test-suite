@@ -1,21 +1,8 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qnock -qnok -ql -qreuse=self -qdefaultpv -qdeferredlp /tstdev/OO_poly/intrinsics/merge/transfer001.f
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: transfer001.f
-! %VERIFY: transfer001.out:transfer001.vf
-! %STDIN:
-! %STDOUT: transfer001.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 01/25/2005
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : merge
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

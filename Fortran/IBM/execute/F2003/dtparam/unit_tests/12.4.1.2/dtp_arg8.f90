@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  FUNCTIONAL TESTED          : Pass pointer and or allocatable argument
 !*                               with deferred type parameters to explicit
 !*                               explicit type parameter dummy argument

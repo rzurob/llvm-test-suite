@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadSourceIsScalarIntComp01.f
-!*
 !*  DATE                       : Oct. 13 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,DIM,NCOPIES)

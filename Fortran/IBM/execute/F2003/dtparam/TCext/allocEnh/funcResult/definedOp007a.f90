@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck -qk -ql -qdeferredlp /tstdev/F2003/allocEnh/funcResult/definedOp007a.f
 ! opt variations: -qnock -qnok -qnol -qnodeferredlp
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

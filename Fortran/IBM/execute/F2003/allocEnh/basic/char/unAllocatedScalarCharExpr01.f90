@@ -3,7 +3,6 @@
 !*                               CHARACTER Intrinsic Type
 !*
 !*  DATE                       : September 13, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is an
 !*                               Unallocated ALLOCATABLE Scalar of Type

@@ -1,19 +1,7 @@
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: iostateofread1.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : Jan 20, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : is_iostat_eor
 !*  SECONDARY FUNCTIONS TESTED : None

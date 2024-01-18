@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : forall_typespec_d05.f
-!*
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED : out-of-bounds value in the forall-triplet-spec

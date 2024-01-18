@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  FUNCTIONAL TESTED          : pass pointer argument with deferred
 !*                               type parameters. Also dummy's type
 !*                               parameter list contains an unknown

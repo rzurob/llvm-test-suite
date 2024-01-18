@@ -1,23 +1,8 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qsmp=schedule=guided=5 -qfree=f90
-! %GROUP: fxst011b.f
-! %VERIFY: fxst011b.out:fxst011b.vf
-! %STDIN:
-! %STDOUT: fxst011b.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : fxst011b.f
-!*
 !*  DATE                       : October 10, 1996
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : -qsmp=schedule= compiler option
 !*  SECONDARY FUNCTIONS TESTED :

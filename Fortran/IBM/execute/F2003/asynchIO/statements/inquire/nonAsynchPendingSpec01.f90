@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 21, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INQUIRE() on a Unit not Opened for
 !*                               Asynchronous I/O

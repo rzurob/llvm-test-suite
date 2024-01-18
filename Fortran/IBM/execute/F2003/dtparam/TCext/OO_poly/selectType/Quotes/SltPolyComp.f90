@@ -3,21 +3,7 @@
 ! opt variations: -ql -qdefaultpv -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: SltPolyComp.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : SltTypePolyComp
 !*
 !*  DATE                       : Dec. 15, 2004
 !*

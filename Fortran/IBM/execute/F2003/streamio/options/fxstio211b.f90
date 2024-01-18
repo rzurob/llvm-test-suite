@@ -1,16 +1,4 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f fort.*
-! %COMPOPTS: -qposition=appendunknown:appendold
-! %GROUP: fxstio211b.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  Creation Date              : Mar 25, 2003

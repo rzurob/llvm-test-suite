@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp AssocNameSamePtr.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             :  AssocNameSamePtr
 !*
 !*  DATE                       : Dec. 2, 2004
 !*

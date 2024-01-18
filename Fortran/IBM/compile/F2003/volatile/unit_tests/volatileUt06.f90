@@ -1,9 +1,6 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : volatileUt06.f
-!*
 !*  DATE                       : May 26, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Supporting VOLATILE for F2003
 !*

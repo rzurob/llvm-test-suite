@@ -1,21 +1,8 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qstrict
-! %GROUP:  rem01.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT: rem01.out
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/rem01.posh rem01
-! %END
-!**********************************************************************
 
 !*  ===================================================================
 !*
 !*  DATE                       : August, 2002
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ieee_rem
 !*  SECONDARY FUNCTIONS TESTED :

@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/intrimod43a.presh
-! %COMPOPTS:
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod43a.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Same as intrimod43.f but without -qoldmangel.

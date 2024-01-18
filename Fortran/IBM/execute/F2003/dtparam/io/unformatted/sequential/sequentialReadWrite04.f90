@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : sequentialReadWrite04
-!*
 !*  DATE                       : October  8, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SEQUENTIAL File I/O for a base Derived Type
 !*                               and a Container Derived Type

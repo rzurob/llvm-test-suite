@@ -1,21 +1,7 @@
-!#######################################################################
-!***********************************************************************
-! %START
-! %MAIN:
-! %PRECMD: ${TR_SRC}/scrisop00.presh fxisoprd02 cxisoprd02
-! %COMPOPTS:
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !***********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : 4/23/2002
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ISO_C_BINDING module
 !*  SECONDARY FUNCTIONS TESTED : see below

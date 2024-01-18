@@ -1,16 +1,4 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f fort.* ; export XLFRTEOPTS=multconn=yes
-! %COMPOPTS:
-! %GROUP: fxstio232.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  Creation Date              : April 1, 2003

@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 17, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Perform Unformatted Asynchronous READ()
 !*                               Operations

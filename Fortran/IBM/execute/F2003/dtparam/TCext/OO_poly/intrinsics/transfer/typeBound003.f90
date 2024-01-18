@@ -3,21 +3,8 @@
 ! opt variations: -qnok -ql -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: typeBound003.f
-! %VERIFY: typeBound003.out:typeBound003.vf
-! %STDIN:
-! %STDOUT: typeBound003.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 12/20/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : transfer
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

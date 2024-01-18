@@ -7,7 +7,6 @@
 !*                               Specifier in I/O Statements
 !*
 !*  DATE                       : February 22, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS= Specifier in OPEN() Statement
 !*  SECONDARY FUNCTIONS TESTED : DECIMAL=Comma Specifier in OPEN() Statement

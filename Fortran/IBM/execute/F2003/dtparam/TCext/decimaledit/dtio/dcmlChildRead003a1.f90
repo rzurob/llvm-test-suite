@@ -2,7 +2,6 @@
 ! ftcx_dtp -qnol /tstdev/F2003/decimaledit/dtio/dcmlChildRead003a1.f
 ! opt variations: -ql
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpPtrAssignInternalCommonFromVarsDeferred
-!*
 !*  DATE                       : 2009-01-27
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment without Lower Bounds Specification or Remap

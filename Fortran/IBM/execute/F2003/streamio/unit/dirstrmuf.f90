@@ -1,26 +1,10 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export XLFRTEOPTS=multconn=yes
-! %COMPOPTS: -qfree=f90
-! %GROUP: dirstrmuf.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f ./diruf
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  DIAGNOSES TESTED           : An unformatted file is created and
 !*                             : connected for both Direct and Stream
 !*                             : access.
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

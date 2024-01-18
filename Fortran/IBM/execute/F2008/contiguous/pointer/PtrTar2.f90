@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2010-10-25
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
 !*  SECONDARY FUNCTIONS TESTED : Function result with CONTIGUOUS attribute

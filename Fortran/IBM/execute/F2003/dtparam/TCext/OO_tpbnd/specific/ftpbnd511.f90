@@ -2,19 +2,6 @@
 ! ftcx_dtp -ql /tstdev/OO_tpbnd/specific/ftpbnd511.f
 ! opt variations: -qnol
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: ftpbnd511.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

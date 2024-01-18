@@ -1,21 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export EXIST_VAR=hello; export EMPTY_VAR=
-! %COMPOPTS: -qintsize=4 -qfixed
-! %GROUP: fgtenvar07.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: unset EXIST_VAR; unset EMPTY_VAR
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  FUNCTIONALITY TESTED       : VALUE takes the value of a specified
 !*                             : environment variable. LENGTH is the

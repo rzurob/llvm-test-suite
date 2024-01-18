@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : directWrite04
-!*
 !*  DATE                       : October  6, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : output-item-list consists of Derived Types
 !*                               (with Parameters) that are Containers for

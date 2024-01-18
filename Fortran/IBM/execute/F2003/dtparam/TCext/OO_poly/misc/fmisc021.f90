@@ -2,19 +2,6 @@
 ! ftcx_dtp -qnol /tstdev/OO_poly/misc/fmisc021.f
 ! opt variations: -ql
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fmisc021.f
-! %VERIFY: fmisc021.out:fmisc021.vf
-! %STDIN:
-! %STDOUT: fmisc021.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

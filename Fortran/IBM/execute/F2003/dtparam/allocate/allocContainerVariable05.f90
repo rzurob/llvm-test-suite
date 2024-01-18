@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : allocContainerVariable05
-!*
 !*  DATE                       : January 13, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : The ALLOCATE Statement has an allocation-list
 !*                               that is a Derived Type Container

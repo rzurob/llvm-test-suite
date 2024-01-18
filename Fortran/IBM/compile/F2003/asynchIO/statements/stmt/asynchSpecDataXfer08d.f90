@@ -3,7 +3,6 @@
 !*                               Specifier in I/O Statements
 !*
 !*  DATE                       : March  1, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ASYNCHRONOUS=variable Specifier in Data
 !*                               Transfer Statement

@@ -2,7 +2,6 @@
 !* ===================================================================
 !*
 !* DATE                         : Aug 31, 2015
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008 DO CONCURENT
 !* SECONDARY FUNTIONS TESTED    :

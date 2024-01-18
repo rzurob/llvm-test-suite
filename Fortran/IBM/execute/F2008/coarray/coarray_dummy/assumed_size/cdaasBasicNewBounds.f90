@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : cdaasBasicNewBounds
-!*
 !*  DATE                       : 2010-09-28
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray dummy arguments - assumed size

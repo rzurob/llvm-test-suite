@@ -1,21 +1,8 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qnock -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/intrinsics/merge/type002.f
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: type002.f
-! %VERIFY: type002.out:type002.vf
-! %STDIN:
-! %STDOUT: type002.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 01/25/2005
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : merge
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

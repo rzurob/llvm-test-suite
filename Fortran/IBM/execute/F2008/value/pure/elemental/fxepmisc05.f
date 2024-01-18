@@ -1,21 +1,8 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qrndsngl -qstrict -qnomaf -qfixed=132
-! %GROUP: fxepmisc05.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 
 !*  ===================================================================
 !*
 !*  DATE                       : July 28, 1998
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ELEMENTAL procedures
 !*  SECONDARY FUNCTIONS TESTED :

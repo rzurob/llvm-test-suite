@@ -3,7 +3,6 @@
 !*                               DTP - Generic Type-Bound
 !*
 !*  DATE                       : October 02, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : apparent ambiguity between elemental and nonelemental procedure

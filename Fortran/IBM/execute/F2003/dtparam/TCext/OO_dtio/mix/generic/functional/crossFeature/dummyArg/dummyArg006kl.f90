@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dummyArg006kl
-!*
 !*  DATE                       : 2007-08-07 (original: 04/26/2005)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters

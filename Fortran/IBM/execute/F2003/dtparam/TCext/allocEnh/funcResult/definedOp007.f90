@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck -qk -qnol /tstdev/F2003/allocEnh/funcResult/definedOp007.f
 ! opt variations: -qnock -qnok -ql
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

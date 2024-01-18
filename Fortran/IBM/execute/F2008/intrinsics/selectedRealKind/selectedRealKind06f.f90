@@ -1,8 +1,6 @@
 !***********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : selectedRealKind06f.f
-!*
 !*  DATE                       : 10/20/2010
 !*
 !*  PRIMARY FUNCTIONS TESTED   : return value of -5 from SELECTED_REAL_KIND([P, R,

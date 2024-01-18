@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qnodeferredlp
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: SltArrHostDummyZeroSiz.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : SltArrHostDummyZeroSiz
 !*
 !*  DATE                       : Jan. 20, 2005
 !*

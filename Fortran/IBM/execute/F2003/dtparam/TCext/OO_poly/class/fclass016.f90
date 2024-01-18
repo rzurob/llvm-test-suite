@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -ql -qnodeferredlp /tstdev/OO_poly/class/fclass016.f
 ! opt variations: -qnok -qnol -qdeferredlp
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

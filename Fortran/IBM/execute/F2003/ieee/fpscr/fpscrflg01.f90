@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90 -qstrict -qfloat=nofold -qnoipa
-! %GROUP: fpscrflg01.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT: fpscrflg01.out
-! %EXECARGS:
-! %POSTCMD: rm -f fpscrflg01.out
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*

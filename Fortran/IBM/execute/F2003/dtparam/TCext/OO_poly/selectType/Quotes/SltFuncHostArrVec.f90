@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qreuse=base
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: SltFuncHostArrVec.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : SltFuncHostArrVec
 !*
 !*  DATE                       : Jan. 21, 2005
 !*

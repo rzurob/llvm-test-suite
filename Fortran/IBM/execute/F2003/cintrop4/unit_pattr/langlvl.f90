@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/vfloop.sh
-! %COMPOPTS: -qdebug=intmsg -qlanglvl=95std -qsuppress=1518-128
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !***********************************************************************
 
       !!! BIND(C) is disallowed with older language levels.

@@ -1,19 +1,6 @@
- !#######################################################################
 ! OO_dtio/formatted/section10.7/slash004.f, xlftest.OO_dtio, tstdev, 1.2
 ! Extract Date/Time: 05/04/07 14:46:20
 ! Checkin Date/Time: 05/01/18 13:31:56
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: slash004.f
-! %VERIFY: slash004.out:slash004.vf
-! %STDIN:
-! %STDOUT: slash004.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

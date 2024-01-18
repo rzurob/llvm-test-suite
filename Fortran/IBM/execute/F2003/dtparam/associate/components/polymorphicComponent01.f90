@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : polymorphicComponent01
 !*                               Component
 !*
 !*  DATE                       : August 19, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is a variable
 !*  SECONDARY FUNCTIONS TESTED : The Variable has a Polymorphic Component

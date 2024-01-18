@@ -4,22 +4,9 @@
 ! Checkin Date/Time: 04/03/23 17:32:51
 ! *********************************************************************
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/runcomplex.sh fxbind_c03eed  cxbind_c03eed
-! %COMPOPTS:
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !* ===================================================================
 !*
 !* DATE                         : Jan, 7, 2004
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     :Interoperable Functions.
 !*                              - Fortran Entry in function called from C

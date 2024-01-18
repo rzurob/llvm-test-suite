@@ -7,7 +7,6 @@
 !*                               (DTIO) Interactions with Asynchronous I/O
 !*
 !*  DATE                       : April 12, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Formatted Derived-Type I/O (DTIO) Routines
 !*                               Defined for a Derived-Type

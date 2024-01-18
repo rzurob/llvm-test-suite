@@ -3,7 +3,6 @@
 !*                               Attribute in Block Data Program Units
 !*
 !*  DATE                       : April 11, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Block Data Program Unit
 !*  SECONDARY FUNCTIONS TESTED : Data Object explicitly has the ASYNCHRONUS

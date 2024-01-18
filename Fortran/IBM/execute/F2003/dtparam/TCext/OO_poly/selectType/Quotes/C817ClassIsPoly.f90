@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qnodeferredlp -qreuse=base
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: C817ClassIsPoly.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : C817ClassIsPoly
 !*
 !*  DATE                       : Dec. 3, 2004
 !*

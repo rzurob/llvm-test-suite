@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
-! %COMPOPTS: -qhalt=w
-! %GROUP: ../ieeeconsts.f intrimod02a.f
-! %VERIFY: intrimod02a.out:../emptyout.vf
-! %STDIN:
-! %STDOUT: intrimod02a.out
-! %EXECARGS:
-! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod02a.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use INTRINSIC and NON_INTRINSIC modules in internal

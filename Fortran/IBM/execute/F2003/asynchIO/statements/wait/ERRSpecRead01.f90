@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 15, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() on Pending (Unformatted) Read Data
 !*                               Transfer Operations (with/without ID=

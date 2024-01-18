@@ -2,19 +2,6 @@
 ! ftcx_dtp -ql /tstdev/OO_type/struct_constr/fconstr015a1.f
 ! opt variations: -qnol
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fconstr015a1.f
-! %VERIFY: fconstr015a1.out:fconstr015a1.vf
-! %STDIN:
-! %STDOUT: fconstr015a1.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -3,22 +3,9 @@
 ! opt variations: -qnol
 
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: valuefordtalloc001.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : Dec. 20, 2005
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : value attribute for derived types with allocatable components
 !*  SECONDARY FUNCTIONS TESTED : None

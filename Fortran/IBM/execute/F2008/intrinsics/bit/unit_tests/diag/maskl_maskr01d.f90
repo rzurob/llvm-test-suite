@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2013-02-27
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MASKL, MASKR intrinsics
 !*  SECONDARY FUNCTIONS TESTED :

@@ -1,10 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             :
 !*                               arrsec1_lenlen.f)
 !*  DATE                       : Oct 13, 2008
-!*  ORIGIN                     : XLF Development
 !*  PRIMARY FUNCTIONS TESTED   :
 !*  REQUIRED COMPILER OPTIONS  :
 !*  DESCRIPTION

@@ -1,19 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: associate002.f
-! %VERIFY: associate002.out:associate002.vf
-! %STDIN:
-! %STDOUT: associate002.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 12/31/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : transpose
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

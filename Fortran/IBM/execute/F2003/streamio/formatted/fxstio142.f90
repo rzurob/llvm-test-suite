@@ -1,20 +1,7 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: cp $TR_SRC/check_array.inc .; cp $TR_SRC/check_interface.inc .; cp $TR_SRC/fxstio142.in .
-! %COMPOPTS:
-! %GROUP:  fxstio142.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: diff fxstio142.dat $TR_SRC/fxstio142.vf && rm -f fxstio142.dat
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : March 2003
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : OPEN, WRITE , READ
 !*

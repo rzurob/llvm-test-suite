@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : January 20, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with type-spec
 !*  SECONDARY FUNCTIONS TESTED :

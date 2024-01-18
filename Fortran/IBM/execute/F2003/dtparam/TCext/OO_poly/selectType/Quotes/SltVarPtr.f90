@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qreuse=base
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: SltVarPtr.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : SltTypeVarPtr
 !*
 !*  DATE                       : Dec. 16, 2004
 !*

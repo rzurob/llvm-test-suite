@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql /tstdev/F2003/mv_Alloc/unit_tests/MoveAllocRank2Array25.f
 ! opt variations: -qnol
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

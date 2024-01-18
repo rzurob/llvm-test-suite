@@ -3,21 +3,7 @@
 ! opt variations: -qnock -qdeferredlp -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: FuncRet3.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : FuncRet3.f
 !*
 !*  DATE                       : May. 26, 2005
 !*

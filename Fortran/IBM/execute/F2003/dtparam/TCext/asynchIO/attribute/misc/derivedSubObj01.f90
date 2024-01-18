@@ -7,7 +7,6 @@
 !*                               Attribute in Scoping Unit
 !*
 !*  DATE                       : January 17, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Base Object has ASYNCHRONOUS Attribute
 !*  SECONDARY FUNCTIONS TESTED : Subobjects have ASYNCHRONOUS Attribute

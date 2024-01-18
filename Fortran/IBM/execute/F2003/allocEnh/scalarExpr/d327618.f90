@@ -3,7 +3,6 @@
 !*                               an Array
 !*
 !*  DATE                       : November  2, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: IMPDO: Derived Type with ALLOCATABLE
 !*                               Component not Allocated in Array Constructor

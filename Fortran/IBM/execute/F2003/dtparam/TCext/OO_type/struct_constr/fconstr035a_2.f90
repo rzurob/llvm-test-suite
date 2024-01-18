@@ -1,7 +1,6 @@
 ! F2003/dtparam/TCext/OO_type/struct_constr/fconstr035a_2.f
 ! Created per defect 347092 (see also defect 346653)
 !
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -1,9 +1,7 @@
 !******************************************************************************
 !*  ===========================================================================
 !*
-!*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue09.f
 !*  DATE            : 2010-12-01
-!*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
 !*  - C main calls Fortran pure procedures, passing all interoperable intrinsic

@@ -1,9 +1,6 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : stop_unit3_caf.f
-!*
 !*  DATE                       : Sept 29, 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*  SECONDARY FUNCTIONS TESTED :

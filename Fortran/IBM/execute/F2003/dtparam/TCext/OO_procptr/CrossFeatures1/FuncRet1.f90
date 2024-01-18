@@ -4,21 +4,7 @@
 ! opt variations: -qnock -qreuse=self
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: FuncRet1.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : FuncRet1.f
 !*
 !*  DATE                       : May. 26, 2005
 !*

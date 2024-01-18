@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpATPDADTIO
-!*
 !*  DATE                       : 2008-10-15
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Assumed type parameters and dummy arguments

@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcTypBndDTIOWriteF.f
-!*
 !*  DATE                       : Mar 07, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement

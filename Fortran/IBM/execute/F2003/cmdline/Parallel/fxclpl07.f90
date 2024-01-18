@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclpl07 efwerf ierjflweirjx olierufoi iewqrfu"
-! %COMPOPTS:  -qfree=f90  -qnosave
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpl07
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpl07.f
 !*
 !*  DATE                       : Oct 1, 2003
 !*

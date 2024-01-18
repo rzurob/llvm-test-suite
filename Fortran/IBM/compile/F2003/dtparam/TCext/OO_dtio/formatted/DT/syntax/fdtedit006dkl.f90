@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : fdtedit006dkl
-!*
 !*  DATE                       : 2007-06-08 (original: 21/03/2005)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters

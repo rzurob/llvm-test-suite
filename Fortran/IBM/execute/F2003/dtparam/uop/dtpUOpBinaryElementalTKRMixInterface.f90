@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpUOpBinaryElementalTKRMixInterface
-!*
 !*  DATE                       : 2009-02-11
 !*
 !*  PRIMARY FUNCTIONS TESTED   : User-Defined Operators

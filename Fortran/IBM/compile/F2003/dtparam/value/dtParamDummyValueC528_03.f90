@@ -1,20 +1,5 @@
-!#######################################################################
-!***********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f dtParamDummyValueC528_03.out
-! %COMPOPTS:
-! %GROUP: dtParamDummyValueC528_03.f
-! %VERIFY: dtParamDummyValueC528_03.out:dtParamDummyValueC528_03.vf
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !***********************************************************************
 !* =================================================================== *
-!*                                                                     *
-!* TEST CASE NAME             : dtParamDummyValueC528_03.f             *
 !*                                                                     *
 !* DATE                       : May 13, 2008                           *
 !*                                                                     *

@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql -qdeferredlp /tstdev/F2003/allocEnh/funcResult/funcRet004a.f
 ! opt variations: -qnol -qnodeferredlp
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

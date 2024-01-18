@@ -4,21 +4,7 @@
 ! opt variations: -qck -qnok -qdefaultpv -qnodeferredlp -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: Arg7.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : Arg7.f
 !*
 !*  DATE                       : May. 23, 2005
 !*

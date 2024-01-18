@@ -1,10 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : arrsec2_assumed_shape.f
 !*                               arrsec1_assumed_shape.f)
 !*  DATE                       : Oct 13, 2008
-!*  ORIGIN                     : XLF Development
 !*  PRIMARY FUNCTIONS TESTED   : array sections
 !*  DESCRIPTION
 !*

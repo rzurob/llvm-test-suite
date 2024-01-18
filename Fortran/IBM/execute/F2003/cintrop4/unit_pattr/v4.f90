@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/vfloop.sh -cf $TR_SRC/c-f-pair.sh
-! %COMPOPTS:
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !***********************************************************************
 
   !!! Fortran ENTRY in subroutine (one arg by value) called from C.

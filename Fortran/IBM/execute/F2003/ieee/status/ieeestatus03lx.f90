@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90 -qstrict
-! %GROUP: ieeestatus03lx.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT: ieeestatus03lx.out
-! %EXECARGS:
-! %POSTCMD: rm -f ieeestatus03lx.out
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*

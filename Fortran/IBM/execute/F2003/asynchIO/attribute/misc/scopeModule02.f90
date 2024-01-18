@@ -3,7 +3,6 @@
 !*                               Attribute in Scoping Unit
 !*
 !*  DATE                       : January 20, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Base Object implicitly has
 !*                               ASYNCHRONOUS Attribute in one Scoping Unit

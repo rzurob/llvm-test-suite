@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : sequentialReadWrite01
-!*
 !*  DATE                       : October 22, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type (with Type Parameters) I/O
 !*                               with a SEQUENTIAL File

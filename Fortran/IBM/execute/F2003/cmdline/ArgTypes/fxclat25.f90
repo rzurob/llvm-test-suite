@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclat25 1 a 2"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclat25
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclat25.f
 !*
 !*  DATE                       : Sept 18, 2003
 !*
@@ -34,7 +20,6 @@
 !*
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing string sections of variables defined
 !*                             : in different derived types as the augument keywords
-!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

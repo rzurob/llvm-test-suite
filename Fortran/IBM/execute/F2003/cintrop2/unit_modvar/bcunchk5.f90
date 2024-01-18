@@ -1,21 +1,8 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: ${TR_SRC}/unextchk.sh bcunchk5 csubext5
-! %COMPOPTS: -qfree=f90 -qextchk
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !* ===================================================================
 !*
 !
 !* DATE                         : May. 24, 2003
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     :
 !* SECONDARY FUNTIONS TESTED
@@ -24,7 +11,6 @@
 !*
 !* DESCRIPTION                  : Test bind(c) variables work with
 !*                              : -qextchk.
-!*                              :
 !234567890123456789012345678901234567890123456789012345678901234567890
 module mod
 integer, bind(c) :: ci_val, ci_ref

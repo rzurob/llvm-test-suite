@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpStructConstr01
-!*
 !*  DATE                       : May 25, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Structure Constructor
 !*  SECONDARY FUNCTIONS TESTED : With a zero Length/Sized Array Component

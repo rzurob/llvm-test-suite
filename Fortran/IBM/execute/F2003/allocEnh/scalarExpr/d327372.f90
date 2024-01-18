@@ -3,7 +3,6 @@
 !*                               an Array
 !*
 !*  DATE                       : October 30, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ALLOC: Logical Expression Evaluates to .TRUE.
 !*                               for Array of Derived Type with an ALLOCATABLE

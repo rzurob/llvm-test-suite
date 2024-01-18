@@ -5,7 +5,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : October  3, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : F2003: ALLOCENH: Error in WCODE with Derived
 !*                               Type Array that Contains an ALLOCATABLE

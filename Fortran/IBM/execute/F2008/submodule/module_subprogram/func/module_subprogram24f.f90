@@ -2,7 +2,6 @@
 !* ===================================================================
 !*
 !* DATE                         : 28 May 2013
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     : F2008 submodule
 !* SECONDARY FUNTIONS TESTED    : view a module procedure in a debugger

@@ -1,25 +1,12 @@
 !***********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfixed
-! %GROUP: ../fake_xlfutility_module.f intrimod63.f
-! %VERIFY: intrimod63.out:../emptyout.vf
-! %STDIN:
-! %STDOUT: intrimod63.out
-! %EXECARGS:
-! %POSTCMD: rm -f xlfutility.mod
-! %END
 !**********************************************************************
       PROGRAM intrimod63
 C**********************************************************************
 C*  ===================================================================
 C*
-C*  TEST CASE NAME             : intrimod63
 C*                             : Utility Procedure Interfaces
 C*
 C*  DATE                       : January 13, 2004
-C*  ORIGIN                     : AIX Compiler Development,
 C*
 C*  PRIMARY FUNCTIONS TESTED   : GMTIME_ & TIME_
 C*  SECONDARY FUNCTIONS TESTED : None

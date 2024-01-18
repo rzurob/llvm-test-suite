@@ -1,8 +1,6 @@
 ! *********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : fdtio060kl
-!*
 !*  DATE                       : 2007-06-20 (original: unknown)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters

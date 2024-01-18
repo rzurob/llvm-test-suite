@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : arraySection02
-!*
 !*  DATE                       : September 16, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : The ASSOCIATE Construct
 !*  SECONDARY FUNCTIONS TESTED : selector is an Array Section (with a

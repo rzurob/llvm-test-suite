@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectMixedTypeReadWrite02.f
-!*
 !*  DATE                       : Jan. 19 2009
 !*
 !*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO

@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: ../ieeeconsts.f ../fake_ieee_modules.f intrimod11.f
-! %VERIFY: intrimod11.out:../emptyout.vf
-! %STDIN:
-! %STDOUT: intrimod11.out
-! %EXECARGS:
-! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod11.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use INTRINSIC modules with ONLY clause.

@@ -2,19 +2,6 @@
 ! ftcx_dtp -qck -qk -qnol -qnodefaultpv /tstdev/OO_poly/class/fclass003a3.f
 ! opt variations: -qnock -qnok -ql -qdefaultpv
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fclass003a3.f
-! %VERIFY: fclass003a3.out:fclass003a3.vf
-! %STDIN:
-! %STDOUT: fclass003a3.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

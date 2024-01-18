@@ -3,21 +3,7 @@
 ! opt variations: -qnok -ql -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: SltArrFuncPolyAlloc1.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : SltArrFuncPolyAlloc1
 !*
 !*  DATE                       : Jan. 18, 2005
 !*

@@ -1,19 +1,6 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: ftybn095a.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ftybn095a.f
 !*  DATE                       :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : type bound procedure

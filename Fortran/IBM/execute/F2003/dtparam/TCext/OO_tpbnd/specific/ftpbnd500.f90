@@ -2,19 +2,6 @@
 ! ftcx_dtp -qk -ql -qdeferredlp -qreuse=base /tstdev/OO_tpbnd/specific/ftpbnd500.f
 ! opt variations: -qnok -qnol -qnodeferredlp -qreuse=none
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: ftpbnd500.f
-! %VERIFY: ftpbnd500.out:ftpbnd500.vf
-! %STDIN:
-! %STDOUT: ftpbnd500.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

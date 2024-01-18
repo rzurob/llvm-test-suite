@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql -qdeferredlp -qreuse=base /tstdev/OO_poly/dummy_arg/fArg009a5_1.f
 ! opt variations: -qck -qnol -qnodeferredlp -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -3,21 +3,8 @@
 ! opt variations: -qnock -qnol -qnodeferredlp
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: useAssociation001.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 10/27/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : extends_type_of(A, MOLD)
 !*  SECONDARY FUNCTIONS TESTED : same_type_as(A, B)
 !*  DESCRIPTION                : Type renaming in use statement.

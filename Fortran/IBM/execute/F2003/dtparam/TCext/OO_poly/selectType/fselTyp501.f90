@@ -2,19 +2,6 @@
 ! ftcx_dtp -qk -qnol /tstdev/OO_poly/selectType/fselTyp501.f
 ! opt variations: -qnok -ql
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fselTyp501.f
-! %VERIFY: fselTyp501.out:fselTyp501.vf
-! %STDIN:
-! %STDOUT: fselTyp501.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

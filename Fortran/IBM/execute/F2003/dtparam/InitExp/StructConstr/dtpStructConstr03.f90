@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpStructConstr03
-!*
 !*  DATE                       : May 27, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Structure Constructor
 !*  SECONDARY FUNCTIONS TESTED : with POINTER and PROCEDURE POINTER Components

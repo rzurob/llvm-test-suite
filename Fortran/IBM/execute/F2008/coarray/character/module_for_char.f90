@@ -1,10 +1,7 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : module_for_char.f
-!*
 !*  DATE                       : March 16, 2011
-!*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Auxiliary module for character coarray testing
 !*

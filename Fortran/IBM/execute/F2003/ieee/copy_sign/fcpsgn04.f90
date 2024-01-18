@@ -1,16 +1,4 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/fxieee.presh fcpsgn04
-! %COMPOPTS:  -qfree=f90 -qfloat=nofold -qstrict -qrealsize=4
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : February 15, 2002

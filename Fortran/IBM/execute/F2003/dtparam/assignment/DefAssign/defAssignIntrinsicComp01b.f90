@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignIntrinsicComp01b.f
-!*
 !*  DATE                       : Feb. 2 2009
 !*
 !*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT

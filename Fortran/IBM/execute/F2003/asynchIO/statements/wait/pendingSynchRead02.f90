@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 28, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Error Condition in the 2nd of Three
 !*                               Pending Unformatted Data Transfers

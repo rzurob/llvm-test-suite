@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : April 24, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array constructor with Type Specification
 !*  SECONDARY FUNCTIONS TESTED : Function Result + Select Type

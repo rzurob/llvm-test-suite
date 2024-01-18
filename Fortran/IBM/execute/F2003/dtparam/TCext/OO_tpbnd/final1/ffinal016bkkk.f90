@@ -1,9 +1,6 @@
 !**********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : ffinal016bkkk.f
-!*  TEST CASE NAME             : type-bound procedure ffinal016bkkk
-!*
 !*  DATE                       : 2007-11-21 (original: )
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters final subroutines

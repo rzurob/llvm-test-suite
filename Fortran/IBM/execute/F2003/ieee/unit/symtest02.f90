@@ -1,16 +1,4 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qnostrictieeemod -qfree=f90
-! %GROUP: symtest02.f
-! %VERIFY: symtest02.out:symtest02.vf
-! %STDIN:
-! %STDOUT: symtest02.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : March, 2002

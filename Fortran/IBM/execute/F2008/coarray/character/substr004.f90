@@ -1,10 +1,7 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : substr004.f
-!*
 !*  DATE                       : March 28, 2011
-!*  ORIGIN                     : Compiler Development, IBM CDL
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Test the substring of character component of derived type coarray
 !*

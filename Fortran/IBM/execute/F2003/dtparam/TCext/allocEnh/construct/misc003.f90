@@ -2,7 +2,6 @@
 ! ftcx_dtp -ql -qdeferredlp -qreuse=none /tstdev/F2003/allocEnh/construct/misc003.f
 ! opt variations: -qnol -qnodeferredlp -qreuse=base
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

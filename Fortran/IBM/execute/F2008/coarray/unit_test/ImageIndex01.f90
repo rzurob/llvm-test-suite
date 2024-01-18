@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : July 31, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IMAGE_INDEX intrinsic
 !*  SECONDARY FUNCTIONS TESTED : None

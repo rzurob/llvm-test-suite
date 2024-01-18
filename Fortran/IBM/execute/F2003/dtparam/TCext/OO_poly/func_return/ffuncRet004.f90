@@ -1,18 +1,5 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qck -qk -ql -qreuse=all /tstdev/OO_poly/func_return/ffuncRet004.f
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: ffuncRet004.f
-! %VERIFY: ffuncRet004.out:ffuncRet004.vf
-! %STDIN:
-! %STDOUT: ffuncRet004.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

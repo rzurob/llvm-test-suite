@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2010-10-25
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Data pointer assingment
 !*  SECONDARY FUNCTIONS TESTED : The module will be compiled with XLF 13.1

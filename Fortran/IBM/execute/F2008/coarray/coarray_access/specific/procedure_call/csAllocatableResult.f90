@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : csAllocatableResult
-!*
 !*  DATE                       : 2010-10-15
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray access (specific) - procedure call

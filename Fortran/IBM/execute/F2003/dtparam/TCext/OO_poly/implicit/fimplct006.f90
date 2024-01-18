@@ -1,18 +1,5 @@
 ! GB DTP extension using:
 ! ftcx_dtp -qnock -qk -ql -qreuse=all -qdeferredlp /tstdev/OO_poly/implicit/fimplct006.f
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fimplct006.f
-! %VERIFY: fimplct006.out:fimplct006.vf
-! %STDIN:
-! %STDOUT: fimplct006.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

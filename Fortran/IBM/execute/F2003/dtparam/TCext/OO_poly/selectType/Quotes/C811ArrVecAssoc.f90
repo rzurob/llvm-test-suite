@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qnodeferredlp
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP:  C811ArrVecAssoc.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : C811ArrVecAssoc
 !*
 !*  DATE                       : Dec. 2, 2004
 !*

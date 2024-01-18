@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : mProcTypBndGenName.f
-!*
 !*  DATE                       : Mar 06, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generaliztion of PROCEDURE statement

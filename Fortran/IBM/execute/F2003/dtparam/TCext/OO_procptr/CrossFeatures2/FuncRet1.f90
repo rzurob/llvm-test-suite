@@ -3,21 +3,7 @@
 ! opt variations: -qck -qdeferredlp -qreuse=self
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: FuncRet1.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : FuncRet1.f
 !*
 !*  DATE                       : Jun. 28, 2005
 !*

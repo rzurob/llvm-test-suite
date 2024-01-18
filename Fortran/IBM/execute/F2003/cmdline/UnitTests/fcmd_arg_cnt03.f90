@@ -1,21 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qintsize=8
-! %GROUP: fcmd_arg_cnt03.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS: aa "   " bb "" cc
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  FUNCTIONALITIES TESTED     : For COMMAND_ARGUMENT_COUNT.
 !*                             : It returns the number of the command

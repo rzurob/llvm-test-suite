@@ -3,7 +3,6 @@
 !*                               (CHARACTER Length > 1)
 !*
 !*  DATE                       : April 25, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Dummy Argument of Type Character of Maximum
 !*                               Length (approx. 256Mb) (actually 127Mb --

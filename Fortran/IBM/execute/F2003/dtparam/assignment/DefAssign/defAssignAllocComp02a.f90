@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignAllocComp02a.f
-!*
 !*  DATE                       : Feb. 7 2009
 !*
 !*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT

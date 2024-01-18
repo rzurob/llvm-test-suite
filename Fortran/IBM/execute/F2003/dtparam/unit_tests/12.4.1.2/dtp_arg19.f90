@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  FUNCTIONAL TESTED          : Argument association combined with
 !*                               pointer assignment.
 !*

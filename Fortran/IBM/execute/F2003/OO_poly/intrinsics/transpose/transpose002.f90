@@ -1,19 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: transpose002.f
-! %VERIFY: transpose002.out:transpose002.vf
-! %STDIN:
-! %STDOUT: transpose002.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 12/30/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : transpose
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                : MATRIX is poly.

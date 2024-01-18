@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : array003alk
-!*
 !*  DATE                       : 2007-08-12 (original: 04/26/2005)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters

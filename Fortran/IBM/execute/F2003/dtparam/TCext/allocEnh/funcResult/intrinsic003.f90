@@ -2,7 +2,6 @@
 ! ftcx_dtp -qnol /tstdev/F2003/allocEnh/funcResult/intrinsic003.f
 ! opt variations: -qck -ql
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

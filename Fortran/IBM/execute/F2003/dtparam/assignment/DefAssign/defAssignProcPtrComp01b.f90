@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignProcPtrComp01b.f
-!*
 !*  DATE                       : Feb. 16 2009
 !*
 !*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT

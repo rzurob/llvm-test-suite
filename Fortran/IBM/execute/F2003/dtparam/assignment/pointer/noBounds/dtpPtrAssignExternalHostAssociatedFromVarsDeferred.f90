@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpPtrAssignExternalHostAssociatedFromVarsDeferred
-!*
 !*  DATE                       : 2008-11-12
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pointer Assignment without Lower Bounds Specification or Remap

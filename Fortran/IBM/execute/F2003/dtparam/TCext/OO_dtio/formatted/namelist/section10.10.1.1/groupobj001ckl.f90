@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : groupobj001ckl
-!*
 !*  DATE                       : 2007-07-20 (original: 11/08/2004)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters

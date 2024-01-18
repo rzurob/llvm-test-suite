@@ -1,8 +1,6 @@
 !***********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : IEEESelectedRealKind05f.f
-!*
 !*  DATE                       : 10/20/2010
 !*
 !*  PRIMARY FUNCTIONS TESTED   : return value of -4 from IEEE_selected_real_kind([P, R,

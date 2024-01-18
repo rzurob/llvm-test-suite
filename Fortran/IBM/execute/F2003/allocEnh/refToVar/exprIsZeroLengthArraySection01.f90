@@ -3,7 +3,6 @@
 !*                               and/or expr Contain References to variable
 !*
 !*  DATE                       : October 16, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment where variable is
 !*                               an Allocated ALLOCATABLE Array of INTEGER

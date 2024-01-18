@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : sequentialRead05
-!*
 !*  DATE                       : October 22, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SEQUENTIAL File Input for a Derived/Extended
 !*                               Derived Type (with Type Parameters)

@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclpu19 1 a 2"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpu19
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpu19.f
 !*
 !*  DATE                       : Oct. 1, 2003
 !*
@@ -35,7 +21,6 @@
 !*  DESCRIPTION                : Define actual argument variables in different modules
 !*                             : Invoke command line procedures through different module
 !*                             : procedures
-!*                             :
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD0

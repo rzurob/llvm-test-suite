@@ -3,7 +3,6 @@
 !*                               Non-CHARACTER Intrinsic Types
 !*
 !*  DATE                       : August  3, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Type Array Definition
 !*  SECONDARY FUNCTIONS TESTED : with Array Constructor Initialization

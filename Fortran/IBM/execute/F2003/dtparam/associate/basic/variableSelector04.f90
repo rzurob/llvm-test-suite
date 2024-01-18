@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : variableSelector04
-!*
 !*  DATE                       : July  8, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is a variable
 !*  SECONDARY FUNCTIONS TESTED : variable is a Polymorphic Extended Type

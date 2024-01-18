@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : componentSelector02
 !*                               Type
 !*
 !*  DATE                       : September  4, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is the Component of a variable
 !*                               of Dervied Type

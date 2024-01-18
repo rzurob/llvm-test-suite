@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -qnol -qnodefaultpv -qreuse=base /tstdev/OO_poly/dummy_arg/fArg036a.f
 ! opt variations: -qnok -ql -qdefaultpv -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

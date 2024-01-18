@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : structCompnt004kl
-!*
 !*  DATE                       : 2007-08-08 (original: 04/26/2005)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters

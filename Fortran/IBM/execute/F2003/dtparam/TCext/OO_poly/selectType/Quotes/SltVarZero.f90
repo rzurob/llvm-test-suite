@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: SltVarZero.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : SltTypeVarZero
 !*
 !*  DATE                       : Dec. 15, 2004
 !*

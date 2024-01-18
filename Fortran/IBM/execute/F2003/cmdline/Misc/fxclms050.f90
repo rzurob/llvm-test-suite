@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : fxclms050.f
-!*
 !*  DATE                       : Nov 1, 2003
 !*
 !*  PRIMARY FUNCTIONS TESTED   	: COMMAND_ARGUMENT_COUNT()

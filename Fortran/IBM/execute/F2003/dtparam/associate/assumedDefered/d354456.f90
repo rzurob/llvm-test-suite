@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : d354456
-!*
 !*  DATE                       : July 29, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  ABSTRACT                   : DTPARAM: ICE: POLY: In xlfcode with Polymorphic
 !*                               POINTER Argument in the ASSOCIATED() Intrinsic

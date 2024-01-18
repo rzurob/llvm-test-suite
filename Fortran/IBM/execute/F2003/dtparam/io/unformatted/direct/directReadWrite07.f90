@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : directReadWrite07
-!*
 !*  DATE                       : October 22, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DIRECT File Input/Output of Dervied Type
 !*                               Containers (with Parameters)

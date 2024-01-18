@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : defAssignDataPtrComp03a.f
-!*
 !*  DATE                       : Feb. 11 2009
 !*
 !*  PRIMARY FUNCTIONS TESTED   : USER DEFINED ASSIGNMENT

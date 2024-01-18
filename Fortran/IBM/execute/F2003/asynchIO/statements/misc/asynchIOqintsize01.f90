@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : April 12, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Asynchronous I/O
 !*  SECONDARY FUNCTIONS TESTED : Default/-qintsize=[2|4|8]

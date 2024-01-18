@@ -1,7 +1,6 @@
 !* ===================================================================
 !*
 !* DATE                       : June 9, 2015
-!* ORIGIN                     : AIX Compiler Development,
 !*
 !* PRIMARY FUNCTIONS TESTED   : ALLOCATE Statement with Mold Expression
 !* SECONDARY FUNCTIONS TESTED :

@@ -1,7 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpCompatReturnValueNoDTP
 !*  TEST CASE FILE             : dtpCompatReturnValueNoDTPPreDTP
 !*
 !*  DATE                       : 2009-06-13

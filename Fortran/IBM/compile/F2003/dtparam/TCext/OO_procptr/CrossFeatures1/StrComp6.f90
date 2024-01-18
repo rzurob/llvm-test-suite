@@ -3,21 +3,7 @@
 ! opt variations: -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=self
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp StrComp6.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : StrComp6.f
 !*
 !*  DATE                       : May. 18, 2005
 !*

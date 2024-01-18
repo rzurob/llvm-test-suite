@@ -1,16 +1,3 @@
-!#######################################################################
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $KILL $COMPILER -o falloc501d1 $OPTIONS $TR_SRC/falloc501d1.f
-! %COMPOPTS: -qfree=f90 -C -qsigtrap=xl__trce
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: ./falloc501d1 2>falloc501d1.out; grep SIGTRAP falloc501d1.out && rm -f falloc501d1.out falloc501d1
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

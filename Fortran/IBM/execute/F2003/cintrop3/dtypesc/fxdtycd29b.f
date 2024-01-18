@@ -1,21 +1,7 @@
-!#######################################################################
-!***********************************************************************
-! %START
-! %MAIN:
-! %PRECMD: ${TR_SRC}/scrdtyd00.presh fxdtycd29b cxdtycc29b
-! %COMPOPTS:
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !***********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : 4/23/2002
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived types with BIND(C) attribute
 !*  SECONDARY FUNCTIONS TESTED : see below

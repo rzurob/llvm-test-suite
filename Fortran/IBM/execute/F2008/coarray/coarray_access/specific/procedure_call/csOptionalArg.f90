@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : csOptionalArg
-!*
 !*  DATE                       : 2010-10-04
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CAF coarray access (specific) - procedure call

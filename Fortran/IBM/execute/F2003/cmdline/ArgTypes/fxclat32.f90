@@ -1,19 +1,6 @@
 !#! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclat32 _______ --------"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclat32
-! %END
 ! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclat131.f
 !*
 !*  DATE                       : Sept 18, 2003
 !*

@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2010-12-03
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IS_CONTIGUOUS intrinsic
 !*  SECONDARY FUNCTIONS TESTED :

@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f ieee_*.mod xlf_fp_util.mod
-! %COMPOPTS:
-! %GROUP: ../ieeeconsts.f ../fake_ieee_modules.f intrimod13n.f
-! %VERIFY: intrimod13n.out:fakeout2.vf
-! %STDIN:
-! %STDOUT: intrimod13n.out
-! %EXECARGS:
-! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod13n.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use INTRINSIC and NON_INTRINSIC modules without

@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclpu43 AAAAAAA N\@M /w/"
-! %COMPOPTS:  -qfree=f90 -qNOSAVE
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpu43
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpu43.f
 !*
 !*  DATE                       : Oct. 1, 2003
 !*
@@ -33,7 +19,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Invoke command line procedures through pure procedures
-!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

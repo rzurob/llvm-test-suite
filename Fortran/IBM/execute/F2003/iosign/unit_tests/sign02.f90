@@ -1,20 +1,6 @@
 !***********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: sign02.f
-! %VERIFY: sign02.vf:sign02.out
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: diff sign02.out $TR_SRC/sign02.vf; rm-rf sign02.out
-! %END
-!***********************************************************************
 !*
 !*  ===================================================================
-!*
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN=specifier in WRITE
 !*

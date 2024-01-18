@@ -3,21 +3,8 @@
 ! opt variations: -qck -qnok -qnol -qnodeferredlp -qreuse=self -qreuse=base
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: typeDeclaration017.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 10/26/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : extends_type_of(A, MOLD)
 !*  SECONDARY FUNCTIONS TESTED : same_type_as(A, B)
 !*  DESCRIPTION                :

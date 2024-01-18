@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclms14 111111111 2222 33 -"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclms14
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclms14.f
 !*
 !*  DATE                       : Nov 1, 2003
 !*
@@ -34,7 +20,6 @@
 !*
 !*  DESCRIPTION                : Invoke command_argument_count as actual arguments of some inline
 !*                             : functions like mod/ishift etc.
-!*                             :
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 

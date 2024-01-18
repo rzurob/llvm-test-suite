@@ -3,21 +3,8 @@
 ! opt variations: -qnock -qnok -qnol -qnodeferredlp -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: definedOperation003.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 11/10/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : extends_type_of(A, MOLD)
 !*  SECONDARY FUNCTIONS TESTED : same_type_as(A, B)
 !*  DESCRIPTION                : Use defined assignment to test the

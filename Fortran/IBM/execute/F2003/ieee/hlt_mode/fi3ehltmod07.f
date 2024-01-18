@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/fxi3e.presh fi3ehltmod07
-! %COMPOPTS: -qfloat=nofold -qflttrap=zerodivide -qsigtrap -qfree=f90 -qstrict
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

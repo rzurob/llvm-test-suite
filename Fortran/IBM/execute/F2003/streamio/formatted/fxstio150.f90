@@ -1,20 +1,7 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP:  fxstio150.f
-! %VERIFY: fxstio150.dat:fxstio150.vf
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f fxstio150.dat
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : March 2003
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WRITE, READ
 !*

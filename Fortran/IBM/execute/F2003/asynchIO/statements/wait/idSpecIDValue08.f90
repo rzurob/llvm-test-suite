@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 15, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : WAIT() Statement on (Formatted) I/O Units
 !*  SECONDARY FUNCTIONS TESTED : WAIT() on ID= Values that are scalar-int-expr

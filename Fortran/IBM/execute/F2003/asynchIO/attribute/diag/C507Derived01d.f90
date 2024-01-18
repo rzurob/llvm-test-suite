@@ -3,7 +3,6 @@
 !*                               Attribute in Derived Types
 !*
 !*  DATE                       : January 17, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C507
 !*  SECONDARY FUNCTIONS TESTED : Derived Type -- Base Object

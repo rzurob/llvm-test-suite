@@ -2,19 +2,6 @@
 ! ftcx_dtp -qk -qnol -qnodefaultpv -qreuse=self /tstdev/OO_poly/misc/fmisc010b1.f
 ! opt variations: -qck -qnok -ql -qdefaultpv -qreuse=none
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fmisc010b1.f
-! %VERIFY: fmisc010b1.out:fmisc010b1.vf
-! %STDIN:
-! %STDOUT: fmisc010b1.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

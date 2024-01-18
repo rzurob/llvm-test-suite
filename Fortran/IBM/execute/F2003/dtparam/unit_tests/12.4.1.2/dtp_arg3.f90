@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  FUNCTIONAL TESTED          : - type renaming
 !*                               - passed object
 !*

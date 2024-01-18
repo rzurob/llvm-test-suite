@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : allocate001l
-!*
 !*  DATE                       : 2007-09-09 (original: 21/03/2005)
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters

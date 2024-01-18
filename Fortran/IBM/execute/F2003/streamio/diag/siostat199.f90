@@ -1,21 +1,8 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/chkmsg.sh siostat199
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 
 !*  ===================================================================
 !*
 !*  DATE                       : April 2003
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*  SECONDARY FUNCTIONS TESTED :

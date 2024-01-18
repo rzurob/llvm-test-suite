@@ -2,19 +2,6 @@
 ! ftcx_dtp -qk -ql -qnodeferredlp /tstdev/OO_poly/selectType/fselTyp511.f
 ! opt variations: -qnok -qnol -qdeferredlp
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fselTyp511.f
-! %VERIFY: fselTyp511.out:fselTyp511.vf
-! %STDIN:
-! %STDOUT: fselTyp511.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -3,21 +3,7 @@
 ! opt variations: -qnock
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp TypeDecl2.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             :  TypeDecl2.f
 !*
 !*  DATE                       : Jun. 07, 2005
 !*

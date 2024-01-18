@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatNonadvancingStream02.f
-!*
 !*  DATE                       : Dec. 19 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO

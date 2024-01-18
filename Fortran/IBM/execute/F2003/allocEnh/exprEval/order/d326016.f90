@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : September 28, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Intrinsic Assignment:  variable with
 !*                               Vector Subscript doesn't Conform with expr

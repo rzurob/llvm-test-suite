@@ -1,16 +1,4 @@
 !************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qlanglvl=2003pure
-! %GROUP: IEEESelRKindDiag1.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!************************************************************************
       program IEEESelRKindDiag1
         USE, INTRINSIC :: IEEE_ARITHMETIC
 
@@ -20,7 +8,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : Nov 06, 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*                             : IBM China Development Shanghai Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   :

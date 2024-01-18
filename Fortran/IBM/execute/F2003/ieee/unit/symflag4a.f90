@@ -1,16 +1,4 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qnostrictieeemod -qfree=f90
-! %GROUP: symflag4a.f
-! %VERIFY: symflag4a.out:symflag4a.vf
-! %STDIN:
-! %STDOUT: symflag4a.out
-! %EXECARGS:
-! %POSTCMD: rm m2.mod
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : March, 2002

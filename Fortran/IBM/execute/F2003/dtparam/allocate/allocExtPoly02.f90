@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : allocExtPoly02
-!*
 !*  DATE                       : January  9, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : The ALLOCATE Statement has an allocation-list
 !*                               that is a Polymorphic of an Extended Derived

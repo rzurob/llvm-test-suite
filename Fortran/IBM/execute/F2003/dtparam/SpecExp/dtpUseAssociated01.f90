@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpUseAssociated01
-!*
 !*  DATE                       : June 29, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : USE Association,
 !*  SECONDARY FUNCTIONS TESTED : With one level of USE Association

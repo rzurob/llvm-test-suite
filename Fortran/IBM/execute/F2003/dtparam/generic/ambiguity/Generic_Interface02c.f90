@@ -3,7 +3,6 @@
 !*                               DTP - Generic Interface
 !*
 !*  DATE                       : October 02, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY SUBROUTINES TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY SUBROUTINES TESTED : Resolution for polymorphic objects (type compatible)

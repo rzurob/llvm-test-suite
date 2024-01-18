@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -ql -qnodefaultpv -qdeferredlp /tstdev/F2003/allocEnh/argAssociation/d327270_2.f
 ! opt variations: -qnok -qnol -qdefaultpv -qnodeferredlp -qreuse=self
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -3,21 +3,8 @@
 ! opt variations: -qnol -qnodeferredlp -qreuse=none
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: argAssociation003.f
-! %VERIFY: argAssociation003.out:argAssociation003.vf
-! %STDIN:
-! %STDOUT: argAssociation003.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 12/31/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : transpose
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

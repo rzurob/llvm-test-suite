@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : June 14, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Specification expression - Host Association
 !*  SECONDARY FUNCTIONS TESTED : Specification expression in Function Result

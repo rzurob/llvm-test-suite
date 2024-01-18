@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatNonadvancingSequential02.f
-!*
 !*  DATE                       : Dec. 18 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO

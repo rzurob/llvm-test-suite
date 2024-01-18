@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -qnol -qnodefaultpv -qdeferredlp -qreuse=self /tstdev/F2003/decimaledit/defaultIO/commaEdit007.f
 ! opt variations: -qck -qnok -ql -qdefaultpv -qnodeferredlp -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

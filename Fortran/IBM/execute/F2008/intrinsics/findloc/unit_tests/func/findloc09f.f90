@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : 2013-05-27
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FINDLOC intrinsic
 !*  SECONDARY FUNCTIONS TESTED :

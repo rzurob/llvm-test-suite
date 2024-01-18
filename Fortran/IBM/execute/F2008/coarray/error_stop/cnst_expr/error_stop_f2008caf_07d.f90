@@ -1,7 +1,5 @@
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : error_stop_f2008caf_07d.f
-!*
 !*  DATE                       : 2010-10-20
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ERROR STOP statement

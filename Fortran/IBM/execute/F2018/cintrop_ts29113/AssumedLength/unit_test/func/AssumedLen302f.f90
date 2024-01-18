@@ -2,7 +2,6 @@
 !* ===================================================================
 !*
 !* DATE                         : June  25, 2014
-!* ORIGIN                       : AIX Complier Development
 !*
 !* PRIMARY FUNCTIONS TESTED     : C Interop: Assumed length object
 !* SECONDARY FUNTIONS TESTED    :

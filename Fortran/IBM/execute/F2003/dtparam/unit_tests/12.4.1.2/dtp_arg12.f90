@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  FUNCTIONAL TESTED          : Dummy argument contains assumed type
 !*                               parameters
 !*

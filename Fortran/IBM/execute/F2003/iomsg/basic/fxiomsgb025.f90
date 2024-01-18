@@ -1,21 +1,8 @@
 !***************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f fort.*
-! %COMPOPTS:  -qfree=f90
-! %GROUP: fxiomsgb025.f
-! %VERIFY: fort.18:fxiomsgb025.vf
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!***************************************************************************
 
 !*  ===================================================================
 !*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : READ
 !*  SECONDARY FUNCTIONS TESTED :

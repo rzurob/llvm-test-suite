@@ -2,8 +2,6 @@
 !*
 !*  ===================================================================
 !*
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN=specifier in list-directed output
 !*
 !*  REQUIRED COMPILER OPTIONS  : -qfree=f90

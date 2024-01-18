@@ -1,21 +1,8 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qstrict
-! %GROUP:  fxmisc01.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 
 !*  ===================================================================
 !*
 !*  DATE                       : June 12, 2002
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : ieee_rem, ieee_invalid
 !*  SECONDARY FUNCTIONS TESTED :

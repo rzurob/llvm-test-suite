@@ -2,7 +2,6 @@
 ! ftcx_dtp -qnol -qreuse=self /tstdev/F2003/decimaledit/dtio/d322145.f
 ! opt variations: -ql -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

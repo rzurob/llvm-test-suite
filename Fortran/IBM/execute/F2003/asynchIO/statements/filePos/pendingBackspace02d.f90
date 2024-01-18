@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : November 30, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Perform Two Unformatted Asynchronous
 !*                               WRITE() Operations on a Unit OPEN()ed

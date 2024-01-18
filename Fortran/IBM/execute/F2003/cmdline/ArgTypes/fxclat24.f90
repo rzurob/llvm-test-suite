@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclat24 -sdfgsd sdfgd-sfgdsfg dsfgdsfg +_23453245"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclat24
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclat24.f
 !*
 !*  DATE                       : Sept 18, 2003
 !*
@@ -34,7 +20,6 @@
 !*
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing variables defined
 !*                             : in a module with the same name as the augument keywords
-!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

@@ -1,21 +1,8 @@
 !***************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f fort.*
-! %COMPOPTS:  -qfree=f90
-! %GROUP: fxiomsgl008.f
-! %VERIFY: fort.18:fxiomsgl008.vf
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f message_mod.mod
-! %END
-!***************************************************************************
 
 !*  ===================================================================
 !*
 !*  DATE                       : Feburary 18, 2004
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : READ  WRITE  FORMAT
 !*  SECONDARY FUNCTIONS TESTED :

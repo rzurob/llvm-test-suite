@@ -3,7 +3,6 @@
 !*                               (CHARACTER Length > 1)
 !*
 !*  DATE                       : April 25, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Multiple Dummy Arguments of Type Character
 !*                               of Length > 1 with the VALUE Attribute

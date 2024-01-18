@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocFromIsUnallocated02.f
-!*
 !*  DATE                       : Sept. 29 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)

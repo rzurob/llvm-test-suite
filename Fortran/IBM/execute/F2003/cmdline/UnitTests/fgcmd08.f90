@@ -1,21 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qintsize=8
-! %GROUP: fgcmd08.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS: aa bbb
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  FUNCTIONALITY TESTED       : LENGTH is the length of the argument
 !*                             : regardless the absence of COMMAND.

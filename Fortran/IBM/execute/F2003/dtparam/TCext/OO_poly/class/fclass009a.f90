@@ -2,19 +2,6 @@
 ! ftcx_dtp -ql -qdeferredlp /tstdev/OO_poly/class/fclass009a.f
 ! opt variations: -qnol -qnodeferredlp
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fclass009a.f
-! %VERIFY: fclass009a.out:fclass009a.vf
-! %STDIN:
-! %STDOUT: fclass009a.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

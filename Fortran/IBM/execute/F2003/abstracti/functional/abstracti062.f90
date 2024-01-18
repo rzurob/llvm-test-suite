@@ -1,20 +1,7 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP:   fxextnp19.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f ./pubpvt.mod
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : Jan 02, 2004
-!*  ORIGIN                     : AIX Compiler Development & Test
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*  SECONDARY FUNCTIONS TESTED :

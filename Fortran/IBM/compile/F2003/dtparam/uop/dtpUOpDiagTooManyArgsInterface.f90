@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpUOpDiagTooManyArgsInterface
-!*
 !*  DATE                       : 2009-02-09
 !*
 !*  PRIMARY FUNCTIONS TESTED   : User-Defined Operators

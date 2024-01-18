@@ -1,11 +1,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acetdt35bdl
-!*
 !*                               by David Forster)
 !*  DATE                       : 2007-11-29 (original: 2006-11-13)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters Array Constructor
 !*                               Enhancements

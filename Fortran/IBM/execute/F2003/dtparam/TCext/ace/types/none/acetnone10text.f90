@@ -4,11 +4,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acetnone10text
-!*
 !*                               by David Forster)
 !*  DATE                       : 2008-01-29 (original: 2006-08-14)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters
 !*  SECONDARY FUNCTIONS TESTED : Array Constructor Enhancements

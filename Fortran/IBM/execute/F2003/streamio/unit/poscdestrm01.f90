@@ -1,26 +1,10 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: poscdestrm01.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  DIAGNOSES TESTED           : The usage of the control edit
 !*                             : descriptors '/', 'r/' and '$' with
 !*                             : stream formatted access.
-!*  DRIVER STANZA              : xlf95
 !*  REQUIRED COMPILER OPTIONS  :
 !*
 !*  KEYWORD(S)                 :

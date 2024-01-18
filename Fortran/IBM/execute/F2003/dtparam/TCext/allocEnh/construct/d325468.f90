@@ -2,7 +2,6 @@
 ! ftcx_dtp -qk -ql -qnodefaultpv -qreuse=self /tstdev/F2003/allocEnh/construct/d325468.f
 ! opt variations: -qck -qnok -qnol -qdefaultpv -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

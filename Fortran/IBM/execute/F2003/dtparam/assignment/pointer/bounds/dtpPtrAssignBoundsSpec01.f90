@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpPtrAssignBoundsSpec01
 !*                               and Remapping)
 !*
 !*  DATE                       : March 26, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Bounds Specification with a Polymorphic
 !*                               Base Derived Type data-pointer-object

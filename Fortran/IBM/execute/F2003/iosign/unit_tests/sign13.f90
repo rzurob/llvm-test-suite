@@ -1,8 +1,6 @@
 !**********************************************************************
 !*  ===================================================================
 !*
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN= specifier
 !*
 !*  REQUIRED COMPILER OPTIONS  :

@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : listDirectComplexCompRead01.f
-!*
 !*  DATE                       : Jan. 15 2009
 !*
 !*  PRIMARY FUNCTIONS TESTED   : LIST-DIRECTED INTRINSIC IO

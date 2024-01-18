@@ -1,20 +1,6 @@
 !***********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: sign08.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: diff sign08.error $TR_SRC/sign08.vf;
-! %END
-!***********************************************************************
 !*
 !*  ===================================================================
-!*
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SIGN= specifier
 !*

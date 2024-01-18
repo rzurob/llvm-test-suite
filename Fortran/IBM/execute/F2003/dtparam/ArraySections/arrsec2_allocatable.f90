@@ -1,10 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : arrsec2_allocatable.f
 !*                               arrsec1_allocatable.f)
 !*  DATE                       : Oct 13, 2008
-!*  ORIGIN                     : XLF Development
 !*  PRIMARY FUNCTIONS TESTED   : Array Sections
 !*  DESCRIPTION
 !*

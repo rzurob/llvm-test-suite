@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : directReadWrite06
-!*
 !*  DATE                       : October 22, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DIRECT File I/O of Derived Types (with
 !*                               Parameters)

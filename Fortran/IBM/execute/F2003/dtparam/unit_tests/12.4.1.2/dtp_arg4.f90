@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  FUNCTIONAL TESTED          : dummy arg is an explicit shape array
 !*                               with assumed type parameters
 !*                                -- check type parameter values

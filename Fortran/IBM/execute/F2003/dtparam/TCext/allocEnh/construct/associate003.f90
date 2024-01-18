@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck -ql -qdeferredlp /tstdev/F2003/allocEnh/construct/associate003.f
 ! opt variations: -qnock -qnol -qnodeferredlp
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -1,20 +1,6 @@
-!#######################################################################
-!**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: icattr15.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : C_PTR and C_FUNPTR objects with
 !*                               the POINTER and ALLOCATABLE attributes
 !*                               ISO_C_BINDING module.
 !*

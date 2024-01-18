@@ -1,16 +1,4 @@
 !************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: ExecCmdLineErrCmd.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!************************************************************************
       program ExecCmdLineErrCmd
         call execute_command_line("./null.out", .TRUE.)
 
@@ -20,7 +8,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : Dec 05, 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*                             : IBM China Development Shanghai Lab
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Error command executed

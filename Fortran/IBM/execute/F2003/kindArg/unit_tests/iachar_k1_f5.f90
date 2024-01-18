@@ -1,9 +1,6 @@
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : iachar_k1_f5.f
-!*
 !*  DATE                       : Apr 10, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Support KIND Argument for new intrinsics
 !*

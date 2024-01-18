@@ -1,19 +1,5 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS:  -qfree=f90
-! %GROUP: ffinal024e.f
-! %VERIFY: ffinal024e.out:ffinal024e.vf
-! %STDIN:
-! %STDOUT: ffinal024e.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : ffinal024e.f
 !*
 !*  DATE                       :
 !*

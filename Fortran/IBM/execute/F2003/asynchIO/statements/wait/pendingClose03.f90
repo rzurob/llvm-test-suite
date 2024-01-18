@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : April 12, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Pending Data Transfers with an Error
 !*                               Condition

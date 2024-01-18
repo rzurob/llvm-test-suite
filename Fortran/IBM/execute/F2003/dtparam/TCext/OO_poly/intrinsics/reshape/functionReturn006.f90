@@ -3,21 +3,8 @@
 ! opt variations: -qnol -qreuse=self -qreuse=base
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: functionReturn006.f
-! %VERIFY: functionReturn006.out:functionReturn006.vf
-! %STDIN:
-! %STDOUT: functionReturn006.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 11/02/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : reshape
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                : SOURCE is the return value of

@@ -1,10 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : arrsec2_datatype03.f
 !*                               arrsec1_datatype03.f)
 !*  DATE                       : Oct 13, 2008
-!*  ORIGIN                     : XLF Development
 !*  PRIMARY FUNCTIONS TESTED   : Array sections
 !*  DESCRIPTION
 !*

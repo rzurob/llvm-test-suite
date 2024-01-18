@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : formatAsynSequential03.f
-!*
 !*  DATE                       : Dec. 24 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORMATTED INTRINSIC IO

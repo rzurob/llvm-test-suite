@@ -3,7 +3,6 @@
 !*                               DTP - Generic Operator (binary)
 !*
 !*  DATE                       : October 03, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Generic Resolution - Derived-type parameters
 !*  SECONDARY FUNCTIONS TESTED : Resolution based on rank

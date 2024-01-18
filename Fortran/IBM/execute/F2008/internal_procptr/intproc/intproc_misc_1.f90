@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME           : intproc_misc_1.f
-!*
 !*  DATE                       : April 29 2011
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Internal procedure as actual argument or procedure target

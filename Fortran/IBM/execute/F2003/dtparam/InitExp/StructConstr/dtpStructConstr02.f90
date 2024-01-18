@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpStructConstr02
-!*
 !*  DATE                       : May 25, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Embedded Structure Constructors
 !*  SECONDARY FUNCTIONS TESTED : With automatic, ALLOCATABLE, and POINTER

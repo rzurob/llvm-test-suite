@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclat42 @@@@@@@@@@@@@@@@@@@@ -@@@@@- +"
-! %COMPOPTS:  -qfree=f90  -qintsize=8
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclat42
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclat42.f
 !*
 !*  DATE                       : Sept 18, 2003
 !*
@@ -34,7 +20,6 @@
 !*
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing a variety lengths of
 !*                             : typeless constants and pointers with intsize = 8 as actual arguments
-!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

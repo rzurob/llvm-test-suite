@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclat22 11111 222222 3333333"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclat22
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclat22.f
 !*
 !*  DATE                       : Sept 18, 2003
 !*
@@ -34,7 +20,6 @@
 !*
 !*  DESCRIPTION                : Tests command line intrinsic routines by passing  a variety of lengths of
 !*                             : typeless constants with various optional arguments as intent(in) arguments
-!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

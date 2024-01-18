@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f mod1.mod
-! %COMPOPTS: -qhalt=w
-! %GROUP: intrimod27.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f mod1.mod
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod27.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use INTRINSIC module with the same name CRITICAL

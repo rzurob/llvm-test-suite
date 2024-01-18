@@ -1,11 +1,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acetdt32kk_l
-!*
 !*                               by David Forster)
 !*  DATE                       : 2008-01-14 (original: 2006-08-30)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters (+ Array Constructor
 !*                               Enhancements)

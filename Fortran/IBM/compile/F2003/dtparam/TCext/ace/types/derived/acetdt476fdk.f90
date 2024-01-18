@@ -1,11 +1,8 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : acetdt476fdk
-!*
 !*                               by David Forster)
 !*  DATE                       : 2008-01-22 (original: 2006-07-20)
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Derived Type Parameters (+ Array
 !*                               Constructor Enhancements)

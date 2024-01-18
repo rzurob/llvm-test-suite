@@ -2,19 +2,6 @@
 ! ftcx_dtp -qk -ql -qreuse=base /tstdev/OO_poly/selectType/fselTyp500d.f
 ! opt variations: -qnok -qnol -qreuse=none
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp fselTyp500d.f
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

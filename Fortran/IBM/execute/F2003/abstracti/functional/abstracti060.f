@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qstrict -qarch=com
-! %GROUP: fxpd0082.f
-! %VERIFY: fxpd0082.out:fxpd0082.vf
-! %STDIN:
-! %STDOUT: fxpd0082.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*
@@ -18,7 +7,6 @@
 !*  PRIMARY FUNCTIONS TESTED   : PARALLEL DO
 !*  SECONDARY FUNCTIONS TESTED : REDUCTION clause,do-loops,
 !*                               allocatable arrays
-!*  TEST CASE NAME             : independent/reduction/fxpd0082
 !*
 !*  DESCRIPTION                : Test PARALLEL DO with REDUCTION clause
 !*                               where the REDUCTION named-variable is

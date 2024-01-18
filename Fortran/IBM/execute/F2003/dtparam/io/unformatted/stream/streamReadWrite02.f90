@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : streamReadWrite02
-!*
 !*  DATE                       : October  3, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Extended Derived Type (with Type Parameters)
 !*                               I/O with a STREAM File

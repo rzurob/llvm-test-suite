@@ -1,11 +1,9 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : dtpAttrSpecStmtData14a
 !*                               (based on dtpAttrSpecStmtData14)
 !*
 !*  DATE                       : April 24, 2009
-!*  ORIGIN                     : Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DERIVED TYPE PARAMETERS
 !*

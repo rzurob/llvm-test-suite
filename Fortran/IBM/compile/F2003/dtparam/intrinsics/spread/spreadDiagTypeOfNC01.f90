@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : spreadDiagTypeOfNC01.f
-!*
 !*  DATE                       : Oct. 16 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : SPREAD(SOURCE,NC,NCOPIES)

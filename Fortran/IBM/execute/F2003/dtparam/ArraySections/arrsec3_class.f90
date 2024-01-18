@@ -1,10 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : arrsec3_class.f
 !*                               arrsec1_class.f)
 !*  DATE                       : Dec 31, 2008
-!*  ORIGIN                     : XLF Development
 !*  PRIMARY FUNCTIONS TESTED   : Array sections
 !*  REQUIRED COMPILER OPTIONS  :
 !*  DESCRIPTION

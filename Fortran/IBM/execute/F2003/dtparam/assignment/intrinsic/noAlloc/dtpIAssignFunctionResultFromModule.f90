@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpIAssignFunctionResultFromModule
-!*
 !*  DATE                       : 2008-11-12
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic Assignment without Allocation

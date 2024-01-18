@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : exprSelector07
-!*
 !*  DATE                       : August 13, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is an expr
 !*  SECONDARY FUNCTIONS TESTED : The Expression references a Procedure Pointer

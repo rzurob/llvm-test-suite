@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : streamWrite05
-!*
 !*  DATE                       : October 27, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : STREAM File Output of a Derived/Extended
 !*                               Derived Type (with Type Parameters)

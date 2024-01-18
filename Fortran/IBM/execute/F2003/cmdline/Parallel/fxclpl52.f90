@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: EXEC_REP=5;unset XLSMPOPTS; export XLSMPOPTS=SCHEDULE=DYNAMIC:PARTHDS=4 ;export CmdLine="fxclpl52 -i -i -i -i"
-! %COMPOPTS:  -qfree=f90  -qnosave
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpl52
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpl52.f
 !*
 !*  DATE                       : Oct 1, 2003
 !*

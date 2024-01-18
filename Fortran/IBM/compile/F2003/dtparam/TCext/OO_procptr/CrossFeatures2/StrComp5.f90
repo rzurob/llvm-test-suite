@@ -3,21 +3,7 @@
 ! opt variations: -qnok -ql
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: tcomp  StrComp5.f
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : StrComp5.f
 !*
 !*  DATE                       : Jun. 24, 2005
 !*

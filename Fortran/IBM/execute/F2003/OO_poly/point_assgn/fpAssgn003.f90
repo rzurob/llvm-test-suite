@@ -1,21 +1,7 @@
-!#######################################################################
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fpAssgn003.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT: fpAssgn003.out
-! %EXECARGS:
-! %POSTCMD: xldiff fpAssgn003.out $TR_SRC/fpAssgn003.vf && rm fpAssgn003.out
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : 02/19/2004
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   :
 !*  SECONDARY FUNCTIONS TESTED :

@@ -2,19 +2,6 @@
 ! ftcx_dtp -qnol /tstdev/OO_poly/implicit/fimplct005.f
 ! opt variations: -qck -ql
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fimplct005.f
-! %VERIFY: fimplct005.out:fimplct005.vf
-! %STDIN:
-! %STDOUT: fimplct005.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

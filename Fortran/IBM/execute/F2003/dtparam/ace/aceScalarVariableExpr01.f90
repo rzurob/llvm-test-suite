@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : aceScalarVariableExpr01
 !*                               with DTP
 !*
 !*  DATE                       : November  7, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor contains Scalar Variables
 !*                               of Derived Type (with Type Parameters)

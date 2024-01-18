@@ -2,19 +2,6 @@
 ! ftcx_dtp -qck -ql /tstdev/OO_poly/allocate/falloc006a14.f
 ! opt variations: -qnock -qnol
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: falloc006a14.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

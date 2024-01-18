@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : May 15, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Named Constant (PARAMETER)
 !*  SECONDARY FUNCTIONS TESTED : Function Result

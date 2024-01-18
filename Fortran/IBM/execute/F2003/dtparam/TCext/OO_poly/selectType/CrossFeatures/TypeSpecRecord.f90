@@ -3,21 +3,7 @@
 ! opt variations: -qnok -ql
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: TypeSpecRecord.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : TypeSpecRecord
 !*
 !*  DATE                       : Jan. 28, 2005
 !*

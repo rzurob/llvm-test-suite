@@ -1,10 +1,8 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : arrsec2_assign.f
 !*                               arrsec1_assign.f)
 !*  DATE                       : Oct 13, 2008
-!*  ORIGIN                     : XLF Development
 !*  PRIMARY FUNCTIONS TESTED   : Array section assignment
 !*  DESCRIPTION
 !*

@@ -3,7 +3,6 @@
 !*                               Type
 !*
 !*  DATE                       : September 15, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor using Implied DO with a
 !*                               CHARACTER Substring as the ac-value

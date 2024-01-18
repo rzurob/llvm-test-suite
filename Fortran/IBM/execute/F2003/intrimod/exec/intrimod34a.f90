@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f ieee_*.mod xlf_fp_util.mod
-! %COMPOPTS: -qextname -qhalt=w
-! %GROUP: intrimod34a.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod34a.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use INTRINSIC module with same name as the external

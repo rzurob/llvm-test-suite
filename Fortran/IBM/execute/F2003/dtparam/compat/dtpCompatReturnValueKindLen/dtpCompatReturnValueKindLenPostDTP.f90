@@ -1,7 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpCompatReturnValueKindLen
 !*  TEST CASE FILE             : dtpCompatReturnValueKindLenPostDTP
 !*
 !*  DATE                       : 2009-06-13

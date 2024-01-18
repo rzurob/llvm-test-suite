@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclms15 -1 -2 -3 -4 -5"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclms15
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclms15.f
 !*
 !*  DATE                       : Nov 1, 2003
 !*
@@ -33,7 +19,6 @@
 !*  NUMBER OF TESTS CONDITIONS :
 !*
 !*  DESCRIPTION                : Invoke command_argument_count to initialize various entities
-!*                             :
 !234567890123456789012345678901234567890123456789012345678901234567890
 
 

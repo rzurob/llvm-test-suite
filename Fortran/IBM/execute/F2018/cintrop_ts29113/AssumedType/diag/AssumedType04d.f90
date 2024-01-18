@@ -2,7 +2,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : June 13, 2012
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : C-interop: Assumed Type objects
 !*

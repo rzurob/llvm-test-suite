@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : dtpPtrAssignBoundsSpec03
 !*                               and Remapping)
 !*
 !*  DATE                       : June  1, 2009
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Bounds Specification for an array of Derived
 !*                               Type (with Type Parameters)

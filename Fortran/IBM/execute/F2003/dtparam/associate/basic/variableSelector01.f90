@@ -1,10 +1,7 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : variableSelector01
-!*
 !*  DATE                       : July  7, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : selector is a variable
 !*  SECONDARY FUNCTIONS TESTED : variable is a Derived Type (with Type

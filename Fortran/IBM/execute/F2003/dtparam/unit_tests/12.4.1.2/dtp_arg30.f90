@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  DIAGNOSTIC TESTED          : Dummy argument has 'auto' type parameters
 !*                               which are for the length of a character
 !*                               component and bound for an array component.

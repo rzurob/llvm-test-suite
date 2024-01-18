@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : mergeUnlimitedPolyAsArg02.f
-!*
 !*  DATE                       : Sept. 22 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSICS(MERGE)

@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS:
-! %GROUP: ../ieeeconsts.f ../fake_ieee_modules.f intrimod12n.f
-! %VERIFY: intrimod12n.out:fakeout1.vf
-! %STDIN:
-! %STDOUT: intrimod12n.out
-! %EXECARGS:
-! %POSTCMD: rm -f ieee_*.mod xlf_fp_util.mod constants_for_ieee.mod
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod12n.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use NON_INTRINSIC modules with rename ad ONLY clause.

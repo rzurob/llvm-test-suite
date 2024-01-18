@@ -2,7 +2,6 @@
 ! ftcx_dtp -qnol -qreuse=base /tstdev/F2003/allocEnh/unit_tests/ReallocAssignArrayDT12.f
 ! opt variations: -ql -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

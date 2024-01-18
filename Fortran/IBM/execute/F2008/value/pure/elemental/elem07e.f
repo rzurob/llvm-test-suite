@@ -1,20 +1,7 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qrndsngl -qnomaf -qstrict
-! %GROUP:  elem07e.f
-! %VERIFY: elem07e.out:elem07e.vf
-! %STDIN:
-! %STDOUT: elem07e.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : September 13, 1998
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : User-defined ELEMENTAL procedures.
 !*  SECONDARY FUNCTIONS TESTED :

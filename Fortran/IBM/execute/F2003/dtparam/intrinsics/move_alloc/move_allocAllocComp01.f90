@@ -1,8 +1,6 @@
 
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : move_allocAllocComp01.f
-!*
 !*  DATE                       : Oct. 9 2008
 !*
 !*  PRIMARY FUNCTIONS TESTED   : MOVE_ALLOC(FROM,TO)

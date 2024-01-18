@@ -1,7 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : F2003/dtparam/ArraySections/d353925.f
 !*  DATE                       : Sep 23, 2008
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Defect 356544 for feature 353925

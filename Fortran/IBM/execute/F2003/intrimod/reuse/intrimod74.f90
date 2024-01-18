@@ -1,20 +1,7 @@
 !**********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90 -qnoswapomp
-! %GROUP: ../fake_omp_lib_module.f intrimod74.f
-! %VERIFY: intrimod74.out:intrimod74.vf
-! %STDIN:
-! %STDOUT: intrimod74.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
-!**********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : January 14, 2004
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : INTRINSIC/NON_INTRINSIC module nature.
 !*

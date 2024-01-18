@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : April 24, 2005
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Explicit Init. Exp.
 !*  SECONDARY FUNCTIONS TESTED : SAVE attribute

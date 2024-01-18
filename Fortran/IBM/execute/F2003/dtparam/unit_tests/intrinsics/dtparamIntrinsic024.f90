@@ -1,7 +1,5 @@
 !*  ===================================================================
 !*
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  PRIMARY FUNCTIONS TESTED   : Unit test
 !*
 !*  REQUIRED COMPILER OPTIONS  :

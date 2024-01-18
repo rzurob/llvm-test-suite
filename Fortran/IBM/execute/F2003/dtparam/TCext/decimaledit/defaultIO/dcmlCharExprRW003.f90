@@ -2,7 +2,6 @@
 ! ftcx_dtp -qck -qnol -qreuse=base /tstdev/F2003/decimaledit/defaultIO/dcmlCharExprRW003.f
 ! opt variations: -qnock -ql -qreuse=self -qreuse=none
 
-! SCCS ID Information
 ! *********************************************************************
 !*  ===================================================================
 !*

@@ -1,8 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : SelCKind003.f
-!*
 !*  DATE                       : August 02, 2006
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Intrinsic function selected_char_kind(name)

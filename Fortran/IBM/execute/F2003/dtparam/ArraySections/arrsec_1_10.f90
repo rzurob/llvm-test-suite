@@ -1,7 +1,6 @@
 !*********************************************************************
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : F2003/dtparam/ArraySections/arrsec_1_10.f
 !*  DATE                       : Jul. 09, 2008
 !*  PRIMARY FUNCTIONS TESTED   : See Description below.
 !*  REFERENCE                  : Feature Number 353925

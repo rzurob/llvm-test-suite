@@ -1,21 +1,6 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qintsize=4
-! %GROUP: fgcmdarg09.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS: aa bbb cccc
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*
 !*  ===================================================================
-!*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  FUNCTIONALITY TESTED       : STATUS is assigned value -1 if the
 !*                             : length of VALUE is less than the

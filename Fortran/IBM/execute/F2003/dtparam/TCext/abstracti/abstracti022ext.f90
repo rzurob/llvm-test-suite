@@ -3,8 +3,6 @@
 
 !*  ===================================================================
 !*
-!*  TEST CASE NAME             : abstracti022ext
-!*
 !*                               by Alberto Alvarez-Mesquida)
 !*  DATE                       : 2007-10-29 (original: 02/20/2006)
 !*

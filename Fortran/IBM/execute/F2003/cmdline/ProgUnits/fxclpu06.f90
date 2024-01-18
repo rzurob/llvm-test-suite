@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclpu06 1 a"
-! %COMPOPTS:  -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpu06
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpu06.f
 !*
 !*  DATE                       : Sept 18, 2003
 !*
@@ -35,7 +21,6 @@
 !*  DESCRIPTION                : Call command line procedures through external subroutine
 !*                             : which is used for the defined assignment(=)
 !*                             : with actual arguments defined in derived type in module
-!*                             :
 !234567890123456789012345678901234567890123456789012345678901234567890
 
       MODULE MOD

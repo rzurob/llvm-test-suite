@@ -3,21 +3,8 @@
 ! opt variations: -qnock -qnol -qreuse=self
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: typeDeclaration006.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*  DATE                       : 10/26/2004
-!*  ORIGIN                     :
 !*  PRIMARY FUNCTIONS TESTED   : extends_type_of(A, MOLD)
 !*  SECONDARY FUNCTIONS TESTED :
 !*  DESCRIPTION                :

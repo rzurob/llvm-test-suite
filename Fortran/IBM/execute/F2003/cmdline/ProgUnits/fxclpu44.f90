@@ -1,19 +1,5 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: export CmdLine="fxclpu44 1 a 2 b 3"
-! %COMPOPTS:  -qfree=f90 -qNOSAVE
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD: $TR_SRC/cmdline.sh fxclpu44
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : fxclpu44.f
 !*
 !*  DATE                       : Oct. 1, 2003
 !*
@@ -34,7 +20,6 @@
 !*
 !*  DESCRIPTION                : Invoke command line procedures through pure
 !*                             : recursive procedures
-!*                             :
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 

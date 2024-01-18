@@ -1,14 +1,3 @@
-! %START
-! %MAIN: YES
-! %PRECMD:  rm -f fort.*
-! %COMPOPTS:
-! %GROUP: fxstio022.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !--===================================================================
 !*
 !*  PROGAMMER                 : Catherine Sun

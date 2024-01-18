@@ -1,8 +1,6 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : dtpATPDAModuleEntry
-!*
 !*  DATE                       : 2008-10-28
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Assumed type parameters and dummy arguments

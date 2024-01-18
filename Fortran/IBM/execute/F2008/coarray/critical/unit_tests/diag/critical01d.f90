@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : Oct 13, 2010
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : CRITICAL Construct
 !*

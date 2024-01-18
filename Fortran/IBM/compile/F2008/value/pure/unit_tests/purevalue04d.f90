@@ -1,9 +1,7 @@
 !******************************************************************************
 !*  ===========================================================================
 !*
-!*  TEST CASE NAME  : F2008/value/pure/unit_tests/purevalue04d.f
 !*  DATE            : 2010-12-01
-!*  DRIVER STANZA   : xlf2003
 !*
 !*  DESCRIPTION
 !* - declare dummy data objects with value attribute and one of:

@@ -1,8 +1,5 @@
 !*  ===================================================================
 !*
-!*                             :
-!*  ORIGIN                     : AIX Compiler Development,
-!*
 !*  DIAGNOSTIC TESTED          : Dummy argument is a target pointed by
 !*                               a pointer.
 !*

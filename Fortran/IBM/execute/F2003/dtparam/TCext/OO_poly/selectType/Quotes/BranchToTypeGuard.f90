@@ -3,21 +3,7 @@
 ! opt variations: -qnol
 
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qfree=f90
-! %GROUP: BranchToTypeGuard.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
-! *********************************************************************
 !*  ===================================================================
-!*
-!*  TEST CASE NAME             : BranchToTypeGuard
 !*
 !*  DATE                       : Jan. 27, 2005
 !*

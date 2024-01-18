@@ -1,10 +1,7 @@
 !*******************************************************************************
 !*  ============================================================================
 !*
-!*  TEST CASE NAME             : forall_typespec_f01.f
-!*
 !*  DATE                       : 2012-06-25
-!*  ORIGIN                     :
 !*
 !*  PRIMARY FUNCTIONS TESTED   : FORALL with type specifier (F2008 extension)
 !*  SECONDARY FUNCTIONS TESTED : nesting forall in another block

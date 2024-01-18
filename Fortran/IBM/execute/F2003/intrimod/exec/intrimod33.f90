@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/intrimod33.presh
-! %COMPOPTS: -I/tmp/intrimod33
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod33.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Use NON_INTRINSIC modules with same name as an

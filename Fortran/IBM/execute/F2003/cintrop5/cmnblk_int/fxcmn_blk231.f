@@ -1,15 +1,4 @@
 !*********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: ${TR_SRC}/cmn_blk001.sh fxcmn_blk231 cxcmn_blk201
-! %COMPOPTS: -qfree=f90
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT: fxcmn_blk231.out
-! %EXECARGS:
-! %POSTCMD: rm -f *.o *.mod fxcmn_blk231 fxcmn_blk231.out
-! %END
 !**********************************************************************
 !*  ===================================================================
 !*

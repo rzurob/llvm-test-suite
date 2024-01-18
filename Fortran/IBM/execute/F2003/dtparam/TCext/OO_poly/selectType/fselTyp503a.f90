@@ -2,19 +2,6 @@
 ! ftcx_dtp -qck -qnol /tstdev/OO_poly/selectType/fselTyp503a.f
 ! opt variations: -qnock -ql
 
-! SCCS ID Information
-! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: rm -f *.mod
-! %COMPOPTS: -qfree=f90
-! %GROUP: fselTyp503a.f
-! %VERIFY: fselTyp503a.out:fselTyp503a.vf
-! %STDIN:
-! %STDOUT: fselTyp503a.out
-! %EXECARGS:
-! %POSTCMD:
-! %END
 ! *********************************************************************
 !*  ===================================================================
 !*

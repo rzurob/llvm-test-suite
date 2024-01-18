@@ -1,18 +1,6 @@
 ! ************************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD: $TR_SRC/intrimod42.presh intrimod42
-! %COMPOPTS: -qhalt=w -qmodule=mangle81
-! %GROUP: redherring.f
-! %VERIFY:
-! %STDIN:
-! %STDOUT:
-! %EXECARGS:
-! %POSTCMD:
-! %END
 !************************************************************************
 !*
-!*  Test Case Name   : intrimod42.f
 !*  Created By       : Bahram Chehrazy
 !*  DATE             : January, 2004
 !*  Description      : Testing backward compatibility with XLF8.1.

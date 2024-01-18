@@ -1,7 +1,6 @@
 !*  ===================================================================
 !*
 !*  DATE                       : March 28, 2006
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Formatted Non-Advancing Input Asynchronous
 !*                               Data Transfers

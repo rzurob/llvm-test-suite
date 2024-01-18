@@ -4,8 +4,6 @@
 !*
 !============================================================================
 !*
-!*  TEST CASE NAME             : F2008/do_concurrent/func/do_concurrent_f023.f
-!*
 !*  DATE                       : 2015-07-13
 !*
 !*  PRIMARY FUNCTIONS TESTED   : DO CONCURRENT (F2008 extension)

@@ -1,16 +1,4 @@
 ! *********************************************************************
-! %START
-! %MAIN: YES
-! %PRECMD:
-! %COMPOPTS: -qnostrictieeemod -qfree=f90
-! %GROUP: ../fake_ieee_modules.f intrimod54.f
-! %VERIFY: intrimod54.out:intrimod54.vf
-! %STDIN:
-! %STDOUT: intrimod54.out
-! %EXECARGS:
-! %POSTCMD: rm m.mod m2.mod ieee_*.mod xlf_fp_util.mod
-! %END
-! *********************************************************************
 !*  ===================================================================
 !*
 !*  DATE                       : January, 2004

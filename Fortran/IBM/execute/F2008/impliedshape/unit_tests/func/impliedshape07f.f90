@@ -1,7 +1,6 @@
 !* =================================================================== &
 !*
 !* DATE                       : February 14, 2011
-!* ORIGIN                     : AIX Compiler Development,
 !*
 !* PRIMARY FUNCTIONS TESTED   : Implied-shape arrays
 !*

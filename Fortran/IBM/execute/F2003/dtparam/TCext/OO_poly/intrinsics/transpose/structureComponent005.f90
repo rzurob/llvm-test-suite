@@ -5,7 +5,6 @@
 !***********************************************************************
 !* =====================================================================
 !* DATE                       : 12/31/2004
-!* ORIGIN                     :
 !* PRIMARY FUNCTIONS TESTED   : transpose
 !* DESCRIPTION                :
 !*   MATRIX is an object containing a structure component, which is

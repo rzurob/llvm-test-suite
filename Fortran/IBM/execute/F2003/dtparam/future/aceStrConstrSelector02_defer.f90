@@ -1,11 +1,9 @@
 !***********************************************************************
 !* =====================================================================
 !*
-!*  TEST CASE NAME             : aceStrConstrSelector02
 !*                               with DTP
 !*
 !*  DATE                       : November 13, 2008
-!*  ORIGIN                     : AIX Compiler Development,
 !*
 !*  PRIMARY FUNCTIONS TESTED   : Array Constructor contains Structure
 !*                               Constructors (with Type Parameters)
