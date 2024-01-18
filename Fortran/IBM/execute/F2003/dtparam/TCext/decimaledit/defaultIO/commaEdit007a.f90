@@ -132,7 +132,7 @@ module m
 
         inquire (unit, pos=currentPos, iostat=stat)
 
-        if (stat /= 0) stop 10
+        if (stat /= 0) error stop 10
 
         read (unit, pos=currentPos, fmt='(i5, 1x, a15)', advance='no') b%id, b%desc
     end subroutine
@@ -148,7 +148,7 @@ module m
 
         inquire (unit, pos=currentPos, iostat=stat, decimal=decimalMode)
 
-        if (stat /= 0) stop 20
+        if (stat /= 0) error stop 20
 
         if (decimalMode == 'COMMA') then
             read (unit, pos=currentPos, fmt='(2g15.5)', advance='no') b%cx

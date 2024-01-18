@@ -61,26 +61,26 @@
 
   ASSOCIATE ( As => ReturnArr(TRANSFER(Arr,Child(4)(BS=Base(4)(),BSPtr=NULL()),SIZE(Arr))) )
 
-    IF ( ANY (LBOUND(As)  .NE. (/1/) ) )   STOP 30
-    IF ( ANY (UBOUND(As)  .NE. (/5/) ) )   STOP 31
-    IF ( ANY (SHAPE(As)   .NE. (/5/) ) )   STOP 32
+    IF ( ANY (LBOUND(As)  .NE. (/1/) ) )   ERROR STOP 30
+    IF ( ANY (UBOUND(As)  .NE. (/5/) ) )   ERROR STOP 31
+    IF ( ANY (SHAPE(As)   .NE. (/5/) ) )   ERROR STOP 32
 
     SELECT TYPE (As => As)
     TYPE IS (Child(4))
 
-      IF ( ANY (As%ChildID    .NE. -2 ))         STOP 33
-      IF ( ANY (As%BS%BaseID  .NE. -1 ))         STOP 34
-      IF ( ANY (As%BaseID     .NE.  0 ))         STOP 35
+      IF ( ANY (As%ChildID    .NE. -2 ))         ERROR STOP 33
+      IF ( ANY (As%BS%BaseID  .NE. -1 ))         ERROR STOP 34
+      IF ( ANY (As%BaseID     .NE.  0 ))         ERROR STOP 35
 
       DO i =1, SIZE(As)
 
         ASSOCIATE (As => As)
         END ASSOCIATE
 
-        IF ( ASSOCIATED(As(i)%BSPtr) )       STOP 36
+        IF ( ASSOCIATED(As(i)%BSPtr) )       ERROR STOP 36
 
         ASSOCIATE (As => As(i)%BS )
-          IF ( As%BaseID  .NE. -1 )           STOP 37
+          IF ( As%BaseID  .NE. -1 )           ERROR STOP 37
         END ASSOCIATE
 
       END DO

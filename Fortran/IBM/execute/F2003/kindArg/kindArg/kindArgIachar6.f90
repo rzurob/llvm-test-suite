@@ -72,31 +72,31 @@
 
 
   DO I1 = 0, 127
-    IF (IACHAR(ACHAR(I1), KIND=KIND((/K1/))  )     .NE. I1)                   STOP 11
-    IF (IACHAR(ACHAR(I1), KIND=KIND((/K2/))-1)     .NE. I1)                   STOP 12
-    IF (IACHAR(ACHAR(I1), KIND=KIND((/K4/))-3)     .NE. I1)                   STOP 13
-    IF (IACHAR(ACHAR(I1), KIND=KIND((/K8/))-7)     .NE. I1)                   STOP 14
+    IF (IACHAR(ACHAR(I1), KIND=KIND((/K1/))  )     .NE. I1)                   ERROR STOP 11
+    IF (IACHAR(ACHAR(I1), KIND=KIND((/K2/))-1)     .NE. I1)                   ERROR STOP 12
+    IF (IACHAR(ACHAR(I1), KIND=KIND((/K4/))-3)     .NE. I1)                   ERROR STOP 13
+    IF (IACHAR(ACHAR(I1), KIND=KIND((/K8/))-7)     .NE. I1)                   ERROR STOP 14
   END DO
 
   DO I2 = 0, 127
-    IF (IACHAR(ACHAR(I2), KIND=KIND((/K1/))  )     .NE. I2)                   STOP 21
-    IF (IACHAR(ACHAR(I2), KIND=KIND((/K2/))-1)     .NE. I2)                   STOP 22
-    IF (IACHAR(ACHAR(I2), KIND=KIND((/K4/))-3)     .NE. I2)                   STOP 23
-    IF (IACHAR(ACHAR(I2), KIND=KIND((/K8/))-7)     .NE. I2)                   STOP 24
+    IF (IACHAR(ACHAR(I2), KIND=KIND((/K1/))  )     .NE. I2)                   ERROR STOP 21
+    IF (IACHAR(ACHAR(I2), KIND=KIND((/K2/))-1)     .NE. I2)                   ERROR STOP 22
+    IF (IACHAR(ACHAR(I2), KIND=KIND((/K4/))-3)     .NE. I2)                   ERROR STOP 23
+    IF (IACHAR(ACHAR(I2), KIND=KIND((/K8/))-7)     .NE. I2)                   ERROR STOP 24
   END DO
 
   DO I4 = 0, 127
-    IF (IACHAR(ACHAR(I4), KIND=KIND((/K1/))  )     .NE. I4)                   STOP 41
-    IF (IACHAR(ACHAR(I4), KIND=KIND((/K2/))-1)     .NE. I4)                   STOP 42
-    IF (IACHAR(ACHAR(I4), KIND=KIND((/K4/))-3)     .NE. I4)                   STOP 43
-    IF (IACHAR(ACHAR(I4), KIND=KIND((/K8/))-7)     .NE. I4)                   STOP 44
+    IF (IACHAR(ACHAR(I4), KIND=KIND((/K1/))  )     .NE. I4)                   ERROR STOP 41
+    IF (IACHAR(ACHAR(I4), KIND=KIND((/K2/))-1)     .NE. I4)                   ERROR STOP 42
+    IF (IACHAR(ACHAR(I4), KIND=KIND((/K4/))-3)     .NE. I4)                   ERROR STOP 43
+    IF (IACHAR(ACHAR(I4), KIND=KIND((/K8/))-7)     .NE. I4)                   ERROR STOP 44
   END DO
 
   DO I8 = 0, 127
-    IF (IACHAR(ACHAR(I8), KIND=KIND((/K1/))  )     .NE. I8)                   STOP 81
-    IF (IACHAR(ACHAR(I8), KIND=KIND((/K2/))-1)     .NE. I8)                   STOP 82
-    IF (IACHAR(ACHAR(I8), KIND=KIND((/K4/))-3)     .NE. I8)                   STOP 83
-    IF (IACHAR(ACHAR(I8), KIND=KIND((/K8/))-7)     .NE. I8)                   STOP 84
+    IF (IACHAR(ACHAR(I8), KIND=KIND((/K1/))  )     .NE. I8)                   ERROR STOP 81
+    IF (IACHAR(ACHAR(I8), KIND=KIND((/K2/))-1)     .NE. I8)                   ERROR STOP 82
+    IF (IACHAR(ACHAR(I8), KIND=KIND((/K4/))-3)     .NE. I8)                   ERROR STOP 83
+    IF (IACHAR(ACHAR(I8), KIND=KIND((/K8/))-7)     .NE. I8)                   ERROR STOP 84
   END DO
 
 
@@ -105,10 +105,10 @@
   II4 = II2
   II8 = II4
 
-  IF (ANY( IACHAR(C=CC, KIND=II1%KIND  ) .NE. II8)) STOP 111
-  IF (ANY( IACHAR(C=CC, KIND=II2%KIND-1) .NE. II4)) STOP 112
-  IF (ANY( IACHAR(C=CC, KIND=II4%KIND-3) .NE. II2)) STOP 113
-  IF (ANY( IACHAR(C=CC, KIND=II8%KIND-7) .NE. II1)) STOP 114
+  IF (ANY( IACHAR(C=CC, KIND=II1%KIND  ) .NE. II8)) ERROR STOP 111
+  IF (ANY( IACHAR(C=CC, KIND=II2%KIND-1) .NE. II4)) ERROR STOP 112
+  IF (ANY( IACHAR(C=CC, KIND=II4%KIND-3) .NE. II2)) ERROR STOP 113
+  IF (ANY( IACHAR(C=CC, KIND=II8%KIND-7) .NE. II1)) ERROR STOP 114
 
 
   CLASS DEFAULT

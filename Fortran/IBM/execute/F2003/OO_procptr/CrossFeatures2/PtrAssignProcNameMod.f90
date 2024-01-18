@@ -41,7 +41,7 @@
     CLASS(*)          :: Arg2
       SELECT TYPE ( As => Arg1(Arg2) )
       TYPE IS (COMPLEX)
-        IF ( As .NE. (1.0,-1.0) ) STOP 21
+        IF ( As .NE. (1.0,-1.0) ) ERROR STOP 21
       CLASS DEFAULT
         STOP 22
       END SELECT
@@ -75,7 +75,7 @@
     Ptr1 => ModFun
     SELECT TYPE ( As => Ptr1("ABCD") )
     TYPE IS (CHARACTER(*))
-      IF ( As .NE. "ABCD" ) STOP 11
+      IF ( As .NE. "ABCD" ) ERROR STOP 11
     CLASS DEFAULT
       STOP 12
     END SELECT

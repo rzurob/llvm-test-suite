@@ -89,40 +89,40 @@
   TYPE(DT(4,:)), ALLOCATABLE  :: V
   CLASS(DT(4,:)), POINTER     :: U
 
-  IF ( ANY (Trace .NE. (/0,0,0,0/))) STOP 11
+  IF ( ANY (Trace .NE. (/0,0,0,0/))) ERROR STOP 11
   ALLOCATE(V, SOURCE=DT(4,20)(ModFun1, ModFun2))
-  IF ( ANY (Trace .NE. (/2,1,0,0/))) STOP 12
+  IF ( ANY (Trace .NE. (/2,1,0,0/))) ERROR STOP 12
 
   Trace = 0
   Index = 0
   ASSOCIATE ( As => DT(4,20)(ModFun1, ModFun2) )
   END ASSOCIATE
-  IF ( ANY (Trace .NE. (/2,1,0,0/))) STOP 13
+  IF ( ANY (Trace .NE. (/2,1,0,0/))) ERROR STOP 13
 
   Trace = 0
   Index = 0
   ALLOCATE(U, SOURCE=DT(4,20)(ModFun1, ModFun2))
-  IF ( ANY (Trace .NE. (/2,1,0,0/))) STOP 14
+  IF ( ANY (Trace .NE. (/2,1,0,0/))) ERROR STOP 14
 
   Trace = 0
   Index = 0
   SELECT TYPE ( As => V%ProcPtr1() )
   CLASS IS (Base(4,*))
-    IF ( ANY (Trace .NE. (/0,0,0,0/))) STOP 15
+    IF ( ANY (Trace .NE. (/0,0,0,0/))) ERROR STOP 15
   CLASS DEFAULT
     STOP 21
   END SELECT
-  IF ( ANY (Trace .NE. (/0,0,0,0/)))   STOP 16
+  IF ( ANY (Trace .NE. (/0,0,0,0/)))   ERROR STOP 16
 
   Trace = 0
   Index = 0
   SELECT TYPE ( As =>  V%ProcPtr2() )
   CLASS IS (DT(4,*))
-    IF ( ANY (Trace .NE. (/0,0,0,0/))) STOP 17
+    IF ( ANY (Trace .NE. (/0,0,0,0/))) ERROR STOP 17
   CLASS DEFAULT
     STOP 23
   END SELECT
-  IF ( ANY (Trace .NE. (/2,1,0,0/)))   STOP 18
+  IF ( ANY (Trace .NE. (/2,1,0,0/)))   ERROR STOP 18
 
   END
 

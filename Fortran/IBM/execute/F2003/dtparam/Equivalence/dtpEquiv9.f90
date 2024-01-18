@@ -101,23 +101,23 @@
   c1 = char(47)
 
   DO J=2, 8
-    IF ( ANY( R(J)%R .NE.   1         ) ) STOP 11
+    IF ( ANY( R(J)%R .NE.   1         ) ) ERROR STOP 11
   END DO
-    IF ( ANY( R(1)%R .NE.   -1        ) ) STOP 12
+    IF ( ANY( R(1)%R .NE.   -1        ) ) ERROR STOP 12
 
   R1 = 2
 
   DO J=2, 8
-    IF ( ANY( R(J)%R .NE.   1         ) ) STOP 13
+    IF ( ANY( R(J)%R .NE.   1         ) ) ERROR STOP 13
   END DO
-    IF ( ANY( R(1)%R .NE.   2         ) ) STOP 14
+    IF ( ANY( R(1)%R .NE.   2         ) ) ERROR STOP 14
 
 
   DO J=1, 9
     IF ( J .NE. 5) THEN
-      IF ( ANY( C(J)%C .NE. CHAR(48+1)  ) ) STOP 21
+      IF ( ANY( C(J)%C .NE. CHAR(48+1)  ) ) ERROR STOP 21
     ELSE
-      IF ( ANY( C(J)%C .NE. CHAR(48-1)  ) ) STOP 22
+      IF ( ANY( C(J)%C .NE. CHAR(48-1)  ) ) ERROR STOP 22
     END IF
   END DO
 
@@ -125,18 +125,18 @@
 
   DO J=1, 9
     IF ( J .NE. 5) THEN
-      IF ( ANY( C(J)%C .NE. CHAR(48+1)  ) ) STOP 23
+      IF ( ANY( C(J)%C .NE. CHAR(48+1)  ) ) ERROR STOP 23
     ELSE
-      IF ( ANY( C(J)%C .NE. CHAR(0)     ) ) STOP 24
+      IF ( ANY( C(J)%C .NE. CHAR(0)     ) ) ERROR STOP 24
     END IF
   END DO
 
 
   DO J=1, 9
     IF ( J .NE. 9) THEN
-      IF ( ANY( I(J)%I .NE. 2  ) ) STOP 31
+      IF ( ANY( I(J)%I .NE. 2  ) ) ERROR STOP 31
     ELSE
-      IF ( ANY( I(J)%I .NE. -1 ) ) STOP 32
+      IF ( ANY( I(J)%I .NE. -1 ) ) ERROR STOP 32
     END IF
   END DO
 
@@ -144,18 +144,18 @@
 
   DO J=1, 9
     IF ( J .NE. 9) THEN
-      IF ( ANY( I(J)%I .NE. 2  ) ) STOP 33
+      IF ( ANY( I(J)%I .NE. 2  ) ) ERROR STOP 33
     ELSE
-      IF ( ANY( I(J)%I .NE. -2 ) ) STOP 34
+      IF ( ANY( I(J)%I .NE. -2 ) ) ERROR STOP 34
     END IF
   END DO
 
 
   DO J=1, 9
     IF ( J .NE. 2) THEN
-      IF ( ANY( L(J)%A .NEQV. .TRUE.  ) ) STOP 41
+      IF ( ANY( L(J)%A .NEQV. .TRUE.  ) ) ERROR STOP 41
     ELSE
-      IF ( ANY( L(J)%A .NEQV. .FALSE. ) ) STOP 42
+      IF ( ANY( L(J)%A .NEQV. .FALSE. ) ) ERROR STOP 42
     END IF
   END DO
 
@@ -163,18 +163,18 @@
 
   DO J=1, 9
     IF ( J .NE. 2) THEN
-      IF ( ANY( L(J)%A .NEQV. .TRUE.  ) ) STOP 43
+      IF ( ANY( L(J)%A .NEQV. .TRUE.  ) ) ERROR STOP 43
     ELSE
-      IF ( ANY( L(J)%A .NEQV. .TRUE.  ) ) STOP 44
+      IF ( ANY( L(J)%A .NEQV. .TRUE.  ) ) ERROR STOP 44
     END IF
   END DO
 
 
   DO J=1, 9
     IF ( J .NE. 8) THEN
-      IF ( ANY( Z(J)%Z .NE. (1,-1)  ) ) STOP 51
+      IF ( ANY( Z(J)%Z .NE. (1,-1)  ) ) ERROR STOP 51
     ELSE
-      IF ( ANY( Z(J)%Z .NE. (1,-1) ) ) STOP 52
+      IF ( ANY( Z(J)%Z .NE. (1,-1) ) ) ERROR STOP 52
     END IF
   END DO
 
@@ -182,9 +182,9 @@
 
   DO J=1, 9
     IF ( J .NE. 8) THEN
-      IF ( ANY( Z(J)%Z .NE. (1,-1)  ) ) STOP 53
+      IF ( ANY( Z(J)%Z .NE. (1,-1)  ) ) ERROR STOP 53
     ELSE
-      IF ( ANY( Z(J)%Z .NE. (2,-2)  ) ) STOP 54
+      IF ( ANY( Z(J)%Z .NE. (2,-2)  ) ) ERROR STOP 54
     END IF
   END DO
 

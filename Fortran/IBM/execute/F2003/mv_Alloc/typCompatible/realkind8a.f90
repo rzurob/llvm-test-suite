@@ -42,8 +42,8 @@ end module
 
       call move_alloc(b%var, b%r)
 
-      if ( allocated(b%var) ) stop 21
-      if ( .not. allocated(b%r) ) stop 25
+      if ( allocated(b%var) ) error stop 21
+      if ( .not. allocated(b%r) ) error stop 25
 
       select type( x => b%r )
             type is (real*8)

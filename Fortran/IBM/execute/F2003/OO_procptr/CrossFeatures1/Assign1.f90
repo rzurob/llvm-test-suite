@@ -74,9 +74,9 @@
   ProcPtr => Fun
   V = DT(-1, Base(ProcPtr))
 
-  IF (V%Id .NE. -1 )                 STOP 11
-  IF ( .NOT. ALLOCATED(V%BComp) )    STOP 12
-  IF ( ASSOCIATED(V%BComp%ProcPtr) ) STOP 13
+  IF (V%Id .NE. -1 )                 ERROR STOP 11
+  IF ( .NOT. ALLOCATED(V%BComp) )    ERROR STOP 12
+  IF ( ASSOCIATED(V%BComp%ProcPtr) ) ERROR STOP 13
 
 
   END

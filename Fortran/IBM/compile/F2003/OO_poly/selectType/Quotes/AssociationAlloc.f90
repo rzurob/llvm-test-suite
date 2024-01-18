@@ -64,20 +64,20 @@ S2: SELECT TYPE (Alloc => S2 )
     CLASS IS (DT0)
       STOP 20
     CLASS IS (DT)
-        IF (ANY(Alloc(:,:,:)%IArr(1)  .NE. 1)) STOP 22
-        IF (ANY(Alloc(:,:,:)%IArr(2)  .NE. 2)) STOP 23
-        IF (ANY(Alloc(:,:,:)%GetInt(1).NE. 1)) STOP 24
-        IF (ANY(Alloc(:,:,:)%GetInt(2).NE. 2)) STOP 25
+        IF (ANY(Alloc(:,:,:)%IArr(1)  .NE. 1)) ERROR STOP 22
+        IF (ANY(Alloc(:,:,:)%IArr(2)  .NE. 2)) ERROR STOP 23
+        IF (ANY(Alloc(:,:,:)%GetInt(1).NE. 1)) ERROR STOP 24
+        IF (ANY(Alloc(:,:,:)%GetInt(2).NE. 2)) ERROR STOP 25
 
         Alloc%IArr(1) = -1
         Alloc%IArr(2) = -2
 
-        IF (SIZE(Alloc(2,2,2)%IArr)   .NE. 2)  STOP 30
-        IF (KIND(Alloc(2,2,2)%IArr)   .NE. 8)  STOP 31
-        IF (ANY(Alloc(:,:,:)%IArr(1)  .NE. -1)) STOP 32
-        IF (ANY(Alloc(:,:,:)%IArr(2)  .NE. -2)) STOP 33
-        IF (ANY(Alloc(:,:,:)%GetInt(1).NE. -1)) STOP 34
-        IF (ANY(Alloc(:,:,:)%GetInt(2).NE. -2)) STOP 35
+        IF (SIZE(Alloc(2,2,2)%IArr)   .NE. 2)  ERROR STOP 30
+        IF (KIND(Alloc(2,2,2)%IArr)   .NE. 8)  ERROR STOP 31
+        IF (ANY(Alloc(:,:,:)%IArr(1)  .NE. -1)) ERROR STOP 32
+        IF (ANY(Alloc(:,:,:)%IArr(2)  .NE. -2)) ERROR STOP 33
+        IF (ANY(Alloc(:,:,:)%GetInt(1).NE. -1)) ERROR STOP 34
+        IF (ANY(Alloc(:,:,:)%GetInt(2).NE. -2)) ERROR STOP 35
 
         DEALLOCATE (Alloc) ! test the allocate attribute
 

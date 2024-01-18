@@ -54,24 +54,24 @@ program dtpCompatListComponentPostDTP
   allocate (p%next, source=list(102,bp2))
 
   call printList("p 1", p)
-  if (itemCount(p) /= 2) stop 2
+  if (itemCount(p) /= 2) error stop 2
 
-  if (p%next%id /= 102) stop 3
+  if (p%next%id /= 102) error stop 3
   call copy(p2, p)
   p2%next%id = 44
   call printList("p2 1", p2)
-  if (p%next%id /= 44 .or. itemCount(p2) /= 2) stop 4
+  if (p%next%id /= 44 .or. itemCount(p2) /= 2) error stop 4
   deallocate(p2)
 
   call deepishCopy(p2, p)
   p2%next%id = 55
   call printList("p2 2", p2)
-  if (p%next%id /= 44 .or. itemCount(p2) /= 2) stop 5
+  if (p%next%id /= 44 .or. itemCount(p2) /= 2) error stop 5
 
   allocate (p%next%next, source=list(103,bp3))
   allocate (p%next%next%next, source=list(104,bp4))
 
-  if (itemCount(p) /= 4) stop 6
+  if (itemCount(p) /= 4) error stop 6
 
   ! yes, there's a memory leak, but we're almost done...
   call deepishCopy(p2, p)

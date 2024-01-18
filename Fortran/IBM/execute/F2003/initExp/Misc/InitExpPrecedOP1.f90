@@ -42,8 +42,8 @@
   REAL    :: IExp(128)      = B**A**C
 
 
-  IF ( ANY( IDiv    .NE. 0  ) ) STOP 11
-  IF ( ANY( IExp    .NE. 2  ) ) STOP 12
+  IF ( ANY( IDiv    .NE. 0  ) ) ERROR STOP 11
+  IF ( ANY( IExp    .NE. 2  ) ) ERROR STOP 12
 
 
   END

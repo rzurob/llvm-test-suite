@@ -39,9 +39,9 @@ use m
    integer :: res(24) = (/(i, i = 1, 24)/)
    type (base(8, :, :)), pointer :: ptr
    ptr=>func(6)
-   if (ptr%baseLen1 .ne. 4 .or. ptr%baseLen2 .ne. 6) stop 1
-   if (lbound(ptr%baseId, dim=1) .ne. 4) stop 2
-   if (ubound(ptr%baseId, dim=1) .ne. 6) stop 3
-   if (size(ptr%baseId) .ne. 3) stop 4
-   if (kind(ptr%baseId) .ne. 8) stop 5
+   if (ptr%baseLen1 .ne. 4 .or. ptr%baseLen2 .ne. 6) error stop 1
+   if (lbound(ptr%baseId, dim=1) .ne. 4) error stop 2
+   if (ubound(ptr%baseId, dim=1) .ne. 6) error stop 3
+   if (size(ptr%baseId) .ne. 3) error stop 4
+   if (kind(ptr%baseId) .ne. 8) error stop 5
 end

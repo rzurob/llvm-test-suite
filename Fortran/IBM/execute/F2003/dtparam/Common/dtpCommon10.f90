@@ -72,9 +72,9 @@
 
   T = ProcPtr(C1, C2)
 
-  IF ( .NOT. ASSOCIATED(ProcPtr, F) ) STOP 10
-  IF (  ANY ( T%C1 .NE. C1        ) ) STOP 11
-  IF (  ANY ( T%C2 .NE. C2        ) ) STOP 12
+  IF ( .NOT. ASSOCIATED(ProcPtr, F) ) ERROR STOP 10
+  IF (  ANY ( T%C1 .NE. C1        ) ) ERROR STOP 11
+  IF (  ANY ( T%C2 .NE. C2        ) ) ERROR STOP 12
 
 
   END PROGRAM

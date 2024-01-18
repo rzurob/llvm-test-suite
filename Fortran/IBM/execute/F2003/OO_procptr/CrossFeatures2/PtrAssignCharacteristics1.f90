@@ -44,17 +44,17 @@
   PROCEDURE(F)          :: Func
   PROCEDURE(F), POINTER :: ProcPtr
 
-  IF (Func(-2.0) .NE. 2.0 ) STOP 11
+  IF (Func(-2.0) .NE. 2.0 ) ERROR STOP 11
 
   ProcPtr => ABS
-  IF (ProcPtr(-2.0) .NE. 2.0 )  STOP 12
-  IF (ProcPtr(2.0)  .NE. 2.0 )  STOP 12
-  IF (ProcPtr(-0.0) .NE. 0.0 )  STOP 13
+  IF (ProcPtr(-2.0) .NE. 2.0 )  ERROR STOP 12
+  IF (ProcPtr(2.0)  .NE. 2.0 )  ERROR STOP 12
+  IF (ProcPtr(-0.0) .NE. 0.0 )  ERROR STOP 13
 
   ProcPtr => Func
-  IF (ProcPtr(+2.0) .NE. 2.0 )                  STOP 22
-  IF (ProcPtr(ProcPtr(-1.0)) .NE. 1.0 )         STOP 22
-  IF (ProcPtr(-10000.0) .NE. Func(-10000.0) )   STOP 23
+  IF (ProcPtr(+2.0) .NE. 2.0 )                  ERROR STOP 22
+  IF (ProcPtr(ProcPtr(-1.0)) .NE. 1.0 )         ERROR STOP 22
+  IF (ProcPtr(-10000.0) .NE. Func(-10000.0) )   ERROR STOP 23
 
   END SUBROUTINE
 

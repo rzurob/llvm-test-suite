@@ -53,64 +53,64 @@
   SUBROUTINE S()
 
   T%PtrI1(0:, 0: ) => T%I1Tar
-  IF (.NOT. ASSOCIATED(T%PtrI1))                       STOP 11
-  IF (ANY( LBOUND(T%PtrI1)         .NE. (/0, 0 /)))    STOP 12
-  IF (ANY( UBOUND(T%PtrI1)         .NE. (/9, 9 /)))    STOP 13
-  IF (ANY( T%PtrI1                 .NE. 1_1))          STOP 14
+  IF (.NOT. ASSOCIATED(T%PtrI1))                       ERROR STOP 11
+  IF (ANY( LBOUND(T%PtrI1)         .NE. (/0, 0 /)))    ERROR STOP 12
+  IF (ANY( UBOUND(T%PtrI1)         .NE. (/9, 9 /)))    ERROR STOP 13
+  IF (ANY( T%PtrI1                 .NE. 1_1))          ERROR STOP 14
 
   T%PtrI1(0:9, 0:0 ) => T%I1Tar(:, 1)
-  IF (.NOT. ASSOCIATED(T%PtrI1))                       STOP 15
-  IF (ANY( LBOUND(T%PtrI1)         .NE. (/0, 0 /)))    STOP 16
-  IF (ANY( UBOUND(T%PtrI1)         .NE. (/9, 0 /)))    STOP 17
-  IF (ANY( T%PtrI1                 .NE. 1_1))          STOP 18
+  IF (.NOT. ASSOCIATED(T%PtrI1))                       ERROR STOP 15
+  IF (ANY( LBOUND(T%PtrI1)         .NE. (/0, 0 /)))    ERROR STOP 16
+  IF (ANY( UBOUND(T%PtrI1)         .NE. (/9, 0 /)))    ERROR STOP 17
+  IF (ANY( T%PtrI1                 .NE. 1_1))          ERROR STOP 18
 
   T%PtrR4(0:, 0: ) => T%R4Tar
-  IF (.NOT. ASSOCIATED(T%PtrR4))                       STOP 21
-  IF (ANY( LBOUND(T%PtrR4)         .NE. (/0, 0 /)))    STOP 22
-  IF (ANY( UBOUND(T%PtrR4)         .NE. (/9, 9 /)))    STOP 23
-  IF (ANY( T%PtrR4                 .NE. 4.0_4))        STOP 24
+  IF (.NOT. ASSOCIATED(T%PtrR4))                       ERROR STOP 21
+  IF (ANY( LBOUND(T%PtrR4)         .NE. (/0, 0 /)))    ERROR STOP 22
+  IF (ANY( UBOUND(T%PtrR4)         .NE. (/9, 9 /)))    ERROR STOP 23
+  IF (ANY( T%PtrR4                 .NE. 4.0_4))        ERROR STOP 24
 
   T%PtrR4(0:9, 0:0 ) => T%R4Tar(:, 1)
-  IF (.NOT. ASSOCIATED(T%PtrR4))                       STOP 25
-  IF (ANY( LBOUND(T%PtrR4)         .NE. (/0, 0 /)))    STOP 26
-  IF (ANY( UBOUND(T%PtrR4)         .NE. (/9, 0 /)))    STOP 27
-  IF (ANY( T%PtrR4                 .NE. 4.0_4))        STOP 28
+  IF (.NOT. ASSOCIATED(T%PtrR4))                       ERROR STOP 25
+  IF (ANY( LBOUND(T%PtrR4)         .NE. (/0, 0 /)))    ERROR STOP 26
+  IF (ANY( UBOUND(T%PtrR4)         .NE. (/9, 0 /)))    ERROR STOP 27
+  IF (ANY( T%PtrR4                 .NE. 4.0_4))        ERROR STOP 28
 
   T%PtrC4(0:, 0: ) => T%C4Tar
-  IF (.NOT. ASSOCIATED(T%Ptrc4))                       STOP 31
-  IF (ANY( LBOUND(T%PtrC4)         .NE. (/0, 0 /)))    STOP 32
-  IF (ANY( UBOUND(T%PtrC4)         .NE. (/9, 9 /)))    STOP 33
-  IF (ANY( T%PtrC4                 .NE. (4.0,-4.0)))   STOP 34
+  IF (.NOT. ASSOCIATED(T%Ptrc4))                       ERROR STOP 31
+  IF (ANY( LBOUND(T%PtrC4)         .NE. (/0, 0 /)))    ERROR STOP 32
+  IF (ANY( UBOUND(T%PtrC4)         .NE. (/9, 9 /)))    ERROR STOP 33
+  IF (ANY( T%PtrC4                 .NE. (4.0,-4.0)))   ERROR STOP 34
 
   T%PtrC4(0:9, 0:0 ) => T%C4Tar(:, 1)
-  IF (.NOT. ASSOCIATED(T%PtrC4))                       STOP 35
-  IF (ANY( LBOUND(T%PtrC4)         .NE. (/0, 0 /)))    STOP 36
-  IF (ANY( UBOUND(T%PtrC4)         .NE. (/9, 0 /)))    STOP 37
-  IF (ANY( T%PtrC4                 .NE. (4.0,-4.0)))   STOP 38
+  IF (.NOT. ASSOCIATED(T%PtrC4))                       ERROR STOP 35
+  IF (ANY( LBOUND(T%PtrC4)         .NE. (/0, 0 /)))    ERROR STOP 36
+  IF (ANY( UBOUND(T%PtrC4)         .NE. (/9, 0 /)))    ERROR STOP 37
+  IF (ANY( T%PtrC4                 .NE. (4.0,-4.0)))   ERROR STOP 38
 
   T%PtrL1(0:, 0: ) => T%L1Tar
-  IF (.NOT. ASSOCIATED(T%PtrL1))                       STOP 41
-  IF (ANY( LBOUND(T%PtrL1)         .NE. (/0, 0 /)))    STOP 42
-  IF (ANY( UBOUND(T%PtrL1)         .NE. (/9, 9 /)))    STOP 43
-  IF (ANY( T%PtrL1                 .NEQV. .TRUE._1))   STOP 44
+  IF (.NOT. ASSOCIATED(T%PtrL1))                       ERROR STOP 41
+  IF (ANY( LBOUND(T%PtrL1)         .NE. (/0, 0 /)))    ERROR STOP 42
+  IF (ANY( UBOUND(T%PtrL1)         .NE. (/9, 9 /)))    ERROR STOP 43
+  IF (ANY( T%PtrL1                 .NEQV. .TRUE._1))   ERROR STOP 44
 
   T%PtrL1(0:9, 0:0 ) => T%L1Tar(:, 1)
-  IF (.NOT. ASSOCIATED(T%PtrL1))                       STOP 45
-  IF (ANY( LBOUND(T%PtrL1)         .NE. (/0, 0 /)))    STOP 46
-  IF (ANY( UBOUND(T%PtrL1)         .NE. (/9, 0 /)))    STOP 47
-  IF (ANY( T%PtrL1                 .NEQV. .TRUE._1))   STOP 48
+  IF (.NOT. ASSOCIATED(T%PtrL1))                       ERROR STOP 45
+  IF (ANY( LBOUND(T%PtrL1)         .NE. (/0, 0 /)))    ERROR STOP 46
+  IF (ANY( UBOUND(T%PtrL1)         .NE. (/9, 0 /)))    ERROR STOP 47
+  IF (ANY( T%PtrL1                 .NEQV. .TRUE._1))   ERROR STOP 48
 
   T%PtrC1(0:, 0: ) => T%C1Tar
-  IF (.NOT. ASSOCIATED(T%PtrC1))                       STOP 51
-  IF (ANY( LBOUND(T%PtrC1)         .NE. (/0, 0 /)))    STOP 52
-  IF (ANY( UBOUND(T%PtrC1)         .NE. (/9, 9 /)))    STOP 53
-  IF (ANY( T%PtrC1                 .NE. "1"))          STOP 54
+  IF (.NOT. ASSOCIATED(T%PtrC1))                       ERROR STOP 51
+  IF (ANY( LBOUND(T%PtrC1)         .NE. (/0, 0 /)))    ERROR STOP 52
+  IF (ANY( UBOUND(T%PtrC1)         .NE. (/9, 9 /)))    ERROR STOP 53
+  IF (ANY( T%PtrC1                 .NE. "1"))          ERROR STOP 54
 
   T%PtrC1(0:9, 0:0 ) => T%C1Tar(:, 1)
-  IF (.NOT. ASSOCIATED(T%PtrC1))                       STOP 55
-  IF (ANY( LBOUND(T%PtrC1)         .NE. (/0, 0 /)))    STOP 56
-  IF (ANY( UBOUND(T%PtrC1)         .NE. (/9, 0 /)))    STOP 57
-  IF (ANY( T%PtrC1                 .NE. "1"))          STOP 58
+  IF (.NOT. ASSOCIATED(T%PtrC1))                       ERROR STOP 55
+  IF (ANY( LBOUND(T%PtrC1)         .NE. (/0, 0 /)))    ERROR STOP 56
+  IF (ANY( UBOUND(T%PtrC1)         .NE. (/9, 0 /)))    ERROR STOP 57
+  IF (ANY( T%PtrC1                 .NE. "1"))          ERROR STOP 58
 
 
   END SUBROUTINE

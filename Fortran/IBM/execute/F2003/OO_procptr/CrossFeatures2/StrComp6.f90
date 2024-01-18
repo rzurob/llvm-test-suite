@@ -72,33 +72,33 @@
 
   ALLOCATE(V, SOURCE=DT(Base=Base(ModFun1), BComp=Base(ModFun1), ProcPTr2=Modfun2))
 
-  IF ( .NOT. ASSOCIATED(V%ProcPtr1, Modfun1)) STOP 11
-  IF ( .NOT. ASSOCIATED(V%ProcPtr2, Modfun2)) STOP 12
-  IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr1, Modfun1)) STOP 13
+  IF ( .NOT. ASSOCIATED(V%ProcPtr1, Modfun1)) ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(V%ProcPtr2, Modfun2)) ERROR STOP 12
+  IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr1, Modfun1)) ERROR STOP 13
 
   ALLOCATE(V1)
   V1%ProcPtr1 => Null()
   V1 = V%Base
-  IF ( .NOT. ASSOCIATED(V1%ProcPtr1, Modfun1)) STOP 14
+  IF ( .NOT. ASSOCIATED(V1%ProcPtr1, Modfun1)) ERROR STOP 14
 
   V1%ProcPtr1 => Null()
   V1 = V%BComp
-  IF ( .NOT. ASSOCIATED(V1%ProcPtr1, Modfun1)) STOP 15
+  IF ( .NOT. ASSOCIATED(V1%ProcPtr1, Modfun1)) ERROR STOP 15
 
   V1 = V%ProcPtr1()
-  IF ( .NOT. ASSOCIATED(V1%ProcPtr1, Modfun1)) STOP 16
+  IF ( .NOT. ASSOCIATED(V1%ProcPtr1, Modfun1)) ERROR STOP 16
 
   U1 = DT(Base=Base(ModFun1), BComp=Base(ModFun1), ProcPTr2=Modfun2)
   ALLOCATE(U(513), SOURCE=U1)
 
   DO I=1,513
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr1, Modfun1)) STOP 17
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr2, Modfun2)) STOP 18
-    IF ( .NOT. ASSOCIATED(U(I)%BComp%ProcPtr1, Modfun1)) STOP 19
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr1, Modfun1)) ERROR STOP 17
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr2, Modfun2)) ERROR STOP 18
+    IF ( .NOT. ASSOCIATED(U(I)%BComp%ProcPtr1, Modfun1)) ERROR STOP 19
   END DO
 
   ProcPtr => U(1)%ProcPtr(ModFun1)
-  IF ( .NOT. ASSOCIATED(ProcPtr, Modfun1)) STOP 21
+  IF ( .NOT. ASSOCIATED(ProcPtr, Modfun1)) ERROR STOP 21
 
   END
 

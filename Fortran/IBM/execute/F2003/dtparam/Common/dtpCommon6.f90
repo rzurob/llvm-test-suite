@@ -87,23 +87,23 @@
   CALL Set1(1, N1)
 
   DO I=1, N1
-    IF ( ANY( T(I)%C1 .NE. CHAR(I) ) ) STOP 11
-    IF ( ANY( T(I)%I  .NE. I       ) ) STOP 12
-    IF ( ANY( T(I)%C2 .NE. CHAR(I) ) ) STOP 13
+    IF ( ANY( T(I)%C1 .NE. CHAR(I) ) ) ERROR STOP 11
+    IF ( ANY( T(I)%I  .NE. I       ) ) ERROR STOP 12
+    IF ( ANY( T(I)%C2 .NE. CHAR(I) ) ) ERROR STOP 13
   END DO
 
   DO I=N1+1, N
-    IF ( ANY( T(I)%C1 .NE. CHAR(1) ) ) STOP 21
-    IF ( ANY( T(I)%I  .NE. -1      ) ) STOP 22
-    IF ( ANY( T(I)%C2 .NE. CHAR(2) ) ) STOP 23
+    IF ( ANY( T(I)%C1 .NE. CHAR(1) ) ) ERROR STOP 21
+    IF ( ANY( T(I)%I  .NE. -1      ) ) ERROR STOP 22
+    IF ( ANY( T(I)%C2 .NE. CHAR(2) ) ) ERROR STOP 23
   END DO
 
   CALL Set2(N1+1, N2)
 
   DO I=1, N
-    IF ( ANY( T(I)%C1 .NE. CHAR(I) ) ) STOP 31
-    IF ( ANY( T(I)%I  .NE. I       ) ) STOP 32
-    IF ( ANY( T(I)%C2 .NE. CHAR(I) ) ) STOP 33
+    IF ( ANY( T(I)%C1 .NE. CHAR(I) ) ) ERROR STOP 31
+    IF ( ANY( T(I)%I  .NE. I       ) ) ERROR STOP 32
+    IF ( ANY( T(I)%C2 .NE. CHAR(I) ) ) ERROR STOP 33
   END DO
 
 

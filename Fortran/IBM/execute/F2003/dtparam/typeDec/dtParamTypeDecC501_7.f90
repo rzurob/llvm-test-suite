@@ -45,20 +45,20 @@
   TYPE(DT(4,     L=MAXVAL(ICHAR(T1%C),   1)))  :: T2(SIZE(T1))
   TYPE(DT(4,     L=MINVAL([len(T1%C),99], 1)))  :: T3(SIZE(T1))
 
-  IF ( T1%K               .NE.   4          )     STOP 11
-  IF ( T1%L               .NE.   1          )     STOP 12
-  IF ( ANY( ICHAR(T1%C)   .NE.   [(I,I=1,10)] ) ) STOP 13
-  IF ( SIZE(T1)           .NE.   10         )     STOP 14
+  IF ( T1%K               .NE.   4          )     ERROR STOP 11
+  IF ( T1%L               .NE.   1          )     ERROR STOP 12
+  IF ( ANY( ICHAR(T1%C)   .NE.   [(I,I=1,10)] ) ) ERROR STOP 13
+  IF ( SIZE(T1)           .NE.   10         )     ERROR STOP 14
 
-  IF ( T2%K               .NE.   4          )     STOP 21
-  IF ( T2%L               .NE.   10         )     STOP 22
-  IF ( LEN(T2%C)          .NE.   10         )     STOP 23
-  IF ( SIZE(T2)           .NE.   10         )     STOP 24
+  IF ( T2%K               .NE.   4          )     ERROR STOP 21
+  IF ( T2%L               .NE.   10         )     ERROR STOP 22
+  IF ( LEN(T2%C)          .NE.   10         )     ERROR STOP 23
+  IF ( SIZE(T2)           .NE.   10         )     ERROR STOP 24
 
-  IF ( T3%K               .NE.   4          )     STOP 31
-  IF ( T3%L               .NE.   1          )     STOP 32
-  IF ( LEN(T3%C)          .NE.   1          )     STOP 33
-  IF ( SIZE(T3)           .NE.   10         )     STOP 34
+  IF ( T3%K               .NE.   4          )     ERROR STOP 31
+  IF ( T3%L               .NE.   1          )     ERROR STOP 32
+  IF ( LEN(T3%C)          .NE.   1          )     ERROR STOP 33
+  IF ( SIZE(T3)           .NE.   10         )     ERROR STOP 34
 
   END SUBROUTINE
   END MODULE

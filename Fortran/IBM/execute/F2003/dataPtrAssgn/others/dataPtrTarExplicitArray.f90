@@ -37,9 +37,9 @@ use mod
 
     call sub(t)
 
-    if ( .not. associated(p) ) stop 3
-    if ( any ( lbound(p) .ne. (/2, 3/) ) ) stop 11
-    if ( any ( ubound(p) .ne. (/4, 5/) ) ) stop 15
+    if ( .not. associated(p) ) error stop 3
+    if ( any ( lbound(p) .ne. (/2, 3/) ) ) error stop 11
+    if ( any ( ubound(p) .ne. (/4, 5/) ) ) error stop 15
 
     p = P * 10
 

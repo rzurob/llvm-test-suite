@@ -66,24 +66,24 @@
 
   ALLOCATE( Child :: U)
   ASSOCIATE ( As => U )
-    IF ( As%GetID() .NE. 2) STOP 50
-    IF ( As%BaseId  .NE. 1) STOP 51
+    IF ( As%GetID() .NE. 2) ERROR STOP 50
+    IF ( As%BaseId  .NE. 1) ERROR STOP 51
 
     ASSOCIATE ( As1 => As%BaseId )
-       IF ( As1 .NE. 1) STOP 52
+       IF ( As1 .NE. 1) ERROR STOP 52
     END ASSOCIATE
 
-    IF ( .NOT. SAME_TYPE_AS(As, Child(BaseComp=NULL())) ) STOP 53
+    IF ( .NOT. SAME_TYPE_AS(As, Child(BaseComp=NULL())) ) ERROR STOP 53
 
     SELECT TYPE ( As )
       TYPE IS (Child)
         ALLOCATE(As%BaseComp)
-        IF ( As%BaseComp%BaseId  .NE. 1) STOP 54
-        IF ( As%BaseComp%GetId() .NE. 1) STOP 55
+        IF ( As%BaseComp%BaseId  .NE. 1) ERROR STOP 54
+        IF ( As%BaseComp%GetId() .NE. 1) ERROR STOP 55
         DEALLOCATE(As%BaseComp)
 
-        IF ( As%GetID() .NE. 2) STOP 60
-        IF ( As%ChildId .NE. 2) STOP 61
+        IF ( As%GetID() .NE. 2) ERROR STOP 60
+        IF ( As%ChildId .NE. 2) ERROR STOP 61
 
       CLASS DEFAULT
         STOP 70
@@ -98,24 +98,24 @@
 
     SELECT TYPE ( As )
       TYPE IS (Child)
-        IF ( As%GetID() .NE. 2)      STOP 49
-        IF ( As%ChildId .NE. 2)      STOP 50
-        IF ( As%BaseId  .NE. 1)      STOP 51
-        IF ( As%Base%GetId() .NE. 1) STOP 52
+        IF ( As%GetID() .NE. 2)      ERROR STOP 49
+        IF ( As%ChildId .NE. 2)      ERROR STOP 50
+        IF ( As%BaseId  .NE. 1)      ERROR STOP 51
+        IF ( As%Base%GetId() .NE. 1) ERROR STOP 52
 
         ASSOCIATE ( As1 => As%BaseId )
-         IF ( As1 .NE. 1) STOP 52
+         IF ( As1 .NE. 1) ERROR STOP 52
         END ASSOCIATE
 
-        IF ( .NOT. SAME_TYPE_AS(As, Child(BaseComp=NULL())) ) STOP 53
+        IF ( .NOT. SAME_TYPE_AS(As, Child(BaseComp=NULL())) ) ERROR STOP 53
 
         ALLOCATE(As%BaseComp)
-        IF ( As%BaseComp%BaseId  .NE. 1) STOP 54
-        IF ( As%BaseComp%GetId() .NE. 1) STOP 55
+        IF ( As%BaseComp%BaseId  .NE. 1) ERROR STOP 54
+        IF ( As%BaseComp%GetId() .NE. 1) ERROR STOP 55
         DEALLOCATE(As%BaseComp)
 
-        IF ( As%GetID() .NE. 2) STOP 60
-        IF ( As%ChildId .NE. 2) STOP 61
+        IF ( As%GetID() .NE. 2) ERROR STOP 60
+        IF ( As%ChildId .NE. 2) ERROR STOP 61
 
       CLASS DEFAULT
         STOP 70

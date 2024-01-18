@@ -41,17 +41,17 @@
   SELECT TYPE (U)
   CLASS IS (DT)
 
-    IF (ANY(U%Int   .NE. -1))      STOP 20
-    IF (ANY(U%C     .NE. "123"))   STOP 21
-    IF (ANY(SHAPE(U).NE. (/16/)))  STOP 22
+    IF (ANY(U%Int   .NE. -1))      ERROR STOP 20
+    IF (ANY(U%C     .NE. "123"))   ERROR STOP 21
+    IF (ANY(SHAPE(U).NE. (/16/)))  ERROR STOP 22
 
     FORALL  (I=1:16 )
       U%Int = 1
       U%C="321"
     END FORALL
 
-    IF (ANY(U%Int .NE. 1))     STOP 30
-    IF (ANY(U%C   .NE. "321")) STOP 31
+    IF (ANY(U%Int .NE. 1))     ERROR STOP 30
+    IF (ANY(U%C   .NE. "321")) ERROR STOP 31
 
   CLASS DEFAULT
     STOP 40

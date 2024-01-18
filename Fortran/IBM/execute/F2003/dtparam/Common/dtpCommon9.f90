@@ -65,27 +65,27 @@
 
   Ptr => Tar
 
-  IF ( .NOT. ASSOCIATED(Ptr0, Ptr)       ) STOP 10
-  IF ( ANY( LBOUND( Ptr0 ) .NE. [0]    ) ) STOP 11
-  IF ( ANY( UBOUND( Ptr0 ) .NE. [99]   ) ) STOP 12
+  IF ( .NOT. ASSOCIATED(Ptr0, Ptr)       ) ERROR STOP 10
+  IF ( ANY( LBOUND( Ptr0 ) .NE. [0]    ) ) ERROR STOP 11
+  IF ( ANY( UBOUND( Ptr0 ) .NE. [99]   ) ) ERROR STOP 12
 
   DO I=0, 99
 
-    IF ( ANY( LBOUND( Ptr0(I)%C1 ) .NE. [1]    ) ) STOP 21
-    IF ( ANY( LBOUND( Ptr0(I)%C2 ) .NE. [1]    ) ) STOP 22
-    IF ( ANY( LBOUND( Ptr0(I)%C3 ) .NE. [1]    ) ) STOP 23
+    IF ( ANY( LBOUND( Ptr0(I)%C1 ) .NE. [1]    ) ) ERROR STOP 21
+    IF ( ANY( LBOUND( Ptr0(I)%C2 ) .NE. [1]    ) ) ERROR STOP 22
+    IF ( ANY( LBOUND( Ptr0(I)%C3 ) .NE. [1]    ) ) ERROR STOP 23
 
-    IF ( ANY( UBOUND( Ptr0(I)%C1 ) .NE. [9]    ) ) STOP 31
-    IF ( ANY( UBOUND( Ptr0(I)%C2 ) .NE. [7]    ) ) STOP 32
-    IF ( ANY( UBOUND( Ptr0(I)%C3 ) .NE. [9]    ) ) STOP 33
+    IF ( ANY( UBOUND( Ptr0(I)%C1 ) .NE. [9]    ) ) ERROR STOP 31
+    IF ( ANY( UBOUND( Ptr0(I)%C2 ) .NE. [7]    ) ) ERROR STOP 32
+    IF ( ANY( UBOUND( Ptr0(I)%C3 ) .NE. [9]    ) ) ERROR STOP 33
 
-    IF ( Ptr0(I)%C1%LEN  .NE. 7  ) STOP 41
-    IF ( Ptr0(I)%C2%LEN  .NE. 9  ) STOP 42
-    IF ( Ptr0(I)%C3%LEN  .NE. 9  ) STOP 43
+    IF ( Ptr0(I)%C1%LEN  .NE. 7  ) ERROR STOP 41
+    IF ( Ptr0(I)%C2%LEN  .NE. 9  ) ERROR STOP 42
+    IF ( Ptr0(I)%C3%LEN  .NE. 9  ) ERROR STOP 43
 
-    IF ( ANY( Ptr0(I)%C1 .NE. CHAR(I)      ) ) STOP 51
-    IF ( ANY( Ptr0(I)%C2 .NE. CHAR(I)      ) ) STOP 52
-    IF ( ANY( Ptr0(I)%C3 .NE. "123456789"  ) ) STOP 53
+    IF ( ANY( Ptr0(I)%C1 .NE. CHAR(I)      ) ) ERROR STOP 51
+    IF ( ANY( Ptr0(I)%C2 .NE. CHAR(I)      ) ) ERROR STOP 52
+    IF ( ANY( Ptr0(I)%C3 .NE. "123456789"  ) ) ERROR STOP 53
 
   END DO
 

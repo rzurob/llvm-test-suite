@@ -32,16 +32,16 @@ integer :: res4c(2)=minval(A4, dim=2, mask=A4 .lt. 30)
 
 integer(8) :: res8=minval(A8), res8a(2,2,2,2,2)=minval(A8, dim=3, mask=A8<0)
 
-if (res1 .ne. minval(A1)) stop 1
+if (res1 .ne. minval(A1)) error stop 1
 
-if (res2 .ne. minval(A2)) stop 2
+if (res2 .ne. minval(A2)) error stop 2
 
-if (res4 .ne. minval(A4)) stop 3
-if (.not. all(res4a .eq. minval(A4, dim=1))) stop 4
-if (.not. all(res4b .eq. minval(A4, dim=2))) stop 5
-if (.not. all(res4c .eq. minval(A4, dim=2, mask=A4 .lt. 30))) stop 6
+if (res4 .ne. minval(A4)) error stop 3
+if (.not. all(res4a .eq. minval(A4, dim=1))) error stop 4
+if (.not. all(res4b .eq. minval(A4, dim=2))) error stop 5
+if (.not. all(res4c .eq. minval(A4, dim=2, mask=A4 .lt. 30))) error stop 6
 
-if (res8 .ne. minval(A8)) stop 7
+if (res8 .ne. minval(A8)) error stop 7
 if (.not. all(res8a .eq. minval(A8, dim=3, mask=A8<0))) then
   stop 8
 endif

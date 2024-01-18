@@ -61,7 +61,7 @@
       CLASS(Base(4,:)), POINTER, INTENT(OUT) :: pntr
 
       ALLOCATE (pntr,  source = Obj)
-      IF (.NOT. ASSOCIATED(pntr)) STOP 1
+      IF (.NOT. ASSOCIATED(pntr)) ERROR STOP 1
 
       pntr%tag = 'sub1'
 
@@ -72,7 +72,7 @@
       CLASS(Base(4,:)), POINTER, INTENT(OUT) :: pntr
 
       ALLOCATE (pntr,  source = Obj(1))
-      IF (.NOT. ASSOCIATED(pntr)) STOP 2
+      IF (.NOT. ASSOCIATED(pntr)) ERROR STOP 2
 
       pntr%tag = 'sub2'
 
@@ -100,310 +100,310 @@
 !*
       poly1 => tgt1
       call base1%SUB(poly1,base1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 10
-      IF (poly1%tag .NE. 'sub1') STOP 11
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 10
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 11
 
       deallocate (poly1)
 
       call base1%SUB(poly1,child1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 12
-      IF (poly1%tag .NE. 'sub1') STOP 13
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 12
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 13
 
       deallocate (poly1)
 
       call base1%SUB(poly1,tgt1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 14
-      IF (poly1%tag .NE. 'sub1') STOP 15
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 14
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 15
 
       deallocate (poly1)
 
       call base1%SUB(poly1,nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 16
-      IF (poly1%tag .NE. 'sub1') STOP 17
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 16
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 17
 
       deallocate (poly1)
 
       call child1%SUB(poly1,base1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 18
-      IF (poly1%tag .NE. 'sub1') STOP 19
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 18
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 19
 
       deallocate (poly1)
 
       call child1%SUB(poly1,child1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 20
-      IF (poly1%tag .NE. 'sub1') STOP 21
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 20
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 21
 
       deallocate (poly1)
 
       call child1%SUB(poly1,tgt1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 22
-      IF (poly1%tag .NE. 'sub1') STOP 23
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 22
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 23
 
       deallocate (poly1)
 
       call child1%SUB(poly1,nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 24
-      IF (poly1%tag .NE. 'sub1') STOP 25
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 24
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 25
 
       deallocate (poly1)
 
       call tgt1%SUB(poly1,base1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 26
-      IF (poly1%tag .NE. 'sub1') STOP 27
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 26
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 27
 
       deallocate (poly1)
 
       call tgt1%SUB(poly1,child1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 28
-      IF (poly1%tag .NE. 'sub1') STOP 29
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 28
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 29
 
       deallocate (poly1)
 
       call tgt1%SUB(poly1,tgt1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 30
-      IF (poly1%tag .NE. 'sub1') STOP 31
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 30
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 31
 
       deallocate (poly1)
 
       call tgt1%SUB(poly1,nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 32
-      IF (poly1%tag .NE. 'sub1') STOP 33
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 32
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 33
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,base1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 34
-      IF (poly1%tag .NE. 'sub1') STOP 35
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 34
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 35
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,child1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 36
-      IF (poly1%tag .NE. 'sub1') STOP 37
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 36
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 37
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,tgt1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 38
-      IF (poly1%tag .NE. 'sub1') STOP 39
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 38
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 39
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 40
-      IF (poly1%tag .NE. 'sub1') STOP 41
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 40
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 41
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,poly1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 42
-      IF (poly1%tag .NE. 'sub1') STOP 43
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 42
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 43
 
       deallocate (poly1)
 
       ALLOCATE(NextGen(4,10,8,100,8,100):: poly1)
       call base1%SUB(poly1,base1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 44
-      IF (poly1%tag .NE. 'sub1') STOP 45
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 44
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 45
 
       deallocate (poly1)
 
       call base1%SUB(poly1,child1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 46
-      IF (poly1%tag .NE. 'sub1') STOP 47
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 46
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 47
 
       deallocate (poly1)
 
       call base1%SUB(poly1,tgt1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 48
-      IF (poly1%tag .NE. 'sub1') STOP 49
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 48
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 49
 
       deallocate (poly1)
 
       call base1%SUB(poly1,nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 50
-      IF (poly1%tag .NE. 'sub1') STOP 51
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 50
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 51
 
       deallocate (poly1)
 
       call child1%SUB(poly1,base1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 52
-      IF (poly1%tag .NE. 'sub1') STOP 53
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 52
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 53
 
       deallocate (poly1)
 
       call child1%SUB(poly1,child1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 54
-      IF (poly1%tag .NE. 'sub1') STOP 55
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 54
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 55
 
       deallocate (poly1)
 
       call child1%SUB(poly1,tgt1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 56
-      IF (poly1%tag .NE. 'sub1') STOP 57
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 56
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 57
 
       deallocate (poly1)
 
       call child1%SUB(poly1,nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 58
-      IF (poly1%tag .NE. 'sub1') STOP 59
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 58
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 59
 
       deallocate (poly1)
 
       call tgt1%SUB(poly1,base1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 60
-      IF (poly1%tag .NE. 'sub1') STOP 61
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 60
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 61
 
       deallocate (poly1)
 
       call tgt1%SUB(poly1,child1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 62
-      IF (poly1%tag .NE. 'sub1') STOP 63
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 62
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 63
 
       deallocate (poly1)
 
       call tgt1%SUB(poly1,tgt1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 64
-      IF (poly1%tag .NE. 'sub1') STOP 65
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 64
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 65
 
       deallocate (poly1)
 
       call tgt1%SUB(poly1,nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 66
-      IF (poly1%tag .NE. 'sub1') STOP 67
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 66
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 67
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,base1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 68
-      IF (poly1%tag .NE. 'sub1') STOP 69
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 68
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 69
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,child1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 70
-      IF (poly1%tag .NE. 'sub1') STOP 71
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 70
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 71
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,tgt1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 72
-      IF (poly1%tag .NE. 'sub1') STOP 73
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 72
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 73
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 74
-      IF (poly1%tag .NE. 'sub1') STOP 75
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 74
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 75
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,poly1)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 76
-      IF (poly1%tag .NE. 'sub1') STOP 77
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 76
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 77
 
       deallocate (poly1)
 !*
 !  The following will call sub2
 !*
       call arr_base%SUB(poly1,arr_base)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 78
-      IF (poly1%tag .NE. 'sub2') STOP 79
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 78
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 79
 
       deallocate (poly1)
 
       call base1%SUB(poly1,arr_child)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 80
-      IF (poly1%tag .NE. 'sub2') STOP 81
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 80
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 81
 
       deallocate (poly1)
 
       call base1%SUB(poly1,tgt_nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 82
-      IF (poly1%tag .NE. 'sub2') STOP 83
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 82
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 83
 
       deallocate (poly1)
 
       call base1%SUB(poly1,arr_nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 84
-      IF (poly1%tag .NE. 'sub2') STOP 85
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 84
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 85
 
       deallocate (poly1)
 
       call child1%SUB(poly1,arr_base)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 86
-      IF (poly1%tag .NE. 'sub2') STOP 87
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 86
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 87
 
       deallocate (poly1)
 
       call child1%SUB(poly1,arr_child)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 88
-      IF (poly1%tag .NE. 'sub2') STOP 89
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 88
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 89
 
       deallocate (poly1)
 
       call child1%SUB(poly1,tgt_nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 90
-      IF (poly1%tag .NE. 'sub2') STOP 91
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 90
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 91
 
       deallocate (poly1)
 
       call arr_child%SUB(poly1,arr_nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 92
-      IF (poly1%tag .NE. 'sub2') STOP 93
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 92
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 93
 
       deallocate (poly1)
 
       call arr_child%SUB(poly1,arr_child)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 94
-      IF (poly1%tag .NE. 'sub2') STOP 95
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 94
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 95
 
       deallocate (poly1)
 
       call tgt_nxtg%SUB(poly1,arr_base)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 96
-      IF (poly1%tag .NE. 'sub2') STOP 97
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 96
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 97
 
       deallocate (poly1)
 
       call tgt_nxtg%SUB(poly1,arr_child)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 98
-      IF (poly1%tag .NE. 'sub2') STOP 99
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 98
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 99
 
       deallocate (poly1)
 
       call tgt_nxtg%SUB(poly1,tgt_nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 100
-      IF (poly1%tag .NE. 'sub2') STOP 101
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 100
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 101
 
       deallocate (poly1)
 
       call tgt_nxtg%SUB(poly1,arr_nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 102
-      IF (poly1%tag .NE. 'sub2') STOP 103
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 102
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 103
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,arr_base)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 104
-      IF (poly1%tag .NE. 'sub2') STOP 105
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 104
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 105
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,arr_child)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 106
-      IF (poly1%tag .NE. 'sub2') STOP 107
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 106
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 107
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,tgt_nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 108
-      IF (poly1%tag .NE. 'sub2') STOP 109
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 108
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 109
 
       deallocate (poly1)
 
       call poly1%SUB(poly1,arr_nxtg)
-      IF ( .NOT. ASSOCIATED(poly1) ) STOP 110
-      IF (poly1%tag .NE. 'sub2') STOP 111
+      IF ( .NOT. ASSOCIATED(poly1) ) ERROR STOP 110
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 111
 
       END PROGRAM Generic_TypeBound01e

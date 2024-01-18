@@ -36,6 +36,6 @@ end do
 allocate(tpvar%descpt)
 tpvar%descpt = 'Allocatable'
 
-if (tpvar%descpt /= 'Allocatable') stop 1
+if (tpvar%descpt /= 'Allocatable') error stop 1
 end
 

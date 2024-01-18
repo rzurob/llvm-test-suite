@@ -24,7 +24,7 @@ module m
         subroutine sub(ch)
             character(*), pointer :: ch(:)
 
-	    if ( .not. associated(ch)) stop 30
+	    if ( .not. associated(ch)) error stop 30
 	    ch = ch(ubound(ch,1):lbound(ch,1):-1)
         end subroutine
 end module
@@ -37,9 +37,9 @@ end module
 
 	chP(ichar('F'):ichar('W')) => chT
 
-	if ( .not. associated(chP)) stop 5
-	if ( lbound(chP,1) /= 70) stop 7
-	if ( ubound(chP,1) /= 87) stop 9
+	if ( .not. associated(chP)) error stop 5
+	if ( lbound(chP,1) /= 70) error stop 7
+	if ( ubound(chP,1) /= 87) error stop 9
 
 	print *, chP
 

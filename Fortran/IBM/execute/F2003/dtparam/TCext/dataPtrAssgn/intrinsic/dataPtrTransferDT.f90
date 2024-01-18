@@ -46,9 +46,9 @@ end module
 
         p(1:8, 2:9) => tar
 
-        if ( .not. associated(p)) stop 11
-        if ( any(lbound(p) .ne. (/1,2/)) ) stop 13
-        if ( any(ubound(p) .ne. (/8,9/)) ) stop 15
+        if ( .not. associated(p)) error stop 11
+        if ( any(lbound(p) .ne. (/1,2/)) ) error stop 13
+        if ( any(ubound(p) .ne. (/8,9/)) ) error stop 15
 
 	tar = tar
 

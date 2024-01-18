@@ -36,8 +36,8 @@
 
   TYPE(DT) :: T
 
-  IF ( ANY( C  .NE. "\"//"t"//"\" ))     STOP 12
-  IF ( T%C     .NE. "\"//"\"//"\" )      STOP 13
+  IF ( ANY( C  .NE. "\"//"t"//"\" ))     ERROR STOP 12
+  IF ( T%C     .NE. "\"//"\"//"\" )      ERROR STOP 13
 
   END
 

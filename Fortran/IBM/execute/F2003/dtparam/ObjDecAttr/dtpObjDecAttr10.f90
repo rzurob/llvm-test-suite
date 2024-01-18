@@ -84,12 +84,12 @@
 
   T = ExtFun()
 
-  IF ( T%K0            .NE.   2          ) STOP 11
-  IF ( T%L0            .NE.   2          ) STOP 12
-  IF ( C               .NE.   "ExtFun"   ) STOP 13
+  IF ( T%K0            .NE.   2          ) ERROR STOP 11
+  IF ( T%L0            .NE.   2          ) ERROR STOP 12
+  IF ( C               .NE.   "ExtFun"   ) ERROR STOP 13
 
   T = modFun(2,DT0(2,L)())
-  IF ( C               .NE.   "ModFun"   ) STOP 20
+  IF ( C               .NE.   "ModFun"   ) ERROR STOP 20
 
   END
 

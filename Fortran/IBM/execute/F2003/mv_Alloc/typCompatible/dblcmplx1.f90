@@ -39,9 +39,9 @@ module m
 
                          call move_alloc ( arg%d2, arg%d1 )
 
-                         if ( .not. allocated(arg%d1 ) ) stop 21
+                         if ( .not. allocated(arg%d1 ) ) error stop 21
 
-                         if ( allocated(arg%d2) ) stop 23
+                         if ( allocated(arg%d2) ) error stop 23
 
                  end select
 
@@ -62,7 +62,7 @@ use m
 
     select type ( x => b%d1)
           type is (double complex)
-              if ( .not. precision_R8(x, cmplx(2,4,8)) ) stop 33
+              if ( .not. precision_R8(x, cmplx(2,4,8)) ) error stop 33
           class default
               stop 41
     end select

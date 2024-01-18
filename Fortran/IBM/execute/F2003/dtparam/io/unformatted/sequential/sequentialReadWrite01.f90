@@ -114,7 +114,7 @@ PROGRAM sequentialReadWrite01
 
 
     iostat = b%ReadB(b, 11)
-    IF (iostat /= 0) STOP 20
+    IF (iostat /= 0) ERROR STOP 20
 
     REWIND(11, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
@@ -125,7 +125,7 @@ PROGRAM sequentialReadWrite01
 
     PRINT *, 'b%i1 =', b%i1
 
-    IF ( ANY(b%i1 /= bA) ) STOP 30
+    IF ( ANY(b%i1 /= bA) ) ERROR STOP 30
 
 
     WRITE(11, IOSTAT=iostat, IOMSG=iomsg) [ (-1_2, i = 1_4, 10_4) ]
@@ -142,7 +142,7 @@ PROGRAM sequentialReadWrite01
 
 
     iostat = b%WriteB(b, 11)
-    IF (iostat /= 0) STOP 50
+    IF (iostat /= 0) ERROR STOP 50
 
     REWIND(11, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
@@ -166,6 +166,6 @@ PROGRAM sequentialReadWrite01
 
     PRINT *, 'cbA =', cbA
 
-    IF ( ANY(cbA /= bA) ) STOP 70
+    IF ( ANY(cbA /= bA) ) ERROR STOP 70
 
 END PROGRAM sequentialReadWrite01

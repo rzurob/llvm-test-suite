@@ -97,21 +97,21 @@
         TYPE IS (Child(4))
 
           ! Can not quary size of assumed size array
-          !  IF ( SIZE(As0)   .NE. SIZE(Arr1) ) STOP 42
-          !  IF ( SIZE(As0)   .NE. SIZE(As1) ) STOP 42
+          !  IF ( SIZE(As0)   .NE. SIZE(Arr1) ) ERROR STOP 42
+          !  IF ( SIZE(As0)   .NE. SIZE(As1) ) ERROR STOP 42
 
-          IF ( ANY(As0(:N)%Base%GetId() .NE. 1) ) STOP 34
-          IF ( ANY(As0(:N)%GetId()      .NE. 2) ) STOP 35
-          IF ( ANY(As0(:N)%BaseId       .NE. 1) ) STOP 36
-          IF ( ANY(As0(:N)%ChildId      .NE. 2) ) STOP 37
+          IF ( ANY(As0(:N)%Base%GetId() .NE. 1) ) ERROR STOP 34
+          IF ( ANY(As0(:N)%GetId()      .NE. 2) ) ERROR STOP 35
+          IF ( ANY(As0(:N)%BaseId       .NE. 1) ) ERROR STOP 36
+          IF ( ANY(As0(:N)%ChildId      .NE. 2) ) ERROR STOP 37
 
           CALL As1(1)%SetId(As0(:N))
           CALL As1(1)%Base%SetId(As0(:N)%Base)
 
-          IF ( ANY(As1(:N)%Base%GetId() .NE. -1 ) ) STOP 44
-          IF ( ANY(As1(:N)%GetId()      .NE. -2 ) ) STOP 45
-          IF ( ANY(As1(:N)%BaseId       .NE. -1 ) ) STOP 46
-          IF ( ANY(As1(:N)%ChildId      .NE. -2 ) ) STOP 47
+          IF ( ANY(As1(:N)%Base%GetId() .NE. -1 ) ) ERROR STOP 44
+          IF ( ANY(As1(:N)%GetId()      .NE. -2 ) ) ERROR STOP 45
+          IF ( ANY(As1(:N)%BaseId       .NE. -1 ) ) ERROR STOP 46
+          IF ( ANY(As1(:N)%ChildId      .NE. -2 ) ) ERROR STOP 47
 
          CLASS DEFAULT
             STOP 40

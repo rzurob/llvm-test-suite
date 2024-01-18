@@ -37,8 +37,8 @@ program d361130
 
   allocate(d1(2),source=getData(t1))
 
-  if(.not. precision_r4(d1(1)%r,0.1))         stop 1
-  if(.not. precision_r4(d1(2)%r,0.1))         stop 2
+  if(.not. precision_r4(d1(1)%r,0.1))         error stop 1
+  if(.not. precision_r4(d1(2)%r,0.1))         error stop 2
 
 
 end program

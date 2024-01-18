@@ -92,27 +92,27 @@
 
 
 
-  IF ( KIND(TR4)  .NE.    4 )  STOP 11
-  IF ( KIND(TR8)  .NE.    8 )  STOP 12
-  IF ( KIND(TR6)  .NE.   16 )  STOP 13
+  IF ( KIND(TR4)  .NE.    4 )  ERROR STOP 11
+  IF ( KIND(TR8)  .NE.    8 )  ERROR STOP 12
+  IF ( KIND(TR6)  .NE.   16 )  ERROR STOP 13
 
-  IF (ANY( TR4  .NE. RR  )) STOP 21
-  IF (ANY( TR8  .NE. RR  )) STOP 22
-  IF (ANY( TR6  .NE. RR  )) STOP 23
+  IF (ANY( TR4  .NE. RR  )) ERROR STOP 21
+  IF (ANY( TR8  .NE. RR  )) ERROR STOP 22
+  IF (ANY( TR6  .NE. RR  )) ERROR STOP 23
 
-! IF ( T41  .NE.  r4Quiet_N_NaN )      STOP 31   ! processor dependent
-  IF ( T42  .NE.  r4Min_N/2.0 )        STOP 32
-  IF ( T43  .NE.  r4N_Zero )           STOP 33
-  IF ( T44  .NE.  r4P_Zero )           STOP 34
-  IF ( T43  .NE.  r4P_Zero )           STOP 35
-! IF ( T44  .NE.  r4Quiet_P_NaN )      STOP 36
+! IF ( T41  .NE.  r4Quiet_N_NaN )      ERROR STOP 31   ! processor dependent
+  IF ( T42  .NE.  r4Min_N/2.0 )        ERROR STOP 32
+  IF ( T43  .NE.  r4N_Zero )           ERROR STOP 33
+  IF ( T44  .NE.  r4P_Zero )           ERROR STOP 34
+  IF ( T43  .NE.  r4P_Zero )           ERROR STOP 35
+! IF ( T44  .NE.  r4Quiet_P_NaN )      ERROR STOP 36
 
-! IF ( T81  .NE.  r8Quiet_N_NaN )      STOP 41
-  IF ( T82  .NE.  r8Min_N/2. )         STOP 42
-  IF ( T83  .NE.  r8N_Zero )           STOP 43
-  IF ( T84  .NE.  r8P_Zero )           STOP 44
-  IF ( T83  .NE.  r8P_Zero )           STOP 45
-! IF ( T84  .NE.  r8Quiet_P_NaN )      STOP 46
+! IF ( T81  .NE.  r8Quiet_N_NaN )      ERROR STOP 41
+  IF ( T82  .NE.  r8Min_N/2. )         ERROR STOP 42
+  IF ( T83  .NE.  r8N_Zero )           ERROR STOP 43
+  IF ( T84  .NE.  r8P_Zero )           ERROR STOP 44
+  IF ( T83  .NE.  r8P_Zero )           ERROR STOP 45
+! IF ( T84  .NE.  r8Quiet_P_NaN )      ERROR STOP 46
 
 
   END

@@ -77,11 +77,11 @@
     CLASS is (Child(4))
       STOP 24
     TYPE IS (Child(4))
-      IF ( Var%BaseId       .NE. -1 ) STOP 31
-      IF ( Var%Base%BaseId  .NE. -1 ) STOP 32
-      IF ( Var%ChildId      .NE. -2 ) STOP 33
-      IF ( Var%Base%GetId() .NE. -1 ) STOP 34
-      IF ( Var%GetId()      .NE. -2 ) STOP 35
+      IF ( Var%BaseId       .NE. -1 ) ERROR STOP 31
+      IF ( Var%Base%BaseId  .NE. -1 ) ERROR STOP 32
+      IF ( Var%ChildId      .NE. -2 ) ERROR STOP 33
+      IF ( Var%Base%GetId() .NE. -1 ) ERROR STOP 34
+      IF ( Var%GetId()      .NE. -2 ) ERROR STOP 35
   END SELECT
 
 

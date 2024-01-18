@@ -48,15 +48,15 @@ use m
 
     call sub (o1, p1)
 
-    if ( allocated(o1) ) stop 21
+    if ( allocated(o1) ) error stop 21
 
-    if (.not. allocated(p1)) stop 22
+    if (.not. allocated(p1)) error stop 22
 
-    if (any(shape(p1) /= [2,2,2,2,2,2])) stop 23
+    if (any(shape(p1) /= [2,2,2,2,2,2])) error stop 23
 
     select type (p1)
         type is (character(*))
-            if (len(p1) /= 8) stop 24
+            if (len(p1) /= 8) error stop 24
 
         class default
             stop 25

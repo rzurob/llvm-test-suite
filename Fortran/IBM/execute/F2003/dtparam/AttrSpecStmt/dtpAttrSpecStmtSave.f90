@@ -97,27 +97,27 @@
 
   DO I=1, N
 
-    IF ( T0(I)%L0     .NE. 3         )  STOP 30
-    IF ( T1(I)%L0     .NE. 3         )  STOP 31
-    IF ( T1(I)%L1     .NE. 5         )  STOP 32
-    IF ( T2(I)%L0     .NE. 3         )  STOP 33
-    IF ( T2(I)%L1     .NE. 5         )  STOP 34
-    IF ( T2(I)%L2     .NE. 7         )  STOP 35
+    IF ( T0(I)%L0     .NE. 3         )  ERROR STOP 30
+    IF ( T1(I)%L0     .NE. 3         )  ERROR STOP 31
+    IF ( T1(I)%L1     .NE. 5         )  ERROR STOP 32
+    IF ( T2(I)%L0     .NE. 3         )  ERROR STOP 33
+    IF ( T2(I)%L1     .NE. 5         )  ERROR STOP 34
+    IF ( T2(I)%L2     .NE. 7         )  ERROR STOP 35
 
-    IF ( T1(I)%C1     .NE. "XYZ"     )  STOP 40
+    IF ( T1(I)%C1     .NE. "XYZ"     )  ERROR STOP 40
 
-    IF ( T2(I)%C1             .NE.   "XYZ"    )  STOP 51
-    IF ( T2(I)%C2             .NE.   "ZYX"    )  STOP 52
-    IF ( T2(I)%I              .NE.   1234     )  STOP 53
-    IF ( T2(I)%R              .NE.   4321.    )  STOP 54
-    IF ( T2(I)%L              .NEQV. .TRUE.   )  STOP 55
-    IF ( T2(I)%Z              .NE.   (1.,-1.) )  STOP 56
-    IF ( T2(I)%T0%K0          .NE.    8       )  STOP 57
-    IF ( T2(I)%T0%L0          .NE.    7       )  STOP 61
-    IF ( ASSOCIATED(T2(I)%Ptr).EQV.   .TRUE.  )  STOP 62
-    IF ( SIZE(T2(I)%T0)       .NE.    7       )  STOP 63
-    IF ( T2(I)%T0%K0          .NE.    8       )  STOP 64
-    IF ( T2(I)%T0%L0          .NE.    7       )  STOP 65
+    IF ( T2(I)%C1             .NE.   "XYZ"    )  ERROR STOP 51
+    IF ( T2(I)%C2             .NE.   "ZYX"    )  ERROR STOP 52
+    IF ( T2(I)%I              .NE.   1234     )  ERROR STOP 53
+    IF ( T2(I)%R              .NE.   4321.    )  ERROR STOP 54
+    IF ( T2(I)%L              .NEQV. .TRUE.   )  ERROR STOP 55
+    IF ( T2(I)%Z              .NE.   (1.,-1.) )  ERROR STOP 56
+    IF ( T2(I)%T0%K0          .NE.    8       )  ERROR STOP 57
+    IF ( T2(I)%T0%L0          .NE.    7       )  ERROR STOP 61
+    IF ( ASSOCIATED(T2(I)%Ptr).EQV.   .TRUE.  )  ERROR STOP 62
+    IF ( SIZE(T2(I)%T0)       .NE.    7       )  ERROR STOP 63
+    IF ( T2(I)%T0%K0          .NE.    8       )  ERROR STOP 64
+    IF ( T2(I)%T0%L0          .NE.    7       )  ERROR STOP 65
   END DO
 
   END IF

@@ -45,9 +45,9 @@ end module
 
         b1%p(b1%get_val():,b1%ent():) => b1%p(::2,::2)
 
-	if ( .not. associated(b1%p)) stop 12
-	if ( any (lbound(b1%p) .ne. (/ 9,20/))) stop 22
-	if ( any (ubound(b1%p) .ne. (/ 10,22/))) stop 32
+	if ( .not. associated(b1%p)) error stop 12
+	if ( any (lbound(b1%p) .ne. (/ 9,20/))) error stop 22
+	if ( any (ubound(b1%p) .ne. (/ 10,22/))) error stop 32
 
 	print *, b1%p
 	print *, product(b1%p,1), product(b1%p,2), product(b1%p)

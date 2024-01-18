@@ -38,11 +38,11 @@ program main
 
     p(get_lb():get_ub()) => p(::10)
 
-    if ( .not. associated(p)) stop 1
-    if ( lbound(p,1) /= -12) stop 2
-    if ( ubound(p,1) /= -3) stop 3
+    if ( .not. associated(p)) error stop 1
+    if ( lbound(p,1) /= -12) error stop 2
+    if ( ubound(p,1) /= -3) error stop 3
 
-    if ( .not. all(p .gt. (/(i-0.1, i=1,100,10)/))) stop 4
-    if (.not. precision_r4( p, (/(real(i,4), i=1,100,10)/))) stop 5
+    if ( .not. all(p .gt. (/(i-0.1, i=1,100,10)/))) error stop 4
+    if (.not. precision_r4( p, (/(real(i,4), i=1,100,10)/))) error stop 5
 
 end program

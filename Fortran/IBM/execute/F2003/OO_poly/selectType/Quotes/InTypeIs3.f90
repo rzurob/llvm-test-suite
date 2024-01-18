@@ -43,7 +43,7 @@
     TYPE IS (INTEGER(2))
       STOP 23
     TYPE IS (INTEGER)
-      IF ( Arg .NE. -1) STOP 21
+      IF ( Arg .NE. -1) ERROR STOP 21
     TYPE IS (INTEGER(8))
       STOP 24
     CLASS DEFAULT
@@ -56,9 +56,9 @@
     TYPE IS (INTEGER(2))
       STOP 23
     TYPE IS (INTEGER)
-      IF ( ANY(SHAPE(Arg) .NE. (/2,2/))) STOP 20
-      IF ( SIZE(Arg) .NE.  4)  STOP 20
-      IF ( Any(Arg   .NE. -1)) STOP 22
+      IF ( ANY(SHAPE(Arg) .NE. (/2,2/))) ERROR STOP 20
+      IF ( SIZE(Arg) .NE.  4)  ERROR STOP 20
+      IF ( Any(Arg   .NE. -1)) ERROR STOP 22
     TYPE IS (INTEGER(8))
       STOP 24
     CLASS DEFAULT

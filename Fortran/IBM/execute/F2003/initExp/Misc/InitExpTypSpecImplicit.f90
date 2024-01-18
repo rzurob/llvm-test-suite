@@ -56,23 +56,23 @@
   DIMENSION H(128)
   PARAMETER (H=(/(.FALSE., I=1, 128)/))
 
-  IF ( KIND(A) .NE. 1     ) STOP 11
-  IF ( ANY(A   .NE. Res ) ) STOP 12
-  IF ( KIND(B) .NE. 2     ) STOP 13
-  IF ( ANY(B   .NE. Res ) ) STOP 14
-  IF ( KIND(C) .NE. 4     ) STOP 15
-  IF ( ANY(C   .NE. Res ) ) STOP 16
-  IF ( KIND(D) .NE. 8     ) STOP 17
-  IF ( ANY(D   .NE. Res ) ) STOP 18
+  IF ( KIND(A) .NE. 1     ) ERROR STOP 11
+  IF ( ANY(A   .NE. Res ) ) ERROR STOP 12
+  IF ( KIND(B) .NE. 2     ) ERROR STOP 13
+  IF ( ANY(B   .NE. Res ) ) ERROR STOP 14
+  IF ( KIND(C) .NE. 4     ) ERROR STOP 15
+  IF ( ANY(C   .NE. Res ) ) ERROR STOP 16
+  IF ( KIND(D) .NE. 8     ) ERROR STOP 17
+  IF ( ANY(D   .NE. Res ) ) ERROR STOP 18
 
-  IF ( KIND(E) .NE. 1       )   STOP 21
-  IF ( ANY(E   .NEQV. LRes1 ) ) STOP 22
-  IF ( KIND(F) .NE. 2       )   STOP 23
-  IF ( ANY(F   .NEQV. LRes1 ) ) STOP 24
-  IF ( KIND(G) .NE. 4       )   STOP 25
-  IF ( ANY(G   .NEQV. LRes2 ) ) STOP 26
-  IF ( KIND(H) .NE. 8       )   STOP 27
-  IF ( ANY(H   .NEQV. LRes2 ) ) STOP 28
+  IF ( KIND(E) .NE. 1       )   ERROR STOP 21
+  IF ( ANY(E   .NEQV. LRes1 ) ) ERROR STOP 22
+  IF ( KIND(F) .NE. 2       )   ERROR STOP 23
+  IF ( ANY(F   .NEQV. LRes1 ) ) ERROR STOP 24
+  IF ( KIND(G) .NE. 4       )   ERROR STOP 25
+  IF ( ANY(G   .NEQV. LRes2 ) ) ERROR STOP 26
+  IF ( KIND(H) .NE. 8       )   ERROR STOP 27
+  IF ( ANY(H   .NEQV. LRes2 ) ) ERROR STOP 28
 
   END
 

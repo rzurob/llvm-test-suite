@@ -74,20 +74,20 @@ S2: SELECT TYPE (Ptr => S2 )
   ! CLASS IS (DT0)
   !   STOP 20
     CLASS IS (DT(*,8))
-        IF (ANY(Ptr(:,:)%IArr(1)  .NE. 1)) STOP 22
-        IF (ANY(Ptr(:,:)%IArr(2)  .NE. 2)) STOP 23
-        IF (ANY(Ptr(:,:)%GetInt(1).NE. 1)) STOP 24
-        IF (ANY(Ptr(:,:)%GetInt(2).NE. 2)) STOP 25
+        IF (ANY(Ptr(:,:)%IArr(1)  .NE. 1)) ERROR STOP 22
+        IF (ANY(Ptr(:,:)%IArr(2)  .NE. 2)) ERROR STOP 23
+        IF (ANY(Ptr(:,:)%GetInt(1).NE. 1)) ERROR STOP 24
+        IF (ANY(Ptr(:,:)%GetInt(2).NE. 2)) ERROR STOP 25
 
         Ptr%IArr(1) = -1
         Ptr%IArr(2) = -2
 
-        IF (SIZE(Ptr(2,2)%IArr)   .NE. 2)  STOP 30
-        IF (KIND(Ptr(2,2)%IArr)   .NE. 8)  STOP 31
-        IF (ANY(Ptr(:,:)%IArr(1)  .NE. -1)) STOP 32
-        IF (ANY(Ptr(:,:)%IArr(2)  .NE. -2)) STOP 33
-        IF (ANY(Ptr(:,:)%GetInt(1).NE. -1)) STOP 34
-        IF (ANY(Ptr(:,:)%GetInt(2).NE. -2)) STOP 35
+        IF (SIZE(Ptr(2,2)%IArr)   .NE. 2)  ERROR STOP 30
+        IF (KIND(Ptr(2,2)%IArr)   .NE. 8)  ERROR STOP 31
+        IF (ANY(Ptr(:,:)%IArr(1)  .NE. -1)) ERROR STOP 32
+        IF (ANY(Ptr(:,:)%IArr(2)  .NE. -2)) ERROR STOP 33
+        IF (ANY(Ptr(:,:)%GetInt(1).NE. -1)) ERROR STOP 34
+        IF (ANY(Ptr(:,:)%GetInt(2).NE. -2)) ERROR STOP 35
 
         DEALLOCATE (Ptr) ! test the allocate attribute
 

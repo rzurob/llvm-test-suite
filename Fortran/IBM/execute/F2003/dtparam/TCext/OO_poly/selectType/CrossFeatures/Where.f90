@@ -46,14 +46,14 @@
   SELECT TYPE (U)
   CLASS IS (DT(*,4))
 
-    IF (ANY(U%Cplx .NE. (-1.0, 1.0))) STOP 20
-    IF (ANY(SHAPE(U).NE. (/16/))) STOP 21
+    IF (ANY(U%Cplx .NE. (-1.0, 1.0))) ERROR STOP 20
+    IF (ANY(SHAPE(U).NE. (/16/))) ERROR STOP 21
 
     WHERE ( U%Cplx .EQ. (-1.0,1.0))
       U%Cplx = (1.0, -1.0)
     END WHERE
 
-    IF (ANY(U%Cplx .NE. (1.0, -1.0))) STOP 22
+    IF (ANY(U%Cplx .NE. (1.0, -1.0))) ERROR STOP 22
 
   CLASS DEFAULT
     STOP 40

@@ -31,7 +31,7 @@ module m
            class(extend), intent(inout) :: out
            real, target, allocatable, intent(in) :: in(:)
 
-           if ( .not. allocated(in)) stop 11
+           if ( .not. allocated(in)) error stop 11
 
 	   out%p(ubound(in,1):) => in(ubound(in,1):lbound(in,1):-2)
        end subroutine

@@ -89,13 +89,13 @@
   SELECT TYPE ( V =>UFun(UArg) )
   CLASS IS (DT(4,*))
 
-    IF (TRIM(V%C0) .NE. "0") STOP 30
-    IF (TRIM(V%C1) .NE. "1") STOP 31
-    IF (TRIM(V%C2) .NE. "2") STOP 32
+    IF (TRIM(V%C0) .NE. "0") ERROR STOP 30
+    IF (TRIM(V%C1) .NE. "1") ERROR STOP 31
+    IF (TRIM(V%C2) .NE. "2") ERROR STOP 32
 
-    IF (TRIM(V%DT0%GetChar()) .NE. "0") STOP 40
-    IF (TRIM(V%DT1%GetChar()) .NE. "1") STOP 41
-    IF (TRIM(V%GetChar())     .NE. "2") STOP 42
+    IF (TRIM(V%DT0%GetChar()) .NE. "0") ERROR STOP 40
+    IF (TRIM(V%DT1%GetChar()) .NE. "1") ERROR STOP 41
+    IF (TRIM(V%GetChar())     .NE. "2") ERROR STOP 42
 
   CLASS DEFAULT
     STOP 50

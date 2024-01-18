@@ -79,18 +79,18 @@
   DO I =1, N-90
   DO J =I, N-90
     Ptr(I:, J:) => T11 + T12
-    IF (.NOT. ASSOCIATED(Ptr))                   STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
-    IF (LEN(Ptr)         .NE. 15)                STOP 14
-    IF (ANY( Ptr         .NE.  C1//C2 ))         STOP 15
+    IF (.NOT. ASSOCIATED(Ptr))                   ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) ERROR STOP 13
+    IF (LEN(Ptr)         .NE. 15)                ERROR STOP 14
+    IF (ANY( Ptr         .NE.  C1//C2 ))         ERROR STOP 15
 
     Ptr(I:J, I:J) => T21 + T22
-    IF (.NOT. ASSOCIATED(Ptr))                 STOP 21
-    IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      STOP 22
-    IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      STOP 23
-    IF (LEN(Ptr)         .NE. 15)              STOP 24
-    IF (ANY( Ptr         .NE.  C1//C2 ))       STOP 25
+    IF (.NOT. ASSOCIATED(Ptr))                 ERROR STOP 21
+    IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      ERROR STOP 22
+    IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      ERROR STOP 23
+    IF (LEN(Ptr)         .NE. 15)              ERROR STOP 24
+    IF (ANY( Ptr         .NE.  C1//C2 ))       ERROR STOP 25
 
   END DO
   END DO

@@ -109,26 +109,26 @@
   U = T(20,4)(-1, MFun)
 
   DO I  = 1, 10000
-    IF ( U(I)%Id .NE. -1 )                             STOP 22
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, MFun) )        STOP 23
-    IF ( ANY(U(I)%ProcPtr((/1,2,3/)) .NE. (/1,2,3/) )) STOP 24
+    IF ( U(I)%Id .NE. -1 )                             ERROR STOP 22
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, MFun) )        ERROR STOP 23
+    IF ( ANY(U(I)%ProcPtr((/1,2,3/)) .NE. (/1,2,3/) )) ERROR STOP 24
   END DO
 
   Ptr => EFun
   U = Ptr( (/(T(20,4)(-I, MFun), I=1, 10000) /) )
 
   DO I  = 1, 10000
-    IF ( U(I)%Id .NE. -I )                       STOP 32
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, MFun) )  STOP 33
-    IF ( ANY(U(I)%ProcPtr((/1,2,3/)) .NE. (/1,2,3/) )) STOP 34
+    IF ( U(I)%Id .NE. -I )                       ERROR STOP 32
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, MFun) )  ERROR STOP 33
+    IF ( ANY(U(I)%ProcPtr((/1,2,3/)) .NE. (/1,2,3/) )) ERROR STOP 34
   END DO
 
   V1 = ExtFun((/T(20,4)(-1, MFun),T(20,4)(-1, MFun), T(20,4)(-1, MFun)/))
   V2 = EFun((/T(20,4)(-1, MFun),T(20,4)(-1, MFun), T(20,4)(-1, MFun)/))
 
   DO I = 1,3
-    IF ( V1(I)%ID .NE. V2(I)%ID )  STOP 44
-    IF ( .NOT. ASSOCIATED(V1(I)%ProcPtr, V2(I)%ProcPtr)  )  STOP 45
+    IF ( V1(I)%ID .NE. V2(I)%ID )  ERROR STOP 44
+    IF ( .NOT. ASSOCIATED(V1(I)%ProcPtr, V2(I)%ProcPtr)  )  ERROR STOP 45
   END DO
 
   END

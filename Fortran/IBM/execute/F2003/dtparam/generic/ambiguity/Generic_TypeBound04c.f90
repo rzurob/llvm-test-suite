@@ -107,34 +107,34 @@
 
 !* call to sub1
       CALL c1%SUB(b1)
-      IF ( b1%tag .NE. '1' ) STOP 10
+      IF ( b1%tag .NE. '1' ) ERROR STOP 10
       CALL c1%SUB(c1)
-      IF ( c1%tag .NE. '1' ) STOP 11
+      IF ( c1%tag .NE. '1' ) ERROR STOP 11
       CALL c1%SUB(n2)
-      IF ( n2%tag .NE. '1' ) STOP 12
+      IF ( n2%tag .NE. '1' ) ERROR STOP 12
 
       CALL poly_c1%SUB(poly_b1)
-      IF ( poly_b1%tag .NE. '1' ) STOP 13
+      IF ( poly_b1%tag .NE. '1' ) ERROR STOP 13
       CALL poly_c1%SUB(b1)
-      IF ( b1%tag .NE. '1' ) STOP 14
+      IF ( b1%tag .NE. '1' ) ERROR STOP 14
       CALL poly_c1%SUB(poly_c1)
-      IF ( poly_c1%tag .NE. '1' ) STOP 15
+      IF ( poly_c1%tag .NE. '1' ) ERROR STOP 15
       CALL poly_c1%SUB(poly_n2)
-      IF ( poly_n2%tag .NE. '1' ) STOP 16
+      IF ( poly_n2%tag .NE. '1' ) ERROR STOP 16
 
 !* call to sub2
       CALL n2%SUB(b1)
-      IF ( b1%tag .NE. '2' ) STOP 17
+      IF ( b1%tag .NE. '2' ) ERROR STOP 17
       CALL n2%SUB(c1)
-      IF ( c1%tag .NE. '2' ) STOP 18
+      IF ( c1%tag .NE. '2' ) ERROR STOP 18
       CALL n2%SUB(n2)
-      IF ( n2%tag .NE. '2' ) STOP 19
+      IF ( n2%tag .NE. '2' ) ERROR STOP 19
 
       CALL poly_n2%SUB(poly_b1)
-      IF ( poly_b1%tag .NE. '2' ) STOP 20
+      IF ( poly_b1%tag .NE. '2' ) ERROR STOP 20
       CALL poly_n2%SUB(poly_c1)
-      IF ( poly_b1%tag .NE. '2' ) STOP 21
+      IF ( poly_b1%tag .NE. '2' ) ERROR STOP 21
       CALL poly_n2%SUB(poly_n2)
-      IF ( poly_n2%tag .NE. '2' ) STOP 22
+      IF ( poly_n2%tag .NE. '2' ) ERROR STOP 22
 
       END PROGRAM Generic_TypeBound04c

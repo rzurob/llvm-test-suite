@@ -65,7 +65,7 @@ PROGRAM allocExtPoly01
     CLASS(ext(8,5,6)), ALLOCATABLE, TARGET :: extAlloc
 
 
-    IF ( ASSOCIATED( extPtr ) )                         STOP 10
+    IF ( ASSOCIATED( extPtr ) )                         ERROR STOP 10
 
 
     ALLOCATE(extPtr, STAT=stat, ERRMSG=errmsg)
@@ -75,28 +75,28 @@ PROGRAM allocExtPoly01
     END IF
 
 
-    IF (.NOT. ASSOCIATED( extPtr ))                     STOP 21
+    IF (.NOT. ASSOCIATED( extPtr ))                     ERROR STOP 21
 
-    IF (extPtr%k1 /= 8)                                 STOP 22
-    IF (KIND( extPtr%stuff ) /= 8)                      STOP 23
+    IF (extPtr%k1 /= 8)                                 ERROR STOP 22
+    IF (KIND( extPtr%stuff ) /= 8)                      ERROR STOP 23
 
-    IF (extPtr%l1 /= 5)                                 STOP 24
-    IF (extPtr%l2 /= 6)                                 STOP 25
+    IF (extPtr%l1 /= 5)                                 ERROR STOP 24
+    IF (extPtr%l2 /= 6)                                 ERROR STOP 25
 
-    IF (LEN( extPtr%typeOfStuff ) /= 5)                 STOP 26
-    IF ( ANY(SHAPE( extPtr%moreStuff ) /= [ 5,0 ]) )    STOP 27
+    IF (LEN( extPtr%typeOfStuff ) /= 5)                 ERROR STOP 26
+    IF ( ANY(SHAPE( extPtr%moreStuff ) /= [ 5,0 ]) )    ERROR STOP 27
 
 
     DEALLOCATE( extPtr )
 
-    IF ( ASSOCIATED( extPtr ) )                         STOP 30
+    IF ( ASSOCIATED( extPtr ) )                         ERROR STOP 30
 
 
 
     extPtr => extAlloc
 
-    IF ( ALLOCATED( extAlloc ) )                        STOP 40
-    IF (.NOT. ASSOCIATED( extPtr ))                     STOP 41
+    IF ( ALLOCATED( extAlloc ) )                        ERROR STOP 40
+    IF (.NOT. ASSOCIATED( extPtr ))                     ERROR STOP 41
 
 
     ALLOCATE(extAlloc, STAT=stat, ERRMSG=errmsg)
@@ -105,34 +105,34 @@ PROGRAM allocExtPoly01
         STOP 50
     END IF
 
-    IF (.NOT. ALLOCATED( extAlloc ))                    STOP 51
+    IF (.NOT. ALLOCATED( extAlloc ))                    ERROR STOP 51
 
-    IF (extAlloc%k1 /= 8)                               STOP 52
-    IF (KIND( extAlloc%stuff ) /= 8)                    STOP 53
+    IF (extAlloc%k1 /= 8)                               ERROR STOP 52
+    IF (KIND( extAlloc%stuff ) /= 8)                    ERROR STOP 53
 
-    IF (extAlloc%l1 /= 5)                               STOP 54
-    IF (extAlloc%l2 /= 6)                               STOP 55
+    IF (extAlloc%l1 /= 5)                               ERROR STOP 54
+    IF (extAlloc%l2 /= 6)                               ERROR STOP 55
 
-    IF (LEN( extAlloc%typeOfStuff ) /= 5)               STOP 56
-    IF ( ANY(SHAPE( extAlloc%moreStuff ) /= [ 5,0 ]) )  STOP 57
+    IF (LEN( extAlloc%typeOfStuff ) /= 5)               ERROR STOP 56
+    IF ( ANY(SHAPE( extAlloc%moreStuff ) /= [ 5,0 ]) )  ERROR STOP 57
 
 
-    IF (.NOT. ASSOCIATED( extPtr ))                     STOP 61
+    IF (.NOT. ASSOCIATED( extPtr ))                     ERROR STOP 61
 
-    IF (extPtr%k1 /= 8)                                 STOP 62
-    IF (KIND( extPtr%stuff ) /= 8)                      STOP 63
+    IF (extPtr%k1 /= 8)                                 ERROR STOP 62
+    IF (KIND( extPtr%stuff ) /= 8)                      ERROR STOP 63
 
-    IF (extPtr%l1 /= 5)                                 STOP 64
-    IF (extPtr%l2 /= 6)                                 STOP 65
+    IF (extPtr%l1 /= 5)                                 ERROR STOP 64
+    IF (extPtr%l2 /= 6)                                 ERROR STOP 65
 
-    IF (LEN( extPtr%typeOfStuff ) /= 5)                 STOP 66
-    IF ( ANY(SHAPE( extPtr%moreStuff ) /= [ 5,0 ]) )    STOP 67
+    IF (LEN( extPtr%typeOfStuff ) /= 5)                 ERROR STOP 66
+    IF ( ANY(SHAPE( extPtr%moreStuff ) /= [ 5,0 ]) )    ERROR STOP 67
 
 
     DEALLOCATE( extAlloc )
 
-    IF ( ALLOCATED( extAlloc ) )                        STOP 70
-    IF (.NOT. ASSOCIATED( extPtr ))                     STOP 71
+    IF ( ALLOCATED( extAlloc ) )                        ERROR STOP 70
+    IF (.NOT. ASSOCIATED( extPtr ))                     ERROR STOP 71
 
 
     ALLOCATE(extPtr, STAT=stat, ERRMSG=errmsg)
@@ -141,24 +141,24 @@ PROGRAM allocExtPoly01
         STOP 80
     END IF
 
-    IF ( ALLOCATED( extAlloc ) )                        STOP 81
+    IF ( ALLOCATED( extAlloc ) )                        ERROR STOP 81
 
 
-    IF (.NOT. ASSOCIATED( extPtr ))                     STOP 91
+    IF (.NOT. ASSOCIATED( extPtr ))                     ERROR STOP 91
 
-    IF (extPtr%k1 /= 8)                                 STOP 92
-    IF (KIND( extPtr%stuff ) /= 8)                      STOP 93
+    IF (extPtr%k1 /= 8)                                 ERROR STOP 92
+    IF (KIND( extPtr%stuff ) /= 8)                      ERROR STOP 93
 
-    IF (extPtr%l1 /= 5)                                 STOP 94
-    IF (extPtr%l2 /= 6)                                 STOP 95
+    IF (extPtr%l1 /= 5)                                 ERROR STOP 94
+    IF (extPtr%l2 /= 6)                                 ERROR STOP 95
 
-    IF (LEN( extPtr%typeOfStuff ) /= 5)                 STOP 96
-    IF ( ANY(SHAPE( extPtr%moreStuff ) /= [ 5,0 ]) )    STOP 97
+    IF (LEN( extPtr%typeOfStuff ) /= 5)                 ERROR STOP 96
+    IF ( ANY(SHAPE( extPtr%moreStuff ) /= [ 5,0 ]) )    ERROR STOP 97
 
 
     DEALLOCATE( extPtr )
 
-    IF ( ALLOCATED( extAlloc ) )                        STOP 100
-    IF ( ASSOCIATED( extPtr ) )                         STOP 101
+    IF ( ALLOCATED( extAlloc ) )                        ERROR STOP 100
+    IF ( ASSOCIATED( extPtr ) )                         ERROR STOP 101
 
 END PROGRAM allocExtPoly01

@@ -39,19 +39,19 @@ program main
 
     ptr(-2:) => from(1:10:2)
 
-    if ( .not. associated(ptr, from(1:10:2))) stop 5
+    if ( .not. associated(ptr, from(1:10:2))) error stop 5
 
     call move_alloc(from, to)
 
-    if ( allocated(from) ) stop 11
-    if ( .not. allocated(to) ) stop 13
-    if ( .not. associated(ptr, to(1:10:2))) stop 17
-    if ( lbound(ptr,1) /= -2) stop 18
-    if ( ubound(ptr,1) /= 2) stop 19
+    if ( allocated(from) ) error stop 11
+    if ( .not. allocated(to) ) error stop 13
+    if ( .not. associated(ptr, to(1:10:2))) error stop 17
+    if ( lbound(ptr,1) /= -2) error stop 18
+    if ( ubound(ptr,1) /= 2) error stop 19
 
     select type(ptr)
 	type is (B)
-            if (any( ptr%id .ne. (/(i, i=1,10,2)/))) stop 19
+            if (any( ptr%id .ne. (/(i, i=1,10,2)/))) error stop 19
 
 	class default
   	    stop 26

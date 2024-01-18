@@ -27,7 +27,7 @@ use m
 
         allocate(a, source='lowhight')
 
-        if ( func(a) /= 'lowhight' ) stop 21
+        if ( func(a) /= 'lowhight' ) error stop 21
 
 end
     	    character(8) function func(a)
@@ -41,7 +41,7 @@ end
                 call move_alloc(a, func)
 
 		if ( allocated(func) ) then
-		   if ( .not. associated(p, func) ) stop 23
+		   if ( .not. associated(p, func) ) error stop 23
 		else
                    stop 25
 		endif

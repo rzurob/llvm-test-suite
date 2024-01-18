@@ -123,31 +123,31 @@
   DO I=1, N
   DO J=1, N
 
-    IF ( T0(I,J)%ModFun0()              .NE. T0(I,J)%L0    ) STOP 9
-    IF ( ANY( T1(I,J)%R                      .NE. C1%R(1)       ) ) STOP 10
-    IF ( ANY( T1(I,J)%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 11
+    IF ( T0(I,J)%ModFun0()              .NE. T0(I,J)%L0    ) ERROR STOP 9
+    IF ( ANY( T1(I,J)%R                      .NE. C1%R(1)       ) ) ERROR STOP 10
+    IF ( ANY( T1(I,J)%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 11
 
-    IF ( ANY( T2(I,J)%R .NE. [1,2,3,4,5]           ) ) STOP 12
-    IF ( ANY( T2(I,J)%I .NE. C2%I(1)               ) ) STOP 13
-    IF ( ANY( T2(I,J)%C .NE. CHAR(1)               ) ) STOP 14
-    IF ( ASSOCIATED(T2(I,J)%Ptr ) )               STOP 15
+    IF ( ANY( T2(I,J)%R .NE. [1,2,3,4,5]           ) ) ERROR STOP 12
+    IF ( ANY( T2(I,J)%I .NE. C2%I(1)               ) ) ERROR STOP 13
+    IF ( ANY( T2(I,J)%C .NE. CHAR(1)               ) ) ERROR STOP 14
+    IF ( ASSOCIATED(T2(I,J)%Ptr ) )               ERROR STOP 15
 
     IArr = T2(I,J)%ModFun2()
-    IF ( ANY( IArr .NE. -1   ) ) STOP 16
-    IF ( ANY( T2(I,J)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 17
+    IF ( ANY( IArr .NE. -1   ) ) ERROR STOP 16
+    IF ( ANY( T2(I,J)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 17
 
-    IF ( S0(I,J)%ModFun0()              .NE. S0(I,J)%L0    ) STOP 19
-    IF ( ANY( S1(I,J)%R                      .NE. C1%R          ) ) STOP 20
-    IF ( ANY( S1(I,J)%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 21
+    IF ( S0(I,J)%ModFun0()              .NE. S0(I,J)%L0    ) ERROR STOP 19
+    IF ( ANY( S1(I,J)%R                      .NE. C1%R          ) ) ERROR STOP 20
+    IF ( ANY( S1(I,J)%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 21
 
-    IF ( ANY( S2(I,J)%R .NE. [1,2,3,4,5]           ) ) STOP 22
-    IF ( ANY( S2(I,J)%I .NE. C2%I                  ) ) STOP 23
-    IF ( ANY( S2(I,J)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) STOP 24
-    IF (  ASSOCIATED(S2(I,J)%Ptr) )                STOP 25
+    IF ( ANY( S2(I,J)%R .NE. [1,2,3,4,5]           ) ) ERROR STOP 22
+    IF ( ANY( S2(I,J)%I .NE. C2%I                  ) ) ERROR STOP 23
+    IF ( ANY( S2(I,J)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) ERROR STOP 24
+    IF (  ASSOCIATED(S2(I,J)%Ptr) )                ERROR STOP 25
 
     IArr = S2(I,J)%ModFun2()
-    IF ( ANY( IArr .NE. [-1,-2,-3,-4,-5,-6,-7]   ) ) STOP 26
-    IF ( ANY( ModFun1(D1(1,-3,4,-5)(0)) .NE. [(1,-3),(4,-5)] ) ) STOP 27
+    IF ( ANY( IArr .NE. [-1,-2,-3,-4,-5,-6,-7]   ) ) ERROR STOP 26
+    IF ( ANY( ModFun1(D1(1,-3,4,-5)(0)) .NE. [(1,-3),(4,-5)] ) ) ERROR STOP 27
 
   END DO
   END DO

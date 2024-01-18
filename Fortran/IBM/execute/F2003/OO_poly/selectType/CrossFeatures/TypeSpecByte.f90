@@ -45,14 +45,14 @@ S2: SELECT TYPE (U => S2 )
       STOP 20
     TYPE IS (BYTE)
 
-        IF (SIZE(U)       .NE. 8)            STOP 30
-        IF (ANY(SHAPE(U)  .NE. (/2,2,2/) ))  STOP 31
-        IF (KIND(U)       .NE. 1)            STOP 32
-        IF (ANY(U         .NE. -1))          STOP 33
+        IF (SIZE(U)       .NE. 8)            ERROR STOP 30
+        IF (ANY(SHAPE(U)  .NE. (/2,2,2/) ))  ERROR STOP 31
+        IF (KIND(U)       .NE. 1)            ERROR STOP 32
+        IF (ANY(U         .NE. -1))          ERROR STOP 33
 
         U = -2
 
-        IF (ANY(U    .NE. -2))   STOP 34
+        IF (ANY(U    .NE. -2))   ERROR STOP 34
 
     END SELECT S2
     END SELECT S1

@@ -23,11 +23,11 @@ end type
 type(dt(20,4)) :: x(10), y(5)
 allocate(y(foo())%i(2:3))
 x(foo())%i = y(foo())%i
-if (.not. allocated(x(foo())%i)) stop 1
-if (any(shape(x(foo())%i) .ne. (/2/))) stop 2
-if (lbound(x(foo())%i,1) /= 2) stop 3
-if (ubound(x(foo())%i,1) /= 3) stop 4
-if (count /= 7) stop 5
+if (.not. allocated(x(foo())%i)) error stop 1
+if (any(shape(x(foo())%i) .ne. (/2/))) error stop 2
+if (lbound(x(foo())%i,1) /= 2) error stop 3
+if (ubound(x(foo())%i,1) /= 3) error stop 4
+if (count /= 7) error stop 5
 contains
   integer function foo()
     foo = 2

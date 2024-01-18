@@ -198,7 +198,7 @@ PROGRAM streamReadWrite02
 
 
     iostat = e%ReadE(e, 11)
-    IF (iostat /= 0) STOP 20
+    IF (iostat /= 0) ERROR STOP 20
 
     REWIND(11, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
@@ -211,8 +211,8 @@ PROGRAM streamReadWrite02
     PRINT *, 'e%eB%i1 =', e%eB%i1
     PRINT *
 
-    IF ( ANY(e%i1 /= bA) ) STOP 30
-    IF ( ANY(e%eB%i1 /= eA) ) STOP 31
+    IF ( ANY(e%i1 /= bA) ) ERROR STOP 30
+    IF ( ANY(e%eB%i1 /= eA) ) ERROR STOP 31
 
 
     WRITE(11, IOSTAT=iostat, IOMSG=iomsg)&
@@ -230,7 +230,7 @@ PROGRAM streamReadWrite02
 
 
     iostat = e%WriteE(e, 11)
-    IF (iostat /= 0) STOP 50
+    IF (iostat /= 0) ERROR STOP 50
 
     REWIND(11, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
@@ -255,7 +255,7 @@ PROGRAM streamReadWrite02
     PRINT *, 'cbA =', cbA
     PRINT *, 'ceA =', ceA
 
-    IF ( ANY(cbA /= bA) ) STOP 70
-    IF ( ANY(ceA /= eA) ) STOP 71
+    IF ( ANY(cbA /= bA) ) ERROR STOP 70
+    IF ( ANY(ceA /= eA) ) ERROR STOP 71
 
 END PROGRAM streamReadWrite02

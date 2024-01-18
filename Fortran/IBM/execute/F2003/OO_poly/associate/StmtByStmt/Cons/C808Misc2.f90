@@ -51,7 +51,7 @@
     TYPE(Base), PARAMETER :: V = Base(1)
 
     ASSOCIATE ( As => V)
-      IF ( As%GetId() .NE. 1 ) STOP 11
+      IF ( As%GetId() .NE. 1 ) ERROR STOP 11
     END ASSOCIATE
 
   END

@@ -89,7 +89,7 @@
   SUBROUTINE IntSub(Arg1, Arg2)
   PROCEDURE(ModFun1), POINTER :: Arg1
   PROCEDURE(ModFun2)          :: Arg2
-      IF ( .NOT. ASSOCIATED(Arg1, Arg2))  STOP 66
+      IF ( .NOT. ASSOCIATED(Arg1, Arg2))  ERROR STOP 66
   END SUBROUTINE
 
   END

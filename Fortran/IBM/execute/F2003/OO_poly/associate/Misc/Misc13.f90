@@ -33,9 +33,9 @@
 
    SELECT TYPE (Arg)
    TYPE IS (Integer)
-     IF( ANY(LBOUND(Arg) .NE. (/3/)) ) STOP 30
+     IF( ANY(LBOUND(Arg) .NE. (/3/)) ) ERROR STOP 30
      ASSOCIATE ( As => Arg )
-       IF( ANY(LBOUND(As) .NE. (/3/)) ) STOP 31
+       IF( ANY(LBOUND(As) .NE. (/3/)) ) ERROR STOP 31
      END ASSOCIATE
    END SELECT
 

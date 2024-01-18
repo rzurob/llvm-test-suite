@@ -63,10 +63,10 @@
        STOP 47
     CLASS IS (Three(4,*))
 
-      IF ( SIZE(U)          .NE. 4 )          STOP 31
-      IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
-      IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
-      IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   STOP 34
+      IF ( SIZE(U)          .NE. 4 )          ERROR STOP 31
+      IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) ERROR STOP 32
+      IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) ERROR STOP 33
+      IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   ERROR STOP 34
 
     CLASS DEFAULT
        STOP 46

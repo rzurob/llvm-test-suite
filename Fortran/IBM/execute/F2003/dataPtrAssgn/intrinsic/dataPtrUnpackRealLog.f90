@@ -31,15 +31,15 @@
 
 	call sub(a1%vP)
 
-	if ( .not. associated(a1%vP)) stop 21
-	if ( any ( lbound(a1%vp,1) .ne. (/10/))) stop 23
-	if ( any ( ubound(a1%vp,1) .ne. (/19/))) stop 25
+	if ( .not. associated(a1%vP)) error stop 21
+	if ( any ( lbound(a1%vp,1) .ne. (/10/))) error stop 23
+	if ( any ( ubound(a1%vp,1) .ne. (/19/))) error stop 25
 
 	mask(3:5, -1:1) => mask_t
 
-	if ( .not. associated(a1%vP)) stop 31
-	if ( any ( lbound(mask) .ne. (/3,-1/))) stop 33
-	if ( any ( ubound(mask) .ne. (/5,1/))) stop 35
+	if ( .not. associated(a1%vP)) error stop 31
+	if ( any ( lbound(mask) .ne. (/3,-1/))) error stop 33
+	if ( any ( ubound(mask) .ne. (/5,1/))) error stop 35
 
 	write (*, '(3f12.6)') unpack(vector=a1%vp, field=a1%fp, mask=mask)
 

@@ -245,7 +245,7 @@
   & A98 .NE. 1_8 .OR. &
   & A99 .NE. 1_8      &
   &                   &
-  & ) STOP 33
+  & ) ERROR STOP 33
 
 
   END ASSOCIATE

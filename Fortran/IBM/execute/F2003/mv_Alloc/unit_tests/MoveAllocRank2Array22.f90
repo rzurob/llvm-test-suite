@@ -24,7 +24,7 @@ contains
   subroutine foo(x, y)
     class(dt) :: x
     integer :: y
-    if (x%i /= y) stop 10
+    if (x%i /= y) error stop 10
   end subroutine
 
   subroutine finalproc(a)
@@ -59,12 +59,12 @@ do count = lbound(b,1), ubound(b,1)
     call b(count,count2)%foo(10)
   end do
 end do
-if (finalcount /= 0) stop 1
+if (finalcount /= 0) error stop 1
 call move_alloc(a,b)
-if (finalcount /= 1) stop 2
-if (allocated(a)) stop 3
-if (.not.allocated(b)) stop 4
-if (.not.associated(p,b)) stop 5
+if (finalcount /= 1) error stop 2
+if (allocated(a)) error stop 3
+if (.not.allocated(b)) error stop 4
+if (.not.associated(p,b)) error stop 5
 do count = lbound(b,1), ubound(b,1)
   do count2 = lbound(b,2), ubound(b,2)
     call b(count,count2)%foo(5)
@@ -75,5 +75,5 @@ do count = lbound(p,1), ubound(p,1)
     call p(count,count2)%foo(5)
   end do
 end do
-if (finalcount /= 1) stop 6
+if (finalcount /= 1) error stop 6
 end

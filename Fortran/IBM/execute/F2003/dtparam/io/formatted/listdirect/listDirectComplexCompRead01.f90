@@ -116,21 +116,21 @@ use m2
 
   select type(x=>t1)
      type is(child(4,*,8,*))
-        if(.not. precision_x8(x(2)%x1(1),(-3.5E-3,2.4E1)))  stop 11
-        if(.not. precision_x8(x(2)%x1(2),(7.6,2.3)))        stop 12
-        if(.not. precision_x8(x(2)%x1(3),(15.0,-3.2)))      stop 13
-        if(.not. precision_x6(x(2)%x2,(-3.6D-099,4.2D99)))  stop 14
-        if(.not. precision_x3(x(2)%x3(3),(1.1Q-108,-0.1Q-27)))  stop 15
-        if(.not. precision_x3(x(2)%x3(4),(1.1Q-108,-0.1Q-27)))  stop 16
-        if(.not. precision_x3(x(2)%x3(5),(0._16,0._16)))    stop 17
+        if(.not. precision_x8(x(2)%x1(1),(-3.5E-3,2.4E1)))  error stop 11
+        if(.not. precision_x8(x(2)%x1(2),(7.6,2.3)))        error stop 12
+        if(.not. precision_x8(x(2)%x1(3),(15.0,-3.2)))      error stop 13
+        if(.not. precision_x6(x(2)%x2,(-3.6D-099,4.2D99)))  error stop 14
+        if(.not. precision_x3(x(2)%x3(3),(1.1Q-108,-0.1Q-27)))  error stop 15
+        if(.not. precision_x3(x(2)%x3(4),(1.1Q-108,-0.1Q-27)))  error stop 16
+        if(.not. precision_x3(x(2)%x3(5),(0._16,0._16)))    error stop 17
 
-        if(.not. precision_x8(x(3)%x1(1),(9.9_4,-9.9_4)))    stop 18
-        if(.not. precision_x8(x(3)%x1(2),(1.2E-1,2.1E-1)))   stop 19
-        if(.not. precision_x8(x(3)%x1(3),(3.1_4,-4.1_4)))    stop 20
-        if(.not. precision_x6(x(3)%x2,(3.1_8,-4.1_8)))       stop 21
-        if(.not. precision_x3(x(3)%x3(3),(3.1_16,-4.1_16)))  stop 22
-        if(.not. precision_x3(x(3)%x3(4),(0._16,0._16)))     stop 23
-        if(.not. precision_x3(x(3)%x3(5),(5.4Q-1,-3.5Q12)))  stop 24
+        if(.not. precision_x8(x(3)%x1(1),(9.9_4,-9.9_4)))    error stop 18
+        if(.not. precision_x8(x(3)%x1(2),(1.2E-1,2.1E-1)))   error stop 19
+        if(.not. precision_x8(x(3)%x1(3),(3.1_4,-4.1_4)))    error stop 20
+        if(.not. precision_x6(x(3)%x2,(3.1_8,-4.1_8)))       error stop 21
+        if(.not. precision_x3(x(3)%x3(3),(3.1_16,-4.1_16)))  error stop 22
+        if(.not. precision_x3(x(3)%x3(4),(0._16,0._16)))     error stop 23
+        if(.not. precision_x3(x(3)%x3(5),(5.4Q-1,-3.5Q12)))  error stop 24
 
      class default
         stop 15
@@ -139,21 +139,21 @@ use m2
   select type(x=>t2)
      type is(child(4,*,8,*))
 
-        if(.not. precision_x8(x(-1)%x1(1),(-3.5E-3,2.4E1)))  stop 25
-        if(.not. precision_x8(x(-1)%x1(2),(7.6,2.3)))        stop 26
-        if(.not. precision_x8(x(-1)%x1(3),(15.0,-3.2)))      stop 27
-        if(.not. precision_x6(x(-1)%x2,(-3.6D-099,4.2D99)))  stop 28
-        if(.not. precision_x3(x(-1)%x3(3),(1.1Q-108,-0.1Q-27)))  stop 29
-        if(.not. precision_x3(x(-1)%x3(4),(1.1Q-108,-0.1Q-27)))  stop 30
-        if(.not. precision_x3(x(-1)%x3(5),(0._16,0._16)))    stop 31
+        if(.not. precision_x8(x(-1)%x1(1),(-3.5E-3,2.4E1)))  error stop 25
+        if(.not. precision_x8(x(-1)%x1(2),(7.6,2.3)))        error stop 26
+        if(.not. precision_x8(x(-1)%x1(3),(15.0,-3.2)))      error stop 27
+        if(.not. precision_x6(x(-1)%x2,(-3.6D-099,4.2D99)))  error stop 28
+        if(.not. precision_x3(x(-1)%x3(3),(1.1Q-108,-0.1Q-27)))  error stop 29
+        if(.not. precision_x3(x(-1)%x3(4),(1.1Q-108,-0.1Q-27)))  error stop 30
+        if(.not. precision_x3(x(-1)%x3(5),(0._16,0._16)))    error stop 31
 
-        if(.not. precision_x8(x(0)%x1(1),(9.9_4,-9.9_4)))    stop 32
-        if(.not. precision_x8(x(0)%x1(2),(1.2E-1,2.1E-1)))   stop 33
-        if(.not. precision_x8(x(0)%x1(3),(3.1_4,-4.1_4)))    stop 34
-        if(.not. precision_x6(x(0)%x2,(3.1_8,-4.1_8)))       stop 35
-        if(.not. precision_x3(x(0)%x3(3),(3.1_16,-4.1_16)))  stop 36
-        if(.not. precision_x3(x(0)%x3(4),(0._16,0._16)))     stop 37
-        if(.not. precision_x3(x(0)%x3(5),(5.4Q-1,-3.5Q12)))  stop 38
+        if(.not. precision_x8(x(0)%x1(1),(9.9_4,-9.9_4)))    error stop 32
+        if(.not. precision_x8(x(0)%x1(2),(1.2E-1,2.1E-1)))   error stop 33
+        if(.not. precision_x8(x(0)%x1(3),(3.1_4,-4.1_4)))    error stop 34
+        if(.not. precision_x6(x(0)%x2,(3.1_8,-4.1_8)))       error stop 35
+        if(.not. precision_x3(x(0)%x3(3),(3.1_16,-4.1_16)))  error stop 36
+        if(.not. precision_x3(x(0)%x3(4),(0._16,0._16)))     error stop 37
+        if(.not. precision_x3(x(0)%x3(5),(5.4Q-1,-3.5Q12)))  error stop 38
      class default
         stop 39
   end select

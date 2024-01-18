@@ -25,10 +25,10 @@
   PROGRAM C809AssoName1
 
     ASSOCIATE ( As => As()  )
-      IF (As .NE. 1.0) STOP 50
+      IF (As .NE. 1.0) ERROR STOP 50
 
       ASSOCIATE ( As => As  )
-        IF (As .NE. 1.0) STOP 51
+        IF (As .NE. 1.0) ERROR STOP 51
       END ASSOCIATE
 
     END ASSOCIATE

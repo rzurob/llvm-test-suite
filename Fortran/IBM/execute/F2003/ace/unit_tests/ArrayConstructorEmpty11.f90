@@ -17,6 +17,6 @@
       end type
       type(t2), allocatable :: i(:)
       i = [ t2 :: ]
-      if (.not.allocated(i)) stop 1
-      if (size(i) /= 0) stop 2
+      if (.not.allocated(i)) error stop 1
+      if (size(i) /= 0) error stop 2
       end

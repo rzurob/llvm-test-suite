@@ -68,9 +68,9 @@
   SELECT TYPE(U => (/U,U/))
   CLASS IS (DT)
 
-    IF (ANY(U%IArr(1) .NE. -1)) STOP 21
-    IF (TRIM(U(1)%CArr(1)) .NE. "!") STOP 22
-    IF (TRIM(U(8)%CArr(2)) .NE. "!") STOP 23
+    IF (ANY(U%IArr(1) .NE. -1)) ERROR STOP 21
+    IF (TRIM(U(1)%CArr(1)) .NE. "!") ERROR STOP 22
+    IF (TRIM(U(8)%CArr(2)) .NE. "!") ERROR STOP 23
 
   CLASS DEFAULT
     STOP 40
@@ -82,10 +82,10 @@
   SELECT TYPE (U => (/(U%GetObj(U(1,1)%DT1%DT0), i=1,4) /) )
     CLASS IS (DT0)
       ASSOCIATE(U => (/U,U(4)/))
-        IF (ANY(U%IArr(1) .NE. -1)) STOP 31
-        IF (ANY(U%IArr(2) .NE. -1)) STOP 31
-        IF (TRIM(U(1)%CArr(1)) .NE. "!") STOP 32
-        IF (TRIM(U(5)%CArr(2)) .NE. "!") STOP 33
+        IF (ANY(U%IArr(1) .NE. -1)) ERROR STOP 31
+        IF (ANY(U%IArr(2) .NE. -1)) ERROR STOP 31
+        IF (TRIM(U(1)%CArr(1)) .NE. "!") ERROR STOP 32
+        IF (TRIM(U(5)%CArr(2)) .NE. "!") ERROR STOP 33
       END ASSOCIATE
     CLASS DEFAULT
       STOP 50

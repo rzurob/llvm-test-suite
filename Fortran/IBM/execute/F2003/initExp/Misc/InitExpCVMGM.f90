@@ -105,43 +105,43 @@
 
 
 
-! IF ( KIND(III1)   .NE.  1 ) STOP 11
-  IF ( KIND(III2)   .NE.  2 ) STOP 12
-  IF ( KIND(III4)   .NE.  4 ) STOP 13
-  IF ( KIND(III8)   .NE.  8 ) STOP 14
+! IF ( KIND(III1)   .NE.  1 ) ERROR STOP 11
+  IF ( KIND(III2)   .NE.  2 ) ERROR STOP 12
+  IF ( KIND(III4)   .NE.  4 ) ERROR STOP 13
+  IF ( KIND(III8)   .NE.  8 ) ERROR STOP 14
 
-  IF ( KIND(RRR4)   .NE.  4 ) STOP 21
-  IF ( KIND(RRR8)   .NE.  8 ) STOP 22
-  IF ( KIND(RRR6)   .NE.  16) STOP 23
+  IF ( KIND(RRR4)   .NE.  4 ) ERROR STOP 21
+  IF ( KIND(RRR8)   .NE.  8 ) ERROR STOP 22
+  IF ( KIND(RRR6)   .NE.  16) ERROR STOP 23
 
-! IF ( KIND(LLL1)   .NE.  1 ) STOP 31
-! IF ( KIND(LLL2)   .NE.  2 ) STOP 32
-! IF ( KIND(LLL4)   .NE.  4 ) STOP 33
-! IF ( KIND(LLL8)   .NE.  8 ) STOP 34
+! IF ( KIND(LLL1)   .NE.  1 ) ERROR STOP 31
+! IF ( KIND(LLL2)   .NE.  2 ) ERROR STOP 32
+! IF ( KIND(LLL4)   .NE.  4 ) ERROR STOP 33
+! IF ( KIND(LLL8)   .NE.  8 ) ERROR STOP 34
 
-! IF ( KIND(ZZZ4)   .NE.  4 ) STOP 41
-! IF ( KIND(ZZZ8)   .NE.  8 ) STOP 42
-! IF ( KIND(ZZZ6)   .NE.  16) STOP 43
+! IF ( KIND(ZZZ4)   .NE.  4 ) ERROR STOP 41
+! IF ( KIND(ZZZ8)   .NE.  8 ) ERROR STOP 42
+! IF ( KIND(ZZZ6)   .NE.  16) ERROR STOP 43
 
-! IF ( ANY (III1    .NE. 0 )) STOP 51
-  IF ( ANY (III2    .NE. 0 )) STOP 52
-  IF ( ANY (III4    .NE. 0 )) STOP 53
-  IF ( ANY (III8    .NE. 0 )) STOP 54
+! IF ( ANY (III1    .NE. 0 )) ERROR STOP 51
+  IF ( ANY (III2    .NE. 0 )) ERROR STOP 52
+  IF ( ANY (III4    .NE. 0 )) ERROR STOP 53
+  IF ( ANY (III8    .NE. 0 )) ERROR STOP 54
 
-  IF ( ANY (RRR4    .NE. 0 )) STOP 61
-  IF ( ANY (RRR8    .NE. 0 )) STOP 62
-  IF ( ANY (RRR6    .NE. 0 )) STOP 63
+  IF ( ANY (RRR4    .NE. 0 )) ERROR STOP 61
+  IF ( ANY (RRR8    .NE. 0 )) ERROR STOP 62
+  IF ( ANY (RRR6    .NE. 0 )) ERROR STOP 63
 
-! IF ( ANY (LLL1    .NEQV. .TRUE. )) STOP 71
-! IF ( ANY (LLL2    .NEQV. .TRUE. )) STOP 72
-! IF ( ANY (LLL4    .NEQV. .TRUE. )) STOP 73
-! IF ( ANY (LLL8    .NEQV. .TRUE. )) STOP 74
+! IF ( ANY (LLL1    .NEQV. .TRUE. )) ERROR STOP 71
+! IF ( ANY (LLL2    .NEQV. .TRUE. )) ERROR STOP 72
+! IF ( ANY (LLL4    .NEQV. .TRUE. )) ERROR STOP 73
+! IF ( ANY (LLL8    .NEQV. .TRUE. )) ERROR STOP 74
 
-! IF ( ANY (ZZZ4    .NE. (1.,0.) )) STOP 81
-! IF ( ANY (ZZZ8    .NE. (1.,0.) )) STOP 82
-! IF ( ANY (ZZZ6    .NE. (1.,0.) )) STOP 83
+! IF ( ANY (ZZZ4    .NE. (1.,0.) )) ERROR STOP 81
+! IF ( ANY (ZZZ8    .NE. (1.,0.) )) ERROR STOP 82
+! IF ( ANY (ZZZ6    .NE. (1.,0.) )) ERROR STOP 83
 
-! IF ( ANY (CCC     .NE. ACHAR(1) )) STOP 99
+! IF ( ANY (CCC     .NE. ACHAR(1) )) ERROR STOP 99
 
   END
 

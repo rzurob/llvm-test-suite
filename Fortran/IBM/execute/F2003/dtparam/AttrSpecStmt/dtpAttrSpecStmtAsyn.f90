@@ -106,28 +106,28 @@
   END DO
 
 
-  IF ( T0%L0       .NE. 3     ) STOP 31
-  IF ( SIZE(T0)    .NE. N     ) STOP 32
+  IF ( T0%L0       .NE. 3     ) ERROR STOP 31
+  IF ( SIZE(T0)    .NE. N     ) ERROR STOP 32
 
 
-  IF ( T2%L0        .NE. 3         )  STOP 51
-  IF ( T2%L1        .NE. 5         )  STOP 52
-  IF ( T2%L2        .NE. 7         )  STOP 53
-  IF ( SIZE(T2)     .NE. N         )  STOP 54
+  IF ( T2%L0        .NE. 3         )  ERROR STOP 51
+  IF ( T2%L1        .NE. 5         )  ERROR STOP 52
+  IF ( T2%L2        .NE. 7         )  ERROR STOP 53
+  IF ( SIZE(T2)     .NE. N         )  ERROR STOP 54
 
   DO I=1, N
-    IF ( T2(I)%C1             .NE.   "XYZ"    )  STOP 84
-    IF ( T2(I)%C2             .NE.   "ZYX"    )  STOP 85
-    IF ( T2(I)%I              .NE.   I        )  STOP 86
-    IF ( T2(I)%R              .NE.   4321.    )  STOP 87
-    IF ( T2(I)%L              .NEQV. .TRUE.   )  STOP 88
-    IF ( T2(I)%Z              .NE.   (1.,-1.) )  STOP 89
-    IF ( T2(I)%T0%K0          .NE.    8       )  STOP 90
-    IF ( T2(I)%T0%L0          .NE.    7       )  STOP 91
-    IF ( ASSOCIATED(T2(I)%Ptr).EQV.   .TRUE.  )  STOP 92
-    IF ( SIZE(T2(I)%T0)       .NE.    7       )  STOP 93
-    IF ( T2(I)%T0%K0          .NE.    8       )  STOP 94
-    IF ( T2(I)%T0%L0          .NE.    7       )  STOP 95
+    IF ( T2(I)%C1             .NE.   "XYZ"    )  ERROR STOP 84
+    IF ( T2(I)%C2             .NE.   "ZYX"    )  ERROR STOP 85
+    IF ( T2(I)%I              .NE.   I        )  ERROR STOP 86
+    IF ( T2(I)%R              .NE.   4321.    )  ERROR STOP 87
+    IF ( T2(I)%L              .NEQV. .TRUE.   )  ERROR STOP 88
+    IF ( T2(I)%Z              .NE.   (1.,-1.) )  ERROR STOP 89
+    IF ( T2(I)%T0%K0          .NE.    8       )  ERROR STOP 90
+    IF ( T2(I)%T0%L0          .NE.    7       )  ERROR STOP 91
+    IF ( ASSOCIATED(T2(I)%Ptr).EQV.   .TRUE.  )  ERROR STOP 92
+    IF ( SIZE(T2(I)%T0)       .NE.    7       )  ERROR STOP 93
+    IF ( T2(I)%T0%K0          .NE.    8       )  ERROR STOP 94
+    IF ( T2(I)%T0%L0          .NE.    7       )  ERROR STOP 95
   END DO
 
   END

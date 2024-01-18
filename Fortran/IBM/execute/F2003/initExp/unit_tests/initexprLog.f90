@@ -17,8 +17,8 @@ program main
   c4a = log((-1.0e0,-0.0e0))
   c8a = log((-1.0d0,-0.0d0))
 
-  if (.not. precision_x8(c4, c4a)) stop 1
-  if (.not. precision_x16(c8, c8a)) stop 2
+  if (.not. precision_x8(c4, c4a)) error stop 1
+  if (.not. precision_x16(c8, c8a)) error stop 2
 
   call sub()
 end
@@ -34,6 +34,6 @@ subroutine sub()
   c4a = log((-1.0e0,-0.0e0))
   c8a = log((-1.0d0,-0.0d0))
 
-  if (.not. precision_x8(c4, c4a)) stop 3
-  if (.not. precision_x16(c8, c8a)) stop 4
+  if (.not. precision_x8(c4, c4a)) error stop 3
+  if (.not. precision_x16(c8, c8a)) error stop 4
 end subroutine

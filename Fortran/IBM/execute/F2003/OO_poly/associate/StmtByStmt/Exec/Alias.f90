@@ -36,25 +36,25 @@
   ASSOCIATE ( As => 8 )
   ASSOCIATE ( As => 9 )
   ASSOCIATE ( As => 0 )
-    IF ( As .NE. 0 ) STOP 20
+    IF ( As .NE. 0 ) ERROR STOP 20
   END ASSOCIATE
-    IF ( As .NE. 9 ) STOP 19
+    IF ( As .NE. 9 ) ERROR STOP 19
   END ASSOCIATE
-    IF ( As .NE. 8 ) STOP 18
+    IF ( As .NE. 8 ) ERROR STOP 18
   END ASSOCIATE
-    IF ( As .NE. 7 ) STOP 17
+    IF ( As .NE. 7 ) ERROR STOP 17
   END ASSOCIATE
-    IF ( As .NE. 6 ) STOP 16
+    IF ( As .NE. 6 ) ERROR STOP 16
   END ASSOCIATE
-    IF ( As .NE. 5 ) STOP 15
+    IF ( As .NE. 5 ) ERROR STOP 15
   END ASSOCIATE
-    IF ( As .NE. 4 ) STOP 14
+    IF ( As .NE. 4 ) ERROR STOP 14
   END ASSOCIATE
-    IF ( As .NE. 3 ) STOP 13
+    IF ( As .NE. 3 ) ERROR STOP 13
   END ASSOCIATE
-    IF ( As .NE. 2 ) STOP 12
+    IF ( As .NE. 2 ) ERROR STOP 12
   END ASSOCIATE
-    IF ( As .NE. 1 ) STOP 11
+    IF ( As .NE. 1 ) ERROR STOP 11
   END ASSOCIATE
 
   END

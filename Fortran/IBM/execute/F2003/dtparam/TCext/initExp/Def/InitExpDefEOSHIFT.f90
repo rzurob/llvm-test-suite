@@ -94,23 +94,23 @@
 
 
 
-  IF (KIND(T11)   .NE.   1 )        STOP 11
-  IF (ANY( T11    .NE. R11 ))       STOP 12
-  IF (KIND(T12)   .NE.   2 )        STOP 13
-  IF (ANY( T12    .NE. R12 ))       STOP 14
+  IF (KIND(T11)   .NE.   1 )        ERROR STOP 11
+  IF (ANY( T11    .NE. R11 ))       ERROR STOP 12
+  IF (KIND(T12)   .NE.   2 )        ERROR STOP 13
+  IF (ANY( T12    .NE. R12 ))       ERROR STOP 14
 
-  IF (KIND(T21)   .NE.   8 )        STOP 21
-  IF (ANY( T21    .NE. RZ8 ))       STOP 22
-  IF (KIND(T22)   .NE.  16 )        STOP 23
-  IF (ANY( T22    .NE. RZ16))       STOP 24
+  IF (KIND(T21)   .NE.   8 )        ERROR STOP 21
+  IF (ANY( T21    .NE. RZ8 ))       ERROR STOP 22
+  IF (KIND(T22)   .NE.  16 )        ERROR STOP 23
+  IF (ANY( T22    .NE. RZ16))       ERROR STOP 24
 
-  IF (KIND(T31)   .NE.   1 )        STOP 31
-  IF (ANY( T31    .NE.  C1 ))       STOP 32
-  IF (KIND(T32)   .NE.   1 )        STOP 33
-  IF (ANY( T32    .NE.  C2 ))       STOP 34
+  IF (KIND(T31)   .NE.   1 )        ERROR STOP 31
+  IF (ANY( T31    .NE.  C1 ))       ERROR STOP 32
+  IF (KIND(T32)   .NE.   1 )        ERROR STOP 33
+  IF (ANY( T32    .NE.  C2 ))       ERROR STOP 34
 
-  IF (ANY( T41%C  .NE.  D1%C ))     STOP 42
-  IF (ANY( T42%C  .NE.  D2%C ))     STOP 44
+  IF (ANY( T41%C  .NE.  D1%C ))     ERROR STOP 42
+  IF (ANY( T42%C  .NE.  D2%C ))     ERROR STOP 44
 
   END
 

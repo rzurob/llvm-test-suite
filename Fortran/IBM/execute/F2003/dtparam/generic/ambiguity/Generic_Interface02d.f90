@@ -78,21 +78,21 @@
       CLASS(Child2(4,:)), ALLOCATABLE :: poly_c2
 
       CALL sub(poly_b1,b1)                                ! 2 arguments call sub0
-      IF ( .NOT. ALLOCATED(poly_b1)) STOP 10
+      IF ( .NOT. ALLOCATED(poly_b1)) ERROR STOP 10
 
-      IF( size(poly_b1%base_arr) .NE. 5) STOP 11
-      IF( ANY(poly_b1%base_arr .NE. 1000 )) STOP 12
+      IF( size(poly_b1%base_arr) .NE. 5) ERROR STOP 11
+      IF( ANY(poly_b1%base_arr .NE. 1000 )) ERROR STOP 12
 
       DEALLOCATE(poly_b1)
       CALL sub(poly_b1,c1)                                ! 2 arguments call sub0
-      IF ( .NOT. ALLOCATED(poly_b1)) STOP 13
+      IF ( .NOT. ALLOCATED(poly_b1)) ERROR STOP 13
 
         SELECT TYPE ( poly_b1 )
           TYPE IS (Child1(4,*,4))
-            IF( size(poly_b1%base_arr) .NE. 5) STOP 14
-            IF( ANY(poly_b1%base_arr .NE. 400  )) STOP 15
-            IF( size(poly_b1%child_arr)  .NE. 5) STOP 16
-            IF( ANY(poly_b1%child_arr .NE. -400 )) STOP 17
+            IF( size(poly_b1%base_arr) .NE. 5) ERROR STOP 14
+            IF( ANY(poly_b1%base_arr .NE. 400  )) ERROR STOP 15
+            IF( size(poly_b1%child_arr)  .NE. 5) ERROR STOP 16
+            IF( ANY(poly_b1%child_arr .NE. -400 )) ERROR STOP 17
 
           CLASS DEFAULT
            STOP 18
@@ -100,14 +100,14 @@
 
       DEALLOCATE(poly_b1)
       CALL sub(poly_b1,c2)                                ! 2 arguments call sub0
-      IF ( .NOT. ALLOCATED(poly_b1)) STOP 19
+      IF ( .NOT. ALLOCATED(poly_b1)) ERROR STOP 19
 
         SELECT TYPE ( poly_b1 )
           TYPE IS (Child2(4,*))
-            IF( size(poly_b1%base_arr) .NE. 10) STOP 20
-            IF( ANY(poly_b1%base_arr .NE. 100 )) STOP 21
-            IF( size(poly_b1%child_arr)  .NE. 10) STOP 22
-            IF( ANY(poly_b1%child_arr .NE. -100 )) STOP 23
+            IF( size(poly_b1%base_arr) .NE. 10) ERROR STOP 20
+            IF( ANY(poly_b1%base_arr .NE. 100 )) ERROR STOP 21
+            IF( size(poly_b1%child_arr)  .NE. 10) ERROR STOP 22
+            IF( ANY(poly_b1%child_arr .NE. -100 )) ERROR STOP 23
 
           CLASS DEFAULT
            STOP 24
@@ -115,16 +115,16 @@
 
       DEALLOCATE(poly_b1)
       CALL sub(poly_b1,n1)                                ! 2 arguments call sub0
-      IF ( .NOT. ALLOCATED(poly_b1)) STOP 25
+      IF ( .NOT. ALLOCATED(poly_b1)) ERROR STOP 25
 
         SELECT TYPE ( poly_b1 )
           TYPE IS (NextGen(4,*,4,4))
-            IF( size(poly_b1%base_arr) .NE. 10) STOP 26
-            IF( ANY(poly_b1%base_arr .NE. 4 )) STOP 27
-            IF( size(poly_b1%child_arr)  .NE. 10) STOP 28
-            IF( ANY(poly_b1%child_arr .NE. -40 )) STOP 29
-            IF( size(poly_b1%nextg_arr)  .NE. 10) STOP 30
-            IF( ANY(poly_b1%nextg_arr .NE. 40 )) STOP 31
+            IF( size(poly_b1%base_arr) .NE. 10) ERROR STOP 26
+            IF( ANY(poly_b1%base_arr .NE. 4 )) ERROR STOP 27
+            IF( size(poly_b1%child_arr)  .NE. 10) ERROR STOP 28
+            IF( ANY(poly_b1%child_arr .NE. -40 )) ERROR STOP 29
+            IF( size(poly_b1%nextg_arr)  .NE. 10) ERROR STOP 30
+            IF( ANY(poly_b1%nextg_arr .NE. 40 )) ERROR STOP 31
 
           CLASS DEFAULT
            STOP 32
@@ -135,14 +135,14 @@
       ALLOCATE(NextGen(4,100,4,4):: poly_c1)
 
       CALL sub(poly_c1, 100)                                   ! 1 argument, dynamic type NextGen: call sub1
-      IF ( .NOT. ALLOCATED(poly_c1)) STOP 33
+      IF ( .NOT. ALLOCATED(poly_c1)) ERROR STOP 33
 
         SELECT TYPE ( poly_c1 )                           ! dynamic type child1 after call to sub1
           TYPE IS (Child1(4,*,4))
-            IF( size(poly_c1%base_arr) .NE. 9) STOP 34
-            IF( ANY(poly_c1%base_arr .NE. 55 )) STOP 35
-            IF( size(poly_c1%child_arr) .NE. 9) STOP 36
-            IF( ANY(poly_c1%child_arr .NE. -55 )) STOP 37
+            IF( size(poly_c1%base_arr) .NE. 9) ERROR STOP 34
+            IF( ANY(poly_c1%base_arr .NE. 55 )) ERROR STOP 35
+            IF( size(poly_c1%child_arr) .NE. 9) ERROR STOP 36
+            IF( ANY(poly_c1%child_arr .NE. -55 )) ERROR STOP 37
 
           CLASS DEFAULT
            STOP 38
@@ -153,14 +153,14 @@
       ALLOCATE(poly_c1, source=c1)
 
       CALL sub(poly_c1, 5)                                   ! 1 argument, dynamic type Child1: call sub1
-      IF ( .NOT. ALLOCATED(poly_c1)) STOP 39
+      IF ( .NOT. ALLOCATED(poly_c1)) ERROR STOP 39
 
         SELECT TYPE ( poly_c1 )                           ! dynamic type child1 after call to sub1
           TYPE IS (Child1(4,*,4))
-            IF( size(poly_c1%base_arr) .NE. 9) STOP 40
-            IF( ANY(poly_c1%base_arr .NE. 55 )) STOP 41
-            IF( size(poly_c1%child_arr) .NE. 9) STOP 42
-            IF( ANY(poly_c1%child_arr .NE. -55 )) STOP 43
+            IF( size(poly_c1%base_arr) .NE. 9) ERROR STOP 40
+            IF( ANY(poly_c1%base_arr .NE. 55 )) ERROR STOP 41
+            IF( size(poly_c1%child_arr) .NE. 9) ERROR STOP 42
+            IF( ANY(poly_c1%child_arr .NE. -55 )) ERROR STOP 43
 
           CLASS DEFAULT
            STOP 44
@@ -171,14 +171,14 @@
       ALLOCATE(Child2(4,1):: poly_c2)
 
       CALL sub(poly_c2, 1)                                   ! 1 argument, dynamic type Child2: call sub2
-      IF ( .NOT. ALLOCATED(poly_c2)) STOP 45
+      IF ( .NOT. ALLOCATED(poly_c2)) ERROR STOP 45
 
         SELECT TYPE ( poly_c2 )                           ! dynamic type child2 after call to sub1
           TYPE IS (Child2(4,*))
-            IF( size(poly_c2%base_arr) .NE. 11) STOP 46
-            IF( ANY(poly_c2%base_arr .NE. 33 )) STOP 47
-            IF( size(poly_c2%child_arr) .NE. 11) STOP 48
-            IF( ANY(poly_c2%child_arr .NE. -33 )) STOP 49
+            IF( size(poly_c2%base_arr) .NE. 11) ERROR STOP 46
+            IF( ANY(poly_c2%base_arr .NE. 33 )) ERROR STOP 47
+            IF( size(poly_c2%child_arr) .NE. 11) ERROR STOP 48
+            IF( ANY(poly_c2%child_arr .NE. -33 )) ERROR STOP 49
 
           CLASS DEFAULT
            STOP 50
@@ -192,7 +192,7 @@
         CLASS(Base(4,:)), ALLOCATABLE, INTENT(OUT) :: pntr
 
         ALLOCATE (pntr, source = Obj)
-        IF ( .NOT. ALLOCATED(pntr)) STOP 100
+        IF ( .NOT. ALLOCATED(pntr)) ERROR STOP 100
 
         SELECT TYPE ( pntr )
           TYPE IS (NextGen(4,*,4,4))
@@ -242,7 +242,7 @@
         integer, intent(in) :: n
 
         ALLOCATE (Child1(4,n,4) :: pntr)
-        IF ( .NOT. ALLOCATED(pntr)) STOP 101
+        IF ( .NOT. ALLOCATED(pntr)) ERROR STOP 101
 
         pntr%base_arr  = (/ (55, I = 1, 9 )/)
         pntr%child_arr = (/ (-55, I = 1, 9 )/)
@@ -255,7 +255,7 @@
         integer, intent(in) :: n
 
         ALLOCATE (Child2(4,n) :: pntr)
-        IF ( .NOT. ALLOCATED(pntr)) STOP 102
+        IF ( .NOT. ALLOCATED(pntr)) ERROR STOP 102
 
         pntr%base_arr  = (/ (33, I = 1, 11  )/)
         pntr%child_arr = (/ (-33, I = 1, 11 )/)

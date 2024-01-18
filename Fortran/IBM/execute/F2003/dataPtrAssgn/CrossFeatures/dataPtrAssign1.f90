@@ -54,14 +54,14 @@
       STOP 10
     END SELECT
 
-    IF (.NOT. ASSOCIATED(Ptr, Tar2))             STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
-    IF (     Tar2(1,1)        .NE.  REPEAT(CHAR(I), 3))    STOP 14
-    IF (ANY( Tar2(1,2:N)      .NE.  REPEAT("?",     3)))   STOP 15
-    IF (ANY( Tar2(2:N-1,:)    .NE.  REPEAT("?",     3)))   STOP 16
-    IF (ANY( Tar2(N,1:N-1)    .NE.  REPEAT("?",     3)))   STOP 17
-    IF (     Tar2(N,N)        .NE.  REPEAT(CHAR(I), 3))    STOP 18
+    IF (.NOT. ASSOCIATED(Ptr, Tar2))             ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) ERROR STOP 13
+    IF (     Tar2(1,1)        .NE.  REPEAT(CHAR(I), 3))    ERROR STOP 14
+    IF (ANY( Tar2(1,2:N)      .NE.  REPEAT("?",     3)))   ERROR STOP 15
+    IF (ANY( Tar2(2:N-1,:)    .NE.  REPEAT("?",     3)))   ERROR STOP 16
+    IF (ANY( Tar2(N,1:N-1)    .NE.  REPEAT("?",     3)))   ERROR STOP 17
+    IF (     Tar2(N,N)        .NE.  REPEAT(CHAR(I), 3))    ERROR STOP 18
 
     Tar1 = "!!!"
     Ptr(1:, 1:) => NULL()
@@ -74,13 +74,13 @@
       STOP 20
     END SELECT
 
-    IF (.NOT. ASSOCIATED(Ptr))                 STOP 21
-    IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      STOP 22
-    IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      STOP 23
-    IF (     Tar1(1)                      .NE.  REPEAT(CHAR(I), 3))    STOP 24
-    IF (ANY( Tar1(2:(J-I+1)*(J-I+1)-1)    .NE.  REPEAT("!",   3)))     STOP 25
-    IF (     Tar1((J-I+1)*(J-I+1))        .NE.  REPEAT(CHAR(I), 3))    STOP 26
-    IF (ANY( Tar1((J-I+1)*(J-I+1)+1:)     .NE.  REPEAT("!",     3)))   STOP 27
+    IF (.NOT. ASSOCIATED(Ptr))                 ERROR STOP 21
+    IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      ERROR STOP 22
+    IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      ERROR STOP 23
+    IF (     Tar1(1)                      .NE.  REPEAT(CHAR(I), 3))    ERROR STOP 24
+    IF (ANY( Tar1(2:(J-I+1)*(J-I+1)-1)    .NE.  REPEAT("!",   3)))     ERROR STOP 25
+    IF (     Tar1((J-I+1)*(J-I+1))        .NE.  REPEAT(CHAR(I), 3))    ERROR STOP 26
+    IF (ANY( Tar1((J-I+1)*(J-I+1)+1:)     .NE.  REPEAT("!",     3)))   ERROR STOP 27
 
   END DO
   END DO

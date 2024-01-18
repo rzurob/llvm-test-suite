@@ -56,15 +56,15 @@ use m
 
     call move_alloc(aB, aA)
 
-    if ( allocated(aB) ) stop 11
-    if ( .not. allocated(aA)) stop 13
+    if ( allocated(aB) ) error stop 11
+    if ( .not. allocated(aA)) error stop 13
 
     select type ( aA)
         type is (B)
-            if ( size(aA) /= 3 ) stop 21
-	    if (aA(1)%ip /= 99 ) stop 23
-	    if (aA(2)%ip /= 99 ) stop 25
-	    if (aA(3)%ip /= 99 ) stop 27
+            if ( size(aA) /= 3 ) error stop 21
+	    if (aA(1)%ip /= 99 ) error stop 23
+	    if (aA(2)%ip /= 99 ) error stop 25
+	    if (aA(3)%ip /= 99 ) error stop 27
 	class default
 	    stop 31
     end select

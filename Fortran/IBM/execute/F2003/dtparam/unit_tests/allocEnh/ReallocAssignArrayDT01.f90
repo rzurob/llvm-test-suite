@@ -18,6 +18,6 @@ type(t(:)), allocatable :: a(:)
 type(t(3)) :: b(5)
 allocate(t(2) :: a(4))
 a = b(1:2)
-if (any(shape(a) /= 2)) stop 1
-if (a%x /= 3) stop 2
+if (any(shape(a) /= 2)) error stop 1
+if (a%x /= 3) error stop 2
 end

@@ -66,18 +66,18 @@
   PROCEDURE(ModFun1), POINTER :: ProcPtr
   TYPE(DT)  :: U
 
-  IF ( ASSOCIATED(V%ProcPtr1))       STOP 11
-  IF ( ASSOCIATED(V%BComp%ProcPtr1)) STOP 12
-  IF ( ASSOCIATED(V%ProcPtr2))       STOP 13
+  IF ( ASSOCIATED(V%ProcPtr1))       ERROR STOP 11
+  IF ( ASSOCIATED(V%BComp%ProcPtr1)) ERROR STOP 12
+  IF ( ASSOCIATED(V%ProcPtr2))       ERROR STOP 13
 
   ProcPtr => ModFun1
   U = DT(Base=V%Base, ProcPtr2=V%ProcPtr2, BComp=V%BComp)
-  IF ( ASSOCIATED(U%ProcPtr1))       STOP 21
-  IF ( ASSOCIATED(U%BComp%ProcPtr1)) STOP 22
-  IF ( ASSOCIATED(U%ProcPtr2))       STOP 23
+  IF ( ASSOCIATED(U%ProcPtr1))       ERROR STOP 21
+  IF ( ASSOCIATED(U%BComp%ProcPtr1)) ERROR STOP 22
+  IF ( ASSOCIATED(U%ProcPtr2))       ERROR STOP 23
 
   ProcPtr => V%TypeProc(V%ProcPtr1)
-  IF ( ASSOCIATED(ProcPtr) )         STOP 21
+  IF ( ASSOCIATED(ProcPtr) )         ERROR STOP 21
 
   END
 

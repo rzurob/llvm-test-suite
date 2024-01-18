@@ -71,7 +71,7 @@
     Ptr => Proc
     SELECT TYPE ( As => Ptr(1_1) )
     TYPE IS (INTEGER(1))
-      IF ( As .NE. 1_1 ) STOP 11
+      IF ( As .NE. 1_1 ) ERROR STOP 11
     CLASS DEFAULT
       STOP 12
     END SELECT

@@ -28,31 +28,31 @@
 
   GOTO 1
 1 A1:  ASSOCIATE ( A1 => Arr)
-    IF ( ANY(LBOUND(A1) .NE. (/2/) )) STOP 11
-    IF ( ANY(SHAPE(A1)  .NE. (/8/) )) STOP 12
-    IF ( ANY(A1    .NE. -1) )         STOP 13
+    IF ( ANY(LBOUND(A1) .NE. (/2/) )) ERROR STOP 11
+    IF ( ANY(SHAPE(A1)  .NE. (/8/) )) ERROR STOP 12
+    IF ( ANY(A1    .NE. -1) )         ERROR STOP 13
     GO TO 2
 
 2 A2: ASSOCIATE ( A2 => A1)
-      IF ( ANY(LBOUND(A2) .NE. (/2/) )) STOP 11
-      IF ( ANY(SHAPE(A2)  .NE. (/8/) )) STOP 12
-      IF ( ANY(A2    .NE. -1) )         STOP 13
+      IF ( ANY(LBOUND(A2) .NE. (/2/) )) ERROR STOP 11
+      IF ( ANY(SHAPE(A2)  .NE. (/8/) )) ERROR STOP 12
+      IF ( ANY(A2    .NE. -1) )         ERROR STOP 13
 
       A2 = 1
-      IF ( ANY(Arr   .NE. 1) )         STOP 31
-      IF ( ANY(A2    .NE. 1) )         STOP 32
-      IF ( ANY(A1    .NE. 1) )         STOP 33
+      IF ( ANY(Arr   .NE. 1) )         ERROR STOP 31
+      IF ( ANY(A2    .NE. 1) )         ERROR STOP 32
+      IF ( ANY(A1    .NE. 1) )         ERROR STOP 33
       GO TO 21
 
       ASSOCIATE ( A1 => A2)
-        IF ( ANY(A1 .NE. Arr ))  STOP 44
+        IF ( ANY(A1 .NE. Arr ))  ERROR STOP 44
       END ASSOCIATE
 
 21    END ASSOCIATE A2
       GOTO 11
 
 11  END ASSOCIATE A1
-  IF ( ANY(Arr    .NE. 1) )         STOP 14
+  IF ( ANY(Arr    .NE. 1) )         ERROR STOP 14
 
   END
 

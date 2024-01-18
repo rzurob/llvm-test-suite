@@ -25,10 +25,10 @@ subroutine sub1( mm)
 integer mm
 type(dtbase(4, mm)) :: pa(2)
 
-if (pa%d /= 8) stop 1
-if (any(ubound(pa(1)%element) .ne. 8)) stop 2
-if (any(ubound(pa(1)%element) .ne. ubound(pa(2)%element))) stop 4
-if (sizeof(pa(2)%element) /= 256) stop 5
+if (pa%d /= 8) error stop 1
+if (any(ubound(pa(1)%element) .ne. 8)) error stop 2
+if (any(ubound(pa(1)%element) .ne. ubound(pa(2)%element))) error stop 4
+if (sizeof(pa(2)%element) /= 256) error stop 5
 
 end subroutine
 

@@ -59,18 +59,18 @@
   INTEGER  :: TZ6(1, 2) = RESHAPE((/RANGE(Z6), RANGE(REAL(Z6))/), (/1,2/))
 
 
-  IF ( ANY ( TI1  .NE. INT(LOG10(REAL(HUGE(I1))))  )  )   STOP 11
-  IF ( ANY ( TI2  .NE. INT(LOG10(REAL(HUGE(I2))))  )  )   STOP 12
-  IF ( ANY ( TI4  .NE. INT(LOG10(REAL(HUGE(I4))))  )  )   STOP 14
-  IF ( ANY ( TI8  .NE. INT(LOG10(REAL(HUGE(I8))))  )  )   STOP 18
+  IF ( ANY ( TI1  .NE. INT(LOG10(REAL(HUGE(I1))))  )  )   ERROR STOP 11
+  IF ( ANY ( TI2  .NE. INT(LOG10(REAL(HUGE(I2))))  )  )   ERROR STOP 12
+  IF ( ANY ( TI4  .NE. INT(LOG10(REAL(HUGE(I4))))  )  )   ERROR STOP 14
+  IF ( ANY ( TI8  .NE. INT(LOG10(REAL(HUGE(I8))))  )  )   ERROR STOP 18
 
-  IF ( ANY ( TR4(:, 1)  .NE. TR4(:, 2) ) )   STOP 21
-  IF ( ANY ( TR8(:, 1)  .NE. TR8(:, 2) ) )   STOP 22
-  IF ( ANY ( TR6(:, 1)  .NE. TR6(:, 2) ) )   STOP 23
+  IF ( ANY ( TR4(:, 1)  .NE. TR4(:, 2) ) )   ERROR STOP 21
+  IF ( ANY ( TR8(:, 1)  .NE. TR8(:, 2) ) )   ERROR STOP 22
+  IF ( ANY ( TR6(:, 1)  .NE. TR6(:, 2) ) )   ERROR STOP 23
 
-  IF ( ANY ( TZ4(:, 1)  .NE. TZ4(:, 2) ) )   STOP 31
-  IF ( ANY ( TZ8(:, 1)  .NE. TZ8(:, 2) ) )   STOP 32
-  IF ( ANY ( TZ6(:, 1)  .NE. TZ6(:, 2) ) )   STOP 33
+  IF ( ANY ( TZ4(:, 1)  .NE. TZ4(:, 2) ) )   ERROR STOP 31
+  IF ( ANY ( TZ8(:, 1)  .NE. TZ8(:, 2) ) )   ERROR STOP 32
+  IF ( ANY ( TZ6(:, 1)  .NE. TZ6(:, 2) ) )   ERROR STOP 33
 
   END
 

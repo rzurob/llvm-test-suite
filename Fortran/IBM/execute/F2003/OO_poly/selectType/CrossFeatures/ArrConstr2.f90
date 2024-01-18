@@ -65,9 +65,9 @@
 
   SELECT TYPE(U => RESHAPE((/(U%GetObj(U), i=1,4)/),(/2,2/)))
   CLASS IS (DT)
-    IF (ANY(U%IArr(1) .NE. -1)) STOP 21
-    IF (TRIM(U(1,1)%CArr(1)) .NE. "!") STOP 22
-    IF (TRIM(U(2,2)%CArr(2)) .NE. "!") STOP 23
+    IF (ANY(U%IArr(1) .NE. -1)) ERROR STOP 21
+    IF (TRIM(U(1,1)%CArr(1)) .NE. "!") ERROR STOP 22
+    IF (TRIM(U(2,2)%CArr(2)) .NE. "!") ERROR STOP 23
   CLASS DEFAULT
     STOP 40
   END SELECT
@@ -75,9 +75,9 @@
   SELECT TYPE (U => (/(U%GetObj(U%DT1%DT0), i=1,4) /) )
     CLASS IS (DT0)
       ASSOCIATE(U => U(1))
-        IF (ANY(U%IArr .NE. -1)) STOP 31
-        IF (TRIM(U%CArr(1)) .NE. "!") STOP 32
-        IF (TRIM(U%CArr(2)) .NE. "!") STOP 33
+        IF (ANY(U%IArr .NE. -1)) ERROR STOP 31
+        IF (TRIM(U%CArr(1)) .NE. "!") ERROR STOP 32
+        IF (TRIM(U%CArr(2)) .NE. "!") ERROR STOP 33
       END ASSOCIATE
     CLASS DEFAULT
       STOP 50

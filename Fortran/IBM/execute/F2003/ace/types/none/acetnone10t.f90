@@ -149,7 +149,7 @@ program acetnone10t
   call test6(dmulti)
   call test6(reshape(dflat, (/ 2,3,4,5,6,7 /)))
 
-  if( any(dflat /= (/ dmulti /)) ) stop 2
+  if( any(dflat /= (/ dmulti /)) ) error stop 2
 
   dflat = (/ dmulti(ubound(dmulti,1):lbound(dmulti,1):-1, &
                     ubound(dmulti,2):lbound(dmulti,2):-1, &
@@ -163,9 +163,9 @@ program acetnone10t
   call test6(dmulti2)
   call test6(reshape(dflat, (/ 7,6,5,4,3,2 /)))
 
-  if( any(dflat /= (/ dmulti /)) ) stop 3
-  if( any(dflat /= (/ dmulti2 /)) ) stop 4
-  if( any((/ dmulti /) /= (/ dmulti2 /)) ) stop 5
+  if( any(dflat /= (/ dmulti /)) ) error stop 3
+  if( any(dflat /= (/ dmulti2 /)) ) error stop 4
+  if( any((/ dmulti /) /= (/ dmulti2 /)) ) error stop 5
 
   print *, 'done'
 

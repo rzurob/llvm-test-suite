@@ -48,18 +48,18 @@
   REAL(KIND(ERF(X=1.0_16))):: R6(1) = ERF(X=1.0_16)
 
 
-  IF (ANY( ABS(T%R4-R ) .GT. .1E-5 )) STOP 11
-  IF (ANY( ABS(T%R8-R ) .GT. .1E-5 )) STOP 12
-  IF (ANY( ABS(T%R6-R ) .GT. .1E-5 )) STOP 13
+  IF (ANY( ABS(T%R4-R ) .GT. .1E-5 )) ERROR STOP 11
+  IF (ANY( ABS(T%R8-R ) .GT. .1E-5 )) ERROR STOP 12
+  IF (ANY( ABS(T%R6-R ) .GT. .1E-5 )) ERROR STOP 13
 
-  IF (KIND(R4) .NE. 4)              STOP 21
-  IF (ANY( ABS(R4-R ) .GT. .1E-5 )) STOP 22
+  IF (KIND(R4) .NE. 4)              ERROR STOP 21
+  IF (ANY( ABS(R4-R ) .GT. .1E-5 )) ERROR STOP 22
 
-  IF (KIND(R8) .NE. 8)              STOP 31
-  IF (ANY( ABS(R8-R ) .GT. .1E-5 )) STOP 32
+  IF (KIND(R8) .NE. 8)              ERROR STOP 31
+  IF (ANY( ABS(R8-R ) .GT. .1E-5 )) ERROR STOP 32
 
-  IF (KIND(R6) .NE. 16)             STOP 41
-  IF (ANY( ABS(R6-R ) .GT. .1E-5 )) STOP 42
+  IF (KIND(R6) .NE. 16)             ERROR STOP 41
+  IF (ANY( ABS(R6-R ) .GT. .1E-5 )) ERROR STOP 42
 
   END
 

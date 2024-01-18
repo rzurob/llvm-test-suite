@@ -55,14 +55,14 @@
 
   ASSOCIATE( As => V, As0 => V0 )
 
-    IF (As0%BaseID .NE. 1) STOP 20
-    IF (As%ChildID .NE. 2) STOP 21
+    IF (As0%BaseID .NE. 1) ERROR STOP 20
+    IF (As%ChildID .NE. 2) ERROR STOP 21
 
     As0 = DT0(-1)
     As  = DT(-2)
 
-    IF (V0%BaseID .NE. -1) STOP 30
-    IF (V%ChildID .NE. -2) STOP 31
+    IF (V0%BaseID .NE. -1) ERROR STOP 30
+    IF (V%ChildID .NE. -2) ERROR STOP 31
 
   END ASSOCIATE
 

@@ -68,13 +68,13 @@
   TYPE(DT(1,20)) :: T, T1
 
   CALL G(T, DT(1,20)("0"))
-  IF (TRIM(T%ID)    .NE. "ModSub-0"   ) STOP 11
+  IF (TRIM(T%ID)    .NE. "ModSub-0"   ) ERROR STOP 11
 
    CALL T%G( T1 )
-   IF (TRIM(T1%ID)    .NE. "ModSub-ModSub-0"   ) STOP 12
+   IF (TRIM(T1%ID)    .NE. "ModSub-ModSub-0"   ) ERROR STOP 12
 
   CALL T%G(T1, DT(1,20)("1") )
-  IF (TRIM(T1%ID)    .NE. "ExtSub-1"   ) STOP 13
+  IF (TRIM(T1%ID)    .NE. "ExtSub-1"   ) ERROR STOP 13
 
 
   END

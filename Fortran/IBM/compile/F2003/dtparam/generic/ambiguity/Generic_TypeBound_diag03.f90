@@ -61,7 +61,7 @@
       ALLOCATABLE :: foo1
 
       ALLOCATE (foo1, source = Obj)
-      IF ( .NOT. ALLOCATED(foo1)) STOP 30
+      IF ( .NOT. ALLOCATED(foo1)) ERROR STOP 30
 
       END FUNCTION foo1
 
@@ -71,7 +71,7 @@
       ALLOCATABLE :: foo2
 
       ALLOCATE (foo2, source = Obj)
-      IF ( .NOT. ALLOCATED(foo2)) STOP 31
+      IF ( .NOT. ALLOCATED(foo2)) ERROR STOP 31
 
       END FUNCTION foo2
 
@@ -93,32 +93,32 @@
 
       SELECT TYPE ( poly1) ! call possible only within select type
           CLASS IS (NextGen(4,*,4,4))
-             IF ( .NOT. ALLOCATED(poly1%FUNC()) ) STOP 13
+             IF ( .NOT. ALLOCATED(poly1%FUNC()) ) ERROR STOP 13
 
           CLASS DEFAULT
            STOP 32
       END SELECT
 
-      IF ( .NOT. ALLOCATED(dtv%FUNC()) ) STOP 13
+      IF ( .NOT. ALLOCATED(dtv%FUNC()) ) ERROR STOP 13
 
-      IF ( .NOT. ALLOCATED(dtv%FUNC(base1)) ) STOP 22  !Ok : call to foo2 with dtv of type NextGen
-      IF ( .NOT. ALLOCATED(dtv%FUNC(tgt1)) ) STOP 23   !Ok
-      IF ( .NOT. ALLOCATED(dtv%FUNC(poly1)) ) STOP 24  !Ok
-      IF ( .NOT. ALLOCATED(dtv%FUNC(dtv)) ) STOP 25    !Ok
+      IF ( .NOT. ALLOCATED(dtv%FUNC(base1)) ) ERROR STOP 22  !Ok : call to foo2 with dtv of type NextGen
+      IF ( .NOT. ALLOCATED(dtv%FUNC(tgt1)) ) ERROR STOP 23   !Ok
+      IF ( .NOT. ALLOCATED(dtv%FUNC(poly1)) ) ERROR STOP 24  !Ok
+      IF ( .NOT. ALLOCATED(dtv%FUNC(dtv)) ) ERROR STOP 25    !Ok
 
 ! Invalid code: should not pass compilation
 
-      IF (.NOT. ALLOCATED(base1%FUNC()) ) STOP 10
+      IF (.NOT. ALLOCATED(base1%FUNC()) ) ERROR STOP 10
 
       ALLOCATE(Base(4,10):: poly1)          ! dynamic type BASE
-      IF ( .NOT. ALLOCATED(poly1%FUNC()) ) STOP 11
+      IF ( .NOT. ALLOCATED(poly1%FUNC()) ) ERROR STOP 11
 
       poly1 => tgt1                         ! dynamic type Child
-      IF ( .NOT. ALLOCATED(poly1%FUNC()) ) STOP 12
+      IF ( .NOT. ALLOCATED(poly1%FUNC()) ) ERROR STOP 12
 
-      IF ( .NOT. ALLOCATED(child1%FUNC(base1)) ) STOP 18
-      IF ( .NOT. ALLOCATED(child1%FUNC(tgt1)) ) STOP 19
-      IF ( .NOT. ALLOCATED(child1%FUNC(poly1)) ) STOP 20
-      IF ( .NOT. ALLOCATED(child1%FUNC(dtv)) ) STOP 21
+      IF ( .NOT. ALLOCATED(child1%FUNC(base1)) ) ERROR STOP 18
+      IF ( .NOT. ALLOCATED(child1%FUNC(tgt1)) ) ERROR STOP 19
+      IF ( .NOT. ALLOCATED(child1%FUNC(poly1)) ) ERROR STOP 20
+      IF ( .NOT. ALLOCATED(child1%FUNC(dtv)) ) ERROR STOP 21
 
       END PROGRAM Generic_TypeBound_diag03

@@ -77,19 +77,19 @@
 
 
   Ptr(1:,1:) => Tar2
-  IF (.NOT. ASSOCIATED(Ptr, Tar2))                                            STOP 11
-  IF (ANY( LBOUND(Ptr) .NE. (/1, 1 /)))                                       STOP 12
-  IF (ANY( UBOUND(Ptr) .NE. (/N,N/)))                                         STOP 13
-  IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=1,M)/),(/N,N/))))           STOP 14
-  IF (ANY( Ptr%GName()  .NE. RESHAPE((/(CHAR(I), I=1,M)/),(/N,N/))))          STOP 15
+  IF (.NOT. ASSOCIATED(Ptr, Tar2))                                            ERROR STOP 11
+  IF (ANY( LBOUND(Ptr) .NE. (/1, 1 /)))                                       ERROR STOP 12
+  IF (ANY( UBOUND(Ptr) .NE. (/N,N/)))                                         ERROR STOP 13
+  IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=1,M)/),(/N,N/))))           ERROR STOP 14
+  IF (ANY( Ptr%GName()  .NE. RESHAPE((/(CHAR(I), I=1,M)/),(/N,N/))))          ERROR STOP 15
 
   Ptr(0:9,0:9) => Tar1
-  IF (.NOT. ASSOCIATED(Ptr))                                                  STOP 31
-  IF (ANY( LBOUND(Ptr) .NE. (/0, 0 /)))                                       STOP 32
-  IF (ANY( UBOUND(Ptr) .NE. (/9,9/)))                                         STOP 33
-  IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=M,1,-1)/),(/N,N/))))        STOP 34
-  IF (ANY( Ptr%GName(   )  .NE. RESHAPE((/(CHAR(I), I=M,1,-1)/),(/N,N/))))    STOP 35
-  IF (ANY( GName(Ptr,Ptr)  .NE. RESHAPE((/(CHAR(I), I=M,1,-1)/),(/N,N/))))    STOP 36
+  IF (.NOT. ASSOCIATED(Ptr))                                                  ERROR STOP 31
+  IF (ANY( LBOUND(Ptr) .NE. (/0, 0 /)))                                       ERROR STOP 32
+  IF (ANY( UBOUND(Ptr) .NE. (/9,9/)))                                         ERROR STOP 33
+  IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=M,1,-1)/),(/N,N/))))        ERROR STOP 34
+  IF (ANY( Ptr%GName(   )  .NE. RESHAPE((/(CHAR(I), I=M,1,-1)/),(/N,N/))))    ERROR STOP 35
+  IF (ANY( GName(Ptr,Ptr)  .NE. RESHAPE((/(CHAR(I), I=M,1,-1)/),(/N,N/))))    ERROR STOP 36
 
   END
 

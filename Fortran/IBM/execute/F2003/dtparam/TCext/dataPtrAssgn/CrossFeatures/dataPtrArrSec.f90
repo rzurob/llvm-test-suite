@@ -54,18 +54,18 @@
 
     Ptr => Arr
     Ptr(I:, J:) => Ptr(N:I:-1, N:J:-1)
-    IF (.NOT. ASSOCIATED(Ptr,  Arr(N:I:-1, N:J:-1) ))     STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/I , J/)))       STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/N,  N/)))       STOP 13
-    IF (ANY( Ptr%ID      .NE. Arr(N:I:-1, N:I:-1)%ID ))    STOP 14
+    IF (.NOT. ASSOCIATED(Ptr,  Arr(N:I:-1, N:J:-1) ))     ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/I , J/)))       ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/N,  N/)))       ERROR STOP 13
+    IF (ANY( Ptr%ID      .NE. Arr(N:I:-1, N:I:-1)%ID ))    ERROR STOP 14
 
     Ptr(I:J, I:J) => Arr1(N*N:N*N-(J-I+1)*(J-I+1)+1:-1)
-    IF (.NOT. ASSOCIATED(Ptr))                   STOP 20
-    IF (SIZE(Ptr)         .NE. (J-I+1)*(J-I+1))  STOP 21
-    IF (ANY( LBOUND(Ptr)  .NE. (/I , I /)))      STOP 22
-    IF (ANY( UBOUND(Ptr)  .NE. (/J , J /)))      STOP 23
+    IF (.NOT. ASSOCIATED(Ptr))                   ERROR STOP 20
+    IF (SIZE(Ptr)         .NE. (J-I+1)*(J-I+1))  ERROR STOP 21
+    IF (ANY( LBOUND(Ptr)  .NE. (/I , I /)))      ERROR STOP 22
+    IF (ANY( UBOUND(Ptr)  .NE. (/J , J /)))      ERROR STOP 23
     IF (ANY( RESHAPE(Ptr%ID, (/(J-I+1)*(J-I+1)/)) .NE.  &
-    &  (/(K, K=N*N,N*N-(J-I+1)*(J-I+1), -1)/) ))   STOP 24
+    &  (/(K, K=N*N,N*N-(J-I+1)*(J-I+1), -1)/) ))   ERROR STOP 24
 
   END DO
   END DO

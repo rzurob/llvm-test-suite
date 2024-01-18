@@ -63,11 +63,11 @@
 
   ASSOCIATE( As => V )
     ASSOCIATE( As => As%Bnd(2222) )
-      IF ( As .NE. 2222) STOP  20
+      IF ( As .NE. 2222) ERROR STOP  20
     END ASSOCIATE
 
     ASSOCIATE( As => As%Bnd(22) )
-      IF ( As .NE. 22) STOP  21
+      IF ( As .NE. 22) ERROR STOP  21
     END ASSOCIATE
   END ASSOCIATE
 

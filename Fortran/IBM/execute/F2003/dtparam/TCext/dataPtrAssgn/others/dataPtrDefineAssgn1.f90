@@ -54,15 +54,15 @@
 
 		a1 = tar1
 
-		if ( .not. associated(a1%next%p)) stop 11
-		if ( any(lbound(a1%next%p) .ne. (/1,6,11/))) stop 13
-		if ( any(ubound(a1%next%p) .ne. (/5,10,20/))) stop 15
+		if ( .not. associated(a1%next%p)) error stop 11
+		if ( any(lbound(a1%next%p) .ne. (/1,6,11/))) error stop 13
+		if ( any(ubound(a1%next%p) .ne. (/5,10,20/))) error stop 15
 
 		a1%next%p(1:,1:,1:) => a1%next%p
 
-		if ( .not. associated(a1%next%p)) stop 11
-		if ( any(lbound(a1%next%p) .ne. (/1,1,1/))) stop 13
-		if ( any(ubound(a1%next%p) .ne. (/5,5,10/))) stop 15
+		if ( .not. associated(a1%next%p)) error stop 11
+		if ( any(lbound(a1%next%p) .ne. (/1,1,1/))) error stop 13
+		if ( any(ubound(a1%next%p) .ne. (/5,5,10/))) error stop 15
 
 		print *,a1%next%p
 
@@ -73,6 +73,6 @@
  	type(A(4)), intent(inout) :: a1
 	integer, target, intent(in) :: a2(:)
 
-	if ( .not. allocated(a1%next)) stop 41
+	if ( .not. allocated(a1%next)) error stop 41
 	a1%next%p(1:5,6:10,11:20) => a2
     end subroutine

@@ -32,9 +32,9 @@ program main
 
     p(lb:size(tar)/ub, min(lb,-4):ub/2) => tar
 
-    if ( .not. associated(p)) stop 1
-    if ( any (lbound(p) .ne. (/1,-4 /))) stop 2
-    if ( any (ubound(p) .ne. (/1,5 /))) stop 3
+    if ( .not. associated(p)) error stop 1
+    if ( any (lbound(p) .ne. (/1,-4 /))) error stop 2
+    if ( any (ubound(p) .ne. (/1,5 /))) error stop 3
 
     select type(p)
         type is (complex)

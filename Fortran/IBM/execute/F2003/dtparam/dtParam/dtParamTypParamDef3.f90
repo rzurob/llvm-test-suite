@@ -48,28 +48,28 @@
 
   SUBROUTINE ModSub0(Arg)
   CLASS(DT0(1,*)) :: Arg
-    IF ( Arg%K             .NE. 1 )         STOP 11
-    IF ( Arg%L             .NE. 4)          STOP 12
+    IF ( Arg%K             .NE. 1 )         ERROR STOP 11
+    IF ( Arg%L             .NE. 4)          ERROR STOP 12
   END SUBROUTINE
 
   SUBROUTINE ModSub2(Arg)
   CLASS(DT1(2,*, L1=*)) :: Arg
-    IF ( Arg%K             .NE. Arg%KK )          STOP 21
-    IF ( Arg%K             .NE. KIND(Arg%KK) )    STOP 22
-    IF ( Arg%K1            .NE. 2 )               STOP 21
-    IF ( KIND(Arg%LL)      .NE. Arg%K )           STOP 23
-    IF ( ANY(SHAPE(Arg%LL) .NE. (/Arg%L, Arg%L/)))STOP 24
-    IF ( ANY(Arg%LL        .NE. Arg%K) )          STOP 25
+    IF ( Arg%K             .NE. Arg%KK )          ERROR STOP 21
+    IF ( Arg%K             .NE. KIND(Arg%KK) )    ERROR STOP 22
+    IF ( Arg%K1            .NE. 2 )               ERROR STOP 21
+    IF ( KIND(Arg%LL)      .NE. Arg%K )           ERROR STOP 23
+    IF ( ANY(SHAPE(Arg%LL) .NE. (/Arg%L, Arg%L/)))ERROR STOP 24
+    IF ( ANY(Arg%LL        .NE. Arg%K) )          ERROR STOP 25
   END SUBROUTINE
 
   SUBROUTINE ModSub8(Arg)
   CLASS(DT1(8,*, L1=*)) :: Arg
-    IF ( Arg%K             .NE. Arg%KK )          STOP 21
-    IF ( Arg%K             .NE. KIND(Arg%KK) )    STOP 22
-    IF ( Arg%K1            .NE. 8 )               STOP 21
-    IF ( KIND(Arg%LL)      .NE. Arg%K )           STOP 23
-    IF ( ANY(SHAPE(Arg%LL) .NE. (/Arg%L, Arg%L/)))STOP 24
-    IF ( ANY(Arg%LL        .NE. Arg%K) )          STOP 25
+    IF ( Arg%K             .NE. Arg%KK )          ERROR STOP 21
+    IF ( Arg%K             .NE. KIND(Arg%KK) )    ERROR STOP 22
+    IF ( Arg%K1            .NE. 8 )               ERROR STOP 21
+    IF ( KIND(Arg%LL)      .NE. Arg%K )           ERROR STOP 23
+    IF ( ANY(SHAPE(Arg%LL) .NE. (/Arg%L, Arg%L/)))ERROR STOP 24
+    IF ( ANY(Arg%LL        .NE. Arg%K) )          ERROR STOP 25
   END SUBROUTINE
 
 

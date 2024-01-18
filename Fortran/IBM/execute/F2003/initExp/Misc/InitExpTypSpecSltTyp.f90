@@ -49,72 +49,72 @@
 
   SELECT TYPE ( I1 )
   TYPE IS (INTEGER(KIND=KIND([-1_1])))
-    IF ( KIND(I1) .NE. 1     ) STOP 11
-    IF ( SIZE(I1) .NE. 128   ) STOP 12
-    IF ( ANY( I1  .NE. -1_1 )) STOP 13
+    IF ( KIND(I1) .NE. 1     ) ERROR STOP 11
+    IF ( SIZE(I1) .NE. 128   ) ERROR STOP 12
+    IF ( ANY( I1  .NE. -1_1 )) ERROR STOP 13
   CLASS DEFAULT
     STOP 14
   END SELECT
 
   SELECT TYPE ( I2 )
   TYPE IS (INTEGER(KIND=KIND([-2_2])))
-    IF ( KIND(I2) .NE. 2     ) STOP 21
-    IF ( SIZE(I2) .NE. 128   ) STOP 22
-    IF ( ANY( I2  .NE. -2_1 )) STOP 23
+    IF ( KIND(I2) .NE. 2     ) ERROR STOP 21
+    IF ( SIZE(I2) .NE. 128   ) ERROR STOP 22
+    IF ( ANY( I2  .NE. -2_1 )) ERROR STOP 23
   CLASS DEFAULT
     STOP 24
   END SELECT
 
   SELECT TYPE ( I4 )
   TYPE IS (INTEGER(KIND=KIND([-4_4])))
-    IF ( KIND(I4) .NE. 4     ) STOP 31
-    IF ( SIZE(I4) .NE. 128   ) STOP 32
-    IF ( ANY( I4  .NE. -4_4 )) STOP 33
+    IF ( KIND(I4) .NE. 4     ) ERROR STOP 31
+    IF ( SIZE(I4) .NE. 128   ) ERROR STOP 32
+    IF ( ANY( I4  .NE. -4_4 )) ERROR STOP 33
   CLASS DEFAULT
     STOP 34
   END SELECT
 
   SELECT TYPE ( I8 )
   TYPE IS (INTEGER(KIND=KIND([-8_8])))
-    IF ( KIND(I8) .NE. 8     ) STOP 41
-    IF ( SIZE(I8) .NE. 128   ) STOP 42
-    IF ( ANY( I8  .NE. -8_8 )) STOP 43
+    IF ( KIND(I8) .NE. 8     ) ERROR STOP 41
+    IF ( SIZE(I8) .NE. 128   ) ERROR STOP 42
+    IF ( ANY( I8  .NE. -8_8 )) ERROR STOP 43
   CLASS DEFAULT
     STOP 44
   END SELECT
 
   SELECT TYPE ( L1 )
   TYPE IS (LOGICAL(KIND=KIND([.FALSE._1])))
-    IF ( KIND(L1) .NE. 1     )       STOP 51
-    IF ( SIZE(L1) .NE. 128   )       STOP 52
-    IF ( ANY( L1  .NEQV. .TRUE._1 )) STOP 53
+    IF ( KIND(L1) .NE. 1     )       ERROR STOP 51
+    IF ( SIZE(L1) .NE. 128   )       ERROR STOP 52
+    IF ( ANY( L1  .NEQV. .TRUE._1 )) ERROR STOP 53
   CLASS DEFAULT
     STOP 54
   END SELECT
 
   SELECT TYPE ( L2 )
   TYPE IS (LOGICAL(KIND=KIND([.FALSE._2])))
-    IF ( KIND(L2) .NE. 2     )       STOP 61
-    IF ( SIZE(L2) .NE. 128   )       STOP 62
-    IF ( ANY( L2  .NEQV. .TRUE._2 )) STOP 63
+    IF ( KIND(L2) .NE. 2     )       ERROR STOP 61
+    IF ( SIZE(L2) .NE. 128   )       ERROR STOP 62
+    IF ( ANY( L2  .NEQV. .TRUE._2 )) ERROR STOP 63
   CLASS DEFAULT
     STOP 64
   END SELECT
 
   SELECT TYPE ( L4 )
   TYPE IS (LOGICAL(KIND=KIND([.FALSE._4])))
-    IF ( KIND(L4) .NE. 4     )       STOP 71
-    IF ( SIZE(L4) .NE. 128   )       STOP 72
-    IF ( ANY( L4  .NEQV. .TRUE._4 )) STOP 73
+    IF ( KIND(L4) .NE. 4     )       ERROR STOP 71
+    IF ( SIZE(L4) .NE. 128   )       ERROR STOP 72
+    IF ( ANY( L4  .NEQV. .TRUE._4 )) ERROR STOP 73
   CLASS DEFAULT
     STOP 74
   END SELECT
 
   SELECT TYPE ( L8 )
   TYPE IS (LOGICAL(KIND=KIND([.FALSE._8])))
-    IF ( KIND(L8) .NE. 8     )       STOP 81
-    IF ( SIZE(L8) .NE. 128   )       STOP 82
-    IF ( ANY( L8  .NEQV. .TRUE._8 )) STOP 83
+    IF ( KIND(L8) .NE. 8     )       ERROR STOP 81
+    IF ( SIZE(L8) .NE. 128   )       ERROR STOP 82
+    IF ( ANY( L8  .NEQV. .TRUE._8 )) ERROR STOP 83
   CLASS DEFAULT
     STOP 84
   END SELECT

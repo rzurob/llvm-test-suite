@@ -71,14 +71,14 @@ program acetdt43cext
 
   darr  =  [derived(4)::     derived(4)(1,2), derived(a=3,b=4.), derived(4)(5), derived(4)(val=7), derived(4)(v2=8), derived(4)(val=9,v2=10)]
 
-  if (any([(darr(i) % val, darr(i) % v2, i=1,6)] /= [1, 2, -3, -4, 5, 6, 7, 6, 4, 8, 9, 10])) stop 2
+  if (any([(darr(i) % val, darr(i) % v2, i=1,6)] /= [1, 2, -3, -4, 5, 6, 7, 6, 4, 8, 9, 10])) error stop 2
 
   darr  =  [derived(4)::     (derived(4)(1,2), derived(a=3,b=4.), derived(4)(5), derived(4)(val=7), derived(4)(v2=8), derived(4)(val=9,v2=10), i=1,1)]
 
-  if (any([(darr(i) % val, darr(i) % v2, i=1,6)] /= [1, 2, -3, -4, 5, 6, 7, 6, 4, 8, 9, 10])) stop 3
+  if (any([(darr(i) % val, darr(i) % v2, i=1,6)] /= [1, 2, -3, -4, 5, 6, 7, 6, 4, 8, 9, 10])) error stop 3
 
   darr  =  [derived(4)::     (derived(4)(i,i+1), derived(a=i+2,b=real(i+3)), derived(4)(i+4), derived(4)(val=i+6), derived(4)(v2=i*8), derived(4)(val=i*9,v2=i*10), i=1,1)]
 
-  if (any([(darr(i) % val, darr(i) % v2, i=1,6)] /= [1, 2, -3, -4, 5, 6, 7, 6, 4, 8, 9, 10])) stop 4
+  if (any([(darr(i) % val, darr(i) % v2, i=1,6)] /= [1, 2, -3, -4, 5, 6, 7, 6, 4, 8, 9, 10])) error stop 4
 
 end program acetdt43cext

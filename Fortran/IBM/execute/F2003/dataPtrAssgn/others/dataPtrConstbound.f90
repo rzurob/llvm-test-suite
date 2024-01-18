@@ -40,7 +40,7 @@
                 class(base), pointer :: b2(:)
 
 		allocate(get_info(60))
-		if ( .not. allocated(get_info) ) stop 3
+		if ( .not. allocated(get_info) ) error stop 3
 
 		do i = 1, 60
 			if ( mod(i,5) == 1 )  get_info(i)%age = 18
@@ -78,7 +78,7 @@
                   (/(grandchild(get_info(i)%age,get_info(i)%name),i=1,60)/), &
                               (/10,6/)))
 
-		if ( .not. allocated(c1) ) stop 4
+		if ( .not. allocated(c1) ) error stop 4
 
 		!do i = 1, 60
            	 !    print *, get_info(i)%name, get_info(i)%age
@@ -87,19 +87,19 @@
 		! lb is constant
 		b1(o'10':, B'101':) => c1
 
-		if (any(lbound(b1) .ne. (/8,5/))) stop 5
-		if (any(ubound(b1) .ne. (/17,10/))) stop 7
-		if ( .not. associated(b1, c1)) stop 9
+		if (any(lbound(b1) .ne. (/8,5/))) error stop 5
+		if (any(ubound(b1) .ne. (/17,10/))) error stop 7
+		if ( .not. associated(b1, c1)) error stop 9
 
 		! lb/up is constant
 		b2("13"o:z'13') => b1(:,6)
-		if ( .not. associated(b2)) stop 10
+		if ( .not. associated(b2)) error stop 10
 
 		b2(1:) => b2
 
-		if ( lbound(b2,1) /= 1 ) stop 11
-		if ( ubound(b2,1) /= 9 ) stop 13
-		if ( .not. associated(b2)) stop 15
+		if ( lbound(b2,1) /= 1 ) error stop 11
+		if ( ubound(b2,1) /= 9 ) error stop 13
+		if ( .not. associated(b2)) error stop 15
 
 	 	select type(b2)
 	            type is (base)

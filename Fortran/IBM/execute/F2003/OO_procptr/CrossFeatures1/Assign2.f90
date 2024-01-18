@@ -76,14 +76,14 @@
   ProcPtr => Fun
   V = DT(-1, BTar)
 
-  IF ( V%Id .NE. -1 ) STOP 11
-  IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr, Fun) ) STOP 13
+  IF ( V%Id .NE. -1 ) ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr, Fun) ) ERROR STOP 13
 
-  IF (V%BComp%ProcPtr("ABC") .NE. "ABC" ) STOP 14
+  IF (V%BComp%ProcPtr("ABC") .NE. "ABC" ) ERROR STOP 14
 
-  IF (V%BComp%ProcPtr("")   .NE. "" )     STOP 15
+  IF (V%BComp%ProcPtr("")   .NE. "" )     ERROR STOP 15
 
-  IF (V%BComp%ProcPtr(Str)   .NE. Str )   STOP 15
+  IF (V%BComp%ProcPtr(Str)   .NE. Str )   ERROR STOP 15
 
 
   END

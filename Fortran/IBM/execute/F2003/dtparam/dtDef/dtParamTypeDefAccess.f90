@@ -89,20 +89,20 @@
   TYPE(DT(4,4))  :: T=DT(4,4)(-1, "1234"), Q=DT(4,4)(1, "")
 
   Q = T%IntFun()
-  IF ( Q%I .NE. -1 )     STOP 11
-  IF ( Q%C .NE. "1234" ) STOP 12
+  IF ( Q%I .NE. -1 )     ERROR STOP 11
+  IF ( Q%C .NE. "1234" ) ERROR STOP 12
 
   Q = W%IntFun()
-  IF ( W%I .NE. -2 )     STOP 21
-  IF ( W%C .NE. "4321" ) STOP 22
-  IF ( Q%I .NE. -2 )     STOP 23
-  IF ( Q%C .NE. "4321" ) STOP 24
+  IF ( W%I .NE. -2 )     ERROR STOP 21
+  IF ( W%C .NE. "4321" ) ERROR STOP 22
+  IF ( Q%I .NE. -2 )     ERROR STOP 23
+  IF ( Q%C .NE. "4321" ) ERROR STOP 24
 
   Q2 = V%IntFun()
-  IF ( V%I  .NE. -3 )     STOP 31
-  IF ( V%C  .NE. "4321" ) STOP 32
-  IF ( Q2%I .NE. -3 )     STOP 33
-  IF ( Q2%C .NE. "4321" ) STOP 34
+  IF ( V%I  .NE. -3 )     ERROR STOP 31
+  IF ( V%C  .NE. "4321" ) ERROR STOP 32
+  IF ( Q2%I .NE. -3 )     ERROR STOP 33
+  IF ( Q2%C .NE. "4321" ) ERROR STOP 34
 
   END
 

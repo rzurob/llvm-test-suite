@@ -31,9 +31,9 @@ program dtParameterInquiryAssociate02
 
   str = b1(1)%c
 
-  if (.not. allocated (str)) stop 1
+  if (.not. allocated (str)) error stop 1
 
-  if (len(str) /= 3) stop 2
-  if (size(str) /= 3) stop 3
-  if (any (str /= ['abc','efg','ijk'])) stop 4
+  if (len(str) /= 3) error stop 2
+  if (size(str) /= 3) error stop 3
+  if (any (str /= ['abc','efg','ijk'])) error stop 4
 end

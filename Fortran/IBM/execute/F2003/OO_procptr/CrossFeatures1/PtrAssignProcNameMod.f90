@@ -42,7 +42,7 @@
     SUBROUTINE ModSub(Arg1, Arg2)
     PROCEDURE(ModFun) :: Arg1
     COMPLEX(8)        :: Arg2
-      IF ( Arg1(Arg2) .NE. Arg2 ) STOP 21
+      IF ( Arg1(Arg2) .NE. Arg2 ) ERROR STOP 21
     END SUBROUTINE
 
   END MODULE
@@ -58,7 +58,7 @@
 
     Ptr => ModFun
     Cmpx = Ptr((1.0_8,-1.0_8))
-    IF (Cmpx .NE. (1.0_8,-1.0_8) ) STOP 22
+    IF (Cmpx .NE. (1.0_8,-1.0_8) ) ERROR STOP 22
 
     Ptr1 => ModSub
     CALL Ptr1(ModFun, (1.0_8,-1.0_8))

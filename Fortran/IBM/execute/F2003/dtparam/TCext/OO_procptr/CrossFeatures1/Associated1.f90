@@ -93,26 +93,26 @@
 
   TYPE (DT(4)) :: V
 
-  IF ( ASSOCIATED( V%PtrChar0 ))           STOP 10
-  IF ( ASSOCIATED( V%PtrChar1 ))           STOP 11
-  IF ( ASSOCIATED( V%PtrChar2 ))           STOP 12
-  IF ( ASSOCIATED( V%PtrChar3 ))           STOP 13
-  IF ( ASSOCIATED( V%PtrChar4 ))           STOP 14
+  IF ( ASSOCIATED( V%PtrChar0 ))           ERROR STOP 10
+  IF ( ASSOCIATED( V%PtrChar1 ))           ERROR STOP 11
+  IF ( ASSOCIATED( V%PtrChar2 ))           ERROR STOP 12
+  IF ( ASSOCIATED( V%PtrChar3 ))           ERROR STOP 13
+  IF ( ASSOCIATED( V%PtrChar4 ))           ERROR STOP 14
 
   V = DT(4)(Char0, Proc, ProcPtr, Char3, Char4 )
 
-  IF ( .NOT. ASSOCIATED( V%PtrChar0 ))     STOP 20
-  IF ( .NOT. ASSOCIATED( V%PtrChar1 ))     STOP 21
-  IF ( .NOT. ASSOCIATED( V%PtrChar2 ))     STOP 22
-  IF ( .NOT. ASSOCIATED( V%PtrChar3 ))     STOP 23
-  IF ( .NOT. ASSOCIATED( V%PtrChar4 ))     STOP 24
+  IF ( .NOT. ASSOCIATED( V%PtrChar0 ))     ERROR STOP 20
+  IF ( .NOT. ASSOCIATED( V%PtrChar1 ))     ERROR STOP 21
+  IF ( .NOT. ASSOCIATED( V%PtrChar2 ))     ERROR STOP 22
+  IF ( .NOT. ASSOCIATED( V%PtrChar3 ))     ERROR STOP 23
+  IF ( .NOT. ASSOCIATED( V%PtrChar4 ))     ERROR STOP 24
 
 
-  IF ( LEN( V%PtrChar0(""))      .NE. 0 )      STOP 30
-  IF ( V%PtrChar1("1")           .NE. "1" )    STOP 31
-  IF ( V%PtrChar2("2")           .NE. "2" )    STOP 32
-  IF ( TRIM(V%PtrChar3("long"))  .NE. "1025" ) STOP 33
-  IF ( TRIM(V%PtrChar4("short")) .NE. "511" )  STOP 34
+  IF ( LEN( V%PtrChar0(""))      .NE. 0 )      ERROR STOP 30
+  IF ( V%PtrChar1("1")           .NE. "1" )    ERROR STOP 31
+  IF ( V%PtrChar2("2")           .NE. "2" )    ERROR STOP 32
+  IF ( TRIM(V%PtrChar3("long"))  .NE. "1025" ) ERROR STOP 33
+  IF ( TRIM(V%PtrChar4("short")) .NE. "511" )  ERROR STOP 34
 
 
   END SUBROUTINE

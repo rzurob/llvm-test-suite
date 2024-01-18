@@ -32,7 +32,7 @@ module m
 
         allocatable addB1B2(:)
 
-        if (b1%n1 /= b2%n1) stop 100
+        if (b1%n1 /= b2%n1) error stop 100
 
         if (size(b1) > size(b2)) then
             addB1B2 = (/(base(b1%n1,4)(b1(i)%data+b2(i)%data), i=1,size(b2)),&

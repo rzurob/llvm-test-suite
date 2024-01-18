@@ -67,23 +67,23 @@
 
 
   Ptr(1:,1:) => Tar2
-  IF (.NOT. ASSOCIATED(Ptr, Tar2))                                            STOP 21
-  IF (ANY( LBOUND(Ptr) .NE. (/1, 1 /)))                                       STOP 22
-  IF (ANY( UBOUND(Ptr) .NE. (/N,N/)))                                         STOP 23
-  IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=1,M)/),(/N,N/))))           STOP 24
+  IF (.NOT. ASSOCIATED(Ptr, Tar2))                                            ERROR STOP 21
+  IF (ANY( LBOUND(Ptr) .NE. (/1, 1 /)))                                       ERROR STOP 22
+  IF (ANY( UBOUND(Ptr) .NE. (/N,N/)))                                         ERROR STOP 23
+  IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=1,M)/),(/N,N/))))           ERROR STOP 24
 
   Ptr = Ptr + Ptr
-  IF (ANY( Ptr%ID  .NE. RESHAPE((/("ModFun-" //CHAR(I)//CHAR(I), I=1,M)/),(/N,N/))))  STOP 25
+  IF (ANY( Ptr%ID  .NE. RESHAPE((/("ModFun-" //CHAR(I)//CHAR(I), I=1,M)/),(/N,N/))))  ERROR STOP 25
 
   Ptr(0:9,0:9) => Tar1
-  IF (.NOT. ASSOCIATED(Ptr))                                                  STOP 31
-  IF (ANY( LBOUND(Ptr) .NE. (/0, 0 /)))                                       STOP 32
-  IF (ANY( UBOUND(Ptr) .NE. (/9,9/)))                                         STOP 33
-  IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=M,1,-1)/),(/N,N/))))        STOP 34
+  IF (.NOT. ASSOCIATED(Ptr))                                                  ERROR STOP 31
+  IF (ANY( LBOUND(Ptr) .NE. (/0, 0 /)))                                       ERROR STOP 32
+  IF (ANY( UBOUND(Ptr) .NE. (/9,9/)))                                         ERROR STOP 33
+  IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=M,1,-1)/),(/N,N/))))        ERROR STOP 34
 
   Ptr = Ptr + Ptr
-  IF (ANY( Ptr%ID  .NE. RESHAPE((/("ModFun-" //CHAR(I)//CHAR(I), I=M,1,-1)/),(/N,N/))))  STOP 35
-  IF (ANY( Tar1%ID  .NE. (/("ModFun-" //CHAR(I)//CHAR(I), I=M,1,-1)/)))                  STOP 36
+  IF (ANY( Ptr%ID  .NE. RESHAPE((/("ModFun-" //CHAR(I)//CHAR(I), I=M,1,-1)/),(/N,N/))))  ERROR STOP 35
+  IF (ANY( Tar1%ID  .NE. (/("ModFun-" //CHAR(I)//CHAR(I), I=M,1,-1)/)))                  ERROR STOP 36
 
 
   END

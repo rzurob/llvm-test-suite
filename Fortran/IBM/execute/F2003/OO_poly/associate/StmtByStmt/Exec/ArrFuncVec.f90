@@ -32,18 +32,18 @@
 
   ASSOCIATE ( As => Fun(Arr(S1, S2)), As1 => Fun(Arr(S2, S2))  )
 
-    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             STOP 30
-    IF ( ANY (UBOUND(As)  .NE. (/5,5/) ) )             STOP 31
-    IF ( ANY (SHAPE(As)   .NE. (/5,5/) ) )             STOP 32
-    IF ( ANY (SHAPE(As)   .NE. (/5,5/) ) )             STOP 32
-    IF ( KIND(As)   .NE. 8 )                           STOP 33
+    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             ERROR STOP 30
+    IF ( ANY (UBOUND(As)  .NE. (/5,5/) ) )             ERROR STOP 31
+    IF ( ANY (SHAPE(As)   .NE. (/5,5/) ) )             ERROR STOP 32
+    IF ( ANY (SHAPE(As)   .NE. (/5,5/) ) )             ERROR STOP 32
+    IF ( KIND(As)   .NE. 8 )                           ERROR STOP 33
 
     ASSOCIATE (As1 => Fun(As(S2, S2)))
-      IF ( ANY (LBOUND(As)   .NE. (/1,1/) ) )             STOP 40
-      IF ( ANY (UBOUND(As1)  .NE. (/5,5/) ) )             STOP 41
-      IF ( ANY (SHAPE(As1)   .NE. (/5,5/) ) )             STOP 42
-      IF ( ANY (SHAPE(As1)   .NE. (/5,5/) ) )             STOP 42
-      IF ( KIND(As1)   .NE. 8 )                           STOP 43
+      IF ( ANY (LBOUND(As)   .NE. (/1,1/) ) )             ERROR STOP 40
+      IF ( ANY (UBOUND(As1)  .NE. (/5,5/) ) )             ERROR STOP 41
+      IF ( ANY (SHAPE(As1)   .NE. (/5,5/) ) )             ERROR STOP 42
+      IF ( ANY (SHAPE(As1)   .NE. (/5,5/) ) )             ERROR STOP 42
+      IF ( KIND(As1)   .NE. 8 )                           ERROR STOP 43
     END ASSOCIATE
 
   END ASSOCIATE

@@ -56,25 +56,25 @@
   TYPE(DT1(8,:)), POINTER     :: P
   TYPE(DT1(2,:)), ALLOCATABLE :: A
 
-  IF ( KIND(T%I) .NE. 4 )      STOP 11
-  IF ( T%I      .NE. 4 )       STOP 12
-  IF ( LEN(T%C) .NE. 1 )       STOP 13
-  IF ( T%C      .NE. "!" )     STOP 14
-  IF ( ASSOCIATED(T%ProcPtr) ) STOP 15
+  IF ( KIND(T%I) .NE. 4 )      ERROR STOP 11
+  IF ( T%I      .NE. 4 )       ERROR STOP 12
+  IF ( LEN(T%C) .NE. 1 )       ERROR STOP 13
+  IF ( T%C      .NE. "!" )     ERROR STOP 14
+  IF ( ASSOCIATED(T%ProcPtr) ) ERROR STOP 15
 
   ALLOCATE(DT1(8,2) :: P )
-  IF ( KIND(P%I) .NE. 8 )      STOP 21
-  IF ( P%I      .NE. 8 )       STOP 22
-  IF ( LEN(P%C) .NE. 2 )       STOP 23
-  IF ( P%C      .NE. "!!" )    STOP 24
-  IF ( ASSOCIATED(P%ProcPtr) ) STOP 25
+  IF ( KIND(P%I) .NE. 8 )      ERROR STOP 21
+  IF ( P%I      .NE. 8 )       ERROR STOP 22
+  IF ( LEN(P%C) .NE. 2 )       ERROR STOP 23
+  IF ( P%C      .NE. "!!" )    ERROR STOP 24
+  IF ( ASSOCIATED(P%ProcPtr) ) ERROR STOP 25
 
   ALLOCATE(DT1(2,1+2) :: A )
-  IF ( KIND(A%I) .NE. 2 )      STOP 31
-  IF ( A%I      .NE. 2 )       STOP 32
-  IF ( LEN(A%C) .NE. 3 )       STOP 33
-  IF ( A%C      .NE. "!!!" )   STOP 34
-  IF ( ASSOCIATED(A%ProcPtr) ) STOP 35
+  IF ( KIND(A%I) .NE. 2 )      ERROR STOP 31
+  IF ( A%I      .NE. 2 )       ERROR STOP 32
+  IF ( LEN(A%C) .NE. 3 )       ERROR STOP 33
+  IF ( A%C      .NE. "!!!" )   ERROR STOP 34
+  IF ( ASSOCIATED(A%ProcPtr) ) ERROR STOP 35
 
   END
 

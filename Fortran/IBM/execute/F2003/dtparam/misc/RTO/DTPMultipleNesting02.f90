@@ -56,68 +56,68 @@ PROGRAM DTPMultipleNesting02
 
       ALLOCATE( Branch(4,2,5,10):: b0 )
 
-      IF ( b0%n1                  .NE.    2 )    STOP 10
-      IF ( b0%n2                  .NE.    5 )    STOP 11
-      IF ( b0%n3                  .NE.   10 )    STOP 12
+      IF ( b0%n1                  .NE.    2 )    ERROR STOP 10
+      IF ( b0%n2                  .NE.    5 )    ERROR STOP 11
+      IF ( b0%n3                  .NE.   10 )    ERROR STOP 12
 
-      IF ( SIZE(b0%cmp1)          .NE.   10 )    STOP 13
-      IF ( LBOUND(b0%cmp1, 1)     .NE.    1 )    STOP 14
-      IF ( UBOUND(b0%cmp1, 1)     .NE.   10 )    STOP 15
+      IF ( SIZE(b0%cmp1)          .NE.   10 )    ERROR STOP 13
+      IF ( LBOUND(b0%cmp1, 1)     .NE.    1 )    ERROR STOP 14
+      IF ( UBOUND(b0%cmp1, 1)     .NE.   10 )    ERROR STOP 15
 
       DO i = 1, 10
-        IF ( LEN(b0%cmp1(i)%Carr)       .NE.     2 )    STOP 16
-        IF ( ANY((b0%cmp1(i)%Carr)      .NE. 'AA') )    STOP 17
+        IF ( LEN(b0%cmp1(i)%Carr)       .NE.     2 )    ERROR STOP 16
+        IF ( ANY((b0%cmp1(i)%Carr)      .NE. 'AA') )    ERROR STOP 17
 
-        IF ( SIZE(b0%cmp1(i)%Rarr)      .NE.     2 )    STOP 18
-        IF ( LBOUND(b0%cmp1(i)%Rarr, 1) .NE.     1 )    STOP 19
-        IF ( UBOUND(b0%cmp1(i)%Rarr, 1) .NE.     2 )    STOP 20
-        IF ( ANY((b0%cmp1(i)%Rarr)      .NE.    4) )    STOP 21
+        IF ( SIZE(b0%cmp1(i)%Rarr)      .NE.     2 )    ERROR STOP 18
+        IF ( LBOUND(b0%cmp1(i)%Rarr, 1) .NE.     1 )    ERROR STOP 19
+        IF ( UBOUND(b0%cmp1(i)%Rarr, 1) .NE.     2 )    ERROR STOP 20
+        IF ( ANY((b0%cmp1(i)%Rarr)      .NE.    4) )    ERROR STOP 21
 
-        IF ( SIZE(b0%cmp1(i)%Iarr)      .NE.     2 )    STOP 22
-        IF ( LBOUND(b0%cmp1(i)%Iarr, 1) .NE.     1 )    STOP 23
-        IF ( UBOUND(b0%cmp1(i)%Iarr, 1) .NE.     2 )    STOP 24
-        IF ( ANY((b0%cmp1(i)%Iarr)      .NE.   -3) )    STOP 25
+        IF ( SIZE(b0%cmp1(i)%Iarr)      .NE.     2 )    ERROR STOP 22
+        IF ( LBOUND(b0%cmp1(i)%Iarr, 1) .NE.     1 )    ERROR STOP 23
+        IF ( UBOUND(b0%cmp1(i)%Iarr, 1) .NE.     2 )    ERROR STOP 24
+        IF ( ANY((b0%cmp1(i)%Iarr)      .NE.   -3) )    ERROR STOP 25
 
         ALLOCATE( Base(4,5) :: b0%cmp1(i)%ptr )
-        IF ( b0%cmp1(i)%ptr%l1              .NE.        5 )  STOP 26
+        IF ( b0%cmp1(i)%ptr%l1              .NE.        5 )  ERROR STOP 26
 
-        IF ( LEN(b0%cmp1(i)%ptr%Carr)       .NE.        5 )  STOP 27
-        IF ( ANY((b0%cmp1(i)%ptr%Carr)      .NE. 'AAAAA') )  STOP 28
+        IF ( LEN(b0%cmp1(i)%ptr%Carr)       .NE.        5 )  ERROR STOP 27
+        IF ( ANY((b0%cmp1(i)%ptr%Carr)      .NE. 'AAAAA') )  ERROR STOP 28
 
-        IF ( SIZE(b0%cmp1(i)%ptr%Rarr)      .NE.        5 )  STOP 29
-        IF ( LBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        1 )  STOP 30
-        IF ( UBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        5 )  STOP 31
-        IF ( ANY((b0%cmp1(i)%ptr%Rarr)      .NE.       4) )  STOP 32
+        IF ( SIZE(b0%cmp1(i)%ptr%Rarr)      .NE.        5 )  ERROR STOP 29
+        IF ( LBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        1 )  ERROR STOP 30
+        IF ( UBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        5 )  ERROR STOP 31
+        IF ( ANY((b0%cmp1(i)%ptr%Rarr)      .NE.       4) )  ERROR STOP 32
       END DO
 
-      IF ( SIZE(b0%cmp2)          .NE.   10 )    STOP 33
-      IF ( LBOUND(b0%cmp2, 1)     .NE.    1 )    STOP 34
-      IF ( UBOUND(b0%cmp2, 1)     .NE.   10 )    STOP 35
+      IF ( SIZE(b0%cmp2)          .NE.   10 )    ERROR STOP 33
+      IF ( LBOUND(b0%cmp2, 1)     .NE.    1 )    ERROR STOP 34
+      IF ( UBOUND(b0%cmp2, 1)     .NE.   10 )    ERROR STOP 35
 
       DO i = 1, 10
-        IF ( LEN(b0%cmp2(i)%Carr)       .NE.        5 )    STOP 36
-        IF ( ANY((b0%cmp2(i)%Carr)      .NE. 'AAAAA') )    STOP 37
+        IF ( LEN(b0%cmp2(i)%Carr)       .NE.        5 )    ERROR STOP 36
+        IF ( ANY((b0%cmp2(i)%Carr)      .NE. 'AAAAA') )    ERROR STOP 37
 
-        IF ( SIZE(b0%cmp2(i)%Rarr)      .NE.     5 )    STOP 38
-        IF ( LBOUND(b0%cmp2(i)%Rarr, 1) .NE.     1 )    STOP 39
-        IF ( UBOUND(b0%cmp2(i)%Rarr, 1) .NE.     5 )    STOP 40
-        IF ( ANY((b0%cmp2(i)%Rarr)      .NE.    4) )    STOP 41
+        IF ( SIZE(b0%cmp2(i)%Rarr)      .NE.     5 )    ERROR STOP 38
+        IF ( LBOUND(b0%cmp2(i)%Rarr, 1) .NE.     1 )    ERROR STOP 39
+        IF ( UBOUND(b0%cmp2(i)%Rarr, 1) .NE.     5 )    ERROR STOP 40
+        IF ( ANY((b0%cmp2(i)%Rarr)      .NE.    4) )    ERROR STOP 41
 
-        IF ( SIZE(b0%cmp2(i)%Iarr)      .NE.     5 )    STOP 42
-        IF ( LBOUND(b0%cmp2(i)%Iarr, 1) .NE.     1 )    STOP 43
-        IF ( UBOUND(b0%cmp2(i)%Iarr, 1) .NE.     5 )    STOP 44
-        IF ( ANY((b0%cmp2(i)%Iarr)      .NE.   -3) )    STOP 45
+        IF ( SIZE(b0%cmp2(i)%Iarr)      .NE.     5 )    ERROR STOP 42
+        IF ( LBOUND(b0%cmp2(i)%Iarr, 1) .NE.     1 )    ERROR STOP 43
+        IF ( UBOUND(b0%cmp2(i)%Iarr, 1) .NE.     5 )    ERROR STOP 44
+        IF ( ANY((b0%cmp2(i)%Iarr)      .NE.   -3) )    ERROR STOP 45
 
         ALLOCATE( Base(4,5) :: b0%cmp2(i)%ptr )
-        IF ( b0%cmp2(i)%ptr%l1              .NE.        5 )  STOP 46
+        IF ( b0%cmp2(i)%ptr%l1              .NE.        5 )  ERROR STOP 46
 
-        IF ( LEN(b0%cmp2(i)%ptr%Carr)       .NE.        5 )  STOP 47
-        IF ( ANY((b0%cmp2(i)%ptr%Carr)      .NE. 'AAAAA') )  STOP 48
+        IF ( LEN(b0%cmp2(i)%ptr%Carr)       .NE.        5 )  ERROR STOP 47
+        IF ( ANY((b0%cmp2(i)%ptr%Carr)      .NE. 'AAAAA') )  ERROR STOP 48
 
-        IF ( SIZE(b0%cmp2(i)%ptr%Rarr)      .NE.        5 )  STOP 49
-        IF ( LBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        1 )  STOP 50
-        IF ( UBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        5 )  STOP 51
-        IF ( ANY((b0%cmp2(i)%ptr%Rarr)      .NE.       4) )  STOP 52
+        IF ( SIZE(b0%cmp2(i)%ptr%Rarr)      .NE.        5 )  ERROR STOP 49
+        IF ( LBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        1 )  ERROR STOP 50
+        IF ( UBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        5 )  ERROR STOP 51
+        IF ( ANY((b0%cmp2(i)%ptr%Rarr)      .NE.       4) )  ERROR STOP 52
       END DO
 
 END PROGRAM DTPMultipleNesting02

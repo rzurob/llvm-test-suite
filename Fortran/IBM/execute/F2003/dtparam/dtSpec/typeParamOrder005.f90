@@ -138,7 +138,7 @@ use m
     integer, intent(in) :: n
     type (A(n, 4)) genA25_4
 
-    if (n /= 25) stop 10
+    if (n /= 25) error stop 10
     genA25_4%data = (/(i*1.0, i=1,25)/)
 end function
 
@@ -147,6 +147,6 @@ use m
     integer, intent(in) :: n
     type (A(n,8)) genA30_8
 
-    if (n /= 30) stop 12
+    if (n /= 30) error stop 12
     genA30_8%data = (/(i*1.0d0, i=30,1,-1)/)
 end function

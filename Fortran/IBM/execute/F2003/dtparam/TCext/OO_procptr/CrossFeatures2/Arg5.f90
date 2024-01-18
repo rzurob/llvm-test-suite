@@ -98,25 +98,25 @@
   PROCEDURE(IFun1)          :: ProcPtr3
   TYPE(DT(4,3))             :: V
 
-  IF ( .NOT. ASSOCIATED(ProcPtr0, ExtFun) ) STOP 10
-  IF ( .NOT. ASSOCIATED(ProcPtr1, ExtFun) ) STOP 11
-  IF ( .NOT. ASSOCIATED(ProcPtr2, ExtFun) ) STOP 12
+  IF ( .NOT. ASSOCIATED(ProcPtr0, ExtFun) ) ERROR STOP 10
+  IF ( .NOT. ASSOCIATED(ProcPtr1, ExtFun) ) ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(ProcPtr2, ExtFun) ) ERROR STOP 12
 
   V = ProcPtr0(DT(4,3)("321", ProcPtr0))
-  IF (V%C .NE. "321") STOP 21
-  IF ( .NOT. ASSOCIATED(V%ProcPtr, ProcPtr) ) STOP 22
+  IF (V%C .NE. "321") ERROR STOP 21
+  IF ( .NOT. ASSOCIATED(V%ProcPtr, ProcPtr) ) ERROR STOP 22
 
   V = ProcPtr1(DT(4,3)("121", ExtFun))
-  IF (V%C .NE. "121") STOP 31
-  IF ( .NOT. ASSOCIATED(V%ProcPtr, ExtFun) ) STOP 32
+  IF (V%C .NE. "121") ERROR STOP 31
+  IF ( .NOT. ASSOCIATED(V%ProcPtr, ExtFun) ) ERROR STOP 32
 
   V = ProcPtr2(DT(4,3)("331", ProcPtr0))
-  IF (V%C .NE. "331") STOP 41
-  IF ( .NOT. ASSOCIATED(V%ProcPtr, ExtFun) ) STOP 42
+  IF (V%C .NE. "331") ERROR STOP 41
+  IF ( .NOT. ASSOCIATED(V%ProcPtr, ExtFun) ) ERROR STOP 42
 
   V = ProcPtr3(DT(4,3)("122", ExtFun))
-  IF (V%C .NE. "122") STOP 51
-  IF ( .NOT. ASSOCIATED(V%ProcPtr, ExtFun) ) STOP 52
+  IF (V%C .NE. "122") ERROR STOP 51
+  IF ( .NOT. ASSOCIATED(V%ProcPtr, ExtFun) ) ERROR STOP 52
 
   END SUBROUTINE
 

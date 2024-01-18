@@ -54,14 +54,14 @@ MODULE Mod1
          CLASS(Child(knd1,:)), ALLOCATABLE, INTENT(INOUT) :: Obj
 
          ALLOCATE( Child(knd1,len1):: Obj )
-         IF ( .NOT. ALLOCATED(Obj) ) STOP 10
+         IF ( .NOT. ALLOCATED(Obj) ) ERROR STOP 10
 
          Obj%my_arr = (/ (I, I = 1, len1) /)
 
          ASSOCIATE ( p => Obj%my_arr )
-            IF ( SUM(p) .NE. sum_c ) STOP 11
+            IF ( SUM(p) .NE. sum_c ) ERROR STOP 11
             DO I = 1, len1
-               IF ( p(I)   .NE.     I ) STOP 12
+               IF ( p(I)   .NE.     I ) ERROR STOP 12
             END DO
          END ASSOCIATE
 
@@ -73,11 +73,11 @@ MODULE Mod1
          TYPE(Base(knd1,len1)), TARGET :: tgt = Base(knd1,len1) ( my_arr=(/ (1, I = 1, len1) /) ) ! has the SAVE attribute
 
          Obj%Cmp => tgt
-         IF ( .NOT. ASSOCIATED(Obj%Cmp) ) STOP 20
+         IF ( .NOT. ASSOCIATED(Obj%Cmp) ) ERROR STOP 20
 
          ASSOCIATE ( p => Obj%Cmp%my_arr )
-            IF ( SUM(p) .NE. len1 ) STOP 21
-            IF ( ANY(p  .NE. 1   )) STOP 22
+            IF ( SUM(p) .NE. len1 ) ERROR STOP 21
+            IF ( ANY(p  .NE. 1   )) ERROR STOP 22
          END ASSOCIATE
       END SUBROUTINE sub2
 
@@ -87,9 +87,9 @@ MODULE Mod1
          SELECT TYPE ( A => Arg )
            TYPE IS (Child(knd1,*))
              ASSOCIATE ( p => A%my_arr )
-               IF ( SUM(p) .NE. sum_c ) STOP 30
+               IF ( SUM(p) .NE. sum_c ) ERROR STOP 30
                DO I = 1, len1
-                  IF ( p(I) .NE.    I ) STOP 31
+                  IF ( p(I) .NE.    I ) ERROR STOP 31
                END DO
              END ASSOCIATE
 
@@ -116,10 +116,10 @@ PROGRAM Select_Type03a
       CLASS(Child(knd1,:)), ALLOCATABLE :: dtv
 
       CALL sub1(dtv)
-      IF ( .NOT. ALLOCATED(dtv) ) STOP 101
+      IF ( .NOT. ALLOCATED(dtv) ) ERROR STOP 101
 
       CALL sub2(dtv)
-      IF ( .NOT. ASSOCIATED(dtv%Cmp) ) STOP 102
+      IF ( .NOT. ASSOCIATED(dtv%Cmp) ) ERROR STOP 102
 
       SELECT TYPE ( A => dtv%Cmp)
         TYPE IS (Child(knd1,*))
@@ -130,8 +130,8 @@ PROGRAM Select_Type03a
 
         CLASS IS (Base(knd1,*))
            ASSOCIATE ( p => A%my_arr )
-             IF ( SUM(p) .NE. len1 ) STOP 105
-             IF ( ANY(p  .NE. 1   )) STOP 106
+             IF ( SUM(p) .NE. len1 ) ERROR STOP 105
+             IF ( ANY(p  .NE. 1   )) ERROR STOP 106
            END ASSOCIATE
 
         CLASS DEFAULT

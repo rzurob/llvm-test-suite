@@ -40,12 +40,12 @@ program main
     select type (b1)
     	type is (base(4,*))
     	    b1%ptr(2:4) => b2%ptr
-     	    if ( .not. associated(b1%ptr, b2%ptr) ) stop 2
-            if ( lbound(b1%ptr,1) /= 2 ) stop 5
-            if ( ubound(b1%ptr,1) /= 4 ) stop 8
+     	    if ( .not. associated(b1%ptr, b2%ptr) ) error stop 2
+            if ( lbound(b1%ptr,1) /= 2 ) error stop 5
+            if ( ubound(b1%ptr,1) /= 4 ) error stop 8
 
 	    print *, b1%ptr
-            if ( any(b1%ptr == b1%ptr .neqv. .true.) ) stop 10
+            if ( any(b1%ptr == b1%ptr .neqv. .true.) ) error stop 10
 
         class default
  	    stop 1

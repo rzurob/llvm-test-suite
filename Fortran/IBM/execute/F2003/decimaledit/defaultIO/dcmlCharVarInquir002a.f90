@@ -14,7 +14,7 @@ recursive subroutine inquireSubStr (unit, s, i)
     character(*), intent(inout) :: s
     integer, intent(in) :: i, unit
 
-    if (i <= 0) stop 100
+    if (i <= 0) error stop 100
 
     if (i == 1) then
         inquire (unit, decimal=s)

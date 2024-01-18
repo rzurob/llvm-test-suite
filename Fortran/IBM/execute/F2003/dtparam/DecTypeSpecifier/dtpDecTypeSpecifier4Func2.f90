@@ -78,13 +78,13 @@
 
   B = ExtFun1(C="X", I=-1)
 
-  IF ( B%K               .NE.   2          ) STOP 11
-  IF ( B%L               .NE.   1          ) STOP 12
-  IF ( B%I%KIND          .NE.   2          ) STOP 13
-  IF ( B%I               .NE.  -1          ) STOP 14
-  IF ( B%C%LEN           .NE.   1          ) STOP 15
-  IF ( SIZE(B%C)         .NE.   1          ) STOP 16
-  IF ( ANY(B%C           .NE.   "X"      ) ) STOP 17
+  IF ( B%K               .NE.   2          ) ERROR STOP 11
+  IF ( B%L               .NE.   1          ) ERROR STOP 12
+  IF ( B%I%KIND          .NE.   2          ) ERROR STOP 13
+  IF ( B%I               .NE.  -1          ) ERROR STOP 14
+  IF ( B%C%LEN           .NE.   1          ) ERROR STOP 15
+  IF ( SIZE(B%C)         .NE.   1          ) ERROR STOP 16
+  IF ( ANY(B%C           .NE.   "X"      ) ) ERROR STOP 17
 
   END
 

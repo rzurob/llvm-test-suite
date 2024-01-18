@@ -46,37 +46,37 @@
   CLASS(DT0), POINTER  :: Ptr2(:)
 
   Ptr(4:) => Arr
-  IF (ANY(LBOUND(Ptr) .NE. (/4/))) STOP 11
-  IF (ANY(UBOUND(Ptr) .NE. (/6/))) STOP 12
-  IF (ANY(Ptr         .NE. "123")) STOP 13
+  IF (ANY(LBOUND(Ptr) .NE. (/4/))) ERROR STOP 11
+  IF (ANY(UBOUND(Ptr) .NE. (/6/))) ERROR STOP 12
+  IF (ANY(Ptr         .NE. "123")) ERROR STOP 13
 
   Ptr(1:3) => Ptr(:)
-  IF (ANY(LBOUND(Ptr) .NE. (/1/))) STOP 21
-  IF (ANY(UBOUND(Ptr) .NE. (/3/))) STOP 22
-  IF (ANY(Ptr         .NE. "123")) STOP 23
+  IF (ANY(LBOUND(Ptr) .NE. (/1/))) ERROR STOP 21
+  IF (ANY(UBOUND(Ptr) .NE. (/3/))) ERROR STOP 22
+  IF (ANY(Ptr         .NE. "123")) ERROR STOP 23
 
   Ptr1(1:) => Arr1(3:1:-1)
-  IF (ANY(LBOUND(Ptr1) .NE. (/1/))) STOP 31
-  IF (ANY(UBOUND(Ptr1) .NE. (/3/))) STOP 32
-  IF (ANY(Ptr1%C       .NE. (/"3","2","1"/))) STOP 33
+  IF (ANY(LBOUND(Ptr1) .NE. (/1/))) ERROR STOP 31
+  IF (ANY(UBOUND(Ptr1) .NE. (/3/))) ERROR STOP 32
+  IF (ANY(Ptr1%C       .NE. (/"3","2","1"/))) ERROR STOP 33
 
   I=2; J=2
   Ptr1(I:J) => Arr1
-  IF (ANY(LBOUND(Ptr1) .NE. (/I/)))   STOP 41
-  IF (ANY(UBOUND(Ptr1) .NE. (/J/)))   STOP 42
-  IF (ANY(Ptr1%C       .NE. (/"1"/))) STOP 43
+  IF (ANY(LBOUND(Ptr1) .NE. (/I/)))   ERROR STOP 41
+  IF (ANY(UBOUND(Ptr1) .NE. (/J/)))   ERROR STOP 42
+  IF (ANY(Ptr1%C       .NE. (/"1"/))) ERROR STOP 43
 
   I = -1
   Ptr2(I:) => Arr1(3:1:-1)
-  IF (ANY(LBOUND(Ptr2) .NE. (/I/)))   STOP 51
-  IF (ANY(UBOUND(Ptr2) .NE. (/I+2/))) STOP 52
-  IF (ANY(Ptr2%C       .NE. (/"3","2","1"/))) STOP 53
+  IF (ANY(LBOUND(Ptr2) .NE. (/I/)))   ERROR STOP 51
+  IF (ANY(UBOUND(Ptr2) .NE. (/I+2/))) ERROR STOP 52
+  IF (ANY(Ptr2%C       .NE. (/"3","2","1"/))) ERROR STOP 53
 
   I=0; J=0
   Ptr1(I:J) => Ptr1
-  IF (ANY(LBOUND(Ptr1) .NE. (/I/)))   STOP 61
-  IF (ANY(UBOUND(Ptr1) .NE. (/J/)))   STOP 62
-  IF (ANY(Ptr1%C       .NE. (/"1"/))) STOP 63
+  IF (ANY(LBOUND(Ptr1) .NE. (/I/)))   ERROR STOP 61
+  IF (ANY(UBOUND(Ptr1) .NE. (/J/)))   ERROR STOP 62
+  IF (ANY(Ptr1%C       .NE. (/"1"/))) ERROR STOP 63
 
 
   END

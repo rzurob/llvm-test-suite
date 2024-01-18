@@ -30,18 +30,18 @@
   INTEGER(2) :: B=170_2
 
   ASSOCIATE ( As => Z'0123456789ABCDEF'  )
-    IF ( As .NE.  Z'0123456789ABCDEF'  )   STOP 21
-    IF ( As .NE.  Z  )                     STOP 22
+    IF ( As .NE.  Z'0123456789ABCDEF'  )   ERROR STOP 21
+    IF ( As .NE.  Z  )                     ERROR STOP 22
   END ASSOCIATE
 
   ASSOCIATE ( As => "01234567"O  )
-    IF ( As .NE.  "01234567"O )            STOP 31
-    IF ( As .NE.  O  )                     STOP 32
+    IF ( As .NE.  "01234567"O )            ERROR STOP 31
+    IF ( As .NE.  O  )                     ERROR STOP 32
   END ASSOCIATE
 
   ASSOCIATE ( As => B"10101010"  )
-    IF ( As .NE. B"10101010" )             STOP 41
-    IF ( As .NE. B   )                     STOP 42
+    IF ( As .NE. B"10101010" )             ERROR STOP 41
+    IF ( As .NE. B   )                     ERROR STOP 42
   END ASSOCIATE
 
   END

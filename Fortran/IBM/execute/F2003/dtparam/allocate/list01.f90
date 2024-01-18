@@ -62,7 +62,7 @@ use m
     iterator => list
     do i = 0, 500
         do j = 1, 2*i + 1
-            if (.not. precision_r4(iterator%data%data(j), sin(j*1.0e-1))) stop 10
+            if (.not. precision_r4(iterator%data%data(j), sin(j*1.0e-1))) error stop 10
         end do
 
         iterator => iterator%next

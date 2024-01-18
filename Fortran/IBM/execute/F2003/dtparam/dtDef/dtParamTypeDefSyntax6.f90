@@ -55,10 +55,10 @@
   USE M1
   TYPE(DT3(K2=2,K=2,L=2,K1=2)) :: T
 
-  IF (LEN(T%C)      .NE. 6  )  STOP 11
-  IF (SIZE(T%C)     .NE. 2  )  STOP 12
-  IF (TRIM(T%C(1)) .NE. "1" )  STOP 13
-  IF (TRIM(T%C(2)) .NE. "1" )  STOP 14
+  IF (LEN(T%C)      .NE. 6  )  ERROR STOP 11
+  IF (SIZE(T%C)     .NE. 2  )  ERROR STOP 12
+  IF (TRIM(T%C(1)) .NE. "1" )  ERROR STOP 13
+  IF (TRIM(T%C(2)) .NE. "1" )  ERROR STOP 14
 
   END
 

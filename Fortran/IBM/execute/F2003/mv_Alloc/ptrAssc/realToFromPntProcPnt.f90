@@ -30,7 +30,7 @@ module m
 
                 call move_alloc(arg,func1)
 
-                if ( .not. associated(p, func1)) stop 23
+                if ( .not. associated(p, func1)) error stop 23
 
             end function
 
@@ -48,6 +48,6 @@ end module
 
         p => av
 
-        if (  .not. precision_R4(iP(av), real(31)) ) stop 33
-        if ( allocated(av) ) stop 35
+        if (  .not. precision_R4(iP(av), real(31)) ) error stop 33
+        if ( allocated(av) ) error stop 35
 end

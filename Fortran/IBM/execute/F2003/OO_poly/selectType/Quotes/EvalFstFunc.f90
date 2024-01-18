@@ -72,9 +72,9 @@
     CLASS DEFAULT
       STOP 30
     TYPE IS (Child)
-      IF( .NOT. Visited ) STOP 40
-      IF ( As%GetId() .NE. 2 ) STOP 41
-      IF ( As%Base%GetId() .NE. 1 ) STOP 42
+      IF( .NOT. Visited ) ERROR STOP 40
+      IF ( As%GetId() .NE. 2 ) ERROR STOP 41
+      IF ( As%Base%GetId() .NE. 1 ) ERROR STOP 42
     CLASS IS (Base)
       STOP 20
   END SELECT

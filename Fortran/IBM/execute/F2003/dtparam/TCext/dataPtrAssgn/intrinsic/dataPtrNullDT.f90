@@ -62,9 +62,9 @@ end module
 
         p1(11:) => tar1%b1%a1
 
-        if ( .not. associated(p1, tar1%b1%a1)) stop 11
-        if (lbound(p1,1) /= 11 ) stop 13
-        if (ubound(p1,1) /= 30 ) stop 15
+        if ( .not. associated(p1, tar1%b1%a1)) error stop 11
+        if (lbound(p1,1) /= 11 ) error stop 13
+        if (ubound(p1,1) /= 30 ) error stop 15
 
 	select type (p1)
 	    type is (base(1,*))
@@ -73,6 +73,6 @@ end module
 		stop 25
 	end select
 
-	if ( associated( null(p1) )) stop 35
+	if ( associated( null(p1) )) error stop 35
 
     end program

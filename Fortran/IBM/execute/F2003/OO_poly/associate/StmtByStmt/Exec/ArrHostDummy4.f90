@@ -89,10 +89,10 @@
 
   CALL SWAP(V(1::2)%Child, V(2::2)%Child , SIZE(V(1::2)))
 
-  IF ( ANY(V(1::2)%Child%BaseID  .NE. -1) ) STOP 10
-  IF ( ANY(V(1::2)%Child%ChildID .NE. -2) ) STOP 11
-  IF ( ANY(V(2::2)%Child%BaseID  .NE.  0) ) STOP 12
-  IF ( ANY(V(2::2)%Child%ChildID .NE.  0) ) STOP 13
+  IF ( ANY(V(1::2)%Child%BaseID  .NE. -1) ) ERROR STOP 10
+  IF ( ANY(V(1::2)%Child%ChildID .NE. -2) ) ERROR STOP 11
+  IF ( ANY(V(2::2)%Child%BaseID  .NE.  0) ) ERROR STOP 12
+  IF ( ANY(V(2::2)%Child%ChildID .NE.  0) ) ERROR STOP 13
 
   CONTAINS
 
@@ -103,12 +103,12 @@
 
   ASSOCIATE ( As1 => Arr1, As2 => Arr2 )
 
-    IF (ANY(SHAPE(As1)  .NE. (/0/)))            STOP 21
-    IF (ANY(SHAPE(As2)  .NE. (/0/)))            STOP 22
-    IF (ANY(LBOUND(As1) .NE. (/1/)))            STOP 23
-    IF (ANY(LBOUND(As2) .NE. (/1/)))            STOP 24
-    IF (ANY(UBOUND(As1) .NE. (/0/)))            STOP 25
-    IF (ANY(UBOUND(As2) .NE. (/0/)))            STOP 26
+    IF (ANY(SHAPE(As1)  .NE. (/0/)))            ERROR STOP 21
+    IF (ANY(SHAPE(As2)  .NE. (/0/)))            ERROR STOP 22
+    IF (ANY(LBOUND(As1) .NE. (/1/)))            ERROR STOP 23
+    IF (ANY(LBOUND(As2) .NE. (/1/)))            ERROR STOP 24
+    IF (ANY(UBOUND(As1) .NE. (/0/)))            ERROR STOP 25
+    IF (ANY(UBOUND(As2) .NE. (/0/)))            ERROR STOP 26
 
 !  Nothing will be changed below!
 
@@ -119,37 +119,37 @@
 
     ASSOCIATE ( As => As1(:) )
 
-      IF (ANY(SHAPE(As) .NE. (/0/)))      STOP 33
-      IF ( ANY(As%Base%GetId() .NE. -9) ) STOP 34
-      IF ( ANY(As%GetId()      .NE. -8) ) STOP 35
-      IF ( ANY(As%BaseId       .NE. -7) ) STOP 36
-      IF ( ANY(As%ChildId      .NE. -6) ) STOP 37
+      IF (ANY(SHAPE(As) .NE. (/0/)))      ERROR STOP 33
+      IF ( ANY(As%Base%GetId() .NE. -9) ) ERROR STOP 34
+      IF ( ANY(As%GetId()      .NE. -8) ) ERROR STOP 35
+      IF ( ANY(As%BaseId       .NE. -7) ) ERROR STOP 36
+      IF ( ANY(As%ChildId      .NE. -6) ) ERROR STOP 37
 
       CALL As(1)%SetId(As)
       CALL As(1)%Base%SetId(As%Base)
 
-      IF ( ANY(As%Base%GetId() .NE. 1 ) ) STOP 44
-      IF ( ANY(As%GetId()      .NE. 2 ) ) STOP 45
-      IF ( ANY(As%BaseId       .NE. 3 ) ) STOP 46
-      IF ( ANY(As%ChildId      .NE. 4 ) ) STOP 47
+      IF ( ANY(As%Base%GetId() .NE. 1 ) ) ERROR STOP 44
+      IF ( ANY(As%GetId()      .NE. 2 ) ) ERROR STOP 45
+      IF ( ANY(As%BaseId       .NE. 3 ) ) ERROR STOP 46
+      IF ( ANY(As%ChildId      .NE. 4 ) ) ERROR STOP 47
 
     END ASSOCIATE
 
     ASSOCIATE ( As => As2(:) )
 
-      IF (ANY(SHAPE(As) .NE. (/0/)))     STOP 53
-      IF ( ANY(As%Base%GetId() .NE. 9) ) STOP 54
-      IF ( ANY(As%GetId()      .NE. 8) ) STOP 55
-      IF ( ANY(As%BaseId       .NE. 7) ) STOP 56
-      IF ( ANY(As%ChildId      .NE. 6) ) STOP 57
+      IF (ANY(SHAPE(As) .NE. (/0/)))     ERROR STOP 53
+      IF ( ANY(As%Base%GetId() .NE. 9) ) ERROR STOP 54
+      IF ( ANY(As%GetId()      .NE. 8) ) ERROR STOP 55
+      IF ( ANY(As%BaseId       .NE. 7) ) ERROR STOP 56
+      IF ( ANY(As%ChildId      .NE. 6) ) ERROR STOP 57
 
       CALL As(1)%SetId(As)
       CALL As(1)%Base%SetId(As%Base)
 
-      IF ( ANY(As%Base%GetId() .NE. 6 ) ) STOP 64
-      IF ( ANY(As%GetId()      .NE. 7 ) ) STOP 65
-      IF ( ANY(As%BaseId       .NE. 8 ) ) STOP 66
-      IF ( ANY(As%ChildId      .NE. 9 ) ) STOP 67
+      IF ( ANY(As%Base%GetId() .NE. 6 ) ) ERROR STOP 64
+      IF ( ANY(As%GetId()      .NE. 7 ) ) ERROR STOP 65
+      IF ( ANY(As%BaseId       .NE. 8 ) ) ERROR STOP 66
+      IF ( ANY(As%ChildId      .NE. 9 ) ) ERROR STOP 67
 
     END ASSOCIATE
 

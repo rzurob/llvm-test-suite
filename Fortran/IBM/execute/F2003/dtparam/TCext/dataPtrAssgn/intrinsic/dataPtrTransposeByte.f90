@@ -49,15 +49,15 @@ end module
 
     b1%p1(1,1)%x(2:, 2:) => b1%p1(1,1)%y
 
-    if ( .not. associated(b1%p1(1,1)%x, b1%p1(1,1)%y)) stop 11
-    if ( any ( lbound(b1%p1(1,1)%x) .ne. (/2,2/))) stop 12
-    if ( any ( ubound(b1%p1(1,1)%x) .ne. (/11,11/))) stop 15
+    if ( .not. associated(b1%p1(1,1)%x, b1%p1(1,1)%y)) error stop 11
+    if ( any ( lbound(b1%p1(1,1)%x) .ne. (/2,2/))) error stop 12
+    if ( any ( ubound(b1%p1(1,1)%x) .ne. (/11,11/))) error stop 15
 
     b1%p1(1,1)%x(i:func(4), j: func(5)) => b1%p1(1,1)%x(:,7)
 
-    if ( .not. associated(b1%p1(1,1)%x)) stop 21
-    if ( any ( lbound(b1%p1(1,1)%x) .ne. (/3,3/))) stop 22
-    if ( any ( ubound(b1%p1(1,1)%x) .ne. (/4,5/))) stop 25
+    if ( .not. associated(b1%p1(1,1)%x)) error stop 21
+    if ( any ( lbound(b1%p1(1,1)%x) .ne. (/3,3/))) error stop 22
+    if ( any ( ubound(b1%p1(1,1)%x) .ne. (/4,5/))) error stop 25
 
     select type(arg => b1%p1(1,1)%x)
         type is (byte)

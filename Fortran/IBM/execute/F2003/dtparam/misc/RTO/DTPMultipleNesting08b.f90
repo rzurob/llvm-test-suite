@@ -55,23 +55,23 @@ MODULE Mod
 
         SELECT TYPE ( Arg )
           CLASS IS (NextGen1(4,*))
-            IF ( Arg%l1 .NE. 513 ) STOP 10
+            IF ( Arg%l1 .NE. 513 ) ERROR STOP 10
 
-            IF ( LEN(Arg%C1) .NE. 1026 ) STOP 12
-            IF ( SIZE(Arg%F2) .NE. 2052 ) STOP 16
-            IF ( LBOUND(Arg%F2,1) .NE.  1 ) STOP 19
-            IF ( UBOUND(Arg%F2,1) .NE. 2052 ) STOP 22
+            IF ( LEN(Arg%C1) .NE. 1026 ) ERROR STOP 12
+            IF ( SIZE(Arg%F2) .NE. 2052 ) ERROR STOP 16
+            IF ( LBOUND(Arg%F2,1) .NE.  1 ) ERROR STOP 19
+            IF ( UBOUND(Arg%F2,1) .NE. 2052 ) ERROR STOP 22
 
             Arg%C2       = "C"
             Arg%F2       = .True.
 
           CLASS IS (NextGen2(4,*))
-            IF ( Arg%l1 .NE. 513 ) STOP 23
+            IF ( Arg%l1 .NE. 513 ) ERROR STOP 23
 
-            IF ( LEN(Arg%C2) .NE. 2052 ) STOP 26
-            IF ( SIZE(Arg%F2) .NE. 2052 ) STOP 29
-            IF ( LBOUND(Arg%F2,1) .NE.  1 ) STOP 32
-            IF ( UBOUND(Arg%F2,1) .NE. 2052 ) STOP 35
+            IF ( LEN(Arg%C2) .NE. 2052 ) ERROR STOP 26
+            IF ( SIZE(Arg%F2) .NE. 2052 ) ERROR STOP 29
+            IF ( LBOUND(Arg%F2,1) .NE.  1 ) ERROR STOP 32
+            IF ( UBOUND(Arg%F2,1) .NE. 2052 ) ERROR STOP 35
 
             Arg%C2       = "G"
             Arg%F2       = .False.
@@ -81,12 +81,12 @@ MODULE Mod
             ASSOCIATE ( p => Arg%cmp1 )
               SELECT TYPE ( p )
                  CLASS IS (NextGen1(4,*))
-                   IF ( p%l1 .NE. 513 ) STOP 41
+                   IF ( p%l1 .NE. 513 ) ERROR STOP 41
 
-                   IF ( LEN(p%C2) .NE. 2052 ) STOP 44
-                   IF ( SIZE(p%F2) .NE. 2052 ) STOP 47
-                   IF ( LBOUND(p%F2,1) .NE.  1 ) STOP 50
-                   IF ( UBOUND(p%F2,1) .NE. 2052 ) STOP 53
+                   IF ( LEN(p%C2) .NE. 2052 ) ERROR STOP 44
+                   IF ( SIZE(p%F2) .NE. 2052 ) ERROR STOP 47
+                   IF ( LBOUND(p%F2,1) .NE.  1 ) ERROR STOP 50
+                   IF ( UBOUND(p%F2,1) .NE. 2052 ) ERROR STOP 53
 
                    p%C2 = "J"
                    p%F2 = .False.
@@ -99,12 +99,12 @@ MODULE Mod
             ASSOCIATE ( p => Arg%cmp2 )
               SELECT TYPE ( p )
                  CLASS IS (NextGen2(4,*))
-                   IF ( p%l1 .NE. 513 ) STOP 55
+                   IF ( p%l1 .NE. 513 ) ERROR STOP 55
 
-                   IF ( LEN(p%C2) .NE. 2052 ) STOP 58
-                   IF ( SIZE(p%F2) .NE. 2052 ) STOP 61
-                   IF ( LBOUND(p%F2,1) .NE.  1 ) STOP 64
-                   IF ( UBOUND(p%F2,1) .NE. 2052 ) STOP 67
+                   IF ( LEN(p%C2) .NE. 2052 ) ERROR STOP 58
+                   IF ( SIZE(p%F2) .NE. 2052 ) ERROR STOP 61
+                   IF ( LBOUND(p%F2,1) .NE.  1 ) ERROR STOP 64
+                   IF ( UBOUND(p%F2,1) .NE. 2052 ) ERROR STOP 67
 
                    p%C2 = "M"
                    p%F2 = .True.
@@ -129,24 +129,24 @@ PROGRAM DTPMultipleNesting08b
     TARGET :: tgt, cbl
 
     U => tgt
-    IF ( .NOT. ASSOCIATED(U) ) STOP 70
+    IF ( .NOT. ASSOCIATED(U) ) ERROR STOP 70
     CALL Select_type ( U )
-    IF ( TRIM(tgt%C2) .NE. "C" ) STOP 73
-    IF ( ANY(tgt%F2 .NEQV. .True.) ) STOP 76
+    IF ( TRIM(tgt%C2) .NE. "C" ) ERROR STOP 73
+    IF ( ANY(tgt%F2 .NEQV. .True.) ) ERROR STOP 76
 
     U => cbl
-    IF ( .NOT. ASSOCIATED(U) ) STOP 80
+    IF ( .NOT. ASSOCIATED(U) ) ERROR STOP 80
     CALL Select_type ( U )
-    IF ( TRIM(cbl%C2) .NE. "G" ) STOP 83
-    IF ( ANY(cbl%F2 .NEQV. .False.) ) STOP 86
+    IF ( TRIM(cbl%C2) .NE. "G" ) ERROR STOP 83
+    IF ( ANY(cbl%F2 .NEQV. .False.) ) ERROR STOP 86
 
     ALLOCATE ( U, SOURCE = Branch(tgt,cbl) )
-    IF ( .NOT. ASSOCIATED(U) ) STOP 90
+    IF ( .NOT. ASSOCIATED(U) ) ERROR STOP 90
 
     SELECT TYPE ( U )
        CLASS IS (Branch)
-         IF ( .NOT. ASSOCIATED(U%cmp1, tgt) ) STOP 91
-         IF ( .NOT. ASSOCIATED(U%cmp2, cbl) ) STOP 92
+         IF ( .NOT. ASSOCIATED(U%cmp1, tgt) ) ERROR STOP 91
+         IF ( .NOT. ASSOCIATED(U%cmp2, cbl) ) ERROR STOP 92
 
        CLASS DEFAULT
          STOP 122
@@ -154,9 +154,9 @@ PROGRAM DTPMultipleNesting08b
 
     CALL Select_type ( U )
 
-    IF ( TRIM(tgt%C2) .NE. "J" ) STOP 95
-    IF ( ANY(tgt%F2 .NEQV. .False.) ) STOP 98
-    IF ( TRIM(cbl%C2) .NE. "M" ) STOP 101
-    IF ( ANY(cbl%F2 .NEQV. .True.) ) STOP 104
+    IF ( TRIM(tgt%C2) .NE. "J" ) ERROR STOP 95
+    IF ( ANY(tgt%F2 .NEQV. .False.) ) ERROR STOP 98
+    IF ( TRIM(cbl%C2) .NE. "M" ) ERROR STOP 101
+    IF ( ANY(cbl%F2 .NEQV. .True.) ) ERROR STOP 104
 
 END PROGRAM DTPMultipleNesting08b

@@ -25,7 +25,7 @@ program d353396
    implicit none
    type(base(2)) :: t
 
-   if (t%i1%kind /= kind(1)) stop 1
-   if (t%i2%kind /= kind(1)) stop 2
+   if (t%i1%kind /= kind(1)) error stop 1
+   if (t%i2%kind /= kind(1)) error stop 2
 end program
 

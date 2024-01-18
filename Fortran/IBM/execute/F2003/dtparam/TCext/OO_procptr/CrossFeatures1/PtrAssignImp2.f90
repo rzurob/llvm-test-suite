@@ -66,11 +66,11 @@
 
   ProcPtr => ExtSub
   CALL  ProcPtr(V)
-  IF ( V%BaseComp%ID   .NE. -1 ) STOP 11
+  IF ( V%BaseComp%ID   .NE. -1 ) ERROR STOP 11
 
   CProcPtr => ExtSub
   CALL  CProcPtr(W)
-  IF ( W%BaseComp%ID   .NE. -1 ) STOP 21
+  IF ( W%BaseComp%ID   .NE. -1 ) ERROR STOP 21
 
   END
 

@@ -49,38 +49,38 @@ MODULE Mod
       TYPE(DT2(4,*)) :: Arg(:)
       INTEGER :: I, J
 
-      IF ( Arg%l3 .NE. 3 ) STOP 12
+      IF ( Arg%l3 .NE. 3 ) ERROR STOP 12
 
       Arg = DT2(4,3)( 11, 22, DT1(4,3)([1, 2], Base(4,3)()) )
-      IF ( SIZE(Arg) .NE. 1 ) STOP 10
+      IF ( SIZE(Arg) .NE. 1 ) ERROR STOP 10
       DO I = 1, SIZE(Arg)
-           IF ( SIZE(Arg(I)%A21)     .NE.   3 ) STOP 13
-           IF ( SIZE(Arg(I)%A22)     .NE.   5 ) STOP 14
-           IF ( LBOUND(Arg(I)%A21,1) .NE.   1 ) STOP 15
-           IF ( LBOUND(Arg(I)%A22,1) .NE.   1 ) STOP 16
-           IF ( UBOUND(Arg(I)%A21,1) .NE.   3 ) STOP 17
-           IF ( UBOUND(Arg(I)%A22,1) .NE.   5 ) STOP 18
-           IF ( ANY(Arg(I)%A21 .NE. 11) ) STOP 19
-           IF ( ANY(Arg(I)%A22 .NE. 22) ) STOP 20
+           IF ( SIZE(Arg(I)%A21)     .NE.   3 ) ERROR STOP 13
+           IF ( SIZE(Arg(I)%A22)     .NE.   5 ) ERROR STOP 14
+           IF ( LBOUND(Arg(I)%A21,1) .NE.   1 ) ERROR STOP 15
+           IF ( LBOUND(Arg(I)%A22,1) .NE.   1 ) ERROR STOP 16
+           IF ( UBOUND(Arg(I)%A21,1) .NE.   3 ) ERROR STOP 17
+           IF ( UBOUND(Arg(I)%A22,1) .NE.   5 ) ERROR STOP 18
+           IF ( ANY(Arg(I)%A21 .NE. 11) ) ERROR STOP 19
+           IF ( ANY(Arg(I)%A22 .NE. 22) ) ERROR STOP 20
 
-           IF ( SIZE(Arg(I)%cmp) .NE. 3 ) STOP 21
+           IF ( SIZE(Arg(I)%cmp) .NE. 3 ) ERROR STOP 21
            DO J = 1, SIZE(Arg(I)%cmp)
-                IF ( Arg(I)%cmp(J)%k2 .NE. Arg(I)%k3 ) STOP 22
-                IF ( Arg(I)%cmp(J)%l2 .NE. Arg(I)%l3 ) STOP 23
-                IF ( SIZE(Arg(I)%cmp(J)%A1)     .NE.   2 ) STOP 24
-                IF ( LBOUND(Arg(I)%cmp(J)%A1,1) .NE.   1 ) STOP 25
-                IF ( UBOUND(Arg(I)%cmp(J)%A1,1) .NE.   2 ) STOP 26
-                IF ( Arg(I)%cmp(J)%cmp%k1  .NE. Arg(I)%k3 ) STOP 27
-                IF ( Arg(I)%cmp(J)%cmp%l1  .NE. Arg(I)%l3 ) STOP 28
-                IF ( SIZE(Arg(I)%cmp(J)%cmp%A01)     .NE.   3 ) STOP 29
-                IF ( SIZE(Arg(I)%cmp(J)%cmp%A02)     .NE.   4 ) STOP 30
-                IF ( LBOUND(Arg(I)%cmp(J)%cmp%A01,1) .NE.   1 ) STOP 31
-                IF ( LBOUND(Arg(I)%cmp(J)%cmp%A02,1) .NE.   1 ) STOP 32
-                IF ( UBOUND(Arg(I)%cmp(J)%cmp%A01,1) .NE.   3 ) STOP 33
-                IF ( UBOUND(Arg(I)%cmp(J)%cmp%A02,1) .NE.   4 ) STOP 34
-                IF ( ANY(Arg(I)%cmp(J)%A1      .NE. [1, 2]) ) STOP 35
-                IF ( ANY(Arg(I)%cmp(J)%cmp%A01 .NE.     -1) ) STOP 36
-                IF ( ANY(Arg(I)%cmp(J)%cmp%A02 .NE.     -2) ) STOP 37
+                IF ( Arg(I)%cmp(J)%k2 .NE. Arg(I)%k3 ) ERROR STOP 22
+                IF ( Arg(I)%cmp(J)%l2 .NE. Arg(I)%l3 ) ERROR STOP 23
+                IF ( SIZE(Arg(I)%cmp(J)%A1)     .NE.   2 ) ERROR STOP 24
+                IF ( LBOUND(Arg(I)%cmp(J)%A1,1) .NE.   1 ) ERROR STOP 25
+                IF ( UBOUND(Arg(I)%cmp(J)%A1,1) .NE.   2 ) ERROR STOP 26
+                IF ( Arg(I)%cmp(J)%cmp%k1  .NE. Arg(I)%k3 ) ERROR STOP 27
+                IF ( Arg(I)%cmp(J)%cmp%l1  .NE. Arg(I)%l3 ) ERROR STOP 28
+                IF ( SIZE(Arg(I)%cmp(J)%cmp%A01)     .NE.   3 ) ERROR STOP 29
+                IF ( SIZE(Arg(I)%cmp(J)%cmp%A02)     .NE.   4 ) ERROR STOP 30
+                IF ( LBOUND(Arg(I)%cmp(J)%cmp%A01,1) .NE.   1 ) ERROR STOP 31
+                IF ( LBOUND(Arg(I)%cmp(J)%cmp%A02,1) .NE.   1 ) ERROR STOP 32
+                IF ( UBOUND(Arg(I)%cmp(J)%cmp%A01,1) .NE.   3 ) ERROR STOP 33
+                IF ( UBOUND(Arg(I)%cmp(J)%cmp%A02,1) .NE.   4 ) ERROR STOP 34
+                IF ( ANY(Arg(I)%cmp(J)%A1      .NE. [1, 2]) ) ERROR STOP 35
+                IF ( ANY(Arg(I)%cmp(J)%cmp%A01 .NE.     -1) ) ERROR STOP 36
+                IF ( ANY(Arg(I)%cmp(J)%cmp%A02 .NE.     -2) ) ERROR STOP 37
            END DO
       END DO
 
@@ -98,74 +98,74 @@ PROGRAM DTP_ACE_10
 
       CALL CreateNewBase(n1)
 
-      IF ( SIZE(n1) .NE. 1 ) STOP 40
+      IF ( SIZE(n1) .NE. 1 ) ERROR STOP 40
       DO I = 1, SIZE(n1)
-           IF ( n1(I)%k3 .NE. K ) STOP 41
-           IF ( n1(I)%l3 .NE. M ) STOP 42
-           IF ( SIZE(n1(I)%A21)     .NE.   M ) STOP 43
-           IF ( SIZE(n1(I)%A22)     .NE. M+2 ) STOP 44
-           IF ( LBOUND(n1(I)%A21,1) .NE.   1 ) STOP 45
-           IF ( LBOUND(n1(I)%A22,1) .NE.   1 ) STOP 46
-           IF ( UBOUND(n1(I)%A21,1) .NE.   M ) STOP 47
-           IF ( UBOUND(n1(I)%A22,1) .NE. M+2 ) STOP 48
-           IF ( ANY(n1(I)%A21 .NE. 11) ) STOP 49
-           IF ( ANY(n1(I)%A22 .NE. 22) ) STOP 50
+           IF ( n1(I)%k3 .NE. K ) ERROR STOP 41
+           IF ( n1(I)%l3 .NE. M ) ERROR STOP 42
+           IF ( SIZE(n1(I)%A21)     .NE.   M ) ERROR STOP 43
+           IF ( SIZE(n1(I)%A22)     .NE. M+2 ) ERROR STOP 44
+           IF ( LBOUND(n1(I)%A21,1) .NE.   1 ) ERROR STOP 45
+           IF ( LBOUND(n1(I)%A22,1) .NE.   1 ) ERROR STOP 46
+           IF ( UBOUND(n1(I)%A21,1) .NE.   M ) ERROR STOP 47
+           IF ( UBOUND(n1(I)%A22,1) .NE. M+2 ) ERROR STOP 48
+           IF ( ANY(n1(I)%A21 .NE. 11) ) ERROR STOP 49
+           IF ( ANY(n1(I)%A22 .NE. 22) ) ERROR STOP 50
 
-           IF ( SIZE(n1(I)%cmp) .NE. M ) STOP 51
+           IF ( SIZE(n1(I)%cmp) .NE. M ) ERROR STOP 51
            DO J = 1, SIZE(n1(I)%cmp)
-                IF ( n1(I)%cmp(J)%k2 .NE. n1(I)%k3 ) STOP 52
-                IF ( n1(I)%cmp(J)%l2 .NE. n1(I)%l3 ) STOP 53
-                IF ( SIZE(n1(I)%cmp(J)%A1)     .NE. M-1 ) STOP 54
-                IF ( LBOUND(n1(I)%cmp(J)%A1,1) .NE.   1 ) STOP 55
-                IF ( UBOUND(n1(I)%cmp(J)%A1,1) .NE. M-1 ) STOP 56
-                IF ( n1(I)%cmp(J)%cmp%k1  .NE. n1(I)%k3 ) STOP 57
-                IF ( n1(I)%cmp(J)%cmp%l1  .NE. n1(I)%l3 ) STOP 58
-                IF ( SIZE(n1(I)%cmp(J)%cmp%A01)     .NE.   M ) STOP 59
-                IF ( SIZE(n1(I)%cmp(J)%cmp%A02)     .NE. M+1 ) STOP 60
-                IF ( LBOUND(n1(I)%cmp(J)%cmp%A01,1) .NE.   1 ) STOP 61
-                IF ( LBOUND(n1(I)%cmp(J)%cmp%A02,1) .NE.   1 ) STOP 62
-                IF ( UBOUND(n1(I)%cmp(J)%cmp%A01,1) .NE.   M ) STOP 63
-                IF ( UBOUND(n1(I)%cmp(J)%cmp%A02,1) .NE. M+1 ) STOP 64
-                IF ( ANY(n1(I)%cmp(J)%A1      .NE. [1, 2]) ) STOP 65
-                IF ( ANY(n1(I)%cmp(J)%cmp%A01 .NE.     -1) ) STOP 66
-                IF ( ANY(n1(I)%cmp(J)%cmp%A02 .NE.     -2) ) STOP 67
+                IF ( n1(I)%cmp(J)%k2 .NE. n1(I)%k3 ) ERROR STOP 52
+                IF ( n1(I)%cmp(J)%l2 .NE. n1(I)%l3 ) ERROR STOP 53
+                IF ( SIZE(n1(I)%cmp(J)%A1)     .NE. M-1 ) ERROR STOP 54
+                IF ( LBOUND(n1(I)%cmp(J)%A1,1) .NE.   1 ) ERROR STOP 55
+                IF ( UBOUND(n1(I)%cmp(J)%A1,1) .NE. M-1 ) ERROR STOP 56
+                IF ( n1(I)%cmp(J)%cmp%k1  .NE. n1(I)%k3 ) ERROR STOP 57
+                IF ( n1(I)%cmp(J)%cmp%l1  .NE. n1(I)%l3 ) ERROR STOP 58
+                IF ( SIZE(n1(I)%cmp(J)%cmp%A01)     .NE.   M ) ERROR STOP 59
+                IF ( SIZE(n1(I)%cmp(J)%cmp%A02)     .NE. M+1 ) ERROR STOP 60
+                IF ( LBOUND(n1(I)%cmp(J)%cmp%A01,1) .NE.   1 ) ERROR STOP 61
+                IF ( LBOUND(n1(I)%cmp(J)%cmp%A02,1) .NE.   1 ) ERROR STOP 62
+                IF ( UBOUND(n1(I)%cmp(J)%cmp%A01,1) .NE.   M ) ERROR STOP 63
+                IF ( UBOUND(n1(I)%cmp(J)%cmp%A02,1) .NE. M+1 ) ERROR STOP 64
+                IF ( ANY(n1(I)%cmp(J)%A1      .NE. [1, 2]) ) ERROR STOP 65
+                IF ( ANY(n1(I)%cmp(J)%cmp%A01 .NE.     -1) ) ERROR STOP 66
+                IF ( ANY(n1(I)%cmp(J)%cmp%A02 .NE.     -2) ) ERROR STOP 67
            END DO
       END DO
 
       ALLOCATE( DT2(K,M) :: n2(1) )
       CALL CreateNewBase(n2)
 
-      IF ( SIZE(n2) .NE. 1 ) STOP 70
+      IF ( SIZE(n2) .NE. 1 ) ERROR STOP 70
       DO I = 1, SIZE(n2)
-           IF ( n2(I)%k3 .NE. K ) STOP 71
-           IF ( n2(I)%l3 .NE. M ) STOP 72
-           IF ( SIZE(n2(I)%A21)     .NE.   M ) STOP 73
-           IF ( SIZE(n2(I)%A22)     .NE. M+2 ) STOP 74
-           IF ( LBOUND(n2(I)%A21,1) .NE.   1 ) STOP 75
-           IF ( LBOUND(n2(I)%A22,1) .NE.   1 ) STOP 76
-           IF ( UBOUND(n2(I)%A21,1) .NE.   M ) STOP 77
-           IF ( UBOUND(n2(I)%A22,1) .NE. M+2 ) STOP 78
-           IF ( ANY(n2(I)%A21 .NE. 11) ) STOP 79
-           IF ( ANY(n2(I)%A22 .NE. 22) ) STOP 80
+           IF ( n2(I)%k3 .NE. K ) ERROR STOP 71
+           IF ( n2(I)%l3 .NE. M ) ERROR STOP 72
+           IF ( SIZE(n2(I)%A21)     .NE.   M ) ERROR STOP 73
+           IF ( SIZE(n2(I)%A22)     .NE. M+2 ) ERROR STOP 74
+           IF ( LBOUND(n2(I)%A21,1) .NE.   1 ) ERROR STOP 75
+           IF ( LBOUND(n2(I)%A22,1) .NE.   1 ) ERROR STOP 76
+           IF ( UBOUND(n2(I)%A21,1) .NE.   M ) ERROR STOP 77
+           IF ( UBOUND(n2(I)%A22,1) .NE. M+2 ) ERROR STOP 78
+           IF ( ANY(n2(I)%A21 .NE. 11) ) ERROR STOP 79
+           IF ( ANY(n2(I)%A22 .NE. 22) ) ERROR STOP 80
 
-           IF ( SIZE(n2(I)%cmp) .NE. M ) STOP 81
+           IF ( SIZE(n2(I)%cmp) .NE. M ) ERROR STOP 81
            DO J = 1, SIZE(n2(I)%cmp)
-                IF ( n2(I)%cmp(J)%k2 .NE. n2(I)%k3 ) STOP 82
-                IF ( n2(I)%cmp(J)%l2 .NE. n2(I)%l3 ) STOP 83
-                IF ( SIZE(n2(I)%cmp(J)%A1)     .NE. M-1 ) STOP 84
-                IF ( LBOUND(n2(I)%cmp(J)%A1,1) .NE.   1 ) STOP 85
-                IF ( UBOUND(n2(I)%cmp(J)%A1,1) .NE. M-1 ) STOP 86
-                IF ( n2(I)%cmp(J)%cmp%k1  .NE. n2(I)%k3 ) STOP 87
-                IF ( n2(I)%cmp(J)%cmp%l1  .NE. n2(I)%l3 ) STOP 88
-                IF ( SIZE(n2(I)%cmp(J)%cmp%A01)     .NE.   M ) STOP 89
-                IF ( SIZE(n2(I)%cmp(J)%cmp%A02)     .NE. M+1 ) STOP 90
-                IF ( LBOUND(n2(I)%cmp(J)%cmp%A01,1) .NE.   1 ) STOP 91
-                IF ( LBOUND(n2(I)%cmp(J)%cmp%A02,1) .NE.   1 ) STOP 92
-                IF ( UBOUND(n2(I)%cmp(J)%cmp%A01,1) .NE.   M ) STOP 93
-                IF ( UBOUND(n2(I)%cmp(J)%cmp%A02,1) .NE. M+1 ) STOP 94
-                IF ( ANY(n2(I)%cmp(J)%A1      .NE. [1, 2]) ) STOP 95
-                IF ( ANY(n2(I)%cmp(J)%cmp%A01 .NE.     -1) ) STOP 96
-                IF ( ANY(n2(I)%cmp(J)%cmp%A02 .NE.     -2) ) STOP 97
+                IF ( n2(I)%cmp(J)%k2 .NE. n2(I)%k3 ) ERROR STOP 82
+                IF ( n2(I)%cmp(J)%l2 .NE. n2(I)%l3 ) ERROR STOP 83
+                IF ( SIZE(n2(I)%cmp(J)%A1)     .NE. M-1 ) ERROR STOP 84
+                IF ( LBOUND(n2(I)%cmp(J)%A1,1) .NE.   1 ) ERROR STOP 85
+                IF ( UBOUND(n2(I)%cmp(J)%A1,1) .NE. M-1 ) ERROR STOP 86
+                IF ( n2(I)%cmp(J)%cmp%k1  .NE. n2(I)%k3 ) ERROR STOP 87
+                IF ( n2(I)%cmp(J)%cmp%l1  .NE. n2(I)%l3 ) ERROR STOP 88
+                IF ( SIZE(n2(I)%cmp(J)%cmp%A01)     .NE.   M ) ERROR STOP 89
+                IF ( SIZE(n2(I)%cmp(J)%cmp%A02)     .NE. M+1 ) ERROR STOP 90
+                IF ( LBOUND(n2(I)%cmp(J)%cmp%A01,1) .NE.   1 ) ERROR STOP 91
+                IF ( LBOUND(n2(I)%cmp(J)%cmp%A02,1) .NE.   1 ) ERROR STOP 92
+                IF ( UBOUND(n2(I)%cmp(J)%cmp%A01,1) .NE.   M ) ERROR STOP 93
+                IF ( UBOUND(n2(I)%cmp(J)%cmp%A02,1) .NE. M+1 ) ERROR STOP 94
+                IF ( ANY(n2(I)%cmp(J)%A1      .NE. [1, 2]) ) ERROR STOP 95
+                IF ( ANY(n2(I)%cmp(J)%cmp%A01 .NE.     -1) ) ERROR STOP 96
+                IF ( ANY(n2(I)%cmp(J)%cmp%A02 .NE.     -2) ) ERROR STOP 97
            END DO
       END DO
 

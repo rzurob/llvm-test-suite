@@ -27,15 +27,15 @@ complex(8) :: res18(2,3,5)=sum(c, dim=3)
 complex(16) :: res11=sum((/(7.565146Q08,1.7192802Q23),(3.720466Q59,1.5160763q69), &
   & (2.108214q90,1.1142725Q52),(1.1385402q83,0.0q0)/))
 
-if (res1 .ne. sum( (/(2.0,3.0),(3.0,4.0),(4.0,-5.0)/) )) stop 1
-if (res2 .ne. sum( a, mask=a.eq.(-2.,2.))) stop 2
-if (.not. all(res3 .eq. sum(b, dim=1))) stop 4
-if (.not. all(res4 .eq. sum(b, dim=2))) stop 5
-if (.not. all(res5 .eq. sum(b, dim=2, mask=b .ne. (2.0,2.0)))) stop 6
+if (res1 .ne. sum( (/(2.0,3.0),(3.0,4.0),(4.0,-5.0)/) )) error stop 1
+if (res2 .ne. sum( a, mask=a.eq.(-2.,2.))) error stop 2
+if (.not. all(res3 .eq. sum(b, dim=1))) error stop 4
+if (.not. all(res4 .eq. sum(b, dim=2))) error stop 5
+if (.not. all(res5 .eq. sum(b, dim=2, mask=b .ne. (2.0,2.0)))) error stop 6
 
-if (.not. all(res18 .eq. sum(c, dim=3))) stop 7
+if (.not. all(res18 .eq. sum(c, dim=3))) error stop 7
 
 if (res11 .ne. sum((/(7.565146Q08,1.7192802Q23),(3.720466Q59,1.5160763q69), &
-  & (2.108214q90,1.1142725Q52),(1.1385402q83,0.0q0)/))) stop 8
+  & (2.108214q90,1.1142725Q52),(1.1385402q83,0.0q0)/))) error stop 8
 
 end

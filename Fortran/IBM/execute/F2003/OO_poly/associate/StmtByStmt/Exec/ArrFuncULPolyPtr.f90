@@ -57,24 +57,24 @@
   &                      ChildID=-2)          &
   &            , i=1,555)/) ) )
 
-    IF ( ANY (LBOUND(As)  .NE. (/1/) ) )     STOP 30
-    IF ( ANY (UBOUND(As)  .NE. (/555/) ) )   STOP 31
-    IF ( ANY (SHAPE(As)   .NE. (/555/) ) )   STOP 32
+    IF ( ANY (LBOUND(As)  .NE. (/1/) ) )     ERROR STOP 30
+    IF ( ANY (UBOUND(As)  .NE. (/555/) ) )   ERROR STOP 31
+    IF ( ANY (SHAPE(As)   .NE. (/555/) ) )   ERROR STOP 32
 
     SELECT TYPE (As => As)
     TYPE IS (Child)
 
-      IF ( ANY (As%ChildID    .NE. -2 ))     STOP 33
-      IF ( ANY (As%BS%BaseID  .NE. -1 ))     STOP 34
-      IF ( ANY (As%BaseID     .NE.  0 ))     STOP 35
+      IF ( ANY (As%ChildID    .NE. -2 ))     ERROR STOP 33
+      IF ( ANY (As%BS%BaseID  .NE. -1 ))     ERROR STOP 34
+      IF ( ANY (As%BaseID     .NE.  0 ))     ERROR STOP 35
 
       ASSOCIATE (As => As)
         DO i =1, SIZE(As)
 
-          IF ( ASSOCIATED(As(i)%BSPtr))      STOP 35
+          IF ( ASSOCIATED(As(i)%BSPtr))      ERROR STOP 35
 
           ASSOCIATE (As => As(i)%BS )
-            IF ( As%BaseID  .NE. -1 )        STOP 37
+            IF ( As%BaseID  .NE. -1 )        ERROR STOP 37
           END ASSOCIATE
         END DO
       END ASSOCIATE

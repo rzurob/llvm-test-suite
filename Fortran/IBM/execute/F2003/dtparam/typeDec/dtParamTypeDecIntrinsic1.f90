@@ -47,61 +47,61 @@
 
 
 
-  IF ( I1%KIND            .NE.   1          ) STOP 11
-  IF ( ANY( I1            .NE.   -1       ) ) STOP 12
-  IF ( ANY( SHAPE( I1 )   .NE.   [1]      ) ) STOP 13
+  IF ( I1%KIND            .NE.   1          ) ERROR STOP 11
+  IF ( ANY( I1            .NE.   -1       ) ) ERROR STOP 12
+  IF ( ANY( SHAPE( I1 )   .NE.   [1]      ) ) ERROR STOP 13
 
-  IF ( I2%KIND            .NE.   2          ) STOP 14
-  IF ( ANY( I2            .NE.   I1%KIND  ) ) STOP 15
-  IF ( ANY( SHAPE( I2 )   .NE.   [I1%KIND]) ) STOP 16
+  IF ( I2%KIND            .NE.   2          ) ERROR STOP 14
+  IF ( ANY( I2            .NE.   I1%KIND  ) ) ERROR STOP 15
+  IF ( ANY( SHAPE( I2 )   .NE.   [I1%KIND]) ) ERROR STOP 16
 
-  IF ( I4%KIND            .NE.   4          ) STOP 17
-  IF ( ANY( I4            .NE.   I2%KIND  ) ) STOP 18
-  IF ( ANY( SHAPE( I4 )   .NE.   [I2%KIND]) ) STOP 19
+  IF ( I4%KIND            .NE.   4          ) ERROR STOP 17
+  IF ( ANY( I4            .NE.   I2%KIND  ) ) ERROR STOP 18
+  IF ( ANY( SHAPE( I4 )   .NE.   [I2%KIND]) ) ERROR STOP 19
 
-  IF ( I8%KIND            .NE.   8          ) STOP 21
-  IF ( ANY( I8            .NE.   I4%KIND  ) ) STOP 22
-  IF ( ANY( SHAPE( I8 )   .NE.   [I4%KIND]) ) STOP 23
+  IF ( I8%KIND            .NE.   8          ) ERROR STOP 21
+  IF ( ANY( I8            .NE.   I4%KIND  ) ) ERROR STOP 22
+  IF ( ANY( SHAPE( I8 )   .NE.   [I4%KIND]) ) ERROR STOP 23
 
-  IF ( L1%KIND            .NE.   1          ) STOP 24
-  IF ( ANY( L1            .NEQV. .TRUE.   ) ) STOP 25
-  IF ( ANY( SHAPE( L1 )   .NE.   [1]      ) ) STOP 26
+  IF ( L1%KIND            .NE.   1          ) ERROR STOP 24
+  IF ( ANY( L1            .NEQV. .TRUE.   ) ) ERROR STOP 25
+  IF ( ANY( SHAPE( L1 )   .NE.   [1]      ) ) ERROR STOP 26
 
-  IF ( L2%KIND            .NE.   2          ) STOP 27
-  IF ( ANY( L2            .NEQV. .TRUE.   ) ) STOP 28
-  IF ( ANY( SHAPE( L2 )   .NE.   [L1%KIND]) ) STOP 29
+  IF ( L2%KIND            .NE.   2          ) ERROR STOP 27
+  IF ( ANY( L2            .NEQV. .TRUE.   ) ) ERROR STOP 28
+  IF ( ANY( SHAPE( L2 )   .NE.   [L1%KIND]) ) ERROR STOP 29
 
-  IF ( L4%KIND            .NE.   4          ) STOP 31
-  IF ( ANY( L4            .NEQV. .TRUE.   ) ) STOP 32
-  IF ( ANY( SHAPE( L4 )   .NE.   [L2%KIND]) ) STOP 33
+  IF ( L4%KIND            .NE.   4          ) ERROR STOP 31
+  IF ( ANY( L4            .NEQV. .TRUE.   ) ) ERROR STOP 32
+  IF ( ANY( SHAPE( L4 )   .NE.   [L2%KIND]) ) ERROR STOP 33
 
-  IF ( L8%KIND            .NE.   8          ) STOP 34
-  IF ( ANY( L8            .NEQV. .TRUE.   ) ) STOP 35
-  IF ( ANY( SHAPE( L8 )   .NE.   [L4%KIND]) ) STOP 36
+  IF ( L8%KIND            .NE.   8          ) ERROR STOP 34
+  IF ( ANY( L8            .NEQV. .TRUE.   ) ) ERROR STOP 35
+  IF ( ANY( SHAPE( L8 )   .NE.   [L4%KIND]) ) ERROR STOP 36
 
-  IF ( R4%KIND            .NE.   4          ) STOP 37
-  IF ( ANY( R4            .NE.   -1       ) ) STOP 38
-  IF ( ANY( SHAPE( R4 )   .NE.   [1]      ) ) STOP 39
+  IF ( R4%KIND            .NE.   4          ) ERROR STOP 37
+  IF ( ANY( R4            .NE.   -1       ) ) ERROR STOP 38
+  IF ( ANY( SHAPE( R4 )   .NE.   [1]      ) ) ERROR STOP 39
 
-  IF ( R8%KIND            .NE.   8          ) STOP 37
-  IF ( ANY( R8            .NE.   R4%KIND  ) ) STOP 38
-  IF ( ANY( SHAPE( R8 )   .NE.   [R4%KIND]) ) STOP 39
+  IF ( R8%KIND            .NE.   8          ) ERROR STOP 37
+  IF ( ANY( R8            .NE.   R4%KIND  ) ) ERROR STOP 38
+  IF ( ANY( SHAPE( R8 )   .NE.   [R4%KIND]) ) ERROR STOP 39
 
-  IF ( R6%KIND            .NE.   16         ) STOP 41
-  IF ( ANY( R6            .NE.   R8%KIND  ) ) STOP 42
-  IF ( ANY( SHAPE( R6 )   .NE.   [R8%KIND]) ) STOP 43
+  IF ( R6%KIND            .NE.   16         ) ERROR STOP 41
+  IF ( ANY( R6            .NE.   R8%KIND  ) ) ERROR STOP 42
+  IF ( ANY( SHAPE( R6 )   .NE.   [R8%KIND]) ) ERROR STOP 43
 
-  IF ( Z4%KIND            .NE.   4          ) STOP 37
-  IF ( ANY( Z4            .NE.   -1       ) ) STOP 38
-  IF ( ANY( SHAPE( Z4 )   .NE.   [1]      ) ) STOP 39
+  IF ( Z4%KIND            .NE.   4          ) ERROR STOP 37
+  IF ( ANY( Z4            .NE.   -1       ) ) ERROR STOP 38
+  IF ( ANY( SHAPE( Z4 )   .NE.   [1]      ) ) ERROR STOP 39
 
-  IF ( Z8%KIND            .NE.   8          ) STOP 41
-  IF ( ANY( Z8            .NE.   Z4%KIND  ) ) STOP 42
-  IF ( ANY( SHAPE( Z8 )   .NE.   [Z4%KIND]) ) STOP 43
+  IF ( Z8%KIND            .NE.   8          ) ERROR STOP 41
+  IF ( ANY( Z8            .NE.   Z4%KIND  ) ) ERROR STOP 42
+  IF ( ANY( SHAPE( Z8 )   .NE.   [Z4%KIND]) ) ERROR STOP 43
 
-  IF ( Z6%KIND            .NE.   16         ) STOP 44
-  IF ( ANY( Z6            .NE.   Z8%KIND  ) ) STOP 45
-  IF ( ANY( SHAPE( Z6 )   .NE.   [Z8%KIND]) ) STOP 46
+  IF ( Z6%KIND            .NE.   16         ) ERROR STOP 44
+  IF ( ANY( Z6            .NE.   Z8%KIND  ) ) ERROR STOP 45
+  IF ( ANY( SHAPE( Z6 )   .NE.   [Z8%KIND]) ) ERROR STOP 46
 
 
 

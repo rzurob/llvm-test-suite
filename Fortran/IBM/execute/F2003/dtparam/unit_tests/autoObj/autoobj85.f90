@@ -46,8 +46,8 @@
 
   Y = X  ! <- segfault because tpv unset& prolog missing!
 
-  IF ( Y%N .NE. 4 ) stop 11
-  IF ( ANY(Y%BASE%A .NE. [1,2,3,4]) ) stop 12
+  IF ( Y%N .NE. 4 ) error stop 11
+  IF ( ANY(Y%BASE%A .NE. [1,2,3,4]) ) error stop 12
 
   END SUBROUTINE
   END

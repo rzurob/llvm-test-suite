@@ -72,13 +72,13 @@
     T(I)%C2 = C2
   END DO
 
-  IF ( .NOT. ASSOCIATED(Ptr, T ) ) STOP 11
-  IF ( .NOT. ASSOCIATED(Ptr, T1) ) STOP 12
+  IF ( .NOT. ASSOCIATED(Ptr, T ) ) ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(Ptr, T1) ) ERROR STOP 12
 
   DO I=1, 1024
-    IF (  ANY ( T1(I)%C1 .NE. C1    ) ) STOP 21
-    IF (  ANY ( T1(I)%I  .NE. K     ) ) STOP 22
-    IF (  ANY ( T1(I)%C2 .NE. C2    ) ) STOP 23
+    IF (  ANY ( T1(I)%C1 .NE. C1    ) ) ERROR STOP 21
+    IF (  ANY ( T1(I)%I  .NE. K     ) ) ERROR STOP 22
+    IF (  ANY ( T1(I)%C2 .NE. C2    ) ) ERROR STOP 23
   END DO
 
   END PROGRAM

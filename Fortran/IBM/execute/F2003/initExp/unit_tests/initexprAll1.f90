@@ -15,16 +15,16 @@ logical(8) :: e8T=all((/.true._8/)), e8F=all((/.false._8/))
 logical :: eT=all((/.true., .false., .true./)), &
    & eF=all((/.false., .true., .false./))
 
-if (e1T .neqv. all((/.true._1/))) stop 1
-if (e1T .neqv. all((/.true._1/))) stop 2
-if (e2T .neqv. all((/.true._2/))) stop 3
-if (e4T .neqv. all((/.true._4/))) stop 4
-if (e8T .neqv. all((/.true._8/))) stop 5
-if (e1F .neqv. all((/.false._1/))) stop 6
-if (e2F .neqv. all((/.false._2/))) stop 7
-if (e4F .neqv. all((/.false._4/))) stop 8
-if (e8F .neqv. all((/.false._8/))) stop 9
+if (e1T .neqv. all((/.true._1/))) error stop 1
+if (e1T .neqv. all((/.true._1/))) error stop 2
+if (e2T .neqv. all((/.true._2/))) error stop 3
+if (e4T .neqv. all((/.true._4/))) error stop 4
+if (e8T .neqv. all((/.true._8/))) error stop 5
+if (e1F .neqv. all((/.false._1/))) error stop 6
+if (e2F .neqv. all((/.false._2/))) error stop 7
+if (e4F .neqv. all((/.false._4/))) error stop 8
+if (e8F .neqv. all((/.false._8/))) error stop 9
 
-if (eT) stop 10
-if (eF) stop 11
+if (eT) error stop 10
+if (eF) error stop 11
 end

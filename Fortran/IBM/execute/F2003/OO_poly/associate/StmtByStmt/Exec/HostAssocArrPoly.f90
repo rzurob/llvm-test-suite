@@ -64,8 +64,8 @@
   ASSOCIATE ( T1 => V, T2 => U )
     SELECT TYPE ( T1 )
       TYPE IS ( Child )
-        IF (ANY(T1%GetId() .NE. -2) )      STOP 30
-        IF (ANY(T1%Base%GetId() .NE. -1) ) STOP 31
+        IF (ANY(T1%GetId() .NE. -2) )      ERROR STOP 30
+        IF (ANY(T1%Base%GetId() .NE. -1) ) ERROR STOP 31
         T1%BaseId  = 1
         T1%ChildId = 2
       CLASS DEFAULT
@@ -74,8 +74,8 @@
 
     SELECT TYPE ( T2 )
       TYPE IS ( Child )
-        IF (ANY(T2%GetId()      .NE. -2) ) STOP 40
-        IF (ANY(T2%Base%GetId() .NE. -1) ) STOP 41
+        IF (ANY(T2%GetId()      .NE. -2) ) ERROR STOP 40
+        IF (ANY(T2%Base%GetId() .NE. -1) ) ERROR STOP 41
         T2%BaseId  = 1
         T2%ChildId = 2
       CLASS DEFAULT
@@ -85,16 +85,16 @@
     ASSOCIATE ( As1 => T1, As2 => T2 )
       SELECT TYPE ( As1 )
         TYPE IS (Child )
-          IF (ANY(As1%GetId()      .NE. 2) ) STOP 50
-          IF (ANY(As1%Base%GetId() .NE. 1) ) STOP 51
+          IF (ANY(As1%GetId()      .NE. 2) ) ERROR STOP 50
+          IF (ANY(As1%Base%GetId() .NE. 1) ) ERROR STOP 51
         CLASS DEFAULT
           STOP 52
       END SELECT
 
       SELECT TYPE ( As2 )
         TYPE IS (Child )
-          IF (ANY(As2%GetId()      .NE. 2) ) STOP 60
-          IF (ANY(As2%Base%GetId() .NE. 1) ) STOP 61
+          IF (ANY(As2%GetId()      .NE. 2) ) ERROR STOP 60
+          IF (ANY(As2%Base%GetId() .NE. 1) ) ERROR STOP 61
         CLASS DEFAULT
           STOP 62
       END SELECT

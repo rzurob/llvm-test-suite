@@ -89,21 +89,21 @@
   TYPE IS (DT2(1,*,4,*,8,*))
 
 
-    IF ( RA%ModFun()       .NE. -R%L0        ) STOP 31
+    IF ( RA%ModFun()       .NE. -R%L0        ) ERROR STOP 31
 
-    IF ( SIZE( SA%R )      .NE. S%L1         ) STOP 32
-    IF ( SA%R%KIND         .NE. S%K1         ) STOP 33
-    IF ( ANY ( SA%R        .NE. S%K1       ) ) STOP 34
+    IF ( SIZE( SA%R )      .NE. S%L1         ) ERROR STOP 32
+    IF ( SA%R%KIND         .NE. S%K1         ) ERROR STOP 33
+    IF ( ANY ( SA%R        .NE. S%K1       ) ) ERROR STOP 34
 
-    IF ( SIZE( TA%R )      .NE. T%L1         ) STOP 41
-    IF ( TA%R%KIND         .NE. T%K1         ) STOP 42
-    IF ( ANY ( TA%R        .NE. T%K1       ) ) STOP 43
-    IF ( SIZE( TA%I )      .NE. T%L2         ) STOP 44
-    IF ( TA%I%KIND         .NE. T%K2         ) STOP 45
-    IF ( ANY ( TA%I        .NE. T%K2       ) ) STOP 46
-    IF ( SIZE( TA%C )      .NE. T%L2         ) STOP 47
-    IF ( TA%C%LEN          .NE. T%L2         ) STOP 48
-    IF ( ANY (TA%C         .NE. CHAR(T%K2) ) ) STOP 49
+    IF ( SIZE( TA%R )      .NE. T%L1         ) ERROR STOP 41
+    IF ( TA%R%KIND         .NE. T%K1         ) ERROR STOP 42
+    IF ( ANY ( TA%R        .NE. T%K1       ) ) ERROR STOP 43
+    IF ( SIZE( TA%I )      .NE. T%L2         ) ERROR STOP 44
+    IF ( TA%I%KIND         .NE. T%K2         ) ERROR STOP 45
+    IF ( ANY ( TA%I        .NE. T%K2       ) ) ERROR STOP 46
+    IF ( SIZE( TA%C )      .NE. T%L2         ) ERROR STOP 47
+    IF ( TA%C%LEN          .NE. T%L2         ) ERROR STOP 48
+    IF ( ANY (TA%C         .NE. CHAR(T%K2) ) ) ERROR STOP 49
 
 
   CLASS default

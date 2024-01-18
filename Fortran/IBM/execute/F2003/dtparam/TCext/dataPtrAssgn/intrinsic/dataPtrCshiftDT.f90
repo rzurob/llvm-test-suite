@@ -44,9 +44,9 @@ end module
 
         p1(2:,1:,3:) => tar1(1:3,2:3,2:4)%base
 
-        if ( .not. associated(p1)) stop 11
-        if ( any (lbound(p1) .ne. (/2,1,3/) )) stop 13
-        if ( any (ubound(p1) .ne. (/4,2,5/) )) stop 17
+        if ( .not. associated(p1)) error stop 11
+        if ( any (lbound(p1) .ne. (/2,1,3/) )) error stop 13
+        if ( any (ubound(p1) .ne. (/4,2,5/) )) error stop 17
 
 	select type (p1)
 	    type is (base(4))

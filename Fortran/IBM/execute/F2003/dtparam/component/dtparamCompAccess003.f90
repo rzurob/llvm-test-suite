@@ -55,7 +55,7 @@ module m
         type(base(4,*)), intent(in) :: b
         integer, intent(in) :: n
 
-        if ((n < 1) .or. (n > b%n)) stop 4
+        if ((n < 1) .or. (n > b%n)) error stop 4
 
         getBaseVal4 = b%data(n)
     end function
@@ -64,7 +64,7 @@ module m
         type(base(8,*)), intent(in) :: b
         integer, intent(in) :: n
 
-        if ((n < 1) .or. (n > b%n)) stop 8
+        if ((n < 1) .or. (n > b%n)) error stop 8
 
         getBaseVal8 = b%data(n)
     end function

@@ -75,11 +75,11 @@
       Ptr = DT(ID=I*J)
     END SELECT
 
-    IF (SIZE(Ptr)  .NE. N*N )                      STOP 10
-    IF (.NOT. ASSOCIATED(Ptr, Tar2))               STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/-I, -J /)))        STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/-I+N-1, -J+N-1/))) STOP 13
-    IF (ANY( Tar2%ID     .NE.  I*J ))              STOP 14
+    IF (SIZE(Ptr)  .NE. N*N )                      ERROR STOP 10
+    IF (.NOT. ASSOCIATED(Ptr, Tar2))               ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/-I, -J /)))        ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/-I+N-1, -J+N-1/))) ERROR STOP 13
+    IF (ANY( Tar2%ID     .NE.  I*J ))              ERROR STOP 14
 
     Ptr(I:J, I:J) => Tar1
     CALL ExtSub1(Ptr, Tar1, I, J, N)
@@ -89,11 +89,11 @@
       Ptr = DT1(ID=-I*J)
     END SELECT
 
-    IF (SIZE(Ptr)  .NE. (J-I+1)*(J-I+1))               STOP 20
-    IF (.NOT. ASSOCIATED(Ptr))                         STOP 21
-    IF (ANY( LBOUND(Ptr) .NE. (/-J,  -J/)))            STOP 22
-    IF (ANY( UBOUND(Ptr) .NE. (/-I,  -I/)))            STOP 23
-    IF (ANY( Tar1(1:(J-I+1)*(J-I+1))%ID .NE.  -I*J ))  STOP 24
+    IF (SIZE(Ptr)  .NE. (J-I+1)*(J-I+1))               ERROR STOP 20
+    IF (.NOT. ASSOCIATED(Ptr))                         ERROR STOP 21
+    IF (ANY( LBOUND(Ptr) .NE. (/-J,  -J/)))            ERROR STOP 22
+    IF (ANY( UBOUND(Ptr) .NE. (/-I,  -I/)))            ERROR STOP 23
+    IF (ANY( Tar1(1:(J-I+1)*(J-I+1))%ID .NE.  -I*J ))  ERROR STOP 24
 
   END DO
   END DO
@@ -107,9 +107,9 @@
   CLASS(DT), POINTER :: Ptr(:,:)
   INTEGER            :: I, J, N
 
-    IF (SIZE(Ptr)  .NE. (J-I+1)*(J-I+1))         STOP 30
-    IF (ANY( LBOUND(Ptr) .NE. (/I, I /)))        STOP 32
-    IF (ANY( UBOUND(Ptr) .NE. (/J, J /)))        STOP 33
+    IF (SIZE(Ptr)  .NE. (J-I+1)*(J-I+1))         ERROR STOP 30
+    IF (ANY( LBOUND(Ptr) .NE. (/I, I /)))        ERROR STOP 32
+    IF (ANY( UBOUND(Ptr) .NE. (/J, J /)))        ERROR STOP 33
     Ptr(-J:-I, -j:-I) => Arr
 
   END SUBROUTINE
@@ -120,9 +120,9 @@
   CLASS(DT), POINTER :: Ptr(:, :)
   INTEGER            :: I, J, N
 
-    IF (SIZE(Ptr)  .NE. N*N )                    STOP 40
-    IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 42
-    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 43
+    IF (SIZE(Ptr)  .NE. N*N )                    ERROR STOP 40
+    IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        ERROR STOP 42
+    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) ERROR STOP 43
     Ptr(-I:, -J:) => Arr
 
   END SUBROUTINE

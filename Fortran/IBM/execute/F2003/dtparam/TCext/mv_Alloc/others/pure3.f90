@@ -55,9 +55,9 @@ use m
 
     call move_alloc (y1, z1)
 
-    if ( allocated(x1) ) stop 21
-    if ( allocated(y1) ) stop 23
-    if ( .not. allocated(z1) ) stop 25
+    if ( allocated(x1) ) error stop 21
+    if ( allocated(y1) ) error stop 23
+    if ( .not. allocated(z1) ) error stop 25
 
     select type(z1)
         type is (point(4))

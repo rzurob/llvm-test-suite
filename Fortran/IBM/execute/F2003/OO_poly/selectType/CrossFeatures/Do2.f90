@@ -43,9 +43,9 @@
   SELECT TYPE (U)
   CLASS IS (DT)
 
-    IF (ANY(U%Int   .NE. 6))      STOP 20
-    IF (ANY(U%C     .NE. "123"))   STOP 21
-    IF (ANY(SHAPE(U).NE. (/16/)))  STOP 22
+    IF (ANY(U%Int   .NE. 6))      ERROR STOP 20
+    IF (ANY(U%C     .NE. "123"))   ERROR STOP 21
+    IF (ANY(SHAPE(U).NE. (/16/)))  ERROR STOP 22
       i = 0
       DO While ( i <= U(1)%Int)
         I =i + 1

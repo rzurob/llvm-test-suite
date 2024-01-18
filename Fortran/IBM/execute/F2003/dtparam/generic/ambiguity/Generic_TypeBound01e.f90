@@ -57,7 +57,7 @@
       POINTER :: foo1
 
       ALLOCATE (foo1, source = Obj)
-      IF ( .NOT. ASSOCIATED(foo1)) STOP 1
+      IF ( .NOT. ASSOCIATED(foo1)) ERROR STOP 1
 
       END FUNCTION foo1
 
@@ -66,7 +66,7 @@
       POINTER :: foo2
 
       ALLOCATE (foo2, source = Obj)
-      IF ( .NOT. ASSOCIATED(foo2)) STOP 2
+      IF ( .NOT. ASSOCIATED(foo2)) ERROR STOP 2
 
       END FUNCTION foo2
 
@@ -100,127 +100,127 @@
 !*
 !  The following will call foo1
 !*
-      IF ( .NOT. ASSOCIATED(base1%FUNC(base1)) ) STOP 10
-      IF ( .NOT. ASSOCIATED(base1%FUNC(tgt1)) ) STOP 11
-      IF ( .NOT. ASSOCIATED(base1%FUNC(child1)) ) STOP 12
-      IF ( .NOT. ASSOCIATED(base1%FUNC(nxtg)) ) STOP 13
+      IF ( .NOT. ASSOCIATED(base1%FUNC(base1)) ) ERROR STOP 10
+      IF ( .NOT. ASSOCIATED(base1%FUNC(tgt1)) ) ERROR STOP 11
+      IF ( .NOT. ASSOCIATED(base1%FUNC(child1)) ) ERROR STOP 12
+      IF ( .NOT. ASSOCIATED(base1%FUNC(nxtg)) ) ERROR STOP 13
 
       ALLOCATE(Base(4,10):: poly1)
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(base1)) ) STOP 14
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(tgt1)) ) STOP 15
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(poly1)) ) STOP 16
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(child1)) ) STOP 17
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(nxtg)) ) STOP 18
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(base1)) ) ERROR STOP 14
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(tgt1)) ) ERROR STOP 15
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(poly1)) ) ERROR STOP 16
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(child1)) ) ERROR STOP 17
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(nxtg)) ) ERROR STOP 18
 
       poly1 => tgt1
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(base1)) ) STOP 19
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(tgt1)) ) STOP 20
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(poly1)) ) STOP 21
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(child1)) ) STOP 22
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(nxtg)) ) STOP 23
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(base1)) ) ERROR STOP 19
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(tgt1)) ) ERROR STOP 20
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(poly1)) ) ERROR STOP 21
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(child1)) ) ERROR STOP 22
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(nxtg)) ) ERROR STOP 23
 
       ALLOCATE(NextGen(4,10,4,4):: poly1)
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(base1)) ) STOP 24
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(tgt1)) ) STOP 25
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(poly1)) ) STOP 26
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(child1)) ) STOP 27
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(nxtg)) ) STOP 28
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(base1)) ) ERROR STOP 24
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(tgt1)) ) ERROR STOP 25
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(poly1)) ) ERROR STOP 26
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(child1)) ) ERROR STOP 27
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(nxtg)) ) ERROR STOP 28
 
       ALLOCATE(NextGen(4,10,8,8):: poly1)
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(base1)) ) STOP 29
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(tgt1)) ) STOP 30
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(poly1)) ) STOP 31
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(child1)) ) STOP 32
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(nxtg)) ) STOP 33
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(base1)) ) ERROR STOP 29
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(tgt1)) ) ERROR STOP 30
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(poly1)) ) ERROR STOP 31
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(child1)) ) ERROR STOP 32
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(nxtg)) ) ERROR STOP 33
 
-      IF ( .NOT. ASSOCIATED(child1%FUNC(base1)) ) STOP 34
-      IF ( .NOT. ASSOCIATED(child1%FUNC(tgt1)) ) STOP 35
-      IF ( .NOT. ASSOCIATED(child1%FUNC(poly1)) ) STOP 36
-      IF ( .NOT. ASSOCIATED(child1%FUNC(nxtg)) ) STOP 37
+      IF ( .NOT. ASSOCIATED(child1%FUNC(base1)) ) ERROR STOP 34
+      IF ( .NOT. ASSOCIATED(child1%FUNC(tgt1)) ) ERROR STOP 35
+      IF ( .NOT. ASSOCIATED(child1%FUNC(poly1)) ) ERROR STOP 36
+      IF ( .NOT. ASSOCIATED(child1%FUNC(nxtg)) ) ERROR STOP 37
 
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(base1)) ) STOP 38
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(tgt1)) ) STOP 39
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(poly1)) ) STOP 40
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(nxtg)) ) STOP 41
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(base1)) ) ERROR STOP 38
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(tgt1)) ) ERROR STOP 39
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(poly1)) ) ERROR STOP 40
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(nxtg)) ) ERROR STOP 41
 !*
 !  The following will call foo2
 !*
-      IF ( .NOT. ASSOCIATED(base1%FUNC(arr_base)) ) STOP 42
-      IF ( .NOT. ASSOCIATED(base1%FUNC(arr_child)) ) STOP 43
-      IF ( .NOT. ASSOCIATED(base1%FUNC(arr_nxtg)) ) STOP 44
+      IF ( .NOT. ASSOCIATED(base1%FUNC(arr_base)) ) ERROR STOP 42
+      IF ( .NOT. ASSOCIATED(base1%FUNC(arr_child)) ) ERROR STOP 43
+      IF ( .NOT. ASSOCIATED(base1%FUNC(arr_nxtg)) ) ERROR STOP 44
 
-      IF ( .NOT. ASSOCIATED(child1%FUNC(arr_base)) ) STOP 45
-      IF ( .NOT. ASSOCIATED(child1%FUNC(arr_child)) ) STOP 46
-      IF ( .NOT. ASSOCIATED(child1%FUNC(arr_nxtg)) ) STOP 47
+      IF ( .NOT. ASSOCIATED(child1%FUNC(arr_base)) ) ERROR STOP 45
+      IF ( .NOT. ASSOCIATED(child1%FUNC(arr_child)) ) ERROR STOP 46
+      IF ( .NOT. ASSOCIATED(child1%FUNC(arr_nxtg)) ) ERROR STOP 47
 
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(arr_base)) ) STOP 48
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(arr_child)) ) STOP 49
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(arr_nxtg)) ) STOP 50
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(arr_base)) ) ERROR STOP 48
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(arr_child)) ) ERROR STOP 49
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(arr_nxtg)) ) ERROR STOP 50
 
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(arr_base)) ) STOP 51
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(arr_child)) ) STOP 52
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(arr_nxtg)) ) STOP 53
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(arr_base)) ) ERROR STOP 51
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(arr_child)) ) ERROR STOP 52
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(arr_nxtg)) ) ERROR STOP 53
 
       ALLOCATE(Base(4,10) :: ptr_base(10))
-      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_base)) ) STOP 54
-      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_base)) ) STOP 55
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_base)) ) STOP 56
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_base)) ) STOP 57
+      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_base)) ) ERROR STOP 54
+      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_base)) ) ERROR STOP 55
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_base)) ) ERROR STOP 56
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_base)) ) ERROR STOP 57
 
       ALLOCATE(child(4,10,4) :: ptr_base(10), ptr_chd(5))
-      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_base)) ) STOP 58
-      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_base)) ) STOP 59
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_base)) ) STOP 60
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_base)) ) STOP 61
-      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_chd)) ) STOP 62
-      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_chd)) ) STOP 63
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_chd)) ) STOP 64
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_chd)) ) STOP 65
+      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_base)) ) ERROR STOP 58
+      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_base)) ) ERROR STOP 59
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_base)) ) ERROR STOP 60
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_base)) ) ERROR STOP 61
+      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_chd)) ) ERROR STOP 62
+      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_chd)) ) ERROR STOP 63
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_chd)) ) ERROR STOP 64
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_chd)) ) ERROR STOP 65
 
       ALLOCATE(NextGen(4,10,4,4) :: ptr_base(10), ptr_chd(5), ptr_nxtg(2) )
-      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_base)) ) STOP 66
-      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_base)) ) STOP 67
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_base)) ) STOP 68
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_base)) ) STOP 69
-      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_chd)) ) STOP 70
-      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_chd)) ) STOP 71
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_chd)) ) STOP 72
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_chd)) ) STOP 73
-      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_nxtg)) ) STOP 74
-      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_nxtg)) ) STOP 75
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_nxtg)) ) STOP 76
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_nxtg)) ) STOP 77
+      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_base)) ) ERROR STOP 66
+      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_base)) ) ERROR STOP 67
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_base)) ) ERROR STOP 68
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_base)) ) ERROR STOP 69
+      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_chd)) ) ERROR STOP 70
+      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_chd)) ) ERROR STOP 71
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_chd)) ) ERROR STOP 72
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_chd)) ) ERROR STOP 73
+      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_nxtg)) ) ERROR STOP 74
+      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_nxtg)) ) ERROR STOP 75
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_nxtg)) ) ERROR STOP 76
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_nxtg)) ) ERROR STOP 77
 
       ptr_base => tgt_base; ptr_chd => tgt_chd; ptr_nxtg => tgt_nxtg
-      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_base)) ) STOP 78
-      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_base)) ) STOP 79
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_base)) ) STOP 80
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_base)) ) STOP 81
-      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_chd)) ) STOP 82
-      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_chd)) ) STOP 83
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_chd)) ) STOP 84
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_chd)) ) STOP 85
-      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_nxtg)) ) STOP 86
-      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_nxtg)) ) STOP 87
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_nxtg)) ) STOP 88
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_nxtg)) ) STOP 89
+      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_base)) ) ERROR STOP 78
+      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_base)) ) ERROR STOP 79
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_base)) ) ERROR STOP 80
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_base)) ) ERROR STOP 81
+      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_chd)) ) ERROR STOP 82
+      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_chd)) ) ERROR STOP 83
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_chd)) ) ERROR STOP 84
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_chd)) ) ERROR STOP 85
+      IF ( .NOT. ASSOCIATED(base1%FUNC(ptr_nxtg)) ) ERROR STOP 86
+      IF ( .NOT. ASSOCIATED(child1%FUNC(ptr_nxtg)) ) ERROR STOP 87
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(ptr_nxtg)) ) ERROR STOP 88
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(ptr_nxtg)) ) ERROR STOP 89
 
       ALLOCATE(Base(4,10) :: allc_base(10))
-      IF ( .NOT. ASSOCIATED(base1%FUNC(allc_base)) ) STOP 90
-      IF ( .NOT. ASSOCIATED(child1%FUNC(allc_base)) ) STOP 91
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(allc_base)) ) STOP 92
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(allc_base)) ) STOP 93
+      IF ( .NOT. ASSOCIATED(base1%FUNC(allc_base)) ) ERROR STOP 90
+      IF ( .NOT. ASSOCIATED(child1%FUNC(allc_base)) ) ERROR STOP 91
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(allc_base)) ) ERROR STOP 92
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(allc_base)) ) ERROR STOP 93
 
       ALLOCATE(child(4,10,4) :: allc_chd(5))
-      IF ( .NOT. ASSOCIATED(base1%FUNC(allc_chd)) ) STOP 94
-      IF ( .NOT. ASSOCIATED(child1%FUNC(allc_chd)) ) STOP 95
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(allc_chd)) ) STOP 96
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(allc_chd)) ) STOP 97
+      IF ( .NOT. ASSOCIATED(base1%FUNC(allc_chd)) ) ERROR STOP 94
+      IF ( .NOT. ASSOCIATED(child1%FUNC(allc_chd)) ) ERROR STOP 95
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(allc_chd)) ) ERROR STOP 96
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(allc_chd)) ) ERROR STOP 97
 
       ALLOCATE(NextGen(4,10,4,4) :: allc_nxtg(2) )
-      IF ( .NOT. ASSOCIATED(base1%FUNC(allc_nxtg)) ) STOP 98
-      IF ( .NOT. ASSOCIATED(child1%FUNC(allc_nxtg)) ) STOP 99
-      IF ( .NOT. ASSOCIATED(nxtg%FUNC(allc_nxtg)) ) STOP 100
-      IF ( .NOT. ASSOCIATED(poly1%FUNC(allc_nxtg)) ) STOP 101
+      IF ( .NOT. ASSOCIATED(base1%FUNC(allc_nxtg)) ) ERROR STOP 98
+      IF ( .NOT. ASSOCIATED(child1%FUNC(allc_nxtg)) ) ERROR STOP 99
+      IF ( .NOT. ASSOCIATED(nxtg%FUNC(allc_nxtg)) ) ERROR STOP 100
+      IF ( .NOT. ASSOCIATED(poly1%FUNC(allc_nxtg)) ) ERROR STOP 101
 
       END PROGRAM Generic_TypeBound01e

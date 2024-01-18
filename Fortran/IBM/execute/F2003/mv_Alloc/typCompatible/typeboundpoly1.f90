@@ -59,8 +59,8 @@
       ! TO of type base, FROM of type base
       call b%move(b1, b2)
 
-      if ( allocated(b1) ) stop 21
-      if ( .not. allocated(b2) ) stop 23
+      if ( allocated(b1) ) error stop 21
+      if ( .not. allocated(b2) ) error stop 23
       print *, shape(b2)
 
       deallocate(b)
@@ -73,14 +73,14 @@
       ! TO of type base, FROM of type child
       call b%move(b2, b1)
 
-      if ( .not. same_type_as(b1,c)) stop 30
+      if ( .not. same_type_as(b1,c)) error stop 30
 
-      if ( .not. allocated(b1) ) stop 31
-      if ( allocated(b2) ) stop 33
+      if ( .not. allocated(b1) ) error stop 31
+      if ( allocated(b2) ) error stop 33
       print *, shape(b1)
 
-      if ( numB /= 2 ) stop 41
-      if ( numC /= 0 ) stop 43
+      if ( numB /= 2 ) error stop 41
+      if ( numC /= 0 ) error stop 43
       end
 
       subroutine move_alloc1( x, y)

@@ -16,9 +16,9 @@ integer :: res1d1(3)=maxloc(c, dim=1), res1d2(3)=maxloc(c, dim=2)
 integer :: res2d1(3), res2d2(3)
 
 res2d1 = maxloc(c, dim=1)
-if (.not. all(res1d1 .eq. res2d1)) stop 1
+if (.not. all(res1d1 .eq. res2d1)) error stop 1
 
 res2d2 = maxloc(c, dim=2)
-if (.not. all(res1d2 .eq. res2d2)) stop 2
+if (.not. all(res1d2 .eq. res2d2)) error stop 2
 
 end

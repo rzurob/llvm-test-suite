@@ -35,8 +35,8 @@ class(dt_base(4, *)) :: pa
 
 print *, "base type"
 
-if (pa%k /= 4) stop 1
-if (pa%d /= 10) stop 2
+if (pa%k /= 4) error stop 1
+if (pa%d /= 10) error stop 2
 end subroutine
 
 subroutine child_print(pa)
@@ -44,9 +44,9 @@ class(dt_child(4, *, *)) :: pa
 
 print *, "child type"
 
-if (pa%k /= 4) stop 4
-if (pa%d /= 20) stop 5
-if (pa%m /= 2) stop 6
+if (pa%k /= 4) error stop 4
+if (pa%d /= 20) error stop 5
+if (pa%m /= 2) error stop 6
 end subroutine
 
 end module

@@ -53,10 +53,10 @@ use m
 
     call move_alloc(a%from, a%to)
 
-    if ( allocated(a%from) ) stop 11
-    if ( .not. allocated(a%to) ) stop 13
+    if ( allocated(a%from) ) error stop 11
+    if ( .not. allocated(a%to) ) error stop 13
 
-    if ( .not. associated(p1, a%to)  ) stop 21
+    if ( .not. associated(p1, a%to)  ) error stop 21
     print *,  a%to
 
 end

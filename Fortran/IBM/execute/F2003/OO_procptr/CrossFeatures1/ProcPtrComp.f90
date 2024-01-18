@@ -70,10 +70,10 @@
   ProcInt2 => Int2
   CALL IntSub(Int1, ProcInt2, W )
 
-  IF ( W%PtrInt1(2_1) .NE. 1_1 ) STOP 22
-  IF ( W%PtrInt2(0_2) .NE. 2_2 ) STOP 23
-  IF ( W%PtrInt4(-4)  .NE. -4 )  STOP 24
-  IF ( W%PtrInt8(1_8) .NE. 8_8 ) STOP 25
+  IF ( W%PtrInt1(2_1) .NE. 1_1 ) ERROR STOP 22
+  IF ( W%PtrInt2(0_2) .NE. 2_2 ) ERROR STOP 23
+  IF ( W%PtrInt4(-4)  .NE. -4 )  ERROR STOP 24
+  IF ( W%PtrInt8(1_8) .NE. 8_8 ) ERROR STOP 25
 
   CONTAINS
 
@@ -91,19 +91,19 @@
   TYPE (DT), SAVE          :: V
 
   V%PtrInt1 => Proc
-  IF ( V%PtrInt1(0_1) .NE. 1_1 ) STOP 11
+  IF ( V%PtrInt1(0_1) .NE. 1_1 ) ERROR STOP 11
 
   V%PtrInt1 => V%PtrInt1
-  IF ( V%PtrInt1(2_1) .NE. 1_1 ) STOP 12
+  IF ( V%PtrInt1(2_1) .NE. 1_1 ) ERROR STOP 12
 
   V%PtrInt2 => ProcPtr
-  IF ( V%PtrInt2(0_2) .NE. 2_2 ) STOP 13
+  IF ( V%PtrInt2(0_2) .NE. 2_2 ) ERROR STOP 13
 
   V%PtrInt4 => Int
-  IF ( V%PtrInt4(-4)  .NE. -4 )  STOP 14
+  IF ( V%PtrInt4(-4)  .NE. -4 )  ERROR STOP 14
 
   V%PtrInt8 => Int8
-  IF ( V%PtrInt8(1_8) .NE. 8_8 ) STOP 15
+  IF ( V%PtrInt8(1_8) .NE. 8_8 ) ERROR STOP 15
 
   Var = V
 

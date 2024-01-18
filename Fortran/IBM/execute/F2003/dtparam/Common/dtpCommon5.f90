@@ -77,9 +77,9 @@
   COMMON /BLK/T(20)
 
   DO I=1, 10
-    IF ( ANY( T(I)%C1 .NE. CHAR(0) ) ) STOP 11
-    IF ( ANY( T(I)%I  .NE. I       ) ) STOP 12
-    IF ( ANY( T(I)%C2 .NE. CHAR(0) ) ) STOP 13
+    IF ( ANY( T(I)%C1 .NE. CHAR(0) ) ) ERROR STOP 11
+    IF ( ANY( T(I)%I  .NE. I       ) ) ERROR STOP 12
+    IF ( ANY( T(I)%C2 .NE. CHAR(0) ) ) ERROR STOP 13
   END DO
 
   END

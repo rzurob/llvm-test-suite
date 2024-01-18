@@ -54,11 +54,11 @@
   TYPE(DT1) :: TT
 
 
-  IF ( KIND(T%TR44) .NE. 8 )    STOP 11
-  IF ( ANY(T%TR44   .NE. -4 ))  STOP 12
+  IF ( KIND(T%TR44) .NE. 8 )    ERROR STOP 11
+  IF ( ANY(T%TR44   .NE. -4 ))  ERROR STOP 12
 
-  IF ( KIND(TT%TR44) .NE. 8 )   STOP 21
-  IF ( ANY(TT%TR44   .NE. -4 )) STOP 22
+  IF ( KIND(TT%TR44) .NE. 8 )   ERROR STOP 21
+  IF ( ANY(TT%TR44   .NE. -4 )) ERROR STOP 22
 
   END
 

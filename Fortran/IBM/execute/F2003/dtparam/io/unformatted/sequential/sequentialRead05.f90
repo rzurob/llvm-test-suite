@@ -158,21 +158,21 @@ PROGRAM sequentialRead05
     PRINT *
 
     PRINT *, 'seq1%t = "', seq1%t, '" (', id( 1 ), ')'
-    IF (seq1%t /= id( 1 ))      STOP 111
+    IF (seq1%t /= id( 1 ))      ERROR STOP 111
     PRINT *, 'seq1%n = "', seq1%n, '" (', name1, ')'
-    IF (seq1%n /= name1)        STOP 112
+    IF (seq1%n /= name1)        ERROR STOP 112
 
     PRINT *
 
 
     PRINT *, 'seq2%t = "', seq2%t, '" (', id( 2 ), ')'
-    IF (seq2%t /= id( 2 ))      STOP 121
+    IF (seq2%t /= id( 2 ))      ERROR STOP 121
     PRINT *, 'seq2%n = "', seq2%n, '" (', name2, ')'
-    IF (seq2%n /= name2)        STOP 122
+    IF (seq2%n /= name2)        ERROR STOP 122
 
     PRINT *, 'seq2%s1%t = "', seq2%s1%t, '" (', id( 3 ), ')'
-    IF (seq2%s1%t /= id( 3 ))   STOP 125
+    IF (seq2%s1%t /= id( 3 ))   ERROR STOP 125
     PRINT *, 'seq2%s1%n = "', seq2%s1%n, '" (', name3, ')'
-    IF (seq2%s1%n /= name3)     STOP 126
+    IF (seq2%s1%n /= name3)     ERROR STOP 126
 
 END PROGRAM sequentialRead05

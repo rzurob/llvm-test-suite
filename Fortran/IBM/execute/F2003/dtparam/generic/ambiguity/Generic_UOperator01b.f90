@@ -82,13 +82,13 @@
       IMPLICIT TYPE(Child(d,len,s,len))(K)
 
       b_var = +C1
-      IF ( B_var%value .NE. 4 ) STOP 10
+      IF ( B_var%value .NE. 4 ) ERROR STOP 10
       b_var = +B1
-      IF ( B_var%value .NE. 4 ) STOP 11
+      IF ( B_var%value .NE. 4 ) ERROR STOP 11
 
       d_var = +D1
-      IF ( D_var%value .NE. 8 ) STOP 12
+      IF ( D_var%value .NE. 8 ) ERROR STOP 12
       d_var = +K1
-      IF ( D_var%value .NE. 8 ) STOP 13
+      IF ( D_var%value .NE. 8 ) ERROR STOP 13
 
       END PROGRAM Generic_UOperato01b

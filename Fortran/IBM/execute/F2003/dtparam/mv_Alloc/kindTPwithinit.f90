@@ -28,9 +28,9 @@
 
         call move_alloc(b2%a1, b2%a2)
 
-        if ( allocated(b1) ) stop 21
-        if ( allocated(b2%a1) ) stop 31
+        if ( allocated(b1) ) error stop 21
+        if ( allocated(b2%a1) ) error stop 31
 
-        if ( b2%a2 /= 25 ) stop 41
+        if ( b2%a2 /= 25 ) error stop 41
 end
 

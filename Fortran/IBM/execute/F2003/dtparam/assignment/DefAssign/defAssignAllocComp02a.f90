@@ -143,68 +143,68 @@ module m
      subroutine verify1(dt)
         type(C(2,*)),intent(in) :: dt
 
-        if(dt%k3 /= 2)                                    stop 10
-        if(dt%l3 /= 2)                                    stop 11
-        if(dt%a1comp%k1 /= 2)                             stop 12
-        if(dt%a1comp%l1 /= 1)                             stop 13
-        if(any(dt%a1comp(1)%c1 /= ["AB","CD","EF"]))      stop 14
-        if(any(dt%a1comp(2)%c1 /= ["NI","WE"]))           stop 15
-        if(any(dt%a1comp(1)%g1 .neqv. .true.))            stop 16
-        if(any(dt%a1comp(2)%g1 .neqv. .false.))           stop 17
-        if(dt%b1comp%k2 /= 2 )                            stop 18
-        if(dt%b1comp%l2 /= 2 )                            stop 19
-        if(any(dt%b1comp%i1 /= [1,2]))                    stop 20
-        if(dt%b1comp%a2comp%k1 /= 4)                      stop 21
-        if(dt%b1comp%a2comp%l1 /= 2)                      stop 22
-        if(any(dt%b1comp%a2comp%c1 /= ["WOOD","FOOD","MOOD"]))  stop 23
-        if(any(dt%b1comp%a2comp%g1 .neqv. [.true.,.false.]))    stop 24
+        if(dt%k3 /= 2)                                    error stop 10
+        if(dt%l3 /= 2)                                    error stop 11
+        if(dt%a1comp%k1 /= 2)                             error stop 12
+        if(dt%a1comp%l1 /= 1)                             error stop 13
+        if(any(dt%a1comp(1)%c1 /= ["AB","CD","EF"]))      error stop 14
+        if(any(dt%a1comp(2)%c1 /= ["NI","WE"]))           error stop 15
+        if(any(dt%a1comp(1)%g1 .neqv. .true.))            error stop 16
+        if(any(dt%a1comp(2)%g1 .neqv. .false.))           error stop 17
+        if(dt%b1comp%k2 /= 2 )                            error stop 18
+        if(dt%b1comp%l2 /= 2 )                            error stop 19
+        if(any(dt%b1comp%i1 /= [1,2]))                    error stop 20
+        if(dt%b1comp%a2comp%k1 /= 4)                      error stop 21
+        if(dt%b1comp%a2comp%l1 /= 2)                      error stop 22
+        if(any(dt%b1comp%a2comp%c1 /= ["WOOD","FOOD","MOOD"]))  error stop 23
+        if(any(dt%b1comp%a2comp%g1 .neqv. [.true.,.false.]))    error stop 24
 
      end subroutine
 
      subroutine verify2(dt)
         type(C(2,*)),intent(in) :: dt
 
-        if(dt%k3 /= 2)                                    stop 25
-        if(dt%l3 /= 2)                                    stop 26
-        if(dt%a1comp%k1 /= 2)                             stop 27
-        if(dt%a1comp%l1 /= 1)                             stop 28
-        if(any(dt%a1comp(1)%c1 /= ["ab","cd"]))           stop 29
-        if(any(dt%a1comp(2)%c1 /= ["ha","ca"]))           stop 30
-        if(any(dt%a1comp(1)%g1 .neqv. .false.))           stop 31
-        if(any(dt%a1comp(2)%g1 .neqv. .true.))            stop 32
-        if(dt%b1comp%k2 /= 2 )                            stop 33
-        if(dt%b1comp%l2 /= 2 )                            stop 34
-        if(any(dt%b1comp%i1 /= [3,4]))                    stop 35
-        if(dt%b1comp%a2comp%k1 /= 4)                      stop 36
-        if(dt%b1comp%a2comp%l1 /= 2)                      stop 37
-        if(any(dt%b1comp%a2comp%c1 /= ["wood","food","mood"]))  stop 38
-        if(any(dt%b1comp%a2comp%g1 .neqv. [.false.,.true.]))    stop 39
+        if(dt%k3 /= 2)                                    error stop 25
+        if(dt%l3 /= 2)                                    error stop 26
+        if(dt%a1comp%k1 /= 2)                             error stop 27
+        if(dt%a1comp%l1 /= 1)                             error stop 28
+        if(any(dt%a1comp(1)%c1 /= ["ab","cd"]))           error stop 29
+        if(any(dt%a1comp(2)%c1 /= ["ha","ca"]))           error stop 30
+        if(any(dt%a1comp(1)%g1 .neqv. .false.))           error stop 31
+        if(any(dt%a1comp(2)%g1 .neqv. .true.))            error stop 32
+        if(dt%b1comp%k2 /= 2 )                            error stop 33
+        if(dt%b1comp%l2 /= 2 )                            error stop 34
+        if(any(dt%b1comp%i1 /= [3,4]))                    error stop 35
+        if(dt%b1comp%a2comp%k1 /= 4)                      error stop 36
+        if(dt%b1comp%a2comp%l1 /= 2)                      error stop 37
+        if(any(dt%b1comp%a2comp%c1 /= ["wood","food","mood"]))  error stop 38
+        if(any(dt%b1comp%a2comp%g1 .neqv. [.false.,.true.]))    error stop 39
 
      end subroutine
 
      subroutine verify3(dt)
         type(A(2,*)),intent(in) :: dt(3)
 
-        if(any(dt(1)%c1 /= ["xy"]))                       stop 40
-        if(any(dt(1)%g1 .neqv. .true.))                   stop 41
-        if(any(dt(2)%c1 /= ["ab","cd"]))                  stop 42
-        if(any(dt(2)%g1 .neqv. .false.))                  stop 43
-        if(any(dt(3)%c1 /= ["ha","ca"]))                  stop 44
-        if(any(dt(3)%g1 .neqv. .true.))                   stop 45
+        if(any(dt(1)%c1 /= ["xy"]))                       error stop 40
+        if(any(dt(1)%g1 .neqv. .true.))                   error stop 41
+        if(any(dt(2)%c1 /= ["ab","cd"]))                  error stop 42
+        if(any(dt(2)%g1 .neqv. .false.))                  error stop 43
+        if(any(dt(3)%c1 /= ["ha","ca"]))                  error stop 44
+        if(any(dt(3)%g1 .neqv. .true.))                   error stop 45
 
      end subroutine
 
      subroutine verify4(dt)
         type(B(2,*)),intent(in) :: dt(2)
 
-        if(any(dt(1)%i1 /= [1,2]))                        stop 46
-        if(any(dt(2)%i1 /= [3,4]))                        stop 47
+        if(any(dt(1)%i1 /= [1,2]))                        error stop 46
+        if(any(dt(2)%i1 /= [3,4]))                        error stop 47
         associate(x=>dt%a2comp)
 
-           if(any(x(1)%c1 /= ["WOOD","FOOD","MOOD"]))     stop 48
-           if(any(x(2)%c1 /= ["wood","food","mood"]))     stop 49
-           if(any(x(1)%g1 .neqv. [.true.,.false.]))       stop 50
-           if(any(x(2)%g1 .neqv. [.false.,.true.]))       stop 51
+           if(any(x(1)%c1 /= ["WOOD","FOOD","MOOD"]))     error stop 48
+           if(any(x(2)%c1 /= ["wood","food","mood"]))     error stop 49
+           if(any(x(1)%g1 .neqv. [.true.,.false.]))       error stop 50
+           if(any(x(2)%g1 .neqv. [.false.,.true.]))       error stop 51
 
         end associate
      end subroutine

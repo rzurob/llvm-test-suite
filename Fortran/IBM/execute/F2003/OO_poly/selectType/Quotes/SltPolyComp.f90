@@ -91,11 +91,11 @@
         CLASS is (Child)
           STOP 24
         TYPE IS (Child)
-          IF ( As%BaseId       .NE. -1 ) STOP 31
-          IF ( As%Base%BaseId  .NE. -1 ) STOP 32
-          IF ( As%ChildId      .NE. -2 ) STOP 33
-!         IF ( As%Base%GetId() .NE. -1 ) STOP 34 !C611
-          IF ( As%GetId()      .NE. -2 ) STOP 35
+          IF ( As%BaseId       .NE. -1 ) ERROR STOP 31
+          IF ( As%Base%BaseId  .NE. -1 ) ERROR STOP 32
+          IF ( As%ChildId      .NE. -2 ) ERROR STOP 33
+!         IF ( As%Base%GetId() .NE. -1 ) ERROR STOP 34 !C611
+          IF ( As%GetId()      .NE. -2 ) ERROR STOP 35
       END SELECT
     CLASS DEFAULT
       STOP 99

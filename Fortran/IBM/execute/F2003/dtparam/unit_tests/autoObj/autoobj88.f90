@@ -43,9 +43,9 @@
 
   TYPE(dt(n)) t!(n)
 
-    IF (t%arr%l          .NE. 4)   STOP 11
-    IF (UBOUND(t%arr, 1) .NE. 4)   STOP 12
-    IF (SIZE(t%arr)      .NE. 4)   STOP 13
+    IF (t%arr%l          .NE. 4)   ERROR STOP 11
+    IF (UBOUND(t%arr, 1) .NE. 4)   ERROR STOP 12
+    IF (SIZE(t%arr)      .NE. 4)   ERROR STOP 13
 
   END SUBROUTINE
 

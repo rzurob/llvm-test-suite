@@ -52,8 +52,8 @@
   Ptr(0:, 0:) => T
   Ptr(1:, 1:) => Ptr
 
-  IF (ANY( LBOUND( Ptr) .NE. (/1,   1/))) STOP 31
-  IF (ANY( UBOUND( Ptr) .NE. (/1000,2/))) STOP 32
+  IF (ANY( LBOUND( Ptr) .NE. (/1,   1/))) ERROR STOP 31
+  IF (ANY( UBOUND( Ptr) .NE. (/1000,2/))) ERROR STOP 32
 
   CONTAINS
 
@@ -63,11 +63,11 @@
 
     DO I=1 ,1000
       Arg(I, 2)%Ptr(-999:, -1:) => Arg(::2,:3)
-      IF (ANY( LBOUND( Arg(I, 2)%Ptr) .NE. (/-999, -1/))) STOP 11
-      IF (ANY( SHAPE(  Arg(I, 2)%Ptr) .NE. (/ 500,  2/))) STOP 12
+      IF (ANY( LBOUND( Arg(I, 2)%Ptr) .NE. (/-999, -1/))) ERROR STOP 11
+      IF (ANY( SHAPE(  Arg(I, 2)%Ptr) .NE. (/ 500,  2/))) ERROR STOP 12
       Arg(I, 3)%Ptr(-499:500, -1:-1) => Arg(:, 2)
-      IF (ANY( LBOUND( Arg(I, 3)%Ptr) .NE. (/-499, -1/))) STOP 21
-      IF (ANY( SHAPE(  Arg(I, 3)%Ptr) .NE. (/1000,  1/))) STOP 22
+      IF (ANY( LBOUND( Arg(I, 3)%Ptr) .NE. (/-499, -1/))) ERROR STOP 21
+      IF (ANY( SHAPE(  Arg(I, 3)%Ptr) .NE. (/1000,  1/))) ERROR STOP 22
     END DO
 
   END SUBROUTINE

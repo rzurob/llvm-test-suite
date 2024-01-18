@@ -55,23 +55,23 @@
 
 
   T%Ptr(1:) => Arr(1:)
-  IF (ANY(LBOUND(T%Ptr) .NE. (/1/)))   STOP 11
-  IF (ANY(UBOUND(T%Ptr) .NE. (/3/)))   STOP 12
+  IF (ANY(LBOUND(T%Ptr) .NE. (/1/)))   ERROR STOP 11
+  IF (ANY(UBOUND(T%Ptr) .NE. (/3/)))   ERROR STOP 12
   SPtr(1:) => T%Ptr
-  IF (ANY(SPtr%C .NE. (/"123","213","312"/) ))   STOP 13
+  IF (ANY(SPtr%C .NE. (/"123","213","312"/) ))   ERROR STOP 13
 
   ALLOCATE(T%Ptr(0:2), SOURCE=(/DT0(4,3)("123"),DT0(4,3)("213"),DT0(4,3)("312")/))
   I=LBOUND(T%Ptr,1); J=UBOUND(T%Ptr,1)-1
   T%Ptr(I:J) => T%Ptr(I:J+1)
-  IF (ANY(LBOUND(T%Ptr) .NE. (/I/)))   STOP 21
-  IF (ANY(UBOUND(T%Ptr) .NE. (/J/)))   STOP 22
+  IF (ANY(LBOUND(T%Ptr) .NE. (/I/)))   ERROR STOP 21
+  IF (ANY(UBOUND(T%Ptr) .NE. (/J/)))   ERROR STOP 22
 
   SPtr(1:) => T%Ptr
-  IF (ANY(SPtr%C .NE. (/"123","213"/) ))  STOP 23
+  IF (ANY(SPtr%C .NE. (/"123","213"/) ))  ERROR STOP 23
 
   T%Ptr(1:-1) => T%Ptr
-  IF (ANY(LBOUND(T%Ptr) .NE. (/1/)))   STOP 31
-  IF (ANY(UBOUND(T%Ptr) .NE. (/0/)))   STOP 32
+  IF (ANY(LBOUND(T%Ptr) .NE. (/1/)))   ERROR STOP 31
+  IF (ANY(UBOUND(T%Ptr) .NE. (/0/)))   ERROR STOP 32
 
   END
 

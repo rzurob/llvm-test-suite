@@ -22,15 +22,15 @@ program main
 
     p(1:10) => p(10:1:-1)
 
-    if ( .not. associated(p)) stop 1
-    if ( lbound(p,1) /= 1 ) stop 2
-    if ( ubound(p,1) /=10 ) stop 3
+    if ( .not. associated(p)) error stop 1
+    if ( lbound(p,1) /= 1 ) error stop 2
+    if ( ubound(p,1) /=10 ) error stop 3
 
     select type (p)
 	type is (integer)
     	    p = p([p])
-    	    if ( any ( p .ne. (/ (i,i=1,10)/))) stop 5
-    	    if ( any ( p .lt. (/ (i,i=0,9)/))) stop 6
+    	    if ( any ( p .ne. (/ (i,i=1,10)/))) error stop 5
+    	    if ( any ( p .lt. (/ (i,i=0,9)/))) error stop 6
 	class default
 	    stop 7
     end select

@@ -23,8 +23,8 @@ integer, pointer :: p(:)
 type(dt(20,4)) :: x
 allocate(p(6:9))
 x%i = p
-if (.not. allocated(x%i)) stop 1
-if (any(shape(x%i) .ne. (/4/))) stop 2
-if (lbound(x%i,1) /= 6) stop 3
-if (ubound(x%i,1) /= 9) stop 4
+if (.not. allocated(x%i)) error stop 1
+if (any(shape(x%i) .ne. (/4/))) error stop 2
+if (lbound(x%i,1) /= 6) error stop 3
+if (ubound(x%i,1) /= 9) error stop 4
 end

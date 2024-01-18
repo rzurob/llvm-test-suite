@@ -32,7 +32,7 @@
   BYTE,       TARGET  :: B=1_1
 
   ASSOCIATE ( As => B  )
-    IF ( As .NE. 1_1 ) STOP 11
+    IF ( As .NE. 1_1 ) ERROR STOP 11
   END ASSOCIATE
 
   BPtr => C
@@ -41,9 +41,9 @@
     CLASS DEFAULT
       STOP 20
     TYPE IS (CHARACTER(*))
-      IF ( As .NE. "!" ) STOP 21
+      IF ( As .NE. "!" ) ERROR STOP 21
       AS = "1"
-      IF ( C .NE. "1" ) STOP 22
+      IF ( C .NE. "1" ) ERROR STOP 22
     END SELECT
   END ASSOCIATE
 
@@ -53,9 +53,9 @@
     CLASS DEFAULT
       STOP 30
     TYPE IS (INTEGER(1))
-      IF ( As .NE. -1 ) STOP 31
+      IF ( As .NE. -1 ) ERROR STOP 31
       AS = 1
-      IF ( I .NE. 1 ) STOP 32
+      IF ( I .NE. 1 ) ERROR STOP 32
     END SELECT
   END ASSOCIATE
 
@@ -65,9 +65,9 @@
     CLASS DEFAULT
       STOP 40
     TYPE IS (LOGICAL(1))
-      IF ( .NOT. As ) STOP 41
+      IF ( .NOT. As ) ERROR STOP 41
       AS = .FALSE.
-      IF ( L ) STOP 42
+      IF ( L ) ERROR STOP 42
     END SELECT
   END ASSOCIATE
 
@@ -83,9 +83,9 @@
     TYPE IS (INTEGER(1))
       STOP 63
     TYPE IS (BYTE)
-      IF ( As .NE. 1_1 ) STOP 51
+      IF ( As .NE. 1_1 ) ERROR STOP 51
       AS = -1
-      IF ( B .NE. -1 ) STOP 52
+      IF ( B .NE. -1 ) ERROR STOP 52
     END SELECT
   END ASSOCIATE
 

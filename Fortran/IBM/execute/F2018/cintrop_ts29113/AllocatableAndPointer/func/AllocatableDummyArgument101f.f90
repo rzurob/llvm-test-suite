@@ -44,13 +44,13 @@ module mod
      integer(c_int), allocatable :: A(:,:), B(:,:), C(:,:), D(:,:,:,:,:,:,:,:,:,:)
 
      allocate (A(dim1, dim1))
-     if (.not. allocated(A))  stop 110
+     if (.not. allocated(A))  error stop 110
      allocate (B(dim1, dim1))
-     if (.not. allocated(B))  stop 111
+     if (.not. allocated(B))  error stop 111
      allocate (C(dim1, dim1))
-     if (.not. allocated(C))  stop 112
+     if (.not. allocated(C))  error stop 112
      allocate (D(1,2,3,4,5,1,2,3,4,5))
-     if (.not. allocated(D))  stop 113
+     if (.not. allocated(D))  error stop 113
 
      do i = 1, dim1
        do j = 1, dim1
@@ -90,24 +90,24 @@ module mod
 !---------- call BIND(C) procedure from Module procedure
    call sub_bind_c(dim1, A, B, C, D, t_size, t_shape, t_lbound, t_ubound)
 
-   if ( t_size(41)          /=  t_size(31))       stop 114
-   if ( any(t_shape(41,:)   /=  t_shape(31,:)))   stop 115
-   if ( any(t_lbound(41,:)  /=  t_lbound(31,:)))  stop 116
-   if ( any(t_ubound(41,:)  /=  t_ubound(31,:)))  stop 117
-   if ( t_size(42)          /=  t_size(32))       stop 118
-   if ( any(t_shape(42,:)   /=  t_shape(32,:)))   stop 119
-   if ( any(t_lbound(42,:)  /=  t_lbound(32,:)))  stop 120
-   if ( any(t_ubound(42,:)  /=  t_ubound(32,:)))  stop 121
-   if ( t_size(43)          /=  t_size(33))       stop 122
-   if ( any(t_shape(43,:)   /=  t_shape(33,:)))   stop 123
-   if ( any(t_lbound(43,:)  /=  t_lbound(33,:)))  stop 124
-   if ( any(t_ubound(43,:)  /=  t_ubound(33,:)))  stop 125
-   if ( t_size(44)          /=  t_size(34))       stop 126
-   if ( any(t_shape(44,:)   /=  t_shape(34,:)))   stop 127
-   if ( any(t_lbound(44,:)  /=  t_lbound(34,:)))  stop 128
-   if ( any(t_ubound(44,:)  /=  t_ubound(34,:)))  stop 129
-   if ( sum(C) /= 22026240 )  stop 130
-   if ( sum(D) /= 48268800 )  stop 131
+   if ( t_size(41)          /=  t_size(31))       error stop 114
+   if ( any(t_shape(41,:)   /=  t_shape(31,:)))   error stop 115
+   if ( any(t_lbound(41,:)  /=  t_lbound(31,:)))  error stop 116
+   if ( any(t_ubound(41,:)  /=  t_ubound(31,:)))  error stop 117
+   if ( t_size(42)          /=  t_size(32))       error stop 118
+   if ( any(t_shape(42,:)   /=  t_shape(32,:)))   error stop 119
+   if ( any(t_lbound(42,:)  /=  t_lbound(32,:)))  error stop 120
+   if ( any(t_ubound(42,:)  /=  t_ubound(32,:)))  error stop 121
+   if ( t_size(43)          /=  t_size(33))       error stop 122
+   if ( any(t_shape(43,:)   /=  t_shape(33,:)))   error stop 123
+   if ( any(t_lbound(43,:)  /=  t_lbound(33,:)))  error stop 124
+   if ( any(t_ubound(43,:)  /=  t_ubound(33,:)))  error stop 125
+   if ( t_size(44)          /=  t_size(34))       error stop 126
+   if ( any(t_shape(44,:)   /=  t_shape(34,:)))   error stop 127
+   if ( any(t_lbound(44,:)  /=  t_lbound(34,:)))  error stop 128
+   if ( any(t_ubound(44,:)  /=  t_ubound(34,:)))  error stop 129
+   if ( sum(C) /= 22026240 )  error stop 130
+   if ( sum(D) /= 48268800 )  error stop 131
    end subroutine sub_mod
 end module mod
 
@@ -121,13 +121,13 @@ program AllocatableDummyArgument101f
    integer(c_int), allocatable :: A(:,:), B(:,:), C(:,:), D(:,:,:,:,:,:,:,:,:,:)
 
    allocate (A(dim1, dim1))
-   if (.not. allocated(A))  stop 1
+   if (.not. allocated(A))  error stop 1
    allocate (B(dim1, dim1))
-   if (.not. allocated(B))  stop 2
+   if (.not. allocated(B))  error stop 2
    allocate (C(dim1, dim1))
-   if (.not. allocated(C))  stop 3
+   if (.not. allocated(C))  error stop 3
    allocate (D(1,2,3,4,5,1,2,3,4,5))
-   if (.not. allocated(D))  stop 4
+   if (.not. allocated(D))  error stop 4
 
    t_size = 0;  t_shape = 0;  t_lbound = 0;  t_ubound = 0;
    t_size(1)        = size(A)
@@ -156,7 +156,7 @@ program AllocatableDummyArgument101f
        sumv = sumv + ( A(i,j) + B(i,j) )
      end do
    end do
-   if ( sumv /= 4352 )     stop 6
+   if ( sumv /= 4352 )     error stop 6
 
 !---------- main program ----------
    C = 0; D = 0;
@@ -168,30 +168,30 @@ program AllocatableDummyArgument101f
          D = D + A(i,j)
       end do
    end do
-   if ( sum(C) /= 22282240 )  stop 31
-   if ( sum(D) /= 62668800 )  stop 32
+   if ( sum(C) /= 22282240 )  error stop 31
+   if ( sum(D) /= 62668800 )  error stop 32
 
 !---------- call BIND(C) procedure from main program
    call sub_bind_c(dim1, A, B, C, D, t_size, t_shape, t_lbound, t_ubound)
 
-   if ( t_size(1)          /=  t_size(31))       stop 33
-   if ( any(t_shape(1,:)   /=  t_shape(31,:)))   stop 34
-   if ( any(t_lbound(1,:)  /=  t_lbound(31,:)))  stop 35
-   if ( any(t_ubound(1,:)  /=  t_ubound(31,:)))  stop 36
-   if ( t_size(2)          /=  t_size(32))       stop 37
-   if ( any(t_shape(2,:)   /=  t_shape(32,:)))   stop 38
-   if ( any(t_lbound(2,:)  /=  t_lbound(32,:)))  stop 39
-   if ( any(t_ubound(2,:)  /=  t_ubound(32,:)))  stop 40
-   if ( t_size(3)          /=  t_size(33))       stop 41
-   if ( any(t_shape(3,:)   /=  t_shape(33,:)))   stop 42
-   if ( any(t_lbound(3,:)  /=  t_lbound(33,:)))  stop 43
-   if ( any(t_ubound(3,:)  /=  t_ubound(33,:)))  stop 44
-   if ( t_size(4)          /=  t_size(34))       stop 45
-   if ( any(t_shape(4,:)   /=  t_shape(34,:)))   stop 46
-   if ( any(t_lbound(4,:)  /=  t_lbound(34,:)))  stop 47
-   if ( any(t_ubound(4,:)  /=  t_ubound(34,:)))  stop 48
-   if ( sum(C) /= 22026240 )  stop 49
-   if ( sum(D) /= 48268800 )  stop 50
+   if ( t_size(1)          /=  t_size(31))       error stop 33
+   if ( any(t_shape(1,:)   /=  t_shape(31,:)))   error stop 34
+   if ( any(t_lbound(1,:)  /=  t_lbound(31,:)))  error stop 35
+   if ( any(t_ubound(1,:)  /=  t_ubound(31,:)))  error stop 36
+   if ( t_size(2)          /=  t_size(32))       error stop 37
+   if ( any(t_shape(2,:)   /=  t_shape(32,:)))   error stop 38
+   if ( any(t_lbound(2,:)  /=  t_lbound(32,:)))  error stop 39
+   if ( any(t_ubound(2,:)  /=  t_ubound(32,:)))  error stop 40
+   if ( t_size(3)          /=  t_size(33))       error stop 41
+   if ( any(t_shape(3,:)   /=  t_shape(33,:)))   error stop 42
+   if ( any(t_lbound(3,:)  /=  t_lbound(33,:)))  error stop 43
+   if ( any(t_ubound(3,:)  /=  t_ubound(33,:)))  error stop 44
+   if ( t_size(4)          /=  t_size(34))       error stop 45
+   if ( any(t_shape(4,:)   /=  t_shape(34,:)))   error stop 46
+   if ( any(t_lbound(4,:)  /=  t_lbound(34,:)))  error stop 47
+   if ( any(t_ubound(4,:)  /=  t_ubound(34,:)))  error stop 48
+   if ( sum(C) /= 22026240 )  error stop 49
+   if ( sum(D) /= 48268800 )  error stop 50
 
 !---------- internal subprogram ----------
    call sub_int(t_size, t_shape, t_lbound, t_ubound)
@@ -206,13 +206,13 @@ contains
      integer(c_int), allocatable :: A(:,:), B(:,:), C(:,:), D(:,:,:,:,:,:,:,:,:,:)
 
      allocate (A(dim1, dim1))
-     if (.not. allocated(A))  stop 51
+     if (.not. allocated(A))  error stop 51
      allocate (B(dim1, dim1))
-     if (.not. allocated(B))  stop 52
+     if (.not. allocated(B))  error stop 52
      allocate (C(dim1, dim1))
-     if (.not. allocated(C))  stop 53
+     if (.not. allocated(C))  error stop 53
      allocate (D(1,2,3,4,5,1,2,3,4,5))
-     if (.not. allocated(D))  stop 54
+     if (.not. allocated(D))  error stop 54
 
      do i = 1, dim1
        do j = 1, dim1
@@ -251,24 +251,24 @@ contains
 !---------- call BIND(C) procedure from internal procedure
    call sub_bind_c(dim1, A, B, C, D, t_size, t_shape, t_lbound, t_ubound)
 
-   if ( t_size(21)          /=  t_size(31))       stop 55
-   if ( any(t_shape(21,:)   /=  t_shape(31,:)))   stop 56
-   if ( any(t_lbound(21,:)  /=  t_lbound(31,:)))  stop 57
-   if ( any(t_ubound(21,:)  /=  t_ubound(31,:)))  stop 58
-   if ( t_size(22)          /=  t_size(32))       stop 59
-   if ( any(t_shape(22,:)   /=  t_shape(32,:)))   stop 60
-   if ( any(t_lbound(22,:)  /=  t_lbound(32,:)))  stop 61
-   if ( any(t_ubound(22,:)  /=  t_ubound(32,:)))  stop 62
-   if ( t_size(23)          /=  t_size(33))       stop 63
-   if ( any(t_shape(23,:)   /=  t_shape(33,:)))   stop 64
-   if ( any(t_lbound(23,:)  /=  t_lbound(33,:)))  stop 65
-   if ( any(t_ubound(23,:)  /=  t_ubound(33,:)))  stop 66
-   if ( t_size(24)          /=  t_size(34))       stop 67
-   if ( any(t_shape(24,:)   /=  t_shape(34,:)))   stop 68
-   if ( any(t_lbound(24,:)  /=  t_lbound(34,:)))  stop 69
-   if ( any(t_ubound(24,:)  /=  t_ubound(34,:)))  stop 70
-   if ( sum(C) /= 22026240 )  stop 71
-   if ( sum(D) /= 48268800 )  stop 72
+   if ( t_size(21)          /=  t_size(31))       error stop 55
+   if ( any(t_shape(21,:)   /=  t_shape(31,:)))   error stop 56
+   if ( any(t_lbound(21,:)  /=  t_lbound(31,:)))  error stop 57
+   if ( any(t_ubound(21,:)  /=  t_ubound(31,:)))  error stop 58
+   if ( t_size(22)          /=  t_size(32))       error stop 59
+   if ( any(t_shape(22,:)   /=  t_shape(32,:)))   error stop 60
+   if ( any(t_lbound(22,:)  /=  t_lbound(32,:)))  error stop 61
+   if ( any(t_ubound(22,:)  /=  t_ubound(32,:)))  error stop 62
+   if ( t_size(23)          /=  t_size(33))       error stop 63
+   if ( any(t_shape(23,:)   /=  t_shape(33,:)))   error stop 64
+   if ( any(t_lbound(23,:)  /=  t_lbound(33,:)))  error stop 65
+   if ( any(t_ubound(23,:)  /=  t_ubound(33,:)))  error stop 66
+   if ( t_size(24)          /=  t_size(34))       error stop 67
+   if ( any(t_shape(24,:)   /=  t_shape(34,:)))   error stop 68
+   if ( any(t_lbound(24,:)  /=  t_lbound(34,:)))  error stop 69
+   if ( any(t_ubound(24,:)  /=  t_ubound(34,:)))  error stop 70
+   if ( sum(C) /= 22026240 )  error stop 71
+   if ( sum(D) /= 48268800 )  error stop 72
   end subroutine sub_int
 
 end program AllocatableDummyArgument101f
@@ -281,10 +281,10 @@ end program AllocatableDummyArgument101f
      integer :: t_size(50), t_shape(50,10), t_lbound(50,10), t_ubound(50,10)
      integer(c_int), allocatable :: A(:,:), B(:,:), C(:,:), D(:,:,:,:,:,:,:,:,:,:)
 
-     if (.not. allocated(A))  stop 101
-     if (.not. allocated(B))  stop 102
-     if (.not. allocated(C))  stop 103
-     if (.not. allocated(D))  stop 104
+     if (.not. allocated(A))  error stop 101
+     if (.not. allocated(B))  error stop 102
+     if (.not. allocated(C))  error stop 103
+     if (.not. allocated(D))  error stop 104
 
      C = -1000; D = -1000;
      do i = 1, dim1

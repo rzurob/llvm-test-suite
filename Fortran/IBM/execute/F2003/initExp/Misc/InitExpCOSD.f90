@@ -63,48 +63,48 @@
   LOGICAL precision_R8
   LOGICAL precision_R6
 
-  IF (KIND(T%R4)     .NE.  4 )                    STOP 11
-  IF ( ANY(T%R4      .NE.  0.5))                  STOP 12
+  IF (KIND(T%R4)     .NE.  4 )                    ERROR STOP 11
+  IF ( ANY(T%R4      .NE.  0.5))                  ERROR STOP 12
 
-  IF (KIND(T%R8)     .NE.  8 )                    STOP 21
- !IF ( ANY(T%R8      .NE. -0.5))                  STOP 22
-  IF ( .NOT. precision_R8(T%R8(1), -0.5D0))       STOP 22
+  IF (KIND(T%R8)     .NE.  8 )                    ERROR STOP 21
+ !IF ( ANY(T%R8      .NE. -0.5))                  ERROR STOP 22
+  IF ( .NOT. precision_R8(T%R8(1), -0.5D0))       ERROR STOP 22
 
-  IF (KIND(T%R6)     .NE. 16 )                    STOP 31
- !IF ( ANY(T%R6      .NE. -0.5))                  STOP 32
-  IF ( .NOT. precision_R6(T%R6(1), -0.5Q0))       STOP 32
-
-
-  IF (KIND(Arr1(1)%R4)   .NE.  4 )                STOP 41
-  IF ( ANY(Arr1(1)%R4    .NE.  0.5))              STOP 42
-
-  IF (KIND(Arr1(1)%R8)   .NE.  8 )                STOP 51
- !IF ( ANY(Arr1(1)%R8    .NE. -0.5))              STOP 52
-  IF ( .NOT. precision_R8(Arr1(1)%R8(1), -0.5D0)) STOP 52
-
-  IF (KIND(Arr1(1)%R6)   .NE. 16 )                STOP 61
- !IF ( ANY(Arr1(1)%R6    .NE. -0.5))              STOP 62
-  IF ( .NOT. precision_R6(Arr1(1)%R6(1), -0.5Q0)) STOP 62
+  IF (KIND(T%R6)     .NE. 16 )                    ERROR STOP 31
+ !IF ( ANY(T%R6      .NE. -0.5))                  ERROR STOP 32
+  IF ( .NOT. precision_R6(T%R6(1), -0.5Q0))       ERROR STOP 32
 
 
-  IF (KIND(Arr2(1)%R4)   .NE.  4 )                STOP 71
- !IF ( ANY(Arr2(1)%R4    .NE.  1))                STOP 72
-  IF ( .NOT. precision_R8(Arr2(1)%R8(1), 1.D0))   STOP 72
+  IF (KIND(Arr1(1)%R4)   .NE.  4 )                ERROR STOP 41
+  IF ( ANY(Arr1(1)%R4    .NE.  0.5))              ERROR STOP 42
 
-  IF (KIND(Arr2(1)%R8)   .NE.  8 )                STOP 81
- !IF ( ANY(Arr2(1)%R8    .NE.  1))                STOP 82
-  IF ( .NOT. precision_R8(Arr2(1)%R8(1), 1D0))    STOP 82
+  IF (KIND(Arr1(1)%R8)   .NE.  8 )                ERROR STOP 51
+ !IF ( ANY(Arr1(1)%R8    .NE. -0.5))              ERROR STOP 52
+  IF ( .NOT. precision_R8(Arr1(1)%R8(1), -0.5D0)) ERROR STOP 52
 
-  IF (KIND(Arr2(1)%R6)   .NE. 16 )                STOP 91
- !IF ( ANY(Arr2(1)%R6    .NE.  1.))               STOP 92
-  IF ( .NOT. precision_R6(Arr2(1)%R6(1), 1.Q0))   STOP 92
+  IF (KIND(Arr1(1)%R6)   .NE. 16 )                ERROR STOP 61
+ !IF ( ANY(Arr1(1)%R6    .NE. -0.5))              ERROR STOP 62
+  IF ( .NOT. precision_R6(Arr1(1)%R6(1), -0.5Q0)) ERROR STOP 62
 
 
- !IF ( ANY(T1%R8    .NE.  1))                STOP 182
-  IF ( .NOT. precision_R8(T1%R8(1), 1D0))    STOP 182
+  IF (KIND(Arr2(1)%R4)   .NE.  4 )                ERROR STOP 71
+ !IF ( ANY(Arr2(1)%R4    .NE.  1))                ERROR STOP 72
+  IF ( .NOT. precision_R8(Arr2(1)%R8(1), 1.D0))   ERROR STOP 72
 
- !IF ( ANY(T1%R6    .NE.  1.))               STOP 192
-  IF ( .NOT. precision_R6(T1%R6(1), 1.Q0))   STOP 192
+  IF (KIND(Arr2(1)%R8)   .NE.  8 )                ERROR STOP 81
+ !IF ( ANY(Arr2(1)%R8    .NE.  1))                ERROR STOP 82
+  IF ( .NOT. precision_R8(Arr2(1)%R8(1), 1D0))    ERROR STOP 82
+
+  IF (KIND(Arr2(1)%R6)   .NE. 16 )                ERROR STOP 91
+ !IF ( ANY(Arr2(1)%R6    .NE.  1.))               ERROR STOP 92
+  IF ( .NOT. precision_R6(Arr2(1)%R6(1), 1.Q0))   ERROR STOP 92
+
+
+ !IF ( ANY(T1%R8    .NE.  1))                ERROR STOP 182
+  IF ( .NOT. precision_R8(T1%R8(1), 1D0))    ERROR STOP 182
+
+ !IF ( ANY(T1%R6    .NE.  1.))               ERROR STOP 192
+  IF ( .NOT. precision_R6(T1%R6(1), 1.Q0))   ERROR STOP 192
 
   END
 

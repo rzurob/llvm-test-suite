@@ -104,14 +104,14 @@
 
   ASSOCIATE ( As => Fun(Fun(V)) )
 
-    IF ( ANY(As%ID       .NE. -1 )) STOP 20
-    IF ( ANY(As%GetID()  .NE. -1 )) STOP 21
+    IF ( ANY(As%ID       .NE. -1 )) ERROR STOP 20
+    IF ( ANY(As%GetID()  .NE. -1 )) ERROR STOP 21
 
-    IF ( ANY(As%C       .NE. "!" )) STOP 30
-    IF ( ANY(As%GetC()  .NE. "!" )) STOP 31
+    IF ( ANY(As%C       .NE. "!" )) ERROR STOP 30
+    IF ( ANY(As%GetC()  .NE. "!" )) ERROR STOP 31
 
-    IF ( ANY(As%L       .NEQV. .TRUE. )) STOP 60
-    IF ( ANY(As%GetL()  .NEQV. .TRUE. )) STOP 61
+    IF ( ANY(As%L       .NEQV. .TRUE. )) ERROR STOP 60
+    IF ( ANY(As%GetL()  .NEQV. .TRUE. )) ERROR STOP 61
 
     INDEX = 1
     Fin ( Index ) = 0  ! Finalization starts
@@ -120,7 +120,7 @@
 
   !FINALIZATION
 ! PRINT *, Fin
-  IF ( ANY(Fin .NE. (/0,2,1,1,2,1,1,-1/) ) ) STOP 99
+  IF ( ANY(Fin .NE. (/0,2,1,1,2,1,1,-1/) ) ) ERROR STOP 99
 
 
   CONTAINS

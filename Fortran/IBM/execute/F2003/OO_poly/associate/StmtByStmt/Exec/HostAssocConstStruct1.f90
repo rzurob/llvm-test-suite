@@ -46,7 +46,7 @@
     PRINT*, V%BaseId
     CALL V%SetId
     PRINT*, V%BaseId
-    IF ( V%BaseId .NE. -1 ) STOP 40
+    IF ( V%BaseId .NE. -1 ) ERROR STOP 40
   END ASSOCIATE
 
   END

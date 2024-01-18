@@ -38,10 +38,10 @@ module m
    contains
         subroutine sub()
             allocate( base(4) :: new(10,10,10) )
-            if ( .not. allocated(new) ) stop 11
+            if ( .not. allocated(new) ) error stop 11
 
             call move_alloc(new, new)
-            if ( allocated(new) ) stop 21
+            if ( allocated(new) ) error stop 21
         end subroutine
 end module
 
@@ -51,8 +51,8 @@ use m
     call sub
 
     allocate(integer :: old(1,1,1,1))
-    if ( .not. allocated(old) ) stop 11
+    if ( .not. allocated(old) ) error stop 11
 
     call move_alloc(old, old)
-    if ( allocated(old) ) stop 13
+    if ( allocated(old) ) error stop 13
 end

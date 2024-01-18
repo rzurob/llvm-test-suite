@@ -22,14 +22,14 @@ integer(4), dimension(4,4) :: res4=spread((/1895642558, 742962715, &
 integer(8), dimension(5,5), parameter :: c=reshape((/(i,i=1,25)/),(/5,5/))
 integer(8), dimension(5,5,4) :: c1=spread(c, dim=3, ncopies=4)
 
-if (.not. all(resA .eq. spread((/1,2,3/), dim=1, ncopies=3))) stop 1
+if (.not. all(resA .eq. spread((/1,2,3/), dim=1, ncopies=3))) error stop 1
 
-if (.not. all(res1 .eq. spread(a, dim=1, ncopies=6))) stop 2
-if (.not. all(res2 .eq. spread(a, dim=2, ncopies=6))) stop 3
+if (.not. all(res1 .eq. spread(a, dim=1, ncopies=6))) error stop 2
+if (.not. all(res2 .eq. spread(a, dim=2, ncopies=6))) error stop 3
 
 if (.not. all(res4 .eq. spread((/1895642558, 742962715, &
- & 129343661, 1853935317/), dim=2, ncopies=4))) stop 4
+ & 129343661, 1853935317/), dim=2, ncopies=4))) error stop 4
 
-if (.not. all(c1 .eq. spread(c, dim=3, ncopies=4))) stop 5
+if (.not. all(c1 .eq. spread(c, dim=3, ncopies=4))) error stop 5
 
 end

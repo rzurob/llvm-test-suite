@@ -32,15 +32,15 @@ logical(4), dimension(2,2) :: res4a=matmul(A4, B4), res4b
 logical(8), dimension(10,21) :: res8a=matmul(A8, B8), res8b
 
 res1b = matmul(A1,B1)
-if (.not. all(res1a .eqv. res1b)) stop 1
+if (.not. all(res1a .eqv. res1b)) error stop 1
 
 res2b = matmul(A2,B2)
-if (.not. all(res2a .eqv. res2b)) stop 2
+if (.not. all(res2a .eqv. res2b)) error stop 2
 
 res4b = matmul(A4,B4)
-if (.not. all(res4a .eqv. res4b)) stop 3
+if (.not. all(res4a .eqv. res4b)) error stop 3
 
 res8b = matmul(A8,B8)
-if (.not. all(res8a .eqv. res8b)) stop 4
+if (.not. all(res8a .eqv. res8b)) error stop 4
 
 end

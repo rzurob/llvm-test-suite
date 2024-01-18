@@ -94,21 +94,21 @@
   PROCEDURE()          :: ExtSub
   PROCEDURE(), POINTER :: ProcPtr
 
-  IF ( ANY (Trace .NE. (/0,0,0,0/))) STOP 11
+  IF ( ANY (Trace .NE. (/0,0,0,0/))) ERROR STOP 11
   CALL IntSub(V, V)
-  IF ( ANY (Trace .NE. (/2,1,2,1/))) STOP 12
+  IF ( ANY (Trace .NE. (/2,1,2,1/))) ERROR STOP 12
 
   Trace=0
   Index = 0
   ProcPtr => ModSub
   CALL ProcPtr(V, V)
-  IF ( ANY (Trace .NE. (/2,1,2,1/))) STOP 12
+  IF ( ANY (Trace .NE. (/2,1,2,1/))) ERROR STOP 12
 
   Trace=0
   Index = 0
   ProcPtr => ExtSub
   CALL ProcPtr(V, V)
-  IF ( ANY (Trace .NE. (/2,1,2,1/))) STOP 12
+  IF ( ANY (Trace .NE. (/2,1,2,1/))) ERROR STOP 12
 
   CONTAINS
 

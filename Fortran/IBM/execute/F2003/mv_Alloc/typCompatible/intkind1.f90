@@ -34,8 +34,8 @@
 
       call move_alloc(b1%i1, i1)
 
-      if ( allocated(b1%i1) ) stop 21
-      if ( .not. allocated(i1) ) stop 31
+      if ( allocated(b1%i1) ) error stop 21
+      if ( .not. allocated(i1) ) error stop 31
       print *, i1(:,1,1)
       print *, i1(:,2,1)
       end

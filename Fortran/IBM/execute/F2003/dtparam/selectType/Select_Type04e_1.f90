@@ -146,14 +146,14 @@ MODULE Mod2
 
          SELECT TYPE ( A => T )
            CLASS IS (ExtNode(knd1,*))
-             IF (A%k1 .NE. knd1) STOP 112
-             IF (A%l1 .NE. len1) STOP 113
+             IF (A%k1 .NE. knd1) ERROR STOP 112
+             IF (A%l1 .NE. len1) ERROR STOP 113
 
              CALL fill_arr(A)
 
            CLASS IS (BrcNode(knd2,*))
-             IF (A%k1 .NE. knd2) STOP 114
-             IF (A%l1 .NE. len2) STOP 115
+             IF (A%k1 .NE. knd2) ERROR STOP 114
+             IF (A%l1 .NE. len2) ERROR STOP 115
 
              CALL fill_arr(A)
 
@@ -169,7 +169,7 @@ MODULE Mod2
          CALL Sub1(U)
          CALL Sub1(V)
 
-         IF ( .NOT.  make_decision(U,V) ) STOP 116
+         IF ( .NOT.  make_decision(U,V) ) ERROR STOP 116
 
          CALL clean_arr(U)
          CALL clean_arr(V)
@@ -188,8 +188,8 @@ PROGRAM Select_Type04e
 
       SubjA  => FirstSubj
       SubjB  => SecondSubj
-      IF ( .NOT. ASSOCIATED(SubjA)) STOP 10
-      IF ( .NOT. ASSOCIATED(SubjB)) STOP 11
+      IF ( .NOT. ASSOCIATED(SubjA)) ERROR STOP 10
+      IF ( .NOT. ASSOCIATED(SubjB)) ERROR STOP 11
 
       CALL give_me_grad(SubjA,SubjB)
 END PROGRAM Select_Type04e

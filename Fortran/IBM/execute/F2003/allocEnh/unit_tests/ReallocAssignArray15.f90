@@ -21,9 +21,9 @@ type(dt) :: x
 allocate(y%p(6:9))
 y%p = (/1,2,3,4/)
 x%i = y%p(7:9)
-if (.not. allocated(x%i)) stop 1
-if (any(shape(x%i) .ne. (/3/))) stop 2
-if (lbound(x%i,1) /= 1) stop 3
-if (ubound(x%i,1) /= 3) stop 4
-if (any(x%i /= (/2,3,4/))) stop 5
+if (.not. allocated(x%i)) error stop 1
+if (any(shape(x%i) .ne. (/3/))) error stop 2
+if (lbound(x%i,1) /= 1) error stop 3
+if (ubound(x%i,1) /= 3) error stop 4
+if (any(x%i /= (/2,3,4/))) error stop 5
 end

@@ -63,7 +63,7 @@ program dtpIAAArraySection003
 
   ! create arrays o1a .. a2b and assign sections of them to allocatable arrays, and then check the bounds
   print *, allocated(o1), allocated(o2), allocated(v1), allocated(v3)
-  if (allocated(o1) .or. allocated(o2) .or. allocated(v1) .or. allocated(v3)) stop 2
+  if (allocated(o1) .or. allocated(o2) .or. allocated(v1) .or. allocated(v3)) error stop 2
 
   o1a = [(container(1,2)(dk(1)(100+i), dl(2)(repeat(achar(99+i),2),[50+i,500+i])), i=1,size(o1a))]
   o1b = [(container(1,2)(dk(1)(10+i), dl(2)(repeat(achar(69+i),2),[550+i,5500+i])), i=lbound(o1b,1),ubound(o1b,1))]
@@ -77,7 +77,7 @@ program dtpIAAArraySection003
   print *, lbound(o1), ":", ubound(o1), "::", 1, ":", 2
   print *, lbound(o2), ":", ubound(o2), "::", [1,1], ":", [1,2]
   if (any(lbound(o1)/=1) .or. any(ubound(o1)/=2) &
-      .or. any(lbound(o2)/=[1,1]) .or. any(ubound(o2)/=[1,2])) stop 3
+      .or. any(lbound(o2)/=[1,1]) .or. any(ubound(o2)/=[1,2])) error stop 3
 
   o1 = o1b(:)
   o2 = o2b(:-1002,:)
@@ -85,7 +85,7 @@ program dtpIAAArraySection003
   print *, lbound(o1), ":", ubound(o1), "::", 1, ":", 4
   print *, lbound(o2), ":", ubound(o2), "::", [1,1], ":", [2,2]
   if (any(lbound(o1)/=1) .or. any(ubound(o1)/=4) &
-      .or. any(lbound(o2)/=[1,1]) .or. any(ubound(o2)/=[2,2])) stop 4
+      .or. any(lbound(o2)/=[1,1]) .or. any(ubound(o2)/=[2,2])) error stop 4
 
 
   v1a = [(container(4,5)(dk(4)(100+i),dl(5)('aaaaa',i)), i=1,size(v1a))]
@@ -100,7 +100,7 @@ program dtpIAAArraySection003
   print *, lbound(v1), ":", ubound(v1), "::", 1, ":", 2
   Print *, lbound(v3), ":", ubound(v3), "::", [1,1,1], ":", [1,1,1]
   if (any(lbound(v1)/=1) .or. any(ubound(v1)/=2) &
-      .or. any(lbound(v3)/=[1,1,1]) .or. any(ubound(v3)/=[1,1,1])) stop 7
+      .or. any(lbound(v3)/=[1,1,1]) .or. any(ubound(v3)/=[1,1,1])) error stop 7
 
   v1 = v1b(:2)
   v3 = v3b(:5,:4,:)
@@ -108,9 +108,9 @@ program dtpIAAArraySection003
   print *, lbound(v1), ":", ubound(v1), "::", 1, ":", 2
   print *, lbound(v3), ":", ubound(v3), "::", [1,1,1], ":", [2,2,2]
   if (any(lbound(v1)/=1) .or. any(ubound(v1)/=2) &
-      .or. any(lbound(v3)/=[1,1,1]) .or. any(ubound(v3)/=[2,2,2])) stop 8
+      .or. any(lbound(v3)/=[1,1,1]) .or. any(ubound(v3)/=[2,2,2])) error stop 8
 
   print *, allocated(o1), allocated(o2), allocated(v1), allocated(v3)
-  if (.not.(allocated(o1) .and. allocated(o2) .and. allocated(v1) .and. allocated(v3))) stop 10
+  if (.not.(allocated(o1) .and. allocated(o2) .and. allocated(v1) .and. allocated(v3))) error stop 10
 
 end program dtpIAAArraySection003

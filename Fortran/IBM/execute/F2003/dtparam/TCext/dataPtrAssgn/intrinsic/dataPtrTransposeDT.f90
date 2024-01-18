@@ -37,9 +37,9 @@ module m
 	    type(A(4)), pointer :: b1(:,:)
 	    type(A(4)), allocatable :: func(:,:)
 
-	    if ( .not. associated(b1)) stop 1
-	    if ( any( lbound(b1) .ne. (/1,1 /) )) stop 3
-	    if ( any( ubound(b1) .ne. (/4,6 /) )) stop 5
+	    if ( .not. associated(b1)) error stop 1
+	    if ( any( lbound(b1) .ne. (/1,1 /) )) error stop 3
+	    if ( any( ubound(b1) .ne. (/4,6 /) )) error stop 5
 
 	    Do i = 1, ubound(b1,1)
                  print *, b1(i,:)
@@ -67,8 +67,8 @@ end module
 
 	f_tar = func(p)
 
-	if ( any( lbound(f_tar) .ne. (/1,1 /) )) stop 23
-	if ( any( ubound(f_tar) .ne. (/6,4 /) )) stop 33
+	if ( any( lbound(f_tar) .ne. (/1,1 /) )) error stop 23
+	if ( any( ubound(f_tar) .ne. (/6,4 /) )) error stop 33
 
        	Do i = 1, ubound(f_tar,1)
      	    print *, f_tar(i,:)

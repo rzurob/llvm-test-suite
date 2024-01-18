@@ -183,55 +183,55 @@
 
   ProcPtrI1 => Int1
   V = ProcPtrI1((/-1_1/))
-  IF ( ANY(V%Int1 .NE. (/-1_1/) )) STOP 11
+  IF ( ANY(V%Int1 .NE. (/-1_1/) )) ERROR STOP 11
 
   ProcPtrI2 => Int2
   V = ProcPtrI2((/-2_2/))
-  IF ( ANY(V%Int2 .NE. (/-2_2/) )) STOP 12
+  IF ( ANY(V%Int2 .NE. (/-2_2/) )) ERROR STOP 12
 
   ProcPtrI4 => Int4
   V = ProcPtrI4((/-4_4/))
-  IF ( ANY(V%Int4 .NE. (/-4_4/) )) STOP 14
+  IF ( ANY(V%Int4 .NE. (/-4_4/) )) ERROR STOP 14
 
   ProcPtrI8 => Int8
   V = ProcPtrI8((/-8_8/))
-  IF ( ANY(V%Int8 .NE. (/-8_8/) )) STOP 18
+  IF ( ANY(V%Int8 .NE. (/-8_8/) )) ERROR STOP 18
 
   ProcPtrR4 => Real4
   V = ProcPtrR4((/-4.0_4/))
-  IF ( ANY(V%Real4 .NE. (/-4.0_4/) )) STOP 24
+  IF ( ANY(V%Real4 .NE. (/-4.0_4/) )) ERROR STOP 24
 
   ProcPtrR8 => Real8
   V = ProcPtrR8((/-8.0_8/))
-  IF ( ANY(V%Real8 .NE. (/-8.0_8/) )) STOP 28
+  IF ( ANY(V%Real8 .NE. (/-8.0_8/) )) ERROR STOP 28
 
   ProcPtrR16 => Real16
   V = ProcPtrR16((/-16.0_16/))
-  IF ( ANY(V%Real16 .NE. (/-16.0_16/) )) STOP 216
+  IF ( ANY(V%Real16 .NE. (/-16.0_16/) )) ERROR STOP 216
 
   ProcPtrC8 => Complex8
   V = ProcPtrC8((/(8.0_8, -8.0_8)/))
-  IF ( ANY(V%Complex8 .NE. (/(8.0_8, -8.0_8)/) )) STOP 38
+  IF ( ANY(V%Complex8 .NE. (/(8.0_8, -8.0_8)/) )) ERROR STOP 38
 
   ProcPtrC16 => Complex16
   V = ProcPtrC16((/(16.0_16, -16.0_16)/))
-  IF ( ANY(V%Complex16 .NE. (/(16.0_16, -16.0_16)/) )) STOP 316
+  IF ( ANY(V%Complex16 .NE. (/(16.0_16, -16.0_16)/) )) ERROR STOP 316
 
   ProcPtrL1 => Log1
   V = ProcPtrL1((/.TRUE._1/))
-  IF ( ANY(V%Log1 .NEQV. (/.TRUE._1/) )) STOP 41
+  IF ( ANY(V%Log1 .NEQV. (/.TRUE._1/) )) ERROR STOP 41
 
   ProcPtrL2 => Log2
   V = ProcPtrL2((/.TRUE._2/))
-  IF ( ANY(V%Log2 .NEQV. (/.TRUE._2/) )) STOP 42
+  IF ( ANY(V%Log2 .NEQV. (/.TRUE._2/) )) ERROR STOP 42
 
   ProcPtrL4 => Log4
   V = ProcPtrL4((/.FALSE._4/))
-  IF ( ANY(V%Log4 .NEQV. (/.FALSE._4/) )) STOP 44
+  IF ( ANY(V%Log4 .NEQV. (/.FALSE._4/) )) ERROR STOP 44
 
   ProcPtrL8 => Log8
   V = ProcPtrL8((/.FALSE._8/))
-  IF ( ANY(V%Log8 .NEQV. (/.FALSE._8/) )) STOP 48
+  IF ( ANY(V%Log8 .NEQV. (/.FALSE._8/) )) ERROR STOP 48
 
 
   END

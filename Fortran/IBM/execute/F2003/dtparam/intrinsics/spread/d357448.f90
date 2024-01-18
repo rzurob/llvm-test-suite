@@ -33,10 +33,10 @@ program d357448
 
   contain1%dtp2=dtp(2)(tar1,"cd")
 
-  if(contain1%dtp2%l /= 2)                  stop 1
-  if(contain1%dtp2%c1 /= "cd")              stop 2
-  if(.not. associated(contain1%dtp2%dtp1))  stop 3
-  if(contain1%dtp2%dtp1%c1 /= "ab")         stop 4
+  if(contain1%dtp2%l /= 2)                  error stop 1
+  if(contain1%dtp2%c1 /= "cd")              error stop 2
+  if(.not. associated(contain1%dtp2%dtp1))  error stop 3
+  if(contain1%dtp2%dtp1%c1 /= "ab")         error stop 4
 
 end program
 

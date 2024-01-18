@@ -67,9 +67,9 @@
   T = DT(T%Fun(T))
   SELECT TYPE( As => T(1,1)%Ptr)
   TYPE IS (DT)
-    IF (.NOT. ASSOCIATED(T(1,1)%Ptr, T))                    STOP 11
-    IF (ANY( LBOUND(T(1,1)%Ptr)         .NE. (/1, 1 /)))    STOP 12
-    IF (ANY( UBOUND(T(1,1)%Ptr)         .NE. (/10,10 /)))    STOP 13
+    IF (.NOT. ASSOCIATED(T(1,1)%Ptr, T))                    ERROR STOP 11
+    IF (ANY( LBOUND(T(1,1)%Ptr)         .NE. (/1, 1 /)))    ERROR STOP 12
+    IF (ANY( UBOUND(T(1,1)%Ptr)         .NE. (/10,10 /)))    ERROR STOP 13
   CLASS DEFAULT
      STOP 14
   END SELECT
@@ -78,9 +78,9 @@
   T1 = DT1(T1%Fun(T1))
   SELECT TYPE( As => T1(1)%Ptr)
   TYPE IS (DT1)
-    IF (.NOT. ASSOCIATED(T1(1)%Ptr, T1(1:9)))           STOP 21
-    IF (ANY( LBOUND(T1(1)%Ptr)         .NE. (/1 /)))    STOP 22
-    IF (ANY( UBOUND(T1(1)%Ptr)         .NE. (/9 /)))    STOP 23
+    IF (.NOT. ASSOCIATED(T1(1)%Ptr, T1(1:9)))           ERROR STOP 21
+    IF (ANY( LBOUND(T1(1)%Ptr)         .NE. (/1 /)))    ERROR STOP 22
+    IF (ANY( UBOUND(T1(1)%Ptr)         .NE. (/9 /)))    ERROR STOP 23
   CLASS DEFAULT
      STOP 14
   END SELECT

@@ -38,11 +38,11 @@
   LOGICAL(KIND(LArr1 .OR. LArr2)),   PARAMETER :: LArr(128) = LArr1 .OR. LArr2
 
 
-  IF ( KIND(IArr) .NE. KIND(I))  STOP 11
-  IF ( ANY( IArr  .NE. 1 ))      STOP 12
+  IF ( KIND(IArr) .NE. KIND(I))  ERROR STOP 11
+  IF ( ANY( IArr  .NE. 1 ))      ERROR STOP 12
 
-  IF ( KIND(LArr) .NE. KIND(I))  STOP 21
-  IF ( ANY( LArr  .NEQV. .TRUE.))STOP 22
+  IF ( KIND(LArr) .NE. KIND(I))  ERROR STOP 21
+  IF ( ANY( LArr  .NEQV. .TRUE.))ERROR STOP 22
 
 
   END

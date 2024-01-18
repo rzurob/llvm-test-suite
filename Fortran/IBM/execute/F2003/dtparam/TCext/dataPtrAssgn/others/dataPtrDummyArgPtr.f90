@@ -38,7 +38,7 @@ module m
 
 	    allocate(basefunc(a%x), source = (/ (base(20,4)(i),i=1,a%x) /) )
 
-	    if ( .not. associated(basefunc) ) stop 3
+	    if ( .not. associated(basefunc) ) error stop 3
 	    p( a%x : ) => basefunc(a%x/2:)
 
 	end function
@@ -58,13 +58,13 @@ end module
 
         b2(lbound(p1,1):ubound(p1,1)) => b1%func(p1)
 
-	if ( .not. associated(p1) ) stop 13
-	if ( lbound(p1,1) /= 20 ) stop 15
-        if ( ubound(p1,1) /= 30 ) stop 17
+	if ( .not. associated(p1) ) error stop 13
+	if ( lbound(p1,1) /= 20 ) error stop 15
+        if ( ubound(p1,1) /= 30 ) error stop 17
 	print *, p1%x
 
-	if ( lbound(b2,1) /= 20 ) stop 21
-        if ( ubound(b2,1) /= 30 ) stop 23
+	if ( lbound(b2,1) /= 20 ) error stop 21
+        if ( ubound(b2,1) /= 30 ) error stop 23
 	print *, b2%x
 
     end program

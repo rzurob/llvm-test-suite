@@ -47,13 +47,13 @@ module m
                 type is (child(4))
                     call move_alloc(arg%i2%i1, arg%i1)
 
-                    if ( .not. allocated(arg%i1) ) stop 5
-                    if ( allocated(arg%i2%i1) ) stop 6
+                    if ( .not. allocated(arg%i1) ) error stop 5
+                    if ( allocated(arg%i2%i1) ) error stop 6
 
                     call move_alloc(arg%i1, func)
 
-                    if ( allocated(arg%i1) ) stop 7
-                    if ( .not. allocated(func) ) stop 8
+                    if ( allocated(arg%i1) ) error stop 7
+                    if ( .not. allocated(func) ) error stop 8
 		class default
 		    stop 9
             end select
@@ -68,7 +68,7 @@ end module
 
       select type (x => func(a))
           type is (integer*8)
-              if ( x /= 11 ) stop 21
+              if ( x /= 11 ) error stop 21
           class default
               stop 23
       end select

@@ -67,28 +67,28 @@ use m
    type(B) b1
 
    allocate(b1%l2(2))
-   if ( .not. allocated(b1%l2) ) stop 20
+   if ( .not. allocated(b1%l2) ) error stop 20
 
    allocate( b1%l2(1)%l1, source = base('Fortran'))
-   if ( .not. allocated(b1%l2(1)%l1) ) stop 30
+   if ( .not. allocated(b1%l2(1)%l1) ) error stop 30
 
    allocate( b1%l2(2)%l1, source = child('FORTRAN'))
-   if ( .not. allocated(b1%l2(2)%l1) ) stop 40
+   if ( .not. allocated(b1%l2(2)%l1) ) error stop 40
 
    bNum = 0
    cNum = 0
 
    call move_alloc( b1%l2(1)%l1, b1%l2(2)%l1 )
 
-   if ( bNum /= 1) stop 41
-   if ( CNum /= 1) stop 43
+   if ( bNum /= 1) error stop 41
+   if ( CNum /= 1) error stop 43
 
-   if ( allocated(b1%l2(1)%l1) ) stop 50
-   if ( .not. allocated(b1%l2(2)%l1) ) stop 60
+   if ( allocated(b1%l2(1)%l1) ) error stop 50
+   if ( .not. allocated(b1%l2(2)%l1) ) error stop 60
 
    select type ( a => b1%l2(2)%l1 )
        type is (base)
-            if ( a%name /= 'Fortran' ) stop 70
+            if ( a%name /= 'Fortran' ) error stop 70
        class default
            stop 90
    end select

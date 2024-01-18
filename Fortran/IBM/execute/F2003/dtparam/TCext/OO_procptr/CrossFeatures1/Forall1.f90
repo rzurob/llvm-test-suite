@@ -84,12 +84,12 @@
 
   DO I=1, 3000
 
-    IF ( IArr(I) .NE. -1 ) STOP 11
+    IF ( IArr(I) .NE. -1 ) ERROR STOP 11
 
-    IF ( U(I)%Id .NE. -1 )                       STOP 21
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr) )        STOP 22
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Fun1) )  STOP 23
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr1, Fun1) ) STOP 24
+    IF ( U(I)%Id .NE. -1 )                       ERROR STOP 21
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr) )        ERROR STOP 22
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Fun1) )  ERROR STOP 23
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr1, Fun1) ) ERROR STOP 24
 
   END DO
 
@@ -100,15 +100,15 @@
 
   DO I=1, 3000
 
-    IF ( W(I)%Id .NE. 1 )                        STOP 31
-    IF ( .NOT. ASSOCIATED(W(I)%ProcPtr) )        STOP 32
-    IF ( .NOT. ASSOCIATED(W(I)%ProcPtr, Fun1) )  STOP 33
-    IF ( .NOT. ASSOCIATED(W(I)%ProcPtr1, Fun1) ) STOP 34
+    IF ( W(I)%Id .NE. 1 )                        ERROR STOP 31
+    IF ( .NOT. ASSOCIATED(W(I)%ProcPtr) )        ERROR STOP 32
+    IF ( .NOT. ASSOCIATED(W(I)%ProcPtr, Fun1) )  ERROR STOP 33
+    IF ( .NOT. ASSOCIATED(W(I)%ProcPtr1, Fun1) ) ERROR STOP 34
 
-    IF ( U(I)%Id .NE.  1 )                       STOP 41
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr) )        STOP 42
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Fun1) )  STOP 43
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr1, Fun1) ) STOP 44
+    IF ( U(I)%Id .NE.  1 )                       ERROR STOP 41
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr) )        ERROR STOP 42
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, Fun1) )  ERROR STOP 43
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr1, Fun1) ) ERROR STOP 44
 
   END DO
 

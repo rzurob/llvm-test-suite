@@ -85,49 +85,49 @@
   PROCEDURE(CToC), POINTER :: ProcPtr
 
   ProcPtr => RetPtr(Fun) + NULL(ProcPtr)
-! IF (ProcPtr("ABC") .NE. "ABC" ) STOP 14
+! IF (ProcPtr("ABC") .NE. "ABC" ) ERROR STOP 14
 
   ProcPtr => NULL(ProcPtr) + RetPtr(Fun)
-! IF (ProcPtr("123") .NE. "123" ) STOP 15
+! IF (ProcPtr("123") .NE. "123" ) ERROR STOP 15
 
   ProcPtr => RetPtr(Fun) + RetPtr(Fun)
-! IF (ProcPtr("0123456789") .NE. "0123456789" ) STOP 16
+! IF (ProcPtr("0123456789") .NE. "0123456789" ) ERROR STOP 16
 
   ProcPtr => RetPtr(NULL(Fun)) + RetPtr(Fun)
-! IF (ProcPtr("xyz") .NE. "xyz" ) STOP 17
+! IF (ProcPtr("xyz") .NE. "xyz" ) ERROR STOP 17
 
   ProcPtr => NULL(ProcPtr) + RetPtr(NULL(ProcPtr))
-! IF (ASSOCIATED(ProcPtr)) STOP 18
+! IF (ASSOCIATED(ProcPtr)) ERROR STOP 18
 
   V%BComp%ProcPtr => RetPtr(Fun) + NULL(ProcPtr)
-! IF (V%BComp%ProcPtr("ABC") .NE. "ABC" ) STOP 24
+! IF (V%BComp%ProcPtr("ABC") .NE. "ABC" ) ERROR STOP 24
 
   V%BComp%ProcPtr => NULL(ProcPtr) + RetPtr(ProcPtr)
-! IF (V%BComp%ProcPtr("123") .NE. "123" ) STOP 25
+! IF (V%BComp%ProcPtr("123") .NE. "123" ) ERROR STOP 25
 
   V%BComp%ProcPtr => RetPtr(Fun) + RetPtr(Fun)
-! IF (V%BComp%ProcPtr("0123456789") .NE. "0123456789" ) STOP 26
+! IF (V%BComp%ProcPtr("0123456789") .NE. "0123456789" ) ERROR STOP 26
 
   V%BComp%ProcPtr => RetPtr(NULL(ProcPtr)) + RetPtr(Fun)
-! IF (V%BComp%ProcPtr("xyz") .NE. "xyz" ) STOP 27
+! IF (V%BComp%ProcPtr("xyz") .NE. "xyz" ) ERROR STOP 27
 
   V%BComp%ProcPtr => NULL(ProcPtr) + RetPtr(NULL(ProcPtr))
-! IF (ASSOCIATED(V%BComp%ProcPtr)) STOP 28
+! IF (ASSOCIATED(V%BComp%ProcPtr)) ERROR STOP 28
 
   V%BComp%ProcPtr => RetPtr(Fun) + NULL(ProcPtr)
-! IF (V%BComp%ProcPtr("ABC") .NE. "ABC" ) STOP 24
+! IF (V%BComp%ProcPtr("ABC") .NE. "ABC" ) ERROR STOP 24
 
   V%BComp%ProcPtr => NULL(ProcPtr) + RetPtr(Fun)
-! IF (V%BComp%ProcPtr("123") .NE. "123" ) STOP 25
+! IF (V%BComp%ProcPtr("123") .NE. "123" ) ERROR STOP 25
 
   V%BComp%ProcPtr => RetPtr(Fun) + RetPtr(Fun)
-! IF (V%BComp%ProcPtr("0123456789") .NE. "0123456789" ) STOP 26
+! IF (V%BComp%ProcPtr("0123456789") .NE. "0123456789" ) ERROR STOP 26
 
   V%BComp%ProcPtr => RetPtr(NULL(ProcPtr)) + RetPtr(Fun)
-! IF (V%BComp%ProcPtr("xyz") .NE. "xyz" ) STOP 27
+! IF (V%BComp%ProcPtr("xyz") .NE. "xyz" ) ERROR STOP 27
 
   V%BComp%ProcPtr => NULL(ProcPtr) + RetPtr(NULL(ProcPtr))
-! IF (ASSOCIATED(V%BComp%ProcPtr)) STOP 28
+! IF (ASSOCIATED(V%BComp%ProcPtr)) ERROR STOP 28
 
 
   CONTAINS

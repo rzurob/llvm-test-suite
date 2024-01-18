@@ -67,9 +67,9 @@
     CLASS IS (DT)
       STOP 20
     CLASS IS (DT0)
-      IF (ANY(U%IArr .NE. -1)) STOP 21
-      IF (TRIM(U%CArr(1)) .NE. "!") STOP 22
-      IF (TRIM(U%CArr(2)) .NE. "!") STOP 23
+      IF (ANY(U%IArr .NE. -1)) ERROR STOP 21
+      IF (TRIM(U%CArr(1)) .NE. "!") ERROR STOP 22
+      IF (TRIM(U%CArr(2)) .NE. "!") ERROR STOP 23
     CLASS DEFAULT
       STOP 30
     END SELECT

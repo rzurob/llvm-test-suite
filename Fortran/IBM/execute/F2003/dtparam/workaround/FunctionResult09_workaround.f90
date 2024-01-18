@@ -105,63 +105,63 @@ PROGRAM FunctionResult09
 
       b1 => BuildBase(10)
       call b1%print
-      IF (b1%l1 .NE. 10) STOP 10
-      IF (SIZE(b1%A0) .NE.  10) STOP 11
-      IF (SIZE(b1%A1) .NE.  21) STOP 12
-      IF (SIZE(b1%A2) .NE. 100) STOP 13
-      IF (ANY(b1%A0   .NE.  1)) STOP 14
-      IF (ANY(b1%A1   .NE.  2)) STOP 15
-      IF (ANY(b1%A2   .NE.  3)) STOP 16
+      IF (b1%l1 .NE. 10) ERROR STOP 10
+      IF (SIZE(b1%A0) .NE.  10) ERROR STOP 11
+      IF (SIZE(b1%A1) .NE.  21) ERROR STOP 12
+      IF (SIZE(b1%A2) .NE. 100) ERROR STOP 13
+      IF (ANY(b1%A0   .NE.  1)) ERROR STOP 14
+      IF (ANY(b1%A1   .NE.  2)) ERROR STOP 15
+      IF (ANY(b1%A2   .NE.  3)) ERROR STOP 16
 
       c1 => BuildChild(2,4)
       call c1%print
-      IF (c1%l1 .NE. 2) STOP 20
-      IF (c1%l2 .NE. 4) STOP 21
-      IF (SIZE(c1%A0) .NE.  2) STOP 22
-      IF (SIZE(c1%A1) .NE.  5) STOP 23
-      IF (SIZE(c1%A2) .NE.  4) STOP 24
-      IF (ANY(c1%A0   .NE.  4)) STOP 25
-      IF (ANY(c1%A1   .NE.  5)) STOP 26
-      IF (ANY(c1%A2   .NE.  6)) STOP 27
+      IF (c1%l1 .NE. 2) ERROR STOP 20
+      IF (c1%l2 .NE. 4) ERROR STOP 21
+      IF (SIZE(c1%A0) .NE.  2) ERROR STOP 22
+      IF (SIZE(c1%A1) .NE.  5) ERROR STOP 23
+      IF (SIZE(c1%A2) .NE.  4) ERROR STOP 24
+      IF (ANY(c1%A0   .NE.  4)) ERROR STOP 25
+      IF (ANY(c1%A1   .NE.  5)) ERROR STOP 26
+      IF (ANY(c1%A2   .NE.  6)) ERROR STOP 27
 
-      IF (c1%cmp%l1 .NE. 9) STOP 28
-      IF (SIZE(c1%cmp%A0) .NE.  9) STOP 29
-      IF (SIZE(c1%cmp%A1) .NE. 19) STOP 30
-      IF (SIZE(c1%cmp%A2) .NE. 81) STOP 31
-      IF (ANY(c1%cmp%A0   .NE. 7)) STOP 32
-      IF (ANY(c1%cmp%A1   .NE. 8)) STOP 33
-      IF (ANY(c1%cmp%A2   .NE. 9)) STOP 34
+      IF (c1%cmp%l1 .NE. 9) ERROR STOP 28
+      IF (SIZE(c1%cmp%A0) .NE.  9) ERROR STOP 29
+      IF (SIZE(c1%cmp%A1) .NE. 19) ERROR STOP 30
+      IF (SIZE(c1%cmp%A2) .NE. 81) ERROR STOP 31
+      IF (ANY(c1%cmp%A0   .NE. 7)) ERROR STOP 32
+      IF (ANY(c1%cmp%A1   .NE. 8)) ERROR STOP 33
+      IF (ANY(c1%cmp%A2   .NE. 9)) ERROR STOP 34
 
       b2 => BuildBase(20)
       call b2%print
-      IF (b2%l1 .NE. 20) STOP 40
-      IF (SIZE(b2%A0) .NE.  20) STOP 41
-      IF (SIZE(b2%A1) .NE.  41) STOP 42
-      IF (SIZE(b2%A2) .NE. 400) STOP 43
-      IF (ANY(b2%A0   .NE.  1)) STOP 44
-      IF (ANY(b2%A1   .NE.  2)) STOP 45
-      IF (ANY(b2%A2   .NE.  3)) STOP 46
+      IF (b2%l1 .NE. 20) ERROR STOP 40
+      IF (SIZE(b2%A0) .NE.  20) ERROR STOP 41
+      IF (SIZE(b2%A1) .NE.  41) ERROR STOP 42
+      IF (SIZE(b2%A2) .NE. 400) ERROR STOP 43
+      IF (ANY(b2%A0   .NE.  1)) ERROR STOP 44
+      IF (ANY(b2%A1   .NE.  2)) ERROR STOP 45
+      IF (ANY(b2%A2   .NE.  3)) ERROR STOP 46
 
       b2 => BuildChild(3,6)
       call b2%print
       SELECT TYPE ( b2 )
         CLASS IS (Child(4,*,4,*))
-          IF (b2%l1 .NE. 3) STOP 50
-          IF (b2%l2 .NE. 6) STOP 51
-          IF (SIZE(b2%A0) .NE.  3) STOP 52
-          IF (SIZE(b2%A1) .NE.  7) STOP 53
-          IF (SIZE(b2%A2) .NE.  9) STOP 54
-          IF (ANY(b2%A0   .NE.  4)) STOP 55
-          IF (ANY(b2%A1   .NE.  5)) STOP 56
-          IF (ANY(b2%A2   .NE.  6)) STOP 57
+          IF (b2%l1 .NE. 3) ERROR STOP 50
+          IF (b2%l2 .NE. 6) ERROR STOP 51
+          IF (SIZE(b2%A0) .NE.  3) ERROR STOP 52
+          IF (SIZE(b2%A1) .NE.  7) ERROR STOP 53
+          IF (SIZE(b2%A2) .NE.  9) ERROR STOP 54
+          IF (ANY(b2%A0   .NE.  4)) ERROR STOP 55
+          IF (ANY(b2%A1   .NE.  5)) ERROR STOP 56
+          IF (ANY(b2%A2   .NE.  6)) ERROR STOP 57
 
-          IF (b2%cmp%l1 .NE. 13) STOP 58
-          IF (SIZE(b2%cmp%A0) .NE.  13) STOP 59
-          IF (SIZE(b2%cmp%A1) .NE.  27) STOP 60
-          IF (SIZE(b2%cmp%A2) .NE. 169) STOP 61
-          IF (ANY(b2%cmp%A0   .NE.  7)) STOP 62
-          IF (ANY(b2%cmp%A1   .NE.  8)) STOP 63
-          IF (ANY(b2%cmp%A2   .NE.  9)) STOP 64
+          IF (b2%cmp%l1 .NE. 13) ERROR STOP 58
+          IF (SIZE(b2%cmp%A0) .NE.  13) ERROR STOP 59
+          IF (SIZE(b2%cmp%A1) .NE.  27) ERROR STOP 60
+          IF (SIZE(b2%cmp%A2) .NE. 169) ERROR STOP 61
+          IF (ANY(b2%cmp%A0   .NE.  7)) ERROR STOP 62
+          IF (ANY(b2%cmp%A1   .NE.  8)) ERROR STOP 63
+          IF (ANY(b2%cmp%A2   .NE.  9)) ERROR STOP 64
 
         CLASS DEFAULT
            STOP 65

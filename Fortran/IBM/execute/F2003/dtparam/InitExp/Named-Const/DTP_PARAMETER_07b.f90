@@ -52,12 +52,12 @@ MODULE Mod
         INTEGER :: I
 
         Obj = Arg
-        IF ( SIZE(Obj%A0)     .NE. 10 ) STOP 10
-        IF ( LBOUND(Obj%A0,1) .NE.  1 ) STOP 11
-        IF ( UBOUND(Obj%A0,1) .NE. 10 ) STOP 12
-        IF ( LEN(Obj%C0)      .NE. 10 ) STOP 13
-        IF ( ANY(Obj%A0   .NE. [(I, I = 1, 10)]) ) STOP 14
-        IF ( TRIM(Obj%C0) .NE.      'b1constant' ) STOP 15
+        IF ( SIZE(Obj%A0)     .NE. 10 ) ERROR STOP 10
+        IF ( LBOUND(Obj%A0,1) .NE.  1 ) ERROR STOP 11
+        IF ( UBOUND(Obj%A0,1) .NE. 10 ) ERROR STOP 12
+        IF ( LEN(Obj%C0)      .NE. 10 ) ERROR STOP 13
+        IF ( ANY(Obj%A0   .NE. [(I, I = 1, 10)]) ) ERROR STOP 14
+        IF ( TRIM(Obj%C0) .NE.      'b1constant' ) ERROR STOP 15
       END SUBROUTINE
 
       SUBROUTINE CreateNewChild(Arg)
@@ -66,18 +66,18 @@ MODULE Mod
         INTEGER :: I
 
         Obj = Arg
-        IF ( SIZE(Obj%A0)     .NE. 10 ) STOP 16
-        IF ( SIZE(Obj%A1)     .NE.  5 ) STOP 17
-        IF ( LBOUND(Obj%A0,1) .NE.  1 ) STOP 18
-        IF ( LBOUND(Obj%A1,1) .NE.  1 ) STOP 19
-        IF ( UBOUND(Obj%A0,1) .NE. 10 ) STOP 20
-        IF ( UBOUND(Obj%A1,1) .NE.  5 ) STOP 21
-        IF ( LEN(Obj%C0)      .NE. 10 ) STOP 22
-        IF ( LEN(Obj%C1)      .NE.  5 ) STOP 23
-        IF ( ANY(Obj%A0   .NE. [(2*I, I = 1, 10)] ) ) STOP 24
-        IF ( ANY(Obj%A1   .NE. [(I**2, I = 1, 5)] ) ) STOP 25
-        IF ( TRIM(Obj%C0) .NE. 'c1const1' ) STOP 26
-        IF ( TRIM(Obj%C1) .NE.    'c1con' ) STOP 27
+        IF ( SIZE(Obj%A0)     .NE. 10 ) ERROR STOP 16
+        IF ( SIZE(Obj%A1)     .NE.  5 ) ERROR STOP 17
+        IF ( LBOUND(Obj%A0,1) .NE.  1 ) ERROR STOP 18
+        IF ( LBOUND(Obj%A1,1) .NE.  1 ) ERROR STOP 19
+        IF ( UBOUND(Obj%A0,1) .NE. 10 ) ERROR STOP 20
+        IF ( UBOUND(Obj%A1,1) .NE.  5 ) ERROR STOP 21
+        IF ( LEN(Obj%C0)      .NE. 10 ) ERROR STOP 22
+        IF ( LEN(Obj%C1)      .NE.  5 ) ERROR STOP 23
+        IF ( ANY(Obj%A0   .NE. [(2*I, I = 1, 10)] ) ) ERROR STOP 24
+        IF ( ANY(Obj%A1   .NE. [(I**2, I = 1, 5)] ) ) ERROR STOP 25
+        IF ( TRIM(Obj%C0) .NE. 'c1const1' ) ERROR STOP 26
+        IF ( TRIM(Obj%C1) .NE.    'c1con' ) ERROR STOP 27
       END SUBROUTINE
 
 
@@ -87,44 +87,44 @@ MODULE Mod
         INTEGER :: I
 
         Obj = Arg
-        IF ( SIZE(Obj%A0)     .NE. 10 ) STOP 30
-        IF ( SIZE(Obj%A1)     .NE.  5 ) STOP 31
-        IF ( SIZE(Obj%A2)     .NE. 10 ) STOP 32
-        IF ( LBOUND(Obj%A0,1) .NE.  1 ) STOP 33
-        IF ( LBOUND(Obj%A1,1) .NE.  1 ) STOP 34
-        IF ( LBOUND(Obj%A2,1) .NE.  1 ) STOP 35
-        IF ( UBOUND(Obj%A0,1) .NE. 10 ) STOP 36
-        IF ( UBOUND(Obj%A1,1) .NE.  5 ) STOP 37
-        IF ( UBOUND(Obj%A2,1) .NE. 10 ) STOP 38
-        IF ( LEN(Obj%C0)      .NE. 10 ) STOP 39
-        IF ( LEN(Obj%C1)      .NE.  5 ) STOP 40
-        IF ( LEN(Obj%C2)      .NE. 10 ) STOP 41
-        IF ( ANY(Obj%A0   .NE. 5) ) STOP 42
-        IF ( ANY(Obj%A1   .NE. 3) ) STOP 43
-        IF ( ANY(Obj%A2   .NE. 1) ) STOP 44
-        IF ( TRIM(Obj%C0) .NE.         'AB' ) STOP 45
-        IF ( TRIM(Obj%C1) .NE.      'ABCDE' ) STOP 46
-        IF ( TRIM(Obj%C2) .NE. 'n1constant' ) STOP 47
+        IF ( SIZE(Obj%A0)     .NE. 10 ) ERROR STOP 30
+        IF ( SIZE(Obj%A1)     .NE.  5 ) ERROR STOP 31
+        IF ( SIZE(Obj%A2)     .NE. 10 ) ERROR STOP 32
+        IF ( LBOUND(Obj%A0,1) .NE.  1 ) ERROR STOP 33
+        IF ( LBOUND(Obj%A1,1) .NE.  1 ) ERROR STOP 34
+        IF ( LBOUND(Obj%A2,1) .NE.  1 ) ERROR STOP 35
+        IF ( UBOUND(Obj%A0,1) .NE. 10 ) ERROR STOP 36
+        IF ( UBOUND(Obj%A1,1) .NE.  5 ) ERROR STOP 37
+        IF ( UBOUND(Obj%A2,1) .NE. 10 ) ERROR STOP 38
+        IF ( LEN(Obj%C0)      .NE. 10 ) ERROR STOP 39
+        IF ( LEN(Obj%C1)      .NE.  5 ) ERROR STOP 40
+        IF ( LEN(Obj%C2)      .NE. 10 ) ERROR STOP 41
+        IF ( ANY(Obj%A0   .NE. 5) ) ERROR STOP 42
+        IF ( ANY(Obj%A1   .NE. 3) ) ERROR STOP 43
+        IF ( ANY(Obj%A2   .NE. 1) ) ERROR STOP 44
+        IF ( TRIM(Obj%C0) .NE.         'AB' ) ERROR STOP 45
+        IF ( TRIM(Obj%C1) .NE.      'ABCDE' ) ERROR STOP 46
+        IF ( TRIM(Obj%C2) .NE. 'n1constant' ) ERROR STOP 47
 
-        IF ( SIZE(Obj%bcomp%A0)     .NE. 10 ) STOP 48
-        IF ( LBOUND(Obj%bcomp%A0,1) .NE. 1 ) STOP 49
-        IF ( UBOUND(Obj%bcomp%A0,1) .NE. 10 ) STOP 50
-        IF ( LEN(Obj%bcomp%C0)      .NE. 10 ) STOP 51
-        IF ( ANY(Obj%bcomp%A0   .NE.         -1) ) STOP 52
-        IF ( TRIM(Obj%bcomp%C0) .NE. 'Base-init' ) STOP 53
+        IF ( SIZE(Obj%bcomp%A0)     .NE. 10 ) ERROR STOP 48
+        IF ( LBOUND(Obj%bcomp%A0,1) .NE. 1 ) ERROR STOP 49
+        IF ( UBOUND(Obj%bcomp%A0,1) .NE. 10 ) ERROR STOP 50
+        IF ( LEN(Obj%bcomp%C0)      .NE. 10 ) ERROR STOP 51
+        IF ( ANY(Obj%bcomp%A0   .NE.         -1) ) ERROR STOP 52
+        IF ( TRIM(Obj%bcomp%C0) .NE. 'Base-init' ) ERROR STOP 53
 
-        IF ( SIZE(Obj%ccomp%A0)     .NE. 10 ) STOP 54
-        IF ( SIZE(Obj%ccomp%A1)     .NE. 10 ) STOP 55
-        IF ( LBOUND(Obj%ccomp%A0,1) .NE. 1 ) STOP 56
-        IF ( LBOUND(Obj%ccomp%A1,1) .NE. 1 ) STOP 57
-        IF ( UBOUND(Obj%ccomp%A0,1) .NE. 10 ) STOP 58
-        IF ( UBOUND(Obj%ccomp%A1,1) .NE. 10 ) STOP 59
-        IF ( LEN(Obj%ccomp%C0)      .NE. 10 ) STOP 60
-        IF ( LEN(Obj%ccomp%C1)      .NE. 10 ) STOP 61
-        IF ( ANY(Obj%ccomp%A0   .NE.    -1) ) STOP 62
-        IF ( ANY(Obj%ccomp%A1   .NE.    -2) ) STOP 63
-        IF ( TRIM(Obj%ccomp%C0) .NE.  'Base-init' ) STOP 64
-        IF ( TRIM(Obj%ccomp%C1) .NE. 'Child-init' ) STOP 65
+        IF ( SIZE(Obj%ccomp%A0)     .NE. 10 ) ERROR STOP 54
+        IF ( SIZE(Obj%ccomp%A1)     .NE. 10 ) ERROR STOP 55
+        IF ( LBOUND(Obj%ccomp%A0,1) .NE. 1 ) ERROR STOP 56
+        IF ( LBOUND(Obj%ccomp%A1,1) .NE. 1 ) ERROR STOP 57
+        IF ( UBOUND(Obj%ccomp%A0,1) .NE. 10 ) ERROR STOP 58
+        IF ( UBOUND(Obj%ccomp%A1,1) .NE. 10 ) ERROR STOP 59
+        IF ( LEN(Obj%ccomp%C0)      .NE. 10 ) ERROR STOP 60
+        IF ( LEN(Obj%ccomp%C1)      .NE. 10 ) ERROR STOP 61
+        IF ( ANY(Obj%ccomp%A0   .NE.    -1) ) ERROR STOP 62
+        IF ( ANY(Obj%ccomp%A1   .NE.    -2) ) ERROR STOP 63
+        IF ( TRIM(Obj%ccomp%C0) .NE.  'Base-init' ) ERROR STOP 64
+        IF ( TRIM(Obj%ccomp%C1) .NE. 'Child-init' ) ERROR STOP 65
       END SUBROUTINE
 
 END MODULE

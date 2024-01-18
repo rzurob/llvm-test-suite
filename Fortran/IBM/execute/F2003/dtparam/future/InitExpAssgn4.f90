@@ -70,8 +70,8 @@
 
   TYPE(DT(4)) :: T
 
-  !IF ( ANY(T%T%T%ID .NE. [(-I, I=1,128)] )) STOP 11
-  IF ( ANY(T%T%T%ID .NE. [(I, I=1,128)] )) STOP 11
+  !IF ( ANY(T%T%T%ID .NE. [(-I, I=1,128)] )) ERROR STOP 11
+  IF ( ANY(T%T%T%ID .NE. [(I, I=1,128)] )) ERROR STOP 11
 
   END
 

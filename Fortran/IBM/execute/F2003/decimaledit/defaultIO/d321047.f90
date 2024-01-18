@@ -26,7 +26,7 @@ use m
     do i = 1, 10
         select type (x => b1(i+20)%data)
             type is (logical)
-                if (x .neqv. mod(i,2)==0) stop 9
+                if (x .neqv. mod(i,2)==0) error stop 9
 
             class default
                 stop 10

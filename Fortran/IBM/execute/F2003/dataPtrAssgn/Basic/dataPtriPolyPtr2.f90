@@ -47,41 +47,41 @@
 
 
   Ptr5(1:, 1:) => Ptr1
-  IF (ANY( LBOUND(Ptr5) .NE. (/1,1 /))) STOP 11
-  IF (ANY( UBOUND(Ptr5) .NE. (/1,10/))) STOP 12
-  IF (ANY(Ptr5%I        .NE. -1))       STOP 13
+  IF (ANY( LBOUND(Ptr5) .NE. (/1,1 /))) ERROR STOP 11
+  IF (ANY( UBOUND(Ptr5) .NE. (/1,10/))) ERROR STOP 12
+  IF (ANY(Ptr5%I        .NE. -1))       ERROR STOP 13
 
   Ptr5(0:9, 0:0) => Ptr1(3, :)
-  IF (ANY( LBOUND(Ptr5) .NE. (/0,0 /))) STOP 14
-  IF (ANY( UBOUND(Ptr5) .NE. (/9,0 /))) STOP 15
-  IF (ANY(Ptr5%I        .NE. -1   ))    STOP 16
+  IF (ANY( LBOUND(Ptr5) .NE. (/0,0 /))) ERROR STOP 14
+  IF (ANY( UBOUND(Ptr5) .NE. (/9,0 /))) ERROR STOP 15
+  IF (ANY(Ptr5%I        .NE. -1   ))    ERROR STOP 16
 
   Ptr6(1:, 1:) => Ptr1
-  IF (ANY( LBOUND(Ptr6) .NE. (/1,1 /))) STOP 21
-  IF (ANY( UBOUND(Ptr6) .NE. (/1,10/))) STOP 22
+  IF (ANY( LBOUND(Ptr6) .NE. (/1,1 /))) ERROR STOP 21
+  IF (ANY( UBOUND(Ptr6) .NE. (/1,10/))) ERROR STOP 22
   Ptr7(1:, 1:) => Ptr6
-  IF (ANY(Ptr7%I      .NE. -1  ))      STOP 23
+  IF (ANY(Ptr7%I      .NE. -1  ))      ERROR STOP 23
 
   Ptr6(0:8, 0:0) => Ptr1(3, :)
-  IF (ANY( LBOUND(Ptr6) .NE. (/0,0 /))) STOP 24
-  IF (ANY( UBOUND(Ptr6) .NE. (/8,0 /))) STOP 25
+  IF (ANY( LBOUND(Ptr6) .NE. (/0,0 /))) ERROR STOP 24
+  IF (ANY( UBOUND(Ptr6) .NE. (/8,0 /))) ERROR STOP 25
   Ptr7(1:, 1:) => Ptr6
-  IF (ANY(Ptr7%I      .NE. -1   ))      STOP 26
+  IF (ANY(Ptr7%I      .NE. -1   ))      ERROR STOP 26
 
   ALLOCATE(Ptr2(3:3, 10), SOURCE=DT(1))
   Ptr6(1:, 1:) => Ptr2
-  IF (ANY( LBOUND(Ptr6) .NE. (/1,1 /))) STOP 31
-  IF (ANY( UBOUND(Ptr6) .NE. (/1,10/))) STOP 32
+  IF (ANY( LBOUND(Ptr6) .NE. (/1,1 /))) ERROR STOP 31
+  IF (ANY( UBOUND(Ptr6) .NE. (/1,10/))) ERROR STOP 32
   Ptr7(1:, 1:) => Ptr6
-  IF (ANY(Ptr7%I      .NE. 1    ))      STOP 33
+  IF (ANY(Ptr7%I      .NE. 1    ))      ERROR STOP 33
   DEALLOCATE(Ptr2)
 
   ALLOCATE(Ptr2(30, 3:3), SOURCE=DT(3))
   Ptr6(0:8, 0:2) => Ptr2(:, 3)
-  IF (ANY( LBOUND(Ptr6) .NE. (/0,0 /))) STOP 34
-  IF (ANY( UBOUND(Ptr6) .NE. (/8,2 /))) STOP 35
+  IF (ANY( LBOUND(Ptr6) .NE. (/0,0 /))) ERROR STOP 34
+  IF (ANY( UBOUND(Ptr6) .NE. (/8,2 /))) ERROR STOP 35
   Ptr7(1:, 1:) => Ptr6
-  IF (ANY(Ptr7%I      .NE. 3    ))      STOP 36
+  IF (ANY(Ptr7%I      .NE. 3    ))      ERROR STOP 36
   DEALLOCATE(Ptr2)
 
 

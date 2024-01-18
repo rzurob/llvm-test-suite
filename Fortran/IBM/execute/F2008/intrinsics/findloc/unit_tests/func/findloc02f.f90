@@ -72,7 +72,7 @@ if (findloc(arr1, 4, 1, mask1, 4, .false.) .NE. 2) ERROR STOP 17
 !--  when all args are present:
 if (findloc(arr1, 4, 1, mask1, 4, .true.) .NE. 4) ERROR STOP 18
 !-- using the argument keywords:
-if (findloc(VALUE=4, ARRAY=arr1, BACK=.false., KIND=4, MASK=mask1, DIM=1) .NE. 2) STOP 19
+if (findloc(VALUE=4, ARRAY=arr1, BACK=.false., KIND=4, MASK=mask1, DIM=1) .NE. 2) ERROR STOP 19
 
 !-- with different kind arg:
 if (kind(findloc(arr1, 4, 1, mask1, 1, .true.)) .NE. 1) ERROR STOP 20

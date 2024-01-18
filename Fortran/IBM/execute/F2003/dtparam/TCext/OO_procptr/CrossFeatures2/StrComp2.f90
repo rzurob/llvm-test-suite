@@ -63,13 +63,13 @@
 
   V = DT(4)(Base=Base(4)(ModFun1), ProcPtr2=ModFun2, BComp=Base(4)(ModFun1))
 
-  IF ( .NOT. ASSOCIATED(V%ProcPtr1))       STOP 11
-  IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr1)) STOP 12
-  IF ( .NOT. ASSOCIATED(V%ProcPtr2))       STOP 13
+  IF ( .NOT. ASSOCIATED(V%ProcPtr1))       ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr1)) ERROR STOP 12
+  IF ( .NOT. ASSOCIATED(V%ProcPtr2))       ERROR STOP 13
 
-  IF ( V%Base%ProcPtr1(4.0)  .NE. 4.0 )   STOP 21
-  IF ( V%BComp%ProcPtr1(4.0) .NE. 4.0 )   STOP 22
-  IF ( V%ProcPtr2(8.0_8)      .NE. 8.0_8 ) STOP 23
+  IF ( V%Base%ProcPtr1(4.0)  .NE. 4.0 )   ERROR STOP 21
+  IF ( V%BComp%ProcPtr1(4.0) .NE. 4.0 )   ERROR STOP 22
+  IF ( V%ProcPtr2(8.0_8)      .NE. 8.0_8 ) ERROR STOP 23
 
   END
 

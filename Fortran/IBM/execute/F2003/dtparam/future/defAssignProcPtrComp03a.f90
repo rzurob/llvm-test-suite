@@ -212,16 +212,16 @@ program defAssignProcPtrComp03a
       select type(x)
         type is(gen3(2,*,4,*,8,*))
 
-           if(any(x%i1 /=[1_2,2_2,3_2]))               stop 19
-           if(any(x%i2 /= 10))                         stop 20
-           if(any(x%i3 /= [20_8,30_8,40_8]))           stop 21
+           if(any(x%i1 /=[1_2,2_2,3_2]))               error stop 19
+           if(any(x%i2 /= 10))                         error stop 20
+           if(any(x%i3 /= [20_8,30_8,40_8]))           error stop 21
 
            allocate(obj3,source=-100)
 
            associate(y=>x%procptr1(obj3))
               select type(y)
                  type is(integer)
-                     if(y /= -100)                     stop 22
+                     if(y /= -100)                     error stop 22
                  class default
                    stop 23
               end select
@@ -233,7 +233,7 @@ program defAssignProcPtrComp03a
            associate(y=>x%procptr2(obj3))
                select type(y)
                   type is(base(2,*))
-                     if(any(y%i1 /= [1_2,2_2,3_2]))    stop 24
+                     if(any(y%i1 /= [1_2,2_2,3_2]))    error stop 24
                   class default
                      stop 25
                end select
@@ -241,12 +241,12 @@ program defAssignProcPtrComp03a
 
            call x%procptr3(x%child)
 
-           if(any(x%i1 /= [2_2,4_2,6_2]))              stop 26
-           if(any(x%i2 /= 20))                         stop 27
+           if(any(x%i1 /= [2_2,4_2,6_2]))              error stop 26
+           if(any(x%i2 /= 20))                         error stop 27
 
            call x%procptr3(x%child%base)
 
-           if(any(x%i1 /= [-2_2,-4_2,-6_2]))           stop 28
+           if(any(x%i1 /= [-2_2,-4_2,-6_2]))           error stop 28
 
         class default
            stop 29
@@ -260,9 +260,9 @@ program defAssignProcPtrComp03a
    associate(x=>obj2(1))
       select type(x)
         type is(gen3(2,*,4,*,8,*))
-           if(any(x%i1 /=[4_2,5_2,6_2]))               stop 30
-           if(any(x%i2 /= [11,12]))                    stop 31
-           if(any(x%i3 /= [50_8]))                     stop 32
+           if(any(x%i1 /=[4_2,5_2,6_2]))               error stop 30
+           if(any(x%i2 /= [11,12]))                    error stop 31
+           if(any(x%i3 /= [50_8]))                     error stop 32
 
            deallocate(obj3)
 
@@ -271,7 +271,7 @@ program defAssignProcPtrComp03a
            associate(y=>x%procptr1(obj3))
               select type(y)
                  type is(integer(2))
-                     if(y /= 5_2)                      stop 33
+                     if(y /= 5_2)                      error stop 33
                  class default
                    stop 34
               end select
@@ -283,7 +283,7 @@ program defAssignProcPtrComp03a
            associate(y=>x%procptr2(obj3))
                select type(y)
                   type is(base(2,*))
-                     if(any(y%i1 /= [4_2,5_2,6_2]))    stop 35
+                     if(any(y%i1 /= [4_2,5_2,6_2]))    error stop 35
                   class default
                      stop 36
                end select
@@ -291,12 +291,12 @@ program defAssignProcPtrComp03a
 
            call x%procptr3(x%child)
 
-           if(any(x%i1 /= [8_2,10_2,12_2]))            stop 37
-           if(any(x%i2 /= [21,22]))                    stop 38
+           if(any(x%i1 /= [8_2,10_2,12_2]))            error stop 37
+           if(any(x%i2 /= [21,22]))                    error stop 38
 
            call x%procptr3(x%child%base)
 
-           if(any(x%i1 /= [-8_2,-10_2,-12_2]))         stop 39
+           if(any(x%i1 /= [-8_2,-10_2,-12_2]))         error stop 39
 
         class default
            stop 40
@@ -315,25 +315,25 @@ program defAssignProcPtrComp03a
    select type(x=>obj2)
       type is(gen3(2,*,4,*,8,*))
 
-        if(any(x(1)%i1 /= [1_2,2_2,3_2]))               stop 41
-        if(any(x(1)%i2 /= [10]))                        stop 42
-        if(any(x(1)%i3 /= [20_8,30_8,40_8]))            stop 43
+        if(any(x(1)%i1 /= [1_2,2_2,3_2]))               error stop 41
+        if(any(x(1)%i2 /= [10]))                        error stop 42
+        if(any(x(1)%i3 /= [20_8,30_8,40_8]))            error stop 43
 
-        if(any(x(2)%i1 /= [4_2,5_2,6_2]))               stop 44
-        if(any(x(2)%i2 /= [11,12]))                     stop 45
-        if(any(x(2)%i3 /= [50_8]))                      stop 46
+        if(any(x(2)%i1 /= [4_2,5_2,6_2]))               error stop 44
+        if(any(x(2)%i2 /= [11,12]))                     error stop 45
+        if(any(x(2)%i3 /= [50_8]))                      error stop 46
 
-        if(.not. associated(x(1)%procptr1,fun))         stop 47
-        if(.not. associated(x(1)%procptr2,fun))         stop 48
-        if(.not. associated(x(1)%procptr3,sub))         stop 49
+        if(.not. associated(x(1)%procptr1,fun))         error stop 47
+        if(.not. associated(x(1)%procptr2,fun))         error stop 48
+        if(.not. associated(x(1)%procptr3,sub))         error stop 49
 
-        if(.not. associated(x(2)%procptr1,fun))         stop 50
-        if(.not. associated(x(2)%procptr2,fun))         stop 51
-        if(.not. associated(x(2)%procptr3,sub))         stop 52
+        if(.not. associated(x(2)%procptr1,fun))         error stop 50
+        if(.not. associated(x(2)%procptr2,fun))         error stop 51
+        if(.not. associated(x(2)%procptr3,sub))         error stop 52
 
-        if(.not. associated(x(1)%procptr1,fun))         stop 53
-        if(.not. associated(x(1)%procptr2,fun))         stop 54
-        if(.not. associated(x(1)%procptr3,sub))         stop 55
+        if(.not. associated(x(1)%procptr1,fun))         error stop 53
+        if(.not. associated(x(1)%procptr2,fun))         error stop 54
+        if(.not. associated(x(1)%procptr3,sub))         error stop 55
 
         deallocate(obj3)
 
@@ -343,8 +343,8 @@ program defAssignProcPtrComp03a
 
         select type(obj3)
             type is(child(2,*,4,*))
-              if(any(obj3%i1 /= [2_2,4_2,6_2]))         stop 56
-              if(any(obj3%i2 /= 20))                    stop 57
+              if(any(obj3%i1 /= [2_2,4_2,6_2]))         error stop 56
+              if(any(obj3%i2 /= 20))                    error stop 57
             class default
               stop 58
         end select
@@ -357,7 +357,7 @@ program defAssignProcPtrComp03a
 
         select type(obj3)
             type is(base(2,*))
-              if(any(obj3%i1 /= [-4_2,-5_2,-6_2]))      stop 59
+              if(any(obj3%i1 /= [-4_2,-5_2,-6_2]))      error stop 59
             class default
               stop 60
         end select
@@ -380,8 +380,8 @@ program defAssignProcPtrComp03a
 
          select type(y=>obj2(1))
             type is(child(2,*,4,*))
-                if(any(y%i1 /= [1_2,2_2,3_2]))          stop 62
-                if(any(y%i2 /= 10))                     stop 63
+                if(any(y%i1 /= [1_2,2_2,3_2]))          error stop 62
+                if(any(y%i2 /= 10))                     error stop 63
             class default
                stop 64
          end select
@@ -406,20 +406,20 @@ program defAssignProcPtrComp03a
 
    select type(x=>obj2)
         type is(child(2,*,4,*))
-            if(any(x(1)%i1 /= [1,2,3]))                 stop 67
-            if(any(x(2)%i1 /= [4,5,6]))                 stop 68
-            if(any(x(1)%i2 /= 10))                      stop 69
-            if(any(x(2)%i2 /= [11,12]))                 stop 70
-            if(.not. associated(x(1)%procptr1,fun))     stop 73
-            if(.not. associated(x(2)%procptr1,fun))     stop 74
-            if(.not. associated(x(1)%procptr2,fun))     stop 75
-            if(.not. associated(x(2)%procptr2,fun))     stop 76
+            if(any(x(1)%i1 /= [1,2,3]))                 error stop 67
+            if(any(x(2)%i1 /= [4,5,6]))                 error stop 68
+            if(any(x(1)%i2 /= 10))                      error stop 69
+            if(any(x(2)%i2 /= [11,12]))                 error stop 70
+            if(.not. associated(x(1)%procptr1,fun))     error stop 73
+            if(.not. associated(x(2)%procptr1,fun))     error stop 74
+            if(.not. associated(x(1)%procptr2,fun))     error stop 75
+            if(.not. associated(x(2)%procptr2,fun))     error stop 76
 
             associate(y=>x(1)%procptr1(x(1)) )
                select type(y)
                   type is(child(2,*,4,*))
-                     if(any(y%i1 /= [1,2,3]))           stop 77
-                     if(any(y%i2 /= [10]))              stop 78
+                     if(any(y%i1 /= [1,2,3]))           error stop 77
+                     if(any(y%i2 /= [10]))              error stop 78
                   class default
                      stop 79
                end select
@@ -428,8 +428,8 @@ program defAssignProcPtrComp03a
             associate(y=>x(2)%procptr1(x(2)))
                select type(y)
                   type is(child(2,*,4,*))
-                     if(any(y%i1 /= [4,5,6]))           stop 80
-                     if(any(y%i2 /= [11,12]))           stop 81
+                     if(any(y%i1 /= [4,5,6]))           error stop 80
+                     if(any(y%i2 /= [11,12]))           error stop 81
                   class default
                      stop 82
                end select
@@ -457,20 +457,20 @@ program defAssignProcPtrComp03a
    select type(x=>obj2)
         type is(child(2,*,4,*))
 
-            if(any(x(1)%i1 /= [1,2,3]))                 stop 85
-            if(any(x(2)%i1 /= [4,5,6]))                 stop 86
-            if(any(x(1)%i2 /= 10))                      stop 87
-            if(any(x(2)%i2 /= [11,12]))                 stop 88
-            if(.not. associated(x(1)%procptr1,fun))     stop 89
-            if(.not. associated(x(2)%procptr1,fun))     stop 90
-            if(.not. associated(x(1)%procptr2,fun))     stop 91
-            if(.not. associated(x(2)%procptr2,fun))     stop 92
+            if(any(x(1)%i1 /= [1,2,3]))                 error stop 85
+            if(any(x(2)%i1 /= [4,5,6]))                 error stop 86
+            if(any(x(1)%i2 /= 10))                      error stop 87
+            if(any(x(2)%i2 /= [11,12]))                 error stop 88
+            if(.not. associated(x(1)%procptr1,fun))     error stop 89
+            if(.not. associated(x(2)%procptr1,fun))     error stop 90
+            if(.not. associated(x(1)%procptr2,fun))     error stop 91
+            if(.not. associated(x(2)%procptr2,fun))     error stop 92
 
             associate(y=>x(1)%procptr1(x(1)) )
                select type(y)
                   type is(child(2,*,4,*))
-                     if(any(y%i1 /= [1,2,3]))           stop 93
-                     if(any(y%i2 /= [10]))              stop 94
+                     if(any(y%i1 /= [1,2,3]))           error stop 93
+                     if(any(y%i2 /= [10]))              error stop 94
                   class default
                      stop 95
                end select
@@ -479,8 +479,8 @@ program defAssignProcPtrComp03a
             associate(y=>x(2)%procptr1(x(2)))
                select type(y)
                   type is(child(2,*,4,*))
-                     if(any(y%i1 /= [4,5,6]))           stop 96
-                     if(any(y%i2 /= [11,12]))           stop 97
+                     if(any(y%i1 /= [4,5,6]))           error stop 96
+                     if(any(y%i2 /= [11,12]))           error stop 97
                   class default
                      stop 98
                end select
@@ -507,10 +507,10 @@ program defAssignProcPtrComp03a
 
    select type(x=>obj2)
         type is(base(2,*))
-            if(any(x(1)%i1 /= [1,2,3]))                 stop 101
-            if(any(x(2)%i1 /= [1,2,3]))                 stop 102
-            if(.not. associated(x(1)%procptr1,fun))     stop 103
-            if(.not. associated(x(2)%procptr1,fun))     stop 104
+            if(any(x(1)%i1 /= [1,2,3]))                 error stop 101
+            if(any(x(2)%i1 /= [1,2,3]))                 error stop 102
+            if(.not. associated(x(1)%procptr1,fun))     error stop 103
+            if(.not. associated(x(2)%procptr1,fun))     error stop 104
         class default
             stop  105
    end select

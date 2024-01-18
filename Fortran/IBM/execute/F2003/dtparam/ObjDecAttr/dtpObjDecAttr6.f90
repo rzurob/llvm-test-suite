@@ -56,45 +56,45 @@
   N = -N + 1
   L = -L + 1
 
-  IF ( ANY( LBOUND(P1) .NE. [-M, m] )) STOP 60
-  IF ( ANY( LBOUND(P2) .NE. [-M, m] )) STOP 61
-  IF ( ANY( LBOUND(P3) .NE. [-M, m] )) STOP 62
+  IF ( ANY( LBOUND(P1) .NE. [-M, m] )) ERROR STOP 60
+  IF ( ANY( LBOUND(P2) .NE. [-M, m] )) ERROR STOP 61
+  IF ( ANY( LBOUND(P3) .NE. [-M, m] )) ERROR STOP 62
 
-  IF ( SIZE( P1 ) .NE. m*m ) STOP 70
-  IF ( SIZE( P2 ) .NE. m*m ) STOP 71
-  IF ( SIZE( P3 ) .NE. m*m ) STOP 72
+  IF ( SIZE( P1 ) .NE. m*m ) ERROR STOP 70
+  IF ( SIZE( P2 ) .NE. m*m ) ERROR STOP 71
+  IF ( SIZE( P3 ) .NE. m*m ) ERROR STOP 72
 
   DO I = -M, -1
   DO J = M, 2*M-1
 
-    IF ( P1(I,J)%K0               .NE.   0          ) STOP 11
-    IF ( P1(I,J)%L0               .NE.   0          ) STOP 12
+    IF ( P1(I,J)%K0               .NE.   0          ) ERROR STOP 11
+    IF ( P1(I,J)%L0               .NE.   0          ) ERROR STOP 12
 
-    IF ( P2(I,J)%K0               .NE.   2          ) STOP 21
-    IF ( P2(I,J)%L0               .NE.   2          ) STOP 22
-    IF ( P2(I,J)%K1%KIND          .NE.   2          ) STOP 23
-    IF ( P2(I,J)%L1%KIND          .NE.   2          ) STOP 24
-    IF ( P2(I,J)%K1               .NE.   4          ) STOP 25
-    IF ( P2(I,J)%L1               .NE.   4          ) STOP 26
-    IF ( P2(I,J)%I%KIND           .NE.   4          ) STOP 27
-    IF ( SIZE(P2(I,J)%I)          .NE.   1          ) STOP 28
-    IF ( ANY(P2(I,J)%I            .NE.  -1        ) ) STOP 29
-    IF ( P2(I,J)%C%LEN            .NE.   2          ) STOP 30
-    IF ( SIZE(P2(I,J)%C)          .NE.   1          ) STOP 31
-    IF ( ANY(P2(I,J)%C            .NE.   "X"      ) ) STOP 32
+    IF ( P2(I,J)%K0               .NE.   2          ) ERROR STOP 21
+    IF ( P2(I,J)%L0               .NE.   2          ) ERROR STOP 22
+    IF ( P2(I,J)%K1%KIND          .NE.   2          ) ERROR STOP 23
+    IF ( P2(I,J)%L1%KIND          .NE.   2          ) ERROR STOP 24
+    IF ( P2(I,J)%K1               .NE.   4          ) ERROR STOP 25
+    IF ( P2(I,J)%L1               .NE.   4          ) ERROR STOP 26
+    IF ( P2(I,J)%I%KIND           .NE.   4          ) ERROR STOP 27
+    IF ( SIZE(P2(I,J)%I)          .NE.   1          ) ERROR STOP 28
+    IF ( ANY(P2(I,J)%I            .NE.  -1        ) ) ERROR STOP 29
+    IF ( P2(I,J)%C%LEN            .NE.   2          ) ERROR STOP 30
+    IF ( SIZE(P2(I,J)%C)          .NE.   1          ) ERROR STOP 31
+    IF ( ANY(P2(I,J)%C            .NE.   "X"      ) ) ERROR STOP 32
 
-    IF ( P3(I,J)%K0               .NE.   1          ) STOP 41
-    IF ( P3(I,J)%L0               .NE.   1          ) STOP 42
-    IF ( P3(I,J)%K1%KIND          .NE.   1          ) STOP 43
-    IF ( P3(I,J)%L1%KIND          .NE.   1          ) STOP 44
-    IF ( P3(I,J)%K1               .NE.   2          ) STOP 45
-    IF ( P3(I,J)%L1               .NE.   2          ) STOP 46
-    IF ( P3(I,J)%I%KIND           .NE.   2          ) STOP 47
-    IF ( SIZE(P3(I,J)%I)          .NE.   2          ) STOP 48
-    IF ( ANY(P3(I,J)%I            .NE.  -1        ) ) STOP 49
-    IF ( P3(I,J)%C%LEN            .NE.   1          ) STOP 50
-    IF ( SIZE(P3(I,J)%C)          .NE.   2          ) STOP 51
-    IF ( ANY(P3(I,J)%C            .NE.   "X"      ) ) STOP 52
+    IF ( P3(I,J)%K0               .NE.   1          ) ERROR STOP 41
+    IF ( P3(I,J)%L0               .NE.   1          ) ERROR STOP 42
+    IF ( P3(I,J)%K1%KIND          .NE.   1          ) ERROR STOP 43
+    IF ( P3(I,J)%L1%KIND          .NE.   1          ) ERROR STOP 44
+    IF ( P3(I,J)%K1               .NE.   2          ) ERROR STOP 45
+    IF ( P3(I,J)%L1               .NE.   2          ) ERROR STOP 46
+    IF ( P3(I,J)%I%KIND           .NE.   2          ) ERROR STOP 47
+    IF ( SIZE(P3(I,J)%I)          .NE.   2          ) ERROR STOP 48
+    IF ( ANY(P3(I,J)%I            .NE.  -1        ) ) ERROR STOP 49
+    IF ( P3(I,J)%C%LEN            .NE.   1          ) ERROR STOP 50
+    IF ( SIZE(P3(I,J)%C)          .NE.   2          ) ERROR STOP 51
+    IF ( ANY(P3(I,J)%C            .NE.   "X"      ) ) ERROR STOP 52
 
   END DO
   END DO

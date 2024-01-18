@@ -17,11 +17,11 @@ contains
   subroutine sub(x)
     character(4) :: x(25)
     character(100) :: y
-    if (len(x) /= 4) stop 1
-    if (size(x) /= 25) stop 2
+    if (len(x) /= 4) error stop 1
+    if (size(x) /= 25) error stop 2
     do i = 1, size(x)
       y((i-1)*len(x)+1:i*len(x)) = x(i)
     end do
-    if (y /= repeat('0123456789', 10)) stop 3
+    if (y /= repeat('0123456789', 10)) error stop 3
   end subroutine
 end

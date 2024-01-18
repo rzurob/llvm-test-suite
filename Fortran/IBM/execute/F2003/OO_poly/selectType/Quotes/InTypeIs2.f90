@@ -42,8 +42,8 @@
 
     SELECT TYPE (Arg=>Arg(2, 3))
     TYPE IS (CHARACTER(*))
-      IF ( LEN(Arg) .NE. 4) STOP 20
-      IF ( Arg .NE. "1234") STOP 20
+      IF ( LEN(Arg) .NE. 4) ERROR STOP 20
+      IF ( Arg .NE. "1234") ERROR STOP 20
 
     CLASS DEFAULT
       STOP 21
@@ -51,9 +51,9 @@
 
     SELECT TYPE (Arg)
     TYPE IS (CHARACTER(*))
-      IF ( SIZE(Arg) .NE. 4) STOP 20
-      IF ( LEN(Arg)  .NE. 4) STOP 20
-      IF ( Any(Arg   .NE. "1234")) STOP 20
+      IF ( SIZE(Arg) .NE. 4) ERROR STOP 20
+      IF ( LEN(Arg)  .NE. 4) ERROR STOP 20
+      IF ( Any(Arg   .NE. "1234")) ERROR STOP 20
     CLASS DEFAULT
       STOP 41
     END SELECT

@@ -41,25 +41,25 @@ MODULE Mod
         TYPE(DT0), CONTIGUOUS :: Arg0(:)
         CLASS(DT0), CONTIGUOUS :: Arg1(:)
 
-        IF ( .NOT. IS_CONTIGUOUS(Arg0) ) STOP 10
-        IF ( .NOT. IS_CONTIGUOUS(Arg1) ) STOP 11
+        IF ( .NOT. IS_CONTIGUOUS(Arg0) ) ERROR STOP 10
+        IF ( .NOT. IS_CONTIGUOUS(Arg1) ) ERROR STOP 11
 
         DO I = 1, SIZE(Arg0)
-            IF ( ANY(Arg0(I)%I0 .NE. [((2*I-1)*J, J=1,10)]) ) STOP 12
-            IF ( Arg0(I)%C0     .NE.           "XL Fortran" ) STOP 13
+            IF ( ANY(Arg0(I)%I0 .NE. [((2*I-1)*J, J=1,10)]) ) ERROR STOP 12
+            IF ( Arg0(I)%C0     .NE.           "XL Fortran" ) ERROR STOP 13
         END DO
 
         DO I = 1, SIZE(Arg1)
             SELECT TYPE ( Arg1 )
                  CLASSIS (DT0)
-                   IF ( ANY(Arg1(I)%I0 .NE. [((3*I-2)*J, J=1,10)]) ) STOP 14
-                   IF ( Arg1(I)%C0     .NE.    "XL Fortran" ) STOP 15
+                   IF ( ANY(Arg1(I)%I0 .NE. [((3*I-2)*J, J=1,10)]) ) ERROR STOP 14
+                   IF ( Arg1(I)%C0     .NE.    "XL Fortran" ) ERROR STOP 15
 
                  CLASSIS (DT1)
-                   IF ( ANY(Arg1(I)%I0 .NE. [((3*I-2)*J, J=1,10)]) ) STOP 16
-                   IF ( Arg1(I)%C0     .NE.           "XL Fortran" ) STOP 17
-                   IF ( ANY(Arg1(I)%I1 .NE.                   -66) ) STOP 18
-                   IF ( Arg1(I)%C1     .NE.         "IBM compiler" ) STOP 19
+                   IF ( ANY(Arg1(I)%I0 .NE. [((3*I-2)*J, J=1,10)]) ) ERROR STOP 16
+                   IF ( Arg1(I)%C0     .NE.           "XL Fortran" ) ERROR STOP 17
+                   IF ( ANY(Arg1(I)%I1 .NE.                   -66) ) ERROR STOP 18
+                   IF ( Arg1(I)%C1     .NE.         "IBM compiler" ) ERROR STOP 19
 
                  CLASSDEFAULT
                      STOP 23
@@ -76,13 +76,13 @@ MODULE Mod
         CLASS(DT0) :: Arg1(4)
 
         DO I = 1, SIZE(Arg0)
-            IF ( ANY(Arg0(I)%I0 .NE.  [((2*I-1)*J, J=1,10)]) ) STOP 20
-            IF ( Arg0(I)%C0     .NE.            "XL Fortran" ) STOP 21
+            IF ( ANY(Arg0(I)%I0 .NE.  [((2*I-1)*J, J=1,10)]) ) ERROR STOP 20
+            IF ( Arg0(I)%C0     .NE.            "XL Fortran" ) ERROR STOP 21
         END DO
 
         DO I = 1, SIZE(Arg1)
-            IF ( ANY(Arg1(I)%I0 .NE.  [((3*I-2)*J, J=1,10)]) ) STOP 22
-            IF ( Arg1(I)%C0     .NE.            "XL Fortran" ) STOP 23
+            IF ( ANY(Arg1(I)%I0 .NE.  [((3*I-2)*J, J=1,10)]) ) ERROR STOP 22
+            IF ( Arg1(I)%C0     .NE.            "XL Fortran" ) ERROR STOP 23
         END DO
       END SUBROUTINE InnerSub
 END MODULE
@@ -95,13 +95,13 @@ PROGRAM contigAssumedShape06f
       CLASS(DT0), POINTER :: T1(:)
       CLASS(DT0), ALLOCATABLE :: T2(:)
 
-      IF ( .NOT. IS_CONTIGUOUS(T0) )     STOP 101
+      IF ( .NOT. IS_CONTIGUOUS(T0) )     ERROR STOP 101
 
       ALLOCATE( T1(10), SOURCE = DT1() )
-      IF ( .NOT. IS_CONTIGUOUS(T1) )     STOP 102
+      IF ( .NOT. IS_CONTIGUOUS(T1) )     ERROR STOP 102
 
       ALLOCATE( DT0 :: T2(10) )
-      IF ( .NOT. IS_CONTIGUOUS(T2) )     STOP 103
+      IF ( .NOT. IS_CONTIGUOUS(T2) )     ERROR STOP 103
 
       DO I = 1, 10
         T0(I)%I0 = [(I*J, J=1,10)]

@@ -60,7 +60,7 @@ MODULE Mod1
               STOP 31
 
           CLASS IS (Base(knd1,*))
-              IF ( SIZE(A) /= len1 ) STOP 32
+              IF ( SIZE(A) /= len1 ) ERROR STOP 32
 
           CLASS DEFAULT
               STOP 33
@@ -76,11 +76,11 @@ PROGRAM Select_Type03c
       TYPE(NextGen(knd1,len1)), TARGET :: cbl
 
       ALLOCATE( Base(knd1,len1):: cbl%Cmp(len1) )
-      IF ( .NOT. ALLOCATED(cbl%Cmp) ) STOP 10
+      IF ( .NOT. ALLOCATED(cbl%Cmp) ) ERROR STOP 10
 
       child1 => cbl                             !dynamic TYPE of child is NextGen
-      IF ( .NOT. ASSOCIATED(child1)) STOP 11
-      IF ( .NOT. ALLOCATED(child1%Cmp)) STOP 12
+      IF ( .NOT. ASSOCIATED(child1)) ERROR STOP 11
+      IF ( .NOT. ALLOCATED(child1%Cmp)) ERROR STOP 12
 
       SELECT TYPE ( child1 )
          CLASS IS (NextGen(knd1,*))

@@ -63,25 +63,25 @@
   LOGICAL :: L19(128) = 1/R8 /= 1/R6  .EQV. REAL(1/R8, 16) /= 1/R6
 
 
-  IF ( ANY( .NOT. L1  ) ) STOP 11
-  IF ( ANY( .NOT. L2  ) ) STOP 12
-  IF ( ANY( .NOT. L3  ) ) STOP 13
-  IF ( ANY( .NOT. L4  ) ) STOP 14
-  IF ( ANY( .NOT. L5  ) ) STOP 15
-  IF ( ANY( .NOT. L6  ) ) STOP 16
-  IF ( ANY( .NOT. L7  ) ) STOP 17
-  IF ( ANY( .NOT. L8  ) ) STOP 18
-  IF ( ANY( .NOT. L9  ) ) STOP 19
+  IF ( ANY( .NOT. L1  ) ) ERROR STOP 11
+  IF ( ANY( .NOT. L2  ) ) ERROR STOP 12
+  IF ( ANY( .NOT. L3  ) ) ERROR STOP 13
+  IF ( ANY( .NOT. L4  ) ) ERROR STOP 14
+  IF ( ANY( .NOT. L5  ) ) ERROR STOP 15
+  IF ( ANY( .NOT. L6  ) ) ERROR STOP 16
+  IF ( ANY( .NOT. L7  ) ) ERROR STOP 17
+  IF ( ANY( .NOT. L8  ) ) ERROR STOP 18
+  IF ( ANY( .NOT. L9  ) ) ERROR STOP 19
 
-  IF ( ANY( .NOT. L11  ) ) STOP 111
-  IF ( ANY( .NOT. L12  ) ) STOP 112
-  IF ( ANY( .NOT. L13  ) ) STOP 113
-  IF ( ANY( .NOT. L14  ) ) STOP 114
-  IF ( ANY( .NOT. L15  ) ) STOP 115
-  IF ( ANY( .NOT. L16  ) ) STOP 116
-  IF ( ANY( .NOT. L17  ) ) STOP 117
-  IF ( ANY( .NOT. L18  ) ) STOP 118
-  IF ( ANY( .NOT. L19  ) ) STOP 119
+  IF ( ANY( .NOT. L11  ) ) ERROR STOP 111
+  IF ( ANY( .NOT. L12  ) ) ERROR STOP 112
+  IF ( ANY( .NOT. L13  ) ) ERROR STOP 113
+  IF ( ANY( .NOT. L14  ) ) ERROR STOP 114
+  IF ( ANY( .NOT. L15  ) ) ERROR STOP 115
+  IF ( ANY( .NOT. L16  ) ) ERROR STOP 116
+  IF ( ANY( .NOT. L17  ) ) ERROR STOP 117
+  IF ( ANY( .NOT. L18  ) ) ERROR STOP 118
+  IF ( ANY( .NOT. L19  ) ) ERROR STOP 119
 
 
 

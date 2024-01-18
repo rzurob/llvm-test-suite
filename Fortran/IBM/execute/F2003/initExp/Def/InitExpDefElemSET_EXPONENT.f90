@@ -82,18 +82,18 @@
 
 
 
-  IF (ANY( T4%R41  .NE. r4Min_N  )) STOP 11
-  IF (ANY( T4%R42  .NE. 0.0  ))     STOP 12
-  IF (ANY( T4%R43  .NE. 0.0  ))     STOP 13
-  IF (ANY( T4%R44  .NE. r4Min_P  )) STOP 14
-  IF (ANY( T4%R45  .NE. .5  ))      STOP 15
+  IF (ANY( T4%R41  .NE. r4Min_N  )) ERROR STOP 11
+  IF (ANY( T4%R42  .NE. 0.0  ))     ERROR STOP 12
+  IF (ANY( T4%R43  .NE. 0.0  ))     ERROR STOP 13
+  IF (ANY( T4%R44  .NE. r4Min_P  )) ERROR STOP 14
+  IF (ANY( T4%R45  .NE. .5  ))      ERROR STOP 15
 
 
-  IF (ANY( T8%R81  .NE. r8Min_N  )) STOP 21
-  IF (ANY( T8%R82  .NE. 0.0  ))     STOP 22
-  IF (ANY( T8%R83  .NE. 0.0  ))     STOP 23
-  IF (ANY( T8%R84  .NE. r8Min_P  )) STOP 24
-  IF (ANY( T8%R85  .NE. .5  ))      STOP 25
+  IF (ANY( T8%R81  .NE. r8Min_N  )) ERROR STOP 21
+  IF (ANY( T8%R82  .NE. 0.0  ))     ERROR STOP 22
+  IF (ANY( T8%R83  .NE. 0.0  ))     ERROR STOP 23
+  IF (ANY( T8%R84  .NE. r8Min_P  )) ERROR STOP 24
+  IF (ANY( T8%R85  .NE. .5  ))      ERROR STOP 25
 
 
 

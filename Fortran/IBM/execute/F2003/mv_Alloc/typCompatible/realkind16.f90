@@ -28,8 +28,8 @@
 
     call move_alloc(a, b)
 
-    if ( allocated(a) ) stop 21
-    if ( .not. allocated(b) ) stop 23
+    if ( allocated(a) ) error stop 21
+    if ( .not. allocated(b) ) error stop 23
 
     do i = 1, 6
       if ( .not. precision_r6(b(i), real(i+1, 16 ) ) ) error stop 10

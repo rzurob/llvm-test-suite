@@ -33,9 +33,9 @@ end module
 
 	call sub
 
-	if ( .not. associated(b%p, tar(10:1:-2))) stop 29
-	if ( lbound(b%p,1) /= 2 ) stop 31
-	if ( ubound(b%p,1) /= 6 ) stop 31
+	if ( .not. associated(b%p, tar(10:1:-2))) error stop 29
+	if ( lbound(b%p,1) /= 2 ) error stop 31
+	if ( ubound(b%p,1) /= 6 ) error stop 31
 
 	print *, b%p
 	print *, b%p .and. (/.true., .false.,.true.,.true.,.false. /)

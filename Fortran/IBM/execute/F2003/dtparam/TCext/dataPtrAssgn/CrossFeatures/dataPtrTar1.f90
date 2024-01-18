@@ -53,30 +53,30 @@
   Arr(:, 2)%C = (/(CHAR(I), I=1, 100)/)
 
   IPtr(0:, 0:) => Arr(::2, ::2)%I
-  IF (.NOT. ASSOCIATED(IPtr, Arr(::2, ::2)%I))       STOP 11
-  IF (ANY( LBOUND(IPtr) .NE. (/ 0, 0 /)))            STOP 12
-  IF (ANY( UBOUND(IPtr) .NE. (/49, 0 /)))            STOP 13
-  IF (ANY( IPtr(:,0)  .NE. (/(I,I=1,100,2 )/)))      STOP 14
+  IF (.NOT. ASSOCIATED(IPtr, Arr(::2, ::2)%I))       ERROR STOP 11
+  IF (ANY( LBOUND(IPtr) .NE. (/ 0, 0 /)))            ERROR STOP 12
+  IF (ANY( UBOUND(IPtr) .NE. (/49, 0 /)))            ERROR STOP 13
+  IF (ANY( IPtr(:,0)  .NE. (/(I,I=1,100,2 )/)))      ERROR STOP 14
 
   CPtr(0:9, 0:4) => Arr(::2, 2)%C
   Arr1 = RESHAPE(Arr(::2, 2)%C , (/10,5/))
-  !IF (.NOT. ASSOCIATED(CPtr, Arr(::2, 2:2)%C))      STOP 21
-  IF (.NOT. ASSOCIATED(CPtr))                        STOP 21
-  IF (ANY( LBOUND(CPtr) .NE. (/ 0, 0 /)))            STOP 22
-  IF (ANY( UBOUND(CPtr) .NE. (/ 9, 4 /)))            STOP 23
-  IF (ANY( CPtr        .NE. Arr1))                   STOP 25
+  !IF (.NOT. ASSOCIATED(CPtr, Arr(::2, 2:2)%C))      ERROR STOP 21
+  IF (.NOT. ASSOCIATED(CPtr))                        ERROR STOP 21
+  IF (ANY( LBOUND(CPtr) .NE. (/ 0, 0 /)))            ERROR STOP 22
+  IF (ANY( UBOUND(CPtr) .NE. (/ 9, 4 /)))            ERROR STOP 23
+  IF (ANY( CPtr        .NE. Arr1))                   ERROR STOP 25
 
   I = -1
   IPtr(0:, 0:) => Arr(:, 0:I)%I
-  IF ( ASSOCIATED(IPtr, Arr(:, 0:I)%I))              STOP 31
-  IF (ANY( LBOUND(IPtr) .NE. (/ 0, 1 /)))            STOP 32
-  IF (ANY( UBOUND(IPtr)  .NE. (/99, 0 /)))           STOP 33
+  IF ( ASSOCIATED(IPtr, Arr(:, 0:I)%I))              ERROR STOP 31
+  IF (ANY( LBOUND(IPtr) .NE. (/ 0, 1 /)))            ERROR STOP 32
+  IF (ANY( UBOUND(IPtr)  .NE. (/99, 0 /)))           ERROR STOP 33
 
   I = -1
   CPtr(0:9, 0:I) => Arr(0:I, 1)%C
-  IF ( ASSOCIATED(CPtr, Arr(0:I, 1:1)%C))            STOP 41
-  IF (ANY( LBOUND(CPtr) .NE. (/ 0, 1 /)))            STOP 42
-  IF (ANY( UBOUND(CPtr)  .NE. (/ 9, 0 /)))           STOP 43
+  IF ( ASSOCIATED(CPtr, Arr(0:I, 1:1)%C))            ERROR STOP 41
+  IF (ANY( LBOUND(CPtr) .NE. (/ 0, 1 /)))            ERROR STOP 42
+  IF (ANY( UBOUND(CPtr)  .NE. (/ 9, 0 /)))           ERROR STOP 43
 
 
   END

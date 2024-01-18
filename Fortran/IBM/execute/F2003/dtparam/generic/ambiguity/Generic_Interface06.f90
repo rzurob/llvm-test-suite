@@ -131,34 +131,34 @@
       TYPE(NextGen(8,10,4,4)) :: dtv
 
 
-      IF ( size(base1) .NE. size_obj4(base1) ) STOP 10
-      IF ( size(base1) .NE. size(base1%base_arr) ) STOP 11
+      IF ( size(base1) .NE. size_obj4(base1) ) ERROR STOP 10
+      IF ( size(base1) .NE. size(base1%base_arr) ) ERROR STOP 11
 
       ALLOCATE(Base(4,10):: ptr1)
-      IF ( .NOT. ASSOCIATED(ptr1)) STOP 12
+      IF ( .NOT. ASSOCIATED(ptr1)) ERROR STOP 12
 
       SELECT TYPE (ptr1)
           TYPE IS (Base(4,*))
-           IF (size(ptr1) .NE. size_obj4(ptr1)) STOP 13
-           IF (size(ptr1) .NE. size(ptr1%base_arr)) STOP 14
+           IF (size(ptr1) .NE. size_obj4(ptr1)) ERROR STOP 13
+           IF (size(ptr1) .NE. size(ptr1%base_arr)) ERROR STOP 14
 
           CLASS DEFAULT
            STOP 15
       END SELECT
 
       ptr1 => tgt1
-      IF ( .NOT. ASSOCIATED(ptr1)) STOP 16
+      IF ( .NOT. ASSOCIATED(ptr1)) ERROR STOP 16
 
       SELECT TYPE (ptr1)
           TYPE IS (Child(4,*,4))
-           IF (size(ptr1) .NE. size_obj4(ptr1)) STOP 17
-           IF (size(ptr1) .NE. (size(ptr1%base_arr)+size(ptr1%child_arr)) )STOP 18
+           IF (size(ptr1) .NE. size_obj4(ptr1)) ERROR STOP 17
+           IF (size(ptr1) .NE. (size(ptr1%base_arr)+size(ptr1%child_arr)) )ERROR STOP 18
 
           CLASS DEFAULT
            STOP 19
       END SELECT
 
-      IF ( size(dtv) .NE. size_obj8(dtv) ) STOP 20
-      IF ( size(dtv) .NE. (size(dtv%base_arr)+size(dtv%child_arr)+size(dtv%nextg_arr)) ) STOP 21
+      IF ( size(dtv) .NE. size_obj8(dtv) ) ERROR STOP 20
+      IF ( size(dtv) .NE. (size(dtv%base_arr)+size(dtv%child_arr)+size(dtv%nextg_arr)) ) ERROR STOP 21
 
       END PROGRAM Generic_Interface06

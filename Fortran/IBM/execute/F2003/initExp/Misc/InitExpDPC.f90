@@ -42,11 +42,11 @@
   REAL(16),      PARAMETER :: R6Arr(128) =SIGN(A=R6A, B=R6B)
   INTEGER,       PARAMETER :: R6K = R6Arr%KIND
 
-  IF ( ANY( R8Arr  .NE. R8 ))      STOP 12
-! IF ( ANY( R6Arr  .NE. R6 ))      STOP 13  ! we do not support it
+  IF ( ANY( R8Arr  .NE. R8 ))      ERROR STOP 12
+! IF ( ANY( R6Arr  .NE. R6 ))      ERROR STOP 13  ! we do not support it
 
-  IF ( R8K .NE. 8 )  STOP 14
-  IF ( R6K .NE. 16)  STOP 15
+  IF ( R8K .NE. 8 )  ERROR STOP 14
+  IF ( R6K .NE. 16)  ERROR STOP 15
 
   END
 

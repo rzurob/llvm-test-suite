@@ -70,20 +70,20 @@
       STOP 20
     CLASS IS (DT(*,8))
 
-        IF (ANY(DTV(:,:,:)%IArr(1)  .NE. 1)) STOP 22
-        IF (ANY(DTV(:,:,:)%IArr(2)  .NE. 2)) STOP 23
-        IF (ANY(DTV(:,:,:)%GetInt(1).NE. 1)) STOP 24
-        IF (ANY(DTV(:,:,:)%GetInt(2).NE. 2)) STOP 25
+        IF (ANY(DTV(:,:,:)%IArr(1)  .NE. 1)) ERROR STOP 22
+        IF (ANY(DTV(:,:,:)%IArr(2)  .NE. 2)) ERROR STOP 23
+        IF (ANY(DTV(:,:,:)%GetInt(1).NE. 1)) ERROR STOP 24
+        IF (ANY(DTV(:,:,:)%GetInt(2).NE. 2)) ERROR STOP 25
 
         Ptr%IArr(1) = -1
         Ptr%IArr(2) = -2
 
-        IF (SIZE(DTV(2,2,2)%IArr)   .NE. 2)  STOP 30
-        IF (KIND(DTV(2,2,2)%IArr)   .NE. 8)  STOP 31
-        IF (ANY(DTV(:,:,:)%IArr(1)  .NE. -1)) STOP 32
-        IF (ANY(DTV(:,:,:)%IArr(2)  .NE. -2)) STOP 33
-        IF (ANY(DTV(:,:,:)%GetInt(1).NE. -1)) STOP 34
-        IF (ANY(DTV(:,:,:)%GetInt(2).NE. -2)) STOP 35
+        IF (SIZE(DTV(2,2,2)%IArr)   .NE. 2)  ERROR STOP 30
+        IF (KIND(DTV(2,2,2)%IArr)   .NE. 8)  ERROR STOP 31
+        IF (ANY(DTV(:,:,:)%IArr(1)  .NE. -1)) ERROR STOP 32
+        IF (ANY(DTV(:,:,:)%IArr(2)  .NE. -2)) ERROR STOP 33
+        IF (ANY(DTV(:,:,:)%GetInt(1).NE. -1)) ERROR STOP 34
+        IF (ANY(DTV(:,:,:)%GetInt(2).NE. -2)) ERROR STOP 35
 
     END SELECT
 

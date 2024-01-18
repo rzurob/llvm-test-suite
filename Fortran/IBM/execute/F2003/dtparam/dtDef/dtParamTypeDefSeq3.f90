@@ -69,33 +69,33 @@
   TYPE(Seq4(4, 4)), POINTER     :: T4(:)
 
   T1 = Seq1(4, 4)("1234", CTar)
-  IF ( LEN(T1%C1)   .NE. 4 )    STOP 11
-  IF ( LEN(T1%C2)   .NE. 4 )    STOP 12
-  IF ( T1%C1   .NE. "1234" )    STOP 13
-  IF ( T1%C2   .NE. "abcd" )    STOP 14
+  IF ( LEN(T1%C1)   .NE. 4 )    ERROR STOP 11
+  IF ( LEN(T1%C2)   .NE. 4 )    ERROR STOP 12
+  IF ( T1%C1   .NE. "1234" )    ERROR STOP 13
+  IF ( T1%C2   .NE. "abcd" )    ERROR STOP 14
 
   ALLOCATE(T2, SOURCE=Seq2(4, 4)("1234", CTar))
-  IF ( LEN(T2%C1)   .NE. 4 )    STOP 21
-  IF ( LEN(T2%C2)   .NE. 4 )    STOP 22
-  IF ( T1%C1   .NE. "1234" )    STOP 23
-  IF ( T1%C2   .NE. "abcd" )    STOP 24
+  IF ( LEN(T2%C1)   .NE. 4 )    ERROR STOP 21
+  IF ( LEN(T2%C2)   .NE. 4 )    ERROR STOP 22
+  IF ( T1%C1   .NE. "1234" )    ERROR STOP 23
+  IF ( T1%C2   .NE. "abcd" )    ERROR STOP 24
 
   ALLOCATE(T3, SOURCE=Seq3(4, 4)((/"1234", "4321"/), CArr))
-  IF ( LEN(T3%C1)  .NE. 4 )           STOP 31
-  IF ( LEN(T3%C2)  .NE. 4 )           STOP 32
-  IF ( ANY(T3%C1   .NE. (/"1234",'4321'/) ))     STOP 33
-  IF ( ANY(T3%C2   .NE. "abcd" ))     STOP 34
-  IF ( ANY(SHAPE(T3%C1) .NE. (/2/)) ) STOP 35
-  IF ( ANY(SHAPE(T3%C2) .NE. (/4/)) ) STOP 36
+  IF ( LEN(T3%C1)  .NE. 4 )           ERROR STOP 31
+  IF ( LEN(T3%C2)  .NE. 4 )           ERROR STOP 32
+  IF ( ANY(T3%C1   .NE. (/"1234",'4321'/) ))     ERROR STOP 33
+  IF ( ANY(T3%C2   .NE. "abcd" ))     ERROR STOP 34
+  IF ( ANY(SHAPE(T3%C1) .NE. (/2/)) ) ERROR STOP 35
+  IF ( ANY(SHAPE(T3%C2) .NE. (/4/)) ) ERROR STOP 36
 
   ALLOCATE(T4(4), SOURCE=Seq4(4, 4)((/"1234", "4321"/), CArr))
-  IF ( LEN(T4(1)%C1)  .NE. 4 )           STOP 41
-  IF ( LEN(T4(2)%C2)  .NE. 4 )           STOP 42
-  IF ( ANY(T4(3)%C1   .NE. ["1234", '4321'] ))     STOP 43
-  IF ( ANY(T4(4)%C2   .NE. "abcd" ))     STOP 44
-  IF ( ANY(SHAPE(T4(2)%C1) .NE. (/2/)) ) STOP 45
-  IF ( ANY(SHAPE(T4(3)%C2) .NE. (/4/)) ) STOP 46
-  IF ( ANY(SHAPE(T4)  .NE. (/4/)) )      STOP 47
+  IF ( LEN(T4(1)%C1)  .NE. 4 )           ERROR STOP 41
+  IF ( LEN(T4(2)%C2)  .NE. 4 )           ERROR STOP 42
+  IF ( ANY(T4(3)%C1   .NE. ["1234", '4321'] ))     ERROR STOP 43
+  IF ( ANY(T4(4)%C2   .NE. "abcd" ))     ERROR STOP 44
+  IF ( ANY(SHAPE(T4(2)%C1) .NE. (/2/)) ) ERROR STOP 45
+  IF ( ANY(SHAPE(T4(3)%C2) .NE. (/4/)) ) ERROR STOP 46
+  IF ( ANY(SHAPE(T4)  .NE. (/4/)) )      ERROR STOP 47
 
   END
 

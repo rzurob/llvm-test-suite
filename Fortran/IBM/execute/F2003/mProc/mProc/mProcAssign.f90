@@ -127,10 +127,10 @@
   T2 = DT2(2)
   T3 = DT3(3)
 
-  IF (T%ID  .NE. -1 ) STOP 11
-  IF (T1%ID  .NE. 1 ) STOP 12
-  IF (T2%ID  .NE. 2 ) STOP 13
-  IF (T3%ID  .NE. 3 ) STOP 14
+  IF (T%ID  .NE. -1 ) ERROR STOP 11
+  IF (T1%ID  .NE. 1 ) ERROR STOP 12
+  IF (T2%ID  .NE. 2 ) ERROR STOP 13
+  IF (T3%ID  .NE. 3 ) ERROR STOP 14
 
   END  SUBROUTINE
 

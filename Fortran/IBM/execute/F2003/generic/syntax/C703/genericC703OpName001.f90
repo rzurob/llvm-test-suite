@@ -45,5 +45,5 @@ program genericC703OpName001
    b = base(20)
 
    a = .abcdefghiJabcdefghiJabcdefghiJabcdefghiJabcdefghiJabcdefghiJabc. b
-   if (a%x /= -20) stop 10
+   if (a%x /= -20) error stop 10
 end

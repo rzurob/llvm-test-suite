@@ -86,17 +86,17 @@
 
   CALL ExtSub()
 
-  IF ( .NOT. ASSOCIATED( Ptr1, T1 ) ) STOP 31
-  IF ( .NOT. ASSOCIATED( Ptr2, T2 ) ) STOP 31
+  IF ( .NOT. ASSOCIATED( Ptr1, T1 ) ) ERROR STOP 31
+  IF ( .NOT. ASSOCIATED( Ptr2, T2 ) ) ERROR STOP 31
 
   DO I=1, 1024
-    IF (  ANY ( Ptr1(I)%C1 .NE. C1    ) ) STOP 21
-    IF (  ANY ( Ptr1(I)%I  .NE. K     ) ) STOP 22
-    IF (  ANY ( Ptr1(I)%C2 .NE. C2    ) ) STOP 23
+    IF (  ANY ( Ptr1(I)%C1 .NE. C1    ) ) ERROR STOP 21
+    IF (  ANY ( Ptr1(I)%I  .NE. K     ) ) ERROR STOP 22
+    IF (  ANY ( Ptr1(I)%C2 .NE. C2    ) ) ERROR STOP 23
 
-    IF (  ANY ( Ptr2(I)%C1 .NE. C1    ) ) STOP 24
-    IF (  ANY ( Ptr2(I)%I  .NE. K     ) ) STOP 25
-    IF (  ANY ( Ptr2(I)%C2 .NE. C2    ) ) STOP 26
+    IF (  ANY ( Ptr2(I)%C1 .NE. C1    ) ) ERROR STOP 24
+    IF (  ANY ( Ptr2(I)%I  .NE. K     ) ) ERROR STOP 25
+    IF (  ANY ( Ptr2(I)%C2 .NE. C2    ) ) ERROR STOP 26
   END DO
 
   END PROGRAM

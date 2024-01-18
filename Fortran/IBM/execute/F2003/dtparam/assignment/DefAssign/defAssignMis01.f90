@@ -111,49 +111,49 @@ program defAssignMis01
          A(2)(["ef","EF"],[5,6],g1(2:5)), &
          A(2)(["gh","GH"],[7,8],g1(6:6))]
 
-     if(size(a2) /= 4)                                         stop 10
-     if(any(a2(1)%c1 /= ["ab","AB"]))                          stop 11
-     if(any(a2(2)%c1 /= ["cd","CD"]))                          stop 12
-     if(any(a2(3)%c1 /= ["ef","EF"]))                          stop 13
-     if(any(a2(4)%c1 /= ["gh","GH"]))                          stop 14
+     if(size(a2) /= 4)                                         error stop 10
+     if(any(a2(1)%c1 /= ["ab","AB"]))                          error stop 11
+     if(any(a2(2)%c1 /= ["cd","CD"]))                          error stop 12
+     if(any(a2(3)%c1 /= ["ef","EF"]))                          error stop 13
+     if(any(a2(4)%c1 /= ["gh","GH"]))                          error stop 14
 
-     if(any(a2(1)%i1 /= [1,2]))                                stop 15
-     if(any(a2(2)%i1 /= [3,4]))                                stop 16
-     if(any(a2(3)%i1 /= [5,6]))                                stop 17
-     if(any(a2(4)%i1 /= [7,8]))                                stop 18
+     if(any(a2(1)%i1 /= [1,2]))                                error stop 15
+     if(any(a2(2)%i1 /= [3,4]))                                error stop 16
+     if(any(a2(3)%i1 /= [5,6]))                                error stop 17
+     if(any(a2(4)%i1 /= [7,8]))                                error stop 18
 
-     if(any(a2(1)%g1 .neqv. [.true.,.false.,.false.]))         stop 19
-     if(any(a2(2)%g1 .neqv. [.false.,.true.]))                 stop 20
-     if(any(a2(3)%g1 .neqv. [.false.,.false.,.true.,.false.])) stop 21
-     if(any(a2(4)%g1 .neqv. [.true.]))                         stop 22
+     if(any(a2(1)%g1 .neqv. [.true.,.false.,.false.]))         error stop 19
+     if(any(a2(2)%g1 .neqv. [.false.,.true.]))                 error stop 20
+     if(any(a2(3)%g1 .neqv. [.false.,.false.,.true.,.false.])) error stop 21
+     if(any(a2(4)%g1 .neqv. [.true.]))                         error stop 22
 
      print *,"****TEST  2****"
      !invoke assignA2
      a1=a2(2)
 
-     if(any(a1%c1 /= ["cd","CD"]))                              stop 23
-     if(any(a1%i1 /= [3,4]))                                    stop 24
-     if(any(a1%g1 .neqv. [.false.,.true.]))                     stop 25
+     if(any(a1%c1 /= ["cd","CD"]))                              error stop 23
+     if(any(a1%i1 /= [3,4]))                                    error stop 24
+     if(any(a1%g1 .neqv. [.false.,.true.]))                     error stop 25
 
      print *,"****TEST  3****"
      !invoke assignA1
      a3=a2(vec) !RHS has vector subscripts
 
-     if(size(a3) /= 4)                                          stop 26
-     if(any(a3(2)%c1 /= ["ab","AB"]))                           stop 27
-     if(any(a3(4)%c1 /= ["cd","CD"]))                           stop 28
-     if(any(a3(1)%c1 /= ["ef","EF"]))                           stop 29
-     if(any(a3(3)%c1 /= ["gh","GH"]))                           stop 30
+     if(size(a3) /= 4)                                          error stop 26
+     if(any(a3(2)%c1 /= ["ab","AB"]))                           error stop 27
+     if(any(a3(4)%c1 /= ["cd","CD"]))                           error stop 28
+     if(any(a3(1)%c1 /= ["ef","EF"]))                           error stop 29
+     if(any(a3(3)%c1 /= ["gh","GH"]))                           error stop 30
 
-     if(any(a3(2)%i1 /= [1,2]))                                 stop 31
-     if(any(a3(4)%i1 /= [3,4]))                                 stop 32
-     if(any(a3(1)%i1 /= [5,6]))                                 stop 33
-     if(any(a3(3)%i1 /= [7,8]))                                 stop 34
+     if(any(a3(2)%i1 /= [1,2]))                                 error stop 31
+     if(any(a3(4)%i1 /= [3,4]))                                 error stop 32
+     if(any(a3(1)%i1 /= [5,6]))                                 error stop 33
+     if(any(a3(3)%i1 /= [7,8]))                                 error stop 34
 
-     if(any(a3(2)%g1 .neqv. [.true.,.false.,.false.]))          stop 35
-     if(any(a3(4)%g1 .neqv. [.false.,.true.]))                  stop 36
-     if(any(a3(1)%g1 .neqv. [.false.,.false.,.true.,.false.]))  stop 37
-     if(any(a3(3)%g1 .neqv. [.true.]))                          stop 38
+     if(any(a3(2)%g1 .neqv. [.true.,.false.,.false.]))          error stop 35
+     if(any(a3(4)%g1 .neqv. [.false.,.true.]))                  error stop 36
+     if(any(a3(1)%g1 .neqv. [.false.,.false.,.true.,.false.]))  error stop 37
+     if(any(a3(3)%g1 .neqv. [.true.]))                          error stop 38
 
       print *,"****TEST  4****"
       ! invoke assignB1
@@ -164,21 +164,21 @@ program defAssignMis01
          B(1)([-7,-8,-9],a2(1:1),a2(4))])
 
      b2 = b22
-     if(size(b2) /= 4)                                          stop 39
-     if(any(a3(2)%c1 /= ["ab","AB"]))                           stop 40
-     if(any(a3(4)%c1 /= ["cd","CD"]))                           stop 41
-     if(any(a3(1)%c1 /= ["ef","EF"]))                           stop 42
-     if(any(a3(3)%c1 /= ["gh","GH"]))                           stop 43
+     if(size(b2) /= 4)                                          error stop 39
+     if(any(a3(2)%c1 /= ["ab","AB"]))                           error stop 40
+     if(any(a3(4)%c1 /= ["cd","CD"]))                           error stop 41
+     if(any(a3(1)%c1 /= ["ef","EF"]))                           error stop 42
+     if(any(a3(3)%c1 /= ["gh","GH"]))                           error stop 43
 
-     if(any(a3(2)%i1 /= [1,2]))                                 stop 44
-     if(any(a3(4)%i1 /= [3,4]))                                 stop 45
-     if(any(a3(1)%i1 /= [5,6]))                                 stop 46
-     if(any(a3(3)%i1 /= [7,8]))                                 stop 47
+     if(any(a3(2)%i1 /= [1,2]))                                 error stop 44
+     if(any(a3(4)%i1 /= [3,4]))                                 error stop 45
+     if(any(a3(1)%i1 /= [5,6]))                                 error stop 46
+     if(any(a3(3)%i1 /= [7,8]))                                 error stop 47
 
-     if(any(a3(2)%g1 .neqv. [.true.,.false.,.false.]))          stop 48
-     if(any(a3(4)%g1 .neqv. [.false.,.true.]))                  stop 49
-     if(any(a3(1)%g1 .neqv. [.false.,.false.,.true.,.false.]))  stop 50
-     if(any(a3(3)%g1 .neqv. [.true.]))                          stop 51
+     if(any(a3(2)%g1 .neqv. [.true.,.false.,.false.]))          error stop 48
+     if(any(a3(4)%g1 .neqv. [.false.,.true.]))                  error stop 49
+     if(any(a3(1)%g1 .neqv. [.false.,.false.,.true.,.false.]))  error stop 50
+     if(any(a3(3)%g1 .neqv. [.true.]))                          error stop 51
 
      print *,"****TEST  5****"
       !no interface matches, invoke intrinsic assignment
@@ -187,57 +187,57 @@ program defAssignMis01
           B(1)([-6],a2(4:4),a1),         &
           B(1)([-7,-8,-9],a2(1:1),a2(4))]
 
-     if(size(b3) /= 4)                                           stop 52
-     if(any(b3(1)%i2 /= [-1,-2,-3]))                             stop 53
-     if(any(b3(2)%i2 /= [-4,-5]))                                stop 54
-     if(any(b3(3)%i2 /= [-6]))                                   stop 55
-     if(any(b3(4)%i2 /= [-7,-8,-9]))                             stop 56
+     if(size(b3) /= 4)                                           error stop 52
+     if(any(b3(1)%i2 /= [-1,-2,-3]))                             error stop 53
+     if(any(b3(2)%i2 /= [-4,-5]))                                error stop 54
+     if(any(b3(3)%i2 /= [-6]))                                   error stop 55
+     if(any(b3(4)%i2 /= [-7,-8,-9]))                             error stop 56
 
-     if(size(b3(1)%a1comp) /= 2)                                 stop 57
-     if(size(b3(2)%a1comp) /= 2)                                 stop 58
-     if(size(b3(3)%a1comp) /= 1)                                 stop 59
-     if(size(b3(4)%a1comp) /= 1)                                 stop 60
+     if(size(b3(1)%a1comp) /= 2)                                 error stop 57
+     if(size(b3(2)%a1comp) /= 2)                                 error stop 58
+     if(size(b3(3)%a1comp) /= 1)                                 error stop 59
+     if(size(b3(4)%a1comp) /= 1)                                 error stop 60
 
-     if(any(b3(1)%a1comp(1)%c1 /= ["ab","AB"]))                  stop 61
-     if(any(b3(1)%a1comp(1)%i1 /= [1,2]))                        stop 62
-     if(any(b3(1)%a1comp(1)%g1 .neqv. [.true.,.false.,.false.])) stop 63
+     if(any(b3(1)%a1comp(1)%c1 /= ["ab","AB"]))                  error stop 61
+     if(any(b3(1)%a1comp(1)%i1 /= [1,2]))                        error stop 62
+     if(any(b3(1)%a1comp(1)%g1 .neqv. [.true.,.false.,.false.])) error stop 63
 
-     if(any(b3(1)%a1comp(2)%c1 /= ["ef","EF"]))                  stop 64
-     if(any(b3(1)%a1comp(2)%i1 /= [5,6]))                        stop 65
+     if(any(b3(1)%a1comp(2)%c1 /= ["ef","EF"]))                  error stop 64
+     if(any(b3(1)%a1comp(2)%i1 /= [5,6]))                        error stop 65
      if(any(b3(1)%a1comp(2)%g1 .neqv.  &
-                [.false.,.false.,.true.,.false.]))               stop 66
+                [.false.,.false.,.true.,.false.]))               error stop 66
 
-     if(any(b3(1)%a2comp%c1 /= ["cd","CD"]))                     stop 67
-     if(any(b3(1)%a2comp%i1 /= [3,4]))                           stop 68
-     if(any(b3(1)%a2comp%g1 .neqv. [.false.,.true.]))            stop 69
+     if(any(b3(1)%a2comp%c1 /= ["cd","CD"]))                     error stop 67
+     if(any(b3(1)%a2comp%i1 /= [3,4]))                           error stop 68
+     if(any(b3(1)%a2comp%g1 .neqv. [.false.,.true.]))            error stop 69
 
-     if(any(b3(2)%a1comp(1)%c1 /= ["cd","CD"]))                  stop 70
-     if(any(b3(2)%a1comp(1)%i1 /= [3,4]))                        stop 71
-     if(any(b3(2)%a1comp(1)%g1 .neqv. [.false.,.true.]))         stop 72
+     if(any(b3(2)%a1comp(1)%c1 /= ["cd","CD"]))                  error stop 70
+     if(any(b3(2)%a1comp(1)%i1 /= [3,4]))                        error stop 71
+     if(any(b3(2)%a1comp(1)%g1 .neqv. [.false.,.true.]))         error stop 72
 
-     if(any(b3(2)%a1comp(2)%c1 /= ["gh","GH"]))                  stop 73
-     if(any(b3(2)%a1comp(2)%i1 /= [7,8]))                        stop 74
-     if(any(b3(2)%a1comp(2)%g1 .neqv. .true. ))                  stop 75
+     if(any(b3(2)%a1comp(2)%c1 /= ["gh","GH"]))                  error stop 73
+     if(any(b3(2)%a1comp(2)%i1 /= [7,8]))                        error stop 74
+     if(any(b3(2)%a1comp(2)%g1 .neqv. .true. ))                  error stop 75
 
-     if(any(b3(2)%a2comp%c1 /= ["ab","AB"]))                     stop 76
-     if(any(b3(2)%a2comp%i1 /= [1,2]))                           stop 77
-     if(any(b3(2)%a2comp%g1 .neqv. [.true.,.false.,.false.]))    stop 78
+     if(any(b3(2)%a2comp%c1 /= ["ab","AB"]))                     error stop 76
+     if(any(b3(2)%a2comp%i1 /= [1,2]))                           error stop 77
+     if(any(b3(2)%a2comp%g1 .neqv. [.true.,.false.,.false.]))    error stop 78
 
-     if(any(b3(3)%a1comp(1)%c1 /= ["gh","GH"]))                  stop 79
-     if(any(b3(3)%a1comp(1)%i1 /= [7,8]))                        stop 80
-     if(any(b3(3)%a1comp(1)%g1 .neqv. [.true.]))                 stop 81
+     if(any(b3(3)%a1comp(1)%c1 /= ["gh","GH"]))                  error stop 79
+     if(any(b3(3)%a1comp(1)%i1 /= [7,8]))                        error stop 80
+     if(any(b3(3)%a1comp(1)%g1 .neqv. [.true.]))                 error stop 81
 
-     if(any(b3(3)%a2comp%c1 /= ["cd","CD"]))                     stop 82
-     if(any(b3(3)%a2comp%i1 /= [3,4]))                           stop 83
-     if(any(b3(3)%a2comp%g1 .neqv. [.false.,.true.]))            stop 84
+     if(any(b3(3)%a2comp%c1 /= ["cd","CD"]))                     error stop 82
+     if(any(b3(3)%a2comp%i1 /= [3,4]))                           error stop 83
+     if(any(b3(3)%a2comp%g1 .neqv. [.false.,.true.]))            error stop 84
 
-     if(any(b3(4)%a1comp(1)%c1 /= ["ab","AB"]))                  stop 85
-     if(any(b3(4)%a1comp(1)%i1 /= [1,2]))                        stop 86
-     if(any(b3(4)%a1comp(1)%g1 .neqv. [.true.,.false.,.false.])) stop 87
+     if(any(b3(4)%a1comp(1)%c1 /= ["ab","AB"]))                  error stop 85
+     if(any(b3(4)%a1comp(1)%i1 /= [1,2]))                        error stop 86
+     if(any(b3(4)%a1comp(1)%g1 .neqv. [.true.,.false.,.false.])) error stop 87
 
-     if(any(b3(4)%a2comp%c1 /= ["gh","GH"]))                     stop 88
-     if(any(b3(4)%a2comp%i1 /= [7,8]))                           stop 89
-     if(any(b3(4)%a2comp%g1 .neqv. .true.))                      stop 90
+     if(any(b3(4)%a2comp%c1 /= ["gh","GH"]))                     error stop 88
+     if(any(b3(4)%a2comp%i1 /= [7,8]))                           error stop 89
+     if(any(b3(4)%a2comp%g1 .neqv. .true.))                      error stop 90
 
      print *,"****TEST  6****"
 !      b2=b3(vec) !<-- this call is illegal, b3(vec) will be out of scope after
@@ -248,13 +248,13 @@ program defAssignMis01
       !invoke assignB2
       b1=b3(3)
 
-     if(any(b1%a1comp(1)%c1 /= ["gh","GH"]))                     stop 130
-     if(any(b1%a1comp(1)%i1 /= [7,8]))                           stop 131
-     if(any(b1%a1comp(1)%g1 .neqv. [.true.]))                    stop 132
+     if(any(b1%a1comp(1)%c1 /= ["gh","GH"]))                     error stop 130
+     if(any(b1%a1comp(1)%i1 /= [7,8]))                           error stop 131
+     if(any(b1%a1comp(1)%g1 .neqv. [.true.]))                    error stop 132
 
-     if(any(b1%a2comp%c1 /= ["cd","CD"]))                        stop 133
-     if(any(b1%a2comp%i1 /= [3,4]))                              stop 134
-     if(any(b1%a2comp%g1 .neqv. [.false.,.true.]))               stop 135
+     if(any(b1%a2comp%c1 /= ["cd","CD"]))                        error stop 133
+     if(any(b1%a2comp%i1 /= [3,4]))                              error stop 134
+     if(any(b1%a2comp%g1 .neqv. [.false.,.true.]))               error stop 135
 
      contains
 
@@ -262,57 +262,57 @@ program defAssignMis01
      type(b(*)), target, intent(in) :: rhs(:)
      b2 => rhs
 
-     if(size(b2) /= 4)                                           stop 91
-     if(any(b2(2)%i2 /= [-1,-2,-3]))                             stop 92
-     if(any(b2(4)%i2 /= [-4,-5]))                                stop 93
-     if(any(b2(1)%i2 /= [-6]))                                   stop 94
-     if(any(b2(3)%i2 /= [-7,-8,-9]))                             stop 95
+     if(size(b2) /= 4)                                           error stop 91
+     if(any(b2(2)%i2 /= [-1,-2,-3]))                             error stop 92
+     if(any(b2(4)%i2 /= [-4,-5]))                                error stop 93
+     if(any(b2(1)%i2 /= [-6]))                                   error stop 94
+     if(any(b2(3)%i2 /= [-7,-8,-9]))                             error stop 95
 
-     if(size(b2(2)%a1comp) /= 2)                                 stop 96
-     if(size(b2(4)%a1comp) /= 2)                                 stop 97
-     if(size(b2(1)%a1comp) /= 1)                                 stop 98
-     if(size(b2(3)%a1comp) /= 1)                                 stop 99
+     if(size(b2(2)%a1comp) /= 2)                                 error stop 96
+     if(size(b2(4)%a1comp) /= 2)                                 error stop 97
+     if(size(b2(1)%a1comp) /= 1)                                 error stop 98
+     if(size(b2(3)%a1comp) /= 1)                                 error stop 99
 
-     if(any(b2(2)%a1comp(1)%c1 /= ["ab","AB"]))                  stop 100
-     if(any(b2(2)%a1comp(1)%i1 /= [1,2]))                        stop 101
-     if(any(b2(2)%a1comp(1)%g1 .neqv. [.true.,.false.,.false.])) stop 102
+     if(any(b2(2)%a1comp(1)%c1 /= ["ab","AB"]))                  error stop 100
+     if(any(b2(2)%a1comp(1)%i1 /= [1,2]))                        error stop 101
+     if(any(b2(2)%a1comp(1)%g1 .neqv. [.true.,.false.,.false.])) error stop 102
 
-     if(any(b2(2)%a1comp(2)%c1 /= ["ef","EF"]))                  stop 103
-     if(any(b2(2)%a1comp(2)%i1 /= [5,6]))                        stop 104
+     if(any(b2(2)%a1comp(2)%c1 /= ["ef","EF"]))                  error stop 103
+     if(any(b2(2)%a1comp(2)%i1 /= [5,6]))                        error stop 104
      if(any(b2(2)%a1comp(2)%g1 .neqv.  &
-                [.false.,.false.,.true.,.false.]))               stop 105
+                [.false.,.false.,.true.,.false.]))               error stop 105
 
-     if(any(b2(2)%a2comp%c1 /= ["cd","CD"]))                     stop 106
-     if(any(b2(2)%a2comp%i1 /= [3,4]))                           stop 107
-     if(any(b2(2)%a2comp%g1 .neqv. [.false.,.true.]))            stop 108
+     if(any(b2(2)%a2comp%c1 /= ["cd","CD"]))                     error stop 106
+     if(any(b2(2)%a2comp%i1 /= [3,4]))                           error stop 107
+     if(any(b2(2)%a2comp%g1 .neqv. [.false.,.true.]))            error stop 108
 
-     if(any(b2(4)%a1comp(1)%c1 /= ["cd","CD"]))                  stop 109
-     if(any(b2(4)%a1comp(1)%i1 /= [3,4]))                        stop 110
-     if(any(b2(4)%a1comp(1)%g1 .neqv. [.false.,.true.]))         stop 111
+     if(any(b2(4)%a1comp(1)%c1 /= ["cd","CD"]))                  error stop 109
+     if(any(b2(4)%a1comp(1)%i1 /= [3,4]))                        error stop 110
+     if(any(b2(4)%a1comp(1)%g1 .neqv. [.false.,.true.]))         error stop 111
 
-     if(any(b2(4)%a1comp(2)%c1 /= ["gh","GH"]))                  stop 112
-     if(any(b2(4)%a1comp(2)%i1 /= [7,8]))                        stop 113
-     if(any(b2(4)%a1comp(2)%g1 .neqv. .true. ))                  stop 114
+     if(any(b2(4)%a1comp(2)%c1 /= ["gh","GH"]))                  error stop 112
+     if(any(b2(4)%a1comp(2)%i1 /= [7,8]))                        error stop 113
+     if(any(b2(4)%a1comp(2)%g1 .neqv. .true. ))                  error stop 114
 
-     if(any(b2(4)%a2comp%c1 /= ["ab","AB"]))                     stop 115
-     if(any(b2(4)%a2comp%i1 /= [1,2]))                           stop 116
-     if(any(b2(4)%a2comp%g1 .neqv. [.true.,.false.,.false.]))    stop 117
+     if(any(b2(4)%a2comp%c1 /= ["ab","AB"]))                     error stop 115
+     if(any(b2(4)%a2comp%i1 /= [1,2]))                           error stop 116
+     if(any(b2(4)%a2comp%g1 .neqv. [.true.,.false.,.false.]))    error stop 117
 
-     if(any(b2(1)%a1comp(1)%c1 /= ["gh","GH"]))                  stop 118
-     if(any(b2(1)%a1comp(1)%i1 /= [7,8]))                        stop 119
-     if(any(b2(1)%a1comp(1)%g1 .neqv. [.true.]))                 stop 120
+     if(any(b2(1)%a1comp(1)%c1 /= ["gh","GH"]))                  error stop 118
+     if(any(b2(1)%a1comp(1)%i1 /= [7,8]))                        error stop 119
+     if(any(b2(1)%a1comp(1)%g1 .neqv. [.true.]))                 error stop 120
 
-     if(any(b2(1)%a2comp%c1 /= ["cd","CD"]))                     stop 121
-     if(any(b2(1)%a2comp%i1 /= [3,4]))                           stop 122
-     if(any(b2(1)%a2comp%g1 .neqv. [.false.,.true.]))            stop 123
+     if(any(b2(1)%a2comp%c1 /= ["cd","CD"]))                     error stop 121
+     if(any(b2(1)%a2comp%i1 /= [3,4]))                           error stop 122
+     if(any(b2(1)%a2comp%g1 .neqv. [.false.,.true.]))            error stop 123
 
-     if(any(b2(3)%a1comp(1)%c1 /= ["ab","AB"]))                  stop 124
-     if(any(b2(3)%a1comp(1)%i1 /= [1,2]))                        stop 125
-     if(any(b2(3)%a1comp(1)%g1 .neqv. [.true.,.false.,.false.])) stop 126
+     if(any(b2(3)%a1comp(1)%c1 /= ["ab","AB"]))                  error stop 124
+     if(any(b2(3)%a1comp(1)%i1 /= [1,2]))                        error stop 125
+     if(any(b2(3)%a1comp(1)%g1 .neqv. [.true.,.false.,.false.])) error stop 126
 
-     if(any(b2(3)%a2comp%c1 /= ["gh","GH"]))                     stop 127
-     if(any(b2(3)%a2comp%i1 /= [7,8]))                           stop 128
-     if(any(b2(3)%a2comp%g1 .neqv. .true.))                      stop 129
+     if(any(b2(3)%a2comp%c1 /= ["gh","GH"]))                     error stop 127
+     if(any(b2(3)%a2comp%i1 /= [7,8]))                           error stop 128
+     if(any(b2(3)%a2comp%g1 .neqv. .true.))                      error stop 129
 
      end subroutine
 end program

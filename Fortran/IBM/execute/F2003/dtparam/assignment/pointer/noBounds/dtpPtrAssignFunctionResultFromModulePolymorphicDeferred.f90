@@ -145,7 +145,7 @@ contains
     implicit none
     type(Base(:)), intent(in), pointer :: b
     print *, b
-    if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'abc') stop 2
+    if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'abc') error stop 2
   end subroutine testBase1
 
 
@@ -153,7 +153,7 @@ contains
     implicit none
     type(Base(*)), intent(in) :: b
     print *, b
-    if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'abcde') stop 3
+    if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'abcde') error stop 3
   end subroutine testBase2
 
 
@@ -165,7 +165,7 @@ contains
     print *, d
     if (d%l /= 3 .or. d%k /= 4 .or. len(d%ch) /= 3 .or. d%ch /= 'def' .or. .not.d%lfld &
          .or. size(d%ifld) /= 3 .or. kind(d%lfld) /= 4 .or. kind(d%ifld) /= 4 .or. kind(d%rfld) /= 4 &
-         .or. any(d%ifld /= [1111911111,2122292222,1333393333]) .or. .not.precision_r4(d%rfld,4.1_4)) stop 4
+         .or. any(d%ifld /= [1111911111,2122292222,1333393333]) .or. .not.precision_r4(d%rfld,4.1_4)) error stop 4
   end subroutine testDerived4
 
 
@@ -178,7 +178,7 @@ contains
     if (d%l /= 5 .or. d%k /= 8 .or. len(d%ch) /= 5 .or. d%ch /= 'defgh' .or. .not.d%lfld &
          .or. size(d%ifld) /= 5 .or. kind(d%lfld) /= 8 .or. kind(d%ifld) /= 8 .or. kind(d%rfld) /= 8 &
          .or. any(d%ifld /= [1111118111111_8,2222282222222_8,3333833333333_8,4444484444444_8,5555855555555_8]) &
-         .or. .not.precision_r8(d%rfld,1.23456789D11)) stop 5
+         .or. .not.precision_r8(d%rfld,1.23456789D11)) error stop 5
   end subroutine testDerived8
 
 
@@ -186,21 +186,21 @@ contains
     implicit none
     type(Base(*)), intent(in) :: b
     print *, b
-    if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'ghi') stop 6
+    if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'ghi') error stop 6
   end subroutine testBase1D
 
   subroutine testBase1D2(b)
     implicit none
     type(Base(*)), intent(in) :: b
     print *, b
-    if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'jkl') stop 7
+    if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'jkl') error stop 7
   end subroutine testBase1D2
 
   subroutine testBase2D(b)
     implicit none
     type(Base(*)), intent(in) :: b
     print *, b
-    if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'jklmn') stop 8
+    if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'jklmn') error stop 8
   end subroutine testBase2D
 
 
@@ -208,7 +208,7 @@ contains
     implicit none
     type(Base(*)), intent(in) :: b
     print *, b
-    if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'opqrs') stop 9
+    if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'opqrs') error stop 9
   end subroutine testBase2D2
 
 
@@ -220,7 +220,7 @@ contains
     print *, d
     if (d%l /= 3 .or. d%k /= 4 .or. len(d%ch) /= 3 .or. d%ch /= 'mno' .or. .not.d%lfld &
          .or. size(d%ifld) /= 3 .or. kind(d%lfld) /= 4 .or. kind(d%ifld) /= 4 .or. kind(d%rfld) /= 4 &
-         .or. any(d%ifld /= [-1111111112,-2122222223,-1333333334]) .or. .not.precision_r4(d%rfld,123.456_4)) stop 10
+         .or. any(d%ifld /= [-1111111112,-2122222223,-1333333334]) .or. .not.precision_r4(d%rfld,123.456_4)) error stop 10
   end subroutine testDerived4D2
 
 
@@ -233,7 +233,7 @@ contains
     if (d%l /= 5 .or. d%k /= 8 .or. len(d%ch) /= 5 .or. d%ch /= 'qrstu' .or. d%lfld &
          .or. size(d%ifld) /= 5 .or. kind(d%lfld) /= 8 .or. kind(d%ifld) /= 8 .or. kind(d%rfld) /= 8 &
          .or. any(d%ifld /= [-1111111111311_8,-2222222232222_8,-3333233333333_8,-4444444434444_8,-5555555535555_8]) &
-	 .or. .not.precision_r8(d%rfld,1.23456789D12)) stop 11
+	 .or. .not.precision_r8(d%rfld,1.23456789D12)) error stop 11
   end subroutine testDerived8D2
 
 
@@ -248,12 +248,12 @@ contains
          .or. size(d2v%ifld) /= 3 .or. kind(d2v%lfld) /= 4 .or. kind(d2v%ifld) /= 4 .or. kind(d2v%rfld) /= 4 &
          .or. any(d2v%ifld /= [-1111111111,-2122222222,-1333333333]) .or. .not.precision_r4(d2v%rfld,5.9_4) &
          .or. kind(d2v%iarr) /= 8 .or. any(ubound(d2v%iarr) /= [3,2]) &
-         .or. any([d2v%iarr] /= [1211,2422,3633,4844,6055,7266])) stop 12
+         .or. any([d2v%iarr] /= [1211,2422,3633,4844,6055,7266])) error stop 12
     if (d2v%der%l /= 2 .or. d2v%der%k /= 8 .or. len(d2v%der%ch) /= 2 &
          .or. d2v%der%ch /= 'xz' .or. .not.d2v%der%lfld .or. size(d2v%der%ifld) /= 2 &
          .or. kind(d2v%der%lfld) /= 8 .or. kind(d2v%der%ifld) /= 8 .or. kind(d2v%der%rfld) /= 8 &
          .or. any(d2v%der%ifld /= [76543111134567_8,-123456787654321_8]) &
-         .or. .not.precision_r8(d2v%der%rfld,11987.81321D34)) stop 13
+         .or. .not.precision_r8(d2v%der%rfld,11987.81321D34)) error stop 13
   end subroutine testD2_48
 
 
@@ -269,12 +269,12 @@ contains
          .or. any(d2v%ifld /= [-1111111111111_8,-2222222222222_8,-3333333333333_8,-4444444444444_8,-5555555555555_8]) &
          .or. .not.precision_r8(d2v%rfld,9.87654321D-12) &
          .or. kind(d2v%iarr) /= 4 .or. any(ubound(d2v%iarr) /= [5,1]) &
-         .or. any([d2v%iarr] /= [1171,2342,3513,4684,5855])) stop 14
+         .or. any([d2v%iarr] /= [1171,2342,3513,4684,5855])) error stop 14
     if (d2v%der%l /= 1 .or. d2v%der%k /= 4 .or. len(d2v%der%ch) /= 1 &
          .or. d2v%der%ch /= 'y' .or. .not.d2v%der%lfld .or. size(d2v%der%ifld) /= 1 &
          .or. kind(d2v%der%lfld) /= 4 .or. kind(d2v%der%ifld) /= 4 .or. kind(d2v%der%rfld) /= 4 &
          .or. any(d2v%der%ifld /= [-12345678_4]) &
-         .or. .not.precision_r4(d2v%der%rfld,9.87654E-12)) stop 15
+         .or. .not.precision_r4(d2v%der%rfld,9.87654E-12)) error stop 15
   end subroutine testD2_84
 
 
@@ -284,7 +284,7 @@ contains
     select type(b)
     type is (Base(*))
       print *, b
-      if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'abc') stop 2
+      if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'abc') error stop 2
     class default
       print *, 'Unknown type in testBase1CP'
       stop 102
@@ -298,7 +298,7 @@ contains
     select type(b)
     type is (Base(*))
       print *, b
-      if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'abcde') stop 3
+      if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'abcde') error stop 3
     class default
       print *, 'Unknown type in testBase2CP'
       stop 103
@@ -316,7 +316,7 @@ contains
       print *, d
       if (d%l /= 3 .or. d%k /= 4 .or. len(d%ch) /= 3 .or. d%ch /= 'def' .or. .not.d%lfld &
            .or. size(d%ifld) /= 3 .or. kind(d%lfld) /= 4 .or. kind(d%ifld) /= 4 .or. kind(d%rfld) /= 4 &
-           .or. any(d%ifld /= [1111911111,2122292222,1333393333]) .or. .not.precision_r4(d%rfld,4.1_4)) stop 4
+           .or. any(d%ifld /= [1111911111,2122292222,1333393333]) .or. .not.precision_r4(d%rfld,4.1_4)) error stop 4
     class default
       print *, 'Unknown type in testDerived4CP'
       stop 104
@@ -335,7 +335,7 @@ contains
       if (d%l /= 5 .or. d%k /= 8 .or. len(d%ch) /= 5 .or. d%ch /= 'defgh' .or. .not.d%lfld &
            .or. size(d%ifld) /= 5 .or. kind(d%lfld) /= 8 .or. kind(d%ifld) /= 8 .or. kind(d%rfld) /= 8 &
            .or. any(d%ifld /= [1111118111111_8,2222282222222_8,3333833333333_8,4444484444444_8,5555855555555_8]) &
-           .or. .not.precision_r8(d%rfld,1.23456789D11)) stop 5
+           .or. .not.precision_r8(d%rfld,1.23456789D11)) error stop 5
     class default
       print *, 'Unknown type in testDerived8CP'
       stop 105
@@ -349,7 +349,7 @@ contains
     select type(b)
     class is (Base(*))
       print *, b%l, len(b%ch), b%ch
-      if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'ghi') stop 6
+      if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'ghi') error stop 6
     class default
       print *, 'Unknown type in testBase1DCP'
       stop 106
@@ -362,7 +362,7 @@ contains
     select type(b)
     class is (Base(*))
       print *, b%l, len(b%ch), b%ch
-      if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'jkl') stop 7
+      if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'jkl') error stop 7
     class default
       print *, 'Unknown type in testBase1D2CP'
       stop 107
@@ -375,7 +375,7 @@ contains
     select type(b)
     class is (Base(*))
       print *, b%l, len(b%ch), b%ch
-      if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'jklmn') stop 8
+      if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'jklmn') error stop 8
     class default
       print *, 'Unknown type in testBase2DCP'
       stop 108
@@ -389,7 +389,7 @@ contains
     select type(b)
     class is (Base(*))
       print *, b%l, len(b%ch), b%ch
-      if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'opqrs') stop 9
+      if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'opqrs') error stop 9
     class default
       print *, 'Unknown type in testBase2D2CP'
       stop 109
@@ -408,7 +408,7 @@ contains
                kind(d%lfld), kind(d%ifld), kind(d%rfld), d%ifld, d%rfld
       if (d%l /= 3 .or. d%k /= 4 .or. len(d%ch) /= 3 .or. d%ch /= 'mno' .or. .not.d%lfld &
            .or. size(d%ifld) /= 3 .or. kind(d%lfld) /= 4 .or. kind(d%ifld) /= 4 .or. kind(d%rfld) /= 4 &
-           .or. any(d%ifld /= [-1111111112,-2122222223,-1333333334]) .or. .not.precision_r4(d%rfld,123.456_4)) stop 10
+           .or. any(d%ifld /= [-1111111112,-2122222223,-1333333334]) .or. .not.precision_r4(d%rfld,123.456_4)) error stop 10
     class default
       print *, 'Unknown type in testDerived4D2CP'
       stop 110
@@ -428,7 +428,7 @@ contains
       if (d%l /= 5 .or. d%k /= 8 .or. len(d%ch) /= 5 .or. d%ch /= 'qrstu' .or. d%lfld &
            .or. size(d%ifld) /= 5 .or. kind(d%lfld) /= 8 .or. kind(d%ifld) /= 8 .or. kind(d%rfld) /= 8 &
            .or. any(d%ifld /= [-1111111111311_8,-2222222232222_8,-3333233333333_8,-4444444434444_8,-5555555535555_8]) &
-           .or. .not.precision_r8(d%rfld,1.23456789D12)) stop 11
+           .or. .not.precision_r8(d%rfld,1.23456789D12)) error stop 11
     class default
       print *, 'Unknown type in testDerived8D2CP'
       stop 111
@@ -452,12 +452,12 @@ contains
            .or. size(d2v%ifld) /= 3 .or. kind(d2v%lfld) /= 4 .or. kind(d2v%ifld) /= 4 .or. kind(d2v%rfld) /= 4 &
            .or. any(d2v%ifld /= [-1111111111,-2122222222,-1333333333]) .or. .not.precision_r4(d2v%rfld,5.9_4) &
            .or. kind(d2v%iarr) /= 8 .or. any(ubound(d2v%iarr) /= [3,2]) &
-           .or. any([d2v%iarr] /= [1211,2422,3633,4844,6055,7266])) stop 12
+           .or. any([d2v%iarr] /= [1211,2422,3633,4844,6055,7266])) error stop 12
       if (d2v%der%l /= 2 .or. d2v%der%k /= 8 .or. len(d2v%der%ch) /= 2 &
            .or. d2v%der%ch /= 'xz' .or. .not.d2v%der%lfld .or. size(d2v%der%ifld) /= 2 &
            .or. kind(d2v%der%lfld) /= 8 .or. kind(d2v%der%ifld) /= 8 .or. kind(d2v%der%rfld) /= 8 &
            .or. any(d2v%der%ifld /= [76543111134567_8,-123456787654321_8]) &
-           .or. .not.precision_r8(d2v%der%rfld,11987.81321D34)) stop 13
+           .or. .not.precision_r8(d2v%der%rfld,11987.81321D34)) error stop 13
     class default
       print *, 'Unknown type in testD2_48CP'
       stop 113
@@ -482,12 +482,12 @@ contains
            .or. any(d2v%ifld /= [-1111111111111_8,-2222222222222_8,-3333333333333_8,-4444444444444_8,-5555555555555_8]) &
            .or. .not.precision_r8(d2v%rfld,9.87654321D-12) &
            .or. kind(d2v%iarr) /= 4 .or. any(ubound(d2v%iarr) /= [5,1]) &
-           .or. any([d2v%iarr] /= [1171,2342,3513,4684,5855])) stop 14
+           .or. any([d2v%iarr] /= [1171,2342,3513,4684,5855])) error stop 14
       if (d2v%der%l /= 1 .or. d2v%der%k /= 4 .or. len(d2v%der%ch) /= 1 &
            .or. d2v%der%ch /= 'y' .or. .not.d2v%der%lfld .or. size(d2v%der%ifld) /= 1 &
            .or. kind(d2v%der%lfld) /= 4 .or. kind(d2v%der%ifld) /= 4 .or. kind(d2v%der%rfld) /= 4 &
            .or. any(d2v%der%ifld /= [-12345678_4]) &
-           .or. .not.precision_r4(d2v%der%rfld,9.87654E-12)) stop 15
+           .or. .not.precision_r4(d2v%der%rfld,9.87654E-12)) error stop 15
     class default
       print *, 'Unknown type in testD2_84CP'
       stop 115

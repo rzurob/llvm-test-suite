@@ -67,9 +67,9 @@
 
   ASSOCIATE( V => V(1:3, 2:4) )
   ASSOCIATE( V => V(1:2,2:3) )
-    IF (TRIM(V(1,1)%C2) .NE. "-2") STOP 21
-    IF (TRIM(V(2,1)%C1) .NE. "-1") STOP 21
-    IF (TRIM(V(2,2)%C0) .NE. "-0") STOP 21
+    IF (TRIM(V(1,1)%C2) .NE. "-2") ERROR STOP 21
+    IF (TRIM(V(2,1)%C1) .NE. "-1") ERROR STOP 21
+    IF (TRIM(V(2,2)%C0) .NE. "-0") ERROR STOP 21
   END ASSOCIATE
   END ASSOCIATE
 
@@ -84,14 +84,14 @@
   CHARACTER(513),  POINTER :: P0(:,:)
   INTEGER :: i
 
-  IF (ANY(SHAPE(U) .NE. (/3,3/))) STOP 30
+  IF (ANY(SHAPE(U) .NE. (/3,3/))) ERROR STOP 30
   PU => U(1:2,2:3)
   SELECT TYPE( U => U(1:2,2:3) )
   CLASS IS (DT(4,*,4,*,4,*))
 
-    IF (TRIM(U(1,1)%C0) .NE. "0") STOP 31
-    IF (TRIM(U(2,1)%C1) .NE. "1") STOP 32
-    IF (TRIM(U(2,2)%C2) .NE. "2") STOP 33
+    IF (TRIM(U(1,1)%C0) .NE. "0") ERROR STOP 31
+    IF (TRIM(U(2,1)%C1) .NE. "1") ERROR STOP 32
+    IF (TRIM(U(2,2)%C2) .NE. "2") ERROR STOP 33
     P2 => U%C2
     P2 = "-2"
     P1 => U%DT1%C1

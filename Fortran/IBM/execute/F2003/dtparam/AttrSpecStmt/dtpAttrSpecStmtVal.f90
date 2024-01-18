@@ -105,23 +105,23 @@
   CALL ExtSub(T0,T1,T2)
 
 
-    IF ( T0%L0     .NE. 3         )  STOP 30
-    IF ( T1%L1     .NE. 5         )  STOP 32
-    IF ( T2%L2     .NE. 7         )  STOP 35
+    IF ( T0%L0     .NE. 3         )  ERROR STOP 30
+    IF ( T1%L1     .NE. 5         )  ERROR STOP 32
+    IF ( T2%L2     .NE. 7         )  ERROR STOP 35
 
-    IF ( T1%C1     .NE. "DT1"     )  STOP 40
+    IF ( T1%C1     .NE. "DT1"     )  ERROR STOP 40
 
-    IF ( T2%C2             .NE.   CHAR(8)  )  STOP 52
-    IF ( T2%I              .NE.   8        )  STOP 53
-    IF ( T2%R              .NE.   8.       )  STOP 54
-    IF ( T2%L              .NEQV. .TRUE.   )  STOP 55
-    IF ( T2%Z              .NE.   (8.,8.) )  STOP 56
-    IF ( T2%T0%K0          .NE.    2       )  STOP 57
-    IF ( T2%T0%L0          .NE.    3       )  STOP 61
-    IF ( ASSOCIATED(T2%Ptr).EQV.   .TRUE.  )  STOP 62
-    IF ( SIZE(T2%T0)       .NE.    3       )  STOP 63
-    IF ( T2%T0%K0          .NE.    2       )  STOP 64
-    IF ( T2%T0%L0          .NE.    3       )  STOP 65
+    IF ( T2%C2             .NE.   CHAR(8)  )  ERROR STOP 52
+    IF ( T2%I              .NE.   8        )  ERROR STOP 53
+    IF ( T2%R              .NE.   8.       )  ERROR STOP 54
+    IF ( T2%L              .NEQV. .TRUE.   )  ERROR STOP 55
+    IF ( T2%Z              .NE.   (8.,8.) )  ERROR STOP 56
+    IF ( T2%T0%K0          .NE.    2       )  ERROR STOP 57
+    IF ( T2%T0%L0          .NE.    3       )  ERROR STOP 61
+    IF ( ASSOCIATED(T2%Ptr).EQV.   .TRUE.  )  ERROR STOP 62
+    IF ( SIZE(T2%T0)       .NE.    3       )  ERROR STOP 63
+    IF ( T2%T0%K0          .NE.    2       )  ERROR STOP 64
+    IF ( T2%T0%L0          .NE.    3       )  ERROR STOP 65
 
   END
 

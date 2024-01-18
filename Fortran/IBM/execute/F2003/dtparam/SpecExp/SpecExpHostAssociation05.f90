@@ -95,10 +95,10 @@ PROGRAM SpecExpHostAssociation05
         CLASS(Base(b1%k1,b1%l1)), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
-        IF ( Obj%k1 .NE. this%k1 ) STOP 10
-        IF ( Obj%l1 .NE. this%l1 ) STOP 11
-        IF ( SIZE(Obj%A1) .NE. this%l1 ) STOP 12
-        IF ( LEN(Obj%C1)  .NE. this%l1 ) STOP 13
+        IF ( Obj%k1 .NE. this%k1 ) ERROR STOP 10
+        IF ( Obj%l1 .NE. this%l1 ) ERROR STOP 11
+        IF ( SIZE(Obj%A1) .NE. this%l1 ) ERROR STOP 12
+        IF ( LEN(Obj%C1)  .NE. this%l1 ) ERROR STOP 13
       END SUBROUTINE Sub11
 
       SUBROUTINE Sub21(this)
@@ -106,10 +106,10 @@ PROGRAM SpecExpHostAssociation05
         CLASS(Base(c1%cmp1%k1,c1%cmp1%l1)), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
-        IF ( Obj%k1 .NE. this%cmp1%k1 ) STOP 14
-        IF ( Obj%l1 .NE. this%cmp1%l1 ) STOP 15
-        IF ( SIZE(Obj%A1) .NE. this%cmp1%l1 ) STOP 16
-        IF ( LEN(Obj%C1)  .NE. this%cmp1%l1 ) STOP 17
+        IF ( Obj%k1 .NE. this%cmp1%k1 ) ERROR STOP 14
+        IF ( Obj%l1 .NE. this%cmp1%l1 ) ERROR STOP 15
+        IF ( SIZE(Obj%A1) .NE. this%cmp1%l1 ) ERROR STOP 16
+        IF ( LEN(Obj%C1)  .NE. this%cmp1%l1 ) ERROR STOP 17
       END SUBROUTINE Sub21
 
       SUBROUTINE Sub31(this)
@@ -117,10 +117,10 @@ PROGRAM SpecExpHostAssociation05
         CLASS(Base(n1%cmp2%k1,n1%cmp2%l1)), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
-        IF ( Obj%k1 .NE. this%cmp2%k1 ) STOP 18
-        IF ( Obj%l1 .NE. this%cmp2%l1 ) STOP 19
-        IF ( SIZE(Obj%A1) .NE. this%cmp2%l1 ) STOP 20
-        IF ( LEN(Obj%C1)  .NE. this%cmp2%l1 ) STOP 21
+        IF ( Obj%k1 .NE. this%cmp2%k1 ) ERROR STOP 18
+        IF ( Obj%l1 .NE. this%cmp2%l1 ) ERROR STOP 19
+        IF ( SIZE(Obj%A1) .NE. this%cmp2%l1 ) ERROR STOP 20
+        IF ( LEN(Obj%C1)  .NE. this%cmp2%l1 ) ERROR STOP 21
       END SUBROUTINE Sub31
 
       SUBROUTINE Sub12(this)
@@ -128,19 +128,19 @@ PROGRAM SpecExpHostAssociation05
         CLASS(Child(KIND(b1%I1),b1%I1,2*KIND(b1%I1),2*SIZE(b1%A1))), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
-        IF ( Obj%k1 .NE.   KIND(this%I1) ) STOP 22
-        IF ( Obj%l1 .NE.         this%I1 ) STOP 23
-        IF ( Obj%k2 .NE. 2*KIND(this%I1) ) STOP 24
-        IF ( Obj%l2 .NE. 2*SIZE(this%A1) ) STOP 25
-        IF ( SIZE(Obj%A1) .NE.         this%I1 ) STOP 26
-        IF ( LEN(Obj%C1)  .NE.         this%I1 ) STOP 27
-        IF ( SIZE(Obj%A2) .NE. 2*SIZE(this%A1) ) STOP 28
-        IF ( LEN(Obj%C2)  .NE. 2*SIZE(this%A1) ) STOP 29
+        IF ( Obj%k1 .NE.   KIND(this%I1) ) ERROR STOP 22
+        IF ( Obj%l1 .NE.         this%I1 ) ERROR STOP 23
+        IF ( Obj%k2 .NE. 2*KIND(this%I1) ) ERROR STOP 24
+        IF ( Obj%l2 .NE. 2*SIZE(this%A1) ) ERROR STOP 25
+        IF ( SIZE(Obj%A1) .NE.         this%I1 ) ERROR STOP 26
+        IF ( LEN(Obj%C1)  .NE.         this%I1 ) ERROR STOP 27
+        IF ( SIZE(Obj%A2) .NE. 2*SIZE(this%A1) ) ERROR STOP 28
+        IF ( LEN(Obj%C2)  .NE. 2*SIZE(this%A1) ) ERROR STOP 29
 
-        IF ( Obj%cmp1%k1 .NE. 2*KIND(this%I1) ) STOP 30
-        IF ( Obj%cmp1%l1 .NE. 2*SIZE(this%A1) ) STOP 31
-        IF ( SIZE(Obj%cmp1%A1) .NE. 2*SIZE(this%A1) ) STOP 32
-        IF ( LEN(Obj%cmp1%C1)  .NE. 2*SIZE(this%A1) ) STOP 33
+        IF ( Obj%cmp1%k1 .NE. 2*KIND(this%I1) ) ERROR STOP 30
+        IF ( Obj%cmp1%l1 .NE. 2*SIZE(this%A1) ) ERROR STOP 31
+        IF ( SIZE(Obj%cmp1%A1) .NE. 2*SIZE(this%A1) ) ERROR STOP 32
+        IF ( LEN(Obj%cmp1%C1)  .NE. 2*SIZE(this%A1) ) ERROR STOP 33
       END SUBROUTINE Sub12
 
       SUBROUTINE Sub22(this)
@@ -148,19 +148,19 @@ PROGRAM SpecExpHostAssociation05
         CLASS(Child(KIND(c1%cmp1%I1),c1%cmp1%I1,2*KIND(c1%cmp1%I1),2*SIZE(c1%cmp1%A1))), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
-        IF ( Obj%k1 .NE.   KIND(this%cmp1%I1) ) STOP 34
-        IF ( Obj%l1 .NE.         this%cmp1%I1 ) STOP 35
-        IF ( Obj%k2 .NE. 2*KIND(this%cmp1%I1) ) STOP 36
-        IF ( Obj%l2 .NE. 2*SIZE(this%cmp1%A1) ) STOP 37
-        IF ( SIZE(Obj%A1) .NE.         this%cmp1%I1 ) STOP 38
-        IF ( LEN(Obj%C1)  .NE.         this%cmp1%I1 ) STOP 39
-        IF ( SIZE(Obj%A2) .NE. 2*SIZE(this%cmp1%A1) ) STOP 40
-        IF ( LEN(Obj%C2)  .NE. 2*SIZE(this%cmp1%A1) ) STOP 41
+        IF ( Obj%k1 .NE.   KIND(this%cmp1%I1) ) ERROR STOP 34
+        IF ( Obj%l1 .NE.         this%cmp1%I1 ) ERROR STOP 35
+        IF ( Obj%k2 .NE. 2*KIND(this%cmp1%I1) ) ERROR STOP 36
+        IF ( Obj%l2 .NE. 2*SIZE(this%cmp1%A1) ) ERROR STOP 37
+        IF ( SIZE(Obj%A1) .NE.         this%cmp1%I1 ) ERROR STOP 38
+        IF ( LEN(Obj%C1)  .NE.         this%cmp1%I1 ) ERROR STOP 39
+        IF ( SIZE(Obj%A2) .NE. 2*SIZE(this%cmp1%A1) ) ERROR STOP 40
+        IF ( LEN(Obj%C2)  .NE. 2*SIZE(this%cmp1%A1) ) ERROR STOP 41
 
-        IF ( Obj%cmp1%k1 .NE. 2*KIND(this%cmp1%I1) ) STOP 42
-        IF ( Obj%cmp1%l1 .NE. 2*SIZE(this%cmp1%A1) ) STOP 43
-        IF ( SIZE(Obj%cmp1%A1) .NE. 2*SIZE(this%cmp1%A1) ) STOP 44
-        IF ( LEN(Obj%cmp1%C1)  .NE. 2*SIZE(this%cmp1%A1) ) STOP 45
+        IF ( Obj%cmp1%k1 .NE. 2*KIND(this%cmp1%I1) ) ERROR STOP 42
+        IF ( Obj%cmp1%l1 .NE. 2*SIZE(this%cmp1%A1) ) ERROR STOP 43
+        IF ( SIZE(Obj%cmp1%A1) .NE. 2*SIZE(this%cmp1%A1) ) ERROR STOP 44
+        IF ( LEN(Obj%cmp1%C1)  .NE. 2*SIZE(this%cmp1%A1) ) ERROR STOP 45
       END SUBROUTINE Sub22
 
       SUBROUTINE Sub32(this)
@@ -168,19 +168,19 @@ PROGRAM SpecExpHostAssociation05
         CLASS(Child(KIND(n1%cmp2%I1),n1%cmp2%I1,2*KIND(n1%cmp2%I1),2*SIZE(n1%cmp2%A1))), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
-        IF ( Obj%k1 .NE.   KIND(this%cmp2%I1) ) STOP 46
-        IF ( Obj%l1 .NE.         this%cmp2%I1 ) STOP 47
-        IF ( Obj%k2 .NE. 2*KIND(this%cmp2%I1) ) STOP 48
-        IF ( Obj%l2 .NE. 2*SIZE(this%cmp2%A1) ) STOP 49
-        IF ( SIZE(Obj%A1) .NE.         this%cmp2%I1 ) STOP 50
-        IF ( LEN(Obj%C1)  .NE.         this%cmp2%I1 ) STOP 51
-        IF ( SIZE(Obj%A2) .NE. 2*SIZE(this%cmp2%A1) ) STOP 52
-        IF ( LEN(Obj%C2)  .NE. 2*SIZE(this%cmp2%A1) ) STOP 53
+        IF ( Obj%k1 .NE.   KIND(this%cmp2%I1) ) ERROR STOP 46
+        IF ( Obj%l1 .NE.         this%cmp2%I1 ) ERROR STOP 47
+        IF ( Obj%k2 .NE. 2*KIND(this%cmp2%I1) ) ERROR STOP 48
+        IF ( Obj%l2 .NE. 2*SIZE(this%cmp2%A1) ) ERROR STOP 49
+        IF ( SIZE(Obj%A1) .NE.         this%cmp2%I1 ) ERROR STOP 50
+        IF ( LEN(Obj%C1)  .NE.         this%cmp2%I1 ) ERROR STOP 51
+        IF ( SIZE(Obj%A2) .NE. 2*SIZE(this%cmp2%A1) ) ERROR STOP 52
+        IF ( LEN(Obj%C2)  .NE. 2*SIZE(this%cmp2%A1) ) ERROR STOP 53
 
-        IF ( Obj%cmp1%k1 .NE. 2*KIND(this%cmp2%I1) ) STOP 54
-        IF ( Obj%cmp1%l1 .NE. 2*SIZE(this%cmp2%A1) ) STOP 55
-        IF ( SIZE(Obj%cmp1%A1) .NE. 2*SIZE(this%cmp2%A1) ) STOP 56
-        IF ( LEN(Obj%cmp1%C1)  .NE. 2*SIZE(this%cmp2%A1) ) STOP 57
+        IF ( Obj%cmp1%k1 .NE. 2*KIND(this%cmp2%I1) ) ERROR STOP 54
+        IF ( Obj%cmp1%l1 .NE. 2*SIZE(this%cmp2%A1) ) ERROR STOP 55
+        IF ( SIZE(Obj%cmp1%A1) .NE. 2*SIZE(this%cmp2%A1) ) ERROR STOP 56
+        IF ( LEN(Obj%cmp1%C1)  .NE. 2*SIZE(this%cmp2%A1) ) ERROR STOP 57
       END SUBROUTINE Sub32
 
       SUBROUTINE Sub13(this)
@@ -189,28 +189,28 @@ PROGRAM SpecExpHostAssociation05
                                                                                   ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
-        IF ( Obj%k1 .NE. KIND(this%A1(1)) ) STOP 58
-        IF ( Obj%l1 .NE.       this%A1(1) ) STOP 59
-        IF ( Obj%k2 .NE. KIND(this%A1(2)) ) STOP 60
-        IF ( Obj%l2 .NE.       this%A1(2) ) STOP 61
-        IF ( Obj%k3 .NE. KIND(this%A1(3)) ) STOP 62
-        IF ( Obj%l3 .NE.       this%A1(3) ) STOP 63
-        IF ( SIZE(Obj%A1) .NE. this%A1(1) ) STOP 64
-        IF ( LEN(Obj%C1)  .NE. this%A1(1) ) STOP 65
-        IF ( SIZE(Obj%A2) .NE. this%A1(2) ) STOP 66
-        IF ( LEN(Obj%C2)  .NE. this%A1(2) ) STOP 67
-        IF ( SIZE(Obj%A3) .NE. this%A1(3) ) STOP 68
-        IF ( LEN(Obj%C3)  .NE. this%A1(3) ) STOP 69
+        IF ( Obj%k1 .NE. KIND(this%A1(1)) ) ERROR STOP 58
+        IF ( Obj%l1 .NE.       this%A1(1) ) ERROR STOP 59
+        IF ( Obj%k2 .NE. KIND(this%A1(2)) ) ERROR STOP 60
+        IF ( Obj%l2 .NE.       this%A1(2) ) ERROR STOP 61
+        IF ( Obj%k3 .NE. KIND(this%A1(3)) ) ERROR STOP 62
+        IF ( Obj%l3 .NE.       this%A1(3) ) ERROR STOP 63
+        IF ( SIZE(Obj%A1) .NE. this%A1(1) ) ERROR STOP 64
+        IF ( LEN(Obj%C1)  .NE. this%A1(1) ) ERROR STOP 65
+        IF ( SIZE(Obj%A2) .NE. this%A1(2) ) ERROR STOP 66
+        IF ( LEN(Obj%C2)  .NE. this%A1(2) ) ERROR STOP 67
+        IF ( SIZE(Obj%A3) .NE. this%A1(3) ) ERROR STOP 68
+        IF ( LEN(Obj%C3)  .NE. this%A1(3) ) ERROR STOP 69
 
-        IF ( Obj%cmp1%k1 .NE. KIND(this%A1(2)) ) STOP 70
-        IF ( Obj%cmp1%l1 .NE.       this%A1(2) ) STOP 71
-        IF ( SIZE(Obj%cmp1%A1) .NE. this%A1(2) ) STOP 72
-        IF ( LEN(Obj%cmp1%C1)  .NE. this%A1(2) ) STOP 73
+        IF ( Obj%cmp1%k1 .NE. KIND(this%A1(2)) ) ERROR STOP 70
+        IF ( Obj%cmp1%l1 .NE.       this%A1(2) ) ERROR STOP 71
+        IF ( SIZE(Obj%cmp1%A1) .NE. this%A1(2) ) ERROR STOP 72
+        IF ( LEN(Obj%cmp1%C1)  .NE. this%A1(2) ) ERROR STOP 73
 
-        IF ( Obj%cmp2%k1 .NE. KIND(this%A1(3)) ) STOP 74
-        IF ( Obj%cmp2%l1 .NE.       this%A1(3) ) STOP 75
-        IF ( SIZE(Obj%cmp2%A1) .NE. this%A1(3) ) STOP 76
-        IF ( LEN(Obj%cmp2%C1)  .NE. this%A1(3) ) STOP 77
+        IF ( Obj%cmp2%k1 .NE. KIND(this%A1(3)) ) ERROR STOP 74
+        IF ( Obj%cmp2%l1 .NE.       this%A1(3) ) ERROR STOP 75
+        IF ( SIZE(Obj%cmp2%A1) .NE. this%A1(3) ) ERROR STOP 76
+        IF ( LEN(Obj%cmp2%C1)  .NE. this%A1(3) ) ERROR STOP 77
       END SUBROUTINE Sub13
 
       SUBROUTINE Sub23(this)
@@ -219,28 +219,28 @@ PROGRAM SpecExpHostAssociation05
                                         KIND(c1%cmp1%A1(3)),c1%cmp1%A1(3))), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
-        IF ( Obj%k1 .NE. KIND(this%cmp1%A1(1)) ) STOP 78
-        IF ( Obj%l1 .NE.       this%cmp1%A1(1) ) STOP 79
-        IF ( Obj%k2 .NE. KIND(this%cmp1%A1(2)) ) STOP 80
-        IF ( Obj%l2 .NE.       this%cmp1%A1(2) ) STOP 81
-        IF ( Obj%k3 .NE. KIND(this%cmp1%A1(3)) ) STOP 82
-        IF ( Obj%l3 .NE.       this%cmp1%A1(3) ) STOP 83
-        IF ( SIZE(Obj%A1) .NE. this%cmp1%A1(1) ) STOP 84
-        IF ( LEN(Obj%C1)  .NE. this%cmp1%A1(1) ) STOP 85
-        IF ( SIZE(Obj%A2) .NE. this%cmp1%A1(2) ) STOP 86
-        IF ( LEN(Obj%C2)  .NE. this%cmp1%A1(2) ) STOP 87
-        IF ( SIZE(Obj%A3) .NE. this%cmp1%A1(3) ) STOP 88
-        IF ( LEN(Obj%C3)  .NE. this%cmp1%A1(3) ) STOP 89
+        IF ( Obj%k1 .NE. KIND(this%cmp1%A1(1)) ) ERROR STOP 78
+        IF ( Obj%l1 .NE.       this%cmp1%A1(1) ) ERROR STOP 79
+        IF ( Obj%k2 .NE. KIND(this%cmp1%A1(2)) ) ERROR STOP 80
+        IF ( Obj%l2 .NE.       this%cmp1%A1(2) ) ERROR STOP 81
+        IF ( Obj%k3 .NE. KIND(this%cmp1%A1(3)) ) ERROR STOP 82
+        IF ( Obj%l3 .NE.       this%cmp1%A1(3) ) ERROR STOP 83
+        IF ( SIZE(Obj%A1) .NE. this%cmp1%A1(1) ) ERROR STOP 84
+        IF ( LEN(Obj%C1)  .NE. this%cmp1%A1(1) ) ERROR STOP 85
+        IF ( SIZE(Obj%A2) .NE. this%cmp1%A1(2) ) ERROR STOP 86
+        IF ( LEN(Obj%C2)  .NE. this%cmp1%A1(2) ) ERROR STOP 87
+        IF ( SIZE(Obj%A3) .NE. this%cmp1%A1(3) ) ERROR STOP 88
+        IF ( LEN(Obj%C3)  .NE. this%cmp1%A1(3) ) ERROR STOP 89
 
-        IF ( Obj%cmp1%k1 .NE. KIND(this%cmp1%A1(2)) ) STOP 90
-        IF ( Obj%cmp1%l1 .NE.       this%cmp1%A1(2) ) STOP 91
-        IF ( SIZE(Obj%cmp1%A1) .NE. this%cmp1%A1(2) ) STOP 92
-        IF ( LEN(Obj%cmp1%C1)  .NE. this%cmp1%A1(2) ) STOP 93
+        IF ( Obj%cmp1%k1 .NE. KIND(this%cmp1%A1(2)) ) ERROR STOP 90
+        IF ( Obj%cmp1%l1 .NE.       this%cmp1%A1(2) ) ERROR STOP 91
+        IF ( SIZE(Obj%cmp1%A1) .NE. this%cmp1%A1(2) ) ERROR STOP 92
+        IF ( LEN(Obj%cmp1%C1)  .NE. this%cmp1%A1(2) ) ERROR STOP 93
 
-        IF ( Obj%cmp2%k1 .NE. KIND(this%cmp1%A1(3)) ) STOP 94
-        IF ( Obj%cmp2%l1 .NE.       this%cmp1%A1(3) ) STOP 95
-        IF ( SIZE(Obj%cmp2%A1) .NE. this%cmp1%A1(3) ) STOP 96
-        IF ( LEN(Obj%cmp2%C1)  .NE. this%cmp1%A1(3) ) STOP 97
+        IF ( Obj%cmp2%k1 .NE. KIND(this%cmp1%A1(3)) ) ERROR STOP 94
+        IF ( Obj%cmp2%l1 .NE.       this%cmp1%A1(3) ) ERROR STOP 95
+        IF ( SIZE(Obj%cmp2%A1) .NE. this%cmp1%A1(3) ) ERROR STOP 96
+        IF ( LEN(Obj%cmp2%C1)  .NE. this%cmp1%A1(3) ) ERROR STOP 97
       END SUBROUTINE Sub23
 
       SUBROUTINE Sub33(this)
@@ -249,28 +249,28 @@ PROGRAM SpecExpHostAssociation05
                                         KIND(n1%cmp2%A1(3)),n1%cmp2%A1(3))), ALLOCATABLE :: Obj
 
         ALLOCATE( Obj )
-        IF ( Obj%k1 .NE. KIND(this%cmp2%A1(1)) ) STOP 98
-        IF ( Obj%l1 .NE.       this%cmp2%A1(1) ) STOP 99
-        IF ( Obj%k2 .NE. KIND(this%cmp2%A1(2)) ) STOP 100
-        IF ( Obj%l2 .NE.       this%cmp2%A1(2) ) STOP 101
-        IF ( Obj%k3 .NE. KIND(this%cmp2%A1(3)) ) STOP 102
-        IF ( Obj%l3 .NE.       this%cmp2%A1(3) ) STOP 103
-        IF ( SIZE(Obj%A1) .NE. this%cmp2%A1(1) ) STOP 104
-        IF ( LEN(Obj%C1)  .NE. this%cmp2%A1(1) ) STOP 105
-        IF ( SIZE(Obj%A2) .NE. this%cmp2%A1(2) ) STOP 106
-        IF ( LEN(Obj%C2)  .NE. this%cmp2%A1(2) ) STOP 107
-        IF ( SIZE(Obj%A3) .NE. this%cmp2%A1(3) ) STOP 108
-        IF ( LEN(Obj%C3)  .NE. this%cmp2%A1(3) ) STOP 109
+        IF ( Obj%k1 .NE. KIND(this%cmp2%A1(1)) ) ERROR STOP 98
+        IF ( Obj%l1 .NE.       this%cmp2%A1(1) ) ERROR STOP 99
+        IF ( Obj%k2 .NE. KIND(this%cmp2%A1(2)) ) ERROR STOP 100
+        IF ( Obj%l2 .NE.       this%cmp2%A1(2) ) ERROR STOP 101
+        IF ( Obj%k3 .NE. KIND(this%cmp2%A1(3)) ) ERROR STOP 102
+        IF ( Obj%l3 .NE.       this%cmp2%A1(3) ) ERROR STOP 103
+        IF ( SIZE(Obj%A1) .NE. this%cmp2%A1(1) ) ERROR STOP 104
+        IF ( LEN(Obj%C1)  .NE. this%cmp2%A1(1) ) ERROR STOP 105
+        IF ( SIZE(Obj%A2) .NE. this%cmp2%A1(2) ) ERROR STOP 106
+        IF ( LEN(Obj%C2)  .NE. this%cmp2%A1(2) ) ERROR STOP 107
+        IF ( SIZE(Obj%A3) .NE. this%cmp2%A1(3) ) ERROR STOP 108
+        IF ( LEN(Obj%C3)  .NE. this%cmp2%A1(3) ) ERROR STOP 109
 
-        IF ( Obj%cmp1%k1 .NE. KIND(this%cmp2%A1(2)) ) STOP 110
-        IF ( Obj%cmp1%l1 .NE.       this%cmp2%A1(2) ) STOP 111
-        IF ( SIZE(Obj%cmp1%A1) .NE. this%cmp2%A1(2) ) STOP 112
-        IF ( LEN(Obj%cmp1%C1)  .NE. this%cmp2%A1(2) ) STOP 113
+        IF ( Obj%cmp1%k1 .NE. KIND(this%cmp2%A1(2)) ) ERROR STOP 110
+        IF ( Obj%cmp1%l1 .NE.       this%cmp2%A1(2) ) ERROR STOP 111
+        IF ( SIZE(Obj%cmp1%A1) .NE. this%cmp2%A1(2) ) ERROR STOP 112
+        IF ( LEN(Obj%cmp1%C1)  .NE. this%cmp2%A1(2) ) ERROR STOP 113
 
-        IF ( Obj%cmp2%k1 .NE. KIND(this%cmp2%A1(3)) ) STOP 114
-        IF ( Obj%cmp2%l1 .NE.       this%cmp2%A1(3) ) STOP 115
-        IF ( SIZE(Obj%cmp2%A1) .NE. this%cmp2%A1(3) ) STOP 116
-        IF ( LEN(Obj%cmp2%C1)  .NE. this%cmp2%A1(3) ) STOP 117
+        IF ( Obj%cmp2%k1 .NE. KIND(this%cmp2%A1(3)) ) ERROR STOP 114
+        IF ( Obj%cmp2%l1 .NE.       this%cmp2%A1(3) ) ERROR STOP 115
+        IF ( SIZE(Obj%cmp2%A1) .NE. this%cmp2%A1(3) ) ERROR STOP 116
+        IF ( LEN(Obj%cmp2%C1)  .NE. this%cmp2%A1(3) ) ERROR STOP 117
       END SUBROUTINE Sub33
 
       SUBROUTINE Sub14(this)
@@ -278,12 +278,12 @@ PROGRAM SpecExpHostAssociation05
         CLASS(Base(4,*)) :: this
         TYPE(Base(KIND(b1%I1),LEN(b1%C1))) :: Obj(b1%I1)
 
-        IF ( SIZE(Obj) .NE. this%I1 ) STOP 118
+        IF ( SIZE(Obj) .NE. this%I1 ) ERROR STOP 118
         DO I = 1, this%I1
-           IF ( Obj(I)%k1 .NE. KIND(this%I1) ) STOP 119
-           IF ( Obj(I)%l1 .NE.  LEN(this%C1) ) STOP 120
-           IF ( SIZE(Obj(I)%A1) .NE. LEN(this%C1) ) STOP 121
-           IF ( LEN(Obj(I)%C1)  .NE. LEN(this%C1) ) STOP 122
+           IF ( Obj(I)%k1 .NE. KIND(this%I1) ) ERROR STOP 119
+           IF ( Obj(I)%l1 .NE.  LEN(this%C1) ) ERROR STOP 120
+           IF ( SIZE(Obj(I)%A1) .NE. LEN(this%C1) ) ERROR STOP 121
+           IF ( LEN(Obj(I)%C1)  .NE. LEN(this%C1) ) ERROR STOP 122
         END DO
       END SUBROUTINE Sub14
 
@@ -292,12 +292,12 @@ PROGRAM SpecExpHostAssociation05
         CLASS(Child(4,*,4,*)) :: this
         TYPE(Base(KIND(c1%cmp1%I1),LEN(c1%cmp1%C1))) :: Obj(c1%cmp1%I1)
 
-        IF ( SIZE(Obj) .NE. this%cmp1%I1 ) STOP 123
+        IF ( SIZE(Obj) .NE. this%cmp1%I1 ) ERROR STOP 123
         DO I = 1, this%cmp1%I1
-           IF ( Obj(I)%k1 .NE. KIND(this%cmp1%I1) ) STOP 124
-           IF ( Obj(I)%l1 .NE.  LEN(this%cmp1%C1) ) STOP 125
-           IF ( SIZE(Obj(I)%A1) .NE. LEN(this%cmp1%C1) ) STOP 126
-           IF ( LEN(Obj(I)%C1)  .NE. LEN(this%cmp1%C1) ) STOP 127
+           IF ( Obj(I)%k1 .NE. KIND(this%cmp1%I1) ) ERROR STOP 124
+           IF ( Obj(I)%l1 .NE.  LEN(this%cmp1%C1) ) ERROR STOP 125
+           IF ( SIZE(Obj(I)%A1) .NE. LEN(this%cmp1%C1) ) ERROR STOP 126
+           IF ( LEN(Obj(I)%C1)  .NE. LEN(this%cmp1%C1) ) ERROR STOP 127
         END DO
       END SUBROUTINE Sub24
 

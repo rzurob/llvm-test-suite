@@ -275,26 +275,26 @@ contains
          .or. size(d2_3482%ifld) /= 3 .or. kind(d2_3482%lfld) /= 4 .or. kind(d2_3482%ifld) /= 4 .or. kind(d2_3482%rfld) /= 4 &
          .or. any(d2_3482%ifld /= [-1111111111,-2122222222,-1333333333]) .or. .not.precision_r4(d2_3482%rfld,5.9_4) &
          .or. kind(d2_3482%iarr) /= 8 .or. any(ubound(d2_3482%iarr) /= [3,2]) &
-         .or. any([d2_3482%iarr] /= [1111,2222,3333,4444,5555,6666])) stop 4
+         .or. any([d2_3482%iarr] /= [1111,2222,3333,4444,5555,6666])) error stop 4
 
     if (d2_3482%der%l /= 2 .or. d2_3482%der%k /= 8 .or. len(d2_3482%der%ch) /= 2 &
          .or. d2_3482%der%ch /= 'xz' .or. .not.d2_3482%der%lfld .or. size(d2_3482%der%ifld) /= 2 &
          .or. kind(d2_3482%der%lfld) /= 8 .or. kind(d2_3482%der%ifld) /= 8 .or. kind(d2_3482%der%rfld) /= 8 &
          .or. any(d2_3482%der%ifld /= [76543211234567_8,-123456787654321_8]) &
-         .or. .not.precision_r8(d2_3482%der%rfld,11235.81321D34)) stop 5
+         .or. .not.precision_r8(d2_3482%der%rfld,11235.81321D34)) error stop 5
 
     if (d2_5841%l /= 5 .or. d2_5841%k /= 8 .or. d2_5841%k2 /= 4 .or. d2_5841%l2 /= 1 &
          .or. len(d2_5841%ch) /= 5 .or. d2_5841%ch /= 'defij' .or. .not.d2_5841%lfld &
          .or. size(d2_5841%ifld) /= 5 .or. kind(d2_5841%lfld) /= 8 .or. kind(d2_5841%ifld) /= 8 .or. kind(d2_5841%rfld) /= 8 &
          .or. any(d2_5841%ifld /= [(-1111111111111_8*i,i=1,5)]) .or. .not.precision_r8(d2_5841%rfld,9.87654321D-12) &
          .or. kind(d2_5841%iarr) /= 4 .or. any(ubound(d2_5841%iarr) /= [5,1]) &
-         .or. any([d2_5841%iarr] /= [1111,2222,3333,4444,5555])) stop 14
+         .or. any([d2_5841%iarr] /= [1111,2222,3333,4444,5555])) error stop 14
 
     if (d2_5841%der%l /= 1 .or. d2_5841%der%k /= 4 .or. len(d2_5841%der%ch) /= 1 &
          .or. d2_5841%der%ch /= 'y' .or. .not.d2_5841%der%lfld .or. size(d2_5841%der%ifld) /= 1 &
          .or. kind(d2_5841%der%lfld) /= 4 .or. kind(d2_5841%der%ifld) /= 4 .or. kind(d2_5841%der%rfld) /= 4 &
          .or. any(d2_5841%der%ifld /= [-12345678_4]) &
-         .or. .not.precision_r4(d2_5841%der%rfld,9.87654E-12)) stop 15
+         .or. .not.precision_r4(d2_5841%der%rfld,9.87654E-12)) error stop 15
 
   end subroutine checkValues
 

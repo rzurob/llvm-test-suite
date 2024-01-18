@@ -39,9 +39,9 @@ end module
 
         b2%p(size(b2p%p):, ent(b2p):)  => tar(::2,::2)
 
-        if ( .not. associated(b2%p, tar(::2,::2))) stop 10
-        if ( any ( lbound(b2%p) .ne. (/20,20/) )) stop 11
-        if ( any ( ubound(b2%p) .ne. (/21,22 /) )) stop 12
+        if ( .not. associated(b2%p, tar(::2,::2))) error stop 10
+        if ( any ( lbound(b2%p) .ne. (/20,20/) )) error stop 11
+        if ( any ( ubound(b2%p) .ne. (/21,22 /) )) error stop 12
         print *, b2%p
     end program
 

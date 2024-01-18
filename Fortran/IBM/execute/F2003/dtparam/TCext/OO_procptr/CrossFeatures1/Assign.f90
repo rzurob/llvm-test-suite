@@ -62,15 +62,15 @@
   I =1
   V(ProcPtr(I)) = DT(20,4)(I, ProcPtr)
 
-  IF (I .NE. 2 )                             STOP 10
-  IF (V(1)%Id .NE. 1 )                       STOP 11
-  IF ( .NOT. ASSOCIATED(V(1)%ProcPtr, Fun) ) STOP 12
+  IF (I .NE. 2 )                             ERROR STOP 10
+  IF (V(1)%Id .NE. 1 )                       ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(V(1)%ProcPtr, Fun) ) ERROR STOP 12
 
   I = 1
   V(I) = DT(20,4)(ProcPtr(I), ProcPtr)
-  IF (I .NE. 2 )                             STOP 20
-  IF (V(2)%Id .NE. 1 )                       STOP 21
-  IF ( .NOT. ASSOCIATED(V(2)%ProcPtr, Fun) ) STOP 22
+  IF (I .NE. 2 )                             ERROR STOP 20
+  IF (V(2)%Id .NE. 1 )                       ERROR STOP 21
+  IF ( .NOT. ASSOCIATED(V(2)%ProcPtr, Fun) ) ERROR STOP 22
 
   END
 

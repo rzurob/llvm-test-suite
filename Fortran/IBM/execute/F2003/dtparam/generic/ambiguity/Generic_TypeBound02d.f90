@@ -67,7 +67,7 @@
       CLASS(Base(4,:)), ALLOCATABLE :: poly
 
       ALLOCATE (poly, source = Obj)
-      IF ( .NOT. ALLOCATED(poly)) STOP 100
+      IF ( .NOT. ALLOCATED(poly)) ERROR STOP 100
 
       poly%tag = 'sub1'
 
@@ -79,7 +79,7 @@
       CLASS(Base(4,:)), ALLOCATABLE :: poly
 
       ALLOCATE (poly, source = Obj)
-      IF ( .NOT. ALLOCATED(poly)) STOP 101
+      IF ( .NOT. ALLOCATED(poly)) ERROR STOP 101
 
       poly%tag = 'sub2'
 
@@ -100,67 +100,67 @@
       CLASS(Base(4,:)), POINTER :: pntr
 
       call base1%SUB(poly1)                ! 2 arguments call sub1
-      IF (poly1%tag .NE. 'sub1') STOP 10
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 10
       DEALLOCATE(poly1)
 
       call child1%SUB(poly1)               ! 2 arguments call sub1
-      IF (poly1%tag .NE. 'sub1') STOP 11
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 11
       DEALLOCATE(poly1)
 
       call tgt1%SUB(poly1)                 ! 2 arguments call sub1
-      IF (poly1%tag .NE. 'sub1') STOP 12
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 12
       DEALLOCATE(poly1)
 
       call dtv%SUB(poly1)                  ! 2 arguments call sub1
-      IF (poly1%tag .NE. 'sub1') STOP 13
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 13
       DEALLOCATE(poly1)
 
       pntr => tgt1
       call pntr%SUB(poly1)                 ! 2 arguments call sub1
-      IF (poly1%tag .NE. 'sub1') STOP 14
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 14
       DEALLOCATE(poly1)
 
       call tgt1%SUB(pntr,poly1)            ! 3 arguments call sub2
-      IF (poly1%tag .NE. 'sub2') STOP 15
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 15
       DEALLOCATE(poly1)
 
       call tgt1%SUB(tgt1,poly1)            ! 3 arguments call sub2
-      IF (poly1%tag .NE. 'sub2') STOP 16
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 16
       DEALLOCATE(poly1)
 
       call tgt1%SUB(dtv,poly1)             ! 3 arguments call sub2
-      IF (poly1%tag .NE. 'sub2') STOP 17
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 17
       DEALLOCATE(poly1)
 
       call dtv%SUB(tgt1,poly1)             ! 3 arguments call sub2
-      IF (poly1%tag .NE. 'sub2') STOP 18
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 18
       DEALLOCATE(poly1)
 
       call dtv%SUB(dtv,poly1)              ! 3 arguments call sub2
-      IF (poly1%tag .NE. 'sub2') STOP 19
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 19
 
       call tgt1%SUB(poly1,dtv%cmp)         ! 3 arguments call sub2
-      IF (dtv%cmp%tag .NE. 'sub2') STOP 20
+      IF (dtv%cmp%tag .NE. 'sub2') ERROR STOP 20
       DEALLOCATE(dtv%cmp)
 
       call tgt1%SUB(tgt1,dtv%cmp)          ! 3 arguments call sub2
-      IF (dtv%cmp%tag .NE. 'sub2') STOP 21
+      IF (dtv%cmp%tag .NE. 'sub2') ERROR STOP 21
       DEALLOCATE(dtv%cmp)
 
       call tgt1%SUB(pntr,dtv%cmp)          ! 3 arguments call sub2
-      IF (dtv%cmp%tag .NE. 'sub2') STOP 22
+      IF (dtv%cmp%tag .NE. 'sub2') ERROR STOP 22
       DEALLOCATE(dtv%cmp)
 
       call tgt1%SUB(dtv,dtv%cmp)           ! 3 arguments call sub2
-      IF (dtv%cmp%tag .NE. 'sub2') STOP 23
+      IF (dtv%cmp%tag .NE. 'sub2') ERROR STOP 23
       DEALLOCATE(poly1)
 
       call dtv%cmp%SUB(poly1)              ! 2 arguments call sub1
-      IF (poly1%tag .NE. 'sub1') STOP 24
+      IF (poly1%tag .NE. 'sub1') ERROR STOP 24
       DEALLOCATE(poly1)
 
       call tgt1%SUB(dtv%cmp,poly1)         ! 3 arguments call sub2
-      IF (poly1%tag .NE. 'sub2') STOP 25
+      IF (poly1%tag .NE. 'sub2') ERROR STOP 25
       DEALLOCATE(poly1)
       DEALLOCATE(dtv%cmp)
 

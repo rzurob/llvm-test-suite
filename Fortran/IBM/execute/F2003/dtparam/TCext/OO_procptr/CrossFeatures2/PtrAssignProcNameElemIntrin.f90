@@ -62,15 +62,15 @@
 
   Ptr1 => IABS
   B1 = Ptr1 (-3)
-  IF ( ANY(B1 .NE. 3) ) STOP 11
+  IF ( ANY(B1 .NE. 3) ) ERROR STOP 11
 
   Ptr2 => ABS
   B2 = Ptr2 (-3.)
-  IF ( ANY(B2 .NE. 3.) ) STOP 12
+  IF ( ANY(B2 .NE. 3.) ) ERROR STOP 12
 
   Ptr3 => CABS
   B2 = Ptr3 ((-3.,-4.))
-  IF ( ANY(B2 .NE. 5.) ) STOP 13
+  IF ( ANY(B2 .NE. 5.) ) ERROR STOP 13
 
   V%Ptr => ABS
 
@@ -87,13 +87,13 @@
   REAL    :: A2(100,100)
 
     A1 = Fun (-3)
-    IF ( ANY(A1 .NE. 3) ) STOP 21
+    IF ( ANY(A1 .NE. 3) ) ERROR STOP 21
 
     A2 = Ptr1 (-3.)
-    IF ( ANY(A2 .NE. 3.) ) STOP 31
+    IF ( ANY(A2 .NE. 3.) ) ERROR STOP 31
 
     A2 = Ptr2 ((-3., -4.))
-    IF ( ANY(A2 .NE. 5.) ) STOP 31
+    IF ( ANY(A2 .NE. 5.) ) ERROR STOP 31
 
   END SUBROUTINE
 

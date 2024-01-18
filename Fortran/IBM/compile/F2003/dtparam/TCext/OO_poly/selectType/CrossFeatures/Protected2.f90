@@ -73,7 +73,7 @@
     STOP 40
   END SELECT
 
-  IF (V%C1 .NE. "1" ) STOP 40
+  IF (V%C1 .NE. "1" ) ERROR STOP 40
 
   END
 

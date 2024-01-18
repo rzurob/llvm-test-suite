@@ -38,8 +38,8 @@
     CLASS DEFAULT
       STOP 20
     TYPE is (CHARACTER(*))
-      IF ( LEN(As) .NE. 0 ) STOP 21
-      IF ( As .NE. "" ) STOP 22
+      IF ( LEN(As) .NE. 0 ) ERROR STOP 21
+      IF ( As .NE. "" ) ERROR STOP 22
     TYPE is (INTEGER(1))
       STOP 23
     TYPE is (REAL)
@@ -58,7 +58,7 @@
     TYPE IS (INTEGER(4))
       STOP 34
     TYPE IS (INTEGER(8))
-      IF ( As .NE. 1_8 ) STOP 35
+      IF ( As .NE. 1_8 ) ERROR STOP 35
   END SELECT
 
 

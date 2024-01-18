@@ -56,13 +56,13 @@
   COMPLEX(16), PARAMETER  :: TZ6(4,4) = COS(XZ6)
 
 
-  IF (ANY(ABS(TR4 - R4 )   .GE.  1.0e-5  ) )   STOP 11
-  IF (ANY(ABS(TR8 - R8 )   .GE.  1.0e-5  ) )   STOP 12
-  IF (ANY(ABS(TR6 - R6 )   .GE.  1.0e-5  ) )   STOP 13
+  IF (ANY(ABS(TR4 - R4 )   .GE.  1.0e-5  ) )   ERROR STOP 11
+  IF (ANY(ABS(TR8 - R8 )   .GE.  1.0e-5  ) )   ERROR STOP 12
+  IF (ANY(ABS(TR6 - R6 )   .GE.  1.0e-5  ) )   ERROR STOP 13
 
-  IF (ANY(ABS(TZ4 - Z4 )   .GE.  1.0e-5  ) )   STOP 21
-  IF (ANY(ABS(TZ8 - Z8 )   .GE.  1.0e-5  ) )   STOP 22
-  IF (ANY(ABS(TZ6 - Z6 )   .GE.  1.0e-5  ) )   STOP 23
+  IF (ANY(ABS(TZ4 - Z4 )   .GE.  1.0e-5  ) )   ERROR STOP 21
+  IF (ANY(ABS(TZ8 - Z8 )   .GE.  1.0e-5  ) )   ERROR STOP 22
+  IF (ANY(ABS(TZ6 - Z6 )   .GE.  1.0e-5  ) )   ERROR STOP 23
 
   END
 

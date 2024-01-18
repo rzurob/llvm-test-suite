@@ -41,10 +41,10 @@ module m
 
             call move_alloc(ch2, func)
 
-            if  ( allocated(ch2) ) stop 11
-	    if ( .not. allocated(func) ) stop 13
+            if  ( allocated(ch2) ) error stop 11
+	    if ( .not. allocated(func) ) error stop 13
 
-            if ( .not. associated(arg%p, func) ) stop 21
+            if ( .not. associated(arg%p, func) ) error stop 21
       end function
 
 end module
@@ -62,7 +62,7 @@ end module
                 type is (character(*))
                     select type ( y => aA%p)
                         type is (character(*))
-                            if ( y /= 'helloworld I' ) stop 21
+                            if ( y /= 'helloworld I' ) error stop 21
                         class default
                             stop 31
                     end select

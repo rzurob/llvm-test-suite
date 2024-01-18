@@ -18,9 +18,9 @@
 
     select type (x)
         type is (character(*))
-            if (len(x) /= 8) stop 5
+            if (len(x) /= 8) error stop 5
 
-            if (x%len /= 8) stop 10
+            if (x%len /= 8) error stop 10
 
     end select
     end

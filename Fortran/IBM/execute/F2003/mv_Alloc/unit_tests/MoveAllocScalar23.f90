@@ -34,11 +34,11 @@ class(*), pointer :: p
 allocate(dt :: a)
 p => a
 allocate(dt :: b)
-if (finalcount /= 0) stop 1
+if (finalcount /= 0) error stop 1
 call move_alloc(a,b)
-if (finalcount /= 1) stop 2
-if (allocated(a)) stop 3
-if (.not.allocated(b)) stop 4
-if (.not.associated(p,b)) stop 5
-if (finalcount /= 1) stop 6
+if (finalcount /= 1) error stop 2
+if (allocated(a)) error stop 3
+if (.not.allocated(b)) error stop 4
+if (.not.associated(p,b)) error stop 5
+if (finalcount /= 1) error stop 6
 end

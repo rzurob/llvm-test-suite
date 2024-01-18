@@ -23,8 +23,8 @@ contains
     allocate(dt(2) :: b)
     p => b
     call move_alloc(b,a)
-    if (allocated(b)) stop 1
-    if (.not.allocated(a)) stop 2
-    if (.not.associated(p,a)) stop 3
+    if (allocated(b)) error stop 1
+    if (.not.allocated(a)) error stop 2
+    if (.not.associated(p,a)) error stop 3
   end subroutine
 end

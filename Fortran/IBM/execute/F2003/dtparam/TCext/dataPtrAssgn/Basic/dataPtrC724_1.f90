@@ -47,38 +47,38 @@
   ! Shall not query the characheristics of function result ??
 
   Ptr(LBOUND(L,1):) => F1(L,  LBOUND(L,1))
-  IF (ANY(LBOUND(Ptr) .NE. (/0    /) )) STOP 11
-  IF (ANY(UBOUND(Ptr) .NE. (/1023 /) )) STOP 12
+  IF (ANY(LBOUND(Ptr) .NE. (/0    /) )) ERROR STOP 11
+  IF (ANY(UBOUND(Ptr) .NE. (/1023 /) )) ERROR STOP 12
   SELECT TYPE (Ptr)
   TYPE IS (LOGICAL(1))
-     IF (ANY(Ptr .NEQV. .TRUE. ))       STOP 13
+     IF (ANY(Ptr .NEQV. .TRUE. ))       ERROR STOP 13
   CLASS DEFAULT
     STOP 14
   END SELECT
 
   !Ptr(LBOUND(F2(C,  LBOUND(C,1)),1):UBOUND(F2(C, LBOUND(C,1)),1)) => F2(C, LBOUND(C,1))
   Ptr(LBOUND(C,1):UBOUND(C,1)) => F2(C, LBOUND(C,1))
-  IF (ANY(LBOUND(Ptr) .NE. (/-1   /) )) STOP 21
-  IF (ANY(UBOUND(Ptr) .NE. (/1023 /) )) STOP 22
+  IF (ANY(LBOUND(Ptr) .NE. (/-1   /) )) ERROR STOP 21
+  IF (ANY(UBOUND(Ptr) .NE. (/1023 /) )) ERROR STOP 22
   SELECT TYPE (Ptr)
   TYPE IS (COMPLEX)
-     IF (ANY(Ptr .NE. (1.0, -1.0) ))    STOP 23
+     IF (ANY(Ptr .NE. (1.0, -1.0) ))    ERROR STOP 23
   CLASS DEFAULT
     STOP 24
   END SELECT
-  IF ( .NOT. ASSOCIATED(Ptr, C))        STOP 25
+  IF ( .NOT. ASSOCIATED(Ptr, C))        ERROR STOP 25
 
   ALLOCATE(PtrDT(1:513), SOURCE=DT(4)(-1))
   Ptr(LBOUND(F3(PtrDT), 1):UBOUND(F3(PtrDT), 1)) => F3(PtrDT)
-  IF (ANY(LBOUND(Ptr) .NE. (/1    /) )) STOP 31
-  IF (ANY(UBOUND(Ptr) .NE. (/513  /) )) STOP 32
+  IF (ANY(LBOUND(Ptr) .NE. (/1    /) )) ERROR STOP 31
+  IF (ANY(UBOUND(Ptr) .NE. (/513  /) )) ERROR STOP 32
   SELECT TYPE (Ptr)
   TYPE IS (DT(4))
-     IF (ANY(Ptr%ID .NE. -1 ))          STOP 33
+     IF (ANY(Ptr%ID .NE. -1 ))          ERROR STOP 33
   CLASS DEFAULT
     STOP 34
   END SELECT
-  IF ( .NOT. ASSOCIATED(Ptr, PtrDT))    STOP 35
+  IF ( .NOT. ASSOCIATED(Ptr, PtrDT))    ERROR STOP 35
 
   CONTAINS
 

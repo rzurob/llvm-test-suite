@@ -21,6 +21,6 @@
     contains
 
     subroutine t (i)
-        if (i /= 1) stop 10
+        if (i /= 1) error stop 10
     end subroutine
     end

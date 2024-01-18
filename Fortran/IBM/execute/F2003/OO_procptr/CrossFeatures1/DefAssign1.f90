@@ -101,26 +101,26 @@
 
   B1 = Base(Fun)
   DO I=1, 511
-    IF (.NOT. ASSOCIATED(B1(I)%ProcPtr, Fun)) STOP 11
+    IF (.NOT. ASSOCIATED(B1(I)%ProcPtr, Fun)) ERROR STOP 11
   END DO
 
   D1 = Base(Fun)
   DO I=1, 511
-    IF (.NOT. ASSOCIATED(D1(I)%BComp%ProcPtr, Fun)) STOP 22
-    IF (D1(I)%Id .NE. -1) STOP 23
+    IF (.NOT. ASSOCIATED(D1(I)%BComp%ProcPtr, Fun)) ERROR STOP 22
+    IF (D1(I)%Id .NE. -1) ERROR STOP 23
   END DO
 
   BTar =  Base(RetPtr(Fun))
   B2 = DT(-1, BTAR)
   DO I=1, 511
-    IF (.NOT. ASSOCIATED(B1(I)%ProcPtr, Fun)) STOP 32
+    IF (.NOT. ASSOCIATED(B1(I)%ProcPtr, Fun)) ERROR STOP 32
   END DO
 
   BTar =  Base(RetPtr(Fun))
   D2 = DT(-3, BTar)
   DO I=1, 511
-    IF (.NOT. ASSOCIATED(D2(I)%BComp%ProcPtr, Fun)) STOP 42
-    IF (D2(I)%Id .NE. 3) STOP 43
+    IF (.NOT. ASSOCIATED(D2(I)%BComp%ProcPtr, Fun)) ERROR STOP 42
+    IF (D2(I)%Id .NE. 3) ERROR STOP 43
   END DO
 
 

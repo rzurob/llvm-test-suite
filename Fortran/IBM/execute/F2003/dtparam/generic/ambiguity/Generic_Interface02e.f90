@@ -141,26 +141,26 @@
       CLASS(Base(4,:)), ALLOCATABLE :: base2(:,:)
 
       call sub(tgt0)
-      IF ( tgt0%base_name(1:4) .NE. 'sub0' ) STOP 10
+      IF ( tgt0%base_name(1:4) .NE. 'sub0' ) ERROR STOP 10
 
       call sub(tgt1)
-      IF ( tgt1(1)%base_name(1:4) .NE. 'sub1' ) STOP 11
+      IF ( tgt1(1)%base_name(1:4) .NE. 'sub1' ) ERROR STOP 11
 
       call sub(tgt2)
-      IF ( tgt2(1,1)%base_name(1:4) .NE. 'sub2' ) STOP 12
+      IF ( tgt2(1,1)%base_name(1:4) .NE. 'sub2' ) ERROR STOP 12
 
       ALLOCATE(base0, source=tgt0)
       ALLOCATE(base1(10), source=tgt0)
       ALLOCATE(base2(3,3), source=tgt0)
 
       call sub(base0)
-      IF ( base0%base_name(1:4) .NE. 'sub0' ) STOP 10
+      IF ( base0%base_name(1:4) .NE. 'sub0' ) ERROR STOP 10
 
       call sub(base1)
-      IF ( base1(1)%base_name(1:4) .NE. 'sub1' ) STOP 11
+      IF ( base1(1)%base_name(1:4) .NE. 'sub1' ) ERROR STOP 11
 
       call sub(base2)
-      IF ( base2(1,1)%base_name(1:4) .NE. 'sub2' ) STOP 12
+      IF ( base2(1,1)%base_name(1:4) .NE. 'sub2' ) ERROR STOP 12
 
       DEALLOCATE(base0,base1,base2)
 
@@ -169,12 +169,12 @@
       ALLOCATE(Base(4,10) :: base2(100,100))
 
       call sub(base0)
-      IF ( base0%base_name(1:4) .NE. 'sub0' ) STOP 10
+      IF ( base0%base_name(1:4) .NE. 'sub0' ) ERROR STOP 10
 
       call sub(base1)
-      IF ( base1(1)%base_name(1:4) .NE. 'sub1' ) STOP 11
+      IF ( base1(1)%base_name(1:4) .NE. 'sub1' ) ERROR STOP 11
 
       call sub(base2)
-      IF ( base2(100,100)%base_name(1:4) .NE. 'sub2' ) STOP 12
+      IF ( base2(100,100)%base_name(1:4) .NE. 'sub2' ) ERROR STOP 12
 
       END PROGRAM Generic_Interface02e

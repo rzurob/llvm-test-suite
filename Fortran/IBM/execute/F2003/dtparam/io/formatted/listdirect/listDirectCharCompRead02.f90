@@ -78,23 +78,23 @@ program listDirectCharCompRead02
   ! verify result
   select type(ptr)
      type is(child(*,*))
-         if(ptr(-1)%c1(3) /= "ABC")         stop 12
-         if(ptr(-1)%c1(4) /= "DEF")         stop 13
-         if(ptr(-1)%c2(3) /= " 123\,4")     stop 14
-         if(ptr(-1)%c2(4) /= "")            stop 15
-         if(ptr(-1)%c2(5) /= "/")           stop 16
+         if(ptr(-1)%c1(3) /= "ABC")         error stop 12
+         if(ptr(-1)%c1(4) /= "DEF")         error stop 13
+         if(ptr(-1)%c2(3) /= " 123\,4")     error stop 14
+         if(ptr(-1)%c2(4) /= "")            error stop 15
+         if(ptr(-1)%c2(5) /= "/")           error stop 16
 
-         if(ptr(0)%c1(3) /= "\'")           stop 17
-         if(ptr(0)%c1(4) /= ",;")           stop 18
-         if(ptr(0)%c2(3) /= "\"")           stop 19
-         if(ptr(0)%c2(4) /= "\'")           stop 20
-         if(ptr(0)%c2(5) /= "what")         stop 21
+         if(ptr(0)%c1(3) /= "\'")           error stop 17
+         if(ptr(0)%c1(4) /= ",;")           error stop 18
+         if(ptr(0)%c2(3) /= "\"")           error stop 19
+         if(ptr(0)%c2(4) /= "\'")           error stop 20
+         if(ptr(0)%c2(5) /= "what")         error stop 21
 
-         if(ptr(1)%c1(3) /= "a,")           stop 22
-         if(ptr(1)%c1(4) /= "cde")          stop 23
-         if(ptr(1)%c2(3) /= "1\"2")         stop 24
-         if(ptr(1)%c2(4) /= "3\'4")         stop 25
-         if(ptr(1)%c2(5) /= " , ; /")       stop 26
+         if(ptr(1)%c1(3) /= "a,")           error stop 22
+         if(ptr(1)%c1(4) /= "cde")          error stop 23
+         if(ptr(1)%c2(3) /= "1\"2")         error stop 24
+         if(ptr(1)%c2(4) /= "3\'4")         error stop 25
+         if(ptr(1)%c2(5) /= " , ; /")       error stop 26
      class default
         stop 27
   end select

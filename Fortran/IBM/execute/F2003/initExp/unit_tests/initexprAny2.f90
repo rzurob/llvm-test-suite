@@ -22,18 +22,18 @@ logical :: eT=any(a(2:3) .eq. b(2:3))
 logical :: fF(4)=any(x .lt. y, dim=2)
 logical :: fT(4)=any(x .le. y, dim=1)
 
-if (cT .neqv. any(a .le. b)) stop 1
-if (cF .neqv. any(b .le. a)) stop 2
+if (cT .neqv. any(a .le. b)) error stop 1
+if (cF .neqv. any(b .le. a)) error stop 2
 
-if (dF .neqv. any(x .lt. y)) stop 3
-if (dT .neqv. any(x .le. y)) stop 4
+if (dF .neqv. any(x .lt. y)) error stop 3
+if (dT .neqv. any(x .le. y)) error stop 4
 
-if (eT .neqv. any(a(2:3) .eq. b(2:3))) stop 5
+if (eT .neqv. any(a(2:3) .eq. b(2:3))) error stop 5
 
 if (.not. all(fF .eqv. any(x .lt. y, dim=2))) then
   print *, dF
   print *, any(x .lt. y, dim=2)
   stop 6
 endif
-if (.not. all(fT .eqv. any(x .le. y, dim=1))) stop 7
+if (.not. all(fT .eqv. any(x .le. y, dim=1))) error stop 7
 end

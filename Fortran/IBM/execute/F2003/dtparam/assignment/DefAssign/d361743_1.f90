@@ -25,7 +25,7 @@ module m
       subroutine sub(dt)
          class(base(3)),intent(in)  :: dt
 
-         if(any(dt%c1 /= "xlf"))   stop 10
+         if(any(dt%c1 /= "xlf"))   error stop 10
       end subroutine
 end module
 
@@ -39,6 +39,6 @@ program d361743_1
 
      call sub(obj(1)%base)
 
-     if(any(obj(1)%i1 /= -10))      stop 11
+     if(any(obj(1)%i1 /= -10))      error stop 11
 
 end program

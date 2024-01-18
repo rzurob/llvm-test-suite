@@ -59,25 +59,25 @@
   TYPE(DT(4,       L=Alloc%L)) :: T3(1)!  =  DT(4, L=Alloc%L)()
 
 
-  IF ( T2%K               .NE.   4          ) STOP 21
-  IF ( T2%L               .NE.   1          ) STOP 22
-  IF ( T2%KIND            .NE.   4          ) STOP 23
-  IF ( T2%LEN             .NE.   4          ) STOP 24
-  IF ( ANY( T2%I          .NE.   4        ) ) STOP 25
-  IF ( ANY( T2%R          .NE.   4        ) ) STOP 26
-  IF ( ANY( T2%C          .NE.   CHAR(4)  ) ) STOP 27
-  IF ( T2%DT0%K           .NE.   4          ) STOP 28
-  IF ( T2%DT0%L           .NE.   1          ) STOP 29
+  IF ( T2%K               .NE.   4          ) ERROR STOP 21
+  IF ( T2%L               .NE.   1          ) ERROR STOP 22
+  IF ( T2%KIND            .NE.   4          ) ERROR STOP 23
+  IF ( T2%LEN             .NE.   4          ) ERROR STOP 24
+  IF ( ANY( T2%I          .NE.   4        ) ) ERROR STOP 25
+  IF ( ANY( T2%R          .NE.   4        ) ) ERROR STOP 26
+  IF ( ANY( T2%C          .NE.   CHAR(4)  ) ) ERROR STOP 27
+  IF ( T2%DT0%K           .NE.   4          ) ERROR STOP 28
+  IF ( T2%DT0%L           .NE.   1          ) ERROR STOP 29
 
-  IF ( T3%K               .NE.   4          ) STOP 31
-  IF ( T3%L               .NE.   2          ) STOP 32
-  IF ( T3%KIND            .NE.   4          ) STOP 33
-  IF ( T3%LEN             .NE.   4          ) STOP 34
-  IF ( ANY( T3%I          .NE.   4        ) ) STOP 35
-  IF ( ANY( T3%R          .NE.   4        ) ) STOP 36
-  IF ( ANY( T3%C          .NE.   CHAR(4)  ) ) STOP 37
-  IF ( T3%T%K             .NE.   4          ) STOP 38
-  IF ( T3%T%L             .NE.   4          ) STOP 39
+  IF ( T3%K               .NE.   4          ) ERROR STOP 31
+  IF ( T3%L               .NE.   2          ) ERROR STOP 32
+  IF ( T3%KIND            .NE.   4          ) ERROR STOP 33
+  IF ( T3%LEN             .NE.   4          ) ERROR STOP 34
+  IF ( ANY( T3%I          .NE.   4        ) ) ERROR STOP 35
+  IF ( ANY( T3%R          .NE.   4        ) ) ERROR STOP 36
+  IF ( ANY( T3%C          .NE.   CHAR(4)  ) ) ERROR STOP 37
+  IF ( T3%T%K             .NE.   4          ) ERROR STOP 38
+  IF ( T3%T%L             .NE.   4          ) ERROR STOP 39
 
   END SUBROUTINE
 

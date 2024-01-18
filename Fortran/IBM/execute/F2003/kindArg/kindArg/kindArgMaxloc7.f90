@@ -57,155 +57,155 @@
 
   II1 = 0
   II1(:,2,1,2,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II1, MASK=MM, KIND=II1%KIND )  .NE. (/1,2,1,2,1,2,1,2,1,2/))) STOP 10
-  IF (KIND(MAXLOC(ARRAY=II1, MASK=MM, KIND=II1%KIND )) .NE. 1)                        STOP 11
+  IF (ANY( MAXLOC(ARRAY=II1, MASK=MM, KIND=II1%KIND )  .NE. (/1,2,1,2,1,2,1,2,1,2/))) ERROR STOP 10
+  IF (KIND(MAXLOC(ARRAY=II1, MASK=MM, KIND=II1%KIND )) .NE. 1)                        ERROR STOP 11
 
   II2 = 0
   II2(1,:,1,2,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II2, MASK=MM, KIND=II2%KIND )  .NE. (/1,1,1,2,1,2,1,2,1,2/))) STOP 12
-  IF (KIND(MAXLOC(ARRAY=II2, MASK=MM, KIND=II2%KIND )) .NE. 2)                        STOP 13
+  IF (ANY( MAXLOC(ARRAY=II2, MASK=MM, KIND=II2%KIND )  .NE. (/1,1,1,2,1,2,1,2,1,2/))) ERROR STOP 12
+  IF (KIND(MAXLOC(ARRAY=II2, MASK=MM, KIND=II2%KIND )) .NE. 2)                        ERROR STOP 13
 
   II4 = 0
   II4(1,2,:,2,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II4, MASK=MM, KIND=II4%KIND )  .NE. (/1,2,1,2,1,2,1,2,1,2/))) STOP 14
-  IF (KIND(MAXLOC(ARRAY=II4, MASK=MM, KIND=II4%KIND )) .NE. 4)                        STOP 15
+  IF (ANY( MAXLOC(ARRAY=II4, MASK=MM, KIND=II4%KIND )  .NE. (/1,2,1,2,1,2,1,2,1,2/))) ERROR STOP 14
+  IF (KIND(MAXLOC(ARRAY=II4, MASK=MM, KIND=II4%KIND )) .NE. 4)                        ERROR STOP 15
 
   II8 = 0
   II8(1,2,1,:,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II8, MASK=MM, KIND=II8%KIND )  .NE. (/1,2,1,1,1,2,1,2,1,2/))) STOP 16
-  IF (KIND(MAXLOC(ARRAY=II8, MASK=MM, KIND=II8%KIND )) .NE. 8)                        STOP 17
+  IF (ANY( MAXLOC(ARRAY=II8, MASK=MM, KIND=II8%KIND )  .NE. (/1,2,1,1,1,2,1,2,1,2/))) ERROR STOP 16
+  IF (KIND(MAXLOC(ARRAY=II8, MASK=MM, KIND=II8%KIND )) .NE. 8)                        ERROR STOP 17
 
   II8 = 0
   II8(1,2,1,2,:,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II8 )                 .NE. (/1,2,1,2,1,2,1,2,1,2/))) STOP 18
-  IF (KIND(MAXLOC(ARRAY=II8 ))                .NE. 4)                        STOP 19
+  IF (ANY( MAXLOC(ARRAY=II8 )                 .NE. (/1,2,1,2,1,2,1,2,1,2/))) ERROR STOP 18
+  IF (KIND(MAXLOC(ARRAY=II8 ))                .NE. 4)                        ERROR STOP 19
 
   RR4 = 0
   RR4(2,1,2,1,2,:,2,1,2,1) = 1
-  IF (ANY( MAXLOC(ARRAY=RR4(:,:,:,:,:,:,:,:,:,:), MASK=MM, KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )  .NE. (/2,1,2,1,2,1,2,1,2,1/))) STOP 21
-  IF (KIND(MAXLOC(ARRAY=RR4(:,:,:,:,:,:,:,:,:,:), MASK=MM, KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 4)                        STOP 22
+  IF (ANY( MAXLOC(ARRAY=RR4(:,:,:,:,:,:,:,:,:,:), MASK=MM, KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )  .NE. (/2,1,2,1,2,1,2,1,2,1/))) ERROR STOP 21
+  IF (KIND(MAXLOC(ARRAY=RR4(:,:,:,:,:,:,:,:,:,:), MASK=MM, KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 4)                        ERROR STOP 22
 
   RR8 = 0
   RR8(2,1,2,1,2,1,:,1,2,1) = 1
-  IF (ANY( MAXLOC(ARRAY=RR8(:,:,:,:,:,:,:,:,:,:), MASK=MM, KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )  .NE. (/2,1,2,1,2,1,1,1,2,1/))) STOP 23
-  IF (KIND(MAXLOC(ARRAY=RR8(:,:,:,:,:,:,:,:,:,:), MASK=MM, KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 8)                        STOP 24
+  IF (ANY( MAXLOC(ARRAY=RR8(:,:,:,:,:,:,:,:,:,:), MASK=MM, KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )  .NE. (/2,1,2,1,2,1,1,1,2,1/))) ERROR STOP 23
+  IF (KIND(MAXLOC(ARRAY=RR8(:,:,:,:,:,:,:,:,:,:), MASK=MM, KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 8)                        ERROR STOP 24
 
   RR6 = 0
   RR6(2,1,2,1,2,1,2,:,2,1) = 1
-  IF (ANY( MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )  .NE. (/2,1,2,1,2,1,2,1,2,1/))) STOP 25
-  IF (KIND(MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )) .NE.  8)                       STOP 26
+  IF (ANY( MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )  .NE. (/2,1,2,1,2,1,2,1,2,1/))) ERROR STOP 25
+  IF (KIND(MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:), MASK=MM, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )) .NE.  8)                       ERROR STOP 26
 
   RR6 = 0
   RR6(2,1,2,1,2,1,2,1,:,1) = 1
-  IF (ANY( MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:) )                                      .NE. (/2,1,2,1,2,1,2,1,1,1/))) STOP 27
-  IF (KIND(MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:) ))                                     .NE. 4)                        STOP 28
+  IF (ANY( MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:) )                                      .NE. (/2,1,2,1,2,1,2,1,1,1/))) ERROR STOP 27
+  IF (KIND(MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,:,:) ))                                     .NE. 4)                        ERROR STOP 28
 
 
   CC = ACHAR(0)
   CC(1,2,1,2,1,2,1,2,1,:) = ACHAR(1)
-  IF (ANY( MAXLOC(ARRAY=CC, MASK=MM, KIND=CC%KIND ) .NE. (/1,2,1,2,1,2,1,2,1,1/)))   STOP 30
-  IF (KIND(MAXLOC(ARRAY=CC, MASK=MM, KIND=CC%KIND )).NE. 1)                          STOP 31
-  IF (ANY( MAXLOC(ARRAY=CC )               .NE. (/1,2,1,2,1,2,1,2,1,1/)))   STOP 32
-  IF (KIND(MAXLOC(ARRAY=CC ))              .NE. 4)                          STOP 33
+  IF (ANY( MAXLOC(ARRAY=CC, MASK=MM, KIND=CC%KIND ) .NE. (/1,2,1,2,1,2,1,2,1,1/)))   ERROR STOP 30
+  IF (KIND(MAXLOC(ARRAY=CC, MASK=MM, KIND=CC%KIND )).NE. 1)                          ERROR STOP 31
+  IF (ANY( MAXLOC(ARRAY=CC )               .NE. (/1,2,1,2,1,2,1,2,1,1/)))   ERROR STOP 32
+  IF (KIND(MAXLOC(ARRAY=CC ))              .NE. 4)                          ERROR STOP 33
 
 
   II1 = 0
   II1(1,2,1,2,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II1(1:0,:,:,:,:,:,:,:,:,:), MASK=MM(1:0,:,:,:,:,:,:,:,:,:), KIND=II1%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 40
-  IF (KIND(MAXLOC(ARRAY=II1(1:0,:,:,:,:,:,:,:,:,:), MASK=MM(1:0,:,:,:,:,:,:,:,:,:), KIND=II1%KIND )) .NE. 1)                        STOP 41
+  IF (ANY( MAXLOC(ARRAY=II1(1:0,:,:,:,:,:,:,:,:,:), MASK=MM(1:0,:,:,:,:,:,:,:,:,:), KIND=II1%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 40
+  IF (KIND(MAXLOC(ARRAY=II1(1:0,:,:,:,:,:,:,:,:,:), MASK=MM(1:0,:,:,:,:,:,:,:,:,:), KIND=II1%KIND )) .NE. 1)                        ERROR STOP 41
 
   II2 = 0
   II2(1,2,1,2,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II2(:,1:0,:,:,:,:,:,:,:,:), MASK=MM(:,1:0,:,:,:,:,:,:,:,:), KIND=II2%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 42
-  IF (KIND(MAXLOC(ARRAY=II2(:,1:0,:,:,:,:,:,:,:,:), MASK=MM(:,1:0,:,:,:,:,:,:,:,:), KIND=II2%KIND )) .NE. 2)                        STOP 43
+  IF (ANY( MAXLOC(ARRAY=II2(:,1:0,:,:,:,:,:,:,:,:), MASK=MM(:,1:0,:,:,:,:,:,:,:,:), KIND=II2%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 42
+  IF (KIND(MAXLOC(ARRAY=II2(:,1:0,:,:,:,:,:,:,:,:), MASK=MM(:,1:0,:,:,:,:,:,:,:,:), KIND=II2%KIND )) .NE. 2)                        ERROR STOP 43
 
   II4 = 0
   II4(1,2,1,2,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II4(:,:,1:0,:,:,:,:,:,:,:), MASK=MM(:,:,1:0,:,:,:,:,:,:,:), KIND=II4%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 44
-  IF (KIND(MAXLOC(ARRAY=II4(:,:,1:0,:,:,:,:,:,:,:), MASK=MM(:,:,1:0,:,:,:,:,:,:,:), KIND=II4%KIND )) .NE. 4)                        STOP 45
+  IF (ANY( MAXLOC(ARRAY=II4(:,:,1:0,:,:,:,:,:,:,:), MASK=MM(:,:,1:0,:,:,:,:,:,:,:), KIND=II4%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 44
+  IF (KIND(MAXLOC(ARRAY=II4(:,:,1:0,:,:,:,:,:,:,:), MASK=MM(:,:,1:0,:,:,:,:,:,:,:), KIND=II4%KIND )) .NE. 4)                        ERROR STOP 45
 
   II8 = 0
   II8(1,2,1,2,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II8(:,:,:,1:0,:,:,:,:,:,:), MASK=MM(:,:,:,1:0,:,:,:,:,:,:), KIND=II1%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 46
-  IF (KIND(MAXLOC(ARRAY=II8(:,:,:,1:0,:,:,:,:,:,:), MASK=MM(:,:,:,1:0,:,:,:,:,:,:), KIND=II1%KIND )) .NE. 1)                        STOP 47
+  IF (ANY( MAXLOC(ARRAY=II8(:,:,:,1:0,:,:,:,:,:,:), MASK=MM(:,:,:,1:0,:,:,:,:,:,:), KIND=II1%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 46
+  IF (KIND(MAXLOC(ARRAY=II8(:,:,:,1:0,:,:,:,:,:,:), MASK=MM(:,:,:,1:0,:,:,:,:,:,:), KIND=II1%KIND )) .NE. 1)                        ERROR STOP 47
 
   II8 = 0
   II8(1,2,1,2,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II8(:,:,:,:,1:0,:,:,:,:,:) )                 .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 48
-  IF (KIND(MAXLOC(ARRAY=II8(:,:,:,:,1:0,:,:,:,:,:) ))                .NE. 4)                        STOP 49
+  IF (ANY( MAXLOC(ARRAY=II8(:,:,:,:,1:0,:,:,:,:,:) )                 .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 48
+  IF (KIND(MAXLOC(ARRAY=II8(:,:,:,:,1:0,:,:,:,:,:) ))                .NE. 4)                        ERROR STOP 49
 
   RR4 = 0
   RR4(2,1,2,1,2,1,2,1,2,1) = 1
-  IF (ANY( MAXLOC(ARRAY=RR4(:,:,:,:,:,1:0,:,:,:,:), MASK=MM(:,:,:,:,:,1:0,:,:,:,:), KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 51
-  IF (KIND(MAXLOC(ARRAY=RR4(:,:,:,:,:,1:0,:,:,:,:), MASK=MM(:,:,:,:,:,1:0,:,:,:,:), KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 4)                        STOP 52
+  IF (ANY( MAXLOC(ARRAY=RR4(:,:,:,:,:,1:0,:,:,:,:), MASK=MM(:,:,:,:,:,1:0,:,:,:,:), KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 51
+  IF (KIND(MAXLOC(ARRAY=RR4(:,:,:,:,:,1:0,:,:,:,:), MASK=MM(:,:,:,:,:,1:0,:,:,:,:), KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 4)                        ERROR STOP 52
 
   RR8 = 0
   RR8(2,1,2,1,2,1,2,1,2,1) = 1
-  IF (ANY( MAXLOC(ARRAY=RR8(:,:,:,:,:,:,1:0,:,:,:), MASK=MM(:,:,:,:,:,:,1:0,:,:,:), KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 53
-  IF (KIND(MAXLOC(ARRAY=RR8(:,:,:,:,:,:,1:0,:,:,:), MASK=MM(:,:,:,:,:,:,1:0,:,:,:), KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 8)                        STOP 54
+  IF (ANY( MAXLOC(ARRAY=RR8(:,:,:,:,:,:,1:0,:,:,:), MASK=MM(:,:,:,:,:,:,1:0,:,:,:), KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 53
+  IF (KIND(MAXLOC(ARRAY=RR8(:,:,:,:,:,:,1:0,:,:,:), MASK=MM(:,:,:,:,:,:,1:0,:,:,:), KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 8)                        ERROR STOP 54
 
   RR6 = 0
   RR6(2,1,2,1,2,1,2,1,2,1) = 1
-  IF (ANY( MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,1:0,:,:), MASK=MM(:,:,:,:,:,:,:,1:0,:,:), KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 55
-  IF (KIND(MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,1:0,:,:), MASK=MM(:,:,:,:,:,:,:,1:0,:,:), KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )) .NE.  8)                       STOP 56
+  IF (ANY( MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,1:0,:,:), MASK=MM(:,:,:,:,:,:,:,1:0,:,:), KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 55
+  IF (KIND(MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,1:0,:,:), MASK=MM(:,:,:,:,:,:,:,1:0,:,:), KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )) .NE.  8)                       ERROR STOP 56
 
   RR6 = 0
   RR6(2,1,2,1,2,1,2,1,2,1) = 1
-  IF (ANY( MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,1:0,:) )                                      .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 57
-  IF (KIND(MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,1:0,:) ))                                     .NE. 4)                        STOP 58
+  IF (ANY( MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,1:0,:) )                                      .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 57
+  IF (KIND(MAXLOC(ARRAY=RR6(:,:,:,:,:,:,:,:,1:0,:) ))                                     .NE. 4)                        ERROR STOP 58
 
 
   CC = ACHAR(0)
   CC(1,2,1,2,1,2,1,2,1,2) = ACHAR(1)
-  IF (ANY( MAXLOC(ARRAY=CC(:,:,:,:,:,:,:,:,:,1:0), MASK=MM1(:,:,:,:,:,:,:,:,:,1:0), KIND=CC%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/)))   STOP 60
-  IF (KIND(MAXLOC(ARRAY=CC(:,:,:,:,:,:,:,:,:,1:0), MASK=MM1(:,:,:,:,:,:,:,:,:,1:0), KIND=CC%KIND )) .NE. 1)                          STOP 61
-  IF (ANY( MAXLOC(ARRAY=CC(:,:,:,:,1:0,:,:,:,:,:) )                .NE. (/0,0,0,0,0,0,0,0,0,0/)))   STOP 62
-  IF (KIND(MAXLOC(ARRAY=CC(:,:,:,:,1:0,:,:,:,:,:) ))               .NE. 4)                          STOP 63
+  IF (ANY( MAXLOC(ARRAY=CC(:,:,:,:,:,:,:,:,:,1:0), MASK=MM1(:,:,:,:,:,:,:,:,:,1:0), KIND=CC%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/)))   ERROR STOP 60
+  IF (KIND(MAXLOC(ARRAY=CC(:,:,:,:,:,:,:,:,:,1:0), MASK=MM1(:,:,:,:,:,:,:,:,:,1:0), KIND=CC%KIND )) .NE. 1)                          ERROR STOP 61
+  IF (ANY( MAXLOC(ARRAY=CC(:,:,:,:,1:0,:,:,:,:,:) )                .NE. (/0,0,0,0,0,0,0,0,0,0/)))   ERROR STOP 62
+  IF (KIND(MAXLOC(ARRAY=CC(:,:,:,:,1:0,:,:,:,:,:) ))               .NE. 4)                          ERROR STOP 63
 
 
 
   II1 = 0
   II1(1,2,1,2,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II1, MASK=MM1, KIND=II1%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 140
-  IF (KIND(MAXLOC(ARRAY=II1, MASK=MM1, KIND=II1%KIND )) .NE. 1)                        STOP 141
+  IF (ANY( MAXLOC(ARRAY=II1, MASK=MM1, KIND=II1%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 140
+  IF (KIND(MAXLOC(ARRAY=II1, MASK=MM1, KIND=II1%KIND )) .NE. 1)                        ERROR STOP 141
 
   II2 = 0
   II2(1,2,1,2,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II2, MASK=MM1, KIND=II2%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 142
-  IF (KIND(MAXLOC(ARRAY=II2, MASK=MM1, KIND=II2%KIND )) .NE. 2)                        STOP 143
+  IF (ANY( MAXLOC(ARRAY=II2, MASK=MM1, KIND=II2%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 142
+  IF (KIND(MAXLOC(ARRAY=II2, MASK=MM1, KIND=II2%KIND )) .NE. 2)                        ERROR STOP 143
 
   II4 = 0
   II4(1,2,1,2,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II4, MASK=MM1, KIND=II4%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 144
-  IF (KIND(MAXLOC(ARRAY=II4, MASK=MM1, KIND=II4%KIND )) .NE. 4)                        STOP 145
+  IF (ANY( MAXLOC(ARRAY=II4, MASK=MM1, KIND=II4%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 144
+  IF (KIND(MAXLOC(ARRAY=II4, MASK=MM1, KIND=II4%KIND )) .NE. 4)                        ERROR STOP 145
 
   II8 = 0
   II8(1,2,1,2,1,2,1,2,1,2) = 1
-  IF (ANY( MAXLOC(ARRAY=II8, MASK=MM1, KIND=II1%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 146
-  IF (KIND(MAXLOC(ARRAY=II8, MASK=MM1, KIND=II1%KIND )) .NE. 1)                        STOP 147
+  IF (ANY( MAXLOC(ARRAY=II8, MASK=MM1, KIND=II1%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 146
+  IF (KIND(MAXLOC(ARRAY=II8, MASK=MM1, KIND=II1%KIND )) .NE. 1)                        ERROR STOP 147
 
 
   RR4 = 0
   RR4(2,1,2,1,2,1,2,1,2,1) = 1
-  IF (ANY( MAXLOC(ARRAY=RR4, MASK=MM1, KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 151
-  IF (KIND(MAXLOC(ARRAY=RR4, MASK=MM1, KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 4)                        STOP 152
+  IF (ANY( MAXLOC(ARRAY=RR4, MASK=MM1, KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 151
+  IF (KIND(MAXLOC(ARRAY=RR4, MASK=MM1, KIND=RR4(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 4)                        ERROR STOP 152
 
   RR8 = 0
   RR8(2,1,2,1,2,1,2,1,2,1) = 1
-  IF (ANY( MAXLOC(ARRAY=RR8, MASK=MM1, KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 153
-  IF (KIND(MAXLOC(ARRAY=RR8, MASK=MM1, KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 8)                        STOP 154
+  IF (ANY( MAXLOC(ARRAY=RR8, MASK=MM1, KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 153
+  IF (KIND(MAXLOC(ARRAY=RR8, MASK=MM1, KIND=RR8(:,:,:,:,:,:,:,:,:,:)%KIND )) .NE. 8)                        ERROR STOP 154
 
   RR6 = 0
   RR6(2,1,2,1,2,1,2,1,2,1) = 1
-  IF (ANY( MAXLOC(ARRAY=RR6, MASK=MM1, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) STOP 155
-  IF (KIND(MAXLOC(ARRAY=RR6, MASK=MM1, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )) .NE.  8)                       STOP 156
+  IF (ANY( MAXLOC(ARRAY=RR6, MASK=MM1, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )  .NE. (/0,0,0,0,0,0,0,0,0,0/))) ERROR STOP 155
+  IF (KIND(MAXLOC(ARRAY=RR6, MASK=MM1, KIND=RR6(:,:,:,:,:,:,:,:,:,:)%KIND-8 )) .NE.  8)                       ERROR STOP 156
 
 
 
   CC = ACHAR(0)
   CC(1,2,1,2,1,2,1,2,1,2) = ACHAR(1)
-  IF (ANY( MAXLOC(ARRAY=CC, MASK=MM1, KIND=CC%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/)))   STOP 160
-  IF (KIND(MAXLOC(ARRAY=CC, MASK=MM1, KIND=CC%KIND )) .NE. 1)                          STOP 161
+  IF (ANY( MAXLOC(ARRAY=CC, MASK=MM1, KIND=CC%KIND )  .NE. (/0,0,0,0,0,0,0,0,0,0/)))   ERROR STOP 160
+  IF (KIND(MAXLOC(ARRAY=CC, MASK=MM1, KIND=CC%KIND )) .NE. 1)                          ERROR STOP 161
 
 
 

@@ -52,20 +52,20 @@
   CHARACTER  :: CBChar  = NEW_LINE(ACHAR(10))
   INTEGER    :: CBKind  = KIND(NEW_LINE(ACHAR(10)))
 
-  IF ( C0Char    .NE. ACHAR(10) )   STOP 11
-  IF ( C0Kind    .NE. 1     )       STOP 12
-  IF ( C1Char    .NE. ACHAR(10) )   STOP 13
-  IF ( C1Kind    .NE. 1     )       STOP 14
-  IF ( C9Char    .NE. ACHAR(10) )   STOP 15
-  IF ( C9Kind    .NE. 1     )       STOP 16
-  IF ( C513Char  .NE. ACHAR(10) )   STOP 17
-  IF ( C513Kind  .NE. 1     )       STOP 18
+  IF ( C0Char    .NE. ACHAR(10) )   ERROR STOP 11
+  IF ( C0Kind    .NE. 1     )       ERROR STOP 12
+  IF ( C1Char    .NE. ACHAR(10) )   ERROR STOP 13
+  IF ( C1Kind    .NE. 1     )       ERROR STOP 14
+  IF ( C9Char    .NE. ACHAR(10) )   ERROR STOP 15
+  IF ( C9Kind    .NE. 1     )       ERROR STOP 16
+  IF ( C513Char  .NE. ACHAR(10) )   ERROR STOP 17
+  IF ( C513Kind  .NE. 1     )       ERROR STOP 18
 
-  IF ( CAChar    .NE. ACHAR(10) )   STOP 21
-  IF ( CAKind    .NE. 1     )       STOP 22
+  IF ( CAChar    .NE. ACHAR(10) )   ERROR STOP 21
+  IF ( CAKind    .NE. 1     )       ERROR STOP 22
 
-  IF ( CBChar    .NE. ACHAR(10) )   STOP 31
-  IF ( CBKind    .NE. 1     )       STOP 32
+  IF ( CBChar    .NE. ACHAR(10) )   ERROR STOP 31
+  IF ( CBKind    .NE. 1     )       ERROR STOP 32
 
   END
 

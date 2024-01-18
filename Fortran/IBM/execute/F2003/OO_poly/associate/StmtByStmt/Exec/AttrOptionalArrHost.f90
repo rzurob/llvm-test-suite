@@ -92,11 +92,11 @@
 
   CALL Sub( Ptr, 3, 5)
 
-  IF ( .NOT. ASSOCIATED(Ptr) ) STOP 19
+  IF ( .NOT. ASSOCIATED(Ptr) ) ERROR STOP 19
   SELECT TYPE ( Ptr => Ptr(:))
   TYPE IS (Child)
     IF ( ANY(Ptr%BaseID        .NE. -1 )) STOP 02
-    IF ( ANY(Ptr%Base%GetId()  .NE. -1 )) STOP 93
+    IF ( ANY(Ptr%Base%GetId()  .NE. -1 )) ERROR STOP 93
     IF ( ANY(Ptr%ChildID       .NE. -2 )) STOP 04
     IF ( ANY(Ptr%GetId()       .NE. -2 )) STOP 05
   CLASS DEFAULT
@@ -112,13 +112,13 @@
   INTEGER                :: I,J
 
   CALL Sub0( Arg, I, J)
-  IF ( .NOT. ASSOCIATED(Arg) ) STOP 19
+  IF ( .NOT. ASSOCIATED(Arg) ) ERROR STOP 19
   SELECT TYPE ( Arg )
   TYPE IS (Child)
-    IF ( ANY(Arg%BaseID        .NE. -1 )) STOP 12
-    IF ( ANY(Arg%Base%GetId()  .NE. -1 )) STOP 13
-    IF ( ANY(Arg%ChildID       .NE. -2 )) STOP 14
-    IF ( ANY(Arg%GetId()       .NE. -2 )) STOP 15
+    IF ( ANY(Arg%BaseID        .NE. -1 )) ERROR STOP 12
+    IF ( ANY(Arg%Base%GetId()  .NE. -1 )) ERROR STOP 13
+    IF ( ANY(Arg%ChildID       .NE. -2 )) ERROR STOP 14
+    IF ( ANY(Arg%GetId()       .NE. -2 )) ERROR STOP 15
   CLASS DEFAULT
     STOP 98
   END SELECT
@@ -133,7 +133,7 @@
   CLASS (Child), POINTER :: PtrC(:)
   INTEGER                :: I,J
 
-  IF ( .NOT. PRESENT( Arg)) STOP 111
+  IF ( .NOT. PRESENT( Arg)) ERROR STOP 111
 
   ALLOCATE(Arg(I:J), SOURCE=Child(BaseID=-1, ChildID=-2) )
 
@@ -145,49 +145,49 @@
     PtrB => As%Base
     PtrC => As
 
-    IF ( .NOT. ASSOCIATED(PtrZ) ) STOP 20
-    IF ( .NOT. ASSOCIATED(PtrB) ) STOP 21
-    IF ( .NOT. ASSOCIATED(PtrC) ) STOP 22
+    IF ( .NOT. ASSOCIATED(PtrZ) ) ERROR STOP 20
+    IF ( .NOT. ASSOCIATED(PtrB) ) ERROR STOP 21
+    IF ( .NOT. ASSOCIATED(PtrC) ) ERROR STOP 22
 
-    IF( ANY(LBOUND(PtrZ) .NE. (/1/) ) ) STOP 30
-    IF( ANY(LBOUND(PtrB) .NE. (/1/) ) ) STOP 31
-    IF( ANY(LBOUND(PtrC) .NE. (/I/) ) ) STOP 32
+    IF( ANY(LBOUND(PtrZ) .NE. (/1/) ) ) ERROR STOP 30
+    IF( ANY(LBOUND(PtrB) .NE. (/1/) ) ) ERROR STOP 31
+    IF( ANY(LBOUND(PtrC) .NE. (/I/) ) ) ERROR STOP 32
 
-    IF( ANY(UBOUND(PtrZ) .NE. (/3/) ) ) STOP 40
-    IF( ANY(UBOUND(PtrB) .NE. (/3/) ) ) STOP 41
-    IF( ANY(UBOUND(PtrC) .NE. (/J/) ) ) STOP 42
+    IF( ANY(UBOUND(PtrZ) .NE. (/3/) ) ) ERROR STOP 40
+    IF( ANY(UBOUND(PtrB) .NE. (/3/) ) ) ERROR STOP 41
+    IF( ANY(UBOUND(PtrC) .NE. (/J/) ) ) ERROR STOP 42
 
-    IF( ANY(SHAPE(PtrZ)  .NE. (/J-I+1/) ) ) STOP 50
-    IF( ANY(SHAPE(PtrB)  .NE. (/J-I+1/) ) ) STOP 51
-    IF( ANY(SHAPE(PtrC)  .NE. (/J-I+1/) ) ) STOP 52
+    IF( ANY(SHAPE(PtrZ)  .NE. (/J-I+1/) ) ) ERROR STOP 50
+    IF( ANY(SHAPE(PtrB)  .NE. (/J-I+1/) ) ) ERROR STOP 51
+    IF( ANY(SHAPE(PtrC)  .NE. (/J-I+1/) ) ) ERROR STOP 52
 
-    IF ( ANY(PtrB%BaseID      .NE. -1 )) STOP 60
-    IF ( ANY(PtrB%GetId()     .NE. -1 )) STOP 61
+    IF ( ANY(PtrB%BaseID      .NE. -1 )) ERROR STOP 60
+    IF ( ANY(PtrB%GetId()     .NE. -1 )) ERROR STOP 61
 
-    IF ( ANY(PtrC%BaseID        .NE. -1 )) STOP 62
-    IF ( ANY(PtrC%Base%GetId()  .NE. -1 )) STOP 63
-    IF ( ANY(PtrC%ChildID       .NE. -2 )) STOP 64
-    IF ( ANY(PtrC%GetId()       .NE. -2 )) STOP 65
+    IF ( ANY(PtrC%BaseID        .NE. -1 )) ERROR STOP 62
+    IF ( ANY(PtrC%Base%GetId()  .NE. -1 )) ERROR STOP 63
+    IF ( ANY(PtrC%ChildID       .NE. -2 )) ERROR STOP 64
+    IF ( ANY(PtrC%GetId()       .NE. -2 )) ERROR STOP 65
 
     ASSOCIATE ( As => As(::1)%Base )
 
       PtrZ => As%Zero
       PtrB => As
 
-      IF ( .NOT. ASSOCIATED(PtrZ) ) STOP 70
-      IF ( .NOT. ASSOCIATED(PtrB) ) STOP 71
+      IF ( .NOT. ASSOCIATED(PtrZ) ) ERROR STOP 70
+      IF ( .NOT. ASSOCIATED(PtrB) ) ERROR STOP 71
 
-      IF( ANY(LBOUND(PtrZ) .NE. (/1/) ) ) STOP 80
-      IF( ANY(LBOUND(PtrB) .NE. (/1/) ) ) STOP 81
+      IF( ANY(LBOUND(PtrZ) .NE. (/1/) ) ) ERROR STOP 80
+      IF( ANY(LBOUND(PtrB) .NE. (/1/) ) ) ERROR STOP 81
 
-      IF( ANY(UBOUND(PtrZ) .NE. (/3/) ) ) STOP 90
-      IF( ANY(UBOUND(PtrB) .NE. (/3/) ) ) STOP 91
+      IF( ANY(UBOUND(PtrZ) .NE. (/3/) ) ) ERROR STOP 90
+      IF( ANY(UBOUND(PtrB) .NE. (/3/) ) ) ERROR STOP 91
 
-      IF( ANY(SHAPE(PtrZ)  .NE. (/3/) ) ) STOP 93
-      IF( ANY(SHAPE(PtrB)  .NE. (/3/) ) ) STOP 94
+      IF( ANY(SHAPE(PtrZ)  .NE. (/3/) ) ) ERROR STOP 93
+      IF( ANY(SHAPE(PtrB)  .NE. (/3/) ) ) ERROR STOP 94
 
-      IF ( ANY(PtrB%BaseID      .NE. -1 )) STOP 95
-      IF ( ANY(PtrB%GetId()     .NE. -1 )) STOP 96
+      IF ( ANY(PtrB%BaseID      .NE. -1 )) ERROR STOP 95
+      IF ( ANY(PtrB%GetId()     .NE. -1 )) ERROR STOP 96
 
     END ASSOCIATE
 

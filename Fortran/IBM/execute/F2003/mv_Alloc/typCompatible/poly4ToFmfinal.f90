@@ -60,22 +60,22 @@ use m
             to(1) = B(iA = 101, iB = 102, x= A(11))
     end select
 
-    if ( numA /= 5 ) stop 11
-    if ( numB /= 2 ) stop 13
+    if ( numA /= 5 ) error stop 11
+    if ( numB /= 2 ) error stop 13
 
     ! to is rank-1 array
     call move_alloc(from ,to )
 
-    if ( .not. allocated(to) ) stop 21
-    if ( allocated(from) ) stop 23
+    if ( .not. allocated(to) ) error stop 21
+    if ( allocated(from) ) error stop 23
 
     select type (to)
 	type is (B)
-            if ( size(to) /= 0 ) stop 31
+            if ( size(to) /= 0 ) error stop 31
     end select
 
-    if ( numA /= 7 ) stop 41
-    if ( numB /= 2 ) stop 43
+    if ( numA /= 7 ) error stop 41
+    if ( numB /= 2 ) error stop 43
 
    end
 

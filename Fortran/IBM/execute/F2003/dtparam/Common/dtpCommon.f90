@@ -56,37 +56,37 @@
   COMMON /BLK/R1
   COMMON /BLK/T1
 
-  IF ( R%K0  .NE. 1   ) STOP 11
-  IF ( R%L0  .NE. 3   ) STOP 12
+  IF ( R%K0  .NE. 1   ) ERROR STOP 11
+  IF ( R%L0  .NE. 3   ) ERROR STOP 12
 
-  IF ( R1%K0 .NE. 1   ) STOP 13
-  IF ( R1%L0 .NE. 3   ) STOP 14
+  IF ( R1%K0 .NE. 1   ) ERROR STOP 13
+  IF ( R1%L0 .NE. 3   ) ERROR STOP 14
 
-  IF ( ANY ( LBOUND(T%R) .NE. 1          ) ) STOP 20
-  IF ( SIZE( T%R )       .NE. 7            ) STOP 21
+  IF ( ANY ( LBOUND(T%R) .NE. 1          ) ) ERROR STOP 20
+  IF ( SIZE( T%R )       .NE. 7            ) ERROR STOP 21
 
-  IF ( ANY ( LBOUND(T%C) .NE. 1          ) ) STOP 23
-  IF (       T%C%LEN     .NE. 7            ) STOP 24
-  IF ( SIZE( T%C )       .NE. 7            ) STOP 25
+  IF ( ANY ( LBOUND(T%C) .NE. 1          ) ) ERROR STOP 23
+  IF (       T%C%LEN     .NE. 7            ) ERROR STOP 24
+  IF ( SIZE( T%C )       .NE. 7            ) ERROR STOP 25
 
-  IF ( ANY ( LBOUND(T%I) .NE. 1          ) ) STOP 27
-  IF ( SIZE( T%I )       .NE. 7            ) STOP 28
+  IF ( ANY ( LBOUND(T%I) .NE. 1          ) ) ERROR STOP 27
+  IF ( SIZE( T%I )       .NE. 7            ) ERROR STOP 28
 
-  IF ( T%S%K0 .NE. 8   ) STOP 41
-  IF ( T%S%L0 .NE. 7   ) STOP 42
+  IF ( T%S%K0 .NE. 8   ) ERROR STOP 41
+  IF ( T%S%L0 .NE. 7   ) ERROR STOP 42
 
-  IF ( ANY ( LBOUND(T1%R) .NE. 1          ) ) STOP 30
-  IF ( SIZE( T1%R )       .NE. 7            ) STOP 31
+  IF ( ANY ( LBOUND(T1%R) .NE. 1          ) ) ERROR STOP 30
+  IF ( SIZE( T1%R )       .NE. 7            ) ERROR STOP 31
 
-  IF ( ANY ( LBOUND(T1%C) .NE. 1          ) ) STOP 33
-  IF (       T1%C%LEN     .NE. 7            ) STOP 34
-  IF ( SIZE( T1%C )       .NE. 7            ) STOP 35
+  IF ( ANY ( LBOUND(T1%C) .NE. 1          ) ) ERROR STOP 33
+  IF (       T1%C%LEN     .NE. 7            ) ERROR STOP 34
+  IF ( SIZE( T1%C )       .NE. 7            ) ERROR STOP 35
 
-  IF ( ANY ( LBOUND(T1%I) .NE. 1          ) ) STOP 37
-  IF ( SIZE( T1%I )       .NE. 7            ) STOP 38
+  IF ( ANY ( LBOUND(T1%I) .NE. 1          ) ) ERROR STOP 37
+  IF ( SIZE( T1%I )       .NE. 7            ) ERROR STOP 38
 
-  IF ( T1%S%K0 .NE. 8   ) STOP 43
-  IF ( T1%S%L0 .NE. 7   ) STOP 44
+  IF ( T1%S%K0 .NE. 8   ) ERROR STOP 43
+  IF ( T1%S%L0 .NE. 7   ) ERROR STOP 44
 
   T%R = -8
   T%C = CHAR(0)
@@ -108,27 +108,27 @@
   COMMON //T
   COMMON /BLK/T1
 
-  IF ( ANY ( LBOUND(T%R) .NE. 1          ) ) STOP 50
-  IF ( SIZE( T%R )       .NE. 7            ) STOP 51
-  IF ( ANY ( T%R         .NE. -8         ) ) STOP 52
-  IF ( ANY ( LBOUND(T%C) .NE. 1          ) ) STOP 53
-  IF (       T%C%LEN     .NE. 7            ) STOP 54
-  IF ( SIZE( T%C )       .NE. 7            ) STOP 55
-  IF ( ANY ( T%C         .NE. CHAR(0)    ) ) STOP 56
-  IF ( ANY ( LBOUND(T%I) .NE. 1          ) ) STOP 57
-  IF ( SIZE( T%I )       .NE. 7            ) STOP 58
-  IF ( ANY ( T%I         .NE. -7         ) ) STOP 59
+  IF ( ANY ( LBOUND(T%R) .NE. 1          ) ) ERROR STOP 50
+  IF ( SIZE( T%R )       .NE. 7            ) ERROR STOP 51
+  IF ( ANY ( T%R         .NE. -8         ) ) ERROR STOP 52
+  IF ( ANY ( LBOUND(T%C) .NE. 1          ) ) ERROR STOP 53
+  IF (       T%C%LEN     .NE. 7            ) ERROR STOP 54
+  IF ( SIZE( T%C )       .NE. 7            ) ERROR STOP 55
+  IF ( ANY ( T%C         .NE. CHAR(0)    ) ) ERROR STOP 56
+  IF ( ANY ( LBOUND(T%I) .NE. 1          ) ) ERROR STOP 57
+  IF ( SIZE( T%I )       .NE. 7            ) ERROR STOP 58
+  IF ( ANY ( T%I         .NE. -7         ) ) ERROR STOP 59
 
-  IF ( ANY ( LBOUND(T1%R) .NE. 1          ) ) STOP 60
-  IF ( SIZE( T1%R )       .NE. 7            ) STOP 61
-  IF ( ANY ( T1%R         .NE. -8         ) ) STOP 62
-  IF ( ANY ( LBOUND(T1%C) .NE. 1          ) ) STOP 63
-  IF (       T1%C%LEN     .NE. 7            ) STOP 64
-  IF ( SIZE( T1%C )       .NE. 7            ) STOP 65
-  IF ( ANY ( T1%C         .NE. CHAR(0)    ) ) STOP 66
-  IF ( ANY ( LBOUND(T1%I) .NE. 1          ) ) STOP 67
-  IF ( SIZE( T1%I )       .NE. 7            ) STOP 68
-  IF ( ANY ( T1%I         .NE. -7         ) ) STOP 69
+  IF ( ANY ( LBOUND(T1%R) .NE. 1          ) ) ERROR STOP 60
+  IF ( SIZE( T1%R )       .NE. 7            ) ERROR STOP 61
+  IF ( ANY ( T1%R         .NE. -8         ) ) ERROR STOP 62
+  IF ( ANY ( LBOUND(T1%C) .NE. 1          ) ) ERROR STOP 63
+  IF (       T1%C%LEN     .NE. 7            ) ERROR STOP 64
+  IF ( SIZE( T1%C )       .NE. 7            ) ERROR STOP 65
+  IF ( ANY ( T1%C         .NE. CHAR(0)    ) ) ERROR STOP 66
+  IF ( ANY ( LBOUND(T1%I) .NE. 1          ) ) ERROR STOP 67
+  IF ( SIZE( T1%I )       .NE. 7            ) ERROR STOP 68
+  IF ( ANY ( T1%I         .NE. -7         ) ) ERROR STOP 69
 
   END SUBROUTINE
 

@@ -65,24 +65,24 @@
 
 
   Ptr(1:,1:) => Tar2
-  IF (.NOT. ASSOCIATED(Ptr, Tar2))                                            STOP 21
-  IF (ANY( LBOUND(Ptr) .NE. (/1, 1 /)))                                       STOP 22
-  IF (ANY( UBOUND(Ptr) .NE. (/N,N/)))                                         STOP 23
-  IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=1,M)/),(/N,N/))))           STOP 24
+  IF (.NOT. ASSOCIATED(Ptr, Tar2))                                            ERROR STOP 21
+  IF (ANY( LBOUND(Ptr) .NE. (/1, 1 /)))                                       ERROR STOP 22
+  IF (ANY( UBOUND(Ptr) .NE. (/N,N/)))                                         ERROR STOP 23
+  IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=1,M)/),(/N,N/))))           ERROR STOP 24
 
   Ptr = Tar2
-  IF (ANY( Ptr%ID  .NE. RESHAPE((/("ModSub-" //CHAR(I), I=1,M)/),(/N,N/))))   STOP 25
+  IF (ANY( Ptr%ID  .NE. RESHAPE((/("ModSub-" //CHAR(I), I=1,M)/),(/N,N/))))   ERROR STOP 25
 
   Ptr(0:8,0:8) => Tar1
-  IF (.NOT. ASSOCIATED(Ptr))                                                  STOP 31
-  IF (ANY( LBOUND(Ptr) .NE. (/0, 0 /)))                                       STOP 32
-  IF (ANY( UBOUND(Ptr) .NE. (/8,8/)))                                         STOP 33
-  IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=M,19,-1)/),(/N-1,N-1/))))   STOP 34
+  IF (.NOT. ASSOCIATED(Ptr))                                                  ERROR STOP 31
+  IF (ANY( LBOUND(Ptr) .NE. (/0, 0 /)))                                       ERROR STOP 32
+  IF (ANY( UBOUND(Ptr) .NE. (/8,8/)))                                         ERROR STOP 33
+  IF (ANY( Ptr%ID      .NE. RESHAPE((/(CHAR(I), I=M,19,-1)/),(/N-1,N-1/))))   ERROR STOP 34
 
   Ptr = Ptr
-  IF (ANY( Ptr%ID  .NE. RESHAPE((/("ModSub-" //CHAR(I), I=M,20,-1)/),(/N-1,N-1/))))  STOP 35
-  IF (ANY( Tar1(1:81)%ID  .NE. (/("ModSub-" //CHAR(I), I=M,20,-1)/)))                STOP 36
-  IF (ANY( Tar1(82:)%ID   .NE. (/(CHAR(I), I=19,1,-1)/)))                            STOP 36
+  IF (ANY( Ptr%ID  .NE. RESHAPE((/("ModSub-" //CHAR(I), I=M,20,-1)/),(/N-1,N-1/))))  ERROR STOP 35
+  IF (ANY( Tar1(1:81)%ID  .NE. (/("ModSub-" //CHAR(I), I=M,20,-1)/)))                ERROR STOP 36
+  IF (ANY( Tar1(82:)%ID   .NE. (/(CHAR(I), I=19,1,-1)/)))                            ERROR STOP 36
   END
 
 

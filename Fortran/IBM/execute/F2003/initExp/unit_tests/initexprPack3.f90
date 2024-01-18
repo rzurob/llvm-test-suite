@@ -24,13 +24,13 @@ real(16), parameter, dimension(2,2,2,2,2,1) :: &
   & c0=reshape((/(i,i=1,32)/),(/2,2,2,2,2,1/))
 real(16) :: c1(32)=pack(c0, mask=.true.)
 
-if (.not. all(i4 .eq. pack(i0, mask=i0 .gt. 1.5))) stop 1
+if (.not. all(i4 .eq. pack(i0, mask=i0 .gt. 1.5))) error stop 1
 if (.not. all(i4a .eq. pack(i0, mask=i0 .lt. 3.0, &
-  &  vector=(/-1.,-2.,-3.,-4.,-5.,-6./)))) stop 2
+  &  vector=(/-1.,-2.,-3.,-4.,-5.,-6./)))) error stop 2
 
-if (.not. all(a4 .eq. pack(a0, mask=a0>50.0))) stop 3
+if (.not. all(a4 .eq. pack(a0, mask=a0>50.0))) error stop 3
 if (.not. all(a4a .eq. pack(a0, mask=a0 .lt. 1.0, &
-  & vector=(/-1.7_8,-2.6_8,-3.5_8,-4.4_8,-5.3_8,-6.2_8,-7.1_8/)))) stop 4
+  & vector=(/-1.7_8,-2.6_8,-3.5_8,-4.4_8,-5.3_8,-6.2_8,-7.1_8/)))) error stop 4
 
-if (.not. all(c1 .eq. pack(c0, mask=.true.))) stop 5
+if (.not. all(c1 .eq. pack(c0, mask=.true.))) error stop 5
 end

@@ -63,7 +63,7 @@ PROGRAM Select_Type02c
       END INTERFACE
 
       ALLOCATE(Child(knd1,len1):: child1)
-      IF ( .NOT. ALLOCATED(child1) ) STOP 10
+      IF ( .NOT. ALLOCATED(child1) ) ERROR STOP 10
 
       CALL sub2(child1)
 
@@ -80,7 +80,7 @@ SUBROUTINE sub2(Obj)
       SELECT TYPE (A => Obj)
         CLASS IS (Child(knd1,*))
            A%Cmp => tgt
-           IF ( .NOT. ASSOCIATED(A%Cmp) ) STOP 20
+           IF ( .NOT. ASSOCIATED(A%Cmp) ) ERROR STOP 20
            CALL sub1(A%Cmp)
 
         CLASS IS (Base(knd1,*))
@@ -100,10 +100,10 @@ SUBROUTINE sub2(Obj)
           STOP 30
 
         TYPE IS (Base(knd1,*))
-          IF ( SIZE(A%my_arr)      .NE. len1 ) STOP 31
-          IF ( UBOUND(A%my_arr, 1) .NE. len1 ) STOP 32
-          IF ( LBOUND(A%my_arr, 1) .NE.    1 ) STOP 33
-          IF ( ANY(A%my_arr        .NE.  10) ) STOP 34
+          IF ( SIZE(A%my_arr)      .NE. len1 ) ERROR STOP 31
+          IF ( UBOUND(A%my_arr, 1) .NE. len1 ) ERROR STOP 32
+          IF ( LBOUND(A%my_arr, 1) .NE.    1 ) ERROR STOP 33
+          IF ( ANY(A%my_arr        .NE.  10) ) ERROR STOP 34
 
         CLASS DEFAULT
           STOP 35

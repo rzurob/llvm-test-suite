@@ -53,27 +53,27 @@
   END DO
 
   DO I = 1, 126
-    IF (     COUNT(M1(:, I), KIND=KIND(T%K) )    .NE. 1)       STOP 11
-    IF (KIND(COUNT(M1(:, I), KIND=KIND(T%K) ))   .NE. I%KIND)  STOP 12
-    IF (     COUNT(M2(:, I), KIND=KIND(T%K) )    .NE. 1)       STOP 13
-    IF (KIND(COUNT(M2(:, I), KIND=KIND(T%K) ))   .NE. I%KIND)  STOP 14
-    IF (     COUNT(M4(:, I), KIND=KIND(T%K) )    .NE. 1)       STOP 15
-    IF (KIND(COUNT(M4(:, I), KIND=KIND(T%K) ))   .NE. I%KIND)  STOP 16
-    IF (     COUNT(M8(:, I), KIND=KIND(T%K) )    .NE. 1)       STOP 17
-    IF (KIND(COUNT(M8(:, I), KIND=KIND(T%K) ))   .NE. I%KIND)  STOP 18
+    IF (     COUNT(M1(:, I), KIND=KIND(T%K) )    .NE. 1)       ERROR STOP 11
+    IF (KIND(COUNT(M1(:, I), KIND=KIND(T%K) ))   .NE. I%KIND)  ERROR STOP 12
+    IF (     COUNT(M2(:, I), KIND=KIND(T%K) )    .NE. 1)       ERROR STOP 13
+    IF (KIND(COUNT(M2(:, I), KIND=KIND(T%K) ))   .NE. I%KIND)  ERROR STOP 14
+    IF (     COUNT(M4(:, I), KIND=KIND(T%K) )    .NE. 1)       ERROR STOP 15
+    IF (KIND(COUNT(M4(:, I), KIND=KIND(T%K) ))   .NE. I%KIND)  ERROR STOP 16
+    IF (     COUNT(M8(:, I), KIND=KIND(T%K) )    .NE. 1)       ERROR STOP 17
+    IF (KIND(COUNT(M8(:, I), KIND=KIND(T%K) ))   .NE. I%KIND)  ERROR STOP 18
   END DO
 
-  IF ( ANY( COUNT(M1, KIND=KIND(T%K), DIM=1 )    .NE. 1  ))    STOP 21
-  IF (KIND(COUNT(M1, KIND=KIND(T%K),  DIM=1 ))   .NE. I%KIND)  STOP 22
+  IF ( ANY( COUNT(M1, KIND=KIND(T%K), DIM=1 )    .NE. 1  ))    ERROR STOP 21
+  IF (KIND(COUNT(M1, KIND=KIND(T%K),  DIM=1 ))   .NE. I%KIND)  ERROR STOP 22
 
-  IF ( ANY( COUNT(M2, KIND=KIND(T%K), DIM=1 )    .NE. 1  ))    STOP 21
-  IF (KIND(COUNT(M2, KIND=KIND(T%K),  DIM=1 ))   .NE. I%KIND)  STOP 22
+  IF ( ANY( COUNT(M2, KIND=KIND(T%K), DIM=1 )    .NE. 1  ))    ERROR STOP 21
+  IF (KIND(COUNT(M2, KIND=KIND(T%K),  DIM=1 ))   .NE. I%KIND)  ERROR STOP 22
 
-  IF ( ANY( COUNT(M4, KIND=KIND(T%K), DIM=2 )    .NE. 1  ))    STOP 21
-  IF (KIND(COUNT(M4, KIND=KIND(T%K),  DIM=2 ))   .NE. I%KIND)  STOP 22
+  IF ( ANY( COUNT(M4, KIND=KIND(T%K), DIM=2 )    .NE. 1  ))    ERROR STOP 21
+  IF (KIND(COUNT(M4, KIND=KIND(T%K),  DIM=2 ))   .NE. I%KIND)  ERROR STOP 22
 
-  IF ( ANY( COUNT(M8, KIND=KIND(T%K), DIM=2 )    .NE. 1  ))    STOP 21
-  IF (KIND(COUNT(M8, KIND=KIND(T%K),  DIM=2 ))   .NE. I%KIND)  STOP 22
+  IF ( ANY( COUNT(M8, KIND=KIND(T%K), DIM=2 )    .NE. 1  ))    ERROR STOP 21
+  IF (KIND(COUNT(M8, KIND=KIND(T%K),  DIM=2 ))   .NE. I%KIND)  ERROR STOP 22
 
 
   END

@@ -85,7 +85,7 @@
     TYPE(Base(4,3)) :: V(3)
 
     V = Arg(Base(4,3)("123"))
-    IF (ANY(V%C .NE. "123"))             STOP 11
+    IF (ANY(V%C .NE. "123"))             ERROR STOP 11
 
     END SUBROUTINE
 

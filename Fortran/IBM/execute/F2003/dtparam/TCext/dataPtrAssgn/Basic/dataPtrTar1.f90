@@ -53,62 +53,62 @@
 
   Ptr0 => Arr1
   Ptr0(1:) => NULL()
-  IF ( ASSOCIATED(Ptr0) )       STOP 11
+  IF ( ASSOCIATED(Ptr0) )       ERROR STOP 11
 
   Ptr0 => Arr1
   Ptr0(1:1) => NULL()
-  IF ( ASSOCIATED(Ptr0) )       STOP 12
+  IF ( ASSOCIATED(Ptr0) )       ERROR STOP 12
 
   ptr0(1:1) => NULL()
   Ptr1(1:)  => Ptr0
-  IF ( ASSOCIATED(Ptr1) )       STOP 13
+  IF ( ASSOCIATED(Ptr1) )       ERROR STOP 13
 
   Ptr0(1:1) => Arr1
   Ptr1(1:1)  => Ptr0
-  IF ( .NOT. ASSOCIATED(Ptr1) ) STOP 14
+  IF ( .NOT. ASSOCIATED(Ptr1) ) ERROR STOP 14
 
   Ptr2(1:, 1:) => Arr2
   Ptr2(3:, 0:)  => Ptr2
-  IF ( .NOT. ASSOCIATED(Ptr2) ) STOP 15
+  IF ( .NOT. ASSOCIATED(Ptr2) ) ERROR STOP 15
 
   Ptr4(1: , 1: ) => NULL()
   Ptr2(1: , 2:)  => Ptr4
-  IF ( ASSOCIATED(Ptr2) )       STOP 16
+  IF ( ASSOCIATED(Ptr2) )       ERROR STOP 16
 
 ! This is not correct
 ! Ptr4(1:1, 1:1) => NULL()
 ! Ptr2(1: , 2:   )  => Ptr4
-! IF ( ASSOCIATED(Ptr2) )       STOP 16
+! IF ( ASSOCIATED(Ptr2) )       ERROR STOP 16
 
   Ptr1(1:) => Arr1
   Ptr3(3:)  => Ptr1
-  IF ( .NOT. ASSOCIATED(Ptr3) )         STOP 17
-  IF ( .NOT. SAME_TYPE_AS(Ptr3, Ptr1) ) STOP 117
+  IF ( .NOT. ASSOCIATED(Ptr3) )         ERROR STOP 17
+  IF ( .NOT. SAME_TYPE_AS(Ptr3, Ptr1) ) ERROR STOP 117
 
   Ptr1(1:) => NULL()
   Ptr3(5:105)  => Ptr1
-  IF ( ASSOCIATED(Ptr3) )               STOP 18
-  IF ( .NOT. SAME_TYPE_AS(Ptr3, Ptr1) ) STOP 118
+  IF ( ASSOCIATED(Ptr3) )               ERROR STOP 18
+  IF ( .NOT. SAME_TYPE_AS(Ptr3, Ptr1) ) ERROR STOP 118
 
   Ptr2 => Arr2
   Ptr4(3:, 100:)  => Ptr2
-  IF ( .NOT. ASSOCIATED(Ptr4) )         STOP 19
-  IF ( .NOT. SAME_TYPE_AS(Ptr4, Ptr2) ) STOP 119
+  IF ( .NOT. ASSOCIATED(Ptr4) )         ERROR STOP 19
+  IF ( .NOT. SAME_TYPE_AS(Ptr4, Ptr2) ) ERROR STOP 119
 
   Ptr2(5:   , -105: ) => NULL()
   Ptr4(-5:4, 5:5)  => Ptr2(1,:)
-  IF ( ASSOCIATED(Ptr4) )               STOP 20
-  IF ( .NOT. SAME_TYPE_AS(Ptr4, Ptr2) ) STOP 120
+  IF ( ASSOCIATED(Ptr4) )               ERROR STOP 20
+  IF ( .NOT. SAME_TYPE_AS(Ptr4, Ptr2) ) ERROR STOP 120
 
   Ptr1(1:) => NULL()
   Ptr5(3:)  => Ptr1
-  IF ( ASSOCIATED(Ptr5) )               STOP 21
-  IF ( .NOT. SAME_TYPE_AS(Ptr5, Ptr1) ) STOP 121
+  IF ( ASSOCIATED(Ptr5) )               ERROR STOP 21
+  IF ( .NOT. SAME_TYPE_AS(Ptr5, Ptr1) ) ERROR STOP 121
 
   Ptr1(106:) => Arr1
   Ptr5(5:105)  => Ptr1
-  IF ( .NOT. ASSOCIATED(Ptr5) )         STOP 22
-  IF ( .NOT. SAME_TYPE_AS(Ptr5, Ptr1) ) STOP 122
+  IF ( .NOT. ASSOCIATED(Ptr5) )         ERROR STOP 22
+  IF ( .NOT. SAME_TYPE_AS(Ptr5, Ptr1) ) ERROR STOP 122
 
   END
 

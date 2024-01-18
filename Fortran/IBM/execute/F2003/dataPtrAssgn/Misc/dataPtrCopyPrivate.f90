@@ -49,12 +49,12 @@
 
     DO K=1, I
       Ptr(K:, K:) => Ptr
-      IF ( ANY( MAXLOC(Ptr)  .NE. (/N, N/)) )      STOP 11
-      IF ( ANY( MINLOC(Ptr)  .NE. (/1, 1/)) )      STOP 12
-      IF (SIZE(Ptr)  .NE. N*N )                    STOP 40
-      IF (.NOT. ASSOCIATED(Ptr, Tar2))             STOP 41
-      IF (ANY( LBOUND(Ptr) .NE. (/K, K /)))        STOP 42
-      IF (ANY( UBOUND(Ptr) .NE. (/K+N-1, K+N-1/))) STOP 43
+      IF ( ANY( MAXLOC(Ptr)  .NE. (/N, N/)) )      ERROR STOP 11
+      IF ( ANY( MINLOC(Ptr)  .NE. (/1, 1/)) )      ERROR STOP 12
+      IF (SIZE(Ptr)  .NE. N*N )                    ERROR STOP 40
+      IF (.NOT. ASSOCIATED(Ptr, Tar2))             ERROR STOP 41
+      IF (ANY( LBOUND(Ptr) .NE. (/K, K /)))        ERROR STOP 42
+      IF (ANY( UBOUND(Ptr) .NE. (/K+N-1, K+N-1/))) ERROR STOP 43
     END DO
 
 
@@ -64,12 +64,12 @@
 
     DO K=1, I
       Ptr(K:I, K:J) => Tar1
-      IF ( ANY( MAXLOC(Ptr)  .NE. (/I-K+1, J-K+1/)) ) STOP 21
-      IF ( ANY( MINLOC(Ptr)  .NE. (/1, 1/)) )         STOP 22
-      IF (SIZE(Ptr)  .NE. (I-K+1)*(J-K+1))            STOP 30
-      IF (.NOT. ASSOCIATED(Ptr))                      STOP 31
-      IF (ANY( LBOUND(Ptr) .NE. (/K,  K/)))           STOP 32
-      IF (ANY( UBOUND(Ptr) .NE. (/I,  J/)))           STOP 33
+      IF ( ANY( MAXLOC(Ptr)  .NE. (/I-K+1, J-K+1/)) ) ERROR STOP 21
+      IF ( ANY( MINLOC(Ptr)  .NE. (/1, 1/)) )         ERROR STOP 22
+      IF (SIZE(Ptr)  .NE. (I-K+1)*(J-K+1))            ERROR STOP 30
+      IF (.NOT. ASSOCIATED(Ptr))                      ERROR STOP 31
+      IF (ANY( LBOUND(Ptr) .NE. (/K,  K/)))           ERROR STOP 32
+      IF (ANY( UBOUND(Ptr) .NE. (/I,  J/)))           ERROR STOP 33
     END DO
 
   END DO

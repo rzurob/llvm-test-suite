@@ -83,14 +83,14 @@
   SELECT TYPE ( As => ProcPtr(V))
   TYPE Is (Child)
 
-    IF ( ANY(SHAPE(As) .NE. (/3333/) ))        STOP 11
-    IF ( ANY(LBOUND(As) .NE. (/2/)) )          STOP 12
-    IF ( ANY(UBOUND(As) .NE. (/1+SIZE(V)/) ))  STOP 13
+    IF ( ANY(SHAPE(As) .NE. (/3333/) ))        ERROR STOP 11
+    IF ( ANY(LBOUND(As) .NE. (/2/)) )          ERROR STOP 12
+    IF ( ANY(UBOUND(As) .NE. (/1+SIZE(V)/) ))  ERROR STOP 13
 
-    IF ( ANY(As%GetBaseID()  .NE. -1) ) STOP 21
-    IF ( ANY(As%GetChildID() .NE. -2) ) STOP 22
-    IF ( ANY(As%Base%GetID() .NE. -1) ) STOP 23
-    IF ( ANY(As%GetID()      .NE. -2) ) STOP 24
+    IF ( ANY(As%GetBaseID()  .NE. -1) ) ERROR STOP 21
+    IF ( ANY(As%GetChildID() .NE. -2) ) ERROR STOP 22
+    IF ( ANY(As%Base%GetID() .NE. -1) ) ERROR STOP 23
+    IF ( ANY(As%GetID()      .NE. -2) ) ERROR STOP 24
 
   CLASS DEFAULT
     STOP 33

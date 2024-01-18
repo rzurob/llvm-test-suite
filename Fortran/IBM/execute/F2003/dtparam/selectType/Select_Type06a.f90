@@ -95,7 +95,7 @@
       INTEGER :: I
 
       ALLOCATE(List(knd1,len1):: Init)
-      IF ( .NOT. ASSOCIATED(Init)) STOP 10
+      IF ( .NOT. ASSOCIATED(Init)) ERROR STOP 10
 
       CALL BuildList(Init)
       DTV => Init
@@ -106,7 +106,7 @@
           TEMP => DTV
 
           DO I = 1, 10
-           IF ( .NOT. ASSOCIATED(TEMP%NEXT) ) STOP 20
+           IF ( .NOT. ASSOCIATED(TEMP%NEXT) ) ERROR STOP 20
            TEMP => TEMP%NEXT
            Call TEMP%GetSum()
           END DO

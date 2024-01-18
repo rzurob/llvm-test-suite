@@ -89,40 +89,40 @@
 
 
 
-  IF ( KIND(TI11 )   .NE. 4 )             STOP 11
-  IF ( ANY( TI11     .NE. LB4 ))          STOP 12
-  IF ( KIND(TI12 )   .NE. 2 )             STOP 13
-  IF ( ANY( TI12     .NE. LB1 ))          STOP 14
-  IF ( KIND(TI14 )   .NE. 4 )             STOP 15
-  IF ( ANY( TI14     .NE. LB4 ))          STOP 16
-  IF ( KIND(TI18 )   .NE. 8 )             STOP 17
-  IF ( ANY( TI18     .NE. LB4 ))          STOP 18
+  IF ( KIND(TI11 )   .NE. 4 )             ERROR STOP 11
+  IF ( ANY( TI11     .NE. LB4 ))          ERROR STOP 12
+  IF ( KIND(TI12 )   .NE. 2 )             ERROR STOP 13
+  IF ( ANY( TI12     .NE. LB1 ))          ERROR STOP 14
+  IF ( KIND(TI14 )   .NE. 4 )             ERROR STOP 15
+  IF ( ANY( TI14     .NE. LB4 ))          ERROR STOP 16
+  IF ( KIND(TI18 )   .NE. 8 )             ERROR STOP 17
+  IF ( ANY( TI18     .NE. LB4 ))          ERROR STOP 18
 
-  IF ( KIND(TL21 )   .NE. 1 )             STOP 21
-  IF ( ANY( TL21     .NE. LB1 ))          STOP 22
-  IF ( KIND(TL22 )   .NE. 4 )             STOP 23
-  IF ( ANY( TL22     .NE. LB1 ))          STOP 24
-  IF ( KIND(TL24 )   .NE. 4 )             STOP 25
-  IF ( ANY( TL24     .NE. LB1 ))          STOP 26
-  IF ( KIND(TL28 )   .NE. 8 )             STOP 27
-  IF ( ANY( TL28     .NE. LB1 ))          STOP 28
+  IF ( KIND(TL21 )   .NE. 1 )             ERROR STOP 21
+  IF ( ANY( TL21     .NE. LB1 ))          ERROR STOP 22
+  IF ( KIND(TL22 )   .NE. 4 )             ERROR STOP 23
+  IF ( ANY( TL22     .NE. LB1 ))          ERROR STOP 24
+  IF ( KIND(TL24 )   .NE. 4 )             ERROR STOP 25
+  IF ( ANY( TL24     .NE. LB1 ))          ERROR STOP 26
+  IF ( KIND(TL28 )   .NE. 8 )             ERROR STOP 27
+  IF ( ANY( TL28     .NE. LB1 ))          ERROR STOP 28
 
-  IF ( KIND(TR44 )   .NE. 4 )             STOP 31
-  IF ( ANY( TR44     .NE. UB1 ))          STOP 32
-  IF ( KIND(TR48 )   .NE. 8 )             STOP 33
-  IF ( ANY( TR48     .NE. UB1 ))          STOP 34
-  IF ( KIND(TR46 )   .NE. 1  )            STOP 35
-  IF ( ANY( TR46     .NE. UB1 ))          STOP 36
+  IF ( KIND(TR44 )   .NE. 4 )             ERROR STOP 31
+  IF ( ANY( TR44     .NE. UB1 ))          ERROR STOP 32
+  IF ( KIND(TR48 )   .NE. 8 )             ERROR STOP 33
+  IF ( ANY( TR48     .NE. UB1 ))          ERROR STOP 34
+  IF ( KIND(TR46 )   .NE. 1  )            ERROR STOP 35
+  IF ( ANY( TR46     .NE. UB1 ))          ERROR STOP 36
 
-  IF ( KIND(TZ88 )   .NE. 4 )             STOP 41
-  IF ( ANY( TZ88     .NE. UB2 ))          STOP 42
-  IF ( KIND(TZ84 )   .NE. 4 )             STOP 43
-  IF ( ANY( TZ84     .NE. UB2 ))          STOP 44
-  IF ( KIND(TZ86 )   .NE. 2  )            STOP 45
-  IF ( ANY( TZ86     .NE. UB2 ))          STOP 46
+  IF ( KIND(TZ88 )   .NE. 4 )             ERROR STOP 41
+  IF ( ANY( TZ88     .NE. UB2 ))          ERROR STOP 42
+  IF ( KIND(TZ84 )   .NE. 4 )             ERROR STOP 43
+  IF ( ANY( TZ84     .NE. UB2 ))          ERROR STOP 44
+  IF ( KIND(TZ86 )   .NE. 2  )            ERROR STOP 45
+  IF ( ANY( TZ86     .NE. UB2 ))          ERROR STOP 46
 
-  IF ( ANY( TDL      .NE. LB8 ))          STOP 51
-  IF ( ANY( TDU      .NE. UB8 ))          STOP 52
+  IF ( ANY( TDL      .NE. LB8 ))          ERROR STOP 51
+  IF ( ANY( TDU      .NE. UB8 ))          ERROR STOP 52
 
   END
 

@@ -34,9 +34,9 @@
     print*, SIZE(As)
     print*, ubound(as)
     print*, lbound(as)
-    IF ( SIZE(As)      .NE. 499 ) STOP 20
-    IF ( UBOUND(As, 1) .NE. 499 ) STOP 22
-    IF ( LBOUND(As, 1) .NE. 1 )   STOP 24
+    IF ( SIZE(As)      .NE. 499 ) ERROR STOP 20
+    IF ( UBOUND(As, 1) .NE. 499 ) ERROR STOP 22
+    IF ( LBOUND(As, 1) .NE. 1 )   ERROR STOP 24
   END SELECT
 
   END

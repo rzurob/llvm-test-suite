@@ -60,9 +60,9 @@
   C3PreSpec => C3
 
 
-  IF ( C1PreSpec() .NE. "1"    ) STOP 11
-  IF ( C2PreSpec() .NE. "12"   ) STOP 12
-  IF ( C3PreSpec() .NE. "123"  ) STOP 13
+  IF ( C1PreSpec() .NE. "1"    ) ERROR STOP 11
+  IF ( C2PreSpec() .NE. "12"   ) ERROR STOP 12
+  IF ( C3PreSpec() .NE. "123"  ) ERROR STOP 13
 
   END
 

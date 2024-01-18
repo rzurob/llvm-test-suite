@@ -66,8 +66,8 @@
   ASSOCIATE ( T2 => T1((/3,2,1/)) )
     SELECT TYPE ( T2 )
       TYPE IS ( Child(4) )
-        IF (ANY(T2%GetId() .NE. -2) )      STOP 30
-        IF (ANY(T2%Base%GetId() .NE. -1) ) STOP 31
+        IF (ANY(T2%GetId() .NE. -2) )      ERROR STOP 30
+        IF (ANY(T2%Base%GetId() .NE. -1) ) ERROR STOP 31
       CLASS DEFAULT
         STOP 32
     END SELECT
@@ -75,8 +75,8 @@
     ASSOCIATE ( As => T2 )
       SELECT TYPE ( As )
         TYPE IS (Child(4) )
-          IF (ANY(As%GetId()      .NE. -2) ) STOP 50
-          IF (ANY(As%Base%GetId() .NE. -1) ) STOP 51
+          IF (ANY(As%GetId()      .NE. -2) ) ERROR STOP 50
+          IF (ANY(As%Base%GetId() .NE. -1) ) ERROR STOP 51
         CLASS DEFAULT
           STOP 52
       END SELECT

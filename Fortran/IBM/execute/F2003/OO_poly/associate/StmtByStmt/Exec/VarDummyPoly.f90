@@ -66,24 +66,24 @@
   CLASS(*)    :: Arg2
 
   ASSOCIATE ( As => Arg1 )
-    IF ( As%GetID() .NE. 2) STOP 50
-    IF ( As%BaseId  .NE. 1) STOP 51
+    IF ( As%GetID() .NE. 2) ERROR STOP 50
+    IF ( As%BaseId  .NE. 1) ERROR STOP 51
 
     ASSOCIATE ( As1 => As%BaseId )
-       IF ( As1 .NE. 1) STOP 52
+       IF ( As1 .NE. 1) ERROR STOP 52
     END ASSOCIATE
 
-    IF ( .NOT. SAME_TYPE_AS(As, Child(BaseComp=NULL())) ) STOP 53
+    IF ( .NOT. SAME_TYPE_AS(As, Child(BaseComp=NULL())) ) ERROR STOP 53
 
     SELECT TYPE ( As )
       TYPE IS (Child)
         ALLOCATE(Child :: As%BaseComp)
 
-        IF ( As%BaseComp%BaseId  .NE. 1) STOP 54
-        IF ( As%BaseComp%GetId() .NE. 2) STOP 55
+        IF ( As%BaseComp%BaseId  .NE. 1) ERROR STOP 54
+        IF ( As%BaseComp%GetId() .NE. 2) ERROR STOP 55
 
-        IF ( As%GetID() .NE. 2) STOP 56
-        IF ( As%ChildId .NE. 2) STOP 57
+        IF ( As%GetID() .NE. 2) ERROR STOP 56
+        IF ( As%ChildId .NE. 2) ERROR STOP 57
 
         As%BaseId  = -1  !Test Arg2
         As%ChildId = -2
@@ -99,25 +99,25 @@
 
     SELECT TYPE ( As )
       TYPE IS (Child)
-        IF ( As%GetID() .NE. -2)      STOP 40
-        IF ( As%ChildId .NE. -2)      STOP 41
-        IF ( As%BaseId  .NE. -1)      STOP 42
-        IF ( As%Base%GetId() .NE. -1) STOP 43
+        IF ( As%GetID() .NE. -2)      ERROR STOP 40
+        IF ( As%ChildId .NE. -2)      ERROR STOP 41
+        IF ( As%BaseId  .NE. -1)      ERROR STOP 42
+        IF ( As%Base%GetId() .NE. -1) ERROR STOP 43
 
         ASSOCIATE ( As1 => As%BaseId )
-         IF ( As1 .NE. -1) STOP 44
+         IF ( As1 .NE. -1) ERROR STOP 44
         END ASSOCIATE
 
-        IF ( .NOT. SAME_TYPE_AS(As, Child(BaseComp=NULL())) ) STOP 45
-        IF ( .NOT. SAME_TYPE_AS(As%BaseComp, As) ) STOP 46
+        IF ( .NOT. SAME_TYPE_AS(As, Child(BaseComp=NULL())) ) ERROR STOP 45
+        IF ( .NOT. SAME_TYPE_AS(As%BaseComp, As) ) ERROR STOP 46
 
         ALLOCATE(As%BaseComp)
-        IF ( As%BaseComp%BaseId  .NE. 1) STOP 47
-        IF ( As%BaseComp%GetId() .NE. 1) STOP 48
+        IF ( As%BaseComp%BaseId  .NE. 1) ERROR STOP 47
+        IF ( As%BaseComp%GetId() .NE. 1) ERROR STOP 48
         DEALLOCATE(As%BaseComp)
 
-        IF ( As%GetID() .NE. -2) STOP 49
-        IF ( As%ChildId .NE. -2) STOP 30
+        IF ( As%GetID() .NE. -2) ERROR STOP 49
+        IF ( As%ChildId .NE. -2) ERROR STOP 30
 
       CLASS DEFAULT
         STOP 80

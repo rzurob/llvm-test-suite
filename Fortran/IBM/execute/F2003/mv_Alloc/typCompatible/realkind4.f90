@@ -35,7 +35,7 @@ module m
 
               prg => trg
               call move_alloc(prg%r2, func)
-	      if ( .not. allocated(func)) stop 25
+	      if ( .not. allocated(func)) error stop 25
           end function
 
 end module
@@ -48,6 +48,6 @@ use m
 
     write (6, 100) func(p)
 100 format ( f10.6 )
-    if ( allocated(p%r2)) stop 23
+    if ( allocated(p%r2)) error stop 23
 
     end

@@ -43,8 +43,8 @@ end module
 
       call move_alloc(b, a)
 
-      if ( allocated(b) ) stop 11
-      if ( .not. allocated(a) ) stop 31
+      if ( allocated(b) ) error stop 11
+      if ( .not. allocated(a) ) error stop 31
 
       select type (a)
           type is (base)

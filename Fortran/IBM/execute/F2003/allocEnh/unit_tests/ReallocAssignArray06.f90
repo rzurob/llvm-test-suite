@@ -16,7 +16,7 @@ integer(8), pointer :: p(:)
 allocate(a(3))
 p => a
 a = (/1,2,3/)
-if (.not.associated(p,a)) stop 1
-if (any(shape(a) /= (/3/))) stop 2
-if (any(a /= (/1,2,3/))) stop 3
+if (.not.associated(p,a)) error stop 1
+if (any(shape(a) /= (/3/))) error stop 2
+if (any(a /= (/1,2,3/))) error stop 3
 end

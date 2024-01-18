@@ -105,25 +105,25 @@ program defAssignDataPtrComp01b
            dtp(4,3)(ctar1(3:5),ctar2(3:4),itar(5:6),gtar(4:4)) ]
 
      ! verify tar1
-     if(tar1(1)%cptr1%len /= 3)                          stop 10
+     if(tar1(1)%cptr1%len /= 3)                          error stop 10
      if(lbound(tar1(1)%cptr1,1) /= 1 .or. &
-        ubound(tar1(1)%cptr1,1) /= 2)                    stop 11
+        ubound(tar1(1)%cptr1,1) /= 2)                    error stop 11
 
-     if(any(tar1(1)%cptr1 /= ["hat","cat"]))             stop 12
-     if(any(tar1(1)%cptr2 /= ["abcd","ABCD"]))           stop 13
+     if(any(tar1(1)%cptr1 /= ["hat","cat"]))             error stop 12
+     if(any(tar1(1)%cptr2 /= ["abcd","ABCD"]))           error stop 13
 
-     if(any(tar1(1)%iptr /= [1,2,3,4]))                  stop 14
-     if(any(tar1(1)%gptr .neqv. [.true.,.false.,.true.]))    stop 15
+     if(any(tar1(1)%iptr /= [1,2,3,4]))                  error stop 14
+     if(any(tar1(1)%gptr .neqv. [.true.,.false.,.true.]))    error stop 15
 
-     if(tar1(2)%cptr1%len /= 3)                          stop 16
+     if(tar1(2)%cptr1%len /= 3)                          error stop 16
      if(lbound(tar1(2)%cptr1,1) /= 1 .or. &
-        ubound(tar1(2)%cptr1,1) /= 3)                    stop 17
+        ubound(tar1(2)%cptr1,1) /= 3)                    error stop 17
 
-     if(any(tar1(2)%cptr1 /= ["get","fat","net"]))       stop 18
-     if(any(tar1(2)%cptr2 /= ["efgh","EFGH"]))           stop 19
+     if(any(tar1(2)%cptr1 /= ["get","fat","net"]))       error stop 18
+     if(any(tar1(2)%cptr2 /= ["efgh","EFGH"]))           error stop 19
 
-     if(any(tar1(2)%iptr /= [5,6]))                      stop 20
-     if(any(tar1(2)%gptr .neqv. [.false.]))              stop 21
+     if(any(tar1(2)%iptr /= [5,6]))                      error stop 20
+     if(any(tar1(2)%gptr .neqv. [.false.]))              error stop 21
 
      allocate(dtp(4,3) :: ptr1(3:4))
 
@@ -131,24 +131,24 @@ program defAssignDataPtrComp01b
      ptr1=tar1(2:1:-1)
 
      ! verify ptr1
-     if(ptr1(4)%cptr1%len /= 3)                          stop 22
+     if(ptr1(4)%cptr1%len /= 3)                          error stop 22
      if(lbound(ptr1(4)%cptr1,1) /= 1 .or. &
-        ubound(ptr1(4)%cptr1,1) /= 2)                    stop 23
-     if(any(ptr1(4)%cptr1 /= ["hat","cat"]))             stop 24
-     if(any(ptr1(4)%cptr2 /= ["abcd","ABCD"]))           stop 25
+        ubound(ptr1(4)%cptr1,1) /= 2)                    error stop 23
+     if(any(ptr1(4)%cptr1 /= ["hat","cat"]))             error stop 24
+     if(any(ptr1(4)%cptr2 /= ["abcd","ABCD"]))           error stop 25
 
-     if(any(ptr1(4)%iptr /= [1,2,3,4]))                  stop 26
-     if(any(ptr1(4)%gptr .neqv. [.true.,.false.,.true.])) stop 27
+     if(any(ptr1(4)%iptr /= [1,2,3,4]))                  error stop 26
+     if(any(ptr1(4)%gptr .neqv. [.true.,.false.,.true.])) error stop 27
 
-     if(ptr1(3)%cptr1%len /= 3)                          stop 28
+     if(ptr1(3)%cptr1%len /= 3)                          error stop 28
      if(lbound(ptr1(3)%cptr1,1) /= 1 .or. &
-        ubound(ptr1(3)%cptr1,1) /= 3)                    stop 29
+        ubound(ptr1(3)%cptr1,1) /= 3)                    error stop 29
 
-     if(any(ptr1(3)%cptr1 /= ["get","fat","net"]))       stop 30
-     if(any(ptr1(3)%cptr2 /= ["efgh","EFGH"]))           stop 31
+     if(any(ptr1(3)%cptr1 /= ["get","fat","net"]))       error stop 30
+     if(any(ptr1(3)%cptr2 /= ["efgh","EFGH"]))           error stop 31
 
-     if(any(ptr1(3)%iptr /= [5,6]))                      stop 32
-     if(any(ptr1(3)%gptr .neqv. [.false.]))              stop 33
+     if(any(ptr1(3)%iptr /= [5,6]))                      error stop 32
+     if(any(ptr1(3)%gptr .neqv. [.false.]))              error stop 33
 
      allocate(ptr3(-1:-1))
 
@@ -156,11 +156,11 @@ program defAssignDataPtrComp01b
      ptr3(-1:-1)=dtp(4,3)(ctar1(2:3),ctar2(3:4),itar(5:6),gtar(3:4))
 
      ! verify ptr3
-     if(ptr3(-1)%cptr1%len /= 3)                         stop 34
-     if(any(ptr3(-1)%cptr1 /= ["cat","get"]))            stop 35
-     if(any(ptr3(-1)%cptr2 /= ["efgh","EFGH"]))          stop 36
-     if(any(ptr3(-1)%iptr /= [5,6]))                     stop 37
-     if(any(ptr3(-1)%gptr .neqv. [.true.,.false.]))      stop 38
+     if(ptr3(-1)%cptr1%len /= 3)                         error stop 34
+     if(any(ptr3(-1)%cptr1 /= ["cat","get"]))            error stop 35
+     if(any(ptr3(-1)%cptr2 /= ["efgh","EFGH"]))          error stop 36
+     if(any(ptr3(-1)%iptr /= [5,6]))                     error stop 37
+     if(any(ptr3(-1)%gptr .neqv. [.true.,.false.]))      error stop 38
 
      deallocate(ptr3)
 
@@ -170,11 +170,11 @@ program defAssignDataPtrComp01b
      ptr3(1)=dtp(4,3)(ctar1(5:1:-2),ctar2(4:1:-2),itar(6:1:-2),gtar(4:1:-2))
 
      !verify ptr3
-     if(ptr3(1)%cptr1%len /= 3)                         stop 39
-     if(any(ptr3(1)%cptr1 /= ["net","get","hat"]))      stop 40
-     if(any(ptr3(1)%cptr2 /= ["EFGH","ABCD"]))          stop 41
-     if(any(ptr3(1)%iptr /= [6,4,2]))                   stop 42
-     if(any(ptr3(1)%gptr .neqv. [.false.,.false.]))     stop 43
+     if(ptr3(1)%cptr1%len /= 3)                         error stop 39
+     if(any(ptr3(1)%cptr1 /= ["net","get","hat"]))      error stop 40
+     if(any(ptr3(1)%cptr2 /= ["EFGH","ABCD"]))          error stop 41
+     if(any(ptr3(1)%iptr /= [6,4,2]))                   error stop 42
+     if(any(ptr3(1)%gptr .neqv. [.false.,.false.]))     error stop 43
 
      allocate(dtp(ptr3%k1,ptr3%l1) :: ptr2)
 
@@ -188,9 +188,9 @@ program defAssignDataPtrComp01b
      ptr2=gtar(1:4:2)
 
      !verify ptr2
-     if(ptr2%cptr1%len /= 3)                            stop 44
-     if(any(ptr2%cptr1 /= ["cat","get"]))               stop 45
-     if(any(ptr2%cptr2 /= ["catcat","getget"]))         stop 46
-     if(any(ptr2%iptr /=  [1,2,3,4,5,6]))               stop 47
-     if(any(ptr2%gptr .neqv. [.true.,.true.]))          stop 48
+     if(ptr2%cptr1%len /= 3)                            error stop 44
+     if(any(ptr2%cptr1 /= ["cat","get"]))               error stop 45
+     if(any(ptr2%cptr2 /= ["catcat","getget"]))         error stop 46
+     if(any(ptr2%iptr /=  [1,2,3,4,5,6]))               error stop 47
+     if(any(ptr2%gptr .neqv. [.true.,.true.]))          error stop 48
 end program

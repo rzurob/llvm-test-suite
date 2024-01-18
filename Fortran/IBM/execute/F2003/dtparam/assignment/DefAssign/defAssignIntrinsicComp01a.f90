@@ -121,32 +121,32 @@ program defAssignIntrinsicComp01a
 
      dtp1=dtp2 ! call assign1
 
-     if(any(dtp1%c1 /= "XLF"))                                       stop 10
-     if(any(dtp1%i1 /= [10,11]))                                     stop 11
-     if(any(dtp1%g1 .neqv. [.true.,.false.,.true.]))                 stop 12
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),1.2))        stop 13
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-3.5))       stop 14
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),6.7E-2))       stop 15
+     if(any(dtp1%c1 /= "XLF"))                                       error stop 10
+     if(any(dtp1%i1 /= [10,11]))                                     error stop 11
+     if(any(dtp1%g1 .neqv. [.true.,.false.,.true.]))                 error stop 12
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),1.2))        error stop 13
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-3.5))       error stop 14
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),6.7E-2))       error stop 15
 
      dtp3=dtp1 ! call assign1
 
-     if(any(dtp3%c1 /= "XLF"))                                       stop 16
-     if(any(dtp3%i1 /= [10,11]))                                     stop 17
-     if(any(dtp3%g1 .neqv. [.true.,.false.,.true.]))                 stop 18
-     if(.not. precision_r4(dtp3%r1(ubound(dtp3%r1,1)-2),1.2))        stop 19
-     if(.not. precision_r4(dtp3%r1(ubound(dtp3%r1,1)-1),-3.5))       stop 20
-     if(.not. precision_r4(dtp3%r1(ubound(dtp3%r1,1)),6.7E-2))       stop 21
+     if(any(dtp3%c1 /= "XLF"))                                       error stop 16
+     if(any(dtp3%i1 /= [10,11]))                                     error stop 17
+     if(any(dtp3%g1 .neqv. [.true.,.false.,.true.]))                 error stop 18
+     if(.not. precision_r4(dtp3%r1(ubound(dtp3%r1,1)-2),1.2))        error stop 19
+     if(.not. precision_r4(dtp3%r1(ubound(dtp3%r1,1)-1),-3.5))       error stop 20
+     if(.not. precision_r4(dtp3%r1(ubound(dtp3%r1,1)),6.7E-2))       error stop 21
 
      dtp4=dtp3 ! call assign 2
 
      do i=lbound(dtp4,1),ubound(dtp4,1)
 
-     if(any(dtp4(i)%c1 /= "XLF"))                                    stop 22
-     if(any(dtp4(i)%i1 /= [10,11]))                                  stop 23
-     if(any(dtp4(i)%g1 .neqv. [.true.,.false.,.true.]))              stop 24
-     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-2),1.2))  stop 25
-     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-1),-3.5)) stop 26
-     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)),6.7E-2)) stop 27
+     if(any(dtp4(i)%c1 /= "XLF"))                                    error stop 22
+     if(any(dtp4(i)%i1 /= [10,11]))                                  error stop 23
+     if(any(dtp4(i)%g1 .neqv. [.true.,.false.,.true.]))              error stop 24
+     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-2),1.2))  error stop 25
+     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-1),-3.5)) error stop 26
+     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)),6.7E-2)) error stop 27
 
      end do
 
@@ -154,34 +154,34 @@ program defAssignIntrinsicComp01a
 
      do i=lbound(dtp5,1),ubound(dtp5,1)
 
-     if(any(dtp5(i)%c1 /= "***"))                                    stop 28
-     if(any(dtp5(i)%i1 /= -99))                                      stop 29
-     if(any(dtp5(i)%g1 .neqv. .false.))                              stop 30
-     if(.not. precision_r4(dtp5(i)%r1(ubound(dtp5(i)%r1,1)-2),-9.9)) stop 31
-     if(.not. precision_r4(dtp5(i)%r1(ubound(dtp5(i)%r1,1)-1),-9.9)) stop 32
-     if(.not. precision_r4(dtp5(i)%r1(ubound(dtp5(i)%r1,1)),-9.9))   stop 33
+     if(any(dtp5(i)%c1 /= "***"))                                    error stop 28
+     if(any(dtp5(i)%i1 /= -99))                                      error stop 29
+     if(any(dtp5(i)%g1 .neqv. .false.))                              error stop 30
+     if(.not. precision_r4(dtp5(i)%r1(ubound(dtp5(i)%r1,1)-2),-9.9)) error stop 31
+     if(.not. precision_r4(dtp5(i)%r1(ubound(dtp5(i)%r1,1)-1),-9.9)) error stop 32
+     if(.not. precision_r4(dtp5(i)%r1(ubound(dtp5(i)%r1,1)),-9.9))   error stop 33
 
      end do
 
      dtp1=[dtp3,dtp1]  ! call assign3
 
-     if(any(dtp1%c1 /= "XLF"))                                       stop 34
-     if(any(dtp1%i1 /= [10,11]))                                     stop 35
-     if(any(dtp1%g1 .neqv. [.true.,.false.,.true.]))                 stop 36
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),1.2))        stop 37
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-3.5))       stop 38
-     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),6.7E-2))       stop 39
+     if(any(dtp1%c1 /= "XLF"))                                       error stop 34
+     if(any(dtp1%i1 /= [10,11]))                                     error stop 35
+     if(any(dtp1%g1 .neqv. [.true.,.false.,.true.]))                 error stop 36
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-2),1.2))        error stop 37
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)-1),-3.5))       error stop 38
+     if(.not. precision_r4(dtp1%r1(ubound(dtp1%r1,1)),6.7E-2))       error stop 39
 
      dtp4=dtp5  ! call assign4
 
      do i=lbound(dtp4,1),ubound(dtp4,1)
 
-     if(any(dtp4(i)%c1 /= "***"))                                    stop 40
-     if(any(dtp4(i)%i1 /= -99))                                      stop 41
-     if(any(dtp4(i)%g1 .neqv. .false.))                              stop 42
-     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-2),-9.9)) stop 43
-     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-1),-9.9)) stop 44
-     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)),-9.9))   stop 45
+     if(any(dtp4(i)%c1 /= "***"))                                    error stop 40
+     if(any(dtp4(i)%i1 /= -99))                                      error stop 41
+     if(any(dtp4(i)%g1 .neqv. .false.))                              error stop 42
+     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-2),-9.9)) error stop 43
+     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)-1),-9.9)) error stop 44
+     if(.not. precision_r4(dtp4(i)%r1(ubound(dtp4(i)%r1,1)),-9.9))   error stop 45
 
      end do
 
@@ -189,12 +189,12 @@ program defAssignIntrinsicComp01a
 
      do i=lbound(dtp6,1),ubound(dtp6,1)
 
-     if(any(dtp6(i)%c1 /= "?**"))                                     stop 46
-     if(any(dtp6(i)%i1 /= 1))                                         stop 47
-     if(any(dtp6(i)%g1 .neqv. .true.))                                stop 48
-     if(.not. precision_r8(dtp6(i)%r1(lbound(dtp6(i)%r1,1)),-5._8))   stop 49
-     if(.not. precision_r8(dtp6(i)%r1(lbound(dtp6(i)%r1,1)+1),-5._8)) stop 50
-     if(.not. precision_r8(dtp6(i)%r1(lbound(dtp6(i)%r1,1)+2),-5._8)) stop 51
+     if(any(dtp6(i)%c1 /= "?**"))                                     error stop 46
+     if(any(dtp6(i)%i1 /= 1))                                         error stop 47
+     if(any(dtp6(i)%g1 .neqv. .true.))                                error stop 48
+     if(.not. precision_r8(dtp6(i)%r1(lbound(dtp6(i)%r1,1)),-5._8))   error stop 49
+     if(.not. precision_r8(dtp6(i)%r1(lbound(dtp6(i)%r1,1)+1),-5._8)) error stop 50
+     if(.not. precision_r8(dtp6(i)%r1(lbound(dtp6(i)%r1,1)+2),-5._8)) error stop 51
 
      end do
 

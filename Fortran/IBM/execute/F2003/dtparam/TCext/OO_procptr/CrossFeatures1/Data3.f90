@@ -67,16 +67,16 @@
   SELECT CASE (Arg)
   CASE(0)
 
-    IF (ASSOCIATED(V%ProcPtr))     STOP 11
-    IF (V%Id .NE. -1)              STOP 12
+    IF (ASSOCIATED(V%ProcPtr))     ERROR STOP 11
+    IF (V%Id .NE. -1)              ERROR STOP 12
 
     V%ProcPtr => Fun
     V%Id =  1
 
   CASE(1)
 
-    IF (.NOT. ASSOCIATED(V%ProcPtr, Fun))  STOP 21
-    IF (V%Id .NE. 1)                       STOP 22
+    IF (.NOT. ASSOCIATED(V%ProcPtr, Fun))  ERROR STOP 21
+    IF (V%Id .NE. 1)                       ERROR STOP 22
 
   END SELECT
   END SUBROUTINE

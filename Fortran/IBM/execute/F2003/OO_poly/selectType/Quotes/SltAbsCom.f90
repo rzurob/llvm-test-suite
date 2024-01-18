@@ -71,10 +71,10 @@
   CLASS DEFAULT
     STOP 20
   TYPE IS (Child)
-    IF ( Ptr1%ChildId      .NE. 2 )  STOP 33
-    IF ( Ptr1%GetId()      .NE. 2 )  STOP 33
-    IF ( Ptr1%Base%BaseId  .NE. 1 )  STOP 34
-!   IF ( Ptr1%Base%GetId() .NE. 1 )  STOP 34 C611
+    IF ( Ptr1%ChildId      .NE. 2 )  ERROR STOP 33
+    IF ( Ptr1%GetId()      .NE. 2 )  ERROR STOP 33
+    IF ( Ptr1%Base%BaseId  .NE. 1 )  ERROR STOP 34
+!   IF ( Ptr1%Base%GetId() .NE. 1 )  ERROR STOP 34 C611
   END SELECT
 
   Ptr => Tar
@@ -83,12 +83,12 @@
   CLASS DEFAULT
     STOP 40
   TYPE IS (Child)
-    IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 41
-    IF ( LBOUND(As, 1) .NE. 1       )   STOP 42
-    IF ( ANY(As%ChildId      .NE. (/2,2,2,2/)) )  STOP 43
-    IF ( ANY(As%GetId()      .NE. (/2,2,2,2/)) )  STOP 43
-    IF ( ANY(As%Base%BaseId  .NE. (/1,1,1,1/)) )  STOP 44
-!   IF ( ANY(As%Base%GetId() .NE. (/1,1,1,1/)) )  STOP 44 !C611
+    IF ( ANY(SHAPE(As) .NE. (/4/))  )   ERROR STOP 41
+    IF ( LBOUND(As, 1) .NE. 1       )   ERROR STOP 42
+    IF ( ANY(As%ChildId      .NE. (/2,2,2,2/)) )  ERROR STOP 43
+    IF ( ANY(As%GetId()      .NE. (/2,2,2,2/)) )  ERROR STOP 43
+    IF ( ANY(As%Base%BaseId  .NE. (/1,1,1,1/)) )  ERROR STOP 44
+!   IF ( ANY(As%Base%GetId() .NE. (/1,1,1,1/)) )  ERROR STOP 44 !C611
   END SELECT
 
   END

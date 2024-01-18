@@ -44,48 +44,48 @@
 
   CALL S(IPtr, IArr, N, L, U)
 
-  IF (.NOT. ASSOCIATED(IPtr, IArr))                 STOP 11
-  IF (ANY( LBOUND(IPtr)         .NE. (/L, L /)))    STOP 12
-  IF (ANY( UBOUND(IPtr)         .NE. (/U, U /)))    STOP 13
+  IF (.NOT. ASSOCIATED(IPtr, IArr))                 ERROR STOP 11
+  IF (ANY( LBOUND(IPtr)         .NE. (/L, L /)))    ERROR STOP 12
+  IF (ANY( UBOUND(IPtr)         .NE. (/U, U /)))    ERROR STOP 13
   SELECT TYPE (IPtr)
   TYPE IS (INTEGER)
-    IF (ANY( IPtr               .NE.   -1))         STOP 14
+    IF (ANY( IPtr               .NE.   -1))         ERROR STOP 14
   CLASS DEFAULT
     STOP 15
   END SELECT
 
   CAll S1(IPtr, IArr,  N, L, U)
-  !IF (.NOT. ASSOCIATED(IPtr, IArr(L:U,L:L)))       STOP 21
-  IF (.NOT. ASSOCIATED(IPtr))                       STOP 21
-  IF (ANY( LBOUND(IPtr)         .NE. (/L, L /)))    STOP 22
-  IF (ANY( UBOUND(IPtr)         .NE. (/U, L /)))    STOP 23
+  !IF (.NOT. ASSOCIATED(IPtr, IArr(L:U,L:L)))       ERROR STOP 21
+  IF (.NOT. ASSOCIATED(IPtr))                       ERROR STOP 21
+  IF (ANY( LBOUND(IPtr)         .NE. (/L, L /)))    ERROR STOP 22
+  IF (ANY( UBOUND(IPtr)         .NE. (/U, L /)))    ERROR STOP 23
   SELECT TYPE (IPtr)
   TYPE IS (INTEGER)
-    IF (ANY( IPtr               .NE.   -1))         STOP 24
+    IF (ANY( IPtr               .NE.   -1))         ERROR STOP 24
   CLASS DEFAULT
     STOP 25
   END SELECT
 
   CALL S(CPtr, CArr, N, L, U)
 
-  IF (.NOT. ASSOCIATED(CPtr, CArr))                 STOP 31
-  IF (ANY( LBOUND(CPtr)         .NE. (/L, L /)))    STOP 32
-  IF (ANY( UBOUND(CPtr)         .NE. (/U, U /)))    STOP 33
+  IF (.NOT. ASSOCIATED(CPtr, CArr))                 ERROR STOP 31
+  IF (ANY( LBOUND(CPtr)         .NE. (/L, L /)))    ERROR STOP 32
+  IF (ANY( UBOUND(CPtr)         .NE. (/U, U /)))    ERROR STOP 33
   SELECT TYPE (CPtr)
   TYPE IS (CHARACTER(*))
-    IF (ANY( CPtr               .NE.  "123"))       STOP 34
+    IF (ANY( CPtr               .NE.  "123"))       ERROR STOP 34
   CLASS DEFAULT
     STOP 35
   END SELECT
 
   CAll S1(CPtr, CArr, N, L, U)
 
-  IF (.NOT. ASSOCIATED(CPtr, CArr(:,L:L)))          STOP 41
-  IF (ANY( LBOUND(CPtr)         .NE. (/L, L /)))    STOP 42
-  IF (ANY( UBOUND(CPtr)         .NE. (/U, L /)))    STOP 43
+  IF (.NOT. ASSOCIATED(CPtr, CArr(:,L:L)))          ERROR STOP 41
+  IF (ANY( LBOUND(CPtr)         .NE. (/L, L /)))    ERROR STOP 42
+  IF (ANY( UBOUND(CPtr)         .NE. (/U, L /)))    ERROR STOP 43
   SELECT TYPE (CPtr)
   TYPE IS (CHARACTER(*))
-    IF (ANY( CPtr               .NE. "123"))        STOP 44
+    IF (ANY( CPtr               .NE. "123"))        ERROR STOP 44
   CLASS DEFAULT
     STOP 45
   END SELECT

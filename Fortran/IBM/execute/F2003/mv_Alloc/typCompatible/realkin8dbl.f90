@@ -29,8 +29,8 @@ module m
           end subroutine
 
           subroutine sub1()
-              if ( .not. allocated(y)) stop 51
-              if ( allocated(x)) stop 53
+              if ( .not. allocated(y)) error stop 51
+              if ( allocated(x)) error stop 53
 
               print*, lbound(y,1),lbound(y,2),lbound(y,3),lbound(y,4),lbound(y,5)
 

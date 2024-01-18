@@ -70,12 +70,12 @@
         Ptr = DT(ID=I*J, Ptr=Tar2)
       END SELECT
 
-      IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 12
-      IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
-      IF (ANY( Tar2%ID     .NE.  I*J ))            STOP 14
+      IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        ERROR STOP 12
+      IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) ERROR STOP 13
+      IF (ANY( Tar2%ID     .NE.  I*J ))            ERROR STOP 14
     END ASSOCIATE
-    IF (.NOT. ASSOCIATED(Ptr, Tar2))               STOP 11
-    IF (ANY( Ptr%ModFun() .NE.  I*J ))             STOP 15
+    IF (.NOT. ASSOCIATED(Ptr, Tar2))               ERROR STOP 11
+    IF (ANY( Ptr%ModFun() .NE.  I*J ))             ERROR STOP 15
 
     Ptr(I:J, I:J) => Tar1
     ASSOCIATE( Ptr => Ptr)
@@ -84,12 +84,12 @@
         Ptr = DT1(ID=-I*J, Ptr=Tar2)
       END SELECT
 
-      IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      STOP 22
-      IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      STOP 23
-      IF (ANY( Tar1(1:(J-I+1)*(J-I+1))%ID .NE.  -I*J ))  STOP 24
+      IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      ERROR STOP 22
+      IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      ERROR STOP 23
+      IF (ANY( Tar1(1:(J-I+1)*(J-I+1))%ID .NE.  -I*J ))  ERROR STOP 24
     END ASSOCIATE
-    IF (.NOT. ASSOCIATED(Ptr))                   STOP 21
-    IF (ANY( Ptr%ModFun() .NE.  -I*J ))          STOP 15
+    IF (.NOT. ASSOCIATED(Ptr))                   ERROR STOP 21
+    IF (ANY( Ptr%ModFun() .NE.  -I*J ))          ERROR STOP 15
 
   END DO
   END DO

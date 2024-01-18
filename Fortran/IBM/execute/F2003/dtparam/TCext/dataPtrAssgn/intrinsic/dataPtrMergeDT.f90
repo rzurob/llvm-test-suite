@@ -43,9 +43,9 @@
 
 	b1(b2(1)%ip(1):b2(4)%ip(1)) => b2(8:1:-2)
 
-	if ( .not. associated(b1) ) stop 12
-	if ( lbound(b1,1) /= 1) stop 15
-	if ( ubound(b1,1) /= 4) stop 18
+	if ( .not. associated(b1) ) error stop 12
+	if ( lbound(b1,1) /= 1) error stop 15
+	if ( ubound(b1,1) /= 4) error stop 18
 
 	do i = b2(1)%ip(1), b2(4)%ip(1)
 	    print *, b1(i)%ip

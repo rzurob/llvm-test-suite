@@ -47,13 +47,13 @@
 
 	common /comm1/ itar, ip
 
-	if ( .not. associated(ip, itar)) stop 29
-	if ( any(lbound(ip,1) .ne. (/1/))) stop 31
-	if ( any(ubound(ip,1) .ne. (/ 10/))) stop 33
+	if ( .not. associated(ip, itar)) error stop 29
+	if ( any(lbound(ip,1) .ne. (/1/))) error stop 31
+	if ( any(ubound(ip,1) .ne. (/ 10/))) error stop 33
 
 	select type(ip)
 	    type is (integer)
-		if ( any(+(-ip) .ne. (/ (-i,i=1,10)/))) stop 35
+		if ( any(+(-ip) .ne. (/ (-i,i=1,10)/))) error stop 35
 	    class default
 		stop 50
 	end select

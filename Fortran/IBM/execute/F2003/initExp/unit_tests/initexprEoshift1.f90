@@ -24,18 +24,18 @@ integer(4),dimension(2,2,2,2) :: i4b=eoshift(reshape((/1,2,3,4,5,6,7,8,9,&
   & 10,11,12,13,14,15,16/),(/2,2,2,2/)), &
   & shift=reshape((/1,-1,0,2,0,0,0,0/),(/2,2,2/)), dim=1)
 
-if (.not. all(i4 .eq. eoshift((/1,2,3,4/), shift=1, boundary=-1))) stop 1
+if (.not. all(i4 .eq. eoshift((/1,2,3,4/), shift=1, boundary=-1))) error stop 1
 if (.not. all(i4a .eq. eoshift(reshape((/1,2,3,4,5,6,7,8,9, &
   & 10,11,12,13,14,15,16/),(/4,4/)), shift=(/1,-1,0,2/), &
-  & boundary=(/-1,-2,-3,-4/)))) stop 2
+  & boundary=(/-1,-2,-3,-4/)))) error stop 2
 
 if (.not. all(i4b .eq. eoshift(reshape((/1,2,3,4,5,6,7,8,9, &
   & 10,11,12,13,14,15,16/),(/2,2,2,2/)), &
-  & shift=reshape((/1,-1,0,2,0,0,0,0/),(/2,2,2/)), dim=1))) stop 3
+  & shift=reshape((/1,-1,0,2,0,0,0,0/),(/2,2,2/)), dim=1))) error stop 3
 
 if (.not. all(i1 .eq. eoshift((/1_1,12_1,3_1,14_1/), &
-  & shift=1, boundary=-1_1))) stop 4
+  & shift=1, boundary=-1_1))) error stop 4
 
-if (.not. all(i2 .eq. eoshift(A2, shift=(/1,-1/), boundary=100_2))) stop 5
+if (.not. all(i2 .eq. eoshift(A2, shift=(/1,-1/), boundary=100_2))) error stop 5
 
 end

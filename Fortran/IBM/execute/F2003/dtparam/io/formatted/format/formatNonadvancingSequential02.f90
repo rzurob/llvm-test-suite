@@ -67,25 +67,25 @@ program formatNonadvancingSequential02
   !start to read c1
   read(10,'(a3)',advance='no',eor=10,size=count,iostat=ios)  outer1(1)%c1
 
-  if(count /= 3)         stop 11
+  if(count /= 3)         error stop 11
 
   ! read i1, use TAB control edit descriptor
   read(10,'(t2,bz,i3,tl1,i3,tl5,bn,i5)', &
         advance='no',eor=12,size=count,iostat=ios) outer1(1)%comp1%i1
 
-  if(count /= 11)        stop 13
+  if(count /= 11)        error stop 13
 
   ! read g1
   read(10,'(2l2)',advance='no', &
            eor=14,size=count,iostat=ios) outer1(1)%comp1%g1
 
-  if(count /= 4)         stop 15
+  if(count /= 4)         error stop 15
 
   ! read r1
   read(10,'(/f4.1)',advance='no', &
         eor=16,size=count,iostat=ios) outer1(1)%comp1%r1
 
-  if(count /= 4)         stop 17
+  if(count /= 4)         error stop 17
 
   rewind 10
 
@@ -93,7 +93,7 @@ program formatNonadvancingSequential02
   read(10,'(a3,3i2,l4,tl4,l4,/f5.2)',advance='no',&
       eor=18,size=count,iostat=ios)       outer1(2)
 
-  if(count /= 22)        stop 19
+  if(count /= 22)        error stop 19
 
   write(*,'(2(a3/3i4/2l4/f5.2,:/))',advance='no') outer1
 

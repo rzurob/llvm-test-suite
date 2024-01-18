@@ -55,7 +55,7 @@ use dataTypeMod
         class (dataType(at%k)), allocatable :: temp
         integer i, j
 
-        if (.not. allocated(at%data)) stop 10
+        if (.not. allocated(at%data)) error stop 10
 
         do i = size(at%data), 1, -1
             do j = 1, i
@@ -113,7 +113,7 @@ use dataTypeMod
 
         select type (dt2)
             type is (dataArray (n=*))
-                if (dt2%n /= dt1%n) stop 25
+                if (dt2%n /= dt1%n) error stop 25
 
                 dt1%values = dt2%values
 

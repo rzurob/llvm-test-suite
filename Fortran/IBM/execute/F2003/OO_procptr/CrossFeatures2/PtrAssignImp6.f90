@@ -33,7 +33,7 @@
 
     SUBROUTINE ModSub(Proc)
     PROCEDURE(INTEGER(1)) :: Proc
-      IF ( Proc(-1_1) .NE. -1_1 ) STOP 11
+      IF ( Proc(-1_1) .NE. -1_1 ) ERROR STOP 11
     END SUBROUTINE
 
     FUNCTION Int1(Arg)
@@ -41,7 +41,7 @@
     PROCEDURE(INTEGER(2)), POINTER :: ProcPtr
       Int1 = Arg
       ProcPtr => Int2
-      IF ( ProcPtr(-2_2) .NE. -2_2 ) STOP 12
+      IF ( ProcPtr(-2_2) .NE. -2_2 ) ERROR STOP 12
     END FUNCTION
 
     FUNCTION Int2(Arg)
@@ -49,7 +49,7 @@
     PROCEDURE(INTEGER(4)), POINTER :: ProcPtr
       Int2 = Arg
       ProcPtr => Int4
-      IF ( ProcPtr(-4_4) .NE. -4_4 ) STOP 14
+      IF ( ProcPtr(-4_4) .NE. -4_4 ) ERROR STOP 14
     END FUNCTION
 
     FUNCTION Int4(Arg)
@@ -57,7 +57,7 @@
     PROCEDURE(INTEGER(8)), POINTER  :: ProcPtr
       Int4 = Arg
       ProcPtr => Int8
-      IF ( ProcPtr(-8_8) .NE. -8_8 ) STOP 18
+      IF ( ProcPtr(-8_8) .NE. -8_8 ) ERROR STOP 18
     END FUNCTION
 
     FUNCTION Int8(Arg)
@@ -65,7 +65,7 @@
     PROCEDURE(LOGICAL(1)), POINTER  :: ProcPtr
       Int8 = Arg
       ProcPtr => Log1
-      IF ( ProcPtr(.TRUE._1) .NEQV. .TRUE._1 ) STOP 21
+      IF ( ProcPtr(.TRUE._1) .NEQV. .TRUE._1 ) ERROR STOP 21
     END FUNCTION
 
 
@@ -74,7 +74,7 @@
     PROCEDURE(LOGICAL(2)), POINTER  :: ProcPtr
       Log1 = Arg
       ProcPtr => Log2
-      IF ( ProcPtr(.TRUE._2) .NEQV. .TRUE._2 ) STOP 22
+      IF ( ProcPtr(.TRUE._2) .NEQV. .TRUE._2 ) ERROR STOP 22
     END FUNCTION
 
     FUNCTION Log2(Arg)
@@ -82,7 +82,7 @@
     PROCEDURE(LOGICAL(4)), POINTER  :: ProcPtr
       Log2 = Arg
       ProcPtr => Log4
-      IF ( ProcPtr(.TRUE._4) .NEQV. .TRUE._4 ) STOP 24
+      IF ( ProcPtr(.TRUE._4) .NEQV. .TRUE._4 ) ERROR STOP 24
     END FUNCTION
 
     FUNCTION Log4(Arg)
@@ -90,7 +90,7 @@
     PROCEDURE(LOGICAL(8)), POINTER  :: ProcPtr
       Log4 = Arg
       ProcPtr => Log8
-      IF ( ProcPtr(.TRUE._8) .NEQV. .TRUE._8 ) STOP 28
+      IF ( ProcPtr(.TRUE._8) .NEQV. .TRUE._8 ) ERROR STOP 28
     END FUNCTION
 
     FUNCTION Log8(Arg)

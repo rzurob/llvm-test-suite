@@ -22,8 +22,8 @@
 
   call move_alloc(ch1, ch2)
 
-  if ( .not. allocated(ch2) ) stop 21
-  if ( allocated(ch1) ) stop 31
-  if ( ch2 /= 'IBMCompiler' ) stop 41
+  if ( .not. allocated(ch2) ) error stop 21
+  if ( allocated(ch1) ) error stop 31
+  if ( ch2 /= 'IBMCompiler' ) error stop 41
 
   end

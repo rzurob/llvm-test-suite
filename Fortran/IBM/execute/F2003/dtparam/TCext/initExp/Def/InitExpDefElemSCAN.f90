@@ -51,15 +51,15 @@
   INTEGER(KIND(SCAN(STRING=X%C(2:1), SET=X%C(1:0), KIND=8))) :: TI8(4,4)=SCAN(STRING=X%C(1:2), SET=X%C(2:1), KIND=8)
 
 
-  IF ( KIND(TI1)  .NE.    1 )  STOP 11
-  IF ( KIND(TI2)  .NE.    2 )  STOP 12
-  IF ( KIND(TI4)  .NE.    4 )  STOP 14
-  IF ( KIND(TI8)  .NE.    8 )  STOP 18
+  IF ( KIND(TI1)  .NE.    1 )  ERROR STOP 11
+  IF ( KIND(TI2)  .NE.    2 )  ERROR STOP 12
+  IF ( KIND(TI4)  .NE.    4 )  ERROR STOP 14
+  IF ( KIND(TI8)  .NE.    8 )  ERROR STOP 18
 
-  IF (ANY( TI1  .NE. 1   )) STOP 21
-  IF (ANY( TI2  .NE. 0   )) STOP 22
-  IF (ANY( TI4  .NE. 0   )) STOP 24
-  IF (ANY( TI8  .NE. 0   )) STOP 28
+  IF (ANY( TI1  .NE. 1   )) ERROR STOP 21
+  IF (ANY( TI2  .NE. 0   )) ERROR STOP 22
+  IF (ANY( TI4  .NE. 0   )) ERROR STOP 24
+  IF (ANY( TI8  .NE. 0   )) ERROR STOP 28
 
 
   END

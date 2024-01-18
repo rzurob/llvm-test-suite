@@ -22,8 +22,8 @@
 
         allocate(a, source='lowhight')
 
-        if ( func(a) /= 'lowhight' ) stop 21
-        if ( allocated(a) ) stop 25
+        if ( func(a) /= 'lowhight' ) error stop 21
+        if ( allocated(a) ) error stop 25
 
 end
         character(8) function func(a)
@@ -31,7 +31,7 @@ end
              allocatable :: func
              call move_alloc(a, func)
 
-             if ( .not. allocated(func) ) stop 23
+             if ( .not. allocated(func) ) error stop 23
 
         end function
 

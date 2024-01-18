@@ -117,117 +117,117 @@ program acetdt01
   allocate(dtarra(2))
 
   dt1 = 1
-  if (dt1%datum /= 41) stop 2
+  if (dt1%datum /= 41) error stop 2
 
   dt2 = 2
-  if (dt2%datum /= 42) stop 3
+  if (dt2%datum /= 42) error stop 3
 
   dtt = 3
-  if (dtt%datum /= 43) stop 4
+  if (dtt%datum /= 43) error stop 4
 
   dta = 4
-  if (dta%datum /= 44) stop 5
+  if (dta%datum /= 44) error stop 5
 
   dtp = 5
-  if (dtp%datum /= 45) stop 6
+  if (dtp%datum /= 45) error stop 6
 
   dtarr(1) = 6
-  if (dtarr(1)%datum /= 46) stop 7
+  if (dtarr(1)%datum /= 46) error stop 7
 
   dtarra(2) = 7
-  if (dtarra(2)%datum /= 47) stop 8
+  if (dtarra(2)%datum /= 47) error stop 8
 
   dtarr = 8
-  if (any(dtarr%datum /= 48)) stop 9
+  if (any(dtarr%datum /= 48)) error stop 9
 
   dtarra= 9
-  if (any(dtarra%datum /= 49)) stop 10
+  if (any(dtarra%datum /= 49)) error stop 10
 
 
   dtarr = (/50, 51/)
-  if (any(dtarr%datum /= (/50, 51/) + 40)) stop 11
+  if (any(dtarr%datum /= (/50, 51/) + 40)) error stop 11
 
   dtarra = (/52, 53/)
-  if (any(dtarra %datum /= (/52, 53/) + 40)) stop 12
+  if (any(dtarra %datum /= (/52, 53/) + 40)) error stop 12
 
   dtarr2 = (/ integer:: 54, 55/)
-  if (any(dtarr2 % datum /= ((/ 54, 55/) + 40))) stop 13
+  if (any(dtarr2 % datum /= ((/ 54, 55/) + 40))) error stop 13
 
   dtarra = (/ integer:: 56, 57/)
-  if (any(dtarra % datum /= ((/ 56, 57/) + 40))) stop 14
+  if (any(dtarra % datum /= ((/ 56, 57/) + 40))) error stop 14
 
 
   dtarr = (/ derived(58), derived(59) /)
-  if (any(dtarr % datum /= ((/ 58, 59 /) * 2))) stop 15
+  if (any(dtarr % datum /= ((/ 58, 59 /) * 2))) error stop 15
 
   dtarr2 = (/ derived:: derived(60), derived(61) /)
-  if (any(dtarr2 % datum /= ((/ 60, 61 /) * 2))) stop 16
+  if (any(dtarr2 % datum /= ((/ 60, 61 /) * 2))) error stop 16
 
   dtarra = (/ derived(datum=60), derived(61) /)
-  if (any(dtarra % datum /= ((/ 60, 61 /) * 2))) stop 17
+  if (any(dtarra % datum /= ((/ 60, 61 /) * 2))) error stop 17
 
   dtarra = (/ derived:: derived(datum=62), derived(63) /)
-  if (any(dtarra % datum /= ((/ 62, 63 /) * 2))) stop 18
+  if (any(dtarra % datum /= ((/ 62, 63 /) * 2))) error stop 18
 
 
   dt1 = dt2
-  if (dt1 % datum /= (dt2%datum * 2)) stop 19
+  if (dt1 % datum /= (dt2%datum * 2)) error stop 19
 
   dtarr2(1) = dtarr(2)
-  if (dtarr2(1) % datum /= (dtarr(2)%datum * 2)) stop 20
+  if (dtarr2(1) % datum /= (dtarr(2)%datum * 2)) error stop 20
 
 
   dtarr = (/ dt1, dtt /)
-  if (any(dtarr % datum /= ((/ dt1%datum, dtt%datum /) * 2))) stop 21
+  if (any(dtarr % datum /= ((/ dt1%datum, dtt%datum /) * 2))) error stop 21
 
   dtarr = (/ dtp, dta /)
-  if (any(dtarr % datum /= ((/ dtp%datum, dta%datum /) * 2))) stop 22
+  if (any(dtarr % datum /= ((/ dtp%datum, dta%datum /) * 2))) error stop 22
 
   dtarra = (/ dt2, dta /)
-  if (any(dtarra % datum /= ((/ dt2%datum, dta%datum /) * 2))) stop 23
+  if (any(dtarra % datum /= ((/ dt2%datum, dta%datum /) * 2))) error stop 23
 
   dtarr2 = (/ dtarr /)
-  if (any(dtarr2 % datum /= (dtarr%datum * 2))) stop 24
+  if (any(dtarr2 % datum /= (dtarr%datum * 2))) error stop 24
 
   dtarra = (/ dtarr2 /)
-  if (any(dtarra % datum /= (dtarr2%datum * 2))) stop 25
+  if (any(dtarra % datum /= (dtarr2%datum * 2))) error stop 25
 
   dtarr = (/ derived:: dt1, dtt /)
-  if (any(dtarr % datum /= ((/ dt1%datum, dtt%datum /) * 2))) stop 26
+  if (any(dtarr % datum /= ((/ dt1%datum, dtt%datum /) * 2))) error stop 26
 
   dtarr = (/ derived:: dtp, dta /)
-  if (any(dtarr % datum /= ((/ dtp%datum, dta%datum /) * 2))) stop 27
+  if (any(dtarr % datum /= ((/ dtp%datum, dta%datum /) * 2))) error stop 27
 
   dtarra = (/ derived:: dta, dtp /)
-  if (any(dtarra % datum /= ((/ dta%datum, dtp%datum /) * 2))) stop 28
+  if (any(dtarra % datum /= ((/ dta%datum, dtp%datum /) * 2))) error stop 28
 
   dtarr = (/ derived:: dtarr2 /)
-  if (any(dtarr % datum /= (dtarr2%datum * 2))) stop 29
+  if (any(dtarr % datum /= (dtarr2%datum * 2))) error stop 29
 
   dtarra = (/ derived:: dtarr2 /)
-  if (any(dtarra % datum /= (dtarr2%datum * 2))) stop 30
+  if (any(dtarra % datum /= (dtarr2%datum * 2))) error stop 30
 
   before = dtarr2 % datum
   dtarr2 = (/ dtarr2 /)
-  if (any(dtarr2 % datum /= (before * 2))) stop 31
+  if (any(dtarr2 % datum /= (before * 2))) error stop 31
 
   before = dtarr2 % datum
   dtarr2 = (/ derived:: dtarr2 /)
-  if (any(dtarr2 % datum /= (before * 2))) stop 32
+  if (any(dtarr2 % datum /= (before * 2))) error stop 32
 
   dtarra = (/ [ [ dtarr2 ] ] /)
-  if (any(dtarra%datum /= (dtarr2%datum * 2))) stop 33
+  if (any(dtarra%datum /= (dtarr2%datum * 2))) error stop 33
 
   before = [dt2%datum, dtp%datum]
   dtarra = (/ derived:: [ [ dt2, dtp ] ] /)
-  if (any(dtarra%datum /= (before * 2))) stop 34
+  if (any(dtarra%datum /= (before * 2))) error stop 34
 
   dtarra = (/ [ [ (dtarr2(i),i=1,2) ] ] /)
-  if (any(dtarra%datum /= (dtarr2%datum * 2))) stop 35
+  if (any(dtarra%datum /= (dtarr2%datum * 2))) error stop 35
 
   before = [ (dtp%datum,i=1,1), (dt2%datum,i=1,1) ]
   dtarra = (/ derived:: [ [ (dtp,i=1,1), (dt2,i=1,1) ] ] /)
-  if (any(dtarra%datum /= (before * 2))) stop 36
+  if (any(dtarra%datum /= (before * 2))) error stop 36
 
   !!Prior to a Feb6 (?) interp, the standard was broken, in that the next two
   !!innocuous lines would crash this program.  The interp which fixes this may not

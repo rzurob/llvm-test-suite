@@ -79,8 +79,8 @@
   T  = GFace(DT("0"), DT("0") )
   T1 = GFace(DT("1"))
 
-  IF (TRIM(T%ID)   .NE. "ModFun-00" ) STOP 11
-  IF (TRIM(T1%ID)  .NE. "ModFun1-1" ) STOP 12
+  IF (TRIM(T%ID)   .NE. "ModFun-00" ) ERROR STOP 11
+  IF (TRIM(T1%ID)  .NE. "ModFun1-1" ) ERROR STOP 12
 
 
   END

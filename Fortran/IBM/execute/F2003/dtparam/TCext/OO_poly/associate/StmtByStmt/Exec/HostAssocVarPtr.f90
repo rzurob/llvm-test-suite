@@ -71,22 +71,22 @@
 
   ASSOCIATE ( T  => Ptr )
   ASSOCIATE ( As => T  )
-    IF ( As%GetID() .NE. 2) STOP 50
-    IF ( As%ChildId .NE. 2) STOP 51
-    IF ( As%BaseId .NE. 1) STOP 52
+    IF ( As%GetID() .NE. 2) ERROR STOP 50
+    IF ( As%ChildId .NE. 2) ERROR STOP 51
+    IF ( As%BaseId .NE. 1) ERROR STOP 52
     ASSOCIATE ( As2 => As%Base )
-      IF ( As2%GetID() .NE. 1 ) STOP 53
+      IF ( As2%GetID() .NE. 1 ) ERROR STOP 53
     END ASSOCIATE
 
     U%BaseId = -1
-    IF ( As%BaseId .NE. -1) STOP 54
+    IF ( As%BaseId .NE. -1) ERROR STOP 54
 
     As%BasePtr => V
-    IF ( As%BasePtr%BaseId .NE. 1) STOP 55
+    IF ( As%BasePtr%BaseId .NE. 1) ERROR STOP 55
 
     As%ChildPtr => Ptr  ! itself
-    IF ( As%ChildPtr%BaseId .NE. -1) STOP 56
-    IF ( As%ChildPtr%ChildId .NE. 2) STOP 57
+    IF ( As%ChildPtr%BaseId .NE. -1) ERROR STOP 56
+    IF ( As%ChildPtr%ChildId .NE. 2) ERROR STOP 57
 
   END ASSOCIATE
   END ASSOCIATE
@@ -94,15 +94,15 @@
 
   ASSOCIATE ( T  => PtrArr )
   ASSOCIATE ( As => T  )
-    IF ( ANY(As%GetID() .NE. 2)) STOP 60
-    IF ( ANY(As%ChildId .NE. 2)) STOP 61
-    IF ( ANY(As%BaseId  .NE. 1)) STOP 62
+    IF ( ANY(As%GetID() .NE. 2)) ERROR STOP 60
+    IF ( ANY(As%ChildId .NE. 2)) ERROR STOP 61
+    IF ( ANY(As%BaseId  .NE. 1)) ERROR STOP 62
     ASSOCIATE ( As2 => As%Base )
-      IF ( ANY(As2%GetID() .NE. 1) ) STOP 63
+      IF ( ANY(As2%GetID() .NE. 1) ) ERROR STOP 63
     END ASSOCIATE
 
     T%BaseId = -1
-    IF ( ANY(As%BaseId .NE. -1)) STOP 64
+    IF ( ANY(As%BaseId .NE. -1)) ERROR STOP 64
 
   END ASSOCIATE
   END ASSOCIATE

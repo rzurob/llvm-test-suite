@@ -96,23 +96,23 @@
       CLASS IS (Zero(4,*))
       SELECT TYPE (Ptr => Arr)
         TYPE IS (Child(4,*))
-          IF ( ANY (LBOUND(Ptr)   .NE. (/2, 2, 2/) ) ) STOP 30
-          IF ( UBOUND(Ptr, 1)     .NE. 19 )             STOP 31
-          IF ( UBOUND(Ptr, 2)     .NE. 19 )             STOP 32
+          IF ( ANY (LBOUND(Ptr)   .NE. (/2, 2, 2/) ) ) ERROR STOP 30
+          IF ( UBOUND(Ptr, 1)     .NE. 19 )             ERROR STOP 31
+          IF ( UBOUND(Ptr, 2)     .NE. 19 )             ERROR STOP 32
 
-          IF ( ANY(Ptr(:,:,2)%Base%GetId() .NE. 1) ) STOP 34
-          IF ( ANY(Ptr(:,:,2)%GetId()      .NE. 2) ) STOP 35
-          IF ( ANY(Ptr(:,:,2)%BaseId       .NE. 1) ) STOP 36
-          IF ( ANY(Ptr(:,:,2)%ChildId      .NE. 2) ) STOP 37
+          IF ( ANY(Ptr(:,:,2)%Base%GetId() .NE. 1) ) ERROR STOP 34
+          IF ( ANY(Ptr(:,:,2)%GetId()      .NE. 2) ) ERROR STOP 35
+          IF ( ANY(Ptr(:,:,2)%BaseId       .NE. 1) ) ERROR STOP 36
+          IF ( ANY(Ptr(:,:,2)%ChildId      .NE. 2) ) ERROR STOP 37
 
 
           CALL Ptr(2,2,2)%SetId(Ptr(:,:,2:8))
           CALL Ptr(2,2,2)%Base%SetId(Ptr(:,:,2:8)%Base)
 
-          IF ( ANY(Ptr(:,:,2)%Base%GetId() .NE. -1 ) ) STOP 44
-          IF ( ANY(Ptr(:,:,2)%GetId()      .NE. -2 ) ) STOP 45
-          IF ( ANY(Ptr(:,:,2)%BaseId       .NE. -1 ) ) STOP 46
-          IF ( ANY(Ptr(:,:,2)%ChildId      .NE. -2 ) ) STOP 47
+          IF ( ANY(Ptr(:,:,2)%Base%GetId() .NE. -1 ) ) ERROR STOP 44
+          IF ( ANY(Ptr(:,:,2)%GetId()      .NE. -2 ) ) ERROR STOP 45
+          IF ( ANY(Ptr(:,:,2)%BaseId       .NE. -1 ) ) ERROR STOP 46
+          IF ( ANY(Ptr(:,:,2)%ChildId      .NE. -2 ) ) ERROR STOP 47
 
        CLASS DEFAULT
           STOP 40

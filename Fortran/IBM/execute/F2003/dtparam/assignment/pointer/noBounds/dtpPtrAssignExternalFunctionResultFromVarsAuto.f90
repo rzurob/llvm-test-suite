@@ -347,7 +347,7 @@ subroutine testBase1(b)
   type(Base(*)), intent(in), pointer :: b
   type(Base(:)), pointer :: tmp
   print *, b
-  if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'abc') stop 2
+  if (b%l /= 3 .or. len(b%ch) /= 3 .or. b%ch /= 'abc') error stop 2
   tmp => b
   deallocate(tmp) ! be neat
 end subroutine testBase1
@@ -359,7 +359,7 @@ subroutine testBase2(b)
   type(Base(*)), intent(in), pointer :: b
   type(Base(:)), pointer :: tmp
   print *, b
-  if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'abcde') stop 12
+  if (b%l /= 5 .or. len(b%ch) /= 5 .or. b%ch /= 'abcde') error stop 12
   tmp => b
   deallocate(tmp) ! be neat
 end subroutine testBase2
@@ -375,7 +375,7 @@ subroutine testDerived4(d)
   print *, d
   if (d%l /= 3 .or. d%k /= 4 .or. len(d%ch) /= 3 .or. d%ch /= 'def' .or. .not.d%lfld &
        .or. size(d%ifld) /= 3 .or. kind(d%lfld) /= 4 .or. kind(d%ifld) /= 4 .or. kind(d%rfld) /= 4 &
-       .or. any(d%ifld /= [1111111111,2122222222,1333333333]) .or. .not.precision_r4(d%rfld,4.1_4)) stop 3
+       .or. any(d%ifld /= [1111111111,2122222222,1333333333]) .or. .not.precision_r4(d%rfld,4.1_4)) error stop 3
   tmp => d
   deallocate(tmp) ! be neat
 end subroutine testDerived4
@@ -392,7 +392,7 @@ subroutine testDerived8(d)
   if (d%l /= 5 .or. d%k /= 8 .or. len(d%ch) /= 5 .or. d%ch /= 'defgh' .or. .not.d%lfld &
        .or. size(d%ifld) /= 5 .or. kind(d%lfld) /= 8 .or. kind(d%ifld) /= 8 .or. kind(d%rfld) /= 8 &
        .or. any(d%ifld /= [1111111111111_8,2222222222222_8,3333333333333_8,4444444444444_8,5555555555555_8]) &
-       .or. .not.precision_r8(d%rfld,1.23456789D11)) stop 13
+       .or. .not.precision_r8(d%rfld,1.23456789D11)) error stop 13
   tmp => d
   deallocate(tmp) ! be neat
 end subroutine testDerived8
@@ -411,12 +411,12 @@ subroutine testD2_48(d2v)
        .or. size(d2v%ifld) /= 3 .or. kind(d2v%lfld) /= 4 .or. kind(d2v%ifld) /= 4 .or. kind(d2v%rfld) /= 4 &
        .or. any(d2v%ifld /= [-1111111111,-2122222222,-1333333333]) .or. .not.precision_r4(d2v%rfld,5.9_4) &
        .or. kind(d2v%iarr) /= 8 .or. any(ubound(d2v%iarr) /= [3,2]) &
-       .or. any([d2v%iarr] /= [1111,2222,3333,4444,5555,6666])) stop 4
+       .or. any([d2v%iarr] /= [1111,2222,3333,4444,5555,6666])) error stop 4
   if (d2v%der%l /= 2 .or. d2v%der%k /= 8 .or. len(d2v%der%ch) /= 2 &
        .or. d2v%der%ch /= 'xz' .or. .not.d2v%der%lfld .or. size(d2v%der%ifld) /= 2 &
        .or. kind(d2v%der%lfld) /= 8 .or. kind(d2v%der%ifld) /= 8 .or. kind(d2v%der%rfld) /= 8 &
        .or. any(d2v%der%ifld /= [76543211234567_8,-123456787654321_8]) &
-       .or. .not.precision_r8(d2v%der%rfld,11235.81321D34)) stop 5
+       .or. .not.precision_r8(d2v%der%rfld,11235.81321D34)) error stop 5
   tmp => d2v
   deallocate(tmp) ! be neat
 end subroutine testD2_48
@@ -436,12 +436,12 @@ subroutine testD2_84(d2v)
        .or. any(d2v%ifld /= [-1111111111111_8,-2222222222222_8,-3333333333333_8,-4444444444444_8,-5555555555555_8]) &
        .or. .not.precision_r8(d2v%rfld,9.87654321D-12) &
        .or. kind(d2v%iarr) /= 4 .or. any(ubound(d2v%iarr) /= [5,1]) &
-       .or. any([d2v%iarr] /= [1111,2222,3333,4444,5555])) stop 14
+       .or. any([d2v%iarr] /= [1111,2222,3333,4444,5555])) error stop 14
   if (d2v%der%l /= 1 .or. d2v%der%k /= 4 .or. len(d2v%der%ch) /= 1 &
        .or. d2v%der%ch /= 'y' .or. .not.d2v%der%lfld .or. size(d2v%der%ifld) /= 1 &
        .or. kind(d2v%der%lfld) /= 4 .or. kind(d2v%der%ifld) /= 4 .or. kind(d2v%der%rfld) /= 4 &
        .or. any(d2v%der%ifld /= [-12345678_4]) &
-       .or. .not.precision_r4(d2v%der%rfld,9.87654E-12)) stop 15
+       .or. .not.precision_r4(d2v%der%rfld,9.87654E-12)) error stop 15
   tmp => d2v
   deallocate(tmp) ! be neat
 end subroutine testD2_84

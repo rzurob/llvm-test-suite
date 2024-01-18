@@ -33,9 +33,9 @@
   END INTERFACE OPERATOR ( * )
 
   ASSOCIATE ( As => .TRUE. * .TRUE. , As0 => .TRUE. * .FALSE. )
-    IF ( As .NEQV. .TRUE. ) STOP 52
+    IF ( As .NEQV. .TRUE. ) ERROR STOP 52
     ASSOCIATE ( As1 => As .and. As0 )
-      IF ( As1 .NEQV. .False. ) STOP 51
+      IF ( As1 .NEQV. .False. ) ERROR STOP 51
     END ASSOCIATE
   END ASSOCIATE
 

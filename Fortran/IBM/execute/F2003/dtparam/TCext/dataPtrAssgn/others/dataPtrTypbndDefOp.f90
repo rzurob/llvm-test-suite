@@ -33,8 +33,8 @@
                         type(base(4,*)), intent(in) :: a2
 			integer, pointer :: add(:)
 
-			if ( .not. associated(a1%p)) stop 11
-			if ( .not. associated(a2%p)) stop 12
+			if ( .not. associated(a1%p)) error stop 11
+			if ( .not. associated(a2%p)) error stop 12
 
 		        select type(x => a1%p)
 			    type is (integer)
@@ -60,19 +60,19 @@ program main
 
 	b2%p(3:12) => b1%p(10:1:-1)
 
-        if ( .not. associated(b2%p, b1%p(10:1:-1))) stop 1
-	if ( lbound(b2%p, 1) /= 3) stop 2
-	if ( ubound(b2%p, 1) /= 12) stop 3
+        if ( .not. associated(b2%p, b1%p(10:1:-1))) error stop 1
+	if ( lbound(b2%p, 1) /= 3) error stop 2
+	if ( ubound(b2%p, 1) /= 12) error stop 3
 
 	b2%p(9:) => b1+b2
 
-        if ( .not. associated(b2%p)) stop 21
-	if ( lbound(b2%p, 1) /= 9) stop 22
-	if ( ubound(b2%p, 1) /= 18) stop 23
+        if ( .not. associated(b2%p)) error stop 21
+	if ( lbound(b2%p, 1) /= 9) error stop 22
+	if ( ubound(b2%p, 1) /= 18) error stop 23
 
 	select type(x=>b2%p)
 	    type is (integer)
-		if ( any(x .ne. (/ [9,8,11,4,13], 13,4,11,8,9/)))stop 25
+		if ( any(x .ne. (/ [9,8,11,4,13], 13,4,11,8,9/)))error stop 25
 	    class default
 		stop 20
 	end select

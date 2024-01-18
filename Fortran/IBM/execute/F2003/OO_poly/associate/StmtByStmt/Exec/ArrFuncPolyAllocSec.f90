@@ -53,15 +53,15 @@
   ASSOCIATE ( As => &
   &  ReturnArr((/ (Child(BS=Base(BaseID=-1), ChildID=-2), i=1,555)/) ) )
 
-    IF ( ANY (LBOUND(As)  .NE. (/1/) ) )     STOP 30
-    IF ( ANY (UBOUND(As)  .NE. (/555/) ) )   STOP 31
-    IF ( ANY (SHAPE(As)   .NE. (/555/) ) )   STOP 32
-    IF ( ANY (As%ChildID    .NE. -2 ))         STOP 33
-    IF ( ANY (As%BS%BaseID  .NE. -1 ))         STOP 34
+    IF ( ANY (LBOUND(As)  .NE. (/1/) ) )     ERROR STOP 30
+    IF ( ANY (UBOUND(As)  .NE. (/555/) ) )   ERROR STOP 31
+    IF ( ANY (SHAPE(As)   .NE. (/555/) ) )   ERROR STOP 32
+    IF ( ANY (As%ChildID    .NE. -2 ))         ERROR STOP 33
+    IF ( ANY (As%BS%BaseID  .NE. -1 ))         ERROR STOP 34
 
     ASSOCIATE (A => As(1::2) )
-      IF ( ANY (As%ChildID    .NE. -2 ))         STOP 33
-      IF ( ANY (As%BS%BaseID  .NE. -1 ))         STOP 34
+      IF ( ANY (As%ChildID    .NE. -2 ))         ERROR STOP 33
+      IF ( ANY (As%BS%BaseID  .NE. -1 ))         ERROR STOP 34
     END ASSOCIATE
   END ASSOCIATE
 

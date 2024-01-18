@@ -25,7 +25,7 @@
   PROGRAM Misc10
 
   ASSOCIATE (as => 1 + (/1,2,3/) )
-    IF (Any(As .NE. (/2,3,4/))) STOP 11
+    IF (Any(As .NE. (/2,3,4/))) ERROR STOP 11
   END ASSOCIATE
 
   END

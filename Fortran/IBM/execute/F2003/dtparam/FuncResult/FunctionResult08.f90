@@ -72,10 +72,10 @@ PROGRAM FunctionResult08
 
       SELECT TYPE ( s => foo(b1,b2) )
         TYPE IS (Base(4,*))
-          IF ( s%name   .NE. 'A' ) STOP 10
-          IF ( ANY(s%A0 .NE.    8) ) STOP 11
-          IF ( ANY(s%A1 .NE.    9) ) STOP 12
-          IF ( .NOT. ASSOCIATED(foo(b1,b2)) ) STOP 13
+          IF ( s%name   .NE. 'A' ) ERROR STOP 10
+          IF ( ANY(s%A0 .NE.    8) ) ERROR STOP 11
+          IF ( ANY(s%A1 .NE.    9) ) ERROR STOP 12
+          IF ( .NOT. ASSOCIATED(foo(b1,b2)) ) ERROR STOP 13
 
         CLASS DEFAULT
            STOP 14
@@ -83,10 +83,10 @@ PROGRAM FunctionResult08
 
       SELECT TYPE ( s => foo(b2,b1) )
         TYPE IS (Base(4,*))
-          IF ( s%name   .NE. 'A' ) STOP 15
-          IF ( ANY(s%A0 .NE.    8) ) STOP 16
-          IF ( ANY(s%A1 .NE.    9) ) STOP 17
-          IF ( .NOT. ASSOCIATED(foo(b2,b1)) ) STOP 18
+          IF ( s%name   .NE. 'A' ) ERROR STOP 15
+          IF ( ANY(s%A0 .NE.    8) ) ERROR STOP 16
+          IF ( ANY(s%A1 .NE.    9) ) ERROR STOP 17
+          IF ( .NOT. ASSOCIATED(foo(b2,b1)) ) ERROR STOP 18
 
         CLASS DEFAULT
            STOP 19

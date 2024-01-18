@@ -19,8 +19,8 @@ program BElemental02
     character(2) :: var(3)
     var = cfun([97,41,126],[49,52,120])
     print *, var, cfun([97,98,99],111)
-    if (any(var /= ['a1',')4','~x'])) stop 2
-    if (any(cfun([97,98,99],111) /= ['ao','bo','co'])) stop 3
+    if (any(var /= ['a1',')4','~x'])) error stop 2
+    if (any(cfun([97,98,99],111) /= ['ao','bo','co'])) error stop 3
 
   contains
 

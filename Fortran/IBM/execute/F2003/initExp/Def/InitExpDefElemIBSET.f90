@@ -52,19 +52,19 @@
 
   CLASS(*), POINTER :: IPtr
 
-  IF ( KIND(A)    .NE. 8 )         STOP 10
+  IF ( KIND(A)    .NE. 8 )         ERROR STOP 10
 
-  IF ( KIND(I13)  .NE. 1 )         STOP 11
-  IF (      I13   .NE. 1 )         STOP 12
+  IF ( KIND(I13)  .NE. 1 )         ERROR STOP 11
+  IF (      I13   .NE. 1 )         ERROR STOP 12
 
-  IF ( KIND(I23)  .NE. 2 )         STOP 21
-  IF ( ANY( I23   .NE. 2 ))        STOP 22
+  IF ( KIND(I23)  .NE. 2 )         ERROR STOP 21
+  IF ( ANY( I23   .NE. 2 ))        ERROR STOP 22
 
-  IF ( KIND(I43)  .NE. 4 )         STOP 31
-  IF ( ANY( I43   .NE. 4 ))        STOP 32
+  IF ( KIND(I43)  .NE. 4 )         ERROR STOP 31
+  IF ( ANY( I43   .NE. 4 ))        ERROR STOP 32
 
-  IF ( KIND(I83)  .NE. 8 )         STOP 41
-  IF ( ANY( I83   .NE. 8 ))        STOP 42
+  IF ( KIND(I83)  .NE. 8 )         ERROR STOP 41
+  IF ( ANY( I83   .NE. 8 ))        ERROR STOP 42
 
   ALLOCATE(IPtr, SOURCE=-1_2)
 

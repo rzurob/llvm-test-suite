@@ -40,8 +40,8 @@ MODULE Mod
         TYPE(Base(4,*)) :: arg
         INTEGER :: I
 
-        IF ( ANY(arg%A1 .NE. [(I, I = 1, 10)]) ) STOP 10
-        IF ( arg%C1 .NE. 'ABCDE' ) STOP 11
+        IF ( ANY(arg%A1 .NE. [(I, I = 1, 10)]) ) ERROR STOP 10
+        IF ( arg%C1 .NE. 'ABCDE' ) ERROR STOP 11
 
       END SUBROUTINE
 
@@ -49,10 +49,10 @@ MODULE Mod
         TYPE(Child(4,*,4,*)) :: arg
         INTEGER :: I
 
-        IF ( ANY(arg%A1 .NE. [(2*I, I = 1, 10)]) ) STOP 12
-        IF ( arg%C1 .NE. 'IBM' ) STOP 13
-        IF ( ANY(arg%A2 .NE. [(3*I, I = 1, 10)]) ) STOP 14
-        IF ( arg%C2 .NE. 'XLFtest' ) STOP 15
+        IF ( ANY(arg%A1 .NE. [(2*I, I = 1, 10)]) ) ERROR STOP 12
+        IF ( arg%C1 .NE. 'IBM' ) ERROR STOP 13
+        IF ( ANY(arg%A2 .NE. [(3*I, I = 1, 10)]) ) ERROR STOP 14
+        IF ( arg%C2 .NE. 'XLFtest' ) ERROR STOP 15
 
         call CheckBase(arg%bcomp)
 

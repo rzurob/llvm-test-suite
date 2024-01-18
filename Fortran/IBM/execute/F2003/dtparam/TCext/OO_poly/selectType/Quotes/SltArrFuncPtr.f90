@@ -102,19 +102,19 @@
       SELECT TYPE (As)
         TYPE IS (Child(4,*))
 
-          IF ( ANY (SHAPE(As) .NE. (/3,3/) )) STOP 20
-          IF ( ANY (As%Base%GetId() .NE. 1 )) STOP 34
-          IF ( ANY (As%GetId()      .NE. 2 )) STOP 35
-          IF ( ANY (As%BaseId       .NE. 1 )) STOP 36
-          IF ( ANY (As%ChildId      .NE. 2 )) STOP 37
+          IF ( ANY (SHAPE(As) .NE. (/3,3/) )) ERROR STOP 20
+          IF ( ANY (As%Base%GetId() .NE. 1 )) ERROR STOP 34
+          IF ( ANY (As%GetId()      .NE. 2 )) ERROR STOP 35
+          IF ( ANY (As%BaseId       .NE. 1 )) ERROR STOP 36
+          IF ( ANY (As%ChildId      .NE. 2 )) ERROR STOP 37
 
           CALL As%SetId(As)
           CALL As%SetId(As%Base)
 
-          IF ( ANY (As%Base%GetId() .NE. -1 )) STOP 44
-          IF ( ANY (As%GetId()      .NE. -2 )) STOP 45
-          IF ( ANY (As%BaseId       .NE. -1 )) STOP 46
-          IF ( ANY (As%ChildId      .NE. -2 )) STOP 47
+          IF ( ANY (As%Base%GetId() .NE. -1 )) ERROR STOP 44
+          IF ( ANY (As%GetId()      .NE. -2 )) ERROR STOP 45
+          IF ( ANY (As%BaseId       .NE. -1 )) ERROR STOP 46
+          IF ( ANY (As%ChildId      .NE. -2 )) ERROR STOP 47
 
        CLASS DEFAULT
           STOP 40

@@ -18,8 +18,8 @@ real :: res2(4)=maxloc(a, dim=1, mask=a .lt. 7)
 real, parameter :: b(-2:2)=(/1,2,3,4,5/)
 real :: res3(1)=maxloc(b)
 
-if (.not. all(res1 .eq. maxloc(a))) stop 1
-if (.not. all(res2 .eq. maxloc(a, dim=1, mask=a .lt. 7.0))) stop 2
-if (.not. all(res3 .eq. maxloc(b))) stop 3
+if (.not. all(res1 .eq. maxloc(a))) error stop 1
+if (.not. all(res2 .eq. maxloc(a, dim=1, mask=a .lt. 7.0))) error stop 2
+if (.not. all(res3 .eq. maxloc(b))) error stop 3
 
 end

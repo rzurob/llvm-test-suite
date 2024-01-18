@@ -17,8 +17,8 @@ complex(4) :: c4a = cos(c4)
 complex(8) :: c8a = cos(c8)
 complex(16) :: c16a = cos(c16)
 
-if (.not. precision_x8(c4a, cos(c4))) stop 1
-if (.not. precision_x16(c8a, cos(c8))) stop 2
-if (.not. precision_x32(c16a, cos(c16))) stop 3
+if (.not. precision_x8(c4a, cos(c4))) error stop 1
+if (.not. precision_x16(c8a, cos(c8))) error stop 2
+if (.not. precision_x32(c16a, cos(c16))) error stop 3
 
 end

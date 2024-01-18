@@ -101,7 +101,7 @@
 
       SELECT TYPE ( a => +C1 )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 14) STOP 12
+          IF (a%value .NE. 14) ERROR STOP 12
 
         CLASS DEFAULT
           STOP 13
@@ -109,7 +109,7 @@
 
       SELECT TYPE ( a => +K1 )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 24) STOP 14
+          IF (a%value .NE. 24) ERROR STOP 14
 
         CLASS DEFAULT
           STOP 15
@@ -117,7 +117,7 @@
 
       SELECT TYPE ( a => +N1 )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 14) STOP 16
+          IF (a%value .NE. 14) ERROR STOP 16
 
         CLASS DEFAULT
           STOP 17
@@ -125,7 +125,7 @@
 
       SELECT TYPE ( a => +M1 )
         CLASS IS (BASE(4,*))
-          IF (a%value .NE. 24) STOP 18
+          IF (a%value .NE. 24) ERROR STOP 18
 
         CLASS DEFAULT
           STOP 19

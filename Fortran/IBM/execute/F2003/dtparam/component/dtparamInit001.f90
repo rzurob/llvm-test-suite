@@ -34,7 +34,7 @@ use m
     type (B) b1(2)
     logical(4), external :: precision_r4
 
-    if ((a_const%lb /= 0) .or. (a_const%ub /= 100)) stop 100
+    if ((a_const%lb /= 0) .or. (a_const%ub /= 100)) error stop 100
 
     b1(1)%data = (/(i*1.2e0, i=1, 101)/)
 

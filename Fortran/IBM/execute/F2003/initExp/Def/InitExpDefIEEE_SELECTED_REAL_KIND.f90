@@ -138,20 +138,20 @@
   LOGICAL :: LI82 = IEEE_SELECTED_REAL_KIND(R=RI81) .EQ. IEEE_SELECTED_REAL_KIND(0_8, RI81)
 
 
-! IF( ANY( T1  .NE. R ))  STOP 11  ! integer(1) can not contains num > 127
-  IF( ANY( T2  .NE. R ))  STOP 12
-  IF( ANY( T4  .NE. R ))  STOP 14
-  IF( ANY( T8  .NE. R ))  STOP 18
+! IF( ANY( T1  .NE. R ))  ERROR STOP 11  ! integer(1) can not contains num > 127
+  IF( ANY( T2  .NE. R ))  ERROR STOP 12
+  IF( ANY( T4  .NE. R ))  ERROR STOP 14
+  IF( ANY( T8  .NE. R ))  ERROR STOP 18
 
 
-  IF ( .NOT. LI11  )  STOP 21
-  IF ( .NOT. LI12  )  STOP 22
-  IF ( .NOT. LI21  )  STOP 23
-  IF ( .NOT. LI22  )  STOP 24
-  IF ( .NOT. LI41  )  STOP 25
-  IF ( .NOT. LI42  )  STOP 26
-  IF ( .NOT. LI81  )  STOP 27
-  IF ( .NOT. LI82  )  STOP 28
+  IF ( .NOT. LI11  )  ERROR STOP 21
+  IF ( .NOT. LI12  )  ERROR STOP 22
+  IF ( .NOT. LI21  )  ERROR STOP 23
+  IF ( .NOT. LI22  )  ERROR STOP 24
+  IF ( .NOT. LI41  )  ERROR STOP 25
+  IF ( .NOT. LI42  )  ERROR STOP 26
+  IF ( .NOT. LI81  )  ERROR STOP 27
+  IF ( .NOT. LI82  )  ERROR STOP 28
 
 
 

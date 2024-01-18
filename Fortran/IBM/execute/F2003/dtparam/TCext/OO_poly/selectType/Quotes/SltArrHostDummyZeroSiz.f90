@@ -84,7 +84,7 @@
   SUBROUTINE Sub(Arg)
   CLASS(Base(4,*)), OPTIONAL :: Arg(20:, -10:)
 
-    IF ( .NOT. PRESENT(Arg) ) STOP 11
+    IF ( .NOT. PRESENT(Arg) ) ERROR STOP 11
 
     SELECT TYPE (U => Arg(::1,:))
     CLASS IS (Child(4,*))
@@ -93,13 +93,13 @@
       SELECT TYPE (V => W)
         TYPE IS (Child(4,*))
 
-          IF ( SIZEOF(V)        .NE. 0 )          STOP 41
-          IF ( SIZE(V)          .NE. 4 )          STOP 21
-          IF ( ANY (LBOUND(V)   .NE. (/1, 1/) ) ) STOP 30
-          IF ( ANY (UBOUND(V)   .NE. (/2, 2/) ) ) STOP 31
-          IF ( ANY(SHAPE(V)     .NE. (/2,2/)) )   STOP 20
+          IF ( SIZEOF(V)        .NE. 0 )          ERROR STOP 41
+          IF ( SIZE(V)          .NE. 4 )          ERROR STOP 21
+          IF ( ANY (LBOUND(V)   .NE. (/1, 1/) ) ) ERROR STOP 30
+          IF ( ANY (UBOUND(V)   .NE. (/2, 2/) ) ) ERROR STOP 31
+          IF ( ANY(SHAPE(V)     .NE. (/2,2/)) )   ERROR STOP 20
 
-          IF ( .NOT. V%Called() ) STOP 45
+          IF ( .NOT. V%Called() ) ERROR STOP 45
 
        CLASS DEFAULT
           STOP 40

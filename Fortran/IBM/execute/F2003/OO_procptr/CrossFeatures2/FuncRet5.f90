@@ -75,9 +75,9 @@
   Tar = Const
   V = DT1(ModFun1, Const, Tar)
 
-  IF (.NOT. ASSOCIATED(V(1)%PROCPTR, ModFun1)) STOP 33
+  IF (.NOT. ASSOCIATED(V(1)%PROCPTR, ModFun1)) ERROR STOP 33
   T = V(1)%ProcPtr()
-  IF (.NOT. ASSOCIATED(T%PROCPTR, ModFun1)) STOP 34
+  IF (.NOT. ASSOCIATED(T%PROCPTR, ModFun1)) ERROR STOP 34
 
   CALL IntSub( ModFun(V(1)), ModFun1)
 
@@ -97,7 +97,7 @@
   SUBROUTINE IntSub(Arg1, Arg2)
   PROCEDURE(ModFun1), POINTER :: Arg1
   PROCEDURE(ModFun1)          :: Arg2
-      IF ( .NOT. ASSOCIATED(Arg1, Arg2)) STOP 66
+      IF ( .NOT. ASSOCIATED(Arg1, Arg2)) ERROR STOP 66
   END SUBROUTINE
 
   END

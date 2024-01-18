@@ -65,19 +65,19 @@ PROGRAM AllocateWithTypeSpec15
       ALLOCATE(Child(4,n,m) :: c3 )
       ALLOCATE(c3%b_cmp, c3%c_cmp)
 
-      IF (c2%l1 .NE. c1%l1) STOP 10
-      IF (c2%l2 .NE. c1%l2) STOP 11
-      IF (c2%b_cmp%l1 .NE. c1%b_cmp%l1 ) STOP 12
-      IF (c2%b_cmp%l2 .NE. c1%b_cmp%l2 ) STOP 13
-      IF (SIZE(c2%b_cmp%my_arr) .NE. SIZE(c1%b_cmp%my_arr)) STOP 14
-      IF (SIZE(c2%c_cmp%my_arr) .NE. SIZE(c1%c_cmp%my_arr)) STOP 15
+      IF (c2%l1 .NE. c1%l1) ERROR STOP 10
+      IF (c2%l2 .NE. c1%l2) ERROR STOP 11
+      IF (c2%b_cmp%l1 .NE. c1%b_cmp%l1 ) ERROR STOP 12
+      IF (c2%b_cmp%l2 .NE. c1%b_cmp%l2 ) ERROR STOP 13
+      IF (SIZE(c2%b_cmp%my_arr) .NE. SIZE(c1%b_cmp%my_arr)) ERROR STOP 14
+      IF (SIZE(c2%c_cmp%my_arr) .NE. SIZE(c1%c_cmp%my_arr)) ERROR STOP 15
 
-      IF (c3%l1 .NE. c1%l1) STOP 16
-      IF (c3%l2 .NE. c1%l2) STOP 17
-      IF (c3%b_cmp%l1 .NE. c1%b_cmp%l1 ) STOP 18
-      IF (c3%b_cmp%l2 .NE. c1%b_cmp%l2 ) STOP 19
-      IF (SIZE(c3%b_cmp%my_arr) .NE. SIZE(c1%b_cmp%my_arr)) STOP 20
-      IF (SIZE(c3%c_cmp%my_arr) .NE. SIZE(c1%c_cmp%my_arr)) STOP 21
+      IF (c3%l1 .NE. c1%l1) ERROR STOP 16
+      IF (c3%l2 .NE. c1%l2) ERROR STOP 17
+      IF (c3%b_cmp%l1 .NE. c1%b_cmp%l1 ) ERROR STOP 18
+      IF (c3%b_cmp%l2 .NE. c1%b_cmp%l2 ) ERROR STOP 19
+      IF (SIZE(c3%b_cmp%my_arr) .NE. SIZE(c1%b_cmp%my_arr)) ERROR STOP 20
+      IF (SIZE(c3%c_cmp%my_arr) .NE. SIZE(c1%c_cmp%my_arr)) ERROR STOP 21
 
       DEALLOCATE(c1,c2,c3)
 
@@ -100,19 +100,19 @@ PROGRAM AllocateWithTypeSpec15
       ALLOCATE(Child(4,n,m) :: c3 )
       ALLOCATE(c3%b_cmp, c3%c_cmp)
 
-      IF (c2%l1 .NE. c1%l1) STOP 30
-      IF (c2%l2 .NE. c1%l2) STOP 31
-      IF (c2%b_cmp%l1 .NE. c1%b_cmp%l1 ) STOP 32
-      IF (c2%b_cmp%l2 .NE. c1%b_cmp%l2 ) STOP 33
-      IF (SIZE(c2%b_cmp%my_arr) .NE. SIZE(c1%b_cmp%my_arr)) STOP 34
-      IF (SIZE(c2%c_cmp%my_arr) .NE. SIZE(c1%c_cmp%my_arr)) STOP 35
+      IF (c2%l1 .NE. c1%l1) ERROR STOP 30
+      IF (c2%l2 .NE. c1%l2) ERROR STOP 31
+      IF (c2%b_cmp%l1 .NE. c1%b_cmp%l1 ) ERROR STOP 32
+      IF (c2%b_cmp%l2 .NE. c1%b_cmp%l2 ) ERROR STOP 33
+      IF (SIZE(c2%b_cmp%my_arr) .NE. SIZE(c1%b_cmp%my_arr)) ERROR STOP 34
+      IF (SIZE(c2%c_cmp%my_arr) .NE. SIZE(c1%c_cmp%my_arr)) ERROR STOP 35
 
-      IF (c3%l1 .NE. c1%l1) STOP 36
-      IF (c3%l2 .NE. c1%l2) STOP 37
-      IF (c3%b_cmp%l1 .NE. c1%b_cmp%l1 ) STOP 38
-      IF (c3%b_cmp%l2 .NE. c1%b_cmp%l2 ) STOP 39
-      IF (SIZE(c3%b_cmp%my_arr) .NE. SIZE(c1%b_cmp%my_arr)) STOP 40
-      IF (SIZE(c3%c_cmp%my_arr) .NE. SIZE(c1%c_cmp%my_arr)) STOP 41
+      IF (c3%l1 .NE. c1%l1) ERROR STOP 36
+      IF (c3%l2 .NE. c1%l2) ERROR STOP 37
+      IF (c3%b_cmp%l1 .NE. c1%b_cmp%l1 ) ERROR STOP 38
+      IF (c3%b_cmp%l2 .NE. c1%b_cmp%l2 ) ERROR STOP 39
+      IF (SIZE(c3%b_cmp%my_arr) .NE. SIZE(c1%b_cmp%my_arr)) ERROR STOP 40
+      IF (SIZE(c3%c_cmp%my_arr) .NE. SIZE(c1%c_cmp%my_arr)) ERROR STOP 41
 
       DEALLOCATE(c1,c2,c3)
 
@@ -135,19 +135,19 @@ PROGRAM AllocateWithTypeSpec15
       ALLOCATE(Child(4,n,m) :: c3 )
       ALLOCATE(c3%b_cmp, c3%c_cmp)
 
-      IF (c2%l1 .NE. c1%l1) STOP 50
-      IF (c2%l2 .NE. c1%l2) STOP 51
-      IF (c2%b_cmp%l1 .NE. c1%b_cmp%l1 ) STOP 52
-      IF (c2%b_cmp%l2 .NE. c1%b_cmp%l2 ) STOP 53
-      IF (SIZE(c2%b_cmp%my_arr) .NE. SIZE(c1%b_cmp%my_arr)) STOP 54
-      IF (SIZE(c2%c_cmp%my_arr) .NE. SIZE(c1%c_cmp%my_arr)) STOP 55
+      IF (c2%l1 .NE. c1%l1) ERROR STOP 50
+      IF (c2%l2 .NE. c1%l2) ERROR STOP 51
+      IF (c2%b_cmp%l1 .NE. c1%b_cmp%l1 ) ERROR STOP 52
+      IF (c2%b_cmp%l2 .NE. c1%b_cmp%l2 ) ERROR STOP 53
+      IF (SIZE(c2%b_cmp%my_arr) .NE. SIZE(c1%b_cmp%my_arr)) ERROR STOP 54
+      IF (SIZE(c2%c_cmp%my_arr) .NE. SIZE(c1%c_cmp%my_arr)) ERROR STOP 55
 
-      IF (c3%l1 .NE. c1%l1) STOP 56
-      IF (c3%l2 .NE. c1%l2) STOP 57
-      IF (c3%b_cmp%l1 .NE. c1%b_cmp%l1 ) STOP 58
-      IF (c3%b_cmp%l2 .NE. c1%b_cmp%l2 ) STOP 59
-      IF (SIZE(c3%b_cmp%my_arr) .NE. SIZE(c1%b_cmp%my_arr)) STOP 60
-      IF (SIZE(c3%c_cmp%my_arr) .NE. SIZE(c1%c_cmp%my_arr)) STOP 61
+      IF (c3%l1 .NE. c1%l1) ERROR STOP 56
+      IF (c3%l2 .NE. c1%l2) ERROR STOP 57
+      IF (c3%b_cmp%l1 .NE. c1%b_cmp%l1 ) ERROR STOP 58
+      IF (c3%b_cmp%l2 .NE. c1%b_cmp%l2 ) ERROR STOP 59
+      IF (SIZE(c3%b_cmp%my_arr) .NE. SIZE(c1%b_cmp%my_arr)) ERROR STOP 60
+      IF (SIZE(c3%c_cmp%my_arr) .NE. SIZE(c1%c_cmp%my_arr)) ERROR STOP 61
 
       DEALLOCATE(c1,c2,c3)
 

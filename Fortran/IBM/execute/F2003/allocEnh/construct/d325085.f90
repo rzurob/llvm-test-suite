@@ -36,7 +36,7 @@ use m
 
     do i = 1, dim1
         do j = 1, dim2
-            if (b1(i,j)%data%id /= i*j) stop 1
+            if (b1(i,j)%data%id /= i*j) error stop 1
         end do
     end do
 end

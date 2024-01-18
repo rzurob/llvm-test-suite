@@ -58,23 +58,23 @@
 
   ProcPtr => ModFun
 
-  IF (ProcPtr(-1) .NE. -1 ) STOP 11
+  IF (ProcPtr(-1) .NE. -1 ) ERROR STOP 11
   DO I=ProcPtr(10000), ProcPtr(1), ProcPtr(-1)
-    IF (ProcPtr(ProcPtr(I)) .NE. I ) STOP 12
+    IF (ProcPtr(ProcPtr(I)) .NE. I ) ERROR STOP 12
     SELECT CASE (ProcPtr(I))
     CASE DEFAULT
-      IF (ProcPtr(I) .NE. I ) STOP 13
+      IF (ProcPtr(I) .NE. I ) ERROR STOP 13
     END SELECT
   END DO
 
   V%ProcPtr => ModFun
 
-  IF (V%ProcPtr(-1) .NE. -1 ) STOP 21
+  IF (V%ProcPtr(-1) .NE. -1 ) ERROR STOP 21
   DO I=V%ProcPtr(10000), V%ProcPtr(1), V%ProcPtr(-1)
-    IF (V%ProcPtr(V%ProcPtr(I)) .NE. I ) STOP 22
+    IF (V%ProcPtr(V%ProcPtr(I)) .NE. I ) ERROR STOP 22
     SELECT CASE (V%ProcPtr(I))
     CASE DEFAULT
-      IF (V%ProcPtr(I) .NE. I ) STOP 23
+      IF (V%ProcPtr(I) .NE. I ) ERROR STOP 23
     END SELECT
 
     WHERE ((/(.TRUE., I=1,10000)/) )
@@ -83,8 +83,8 @@
   END DO
 
   DO I=1,10000
-    IF (U(I)%ID .NE. -1 ) STOP 31
-    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, ModFun) ) STOP 32
+    IF (U(I)%ID .NE. -1 ) ERROR STOP 31
+    IF ( .NOT. ASSOCIATED(U(I)%ProcPtr, ModFun) ) ERROR STOP 32
   END DO
 
   END

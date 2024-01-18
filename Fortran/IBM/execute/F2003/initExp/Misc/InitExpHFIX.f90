@@ -43,26 +43,26 @@
   INTEGER(KIND(HFIX((/(32767.99, I=1,128)/)))),         PARAMETER :: I27(128) = HFIX((/(32767.99, I=1,128)/))
 
 
-  IF ( KIND(I21)   .NE.  2 )        STOP 11
-  IF ( ANY( I21    .NE.  0 ))       STOP 12
+  IF ( KIND(I21)   .NE.  2 )        ERROR STOP 11
+  IF ( ANY( I21    .NE.  0 ))       ERROR STOP 12
 
-  IF ( KIND(I22)   .NE.  2 )        STOP 21
-  IF ( ANY( I22    .NE.  0 ))       STOP 22
+  IF ( KIND(I22)   .NE.  2 )        ERROR STOP 21
+  IF ( ANY( I22    .NE.  0 ))       ERROR STOP 22
 
-  IF ( KIND(I23)   .NE.  2 )        STOP 31
-  IF ( ANY( I23    .NE.  0 ))       STOP 32
+  IF ( KIND(I23)   .NE.  2 )        ERROR STOP 31
+  IF ( ANY( I23    .NE.  0 ))       ERROR STOP 32
 
-  IF ( KIND(I23)   .NE.  2 )        STOP 41
-  IF ( ANY( I23    .NE.  0 ))       STOP 42
+  IF ( KIND(I23)   .NE.  2 )        ERROR STOP 41
+  IF ( ANY( I23    .NE.  0 ))       ERROR STOP 42
 
-  IF ( KIND(I25)   .NE.  2 )        STOP 51
-  IF ( ANY( I25    .NE. -3 ))       STOP 52
+  IF ( KIND(I25)   .NE.  2 )        ERROR STOP 51
+  IF ( ANY( I25    .NE. -3 ))       ERROR STOP 52
 
-  IF ( KIND(I26)   .NE.  2 )        STOP 61
-  IF ( ANY( I26    .NE. -32768 ))   STOP 62
+  IF ( KIND(I26)   .NE.  2 )        ERROR STOP 61
+  IF ( ANY( I26    .NE. -32768 ))   ERROR STOP 62
 
-  IF ( KIND(I27)   .NE.  2 )        STOP 71
-  IF ( ANY( I27    .NE.  32767 ))   STOP 72
+  IF ( KIND(I27)   .NE.  2 )        ERROR STOP 71
+  IF ( ANY( I27    .NE.  32767 ))   ERROR STOP 72
 
 
   END

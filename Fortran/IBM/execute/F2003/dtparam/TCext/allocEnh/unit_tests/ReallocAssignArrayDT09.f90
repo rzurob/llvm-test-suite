@@ -36,9 +36,9 @@ type(t(:,4)), allocatable :: a(:)
 type(t(20,4)) :: b(5)
 b = (/t(20,4)(1),t(20,4)(2),t(20,4)(3),t(20,4)(4),t(20,4)(5)/)
 a = b(1:4)
-if (any(shape(a) /= 4)) stop 1
-if (any(a%a /= (/1,2,3,4/))) stop 2
-if (lbound(a,1) /= 1) stop 3
-if (ubound(a,1) /= 4) stop 4
-if (finalizecount /= 1) stop 5
+if (any(shape(a) /= 4)) error stop 1
+if (any(a%a /= (/1,2,3,4/))) error stop 2
+if (lbound(a,1) /= 1) error stop 3
+if (ubound(a,1) /= 4) error stop 4
+if (finalizecount /= 1) error stop 5
 end

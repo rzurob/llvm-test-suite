@@ -78,12 +78,12 @@
         CLASS DEFAULT
           STOP 40
         TYPE IS (Child(4))
-          IF ( ANY(SHAPE(As) .NE. (/4/))  )   STOP 41
-          IF ( LBOUND(As, 1) .NE. 1       )   STOP 42
-          IF ( ANY(As%ChildId      .NE. (/2,2,2,2/)) )  STOP 43
-          IF ( ANY(As%GetId()      .NE. (/2,2,2,2/)) )  STOP 43
-          IF ( ANY(As%Base%BaseId  .NE. (/1,1,1,1/)) )  STOP 44
-!         IF ( ANY(As%Base%GetId() .NE. (/1,1,1,1/)) )  STOP 44 !C611
+          IF ( ANY(SHAPE(As) .NE. (/4/))  )   ERROR STOP 41
+          IF ( LBOUND(As, 1) .NE. 1       )   ERROR STOP 42
+          IF ( ANY(As%ChildId      .NE. (/2,2,2,2/)) )  ERROR STOP 43
+          IF ( ANY(As%GetId()      .NE. (/2,2,2,2/)) )  ERROR STOP 43
+          IF ( ANY(As%Base%BaseId  .NE. (/1,1,1,1/)) )  ERROR STOP 44
+!         IF ( ANY(As%Base%GetId() .NE. (/1,1,1,1/)) )  ERROR STOP 44 !C611
       END SELECT
 
     CLASS DEFAULT

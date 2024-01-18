@@ -83,21 +83,21 @@
 
   V%BaseComp%BasePtr  => ExtFun
   Ptr1 => V%BaseComp%BasePtr
-  IF ( Ptr1(.FALSE._8 ) ) STOP 11
+  IF ( Ptr1(.FALSE._8 ) ) ERROR STOP 11
 
   V%ChildPtr => ExtFun
   Ptr1 => V%ChildPtr
-  IF ( .NOT. Ptr1(.TRUE._8) ) STOP 12
+  IF ( .NOT. Ptr1(.TRUE._8) ) ERROR STOP 12
 
   V%BaseComp%BasePtrArr  => ExtFunArr
   Ptr2 => V%BaseComp%BasePtrArr
   IF ( ANY(Ptr2((/.FALSE._8, .TRUE._8, .FALSE._8/)) .NEQV. &
-              & (/.FALSE._8, .TRUE._8, .FALSE._8/) ) ) STOP 11
+              & (/.FALSE._8, .TRUE._8, .FALSE._8/) ) ) ERROR STOP 11
 
   V%ChildPtrArr => ExtFunArr
   Ptr2 => V%ChildPtrArr
   IF ( ANY(Ptr2((/.FALSE._8, .TRUE._8, .FALSE._8/)) .NEQV. &
-              & (/.FALSE._8, .TRUE._8, .FALSE._8/) ) ) STOP 11
+              & (/.FALSE._8, .TRUE._8, .FALSE._8/) ) ) ERROR STOP 11
 
   END
 

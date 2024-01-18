@@ -64,21 +64,21 @@
   Arr = RESHAPE((/(Child(BaseId=i, ChildId=-i), i=1, 16) /), (/4,4/))
 
   ASSOCIATE ( As => Arr(1:4:2, 2:4:2)%Base)
-    IF ( ANY (LBOUND(As)      .NE. (/1,1/) ) )             STOP 30
-    IF ( ANY (SHAPE(As)       .NE. (/2,2/) ) )             STOP 32
-    IF ( ANY (As%GetID() .NE. RESHAPE((/ 5, 7, 13, 15/), (/2,2/)) ) ) STOP 34
+    IF ( ANY (LBOUND(As)      .NE. (/1,1/) ) )             ERROR STOP 30
+    IF ( ANY (SHAPE(As)       .NE. (/2,2/) ) )             ERROR STOP 32
+    IF ( ANY (As%GetID() .NE. RESHAPE((/ 5, 7, 13, 15/), (/2,2/)) ) ) ERROR STOP 34
   END ASSOCIATE
 
   ASSOCIATE ( As => Arr(1:4:2, 2:4:2)%ChildId)
-    IF ( ANY (LBOUND(As)   .NE. (/1,1/) ) )             STOP 40
-    IF ( ANY (SHAPE(As)    .NE. (/2,2/) ) )             STOP 42
-    IF ( ANY (As           .NE. RESHAPE((/ -5, -7, -13, -15/), (/2,2/)) ) ) STOP 44
+    IF ( ANY (LBOUND(As)   .NE. (/1,1/) ) )             ERROR STOP 40
+    IF ( ANY (SHAPE(As)    .NE. (/2,2/) ) )             ERROR STOP 42
+    IF ( ANY (As           .NE. RESHAPE((/ -5, -7, -13, -15/), (/2,2/)) ) ) ERROR STOP 44
   END ASSOCIATE
 
   ASSOCIATE ( As => Arr(1:4:2, 2:4:2)%Base%GetId())
-    IF ( ANY (LBOUND(As)   .NE. (/1,1/) ) )             STOP 30
-    IF ( ANY (SHAPE(As)    .NE. (/2,2/) ) )             STOP 32
-    IF ( ANY (As           .NE. RESHAPE((/ 5, 7, 13, 15/), (/2,2/)) ) ) STOP 34
+    IF ( ANY (LBOUND(As)   .NE. (/1,1/) ) )             ERROR STOP 30
+    IF ( ANY (SHAPE(As)    .NE. (/2,2/) ) )             ERROR STOP 32
+    IF ( ANY (As           .NE. RESHAPE((/ 5, 7, 13, 15/), (/2,2/)) ) ) ERROR STOP 34
   END ASSOCIATE
 
 

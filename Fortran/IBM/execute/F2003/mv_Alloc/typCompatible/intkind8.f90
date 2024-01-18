@@ -39,8 +39,8 @@ end module
 
        call move_alloc(b%i1, d%i1)
 
-       if ( allocated(b%i1)) stop 21
-       if ( .not. allocated(d%i1) ) stop 23
+       if ( allocated(b%i1)) error stop 21
+       if ( .not. allocated(d%i1) ) error stop 23
 
        do i = 1, 4
           if ( d%i1(i) /= i ) call zzrc(i_4)

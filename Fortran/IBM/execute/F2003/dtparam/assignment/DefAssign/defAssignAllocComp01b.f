@@ -106,25 +106,25 @@ program defAssignAllocComp01a
      b2 = [B(2)(i1=[5,6],c3=["go","do"]),&
            B(2)(i1=[-5,-6,-7],c3=["GO","DO","TO"])  ]
 
-     if(any(a1(1)%c1 /= ["cup","hat"]))         stop 10
-     if(any(a1(1)%c2 /= ["ab","cd","ef"]))      stop 11
-     if(any(a1(2)%c1 /= ["AB","CD","EF"]))      stop 12
-     if(any(a1(2)%c2 /= ["CUP","HAT"]))         stop 13
+     if(any(a1(1)%c1 /= ["cup","hat"]))         error stop 10
+     if(any(a1(1)%c2 /= ["ab","cd","ef"]))      error stop 11
+     if(any(a1(2)%c1 /= ["AB","CD","EF"]))      error stop 12
+     if(any(a1(2)%c2 /= ["CUP","HAT"]))         error stop 13
 
-     if(any(a2(1)%c1 /= ["ibm"]))               stop 14
-     if(any(a2(1)%c2 /= ["red","get"]))         stop 15
-     if(any(a2(2)%c1 /= ["RED","GET"]))         stop 16
-     if(any(a2(2)%c2 /= ["IBM"]))               stop 17
+     if(any(a2(1)%c1 /= ["ibm"]))               error stop 14
+     if(any(a2(1)%c2 /= ["red","get"]))         error stop 15
+     if(any(a2(2)%c1 /= ["RED","GET"]))         error stop 16
+     if(any(a2(2)%c2 /= ["IBM"]))               error stop 17
 
-     if(any(b1(1)%i1 /= [1,2,3,4]))             stop 18
-     if(any(b1(1)%c3 /= ["x","y","z"]))         stop 19
-     if(any(b1(2)%i1 /= [-1,-2,-3,-4]))         stop 20
-     if(any(b1(2)%c3 /= ["X","Y","Z"]))         stop 21
+     if(any(b1(1)%i1 /= [1,2,3,4]))             error stop 18
+     if(any(b1(1)%c3 /= ["x","y","z"]))         error stop 19
+     if(any(b1(2)%i1 /= [-1,-2,-3,-4]))         error stop 20
+     if(any(b1(2)%c3 /= ["X","Y","Z"]))         error stop 21
 
-     if(any(b2(1)%i1 /= [5,6]))                 stop 22
-     if(any(b2(1)%c3 /= ["go","do"]))           stop 23
-     if(any(b2(2)%i1 /= [-5,-6,-7]))            stop 24
-     if(any(b2(2)%c3 /= ["GO","DO","TO"]))      stop 25
+     if(any(b2(1)%i1 /= [5,6]))                 error stop 22
+     if(any(b2(1)%c3 /= ["go","do"]))           error stop 23
+     if(any(b2(2)%i1 /= [-5,-6,-7]))            error stop 24
+     if(any(b2(2)%c3 /= ["GO","DO","TO"]))      error stop 25
 
      call allocComp(ctar)
 
@@ -134,37 +134,37 @@ program defAssignAllocComp01a
 
      associate(x=>ctar(2)%a1comp)
 
-       if(any(x(1)%c1 /= ["cup","hat"]))         stop 26
-       if(any(x(1)%c2 /= ["ab","cd","ef"]))      stop 27
-       if(any(x(2)%c1 /= ["AB","CD","EF"]))      stop 28
-       if(any(x(2)%c2 /= ["CUP","HAT"]))         stop 29
+       if(any(x(1)%c1 /= ["cup","hat"]))         error stop 26
+       if(any(x(1)%c2 /= ["ab","cd","ef"]))      error stop 27
+       if(any(x(2)%c1 /= ["AB","CD","EF"]))      error stop 28
+       if(any(x(2)%c2 /= ["CUP","HAT"]))         error stop 29
 
      end associate
 
      associate(x=>ctar(3)%a1comp)
 
-       if(any(x(1)%c1 /= ["ibm"]))               stop 30
-       if(any(x(1)%c2 /= ["red","get"]))         stop 31
-       if(any(x(2)%c1 /= ["RED","GET"]))         stop 32
-       if(any(x(2)%c2 /= ["IBM"]))               stop 33
+       if(any(x(1)%c1 /= ["ibm"]))               error stop 30
+       if(any(x(1)%c2 /= ["red","get"]))         error stop 31
+       if(any(x(2)%c1 /= ["RED","GET"]))         error stop 32
+       if(any(x(2)%c2 /= ["IBM"]))               error stop 33
 
      end associate
 
      associate(x=>ctar(2)%b1comp)
 
-       if(any(x(1)%i1 /= [1,2,3,4]))             stop 34
-       if(any(x(1)%c3 /= ["x","y","z"]))         stop 35
-       if(any(x(2)%i1 /= [-1,-2,-3,-4]))         stop 36
-       if(any(x(2)%c3 /= ["X","Y","Z"]))         stop 37
+       if(any(x(1)%i1 /= [1,2,3,4]))             error stop 34
+       if(any(x(1)%c3 /= ["x","y","z"]))         error stop 35
+       if(any(x(2)%i1 /= [-1,-2,-3,-4]))         error stop 36
+       if(any(x(2)%c3 /= ["X","Y","Z"]))         error stop 37
 
      end associate
 
      associate(x=>ctar(3)%b1comp)
 
-       if(any(x(1)%i1 /= [5,6]))                 stop 38
-       if(any(x(1)%c3 /= ["go","do"]))           stop 39
-       if(any(x(2)%i1 /= [-5,-6,-7]))            stop 40
-       if(any(x(2)%c3 /= ["GO","DO","TO"]))      stop 41
+       if(any(x(1)%i1 /= [5,6]))                 error stop 38
+       if(any(x(1)%c3 /= ["go","do"]))           error stop 39
+       if(any(x(2)%i1 /= [-5,-6,-7]))            error stop 40
+       if(any(x(2)%c3 /= ["GO","DO","TO"]))      error stop 41
 
      end associate
 
@@ -177,37 +177,37 @@ program defAssignAllocComp01a
 
      associate(x=>cptr2(0)%a1comp)
 
-       if(any(x(1)%c1 /= ["cup","hat"]))         stop 42
-       if(any(x(1)%c2 /= ["ab","cd","ef"]))      stop 43
-       if(any(x(2)%c1 /= ["AB","CD","EF"]))      stop 44
-       if(any(x(2)%c2 /= ["CUP","HAT"]))         stop 45
+       if(any(x(1)%c1 /= ["cup","hat"]))         error stop 42
+       if(any(x(1)%c2 /= ["ab","cd","ef"]))      error stop 43
+       if(any(x(2)%c1 /= ["AB","CD","EF"]))      error stop 44
+       if(any(x(2)%c2 /= ["CUP","HAT"]))         error stop 45
 
      end associate
 
      associate(x=>cptr2(-1)%a1comp)
 
-       if(any(x(1)%c1 /= ["ibm"]))               stop 46
-       if(any(x(1)%c2 /= ["red","get"]))         stop 47
-       if(any(x(2)%c1 /= ["RED","GET"]))         stop 48
-       if(any(x(2)%c2 /= ["IBM"]))               stop 49
+       if(any(x(1)%c1 /= ["ibm"]))               error stop 46
+       if(any(x(1)%c2 /= ["red","get"]))         error stop 47
+       if(any(x(2)%c1 /= ["RED","GET"]))         error stop 48
+       if(any(x(2)%c2 /= ["IBM"]))               error stop 49
 
      end associate
 
      associate(x=>cptr2(0)%b1comp)
 
-       if(any(x(1)%i1 /= [1,2,3,4]))             stop 50
-       if(any(x(1)%c3 /= ["x","y","z"]))         stop 51
-       if(any(x(2)%i1 /= [-1,-2,-3,-4]))         stop 52
-       if(any(x(2)%c3 /= ["X","Y","Z"]))         stop 53
+       if(any(x(1)%i1 /= [1,2,3,4]))             error stop 50
+       if(any(x(1)%c3 /= ["x","y","z"]))         error stop 51
+       if(any(x(2)%i1 /= [-1,-2,-3,-4]))         error stop 52
+       if(any(x(2)%c3 /= ["X","Y","Z"]))         error stop 53
 
      end associate
 
      associate(x=>cptr2(-1)%b1comp)
 
-       if(any(x(1)%i1 /= [5,6]))                 stop 54
-       if(any(x(1)%c3 /= ["go","do"]))           stop 55
-       if(any(x(2)%i1 /= [-5,-6,-7]))            stop 56
-       if(any(x(2)%c3 /= ["GO","DO","TO"]))      stop 57
+       if(any(x(1)%i1 /= [5,6]))                 error stop 54
+       if(any(x(1)%c3 /= ["go","do"]))           error stop 55
+       if(any(x(2)%i1 /= [-5,-6,-7]))            error stop 56
+       if(any(x(2)%c3 /= ["GO","DO","TO"]))      error stop 57
 
      end associate
 
@@ -221,19 +221,19 @@ program defAssignAllocComp01a
 
      associate(x=>cptr1%a1comp)
 
-       if(any(x(1)%c1 /= ["cup","hat"]))         stop 58
-       if(any(x(1)%c2 /= ["ab","cd","ef"]))      stop 59
-       if(any(x(2)%c1 /= ["AB","CD","EF"]))      stop 60
-       if(any(x(2)%c2 /= ["CUP","HAT"]))         stop 61
+       if(any(x(1)%c1 /= ["cup","hat"]))         error stop 58
+       if(any(x(1)%c2 /= ["ab","cd","ef"]))      error stop 59
+       if(any(x(2)%c1 /= ["AB","CD","EF"]))      error stop 60
+       if(any(x(2)%c2 /= ["CUP","HAT"]))         error stop 61
 
      end associate
 
      associate(x=>cptr1%b1comp)
 
-       if(any(x(1)%i1 /= [1,2,3,4]))             stop 62
-       if(any(x(1)%c3 /= ["x","y","z"]))         stop 63
-       if(any(x(2)%i1 /= [-1,-2,-3,-4]))         stop 64
-       if(any(x(2)%c3 /= ["X","Y","Z"]))         stop 65
+       if(any(x(1)%i1 /= [1,2,3,4]))             error stop 62
+       if(any(x(1)%c3 /= ["x","y","z"]))         error stop 63
+       if(any(x(2)%i1 /= [-1,-2,-3,-4]))         error stop 64
+       if(any(x(2)%c3 /= ["X","Y","Z"]))         error stop 65
 
      end associate
 
@@ -245,19 +245,19 @@ program defAssignAllocComp01a
 
      associate(x=>cptr1%a1comp)
 
-       if(any(x(1)%c1 /= ["ibm"]))               stop 66
-       if(any(x(1)%c2 /= ["red","get"]))         stop 67
-       if(any(x(2)%c1 /= ["RED","GET"]))         stop 68
-       if(any(x(2)%c2 /= ["IBM"]))               stop 69
+       if(any(x(1)%c1 /= ["ibm"]))               error stop 66
+       if(any(x(1)%c2 /= ["red","get"]))         error stop 67
+       if(any(x(2)%c1 /= ["RED","GET"]))         error stop 68
+       if(any(x(2)%c2 /= ["IBM"]))               error stop 69
 
      end associate
 
      associate(x=>cptr1%b1comp)
 
-       if(any(x(1)%i1 /= [5,6]))                 stop 70
-       if(any(x(1)%c3 /= ["go","do"]))           stop 71
-       if(any(x(2)%i1 /= [-5,-6,-7]))            stop 72
-       if(any(x(2)%c3 /= ["GO","DO","TO"]))      stop 73
+       if(any(x(1)%i1 /= [5,6]))                 error stop 70
+       if(any(x(1)%c3 /= ["go","do"]))           error stop 71
+       if(any(x(2)%i1 /= [-5,-6,-7]))            error stop 72
+       if(any(x(2)%c3 /= ["GO","DO","TO"]))      error stop 73
 
      end associate
 

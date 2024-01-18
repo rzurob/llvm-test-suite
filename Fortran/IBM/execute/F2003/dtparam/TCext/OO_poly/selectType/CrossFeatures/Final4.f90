@@ -58,10 +58,10 @@
   Type(DT(1,513)), PARAMETER :: U=DT(1,513)(C0="-0")
   TYPE(DT(1,513)) :: V
 
-  IF (ANY(Final .NEQV. .FALSE.)) STOP 20
+  IF (ANY(Final .NEQV. .FALSE.)) ERROR STOP 20
   CALL Sub(V)
-  IF (Final(1)      .NEQV. .TRUE.)   STOP 31
-  IF (ANY(Final(2:) .NEQV. .FALSE.)) STOP 33
+  IF (Final(1)      .NEQV. .TRUE.)   ERROR STOP 31
+  IF (ANY(Final(2:) .NEQV. .FALSE.)) ERROR STOP 33
 
   CONTAINS
 
@@ -70,15 +70,15 @@
 
   SELECT TYPE ( UArg )
   CLASS IS (DT(1,*))
-    IF (Final(1)      .NEQV. .TRUE.)   STOP 41
-    IF (ANY(Final(2:) .NEQV. .FALSE.)) STOP 43
+    IF (Final(1)      .NEQV. .TRUE.)   ERROR STOP 41
+    IF (ANY(Final(2:) .NEQV. .FALSE.)) ERROR STOP 43
   CLASS DEFAULT
     STOP 61
   END SELECT
   !No new finalization
 
-  IF (Final(1)      .NEQV. .TRUE.)   STOP 51
-  IF (ANY(Final(2:) .NEQV. .FALSE.)) STOP 53
+  IF (Final(1)      .NEQV. .TRUE.)   ERROR STOP 51
+  IF (ANY(Final(2:) .NEQV. .FALSE.)) ERROR STOP 53
 
   END SUBROUTINE
 

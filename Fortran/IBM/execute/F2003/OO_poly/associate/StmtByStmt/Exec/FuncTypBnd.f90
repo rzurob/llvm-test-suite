@@ -83,24 +83,24 @@
 
     As%BaseId  = 1
     As%ChildId = 2
-    IF ( As1%GetID()          .NE. -2) STOP 51
+    IF ( As1%GetID()          .NE. -2) ERROR STOP 51
     SELECT TYPE (As1)
       TYPE IS (Child)
-        IF ( As1%Base%GetID() .NE. -1) STOP 50
+        IF ( As1%Base%GetID() .NE. -1) ERROR STOP 50
       CLASS DEFAULT
         STOP 52
     END SELECT
 
     As%BaseId  = 1
     As%ChildId = 2
-    IF ( As2%GetID() .NE. -1) STOP 60
+    IF ( As2%GetID() .NE. -1) ERROR STOP 60
 
     As%BaseId  = 1
     As%ChildId = 2
     SELECT TYPE (As3)
       TYPE IS (Child)
-        IF ( As3%GetID()      .NE. -2) STOP 70
-        IF ( As3%Base%GetID() .NE. -1) STOP 80
+        IF ( As3%GetID()      .NE. -2) ERROR STOP 70
+        IF ( As3%Base%GetID() .NE. -1) ERROR STOP 80
       CLASS DEFAULT
         STOP 90
     END SELECT

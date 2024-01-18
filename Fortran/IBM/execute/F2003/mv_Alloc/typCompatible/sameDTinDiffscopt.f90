@@ -39,9 +39,9 @@
 
                   allocate(a1, source = t(10))
                   call move_alloc(a1, a2)
-                  if ( .not. allocated(a2) ) stop 21
-                  if ( allocated(a1) ) stop 31
-                  if ( a2%i /= 10 ) stop 41
+                  if ( .not. allocated(a2) ) error stop 21
+                  if ( allocated(a1) ) error stop 31
+                  if ( a2%i /= 10 ) error stop 41
                end subroutine
       end module
 

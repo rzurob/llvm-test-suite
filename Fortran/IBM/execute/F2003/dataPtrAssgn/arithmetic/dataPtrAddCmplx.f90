@@ -24,9 +24,9 @@ program main
 
     ptr((-1)**mod(1,2):) => c4(10:1:-1)
 
-    if ( .not. associated(ptr, c4(10:1:-1))) stop 1
-    if ( lbound(ptr,1) /= -1 ) stop 2
-    if ( ubound(ptr,1) /= 8 ) stop 3
+    if ( .not. associated(ptr, c4(10:1:-1))) error stop 1
+    if ( lbound(ptr,1) /= -1 ) error stop 2
+    if ( ubound(ptr,1) /= 8 ) error stop 3
 
     select type(ptr)
 	type is (complex(4))

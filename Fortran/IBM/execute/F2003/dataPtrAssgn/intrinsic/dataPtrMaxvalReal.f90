@@ -36,9 +36,9 @@ program main
 	b%p(2:6) => b%t4(::2)
 
 	b%t4 = b%t4
-        if ( .not. associated(b%p)) stop 5
-        if ( any ( lbound(b%p) .ne. (/2/) )) stop 7
-        if ( any ( ubound(b%p) .ne. (/6/) )) stop 9
+        if ( .not. associated(b%p)) error stop 5
+        if ( any ( lbound(b%p) .ne. (/2/) )) error stop 7
+        if ( any ( ubound(b%p) .ne. (/6/) )) error stop 9
 
         select type(x => b%p)
             type is (real)
@@ -54,9 +54,9 @@ program main
 	b%p => b%t8
 	b%p(min(int(maxval(b%t4)),1):) => b%p
 
-        if ( .not. associated(b%p)) stop 15
-        if ( any ( lbound(b%p) .ne. (/1/) )) stop 17
-        if ( any ( ubound(b%p) .ne. (/5/) )) stop 19
+        if ( .not. associated(b%p)) error stop 15
+        if ( any ( lbound(b%p) .ne. (/1/) )) error stop 17
+        if ( any ( ubound(b%p) .ne. (/5/) )) error stop 19
 
         select type(x => b%p)
             type is (real*8)
@@ -72,9 +72,9 @@ program main
 
 	b%p(dot_product((/1,2/),(/2,3/)):) => b%p
 
-        if ( .not. associated(b%p)) stop 25
-        if ( any ( lbound(b%p) .ne. (/8/) )) stop 27
-        if ( any ( ubound(b%p) .ne. (/12/) )) stop 29
+        if ( .not. associated(b%p)) error stop 25
+        if ( any ( lbound(b%p) .ne. (/8/) )) error stop 27
+        if ( any ( ubound(b%p) .ne. (/12/) )) error stop 29
 
         select type(x => b%p)
             type is (real*16)

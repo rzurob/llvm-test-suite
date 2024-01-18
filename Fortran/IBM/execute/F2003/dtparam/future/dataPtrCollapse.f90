@@ -43,16 +43,16 @@ program main
 
     p(2:,3:) => tar
 
-    if ( .not. associated(p, tar)) stop 1
-    if ( any(lbound(p) .ne. (/ 2,3/))) stop 2
-    if ( any(ubound(p) .ne. (/ 3,4/))) stop 3
+    if ( .not. associated(p, tar)) error stop 1
+    if ( any(lbound(p) .ne. (/ 2,3/))) error stop 2
+    if ( any(ubound(p) .ne. (/ 3,4/))) error stop 3
     call sub(tar)
 
     do i = 2,3
         do j = 3,4
-            if ( .not. associated(p(i,j)%ptr, tar(i-1,j-2)%ptr)) stop 6
-            if ( any(lbound(p(i,j)%ptr) .ne. (/ i+j-3/))) stop 7
-            if ( any(ubound(p(i,j)%ptr) .ne. (/ i+j+6/))) stop 8
+            if ( .not. associated(p(i,j)%ptr, tar(i-1,j-2)%ptr)) error stop 6
+            if ( any(lbound(p(i,j)%ptr) .ne. (/ i+j-3/))) error stop 7
+            if ( any(ubound(p(i,j)%ptr) .ne. (/ i+j+6/))) error stop 8
             print *, p(i,j)%ptr
         enddo
     enddo

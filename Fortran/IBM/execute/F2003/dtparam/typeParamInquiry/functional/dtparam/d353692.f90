@@ -50,9 +50,9 @@ program d353692
   print *,kind(t%k1+t%k2),t%i%kind,kind(t%i)
   allocate(integer(kind(t%k1+t%k2)) :: t%i(2))
 
-  if ( t%k1 /= 2 .or. t%k2 /= 2 ) stop 2
-  if ( t%k1%kind /= 1 .or. kind(t%k1) /= 1 ) stop 3
-  if ( t%k2%kind /= 2 .or. kind(t%k2) /= 2 ) stop 4
-  if ( kind(t%k1+t%k2) /= 2 .or. t%i%kind /= 2 .or. kind(t%i) /= 2 ) stop 5
+  if ( t%k1 /= 2 .or. t%k2 /= 2 ) error stop 2
+  if ( t%k1%kind /= 1 .or. kind(t%k1) /= 1 ) error stop 3
+  if ( t%k2%kind /= 2 .or. kind(t%k2) /= 2 ) error stop 4
+  if ( kind(t%k1+t%k2) /= 2 .or. t%i%kind /= 2 .or. kind(t%i) /= 2 ) error stop 5
 
 end

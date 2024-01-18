@@ -70,7 +70,7 @@
       A_square%width = seed1
 
       ALLOCATE(My_shape, source = A_square)
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 10
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 10
 
       SELECT TYPE (A => My_shape)
         CLASS IS (Sq(4,*))
@@ -105,7 +105,7 @@
       TYPE(Rec(4,:)), ALLOCATABLE :: A_rectangle
 
       ALLOCATE(My_shape, source = Rec(4,20)(area=0.0,name = '',width=20.0,height=12.5))
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 10
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 10
 
       SELECT TYPE (A => My_shape)
         CLASS IS (Sq(4,*))
@@ -140,7 +140,7 @@
       TYPE(Rec(4,:)), ALLOCATABLE :: A_rectangle
 
       ALLOCATE(My_shape, source = Rec(4,20)(area=0.0,name = '',width=20.0,height=12.5))
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 10
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 10
 
       SELECT TYPE (A => My_shape)
         CLASS IS (Sq(4,*))

@@ -102,7 +102,7 @@ use m
 
     i1 = b%id
 
-    if (.not. associated(b%p1)) stop 10
+    if (.not. associated(b%p1)) error stop 10
 
     a1 = b%p1(b%n)
 
@@ -117,6 +117,6 @@ use m
 
     type(A(n)) genA
 
-    if (n /= 30) stop 10
+    if (n /= 30) error stop 10
     genA%data = (/(i*1.0d0, i=30,1,-1)/)
 end function

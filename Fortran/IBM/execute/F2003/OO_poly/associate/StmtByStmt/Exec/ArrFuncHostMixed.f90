@@ -120,33 +120,33 @@
 
   ASSOCIATE ( As => Arg(1:) + ( Arg(1:)%Base%Zero + Arg(1:)%Base ))
 
-    IF (ANY(SHAPE(As)  .NE. (/6/)))      STOP 21
-    IF (ANY(LBOUND(As) .NE. (/1/)))      STOP 22
-    IF (ANY(UBOUND(As) .NE. (/6/)))      STOP 23
+    IF (ANY(SHAPE(As)  .NE. (/6/)))      ERROR STOP 21
+    IF (ANY(LBOUND(As) .NE. (/1/)))      ERROR STOP 22
+    IF (ANY(UBOUND(As) .NE. (/6/)))      ERROR STOP 23
 
     ASSOCIATE ( As1 => As(::2), &
            &    As2 => As(2::2)+ (As(2::2)%Base%Zero + As(2::2)%Base) )
 
-      IF ( ANY(As1%Base%GetId() .NE. -1) ) STOP 34
-      IF ( ANY(As1%GetId()      .NE. -2) ) STOP 35
-      IF ( ANY(As1%BaseId       .NE. -1) ) STOP 36
-      IF ( ANY(As1%ChildId      .NE. -2) ) STOP 37
+      IF ( ANY(As1%Base%GetId() .NE. -1) ) ERROR STOP 34
+      IF ( ANY(As1%GetId()      .NE. -2) ) ERROR STOP 35
+      IF ( ANY(As1%BaseId       .NE. -1) ) ERROR STOP 36
+      IF ( ANY(As1%ChildId      .NE. -2) ) ERROR STOP 37
 
-      IF ( ANY(As2%Base%GetId() .NE.  1) ) STOP 44
-      IF ( ANY(As2%GetId()      .NE.  2) ) STOP 45
-      IF ( ANY(As2%BaseId       .NE.  1) ) STOP 46
-      IF ( ANY(As2%ChildId      .NE.  2) ) STOP 47
+      IF ( ANY(As2%Base%GetId() .NE.  1) ) ERROR STOP 44
+      IF ( ANY(As2%GetId()      .NE.  2) ) ERROR STOP 45
+      IF ( ANY(As2%BaseId       .NE.  1) ) ERROR STOP 46
+      IF ( ANY(As2%ChildId      .NE.  2) ) ERROR STOP 47
 
     END ASSOCIATE
 
   END ASSOCIATE
 
-  IF ( .NOT. ASSOCIATED(V) )          STOP 14
-  IF ( SIZE(V) .NE. 6 )               STOP 15
-  IF ( ANY(V(1::2)%BaseID  .NE. -1) ) STOP 10
-  IF ( ANY(V(1::2)%ChildID .NE. -2) ) STOP 11
-  IF ( ANY(V(2::2)%BaseID  .NE.  1) ) STOP 12
-  IF ( ANY(V(2::2)%ChildID .NE.  2) ) STOP 13
+  IF ( .NOT. ASSOCIATED(V) )          ERROR STOP 14
+  IF ( SIZE(V) .NE. 6 )               ERROR STOP 15
+  IF ( ANY(V(1::2)%BaseID  .NE. -1) ) ERROR STOP 10
+  IF ( ANY(V(1::2)%ChildID .NE. -2) ) ERROR STOP 11
+  IF ( ANY(V(2::2)%BaseID  .NE.  1) ) ERROR STOP 12
+  IF ( ANY(V(2::2)%ChildID .NE.  2) ) ERROR STOP 13
 
   END SUBROUTINE
 

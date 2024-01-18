@@ -51,19 +51,19 @@
   LOGICAL :: T1 = ANY(IOR(J=IC81(:), I=IC82(:)) .NE. F)
   LOGICAL :: T2 = ALL(IOR(J=IC81(:), I=IC82(:)) .EQ. F)
 
-  IF ( KIND(IC13) .NE. 1 )         STOP 11
-  IF ( ANY( IC13  .NE. F ))        STOP 12
+  IF ( KIND(IC13) .NE. 1 )         ERROR STOP 11
+  IF ( ANY( IC13  .NE. F ))        ERROR STOP 12
 
-  IF ( KIND(IC23) .NE. 2 )         STOP 21
-  IF ( ANY( IC23  .NE. F ))        STOP 22
+  IF ( KIND(IC23) .NE. 2 )         ERROR STOP 21
+  IF ( ANY( IC23  .NE. F ))        ERROR STOP 22
 
-  IF ( KIND(IC43) .NE. 4 )         STOP 41
-  IF ( ANY( IC43  .NE. F ))        STOP 42
+  IF ( KIND(IC43) .NE. 4 )         ERROR STOP 41
+  IF ( ANY( IC43  .NE. F ))        ERROR STOP 42
 
-  IF ( KIND(IC83) .NE. 8 )         STOP 81
-  IF ( ANY( IC83  .NE. F ))        STOP 82
+  IF ( KIND(IC83) .NE. 8 )         ERROR STOP 81
+  IF ( ANY( IC83  .NE. F ))        ERROR STOP 82
 
-  IF ( (T1 .OR. .NOT. T2) .EQV. .TRUE. ) STOP 91
+  IF ( (T1 .OR. .NOT. T2) .EQV. .TRUE. ) ERROR STOP 91
 
   END
 

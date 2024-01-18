@@ -27,25 +27,25 @@
 
   ASSOCIATE ( As => 1_1 )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As       .NE. 1_1 ) STOP 20
+      IF ( As       .NE. 1_1 ) ERROR STOP 20
     END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE ( As => 2_2 )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As       .NE. 2_2 ) STOP 22
+      IF ( As       .NE. 2_2 ) ERROR STOP 22
     END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE ( As => 4_4 )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As       .NE. 4_4 ) STOP 24
+      IF ( As       .NE. 4_4 ) ERROR STOP 24
     END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE ( As => 8_8 )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As       .NE. 8_8 ) STOP 28
+      IF ( As       .NE. 8_8 ) ERROR STOP 28
     END ASSOCIATE
   END ASSOCIATE
 

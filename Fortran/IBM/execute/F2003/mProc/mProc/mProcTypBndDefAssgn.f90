@@ -122,10 +122,10 @@
   T2 = DT2("2")
   T3 = DT3("3")
 
-  IF (TRIM(T%ID)    .NE. "ModSub-0"   ) STOP 11
-  IF (TRIM(T1%ID)   .NE. "ModSub1-1"  ) STOP 12
-  IF (TRIM(T2%ID)   .NE. "ModSub2-2"  ) STOP 13
-  IF (TRIM(T3%ID)   .NE. "ExtSub-3"   ) STOP 14
+  IF (TRIM(T%ID)    .NE. "ModSub-0"   ) ERROR STOP 11
+  IF (TRIM(T1%ID)   .NE. "ModSub1-1"  ) ERROR STOP 12
+  IF (TRIM(T2%ID)   .NE. "ModSub2-2"  ) ERROR STOP 13
+  IF (TRIM(T3%ID)   .NE. "ExtSub-3"   ) ERROR STOP 14
 
   END  SUBROUTINE
 

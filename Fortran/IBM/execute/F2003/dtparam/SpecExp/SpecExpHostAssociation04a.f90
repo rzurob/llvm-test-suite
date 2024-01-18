@@ -69,69 +69,69 @@ PROGRAM SpeExpHostAssociation04a
         INTEGER :: N, M
         TYPE(Base(poly%k1,poly%l1)) :: Obj
 
-        IF ( Obj%k1 .NE. N ) STOP 10
-        IF ( Obj%l1 .NE. M ) STOP 11
-        IF ( SIZE(Obj%A1)  .NE. M ) STOP 12
-        IF ( LEN(Obj%C1) .NE. M ) STOP 13
+        IF ( Obj%k1 .NE. N ) ERROR STOP 10
+        IF ( Obj%l1 .NE. M ) ERROR STOP 11
+        IF ( SIZE(Obj%A1)  .NE. M ) ERROR STOP 12
+        IF ( LEN(Obj%C1) .NE. M ) ERROR STOP 13
       END SUBROUTINE Sub11
 
       SUBROUTINE Sub12(N, M, P)
         INTEGER :: N, M, P
         TYPE(Child(KIND(poly%I1),poly%I1,2*KIND(poly%I1),2*SIZE(poly%A1))) :: Obj
 
-        IF ( Obj%k1 .NE.   N ) STOP 14
-        IF ( Obj%l1 .NE.   M ) STOP 15
-        IF ( Obj%k2 .NE. 2*N ) STOP 16
-        IF ( Obj%l2 .NE.   P ) STOP 17
-        IF ( SIZE(Obj%A1) .NE. M ) STOP 18
-        IF ( LEN(Obj%C1)  .NE. M ) STOP 19
-        IF ( SIZE(Obj%A2) .NE. P ) STOP 20
-        IF ( LEN(Obj%C2)  .NE. P ) STOP 21
+        IF ( Obj%k1 .NE.   N ) ERROR STOP 14
+        IF ( Obj%l1 .NE.   M ) ERROR STOP 15
+        IF ( Obj%k2 .NE. 2*N ) ERROR STOP 16
+        IF ( Obj%l2 .NE.   P ) ERROR STOP 17
+        IF ( SIZE(Obj%A1) .NE. M ) ERROR STOP 18
+        IF ( LEN(Obj%C1)  .NE. M ) ERROR STOP 19
+        IF ( SIZE(Obj%A2) .NE. P ) ERROR STOP 20
+        IF ( LEN(Obj%C2)  .NE. P ) ERROR STOP 21
 
-        IF ( Obj%cmp1%k1 .NE. 2*N ) STOP 22
-        IF ( Obj%cmp1%l1 .NE.   P ) STOP 23
-        IF ( SIZE(Obj%cmp1%A1) .NE. P ) STOP 24
-        IF ( LEN(Obj%cmp1%C1)  .NE. P ) STOP 25
+        IF ( Obj%cmp1%k1 .NE. 2*N ) ERROR STOP 22
+        IF ( Obj%cmp1%l1 .NE.   P ) ERROR STOP 23
+        IF ( SIZE(Obj%cmp1%A1) .NE. P ) ERROR STOP 24
+        IF ( LEN(Obj%cmp1%C1)  .NE. P ) ERROR STOP 25
       END SUBROUTINE Sub12
 
       SUBROUTINE Sub13(N, M, P, Q)
         INTEGER :: N, M, P, Q
         TYPE(NextGen(KIND(poly%A1(1)),poly%A1(1),KIND(poly%A1(2)),poly%A1(2),KIND(poly%A1(3)),poly%A1(3))) :: Obj
 
-        IF ( Obj%k1 .NE. N ) STOP 26
-        IF ( Obj%l1 .NE. M ) STOP 27
-        IF ( Obj%k2 .NE. N ) STOP 28
-        IF ( Obj%l2 .NE. P ) STOP 29
-        IF ( Obj%k3 .NE. N ) STOP 30
-        IF ( Obj%l3 .NE. Q ) STOP 31
-        IF ( SIZE(Obj%A1) .NE. M ) STOP 32
-        IF ( LEN(Obj%C1)  .NE. M ) STOP 33
-        IF ( SIZE(Obj%A2) .NE. P ) STOP 34
-        IF ( LEN(Obj%C2)  .NE. P ) STOP 35
-        IF ( SIZE(Obj%A3) .NE. Q ) STOP 36
-        IF ( LEN(Obj%C3)  .NE. Q ) STOP 37
+        IF ( Obj%k1 .NE. N ) ERROR STOP 26
+        IF ( Obj%l1 .NE. M ) ERROR STOP 27
+        IF ( Obj%k2 .NE. N ) ERROR STOP 28
+        IF ( Obj%l2 .NE. P ) ERROR STOP 29
+        IF ( Obj%k3 .NE. N ) ERROR STOP 30
+        IF ( Obj%l3 .NE. Q ) ERROR STOP 31
+        IF ( SIZE(Obj%A1) .NE. M ) ERROR STOP 32
+        IF ( LEN(Obj%C1)  .NE. M ) ERROR STOP 33
+        IF ( SIZE(Obj%A2) .NE. P ) ERROR STOP 34
+        IF ( LEN(Obj%C2)  .NE. P ) ERROR STOP 35
+        IF ( SIZE(Obj%A3) .NE. Q ) ERROR STOP 36
+        IF ( LEN(Obj%C3)  .NE. Q ) ERROR STOP 37
 
-        IF ( Obj%cmp1%k1 .NE. N ) STOP 38
-        IF ( Obj%cmp1%l1 .NE. P ) STOP 39
-        IF ( SIZE(Obj%cmp1%A1) .NE. P ) STOP 40
-        IF ( LEN(Obj%cmp1%C1)  .NE. P ) STOP 41
+        IF ( Obj%cmp1%k1 .NE. N ) ERROR STOP 38
+        IF ( Obj%cmp1%l1 .NE. P ) ERROR STOP 39
+        IF ( SIZE(Obj%cmp1%A1) .NE. P ) ERROR STOP 40
+        IF ( LEN(Obj%cmp1%C1)  .NE. P ) ERROR STOP 41
 
-        IF ( Obj%cmp2%k1 .NE. N ) STOP 42
-        IF ( Obj%cmp2%l1 .NE. Q ) STOP 43
-        IF ( SIZE(Obj%cmp2%A1) .NE. Q ) STOP 44
-        IF ( LEN(Obj%cmp2%C1)  .NE. Q ) STOP 45
+        IF ( Obj%cmp2%k1 .NE. N ) ERROR STOP 42
+        IF ( Obj%cmp2%l1 .NE. Q ) ERROR STOP 43
+        IF ( SIZE(Obj%cmp2%A1) .NE. Q ) ERROR STOP 44
+        IF ( LEN(Obj%cmp2%C1)  .NE. Q ) ERROR STOP 45
       END SUBROUTINE Sub13
 
       SUBROUTINE Sub14(N, M, P)
         INTEGER :: N, M, P, I
         TYPE(Base(KIND(poly%I1),LEN(poly%C1))) :: Obj(poly%I1)
 
-        IF ( SIZE(Obj) .NE. P ) STOP 46
+        IF ( SIZE(Obj) .NE. P ) ERROR STOP 46
         DO I = 1, poly%I1
-           IF ( Obj(I)%k1 .NE. N ) STOP 47
-           IF ( Obj(I)%l1 .NE. M ) STOP 48
-           IF ( SIZE(Obj(I)%A1) .NE. M ) STOP 49
-           IF ( LEN(Obj(I)%C1)  .NE. M ) STOP 50
+           IF ( Obj(I)%k1 .NE. N ) ERROR STOP 47
+           IF ( Obj(I)%l1 .NE. M ) ERROR STOP 48
+           IF ( SIZE(Obj(I)%A1) .NE. M ) ERROR STOP 49
+           IF ( LEN(Obj(I)%C1)  .NE. M ) ERROR STOP 50
         END DO
       END SUBROUTINE Sub14
 END PROGRAM SpeExpHostAssociation04a

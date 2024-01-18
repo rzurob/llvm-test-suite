@@ -36,7 +36,7 @@
   END SELECT
 
 1 ASSOCIATE ( ASSOCIATE => Arg )
-    IF ( ASSOCIATE .NE. "ok" ) STOP 20
+    IF ( ASSOCIATE .NE. "ok" ) ERROR STOP 20
     SELECT TYPE ( Exp )
     TYPE IS (INTEGER)
       If (Exp + 1) 1, 2, 3

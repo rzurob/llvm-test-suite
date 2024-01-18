@@ -63,7 +63,7 @@
   PRINT *, ProcPtr2()
   PRINT *, ProcPtr3()
 
-  IF (Count .NE. 3) STOP 11
+  IF (Count .NE. 3) ERROR STOP 11
 
   END
 

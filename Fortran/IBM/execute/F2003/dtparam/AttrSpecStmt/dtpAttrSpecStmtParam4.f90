@@ -40,25 +40,25 @@
 
   DO I=1, N
 
-    IF ( T(I)%I%KIND .NE. 4 ) STOP 11
-    IF ( T(I)%R%KIND .NE. 4 ) STOP 12
-    IF ( T(I)%Z%KIND .NE. 4 ) STOP 13
-    IF ( T(I)%T%KIND .NE. 4 ) STOP 14
+    IF ( T(I)%I%KIND .NE. 4 ) ERROR STOP 11
+    IF ( T(I)%R%KIND .NE. 4 ) ERROR STOP 12
+    IF ( T(I)%Z%KIND .NE. 4 ) ERROR STOP 13
+    IF ( T(I)%T%KIND .NE. 4 ) ERROR STOP 14
 
-    IF ( SIZE(T(I)%I) .NE. 5 ) STOP 21
-    IF ( SIZE(T(I)%R) .NE. 5 ) STOP 22
-    IF ( SIZE(T(I)%Z) .NE. 5 ) STOP 23
-    IF ( SIZE(T(I)%T) .NE. 5 ) STOP 24
+    IF ( SIZE(T(I)%I) .NE. 5 ) ERROR STOP 21
+    IF ( SIZE(T(I)%R) .NE. 5 ) ERROR STOP 22
+    IF ( SIZE(T(I)%Z) .NE. 5 ) ERROR STOP 23
+    IF ( SIZE(T(I)%T) .NE. 5 ) ERROR STOP 24
 
-    IF ( LBOUND(T(I)%I, 1) .NE. 5 ) STOP 21
-    IF ( LBOUND(T(I)%R, 1) .NE. 5 ) STOP 22
-    IF ( LBOUND(T(I)%Z, 1) .NE. 5 ) STOP 23
-    IF ( LBOUND(T(I)%T, 1) .NE. 5 ) STOP 24
+    IF ( LBOUND(T(I)%I, 1) .NE. 5 ) ERROR STOP 21
+    IF ( LBOUND(T(I)%R, 1) .NE. 5 ) ERROR STOP 22
+    IF ( LBOUND(T(I)%Z, 1) .NE. 5 ) ERROR STOP 23
+    IF ( LBOUND(T(I)%T, 1) .NE. 5 ) ERROR STOP 24
 
-    IF ( ANY (T(I)%I   .NE. 1        ) ) STOP 41
-    IF ( ANY (T(I)%R   .NE. 2        ) ) STOP 42
-    IF ( ANY (T(I)%Z   .NE. (3.,4.)  ) ) STOP 43
-    IF ( ANY (T(I)%T   .NEQV. .TRUE. ) ) STOP 44
+    IF ( ANY (T(I)%I   .NE. 1        ) ) ERROR STOP 41
+    IF ( ANY (T(I)%R   .NE. 2        ) ) ERROR STOP 42
+    IF ( ANY (T(I)%Z   .NE. (3.,4.)  ) ) ERROR STOP 43
+    IF ( ANY (T(I)%T   .NEQV. .TRUE. ) ) ERROR STOP 44
 
   END DO
 

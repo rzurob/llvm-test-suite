@@ -44,7 +44,7 @@
       CLASS IS ( POINT )
         ! "CLASS ( POINT ) :: A" implied here
         PRINT *, A%X, A%Y ! This block gets executed
-        IF (A%X .NE. 1.0 .OR. A%Y .NE. 1.0 ) STOP 11
+        IF (A%X .NE. 1.0 .OR. A%Y .NE. 1.0 ) ERROR STOP 11
       TYPE IS ( POINT_3D )
         ! "TYPE ( POINT_3D ) :: A" implied here
         PRINT *, A%X, A%Y, A%Z

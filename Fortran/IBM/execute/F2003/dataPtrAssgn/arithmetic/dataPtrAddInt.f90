@@ -51,13 +51,13 @@ program main
 
     b1%p(4:,5:) => b1%pp()
 
-    if ( .not. associated(b1%p)) stop 1
-    if ( any (lbound(b1%p) .ne. (/4,5/))) stop 2
-    if ( any (ubound(b1%p) .ne. (/8,9/))) stop 3
+    if ( .not. associated(b1%p)) error stop 1
+    if ( any (lbound(b1%p) .ne. (/4,5/))) error stop 2
+    if ( any (ubound(b1%p) .ne. (/8,9/))) error stop 3
 
     select type (x => b1%p)
 	type is (integer)
-	    if ( any( x+x(8:4:-1,9:5:-1) .ne. 26 )) stop 4
+	    if ( any( x+x(8:4:-1,9:5:-1) .ne. 26 )) error stop 4
 	class default
 	    stop 5
     end select

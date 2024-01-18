@@ -99,10 +99,10 @@
     CLASS is (Child(4,*))
       STOP 25
     TYPE is (Child(4,*))
-      IF ( Ptr%BaseId       .NE. -1 ) STOP 31
-      IF ( Ptr%ChildId      .NE. -2 ) STOP 32
-      IF ( Ptr%Base%GetId() .NE. -1 ) STOP 33
-      IF ( Ptr%GetId()      .NE. -2 ) STOP 34
+      IF ( Ptr%BaseId       .NE. -1 ) ERROR STOP 31
+      IF ( Ptr%ChildId      .NE. -2 ) ERROR STOP 32
+      IF ( Ptr%Base%GetId() .NE. -1 ) ERROR STOP 33
+      IF ( Ptr%GetId()      .NE. -2 ) ERROR STOP 34
   END SELECT
 
   END SUBROUTINE

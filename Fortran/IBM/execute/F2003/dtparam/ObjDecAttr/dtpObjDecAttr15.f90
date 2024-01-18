@@ -70,22 +70,22 @@
   TYPE(DT2(8,*,8,*,8,*)) :: Arg(:)
   TYPE(DT2(8,Arg%L0,8,Arg%L1,8,Arg%L2)) :: ExtFun(SIZE(Arg))
 
-    IF ( Arg%K0          .NE.   8     ) STOP 11
-    IF ( Arg%K1          .NE.   8     ) STOP 12
-    IF ( Arg%K2          .NE.   8     ) STOP 13
-    IF ( Arg%L0          .NE.   8     ) STOP 14
-    IF ( Arg%L1          .NE.   8     ) STOP 15
-    IF ( Arg%L2          .NE.   8     ) STOP 16
+    IF ( Arg%K0          .NE.   8     ) ERROR STOP 11
+    IF ( Arg%K1          .NE.   8     ) ERROR STOP 12
+    IF ( Arg%K2          .NE.   8     ) ERROR STOP 13
+    IF ( Arg%L0          .NE.   8     ) ERROR STOP 14
+    IF ( Arg%L1          .NE.   8     ) ERROR STOP 15
+    IF ( Arg%L2          .NE.   8     ) ERROR STOP 16
 
-    IF ( ANY(Arg%C1          .NE.   ''    )) STOP 17
-    IF ( ANY(Arg%C2          .NE.   ''    )) STOP 17
-    IF ( ANY(Arg%I           .NE.   0     )) STOP 18
-    IF ( ANY(Arg%R           .NE.   0     )) STOP 19
-    IF ( ANY(Arg%L                        )) STOP 21
-    IF ( ANY(Arg%Z           .NE.   (0., 0.) )   ) STOP 22
-    IF ( Arg%T0%K0            .NE.   Arg%K2       ) STOP 23
-    IF ( Arg%T0%L0            .NE.   Arg%L2       ) STOP 24
-    IF ( .NOT. ASSOCIATED( Arg(1)%Ptr2)          ) STOP 25
+    IF ( ANY(Arg%C1          .NE.   ''    )) ERROR STOP 17
+    IF ( ANY(Arg%C2          .NE.   ''    )) ERROR STOP 17
+    IF ( ANY(Arg%I           .NE.   0     )) ERROR STOP 18
+    IF ( ANY(Arg%R           .NE.   0     )) ERROR STOP 19
+    IF ( ANY(Arg%L                        )) ERROR STOP 21
+    IF ( ANY(Arg%Z           .NE.   (0., 0.) )   ) ERROR STOP 22
+    IF ( Arg%T0%K0            .NE.   Arg%K2       ) ERROR STOP 23
+    IF ( Arg%T0%L0            .NE.   Arg%L2       ) ERROR STOP 24
+    IF ( .NOT. ASSOCIATED( Arg(1)%Ptr2)          ) ERROR STOP 25
 
     ExtFun%C1 = "12345678"
     ExtFun%C2 = "87654321"
@@ -128,24 +128,24 @@
 
   DO I=1, SIZE(A)
 
-    IF ( Tar(I)%K0          .NE.   8     ) STOP 31
-    IF ( Tar(I)%K1          .NE.   8     ) STOP 32
-    IF ( Tar(I)%K2          .NE.   8     ) STOP 33
-    IF ( Tar(I)%L0          .NE.   8     ) STOP 34
-    IF ( Tar(I)%L1          .NE.   8     ) STOP 35
-    IF ( Tar(I)%L2          .NE.   8     ) STOP 36
+    IF ( Tar(I)%K0          .NE.   8     ) ERROR STOP 31
+    IF ( Tar(I)%K1          .NE.   8     ) ERROR STOP 32
+    IF ( Tar(I)%K2          .NE.   8     ) ERROR STOP 33
+    IF ( Tar(I)%L0          .NE.   8     ) ERROR STOP 34
+    IF ( Tar(I)%L1          .NE.   8     ) ERROR STOP 35
+    IF ( Tar(I)%L2          .NE.   8     ) ERROR STOP 36
 
-    IF ( Tar(I)%C1          .NE.   "12345678"    ) STOP 30
-    IF ( Tar(I)%C2          .NE.   "87654321"    ) STOP 37
-    IF ( Tar(I)%I           .NE.   1             ) STOP 38
-    IF ( Tar(I)%R           .NE.   1             ) STOP 39
-    IF ( .not. Tar(I)%L              ) STOP 41
-    IF ( Tar(I)%Z           .NE.   (1, 1)        ) STOP 42
-    IF ( Tar(I)%T0%K0       .NE.   8               ) STOP 43
-    IF ( Tar(I)%T0%L0       .NE.   8               ) STOP 44
-    IF ( ASSOCIATED( Tar(I)%Ptr2 )                      ) STOP 45
+    IF ( Tar(I)%C1          .NE.   "12345678"    ) ERROR STOP 30
+    IF ( Tar(I)%C2          .NE.   "87654321"    ) ERROR STOP 37
+    IF ( Tar(I)%I           .NE.   1             ) ERROR STOP 38
+    IF ( Tar(I)%R           .NE.   1             ) ERROR STOP 39
+    IF ( .not. Tar(I)%L              ) ERROR STOP 41
+    IF ( Tar(I)%Z           .NE.   (1, 1)        ) ERROR STOP 42
+    IF ( Tar(I)%T0%K0       .NE.   8               ) ERROR STOP 43
+    IF ( Tar(I)%T0%L0       .NE.   8               ) ERROR STOP 44
+    IF ( ASSOCIATED( Tar(I)%Ptr2 )                      ) ERROR STOP 45
 
-    IF ( C  .NE.   "ExtFun"      ) STOP 46
+    IF ( C  .NE.   "ExtFun"      ) ERROR STOP 46
 
   END DO
 

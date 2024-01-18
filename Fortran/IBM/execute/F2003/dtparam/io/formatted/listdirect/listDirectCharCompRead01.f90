@@ -54,12 +54,12 @@ program listDirectCharCompRead01
   ! read first line, it has blank separator,blanks are 1 or more space or tab
   read(10,*) t2
 
-  if(t2(1)%ch3 /= "We")            stop 11
-  if(t2(1)%tch1%ch1 /= "are")      stop 12
-  if(t2(1)%tch1%ch2 /= "going")    stop 13
-  if(t2(2)%ch3 /= "to")            stop 14
-  if(t2(2)%tch1%ch1 /= "have")     stop 15
-  if(t2(2)%tch1%ch2 /= "dinner")   stop 16
+  if(t2(1)%ch3 /= "We")            error stop 11
+  if(t2(1)%tch1%ch1 /= "are")      error stop 12
+  if(t2(1)%tch1%ch2 /= "going")    error stop 13
+  if(t2(2)%ch3 /= "to")            error stop 14
+  if(t2(2)%tch1%ch1 /= "have")     error stop 15
+  if(t2(2)%tch1%ch2 /= "dinner")   error stop 16
 
   deallocate(t2)
   allocate(TCHAR2(5) :: t2(2))
@@ -67,12 +67,12 @@ program listDirectCharCompRead01
   ! read second line, it has comma and slash separator
   read(10,*) t2
 
-  if(t2(1)%ch3 /= "We")            stop 17
-  if(t2(1)%tch1%ch1 /= "are")      stop 18
-  if(t2(1)%tch1%ch2 /= "going")    stop 19
-  if(t2(2)%ch3 /= "to")            stop 20
-  if(t2(2)%tch1%ch1 /= "have")     stop 21
-  if(t2(2)%tch1%ch2 /= "dinner")   stop 22
+  if(t2(1)%ch3 /= "We")            error stop 17
+  if(t2(1)%tch1%ch1 /= "are")      error stop 18
+  if(t2(1)%tch1%ch2 /= "going")    error stop 19
+  if(t2(2)%ch3 /= "to")            error stop 20
+  if(t2(2)%tch1%ch1 /= "have")     error stop 21
+  if(t2(2)%tch1%ch2 /= "dinner")   error stop 22
 
 !  write(*,*) "|",t2(1)%ch3,"|",t2(1)%tch1%ch1,"|",t2(1)%tch1%ch2,"|"
 !  write(*,*) "|",t2(2)%ch3,"|",t2(2)%tch1%ch1,"|",t2(2)%tch1%ch2,"|"
@@ -89,18 +89,18 @@ program listDirectCharCompRead01
   ! read third line,separator are blank, comma, slash
   read(10,*) t2
 
-  if(t2(-1)%ch3 /= "x**")          stop 23
-  if(t2(-1)%tch1%ch1 /= "un_d")    stop 24
-  if(t2(-1)%tch1%ch2 /= "longw")   stop 25
-  if(t2(0)%ch3 /= "a")             stop 26
-  if(t2(0)%tch1%ch1 /= "25")       stop 27
-  if(t2(0)%tch1%ch2 /= "*")        stop 28
-  if(t2(1)%ch3 /= "I!s")           stop 29
+  if(t2(-1)%ch3 /= "x**")          error stop 23
+  if(t2(-1)%tch1%ch1 /= "un_d")    error stop 24
+  if(t2(-1)%tch1%ch2 /= "longw")   error stop 25
+  if(t2(0)%ch3 /= "a")             error stop 26
+  if(t2(0)%tch1%ch1 /= "25")       error stop 27
+  if(t2(0)%tch1%ch2 /= "*")        error stop 28
+  if(t2(1)%ch3 /= "I!s")           error stop 29
 
   ! t2(1)%tch1%ch1 & t2(1)%tch1%ch2 are not changed since input value are determinated with slash separator after read t2(1)%ch3
 
-  if(t2(1)%tch1%ch1 /= "456")      stop 30
-  if(t2(1)%tch1%ch2 /= "789")      stop 31
+  if(t2(1)%tch1%ch1 /= "456")      error stop 30
+  if(t2(1)%tch1%ch2 /= "789")      error stop 31
 
  ! write(*,*) "|",t2(-1)%ch3,"|",t2(-1)%tch1%ch1,"|",t2(-1)%tch1%ch2,"|"
  ! write(*,*) "|",t2(0)%ch3,"|",t2(0)%tch1%ch1,"|",t2(0)%tch1%ch2,"|"
@@ -113,12 +113,12 @@ program listDirectCharCompRead01
   ! read fourth, fifth, sixth lines,delimiters are within character sequence.
   read(10,*) t2
 
-  if(t2(1)%ch3 /= "a\"\"bc")           stop 32
-  if(t2(1)%tch1%ch1 /= "d\'e\'f\'")    stop 33
-  if(t2(1)%tch1%ch2 /= "g\"\"\"")      stop 34
-  if(t2(2)%ch3 /= "he\"\'\'")          stop 35
-  if(t2(2)%tch1%ch1 /= "!\'\'\'\'")    stop 36
-  if(t2(2)%tch1%ch2 /= "mo\"rn\"")     stop 37
+  if(t2(1)%ch3 /= "a\"\"bc")           error stop 32
+  if(t2(1)%tch1%ch1 /= "d\'e\'f\'")    error stop 33
+  if(t2(1)%tch1%ch2 /= "g\"\"\"")      error stop 34
+  if(t2(2)%ch3 /= "he\"\'\'")          error stop 35
+  if(t2(2)%tch1%ch1 /= "!\'\'\'\'")    error stop 36
+  if(t2(2)%tch1%ch2 /= "mo\"rn\"")     error stop 37
 
 !  write(*,*) "|",t2(1)%ch3,"|",t2(1)%tch1%ch1,"|",t2(1)%tch1%ch2,"|"
 !  write(*,*) "|",t2(2)%ch3,"|",t2(2)%tch1%ch1,"|",t2(2)%tch1%ch2,"|"

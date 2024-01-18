@@ -23,8 +23,8 @@
           class(t) :: a(:)
           select type(a)
             type is (t)
-              if (a(1)%i /= 5) stop 1
-              if (size(a) /= 1) stop 2
+              if (a(1)%i /= 5) error stop 1
+              if (size(a) /= 1) error stop 2
             type is (t2)
               stop 3
             class default

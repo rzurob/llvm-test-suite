@@ -31,12 +31,12 @@
 
           call move_alloc(c1, c2)
 
-          if ( .not. allocated(c2) ) stop 21
-          if ( allocated(c1) ) stop 31
+          if ( .not. allocated(c2) ) error stop 21
+          if ( allocated(c1) ) error stop 31
 
           select type (c2)
                type is (complex*8)
-                  if ( size(c2) /= 2) stop 11
+                  if ( size(c2) /= 2) error stop 11
                   if ( .not. precision_x8 (c2(1), (10.0000,1.0000) )) error stop 51_4
                   if ( .not. precision_x8 (c2(2), (20.0000,1.0000) )) error stop 61_4
                class default

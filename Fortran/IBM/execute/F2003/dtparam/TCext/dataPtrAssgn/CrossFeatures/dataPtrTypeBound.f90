@@ -69,22 +69,22 @@
   T%CArr = "123"
   PtrCArr => T%Fun(T)
 
-  IF (.NOT. ASSOCIATED(PtrCArr))                       STOP 11
-  IF (ANY( LBOUND(PtrCArr)         .NE. (/0, 0 /)))    STOP 12
-  IF (ANY( UBOUND(PtrCArr)         .NE. (/9, 9 /)))    STOP 13
-  IF (ANY( PtrCArr                 .NE. "123"))        STOP 14
+  IF (.NOT. ASSOCIATED(PtrCArr))                       ERROR STOP 11
+  IF (ANY( LBOUND(PtrCArr)         .NE. (/0, 0 /)))    ERROR STOP 12
+  IF (ANY( UBOUND(PtrCArr)         .NE. (/9, 9 /)))    ERROR STOP 13
+  IF (ANY( PtrCArr                 .NE. "123"))        ERROR STOP 14
 
   PtrCArr(1:, 1:) => T%Fun(T)
-  IF (.NOT. ASSOCIATED(PtrCArr))                       STOP 21
-  IF (ANY( LBOUND(PtrCArr)         .NE. (/ 1, 1 /)))   STOP 22
-  IF (ANY( UBOUND(PtrCArr)         .NE. (/10,10 /)))   STOP 23
-  IF (ANY( PtrCArr                 .NE. "123"))        STOP 24
+  IF (.NOT. ASSOCIATED(PtrCArr))                       ERROR STOP 21
+  IF (ANY( LBOUND(PtrCArr)         .NE. (/ 1, 1 /)))   ERROR STOP 22
+  IF (ANY( UBOUND(PtrCArr)         .NE. (/10,10 /)))   ERROR STOP 23
+  IF (ANY( PtrCArr                 .NE. "123"))        ERROR STOP 24
 
   PtrCArr(0:9, 0:0 ) => T%Fun1(T)
-  IF (.NOT. ASSOCIATED(PtrCArr))                       STOP 15
-  IF (ANY( LBOUND(PtrCArr)         .NE. (/0, 0 /)))    STOP 16
-  IF (ANY( UBOUND(PtrCArr)         .NE. (/9, 0 /)))    STOP 17
-  IF (ANY( PtrCArr                 .NE. "123"))        STOP 18
+  IF (.NOT. ASSOCIATED(PtrCArr))                       ERROR STOP 15
+  IF (ANY( LBOUND(PtrCArr)         .NE. (/0, 0 /)))    ERROR STOP 16
+  IF (ANY( UBOUND(PtrCArr)         .NE. (/9, 0 /)))    ERROR STOP 17
+  IF (ANY( PtrCArr                 .NE. "123"))        ERROR STOP 18
 
   END
 

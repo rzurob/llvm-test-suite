@@ -61,29 +61,29 @@
 
     t(1)%arr(1)%arr = dt0(4)(-1)
 
-    IF (t%l                   .NE. 4)   STOP 11
-    IF (t(1)%arr%l            .NE. 4)   STOP 12
-    IF (t(1)%arr(1)%arr%l     .NE. 4)   STOP 13
-    IF (t(1)%arr(1)%arr(1)%l  .NE. 4)   STOP 14
+    IF (t%l                   .NE. 4)   ERROR STOP 11
+    IF (t(1)%arr%l            .NE. 4)   ERROR STOP 12
+    IF (t(1)%arr(1)%arr%l     .NE. 4)   ERROR STOP 13
+    IF (t(1)%arr(1)%arr(1)%l  .NE. 4)   ERROR STOP 14
 
-    IF (UBOUND(t, 1)                      .NE. 4)   STOP 21
-    IF (UBOUND(t(1)%arr, 1)               .NE. 4)   STOP 22
-    IF (UBOUND(t(1)%arr(1)%arr, 1)        .NE. 4)   STOP 23
-    IF (UBOUND(t(1)%arr(1)%arr(1)%arr, 1) .NE. 4)   STOP 24
+    IF (UBOUND(t, 1)                      .NE. 4)   ERROR STOP 21
+    IF (UBOUND(t(1)%arr, 1)               .NE. 4)   ERROR STOP 22
+    IF (UBOUND(t(1)%arr(1)%arr, 1)        .NE. 4)   ERROR STOP 23
+    IF (UBOUND(t(1)%arr(1)%arr(1)%arr, 1) .NE. 4)   ERROR STOP 24
 
-    IF (SIZE(t)                           .NE. 4)   STOP 31
-    IF (SIZE(t(1)%arr)                    .NE. 4)   STOP 32
-    IF (SIZE(t(1)%arr(1)%arr)             .NE. 4)   STOP 33
-    IF (SIZE(t(1)%arr(1)%arr(1)%arr)      .NE. 4)   STOP 34
+    IF (SIZE(t)                           .NE. 4)   ERROR STOP 31
+    IF (SIZE(t(1)%arr)                    .NE. 4)   ERROR STOP 32
+    IF (SIZE(t(1)%arr(1)%arr)             .NE. 4)   ERROR STOP 33
+    IF (SIZE(t(1)%arr(1)%arr(1)%arr)      .NE. 4)   ERROR STOP 34
 
-    IF (ANY(t(1)%arr(1)%arr(1)%arr        .NE. -1) )   STOP 41
-    IF (ANY(t(1)%arr(1)%arr%arr(1)        .NE. -1) )   STOP 42
+    IF (ANY(t(1)%arr(1)%arr(1)%arr        .NE. -1) )   ERROR STOP 41
+    IF (ANY(t(1)%arr(1)%arr%arr(1)        .NE. -1) )   ERROR STOP 42
 
     t(1)%arr%arr(1) = dt0(4)(-1)
-    IF (ANY(t(1)%arr%arr(1)%arr(1)        .NE. -1) )   STOP 43
+    IF (ANY(t(1)%arr%arr(1)%arr(1)        .NE. -1) )   ERROR STOP 43
 
     t%arr(1)%arr(1) = dt0(4)(-1)
-    IF (ANY(t%arr(1)%arr(1)%arr(1)        .NE. -1) )   STOP 44
+    IF (ANY(t%arr(1)%arr(1)%arr(1)        .NE. -1) )   ERROR STOP 44
 
   END SUBROUTINE
 

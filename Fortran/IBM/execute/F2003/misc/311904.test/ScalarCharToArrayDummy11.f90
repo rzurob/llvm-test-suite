@@ -15,11 +15,11 @@ contains
   subroutine sub(x)
     character(5) :: x(*)
     character(100) :: y
-    if (len(x) /= 5) stop 1
+    if (len(x) /= 5) error stop 1
     do i = 1, 20
       y((i-1)*len(x)+1:i*len(x)) = x(i)
     end do
-    if (y /= repeat('0123456789', 10)) stop 2
+    if (y /= repeat('0123456789', 10)) error stop 2
   end subroutine
 end module
 

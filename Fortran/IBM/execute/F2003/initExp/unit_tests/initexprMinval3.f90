@@ -16,6 +16,6 @@ character(2) :: res1(3)=minval(c, dim=1)
 character(2) :: res2(3)
 
 res2 = minval(c, dim=1)
-if (.not. all(res1 .eq. res2)) stop 1
+if (.not. all(res1 .eq. res2)) error stop 1
 
 end

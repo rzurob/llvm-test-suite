@@ -66,49 +66,49 @@
 
 
   P(0:, 0: ) => T
-  IF (.NOT. ASSOCIATED(P))                       STOP 11
-  IF (ANY( LBOUND(P)         .NE. (/0, 0 /)))    STOP 12
-  IF (ANY( UBOUND(P)         .NE. (/9, 9 /)))    STOP 13
-  IF (ANY( P(0,0)%PtrI8Tar   .NE. -8_8))         STOP 14
-  IF (ANY( P(0,0)%PtrR16Tar  .NE. -16.0_16))     STOP 15
+  IF (.NOT. ASSOCIATED(P))                       ERROR STOP 11
+  IF (ANY( LBOUND(P)         .NE. (/0, 0 /)))    ERROR STOP 12
+  IF (ANY( UBOUND(P)         .NE. (/9, 9 /)))    ERROR STOP 13
+  IF (ANY( P(0,0)%PtrI8Tar   .NE. -8_8))         ERROR STOP 14
+  IF (ANY( P(0,0)%PtrR16Tar  .NE. -16.0_16))     ERROR STOP 15
 
   P(0:9, 9:9 ) => T(9,:)
-  IF (.NOT. ASSOCIATED(P))                       STOP 21
-  IF (ANY( LBOUND(P)         .NE. (/0, 9 /)))    STOP 22
-  IF (ANY( UBOUND(P)         .NE. (/9, 9 /)))    STOP 23
-  IF (ANY( P(0,9)%PtrC16Tar  .NE. (16.0_16, -16.0_16)))     STOP 24
-  IF (ANY( P(0,9)%PtrL8Tar   .NEQV. .TRUE._8))   STOP 25
+  IF (.NOT. ASSOCIATED(P))                       ERROR STOP 21
+  IF (ANY( LBOUND(P)         .NE. (/0, 9 /)))    ERROR STOP 22
+  IF (ANY( UBOUND(P)         .NE. (/9, 9 /)))    ERROR STOP 23
+  IF (ANY( P(0,9)%PtrC16Tar  .NE. (16.0_16, -16.0_16)))     ERROR STOP 24
+  IF (ANY( P(0,9)%PtrL8Tar   .NEQV. .TRUE._8))   ERROR STOP 25
 
 
   PtrI8(10:19, 1:9 ) => T(1,1)%PtrI8Tar(:, 10)
-  IF (.NOT. ASSOCIATED(PtrI8))                    STOP 41
-  IF (ANY( LBOUND(PtrI8) .NE. (/10, 1 /)))        STOP 42
-  IF (ANY( UBOUND(PtrI8) .NE. (/19, 9 /)))        STOP 43
-  IF (ANY( PtrI8         .NE. -8_8))              STOP 44
+  IF (.NOT. ASSOCIATED(PtrI8))                    ERROR STOP 41
+  IF (ANY( LBOUND(PtrI8) .NE. (/10, 1 /)))        ERROR STOP 42
+  IF (ANY( UBOUND(PtrI8) .NE. (/19, 9 /)))        ERROR STOP 43
+  IF (ANY( PtrI8         .NE. -8_8))              ERROR STOP 44
 
   PtrR16(10:19, 1:9 ) => T(2,2)%PtrR16Tar(:, 10)
-  IF (.NOT. ASSOCIATED(PtrR16))                   STOP 71
-  IF (ANY( LBOUND(PtrR16) .NE. (/10, 1 /)))       STOP 72
-  IF (ANY( UBOUND(PtrR16) .NE. (/19, 9 /)))       STOP 73
-  IF (ANY( PtrR16         .NE. -16.0_16))         STOP 74
+  IF (.NOT. ASSOCIATED(PtrR16))                   ERROR STOP 71
+  IF (ANY( LBOUND(PtrR16) .NE. (/10, 1 /)))       ERROR STOP 72
+  IF (ANY( UBOUND(PtrR16) .NE. (/19, 9 /)))       ERROR STOP 73
+  IF (ANY( PtrR16         .NE. -16.0_16))         ERROR STOP 74
 
   PtrC16(10:19, 1:9 ) => T(3,3)%PtrC16Tar(:, 10)
-  IF (.NOT. ASSOCIATED(PtrC16))                   STOP 35
-  IF (ANY( LBOUND(PtrC16) .NE. (/10, 1 /)))       STOP 36
-  IF (ANY( UBOUND(PtrC16) .NE. (/19, 9 /)))       STOP 37
-  IF (ANY( PtrC16         .NE. (16.0_16, -16.0_16 )))    STOP 38
+  IF (.NOT. ASSOCIATED(PtrC16))                   ERROR STOP 35
+  IF (ANY( LBOUND(PtrC16) .NE. (/10, 1 /)))       ERROR STOP 36
+  IF (ANY( UBOUND(PtrC16) .NE. (/19, 9 /)))       ERROR STOP 37
+  IF (ANY( PtrC16         .NE. (16.0_16, -16.0_16 )))    ERROR STOP 38
 
   PtrL8(10:19, 9:9 ) => T(4,4)%PtrL8Tar(:, 10)
-  IF (.NOT. ASSOCIATED(PtrL8))                    STOP 55
-  IF (ANY( LBOUND(PtrL8) .NE. (/10, 9 /)))        STOP 56
-  IF (ANY( UBOUND(PtrL8) .NE. (/19, 9 /)))        STOP 57
-  IF (ANY( PtrL8         .NEQV. .TRUE._8))        STOP 58
+  IF (.NOT. ASSOCIATED(PtrL8))                    ERROR STOP 55
+  IF (ANY( LBOUND(PtrL8) .NE. (/10, 9 /)))        ERROR STOP 56
+  IF (ANY( UBOUND(PtrL8) .NE. (/19, 9 /)))        ERROR STOP 57
+  IF (ANY( PtrL8         .NEQV. .TRUE._8))        ERROR STOP 58
 
   PtrC1(10:19, 1:9 ) => T(5,5)%PtrC1Tar(:, 10)
-  IF (.NOT. ASSOCIATED(PtrC1))                    STOP 65
-  IF (ANY( LBOUND(PtrC1) .NE. (/10, 1 /)))        STOP 66
-  IF (ANY( UBOUND(PtrC1) .NE. (/19, 9 /)))        STOP 67
-  IF (ANY( PtrC1         .NE. "1" ))              STOP 68
+  IF (.NOT. ASSOCIATED(PtrC1))                    ERROR STOP 65
+  IF (ANY( LBOUND(PtrC1) .NE. (/10, 1 /)))        ERROR STOP 66
+  IF (ANY( UBOUND(PtrC1) .NE. (/19, 9 /)))        ERROR STOP 67
+  IF (ANY( PtrC1         .NE. "1" ))              ERROR STOP 68
 
 
   END

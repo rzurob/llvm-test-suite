@@ -23,13 +23,13 @@ oldarr = arr
 expres  = arr * 2
 
 res = foo(arr)
-if (any(arr .ne. oldarr)) stop 1
-if (any(res .ne. expres)) stop 2
+if (any(arr .ne. oldarr)) error stop 1
+if (any(res .ne. expres)) error stop 2
 
 parr => arr
 res = foo(parr)
-if (any(arr .ne. oldarr)) stop 3
-if (any(res .ne. expres)) stop 4
+if (any(arr .ne. oldarr)) error stop 3
+if (any(res .ne. expres)) error stop 4
 
 contains
     integer elemental function foo ( arr )

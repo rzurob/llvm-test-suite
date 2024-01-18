@@ -71,16 +71,16 @@
     ASSOCIATE ( T0 => W, T1 => W%Base, T2 => V )
     ASSOCIATE ( As0 => T0, As1 => T1, As2 => T2)
 
-      IF ( As0%GetID()      .NE. 2 ) STOP 41
-      IF ( As0%ChildID      .NE. 2 ) STOP 42
-      IF ( As0%Base%GetId() .NE. 1 ) STOP 43
-      IF ( As0%BaseId       .NE. 1 ) STOP 44
+      IF ( As0%GetID()      .NE. 2 ) ERROR STOP 41
+      IF ( As0%ChildID      .NE. 2 ) ERROR STOP 42
+      IF ( As0%Base%GetId() .NE. 1 ) ERROR STOP 43
+      IF ( As0%BaseId       .NE. 1 ) ERROR STOP 44
 
-      IF ( As1%BaseID  .NE. 1 ) STOP 50
-      IF ( As1%GetID() .NE. 1 ) STOP 51
+      IF ( As1%BaseID  .NE. 1 ) ERROR STOP 50
+      IF ( As1%GetID() .NE. 1 ) ERROR STOP 51
 
-      IF ( As2%GetId() .NE. 1 ) STOP 52
-      IF ( As2%BaseId  .NE. 1 ) STOP 53
+      IF ( As2%GetId() .NE. 1 ) ERROR STOP 52
+      IF ( As2%BaseId  .NE. 1 ) ERROR STOP 53
 
     END ASSOCIATE
     END ASSOCIATE

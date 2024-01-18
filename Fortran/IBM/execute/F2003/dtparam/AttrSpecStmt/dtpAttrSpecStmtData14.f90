@@ -96,21 +96,21 @@
 
   DO I=1, N
 
-    IF ( ANY( S1(I,1)%R /= C11%R          ) ) STOP 21
-    IF ( ANY( S1(I,2)%R /= C12%R          ) ) STOP 22
-    IF ( ANY( S1(I,3)%R /= C13%R          ) ) STOP 23
+    IF ( ANY( S1(I,1)%R /= C11%R          ) ) ERROR STOP 21
+    IF ( ANY( S1(I,2)%R /= C12%R          ) ) ERROR STOP 22
+    IF ( ANY( S1(I,3)%R /= C13%R          ) ) ERROR STOP 23
 
-    IF ( ANY( S2(I,1)%R /= C21%R          ) ) STOP 31
-    IF ( ANY( S2(I,2)%R /= C22%R          ) ) STOP 32
-    IF ( ANY( S2(I,3)%R /= C23%R          ) ) STOP 33
+    IF ( ANY( S2(I,1)%R /= C21%R          ) ) ERROR STOP 31
+    IF ( ANY( S2(I,2)%R /= C22%R          ) ) ERROR STOP 32
+    IF ( ANY( S2(I,3)%R /= C23%R          ) ) ERROR STOP 33
 
-    IF ( ANY( S2(I,1)%I /= C21%I          ) ) STOP 41
-    IF ( ANY( S2(I,2)%I /= C22%I          ) ) STOP 42
-    IF ( ANY( S2(I,3)%I /= C23%I          ) ) STOP 43
+    IF ( ANY( S2(I,1)%I /= C21%I          ) ) ERROR STOP 41
+    IF ( ANY( S2(I,2)%I /= C22%I          ) ) ERROR STOP 42
+    IF ( ANY( S2(I,3)%I /= C23%I          ) ) ERROR STOP 43
 
-    IF ( ANY( S2(I,1)%C /= C21%C          ) ) STOP 51
-    IF ( ANY( S2(I,2)%C /= C22%C          ) ) STOP 52
-    IF ( ANY( S2(I,3)%C /= C23%C          ) ) STOP 53
+    IF ( ANY( S2(I,1)%C /= C21%C          ) ) ERROR STOP 51
+    IF ( ANY( S2(I,2)%C /= C22%C          ) ) ERROR STOP 52
+    IF ( ANY( S2(I,3)%C /= C23%C          ) ) ERROR STOP 53
 
   END DO
 

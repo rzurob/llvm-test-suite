@@ -13,7 +13,7 @@
       TYPE(Child(3)) :: c1 = Child(3) ( C1 = 'ABC' )
 
       print*, c1%C1
-      IF ( c1%C1 .NE. 'ABC' ) STOP 30
+      IF ( c1%C1 .NE. 'ABC' ) ERROR STOP 30
       CALL Check(c1)
 
       CONTAINS
@@ -23,7 +23,7 @@
 
         print*, LEN(Arg%C1), Arg%l1
         print*, Arg%C1
-        IF ( Arg%C1 .NE. 'ABC' ) STOP 31
+        IF ( Arg%C1 .NE. 'ABC' ) ERROR STOP 31
 
       END SUBROUTINE
 END

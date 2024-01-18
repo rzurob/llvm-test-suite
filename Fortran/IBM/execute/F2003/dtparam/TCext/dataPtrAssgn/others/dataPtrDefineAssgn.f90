@@ -40,12 +40,12 @@
 			select type(x => a)
         	            type is (integer)
                                 print *, x
-				if (any(lbound(x) .ne. (/10,30/))) stop 21
-				if (any(ubound(x) .ne. (/29,49/))) stop 22
+				if (any(lbound(x) .ne. (/10,30/))) error stop 21
+				if (any(ubound(x) .ne. (/29,49/))) error stop 22
         	            type is (integer*8)
                                 print *, x
-				if (any(lbound(a) .ne. (/-1,0/))) stop 27
-				if (any(ubound(a) .ne. (/1,5/))) stop 28
+				if (any(lbound(a) .ne. (/-1,0/))) error stop 27
+				if (any(ubound(a) .ne. (/1,5/))) error stop 28
                             class default
                                 stop 31
                         end select
@@ -66,23 +66,23 @@
 
 		a2%p(1:20,1:20) => tar1
 
-		if ( .not. associated(a2%p)) stop 2
-		if ( any(lbound(a2%p) .ne. (/1,1/))) stop 3
-		if ( any(ubound(a2%p) .ne. (/20,20/))) stop 5
+		if ( .not. associated(a2%p)) error stop 2
+		if ( any(lbound(a2%p) .ne. (/1,1/))) error stop 3
+		if ( any(ubound(a2%p) .ne. (/20,20/))) error stop 5
 
 		a1 = a2
-		if ( .not. associated(a1%p)) stop 11
+		if ( .not. associated(a1%p)) error stop 11
 		call output(a1%p)
 
 		tar2 = int(tar1,8)
 		a2%p(1:20,1:20) => tar2
 
-		if ( .not. associated(a2%p)) stop 12
-		if ( any(lbound(a2%p) .ne. (/1,1/))) stop 13
-		if ( any(ubound(a2%p) .ne. (/20,20/))) stop 15
+		if ( .not. associated(a2%p)) error stop 12
+		if ( any(lbound(a2%p) .ne. (/1,1/))) error stop 13
+		if ( any(ubound(a2%p) .ne. (/20,20/))) error stop 15
 
 		a1 = a2
-		if ( .not. associated(a1%p)) stop 23
+		if ( .not. associated(a1%p)) error stop 23
 		call output(a1%p)
 
 
@@ -93,7 +93,7 @@
  	type(A(4,*)), intent(inout) :: a1
 	type(A(4,*)), intent(in) :: a2
 
-	if ( .not. associated(a2%p) ) stop 41
+	if ( .not. associated(a2%p) ) error stop 41
 
 	select type ( x=> a2%p)
 	    type is (integer)

@@ -28,14 +28,14 @@
   CHARACTER(3) :: S = "123"
 
   ASSOCIATE ( As => S )
-    IF ( As .NE. "123" ) STOP 50
+    IF ( As .NE. "123" ) ERROR STOP 50
     ASSOCIATE ( As1 => s )
-      IF ( As1 .NE. "123" ) STOP 51
+      IF ( As1 .NE. "123" ) ERROR STOP 51
       As1 = "456"
-      IF ( As1 .NE. "456" ) STOP 52
-      IF ( As  .NE. "456" ) STOP 53
+      IF ( As1 .NE. "456" ) ERROR STOP 52
+      IF ( As  .NE. "456" ) ERROR STOP 53
     END ASSOCIATE
-    IF ( As  .NE. "456" ) STOP 54
+    IF ( As  .NE. "456" ) ERROR STOP 54
   END ASSOCIATE
 
   END

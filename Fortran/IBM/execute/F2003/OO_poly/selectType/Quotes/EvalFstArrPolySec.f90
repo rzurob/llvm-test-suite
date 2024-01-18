@@ -72,10 +72,10 @@
     CLASS DEFAULT
       STOP 30
     TYPE IS (Child)
-      IF ( ANY(As%GetId() .NE. -2) )      STOP 41
-      IF ( ANY(As%Base%GetId() .NE. -1) ) STOP 42
-      IF ( ANY(SHAPE(As) .NE. (/4/) ) )   STOP 43
-      IF ( ANY(LBOUND(As) .NE. 1 ))       STOP 45
+      IF ( ANY(As%GetId() .NE. -2) )      ERROR STOP 41
+      IF ( ANY(As%Base%GetId() .NE. -1) ) ERROR STOP 42
+      IF ( ANY(SHAPE(As) .NE. (/4/) ) )   ERROR STOP 43
+      IF ( ANY(LBOUND(As) .NE. 1 ))       ERROR STOP 45
     CLASS IS (Base)
       STOP 20
   END SELECT

@@ -58,15 +58,15 @@
   ALLOCATE(LOGICAL(KIND=G%KIND) :: G(128))
   ALLOCATE(LOGICAL(KIND=H%KIND) :: H(128))
 
-  IF ( KIND(A) .NE. 1     ) STOP 11
-  IF ( KIND(B) .NE. 2     ) STOP 13
-  IF ( KIND(C) .NE. 4     ) STOP 15
-  IF ( KIND(D) .NE. 8     ) STOP 17
+  IF ( KIND(A) .NE. 1     ) ERROR STOP 11
+  IF ( KIND(B) .NE. 2     ) ERROR STOP 13
+  IF ( KIND(C) .NE. 4     ) ERROR STOP 15
+  IF ( KIND(D) .NE. 8     ) ERROR STOP 17
 
-  IF ( KIND(E) .NE. 1       )   STOP 21
-  IF ( KIND(F) .NE. 2       )   STOP 23
-  IF ( KIND(G) .NE. 4       )   STOP 25
-  IF ( KIND(H) .NE. 8       )   STOP 27
+  IF ( KIND(E) .NE. 1       )   ERROR STOP 21
+  IF ( KIND(F) .NE. 2       )   ERROR STOP 23
+  IF ( KIND(G) .NE. 4       )   ERROR STOP 25
+  IF ( KIND(H) .NE. 8       )   ERROR STOP 27
 
   END
 

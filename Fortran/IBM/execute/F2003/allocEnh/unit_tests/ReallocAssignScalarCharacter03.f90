@@ -17,5 +17,5 @@ x = 4
 b = 'abcde'
 allocate(character(40) :: a)
 a = b(1:x)
-if (len(a) /= 4) stop 1
+if (len(a) /= 4) error stop 1
 end

@@ -42,7 +42,7 @@ subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)
             stop 4
    end select
 
-   if (iostat /= 0) stop 5
+   if (iostat /= 0) error stop 5
 
 end subroutine
 
@@ -59,9 +59,9 @@ program main
 
     b1%p(size(b1%tar):) => b1%tar(::2)
 
-    if ( .not. associated(b1%p, b1%tar(::2))) stop 1
-    if ( lbound(b1%p,1) /= 10 ) stop 2
-    if ( ubound(b1%p,1) /= 14 ) stop 3
+    if ( .not. associated(b1%p, b1%tar(::2))) error stop 1
+    if ( lbound(b1%p,1) /= 10 ) error stop 2
+    if ( ubound(b1%p,1) /= 14 ) error stop 3
 
     write(*, '(DT)') b1
 

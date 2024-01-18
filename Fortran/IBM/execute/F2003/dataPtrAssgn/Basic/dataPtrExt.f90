@@ -52,11 +52,11 @@
 
     DO I=1 ,1000
       Arg(I, 1)%Ptr(-999:, -1:) => Arg
-      IF (ANY( LBOUND( Arg(I, 1)%Ptr) .NE. (/-999, -1/))) STOP 11
-      IF (ANY( SHAPE(  Arg(I, 1)%Ptr) .NE. (/1000,  2/))) STOP 12
+      IF (ANY( LBOUND( Arg(I, 1)%Ptr) .NE. (/-999, -1/))) ERROR STOP 11
+      IF (ANY( SHAPE(  Arg(I, 1)%Ptr) .NE. (/1000,  2/))) ERROR STOP 12
       Arg(I, 2)%Ptr(-499:500, -1:-1) => Arg(:, 2)
-      IF (ANY( LBOUND( Arg(I, 2)%Ptr) .NE. (/-499, -1/))) STOP 21
-      IF (ANY( SHAPE(  Arg(I, 2)%Ptr) .NE. (/1000,  1/))) STOP 22
+      IF (ANY( LBOUND( Arg(I, 2)%Ptr) .NE. (/-499, -1/))) ERROR STOP 21
+      IF (ANY( SHAPE(  Arg(I, 2)%Ptr) .NE. (/1000,  1/))) ERROR STOP 22
     END DO
 
   END SUBROUTINE

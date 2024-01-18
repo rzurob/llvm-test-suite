@@ -64,26 +64,26 @@
 
   ASSOCIATE ( As => Func( V ) )
     ASSOCIATE( As1 => As(3:3) )
-      IF( ANY( As1%GetId()      .NE. (/2/)) )  STOP 46
-      IF( As1(1)%ChildComp%GetId() .NE. -2)    STOP 47
+      IF( ANY( As1%GetId()      .NE. (/2/)) )  ERROR STOP 46
+      IF( As1(1)%ChildComp%GetId() .NE. -2)    ERROR STOP 47
     END ASSOCIATE
 
-    IF ( .NOT. ASSOCIATED(As(3)%BaseComp, V) )  STOP 48
-    IF ( .NOT. ASSOCIATED(As(3)%ChildComp, V) ) STOP 49
+    IF ( .NOT. ASSOCIATED(As(3)%BaseComp, V) )  ERROR STOP 48
+    IF ( .NOT. ASSOCIATED(As(3)%ChildComp, V) ) ERROR STOP 49
 
-    IF ( ANY(As%GetID() .NE. 2))  STOP 50
-    IF ( ANY(As%BaseId  .NE. 1) ) STOP 51
+    IF ( ANY(As%GetID() .NE. 2))  ERROR STOP 50
+    IF ( ANY(As%BaseId  .NE. 1) ) ERROR STOP 51
 
     ASSOCIATE ( As1 => As(1)%ChildComp%GetId() )
-       IF ( As1 .NE. -2) STOP 52
+       IF ( As1 .NE. -2) ERROR STOP 52
     END ASSOCIATE
 
-    IF ( .NOT. SAME_TYPE_AS(As, Child(4)()) )         STOP 53
-    IF ( .NOT. SAME_TYPE_AS(As(3)%BaseComp, As) )  STOP 54
-    IF ( .NOT. SAME_TYPE_AS(As(1)%ChildComp, As) ) STOP 55
+    IF ( .NOT. SAME_TYPE_AS(As, Child(4)()) )         ERROR STOP 53
+    IF ( .NOT. SAME_TYPE_AS(As(3)%BaseComp, As) )  ERROR STOP 54
+    IF ( .NOT. SAME_TYPE_AS(As(1)%ChildComp, As) ) ERROR STOP 55
 
-    IF ( As(3)%BaseComp%BaseId   .NE. -1 )  STOP 56
-    IF ( As(2)%ChildComp%ChildId .NE. -2 )  STOP 57
+    IF ( As(3)%BaseComp%BaseId   .NE. -1 )  ERROR STOP 56
+    IF ( As(2)%ChildComp%ChildId .NE. -2 )  ERROR STOP 57
 
   END ASSOCIATE
 

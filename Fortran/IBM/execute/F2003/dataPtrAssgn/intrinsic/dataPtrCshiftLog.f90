@@ -57,21 +57,21 @@ program main
 
 	call allocation
 
-	if ( .not. associated(l4_p)) stop 11
-	if ( any(lbound(l4_p) .ne. (/0,-1,0 /))) stop 13
-	if ( any(ubound(l4_p) .ne. (/1,0,1 /))) stop 15
+	if ( .not. associated(l4_p)) error stop 11
+	if ( any(lbound(l4_p) .ne. (/0,-1,0 /))) error stop 13
+	if ( any(ubound(l4_p) .ne. (/1,0,1 /))) error stop 15
 
-	if ( .not. associated(l2_p)) stop 7
-	if ( any(lbound(l2_p) .ne. (/0,0 /))) stop 8
-	if ( any(ubound(l2_p) .ne. (/3,3 /))) stop 9
+	if ( .not. associated(l2_p)) error stop 7
+	if ( any(lbound(l2_p) .ne. (/0,0 /))) error stop 8
+	if ( any(ubound(l2_p) .ne. (/3,3 /))) error stop 9
 
-	if ( .not. associated(l1_p)) stop 1
-	if ( any(lbound(l1_p) .ne. (/2 /))) stop 3
-	if ( any(ubound(l1_p) .ne. (/9 /))) stop 5
+	if ( .not. associated(l1_p)) error stop 1
+	if ( any(lbound(l1_p) .ne. (/2 /))) error stop 3
+	if ( any(ubound(l1_p) .ne. (/9 /))) error stop 5
 
-	if ( .not. associated(l8_p)) stop 21
-	if ( any(lbound(l8_p) .ne. (/2,2,-127,128 /))) stop 23
-	if ( any(ubound(l8_p) .ne. (/3,3,-126,129 /))) stop 25
+	if ( .not. associated(l8_p)) error stop 21
+	if ( any(lbound(l8_p) .ne. (/2,2,-127,128 /))) error stop 23
+	if ( any(ubound(l8_p) .ne. (/3,3,-126,129 /))) error stop 25
 
 	print *, l1_p
 	print *, l2_p

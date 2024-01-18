@@ -45,13 +45,13 @@
   TYPE(dt(n)) b!(n)
 
 
-  IF (b%l                   .NE. 4)   STOP 11
-  IF (UBOUND(b%arr, 1)      .NE. 4)   STOP 12
-  IF (SIZE(b%arr)           .NE. 4)   STOP 13
-  IF (UBOUND(b%arr(1)%i, 1) .NE. 4)   STOP 14
-  IF (SIZE(b%arr(1)%i)      .NE. 4)   STOP 15
-  IF (ANY(b%arr(1)%i        .NE. 1))  STOP 16
-  IF (ANY(b%arr(1)%j        .NE.-1))  STOP 17
+  IF (b%l                   .NE. 4)   ERROR STOP 11
+  IF (UBOUND(b%arr, 1)      .NE. 4)   ERROR STOP 12
+  IF (SIZE(b%arr)           .NE. 4)   ERROR STOP 13
+  IF (UBOUND(b%arr(1)%i, 1) .NE. 4)   ERROR STOP 14
+  IF (SIZE(b%arr(1)%i)      .NE. 4)   ERROR STOP 15
+  IF (ANY(b%arr(1)%i        .NE. 1))  ERROR STOP 16
+  IF (ANY(b%arr(1)%j        .NE.-1))  ERROR STOP 17
 
 
   END SUBROUTINE

@@ -27,8 +27,8 @@ module m
      subroutine sub(arg)
          class(A(2)),intent(in) :: arg(:)
 
-         if(any(arg(1)%i1 /= -99))         stop 10
-         if(any(arg(2)%i1 /= -99))         stop 11
+         if(any(arg(1)%i1 /= -99))         error stop 10
+         if(any(arg(2)%i1 /= -99))         error stop 11
 
      end subroutine
 end module
@@ -42,7 +42,7 @@ program d361743
 
   call sub(b(1)%a1comp)
 
-  if(any(b(1)%g1 .neqv. .false.))          stop 12
-  if(any(b(2)%g1 .neqv. .false.))          stop 13
+  if(any(b(1)%g1 .neqv. .false.))          error stop 12
+  if(any(b(2)%g1 .neqv. .false.))          error stop 13
 
 end program

@@ -73,8 +73,8 @@
 
   T = ExtFun(-1, "12")
 
-  IF ( T%I             .NE.  -1            ) STOP 11
-  IF ( T%C             .NE.  "12"          ) STOP 12
+  IF ( T%I             .NE.  -1            ) ERROR STOP 11
+  IF ( T%C             .NE.  "12"          ) ERROR STOP 12
 
 
   END

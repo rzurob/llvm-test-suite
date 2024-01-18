@@ -50,7 +50,7 @@
       CLASS(*), POINTER :: pntr
 
       ALLOCATE(Child(k1,len1):: pntr)
-      IF (.NOT. ASSOCIATED(pntr)) STOP 10
+      IF (.NOT. ASSOCIATED(pntr)) ERROR STOP 10
 
       CALL sub2
 
@@ -61,7 +61,7 @@
       SELECT TYPE ( A => pntr)
         TYPE IS (Child(k1,*))
            ALLOCATE(Base(k1,len1):: A%Cmp)
-           IF (.NOT. ASSOCIATED(A%Cmp)) STOP 11
+           IF (.NOT. ASSOCIATED(A%Cmp)) ERROR STOP 11
            CALL sub1(A%Cmp)
 
         CLASS IS (Child(k1,*))
@@ -91,7 +91,7 @@
                 STOP 40
 
               TYPE IS (Base(k1,*))
-                IF (SIZE(A%my_arr) .NE. len1) STOP 12
+                IF (SIZE(A%my_arr) .NE. len1) ERROR STOP 12
 
               CLASS DEFAULT
                 STOP 41

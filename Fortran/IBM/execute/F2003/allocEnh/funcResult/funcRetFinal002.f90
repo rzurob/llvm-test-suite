@@ -83,7 +83,7 @@ module m
 
         radius = sqrt(sum(p1%x**2))
 
-        if (radius < 1.0e-5) stop 20
+        if (radius < 1.0e-5) error stop 20
 
         theta = atan2(p1%x(2), p1%x(1)) + delta
 

@@ -49,22 +49,22 @@ use m
 
     call move_alloc(c1%b1, c1%a1)
 
-    if ( allocated (c1%b1) ) stop 11
-    if ( .not. allocated(c1%a1)) stop 13
+    if ( allocated (c1%b1) ) error stop 11
+    if ( .not. allocated(c1%a1)) error stop 13
 
     select type ( p )
         type is (base(4))
             select type ( x => p(1)%a1 )
                 type is (integer)
-                    if ( x(1) /= 21 ) stop 21
-                    if ( x(2) /= 32 ) stop 23
+                    if ( x(1) /= 21 ) error stop 21
+                    if ( x(2) /= 32 ) error stop 23
                 class default
                     stop 31
             end select
             select type ( x => p(2)%a1 )
                 type is (integer)
-                    if ( x(1) /= 56 ) stop 25
-                    if ( x(2) /= 67 ) stop 27
+                    if ( x(1) /= 56 ) error stop 25
+                    if ( x(2) /= 67 ) error stop 27
                 class default
                     stop 41
             end select
@@ -74,7 +74,7 @@ use m
 
     select type ( x=> c1%a1)
         type is (base(4))
-            if ( .not. associated(p, x)) stop 61
+            if ( .not. associated(p, x)) error stop 61
 	class default
             stop 63
     end select

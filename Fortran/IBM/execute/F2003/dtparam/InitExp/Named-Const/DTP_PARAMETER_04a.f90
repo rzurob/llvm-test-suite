@@ -53,43 +53,43 @@ MODULE Mod
         CLASS(Base(4,*)) :: Obj
         TYPE (Base(4,*)) :: Arg
 
-        IF ( Arg%k1 .NE. Obj%k1 ) STOP 11
-        IF ( Arg%l1 .NE. Obj%l1 ) STOP 12
-        IF ( SIZE(Arg%A0) .NE. SIZE(Obj%A0) ) STOP 13
-        IF ( LEN(Arg%C0)  .NE.  LEN(Obj%C0) ) STOP 14
-        IF ( ANY(Arg%A0   .NE.      Obj%A0) ) STOP 15
-        IF ( TRIM(Arg%C0) .NE. TRIM(Obj%C0) ) STOP 16
+        IF ( Arg%k1 .NE. Obj%k1 ) ERROR STOP 11
+        IF ( Arg%l1 .NE. Obj%l1 ) ERROR STOP 12
+        IF ( SIZE(Arg%A0) .NE. SIZE(Obj%A0) ) ERROR STOP 13
+        IF ( LEN(Arg%C0)  .NE.  LEN(Obj%C0) ) ERROR STOP 14
+        IF ( ANY(Arg%A0   .NE.      Obj%A0) ) ERROR STOP 15
+        IF ( TRIM(Arg%C0) .NE. TRIM(Obj%C0) ) ERROR STOP 16
       END SUBROUTINE
 
       SUBROUTINE CheckNextGen(Obj,Arg)
       CLASS(NextGen(4,*,4,*,*)) :: Obj
       TYPE (NextGen(4,*,4,*,*)) :: Arg
 
-        IF ( Arg%k1 .NE. Obj%k1 ) STOP 20
-        IF ( Arg%l1 .NE. Obj%l1 ) STOP 21
-        IF ( Arg%k2 .NE. Obj%k2 ) STOP 22
-        IF ( Arg%l2 .NE. Obj%l2 ) STOP 23
-        IF ( Arg%l3 .NE. Obj%l3 ) STOP 24
+        IF ( Arg%k1 .NE. Obj%k1 ) ERROR STOP 20
+        IF ( Arg%l1 .NE. Obj%l1 ) ERROR STOP 21
+        IF ( Arg%k2 .NE. Obj%k2 ) ERROR STOP 22
+        IF ( Arg%l2 .NE. Obj%l2 ) ERROR STOP 23
+        IF ( Arg%l3 .NE. Obj%l3 ) ERROR STOP 24
 
-        IF ( SIZE(Arg%A0) .NE. SIZE(Obj%A0) ) STOP 25
-        IF ( LEN(Arg%C0)  .NE.  LEN(Obj%C0) ) STOP 26
-        IF ( LEN(Arg%C1)  .NE.  LEN(Obj%C1) ) STOP 27
-        IF ( LEN(Arg%C2)  .NE.  LEN(Obj%C2) ) STOP 28
+        IF ( SIZE(Arg%A0) .NE. SIZE(Obj%A0) ) ERROR STOP 25
+        IF ( LEN(Arg%C0)  .NE.  LEN(Obj%C0) ) ERROR STOP 26
+        IF ( LEN(Arg%C1)  .NE.  LEN(Obj%C1) ) ERROR STOP 27
+        IF ( LEN(Arg%C2)  .NE.  LEN(Obj%C2) ) ERROR STOP 28
 
-        IF ( ANY(Arg%A0   .NE.      Obj%A0) ) STOP 29
-        IF ( TRIM(Arg%C0) .NE. TRIM(Obj%C0) ) STOP 30
-        IF ( TRIM(Arg%C1) .NE. TRIM(Obj%C1) ) STOP 31
-        IF ( TRIM(Arg%C2) .NE. TRIM(Obj%C2) ) STOP 32
-        IF ( Arg%A2       .NE.       Obj%A2 ) STOP 33
+        IF ( ANY(Arg%A0   .NE.      Obj%A0) ) ERROR STOP 29
+        IF ( TRIM(Arg%C0) .NE. TRIM(Obj%C0) ) ERROR STOP 30
+        IF ( TRIM(Arg%C1) .NE. TRIM(Obj%C1) ) ERROR STOP 31
+        IF ( TRIM(Arg%C2) .NE. TRIM(Obj%C2) ) ERROR STOP 32
+        IF ( Arg%A2       .NE.       Obj%A2 ) ERROR STOP 33
 
-        IF ( Arg%cmp%k1 .NE. Obj%cmp%k1 ) STOP 34
-        IF ( Arg%cmp%l1 .NE. Obj%cmp%l1 ) STOP 35
-        IF ( SIZE(Arg%cmp%A0) .NE. SIZE(Obj%cmp%A0) ) STOP 36
-        IF ( LEN(Arg%cmp%C0)  .NE.  LEN(Obj%cmp%C0) ) STOP 37
-        IF ( ANY(Arg%cmp%A0   .NE.      Obj%cmp%A0) ) STOP 38
-        IF ( TRIM(Arg%cmp%C0) .NE. TRIM(Obj%cmp%C0) ) STOP 39
+        IF ( Arg%cmp%k1 .NE. Obj%cmp%k1 ) ERROR STOP 34
+        IF ( Arg%cmp%l1 .NE. Obj%cmp%l1 ) ERROR STOP 35
+        IF ( SIZE(Arg%cmp%A0) .NE. SIZE(Obj%cmp%A0) ) ERROR STOP 36
+        IF ( LEN(Arg%cmp%C0)  .NE.  LEN(Obj%cmp%C0) ) ERROR STOP 37
+        IF ( ANY(Arg%cmp%A0   .NE.      Obj%cmp%A0) ) ERROR STOP 38
+        IF ( TRIM(Arg%cmp%C0) .NE. TRIM(Obj%cmp%C0) ) ERROR STOP 39
 
-        IF ( ASSOCIATED(Arg%ptr) .nEQV. ASSOCIATED(Obj%ptr) ) STOP 40
+        IF ( ASSOCIATED(Arg%ptr) .nEQV. ASSOCIATED(Obj%ptr) ) ERROR STOP 40
 
       END SUBROUTINE
 

@@ -56,14 +56,14 @@
 
 
 
-  IF ( ANY(R4   .NE. RR ) ) STOP 22
-  IF ( ANY(R8   .NE. RR ) ) STOP 23
-  IF ( ANY(R6   .NE. RR ) ) STOP 24
+  IF ( ANY(R4   .NE. RR ) ) ERROR STOP 22
+  IF ( ANY(R8   .NE. RR ) ) ERROR STOP 23
+  IF ( ANY(R6   .NE. RR ) ) ERROR STOP 24
 
 
-  IF ( ANY(Z4   .NE. ZR ) ) STOP 42
-  IF ( ANY(Z8   .NE. ZR ) ) STOP 43
-  IF ( ANY(Z6   .NE. ZR ) ) STOP 44
+  IF ( ANY(Z4   .NE. ZR ) ) ERROR STOP 42
+  IF ( ANY(Z8   .NE. ZR ) ) ERROR STOP 43
+  IF ( ANY(Z6   .NE. ZR ) ) ERROR STOP 44
 
   END
 

@@ -65,20 +65,20 @@ S2: SELECT TYPE (S2 => S1 )
     CLASS IS (DT0)
       STOP 20
     CLASS IS (DT)
-        IF (ANY(S2(:,:,:)%IArr(1)  .NE. 1)) STOP 22
-        IF (ANY(S2(:,:,:)%IArr(2)  .NE. 2)) STOP 23
-        IF (ANY(S2(:,:,:)%GetInt(1).NE. 1)) STOP 24
-        IF (ANY(S2(:,:,:)%GetInt(2).NE. 2)) STOP 25
+        IF (ANY(S2(:,:,:)%IArr(1)  .NE. 1)) ERROR STOP 22
+        IF (ANY(S2(:,:,:)%IArr(2)  .NE. 2)) ERROR STOP 23
+        IF (ANY(S2(:,:,:)%GetInt(1).NE. 1)) ERROR STOP 24
+        IF (ANY(S2(:,:,:)%GetInt(2).NE. 2)) ERROR STOP 25
 
         Ptr%IArr(1) = -1
         Ptr%IArr(2) = -2
 
-        IF (SIZE(S2(2,2,2)%IArr)   .NE. 2)  STOP 30
-        IF (KIND(S2(2,2,2)%IArr)   .NE. 8)  STOP 31
-        IF (ANY(S2(:,:,:)%IArr(1)  .NE. -1)) STOP 32
-        IF (ANY(S2(:,:,:)%IArr(2)  .NE. -2)) STOP 33
-        IF (ANY(S2(:,:,:)%GetInt(1).NE. -1)) STOP 34
-        IF (ANY(S2(:,:,:)%GetInt(2).NE. -2)) STOP 35
+        IF (SIZE(S2(2,2,2)%IArr)   .NE. 2)  ERROR STOP 30
+        IF (KIND(S2(2,2,2)%IArr)   .NE. 8)  ERROR STOP 31
+        IF (ANY(S2(:,:,:)%IArr(1)  .NE. -1)) ERROR STOP 32
+        IF (ANY(S2(:,:,:)%IArr(2)  .NE. -2)) ERROR STOP 33
+        IF (ANY(S2(:,:,:)%GetInt(1).NE. -1)) ERROR STOP 34
+        IF (ANY(S2(:,:,:)%GetInt(2).NE. -2)) ERROR STOP 35
 
     END SELECT S2
     END SELECT S1

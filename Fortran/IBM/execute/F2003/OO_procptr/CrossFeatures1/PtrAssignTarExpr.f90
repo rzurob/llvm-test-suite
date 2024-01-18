@@ -81,11 +81,11 @@
 
     Ptr1  => ModFun
     Ptr   => Ptr1(FChar)
-    IF (Ptr("abc") .NE. "abc" ) STOP 11
+    IF (Ptr("abc") .NE. "abc" ) ERROR STOP 11
 
     Ptr2  => ModFun1
     Ptr   => Ptr2(Ptr1(FChar))
-    IF (Ptr("cba") .NE. "cba" ) STOP 12
+    IF (Ptr("cba") .NE. "cba" ) ERROR STOP 12
 
   END
 

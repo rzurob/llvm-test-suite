@@ -62,36 +62,36 @@
   REAL(KIND(DLGAMA(X=1.0_8))) :: DR1(128) = DLGAMA(X=1.0_8)
   REAL(KIND(QLGAMA(X=1.0_16))):: QR1(128) = QLGAMA(X=1.0_16)
 
-  IF (ANY( ABS((T%R4-R)/R ) .GT. .1E-5 )) STOP 11
-  IF (ANY( ABS((T%R8-R)/R ) .GT. .1E-5 )) STOP 12
-  IF (ANY( ABS((T%R6-R)/R ) .GT. .1E-5 )) STOP 13
+  IF (ANY( ABS((T%R4-R)/R ) .GT. .1E-5 )) ERROR STOP 11
+  IF (ANY( ABS((T%R8-R)/R ) .GT. .1E-5 )) ERROR STOP 12
+  IF (ANY( ABS((T%R6-R)/R ) .GT. .1E-5 )) ERROR STOP 13
 
 
-  IF (KIND(R4) .NE. 4)                 STOP 21
-  IF (ANY( ABS((R4-R)/R) .GT. .1E-5 )) STOP 22
+  IF (KIND(R4) .NE. 4)                 ERROR STOP 21
+  IF (ANY( ABS((R4-R)/R) .GT. .1E-5 )) ERROR STOP 22
 
-  IF (KIND(R8) .NE. 8)                  STOP 31
-  IF (ANY( ABS((R8-R)/R ) .GT. .1E-5 )) STOP 32
+  IF (KIND(R8) .NE. 8)                  ERROR STOP 31
+  IF (ANY( ABS((R8-R)/R ) .GT. .1E-5 )) ERROR STOP 32
 
-  IF (KIND(R6) .NE. 16)                 STOP 41
-  IF (ANY( ABS((R6-R)/R ) .GT. .1E-5 )) STOP 42
+  IF (KIND(R6) .NE. 16)                 ERROR STOP 41
+  IF (ANY( ABS((R6-R)/R ) .GT. .1E-5 )) ERROR STOP 42
 
-  IF (KIND(AR) .NE. 4)                  STOP 51
-  IF (ANY( ABS((AR-R)/R ) .GT. .1E-5 )) STOP 52
+  IF (KIND(AR) .NE. 4)                  ERROR STOP 51
+  IF (ANY( ABS((AR-R)/R ) .GT. .1E-5 )) ERROR STOP 52
 
-  IF (KIND(DR) .NE. 8)                  STOP 61
-  IF (ANY( ABS((DR-R)/R ) .GT. .1E-5 )) STOP 62
+  IF (KIND(DR) .NE. 8)                  ERROR STOP 61
+  IF (ANY( ABS((DR-R)/R ) .GT. .1E-5 )) ERROR STOP 62
 
-  IF (KIND(QR) .NE. 16)                 STOP 71
-  IF (ANY( ABS((QR-R)/R ) .GT. .1E-5 )) STOP 72
+  IF (KIND(QR) .NE. 16)                 ERROR STOP 71
+  IF (ANY( ABS((QR-R)/R ) .GT. .1E-5 )) ERROR STOP 72
 
 
-  IF (ANY( R41 .GT. 1)) STOP 22
-  IF (ANY( R81 .GT. 1)) STOP 32
-  IF (ANY( R61 .GT. 1)) STOP 42
-  IF (ANY( AR1 .GT. 1)) STOP 52
-  IF (ANY( DR1 .GT. 1)) STOP 62
-  IF (ANY( QR1 .GT. 1)) STOP 72
+  IF (ANY( R41 .GT. 1)) ERROR STOP 22
+  IF (ANY( R81 .GT. 1)) ERROR STOP 32
+  IF (ANY( R61 .GT. 1)) ERROR STOP 42
+  IF (ANY( AR1 .GT. 1)) ERROR STOP 52
+  IF (ANY( DR1 .GT. 1)) ERROR STOP 62
+  IF (ANY( QR1 .GT. 1)) ERROR STOP 72
 
   END
 

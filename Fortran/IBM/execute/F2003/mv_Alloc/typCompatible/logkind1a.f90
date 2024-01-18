@@ -22,9 +22,9 @@
 
           call move_alloc(l2, l1)
 
-          if ( allocated(l2) ) stop 21
-          if ( .not. allocated(l1) ) stop 22
-          if ( l1 .neqv. .false. ) stop 23
+          if ( allocated(l2) ) error stop 21
+          if ( .not. allocated(l1) ) error stop 22
+          if ( l1 .neqv. .false. ) error stop 23
 
       end
 

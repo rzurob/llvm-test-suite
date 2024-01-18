@@ -76,32 +76,32 @@ use m
     type(level2(4,20)) :: ll
 
     allocate( level1(4,20)::ll%l2 )
-    if ( .not. allocated(ll%l2) ) stop 21
+    if ( .not. allocated(ll%l2) ) error stop 21
 
     select type ( x => ll%l2 )
         class is (level1(4,*))
             allocate( x%from(1,1), source = child(4,8)("FORTRAN"))
-            if ( .not. allocated(x%from) ) stop 31
+            if ( .not. allocated(x%from) ) error stop 31
 
             allocate( x%to(2,2), source = reshape( (/ (parent(4,8)("COMPILER"), i = 1,4) /), (/2, 2/) ) )
-            if ( .not. allocated(x%to) ) stop 32
+            if ( .not. allocated(x%to) ) error stop 32
 
             countP = 0
             countC = 0
 
             call move_alloc(x%from, x%to)
 
-            if ( .not. allocated(x%to) ) stop 35
-            if ( allocated(x%from) ) stop 37
+            if ( .not. allocated(x%to) ) error stop 35
+            if ( allocated(x%from) ) error stop 37
 
-            if ( size(x%to, 1) /= 1) stop 41
-            if ( size(x%to, 2) /= 1) stop 42
-            if ( countp /= 1) stop 43
-	    if ( countC /= 0) stop 44
+            if ( size(x%to, 1) /= 1) error stop 41
+            if ( size(x%to, 2) /= 1) error stop 42
+            if ( countp /= 1) error stop 43
+	    if ( countC /= 0) error stop 44
 
             select type ( y => x%to)
                 type is (child(4,*))
-                   if ( y(1,1)%name /= "FORTRAN" ) stop 51
+                   if ( y(1,1)%name /= "FORTRAN" ) error stop 51
                 class default
                    print *, "wrong type"
                    stop 53

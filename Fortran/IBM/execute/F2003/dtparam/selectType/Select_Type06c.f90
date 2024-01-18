@@ -92,7 +92,7 @@
       POINTER :: SInit
 
       ALLOCATE(List(knd1,len1):: SInit)
-      IF ( .NOT. ASSOCIATED(SInit)) STOP 10
+      IF ( .NOT. ASSOCIATED(SInit)) ERROR STOP 10
 
       CALL BuildList(SInit)
       U => SInit
@@ -111,11 +111,11 @@
           STEMP => Obj
 
           DO I = 1, 10
-           IF ( .NOT. ASSOCIATED(STEMP%NEXT) ) STOP 20
+           IF ( .NOT. ASSOCIATED(STEMP%NEXT) ) ERROR STOP 20
            STEMP => STEMP%p()
-           IF ( LEN(STEMP%tag) .NE. len1 ) STOP 30
-           IF ( STEMP%tag(1) .NE. 'A' ) STOP 31
-           IF ( STEMP%tag(10) .NE. 'J' ) STOP 32
+           IF ( LEN(STEMP%tag) .NE. len1 ) ERROR STOP 30
+           IF ( STEMP%tag(1) .NE. 'A' ) ERROR STOP 31
+           IF ( STEMP%tag(10) .NE. 'J' ) ERROR STOP 32
           END DO
 
         CLASSDEFAULT

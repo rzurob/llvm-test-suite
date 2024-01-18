@@ -55,13 +55,13 @@
 
   SELECT TYPE ( T3 )
   TYPE IS (DT(8_8, L=*, LEN=*))
-    IF ( T3%K               .NE.   8          ) STOP 11
-    IF ( T3%L               .NE.   1          ) STOP 12
-    IF ( T3%KIND            .NE.   8          ) STOP 13
-    IF ( T3%LEN             .NE.   8          ) STOP 14
-    IF ( T3%T%K             .NE.   8          ) STOP 15
-    IF ( T3%T%L             .NE.   8          ) STOP 16
-    IF ( ANY( T3%C          .NE.   CHAR(8)  ) ) STOP 17
+    IF ( T3%K               .NE.   8          ) ERROR STOP 11
+    IF ( T3%L               .NE.   1          ) ERROR STOP 12
+    IF ( T3%KIND            .NE.   8          ) ERROR STOP 13
+    IF ( T3%LEN             .NE.   8          ) ERROR STOP 14
+    IF ( T3%T%K             .NE.   8          ) ERROR STOP 15
+    IF ( T3%T%L             .NE.   8          ) ERROR STOP 16
+    IF ( ANY( T3%C          .NE.   CHAR(8)  ) ) ERROR STOP 17
   CLASS DEFAULT
     STOP 18
   END SELECT
@@ -71,13 +71,13 @@
 
   SELECT TYPE ( T4 )
   TYPE IS (DT(8_8, KIND=8, L=*, LEN=*))
-    IF ( T4%K               .NE.   8          ) STOP 21
-    IF ( T4%L               .NE.   1          ) STOP 22
-    IF ( T4%KIND            .NE.   8          ) STOP 23
-    IF ( T4%LEN             .NE.   8          ) STOP 24
-    IF ( T4%T%K             .NE.   8          ) STOP 25
-    IF ( T4%T%L             .NE.   8          ) STOP 26
-    IF ( ANY( T4%C          .NE.   CHAR(8) ) ) STOP 27
+    IF ( T4%K               .NE.   8          ) ERROR STOP 21
+    IF ( T4%L               .NE.   1          ) ERROR STOP 22
+    IF ( T4%KIND            .NE.   8          ) ERROR STOP 23
+    IF ( T4%LEN             .NE.   8          ) ERROR STOP 24
+    IF ( T4%T%K             .NE.   8          ) ERROR STOP 25
+    IF ( T4%T%L             .NE.   8          ) ERROR STOP 26
+    IF ( ANY( T4%C          .NE.   CHAR(8) ) ) ERROR STOP 27
   CLASS DEFAULT
     STOP 28
   END SELECT
@@ -128,13 +128,13 @@
 
   SELECT TYPE ( T7 )
   TYPE IS (DT(2, KIND=2, L=*, LEN=*))
-    IF ( T7%K               .NE.   2          ) STOP 31
-    IF ( T7%L               .NE.   1          ) STOP 32
-    IF ( T7%KIND            .NE.   2          ) STOP 33
-    IF ( T7%LEN             .NE.   1          ) STOP 34
-    IF ( T7%T%K             .NE.   2          ) STOP 35
-    IF ( T7%T%L             .NE.   1          ) STOP 36
-    IF ( ANY( T7%C          .NE.   CHAR(1)  ) ) STOP 37
+    IF ( T7%K               .NE.   2          ) ERROR STOP 31
+    IF ( T7%L               .NE.   1          ) ERROR STOP 32
+    IF ( T7%KIND            .NE.   2          ) ERROR STOP 33
+    IF ( T7%LEN             .NE.   1          ) ERROR STOP 34
+    IF ( T7%T%K             .NE.   2          ) ERROR STOP 35
+    IF ( T7%T%L             .NE.   1          ) ERROR STOP 36
+    IF ( ANY( T7%C          .NE.   CHAR(1)  ) ) ERROR STOP 37
   CLASS DEFAULT
     STOP 38
   END SELECT
@@ -142,13 +142,13 @@
 
   SELECT TYPE ( T8 )
   TYPE IS (DT(K=2, KIND=2, L=*, LEN=*))
-    IF ( T8%K               .NE.   2          ) STOP 41
-    IF ( T8%L               .NE.   1          ) STOP 42
-    IF ( T8%KIND            .NE.   2          ) STOP 43
-    IF ( T8%LEN             .NE.   2          ) STOP 44
-    IF ( T8%T%K             .NE.   2          ) STOP 45
-    IF ( T8%T%L             .NE.   2          ) STOP 46
-    IF ( ANY( T8%C          .NE.   CHAR(11) ) ) STOP 47
+    IF ( T8%K               .NE.   2          ) ERROR STOP 41
+    IF ( T8%L               .NE.   1          ) ERROR STOP 42
+    IF ( T8%KIND            .NE.   2          ) ERROR STOP 43
+    IF ( T8%LEN             .NE.   2          ) ERROR STOP 44
+    IF ( T8%T%K             .NE.   2          ) ERROR STOP 45
+    IF ( T8%T%L             .NE.   2          ) ERROR STOP 46
+    IF ( ANY( T8%C          .NE.   CHAR(11) ) ) ERROR STOP 47
   CLASS DEFAULT
     STOP 48
   END SELECT

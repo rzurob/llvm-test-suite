@@ -97,10 +97,10 @@
     CLASS IS (Child)
       V1 = V2
       DO i=1, 5
-        IF ( V1(i)%Base%GetId() .NE.  i ) STOP 34
-        IF ( V1(i)%GetId()      .NE. -i ) STOP 35
-        IF ( V1(i)%BaseId       .NE.  i ) STOP 36
-        IF ( V1(i)%ChildId      .NE. -i ) STOP 37
+        IF ( V1(i)%Base%GetId() .NE.  i ) ERROR STOP 34
+        IF ( V1(i)%GetId()      .NE. -i ) ERROR STOP 35
+        IF ( V1(i)%BaseId       .NE.  i ) ERROR STOP 36
+        IF ( V1(i)%ChildId      .NE. -i ) ERROR STOP 37
       END DO
     CLASS IS (Zero)
       STOP 38

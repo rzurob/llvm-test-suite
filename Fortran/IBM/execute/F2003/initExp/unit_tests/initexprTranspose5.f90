@@ -15,6 +15,6 @@ character(7), parameter, dimension(2,2) :: C=reshape( &
 
 character(7) :: res3(2,2)=transpose(C)
 
-if (.not. all(res3 .eq. transpose(C))) stop 3
+if (.not. all(res3 .eq. transpose(C))) error stop 3
 
 end

@@ -42,7 +42,7 @@ module m
         integer, intent(out) :: iostat
         character(*), intent(inout) :: iomsg
 
-        if (iotype /= 'LISTDIRECTED') stop 11
+        if (iotype /= 'LISTDIRECTED') error stop 11
     end subroutine
 
     subroutine writeB (b)

@@ -90,12 +90,12 @@
   INTEGER  :: I
 
   DO I=1, 3
-    IF ( ASSOCIATED(V(I)%BComp%ProcPtr) ) STOP 14
+    IF ( ASSOCIATED(V(I)%BComp%ProcPtr) ) ERROR STOP 14
     V(I)%BComp%ProcPtr  => ToB
-    IF ( .NOT. ASSOCIATED(V(I)%BComp%ProcPtr, ToB) ) STOP 24
+    IF ( .NOT. ASSOCIATED(V(I)%BComp%ProcPtr, ToB) ) ERROR STOP 24
     U%BComp = Base(4)(NULL())
     CALL V(I)%BComp%ProcPtr(U%BComp, V(I)%BComp%ProcPtr)
-    IF ( .NOT. ASSOCIATED(U%BComp%ProcPtr, ToB) )    STOP 25
+    IF ( .NOT. ASSOCIATED(U%BComp%ProcPtr, ToB) )    ERROR STOP 25
   END DO
 
   ProcPtr => ToD
@@ -103,10 +103,10 @@
 
   DO I=1, 3
     CALL  ProcPtr(V(I), ProcPtr)
-    IF ( .NOT. ASSOCIATED(V(I)%BComp%ProcPtr, ProcPtr) )  STOP 34
+    IF ( .NOT. ASSOCIATED(V(I)%BComp%ProcPtr, ProcPtr) )  ERROR STOP 34
     U = DT(4)(Base(4)(NULL()))
     CALL V(I)%BComp%ProcPtr(U, V(I)%BComp%ProcPtr)
-    IF ( .NOT. ASSOCIATED(U%BComp%ProcPtr, ToD) )  STOP 35
+    IF ( .NOT. ASSOCIATED(U%BComp%ProcPtr, ToD) )  ERROR STOP 35
   END DO
 
 

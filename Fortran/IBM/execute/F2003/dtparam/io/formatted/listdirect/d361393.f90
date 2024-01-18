@@ -43,8 +43,8 @@ end module
    select type(t1)
       type is(gen3(4,*,8,*,2,*))
 
-        if(t1%g1(2,4) .neqv. .false.)          stop 1
-        if(.not. precision_r8(t1%r1(2),1._8))  stop 2
+        if(t1%g1(2,4) .neqv. .false.)          error stop 1
+        if(.not. precision_r8(t1%r1(2),1._8))  error stop 2
 
       class default
         stop 3

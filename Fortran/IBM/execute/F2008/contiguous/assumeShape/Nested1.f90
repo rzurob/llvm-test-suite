@@ -86,31 +86,31 @@ PROGRAM Nested1
       SUBROUTINE Sub1(Arg)
         INTEGER :: Arg(:,:,:)
 
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 10
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 10
         IF ( ANY(Arg .NE. RESHAPE(SOURCE=[(I, I=1,125)], SHAPE=[5,5,5])) ) ERROR STOP 13
 
         CALL SubSub(Arg)
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 11
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 11
 
       END SUBROUTINE Sub1
 
       SUBROUTINE Sub2(Arg)
         INTEGER, POINTER :: Arg(:,:,:)
 
-        IF ( .NOT. ASSOCIATED(Arg)    ) STOP 20
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 21
+        IF ( .NOT. ASSOCIATED(Arg)    ) ERROR STOP 20
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 21
         IF ( ANY(Arg .NE. RESHAPE(SOURCE=[(I, I=1,125)], SHAPE=[5,5,5])) ) ERROR STOP 22
 
         CALL SubSub(Arg)
-        IF ( .NOT. ASSOCIATED(Arg)    ) STOP 23
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 24
+        IF ( .NOT. ASSOCIATED(Arg)    ) ERROR STOP 23
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 24
 
       END SUBROUTINE Sub2
 
       SUBROUTINE SubSub(Arg)
         INTEGER :: Arg(5,5,5)
 
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 30
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 30
         CALL SubSubSub(Arg)
 
         DO K = 1, 5
@@ -125,7 +125,7 @@ PROGRAM Nested1
       SUBROUTINE SubSubSub(Arg)
         INTEGER, CONTIGUOUS :: Arg(:,:,:)
 
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 40
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 40
 
       END SUBROUTINE SubSubSub
 END PROGRAM Nested1

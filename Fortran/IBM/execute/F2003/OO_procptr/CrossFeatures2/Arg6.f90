@@ -97,16 +97,16 @@
   PROCEDURE(),           POINTER :: ProcPtr1
   TYPE(DT)                       :: V
 
-  IF ( .NOT. ASSOCIATED(ProcPtr0, ExtSub) ) STOP 10
-  IF ( .NOT. ASSOCIATED(ProcPtr1, ExtSub) ) STOP 11
+  IF ( .NOT. ASSOCIATED(ProcPtr0, ExtSub) ) ERROR STOP 10
+  IF ( .NOT. ASSOCIATED(ProcPtr1, ExtSub) ) ERROR STOP 11
 
   CALL ProcPtr0(V, DT("321", ProcPtr1))
-  IF (V%C .NE. "321") STOP 15
-  IF ( .NOT. ASSOCIATED(V%ProcPtr, ExtSub)) STOP 16
+  IF (V%C .NE. "321") ERROR STOP 15
+  IF ( .NOT. ASSOCIATED(V%ProcPtr, ExtSub)) ERROR STOP 16
 
   CALL ProcPtr1(V, DT("321", ProcPtr1))
-  IF (V%C .NE. "321") STOP 17
-  IF ( .NOT. ASSOCIATED(V%ProcPtr, ExtSub)) STOP 18
+  IF (V%C .NE. "321") ERROR STOP 17
+  IF ( .NOT. ASSOCIATED(V%ProcPtr, ExtSub)) ERROR STOP 18
 
   END SUBROUTINE
 

@@ -31,8 +31,8 @@
 
     ASSOCIATE ( T0 => Str1(1:9), T1=>StrArr(1:10:2) )
     ASSOCIATE ( As0 => T0, As1 => T1)
-      IF ( As0 .NE. "123456789" ) STOP 40
-      IF ( .NOT. ALL (As1 .EQ. (/ (ACHAR(IACHAR("0") + i), i=0, 9, 2)/)) ) STOP 41
+      IF ( As0 .NE. "123456789" ) ERROR STOP 40
+      IF ( .NOT. ALL (As1 .EQ. (/ (ACHAR(IACHAR("0") + i), i=0, 9, 2)/)) ) ERROR STOP 41
     END ASSOCIATE
     END ASSOCIATE
 

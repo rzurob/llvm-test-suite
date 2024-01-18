@@ -53,15 +53,15 @@
   INTEGER  :: TR6  = DIGITS(R6)
 
 
-  IF ( TI1    .NE. 7     )   STOP 11
-  IF ( TI2    .NE. 15    )   STOP 12
-  IF ( TI4    .NE. 31    )   STOP 13
-  IF ( TI8    .NE. 63    )   STOP 14
+  IF ( TI1    .NE. 7     )   ERROR STOP 11
+  IF ( TI2    .NE. 15    )   ERROR STOP 12
+  IF ( TI4    .NE. 31    )   ERROR STOP 13
+  IF ( TI8    .NE. 63    )   ERROR STOP 14
 
-  IF ( TR0    .NE. 24    )   STOP 20
-  IF ( TR4    .NE. 24    )   STOP 21
-  IF ( TR8    .NE. 53    )   STOP 22
-  IF ( TR6    .NE. 106   )   STOP 23
+  IF ( TR0    .NE. 24    )   ERROR STOP 20
+  IF ( TR4    .NE. 24    )   ERROR STOP 21
+  IF ( TR8    .NE. 53    )   ERROR STOP 22
+  IF ( TR6    .NE. 106   )   ERROR STOP 23
 
   END
 

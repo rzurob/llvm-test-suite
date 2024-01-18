@@ -40,20 +40,20 @@
   II = 1
   II(2,:,:,:,:,:,:,:,:,:) = 0
 
-  IF (ANY( MINLOC(ARRAY=II )                                 .NE. (/2,1,1,1,1,1,1,1,1,1/)))  STOP 10
-  IF (KIND(MINLOC(ARRAY=II ))                                .NE. II%KIND)                   STOP 11
+  IF (ANY( MINLOC(ARRAY=II )                                 .NE. (/2,1,1,1,1,1,1,1,1,1/)))  ERROR STOP 10
+  IF (KIND(MINLOC(ARRAY=II ))                                .NE. II%KIND)                   ERROR STOP 11
 
-  IF (ANY( MINLOC(ARRAY=II, KIND=II%KIND )                   .NE. (/2,1,1,1,1,1,1,1,1,1/)))  STOP 20
-  IF (KIND(MINLOC(ARRAY=II, KIND=II%KIND ))                  .NE. II%KIND)                   STOP 21
+  IF (ANY( MINLOC(ARRAY=II, KIND=II%KIND )                   .NE. (/2,1,1,1,1,1,1,1,1,1/)))  ERROR STOP 20
+  IF (KIND(MINLOC(ARRAY=II, KIND=II%KIND ))                  .NE. II%KIND)                   ERROR STOP 21
 
-  IF (ANY( MINLOC(ARRAY=II, MASK=MM, KIND=II%KIND )          .NE. (/2,1,1,1,1,1,1,1,1,1/)))  STOP 30
-  IF (KIND(MINLOC(ARRAY=II, MASK=MM, KIND=II%KIND ))         .NE. II%KIND)                   STOP 31
+  IF (ANY( MINLOC(ARRAY=II, MASK=MM, KIND=II%KIND )          .NE. (/2,1,1,1,1,1,1,1,1,1/)))  ERROR STOP 30
+  IF (KIND(MINLOC(ARRAY=II, MASK=MM, KIND=II%KIND ))         .NE. II%KIND)                   ERROR STOP 31
 
-  IF (ANY( MINLOC(ARRAY=II, MASK=MM, DIM=1, KIND=II%KIND )   .NE. 2))       STOP 40
-  IF (KIND(MINLOC(ARRAY=II, MASK=MM, DIM=1, KIND=II%KIND ))  .NE. II%KIND)  STOP 41
+  IF (ANY( MINLOC(ARRAY=II, MASK=MM, DIM=1, KIND=II%KIND )   .NE. 2))       ERROR STOP 40
+  IF (KIND(MINLOC(ARRAY=II, MASK=MM, DIM=1, KIND=II%KIND ))  .NE. II%KIND)  ERROR STOP 41
 
-  IF (ANY( MINLOC(ARRAY=II, MASK=MM1, DIM=1, KIND=II%KIND )  .NE. 0))       STOP 50
-  IF (KIND(MINLOC(ARRAY=II, MASK=MM1, DIM=1, KIND=II%KIND )) .NE. II%KIND)  STOP 51
+  IF (ANY( MINLOC(ARRAY=II, MASK=MM1, DIM=1, KIND=II%KIND )  .NE. 0))       ERROR STOP 50
+  IF (KIND(MINLOC(ARRAY=II, MASK=MM1, DIM=1, KIND=II%KIND )) .NE. II%KIND)  ERROR STOP 51
 
   END
 

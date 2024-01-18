@@ -50,59 +50,59 @@
   ALLOCATE(CC(0:127), SOURCE=(/(CHAR(I=I, KIND=1), I=0, 127)/))
 
   DO I1 = 0, 127
-    IF (     ICHAR(C=CC(I1), KIND=KIND(K8))   .NE. I1)               STOP 11
-    IF (KIND(ICHAR(C=CC(I1), KIND=KIND(K8)))  .NE. 8)                STOP 12
-    IF (     ICHAR(C=CC(I1), KIND=KIND(K4))   .NE. I1)               STOP 13
-    IF (KIND(ICHAR(C=CC(I1), KIND=KIND(K4)))  .NE. 4)                STOP 14
-    IF (     ICHAR(C=CC(I1), KIND=KIND(K2))   .NE. I1)               STOP 15
-    IF (KIND(ICHAR(C=CC(I1), KIND=KIND(K2)))  .NE. 2)                STOP 16
-    IF (     ICHAR(C=CC(I1), KIND=KIND(K1))   .NE. I1)               STOP 17
-    IF (KIND(ICHAR(C=CC(I1), KIND=KIND(K1)))  .NE. 1)                STOP 18
+    IF (     ICHAR(C=CC(I1), KIND=KIND(K8))   .NE. I1)               ERROR STOP 11
+    IF (KIND(ICHAR(C=CC(I1), KIND=KIND(K8)))  .NE. 8)                ERROR STOP 12
+    IF (     ICHAR(C=CC(I1), KIND=KIND(K4))   .NE. I1)               ERROR STOP 13
+    IF (KIND(ICHAR(C=CC(I1), KIND=KIND(K4)))  .NE. 4)                ERROR STOP 14
+    IF (     ICHAR(C=CC(I1), KIND=KIND(K2))   .NE. I1)               ERROR STOP 15
+    IF (KIND(ICHAR(C=CC(I1), KIND=KIND(K2)))  .NE. 2)                ERROR STOP 16
+    IF (     ICHAR(C=CC(I1), KIND=KIND(K1))   .NE. I1)               ERROR STOP 17
+    IF (KIND(ICHAR(C=CC(I1), KIND=KIND(K1)))  .NE. 1)                ERROR STOP 18
   END DO
 
   DO I2 = 0, 127
-    IF (     ICHAR(C=CC(I2), KIND=KIND(K8))   .NE. I2)               STOP 21
-    IF (KIND(ICHAR(C=CC(I2), KIND=KIND(K8)))  .NE. 8)                STOP 22
-    IF (     ICHAR(C=CC(I2), KIND=KIND(K4))   .NE. I2)               STOP 23
-    IF (KIND(ICHAR(C=CC(I2), KIND=KIND(K4)))  .NE. 4)                STOP 24
-    IF (     ICHAR(C=CC(I2), KIND=KIND(K2))   .NE. I2)               STOP 25
-    IF (KIND(ICHAR(C=CC(I2), KIND=KIND(K2)))  .NE. 2)                STOP 26
-    IF (     ICHAR(C=CC(I2), KIND=KIND(K1))   .NE. I2)               STOP 27
-    IF (KIND(ICHAR(C=CC(I2), KIND=KIND(K1)))  .NE. 1)                STOP 28
+    IF (     ICHAR(C=CC(I2), KIND=KIND(K8))   .NE. I2)               ERROR STOP 21
+    IF (KIND(ICHAR(C=CC(I2), KIND=KIND(K8)))  .NE. 8)                ERROR STOP 22
+    IF (     ICHAR(C=CC(I2), KIND=KIND(K4))   .NE. I2)               ERROR STOP 23
+    IF (KIND(ICHAR(C=CC(I2), KIND=KIND(K4)))  .NE. 4)                ERROR STOP 24
+    IF (     ICHAR(C=CC(I2), KIND=KIND(K2))   .NE. I2)               ERROR STOP 25
+    IF (KIND(ICHAR(C=CC(I2), KIND=KIND(K2)))  .NE. 2)                ERROR STOP 26
+    IF (     ICHAR(C=CC(I2), KIND=KIND(K1))   .NE. I2)               ERROR STOP 27
+    IF (KIND(ICHAR(C=CC(I2), KIND=KIND(K1)))  .NE. 1)                ERROR STOP 28
   END DO
 
   DO I4 = 0, 127
-    IF (     ICHAR(C=CC(I4), KIND=KIND(K8))   .NE. I4)               STOP 41
-    IF (KIND(ICHAR(C=CC(I4), KIND=KIND(K8)))  .NE. 8)                STOP 42
-    IF (     ICHAR(C=CC(I4), KIND=KIND(K4))   .NE. I4)               STOP 43
-    IF (KIND(ICHAR(C=CC(I4), KIND=KIND(K4)))  .NE. 4)                STOP 44
-    IF (     ICHAR(C=CC(I4), KIND=KIND(K2))   .NE. I4)               STOP 45
-    IF (KIND(ICHAR(C=CC(I4), KIND=KIND(K2)))  .NE. 2)                STOP 46
-    IF (     ICHAR(C=CC(I4), KIND=KIND(K1))   .NE. I4)               STOP 47
-    IF (KIND(ICHAR(C=CC(I4), KIND=KIND(K1)))  .NE. 1)                STOP 48
+    IF (     ICHAR(C=CC(I4), KIND=KIND(K8))   .NE. I4)               ERROR STOP 41
+    IF (KIND(ICHAR(C=CC(I4), KIND=KIND(K8)))  .NE. 8)                ERROR STOP 42
+    IF (     ICHAR(C=CC(I4), KIND=KIND(K4))   .NE. I4)               ERROR STOP 43
+    IF (KIND(ICHAR(C=CC(I4), KIND=KIND(K4)))  .NE. 4)                ERROR STOP 44
+    IF (     ICHAR(C=CC(I4), KIND=KIND(K2))   .NE. I4)               ERROR STOP 45
+    IF (KIND(ICHAR(C=CC(I4), KIND=KIND(K2)))  .NE. 2)                ERROR STOP 46
+    IF (     ICHAR(C=CC(I4), KIND=KIND(K1))   .NE. I4)               ERROR STOP 47
+    IF (KIND(ICHAR(C=CC(I4), KIND=KIND(K1)))  .NE. 1)                ERROR STOP 48
   END DO
 
   DO I8 = 0, 127
-    IF (     ICHAR(C=CC(I8), KIND=KIND(K8))   .NE. I8)               STOP 83
-    IF (KIND(ICHAR(C=CC(I8), KIND=KIND(K8)))  .NE. 8)                STOP 82
-    IF (     ICHAR(C=CC(I8), KIND=KIND(K4))   .NE. I8)               STOP 83
-    IF (KIND(ICHAR(C=CC(I8), KIND=KIND(K4)))  .NE. 4)                STOP 84
-    IF (     ICHAR(C=CC(I8), KIND=KIND(K2))   .NE. I8)               STOP 85
-    IF (KIND(ICHAR(C=CC(I8), KIND=KIND(K2)))  .NE. 2)                STOP 86
-    IF (     ICHAR(C=CC(I8), KIND=KIND(K1))   .NE. I8)               STOP 87
-    IF (KIND(ICHAR(C=CC(I8), KIND=KIND(K1)))  .NE. 1)                STOP 88
+    IF (     ICHAR(C=CC(I8), KIND=KIND(K8))   .NE. I8)               ERROR STOP 83
+    IF (KIND(ICHAR(C=CC(I8), KIND=KIND(K8)))  .NE. 8)                ERROR STOP 82
+    IF (     ICHAR(C=CC(I8), KIND=KIND(K4))   .NE. I8)               ERROR STOP 83
+    IF (KIND(ICHAR(C=CC(I8), KIND=KIND(K4)))  .NE. 4)                ERROR STOP 84
+    IF (     ICHAR(C=CC(I8), KIND=KIND(K2))   .NE. I8)               ERROR STOP 85
+    IF (KIND(ICHAR(C=CC(I8), KIND=KIND(K2)))  .NE. 2)                ERROR STOP 86
+    IF (     ICHAR(C=CC(I8), KIND=KIND(K1))   .NE. I8)               ERROR STOP 87
+    IF (KIND(ICHAR(C=CC(I8), KIND=KIND(K1)))  .NE. 1)                ERROR STOP 88
   END DO
 
 
 
-  IF (ANY( ICHAR(C=CC, KIND=KIND(K8))   .NE. II))           STOP 11
-  IF (KIND(ICHAR(C=CC, KIND=KIND(K8)))  .NE. 8)             STOP 12
-  IF (ANY( ICHAR(C=CC, KIND=KIND(K4))   .NE. II))           STOP 13
-  IF (KIND(ICHAR(C=CC, KIND=KIND(K4)))  .NE. 4)             STOP 14
-  IF (ANY( ICHAR(C=CC, KIND=KIND(K2))   .NE. II))           STOP 15
-  IF (KIND(ICHAR(C=CC, KIND=KIND(K2)))  .NE. 2)             STOP 16
-  IF (ANY( ICHAR(C=CC, KIND=KIND(K1))   .NE. II))           STOP 17
-  IF (KIND(ICHAR(C=CC, KIND=KIND(K1)))  .NE. 1)             STOP 18
+  IF (ANY( ICHAR(C=CC, KIND=KIND(K8))   .NE. II))           ERROR STOP 11
+  IF (KIND(ICHAR(C=CC, KIND=KIND(K8)))  .NE. 8)             ERROR STOP 12
+  IF (ANY( ICHAR(C=CC, KIND=KIND(K4))   .NE. II))           ERROR STOP 13
+  IF (KIND(ICHAR(C=CC, KIND=KIND(K4)))  .NE. 4)             ERROR STOP 14
+  IF (ANY( ICHAR(C=CC, KIND=KIND(K2))   .NE. II))           ERROR STOP 15
+  IF (KIND(ICHAR(C=CC, KIND=KIND(K2)))  .NE. 2)             ERROR STOP 16
+  IF (ANY( ICHAR(C=CC, KIND=KIND(K1))   .NE. II))           ERROR STOP 17
+  IF (KIND(ICHAR(C=CC, KIND=KIND(K1)))  .NE. 1)             ERROR STOP 18
 
 
 

@@ -72,27 +72,27 @@
         &   ProcPtr=ExtFun   )
 
 
-    IF ( T%K            .NE.   4          ) STOP 11
-    IF ( T%L            .NE.   4          ) STOP 12
-    IF ( T%K1           .NE.   4          ) STOP 13
-    IF ( T%L1           .NE.   4          ) STOP 14
-    IF ( ANY( T%I       .NE.   -1       ) ) STOP 15
-    IF ( ANY( T%R       .NE.   -1.0     ) ) STOP 16
+    IF ( T%K            .NE.   4          ) ERROR STOP 11
+    IF ( T%L            .NE.   4          ) ERROR STOP 12
+    IF ( T%K1           .NE.   4          ) ERROR STOP 13
+    IF ( T%L1           .NE.   4          ) ERROR STOP 14
+    IF ( ANY( T%I       .NE.   -1       ) ) ERROR STOP 15
+    IF ( ANY( T%R       .NE.   -1.0     ) ) ERROR STOP 16
 
     DO I=1, 4
-      IF ( TRIM(T%C(I)) .NE.   "cba"      ) STOP 17
+      IF ( TRIM(T%C(I)) .NE.   "cba"      ) ERROR STOP 17
     END DO
 
-    IF ( ANY( T%Cplx    .NE.   (-1.,1.) ) ) STOP 18
-    IF ( ANY( T%LL      .NEQV. .FALSE.  ) ) STOP 19
-    IF (  T%VDT0%K      .NE.   4          ) STOP 20
-    IF (  T%VDT0%L      .NE.   4          ) STOP 21
-    IF (  ASSOCIATED(T%PDT0, TarT)        ) STOP 22
-    IF (  .NOT. ASSOCIATED(T%PDT0)        ) STOP 23  ! zero sized storage
-    IF ( .NOT. ALLOCATED(T%ADT0)             ) STOP 24
-    IF ( .NOT. ASSOCIATED(T%ProcPtr, ExtFun) ) STOP 25
-    IF ( T%ProcPtr(-1) .NE. -1               ) STOP 26
-    IF ( T%ExtFun(-1)  .NE. -1               ) STOP 27
+    IF ( ANY( T%Cplx    .NE.   (-1.,1.) ) ) ERROR STOP 18
+    IF ( ANY( T%LL      .NEQV. .FALSE.  ) ) ERROR STOP 19
+    IF (  T%VDT0%K      .NE.   4          ) ERROR STOP 20
+    IF (  T%VDT0%L      .NE.   4          ) ERROR STOP 21
+    IF (  ASSOCIATED(T%PDT0, TarT)        ) ERROR STOP 22
+    IF (  .NOT. ASSOCIATED(T%PDT0)        ) ERROR STOP 23  ! zero sized storage
+    IF ( .NOT. ALLOCATED(T%ADT0)             ) ERROR STOP 24
+    IF ( .NOT. ASSOCIATED(T%ProcPtr, ExtFun) ) ERROR STOP 25
+    IF ( T%ProcPtr(-1) .NE. -1               ) ERROR STOP 26
+    IF ( T%ExtFun(-1)  .NE. -1               ) ERROR STOP 27
 
 
   END

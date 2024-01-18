@@ -68,17 +68,17 @@
 
   INTEGER(C_INT) :: I
 
-  IF(  ExtFun() .NE. -1_C_INT ) STOP 11
+  IF(  ExtFun() .NE. -1_C_INT ) ERROR STOP 11
 
   CALL ExtSub(I)
-  IF( I .NE. 1_C_INT )  STOP 12
+  IF( I .NE. 1_C_INT )  ERROR STOP 12
 
   PExtFun => ExtFun
-  IF(  PExtFun() .NE. -1_C_INT ) STOP 13
+  IF(  PExtFun() .NE. -1_C_INT ) ERROR STOP 13
 
   PExtSub => ExtSub
   CALL PExtSub(I)
-  IF( I .NE. 1_C_INT )  STOP 14
+  IF( I .NE. 1_C_INT )  ERROR STOP 14
 
   END
 

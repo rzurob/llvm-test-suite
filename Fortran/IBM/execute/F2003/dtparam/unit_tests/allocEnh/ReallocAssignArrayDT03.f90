@@ -20,9 +20,9 @@ type(t(3)) :: b(5)
 allocate(t(3) :: a(4))
 b = (/t(3)(1),t(3)(2),t(3)(3),t(3)(4),t(3)(5)/)
 a = b(2:3)
-if (any(shape(a) /= 2)) stop 1
-if (a%x /= 3) stop 2
-if (any(a%a /= (/2,3/))) stop 3
-if (lbound(a,1) /= 1) stop 4
-if (ubound(a,1) /= 2) stop 5
+if (any(shape(a) /= 2)) error stop 1
+if (a%x /= 3) error stop 2
+if (any(a%a /= (/2,3/))) error stop 3
+if (lbound(a,1) /= 1) error stop 4
+if (ubound(a,1) /= 2) error stop 5
 end

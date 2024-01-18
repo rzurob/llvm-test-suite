@@ -22,9 +22,9 @@
 
 	b1(b2(10):) => b2
 
-	if ( .not. associated(b1, b2) ) stop 11
-	if ( lbound(b1,1) /= 10 ) stop 13
-	if ( ubound(b1,1) /= 19 ) stop 15
+	if ( .not. associated(b1, b2) ) error stop 11
+	if ( lbound(b1,1) /= 10 ) error stop 13
+	if ( ubound(b1,1) /= 19 ) error stop 15
 
 	call sub(b1, (/ (i, i=101,110 ) /))
 

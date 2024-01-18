@@ -60,33 +60,33 @@
   SUBROUTINE CheckDT0(Obj,Arg)
   CLASS(DT0(8,*)) :: Obj
   TYPE (DT0(8,*)) :: Arg
-    IF ( Arg%K0   .NE.   Obj%K0     ) STOP 11
-    IF ( Arg%L0   .NE.   Obj%L0     ) STOP 12
+    IF ( Arg%K0   .NE.   Obj%K0     ) ERROR STOP 11
+    IF ( Arg%L0   .NE.   Obj%L0     ) ERROR STOP 12
   END SUBROUTINE
 
   SUBROUTINE CheckDT2(Obj,Arg)
   CLASS(DT2(8,*,8,*,8,*)) :: Obj
   TYPE (DT2(8,*,8,*,8,*)) :: Arg
 
-    IF ( Arg%K0   .NE.   Obj%K0     ) STOP 41
-    IF ( Arg%L0   .NE.   Obj%L0     ) STOP 42
-    IF ( Arg%K1   .NE.   Obj%K1     ) STOP 43
-    IF ( Arg%L1   .NE.   Obj%L1     ) STOP 44
-    IF ( Arg%K2   .NE.   Obj%K2     ) STOP 45
-    IF ( Arg%L2   .NE.   Obj%L2     ) STOP 46
+    IF ( Arg%K0   .NE.   Obj%K0     ) ERROR STOP 41
+    IF ( Arg%L0   .NE.   Obj%L0     ) ERROR STOP 42
+    IF ( Arg%K1   .NE.   Obj%K1     ) ERROR STOP 43
+    IF ( Arg%L1   .NE.   Obj%L1     ) ERROR STOP 44
+    IF ( Arg%K2   .NE.   Obj%K2     ) ERROR STOP 45
+    IF ( Arg%L2   .NE.   Obj%L2     ) ERROR STOP 46
 
-    IF ( Arg%C1   .NE.   Obj%C1     ) STOP 47
-    IF ( Arg%C2   .NE.   Obj%C2     ) STOP 48
-    IF ( Arg%I    .NE.   Obj%I      ) STOP 49
-    IF ( Arg%R    .NE.   Obj%R      ) STOP 50
-    IF ( Arg%L    .nEQV.  Obj%L      ) STOP 51
-    IF ( Arg%Z    .NE.   Obj%Z      ) STOP 52
-    IF ( Arg%T0%K0.NE.   Obj%T0%K0  ) STOP 53
-    IF ( Arg%T0%L0.NE.   Obj%T0%L0  ) STOP 54
+    IF ( Arg%C1   .NE.   Obj%C1     ) ERROR STOP 47
+    IF ( Arg%C2   .NE.   Obj%C2     ) ERROR STOP 48
+    IF ( Arg%I    .NE.   Obj%I      ) ERROR STOP 49
+    IF ( Arg%R    .NE.   Obj%R      ) ERROR STOP 50
+    IF ( Arg%L    .nEQV.  Obj%L      ) ERROR STOP 51
+    IF ( Arg%Z    .NE.   Obj%Z      ) ERROR STOP 52
+    IF ( Arg%T0%K0.NE.   Obj%T0%K0  ) ERROR STOP 53
+    IF ( Arg%T0%L0.NE.   Obj%T0%L0  ) ERROR STOP 54
 
-    IF ( ASSOCIATED( Arg%Ptr2) .nEQV. ASSOCIATED( Obj%Ptr2)  ) STOP 55
-    IF ( Arg%Ptr2%K2           .NE.   Obj%Ptr2%K2           ) STOP 56
-    IF ( Arg%Ptr2%L2           .NE.   Obj%Ptr2%L2           ) STOP 37
+    IF ( ASSOCIATED( Arg%Ptr2) .nEQV. ASSOCIATED( Obj%Ptr2)  ) ERROR STOP 55
+    IF ( Arg%Ptr2%K2           .NE.   Obj%Ptr2%K2           ) ERROR STOP 56
+    IF ( Arg%Ptr2%L2           .NE.   Obj%Ptr2%L2           ) ERROR STOP 37
 
   END SUBROUTINE
 

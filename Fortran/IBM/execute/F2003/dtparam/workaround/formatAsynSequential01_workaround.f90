@@ -44,8 +44,8 @@ module m
        read(unit,fmt='(3a4)',asynchronous="yes") dt(1)%comp%c1
 
        ! execute other statement
-       if(dt%l2 /= 2)        stop 17
-       if(dt%comp%l1 /= 3)   stop 18
+       if(dt%l2 /= 2)        error stop 17
+       if(dt%comp%l1 /= 3)   error stop 18
 
        ! wait all pending data to be transfered for unit 10
        wait(unit)
@@ -54,7 +54,7 @@ module m
        read(unit,fmt='(4i5/2l2/f7.2,f7.3/3a4)', iostat=ios, &
             asynchronous="yes",id=idvar) dt(2)
 
-       if(ios /= 0)          stop 19
+       if(ios /= 0)          error stop 19
 
        ! execuate other statement when pending
        call writeDT(dt(1))
@@ -116,11 +116,11 @@ program formatAsynSequential01
   ! write data with ID= specifier
   write(10,id=idvar1,asynchronous="yes",fmt=100,iostat=ios)  outer1(-3)
 
-  if(ios /= 0)  stop 11
+  if(ios /= 0)  error stop 11
 
   write(10,id=idvar2,asynchronous="yes",fmt=100,iostat=ios)  outer1(-2)
 
-  if( ios /= 0) stop 12
+  if( ios /= 0) error stop 12
 
   ! wait 2 write statement to complete
   wait(10,id=idvar1)
@@ -130,11 +130,11 @@ program formatAsynSequential01
   inquire(10,pending=pending1,asynchronous=asychar1,id=idvar1)
   inquire(10,pending=pending2,asynchronous=asychar2,id=idvar2)
 
-  if(asychar1 /= 'YES')                stop 13
-  if(asychar2 /= 'YES')                stop 14
+  if(asychar1 /= 'YES')                error stop 13
+  if(asychar2 /= 'YES')                error stop 14
 
-  if(pending1 .neqv. .false.)          stop 15
-  if(pending2 .neqv. .false.)          stop 16
+  if(pending1 .neqv. .false.)          error stop 15
+  if(pending2 .neqv. .false.)          error stop 16
 
 
   rewind 10

@@ -136,7 +136,7 @@ use m1
         integer, intent(in) :: d1(x1%precision())
         integer, intent(in) :: testSize
 
-        if (size(d1) /= testSize) stop 100
+        if (size(d1) /= testSize) error stop 100
     end subroutine
 
     subroutine test2 (x1, testSize)
@@ -145,7 +145,7 @@ use m1
 
         real localArray(x1%precision())
 
-        if (size(localArray) /= testSize) stop 200
+        if (size(localArray) /= testSize) error stop 200
     end subroutine
 
     function test3(x1)

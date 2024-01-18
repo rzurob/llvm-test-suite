@@ -66,8 +66,8 @@
 
   TYPE (DT(4,20)) :: T(128)=[(DT(4,20)(T=DT0(20,4)(I)), I=1,128)]
 
-  !IF ( ANY(T%T%ID .NE. [(-I, I=1,128)] )) STOP 11
-  IF ( ANY(T%T%ID .NE. [(I, I=1,128)] )) STOP 11
+  !IF ( ANY(T%T%ID .NE. [(-I, I=1,128)] )) ERROR STOP 11
+  IF ( ANY(T%T%ID .NE. [(I, I=1,128)] )) ERROR STOP 11
 
   END
 

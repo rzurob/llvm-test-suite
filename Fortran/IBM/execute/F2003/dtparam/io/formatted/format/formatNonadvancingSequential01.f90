@@ -86,39 +86,39 @@ program formatNonadvancingSequential01
 
             ! read c1(3) in first record
             read(10,'(a4)',eor=12,size=count,advance='no') poly2%c1(3)
-            if(count /= 4)       stop 13
+            if(count /= 4)       error stop 13
 
             ! skip 6 characters in first record
             read(10,'(a6)',eor=14,size=count,advance='no') tmpchar
-            if(count /= 6)       stop 15
+            if(count /= 6)       error stop 15
 
             ! read c1(4) in first record
             read(10,'(a4/)',eor=16,size=count,advance='no') poly2%c1(4)
-            if(count /= 4)       stop 17
+            if(count /= 4)       error stop 17
 
             ! skip first 3 characters in second record
             read(10,'(a3)',eor=18,size=count,advance='no') tmpchar
-            if(count /= 3)       stop 19
+            if(count /= 3)       error stop 19
 
             ! read i1(1) in second record
             read(10,'(i1)',eor=20,size=count,advance='no') poly2%i1(1)
-            if(count /= 1)        stop 21
+            if(count /= 1)        error stop 21
 
             ! read i1(2) in second record
             read(10,'(i3)',eor=22,size=count,advance='no') poly2%i1(2)
-            if( count /= 3)      stop 23
+            if( count /= 3)      error stop 23
 
             ! skip those 3 character
             read(10,'(a3)',eor=24,size=count,advance='no') tmpchar
-            if(count /= 3)       stop 25
+            if(count /= 3)       error stop 25
 
             ! read third record
             read(10,'(a2/)',eor=26,size=count,advance='no') poly2%c2
-            if(count /= 2)       stop 27
+            if(count /= 2)       error stop 27
 
             ! read fourth record
             read(10,'(2f6.2)',eor=28,size=count,advance='no') poly2%r1
-            if(count /= 12)       stop 29
+            if(count /= 12)       error stop 29
 
             write(10,fmt='(/a)',advance='no') "Value of Poly2:"
 

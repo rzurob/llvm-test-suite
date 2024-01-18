@@ -45,38 +45,38 @@
   ALLOCATE( CC(1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9))
 
 
-  IF (     SIZE(CC )                                 .NE. 1)              STOP 11
-  IF (KIND(SIZE(CC ))                                .NE. 4)              STOP 12
+  IF (     SIZE(CC )                                 .NE. 1)              ERROR STOP 11
+  IF (KIND(SIZE(CC ))                                .NE. 4)              ERROR STOP 12
 
-  IF (     SIZE(CC,   KIND=K1%KIND )                 .NE. 1)              STOP 13
-  IF (KIND(SIZE(CC,   KIND=K1%KIND ))                .NE. K1%KIND)        STOP 14
+  IF (     SIZE(CC,   KIND=K1%KIND )                 .NE. 1)              ERROR STOP 13
+  IF (KIND(SIZE(CC,   KIND=K1%KIND ))                .NE. K1%KIND)        ERROR STOP 14
   DO I = 1, 9
-    IF (     SIZE(CC, KIND=K1%KIND, DIM=I )          .NE. 1)              STOP 15
-    IF (KIND(SIZE(CC, KIND=K1%KIND, DIM=I ))         .NE. K1%KIND)        STOP 16
+    IF (     SIZE(CC, KIND=K1%KIND, DIM=I )          .NE. 1)              ERROR STOP 15
+    IF (KIND(SIZE(CC, KIND=K1%KIND, DIM=I ))         .NE. K1%KIND)        ERROR STOP 16
   END DO
 
 
-  IF (     SIZE(CC,   KIND=K2%KIND )                 .NE. 1)              STOP 23
-  IF (KIND(SIZE(CC,   KIND=K2%KIND ))                .NE. K2%KIND)        STOP 24
+  IF (     SIZE(CC,   KIND=K2%KIND )                 .NE. 1)              ERROR STOP 23
+  IF (KIND(SIZE(CC,   KIND=K2%KIND ))                .NE. K2%KIND)        ERROR STOP 24
   DO I = 1, 9
-    IF (     SIZE(CC, KIND=K2%KIND, DIM=I )          .NE. 1)              STOP 25
-    IF (KIND(SIZE(CC, KIND=K2%KIND, DIM=I ))         .NE. K2%KIND)        STOP 26
+    IF (     SIZE(CC, KIND=K2%KIND, DIM=I )          .NE. 1)              ERROR STOP 25
+    IF (KIND(SIZE(CC, KIND=K2%KIND, DIM=I ))         .NE. K2%KIND)        ERROR STOP 26
   END DO
 
 
-  IF (     SIZE(CC,   KIND=K4%KIND )                 .NE. 1)              STOP 43
-  IF (KIND(SIZE(CC,   KIND=K4%KIND ))                .NE. K4%KIND)        STOP 44
+  IF (     SIZE(CC,   KIND=K4%KIND )                 .NE. 1)              ERROR STOP 43
+  IF (KIND(SIZE(CC,   KIND=K4%KIND ))                .NE. K4%KIND)        ERROR STOP 44
   DO I = 1, 9
-    IF (     SIZE(CC, KIND=K4%KIND, DIM=I )          .NE. 1)              STOP 45
-    IF (KIND(SIZE(CC, KIND=K4%KIND, DIM=I ))         .NE. K4%KIND)        STOP 46
+    IF (     SIZE(CC, KIND=K4%KIND, DIM=I )          .NE. 1)              ERROR STOP 45
+    IF (KIND(SIZE(CC, KIND=K4%KIND, DIM=I ))         .NE. K4%KIND)        ERROR STOP 46
   END DO
 
 
-  IF (     SIZE(CC,   KIND=K8%KIND )                 .NE. 1)              STOP 53
-  IF (KIND(SIZE(CC,   KIND=K8%KIND ))                .NE. K8%KIND)        STOP 54
+  IF (     SIZE(CC,   KIND=K8%KIND )                 .NE. 1)              ERROR STOP 53
+  IF (KIND(SIZE(CC,   KIND=K8%KIND ))                .NE. K8%KIND)        ERROR STOP 54
   DO I = 1, 9
-    IF (     SIZE(CC, KIND=K8%KIND, DIM=I )          .NE. 1)              STOP 55
-    IF (KIND(SIZE(CC, KIND=K8%KIND, DIM=I ))         .NE. K8%KIND)        STOP 56
+    IF (     SIZE(CC, KIND=K8%KIND, DIM=I )          .NE. 1)              ERROR STOP 55
+    IF (KIND(SIZE(CC, KIND=K8%KIND, DIM=I ))         .NE. K8%KIND)        ERROR STOP 56
   END DO
 
 
@@ -84,38 +84,38 @@
   ALLOCATE( CC(1:0,2:1,3:2,4:3,5:4,6:5,7:6,8:7,9:8))
 
 
-  IF (     SIZE(CC )                                 .NE. 0)              STOP 61
-  IF (KIND(SIZE(CC ))                                .NE. 4)              STOP 62
+  IF (     SIZE(CC )                                 .NE. 0)              ERROR STOP 61
+  IF (KIND(SIZE(CC ))                                .NE. 4)              ERROR STOP 62
 
-  IF (     SIZE(CC,   KIND=K1%KIND )                 .NE. 0)              STOP 63
-  IF (KIND(SIZE(CC,   KIND=K1%KIND ))                .NE. K1%KIND)        STOP 64
+  IF (     SIZE(CC,   KIND=K1%KIND )                 .NE. 0)              ERROR STOP 63
+  IF (KIND(SIZE(CC,   KIND=K1%KIND ))                .NE. K1%KIND)        ERROR STOP 64
   DO I = 1, 9
-    IF (     SIZE(CC, KIND=K1%KIND, DIM=I )          .NE. 0)              STOP 65
-    IF (KIND(SIZE(CC, KIND=K1%KIND, DIM=I ))         .NE. K1%KIND)        STOP 66
+    IF (     SIZE(CC, KIND=K1%KIND, DIM=I )          .NE. 0)              ERROR STOP 65
+    IF (KIND(SIZE(CC, KIND=K1%KIND, DIM=I ))         .NE. K1%KIND)        ERROR STOP 66
   END DO
 
 
-  IF (     SIZE(CC,   KIND=K2%KIND )                 .NE. 0)              STOP 73
-  IF (KIND(SIZE(CC,   KIND=K2%KIND ))                .NE. K2%KIND)        STOP 74
+  IF (     SIZE(CC,   KIND=K2%KIND )                 .NE. 0)              ERROR STOP 73
+  IF (KIND(SIZE(CC,   KIND=K2%KIND ))                .NE. K2%KIND)        ERROR STOP 74
   DO I = 1, 9
-    IF (     SIZE(CC, KIND=K2%KIND, DIM=I )          .NE. 0)              STOP 75
-    IF (KIND(SIZE(CC, KIND=K2%KIND, DIM=I ))         .NE. K2%KIND)        STOP 76
+    IF (     SIZE(CC, KIND=K2%KIND, DIM=I )          .NE. 0)              ERROR STOP 75
+    IF (KIND(SIZE(CC, KIND=K2%KIND, DIM=I ))         .NE. K2%KIND)        ERROR STOP 76
   END DO
 
 
-  IF (     SIZE(CC,   KIND=K4%KIND )                 .NE. 0)              STOP 83
-  IF (KIND(SIZE(CC,   KIND=K4%KIND ))                .NE. K4%KIND)        STOP 84
+  IF (     SIZE(CC,   KIND=K4%KIND )                 .NE. 0)              ERROR STOP 83
+  IF (KIND(SIZE(CC,   KIND=K4%KIND ))                .NE. K4%KIND)        ERROR STOP 84
   DO I = 1, 9
-    IF (     SIZE(CC, KIND=K4%KIND, DIM=I )          .NE. 0)              STOP 85
-    IF (KIND(SIZE(CC, KIND=K4%KIND, DIM=I ))         .NE. K4%KIND)        STOP 86
+    IF (     SIZE(CC, KIND=K4%KIND, DIM=I )          .NE. 0)              ERROR STOP 85
+    IF (KIND(SIZE(CC, KIND=K4%KIND, DIM=I ))         .NE. K4%KIND)        ERROR STOP 86
   END DO
 
 
-  IF (     SIZE(CC,   KIND=K8%KIND )                 .NE. 0)              STOP 93
-  IF (KIND(SIZE(CC,   KIND=K8%KIND ))                .NE. K8%KIND)        STOP 94
+  IF (     SIZE(CC,   KIND=K8%KIND )                 .NE. 0)              ERROR STOP 93
+  IF (KIND(SIZE(CC,   KIND=K8%KIND ))                .NE. K8%KIND)        ERROR STOP 94
   DO I = 1, 9
-    IF (     SIZE(CC, KIND=K8%KIND, DIM=I )          .NE. 0)              STOP 95
-    IF (KIND(SIZE(CC, KIND=K8%KIND, DIM=I ))         .NE. K8%KIND)        STOP 96
+    IF (     SIZE(CC, KIND=K8%KIND, DIM=I )          .NE. 0)              ERROR STOP 95
+    IF (KIND(SIZE(CC, KIND=K8%KIND, DIM=I ))         .NE. K8%KIND)        ERROR STOP 96
   END DO
 
 

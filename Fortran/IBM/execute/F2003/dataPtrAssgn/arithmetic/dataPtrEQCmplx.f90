@@ -48,14 +48,14 @@ subroutine mydefine(a,b)
 
     a%ptr(2:11,3:12) => b(100:1:-1)
 
-    if ( .not. associated(a%ptr)) stop 1
-    if ( any (lbound(a%ptr) .ne. (/2,3/))) stop 2
-    if ( any (ubound(a%ptr) .ne. (/11,12/))) stop 3
+    if ( .not. associated(a%ptr)) error stop 1
+    if ( any (lbound(a%ptr) .ne. (/2,3/))) error stop 2
+    if ( any (ubound(a%ptr) .ne. (/11,12/))) error stop 3
 
     select type (x => a%ptr)
     	type is (complex(4))
 	    write (*, '("(",f10.6,", ", f10.6, ")")') x
-	    if ( any (x == reshape((/(cmplx(i-1,i+1,4),i=100,1,-1)/), (/10,10/)) .neqv. .true. )) stop 6
+	    if ( any (x == reshape((/(cmplx(i-1,i+1,4),i=100,1,-1)/), (/10,10/)) .neqv. .true. )) error stop 6
         class default
 	    stop 8
     end select

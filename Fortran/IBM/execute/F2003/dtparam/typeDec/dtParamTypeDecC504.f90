@@ -28,9 +28,9 @@
   PROGRAM dtParamTypeDecC501
 
 
-  IF ( SIZE( IntFun(10) ) .NE. 10 ) STOP 11
-  IF ( LEN ( IntFun(10) ) .NE. 10 ) STOP 12
-  IF ( ANY ( IntFun(10)   .NE. REPEAT( CHAR(10), 10) )) STOP 13
+  IF ( SIZE( IntFun(10) ) .NE. 10 ) ERROR STOP 11
+  IF ( LEN ( IntFun(10) ) .NE. 10 ) ERROR STOP 12
+  IF ( ANY ( IntFun(10)   .NE. REPEAT( CHAR(10), 10) )) ERROR STOP 13
 
   CONTAINS
   FUNCTION IntFun(Arg)
@@ -41,15 +41,15 @@
   CHARACTER(Arg+1) :: C3(Arg)*(Arg)
   CHARACTER(Arg-1) :: IntFun(Arg)*(Arg)
 
-  IF ( LEN ( C )  .NE. Arg  ) STOP 21
+  IF ( LEN ( C )  .NE. Arg  ) ERROR STOP 21
 
-  IF ( LEN ( C1 ) .NE. Arg ) STOP 31
+  IF ( LEN ( C1 ) .NE. Arg ) ERROR STOP 31
 
-  IF ( LEN ( C2 ) .NE. Arg ) STOP 41
-  IF ( SIZE( C2 ) .NE. Arg ) STOP 42
+  IF ( LEN ( C2 ) .NE. Arg ) ERROR STOP 41
+  IF ( SIZE( C2 ) .NE. Arg ) ERROR STOP 42
 
-  IF ( LEN ( C3 ) .NE. Arg ) STOP 51
-  IF ( SIZE( C3 ) .NE. Arg ) STOP 52
+  IF ( LEN ( C3 ) .NE. Arg ) ERROR STOP 51
+  IF ( SIZE( C3 ) .NE. Arg ) ERROR STOP 52
 
   IntFun = REPEAT( CHAR(Arg), Arg)
 

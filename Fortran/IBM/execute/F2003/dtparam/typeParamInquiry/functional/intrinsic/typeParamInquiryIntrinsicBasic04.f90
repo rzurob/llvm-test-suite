@@ -27,23 +27,23 @@
     LOGICAL     :: L1,L2
     CHARACTER   :: C1,C2
 
-    IF( I1%KIND /= KIND(I1) .or. I1%KIND /= 4 .or. KIND(I1) /= 4 ) STOP 1
-    IF( R1%KIND /= KIND(R1) .or. R1%KIND /= 4 .or. KIND(R1) /= 4 ) STOP 2
-    IF( D1%KIND /= KIND(D1) .or. D1%KIND /= 8 .or. KIND(D1) /= 8 ) STOP 3
-    IF( L1%KIND /= KIND(L1) .or. L1%KIND /= 4 .or. KIND(L1) /= 4 ) STOP 4
-    IF( C1%KIND /= KIND(C1) .or. C1%KIND /= 1 .or. KIND(C1) /= 1 ) STOP 5
-    IF( C1%LEN  /= LEN(C1)  .or. C1%LEN  /= 1 .or. LEN(C1)  /= 1 ) STOP 6
-    IF( X1%KIND /= KIND(X1) .or. X1%KIND /= 4 .or. KIND(X1) /= 4 ) STOP 7
+    IF( I1%KIND /= KIND(I1) .or. I1%KIND /= 4 .or. KIND(I1) /= 4 ) ERROR STOP 1
+    IF( R1%KIND /= KIND(R1) .or. R1%KIND /= 4 .or. KIND(R1) /= 4 ) ERROR STOP 2
+    IF( D1%KIND /= KIND(D1) .or. D1%KIND /= 8 .or. KIND(D1) /= 8 ) ERROR STOP 3
+    IF( L1%KIND /= KIND(L1) .or. L1%KIND /= 4 .or. KIND(L1) /= 4 ) ERROR STOP 4
+    IF( C1%KIND /= KIND(C1) .or. C1%KIND /= 1 .or. KIND(C1) /= 1 ) ERROR STOP 5
+    IF( C1%LEN  /= LEN(C1)  .or. C1%LEN  /= 1 .or. LEN(C1)  /= 1 ) ERROR STOP 6
+    IF( X1%KIND /= KIND(X1) .or. X1%KIND /= 4 .or. KIND(X1) /= 4 ) ERROR STOP 7
 
     CALL SUB1()
 
-    IF( I2%KIND /= KIND(I2) .or. I2%KIND /= 4 .or. KIND(I2) /= 4 ) STOP 11
-    IF( R2%KIND /= KIND(R2) .or. R2%KIND /= 4 .or. KIND(R2) /= 4 ) STOP 12
-    IF( D2%KIND /= KIND(D2) .or. D2%KIND /= 8 .or. KIND(D2) /= 8 ) STOP 13
-    IF( L2%KIND /= KIND(L2) .or. L2%KIND /= 4 .or. KIND(L2) /= 4 ) STOP 14
-    IF( C2%KIND /= KIND(C2) .or. C2%KIND /= 1 .or. KIND(C2) /= 1 ) STOP 15
-    IF( C2%LEN  /= LEN(C2)  .or. C2%LEN  /= 1 .or. LEN(C2)  /= 1 ) STOP 16
-    IF( X2%KIND /= KIND(X2) .or. X2%KIND /= 4 .or. KIND(X2) /= 4 ) STOP 17
+    IF( I2%KIND /= KIND(I2) .or. I2%KIND /= 4 .or. KIND(I2) /= 4 ) ERROR STOP 11
+    IF( R2%KIND /= KIND(R2) .or. R2%KIND /= 4 .or. KIND(R2) /= 4 ) ERROR STOP 12
+    IF( D2%KIND /= KIND(D2) .or. D2%KIND /= 8 .or. KIND(D2) /= 8 ) ERROR STOP 13
+    IF( L2%KIND /= KIND(L2) .or. L2%KIND /= 4 .or. KIND(L2) /= 4 ) ERROR STOP 14
+    IF( C2%KIND /= KIND(C2) .or. C2%KIND /= 1 .or. KIND(C2) /= 1 ) ERROR STOP 15
+    IF( C2%LEN  /= LEN(C2)  .or. C2%LEN  /= 1 .or. LEN(C2)  /= 1 ) ERROR STOP 16
+    IF( X2%KIND /= KIND(X2) .or. X2%KIND /= 4 .or. KIND(X2) /= 4 ) ERROR STOP 17
 
     CONTAINS
 

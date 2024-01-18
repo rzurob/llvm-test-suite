@@ -69,12 +69,12 @@
   L = .FALSE.
   V%PRocPtr => F
   PRINT *, V%ProcPtr()
-  IF( .NOT. L) STOP 11
+  IF( .NOT. L) ERROR STOP 11
 
   L = .FALSE.
   U%ProcPtr => S
   CALL U%ProcPtr()
-  IF( .NOT. L) STOP 12
+  IF( .NOT. L) ERROR STOP 12
 
 END
 

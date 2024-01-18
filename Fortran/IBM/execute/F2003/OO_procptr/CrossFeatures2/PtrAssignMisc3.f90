@@ -58,7 +58,7 @@
   ProcPtr1 => ModFun
   SELECT TYPE ( As => ProcPtr1(-1_1))
   TYPE IS (INTEGER(1))
-    IF ( As .NE. -1 ) STOP 11
+    IF ( As .NE. -1 ) ERROR STOP 11
   CLASS DEFAULT
     STOP 12
   END SELECT
@@ -66,7 +66,7 @@
   ProcPtr2 => ExtFun
   SELECT TYPE ( As => ProcPtr2(1.0_8))
   TYPE IS (REAL(8))
-    IF ( As .NE. 1.0_8 ) STOP 21
+    IF ( As .NE. 1.0_8 ) ERROR STOP 21
   CLASS DEFAULT
     STOP 22
   END SELECT
@@ -74,7 +74,7 @@
   ProcPtr3 => ModFun
   SELECT TYPE ( As => ProcPtr3((1.0, -1.0)) )
   TYPE IS (COMPLEX)
-    IF ( As .NE. (1.0, -1.0) ) STOP 31
+    IF ( As .NE. (1.0, -1.0) ) ERROR STOP 31
   CLASS DEFAULT
     STOP 32
   END SELECT
@@ -82,7 +82,7 @@
   ProcPtr4 => ExtFun
   SELECT TYPE ( As => ProcPtr4("1234567890"))
   TYPE IS (CHARACTER(*))
-    IF ( As .NE. "1234567890" ) STOP 41
+    IF ( As .NE. "1234567890" ) ERROR STOP 41
   CLASS DEFAULT
     STOP 42
   END SELECT

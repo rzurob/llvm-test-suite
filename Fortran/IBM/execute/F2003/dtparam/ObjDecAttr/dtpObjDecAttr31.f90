@@ -97,12 +97,12 @@
 
   res = f_pthread_attr_init(Attr)
 
-  if ((res == einval) .or. (res == enomem)) stop 100
+  if ((res == einval) .or. (res == enomem)) error stop 100
 
   i = 0
   res = f_pthread_create(Thread, Attr, FLAG_DEFAULT, MyThread, I)
 
-  if ((res == einval) .or. (res == enomem) .or. (res == eagain)) stop 101
+  if ((res == einval) .or. (res == enomem) .or. (res == eagain)) error stop 101
 
   DO WHILE ( Mutex .EQ. 0 )
     j = j+1
@@ -110,21 +110,21 @@
 
   ! Verification
   DO I=1, N
-    IF ( T(I)%L0                .NE.   3        )  STOP 51
-    IF ( T(I)%L1                .NE.   5        )  STOP 52
-    IF ( T(I)%L2                .NE.   7        )  STOP 53
-    IF ( T(I)%C1                .NE.   "XYZ"    )  STOP 84
-    IF ( T(I)%C2                .NE.   "ZYX"    )  STOP 85
-    IF ( T(I)%I                 .NE.   1234     )  STOP 86
-    IF ( T(I)%R                 .NE.   4321.    )  STOP 87
-    IF ( T(I)%L                 .NEQV. .TRUE.   )  STOP 88
-    IF ( T(I)%Z                 .NE.   (1.,-1.) )  STOP 89
-    IF ( T(I)%T0%K0             .NE.   8        )  STOP 90
-    IF ( T(I)%T0%L0             .NE.   7        )  STOP 91
-    IF ( SIZE(T(I)%T0)          .NE.   7        )  STOP 91
-    IF ( ASSOCIATED(T(I)%Ptr )  .EQV.  .TRUE.   )  STOP 92
-    IF ( T(I)%Ptr%K2            .NE.   8        )  STOP 93
-    IF ( T(I)%Ptr%L2            .NE.   7        )  STOP 94
+    IF ( T(I)%L0                .NE.   3        )  ERROR STOP 51
+    IF ( T(I)%L1                .NE.   5        )  ERROR STOP 52
+    IF ( T(I)%L2                .NE.   7        )  ERROR STOP 53
+    IF ( T(I)%C1                .NE.   "XYZ"    )  ERROR STOP 84
+    IF ( T(I)%C2                .NE.   "ZYX"    )  ERROR STOP 85
+    IF ( T(I)%I                 .NE.   1234     )  ERROR STOP 86
+    IF ( T(I)%R                 .NE.   4321.    )  ERROR STOP 87
+    IF ( T(I)%L                 .NEQV. .TRUE.   )  ERROR STOP 88
+    IF ( T(I)%Z                 .NE.   (1.,-1.) )  ERROR STOP 89
+    IF ( T(I)%T0%K0             .NE.   8        )  ERROR STOP 90
+    IF ( T(I)%T0%L0             .NE.   7        )  ERROR STOP 91
+    IF ( SIZE(T(I)%T0)          .NE.   7        )  ERROR STOP 91
+    IF ( ASSOCIATED(T(I)%Ptr )  .EQV.  .TRUE.   )  ERROR STOP 92
+    IF ( T(I)%Ptr%K2            .NE.   8        )  ERROR STOP 93
+    IF ( T(I)%Ptr%L2            .NE.   7        )  ERROR STOP 94
   END DO
 
   CALL f_pthread_exit()

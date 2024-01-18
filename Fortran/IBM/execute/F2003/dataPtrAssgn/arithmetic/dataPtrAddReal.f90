@@ -35,17 +35,17 @@ program main
 
     ptr(kind(tar):kind(tar)+3, 0:3) => tar
 
-    if ( .not. associated(ptr)) stop 11
-    if ( any(lbound(ptr) .ne. (/8,0/))) stop 12
-    if ( any(ubound(ptr) .ne. (/11,3/))) stop 13
+    if ( .not. associated(ptr)) error stop 11
+    if ( any(lbound(ptr) .ne. (/8,0/))) error stop 12
+    if ( any(ubound(ptr) .ne. (/11,3/))) error stop 13
 
     ptr(kind(ptr):, kind(tar):) => func(ptr)
 
-    if ( .not. associated(ptr)) stop 21
-    if ( any(lbound(ptr) .ne. (/8,8/))) stop 22
-    if ( any(ubound(ptr) .ne. (/11,11/))) stop 23
+    if ( .not. associated(ptr)) error stop 21
+    if ( any(lbound(ptr) .ne. (/8,8/))) error stop 22
+    if ( any(ubound(ptr) .ne. (/11,11/))) error stop 23
 
     if ( .not. precision_r8(ptr+ptr(10,10), &
-                reshape((/(real(i,8),i=22,7,-1) /) ,(/4,4/)) )) stop 25
+                reshape((/(real(i,8),i=22,7,-1) /) ,(/4,4/)) )) error stop 25
 
 end program

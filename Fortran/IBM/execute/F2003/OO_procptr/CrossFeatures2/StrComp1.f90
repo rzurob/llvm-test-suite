@@ -68,10 +68,10 @@
   REAL(8)  :: Arg2
   TYPE(DT) :: Arg1
 
-    IF ( .NOT. ASSOCIATED(Arg1%ProcPtr))       STOP 11
-    IF ( .NOT. ASSOCIATED(Arg1%BComp%ProcPtr)) STOP 12
-    IF ( Arg1%ProcPtr(Arg2)       .NE. Arg2 )  STOP 13
-    IF ( Arg1%BComp%ProcPtr(Arg2) .NE. Arg2 )  STOP 14
+    IF ( .NOT. ASSOCIATED(Arg1%ProcPtr))       ERROR STOP 11
+    IF ( .NOT. ASSOCIATED(Arg1%BComp%ProcPtr)) ERROR STOP 12
+    IF ( Arg1%ProcPtr(Arg2)       .NE. Arg2 )  ERROR STOP 13
+    IF ( Arg1%BComp%ProcPtr(Arg2) .NE. Arg2 )  ERROR STOP 14
 
   END SUBROUTINE
 

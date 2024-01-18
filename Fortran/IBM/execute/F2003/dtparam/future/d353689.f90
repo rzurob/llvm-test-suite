@@ -23,8 +23,8 @@ program d353689
 
   type(base) ::t
   allocate(integer(t%k1+t%k2) :: t%i(2))
-  if ((t%k1 /= 2) .or. (t%k2 /= 2)) stop 1
+  if ((t%k1 /= 2) .or. (t%k2 /= 2)) error stop 1
 
-  if ((t%i%kind /= 4) .or. (kind(t%i) /= 4)) stop 2
+  if ((t%i%kind /= 4) .or. (kind(t%i) /= 4)) error stop 2
 
 end

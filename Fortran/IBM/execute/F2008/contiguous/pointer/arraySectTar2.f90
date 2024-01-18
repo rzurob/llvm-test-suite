@@ -89,12 +89,12 @@ PROGRAM arraySectTar2
         INTEGER, TARGET, CONTIGUOUS :: Arg(:,:,:)
         INTEGER, POINTER :: ptr(:,:,:)
 
-        IF (      ASSOCIATED(ptr)     ) STOP 10
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 11
+        IF (      ASSOCIATED(ptr)     ) ERROR STOP 10
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 11
 
         ptr => Arg
-        IF ( .NOT. ASSOCIATED(ptr)    ) STOP 12
-        IF ( .NOT. IS_CONTIGUOUS(ptr) ) STOP 13
+        IF ( .NOT. ASSOCIATED(ptr)    ) ERROR STOP 12
+        IF ( .NOT. IS_CONTIGUOUS(ptr) ) ERROR STOP 13
 
       END SUBROUTINE Sub1
 

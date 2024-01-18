@@ -66,156 +66,156 @@ PROGRAM SpecExpHostAssociation01a
         INTEGER :: N
         TYPE(Base(l1=b1%l1)) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 10
-         IF ( Obj%l1 .NE. N ) STOP 11
-         IF ( Obj%I1 .NE. 4 ) STOP 12
-         IF ( SIZE(Obj%A1) .NE.   N ) STOP 13
-         IF ( ANY(Obj%A1   .NE.  8) ) STOP 14
-         IF ( LEN(Obj%C1)  .NE.   N ) STOP 15
-         IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 16
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 10
+         IF ( Obj%l1 .NE. N ) ERROR STOP 11
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 12
+         IF ( SIZE(Obj%A1) .NE.   N ) ERROR STOP 13
+         IF ( ANY(Obj%A1   .NE.  8) ) ERROR STOP 14
+         IF ( LEN(Obj%C1)  .NE.   N ) ERROR STOP 15
+         IF ( TRIM(Obj%C1) .NE. 'B' ) ERROR STOP 16
       END SUBROUTINE Sub11
 
       SUBROUTINE Sub12(N)
         INTEGER :: N
         TYPE(Base(l1=b1%k1)) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 20
-         IF ( Obj%l1 .NE. N ) STOP 21
-         IF ( Obj%I1 .NE. 4 ) STOP 22
-         IF ( SIZE(Obj%A1) .NE.   N ) STOP 23
-         IF ( ANY(Obj%A1   .NE.  8) ) STOP 24
-         IF ( LEN(Obj%C1)  .NE.   N ) STOP 25
-         IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 26
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 20
+         IF ( Obj%l1 .NE. N ) ERROR STOP 21
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 22
+         IF ( SIZE(Obj%A1) .NE.   N ) ERROR STOP 23
+         IF ( ANY(Obj%A1   .NE.  8) ) ERROR STOP 24
+         IF ( LEN(Obj%C1)  .NE.   N ) ERROR STOP 25
+         IF ( TRIM(Obj%C1) .NE. 'B' ) ERROR STOP 26
       END SUBROUTINE Sub12
 
       SUBROUTINE Sub13(N)
         INTEGER :: N
         TYPE(Base(l1=b1%I1)) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 27
-         IF ( Obj%l1 .NE. N ) STOP 28
-         IF ( Obj%I1 .NE. 4 ) STOP 29
-         IF ( SIZE(Obj%A1) .NE.   N ) STOP 30
-         IF ( ANY(Obj%A1   .NE.  8) ) STOP 31
-         IF ( LEN(Obj%C1)  .NE.   N ) STOP 32
-         IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 33
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 27
+         IF ( Obj%l1 .NE. N ) ERROR STOP 28
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 29
+         IF ( SIZE(Obj%A1) .NE.   N ) ERROR STOP 30
+         IF ( ANY(Obj%A1   .NE.  8) ) ERROR STOP 31
+         IF ( LEN(Obj%C1)  .NE.   N ) ERROR STOP 32
+         IF ( TRIM(Obj%C1) .NE. 'B' ) ERROR STOP 33
       END SUBROUTINE Sub13
 
       SUBROUTINE Sub14(N)
         INTEGER :: N
         TYPE(Base(l1=b1%A1(1))) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 34
-         IF ( Obj%l1 .NE. N ) STOP 35
-         IF ( Obj%I1 .NE. 4 ) STOP 36
-         IF ( SIZE(Obj%A1) .NE.   N ) STOP 37
-         IF ( ANY(Obj%A1   .NE.  8) ) STOP 38
-         IF ( LEN(Obj%C1)  .NE.   N ) STOP 39
-         IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 40
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 34
+         IF ( Obj%l1 .NE. N ) ERROR STOP 35
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 36
+         IF ( SIZE(Obj%A1) .NE.   N ) ERROR STOP 37
+         IF ( ANY(Obj%A1   .NE.  8) ) ERROR STOP 38
+         IF ( LEN(Obj%C1)  .NE.   N ) ERROR STOP 39
+         IF ( TRIM(Obj%C1) .NE. 'B' ) ERROR STOP 40
       END SUBROUTINE Sub14
 
       SUBROUTINE Sub15(N)
         INTEGER :: N
         TYPE(Base(l1=KIND(b1%I1))) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 41
-         IF ( Obj%l1 .NE. N ) STOP 42
-         IF ( Obj%I1 .NE. 4 ) STOP 43
-         IF ( SIZE(Obj%A1) .NE.   N ) STOP 44
-         IF ( ANY(Obj%A1   .NE.  8) ) STOP 45
-         IF ( LEN(Obj%C1)  .NE.   N ) STOP 46
-         IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 47
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 41
+         IF ( Obj%l1 .NE. N ) ERROR STOP 42
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 43
+         IF ( SIZE(Obj%A1) .NE.   N ) ERROR STOP 44
+         IF ( ANY(Obj%A1   .NE.  8) ) ERROR STOP 45
+         IF ( LEN(Obj%C1)  .NE.   N ) ERROR STOP 46
+         IF ( TRIM(Obj%C1) .NE. 'B' ) ERROR STOP 47
       END SUBROUTINE Sub15
 
       SUBROUTINE Sub16(N)
         INTEGER :: N
         TYPE(Base(l1=LEN(b1%C1))) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 48
-         IF ( Obj%l1 .NE. N ) STOP 49
-         IF ( Obj%I1 .NE. 4 ) STOP 50
-         IF ( SIZE(Obj%A1) .NE.   N ) STOP 51
-         IF ( ANY(Obj%A1   .NE.  8) ) STOP 52
-         IF ( LEN(Obj%C1)  .NE.   N ) STOP 53
-         IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 54
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 48
+         IF ( Obj%l1 .NE. N ) ERROR STOP 49
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 50
+         IF ( SIZE(Obj%A1) .NE.   N ) ERROR STOP 51
+         IF ( ANY(Obj%A1   .NE.  8) ) ERROR STOP 52
+         IF ( LEN(Obj%C1)  .NE.   N ) ERROR STOP 53
+         IF ( TRIM(Obj%C1) .NE. 'B' ) ERROR STOP 54
       END SUBROUTINE Sub16
 
       SUBROUTINE Sub21(N)
         INTEGER :: N
         TYPE(Base(l1=b2%l1)) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 55
-         IF ( Obj%l1 .NE. N ) STOP 56
-         IF ( Obj%I1 .NE. 4 ) STOP 57
-         IF ( SIZE(Obj%A1) .NE.   N ) STOP 58
-         IF ( ANY(Obj%A1   .NE.  8) ) STOP 59
-         IF ( LEN(Obj%C1)  .NE.   N ) STOP 60
-         IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 61
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 55
+         IF ( Obj%l1 .NE. N ) ERROR STOP 56
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 57
+         IF ( SIZE(Obj%A1) .NE.   N ) ERROR STOP 58
+         IF ( ANY(Obj%A1   .NE.  8) ) ERROR STOP 59
+         IF ( LEN(Obj%C1)  .NE.   N ) ERROR STOP 60
+         IF ( TRIM(Obj%C1) .NE. 'B' ) ERROR STOP 61
       END SUBROUTINE Sub21
 
       SUBROUTINE Sub22(N)
         INTEGER :: N
         TYPE(Base(l1=b2%k1)) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 62
-         IF ( Obj%l1 .NE. N ) STOP 63
-         IF ( Obj%I1 .NE. 4 ) STOP 64
-         IF ( SIZE(Obj%A1) .NE.   N ) STOP 65
-         IF ( ANY(Obj%A1   .NE.  8) ) STOP 66
-         IF ( LEN(Obj%C1)  .NE.   N ) STOP 67
-         IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 68
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 62
+         IF ( Obj%l1 .NE. N ) ERROR STOP 63
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 64
+         IF ( SIZE(Obj%A1) .NE.   N ) ERROR STOP 65
+         IF ( ANY(Obj%A1   .NE.  8) ) ERROR STOP 66
+         IF ( LEN(Obj%C1)  .NE.   N ) ERROR STOP 67
+         IF ( TRIM(Obj%C1) .NE. 'B' ) ERROR STOP 68
       END SUBROUTINE Sub22
 
       SUBROUTINE Sub23(N)
         INTEGER :: N
         TYPE(Base(l1=b2%I1)) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 69
-         IF ( Obj%l1 .NE. N ) STOP 70
-         IF ( Obj%I1 .NE. 4 ) STOP 71
-         IF ( SIZE(Obj%A1) .NE.   N ) STOP 72
-         IF ( ANY(Obj%A1   .NE.  8) ) STOP 73
-         IF ( LEN(Obj%C1)  .NE.   N ) STOP 74
-         IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 75
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 69
+         IF ( Obj%l1 .NE. N ) ERROR STOP 70
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 71
+         IF ( SIZE(Obj%A1) .NE.   N ) ERROR STOP 72
+         IF ( ANY(Obj%A1   .NE.  8) ) ERROR STOP 73
+         IF ( LEN(Obj%C1)  .NE.   N ) ERROR STOP 74
+         IF ( TRIM(Obj%C1) .NE. 'B' ) ERROR STOP 75
       END SUBROUTINE Sub23
 
       SUBROUTINE Sub24(N)
         INTEGER :: N
         TYPE(Base(l1=b2%A1(1))) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 76
-         IF ( Obj%l1 .NE. N ) STOP 77
-         IF ( Obj%I1 .NE. 4 ) STOP 78
-         IF ( SIZE(Obj%A1) .NE.   N ) STOP 79
-         IF ( ANY(Obj%A1   .NE.  8) ) STOP 80
-         IF ( LEN(Obj%C1)  .NE.   N ) STOP 81
-         IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 82
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 76
+         IF ( Obj%l1 .NE. N ) ERROR STOP 77
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 78
+         IF ( SIZE(Obj%A1) .NE.   N ) ERROR STOP 79
+         IF ( ANY(Obj%A1   .NE.  8) ) ERROR STOP 80
+         IF ( LEN(Obj%C1)  .NE.   N ) ERROR STOP 81
+         IF ( TRIM(Obj%C1) .NE. 'B' ) ERROR STOP 82
       END SUBROUTINE Sub24
 
       SUBROUTINE Sub25(N)
         INTEGER :: N
         TYPE(Base(l1=KIND(b2%I1))) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 83
-         IF ( Obj%l1 .NE. N ) STOP 84
-         IF ( Obj%I1 .NE. 4 ) STOP 85
-         IF ( SIZE(Obj%A1) .NE.   N ) STOP 86
-         IF ( ANY(Obj%A1   .NE.  8) ) STOP 87
-         IF ( LEN(Obj%C1)  .NE.   N ) STOP 88
-         IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 89
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 83
+         IF ( Obj%l1 .NE. N ) ERROR STOP 84
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 85
+         IF ( SIZE(Obj%A1) .NE.   N ) ERROR STOP 86
+         IF ( ANY(Obj%A1   .NE.  8) ) ERROR STOP 87
+         IF ( LEN(Obj%C1)  .NE.   N ) ERROR STOP 88
+         IF ( TRIM(Obj%C1) .NE. 'B' ) ERROR STOP 89
       END SUBROUTINE Sub25
 
       SUBROUTINE Sub26(N)
         INTEGER :: N
         TYPE(Base(l1=LEN(b2%C1))) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 90
-         IF ( Obj%l1 .NE. N ) STOP 91
-         IF ( Obj%I1 .NE. 4 ) STOP 92
-         IF ( SIZE(Obj%A1) .NE.   N ) STOP 93
-         IF ( ANY(Obj%A1   .NE.  8) ) STOP 94
-         IF ( LEN(Obj%C1)  .NE.   N ) STOP 95
-         IF ( TRIM(Obj%C1) .NE. 'B' ) STOP 96
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 90
+         IF ( Obj%l1 .NE. N ) ERROR STOP 91
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 92
+         IF ( SIZE(Obj%A1) .NE.   N ) ERROR STOP 93
+         IF ( ANY(Obj%A1   .NE.  8) ) ERROR STOP 94
+         IF ( LEN(Obj%C1)  .NE.   N ) ERROR STOP 95
+         IF ( TRIM(Obj%C1) .NE. 'B' ) ERROR STOP 96
       END SUBROUTINE Sub26
 
 END PROGRAM SpecExpHostAssociation01a

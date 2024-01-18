@@ -81,7 +81,7 @@ program formatAsynDirect02
 
   ! inquire state of first write
   inquire(10,pending=pending1,id=idvar1)
-  if(pending1 .neqv. .false.)     stop 13
+  if(pending1 .neqv. .false.)     error stop 13
 
   if(ios /= 0)  then
       print *,"error in writing data"
@@ -95,7 +95,7 @@ program formatAsynDirect02
 
   ! inquire state of second write
   inquire(10,pending=pending2,id=idvar2)
-  if(pending2 .neqv. .false.)     stop 15
+  if(pending2 .neqv. .false.)     error stop 15
 
 
   ! read data from first record
@@ -123,7 +123,7 @@ program formatAsynDirect02
   wait(10)
 
   inquire(10,pending=pending1)
-  if(pending1 .neqv. .false.)     stop 18
+  if(pending1 .neqv. .false.)     error stop 18
 
    ! output the data for verification
    write(*,'(3i3,2f6.2)')  dtp2

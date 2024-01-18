@@ -34,6 +34,6 @@
 
       call move_alloc(a2, a1)
 
-      if ( allocated(a2) ) stop 21
-      if ( .not. allocated(a1) ) stop 23
+      if ( allocated(a2) ) error stop 21
+      if ( .not. allocated(a1) ) error stop 23
       end

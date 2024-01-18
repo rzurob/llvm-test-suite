@@ -44,16 +44,16 @@
 
   TYPE(DT0) :: T0
 
-  IF ( KIND(T0%IK1) .NE. 1 )      STOP 11
-  IF ( T0%IK1       .NE. 1 )      STOP 12
-  IF ( KIND(T0%IK2) .NE. 2 )      STOP 13
-  IF ( T0%IK2       .NE. 2 )      STOP 14
-  IF ( KIND(T0%IK)  .NE. 4 )      STOP 15
-  IF ( T0%IK        .NE. 4 )      STOP 16
-  IF ( KIND(T0%IK4) .NE. 4 )      STOP 17
-  IF ( T0%IK4       .NE. 4 )      STOP 18
-  IF ( KIND(T0%IK8) .NE. 8 )      STOP 19
-  IF ( T0%IK8       .NE. 8 )      STOP 10
+  IF ( KIND(T0%IK1) .NE. 1 )      ERROR STOP 11
+  IF ( T0%IK1       .NE. 1 )      ERROR STOP 12
+  IF ( KIND(T0%IK2) .NE. 2 )      ERROR STOP 13
+  IF ( T0%IK2       .NE. 2 )      ERROR STOP 14
+  IF ( KIND(T0%IK)  .NE. 4 )      ERROR STOP 15
+  IF ( T0%IK        .NE. 4 )      ERROR STOP 16
+  IF ( KIND(T0%IK4) .NE. 4 )      ERROR STOP 17
+  IF ( T0%IK4       .NE. 4 )      ERROR STOP 18
+  IF ( KIND(T0%IK8) .NE. 8 )      ERROR STOP 19
+  IF ( T0%IK8       .NE. 8 )      ERROR STOP 10
 
 
   END

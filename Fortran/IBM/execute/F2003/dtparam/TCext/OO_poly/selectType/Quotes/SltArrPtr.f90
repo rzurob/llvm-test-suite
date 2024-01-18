@@ -81,10 +81,10 @@
         SELECT TYPE ( As )
           TYPE IS (Child(4,*,4,*,4,*))
 
-            IF ( SIZE(As)   .NE. 186 )          STOP 42
-            IF ( SIZEOF(As) .NE. 0 )            STOP 43
-            IF ( ANY(As%Base%GetId() .NE. 1 ) ) STOP 44
-            IF ( ANY(As%GetId()      .NE. 2 ) ) STOP 45
+            IF ( SIZE(As)   .NE. 186 )          ERROR STOP 42
+            IF ( SIZEOF(As) .NE. 0 )            ERROR STOP 43
+            IF ( ANY(As%Base%GetId() .NE. 1 ) ) ERROR STOP 44
+            IF ( ANY(As%GetId()      .NE. 2 ) ) ERROR STOP 45
 
          CLASS DEFAULT
             STOP 40

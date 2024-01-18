@@ -18,6 +18,6 @@ end type
 type(dt) :: x
 type(dt2) :: y
 x%i = y%i
-if (.not. allocated(x%i)) stop 1
-if (any(shape(x%i) .ne. (/2/))) stop 2
+if (.not. allocated(x%i)) error stop 1
+if (any(shape(x%i) .ne. (/2/))) error stop 2
 end

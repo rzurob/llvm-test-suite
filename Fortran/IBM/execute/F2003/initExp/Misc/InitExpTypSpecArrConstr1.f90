@@ -40,21 +40,21 @@
   COMPLEX(KIND=KIND(R8)),PARAMETER :: TZ8(128)= [COMPLEX(KIND=KIND(R8)) :: (-I, I=1, 128)]
   COMPLEX(KIND=KIND(R6)),PARAMETER :: TZ6(128)= [COMPLEX(KIND=KIND(R6)) :: (-I, I=1, 128)]
 
-  IF ( KIND(TR4) .NE. 4      ) STOP 12
-  IF ( KIND(TR8) .NE. 8      ) STOP 13
-  IF ( KIND(TR6) .NE. 16     ) STOP 14
+  IF ( KIND(TR4) .NE. 4      ) ERROR STOP 12
+  IF ( KIND(TR8) .NE. 8      ) ERROR STOP 13
+  IF ( KIND(TR6) .NE. 16     ) ERROR STOP 14
 
-  IF ( ANY(TR4   .NE. (/(-I, I=1, 128)/) ) ) STOP 22
-  IF ( ANY(TR8   .NE. (/(-I, I=1, 128)/) ) ) STOP 23
-  IF ( ANY(TR6   .NE. (/(-I, I=1, 128)/) ) ) STOP 24
+  IF ( ANY(TR4   .NE. (/(-I, I=1, 128)/) ) ) ERROR STOP 22
+  IF ( ANY(TR8   .NE. (/(-I, I=1, 128)/) ) ) ERROR STOP 23
+  IF ( ANY(TR6   .NE. (/(-I, I=1, 128)/) ) ) ERROR STOP 24
 
-  IF ( KIND(TZ4) .NE. 4      ) STOP 32
-  IF ( KIND(TZ8) .NE. 8      ) STOP 33
-  IF ( KIND(TZ6) .NE. 16     ) STOP 34
+  IF ( KIND(TZ4) .NE. 4      ) ERROR STOP 32
+  IF ( KIND(TZ8) .NE. 8      ) ERROR STOP 33
+  IF ( KIND(TZ6) .NE. 16     ) ERROR STOP 34
 
-  IF ( ANY(TZ4   .NE. TR4 ) ) STOP 42
-  IF ( ANY(TZ8   .NE. TR8 ) ) STOP 43
-  IF ( ANY(TZ6   .NE. TR6 ) ) STOP 44
+  IF ( ANY(TZ4   .NE. TR4 ) ) ERROR STOP 42
+  IF ( ANY(TZ8   .NE. TR8 ) ) ERROR STOP 43
+  IF ( ANY(TZ6   .NE. TR6 ) ) ERROR STOP 44
 
   END
 

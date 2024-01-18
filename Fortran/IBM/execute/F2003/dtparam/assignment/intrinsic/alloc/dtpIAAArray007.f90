@@ -89,21 +89,21 @@ contains
     type(containera(1,*)) :: a
     if (allocated(a%dkvar) .and. allocated(a%dlvar)) then
        print *, step, "fin1:", a%l, a%dkvar%ivar, a%dlvar%chvar, size(a%dlvar%iarr), a%dlvar%iarr
-       if (a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) stop 2
-       if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l) stop 3
+       if (a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) error stop 2
+       if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l) error stop 3
        deallocate(a%dkvar, a%dlvar)
     else if(allocated(a%dkvar)) then
        print *, step, "fin1:", a%l, a%dkvar%ivar, "dlvar not allocated"
-       if (a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) stop 4
+       if (a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) error stop 4
        deallocate(a%dkvar)
     else if(allocated(a%dlvar)) then
        print *, step, "fin1:", a%l, "dkvar not allocated", a%dlvar%chvar, size(a%dlvar%iarr), a%dlvar%iarr
-       if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l) stop 5
+       if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l) error stop 5
        deallocate(a%dlvar)
     else
        print *, step, "fin1:", a%l, "no allocations"
     end if
-    if (a%k /= 1) stop 9
+    if (a%k /= 1) error stop 9
   end subroutine fin1
 
   subroutine fin1arr(a)
@@ -115,21 +115,21 @@ contains
     type(containera(4,*)) :: a
     if (allocated(a%dkvar) .and. allocated(a%dlvar)) then
        print *, step, "fin4:", a%l, a%dkvar%ivar, a%dlvar%chvar, size(a%dlvar%iarr), a%dlvar%iarr
-       if (a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) stop 6
-       if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l) stop 7
+       if (a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) error stop 6
+       if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l) error stop 7
        deallocate(a%dkvar, a%dlvar)
     else if(allocated(a%dkvar)) then
        print *, step, "fin4:", a%l, a%dkvar%ivar, "dlvar not allocated"
-       if (a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) stop 8
+       if (a%dkvar%k /= a%k .or. kind(a%dkvar%ivar) /= a%k) error stop 8
        deallocate(a%dkvar)
     else if(allocated(a%dlvar)) then
        print *, step, "fin4:", a%l, "dkvar not allocated", a%dlvar%chvar, size(a%dlvar%iarr), a%dlvar%iarr
-       if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l) stop 9
+       if (a%dlvar%l /= a%l .or. len(a%dlvar%chvar) /= a%l) error stop 9
        deallocate(a%dlvar)
     else
        print *, step, "fin4:", a%l, "no allocations"
     end if
-    if (a%k /= 4) stop 10
+    if (a%k /= 4) error stop 10
   end subroutine fin4
 
   subroutine fin4arr(a)

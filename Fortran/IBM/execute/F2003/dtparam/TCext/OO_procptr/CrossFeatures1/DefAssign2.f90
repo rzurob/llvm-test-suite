@@ -110,15 +110,15 @@
     B1 = Base(4,20)(Fun)
   END WHERE
   DO I=1, 511
-    IF (.NOT. ASSOCIATED(B1(I)%ProcPtr, Fun)) STOP 11
+    IF (.NOT. ASSOCIATED(B1(I)%ProcPtr, Fun)) ERROR STOP 11
   END DO
 
   WHERE ((/(.TRUE., I=1,511)/)  )
     D1 = Base(4,20)(Fun)
   END WHERE
   DO I=1, 511
-    IF (.NOT. ASSOCIATED(D1(I)%BComp%ProcPtr, Fun)) STOP 22
-    IF (D1(I)%Id .NE. -1) STOP 23
+    IF (.NOT. ASSOCIATED(D1(I)%BComp%ProcPtr, Fun)) ERROR STOP 22
+    IF (D1(I)%Id .NE. -1) ERROR STOP 23
   END DO
 
   BTar = Base(4,20)(RetPtr(Fun))
@@ -126,7 +126,7 @@
     B2 = DT(20,4)(-1, BTar)
   END WHERE
   DO I=1, 511
-    IF (.NOT. ASSOCIATED(B2(I)%ProcPtr, Fun)) STOP 32
+    IF (.NOT. ASSOCIATED(B2(I)%ProcPtr, Fun)) ERROR STOP 32
   END DO
 
   BTar = Base(4,20)(Fun)
@@ -134,8 +134,8 @@
     D2 = DT(20,4)(-3, BTar)
   END WHERE
   DO I=1, 511
-    IF (.NOT. ASSOCIATED(D2(I)%BComp%ProcPtr, Fun)) STOP 42
-    IF (D2(I)%Id .NE. 3) STOP 43
+    IF (.NOT. ASSOCIATED(D2(I)%BComp%ProcPtr, Fun)) ERROR STOP 42
+    IF (D2(I)%Id .NE. 3) ERROR STOP 43
   END DO
 
   CONTAINS

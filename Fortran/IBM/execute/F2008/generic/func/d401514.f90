@@ -22,9 +22,9 @@ implicit none
      i_ptr => i_tgt
 
      i_res = alloc_ptr_func(i_alloc)
-     if (ANY(i_res /= i_resa)) stop 3
+     if (ANY(i_res /= i_resa)) error stop 3
      i_res = alloc_ptr_func(i_ptr)
-     if (ANY(i_res /= i_resp)) stop 4
+     if (ANY(i_res /= i_resp)) error stop 4
      print *, " .... end"
 end program
 

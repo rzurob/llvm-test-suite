@@ -53,15 +53,15 @@ end module
 	call foo(ct)
 
 	! verify association status & bound info of lp, rp, cp
-        if ( .not. associated(lp, lt) ) stop 9
+        if ( .not. associated(lp, lt) ) error stop 9
         print *, lbound(lp)
         print *, ubound(lp)
 
-        if ( .not. associated(rp) ) stop 19
+        if ( .not. associated(rp) ) error stop 19
         print *, lbound(rp,1)
         print *, ubound(rp,1)
 
-        if ( .not. associated(cp) ) stop 29
+        if ( .not. associated(cp) ) error stop 29
         print *, lbound(cp)
         print *, ubound(cp)
 

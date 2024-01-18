@@ -58,18 +58,18 @@
 
   CALL Sub(V)
 
-  IF ( ANY(V%BaseID  .NE.  -1 ) )  STOP 51
-  IF ( ANY(V%ChildID .NE.  -2 ) )  STOP 52
+  IF ( ANY(V%BaseID  .NE.  -1 ) )  ERROR STOP 51
+  IF ( ANY(V%ChildID .NE.  -2 ) )  ERROR STOP 52
 
   CALL Sub(V)
 
-  IF ( ANY(V%BaseID  .NE.  1 ) )  STOP 51
-  IF ( ANY(V%ChildID .NE.  2 ) )  STOP 52
+  IF ( ANY(V%BaseID  .NE.  1 ) )  ERROR STOP 51
+  IF ( ANY(V%ChildID .NE.  2 ) )  ERROR STOP 52
 
   SELECT TYPE ( As => V(1)%Unknown  )
   TYPE IS (CHARACTER(*))
-    IF ( ANY(SHAPE(As) .NE. (/2/) ) )  STOP 60
-    IF ( ANY(As        .NE. "123" ) )  STOP 61
+    IF ( ANY(SHAPE(As) .NE. (/2/) ) )  ERROR STOP 60
+    IF ( ANY(As        .NE. "123" ) )  ERROR STOP 61
   CLASS DEFAULT
     STOP 63
   END SELECT

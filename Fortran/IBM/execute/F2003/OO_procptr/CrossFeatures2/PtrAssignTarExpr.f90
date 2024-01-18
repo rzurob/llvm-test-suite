@@ -91,7 +91,7 @@
     Ptr   => Ptr1(FDT)
     SELECT TYPE ( As => Ptr(DT("abc")))
     TYPE IS (DT)
-      IF ( As%Str .NE. "abc" ) STOP 11
+      IF ( As%Str .NE. "abc" ) ERROR STOP 11
     CLASS DEFAULT
       STOP 12
     END SELECT
@@ -100,7 +100,7 @@
     Ptr   => Ptr2(Ptr1(FDT))
     SELECT TYPE ( As => Ptr(DT("cba")))
     TYPE IS (DT)
-      IF ( As%Str .NE. "cba" ) STOP 21
+      IF ( As%Str .NE. "cba" ) ERROR STOP 21
     CLASS DEFAULT
       STOP 22
     END SELECT

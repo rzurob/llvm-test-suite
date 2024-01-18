@@ -51,22 +51,22 @@
 
   CHARACTER(59), PARAMETER :: Spaces=" "
 
-  IF (T%C       .NE. ACHAR(60)//Spaces  )            STOP 11
-  IF (LEN(T%C)  .NE. 60   )                          STOP 12
+  IF (T%C       .NE. ACHAR(60)//Spaces  )            ERROR STOP 11
+  IF (LEN(T%C)  .NE. 60   )                          ERROR STOP 12
 
-  IF (T1%C       .NE. ACHAR(60)//Spaces  )           STOP 13
-  IF (LEN(T%C)   .NE. 60   )                         STOP 14
-  IF ( ANY(T1%C1 .NE. ACHAR(60)//Spaces  ) )         STOP 15
-  IF (LEN(T1%C1) .NE. 60   )                         STOP 16
+  IF (T1%C       .NE. ACHAR(60)//Spaces  )           ERROR STOP 13
+  IF (LEN(T%C)   .NE. 60   )                         ERROR STOP 14
+  IF ( ANY(T1%C1 .NE. ACHAR(60)//Spaces  ) )         ERROR STOP 15
+  IF (LEN(T1%C1) .NE. 60   )                         ERROR STOP 16
 
-  IF (ANY(LBOUND(C)   .NE. (/60/)) )                 STOP 17
-  IF (ANY(UBOUND(C)   .NE. (/60/)) )                 STOP 18
-  IF (ANY(C   .NE.    ACHAR(60)//Spaces ) )          STOP 19
+  IF (ANY(LBOUND(C)   .NE. (/60/)) )                 ERROR STOP 17
+  IF (ANY(UBOUND(C)   .NE. (/60/)) )                 ERROR STOP 18
+  IF (ANY(C   .NE.    ACHAR(60)//Spaces ) )          ERROR STOP 19
 
-  IF (SIZE(Const)   .NE. 60 )                        STOP 20
-  IF (ANY(Const%C   .NE. ACHAR(60)//Spaces) )        STOP 21
+  IF (SIZE(Const)   .NE. 60 )                        ERROR STOP 20
+  IF (ANY(Const%C   .NE. ACHAR(60)//Spaces) )        ERROR STOP 21
   DO I=1,  3
-    IF (ANY(Const(I)%C1  .NE. ACHAR(60)//Spaces) )   STOP 22
+    IF (ANY(Const(I)%C1  .NE. ACHAR(60)//Spaces) )   ERROR STOP 22
   END DO
 
 
@@ -96,22 +96,22 @@
 
   CHARACTER(59), PARAMETER :: Spaces=" "
 
-  IF (T%C       .NE. ACHAR(60)//Spaces  )            STOP 31
-  IF (LEN(T%C)  .NE. 60   )                          STOP 32
+  IF (T%C       .NE. ACHAR(60)//Spaces  )            ERROR STOP 31
+  IF (LEN(T%C)  .NE. 60   )                          ERROR STOP 32
 
-  IF (T1%C       .NE. ACHAR(60)//Spaces  )           STOP 33
-  IF (LEN(T%C)   .NE. 60   )                         STOP 34
-  IF ( ANY(T1%C1 .NE. ACHAR(60)//Spaces  ) )         STOP 35
-  IF (LEN(T1%C1) .NE. 60   )                         STOP 36
+  IF (T1%C       .NE. ACHAR(60)//Spaces  )           ERROR STOP 33
+  IF (LEN(T%C)   .NE. 60   )                         ERROR STOP 34
+  IF ( ANY(T1%C1 .NE. ACHAR(60)//Spaces  ) )         ERROR STOP 35
+  IF (LEN(T1%C1) .NE. 60   )                         ERROR STOP 36
 
-  IF (ANY(LBOUND(C)   .NE. (/60/)) )                 STOP 37
-  IF (ANY(UBOUND(C)   .NE. (/60/)) )                 STOP 38
-  IF (ANY(C   .NE.    ACHAR(60)//Spaces ) )          STOP 39
+  IF (ANY(LBOUND(C)   .NE. (/60/)) )                 ERROR STOP 37
+  IF (ANY(UBOUND(C)   .NE. (/60/)) )                 ERROR STOP 38
+  IF (ANY(C   .NE.    ACHAR(60)//Spaces ) )          ERROR STOP 39
 
-  IF (SIZE(Const)   .NE. 60 )                        STOP 40
-  IF (ANY(Const%C   .NE. ACHAR(60)//Spaces) )        STOP 41
+  IF (SIZE(Const)   .NE. 60 )                        ERROR STOP 40
+  IF (ANY(Const%C   .NE. ACHAR(60)//Spaces) )        ERROR STOP 41
   DO I=1,  3
-    IF (ANY(Const(I)%C1  .NE. ACHAR(60)//Spaces) )   STOP 42
+    IF (ANY(Const(I)%C1  .NE. ACHAR(60)//Spaces) )   ERROR STOP 42
   END DO
 
   END SUBROUTINE
@@ -138,22 +138,22 @@
 
   CHARACTER(59), PARAMETER :: Spaces=" "
 
-  IF (T%C       .NE. ACHAR(60)//Spaces  )            STOP 51
-  IF (LEN(T%C)  .NE. 60   )                          STOP 52
+  IF (T%C       .NE. ACHAR(60)//Spaces  )            ERROR STOP 51
+  IF (LEN(T%C)  .NE. 60   )                          ERROR STOP 52
 
-  IF (T1%C       .NE. ACHAR(60)//Spaces  )           STOP 53
-  IF (LEN(T%C)   .NE. 60   )                         STOP 54
-  IF ( ANY(T1%C1 .NE. ACHAR(60)//Spaces  ) )         STOP 55
-  IF (LEN(T1%C1) .NE. 60   )                         STOP 56
+  IF (T1%C       .NE. ACHAR(60)//Spaces  )           ERROR STOP 53
+  IF (LEN(T%C)   .NE. 60   )                         ERROR STOP 54
+  IF ( ANY(T1%C1 .NE. ACHAR(60)//Spaces  ) )         ERROR STOP 55
+  IF (LEN(T1%C1) .NE. 60   )                         ERROR STOP 56
 
-  IF (ANY(LBOUND(C)   .NE. (/60/)) )                 STOP 57
-  IF (ANY(UBOUND(C)   .NE. (/60/)) )                 STOP 58
-  IF (ANY(C   .NE.    ACHAR(60)//Spaces ) )          STOP 59
+  IF (ANY(LBOUND(C)   .NE. (/60/)) )                 ERROR STOP 57
+  IF (ANY(UBOUND(C)   .NE. (/60/)) )                 ERROR STOP 58
+  IF (ANY(C   .NE.    ACHAR(60)//Spaces ) )          ERROR STOP 59
 
-  IF (SIZE(Const)   .NE. 60 )                        STOP 60
-  IF (ANY(Const%C   .NE. ACHAR(60)//Spaces) )        STOP 61
+  IF (SIZE(Const)   .NE. 60 )                        ERROR STOP 60
+  IF (ANY(Const%C   .NE. ACHAR(60)//Spaces) )        ERROR STOP 61
   DO I=1,  3
-    IF (ANY(Const(I)%C1  .NE. ACHAR(60)//Spaces) )   STOP 62
+    IF (ANY(Const(I)%C1  .NE. ACHAR(60)//Spaces) )   ERROR STOP 62
   END DO
 
   END SUBROUTINE

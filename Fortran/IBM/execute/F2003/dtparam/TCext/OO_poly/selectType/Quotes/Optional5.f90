@@ -63,17 +63,17 @@
     SELECT TYPE (U => DTV)
     CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, DT(20,4)()))        STOP 50
-      IF ( SIZE(U)          .NE. 2**18 )       STOP 51
-      IF ( ANY (LBOUND(U)   .NE. (/1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/) ) ) STOP 52
-      IF ( ANY (UBOUND(U)   .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/) ) ) STOP 53
-      IF ( ANY(SHAPE(U)     .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/)) )  STOP 54
+      IF ( .NOT. SAME_TYPE_AS(U, DT(20,4)()))        ERROR STOP 50
+      IF ( SIZE(U)          .NE. 2**18 )       ERROR STOP 51
+      IF ( ANY (LBOUND(U)   .NE. (/1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/) ) ) ERROR STOP 52
+      IF ( ANY (UBOUND(U)   .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/) ) ) ERROR STOP 53
+      IF ( ANY(SHAPE(U)     .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/)) )  ERROR STOP 54
 
       SELECT TYPE ( U )
 
       TYPE IS (DT(*,4))
-        IF ( ANY(U%Id      .NE. DTV%Id ) )      STOP 55
-        IF ( ANY(U%GetId() .NE. DTV%GetId()))   STOP 56
+        IF ( ANY(U%Id      .NE. DTV%Id ) )      ERROR STOP 55
+        IF ( ANY(U%GetId() .NE. DTV%GetId()))   ERROR STOP 56
 
       CLASS DEFAULT
         STOP 57
@@ -94,11 +94,11 @@
     SELECT TYPE (U => Arg(S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S,S))
     CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))        STOP 30
-      IF ( SIZE(U)          .NE. 2**18 )      STOP 31
-      IF ( ANY (LBOUND(U)   .NE. (/1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/) ) ) STOP 32
-      IF ( ANY (UBOUND(U)   .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/) ) ) STOP 33
-      IF ( ANY(SHAPE(U)     .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/)) )  STOP 34
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))        ERROR STOP 30
+      IF ( SIZE(U)          .NE. 2**18 )      ERROR STOP 31
+      IF ( ANY (LBOUND(U)   .NE. (/1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1/) ) ) ERROR STOP 32
+      IF ( ANY (UBOUND(U)   .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/) ) ) ERROR STOP 33
+      IF ( ANY(SHAPE(U)     .NE. (/2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2/)) )  ERROR STOP 34
 
     ASSOCIATE ( W => U )
 
@@ -108,8 +108,8 @@
 
         DTVPtr => DTV
 
-        IF ( ANY(U%Id      .NE. DTVPtr%Id ) )      STOP 42
-        IF ( ANY(U%GetId() .NE. DTVPtr%GetId()))   STOP 43
+        IF ( ANY(U%Id      .NE. DTVPtr%Id ) )      ERROR STOP 42
+        IF ( ANY(U%GetId() .NE. DTVPtr%GetId()))   ERROR STOP 43
 
       CLASS DEFAULT
         STOP 51

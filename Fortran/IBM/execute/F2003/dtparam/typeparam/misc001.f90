@@ -74,7 +74,7 @@ use m
     integer, intent(in) :: n
     real(8), intent(in) :: data(n)
 
-    if (n /=20) stop 20
+    if (n /=20) error stop 20
     allocate (b1, source=proc(n, data))
 end subroutine
 
@@ -85,7 +85,7 @@ use m
     integer, intent(in) :: n
     real(8), intent(in) :: data(n)
 
-    if (n /=20) stop 19
+    if (n /=20) error stop 19
     allocate (base19:: b1)
 
     b1%data = data

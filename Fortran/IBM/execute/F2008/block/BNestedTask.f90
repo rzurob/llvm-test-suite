@@ -47,7 +47,7 @@ PROGRAM BNestedTask
                  !$OMP END task
 
                  !$OMP critical (test)
-                     IF ( j .NE. -99 ) STOP 10
+                     IF ( j .NE. -99 ) ERROR STOP 10
                  !$OMP END critical (test)
             END BLOCK
             localVar(i) = temp1(iMod)

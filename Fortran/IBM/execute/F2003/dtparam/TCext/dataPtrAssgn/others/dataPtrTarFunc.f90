@@ -50,7 +50,7 @@
 			! bounds-remapping-list
 			a1%p(20:25,set_lb(4):20) => func(101,200)
 
-			if ( .not. associated(a1%p)) stop 11
+			if ( .not. associated(a1%p)) error stop 11
 			print *, lbound(a1%p)
 			print *, ubound(a1%p)
 			print *, a1%p
@@ -58,7 +58,7 @@
 			! bounds-spec-list
 			p(a1%p(20,11):) => func(1,a1%p(25,20)/4)
 
-			if ( .not. associated(p)) stop 12
+			if ( .not. associated(p)) error stop 12
 			print *, lbound(p)
 			print *, ubound(p)
 			print *, p

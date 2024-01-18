@@ -19,7 +19,7 @@ module m
         class(stat(kindVal,*)), intent(in) :: s
         real(s%k) computeAvg8
 
-        if (s%n <= 0) stop 10
+        if (s%n <= 0) error stop 10
 
         computeAvg8 = sum(s%distr) / s%n
     end function
@@ -30,7 +30,7 @@ module m
 
         real(s%k) variance, meanVal
 
-        if (s%n <= 1) stop 20
+        if (s%n <= 1) error stop 20
 
         variance = 0.0d0
 

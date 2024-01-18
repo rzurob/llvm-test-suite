@@ -39,5 +39,5 @@ use m
    integer :: res(24) = (/(i, i = 1, 24)/)
    type (base(8, :, :)), pointer :: ptr
    ptr=>func(6)
-   if (.not. all(ptr%baseId .eq. res)) stop 1
+   if (.not. all(ptr%baseId .eq. res)) error stop 1
 end

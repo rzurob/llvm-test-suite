@@ -99,22 +99,22 @@
       CLASS IS (Zero(4,*))
       SELECT TYPE (V)
         TYPE IS (Child(4,*))
-          IF ( ANY (LBOUND(V)     .NE. (/1, 1, 1/) ) )    STOP 30
-          IF ( ANY (UBOUND(V)     .NE. (/18, 18, 18/) ) ) STOP 31
-          IF ( ANY (SHAPE(V)      .NE. (/18, 18, 18/) ) ) STOP 32
+          IF ( ANY (LBOUND(V)     .NE. (/1, 1, 1/) ) )    ERROR STOP 30
+          IF ( ANY (UBOUND(V)     .NE. (/18, 18, 18/) ) ) ERROR STOP 31
+          IF ( ANY (SHAPE(V)      .NE. (/18, 18, 18/) ) ) ERROR STOP 32
 
-          IF ( ANY(V%Base%GetId() .NE. 1) ) STOP 34
-          IF ( ANY(V%GetId()      .NE. 2) ) STOP 35
-          IF ( ANY(V%BaseId       .NE. 1) ) STOP 36
-          IF ( ANY(V%ChildId      .NE. 2) ) STOP 37
+          IF ( ANY(V%Base%GetId() .NE. 1) ) ERROR STOP 34
+          IF ( ANY(V%GetId()      .NE. 2) ) ERROR STOP 35
+          IF ( ANY(V%BaseId       .NE. 1) ) ERROR STOP 36
+          IF ( ANY(V%ChildId      .NE. 2) ) ERROR STOP 37
 
           CALL V(2,2,2)%SetId(V)
           CALL V(2,2,2)%Base%SetId(V%Base)
 
-          IF ( ANY(V%Base%GetId() .NE. -1 ) ) STOP 44
-          IF ( ANY(V%GetId()      .NE. -2 ) ) STOP 45
-          IF ( ANY(V%BaseId       .NE. -1 ) ) STOP 46
-          IF ( ANY(V%ChildId      .NE. -2 ) ) STOP 47
+          IF ( ANY(V%Base%GetId() .NE. -1 ) ) ERROR STOP 44
+          IF ( ANY(V%GetId()      .NE. -2 ) ) ERROR STOP 45
+          IF ( ANY(V%BaseId       .NE. -1 ) ) ERROR STOP 46
+          IF ( ANY(V%ChildId      .NE. -2 ) ) ERROR STOP 47
 
        CLASS DEFAULT
           STOP 40

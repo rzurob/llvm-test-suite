@@ -101,28 +101,28 @@
     SELECT TYPE (U)
     CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30
-      IF ( SIZE(U)          .NE. 4 )          STOP 31
-      IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
-      IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
-      IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   STOP 34
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))       ERROR STOP 30
+      IF ( SIZE(U)          .NE. 4 )          ERROR STOP 31
+      IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) ERROR STOP 32
+      IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) ERROR STOP 33
+      IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   ERROR STOP 34
 
       SELECT TYPE ( As => Arg )
 
       TYPE IS (Child(4))
 
-          IF ( ANY(As%Base%GetId() .NE. U%Base%GetId()) ) STOP 34
-          IF ( ANY(As%GetId()      .NE. U%GetId()) )      STOP 35
-          IF ( ANY(As%BaseId       .NE. U%BaseId) )       STOP 36
-          IF ( ANY(As%ChildId      .NE. U%ChildId) )      STOP 37
+          IF ( ANY(As%Base%GetId() .NE. U%Base%GetId()) ) ERROR STOP 34
+          IF ( ANY(As%GetId()      .NE. U%GetId()) )      ERROR STOP 35
+          IF ( ANY(As%BaseId       .NE. U%BaseId) )       ERROR STOP 36
+          IF ( ANY(As%ChildId      .NE. U%ChildId) )      ERROR STOP 37
 
           CALL As(2,3)%SetId(As)
           CALL As(2,3)%Base%SetId(As%Base)
 
-          IF ( ANY(As%Base%GetId() .NE. U%Base%GetId()) ) STOP 44
-          IF ( ANY(As%GetId()      .NE. U%GetId()) )      STOP 45
-          IF ( ANY(As%BaseId       .NE. U%BaseId) )       STOP 46
-          IF ( ANY(As%ChildId      .NE. U%ChildId) )      STOP 47
+          IF ( ANY(As%Base%GetId() .NE. U%Base%GetId()) ) ERROR STOP 44
+          IF ( ANY(As%GetId()      .NE. U%GetId()) )      ERROR STOP 45
+          IF ( ANY(As%BaseId       .NE. U%BaseId) )       ERROR STOP 46
+          IF ( ANY(As%ChildId      .NE. U%ChildId) )      ERROR STOP 47
 
       CLASS DEFAULT
         STOP 51

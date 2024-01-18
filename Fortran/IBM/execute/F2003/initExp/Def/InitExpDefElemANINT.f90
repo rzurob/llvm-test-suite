@@ -48,29 +48,29 @@
   TYPE(DT1) :: T3=DT1(AINT(T2(:,3:)%R(1,1)))
 
 
-  IF (ANY(LBOUND(IC)   .NE. (/1, 1/)) )             STOP 11
-  IF (ANY(UBOUND(IC)   .NE. (/5, 5/)) )             STOP 12
-  IF (ANY(IC           .NE.  -1.0   ) )             STOP 13
+  IF (ANY(LBOUND(IC)   .NE. (/1, 1/)) )             ERROR STOP 11
+  IF (ANY(UBOUND(IC)   .NE. (/5, 5/)) )             ERROR STOP 12
+  IF (ANY(IC           .NE.  -1.0   ) )             ERROR STOP 13
 
-  IF (ANY(LBOUND(IC1)  .NE. (/1, 1/)) )             STOP 21
-  IF (ANY(UBOUND(IC1)  .NE. (/5, 5/)) )             STOP 22
-  IF (ANY(IC1          .NE.  -2.0   ) )             STOP 23
+  IF (ANY(LBOUND(IC1)  .NE. (/1, 1/)) )             ERROR STOP 21
+  IF (ANY(UBOUND(IC1)  .NE. (/5, 5/)) )             ERROR STOP 22
+  IF (ANY(IC1          .NE.  -2.0   ) )             ERROR STOP 23
 
-  IF (ANY(LBOUND(T1)   .NE. (/1, 1/)) )             STOP 31
-  IF (ANY(UBOUND(T1)   .NE. (/3, 3/)) )             STOP 32
-  IF (ANY(T1           .NE.  -2.0   ) )             STOP 33
+  IF (ANY(LBOUND(T1)   .NE. (/1, 1/)) )             ERROR STOP 31
+  IF (ANY(UBOUND(T1)   .NE. (/3, 3/)) )             ERROR STOP 32
+  IF (ANY(T1           .NE.  -2.0   ) )             ERROR STOP 33
 
-  IF (ANY(LBOUND(T2)   .NE. (/3, 3/)) )             STOP 41
-  IF (ANY(UBOUND(T2)   .NE. (/5, 5/)) )             STOP 42
+  IF (ANY(LBOUND(T2)   .NE. (/3, 3/)) )             ERROR STOP 41
+  IF (ANY(UBOUND(T2)   .NE. (/5, 5/)) )             ERROR STOP 42
   DO I=3,5
   DO J=3,5
-    IF (ANY(T2(I,J)%R   .NE.  -3     ) )            STOP 43
+    IF (ANY(T2(I,J)%R   .NE.  -3     ) )            ERROR STOP 43
   END DO
   END DO
 
-  IF (ANY(LBOUND(T3%R)   .NE. (/1, 1/)) )           STOP 51
-  IF (ANY(UBOUND(T3%R)   .NE. (/3, 3/)) )           STOP 52
-  IF (ANY(T3%R           .NE.  -3     ) )           STOP 53
+  IF (ANY(LBOUND(T3%R)   .NE. (/1, 1/)) )           ERROR STOP 51
+  IF (ANY(UBOUND(T3%R)   .NE. (/3, 3/)) )           ERROR STOP 52
+  IF (ANY(T3%R           .NE.  -3     ) )           ERROR STOP 53
 
   END
 

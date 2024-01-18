@@ -33,7 +33,7 @@ program main
 
     select type(x => test())
         type is (real)
-            if ( .not. all(x == (/(real(i,4),i=1,128)/) )) stop 5
+            if ( .not. all(x == (/(real(i,4),i=1,128)/) )) error stop 5
         class default
             stop 4
     end select
@@ -46,9 +46,9 @@ function func()
 
     func(lb:ub) => get_val(var1,var2)
 
-    if ( .not. associated(func)) stop 1
-    if ( lbound(func, 1) /= 128 ) stop 2
-    if ( ubound(func, 1) /= 255 ) stop 3
+    if ( .not. associated(func)) error stop 1
+    if ( lbound(func, 1) /= 128 ) error stop 2
+    if ( ubound(func, 1) /= 255 ) error stop 3
 
     contains
         function get_val(a1, a2)

@@ -44,7 +44,7 @@
 
                 allocate(child(20,4) :: tar(20))
 
-                if ( .not. allocated(tar)) stop 17
+                if ( .not. allocated(tar)) error stop 17
 
                 select type(tar)
                     type is (child(*,4))
@@ -57,8 +57,8 @@
 
                 call sub(ptr)
 
-                if ( any(lbound(ptr) .ne. (/1,1/)) ) stop 31
-                if ( any(ubound(ptr) .ne. (/3,3/)) ) stop 33
+                if ( any(lbound(ptr) .ne. (/1,1/)) ) error stop 31
+                if ( any(ubound(ptr) .ne. (/3,3/)) ) error stop 33
 
                 print *, ptr%id
         End program
@@ -67,9 +67,9 @@
                 use m , only : parent
                 type(parent(:,4)), pointer :: ptr(:,:)
 
-                if ( .not. associated(ptr)) stop 37
-                if ( any(lbound(ptr) .ne. (/2,-2/)) ) stop 31
-                if ( any(ubound(ptr) .ne. (/4,0/)) ) stop 33
+                if ( .not. associated(ptr)) error stop 37
+                if ( any(lbound(ptr) .ne. (/2,-2/)) ) error stop 31
+                if ( any(ubound(ptr) .ne. (/4,0/)) ) error stop 33
 
                 ptr(1:,1:) => ptr
 

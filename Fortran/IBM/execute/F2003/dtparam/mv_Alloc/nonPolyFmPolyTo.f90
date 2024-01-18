@@ -37,7 +37,7 @@
 
    select type (a1)
        type is (B(4,4,4))
-           if ( a1%id /= 21 ) stop 21
+           if ( a1%id /= 21 ) error stop 21
            if ( .not. precision_r4( a1%r, 11.0 ) ) error stop 23_4
        class default
            stop 25

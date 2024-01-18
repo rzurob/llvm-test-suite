@@ -107,34 +107,34 @@ contains
     print *, d2_3482
     print *, d2_5841
 
-    if (size(d2_3482) /= 1) stop 24
-    if (size(d2_5841) /= 1) stop 34
+    if (size(d2_3482) /= 1) error stop 24
+    if (size(d2_5841) /= 1) error stop 34
 
     if (d2_3482(1)%l /= 3 .or. d2_3482(1)%k /= 4 .or. d2_3482(1)%k2 /= 8 .or. d2_3482(1)%l2 /= 2 &
          .or. len(d2_3482(1)%ch) /= 3 .or. d2_3482(1)%ch /= 'ghi' .or. d2_3482(1)%lfld &
          .or. size(d2_3482(1)%ifld) /= 3 .or. kind(d2_3482(1)%lfld) /= 4 .or. kind(d2_3482(1)%ifld) /= 4 .or. kind(d2_3482(1)%rfld) /= 4 &
          .or. any(d2_3482(1)%ifld /= [-1111111111,-2122222222,-1333333333]) .or. .not.precision_r4(d2_3482(1)%rfld,5.9_4) &
          .or. kind(d2_3482(1)%iarr) /= 8 .or. any(ubound(d2_3482(1)%iarr) /= [3,2]) &
-         .or. any([d2_3482(1)%iarr] /= [1111,2222,3333,4444,5555,6666])) stop 4
+         .or. any([d2_3482(1)%iarr] /= [1111,2222,3333,4444,5555,6666])) error stop 4
 
     if (d2_3482(1)%der%l /= 2 .or. d2_3482(1)%der%k /= 8 .or. len(d2_3482(1)%der%ch) /= 2 &
          .or. d2_3482(1)%der%ch /= 'xz' .or. .not.d2_3482(1)%der%lfld .or. size(d2_3482(1)%der%ifld) /= 2 &
          .or. kind(d2_3482(1)%der%lfld) /= 8 .or. kind(d2_3482(1)%der%ifld) /= 8 .or. kind(d2_3482(1)%der%rfld) /= 8 &
          .or. any(d2_3482(1)%der%ifld /= [76543211234567_8,-123456787654321_8]) &
-         .or. .not.precision_r8(d2_3482(1)%der%rfld,11235.81321D34)) stop 5
+         .or. .not.precision_r8(d2_3482(1)%der%rfld,11235.81321D34)) error stop 5
 
     if (d2_5841(1)%l /= 5 .or. d2_5841(1)%k /= 8 .or. d2_5841(1)%k2 /= 4 .or. d2_5841(1)%l2 /= 1 &
          .or. len(d2_5841(1)%ch) /= 5 .or. d2_5841(1)%ch /= 'defij' .or. .not.d2_5841(1)%lfld &
          .or. size(d2_5841(1)%ifld) /= 5 .or. kind(d2_5841(1)%lfld) /= 8 .or. kind(d2_5841(1)%ifld) /= 8 .or. kind(d2_5841(1)%rfld) /= 8 &
          .or. any(d2_5841(1)%ifld /= [(-1111111111111_8*i,i=1,5)]) .or. .not.precision_r8(d2_5841(1)%rfld,9.87654321D-12) &
          .or. kind(d2_5841(1)%iarr) /= 4 .or. any(ubound(d2_5841(1)%iarr) /= [5,1]) &
-         .or. any([d2_5841(1)%iarr] /= [1111,2222,3333,4444,5555])) stop 14
+         .or. any([d2_5841(1)%iarr] /= [1111,2222,3333,4444,5555])) error stop 14
 
     if (d2_5841(1)%der%l /= 1 .or. d2_5841(1)%der%k /= 4 .or. len(d2_5841(1)%der%ch) /= 1 &
          .or. d2_5841(1)%der%ch /= 'y' .or. .not.d2_5841(1)%der%lfld .or. size(d2_5841(1)%der%ifld) /= 1 &
          .or. kind(d2_5841(1)%der%lfld) /= 4 .or. kind(d2_5841(1)%der%ifld) /= 4 .or. kind(d2_5841(1)%der%rfld) /= 4 &
          .or. any(d2_5841(1)%der%ifld /= [-12345678_4]) &
-         .or. .not.precision_r4(d2_5841(1)%der%rfld,9.87654E-12)) stop 15
+         .or. .not.precision_r4(d2_5841(1)%der%rfld,9.87654E-12)) error stop 15
 
   end subroutine checkValues
 

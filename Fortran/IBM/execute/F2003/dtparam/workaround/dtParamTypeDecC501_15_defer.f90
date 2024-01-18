@@ -49,26 +49,26 @@
   TYPE(DT(K=T%K, K1=T1%K1,K2=T1%K2,K4=T1%K4,K8=T1%K8, L=T1%L)) :: T2(1:UBOUND(T1,1)), T3(UBOUND(T2,1))
 
 
-  IF (  T1%K          .NE.  4  )            STOP 20
-  IF (  T1%K1         .NE.  8  )            STOP 21
-  IF (  T1%K2         .NE.  4  )            STOP 22
-  IF (  T1%K4         .NE.  2  )            STOP 23
-  IF (  T1%K8         .NE.  1  )            STOP 24;print*, LEN( T1(1)%C)
-  IF (  T1%L          .NE.  L  )            STOP 25
-  IF (  LEN( T1(1)%C) .NE.  L  )            STOP 26
-  IF (  SIZE(T1(2)%C) .NE.  L  )            STOP 27
-  IF (  SIZE(T1)      .NE.  L  )            STOP 28
+  IF (  T1%K          .NE.  4  )            ERROR STOP 20
+  IF (  T1%K1         .NE.  8  )            ERROR STOP 21
+  IF (  T1%K2         .NE.  4  )            ERROR STOP 22
+  IF (  T1%K4         .NE.  2  )            ERROR STOP 23
+  IF (  T1%K8         .NE.  1  )            ERROR STOP 24;print*, LEN( T1(1)%C)
+  IF (  T1%L          .NE.  L  )            ERROR STOP 25
+  IF (  LEN( T1(1)%C) .NE.  L  )            ERROR STOP 26
+  IF (  SIZE(T1(2)%C) .NE.  L  )            ERROR STOP 27
+  IF (  SIZE(T1)      .NE.  L  )            ERROR STOP 28
 
 
-  IF (  T3%K           .NE.  4  )            STOP 30
-  IF (  T3%K1          .NE.  8  )            STOP 31
-  IF (  T3%K2          .NE.  4  )            STOP 32
-  IF (  T3%K4          .NE.  2  )            STOP 33
-  IF (  T3%K8          .NE.  1  )            STOP 34
-  IF (  T3%L           .NE.  L  )            STOP 25
-  IF (  LEN( T3(1)%C)  .NE.  L  )            STOP 36
-  IF (  SIZE(T3(2)%C)  .NE.  L  )            STOP 37
-  IF (  SIZE(T3)       .NE.  L  )            STOP 38
+  IF (  T3%K           .NE.  4  )            ERROR STOP 30
+  IF (  T3%K1          .NE.  8  )            ERROR STOP 31
+  IF (  T3%K2          .NE.  4  )            ERROR STOP 32
+  IF (  T3%K4          .NE.  2  )            ERROR STOP 33
+  IF (  T3%K8          .NE.  1  )            ERROR STOP 34
+  IF (  T3%L           .NE.  L  )            ERROR STOP 25
+  IF (  LEN( T3(1)%C)  .NE.  L  )            ERROR STOP 36
+  IF (  SIZE(T3(2)%C)  .NE.  L  )            ERROR STOP 37
+  IF (  SIZE(T3)       .NE.  L  )            ERROR STOP 38
 
 
   END SUBROUTINE

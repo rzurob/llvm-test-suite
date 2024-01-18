@@ -54,13 +54,13 @@
 
   TYPE(DT) :: T
 
-  IF( ANY( T%C1  .NEQV. .TRUE.  ))       STOP 11
-  IF( ANY( T%C2  .NEQV. .TRUE. ))       STOP 12
-  IF( ANY( T%C3  .NEQV. .TRUE.  ))       STOP 13
-  IF( ANY( T%C4  .NEQV. .TRUE.  ))       STOP 14
-  IF( ANY( T%C5  .NEQV. .TRUE.  ))       STOP 15
-  IF( ANY( T%C6  .NEQV. .TRUE.  ))       STOP 16
-  IF( ANY( T%C7  .NEQV. .FALSE. ))       STOP 17
+  IF( ANY( T%C1  .NEQV. .TRUE.  ))       ERROR STOP 11
+  IF( ANY( T%C2  .NEQV. .TRUE. ))       ERROR STOP 12
+  IF( ANY( T%C3  .NEQV. .TRUE.  ))       ERROR STOP 13
+  IF( ANY( T%C4  .NEQV. .TRUE.  ))       ERROR STOP 14
+  IF( ANY( T%C5  .NEQV. .TRUE.  ))       ERROR STOP 15
+  IF( ANY( T%C6  .NEQV. .TRUE.  ))       ERROR STOP 16
+  IF( ANY( T%C7  .NEQV. .FALSE. ))       ERROR STOP 17
 
 
   END

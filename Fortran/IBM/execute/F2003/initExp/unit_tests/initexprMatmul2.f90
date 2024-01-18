@@ -28,12 +28,12 @@ real(8), dimension(10,211) :: res8a=matmul(A8, B8), res8b
 real(16), dimension(101,211) :: res2a=matmul(A16, B16), res2b
 
 res2b = matmul(A16,B16)
-if (.not. all(res2a .eq. res2b)) stop 1
+if (.not. all(res2a .eq. res2b)) error stop 1
 
 res4b = matmul(A4,B4)
-if (.not. all(res4a .eq. res4b)) stop 2
+if (.not. all(res4a .eq. res4b)) error stop 2
 
 res8b = matmul(A8,B8)
-if (.not. all(res8a .eq. res8b)) stop 3
+if (.not. all(res8a .eq. res8b)) error stop 3
 
 end

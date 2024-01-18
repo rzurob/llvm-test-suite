@@ -14,15 +14,15 @@
       basePtr => baseTarget
 
       do ii = 1, 10
-        if (basePtr%arr(ii) .ne. 5) stop 1
+        if (basePtr%arr(ii) .ne. 5) error stop 1
       end do
 
       basePtr%arr = 6
 
       do ii = 1, 10
-        if (basePtr%arr(ii) .ne. 6) stop 2
+        if (basePtr%arr(ii) .ne. 6) error stop 2
       end do
 
-      if (size(basePtr%arr) .ne. 10) stop 3
+      if (size(basePtr%arr) .ne. 10) error stop 3
 
       end

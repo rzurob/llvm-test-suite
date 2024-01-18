@@ -66,26 +66,26 @@
   TYPE(DT2(K2=8, L2=8)) :: T2
 
 
-  IF ( T2%T%K       .NE. 8 )                 STOP 41
-  IF ( T2%T%L       .NE. 8 )                 STOP 42
-  IF ( T2%K2        .NE. 8 )                 STOP 43
-  IF ( T2%L2        .NE. 8 )                 STOP 44
+  IF ( T2%T%K       .NE. 8 )                 ERROR STOP 41
+  IF ( T2%T%L       .NE. 8 )                 ERROR STOP 42
+  IF ( T2%K2        .NE. 8 )                 ERROR STOP 43
+  IF ( T2%L2        .NE. 8 )                 ERROR STOP 44
 
-  IF ( KIND(T2%T%I) .NE. 8 )                 STOP 45
-  IF ( SIZE(T2%T%I) .NE. 8 )                 STOP 46
-  IF ( ANY(T2%T%I   .NE. -8))                STOP 47
+  IF ( KIND(T2%T%I) .NE. 8 )                 ERROR STOP 45
+  IF ( SIZE(T2%T%I) .NE. 8 )                 ERROR STOP 46
+  IF ( ANY(T2%T%I   .NE. -8))                ERROR STOP 47
 
-  IF ( KIND(T2%T%R) .NE. 8 )                 STOP 48
-  IF ( SIZE(T2%T%R) .NE. 8 )                 STOP 49
-  IF ( ANY(T2%T%R   .NE. -8))                STOP 40
+  IF ( KIND(T2%T%R) .NE. 8 )                 ERROR STOP 48
+  IF ( SIZE(T2%T%R) .NE. 8 )                 ERROR STOP 49
+  IF ( ANY(T2%T%R   .NE. -8))                ERROR STOP 40
 
-  IF ( KIND(T2%T%Z) .NE. 8 )                 STOP 51
-  IF ( SIZE(T2%T%Z) .NE. 8 )                 STOP 52
-  IF ( ANY(T2%T%Z   .NE. (-8,8)))            STOP 53
+  IF ( KIND(T2%T%Z) .NE. 8 )                 ERROR STOP 51
+  IF ( SIZE(T2%T%Z) .NE. 8 )                 ERROR STOP 52
+  IF ( ANY(T2%T%Z   .NE. (-8,8)))            ERROR STOP 53
 
-  IF ( LEN(T2%T%C)  .NE. 8 )                 STOP 54
-  IF ( SIZE(T2%T%C) .NE. 8 )                 STOP 55
-  IF ( ANY(T2%T%C   .NE. "????????" ))       STOP 56
+  IF ( LEN(T2%T%C)  .NE. 8 )                 ERROR STOP 54
+  IF ( SIZE(T2%T%C) .NE. 8 )                 ERROR STOP 55
+  IF ( ANY(T2%T%C   .NE. "????????" ))       ERROR STOP 56
 
 
   END

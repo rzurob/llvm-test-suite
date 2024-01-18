@@ -64,55 +64,55 @@
   Ptr => Tar
 
   ASSOCIATE ( As => Ptr )
-    IF ( ANY (LBOUND(As)      .NE. (/1,1/) ) )             STOP 30
-    IF ( ANY (SHAPE(As)       .NE. (/2,2/) ) )             STOP 32
-    IF ( ANY (As%GetID()      .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 33
-    IF ( ANY (As%Base%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 34
+    IF ( ANY (LBOUND(As)      .NE. (/1,1/) ) )             ERROR STOP 30
+    IF ( ANY (SHAPE(As)       .NE. (/2,2/) ) )             ERROR STOP 32
+    IF ( ANY (As%GetID()      .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) ERROR STOP 33
+    IF ( ANY (As%Base%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) ERROR STOP 34
 
     ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-       IF ( ANY(As0 .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) STOP 41
-       IF ( ANY(As1 .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) STOP 42
+       IF ( ANY(As0 .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) ) ) ERROR STOP 41
+       IF ( ANY(As1 .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) ) ) ERROR STOP 42
     END ASSOCIATE
 
     ASSOCIATE ( As2 => As%Base )
-      IF ( ANY(As2%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) STOP 50
+      IF ( ANY(As2%GetID() .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) ERROR STOP 50
     END ASSOCIATE
 
   END ASSOCIATE
 
   ASSOCIATE (As =>  Ptr%GetID())
-    IF ( ANY(As .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) )) STOP 60
+    IF ( ANY(As .NE. RESHAPE((/-2,-2,-2,-2/), (/2,2/)) )) ERROR STOP 60
   END ASSOCIATE
 
   ASSOCIATE (As =>  Ptr%Base%GetID())
-    IF ( ANY(As .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) STOP 70
+    IF ( ANY(As .NE. RESHAPE((/-1,-1,-1,-1/), (/2,2/)) )) ERROR STOP 70
   END ASSOCIATE
 
   ALLOCATE(Ptr(2, 2))
 
   ASSOCIATE ( As => Ptr )
-    IF ( ANY (LBOUND(As)      .NE. (/1,1/) ) )             STOP 30
-    IF ( ANY (SHAPE(As)       .NE. (/2,2/) ) )             STOP 32
-    IF ( ANY (As%GetID()      .NE. RESHAPE((/2,2,2,2/), (/2,2/)) ) ) STOP 33
-    IF ( ANY (As%Base%GetID() .NE. RESHAPE((/1,1,1,1/), (/2,2/)) ) ) STOP 34
+    IF ( ANY (LBOUND(As)      .NE. (/1,1/) ) )             ERROR STOP 30
+    IF ( ANY (SHAPE(As)       .NE. (/2,2/) ) )             ERROR STOP 32
+    IF ( ANY (As%GetID()      .NE. RESHAPE((/2,2,2,2/), (/2,2/)) ) ) ERROR STOP 33
+    IF ( ANY (As%Base%GetID() .NE. RESHAPE((/1,1,1,1/), (/2,2/)) ) ) ERROR STOP 34
 
     ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-       IF ( ANY(As0 .NE. RESHAPE((/2,2,2,2/), (/2,2/)) ) ) STOP 41
-       IF ( ANY(As1 .NE. RESHAPE((/1,1,1,1/), (/2,2/)) ) ) STOP 42
+       IF ( ANY(As0 .NE. RESHAPE((/2,2,2,2/), (/2,2/)) ) ) ERROR STOP 41
+       IF ( ANY(As1 .NE. RESHAPE((/1,1,1,1/), (/2,2/)) ) ) ERROR STOP 42
     END ASSOCIATE
 
     ASSOCIATE ( As2 => As%Base )
-      IF ( ANY(As2%GetID() .NE. RESHAPE((/1,1,1,1/), (/2,2/)) )) STOP 50
+      IF ( ANY(As2%GetID() .NE. RESHAPE((/1,1,1,1/), (/2,2/)) )) ERROR STOP 50
     END ASSOCIATE
 
   END ASSOCIATE
 
   ASSOCIATE (As =>  Ptr%GetID())
-    IF ( ANY(As .NE. RESHAPE((/2,2,2,2/), (/2,2/)) )) STOP 60
+    IF ( ANY(As .NE. RESHAPE((/2,2,2,2/), (/2,2/)) )) ERROR STOP 60
   END ASSOCIATE
 
   ASSOCIATE (As =>  Ptr%Base%GetID())
-    IF ( ANY(As .NE. RESHAPE((/1,1,1,1/), (/2,2/)) )) STOP 70
+    IF ( ANY(As .NE. RESHAPE((/1,1,1,1/), (/2,2/)) )) ERROR STOP 70
   END ASSOCIATE
 
   DEALLOCATE(Ptr)

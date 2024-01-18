@@ -24,5 +24,5 @@
 
       ALLOCATE(Child(8,4,12) :: b1(1)%c_cmp(1)%b_cmp)
 
-      IF (b1(1)%c_cmp(1)%b_cmp%l1 /= 8) STOP 100
+      IF (b1(1)%c_cmp(1)%b_cmp%l1 /= 8) ERROR STOP 100
 END

@@ -42,8 +42,8 @@ use m
            (/5, 2/) ))
       call sub(a, b)
 
-      if ( .not. allocated(b)) stop 21
-      if ( allocated (a)) stop 23
+      if ( .not. allocated(b)) error stop 21
+      if ( allocated (a)) error stop 23
       select type(b)
           type is (base)
               print *, ( (/ ( b(i,1)%id, i = 1,5) /) )

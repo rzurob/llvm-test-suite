@@ -56,9 +56,9 @@
 
   ProcPtr => ExtFun
 
-  IF ( .NOT. ASSOCIATED(ProcPtr) )          STOP 21
-  IF ( .NOT. ASSOCIATED(ProcPtr, ExtFun) )  STOP 22
-  IF ( .NOT. ASSOCIATED(ProcPtr, ProcPtr))  STOP 23
+  IF ( .NOT. ASSOCIATED(ProcPtr) )          ERROR STOP 21
+  IF ( .NOT. ASSOCIATED(ProcPtr, ExtFun) )  ERROR STOP 22
+  IF ( .NOT. ASSOCIATED(ProcPtr, ProcPtr))  ERROR STOP 23
 
   SELECT TYPE ( As => ProcPtr(DT(DT(12345678_8)) ))
   TYPE IS (DT)
@@ -66,7 +66,7 @@
     TYPE IS (DT)
       SELECT TYPE ( As => As%V)
       TYPE IS (INTEGER(8))
-        IF ( As .NE. 12345678_8 )    STOP 31
+        IF ( As .NE. 12345678_8 )    ERROR STOP 31
       CLASS DEFAULT
         STOP 32
       END SELECT

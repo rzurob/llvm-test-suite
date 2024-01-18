@@ -33,9 +33,9 @@ module m
             a%ptr(3:) => a%char
             a%char = (/ '123', '456','789','012','345','678','910' /)
 
-    	    if ( .not. associated(a%ptr, a%char)) stop 12
-    	    if ( lbound(a%ptr,1) /= 3 ) stop 15
-    	    if ( ubound(a%ptr,1) /= 9 ) stop 18
+    	    if ( .not. associated(a%ptr, a%char)) error stop 12
+    	    if ( lbound(a%ptr,1) /= 3 ) error stop 15
+    	    if ( ubound(a%ptr,1) /= 9 ) error stop 18
 
             print *, a%char
             print *, a%ptr
@@ -52,15 +52,15 @@ program main
 
     t1%ptr(2:) => t1%char
 
-    if ( .not. associated(t1%ptr, t1%char)) stop 2
-    if ( lbound(t1%ptr,1) /= 2 ) stop 5
-    if ( ubound(t1%ptr,1) /= 8 ) stop 8
+    if ( .not. associated(t1%ptr, t1%char)) error stop 2
+    if ( lbound(t1%ptr,1) /= 2 ) error stop 5
+    if ( ubound(t1%ptr,1) /= 8 ) error stop 8
 
     call sub(t1)
 
-    if ( .not. associated(t1%ptr, t1%char)) stop 22
-    if ( lbound(t1%ptr,1) /= 2 ) stop 25
-    if ( ubound(t1%ptr,1) /= 8 ) stop 28
+    if ( .not. associated(t1%ptr, t1%char)) error stop 22
+    if ( lbound(t1%ptr,1) /= 2 ) error stop 25
+    if ( ubound(t1%ptr,1) /= 8 ) error stop 28
     print *, t1%char
     print *, t1%ptr
 

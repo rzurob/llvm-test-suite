@@ -49,12 +49,12 @@
       STOP 10
     END SELECT
 
-    IF (.NOT. ASSOCIATED(Ptr, Tar2))             STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
+    IF (.NOT. ASSOCIATED(Ptr, Tar2))             ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) ERROR STOP 13
     SELECT TYPE(Tar2)
     TYPE IS (CHARACTER(*))
-      IF (ANY( Tar2      .NE.  "321" ))          STOP 14
+      IF (ANY( Tar2      .NE.  "321" ))          ERROR STOP 14
     END SELECT
 
     Ptr(I:J, I:J) => Tar1
@@ -65,12 +65,12 @@
       STOP 20
     END SELECT
 
-    IF (.NOT. ASSOCIATED(Ptr))                 STOP 21
-    IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      STOP 22
-    IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      STOP 23
+    IF (.NOT. ASSOCIATED(Ptr))                 ERROR STOP 21
+    IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))      ERROR STOP 22
+    IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))      ERROR STOP 23
     SELECT TYPE(Tar1)
     TYPE IS (COMPLEX)
-      IF (ANY( Tar1(1:(J-I+1)*(J-I+1)) .NE.  (-1.0, 1.0) ))  STOP 24
+      IF (ANY( Tar1(1:(J-I+1)*(J-I+1)) .NE.  (-1.0, 1.0) ))  ERROR STOP 24
     CLASS DEFAULT
       STOP 25
     END SELECT

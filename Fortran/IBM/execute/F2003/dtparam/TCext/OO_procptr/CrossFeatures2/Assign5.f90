@@ -82,10 +82,10 @@
   V3 = ProcPtr1(Base(4,20)(ProcPtr1) )
 
   DO I=1, 1023
-    IF (.NOT. Equal(V(I),  DT(4,20)(Base=Base(4,20)(ProcPtr1), ProcPtr2=ModFun2 )) ) STOP 11
-    IF (.NOT. Equal(V1(I), Base(4,20)(ProcPtr1)) )                             STOP 12
-    IF (.NOT. Equal(V2(I), DT(4,20)(Base=Base(4,20)(ProcPtr1), ProcPtr2=ModFun2 )) ) STOP 13
-    IF (.NOT. Equal(V3(I), Base(4,20)(ProcPtr1)) )                             STOP 14
+    IF (.NOT. Equal(V(I),  DT(4,20)(Base=Base(4,20)(ProcPtr1), ProcPtr2=ModFun2 )) ) ERROR STOP 11
+    IF (.NOT. Equal(V1(I), Base(4,20)(ProcPtr1)) )                             ERROR STOP 12
+    IF (.NOT. Equal(V2(I), DT(4,20)(Base=Base(4,20)(ProcPtr1), ProcPtr2=ModFun2 )) ) ERROR STOP 13
+    IF (.NOT. Equal(V3(I), Base(4,20)(ProcPtr1)) )                             ERROR STOP 14
   END DO
 
   CONTAINS

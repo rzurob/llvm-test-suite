@@ -39,10 +39,10 @@
 
     ALLOCATE(t(N))
 
-    IF (t%l                 .NE. 4)     STOP 11
-    IF (UBOUND(t(N)%arr, 1) .NE. 4)     STOP 12
-    IF (SIZE(t(N)%arr)      .NE. 4)     STOP 13
-    IF (ANY(t(N)%arr        .NE. -1))   STOP 14
+    IF (t%l                 .NE. 4)     ERROR STOP 11
+    IF (UBOUND(t(N)%arr, 1) .NE. 4)     ERROR STOP 12
+    IF (SIZE(t(N)%arr)      .NE. 4)     ERROR STOP 13
+    IF (ANY(t(N)%arr        .NE. -1))   ERROR STOP 14
 
   END SUBROUTINE
 

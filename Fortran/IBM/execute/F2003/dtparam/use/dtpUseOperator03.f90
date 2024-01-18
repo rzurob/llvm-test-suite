@@ -438,118 +438,118 @@ program dtpUseOperator03
 
 
 
-  if (p14va /= p14vd) stop 11
-  if (p14va == p14vb) stop 12
-  if (p14va == p14vc) stop 13
-  if (p14vb == p14vc) stop 14
+  if (p14va /= p14vd) error stop 11
+  if (p14va == p14vb) error stop 12
+  if (p14va == p14vc) error stop 13
+  if (p14vb == p14vc) error stop 14
 
-  if (p14va /= p18vd) stop 15
-  if (p14va == p18vb) stop 16
-  if (p14va == p18vc) stop 17
-  if (p14vb == p18vc) stop 18
+  if (p14va /= p18vd) error stop 15
+  if (p14va == p18vb) error stop 16
+  if (p14va == p18vc) error stop 17
+  if (p14vb == p18vc) error stop 18
 
-  if (p18va /= p14vd) stop 19
-  if (p18va == p14vb) stop 20
-  if (p18va == p14vc) stop 21
-  if (p18vb == p14vc) stop 22
+  if (p18va /= p14vd) error stop 19
+  if (p18va == p14vb) error stop 20
+  if (p18va == p14vc) error stop 21
+  if (p18vb == p14vc) error stop 22
 
-  if (p18va /= p18vd) stop 23
-  if (p18va == p18vb) stop 24
-  if (p18va == p18vc) stop 25
-  if (p18vb == p18vc) stop 26
-
-
-  if (p245va /= p245vd) stop 27
-  if (p245va == p245vb) stop 28
-  if (p245va == p245vc) stop 29
-  if (p245vb == p245vc) stop 30
-
-  if (p245va /= p285vd) stop 31
-  if (p245va == p285vb) stop 32
-  if (p245va == p285vc) stop 33
-  if (p245vb == p285vc) stop 34
-
-  if (p285va /= p245vd) stop 35
-  if (p285va == p245vb) stop 36
-  if (p285va == p245vc) stop 37
-  if (p285vb == p245vc) stop 38
-
-  if (p285va /= p285vd) stop 39
-  if (p285va == p285vb) stop 40
-  if (p285va == p285vc) stop 41
-  if (p285vb == p285vc) stop 42
+  if (p18va /= p18vd) error stop 23
+  if (p18va == p18vb) error stop 24
+  if (p18va == p18vc) error stop 25
+  if (p18vb == p18vc) error stop 26
 
 
-  if (p3454va /= p3454vd) stop 43
-  if (p3454va == p3454vb) stop 44
-  if (p3454va == p3454vc) stop 45
-  if (p3454vb == p3454vc) stop 46
+  if (p245va /= p245vd) error stop 27
+  if (p245va == p245vb) error stop 28
+  if (p245va == p245vc) error stop 29
+  if (p245vb == p245vc) error stop 30
 
-  if (p3454va /= p3458vd) stop 47
-  if (p3454va == p3458vb) stop 48
-  if (p3454va == p3458vc) stop 49
-  if (p3454vb == p3458vc) stop 50
+  if (p245va /= p285vd) error stop 31
+  if (p245va == p285vb) error stop 32
+  if (p245va == p285vc) error stop 33
+  if (p245vb == p285vc) error stop 34
 
-  if (p3458va /= p3454vd) stop 51
-  if (p3458va == p3454vb) stop 52
-  if (p3458va == p3454vc) stop 53
-  if (p3458vb == p3454vc) stop 54
+  if (p285va /= p245vd) error stop 35
+  if (p285va == p245vb) error stop 36
+  if (p285va == p245vc) error stop 37
+  if (p285vb == p245vc) error stop 38
 
-  if (p3458va /= p3458vd) stop 55
-  if (p3458va == p3458vb) stop 56
-  if (p3458va == p3458vc) stop 57
-  if (p3458vb == p3458vc) stop 58
-
-  if (p3854va /= p3854vd) stop 59
-  if (p3854va == p3854vb) stop 60
-  if (p3854va == p3854vc) stop 61
-  if (p3854vb == p3854vc) stop 62
-
-  if (p3854va /= p3858vd) stop 63
-  if (p3854va == p3858vb) stop 64
-  if (p3854va == p3858vc) stop 65
-  if (p3854vb == p3858vc) stop 66
-
-  if (p3858va /= p3854vd) stop 67
-  if (p3858va == p3854vb) stop 68
-  if (p3858va == p3854vc) stop 69
-  if (p3858vb == p3854vc) stop 70
-
-  if (p3858va /= p3858vd) stop 71
-  if (p3858va == p3858vb) stop 72
-  if (p3858va == p3858vc) stop 73
-  if (p3858vb == p3858vc) stop 74
+  if (p285va /= p285vd) error stop 39
+  if (p285va == p285vb) error stop 40
+  if (p285va == p285vc) error stop 41
+  if (p285vb == p285vc) error stop 42
 
 
-  if (p243va /= p243vd) stop 75
-  if (p243va == p243vb) stop 76
-  if (p243va == p243vc) stop 77
-  if (p243vb == p243vc) stop 78
+  if (p3454va /= p3454vd) error stop 43
+  if (p3454va == p3454vb) error stop 44
+  if (p3454va == p3454vc) error stop 45
+  if (p3454vb == p3454vc) error stop 46
 
-  if (p245va == p243va) stop 79
-  if (p245vb == p243vb) stop 80
-  if (p245vc == p243vc) stop 81
-  if (p245vd == p243vd) stop 82
+  if (p3454va /= p3458vd) error stop 47
+  if (p3454va == p3458vb) error stop 48
+  if (p3454va == p3458vc) error stop 49
+  if (p3454vb == p3458vc) error stop 50
 
-  if (p14va == p243va)    stop 83
-  if (p14va == p245va)    stop 84
-  if (p14va == p3454va)   stop 85
+  if (p3458va /= p3454vd) error stop 51
+  if (p3458va == p3454vb) error stop 52
+  if (p3458va == p3454vc) error stop 53
+  if (p3458vb == p3454vc) error stop 54
 
-  if (p243va == p14va)    stop 86
-  if (p243va == p245va)   stop 87
-  if (p243va == p3454va)  stop 88
+  if (p3458va /= p3458vd) error stop 55
+  if (p3458va == p3458vb) error stop 56
+  if (p3458va == p3458vc) error stop 57
+  if (p3458vb == p3458vc) error stop 58
 
-  if (p245va == p14va)    stop 89
-  if (p245va == p243va)   stop 90
-  if (p245va == p3454va)  stop 91
-  if (p3454va == p14va)   stop 92
-  if (p3454va == p245va)  stop 93
-  if (p3454va == p3454va) stop 94
+  if (p3854va /= p3854vd) error stop 59
+  if (p3854va == p3854vb) error stop 60
+  if (p3854va == p3854vc) error stop 61
+  if (p3854vb == p3854vc) error stop 62
 
-  if (p14va  == 1)        stop 95
-  if (p243va == 'abcd')   stop 96
-  if (p243va == .true.)   stop 97
-  if (p243va == (3,4))    stop 98
+  if (p3854va /= p3858vd) error stop 63
+  if (p3854va == p3858vb) error stop 64
+  if (p3854va == p3858vc) error stop 65
+  if (p3854vb == p3858vc) error stop 66
+
+  if (p3858va /= p3854vd) error stop 67
+  if (p3858va == p3854vb) error stop 68
+  if (p3858va == p3854vc) error stop 69
+  if (p3858vb == p3854vc) error stop 70
+
+  if (p3858va /= p3858vd) error stop 71
+  if (p3858va == p3858vb) error stop 72
+  if (p3858va == p3858vc) error stop 73
+  if (p3858vb == p3858vc) error stop 74
+
+
+  if (p243va /= p243vd) error stop 75
+  if (p243va == p243vb) error stop 76
+  if (p243va == p243vc) error stop 77
+  if (p243vb == p243vc) error stop 78
+
+  if (p245va == p243va) error stop 79
+  if (p245vb == p243vb) error stop 80
+  if (p245vc == p243vc) error stop 81
+  if (p245vd == p243vd) error stop 82
+
+  if (p14va == p243va)    error stop 83
+  if (p14va == p245va)    error stop 84
+  if (p14va == p3454va)   error stop 85
+
+  if (p243va == p14va)    error stop 86
+  if (p243va == p245va)   error stop 87
+  if (p243va == p3454va)  error stop 88
+
+  if (p245va == p14va)    error stop 89
+  if (p245va == p243va)   error stop 90
+  if (p245va == p3454va)  error stop 91
+  if (p3454va == p14va)   error stop 92
+  if (p3454va == p245va)  error stop 93
+  if (p3454va == p3454va) error stop 94
+
+  if (p14va  == 1)        error stop 95
+  if (p243va == 'abcd')   error stop 96
+  if (p243va == .true.)   error stop 97
+  if (p243va == (3,4))    error stop 98
 
   print *, "done"
 

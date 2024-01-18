@@ -17,8 +17,8 @@ l2res = btest(71_2, 2)
 l4res = btest(321_4, 8)
 l8res = btest(123_8, 36)
 
-if (l1 .neqv. l1res) stop 1
-if (l2 .neqv. l2res) stop 2
-if (l4 .neqv. l4res) stop 4
-if (l8 .neqv. l8res) stop 8
+if (l1 .neqv. l1res) error stop 1
+if (l2 .neqv. l2res) error stop 2
+if (l4 .neqv. l4res) error stop 4
+if (l8 .neqv. l8res) error stop 8
 end

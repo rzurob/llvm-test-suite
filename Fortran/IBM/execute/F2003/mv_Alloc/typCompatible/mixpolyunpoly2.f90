@@ -36,21 +36,21 @@ end module
           type is ( child )
               call move_alloc(a, b%i2%i1)
 
-              if ( allocated(a)) stop 11
-              if ( .not. allocated(b%i2%i1) ) stop 13
+              if ( allocated(a)) error stop 11
+              if ( .not. allocated(b%i2%i1) ) error stop 13
 
               select type (   x => b%i2%i1 )
                   type is (child)
                       select type ( y => x%i1 )
                           type is (character(*))
-                              if ( y /= 'IBM-COMPILER' ) stop 21
+                              if ( y /= 'IBM-COMPILER' ) error stop 21
                           class default
                               stop 23
                       end select
 
                       select type ( y => x%i2%i1 )
                           type is ( integer)
-                              if ( y /= 12 ) stop 31
+                              if ( y /= 12 ) error stop 31
                           class default
                               stop 33
                       end select

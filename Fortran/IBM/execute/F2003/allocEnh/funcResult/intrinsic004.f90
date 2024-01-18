@@ -104,7 +104,7 @@ function myAnotherMatmul (x, m, y)
 
     integer i
 
-    if ((size(x) /= m) .or. (size(y,1) /= m)) stop 10
+    if ((size(x) /= m) .or. (size(y,1) /= m)) error stop 10
 
     do i = 1, size(y,2)
         myAnotherMatmul(i) = sum (x(:) * y(:,i))

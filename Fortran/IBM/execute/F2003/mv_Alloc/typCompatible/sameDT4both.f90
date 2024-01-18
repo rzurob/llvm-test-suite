@@ -46,8 +46,8 @@ contains
 
        call move_alloc(k, func)
 
-       if ( allocated(k)) stop 11
-       if ( .not. allocated(func)) stop 13
+       if ( allocated(k)) error stop 11
+       if ( .not. allocated(func)) error stop 13
    end function
 
    end

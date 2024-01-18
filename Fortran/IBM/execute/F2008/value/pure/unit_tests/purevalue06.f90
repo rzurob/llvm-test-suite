@@ -51,12 +51,12 @@ integer :: a, b, c
 a = 2
 b = 3
 c = foosum(a,sqfunc,b)
-if (any([a,b] /= [2,3])) stop 1
-if (c /= 13) stop 2
+if (any([a,b] /= [2,3])) error stop 1
+if (c /= 13) error stop 2
 
 a = 49
 b = 81
 c = foosum(a,sqrtfunc,b)
-if (any([a,b] /= [49,81])) stop 3
-if (c /= 16) stop 4
+if (any([a,b] /= [49,81])) error stop 3
+if (c /= 16) error stop 4
 end

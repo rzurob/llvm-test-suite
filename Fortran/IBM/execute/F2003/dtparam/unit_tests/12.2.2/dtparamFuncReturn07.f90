@@ -36,5 +36,5 @@ use m
 
    type (base(:)), pointer :: ptr
    ptr=>func(10)
-   if (ptr%p .ne. 10) stop 1
+   if (ptr%p .ne. 10) error stop 1
 end

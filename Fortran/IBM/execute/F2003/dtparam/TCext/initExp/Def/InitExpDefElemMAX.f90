@@ -95,16 +95,16 @@
 
   INTEGER :: Length = LEN(MAX(T%Str(:)(1:0),  T%Str(:128)(1:127), T%Str(:)(125:127), T%Str(:)))
 
-  IF ( ANY (T1%I1   .NE. (/(I, I=2,17)/)) ) STOP 11
-  IF ( ANY (T1%I2   .NE. (/(I, I=2,17)/)) ) STOP 12
-  IF ( ANY (T1%I4   .NE. (/(I, I=2,17)/)) ) STOP 13
-  IF ( ANY (T1%I8   .NE. (/(I, I=2,17)/)) ) STOP 14
-  IF ( ANY (T1%R4   .NE. (/(I, I=2,17)/)) ) STOP 15
-  IF ( ANY (T1%R8   .NE. (/(I, I=2,17)/)) ) STOP 16
-  IF ( ANY (T1%R6   .NE. (/(I, I=2,17)/)) ) STOP 17
+  IF ( ANY (T1%I1   .NE. (/(I, I=2,17)/)) ) ERROR STOP 11
+  IF ( ANY (T1%I2   .NE. (/(I, I=2,17)/)) ) ERROR STOP 12
+  IF ( ANY (T1%I4   .NE. (/(I, I=2,17)/)) ) ERROR STOP 13
+  IF ( ANY (T1%I8   .NE. (/(I, I=2,17)/)) ) ERROR STOP 14
+  IF ( ANY (T1%R4   .NE. (/(I, I=2,17)/)) ) ERROR STOP 15
+  IF ( ANY (T1%R8   .NE. (/(I, I=2,17)/)) ) ERROR STOP 16
+  IF ( ANY (T1%R6   .NE. (/(I, I=2,17)/)) ) ERROR STOP 17
 
-  IF ( ANY(T1%Str   .NE. C )  ) STOP 18
-  IF ( Length       .NE. 128 )  STOP 19
+  IF ( ANY(T1%Str   .NE. C )  ) ERROR STOP 18
+  IF ( Length       .NE. 128 )  ERROR STOP 19
 
   END
 

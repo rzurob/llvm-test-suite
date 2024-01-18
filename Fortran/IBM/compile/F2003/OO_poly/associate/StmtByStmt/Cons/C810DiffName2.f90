@@ -31,7 +31,7 @@
   IMPLICIT NONE
 
      ASSOCIATE ( As  => "abc"(1:3) )
-       IF ( As .NE. "bc" ) STOP 50
+       IF ( As .NE. "bc" ) ERROR STOP 50
      END ASSOCIATE As
 
   END

@@ -63,7 +63,7 @@
               STOP 31
 
           CLASS IS (Base(knd1,*))
-              IF( SIZE(A) /= len1*len1) STOP 111
+              IF( SIZE(A) /= len1*len1) ERROR STOP 111
 
           CLASS DEFAULT
              STOP 32
@@ -81,12 +81,12 @@
       TYPE(NtG(knd1,len1)), TARGET :: cbl
 
       ALLOCATE(Base(knd1,len1):: cbl%Cmp(len1))
-      IF ( .NOT. ALLOCATED(cbl%Cmp)) STOP 101
+      IF ( .NOT. ALLOCATED(cbl%Cmp)) ERROR STOP 101
 
       !dynamic TYPE of child is NextGen
       child1 => cbl
-      IF ( .NOT. ASSOCIATED(child1)) STOP 104
-      IF ( .NOT. ALLOCATED(child1%Cmp)) STOP 105
+      IF ( .NOT. ASSOCIATED(child1)) ERROR STOP 104
+      IF ( .NOT. ALLOCATED(child1%Cmp)) ERROR STOP 105
 
       SELECT TYPE (child1)
          CLASS IS (NtG(knd1,*))

@@ -70,7 +70,7 @@ use m
 
     write (unit, iostat=iostat, iomsg=iomsg, pos=100) dtv%data(1)
 
-    if (iostat == 0) stop 101
+    if (iostat == 0) error stop 101
 end subroutine
 
 

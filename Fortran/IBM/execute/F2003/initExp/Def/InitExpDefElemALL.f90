@@ -73,34 +73,34 @@
   LOGICAL(KIND(ALL(T38))) :: T48(2)=ALL((B8 .NE. C8), 2)
 
 
-  IF (KIND(T11)   .NE.   1 )        STOP 11
-  IF (ANY(T11     .NEQV. .TRUE.))   STOP 12
-  IF (KIND(T12)   .NE.   2 )        STOP 13
-  IF (ANY(T12     .NEQV. .TRUE.))   STOP 14
-  IF (KIND(T14)   .NE.   4 )        STOP 15
-  IF (ANY(T14     .NEQV. .TRUE.))   STOP 16
-  IF (KIND(T18)   .NE.   8 )        STOP 17
-  IF (ANY(T18     .NEQV. .TRUE.))   STOP 18
+  IF (KIND(T11)   .NE.   1 )        ERROR STOP 11
+  IF (ANY(T11     .NEQV. .TRUE.))   ERROR STOP 12
+  IF (KIND(T12)   .NE.   2 )        ERROR STOP 13
+  IF (ANY(T12     .NEQV. .TRUE.))   ERROR STOP 14
+  IF (KIND(T14)   .NE.   4 )        ERROR STOP 15
+  IF (ANY(T14     .NEQV. .TRUE.))   ERROR STOP 16
+  IF (KIND(T18)   .NE.   8 )        ERROR STOP 17
+  IF (ANY(T18     .NEQV. .TRUE.))   ERROR STOP 18
 
 
-  IF (KIND(T21)   .NE.   1 )        STOP 21
-  IF (ANY (T21    .NEQV. .TRUE.))   STOP 12
-  IF (KIND(T22)   .NE.   2 )        STOP 23
-  IF (ANY (T22    .NEQV. .TRUE.))   STOP 14
-  IF (KIND(T24)   .NE.   4 )        STOP 25
-  IF (ANY (T24    .NEQV. .TRUE.))   STOP 16
-  IF (KIND(T28)   .NE.   8 )        STOP 27
-  IF (ANY (T28    .NEQV. .TRUE.))   STOP 18
+  IF (KIND(T21)   .NE.   1 )        ERROR STOP 21
+  IF (ANY (T21    .NEQV. .TRUE.))   ERROR STOP 12
+  IF (KIND(T22)   .NE.   2 )        ERROR STOP 23
+  IF (ANY (T22    .NEQV. .TRUE.))   ERROR STOP 14
+  IF (KIND(T24)   .NE.   4 )        ERROR STOP 25
+  IF (ANY (T24    .NEQV. .TRUE.))   ERROR STOP 16
+  IF (KIND(T28)   .NE.   8 )        ERROR STOP 27
+  IF (ANY (T28    .NEQV. .TRUE.))   ERROR STOP 18
 
-  IF ( ANY( T31 .NEQV. R1) )   STOP 31
-  IF ( ANY( T32 .NEQV. R1) )   STOP 32
-  IF ( ANY( T34 .NEQV. R1) )   STOP 33
-  IF ( ANY( T38 .NEQV. R1) )   STOP 34
+  IF ( ANY( T31 .NEQV. R1) )   ERROR STOP 31
+  IF ( ANY( T32 .NEQV. R1) )   ERROR STOP 32
+  IF ( ANY( T34 .NEQV. R1) )   ERROR STOP 33
+  IF ( ANY( T38 .NEQV. R1) )   ERROR STOP 34
 
-  IF ( ANY( T41 .NEQV. R3) )   STOP 41
-  IF ( ANY( T42 .NEQV. R3) )   STOP 42
-  IF ( ANY( T44 .NEQV. R3) )   STOP 43
-  IF ( ANY( T48 .NEQV. R3) )   STOP 44
+  IF ( ANY( T41 .NEQV. R3) )   ERROR STOP 41
+  IF ( ANY( T42 .NEQV. R3) )   ERROR STOP 42
+  IF ( ANY( T44 .NEQV. R3) )   ERROR STOP 43
+  IF ( ANY( T48 .NEQV. R3) )   ERROR STOP 44
 
 
 

@@ -44,34 +44,34 @@
   RECORD /S1/ R
 
   ASSOCIATE ( As => R  )
-    IF ( As.I .NE.  1  )    STOP 20
-    IF ( As.J .NE. -1  )    STOP 21
+    IF ( As.I .NE.  1  )    ERROR STOP 20
+    IF ( As.J .NE. -1  )    ERROR STOP 21
 
-    IF ( As.L .NE.  1  )    STOP 22
-    IF ( As.M .NE. -1  )    STOP 23
+    IF ( As.L .NE.  1  )    ERROR STOP 22
+    IF ( As.M .NE. -1  )    ERROR STOP 23
 
     ASSOCIATE ( As1 => As.I, As2 => As.J )
 
-      IF ( As1 .NE.  1  )   STOP 24
-      IF ( As2 .NE. -1  )   STOP 25
+      IF ( As1 .NE.  1  )   ERROR STOP 24
+      IF ( As2 .NE. -1  )   ERROR STOP 25
 
       As1 = -1
       As2 = 1
 
     END ASSOCIATE
 
-    IF ( As.I .NE. -1  )    STOP 30
-    IF ( As.J .NE.  1  )    STOP 31
+    IF ( As.I .NE. -1  )    ERROR STOP 30
+    IF ( As.J .NE.  1  )    ERROR STOP 31
 
-    IF ( As.L .NE. -1  )    STOP 32
-    IF ( As.M .NE.  1  )    STOP 33
+    IF ( As.L .NE. -1  )    ERROR STOP 32
+    IF ( As.M .NE.  1  )    ERROR STOP 33
 
   END ASSOCIATE
 
-  IF ( R.I .NE. -1  )      STOP 40
-  IF ( R.J .NE.  1  )      STOP 41
+  IF ( R.I .NE. -1  )      ERROR STOP 40
+  IF ( R.J .NE.  1  )      ERROR STOP 41
 
-  IF ( R.L .NE. -1  )      STOP 50
-  IF ( R.M .NE.  1  )      STOP 51
+  IF ( R.L .NE. -1  )      ERROR STOP 50
+  IF ( R.M .NE.  1  )      ERROR STOP 51
 
   END

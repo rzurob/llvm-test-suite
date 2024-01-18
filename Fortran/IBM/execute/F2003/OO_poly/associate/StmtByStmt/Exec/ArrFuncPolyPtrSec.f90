@@ -40,26 +40,26 @@
 
   ASSOCIATE ( As => ReturnArr(Arr(1:2:1, 1:2) ) )
 
-    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             STOP 30
-    IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             STOP 31
-    IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             STOP 32
+    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             ERROR STOP 30
+    IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             ERROR STOP 31
+    IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             ERROR STOP 32
 
     SELECT TYPE (As)
     TYPE IS (COMPLEX(8))
-      IF ( ANY (As  .NE. RESHAPE((/((1.0, -1.0), i=1,4)/), (/2,2/)) ) ) STOP 33
+      IF ( ANY (As  .NE. RESHAPE((/((1.0, -1.0), i=1,4)/), (/2,2/)) ) ) ERROR STOP 33
     CLASS DEFAULT
       STOP 35
     END SELECT
 
     ASSOCIATE( As => SPREAD( As(:,1), 1, 2) )
 
-      IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             STOP 40
-      IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             STOP 41
-      IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             STOP 42
+      IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             ERROR STOP 40
+      IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             ERROR STOP 41
+      IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             ERROR STOP 42
 
       SELECT TYPE (As)
       TYPE IS (COMPLEX(8))
-        IF ( ANY (As  .NE. RESHAPE((/((1.0, -1.0), i=1,4)/), (/2,2/)) ) ) STOP 33
+        IF ( ANY (As  .NE. RESHAPE((/((1.0, -1.0), i=1,4)/), (/2,2/)) ) ) ERROR STOP 33
       CLASS DEFAULT
         STOP 35
       END SELECT
@@ -68,7 +68,7 @@
 
   END ASSOCIATE
 
-  IF ( ANY ( Arr(1::1, ::1)   .NE. (1.0,-1.0) ) )        STOP 62
+  IF ( ANY ( Arr(1::1, ::1)   .NE. (1.0,-1.0) ) )        ERROR STOP 62
 
   END
 

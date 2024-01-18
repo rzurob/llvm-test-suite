@@ -29,16 +29,16 @@ integer(8), parameter :: c(2,3,4,5)=reshape((/(i,i=1,120)/), &
   &  (/2,3,4,5/))
 integer(8) :: res18(2,3,5)=sum(c, dim=3)
 
-if (res11 .ne. sum((/-9_1,-86_1,-9_1-1_1,-18_1,-5_1/))) stop 1
-if (res11 .ne. -128) stop 11
+if (res11 .ne. sum((/-9_1,-86_1,-9_1-1_1,-18_1,-5_1/))) error stop 1
+if (res11 .ne. -128) error stop 11
 
-if (.not. all(res12a .eq. sum(res12, dim=2))) stop 2
+if (.not. all(res12a .eq. sum(res12, dim=2))) error stop 2
 
-if (res2 .ne. sum( a, mask=a.gt.-5)) stop 3
-if (.not. all(res3 .eq. sum(b, dim=1))) stop 4
-if (.not. all(res4 .eq. sum(b, dim=2))) stop 5
-if (.not. all(res5 .eq. sum(b, dim=2, mask=b .gt. 2))) stop 6
+if (res2 .ne. sum( a, mask=a.gt.-5)) error stop 3
+if (.not. all(res3 .eq. sum(b, dim=1))) error stop 4
+if (.not. all(res4 .eq. sum(b, dim=2))) error stop 5
+if (.not. all(res5 .eq. sum(b, dim=2, mask=b .gt. 2))) error stop 6
 
-if (.not. all(res18 .eq. sum(c, dim=3))) stop 7
+if (.not. all(res18 .eq. sum(c, dim=3))) error stop 7
 
 end

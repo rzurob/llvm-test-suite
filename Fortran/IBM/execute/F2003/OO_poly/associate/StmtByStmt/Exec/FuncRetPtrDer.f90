@@ -58,25 +58,25 @@
   TYPE(Child), TARGET :: V = Child(BaseId= -1, ChildId=-2 )
 
   ASSOCIATE ( As => Func( V ) )
-    IF ( As%GetID()      .NE. -2) STOP 50
-    IF ( As%Base%GetID() .NE. -1) STOP 51
-    IF ( As%BaseId       .NE. -1) STOP 52
-    IF ( As%ChildId      .NE. -2) STOP 53
+    IF ( As%GetID()      .NE. -2) ERROR STOP 50
+    IF ( As%Base%GetID() .NE. -1) ERROR STOP 51
+    IF ( As%BaseId       .NE. -1) ERROR STOP 52
+    IF ( As%ChildId      .NE. -2) ERROR STOP 53
 
     ASSOCIATE ( As1 => As%GetId() )
-       IF ( As1 .NE. -2) STOP 54
+       IF ( As1 .NE. -2) ERROR STOP 54
     END ASSOCIATE
 
-    IF ( .NOT. SAME_TYPE_AS(As, Child()) )     STOP 55
-    IF ( .NOT. ASSOCIATED(As%ChildArr) )       STOP 56
-    IF ( .NOT. SAME_TYPE_AS(As%ChildArr, As) ) STOP 57
+    IF ( .NOT. SAME_TYPE_AS(As, Child()) )     ERROR STOP 55
+    IF ( .NOT. ASSOCIATED(As%ChildArr) )       ERROR STOP 56
+    IF ( .NOT. SAME_TYPE_AS(As%ChildArr, As) ) ERROR STOP 57
 
-    IF ( ANY(LBOUND(As%ChildArr)  .NE. 1))     STOP 58
-    IF ( ANY(UBOUND(As%ChildArr)  .NE. 3))     STOP 59
-    IF ( As%ChildArr(1)%BaseId    .NE. 1)      STOP 60
-    IF ( As%ChildArr(1)%ChildId   .NE. 2)      STOP 61
-    IF ( ANY(As%ChildArr%Base%GetId() .NE. 1))      STOP 63
-    IF ( ANY(As%ChildArr%GetId()      .NE. 2))      STOP 64
+    IF ( ANY(LBOUND(As%ChildArr)  .NE. 1))     ERROR STOP 58
+    IF ( ANY(UBOUND(As%ChildArr)  .NE. 3))     ERROR STOP 59
+    IF ( As%ChildArr(1)%BaseId    .NE. 1)      ERROR STOP 60
+    IF ( As%ChildArr(1)%ChildId   .NE. 2)      ERROR STOP 61
+    IF ( ANY(As%ChildArr%Base%GetId() .NE. 1))      ERROR STOP 63
+    IF ( ANY(As%ChildArr%GetId()      .NE. 2))      ERROR STOP 64
   END ASSOCIATE
 
   CONTAINS

@@ -56,9 +56,9 @@ program main
 
     a1%p(1:2,3:4,5:7) => b1%pp( [-1,0,1,2,3,4,5,6,7,8,9,10])
 
-    if ( .not. associated(a1%p)) stop 1
-    if ( any (lbound(a1%p) .ne. (/1,3,5/))) stop 2
-    if ( any (ubound(a1%p) .ne. (/2,4,7/))) stop 3
+    if ( .not. associated(a1%p)) error stop 1
+    if ( any (lbound(a1%p) .ne. (/1,3,5/))) error stop 2
+    if ( any (ubound(a1%p) .ne. (/2,4,7/))) error stop 3
 
     if ( any(a1%p(2,3,:) .ge. (/0,4,8 /)) ) then
     	a1%p(2,3,:) = a1%p(2,3, 7:5:-1)

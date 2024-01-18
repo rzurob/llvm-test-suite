@@ -65,9 +65,9 @@
   INTEGER         :: I
 
   DO I=1, 1024
-    IF (  ANY ( T2(I)%C1 .NE. C1    ) ) STOP 24
-    IF (  ANY ( T2(I)%I  .NE. K     ) ) STOP 25
-    IF (  ANY ( T2(I)%C2 .NE. C2    ) ) STOP 26
+    IF (  ANY ( T2(I)%C1 .NE. C1    ) ) ERROR STOP 24
+    IF (  ANY ( T2(I)%I  .NE. K     ) ) ERROR STOP 25
+    IF (  ANY ( T2(I)%C2 .NE. C2    ) ) ERROR STOP 26
   END DO
 
   END PROGRAM

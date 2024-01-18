@@ -109,28 +109,28 @@
                 RESHAPE((/DT(I=0),DT(I=1),DT(I=0),DT(I=2),DT(I=0),DT(I=0),DT(I=0),DT(I=0),DT(I=3)/), (/3,3/))
 
 
-  IF (KIND(TI11)   .NE.   1 )        STOP 11
-  IF (ANY( TI11    .NE.   IR1))      STOP 12
-  IF (KIND(TI12)   .NE.   1 )        STOP 13
-  IF (ANY( TI12    .NE.   IR2))      STOP 14
+  IF (KIND(TI11)   .NE.   1 )        ERROR STOP 11
+  IF (ANY( TI11    .NE.   IR1))      ERROR STOP 12
+  IF (KIND(TI12)   .NE.   1 )        ERROR STOP 13
+  IF (ANY( TI12    .NE.   IR2))      ERROR STOP 14
 
-  IF (KIND(TL21)   .NE.   2 )        STOP 21
-  IF (ANY( TL21    .NEQV. LR1))      STOP 22
-  IF (KIND(TL22)   .NE.   2 )        STOP 23
-  IF (ANY( TL22    .NEQV. LR2))      STOP 24
+  IF (KIND(TL21)   .NE.   2 )        ERROR STOP 21
+  IF (ANY( TL21    .NEQV. LR1))      ERROR STOP 22
+  IF (KIND(TL22)   .NE.   2 )        ERROR STOP 23
+  IF (ANY( TL22    .NEQV. LR2))      ERROR STOP 24
 
-  IF (KIND(TR41)   .NE.   4 )        STOP 31
-  IF (ANY( TR41    .NE.   RR1))      STOP 32
-  IF (KIND(TR42)   .NE.   4 )        STOP 33
-  IF (ANY( TR42    .NE.   RR2))      STOP 34
+  IF (KIND(TR41)   .NE.   4 )        ERROR STOP 31
+  IF (ANY( TR41    .NE.   RR1))      ERROR STOP 32
+  IF (KIND(TR42)   .NE.   4 )        ERROR STOP 33
+  IF (ANY( TR42    .NE.   RR2))      ERROR STOP 34
 
-  IF (KIND(TZ81)   .NE.   8 )        STOP 41
-  IF (ANY( TZ81    .NE.   ZR1))      STOP 42
-  IF (KIND(TZ82)   .NE.   8 )        STOP 43
-  IF (ANY( TZ82    .NE.   ZR2))      STOP 44
+  IF (KIND(TZ81)   .NE.   8 )        ERROR STOP 41
+  IF (ANY( TZ81    .NE.   ZR1))      ERROR STOP 42
+  IF (KIND(TZ82)   .NE.   8 )        ERROR STOP 43
+  IF (ANY( TZ82    .NE.   ZR2))      ERROR STOP 44
 
-  IF (ANY( TD1%I   .NE.   DR1%I))    STOP 52
-  IF (ANY( TD2%I   .NE.   DR2%I))    STOP 54
+  IF (ANY( TD1%I   .NE.   DR1%I))    ERROR STOP 52
+  IF (ANY( TD2%I   .NE.   DR2%I))    ERROR STOP 54
 
 
 

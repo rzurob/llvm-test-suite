@@ -53,16 +53,16 @@
 
 
 
-  IF ( ANY(I1   .NE. 0 ) ) STOP 11
-  IF ( ANY(I2   .NE. 0 ) ) STOP 12
-  IF ( ANY(I4   .NE. 0 ) ) STOP 13
-  IF ( ANY(I8   .NE. 0 ) ) STOP 14
+  IF ( ANY(I1   .NE. 0 ) ) ERROR STOP 11
+  IF ( ANY(I2   .NE. 0 ) ) ERROR STOP 12
+  IF ( ANY(I4   .NE. 0 ) ) ERROR STOP 13
+  IF ( ANY(I8   .NE. 0 ) ) ERROR STOP 14
 
 
-  IF ( ANY(R4   .NE. F ) ) STOP 31
-  IF ( ANY(R8   .NE. G ) ) STOP 32
-! IF ( ANY(R6   .NE. H ) ) STOP 33
-  IF ( ANY(R6   .NE. T ) ) STOP 33
+  IF ( ANY(R4   .NE. F ) ) ERROR STOP 31
+  IF ( ANY(R8   .NE. G ) ) ERROR STOP 32
+! IF ( ANY(R6   .NE. H ) ) ERROR STOP 33
+  IF ( ANY(R6   .NE. T ) ) ERROR STOP 33
 
 
   END

@@ -45,9 +45,9 @@
   REAL(16), PARAMETER   :: Epsilon6 = 2._16**(-DIGITS(R6)+1)
 
 
-  IF ( TR4    .NE. Epsilon4     )   STOP 11
-  IF ( TR8    .NE. Epsilon8     )   STOP 18
-  IF ( TR6    .NE. Epsilon6     )   STOP 16
+  IF ( TR4    .NE. Epsilon4     )   ERROR STOP 11
+  IF ( TR8    .NE. Epsilon8     )   ERROR STOP 18
+  IF ( TR6    .NE. Epsilon6     )   ERROR STOP 16
 
   END
 

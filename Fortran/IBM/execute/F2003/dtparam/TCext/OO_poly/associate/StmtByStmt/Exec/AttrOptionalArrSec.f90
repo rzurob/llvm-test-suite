@@ -97,15 +97,15 @@
   W(2::2)= Child(4,20)(BaseID=-0, ChildID=-0)
   CALL Sub(W(::2), 3, 5)
 
-  IF ( ANY(W(::2)%BaseID        .NE. 1 )) STOP 40
-  IF ( ANY(W(::2)%Base%GetId()  .NE. 1 )) STOP 41
-  IF ( ANY(W(::2)%ChildID       .NE. 2 )) STOP 42
-  IF ( ANY(W(::2)%GetId()       .NE. 2 )) STOP 43
+  IF ( ANY(W(::2)%BaseID        .NE. 1 )) ERROR STOP 40
+  IF ( ANY(W(::2)%Base%GetId()  .NE. 1 )) ERROR STOP 41
+  IF ( ANY(W(::2)%ChildID       .NE. 2 )) ERROR STOP 42
+  IF ( ANY(W(::2)%GetId()       .NE. 2 )) ERROR STOP 43
 
-  IF ( ANY(W(2::2)%BaseID        .NE. 0 )) STOP 45
-  IF ( ANY(W(2::2)%Base%GetId()  .NE. 0 )) STOP 46
-  IF ( ANY(W(2::2)%ChildID       .NE. 0 )) STOP 47
-  IF ( ANY(W(2::2)%GetId()       .NE. 0 )) STOP 48
+  IF ( ANY(W(2::2)%BaseID        .NE. 0 )) ERROR STOP 45
+  IF ( ANY(W(2::2)%Base%GetId()  .NE. 0 )) ERROR STOP 46
+  IF ( ANY(W(2::2)%ChildID       .NE. 0 )) ERROR STOP 47
+  IF ( ANY(W(2::2)%GetId()       .NE. 0 )) ERROR STOP 48
 
   END
 
@@ -116,18 +116,18 @@
 
   IF ( .NOT. PRESENT(Arg) ) STOP  05
 
-  IF ( .NOT. PRESENT (Arg) ) STOP 11
-  IF ( ANY(LBOUND(Arg) .NE. (/I/) ) )     STOP 11
-  IF ( ANY(SHAPE(Arg)  .NE. (/J-I+1/) ) ) STOP 12
+  IF ( .NOT. PRESENT (Arg) ) ERROR STOP 11
+  IF ( ANY(LBOUND(Arg) .NE. (/I/) ) )     ERROR STOP 11
+  IF ( ANY(SHAPE(Arg)  .NE. (/J-I+1/) ) ) ERROR STOP 12
 
   ASSOCIATE ( Arg => Arg(::1) )
   SELECT TYPE ( Arg )
   CLASS IS (Child(4,*))
 
-    IF ( ANY(Arg%BaseID        .NE. -1 )) STOP 30
-    IF ( ANY(Arg%Base%GetId()  .NE. -1 )) STOP 31
-    IF ( ANY(Arg%ChildID       .NE. -2 )) STOP 32
-    IF ( ANY(Arg%GetId()       .NE. -2 )) STOP 33
+    IF ( ANY(Arg%BaseID        .NE. -1 )) ERROR STOP 30
+    IF ( ANY(Arg%Base%GetId()  .NE. -1 )) ERROR STOP 31
+    IF ( ANY(Arg%ChildID       .NE. -2 )) ERROR STOP 32
+    IF ( ANY(Arg%GetId()       .NE. -2 )) ERROR STOP 33
 
     CALL Arg%Base%SetID(Arg)
     CALL Arg%SetID(Arg)

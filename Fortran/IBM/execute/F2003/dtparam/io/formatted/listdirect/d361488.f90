@@ -36,12 +36,12 @@ program d361488
   read(10,*) outobj2
 
 
-  if(.not. precision_x6(outobj2%x1(1),(9.9_8,-9.9_8) )) stop 1
-  if(.not. precision_x6(outobj2%x1(2),(3.4_8,-7.8_8) )) stop 2
-  if(.not. precision_x6(outobj2%x1(3),(0.5_8,-0.5D-2))) stop 3
+  if(.not. precision_x6(outobj2%x1(1),(9.9_8,-9.9_8) )) error stop 1
+  if(.not. precision_x6(outobj2%x1(2),(3.4_8,-7.8_8) )) error stop 2
+  if(.not. precision_x6(outobj2%x1(3),(0.5_8,-0.5D-2))) error stop 3
 
-  if(.not. precision_r4(outobj2%inn3%r1(3),-3.4 ))      stop 4
-  if(.not. precision_r4(outobj2%inn3%r1(4),-2.3E-3 ))   stop 5
+  if(.not. precision_r4(outobj2%inn3%r1(3),-3.4 ))      error stop 4
+  if(.not. precision_r4(outobj2%inn3%r1(4),-2.3E-3 ))   error stop 5
 
 
   close(10)

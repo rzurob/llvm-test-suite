@@ -70,31 +70,31 @@
   ! CLASS IS (DT0)
   !   STOP 20
     CLASS IS (DT)
-        IF (ANY(S1(:,:)%IArr(1)  .NE. 1)) STOP 22
-        IF (ANY(S1(:,:)%IArr(2)  .NE. 2)) STOP 23
-        IF (ANY(S1(:,:)%GetInt(1).NE. 1)) STOP 24
-        IF (ANY(S1(:,:)%GetInt(2).NE. 2)) STOP 25
+        IF (ANY(S1(:,:)%IArr(1)  .NE. 1)) ERROR STOP 22
+        IF (ANY(S1(:,:)%IArr(2)  .NE. 2)) ERROR STOP 23
+        IF (ANY(S1(:,:)%GetInt(1).NE. 1)) ERROR STOP 24
+        IF (ANY(S1(:,:)%GetInt(2).NE. 2)) ERROR STOP 25
 
         S1%IArr(1) = -1 !Bad
         S1%IArr(2) = -2 !Bad
 
-        IF (SIZE(S1(2,2)%IArr)   .NE. 2)  STOP 30
-        IF (KIND(S1(2,2)%IArr)   .NE. 8)  STOP 31
-        IF (ANY(S1(:,:)%IArr(1)  .NE. -1)) STOP 32
-        IF (ANY(S1(:,:)%IArr(2)  .NE. -2)) STOP 33
-        IF (ANY(S1(:,:)%GetInt(1).NE. -1)) STOP 34
-        IF (ANY(S1(:,:)%GetInt(2).NE. -2)) STOP 35
+        IF (SIZE(S1(2,2)%IArr)   .NE. 2)  ERROR STOP 30
+        IF (KIND(S1(2,2)%IArr)   .NE. 8)  ERROR STOP 31
+        IF (ANY(S1(:,:)%IArr(1)  .NE. -1)) ERROR STOP 32
+        IF (ANY(S1(:,:)%IArr(2)  .NE. -2)) ERROR STOP 33
+        IF (ANY(S1(:,:)%GetInt(1).NE. -1)) ERROR STOP 34
+        IF (ANY(S1(:,:)%GetInt(2).NE. -2)) ERROR STOP 35
 
 
     END SELECT
 
-    IF(ANY( S1%IArr(1) .NE. 3_8 )) STOP 40
-    IF(ANY( S1%IArr(2) .NE. 4_8 )) STOP 41
+    IF(ANY( S1%IArr(1) .NE. 3_8 )) ERROR STOP 40
+    IF(ANY( S1%IArr(2) .NE. 4_8 )) ERROR STOP 41
 
     END SELECT
 
-    IF(ANY( S2%IArr(1) .NE. 5_8 )) STOP 50
-    IF(ANY( S2%IArr(2) .NE. 6_8 )) STOP 51
+    IF(ANY( S2%IArr(1) .NE. 5_8 )) ERROR STOP 50
+    IF(ANY( S2%IArr(2) .NE. 6_8 )) ERROR STOP 51
 
   END
 

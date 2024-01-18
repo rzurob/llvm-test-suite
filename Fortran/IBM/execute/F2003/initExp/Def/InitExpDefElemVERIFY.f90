@@ -49,17 +49,17 @@
   INTEGER  :: TX2(4,4) = VERIFY(STRING=X%C, SET=X%C1( : ), BACK=.TRUE.)
 
 
-  IF ( KIND(TI1)  .NE.    1 )  STOP 11
-  IF ( KIND(TI2)  .NE.    2 )  STOP 12
-  IF ( KIND(TI4)  .NE.    4 )  STOP 14
-  IF ( KIND(TI8)  .NE.    8 )  STOP 18
+  IF ( KIND(TI1)  .NE.    1 )  ERROR STOP 11
+  IF ( KIND(TI2)  .NE.    2 )  ERROR STOP 12
+  IF ( KIND(TI4)  .NE.    4 )  ERROR STOP 14
+  IF ( KIND(TI8)  .NE.    8 )  ERROR STOP 18
 
-  IF (ANY( TI1  .NE. 6   )) STOP 21
-  IF (ANY( TI2  .NE. 1   )) STOP 22
-  IF (ANY( TI4  .NE. 0   )) STOP 24
-  IF (ANY( TI8  .NE. 1   )) STOP 25
-  IF (ANY( TX1  .NE. 38  )) STOP 26
-  IF (ANY( TX2  .NE. 36  )) STOP 27
+  IF (ANY( TI1  .NE. 6   )) ERROR STOP 21
+  IF (ANY( TI2  .NE. 1   )) ERROR STOP 22
+  IF (ANY( TI4  .NE. 0   )) ERROR STOP 24
+  IF (ANY( TI8  .NE. 1   )) ERROR STOP 25
+  IF (ANY( TX1  .NE. 38  )) ERROR STOP 26
+  IF (ANY( TX2  .NE. 36  )) ERROR STOP 27
 
 
 

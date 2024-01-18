@@ -17,7 +17,7 @@ character, dimension(3,3) :: &
   & res1=reshape((/'*','*','*','A','D','G','B','E','H'/),(/3,3/)), &
   & res2=reshape((/'*','E','G','A','F','H','B','/','I'/),(/3,3/))
 
-if (.not. all(c1 .eq. res1)) stop 1
-if (.not. all(c2 .eq. res2)) stop 2
+if (.not. all(c1 .eq. res1)) error stop 1
+if (.not. all(c2 .eq. res2)) error stop 2
 
 end

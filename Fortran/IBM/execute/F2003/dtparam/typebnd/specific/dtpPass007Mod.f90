@@ -55,7 +55,7 @@ module pointMod
 
         real, dimension(p1%n) :: pointDiff
 
-        if (p1%n /= p2%n) stop 10
+        if (p1%n /= p2%n) error stop 10
 
         pointDiff = p1%vertices() - p2%vertices()
     end function

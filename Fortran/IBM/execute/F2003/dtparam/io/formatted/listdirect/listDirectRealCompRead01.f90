@@ -83,33 +83,33 @@ program listDirectRealCompRead01
 
   allocate(d1(2),source=readData(t1,10))
 
-  if(.not. precision_r4(t2(3)%r3(1),0.1))                 stop 11
-  if(.not. precision_r4(t2(3)%r3(2),-3.4))                stop 12
-  if(.not. precision_r4(t2(3)%r3(3),0.12E-01))            stop 13
-  if(.not. precision_r8(t2(3)%dtcomp%r1(1),-2.1E2_8))     stop 14
-  if(.not. precision_r8(t2(3)%dtcomp%r1(2),0.1_8))        stop 15
-  if(.not. precision_r16(t2(3)%dtcomp%r2,3.2_16))         stop 16
+  if(.not. precision_r4(t2(3)%r3(1),0.1))                 error stop 11
+  if(.not. precision_r4(t2(3)%r3(2),-3.4))                error stop 12
+  if(.not. precision_r4(t2(3)%r3(3),0.12E-01))            error stop 13
+  if(.not. precision_r8(t2(3)%dtcomp%r1(1),-2.1E2_8))     error stop 14
+  if(.not. precision_r8(t2(3)%dtcomp%r1(2),0.1_8))        error stop 15
+  if(.not. precision_r16(t2(3)%dtcomp%r2,3.2_16))         error stop 16
 
-  if(.not. precision_r4(t2(4)%r3(1),2.3_4))               stop 17
-  if(.not. precision_r4(t2(4)%r3(2),-4.0E-15))            stop 18
-  if(.not. precision_r4(t2(4)%r3(3),-3.0))                stop 19
-  if(.not. precision_r8(t2(4)%dtcomp%r1(1),-2.0_8))       stop 20
-  if(.not. precision_r8(t2(4)%dtcomp%r1(2),-2.E-01_8))    stop 21
-  if(.not. precision_r16(t2(4)%dtcomp%r2,-3.7_16))        stop 22
+  if(.not. precision_r4(t2(4)%r3(1),2.3_4))               error stop 17
+  if(.not. precision_r4(t2(4)%r3(2),-4.0E-15))            error stop 18
+  if(.not. precision_r4(t2(4)%r3(3),-3.0))                error stop 19
+  if(.not. precision_r8(t2(4)%dtcomp%r1(1),-2.0_8))       error stop 20
+  if(.not. precision_r8(t2(4)%dtcomp%r1(2),-2.E-01_8))    error stop 21
+  if(.not. precision_r16(t2(4)%dtcomp%r2,-3.7_16))        error stop 22
 
-  if(.not. precision_r4(d1(1)%r3(1),0.1))                 stop 23
-  if(.not. precision_r4(d1(1)%r3(2),-3.4))                stop 24
-  if(.not. precision_r4(d1(1)%r3(3),0.12E-01))            stop 25
-  if(.not. precision_r8(d1(1)%dtcomp%r1(1),-2.1E2_8))     stop 26
-  if(.not. precision_r8(d1(1)%dtcomp%r1(2),0.1_8))        stop 27
-  if(.not. precision_r16(d1(1)%dtcomp%r2,3.2_16))         stop 28
+  if(.not. precision_r4(d1(1)%r3(1),0.1))                 error stop 23
+  if(.not. precision_r4(d1(1)%r3(2),-3.4))                error stop 24
+  if(.not. precision_r4(d1(1)%r3(3),0.12E-01))            error stop 25
+  if(.not. precision_r8(d1(1)%dtcomp%r1(1),-2.1E2_8))     error stop 26
+  if(.not. precision_r8(d1(1)%dtcomp%r1(2),0.1_8))        error stop 27
+  if(.not. precision_r16(d1(1)%dtcomp%r2,3.2_16))         error stop 28
 
-  if(.not. precision_r4(d1(2)%r3(1),2.3_4))               stop 29
-  if(.not. precision_r4(d1(2)%r3(2),-4.0E-15))            stop 30
-  if(.not. precision_r4(d1(2)%r3(3),-3.0))                stop 31
-  if(.not. precision_r8(d1(2)%dtcomp%r1(1),-2.0_8))       stop 32
-  if(.not. precision_r8(d1(2)%dtcomp%r1(2),-2.E-01_8))    stop 33
-  if(.not. precision_r16(d1(2)%dtcomp%r2,-3.7_16))        stop 34
+  if(.not. precision_r4(d1(2)%r3(1),2.3_4))               error stop 29
+  if(.not. precision_r4(d1(2)%r3(2),-4.0E-15))            error stop 30
+  if(.not. precision_r4(d1(2)%r3(3),-3.0))                error stop 31
+  if(.not. precision_r8(d1(2)%dtcomp%r1(1),-2.0_8))       error stop 32
+  if(.not. precision_r8(d1(2)%dtcomp%r1(2),-2.E-01_8))    error stop 33
+  if(.not. precision_r16(d1(2)%dtcomp%r2,-3.7_16))        error stop 34
 
   close(10)
 

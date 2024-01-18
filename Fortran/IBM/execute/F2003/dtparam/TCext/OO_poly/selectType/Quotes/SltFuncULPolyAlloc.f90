@@ -106,10 +106,10 @@
     TYPE is (REAL)
       STOP 33
     CLASS IS (Child(4,*))
-      IF ( As%Base%GetId() .NE.  10 ) STOP 34
-      IF ( As%GetId()      .NE. -10 ) STOP 35
-      IF ( As%BaseId       .NE.  10 ) STOP 36
-      IF ( As%ChildId      .NE. -10 ) STOP 37
+      IF ( As%Base%GetId() .NE.  10 ) ERROR STOP 34
+      IF ( As%GetId()      .NE. -10 ) ERROR STOP 35
+      IF ( As%BaseId       .NE.  10 ) ERROR STOP 36
+      IF ( As%ChildId      .NE. -10 ) ERROR STOP 37
     CLASS IS (Zero(4,*))
       STOP 38
   END SELECT

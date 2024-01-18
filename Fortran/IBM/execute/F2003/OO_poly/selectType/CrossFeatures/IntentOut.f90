@@ -56,10 +56,10 @@
 
   CALL Sub(V)
 
-    IF (ANY(V%IArr(1) .NE. 1)) STOP 30
-    IF (ANY(V%IArr(2) .NE. 2)) STOP 31
-    IF (TRIM(V(1,1)%CArr(1)) .NE. "1") STOP 32
-    IF (TRIM(V(2,2)%CArr(2)) .NE. "2") STOP 33
+    IF (ANY(V%IArr(1) .NE. 1)) ERROR STOP 30
+    IF (ANY(V%IArr(2) .NE. 2)) ERROR STOP 31
+    IF (TRIM(V(1,1)%CArr(1)) .NE. "1") ERROR STOP 32
+    IF (TRIM(V(2,2)%CArr(2)) .NE. "2") ERROR STOP 33
 
   CONTAINS
 
@@ -70,9 +70,9 @@
   SELECT TYPE( U )
   CLASS IS (DT)
 
-    IF (ANY(U%IArr(1) .NE. -1)) STOP 21
-    IF (TRIM(U(1,1)%CArr(1)) .NE. "!") STOP 22
-    IF (TRIM(U(2,2)%CArr(2)) .NE. "!") STOP 23
+    IF (ANY(U%IArr(1) .NE. -1)) ERROR STOP 21
+    IF (TRIM(U(1,1)%CArr(1)) .NE. "!") ERROR STOP 22
+    IF (TRIM(U(2,2)%CArr(2)) .NE. "!") ERROR STOP 23
 
     U%IArr(1) = 1
     U%IArr(2) = 2

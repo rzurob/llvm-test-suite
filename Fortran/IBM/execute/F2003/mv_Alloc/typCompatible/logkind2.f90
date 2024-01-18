@@ -30,11 +30,11 @@
 
           call move_alloc(l1, l2)
 
-          if ( allocated(l1)) stop 11
-          if ( .not. allocated(l2)) stop 13
+          if ( allocated(l1)) error stop 11
+          if ( .not. allocated(l2)) error stop 13
 
-          if ( size(l2,2) /= 3 ) stop 21
-          if ( l2(2,1,3) .neqv. .true. ) stop 23
-          if ( l2(1,3,2) .neqv. .false. ) stop 25
+          if ( size(l2,2) /= 3 ) error stop 21
+          if ( l2(2,1,3) .neqv. .true. ) error stop 23
+          if ( l2(1,3,2) .neqv. .false. ) error stop 25
 
           end

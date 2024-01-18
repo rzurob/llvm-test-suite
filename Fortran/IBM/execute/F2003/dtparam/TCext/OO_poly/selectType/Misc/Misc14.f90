@@ -72,9 +72,9 @@
 !       print*, U%BaseId ! should be -1
 !       print*, U%ChildId ! should be -2
 !       print*, U%BaseComp%BaseId ! should be 0
-        IF (U%BaseId   .NE. -1) STOP 21
-        IF (U%ChildId  .NE. -2) STOP 22
-        IF (U%BaseComp%BaseId .NE. 0) STOP 20
+        IF (U%BaseId   .NE. -1) ERROR STOP 21
+        IF (U%ChildId  .NE. -2) ERROR STOP 22
+        IF (U%BaseComp%BaseId .NE. 0) ERROR STOP 20
     end select
 
   END

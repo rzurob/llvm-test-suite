@@ -22,9 +22,9 @@ a2 = atan2(-0.0e0, -1.0e0)
 b2 = atan2(-0.0d0, -1.0d0)
 c2 = atan2(-0.0q0, -1.0q0)
 
-if (.not. precision_r4(a, a2)) stop 1
-if (.not. precision_r8(b, b2)) stop 2
-if (.not. precision_r16(c, c2)) stop 3
+if (.not. precision_r4(a, a2)) error stop 1
+if (.not. precision_r8(b, b2)) error stop 2
+if (.not. precision_r16(c, c2)) error stop 3
 
 call sub()
 end
@@ -45,7 +45,7 @@ a2 = atan2(-0.0e0, -1.0e0)
 b2 = atan2(-0.0d0, -1.0d0)
 c2 = atan2(-0.0q0, -1.0q0)
 
-if (.not. precision_r4(a, a2)) stop 4
-if (.not. precision_r8(b, b2)) stop 5
-if (.not. precision_r16(c, c2)) stop 6
+if (.not. precision_r4(a, a2)) error stop 4
+if (.not. precision_r8(b, b2)) error stop 5
+if (.not. precision_r16(c, c2)) error stop 6
 end subroutine

@@ -43,13 +43,13 @@ end module
 
         p(size(tar):) => tar(2::2)
 
-        if ( .not. associated(p, tar(2::2))) stop 11
-        if ( lbound(p,1) /= 10 ) stop 13
-        if ( ubound(p,1) /= 14 ) stop 15
+        if ( .not. associated(p, tar(2::2))) error stop 11
+        if ( lbound(p,1) /= 10 ) error stop 13
+        if ( ubound(p,1) /= 14 ) error stop 15
 
         call sub(p)
 
-	if ( any (all(p%x) .neqv. (/ .true./))) stop 17
+	if ( any (all(p%x) .neqv. (/ .true./))) error stop 17
 
 
     end program

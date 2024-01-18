@@ -23,7 +23,7 @@ a2 = atan2(r4y, r4x)
 b2 = atan2(r8y, r8x)
 c2 = atan2(r16y, r16x)
 
-if (.not. precision_r4(a, a2)) stop 1
-if (.not. precision_r8(b, b2)) stop 1
-if (.not. precision_r16(c, c2)) stop 1
+if (.not. precision_r4(a, a2)) error stop 1
+if (.not. precision_r8(b, b2)) error stop 1
+if (.not. precision_r16(c, c2)) error stop 1
 end

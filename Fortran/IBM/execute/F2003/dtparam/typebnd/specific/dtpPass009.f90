@@ -86,7 +86,7 @@ use m, only: base
 
     index = scan (fmt, 'dDeEfFgG')
 
-    if (index == 0) stop 100
+    if (index == 0) error stop 100
 
     read(fmt(:index-1), *) repeatFactor
     read(fmt(index+1:), *) width

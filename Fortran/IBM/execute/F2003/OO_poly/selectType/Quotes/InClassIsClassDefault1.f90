@@ -53,40 +53,40 @@
     SELECT TYPE (U => Arg)
     CLASS DEFAULT
 
-      IF ( .NOT. SAME_TYPE_AS(U, Arg))       STOP 30
-      IF ( SIZE(U)          .NE. 4 )          STOP 31
-      IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) STOP 32
-      IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) STOP 33
-      IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   STOP 34
+      IF ( .NOT. SAME_TYPE_AS(U, Arg))       ERROR STOP 30
+      IF ( SIZE(U)          .NE. 4 )          ERROR STOP 31
+      IF ( ANY (LBOUND(U)   .NE. (/2, 3/) ) ) ERROR STOP 32
+      IF ( ANY (UBOUND(U)   .NE. (/3, 4/) ) ) ERROR STOP 33
+      IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   ERROR STOP 34
 
       SELECT TYPE ( V => Arg )
 
       TYPE IS (INTEGER(1))
         SELECT TYPE (U)
         TYPE IS (INTEGER(1))
-          IF ( ANY(U   .NE. V) )        STOP 35
-          IF ( KIND(U) .NE. KIND(V) )   STOP 36
+          IF ( ANY(U   .NE. V) )        ERROR STOP 35
+          IF ( KIND(U) .NE. KIND(V) )   ERROR STOP 36
         END SELECT
 
       TYPE IS (COMPLEX(8))
         SELECT TYPE (U)
         TYPE IS (COMPLEX(8))
-          IF ( ANY(U   .NE. V ))        STOP 37
-          IF ( KIND(U) .NE. KIND(V) )   STOP 38
+          IF ( ANY(U   .NE. V ))        ERROR STOP 37
+          IF ( KIND(U) .NE. KIND(V) )   ERROR STOP 38
         END SELECT
 
       TYPE IS (LOGICAL(8))
         SELECT TYPE (U)
         TYPE IS (LOGICAL(8))
-          IF ( ANY(U   .NEQV. V ))        STOP 40
-          IF ( KIND(U) .NE. KIND(V) )   STOP 41
+          IF ( ANY(U   .NEQV. V ))        ERROR STOP 40
+          IF ( KIND(U) .NE. KIND(V) )   ERROR STOP 41
         END SELECT
 
       TYPE IS (CHARACTER(*))
         SELECT TYPE (U)
         TYPE IS (CHARACTER(*))
-          IF ( ANY(U   .NE. V ))        STOP 42
-          IF ( KIND(U) .NE. KIND(V) )   STOP 43
+          IF ( ANY(U   .NE. V ))        ERROR STOP 42
+          IF ( KIND(U) .NE. KIND(V) )   ERROR STOP 43
         END SELECT
 
       CLASS DEFAULT

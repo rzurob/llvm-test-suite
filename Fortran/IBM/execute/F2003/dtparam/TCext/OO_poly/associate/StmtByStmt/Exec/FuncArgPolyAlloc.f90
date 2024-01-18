@@ -71,8 +71,8 @@
   ASSOCIATE ( As1 => Func(As) )
     SELECT TYPE (As1)
       TYPE IS (Child(4))
-        IF ( As1.GetId()      .NE. -2 ) STOP 30
-        IF ( As1.Base%GetId() .NE. -1 ) STOP 31
+        IF ( As1.GetId()      .NE. -2 ) ERROR STOP 30
+        IF ( As1.Base%GetId() .NE. -1 ) ERROR STOP 31
       CLASS DEFAULT
         STOP 32
     END SELECT
@@ -83,8 +83,8 @@
   ASSOCIATE ( As1 => Func(As) )
     SELECT TYPE (As1)
       TYPE IS (Child(4))
-        IF ( As1.GetId()      .NE. -2 ) STOP 40
-        IF ( As1.Base%GetId() .NE. -1 ) STOP 41
+        IF ( As1.GetId()      .NE. -2 ) ERROR STOP 40
+        IF ( As1.Base%GetId() .NE. -1 ) ERROR STOP 41
       CLASS DEFAULT
         STOP 42
     END SELECT
@@ -95,8 +95,8 @@
   ASSOCIATE ( As1 => Func(As) )
     SELECT TYPE (As1)
       TYPE IS (Child(4))
-        IF ( As1.GetId()      .NE. -2 ) STOP 50
-        IF ( As1.Base%GetId() .NE. -1 ) STOP 51
+        IF ( As1.GetId()      .NE. -2 ) ERROR STOP 50
+        IF ( As1.Base%GetId() .NE. -1 ) ERROR STOP 51
       CLASS DEFAULT
         STOP 52
     END SELECT

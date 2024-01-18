@@ -24,7 +24,7 @@
 
 	b => p
 
-	if ( .not. associated(b)) stop 2
+	if ( .not. associated(b)) error stop 2
 
 	do i = cnt , 1 , -2
 	   p(i) = i
@@ -33,9 +33,9 @@
 	   if ( i > 2) then
 		p(1:i-2) => p(i-2:1:-1)
 
-		if ( .not. associated(p)) stop 12
-		if ( lbound(p,1) /= 1 ) stop 22
-		if ( ubound(p,1) /= i-2 ) stop 32
+		if ( .not. associated(p)) error stop 12
+		if ( lbound(p,1) /= 1 ) error stop 22
+		if ( ubound(p,1) /= i-2 ) error stop 32
 	   endif
 
 	enddo

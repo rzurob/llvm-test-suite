@@ -107,17 +107,17 @@
       SELECT TYPE (V => V(:,:))
         TYPE IS (Child)
 
-          IF ( SIZE(V)          .NE. 4 )          STOP 21
-          IF ( ANY (LBOUND(V)   .NE. (/1, 1/) ) ) STOP 30
-          IF ( ANY (UBOUND(V)   .NE. (/2, 2/) ) ) STOP 31
-          IF ( ANY(SHAPE(V)     .NE. (/2,2/)) )   STOP 20
+          IF ( SIZE(V)          .NE. 4 )          ERROR STOP 21
+          IF ( ANY (LBOUND(V)   .NE. (/1, 1/) ) ) ERROR STOP 30
+          IF ( ANY (UBOUND(V)   .NE. (/2, 2/) ) ) ERROR STOP 31
+          IF ( ANY(SHAPE(V)     .NE. (/2,2/)) )   ERROR STOP 20
 
-          IF ( ANY(V%Base%GetId() .NE. -1) ) STOP 34
-          IF ( ANY(V%GetId()      .NE. -2) ) STOP 35
-          IF ( ANY(V%BaseId       .NE. -1) ) STOP 36
-          IF ( ANY(V%ChildId      .NE. -2) ) STOP 37
+          IF ( ANY(V%Base%GetId() .NE. -1) ) ERROR STOP 34
+          IF ( ANY(V%GetId()      .NE. -2) ) ERROR STOP 35
+          IF ( ANY(V%BaseId       .NE. -1) ) ERROR STOP 36
+          IF ( ANY(V%ChildId      .NE. -2) ) ERROR STOP 37
 
-          IF ( .NOT. V%Called() ) STOP 45
+          IF ( .NOT. V%Called() ) ERROR STOP 45
 
        CLASS DEFAULT
           STOP 40

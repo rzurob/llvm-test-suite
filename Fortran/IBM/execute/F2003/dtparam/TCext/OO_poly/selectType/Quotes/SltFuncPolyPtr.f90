@@ -94,8 +94,8 @@
     TYPE is (CHARACTER(*))
       STOP 21
     TYPE is (Base(4,*))
-      IF ( As%GetId() .NE. 1 ) STOP 22
-      IF ( As%BaseId  .NE. 1 ) STOP 23
+      IF ( As%GetId() .NE. 1 ) ERROR STOP 22
+      IF ( As%BaseId  .NE. 1 ) ERROR STOP 23
     CLASS DEFAULT
       STOP 24
   END SELECT
@@ -110,10 +110,10 @@
     TYPE is (REAL)
       STOP 33
     CLASS IS (Child(4,*))
-      IF ( As%Base%GetId() .NE. 1 ) STOP 34
-      IF ( As%GetId()      .NE. 2 ) STOP 35
-      IF ( As%BaseId       .NE. 1 ) STOP 36
-      IF ( As%ChildId      .NE. 2 ) STOP 37
+      IF ( As%Base%GetId() .NE. 1 ) ERROR STOP 34
+      IF ( As%GetId()      .NE. 2 ) ERROR STOP 35
+      IF ( As%BaseId       .NE. 1 ) ERROR STOP 36
+      IF ( As%ChildId      .NE. 2 ) ERROR STOP 37
     CLASS IS (Zero(4,*))
       STOP 38
   END SELECT
@@ -122,7 +122,7 @@
     CLASS DEFAULT
       STOP 40
     TYPE is (CHARACTER(*))
-      IF (As .NE. "UNKNOWN!" ) STOP  41
+      IF (As .NE. "UNKNOWN!" ) ERROR STOP  41
     TYPE is (Base(4,*))
       STOP 42
     CLASS IS (Base(4,*))

@@ -57,13 +57,13 @@ MODULE Mod1
 
       ALLOCATE( Arg, SOURCE = ( Child(k1=knd1,l1=len1) ( Ctext=(/ ('AAA', I = 1, len1) /), Cmp = Obj) ) )
 
-      IF ( .NOT. ASSOCIATED(Arg) ) STOP 10
+      IF ( .NOT. ASSOCIATED(Arg) ) ERROR STOP 10
 
       SELECT TYPE ( A => Arg )
         CLASS IS (Child(knd1,*))
            A%Ctext=(/ 'I am not c', 'ertain wha', 't the lang', 'uage for s', 'cientific ' ,'computatio', &
               & 'n will loo', 'k like by ', 'the 21st c', 'entury... ' /)
-           IF ( .NOT. ASSOCIATED(A%Cmp, Obj) ) STOP 11
+           IF ( .NOT. ASSOCIATED(A%Cmp, Obj) ) ERROR STOP 11
            A%Cmp => Tgt  ! pointer re-assignment inside select type construct
 
         CLASS IS (Base(knd1,*))
@@ -90,8 +90,8 @@ PROGRAM Select_Type03b
       SELECT TYPE ( dtv )
         CLASS IS (Child(knd1,*))
           print*, dtv%Ctext
-          IF ( ANY(dtv%Cmp%Ctext .NE. 'BBB') ) STOP 20
-          IF ( .NOT. ASSOCIATED(dtv%Cmp,cbl) ) STOP 21
+          IF ( ANY(dtv%Cmp%Ctext .NE. 'BBB') ) ERROR STOP 20
+          IF ( .NOT. ASSOCIATED(dtv%Cmp,cbl) ) ERROR STOP 21
 
         CLASS IS (Base(knd1,*))
           STOP 22

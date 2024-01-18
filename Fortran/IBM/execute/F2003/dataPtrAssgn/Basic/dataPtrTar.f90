@@ -51,27 +51,27 @@
   I = 0
   PCArr(I:, I: ) => CArr
 
-  IF (ANY(LBOUND(PCArr) .NE. (/I,    I    /) ))   STOP 11
-  IF (ANY(UBOUND(PCArr) .NE. (/Arg-1, Arg-1 /) )) STOP 12
-  IF ( .NOT. ASSOCIATED(PCArr, CArr))             STOP 13
-  IF (ANY(PCArr         .NE. CArr ))              STOP 14
+  IF (ANY(LBOUND(PCArr) .NE. (/I,    I    /) ))   ERROR STOP 11
+  IF (ANY(UBOUND(PCArr) .NE. (/Arg-1, Arg-1 /) )) ERROR STOP 12
+  IF ( .NOT. ASSOCIATED(PCArr, CArr))             ERROR STOP 13
+  IF (ANY(PCArr         .NE. CArr ))              ERROR STOP 14
 
   I = 3; J=Arg+2
   CArr1 = RESHAPE(CArr, (/Arg*Arg/))
   PCArr(I:J, I:J ) => CArr1(2:Arg*Arg)
 
-  IF (ANY(LBOUND(PCArr) .NE. (/I,    I    /) ))   STOP 21
-  IF (ANY(UBOUND(PCArr) .NE. (/J,    J    /) ))   STOP 22
-! IF ( .NOT. ASSOCIATED(PCArr, CArr1(2:(J-I+1)*(J-I+1))))    STOP 23  !associated not support array with diff shape
-  IF (ANY(PCArr         .NE. RESHAPE( CArr1(2:(J-I+1)*(J-I+1)), (/J-I+1, J-I+1/))))  STOP 24
+  IF (ANY(LBOUND(PCArr) .NE. (/I,    I    /) ))   ERROR STOP 21
+  IF (ANY(UBOUND(PCArr) .NE. (/J,    J    /) ))   ERROR STOP 22
+! IF ( .NOT. ASSOCIATED(PCArr, CArr1(2:(J-I+1)*(J-I+1))))    ERROR STOP 23  !associated not support array with diff shape
+  IF (ANY(PCArr         .NE. RESHAPE( CArr1(2:(J-I+1)*(J-I+1)), (/J-I+1, J-I+1/))))  ERROR STOP 24
 
   i = 1
   PCArr2(I:, I: ) => CArr(1:0, 2:3)
   PCArr(I:, I: ) =>  PCArr2
 
-  IF (ANY(LBOUND(PCArr) .NE. (/I,    I    /) ))   STOP 31
-  IF (ANY(UBOUND(PCArr) .NE. (/0,    2    /) ))   STOP 32
-  IF (ASSOCIATED(PCArr1, CArr(1:0, 2:3)))         STOP 33
+  IF (ANY(LBOUND(PCArr) .NE. (/I,    I    /) ))   ERROR STOP 31
+  IF (ANY(UBOUND(PCArr) .NE. (/0,    2    /) ))   ERROR STOP 32
+  IF (ASSOCIATED(PCArr1, CArr(1:0, 2:3)))         ERROR STOP 33
 
   I = 3; J=Arg
   CArr1 = RESHAPE(CArr, (/Arg*Arg/))
@@ -79,10 +79,10 @@
 
   CArr1(1:(J-I+1)*(J-I+1)) = RESHAPE(CArr(:, :)(1:Arg-1), (/(J-I+1)*(J-I+1)/))
 
-  IF (ANY(LBOUND(PCArr1) .NE. (/I,    I    /) ))            STOP 41
-  IF (ANY(UBOUND(PCArr1) .NE. (/J,    J    /) ))            STOP 42
-! iF ( .NOT. ASSOCIATED(PCArr1, CArr1(1:(J-I+1)*(J-I+1))(1:Arg-1))    STOP 43
-  IF (ANY(PCArr         .NE. RESHAPE(CArr1(1:(J-I+1)*(J-I+1))(1:Arg-1), (/J-I+1, J-I+1/)) ))  STOP 44
+  IF (ANY(LBOUND(PCArr1) .NE. (/I,    I    /) ))            ERROR STOP 41
+  IF (ANY(UBOUND(PCArr1) .NE. (/J,    J    /) ))            ERROR STOP 42
+! iF ( .NOT. ASSOCIATED(PCArr1, CArr1(1:(J-I+1)*(J-I+1))(1:Arg-1))    ERROR STOP 43
+  IF (ANY(PCArr         .NE. RESHAPE(CArr1(1:(J-I+1)*(J-I+1))(1:Arg-1), (/J-I+1, J-I+1/)) ))  ERROR STOP 44
 
 
 

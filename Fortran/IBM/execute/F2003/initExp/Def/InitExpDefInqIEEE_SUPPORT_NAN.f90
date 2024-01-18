@@ -50,15 +50,15 @@
 
 
 
-  IF ( .NOT.  T11  )   STOP 11
-  IF ( .NOT.  T12  )   STOP 12
-  IF (        T13  )   STOP 13
+  IF ( .NOT.  T11  )   ERROR STOP 11
+  IF ( .NOT.  T12  )   ERROR STOP 12
+  IF (        T13  )   ERROR STOP 13
 
-  IF ( .NOT.  T21  )   STOP 21
-  IF ( .NOT.  T22  )   STOP 22
-  IF (        T23  )   STOP 23
+  IF ( .NOT.  T21  )   ERROR STOP 21
+  IF ( .NOT.  T22  )   ERROR STOP 22
+  IF (        T23  )   ERROR STOP 23
 
-  IF (        T    )   STOP 33
+  IF (        T    )   ERROR STOP 33
 
   END
 

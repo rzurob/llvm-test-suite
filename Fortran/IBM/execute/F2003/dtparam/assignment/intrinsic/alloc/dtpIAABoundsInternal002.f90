@@ -50,7 +50,7 @@ program dtpIAABoundsInternal002
   integer :: i
 
   print *, allocated(v1), allocated(v2), allocated(v3)
-  if (allocated(v1) .or. allocated(v2) .or. allocated(v3)) stop 2
+  if (allocated(v1) .or. allocated(v2) .or. allocated(v3)) error stop 2
 
   v1a = [dl(3)('abc',[1234321,23432,-1234321]), dl(3)('def',[2345432,34543,-2345432]), dl(3)('ghi',[3456543,45654,-3456543])]
   v1b = [dl(3)('jkl',[1221,22,-1221]), dl(3)('mno',[2332,33,-2332]), dl(3)('pqr',[3443,454,-3443]), dl(3)('stu',[4554,55,-4554])]
@@ -66,7 +66,7 @@ program dtpIAABoundsInternal002
   call test(v1, v2, v3)
 
   print *, allocated(v1), allocated(v2), allocated(v3)
-  if (.not.(allocated(v1) .and. allocated(v2) .and. allocated(v3))) stop 7
+  if (.not.(allocated(v1) .and. allocated(v2) .and. allocated(v3))) error stop 7
 
 
 contains
@@ -83,7 +83,7 @@ contains
     print *, lbound(v3), ":", ubound(v3), "::", lbound(v3a), ":", ubound(v3a)
     if (any(lbound(v1)/=lbound(v1a)) .or. any(ubound(v1)/=ubound(v1a)) &
         .or. any(lbound(v2)/=lbound(v2a)) .or. any(ubound(v2)/=ubound(v2a)) &
-        .or. any(lbound(v3)/=lbound(v3a)) .or. any(ubound(v3)/=ubound(v3a))) stop 3
+        .or. any(lbound(v3)/=lbound(v3a)) .or. any(ubound(v3)/=ubound(v3a))) error stop 3
 
     v1 = v1b
     v2 = v2b
@@ -94,7 +94,7 @@ contains
     print *, lbound(v3), ":", ubound(v3), "::", lbound(v3b), ":", ubound(v3b)
     if (any(lbound(v1)/=lbound(v1b)) .or. any(ubound(v1)/=ubound(v1b)) &
         .or. any(lbound(v2)/=lbound(v2b)) .or. any(ubound(v2)/=ubound(v2b)) &
-        .or. any(lbound(v3)/=lbound(v3b)) .or. any(ubound(v3)/=ubound(v3b))) stop 4
+        .or. any(lbound(v3)/=lbound(v3b)) .or. any(ubound(v3)/=ubound(v3b))) error stop 4
 
     v1 = v0
     v2 = v0
@@ -105,7 +105,7 @@ contains
     print *, lbound(v3), ":", ubound(v3), "::", lbound(v3b), ":", ubound(v3b)
     if (any(lbound(v1)/=lbound(v1b)) .or. any(ubound(v1)/=ubound(v1b)) &
         .or. any(lbound(v2)/=lbound(v2b)) .or. any(ubound(v2)/=ubound(v2b)) &
-        .or. any(lbound(v3)/=lbound(v3b)) .or. any(ubound(v3)/=ubound(v3b))) stop 5
+        .or. any(lbound(v3)/=lbound(v3b)) .or. any(ubound(v3)/=ubound(v3b))) error stop 5
 
     v1 = [dl(0)('',[integer::]), dl(0)('',[integer::]), dl(0)('',[integer::]), dl(0)('',[integer::])]
     v2 = reshape([dl(5)('abcde',1), dl(5)('bcdef',2), dl(5)('cdefg',3), dl(5)('defgh',4)],[4,1])
@@ -116,7 +116,7 @@ contains
     print *, lbound(v3), ":", ubound(v3), "::", 1,1,1, ":", 1,2,3
     if (any(lbound(v1)/=1) .or. any(ubound(v1)/=4) &
         .or. any(lbound(v2)/=1) .or. any(ubound(v2)/=[4,1]) &
-        .or. any(lbound(v3)/=1) .or. any(ubound(v3)/=[1,2,3])) stop 6
+        .or. any(lbound(v3)/=1) .or. any(ubound(v3)/=[1,2,3])) error stop 6
 
   end subroutine test
 

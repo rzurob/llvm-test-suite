@@ -60,17 +60,17 @@
 
   DO I = 1, 3
 
-    IF (ASSOCIATED(V(I)%ProcPtr1))   STOP 11
-    IF (ASSOCIATED(V(I)%ProcPtr2))   STOP 12
-    IF (V(I)%Id .NE. 1)              STOP 13
+    IF (ASSOCIATED(V(I)%ProcPtr1))   ERROR STOP 11
+    IF (ASSOCIATED(V(I)%ProcPtr2))   ERROR STOP 12
+    IF (V(I)%Id .NE. 1)              ERROR STOP 13
 
-    IF (ASSOCIATED(U(I)%ProcPtr1))   STOP 21
-    IF (ASSOCIATED(U(I)%ProcPtr2))   STOP 22
-    IF (ANY(U%Id .NE. 2))            STOP 23
+    IF (ASSOCIATED(U(I)%ProcPtr1))   ERROR STOP 21
+    IF (ASSOCIATED(U(I)%ProcPtr2))   ERROR STOP 22
+    IF (ANY(U%Id .NE. 2))            ERROR STOP 23
 
-    IF (ASSOCIATED(W(I)%ProcPtr1))   STOP 31
-    IF (ASSOCIATED(W(I)%ProcPtr2))   STOP 32
-    IF (W(I)%Id .NE. 3)              STOP 33
+    IF (ASSOCIATED(W(I)%ProcPtr1))   ERROR STOP 31
+    IF (ASSOCIATED(W(I)%ProcPtr2))   ERROR STOP 32
+    IF (W(I)%Id .NE. 3)              ERROR STOP 33
 
   END DO
 

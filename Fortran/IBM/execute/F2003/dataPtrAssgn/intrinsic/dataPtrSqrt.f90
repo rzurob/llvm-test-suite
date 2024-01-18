@@ -34,9 +34,9 @@ program main
         d1%ptr(1:3, 1:5) => x(16:2:-1)
     end associate
 
-    if ( .not. associated(d1%ptr)) stop 5
-    if ( any(lbound(d1%ptr) .ne. (/1,1/))) stop 6
-    if ( any(ubound(d1%ptr) .ne. (/3,5/))) stop 7
+    if ( .not. associated(d1%ptr)) error stop 5
+    if ( any(lbound(d1%ptr) .ne. (/1,1/))) error stop 6
+    if ( any(ubound(d1%ptr) .ne. (/3,5/))) error stop 7
 
     select type(x=>d1%ptr)
 	type is (real)

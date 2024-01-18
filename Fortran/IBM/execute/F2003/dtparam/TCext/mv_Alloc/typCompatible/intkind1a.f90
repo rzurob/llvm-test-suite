@@ -48,8 +48,8 @@
       allocate(i1(3,2,1), source = reshape((/(i,i=1_1,6_1)/),(/3,2,1/)))
 
       call sub(b1%i1)
-      if ( .not. allocated(b1%i1) ) stop 21
-      if ( allocated(i1) ) stop 31
+      if ( .not. allocated(b1%i1) ) error stop 21
+      if ( allocated(i1) ) error stop 31
       select type ( p => b1%i1)
           type is (integer(1))
              print *, p(:,1,1)

@@ -29,7 +29,7 @@
 !* ===================================================================
 !23456789012345678901234567890123456789012345678901234567890123456789012
 !
-@process free(f90) intlog
+@process intlog
 program abstracti060
    implicit none
    integer i,j,k,l,m,n
@@ -176,7 +176,7 @@ program abstracti060
 
 end program abstracti060
 
-@process free(f90), intlog
+@process intlog
 recursive pure function func1( i ) result( func1_res )
 
    logical func1_res

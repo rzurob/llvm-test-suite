@@ -58,7 +58,7 @@
         POINTER :: foo1
 
         foo1 => Obj
-        IF ( .NOT. ASSOCIATED(foo1)) STOP 100
+        IF ( .NOT. ASSOCIATED(foo1)) ERROR STOP 100
 
         SELECT TYPE ( foo1 )
           TYPE IS (NextGen(4,*,4,4))
@@ -85,7 +85,7 @@
         POINTER :: foo2
 
         foo2 => Obj(1,1)
-        IF ( .NOT. ASSOCIATED(foo2)) STOP 101
+        IF ( .NOT. ASSOCIATED(foo2)) ERROR STOP 101
 
         SELECT TYPE ( foo2 )
           TYPE IS (NextGen(4,*,4,4))
@@ -124,8 +124,8 @@
 
       SELECT TYPE ( A => FUNC(base1) )
           TYPE IS (Base(4,*))
-            IF( size(A%base_arr)  .NE. 5) STOP 10
-            IF( ANY(A%base_arr .NE. 1000 )) STOP 11
+            IF( size(A%base_arr)  .NE. 5) ERROR STOP 10
+            IF( ANY(A%base_arr .NE. 1000 )) ERROR STOP 11
 
           CLASS DEFAULT
            STOP 12
@@ -135,8 +135,8 @@
 
       SELECT TYPE ( A => FUNC(poly1) )
           TYPE IS (Base(4,*))
-            IF( size(A%base_arr)  .NE. 5) STOP 13
-            IF( ANY(A%base_arr .NE. 1000 )) STOP 14
+            IF( size(A%base_arr)  .NE. 5) ERROR STOP 13
+            IF( ANY(A%base_arr .NE. 1000 )) ERROR STOP 14
 
           CLASS DEFAULT
            STOP 15
@@ -146,8 +146,8 @@
 
       SELECT TYPE ( A => FUNC(poly1) )
           TYPE IS (Base(4,*))
-            IF( size(A%base_arr)  .NE. 10) STOP 16
-            IF( ANY(A%base_arr .NE. 1000 )) STOP 17
+            IF( size(A%base_arr)  .NE. 10) ERROR STOP 16
+            IF( ANY(A%base_arr .NE. 1000 )) ERROR STOP 17
 
           CLASS DEFAULT
            STOP 18
@@ -157,10 +157,10 @@
 
       SELECT TYPE ( A => FUNC(poly1) )
           TYPE IS (Child(4,*,4))
-            IF( size(A%base_arr)  .NE. 5) STOP 19
-            IF( ANY(A%base_arr .NE. 100 )) STOP 20
-            IF( size(A%child_arr)  .NE. 5) STOP 21
-            IF( ANY(A%child_arr .NE. -100 )) STOP 22
+            IF( size(A%base_arr)  .NE. 5) ERROR STOP 19
+            IF( ANY(A%base_arr .NE. 100 )) ERROR STOP 20
+            IF( size(A%child_arr)  .NE. 5) ERROR STOP 21
+            IF( ANY(A%child_arr .NE. -100 )) ERROR STOP 22
 
           CLASS DEFAULT
            STOP 23
@@ -170,12 +170,12 @@
 
       SELECT TYPE ( A => FUNC(poly1) )
           TYPE IS (NextGen(4,*,4,4))
-            IF( size(A%base_arr)  .NE. 10) STOP 24
-            IF( ANY(A%base_arr .NE. 1 )) STOP 25
-            IF( size(A%child_arr)  .NE. 10) STOP 26
-            IF( ANY(A%child_arr .NE. -10 )) STOP 27
-            IF( size(A%nextg_arr)  .NE. 10) STOP 28
-            IF( ANY(A%nextg_arr .NE. 10 )) STOP 29
+            IF( size(A%base_arr)  .NE. 10) ERROR STOP 24
+            IF( ANY(A%base_arr .NE. 1 )) ERROR STOP 25
+            IF( size(A%child_arr)  .NE. 10) ERROR STOP 26
+            IF( ANY(A%child_arr .NE. -10 )) ERROR STOP 27
+            IF( size(A%nextg_arr)  .NE. 10) ERROR STOP 28
+            IF( ANY(A%nextg_arr .NE. 10 )) ERROR STOP 29
 
           CLASS DEFAULT
            STOP 30
@@ -185,8 +185,8 @@
 
       SELECT TYPE ( A => FUNC(base2) )
           TYPE IS (Base(4,*))
-            IF( size(A%base_arr)  .NE. 5) STOP 31
-            IF( ANY(A%base_arr .NE. 5550 )) STOP 32
+            IF( size(A%base_arr)  .NE. 5) ERROR STOP 31
+            IF( ANY(A%base_arr .NE. 5550 )) ERROR STOP 32
 
           CLASS DEFAULT
            STOP 33
@@ -196,8 +196,8 @@
 
       SELECT TYPE ( A => FUNC(poly2) )
           TYPE IS (Base(4,*))
-            IF( size(A%base_arr)  .NE. 10) STOP 34
-            IF( ANY(A%base_arr .NE. 5550 )) STOP 35
+            IF( size(A%base_arr)  .NE. 10) ERROR STOP 34
+            IF( ANY(A%base_arr .NE. 5550 )) ERROR STOP 35
 
           CLASS DEFAULT
            STOP 36
@@ -207,10 +207,10 @@
 
       SELECT TYPE ( A => FUNC(poly2) )
           TYPE IS (Child(4,*,4))
-            IF( size(A%base_arr)  .NE. 5) STOP 37
-            IF( ANY(A%base_arr .NE. 550 )) STOP 38
-            IF( size(A%child_arr)  .NE. 5) STOP 39
-            IF( ANY(A%child_arr .NE. -550 )) STOP 40
+            IF( size(A%base_arr)  .NE. 5) ERROR STOP 37
+            IF( ANY(A%base_arr .NE. 550 )) ERROR STOP 38
+            IF( size(A%child_arr)  .NE. 5) ERROR STOP 39
+            IF( ANY(A%child_arr .NE. -550 )) ERROR STOP 40
 
           CLASS DEFAULT
            STOP 41
@@ -220,12 +220,12 @@
 
       SELECT TYPE ( A => FUNC(poly2) )
           TYPE IS (NextGen(4,*,4,4))
-            IF( size(A%base_arr)  .NE. 10) STOP 42
-            IF( ANY(A%base_arr .NE. 5 )) STOP 43
-            IF( size(A%child_arr)  .NE. 10) STOP 44
-            IF( ANY(A%child_arr .NE. -55 )) STOP 45
-            IF( size(A%nextg_arr)  .NE. 10) STOP 46
-            IF( ANY(A%nextg_arr .NE. 55 )) STOP 47
+            IF( size(A%base_arr)  .NE. 10) ERROR STOP 42
+            IF( ANY(A%base_arr .NE. 5 )) ERROR STOP 43
+            IF( size(A%child_arr)  .NE. 10) ERROR STOP 44
+            IF( ANY(A%child_arr .NE. -55 )) ERROR STOP 45
+            IF( size(A%nextg_arr)  .NE. 10) ERROR STOP 46
+            IF( ANY(A%nextg_arr .NE. 55 )) ERROR STOP 47
 
           CLASS DEFAULT
            STOP 48

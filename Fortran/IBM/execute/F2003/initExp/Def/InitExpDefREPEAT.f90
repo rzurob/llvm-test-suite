@@ -45,22 +45,22 @@
   CHARACTER(LEN(REPEAT(C0, 8))), PARAMETER :: CArr1(128)=REPEAT(C0, 0)
   CHARACTER(KIND(REPEAT(C0, 0))),PARAMETER :: CArr2(128)=REPEAT(C0, 0)
 
-  IF (TK0                .NE.   1 )                   STOP 11
-  IF (TK1                .NE.   1 )                   STOP 12
+  IF (TK0                .NE.   1 )                   ERROR STOP 11
+  IF (TK1                .NE.   1 )                   ERROR STOP 12
 
-  IF (LEN(C)             .NE.  1025 )                 STOP 13
-  IF (C                  .NE.  REPEAT("?", 1025) )    STOP 14
+  IF (LEN(C)             .NE.  1025 )                 ERROR STOP 13
+  IF (C                  .NE.  REPEAT("?", 1025) )    ERROR STOP 14
 
-  IF (LEN(CArr)          .NE.  1025 )                 STOP 15
-  IF (SIZE(CArr)         .NE.  1025 )                 STOP 16
-  IF (ANY(LBOUND(CArr)   .NE.  (/1026/)) )            STOP 17
-  IF (ANY(UBOUND(CArr)   .NE.  (/2050/)) )            STOP 18
-  IF (ANY(CArr           .NE.   REPEAT("?", 1025)) )  STOP 19
+  IF (LEN(CArr)          .NE.  1025 )                 ERROR STOP 15
+  IF (SIZE(CArr)         .NE.  1025 )                 ERROR STOP 16
+  IF (ANY(LBOUND(CArr)   .NE.  (/1026/)) )            ERROR STOP 17
+  IF (ANY(UBOUND(CArr)   .NE.  (/2050/)) )            ERROR STOP 18
+  IF (ANY(CArr           .NE.   REPEAT("?", 1025)) )  ERROR STOP 19
 
-  IF (LEN(C0)            .NE.  0 )                 STOP 21
-  IF (LEN(CArr0)         .NE.  0 )                 STOP 22
-  IF (LEN(CArr1)         .NE.  0 )                 STOP 23
-  IF (LEN(CArr2)         .NE.  1 )                 STOP 24
+  IF (LEN(C0)            .NE.  0 )                 ERROR STOP 21
+  IF (LEN(CArr0)         .NE.  0 )                 ERROR STOP 22
+  IF (LEN(CArr1)         .NE.  0 )                 ERROR STOP 23
+  IF (LEN(CArr2)         .NE.  1 )                 ERROR STOP 24
 
 
 

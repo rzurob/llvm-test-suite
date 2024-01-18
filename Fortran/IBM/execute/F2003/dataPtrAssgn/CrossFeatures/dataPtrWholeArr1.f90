@@ -57,17 +57,17 @@
   DO J =I, N
 
     Ptr(I:, J:) => Arr
-    IF (.NOT. ASSOCIATED(Ptr,  Arr ))           STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/I , J/)))       STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1,J+N-1/))) STOP 13
-    IF (ANY( Ptr%ID .NE. -1 ))                  STOP 14
+    IF (.NOT. ASSOCIATED(Ptr,  Arr ))           ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/I , J/)))       ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1,J+N-1/))) ERROR STOP 13
+    IF (ANY( Ptr%ID .NE. -1 ))                  ERROR STOP 14
 
     Ptr(I:J, I:J) => Arr1
-    IF (.NOT. ASSOCIATED(Ptr))                   STOP 20
-    IF (SIZE(Ptr)         .NE. (J-I+1)*(J-I+1))  STOP 21
-    IF (ANY( LBOUND(Ptr)  .NE. (/I , I /)))      STOP 22
-    IF (ANY( UBOUND(Ptr)  .NE. (/J , J /)))      STOP 23
-    IF (ANY( Ptr%ID .NE. -2 ))                   STOP 24
+    IF (.NOT. ASSOCIATED(Ptr))                   ERROR STOP 20
+    IF (SIZE(Ptr)         .NE. (J-I+1)*(J-I+1))  ERROR STOP 21
+    IF (ANY( LBOUND(Ptr)  .NE. (/I , I /)))      ERROR STOP 22
+    IF (ANY( UBOUND(Ptr)  .NE. (/J , J /)))      ERROR STOP 23
+    IF (ANY( Ptr%ID .NE. -2 ))                   ERROR STOP 24
 
   END DO
   END DO

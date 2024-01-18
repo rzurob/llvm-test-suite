@@ -49,15 +49,15 @@
   SELECT TYPE (T => P )
     CLASS IS (DT(*))
 
-    IF (t%l              .NE. 4)    STOP 11
+    IF (t%l              .NE. 4)    ERROR STOP 11
 
-    IF (t%P%l            .NE. 4)    STOP 12
-    IF (LEN(t%P%c)       .NE. 4)    STOP 13
-    IF (TRIM(t%p%c)      .NE. 'B')  STOP 14
+    IF (t%P%l            .NE. 4)    ERROR STOP 12
+    IF (LEN(t%P%c)       .NE. 4)    ERROR STOP 13
+    IF (TRIM(t%p%c)      .NE. 'B')  ERROR STOP 14
 
-    IF (t%Base%l         .NE. 4)    STOP 22
-    IF (LEN(t%Base%c)    .NE. 4)    STOP 23
-    IF (TRIM(t%Base%c)   .NE. 'B')  STOP 24
+    IF (t%Base%l         .NE. 4)    ERROR STOP 22
+    IF (LEN(t%Base%c)    .NE. 4)    ERROR STOP 23
+    IF (TRIM(t%Base%c)   .NE. 'B')  ERROR STOP 24
 
   CLASS DEFAULT
     STOP 55

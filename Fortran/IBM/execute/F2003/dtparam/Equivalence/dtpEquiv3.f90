@@ -96,38 +96,38 @@
   l1 = .false.
   z1 = -(16,-16)
 
-  IF ( ANY( R%R(1:2) .NE.    16         ) ) STOP 11
-  IF ( ANY( R%R(3: ) .NE.    2          ) ) STOP 12
+  IF ( ANY( R%R(1:2) .NE.    16         ) ) ERROR STOP 11
+  IF ( ANY( R%R(3: ) .NE.    2          ) ) ERROR STOP 12
   R1 = -16
-  IF ( ANY( R%R(1:2) .NE.    -16        ) ) STOP 13
-  IF ( ANY( R%R(3: ) .NE.    2          ) ) STOP 14
+  IF ( ANY( R%R(1:2) .NE.    -16        ) ) ERROR STOP 13
+  IF ( ANY( R%R(3: ) .NE.    2          ) ) ERROR STOP 14
 
 
-  IF ( ANY( C%C(1:2) .NE.    CHAR(48  ) ) ) STOP 21
-  IF ( ANY( C%C(3: ) .NE.    CHAR(48+1) ) ) STOP 22
+  IF ( ANY( C%C(1:2) .NE.    CHAR(48  ) ) ) ERROR STOP 21
+  IF ( ANY( C%C(3: ) .NE.    CHAR(48+1) ) ) ERROR STOP 22
   C1 = CHAR(0)
-  IF ( ANY( C%C(1:2) .NE.    CHAR(0   ) ) ) STOP 23
-  IF ( ANY( C%C(3: ) .NE.    CHAR(48+1) ) ) STOP 24
+  IF ( ANY( C%C(1:2) .NE.    CHAR(0   ) ) ) ERROR STOP 23
+  IF ( ANY( C%C(3: ) .NE.    CHAR(48+1) ) ) ERROR STOP 24
 
 
-  IF ( ANY( I%I(1:2) .NE.    -2         ) ) STOP 31
-  IF ( ANY( I%I(3: ) .NE.     2         ) ) STOP 32
+  IF ( ANY( I%I(1:2) .NE.    -2         ) ) ERROR STOP 31
+  IF ( ANY( I%I(3: ) .NE.     2         ) ) ERROR STOP 32
   I1 = 2
-  IF ( ANY( I%I(1:2) .NE.     2         ) ) STOP 33
-  IF ( ANY( I%I(3: ) .NE.     2         ) ) STOP 34
+  IF ( ANY( I%I(1:2) .NE.     2         ) ) ERROR STOP 33
+  IF ( ANY( I%I(3: ) .NE.     2         ) ) ERROR STOP 34
 
 
-  IF ( ANY( L%A(1:2) .NEQV. .FALSE.     ) ) STOP 41
-  IF ( ANY( L%A(3: ) .NEQV. .TRUE.      ) ) STOP 42
+  IF ( ANY( L%A(1:2) .NEQV. .FALSE.     ) ) ERROR STOP 41
+  IF ( ANY( L%A(3: ) .NEQV. .TRUE.      ) ) ERROR STOP 42
   L1 = .TRUE.
-  IF ( ANY( L%A(1:2) .NEQV. .TRUE.      ) ) STOP 43
-  IF ( ANY( L%A(3: ) .NEQV. .TRUE.      ) ) STOP 44
+  IF ( ANY( L%A(1:2) .NEQV. .TRUE.      ) ) ERROR STOP 43
+  IF ( ANY( L%A(3: ) .NEQV. .TRUE.      ) ) ERROR STOP 44
 
-  IF ( ANY( Z%Z(1:2) .NE.    -(16,-16)  ) ) STOP 51
-  IF ( ANY( Z%Z(3: ) .NE.     (16,-16)  ) ) STOP 52
+  IF ( ANY( Z%Z(1:2) .NE.    -(16,-16)  ) ) ERROR STOP 51
+  IF ( ANY( Z%Z(3: ) .NE.     (16,-16)  ) ) ERROR STOP 52
   Z1 = (16,-163)
-  IF ( ANY( Z%Z(1:2) .NE.     (16,-163)  ) ) STOP 53
-  IF ( ANY( Z%Z(3: ) .NE.     (16,-16)  ) ) STOP 54
+  IF ( ANY( Z%Z(1:2) .NE.     (16,-163)  ) ) ERROR STOP 53
+  IF ( ANY( Z%Z(3: ) .NE.     (16,-16)  ) ) ERROR STOP 54
 
 
   END

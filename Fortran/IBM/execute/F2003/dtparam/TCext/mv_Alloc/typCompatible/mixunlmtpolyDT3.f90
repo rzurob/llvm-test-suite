@@ -49,8 +49,8 @@ use m
            (/5, 2/) ))
       call sub(a, b)
 
-      if ( allocated(a) ) stop 21
-      if ( .not. allocated(b)) stop 23
+      if ( allocated(a) ) error stop 21
+      if ( .not. allocated(b)) error stop 23
       select type(b)
           type is (base(*,8))
 !              print *, b(1,1)%id, b(2,1)%id, b(3,1)%id, b(4,1)%id, b(5,1)%id

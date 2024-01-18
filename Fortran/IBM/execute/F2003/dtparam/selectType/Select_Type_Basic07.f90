@@ -71,7 +71,7 @@
       A_square%width = seed1
 
       My_shape => A_square
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 10
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 10
 
       SELECT TYPE (A => My_shape)
         CLASS IS (Sq(4,*))
@@ -103,7 +103,7 @@
       CLASS(*), INTENT(INOUT), POINTER :: My_shape
 
       ALLOCATE(My_shape, source = Rec(4,20)(area=0.0,name = '',width=20.0,height=12.5))
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 10
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 10
 
       SELECT TYPE (A => My_shape)
         TYPE IS (Sq(4,*))
@@ -127,7 +127,7 @@
       CLASS(*), INTENT(INOUT), POINTER :: My_shape
 
       ALLOCATE(My_shape, source = Rec(4,20)(area=0.0,name = '',width=20.0,height=12.5))
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 10
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 10
 
       SELECT TYPE (A => My_shape)
         CLASS IS (Sq(4,*))

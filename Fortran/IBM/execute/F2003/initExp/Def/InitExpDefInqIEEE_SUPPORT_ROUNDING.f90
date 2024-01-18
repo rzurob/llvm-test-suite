@@ -70,30 +70,30 @@
   LOGICAL  :: T5= IEEE_SUPPORT_ROUNDING(IEEE_DOWN)
 
   ! not support real(16)
-  IF ( IEEE_SUPPORT_ROUNDING(S1)  )   STOP 7
-  IF ( IEEE_SUPPORT_ROUNDING(S2)  )   STOP 8
-  IF ( IEEE_SUPPORT_ROUNDING(S3)  )   STOP 9
-  IF ( IEEE_SUPPORT_ROUNDING(S4)  )   STOP 10
+  IF ( IEEE_SUPPORT_ROUNDING(S1)  )   ERROR STOP 7
+  IF ( IEEE_SUPPORT_ROUNDING(S2)  )   ERROR STOP 8
+  IF ( IEEE_SUPPORT_ROUNDING(S3)  )   ERROR STOP 9
+  IF ( IEEE_SUPPORT_ROUNDING(S4)  )   ERROR STOP 10
 
-  IF ( .NOT.  T41  )   STOP 11
-  IF ( .NOT.  T42  )   STOP 12
-  IF ( .NOT.  T43  )   STOP 13
-  IF ( .NOT.  T44  )   STOP 14
+  IF ( .NOT.  T41  )   ERROR STOP 11
+  IF ( .NOT.  T42  )   ERROR STOP 12
+  IF ( .NOT.  T43  )   ERROR STOP 13
+  IF ( .NOT.  T44  )   ERROR STOP 14
 
-  IF ( .NOT.  T81  )   STOP 21
-  IF ( .NOT.  T82  )   STOP 22
-  IF ( .NOT.  T83  )   STOP 23
-  IF ( .NOT.  T84  )   STOP 24
+  IF ( .NOT.  T81  )   ERROR STOP 21
+  IF ( .NOT.  T82  )   ERROR STOP 22
+  IF ( .NOT.  T83  )   ERROR STOP 23
+  IF ( .NOT.  T84  )   ERROR STOP 24
 
-  IF (        T61  )   STOP 31
-  IF (        T62  )   STOP 32
-  IF (        T63  )   STOP 33
-  IF (        T64  )   STOP 34
+  IF (        T61  )   ERROR STOP 31
+  IF (        T62  )   ERROR STOP 32
+  IF (        T63  )   ERROR STOP 33
+  IF (        T64  )   ERROR STOP 34
 
-  IF (        T1   )   STOP 41
-  IF (        T2   )   STOP 42
-  IF (        T3   )   STOP 43
-  IF (        T4   )   STOP 44
+  IF (        T1   )   ERROR STOP 41
+  IF (        T2   )   ERROR STOP 42
+  IF (        T3   )   ERROR STOP 43
+  IF (        T4   )   ERROR STOP 44
 
   END
 

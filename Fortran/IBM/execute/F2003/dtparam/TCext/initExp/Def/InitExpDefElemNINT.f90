@@ -55,20 +55,20 @@
   INTEGER :: T3=MAXVAL(NINT(A=X%R4, KIND=KIND(X%R4)))
   INTEGER :: T4=MAXVAL(NINT(A=X%R6, KIND=KIND(X%R6)/2))
 
-  IF ( KIND(TI1)  .NE.    1 )  STOP 11
-  IF ( KIND(TI2)  .NE.    2 )  STOP 12
-  IF ( KIND(TI4)  .NE.    4 )  STOP 14
-  IF ( KIND(TI8)  .NE.    8 )  STOP 18
+  IF ( KIND(TI1)  .NE.    1 )  ERROR STOP 11
+  IF ( KIND(TI2)  .NE.    2 )  ERROR STOP 12
+  IF ( KIND(TI4)  .NE.    4 )  ERROR STOP 14
+  IF ( KIND(TI8)  .NE.    8 )  ERROR STOP 18
 
-  IF (ANY( TI1  .NE. 2 )) STOP 21
-  IF (ANY( TI2  .NE. 3 )) STOP 22
-  IF (ANY( TI4  .NE. 2 )) STOP 23
-  IF (ANY( TI8  .NE. 3 )) STOP 24
+  IF (ANY( TI1  .NE. 2 )) ERROR STOP 21
+  IF (ANY( TI2  .NE. 3 )) ERROR STOP 22
+  IF (ANY( TI4  .NE. 2 )) ERROR STOP 23
+  IF (ANY( TI8  .NE. 3 )) ERROR STOP 24
 
-  IF ( T1   .NE. 2 )  STOP 31
-  IF ( T2   .NE. 3 )  STOP 32
-  IF ( T3   .NE. 2 )  STOP 33
-  IF ( T4   .NE. 3 )  STOP 34
+  IF ( T1   .NE. 2 )  ERROR STOP 31
+  IF ( T2   .NE. 3 )  ERROR STOP 32
+  IF ( T3   .NE. 2 )  ERROR STOP 33
+  IF ( T4   .NE. 3 )  ERROR STOP 34
 
 
   END

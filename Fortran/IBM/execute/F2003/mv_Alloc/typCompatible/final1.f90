@@ -62,13 +62,13 @@ use m
 
    call move_alloc( b2(1)%l2, b1%l2(2)%l1 )
 
-   if ( .not. allocated(b1%l2(2)%l1) ) stop 31
-   if ( allocated(b2(1)%l2)) stop 32
+   if ( .not. allocated(b1%l2(2)%l1) ) error stop 31
+   if ( allocated(b2(1)%l2)) error stop 32
 
    select type (x => b1%l2(2)%l1)
 
        type is (A)
-           if ( size(x) /= 3 ) stop 41
+           if ( size(x) /= 3 ) error stop 41
        class default
            stop 51
    end select

@@ -81,18 +81,18 @@
   PROCEDURE(IntF), POINTER :: ProcPtr2
   TYPE(Base(1,3))          :: V
 
-  IF ( .NOT. ASSOCIATED(ProcPtr0, ExtFun) ) STOP 10
-  IF ( .NOT. ASSOCIATED(ProcPtr1, ExtFun) ) STOP 11
-  IF ( .NOT. ASSOCIATED(ProcPtr2, ExtFun) ) STOP 12
+  IF ( .NOT. ASSOCIATED(ProcPtr0, ExtFun) ) ERROR STOP 10
+  IF ( .NOT. ASSOCIATED(ProcPtr1, ExtFun) ) ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(ProcPtr2, ExtFun) ) ERROR STOP 12
 
   V = ProcPtr0(Base(1,3)("321"))
-  IF (V%C .NE. "321") STOP 15
+  IF (V%C .NE. "321") ERROR STOP 15
 
   V = ProcPtr1(Base(1,3)("123"))
-  IF (V%C .NE. "123") STOP 13
+  IF (V%C .NE. "123") ERROR STOP 13
 
   V = ProcPtr2(Base(1,3)("abc"))
-  IF (V%C .NE. "abc") STOP 14
+  IF (V%C .NE. "abc") ERROR STOP 14
 
   END SUBROUTINE
 

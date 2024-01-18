@@ -25,9 +25,9 @@
             type is (t)
               stop 1
             type is (t2)
-              if (size(a) /= 1) stop 2
-              if (a(1)%i /= 5) stop 3
-              if (a(1)%j /= 10) stop 4
+              if (size(a) /= 1) error stop 2
+              if (a(1)%i /= 5) error stop 3
+              if (a(1)%j /= 10) error stop 4
             class default
               stop 5
           end select

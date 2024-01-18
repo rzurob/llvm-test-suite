@@ -52,19 +52,19 @@
   LOGICAL  :: T= IEEE_SUPPORT_SQRT()
 
 
-  IF ( .NOT.  IEEE_SUPPORT_SQRT(T4)  )   STOP 11
-  IF ( .NOT.  IEEE_SUPPORT_SQRT(T8)  )   STOP 12
-  IF (        IEEE_SUPPORT_SQRT(T6)  )   STOP 13
+  IF ( .NOT.  IEEE_SUPPORT_SQRT(T4)  )   ERROR STOP 11
+  IF ( .NOT.  IEEE_SUPPORT_SQRT(T8)  )   ERROR STOP 12
+  IF (        IEEE_SUPPORT_SQRT(T6)  )   ERROR STOP 13
 
-  IF ( .NOT.  T41  )   STOP 21
-  IF ( .NOT.  T81  )   STOP 22
-  IF (        T61  )   STOP 23
+  IF ( .NOT.  T41  )   ERROR STOP 21
+  IF ( .NOT.  T81  )   ERROR STOP 22
+  IF (        T61  )   ERROR STOP 23
 
-  IF ( .NOT.  T42  )   STOP 31
-  IF ( .NOT.  T82  )   STOP 32
-  IF (        T62  )   STOP 33
+  IF ( .NOT.  T42  )   ERROR STOP 31
+  IF ( .NOT.  T82  )   ERROR STOP 32
+  IF (        T62  )   ERROR STOP 33
 
-  IF (        T   )    STOP 44
+  IF (        T   )    ERROR STOP 44
 
   END
 

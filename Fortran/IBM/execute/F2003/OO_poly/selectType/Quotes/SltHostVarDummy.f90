@@ -100,16 +100,16 @@
                     CLASS IS (Child)
                       SELECT TYPE ( Arg2 )
                         CLASS IS (Child)
-                          IF ( As%Base%GetId() .NE.  1 * Sign ) STOP 34
-                          IF ( As%GetId()      .NE.  2 * Sign ) STOP 35
-                          IF ( As%BaseId       .NE.  1 * Sign ) STOP 36
-                          IF ( As%ChildId      .NE.  2 * Sign ) STOP 37
+                          IF ( As%Base%GetId() .NE.  1 * Sign ) ERROR STOP 34
+                          IF ( As%GetId()      .NE.  2 * Sign ) ERROR STOP 35
+                          IF ( As%BaseId       .NE.  1 * Sign ) ERROR STOP 36
+                          IF ( As%ChildId      .NE.  2 * Sign ) ERROR STOP 37
                           CALL Arg2%SetId()
                           CALL Arg2%Base%SetId()
-                          IF ( Arg1%Base%GetId() .NE. -1 * Sign  ) STOP 34
-                          IF ( Arg1%GetId()      .NE. -2 * Sign ) STOP 35
-                          IF ( Arg1%BaseId       .NE. -1 * Sign ) STOP 36
-                          IF ( Arg1%ChildId      .NE. -2 * Sign ) STOP 37
+                          IF ( Arg1%Base%GetId() .NE. -1 * Sign  ) ERROR STOP 34
+                          IF ( Arg1%GetId()      .NE. -2 * Sign ) ERROR STOP 35
+                          IF ( Arg1%BaseId       .NE. -1 * Sign ) ERROR STOP 36
+                          IF ( Arg1%ChildId      .NE. -2 * Sign ) ERROR STOP 37
                       END SELECT
                   END SELECT
               END SELECT

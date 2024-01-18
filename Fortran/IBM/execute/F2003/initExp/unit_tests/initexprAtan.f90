@@ -17,7 +17,7 @@ real(4) :: a=atan(r4)
 real(8) :: b=atan(r8)
 real(16) :: c=atan(r16)
 
-if (.not. precision_r4(a, atan(r4))) stop 1
-if (.not. precision_r8(b, atan(r8))) stop 2
-if (.not. precision_r16(c, atan(r16))) stop 3
+if (.not. precision_r4(a, atan(r4))) error stop 1
+if (.not. precision_r8(b, atan(r8))) error stop 2
+if (.not. precision_r16(c, atan(r16))) error stop 3
 end

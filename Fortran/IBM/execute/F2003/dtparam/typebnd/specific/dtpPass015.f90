@@ -57,9 +57,9 @@ module math
 
         type (specialMath(dt1%n, dt1%n1, dt2%n2)) matmul4DataType
 
-        if (dt1%n /= dt2%n) stop 1
+        if (dt1%n /= dt2%n) error stop 1
 
-        if (dt1%n2 /= dt2%n1) stop 2
+        if (dt1%n2 /= dt2%n1) error stop 2
 
         !
         do i = 1, dt1%n

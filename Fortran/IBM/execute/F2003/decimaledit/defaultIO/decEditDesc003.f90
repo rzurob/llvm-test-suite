@@ -66,7 +66,7 @@ use m
     associate (str => genString (b1))
         read (str, *, decimal='coMMa', iostat=istat) b2
 
-        if (istat /= 0) stop  10
+        if (istat /= 0) error stop  10
     end associate
 
     k = 1

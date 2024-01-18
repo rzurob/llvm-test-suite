@@ -48,8 +48,8 @@
     TYPE IS (INTEGER(2))
       STOP 41
     TYPE IS (INTEGER(8))
-      IF ( ANY (SHAPE(As) .NE. (/2,2/) )) STOP 20
-      IF ( ANY (As .NE. RESHAPE((/1_8, 3_8, 7_8, 9_8/),(/2,2/)) )) STOP 20
+      IF ( ANY (SHAPE(As) .NE. (/2,2/) )) ERROR STOP 20
+      IF ( ANY (As .NE. RESHAPE((/1_8, 3_8, 7_8, 9_8/),(/2,2/)) )) ERROR STOP 20
     CLASS DEFAULT
 
   END SELECT

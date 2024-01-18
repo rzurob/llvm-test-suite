@@ -64,7 +64,7 @@ PROGRAM Select_Type02d
       CLASS(*), POINTER :: pntr
 
       ALLOCATE( Child(knd1,len1):: pntr )
-      IF (.NOT. ASSOCIATED(pntr)) STOP 10
+      IF (.NOT. ASSOCIATED(pntr)) ERROR STOP 10
 
       CALL sub2(pntr)
 
@@ -86,7 +86,7 @@ SUBROUTINE sub2(Obj)
       SELECT TYPE ( A => Obj)
         TYPE IS (Child(knd1,*))
            A%Cmp => tgt
-           IF ( .NOT. ASSOCIATED(A%Cmp) ) STOP 11
+           IF ( .NOT. ASSOCIATED(A%Cmp) ) ERROR STOP 11
            ASSOCIATE ( p => A%Cmp)
               CALL sub1(p)
            END ASSOCIATE
@@ -118,10 +118,10 @@ SUBROUTINE sub2(Obj)
                 STOP 40
 
               TYPE IS (Base(knd1,*))
-                IF ( SUM(A%my_arr)       .NE. sum1 ) STOP 12
-                IF ( SIZE(A%my_arr)      .NE. len1 ) STOP 13
-                IF ( UBOUND(A%my_arr, 1) .NE. len1 ) STOP 14
-                IF ( LBOUND(A%my_arr, 1) .NE.    1 ) STOP 15
+                IF ( SUM(A%my_arr)       .NE. sum1 ) ERROR STOP 12
+                IF ( SIZE(A%my_arr)      .NE. len1 ) ERROR STOP 13
+                IF ( UBOUND(A%my_arr, 1) .NE. len1 ) ERROR STOP 14
+                IF ( LBOUND(A%my_arr, 1) .NE.    1 ) ERROR STOP 15
 
               CLASS DEFAULT
                 STOP 41

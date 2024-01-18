@@ -76,15 +76,15 @@
   BTar = Base(RetPtr(Fun))
   V = DT(-1, BTar)
 
-  IF ( V%Id .NE. -1 ) STOP 11
-  IF ( .NOT. ASSOCIATED(V%BComp, BTar) )  STOP 12
-  IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr, RetPtr(Fun)) )  STOP 12
+  IF ( V%Id .NE. -1 ) ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(V%BComp, BTar) )  ERROR STOP 12
+  IF ( .NOT. ASSOCIATED(V%BComp%ProcPtr, RetPtr(Fun)) )  ERROR STOP 12
 
-  IF (V%Bcomp%ProcPtr("ABC") .NE. "ABC" ) STOP 14
+  IF (V%Bcomp%ProcPtr("ABC") .NE. "ABC" ) ERROR STOP 14
 
-  IF (V%BComp%ProcPtr("") .NE. "" ) STOP 15
+  IF (V%BComp%ProcPtr("") .NE. "" ) ERROR STOP 15
 
-  IF (V%BComp%ProcPtr(Str) .NE. Str ) STOP 15
+  IF (V%BComp%ProcPtr(Str) .NE. Str ) ERROR STOP 15
 
   CONTAINS
 

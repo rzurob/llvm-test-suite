@@ -50,8 +50,8 @@
         SELECT TYPE(U)
         CLASS DEFAULT
           ASSOCIATE ( U => U)
-            IF ( U%Int .NE. 6 )       STOP 22
-            IF ( TRIM(U%C) .NE. "!" ) STOP 23
+            IF ( U%Int .NE. 6 )       ERROR STOP 22
+            IF ( TRIM(U%C) .NE. "!" ) ERROR STOP 23
           END ASSOCIATE
         END SELECT
       END ASSOCIATE

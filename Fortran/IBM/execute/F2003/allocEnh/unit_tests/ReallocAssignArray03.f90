@@ -12,8 +12,8 @@
 
 complex(16), allocatable :: a(:)
 a = (/(1.0_16,2.0_16), (3.0_16,4.0_16), (5.0_16,6.0_16)/)
-if (any(shape(a) /= (/3/))) stop 1
-if (any(a /= (/(1.0_16,2.0_16), (3.0_16,4.0_16), (5.0_16,6.0_16)/))) stop 2
-if (lbound(a,1) /= 1) stop 3
-if (ubound(a,1) /= 3) stop 4
+if (any(shape(a) /= (/3/))) error stop 1
+if (any(a /= (/(1.0_16,2.0_16), (3.0_16,4.0_16), (5.0_16,6.0_16)/))) error stop 2
+if (lbound(a,1) /= 1) error stop 3
+if (ubound(a,1) /= 3) error stop 4
 end

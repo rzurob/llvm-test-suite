@@ -33,16 +33,16 @@ program main
 
     ptr(2:) => tar(2:1:-1)
 
-    if ( .not. associated(ptr, tar(2:1:-1))) stop 1
-    if ( lbound(ptr, 1) /= 2 ) stop 3
-    if ( ubound(ptr, 1) /= 3 ) stop 5
+    if ( .not. associated(ptr, tar(2:1:-1))) error stop 1
+    if ( lbound(ptr, 1) /= 2 ) error stop 3
+    if ( ubound(ptr, 1) /= 3 ) error stop 5
     print *, ptr
 
     call sub
 
-    if ( .not. associated(ptr, ch(2:1:-1))) stop 11
-    if ( lbound(ptr, 1) /= 1 ) stop 13
-    if ( ubound(ptr, 1) /= 2 ) stop 15
+    if ( .not. associated(ptr, ch(2:1:-1))) error stop 11
+    if ( lbound(ptr, 1) /= 1 ) error stop 13
+    if ( ubound(ptr, 1) /= 2 ) error stop 15
     print *, ptr
 
     contains
@@ -50,9 +50,9 @@ program main
             use B, tar => ch
 
             ptr(lbound(tar,1):ubound(tar,1)) => tar(2:1:-1)
-            if ( .not. associated(ptr, tar(2:1:-1))) stop 21
-            if ( lbound(ptr, 1) /= 1 ) stop 23
-            if ( ubound(ptr, 1) /= 2 ) stop 25
+            if ( .not. associated(ptr, tar(2:1:-1))) error stop 21
+            if ( lbound(ptr, 1) /= 1 ) error stop 23
+            if ( ubound(ptr, 1) /= 2 ) error stop 25
             print *, ptr
 	    print *, ptr >= (/'COMPILER', 'COMPILER' /)
 

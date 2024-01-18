@@ -42,14 +42,14 @@
 
 
 !???IEEE
-!  IF ( ANY ( TR4  .NE. 127  )  )   STOP 11
-!  IF ( ANY ( TR8  .NE. 1023 )  )   STOP 12
-!  IF ( ANY ( TR6  .NE. 1023 )  )   STOP 13
+!  IF ( ANY ( TR4  .NE. 127  )  )   ERROR STOP 11
+!  IF ( ANY ( TR8  .NE. 1023 )  )   ERROR STOP 12
+!  IF ( ANY ( TR6  .NE. 1023 )  )   ERROR STOP 13
 
 ! IBM extension
-  IF ( ANY ( TR4  .NE. 128  )  )   STOP 11
-  IF ( ANY ( TR8  .NE. 1024 )  )   STOP 12
-  IF ( ANY ( TR6  .NE. 1024 )  )   STOP 13
+  IF ( ANY ( TR4  .NE. 128  )  )   ERROR STOP 11
+  IF ( ANY ( TR8  .NE. 1024 )  )   ERROR STOP 12
+  IF ( ANY ( TR6  .NE. 1024 )  )   ERROR STOP 13
 
   END
 

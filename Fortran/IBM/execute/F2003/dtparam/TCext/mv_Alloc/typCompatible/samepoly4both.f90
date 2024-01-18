@@ -54,7 +54,7 @@ end module
 
       select type ( x => b%get_alloc(b) )
           type is ( base(4) )
-              if ( x%id /= 6 ) stop 11
+              if ( x%id /= 6 ) error stop 11
           class default
               stop 13
       end select
@@ -63,8 +63,8 @@ end module
 
       select type ( x => b%get_alloc(d) )
           type is ( child(4) )
-              if ( x%id /= 8 ) stop 21
-              if ( x%ch /= 'XYZ' ) stop 23
+              if ( x%id /= 8 ) error stop 21
+              if ( x%ch /= 'XYZ' ) error stop 23
           class default
               stop 25
       end select

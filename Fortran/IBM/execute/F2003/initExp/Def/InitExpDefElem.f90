@@ -66,17 +66,17 @@
 
   TYPE(DT2) :: Arr2(1+9)=DT2(DT=DT(SIZE(Arr1)))
 
-  IF (ANY(LBOUND(T1%Arr)   .NE. (/1,1 /) ))            STOP 11
-  IF (ANY(UBOUND(T1%Arr)   .NE. (/10,10/) ))           STOP 12
-  IF (ANY(T1%Arr(:,:)%I    .NE. ABS(ABS(-Param%I))))   STOP 13
+  IF (ANY(LBOUND(T1%Arr)   .NE. (/1,1 /) ))            ERROR STOP 11
+  IF (ANY(UBOUND(T1%Arr)   .NE. (/10,10/) ))           ERROR STOP 12
+  IF (ANY(T1%Arr(:,:)%I    .NE. ABS(ABS(-Param%I))))   ERROR STOP 13
 
   DO I=1, 10
-    IF (ANY(LBOUND(Arr1(I)%Arr)   .NE. (/1,1 /) ))     STOP 21
-    IF (ANY(UBOUND(Arr1(I)%Arr)   .NE. (/10,10/) ))    STOP 22
-    IF (ANY(Arr1(I)%Arr(:, :)%I   .NE. 1  ) )          STOP 23
+    IF (ANY(LBOUND(Arr1(I)%Arr)   .NE. (/1,1 /) ))     ERROR STOP 21
+    IF (ANY(UBOUND(Arr1(I)%Arr)   .NE. (/10,10/) ))    ERROR STOP 22
+    IF (ANY(Arr1(I)%Arr(:, :)%I   .NE. 1  ) )          ERROR STOP 23
   END DO
 
-  IF (ANY(Arr2%I .NE. SIZE(Arr1)) )    STOP 31
+  IF (ANY(Arr2%I .NE. SIZE(Arr1)) )    ERROR STOP 31
 
   END
 

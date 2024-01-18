@@ -44,7 +44,7 @@ module m
 
         procedure(real(4)), pointer ::doSelect
 
-        if ((n < 1) .or. (n > b1%n)) stop 10
+        if ((n < 1) .or. (n > b1%n)) error stop 10
 
         doSelect => b1%x(n)%proc
     end function

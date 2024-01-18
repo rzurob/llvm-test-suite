@@ -84,7 +84,7 @@
       A_square%area = -0.0
 
       ALLOCATE(My_shape, source=A_square)
-      IF ( .NOT. ALLOCATED(My_shape)) STOP 10
+      IF ( .NOT. ALLOCATED(My_shape)) ERROR STOP 10
 
       SELECT TYPE (My_shape)
          TYPE  IS (Square(8,*,8))
@@ -119,7 +119,7 @@
       A_triangle%area = -0.0
 
       My_shape => A_triangle        !  My_shape same than the one in the main program
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 20
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 20
 
       SELECT TYPE (My_shape)
 
@@ -149,7 +149,7 @@
 
       !  My_shape same than the one in the main program
       ALLOCATE (My_shape , SOURCE = Rectangle(8,50,8)(area=0.0,name='name',width=12.5,height=8.0))
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 30
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 30
 
       SELECT TYPE (A => My_shape)
         TYPE  IS (Square(8,*,8))

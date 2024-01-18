@@ -118,24 +118,24 @@
 
     DO I=1, SIZE(Arg1)
 
-    IF (ANY(Arg1(I)%I1Arr .NE. Arg2(I)%I1Arr)) STOP 11
-    IF (ANY(Arg1(I)%I2Arr .NE. Arg2(I)%I2Arr)) STOP 12
-    IF (ANY(Arg1(I)%I4Arr .NE. Arg2(I)%I4Arr)) STOP 14
-    IF (ANY(Arg1(I)%I8Arr .NE. Arg2(I)%I8Arr)) STOP 18
+    IF (ANY(Arg1(I)%I1Arr .NE. Arg2(I)%I1Arr)) ERROR STOP 11
+    IF (ANY(Arg1(I)%I2Arr .NE. Arg2(I)%I2Arr)) ERROR STOP 12
+    IF (ANY(Arg1(I)%I4Arr .NE. Arg2(I)%I4Arr)) ERROR STOP 14
+    IF (ANY(Arg1(I)%I8Arr .NE. Arg2(I)%I8Arr)) ERROR STOP 18
 
-    IF (ANY(Arg1(I)%R4Arr  .NE. Arg2(I)%R4Arr))  STOP 24
-    IF (ANY(Arg1(I)%R8Arr  .NE. Arg2(I)%R8Arr))  STOP 28
-    IF (ANY(Arg1(I)%R16Arr .NE. Arg2(I)%R16Arr)) STOP 216
+    IF (ANY(Arg1(I)%R4Arr  .NE. Arg2(I)%R4Arr))  ERROR STOP 24
+    IF (ANY(Arg1(I)%R8Arr  .NE. Arg2(I)%R8Arr))  ERROR STOP 28
+    IF (ANY(Arg1(I)%R16Arr .NE. Arg2(I)%R16Arr)) ERROR STOP 216
 
-    IF (ANY(Arg1(I)%C8Arr  .NE. Arg2(I)%C8Arr))  STOP 38
-    IF (ANY(Arg1(I)%C16Arr .NE. Arg2(I)%C16Arr)) STOP 316
+    IF (ANY(Arg1(I)%C8Arr  .NE. Arg2(I)%C8Arr))  ERROR STOP 38
+    IF (ANY(Arg1(I)%C16Arr .NE. Arg2(I)%C16Arr)) ERROR STOP 316
 
-    IF (ANY(Arg1(I)%L1Arr .NEQV. Arg2(I)%L1Arr)) STOP 41
-    IF (ANY(Arg1(I)%L2Arr .NEQV. Arg2(I)%L2Arr)) STOP 42
-    IF (ANY(Arg1(I)%L4Arr .NEQV. Arg2(I)%L4Arr)) STOP 44
-    IF (ANY(Arg1(I)%L8Arr .NEQV. Arg2(I)%L8Arr)) STOP 48
+    IF (ANY(Arg1(I)%L1Arr .NEQV. Arg2(I)%L1Arr)) ERROR STOP 41
+    IF (ANY(Arg1(I)%L2Arr .NEQV. Arg2(I)%L2Arr)) ERROR STOP 42
+    IF (ANY(Arg1(I)%L4Arr .NEQV. Arg2(I)%L4Arr)) ERROR STOP 44
+    IF (ANY(Arg1(I)%L8Arr .NEQV. Arg2(I)%L8Arr)) ERROR STOP 48
 
-    IF (ANY(Arg1(I)%CharArr .NE. Arg2(I)%CharArr)) STOP 68
+    IF (ANY(Arg1(I)%CharArr .NE. Arg2(I)%CharArr)) ERROR STOP 68
 
     END DO
 

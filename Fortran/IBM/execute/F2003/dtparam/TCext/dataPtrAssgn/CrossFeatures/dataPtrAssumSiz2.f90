@@ -69,21 +69,21 @@
 
   Ptr(L:, L:) => Arr(:,U:U)
 
-  IF (.NOT. ASSOCIATED(Ptr, Arr(:, U:U)))          STOP 11
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    STOP 12
-  IF (ANY( UBOUND(Ptr)         .NE. (/L, L /)))    STOP 13
-  IF (ANY( Ptr%ID              .NE.   -1))         STOP 14
+  IF (.NOT. ASSOCIATED(Ptr, Arr(:, U:U)))          ERROR STOP 11
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    ERROR STOP 12
+  IF (ANY( UBOUND(Ptr)         .NE. (/L, L /)))    ERROR STOP 13
+  IF (ANY( Ptr%ID              .NE.   -1))         ERROR STOP 14
   Ptr%ID = 1
-  IF (ANY( Ptr%ModFun()        .NE.    1))         STOP 15
+  IF (ANY( Ptr%ModFun()        .NE.    1))         ERROR STOP 15
 
   Ptr(L:L, U:U) => Arr(:,U)
 
-  IF (.NOT. ASSOCIATED(Ptr))                       STOP 21
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, U /)))    STOP 22
-  IF (ANY( UBOUND(Ptr)         .NE. (/L, U /)))    STOP 23
-  IF (ANY( Ptr%ID              .NE.    1))         STOP 24
+  IF (.NOT. ASSOCIATED(Ptr))                       ERROR STOP 21
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, U /)))    ERROR STOP 22
+  IF (ANY( UBOUND(Ptr)         .NE. (/L, U /)))    ERROR STOP 23
+  IF (ANY( Ptr%ID              .NE.    1))         ERROR STOP 24
   Ptr%ID = -1
-  IF (ANY( Ptr%ModFun()        .NE.   -1))         STOP 25
+  IF (ANY( Ptr%ModFun()        .NE.   -1))         ERROR STOP 25
 
   END SUBROUTINE
 

@@ -83,20 +83,20 @@
       poly2 => tgt2
 
       CALL base1%SUB(base1)
-      IF ( ANY(base1%tag .NE. '1') ) STOP 11
+      IF ( ANY(base1%tag .NE. '1') ) ERROR STOP 11
       CALL poly1%SUB(base1)
-      IF ( ANY(base1%tag .NE. '1') ) STOP 12
+      IF ( ANY(base1%tag .NE. '1') ) ERROR STOP 12
       CALL poly2%SUB(base1)
-      IF ( ANY(base1%tag .NE. '1') ) STOP 13
+      IF ( ANY(base1%tag .NE. '1') ) ERROR STOP 13
 
       CALL poly1%SUB(poly1)
-      IF ( ANY(poly1%tag .NE. '1') ) STOP 14
+      IF ( ANY(poly1%tag .NE. '1') ) ERROR STOP 14
       CALL poly2%SUB(poly1)
-      IF ( ANY(poly1%tag .NE. '1') ) STOP 15
+      IF ( ANY(poly1%tag .NE. '1') ) ERROR STOP 15
 
       CALL poly1%SUB(poly2)
-      IF ( ANY(poly2%tag .NE. '2') ) STOP 16
+      IF ( ANY(poly2%tag .NE. '2') ) ERROR STOP 16
       CALL poly2%SUB(poly2)
-      IF ( ANY(poly2%tag .NE. '2') ) STOP 17
+      IF ( ANY(poly2%tag .NE. '2') ) ERROR STOP 17
 
       END PROGRAM Generic_TypeBound05a

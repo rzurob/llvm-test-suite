@@ -61,7 +61,7 @@
       ALLOCATABLE :: foo1
 
       ALLOCATE (foo1, source = Obj)
-      IF ( .NOT. ALLOCATED(foo1)) STOP 30
+      IF ( .NOT. ALLOCATED(foo1)) ERROR STOP 30
 
       END FUNCTION foo1
 
@@ -71,7 +71,7 @@
       ALLOCATABLE :: foo2
 
       ALLOCATE (foo2, source = Obj)
-      IF ( .NOT. ALLOCATED(foo2)) STOP 31
+      IF ( .NOT. ALLOCATED(foo2)) ERROR STOP 31
 
       END FUNCTION foo2
 

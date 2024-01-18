@@ -58,7 +58,7 @@
       POINTER :: foo1
 
       ALLOCATE (foo1, source = Obj)
-      IF ( .NOT. ASSOCIATED(foo1)) STOP 1
+      IF ( .NOT. ASSOCIATED(foo1)) ERROR STOP 1
 
       END FUNCTION foo1
 
@@ -68,7 +68,7 @@
       POINTER :: foo2
 
       ALLOCATE (foo2, source = Obj)
-      IF ( .NOT. ASSOCIATED(foo2)) STOP 2
+      IF ( .NOT. ASSOCIATED(foo2)) ERROR STOP 2
 
       END FUNCTION foo2
 

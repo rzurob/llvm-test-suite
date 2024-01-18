@@ -47,7 +47,7 @@ module m
 
         type(base(4)) makeBaseArray(size(b1%data))
 
-        if (.not. allocated(b1%data)) stop 100
+        if (.not. allocated(b1%data)) error stop 100
 
         do i = 1, size(b1%data)
             makeBaseArray(i)%data = b1%data(lbound(b1%data,1): &

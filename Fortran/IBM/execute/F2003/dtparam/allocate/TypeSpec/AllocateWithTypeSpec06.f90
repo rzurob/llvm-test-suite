@@ -49,16 +49,16 @@ PROGRAM AllocateWithTypeSpec06
 
       CLASS(Base(4,:)), ALLOCATABLE :: b1
 
-      IF ( ALLOCATED(b1)) STOP 10
+      IF ( ALLOCATED(b1)) ERROR STOP 10
 
 !*   Base
 
       ALLOCATE(Base(4,8) :: b1)
       CALL verify_type_param(b1)
-      IF (b1%tag .NE. 'Base') STOP 11
+      IF (b1%tag .NE. 'Base') ERROR STOP 11
 
       CALL alloc_comp(b1)
-      IF (b1%status .NE. '0 allocation done') STOP 12
+      IF (b1%status .NE. '0 allocation done') ERROR STOP 12
 
       DEALLOCATE(b1)
 
@@ -66,10 +66,10 @@ PROGRAM AllocateWithTypeSpec06
 
       ALLOCATE(Child(4,8,4,16) :: b1)
       CALL verify_type_param(b1)
-      IF (b1%tag .NE. 'Child') STOP 13
+      IF (b1%tag .NE. 'Child') ERROR STOP 13
 
       CALL alloc_comp(b1)
-      IF (b1%status .NE. '1 allocation done') STOP 14
+      IF (b1%status .NE. '1 allocation done') ERROR STOP 14
 
       DEALLOCATE(b1)
 
@@ -77,10 +77,10 @@ PROGRAM AllocateWithTypeSpec06
 
       ALLOCATE(Branch(4,10,4,5,8,8) :: b1)
       CALL verify_type_param(b1)
-      IF (b1%tag .NE. 'Branch') STOP 15
+      IF (b1%tag .NE. 'Branch') ERROR STOP 15
 
       CALL alloc_comp(b1)
-      IF (b1%status .NE. '2 allocations done') STOP 16
+      IF (b1%status .NE. '2 allocations done') ERROR STOP 16
 
       DEALLOCATE(b1)
 
@@ -92,18 +92,18 @@ PROGRAM AllocateWithTypeSpec06
          SELECT TYPE ( Arg )
               CLASS IS (Base(4,*))
                  Arg%tag = 'Base'
-                 IF (Arg%l1 .NE. 8) STOP 20
+                 IF (Arg%l1 .NE. 8) ERROR STOP 20
 
               CLASS IS (Child(4,*,4,*))
                  Arg%tag = 'Child'
-                 IF (Arg%l1 .NE. 8) STOP 21
-                 IF (Arg%l2 .NE. 16) STOP 22
+                 IF (Arg%l1 .NE. 8) ERROR STOP 21
+                 IF (Arg%l2 .NE. 16) ERROR STOP 22
 
               CLASS IS (Branch(4,*,4,*,*,*))
                  Arg%tag = 'Branch'
-                 IF (Arg%l3 .NE. 5) STOP 23
-                 IF (Arg%l4 .NE. 8) STOP 24
-                 IF (Arg%l5 .NE. 8) STOP 25
+                 IF (Arg%l3 .NE. 5) ERROR STOP 23
+                 IF (Arg%l4 .NE. 8) ERROR STOP 24
+                 IF (Arg%l5 .NE. 8) ERROR STOP 25
 
               CLASS DEFAULT
                  STOP 26
@@ -119,25 +119,25 @@ PROGRAM AllocateWithTypeSpec06
                  Arg%status = '0 allocation done'
 
               CLASS IS (Child(4,*,4,*))
-                 IF ( ALLOCATED(Arg%b_cmp)) STOP 30
+                 IF ( ALLOCATED(Arg%b_cmp)) ERROR STOP 30
                  ALLOCATE(Child(4,Arg%l2-Arg%l1,4,Arg%l2) :: Arg%b_cmp)
                  Arg%status = '1 allocation done'
 
                  CALL verify_type_param(Arg%b_cmp)
-                 IF (Arg%b_cmp%tag .NE. 'Child') STOP 31
+                 IF (Arg%b_cmp%tag .NE. 'Child') ERROR STOP 31
 
               CLASS IS (Branch(4,*,4,*,*,*))
-                 IF ( ALLOCATED(Arg%left)) STOP 32
-                 IF ( ALLOCATED(Arg%right)) STOP 33
+                 IF ( ALLOCATED(Arg%left)) ERROR STOP 32
+                 IF ( ALLOCATED(Arg%right)) ERROR STOP 33
                  ALLOCATE(Branch(4,Arg%l4,4,Arg%l1-Arg%l3,Arg%l4,Arg%l4) :: Arg%left)
                  ALLOCATE(Branch(4,Arg%l5,4,Arg%l1-Arg%l3,Arg%l5,Arg%l5) :: Arg%right)
                  Arg%status = '2 allocations done'
 
                  CALL verify_type_param(Arg%left)
-                 IF (Arg%left%tag .NE. 'Branch') STOP 34
+                 IF (Arg%left%tag .NE. 'Branch') ERROR STOP 34
 
                  CALL verify_type_param(Arg%right)
-                 IF (Arg%right%tag .NE. 'Branch') STOP 35
+                 IF (Arg%right%tag .NE. 'Branch') ERROR STOP 35
 
               CLASS DEFAULT
                  STOP 36

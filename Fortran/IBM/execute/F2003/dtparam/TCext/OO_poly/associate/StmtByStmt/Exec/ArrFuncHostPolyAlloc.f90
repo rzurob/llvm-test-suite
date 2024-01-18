@@ -112,25 +112,25 @@
 
   ASSOCIATE ( As1 => Arg(1::2), As2=> Ptr )
 
-    IF (ANY(SHAPE(As1)  .NE. (/3/)))            STOP 21
-    IF (ANY(LBOUND(As1) .NE. (/1/)))            STOP 22
-    IF (ANY(UBOUND(As1) .NE. (/3/)))            STOP 23
+    IF (ANY(SHAPE(As1)  .NE. (/3/)))            ERROR STOP 21
+    IF (ANY(LBOUND(As1) .NE. (/1/)))            ERROR STOP 22
+    IF (ANY(UBOUND(As1) .NE. (/3/)))            ERROR STOP 23
 
-    IF (ANY(SHAPE(As2)  .NE. (/3/)))            STOP 24
-    IF (ANY(LBOUND(As2) .NE. (/1/)))            STOP 25
-    IF (ANY(UBOUND(As2) .NE. (/3/)))            STOP 26
+    IF (ANY(SHAPE(As2)  .NE. (/3/)))            ERROR STOP 24
+    IF (ANY(LBOUND(As2) .NE. (/1/)))            ERROR STOP 25
+    IF (ANY(UBOUND(As2) .NE. (/3/)))            ERROR STOP 26
 
     ASSOCIATE ( As1 => Fun(As2), As2 =>Fun(As1) )
 
-      IF ( ANY(As1%Base%GetId() .NE.  1) ) STOP 34
-      IF ( ANY(As1%GetId()      .NE.  2) ) STOP 35
-      IF ( ANY(As1%BaseId       .NE.  1) ) STOP 36
-      IF ( ANY(As1%ChildId      .NE.  2) ) STOP 37
+      IF ( ANY(As1%Base%GetId() .NE.  1) ) ERROR STOP 34
+      IF ( ANY(As1%GetId()      .NE.  2) ) ERROR STOP 35
+      IF ( ANY(As1%BaseId       .NE.  1) ) ERROR STOP 36
+      IF ( ANY(As1%ChildId      .NE.  2) ) ERROR STOP 37
 
-      IF ( ANY(As2%Base%GetId() .NE. -1) ) STOP 44
-      IF ( ANY(As2%GetId()      .NE. -2) ) STOP 45
-      IF ( ANY(As2%BaseId       .NE. -1) ) STOP 46
-      IF ( ANY(As2%ChildId      .NE. -2) ) STOP 47
+      IF ( ANY(As2%Base%GetId() .NE. -1) ) ERROR STOP 44
+      IF ( ANY(As2%GetId()      .NE. -2) ) ERROR STOP 45
+      IF ( ANY(As2%BaseId       .NE. -1) ) ERROR STOP 46
+      IF ( ANY(As2%ChildId      .NE. -2) ) ERROR STOP 47
 
     END ASSOCIATE
 
@@ -140,11 +140,11 @@
 
   END ASSOCIATE
 
-  IF ( .NOT. ALLOCATED(V) )           STOP 14
-  IF ( ANY(V(1::2)%BaseID  .NE.  1) ) STOP 10
-  IF ( ANY(V(1::2)%ChildID .NE. -2) ) STOP 11
-  IF ( ANY(V(2::2)%BaseID  .NE. -1) ) STOP 12
-  IF ( ANY(V(2::2)%ChildID .NE.  2) ) STOP 13
+  IF ( .NOT. ALLOCATED(V) )           ERROR STOP 14
+  IF ( ANY(V(1::2)%BaseID  .NE.  1) ) ERROR STOP 10
+  IF ( ANY(V(1::2)%ChildID .NE. -2) ) ERROR STOP 11
+  IF ( ANY(V(2::2)%BaseID  .NE. -1) ) ERROR STOP 12
+  IF ( ANY(V(2::2)%ChildID .NE.  2) ) ERROR STOP 13
 
   END SUBROUTINE
 

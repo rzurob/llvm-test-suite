@@ -58,24 +58,24 @@
                       )
 
 
-  IF ( KIND(T%L1)  .NE.   1 )      STOP 11
-  IF ( ANY (T%L1)  .NEQV. .TRUE. ) STOP 12
-  IF ( KIND(T%L2)  .NE.   2 )      STOP 13
-  IF ( ANY (T%L2)  .NEQV. .TRUE. ) STOP 14
-  IF ( KIND(T%L4)  .NE.   4 )      STOP 15
-  IF ( ANY (T%L4)  .NEQV. .TRUE. ) STOP 16
-  IF ( KIND(T%L8)  .NE.   8 )      STOP 17
-  IF ( ANY (T%L8)  .NEQV. .TRUE. ) STOP 18
+  IF ( KIND(T%L1)  .NE.   1 )      ERROR STOP 11
+  IF ( ANY (T%L1)  .NEQV. .TRUE. ) ERROR STOP 12
+  IF ( KIND(T%L2)  .NE.   2 )      ERROR STOP 13
+  IF ( ANY (T%L2)  .NEQV. .TRUE. ) ERROR STOP 14
+  IF ( KIND(T%L4)  .NE.   4 )      ERROR STOP 15
+  IF ( ANY (T%L4)  .NEQV. .TRUE. ) ERROR STOP 16
+  IF ( KIND(T%L8)  .NE.   8 )      ERROR STOP 17
+  IF ( ANY (T%L8)  .NEQV. .TRUE. ) ERROR STOP 18
 
-  IF ( ANY (T1%L1)  .NEQV. .FALSE. ) STOP 22
-  IF ( ANY (T1%L2)  .NEQV. .FALSE. ) STOP 24
-  IF ( ANY (T1%L4)  .NEQV. .FALSE. ) STOP 26
-  IF ( ANY (T1%L8)  .NEQV. .FALSE. ) STOP 28
+  IF ( ANY (T1%L1)  .NEQV. .FALSE. ) ERROR STOP 22
+  IF ( ANY (T1%L2)  .NEQV. .FALSE. ) ERROR STOP 24
+  IF ( ANY (T1%L4)  .NEQV. .FALSE. ) ERROR STOP 26
+  IF ( ANY (T1%L8)  .NEQV. .FALSE. ) ERROR STOP 28
 
-  IF ( ANY (T2%L1)  .NEQV. .TRUE. )  STOP 32
-  IF ( ANY (T2%L2)  .NEQV. .TRUE. )  STOP 34
-  IF ( ANY (T2%L4)  .NEQV. .TRUE. )  STOP 36
-  IF ( ANY (T2%L8)  .NEQV. .TRUE. )  STOP 38
+  IF ( ANY (T2%L1)  .NEQV. .TRUE. )  ERROR STOP 32
+  IF ( ANY (T2%L2)  .NEQV. .TRUE. )  ERROR STOP 34
+  IF ( ANY (T2%L4)  .NEQV. .TRUE. )  ERROR STOP 36
+  IF ( ANY (T2%L8)  .NEQV. .TRUE. )  ERROR STOP 38
 
   END
 

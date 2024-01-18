@@ -38,7 +38,7 @@ PROGRAM BParallelRegion
     !$OMP END PARALLEL
 
      call simple_sort(arr)
-     IF ( ANY(arr .NE.  [3,2,1,0] ) ) STOP 10
+     IF ( ANY(arr .NE.  [3,2,1,0] ) ) ERROR STOP 10
 
 
     CONTAINS

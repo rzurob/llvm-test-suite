@@ -25,7 +25,7 @@ module m
         class(point), intent(inout) :: p1
         real, intent(in) :: r(:)
 
-        if (size(r) <= 0) stop 10
+        if (size(r) <= 0) error stop 10
 
         p1%x = [p1%x, r]
 

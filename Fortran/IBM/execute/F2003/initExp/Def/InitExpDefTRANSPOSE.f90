@@ -63,17 +63,17 @@
   TYPE(DT),  PARAMETER :: T6(1,128)   = TRANSPOSE(TRANSPOSE(S(:,:)))
 
 
-  IF ( ANY( T1(:,1)%I .NE. II)) STOP 11
-  IF ( ANY( T1(:,1)%C .NE. CC)) STOP 12
+  IF ( ANY( T1(:,1)%I .NE. II)) ERROR STOP 11
+  IF ( ANY( T1(:,1)%C .NE. CC)) ERROR STOP 12
 
-  IF ( ANY( T2(:,1)   .NE. II)) STOP 13
-  IF ( ANY( T3(:,1)   .NE. CC)) STOP 14
+  IF ( ANY( T2(:,1)   .NE. II)) ERROR STOP 13
+  IF ( ANY( T3(:,1)   .NE. CC)) ERROR STOP 14
 
-  IF ( ANY( T4(:,:)   .NE. RESHAPE(II, (/1,128/)) )) STOP 15
-  IF ( ANY( T5(:,:)   .NE. RESHAPE(CC, (/1,128/)) )) STOP 16
+  IF ( ANY( T4(:,:)   .NE. RESHAPE(II, (/1,128/)) )) ERROR STOP 15
+  IF ( ANY( T5(:,:)   .NE. RESHAPE(CC, (/1,128/)) )) ERROR STOP 16
 
-  IF ( ANY( T6(:,:)%I .NE. RESHAPE(II, (/1,128/)) )) STOP 17
-  IF ( ANY( T6(:,:)%C .NE. RESHAPE(CC, (/1,128/)) )) STOP 18
+  IF ( ANY( T6(:,:)%I .NE. RESHAPE(II, (/1,128/)) )) ERROR STOP 17
+  IF ( ANY( T6(:,:)%C .NE. RESHAPE(CC, (/1,128/)) )) ERROR STOP 18
 
   END
 

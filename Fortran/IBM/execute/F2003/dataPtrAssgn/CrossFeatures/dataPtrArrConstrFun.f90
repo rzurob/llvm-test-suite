@@ -49,24 +49,24 @@
     Ptr(I:, J:) => Tar2
 
     IF (ANY( CSHIFT(Ptr,  SHIFT=-1, DIM=2)                   .NE. &
-             CSHIFT(Tar2, SHIFT=-1, DIM=2)))                      STOP 31
+             CSHIFT(Tar2, SHIFT=-1, DIM=2)))                      ERROR STOP 31
     IF (ANY( EOSHIFT(Ptr, SHIFT=-1, BOUNDARY="*", DIM=2)     .NE. &
-             EOSHIFT(Tar2,SHIFT=-1, BOUNDARY="*", DIM=2) ))       STOP 32
+             EOSHIFT(Tar2,SHIFT=-1, BOUNDARY="*", DIM=2) ))       ERROR STOP 32
     IF (ANY( MERGE(Ptr,  Ptr,  L)                            .NE. &
-             MERGE(Tar2, Tar2, L) ))                              STOP 33
+             MERGE(Tar2, Tar2, L) ))                              ERROR STOP 33
     IF (ANY( SPREAD(Ptr,  DIM=1, NCOPIES=2)                  .NE. &
-             SPREAD(Tar2, DIM=1, NCOPIES=2) ))                    STOP 34
+             SPREAD(Tar2, DIM=1, NCOPIES=2) ))                    ERROR STOP 34
     IF (ANY( TRANSPOSE(Ptr)                                  .NE. &
-             TRANSPOSE(Tar2)))                                    STOP 35
+             TRANSPOSE(Tar2)))                                    ERROR STOP 35
     CALL Check2()
 
 
     Ptr(I:J, I:J) => Tar1
 
     IF (ANY( RESHAPE(Ptr, (/J-I+1, J-I+1/))                       .NE. &
-             RESHAPE(Tar1(1:(J-I+1)*(J-I+1)), (/J-I+1, J-I+1/))))      STOP 36
+             RESHAPE(Tar1(1:(J-I+1)*(J-I+1)), (/J-I+1, J-I+1/))))      ERROR STOP 36
     IF (ANY( PACK(Ptr,   L)                                       .NE. &
-             PACK(RESHAPE(Tar1(1:(J-I+1)*(J-I+1)-1), (/J-I+1, J-I+1/)),  L) ))  STOP 37
+             PACK(RESHAPE(Tar1(1:(J-I+1)*(J-I+1)-1), (/J-I+1, J-I+1/)),  L) ))  ERROR STOP 37
 
     CALL Check1()
 
@@ -76,17 +76,17 @@
   CONTAINS
 
   SUBROUTINE Check1()
-    IF (SIZE(Ptr)  .NE. (J-I+1)*(J-I+1))            STOP 20
-    IF (.NOT. ASSOCIATED(Ptr))                      STOP 21
-    IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))           STOP 22
-    IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))           STOP 23
+    IF (SIZE(Ptr)  .NE. (J-I+1)*(J-I+1))            ERROR STOP 20
+    IF (.NOT. ASSOCIATED(Ptr))                      ERROR STOP 21
+    IF (ANY( LBOUND(Ptr) .NE. (/I,  I/)))           ERROR STOP 22
+    IF (ANY( UBOUND(Ptr) .NE. (/J,  J/)))           ERROR STOP 23
   END SUBROUTINE
 
   SUBROUTINE Check2()
-    IF (SIZE(Ptr)  .NE. N*N )                    STOP 10
-    IF (.NOT. ASSOCIATED(Ptr, Tar2))             STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) STOP 13
+    IF (SIZE(Ptr)  .NE. N*N )                    ERROR STOP 10
+    IF (.NOT. ASSOCIATED(Ptr, Tar2))             ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/I, J /)))        ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/I+N-1, J+N-1/))) ERROR STOP 13
   END SUBROUTINE
 
   END

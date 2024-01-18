@@ -57,11 +57,11 @@
   Type(Child) :: V(2, 2)
 
   ASSOCIATE ( As => Func( V ) )
-    IF ( .NOT. ALL ( SHAPE(As) .EQ. (/2,2/)) ) STOP 81
-    IF( ANY(As%BaseId       .NE. -1) ) STOP 46
-    IF( ANY(As%Base%GetId() .NE. -1) ) STOP 47
-    IF( ANY(As%GetId()      .NE. -2) ) STOP 48
-    IF( ANY(As%ChildId      .NE. -2) ) STOP 49
+    IF ( .NOT. ALL ( SHAPE(As) .EQ. (/2,2/)) ) ERROR STOP 81
+    IF( ANY(As%BaseId       .NE. -1) ) ERROR STOP 46
+    IF( ANY(As%Base%GetId() .NE. -1) ) ERROR STOP 47
+    IF( ANY(As%GetId()      .NE. -2) ) ERROR STOP 48
+    IF( ANY(As%ChildId      .NE. -2) ) ERROR STOP 49
   END ASSOCIATE
 
   CONTAINS

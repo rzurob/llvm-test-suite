@@ -62,47 +62,47 @@
 
 
   DO I1 = 1, 126
-    IF (     COUNT(M1(I1,:), KIND=KIND(K1) )    .NE. 1)   STOP 11
-    IF (KIND(COUNT(M1(I1,:), KIND=KIND(K1) ))   .NE. K1)  STOP 12
-    IF (     COUNT(M1(I1,:), KIND=KIND(K2) )    .NE. 1)   STOP 13
-    IF (KIND(COUNT(M1(I1,:), KIND=KIND(K2) ))   .NE. K2)  STOP 14
-    IF (     COUNT(M1(I1,:), KIND=KIND(K4) )    .NE. 1)   STOP 15
-    IF (KIND(COUNT(M1(I1,:), KIND=KIND(K4) ))   .NE. K4)  STOP 16
-    IF (     COUNT(M1(I1,:), KIND=KIND(K8) )    .NE. 1)   STOP 17
-    IF (KIND(COUNT(M1(I1,:), KIND=KIND(K8) ))   .NE. K8)  STOP 18
+    IF (     COUNT(M1(I1,:), KIND=KIND(K1) )    .NE. 1)   ERROR STOP 11
+    IF (KIND(COUNT(M1(I1,:), KIND=KIND(K1) ))   .NE. K1)  ERROR STOP 12
+    IF (     COUNT(M1(I1,:), KIND=KIND(K2) )    .NE. 1)   ERROR STOP 13
+    IF (KIND(COUNT(M1(I1,:), KIND=KIND(K2) ))   .NE. K2)  ERROR STOP 14
+    IF (     COUNT(M1(I1,:), KIND=KIND(K4) )    .NE. 1)   ERROR STOP 15
+    IF (KIND(COUNT(M1(I1,:), KIND=KIND(K4) ))   .NE. K4)  ERROR STOP 16
+    IF (     COUNT(M1(I1,:), KIND=KIND(K8) )    .NE. 1)   ERROR STOP 17
+    IF (KIND(COUNT(M1(I1,:), KIND=KIND(K8) ))   .NE. K8)  ERROR STOP 18
   END DO
 
   DO I2 = 1, 126
-    IF (     COUNT(M2(I2,:), KIND=KIND(K1) )    .NE. 1)   STOP 21
-    IF (KIND(COUNT(M2(I2,:), KIND=KIND(K1) ))   .NE. K1)  STOP 22
-    IF (     COUNT(M2(I2,:), KIND=KIND(K2) )    .NE. 1)   STOP 23
-    IF (KIND(COUNT(M2(I2,:), KIND=KIND(K2) ))   .NE. K2)  STOP 24
-    IF (     COUNT(M2(I2,:), KIND=KIND(K4) )    .NE. 1)   STOP 25
-    IF (KIND(COUNT(M2(I2,:), KIND=KIND(K4) ))   .NE. K4)  STOP 26
-    IF (     COUNT(M2(I2,:), KIND=KIND(K8) )    .NE. 1)   STOP 27
-    IF (KIND(COUNT(M2(I2,:), KIND=KIND(K8) ))   .NE. K8)  STOP 28
+    IF (     COUNT(M2(I2,:), KIND=KIND(K1) )    .NE. 1)   ERROR STOP 21
+    IF (KIND(COUNT(M2(I2,:), KIND=KIND(K1) ))   .NE. K1)  ERROR STOP 22
+    IF (     COUNT(M2(I2,:), KIND=KIND(K2) )    .NE. 1)   ERROR STOP 23
+    IF (KIND(COUNT(M2(I2,:), KIND=KIND(K2) ))   .NE. K2)  ERROR STOP 24
+    IF (     COUNT(M2(I2,:), KIND=KIND(K4) )    .NE. 1)   ERROR STOP 25
+    IF (KIND(COUNT(M2(I2,:), KIND=KIND(K4) ))   .NE. K4)  ERROR STOP 26
+    IF (     COUNT(M2(I2,:), KIND=KIND(K8) )    .NE. 1)   ERROR STOP 27
+    IF (KIND(COUNT(M2(I2,:), KIND=KIND(K8) ))   .NE. K8)  ERROR STOP 28
   END DO
 
   DO I4 = 1, 126
-    IF (     COUNT(M4(I4,:), KIND=KIND(K1) )    .NE. 1)   STOP 41
-    IF (KIND(COUNT(M4(I4,:), KIND=KIND(K1) ))   .NE. K1)  STOP 42
-    IF (     COUNT(M4(I4,:), KIND=KIND(K2) )    .NE. 1)   STOP 43
-    IF (KIND(COUNT(M4(I4,:), KIND=KIND(K2) ))   .NE. K2)  STOP 44
-    IF (     COUNT(M4(I4,:), KIND=KIND(K4) )    .NE. 1)   STOP 45
-    IF (KIND(COUNT(M4(I4,:), KIND=KIND(K4) ))   .NE. K4)  STOP 46
-    IF (     COUNT(M4(I4,:), KIND=KIND(K8) )    .NE. 1)   STOP 47
-    IF (KIND(COUNT(M4(I4,:), KIND=KIND(K8) ))   .NE. K8)  STOP 48
+    IF (     COUNT(M4(I4,:), KIND=KIND(K1) )    .NE. 1)   ERROR STOP 41
+    IF (KIND(COUNT(M4(I4,:), KIND=KIND(K1) ))   .NE. K1)  ERROR STOP 42
+    IF (     COUNT(M4(I4,:), KIND=KIND(K2) )    .NE. 1)   ERROR STOP 43
+    IF (KIND(COUNT(M4(I4,:), KIND=KIND(K2) ))   .NE. K2)  ERROR STOP 44
+    IF (     COUNT(M4(I4,:), KIND=KIND(K4) )    .NE. 1)   ERROR STOP 45
+    IF (KIND(COUNT(M4(I4,:), KIND=KIND(K4) ))   .NE. K4)  ERROR STOP 46
+    IF (     COUNT(M4(I4,:), KIND=KIND(K8) )    .NE. 1)   ERROR STOP 47
+    IF (KIND(COUNT(M4(I4,:), KIND=KIND(K8) ))   .NE. K8)  ERROR STOP 48
   END DO
 
   DO I8 = 1, 126
-    IF (     COUNT(M8(I8,:), KIND=KIND(K1) )    .NE. 1)   STOP 81
-    IF (KIND(COUNT(M8(I8,:), KIND=KIND(K1) ))   .NE. K1)  STOP 82
-    IF (     COUNT(M8(I8,:), KIND=KIND(K2) )    .NE. 1)   STOP 83
-    IF (KIND(COUNT(M8(I8,:), KIND=KIND(K2) ))   .NE. K2)  STOP 84
-    IF (     COUNT(M8(I8,:), KIND=KIND(K4) )    .NE. 1)   STOP 85
-    IF (KIND(COUNT(M8(I8,:), KIND=KIND(K4) ))   .NE. K4)  STOP 86
-    IF (     COUNT(M8(I8,:), KIND=KIND(K8) )    .NE. 1)   STOP 87
-    IF (KIND(COUNT(M8(I8,:), KIND=KIND(K8) ))   .NE. K8)  STOP 88
+    IF (     COUNT(M8(I8,:), KIND=KIND(K1) )    .NE. 1)   ERROR STOP 81
+    IF (KIND(COUNT(M8(I8,:), KIND=KIND(K1) ))   .NE. K1)  ERROR STOP 82
+    IF (     COUNT(M8(I8,:), KIND=KIND(K2) )    .NE. 1)   ERROR STOP 83
+    IF (KIND(COUNT(M8(I8,:), KIND=KIND(K2) ))   .NE. K2)  ERROR STOP 84
+    IF (     COUNT(M8(I8,:), KIND=KIND(K4) )    .NE. 1)   ERROR STOP 85
+    IF (KIND(COUNT(M8(I8,:), KIND=KIND(K4) ))   .NE. K4)  ERROR STOP 86
+    IF (     COUNT(M8(I8,:), KIND=KIND(K8) )    .NE. 1)   ERROR STOP 87
+    IF (KIND(COUNT(M8(I8,:), KIND=KIND(K8) ))   .NE. K8)  ERROR STOP 88
   END DO
 
 

@@ -90,13 +90,13 @@
     CLASS DEFAULT
       SELECT TYPE (V)
         TYPE IS (Child)
-          IF ( ANY(LBOUND(V)     .NE. 1) ) STOP 30
-          IF ( ANY(UBOUND(V)     .NE. 5) ) STOP 31
+          IF ( ANY(LBOUND(V)     .NE. 1) ) ERROR STOP 30
+          IF ( ANY(UBOUND(V)     .NE. 5) ) ERROR STOP 31
 
-          IF ( ANY(V%Base%GetId() .NE. (/ 1, 3, 5, 7, 9/)) ) STOP 34
-          IF ( ANY(V%GetId()      .NE. (/-1,-3,-5,-7,-9/)) ) STOP 35
-          IF ( ANY(V%BaseId       .NE. (/ 1, 3, 5, 7, 9/)) ) STOP 36
-          IF ( ANY(V%ChildId      .NE. (/-1,-3,-5,-7,-9/)) ) STOP 37
+          IF ( ANY(V%Base%GetId() .NE. (/ 1, 3, 5, 7, 9/)) ) ERROR STOP 34
+          IF ( ANY(V%GetId()      .NE. (/-1,-3,-5,-7,-9/)) ) ERROR STOP 35
+          IF ( ANY(V%BaseId       .NE. (/ 1, 3, 5, 7, 9/)) ) ERROR STOP 36
+          IF ( ANY(V%ChildId      .NE. (/-1,-3,-5,-7,-9/)) ) ERROR STOP 37
 
        CLASS DEFAULT
           STOP 40

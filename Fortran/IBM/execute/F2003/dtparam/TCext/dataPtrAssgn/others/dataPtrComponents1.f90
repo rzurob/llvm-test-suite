@@ -40,9 +40,9 @@ program main
 
     f1%a1%p(1:) => f1%tar
 
-    if ( .not. associated(f1%a1%p, f1%tar))stop 1
-    if ( any (lbound(f1%a1%p) .ne. (/1/))) stop 2
-    if ( any (ubound(f1%a1%p) .ne. (/4/))) stop 3
+    if ( .not. associated(f1%a1%p, f1%tar))error stop 1
+    if ( any (lbound(f1%a1%p) .ne. (/1/))) error stop 2
+    if ( any (ubound(f1%a1%p) .ne. (/4/))) error stop 3
 
     print *, f1%a1%p
 

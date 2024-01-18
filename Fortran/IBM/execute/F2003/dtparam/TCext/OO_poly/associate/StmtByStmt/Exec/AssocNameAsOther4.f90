@@ -52,11 +52,11 @@
   PROCEDURE(F) :: Fun1
 
   ASSOCIATE ( Fun => Fun(DT(1,8)("87654321")) )
-    IF ( Fun%C .NE. "87654321" ) STOP 11
+    IF ( Fun%C .NE. "87654321" ) ERROR STOP 11
   END ASSOCIATE
 
   ASSOCIATE ( F => Fun1(6) )
-    IF ( F .NE. 6 ) STOP 11
+    IF ( F .NE. 6 ) ERROR STOP 11
   END ASSOCIATE
 
 

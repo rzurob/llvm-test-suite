@@ -90,20 +90,20 @@
       test2 = base2%FUNC ()  ! 40320
 
       ALLOCATE(Base(4,5):: child1%Cmp)
-      IF ( .NOT. ASSOCIATED(child1%Cmp)) STOP 10
+      IF ( .NOT. ASSOCIATED(child1%Cmp)) ERROR STOP 10
       ALLOCATE(Base(8,5):: child2%Cmp)
-      IF ( .NOT. ASSOCIATED(child2%Cmp)) STOP 11
+      IF ( .NOT. ASSOCIATED(child2%Cmp)) ERROR STOP 11
 
-      IF( test1 .NE. child1%Cmp%FUNC ()) STOP 20
-      IF( test2 .NE. child2%Cmp%FUNC ()) STOP 21
+      IF( test1 .NE. child1%Cmp%FUNC ()) ERROR STOP 20
+      IF( test2 .NE. child2%Cmp%FUNC ()) ERROR STOP 21
 
       child1%Cmp => tgt1
-      IF ( .NOT. ASSOCIATED(child1%Cmp)) STOP 12
+      IF ( .NOT. ASSOCIATED(child1%Cmp)) ERROR STOP 12
       child2%Cmp => tgt2
-      IF ( .NOT. ASSOCIATED(child2%Cmp)) STOP 13
+      IF ( .NOT. ASSOCIATED(child2%Cmp)) ERROR STOP 13
 
-      IF( test1 .NE. child1%Cmp%FUNC ()) STOP 22
-      IF( test2 .NE. child2%Cmp%FUNC ()) STOP 23
+      IF( test1 .NE. child1%Cmp%FUNC ()) ERROR STOP 22
+      IF( test2 .NE. child2%Cmp%FUNC ()) ERROR STOP 23
 
       child1%Cmp => NULL()
 
@@ -117,14 +117,14 @@
       CLASS(Base(4,5)), POINTER ::  Arg
 
       ALLOCATE(Base(4,5):: Arg)
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 14
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 14
 
-      IF( test1 .NE. Arg%FUNC ()) STOP 24
+      IF( test1 .NE. Arg%FUNC ()) ERROR STOP 24
 
       Arg => tgt1
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 15
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 15
 
-      IF( test1 .NE. Arg%FUNC ()) STOP 25
+      IF( test1 .NE. Arg%FUNC ()) ERROR STOP 25
 
       END SUBROUTINE SUB1
 
@@ -132,14 +132,14 @@
       CLASS(Base(8,5)), POINTER ::  Arg
 
       ALLOCATE(Base(8,5):: Arg)
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 16
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 16
 
-      IF( test2 .NE. Arg%FUNC ()) STOP 26
+      IF( test2 .NE. Arg%FUNC ()) ERROR STOP 26
 
       Arg => tgt2
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 17
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 17
 
-      IF( test2 .NE. Arg%FUNC ()) STOP 27
+      IF( test2 .NE. Arg%FUNC ()) ERROR STOP 27
 
       END SUBROUTINE SUB2
 

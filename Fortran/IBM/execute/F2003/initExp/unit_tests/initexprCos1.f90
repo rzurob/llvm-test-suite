@@ -20,6 +20,6 @@ real(16) :: c=cos(r16)
 if (.not. precision_r4(a, cos(r4))) then
   stop 1
 endif
-if (.not. precision_r8(b, cos(r8))) stop 2
-if (.not. precision_r16(c, cos(r16))) stop 3
+if (.not. precision_r8(b, cos(r8))) error stop 2
+if (.not. precision_r16(c, cos(r16))) error stop 3
 end

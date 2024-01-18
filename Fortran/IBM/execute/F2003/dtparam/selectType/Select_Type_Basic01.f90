@@ -81,7 +81,7 @@ PROGRAM Select_Type_Basic01
          A_square%area = -0.0 ! Initialization
 
          ALLOCATE(My_shape, source=A_square)
-         IF ( .NOT. ALLOCATED(My_shape)) STOP 10
+         IF ( .NOT. ALLOCATED(My_shape)) ERROR STOP 10
 
          SELECT TYPE (My_shape)
            TYPE IS (Square(knd1,*,knd1))
@@ -126,7 +126,7 @@ PROGRAM Select_Type_Basic01
          DEALLOCATE(My_shape)
 
          ALLOCATE (My_shape , SOURCE = Rectangle(knd1,len1,knd1,knd1)(area=0.0,name='name',width=12.5,height=8.0))
-         IF ( .NOT. ALLOCATED(My_shape)) STOP 12
+         IF ( .NOT. ALLOCATED(My_shape)) ERROR STOP 12
 
          SELECT TYPE (A => My_shape)
            TYPE IS (Square(knd1,*,knd1))
@@ -189,7 +189,7 @@ PROGRAM Select_Type_Basic01
 
          My_shape => A_triangle
 
-         IF ( .NOT. ASSOCIATED(My_shape)) STOP 13
+         IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 13
 
          SELECT TYPE (My_shape)
            CLASS IS (Triangle(knd1,*,knd1))

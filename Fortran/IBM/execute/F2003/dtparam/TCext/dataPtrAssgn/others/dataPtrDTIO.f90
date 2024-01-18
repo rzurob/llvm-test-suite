@@ -47,9 +47,9 @@ program main
 
     p(2:3, 4:6, -7:-6) => tar(12:1:-1)
 
-    if ( .not. associated(p)) stop 1
-    if ( any(lbound(p) .ne. (/2,4,-7/))) stop 2
-    if ( any(ubound(p) .ne. (/3,6,-6/))) stop 3
+    if ( .not. associated(p)) error stop 1
+    if ( any(lbound(p) .ne. (/2,4,-7/))) error stop 2
+    if ( any(ubound(p) .ne. (/3,6,-6/))) error stop 3
 
     write(*, '(6DT)') p
 
@@ -67,6 +67,6 @@ subroutine writeformatted (dtv, unit, iotype, v_list, iostat, iomsg)
 
    write (unit, *, iostat=iostat) dtv%i
 
-   if (iostat /= 0) stop 5
+   if (iostat /= 0) error stop 5
 
 end subroutine

@@ -198,7 +198,7 @@ program acetnone09
 
   end do
 
-  if (error) stop 2
+  if (error) error stop 2
 
 contains
   function rainbow(sel,expType)

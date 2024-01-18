@@ -40,8 +40,8 @@
 
     select type ( to )
         type is ( deepchild )
-            if ( .not. associated(p, to) ) stop 21
-            if ( p%iA /= 73 ) stop 23
+            if ( .not. associated(p, to) ) error stop 21
+            if ( p%iA /= 73 ) error stop 23
 	class default
 	    stop 31
     end select

@@ -44,14 +44,14 @@
     END FUNCTION
   END INTERFACE
 
-  IF (ANY( IC1                   .NE. ICHAR("1"))) STOP 11
-  IF (ANY( IC2                   .NE. ICHAR("2"))) STOP 11
-  IF (ANY( IC3                   .NE. ICHAR("3"))) STOP 11
-  IF (C1                         .NE. "123")       STOP 12
-  IF (ANY( C2                    .NE. "123"))      STOP 13
-  IF (ANY( C3                    .NE. "123"))      STOP 14
-  IF (ANY( C4                    .NE. "123"))      STOP 15
-  IF ( ExtFun(CHAR(ICHAR("1")) ) .NE. "1")         STOP 16
+  IF (ANY( IC1                   .NE. ICHAR("1"))) ERROR STOP 11
+  IF (ANY( IC2                   .NE. ICHAR("2"))) ERROR STOP 11
+  IF (ANY( IC3                   .NE. ICHAR("3"))) ERROR STOP 11
+  IF (C1                         .NE. "123")       ERROR STOP 12
+  IF (ANY( C2                    .NE. "123"))      ERROR STOP 13
+  IF (ANY( C3                    .NE. "123"))      ERROR STOP 14
+  IF (ANY( C4                    .NE. "123"))      ERROR STOP 15
+  IF ( ExtFun(CHAR(ICHAR("1")) ) .NE. "1")         ERROR STOP 16
 
   END
 

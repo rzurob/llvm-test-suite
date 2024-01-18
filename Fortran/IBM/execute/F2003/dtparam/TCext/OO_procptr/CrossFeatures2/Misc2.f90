@@ -93,26 +93,26 @@
   ProcPtr2 => ProcPtr1
 
   U = ProcPtr1(DT(20,4)(Two, ModFun) )
-  IF ( U%ID .NE.  2 )                       STOP 11
-  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun)) STOP 12
+  IF ( U%ID .NE.  2 )                       ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun)) ERROR STOP 12
 
   U = ProcPtr2(DT(20,4)(Thr, ModFun) )
-  IF ( U%ID .NE.  3 )                       STOP 21
-  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun)) STOP 22
+  IF ( U%ID .NE.  3 )                       ERROR STOP 21
+  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun)) ERROR STOP 22
 
   U = V(One)%ProcPtr(V(Two))
-  IF ( U%ID .NE.  1 )                       STOP 31
-  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun)) STOP 32
+  IF ( U%ID .NE.  1 )                       ERROR STOP 31
+  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun)) ERROR STOP 32
 
   U = DT(20,4)(Sun, NULL())
   U = V(Thr)%Proc(V(One))
-  IF ( U%ID .NE.  1 )                       STOP 41
-  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun)) STOP 42
+  IF ( U%ID .NE.  1 )                       ERROR STOP 41
+  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun)) ERROR STOP 42
 
   ProcPtr3 => ModFun
   U = ProcPtr3(DT(20,4)(Two, ModFun) )
-  IF ( U%ID .NE.  2 )                       STOP 51
-  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun)) STOP 52
+  IF ( U%ID .NE.  2 )                       ERROR STOP 51
+  IF ( .NOT. ASSOCIATED(U%ProcPtr, ModFun)) ERROR STOP 52
 
   END
 

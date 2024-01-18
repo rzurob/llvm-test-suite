@@ -43,47 +43,47 @@ PROGRAM SpeExpHostAssociation07
       SUBROUTINE Sub11()
         TYPE(Base(4,SIZE([Base(I1=-1),Base(I1=1)]))) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 10
-         IF ( Obj%l1 .NE. 2 ) STOP 11
-         IF ( Obj%I1 .NE. 4 ) STOP 12
-         IF ( SIZE(Obj%A1)   .NE.   2 ) STOP 13
-         IF ( ANY(Obj%A1     .NE.  8) ) STOP 14
-         IF ( LEN(Obj%Carr)  .NE.   2 ) STOP 15
-         IF ( TRIM(Obj%Carr) .NE. 'B' ) STOP 16
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 10
+         IF ( Obj%l1 .NE. 2 ) ERROR STOP 11
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 12
+         IF ( SIZE(Obj%A1)   .NE.   2 ) ERROR STOP 13
+         IF ( ANY(Obj%A1     .NE.  8) ) ERROR STOP 14
+         IF ( LEN(Obj%Carr)  .NE.   2 ) ERROR STOP 15
+         IF ( TRIM(Obj%Carr) .NE. 'B' ) ERROR STOP 16
       END SUBROUTINE Sub11
 
       SUBROUTINE Sub21()
         TYPE(Child(4*LBOUND([Base()],1),2*LBOUND([Base()],1),     &
                    8*UBOUND([Base()],1),3*UBOUND([Base()],1))) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 10
-         IF ( Obj%l1 .NE. 2 ) STOP 11
-         IF ( Obj%k2 .NE. 8 ) STOP 10
-         IF ( Obj%l2 .NE. 3 ) STOP 11
-         IF ( Obj%I1 .NE. 4 ) STOP 12
-         IF ( SIZE(Obj%A1)   .NE.   2 ) STOP 13
-         IF ( ANY(Obj%A1     .NE.  8) ) STOP 14
-         IF ( LEN(Obj%Carr)  .NE.   2 ) STOP 15
-         IF ( TRIM(Obj%Carr) .NE. 'B' ) STOP 16
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 10
+         IF ( Obj%l1 .NE. 2 ) ERROR STOP 11
+         IF ( Obj%k2 .NE. 8 ) ERROR STOP 10
+         IF ( Obj%l2 .NE. 3 ) ERROR STOP 11
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 12
+         IF ( SIZE(Obj%A1)   .NE.   2 ) ERROR STOP 13
+         IF ( ANY(Obj%A1     .NE.  8) ) ERROR STOP 14
+         IF ( LEN(Obj%Carr)  .NE.   2 ) ERROR STOP 15
+         IF ( TRIM(Obj%Carr) .NE. 'B' ) ERROR STOP 16
 
-         IF ( Obj%b1%k1 .NE. 8 ) STOP 10
-         IF ( Obj%b1%l1 .NE. 3 ) STOP 11
-         IF ( Obj%b1%I1 .NE. 8 ) STOP 12
-         IF ( SIZE(Obj%b1%A1)   .NE.   3 ) STOP 13
-         IF ( ANY(Obj%b1%A1     .NE. 16) ) STOP 14
-         IF ( LEN(Obj%b1%Carr)  .NE.   3 ) STOP 15
-         IF ( TRIM(Obj%b1%Carr) .NE. 'B' ) STOP 16
+         IF ( Obj%b1%k1 .NE. 8 ) ERROR STOP 10
+         IF ( Obj%b1%l1 .NE. 3 ) ERROR STOP 11
+         IF ( Obj%b1%I1 .NE. 8 ) ERROR STOP 12
+         IF ( SIZE(Obj%b1%A1)   .NE.   3 ) ERROR STOP 13
+         IF ( ANY(Obj%b1%A1     .NE. 16) ) ERROR STOP 14
+         IF ( LEN(Obj%b1%Carr)  .NE.   3 ) ERROR STOP 15
+         IF ( TRIM(Obj%b1%Carr) .NE. 'B' ) ERROR STOP 16
       END SUBROUTINE Sub21
 
       SUBROUTINE Sub31()
         TYPE(Base(4,SIZE([Child(b1=Base(4,4)())]))) :: Obj
 
-         IF ( Obj%k1 .NE. 4 ) STOP 17
-         IF ( Obj%l1 .NE. 1 ) STOP 18
-         IF ( Obj%I1 .NE. 4 ) STOP 19
-         IF ( SIZE(Obj%A1)   .NE.   1 ) STOP 20
-         IF ( ANY(Obj%A1     .NE.  8) ) STOP 21
-         IF ( LEN(Obj%Carr)  .NE.   1 ) STOP 22
-         IF ( TRIM(Obj%Carr) .NE. 'B' ) STOP 23
+         IF ( Obj%k1 .NE. 4 ) ERROR STOP 17
+         IF ( Obj%l1 .NE. 1 ) ERROR STOP 18
+         IF ( Obj%I1 .NE. 4 ) ERROR STOP 19
+         IF ( SIZE(Obj%A1)   .NE.   1 ) ERROR STOP 20
+         IF ( ANY(Obj%A1     .NE.  8) ) ERROR STOP 21
+         IF ( LEN(Obj%Carr)  .NE.   1 ) ERROR STOP 22
+         IF ( TRIM(Obj%Carr) .NE. 'B' ) ERROR STOP 23
       END SUBROUTINE Sub31
 END PROGRAM SpeExpHostAssociation07

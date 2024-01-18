@@ -53,16 +53,16 @@
   TYPE(DT(4))   ::  T3=DT(4)(IACHAR(KIND=1, C=(/(ACHAR(I),ACHAR(I+1), I=0,127,2)/)))
 
 
-  IF ( ANY( I1     .NE. K  ) )      STOP 11
-  IF ( ANY( T1%I   .NE. K  ) )      STOP 12
+  IF ( ANY( I1     .NE. K  ) )      ERROR STOP 11
+  IF ( ANY( T1%I   .NE. K  ) )      ERROR STOP 12
 
-  IF ( KIND(I2)    .NE. 1 )         STOP 11
-  IF ( ANY( I2     .NE. K  ) )      STOP 12
-  IF ( ANY( T2%I   .NE. K  ) )      STOP 13
+  IF ( KIND(I2)    .NE. 1 )         ERROR STOP 11
+  IF ( ANY( I2     .NE. K  ) )      ERROR STOP 12
+  IF ( ANY( T2%I   .NE. K  ) )      ERROR STOP 13
 
-  IF ( KIND(I3)    .NE. 1 )         STOP 31
-  IF ( ANY( I3     .NE. K  ) )      STOP 32
-  IF ( ANY( T3%I   .NE. K  ) )      STOP 33
+  IF ( KIND(I3)    .NE. 1 )         ERROR STOP 31
+  IF ( ANY( I3     .NE. K  ) )      ERROR STOP 32
+  IF ( ANY( T3%I   .NE. K  ) )      ERROR STOP 33
 
 
 

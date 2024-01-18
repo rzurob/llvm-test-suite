@@ -69,15 +69,15 @@
   TYPE(DT0(1,3)), TARGET :: RT
 
   RP => RT
-  IF ( .NOT. ASSOCIATED(RP) ) STOP 71
+  IF ( .NOT. ASSOCIATED(RP) ) ERROR STOP 71
   RR = -1
-  IF ( RR .NE. -1 ) STOP 72
+  IF ( RR .NE. -1 ) ERROR STOP 72
 
   CALL ExtSub(RR)
-  IF ( RR .NE. 1 ) STOP 73
+  IF ( RR .NE. 1 ) ERROR STOP 73
 
   TT = -1._16
-  IF ( TT .NE. -1 ) STOP 74
+  IF ( TT .NE. -1 ) ERROR STOP 74
 
   CALL IntSub()
 
@@ -86,19 +86,19 @@
   SUBROUTINE IntSub()
   IMPLICIT TYPE(DT2(1,3,4,5,8,7))(T)
 
-  IF ( SIZE( S%R )      .NE. S%L1            ) STOP 12
-  IF ( S%R%KIND         .NE. S%K1            ) STOP 13
-  IF ( ANY ( S%R        .NE. S%K1          ) ) STOP 14
+  IF ( SIZE( S%R )      .NE. S%L1            ) ERROR STOP 12
+  IF ( S%R%KIND         .NE. S%K1            ) ERROR STOP 13
+  IF ( ANY ( S%R        .NE. S%K1          ) ) ERROR STOP 14
 
-  IF ( SIZE( T%R )      .NE. T%L1         ) STOP 21
-  IF ( T%R%KIND         .NE. T%K1         ) STOP 22
-  IF ( ANY ( T%R        .NE. T%K1       ) ) STOP 23
-  IF ( SIZE( T%I )      .NE. T%L2         ) STOP 24
-  IF ( T%I%KIND         .NE. T%K2         ) STOP 25
-  IF ( ANY ( T%I        .NE. T%K2       ) ) STOP 26
-  IF ( SIZE( T%C )      .NE. T%L2         ) STOP 27
-  IF ( T%C%LEN          .NE. T%L2         ) STOP 28
-  IF ( ANY (T%C         .NE. CHAR(T%K2) ) ) STOP 29
+  IF ( SIZE( T%R )      .NE. T%L1         ) ERROR STOP 21
+  IF ( T%R%KIND         .NE. T%K1         ) ERROR STOP 22
+  IF ( ANY ( T%R        .NE. T%K1       ) ) ERROR STOP 23
+  IF ( SIZE( T%I )      .NE. T%L2         ) ERROR STOP 24
+  IF ( T%I%KIND         .NE. T%K2         ) ERROR STOP 25
+  IF ( ANY ( T%I        .NE. T%K2       ) ) ERROR STOP 26
+  IF ( SIZE( T%C )      .NE. T%L2         ) ERROR STOP 27
+  IF ( T%C%LEN          .NE. T%L2         ) ERROR STOP 28
+  IF ( ANY (T%C         .NE. CHAR(T%K2) ) ) ERROR STOP 29
 
 
   S =  DT1(1,3,4,5)([1,2,3,4,5])
@@ -110,11 +110,11 @@
 
 
 
-  IF ( ANY ( S%R        .NE. [1,2,3,4,5]           ) ) STOP 42
+  IF ( ANY ( S%R        .NE. [1,2,3,4,5]           ) ) ERROR STOP 42
 
-  IF ( ANY ( T%R        .NE. [1,2,3,4,5]           ) ) STOP 44
-  IF ( ANY ( T%I        .NE. [1,2,3,4,5,6,7]       ) ) STOP 45
-  IF ( ANY ( T%C        .NE. CHAR([1,2,3,4,5,6,7]) ) ) STOP 46
+  IF ( ANY ( T%R        .NE. [1,2,3,4,5]           ) ) ERROR STOP 44
+  IF ( ANY ( T%I        .NE. [1,2,3,4,5,6,7]       ) ) ERROR STOP 45
+  IF ( ANY ( T%C        .NE. CHAR([1,2,3,4,5,6,7]) ) ) ERROR STOP 46
 
   END SUBROUTINE
 

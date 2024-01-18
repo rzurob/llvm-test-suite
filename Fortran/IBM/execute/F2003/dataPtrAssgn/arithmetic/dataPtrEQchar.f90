@@ -38,13 +38,13 @@ program main
 
      b1(1)%ptr(len(tar(1,2)):,1:) => b1(2)%ptr
 
-     if ( .not. associated(b1(1)%ptr, b1(2)%ptr) ) stop 2
-     if ( any ( lbound(b1(1)%ptr) .ne. (/ 3, 1 /) )) stop 5
-     if ( any ( ubound(b1(1)%ptr) .ne. (/ 5, 4 /) )) stop 8
+     if ( .not. associated(b1(1)%ptr, b1(2)%ptr) ) error stop 2
+     if ( any ( lbound(b1(1)%ptr) .ne. (/ 3, 1 /) )) error stop 5
+     if ( any ( ubound(b1(1)%ptr) .ne. (/ 5, 4 /) )) error stop 8
 
      print *, b1(1)%ptr
 
-     if ( any(b1(1)%ptr .eq. b1(2)%ptr .neqv. .true.) ) stop 10
+     if ( any(b1(1)%ptr .eq. b1(2)%ptr .neqv. .true.) ) error stop 10
 
  End program
 

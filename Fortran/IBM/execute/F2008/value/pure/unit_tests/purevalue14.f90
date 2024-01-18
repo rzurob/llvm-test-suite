@@ -26,24 +26,24 @@ end interface
 integer :: sa=1, sb=2, sc, sr
 
 sc = func1(sa)
-if (sc /= sa) stop 1
-if (sa /= 1) stop 2
+if (sc /= sa) error stop 1
+if (sa /= 1) error stop 2
 
 sc = func2(sa,sb)
-if (sc /= (sa+sb)) stop 3
-if (sb /= 2) stop 4
+if (sc /= (sa+sb)) error stop 3
+if (sb /= 2) error stop 4
 
 sr = func3(sa,sb,sc,sa,sb,sc)
-if (sr /= 12) stop 5
-if (any([sa,sb,sc] /= [1,2,3])) stop 6
+if (sr /= 12) error stop 5
+if (any([sa,sb,sc] /= [1,2,3])) error stop 6
 
 call sub1(sa)
-if (sa /= 1) stop 7
+if (sa /= 1) error stop 7
 
 call sub2(sa,sb)
-if (any([sa,sb] /= [1,2])) stop 8
+if (any([sa,sb] /= [1,2])) error stop 8
 
 call sub3(sa,sb,sc,sa,sb,sc)
-if (any([sa,sb,sc] /= [-10,2,1])) stop 8
+if (any([sa,sb,sc] /= [-10,2,1])) error stop 8
 
 end

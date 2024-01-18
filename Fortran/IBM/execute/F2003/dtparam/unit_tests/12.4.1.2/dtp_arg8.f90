@@ -38,10 +38,10 @@ subroutine sub1(pa)
 type(base_type(4, 4)) :: pa
 
 ! - verify the dummy argument's values
-if (pa%k /= 4) stop 1
-if (pa%d /= 4) stop 2
-if (any(pa%element .ne. (-8))) stop 8 ! - failed. Refer to Defect 321635.
-if (pa%avar /= 12) stop 12
+if (pa%k /= 4) error stop 1
+if (pa%d /= 4) error stop 2
+if (any(pa%element .ne. (-8))) error stop 8 ! - failed. Refer to Defect 321635.
+if (pa%avar /= 12) error stop 12
 end subroutine
 
 end

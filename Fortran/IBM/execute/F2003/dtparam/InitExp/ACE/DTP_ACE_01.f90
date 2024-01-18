@@ -54,34 +54,34 @@ PROGRAM DTP_ACE_01
 
       b1 = [(Base(4,10)(), I=1,2)]
       DO I = 1, 2
-        IF ( b1(I)%A0 .NE. -1 ) STOP 10
-        IF ( .NOT. precision_r4(b1(I)%R0, -0.1) ) STOP 11
+        IF ( b1(I)%A0 .NE. -1 ) ERROR STOP 10
+        IF ( .NOT. precision_r4(b1(I)%R0, -0.1) ) ERROR STOP 11
       END DO
 
       b2 = [(Base(4,10)(2, 0.2), I=1,10)]
       DO I = 1, 10
-        IF ( b2(I)%A0 .NE. 2 ) STOP 12
-        IF ( .NOT. precision_r4(b2(I)%R0, 0.2) ) STOP 13
+        IF ( b2(I)%A0 .NE. 2 ) ERROR STOP 12
+        IF ( .NOT. precision_r4(b2(I)%R0, 0.2) ) ERROR STOP 13
       END DO
 
       c1 = [(Child(4,3,4,3)(A0=10, A1=20), I=1,5)]
       DO I = 1, 5
-        IF ( c1(I)%A0 .NE. 10 ) STOP 14
-        IF ( c1(I)%A1 .NE. 20 ) STOP 15
-        IF ( .NOT. precision_r4(c1(I)%R0, -0.1) ) STOP 16
-        IF ( .NOT. precision_r4(c1(I)%R1, -0.2) ) STOP 17
+        IF ( c1(I)%A0 .NE. 10 ) ERROR STOP 14
+        IF ( c1(I)%A1 .NE. 20 ) ERROR STOP 15
+        IF ( .NOT. precision_r4(c1(I)%R0, -0.1) ) ERROR STOP 16
+        IF ( .NOT. precision_r4(c1(I)%R1, -0.2) ) ERROR STOP 17
       END DO
 
       n1 = [(NextGen(A0=11, A1=22, A2=33), I=1,1)]
-      IF ( n1(1)%A0 .NE. 11 ) STOP 18
-      IF ( n1(1)%A1 .NE. 22 ) STOP 19
-      IF ( n1(1)%A2 .NE. 33 ) STOP 20
-      IF ( .NOT. precision_r4(n1(1)%R0, -0.1) ) STOP 21
-      IF ( .NOT. precision_r4(n1(1)%R1, -0.2) ) STOP 22
-      IF ( .NOT. precision_r4(n1(1)%R2, -0.3) ) STOP 23
+      IF ( n1(1)%A0 .NE. 11 ) ERROR STOP 18
+      IF ( n1(1)%A1 .NE. 22 ) ERROR STOP 19
+      IF ( n1(1)%A2 .NE. 33 ) ERROR STOP 20
+      IF ( .NOT. precision_r4(n1(1)%R0, -0.1) ) ERROR STOP 21
+      IF ( .NOT. precision_r4(n1(1)%R1, -0.2) ) ERROR STOP 22
+      IF ( .NOT. precision_r4(n1(1)%R2, -0.3) ) ERROR STOP 23
 
-      IF ( n1(1)%bcomp%k1 .NE. n1(1)%k3 ) STOP 24
-      IF ( n1(1)%bcomp%l1 .NE. n1(1)%k3 ) STOP 25
-      IF ( n1(1)%bcomp%A0 .NE. -1 ) STOP 26
-      IF ( .NOT. precision_r4(n1(1)%bcomp%R0, -0.1) ) STOP 27
+      IF ( n1(1)%bcomp%k1 .NE. n1(1)%k3 ) ERROR STOP 24
+      IF ( n1(1)%bcomp%l1 .NE. n1(1)%k3 ) ERROR STOP 25
+      IF ( n1(1)%bcomp%A0 .NE. -1 ) ERROR STOP 26
+      IF ( .NOT. precision_r4(n1(1)%bcomp%R0, -0.1) ) ERROR STOP 27
 END PROGRAM DTP_ACE_01

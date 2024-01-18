@@ -71,54 +71,54 @@
 
   T1 = Seq1(4, 4)(-1, NULL(), (1., -1.), .FALSE., "B")
 
-  IF ( T1(1)%K    .NE. 4 )         STOP 21
-  IF ( T1(1)%L    .NE. 4 )         STOP 22
-  IF ( T1(1)%I    .NE. -1 )        STOP 23
-  IF ( ASSOCIATED(T1(1)%R))        STOP 24
-  IF ( T1(1)%Cplx .NE. (1., -1.) ) STOP 25
-  IF ( T1(1)%LL   .NEQV. .FALSE. ) STOP 26
-  IF ( T1(1)%C    .NE. "B"  )      STOP 27
+  IF ( T1(1)%K    .NE. 4 )         ERROR STOP 21
+  IF ( T1(1)%L    .NE. 4 )         ERROR STOP 22
+  IF ( T1(1)%I    .NE. -1 )        ERROR STOP 23
+  IF ( ASSOCIATED(T1(1)%R))        ERROR STOP 24
+  IF ( T1(1)%Cplx .NE. (1., -1.) ) ERROR STOP 25
+  IF ( T1(1)%LL   .NEQV. .FALSE. ) ERROR STOP 26
+  IF ( T1(1)%C    .NE. "B"  )      ERROR STOP 27
 
   ALLOCATE(T2, SOURCE=Seq2(4, 4)(T0, T1(1)))
 
-  IF ( T2%Comp1%K    .NE. 4 )         STOP 31
-  IF ( T2%Comp1%L    .NE. 4 )         STOP 32
-  IF ( T2%Comp2%K    .NE. 4 )         STOP 33
-  IF ( T2%Comp2%L    .NE. 4 )         STOP 34
-  IF ( T2%Comp2%K    .NE. 4 )         STOP 35
-  IF ( T2%Comp2%L    .NE. 4 )         STOP 36
-  IF ( T2%Comp2%I    .NE. -1 )        STOP 37
-  IF ( ASSOCIATED(T2%Comp2%R))        STOP 38
-  IF ( T2%Comp2%Cplx .NE. (1., -1.) ) STOP 39
-  IF ( T2%Comp2%LL   .NEQV. .FALSE. ) STOP 40
-  IF ( T2%Comp2%C    .NE. "B"  )      STOP 41
+  IF ( T2%Comp1%K    .NE. 4 )         ERROR STOP 31
+  IF ( T2%Comp1%L    .NE. 4 )         ERROR STOP 32
+  IF ( T2%Comp2%K    .NE. 4 )         ERROR STOP 33
+  IF ( T2%Comp2%L    .NE. 4 )         ERROR STOP 34
+  IF ( T2%Comp2%K    .NE. 4 )         ERROR STOP 35
+  IF ( T2%Comp2%L    .NE. 4 )         ERROR STOP 36
+  IF ( T2%Comp2%I    .NE. -1 )        ERROR STOP 37
+  IF ( ASSOCIATED(T2%Comp2%R))        ERROR STOP 38
+  IF ( T2%Comp2%Cplx .NE. (1., -1.) ) ERROR STOP 39
+  IF ( T2%Comp2%LL   .NEQV. .FALSE. ) ERROR STOP 40
+  IF ( T2%Comp2%C    .NE. "B"  )      ERROR STOP 41
 
   ALLOCATE(T4, SOURCE=Seq3(4, 4)([T0], T1, T1))
 
-  IF ( T4%Comp1(1)%K    .NE. 4  )         STOP 51
-  IF ( T4%Comp1(1)%L    .NE. 4  )         STOP 52
-  IF ( T4%Comp2(1)%K    .NE. 4  )         STOP 53
-  IF ( T4%Comp2(1)%L    .NE. 4  )         STOP 54
-  IF ( T4%Comp2(1)%K    .NE. 4  )         STOP 55
-  IF ( T4%Comp2(1)%L    .NE. 4  )         STOP 56
-  IF ( T4%Comp2(1)%I    .NE. -1 )         STOP 57
-  IF ( ASSOCIATED(T4%Comp2(1)%R))         STOP 58
-  IF ( T4%Comp2(1)%Cplx .NE. (1., -1.))   STOP 59
-  IF ( T4%Comp2(1)%LL   .NEQV. .FALSE. )  STOP 60
-  IF ( T4%Comp2(1)%C    .NE. "B"   )      STOP 61
-  IF ( T4%Comp3(1)%K    .NE. 4  )         STOP 62
-  IF ( T4%Comp3(1)%L    .NE. 4  )         STOP 63
-  IF ( T4%Comp3(1)%K    .NE. 4  )         STOP 64
-  IF ( T4%Comp3(1)%L    .NE. 4  )         STOP 65
-  IF ( T4%Comp3(1)%I    .NE. -1 )         STOP 66
-  IF ( ASSOCIATED(T4%Comp3(1)%R) )        STOP 67
-  IF ( T4%Comp3(1)%Cplx .NE. (1., -1.) )  STOP 68
-  IF ( T4%Comp3(1)%LL   .NEQV. .FALSE. )  STOP 70
-  IF ( T4%Comp3(1)%C    .NE. "B"  )       STOP 71
+  IF ( T4%Comp1(1)%K    .NE. 4  )         ERROR STOP 51
+  IF ( T4%Comp1(1)%L    .NE. 4  )         ERROR STOP 52
+  IF ( T4%Comp2(1)%K    .NE. 4  )         ERROR STOP 53
+  IF ( T4%Comp2(1)%L    .NE. 4  )         ERROR STOP 54
+  IF ( T4%Comp2(1)%K    .NE. 4  )         ERROR STOP 55
+  IF ( T4%Comp2(1)%L    .NE. 4  )         ERROR STOP 56
+  IF ( T4%Comp2(1)%I    .NE. -1 )         ERROR STOP 57
+  IF ( ASSOCIATED(T4%Comp2(1)%R))         ERROR STOP 58
+  IF ( T4%Comp2(1)%Cplx .NE. (1., -1.))   ERROR STOP 59
+  IF ( T4%Comp2(1)%LL   .NEQV. .FALSE. )  ERROR STOP 60
+  IF ( T4%Comp2(1)%C    .NE. "B"   )      ERROR STOP 61
+  IF ( T4%Comp3(1)%K    .NE. 4  )         ERROR STOP 62
+  IF ( T4%Comp3(1)%L    .NE. 4  )         ERROR STOP 63
+  IF ( T4%Comp3(1)%K    .NE. 4  )         ERROR STOP 64
+  IF ( T4%Comp3(1)%L    .NE. 4  )         ERROR STOP 65
+  IF ( T4%Comp3(1)%I    .NE. -1 )         ERROR STOP 66
+  IF ( ASSOCIATED(T4%Comp3(1)%R) )        ERROR STOP 67
+  IF ( T4%Comp3(1)%Cplx .NE. (1., -1.) )  ERROR STOP 68
+  IF ( T4%Comp3(1)%LL   .NEQV. .FALSE. )  ERROR STOP 70
+  IF ( T4%Comp3(1)%C    .NE. "B"  )       ERROR STOP 71
 
-  IF ( ANY(SHAPE(T4%Comp1)  .NE. [1] ) ) STOP 81
-  IF ( ANY(SHAPE(T4%Comp2)  .NE. 1 ) ) STOP 82
-  IF ( ANY(SHAPE(T4%Comp3)  .NE. 1 ) ) STOP 82
+  IF ( ANY(SHAPE(T4%Comp1)  .NE. [1] ) ) ERROR STOP 81
+  IF ( ANY(SHAPE(T4%Comp2)  .NE. 1 ) ) ERROR STOP 82
+  IF ( ANY(SHAPE(T4%Comp3)  .NE. 1 ) ) ERROR STOP 82
 
 
   END

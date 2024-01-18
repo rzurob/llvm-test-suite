@@ -17,7 +17,7 @@ b = (/(real(i),i=1,5)/)
 allocate(a(2))
 p => a
 a = b
-if (associated(p,a)) stop 1
-if (any(shape(a) /= (/5/))) stop 2
-if (any(a /= (/1.0,2.0,3.0,4.0,5.0/))) stop 3
+if (associated(p,a)) error stop 1
+if (any(shape(a) /= (/5/))) error stop 2
+if (any(a /= (/1.0,2.0,3.0,4.0,5.0/))) error stop 3
 end

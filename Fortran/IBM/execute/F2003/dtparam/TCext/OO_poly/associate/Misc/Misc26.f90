@@ -37,7 +37,7 @@
 
   TYPE(Base(4))  :: V(3) = (/(Base(4)(i), i =1, 3)/)
 
-  IF (ANY(V%BaseID  .NE. (/1,2,3/)) ) STOP 11
+  IF (ANY(V%BaseID  .NE. (/1,2,3/)) ) ERROR STOP 11
 
   END
 

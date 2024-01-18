@@ -37,13 +37,13 @@ program main
 
     a%p(ishft(1, 2):int(7.0)) => b%p(b%p(3) : b%p(6))
 
-    if ( .not. associated(a%p) ) stop 9
-    if ( lbound( a%p, 1) /= 4 ) stop 19
-    if ( ubound( a%p, 1) /= 7 ) stop 29
+    if ( .not. associated(a%p) ) error stop 9
+    if ( lbound( a%p, 1) /= 4 ) error stop 19
+    if ( ubound( a%p, 1) /= 7 ) error stop 29
 
     select type ( y => a%p)
 	type is (integer)
-	    if ( any(y .ne. (/ 1, 2, 3, 4 /)) ) stop 39
+	    if ( any(y .ne. (/ 1, 2, 3, 4 /)) ) error stop 39
 	class default
 	    stop 22
 	end select

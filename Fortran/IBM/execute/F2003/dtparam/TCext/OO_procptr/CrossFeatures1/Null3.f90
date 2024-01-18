@@ -61,10 +61,10 @@
   TYPE (DT(4)) :: W3(3)=(/DT(4)(-1, NULL()),DT(4)(-1, NULL()),DT(4)(-1, NULL()) /)
   TYPE (DT(4)) :: W4(1)=(/DT(4)(-1, NULL()) /)
 
-  IF ( ASSOCIATED(ProcPtr1) ) STOP 11
-  IF ( ASSOCIATED(ProcPtr2) ) STOP 12
-  IF ( ASSOCIATED(ProcPtr3) ) STOP 13
-  IF ( ASSOCIATED(ProcPtr4) ) STOP 14
+  IF ( ASSOCIATED(ProcPtr1) ) ERROR STOP 11
+  IF ( ASSOCIATED(ProcPtr2) ) ERROR STOP 12
+  IF ( ASSOCIATED(ProcPtr3) ) ERROR STOP 13
+  IF ( ASSOCIATED(ProcPtr4) ) ERROR STOP 14
 
   ProcPtr1 => Fun
   ProcPtr2 => Fun
@@ -76,15 +76,15 @@
   ProcPtr3=>NULL(V%ProcPtr)
   ProcPtr4=>NULL(ProcPtr1)
 
-  IF ( ASSOCIATED(ProcPtr1) ) STOP 21
-  IF ( ASSOCIATED(ProcPtr2) ) STOP 22
-  IF ( ASSOCIATED(ProcPtr3) ) STOP 23
-  IF ( ASSOCIATED(ProcPtr4) ) STOP 24
+  IF ( ASSOCIATED(ProcPtr1) ) ERROR STOP 21
+  IF ( ASSOCIATED(ProcPtr2) ) ERROR STOP 22
+  IF ( ASSOCIATED(ProcPtr3) ) ERROR STOP 23
+  IF ( ASSOCIATED(ProcPtr4) ) ERROR STOP 24
 
-  IF ( ASSOCIATED(W1%ProcPtr) )    STOP 31
-  IF ( ASSOCIATED(W2(3)%ProcPtr) ) STOP 32
-  IF ( ASSOCIATED(W3(1)%ProcPtr) ) STOP 33
-  IF ( ASSOCIATED(W4(1)%ProcPtr) ) STOP 34
+  IF ( ASSOCIATED(W1%ProcPtr) )    ERROR STOP 31
+  IF ( ASSOCIATED(W2(3)%ProcPtr) ) ERROR STOP 32
+  IF ( ASSOCIATED(W3(1)%ProcPtr) ) ERROR STOP 33
+  IF ( ASSOCIATED(W4(1)%ProcPtr) ) ERROR STOP 34
 
   W1%ProcPtr => Fun
   W2 = DT(4)(-1, Fun)
@@ -96,10 +96,10 @@
   W3 = (/DT(4)(-1, NULL()),DT(4)(-1, NULL()),DT(4)(-1, NULL()) /)
   W4 = (/DT(4)(-1, NULL(W3(1)%ProcPtr)) /)
 
-  IF ( ASSOCIATED(W1%ProcPtr) )    STOP 41
-  IF ( ASSOCIATED(W2(2)%ProcPtr) ) STOP 42
-  IF ( ASSOCIATED(W3(3)%ProcPtr) ) STOP 43
-  IF ( ASSOCIATED(W4(1)%ProcPtr) ) STOP 44
+  IF ( ASSOCIATED(W1%ProcPtr) )    ERROR STOP 41
+  IF ( ASSOCIATED(W2(2)%ProcPtr) ) ERROR STOP 42
+  IF ( ASSOCIATED(W3(3)%ProcPtr) ) ERROR STOP 43
+  IF ( ASSOCIATED(W4(1)%ProcPtr) ) ERROR STOP 44
 
 
   END

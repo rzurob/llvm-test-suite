@@ -45,9 +45,9 @@
   PRINT*, size(b%arr)
   PRINT*, b%arr
 
-  IF (b%l         .NE. 20)  STOP 11
-  IF (SIZE(b%arr) .NE. 20)  STOP 12
-  IF (ANY(b%arr   .NE. -1)) STOP 13
+  IF (b%l         .NE. 20)  ERROR STOP 11
+  IF (SIZE(b%arr) .NE. 20)  ERROR STOP 12
+  IF (ANY(b%arr   .NE. -1)) ERROR STOP 13
 
   END SUBROUTINE
   END

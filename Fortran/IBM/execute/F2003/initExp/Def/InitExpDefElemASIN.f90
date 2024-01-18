@@ -44,8 +44,8 @@
 
   COMPLEX(NINT(8*ASIN(0.84147098))), PARAMETER :: T1(NINT(ASIN(0.84147098))+5)= T
 
-  IF (ANY(ABS(ExtFun1(T)-T)    .GE.  1.0e-7     ) )           STOP 11
-  IF (ANY(ABS(ExtFun1(T1)-T1)  .GE.  1.0e-7     ) )           STOP 12
+  IF (ANY(ABS(ExtFun1(T)-T)    .GE.  1.0e-7     ) )           ERROR STOP 11
+  IF (ANY(ABS(ExtFun1(T1)-T1)  .GE.  1.0e-7     ) )           ERROR STOP 12
 
   END
 

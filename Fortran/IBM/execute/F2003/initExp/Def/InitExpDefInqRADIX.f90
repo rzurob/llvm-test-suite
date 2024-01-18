@@ -51,14 +51,14 @@
   INTEGER  :: TI8(16, 16)  = RESHAPE((/(RADIX(I8), I=1,256)/), (/16,16/))
 
 
-  IF ( ANY ( TR4  .NE. 2  )  )   STOP 11
-  IF ( ANY ( TR8  .NE. 2  )  )   STOP 12
-  IF ( ANY ( TR6  .NE. 2  )  )   STOP 13
+  IF ( ANY ( TR4  .NE. 2  )  )   ERROR STOP 11
+  IF ( ANY ( TR8  .NE. 2  )  )   ERROR STOP 12
+  IF ( ANY ( TR6  .NE. 2  )  )   ERROR STOP 13
 
-  IF ( ANY ( TI1  .NE. 2  )  )   STOP 21
-  IF ( ANY ( TI2  .NE. 2  )  )   STOP 22
-  IF ( ANY ( TI4  .NE. 2  )  )   STOP 23
-  IF ( ANY ( TI8  .NE. 2  )  )   STOP 24
+  IF ( ANY ( TI1  .NE. 2  )  )   ERROR STOP 21
+  IF ( ANY ( TI2  .NE. 2  )  )   ERROR STOP 22
+  IF ( ANY ( TI4  .NE. 2  )  )   ERROR STOP 23
+  IF ( ANY ( TI8  .NE. 2  )  )   ERROR STOP 24
 
   END
 

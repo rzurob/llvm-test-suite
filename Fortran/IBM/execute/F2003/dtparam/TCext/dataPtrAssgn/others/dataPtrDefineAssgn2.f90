@@ -57,10 +57,10 @@ use m
 !    p1 = p2
     call assgnPtr (p1, p2)
 
-    if ( .not. associated(p1)) stop 11
+    if ( .not. associated(p1)) error stop 11
 
-    if (any(lbound(p1) .ne. (/1, -10/))) stop 21
-    if (any(ubound(p1) .ne. (/10, -1/))) stop 23
+    if (any(lbound(p1) .ne. (/1, -10/))) error stop 21
+    if (any(ubound(p1) .ne. (/10, -1/))) error stop 23
 
     print *, (/ ((p1(i,j)%id, i=lbound(p1,1),ubound(p1,1)), &
          j= lbound(p1,2),ubound(p1,2)) /)

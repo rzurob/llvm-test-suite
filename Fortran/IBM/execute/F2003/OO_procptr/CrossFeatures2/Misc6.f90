@@ -46,33 +46,33 @@
 
     ProcPtr1 => ModFun
     V = ProcPtr1(DT(-1, ModFun, ModFun))
-    IF ( V%ID .NE. -1) STOP 11
-    IF ( .NOT. ASSOCIATED(V%ProcPtr1, ModFun) ) STOP 12
-    IF ( .NOT. ASSOCIATED(V%ProcPtr2, ModFun) ) STOP 13
+    IF ( V%ID .NE. -1) ERROR STOP 11
+    IF ( .NOT. ASSOCIATED(V%ProcPtr1, ModFun) ) ERROR STOP 12
+    IF ( .NOT. ASSOCIATED(V%ProcPtr2, ModFun) ) ERROR STOP 13
 
     V = DT(0, NULL(), NULL())
     ProcPtr2 => ModFun
     V = ProcPtr2(DT(-2, ModFun, ModFun))
-    IF ( V%ID .NE. -2) STOP 21
-    IF ( .NOT. ASSOCIATED(V%ProcPtr1, ModFun) ) STOP 22
-    IF ( .NOT. ASSOCIATED(V%ProcPtr2, ModFun) ) STOP 23
+    IF ( V%ID .NE. -2) ERROR STOP 21
+    IF ( .NOT. ASSOCIATED(V%ProcPtr1, ModFun) ) ERROR STOP 22
+    IF ( .NOT. ASSOCIATED(V%ProcPtr2, ModFun) ) ERROR STOP 23
 
     V = DT(0, NULL(), NULL())
     V%ID = -3
     V%ProcPtr1 => ModFun
     V%ProcPtr2 => ModFun
     V = V%ProcPtr1()
-    IF ( V%ID .NE. -3) STOP 31
-    IF ( .NOT. ASSOCIATED(V%ProcPtr1, ModFun) ) STOP 32
-    IF ( .NOT. ASSOCIATED(V%ProcPtr2, ModFun) ) STOP 33
+    IF ( V%ID .NE. -3) ERROR STOP 31
+    IF ( .NOT. ASSOCIATED(V%ProcPtr1, ModFun) ) ERROR STOP 32
+    IF ( .NOT. ASSOCIATED(V%ProcPtr2, ModFun) ) ERROR STOP 33
 
     V = DT(-4, NULL(), NULL())
     V%ProcPtr1 => ModFun
     V%ProcPtr2 => ModFun
     V = V%ProcPtr2()
-    IF ( V%ID .NE. -4) STOP 41
-    IF ( .NOT. ASSOCIATED(V%ProcPtr1, ModFun) ) STOP 42
-    IF ( .NOT. ASSOCIATED(V%ProcPtr2, ModFun) ) STOP 43
+    IF ( V%ID .NE. -4) ERROR STOP 41
+    IF ( .NOT. ASSOCIATED(V%ProcPtr1, ModFun) ) ERROR STOP 42
+    IF ( .NOT. ASSOCIATED(V%ProcPtr2, ModFun) ) ERROR STOP 43
 
   END SUBROUTINE
 
@@ -87,14 +87,14 @@
   V = DT(0, ProcPtr2=NULL())
   ProcPtr2 => ModFun
   V = ProcPtr2(DT(-5, ProcPtr2=ModFun))
-  IF ( V%ID .NE. -5) STOP 51
-  IF ( .NOT. ASSOCIATED(V%ProcPtr2, ModFun) ) STOP 53
+  IF ( V%ID .NE. -5) ERROR STOP 51
+  IF ( .NOT. ASSOCIATED(V%ProcPtr2, ModFun) ) ERROR STOP 53
 
   V = DT(-6, ProcPtr2=NULL())
   V%ProcPtr2 => ModFun
   V = V%ProcPtr2()
-  IF ( V%ID .NE. -6) STOP 61
-  IF ( .NOT. ASSOCIATED(V%ProcPtr2, ModFun) ) STOP 63
+  IF ( V%ID .NE. -6) ERROR STOP 61
+  IF ( .NOT. ASSOCIATED(V%ProcPtr2, ModFun) ) ERROR STOP 63
 
   END
 

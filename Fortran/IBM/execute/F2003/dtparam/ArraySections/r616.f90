@@ -39,7 +39,7 @@ print *,kind(arrdt(10)%arr2(3)%arr1(2,3))
 print *,arrdt(10)%arr2(3)%arr1(2,3)
 
 ! if at least one part-ref has rank of non-zero, then it's not an array-element:
-if (size(arrdt(11)%arr2(2:3)%arr1(2,1)) <> 2) stop 1
+if (size(arrdt(11)%arr2(2:3)%arr1(2,1)) <> 2) error stop 1
 
 ! if last part-ref does not contain a subscript-list, it's not an array-element:
 arrdt(12)%arr2(1)%arr1 = reshape((/ (i,i=1,N*(N+1)) /),(/ N,N+1 /))

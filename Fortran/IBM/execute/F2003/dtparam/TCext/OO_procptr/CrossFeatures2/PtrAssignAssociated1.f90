@@ -91,18 +91,18 @@
   INTEGER                    :: i
   COMMON /CB/ProcPtr1, CPtr, ProcPtr2
 
-  IF ( .NOT. ASSOCIATED(CPtr) )  STOP 11
-  IF ( CPtr .NE. "4321" )        STOP 12
+  IF ( .NOT. ASSOCIATED(CPtr) )  ERROR STOP 11
+  IF ( CPtr .NE. "4321" )        ERROR STOP 12
 
-  IF ( .NOT. ASSOCIATED(ProcPtr1) )            STOP 21
-  IF ( .NOT. ASSOCIATED(ProcPtr1, ModFun) )    STOP 22
-  IF ( .NOT. ASSOCIATED(ProcPtr1, Proc) )      STOP 23
-  IF ( .NOT. ASSOCIATED(ProcPtr1, ProcPtr2) )  STOP 23
+  IF ( .NOT. ASSOCIATED(ProcPtr1) )            ERROR STOP 21
+  IF ( .NOT. ASSOCIATED(ProcPtr1, ModFun) )    ERROR STOP 22
+  IF ( .NOT. ASSOCIATED(ProcPtr1, Proc) )      ERROR STOP 23
+  IF ( .NOT. ASSOCIATED(ProcPtr1, ProcPtr2) )  ERROR STOP 23
 
   SELECT TYPE ( As => RESHAPE(ProcPtr1((/( CPtr, i=1,256)/)), (/16,16 /) ))
   TYPE IS (CHARACTER(*))
-    IF ( ANY( SHAPE(As) .NE. (/16,16/)))    STOP 31
-    IF ( ANY( As        .NE. "4321" )  )    STOP 32
+    IF ( ANY( SHAPE(As) .NE. (/16,16/)))    ERROR STOP 31
+    IF ( ANY( As        .NE. "4321" )  )    ERROR STOP 32
   CLASS DEFAULT
     STOP 33
   END SELECT

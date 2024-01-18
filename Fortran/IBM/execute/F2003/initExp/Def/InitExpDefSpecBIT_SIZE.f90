@@ -51,15 +51,15 @@
   LOGICAL(KIND(L4))  :: TL4 = BIT_SIZE(L4)
   LOGICAL(KIND(L8))  :: TL8 = BIT_SIZE(L8)
 
-  IF ( TI1     .NE. KIND(TI1) * 8  )            STOP 11
-  IF ( TI2     .NE. KIND(TI2) * 8  )            STOP 12
-  IF ( TI4     .NE. KIND(TI4) * 8  )            STOP 14
-  IF ( TI8     .NE. KIND(TI8) * 8  )            STOP 18
+  IF ( TI1     .NE. KIND(TI1) * 8  )            ERROR STOP 11
+  IF ( TI2     .NE. KIND(TI2) * 8  )            ERROR STOP 12
+  IF ( TI4     .NE. KIND(TI4) * 8  )            ERROR STOP 14
+  IF ( TI8     .NE. KIND(TI8) * 8  )            ERROR STOP 18
 
-  IF ( TL1     .NE. KIND(TI1) * 8  )            STOP 21
-  IF ( TL2     .NE. KIND(TI2) * 8  )            STOP 22
-  IF ( TL4     .NE. KIND(TI4) * 8  )            STOP 24
-  IF ( TL8     .NE. KIND(TI8) * 8  )            STOP 28
+  IF ( TL1     .NE. KIND(TI1) * 8  )            ERROR STOP 21
+  IF ( TL2     .NE. KIND(TI2) * 8  )            ERROR STOP 22
+  IF ( TL4     .NE. KIND(TI4) * 8  )            ERROR STOP 24
+  IF ( TL8     .NE. KIND(TI8) * 8  )            ERROR STOP 28
 
 
   END

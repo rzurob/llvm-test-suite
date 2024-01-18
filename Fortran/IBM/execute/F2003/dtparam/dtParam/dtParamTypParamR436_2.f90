@@ -47,29 +47,29 @@
   TYPE (DT1(k=1))    :: T1
   TYPE (DT2(K=1))    :: T2
 
-  IF (KIND(T1%K) .NE. 4 ) STOP 11
-  IF (T1%K       .NE. K ) STOP 12
+  IF (KIND(T1%K) .NE. 4 ) ERROR STOP 11
+  IF (T1%K       .NE. K ) ERROR STOP 12
 
-  IF (KIND(T1%L) .NE. K ) STOP 13
-  IF (T1%L       .NE. K ) STOP 14
+  IF (KIND(T1%L) .NE. K ) ERROR STOP 13
+  IF (T1%L       .NE. K ) ERROR STOP 14
 
-  IF (KIND(T1%Arr) .NE. T1%K )           STOP 15
-  IF (ANY(T1%Arr   .NE. -T1%K) )         STOP 16
-  IF (ANY(SHAPE(T1%Arr) .NE. (/T1%L/)) ) STOP 17
+  IF (KIND(T1%Arr) .NE. T1%K )           ERROR STOP 15
+  IF (ANY(T1%Arr   .NE. -T1%K) )         ERROR STOP 16
+  IF (ANY(SHAPE(T1%Arr) .NE. (/T1%L/)) ) ERROR STOP 17
 
 
-  IF (KIND(T2%K) .NE. 4 ) STOP 21
-  IF (T2%K       .NE. K ) STOP 22
+  IF (KIND(T2%K) .NE. 4 ) ERROR STOP 21
+  IF (T2%K       .NE. K ) ERROR STOP 22
 
-  IF (KIND(T2%L) .NE. K ) STOP 23
-  IF (T2%L       .NE. k ) STOP 24
+  IF (KIND(T2%L) .NE. K ) ERROR STOP 23
+  IF (T2%L       .NE. k ) ERROR STOP 24
 
-  IF (T2%Arr1%k .NE. K )               STOP 25
-  IF (ANY(SHAPE(T2%Arr1) .NE. (/T2%L2/)) ) STOP 26
+  IF (T2%Arr1%k .NE. K )               ERROR STOP 25
+  IF (ANY(SHAPE(T2%Arr1) .NE. (/T2%L2/)) ) ERROR STOP 26
 
-  IF (T2%Arr1(K)%K        .NE. K  )          STOP 27
-  IF (T2%Arr1(K)%L        .NE. K  )          STOP 28
-  IF (ANY(T2%Arr1(K)%Arr  .NE. -K) )         STOP 29
+  IF (T2%Arr1(K)%K        .NE. K  )          ERROR STOP 27
+  IF (T2%Arr1(K)%L        .NE. K  )          ERROR STOP 28
+  IF (ANY(T2%Arr1(K)%Arr  .NE. -K) )         ERROR STOP 29
 
 
 

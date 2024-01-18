@@ -23,8 +23,8 @@
 
   call sub(ch1, ch2)
 
-  if ( allocated(ch1) ) stop 12
-  if (.not. allocated(ch2) ) stop 23
+  if ( allocated(ch1) ) error stop 12
+  if (.not. allocated(ch2) ) error stop 23
 
   do i = 1, 4
      print *, ch2(i)

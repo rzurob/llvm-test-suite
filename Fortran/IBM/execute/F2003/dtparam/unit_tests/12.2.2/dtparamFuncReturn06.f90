@@ -35,5 +35,5 @@ use m
 
    type (base(:)), pointer :: ptr
    allocate(ptr, source = func(10))
-   if (ptr%p /= 10) stop 1
+   if (ptr%p /= 10) error stop 1
 end

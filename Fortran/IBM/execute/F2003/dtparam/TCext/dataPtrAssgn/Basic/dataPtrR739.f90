@@ -54,14 +54,14 @@
   END DO
 
   DO  I=I1, I8
-    IF (ANY( Arr(I)%Ptr1%ID     .NE.   (/(J,J=I1, I8)/))) STOP 10
-    IF (ANY(LBOUND(Arr(I)%Ptr1) .NE.   (/I/)))            STOP 11
-    IF (ANY(UBOUND(Arr(I)%Ptr1) .NE.   (/I+I8/)))         STOP 12
-    IF ( .NOT. ASSOCIATED(Arr(I)%Ptr1, Arr))              STOP 13
-    IF (ANY( Arr(I)%Ptr2%ID     .NE.   (/(J,J=I1, I8)/))) STOP 14
-    IF (ANY(LBOUND(Arr(I)%Ptr2) .NE.   (/I-I8/)))         STOP 15
-    IF (ANY(UBOUND(Arr(I)%Ptr2) .NE.   (/I/)))            STOP 16
-    IF ( .NOT. ASSOCIATED(Arr(I)%Ptr2, Arr))              STOP 17
+    IF (ANY( Arr(I)%Ptr1%ID     .NE.   (/(J,J=I1, I8)/))) ERROR STOP 10
+    IF (ANY(LBOUND(Arr(I)%Ptr1) .NE.   (/I/)))            ERROR STOP 11
+    IF (ANY(UBOUND(Arr(I)%Ptr1) .NE.   (/I+I8/)))         ERROR STOP 12
+    IF ( .NOT. ASSOCIATED(Arr(I)%Ptr1, Arr))              ERROR STOP 13
+    IF (ANY( Arr(I)%Ptr2%ID     .NE.   (/(J,J=I1, I8)/))) ERROR STOP 14
+    IF (ANY(LBOUND(Arr(I)%Ptr2) .NE.   (/I-I8/)))         ERROR STOP 15
+    IF (ANY(UBOUND(Arr(I)%Ptr2) .NE.   (/I/)))            ERROR STOP 16
+    IF ( .NOT. ASSOCIATED(Arr(I)%Ptr2, Arr))              ERROR STOP 17
   END DO
 
 
@@ -74,14 +74,14 @@
   END DO
 
   DO  I=I1, I8
-    IF (ANY( Arr(I)%Ptr1%ID     .NE.   (/(-J,J=I1, I8)/))) STOP 20
-    IF (ANY(LBOUND(Arr(I)%Ptr1) .NE.   (/I/)))             STOP 21
-    IF (ANY(UBOUND(Arr(I)%Ptr1) .NE.   (/I+I8/)))          STOP 22
-    IF ( .NOT. ASSOCIATED(Arr(I)%Ptr1, Arr))               STOP 23
-    IF (ANY( Arr(I)%Ptr2%ID     .NE.   (/(-J,J=I1, I8)/))) STOP 24
-    IF (ANY(LBOUND(Arr(I)%Ptr2) .NE.   (/I-I8/)))          STOP 25
-    IF (ANY(UBOUND(Arr(I)%Ptr2) .NE.   (/I/)))             STOP 26
-    IF ( .NOT. ASSOCIATED(Arr(I)%Ptr2, Arr))               STOP 27
+    IF (ANY( Arr(I)%Ptr1%ID     .NE.   (/(-J,J=I1, I8)/))) ERROR STOP 20
+    IF (ANY(LBOUND(Arr(I)%Ptr1) .NE.   (/I/)))             ERROR STOP 21
+    IF (ANY(UBOUND(Arr(I)%Ptr1) .NE.   (/I+I8/)))          ERROR STOP 22
+    IF ( .NOT. ASSOCIATED(Arr(I)%Ptr1, Arr))               ERROR STOP 23
+    IF (ANY( Arr(I)%Ptr2%ID     .NE.   (/(-J,J=I1, I8)/))) ERROR STOP 24
+    IF (ANY(LBOUND(Arr(I)%Ptr2) .NE.   (/I-I8/)))          ERROR STOP 25
+    IF (ANY(UBOUND(Arr(I)%Ptr2) .NE.   (/I/)))             ERROR STOP 26
+    IF ( .NOT. ASSOCIATED(Arr(I)%Ptr2, Arr))               ERROR STOP 27
   END DO
 
 

@@ -41,12 +41,12 @@
 
   T => IArr
   Ptr(SIZE(T):) => T(:)
-  IF (ANY(LBOUND(Ptr) .NE. (/SIZE(T)/)))       STOP 11
-  IF (ANY(UBOUND(Ptr) .NE. (/2*SIZE(T)-1/)))   STOP 12
+  IF (ANY(LBOUND(Ptr) .NE. (/SIZE(T)/)))       ERROR STOP 11
+  IF (ANY(UBOUND(Ptr) .NE. (/2*SIZE(T)-1/)))   ERROR STOP 12
 
   SELECT TYPE (Ptr)
   TYPE IS (INTEGER)
-    IF (ANY(Ptr         .NE. (/1,2,3/) ))      STOP 13
+    IF (ANY(Ptr         .NE. (/1,2,3/) ))      ERROR STOP 13
   CLASS DEFAULT
     STOP 14
   END SELECT
@@ -54,12 +54,12 @@
   ALLOCATE(Ptr(0:2), SOURCE=(/DT("123"),DT("213"),DT("312")/))
   I=LBOUND(Ptr,1); J=UBOUND(Ptr,1)
   Ptr(LBOUND(Ptr,1):UBOUND(Ptr,1)) => Ptr(I:J)
-  IF (ANY(LBOUND(Ptr) .NE. (/LBOUND(Ptr,1)/)))   STOP 21
-  IF (ANY(UBOUND(Ptr) .NE. (/UBOUND(Ptr,1)/)))   STOP 22
+  IF (ANY(LBOUND(Ptr) .NE. (/LBOUND(Ptr,1)/)))   ERROR STOP 21
+  IF (ANY(UBOUND(Ptr) .NE. (/UBOUND(Ptr,1)/)))   ERROR STOP 22
 
   SELECT TYPE (Ptr)
   TYPE IS (DT)
-    IF (ANY(Ptr%C .NE. (/"123","213","312"/) ))  STOP 23
+    IF (ANY(Ptr%C .NE. (/"123","213","312"/) ))  ERROR STOP 23
   CLASS DEFAULT
     STOP 24
   END SELECT

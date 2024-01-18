@@ -29,15 +29,15 @@ module m
                 class(base), intent(in) :: a
                 character(*), target, allocatable :: ch(:)
 
-                if ( .not. allocated(ch)) stop 99
+                if ( .not. allocated(ch)) error stop 99
 
                 func(1:size(ch)) => ch(26:1:-1)
 
-                if ( .not. associated(func, ch(26:1:-1))) stop 1
-                if ( lbound(func,1) /= 1 ) stop 2
-                if ( ubound(func,1) /= 26 ) stop 3
+                if ( .not. associated(func, ch(26:1:-1))) error stop 1
+                if ( lbound(func,1) /= 1 ) error stop 2
+                if ( ubound(func,1) /= 26 ) error stop 3
 
-                if ( .not. all(func .ge. (/ ('AA', i=1,26)/) )) stop 5
+                if ( .not. all(func .ge. (/ ('AA', i=1,26)/) )) error stop 5
 
             end function
 end module

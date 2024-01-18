@@ -36,13 +36,13 @@ complex(8), dimension(9,21) :: res8a=matmul(A8, B8), res8b
 complex(16), dimension(7,67) :: res2a=matmul(A16, B16), res2b
 
 res2b = matmul(A16,B16)
-if (.not. all(complex16Equal(res2a, res2b))) stop 1
+if (.not. all(complex16Equal(res2a, res2b))) error stop 1
 
 res4b = matmul(A4,B4)
-if (.not. all(complex4Equal(res4a, res4b))) stop 2
+if (.not. all(complex4Equal(res4a, res4b))) error stop 2
 
 res8b = matmul(A8,B8)
-if (.not. all(complex8Equal(res8a, res8b))) stop 3
+if (.not. all(complex8Equal(res8a, res8b))) error stop 3
 
     contains
 

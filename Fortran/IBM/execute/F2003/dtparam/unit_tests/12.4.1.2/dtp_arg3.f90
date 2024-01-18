@@ -25,8 +25,8 @@ end type
 contains
 subroutine hmprint(pa)
 class(humongous_matrix(4, *)) :: pa
-if (pa%k /= 4) stop 1
-if (pa%d /= 10) stop 2
+if (pa%k /= 4) error stop 1
+if (pa%d /= 10) error stop 2
 end subroutine
 end module
 

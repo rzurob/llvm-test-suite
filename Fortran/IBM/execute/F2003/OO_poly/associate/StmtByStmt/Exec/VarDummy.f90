@@ -78,36 +78,36 @@
   ALLOCATE(Ptr1%BaseComp)
 
   ASSOCIATE ( As => Ptr0 )
-    IF ( As%GetID() .NE. 2) STOP 50
+    IF ( As%GetID() .NE. 2) ERROR STOP 50
     ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-       IF ( As0 .NE. 2) STOP 51
-       IF ( As1 .NE. 1) STOP 52
+       IF ( As0 .NE. 2) ERROR STOP 51
+       IF ( As1 .NE. 1) ERROR STOP 52
     END ASSOCIATE
     ASSOCIATE ( As2 => As%Base )
-      IF ( As2%GetID() .NE. 1 ) STOP 53
+      IF ( As2%GetID() .NE. 1 ) ERROR STOP 53
     END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE (As =>  Ptr1%GetID())
-    IF ( As .NE. 2 ) STOP 60
+    IF ( As .NE. 2 ) ERROR STOP 60
   END ASSOCIATE
 
   ASSOCIATE (As =>  Ptr0%Base%GetID())
-    IF ( As .NE. 1 ) STOP 61
+    IF ( As .NE. 1 ) ERROR STOP 61
   END ASSOCIATE
 
   ASSOCIATE (As =>  Ptr%BaseComp%GetID())
-    IF ( As .NE. 1 ) STOP 61
+    IF ( As .NE. 1 ) ERROR STOP 61
   END ASSOCIATE
 
   ASSOCIATE ( As => Ptr0 )
-    IF ( As%GetID() .NE. 2) STOP 50
+    IF ( As%GetID() .NE. 2) ERROR STOP 50
     ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-       IF ( As0 .NE. 2) STOP 51
-       IF ( As1 .NE. 1) STOP 52
+       IF ( As0 .NE. 2) ERROR STOP 51
+       IF ( As1 .NE. 1) ERROR STOP 52
     END ASSOCIATE
     ASSOCIATE ( As2 => As%Base )
-      IF ( As2%GetID() .NE. 1 ) STOP 53
+      IF ( As2%GetID() .NE. 1 ) ERROR STOP 53
     END ASSOCIATE
   END ASSOCIATE
 

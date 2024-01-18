@@ -60,14 +60,14 @@ use m
 
     call move_alloc(c1, a1)
 
-    if ( allocated(c1) ) stop 11
-    if ( .not. allocated(a1) ) stop 13
+    if ( allocated(c1) ) error stop 11
+    if ( .not. allocated(a1) ) error stop 13
 
-    if ( .not. associated (p0, a1 )) stop 23
+    if ( .not. associated (p0, a1 )) error stop 23
 
     select type (p0)
         type is (C(*,4,4,*,4,*))
-            if ( p0%id /= 99 ) stop 25
+            if ( p0%id /= 99 ) error stop 25
         class default
             stop 33
     end select

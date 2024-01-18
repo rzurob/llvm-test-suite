@@ -26,7 +26,7 @@ implicit none
 type(A(:)),pointer     :: a1
 allocate(A(-3)         :: a1)
 
-if(a1%l1 /= -3)                                   stop 1
-if(a1%c%len /= len(a1%c) .or. a1%c%len /= 2)      stop 2
+if(a1%l1 /= -3)                                   error stop 1
+if(a1%c%len /= len(a1%c) .or. a1%c%len /= 2)      error stop 2
 
 end

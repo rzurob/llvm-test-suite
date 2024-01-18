@@ -73,8 +73,8 @@
         CLASS is (Child)
           STOP 24
         TYPE IS (Child)
-          IF ( As%Base%GetId() .NE. 1 ) STOP 34
-          IF ( As%GetId()      .NE. 2 ) STOP 35
+          IF ( As%Base%GetId() .NE. 1 ) ERROR STOP 34
+          IF ( As%GetId()      .NE. 2 ) ERROR STOP 35
       END SELECT
   END SELECT
   END ASSOCIATE

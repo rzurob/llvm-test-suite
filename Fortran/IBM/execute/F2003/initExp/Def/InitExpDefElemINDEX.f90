@@ -64,16 +64,16 @@
 
   CLASS(*), ALLOCATABLE :: R(:)
 
-  IF ( KIND(A)    .NE. 2 )         STOP 10
-  IF ( KIND(B)    .NE. 4 )         STOP 11
+  IF ( KIND(A)    .NE. 2 )         ERROR STOP 10
+  IF ( KIND(B)    .NE. 4 )         ERROR STOP 11
 
-  IF ( IC1    .NE. 2 )             STOP 12
-  IF ( IC2    .NE. 0 )             STOP 13
-  IF ( IC3    .NE. 1 )             STOP 14
+  IF ( IC1    .NE. 2 )             ERROR STOP 12
+  IF ( IC2    .NE. 0 )             ERROR STOP 13
+  IF ( IC3    .NE. 1 )             ERROR STOP 14
 
-  IF ( ANY( IC4    .NE. 2 ))       STOP 15
-  IF ( ANY( IC5    .NE. 0 ))       STOP 16
-  IF ( ANY( IC6    .NE. 129))      STOP 17
+  IF ( ANY( IC4    .NE. 2 ))       ERROR STOP 15
+  IF ( ANY( IC5    .NE. 0 ))       ERROR STOP 16
+  IF ( ANY( IC6    .NE. 129))      ERROR STOP 17
 
 
 

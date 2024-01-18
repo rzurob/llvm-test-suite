@@ -88,7 +88,7 @@ contains
   subroutine workshopAssignFromStudents2(sink, src)
     class(Workshop(2,*,*,*)), intent(inout) :: sink
     class(Student(2,*,*)), intent(in) :: src(:)
-    if (sink % nStudents /= size(src)) stop 32
+    if (sink % nStudents /= size(src)) error stop 32
     sink % student = src
   end subroutine workshopAssignFromStudents2
 
@@ -122,7 +122,7 @@ contains
   subroutine workshopAssignFromStudents4(sink, src)
     class(Workshop(4,*,*,*)), intent(inout) :: sink
     class(Student(4,*,*)), intent(in) :: src(:)
-    if (sink % nStudents /= size(src)) stop 32
+    if (sink % nStudents /= size(src)) error stop 32
     sink % student = src
   end subroutine workshopAssignFromStudents4
 

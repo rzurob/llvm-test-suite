@@ -126,7 +126,7 @@ PROGRAM streamReadWrite08
                                 rArray( 13:18 ),rArray( 19:24 )) ]
 
     iostat = WriteItems(365, e1aArray)
-    IF (iostat /= 0) STOP 20
+    IF (iostat /= 0) ERROR STOP 20
 
     REWIND(365, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
@@ -136,11 +136,11 @@ PROGRAM streamReadWrite08
 
 
     iostat = ReadItems(365, e2Array)
-    IF (iostat /= 0) STOP 30
+    IF (iostat /= 0) ERROR STOP 30
 
-    IF ( ANY(e2Array( 1 )%a /= e1aArray( 1 )%a) ) STOP 31
-    IF ( ANY(e2Array( 1 )%i /= e1aArray( 1 )%r) ) STOP 32
-    IF ( ANY(e2Array( 1 )%r /= e1aArray( 1 )%i) ) STOP 33
+    IF ( ANY(e2Array( 1 )%a /= e1aArray( 1 )%a) ) ERROR STOP 31
+    IF ( ANY(e2Array( 1 )%i /= e1aArray( 1 )%r) ) ERROR STOP 32
+    IF ( ANY(e2Array( 1 )%r /= e1aArray( 1 )%i) ) ERROR STOP 33
 
     REWIND(365, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
@@ -157,7 +157,7 @@ PROGRAM streamReadWrite08
     e2Array( 1 )%r = rArray( 1:6 )
 
     iostat = WriteItems(365, e2Array)
-    IF (iostat /= 0) STOP 40
+    IF (iostat /= 0) ERROR STOP 40
 
     REWIND(365, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
@@ -167,11 +167,11 @@ PROGRAM streamReadWrite08
 
 
     iostat = ReadItems(365, e1Array)
-    IF (iostat /= 0) STOP 50
+    IF (iostat /= 0) ERROR STOP 50
 
-    IF ( ANY(e1Array( 1 )%a /= e2Array( 1 )%a) ) STOP 51
-    IF ( ANY(e1Array( 1 )%r /= e2Array( 1 )%i) ) STOP 52
-    IF ( ANY(e1Array( 1 )%i /= e2Array( 1 )%r) ) STOP 53
+    IF ( ANY(e1Array( 1 )%a /= e2Array( 1 )%a) ) ERROR STOP 51
+    IF ( ANY(e1Array( 1 )%r /= e2Array( 1 )%i) ) ERROR STOP 52
+    IF ( ANY(e1Array( 1 )%i /= e2Array( 1 )%r) ) ERROR STOP 53
 
     REWIND(365, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
@@ -188,7 +188,7 @@ PROGRAM streamReadWrite08
     e1Array( 1 )%i = e1aArray( 1 )%i
 
     iostat = WriteItems(365, e1Array)
-    IF (iostat /= 0) STOP 60
+    IF (iostat /= 0) ERROR STOP 60
 
     REWIND(365, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
@@ -198,10 +198,10 @@ PROGRAM streamReadWrite08
 
 
     iostat = ReadItems(365, bArray)
-    IF (iostat /= 0) STOP 70
+    IF (iostat /= 0) ERROR STOP 70
 
-    IF ( ANY(bArray( 1 )%a /= RESHAPE(cArray( 1:6 ), [ 3,2 ])) ) STOP 71
-    IF ( ANY(bArray( 2 )%a /= RESHAPE(cArray( 7:12 ), [ 3,2 ])) ) STOP 72
+    IF ( ANY(bArray( 1 )%a /= RESHAPE(cArray( 1:6 ), [ 3,2 ])) ) ERROR STOP 71
+    IF ( ANY(bArray( 2 )%a /= RESHAPE(cArray( 7:12 ), [ 3,2 ])) ) ERROR STOP 72
 
     REWIND(365, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
@@ -217,7 +217,7 @@ PROGRAM streamReadWrite08
     bArray( 2 )%a = RESHAPE(cArray( 1:6 ), [ 3,2 ])
 
     iostat = WriteItems(365, bArray)
-    IF (iostat /= 0) STOP 80
+    IF (iostat /= 0) ERROR STOP 80
 
     REWIND(365, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
@@ -227,11 +227,11 @@ PROGRAM streamReadWrite08
 
 
     iostat = ReadItems(365, e1aArray)
-    IF (iostat /= 0) STOP 90
+    IF (iostat /= 0) ERROR STOP 90
 
-    IF ( ANY(e1aArray( 1 )%a /= RESHAPE(cArray( 7:12 ), [ 3,2 ])) ) STOP 91
-    IF ( ANY(e1aArray( 1 )%r /= rArray( 1:6 )) )                    STOP 92
-    IF ( ANY(e1aArray( 1 )%i /= rArray( 7:12 )) )                   STOP 93
+    IF ( ANY(e1aArray( 1 )%a /= RESHAPE(cArray( 7:12 ), [ 3,2 ])) ) ERROR STOP 91
+    IF ( ANY(e1aArray( 1 )%r /= rArray( 1:6 )) )                    ERROR STOP 92
+    IF ( ANY(e1aArray( 1 )%i /= rArray( 7:12 )) )                   ERROR STOP 93
 
 
     CLOSE(365, IOSTAT=iostat, IOMSG=iomsg)

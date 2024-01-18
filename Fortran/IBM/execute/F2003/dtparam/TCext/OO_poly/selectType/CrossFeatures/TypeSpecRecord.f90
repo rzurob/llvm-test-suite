@@ -57,12 +57,12 @@ S2: SELECT TYPE (U => S2 )
       STOP 20
     TYPE IS (DT(4))
 
-        IF (SIZE(U)       .NE. 8)            STOP 30
-        IF (ANY(SHAPE(U)  .NE. (/2,2,2/) ))  STOP 31
-        IF (KIND(U%R.A.I)   .NE. 4)  STOP 35
-        IF (KIND(U%R.B.J)   .NE. 4)  STOP 36
-        IF (ANY(U%R.A.I     .NE. 1)) STOP 33
-        IF (ANY(U%R.B.J     .NE. 2)) STOP 34
+        IF (SIZE(U)       .NE. 8)            ERROR STOP 30
+        IF (ANY(SHAPE(U)  .NE. (/2,2,2/) ))  ERROR STOP 31
+        IF (KIND(U%R.A.I)   .NE. 4)  ERROR STOP 35
+        IF (KIND(U%R.B.J)   .NE. 4)  ERROR STOP 36
+        IF (ANY(U%R.A.I     .NE. 1)) ERROR STOP 33
+        IF (ANY(U%R.B.J     .NE. 2)) ERROR STOP 34
 
     END SELECT S2
     END SELECT S1

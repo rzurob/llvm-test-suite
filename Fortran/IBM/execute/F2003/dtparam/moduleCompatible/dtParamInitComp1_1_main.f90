@@ -32,50 +32,50 @@
   TYPE(DT1(8,:)), POINTER     :: P
   TYPE(DT1(4,:)), ALLOCATABLE :: A
 
-  IF ( KIND(T%I) .NE. 4 )                 STOP 11
-  IF ( SIZE(T%I) .NE. 4 )                 STOP 12
-  IF ( ANY(T%I  .NE. (/(I, I=1,4)/)))     STOP 13
-  IF ( KIND(T%R) .NE. 4 )                 STOP 14
-  IF ( SIZE(T%R) .NE. 4 )                 STOP 16
-  IF ( ANY(T%R  .NE. (/(I, I=1,4)/)))     STOP 17
-  IF ( KIND(T%Z) .NE. 4 )                 STOP 18
-  IF ( SIZE(T%Z) .NE. 4 )                 STOP 19
-  IF ( ANY(T%Z  .NE. (/((I,-I),I=1,4)/))) STOP 20
-  IF ( LEN(T%C) .NE. 1 )                  STOP 21
-  IF ( SIZE(T%C).NE. 4 )                  STOP 22
-  IF ( ANY(T%C  .NE. CHAR(4)//"   " ))    STOP 23
-  IF ( ASSOCIATED(T%ProcPtr) )            STOP 24
+  IF ( KIND(T%I) .NE. 4 )                 ERROR STOP 11
+  IF ( SIZE(T%I) .NE. 4 )                 ERROR STOP 12
+  IF ( ANY(T%I  .NE. (/(I, I=1,4)/)))     ERROR STOP 13
+  IF ( KIND(T%R) .NE. 4 )                 ERROR STOP 14
+  IF ( SIZE(T%R) .NE. 4 )                 ERROR STOP 16
+  IF ( ANY(T%R  .NE. (/(I, I=1,4)/)))     ERROR STOP 17
+  IF ( KIND(T%Z) .NE. 4 )                 ERROR STOP 18
+  IF ( SIZE(T%Z) .NE. 4 )                 ERROR STOP 19
+  IF ( ANY(T%Z  .NE. (/((I,-I),I=1,4)/))) ERROR STOP 20
+  IF ( LEN(T%C) .NE. 1 )                  ERROR STOP 21
+  IF ( SIZE(T%C).NE. 4 )                  ERROR STOP 22
+  IF ( ANY(T%C  .NE. CHAR(4)//"   " ))    ERROR STOP 23
+  IF ( ASSOCIATED(T%ProcPtr) )            ERROR STOP 24
 
   ALLOCATE(DT1(8,2) :: P )
-  IF ( KIND(P%I) .NE. 8 )                 STOP 31
-  IF ( SIZE(P%I) .NE. 8 )                 STOP 32
-  IF ( ANY(P%I  .NE. (/(I, I=1,8)/)))     STOP 33
-  IF ( KIND(P%R) .NE. 8 )                 STOP 34
-  IF ( SIZE(P%R) .NE. 8 )                 STOP 36
-  IF ( ANY(P%R  .NE. (/(I, I=1,8)/)))     STOP 37
-  IF ( KIND(P%Z) .NE. 8 )                 STOP 38
-  IF ( SIZE(P%Z) .NE. 8 )                 STOP 39
-  IF ( ANY(P%Z  .NE. (/((I,-I),I=1,8)/))) STOP 40
-  IF ( LEN(P%C) .NE. 2 )                  STOP 41
-  IF ( SIZE(P%C).NE. 8 )                  STOP 42
-  IF ( ANY(P%C  .NE. CHAR(8)//"       " ))STOP 43
-  IF ( ASSOCIATED(P%ProcPtr) )            STOP 44
+  IF ( KIND(P%I) .NE. 8 )                 ERROR STOP 31
+  IF ( SIZE(P%I) .NE. 8 )                 ERROR STOP 32
+  IF ( ANY(P%I  .NE. (/(I, I=1,8)/)))     ERROR STOP 33
+  IF ( KIND(P%R) .NE. 8 )                 ERROR STOP 34
+  IF ( SIZE(P%R) .NE. 8 )                 ERROR STOP 36
+  IF ( ANY(P%R  .NE. (/(I, I=1,8)/)))     ERROR STOP 37
+  IF ( KIND(P%Z) .NE. 8 )                 ERROR STOP 38
+  IF ( SIZE(P%Z) .NE. 8 )                 ERROR STOP 39
+  IF ( ANY(P%Z  .NE. (/((I,-I),I=1,8)/))) ERROR STOP 40
+  IF ( LEN(P%C) .NE. 2 )                  ERROR STOP 41
+  IF ( SIZE(P%C).NE. 8 )                  ERROR STOP 42
+  IF ( ANY(P%C  .NE. CHAR(8)//"       " ))ERROR STOP 43
+  IF ( ASSOCIATED(P%ProcPtr) )            ERROR STOP 44
   DEALLOCATE( P )
 
   ALLOCATE(DT1(4,1+2) :: A )
-  IF ( KIND(A%I) .NE. 4 )                 STOP 51
-  IF ( SIZE(A%I) .NE. 4 )                 STOP 52
-  IF ( ANY(A%I  .NE. (/(I, I=1,4)/)))     STOP 53
-  IF ( KIND(A%R) .NE. 4 )                 STOP 54
-  IF ( SIZE(A%R) .NE. 4 )                 STOP 56
-  IF ( ANY(A%R  .NE. (/(I, I=1,4)/)))     STOP 57
-  IF ( KIND(A%Z) .NE. 4 )                 STOP 58
-  IF ( SIZE(A%Z) .NE. 4 )                 STOP 59
-  IF ( ANY(A%Z  .NE. (/((I,-I),I=1,4)/))) STOP 60
-  IF ( LEN(A%C) .NE. 3 )                  STOP 61
-  IF ( SIZE(A%C).NE. 4 )                  STOP 62
-  IF ( ANY(A%C  .NE. CHAR(4)//" " ))      STOP 63
-  IF ( ASSOCIATED(A%ProcPtr) )            STOP 64
+  IF ( KIND(A%I) .NE. 4 )                 ERROR STOP 51
+  IF ( SIZE(A%I) .NE. 4 )                 ERROR STOP 52
+  IF ( ANY(A%I  .NE. (/(I, I=1,4)/)))     ERROR STOP 53
+  IF ( KIND(A%R) .NE. 4 )                 ERROR STOP 54
+  IF ( SIZE(A%R) .NE. 4 )                 ERROR STOP 56
+  IF ( ANY(A%R  .NE. (/(I, I=1,4)/)))     ERROR STOP 57
+  IF ( KIND(A%Z) .NE. 4 )                 ERROR STOP 58
+  IF ( SIZE(A%Z) .NE. 4 )                 ERROR STOP 59
+  IF ( ANY(A%Z  .NE. (/((I,-I),I=1,4)/))) ERROR STOP 60
+  IF ( LEN(A%C) .NE. 3 )                  ERROR STOP 61
+  IF ( SIZE(A%C).NE. 4 )                  ERROR STOP 62
+  IF ( ANY(A%C  .NE. CHAR(4)//" " ))      ERROR STOP 63
+  IF ( ASSOCIATED(A%ProcPtr) )            ERROR STOP 64
   DEALLOCATE( A )
 
   END

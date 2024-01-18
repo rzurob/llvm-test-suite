@@ -68,27 +68,27 @@ module m2
        integer :: mypos,unit
 
        inquire(unit,pos=mypos)
-       if(mypos /= 1)      stop 11
+       if(mypos /= 1)      error stop 11
 
        read(unit,*,pos=mypos) dt2%g1,dt2%g2(1)
        inquire(unit,pos=mypos)
-       if(mypos /= 20)     stop 12
+       if(mypos /= 20)     error stop 12
 
        read(unit,*,pos=mypos) dt2%g2(2:4)
        inquire(unit,pos=mypos)
-       if( mypos /= 38)     stop 13
+       if( mypos /= 38)     error stop 13
 
        read(unit,*,pos=mypos) dt2%dt1comp%c1
        inquire(unit,pos=mypos)
-       if( mypos /= 58)      stop 14
+       if( mypos /= 58)      error stop 14
 
        read(unit,*,pos=mypos) dt2%dt1comp%c2
        inquire(unit,pos=mypos)
-       if(mypos /= 68)       stop 15
+       if(mypos /= 68)       error stop 15
 
        read(unit,*,pos=mypos) dt2%dt1comp%dt0comp%i1,dt2%dt1comp%dt0comp%i2(1)
        inquire(unit,pos=mypos)
-       if(mypos /= 83)       stop 16
+       if(mypos /= 83)       error stop 16
 
        read(unit,*) dt2%dt1comp%dt0comp%i2(2:4)
 
@@ -100,15 +100,15 @@ module m2
        integer :: unit,mypos
 
        inquire(unit,pos=mypos)
-       if(mypos /= 93)     stop 17
+       if(mypos /= 93)     error stop 17
 
        read(unit,*,pos=mypos,decimal='comma') dt2%g1,dt2%g2
        inquire(unit,pos=mypos)
-       if(mypos /= 118)    stop 18
+       if(mypos /= 118)    error stop 18
 
        read(unit,*,pos=mypos,decimal='point') dt2%dt1comp%c1, dt2%dt1comp%c2
        inquire(unit,pos=mypos)
-       if(mypos /= 152)    stop 19
+       if(mypos /= 152)    error stop 19
 
        read(unit,*) dt2%dt1comp%dt0comp%i1
        read(unit,*,decimal='comma') dt2%dt1comp%dt0comp%i2

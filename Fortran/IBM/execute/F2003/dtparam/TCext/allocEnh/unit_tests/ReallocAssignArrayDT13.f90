@@ -40,9 +40,9 @@ class(t(:,4)), allocatable :: b(:)
 allocate(b(5), source=(/t2(20,4)(1,1),t2(20,4)(2,2),t2(20,4)(3,3),t2(20,4)(4,4),t2(20,4)(5,5)/))
 allocate(t(20,4) :: a(3))
 a = b
-if (any(shape(a) /= (/5/))) stop 1
-if (any(a%a /= (/1,2,3,4,5/))) stop 2
-if (lbound(a,1) /= 1) stop 3
-if (ubound(a,1) /= 5) stop 4
-if (finalizecount /= 1) stop 5
+if (any(shape(a) /= (/5/))) error stop 1
+if (any(a%a /= (/1,2,3,4,5/))) error stop 2
+if (lbound(a,1) /= 1) error stop 3
+if (ubound(a,1) /= 5) error stop 4
+if (finalizecount /= 1) error stop 5
 end

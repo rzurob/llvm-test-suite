@@ -71,15 +71,15 @@ use m
 
    call move_alloc( b1%l2%l1, b2 )
 
-   if ( allocated(b1%l2%l1) ) stop 31
-   if ( .not. allocated(b2)) stop 32
+   if ( allocated(b1%l2%l1) ) error stop 31
+   if ( .not. allocated(b2)) error stop 32
 
    select type (b2)
 
        type is (base(*,4))
-           if ( size(b2) /= 6 ) stop 41
-           if ( lbound(b2,1) /= 2 ) stop 42
-           if ( ubound(b2,1) /= 7 ) stop 45
+           if ( size(b2) /= 6 ) error stop 41
+           if ( lbound(b2,1) /= 2 ) error stop 42
+           if ( ubound(b2,1) /= 7 ) error stop 45
            print *, b2%id
        class default
            stop 51

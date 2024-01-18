@@ -67,12 +67,12 @@
     PROCEDURE ExtProc
   END INTERFACE
 
-  IF (Fun(1)    .NE. 1 ) STOP 11
+  IF (Fun(1)    .NE. 1 ) ERROR STOP 11
 
   ProcPtr => ModFun
-  IF (Fun1(2)   .NE. 2 ) STOP 12
+  IF (Fun1(2)   .NE. 2 ) ERROR STOP 12
 
-  IF (Fun2(3)   .NE. 3 ) STOP 13
+  IF (Fun2(3)   .NE. 3 ) ERROR STOP 13
 
   CALL IntSub(ExtProc)
 
@@ -86,7 +86,7 @@
     PROCEDURE Proc
   END INTERFACE
 
-  IF (Fun3(4)   .NE. 4 ) STOP 14
+  IF (Fun3(4)   .NE. 4 ) ERROR STOP 14
 
   END SUBROUTINE
 

@@ -59,11 +59,11 @@
 
   CALL S(Ptr, Ptr, N, L, U)
 
-  IF (.NOT. ASSOCIATED(Ptr))                       STOP 11
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    STOP 12
-  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))    STOP 13
-  IF (ANY( Ptr(L:U, L)%ID      .NE.   1))          STOP 14
-  IF (ANY( Ptr(L:U, L+1:U)%ID  .NE.  -1))          STOP 15
+  IF (.NOT. ASSOCIATED(Ptr))                       ERROR STOP 11
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    ERROR STOP 12
+  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))    ERROR STOP 13
+  IF (ANY( Ptr(L:U, L)%ID      .NE.   1))          ERROR STOP 14
+  IF (ANY( Ptr(L:U, L+1:U)%ID  .NE.  -1))          ERROR STOP 15
 
  ! DEALLOCATE(Ptr)
 
@@ -76,13 +76,13 @@
 
   Ptr(L:U, L:U) => Arr(1:N*N)
 
-  IF (.NOT. ASSOCIATED(Ptr))                       STOP 21
-  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    STOP 22
-  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))    STOP 23
+  IF (.NOT. ASSOCIATED(Ptr))                       ERROR STOP 21
+  IF (ANY( LBOUND(Ptr)         .NE. (/L, L /)))    ERROR STOP 22
+  IF (ANY( UBOUND(Ptr)         .NE. (/U, U /)))    ERROR STOP 23
   SELECT TYPE (Ptr)
   TYPE IS (DT)
-    IF (ANY( Ptr%ID            .NE.   -1))         STOP 24
-    IF (ANY( Ptr%ModFun()      .NE.   -1))         STOP 25
+    IF (ANY( Ptr%ID            .NE.   -1))         ERROR STOP 24
+    IF (ANY( Ptr%ModFun()      .NE.   -1))         ERROR STOP 25
     Ptr(L:U, L)%ID = 1
   CLASS DEFAULT
     STOP 26

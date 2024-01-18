@@ -18,6 +18,6 @@
 
     i2 = i1
 
-    if (any(i2 /= [1,3,5,7,9])) stop 10
+    if (any(i2 /= [1,3,5,7,9])) error stop 10
 
     end

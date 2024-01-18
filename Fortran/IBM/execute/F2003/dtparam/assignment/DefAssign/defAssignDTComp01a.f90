@@ -99,39 +99,39 @@ subroutine sub
 
   a1=[A(2)([-11,-12]) ,A(2)([11,12])] ! call assignA
 
-  if(any(a1(2)%i1 /= [-11,-12]))                         stop 11
-  if(any(a1(3)%i1 /= [11,12]))                           stop 12
+  if(any(a1(2)%i1 /= [-11,-12]))                         error stop 11
+  if(any(a1(3)%i1 /= [11,12]))                           error stop 12
 
   a1(2)=A(2)([-1,-2])  ! call assignA
   a1(3)=A(2)([1,2]) ! call assignA
 
-  if(any(a1(2)%i1 /= [-1,-2]))                           stop 13
-  if(any(a1(3)%i1 /= [1,2]))                             stop 14
+  if(any(a1(2)%i1 /= [-1,-2]))                           error stop 13
+  if(any(a1(3)%i1 /= [1,2]))                             error stop 14
 
   a1=[10,-10]   ! call assignA
 
-  if(any(a1(2)%i1 /= 10))                                stop 15
-  if(any(a1(3)%i1 /= -10))                               stop 16
+  if(any(a1(2)%i1 /= 10))                                error stop 15
+  if(any(a1(3)%i1 /= -10))                               error stop 16
 
   ! call assignB
   b1=[B(4)(["abc","def","ghi","jkl"]),B(4)(["ABC","DEF","GHI","JKL"])]
 
-  if(any(b1(3)%c1 /= ["abc","def","ghi","jkl"]))          stop 17
-  if(any(b1(4)%c1 /= ["ABC","DEF","GHI","JKL"]))          stop 18
+  if(any(b1(3)%c1 /= ["abc","def","ghi","jkl"]))          error stop 17
+  if(any(b1(4)%c1 /= ["ABC","DEF","GHI","JKL"]))          error stop 18
 
   ! switch b1(4) and b1(5)
   bb=b1(3)    ! call assignB
   b1(3)=b1(4) ! call assignB
   b1(4)=bb    ! call assignB
 
-  if(any(b1(4)%c1 /= ["abc","def","ghi","jkl"]))          stop 19
-  if(any(b1(3)%c1 /= ["ABC","DEF","GHI","JKL"]))          stop 20
+  if(any(b1(4)%c1 /= ["abc","def","ghi","jkl"]))          error stop 19
+  if(any(b1(3)%c1 /= ["ABC","DEF","GHI","JKL"]))          error stop 20
 
   b1(3)="XYZ|"     ! call assignB
   b1(4)="xyz|"     ! call assignB
 
-  if(any(b1(3)%c1 /= "XYZ|"))                             stop 21
-  if(any(b1(4)%c1 /= "xyz|"))                             stop 22
+  if(any(b1(3)%c1 /= "XYZ|"))                             error stop 21
+  if(any(b1(4)%c1 /= "xyz|"))                             error stop 22
 
   ! call assignC
   c1=[ C(3) (g1=[.true.,.false.,.true.],a1comp=a1,b1comp=b1) , &
@@ -140,38 +140,38 @@ subroutine sub
             [B(4)(["XLF","IBM","XLC","LAB"]), &
              B(4)(["xlf","ibm","xlc","lab"]) ]) ]
 
-  if(any(c1(1)%g1 .neqv. [.true.,.false.,.true.] ))        stop 23
-  if(any(c1(1)%a1comp(2)%i1 /= 10 ))                       stop 24
-  if(any(c1(1)%a1comp(3)%i1 /= -10 ))                      stop 25
-  if(any(c1(1)%b1comp(3)%c1 /= "XYZ|"))                    stop 26
-  if(any(c1(1)%b1comp(4)%c1 /= "xyz|"))                    stop 27
+  if(any(c1(1)%g1 .neqv. [.true.,.false.,.true.] ))        error stop 23
+  if(any(c1(1)%a1comp(2)%i1 /= 10 ))                       error stop 24
+  if(any(c1(1)%a1comp(3)%i1 /= -10 ))                      error stop 25
+  if(any(c1(1)%b1comp(3)%c1 /= "XYZ|"))                    error stop 26
+  if(any(c1(1)%b1comp(4)%c1 /= "xyz|"))                    error stop 27
 
-  if(any(c1(2)%g1 .neqv. [.false.,.true.,.false.] ))       stop 28
-  if(any(c1(2)%a1comp(2)%i1 /= [5,-5] ))                   stop 29
-  if(any(c1(2)%a1comp(3)%i1 /= [6,-6] ))                   stop 30
-  if(any(c1(2)%b1comp(3)%c1 /= ["XLF","IBM","XLC","LAB"])) stop 31
-  if(any(c1(2)%b1comp(4)%c1 /= ["xlf","ibm","xlc","lab"])) stop 32
+  if(any(c1(2)%g1 .neqv. [.false.,.true.,.false.] ))       error stop 28
+  if(any(c1(2)%a1comp(2)%i1 /= [5,-5] ))                   error stop 29
+  if(any(c1(2)%a1comp(3)%i1 /= [6,-6] ))                   error stop 30
+  if(any(c1(2)%b1comp(3)%c1 /= ["XLF","IBM","XLC","LAB"])) error stop 31
+  if(any(c1(2)%b1comp(4)%c1 /= ["xlf","ibm","xlc","lab"])) error stop 32
 
   c1=c1(2:1:-1)  ! call assignC
 
-  if(any(c1(2)%g1 .neqv. [.true.,.false.,.true.] ))        stop 33
-  if(any(c1(2)%a1comp(2)%i1 /= 10 ))                       stop 34
-  if(any(c1(2)%a1comp(3)%i1 /= -10 ))                      stop 35
-  if(any(c1(2)%b1comp(3)%c1 /= "XYZ|"))                    stop 36
-  if(any(c1(2)%b1comp(4)%c1 /= "xyz|"))                    stop 37
+  if(any(c1(2)%g1 .neqv. [.true.,.false.,.true.] ))        error stop 33
+  if(any(c1(2)%a1comp(2)%i1 /= 10 ))                       error stop 34
+  if(any(c1(2)%a1comp(3)%i1 /= -10 ))                      error stop 35
+  if(any(c1(2)%b1comp(3)%c1 /= "XYZ|"))                    error stop 36
+  if(any(c1(2)%b1comp(4)%c1 /= "xyz|"))                    error stop 37
 
-  if(any(c1(1)%g1 .neqv. [.false.,.true.,.false.] ))       stop 38
-  if(any(c1(1)%a1comp(2)%i1 /= [5,-5] ))                   stop 39
-  if(any(c1(1)%a1comp(3)%i1 /= [6,-6] ))                   stop 40
-  if(any(c1(1)%b1comp(3)%c1 /= ["XLF","IBM","XLC","LAB"])) stop 41
-  if(any(c1(1)%b1comp(4)%c1 /= ["xlf","ibm","xlc","lab"])) stop 42
+  if(any(c1(1)%g1 .neqv. [.false.,.true.,.false.] ))       error stop 38
+  if(any(c1(1)%a1comp(2)%i1 /= [5,-5] ))                   error stop 39
+  if(any(c1(1)%a1comp(3)%i1 /= [6,-6] ))                   error stop 40
+  if(any(c1(1)%b1comp(3)%c1 /= ["XLF","IBM","XLC","LAB"])) error stop 41
+  if(any(c1(1)%b1comp(4)%c1 /= ["xlf","ibm","xlc","lab"])) error stop 42
 
   a1=c1(1)%a1comp  ! call assignA
   b1=c1(1)%b1comp  ! call assignB
 
-  if(any(a1(2)%i1 /= [5,-5] ))                             stop 43
-  if(any(a1(3)%i1 /= [6,-6] ))                             stop 44
-  if(any(b1(3)%c1 /= ["XLF","IBM","XLC","LAB"]))           stop 45
-  if(any(b1(4)%c1 /= ["xlf","ibm","xlc","lab"]))           stop 46
+  if(any(a1(2)%i1 /= [5,-5] ))                             error stop 43
+  if(any(a1(3)%i1 /= [6,-6] ))                             error stop 44
+  if(any(b1(3)%c1 /= ["XLF","IBM","XLC","LAB"]))           error stop 45
+  if(any(b1(4)%c1 /= ["xlf","ibm","xlc","lab"]))           error stop 46
 
 end subroutine

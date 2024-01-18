@@ -24,8 +24,8 @@
 
     call sub(to)
 
-    if ( allocated(from) ) stop 51
-    if ( .not. allocated(to) ) stop 53
+    if ( allocated(from) ) error stop 51
+    if ( .not. allocated(to) ) error stop 53
 
     do i = 1, 10
         if ( .not. precision_r8(to(i), dble(i)) )  call zzrc(i)

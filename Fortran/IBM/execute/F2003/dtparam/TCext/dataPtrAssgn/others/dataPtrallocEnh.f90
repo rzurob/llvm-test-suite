@@ -32,13 +32,13 @@ program main
 
     ptr(2:11) => tar
 
-    if (.not. associated(ptr,tar)) stop 1
-    if ( lbound(ptr,1) /= 2) stop 2
-    if ( ubound(ptr,1) /= 11) stop 3
-    if ( any(ptr%id .ne. (/(i,i=1,10)/))) stop 5
+    if (.not. associated(ptr,tar)) error stop 1
+    if ( lbound(ptr,1) /= 2) error stop 2
+    if ( ubound(ptr,1) /= 11) error stop 3
+    if ( any(ptr%id .ne. (/(i,i=1,10)/))) error stop 5
 
     tar = (/ ( base(20,4)(i), i=1,11)/)
-    if ( associated(ptr,tar)) stop 6
+    if ( associated(ptr,tar)) error stop 6
 
 end program
 

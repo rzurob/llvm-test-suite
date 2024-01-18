@@ -64,41 +64,41 @@
   LOGICAL(KIND(DOT_PRODUCT(L2, L8))) :: TL8(DOT_PRODUCT(I8, I2))=DOT_PRODUCT(L8, L2)
 
 
-  IF (KIND(TI0)   .NE.   1   )        STOP 8
-  IF (SIZE(TI0)   .NE.   127 )        STOP 9
-  IF (ANY( TI0    .NE.   0   ))       STOP 10
+  IF (KIND(TI0)   .NE.   1   )        ERROR STOP 8
+  IF (SIZE(TI0)   .NE.   127 )        ERROR STOP 9
+  IF (ANY( TI0    .NE.   0   ))       ERROR STOP 10
 
-  IF (KIND(TI1)   .NE.   1   )        STOP 21
-  IF (SIZE(TI1)   .NE.   127 )        STOP 22
-  IF (ANY( TI1    .NE.   127 ))       STOP 23
+  IF (KIND(TI1)   .NE.   1   )        ERROR STOP 21
+  IF (SIZE(TI1)   .NE.   127 )        ERROR STOP 22
+  IF (ANY( TI1    .NE.   127 ))       ERROR STOP 23
 
-  IF (KIND(TI8)   .NE.   8   )        STOP 31
-  IF (SIZE(TI8)   .NE.   127 )        STOP 32
-  IF (ANY( TI8    .NE.   127 ))       STOP 33
+  IF (KIND(TI8)   .NE.   8   )        ERROR STOP 31
+  IF (SIZE(TI8)   .NE.   127 )        ERROR STOP 32
+  IF (ANY( TI8    .NE.   127 ))       ERROR STOP 33
 
-  IF (KIND(TR4)   .NE.   4   )        STOP 41
-  IF (SIZE(TR4)   .NE.   127 )        STOP 42
-  IF (ANY( TR4    .NE.   127 ))       STOP 43
+  IF (KIND(TR4)   .NE.   4   )        ERROR STOP 41
+  IF (SIZE(TR4)   .NE.   127 )        ERROR STOP 42
+  IF (ANY( TR4    .NE.   127 ))       ERROR STOP 43
 
-  IF (KIND(TR16)  .NE.   16   )       STOP 51
-  IF (SIZE(TR16)  .NE.   127 )        STOP 52
-  IF (ANY( TR16   .NE.   127 ))       STOP 53
+  IF (KIND(TR16)  .NE.   16   )       ERROR STOP 51
+  IF (SIZE(TR16)  .NE.   127 )        ERROR STOP 52
+  IF (ANY( TR16   .NE.   127 ))       ERROR STOP 53
 
-  IF (KIND(TC4)   .NE.   4   )        STOP 61
-  IF (SIZE(TC4)   .NE.   127 )        STOP 62
-  IF (ANY( TC4    .NE.   (127., 0.0)))STOP 63
+  IF (KIND(TC4)   .NE.   4   )        ERROR STOP 61
+  IF (SIZE(TC4)   .NE.   127 )        ERROR STOP 62
+  IF (ANY( TC4    .NE.   (127., 0.0)))ERROR STOP 63
 
-  IF (KIND(TC16)  .NE.   16   )       STOP 71
-  IF (SIZE(TC16)  .NE.   127 )        STOP 72
-  IF (ANY( TC16   .NE.   (127., 0.0)))STOP 73
+  IF (KIND(TC16)  .NE.   16   )       ERROR STOP 71
+  IF (SIZE(TC16)  .NE.   127 )        ERROR STOP 72
+  IF (ANY( TC16   .NE.   (127., 0.0)))ERROR STOP 73
 
-  IF (KIND(TL1)   .NE.   4   )        STOP 81
-  IF (SIZE(TL1)   .NE.   127 )        STOP 82
-  IF (ANY( TL1   .NEQV. .TRUE. ))     STOP 83
+  IF (KIND(TL1)   .NE.   4   )        ERROR STOP 81
+  IF (SIZE(TL1)   .NE.   127 )        ERROR STOP 82
+  IF (ANY( TL1   .NEQV. .TRUE. ))     ERROR STOP 83
 
-  IF (KIND(TL8)   .NE.   8   )        STOP 91
-  IF (SIZE(TL8)   .NE.   127 )        STOP 92
-  IF (ANY( TL8   .NEQV. .TRUE. ))     STOP 93
+  IF (KIND(TL8)   .NE.   8   )        ERROR STOP 91
+  IF (SIZE(TL8)   .NE.   127 )        ERROR STOP 92
+  IF (ANY( TL8   .NEQV. .TRUE. ))     ERROR STOP 93
 
 
   END

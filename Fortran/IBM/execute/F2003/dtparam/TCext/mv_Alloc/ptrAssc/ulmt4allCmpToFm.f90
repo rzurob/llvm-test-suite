@@ -55,21 +55,21 @@
 
     call move_alloc(y(1)%b1, y(2)%b1)
 
-    if ( allocated(y(1)%b1) ) stop 9
-    if ( .not. allocated( y(2)%b1) ) stop 10
+    if ( allocated(y(1)%b1) ) error stop 9
+    if ( .not. allocated( y(2)%b1) ) error stop 10
 
-    if ( .not. associated(p, y(2)%b1) ) stop 11
+    if ( .not. associated(p, y(2)%b1) ) error stop 11
 
     select type ( x => y(1)%p )
         type is (integer)
-            if ( x /= 101 ) stop 21
+            if ( x /= 101 ) error stop 21
         class default
             stop 23
     end select
 
     select type ( x => y(2)%p )
         type is (logical)
-            if ( x .neqv. .true. ) stop 31
+            if ( x .neqv. .true. ) error stop 31
         class default
             stop 33
     end select
@@ -78,31 +78,31 @@
         type is ( A(4,*) )
             select type( z => x(1)%p )
                 type is (integer)
-                    if ( z /= 1 ) stop 51
+                    if ( z /= 1 ) error stop 51
                 class default
                     stop 41
             end select
             select type( z => x(2)%p )
                 type is (integer)
-                    if ( z /= 2 ) stop 52
+                    if ( z /= 2 ) error stop 52
                 class default
                     stop 43
             end select
             select type( z => x(3)%p )
                 type is (integer)
-                    if ( z /= 3 ) stop 53
+                    if ( z /= 3 ) error stop 53
                 class default
                     stop 45
             end select
             select type( z => x(4)%p )
                 type is (integer)
-                    if ( z /= 4 ) stop 54
+                    if ( z /= 4 ) error stop 54
                 class default
                     stop 47
             end select
             select type( z => x(5)%p )
                 type is (integer)
-                    if ( z /= 5 ) stop 55
+                    if ( z /= 5 ) error stop 55
                 class default
                     stop 49
             end select

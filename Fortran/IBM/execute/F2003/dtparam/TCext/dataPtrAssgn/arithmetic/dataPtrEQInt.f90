@@ -49,11 +49,11 @@ program main
 
     b%i_ptr(lb:) =>  val(ubound(val,1):1:-2)
 
-    if ( .not. associated(b%i_ptr, val(ubound(val,1):1:-2))) stop 1
-    if (lbound(b%i_ptr,1) /= 21 ) stop 3
-    if (ubound(b%i_ptr,1) /= 30 ) stop 5
+    if ( .not. associated(b%i_ptr, val(ubound(val,1):1:-2))) error stop 1
+    if (lbound(b%i_ptr,1) /= 21 ) error stop 3
+    if (ubound(b%i_ptr,1) /= 30 ) error stop 5
 
-    if ( any ( b%i_ptr == (/( i, i=120,101,-2 ) /) .neqv. .TRUE. ) ) stop 7
+    if ( any ( b%i_ptr == (/( i, i=120,101,-2 ) /) .neqv. .TRUE. ) ) error stop 7
 
  End program
 

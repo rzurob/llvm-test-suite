@@ -26,13 +26,13 @@ contains
   subroutine foo(x, y)
     class(dt) :: x
     integer :: y
-    if (x%i /= y) stop 10
+    if (x%i /= y) error stop 10
   end subroutine
 
   subroutine foo2(x, y)
     class(dt2) :: x
     integer :: y
-    if (x%i /= (y/2)) stop 11
+    if (x%i /= (y/2)) error stop 11
   end subroutine
 
 end module
@@ -63,9 +63,9 @@ do count = lbound(b,1), ubound(b,1)
   end do
 end do
 call move_alloc(a,b)
-if (allocated(a)) stop 1
-if (.not.allocated(b)) stop 2
-if (.not.associated(p,b)) stop 3
+if (allocated(a)) error stop 1
+if (.not.allocated(b)) error stop 2
+if (.not.associated(p,b)) error stop 3
 do count = lbound(b,1), ubound(b,1)
   do count2 = lbound(b,2), ubound(b,2)
     call b(count,count2)%foo(5)

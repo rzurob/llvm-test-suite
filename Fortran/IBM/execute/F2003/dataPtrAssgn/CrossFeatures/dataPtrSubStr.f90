@@ -47,17 +47,17 @@
   DO J =I, 100
 
     Ptr(I:, J:) => Arr(I:, J:)(1:LEN(Str))
-    IF (.NOT. ASSOCIATED(Ptr, Arr(I:, J:) ))    STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/I , J/)))       STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/N,  N/)))       STOP 13
-    IF (ANY( Ptr(I:, J:) .NE. Str ))            STOP 14
+    IF (.NOT. ASSOCIATED(Ptr, Arr(I:, J:) ))    ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/I , J/)))       ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/N,  N/)))       ERROR STOP 13
+    IF (ANY( Ptr(I:, J:) .NE. Str ))            ERROR STOP 14
 
     Ptr(I:J, I:J) => Arr1(1:N*N-(J-I+1)*(J-I+1))(1:LEN(Str))
-    IF (.NOT. ASSOCIATED(Ptr))                  STOP 21
-    IF (SIZE(Ptr) .NE. (J-I+1)*(J-I+1))         STOP 21
-    IF (ANY( LBOUND(Ptr) .NE. (/I , I /)))      STOP 22
-    IF (ANY( UBOUND(Ptr) .NE. (/J , J /)))      STOP 23
-    IF (ANY( Ptr(I:J, I:J) .NE. Str ))          STOP 24
+    IF (.NOT. ASSOCIATED(Ptr))                  ERROR STOP 21
+    IF (SIZE(Ptr) .NE. (J-I+1)*(J-I+1))         ERROR STOP 21
+    IF (ANY( LBOUND(Ptr) .NE. (/I , I /)))      ERROR STOP 22
+    IF (ANY( UBOUND(Ptr) .NE. (/J , J /)))      ERROR STOP 23
+    IF (ANY( Ptr(I:J, I:J) .NE. Str ))          ERROR STOP 24
 
   END DO
   END DO

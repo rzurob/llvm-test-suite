@@ -26,7 +26,7 @@
   IMPLICIT NONE
 
 1   A1:ASSOCIATE (As  => 1 )
-5     IF ( As .NE. 1 ) STOP 11
+5     IF ( As .NE. 1 ) ERROR STOP 11
 9   END ASSOCIATE A1
 
   END

@@ -54,14 +54,14 @@
 		tar = ( / (A(4)(-i), i=1,20) /)
 
 		allocate(a2, source = base(4)( tar ))
-		if ( .not. allocated(a2) ) stop 3
-		if ( .not. associated(a2%p, tar) ) stop 5
+		if ( .not. allocated(a2) ) error stop 3
+		if ( .not. associated(a2%p, tar) ) error stop 5
 
 		a1 = a2
 
-		if ( .not. associated(a1%p) ) stop 7
-		if ( lbound(a1%p,1) /= 10) stop 11
-		if ( ubound(a1%p,1) /= 19) stop 13
+		if ( .not. associated(a1%p) ) error stop 7
+		if ( lbound(a1%p,1) /= 10) error stop 11
+		if ( ubound(a1%p,1) /= 19) error stop 13
 
 		select type (x=>a1%p)
 		    type is (A(4))

@@ -66,9 +66,9 @@
   SELECT TYPE (Ptr => PPtr)
   CLASS IS (DT)
 
-    IF (TRIM(Ptr%C0) .NE. "0") STOP 31
-    IF (TRIM(Ptr%C1) .NE. "1") STOP 32
-    IF (TRIM(Ptr%C2) .NE. "2") STOP 33
+    IF (TRIM(Ptr%C0) .NE. "0") ERROR STOP 31
+    IF (TRIM(Ptr%C1) .NE. "1") ERROR STOP 32
+    IF (TRIM(Ptr%C2) .NE. "2") ERROR STOP 33
 
   CLASS DEFAULT
     STOP 40

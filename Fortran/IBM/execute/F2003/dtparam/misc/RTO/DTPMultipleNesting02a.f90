@@ -58,20 +58,20 @@ PROGRAM DTPMultipleNesting02a
 
       DO i = 1, 10
         ALLOCATE( Base(4,5) :: b0%cmp1(i)%ptr )
-        IF ( LEN(b0%cmp1(i)%ptr%Carr)       .NE.        5 )  STOP 11
-        IF ( ANY((b0%cmp1(i)%ptr%Carr)      .NE. 'AAAAA') )  STOP 12
-        IF ( SIZE(b0%cmp1(i)%ptr%Rarr)      .NE.        5 )  STOP 13
-        IF ( LBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        1 )  STOP 14
-        IF ( UBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        5 )  STOP 15
-        IF ( ANY((b0%cmp1(i)%ptr%Rarr)      .NE.       4) )  STOP 16
+        IF ( LEN(b0%cmp1(i)%ptr%Carr)       .NE.        5 )  ERROR STOP 11
+        IF ( ANY((b0%cmp1(i)%ptr%Carr)      .NE. 'AAAAA') )  ERROR STOP 12
+        IF ( SIZE(b0%cmp1(i)%ptr%Rarr)      .NE.        5 )  ERROR STOP 13
+        IF ( LBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        1 )  ERROR STOP 14
+        IF ( UBOUND(b0%cmp1(i)%ptr%Rarr, 1) .NE.        5 )  ERROR STOP 15
+        IF ( ANY((b0%cmp1(i)%ptr%Rarr)      .NE.       4) )  ERROR STOP 16
 
         ALLOCATE( Base(4,5) :: b0%cmp2(i)%ptr )
-        IF ( LEN(b0%cmp2(i)%ptr%Carr)       .NE.        5 )  STOP 17
-        IF ( ANY((b0%cmp2(i)%ptr%Carr)      .NE. 'AAAAA') )  STOP 18
-        IF ( SIZE(b0%cmp2(i)%ptr%Rarr)      .NE.        5 )  STOP 19
-        IF ( LBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        1 )  STOP 20
-        IF ( UBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        5 )  STOP 21
-        IF ( ANY((b0%cmp2(i)%ptr%Rarr)      .NE.       4) )  STOP 22
+        IF ( LEN(b0%cmp2(i)%ptr%Carr)       .NE.        5 )  ERROR STOP 17
+        IF ( ANY((b0%cmp2(i)%ptr%Carr)      .NE. 'AAAAA') )  ERROR STOP 18
+        IF ( SIZE(b0%cmp2(i)%ptr%Rarr)      .NE.        5 )  ERROR STOP 19
+        IF ( LBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        1 )  ERROR STOP 20
+        IF ( UBOUND(b0%cmp2(i)%ptr%Rarr, 1) .NE.        5 )  ERROR STOP 21
+        IF ( ANY((b0%cmp2(i)%ptr%Rarr)      .NE.       4) )  ERROR STOP 22
       END DO
 
 END PROGRAM DTPMultipleNesting02a

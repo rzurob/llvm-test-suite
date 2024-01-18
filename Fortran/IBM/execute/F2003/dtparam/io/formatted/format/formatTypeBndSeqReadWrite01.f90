@@ -146,7 +146,7 @@ program formatTypeBndSeqReadWrite01
 
   deallocate(base1)
 
-  if(allocated(base1))      stop 14
+  if(allocated(base1))      error stop 14
 
   allocate(child(2,3,4) :: base1(2))
 

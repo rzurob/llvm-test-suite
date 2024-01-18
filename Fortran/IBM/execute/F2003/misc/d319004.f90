@@ -20,9 +20,9 @@ module m
 
         cc => c
 
-        if (len(cc) /= len(c1)) stop 5
+        if (len(cc) /= len(c1)) error stop 5
 
-        if (cc /= c1) stop 10
+        if (cc /= c1) error stop 10
     end subroutine
 end module
 

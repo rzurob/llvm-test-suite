@@ -77,11 +77,11 @@
 
   T = ProcPtr(1024, C1, K, C2)
 
-  IF ( .NOT. ASSOCIATED(ProcPtr, F) ) STOP 10
+  IF ( .NOT. ASSOCIATED(ProcPtr, F) ) ERROR STOP 10
   DO I=1, 1024
-    IF (  ANY ( T(I)%C1 .NE. C1    ) ) STOP 11
-    IF (  ANY ( T(I)%I  .NE. K     ) ) STOP 12
-    IF (  ANY ( T(I)%C2 .NE. C2    ) ) STOP 13
+    IF (  ANY ( T(I)%C1 .NE. C1    ) ) ERROR STOP 11
+    IF (  ANY ( T(I)%I  .NE. K     ) ) ERROR STOP 12
+    IF (  ANY ( T(I)%C2 .NE. C2    ) ) ERROR STOP 13
   END DO
 
   END PROGRAM

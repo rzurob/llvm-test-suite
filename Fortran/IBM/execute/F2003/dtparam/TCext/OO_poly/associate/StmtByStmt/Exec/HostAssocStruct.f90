@@ -61,13 +61,13 @@
 
   ASSOCIATE (T =>  Child(4)(BaseId=-1, ChildId=-2, IntArr=(/-1,-2,-3/)))
   ASSOCIATE (As0  => T, As1 => T%Base, As2 => T%IntArr )
-    IF ( As0%GetId()      .NE. -2 )            STOP 30
-    IF ( As0%Base%GetId() .NE. -1 )            STOP 31
-    IF ( ANY(As0%IntArr   .NE. (/-1,-2,-3/)) ) STOP 32
+    IF ( As0%GetId()      .NE. -2 )            ERROR STOP 30
+    IF ( As0%Base%GetId() .NE. -1 )            ERROR STOP 31
+    IF ( ANY(As0%IntArr   .NE. (/-1,-2,-3/)) ) ERROR STOP 32
 
-    IF ( As1%GetId() .NE. -1 ) STOP  40
+    IF ( As1%GetId() .NE. -1 ) ERROR STOP  40
 
-    IF ( ANY(As2 .NE. (/-1,-2,-3/)) ) STOP 50
+    IF ( ANY(As2 .NE. (/-1,-2,-3/)) ) ERROR STOP 50
 
   END ASSOCIATE
   END ASSOCIATE

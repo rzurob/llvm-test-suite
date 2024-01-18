@@ -59,36 +59,36 @@
   TYPE(DT0) :: T1
   TYPE(DT1) :: T2
 
-  IF ( KIND(T1%IK1) .NE. 1 )      STOP 11
-  IF ( T1%IK1       .NE. 1 )      STOP 12
+  IF ( KIND(T1%IK1) .NE. 1 )      ERROR STOP 11
+  IF ( T1%IK1       .NE. 1 )      ERROR STOP 12
 
-  IF ( KIND(T1%IK2) .NE. 2 )      STOP 21
-  IF ( T1%IK2       .NE. 2 )      STOP 22
+  IF ( KIND(T1%IK2) .NE. 2 )      ERROR STOP 21
+  IF ( T1%IK2       .NE. 2 )      ERROR STOP 22
 
-  IF ( KIND(T1%IK)  .NE. 4 )      STOP 31
-  IF ( T1%IK        .NE. 4 )      STOP 32
+  IF ( KIND(T1%IK)  .NE. 4 )      ERROR STOP 31
+  IF ( T1%IK        .NE. 4 )      ERROR STOP 32
 
-  IF ( KIND(T1%IK4) .NE. 4 )      STOP 41
-  IF ( T1%IK4       .NE. 4 )      STOP 42
+  IF ( KIND(T1%IK4) .NE. 4 )      ERROR STOP 41
+  IF ( T1%IK4       .NE. 4 )      ERROR STOP 42
 
-  IF ( KIND(T1%IK8) .NE. 8 )      STOP 51
-  IF ( T1%IK8       .NE. 8 )      STOP 52
+  IF ( KIND(T1%IK8) .NE. 8 )      ERROR STOP 51
+  IF ( T1%IK8       .NE. 8 )      ERROR STOP 52
 
 
-  IF ( LEN(T2%CL1)   .NE. 1 )      STOP 61
-  IF ( TRIM(T2%CL1)  .NE. "1" )    STOP 62
+  IF ( LEN(T2%CL1)   .NE. 1 )      ERROR STOP 61
+  IF ( TRIM(T2%CL1)  .NE. "1" )    ERROR STOP 62
 
-  IF ( LEN(T2%CL2)   .NE. 2 )      STOP 71
-  IF ( TRIM(T2%CL2)  .NE. "2" )    STOP 72
+  IF ( LEN(T2%CL2)   .NE. 2 )      ERROR STOP 71
+  IF ( TRIM(T2%CL2)  .NE. "2" )    ERROR STOP 72
 
-  IF ( LEN(T2%CL)    .NE. 4 )      STOP 81
-  IF ( TRIM(T2%CL)   .NE. "4" )    STOP 82
+  IF ( LEN(T2%CL)    .NE. 4 )      ERROR STOP 81
+  IF ( TRIM(T2%CL)   .NE. "4" )    ERROR STOP 82
 
-  IF ( LEN(T2%CL4)   .NE. 4 )      STOP 91
-  IF ( TRIM(T2%CL4)  .NE. "4" )    STOP 92
+  IF ( LEN(T2%CL4)   .NE. 4 )      ERROR STOP 91
+  IF ( TRIM(T2%CL4)  .NE. "4" )    ERROR STOP 92
 
-  IF ( LEN(T2%CL8)   .NE. 8 )      STOP 101
-  IF ( TRIM(T2%CL8)  .NE. "8" )    STOP 102
+  IF ( LEN(T2%CL8)   .NE. 8 )      ERROR STOP 101
+  IF ( TRIM(T2%CL8)  .NE. "8" )    ERROR STOP 102
 
   END
 

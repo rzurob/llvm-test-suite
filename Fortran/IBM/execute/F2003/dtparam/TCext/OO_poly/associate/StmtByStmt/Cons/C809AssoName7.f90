@@ -59,13 +59,13 @@
   TYPE (Child(4,20)) :: V(3) = (/ (Child(4,20)(i), i = 1, 3) /)
 
     ASSOCIATE ( V => V((/1,2,3/)) )
-      IF ( ANY(SHAPE(V)  .NE. (/3/)))      STOP 50
-      IF ( ANY(V%GetId() .NE. (/1,2,3/)))  STOP 51
+      IF ( ANY(SHAPE(V)  .NE. (/3/)))      ERROR STOP 50
+      IF ( ANY(V%GetId() .NE. (/1,2,3/)))  ERROR STOP 51
 
       ASSOCIATE ( V => V((/2,2/))  )
-        IF ( ANY(SHAPE(V)  .NE. (/2/)))   STOP 52
-        IF ( ANY(V%Id      .NE. (/2,2/))) STOP 53
-        IF ( ANY(V%GetId() .NE. (/2,2/))) STOP 54
+        IF ( ANY(SHAPE(V)  .NE. (/2/)))   ERROR STOP 52
+        IF ( ANY(V%Id      .NE. (/2,2/))) ERROR STOP 53
+        IF ( ANY(V%GetId() .NE. (/2,2/))) ERROR STOP 54
       END ASSOCIATE
     END ASSOCIATE
 

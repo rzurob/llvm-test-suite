@@ -179,11 +179,11 @@ subroutine sub
    a1=[tA(4)(i1,r1),tA(4)(i1(1:1,3:3),r1)]
 
    !---verify a1----!
-   if(any(a1(1)%i1(1,:) /= [1,3,5]))                   stop 10
-   if(any(a1(1)%i1(2,:) /= [2,4,6]))                   stop 11
-   if(.not. precision_r4(a1(1)%r1,1.2_4))              stop 12
-   if(any(a1(2)%i1 /= 5))                              stop 13
-   if(.not. precision_r4(a1(2)%r1,1.2_4))              stop 14
+   if(any(a1(1)%i1(1,:) /= [1,3,5]))                   error stop 10
+   if(any(a1(1)%i1(2,:) /= [2,4,6]))                   error stop 11
+   if(.not. precision_r4(a1(1)%r1,1.2_4))              error stop 12
+   if(any(a1(2)%i1 /= 5))                              error stop 13
+   if(.not. precision_r4(a1(2)%r1,1.2_4))              error stop 14
 
    allocate(a2)
 
@@ -191,9 +191,9 @@ subroutine sub
    a2=a1(2)
 
    !--- verify a2---!
-   if(.not. precision_r4(a2%r1,1.2_4))                 stop 15
-   if(any(a2%i1 /= 5))                                 stop 16
-   if(.not. precision_r4(a2%r1,1.2_4))                 stop 17
+   if(.not. precision_r4(a2%r1,1.2_4))                 error stop 15
+   if(any(a2%i1 /= 5))                                 error stop 16
+   if(.not. precision_r4(a2%r1,1.2_4))                 error stop 17
 
    allocate(a3(size(a1)))
 
@@ -201,37 +201,37 @@ subroutine sub
    a3=tA(4)(i1(2:2,3:3),r1(:,:))
 
    !--- verify a3---!
-   if(.not. precision_r4(a3(1)%r1,1.2_4))              stop 18
-   if(any(a3(1)%i1 /= 6))                              stop 19
-   if(.not. precision_r4(a3(1)%r1,1.2_4))              stop 20
-   if(.not. precision_r4(a3(2)%r1,1.2_4))              stop 21
-   if(any(a3(2)%i1 /= 6))                              stop 22
-   if(.not. precision_r4(a3(2)%r1,1.2_4))              stop 23
+   if(.not. precision_r4(a3(1)%r1,1.2_4))              error stop 18
+   if(any(a3(1)%i1 /= 6))                              error stop 19
+   if(.not. precision_r4(a3(1)%r1,1.2_4))              error stop 20
+   if(.not. precision_r4(a3(2)%r1,1.2_4))              error stop 21
+   if(any(a3(2)%i1 /= 6))                              error stop 22
+   if(.not. precision_r4(a3(2)%r1,1.2_4))              error stop 23
 
    ! call assignA2
    a4=tA(8)(i2,r2)
 
    !--- verify a4---!
-   if(.not. precision_r8(a4%r1,1.2_8))                 stop 24
-   if(any(a4%i1(1,:) /= [1,3,5]))                      stop 25
-   if(any(a4%i1(2,:) /= [2,4,6]))                      stop 26
+   if(.not. precision_r8(a4%r1,1.2_8))                 error stop 24
+   if(any(a4%i1(1,:) /= [1,3,5]))                      error stop 25
+   if(any(a4%i1(2,:) /= [2,4,6]))                      error stop 26
 
    ! call assignChild1
     tc1= reshape([tchild(3,2)(c1,a1(2),g1,a1(1))],(/1,1/))
 
    !--- verify tc1---!
-   if(any(tc1(1,1)%c1(1,:) /= ["abc","def"]))          stop 28
-   if(any(tc1(1,1)%c1(2,:) /= ["ABC","DEF"]))          stop 29
-   if(any(tc1(1,1)%a1comp(1)%i1(1,:) /= 5))            stop 30
-   if(any(tc1(1,1)%a1comp(2)%i1(1,:) /= 5))            stop 31
-   if(.not. precision_r4(tc1(1,1)%a1comp(1)%r1,1.2_4)) stop 32
-   if(.not. precision_r4(tc1(1,1)%a1comp(2)%r1,1.2_4)) stop 33
+   if(any(tc1(1,1)%c1(1,:) /= ["abc","def"]))          error stop 28
+   if(any(tc1(1,1)%c1(2,:) /= ["ABC","DEF"]))          error stop 29
+   if(any(tc1(1,1)%a1comp(1)%i1(1,:) /= 5))            error stop 30
+   if(any(tc1(1,1)%a1comp(2)%i1(1,:) /= 5))            error stop 31
+   if(.not. precision_r4(tc1(1,1)%a1comp(1)%r1,1.2_4)) error stop 32
+   if(.not. precision_r4(tc1(1,1)%a1comp(2)%r1,1.2_4)) error stop 33
 
-   if(any(tc1(1,1)%g1(1,:) .neqv. [.true.,.true.]))    stop 34
-   if(any(tc1(1,1)%g1(2,:) .neqv. [.false.,.false.]))  stop 35
-   if(any(tc1(1,1)%a2comp%i1(1,:) /= [1,3,5]))         stop 36
-   if(any(tc1(1,1)%a2comp%i1(2,:) /= [2,4,6]))         stop 37
-   if(.not. precision_r4(tc1(1,1)%a2comp%r1,1.2_4))    stop 38
+   if(any(tc1(1,1)%g1(1,:) .neqv. [.true.,.true.]))    error stop 34
+   if(any(tc1(1,1)%g1(2,:) .neqv. [.false.,.false.]))  error stop 35
+   if(any(tc1(1,1)%a2comp%i1(1,:) /= [1,3,5]))         error stop 36
+   if(any(tc1(1,1)%a2comp%i1(2,:) /= [2,4,6]))         error stop 37
+   if(.not. precision_r4(tc1(1,1)%a2comp%r1,1.2_4))    error stop 38
 
    allocate(tchild(3,2) :: tb1(1,1))
 
@@ -241,17 +241,17 @@ subroutine sub
    !--- verify tb1----!
    select type(x=>tb1(1,1))
       type is(tchild(*,2))
-        if(any(x%c1(1,:) /= ["abc","def"]))           stop 39
-        if(any(x%c1(2,:) /= ["ABC","DEF"]))           stop 40
-        if(any(x%a1comp(1)%i1(1,:) /= 5))             stop 41
-        if(any(x%a1comp(2)%i1(1,:) /= 5))             stop 42
-        if(.not. precision_r4(x%a1comp(1)%r1,1.2_4))  stop 43
-        if(.not. precision_r4(x%a1comp(2)%r1,1.2_4))  stop 44
-        if(any(x%g1(1,:) .neqv. [.true.,.true.]))     stop 45
-        if(any(x%g1(2,:) .neqv. [.false.,.false.]))   stop 46
-        if(any(x%a2comp%i1(1,:) /= [1,3,5]))          stop 47
-        if(any(x%a2comp%i1(2,:) /= [2,4,6]))          stop 48
-        if(.not. precision_r4(x%a2comp%r1,1.2_4))     stop 49
+        if(any(x%c1(1,:) /= ["abc","def"]))           error stop 39
+        if(any(x%c1(2,:) /= ["ABC","DEF"]))           error stop 40
+        if(any(x%a1comp(1)%i1(1,:) /= 5))             error stop 41
+        if(any(x%a1comp(2)%i1(1,:) /= 5))             error stop 42
+        if(.not. precision_r4(x%a1comp(1)%r1,1.2_4))  error stop 43
+        if(.not. precision_r4(x%a1comp(2)%r1,1.2_4))  error stop 44
+        if(any(x%g1(1,:) .neqv. [.true.,.true.]))     error stop 45
+        if(any(x%g1(2,:) .neqv. [.false.,.false.]))   error stop 46
+        if(any(x%a2comp%i1(1,:) /= [1,3,5]))          error stop 47
+        if(any(x%a2comp%i1(2,:) /= [2,4,6]))          error stop 48
+        if(.not. precision_r4(x%a2comp%r1,1.2_4))     error stop 49
 
       class default
         stop 101
@@ -263,12 +263,12 @@ subroutine sub
    tb2(1,1)=tc1(1,1)
 
    !--- verify tb2---!
-   if(any(tb2(1,1)%c1(1,:) /= ["abc","def"]))         stop 50
-   if(any(tb2(1,1)%c1(2,:) /= ["ABC","DEF"]))         stop 51
-   if(any(tb2(1,1)%a1comp(1)%i1(1,:) /= 5))           stop 52
-   if(any(tb2(1,1)%a1comp(2)%i1(1,:) /= 5))           stop 53
-   if(.not. precision_r4(tb2(1,1)%a1comp(1)%r1,1.2_4))   stop 54
-   if(.not. precision_r4(tb2(1,1)%a1comp(2)%r1,1.2_4))   stop 55
+   if(any(tb2(1,1)%c1(1,:) /= ["abc","def"]))         error stop 50
+   if(any(tb2(1,1)%c1(2,:) /= ["ABC","DEF"]))         error stop 51
+   if(any(tb2(1,1)%a1comp(1)%i1(1,:) /= 5))           error stop 52
+   if(any(tb2(1,1)%a1comp(2)%i1(1,:) /= 5))           error stop 53
+   if(.not. precision_r4(tb2(1,1)%a1comp(1)%r1,1.2_4))   error stop 54
+   if(.not. precision_r4(tb2(1,1)%a1comp(2)%r1,1.2_4))   error stop 55
 
    deallocate(tb1)
 
@@ -280,17 +280,17 @@ subroutine sub
            tb1(1,1)=tchild(3,4)(c1,a2,g2,a4)
 
            !--- verify tb1---!
-           if(any(tb1(1,1)%c1(1,:) /= ["abc","def"]))           stop 56
-           if(any(tb1(1,1)%c1(2,:) /= ["ABC","DEF"]))           stop 57
-           if(any(tb1(1,1)%a1comp(1)%i1(1,:) /= 5))             stop 58
-           if(any(tb1(1,1)%a1comp(2)%i1(1,:) /= 5))             stop 59
-           if(.not. precision_r4(tb1(1,1)%a1comp(1)%r1,1.2_4))  stop 60
-           if(.not. precision_r4(tb1(1,1)%a1comp(2)%r1,1.2_4))  stop 61
-           if(any(tb1(1,1)%g1(1,:) .neqv. [.true.,.true.]))     stop 62
-           if(any(tb1(1,1)%g1(2,:) .neqv. [.false.,.false.]))   stop 63
-           if(any(tb1(1,1)%a2comp%i1(1,:) /= [1,3,5]))          stop 64
-           if(any(tb1(1,1)%a2comp%i1(2,:) /= [2,4,6]))          stop 65
-           if(.not. precision_r8(tb1(1,1)%a2comp%r1,1.2_8))     stop 66
+           if(any(tb1(1,1)%c1(1,:) /= ["abc","def"]))           error stop 56
+           if(any(tb1(1,1)%c1(2,:) /= ["ABC","DEF"]))           error stop 57
+           if(any(tb1(1,1)%a1comp(1)%i1(1,:) /= 5))             error stop 58
+           if(any(tb1(1,1)%a1comp(2)%i1(1,:) /= 5))             error stop 59
+           if(.not. precision_r4(tb1(1,1)%a1comp(1)%r1,1.2_4))  error stop 60
+           if(.not. precision_r4(tb1(1,1)%a1comp(2)%r1,1.2_4))  error stop 61
+           if(any(tb1(1,1)%g1(1,:) .neqv. [.true.,.true.]))     error stop 62
+           if(any(tb1(1,1)%g1(2,:) .neqv. [.false.,.false.]))   error stop 63
+           if(any(tb1(1,1)%a2comp%i1(1,:) /= [1,3,5]))          error stop 64
+           if(any(tb1(1,1)%a2comp%i1(2,:) /= [2,4,6]))          error stop 65
+           if(.not. precision_r8(tb1(1,1)%a2comp%r1,1.2_8))     error stop 66
 
        class default
 

@@ -33,17 +33,17 @@ module m
 
             allocate(old, source = (20.1_4, 40.1_4))
 
-            if ( .not. allocated(old) ) stop 11
+            if ( .not. allocated(old) ) error stop 11
 
             allocate ( T :: new)
 
-            if ( .not. allocated(new) ) stop 12
+            if ( .not. allocated(new) ) error stop 12
 
             call move_alloc(old,new)
 
-            if ( allocated(old) ) stop 21
+            if ( allocated(old) ) error stop 21
 
-            if ( .not. allocated(new) ) stop 22
+            if ( .not. allocated(new) ) error stop 22
 
             select type(new)
                  type is (complex)

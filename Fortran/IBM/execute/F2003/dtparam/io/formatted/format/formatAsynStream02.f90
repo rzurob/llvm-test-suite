@@ -115,7 +115,7 @@ subroutine readData(arg,unit)
       type is(child(*,4,*))
 
         inquire(unit,pos=pos)
-        if(pos /= 1)           stop 14
+        if(pos /= 1)           error stop 14
 
         read(unit,'(tr5,a3,tr5,a3,tr11)',advance='no',pos=pos, &
              asynchronous='yes',id=idvar,iostat=ios,iomsg=msg) arg(2)%c1
@@ -131,7 +131,7 @@ subroutine readData(arg,unit)
 
         inquire(unit,pos=pos)
 
-        if(pos /= 28)      stop 16
+        if(pos /= 28)      error stop 16
 
         ! read second record
         read(unit,'(4i3,tr7)',advance='no',pos=pos , &
@@ -147,7 +147,7 @@ subroutine readData(arg,unit)
         wait(unit,id=idvar)
 
         inquire(unit,pos=pos)
-        if(pos /= 47)      stop 18
+        if(pos /= 47)      error stop 18
 
         ! read third record
         read(unit,'(tr4,l1,tr4,l1,tr8)',advance='no',pos=pos , &
@@ -163,7 +163,7 @@ subroutine readData(arg,unit)
         end if
 
         inquire(unit,pos=pos)
-        if(pos /= 65)           stop 20
+        if(pos /= 65)           error stop 20
 
         ! read fourth record
         read(unit,'(tr5,a3,tr5,a3,tr11)',advance='no',pos=pos, &
@@ -180,7 +180,7 @@ subroutine readData(arg,unit)
 
         inquire(unit,pos=pos)
 
-        if(pos /= 92)      stop 22
+        if(pos /= 92)      error stop 22
 
         ! read fifth record
         read(unit,'(bz,i4,i5,2i6,tr7)',advance='no',pos=pos , &
@@ -196,7 +196,7 @@ subroutine readData(arg,unit)
         wait(unit,id=idvar)
 
         inquire(unit,pos=pos)
-        if(pos /= 120)      stop  24
+        if(pos /= 120)      error stop  24
 
         ! read sixth record
         read(unit,'(l6,tr1,l7)',advance='no',pos=pos , &

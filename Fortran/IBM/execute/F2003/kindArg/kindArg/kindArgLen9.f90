@@ -29,8 +29,8 @@
 
 
   DO I = 0, 127
-    IF (     LEN(STRING=CC(I)(1:I), KIND=K%KIND)    .NE. I )         STOP 11
-    IF (KIND(LEN(STRING=CC(I)(1:I), KIND=K%KIND))   .NE. K%KIND ) STOP 12
+    IF (     LEN(STRING=CC(I)(1:I), KIND=K%KIND)    .NE. I )         ERROR STOP 11
+    IF (KIND(LEN(STRING=CC(I)(1:I), KIND=K%KIND))   .NE. K%KIND ) ERROR STOP 12
   END DO
 
 

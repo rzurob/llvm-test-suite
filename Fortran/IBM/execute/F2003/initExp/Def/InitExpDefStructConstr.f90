@@ -68,30 +68,30 @@
 
   DO I=1, 10
   DO J=1, 10
-    IF (ALLOCATED(T1%Arr(I,J)%I))              STOP 11
-    IF (ALLOCATED(T1%Arr(I,J)%C))              STOP 12
-    IF (ALLOCATED(T1%Arr(I,J)%R))              STOP 13
-    IF (ASSOCIATED(T1%Arr(I,J)%PRocPtr))       STOP 14
+    IF (ALLOCATED(T1%Arr(I,J)%I))              ERROR STOP 11
+    IF (ALLOCATED(T1%Arr(I,J)%C))              ERROR STOP 12
+    IF (ALLOCATED(T1%Arr(I,J)%R))              ERROR STOP 13
+    IF (ASSOCIATED(T1%Arr(I,J)%PRocPtr))       ERROR STOP 14
   END DO
   END DO
 
   DO I=1, 10
-    IF (ANY(LBOUND(Arr1(I)%Arr)   .NE. (/1, 1 /)) )   STOP 21
-    IF (ANY(UBOUND(Arr1(I)%Arr)   .NE. (/10,10/)) )   STOP 22
+    IF (ANY(LBOUND(Arr1(I)%Arr)   .NE. (/1, 1 /)) )   ERROR STOP 21
+    IF (ANY(UBOUND(Arr1(I)%Arr)   .NE. (/10,10/)) )   ERROR STOP 22
     DO J=1, 10
     DO K=1, 10
-      IF (ALLOCATED(Arr1(I)%Arr(J,K)%I) ) STOP 23
-      IF (ALLOCATED(Arr1(I)%Arr(J,K)%C) ) STOP 24
-      IF (ALLOCATED(Arr1(I)%Arr(J,K)%R) ) STOP 25
+      IF (ALLOCATED(Arr1(I)%Arr(J,K)%I) ) ERROR STOP 23
+      IF (ALLOCATED(Arr1(I)%Arr(J,K)%C) ) ERROR STOP 24
+      IF (ALLOCATED(Arr1(I)%Arr(J,K)%R) ) ERROR STOP 25
     END DO
     END DO
   END DO
 
 
   DO I=1, 10
-    IF (ALLOCATED(Arr2(I)%I) )                      STOP 33
-    IF (ALLOCATED(Arr2(I)%C) )                      STOP 34
-    IF (ALLOCATED(Arr2(I)%R) )                      STOP 35
+    IF (ALLOCATED(Arr2(I)%I) )                      ERROR STOP 33
+    IF (ALLOCATED(Arr2(I)%C) )                      ERROR STOP 34
+    IF (ALLOCATED(Arr2(I)%R) )                      ERROR STOP 35
   END DO
 
   END

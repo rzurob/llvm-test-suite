@@ -44,19 +44,19 @@
 
   TYPE(dt(n*2)) b(n-1)
 
-  IF (b%l                .NE. 4)  STOP 11
-  IF (b(1)%arr%l         .NE. 4)  STOP 12
-  IF (SIZE(b(1)%arr)     .NE. 4)  STOP 13
-  IF (lbound(b(1)%arr,1) .NE. 4)  STOP 14
-  IF (ubound(b(1)%arr,1) .NE. 7)  STOP 15
-  IF (len(b(1)%arr(1)%c) .NE. 4)  STOP 16
+  IF (b%l                .NE. 4)  ERROR STOP 11
+  IF (b(1)%arr%l         .NE. 4)  ERROR STOP 12
+  IF (SIZE(b(1)%arr)     .NE. 4)  ERROR STOP 13
+  IF (lbound(b(1)%arr,1) .NE. 4)  ERROR STOP 14
+  IF (ubound(b(1)%arr,1) .NE. 7)  ERROR STOP 15
+  IF (len(b(1)%arr(1)%c) .NE. 4)  ERROR STOP 16
 
   do i = 1, n-1
     b(i)%arr%c = '43215'
   end do
 
-  IF (ANY(b(1)%arr%c     .NE. "4321")) STOP 17
-  IF (ANY(b%arr(2*n)%c     .NE. "4321")) STOP 18
+  IF (ANY(b(1)%arr%c     .NE. "4321")) ERROR STOP 17
+  IF (ANY(b%arr(2*n)%c     .NE. "4321")) ERROR STOP 18
 
   END SUBROUTINE
   END

@@ -40,9 +40,9 @@ program main
 
     e1%p(3:3,0:0,4:6) => e1%tar
 
-    if ( .not. associated(e1%p)) stop 1
-    if ( any (lbound(e1%p) .ne. (/3,0,4/))) stop 3
-    if ( any (ubound(e1%p) .ne. (/3,0,6/))) stop 5
+    if ( .not. associated(e1%p)) error stop 1
+    if ( any (lbound(e1%p) .ne. (/3,0,4/))) error stop 3
+    if ( any (ubound(e1%p) .ne. (/3,0,6/))) error stop 5
 
     print *, e1%p
 

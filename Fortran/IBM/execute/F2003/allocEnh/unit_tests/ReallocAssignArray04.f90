@@ -14,6 +14,6 @@ byte, allocatable :: a(:)
 byte b(5)
 b = (/(i,i=1,5)/)
 a = b
-if (any(shape(a) /= (/5/))) stop 1
-if (any(a /= (/1,2,3,4,5/))) stop 2
+if (any(shape(a) /= (/5/))) error stop 1
+if (any(a /= (/1,2,3,4,5/))) error stop 2
 end

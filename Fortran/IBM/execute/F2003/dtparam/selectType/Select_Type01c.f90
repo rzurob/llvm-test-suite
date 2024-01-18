@@ -56,7 +56,7 @@
       tgt%my_arr=(/ (I, I = 1, len1) /)
 
       ALLOCATE(Child(k1,len1):: child1)
-      IF ( .NOT. ALLOCATED(child1)) STOP 10
+      IF ( .NOT. ALLOCATED(child1)) ERROR STOP 10
 
       CALL sub2
 
@@ -68,7 +68,7 @@
         CLASS IS (Child(k1,*))
            !ALLOCATE(Base(k1,len1):: A%Cmp) ! passes if this line is added
            A%Cmp => tgt
-           IF ( .NOT. ASSOCIATED(A%Cmp)) STOP 20
+           IF ( .NOT. ASSOCIATED(A%Cmp)) ERROR STOP 20
            CALL sub1(A%Cmp)
 
         CLASS IS (Base(k1,*))
@@ -89,7 +89,7 @@
            STOP 11
 
         TYPE IS (Base(k1,*))
-          IF (SIZE(A%my_arr) .NE. len1) STOP 12
+          IF (SIZE(A%my_arr) .NE. len1) ERROR STOP 12
 
         CLASS DEFAULT
            STOP 13

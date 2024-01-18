@@ -88,17 +88,17 @@
 
   ASSOCIATE ( As => Fun(Fun(V)) )
 
-    IF ( ANY(LBOUND(As) .NE. (/1/)) )   STOP 40
-    IF ( ANY(SHAPE(As)  .NE. (/128/)) ) STOP 41
+    IF ( ANY(LBOUND(As) .NE. (/1/)) )   ERROR STOP 40
+    IF ( ANY(SHAPE(As)  .NE. (/128/)) ) ERROR STOP 41
 
-    IF ( ANY(As%ID       .NE. -1 )) STOP 20
-    IF ( ANY(As%GetID()  .NE. -1 )) STOP 21
+    IF ( ANY(As%ID       .NE. -1 )) ERROR STOP 20
+    IF ( ANY(As%GetID()  .NE. -1 )) ERROR STOP 21
 
-    IF ( ANY(As%C       .NE. "!" )) STOP 30
-    IF ( ANY(As%GetC()  .NE. "!" )) STOP 31
+    IF ( ANY(As%C       .NE. "!" )) ERROR STOP 30
+    IF ( ANY(As%GetC()  .NE. "!" )) ERROR STOP 31
 
-    IF ( ANY(As%L       .NEQV. .TRUE. )) STOP 60
-    IF ( ANY(As%GetL()  .NEQV. .TRUE. )) STOP 61
+    IF ( ANY(As%L       .NEQV. .TRUE. )) ERROR STOP 60
+    IF ( ANY(As%GetL()  .NEQV. .TRUE. )) ERROR STOP 61
 
 
   END ASSOCIATE

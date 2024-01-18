@@ -40,7 +40,7 @@ module m
     type(Y) function getYObj (y1)
         class(Y(*)), intent(in) :: y1
 
-        if (y1%n < getYObj%n) stop 10
+        if (y1%n < getYObj%n) error stop 10
 
         getYObj%val = y1%val(:getYObj%n)
     end function

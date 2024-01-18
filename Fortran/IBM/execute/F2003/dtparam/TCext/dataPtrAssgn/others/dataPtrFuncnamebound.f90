@@ -42,15 +42,15 @@
 	type(t(:,4)), allocatable :: aT
 
 	allocate(t(20,4) :: aT)
-	if ( .not. allocated(aT) ) stop 1
+	if ( .not. allocated(aT) ) error stop 1
 
 	allocate(at%P(55), source=(/(i+2, i=1,55)/) )
 
 	at%P(get_lb(at%P):at%P(10) ) => at%P(55::-1)
-	if ( .not. associated(at%P) ) stop 3
+	if ( .not. associated(at%P) ) error stop 3
 
-	if (lbound(at%p,1) /= 4) stop 5
-	if (ubound(at%p,1) /= 12) stop 7
+	if (lbound(at%p,1) /= 4) error stop 5
+	if (ubound(at%p,1) /= 12) error stop 7
 
-	if ( any(at%p /= (/(i,i=57,49,-1)/))) stop 11
+	if ( any(at%p /= (/(i,i=57,49,-1)/))) error stop 11
    End program

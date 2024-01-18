@@ -23,9 +23,9 @@ program main
     stop 1
   endif
 
-  if (i1 /= ceiling(126.189, kind=1)) stop 1
-  if (i2 /= ceiling(7.8_4, kind=2)) stop 2
-  if (i4 /= ceiling(834.147101_4)) stop 3
-  if (i8 /= ceiling(835837384021.99072_8)) stop 4
+  if (i1 /= ceiling(126.189, kind=1)) error stop 1
+  if (i2 /= ceiling(7.8_4, kind=2)) error stop 2
+  if (i4 /= ceiling(834.147101_4)) error stop 3
+  if (i8 /= ceiling(835837384021.99072_8)) error stop 4
 
 end program

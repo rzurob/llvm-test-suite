@@ -95,10 +95,10 @@
                         CLASS IS (Child(4,*))
                           CALL As%SetId()
                           CALL As%Base%SetId()
-                          IF ( As%Base%GetId() .NE. -1 ) STOP 34
-                          IF ( As%GetId()      .NE. -2 ) STOP 35
-                          IF ( As%BaseId       .NE. -1 ) STOP 36
-                          IF ( As%ChildId      .NE. -2 ) STOP 37
+                          IF ( As%Base%GetId() .NE. -1 ) ERROR STOP 34
+                          IF ( As%GetId()      .NE. -2 ) ERROR STOP 35
+                          IF ( As%BaseId       .NE. -1 ) ERROR STOP 36
+                          IF ( As%ChildId      .NE. -2 ) ERROR STOP 37
                         TYPE is (Base(4,*))
                           STOP 32
                         CLASS IS (Zero(4,*))

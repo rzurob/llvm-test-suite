@@ -53,9 +53,9 @@ end module
 
 	call b1%pp(1,10, b2)
 
-        if ( .not. associated(b2%x) ) stop 13
-        if ( lbound(b2%x,1) /= 10 ) stop 15
-        if ( ubound(b2%x,1) /= 17 ) stop 17
+        if ( .not. associated(b2%x) ) error stop 13
+        if ( lbound(b2%x,1) /= 10 ) error stop 15
+        if ( ubound(b2%x,1) /= 17 ) error stop 17
 
 	write(*, '(4f14.8)') b2%x
 	print *, shape(spread(b2%x, 2, 2))

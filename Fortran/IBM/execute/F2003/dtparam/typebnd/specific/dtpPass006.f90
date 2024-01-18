@@ -84,7 +84,7 @@ module randomize
         if (allocated(rand)) then
             n = rand%counter
 
-            if (n < 0) stop 11
+            if (n < 0) error stop 11
 
             itemp = 1 + n*rand%data(1)
 

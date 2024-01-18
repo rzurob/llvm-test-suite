@@ -33,8 +33,8 @@ module m
             class(*), intent(inout), allocatable :: barg(:,:,:,:)
 
             call move_alloc(arg, barg)
-            if ( allocated(arg) ) stop 9
-            if ( .not. allocated(barg) ) stop 12
+            if ( allocated(arg) ) error stop 9
+            if ( .not. allocated(barg) ) error stop 12
 
             call move_alloc(barg,z1)
 
@@ -51,9 +51,9 @@ use m
     allocate(x1(1,2,2,2), source = reshape ((/ (min(i+i, i*i), i = -4,3) /), (/1,2,2,2/)))
     call sub (x1, y1)
 
-    if ( allocated(x1) ) stop 21
-    if ( allocated(y1) ) stop 23
-    if ( .not. allocated(z1) ) stop 25
+    if ( allocated(x1) ) error stop 21
+    if ( allocated(y1) ) error stop 23
+    if ( .not. allocated(z1) ) error stop 25
 
     select type(z1)
         type is (integer)

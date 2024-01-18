@@ -25,9 +25,9 @@
 
             call move_alloc(l1, i1)
 
-            if ( .not. allocated(i1) ) stop 21
-            if ( allocated(l1) ) stop 31
-            if ( i1 /= 1 ) stop 41
+            if ( .not. allocated(i1) ) error stop 21
+            if ( allocated(l1) ) error stop 31
+            if ( i1 /= 1 ) error stop 41
             end
 
       end

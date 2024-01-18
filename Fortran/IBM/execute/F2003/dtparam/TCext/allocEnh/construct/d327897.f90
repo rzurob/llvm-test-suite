@@ -40,5 +40,5 @@ use m
 
     b1(:) = b1(:)
 
-    if (any(b1%id /= [(j, j=1,100)])) stop 1
+    if (any(b1%id /= [(j, j=1,100)])) error stop 1
 end

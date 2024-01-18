@@ -54,16 +54,16 @@
   IF ( I .EQ. 0 ) THEN
 
     Ptr(I:) => Arr
-    IF (.NOT. ASSOCIATED(Ptr, Arr))            STOP 11
-    IF (ANY( LBOUND(Ptr) .NE. (/I /)))         STOP 12
-    IF (ANY( UBOUND(Ptr) .NE. (/I+99/)))       STOP 13
-    IF (ANY( Ptr%I       .NE. 0 ))             STOP 14
+    IF (.NOT. ASSOCIATED(Ptr, Arr))            ERROR STOP 11
+    IF (ANY( LBOUND(Ptr) .NE. (/I /)))         ERROR STOP 12
+    IF (ANY( UBOUND(Ptr) .NE. (/I+99/)))       ERROR STOP 13
+    IF (ANY( Ptr%I       .NE. 0 ))             ERROR STOP 14
 
     Ptr(I:99) => Arr
-    IF (.NOT. ASSOCIATED(Ptr, Arr))            STOP 21
-    IF (ANY( LBOUND(Ptr) .NE. (/I /)))         STOP 22
-    IF (ANY( UBOUND(Ptr) .NE. (/ 99/)))        STOP 23
-    IF (ANY( Ptr%I       .NE. 0 ))             STOP 24
+    IF (.NOT. ASSOCIATED(Ptr, Arr))            ERROR STOP 21
+    IF (ANY( LBOUND(Ptr) .NE. (/I /)))         ERROR STOP 22
+    IF (ANY( UBOUND(Ptr) .NE. (/ 99/)))        ERROR STOP 23
+    IF (ANY( Ptr%I       .NE. 0 ))             ERROR STOP 24
 
     Arr(:)%I = 1
     I = 1
@@ -71,16 +71,16 @@
   ELSE
 
     Ptr(I:) => Arr
-    IF (.NOT. ASSOCIATED(Ptr, Arr))            STOP 31
-    IF (ANY( LBOUND(Ptr) .NE. (/I /)))         STOP 32
-    IF (ANY( UBOUND(Ptr) .NE. (/I+99/)))       STOP 33
-    IF (ANY( Ptr%I       .NE. I ))             STOP 34
+    IF (.NOT. ASSOCIATED(Ptr, Arr))            ERROR STOP 31
+    IF (ANY( LBOUND(Ptr) .NE. (/I /)))         ERROR STOP 32
+    IF (ANY( UBOUND(Ptr) .NE. (/I+99/)))       ERROR STOP 33
+    IF (ANY( Ptr%I       .NE. I ))             ERROR STOP 34
 
     Ptr(I:100) => Arr
-    IF (.NOT. ASSOCIATED(Ptr))                 STOP 41
-    IF (ANY( LBOUND(Ptr) .NE. (/I /)))         STOP 42
-    IF (ANY( UBOUND(Ptr) .NE. (/100/)))        STOP 43
-    IF (ANY( Ptr%I       .NE. I ))             STOP 44
+    IF (.NOT. ASSOCIATED(Ptr))                 ERROR STOP 41
+    IF (ANY( LBOUND(Ptr) .NE. (/I /)))         ERROR STOP 42
+    IF (ANY( UBOUND(Ptr) .NE. (/100/)))        ERROR STOP 43
+    IF (ANY( Ptr%I       .NE. I ))             ERROR STOP 44
 
     I = I + 1
     Arr(:)%I = I

@@ -72,10 +72,10 @@
       STOP 41
     CLASS IS (DT(8,1,*))
 
-        IF (ANY(Ptr(:,:)%IArr(1)  .NE. 1)) STOP 22
-        IF (ANY(Ptr(:,:)%IArr(2)  .NE. 2)) STOP 23
-        IF (ANY(Ptr(:,:)%GetInt(1).NE. 1)) STOP 24
-        IF (ANY(Ptr(:,:)%GetInt(2).NE. 2)) STOP 25
+        IF (ANY(Ptr(:,:)%IArr(1)  .NE. 1)) ERROR STOP 22
+        IF (ANY(Ptr(:,:)%IArr(2)  .NE. 2)) ERROR STOP 23
+        IF (ANY(Ptr(:,:)%GetInt(1).NE. 1)) ERROR STOP 24
+        IF (ANY(Ptr(:,:)%GetInt(2).NE. 2)) ERROR STOP 25
 
         CALL Sub(Ptr%C)
 

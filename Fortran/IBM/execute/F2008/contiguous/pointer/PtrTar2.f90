@@ -78,26 +78,26 @@ PROGRAM PtrTar2
         INTEGER, TARGET :: Arg(:,:,:)
         INTEGER, POINTER, CONTIGUOUS :: foo1(:,:,:)
 
-        IF (     ASSOCIATED(foo1)     ) STOP 10
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 11
+        IF (     ASSOCIATED(foo1)     ) ERROR STOP 10
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 11
 
         foo1 => Arg
 
-        IF ( .NOT. ASSOCIATED(foo1)    ) STOP 12
-        IF ( .NOT. IS_CONTIGUOUS(foo1) ) STOP 13
+        IF ( .NOT. ASSOCIATED(foo1)    ) ERROR STOP 12
+        IF ( .NOT. IS_CONTIGUOUS(foo1) ) ERROR STOP 13
       END FUNCTION
 
       FUNCTION foo2(Arg) RESULT(res)
         INTEGER, TARGET, CONTIGUOUS  :: Arg(:,:,:)
         INTEGER, POINTER, CONTIGUOUS :: res(:,:,:)
 
-        IF (     ASSOCIATED(res)     ) STOP 10
-        IF ( .NOT. IS_CONTIGUOUS(Arg) ) STOP 11
+        IF (     ASSOCIATED(res)     ) ERROR STOP 10
+        IF ( .NOT. IS_CONTIGUOUS(Arg) ) ERROR STOP 11
 
         res => Arg
 
-        IF ( .NOT. ASSOCIATED(res)    ) STOP 12
-        IF ( .NOT. IS_CONTIGUOUS(res) ) STOP 13
+        IF ( .NOT. ASSOCIATED(res)    ) ERROR STOP 12
+        IF ( .NOT. IS_CONTIGUOUS(res) ) ERROR STOP 13
       END FUNCTION
 
 END PROGRAM PtrTar2

@@ -99,10 +99,10 @@
 ! DO I=1, N
 ! DO J=1, N
 
-!   IF ( ANY( S1(I,J)%R .NE. S1%K1          ) ) STOP 11
-!   IF ( ANY( S2(I,J)%R .NE. S1%K1          ) ) STOP 12
-!   IF ( ANY( S2(I,J)%I .NE. S2%K2          ) ) STOP 13
-!   IF ( ANY( S2(I,J)%C .NE. CHAR(S2%K2)    ) ) STOP 14
+!   IF ( ANY( S1(I,J)%R .NE. S1%K1          ) ) ERROR STOP 11
+!   IF ( ANY( S2(I,J)%R .NE. S1%K1          ) ) ERROR STOP 12
+!   IF ( ANY( S2(I,J)%I .NE. S2%K2          ) ) ERROR STOP 13
+!   IF ( ANY( S2(I,J)%C .NE. CHAR(S2%K2)    ) ) ERROR STOP 14
 
 ! END DO
 ! END DO
@@ -110,30 +110,30 @@
   ! "0 * C21" and "0 * C23" has no affect on S3
   DO I=1, N
 
-    IF ( ANY( S2(I,1)%R .EQ. C21%R          ) ) STOP 21
-    IF ( ANY( S2(I,2)%R .EQ. C22%R          ) ) STOP 22
-    IF ( ANY( S2(I,3)%R .EQ. C23%R          ) ) STOP 23
+    IF ( ANY( S2(I,1)%R .EQ. C21%R          ) ) ERROR STOP 21
+    IF ( ANY( S2(I,2)%R .EQ. C22%R          ) ) ERROR STOP 22
+    IF ( ANY( S2(I,3)%R .EQ. C23%R          ) ) ERROR STOP 23
 
-    IF ( ANY( S2(I,1)%I .EQ. C21%I          ) ) STOP 24
-    IF ( ANY( S2(I,2)%I .EQ. C22%I          ) ) STOP 25
-    IF ( ANY( S2(I,3)%I .EQ. C23%I          ) ) STOP 26
+    IF ( ANY( S2(I,1)%I .EQ. C21%I          ) ) ERROR STOP 24
+    IF ( ANY( S2(I,2)%I .EQ. C22%I          ) ) ERROR STOP 25
+    IF ( ANY( S2(I,3)%I .EQ. C23%I          ) ) ERROR STOP 26
 
-    IF ( ANY( S2(I,1)%C .EQ. C21%C          ) ) STOP 27
-    IF ( ANY( S2(I,2)%C .EQ. C22%C          ) ) STOP 28
-    IF ( ANY( S2(I,3)%C .EQ. C23%C          ) ) STOP 29
+    IF ( ANY( S2(I,1)%C .EQ. C21%C          ) ) ERROR STOP 27
+    IF ( ANY( S2(I,2)%C .EQ. C22%C          ) ) ERROR STOP 28
+    IF ( ANY( S2(I,3)%C .EQ. C23%C          ) ) ERROR STOP 29
 
 
-    IF ( ANY( S3(I,1)%R .NE. C21%R          ) ) STOP 31
-    IF ( ANY( S3(I,2)%R .NE. C22%R          ) ) STOP 32
-    IF ( ANY( S3(I,3)%R .NE. C23%R          ) ) STOP 33
+    IF ( ANY( S3(I,1)%R .NE. C21%R          ) ) ERROR STOP 31
+    IF ( ANY( S3(I,2)%R .NE. C22%R          ) ) ERROR STOP 32
+    IF ( ANY( S3(I,3)%R .NE. C23%R          ) ) ERROR STOP 33
 
-    IF ( ANY( S3(I,1)%I .NE. C21%I          ) ) STOP 41
-    IF ( ANY( S3(I,2)%I .NE. C22%I          ) ) STOP 42
-    IF ( ANY( S3(I,3)%I .NE. C23%I          ) ) STOP 43
+    IF ( ANY( S3(I,1)%I .NE. C21%I          ) ) ERROR STOP 41
+    IF ( ANY( S3(I,2)%I .NE. C22%I          ) ) ERROR STOP 42
+    IF ( ANY( S3(I,3)%I .NE. C23%I          ) ) ERROR STOP 43
 
-    IF ( ANY( S3(I,1)%C .NE. C21%C          ) ) STOP 51
-    IF ( ANY( S3(I,2)%C .NE. C22%C          ) ) STOP 52
-    IF ( ANY( S3(I,3)%C .NE. C23%C          ) ) STOP 53
+    IF ( ANY( S3(I,1)%C .NE. C21%C          ) ) ERROR STOP 51
+    IF ( ANY( S3(I,2)%C .NE. C22%C          ) ) ERROR STOP 52
+    IF ( ANY( S3(I,3)%C .NE. C23%C          ) ) ERROR STOP 53
 
   END DO
 

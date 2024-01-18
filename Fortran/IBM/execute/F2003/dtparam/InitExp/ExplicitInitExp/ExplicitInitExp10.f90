@@ -109,136 +109,136 @@ PROGRAM ExplicitInitExp10
                 44, 'Ferdinand', NULL() )
 
       b2 = b1
-      IF ( SIZE(b2%A1)     .NE.       6 ) STOP 10
-      IF ( ANY(b2%A1       .NE.     10) ) STOP 11
-      IF ( LEN(b2%C1)      .NE.       5 ) STOP 12
-      IF ( TRIM(b2%C1)     .NE. 'AAAAA' ) STOP 13
+      IF ( SIZE(b2%A1)     .NE.       6 ) ERROR STOP 10
+      IF ( ANY(b2%A1       .NE.     10) ) ERROR STOP 11
+      IF ( LEN(b2%C1)      .NE.       5 ) ERROR STOP 12
+      IF ( TRIM(b2%C1)     .NE. 'AAAAA' ) ERROR STOP 13
 
       c2 = c1
-      IF ( SIZE(c2%A1)     .NE.       6 ) STOP 14
-      IF ( ANY(c2%A1       .NE.     20) ) STOP 15
-      IF ( LEN(c2%C1)      .NE.       5 ) STOP 16
-      IF ( TRIM(c2%C1)     .NE. 'BBBBB' ) STOP 17
-      IF ( SIZE(c2%A2)     .NE.      66 ) STOP 18
-      IF ( ANY(c2%A2       .NE.     30) ) STOP 19
-      IF ( LEN(c2%C2)      .NE.      69 ) STOP 20
-      IF ( TRIM(c2%C2)   .NE. 'XL-compiler' ) STOP 21
-      IF ( SIZE(c2%bcomp%A1)     .NE.     6 ) STOP 22
-      IF ( ANY(c2%bcomp%A1       .NE.   40) ) STOP 23
-      IF ( LEN(c2%bcomp%C1)      .NE.     5 ) STOP 24
-      IF ( TRIM(c2%bcomp%C1)  .NE. 'CCCCC' ) STOP 25
+      IF ( SIZE(c2%A1)     .NE.       6 ) ERROR STOP 14
+      IF ( ANY(c2%A1       .NE.     20) ) ERROR STOP 15
+      IF ( LEN(c2%C1)      .NE.       5 ) ERROR STOP 16
+      IF ( TRIM(c2%C1)     .NE. 'BBBBB' ) ERROR STOP 17
+      IF ( SIZE(c2%A2)     .NE.      66 ) ERROR STOP 18
+      IF ( ANY(c2%A2       .NE.     30) ) ERROR STOP 19
+      IF ( LEN(c2%C2)      .NE.      69 ) ERROR STOP 20
+      IF ( TRIM(c2%C2)   .NE. 'XL-compiler' ) ERROR STOP 21
+      IF ( SIZE(c2%bcomp%A1)     .NE.     6 ) ERROR STOP 22
+      IF ( ANY(c2%bcomp%A1       .NE.   40) ) ERROR STOP 23
+      IF ( LEN(c2%bcomp%C1)      .NE.     5 ) ERROR STOP 24
+      IF ( TRIM(c2%bcomp%C1)  .NE. 'CCCCC' ) ERROR STOP 25
 
       c2 = b1
-      IF ( SIZE(c2%A1)     .NE.       6 ) STOP 26
-      IF ( ANY(c2%A1       .NE.     10) ) STOP 27
-      IF ( LEN(c2%C1)      .NE.       5 ) STOP 28
-      IF ( TRIM(c2%C1)     .NE. 'AAAAA' ) STOP 29
-      IF ( SIZE(c2%A2)     .NE.      66 ) STOP 30
-      IF ( ANY(c2%A2       .NE.     -2) ) STOP 31
-      IF ( LEN(c2%C2)      .NE.      69 ) STOP 32
-      IF ( TRIM(c2%C2)     .NE.    'C2' ) STOP 33
-      IF ( SIZE(c2%bcomp%A1)     .NE.     6 ) STOP 34
-      IF ( ANY(c2%bcomp%A1       .NE.   -1) ) STOP 35
-      IF ( LEN(c2%bcomp%C1)      .NE.     5 ) STOP 36
-      IF ( TRIM(c2%bcomp%C1)     .NE.  'C1' ) STOP 37
+      IF ( SIZE(c2%A1)     .NE.       6 ) ERROR STOP 26
+      IF ( ANY(c2%A1       .NE.     10) ) ERROR STOP 27
+      IF ( LEN(c2%C1)      .NE.       5 ) ERROR STOP 28
+      IF ( TRIM(c2%C1)     .NE. 'AAAAA' ) ERROR STOP 29
+      IF ( SIZE(c2%A2)     .NE.      66 ) ERROR STOP 30
+      IF ( ANY(c2%A2       .NE.     -2) ) ERROR STOP 31
+      IF ( LEN(c2%C2)      .NE.      69 ) ERROR STOP 32
+      IF ( TRIM(c2%C2)     .NE.    'C2' ) ERROR STOP 33
+      IF ( SIZE(c2%bcomp%A1)     .NE.     6 ) ERROR STOP 34
+      IF ( ANY(c2%bcomp%A1       .NE.   -1) ) ERROR STOP 35
+      IF ( LEN(c2%bcomp%C1)      .NE.     5 ) ERROR STOP 36
+      IF ( TRIM(c2%bcomp%C1)     .NE.  'C1' ) ERROR STOP 37
 
       allocate (base(4,5) :: n1%poly)
       n1%poly = Base(4,5) (55, 'Rubinowicz')
       !ALLOCATE( n1%poly, SOURCE = Base(4,5) (55, 'Rubinowicz') )
       n2 = n1
-      IF ( SIZE(n2%A1)     .NE.       6 ) STOP 38
-      IF ( ANY(n2%A1       .NE.     11) ) STOP 39
-      IF ( LEN(n2%C1)      .NE.       5 ) STOP 40
-      IF ( TRIM(n2%C1)     .NE. 'Heise' ) STOP 41
-      IF ( SIZE(n2%A2)     .NE.      66 ) STOP 42
-      IF ( ANY(n2%A2       .NE.     22) ) STOP 43
-      IF ( LEN(n2%C2)      .NE.      69 ) STOP 44
-      IF ( TRIM(n2%C2)    .NE. 'David Hilbert' ) STOP 45
-      IF ( SIZE(n2%bcomp%A1) .NE.       6 ) STOP 46
-      IF ( ANY(n2%bcomp%A1   .NE.     33) ) STOP 47
-      IF ( LEN(n2%bcomp%C1)  .NE.       5 ) STOP 48
-      IF ( TRIM(n2%bcomp%C1) .NE. 'Somme' ) STOP 49
-      IF ( SIZE(n2%A3)       .NE.       5 ) STOP 50
-      IF ( ANY(n2%A3         .NE.     44) ) STOP 51
-      IF ( LEN(n2%C3)        .NE.       5 ) STOP 52
-      IF ( TRIM(n2%C3)       .NE. 'Ferdi' ) STOP 53
-      IF ( SIZE(n2%poly%A1)    .NE.     6 ) STOP 54
-      IF ( ANY(n2%poly%A1      .NE.   55) ) STOP 55
-      IF ( LEN(n2%poly%C1)     .NE.     5 ) STOP 56
-      IF ( TRIM(n2%poly%C1)  .NE. 'Rubin' ) STOP 57
+      IF ( SIZE(n2%A1)     .NE.       6 ) ERROR STOP 38
+      IF ( ANY(n2%A1       .NE.     11) ) ERROR STOP 39
+      IF ( LEN(n2%C1)      .NE.       5 ) ERROR STOP 40
+      IF ( TRIM(n2%C1)     .NE. 'Heise' ) ERROR STOP 41
+      IF ( SIZE(n2%A2)     .NE.      66 ) ERROR STOP 42
+      IF ( ANY(n2%A2       .NE.     22) ) ERROR STOP 43
+      IF ( LEN(n2%C2)      .NE.      69 ) ERROR STOP 44
+      IF ( TRIM(n2%C2)    .NE. 'David Hilbert' ) ERROR STOP 45
+      IF ( SIZE(n2%bcomp%A1) .NE.       6 ) ERROR STOP 46
+      IF ( ANY(n2%bcomp%A1   .NE.     33) ) ERROR STOP 47
+      IF ( LEN(n2%bcomp%C1)  .NE.       5 ) ERROR STOP 48
+      IF ( TRIM(n2%bcomp%C1) .NE. 'Somme' ) ERROR STOP 49
+      IF ( SIZE(n2%A3)       .NE.       5 ) ERROR STOP 50
+      IF ( ANY(n2%A3         .NE.     44) ) ERROR STOP 51
+      IF ( LEN(n2%C3)        .NE.       5 ) ERROR STOP 52
+      IF ( TRIM(n2%C3)       .NE. 'Ferdi' ) ERROR STOP 53
+      IF ( SIZE(n2%poly%A1)    .NE.     6 ) ERROR STOP 54
+      IF ( ANY(n2%poly%A1      .NE.   55) ) ERROR STOP 55
+      IF ( LEN(n2%poly%C1)     .NE.     5 ) ERROR STOP 56
+      IF ( TRIM(n2%poly%C1)  .NE. 'Rubin' ) ERROR STOP 57
 
       n2 = b1
-      IF ( SIZE(n2%A1)     .NE.       6 ) STOP 58
-      IF ( ANY(n2%A1       .NE.     10) ) STOP 59
-      IF ( LEN(n2%C1)      .NE.       5 ) STOP 60
-      IF ( TRIM(n2%C1)     .NE. 'AAAAA' ) STOP 61
-      IF ( SIZE(n2%A2)     .NE.      66 ) STOP 62
-      IF ( ANY(n2%A2       .NE.     -2) ) STOP 63
-      IF ( LEN(n2%C2)      .NE.      69 ) STOP 64
-      IF ( TRIM(n2%C2)     .NE.    'C2' ) STOP 65
-      IF ( SIZE(n2%bcomp%A1) .NE.     6 ) STOP 66
-      IF ( ANY(n2%bcomp%A1   .NE.   -1) ) STOP 67
-      IF ( LEN(n2%bcomp%C1)  .NE.     5 ) STOP 68
-      IF ( TRIM(n2%bcomp%C1) .NE.  'C1' ) STOP 69
-      IF ( SIZE(n2%A3)       .NE.     5 ) STOP 70
-      IF ( ANY(n2%A3         .NE.   -3) ) STOP 71
-      IF ( LEN(n2%C3)        .NE.     5 ) STOP 72
-      IF ( TRIM(n2%C3)       .NE.  'C3' ) STOP 73
-      IF ( ALLOCATED(n2%poly) ) STOP 74
+      IF ( SIZE(n2%A1)     .NE.       6 ) ERROR STOP 58
+      IF ( ANY(n2%A1       .NE.     10) ) ERROR STOP 59
+      IF ( LEN(n2%C1)      .NE.       5 ) ERROR STOP 60
+      IF ( TRIM(n2%C1)     .NE. 'AAAAA' ) ERROR STOP 61
+      IF ( SIZE(n2%A2)     .NE.      66 ) ERROR STOP 62
+      IF ( ANY(n2%A2       .NE.     -2) ) ERROR STOP 63
+      IF ( LEN(n2%C2)      .NE.      69 ) ERROR STOP 64
+      IF ( TRIM(n2%C2)     .NE.    'C2' ) ERROR STOP 65
+      IF ( SIZE(n2%bcomp%A1) .NE.     6 ) ERROR STOP 66
+      IF ( ANY(n2%bcomp%A1   .NE.   -1) ) ERROR STOP 67
+      IF ( LEN(n2%bcomp%C1)  .NE.     5 ) ERROR STOP 68
+      IF ( TRIM(n2%bcomp%C1) .NE.  'C1' ) ERROR STOP 69
+      IF ( SIZE(n2%A3)       .NE.     5 ) ERROR STOP 70
+      IF ( ANY(n2%A3         .NE.   -3) ) ERROR STOP 71
+      IF ( LEN(n2%C3)        .NE.     5 ) ERROR STOP 72
+      IF ( TRIM(n2%C3)       .NE.  'C3' ) ERROR STOP 73
+      IF ( ALLOCATED(n2%poly) ) ERROR STOP 74
 
       n2 = c1
-      IF ( SIZE(n2%A1)     .NE.       6 ) STOP 75
-      IF ( ANY(n2%A1       .NE.     20) ) STOP 76
-      IF ( LEN(n2%C1)      .NE.       5 ) STOP 77
-      IF ( TRIM(n2%C1)     .NE. 'BBBBB' ) STOP 78
-      IF ( SIZE(n2%A2)     .NE.      66 ) STOP 79
-      IF ( ANY(n2%A2       .NE.     30) ) STOP 80
-      IF ( LEN(n2%C2)      .NE.      69 ) STOP 81
-      IF ( TRIM(n2%C2)   .NE. 'XL-compiler' ) STOP 82
-      IF ( SIZE(n2%bcomp%A1)     .NE.     6 ) STOP 83
-      IF ( ANY(n2%bcomp%A1       .NE.   40) ) STOP 84
-      IF ( LEN(n2%bcomp%C1)      .NE.     5 ) STOP 85
-      IF ( TRIM(n2%bcomp%C1)  .NE. 'CCCCC' ) STOP 86
-      IF ( SIZE(n2%A3)       .NE.    5 ) STOP 87
-      IF ( ANY(n2%A3         .NE.  -3) ) STOP 88
-      IF ( LEN(n2%C3)        .NE.    5 ) STOP 89
-      IF ( TRIM(n2%C3)       .NE. 'C3' ) STOP 90
-      IF ( ALLOCATED(n2%poly) ) STOP 91
+      IF ( SIZE(n2%A1)     .NE.       6 ) ERROR STOP 75
+      IF ( ANY(n2%A1       .NE.     20) ) ERROR STOP 76
+      IF ( LEN(n2%C1)      .NE.       5 ) ERROR STOP 77
+      IF ( TRIM(n2%C1)     .NE. 'BBBBB' ) ERROR STOP 78
+      IF ( SIZE(n2%A2)     .NE.      66 ) ERROR STOP 79
+      IF ( ANY(n2%A2       .NE.     30) ) ERROR STOP 80
+      IF ( LEN(n2%C2)      .NE.      69 ) ERROR STOP 81
+      IF ( TRIM(n2%C2)   .NE. 'XL-compiler' ) ERROR STOP 82
+      IF ( SIZE(n2%bcomp%A1)     .NE.     6 ) ERROR STOP 83
+      IF ( ANY(n2%bcomp%A1       .NE.   40) ) ERROR STOP 84
+      IF ( LEN(n2%bcomp%C1)      .NE.     5 ) ERROR STOP 85
+      IF ( TRIM(n2%bcomp%C1)  .NE. 'CCCCC' ) ERROR STOP 86
+      IF ( SIZE(n2%A3)       .NE.    5 ) ERROR STOP 87
+      IF ( ANY(n2%A3         .NE.  -3) ) ERROR STOP 88
+      IF ( LEN(n2%C3)        .NE.    5 ) ERROR STOP 89
+      IF ( TRIM(n2%C3)       .NE. 'C3' ) ERROR STOP 90
+      IF ( ALLOCATED(n2%poly) ) ERROR STOP 91
 
       IF ( ALLOCATED( n1%poly ) ) DEALLOCATE (n1%poly)
       ALLOCATE( n1%poly, SOURCE = c1 )
       n2 = n1
-      IF ( SIZE(n2%A1)     .NE.       6 ) STOP 92
-      IF ( ANY(n2%A1       .NE.     11) ) STOP 93
-      IF ( LEN(n2%C1)      .NE.       5 ) STOP 94
-      IF ( TRIM(n2%C1)     .NE. 'Heise' ) STOP 95
-      IF ( SIZE(n2%A2)     .NE.      66 ) STOP 96
-      IF ( ANY(n2%A2       .NE.     22) ) STOP 97
-      IF ( LEN(n2%C2)      .NE.      69 ) STOP 98
-      IF ( TRIM(n2%C2) .NE. 'David Hilbert' ) STOP 99
-      IF ( SIZE(n2%bcomp%A1)  .NE.        6 ) STOP 100
-      IF ( ANY(n2%bcomp%A1    .NE.      33) ) STOP 101
-      IF ( LEN(n2%bcomp%C1)   .NE.        5 ) STOP 102
-      IF ( TRIM(n2%bcomp%C1) .NE. 'Somme' ) STOP 103
-      IF ( SIZE(n2%A3)        .NE.        5 ) STOP 104
-      IF ( ANY(n2%A3          .NE.      44) ) STOP 105
-      IF ( LEN(n2%C3)         .NE.        5 ) STOP 106
-      IF ( TRIM(n2%C3)        .NE.  'Ferdi' ) STOP 107
+      IF ( SIZE(n2%A1)     .NE.       6 ) ERROR STOP 92
+      IF ( ANY(n2%A1       .NE.     11) ) ERROR STOP 93
+      IF ( LEN(n2%C1)      .NE.       5 ) ERROR STOP 94
+      IF ( TRIM(n2%C1)     .NE. 'Heise' ) ERROR STOP 95
+      IF ( SIZE(n2%A2)     .NE.      66 ) ERROR STOP 96
+      IF ( ANY(n2%A2       .NE.     22) ) ERROR STOP 97
+      IF ( LEN(n2%C2)      .NE.      69 ) ERROR STOP 98
+      IF ( TRIM(n2%C2) .NE. 'David Hilbert' ) ERROR STOP 99
+      IF ( SIZE(n2%bcomp%A1)  .NE.        6 ) ERROR STOP 100
+      IF ( ANY(n2%bcomp%A1    .NE.      33) ) ERROR STOP 101
+      IF ( LEN(n2%bcomp%C1)   .NE.        5 ) ERROR STOP 102
+      IF ( TRIM(n2%bcomp%C1) .NE. 'Somme' ) ERROR STOP 103
+      IF ( SIZE(n2%A3)        .NE.        5 ) ERROR STOP 104
+      IF ( ANY(n2%A3          .NE.      44) ) ERROR STOP 105
+      IF ( LEN(n2%C3)         .NE.        5 ) ERROR STOP 106
+      IF ( TRIM(n2%C3)        .NE.  'Ferdi' ) ERROR STOP 107
 
       SELECT TYPE ( s => n2%poly )
         CLASS IS (Child(4,*,64,*))
-          IF ( SIZE(s%A1)    .NE.     6 ) STOP 108
-          IF ( ANY(s%A1      .NE.   20) ) STOP 109
-          IF ( LEN(s%C1)     .NE.     5 ) STOP 110
-          IF ( TRIM(s%C1)  .NE. 'BBBBB' ) STOP 111
-          IF ( SIZE(s%A2)    .NE.    66 ) STOP 108
-          IF ( ANY(s%A2      .NE.   30) ) STOP 109
-          IF ( LEN(s%C2)     .NE.    69 ) STOP 110
-          IF ( TRIM(s%C2)  .NE. 'XL-compiler' ) STOP 111
-          IF ( SIZE(s%bcomp%A1)    .NE.     6 ) STOP 112
-          IF ( ANY(s%bcomp%A1      .NE.   40) ) STOP 113
-          IF ( LEN(s%bcomp%C1)     .NE.     5 ) STOP 114
-          IF ( TRIM(s%bcomp%C1)  .NE. 'CCCCC' ) STOP 115
+          IF ( SIZE(s%A1)    .NE.     6 ) ERROR STOP 108
+          IF ( ANY(s%A1      .NE.   20) ) ERROR STOP 109
+          IF ( LEN(s%C1)     .NE.     5 ) ERROR STOP 110
+          IF ( TRIM(s%C1)  .NE. 'BBBBB' ) ERROR STOP 111
+          IF ( SIZE(s%A2)    .NE.    66 ) ERROR STOP 108
+          IF ( ANY(s%A2      .NE.   30) ) ERROR STOP 109
+          IF ( LEN(s%C2)     .NE.    69 ) ERROR STOP 110
+          IF ( TRIM(s%C2)  .NE. 'XL-compiler' ) ERROR STOP 111
+          IF ( SIZE(s%bcomp%A1)    .NE.     6 ) ERROR STOP 112
+          IF ( ANY(s%bcomp%A1      .NE.   40) ) ERROR STOP 113
+          IF ( LEN(s%bcomp%C1)     .NE.     5 ) ERROR STOP 114
+          IF ( TRIM(s%bcomp%C1)  .NE. 'CCCCC' ) ERROR STOP 115
 
         CLASS DEFAULT
            STOP 116

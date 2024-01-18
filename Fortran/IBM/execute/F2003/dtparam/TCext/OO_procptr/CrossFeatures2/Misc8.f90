@@ -57,11 +57,11 @@
   V = (/(DT(20,4)(I), I=1, 10000)/)
 
   CALL ProcPtr1(U, V)
-  IF ( ANY( U%ID .NE. V%ID ) ) STOP 11
+  IF ( ANY( U%ID .NE. V%ID ) ) ERROR STOP 11
 
   U = (/(DT(20,4)(-I), I=1, 10000)/)
   U = ProcPtr2(V)
-  IF ( ANY( U%ID .NE. V%ID ) ) STOP 12
+  IF ( ANY( U%ID .NE. V%ID ) ) ERROR STOP 12
 
   CONTAINS
 

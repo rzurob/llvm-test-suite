@@ -51,37 +51,37 @@
   TYPE(DT0(1, 2, 4, 8)) :: T1
   TYPE(DT1(1, 2, 4, 8)) :: T2
 
-  IF ( LEN(T1%C1)       .NE. 1   )    STOP 11
-  IF ( SIZE(T1%C1)      .NE. 1   )    STOP 12
-  IF ( T1%C1(1)         .NE. CHAR(1)) STOP 13
+  IF ( LEN(T1%C1)       .NE. 1   )    ERROR STOP 11
+  IF ( SIZE(T1%C1)      .NE. 1   )    ERROR STOP 12
+  IF ( T1%C1(1)         .NE. CHAR(1)) ERROR STOP 13
 
-  IF ( LEN(T1%C2)       .NE. 2   )    STOP 21
-  IF ( SIZE(T1%C2)      .NE. 2   )    STOP 22
-  IF ( T1%C2(2)         .NE. CHAR(2)) STOP 23
+  IF ( LEN(T1%C2)       .NE. 2   )    ERROR STOP 21
+  IF ( SIZE(T1%C2)      .NE. 2   )    ERROR STOP 22
+  IF ( T1%C2(2)         .NE. CHAR(2)) ERROR STOP 23
 
-  IF ( LEN(T1%C )       .NE. 4   )    STOP 41
-  IF ( SIZE(T1%C )      .NE. 4   )    STOP 42
-  IF ( T1%C(4)          .NE. CHAR(4)) STOP 43
+  IF ( LEN(T1%C )       .NE. 4   )    ERROR STOP 41
+  IF ( SIZE(T1%C )      .NE. 4   )    ERROR STOP 42
+  IF ( T1%C(4)          .NE. CHAR(4)) ERROR STOP 43
 
-  IF ( LEN(T1%C8)       .NE. 8   )    STOP 81
-  IF ( SIZE(T1%C8)      .NE. 8   )    STOP 82
-  IF ( T1%C8(8)         .NE. CHAR(8)) STOP 83
+  IF ( LEN(T1%C8)       .NE. 8   )    ERROR STOP 81
+  IF ( SIZE(T1%C8)      .NE. 8   )    ERROR STOP 82
+  IF ( T1%C8(8)         .NE. CHAR(8)) ERROR STOP 83
 
-  IF ( KIND(T2%I1)      .NE. 1   )    STOP 11
-  IF ( SIZE(T2%I1)      .NE. 1   )    STOP 12
-  IF ( ANY(T2%I1        .NE. 1))  STOP 13
+  IF ( KIND(T2%I1)      .NE. 1   )    ERROR STOP 11
+  IF ( SIZE(T2%I1)      .NE. 1   )    ERROR STOP 12
+  IF ( ANY(T2%I1        .NE. 1))  ERROR STOP 13
 
-  IF ( KIND(T2%I2)      .NE. 2   )    STOP 21
-  IF ( SIZE(T2%I2)      .NE. 2   )    STOP 22
-  IF ( ANY(T2%I2        .NE. (/2,2/)))             STOP 23
+  IF ( KIND(T2%I2)      .NE. 2   )    ERROR STOP 21
+  IF ( SIZE(T2%I2)      .NE. 2   )    ERROR STOP 22
+  IF ( ANY(T2%I2        .NE. (/2,2/)))             ERROR STOP 23
 
-  IF ( KIND(T2%I )      .NE. 4   )    STOP 41
-  IF ( SIZE(T2%I )      .NE. 4   )    STOP 42
-  IF ( ANY(T2%I         .NE. (/4,4,4,4/)))         STOP 43
+  IF ( KIND(T2%I )      .NE. 4   )    ERROR STOP 41
+  IF ( SIZE(T2%I )      .NE. 4   )    ERROR STOP 42
+  IF ( ANY(T2%I         .NE. (/4,4,4,4/)))         ERROR STOP 43
 
-  IF ( KIND(T2%I8)      .NE. 8   )    STOP 81
-  IF ( SIZE(T2%I8)      .NE. 8   )    STOP 82
-  IF ( ANY(T2%I8        .NE. (/8,8,8,8,8,8,8,8/))) STOP 83
+  IF ( KIND(T2%I8)      .NE. 8   )    ERROR STOP 81
+  IF ( SIZE(T2%I8)      .NE. 8   )    ERROR STOP 82
+  IF ( ANY(T2%I8        .NE. (/8,8,8,8,8,8,8,8/))) ERROR STOP 83
 
 
 

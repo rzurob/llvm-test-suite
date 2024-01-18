@@ -27,9 +27,9 @@
 
         b%p(1:) => b%t4
 
-        if ( .not. associated(b%p, b%t4)) stop 5
-        if ( lbound(b%p,1) /= 1 ) stop 7
-        if ( ubound(b%p,1) /= 10 ) stop 9
+        if ( .not. associated(b%p, b%t4)) error stop 5
+        if ( lbound(b%p,1) /= 1 ) error stop 7
+        if ( ubound(b%p,1) /= 10 ) error stop 9
 
         select type(x => b%p)
             type is (integer)

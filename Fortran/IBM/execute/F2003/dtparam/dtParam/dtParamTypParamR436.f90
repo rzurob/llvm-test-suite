@@ -55,32 +55,32 @@
   TYPE (DT2)    :: T2
 
 
-  IF (KIND(T1%K) .NE. F   ) STOP 11
-  IF (T1%K       .NE. 2*F ) STOP 12
+  IF (KIND(T1%K) .NE. F   ) ERROR STOP 11
+  IF (T1%K       .NE. 2*F ) ERROR STOP 12
 
-  IF (KIND(T1%L) .NE. F   ) STOP 13
-  IF (T1%L       .NE. 2*F ) STOP 14
+  IF (KIND(T1%L) .NE. F   ) ERROR STOP 13
+  IF (T1%L       .NE. 2*F ) ERROR STOP 14
 
-  IF (KIND(T1%KK) .NE. T1%K ) STOP 15
-  IF (T1%KK       .NE. T1%K ) STOP 16
+  IF (KIND(T1%KK) .NE. T1%K ) ERROR STOP 15
+  IF (T1%KK       .NE. T1%K ) ERROR STOP 16
 
-  IF (KIND(T1%LL) .NE. T1%K )                   STOP 17
-  IF (ANY(T1%LL   .NE. T1%K) )                  STOP 18
-  IF (ANY(SHAPE(T1%LL)   .NE. (/T1%L, T1%K/)) ) STOP 19
+  IF (KIND(T1%LL) .NE. T1%K )                   ERROR STOP 17
+  IF (ANY(T1%LL   .NE. T1%K) )                  ERROR STOP 18
+  IF (ANY(SHAPE(T1%LL)   .NE. (/T1%L, T1%K/)) ) ERROR STOP 19
 
 
-  IF (KIND(T2%K2) .NE. F ) STOP 11
-  IF (T2%K2       .NE. F ) STOP 12
+  IF (KIND(T2%K2) .NE. F ) ERROR STOP 11
+  IF (T2%K2       .NE. F ) ERROR STOP 12
 
-  IF (KIND(T2%L2) .NE. F ) STOP 13
-  IF (T2%L2       .NE. F ) STOP 14
+  IF (KIND(T2%L2) .NE. F ) ERROR STOP 13
+  IF (T2%L2       .NE. F ) ERROR STOP 14
 
-  IF (KIND(T2%KK) .NE. T0%K  ) STOP 15
-  IF (T2%KK       .NE. -T0%K ) STOP 16
+  IF (KIND(T2%KK) .NE. T0%K  ) ERROR STOP 15
+  IF (T2%KK       .NE. -T0%K ) ERROR STOP 16
 
-  IF (KIND(T2%LL) .NE. T0%K )                   STOP 17
-  IF (ANY(T2%LL   .NE. f) )                  STOP 18
-  IF (ANY(SHAPE(T2%LL)   .NE. (/integer :: T0%L, T0%K/)) ) STOP 19
+  IF (KIND(T2%LL) .NE. T0%K )                   ERROR STOP 17
+  IF (ANY(T2%LL   .NE. f) )                  ERROR STOP 18
+  IF (ANY(SHAPE(T2%LL)   .NE. (/integer :: T0%L, T0%K/)) ) ERROR STOP 19
 
   END
 

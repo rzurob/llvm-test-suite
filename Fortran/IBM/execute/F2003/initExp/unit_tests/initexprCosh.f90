@@ -17,8 +17,8 @@ real(4) :: a=cosh(r4)
 real(8) :: b=cosh(r8)
 real(16) :: c=cosh(r16)
 
-if (.not. precision_r4(a, cosh(r4))) stop 1
-if (.not. precision_r8(b, cosh(r8))) stop 2
-if (.not. precision_r16(c, cosh(r16))) stop 3
+if (.not. precision_r4(a, cosh(r4))) error stop 1
+if (.not. precision_r8(b, cosh(r8))) error stop 2
+if (.not. precision_r16(c, cosh(r16))) error stop 3
 
 end

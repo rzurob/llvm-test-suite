@@ -74,28 +74,28 @@
   ProcPtr => ExtSub
 
   CALL  ProcPtr(V1)
-  IF ( V1%BaseID      .NE. -1 ) STOP 11
-  IF ( .NOT. ASSOCIATED(V1%ProcPtr0, IExt) ) STOP 12
+  IF ( V1%BaseID      .NE. -1 ) ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(V1%ProcPtr0, IExt) ) ERROR STOP 12
 
   CALL  ProcPtr(V2)
-  IF ( V2%BaseID      .NE. -1 ) STOP 21
-  IF ( V2%Base%BaseID .NE. -1 ) STOP 22
-  IF ( V2%ChildID     .NE. -2 ) STOP 23
-  IF ( .NOT. ASSOCIATED(V2%ProcPtr0, IExt) ) STOP 24
-  IF ( .NOT. ASSOCIATED(V2%ProcPtr1, IExt) ) STOP 25
+  IF ( V2%BaseID      .NE. -1 ) ERROR STOP 21
+  IF ( V2%Base%BaseID .NE. -1 ) ERROR STOP 22
+  IF ( V2%ChildID     .NE. -2 ) ERROR STOP 23
+  IF ( .NOT. ASSOCIATED(V2%ProcPtr0, IExt) ) ERROR STOP 24
+  IF ( .NOT. ASSOCIATED(V2%ProcPtr1, IExt) ) ERROR STOP 25
 
   ALLOCATE(V3)
   CALL  ProcPtr(V3)
-  IF ( V3%BaseID      .NE. -1 ) STOP 31
-  IF ( .NOT. ASSOCIATED(V3%ProcPtr0, IExt) ) STOP 32
+  IF ( V3%BaseID      .NE. -1 ) ERROR STOP 31
+  IF ( .NOT. ASSOCIATED(V3%ProcPtr0, IExt) ) ERROR STOP 32
 
   ALLOCATE(V4)
   CALL  ProcPtr(V4)
-  IF ( V4%BaseID      .NE. -1 ) STOP 41
-  IF ( V4%Base%BaseID .NE. -1 ) STOP 42
-  IF ( V4%ChildID     .NE. -2 ) STOP 43
-  IF ( .NOT. ASSOCIATED(V4%ProcPtr0, IExt) ) STOP 44
-  IF ( .NOT. ASSOCIATED(V4%ProcPtr1, IExt) ) STOP 45
+  IF ( V4%BaseID      .NE. -1 ) ERROR STOP 41
+  IF ( V4%Base%BaseID .NE. -1 ) ERROR STOP 42
+  IF ( V4%ChildID     .NE. -2 ) ERROR STOP 43
+  IF ( .NOT. ASSOCIATED(V4%ProcPtr0, IExt) ) ERROR STOP 44
+  IF ( .NOT. ASSOCIATED(V4%ProcPtr1, IExt) ) ERROR STOP 45
 
 
   END

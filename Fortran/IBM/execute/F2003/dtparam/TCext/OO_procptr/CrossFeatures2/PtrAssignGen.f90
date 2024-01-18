@@ -103,19 +103,19 @@
 
   ProcPtr1 => ModDt1
   ASSOCIATE ( As => ProcPtr1(DT1(20,4)(ID1=1)) )
-    IF ( As%Id1 .NE. 1 ) STOP 11
+    IF ( As%Id1 .NE. 1 ) ERROR STOP 11
   END ASSOCIATE
 
   ProcPtr2 => ModDt2
   ASSOCIATE ( As => ProcPtr2(DT2(20,4)(ID2=2)) )
-    IF ( As%Id2 .NE. 2 ) STOP 12
+    IF ( As%Id2 .NE. 2 ) ERROR STOP 12
   END ASSOCIATE
 
   ASSOCIATE ( As => ProcPtr2(DT2(20,4)(Id1=1, Id2=2)) )
     SELECT TYPE ( As)
     TYPE IS (DT2(*,4))
-      IF ( As%Id1 .NE. 1 ) STOP 13
-      IF ( As%Id2 .NE. 2 ) STOP 14
+      IF ( As%Id1 .NE. 1 ) ERROR STOP 13
+      IF ( As%Id2 .NE. 2 ) ERROR STOP 14
     CLASS DEFAULT
       STOP 33
     END SELECT

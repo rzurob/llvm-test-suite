@@ -58,19 +58,19 @@
   ALLOCATE(F(128), SOURCE=[COMPLEX(KIND=F%KIND) :: ((-R8, 0._8), R8=0, 127, 1.0)] )
   ALLOCATE(G(128), SOURCE=[COMPLEX(KIND=G%KIND) :: ((-R6, 0._16), R6=0, 127, 1.0)] )
 
-  IF ( KIND(A) .NE. 4     ) STOP 11
-  IF ( ANY(A   .NE. Res ) ) STOP 12
-  IF ( KIND(B) .NE. 8     ) STOP 13
-  IF ( ANY(B   .NE. Res ) ) STOP 14
-  IF ( KIND(C) .NE. 16    ) STOP 15
-  IF ( ANY(C   .NE. Res ) ) STOP 16
+  IF ( KIND(A) .NE. 4     ) ERROR STOP 11
+  IF ( ANY(A   .NE. Res ) ) ERROR STOP 12
+  IF ( KIND(B) .NE. 8     ) ERROR STOP 13
+  IF ( ANY(B   .NE. Res ) ) ERROR STOP 14
+  IF ( KIND(C) .NE. 16    ) ERROR STOP 15
+  IF ( ANY(C   .NE. Res ) ) ERROR STOP 16
 
-  IF ( KIND(E) .NE. 4     ) STOP 21
-  IF ( ANY(E   .NE. Res ) ) STOP 22
-  IF ( KIND(F) .NE. 8     ) STOP 23
-  IF ( ANY(F   .NE. Res ) ) STOP 24
-  IF ( KIND(G) .NE. 16    ) STOP 25
-  IF ( ANY(G   .NE. Res ) ) STOP 26
+  IF ( KIND(E) .NE. 4     ) ERROR STOP 21
+  IF ( ANY(E   .NE. Res ) ) ERROR STOP 22
+  IF ( KIND(F) .NE. 8     ) ERROR STOP 23
+  IF ( ANY(F   .NE. Res ) ) ERROR STOP 24
+  IF ( KIND(G) .NE. 16    ) ERROR STOP 25
+  IF ( ANY(G   .NE. Res ) ) ERROR STOP 26
 
 
   END

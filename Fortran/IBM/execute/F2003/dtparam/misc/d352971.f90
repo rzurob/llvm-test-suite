@@ -34,8 +34,8 @@ use m
 
     p => c1(2,:)
 
-    if (size(p) /= 2) stop 1
-    if ((p%n /= 10) .or. (p%l /= 20)) stop 2
+    if (size(p) /= 2) error stop 1
+    if ((p%n /= 10) .or. (p%l /= 20)) error stop 2
 
     p(1)%data = 1
     p(2)%data = 2
@@ -43,14 +43,14 @@ use m
     p(2)%name = 'testxlf 1001 testxlf 1001'
 
     do i = 1, 10
-        if (.not. precision_r4(c1(2,1)%data(i), 1.0_4)) stop 3
+        if (.not. precision_r4(c1(2,1)%data(i), 1.0_4)) error stop 3
 
-        if (.not. precision_r4(c1(2,2)%data(i), 2.0_4)) stop 4
+        if (.not. precision_r4(c1(2,2)%data(i), 2.0_4)) error stop 4
     end do
 
-    if (c1(2,1)%name /= 'xlftest 101 xlftest ') stop 5
+    if (c1(2,1)%name /= 'xlftest 101 xlftest ') error stop 5
 
-    if (c1(2,2)%name /= 'testxlf 1001 testxlf') stop 6
+    if (c1(2,2)%name /= 'testxlf 1001 testxlf') error stop 6
 
     print *, c1(2,:)
 end

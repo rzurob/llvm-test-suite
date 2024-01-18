@@ -61,8 +61,8 @@
       CLASS(Child1(4,*,4)) :: Arg0, Arg2
       CLASS(Child2(4,*,4)) :: Arg1, Arg3
 
-      IF (Arg0%k .NE. Arg2%k) STOP 10
-      IF (Arg1%k .NE. Arg3%k) STOP 11
+      IF (Arg0%k .NE. Arg2%k) ERROR STOP 10
+      IF (Arg1%k .NE. Arg3%k) ERROR STOP 11
 
       tag ="1"
 
@@ -73,8 +73,8 @@
       CLASS(Child1(4,*,4)) :: Arg0, Arg3
       CLASS(Child2(4,*,4)) :: Arg1, Arg2
 
-      IF (Arg0%k .NE. Arg3%k) STOP 12
-      IF (Arg1%k .NE. Arg2%k) STOP 13
+      IF (Arg0%k .NE. Arg3%k) ERROR STOP 12
+      IF (Arg1%k .NE. Arg2%k) ERROR STOP 13
 
       tag ="2"
 
@@ -92,25 +92,25 @@
 ! two last arguments are TKR compatible but the two last are kind distinguishable
 
       call b41%sub(b41, b81, b42, b82)  !call to sub1
-      IF ( tag .NE. "1" ) STOP 20
+      IF ( tag .NE. "1" ) ERROR STOP 20
       call b81%sub(b41, b81, b42, b82)  !call to sub1
-      IF ( tag .NE. "1" ) STOP 21
+      IF ( tag .NE. "1" ) ERROR STOP 21
 
       call b41%sub(b81, b41, b42, b82)  !call to sub2
-      IF ( tag .NE. "2" ) STOP 22
+      IF ( tag .NE. "2" ) ERROR STOP 22
       call b81%sub(b81, b41, b42, b82)  !call to sub2
-      IF ( tag .NE. "2" ) STOP 23
+      IF ( tag .NE. "2" ) ERROR STOP 23
 
 !using keywords : 2 first argument TKR compatible, second are distinguished by name
 
       call b41%sub(Arg1=b81, Arg0=b41, Arg2=b42, Arg3=b82)  !call to sub1
-      IF ( tag .NE. "1" ) STOP 24
+      IF ( tag .NE. "1" ) ERROR STOP 24
       call b81%sub(Arg1=b81, Arg0=b41, Arg2=b42, Arg3=b82)  !call to sub1
-      IF ( tag .NE. "1" ) STOP 25
+      IF ( tag .NE. "1" ) ERROR STOP 25
 
       call b41%sub(Arg1=b81, Arg0=b41, Arg3=b42, Arg2=b82)  !call to sub2
-      IF ( tag .NE. "2" ) STOP 26
+      IF ( tag .NE. "2" ) ERROR STOP 26
       call b81%sub(Arg1=b81, Arg0=b41, Arg3=b42, Arg2=b82)  !call to sub2
-      IF ( tag .NE. "2" ) STOP 27
+      IF ( tag .NE. "2" ) ERROR STOP 27
 
       END PROGRAM Generic_TypeBound06c

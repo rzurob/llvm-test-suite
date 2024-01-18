@@ -87,10 +87,10 @@
     CLASS is (Child(4,*))
       STOP 24
     TYPE IS (Child(4,*))
-      IF ( As%BaseId       .NE. 1 ) STOP 31
-      IF ( As%ChildId      .NE. 2 ) STOP 32
-      IF ( As%Base%GetId() .NE. 1 ) STOP 33
-      IF ( As%GetId()      .NE. 2 ) STOP 34
+      IF ( As%BaseId       .NE. 1 ) ERROR STOP 31
+      IF ( As%ChildId      .NE. 2 ) ERROR STOP 32
+      IF ( As%Base%GetId() .NE. 1 ) ERROR STOP 33
+      IF ( As%GetId()      .NE. 2 ) ERROR STOP 34
 
   END SELECT
 

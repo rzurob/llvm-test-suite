@@ -42,26 +42,26 @@
  RECORD /S2/ R2
 
   ASSOCIATE ( As1 => R1, As2 => R2  )
-    IF ( As1.A%Pi .NE. -3  )     STOP 20
-    IF ( As1.A%I  .NE. 1  )      STOP 21
-    IF ( As1.B%J  .NE. 2  )      STOP 22
+    IF ( As1.A%Pi .NE. -3  )     ERROR STOP 20
+    IF ( As1.A%I  .NE. 1  )      ERROR STOP 21
+    IF ( As1.B%J  .NE. 2  )      ERROR STOP 22
 
     ASSOCIATE ( As1 => As1.A, As2 => As2.I, As3 => As1.B )
-      IF ( As1%I  .NE. 1  )      STOP 23
-      IF ( As2    .NE. 1  )      STOP 24
-      IF ( As3%J  .NE. 2  )      STOP 25
+      IF ( As1%I  .NE. 1  )      ERROR STOP 23
+      IF ( As2    .NE. 1  )      ERROR STOP 24
+      IF ( As3%J  .NE. 2  )      ERROR STOP 25
 
       As1%I = -1
       As3%J = -2
 
-      IF ( As1%I  .NE. -1  )      STOP 26
-      IF ( As3%J  .NE. -2  )      STOP 27
+      IF ( As1%I  .NE. -1  )      ERROR STOP 26
+      IF ( As3%J  .NE. -2  )      ERROR STOP 27
     END ASSOCIATE
 
-    IF ( As1.A%I  .NE. -1  )      STOP 31
-    IF ( As1.B%J  .NE. -2  )      STOP 32
-    IF ( R1.A%I   .NE. -1  )      STOP 33
-    IF ( R1.B%J   .NE. -2  )      STOP 34
+    IF ( As1.A%I  .NE. -1  )      ERROR STOP 31
+    IF ( As1.B%J  .NE. -2  )      ERROR STOP 32
+    IF ( R1.A%I   .NE. -1  )      ERROR STOP 33
+    IF ( R1.B%J   .NE. -2  )      ERROR STOP 34
 
   END ASSOCIATE
 

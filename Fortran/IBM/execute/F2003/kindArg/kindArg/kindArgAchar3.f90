@@ -143,31 +143,31 @@
   ALLOCATE(C(95), SOURCE=Ascii)
 
   DO I1 =32, 126
-    IF (ACHAR(I1, KIND=1_1 ) .NE. Ascii(I1)) STOP 11
-    IF (ACHAR(I1, KIND=1_2 ) .NE. Ascii(I1)) STOP 12
-    IF (ACHAR(I1, KIND=1_4 ) .NE. Ascii(I1)) STOP 13
-    IF (ACHAR(I1, KIND=1_8 ) .NE. Ascii(I1)) STOP 14
+    IF (ACHAR(I1, KIND=1_1 ) .NE. Ascii(I1)) ERROR STOP 11
+    IF (ACHAR(I1, KIND=1_2 ) .NE. Ascii(I1)) ERROR STOP 12
+    IF (ACHAR(I1, KIND=1_4 ) .NE. Ascii(I1)) ERROR STOP 13
+    IF (ACHAR(I1, KIND=1_8 ) .NE. Ascii(I1)) ERROR STOP 14
   END DO
 
   DO I2 =32, 126
-    IF (ACHAR(I2, KIND=1_1 ) .NE. Ascii(I2)) STOP 21
-    IF (ACHAR(I2, KIND=1_2 ) .NE. Ascii(I2)) STOP 22
-    IF (ACHAR(I2, KIND=1_4 ) .NE. Ascii(I2)) STOP 23
-    IF (ACHAR(I2, KIND=1_8 ) .NE. Ascii(I2)) STOP 24
+    IF (ACHAR(I2, KIND=1_1 ) .NE. Ascii(I2)) ERROR STOP 21
+    IF (ACHAR(I2, KIND=1_2 ) .NE. Ascii(I2)) ERROR STOP 22
+    IF (ACHAR(I2, KIND=1_4 ) .NE. Ascii(I2)) ERROR STOP 23
+    IF (ACHAR(I2, KIND=1_8 ) .NE. Ascii(I2)) ERROR STOP 24
   END DO
 
   DO I4 =32, 126
-    IF (ACHAR(I4, KIND=1_1 ) .NE. Ascii(I4)) STOP 31
-    IF (ACHAR(I4, KIND=1_2 ) .NE. Ascii(I4)) STOP 32
-    IF (ACHAR(I4, KIND=1_4 ) .NE. Ascii(I4)) STOP 33
-    IF (ACHAR(I4, KIND=1_8 ) .NE. Ascii(I4)) STOP 34
+    IF (ACHAR(I4, KIND=1_1 ) .NE. Ascii(I4)) ERROR STOP 31
+    IF (ACHAR(I4, KIND=1_2 ) .NE. Ascii(I4)) ERROR STOP 32
+    IF (ACHAR(I4, KIND=1_4 ) .NE. Ascii(I4)) ERROR STOP 33
+    IF (ACHAR(I4, KIND=1_8 ) .NE. Ascii(I4)) ERROR STOP 34
   END DO
 
   DO I8 =32, 126
-    IF (ACHAR(I8, KIND=1_1 ) .NE. Ascii(I8)) STOP 41
-    IF (ACHAR(I8, KIND=1_2 ) .NE. Ascii(I8)) STOP 42
-    IF (ACHAR(I8, KIND=1_4 ) .NE. Ascii(I8)) STOP 43
-    IF (ACHAR(I8, KIND=1_8 ) .NE. Ascii(I8)) STOP 44
+    IF (ACHAR(I8, KIND=1_1 ) .NE. Ascii(I8)) ERROR STOP 41
+    IF (ACHAR(I8, KIND=1_2 ) .NE. Ascii(I8)) ERROR STOP 42
+    IF (ACHAR(I8, KIND=1_4 ) .NE. Ascii(I8)) ERROR STOP 43
+    IF (ACHAR(I8, KIND=1_8 ) .NE. Ascii(I8)) ERROR STOP 44
   END DO
 
   DEALLOCATE(C)

@@ -15,12 +15,12 @@ contains
   subroutine sub(x)
     character :: x(100)
     character(100) :: y
-    if (len(x) /= 1) stop 1
-    if (size(x) /= 100) stop 2
+    if (len(x) /= 1) error stop 1
+    if (size(x) /= 100) error stop 2
     do i = 1, size(x)
       y(i:i) = x(i)
     end do
-    if (y /= repeat('0123456789', 10)) stop 3
+    if (y /= repeat('0123456789', 10)) error stop 3
   end subroutine
 end module
 

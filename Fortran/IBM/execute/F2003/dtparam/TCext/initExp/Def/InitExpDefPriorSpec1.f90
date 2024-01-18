@@ -75,30 +75,30 @@
                                           TTD(LBOUND(TD ,1):UBOUND(TD,1))=DT(20,8,1,16,4)(1)
 
 
-  IF ( KIND(TTI8 )       .NE. 8 )                   STOP 11
-  IF ( LBOUND(TTI8,1 )   .NE. LBOUND(TI8,1) )       STOP 12
-  IF ( UBOUND(TTI8,1 )   .NE. UBOUND(TI8,1) )       STOP 13
-  IF ( ANY( TTI8         .NE. SIZE(TI8)))           STOP 14
+  IF ( KIND(TTI8 )       .NE. 8 )                   ERROR STOP 11
+  IF ( LBOUND(TTI8,1 )   .NE. LBOUND(TI8,1) )       ERROR STOP 12
+  IF ( UBOUND(TTI8,1 )   .NE. UBOUND(TI8,1) )       ERROR STOP 13
+  IF ( ANY( TTI8         .NE. SIZE(TI8)))           ERROR STOP 14
 
-  IF ( KIND(TTL1 )       .NE. 1 )                   STOP 21
-  IF ( LBOUND(TTL1,1 )   .NE. LBOUND(TL1,1) )       STOP 22
-  IF ( UBOUND(TTL1,1 )   .NE. UBOUND(TL1,1) )       STOP 23
-  IF ( ANY( TTL1         .NEQV. .TRUE.))            STOP 24
+  IF ( KIND(TTL1 )       .NE. 1 )                   ERROR STOP 21
+  IF ( LBOUND(TTL1,1 )   .NE. LBOUND(TL1,1) )       ERROR STOP 22
+  IF ( UBOUND(TTL1,1 )   .NE. UBOUND(TL1,1) )       ERROR STOP 23
+  IF ( ANY( TTL1         .NEQV. .TRUE.))            ERROR STOP 24
 
-  IF ( KIND(TTR6 )       .NE. 16)                   STOP 21
-  IF ( LBOUND(TTR6,1 )   .NE. LBOUND(TR6,1) )       STOP 22
-  IF ( UBOUND(TTR6,1 )   .NE. UBOUND(TR6,1) )       STOP 23
-  IF ( ANY( TTR6         .NE. SIZE(TR6)))           STOP 24
+  IF ( KIND(TTR6 )       .NE. 16)                   ERROR STOP 21
+  IF ( LBOUND(TTR6,1 )   .NE. LBOUND(TR6,1) )       ERROR STOP 22
+  IF ( UBOUND(TTR6,1 )   .NE. UBOUND(TR6,1) )       ERROR STOP 23
+  IF ( ANY( TTR6         .NE. SIZE(TR6)))           ERROR STOP 24
 
-  IF ( KIND(TTZ4 )       .NE. 4 )                   STOP 31
-  IF ( LBOUND(TTZ4,1 )   .NE. LBOUND(TZ4,1) )       STOP 32
-  IF ( UBOUND(TTZ4,1 )   .NE. UBOUND(TZ4,1) )       STOP 33
-  IF ( ANY( TTZ4         .NE. SIZE(TZ4)))           STOP 34
+  IF ( KIND(TTZ4 )       .NE. 4 )                   ERROR STOP 31
+  IF ( LBOUND(TTZ4,1 )   .NE. LBOUND(TZ4,1) )       ERROR STOP 32
+  IF ( UBOUND(TTZ4,1 )   .NE. UBOUND(TZ4,1) )       ERROR STOP 33
+  IF ( ANY( TTZ4         .NE. SIZE(TZ4)))           ERROR STOP 34
 
-  IF ( LBOUND(TTD,1 )    .NE. LBOUND(T,1) )         STOP 42
-  IF ( UBOUND(TTD,1 )    .NE. UBOUND(T,1) )         STOP 43
-  IF ( ANY( TTD(LBOUND(TD,1))%Z4    .NE. (1.0, -1.0)))         STOP 44
-  IF ( ANY( TTD(UBOUND(TD,1))%Z4    .NE. (1.0, -1.0)))         STOP 54
+  IF ( LBOUND(TTD,1 )    .NE. LBOUND(T,1) )         ERROR STOP 42
+  IF ( UBOUND(TTD,1 )    .NE. UBOUND(T,1) )         ERROR STOP 43
+  IF ( ANY( TTD(LBOUND(TD,1))%Z4    .NE. (1.0, -1.0)))         ERROR STOP 44
+  IF ( ANY( TTD(UBOUND(TD,1))%Z4    .NE. (1.0, -1.0)))         ERROR STOP 54
 
 
   END

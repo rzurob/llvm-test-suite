@@ -52,13 +52,13 @@
       TYPE(Child(k1,len1)), TARGET :: tgt
 
       ALLOCATE(Base(k1,len1):: tgt%Cmp(2))
-      IF ( .NOT. ALLOCATED(tgt%Cmp)) STOP 10
+      IF ( .NOT. ALLOCATED(tgt%Cmp)) ERROR STOP 10
 
       tgt%my_arr = 0
 
       child1 => tgt
-      IF ( .NOT. ASSOCIATED(child1)) STOP 11
-      IF ( .NOT. ALLOCATED(child1%Cmp)) STOP 12
+      IF ( .NOT. ASSOCIATED(child1)) ERROR STOP 11
+      IF ( .NOT. ALLOCATED(child1%Cmp)) ERROR STOP 12
 
       CALL sub1
 

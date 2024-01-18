@@ -61,47 +61,47 @@
   M = R
   R = -R
 
-  IF ( ANY( LBOUND(P1) .NE. [M] )) STOP 80
-  IF ( ANY( LBOUND(P2) .NE. [M] )) STOP 81
-  IF ( ANY( LBOUND(P3) .NE. [M] )) STOP 82
+  IF ( ANY( LBOUND(P1) .NE. [M] )) ERROR STOP 80
+  IF ( ANY( LBOUND(P2) .NE. [M] )) ERROR STOP 81
+  IF ( ANY( LBOUND(P3) .NE. [M] )) ERROR STOP 82
 
   DO I = M, N
 
-    IF ( P1(I)%K0               .NE.   0          ) STOP 11
-    IF ( P1(I)%L0               .NE.   0          ) STOP 12
+    IF ( P1(I)%K0               .NE.   0          ) ERROR STOP 11
+    IF ( P1(I)%L0               .NE.   0          ) ERROR STOP 12
 
-    IF ( P2(I)%K0               .NE.   2          ) STOP 21
-    IF ( P2(I)%L0               .NE.   2          ) STOP 22
-    IF ( P2(I)%K1%KIND          .NE.   2          ) STOP 23
-    IF ( P2(I)%L1%KIND          .NE.   2          ) STOP 24
-    IF ( P2(I)%K1               .NE.   2          ) STOP 25
-    IF ( P2(I)%L1               .NE.   2          ) STOP 26
-    IF ( P2(I)%I%KIND           .NE.   2          ) STOP 27
-    IF ( SIZE(P2(I)%I)          .NE.   1          ) STOP 28
-    IF ( ANY(P2(I)%I            .NE.  -1        ) ) STOP 29
-    IF ( P2(I)%C%LEN            .NE.   2          ) STOP 30
-    IF ( SIZE(P2(I)%C)          .NE.   1          ) STOP 31
-    IF ( ANY(P2(I)%C            .NE.   "X"      ) ) STOP 32
+    IF ( P2(I)%K0               .NE.   2          ) ERROR STOP 21
+    IF ( P2(I)%L0               .NE.   2          ) ERROR STOP 22
+    IF ( P2(I)%K1%KIND          .NE.   2          ) ERROR STOP 23
+    IF ( P2(I)%L1%KIND          .NE.   2          ) ERROR STOP 24
+    IF ( P2(I)%K1               .NE.   2          ) ERROR STOP 25
+    IF ( P2(I)%L1               .NE.   2          ) ERROR STOP 26
+    IF ( P2(I)%I%KIND           .NE.   2          ) ERROR STOP 27
+    IF ( SIZE(P2(I)%I)          .NE.   1          ) ERROR STOP 28
+    IF ( ANY(P2(I)%I            .NE.  -1        ) ) ERROR STOP 29
+    IF ( P2(I)%C%LEN            .NE.   2          ) ERROR STOP 30
+    IF ( SIZE(P2(I)%C)          .NE.   1          ) ERROR STOP 31
+    IF ( ANY(P2(I)%C            .NE.   "X"      ) ) ERROR STOP 32
 
-    IF ( P3(I)%K0               .NE.   1          ) STOP 41
-    IF ( P3(I)%L0               .NE.   1          ) STOP 42
-    IF ( P3(I)%K1%KIND          .NE.   1          ) STOP 43
-    IF ( P3(I)%L1%KIND          .NE.   1          ) STOP 44
-    IF ( P3(I)%K1               .NE.   2          ) STOP 45
-    IF ( P3(I)%L1               .NE.   2          ) STOP 46
-    IF ( P3(I)%I%KIND           .NE.   2          ) STOP 47
-    IF ( SIZE(P3(I)%I)          .NE.   2          ) STOP 48
-    IF ( ANY(P3(I)%I            .NE.  -1        ) ) STOP 49
-    IF ( P3(I)%C%LEN            .NE.   1          ) STOP 50
-    IF ( SIZE(P3(I)%C)          .NE.   2          ) STOP 51
-    IF ( ANY(P3(I)%C            .NE.   "X"      ) ) STOP 52
+    IF ( P3(I)%K0               .NE.   1          ) ERROR STOP 41
+    IF ( P3(I)%L0               .NE.   1          ) ERROR STOP 42
+    IF ( P3(I)%K1%KIND          .NE.   1          ) ERROR STOP 43
+    IF ( P3(I)%L1%KIND          .NE.   1          ) ERROR STOP 44
+    IF ( P3(I)%K1               .NE.   2          ) ERROR STOP 45
+    IF ( P3(I)%L1               .NE.   2          ) ERROR STOP 46
+    IF ( P3(I)%I%KIND           .NE.   2          ) ERROR STOP 47
+    IF ( SIZE(P3(I)%I)          .NE.   2          ) ERROR STOP 48
+    IF ( ANY(P3(I)%I            .NE.  -1        ) ) ERROR STOP 49
+    IF ( P3(I)%C%LEN            .NE.   1          ) ERROR STOP 50
+    IF ( SIZE(P3(I)%C)          .NE.   2          ) ERROR STOP 51
+    IF ( ANY(P3(I)%C            .NE.   "X"      ) ) ERROR STOP 52
 
-    IF ( P3(I)%X0%K0            .NE.   2          ) STOP 61
-    IF ( P3(I)%X0%L0            .NE.   2          ) STOP 62
-    IF ( P3(I)%X1%K0            .NE.   2          ) STOP 61
-    IF ( P3(I)%X1%L0            .NE.   2          ) STOP 62
-    IF ( P3(I)%X2%K0            .NE.   2          ) STOP 61
-    IF ( P3(I)%X2%L0            .NE.   2          ) STOP 62
+    IF ( P3(I)%X0%K0            .NE.   2          ) ERROR STOP 61
+    IF ( P3(I)%X0%L0            .NE.   2          ) ERROR STOP 62
+    IF ( P3(I)%X1%K0            .NE.   2          ) ERROR STOP 61
+    IF ( P3(I)%X1%L0            .NE.   2          ) ERROR STOP 62
+    IF ( P3(I)%X2%K0            .NE.   2          ) ERROR STOP 61
+    IF ( P3(I)%X2%L0            .NE.   2          ) ERROR STOP 62
 
 
   END DO

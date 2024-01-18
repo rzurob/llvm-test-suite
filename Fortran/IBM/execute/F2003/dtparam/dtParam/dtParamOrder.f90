@@ -46,32 +46,32 @@
   TYPE(DT2(2,4,8)), TARGET  :: T2
   TYPE(DT2(:,4,:)), POINTER :: T3
 
-  IF (KIND(T1%K1) .NE. 4 )                 STOP 11
-  IF (     T1%K1  .NE. 2 )                 STOP 12
-  IF (KIND(T1%K2) .NE. 2 )                 STOP 13
-  IF (     T1%K2  .NE. 4 )                 STOP 14
-  IF (KIND(T1%K3) .NE. 4 )                 STOP 15
-  IF (     T1%K3  .NE. 8 )                 STOP 16
+  IF (KIND(T1%K1) .NE. 4 )                 ERROR STOP 11
+  IF (     T1%K1  .NE. 2 )                 ERROR STOP 12
+  IF (KIND(T1%K2) .NE. 2 )                 ERROR STOP 13
+  IF (     T1%K2  .NE. 4 )                 ERROR STOP 14
+  IF (KIND(T1%K3) .NE. 4 )                 ERROR STOP 15
+  IF (     T1%K3  .NE. 8 )                 ERROR STOP 16
 
 
-  IF (KIND(T2%L1) .NE. 8 )                 STOP 21
-  IF (     T2%L1  .NE. 2 )                 STOP 22
-  IF (KIND(T2%L2) .NE. 2 )                 STOP 23
-  IF (     T2%L2  .NE. 4 )                 STOP 24
-  IF (KIND(T2%L3) .NE. 4 )                 STOP 25
-  IF (     T2%L3  .NE. 8 )                 STOP 26
-  IF (ANY(LBOUND(T2%Arr) .NE. (/2,4/) ))   STOP 26
-  IF (ANY(UBOUND(T2%Arr) .NE. (/4,8/) ))   STOP 26
+  IF (KIND(T2%L1) .NE. 8 )                 ERROR STOP 21
+  IF (     T2%L1  .NE. 2 )                 ERROR STOP 22
+  IF (KIND(T2%L2) .NE. 2 )                 ERROR STOP 23
+  IF (     T2%L2  .NE. 4 )                 ERROR STOP 24
+  IF (KIND(T2%L3) .NE. 4 )                 ERROR STOP 25
+  IF (     T2%L3  .NE. 8 )                 ERROR STOP 26
+  IF (ANY(LBOUND(T2%Arr) .NE. (/2,4/) ))   ERROR STOP 26
+  IF (ANY(UBOUND(T2%Arr) .NE. (/4,8/) ))   ERROR STOP 26
 
   T3 => T2
-  IF (KIND(T3%L1) .NE. 8 )                 STOP 31
-  IF (     T3%L1  .NE. 2 )                 STOP 32
-  IF (KIND(T3%L2) .NE. 2 )                 STOP 33
-  IF (     T3%L2  .NE. 4 )                 STOP 34
-  IF (KIND(T3%L3) .NE. 4 )                 STOP 35
-  IF (     T3%L3  .NE. 8 )                 STOP 36
-  IF (ANY(LBOUND(T3%Arr) .NE. (/2,4/) ))   STOP 36
-  IF (ANY(UBOUND(T3%Arr) .NE. (/4,8/) ))   STOP 36
+  IF (KIND(T3%L1) .NE. 8 )                 ERROR STOP 31
+  IF (     T3%L1  .NE. 2 )                 ERROR STOP 32
+  IF (KIND(T3%L2) .NE. 2 )                 ERROR STOP 33
+  IF (     T3%L2  .NE. 4 )                 ERROR STOP 34
+  IF (KIND(T3%L3) .NE. 4 )                 ERROR STOP 35
+  IF (     T3%L3  .NE. 8 )                 ERROR STOP 36
+  IF (ANY(LBOUND(T3%Arr) .NE. (/2,4/) ))   ERROR STOP 36
+  IF (ANY(UBOUND(T3%Arr) .NE. (/4,8/) ))   ERROR STOP 36
 
 
 

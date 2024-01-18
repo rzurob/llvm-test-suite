@@ -89,28 +89,28 @@
       test2 = SUM(base2%my_arr)
 
       ALLOCATE(Base(4,5):: child1%Cmp)
-      IF ( .NOT. ASSOCIATED(child1%Cmp)) STOP 10
+      IF ( .NOT. ASSOCIATED(child1%Cmp)) ERROR STOP 10
 
       ALLOCATE(Base(8,5):: child2%Cmp)
-      IF ( .NOT. ASSOCIATED(child2%Cmp)) STOP 11
+      IF ( .NOT. ASSOCIATED(child2%Cmp)) ERROR STOP 11
 
       call SUB(child1%Cmp)
-      IF( SUM(child1%Cmp%my_arr) .NE. test1) STOP 12
+      IF( SUM(child1%Cmp%my_arr) .NE. test1) ERROR STOP 12
 
       call SUB(child2%Cmp)
-      IF( SUM(child2%Cmp%my_arr) .NE. test2) STOP 13
+      IF( SUM(child2%Cmp%my_arr) .NE. test2) ERROR STOP 13
 
       child1%Cmp => tgt1
-      IF ( .NOT. ASSOCIATED(child1%Cmp)) STOP 14
+      IF ( .NOT. ASSOCIATED(child1%Cmp)) ERROR STOP 14
 
       child2%Cmp => tgt2
-      IF ( .NOT. ASSOCIATED(child2%Cmp)) STOP 15
+      IF ( .NOT. ASSOCIATED(child2%Cmp)) ERROR STOP 15
 
       call SUB(child1%Cmp)
-      IF( SUM(child1%Cmp%my_arr) .NE. test1) STOP 16
+      IF( SUM(child1%Cmp%my_arr) .NE. test1) ERROR STOP 16
 
       call SUB(child2%Cmp)
-      IF( SUM(child2%Cmp%my_arr) .NE. test2) STOP 17
+      IF( SUM(child2%Cmp%my_arr) .NE. test2) ERROR STOP 17
 
       CALL SUB1(child1%Cmp)
 
@@ -122,16 +122,16 @@
       CLASS(Base(4,5)), POINTER ::  Arg
 
       ALLOCATE(Base(4,5):: Arg)
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 18
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 18
 
       call SUB(Arg)
-      IF( SUM(Arg%my_arr) .NE. test1) STOP 19
+      IF( SUM(Arg%my_arr) .NE. test1) ERROR STOP 19
 
       Arg => tgt1
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 20
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 20
 
       call SUB(Arg)
-      IF( SUM(Arg%my_arr) .NE. test1) STOP 21
+      IF( SUM(Arg%my_arr) .NE. test1) ERROR STOP 21
 
       END SUBROUTINE SUB1
 
@@ -141,16 +141,16 @@
 
       !ALLOCATE(Base(8,*):: Arg)    ! problem with TYPESPEC see defect 340741
       ALLOCATE(Arg)
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 22
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 22
 
       call SUB(Arg)
-      IF( SUM(Arg%my_arr) .NE. test2) STOP 23
+      IF( SUM(Arg%my_arr) .NE. test2) ERROR STOP 23
 
       Arg => tgt2
-      IF ( .NOT. ASSOCIATED(Arg)) STOP 24
+      IF ( .NOT. ASSOCIATED(Arg)) ERROR STOP 24
 
       call SUB(Arg)
-      IF( SUM(Arg%my_arr) .NE. test2) STOP 25
+      IF( SUM(Arg%my_arr) .NE. test2) ERROR STOP 25
 
       END SUBROUTINE SUB2
 

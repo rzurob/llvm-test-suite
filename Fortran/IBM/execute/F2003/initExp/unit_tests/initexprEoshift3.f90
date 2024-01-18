@@ -27,7 +27,7 @@ complex(8), dimension(131) :: d1res, d1=eoshift(d0, shift=-2, boundary=(-1.1_8,-
 complex(16), dimension(17), parameter :: e0=(1.7Q3, -1.9Q5)
 complex(16), dimension(17) :: e1res, e1=eoshift(e0, shift=16, boundary=(1.0_16, 1.0_16))
 
-if (.not. all(c1 .eq. eoshift(c0,3))) stop 1
+if (.not. all(c1 .eq. eoshift(c0,3))) error stop 1
 
 c3res = eoshift(c2, shift=(/1,-1,0/), dim=1)
 do i=1,2

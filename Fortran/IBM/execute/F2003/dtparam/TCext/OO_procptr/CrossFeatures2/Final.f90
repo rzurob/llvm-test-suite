@@ -89,14 +89,14 @@
 
   ALLOCATE(V, SOURCE=DT(4,20)(Base=Base(4,20)(ModFun1), ProcPTr2=Modfun2))
 
-  IF ( .NOT. ASSOCIATED(V%ProcPtr1, Modfun1)) STOP 11
-  IF ( .NOT. ASSOCIATED(V%ProcPtr2, Modfun2)) STOP 12
+  IF ( .NOT. ASSOCIATED(V%ProcPtr1, Modfun1)) ERROR STOP 11
+  IF ( .NOT. ASSOCIATED(V%ProcPtr2, Modfun2)) ERROR STOP 12
 
-  IF ( ANY (Trace .NE. (/2,1,1,0,0/))) STOP 14
+  IF ( ANY (Trace .NE. (/2,1,1,0,0/))) ERROR STOP 14
 
   DEALLOCATE(V)
 
-  IF ( ANY (Trace .NE. (/2,1,1,2,1/))) STOP 15
+  IF ( ANY (Trace .NE. (/2,1,1,2,1/))) ERROR STOP 15
 
   END
 

@@ -52,14 +52,14 @@
   SELECT TYPE (U)
   CLASS IS (DT(4,*))
 
-    IF (ANY(U%Int   .NE. 6))       STOP 20
-    IF (ANY(U%C     .NE. "123"))   STOP 21
-    IF (ANY(SHAPE(U).NE. (/16/)))  STOP 22
+    IF (ANY(U%Int   .NE. 6))       ERROR STOP 20
+    IF (ANY(U%C     .NE. "123"))   ERROR STOP 21
+    IF (ANY(SHAPE(U).NE. (/16/)))  ERROR STOP 22
 
     READ(U(1)%C, FMT=*, IOSTAT=U(1)%Int, IOMSG= U(2)%C) U(2)%Int
-    IF (U(2)%Int .NE. 123 )     STOP 20
-    IF (U(1)%Int .NE. 0 )       STOP 21
-    IF (U(2)%C   .NE. "123" )   STOP 21
+    IF (U(2)%Int .NE. 123 )     ERROR STOP 20
+    IF (U(1)%Int .NE. 0 )       ERROR STOP 21
+    IF (U(2)%C   .NE. "123" )   ERROR STOP 21
 
   CLASS DEFAULT
     STOP 40
@@ -71,8 +71,8 @@
   TYPE IS (INTEGER(8))
 
     READ(U(1)%C, FMT=*, IOSTAT=V) U(2)%Int
-    IF (U(2)%Int .NE. 123 ) STOP 30
-    IF (V        .NE. 0 )   STOP 31
+    IF (U(2)%Int .NE. 123 ) ERROR STOP 30
+    IF (V        .NE. 0 )   ERROR STOP 31
 
   END SELECT
 

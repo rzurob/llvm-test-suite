@@ -66,10 +66,10 @@ PROGRAM AllocateWithSourceExp06
 
                   SELECT TYPE ( Obj )
                       CLASS IS (Base(4,*))
-                        IF (ANY(Obj%my_arr .NE. -99)) STOP 10
-                        IF (ANY(Obj%my_arr .NE. Arg%my_arr)) STOP 11
-                        IF (Obj%name .NE. 'Base') STOP 12
-                        IF (Obj%name .NE. Arg%name) STOP 13
+                        IF (ANY(Obj%my_arr .NE. -99)) ERROR STOP 10
+                        IF (ANY(Obj%my_arr .NE. Arg%my_arr)) ERROR STOP 11
+                        IF (Obj%name .NE. 'Base') ERROR STOP 12
+                        IF (Obj%name .NE. Arg%name) ERROR STOP 13
 
                       CLASS DEFAULT
                          STOP 14
@@ -80,20 +80,20 @@ PROGRAM AllocateWithSourceExp06
 
                   SELECT TYPE ( Obj )
                      CLASS IS (Child(4,*,4,*))
-                        IF (ANY(Obj%my_arr .NE. 22)) STOP 15
-                        IF (ANY(Obj%my_arr .NE. Arg%my_arr)) STOP 16
-                        IF (Obj%name .NE. 'Ch') STOP 17
-                        IF (Obj%name .NE. Arg%name) STOP 18
+                        IF (ANY(Obj%my_arr .NE. 22)) ERROR STOP 15
+                        IF (ANY(Obj%my_arr .NE. Arg%my_arr)) ERROR STOP 16
+                        IF (Obj%name .NE. 'Ch') ERROR STOP 17
+                        IF (Obj%name .NE. Arg%name) ERROR STOP 18
 
-                        IF (ANY(Obj%b_cmp%my_arr .NE. -99)) STOP 19
-                        IF (ANY(Obj%b_cmp%my_arr .NE. Arg%b_cmp%my_arr)) STOP 20
-                        IF (Obj%b_cmp%name .NE. 'Bas') STOP 21
-                        IF (Obj%b_cmp%name .NE. Arg%b_cmp%name) STOP 22
+                        IF (ANY(Obj%b_cmp%my_arr .NE. -99)) ERROR STOP 19
+                        IF (ANY(Obj%b_cmp%my_arr .NE. Arg%b_cmp%my_arr)) ERROR STOP 20
+                        IF (Obj%b_cmp%name .NE. 'Bas') ERROR STOP 21
+                        IF (Obj%b_cmp%name .NE. Arg%b_cmp%name) ERROR STOP 22
 
-                        IF (ANY(Obj%c_cmp%my_arr .NE. -99)) STOP 23
-                        IF (ANY(Obj%c_cmp%my_arr .NE. Arg%c_cmp%my_arr)) STOP 24
-                        IF (Obj%c_cmp%name .NE. 'Bas') STOP 25
-                        IF (Obj%c_cmp%name .NE. Arg%c_cmp%name) STOP 26
+                        IF (ANY(Obj%c_cmp%my_arr .NE. -99)) ERROR STOP 23
+                        IF (ANY(Obj%c_cmp%my_arr .NE. Arg%c_cmp%my_arr)) ERROR STOP 24
+                        IF (Obj%c_cmp%name .NE. 'Bas') ERROR STOP 25
+                        IF (Obj%c_cmp%name .NE. Arg%c_cmp%name) ERROR STOP 26
 
                       CLASS DEFAULT
                          STOP 27

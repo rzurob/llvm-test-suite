@@ -73,33 +73,33 @@
 
   COMMON /CB/ T
 
-  IF ( T%K         .NE. 4 )                  STOP 43
-  IF ( T%L         .NE. 4 )                  STOP 44
+  IF ( T%K         .NE. 4 )                  ERROR STOP 43
+  IF ( T%L         .NE. 4 )                  ERROR STOP 44
 
   DO I =1, 3
 
-    IF ( T(I)%K         .NE. 4 )                  STOP 13
-    IF ( T(I)%L         .NE. 4 )                  STOP 14
+    IF ( T(I)%K         .NE. 4 )                  ERROR STOP 13
+    IF ( T(I)%L         .NE. 4 )                  ERROR STOP 14
 
-    IF ( KIND(T(I)%I)   .NE. 4 )                  STOP 15
-    IF ( SIZE(T(I)%I)   .NE. 4 )                  STOP 16
-    IF ( ANY(T(I)%I     .NE. (/(-T%K, I=1,4)/)))  STOP 17
+    IF ( KIND(T(I)%I)   .NE. 4 )                  ERROR STOP 15
+    IF ( SIZE(T(I)%I)   .NE. 4 )                  ERROR STOP 16
+    IF ( ANY(T(I)%I     .NE. (/(-T%K, I=1,4)/)))  ERROR STOP 17
 
-    IF ( KIND(T(I)%R)   .NE. 4 )                  STOP 18
-    IF ( SIZE(T(I)%R)   .NE. 4 )                  STOP 19
-    IF ( ANY(T(I)%R     .NE. (/(-T%K, I=1,4)/)))  STOP 20
+    IF ( KIND(T(I)%R)   .NE. 4 )                  ERROR STOP 18
+    IF ( SIZE(T(I)%R)   .NE. 4 )                  ERROR STOP 19
+    IF ( ANY(T(I)%R     .NE. (/(-T%K, I=1,4)/)))  ERROR STOP 20
 
-    IF ( KIND(T(I)%Z)   .NE. 4 )                      STOP 21
-    IF ( SIZE(T(I)%Z)   .NE. 4 )                      STOP 22
-    IF ( ANY(T(I)%Z     .NE. (/((-T%K,T%K),I=1,4)/))) STOP 23
+    IF ( KIND(T(I)%Z)   .NE. 4 )                      ERROR STOP 21
+    IF ( SIZE(T(I)%Z)   .NE. 4 )                      ERROR STOP 22
+    IF ( ANY(T(I)%Z     .NE. (/((-T%K,T%K),I=1,4)/))) ERROR STOP 23
 
-    IF ( LEN(T(I)%C)    .NE. 4 )                STOP 24
-    IF ( SIZE(T(I)%C)   .NE. 4 )                STOP 25
-    IF ( ANY(T(I)%C     .NE. "????" ))          STOP 26
+    IF ( LEN(T(I)%C)    .NE. 4 )                ERROR STOP 24
+    IF ( SIZE(T(I)%C)   .NE. 4 )                ERROR STOP 25
+    IF ( ANY(T(I)%C     .NE. "????" ))          ERROR STOP 26
 
-    IF ( KIND(T(I)%LL)  .NE. 4 )                STOP 28
-    IF ( SIZE(T(I)%LL)  .NE. 4 )                STOP 29
-    IF ( ANY(T(I)%LL    .NEQV. .FALSE._4))      STOP 30
+    IF ( KIND(T(I)%LL)  .NE. 4 )                ERROR STOP 28
+    IF ( SIZE(T(I)%LL)  .NE. 4 )                ERROR STOP 29
+    IF ( ANY(T(I)%LL    .NEQV. .FALSE._4))      ERROR STOP 30
 
   END DO
 

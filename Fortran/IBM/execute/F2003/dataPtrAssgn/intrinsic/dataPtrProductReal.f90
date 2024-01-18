@@ -21,7 +21,7 @@ module m
 	real, pointer :: func(:)
 	real, pointer :: ent(:)
 
-	if ( .not. allocated(a)) stop 11
+	if ( .not. allocated(a)) error stop 11
 
 	if ( present(lb) ) then
             func(lb:) => a(::2)
@@ -29,21 +29,21 @@ module m
 	    func => a(::2)
 	endif
 
-	if ( .not. associated(func, a(::2))) stop 13
-	if ( lbound(func, 1) /= lb ) stop 15
-	if ( ubound(func, 1) /= 12 ) stop 17
+	if ( .not. associated(func, a(::2))) error stop 13
+	if ( lbound(func, 1) /= lb ) error stop 15
+	if ( ubound(func, 1) /= 12 ) error stop 17
 
 	return
 
     entry ent(a)
 
-	if ( .not. allocated(a)) stop 23
+	if ( .not. allocated(a)) error stop 23
 
 	ent(11:size(a)+5) => a(2::2)
 
-	if ( .not. associated(ent)) stop 25
-	if ( lbound(ent, 1) /= 11 ) stop 27
-	if ( ubound(ent, 1) /= 15 ) stop 29
+	if ( .not. associated(ent)) error stop 25
+	if ( lbound(ent, 1) /= 11 ) error stop 27
+	if ( ubound(ent, 1) /= 15 ) error stop 29
     end function
 
 end module

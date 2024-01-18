@@ -34,8 +34,8 @@
   REAL(8) :: T(8)=(/(ATAN(r(I:I)),  I=1,8)/)
   REAL(8) :: S(5)=(/(ATAN(r(1:I+1)),  I=1,2)/)
 
-  IF ( ANY( ABS(T - 1.0) .GE. 1.E-8 ) ) STOP 11
-  IF ( ANY( ABS(S - 1.0) .GE. 1.E-8 ) ) STOP 12
+  IF ( ANY( ABS(T - 1.0) .GE. 1.E-8 ) ) ERROR STOP 11
+  IF ( ANY( ABS(S - 1.0) .GE. 1.E-8 ) ) ERROR STOP 12
 
   END
 

@@ -60,18 +60,18 @@
   SUBROUTINE IntSub()
   TYPE(DT1) :: T
 
-  IF ( T%K        .NE. 4 )                   STOP 11
-  IF ( T%L        .NE. 4 )                   STOP 12
-  IF ( T%K1       .NE. 4 )                   STOP 13
-  IF ( T%L1       .NE. 4 )                   STOP 14
+  IF ( T%K        .NE. 4 )                   ERROR STOP 11
+  IF ( T%L        .NE. 4 )                   ERROR STOP 12
+  IF ( T%K1       .NE. 4 )                   ERROR STOP 13
+  IF ( T%L1       .NE. 4 )                   ERROR STOP 14
 
-  IF ( KIND(T%I)   .NE. 4 )                STOP 21
-  IF ( SIZE(T%I)   .NE. 4 )                STOP 22
-  IF ( ANY(T%I     .NE. 4))                STOP 23
+  IF ( KIND(T%I)   .NE. 4 )                ERROR STOP 21
+  IF ( SIZE(T%I)   .NE. 4 )                ERROR STOP 22
+  IF ( ANY(T%I     .NE. 4))                ERROR STOP 23
 
-  IF ( KIND(T%R)   .NE. 4 )                STOP 31
-  IF ( SIZE(T%R)   .NE. 4 )                STOP 32
-  IF ( ANY(T%R     .NE. 4))                STOP 33
+  IF ( KIND(T%R)   .NE. 4 )                ERROR STOP 31
+  IF ( SIZE(T%R)   .NE. 4 )                ERROR STOP 32
+  IF ( ANY(T%R     .NE. 4))                ERROR STOP 33
 
   T%I = -4
   T%R = -4.
@@ -86,23 +86,23 @@
   INTEGER, SAVE :: Count = 0
 
 
-  IF ( T%K        .NE. 8 )                 STOP 11
-  IF ( T%L        .NE. 4 )                 STOP 12
-  IF ( T%K1       .NE. 8 )                 STOP 13
-  IF ( T%L1       .NE. 4 )                 STOP 14
+  IF ( T%K        .NE. 8 )                 ERROR STOP 11
+  IF ( T%L        .NE. 4 )                 ERROR STOP 12
+  IF ( T%K1       .NE. 8 )                 ERROR STOP 13
+  IF ( T%L1       .NE. 4 )                 ERROR STOP 14
 
-  IF ( KIND(T%I)   .NE. 8 )                STOP 21
-  IF ( SIZE(T%I)   .NE. 4 )                STOP 22
+  IF ( KIND(T%I)   .NE. 8 )                ERROR STOP 21
+  IF ( SIZE(T%I)   .NE. 4 )                ERROR STOP 22
 
-  IF ( KIND(T%R)   .NE. 8 )                STOP 31
-  IF ( SIZE(T%R)   .NE. 4 )                STOP 32
+  IF ( KIND(T%R)   .NE. 8 )                ERROR STOP 31
+  IF ( SIZE(T%R)   .NE. 4 )                ERROR STOP 32
 
   IF (Count .EQ. 0 ) THEN
-    IF ( ANY(T%I     .NE. 8))              STOP 41
-    IF ( ANY(T%R     .NE. 8))              STOP 42
+    IF ( ANY(T%I     .NE. 8))              ERROR STOP 41
+    IF ( ANY(T%R     .NE. 8))              ERROR STOP 42
   ELSE
-    IF ( ANY(T%I     .NE. -4))             STOP 51
-    IF ( ANY(T%R     .NE. -4))             STOP 52
+    IF ( ANY(T%I     .NE. -4))             ERROR STOP 51
+    IF ( ANY(T%R     .NE. -4))             ERROR STOP 52
   END IF
 
   Count = 1

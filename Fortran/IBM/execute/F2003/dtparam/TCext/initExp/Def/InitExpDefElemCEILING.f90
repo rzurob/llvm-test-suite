@@ -63,24 +63,24 @@
 
   TYPE(DT(4,20)) :: T
 
-  IF (ANY( R4  .NE. RESHAPE((/(I, I=1,16)/),(/4,4/) ) ) )  STOP 11
-  IF (ANY( R8  .NE. RESHAPE((/(I, I=1,16)/),(/4,4/) ) ) )  STOP 12
-  IF (ANY( R16 .NE. RESHAPE((/(I, I=2,17)/),(/4,4/) ) ) )  STOP 13
+  IF (ANY( R4  .NE. RESHAPE((/(I, I=1,16)/),(/4,4/) ) ) )  ERROR STOP 11
+  IF (ANY( R8  .NE. RESHAPE((/(I, I=1,16)/),(/4,4/) ) ) )  ERROR STOP 12
+  IF (ANY( R16 .NE. RESHAPE((/(I, I=2,17)/),(/4,4/) ) ) )  ERROR STOP 13
 
-  IF (KIND(T%R44) .NE. 4 )         STOP 21
-  IF (ANY( T%R44  .NE. R4 ) )      STOP 22
-  IF (ANY( T%R48  .NE. R4+R8 ) )   STOP 23
-  IF (ANY( T%R416 .NE. R16-R4 ) )  STOP 24
+  IF (KIND(T%R44) .NE. 4 )         ERROR STOP 21
+  IF (ANY( T%R44  .NE. R4 ) )      ERROR STOP 22
+  IF (ANY( T%R48  .NE. R4+R8 ) )   ERROR STOP 23
+  IF (ANY( T%R416 .NE. R16-R4 ) )  ERROR STOP 24
 
-  IF (KIND(T%R84) .NE. 8 )         STOP 31
-  IF (ANY( T%R84  .NE. R4 ) )      STOP 32
-  IF (ANY( T%R88  .NE. R4+R8 ) )   STOP 33
-  IF (ANY( T%R816 .NE. R16-R4 ) )  STOP 34
+  IF (KIND(T%R84) .NE. 8 )         ERROR STOP 31
+  IF (ANY( T%R84  .NE. R4 ) )      ERROR STOP 32
+  IF (ANY( T%R88  .NE. R4+R8 ) )   ERROR STOP 33
+  IF (ANY( T%R816 .NE. R16-R4 ) )  ERROR STOP 34
 
-  IF (KIND(T%R164) .NE. 16 )        STOP 41
-  IF (ANY( T%R164  .NE. R4 ) )      STOP 42
-  IF (ANY( T%R168  .NE. R4+R8 ) )   STOP 43
-  IF (ANY( T%R1616 .NE. R16-R4 ) )  STOP 44
+  IF (KIND(T%R164) .NE. 16 )        ERROR STOP 41
+  IF (ANY( T%R164  .NE. R4 ) )      ERROR STOP 42
+  IF (ANY( T%R168  .NE. R4+R8 ) )   ERROR STOP 43
+  IF (ANY( T%R1616 .NE. R16-R4 ) )  ERROR STOP 44
 
 
   END

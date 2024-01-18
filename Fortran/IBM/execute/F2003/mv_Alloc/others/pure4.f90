@@ -33,6 +33,6 @@ end module
         allocate(character(20) :: ch(10))
         call sub(ch)
 
-        if ( allocated(ch) ) stop 21
+        if ( allocated(ch) ) error stop 21
 
         end

@@ -68,18 +68,18 @@
   COMPLEX(8)   :: ZT8(128) = Z41 + Z62
   COMPLEX(16)  :: ZT6(128) = I11 + R42
 
-  IF ( ANY(IT1  .NE. -128 ) ) STOP 11
-  IF ( ANY(IT2  .NE. -128 ) ) STOP 12
-  IF ( ANY(IT4  .NE. -128 ) ) STOP 13
-  IF ( ANY(IT8  .NE. -128 ) ) STOP 14
+  IF ( ANY(IT1  .NE. -128 ) ) ERROR STOP 11
+  IF ( ANY(IT2  .NE. -128 ) ) ERROR STOP 12
+  IF ( ANY(IT4  .NE. -128 ) ) ERROR STOP 13
+  IF ( ANY(IT8  .NE. -128 ) ) ERROR STOP 14
 
-  IF ( ANY(RT4  .NE. -128 ) ) STOP 21
-  IF ( ANY(RT8  .NE. -128 ) ) STOP 22
-  IF ( ANY(RT6  .NE. -128 ) ) STOP 23
+  IF ( ANY(RT4  .NE. -128 ) ) ERROR STOP 21
+  IF ( ANY(RT8  .NE. -128 ) ) ERROR STOP 22
+  IF ( ANY(RT6  .NE. -128 ) ) ERROR STOP 23
 
-  IF ( ANY(ZT4  .NE. (-128,0) ) ) STOP 31
-  IF ( ANY(ZT8  .NE. -128     ) ) STOP 32
-  IF ( ANY(ZT6  .NE. -128     ) ) STOP 33
+  IF ( ANY(ZT4  .NE. (-128,0) ) ) ERROR STOP 31
+  IF ( ANY(ZT8  .NE. -128     ) ) ERROR STOP 32
+  IF ( ANY(ZT6  .NE. -128     ) ) ERROR STOP 33
 
 
   END

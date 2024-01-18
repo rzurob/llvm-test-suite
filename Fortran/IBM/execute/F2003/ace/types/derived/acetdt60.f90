@@ -71,47 +71,47 @@ program acetdt60
 
 
   ! Circular shift
-  if (any(cshift ([dt:: (dt(i),i=1,9)], 2) /= [dt:: (dt(i),i=3,9), dt(1), dt(2)])) stop 2
+  if (any(cshift ([dt:: (dt(i),i=1,9)], 2) /= [dt:: (dt(i),i=3,9), dt(1), dt(2)])) error stop 2
   array = cshift ([dt:: (dt(i ** 2), i=1,9)], -1)
-  if (any(array /= [dt:: dt(9**2), (dt(i ** 2), i=1,8)])) stop 3
+  if (any(array /= [dt:: dt(9**2), (dt(i ** 2), i=1,8)])) error stop 3
   print *, cshift ([dt:: (dt(i), i=9,1,-1)], -2)
 
   array = [dt:: (dt(i), i=1,9)]
   array = [dt:: cshift(array,shift=3)]
-  if (any(array /= [dt:: (dt(i), i=4,9), (dt(i), i=1,3)])) stop 4
+  if (any(array /= [dt:: (dt(i), i=4,9), (dt(i), i=1,3)])) error stop 4
   array = [dt:: (dt(i), i=1,9)]
   array = [dt:: cshift(reshape(array,[integer:: 3,3]), shift=[integer:: -1, 1, 0], dim=2)]
-  if (any(array /= [dt:: dt(7),dt(5),dt(3), dt(1),dt(8),dt(6), dt(4),dt(2),dt(9)])) stop 5
+  if (any(array /= [dt:: dt(7),dt(5),dt(3), dt(1),dt(8),dt(6), dt(4),dt(2),dt(9)])) error stop 5
 
   array = [dt:: (dt(i), i=1,9)]
   array = [dt:: cshift(reshape(array,[integer:: 3,3]), shift=[integer:: array(1:8:3)%ival], dim=2)]
-  if (any(array /= [dt:: dt(4),dt(5),dt(6), dt(7),dt(8),dt(9), dt(1),dt(2),dt(3)])) stop 6
+  if (any(array /= [dt:: dt(4),dt(5),dt(6), dt(7),dt(8),dt(9), dt(1),dt(2),dt(3)])) error stop 6
 
 
   ! End-off shift
-  if (any(eoshift ([dt:: (dt(i),i=1,9)], 2, dt(0)) /= [dt:: (dt(i),i=3,9), dt(0), dt(0)])) stop 7
+  if (any(eoshift ([dt:: (dt(i),i=1,9)], 2, dt(0)) /= [dt:: (dt(i),i=3,9), dt(0), dt(0)])) error stop 7
   array = eoshift ([dt:: (dt(i ** 2), i=1,9)], -1, dt(12))
-  if (any(array /= [dt:: dt(12), (dt(i ** 2), i=1,8)])) stop 8
+  if (any(array /= [dt:: dt(12), (dt(i ** 2), i=1,8)])) error stop 8
   print *, eoshift ([dt:: (dt(i), i=9,1,-1)], -2, dt(99))
 
   array = [dt:: (dt(i), i=1,9)]
   array = [dt:: eoshift(array,shift=3,boundary=dt(0))]
-  if (any(array /= [dt:: (dt(i), i=4,9), (dt(0), i=1,3)])) stop 9
+  if (any(array /= [dt:: (dt(i), i=4,9), (dt(0), i=1,3)])) error stop 9
   array = [dt:: (dt(i), i=1,9)]
   array = [dt:: eoshift(reshape(array,[integer:: 3,3]), shift=[integer:: -1, 1, 0], boundary = [dt:: array(1:8:3)], dim=2)]
-  if (any(array /= [dt:: dt(1),dt(5),dt(3), dt(1),dt(8),dt(6), dt(4),dt(4),dt(9)])) stop 10
+  if (any(array /= [dt:: dt(1),dt(5),dt(3), dt(1),dt(8),dt(6), dt(4),dt(4),dt(9)])) error stop 10
 
   array = [dt:: (dt(i), i=1,9)]
   array = [dt:: eoshift(reshape(array,[integer:: 3,3]), shift=[integer:: array(1:8:3)%ival], boundary = [dt:: array(1:3)], dim=2)]
-  if (any(array /= [dt:: dt(4),dt(2),dt(3), dt(7),dt(2),dt(3), dt(1),dt(2),dt(3)])) stop 11
+  if (any(array /= [dt:: dt(4),dt(2),dt(3), dt(7),dt(2),dt(3), dt(1),dt(2),dt(3)])) error stop 11
 
 
   ! merge
   print *, merge([dt:: (dt(i), i=1,5)], [dt:: (dt(i ** 2), i=1,5)], [logical:: T, F, T, T, F]) ! 1 4 3 4 25
-  if (any(merge([dt:: (dt(i), i=1,5)], [dt:: (dt(i ** 2), i=1,5)], [logical:: T, F, T, T, F]) /= [dt:: dt(1), dt(4), dt(3), dt(4), dt(25)])) stop 12
+  if (any(merge([dt:: (dt(i), i=1,5)], [dt:: (dt(i ** 2), i=1,5)], [logical:: T, F, T, T, F]) /= [dt:: dt(1), dt(4), dt(3), dt(4), dt(25)])) error stop 12
   array = [dt:: (dt(i), i=1,9)]
   array = merge([dt:: (array(i), i=1,9)], [dt:: (dt(array(i)%ival ** 2), i=9,1,-1)], [logical:: T, F, T, T, F, F, F, T, T])
-  if (any(array /= [dt:: dt(1), dt(64), dt(3), dt(4), dt(25), dt(16), dt(9), dt(8), dt(9)])) stop 13
+  if (any(array /= [dt:: dt(1), dt(64), dt(3), dt(4), dt(25), dt(16), dt(9), dt(8), dt(9)])) error stop 13
 
 
   ! PACK
@@ -120,57 +120,57 @@ program acetdt60
                 mod(reshape(array%ival,[3,3]),3) == 0) ! 9 36 81
   array(1:3) = pack(reshape([dt:: (dt(i ** 2), i=1,9)], [integer:: 3,3]), &
                     mod(reshape(array%ival,[3,3]),3) == 0)
-  if (any(array /= [dt:: dt(9), dt(36), dt(81), dt(4), dt(5), dt(6), dt(7), dt(8), dt(9)])) stop 14
+  if (any(array /= [dt:: dt(9), dt(36), dt(81), dt(4), dt(5), dt(6), dt(7), dt(8), dt(9)])) error stop 14
 
   print *, pack(reshape([dt:: (dt(i ** 2), i=1,9)], [integer:: 3,3]), &
                 mod(reshape(array%ival,[3,3]),3) == 0, [dt:: (dt(i ** 3), i=9,1,-1)]) ! 1 4 9 36 81 64 27 8 1
   array =  pack(reshape([dt:: (dt(i ** 2), i=1,9)], [integer:: 3,3]), &
                 mod(reshape(array%ival,[3,3]),3) == 0, [dt:: (dt(i ** 3), i=9,1,-1)])
-  if (any(array /= [dt:: dt(1), dt(4), dt(9), dt(36), dt(81), dt(64), dt(27), dt(8), dt(1)])) stop 15
+  if (any(array /= [dt:: dt(1), dt(4), dt(9), dt(36), dt(81), dt(64), dt(27), dt(8), dt(1)])) error stop 15
 
   print *, pack([dt:: (dt(i-4), i=1,4)], .true., [dt:: (dt(i+4), i=1,9)])
   array = pack([dt:: (dt(i-4), i=1,4)], .true., [dt:: (dt(i+4), i=1,9)])
-  if (any(array /= [dt:: dt(-3), dt(-2), dt(-1), dt(0), dt(9), dt(10), dt(11), dt(12), dt(13)])) stop 16
+  if (any(array /= [dt:: dt(-3), dt(-2), dt(-1), dt(0), dt(9), dt(10), dt(11), dt(12), dt(13)])) error stop 16
 
 
   ! SPREAD
   array = spread(dt(1), 1, 9)
-  if (any(array /= dt(1))) stop 17
+  if (any(array /= dt(1))) error stop 17
 
   array = [dt:: spread(dt(1), 1, 9)]
-  if (any(array /= dt(1))) stop 18
+  if (any(array /= dt(1))) error stop 18
 
   print *, spread([dt:: dt(1),dt(2),dt(3)], 1, 3)
   array = [dt:: spread([dt:: dt(1),dt(2),dt(3)], 1, 3)]
-  if (any(array /= [dt:: (dt(i),dt(i),dt(i),i=1,3)])) stop 19
+  if (any(array /= [dt:: (dt(i),dt(i),dt(i),i=1,3)])) error stop 19
 
   print *, spread([dt:: (dt(i), i=1,3)], 1, 3)
   array = [dt:: spread([dt:: (dt(i), i=1,3)], 1, 3)]
-  if (any(array /= [dt:: (dt(i),dt(i),dt(i),i=1,3)])) stop 20
+  if (any(array /= [dt:: (dt(i),dt(i),dt(i),i=1,3)])) error stop 20
 
 
   ! TRANSPOSE
   array19 = reshape([dt:: (dt(i), i=1,9)], [1,9])
   array91 = transpose (array19)
-  if (any([dt:: array19] /= [dt:: array91])) stop 21
+  if (any([dt:: array19] /= [dt:: array91])) error stop 21
 
   array33 = reshape([dt:: (dt(i), i=1,9)], [3,3])
   array33 = transpose(array33)
-  if (any([dt:: array33] /= [dt:: dt(1),dt(4),dt(7),dt(2),dt(5),dt(8),dt(3),dt(6),dt(9)])) stop 22
+  if (any([dt:: array33] /= [dt:: dt(1),dt(4),dt(7),dt(2),dt(5),dt(8),dt(3),dt(6),dt(9)])) error stop 22
   print *, array33
   array33 = transpose(reshape([dt:: (dt(i), i=1,9)], [3,3]))
-  if (any([dt:: array33] /= [dt:: dt(1),dt(4),dt(7),dt(2),dt(5),dt(8),dt(3),dt(6),dt(9)])) stop 23
-  if (any([dt:: transpose(reshape([dt:: (dt(i), i=1,9)], [3,3]))] /= [dt:: dt(1),dt(4),dt(7),dt(2),dt(5),dt(8),dt(3),dt(6),dt(9)])) stop 24
+  if (any([dt:: array33] /= [dt:: dt(1),dt(4),dt(7),dt(2),dt(5),dt(8),dt(3),dt(6),dt(9)])) error stop 23
+  if (any([dt:: transpose(reshape([dt:: (dt(i), i=1,9)], [3,3]))] /= [dt:: dt(1),dt(4),dt(7),dt(2),dt(5),dt(8),dt(3),dt(6),dt(9)])) error stop 24
 
   array91 = transpose(reshape([dt:: (dt(i), i=1,9)], [1,9]))
   print *, array91
   print *, transpose(reshape([dt:: (dt(i), i=1,9)], [1,9]))
 
-  if (any([dt:: transpose(reshape([dt:: dt(1),dt(4),dt(7),dt(2),dt(5),dt(8),dt(3),dt(6),dt(9)], [3,3]))] /= [dt:: (dt(i), i=1,9)])) stop 25
+  if (any([dt:: transpose(reshape([dt:: dt(1),dt(4),dt(7),dt(2),dt(5),dt(8),dt(3),dt(6),dt(9)], [3,3]))] /= [dt:: (dt(i), i=1,9)])) error stop 25
 
-  if (any([dt:: transpose(transpose(reshape([dt:: (dt(i), i=1,9)], [3,3])))] /= [dt:: (dt(i), i=1,9)])) stop 26
+  if (any([dt:: transpose(transpose(reshape([dt:: (dt(i), i=1,9)], [3,3])))] /= [dt:: (dt(i), i=1,9)])) error stop 26
 
-  if (any([dt:: transpose(transpose(reshape([dt:: (dt(i), i=1,1024)], [8,128])))] /= [dt:: (dt(i), i=1,1024)])) stop 27
+  if (any([dt:: transpose(transpose(reshape([dt:: (dt(i), i=1,1024)], [8,128])))] /= [dt:: (dt(i), i=1,1024)])) error stop 27
 
 
   ! UNPACK
@@ -182,23 +182,23 @@ program acetdt60
   array = [dt:: (dt(i), i=1,9)]
   print *, unpack(array, mask, dt(999)) ! 1 2 999 999 3 4 999 999 5
   array = [dt:: unpack(array, mask, dt(999))]
-  if (any(array /= [dt:: dt(1), dt(2), dt(999), dt(999), dt(3), dt(4), dt(999), dt(999), dt(5)])) stop 28
+  if (any(array /= [dt:: dt(1), dt(2), dt(999), dt(999), dt(3), dt(4), dt(999), dt(999), dt(5)])) error stop 28
 
   print *, unpack([dt:: dt(1),dt(2),dt(3),dt(4),dt(5),dt(6),dt(7),dt(8),dt(9)], [logical:: T, T, F, F, T, T, F, F, T], dt(999))
   array = unpack([dt:: dt(1),dt(2),dt(3),dt(4),dt(5),dt(6),dt(7),dt(8),dt(9)], [logical:: T, T, F, F, T, T, F, F, T], dt(999))
-  if (any(array /= [dt:: dt(1), dt(2), dt(999), dt(999), dt(3), dt(4), dt(999), dt(999), dt(5)])) stop 29
+  if (any(array /= [dt:: dt(1), dt(2), dt(999), dt(999), dt(3), dt(4), dt(999), dt(999), dt(5)])) error stop 29
 
   array = [dt:: unpack([dt:: dt(1),dt(2),dt(3),dt(4),dt(5),dt(6),dt(7),dt(8),dt(9)], [logical:: T, T, F, F, T, T, F, F, T], dt(999))]
-  if (any(array /= [dt:: dt(1), dt(2), dt(999), dt(999), dt(3), dt(4), dt(999), dt(999), dt(5)])) stop 30
+  if (any(array /= [dt:: dt(1), dt(2), dt(999), dt(999), dt(3), dt(4), dt(999), dt(999), dt(5)])) error stop 30
 
   print *, unpack([dt:: dt(1),dt(2),dt(3),dt(4),dt(5),dt(6),dt(7),dt(8),dt(9)], reshape([logical:: T, T, F, F, T, T, F, F, T], [integer:: 3,3]), dt(999))
   array = [dt:: unpack([dt:: dt(1),dt(2),dt(3),dt(4),dt(5),dt(6),dt(7),dt(8),dt(9)], reshape([logical:: T, T, F, F, T, T, F, F, T], [integer:: 3,3]), dt(999))]
-  if (any(array /= [dt:: dt(1), dt(2), dt(999), dt(999), dt(3), dt(4), dt(999), dt(999), dt(5)])) stop 31
+  if (any(array /= [dt:: dt(1), dt(2), dt(999), dt(999), dt(3), dt(4), dt(999), dt(999), dt(5)])) error stop 31
 
   array = unpack([dt:: dt(1),dt(2),dt(3),dt(4),dt(5),dt(6),dt(7),dt(8),dt(9)], [logical:: T, T, F, F, T, T, F, F, T], [dt:: dt(81), dt(64), dt(49), dt(36), dt(25), dt(16), dt(9), dt(4), dt(1)])
-  if (any(array /= [dt:: dt(1), dt(2), dt(49), dt(36), dt(3), dt(4), dt(9), dt(4), dt(5)])) stop 32
+  if (any(array /= [dt:: dt(1), dt(2), dt(49), dt(36), dt(3), dt(4), dt(9), dt(4), dt(5)])) error stop 32
 
   array33 = unpack([dt:: dt(1),dt(2),dt(3),dt(4),dt(5)], reshape([logical:: T, T, F, F, T, T, F, F, T], [3,3]), reshape([dt:: dt(81), dt(64), dt(49), dt(36), dt(25), dt(16), dt(9), dt(4), dt(1)],[3,3]))
-  if (any([dt:: array33] /= [dt:: dt(1), dt(2), dt(49), dt(36), dt(3), dt(4), dt(9), dt(4), dt(5)])) stop 33
+  if (any([dt:: array33] /= [dt:: dt(1), dt(2), dt(49), dt(36), dt(3), dt(4), dt(9), dt(4), dt(5)])) error stop 33
 
 end program acetdt60

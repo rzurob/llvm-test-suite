@@ -19,8 +19,8 @@ contains
     character(*) b
     allocate(character(40) :: a)
     a = b
-    if (.not.allocated(a)) stop 1
-    if (len(a) /= 12) stop 2
-    if (a /= 'abcdefghijkl') stop 3
+    if (.not.allocated(a)) error stop 1
+    if (len(a) /= 12) error stop 2
+    if (a /= 'abcdefghijkl') error stop 3
   end subroutine
 end

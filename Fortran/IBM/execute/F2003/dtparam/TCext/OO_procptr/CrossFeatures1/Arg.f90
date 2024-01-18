@@ -87,12 +87,12 @@
 print *,'1'
   V = Ptr(Base(4,3)("123"))
 print *,'2'
-  IF ( V%C .NE. "123" ) STOP 12
+  IF ( V%C .NE. "123" ) ERROR STOP 12
 
 print *,'3'
   U = DT(4,20)(RetPtr(Ptr))
 print *,'4'
-  IF ( .NOT. ASSOCIATED(U%ProcPtr, Ptr) ) STOP 32
+  IF ( .NOT. ASSOCIATED(U%ProcPtr, Ptr) ) ERROR STOP 32
 print *,'5'
 
   END SUBROUTINE

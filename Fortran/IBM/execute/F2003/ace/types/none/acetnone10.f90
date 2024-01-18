@@ -128,7 +128,7 @@ program acetnone10
   call test6(imulti)
   call test6(reshape(iflat, (/ 2,3,4,5,6,7 /)))
 
-  if( any(iflat /= (/ imulti /)) ) stop 2
+  if( any(iflat /= (/ imulti /)) ) error stop 2
 
   iflat = (/ imulti(ubound(imulti,1):lbound(imulti,1):-1, &
                     ubound(imulti,2):lbound(imulti,2):-1, &
@@ -142,9 +142,9 @@ program acetnone10
   call test6(imulti2)
   call test6(reshape(iflat, (/ 7,6,5,4,3,2 /)))
 
-  if( any(iflat /= (/ imulti /)) ) stop 3
-  if( any(iflat /= (/ imulti2 /)) ) stop 4
-  if( any((/ imulti /) /= (/ imulti2 /)) ) stop 5
+  if( any(iflat /= (/ imulti /)) ) error stop 3
+  if( any(iflat /= (/ imulti2 /)) ) error stop 4
+  if( any((/ imulti /) /= (/ imulti2 /)) ) error stop 5
 
   print *, 'done'
 

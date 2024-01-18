@@ -74,29 +74,29 @@
     ASSOCIATE ( As0 => T0, As1 => T1, As2 => T2)
     ASSOCIATE ( As3 => T3, As4 => T4, As5 => T5)
 
-      IF ( ANY( As0%BaseID  .NE. (/1,2,3 /) ) ) STOP 40
-      IF ( ANY( As0%GetID() .NE. (/1,2,3 /) ) ) STOP 41
-      IF ( ANY( SHAPE(As0)  .NE. (/3/)) )       STOP 42
+      IF ( ANY( As0%BaseID  .NE. (/1,2,3 /) ) ) ERROR STOP 40
+      IF ( ANY( As0%GetID() .NE. (/1,2,3 /) ) ) ERROR STOP 41
+      IF ( ANY( SHAPE(As0)  .NE. (/3/)) )       ERROR STOP 42
 
-      IF ( ANY( As1%BaseID  .NE. (/1,3 /) ) ) STOP 50
-      IF ( ANY( As1%GetID() .NE. (/1,3 /) ) ) STOP 51
-      IF ( ANY( SHAPE(As1)  .NE. (/2/)) )     STOP 52
+      IF ( ANY( As1%BaseID  .NE. (/1,3 /) ) ) ERROR STOP 50
+      IF ( ANY( As1%GetID() .NE. (/1,3 /) ) ) ERROR STOP 51
+      IF ( ANY( SHAPE(As1)  .NE. (/2/)) )     ERROR STOP 52
 
-      IF ( ANY( As2%BaseID  .NE. (/2,1,2 /) ) ) STOP 60
-      IF ( ANY( As2%GetID() .NE. (/2,1,2 /) ) ) STOP 61
-      IF ( ANY( SHAPE(As2)  .NE. (/3/)) )       STOP 62
+      IF ( ANY( As2%BaseID  .NE. (/2,1,2 /) ) ) ERROR STOP 60
+      IF ( ANY( As2%GetID() .NE. (/2,1,2 /) ) ) ERROR STOP 61
+      IF ( ANY( SHAPE(As2)  .NE. (/3/)) )       ERROR STOP 62
 
-      IF ( ANY( As3%BaseID          .NE. (/1,2,3,4 /) ) )     STOP 70
-      IF ( ANY( As3%ChildID         .NE. (/-1,-2,-3,-4 /) ) ) STOP 71
-      IF ( ANY( As3%GetID()         .NE. (/-1,-2,-3,-4 /) ) ) STOP 72
-      IF ( ANY( As3%Base%GetID()    .NE. (/1,2,3,4 /) ) )     STOP 73
-      IF ( ANY( SHAPE(As3)          .NE. (/4/)) )             STOP 74
+      IF ( ANY( As3%BaseID          .NE. (/1,2,3,4 /) ) )     ERROR STOP 70
+      IF ( ANY( As3%ChildID         .NE. (/-1,-2,-3,-4 /) ) ) ERROR STOP 71
+      IF ( ANY( As3%GetID()         .NE. (/-1,-2,-3,-4 /) ) ) ERROR STOP 72
+      IF ( ANY( As3%Base%GetID()    .NE. (/1,2,3,4 /) ) )     ERROR STOP 73
+      IF ( ANY( SHAPE(As3)          .NE. (/4/)) )             ERROR STOP 74
 
-      IF ( ANY( As4 .NE. (/1,2,3,4 /) ) )     STOP 80
+      IF ( ANY( As4 .NE. (/1,2,3,4 /) ) )     ERROR STOP 80
 
-      IF ( ANY( As5%BaseID          .NE. (/1,2,3,4 /) ) ) STOP 90
-      IF ( ANY( As5%GetID()         .NE. (/1,2,3,4 /) ) ) STOP 91
-      IF ( ANY( SHAPE(As5)          .NE. (/4/)) )         STOP 92
+      IF ( ANY( As5%BaseID          .NE. (/1,2,3,4 /) ) ) ERROR STOP 90
+      IF ( ANY( As5%GetID()         .NE. (/1,2,3,4 /) ) ) ERROR STOP 91
+      IF ( ANY( SHAPE(As5)          .NE. (/4/)) )         ERROR STOP 92
 
     END ASSOCIATE
     END ASSOCIATE

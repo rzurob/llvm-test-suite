@@ -55,7 +55,7 @@
       CLASS(Node(k1=knd1,l1=len1)), POINTER :: Obj
 
       foo => Obj
-      IF ( .NOT. ASSOCIATED(foo)) STOP 11
+      IF ( .NOT. ASSOCIATED(foo)) ERROR STOP 11
 
       END FUNCTION foo
 
@@ -64,14 +64,14 @@
 
       Outer_SelType: SELECT TYPE (T)
         CLASS IS (ExtNode(knd1,*))
-          IF ( .NOT. ASSOCIATED(T%Next)) STOP 5
-          IF ( .NOT. ASSOCIATED(foo(T%Next))) STOP 5
+          IF ( .NOT. ASSOCIATED(T%Next)) ERROR STOP 5
+          IF ( .NOT. ASSOCIATED(foo(T%Next))) ERROR STOP 5
 
          Inner_SelType: SELECT TYPE ( A => foo(T%Next)) ! call to foo possible only within the select type
              TYPE IS (Node(knd1,*))
-                IF (A%k1 .NE. knd1) STOP 112
-                IF (A%l1 .NE. len1) STOP 113
-                IF (A%tag .NE. 'Empty') STOP 114
+                IF (A%k1 .NE. knd1) ERROR STOP 112
+                IF (A%l1 .NE. len1) ERROR STOP 113
+                IF (A%tag .NE. 'Empty') ERROR STOP 114
 
           CLASS DEFAULT
             STOP 42
@@ -98,7 +98,7 @@
       TYPE(Node(knd1,len1)), TARGET :: FirstNode = (Node(knd1,len1) ())
 
       ActiveNode%Next  => FirstNode
-      IF ( .NOT. ASSOCIATED(ActiveNode%Next)) STOP 12
+      IF ( .NOT. ASSOCIATED(ActiveNode%Next)) ERROR STOP 12
 
       CALL Sub1(ActiveNode)
 

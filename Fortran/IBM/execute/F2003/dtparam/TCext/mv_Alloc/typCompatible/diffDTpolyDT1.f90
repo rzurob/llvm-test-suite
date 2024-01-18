@@ -55,15 +55,15 @@
 
       call move_alloc(b2, b1%p)
 
-      if ( allocated(b2 ) ) stop 11
-      if ( .not. allocated(b1%p) ) stop 20
+      if ( allocated(b2 ) ) error stop 11
+      if ( .not. allocated(b1%p) ) error stop 20
 
       select type (x => b1%p)
           type is (B(*,4,4,*))
-              if ( x%ip /= 31 ) stop 21
+              if ( x%ip /= 31 ) error stop 21
               select type ( y => x%p)
                   type is (A(*,4))
-                      if ( y%ip /= 21 ) stop 23
+                      if ( y%ip /= 21 ) error stop 23
                   class default
                       stop 25
               end select

@@ -87,14 +87,14 @@
   INTEGER(KIND(LBOUND(IArr, KIND=4))),  PARAMETER :: TI14(2)= LBOUND(IArr, KIND=4)
   INTEGER(KIND(LBOUND(IArr, KIND=8))),  PARAMETER :: TI18(2)= LBOUND(IArr, KIND=8)
 
-  IF ( KIND(TI11 )   .NE. 4 )             STOP 11
-! IF ( ANY( TI11     .NE. LB4 ))          STOP 12
-  IF ( KIND(TI12 )   .NE. 2 )             STOP 13
-! IF ( ANY( TI12     .NE. LB4 ))          STOP 14
-  IF ( KIND(TI14 )   .NE. 4 )             STOP 15
-  IF ( ANY( TI14     .NE. LB4 ))          STOP 16
-  IF ( KIND(TI18 )   .NE. 8 )             STOP 17
-  IF ( ANY( TI18     .NE. LB4 ))          STOP 18
+  IF ( KIND(TI11 )   .NE. 4 )             ERROR STOP 11
+! IF ( ANY( TI11     .NE. LB4 ))          ERROR STOP 12
+  IF ( KIND(TI12 )   .NE. 2 )             ERROR STOP 13
+! IF ( ANY( TI12     .NE. LB4 ))          ERROR STOP 14
+  IF ( KIND(TI14 )   .NE. 4 )             ERROR STOP 15
+  IF ( ANY( TI14     .NE. LB4 ))          ERROR STOP 16
+  IF ( KIND(TI18 )   .NE. 8 )             ERROR STOP 17
+  IF ( ANY( TI18     .NE. LB4 ))          ERROR STOP 18
 
   END SUBROUTINE
 
@@ -105,14 +105,14 @@
   INTEGER(KIND(LBOUND(LArr, KIND=4))),  PARAMETER :: TL24(2)= LBOUND(LArr, KIND=4)
   INTEGER(KIND(LBOUND(LArr, KIND=8))),  PARAMETER :: TL28(2)= LBOUND(LArr, KIND=8)
 
-  IF ( KIND(TL21 )   .NE. 1 )             STOP 21
-  IF ( ANY( TL21     .NE. LB1 ))          STOP 22
-  IF ( KIND(TL22 )   .NE. 4 )             STOP 23
-  IF ( ANY( TL22     .NE. LB1 ))          STOP 24
-  IF ( KIND(TL24 )   .NE. 4 )             STOP 25
-  IF ( ANY( TL24     .NE. LB1 ))          STOP 26
-  IF ( KIND(TL28 )   .NE. 8 )             STOP 27
-  IF ( ANY( TL28     .NE. LB1 ))          STOP 28
+  IF ( KIND(TL21 )   .NE. 1 )             ERROR STOP 21
+  IF ( ANY( TL21     .NE. LB1 ))          ERROR STOP 22
+  IF ( KIND(TL22 )   .NE. 4 )             ERROR STOP 23
+  IF ( ANY( TL22     .NE. LB1 ))          ERROR STOP 24
+  IF ( KIND(TL24 )   .NE. 4 )             ERROR STOP 25
+  IF ( ANY( TL24     .NE. LB1 ))          ERROR STOP 26
+  IF ( KIND(TL28 )   .NE. 8 )             ERROR STOP 27
+  IF ( ANY( TL28     .NE. LB1 ))          ERROR STOP 28
 
   END SUBROUTINE
 
@@ -122,12 +122,12 @@
   INTEGER(KIND(LBOUND(RArr, KIND=8))),  PARAMETER :: TR48(2)= LBOUND(RArr, KIND=8)
   INTEGER(KIND(LBOUND(RArr, KIND=1 ))), PARAMETER :: TR46(2)= LBOUND(RArr, KIND=1 )
 
-  IF ( KIND(TR44 )   .NE. 4 )             STOP 31
-  IF ( ANY( TR44     .NE. [126,-128] ))   STOP 32
-  IF ( KIND(TR48 )   .NE. 8 )             STOP 33
-  IF ( ANY( TR48     .NE. [126,-128] ))   STOP 34
-  IF ( KIND(TR46 )   .NE. 1  )            STOP 35
-  IF ( ANY( TR46     .NE. [126,-128] ))   STOP 36
+  IF ( KIND(TR44 )   .NE. 4 )             ERROR STOP 31
+  IF ( ANY( TR44     .NE. [126,-128] ))   ERROR STOP 32
+  IF ( KIND(TR48 )   .NE. 8 )             ERROR STOP 33
+  IF ( ANY( TR48     .NE. [126,-128] ))   ERROR STOP 34
+  IF ( KIND(TR46 )   .NE. 1  )            ERROR STOP 35
+  IF ( ANY( TR46     .NE. [126,-128] ))   ERROR STOP 36
 
   END SUBROUTINE
 
@@ -137,12 +137,12 @@
   INTEGER(KIND(LBOUND(RArr, KIND=8))),  PARAMETER :: TR48(2)= LBOUND(RArr, KIND=8)
   INTEGER(KIND(LBOUND(RArr, KIND=1 ))), PARAMETER :: TR46(2)= LBOUND(RArr, KIND=1 )
 
-  IF ( KIND(TR44 )   .NE. 4 )           STOP 61
-  IF ( ANY( TR44     .NE. 1 ))          STOP 62
-  IF ( KIND(TR48 )   .NE. 8 )           STOP 63
-  IF ( ANY( TR48     .NE. 1 ))          STOP 64
-  IF ( KIND(TR46 )   .NE. 1  )          STOP 65
-  IF ( ANY( TR46     .NE. 1 ))          STOP 66
+  IF ( KIND(TR44 )   .NE. 4 )           ERROR STOP 61
+  IF ( ANY( TR44     .NE. 1 ))          ERROR STOP 62
+  IF ( KIND(TR48 )   .NE. 8 )           ERROR STOP 63
+  IF ( ANY( TR48     .NE. 1 ))          ERROR STOP 64
+  IF ( KIND(TR46 )   .NE. 1  )          ERROR STOP 65
+  IF ( ANY( TR46     .NE. 1 ))          ERROR STOP 66
 
   END SUBROUTINE
 
@@ -152,12 +152,12 @@
   INTEGER(KIND(LBOUND(ZArr, KIND=4))),  PARAMETER :: TZ84(2)= UBOUND(ZArr, KIND=4)
   INTEGER(KIND(LBOUND(ZArr, KIND=2 ))), PARAMETER :: TZ86(2)= UBOUND(ZArr, KIND=2 )
 
-  IF ( KIND(TZ88 )   .NE. 4 )             STOP 41
-  IF ( ANY( TZ88     .NE. UB2 ))          STOP 42
-  IF ( KIND(TZ84 )   .NE. 4 )             STOP 43
-  IF ( ANY( TZ84     .NE. UB2 ))          STOP 44
-  IF ( KIND(TZ86 )   .NE. 2  )            STOP 45
-  IF ( ANY( TZ86     .NE. UB2 ))          STOP 46
+  IF ( KIND(TZ88 )   .NE. 4 )             ERROR STOP 41
+  IF ( ANY( TZ88     .NE. UB2 ))          ERROR STOP 42
+  IF ( KIND(TZ84 )   .NE. 4 )             ERROR STOP 43
+  IF ( ANY( TZ84     .NE. UB2 ))          ERROR STOP 44
+  IF ( KIND(TZ86 )   .NE. 2  )            ERROR STOP 45
+  IF ( ANY( TZ86     .NE. UB2 ))          ERROR STOP 46
 
   END SUBROUTINE
 
@@ -165,7 +165,7 @@
   TYPE(DT(4,*))      :: DArr(2147483646:2147483647,-2147483648:-2147483647)
   INTEGER, PARAMETER :: TDL(2) = LBOUND(DArr)
 
-  IF ( ANY( TDL      .NE. [2147483646, -2147483648] ))  STOP 51
+  IF ( ANY( TDL      .NE. [2147483646, -2147483648] ))  ERROR STOP 51
 
   END SUBROUTINE
 

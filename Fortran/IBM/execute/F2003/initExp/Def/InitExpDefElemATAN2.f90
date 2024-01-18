@@ -50,18 +50,18 @@
 
   REAL(4) :: T4(8) =ATAN2(-1.0_4, Zero4n)
 
-  IF (ANY(ABS(Res4 - 2.0)  .GE. 1.0e-5 ) )     STOP 11
-  IF (ANY(ABS(Res8 - 2.0)  .GE. 1.0e-5 ) )     STOP 12
-  IF (ANY(ABS(Res16 - 2.0) .GE. 1.0e-5 ) )     STOP 13
+  IF (ANY(ABS(Res4 - 2.0)  .GE. 1.0e-5 ) )     ERROR STOP 11
+  IF (ANY(ABS(Res8 - 2.0)  .GE. 1.0e-5 ) )     ERROR STOP 12
+  IF (ANY(ABS(Res16 - 2.0) .GE. 1.0e-5 ) )     ERROR STOP 13
 
-  IF (ANY( T  .LT. 0.0 ) )                      STOP 21
-  IF (ANY( T1 .NE. Zero8 ) )                    STOP 22
+  IF (ANY( T  .LT. 0.0 ) )                      ERROR STOP 21
+  IF (ANY( T1 .NE. Zero8 ) )                    ERROR STOP 22
 
-  IF (ANY( ABS(T2p-3.1415926)  .GE. 1.0e-5  ) )  STOP 31
-  IF (ANY( ABS(T2n+3.1415926)  .GE. 1.0e-5  ) )  STOP 41
+  IF (ANY( ABS(T2p-3.1415926)  .GE. 1.0e-5  ) )  ERROR STOP 31
+  IF (ANY( ABS(T2n+3.1415926)  .GE. 1.0e-5  ) )  ERROR STOP 41
 
-  IF (ANY( T3                     .GE. 0.0  ) )       STOP 51
-  IF (ANY( ABS(T4)-3.1415926/2.0  .GE. 1.0e-5  ) )    STOP 61
+  IF (ANY( T3                     .GE. 0.0  ) )       ERROR STOP 51
+  IF (ANY( ABS(T4)-3.1415926/2.0  .GE. 1.0e-5  ) )    ERROR STOP 61
 
   END
 

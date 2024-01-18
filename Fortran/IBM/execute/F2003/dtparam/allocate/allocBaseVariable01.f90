@@ -51,7 +51,7 @@ PROGRAM allocBaseVariable01
     TYPE(base(2,-1,0)), ALLOCATABLE :: b3
 
 
-    IF ( ALLOCATED( b1 ) )      STOP 10
+    IF ( ALLOCATED( b1 ) )      ERROR STOP 10
 
     ALLOCATE(b1, STAT=stat, ERRMSG=errmsg)
     IF (stat /= 0) THEN
@@ -59,21 +59,21 @@ PROGRAM allocBaseVariable01
         STOP 11
     END IF
 
-    IF (.NOT. ALLOCATED( b1 ))              STOP 12
+    IF (.NOT. ALLOCATED( b1 ))              ERROR STOP 12
 
-    IF (b1%k /= 4)                          STOP 13
-    IF (KIND( b1%array ) /= 4)              STOP 14
+    IF (b1%k /= 4)                          ERROR STOP 13
+    IF (KIND( b1%array ) /= 4)              ERROR STOP 14
 
-    IF ( ANY(SHAPE( b1%array ) /= [ 6 ]) )  STOP 15
+    IF ( ANY(SHAPE( b1%array ) /= [ 6 ]) )  ERROR STOP 15
 
-    IF (b1%l1 /= 5)                         STOP 16
-    IF (LBOUND(b1%array, 1) /= 5)           STOP 17
+    IF (b1%l1 /= 5)                         ERROR STOP 16
+    IF (LBOUND(b1%array, 1) /= 5)           ERROR STOP 17
 
-    IF (b1%l2 /= 10)                        STOP 18
-    IF (UBOUND(b1%array, 1) /= 10)          STOP 19
+    IF (b1%l2 /= 10)                        ERROR STOP 18
+    IF (UBOUND(b1%array, 1) /= 10)          ERROR STOP 19
 
 
-    IF ( ALLOCATED( b2 ) )      STOP 20
+    IF ( ALLOCATED( b2 ) )      ERROR STOP 20
 
     ALLOCATE(b2, STAT=stat, ERRMSG=errmsg)
     IF (stat /= 0) THEN
@@ -81,22 +81,22 @@ PROGRAM allocBaseVariable01
         STOP 21
     END IF
 
-    IF (.NOT. ALLOCATED( b2 ))              STOP 22
+    IF (.NOT. ALLOCATED( b2 ))              ERROR STOP 22
 
-    IF (b2%k /= 8)                          STOP 23
-    IF (KIND( b2%array ) /= 8)              STOP 24
+    IF (b2%k /= 8)                          ERROR STOP 23
+    IF (KIND( b2%array ) /= 8)              ERROR STOP 24
 
     PRINT *, SHAPE( b2%array ), SIZE( b2%array )
-    IF ( ANY(SHAPE( b2%array ) /= [ 1 ]) )  STOP 25
+    IF ( ANY(SHAPE( b2%array ) /= [ 1 ]) )  ERROR STOP 25
 
-    IF (b2%l1 /= 10)                        STOP 26
-    IF (LBOUND(b2%array, 1) /= 10)          STOP 27
+    IF (b2%l1 /= 10)                        ERROR STOP 26
+    IF (LBOUND(b2%array, 1) /= 10)          ERROR STOP 27
 
-    IF (b2%l2 /= 10)                         STOP 28
-    IF (UBOUND(b2%array, 1) /= 10)           STOP 29
+    IF (b2%l2 /= 10)                         ERROR STOP 28
+    IF (UBOUND(b2%array, 1) /= 10)           ERROR STOP 29
 
 
-    IF ( ALLOCATED( b3 ) )      STOP 30
+    IF ( ALLOCATED( b3 ) )      ERROR STOP 30
 
     ALLOCATE(b3, STAT=stat, ERRMSG=errmsg)
     IF (stat /= 0) THEN
@@ -104,18 +104,18 @@ PROGRAM allocBaseVariable01
         STOP 31
     END IF
 
-    IF (.NOT. ALLOCATED( b3 ))              STOP 32
+    IF (.NOT. ALLOCATED( b3 ))              ERROR STOP 32
 
-    IF (b3%k /= 2)                          STOP 33
-    IF (KIND( b3%array ) /= 2)              STOP 34
+    IF (b3%k /= 2)                          ERROR STOP 33
+    IF (KIND( b3%array ) /= 2)              ERROR STOP 34
 
-    IF ( ANY(SHAPE( b3%array ) /= [ 2 ]) )  STOP 35
+    IF ( ANY(SHAPE( b3%array ) /= [ 2 ]) )  ERROR STOP 35
 
-    IF (b3%l1 /= -1)                        STOP 36
-    IF (LBOUND(b3%array, 1) /= -1)          STOP 37
+    IF (b3%l1 /= -1)                        ERROR STOP 36
+    IF (LBOUND(b3%array, 1) /= -1)          ERROR STOP 37
 
-    IF (b3%l2 /= 0)                         STOP 38
-    IF (UBOUND(b3%array, 1) /= 0)           STOP 39
+    IF (b3%l2 /= 0)                         ERROR STOP 38
+    IF (UBOUND(b3%array, 1) /= 0)           ERROR STOP 39
 
 
 END PROGRAM allocBaseVariable01

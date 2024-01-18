@@ -67,29 +67,29 @@
   LOGICAL  :: TR4= IEEE_SUPPORT_FLAG(UNDERFLOW)
   LOGICAL  :: TR5= IEEE_SUPPORT_FLAG(INEXACT)
 
-  IF (  .NOT. TR41 )   STOP 11
-  IF (  .NOT. TR42 )   STOP 12
-  IF (  .NOT. TR43 )   STOP 13
-  IF (  .NOT. TR44 )   STOP 14
-  IF (  .NOT. TR45 )   STOP 15
+  IF (  .NOT. TR41 )   ERROR STOP 11
+  IF (  .NOT. TR42 )   ERROR STOP 12
+  IF (  .NOT. TR43 )   ERROR STOP 13
+  IF (  .NOT. TR44 )   ERROR STOP 14
+  IF (  .NOT. TR45 )   ERROR STOP 15
 
-  IF (  .NOT. TR81 )   STOP 21
-  IF (  .NOT. TR82 )   STOP 22
-  IF (  .NOT. TR83 )   STOP 23
-  IF (  .NOT. TR84 )   STOP 24
-  IF (  .NOT. TR85 )   STOP 25
+  IF (  .NOT. TR81 )   ERROR STOP 21
+  IF (  .NOT. TR82 )   ERROR STOP 22
+  IF (  .NOT. TR83 )   ERROR STOP 23
+  IF (  .NOT. TR84 )   ERROR STOP 24
+  IF (  .NOT. TR85 )   ERROR STOP 25
 
-  IF (   TR61 )   STOP 31
-  IF (   TR62 )   STOP 32
-  IF (   TR63 )   STOP 33
-  IF (   TR64 )   STOP 34
-  IF (   TR65 )   STOP 35
+  IF (   TR61 )   ERROR STOP 31
+  IF (   TR62 )   ERROR STOP 32
+  IF (   TR63 )   ERROR STOP 33
+  IF (   TR64 )   ERROR STOP 34
+  IF (   TR65 )   ERROR STOP 35
 
-  IF (   TR1  )   STOP 41
-  IF (   TR2  )   STOP 42
-  IF (   TR3  )   STOP 43
-  IF (   TR4  )   STOP 44
-  IF (   TR5  )   STOP 45
+  IF (   TR1  )   ERROR STOP 41
+  IF (   TR2  )   ERROR STOP 42
+  IF (   TR3  )   ERROR STOP 43
+  IF (   TR4  )   ERROR STOP 44
+  IF (   TR5  )   ERROR STOP 45
 
 
   END

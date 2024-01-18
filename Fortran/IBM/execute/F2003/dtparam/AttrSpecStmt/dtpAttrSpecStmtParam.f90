@@ -91,12 +91,12 @@
 
   T01 = T0%ModFun0()
 
-  IF ( ANY( T1%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 11
+  IF ( ANY( T1%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 11
 
   IArr = T2%ModFun2()
-  IF (   ANY( IArr .NE. [-1,-2,-3,-4,-5,-6,-7] ) ) STOP 12
+  IF (   ANY( IArr .NE. [-1,-2,-3,-4,-5,-6,-7] ) ) ERROR STOP 12
 
-  IF ( ANY( ModFun1(DT1(1,3,4,5)()) .NE. [(1,3),(4,5)] ) ) STOP 13
+  IF ( ANY( ModFun1(DT1(1,3,4,5)()) .NE. [(1,3),(4,5)] ) ) ERROR STOP 13
 
   END
 

@@ -84,19 +84,19 @@
 
   DO I=1, 97
 
-    IF ( SIZE( ST(I)%R )      .NE. S%L1         ) STOP 12
-    IF ( ST(I)%R%KIND         .NE. S%K1         ) STOP 13
-    IF ( ANY ( ST(I)%R        .NE. S%K1       ) ) STOP 14
+    IF ( SIZE( ST(I)%R )      .NE. S%L1         ) ERROR STOP 12
+    IF ( ST(I)%R%KIND         .NE. S%K1         ) ERROR STOP 13
+    IF ( ANY ( ST(I)%R        .NE. S%K1       ) ) ERROR STOP 14
 
-    IF ( SIZE( TT(I)%R )      .NE. T%L1         ) STOP 21
-    IF ( TT(I)%R%KIND         .NE. T%K1         ) STOP 22
-    IF ( ANY ( TT(I)%R        .NE. T%K1       ) ) STOP 23
-    IF ( SIZE( TT(I)%I )      .NE. T%L2         ) STOP 24
-    IF ( TT(I)%I%KIND         .NE. T%K2         ) STOP 25
-    IF ( ANY ( TT(I)%I        .NE. T%K2       ) ) STOP 26
-    IF ( SIZE( TT(I)%C )      .NE. T%L2         ) STOP 27
-    IF ( TT(I)%C%LEN          .NE. T%L2         ) STOP 28
-    IF ( ANY (TT(I)%C         .NE. CHAR(T%K2) ) ) STOP 29
+    IF ( SIZE( TT(I)%R )      .NE. T%L1         ) ERROR STOP 21
+    IF ( TT(I)%R%KIND         .NE. T%K1         ) ERROR STOP 22
+    IF ( ANY ( TT(I)%R        .NE. T%K1       ) ) ERROR STOP 23
+    IF ( SIZE( TT(I)%I )      .NE. T%L2         ) ERROR STOP 24
+    IF ( TT(I)%I%KIND         .NE. T%K2         ) ERROR STOP 25
+    IF ( ANY ( TT(I)%I        .NE. T%K2       ) ) ERROR STOP 26
+    IF ( SIZE( TT(I)%C )      .NE. T%L2         ) ERROR STOP 27
+    IF ( TT(I)%C%LEN          .NE. T%L2         ) ERROR STOP 28
+    IF ( ANY (TT(I)%C         .NE. CHAR(T%K2) ) ) ERROR STOP 29
 
   END DO
 
@@ -117,21 +117,21 @@
 
   DO I=1, N
 
-    IF ( RP(I)%ModFun()       .NE. RP%L0        ) STOP 31
+    IF ( RP(I)%ModFun()       .NE. RP%L0        ) ERROR STOP 31
 
-    IF ( SIZE( SP(I)%R )      .NE. S%L1         ) STOP 32
-    IF ( SP(I)%R%KIND         .NE. S%K1         ) STOP 33
-    IF ( ANY ( SP(I)%R        .NE. S%K1       ) ) STOP 34
+    IF ( SIZE( SP(I)%R )      .NE. S%L1         ) ERROR STOP 32
+    IF ( SP(I)%R%KIND         .NE. S%K1         ) ERROR STOP 33
+    IF ( ANY ( SP(I)%R        .NE. S%K1       ) ) ERROR STOP 34
 
-    IF ( SIZE( TP(I)%R )      .NE. T%L1         ) STOP 41
-    IF ( TP(I)%R%KIND         .NE. T%K1         ) STOP 42
-    IF ( ANY ( TP(I)%R        .NE. T%K1       ) ) STOP 43
-    IF ( SIZE( TP(I)%I )      .NE. T%L2         ) STOP 44
-    IF ( TP(I)%I%KIND         .NE. T%K2         ) STOP 45
-    IF ( ANY ( TP(I)%I        .NE. T%K2       ) ) STOP 46
-    IF ( SIZE( TP(I)%C )      .NE. T%L2         ) STOP 47
-    IF ( TP(I)%C%LEN          .NE. T%L2         ) STOP 48
-    IF ( ANY (TP(I)%C         .NE. CHAR(T%K2) ) ) STOP 49
+    IF ( SIZE( TP(I)%R )      .NE. T%L1         ) ERROR STOP 41
+    IF ( TP(I)%R%KIND         .NE. T%K1         ) ERROR STOP 42
+    IF ( ANY ( TP(I)%R        .NE. T%K1       ) ) ERROR STOP 43
+    IF ( SIZE( TP(I)%I )      .NE. T%L2         ) ERROR STOP 44
+    IF ( TP(I)%I%KIND         .NE. T%K2         ) ERROR STOP 45
+    IF ( ANY ( TP(I)%I        .NE. T%K2       ) ) ERROR STOP 46
+    IF ( SIZE( TP(I)%C )      .NE. T%L2         ) ERROR STOP 47
+    IF ( TP(I)%C%LEN          .NE. T%L2         ) ERROR STOP 48
+    IF ( ANY (TP(I)%C         .NE. CHAR(T%K2) ) ) ERROR STOP 49
 
   END DO
 

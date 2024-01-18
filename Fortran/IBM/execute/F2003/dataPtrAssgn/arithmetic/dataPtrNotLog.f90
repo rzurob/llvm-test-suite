@@ -50,14 +50,14 @@ program main
         type is (A)
             x(1)%u1(size(ptr):) => x(2)%u1(5:2:-1)
 
-            if (.not. associated(x(1)%u1 ,x(2)%u1(5:2:-1))) stop 3
-            if ( lbound(x(1)%u1,1) /= 2 ) stop 4
-            if ( ubound(x(1)%u1,1) /= 5 ) stop 5
+            if (.not. associated(x(1)%u1 ,x(2)%u1(5:2:-1))) error stop 3
+            if ( lbound(x(1)%u1,1) /= 2 ) error stop 4
+            if ( ubound(x(1)%u1,1) /= 5 ) error stop 5
 
             select type (y=>x(1)%u1)
                 type is (logical)
                     if ( any( .not. y  .neqv.  &
-                      (/.false., .true., .false., .true./))) stop 7
+                      (/.false., .true., .false., .true./))) error stop 7
                 class default
                     stop 9
             end select

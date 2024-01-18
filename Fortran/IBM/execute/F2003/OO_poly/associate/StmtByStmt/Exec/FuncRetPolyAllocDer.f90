@@ -61,23 +61,23 @@
   SELECT TYPE( As )
   TYPE IS (Child)
 
-    IF ( As%GetID() .NE. -2) STOP 50
-    IF ( As%BaseId  .NE. -1) STOP 51
+    IF ( As%GetID() .NE. -2) ERROR STOP 50
+    IF ( As%BaseId  .NE. -1) ERROR STOP 51
 
     ASSOCIATE ( As1 => As%GetId() )
-       IF ( As1 .NE. -2) STOP 52
+       IF ( As1 .NE. -2) ERROR STOP 52
     END ASSOCIATE
 
-    IF ( .NOT. SAME_TYPE_AS(As, Child(BaseArr=NULL())) )         STOP 53
-    IF ( .NOT. SAME_TYPE_AS(As%BaseArr, As%Base) ) STOP 54
+    IF ( .NOT. SAME_TYPE_AS(As, Child(BaseArr=NULL())) )         ERROR STOP 53
+    IF ( .NOT. SAME_TYPE_AS(As%BaseArr, As%Base) ) ERROR STOP 54
 
-    IF ( ANY(LBOUND(As%BaseArr) .NE. 1))  STOP 55
-    IF ( ANY(UBOUND(As%BaseArr) .NE. 3))  STOP 55
-    IF ( As%BaseArr(1)%BaseId   .NE. 1)   STOP 56
-    IF ( ANY(As%BaseArr%GetId() .NE. 1))  STOP 57
+    IF ( ANY(LBOUND(As%BaseArr) .NE. 1))  ERROR STOP 55
+    IF ( ANY(UBOUND(As%BaseArr) .NE. 3))  ERROR STOP 55
+    IF ( As%BaseArr(1)%BaseId   .NE. 1)   ERROR STOP 56
+    IF ( ANY(As%BaseArr%GetId() .NE. 1))  ERROR STOP 57
 
-    IF ( As%GetId() .NE. -2 ) STOP 58
-    IF ( As%ChildId .NE. -2 ) STOP 59
+    IF ( As%GetId() .NE. -2 ) ERROR STOP 58
+    IF ( As%ChildId .NE. -2 ) ERROR STOP 59
 
   CLASS DEFAULT
     STOP 60

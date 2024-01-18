@@ -78,27 +78,27 @@
   ProcPtr1 => ABS0
   PRINT *, ProcPtr1(-2.0)
   PRINT *, ABS(-2.0)
-  IF ( ProcPtr1(-2.0) .NE. ABS(-2.0)) STOP 11
+  IF ( ProcPtr1(-2.0) .NE. ABS(-2.0)) ERROR STOP 11
 
   ProcPtr1 => ABS1
   PRINT *, ProcPtr1(-2.0)
   PRINT *, ABS(-2.0)
-  IF ( ProcPtr1(-2.0) .NE. ABS(-2.0)) STOP 12
+  IF ( ProcPtr1(-2.0) .NE. ABS(-2.0)) ERROR STOP 12
 
   ProcPtr2 => ABS2
   PRINT *, ProcPtr2(-2.0)
   PRINT *, ABS(-2.0)
-  IF ( ProcPtr2(-2.0) .NE. ABS(-2.0)) STOP 13
+  IF ( ProcPtr2(-2.0) .NE. ABS(-2.0)) ERROR STOP 13
 
   ProcPtr2 => ABS3
   PRINT *, ProcPtr2(-2.0)
   PRINT *, ABS(-2.0)
-  IF ( ProcPtr2(-2.0) .NE. ABS(-2.0)) STOP 14
+  IF ( ProcPtr2(-2.0) .NE. ABS(-2.0)) ERROR STOP 14
 
   ProcPtr2 => ABS4
   PRINT *, ProcPtr2(-2.0)
   PRINT *, ABS(-2.0)
-  IF ( ProcPtr2(-2.0) .NE. ABS(-2.0)) STOP 15
+  IF ( ProcPtr2(-2.0) .NE. ABS(-2.0)) ERROR STOP 15
 
   END
 
@@ -121,12 +121,12 @@
 ! ProcPtr1 => ABS
 ! PRINT *, ProcPtr1(-2.0)
 ! PRINT *, ABS(-2.0)
-! IF ( ProcPtr1(-2.0) .NE. ABS(-2.0)) STOP 11
+! IF ( ProcPtr1(-2.0) .NE. ABS(-2.0)) ERROR STOP 11
 
 ! ProcPtr2 => ABS
 ! PRINT *, ProcPtr2(-2.0)
 ! PRINT *, ABS(-2.0)
-! IF ( ProcPt2(-2.0) .NE. ABS(-2.0)) STOP 12
+! IF ( ProcPt2(-2.0) .NE. ABS(-2.0)) ERROR STOP 12
 
 ! END
 

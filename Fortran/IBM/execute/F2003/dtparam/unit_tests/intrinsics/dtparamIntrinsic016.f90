@@ -30,5 +30,5 @@ res = matmul(arr, brr)
 c%arr = arr
 b%arr = brr
 res1 = matmul(c%arr, b%arr)
-if (.not. precision_r8(res, res1)) stop 1
+if (.not. precision_r8(res, res1)) error stop 1
 end

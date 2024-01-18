@@ -29,7 +29,7 @@ program main
 use m
     allocate(integer ::old)
 
-    if ( .not. allocated(old) ) stop 11
+    if ( .not. allocated(old) ) error stop 11
 
     select type(x => old)
         type is (integer)
@@ -40,17 +40,17 @@ use m
 
     allocate(new, source = 10.8)
 
-    if ( .not. allocated(new) ) stop 21
+    if ( .not. allocated(new) ) error stop 21
 
     call move_alloc(old, new)
 
-    if ( .not. allocated(new) ) stop 31
+    if ( .not. allocated(new) ) error stop 31
 
-    if ( allocated(old) ) stop 41
+    if ( allocated(old) ) error stop 41
 
     select type(new)
         type is (integer)
-            if ( new /= 33) stop 22
+            if ( new /= 33) error stop 22
         class default
             stop 23
     end select

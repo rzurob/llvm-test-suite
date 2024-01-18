@@ -1,7 +1,7 @@
 block
   integer :: n
   call sub(n)
-  if (n .ne. 10) stop 1
+  if (n .ne. 10) error stop 1
 end block
 
 contains

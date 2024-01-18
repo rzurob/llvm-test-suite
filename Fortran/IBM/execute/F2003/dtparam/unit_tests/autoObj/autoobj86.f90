@@ -49,17 +49,17 @@
   b => a
   ALLOCATE( c, source=a)
 
-  IF (b%l               .NE. 4)   STOP 11
-  IF (UBOUND(b%arr, 1)  .NE. 4)   STOP 12
-  IF (UBOUND(b%arr1, 1) .NE. 4)   STOP 13
+  IF (b%l               .NE. 4)   ERROR STOP 11
+  IF (UBOUND(b%arr, 1)  .NE. 4)   ERROR STOP 12
+  IF (UBOUND(b%arr1, 1) .NE. 4)   ERROR STOP 13
 
-  IF (c%l               .NE. 4)   STOP 21
-  IF (UBOUND(c%arr, 1)  .NE. 4)   STOP 22
-  IF (UBOUND(c%arr1, 1) .NE. 4)   STOP 23
+  IF (c%l               .NE. 4)   ERROR STOP 21
+  IF (UBOUND(c%arr, 1)  .NE. 4)   ERROR STOP 22
+  IF (UBOUND(c%arr1, 1) .NE. 4)   ERROR STOP 23
 
-  IF ( ANY ( A%Arr%I .NE. 1 ) ) STOP 31
-  IF ( ANY ( B%Arr%I .NE. 1 ) ) STOP 32
-  IF ( ANY ( C%Arr%I .NE. 1 ) ) STOP 33
+  IF ( ANY ( A%Arr%I .NE. 1 ) ) ERROR STOP 31
+  IF ( ANY ( B%Arr%I .NE. 1 ) ) ERROR STOP 32
+  IF ( ANY ( C%Arr%I .NE. 1 ) ) ERROR STOP 33
 
   END SUBROUTINE
 

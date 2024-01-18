@@ -57,8 +57,8 @@ use m
 
     call a1%swap(a2,a3 )
 
-    if ( .not. allocated(a2) ) stop 9
-    if ( .not. allocated(a3) ) stop 10
+    if ( .not. allocated(a2) ) error stop 9
+    if ( .not. allocated(a3) ) error stop 10
 
     select type (a2)
         type is (A2D)

@@ -38,12 +38,12 @@
 
       call sub(b)
 
-      if ( allocated(a) ) stop 11
-      if ( .not. allocated(b) ) stop 12
+      if ( allocated(a) ) error stop 11
+      if ( .not. allocated(b) ) error stop 12
 
       select type ( b )
           type is (child(4,*))
-             if ( b%ch /= 'COMPILER')  STOP 21
+             if ( b%ch /= 'COMPILER')  ERROR STOP 21
           class default
              STOP 23
       end select

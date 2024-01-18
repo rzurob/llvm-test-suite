@@ -57,7 +57,7 @@
 
     ASSOCIATE ( As1 => U1 )
       ASSOCIATE ( As2 => As%ChildID + As1%BaseId )
-        IF ( ANY(As2 .NE. (/-1, -1, -1/))) STOP  30
+        IF ( ANY(As2 .NE. (/-1, -1, -1/))) ERROR STOP  30
       END ASSOCIATE
     END ASSOCIATE
 

@@ -26,7 +26,7 @@ program d353419_1
 
    type(base(2)) :: t
 
-   if (kind(t%i1) /= 8) stop 1
-   if (kind(t%i2) /= 8) stop 2
+   if (kind(t%i1) /= 8) error stop 1
+   if (kind(t%i2) /= 8) error stop 2
 end program
 

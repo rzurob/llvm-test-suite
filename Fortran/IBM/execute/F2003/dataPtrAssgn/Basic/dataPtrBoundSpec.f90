@@ -55,30 +55,30 @@
   TYPE(DT) :: T
 
   T%IPtr1(I1Min:) => I1Arr
-  IF ( ANY(LBOUND(T%IPtr1) .NE. (/I1Min/)) )   STOP 9
-  IF ( ANY(UBOUND(T%IPtr1) .NE. (/(I2Max+1)*2+i1Min-1/)))    STOP 10
+  IF ( ANY(LBOUND(T%IPtr1) .NE. (/I1Min/)) )   ERROR STOP 9
+  IF ( ANY(UBOUND(T%IPtr1) .NE. (/(I2Max+1)*2+i1Min-1/)))    ERROR STOP 10
 
   T%IPtr1(I2Max:) => I1Arr
-  IF ( ANY(LBOUND(T%IPtr1) .NE. (/I2Max/)) )                 STOP 11
-  IF ( ANY(UBOUND(T%IPtr1) .NE. (/(I2Max+1)*2+I2Max-1/)))    STOP 12
+  IF ( ANY(LBOUND(T%IPtr1) .NE. (/I2Max/)) )                 ERROR STOP 11
+  IF ( ANY(UBOUND(T%IPtr1) .NE. (/(I2Max+1)*2+I2Max-1/)))    ERROR STOP 12
 
   T%IPtr1(I4Max:) => I1Arr
-  IF ( ANY(LBOUND(T%IPtr1) .NE. (/I4Max/)) )                 STOP 21
-  IF ( ANY(UBOUND(T%IPtr1) .NE. (/(I2Max+1)*2+I4Max-1/)))    STOP 22
+  IF ( ANY(LBOUND(T%IPtr1) .NE. (/I4Max/)) )                 ERROR STOP 21
+  IF ( ANY(UBOUND(T%IPtr1) .NE. (/(I2Max+1)*2+I4Max-1/)))    ERROR STOP 22
 
   T%IPtr2(1_8:, 0_8:) => I2Arr
-  IF ( ANY(LBOUND(T%IPtr2) .NE. (/1_8, 0_8/)) )              STOP 31
-  IF ( ANY(UBOUND(T%IPtr2) .NE. (/I1Max+1, I1Max-1/)))       STOP 32
+  IF ( ANY(LBOUND(T%IPtr2) .NE. (/1_8, 0_8/)) )              ERROR STOP 31
+  IF ( ANY(UBOUND(T%IPtr2) .NE. (/I1Max+1, I1Max-1/)))       ERROR STOP 32
 
 
 
   T%IPtr2(I1Min:, I1Min:) => I2Arr
-  IF ( ANY(LBOUND(T%IPtr2) .NE. (/I1Min, I1Min/)) )   STOP 41
-  IF ( ANY(UBOUND(T%IPtr2) .NE. (/-1, -2/)))          STOP 42
+  IF ( ANY(LBOUND(T%IPtr2) .NE. (/I1Min, I1Min/)) )   ERROR STOP 41
+  IF ( ANY(UBOUND(T%IPtr2) .NE. (/-1, -2/)))          ERROR STOP 42
 
   T%IPtr2(I2Max:, I2Max:) => I2Arr
-  IF ( ANY(LBOUND(T%IPtr2) .NE. (/I2Max, I2Max/)) )               STOP 51
-  IF ( ANY(UBOUND(T%IPtr2) .NE. (/I2Max+I1Max+0, I2Max+I1Max-1/)))STOP 52
+  IF ( ANY(LBOUND(T%IPtr2) .NE. (/I2Max, I2Max/)) )               ERROR STOP 51
+  IF ( ANY(UBOUND(T%IPtr2) .NE. (/I2Max+I1Max+0, I2Max+I1Max-1/)))ERROR STOP 52
 
   END
 

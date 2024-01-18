@@ -77,12 +77,12 @@ use m
 
     call sub (o1, o2)
 
-    if ( numA /= 1 ) stop 11
-    if ( numB /= 0) stop 13
+    if ( numA /= 1 ) error stop 11
+    if ( numB /= 0) error stop 13
 
-    if ( allocated(o1) ) stop 21
+    if ( allocated(o1) ) error stop 21
 
-    if ( .not. allocated(o2) ) stop 23
+    if ( .not. allocated(o2) ) error stop 23
 
     select type(o2)
         type is (base(*,4))

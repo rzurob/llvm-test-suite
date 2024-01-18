@@ -90,16 +90,16 @@
   TYPE(DT)   :: U, W
 
   V = Ptr(Base("123"))
-  IF ( V%C .NE. "123" ) STOP 12
+  IF ( V%C .NE. "123" ) ERROR STOP 12
 
   U = DT(C="123",ProcPtr=RetPtr(Ptr))
-  IF ( .NOT. ASSOCIATED(U%ProcPtr, Ptr) ) STOP 32
+  IF ( .NOT. ASSOCIATED(U%ProcPtr, Ptr) ) ERROR STOP 32
 
   SELECT TYPE (As => U%ProcPtr(U))
   TYPE IS (DT)
     W = As
-    IF ( W%C  .NE. "123" ) STOP 33
-    IF ( .NOT. ASSOCIATED(W%ProcPtr, Ptr) ) STOP 34
+    IF ( W%C  .NE. "123" ) ERROR STOP 33
+    IF ( .NOT. ASSOCIATED(W%ProcPtr, Ptr) ) ERROR STOP 34
   CLASS  DEFAULT
     STOP 35
   END SELECT
@@ -107,8 +107,8 @@
   SELECT TYPE (As => U%Proc(U))
   TYPE IS (DT)
     W = As
-    IF ( W%C  .NE. "123" ) STOP 43
-    IF ( .NOT. ASSOCIATED(W%ProcPtr, Ptr) ) STOP 44
+    IF ( W%C  .NE. "123" ) ERROR STOP 43
+    IF ( .NOT. ASSOCIATED(W%ProcPtr, Ptr) ) ERROR STOP 44
   CLASS  DEFAULT
     STOP 45
   END SELECT

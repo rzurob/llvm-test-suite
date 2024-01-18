@@ -60,9 +60,9 @@ MODULE Mod1
 
       IF ( (.not. present (arg2)) .and. (.not. present(arg3)) ) THEN
          READ(1, NML=NML1)
-         IF (ANY(arg1%Iarr .NE. 4)) STOP 10
-         IF (ANY(arg1%Zarr .NE. (4,4))) STOP 11
-         IF (ANY(arg1%Carr .NE. 'ABCD')) STOP 12
+         IF (ANY(arg1%Iarr .NE. 4)) ERROR STOP 10
+         IF (ANY(arg1%Zarr .NE. (4,4))) ERROR STOP 11
+         IF (ANY(arg1%Carr .NE. 'ABCD')) ERROR STOP 12
 
          WRITE(*, NML=NML1, DELIM='APOSTROPHE')
 
@@ -70,16 +70,16 @@ MODULE Mod1
 
       IF ( present (arg2) .and. (.not. present(arg3)) ) THEN
          READ(1, NML=NML2)
-         IF (ANY(arg1%Iarr .NE. 4)) STOP 13
-         IF (ANY(arg1%Zarr .NE. (4,4))) STOP 14
-         IF (ANY(arg1%Carr .NE. 'ABCD')) STOP 15
+         IF (ANY(arg1%Iarr .NE. 4)) ERROR STOP 13
+         IF (ANY(arg1%Zarr .NE. (4,4))) ERROR STOP 14
+         IF (ANY(arg1%Carr .NE. 'ABCD')) ERROR STOP 15
 
-         IF (ANY(arg2%Iarr .NE. 1)) STOP 16
-         IF (ANY(arg2%Zarr .NE. (9.5,9.5))) STOP 17
-         IF (ANY(arg2%Carr .NE. 'Niels')) STOP 18
-         IF (ANY(arg2%dtarr(1)%Iarr .NE. 6)) STOP 19
-         IF (ANY(arg2%dtarr(1)%Zarr .NE. (6.6,6.6))) STOP 20
-         IF (ANY(arg2%dtarr(1)%Carr .NE. 'Erwin')) STOP 21
+         IF (ANY(arg2%Iarr .NE. 1)) ERROR STOP 16
+         IF (ANY(arg2%Zarr .NE. (9.5,9.5))) ERROR STOP 17
+         IF (ANY(arg2%Carr .NE. 'Niels')) ERROR STOP 18
+         IF (ANY(arg2%dtarr(1)%Iarr .NE. 6)) ERROR STOP 19
+         IF (ANY(arg2%dtarr(1)%Zarr .NE. (6.6,6.6))) ERROR STOP 20
+         IF (ANY(arg2%dtarr(1)%Carr .NE. 'Erwin')) ERROR STOP 21
 
          WRITE(*, NML=NML2, DELIM='APOSTROPHE')
       ENDIF
@@ -90,29 +90,29 @@ MODULE Mod1
 
       IF ( present (arg2) .and. present(arg3) ) THEN
          READ(1, NML=NML4)
-         IF (ANY(arg1%Iarr .NE. 4)) STOP 31
-         IF (ANY(arg1%Zarr .NE. (4,4))) STOP 32
-         IF (ANY(arg1%Carr .NE. 'ABCD ')) STOP 33
+         IF (ANY(arg1%Iarr .NE. 4)) ERROR STOP 31
+         IF (ANY(arg1%Zarr .NE. (4,4))) ERROR STOP 32
+         IF (ANY(arg1%Carr .NE. 'ABCD ')) ERROR STOP 33
 
-         IF (ANY(arg2%Iarr .NE. 1)) STOP 34
-         IF (ANY(arg2%Zarr .NE. (9.5,9.5))) STOP 35
-         IF (ANY(arg2%Carr .NE. 'Niels')) STOP 36
-         IF (ANY(arg2%dtarr(1)%Iarr .NE. 6)) STOP 37
-         IF (ANY(arg2%dtarr(1)%Zarr .NE. (6.6,6.6))) STOP 38
-         IF (ANY(arg2%dtarr(1)%Carr .NE. 'Erwin')) STOP 39
+         IF (ANY(arg2%Iarr .NE. 1)) ERROR STOP 34
+         IF (ANY(arg2%Zarr .NE. (9.5,9.5))) ERROR STOP 35
+         IF (ANY(arg2%Carr .NE. 'Niels')) ERROR STOP 36
+         IF (ANY(arg2%dtarr(1)%Iarr .NE. 6)) ERROR STOP 37
+         IF (ANY(arg2%dtarr(1)%Zarr .NE. (6.6,6.6))) ERROR STOP 38
+         IF (ANY(arg2%dtarr(1)%Carr .NE. 'Erwin')) ERROR STOP 39
 
-         IF (ANY(arg3(1)%Iarr .NE. 7)) STOP 40
-         IF (ANY(arg3(1)%Zarr .NE. (7.2,7.2))) STOP 41
-         IF (ANY(arg3(1)%Carr .NE. 'Bohr')) STOP 42
-         IF (ANY(arg3(1)%dtarr(1)%Iarr .NE. 8)) STOP 43
-         IF (ANY(arg3(1)%dtarr(1)%Zarr .NE. (8.8,8.8))) STOP 44
-         IF (ANY(arg3(1)%dtarr(1)%Carr .NE. 'Shrodinger')) STOP 45
-         IF (ANY(arg3(2)%Iarr .NE. 7)) STOP 46
-         IF (ANY(arg3(2)%Zarr .NE. (7.2,7.2))) STOP 47
-         IF (ANY(arg3(2)%Carr .NE. 'Bohr')) STOP 48
-         IF (ANY(arg3(2)%dtarr(1)%Iarr .NE. 8)) STOP 50
-         IF (ANY(arg3(2)%dtarr(1)%Zarr .NE. (8.8,8.8))) STOP 51
-         IF (ANY(arg3(2)%dtarr(1)%Carr .NE. 'Shrodinger')) STOP 52
+         IF (ANY(arg3(1)%Iarr .NE. 7)) ERROR STOP 40
+         IF (ANY(arg3(1)%Zarr .NE. (7.2,7.2))) ERROR STOP 41
+         IF (ANY(arg3(1)%Carr .NE. 'Bohr')) ERROR STOP 42
+         IF (ANY(arg3(1)%dtarr(1)%Iarr .NE. 8)) ERROR STOP 43
+         IF (ANY(arg3(1)%dtarr(1)%Zarr .NE. (8.8,8.8))) ERROR STOP 44
+         IF (ANY(arg3(1)%dtarr(1)%Carr .NE. 'Shrodinger')) ERROR STOP 45
+         IF (ANY(arg3(2)%Iarr .NE. 7)) ERROR STOP 46
+         IF (ANY(arg3(2)%Zarr .NE. (7.2,7.2))) ERROR STOP 47
+         IF (ANY(arg3(2)%Carr .NE. 'Bohr')) ERROR STOP 48
+         IF (ANY(arg3(2)%dtarr(1)%Iarr .NE. 8)) ERROR STOP 50
+         IF (ANY(arg3(2)%dtarr(1)%Zarr .NE. (8.8,8.8))) ERROR STOP 51
+         IF (ANY(arg3(2)%dtarr(1)%Carr .NE. 'Shrodinger')) ERROR STOP 52
 
          WRITE(*, NML=NML4, DELIM='APOSTROPHE')
       ENDIF

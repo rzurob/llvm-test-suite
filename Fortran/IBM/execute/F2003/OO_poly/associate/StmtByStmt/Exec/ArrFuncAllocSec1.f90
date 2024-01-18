@@ -29,27 +29,27 @@
 
   ASSOCIATE ( As => Fun(RESHAPE((/C1, C2, C3, C4/), (/2,2/))) )
 
-    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             STOP 30
-    IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             STOP 31
-    IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             STOP 32
+    IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             ERROR STOP 30
+    IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             ERROR STOP 31
+    IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             ERROR STOP 32
 
-    IF ( TRIM(As(1,1)) .NE. "1" ) STOP 33
-    IF ( TRIM(As(2,1)) .NE. "2" ) STOP 34
-    IF ( TRIM(As(1,2)) .NE. "3" ) STOP 35
-    IF ( TRIM(As(2,2)) .NE. "4" ) STOP 35
-    IF (  LEN(As)      .NE. 129 ) STOP 36
+    IF ( TRIM(As(1,1)) .NE. "1" ) ERROR STOP 33
+    IF ( TRIM(As(2,1)) .NE. "2" ) ERROR STOP 34
+    IF ( TRIM(As(1,2)) .NE. "3" ) ERROR STOP 35
+    IF ( TRIM(As(2,2)) .NE. "4" ) ERROR STOP 35
+    IF (  LEN(As)      .NE. 129 ) ERROR STOP 36
 
     ASSOCIATE ( As => FUN(As) )
 
-      IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             STOP 40
-      IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             STOP 41
-      IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             STOP 42
+      IF ( ANY (LBOUND(As)  .NE. (/1,1/) ) )             ERROR STOP 40
+      IF ( ANY (UBOUND(As)  .NE. (/2,2/) ) )             ERROR STOP 41
+      IF ( ANY (SHAPE(As)   .NE. (/2,2/) ) )             ERROR STOP 42
 
-      IF ( TRIM(As(1,1)) .NE. "1" ) STOP 43
-      IF ( TRIM(As(2,1)) .NE. "2" ) STOP 44
-      IF ( TRIM(As(1,2)) .NE. "3" ) STOP 45
-      IF ( TRIM(As(2,2)) .NE. "4" ) STOP 45
-      IF ( LEN(As)       .NE. 129 ) STOP 46
+      IF ( TRIM(As(1,1)) .NE. "1" ) ERROR STOP 43
+      IF ( TRIM(As(2,1)) .NE. "2" ) ERROR STOP 44
+      IF ( TRIM(As(1,2)) .NE. "3" ) ERROR STOP 45
+      IF ( TRIM(As(2,2)) .NE. "4" ) ERROR STOP 45
+      IF ( LEN(As)       .NE. 129 ) ERROR STOP 46
 
     END ASSOCIATE
   END ASSOCIATE

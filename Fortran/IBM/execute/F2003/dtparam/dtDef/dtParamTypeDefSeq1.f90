@@ -67,38 +67,38 @@
   TYPE(Seq2(4, 4)) :: T2
   TYPE(Seq3(4, 4)) :: T3
 
-  IF ( T0%K .NE. 4 ) STOP 11
-  IF ( T0%L .NE. 4 ) STOP 11
+  IF ( T0%K .NE. 4 ) ERROR STOP 11
+  IF ( T0%L .NE. 4 ) ERROR STOP 11
 
-  IF ( T1%K    .NE. 4 )         STOP 21
-  IF ( T1%L    .NE. 4 )         STOP 22
-  IF ( T1%I    .NE. 4 )         STOP 23
-  IF ( T1%R    .NE. 4. )        STOP 24
-  IF ( T1%Cplx .NE. (-4., 4.) ) STOP 25
-  IF ( T1%LL   .NEQV. .TRUE. )  STOP 26
-  IF ( T1%C    .NE. "A"  )      STOP 27
+  IF ( T1%K    .NE. 4 )         ERROR STOP 21
+  IF ( T1%L    .NE. 4 )         ERROR STOP 22
+  IF ( T1%I    .NE. 4 )         ERROR STOP 23
+  IF ( T1%R    .NE. 4. )        ERROR STOP 24
+  IF ( T1%Cplx .NE. (-4., 4.) ) ERROR STOP 25
+  IF ( T1%LL   .NEQV. .TRUE. )  ERROR STOP 26
+  IF ( T1%C    .NE. "A"  )      ERROR STOP 27
 
-  IF ( T2%Comp1%K    .NE. 4 )         STOP 31
-  IF ( T2%Comp1%L    .NE. 4 )         STOP 32
-  IF ( T2%Comp2%K    .NE. 4 )         STOP 33
-  IF ( T2%Comp2%L    .NE. 4 )         STOP 34
-  IF ( T2%Comp2%I    .NE. -1 )        STOP 35
-  IF ( T2%Comp2%R    .NE. -1. )       STOP 36
-  IF ( T2%Comp2%Cplx .NE. (1., -1.) ) STOP 37
-  IF ( T2%Comp2%LL   .NEQV. .FALSE. ) STOP 38
-  IF ( T2%Comp2%C    .NE. "B"  )      STOP 38
+  IF ( T2%Comp1%K    .NE. 4 )         ERROR STOP 31
+  IF ( T2%Comp1%L    .NE. 4 )         ERROR STOP 32
+  IF ( T2%Comp2%K    .NE. 4 )         ERROR STOP 33
+  IF ( T2%Comp2%L    .NE. 4 )         ERROR STOP 34
+  IF ( T2%Comp2%I    .NE. -1 )        ERROR STOP 35
+  IF ( T2%Comp2%R    .NE. -1. )       ERROR STOP 36
+  IF ( T2%Comp2%Cplx .NE. (1., -1.) ) ERROR STOP 37
+  IF ( T2%Comp2%LL   .NEQV. .FALSE. ) ERROR STOP 38
+  IF ( T2%Comp2%C    .NE. "B"  )      ERROR STOP 38
 
-  IF ( T3%Comp1%K    .NE. 4 )         STOP 41
-  IF ( T3%Comp1%L    .NE. 4 )         STOP 42
-  IF ( T3%Comp2%K    .NE. 4 )         STOP 43
-  IF ( T3%Comp2%L    .NE. 4 )         STOP 44
-  IF ( ANY(T3%Comp2%I    .NE. -1 ))        STOP 45
-  IF ( ANY(T3%Comp2%R    .NE. -1. ))       STOP 46
-  IF ( ANY(T3%Comp2%Cplx .NE. (1., -1.)) ) STOP 47
-  IF ( ANY(T3%Comp2%LL   .NEQV. .FALSE. )) STOP 48
-  IF ( ANY(T3%Comp2%C    .NE. "B"  ))      STOP 49
-  IF ( ANY(SHAPE(T3%Comp1)  .NE. (/T3%Comp1%K, T3%Comp1%L/)) ) STOP 51
-  IF ( ANY(SHAPE(T3%Comp2)  .NE. (/T3%Comp2%K, T3%Comp2%L/)) ) STOP 52
+  IF ( T3%Comp1%K    .NE. 4 )         ERROR STOP 41
+  IF ( T3%Comp1%L    .NE. 4 )         ERROR STOP 42
+  IF ( T3%Comp2%K    .NE. 4 )         ERROR STOP 43
+  IF ( T3%Comp2%L    .NE. 4 )         ERROR STOP 44
+  IF ( ANY(T3%Comp2%I    .NE. -1 ))        ERROR STOP 45
+  IF ( ANY(T3%Comp2%R    .NE. -1. ))       ERROR STOP 46
+  IF ( ANY(T3%Comp2%Cplx .NE. (1., -1.)) ) ERROR STOP 47
+  IF ( ANY(T3%Comp2%LL   .NEQV. .FALSE. )) ERROR STOP 48
+  IF ( ANY(T3%Comp2%C    .NE. "B"  ))      ERROR STOP 49
+  IF ( ANY(SHAPE(T3%Comp1)  .NE. (/T3%Comp1%K, T3%Comp1%L/)) ) ERROR STOP 51
+  IF ( ANY(SHAPE(T3%Comp2)  .NE. (/T3%Comp2%K, T3%Comp2%L/)) ) ERROR STOP 52
 
 
   END

@@ -60,10 +60,10 @@
     TYPE(Base)      :: V
 
     CALL Proc0(V, Base("321"))
-    IF (V%C .NE. "321") STOP 15
+    IF (V%C .NE. "321") ERROR STOP 15
 
     CALL Proc1(V, Base("123"))
-    IF (V%C .NE. "123") STOP 13
+    IF (V%C .NE. "123") ERROR STOP 13
 
     END SUBROUTINE
 
@@ -73,7 +73,7 @@
     TYPE(Base)      :: V
 
     CALL Proc(V, Base("321"))
-    IF (V%C .NE. "321") STOP 15
+    IF (V%C .NE. "321") ERROR STOP 15
 
     END SUBROUTINE
 

@@ -83,11 +83,11 @@
 
   ProcPtr1 => ModFun
   ProcPtr  => ExtFun1()
-  IF ( .NOT. ASSOCIATED( ProcPtr, ModFun ) ) STOP 11
+  IF ( .NOT. ASSOCIATED( ProcPtr, ModFun ) ) ERROR STOP 11
 
   ProcPtr2 => ExtFun
   ProcPtr  => ExtFun2()
-  IF ( .NOT. ASSOCIATED( ProcPtr, ExtFun ) ) STOP 12
+  IF ( .NOT. ASSOCIATED( ProcPtr, ExtFun ) ) ERROR STOP 12
 
   CALL IntSub()
 
@@ -97,11 +97,11 @@
 
   ProcPtr1 => ExtFun
   ProcPtr  => ExtFun1()
-  IF ( .NOT. ASSOCIATED( ProcPtr, ExtFun ) ) STOP 21
+  IF ( .NOT. ASSOCIATED( ProcPtr, ExtFun ) ) ERROR STOP 21
 
   ProcPtr2 => ModFun
   ProcPtr  => ExtFun2()
-  IF ( .NOT. ASSOCIATED( ProcPtr, ModFun ) ) STOP 22
+  IF ( .NOT. ASSOCIATED( ProcPtr, ModFun ) ) ERROR STOP 22
 
   END SUBROUTINE
 

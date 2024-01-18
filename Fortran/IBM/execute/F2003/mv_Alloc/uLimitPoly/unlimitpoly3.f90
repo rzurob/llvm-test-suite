@@ -28,11 +28,11 @@ module m
 
             allocate(old, source = 10.8)
 
-            if ( .not. allocated(old) ) stop 11
+            if ( .not. allocated(old) ) error stop 11
 
             call move_alloc(old,new)
 
-            if ( allocated(old) ) stop 12
+            if ( allocated(old) ) error stop 12
         end subroutine
 end module
 
@@ -43,11 +43,11 @@ use m
 
     call sub
 
-    if ( .not. allocated(new) ) stop 22
+    if ( .not. allocated(new) ) error stop 22
 
     select type(new)
         type is (real)
-            if ( new /= 10.8) stop 23
+            if ( new /= 10.8) error stop 23
         class default
             stop 23
     end select

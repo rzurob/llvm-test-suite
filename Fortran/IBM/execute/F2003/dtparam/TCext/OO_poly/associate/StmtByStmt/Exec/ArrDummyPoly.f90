@@ -68,10 +68,10 @@
     SELECT TYPE (As)
       TYPE IS (Child(4))
         CALL Sub(Ptr)
-        IF ( ANY(As%ChildId .NE. -2) ) STOP 21
-        IF ( ANY(As%BaseId  .NE. -1) ) STOP 22
-        IF ( ANY(As%GetID()      .NE. -2) ) STOP 23
-        IF ( ANY(As%Base%GetID() .NE. -1) ) STOP 24
+        IF ( ANY(As%ChildId .NE. -2) ) ERROR STOP 21
+        IF ( ANY(As%BaseId  .NE. -1) ) ERROR STOP 22
+        IF ( ANY(As%GetID()      .NE. -2) ) ERROR STOP 23
+        IF ( ANY(As%Base%GetID() .NE. -1) ) ERROR STOP 24
       CLASS DEFAULT
       STOP 25
     END SELECT
@@ -91,25 +91,25 @@
         As%ChildId = -2
         As%BaseId  = -1
 
-        IF ( ANY (LBOUND(As)      .NE. (/1,1/) ) )             STOP 30
-        IF ( ANY (SHAPE(As)       .NE. (/2,2/) ) )             STOP 32
+        IF ( ANY (LBOUND(As)      .NE. (/1,1/) ) )             ERROR STOP 30
+        IF ( ANY (SHAPE(As)       .NE. (/2,2/) ) )             ERROR STOP 32
 
-        IF ( ANY(As%ChildId .NE. -2) ) STOP 41
-        IF ( ANY(As%BaseId  .NE. -1) ) STOP 42
-        IF ( ANY(As%GetID()      .NE. -2) ) STOP 33
-        IF ( ANY(As%Base%GetID() .NE. -1) ) STOP 34
+        IF ( ANY(As%ChildId .NE. -2) ) ERROR STOP 41
+        IF ( ANY(As%BaseId  .NE. -1) ) ERROR STOP 42
+        IF ( ANY(As%GetID()      .NE. -2) ) ERROR STOP 33
+        IF ( ANY(As%Base%GetID() .NE. -1) ) ERROR STOP 34
 
         ASSOCIATE ( As0 => As%ChildId, As1 => As%BaseId )
-          IF ( ANY(As0 .NE. -2) ) STOP 41
-          IF ( ANY(As1 .NE. -1) ) STOP 42
+          IF ( ANY(As0 .NE. -2) ) ERROR STOP 41
+          IF ( ANY(As1 .NE. -1) ) ERROR STOP 42
         END ASSOCIATE
 
         ASSOCIATE ( As2 => As%Base )
-          IF ( ANY(As2%GetID() .NE. -1 )) STOP 50
+          IF ( ANY(As2%GetID() .NE. -1 )) ERROR STOP 50
         END ASSOCIATE
 
         ASSOCIATE ( As2 => As%Base )
-          IF ( ANY(As2%GetID() .NE. -1)) STOP 52
+          IF ( ANY(As2%GetID() .NE. -1)) ERROR STOP 52
         END ASSOCIATE
 
     CLASS DEFAULT

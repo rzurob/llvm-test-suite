@@ -38,7 +38,7 @@ contains
 
     subroutine printf()
         do i = 1, 10
-          if (.not. precision_r4(ptr(i), i-10.0)) STOP 11
+          if (.not. precision_r4(ptr(i), i-10.0)) ERROR STOP 11
         end do
     end subroutine
 

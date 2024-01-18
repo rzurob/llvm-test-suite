@@ -40,9 +40,9 @@
 
 	    ip(1:3, 1:4) => x
 
-	    if ( .not. associated(ip) ) stop 11
-	    if ( any( lbound(ip) .ne. (/1,1 /) )) stop 13
-	    if ( any( ubound(ip) .ne. (/3,4 /) )) stop 15
+	    if ( .not. associated(ip) ) error stop 11
+	    if ( any( lbound(ip) .ne. (/1,1 /) )) error stop 13
+	    if ( any( ubound(ip) .ne. (/3,4 /) )) error stop 15
 
 	    print *, shape(matmul(ip,reshape( (/ 0, x(13:22),0 /), (/4,3/) )))
 
@@ -52,9 +52,9 @@
 
 	    	rp(2:5,-1:1) => rt
 
-	    	if ( .not. associated(rp) ) stop 21
-	    	if ( any( lbound(rp) .ne. (/2,-1 /) )) stop 23
-	    	if ( any( ubound(rp) .ne. (/5,1 /) )) stop 25
+	    	if ( .not. associated(rp) ) error stop 21
+	    	if ( any( lbound(rp) .ne. (/2,-1 /) )) error stop 23
+	    	if ( any( ubound(rp) .ne. (/5,1 /) )) error stop 25
 
 	 	print *, shape(matmul(rp,ip))
 

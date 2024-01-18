@@ -75,7 +75,7 @@
 
   ProcPtr => ModFun
 
-  IF ( ProcPtr(R(1)%R4, R(2)%R8, R(3)%R6) .NE. (R(1)%R4+R(2)%R8+R(3)%R6) )  STOP 11
+  IF ( ProcPtr(R(1)%R4, R(2)%R8, R(3)%R6) .NE. (R(1)%R4+R(2)%R8+R(3)%R6) )  ERROR STOP 11
 
 
   END

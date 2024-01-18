@@ -35,19 +35,19 @@
 	byte, pointer :: P(:,:)
 
 	allocate(b1)
-	if ( .not. associated(b1) ) stop 3
+	if ( .not. associated(b1) ) error stop 3
 
 	allocate(b1%t(25), source= (/ (/(int(i,1), i = 25,11,-1)/), &
 		(/(int(i,1),i= 10,1,-1 )/) /) )
-	if ( .not. allocated(b1%t)) stop 5
+	if ( .not. allocated(b1%t)) error stop 5
 
 	call sub(p,b1)
 
-	if ( .not. associated(p)) stop 7
-	if ( any(shape(p) .eq. (/99,99 /) )) stop 11
+	if ( .not. associated(p)) error stop 7
+	if ( any(shape(p) .eq. (/99,99 /) )) error stop 11
 
-	if ( any(lbound(p) .ne. (/3, 1/))) stop 31
-	if ( any(ubound(p) .ne. (/8, 2/))) stop 33
+	if ( any(lbound(p) .ne. (/3, 1/))) error stop 31
+	if ( any(ubound(p) .ne. (/8, 2/))) error stop 33
 	print *, p
 
 	contains

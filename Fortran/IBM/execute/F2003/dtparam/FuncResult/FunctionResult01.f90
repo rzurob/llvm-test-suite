@@ -59,10 +59,10 @@ PROGRAM FunctionResult01
 
       SELECT TYPE ( s => func(b1) )
         TYPE IS (Base(4,*))
-           IF (s%k1 .NE.  4) STOP 10
-           IF (s%l1 .NE. 10) STOP 11
-           IF (LEN(s%C0) .NE. 10) STOP 12
-           IF (SIZE(s%F0) .NE. 10) STOP 13
+           IF (s%k1 .NE.  4) ERROR STOP 10
+           IF (s%l1 .NE. 10) ERROR STOP 11
+           IF (LEN(s%C0) .NE. 10) ERROR STOP 12
+           IF (SIZE(s%F0) .NE. 10) ERROR STOP 13
 
         CLASS DEFAULT
            STOP 14
@@ -71,10 +71,10 @@ PROGRAM FunctionResult01
       ALLOCATE( Base(4,15) :: b_ptr )
       SELECT TYPE ( s => func(b_ptr) )
         TYPE IS (Base(4,*))
-           IF (s%k1 .NE.  4) STOP 15
-           IF (s%l1 .NE. 15) STOP 16
-           IF (LEN(s%C0) .NE. 15) STOP 17
-           IF (SIZE(s%F0) .NE. 15) STOP 18
+           IF (s%k1 .NE.  4) ERROR STOP 15
+           IF (s%l1 .NE. 15) ERROR STOP 16
+           IF (LEN(s%C0) .NE. 15) ERROR STOP 17
+           IF (SIZE(s%F0) .NE. 15) ERROR STOP 18
 
         CLASS DEFAULT
            STOP 19
@@ -83,17 +83,17 @@ PROGRAM FunctionResult01
       ALLOCATE( NextGen(4,1,4,2,5,10) :: b_poly )
       SELECT TYPE ( s => func(b_poly) )
         CLASS IS (NextGen(4,*,4,*,*,*))
-           IF (s%k1 .NE.  4) STOP 20
-           IF (s%l1 .NE.  1) STOP 21
-           IF (LEN(s%C0) .NE. 1) STOP 22
-           IF (SIZE(s%F0) .NE. 1) STOP 23
-           IF (s%k2 .NE.  4) STOP 24
-           IF (s%l2 .NE.  2) STOP 25
-           IF (SIZE(s%A0) .NE. 2) STOP 26
-           IF (SIZE(s%A1) .NE. 1) STOP 27
-           IF (SIZE(s%A3) .NE. 3) STOP 28
-           IF (s%l3 .NE.  5) STOP 29
-           IF (s%l4 .NE. 10) STOP 30
+           IF (s%k1 .NE.  4) ERROR STOP 20
+           IF (s%l1 .NE.  1) ERROR STOP 21
+           IF (LEN(s%C0) .NE. 1) ERROR STOP 22
+           IF (SIZE(s%F0) .NE. 1) ERROR STOP 23
+           IF (s%k2 .NE.  4) ERROR STOP 24
+           IF (s%l2 .NE.  2) ERROR STOP 25
+           IF (SIZE(s%A0) .NE. 2) ERROR STOP 26
+           IF (SIZE(s%A1) .NE. 1) ERROR STOP 27
+           IF (SIZE(s%A3) .NE. 3) ERROR STOP 28
+           IF (s%l3 .NE.  5) ERROR STOP 29
+           IF (s%l4 .NE. 10) ERROR STOP 30
 
         CLASS DEFAULT
            STOP 31
@@ -102,15 +102,15 @@ PROGRAM FunctionResult01
       ALLOCATE( Child(4,10,4,20) :: b_poly )
       SELECT TYPE ( s => func(b_poly) )
         CLASS IS (Child(4,*,4,*))
-           IF (s%k1 .NE.   4) STOP 32
-           IF (s%l1 .NE.  10) STOP 33
-           IF (LEN(s%C0)  .NE. 10) STOP 34
-           IF (SIZE(s%F0) .NE. 10) STOP 35
-           IF (s%k2 .NE.   4) STOP 36
-           IF (s%l2 .NE.  20) STOP 37
-           IF (SIZE(s%A0) .NE. 20) STOP 38
-           IF (SIZE(s%A1) .NE. 10) STOP 39
-           IF (SIZE(s%A3) .NE. 30) STOP 40
+           IF (s%k1 .NE.   4) ERROR STOP 32
+           IF (s%l1 .NE.  10) ERROR STOP 33
+           IF (LEN(s%C0)  .NE. 10) ERROR STOP 34
+           IF (SIZE(s%F0) .NE. 10) ERROR STOP 35
+           IF (s%k2 .NE.   4) ERROR STOP 36
+           IF (s%l2 .NE.  20) ERROR STOP 37
+           IF (SIZE(s%A0) .NE. 20) ERROR STOP 38
+           IF (SIZE(s%A1) .NE. 10) ERROR STOP 39
+           IF (SIZE(s%A3) .NE. 30) ERROR STOP 40
 
         CLASS DEFAULT
            STOP 41

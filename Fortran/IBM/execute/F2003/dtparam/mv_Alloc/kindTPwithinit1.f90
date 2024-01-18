@@ -30,7 +30,7 @@
 
         select type (b2)
 	     type is (B(4))
-		  if ( b2%a1 /=4 ) stop 21
-		  if ( b2%a2 /=4 ) stop 23
+		  if ( b2%a1 /=4 ) error stop 21
+		  if ( b2%a2 /=4 ) error stop 23
 	end select
 end

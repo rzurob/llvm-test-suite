@@ -44,8 +44,8 @@
     select type (y)
         type is (B)
             call move_alloc( y(1)%b1 , y(2)%b1 )
-            if ( allocated(y(1)%b1 )) stop 31
-            if ( .not. allocated(y(2)%b1) ) stop 33
+            if ( allocated(y(1)%b1 )) error stop 31
+            if ( .not. allocated(y(2)%b1) ) error stop 33
             select type ( arg => y(2)%b1 )
         	type is (A)
                     print *, arg%iA

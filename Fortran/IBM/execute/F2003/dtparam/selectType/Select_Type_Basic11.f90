@@ -65,7 +65,7 @@
       ALLOCATE(Indv%Ptr(M))
 
       My_poly => Indv
-      IF ( .NOT. ASSOCIATED(My_poly)) STOP 11
+      IF ( .NOT. ASSOCIATED(My_poly)) ERROR STOP 11
 
       SELECT TYPE(A=>My_poly)
 
@@ -94,8 +94,8 @@
       SELECT TYPE(A=>T)
         TYPE IS (ExtBasic(k1,*))
            A%Ptr => tgt
-           IF ( SIZE(A%Ptr) .NE. N) STOP 20
-           IF ( INT(SUM(A%Ptr(:))) .NE. N) STOP 21
+           IF ( SIZE(A%Ptr) .NE. N) ERROR STOP 20
+           IF ( INT(SUM(A%Ptr(:))) .NE. N) ERROR STOP 21
 
         CLASS DEFAULT
           STOP 22

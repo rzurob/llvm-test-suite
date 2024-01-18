@@ -133,32 +133,32 @@ program acetdt01bkkl
   ! Verify that defined assignment does work, if correctly invoked:
   dt7 % datum = 107
   dt7 = dt1
-  if (dt7%datum /= (dt1%datum * 2)) stop 2
+  if (dt7%datum /= (dt1%datum * 2)) error stop 2
 
   dt7 = dt(4)(110) ! tcx: (4)
-  if (dt7%datum /= 220) stop 2
+  if (dt7%datum /= 220) error stop 2
 
   before = pc%d%datum
   pc%d = dt(4)(111) ! tcx: (4)
-  if (pc%d%datum /= 222) stop 2
+  if (pc%d%datum /= 222) error stop 2
   pc%d%datum = before
 
   ! but not anywhere else:
 
   before = dt7 % datum
   pc   = pContainer(4,13)(8, dt7)  ! pointer assign, not defined assign ! tcx: (4,13)
-  if (pc%d%datum /= before) stop 3
+  if (pc%d%datum /= before) error stop 3
 
   !* t1 = t(s(val)) -- not legal for pointers
   ! now shuffle values a little; because the dt field is a pointer, defined assignment should not kick in:
   pc2  = pc
-  if (pc2%d%datum /= pc%d%datum) stop 4
+  if (pc2%d%datum /= pc%d%datum) error stop 4
 
   pca  = pc2
-  if (pca(1)%d%datum /= pc2%d%datum .or. pca(2)%d%datum /= pc2%d%datum) stop 5
+  if (pca(1)%d%datum /= pc2%d%datum .or. pca(2)%d%datum /= pc2%d%datum) error stop 5
 
   pca2 = pca
-  if  (pca2(1)%d%datum /= pca(1)%d%datum .or. pca2(2)%d%datum /= pca(2)%d%datum) stop 6
+  if  (pca2(1)%d%datum /= pca(1)%d%datum .or. pca2(2)%d%datum /= pca(2)%d%datum) error stop 6
 
   ! That was all preamble - making sure that things were initialised and that
   ! defined assignment happened when expected.  Now for the real tests:
@@ -168,37 +168,37 @@ program acetdt01bkkl
   call init(pca(2),  dt4, 4, 104)
 
   pca  = (/ pc, pc2 /)
-  if (pca(1)%d%datum /= pc%d%datum .or. pca(2)%d%datum /= pc2%d%datum) stop 7
+  if (pca(1)%d%datum /= pc%d%datum .or. pca(2)%d%datum /= pc2%d%datum) error stop 7
 
   ! Reinitialize pca2:
   call init(pca2(1), dt5, 5, 105)
   call init(pca2(2), dt6, 6, 106)
   pca2 = (/ pca /)
-  if  (pca2(1)%d%datum /= pca(1)%d%datum .or. pca2(2)%d%datum /= pca(2)%d%datum) stop 8
+  if  (pca2(1)%d%datum /= pca(1)%d%datum .or. pca2(2)%d%datum /= pca(2)%d%datum) error stop 8
 
   call init(pca(1),  dt3, 3, 103)
   call init(pca(2),  dt4, 4, 104)
   pca  = (/ pContainer(4,13):: pc, pc2 /) ! tcx: (4,13)
-  if (pca(1)%d%datum /= pc%d%datum .or. pca(2)%d%datum /= pc2%d%datum) stop 9
+  if (pca(1)%d%datum /= pc%d%datum .or. pca(2)%d%datum /= pc2%d%datum) error stop 9
 
   call init(pca2(1), dt5, 5, 105)
   call init(pca2(2), dt6, 6, 106)
   pca2 = (/ pContainer(4,13):: pca /) ! tcx: (4,13)
-  if (pca2(1)%d%datum /= pca(1)%d%datum .or. pca2(2)%d%datum /= pca(2)%d%datum) stop 10
+  if (pca2(1)%d%datum /= pca(1)%d%datum .or. pca2(2)%d%datum /= pca(2)%d%datum) error stop 10
 
   allocate(pContainer(4,13) :: pcall(2)) ! tcx: (4,13)
   call init(pcall(1), dt8, 11, 121)
   call init(pcall(2), dt9, 12, 122)
 
   pca = (/ pContainer(4,13):: pcall /) ! tcx: (4,13)
-  if (pca(1)%d%datum /= pcall(1)%d%datum .or. pca(2)%d%datum /= pcall(2)%d%datum) stop 11
+  if (pca(1)%d%datum /= pcall(1)%d%datum .or. pca(2)%d%datum /= pcall(2)%d%datum) error stop 11
 
   pcall = (/ pContainer(4,13):: pca2 /) ! tcx: (4,13)
-  if (pcall(1)%d%datum /= pca2(1)%d%datum .or. pcall(2)%d%datum /= pca2(2)%d%datum) stop 12
+  if (pcall(1)%d%datum /= pca2(1)%d%datum .or. pcall(2)%d%datum /= pca2(2)%d%datum) error stop 12
 
   pcp => pca
   pcp = (/ pContainer(4,13):: pcall /) ! tcx: (4,13)
-  if (pcp(1)%d%datum /= pcall(1)%d%datum .or. pcp(2)%d%datum /= pcall(2)%d%datum) stop 13
+  if (pcp(1)%d%datum /= pcall(1)%d%datum .or. pcp(2)%d%datum /= pcall(2)%d%datum) error stop 13
 
 end program acetdt01bkkl
 

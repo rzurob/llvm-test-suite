@@ -81,13 +81,13 @@ program dummyArgDeferPolyDefAssign02
 
   LHS=RHS
 
-  if(any(LHS%i1 /= [11,12]))                 stop 1
+  if(any(LHS%i1 /= [11,12]))                 error stop 1
   select type(LHS)
      type is(child(*,*))
-       if(LHS(6)%comp%l1 /= 3)               stop 2
-       if(LHS(7)%comp%l1 /= 3)               stop 3
-       if(LHS(6)%comp%i1 /= 99)              stop 4
-       if(LHS(7)%comp%i1 /= -99)             stop 5
+       if(LHS(6)%comp%l1 /= 3)               error stop 2
+       if(LHS(7)%comp%l1 /= 3)               error stop 3
+       if(LHS(6)%comp%i1 /= 99)              error stop 4
+       if(LHS(7)%comp%i1 /= -99)             error stop 5
      class default
        stop 9
   end select
@@ -95,9 +95,9 @@ program dummyArgDeferPolyDefAssign02
   select type(LHS)
       type is(child(*,*))
           LHS%base=RHS
-          if(any(LHS%base%i1 /= [-9,-8]))    stop 6
-          if(LHS(6)%comp%i1 /= 99)           stop 7
-          if(LHS(7)%comp%i1 /= -99)          stop 8
+          if(any(LHS%base%i1 /= [-9,-8]))    error stop 6
+          if(LHS(6)%comp%i1 /= 99)           error stop 7
+          if(LHS(7)%comp%i1 /= -99)          error stop 8
        class default
           stop 10
   end select

@@ -143,7 +143,7 @@ use utils, only: stores
 
     real localAvg
 
-    if ((i > size(stores)) .or. (i <= 0)) stop 100
+    if ((i > size(stores)) .or. (i <= 0)) error stop 100
 
     localAvg = 0
 

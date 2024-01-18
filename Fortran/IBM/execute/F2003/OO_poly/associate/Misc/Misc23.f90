@@ -126,115 +126,115 @@
     & B   => 1  &
   & )
 
-    IF (A00 .NE. 1 )  STOP 1
-    IF (A01 .Ne. 1 )  STOP 1
-    IF (A02 .Ne. 1 )  STOP 1
-    IF (A03 .Ne. 1 )  STOP 1
-    IF (A04 .Ne. 1 )  STOP 1
-    IF (A05 .Ne. 1 )  STOP 1
-    IF (A06 .Ne. 1 )  STOP 1
-    IF (A07 .Ne. 1 )  STOP 1
-    IF (A08 .Ne. 1 )  STOP 1
-    IF (A09 .Ne. 1 )  STOP 1
+    IF (A00 .NE. 1 )  ERROR STOP 1
+    IF (A01 .Ne. 1 )  ERROR STOP 1
+    IF (A02 .Ne. 1 )  ERROR STOP 1
+    IF (A03 .Ne. 1 )  ERROR STOP 1
+    IF (A04 .Ne. 1 )  ERROR STOP 1
+    IF (A05 .Ne. 1 )  ERROR STOP 1
+    IF (A06 .Ne. 1 )  ERROR STOP 1
+    IF (A07 .Ne. 1 )  ERROR STOP 1
+    IF (A08 .Ne. 1 )  ERROR STOP 1
+    IF (A09 .Ne. 1 )  ERROR STOP 1
 
-    IF (A10 .Ne. 1 )  STOP 1
-    IF (A11 .Ne. 1 )  STOP 1
-    IF (A12 .Ne. 1 )  STOP 1
-    IF (A13 .Ne. 1 )  STOP 1
-    IF (A14 .Ne. 1 )  STOP 1
-    IF (A15 .Ne. 1 )  STOP 1
-    IF (A16 .Ne. 1 )  STOP 1
-    IF (A17 .Ne. 1 )  STOP 1
-    IF (A18 .Ne. 1 )  STOP 1
-    IF (A19 .Ne. 1 )  STOP 1
+    IF (A10 .Ne. 1 )  ERROR STOP 1
+    IF (A11 .Ne. 1 )  ERROR STOP 1
+    IF (A12 .Ne. 1 )  ERROR STOP 1
+    IF (A13 .Ne. 1 )  ERROR STOP 1
+    IF (A14 .Ne. 1 )  ERROR STOP 1
+    IF (A15 .Ne. 1 )  ERROR STOP 1
+    IF (A16 .Ne. 1 )  ERROR STOP 1
+    IF (A17 .Ne. 1 )  ERROR STOP 1
+    IF (A18 .Ne. 1 )  ERROR STOP 1
+    IF (A19 .Ne. 1 )  ERROR STOP 1
 
-    IF (A20 .Ne. 1 )  STOP 1
-    IF (A21 .Ne. 1 )  STOP 1
-    IF (A22 .Ne. 1 )  STOP 1
-    IF (A23 .Ne. 1 )  STOP 1
-    IF (A24 .Ne. 1 )  STOP 1
-    IF (A25 .Ne. 1 )  STOP 1
-    IF (A26 .Ne. 1 )  STOP 1
-    IF (A27 .Ne. 1 )  STOP 1
-    IF (A28 .Ne. 1 )  STOP 1
-    IF (A29 .Ne. 1 )  STOP 1
+    IF (A20 .Ne. 1 )  ERROR STOP 1
+    IF (A21 .Ne. 1 )  ERROR STOP 1
+    IF (A22 .Ne. 1 )  ERROR STOP 1
+    IF (A23 .Ne. 1 )  ERROR STOP 1
+    IF (A24 .Ne. 1 )  ERROR STOP 1
+    IF (A25 .Ne. 1 )  ERROR STOP 1
+    IF (A26 .Ne. 1 )  ERROR STOP 1
+    IF (A27 .Ne. 1 )  ERROR STOP 1
+    IF (A28 .Ne. 1 )  ERROR STOP 1
+    IF (A29 .Ne. 1 )  ERROR STOP 1
 
-    IF (A30 .Ne. 1 ) STOP 1
-    IF (A31 .Ne. 1 ) STOP 1
-    IF (A32 .Ne. 1 ) STOP 1
-    IF (A33 .Ne. 1 ) STOP 1
-    IF (A34 .Ne. 1 ) STOP 1
-    IF (A35 .Ne. 1 ) STOP 1
-    IF (A36 .Ne. 1 ) STOP 1
-    IF (A37 .Ne. 1 ) STOP 1
-    IF (A38 .Ne. 1 ) STOP 1
-    IF (A39 .Ne. 1 ) STOP 1
+    IF (A30 .Ne. 1 ) ERROR STOP 1
+    IF (A31 .Ne. 1 ) ERROR STOP 1
+    IF (A32 .Ne. 1 ) ERROR STOP 1
+    IF (A33 .Ne. 1 ) ERROR STOP 1
+    IF (A34 .Ne. 1 ) ERROR STOP 1
+    IF (A35 .Ne. 1 ) ERROR STOP 1
+    IF (A36 .Ne. 1 ) ERROR STOP 1
+    IF (A37 .Ne. 1 ) ERROR STOP 1
+    IF (A38 .Ne. 1 ) ERROR STOP 1
+    IF (A39 .Ne. 1 ) ERROR STOP 1
 
-    IF (A40 .Ne. 1 ) STOP 1
-    IF (A41 .Ne. 1 ) STOP 1
-    IF (A42 .Ne. 1 ) STOP 1
-    IF (A43 .Ne. 1 ) STOP 1
-    IF (A44 .Ne. 1 ) STOP 1
-    IF (A45 .Ne. 1 ) STOP 1
-    IF (A46 .Ne. 1 ) STOP 1
-    IF (A47 .Ne. 1 ) STOP 1
-    IF (A48 .Ne. 1 ) STOP 1
-    IF (A49 .Ne. 1 ) STOP 1
+    IF (A40 .Ne. 1 ) ERROR STOP 1
+    IF (A41 .Ne. 1 ) ERROR STOP 1
+    IF (A42 .Ne. 1 ) ERROR STOP 1
+    IF (A43 .Ne. 1 ) ERROR STOP 1
+    IF (A44 .Ne. 1 ) ERROR STOP 1
+    IF (A45 .Ne. 1 ) ERROR STOP 1
+    IF (A46 .Ne. 1 ) ERROR STOP 1
+    IF (A47 .Ne. 1 ) ERROR STOP 1
+    IF (A48 .Ne. 1 ) ERROR STOP 1
+    IF (A49 .Ne. 1 ) ERROR STOP 1
 
-    IF (A50 .Ne. 1 ) STOP 1
-    IF (A51 .Ne. 1 ) STOP 1
-    IF (A52 .Ne. 1 ) STOP 1
-    IF (A53 .Ne. 1 ) STOP 1
-    IF (A54 .Ne. 1 ) STOP 1
-    IF (A55 .Ne. 1 ) STOP 1
-    IF (A56 .Ne. 1 ) STOP 1
-    IF (A57 .Ne. 1 ) STOP 1
-    IF (A58 .Ne. 1 ) STOP 1
-    IF (A59 .Ne. 1 ) STOP 1
+    IF (A50 .Ne. 1 ) ERROR STOP 1
+    IF (A51 .Ne. 1 ) ERROR STOP 1
+    IF (A52 .Ne. 1 ) ERROR STOP 1
+    IF (A53 .Ne. 1 ) ERROR STOP 1
+    IF (A54 .Ne. 1 ) ERROR STOP 1
+    IF (A55 .Ne. 1 ) ERROR STOP 1
+    IF (A56 .Ne. 1 ) ERROR STOP 1
+    IF (A57 .Ne. 1 ) ERROR STOP 1
+    IF (A58 .Ne. 1 ) ERROR STOP 1
+    IF (A59 .Ne. 1 ) ERROR STOP 1
 
-    IF (A60 .Ne. 1 ) STOP 1
-    IF (A61 .Ne. 1 ) STOP 1
-    IF (A62 .Ne. 1 ) STOP 1
-    IF (A63 .Ne. 1 ) STOP 1
-    IF (A64 .Ne. 1 ) STOP 1
-    IF (A65 .Ne. 1 ) STOP 1
-    IF (A66 .Ne. 1 ) STOP 1
-    IF (A67 .Ne. 1 ) STOP 1
-    IF (A68 .Ne. 1 ) STOP 1
-    IF (A69 .Ne. 1 ) STOP 1
+    IF (A60 .Ne. 1 ) ERROR STOP 1
+    IF (A61 .Ne. 1 ) ERROR STOP 1
+    IF (A62 .Ne. 1 ) ERROR STOP 1
+    IF (A63 .Ne. 1 ) ERROR STOP 1
+    IF (A64 .Ne. 1 ) ERROR STOP 1
+    IF (A65 .Ne. 1 ) ERROR STOP 1
+    IF (A66 .Ne. 1 ) ERROR STOP 1
+    IF (A67 .Ne. 1 ) ERROR STOP 1
+    IF (A68 .Ne. 1 ) ERROR STOP 1
+    IF (A69 .Ne. 1 ) ERROR STOP 1
 
-    IF (A70 .Ne. 1 ) STOP 1
-    IF (A71 .Ne. 1 ) STOP 1
-    IF (A72 .Ne. 1 ) STOP 1
-    IF (A73 .Ne. 1 ) STOP 1
-    IF (A74 .Ne. 1 ) STOP 1
-    IF (A75 .Ne. 1 ) STOP 1
-    IF (A76 .Ne. 1 ) STOP 1
-    IF (A77 .Ne. 1 ) STOP 1
-    IF (A78 .Ne. 1 ) STOP 1
-    IF (A79 .Ne. 1 ) STOP 1
+    IF (A70 .Ne. 1 ) ERROR STOP 1
+    IF (A71 .Ne. 1 ) ERROR STOP 1
+    IF (A72 .Ne. 1 ) ERROR STOP 1
+    IF (A73 .Ne. 1 ) ERROR STOP 1
+    IF (A74 .Ne. 1 ) ERROR STOP 1
+    IF (A75 .Ne. 1 ) ERROR STOP 1
+    IF (A76 .Ne. 1 ) ERROR STOP 1
+    IF (A77 .Ne. 1 ) ERROR STOP 1
+    IF (A78 .Ne. 1 ) ERROR STOP 1
+    IF (A79 .Ne. 1 ) ERROR STOP 1
 
-    IF (A80 .Ne. 1 ) STOP 1
-    IF (A81 .Ne. 1 ) STOP 1
-    IF (A82 .Ne. 1 ) STOP 1
-    IF (A83 .Ne. 1 ) STOP 1
-    IF (A84 .Ne. 1 ) STOP 1
-    IF (A85 .Ne. 1 ) STOP 1
-    IF (A86 .Ne. 1 ) STOP 1
-    IF (A87 .Ne. 1 ) STOP 1
-    IF (A88 .Ne. 1 ) STOP 1
-    IF (A89 .Ne. 1 ) STOP 1
+    IF (A80 .Ne. 1 ) ERROR STOP 1
+    IF (A81 .Ne. 1 ) ERROR STOP 1
+    IF (A82 .Ne. 1 ) ERROR STOP 1
+    IF (A83 .Ne. 1 ) ERROR STOP 1
+    IF (A84 .Ne. 1 ) ERROR STOP 1
+    IF (A85 .Ne. 1 ) ERROR STOP 1
+    IF (A86 .Ne. 1 ) ERROR STOP 1
+    IF (A87 .Ne. 1 ) ERROR STOP 1
+    IF (A88 .Ne. 1 ) ERROR STOP 1
+    IF (A89 .Ne. 1 ) ERROR STOP 1
 
-    IF (A90 .Ne. 1 ) STOP 1
-    IF (A91 .Ne. 1 ) STOP 1
-    IF (A92 .Ne. 1 ) STOP 1
-    IF (A93 .Ne. 1 ) STOP 1
-    IF (A94 .Ne. 1 ) STOP 1
-    IF (A95 .Ne. 1 ) STOP 1
-    IF (A96 .Ne. 1 ) STOP 1
-    IF (A97 .Ne. 1 ) STOP 1
-    IF (A98 .Ne. 1 ) STOP 1
-    IF (A99 .Ne. 1 ) STOP 1
+    IF (A90 .Ne. 1 ) ERROR STOP 1
+    IF (A91 .Ne. 1 ) ERROR STOP 1
+    IF (A92 .Ne. 1 ) ERROR STOP 1
+    IF (A93 .Ne. 1 ) ERROR STOP 1
+    IF (A94 .Ne. 1 ) ERROR STOP 1
+    IF (A95 .Ne. 1 ) ERROR STOP 1
+    IF (A96 .Ne. 1 ) ERROR STOP 1
+    IF (A97 .Ne. 1 ) ERROR STOP 1
+    IF (A98 .Ne. 1 ) ERROR STOP 1
+    IF (A99 .Ne. 1 ) ERROR STOP 1
 
   END ASSOCIATE
 

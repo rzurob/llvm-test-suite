@@ -51,13 +51,13 @@
   TYPE(D)  :: U
 
   ProcPtr => IntF
-  IF ( ProcPtr("123") .NE. "123" ) STOP 11
+  IF ( ProcPtr("123") .NE. "123" ) ERROR STOP 11
 
   U = D(B("123", IntF), ProcPtr)
-  IF ( U%BComp%C .NE. "123" )              STOP 21
-  IF ( .NOT. ASSOCIATED(U%ProcPtr, IntF))  STOP 22
-  IF ( U%ProcPtr("!!!") .NE. "!!!" )       STOP 24
-  IF ( U%BComp%ProcPtr("!!!") .NE. "!!!" ) STOP 25
+  IF ( U%BComp%C .NE. "123" )              ERROR STOP 21
+  IF ( .NOT. ASSOCIATED(U%ProcPtr, IntF))  ERROR STOP 22
+  IF ( U%ProcPtr("!!!") .NE. "!!!" )       ERROR STOP 24
+  IF ( U%BComp%ProcPtr("!!!") .NE. "!!!" ) ERROR STOP 25
 
 
   END

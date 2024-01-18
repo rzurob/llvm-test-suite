@@ -16,10 +16,10 @@ real(8) :: sr8(4) = [81.82,83.84,85.86,87.88]
 equivalence(vr8,sr8)
 
 call sub(vr8,1,2)
-if (any(sr8 /= [81.82,83.84,85.86,87.88])) stop 1
+if (any(sr8 /= [81.82,83.84,85.86,87.88])) error stop 1
 
-if (func(10,vr8,11) /= 21) stop 2
-if (any(sr8 /= [81.82,83.84,85.86,87.88])) stop 3
+if (func(10,vr8,11) /= 21) error stop 2
+if (any(sr8 /= [81.82,83.84,85.86,87.88])) error stop 3
 
 contains
     pure subroutine sub (vr8,x,y)

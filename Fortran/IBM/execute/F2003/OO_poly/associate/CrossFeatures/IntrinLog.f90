@@ -27,25 +27,25 @@
 
   ASSOCIATE ( As => .TRUE._1 )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As    .NEQV.  .TRUE._1 ) STOP 20
+      IF ( As    .NEQV.  .TRUE._1 ) ERROR STOP 20
     END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE ( As => .TRUE._2 )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As  .NEQV.  .TRUE._2 ) STOP 22
+      IF ( As  .NEQV.  .TRUE._2 ) ERROR STOP 22
     END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE ( As => .TRUE._4 )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As    .NEQV. .TRUE._4 ) STOP 24
+      IF ( As    .NEQV. .TRUE._4 ) ERROR STOP 24
     END ASSOCIATE
   END ASSOCIATE
 
   ASSOCIATE ( As => .TRUE._8 )
     ASSOCIATE ( As => Fun(As) )
-      IF ( As    .NEQV. .TRUE._8 ) STOP 28
+      IF ( As    .NEQV. .TRUE._8 ) ERROR STOP 28
     END ASSOCIATE
   END ASSOCIATE
 

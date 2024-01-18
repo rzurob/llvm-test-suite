@@ -68,26 +68,26 @@
   TYPE(DT2(8,*,8,*,8,*)), INTENT(IN) :: Arg
   TYPE(DT2(8,Arg%L0,8,Arg%L1,8,Arg%L2)) :: ExtFun
 
-    IF ( Arg%K0          .NE.   8     ) STOP 11
-    IF ( Arg%K1          .NE.   8     ) STOP 12
-    IF ( Arg%K2          .NE.   8     ) STOP 13
-    IF ( Arg%L0          .NE.   8     ) STOP 14
-    IF ( Arg%L1          .NE.   8     ) STOP 15
-    IF ( Arg%L2          .NE.   8     ) STOP 16
+    IF ( Arg%K0          .NE.   8     ) ERROR STOP 11
+    IF ( Arg%K1          .NE.   8     ) ERROR STOP 12
+    IF ( Arg%K2          .NE.   8     ) ERROR STOP 13
+    IF ( Arg%L0          .NE.   8     ) ERROR STOP 14
+    IF ( Arg%L1          .NE.   8     ) ERROR STOP 15
+    IF ( Arg%L2          .NE.   8     ) ERROR STOP 16
 
-    IF ( Arg%C1          .NE.   ''    ) STOP 17
-    IF ( Arg%C2          .NE.   ''    ) STOP 17
-    IF ( Arg%I           .NE.   0     ) STOP 18
-    IF ( Arg%R           .NE.   0     ) STOP 19
-    IF ( Arg%L                        ) STOP 21
+    IF ( Arg%C1          .NE.   ''    ) ERROR STOP 17
+    IF ( Arg%C2          .NE.   ''    ) ERROR STOP 17
+    IF ( Arg%I           .NE.   0     ) ERROR STOP 18
+    IF ( Arg%R           .NE.   0     ) ERROR STOP 19
+    IF ( Arg%L                        ) ERROR STOP 21
 
     if ( (abs(real(Arg%Z,8)) >= 1.0d-31) .or.  &
-         (abs(aimag(arg%z)) >= 1.0d-31)) stop 22
+         (abs(aimag(arg%z)) >= 1.0d-31)) error stop 22
 
-!    IF ( Arg%Z           .NE.   (0., 0.)     ) STOP 22
-    IF ( Arg%T0%K0       .NE.   Arg%K2       ) STOP 23
-    IF ( Arg%T0%L0       .NE.   Arg%L2       ) STOP 24
-    IF ( .NOT. ASSOCIATED( Arg%Ptr2)         ) STOP 25
+!    IF ( Arg%Z           .NE.   (0., 0.)     ) ERROR STOP 22
+    IF ( Arg%T0%K0       .NE.   Arg%K2       ) ERROR STOP 23
+    IF ( Arg%T0%L0       .NE.   Arg%L2       ) ERROR STOP 24
+    IF ( .NOT. ASSOCIATED( Arg%Ptr2)         ) ERROR STOP 25
 
     ExtFun%C1 = "12345678"
     ExtFun%C2 = "87654321"
@@ -124,26 +124,26 @@
 
   ALLOCATE(A(N), SOURCE=T)
 
-  IF( MAX(1,2,3,4,5,6) .NE. 6 )  STOP 55
+  IF( MAX(1,2,3,4,5,6) .NE. 6 )  ERROR STOP 55
 
   T = MAX(A(10))
 
-    IF ( T%K0          .NE.   8     ) STOP 31
-    IF ( T%K1          .NE.   8     ) STOP 32
-    IF ( T%K2          .NE.   8     ) STOP 33
-    IF ( T%L0          .NE.   8     ) STOP 34
-    IF ( T%L1          .NE.   8     ) STOP 35
-    IF ( T%L2          .NE.   8     ) STOP 36
+    IF ( T%K0          .NE.   8     ) ERROR STOP 31
+    IF ( T%K1          .NE.   8     ) ERROR STOP 32
+    IF ( T%K2          .NE.   8     ) ERROR STOP 33
+    IF ( T%L0          .NE.   8     ) ERROR STOP 34
+    IF ( T%L1          .NE.   8     ) ERROR STOP 35
+    IF ( T%L2          .NE.   8     ) ERROR STOP 36
 
-    IF ( T%C1          .NE.   "12345678"    ) STOP 30
-    IF ( T%C2          .NE.   "87654321"    ) STOP 37
-    IF ( T%I           .NE.   1             ) STOP 38
-    IF ( T%R           .NE.   1             ) STOP 39
-    IF ( .not. T%L           ) STOP 41
-    IF ( .not. precision_x6(T%Z, cmplx(1.0_8, 1.0_8,kind=8)) ) STOP 42
-    IF ( T%T0%K0       .NE.   8             ) STOP 43
-    IF ( T%T0%L0       .NE.   8             ) STOP 44
-    IF ( ASSOCIATED( T%Ptr2 )               ) STOP 45
+    IF ( T%C1          .NE.   "12345678"    ) ERROR STOP 30
+    IF ( T%C2          .NE.   "87654321"    ) ERROR STOP 37
+    IF ( T%I           .NE.   1             ) ERROR STOP 38
+    IF ( T%R           .NE.   1             ) ERROR STOP 39
+    IF ( .not. T%L           ) ERROR STOP 41
+    IF ( .not. precision_x6(T%Z, cmplx(1.0_8, 1.0_8,kind=8)) ) ERROR STOP 42
+    IF ( T%T0%K0       .NE.   8             ) ERROR STOP 43
+    IF ( T%T0%L0       .NE.   8             ) ERROR STOP 44
+    IF ( ASSOCIATED( T%Ptr2 )               ) ERROR STOP 45
 
   END
 

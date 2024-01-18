@@ -43,17 +43,17 @@ program main
     allocate(e1%tar(4), source = logical((/ .true.,.false., .true., .false. /),8) )
     e1%p(3:3,0:0,2:5) => e1%tar(4:1:-1)
 
-    if ( .not. associated(e1%p)) stop 1
-    if ( any (lbound(e1%p) .ne. (/3,0,2/))) stop 2
-    if ( any (ubound(e1%p) .ne. (/3,0,5/))) stop 3
+    if ( .not. associated(e1%p)) error stop 1
+    if ( any (lbound(e1%p) .ne. (/3,0,2/))) error stop 2
+    if ( any (ubound(e1%p) .ne. (/3,0,5/))) error stop 3
 
     select type(x=>e1%p)
 	type is (logical*8)
 	    print *, x
-	    if ( x(3,0,2) .neqv. .false. ) stop 4
-	    if ( x(3,0,3) .neqv. .true. ) stop 5
-	    if ( x(3,0,4) .neqv. .false. ) stop 6
-	    if ( x(3,0,5) .neqv. .true. ) stop 7
+	    if ( x(3,0,2) .neqv. .false. ) error stop 4
+	    if ( x(3,0,3) .neqv. .true. ) error stop 5
+	    if ( x(3,0,4) .neqv. .false. ) error stop 6
+	    if ( x(3,0,5) .neqv. .true. ) error stop 7
   	class default
             stop 9
     end select

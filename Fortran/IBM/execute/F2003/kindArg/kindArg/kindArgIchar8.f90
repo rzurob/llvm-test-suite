@@ -53,7 +53,7 @@
   DO J = I, 127
     L = CC(I) .LE. CC(J) .AND. &
             (ICHAR(CC(I), KIND=KIND(T%K1)) .LE. ICHAR(CC(J), KIND=KIND(T%K1)))
-    IF (.NOT. L) STOP 11
+    IF (.NOT. L) ERROR STOP 11
   END DO
   END DO
 
@@ -61,7 +61,7 @@
   DO J = I, 127
     L = CC(I) .LE. CC(J) .AND. &
             (ICHAR(CC(I), KIND=KIND(T%K2)) .LE. ICHAR(CC(J), KIND=KIND(T%K2)))
-    IF (.NOT. L) STOP 12
+    IF (.NOT. L) ERROR STOP 12
   END DO
   END DO
 
@@ -69,7 +69,7 @@
   DO J = I, 127
     L = CC(I) .LE. CC(J) .AND. &
             (ICHAR(CC(I), KIND=KIND(T%K4)) .LE. ICHAR(CC(J), KIND=KIND(T%K4)))
-    IF (.NOT. L) STOP 13
+    IF (.NOT. L) ERROR STOP 13
   END DO
   END DO
 
@@ -77,32 +77,32 @@
   DO J = I, 127
     L = CC(I) .LE. CC(J) .AND. &
             (ICHAR(CC(I), KIND=KIND(T%K8)) .LE. ICHAR(CC(J), KIND=KIND(T%K8)))
-    IF (.NOT. L) STOP 14
+    IF (.NOT. L) ERROR STOP 14
   END DO
   END DO
 
   DO I = 0, 127
     L = CC(I) .EQ. CC(I) .AND. &
         (ICHAR(CC(I), KIND=T(2)%K1) .EQ. ICHAR(CC(I), KIND=T(1)%K1))
-    IF (.NOT. L) STOP 15
+    IF (.NOT. L) ERROR STOP 15
   END DO
 
   DO I = 0, 127
     L = CC(I) .EQ. CC(I) .AND. &
         (ICHAR(CC(I), KIND=T(6)%K2) .EQ. ICHAR(CC(I), KIND=T(3)%K2))
-    IF (.NOT. L) STOP 16
+    IF (.NOT. L) ERROR STOP 16
   END DO
 
   DO I = 0, 127
     L = CC(I) .EQ. CC(I) .AND. &
         (ICHAR(CC(I), KIND=T(10)%K4) .EQ. ICHAR(CC(I), KIND=T(5)%K4))
-    IF (.NOT. L) STOP 17
+    IF (.NOT. L) ERROR STOP 17
   END DO
 
   DO I = 0, 127
     L = CC(I) .EQ. CC(I) .AND. &
         (ICHAR(CC(I), KIND=T(12)%K8) .EQ. ICHAR(CC(I), KIND=T(7)%K8))
-    IF (.NOT. L) STOP 18
+    IF (.NOT. L) ERROR STOP 18
   END DO
 
 

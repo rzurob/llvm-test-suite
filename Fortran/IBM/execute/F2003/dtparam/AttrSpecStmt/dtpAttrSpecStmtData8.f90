@@ -74,7 +74,7 @@
   CLASS(DT2(1,*,4,*,8,*)), INTENT(IN) :: Arg
   TYPE(DT2(1,Arg%L0,4,Arg%L1,8,Arg%L2)) ModFun2
     ModFun2%I = -Arg%I
-    IF ( SIZE( ModFun2%I ) .NE. Arg%L2 ) STOP 22
+    IF ( SIZE( ModFun2%I ) .NE. Arg%L2 ) ERROR STOP 22
   END FUNCTION
 
   END MODULE
@@ -108,17 +108,17 @@
   DO I=1, N
   DO J=1, N
 
-    IF ( ANY( T1(I,J)%R                      .NE. [1,2,3,4,5]   ) ) STOP 10
-    IF ( ANY( T1(I,J)%ModFun1().NE. [(1,3),(4,5)] ) ) STOP 11
+    IF ( ANY( T1(I,J)%R                      .NE. [1,2,3,4,5]   ) ) ERROR STOP 10
+    IF ( ANY( T1(I,J)%ModFun1().NE. [(1,3),(4,5)] ) ) ERROR STOP 11
 
-    IF ( ANY( T2(I,J)%R .NE. [1,2,3,4,5]           ) ) STOP 12
-    IF ( ANY( T2(I,J)%I .NE. [1,2,3,4,5, 6, 7]    ) ) STOP 13
-    IF ( ANY( T2(I,J)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) STOP 14
-    IF ( ASSOCIATED(T2(I,J)%Ptr) )                STOP 15
+    IF ( ANY( T2(I,J)%R .NE. [1,2,3,4,5]           ) ) ERROR STOP 12
+    IF ( ANY( T2(I,J)%I .NE. [1,2,3,4,5, 6, 7]    ) ) ERROR STOP 13
+    IF ( ANY( T2(I,J)%C .NE. CHAR([1,2,3,4,5,6,7]) ) ) ERROR STOP 14
+    IF ( ASSOCIATED(T2(I,J)%Ptr) )                ERROR STOP 15
 
     T2(I,J) = t2(i,j)%ModFun2()
-    IF ( ANY( T2(I,J)%i .NE. [-1,-2,-3,-4,-5,-6,-7]   ) ) STOP 16
-    IF ( ANY( T2(I,J)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) STOP 17
+    IF ( ANY( T2(I,J)%i .NE. [-1,-2,-3,-4,-5,-6,-7]   ) ) ERROR STOP 16
+    IF ( ANY( T2(I,J)%DT1%ModFun1() .NE. [(1,3),(4,5)] ) ) ERROR STOP 17
 
   END DO
   END DO

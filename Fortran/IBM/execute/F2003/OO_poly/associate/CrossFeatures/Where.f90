@@ -52,8 +52,8 @@
     END WHERE
   END ASSOCIATE
 
-  IF ( Any(Arr%ID      .NE. -3) ) STOP 60
-  IF ( ANY(Arr%GetID() .NE. -3) ) STOP 61
+  IF ( Any(Arr%ID      .NE. -3) ) ERROR STOP 60
+  IF ( ANY(Arr%GetID() .NE. -3) ) ERROR STOP 61
 
   ASSOCIATE ( As => Arr )
     WHERE ((/.TRUE., .TRUE., .TRUE. /) )
@@ -61,8 +61,8 @@
     END WHERE
   END ASSOCIATE
 
-  IF ( Any(Arr%ID      .NE. -2) ) STOP 70
-  IF ( ANY(Arr%GetID() .NE. -2) ) STOP 71
+  IF ( Any(Arr%ID      .NE. -2) ) ERROR STOP 70
+  IF ( ANY(Arr%GetID() .NE. -2) ) ERROR STOP 71
 
   ASSOCIATE ( As => Arr )
     WHERE ((/.TRUE., .TRUE., .TRUE. /) )
@@ -70,8 +70,8 @@
     END WHERE
   END ASSOCIATE
 
-  IF ( Any(Arr%ID      .NE. -1) ) STOP 80
-  IF ( ANY(Arr%GetID() .NE. -1) ) STOP 81
+  IF ( Any(Arr%ID      .NE. -1) ) ERROR STOP 80
+  IF ( ANY(Arr%GetID() .NE. -1) ) ERROR STOP 81
 
   ASSOCIATE ( As => Arr(:) )
     WHERE ( As(:)%ID < 0 )
@@ -79,8 +79,8 @@
     END WHERE
   END ASSOCIATE
 
-  IF ( Any(Arr%ID      .NE. 4) ) STOP 90
-  IF ( ANY(Arr%GetID() .NE. 4) ) STOP 91
+  IF ( Any(Arr%ID      .NE. 4) ) ERROR STOP 90
+  IF ( ANY(Arr%GetID() .NE. 4) ) ERROR STOP 91
 
   END
 

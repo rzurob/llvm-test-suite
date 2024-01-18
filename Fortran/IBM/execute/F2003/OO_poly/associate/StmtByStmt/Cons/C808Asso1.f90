@@ -28,8 +28,8 @@
 
     ASSOCIATE ( As => (/1,2,3/))
       ASSOCIATE (As0 => As)
-        IF ( ANY( As0 .NE. (/1,2,3/) ) ) STOP 20
-        IF ( ANY( As  .NE. (/1,2,3/) ) ) STOP 21
+        IF ( ANY( As0 .NE. (/1,2,3/) ) ) ERROR STOP 20
+        IF ( ANY( As  .NE. (/1,2,3/) ) ) ERROR STOP 21
       END ASSOCIATE
     END ASSOCIATE
   END

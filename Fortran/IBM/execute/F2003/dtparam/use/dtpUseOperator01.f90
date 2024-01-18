@@ -191,10 +191,10 @@ program dtpUseOperator01
   print *, "p14vc:", p14vc
   print *, "p14vd:", p14vd
 
-  if (p14va /= p14vd) stop 11
-  if (p14va == p14vb) stop 12
-  if (p14va == p14vc) stop 13
-  if (p14vb == p14vc) stop 14
+  if (p14va /= p14vd) error stop 11
+  if (p14va == p14vb) error stop 12
+  if (p14va == p14vc) error stop 13
+  if (p14vb == p14vc) error stop 14
 
 
   p245va = TwoParms(4,5)(1080045576_4,'abcdex',[(i**3,i=1021,1025)])
@@ -207,10 +207,10 @@ program dtpUseOperator01
   print *, "p245vc:", p245vc
   print *, "p245vd:", p245vd
 
-  if (p245va /= p245vd) stop 21
-  if (p245va == p245vb) stop 22
-  if (p245va == p245vc) stop 23
-  if (p245vb == p245vc) stop 24
+  if (p245va /= p245vd) error stop 21
+  if (p245va == p245vb) error stop 22
+  if (p245va == p245vc) error stop 23
+  if (p245vb == p245vc) error stop 24
 
 
   p3454va = ThreeParms(4,5,4)(1080045576_4,'abcdex',[(i**3,i=1021,1025)], &
@@ -227,10 +227,10 @@ program dtpUseOperator01
   print *, "p3454vc:", p3454vc
   print *, "p3454vd:", p3454vd
 
-  if (p3454va /= p3454vd) stop 31
-  if (p3454va == p3454vb) stop 32
-  if (p3454va == p3454vc) stop 33
-  if (p3454vb == p3454vc) stop 34
+  if (p3454va /= p3454vd) error stop 31
+  if (p3454va == p3454vb) error stop 32
+  if (p3454va == p3454vc) error stop 33
+  if (p3454vb == p3454vc) error stop 34
 
 
   p243va = TwoParms(4,3)(1080045576_4,'abcx',[(i**3,i=1021,1023)])
@@ -243,37 +243,37 @@ program dtpUseOperator01
   print *, "p243vc:", p243vc
   print *, "p243vd:", p243vd
 
-  if (p243va /= p243vd) stop 41
-  if (p243va == p243vb) stop 42
-  if (p243va == p243vc) stop 43
-  if (p243vb == p243vc) stop 44
+  if (p243va /= p243vd) error stop 41
+  if (p243va == p243vb) error stop 42
+  if (p243va == p243vc) error stop 43
+  if (p243vb == p243vc) error stop 44
 
-  if (p245va == p243va) stop 51
-  if (p245vb == p243vb) stop 52
-  if (p245vc == p243vc) stop 53
-  if (p245vd == p243vd) stop 54
+  if (p245va == p243va) error stop 51
+  if (p245vb == p243vb) error stop 52
+  if (p245vc == p243vc) error stop 53
+  if (p245vd == p243vd) error stop 54
 
-  if (p14va == p243va)    stop 61
-  if (p14va == p245va)    stop 62
-  if (p14va == p3454va)   stop 63
+  if (p14va == p243va)    error stop 61
+  if (p14va == p245va)    error stop 62
+  if (p14va == p3454va)   error stop 63
 
-  if (p243va == p14va)    stop 64
-  if (p243va == p245va)   stop 65
-  if (p243va == p3454va)  stop 66
+  if (p243va == p14va)    error stop 64
+  if (p243va == p245va)   error stop 65
+  if (p243va == p3454va)  error stop 66
 
-  if (p245va == p14va)    stop 67
-  if (p245va == p243va)   stop 68
-  if (p245va /= p3454va)  stop 69
+  if (p245va == p14va)    error stop 67
+  if (p245va == p243va)   error stop 68
+  if (p245va /= p3454va)  error stop 69
 
-  if (p3454va == p14va)   stop 70
-  if (p3454va == p245va)  stop 71
-  if (p3454va /= p3454va) stop 72
+  if (p3454va == p14va)   error stop 70
+  if (p3454va == p245va)  error stop 71
+  if (p3454va /= p3454va) error stop 72
 
 
-  if (p14va  == 1)        stop 73
-  if (p243va == 'abcd')   stop 74
-  if (p243va == .true.)   stop 75
-  if (p243va == (3,4))    stop 76
+  if (p14va  == 1)        error stop 73
+  if (p243va == 'abcd')   error stop 74
+  if (p243va == .true.)   error stop 75
+  if (p243va == (3,4))    error stop 76
 
 
 end program dtpUseOperator01

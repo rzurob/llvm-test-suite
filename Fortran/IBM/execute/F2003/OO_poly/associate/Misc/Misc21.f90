@@ -26,7 +26,7 @@
   PROGRAM Misc21
 
   ASSOCIATE ( P1 => P1())
-    IF ( P1 .NE. 1. ) STOP 111
+    IF ( P1 .NE. 1. ) ERROR STOP 111
   END ASSOCIATE
   END
 

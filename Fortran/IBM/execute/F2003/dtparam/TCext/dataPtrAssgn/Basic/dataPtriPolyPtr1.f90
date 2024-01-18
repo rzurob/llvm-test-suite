@@ -50,48 +50,48 @@
 
   ALLOCATE(DT(4,3) :: Ptr1(3:3, 10))
   Ptr5(1:, 1:) => Ptr1
-  IF (ANY( LBOUND(Ptr5) .NE. (/1,1 /))) STOP 11
-  IF (ANY( UBOUND(Ptr5) .NE. (/1,10/))) STOP 12
-  IF (ANY(Ptr5%C        .NE. "abc"))    STOP 13
+  IF (ANY( LBOUND(Ptr5) .NE. (/1,1 /))) ERROR STOP 11
+  IF (ANY( UBOUND(Ptr5) .NE. (/1,10/))) ERROR STOP 12
+  IF (ANY(Ptr5%C        .NE. "abc"))    ERROR STOP 13
   DEALLOCATE(Ptr1)
 
   ALLOCATE(Ptr1(10, 3:3), SOURCE=DT(4,3)())
   Ptr5(0:2, 0:2) => Ptr1(:,3)
-  IF (ANY( LBOUND(Ptr5) .NE. (/0,0 /))) STOP 14
-  IF (ANY( UBOUND(Ptr5) .NE. (/2,2 /))) STOP 15
-  IF (ANY(Ptr5%C        .NE. "abc"))    STOP 16
+  IF (ANY( LBOUND(Ptr5) .NE. (/0,0 /))) ERROR STOP 14
+  IF (ANY( UBOUND(Ptr5) .NE. (/2,2 /))) ERROR STOP 15
+  IF (ANY(Ptr5%C        .NE. "abc"))    ERROR STOP 16
   DEALLOCATE(Ptr1)
 
   ALLOCATE(DT(4,3) :: Ptr1(3:3, 10))
   Ptr6(1:, 1:) => Ptr1
-  IF (ANY( LBOUND(Ptr6) .NE. (/1,1 /))) STOP 21
-  IF (ANY( UBOUND(Ptr6) .NE. (/1,10/))) STOP 22
+  IF (ANY( LBOUND(Ptr6) .NE. (/1,1 /))) ERROR STOP 21
+  IF (ANY( UBOUND(Ptr6) .NE. (/1,10/))) ERROR STOP 22
   Ptr7(1:, 1:) => Ptr6
-  IF (ANY(Ptr7%C      .NE. "abc"))      STOP 23
+  IF (ANY(Ptr7%C      .NE. "abc"))      ERROR STOP 23
   DEALLOCATE(Ptr1)
 
   ALLOCATE(Ptr1(10, 3:3), SOURCE=DT(4,3)())
   Ptr6(0:2, 0:2) => Ptr1(:, 3)
-  IF (ANY( LBOUND(Ptr6) .NE. (/0,0 /))) STOP 24
-  IF (ANY( UBOUND(Ptr6) .NE. (/2,2 /))) STOP 25
+  IF (ANY( LBOUND(Ptr6) .NE. (/0,0 /))) ERROR STOP 24
+  IF (ANY( UBOUND(Ptr6) .NE. (/2,2 /))) ERROR STOP 25
   Ptr7(1:, 1:) => Ptr6
-  IF (ANY(Ptr7%C      .NE. "abc"))      STOP 26
+  IF (ANY(Ptr7%C      .NE. "abc"))      ERROR STOP 26
   DEALLOCATE(Ptr1)
 
   ALLOCATE(Ptr2(3:3, 10), SOURCE=DT(4,3)("123"))
   Ptr6(1:, 1:) => Ptr2
-  IF (ANY( LBOUND(Ptr6) .NE. (/1,1 /))) STOP 31
-  IF (ANY( UBOUND(Ptr6) .NE. (/1,10/))) STOP 32
+  IF (ANY( LBOUND(Ptr6) .NE. (/1,1 /))) ERROR STOP 31
+  IF (ANY( UBOUND(Ptr6) .NE. (/1,10/))) ERROR STOP 32
   Ptr7(1:, 1:) => Ptr6
-  IF (ANY(Ptr7%C      .NE. "123"))      STOP 33
+  IF (ANY(Ptr7%C      .NE. "123"))      ERROR STOP 33
   DEALLOCATE(Ptr2)
 
   ALLOCATE(Ptr2(10, 3:3), SOURCE=DT(4,3)("321"))
   Ptr6(0:2, 0:2) => Ptr2(:, 3)
-  IF (ANY( LBOUND(Ptr6) .NE. (/0,0 /))) STOP 34
-  IF (ANY( UBOUND(Ptr6) .NE. (/2,2 /))) STOP 35
+  IF (ANY( LBOUND(Ptr6) .NE. (/0,0 /))) ERROR STOP 34
+  IF (ANY( UBOUND(Ptr6) .NE. (/2,2 /))) ERROR STOP 35
   Ptr7(1:, 1:) => Ptr6
-  IF (ANY(Ptr7%C      .NE. "321"))      STOP 36
+  IF (ANY(Ptr7%C      .NE. "321"))      ERROR STOP 36
   DEALLOCATE(Ptr2)
 
 

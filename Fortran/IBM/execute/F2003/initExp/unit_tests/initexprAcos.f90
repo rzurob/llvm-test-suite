@@ -21,6 +21,6 @@ if (.not. precision_r4(a, acos(r4))) then
   write(*, '(2z10.8)') a, acos(r4)
   stop 1
 endif
-if (.not. precision_r8(b, acos(r8))) stop 2
-if (.not. precision_r16(c, acos(r16))) stop 3
+if (.not. precision_r8(b, acos(r8))) error stop 2
+if (.not. precision_r16(c, acos(r16))) error stop 3
 end

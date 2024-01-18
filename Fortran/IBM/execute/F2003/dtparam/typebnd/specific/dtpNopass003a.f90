@@ -76,13 +76,13 @@ use m
         end do
     end do
 
-    if (b1%objCount() /= 16) stop 1
+    if (b1%objCount() /= 16) error stop 1
 
     call b1%destroy
 
     deallocate (b1)
 
-    if (b2%objCount() /= 15) stop 2
+    if (b2%objCount() /= 15) error stop 2
 
     do i = 1, 10
         call b2%destroy
@@ -90,7 +90,7 @@ use m
 
     deallocate (b2)
 
-    if (c1%objCount() /= 5) stop 3
+    if (c1%objCount() /= 5) error stop 3
 
     do i = 1, 2
         do j = 1, 2
@@ -100,5 +100,5 @@ use m
 
     deallocate (c1)
 
-    if (b3%objCount() /= 1) stop 4
+    if (b3%objCount() /= 1) error stop 4
 end

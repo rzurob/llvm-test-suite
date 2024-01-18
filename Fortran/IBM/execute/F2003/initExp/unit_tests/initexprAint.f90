@@ -21,7 +21,7 @@ b4 = aint(r4)
 b8 = aint(r8)
 b16 = aint(r16)
 
-if (.not. precision_r4(a4, b4)) stop 1
-if (.not. precision_r8(a8, b8)) stop 2
-if (.not. precision_r16(a16, b16)) stop 3
+if (.not. precision_r4(a4, b4)) error stop 1
+if (.not. precision_r8(a8, b8)) error stop 2
+if (.not. precision_r16(a16, b16)) error stop 3
 end

@@ -87,24 +87,24 @@
 
   SELECT TYPE ( As => Proc((/DT(4)(-1)/)) )
   TYPE IS (DT(4))
-    IF (SIZE(As) .NE.  1 ) STOP 11
-    IF (As(1)%ID .NE. -1 ) STOP 12
+    IF (SIZE(As) .NE.  1 ) ERROR STOP 11
+    IF (As(1)%ID .NE. -1 ) ERROR STOP 12
   CLASS DEFAULT
     STOP 13
   END SELECT
 
   SELECT TYPE ( As => Proc((/DT(4)(-2), DT(4)(-3)/), DT(4)(-2)) )
   TYPE IS (DT(4))
-    IF (SIZE(As) .NE.  2 )          STOP 21
-    IF (ANY( As%ID.NE. (/-2,-3/)) ) STOP 22
+    IF (SIZE(As) .NE.  2 )          ERROR STOP 21
+    IF (ANY( As%ID.NE. (/-2,-3/)) ) ERROR STOP 22
   CLASS DEFAULT
     STOP 23
   END SELECT
 
   SELECT TYPE ( As => Proc((/DT(4)(1),DT(4)(2),DT(4)(3)/),DT(4)(-3),DT(4)(-3)) )
   TYPE IS (DT(4))
-    IF (SIZE(As) .NE.  3 )          STOP 31
-    IF (ANY( As%ID.NE. (/1,2,3/)) ) STOP 32
+    IF (SIZE(As) .NE.  3 )          ERROR STOP 31
+    IF (ANY( As%ID.NE. (/1,2,3/)) ) ERROR STOP 32
   CLASS DEFAULT
     STOP 33
   END SELECT

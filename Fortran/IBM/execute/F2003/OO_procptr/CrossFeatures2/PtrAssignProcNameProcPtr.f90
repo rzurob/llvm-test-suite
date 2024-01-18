@@ -51,8 +51,8 @@
 
     SELECT TYPE (As => Ptr("1234") )
     TYPE IS (CHARACTER(*))
-      IF ( LEN(As) .NE. 4 )      STOP 11
-      IF ( As      .NE. "1234" ) STOP 12
+      IF ( LEN(As) .NE. 4 )      ERROR STOP 11
+      IF ( As      .NE. "1234" ) ERROR STOP 12
     CLASS DEFAULT
       STOP 14
     END SELECT
@@ -97,8 +97,8 @@
     Ptr => ArgPtr
     SELECT TYPE ( As => Ptr((/((1.0_8, -1.0_8) , i=1, 511)/)) )
     TYPE IS (COMPLEX(8))
-      IF (ANY(SHAPE(As) .NE. (/511/) ) )         STOP 21
-      IF (ANY(As        .NE. (1.0_8, -1.0_8) ) ) STOP 22
+      IF (ANY(SHAPE(As) .NE. (/511/) ) )         ERROR STOP 21
+      IF (ANY(As        .NE. (1.0_8, -1.0_8) ) ) ERROR STOP 22
     CLASS DEFAULT
       STOP 23
     END SELECT

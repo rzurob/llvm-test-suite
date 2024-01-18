@@ -26,9 +26,9 @@ module m
 
             func(ubound(arg,1):) => get_value(arg)
 
-            if ( .not. associated(func)) stop 1
-            if ( lbound(func,1) /= 10) stop 2
-            if ( ubound(func,1) /= 19)  stop 3
+            if ( .not. associated(func)) error stop 1
+            if ( lbound(func,1) /= 10) error stop 2
+            if ( ubound(func,1) /= 19)  error stop 3
 
             contains
                 function get_value(arg)
@@ -58,6 +58,6 @@ program main
     a1%ptr = func( a1%ptr )
 
     if ( .not. all(a1%ptr .eqv. (/.false., .false., .true., .false., .false., &
-            .true., .false., .false., .true., .false. /))) stop 10
+            .true., .false., .false., .true., .false. /))) error stop 10
 
 end program

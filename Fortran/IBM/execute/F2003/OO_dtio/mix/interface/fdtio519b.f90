@@ -71,7 +71,7 @@ use m, only: base
     integer, intent(out) :: iostat
     character(*), intent(inout) :: iomsg
 
-    if (iotype /= 'LISTDIRECTED') stop 11
+    if (iotype /= 'LISTDIRECTED') error stop 11
 
     if (size (v_list) /= 0) error stop 10_4
 

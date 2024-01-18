@@ -98,10 +98,10 @@
 
   CALL Sub(V(1:2, 2:3))
   ASSOCIATE  (W=>V(1, 2:2))
-    IF ( ANY(W%Base%GetId() .NE. -1) ) STOP 54
-    IF ( ANY(W%GetId()      .NE. -2) ) STOP 55
-    IF ( ANY(W%BaseId       .NE. -1) ) STOP 56
-    IF ( ANY(W%ChildId      .NE. -2) ) STOP 57
+    IF ( ANY(W%Base%GetId() .NE. -1) ) ERROR STOP 54
+    IF ( ANY(W%GetId()      .NE. -2) ) ERROR STOP 55
+    IF ( ANY(W%BaseId       .NE. -1) ) ERROR STOP 56
+    IF ( ANY(W%ChildId      .NE. -2) ) ERROR STOP 57
   END ASSOCIATE
 
   CONTAINS
@@ -120,33 +120,33 @@
     Arg(1,1)%BaseId = -1
     Arg(1,1)%ChildId = -2
 
-    IF ( .NOT. PRESENT(Arg) ) STOP 11
+    IF ( .NOT. PRESENT(Arg) ) ERROR STOP 11
 
     SELECT TYPE (U => Arg(S1,S2))
     CLASS IS (Child(4,*,*,4,*,4))
       SELECT TYPE (W => Fun(U))
       TYPE IS (Child(4,*,*,4,*,4))
           ! Check U
-          IF ( SIZE(U)          .NE. 4 )          STOP 31
-          IF ( ANY (LBOUND(U)   .NE. (/1, 1/) ) ) STOP 32
-          IF ( ANY (UBOUND(U)   .NE. (/2, 2/) ) ) STOP 33
-          IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   STOP 24
-          IF ( ANY(U%Base%GetId() .NE. -1) )      STOP 35
-          IF ( ANY(U%GetId()      .NE. -2) )      STOP 36
-          IF ( ANY(U%BaseId       .NE. -1) )      STOP 37
-          IF ( ANY(U%ChildId      .NE. -2) )      STOP 38
+          IF ( SIZE(U)          .NE. 4 )          ERROR STOP 31
+          IF ( ANY (LBOUND(U)   .NE. (/1, 1/) ) ) ERROR STOP 32
+          IF ( ANY (UBOUND(U)   .NE. (/2, 2/) ) ) ERROR STOP 33
+          IF ( ANY(SHAPE(U)     .NE. (/2,2/)) )   ERROR STOP 24
+          IF ( ANY(U%Base%GetId() .NE. -1) )      ERROR STOP 35
+          IF ( ANY(U%GetId()      .NE. -2) )      ERROR STOP 36
+          IF ( ANY(U%BaseId       .NE. -1) )      ERROR STOP 37
+          IF ( ANY(U%ChildId      .NE. -2) )      ERROR STOP 38
 
           !Check W
-          IF ( SIZE(W)          .NE. 4 )          STOP 41
-          IF ( ANY (LBOUND(W)   .NE. (/2, 2/) ) ) STOP 42
-          IF ( ANY (UBOUND(W)   .NE. (/3, 3/) ) ) STOP 43
-          IF ( ANY(SHAPE(W)     .NE. (/2,2/)) )   STOP 44
-          IF ( ANY(W%Base%GetId() .NE. -1) )      STOP 45
-          IF ( ANY(W%GetId()      .NE. -2) )      STOP 46
-          IF ( ANY(W%BaseId       .NE. -1) )      STOP 47
-          IF ( ANY(W%ChildId      .NE. -2) )      STOP 48
+          IF ( SIZE(W)          .NE. 4 )          ERROR STOP 41
+          IF ( ANY (LBOUND(W)   .NE. (/2, 2/) ) ) ERROR STOP 42
+          IF ( ANY (UBOUND(W)   .NE. (/3, 3/) ) ) ERROR STOP 43
+          IF ( ANY(SHAPE(W)     .NE. (/2,2/)) )   ERROR STOP 44
+          IF ( ANY(W%Base%GetId() .NE. -1) )      ERROR STOP 45
+          IF ( ANY(W%GetId()      .NE. -2) )      ERROR STOP 46
+          IF ( ANY(W%BaseId       .NE. -1) )      ERROR STOP 47
+          IF ( ANY(W%ChildId      .NE. -2) )      ERROR STOP 48
 
-          IF ( .NOT. W%Called() ) STOP 45
+          IF ( .NOT. W%Called() ) ERROR STOP 45
 
        CLASS DEFAULT
           STOP 40

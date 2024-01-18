@@ -15,5 +15,5 @@ character(5) :: b
 b = 'abcde'
 allocate(character(40) :: a)
 a = b
-if (len(a) /= 5) stop 1
+if (len(a) /= 5) error stop 1
 end

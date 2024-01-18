@@ -51,15 +51,15 @@
 
                 x%p(1:) => x%ch
 
-                if ( .not. associated(x%p, x%ch)) stop 12
+                if ( .not. associated(x%p, x%ch)) error stop 12
 
 		select type ( y => x%p)
 		    type is (character(*))
 
 			y = y(8:1:-1)
 
-                	if ( any ( lbound(x%p) .ne. (/1/) )) stop 22
-	                if ( any ( ubound(x%p) .ne. (/8/) )) stop 32
+                	if ( any ( lbound(x%p) .ne. (/1/) )) error stop 22
+	                if ( any ( ubound(x%p) .ne. (/8/) )) error stop 32
 
 			print *, (/ (y(i), i=1,8)/)
 			print *, Minval(y)

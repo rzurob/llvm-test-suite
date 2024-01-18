@@ -45,25 +45,25 @@
   L4= .TRUE.;L4(3,3)=.FALSE.
   L8= .TRUE.;L8(4,4)=.FALSE.
 
-  IF (ANY(COUNT(RESHAPE((/L1/), (/4,4/)), KIND=KIND(L1), DIM=1_1 ).NE. Cnt1 ))  STOP 11
-  IF (ANY(COUNT(RESHAPE((/L1/), (/4,4/)), DIM=1_1)                .NE. Cnt1 )) STOP 15
-  IF (COUNT(RESHAPE((/L1/), (/4,4/)), KIND=KIND(L1))          .NE. 15 ) STOP 13
-  IF (COUNT(RESHAPE((/L1/), (/4,4/))  )                       .NE. 15 ) STOP 14
+  IF (ANY(COUNT(RESHAPE((/L1/), (/4,4/)), KIND=KIND(L1), DIM=1_1 ).NE. Cnt1 ))  ERROR STOP 11
+  IF (ANY(COUNT(RESHAPE((/L1/), (/4,4/)), DIM=1_1)                .NE. Cnt1 )) ERROR STOP 15
+  IF (COUNT(RESHAPE((/L1/), (/4,4/)), KIND=KIND(L1))          .NE. 15 ) ERROR STOP 13
+  IF (COUNT(RESHAPE((/L1/), (/4,4/))  )                       .NE. 15 ) ERROR STOP 14
 
-  IF (ANY(COUNT(RESHAPE((/L2/), (/4,4/)), KIND=KIND(L2), DIM=2_2 ).NE. Cnt2 ))  STOP 21
-  IF (ANY(COUNT(RESHAPE((/L2/), (/4,4/)), DIM=2_2)                .NE. Cnt2 )) STOP 22
-  IF (COUNT(RESHAPE((/L2/), (/4,4/)), KIND=KIND(L2))          .NE. 15 ) STOP 23
-  IF (COUNT(RESHAPE((/L2/), (/4,4/))  )                       .NE. 15 ) STOP 24
+  IF (ANY(COUNT(RESHAPE((/L2/), (/4,4/)), KIND=KIND(L2), DIM=2_2 ).NE. Cnt2 ))  ERROR STOP 21
+  IF (ANY(COUNT(RESHAPE((/L2/), (/4,4/)), DIM=2_2)                .NE. Cnt2 )) ERROR STOP 22
+  IF (COUNT(RESHAPE((/L2/), (/4,4/)), KIND=KIND(L2))          .NE. 15 ) ERROR STOP 23
+  IF (COUNT(RESHAPE((/L2/), (/4,4/))  )                       .NE. 15 ) ERROR STOP 24
 
-  IF (ANY(COUNT(RESHAPE((/L4/), (/4,4/)), KIND=KIND(L1), DIM=1_4 ).NE. Cnt3 ))  STOP 41
-  IF (ANY(COUNT(RESHAPE((/L4/), (/4,4/)), DIM=2_4)                .NE. Cnt3 )) STOP 42
-  IF (COUNT(RESHAPE((/L4/), (/4,4/)), KIND=KIND(L4))          .NE. 15 ) STOP 43
-  IF (COUNT(RESHAPE((/L4/), (/4,4/))  )                       .NE. 15 ) STOP 44
+  IF (ANY(COUNT(RESHAPE((/L4/), (/4,4/)), KIND=KIND(L1), DIM=1_4 ).NE. Cnt3 ))  ERROR STOP 41
+  IF (ANY(COUNT(RESHAPE((/L4/), (/4,4/)), DIM=2_4)                .NE. Cnt3 )) ERROR STOP 42
+  IF (COUNT(RESHAPE((/L4/), (/4,4/)), KIND=KIND(L4))          .NE. 15 ) ERROR STOP 43
+  IF (COUNT(RESHAPE((/L4/), (/4,4/))  )                       .NE. 15 ) ERROR STOP 44
 
-  IF (ANY(COUNT(RESHAPE((/L8/), (/4,4/)), KIND=KIND(L8), DIM=1_8 ).NE. Cnt4 ))  STOP 81
-  IF (ANY(COUNT(RESHAPE((/L8/), (/4,4/)), DIM=1_8)                .NE. Cnt4 )) STOP 82
-  IF (COUNT(RESHAPE((/L8/), (/4,4/)), KIND=KIND(L8))          .NE. 15 ) STOP 83
-  IF (COUNT(RESHAPE((/L8/), (/4,4/))  )                       .NE. 15 ) STOP 84
+  IF (ANY(COUNT(RESHAPE((/L8/), (/4,4/)), KIND=KIND(L8), DIM=1_8 ).NE. Cnt4 ))  ERROR STOP 81
+  IF (ANY(COUNT(RESHAPE((/L8/), (/4,4/)), DIM=1_8)                .NE. Cnt4 )) ERROR STOP 82
+  IF (COUNT(RESHAPE((/L8/), (/4,4/)), KIND=KIND(L8))          .NE. 15 ) ERROR STOP 83
+  IF (COUNT(RESHAPE((/L8/), (/4,4/))  )                       .NE. 15 ) ERROR STOP 84
 
   END
 

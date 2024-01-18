@@ -54,7 +54,7 @@
       CLASS(*), ALLOCATABLE  :: foo
 
       ALLOCATE(foo, source=Obj)
-      IF ( .NOT. ALLOCATED(foo)) STOP 10
+      IF ( .NOT. ALLOCATED(foo)) ERROR STOP 10
 
       END FUNCTION foo
 
@@ -63,7 +63,7 @@
       CLASS(Base(2,5)), POINTER :: Obj
 
       Dfoo => Obj
-      IF ( .NOT. ASSOCIATED(Dfoo)) STOP 11
+      IF ( .NOT. ASSOCIATED(Dfoo)) ERROR STOP 11
 
       END FUNCTION Dfoo
 !*
@@ -78,13 +78,13 @@
       TYPE(Base(k1,len1)), TARGET :: tgt = (Base(k1,len1) ())
 
       child1%Cmp  => tgt
-      IF ( .NOT. ASSOCIATED(child1%Cmp)) STOP 12
+      IF ( .NOT. ASSOCIATED(child1%Cmp)) ERROR STOP 12
 
 
       Test_foo : SELECT TYPE ( A => foo(child1))
         TYPE IS (Child(k1,*))
-           IF (A%k1 .NE. k1) STOP 100
-           IF (A%len1 .NE. len1) STOP 101
+           IF (A%k1 .NE. k1) ERROR STOP 100
+           IF (A%len1 .NE. len1) ERROR STOP 101
 
         CLASS IS (Child(k1,*))
            STOP 21
@@ -99,8 +99,8 @@
 
       Test_Dfoo : SELECT TYPE ( A => Dfoo(child1%Cmp))
         CLASS IS (Base(k1,*))
-           IF (A%k1 .NE. k1) STOP 102
-           IF (A%len1 .NE. len1) STOP 103
+           IF (A%k1 .NE. k1) ERROR STOP 102
+           IF (A%len1 .NE. len1) ERROR STOP 103
 
         CLASS IS (Child(k1,*))
            STOP 31

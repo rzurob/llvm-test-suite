@@ -28,20 +28,20 @@ module m
 
                 ptr(-16:-1) => arg
 
-                if ( .not. associated(ptr, arg)) stop 2
-                if (lbound(ptr,1) /= -16 ) stop 3
-                if (ubound(ptr,1) /= -1 ) stop 4
+                if ( .not. associated(ptr, arg)) error stop 2
+                if (lbound(ptr,1) /= -16 ) error stop 3
+                if (ubound(ptr,1) /= -1 ) error stop 4
 
    		test(2:) => ptr(ubound(ptr,1):lbound(ptr,1):-1)
 
-                if ( .not. associated(test, ptr(ubound(ptr,1):lbound(ptr,1):-1))) stop 5
-                if (lbound(test,1) /= 2 ) stop 6
-                if (ubound(test,1) /= 17 ) stop 7
+                if ( .not. associated(test, ptr(ubound(ptr,1):lbound(ptr,1):-1))) error stop 5
+                if (lbound(test,1) /= 2 ) error stop 6
+                if (ubound(test,1) /= 17 ) error stop 7
 	    else
 		test(3:) => ptr(::2)
-                if ( .not. associated(test, ptr(::2))) stop 11
-                if (lbound(test,1) /= 3 ) stop 12
-                if (ubound(test,1) /= 10 ) stop 13
+                if ( .not. associated(test, ptr(::2))) error stop 11
+                if (lbound(test,1) /= 3 ) error stop 12
+                if (ubound(test,1) /= 10 ) error stop 13
                 ll = test .ge. (/ 'A','B', 'E', 'F', 'J', 'M', 'M', 'H' /)
 
   	    endif

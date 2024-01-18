@@ -42,7 +42,7 @@
 
     select type ( x=> b%a )
         type is (base(4,*))
-            if ( .not. associated(p, x) ) stop 21
+            if ( .not. associated(p, x) ) error stop 21
         class default
             stop 23
     end select

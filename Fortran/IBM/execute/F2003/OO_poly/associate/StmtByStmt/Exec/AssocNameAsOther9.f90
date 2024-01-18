@@ -42,8 +42,8 @@
         j = 1
       END SELECT
       PRINT *,  NL(1),  NL(2)
-      IF ( NL(1) .NE. -1 ) STOP 11
-      IF ( NL(2) .NE. -2 ) STOP 12
+      IF ( NL(1) .NE. -1 ) ERROR STOP 11
+      IF ( NL(2) .NE. -2 ) ERROR STOP 12
     END SELECT
   END ASSOCIATE
 

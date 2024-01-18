@@ -69,7 +69,7 @@ end module
      type is(character(*))
         associate(y=>x//" test")
            if(y%len /= len(y) .or. y%len /= 17)            error stop 18_4
-           if (y /= 'xlftest      test') stop 50
+           if (y /= 'xlftest      test') error stop 50
         end associate
      class default
        error stop 100_4

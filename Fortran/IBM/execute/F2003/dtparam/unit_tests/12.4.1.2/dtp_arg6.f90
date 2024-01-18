@@ -38,7 +38,7 @@ type(humongous_matrix(4, 4, 2)), pointer :: tgt
 
 ! - check if dummy inherits actual argument's type parameter
 ! - values as well as type parameter expression values
-if (any(ubound(pa%element) .ne. (/4, 4/))) stop 1 ! - failed 'cause TPV table
+if (any(ubound(pa%element) .ne. (/4, 4/))) error stop 1 ! - failed 'cause TPV table
                                                   ! - of actual and dummy does
                                                   ! - not match.
 
@@ -50,9 +50,9 @@ pa => tgt
 pa%avar = pa%element(1, 2) * 2
 
 ! - check if pointer gets updated
-if (any(ubound(pa%element) .ne. (/4, 2/))) stop 2
-if (any(pa%element .ne. 8)) stop 4
-if (pa%avar .ne. 16) stop 5
+if (any(ubound(pa%element) .ne. (/4, 2/))) error stop 2
+if (any(pa%element .ne. 8)) error stop 4
+if (pa%avar .ne. 16) error stop 5
 
 end subroutine
 

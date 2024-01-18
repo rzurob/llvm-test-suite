@@ -72,11 +72,11 @@
     V = Arg(DT("123"), (/(DT("321"), I=1,10000)/))
 
     DO I = 1, 10000
-      IF (V(I)%Base%C .NE. "123")              STOP 11
+      IF (V(I)%Base%C .NE. "123")              ERROR STOP 11
 
       U = DT("")
       U = V(I)%Proc((/(DT("321"), I=1,100)/))
-      IF (ANY(U%Base%C .NE. "123")    )          STOP 21
+      IF (ANY(U%Base%C .NE. "123")    )          ERROR STOP 21
 
     END DO
 
@@ -91,11 +91,11 @@
 
     DO I = 1, 10000
 
-      IF (V(I)%Base%C .NE. "123")              STOP 31
+      IF (V(I)%Base%C .NE. "123")              ERROR STOP 31
 
       U = DT("")
       U = V(I)%Proc((/(DT("321"), I=1,100)/))
-      IF (ANY(U%Base%C .NE. "123")    )          STOP 41
+      IF (ANY(U%Base%C .NE. "123")    )          ERROR STOP 41
 
     END DO
 

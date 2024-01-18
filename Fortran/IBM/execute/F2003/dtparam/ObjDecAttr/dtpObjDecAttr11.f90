@@ -61,7 +61,7 @@
   TYPE(DT2(2,2,2,2,8,8)) :: ModFun, Proc
   EXTERNAL Proc
     ModFun = Proc()
-    IF ( C  .NE.   "ExtFun"   ) STOP 33
+    IF ( C  .NE.   "ExtFun"   ) ERROR STOP 33
     C = "ModFun"
   END FUNCTION
 
@@ -90,15 +90,15 @@
 
   T = T%Proc(ExtFun)
 
-  IF ( T%C1          .NE.   "XX"     ) STOP 11
-  IF ( T%I           .NE.  -8        ) STOP 12
-  IF ( T%R           .NE.  -8        ) STOP 13
-  IF ( .NOT. T%L                     ) STOP 14
-  IF ( T%Z           .NE.  -(8., 8.) ) STOP 15
-  IF ( T%T0%K0       .NE.   8        ) STOP 16
-  IF ( T%T0%L0       .NE.   8        ) STOP 17
-  IF ( ASSOCIATED( T%Ptr2 )          ) STOP 18
-  IF ( C  .NE.   "ModFun"            ) STOP 19
+  IF ( T%C1          .NE.   "XX"     ) ERROR STOP 11
+  IF ( T%I           .NE.  -8        ) ERROR STOP 12
+  IF ( T%R           .NE.  -8        ) ERROR STOP 13
+  IF ( .NOT. T%L                     ) ERROR STOP 14
+  IF ( T%Z           .NE.  -(8., 8.) ) ERROR STOP 15
+  IF ( T%T0%K0       .NE.   8        ) ERROR STOP 16
+  IF ( T%T0%L0       .NE.   8        ) ERROR STOP 17
+  IF ( ASSOCIATED( T%Ptr2 )          ) ERROR STOP 18
+  IF ( C  .NE.   "ModFun"            ) ERROR STOP 19
 
 
   END

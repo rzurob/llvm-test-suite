@@ -110,7 +110,7 @@ subroutine sub
 
    inquire(10,id=idvar1,pending=pending1)
 
-   if(pending1 .neqv. .false.)    stop 12
+   if(pending1 .neqv. .false.)    error stop 12
 
    wait(10,id=idvar2,iostat=ios,iomsg=msg)
 
@@ -123,7 +123,7 @@ subroutine sub
 
    inquire(10,id=idvar2,pending=pending2)
 
-   if(pending2 .neqv. .false.)   stop 14
+   if(pending2 .neqv. .false.)   error stop 14
 
    write(10,*,asynchronous='yes',decimal='comma') outobj1%inn3%r1
    write(10,*,asynchronous='yes')  &
@@ -140,7 +140,7 @@ subroutine sub
 
    inquire(10,pending=pending1)
 
-   if(pending1 .neqv. .false.)   stop 15
+   if(pending1 .neqv. .false.)   error stop 15
 
    ! back to beginning of first record
    rewind 10
@@ -160,7 +160,7 @@ subroutine sub
 
    inquire(10,id=idvar1,pending=pending1)
 
-   if(pending1 .neqv. .false.)    stop 17
+   if(pending1 .neqv. .false.)    error stop 17
 
    read(10,*,asynchronous='yes',decimal='comma',id=idvar1) outobj2(2)%x1(2:3)
 
@@ -175,7 +175,7 @@ subroutine sub
 
    inquire(10,id=idvar1,pending=pending1)
 
-   if(pending1 .neqv. .false.)    stop 19
+   if(pending1 .neqv. .false.)    error stop 19
 
    read(10,*,asynchronous='yes') outobj2(2)%x1(1)
 
@@ -194,36 +194,36 @@ subroutine sub
 
    inquire(10,pending=pending1)
 
-   if(pending1 .neqv. .false.)    stop 21
+   if(pending1 .neqv. .false.)    error stop 21
 
    ! verify data
 
-   if(.not. precision_x6(outobj2(1)%x1(1),(9.9_8,-9.9_8) ))    stop 22
-   if(.not. precision_x6(outobj2(1)%x1(2),(3.4_8,-7.8_8) ))    stop 23
-   if(.not. precision_x6(outobj2(1)%x1(3),(0.5_8,-0.5D-2) ))   stop 24
+   if(.not. precision_x6(outobj2(1)%x1(1),(9.9_8,-9.9_8) ))    error stop 22
+   if(.not. precision_x6(outobj2(1)%x1(2),(3.4_8,-7.8_8) ))    error stop 23
+   if(.not. precision_x6(outobj2(1)%x1(3),(0.5_8,-0.5D-2) ))   error stop 24
 
-   if(.not. precision_r4(outobj2(1)%inn3%r1(3),-3.4) )         stop 25
-   if(.not. precision_r4(outobj2(1)%inn3%r1(4),-2.3E-3) )      stop 26
+   if(.not. precision_r4(outobj2(1)%inn3%r1(3),-3.4) )         error stop 25
+   if(.not. precision_r4(outobj2(1)%inn3%r1(4),-2.3E-3) )      error stop 26
 
    if(any(outobj2(1)%inn3%inn2%g1 .neqv. &
-                 [.false.,.true.,.true.,.false.] ))            stop 27
+                 [.false.,.true.,.true.,.false.] ))            error stop 27
 
-   if(any(outobj2(1)%inn3%inn2%inn1%c1 /= ["test","team","star"]))  stop 28
-   if(any(outobj2(1)%inn3%inn2%inn1%i1 /= [-22,33]))                stop 29
+   if(any(outobj2(1)%inn3%inn2%inn1%c1 /= ["test","team","star"]))  error stop 28
+   if(any(outobj2(1)%inn3%inn2%inn1%i1 /= [-22,33]))                error stop 29
 
-   if(.not. precision_x6(outobj2(2)%x1(1),(1.0_8,-1.0_8) ))     stop 30
-   if(.not. precision_x6(outobj2(2)%x1(2),(5.1_8,-4.2_8) ))     stop 31
-   if(.not. precision_x6(outobj2(2)%x1(3),(0.12D-2,-3.4D3) ))   stop 32
+   if(.not. precision_x6(outobj2(2)%x1(1),(1.0_8,-1.0_8) ))     error stop 30
+   if(.not. precision_x6(outobj2(2)%x1(2),(5.1_8,-4.2_8) ))     error stop 31
+   if(.not. precision_x6(outobj2(2)%x1(3),(0.12D-2,-3.4D3) ))   error stop 32
 
-   if(.not. precision_r4(outobj2(2)%inn3%r1(3),-3.567_4) )      stop 33
-   if(.not. precision_r4(outobj2(2)%inn3%r1(4),5.7E-3) )        stop 34
+   if(.not. precision_r4(outobj2(2)%inn3%r1(3),-3.567_4) )      error stop 33
+   if(.not. precision_r4(outobj2(2)%inn3%r1(4),5.7E-3) )        error stop 34
 
    if(any(outobj2(2)%inn3%inn2%g1 .neqv. &
-                 [.true.,.false.,.true.,.false.] ))             stop 35
+                 [.true.,.false.,.true.,.false.] ))             error stop 35
 
    if(any(outobj2(2)%inn3%inn2%inn1%c1 /= &
-             ["\'GH\'","\"EF\"","ABCD"]))                       stop 36
-   if(any(outobj2(2)%inn3%inn2%inn1%i1 /= [-34,12]))            stop 37
+             ["\'GH\'","\"EF\"","ABCD"]))                       error stop 36
+   if(any(outobj2(2)%inn3%inn2%inn1%i1 /= [-34,12]))            error stop 37
 
    close(10)
 

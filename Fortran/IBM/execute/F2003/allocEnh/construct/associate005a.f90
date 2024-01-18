@@ -22,7 +22,7 @@ module m
 
         type(base) genBase(size(b,1),size(b,2))
 
-        if (any(shape(b) /= shape(b2))) stop 10
+        if (any(shape(b) /= shape(b2))) error stop 10
 
         do i = 1, size(b,1)
             do j = 1, size(b,2)

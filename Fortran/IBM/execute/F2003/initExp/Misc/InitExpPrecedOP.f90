@@ -50,13 +50,13 @@
 
 
 
-  IF ( ANY( IExp                .NE. -1   ) ) STOP 11
-  IF ( ANY( RExpMul             .NE.  2   ) ) STOP 12
-  IF ( ANY( SIGN(1.,RMulUnary)  .NE. -1   ) ) STOP 13
-  IF ( ANY( RUnarySub           .NE. -3   ) ) STOP 14
+  IF ( ANY( IExp                .NE. -1   ) ) ERROR STOP 11
+  IF ( ANY( RExpMul             .NE.  2   ) ) ERROR STOP 12
+  IF ( ANY( SIGN(1.,RMulUnary)  .NE. -1   ) ) ERROR STOP 13
+  IF ( ANY( RUnarySub           .NE. -3   ) ) ERROR STOP 14
 
-  IF ( ANY( .NOT. LConcatRel    ) ) STOP 15
-  IF ( ANY( LRelNot             ) ) STOP 16
+  IF ( ANY( .NOT. LConcatRel    ) ) ERROR STOP 15
+  IF ( ANY( LRelNot             ) ) ERROR STOP 16
 
 
 

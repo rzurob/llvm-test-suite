@@ -28,18 +28,18 @@ program d357486
   type(container(2,3)),target  :: contain1
   contain1=container(2,3)(second2= second(3)())
 
-  if(contain1%l1 /= 2)                          stop 1
-  if(contain1%l2 /= 3)                          stop 2
-  if(contain1%second2%l3 /= 3)                  stop 3
+  if(contain1%l1 /= 2)                          error stop 1
+  if(contain1%l2 /= 3)                          error stop 2
+  if(contain1%second2%l3 /= 3)                  error stop 3
 
   call verify(contain1)
 
   contains
    subroutine verify(dt)
       type(container(*,*)),intent(in) :: dt
-        if(dt%l1 /= 2)                          stop 4
-        if(dt%l2 /= 3)                          stop 5
-        if(dt%second2%l3 /= 3)                  stop 6
+        if(dt%l1 /= 2)                          error stop 4
+        if(dt%l2 /= 3)                          error stop 5
+        if(dt%second2%l3 /= 3)                  error stop 6
 
    end subroutine
 

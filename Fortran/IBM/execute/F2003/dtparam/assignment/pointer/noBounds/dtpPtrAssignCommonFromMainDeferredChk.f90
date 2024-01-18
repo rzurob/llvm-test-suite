@@ -213,44 +213,44 @@ contains
     print *, d_D8p
     print *, d2_D84Dp
 
-    if (b_Dp%l /= 3 .or. len(b_Dp%ch) /= 3 .or. b_Dp%ch /= 'abc') stop 2
+    if (b_Dp%l /= 3 .or. len(b_Dp%ch) /= 3 .or. b_Dp%ch /= 'abc') error stop 2
 
     if (d_D4p%l /= 3 .or. d_D4p%k /= 4 .or. len(d_D4p%ch) /= 3 .or. d_D4p%ch /= 'def' .or. .not.d_D4p%lfld &
          .or. size(d_D4p%ifld) /= 3 .or. kind(d_D4p%lfld) /= 4 .or. kind(d_D4p%ifld) /= 4 .or. kind(d_D4p%rfld) /= 4 &
-         .or. any(d_D4p%ifld /= [1111111111,2122222222,1333333333]) .or. .not.precision_r4(d_D4p%rfld,4.1_4)) stop 3
+         .or. any(d_D4p%ifld /= [1111111111,2122222222,1333333333]) .or. .not.precision_r4(d_D4p%rfld,4.1_4)) error stop 3
 
     if (d2_D48Dp%l /= 3 .or. d2_D48Dp%k /= 4 .or. d2_D48Dp%k2 /= 8 .or. d2_D48Dp%l2 /= 2 &
          .or. len(d2_D48Dp%ch) /= 3 .or. d2_D48Dp%ch /= 'ghi' .or. d2_D48Dp%lfld &
          .or. size(d2_D48Dp%ifld) /= 3 .or. kind(d2_D48Dp%lfld) /= 4 .or. kind(d2_D48Dp%ifld) /= 4 .or. kind(d2_D48Dp%rfld) /= 4 &
          .or. any(d2_D48Dp%ifld /= -d_D4p%ifld) .or. .not.precision_r4(d2_D48Dp%rfld,5.9_4) &
          .or. kind(d2_D48Dp%iarr) /= 8 .or. any(ubound(d2_D48Dp%iarr) /= [3,2]) &
-         .or. any([d2_D48Dp%iarr] /= [1111,2222,3333,4444,5555,6666])) stop 4
+         .or. any([d2_D48Dp%iarr] /= [1111,2222,3333,4444,5555,6666])) error stop 4
 
     if (d2_D48Dp%der%l /= 2 .or. d2_D48Dp%der%k /= 8 .or. len(d2_D48Dp%der%ch) /= 2 &
          .or. d2_D48Dp%der%ch /= 'xz' .or. .not.d2_D48Dp%der%lfld .or. size(d2_D48Dp%der%ifld) /= 2 &
          .or. kind(d2_D48Dp%der%lfld) /= 8 .or. kind(d2_D48Dp%der%ifld) /= 8 .or. kind(d2_D48Dp%der%rfld) /= 8 &
          .or. any(d2_D48Dp%der%ifld /= [76543211234567_8,-123456787654321_8]) &
-         .or. .not.precision_r8(d2_D48Dp%der%rfld,11235.81321D34)) stop 5
+         .or. .not.precision_r8(d2_D48Dp%der%rfld,11235.81321D34)) error stop 5
 
-    if (b_Dp2%l /= 5 .or. len(b_Dp2%ch) /= 5 .or. b_Dp2%ch /= 'abcde') stop 12
+    if (b_Dp2%l /= 5 .or. len(b_Dp2%ch) /= 5 .or. b_Dp2%ch /= 'abcde') error stop 12
 
     if (d_D8p%l /= 5 .or. d_D8p%k /= 8 .or. len(d_D8p%ch) /= 5 .or. d_D8p%ch /= 'defgh' .or. .not.d_D8p%lfld &
          .or. size(d_D8p%ifld) /= 5 .or. kind(d_D8p%lfld) /= 8 .or. kind(d_D8p%ifld) /= 8 .or. kind(d_D8p%rfld) /= 8 &
          .or. any(d_D8p%ifld /= [1111111111111_8,2222222222222_8,3333333333333_8,4444444444444_8,5555555555555_8]) &
-         .or. .not.precision_r8(d_D8p%rfld,1.23456789D11)) stop 13
+         .or. .not.precision_r8(d_D8p%rfld,1.23456789D11)) error stop 13
 
     if (d2_D84Dp%l /= 5 .or. d2_D84Dp%k /= 8 .or. d2_D84Dp%k2 /= 4 .or. d2_D84Dp%l2 /= 1 &
          .or. len(d2_D84Dp%ch) /= 5 .or. d2_D84Dp%ch /= 'defij' .or. .not.d2_D84Dp%lfld &
          .or. size(d2_D84Dp%ifld) /= 5 .or. kind(d2_D84Dp%lfld) /= 8 .or. kind(d2_D84Dp%ifld) /= 8 .or. kind(d2_D84Dp%rfld) /= 8 &
          .or. any(d2_D84Dp%ifld /= -d_D8p%ifld) .or. .not.precision_r8(d2_D84Dp%rfld,9.87654321D-12) &
          .or. kind(d2_D84Dp%iarr) /= 4 .or. any(ubound(d2_D84Dp%iarr) /= [5,1]) &
-         .or. any([d2_D84Dp%iarr] /= [1111,2222,3333,4444,5555])) stop 14
+         .or. any([d2_D84Dp%iarr] /= [1111,2222,3333,4444,5555])) error stop 14
 
     if (d2_D84Dp%der%l /= 1 .or. d2_D84Dp%der%k /= 4 .or. len(d2_D84Dp%der%ch) /= 1 &
          .or. d2_D84Dp%der%ch /= 'y' .or. .not.d2_D84Dp%der%lfld .or. size(d2_D84Dp%der%ifld) /= 1 &
          .or. kind(d2_D84Dp%der%lfld) /= 4 .or. kind(d2_D84Dp%der%ifld) /= 4 .or. kind(d2_D84Dp%der%rfld) /= 4 &
          .or. any(d2_D84Dp%der%ifld /= [-12345678_4]) &
-         .or. .not.precision_r4(d2_D84Dp%der%rfld,9.87654E-12)) stop 15
+         .or. .not.precision_r4(d2_D84Dp%der%rfld,9.87654E-12)) error stop 15
 
     print *, 'done'
 

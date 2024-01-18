@@ -48,11 +48,11 @@
   TYPE(humongous_matrix(d=3333)) :: T1
   TYPE(general_point(3)) :: T2
 
-  IF ( T1%K       .NE. kind(0.0)   )                STOP 11
-  IF ( KIND(T1%d) .NE. selected_int_kind(12)   )    STOP 12
-  IF ( ANY( SHAPE(T1%element) .NE. (/T1%d, T1%d/))) STOP 13
+  IF ( T1%K       .NE. kind(0.0)   )                ERROR STOP 11
+  IF ( KIND(T1%d) .NE. selected_int_kind(12)   )    ERROR STOP 12
+  IF ( ANY( SHAPE(T1%element) .NE. (/T1%d, T1%d/))) ERROR STOP 13
 
-  IF ( ANY(SHAPE(T2%coordinates) .NE. (/T2%dim/)))  STOP 14
+  IF ( ANY(SHAPE(T2%coordinates) .NE. (/T2%dim/)))  ERROR STOP 14
 
 
   END

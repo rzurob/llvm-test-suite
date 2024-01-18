@@ -57,25 +57,25 @@
   REAL(KIND(DERFC(X=1.0_8))) :: DR(128) = DERFC(X=1.0_8)
   REAL(KIND(QERFC(X=1.0_16))):: QR(128) = QERFC(X=1.0_16)
 
-  IF (ANY( ABS(T%R4-R ) .GT. .1E-5 )) STOP 11
-  IF (ANY( ABS(T%R8-R ) .GT. .1E-5 )) STOP 12
-  IF (ANY( ABS(T%R6-R ) .GT. .1E-5 )) STOP 13
+  IF (ANY( ABS(T%R4-R ) .GT. .1E-5 )) ERROR STOP 11
+  IF (ANY( ABS(T%R8-R ) .GT. .1E-5 )) ERROR STOP 12
+  IF (ANY( ABS(T%R6-R ) .GT. .1E-5 )) ERROR STOP 13
 
 
-  IF (KIND(R4) .NE. 4)              STOP 21
-  IF (ANY( ABS(R4-R ) .GT. .1E-5 )) STOP 22
+  IF (KIND(R4) .NE. 4)              ERROR STOP 21
+  IF (ANY( ABS(R4-R ) .GT. .1E-5 )) ERROR STOP 22
 
-  IF (KIND(R8) .NE. 8)              STOP 31
-  IF (ANY( ABS(R8-R ) .GT. .1E-5 )) STOP 32
+  IF (KIND(R8) .NE. 8)              ERROR STOP 31
+  IF (ANY( ABS(R8-R ) .GT. .1E-5 )) ERROR STOP 32
 
-  IF (KIND(R6) .NE. 16)             STOP 41
-  IF (ANY( ABS(R6-R ) .GT. .1E-5 )) STOP 42
+  IF (KIND(R6) .NE. 16)             ERROR STOP 41
+  IF (ANY( ABS(R6-R ) .GT. .1E-5 )) ERROR STOP 42
 
-  IF (KIND(DR) .NE. 8)              STOP 51
-  IF (ANY( ABS(DR-R ) .GT. .1E-5 )) STOP 52
+  IF (KIND(DR) .NE. 8)              ERROR STOP 51
+  IF (ANY( ABS(DR-R ) .GT. .1E-5 )) ERROR STOP 52
 
-  IF (KIND(QR) .NE. 16)             STOP 61
-  IF (ANY( ABS(QR-R ) .GT. .1E-5 )) STOP 62
+  IF (KIND(QR) .NE. 16)             ERROR STOP 61
+  IF (ANY( ABS(QR-R ) .GT. .1E-5 )) ERROR STOP 62
 
   END
 

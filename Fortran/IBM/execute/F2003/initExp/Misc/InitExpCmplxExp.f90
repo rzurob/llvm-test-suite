@@ -52,9 +52,9 @@
   RZ6 = (-B)**(-C)
 
   DO I=1, 128
-    IF ( .NOT. precision_x8(Z4(i), RZ4(i) ) ) STOP 11
-    IF ( .NOT. precision_x6(Z8(i), RZ8(i) ) ) STOP 12
-    IF ( .NOT. precision_x3(Z6(i), RZ6(i) ) ) STOP 13
+    IF ( .NOT. precision_x8(Z4(i), RZ4(i) ) ) ERROR STOP 11
+    IF ( .NOT. precision_x6(Z8(i), RZ8(i) ) ) ERROR STOP 12
+    IF ( .NOT. precision_x3(Z6(i), RZ6(i) ) ) ERROR STOP 13
   END DO
 
   END

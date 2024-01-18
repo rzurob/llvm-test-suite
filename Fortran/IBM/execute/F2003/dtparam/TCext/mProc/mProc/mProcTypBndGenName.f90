@@ -96,9 +96,9 @@
   T1  = GName(DT(1,10)(""), DT(1,10)(""))
   T2  = GName(DT(1,10)(""), DT(1,10)(""), DT(1,10)(""))
 
-  IF (TRIM(T%ID)   .NE. "ModFun"  ) STOP 11
-  IF (TRIM(T1%ID)  .NE. "ModFun1" ) STOP 12
-  IF (TRIM(T2%ID)  .NE. "ExtFun" ) STOP 14
+  IF (TRIM(T%ID)   .NE. "ModFun"  ) ERROR STOP 11
+  IF (TRIM(T1%ID)  .NE. "ModFun1" ) ERROR STOP 12
+  IF (TRIM(T2%ID)  .NE. "ExtFun" ) ERROR STOP 14
 
 
   END

@@ -22,9 +22,9 @@
 
       ll = func (ll)
 
-      if ( size(ll,2) /= 2 ) stop 21
-      if ( ll(1,1) .neqv. .true. ) stop 23
-      if ( ll(1,2) .neqv. .false. ) stop 25
+      if ( size(ll,2) /= 2 ) error stop 21
+      if ( ll(1,1) .neqv. .true. ) error stop 23
+      if ( ll(1,2) .neqv. .false. ) error stop 25
 
       contains
 
@@ -37,8 +37,8 @@
                                    logical (.false., 1) /), (/1,2/) ) )
                call move_alloc(arg, class)
 
-               if ( .not. allocated(class) ) stop 31
-               if ( allocated(arg) ) stop 33
+               if ( .not. allocated(class) ) error stop 31
+               if ( allocated(arg) ) error stop 33
 
                select type (class)
                    type is (logical*1)

@@ -84,7 +84,7 @@
       A_triangle%c = 22.36
 !*
       My_shape => A_triangle
-      IF ( .NOT. ASSOCIATED(My_shape)) STOP 20
+      IF ( .NOT. ASSOCIATED(My_shape)) ERROR STOP 20
 
       SELECT TYPE (A => My_shape)
         CLASS IS (ExtTriangle1(k1,*))
@@ -123,7 +123,7 @@
       A_square%width = 10.0D0
 
       ALLOCATE(My_shape, source = A_square)
-      IF ( .NOT. ALLOCATED(My_shape)) STOP 10
+      IF ( .NOT. ALLOCATED(My_shape)) ERROR STOP 10
 
       SELECT TYPE (A => My_shape)
         TYPE IS (Square(k1,*))

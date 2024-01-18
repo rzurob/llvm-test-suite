@@ -40,10 +40,10 @@
   INTEGER(KIND=8)  :: I8(128)= A + B**(-D)
 
 
-  IF ( ANY(I1   .NE. 0 ) ) STOP 11
-  IF ( ANY(I2   .NE. 0 ) ) STOP 12
-  IF ( ANY(I4   .NE. 0 ) ) STOP 13
-  IF ( ANY(I8   .NE. A ) ) STOP 14
+  IF ( ANY(I1   .NE. 0 ) ) ERROR STOP 11
+  IF ( ANY(I2   .NE. 0 ) ) ERROR STOP 12
+  IF ( ANY(I4   .NE. 0 ) ) ERROR STOP 13
+  IF ( ANY(I8   .NE. A ) ) ERROR STOP 14
 
 
   END

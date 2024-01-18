@@ -108,11 +108,11 @@
 
   CALL ExtSub()
 
-  IF ( ANY( R(1)%R .NE.    -16        ) ) STOP 31
-  IF ( ANY( C(1)%C .NE.    CHAR(0)    ) ) STOP 32
-  IF ( ANY( I(1)%I .NE.    2          ) ) STOP 33
-  IF ( ANY( L(1)%A .NEQV. .TRUE.      ) ) STOP 34
-  IF ( ANY( Z(1)%Z .NE.    (16,-16)   ) ) STOP 35
+  IF ( ANY( R(1)%R .NE.    -16        ) ) ERROR STOP 31
+  IF ( ANY( C(1)%C .NE.    CHAR(0)    ) ) ERROR STOP 32
+  IF ( ANY( I(1)%I .NE.    2          ) ) ERROR STOP 33
+  IF ( ANY( L(1)%A .NEQV. .TRUE.      ) ) ERROR STOP 34
+  IF ( ANY( Z(1)%Z .NE.    (16,-16)   ) ) ERROR STOP 35
 
   CALL IntSub()
 
@@ -134,11 +134,11 @@
   COMMON /BLK/Z
 
   DO J=1, 9
-    IF ( ANY( R .NE.    -16        ) ) STOP 21
-    IF ( ANY( C .NE.    CHAR(0)    ) ) STOP 22
-    IF ( ANY( I .NE.    2          ) ) STOP 23
-    IF ( ANY( L .NEQV. .TRUE.      ) ) STOP 24
-    IF ( ANY( Z .NE.    (16,-16)   ) ) STOP 25
+    IF ( ANY( R .NE.    -16        ) ) ERROR STOP 21
+    IF ( ANY( C .NE.    CHAR(0)    ) ) ERROR STOP 22
+    IF ( ANY( I .NE.    2          ) ) ERROR STOP 23
+    IF ( ANY( L .NEQV. .TRUE.      ) ) ERROR STOP 24
+    IF ( ANY( Z .NE.    (16,-16)   ) ) ERROR STOP 25
   END DO
 
   END SUBROUTINE
@@ -160,18 +160,18 @@
   COMMON /BLK/L
   COMMON /BLK/Z
 
-  IF ( ANY( R(1)%R .NE.    16         ) ) STOP 11
+  IF ( ANY( R(1)%R .NE.    16         ) ) ERROR STOP 11
   R(1)%R = -16
 
-  IF ( ANY( C(1)%C .NE.    CHAR(48-1) ) ) STOP 12
+  IF ( ANY( C(1)%C .NE.    CHAR(48-1) ) ) ERROR STOP 12
   C(1)%C = CHAR(0)
 
-  IF ( ANY( I(1)%I .NE.    -2         ) ) STOP 13
+  IF ( ANY( I(1)%I .NE.    -2         ) ) ERROR STOP 13
   I(1)%I = 2
 
-  IF ( ANY( L(1)%A .NEQV. .FALSE.     ) ) STOP 14
+  IF ( ANY( L(1)%A .NEQV. .FALSE.     ) ) ERROR STOP 14
   L(1)%A = .TRUE.
 
-  IF ( ANY( Z(1)%Z .NE.    -(16,-16)  ) ) STOP 15
+  IF ( ANY( Z(1)%Z .NE.    -(16,-16)  ) ) ERROR STOP 15
   Z(1)%Z = (16,-16)
   END SUBROUTINE
