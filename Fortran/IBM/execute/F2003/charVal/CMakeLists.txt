@@ -1,0 +1,11 @@
+message(STATUS "Adding directory Fortran/IBM/execute/F2003/charVal")
+
+add_subdirectory(argAssociation)
+add_subdirectory(basic)
+add_subdirectory(deferredLength)
+add_subdirectory(diag)
+add_subdirectory(diffCharArg)
+add_subdirectory(intrinFuncArg)
+add_subdirectory(misc)
+add_subdirectory(multiArgs)
+add_subdirectory(unit_tests)

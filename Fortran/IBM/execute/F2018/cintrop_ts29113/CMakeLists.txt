@@ -1,0 +1,11 @@
+message(STATUS "Adding directory Fortran/IBM/execute/F2018/cintrop_ts29113")
+
+add_subdirectory(AllocatableAndPointer)
+add_subdirectory(AssumedLength)
+add_subdirectory(AssumedRank)
+add_subdirectory(AssumedSizeScalar)
+add_subdirectory(AssumedType)
+add_subdirectory(asynch_communication)
+add_subdirectory(c_ptrdiff_t)
+add_subdirectory(optional)
+add_subdirectory(remove_restriction_isocbinding)

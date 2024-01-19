@@ -1,0 +1,13 @@
+message(STATUS "Adding directory Fortran/IBM/execute/F2003/OO_dtio/unformatted")
+
+add_subdirectory(misc)
+add_subdirectory(section9.10)
+add_subdirectory(section9.1.2)
+add_subdirectory(section9.5.2)
+add_subdirectory(section9.5.3.4)
+add_subdirectory(section9.5.3.7.1)
+add_subdirectory(section9.5.3.7.2)
+add_subdirectory(section9.8)
+add_subdirectory(section9.9)
+add_subdirectory(section9.9.3)
+add_subdirectory(syntax)
