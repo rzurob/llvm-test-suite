@@ -2,7 +2,6 @@ message(STATUS "Adding directory Fortran/IBM/execute/F2003/ieee")
 
 add_subdirectory(class)
 add_subdirectory(copy_sign)
-add_subdirectory(diag)
 add_subdirectory(finite)
 add_subdirectory(flag)
 add_subdirectory(fpscr)

@@ -700,8 +700,8 @@ message(STATUS "Adding directory Fortran/IBM")
 
 # PREFIX_EXECUTE and PREFIX_COMPILE are used in ibm_add_execute_test and
 # ibm_add_compile_test respectively.
-set(PREFIX_EXECUTE "ibm-torture-execute")
-set(PREFIX_COMPILE "ibm-torture-compile"
+set(PREFIX_EXECUTE "ibm-execute")
+set(PREFIX_COMPILE "ibm-compile")
 
 add_subdirectory(compile)
 add_subdirectory(execute)
