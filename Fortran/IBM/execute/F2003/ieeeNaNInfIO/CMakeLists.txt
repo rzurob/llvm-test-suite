@@ -1,0 +1,10 @@
+message(STATUS "Adding directory Fortran/IBM/execute/F2003/ieeeNaNInfIO")
+
+add_subdirectory(basic)
+add_subdirectory(extension)
+add_subdirectory(internalIO)
+add_subdirectory(listDirIO)
+add_subdirectory(misc)
+add_subdirectory(modes)
+add_subdirectory(nmlIO)
+add_subdirectory(unit_tests)

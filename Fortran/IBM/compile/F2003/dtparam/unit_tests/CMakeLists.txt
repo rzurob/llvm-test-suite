@@ -1,0 +1,12 @@
+message(STATUS "Adding directory Fortran/IBM/compile/F2003/dtparam/unit_tests")
+
+add_subdirectory(12.2.2)
+add_subdirectory(12.4.1.2)
+add_subdirectory(4.5.1.3)
+add_subdirectory(4.5.8)
+add_subdirectory(5.1)
+add_subdirectory(data)
+add_subdirectory(declaration)
+add_subdirectory(generic)
+add_subdirectory(pointerAssgn)
+add_subdirectory(procptr)

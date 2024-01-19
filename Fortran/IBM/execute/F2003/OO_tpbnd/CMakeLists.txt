@@ -1,0 +1,6 @@
+message(STATUS "Adding directory Fortran/IBM/execute/F2003/OO_tpbnd")
+
+add_subdirectory(final)
+add_subdirectory(final1)
+add_subdirectory(specbnd)
+add_subdirectory(specific)

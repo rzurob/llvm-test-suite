@@ -1,0 +1,10 @@
+message(STATUS "Adding directory Fortran/IBM/execute/F2003/asynchIO/statements")
+
+add_subdirectory(dtio)
+add_subdirectory(filePos)
+add_subdirectory(ibmext)
+add_subdirectory(inquire)
+add_subdirectory(misc)
+add_subdirectory(otherSpec)
+add_subdirectory(stmt)
+add_subdirectory(wait)

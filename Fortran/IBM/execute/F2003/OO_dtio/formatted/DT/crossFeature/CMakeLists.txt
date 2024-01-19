@@ -1,0 +1,11 @@
+message(STATUS "Adding directory Fortran/IBM/execute/F2003/OO_dtio/formatted/DT/crossFeature")
+
+add_subdirectory(arrayConstr)
+add_subdirectory(associate)
+add_subdirectory(dummyArg)
+add_subdirectory(final)
+add_subdirectory(funcRetrn)
+add_subdirectory(selectType)
+add_subdirectory(structCompnt)
+add_subdirectory(structConstr)
+add_subdirectory(userDefOp)

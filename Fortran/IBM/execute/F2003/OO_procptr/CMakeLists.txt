@@ -1,0 +1,11 @@
+message(STATUS "Adding directory Fortran/IBM/execute/F2003/OO_procptr")
+
+add_subdirectory(bindc1)
+add_subdirectory(bindc2)
+add_subdirectory(component1)
+add_subdirectory(component2)
+add_subdirectory(CrossFeatures1)
+add_subdirectory(CrossFeatures2)
+add_subdirectory(declaration1)
+add_subdirectory(declaration2)
+add_subdirectory(unit_tests)

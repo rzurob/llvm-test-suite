@@ -1,0 +1,12 @@
+message(STATUS "Adding directory Fortran/IBM/execute/F2003/dtparam/TCext/OO_poly")
+
+add_subdirectory(allocate)
+add_subdirectory(associate)
+add_subdirectory(class)
+add_subdirectory(dummy_arg)
+add_subdirectory(func_return)
+add_subdirectory(implicit)
+add_subdirectory(intrinsics)
+add_subdirectory(misc)
+add_subdirectory(point_assgn)
+add_subdirectory(selectType)

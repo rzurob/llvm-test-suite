@@ -1,0 +1,13 @@
+message(STATUS "Adding directory Fortran/IBM/execute/F2003/dtparam/TCext/OO_type/abstract/crossFeature")
+
+add_subdirectory(allocate)
+add_subdirectory(arrayConst)
+add_subdirectory(associate)
+add_subdirectory(dummyArg)
+add_subdirectory(extends)
+add_subdirectory(final)
+add_subdirectory(funcRetrn)
+add_subdirectory(ptrAsgn)
+add_subdirectory(selectType)
+add_subdirectory(typeBound)
+add_subdirectory(userDefOp)

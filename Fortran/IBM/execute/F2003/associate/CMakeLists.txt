@@ -1,0 +1,11 @@
+message(STATUS "Adding directory Fortran/IBM/execute/F2003/associate")
+
+add_subdirectory(alloc)
+add_subdirectory(array)
+add_subdirectory(data)
+add_subdirectory(multi)
+add_subdirectory(nest)
+add_subdirectory(option)
+add_subdirectory(pointer)
+add_subdirectory(proc)
+add_subdirectory(smp)
