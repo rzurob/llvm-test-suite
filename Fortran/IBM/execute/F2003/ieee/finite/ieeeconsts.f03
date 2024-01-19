@@ -1,4 +1,3 @@
-        @process free(f90)
         module constants_for_ieee
 
         ! Infinities

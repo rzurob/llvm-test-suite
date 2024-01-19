@@ -1,9 +1,1 @@
-Feature 384867 F2008:value attribute allowed for dummy args of pure procedures
-
-Unit tests (from both development and test) are located in:
-./unit_tests/
-
-IT1/2 is located in:
-./doc/ 
-
-There is no I0 for this feature.
+F2008: value attribute allowed for dummy args of pure procedures
