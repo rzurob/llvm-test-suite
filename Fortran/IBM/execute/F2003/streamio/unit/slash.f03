@@ -16,9 +16,8 @@
 !*  DESCRIPTION                : Slash edit descriptor
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
-@process free(f90)
 
-byte ic1, ic2
+integer(1) ic1, ic2
 integer pos, size
 
 open(unit=11, status='replace', form="formatted", access="stream")

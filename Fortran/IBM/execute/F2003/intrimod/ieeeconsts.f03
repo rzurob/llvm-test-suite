@@ -1,4 +1,3 @@
-        @process free(f90)
         module constants_for_ieee
 
         ! Infinities
@@ -105,4 +104,3 @@
         real(8), parameter :: NTD_8 = z"8000000000000001"
 
         end module
-

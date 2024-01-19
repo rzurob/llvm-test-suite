@@ -113,8 +113,6 @@
 #define ALLOCATE_STATEMENT
 #endif
 
-      @PROCESS FREE(F90)
-
       program PROGRAM_NAME
         use iso_c_binding
         implicit none
