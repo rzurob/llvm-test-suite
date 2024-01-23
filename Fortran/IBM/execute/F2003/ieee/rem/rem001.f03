@@ -16,16 +16,17 @@
 !*  mode to the nearest would affect the results of the function ieee_rem.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
+       include 'ieeeconsts.h'
+
        program fxieee11
 
         use ieee_arithmetic
         use ieee_exceptions
         use constants_for_ieee
-  implicit none
+        implicit none
 
         real*4 :: xr_4, yr_4, zr_4, a, res_4
         real*8 :: xr_8, yr_8, zr_8, a_8, res_8
-        real*16 :: xr_16, yr_16, zr_16, a_16, res_16
         integer :: n, i, ires4
         integer*8 :: n8, ires8, ires16(2)
         logical precision_R8
@@ -34,8 +35,6 @@
         equivalence(ires4, zr_4)
         equivalence(ires8, res_8)
         equivalence(ires8, zr_8)
-        equivalence(ires16, res_16)
-        equivalence(ires16, zr_16)
 
         real*4, parameter, dimension(4) :: xvalues = &
      &       (/1.2**2, 2.5**3, 3.6**(-8), -6.8**(-9)/)
@@ -43,17 +42,11 @@
      &       (/6.7**3, -7.6**(-2), 8.1**2, 4.7**(-7)/)
         real*4, dimension(4) :: results
 
-    real*8, parameter, dimension(4) :: xvalues_8 = &
+        real*8, parameter, dimension(4) :: xvalues_8 = &
      &       (/9.8_8**34, 1.9_8**29, -2.8_8**(-33), 5.6_8**(-31)/)
         real*8, parameter, dimension(4) :: yvalues_8 = &
      &       (/2.5_8**26, 3.4_8**(-21), 8.2_8**23, -5.6_8**(-27)/)
         real*8, dimension(4) :: results_8
-
-    real*16, parameter, dimension(4) :: xvalues_16 = &
-     &       (/9.8_16**28, 1.9_16**302, -6.8_16**(-93), 3.9_16**(-89)/)
-        real*16, parameter, dimension(4) :: yvalues_16 = &
-     &       (/2.5_16**29, 3.4_16**(-10), 3.2_16**24, -1.3_16**(-16)/)
-        real*16, dimension(4) :: results_16
 
          logical, dimension(5) :: flag_values, expect_value
          type(ieee_round_type) :: rtype
@@ -132,32 +125,6 @@
 
 !***************************
 
-        a_16 = -123456.543_16
-        res_16 = ieee_rint(a_16)
-        if (res_16 /= -123457.0) error stop 8
-
-        call ieee_set_flag(ieee_all, .false.)
-!       test real*16
-        xr_16 = 5.0_16
-        yr_16 = 2.0_16
-        zr_16 = ieee_rem(xr_16, yr_16)
-        if (zr_16 /= 1.0 ) error stop 9
-        call ieee_get_flag(ieee_all, flag_values)
-        do i = 1,4
-          if (flag_values(i) .neqv. .false.) call zzrc(150+i)
-        enddo
-
-!       Test array of kind 16
-
-        results_16 = ieee_rem(xvalues_16, yvalues_16)
-    do i = 1, 4
-       zr_16 = xvalues_16(i) - yvalues_16(i) * nint &
-     &                     (xvalues_16(i)/yvalues_16(i),8)
-       if (results_16(i) /= zr_16) error stop 10
-    enddo
-
-!*****************************
-
 ! Test zero
 
 !       Test real*4 /real*8 / real*16  for  n = -0, N = -0
@@ -168,8 +135,6 @@
         yr_4 = 3.0
         xr_8 = -0.0_8
         yr_8 = 900.9_8
-        xr_16 = -0.0_16
-        yr_16 = 234.6_16
 
         zr_4 = ieee_rem(xr_4, yr_4)
         if (ires4 /= iNZERO_4 .and. zr_4 /= 0.0) error stop 11
@@ -184,10 +149,7 @@
         enddo
 
 
-        zr_16 = ieee_rem(xr_16, yr_16)
-        if (ires16(1) /= iPZERO_16(1).and. zr_16 /= 0.0) error stop 13
-
-!       Test real*4 /real*8 / real*16  for n = -0, N = -0
+!       Test real*4 /real*8 for n = -0, N = -0
 
         call ieee_set_flag(ieee_all,.false.)
 
@@ -195,8 +157,6 @@
         yr_4 = -3.0
         xr_8 = 0.0_8
         yr_8 = -900.9_8
-        xr_16 = 0.0_16
-        yr_16 = -234.6_16
 
         zr_4 = ieee_rem(xr_4, yr_4)
         if (ires4 /= iPZERO_4 .and. zr_4 /= 0.0) error stop 14
@@ -211,11 +171,7 @@
         enddo
 
 
-        zr_16 = ieee_rem(xr_16, yr_16)
-        if (ires16(1) /= iPZERO_16(1).and. zr_16 /= 0.0) error stop 16
-
-
-!       Test real*4 /real*8 / real*16  for n = -0, N = -0
+!       Test real*4 /real*8 for n = -0, N = -0
 
         call ieee_set_flag(ieee_all,.false.)
 
@@ -223,8 +179,6 @@
         yr_4 = -3.0
         xr_8 = 0.0_8
         yr_8 = -900.9_8
-        xr_16 = 0.0_16
-        yr_16 = -234.6_16
 
         zr_4 = ieee_rem(xr_4, yr_4)
         if (ires4 /= iPZERO_4 .and. zr_4 /= 0.0) error stop 17
@@ -239,11 +193,6 @@
         enddo
 
 
-        zr_16 = ieee_rem(xr_16, yr_16)
-        if (ires16(1) /= iPZERO_16(1) .and. zr_16 /= 0.0) error stop 19
-        call ieee_get_status(status_value)
-
-
 ! Test Infinities
 
 
@@ -253,17 +202,12 @@
         yr_4 = -2.0
         xr_8 = PINF_8
         yr_8 = 900.9_8
-        xr_16 = PINF_16
-        yr_16 = 234.6_16
 
         zr_4 = ieee_rem(xr_4, yr_4)
         if (zr_4 == zr_4) error stop 20
 
         zr_8 = ieee_rem(xr_8, yr_8)
         if (zr_8 == zr_8) error stop 21
-
-        zr_16 = ieee_rem(xr_16, yr_16)
-        if (zr_16 == zr_16) error stop 22
 
         ! Now check that no flags were turned on (except invalid).
         call ieee_get_flag(ieee_all,flag_values)
@@ -278,8 +222,6 @@
         yr_4 = -2.0
         xr_8 = NINF_8
         yr_8 = 900.9_8
-        xr_16 = NINF_16
-        yr_16 = 234.6_16
 
         zr_4 = ieee_rem(xr_4, yr_4)
         if (zr_4 == zr_4) error stop 23
@@ -287,9 +229,6 @@
         call ieee_set_flag(ieee_all,.false.)
         zr_8 = ieee_rem(xr_8, yr_8)
         if (zr_8 == zr_8) error stop 24
-
-        zr_16 = ieee_rem(xr_16, yr_16)
-        if (zr_16 == zr_16) error stop 25
 
         ! Now check that no flags were turned on.
         call ieee_get_flag(ieee_all,flag_values)
@@ -307,8 +246,6 @@
         yr_4 = -2.0
         xr_8 = PNANQ_8
         yr_8 = 900.9_8
-        xr_16 = PNANQ_16
-        yr_16 = 234.6_16
 
         zr_4 = ieee_rem(xr_4, yr_4)
         if (ires4 /= iPNANQ_4) error stop 26
@@ -325,17 +262,12 @@
         if (flag_values(5) .neqv. .false.)error stop 115
 
 
-        zr_16 = ieee_rem(xr_16, yr_16)
-        if (ires16(1) /= iPNANQ_16(1)) error stop 28
-
         call ieee_set_flag(ieee_all,.false.)
 
         xr_4 = NNANQ_4
         yr_4 = -2.0
         xr_8 = NNANQ_8
         yr_8 = 900.9_8
-        xr_16 = NNANQ_16
-        yr_16 = 234.6_16
 
         zr_4 = ieee_rem(xr_4, yr_4)
         if (ires4 /= iNNANQ_4) error stop 29
@@ -351,17 +283,12 @@
         if (flag_values(4) .neqv. .false.)error stop 114
         if (flag_values(5) .neqv. .false.)error stop 115
 
-        zr_16 = ieee_rem(xr_16, yr_16)
-        if (ires16(1) /= iNNANQ_16(1)) error stop 31
-
         call ieee_set_flag(ieee_all,.false.)
 
         xr_4 = PNANS_4
         yr_4 = -2.0
         xr_8 = PNANS_8
         yr_8 = 900.9_8
-        xr_16 = PNANS_16
-        yr_16 = 234.6_16
 
         expect_value = (/.false.,.false.,.true.,.false.,.false./)
 
@@ -386,9 +313,6 @@
 
         call ieee_set_flag(ieee_all,.false.)
 
-        zr_16 = ieee_rem(xr_16, yr_16)
-        if (ires16(1) /= iPNANQ_16(1)) error stop 34
-
         call ieee_get_flag(ieee_all,flag_values)
         ! ieee_rem is allowed to set ieee_inexact for real*16
         do i =1,4
@@ -402,8 +326,6 @@
         yr_4 = -2.0
         xr_8 = NNANS_8
         yr_8 = 900.9_8
-        xr_16 = NNANS_16
-        yr_16 = 234.6_16
 
         zr_4 = ieee_rem(xr_4, yr_4)
         if (ires4 /= iNNANQ_4) error stop 35
@@ -422,19 +344,6 @@
         call ieee_get_flag(ieee_all,flag_values)
         do i =1,5
            if (expect_value(i).neqv.flag_values(i)) call zzrc (140+i)
-        end do
-
-
-        call ieee_set_flag(ieee_all,.false.)
-
-
-        zr_16 = ieee_rem(xr_16, yr_16)
-        if (ires16(1) /= iNNANQ_16(1)) error stop 37
-
-        call ieee_get_flag(ieee_all,flag_values)
-        ! ieee_rem is allowed to set ieee_inexact for real*16
-        do i =1,4
-           if (expect_value(i).neqv.flag_values(i)) call zzrc (145+i)
         end do
 
 

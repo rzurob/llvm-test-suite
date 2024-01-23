@@ -22,7 +22,7 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-         include 'ieeeconsts.ft'
+         include 'ieeeconsts.h'
 
          program fi3ehltmod18
 

@@ -19,6 +19,8 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
+        include 'ieeeconsts.h'
+
 	program logb_inf_nan
 
         use ieee_arithmetic

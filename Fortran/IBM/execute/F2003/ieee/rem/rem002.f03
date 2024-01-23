@@ -16,6 +16,8 @@
 !*  mode to the zero would affect the results of the function ieee_rem.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
+       include 'ieeeconsts.h'
+
        program fxieee11
 
         use ieee_arithmetic

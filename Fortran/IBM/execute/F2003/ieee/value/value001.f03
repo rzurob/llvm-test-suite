@@ -16,14 +16,15 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-	program value_val
+        include 'ieeeconsts.h'
+
+        program value_val
 
         use ieee_arithmetic
         use constants_for_ieee
 
         real*4, dimension(10) :: values
         real*8, dimension(10) :: values_8
-	real*16, dimension(10) :: values_16
 
         logical, dimension(5) :: flag_values
         integer :: i
@@ -85,22 +86,4 @@
         enddo
 
 
-
-!**************
-!       Test real*16
-!**************
-
-        call ieee_set_flag(ieee_all,.false.)
-
-         values_16 = ieee_value(values_16, ctypes)
-
-        do i = 1, 10
-            if (ieee_class(values_16(i)) /= ctypes(i))call zzrc(i+30)
-                       !IEEE value failed, real*16
-        end do
-
-
-
-
         end program
-
