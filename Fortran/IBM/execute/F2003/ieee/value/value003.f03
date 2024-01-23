@@ -16,6 +16,8 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
+        include 'ieeeconsts.h'
+
 	program value_val
 
         use ieee_arithmetic

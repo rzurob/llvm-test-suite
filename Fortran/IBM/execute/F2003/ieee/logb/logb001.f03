@@ -21,12 +21,14 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-	program logb_variab
+        include 'ieeeconsts.h'
+
+        program logb_variab
 
         use ieee_arithmetic
         use constants_for_ieee
 
-	integer :: i
+        integer :: i
         real*4 :: x_4, y_4
         real*8 :: x_8, y_8
         real*16 :: x_16, y_16
@@ -43,7 +45,7 @@
         y_4 = ieee_logb(x_4)
         if (y_4 /= exponent(x_4)-1) error stop 1
 					!"ieee_logb failed for real*4."
-	x_4 = huge(1.0)
+        x_4 = huge(1.0)
         y_4 = ieee_logb(x_4)
         if (y_4 /= exponent(x_4)-1)error stop 2
 				        !"ieee_logb failed for real*4."

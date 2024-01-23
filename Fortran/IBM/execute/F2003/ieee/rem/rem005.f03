@@ -19,20 +19,22 @@
 !*                               where n = X / Y
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
+        include 'ieeeconsts.h'
 
-	program raport_value
+
+        program raport_value
 
         use ieee_arithmetic
         use constants_for_ieee
-	implicit none
+        implicit none
 
         real*4 :: x4, y4, z4
         real*8 :: x8, y8, z8
-	integer*4 :: i, ires4, ires8, ires16
+        integer*4 :: i, ires4, ires8, ires16
         logical, dimension(5) :: flag_values, expect_value
 
-	equivalence(z4,ires4)
-	equivalence(z8,ires8)
+        equivalence(z4,ires4)
+        equivalence(z8,ires8)
 
 !       Test real*4 /real*8  for  n = +0, N = +0
 
@@ -41,13 +43,13 @@
         x4 = 0.0
         y4 = 3.0
         x8 = 0.0_8
-	y8 = 900.9_8
+        y8 = 900.9_8
 
         z4 = ieee_rem(x4, y4)
-	if (ires4 /= z"00000000" .and. z4 /= 0.0) error stop 1
+        if (ires4 /= z"00000000" .and. z4 /= 0.0) error stop 1
 
         z8 = ieee_rem(x8, y8)
-	if (ires8 /= z"00000000" .and. z8 /= 0.0) error stop 2
+        if (ires8 /= z"00000000" .and. z8 /= 0.0) error stop 2
 
         ! Now check that no flags were turned on, other than inexact.
         call ieee_get_flag(ieee_all,flag_values)
