@@ -71,14 +71,14 @@ PROGRAM sequentialRead06
             FORM='unformatted', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'OPEN(', iostat, ') ', iomsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
     WRITE(41, IOSTAT=iostat, IOMSG=iomsg) tOut( 1 )
     IF (iostat /= 0) THEN
         PRINT *, 'WRITE(', iostat, ') ', iomsg
-        CALL zzrc( 20_4 )
+        ERROR STOP 20_4
     END IF
 
     DO i = 1, 3
@@ -92,14 +92,14 @@ PROGRAM sequentialRead06
     WRITE(41, IOSTAT=iostat, IOMSG=iomsg) tOut( 2:3 )
     IF (iostat /= 0) THEN
         PRINT *, 'WRITE(', iostat, ') ', iomsg
-        CALL zzrc( 40_4 )
+        ERROR STOP 40_4
     END IF
 
 
     CLOSE(41, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'CLOSE(', iostat, ') ', iomsg
-        CALL zzrc( 50_4 )
+        ERROR STOP 50_4
     END IF
 
 
@@ -111,14 +111,14 @@ PROGRAM sequentialRead06
             FORM='unformatted', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'OPEN(', iostat, ') ', iomsg
-        CALL zzrc( 60_4 )
+        ERROR STOP 60_4
     END IF
 
 
     READ(41, IOSTAT=iostat, IOMSG=iomsg) tIn( 1 )
     IF (iostat /= 0) THEN
         PRINT *, 'READ(', iostat, ') ', iomsg
-        CALL zzrc( 70_4 )
+        ERROR STOP 70_4
     END IF
 
     DO i = 1, 3
@@ -134,14 +134,14 @@ PROGRAM sequentialRead06
     READ(41, IOSTAT=iostat, IOMSG=iomsg) tIn( 2:3 )
     IF (iostat /= 0) THEN
         PRINT *, 'READ(', iostat, ') ', iomsg
-        CALL zzrc( 90_4 )
+        ERROR STOP 90_4
     END IF
 
 
     CLOSE(41, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'CLOSE(', iostat, ') ', iomsg
-        CALL zzrc( 100_4 )
+        ERROR STOP 100_4
     END IF
 
 

@@ -76,7 +76,7 @@ program C1233pointerArray04
         ACCESS='sequential', ASYNCHRONOUS='yes', IOSTAT=iStat)
     if (iStat <> 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -94,7 +94,7 @@ program C1233pointerArray04
     wait(1233, IOMSG=iMsg, IOSTAT=iStat)
     if (iStat <> 0) then
         write(0, *) "WAIT() <", iStat, "> ", iMsg
-        call zzrc( 21 )
+        error stop 21
     end if
 
 
@@ -106,7 +106,7 @@ program C1233pointerArray04
     close(1233, IOMSG=iMsg, IOSTAT=iStat)
     if (iStat <> 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 31 )
+        error stop 31
     end if
 
 end program C1233pointerArray04

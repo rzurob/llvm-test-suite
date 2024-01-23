@@ -66,7 +66,7 @@ PROGRAM asynchSpecDataXfer06d
                                             &ioStatus, ") ", ioErrorMsg
 
     IF (ioStatus <> 169) THEN
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -81,7 +81,7 @@ PROGRAM asynchSpecDataXfer06d
                                     &ioStatus, ") ", ioErrorMsg
 
     IF (ioStatus <> 169) THEN
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 

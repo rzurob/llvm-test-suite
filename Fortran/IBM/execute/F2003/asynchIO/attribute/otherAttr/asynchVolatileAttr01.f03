@@ -66,7 +66,7 @@ PROGRAM asynchVolatileAttr01
         &FORM='formatted', RECL=10, IOSTAT=stat, IOMSG=msg)
     IF (stat /= 0) THEN
         WRITE(*, *) "OPEN() <", stat, "> ", msg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -75,7 +75,7 @@ PROGRAM asynchVolatileAttr01
             &REC=record, IOSTAT=stat, IOMSG=msg) aType
     IF (stat /= 0) THEN
         WRITE(*, *) "WRITE(Asynchronous,", record, ") <", stat, "> ", msg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -84,14 +84,14 @@ PROGRAM asynchVolatileAttr01
             &REC=record, IOSTAT=stat, IOMSG=msg) aType
     IF (stat /= 0) THEN
         WRITE(*, *) "WRITE(", record, ") <", stat, "> ", msg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
     CLOSE(56, IOSTAT=stat, IOMSG=msg)
     IF (stat /= 0) THEN
         WRITE(*, *) "CLOSE() <", stat, "> ", msg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 

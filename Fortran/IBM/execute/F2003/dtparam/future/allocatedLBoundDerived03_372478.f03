@@ -100,14 +100,14 @@ PROGRAM allocatedLBoundDerived03
 
     ALLOCATE( derived(20,4) :: derivedAlloc( -1:0,-1:-1,0:0,0:1 ) )
 
-    IF (.NOT. ALLOCATED( derivedAlloc )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( derivedAlloc )) ERROR STOP 10_4
 
-    IF (SIZE( derivedAlloc ) /= 4) CALL zzrc( 20_4 )
+    IF (SIZE( derivedAlloc ) /= 4) ERROR STOP 20_4
 
-    IF (SIZE(derivedAlloc, 1) /= 2) CALL zzrc( 21_4 )
-    IF (SIZE(derivedAlloc, 2) /= 1) CALL zzrc( 22_4 )
-    IF (SIZE(derivedAlloc, 3) /= 1) CALL zzrc( 23_4 )
-    IF (SIZE(derivedAlloc, 4) /= 2) CALL zzrc( 24_4 )
+    IF (SIZE(derivedAlloc, 1) /= 2) ERROR STOP 21_4
+    IF (SIZE(derivedAlloc, 2) /= 1) ERROR STOP 22_4
+    IF (SIZE(derivedAlloc, 3) /= 1) ERROR STOP 23_4
+    IF (SIZE(derivedAlloc, 4) /= 2) ERROR STOP 24_4
 
 
     DO i = 0, 1
@@ -126,14 +126,14 @@ PROGRAM allocatedLBoundDerived03
     derivedAlloc = derived
 
 
-    IF (.NOT. ALLOCATED( derivedAlloc )) CALL zzrc( 30_4 )
+    IF (.NOT. ALLOCATED( derivedAlloc )) ERROR STOP 30_4
 
-    IF (SIZE( derivedAlloc ) /= 4) CALL zzrc( 40_4 )
+    IF (SIZE( derivedAlloc ) /= 4) ERROR STOP 40_4
 
-    IF (SIZE(derivedAlloc, 1) /= 1) CALL zzrc( 41_4 )
-    IF (SIZE(derivedAlloc, 2) /= 2) CALL zzrc( 42_4 )
-    IF (SIZE(derivedAlloc, 3) /= 2) CALL zzrc( 43_4 )
-    IF (SIZE(derivedAlloc, 4) /= 1) CALL zzrc( 44_4 )
+    IF (SIZE(derivedAlloc, 1) /= 1) ERROR STOP 41_4
+    IF (SIZE(derivedAlloc, 2) /= 2) ERROR STOP 42_4
+    IF (SIZE(derivedAlloc, 3) /= 2) ERROR STOP 43_4
+    IF (SIZE(derivedAlloc, 4) /= 1) ERROR STOP 44_4
 
 
     PRINT *, 'idxBase    = (', idxBase, ')'

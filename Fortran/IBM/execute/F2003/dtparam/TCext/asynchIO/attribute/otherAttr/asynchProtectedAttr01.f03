@@ -94,7 +94,7 @@ PROGRAM asynchProtectedAttr01
         &FORM='unformatted', ASYNCHRONOUS='yes', IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "OPEN() <", oStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -114,10 +114,10 @@ PROGRAM asynchProtectedAttr01
     CLOSE(23, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", oStat, "> ", oMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
 
     ELSE IF (wStat <> 0) THEN
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 END PROGRAM asynchProtectedAttr01

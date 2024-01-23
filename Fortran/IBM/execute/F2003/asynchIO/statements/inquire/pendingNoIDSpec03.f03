@@ -73,7 +73,7 @@ program pendingNoIDSpec03
         ACTION='write', ACCESS='stream', IOSTAT=iStat, IOMSG=iMsg)
     IF (0 /= iStat) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -94,7 +94,7 @@ program pendingNoIDSpec03
     inquire(2012, pending=iPENDING, iostat=iStat, iomsg=iMsg)
     if (0 /= iStat) then
         write(0, *) "INQUIRE() <", iStat, "> ", iMsg
-        call zzrc( 41 )
+        error stop 41
     end if
 
 
@@ -104,7 +104,7 @@ program pendingNoIDSpec03
     CLOSE(2012, IOSTAT=iStat, IOMSG=iMsg)
     IF (0 /= iStat) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 81 )
+        ERROR STOP 81
     END IF
 
 end program pendingNoIDSpec03

@@ -51,7 +51,7 @@ PROGRAM openActionSpec01
             &ACTION='read', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -77,7 +77,7 @@ PROGRAM openActionSpec01
     CLOSE(UNIT=ioUnit, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
 
     ELSE IF (wStat <> 0) THEN
         CALL zzrc( wStat )

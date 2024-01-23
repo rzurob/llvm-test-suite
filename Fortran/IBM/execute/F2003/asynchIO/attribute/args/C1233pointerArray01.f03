@@ -55,7 +55,7 @@ PROGRAM C1233pointerArray01
         ACCESS='stream', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -63,14 +63,14 @@ PROGRAM C1233pointerArray01
 
     iStat = SaveData(1233, n, arrayPtr)
     IF (iStat <> 0) THEN
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
     REWIND(1233, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "REWIND() <", iStat, "> ", iMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
@@ -78,12 +78,12 @@ PROGRAM C1233pointerArray01
         READ(1233, IOSTAT=iStat, IOMSG=iMsg) readValue
         IF (iStat <> 0) THEN
             WRITE(0, *) i, "READ() <", iStat, "> ", iMsg
-            CALL zzrc( 4 )
+            ERROR STOP 4
 
         ELSE IF (readValue <> dataArray( i )) THEN
             WRITE(0, *) "dataArray(", i, ") =",&
                         dataArray( i ), ", readValue =", readValue
-            CALL zzrc( 5 )
+            ERROR STOP 5
         END IF
     END DO
 
@@ -91,7 +91,7 @@ PROGRAM C1233pointerArray01
     CLOSE(1233, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 END PROGRAM C1233pointerArray01

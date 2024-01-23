@@ -55,7 +55,7 @@ PROGRAM asynchDimAttr01
             &ACCESS='stream', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN(): <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -99,7 +99,7 @@ PROGRAM asynchDimAttr01
     CLOSE(UNIT=42, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE(): <", iStat, "> ", iMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
 
 
     ELSE IF (rFail <> 0) THEN

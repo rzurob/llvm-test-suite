@@ -44,22 +44,22 @@ PROGRAM allocatedAllocatable03
 
 
     ALLOCATE(logScalarAlloc, SOURCE=.TRUE._2)
-    IF (.NOT. ALLOCATED( logScalarAlloc )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( logScalarAlloc )) ERROR STOP 10_4
 
 
     logScalarAlloc = .FALSE._4
 
-    IF (.NOT. ALLOCATED( logScalarAlloc )) CALL zzrc( 20_4 )
-    IF (KIND( logScalarAlloc ) /= 2) CALL zzrc( 30_4 )
-    IF ( logScalarAlloc ) CALL zzrc( 40_4 )
+    IF (.NOT. ALLOCATED( logScalarAlloc )) ERROR STOP 20_4
+    IF (KIND( logScalarAlloc ) /= 2) ERROR STOP 30_4
+    IF ( logScalarAlloc ) ERROR STOP 40_4
 
 
     ALLOCATE(intArrayAlloc( 10,10,10 ), SOURCE=RESHAPE(&
         (/ (((INT(((j * k) + i), 8), k = 1, 10), j = 1, 10), i = 1, 10) /),&
                                                             (/ 10, 10, 10 /)))
 
-    IF (.NOT. ALLOCATED( intArrayAlloc )) CALL zzrc( 50_4 )
-    IF (SIZE( intArrayAlloc ) /= 1000) CALL zzrc( 60_4 )
+    IF (.NOT. ALLOCATED( intArrayAlloc )) ERROR STOP 50_4
+    IF (SIZE( intArrayAlloc ) /= 1000) ERROR STOP 60_4
 
 
     intArrayAlloc = RESHAPE(&
@@ -67,8 +67,8 @@ PROGRAM allocatedAllocatable03
                         k = 1, 10), j = 1, 10), i = 1, 10) /),&
                                                 (/ 10, 10, 10 /))
 
-    IF (.NOT. ALLOCATED( intArrayAlloc )) CALL zzrc( 70_4 )
-    IF (SIZE( intArrayAlloc ) /= 1000) CALL zzrc( 80_4 )
+    IF (.NOT. ALLOCATED( intArrayAlloc )) ERROR STOP 70_4
+    IF (SIZE( intArrayAlloc ) /= 1000) ERROR STOP 80_4
 
     DO i = 1, 3
         IF (SIZE(intArrayAlloc, i) /= 10) CALL zzrc( (90_4 + i) )
@@ -84,12 +84,12 @@ PROGRAM allocatedAllocatable03
                                 ",", i, ") = ", intArrayAlloc( k,j,i )
                     PRINT *, "Should be:", l
 
-                    CALL zzrc( 100_4 )
+                    ERROR STOP 100_4
 
                 ELSE IF (KIND( intArrayAlloc( k,j,i ) ) /= 8) THEN
                     PRINT *, "KIND( intArrayAlloc(", k, ",", j,&
                             ",", i, ") =",KIND( intArrayAlloc( k,j,i ) )
-                    CALL zzrc( 110_4 )
+                    ERROR STOP 110_4
                 END IF
             END DO
         END DO

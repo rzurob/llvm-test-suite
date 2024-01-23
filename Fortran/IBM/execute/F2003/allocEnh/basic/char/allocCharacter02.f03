@@ -52,7 +52,7 @@ PROGRAM allocCharacter02
     ALLOCATE(allocArray( 3,1,3 ), STAT=iStat, ERRMSG=errMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "ALLOCATE( allocArray( 3,1,3 ) ) <", iStat, "> ", errMsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
@@ -73,7 +73,7 @@ PROGRAM allocCharacter02
 
     IF (.NOT. ALLOCATED( allocArray )) THEN
         WRITE(0, *) "ALLOCATED( allocArray ) == .FALSE."
-        CALL zzrc( 20_4 )
+        ERROR STOP 20_4
     END IF
 
 

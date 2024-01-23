@@ -53,14 +53,14 @@ PROGRAM idSpecIDValue05
         &FORM='unformatted', ASYNCHRONOUS='yes', IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
     WRITE(66, ASYNCHRONOUS='yes', ID=iID, IOSTAT=iStat, IOMSG=iMsg) 66
     IF (iStat <> 0) THEN
         WRITE(0, *) "WRITE() <", iStat, "> ", iMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
     iID1 = iID
@@ -69,7 +69,7 @@ PROGRAM idSpecIDValue05
     WRITE(66, ASYNCHRONOUS='yes', ID=iID, IOSTAT=iStat, IOMSG=iMsg) 66
     IF (iStat <> 0) THEN
         WRITE(0, *) "WRITE() <", iStat, "> ", iMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
     iID2 = iID
@@ -78,7 +78,7 @@ PROGRAM idSpecIDValue05
     WRITE(66, ASYNCHRONOUS='yes', ID=iID, IOSTAT=iStat, IOMSG=iMsg) 66
     IF (iStat <> 0) THEN
         WRITE(0, *) "WRITE() <", iStat, "> ", iMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
     iID3 = iID
@@ -89,7 +89,7 @@ PROGRAM idSpecIDValue05
     WAIT(UNIT=66, ID=iID1, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
@@ -98,7 +98,7 @@ PROGRAM idSpecIDValue05
     WAIT(66, ID=iID2, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 
@@ -107,14 +107,14 @@ PROGRAM idSpecIDValue05
     WAIT(ID=iID3, IOSTAT=iStat, UNIT=66, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
 
     CLOSE(UNIT=66, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 8 )
+        ERROR STOP 8
     END IF
 
 END PROGRAM idSpecIDValue05

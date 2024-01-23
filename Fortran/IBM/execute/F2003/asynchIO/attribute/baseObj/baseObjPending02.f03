@@ -49,7 +49,7 @@ PROGRAM baseObjPending02
     OPEN(8, ACTION='write', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=ioErrorMsg)
     IF (iStat /= 0) THEN
         PRINT *, "OPEN(): ", ioErrorMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -60,7 +60,7 @@ PROGRAM baseObjPending02
     CLOSE(8, IOSTAT=iStat, IOMSG=ioErrorMsg)
     IF (iStat /= 0) THEN
         PRINT *, "CLOSE(): ", ioErrorMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 END PROGRAM baseObjPending02
@@ -83,7 +83,7 @@ SUBROUTINE AsynchronousWrite( aLogical )
     WRITE(8, *, ASYNCHRONOUS='yes', IOSTAT=iStatus, IOMSG=ioErrMsg) aLogical
     IF (iStatus /= 0) THEN
         PRINT *, "WRITE(): ", ioErrMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 END SUBROUTINE AsynchronousWrite

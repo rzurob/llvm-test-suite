@@ -43,16 +43,16 @@ PROGRAM unAllocCharLBound04
     CHARACTER(7), ALLOCATABLE :: chrArrAlloc( :,:,:,:,:,: )
 
 
-    IF ( ALLOCATED( chrArrAlloc ) ) CALL zzrc( 10_4 )
+    IF ( ALLOCATED( chrArrAlloc ) ) ERROR STOP 10_4
 
 
     chrArrAlloc = chrArr
 
 
-    IF (.NOT. ALLOCATED( chrArrAlloc )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( chrArrAlloc )) ERROR STOP 20_4
 
     PRINT *, SIZE( chrArrAlloc )
-    IF (SIZE( chrArrAlloc ) /= 64)      CALL zzrc( 30_4 )
+    IF (SIZE( chrArrAlloc ) /= 64)      ERROR STOP 30_4
 
 
     PRINT *
@@ -70,6 +70,6 @@ PROGRAM unAllocCharLBound04
     PRINT 10, chrArrAlloc
 10  FORMAT(4(" '",A7,"',"))
 
-    IF (.NOT. ALL(chrArrAlloc == 'abcDEFg')) CALL zzrc( 60_4 )
+    IF (.NOT. ALL(chrArrAlloc == 'abcDEFg')) ERROR STOP 60_4
 
 END PROGRAM unAllocCharLBound04

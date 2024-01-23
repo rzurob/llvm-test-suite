@@ -55,14 +55,14 @@ PROGRAM allocCharacter03
     IF (iStat /= 0) THEN
         WRITE(0, *) "ALLOCATE(allocScalarChar, SOURCE='12345') <",&
                                                         iStat, "> ", msg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
     ALLOCATE(CHARACTER( 5 ) :: allocArrayChar( 5,5 ), STAT=iStat, ERRMSG=msg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "ALLOCATE(CHARACTER( 5 ) :: allocArrayChar( 5,5 )) <",&
                                                             iStat, "> ", msg
-        CALL zzrc( 20_4 )
+        ERROR STOP 20_4
     END IF
 
 
@@ -77,20 +77,20 @@ PROGRAM allocCharacter03
     allocScalarChar = dataArray( 1,1 )
     IF (.NOT. ALLOCATED( allocScalarChar )) THEN
         WRITE(0, *) "ALLOCATED( allocScalarChar ) == .FALSE."
-        CALL zzrc( 30_4 )
+        ERROR STOP 30_4
 
     ELSE IF (allocScalarChar /= dataArray( 1,1 )) THEN
         WRITE(0, *) " allocScalarChar = '", allocScalarChar, "'"
         WRITE(0, *) "dataArray( 1,1 ) = '",&
                         dataArray( 1,1 ), "' (should be the same)"
-        CALL zzrc( 40_4 )
+        ERROR STOP 40_4
     END IF
 
 
     allocArrayChar = dataArray
     IF (.NOT. ALLOCATED( allocArrayChar )) THEN
         WRITE(0, *) "ALLOCATED( allocArrayChar ) == .FALSE."
-        CALL zzrc( 50_4 )
+        ERROR STOP 50_4
     END IF
 
     allocArrayShape = SHAPE( allocArrayChar )
@@ -100,7 +100,7 @@ PROGRAM allocCharacter03
             WRITE(0, *) "allocArrayShape(", i, ") =", allocArrayShape( i )
             WRITE(0, *) "(should be 5))"
 
-            CALL zzrc( 60_4 )
+            ERROR STOP 60_4
         END IF
     END DO
 

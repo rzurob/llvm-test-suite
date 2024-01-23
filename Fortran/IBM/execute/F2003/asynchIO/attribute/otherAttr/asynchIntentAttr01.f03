@@ -51,7 +51,7 @@ PROGRAM asynchIntentAttr01
         &ACCESS='stream', IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat /= 0) THEN
         WRITE(0, *) "OPEN(): <", oStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -82,7 +82,7 @@ PROGRAM asynchIntentAttr01
     CLOSE(UNIT=57, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat /= 0) THEN
         WRITE(0, *) "CLOSE(): <", oStat, "> ", oMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
 
     ELSE IF (wFail /= 0) THEN
         CALL zzrc( wFail )

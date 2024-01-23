@@ -67,15 +67,15 @@
       USE MOD
       IMPLICIT NONE
 
-      IF ( COMMAND_ARGUMENT_COUNT() .ne. 3)     call zzrc( 72 )
+      IF ( COMMAND_ARGUMENT_COUNT() .ne. 3)     error stop 72
 
-      IF ( REC_COMMAND_ARGUMENT_COUNT( COMMAND_ARGUMENT_COUNT()))   call zzrc( 73 )
+      IF ( REC_COMMAND_ARGUMENT_COUNT( COMMAND_ARGUMENT_COUNT()))   error stop 73
 
-      IF ( REC_GET_COMMAND( COMMAND_ARGUMENT_COUNT()))              call zzrc( 74 )
+      IF ( REC_GET_COMMAND( COMMAND_ARGUMENT_COUNT()))              error stop 74
 
-      IF ( REC_GET_COMMAND_ARGUMENT( COMMAND_ARGUMENT_COUNT()))     call zzrc( 75 )
+      IF ( REC_GET_COMMAND_ARGUMENT( COMMAND_ARGUMENT_COUNT()))     error stop 75
 
-      IF (REC_GET_ENVIRONMENT_VARIABLE( COMMAND_ARGUMENT_COUNT()))  call zzrc( 76 )
+      IF (REC_GET_ENVIRONMENT_VARIABLE( COMMAND_ARGUMENT_COUNT()))  error stop 76
 
 
      CONTAINS

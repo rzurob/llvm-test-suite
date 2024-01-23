@@ -156,7 +156,7 @@ SUBROUTINE TContainerInit( )
     ALLOCATE(tContainer(4,2,3) :: dataTarget( 130 ), STAT=stat, ERRMSG=errMsg)
     IF (stat /= 0) THEN
         PRINT *, "ALLOCATE(STAT=", stat, ")", errMsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
     DO i = 1, 130

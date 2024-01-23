@@ -73,7 +73,7 @@ PROGRAM asynchAllocAttr01
     ALLOCATE(tNameRec(4,10,1) :: nameList( n ), STAT=iStatus, ERRMSG=ioErrMsg)
     IF (iStatus <> 0) THEN
         WRITE(0, *) "ALLOCATE(): <", iStatus, "> ", ioErrMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -83,7 +83,7 @@ PROGRAM asynchAllocAttr01
             &IOSTAT=oStatus, IOMSG=ioErrMsg, FORM='formatted')
     IF (oStatus <> 0) THEN
         WRITE(0, *) "OPEN(): <", oStatus, "> ", ioErrMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -120,14 +120,14 @@ PROGRAM asynchAllocAttr01
     CLOSE(2600, IOSTAT=cStatus, IOMSG=ioErrMsg)
     IF (cStatus <> 0) THEN
         WRITE(0, *) "CLOSE() <", cStatus, "> ", ioErrMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
 
 
     ELSE IF (wStatus <> 0) THEN
-        CALL zzrc( 4 )
+        ERROR STOP 4
 
     ELSE IF (iStatus <> 0) THEN
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 

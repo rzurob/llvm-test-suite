@@ -148,10 +148,10 @@ PROGRAM componentSelector02
 
     ASSOCIATE(aRange => quarterRange%range)
         IF (SIZE( aRange ) /= 4) THEN
-            CALL zzrc( 250_4 )
+            ERROR STOP 250_4
 
         ELSE IF (KIND( aRange ) /= 4) THEN
-            CALL zzrc( 251_4 )
+            ERROR STOP 251_4
         END IF
 
         DO i = 1_4, 4_4

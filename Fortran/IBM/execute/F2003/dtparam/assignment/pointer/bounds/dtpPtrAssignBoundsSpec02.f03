@@ -209,7 +209,7 @@ PROGRAM dtpPtrAssignBoundsSpec02
             CALL Verify(base, bounds, 10_4)
 
         CLASS DEFAULT
-            CALL zzrc( 10_4 )
+            ERROR STOP 10_4
     END SELECT
 
 
@@ -220,7 +220,7 @@ PROGRAM dtpPtrAssignBoundsSpec02
             CALL Verify(ext1, bounds, 50_4)
 
         CLASS DEFAULT
-            CALL zzrc( 50_4 )
+            ERROR STOP 50_4
     END SELECT
 
 
@@ -231,7 +231,7 @@ PROGRAM dtpPtrAssignBoundsSpec02
             CALL Verify(ext2, bounds, 80_4)
 
         CLASS DEFAULT
-            CALL zzrc( 80_4 )
+            ERROR STOP 80_4
     END SELECT
 
 
@@ -242,7 +242,7 @@ PROGRAM dtpPtrAssignBoundsSpec02
             CALL Verify(ext2, bounds, 100_4)
 
         CLASS DEFAULT
-            CALL zzrc( 100_4 )
+            ERROR STOP 100_4
     END SELECT
 
     CONTAINS

@@ -48,13 +48,13 @@ MODULE mModule
         SUBROUTINE Init( )
 
             ALLOCATE(CHARACTER(4) :: chrArrAlloc1( 2,2,2,2,2,2,2 ))
-            IF (.NOT. ALLOCATED( chrArrAlloc1 )) CALL zzrc( 10_4 )
+            IF (.NOT. ALLOCATED( chrArrAlloc1 )) ERROR STOP 10_4
             chrArrAlloc1 =&
                 RESHAPE((/ ('cube', i = 1, 128) /), (/ 2,2,2,2,2,2,2 /))
 
             ALLOCATE(chrArrAlloc2( 0:1,0:1,0:1,0:1,0:1,0:1,0:1 ),&
                 SOURCE=RESHAPE((/ ('CAB', i = 1, 128) /), (/ 2,2,2,2,2,2,2 /)))
-            IF (.NOT. ALLOCATED( chrArrAlloc2 )) CALL zzrc( 11_4 )
+            IF (.NOT. ALLOCATED( chrArrAlloc2 )) ERROR STOP 11_4
 
         END SUBROUTINE Init
 
@@ -62,12 +62,12 @@ MODULE mModule
         SUBROUTINE IntrinsicAssignment( )
 
             chrArrAlloc1 = chrArrAlloc2
-            IF (.NOT. ALLOCATED( chrArrAlloc1 )) CALL zzrc( 20_4 )
-            IF (SIZE( chrArrAlloc1 ) /= 128)     CALL zzrc( 21_4 )
+            IF (.NOT. ALLOCATED( chrArrAlloc1 )) ERROR STOP 20_4
+            IF (SIZE( chrArrAlloc1 ) /= 128)     ERROR STOP 21_4
 
             chrArrAlloc2 = chrArr
-            IF (.NOT. ALLOCATED( chrArrAlloc2 )) CALL zzrc( 22_4 )
-            IF (SIZE( chrArrAlloc2 ) /= 16)      CALL zzrc( 23_4 )
+            IF (.NOT. ALLOCATED( chrArrAlloc2 )) ERROR STOP 22_4
+            IF (SIZE( chrArrAlloc2 ) /= 16)      ERROR STOP 23_4
 
         END SUBROUTINE IntrinsicAssignment
 
@@ -89,14 +89,14 @@ PROGRAM allocCharLBound04
         PRINT *, i, LBOUND(chrArrAlloc1, i), SIZE(chrArrAlloc1, i),&
                     LBOUND(chrArrAlloc2, i), SIZE(chrArrAlloc2, i)
 
-        IF (LBOUND(chrArrAlloc1, i) /= 0)   CALL zzrc( 30_4 )
-        IF (SIZE(chrArrAlloc1, i) /= 2)     CALL zzrc( 31_4 )
+        IF (LBOUND(chrArrAlloc1, i) /= 0)   ERROR STOP 30_4
+        IF (SIZE(chrArrAlloc1, i) /= 2)     ERROR STOP 31_4
 
-        IF (LBOUND(chrArrAlloc2, i) /= -1)  CALL zzrc( 40_4 )
+        IF (LBOUND(chrArrAlloc2, i) /= -1)  ERROR STOP 40_4
         IF (MOD(i, 2) == 1) THEN
-            IF (SIZE(chrArrAlloc2, i) /= 2)     CALL zzrc( 41_4 )
+            IF (SIZE(chrArrAlloc2, i) /= 2)     ERROR STOP 41_4
         ELSE
-            IF (SIZE(chrArrAlloc2, i) /= 1)     CALL zzrc( 42_4 )
+            IF (SIZE(chrArrAlloc2, i) /= 1)     ERROR STOP 42_4
         END IF
     END DO
 
@@ -106,7 +106,7 @@ PROGRAM allocCharLBound04
         PRINT 10, chrArrAlloc1
 10      FORMAT(7('"',A3,'", '),'"',A3,'"')
 
-        CALL zzrc( 50_4 )
+        ERROR STOP 50_4
 
     ELSE
         DO i = -1, 0

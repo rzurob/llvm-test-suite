@@ -49,20 +49,20 @@ PROGRAM deferredLenDummyArg01
     ALLOCATE(CHARACTER(31) :: charScalarAlloc)
 
 
-    IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 10_4
 
     CALL AssignSub(charScalarAlloc, 20_4)
 
-    IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 11_4 )
+    IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 11_4
 
     PRINT *, 'LEN( charScalarAlloc ) =', LEN( charScalarAlloc )
     PRINT *, "'", charScalarAlloc, "'"
 
-    IF (LEN( charScalarAlloc ) /= 71) CALL zzrc( 12_4 )
+    IF (LEN( charScalarAlloc ) /= 71) ERROR STOP 12_4
 
     IF (charScalarAlloc /=&
         ('Test with long CHARACTER Var. and ' //&
-            '"Test with a long CHARACTER Variable"')) CALL zzrc( 13_4 )
+            '"Test with a long CHARACTER Variable"')) ERROR STOP 13_4
 
 
     DEALLOCATE( charScalarAlloc )
@@ -70,20 +70,20 @@ PROGRAM deferredLenDummyArg01
 
     PRINT *
 
-    IF ( ALLOCATED( charScalarAlloc ) ) CALL zzrc( 14_4 )
+    IF ( ALLOCATED( charScalarAlloc ) ) ERROR STOP 14_4
 
     CALL AssignSub(charScalarAlloc, 30_4)
 
-    IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 15_4 )
+    IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 15_4
 
     PRINT *, 'LEN( charScalarAlloc ) =', LEN( charScalarAlloc )
     PRINT *, "'", charScalarAlloc, "'"
 
-    IF (LEN( charScalarAlloc ) /= 71) CALL zzrc( 16_4 )
+    IF (LEN( charScalarAlloc ) /= 71) ERROR STOP 16_4
 
     IF (charScalarAlloc /=&
         ('Test with long CHARACTER Var. and ' //&
-            '"Test with a long CHARACTER Variable"')) CALL zzrc( 17_4 )
+            '"Test with a long CHARACTER Variable"')) ERROR STOP 17_4
 
 END PROGRAM deferredLenDummyArg01
 

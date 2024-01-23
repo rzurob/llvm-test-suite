@@ -71,12 +71,12 @@ PROGRAM exprIsIntrinsicFunc01
 
 
     d = RESHAPE([ (tD(20,2,4)(real16Arr,(i - 1)), i = 1, 10) ], [ 5,2 ])
-    IF (.NOT. ALLOCATED( d )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( d )) ERROR STOP 10_4
 
 
     PRINT *, SIZE(d, 1), SIZE(d, 2)
-    IF (SIZE(d, 1) /= 5) CALL zzrc( 11_4 )
-    IF (SIZE(d, 2) /= 2) CALL zzrc( 12_4 )
+    IF (SIZE(d, 1) /= 5) ERROR STOP 11_4
+    IF (SIZE(d, 2) /= 2) ERROR STOP 12_4
 
 
     DO i = 1, 2

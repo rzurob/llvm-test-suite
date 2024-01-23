@@ -75,14 +75,14 @@ PROGRAM openDecimalSpec01
                 &ACTION='read', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN(Read,", fileName, ") <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
     OPEN(oUnit, FORM='formatted', ACTION='write',&
         &DECIMAL='comma', ASYNCHRONOUS='yes', IOSTAT=oStat, IOMSG=oMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN(Write,fort.", oUnit, ") <", oStat, "> ", oMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -99,7 +99,7 @@ PROGRAM openDecimalSpec01
         IF ((iStat /= 0) .AND.&
             &(iStat /= IOSTAT_END)) THEN
             WRITE(0, *) "READ() <", iStat, "> ", iMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
 
 
@@ -113,7 +113,7 @@ PROGRAM openDecimalSpec01
             WAIT(2048, ID=wID, IOSTAT=oStat, IOMSG=oMsg)
             IF (oStat /= 0) THEN
                 WRITE(0, *) "WAIT(Write) <", oStat, "> ", oMsg
-                CALL zzrc( 4 )
+                ERROR STOP 4
             END IF
         END IF
 
@@ -125,7 +125,7 @@ PROGRAM openDecimalSpec01
 
         IF (oStat /= 0) THEN
             WRITE(0, *) "WRITE() <", oStat, "> ", oMsg
-            CALL zzrc( 5 )
+            ERROR STOP 5
         END IF
 
 
@@ -133,7 +133,7 @@ PROGRAM openDecimalSpec01
             WAIT(1024, ID=rID, IOSTAT=iStat, IOMSG=iMsg)
             IF (iStat /= 0) THEN
                 WRITE(0, *) "WAIT(Read) <", iStat, "> ", iMsg
-                CALL zzrc( 6 )
+                ERROR STOP 6
             END IF
         END IF
     END DO
@@ -142,13 +142,13 @@ PROGRAM openDecimalSpec01
     CLOSE(UNIT=2048, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", oStat, "> ", oMsg
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
     CLOSE(UNIT=1024, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE(", fileName, ") <", iStat, "> ", iMsg
-        CALL zzrc( 8 )
+        ERROR STOP 8
     END IF
 
 END PROGRAM openDecimalSpec01

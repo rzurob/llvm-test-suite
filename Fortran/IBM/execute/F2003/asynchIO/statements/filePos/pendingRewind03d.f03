@@ -65,7 +65,7 @@ program pendingRewind03d
         &file='pendingRewind03d.dat', asynchronous='yes')
     if (iStat /= 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 11_4 )
+        error stop 11_4
     end if
 
 
@@ -79,7 +79,7 @@ program pendingRewind03d
 
 
     rewind(40, ERR=100)
-    call zzrc( 31_4 )
+    error stop 31_4
 
 
 100 do i = 1, 10
@@ -97,7 +97,7 @@ program pendingRewind03d
     close(40, iostat=iStat, iomsg=iMsg)
     if (iStat /= 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 51_4 )
+        error stop 51_4
     end if
 
 end program pendingRewind03d

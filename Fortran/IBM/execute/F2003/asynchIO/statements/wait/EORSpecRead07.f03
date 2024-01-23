@@ -52,7 +52,7 @@ PROGRAM EORSpecRead07
                         &ACCESS='direct', ACTION='read', RECL=5)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -61,7 +61,7 @@ PROGRAM EORSpecRead07
                 &IOSTAT=iStat, REC=i, IOMSG=iMsg) dataList( i )
         IF (iStat /= 0) THEN
             WRITE(0, *) i, ") READ() <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -69,7 +69,7 @@ PROGRAM EORSpecRead07
     WAIT(ID=ioID( 78 ), UNIT=78, EOR=100, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "WAIT(", ioID( 78 ), ") <", iStat, "> ", iMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
     GOTO 200
@@ -80,7 +80,7 @@ PROGRAM EORSpecRead07
 200 WAIT(78, EOR=300, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
     GOTO 400
@@ -91,7 +91,7 @@ PROGRAM EORSpecRead07
 400 CLOSE(78, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 

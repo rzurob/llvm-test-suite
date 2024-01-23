@@ -59,19 +59,19 @@ PROGRAM actArgArraySectVectSub03
 
     iStat = COpen( )
     IF (iStat <> 0) THEN
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
     DO i = 1, 10
         iStat = CWriteData((n / 10), dataOut( (/ (j, j = i, n, 10) /) ))
         IF (iStat <> 0) THEN
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
     iStat = CClose( )
     IF (iStat <> 0) THEN
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
@@ -80,7 +80,7 @@ PROGRAM actArgArraySectVectSub03
         ASYNCHRONOUS='yes', FORM='unformatted', IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
@@ -90,7 +90,7 @@ PROGRAM actArgArraySectVectSub03
 
         IF (iStat <> 0) THEN
             WRITE(0, *) i, ") READ() <", iStat, "> ", iMsg
-            CALL zzrc( 5 )
+            ERROR STOP 5
         END IF
     END DO
 
@@ -98,7 +98,7 @@ PROGRAM actArgArraySectVectSub03
     CLOSE(4002, IOMSG=iMsg, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 
@@ -107,7 +107,7 @@ PROGRAM actArgArraySectVectSub03
             WRITE(0, *) " dataIn(", i, ") = '", dataIn( i ), "'"
             WRITE(0, *) "dataOut(", i, ") = '", dataOut( i ), "'"
 
-            CALL zzrc( 7 )
+            ERROR STOP 7
         END IF
     END DO
 

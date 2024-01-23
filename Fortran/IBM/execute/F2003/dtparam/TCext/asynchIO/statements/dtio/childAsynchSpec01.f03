@@ -110,7 +110,7 @@ program childAsynchSpec01
         form='formatted', action='readwrite', iostat=iStat)
     if (iStat /= 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -126,7 +126,7 @@ program childAsynchSpec01
     rewind(203, iomsg=iMsg, iostat=iStat)
     if (iStat /= 0) then
         write(0, *) "REWIND() <", iStat, "> ", iMsg
-        call zzrc( 2 )
+        error stop 2
     end if
 
 
@@ -142,7 +142,7 @@ program childAsynchSpec01
     close(203, iomsg=iMsg, iostat=iStat)
     if (iStat /= 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 3 )
+        error stop 3
     end if
 
 end program childAsynchSpec01

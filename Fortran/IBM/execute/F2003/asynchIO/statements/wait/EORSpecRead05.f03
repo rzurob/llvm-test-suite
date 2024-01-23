@@ -52,7 +52,7 @@ PROGRAM EORSpecRead05
         &ACTION='read', FORM='formatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -60,7 +60,7 @@ PROGRAM EORSpecRead05
             &IOSTAT=iStat, IOMSG=iMsg) dataItem1
     IF (iStat <> 0) THEN
         WRITE(0, *) "1) READ() <", iStat, "> ", iMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -70,7 +70,7 @@ PROGRAM EORSpecRead05
     WAIT(EOR=100, UNIT=ioUnit, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
@@ -78,7 +78,7 @@ PROGRAM EORSpecRead05
         &ID=ioID, IOSTAT=iStat, IOMSG=iMsg) dataItem2
     IF (iStat <> 0) THEN
         WRITE(0, *) "2) READ() <", iStat, "> ", iMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 999 FORMAT(I4)
@@ -89,7 +89,7 @@ PROGRAM EORSpecRead05
     WAIT(ID=ioID, UNIT=ioUnit, IOSTAT=iStat, EOR=100, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
@@ -104,7 +104,7 @@ PROGRAM EORSpecRead05
 200 CLOSE(ioUnit, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 END PROGRAM EORSpecRead05

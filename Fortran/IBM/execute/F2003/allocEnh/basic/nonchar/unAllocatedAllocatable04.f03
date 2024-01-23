@@ -53,27 +53,27 @@ PROGRAM unAllocatedAllocatable04
         (/ (CMPLX((i * 3.14), (-i / 3.14), 4), i = -4999, 5000) /),&
                                                         (/ 100, 100 /))
 
-    IF ( ALLOCATED( realArrayAlloc ) ) CALL zzrc( 10_4 )
+    IF ( ALLOCATED( realArrayAlloc ) ) ERROR STOP 10_4
 
 
     realArrayAlloc = complexArray
 
 
-    IF (.NOT. ALLOCATED( realArrayAlloc )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( realArrayAlloc )) ERROR STOP 20_4
 
 
     PRINT *, SIZE( realArrayAlloc )
-    IF (SIZE( realArrayAlloc ) /= 10000) CALL zzrc( 30_4 )
+    IF (SIZE( realArrayAlloc ) /= 10000) ERROR STOP 30_4
 
     PRINT *, SIZE(realArrayAlloc, 1)
-    IF (SIZE(realArrayAlloc, 1) /= 100) CALL zzrc( 40_4 )
+    IF (SIZE(realArrayAlloc, 1) /= 100) ERROR STOP 40_4
 
     PRINT *, SIZE(realArrayAlloc, 2)
-    IF (SIZE(realArrayAlloc, 2) /= 100) CALL zzrc( 50_4 )
+    IF (SIZE(realArrayAlloc, 2) /= 100) ERROR STOP 50_4
 
 
     PRINT *, KIND( realArrayAlloc( j,i ) )
-    IF (KIND( realArrayAlloc( j,i ) ) /= 8) CALL zzrc( 60_4 )
+    IF (KIND( realArrayAlloc( j,i ) ) /= 8) ERROR STOP 60_4
 
 
     DO i = 1, 100
@@ -85,7 +85,7 @@ PROGRAM unAllocatedAllocatable04
                 PRINT *, "realArrayAlloc(", j, ",", i, ") =",&
                                             realArrayAlloc( j,i )
 
-                CALL zzrc( 70_4 )
+                ERROR STOP 70_4
             END IF
         END DO
     END DO

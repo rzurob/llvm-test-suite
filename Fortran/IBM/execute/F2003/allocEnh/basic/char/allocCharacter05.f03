@@ -49,15 +49,15 @@ PROGRAM allocCharacter05
     cAA = (/ ('fortran', i = 1, 6) /)
 
 
-    IF (.NOT. ALLOCATED( cAA )) CALL zzrc( 10_4 )
-    IF (SIZE( cAA ) /= 6)       CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( cAA )) ERROR STOP 10_4
+    IF (SIZE( cAA ) /= 6)       ERROR STOP 20_4
 
 
     cAA = cALong
 
 
-    IF (.NOT. ALLOCATED( cAA )) CALL zzrc( 30_4 )
-    IF (SIZE( cAA ) /= 10)      CALL zzrc( 40_4 )
+    IF (.NOT. ALLOCATED( cAA )) ERROR STOP 30_4
+    IF (SIZE( cAA ) /= 10)      ERROR STOP 40_4
 
 
     DO i = 1_4, 10_4
@@ -71,8 +71,8 @@ PROGRAM allocCharacter05
     cAA = cAShort
 
 
-    IF (.NOT. ALLOCATED( cAA )) CALL zzrc( 70_4 )
-    IF (SIZE( cAA ) /= 4)       CALL zzrc( 80_4 )
+    IF (.NOT. ALLOCATED( cAA )) ERROR STOP 70_4
+    IF (SIZE( cAA ) /= 4)       ERROR STOP 80_4
 
 
     DO i = 1_4, 4_4

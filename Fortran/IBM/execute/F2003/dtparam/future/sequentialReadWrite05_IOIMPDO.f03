@@ -176,35 +176,35 @@ PROGRAM sequentialReadWrite05
     OPEN(99, ACTION='readwrite', FORM='unformatted', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, "OPEN(", iostat, ") ", iomsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
     iostat = bC%WriteTC8(bC, 99)
-    IF (iostat /= 0) CALL zzrc( 20_4 )
+    IF (iostat /= 0) ERROR STOP 20_4
 
     iostat = bR%WriteTR8(bR, 99)
-    IF (iostat /= 0) CALL zzrc( 30_4 )
+    IF (iostat /= 0) ERROR STOP 30_4
 
 
     REWIND(99, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, "REWIND(", iostat, ") ", iomsg
-        CALL zzrc( 40_4 )
+        ERROR STOP 40_4
     END IF
 
 
     iostat = eC%ReadTC8(eC, 99)
-    IF (iostat /= 0) CALL zzrc( 50_4 )
+    IF (iostat /= 0) ERROR STOP 50_4
 
     iostat = eR%ReadTR8(eR, 99)
-    IF (iostat /= 0) CALL zzrc( 60_4 )
+    IF (iostat /= 0) ERROR STOP 60_4
 
 
     CLOSE(99, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, "CLOSE(", iostat, ") ", iomsg
-        CALL zzrc( 70_4 )
+        ERROR STOP 70_4
     END IF
 
 

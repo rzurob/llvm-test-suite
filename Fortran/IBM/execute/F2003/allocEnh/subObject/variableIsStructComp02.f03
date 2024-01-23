@@ -60,19 +60,19 @@ PROGRAM variableIsStructComp02
 
     tT = tT5x5
     tPtr => tT
-    IF (.NOT. ALLOCATED( tT )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( tT )) ERROR STOP 10_4
     CALL Check(tT5x5, 10_4)
 
     tT = tT2x2
-    IF (.NOT. ALLOCATED( tT )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( tT )) ERROR STOP 20_4
     CALL Check(tT2x2, 20_4)
 
     tT = tT10x10
-    IF (.NOT. ALLOCATED( tT )) CALL zzrc( 30_4 )
+    IF (.NOT. ALLOCATED( tT )) ERROR STOP 30_4
     CALL Check(tT10x10, 30_4)
 
     tT = tType(RESHAPE(tT%aA, [ 20,5 ]))
-    IF (.NOT. ALLOCATED( tT )) CALL zzrc( 40_4 )
+    IF (.NOT. ALLOCATED( tT )) ERROR STOP 40_4
     CALL Check(tType(RESHAPE(tT10x10%aA, [ 20,5 ])), 40_4)
 
 

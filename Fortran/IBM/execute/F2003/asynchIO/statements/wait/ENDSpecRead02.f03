@@ -52,7 +52,7 @@ PROGRAM ENDSpecRead02
         &ACCESS='sequential', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -83,7 +83,7 @@ PROGRAM ENDSpecRead02
     WAIT(IOSTAT=iStat, UNIT=811, END=200, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 31 )
+        ERROR STOP 31
     END IF
 
     GOTO 300
@@ -105,7 +105,7 @@ PROGRAM ENDSpecRead02
     CLOSE(811, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 41 )
+        ERROR STOP 41
     END IF
 
 END PROGRAM ENDSpecRead02

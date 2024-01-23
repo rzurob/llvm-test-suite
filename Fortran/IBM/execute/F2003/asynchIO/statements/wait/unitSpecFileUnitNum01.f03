@@ -66,11 +66,11 @@ PROGRAM unitSpecFileUnitNum01
 
     IF (i <> j) THEN
         PRINT *, "i = '", i, "', j = '", j, "'"
-        CALL zzrc( 1 )
+        ERROR STOP 1
 
     ELSE IF (i <> 42) THEN
         PRINT *, "(i != 42)  i = '", i, "'"
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -97,11 +97,11 @@ PROGRAM unitSpecFileUnitNum01
 
     IF (i <> j) THEN
         PRINT *, "i = '", i, "', j = '", j, "'"
-        CALL zzrc( 3 )
+        ERROR STOP 3
 
     ELSE IF (i <> 42) THEN
         PRINT *, "(i != 42)  i = '", i, "'"
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 END PROGRAM unitSpecFileUnitNum01

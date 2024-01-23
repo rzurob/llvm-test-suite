@@ -34,7 +34,7 @@
         &ASYNCHRONOUS='yes', FORM='unformatted', IOSTAT=iStat)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL ZZRC( 1_4 )
+        error stop 1_4
     END IF
 
       IF ( IVAR >= -2 ) THEN
@@ -59,14 +59,14 @@
         READ(IVAR, ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg,  ID=ioID( i )) VVAR( i )
         IF (iStat /= 0) then
             WRITE(0, *) i, "READ() <", iStat, "> ", iMsg
-            CALL ZZRC( 5_4 )
+            error stop 5_4
         END IF
     END DO
 
     CLOSE(IVAR, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) then
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL ZZRC( 6_4 )
+        error stop 6_4
     END IF
 
 

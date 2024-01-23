@@ -67,17 +67,17 @@ PROGRAM unallocatedLBoundDerived04
     TYPE(tD(:,4)), ALLOCATABLE :: dA( :,:,:,:,:,: )
 
 
-    IF ( ALLOCATED( dA ) ) CALL zzrc( 10_4 )
+    IF ( ALLOCATED( dA ) ) ERROR STOP 10_4
 
 
     dA = d
 
 
-    IF (.NOT. ALLOCATED( dA ))  CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( dA ))  ERROR STOP 20_4
 
 
     PRINT *, SIZE( dA )
-    IF (SIZE( dA ) /= 3**6)     CALL zzrc( 30_4 )
+    IF (SIZE( dA ) /= 3**6)     ERROR STOP 30_4
 
     DO i = 0_4, 5_4
         PRINT *, i, SIZE(dA, (i + 1_4)), LBOUND(dA, (i + 1_4))
@@ -91,13 +91,13 @@ PROGRAM unallocatedLBoundDerived04
         PRINT 10, dA%bR
 10      FORMAT('dA%bR = (',728(F6.2,','),F6.2,')')
 
-        CALL zzrc( 50_4 )
+        ERROR STOP 50_4
 
     ELSE IF (.NOT. ALL( (dA%dI == d%dI) )) THEN
         PRINT 20, dA%dI
 20      FORMAT('dA%dI = (',728(I3,','),I3,')')
 
-        CALL zzrc( 60_4 )
+        ERROR STOP 60_4
     END IF
 
 END PROGRAM unallocatedLBoundDerived04

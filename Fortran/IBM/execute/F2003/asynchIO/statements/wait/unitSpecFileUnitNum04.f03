@@ -71,36 +71,36 @@ PROGRAM unitSpecFileUnitNum04
     READ(UNIT=5, FMT=100, IOSTAT=iStat) i
     IF (iStat <> 0) THEN
         WRITE(0, *) "READ(5) <", iStat, ">"
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
     WAIT(INPUT_UNIT, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT(INPUT_UNIT) <", iStat, ">"
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
     READ(IOSTAT=iStat, FMT=100, UNIT=INPUT_UNIT) j
     IF (iStat <> 0) THEN
         WRITE(0, *) "READ(INPUT_UNIT) <", iStat, ">"
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
     WAIT(IOSTAT=iStat, UNIT=5)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT(5) <", iStat, ">"
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
     IF (i <> j) THEN
         WRITE(0, *) "(i != j)  i = '", i, "', j = '", j, "'"
-        CALL zzrc( 5 )
+        ERROR STOP 5
 
     ELSE IF (i <> 5) THEN
         WRITE(0, *) "(i != 5)  i = '", i, "'"
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 
@@ -111,26 +111,26 @@ PROGRAM unitSpecFileUnitNum04
     WRITE(6, IOSTAT=iStat, FMT=100) i
     IF (iStat <> 0) THEN
         WRITE(0, *) "WRITE(6) <", iStat, ">"
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
     WAIT(UNIT=OUTPUT_UNIT, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT(OUTPUT_UNIT) <", iStat, ">"
-        CALL zzrc( 8 )
+        ERROR STOP 8
     END IF
 
 
     WRITE(IOSTAT=iStat, FMT=100, UNIT=OUTPUT_UNIT) j
     IF (iStat <> 0) THEN
         WRITE(0, *) "WRITE(OUTPUT_UNIT) <", iStat, ">"
-        CALL zzrc( 9 )
+        ERROR STOP 9
     END IF
 
     WAIT(IOSTAT=iStat, UNIT=6)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT(6) <", iStat, ">"
-        CALL zzrc( 10 )
+        ERROR STOP 10
     END IF
 
 
@@ -141,26 +141,26 @@ PROGRAM unitSpecFileUnitNum04
     WRITE(0, IOSTAT=iStat, FMT=100) i
     IF (iStat <> 0) THEN
         WRITE(0, *) "WRITE(0) <", iStat, ">"
-        CALL zzrc( 11 )
+        ERROR STOP 11
     END IF
 
     WAIT(ERROR_UNIT, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT(ERROR_UNIT) <", iStat, ">"
-        CALL zzrc( 12 )
+        ERROR STOP 12
     END IF
 
 
     WRITE(FMT=100, IOSTAT=iStat, UNIT=ERROR_UNIT) j
     IF (iStat <> 0) THEN
         WRITE(0, *) "WRITE(ERROR_UNIT) <", iStat, ">"
-        CALL zzrc( 13 )
+        ERROR STOP 13
     END IF
 
     WAIT(IOSTAT=iStat, UNIT=0)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT(0) <", iStat, ">"
-        CALL zzrc( 14 )
+        ERROR STOP 14
     END IF
 
 

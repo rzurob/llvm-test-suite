@@ -123,11 +123,11 @@ PROGRAM aceNestedExpr01
 
     IF (stat /= 0) THEN
         PRINT *, 'ALLOCATE(', stat, ') ', errmsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
-    IF (SIZE( baseA ) /= 9)         CALL zzrc( 20_4 )
+    IF (SIZE( baseA ) /= 9)         ERROR STOP 20_4
 
     DO i = 1, SIZE( baseA )
         j = MOD((i - 1), 3) + 1

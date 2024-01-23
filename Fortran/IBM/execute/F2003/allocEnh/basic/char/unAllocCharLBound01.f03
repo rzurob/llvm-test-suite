@@ -43,18 +43,18 @@ PROGRAM unAllocCharLBound01
     CHARACTER(4), ALLOCATABLE :: chrArrAlloc( : )
 
 
-    IF ( ALLOCATED( chrArrAlloc ) )     CALL zzrc( 10_4 )
+    IF ( ALLOCATED( chrArrAlloc ) )     ERROR STOP 10_4
 
     CALL IntrinsicAssignment( )
 
-    IF (.NOT. ALLOCATED( chrArrAlloc )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( chrArrAlloc )) ERROR STOP 20_4
 
 
     PRINT *, "SIZE( chrArrAlloc ) =", SIZE( chrArrAlloc ),&
                 ", LBOUND(chrArrAlloc, 1) =", LBOUND(chrArrAlloc, 1)
 
-    IF (SIZE( chrArrAlloc ) /= 11)      CALL zzrc( 30_4 )
-    IF (LBOUND(chrArrAlloc, 1) /= -5)   CALL zzrc( 31_4 )
+    IF (SIZE( chrArrAlloc ) /= 11)      ERROR STOP 30_4
+    IF (LBOUND(chrArrAlloc, 1) /= -5)   ERROR STOP 31_4
 
 
     DO i = -5, 5

@@ -114,13 +114,13 @@ PROGRAM exprSelector08
     tPodPtr => newPodFunc(cPodPtr, 20_4)
 
     IF (.NOT. ASSOCIATED( tPodPtr )) THEN
-        CALL zzrc( 30_4 )
+        ERROR STOP 30_4
 
     ELSE IF (tPodPtr%k /= 4) THEN
-        CALL zzrc( 40_4 )
+        ERROR STOP 40_4
 
     ELSE IF (tPodPtr%l /= 1) THEN
-        CALL zzrc( 50_4 )
+        ERROR STOP 50_4
     END IF
 
     DEALLOCATE( tPodPtr )
@@ -131,13 +131,13 @@ PROGRAM exprSelector08
 
         tPodPtr => func(cPodPtr, 120_4)
         IF (.NOT. ASSOCIATED( tPodPtr )) THEN
-            CALL zzrc( 130_4 )
+            ERROR STOP 130_4
 
         ELSE IF (tPodPtr%k /= 4) THEN
-            CALL zzrc( 140_4 )
+            ERROR STOP 140_4
 
         ELSE IF (tPodPtr%l /= 1) THEN
-            CALL zzrc( 150_4 )
+            ERROR STOP 150_4
         END IF
 
 !    END ASSOCIATE
@@ -153,13 +153,13 @@ PROGRAM exprSelector08
 !        tExtPodPtr => func(cExtPodPtr, 220_4)
         tExtPodPtr => x
         IF (.NOT. ASSOCIATED( tExtPodPtr )) THEN
-            CALL zzrc( 230_4 )
+            ERROR STOP 230_4
 
         ELSE IF (tExtPodPtr%k /= 4) THEN
-            CALL zzrc( 240_4 )
+            ERROR STOP 240_4
 
         ELSE IF (tExtPodPtr%l /= 3) THEN
-            CALL zzrc( 250_4 )
+            ERROR STOP 250_4
         END IF
       class default
         stop 100

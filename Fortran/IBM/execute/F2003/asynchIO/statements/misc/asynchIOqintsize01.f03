@@ -52,7 +52,7 @@ PROGRAM asynchIOqintsize01
                 RECL=4, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1_4 )
+        ERROR STOP 1_4
     END IF
 
 
@@ -65,27 +65,27 @@ PROGRAM asynchIOqintsize01
 
         IF (iStat /= 0) THEN
             WRITE(0, *) "WRITE() <", iStat, "> ", iMsg
-            CALL zzrc( 2_4 )
+            ERROR STOP 2_4
         END IF
     END DO
 
 
     iStat = Wait4IDs(204, 1, 5000, ioID)
     IF (iStat /= 0) THEN
-        CALL zzrc( 3_4 )
+        ERROR STOP 3_4
     END IF
 
 
     iStat = InquireOnIDs(204, 5001, 10000, ioID)
     IF (iStat /= 0) THEN
-        CALL zzrc( 4_4 )
+        ERROR STOP 4_4
     END IF
 
 
     CLOSE(204, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 5_4 )
+        ERROR STOP 5_4
     END IF
 
 END PROGRAM asynchIOqintsize01

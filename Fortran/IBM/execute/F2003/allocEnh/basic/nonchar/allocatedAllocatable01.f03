@@ -51,13 +51,13 @@ PROGRAM allocatedAllocatable01
 
     IF (iStat /= 0) THEN
         WRITE(0, *) "ALLOCATE(scalarReal8Alloc) <", iStat, "> ", errMsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
 
     ELSE IF (scalarReal8Alloc /= 1.234_8) THEN
         WRITE(0, 100) 'ALLOCATE()', scalarReal8Alloc
         WRITE(0, *) "scalarReal8Alloc != 1.234_8"
 
-        CALL zzrc( 20_4 )
+        ERROR STOP 20_4
     END IF
 
     WRITE(0, 100) 'Before', scalarReal8Alloc
@@ -69,7 +69,7 @@ PROGRAM allocatedAllocatable01
         WRITE(0, 100) 'Wrong', scalarReal8Alloc
         WRITE(0, *) "scalarReal8Alloc != 4.567_8"
 
-        CALL zzrc( 30_4 )
+        ERROR STOP 30_4
     END IF
 
     WRITE(0, 100) 'After', scalarReal8Alloc
@@ -86,7 +86,7 @@ PROGRAM allocatedAllocatable01
     IF (iStat /= 0) THEN
         WRITE(0, *) "ALLOCATE(arrayComplex16Alloc( 10 )) <",&
                                                     iStat, "> ", errMsg
-        CALL zzrc( 40_4 )
+        ERROR STOP 40_4
     END IF
 
     DO i = 1, 10

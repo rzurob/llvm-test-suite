@@ -101,12 +101,12 @@ PROGRAM allocContainerVariable02
     INTEGER :: stat
 
     stat = AllocateContainer(3, 5)
-    IF (stat /= 0)                      CALL zzrc( 10_4 )
+    IF (stat /= 0)                      ERROR STOP 10_4
 
 
-    IF (cA%l /= 10)                     CALL zzrc( 20_4 )
-    IF (cA%n /= 5)                      CALL zzrc( 21_4 )
-    IF ( ANY(SHAPE( cA ) /= [ 3 ]) )    CALL zzrc( 22_4 )
+    IF (cA%l /= 10)                     ERROR STOP 20_4
+    IF (cA%n /= 5)                      ERROR STOP 21_4
+    IF ( ANY(SHAPE( cA ) /= [ 3 ]) )    ERROR STOP 22_4
 
     DO i = 1, 3
         IF ( ANY(SHAPE( cA( i )%i ) /= [ 50 ]) )&

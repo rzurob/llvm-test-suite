@@ -73,22 +73,22 @@ PROGRAM componentSelector01
     ASSOCIATE(baseListType => baseList%listType)
 
         IF (LEN( baseListType ) /= LEN( baseList%listType )) THEN
-            CALL zzrc( 10_4 )
+            ERROR STOP 10_4
 
         ELSE IF (LEN( baseListType ) /= baseList%l1) THEN
-            CALL zzrc( 11_4 )
+            ERROR STOP 11_4
 
         ELSE IF (LEN( baseListType ) /= LEN( base )) THEN
-            CALL zzrc( 12_4 )
+            ERROR STOP 12_4
 
         ELSE IF (LEN( baseListType ) /= 4) THEN
-            CALL zzrc( 13_4 )
+            ERROR STOP 13_4
 
         ELSE IF (baseListType /= baseList%listType) THEN
-            CALL zzrc( 14_4 )
+            ERROR STOP 14_4
 
         ELSE IF (baseListType /= base) THEN
-            CALL zzrc( 15_4 )
+            ERROR STOP 15_4
         END IF
 
     END ASSOCIATE

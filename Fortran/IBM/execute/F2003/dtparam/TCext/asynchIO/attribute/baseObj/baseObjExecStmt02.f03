@@ -71,7 +71,7 @@ PROGRAM baseObjExecStmt02
     OPEN(8, ACTION='write', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=ioErrorMsg)
     IF (iStat /= 0) THEN
         PRINT *, "OPEN(): (", iStat, ") ", ioErrorMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -106,7 +106,7 @@ PROGRAM baseObjExecStmt02
     CLOSE(8, IOSTAT=iStat, IOMSG=ioErrorMsg)
     IF (iStat /= 0) THEN
         PRINT *, "CLOSE(): (", iStat, ") ", ioErrorMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
@@ -134,7 +134,7 @@ CONTAINS
                 &asynchTS%hours, asynchTS%minutes, asynchTS%seconds
         IF (iStatus /= 0) THEN
             PRINT *, "WRITE(): (", iStatus, ") ", ioErrMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
 
 10      FORMAT(BZ,I2,':',I2,':',I2)
@@ -150,7 +150,7 @@ CONTAINS
         WAIT(8, IOSTAT=iStatus, IOMSG=ioErrMsg)
         IF (iStatus /= 0) THEN
             PRINT *, "WAIT(): (", iStatus, ") ", ioErrMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
 
     END SUBROUTINE AsynchronousWrite

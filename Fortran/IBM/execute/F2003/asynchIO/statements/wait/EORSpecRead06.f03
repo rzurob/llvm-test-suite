@@ -57,7 +57,7 @@ PROGRAM EORSpecRead06
         &ACTION='readwrite', FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -66,7 +66,7 @@ PROGRAM EORSpecRead06
                 &IOSTAT=iStat, IOMSG=iMsg) (i * 100 - i)
         IF (iStat /= 0) THEN
             WRITE(0, *) "WRITE() <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -76,7 +76,7 @@ PROGRAM EORSpecRead06
             &REC=(100 - i + 1), IOSTAT=iStat, IOMSG=iMsg) dataList( i )
         IF (iStat /= 0) THEN
             WRITE(0, *) "READ() <", iStat, "> ", iMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
     END DO
 
@@ -85,7 +85,7 @@ PROGRAM EORSpecRead06
         WAIT(3834, ID=ioID( i ), IOSTAT=iStat, IOMSG=iMsg, EOR=300)
         IF (iStat /= 0) THEN
             WRITE(0, *) "READ() <", iStat, "> ", iMsg
-            CALL zzrc( 4 )
+            ERROR STOP 4
         END IF
     END DO
 
@@ -96,7 +96,7 @@ PROGRAM EORSpecRead06
     WAIT(3834, IOSTAT=iStat, IOMSG=iMsg, EOR=300)
     IF (iStat /= 0) THEN
         WRITE(0, *) "READ() <", iStat, "> ", iMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
@@ -110,7 +110,7 @@ PROGRAM EORSpecRead06
 200 CLOSE(3834, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
     STOP 0

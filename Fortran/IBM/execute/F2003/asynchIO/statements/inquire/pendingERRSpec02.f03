@@ -66,7 +66,7 @@ PROGRAM pendingERRSpec02
             ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg)
     IF (0 /= iStat) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -87,7 +87,7 @@ PROGRAM pendingERRSpec02
     INQUIRE(211, ERR=100, PENDING=prepending, IOSTAT=iStat, IOMSG=iMsg)
 
     WRITE(0, *) "INQUIRE() <", iStat, "> ", iMsg
-    CALL zzrc( 21 )
+    ERROR STOP 21
 
 
 100 WRITE(6, *) "INQUIRE(ERR=100) <", iStat, "> ", iMsg
@@ -97,7 +97,7 @@ PROGRAM pendingERRSpec02
     CLOSE(211, IOSTAT=iStat, IOMSG=iMsg)
     IF (0 /= iStat) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 31 )
+        ERROR STOP 31
     END IF
 
 END PROGRAM pendingERRSpec02

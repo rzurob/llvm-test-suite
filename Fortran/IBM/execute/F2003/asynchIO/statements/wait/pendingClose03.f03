@@ -79,11 +79,11 @@ PROGRAM pendingClose03
     close(24, ERR=100, iostat=iStat, iomsg=iMsg)
 
     write(0, *) "CLOSE() <", iStat, "> ", iMsg
-    call zzrc( 11 )
+    error stop 11
 
 100 write(0, *) "CLOSE(ERR=100) <", iStat, "> ", iMsg
     if (iStat /= 1) then
-        call zzrc( 12 )
+        error stop 12
     end if
 
 
@@ -110,7 +110,7 @@ PROGRAM pendingClose03
     close(24, ERR=200, iomsg=iMsg)
 
     write(0, *) "CLOSE()", iMsg
-    call zzrc( 31 )
+    error stop 31
 
 200 write(0, *) "CLOSE(ERR=100)", iMsg
 

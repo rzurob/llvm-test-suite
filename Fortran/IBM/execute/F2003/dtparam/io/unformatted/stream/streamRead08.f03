@@ -95,7 +95,7 @@ PROGRAM streamRead08
     OPEN(41, ACCESS='stream', ACTION='write', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'OPEN(', iostat, ') ', iomsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
@@ -117,7 +117,7 @@ PROGRAM streamRead08
     CLOSE(41, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'CLOSE(', iostat, ') ', iomsg
-        CALL zzrc( 40_4 )
+        ERROR STOP 40_4
     END IF
 
 
@@ -129,7 +129,7 @@ PROGRAM streamRead08
             FORM='unformatted', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'OPEN(', iostat, ') ', iomsg
-        CALL zzrc( 50_4 )
+        ERROR STOP 50_4
     END IF
 
 
@@ -151,7 +151,7 @@ PROGRAM streamRead08
     CLOSE(41, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'CLOSE(', iostat, ') ', iomsg
-        CALL zzrc( 80_4 )
+        ERROR STOP 80_4
     END IF
 
 

@@ -78,27 +78,27 @@ PROGRAM allocatedLBoundDerived02
     ALLOCATE(tTypeAlloc( 0:2,-1:1 ),&
         SOURCE=RESHAPE((/ (tType(16)(CMPLX(i, -i)), i = 1, 9) /), (/ 3,3 /)))
 
-    IF (.NOT. ALLOCATED( tTypeAlloc )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( tTypeAlloc )) ERROR STOP 10_4
 
-    IF (SIZE( tTypeAlloc ) /= 9)    CALL zzrc( 20_4 )
-    IF (SIZE(tTypeAlloc, 1) /= 3)   CALL zzrc( 21_4 )
-    IF (SIZE(tTypeAlloc, 2) /= 3)   CALL zzrc( 22_4 )
+    IF (SIZE( tTypeAlloc ) /= 9)    ERROR STOP 20_4
+    IF (SIZE(tTypeAlloc, 1) /= 3)   ERROR STOP 21_4
+    IF (SIZE(tTypeAlloc, 2) /= 3)   ERROR STOP 22_4
 
-    IF (LBOUND(tTypeAlloc, 1) /= 0)     CALL zzrc( 30_4 )
-    IF (LBOUND(tTypeAlloc, 2) /= -1)    CALL zzrc( 31_4 )
+    IF (LBOUND(tTypeAlloc, 1) /= 0)     ERROR STOP 30_4
+    IF (LBOUND(tTypeAlloc, 2) /= -1)    ERROR STOP 31_4
 
 
     tTypeAlloc = tTypeStat
 
 
-    IF (.NOT. ALLOCATED( tTypeAlloc )) CALL zzrc( 40_4 )
+    IF (.NOT. ALLOCATED( tTypeAlloc )) ERROR STOP 40_4
 
-    IF (SIZE( tTypeAlloc ) /= 4)    CALL zzrc( 50_4 )
-    IF (SIZE(tTypeAlloc, 1) /= 2)   CALL zzrc( 51_4 )
-    IF (SIZE(tTypeAlloc, 2) /= 2)   CALL zzrc( 52_4 )
+    IF (SIZE( tTypeAlloc ) /= 4)    ERROR STOP 50_4
+    IF (SIZE(tTypeAlloc, 1) /= 2)   ERROR STOP 51_4
+    IF (SIZE(tTypeAlloc, 2) /= 2)   ERROR STOP 52_4
 
-    IF (LBOUND(tTypeAlloc, 1) /= -1)    CALL zzrc( 60_4 )
-    IF (LBOUND(tTypeAlloc, 2) /= 0)     CALL zzrc( 61_4 )
+    IF (LBOUND(tTypeAlloc, 1) /= -1)    ERROR STOP 60_4
+    IF (LBOUND(tTypeAlloc, 2) /= 0)     ERROR STOP 61_4
 
 
     DO i = 0, 1

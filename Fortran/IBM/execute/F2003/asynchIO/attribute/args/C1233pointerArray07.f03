@@ -49,7 +49,7 @@ module mModule
 
                 if (iStat <> 0) then
                     write(0, *) "WRITE() <", iStat, "> ", iMsg
-                    call zzrc( 2 )
+                    error stop 2
                 end if
             end do
 
@@ -71,7 +71,7 @@ module mModule
 
                 if (iStat <> 0) then
                     write(0, *) "READ() <", iStat, "> ", iMsg
-                    call zzrc( 4 )
+                    error stop 4
                 end if
             end do
 
@@ -103,7 +103,7 @@ PROGRAM C1233pointerArray07
         form='unformatted', action='readwrite', iostat=iStat, ioMsg=iMsg)
     if (iStat <> 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -117,7 +117,7 @@ PROGRAM C1233pointerArray07
         WAIT(3321, iostat=iStat, iomsg=iMsg)
         if (iStat <> 0) then
             write(0, *) "CLOSE() <", iStat, "> ", iMsg
-            call zzrc( 3 )
+            error stop 3
         end if
 
         j = i - 1
@@ -132,7 +132,7 @@ PROGRAM C1233pointerArray07
     close(3321, iostat=iStat, ioMsg=iMsg)
     if (iStat <> 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 END PROGRAM C1233pointerArray07

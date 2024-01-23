@@ -81,10 +81,10 @@ PROGRAM allocatedLBoundDerived01
 
     ALLOCATE( tDerived(4,20) :: derivedAlloc( 0:1 ) )
 
-    IF (.NOT. ALLOCATED( derivedAlloc ))    CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( derivedAlloc ))    ERROR STOP 10_4
 
-    IF (SIZE( derivedAlloc ) /= 2)          CALL zzrc( 20_4 )
-    IF (LBOUND(derivedAlloc, 1) /= 0)       CALL zzrc( 30_4 )
+    IF (SIZE( derivedAlloc ) /= 2)          ERROR STOP 20_4
+    IF (LBOUND(derivedAlloc, 1) /= 0)       ERROR STOP 30_4
 
 
     derived( -1 )%idxPtr => idx( -5 )
@@ -100,10 +100,10 @@ PROGRAM allocatedLBoundDerived01
 
     derivedAlloc = derived
 
-    IF (.NOT. ALLOCATED( derivedAlloc ))    CALL zzrc( 40_4 )
+    IF (.NOT. ALLOCATED( derivedAlloc ))    ERROR STOP 40_4
 
-    IF (SIZE( derivedAlloc ) /= 3)          CALL zzrc( 50_4 )
-    IF (LBOUND(derivedAlloc, 1) /= -1)      CALL zzrc( 60_4 )
+    IF (SIZE( derivedAlloc ) /= 3)          ERROR STOP 50_4
+    IF (LBOUND(derivedAlloc, 1) /= -1)      ERROR STOP 60_4
 
 
     PRINT '("idx(",10(I3,","),I3,")")', idx

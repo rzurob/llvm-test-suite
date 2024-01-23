@@ -76,7 +76,7 @@ PROGRAM asynchBindAttr01
                 &ACCESS='sequential', IOSTAT=iStatus)
     IF (iStatus <> 0) THEN
         WRITE(0, *) "OPEN(): <", iStatus, "> ", errMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -89,17 +89,17 @@ PROGRAM asynchBindAttr01
     CLOSE(19, IOSTAT=iStatus, IOMSG=errMsg)
     IF (iStatus <> 0) THEN
         WRITE(0, *) "CLOSE(): <", iStatus, "> ", errMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
 
     ELSE IF (rStatus <> 0) THEN
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
     iStatus = cshortdisp( )
     IF (iStatus <> 0) THEN
         WRITE(0, *) "cshortdisp(): <", iStatus, ">"
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 

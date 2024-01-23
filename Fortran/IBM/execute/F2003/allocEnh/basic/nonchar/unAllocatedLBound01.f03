@@ -45,19 +45,19 @@ PROGRAM unAllocatedLBound01
     LOGICAL, ALLOCATABLE :: logArrayAlloc( : )
 
 
-    IF ( ALLOCATED( logArrayAlloc ) ) CALL zzrc( 10_4 )
+    IF ( ALLOCATED( logArrayAlloc ) ) ERROR STOP 10_4
 
 
     logArrayAlloc = logArray
 
 
-    IF (.NOT. ALLOCATED( logArrayAlloc )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( logArrayAlloc )) ERROR STOP 20_4
 
     PRINT *, SIZE( logArrayAlloc )
-    IF (SIZE( logArrayAlloc ) /= 10) CALL zzrc( 30_4 )
+    IF (SIZE( logArrayAlloc ) /= 10) ERROR STOP 30_4
 
     PRINT *, LBOUND( logArrayAlloc )
-    IF (LBOUND(logArrayAlloc, 1) /= 96) CALL zzrc( 40_4 )
+    IF (LBOUND(logArrayAlloc, 1) /= 96) ERROR STOP 40_4
 
 
     DO i = 96, 105

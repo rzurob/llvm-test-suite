@@ -69,7 +69,7 @@ PROGRAM pendingIDSpecError01
         ACTION='read', FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (0 /= iStat) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -93,7 +93,7 @@ PROGRAM pendingIDSpecError01
     CLOSE(2142, IOSTAT=iStat, IOMSG=iMsg)
     IF (0 /= iStat) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 50 )
+        ERROR STOP 50
     END IF
 
 END PROGRAM pendingIDSpecError01

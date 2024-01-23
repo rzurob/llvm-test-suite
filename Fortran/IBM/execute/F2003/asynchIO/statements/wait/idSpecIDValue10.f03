@@ -48,7 +48,7 @@ PROGRAM idSpecIDValue10
         &FORM='formatted', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN(Write) <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -72,7 +72,7 @@ PROGRAM idSpecIDValue10
     CLOSE(UNIT=436, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE(Write) <", iStat, "> ", iMsg
-        CALL zzrc( 41 )
+        ERROR STOP 41
     END IF
 
 
@@ -80,7 +80,7 @@ PROGRAM idSpecIDValue10
         &FORM='formatted', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN(Read) <", iStat, "> ", iMsg
-        CALL zzrc( 51 )
+        ERROR STOP 51
     END IF
 
 
@@ -102,7 +102,7 @@ PROGRAM idSpecIDValue10
     CLOSE(UNIT=436, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE(Read) <", iStat, "> ", iMsg
-        CALL zzrc( 91 )
+        ERROR STOP 91
     END IF
 
 

@@ -94,13 +94,13 @@ PROGRAM valueAttrUserFunc003
         if (charFact /= factCheck) then
             write(0, *) "iFact(", i, ") =", j
             write(0, *) "num = '", num, "' (should be '", factCheck, "')"
-            call zzrc( 1_4 )
+            error stop 1_4
         end if
 
         READ(num, 100) k
         if (k /= i) then
             write(0, *) "num =", num, "(", k, ") should be", i
-            call zzrc( 2_4 )
+            error stop 2_4
         end if
 
         write(6, 200) i, j, num, charFact
@@ -137,7 +137,7 @@ RECURSIVE CHARACTER(LEN = 7) FUNCTION fact( n )
 
     if (n /= check) then
         write(0, *) "n = '", n, "' (should be '", check, "')"
-        call zzrc( 3_4 )
+        error stop 3_4
     end if
 
 
@@ -154,7 +154,7 @@ RECURSIVE CHARACTER(LEN = 7) FUNCTION fact( n )
 
         if (n /= o) then
             write(0, *) "n = '", n, "' (should be '", o, "')"
-            call zzrc( 4_4 )
+            error stop 4_4
         end if
 
         READ(p, 100) j

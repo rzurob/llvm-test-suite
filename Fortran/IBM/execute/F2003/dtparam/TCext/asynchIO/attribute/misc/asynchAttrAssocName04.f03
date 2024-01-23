@@ -69,7 +69,7 @@ PROGRAM asynchAttrAssocName04
         &FORM='formatted', ASYNCHRONOUS='yes', IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "OPEN() <", oStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -78,7 +78,7 @@ PROGRAM asynchAttrAssocName04
                 &IOSTAT=oStat, IOMSG=oMsg) thisType( ((n - i) + 1) )%iType
         IF (oStat <> 0) THEN
             WRITE(0, *) i, ") WRITE() <", oStat, "> ", oMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -89,7 +89,7 @@ PROGRAM asynchAttrAssocName04
         WAIT(2006, ID=idA( j ), IOSTAT=oStat, IOMSG=oMsg)
         IF (oStat <> 0) THEN
             WRITE(0, *) j, ") WAIT() <", oStat, "> ", oMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
 
 
@@ -98,13 +98,13 @@ PROGRAM asynchAttrAssocName04
                     &IOSTAT=oStat, IOMSG=oMsg) otherType%iType
             IF (oStat <> 0) THEN
                 WRITE(0, *) j, ") READ() <", oStat, "> ", oMsg
-                CALL zzrc( 4 )
+                ERROR STOP 4
             END IF
 
             IF (otherType%iType <> verType%iType) THEN
                 WRITE(0, *) j, ") otherType%iType = '", otherType%iType,&
                             &"', verType%iType = '", verType%iType, "'"
-                CALL zzrc( 5 )
+                ERROR STOP 5
             END IF
         END ASSOCIATE
     END DO
@@ -113,7 +113,7 @@ PROGRAM asynchAttrAssocName04
     CLOSE(2006, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", oStat, "> ", oMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 END PROGRAM asynchAttrAssocName04

@@ -79,19 +79,19 @@ PROGRAM streamRead04
     OPEN(7, ACCESS='stream', ACTION='write', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'OPEN(', iostat, ') ', iomsg
-        CALL zzrc( 20_4 )
+        ERROR STOP 20_4
     END IF
 
     WRITE(7, IOSTAT=iostat, IOMSG=iomsg) (i, i = 1, 10)
     IF (iostat /= 0) THEN
         PRINT *, 'WRITE(', iostat, ') ', iomsg
-        CALL zzrc( 21_4 )
+        ERROR STOP 21_4
     END IF
 
     CLOSE(7, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'CLOSE(', iostat, ') ', iomsg
-        CALL zzrc( 22_4 )
+        ERROR STOP 22_4
     END IF
 
 

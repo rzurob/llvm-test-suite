@@ -199,7 +199,7 @@ PROGRAM aceCompPtrAllocSourceSpec01
     ALLOCATE(bA( 3 ), SOURCE=(/ b1, b2, b3 /), STAT=stat, ERRMSG=errmsg)
     IF (stat /= 0) THEN
         PRINT *, 'ALLOCATE(STAT=', stat, '):', errmsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
     CALL VerifyBA( 20_4 )

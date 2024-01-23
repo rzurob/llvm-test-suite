@@ -73,7 +73,7 @@ PROGRAM variableIsStructComp04
 
     tTA = tT5
     tTPtr => tTA
-    IF (.NOT. ALLOCATED( tTA )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( tTA )) ERROR STOP 20_4
     CALL Check(tTCheck, 5, 20_4)
 
 
@@ -82,7 +82,7 @@ PROGRAM variableIsStructComp04
     END DO
 
     tTA%iA( 2:4 ) = tT3%iA
-    IF (.NOT. ALLOCATED( tTA )) CALL zzrc( 30_4 )
+    IF (.NOT. ALLOCATED( tTA )) ERROR STOP 30_4
     CALL Check(tTCheck, 5, 30_4)
 
 
@@ -91,14 +91,14 @@ PROGRAM variableIsStructComp04
     END DO
 
     tTA%iA( 2:4 ) = tT5%iA
-    IF (.NOT. ALLOCATED( tTA )) CALL zzrc( 40_4 )
+    IF (.NOT. ALLOCATED( tTA )) ERROR STOP 40_4
     CALL Check(tTCheck, 5, 40_4)
 
 
 !    tTCheck%iA( 2 ) = tT1%iA( 1 )
 !
 !    tTA%iA( 2:4 ) = tT1%iA         ! Possible missed conformance check
-!    IF (.NOT. ALLOCATED( tTA )) CALL zzrc( 50_4 )
+!    IF (.NOT. ALLOCATED( tTA )) ERROR STOP 50_4
 !    CALL Check(tTCheck, 5, 50_4)   ! Could also be a Defect for AllocEnh
 !    Returns:   50 5 5 5 -5 99 0 1532690432 -1
 

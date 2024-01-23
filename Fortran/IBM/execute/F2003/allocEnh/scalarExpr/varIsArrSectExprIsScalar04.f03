@@ -57,19 +57,19 @@ PROGRAM varIsArrSectExprIsScalar04
     CALL Dump( 40_4 )
 
 
-    IF ( ANY( (intArrAlloc /= -9) ) ) CALL zzrc( 50_4 )
+    IF ( ANY( (intArrAlloc /= -9) ) ) ERROR STOP 50_4
 
 
     intArrAlloc( [ 1,10 ],[ 1,10 ] ) = 7
     CALL Dump( 60_4 )
 
 
-    IF ( ANY( (intArrAlloc( 2:9,2:9 ) /= -9) ) ) CALL zzrc( 70_4 )
+    IF ( ANY( (intArrAlloc( 2:9,2:9 ) /= -9) ) ) ERROR STOP 70_4
 
-    IF ( ANY( (intArrAlloc( 1,2:9 ) /= -9) ) )   CALL zzrc( 71_4 )
-    IF ( ANY( (intArrAlloc( 2:9,1 ) /= -9) ) )   CALL zzrc( 72_4 )
+    IF ( ANY( (intArrAlloc( 1,2:9 ) /= -9) ) )   ERROR STOP 71_4
+    IF ( ANY( (intArrAlloc( 2:9,1 ) /= -9) ) )   ERROR STOP 72_4
 
-    IF ( ANY( (intArrAlloc( [ 1,10 ],[ 1,10 ] ) /= 7) ) ) CALL zzrc( 73_4 )
+    IF ( ANY( (intArrAlloc( [ 1,10 ],[ 1,10 ] ) /= 7) ) ) ERROR STOP 73_4
 
 
     CONTAINS

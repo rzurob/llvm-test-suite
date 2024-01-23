@@ -143,7 +143,7 @@ PROGRAM componentSelector05
             END DO
 
         CLASS DEFAULT
-            CALL zzrc( 1600_4 )
+            ERROR STOP 1600_4
     END SELECT
 
 

@@ -46,11 +46,11 @@ PROGRAM unAllocCharacter01
 
     IF ( ALLOCATED( allocScalarChar ) ) THEN
         PRINT *, "ALLOCATED( allocScalarChar ) != .FALSE."
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
 
     ELSE IF ( ALLOCATED( allocArrayChar ) ) THEN
         PRINT *, "ALLOCATED( allocArrayChar ) != .FALSE."
-        CALL zzrc( 20_4 )
+        ERROR STOP 20_4
     END IF
 
 
@@ -58,7 +58,7 @@ PROGRAM unAllocCharacter01
 
     IF (.NOT. ALLOCATED( allocScalarChar ) ) THEN
         PRINT *, "ALLOCATED( allocScalarChar ) != .TRUE."
-        CALL zzrc( 30_4 )
+        ERROR STOP 30_4
 
     ELSE IF (allocScalarChar%len /=&
                 LEN( 'Test Allocation of Scalar CHARACTER' )) THEN
@@ -66,13 +66,13 @@ PROGRAM unAllocCharacter01
         PRINT *, "allocScalarChar%len =", allocScalarChar%len,&
                  "-- should be", LEN( 'Test Allocation of Scalar CHARACTER' )
 
-        CALL zzrc( 40_4 )
+        ERROR STOP 40_4
 
     ELSE IF (allocScalarChar /= 'Test Allocation of Scalar CHARACTER') THEN
         PRINT *, "allocScalarChar = '", allocScalarChar, "'"
         PRINT *, "(should be:  'Test Allocation of Scalar CHARACTER')"
 
-        CALL zzrc( 50_4 )
+        ERROR STOP 50_4
     END IF
 
 
@@ -82,14 +82,14 @@ PROGRAM unAllocCharacter01
 
     IF (.NOT. ALLOCATED( allocArrayChar ) ) THEN
         PRINT *, "ALLOCATED( allocArrayChar ) != .TRUE."
-        CALL zzrc( 60_4 )
+        ERROR STOP 60_4
 
     ELSE
         arrayShape = SHAPE( allocArrayChar )
         IF (arrayShape( 1 ) /= 10) THEN
             PRINT *, "SHAPE( allocArrayChar ) = '",&
                     SHAPE( allocArrayChar ), "' (should be 10)"
-            CALL zzrc( 70_4 )
+            ERROR STOP 70_4
 
         ELSE
             DO i = 1, 10

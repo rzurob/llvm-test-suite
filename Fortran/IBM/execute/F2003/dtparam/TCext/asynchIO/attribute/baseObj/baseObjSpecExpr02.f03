@@ -95,7 +95,7 @@ PROGRAM baseObjSpecExpr02
     OPEN(IOSTAT=oStat, IOMSG=errMsg, ASYNCHRONOUS='yes', UNIT=9)
     IF (oStat /= 0) THEN
         WRITE(0, *) "OPEN(Asynchronous): <", oStat, "> ", errMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -105,16 +105,16 @@ PROGRAM baseObjSpecExpr02
     CLOSE(9, IOMSG=errMsg, IOSTAT=cStat)
     IF (cStat <> 0) THEN
         WRITE(0, *) "CLOSE(): <", cStat, "> ", errMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
 
     !
     !  Handle WRITE()/WAIT() failure termination.
     !
     ELSE IF (oStat /= 0) THEN
         IF (statement == 'WRITE') THEN
-            CALL zzrc( 2 )
+            ERROR STOP 2
         ELSE
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
     END IF
 

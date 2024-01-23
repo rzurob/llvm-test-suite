@@ -111,58 +111,58 @@ PROGRAM allocBaseVariable03
     TYPE(base(2,-1,0)), POINTER :: b3
 
 
-    IF ( ASSOCIATED( b1 ) )                 CALL zzrc( 10_4 )
+    IF ( ASSOCIATED( b1 ) )                 ERROR STOP 10_4
 
     b1 => b1%NewBase( 11_4 )
 
-    IF (.NOT. ASSOCIATED( b1 ))             CALL zzrc( 12_4 )
+    IF (.NOT. ASSOCIATED( b1 ))             ERROR STOP 12_4
 
-    IF (b1%k /= 4)                          CALL zzrc( 13_4 )
-    IF (KIND( b1%array ) /= 4)              CALL zzrc( 14_4 )
+    IF (b1%k /= 4)                          ERROR STOP 13_4
+    IF (KIND( b1%array ) /= 4)              ERROR STOP 14_4
 
-    IF ( ANY(SHAPE( b1%array ) /= [ 6 ]) )  CALL zzrc( 15_4 )
+    IF ( ANY(SHAPE( b1%array ) /= [ 6 ]) )  ERROR STOP 15_4
 
-    IF (b1%l1 /= 5)                         CALL zzrc( 16_4 )
-    IF (LBOUND(b1%array, 1) /= 5)           CALL zzrc( 17_4 )
+    IF (b1%l1 /= 5)                         ERROR STOP 16_4
+    IF (LBOUND(b1%array, 1) /= 5)           ERROR STOP 17_4
 
-    IF (b1%l2 /= 10)                        CALL zzrc( 18_4 )
-    IF (UBOUND(b1%array, 1) /= 10)          CALL zzrc( 19_4 )
+    IF (b1%l2 /= 10)                        ERROR STOP 18_4
+    IF (UBOUND(b1%array, 1) /= 10)          ERROR STOP 19_4
 
 
-    IF ( ASSOCIATED( b2 ) )                 CALL zzrc( 20_4 )
+    IF ( ASSOCIATED( b2 ) )                 ERROR STOP 20_4
 
     b2 => b2%NewBase( 21_4 )
 
-    IF (.NOT. ASSOCIATED( b2 ))             CALL zzrc( 22_4 )
+    IF (.NOT. ASSOCIATED( b2 ))             ERROR STOP 22_4
 
-    IF (b2%k /= 8)                          CALL zzrc( 23_4 )
-    IF (KIND( b2%array ) /= 8)              CALL zzrc( 24_4 )
+    IF (b2%k /= 8)                          ERROR STOP 23_4
+    IF (KIND( b2%array ) /= 8)              ERROR STOP 24_4
 
-    IF ( ANY(SHAPE( b2%array ) /= [ 1 ]) )  CALL zzrc( 25_4 )
+    IF ( ANY(SHAPE( b2%array ) /= [ 1 ]) )  ERROR STOP 25_4
 
-    IF (b2%l1 /= 10)                        CALL zzrc( 26_4 )
-    IF (LBOUND(b2%array, 1) /= 10)          CALL zzrc( 27_4 )
+    IF (b2%l1 /= 10)                        ERROR STOP 26_4
+    IF (LBOUND(b2%array, 1) /= 10)          ERROR STOP 27_4
 
-    IF (b2%l2 /= 10)                         CALL zzrc( 28_4 )
-    IF (UBOUND(b2%array, 1) /= 10)           CALL zzrc( 29_4 )
+    IF (b2%l2 /= 10)                         ERROR STOP 28_4
+    IF (UBOUND(b2%array, 1) /= 10)           ERROR STOP 29_4
 
 
-    IF ( ASSOCIATED( b3 ) )                 CALL zzrc( 30_4 )
+    IF ( ASSOCIATED( b3 ) )                 ERROR STOP 30_4
 
     b3 => b3%NewBase( 41_4 )
 
-    IF (.NOT. ASSOCIATED( b3 ))             CALL zzrc( 32_4 )
+    IF (.NOT. ASSOCIATED( b3 ))             ERROR STOP 32_4
 
-    IF (b3%k /= 2)                          CALL zzrc( 33_4 )
-    IF (KIND( b3%array ) /= 2)              CALL zzrc( 34_4 )
+    IF (b3%k /= 2)                          ERROR STOP 33_4
+    IF (KIND( b3%array ) /= 2)              ERROR STOP 34_4
 
-    IF ( ANY(SHAPE( b3%array ) /= [ 2 ]) )  CALL zzrc( 35_4 )
+    IF ( ANY(SHAPE( b3%array ) /= [ 2 ]) )  ERROR STOP 35_4
 
-    IF (b3%l1 /= -1)                        CALL zzrc( 36_4 )
-    IF (LBOUND(b3%array, 1) /= -1)          CALL zzrc( 37_4 )
+    IF (b3%l1 /= -1)                        ERROR STOP 36_4
+    IF (LBOUND(b3%array, 1) /= -1)          ERROR STOP 37_4
 
-    IF (b3%l2 /= 0)                         CALL zzrc( 38_4 )
-    IF (UBOUND(b3%array, 1) /= 0)           CALL zzrc( 39_4 )
+    IF (b3%l2 /= 0)                         ERROR STOP 38_4
+    IF (UBOUND(b3%array, 1) /= 0)           ERROR STOP 39_4
 
 
 END PROGRAM allocBaseVariable03

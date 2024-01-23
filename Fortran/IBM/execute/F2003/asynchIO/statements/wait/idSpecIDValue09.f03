@@ -49,14 +49,14 @@ PROGRAM idSpecIDValue09
         &ACTION='read', ACCESS='stream', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN(idSpecIDValue09.dat,Read) <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
     OPEN(461, ASYNCHRONOUS='yes', ACTION='write',&
         &FORM='formatted', ACCESS='stream', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN(461,Write) <", iStat, "> ", iMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -87,7 +87,7 @@ PROGRAM idSpecIDValue09
     CLOSE(460, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE(idSpecIDValue09.dat) <", iStat, "> ", iMsg
-        CALL zzrc( 31 )
+        ERROR STOP 31
     END IF
 
 
@@ -118,7 +118,7 @@ PROGRAM idSpecIDValue09
     CLOSE(461, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE(461) <", iStat, "> ", iMsg
-        CALL zzrc( 61 )
+        ERROR STOP 61
     END IF
 
 END PROGRAM idSpecIDValue09

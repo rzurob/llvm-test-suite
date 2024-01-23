@@ -74,7 +74,7 @@ PROGRAM pendingIDSpecError02
         &ACTION='readwrite', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -94,7 +94,7 @@ PROGRAM pendingIDSpecError02
     WAIT(323, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 21 )
+        ERROR STOP 21
     END IF
 
 
@@ -112,7 +112,7 @@ PROGRAM pendingIDSpecError02
     INQUIRE(323, PENDING=engPing, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 1) THEN
         WRITE(0, *) "INQUIRE() <", iStat, "> ", iMsg
-        CALL zzrc( 41 )
+        ERROR STOP 41
     END IF
 
 
@@ -146,7 +146,7 @@ PROGRAM pendingIDSpecError02
     CLOSE(323, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 91 )
+        ERROR STOP 91
     END IF
 
 

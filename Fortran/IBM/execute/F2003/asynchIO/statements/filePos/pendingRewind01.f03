@@ -50,7 +50,7 @@ PROGRAM pendingRewind01
         &ACCESS='stream', FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -67,7 +67,7 @@ PROGRAM pendingRewind01
     REWIND(6317, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "REWIND() <", iStat, "> ", iMsg
-        CALL zzrc( 21 )
+        ERROR STOP 21
     END IF
 
 
@@ -96,7 +96,7 @@ PROGRAM pendingRewind01
     CLOSE(6317, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 51 )
+        ERROR STOP 51
     END IF
 
 

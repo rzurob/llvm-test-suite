@@ -62,12 +62,12 @@ PROGRAM asynchSpecInquire01
     IF (ioStatus /= 0) THEN
         PRINT *, "INQUIRE(No Connection): ioStatus = (",&
                                 &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
     IF (asynchState /= 'UNDEFINED') THEN
         PRINT *, "INQUIRE(No Connection): asynchState = (", asynchState, ")"
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -77,7 +77,7 @@ PROGRAM asynchSpecInquire01
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(Asynchronous, Write): ioStatus = (",&
                                 &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
     !
@@ -88,19 +88,19 @@ PROGRAM asynchSpecInquire01
     IF (ioStatus /= 0) THEN
         PRINT *, "INQUIRE(Asynchronous, Write): ioStatus = (",&
                                         &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
     IF (asynchState /= 'YES') THEN
         PRINT *, "INQUIRE(Asynchronous, Write): asynchState = (",&
                                                     &asynchState, ")"
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
     CLOSE(8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ioStatus = (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 
@@ -110,7 +110,7 @@ PROGRAM asynchSpecInquire01
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(Non-Asynchronous, Write): ioStatus = (",&
                                         &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
     !
@@ -121,19 +121,19 @@ PROGRAM asynchSpecInquire01
     IF (ioStatus /= 0) THEN
         PRINT *, "INQUIRE(Non-Asynchronous, Write): ioStatus = (",&
                                         &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 8 )
+        ERROR STOP 8
     END IF
 
     IF (asynchState /= 'NO') THEN
         PRINT *, "INQUIRE(Non-Asynchronous, Write): asynchState = (",&
                                                         &asynchState, ")"
-        CALL zzrc( 9 )
+        ERROR STOP 9
     END IF
 
     CLOSE(8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ioStatus = (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 10 )
+        ERROR STOP 10
     END IF
 
 

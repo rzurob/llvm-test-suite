@@ -76,7 +76,7 @@ PROGRAM pendingIDSpec01
             &ACCESS='direct', RECL=4, IOSTAT=iStat, IOMSG=iMsg)
     IF (0 /= iStat) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -89,7 +89,7 @@ PROGRAM pendingIDSpec01
 
         IF (0 /= iStat) THEN
             WRITE(0, *) i, ") WRITE() <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -103,7 +103,7 @@ PROGRAM pendingIDSpec01
 
         IF (0 /= iStat) THEN
             WRITE(0, *) i, ") INQUIRE() <", iStat, "> ", iMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
     END DO
 
@@ -116,13 +116,13 @@ PROGRAM pendingIDSpec01
         IF ( depending( i ) ) THEN
             IF (0 /= iStat) THEN
                 WRITE(0, *) i, ") WAIT() <", iStat, "> ", iMsg
-                CALL zzrc( 4 )
+                ERROR STOP 4
             END IF
 
         ELSE
             IF (224 /= iStat) THEN
                 WRITE(0, *) i, ") WAIT() <", iStat, "> ", iMsg
-                CALL zzrc( 5 )
+                ERROR STOP 5
             END IF
         END IF
     END DO
@@ -131,7 +131,7 @@ PROGRAM pendingIDSpec01
     CLOSE(ioUnit, IOSTAT=iStat, IOMSG=iMsg)
     IF (0 /= iStat) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 

@@ -54,7 +54,7 @@ PROGRAM allocCharacter01
     IF (iStat /= 0) THEN
         PRINT *,&
             "ALLOCATE(CHARACTER( 10 ) :: allocScalarChar) <", iStat, "> ", msg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
     charScalarPtr => allocScalarChar
@@ -63,7 +63,7 @@ PROGRAM allocCharacter01
     ALLOCATE(allocArrayChar( 10 ), STAT=iStat, ERRMSG=msg)
     IF (iStat /= 0) THEN
         PRINT *, "ALLOCATE( allocArrayChar( 10 ) ) <", iStat, "> ", msg
-        CALL zzrc( 20_4 )
+        ERROR STOP 20_4
     END IF
 
     charArrayPtr => allocArrayChar
@@ -73,11 +73,11 @@ PROGRAM allocCharacter01
 
     IF (.NOT. ALLOCATED( allocArrayChar )) THEN
         PRINT *, "ALLOCATED( allocArrayChar ) != .TRUE."
-        CALL zzrc( 30_4 )
+        ERROR STOP 30_4
 
     ELSE IF (.NOT. ASSOCIATED(charArrayPtr, allocArrayChar)) THEN
         PRINT *, "ASSOCIATED(charArrayPtr, allocArrayChar) != .TRUE."
-        CALL zzrc( 40_4 )
+        ERROR STOP 40_4
 
     ELSE
         DO i = 1, 10
@@ -95,11 +95,11 @@ PROGRAM allocCharacter01
 
     IF (.NOT. ALLOCATED( allocScalarChar )) THEN
         PRINT *, "ALLOCATED( allocScalarChar ) != .TRUE."
-        CALL zzrc( 60_4 )
+        ERROR STOP 60_4
 
     ELSE IF (.NOT. ASSOCIATED(charScalarPtr, allocScalarChar)) THEN
         PRINT *, "ASSOCIATED(charScalarPtr, allocScalarChar) != .TRUE."
-        CALL zzrc( 70_4 )
+        ERROR STOP 70_4
 
     ELSE
         IF (allocScalarChar /= (charValue( 6: ) // charValue( :5 ))) THEN
@@ -107,7 +107,7 @@ PROGRAM allocCharacter01
             PRINT *,"charValue( 6: ) // charValue( :5 ) = '",&
                         (charValue( 6: ) // charValue( :5 ))
 
-            CALL zzrc( 80_4 )
+            ERROR STOP 80_4
         END IF
     END IF
 

@@ -117,37 +117,37 @@ PROGRAM sequentialReadWrite03
     OPEN(8, ACTION='readwrite', FORM='unformatted', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, "OPEN(", iostat, ") ", iomsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
     iostat = Write8(8, cC3)
-    IF (iostat /= 0) CALL zzrc( 20_4 )
+    IF (iostat /= 0) ERROR STOP 20_4
 
 
     REWIND(8, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, "REWIND(", iostat, ") ", iomsg
-        CALL zzrc( 30_4 )
+        ERROR STOP 30_4
     END IF
 
 
     READ(8, IOSTAT=iostat, IOMSG=iomsg) l, i
     IF (iostat /= 0) THEN
         PRINT *, "READ(", iostat, ") ", iomsg
-        CALL zzrc( 40_4 )
+        ERROR STOP 40_4
     END IF
 
     ALLOCATE(tC3(l,8) :: vC3( i ))
 
     iostat = Read8(8, vC3)
-    IF (iostat /= 0) CALL zzrc( 50_4 )
+    IF (iostat /= 0) ERROR STOP 50_4
 
 
     CLOSE(8, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, "CLOSE(", iostat, ") ", iomsg
-        CALL zzrc( 60_4 )
+        ERROR STOP 60_4
     END IF
 
 

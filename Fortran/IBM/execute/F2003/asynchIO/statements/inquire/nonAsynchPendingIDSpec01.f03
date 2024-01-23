@@ -61,7 +61,7 @@ PROGRAM nonAsynchPendingIDSpec01
         &ACTION='write', ACCESS='sequential', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -69,7 +69,7 @@ PROGRAM nonAsynchPendingIDSpec01
             &ACTION='read', ACCESS='sequential', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -77,7 +77,7 @@ PROGRAM nonAsynchPendingIDSpec01
     WRITE(2048, ASYNCHRONOUS='no', IOSTAT=iStat, IOMSG=iMsg) ioID
     IF (iStat /= 0) THEN
         WRITE(0, *) "WRITE(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
@@ -85,19 +85,19 @@ PROGRAM nonAsynchPendingIDSpec01
     WRITE(6, *) "INQUIRE(ASYNCHRONOUS=no,ID=", ioID, ") <", iStat, "> ", iMsg
 
     IF (iStat /= 226) THEN
-        CALL zzrc( 4 )
+        ERROR STOP 4
 
     ELSE IF ( sPending ) THEN
         WRITE(6, *) "INQUIRE(ASYNCHRONOUS=no,ID=",&
                         ioID, ",PENDING=", sPending, ")"
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
     READ(2052, ASYNCHRONOUS='no', IOSTAT=iStat, IOMSG=iMsg) inData
     IF (iStat /= 0) THEN
         WRITE(0, *) "READ() <", iStat, "> ", iMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 
@@ -105,25 +105,25 @@ PROGRAM nonAsynchPendingIDSpec01
     WRITE(6, *) "INQUIRE(ID=", ioID, ") <", iStat, "> ", iMsg
 
     IF (iStat /= 226) THEN
-        CALL zzrc( 7 )
+        ERROR STOP 7
 
     ELSE IF ( sPending ) THEN
         WRITE(6, *) "INQUIRE(ID=", ioID, ",PENDING=", sPending, ")"
-        CALL zzrc( 8 )
+        ERROR STOP 8
     END IF
 
 
     CLOSE(2048, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-        CALL zzrc( 9 )
+        ERROR STOP 9
     END IF
 
 
     CLOSE(2052, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 10 )
+        ERROR STOP 10
     END IF
 
 
@@ -131,7 +131,7 @@ PROGRAM nonAsynchPendingIDSpec01
         WRITE(0, *) "  ioID = '", ioID, "'"
         WRITE(0, *) "inData = '", inData, "'"
 
-        CALL zzrc( 11 )
+        ERROR STOP 11
     END IF
 
 END PROGRAM nonAsynchPendingIDSpec01

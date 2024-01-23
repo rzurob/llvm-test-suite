@@ -45,17 +45,17 @@ MODULE mModule
 
         SUBROUTINE Char2Assign( )
 
-            IF ( ALLOCATED( scalarCharAlloc ) )     CALL zzrc( 10_4 )
+            IF ( ALLOCATED( scalarCharAlloc ) )     ERROR STOP 10_4
 
             scalarCharAlloc = scalarChar2
 
-            IF (.NOT. ALLOCATED( scalarCharAlloc )) CALL zzrc( 11_4 )
+            IF (.NOT. ALLOCATED( scalarCharAlloc )) ERROR STOP 11_4
 
             PRINT *, '(', scalarCharAlloc, ') (',&
                         scalarChar2, ')', LEN( scalarCharAlloc )
 
-            IF (LEN( scalarCharAlloc ) /= 4)        CALL zzrc( 12_4 )
-            IF (scalarCharAlloc /= scalarChar2)     CALL zzrc( 13_4 )
+            IF (LEN( scalarCharAlloc ) /= 4)        ERROR STOP 12_4
+            IF (scalarCharAlloc /= scalarChar2)     ERROR STOP 13_4
 
         END SUBROUTINE Char2Assign
 
@@ -88,17 +88,17 @@ PROGRAM unAllocCharacter03
 
         SUBROUTINE Char8Assign( )
 
-            IF ( ALLOCATED( scalarCharAlloc ) )         CALL zzrc( 20_4 )
+            IF ( ALLOCATED( scalarCharAlloc ) )         ERROR STOP 20_4
 
             scalarCharAlloc = scalarChar8
 
-            IF (.NOT. ALLOCATED( scalarCharAlloc ))     CALL zzrc( 21_4 )
+            IF (.NOT. ALLOCATED( scalarCharAlloc ))     ERROR STOP 21_4
 
             PRINT *, '(', scalarCharAlloc, ') (',&
                         scalarChar8, ')', LEN( scalarCharAlloc )
 
-            IF (LEN( scalarCharAlloc ) /= 4)            CALL zzrc( 22_4 )
-            IF (scalarCharAlloc /= scalarChar8( 1:4 ))  CALL zzrc( 23_4 )
+            IF (LEN( scalarCharAlloc ) /= 4)            ERROR STOP 22_4
+            IF (scalarCharAlloc /= scalarChar8( 1:4 ))  ERROR STOP 23_4
 
         END SUBROUTINE Char8Assign
 
@@ -111,16 +111,16 @@ SUBROUTINE Char4Assign( )
     CHARACTER(4) :: scalarChar4 = 'TEST'
 
 
-    IF ( ALLOCATED( scalarCharAlloc ) )     CALL zzrc( 30_4 )
+    IF ( ALLOCATED( scalarCharAlloc ) )     ERROR STOP 30_4
 
     scalarCharAlloc = scalarChar4
 
-    IF (.NOT. ALLOCATED( scalarCharAlloc )) CALL zzrc( 31_4 )
+    IF (.NOT. ALLOCATED( scalarCharAlloc )) ERROR STOP 31_4
 
     PRINT *, '(', scalarCharAlloc, ') (',&
                         scalarChar4, ')', LEN( scalarCharAlloc )
 
-    IF (LEN( scalarCharAlloc ) /= 4)        CALL zzrc( 32_4 )
-    IF (scalarCharAlloc /= scalarChar4)     CALL zzrc( 33_4 )
+    IF (LEN( scalarCharAlloc ) /= 4)        ERROR STOP 32_4
+    IF (scalarCharAlloc /= scalarChar4)     ERROR STOP 33_4
 
 END SUBROUTINE Char4Assign

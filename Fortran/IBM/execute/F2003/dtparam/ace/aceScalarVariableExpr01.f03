@@ -182,11 +182,11 @@ PROGRAM aceScalarVariableExpr01
 
     baseA = [ baseItem1, baseItem2, baseItem3, baseItem4, baseItem5 ]
 
-    IF (baseA( 1 ) /= baseItem1)    CALL zzrc( 11_4 )
-    IF (baseA( 2 ) /= baseItem2)    CALL zzrc( 12_4 )
-    IF (baseA( 3 ) /= baseItem3)    CALL zzrc( 13_4 )
-    IF (baseA( 4 ) /= baseItem4)    CALL zzrc( 14_4 )
-    IF (baseA( 5 ) /= baseItem5)    CALL zzrc( 15_4 )
+    IF (baseA( 1 ) /= baseItem1)    ERROR STOP 11_4
+    IF (baseA( 2 ) /= baseItem2)    ERROR STOP 12_4
+    IF (baseA( 3 ) /= baseItem3)    ERROR STOP 13_4
+    IF (baseA( 4 ) /= baseItem4)    ERROR STOP 14_4
+    IF (baseA( 5 ) /= baseItem5)    ERROR STOP 15_4
 
     CALL BaseElementsAsArguments(baseItem1, baseItem3, baseItem5, 20_4)
 
@@ -200,11 +200,11 @@ PROGRAM aceScalarVariableExpr01
     extendedA = [   extendedItem1, extendedItem2,&
                     extendedItem3, extendedItem4, extendedItem5 ]
 
-    IF (extendedA( 1 ) /= extendedItem1)    CALL zzrc( 31_4 )
-    IF (extendedA( 2 ) /= extendedItem2)    CALL zzrc( 32_4 )
-    IF (extendedA( 3 ) /= extendedItem3)    CALL zzrc( 33_4 )
-    IF (extendedA( 4 ) /= extendedItem4)    CALL zzrc( 34_4 )
-    IF (extendedA( 5 ) /= extendedItem5)    CALL zzrc( 35_4 )
+    IF (extendedA( 1 ) /= extendedItem1)    ERROR STOP 31_4
+    IF (extendedA( 2 ) /= extendedItem2)    ERROR STOP 32_4
+    IF (extendedA( 3 ) /= extendedItem3)    ERROR STOP 33_4
+    IF (extendedA( 4 ) /= extendedItem4)    ERROR STOP 34_4
+    IF (extendedA( 5 ) /= extendedItem5)    ERROR STOP 35_4
 
     CALL ExtendedElementsAsArguments(extendedItem1, extendedItem2,&
                                                     extendedItem3, 40_4)

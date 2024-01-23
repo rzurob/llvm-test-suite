@@ -46,7 +46,7 @@ PROGRAM actArgArraySectVectSub02
         ACTION='write', ACCESS='stream', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -61,7 +61,7 @@ PROGRAM actArgArraySectVectSub02
     CLOSE(1225, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 END PROGRAM actArgArraySectVectSub02
@@ -78,7 +78,7 @@ SUBROUTINE DumpSomeData(ioUnit, dataArray)
         WRITE(ioUnit, IOSTAT=iStat, IOMSG=iMsg) dataArray( i )
         IF (iStat <> 0) THEN
             WRITE(0, *) i, "WRITE() <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 

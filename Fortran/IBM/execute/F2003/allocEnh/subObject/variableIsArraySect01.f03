@@ -57,12 +57,12 @@ PROGRAM variableIsArraySect01
     d1 = [ (tD(-9,-9), i = 1, 3) ]
     d3 = RESHAPE([ (tD(i,i), i = 26, 0, -1) ], [ 3,3,3 ])
 
-    IF (.NOT. ALLOCATED( d1 )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( d1 )) ERROR STOP 10_4
 
     PRINT *, SIZE( d1 ), (d1( i )%b, i = 1, SIZE( d1 ))
     PRINT *, ' ', d1( : )%d
 
-    IF (SIZE( d1 ) /= 3) CALL zzrc( 11_4 )
+    IF (SIZE( d1 ) /= 3) ERROR STOP 11_4
 
     DO i = 1, SIZE(d3, 1)
         IF (d1( i )%b /= d1( i )%d) CALL zzrc( (11_4 + INT(i, 4)) )

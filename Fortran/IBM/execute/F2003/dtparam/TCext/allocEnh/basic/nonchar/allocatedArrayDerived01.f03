@@ -82,8 +82,8 @@ PROGRAM allocatedArrayDerived01
         SOURCE=(/ (tDerivedType(20,4)( CMPLX(-i, i),i ), i = 10, 1, -1) /))
 
 
-    IF (.NOT. ALLOCATED( derivedTypeAlloc ))    CALL zzrc( 10_4 )
-    IF (SIZE( derivedTypeAlloc ) /= 10)         CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( derivedTypeAlloc ))    ERROR STOP 10_4
+    IF (SIZE( derivedTypeAlloc ) /= 10)         ERROR STOP 20_4
 
     DO i = 1, 10
         j = 11 - i
@@ -106,8 +106,8 @@ PROGRAM allocatedArrayDerived01
     derivedTypeAlloc = derivedType
 
 
-    IF (.NOT. ALLOCATED( derivedTypeAlloc ))    CALL zzrc( 50_4 )
-    IF (SIZE( derivedTypeAlloc ) /= 10)         CALL zzrc( 60_4 )
+    IF (.NOT. ALLOCATED( derivedTypeAlloc ))    ERROR STOP 50_4
+    IF (SIZE( derivedTypeAlloc ) /= 10)         ERROR STOP 60_4
 
     DO i = 1, 10
         IF (derivedTypeAlloc( i )%c /= ( i,-i )) THEN

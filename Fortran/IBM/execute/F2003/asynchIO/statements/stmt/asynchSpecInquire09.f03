@@ -55,7 +55,7 @@ PROGRAM asynchSpecInquire09
             &FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN(ASYNCHRONOUS=yes) <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -63,7 +63,7 @@ PROGRAM asynchSpecInquire09
             &FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -73,20 +73,20 @@ PROGRAM asynchSpecInquire09
     INQUIRE(2295, ASYNCHRONOUS=asynchType, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "INQUIRE(ASYNCHRONOUS=yes) <", iStat, "> ", iMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
 
     ELSE IF (asynchType <> 'YES') THEN
         WRITE(0, *) "INQUIRE(ASYNCHRONOUS=", asynchType, ")"
         WRITE(0, *) " ... expected 'YES'"
 
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
     CLOSE(2295, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE(ASYNCHRONOUS=yes) <", iStat, "> ", iMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
@@ -96,20 +96,20 @@ PROGRAM asynchSpecInquire09
     INQUIRE(2771, ASYNCHRONOUS=asynchType, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "INQUIRE(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
 
     ELSE IF (asynchType <> 'NO') THEN
         WRITE(0, *) "INQUIRE(ASYNCHRONOUS=", asynchType, ")"
         WRITE(0, *) " ... expected 'NO'"
 
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
 
     CLOSE(2771, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-        CALL zzrc( 8 )
+        ERROR STOP 8
     END IF
 
 END PROGRAM asynchSpecInquire09

@@ -51,7 +51,7 @@ PROGRAM noIDSpecPending02
         &ACCESS='stream', FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -77,7 +77,7 @@ PROGRAM noIDSpecPending02
     WAIT(77, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 30 )
+        ERROR STOP 30
     END IF
 
     !
@@ -90,7 +90,7 @@ PROGRAM noIDSpecPending02
     CLOSE(77, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 50 )
+        ERROR STOP 50
     END IF
 
 END PROGRAM noIDSpecPending02

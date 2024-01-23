@@ -83,7 +83,7 @@ PROGRAM pendingSynchRead04d
         recl=4, asynchronous='yes', form='unformatted', iostat=iStat)
     if (0 <> iStat) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 11 )
+        error stop 11
     end if
 
 
@@ -121,7 +121,7 @@ PROGRAM pendingSynchRead04d
     close(962, iomsg=iMsg, iostat=iStat)
     if (0 <> iStat) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 41 )
+        error stop 41
     end if
 
 END PROGRAM pendingSynchRead04d

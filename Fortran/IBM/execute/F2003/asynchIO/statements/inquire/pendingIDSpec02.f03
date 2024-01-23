@@ -71,7 +71,7 @@ PROGRAM pendingIDSpec02
             &ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg)
     IF (0 /= iStat) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -81,7 +81,7 @@ PROGRAM pendingIDSpec02
 
         IF (0 /= iStat) THEN
             WRITE(0, *) i, "READ() <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -92,7 +92,7 @@ PROGRAM pendingIDSpec02
 
         IF (0 /= iStat) THEN
             WRITE(0, *) i, "INQUIRE(", ioID( i ), ") <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -102,13 +102,13 @@ PROGRAM pendingIDSpec02
         IF ( depending( i ) ) THEN
             IF (0 /= iStat) THEN
                 WRITE(0, *) i, "WAIT(", ioID( i ), ") <", iStat, "> ", iMsg
-                CALL zzrc( 3 )
+                ERROR STOP 3
             END IF
 
         ELSE
             IF (224 /= iStat) THEN
                 WRITE(0, *) i, "WAIT(", ioID( i ), ") <", iStat, "> ", iMsg
-                CALL zzrc( 4 )
+                ERROR STOP 4
             END IF
         END IF
     END DO
@@ -122,7 +122,7 @@ PROGRAM pendingIDSpec02
     CLOSE(ioUnit, STATUS='keep', IOSTAT=iStat, IOMSG=iMsg)
     IF (0 /= iStat) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 END PROGRAM pendingIDSpec02

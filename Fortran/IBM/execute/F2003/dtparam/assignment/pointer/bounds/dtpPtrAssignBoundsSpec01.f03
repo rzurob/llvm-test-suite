@@ -272,7 +272,7 @@ PROGRAM dtpPtrAssignBoundsSpec01
         TYPE IS (t1Ext(2,*,*))
 
         CLASS DEFAULT
-            CALL zzrc( 200_4 )
+            ERROR STOP 200_4
     END SELECT
 
 
@@ -284,7 +284,7 @@ PROGRAM dtpPtrAssignBoundsSpec01
         TYPE IS (t2Ext(2,*,*,8,*))
 
         CLASS DEFAULT
-            CALL zzrc( 201_4 )
+            ERROR STOP 201_4
     END SELECT
 
 
@@ -296,7 +296,7 @@ PROGRAM dtpPtrAssignBoundsSpec01
         TYPE IS (t2Ext(2,*,*,8,*))
 
         CLASS DEFAULT
-            CALL zzrc( 202_4 )
+            ERROR STOP 202_4
     END SELECT
 
 END PROGRAM dtpPtrAssignBoundsSpec01

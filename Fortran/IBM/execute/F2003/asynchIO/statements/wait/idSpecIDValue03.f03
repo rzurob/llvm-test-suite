@@ -47,7 +47,7 @@ PROGRAM idSpecIDValue03
         &FORM='unformatted', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -57,7 +57,7 @@ PROGRAM idSpecIDValue03
 
         IF (iStat <> 0) THEN
             WRITE(0, *) "WRITE() <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
 
         ids( i ) = (ids( i ) + 345) * 3
@@ -70,7 +70,7 @@ PROGRAM idSpecIDValue03
     CLOSE(UNIT=55, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 END PROGRAM idSpecIDValue03
@@ -88,7 +88,7 @@ SUBROUTINE Wait4IDs(ioUnit, idList)
         WAIT(ioUnit, ID=(idList( i ) / 3 - 345), IOSTAT=iStat, IOMSG=iMsg)
         IF (iStat <> 0) THEN
             WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
     END DO
 

@@ -148,7 +148,7 @@ PROGRAM dtpPtrAssignBoundsRemap05
     !  3rd Dimension of container%data%data( ) is zero length
     !
     dataTarget => NewContainer(1, 2, 3, 2, 16)
-    IF (.NOT. ASSOCIATED( dataTarget ))         CALL zzrc( 5_4 )
+    IF (.NOT. ASSOCIATED( dataTarget ))         ERROR STOP 5_4
 
     dataPointerObject( 1:2,1:2,1:2,1:2 ) => dataTarget
     low = SIZE( dataTarget )
@@ -162,7 +162,7 @@ PROGRAM dtpPtrAssignBoundsRemap05
     !  2nd Dimension of container%data%data( ) is zero length
     !
     dataTarget => NewContainer(1, 2, 1, 2, 71)
-    IF (.NOT. ASSOCIATED( dataTarget ))         CALL zzrc( 45_4 )
+    IF (.NOT. ASSOCIATED( dataTarget ))         ERROR STOP 45_4
 
     dataPointerObject( 0:2,0:2,0:2,0:2 ) => dataTarget
     low = SIZE( dataTarget )
@@ -176,7 +176,7 @@ PROGRAM dtpPtrAssignBoundsRemap05
     !  1st Dimension of container%data%data( ) is zero length
     !
     dataTarget => NewContainer(1, (low - high), low, high, 256)
-    IF (.NOT. ASSOCIATED( dataTarget ))         CALL zzrc( 145_4 )
+    IF (.NOT. ASSOCIATED( dataTarget ))         ERROR STOP 145_4
 
     dataPointerObject( -1:2,-1:2,-1:2,-1:2 ) => dataTarget
     low = SIZE( dataTarget )
@@ -190,7 +190,7 @@ PROGRAM dtpPtrAssignBoundsRemap05
     !  container%data( ) is zero length
     !
     dataTarget => NewContainer((low - high), low, high, (high + 1), 24)
-    IF (.NOT. ASSOCIATED( dataTarget ))         CALL zzrc( 445_4 )
+    IF (.NOT. ASSOCIATED( dataTarget ))         ERROR STOP 445_4
 
     dataPointerObject( -1:2,0:2,1:2,2:2 ) => dataTarget
 

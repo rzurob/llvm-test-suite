@@ -59,14 +59,14 @@ PROGRAM asynchSpecOpen06d
                 &IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(): ", ioErrorMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
     INQUIRE(8, ASYNCHRONOUS=asynchVar, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "INQUIRE(): (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -75,14 +75,14 @@ PROGRAM asynchSpecOpen06d
     !
     IF (asynchVar /= 'YES') THEN
         PRINT *, "INQUIRE(): ASYNCHRONOUS=(", asynchVar, ")"
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
     CLOSE(8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ", ioErrorMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
@@ -94,14 +94,14 @@ PROGRAM asynchSpecOpen06d
                 &IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(): ", ioErrorMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
     INQUIRE(8, ASYNCHRONOUS=asynchVar, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "INQUIRE(): (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 
@@ -110,14 +110,14 @@ PROGRAM asynchSpecOpen06d
     !
     IF (asynchVar /= 'NO') THEN
         PRINT *, "INQUIRE(): ASYNCHRONOUS=(", asynchVar, ")"
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
 
     CLOSE(8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ", ioErrorMsg
-        CALL zzrc( 8 )
+        ERROR STOP 8
     END IF
 
 
@@ -129,14 +129,14 @@ PROGRAM asynchSpecOpen06d
                     &IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(): ", ioErrorMsg
-        CALL zzrc( 9 )
+        ERROR STOP 9
     END IF
 
 
     INQUIRE(8, ASYNCHRONOUS=asynchVar, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "INQUIRE(): (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 10 )
+        ERROR STOP 10
     END IF
 
 
@@ -145,14 +145,14 @@ PROGRAM asynchSpecOpen06d
     !
     IF (asynchVar /= 'NO') THEN
         PRINT *, "INQUIRE(): ASYNCHRONOUS=(", asynchVar, ")"
-        CALL zzrc( 11 )
+        ERROR STOP 11
     END IF
 
 
     CLOSE(8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ", ioErrorMsg
-        CALL zzrc( 12 )
+        ERROR STOP 12
     END IF
 
 

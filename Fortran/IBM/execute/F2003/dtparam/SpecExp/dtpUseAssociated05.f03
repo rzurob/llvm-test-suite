@@ -124,16 +124,16 @@ PROGRAM dtpUseAssociated05
 
     IF (stat /= 0) THEN
         WRITE(1, *) "ALLOCATE(STAT=", stat, "): ", LEN_TRIM( errmsg )
-        CALL zzrc( 5_4 )
+        ERROR STOP 5_4
     END IF
 
 
-    IF (.NOT. ALLOCATED( realArray ))                   CALL zzrc( 10_4 )
-    IF (KIND( realArray ) /= 16)                        CALL zzrc( 11_4 )
-    IF (SIZE( realArray ) /= 120)                       CALL zzrc( 12_4 )
+    IF (.NOT. ALLOCATED( realArray ))                   ERROR STOP 10_4
+    IF (KIND( realArray ) /= 16)                        ERROR STOP 11_4
+    IF (SIZE( realArray ) /= 120)                       ERROR STOP 12_4
 
     IF ( ANY(realArray /= [ ((1.0_16 / REAL(i, 16)), i = 1, 120) ]) )&
-                                                        CALL zzrc( 13_4 )
+                                                        ERROR STOP 13_4
 
     DO i = 1, 10
         j = ((i - 1) * 12) + 1

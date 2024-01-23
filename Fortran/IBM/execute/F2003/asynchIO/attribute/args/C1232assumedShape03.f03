@@ -127,7 +127,7 @@ PROGRAM C1232assumedShape03
             ACCESS='direct', FORM='unformatted', RECL=4, IOSTAT=iStat)
     if (iStat <> 0) then
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -137,7 +137,7 @@ PROGRAM C1232assumedShape03
 
         if (iStat <> 0) then
             WRITE(0, *) i, "WRITE() <", iStat, "> ", iMsg
-            call zzrc( 2 )
+            error stop 2
         end if
     end do
 
@@ -145,14 +145,14 @@ PROGRAM C1232assumedShape03
     iStat = CheckData(1232, n, newData, oldDataBuffer)
     if (iStat <> 0) then
         write(0, *) "C1232assumedShape03()  iStat =", iStat
-        call zzrc( 3 )
+        error stop 3
     end if
 
 
     CLOSE(1232, IOMSG=iMsg, IOSTAT=iStat)
     if (iStat <> 0) then
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 4 )
+        error stop 4
     end if
 
 END PROGRAM C1232assumedShape03

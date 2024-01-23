@@ -48,7 +48,7 @@ PROGRAM asynchSpecOpen05d
     OPEN(8, ACTION='WRITE', IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(): (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -58,7 +58,7 @@ PROGRAM asynchSpecOpen05d
     WRITE(8, *, IOSTAT=ioStatus, IOMSG=ioErrorMsg) i
     IF (ioStatus /= 0) THEN
         PRINT *, "WRITE(): (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -70,14 +70,14 @@ PROGRAM asynchSpecOpen05d
 
     PRINT *, "WRITE(): (", ioStatus, ") ", ioErrorMsg
     IF (ioStatus /= 169) THEN
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
     INQUIRE(8, ASYNCHRONOUS=asynchVar, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "INQUIRE(): (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
@@ -86,14 +86,14 @@ PROGRAM asynchSpecOpen05d
     !
     IF (asynchVar /= 'NO') THEN
         PRINT *, "INQUIRE(): ASYNCHRONOUS=(", asynchVar, ")"
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
     CLOSE(8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 

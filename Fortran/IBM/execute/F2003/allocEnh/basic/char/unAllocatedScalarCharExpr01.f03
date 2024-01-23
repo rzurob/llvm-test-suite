@@ -52,59 +52,59 @@ PROGRAM unAllocatedScalarCharExpr01
 !
 !  1)  Sub-String
 !
-    IF ( ALLOCATED( charScalarAlloc ) )     CALL zzrc( 10_4 )
+    IF ( ALLOCATED( charScalarAlloc ) )     ERROR STOP 10_4
     charScalarAlloc = char6Var1( 3:5 )
 
-    IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 11_4 )
+    IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 11_4
     PRINT *, " 1) char6Var1( 3:5 ) == '",&
                   char6Var1( 3:5 ), "' == '", charScalarAlloc, "'"
 
-    IF (charScalarAlloc /= 'B2c')           CALL zzrc( 12_4 )
+    IF (charScalarAlloc /= 'B2c')           ERROR STOP 12_4
     DEALLOCATE( charScalarAlloc )
 
 
 !
 !  2)  String Concatenation
 !
-    IF ( ALLOCATED( charScalarAlloc ) )     CALL zzrc( 20_4 )
+    IF ( ALLOCATED( charScalarAlloc ) )     ERROR STOP 20_4
     charScalarAlloc = char1Var1 // char2Var1
 
-    IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 21_4 )
+    IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 21_4
     PRINT *, " 2) char1Var1 // char2Var1 == '",&
               char1Var1, "' // '", char1Var1, "' == '",&
                  (char1Var1 // char2Var1), "' == '", charScalarAlloc, "'"
 
-    IF (charScalarAlloc /= 'Mgh')           CALL zzrc( 22_4 )
+    IF (charScalarAlloc /= 'Mgh')           ERROR STOP 22_4
     DEALLOCATE( charScalarAlloc )
 
 
 !
 !  3)  Sub-String Concatenation
 !
-    IF ( ALLOCATED( charScalarAlloc ) )     CALL zzrc( 30_4 )
+    IF ( ALLOCATED( charScalarAlloc ) )     ERROR STOP 30_4
     charScalarAlloc = char2Var1( :1 ) // char3Var1( 2: )
 
-    IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 31_4 )
+    IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 31_4
     PRINT *, " 3) char2Var1( :1 ) // char3Var1( 2: ) == '",&
                   char2Var1( :1 ), "' // '", char3Var1( 2: ), "' == '",&
                   (char2Var1( :1 ) // char3Var1( 2: )), "' == '",&
                   charScalarAlloc, "'"
 
-    IF (charScalarAlloc /= 'gYZ')           CALL zzrc( 32_4 )
+    IF (charScalarAlloc /= 'gYZ')           ERROR STOP 32_4
     DEALLOCATE( charScalarAlloc )
 
 
 !
 !  4)  Intrinsic Function Return Value
 !
-    IF ( ALLOCATED( charScalarAlloc ) )     CALL zzrc( 40_4 )
+    IF ( ALLOCATED( charScalarAlloc ) )     ERROR STOP 40_4
     charScalarAlloc = REPEAT(char1Var2, 3)
 
-    IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 41_4 )
+    IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 41_4
     PRINT *, " 4) REPEAT(char1Var2, 3) == REPEAT(", char1Var2, ", 3) == '",&
                   REPEAT(char1Var2, 3), "' == '", charScalarAlloc, "'"
 
-    IF (charScalarAlloc /= 'NNN')           CALL zzrc( 42_4 )
+    IF (charScalarAlloc /= 'NNN')           ERROR STOP 42_4
     DEALLOCATE( charScalarAlloc )
 
 
@@ -112,17 +112,17 @@ PROGRAM unAllocatedScalarCharExpr01
 !
 !  5)  Concatenation of Intrinsic Function Return Values
 !
-    IF ( ALLOCATED( charScalarAlloc ) )     CALL zzrc( 50_4 )
+    IF ( ALLOCATED( charScalarAlloc ) )     ERROR STOP 50_4
     charScalarAlloc = CHAR( 48 ) // REPEAT(char1Var1, 2)
 
-    IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 51_4 )
+    IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 51_4
     PRINT *, " 5) CHAR( 48 ) // REPEAT(char1Var1, 2) == ",&
                  "CHAR( 48 ) // REPEAT(", char1Var1, ", 2)"
     PRINT *, "    == '", CHAR( 48 ), "' // '", REPEAT(char1Var1, 2),&
                "' == '", (CHAR( 48 ) // REPEAT(char1Var1, 2)),&
                "' == '", charScalarAlloc, "'"
 
-    IF (charScalarAlloc /= '0MM')           CALL zzrc( 52_4 )
+    IF (charScalarAlloc /= '0MM')           ERROR STOP 52_4
     DEALLOCATE( charScalarAlloc )
 
 
@@ -130,17 +130,17 @@ PROGRAM unAllocatedScalarCharExpr01
 !
 !  6)  Concatenation of 3 Values
 !
-    IF ( ALLOCATED( charScalarAlloc ) )     CALL zzrc( 60_4 )
+    IF ( ALLOCATED( charScalarAlloc ) )     ERROR STOP 60_4
     charScalarAlloc = char1Var1 // CHAR( 50 ) // char2Var1( 2: )
 
-    IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 61_4 )
+    IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 61_4
     PRINT *, " 6) char1Var1 // CHAR( 50 ) // char2Var1( 2: ) == '",&
                  char1Var1, "' // '", CHAR( 50 ), "' // '",&
                     char2Var1( 2: ), "'"
     PRINT *, "    == '", (char1Var1 // CHAR( 50 ) // char2Var1( 2: )),&
                "' == '", charScalarAlloc, "'"
 
-    IF (charScalarAlloc /= 'M2h')           CALL zzrc( 62_4 )
+    IF (charScalarAlloc /= 'M2h')           ERROR STOP 62_4
     DEALLOCATE( charScalarAlloc )
 
 END PROGRAM unAllocatedScalarCharExpr01

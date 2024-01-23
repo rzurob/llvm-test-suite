@@ -49,7 +49,7 @@ PROGRAM C515valueAttr001d
 
     CALL gosub(fiveLen, fourLen)
     IF (fourLen /= 'ABCD') THEN
-        CALL zzrc( 1_4 )
+        ERROR STOP 1_4
     END IF
 
 END PROGRAM C515valueAttr001d
@@ -67,10 +67,10 @@ SUBROUTINE gosub(arg1, arg2)
 
 
     IF (arg1 /= 'abcde') THEN
-        CALL zzrc( 2_4 )
+        ERROR STOP 2_4
 
     ELSE IF (arg2 /= 'ABCD') THEN
-        CALL zzrc( 3_4 )
+        ERROR STOP 3_4
     END IF
 
     sub3Len = arg1( :3 )

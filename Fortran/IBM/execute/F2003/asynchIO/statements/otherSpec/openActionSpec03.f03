@@ -50,7 +50,7 @@ PROGRAM openActionSpec03
         &ASYNCHRONOUS='yes', ACCESS='direct', IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "OPEN() <", oStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -80,7 +80,7 @@ PROGRAM openActionSpec03
 
             IF (k .NE. (i * j)) THEN
                 WRITE(0, *) "k =", k, "(i =", i, ", j =", j, ")"
-                CALL zzrc( 5 )
+                ERROR STOP 5
             END IF
 
             l = l + 1
@@ -91,7 +91,7 @@ PROGRAM openActionSpec03
     CLOSE(ioUnit, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", oStat, "> ", oMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
@@ -99,15 +99,15 @@ PROGRAM openActionSpec03
 
 
 100 WRITE(0, *) "WRITE() <", oStat, "> ", oMsg
-    CALL zzrc( 2 )
+    ERROR STOP 2
 
 
 200 WRITE(0, *) "WAIT() <", oStat, "> ", oMsg
-    CALL zzrc( 3 )
+    ERROR STOP 3
 
 
 300 WRITE(0, *) "READ() <", oStat, "> ", oMsg
-    CALL zzrc( 4 )
+    ERROR STOP 4
 
 
 400 CONTINUE

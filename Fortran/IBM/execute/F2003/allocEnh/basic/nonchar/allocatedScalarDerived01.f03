@@ -65,8 +65,8 @@ PROGRAM allocatedScalarDerived01
 
     ALLOCATE(tTypeScalarAlloc, SOURCE=tType(0.66_8))
 
-    IF (.NOT. ALLOCATED( tTypeScalarAlloc ))    CALL zzrc( 10_4 )
-    IF (tTypeScalarAlloc%r /= 0.66_8)           CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( tTypeScalarAlloc ))    ERROR STOP 10_4
+    IF (tTypeScalarAlloc%r /= 0.66_8)           ERROR STOP 20_4
 
     tTypeScalar%r = 0.98_8
     tTypeScalarAlloc%r = 0.67_8
@@ -76,8 +76,8 @@ PROGRAM allocatedScalarDerived01
     PRINT *, " After:  Intrinsic Assignment"
 
 
-    IF (.NOT. ALLOCATED( tTypeScalarAlloc ))    CALL zzrc( 30_4 )
-    IF (tTypeScalarAlloc%r /= 0.98_8)           CALL zzrc( 40_4 )
+    IF (.NOT. ALLOCATED( tTypeScalarAlloc ))    ERROR STOP 30_4
+    IF (tTypeScalarAlloc%r /= 0.98_8)           ERROR STOP 40_4
 
     tTypeScalar%r = 0.97_8
     tTypeScalarAlloc%r = 0.68_8

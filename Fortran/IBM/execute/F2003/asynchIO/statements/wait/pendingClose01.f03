@@ -67,7 +67,7 @@ PROGRAM pendingClose01
                 &ACTION='write', FORM='unformatted', IOSTAT=iStat)
     IF (0 <> iStat) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -76,7 +76,7 @@ PROGRAM pendingClose01
                 &IOSTAT=iStat, IOMSG=iMsg) ((i * 329) - 456)
         IF (0 <> iStat) THEN
             WRITE(0, *) i, "WRITE() <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -84,7 +84,7 @@ PROGRAM pendingClose01
     CLOSE(185, IOMSG=iMsg, IOSTAT=iStat)
     IF (0 <> iStat) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
@@ -92,7 +92,7 @@ PROGRAM pendingClose01
         WAIT(185, ID=ioID( i ), IOSTAT=iStat, IOMSG=iMsg)
         IF (224 <> iStat) THEN
             WRITE(0, *) i, "WAIT(ID=", ioID( i ), ") <", iStat, "> ", iMsg
-            CALL zzrc( 4 )
+            ERROR STOP 4
         END IF
     END DO
 

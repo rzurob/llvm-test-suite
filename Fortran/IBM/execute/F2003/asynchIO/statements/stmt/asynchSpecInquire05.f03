@@ -77,7 +77,7 @@ PROGRAM asynchSpecInquire05
                 &IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(): ioStatus = (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
@@ -96,7 +96,7 @@ PROGRAM asynchSpecInquire05
                 &IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "INQUIRE(): ioStatus = (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
     PRINT *, "1)  pendingState = (", pendingState, ")"
@@ -106,7 +106,7 @@ PROGRAM asynchSpecInquire05
                 &IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "INQUIRE(): ioStatus = (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
     !
@@ -115,14 +115,14 @@ PROGRAM asynchSpecInquire05
     PRINT *, "2)  pendingState = (", pendingState, ")"
     IF ( pendingState ) THEN
         PRINT *, "(pendingState == .TRUE.)"
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 
     CLOSE(UNIT=8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ioStatus = (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
 

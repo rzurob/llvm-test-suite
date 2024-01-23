@@ -73,8 +73,8 @@ PROGRAM deferredAssumed03
 
     PRINT *, SIZE( assumed ), LEN( assumed )
 
-    IF (SIZE( assumed ) /= 3)   CALL zzrc( 21_4 )
-    IF (LEN( assumed ) /= 13)   CALL zzrc( 22_4 )
+    IF (SIZE( assumed ) /= 3)   ERROR STOP 21_4
+    IF (LEN( assumed ) /= 13)   ERROR STOP 22_4
 
 
     DO i = 1, 3
@@ -95,8 +95,8 @@ PROGRAM deferredAssumed03
 
     PRINT *, SIZE( assumed ), LEN( assumed )
 
-    IF (SIZE( assumed ) /= 9)   CALL zzrc( 61_4 )
-    IF (LEN( assumed ) /= 13)   CALL zzrc( 62_4 )
+    IF (SIZE( assumed ) /= 9)   ERROR STOP 61_4
+    IF (LEN( assumed ) /= 13)   ERROR STOP 62_4
 
 
     DO i = 1, 9

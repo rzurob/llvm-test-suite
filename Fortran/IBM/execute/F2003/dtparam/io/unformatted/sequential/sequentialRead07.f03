@@ -87,7 +87,7 @@ PROGRAM sequentialRead07
             FORM='unformatted', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'OPEN(', iostat, ') ', iomsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
@@ -115,7 +115,7 @@ PROGRAM sequentialRead07
     CLOSE(41, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'CLOSE(', iostat, ') ', iomsg
-        CALL zzrc( 50_4 )
+        ERROR STOP 50_4
     END IF
 
 
@@ -128,7 +128,7 @@ PROGRAM sequentialRead07
             FORM='unformatted', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'OPEN(', iostat, ') ', iomsg
-        CALL zzrc( 60_4 )
+        ERROR STOP 60_4
     END IF
 
 
@@ -174,7 +174,7 @@ PROGRAM sequentialRead07
     CLOSE(41, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'CLOSE(', iostat, ') ', iomsg
-        CALL zzrc( 100_4 )
+        ERROR STOP 100_4
     END IF
 
 

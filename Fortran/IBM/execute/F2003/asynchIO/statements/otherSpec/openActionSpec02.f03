@@ -76,7 +76,7 @@ PROGRAM openActionSpec02
         &ACTION='write', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=oMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -89,7 +89,7 @@ PROGRAM openActionSpec02
         INQUIRE(ioUnit, ID=idA( i ), PENDING=aPending, IOSTAT=iStat, IOMSG=oMsg)
         IF (iStat <> 0) THEN
             WRITE(0, *) "INQUIRE() <", iStat, "> ", oMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
 
 
@@ -99,7 +99,7 @@ PROGRAM openActionSpec02
 
         IF (iStat <> 0) THEN
             WRITE(0, *) "WRITE() <", iStat, "> ", oMsg
-            CALL zzrc( 4 )
+            ERROR STOP 4
         END IF
 200 CONTINUE
 
@@ -107,7 +107,7 @@ PROGRAM openActionSpec02
     CLOSE(ioUnit, IOSTAT=iStat, IOMSG=oMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "INQUIRE() <", iStat, "> ", oMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
     CONTAINS
@@ -128,7 +128,7 @@ PROGRAM openActionSpec02
 
             IF (iStat <> 0) THEN
                 WRITE(0, *) "WRITE() <", iStat, "> ", oMsg
-                CALL zzrc( 2 )
+                ERROR STOP 2
             END IF
         END SUBROUTINE
 

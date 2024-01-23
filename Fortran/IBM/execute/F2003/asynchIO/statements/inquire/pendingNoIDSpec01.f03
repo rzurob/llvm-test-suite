@@ -70,7 +70,7 @@ program pendingNoIDSpec01
         &ACTION='readwrite', FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     if (iStat /= 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -110,7 +110,7 @@ program pendingNoIDSpec01
             write(0, *) " dataIn(", i, ") = '", dataIn( i ), "'"
             write(0, *) "dataOut(", i, ") = '", dataOut( i ), "'"
 
-            call zzrc( 111 )
+            error stop 111
         end if
     end do
 
@@ -118,7 +118,7 @@ program pendingNoIDSpec01
     close(ioUnit, IOSTAT=iStat, IOMSG=iMsg)
     if (iStat /= 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 121 )
+        error stop 121
     end if
 
 end program pendingNoIDSpec01

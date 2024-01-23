@@ -182,7 +182,7 @@ PROGRAM directReadWrite07
             RECL=160, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, "OPEN(", iostat, ") ", iomsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
@@ -205,7 +205,7 @@ PROGRAM directReadWrite07
     CLOSE(9, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, "CLOSE(", iostat, ") ", iomsg
-        CALL zzrc( 60_4 )
+        ERROR STOP 60_4
     END IF
 
 END PROGRAM directReadWrite07

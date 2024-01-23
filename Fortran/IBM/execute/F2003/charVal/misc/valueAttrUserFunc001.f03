@@ -91,7 +91,7 @@ PROGRAM valueAttrUserFunc001
     charResult = x( y( fourLen ) )
     if (charResult /= 'NA=BC') then
         write(0, *) "charResult = '", charResult, "' (Expected 'NA=BC')"
-        call zzrc( 1_4 )
+        error stop 1_4
     end if
 
 
@@ -102,7 +102,7 @@ PROGRAM valueAttrUserFunc001
     charResult = x( y( z( fourLen ) ) )
     if (charResult /= 'NA=BC') then
         write(0, *) "charResult = '", charResult, "' (Expected 'NA=BC')"
-        call zzrc( 2_4 )
+        error stop 2_4
     end if
 
 
@@ -114,7 +114,7 @@ PROGRAM valueAttrUserFunc001
 
             if (arg1 /= xExpected) then
                 write(0, *) "arg1 = '", arg1, "' (Expected '", xExpected, "')"
-                call zzrc( 3_4 )
+                error stop 3_4
             end if
 
             arg1( 2: ) = 'ABC'
@@ -123,7 +123,7 @@ PROGRAM valueAttrUserFunc001
             if (fourLen /= 'abcd') then
                 write(0, *) "fourLen = '", fourLen,&
                             "' (Expected '", xExpected, "')"
-                call zzrc( 4_4 )
+                error stop 4_4
             end if
 
         END FUNCTION x
@@ -138,7 +138,7 @@ CHARACTER(len = 4) FUNCTION y( arg1 )
 
     if (arg1 /= yExpected) then
         write(0, *) "arg1 = '", arg1, "' (Expected '", yExpected, "')"
-        call zzrc( 5_4 )
+        error stop 5_4
     end if
 
     arg1( 2:3 ) = 'MN'
@@ -154,7 +154,7 @@ CHARACTER(len = 4) FUNCTION z( arg1 )
 
     if (arg1 /= zExpected) then
         write(0, *) "arg1 = '", arg1, "' (Expected '", zExpected, "')"
-        call zzrc( 6_4 )
+        error stop 6_4
     end if
 
     arg1 = 'XYZ'

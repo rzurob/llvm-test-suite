@@ -147,7 +147,7 @@ program pendingIDSpec05
 
         if (iStat /= 0) then
             WRITE(0, *) i, ") CLOSE(", actType( i ), ") <", iStat, "> ", iMsg
-            call zzrc( 71 )
+            error stop 71
         end if
     end do
 

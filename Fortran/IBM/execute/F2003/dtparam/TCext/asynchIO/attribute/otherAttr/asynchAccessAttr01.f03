@@ -112,7 +112,7 @@ PROGRAM asynchAccessAttr01
             &FORM='formatted', ASYNCHRONOUS='yes', IOSTAT=ioStatus)
     IF (ioStatus <> 0) THEN
         WRITE(0, *) "OPEN(): <", ioStatus, "> ", errMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
 
     ELSE
         publicPublicPt = tPublicPt(20,4)( 234.123,808.5 )
@@ -145,10 +145,10 @@ PROGRAM asynchAccessAttr01
         CLOSE(IOSTAT=ioStatus, UNIT=27, IOMSG=errMsg)
         IF (ioStatus <> 0) THEN
             WRITE(0, *) "CLOSE(): <", ioStatus, "> ", errMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
 
         ELSE IF (wStat <> 0) THEN
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END IF
 

@@ -50,28 +50,28 @@ PROGRAM diffKindVectorIndex03
 
 
     complexArrAlloc = complexArr
-    IF (KIND( complexArrAlloc ) /= defaultComplexKind) CALL zzrc( 10_4 )
+    IF (KIND( complexArrAlloc ) /= defaultComplexKind) ERROR STOP 10_4
     CALL Dump( 'Assignment(Default Kind) (5x5):' )
 
 
     complexArrAlloc =&
         CMPLX(REAL( complexArrAlloc( (/ 5,4,3,2,1 /),(/ 1,2,3,4,5 /) ) ),&
               AIMAG( complexArrAlloc( (/ 1,2,3,4,5 /),(/ 5,4,3,2,1 /) ) ), 4)
-    IF (KIND( complexArrAlloc ) /= defaultComplexKind) CALL zzrc( 20_4 )
+    IF (KIND( complexArrAlloc ) /= defaultComplexKind) ERROR STOP 20_4
     CALL Dump( 'COMPLEX(4) (5x5):' )
 
 
     complexArrAlloc =&
         CMPLX(REAL( complexArrAlloc( (/ 1,2,3,4,5 /),(/ 1,2,3,4,5 /) ) ),&
               AIMAG( complexArrAlloc( (/ 5,4,3,2,1 /),(/ 5,4,3,2,1 /) ) ), 8)
-    IF (KIND( complexArrAlloc ) /= defaultComplexKind) CALL zzrc( 30_4 )
+    IF (KIND( complexArrAlloc ) /= defaultComplexKind) ERROR STOP 30_4
     CALL Dump( 'COMPLEX(8) (5x5):' )
 
 
     complexArrAlloc =&
         CMPLX(REAL( complexArrAlloc( (/ 5,4,3,2,1 /),(/ 5,4,3,2,1 /) ) ),&
               AIMAG( complexArrAlloc( (/ 1,2,3,4,5 /),(/ 1,2,3,4,5 /) ) ), 16)
-    IF (KIND( complexArrAlloc ) /= defaultComplexKind) CALL zzrc( 40_4 )
+    IF (KIND( complexArrAlloc ) /= defaultComplexKind) ERROR STOP 40_4
     CALL Dump( 'COMPLEX(16) (5x5):' )
 
 

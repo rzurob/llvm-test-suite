@@ -55,7 +55,7 @@ program C1232arraySect06
         form='unformatted', access='stream', iostat =iStat, iomsg=iMsg)
     if (iStat <> 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -63,7 +63,7 @@ program C1232arraySect06
         write(403, ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg) dataOut( i )
         if (iStat <> 0) then
             write(0, *) i, ") WRITE() <", iStat, "> ", iMsg
-            call zzrc( 2 )
+            error stop 2
         end if
     end do
 
@@ -71,13 +71,13 @@ program C1232arraySect06
     rewind(403, iostat =iStat, iomsg=iMsg)
     if (iStat <> 0) then
         write(0, *) "REWIND() <", iStat, "> ", iMsg
-        call zzrc( 3 )
+        error stop 3
     end if
 
 
     iStat = CSectionReads(n, dataIn)
     if (iStat <> 0) then
-        call zzrc( 4 )
+        error stop 4
     end if
 
 
@@ -86,7 +86,7 @@ program C1232arraySect06
             write(0, *) " dataIn(", i, ") = '", dataIn( i ), "'"
             write(0, *) "dataOut(", i, ") = '", dataOut( i ), "'"
 
-            call zzrc( 5 )
+            error stop 5
         end if
     end do
 
@@ -94,7 +94,7 @@ program C1232arraySect06
     close(403, iostat =iStat, iomsg=iMsg)
     if (iStat <> 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 6 )
+        error stop 6
     end if
 
 end program C1232arraySect06

@@ -60,23 +60,23 @@ PROGRAM deferredAssumed02
     CHARACTER(26) :: alphabet = 'aBcDeFgHiJkLmNoPqRsTuVwXyZ'
 
 
-    IF ( ALLOCATED( deferred ) )        CALL zzrc( 10_4 )
+    IF ( ALLOCATED( deferred ) )        ERROR STOP 10_4
 
     ALLOCATE(deferred( 7 ), SOURCE=(/ (ArrayInit(alphabet, i), i = 1, 7) /))
 
-    IF (.NOT. ALLOCATED( deferred ))    CALL zzrc( 11_4 )
-    IF ( ALLOCATED( assumed ) )         CALL zzrc( 12_4 )
+    IF (.NOT. ALLOCATED( deferred ))    ERROR STOP 11_4
+    IF ( ALLOCATED( assumed ) )         ERROR STOP 12_4
 
 
     CALL AssumedAssign(assumed, 20_4)
 
 
-    IF (.NOT. ALLOCATED( assumed )) CALL zzrc( 30_4 )
+    IF (.NOT. ALLOCATED( assumed )) ERROR STOP 30_4
 
     PRINT *, SIZE( assumed ), LEN( assumed )
 
-    IF (SIZE( assumed ) /= 7)       CALL zzrc( 31_4 )
-    IF (LEN( assumed ) /= 7)        CALL zzrc( 32_4 )
+    IF (SIZE( assumed ) /= 7)       ERROR STOP 31_4
+    IF (LEN( assumed ) /= 7)        ERROR STOP 32_4
 
 
     DO i = 1, 7

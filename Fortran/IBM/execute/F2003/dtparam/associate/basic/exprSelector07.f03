@@ -107,11 +107,11 @@ PROGRAM exprSelector07
         SELECT TYPE ( basePtr )
             TYPE IS (base(*))
                 IF (basePtr%l /= 7) THEN
-                    CALL zzrc( 20_4 )
+                    ERROR STOP 20_4
                 END IF
 
             CLASS DEFAULT
-                CALL zzrc( 30_4 )
+                ERROR STOP 30_4
         END SELECT
 
     END ASSOCIATE
@@ -122,11 +122,11 @@ PROGRAM exprSelector07
         SELECT TYPE ( basePtr )
             CLASS IS (base(*))
                 IF (basePtr%l /= 11) THEN
-                    CALL zzrc( 50_4 )
+                    ERROR STOP 50_4
                 END IF
 
             CLASS DEFAULT
-                CALL zzrc( 60_4 )
+                ERROR STOP 60_4
         END SELECT
 
     END ASSOCIATE
@@ -138,11 +138,11 @@ PROGRAM exprSelector07
         SELECT TYPE ( derivedPtr )
             TYPE IS (derived(*,8))
                 IF (derivedPtr%l /= 11) THEN
-                    CALL zzrc( 80_4 )
+                    ERROR STOP 80_4
                 END IF
 
             CLASS DEFAULT
-                CALL zzrc( 90_4 )
+                ERROR STOP 90_4
         END SELECT
 
     END ASSOCIATE

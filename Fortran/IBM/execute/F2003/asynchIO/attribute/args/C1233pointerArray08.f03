@@ -55,7 +55,7 @@ PROGRAM C1233pointerArray08
     allocate(theData( n ), stat=iStat, errmsg=iMsg)
     if (iStat <> 0) then
         write(0, *) "ALLOCATE() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -64,7 +64,7 @@ PROGRAM C1233pointerArray08
         asynchronous='yes', form='unformatted', iostat=iStat)
     if (iStat <> 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 2 )
+        error stop 2
     end if
 
 
@@ -81,7 +81,7 @@ PROGRAM C1233pointerArray08
 
         if (iStat <> 0) then
             write(0, *) i, ") READ() <", iStat, "> ", iMsg
-            call zzrc( 3 )
+            error stop 3
         end if
     end do
 
@@ -91,11 +91,11 @@ PROGRAM C1233pointerArray08
 
     close(304007, iomsg=iMsg, iostat=iStat)
     if (dStat <> 0) then
-        call zzrc( 4 )
+        error stop 4
 
     else if (iStat <> 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 5 )
+        error stop 5
     end if
 
 END PROGRAM C1233pointerArray08

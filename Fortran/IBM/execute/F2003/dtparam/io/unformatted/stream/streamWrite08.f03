@@ -143,7 +143,7 @@ PROGRAM streamWrite08
     OPEN(41, ACCESS='stream', ACTION='write', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'OPEN(', iostat, ') ', iomsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
@@ -168,7 +168,7 @@ PROGRAM streamWrite08
             END DO
 
         CLASS DEFAULT
-            CALL zzrc( 40_4 )
+            ERROR STOP 40_4
     END SELECT
 
     DO i = 1, 3
@@ -190,7 +190,7 @@ PROGRAM streamWrite08
             END DO
 
         CLASS DEFAULT
-            CALL zzrc( 70_4 )
+            ERROR STOP 70_4
     END SELECT
 
     DO i = 1, 3
@@ -204,7 +204,7 @@ PROGRAM streamWrite08
     CLOSE(41, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'CLOSE(', iostat, ') ', iomsg
-        CALL zzrc( 100_4 )
+        ERROR STOP 100_4
     END IF
 
 
@@ -213,39 +213,39 @@ PROGRAM streamWrite08
             FORM='unformatted', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'OPEN(', iostat, ') ', iomsg
-        CALL zzrc( 110_4 )
+        ERROR STOP 110_4
     END IF
 
 
     READ(41, IOSTAT=iostat, IOMSG=iomsg) (baseIn( i ), i = 1, 3)
     IF (iostat /= 0) THEN
         PRINT *, 'READ(', iostat, ') ', iomsg
-        CALL zzrc( 120_4 )
+        ERROR STOP 120_4
     END IF
 
     READ(41, IOSTAT=iostat, IOMSG=iomsg) (extendedBaseIn( i ), i = 1, 3)
     IF (iostat /= 0) THEN
         PRINT *, 'READ(', iostat, ') ', iomsg
-        CALL zzrc( 130_4 )
+        ERROR STOP 130_4
     END IF
 
     READ(41, IOSTAT=iostat, IOMSG=iomsg) (extendedIn( i ), i = 1, 3)
     IF (iostat /= 0) THEN
         PRINT *, 'READ(', iostat, ') ', iomsg
-        CALL zzrc( 140_4 )
+        ERROR STOP 140_4
     END IF
 
 
     CLOSE(41, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'CLOSE(', iostat, ') ', iomsg
-        CALL zzrc( 150_4 )
+        ERROR STOP 150_4
     END IF
 
 
-    IF ( ANY(baseIn%c /= ca) )          CALL zzrc( 201_4 )
-    IF ( ANY(extendedBaseIn%c /= ca) )  CALL zzrc( 202_4 )
-    IF ( ANY(extendedIn%c /= ca) )      CALL zzrc( 203_4 )
+    IF ( ANY(baseIn%c /= ca) )          ERROR STOP 201_4
+    IF ( ANY(extendedBaseIn%c /= ca) )  ERROR STOP 202_4
+    IF ( ANY(extendedIn%c /= ca) )      ERROR STOP 203_4
 
 
     DO i = 1, 3

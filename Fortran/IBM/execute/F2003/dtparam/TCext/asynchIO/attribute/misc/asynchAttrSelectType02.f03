@@ -81,7 +81,7 @@ PROGRAM asynchAttrSelectType02
                         &FORM='formatted', IOSTAT=iStat, IOMSG=oMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -89,11 +89,11 @@ PROGRAM asynchAttrSelectType02
     iStat = Dump(ioUnit, basePtr)
     IF (iStat /= 0) THEN
         WRITE(0, *) "Dump(derived2) WRITE() <", iStat, ">"
-        CALL zzrc( 2 )
+        ERROR STOP 2
 
     ELSE IF (.NOT. derived2.saved) THEN
         WRITE(0, *) "Dump(derived2) (.NOT. derived2.saved)"
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
@@ -101,11 +101,11 @@ PROGRAM asynchAttrSelectType02
     iStat = Dump(ioUnit, basePtr)
     IF (iStat /= 0) THEN
         WRITE(0, *) "Dump(derived1) WRITE() <", iStat, ">"
-        CALL zzrc( 4 )
+        ERROR STOP 4
 
     ELSE IF (.NOT. derived1.saved) THEN
         WRITE(0, *) "Dump(derived1) (.NOT. derived1.saved)"
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
@@ -113,18 +113,18 @@ PROGRAM asynchAttrSelectType02
     iStat = Dump(ioUnit, basePtr)
     IF (iStat /= 0) THEN
         WRITE(0, *) "Dump(base) WRITE() <", iStat, ">"
-        CALL zzrc( 6 )
+        ERROR STOP 6
 
     ELSE IF (.NOT. base.saved) THEN
         WRITE(0, *) "Dump(base) (.NOT. base.saved)"
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
 
     CLOSE(UNIT=ioUnit, IOSTAT=iStat, IOMSG=oMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", oMsg
-        CALL zzrc( 8 )
+        ERROR STOP 8
     END IF
 
 

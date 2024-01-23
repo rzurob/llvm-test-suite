@@ -81,20 +81,20 @@ PROGRAM unallocatedLBoundDerived02
         END DO
     END DO
 
-    IF ( ALLOCATED( dA ) ) CALL zzrc( 10_4 )
+    IF ( ALLOCATED( dA ) ) ERROR STOP 10_4
 
     dA = d
 
 
-    IF (.NOT. ALLOCATED( dA )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( dA )) ERROR STOP 20_4
 
-    IF (SIZE( dA ) /= 121)     CALL zzrc( 30_4 )
+    IF (SIZE( dA ) /= 121)     ERROR STOP 30_4
 
-    IF (SIZE(dA, 1) /= 11)     CALL zzrc( 31_4 )
-    IF (SIZE(dA, 2) /= 11)     CALL zzrc( 32_4 )
+    IF (SIZE(dA, 1) /= 11)     ERROR STOP 31_4
+    IF (SIZE(dA, 2) /= 11)     ERROR STOP 32_4
 
-    IF (LBOUND(dA, 1) /= -5)   CALL zzrc( 41_4 )
-    IF (LBOUND(dA, 2) /= 0)    CALL zzrc( 42_4 )
+    IF (LBOUND(dA, 1) /= -5)   ERROR STOP 41_4
+    IF (LBOUND(dA, 2) /= 0)    ERROR STOP 42_4
 
     CALL CheckIt( dA )
 

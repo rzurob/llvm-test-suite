@@ -75,7 +75,7 @@ PROGRAM allocatedLBound04
                                     PRINT 100, i, j, k, l, m, n, o,&
                                                 realAlloc( i,j,k,l,m,n,o ),&
                                                 newReal( i,j,k,l,m,n,o )
-                                    CALL zzrc( 100_4 )
+                                    ERROR STOP 100_4
                                 END IF
                             END DO
                         END DO

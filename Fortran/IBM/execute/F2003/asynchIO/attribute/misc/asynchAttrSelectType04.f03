@@ -84,7 +84,7 @@ PROGRAM asynchAttrSelectType04
                     &ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -99,7 +99,7 @@ PROGRAM asynchAttrSelectType04
 
     IF (iStat <> 0) THEN
         WRITE(0, *) "Init() <", iStat, "> ", iMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -107,7 +107,7 @@ PROGRAM asynchAttrSelectType04
         WAIT(ioUnit, IOSTAT=iStat, IOMSG=iMsg)
         IF (iStat <> 0) THEN
             WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
     END IF
 
@@ -125,7 +125,7 @@ PROGRAM asynchAttrSelectType04
     CLOSE(ioUnit, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 END PROGRAM asynchAttrSelectType04

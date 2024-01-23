@@ -57,7 +57,7 @@ PROGRAM noIDSpecPending04
         &ACTION='readwrite', ACCESS='stream', IOSTAT=iStat, IOMSG=oMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -69,7 +69,7 @@ PROGRAM noIDSpecPending04
             &ID=ioID( i ), IOSTAT=iStat, IOMSG=oMsg) i, dataOut( i )
         IF (iStat <> 0) THEN
             WRITE(0, *) i, ") WRITE() <", iStat, "> ", oMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -79,7 +79,7 @@ PROGRAM noIDSpecPending04
     WAIT(ioUnit, IOSTAT=iStat, IOMSG=oMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", oMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
     CALL WaitOnIDs(ioUnit, 1, ioID, 5)
@@ -94,7 +94,7 @@ PROGRAM noIDSpecPending04
                                 &(dataIn( j,i ), j = 1, 2)
         IF (iStat <> 0) THEN
             WRITE(0, *) i, ") READ() <", iStat, "> ", oMsg
-            CALL zzrc( 6 )
+            ERROR STOP 6
         END IF
     END DO
 
@@ -104,7 +104,7 @@ PROGRAM noIDSpecPending04
     WAIT(ioUnit, IOSTAT=iStat, IOMSG=oMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", oMsg
-        CALL zzrc( 8 )
+        ERROR STOP 8
     END IF
 
     CALL WaitOnIDs(ioUnit, 1, ioID, 9)
@@ -113,7 +113,7 @@ PROGRAM noIDSpecPending04
     CLOSE(ioUnit, IOSTAT=iStat, IOMSG=oMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", oMsg
-        CALL zzrc( 10 )
+        ERROR STOP 10
     END IF
 
 
@@ -121,12 +121,12 @@ PROGRAM noIDSpecPending04
         IF (dataIn( 1,i ) <> i) THEN
             WRITE(6, *) "dataIn(1,", i, ") = '", dataIn( 1,i ), "'"
             WRITE(6, *) "Should be '", i, "'"
-            CALL zzrc( 11 )
+            ERROR STOP 11
 
         ELSE IF (dataIn( 2,i ) <> dataOut( i )) THEN
             WRITE(6, *) "dataIn(2,", i, ") = '", dataIn( 2,i ), "'"
             WRITE(6, *) "dataOut(", i, ") = '", dataOut( i ), "'"
-            CALL zzrc( 12 )
+            ERROR STOP 12
         END IF
     END DO
 

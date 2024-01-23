@@ -132,8 +132,8 @@ PROGRAM dtpUseAssociated06a
             (varBase%arrayDim1 * varBase%arrayDim2 * SIZE( varBase )) ) = 1.0_16
 
 
-    IF (KIND( realArray ) /= 16)                        CALL zzrc( 11_4 )
-    IF (SIZE( realArray ) /= 120)                       CALL zzrc( 12_4 )
+    IF (KIND( realArray ) /= 16)                        ERROR STOP 11_4
+    IF (SIZE( realArray ) /= 120)                       ERROR STOP 12_4
 
 
     DO i = 1, 120
@@ -141,7 +141,7 @@ PROGRAM dtpUseAssociated06a
     END DO
 
 
-    IF ( ANY(realArray /= basePrimer) )                 CALL zzrc( 13_4 )
+    IF ( ANY(realArray /= basePrimer) )                 ERROR STOP 13_4
 
     CALL VerifyBase(RESHAPE(realArray, [ 12,10 ]), 20_4)
     CALL DoubleUse( 30_4 )

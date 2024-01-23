@@ -51,22 +51,22 @@ PROGRAM allocatedScalarCharExpr04
     ALLOCATE(CHARACTER(3) :: scalarCharAlloc)
 
 
-    IF (.NOT. ALLOCATED( scalarCharAlloc )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( scalarCharAlloc )) ERROR STOP 10_4
     scalarCharAlloc = char5Var1( 2:4 )
 
-    IF (.NOT. ALLOCATED( scalarCharAlloc )) CALL zzrc( 11_4 )
+    IF (.NOT. ALLOCATED( scalarCharAlloc )) ERROR STOP 11_4
     PRINT *, "1) scalarCharAlloc = '", scalarCharAlloc, "'"
-    IF (LEN( scalarCharAlloc ) /= 3)        CALL zzrc( 12_4 )
-    IF (scalarCharAlloc /= 'qPo')           CALL zzrc( 13_4 )
+    IF (LEN( scalarCharAlloc ) /= 3)        ERROR STOP 12_4
+    IF (scalarCharAlloc /= 'qPo')           ERROR STOP 13_4
 
 
-    IF (.NOT. ALLOCATED( scalarCharAlloc )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( scalarCharAlloc )) ERROR STOP 20_4
     scalarCharAlloc = char3Var1( :2 ) // char2Var1( 2: )
 
-    IF (.NOT. ALLOCATED( scalarCharAlloc )) CALL zzrc( 21_4 )
+    IF (.NOT. ALLOCATED( scalarCharAlloc )) ERROR STOP 21_4
     PRINT *, "2) scalarCharAlloc = '", scalarCharAlloc, "'"
-    IF (LEN( scalarCharAlloc ) /= 3)        CALL zzrc( 22_4 )
-    IF (scalarCharAlloc /= 'qrh')           CALL zzrc( 23_4 )
+    IF (LEN( scalarCharAlloc ) /= 3)        ERROR STOP 22_4
+    IF (scalarCharAlloc /= 'qrh')           ERROR STOP 23_4
 
 
     CALL BigSmallAssign( )
@@ -75,24 +75,24 @@ PROGRAM allocatedScalarCharExpr04
 
         SUBROUTINE BigSmallAssign( )
 
-            IF (.NOT. ALLOCATED( scalarCharAlloc )) CALL zzrc( 30_4 )
+            IF (.NOT. ALLOCATED( scalarCharAlloc )) ERROR STOP 30_4
             scalarCharAlloc = char2Var1 // char3Var2( 2: ) //&
                                 char5Var1( 4: ) // char3Var2
 
-            IF (.NOT. ALLOCATED( scalarCharAlloc )) CALL zzrc( 31_4 )
+            IF (.NOT. ALLOCATED( scalarCharAlloc )) ERROR STOP 31_4
             PRINT *, "3) scalarCharAlloc = '", scalarCharAlloc, "'"
-            IF (LEN( scalarCharAlloc ) /= 9)        CALL zzrc( 32_4 )
-            IF (scalarCharAlloc /= 'ghuvoNtuv')     CALL zzrc( 33_4 )
+            IF (LEN( scalarCharAlloc ) /= 9)        ERROR STOP 32_4
+            IF (scalarCharAlloc /= 'ghuvoNtuv')     ERROR STOP 33_4
 
 
-            IF (.NOT. ALLOCATED( scalarCharAlloc )) CALL zzrc( 40_4 )
+            IF (.NOT. ALLOCATED( scalarCharAlloc )) ERROR STOP 40_4
             scalarCharAlloc = REPEAT(char2Var2( :1 ), 2) // CHAR( 48 )&
                                 // CHAR( 49 ) // REPEAT(char3Var2( :1 ), 2)
 
-            IF (.NOT. ALLOCATED( scalarCharAlloc )) CALL zzrc( 41_4 )
+            IF (.NOT. ALLOCATED( scalarCharAlloc )) ERROR STOP 41_4
             PRINT *, "4) scalarCharAlloc = '", scalarCharAlloc, "'"
-            IF (LEN( scalarCharAlloc ) /= 6)        CALL zzrc( 42_4 )
-            IF (scalarCharAlloc /= 'II01tt')        CALL zzrc( 43_4 )
+            IF (LEN( scalarCharAlloc ) /= 6)        ERROR STOP 42_4
+            IF (scalarCharAlloc /= 'II01tt')        ERROR STOP 43_4
 
         END SUBROUTINE BigSmallAssign
 

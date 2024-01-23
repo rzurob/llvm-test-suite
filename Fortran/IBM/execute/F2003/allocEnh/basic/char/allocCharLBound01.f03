@@ -47,25 +47,25 @@ PROGRAM allocCharLBound01
 
 
     ALLOCATE(chArrAlloc1( 0:6 ), SOURCE=(/ ('ABCDEF', i = 1, 7) /))
-    IF (.NOT. ALLOCATED( chArrAlloc1 )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( chArrAlloc1 )) ERROR STOP 10_4
 
     CALL IntrinsicAssignment1( )
 
-    IF (.NOT. ALLOCATED( chArrAlloc1 )) CALL zzrc( 11_4 )
-    IF (SIZE( chArrAlloc1 ) /= 11)      CALL zzrc( 12_4 )
-    IF (LBOUND(chArrAlloc1, 1) /= -5)   CALL zzrc( 13_4 )
+    IF (.NOT. ALLOCATED( chArrAlloc1 )) ERROR STOP 11_4
+    IF (SIZE( chArrAlloc1 ) /= 11)      ERROR STOP 12_4
+    IF (LBOUND(chArrAlloc1, 1) /= -5)   ERROR STOP 13_4
 
 
     ALLOCATE(CHARACTER(7) :: chArrAlloc2( -2:0 ))
-    IF (.NOT. ALLOCATED( chArrAlloc2 )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( chArrAlloc2 )) ERROR STOP 20_4
 
     chArrAlloc2 = (/ 'ABCDEFG', 'HIJKLMN', 'OPQRSTU' /)
 
     CALL IntrinsicAssignment2( )
 
-    IF (.NOT. ALLOCATED( chArrAlloc2 )) CALL zzrc( 21_4 )
-    IF (SIZE( chArrAlloc2 ) /= 3)       CALL zzrc( 22_4 )
-    IF (LBOUND(chArrAlloc2, 1) /= -1)   CALL zzrc( 23_4 )
+    IF (.NOT. ALLOCATED( chArrAlloc2 )) ERROR STOP 21_4
+    IF (SIZE( chArrAlloc2 ) /= 3)       ERROR STOP 22_4
+    IF (LBOUND(chArrAlloc2, 1) /= -1)   ERROR STOP 23_4
 
 
     DO i = -5, 5

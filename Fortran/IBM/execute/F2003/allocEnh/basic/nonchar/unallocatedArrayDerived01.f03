@@ -90,17 +90,17 @@ PROGRAM unallocatedArrayDerived01
 
     val = 0
 
-    IF ( ALLOCATED( derived3ArrayAlloc ) ) CALL zzrc( 10_4 )
+    IF ( ALLOCATED( derived3ArrayAlloc ) ) ERROR STOP 10_4
 
     CALL Assign( )
 
-    IF (.NOT. ALLOCATED( derived3ArrayAlloc )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( derived3ArrayAlloc )) ERROR STOP 20_4
 
-    IF (SIZE( derived3ArrayAlloc ) /= 27) CALL zzrc( 30_4 )
+    IF (SIZE( derived3ArrayAlloc ) /= 27) ERROR STOP 30_4
 
-    IF (SIZE(derived3ArrayAlloc, 1) /= 3) CALL zzrc( 31_4 )
-    IF (SIZE(derived3ArrayAlloc, 2) /= 3) CALL zzrc( 32_4 )
-    IF (SIZE(derived3ArrayAlloc, 3) /= 3) CALL zzrc( 33_4 )
+    IF (SIZE(derived3ArrayAlloc, 1) /= 3) ERROR STOP 31_4
+    IF (SIZE(derived3ArrayAlloc, 2) /= 3) ERROR STOP 32_4
+    IF (SIZE(derived3ArrayAlloc, 3) /= 3) ERROR STOP 33_4
 
     DO i = 1, 3
         DO j = 1, 3

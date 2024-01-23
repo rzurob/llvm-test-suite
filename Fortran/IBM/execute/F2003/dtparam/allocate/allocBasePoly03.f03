@@ -65,23 +65,23 @@ PROGRAM allocBasePoly03
     CLASS(base(8,5)), POINTER :: basePtr
 
 
-    IF ( ASSOCIATED( basePtr ) )                CALL zzrc( 10_4 )
+    IF ( ASSOCIATED( basePtr ) )                ERROR STOP 10_4
 
 
     basePtr => NewBasePtr( 20_4 )
 
 
-    IF (.NOT. ASSOCIATED( basePtr ))            CALL zzrc( 21_4 )
+    IF (.NOT. ASSOCIATED( basePtr ))            ERROR STOP 21_4
 
-    IF (basePtr%k1 /= 8)                        CALL zzrc( 22_4 )
-    IF (KIND( basePtr%stuff ) /= 8)             CALL zzrc( 23_4 )
+    IF (basePtr%k1 /= 8)                        ERROR STOP 22_4
+    IF (KIND( basePtr%stuff ) /= 8)             ERROR STOP 23_4
 
-    IF (basePtr%l1 /= 5)                        CALL zzrc( 24_4 )
-    IF (LEN( basePtr%typeOfStuff ) /= 5)        CALL zzrc( 25_4 )
+    IF (basePtr%l1 /= 5)                        ERROR STOP 24_4
+    IF (LEN( basePtr%typeOfStuff ) /= 5)        ERROR STOP 25_4
 
 
     DEALLOCATE( basePtr )
 
-    IF ( ASSOCIATED( basePtr ) )                CALL zzrc( 30_4 )
+    IF ( ASSOCIATED( basePtr ) )                ERROR STOP 30_4
 
 END PROGRAM allocBasePoly03

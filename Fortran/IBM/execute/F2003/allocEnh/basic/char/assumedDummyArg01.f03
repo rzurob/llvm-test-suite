@@ -39,27 +39,27 @@ PROGRAM assumedDummyArg01
     CHARACTER(9), ALLOCATABLE :: charScalarAlloc
 
 
-    IF ( ALLOCATED( charScalarAlloc ) )     CALL zzrc( 10_4 )
+    IF ( ALLOCATED( charScalarAlloc ) )     ERROR STOP 10_4
 
 
     CALL Assign(charScalarAlloc, 0)
 
-    IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 20_4
 
     PRINT *, LEN( charScalarAlloc ), "'", charScalarAlloc, "'"
 
-    IF (LEN_TRIM( charScalarAlloc ) /= 9)   CALL zzrc( 21_4 )
-    IF (charScalarAlloc /= 'FindRunTe')     CALL zzrc( 22_4 )
+    IF (LEN_TRIM( charScalarAlloc ) /= 9)   ERROR STOP 21_4
+    IF (charScalarAlloc /= 'FindRunTe')     ERROR STOP 22_4
 
 
     CALL Assign(charScalarAlloc, 1)
 
-    IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 30_4 )
+    IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 30_4
 
     PRINT *, LEN( charScalarAlloc ), "'", charScalarAlloc, "'"
 
-    IF (LEN_TRIM( charScalarAlloc ) /= 7)   CALL zzrc( 31_4 )
-    IF (charScalarAlloc /= 'ToBeRun')       CALL zzrc( 32_4 )
+    IF (LEN_TRIM( charScalarAlloc ) /= 7)   ERROR STOP 31_4
+    IF (charScalarAlloc /= 'ToBeRun')       ERROR STOP 32_4
 
 
     CONTAINS
