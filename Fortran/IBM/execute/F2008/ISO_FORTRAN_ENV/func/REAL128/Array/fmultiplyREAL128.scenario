@@ -42,21 +42,5 @@
 #INPUT=  fmultiplyREAL128_1$(EXE)
 #ENDCMD
 
-#CMD=    XLF2008_COMPILE
-#OPTS=   -qautodbl=dbl
-#INPUT=  $(tcasedir)fmultiplyREAL128.f
-#OUTPUT= fmultiplyREAL128_2$(OBJ)
-#ENDCMD
-
-#CMD=    XLF2008_LINK
-#OPTS=   -qautodbl=dbl
-#INPUT=  fmultiplyREAL128_2$(OBJ)
-#OUTPUT= fmultiplyREAL128_2$(EXE)
-#ENDCMD
-
-#CMD =   RUN
-#INPUT=  fmultiplyREAL128_2$(EXE)
-#ENDCMD
-
 #ENDCONTROL
 #ENDSCENARIO
