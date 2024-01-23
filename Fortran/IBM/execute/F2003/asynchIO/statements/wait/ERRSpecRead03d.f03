@@ -51,7 +51,7 @@ PROGRAM ERRSpecRead03d
         FORM='unformatted', ASYNCHRONOUS='yes', IOSTAT=iStat)
     if (iStat <> 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 11 )
+        error stop 11
     end if
 
 
@@ -74,7 +74,7 @@ PROGRAM ERRSpecRead03d
     close(938, IOMSG=iMsg, IOSTAT=iStat)
     if (iStat <> 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 31 )
+        error stop 31
     end if
 
 END PROGRAM ERRSpecRead03d

@@ -56,7 +56,7 @@ PROGRAM allocCharacter04
     IF (iStat /= 0) THEN
         WRITE(0, *)&
             "ALLOCATE(CHARACTER( 4 ) :: allocCharArray) <", iStat, "> ", errMsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
     DO i = N, O
@@ -71,7 +71,7 @@ PROGRAM allocCharacter04
 
     IF (.NOT. ALLOCATED( allocCharArray )) THEN
         WRITE(0, *) "ALLOCATED( allocCharArray ) == .FALSE."
-        CALL zzrc( 20_4 )
+        ERROR STOP 20_4
 
     ELSE
         DO i = N, O

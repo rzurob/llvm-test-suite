@@ -49,11 +49,11 @@ PROGRAM allocatedAllocatable02
     ALLOCATE(integerArrayAlloc( (N + 1) ), STAT=iStat, ERRMSG=iMsg)
     IF (iStat /= 0) THEN
         PRINT *, "ALLOCATE() <", iStat, "> ", iMsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
 
     ELSE IF (.NOT. ALLOCATED( integerArrayAlloc )) THEN
         PRINT *, "ALLOCATED( integerArrayAlloc ) == .FALSE."
-        CALL zzrc( 20_4 )
+        ERROR STOP 20_4
     END IF
 
 
@@ -65,7 +65,7 @@ PROGRAM allocatedAllocatable02
     integerArrayAlloc = integerArray
     IF (.NOT. ALLOCATED( integerArrayAlloc )) THEN
         PRINT *, "ALLOCATED( integerArrayAlloc ) == .FALSE."
-        CALL zzrc( 30_4 )
+        ERROR STOP 30_4
     END IF
 
     PRINT 100, integerArray

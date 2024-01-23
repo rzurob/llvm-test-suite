@@ -53,7 +53,7 @@ PROGRAM EORSpecRead04
          &FORM='formatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -71,7 +71,7 @@ PROGRAM EORSpecRead04
     WAIT(ID=ioID( 7 ), END=100, UNIT=555, EOR=200, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT(", ioID( 7 ), ") <", iStat, "> ", iMsg
-        CALL zzrc( 27 )
+        ERROR STOP 27
     END IF
 
     GOTO 300
@@ -85,7 +85,7 @@ PROGRAM EORSpecRead04
 300 WAIT(555, EOR=300, END=500, ID=ioID( 3 ), IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT(", ioID( 3 ), ") <", iStat, "> ", iMsg
-        CALL zzrc( 23 )
+        ERROR STOP 23
     END IF
 
     GOTO 600
@@ -99,7 +99,7 @@ PROGRAM EORSpecRead04
 600 WAIT(555, EOR=700, IOSTAT=iStat, END=800, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 31 )
+        ERROR STOP 31
     END IF
 
     GOTO 900
@@ -118,7 +118,7 @@ PROGRAM EORSpecRead04
     CLOSE(555, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 41 )
+        ERROR STOP 41
     END IF
 
 END PROGRAM EORSpecRead04

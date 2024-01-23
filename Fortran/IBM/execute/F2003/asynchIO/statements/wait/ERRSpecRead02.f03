@@ -59,7 +59,7 @@ PROGRAM ERRSpecRead02
     WAIT(922, ERR=100)
 
     WRITE(0, *) "WAIT() Failed to use ERR=100"
-    CALL zzrc( 11 )
+    ERROR STOP 11
 
 
 

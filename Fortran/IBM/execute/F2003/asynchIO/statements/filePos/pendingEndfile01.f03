@@ -50,7 +50,7 @@ PROGRAM pendingEndfile01
             FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -68,7 +68,7 @@ PROGRAM pendingEndfile01
     REWIND(2038, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "REWIND() <", iStat, "> ", iMsg
-        CALL zzrc( 21 )
+        ERROR STOP 21
     END IF
 
 
@@ -86,7 +86,7 @@ PROGRAM pendingEndfile01
     ENDFILE(2038, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "ENDFILE() <", iStat, "> ", iMsg
-        CALL zzrc( 41 )
+        ERROR STOP 41
     END IF
 
 
@@ -102,7 +102,7 @@ PROGRAM pendingEndfile01
     CLOSE(2038, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 61 )
+        ERROR STOP 61
     END IF
 
 END PROGRAM pendingEndfile01

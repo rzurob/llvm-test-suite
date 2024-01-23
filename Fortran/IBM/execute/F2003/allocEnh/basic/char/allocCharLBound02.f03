@@ -44,39 +44,39 @@ PROGRAM allocCharLBound02
     CHARACTER(3), ALLOCATABLE :: chrArrAlloc2( :,: )
 
     ALLOCATE(CHARACTER(9) :: chrArrAlloc1( -1:1,0:2 ))
-    IF (.NOT. ALLOCATED( chrArrAlloc1 )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( chrArrAlloc1 )) ERROR STOP 10_4
 
     chrArrAlloc1 = RESHAPE((/ ('xyzXYZxyz', i = 1, 9) /), (/ 3,3 /))
 
     ALLOCATE(chrArrAlloc2( 0:1,-1:0 ),&
             SOURCE=RESHAPE((/ ('!@#', i = 1, 4) /), (/ 2,2 /)))
 
-    IF (.NOT. ALLOCATED( chrArrAlloc2 )) CALL zzrc( 11_4 )
+    IF (.NOT. ALLOCATED( chrArrAlloc2 )) ERROR STOP 11_4
 
     CALL IntrinsicAssignment( )
 
-    IF (.NOT. ALLOCATED( chrArrAlloc1 )) CALL zzrc( 20_4 )
-    IF (.NOT. ALLOCATED( chrArrAlloc2 )) CALL zzrc( 21_4 )
+    IF (.NOT. ALLOCATED( chrArrAlloc1 )) ERROR STOP 20_4
+    IF (.NOT. ALLOCATED( chrArrAlloc2 )) ERROR STOP 21_4
 
-    IF (SIZE( chrArrAlloc1 ) /= 16) CALL zzrc( 30_4 )
-    IF (SIZE( chrArrAlloc2 ) /= 16) CALL zzrc( 31_4 )
+    IF (SIZE( chrArrAlloc1 ) /= 16) ERROR STOP 30_4
+    IF (SIZE( chrArrAlloc2 ) /= 16) ERROR STOP 31_4
 
 
     PRINT *, SIZE(chrArrAlloc1, 1), SIZE(chrArrAlloc2, 1),&
              LBOUND(chrArrAlloc1, 1), LBOUND(chrArrAlloc2, 1)
 
-    IF (SIZE(chrArrAlloc1, 1) /= 4)     CALL zzrc( 30_4 )
-    IF (SIZE(chrArrAlloc2, 1) /= 4)     CALL zzrc( 31_4 )
-    IF (LBOUND(chrArrAlloc1, 1) /= -1)  CALL zzrc( 32_4 )
-    IF (LBOUND(chrArrAlloc2, 1) /= -1)  CALL zzrc( 33_4 )
+    IF (SIZE(chrArrAlloc1, 1) /= 4)     ERROR STOP 30_4
+    IF (SIZE(chrArrAlloc2, 1) /= 4)     ERROR STOP 31_4
+    IF (LBOUND(chrArrAlloc1, 1) /= -1)  ERROR STOP 32_4
+    IF (LBOUND(chrArrAlloc2, 1) /= -1)  ERROR STOP 33_4
 
     PRINT *, SIZE(chrArrAlloc1, 2), SIZE(chrArrAlloc2, 2),&
              LBOUND(chrArrAlloc1, 2), LBOUND(chrArrAlloc2, 2)
 
-    IF (SIZE(chrArrAlloc1, 2) /= 4)     CALL zzrc( 40_4 )
-    IF (SIZE(chrArrAlloc2, 2) /= 4)     CALL zzrc( 41_4 )
-    IF (LBOUND(chrArrAlloc1, 2) /= 0)   CALL zzrc( 42_4 )
-    IF (LBOUND(chrArrAlloc2, 2) /= 0)   CALL zzrc( 43_4 )
+    IF (SIZE(chrArrAlloc1, 2) /= 4)     ERROR STOP 40_4
+    IF (SIZE(chrArrAlloc2, 2) /= 4)     ERROR STOP 41_4
+    IF (LBOUND(chrArrAlloc1, 2) /= 0)   ERROR STOP 42_4
+    IF (LBOUND(chrArrAlloc2, 2) /= 0)   ERROR STOP 43_4
 
 
     PRINT *
@@ -89,11 +89,11 @@ PROGRAM allocCharLBound02
                      LEN( chrArrAlloc2( j,i ) ), charValue, ' ',&
                      chrArrAlloc1( j,i ), ' ', chrArrAlloc2( j,i )
 
-            IF (LEN( chrArrAlloc1( j,i ) ) /= 5) CALL zzrc( 51_4 )
-            IF (LEN( chrArrAlloc2( j,i ) ) /= 3) CALL zzrc( 52_4 )
+            IF (LEN( chrArrAlloc1( j,i ) ) /= 5) ERROR STOP 51_4
+            IF (LEN( chrArrAlloc2( j,i ) ) /= 3) ERROR STOP 52_4
 
-            IF (chrArrAlloc1( j,i ) /= charValue)        CALL zzrc( 53_4 )
-            IF (chrArrAlloc2( j,i ) /= charValue( 1:3 )) CALL zzrc( 54_4 )
+            IF (chrArrAlloc1( j,i ) /= charValue)        ERROR STOP 53_4
+            IF (chrArrAlloc2( j,i ) /= charValue( 1:3 )) ERROR STOP 54_4
         END DO
     END DO
 

@@ -67,20 +67,20 @@ PROGRAM exprSelector02c
 
     ASSOCIATE(array => [ tLK(13,8):: ])
         IF (SIZE( array ) /= 0) THEN
-            CALL zzrc( 10_4 )
+            ERROR STOP 10_4
 
         ELSE IF (array%l /= 13) THEN
-            CALL zzrc( 11_4 )
+            ERROR STOP 11_4
 
         ELSE IF (array%k /= 8) THEN
-            CALL zzrc( 12_4 )
+            ERROR STOP 12_4
         END IF
     END ASSOCIATE
 
 
     ASSOCIATE(array => [ tLK_a, tLK_b, tLK_c, tLK_d, tLK_e ])
         IF (SIZE( array ) /= 5) THEN
-            CALL zzrc( 20_4 )
+            ERROR STOP 20_4
         END IF
 
         DO i = 1_4, SIZE( array )

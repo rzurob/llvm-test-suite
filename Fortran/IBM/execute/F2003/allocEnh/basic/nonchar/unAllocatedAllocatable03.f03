@@ -46,25 +46,25 @@ PROGRAM unAllocatedAllocatable03
     REAL(8), ALLOCATABLE :: realArrayAlloc( :,:,: )
 
 
-    IF ( ALLOCATED( intScalarAlloc ) ) CALL zzrc( 10_4 )
-    IF ( ALLOCATED( realArrayAlloc ) ) CALL zzrc( 20_4 )
+    IF ( ALLOCATED( intScalarAlloc ) ) ERROR STOP 10_4
+    IF ( ALLOCATED( realArrayAlloc ) ) ERROR STOP 20_4
 
 
     realArrayAlloc = RESHAPE((/ (REAL(i, 16), i = 1, 60) /), (/ 3,4,5 /))
     intScalarAlloc = 42_2
 
 
-    IF (.NOT. ALLOCATED( intScalarAlloc ))  CALL zzrc( 30_4 )
-    IF (KIND( intScalarAlloc ) /= 8)        CALL zzrc( 40_4 )
-    IF (intScalarAlloc /= 42_8)             CALL zzrc( 50_4 )
+    IF (.NOT. ALLOCATED( intScalarAlloc ))  ERROR STOP 30_4
+    IF (KIND( intScalarAlloc ) /= 8)        ERROR STOP 40_4
+    IF (intScalarAlloc /= 42_8)             ERROR STOP 50_4
 
 
-    IF (.NOT. ALLOCATED( realArrayAlloc ))  CALL zzrc( 50_4 )
+    IF (.NOT. ALLOCATED( realArrayAlloc ))  ERROR STOP 50_4
 
-    IF (SIZE( realArrayAlloc ) /= 60)       CALL zzrc( 70_4 )
-    IF (SIZE(realArrayAlloc, 1) /= 3)       CALL zzrc( 80_4 )
-    IF (SIZE(realArrayAlloc, 2) /= 4)       CALL zzrc( 90_4 )
-    IF (SIZE(realArrayAlloc, 3) /= 5)       CALL zzrc( 100_4 )
+    IF (SIZE( realArrayAlloc ) /= 60)       ERROR STOP 70_4
+    IF (SIZE(realArrayAlloc, 1) /= 3)       ERROR STOP 80_4
+    IF (SIZE(realArrayAlloc, 2) /= 4)       ERROR STOP 90_4
+    IF (SIZE(realArrayAlloc, 3) /= 5)       ERROR STOP 100_4
 
 
     DO i = 1,5

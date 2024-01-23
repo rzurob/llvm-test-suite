@@ -40,28 +40,28 @@ PROGRAM asynchSpecOpen01
     OPEN(8, ASYNCHRONOUS='YES', IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(): ", ioErrorMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
     CLOSE(8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ", ioErrorMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
     OPEN(8, ASYNCHRONOUS='NO', IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(): ", ioErrorMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
     CLOSE(8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ", ioErrorMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 

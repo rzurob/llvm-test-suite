@@ -97,7 +97,7 @@ PROGRAM componentSelector04
                                     .TRUE.,[ intrinsicPoly( 5 ) ])
 
         CLASS DEFAULT
-            CALL zzrc( 80_4 )
+            ERROR STOP 80_4
     END SELECT
 
     CALL Dump(derivedPoly, 6_4, 100_4)

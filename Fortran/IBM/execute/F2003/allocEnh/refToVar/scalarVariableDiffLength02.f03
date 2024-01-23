@@ -90,11 +90,11 @@ PROGRAM scalarVariableDiffLength02
     DO i = 1_4, 1024_4
         charScalarAlloc = charScalarAlloc // char1Kb
 
-        IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 200_4 )
+        IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 200_4
 
         IF (LEN( charScalarAlloc ) /= (i * 1024_4)) THEN
             PRINT *, i, LEN( charScalarAlloc )
-            CALL zzrc( 201_4 )
+            ERROR STOP 201_4
         END IF
     END DO
 
@@ -102,11 +102,11 @@ PROGRAM scalarVariableDiffLength02
     DO i = 1024_4, 1_4, -1_4
         charScalarAlloc = charScalarAlloc( :(i * 1024_4) )
 
-        IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 210_4 )
+        IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 210_4
 
         IF (LEN( charScalarAlloc ) /= (i * 1024_4)) THEN
             PRINT *, i, LEN( charScalarAlloc )
-            CALL zzrc( 211_4 )
+            ERROR STOP 211_4
         END IF
     END DO
 

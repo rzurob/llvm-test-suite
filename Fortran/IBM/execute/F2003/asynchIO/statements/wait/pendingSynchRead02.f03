@@ -94,7 +94,7 @@ PROGRAM pendingSynchRead02
     WRITE(6, *) "READ() <", iStat, "> ", iMsg
 
     IF (1 <> iStat) THEN
-        CALL zzrc( 11 )
+        ERROR STOP 11
     END IF
 
 

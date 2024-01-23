@@ -41,6 +41,6 @@ PROGRAM allocArrVarScalarExpr02
 !    defCharArrAlloc = (/ 'ABC' /)
     PRINT *, LEN( defCharArrAlloc ), "(", defCharArrAlloc, ")"
 
-!    IF (LEN( defCharArrAlloc ) /= 3)  CALL zzrc( 132_4 ) ! d320792
+!    IF (LEN( defCharArrAlloc ) /= 3)  ERROR STOP 132_4 ! d320792
 
 END PROGRAM allocArrVarScalarExpr02

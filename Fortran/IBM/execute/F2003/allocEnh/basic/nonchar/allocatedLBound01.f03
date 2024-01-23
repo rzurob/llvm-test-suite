@@ -43,9 +43,9 @@ MODULE module
             ALLOCATE(intArrayAlloc( 7:12 ),&
                     SOURCE=(/ (INT(i, 8), i = 55, 60) /))
 
-            IF (.NOT. ALLOCATED( intArrayAlloc )) CALL zzrc( 10_4 )
-            IF (SIZE( intArrayAlloc ) /= 6)       CALL zzrc( 20_4 )
-            IF (LBOUND(intArrayAlloc, 1) /= 7)    CALL zzrc( 30_4 )
+            IF (.NOT. ALLOCATED( intArrayAlloc )) ERROR STOP 10_4
+            IF (SIZE( intArrayAlloc ) /= 6)       ERROR STOP 20_4
+            IF (LBOUND(intArrayAlloc, 1) /= 7)    ERROR STOP 30_4
 
         END SUBROUTINE allocArray
 
@@ -63,16 +63,16 @@ PROGRAM allocatedLBound01
     CALL intrinAssign( )
 
 
-    IF (.NOT. ALLOCATED( intArrayAlloc )) CALL zzrc( 40_4 )
+    IF (.NOT. ALLOCATED( intArrayAlloc )) ERROR STOP 40_4
 
     IF (SIZE( intArrayAlloc ) /= 11) THEN
         PRINT *, "SIZE( intArrayAlloc ) =", SIZE( intArrayAlloc )
-        CALL zzrc( 50_4 )
+        ERROR STOP 50_4
     END IF
 
     IF (LBOUND(intArrayAlloc, 1) /= -5) THEN
         PRINT *, "LBOUND(intArrayAlloc, 1) =", LBOUND(intArrayAlloc, 1)
-        CALL zzrc( 60_4 )
+        ERROR STOP 60_4
     END IF
 
     DO i = -5, 5

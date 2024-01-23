@@ -42,7 +42,7 @@ PROGRAM C1232assumedShape01
         ASYNCHRONOUS='yes', FORM='unformatted', IOSTAT=iStat)
     if (0 <> iStat) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -52,7 +52,7 @@ PROGRAM C1232assumedShape01
     CLOSE(1232, IOMSG=iMsg, IOSTAT=iStat)
     if (0 <> iStat) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 4 )
+        error stop 4
     end if
 
 
@@ -64,14 +64,14 @@ PROGRAM C1232assumedShape01
 
             iStat = ReadData(ioUnit, theArray)
             if (iStat <> 0) then
-                call zzrc( 2 )
+                error stop 2
             end if
 
 
             WAIT(ioUnit, IOMSG=iMsg, IOSTAT=iStat)
             if (0 <> iStat) then
                 write(0, *) "WAIT() <", iStat, "> ", iMsg
-                call zzrc( 3 )
+                error stop 3
             end if
 
 

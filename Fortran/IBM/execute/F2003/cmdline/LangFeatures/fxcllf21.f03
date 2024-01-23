@@ -110,15 +110,15 @@
 
       SUBROUTINE SUB0
 
-      IF ( COMMAND_ARGUMENT_COUNT() .ne. 3)                      call zzrc( 72 )
+      IF ( COMMAND_ARGUMENT_COUNT() .ne. 3)                      error stop 72
 
-      IF ( EXT_COMMAND_ARGUMENT_COUNT( ))                        call zzrc( 73 )
+      IF ( EXT_COMMAND_ARGUMENT_COUNT( ))                        error stop 73
 
-      IF ( EXT_GET_COMMAND( ))                                   call zzrc( 74 )
+      IF ( EXT_GET_COMMAND( ))                                   error stop 74
 
-      IF ( EXT_GET_COMMAND_ARGUMENT( COMMAND_ARGUMENT_COUNT()))  call zzrc( 75 )
+      IF ( EXT_GET_COMMAND_ARGUMENT( COMMAND_ARGUMENT_COUNT()))  error stop 75
 
-      IF (EXT_GET_ENVIRONMENT_VARIABLE( ))                       call zzrc( 76 )
+      IF (EXT_GET_ENVIRONMENT_VARIABLE( ))                       error stop 76
 
 
       END SUBROUTINE

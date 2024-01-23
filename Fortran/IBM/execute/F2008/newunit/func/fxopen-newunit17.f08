@@ -34,7 +34,7 @@
             FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1_4 )
+        ERROR STOP 1_4
     END IF
 
 
@@ -44,7 +44,7 @@
 
         IF (iStat <> 0) THEN
             WRITE(0, *) "WRITE() <", iStat, "> ", iMsg
-            CALL zzrc( 2_4 )
+            ERROR STOP 2_4
         END IF
     END DO
 
@@ -52,7 +52,7 @@
     REWIND(IVAR, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "REWIND() <", iStat, "> ", iMsg
-        CALL zzrc( 3_4 )
+        ERROR STOP 3_4
     END IF
 
 
@@ -62,7 +62,7 @@
 
         IF (iStat <> 0) THEN
             WRITE(0, *) "WRITE() <", iStat, "> ", iMsg
-            CALL zzrc( 4_4 )
+            ERROR STOP 4_4
         END IF
     END DO
 
@@ -70,14 +70,14 @@
     ENDFILE(IVAR, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "ENDFILE() <", iStat, "> ", iMsg
-        CALL zzrc( 5_4 )
+        ERROR STOP 5_4
     END IF
 
 
     CLOSE(IVAR, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 6_4 )
+        ERROR STOP 6_4
     END IF
 
     END PROGRAM FXOPEN_NEWUNIT17

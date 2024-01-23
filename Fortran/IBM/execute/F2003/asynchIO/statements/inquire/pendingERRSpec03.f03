@@ -76,7 +76,7 @@ PROGRAM pendingERRSpec03
         FORM='unformatted', ACCESS='direct', IOSTAT=iStat, IOMSG=iMsg)
     IF (0 /= iStat) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -119,7 +119,7 @@ PROGRAM pendingERRSpec03
     CLOSE(217, IOSTAT=iStat, IOMSG=iMsg)
     IF (0 /= iStat) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 51 )
+        ERROR STOP 51
     END IF
 
 

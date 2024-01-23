@@ -93,7 +93,7 @@ PROGRAM allocatedLBoundDerived04
         SOURCE=RESHAPE((/ (d2Type((i - 1),i,(i + 1)), i = 1, 729) /),&
                                                         (/ 3,3,3,3,3,3 /)))
 
-    IF (.NOT. ALLOCATED( d2AllocArray ))    CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( d2AllocArray ))    ERROR STOP 10_4
 
     CALL CheckSize(3, (/ -5,-4,-3,-2,-1,0 /), 20_4)
 
@@ -107,7 +107,7 @@ PROGRAM allocatedLBoundDerived04
 
             d2AllocArray = d2StaticArray
 
-            IF (.NOT. ALLOCATED( d2AllocArray ))    CALL zzrc( 40_4 )
+            IF (.NOT. ALLOCATED( d2AllocArray ))    ERROR STOP 40_4
 
             CALL CheckSize(2, (/ -5,-3,-1,0,2,4 /), 50_4)
 

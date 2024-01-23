@@ -42,13 +42,13 @@ PROGRAM allocatedAllocatable04
     ALLOCATE(realArrayAlloc( -5:-1,5,6:10 ),&
             SOURCE=RESHAPE((/ ((i / 3.14_16), i = 1, 125) /), (/ 5,5,5 /)))
 
-    IF ( .NOT. ALLOCATED( realArrayAlloc )) CALL zzrc( 10_4 )
+    IF ( .NOT. ALLOCATED( realArrayAlloc )) ERROR STOP 10_4
 
-    IF (SIZE( realArrayAlloc ) /= 125) CALL zzrc( 20_4 )
+    IF (SIZE( realArrayAlloc ) /= 125) ERROR STOP 20_4
 
-    IF (SIZE(realArrayAlloc, 1) /= 5) CALL zzrc( 30_4 )
-    IF (SIZE(realArrayAlloc, 2) /= 5) CALL zzrc( 40_4 )
-    IF (SIZE(realArrayAlloc, 3) /= 5) CALL zzrc( 50_4 )
+    IF (SIZE(realArrayAlloc, 1) /= 5) ERROR STOP 30_4
+    IF (SIZE(realArrayAlloc, 2) /= 5) ERROR STOP 40_4
+    IF (SIZE(realArrayAlloc, 3) /= 5) ERROR STOP 50_4
 
 
     CALL zzrc( assignRealArray( ) )

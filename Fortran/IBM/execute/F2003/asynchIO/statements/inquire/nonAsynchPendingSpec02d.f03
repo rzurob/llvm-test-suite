@@ -65,14 +65,14 @@ program nonAsynchPendingSpec02d
         &action='write', form='unformatted', iostat=iStat, iomsg=iMsg)
     if (0 /= iStat) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
     write(456, asynchronous='no', iostat=iStat, iomsg=iMsg) 1234
     if (0 /= iStat) then
         write(0, *) "WRITE() <", iStat, "> ", iMsg
-        call zzrc( 2 )
+        error stop 2
     end if
 
 
@@ -80,11 +80,11 @@ program nonAsynchPendingSpec02d
             &pending=imPending, iostat=iStat, iomsg=iMsg)
     if (0 /= iStat) then
         write(0, *) "INQUIRE() <", iStat, "> ", iMsg
-        call zzrc( 3 )
+        error stop 3
 
     else if ( imPending ) then
         write(0, *) "INQUIRE(PENDING=", imPending, ")"
-        call zzrc( 4 )
+        error stop 4
     end if
 
 
@@ -92,18 +92,18 @@ program nonAsynchPendingSpec02d
             &pending=imPending, iostat=iStat, iomsg=iMsg)
     if (226 /= iStat) then
         write(0, *) "INQUIRE(ID=", ioID, ") <", iStat, "> ", iMsg
-        call zzrc( 5 )
+        error stop 5
 
     else if ( imPending ) then
         write(0, *) "INQUIRE(ID=", ioID, ",PENDING=", imPending, ")"
-        call zzrc( 6 )
+        error stop 6
     end if
 
 
     close(456, iostat=iStat, iomsg=iMsg)
     if (0 /= iStat) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 7 )
+        error stop 7
     end if
 
 end program nonAsynchPendingSpec02d

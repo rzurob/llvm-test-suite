@@ -205,13 +205,13 @@ PROGRAM dtpStructConstr02
     type = tType(8,3,4)(real8Array)
 
     verifyType%array = real8Array
-    IF (type /= verifyType)                 CALL zzrc( 10_4 )
+    IF (type /= verifyType)                 ERROR STOP 10_4
 
 
     anotherType = tAnotherType(4,2)(REAL(real8Array, 4))
     verifyAnotherType%array = REAL(real8Array, 4)
 
-    IF (anotherType /= verifyAnotherType)   CALL zzrc( 20_4 )
+    IF (anotherType /= verifyAnotherType)   ERROR STOP 20_4
 
 
     extendedType =&

@@ -83,7 +83,7 @@ PROGRAM openAccessSpec03
             &FILE="openAccessSpec03.dat", IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN(", iUnit, ") <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -93,7 +93,7 @@ PROGRAM openAccessSpec03
 
         IF (iStat /= 0) THEN
             WRITE(0, *) "READ(Asynchronous) <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -102,7 +102,7 @@ PROGRAM openAccessSpec03
         WAIT(iUnit, ID=aioID( i ), IOSTAT=iStat, IOMSG=iMsg)
         IF (iStat <> 0) THEN
             WRITE(0, *) i, ") WAIT(", aioID( i ), ") <", iStat, "> ", iMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
 
         tmpChar = derived( i )%alpha
@@ -116,7 +116,7 @@ PROGRAM openAccessSpec03
         &ACTION='write', FORM='formatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN(", oUnit, ") <", iStat, "> ", iMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
@@ -126,21 +126,21 @@ PROGRAM openAccessSpec03
 
     IF (iStat /= 0) THEN
         WRITE(0, *) "WRITE() <", iStat, "> ", iMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
     CLOSE(oUnit, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE(", oUnit, ") <", iStat, "> ", iMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 
     CLOSE(iUnit, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE(", iUnit, ") <", iStat, "> ", iMsg
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
 END PROGRAM openAccessSpec03

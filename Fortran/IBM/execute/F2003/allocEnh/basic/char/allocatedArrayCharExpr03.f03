@@ -41,24 +41,24 @@ PROGRAM allocatedArrayCharExpr03
     ALLOCATE(CHARACTER(3) :: charArrAlloc( 3,3,3 ))
 
 
-    IF (.NOT. ALLOCATED( charArrAlloc )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( charArrAlloc )) ERROR STOP 10_4
     charArrAlloc = RESHAPE((/ ('aXb', i = 1, 27) /), (/ 3,3,3 /))
 
 
     CALL AssignIt( charArrAlloc )
 
 
-    IF (.NOT. ALLOCATED( charArrAlloc )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( charArrAlloc )) ERROR STOP 20_4
 
     PRINT *, SIZE( charArrAlloc ), SIZE(charArrAlloc, 1),&
                 SIZE(charArrAlloc, 2), SIZE(charArrAlloc, 3)
 
 
-    IF (SIZE( charArrAlloc ) /= 27) CALL zzrc( 30_4 )
+    IF (SIZE( charArrAlloc ) /= 27) ERROR STOP 30_4
 
-    IF (SIZE(charArrAlloc, 1) /= 9) CALL zzrc( 31_4 )
-    IF (SIZE(charArrAlloc, 2) /= 3) CALL zzrc( 32_4 )
-    IF (SIZE(charArrAlloc, 3) /= 1) CALL zzrc( 33_4 )
+    IF (SIZE(charArrAlloc, 1) /= 9) ERROR STOP 31_4
+    IF (SIZE(charArrAlloc, 2) /= 3) ERROR STOP 32_4
+    IF (SIZE(charArrAlloc, 3) /= 1) ERROR STOP 33_4
 
 
     DO j = 1, 3
@@ -66,8 +66,8 @@ PROGRAM allocatedArrayCharExpr03
             PRINT *, "charArrAlloc(",k,",",j,", 1 ) = '",&
                       charArrAlloc( k,j,1 ),"'",LEN( charArrAlloc( k,j,1 ) )
 
-            IF (LEN( charArrAlloc( k,j,1 ) ) /= 6) CALL zzrc( 41_4 )
-            IF (charArrAlloc( k,j,1 ) /= 'aXbaXb') CALL zzrc( 42_4 )
+            IF (LEN( charArrAlloc( k,j,1 ) ) /= 6) ERROR STOP 41_4
+            IF (charArrAlloc( k,j,1 ) /= 'aXbaXb') ERROR STOP 42_4
         END DO
     END DO
 

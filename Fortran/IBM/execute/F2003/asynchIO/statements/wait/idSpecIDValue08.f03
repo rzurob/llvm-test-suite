@@ -49,7 +49,7 @@ PROGRAM idSpecIDValue08
         &FORM='formatted', ACCESS='sequential', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -106,7 +106,7 @@ PROGRAM idSpecIDValue08
     CLOSE(461, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 50 )
+        ERROR STOP 50
     END IF
 
 

@@ -65,7 +65,7 @@ program pendingRewind04d
         action='readwrite', access='stream', ioMsg=iMsg, iostat=iStat)
     if (iStat <> 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 11 )
+        error stop 11
     end if
 
 
@@ -83,7 +83,7 @@ program pendingRewind04d
     rewind(41, iostat=iStat, ioMsg=iMsg)
     if (iStat <> 0) then
         write(0, *) "REWIND() <", iStat, "> ", iMsg
-        call zzrc( 31 )
+        error stop 31
     end if
 
 
@@ -104,7 +104,7 @@ program pendingRewind04d
     close(41, iostat=iStat, ioMsg=iMsg)
     if (iStat <> 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 51 )
+        error stop 51
     end if
 
 end program pendingRewind04d

@@ -49,14 +49,14 @@ PROGRAM unAllocatedAllocatable01
     REAL, ALLOCATABLE :: realArrayAlloc( :,: )
 
 
-    IF ( ALLOCATED( complexScalarAlloc ) )  CALL zzrc( 10_4 )
-    IF ( ALLOCATED( realArrayAlloc ) )      CALL zzrc( 20_4 )
+    IF ( ALLOCATED( complexScalarAlloc ) )  ERROR STOP 10_4
+    IF ( ALLOCATED( realArrayAlloc ) )      ERROR STOP 20_4
 
 
     complexScalarAlloc = COMPLEX_SCALAR
 
-    IF (.NOT. ALLOCATED( complexScalarAlloc )) CALL zzrc( 30_4 )
-    IF (complexScalarAlloc /= ( 4.321,9.876 )) CALL zzrc( 40_4 )
+    IF (.NOT. ALLOCATED( complexScalarAlloc )) ERROR STOP 30_4
+    IF (complexScalarAlloc /= ( 4.321,9.876 )) ERROR STOP 40_4
 
 
     DO i = 1, N
@@ -69,7 +69,7 @@ PROGRAM unAllocatedAllocatable01
 
     realArrayAlloc = realArray
 
-    IF (.NOT. ALLOCATED( realArrayAlloc )) CALL zzrc( 50_4 )
+    IF (.NOT. ALLOCATED( realArrayAlloc )) ERROR STOP 50_4
 
     DO i = N, 1, -1
         DO j = N, 1, -1

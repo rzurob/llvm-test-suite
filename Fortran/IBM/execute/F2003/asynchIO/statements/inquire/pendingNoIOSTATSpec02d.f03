@@ -72,7 +72,7 @@ PROGRAM pendingNoIOSTATSpec02d
             RECL=4, ACTION='readwrite', IOSTAT=iStat, IOMSG=iMsg)
     if (iStat <> 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 11 )
+        error stop 11
     end if
 
 
@@ -90,13 +90,13 @@ PROGRAM pendingNoIOSTATSpec02d
     inquire(44, PENDING=sumPending, ERR=100, IOSTAT=iStat, IOMSG=iMsg)
     if (iStat <> 0) then
         write(0, *) "INQUIRE() <", iStat, "> ", iMsg
-        call zzrc( 31 )
+        error stop 31
     end if
 
     goto 200
 
 100 write(0, *) "INQUIRE(ERR=100) <", iStat, "> ", iMsg
-    call zzrc( 51 )
+    error stop 51
 
 
 200 do i = 1, 10
@@ -113,7 +113,7 @@ PROGRAM pendingNoIOSTATSpec02d
     inquire(44, PENDING=sumPending, ERR=300, IOMSG=iMsg)
 
     write(0, *) "INQUIRE() ", iMsg
-    call zzrc( 71 )
+    error stop 71
 
 300 write(0, *) "INQUIRE(ERR=300) ", iMsg
 
@@ -121,7 +121,7 @@ PROGRAM pendingNoIOSTATSpec02d
 400 close(44, IOSTAT=iStat, IOMSG=iMsg)
     if (iStat <> 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 91 )
+        error stop 91
     end if
 
 END PROGRAM pendingNoIOSTATSpec02d

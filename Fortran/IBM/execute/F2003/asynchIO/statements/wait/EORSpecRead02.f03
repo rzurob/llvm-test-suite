@@ -52,7 +52,7 @@ PROGRAM EORSpecRead02
         &ACTION='read', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -84,7 +84,7 @@ PROGRAM EORSpecRead02
     WAIT(E0R=300, IOSTAT=iStat, UNIT=1901, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) i, ") WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 31 )
+        ERROR STOP 31
     END IF
 
     GOTO 400
@@ -101,7 +101,7 @@ PROGRAM EORSpecRead02
     CLOSE(UNIT=1901, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 END PROGRAM EORSpecRead02

@@ -96,7 +96,7 @@ PROGRAM specExprPending01
     !
 100 CONTINUE
     PRINT *, "OPEN():  failed"
-    CALL zzrc( 1 )
+    ERROR STOP 1
     GOTO 300
 
 
@@ -105,7 +105,7 @@ PROGRAM specExprPending01
     !
 200 CONTINUE
     PRINT *, "CLOSE():  failed"
-    CALL zzrc( 3 )
+    ERROR STOP 3
 
 
 300 CONTINUE
@@ -136,7 +136,7 @@ SUBROUTINE AsynchronousWrite(ioUnit, cSize, cVar)
     !
 150 CONTINUE
     PRINT *, "WRITE(ASYNCHRONOUS=yes):  failed"
-    CALL zzrc( 2 )
+    ERROR STOP 2
 
 
 175 CONTINUE

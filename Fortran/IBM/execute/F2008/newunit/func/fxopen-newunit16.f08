@@ -34,7 +34,7 @@
          IOSTAT=iStat)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1_4 )
+        ERROR STOP 1_4
     END IF
 
 
@@ -43,7 +43,7 @@
               IOSTAT=iStat, IOMSG=iMsg) VVAR( i )
         IF (iStat /= 0) THEN
             WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-            CALL zzrc( 2_4 )
+            ERROR STOP 2_4
         END IF
 
         WAIT(IVAR, ID=ioID, IOSTAT=iStat, IOMSG=iMsg)
@@ -56,7 +56,7 @@
         BACKSPACE(IVAR, IOSTAT=iStat, IOMSG=iMsg)
         IF (iStat /= 0) THEN
             WRITE(0, *) "BACKSPACE() <", iStat, "> ", iMsg
-            CALL zzrc( 3_4 )
+            ERROR STOP 3_4
         END IF
 
 
@@ -65,7 +65,7 @@
     CLOSE(IVAR, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 5_4 )
+        ERROR STOP 5_4
     END IF
 
 

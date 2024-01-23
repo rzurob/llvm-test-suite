@@ -57,7 +57,7 @@ MODULE mBase
         SUBROUTINE tBaseFinal( o )
             TYPE(tBase(*,4)), INTENT(inout) :: o( : )
 
-            CALL zzrc( 99_4 )
+            ERROR STOP 99_4
 
         END SUBROUTINE tBaseFinal
 
@@ -76,21 +76,21 @@ PROGRAM unallocatedLBoundDerived01
     TYPE(tDerived(:,4)), ALLOCATABLE :: derivedArrayAlloc( : )
 
 
-    IF ( ALLOCATED( derivedArrayAlloc ) ) CALL zzrc( 10_4 )
+    IF ( ALLOCATED( derivedArrayAlloc ) ) ERROR STOP 10_4
 
     CALL Assign( )
 
 
-    IF (.NOT. ALLOCATED( derivedArrayAlloc )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( derivedArrayAlloc )) ERROR STOP 20_4
 
-    IF (SIZE( derivedArrayAlloc ) /= 2)     CALL zzrc( 30_4 )
-    IF (LBOUND(derivedArrayAlloc, 1) /= 0)  CALL zzrc( 40_4 )
+    IF (SIZE( derivedArrayAlloc ) /= 2)     ERROR STOP 30_4
+    IF (LBOUND(derivedArrayAlloc, 1) /= 0)  ERROR STOP 40_4
 
-    IF (derivedArrayAlloc( 0 )%b /= 1)  CALL zzrc( 50_4 )
-    IF (derivedArrayAlloc( 0 )%d /= 1)  CALL zzrc( 60_4 )
+    IF (derivedArrayAlloc( 0 )%b /= 1)  ERROR STOP 50_4
+    IF (derivedArrayAlloc( 0 )%d /= 1)  ERROR STOP 60_4
 
-    IF (derivedArrayAlloc( 1 )%b /= 2)  CALL zzrc( 70_4 )
-    IF (derivedArrayAlloc( 1 )%d /= 4)  CALL zzrc( 80_4 )
+    IF (derivedArrayAlloc( 1 )%b /= 2)  ERROR STOP 70_4
+    IF (derivedArrayAlloc( 1 )%d /= 4)  ERROR STOP 80_4
 
     CONTAINS
 

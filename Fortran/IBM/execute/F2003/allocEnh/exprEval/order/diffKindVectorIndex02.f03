@@ -52,22 +52,22 @@ PROGRAM diffKindVectorIndex02
 
 
     realArrAlloc = realArr
-    IF (KIND( realArrAlloc ) /= defaultRealKind) CALL zzrc( 10_4 )
+    IF (KIND( realArrAlloc ) /= defaultRealKind) ERROR STOP 10_4
     CALL Dump( 'Assignment (5x5x5):' )
 
 
     realArrAlloc = REAL(realArrAlloc( :,:,(/ 1,1,2,3,4,5,5 /) ), 4)
-    IF (KIND( realArrAlloc ) /= defaultRealKind) CALL zzrc( 20_4 )
+    IF (KIND( realArrAlloc ) /= defaultRealKind) ERROR STOP 20_4
     CALL Dump( 'REAL(4) (5x5x7):' )
 
 
     realArrAlloc = REAL(realArrAlloc( (/ 2,3,4 /),:,: ), 8)
-    IF (KIND( realArrAlloc ) /= defaultRealKind) CALL zzrc( 30_4 )
+    IF (KIND( realArrAlloc ) /= defaultRealKind) ERROR STOP 30_4
     CALL Dump( 'REAL(8) (3x5x7):' )
 
 
     realArrAlloc = REAL(realArrAlloc( :,(/ 2,3,4 /),(/ 3,4,5 /) ), 16)
-    IF (KIND( realArrAlloc ) /= defaultRealKind) CALL zzrc( 40_4 )
+    IF (KIND( realArrAlloc ) /= defaultRealKind) ERROR STOP 40_4
     CALL Dump( 'REAL(16) (3x3x3):' )
 
 

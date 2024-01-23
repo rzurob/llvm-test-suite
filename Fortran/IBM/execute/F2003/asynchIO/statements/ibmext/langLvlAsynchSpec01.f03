@@ -78,7 +78,7 @@ PROGRAM langLvlAsynchSpec01
         ACTION='write', ACCESS='direct', IOSTAT=iStat, IOMSG=iMsg)
     if (iStat /= 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -88,7 +88,7 @@ PROGRAM langLvlAsynchSpec01
 
         if (iStat /= 0) then
             write(0, *) i, ") WRITE() <", iStat, "> ", iMsg
-            call zzrc( 2 )
+            error stop 2
         end if
     end do
 
@@ -100,11 +100,11 @@ PROGRAM langLvlAsynchSpec01
     isAsynch = 'YES'
     if (iStat /= 0) then
         write(0, *) "INQUIRE() <", iStat, "> ", iMsg
-        call zzrc( 3 )
+        error stop 3
 
     else if (isAsynch /= 'YES') then
         write(0, *) "INQUIRE(ASYNCH=", isAsynch, ")"
-        call zzrc( 4 )
+        error stop 4
 
     else
         do i = 1, n
@@ -112,7 +112,7 @@ PROGRAM langLvlAsynchSpec01
 
             if (iStat /= 224) then
                 write(0, *) i, ") WAIT(", ioID( i ), ") <", iStat, "> ", iMsg
-                call zzrc( 5 )
+                error stop 5
             end if
         end do
     end if
@@ -121,7 +121,7 @@ PROGRAM langLvlAsynchSpec01
     CLOSE(214, IOSTAT=iStat, IOMSG=iMsg)
     if (iStat /= 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 6 )
+        error stop 6
     end if
 
 END PROGRAM langLvlAsynchSpec01

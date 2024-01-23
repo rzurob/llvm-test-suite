@@ -72,15 +72,15 @@ PROGRAM variableIsStructComp03
 
     t2a = t2_5
     t2Ptr => t2a
-    IF (.NOT. ALLOCATED( t2a )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( t2a )) ERROR STOP 10_4
     CALL Check(t2_5, 10_4)
 
     t2a = t2_2
-    IF (.NOT. ALLOCATED( t2a )) CALL zzrc( 40_4 )
+    IF (.NOT. ALLOCATED( t2a )) ERROR STOP 40_4
     CALL Check(t2_2, 40_4)
 
     t2a = t2_10
-    IF (.NOT. ALLOCATED( t2a )) CALL zzrc( 70_4 )
+    IF (.NOT. ALLOCATED( t2a )) ERROR STOP 70_4
     CALL Check(t2_10, 70_4)
 
 

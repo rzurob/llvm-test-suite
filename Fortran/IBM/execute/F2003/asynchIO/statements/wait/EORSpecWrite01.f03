@@ -55,7 +55,7 @@ PROGRAM EORSpecWrite01
             &ASYNCHRONOUS='yes', ACCESS='stream', IOSTAT=oStat)
     IF (oStat <> 0) THEN
         WRITE(0, *) "OPEN() <", oStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -65,7 +65,7 @@ PROGRAM EORSpecWrite01
 
         IF (oStat <> 0) THEN
             WRITE(0, *) "WRITE() <", oStat, "> ", oMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -76,14 +76,14 @@ PROGRAM EORSpecWrite01
     WAIT(81, EOR=100, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "WAIT() <", oStat, "> ", oMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
     CLOSE(81, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", oStat, "> ", oMsg
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
     STOP 0
@@ -91,7 +91,7 @@ PROGRAM EORSpecWrite01
 
 100 CONTINUE
     WRITE(0, *) "EOR WAIT() <", oStat, "> ", oMsg
-    CALL zzrc( 6 )
+    ERROR STOP 6
 
 END PROGRAM EORSpecWrite01
 
@@ -110,7 +110,7 @@ SUBROUTINE Wait4IDs(ioUnit, ioIDs)
 
         IF (oStat <> 0) THEN
             WRITE(0, *) i, ") WAIT(", ioIDs( i ), ") <", oStat, "> ", oMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
     END DO
 
@@ -118,6 +118,6 @@ SUBROUTINE Wait4IDs(ioUnit, ioIDs)
 
 
 100 WRITE(0, *) i, ") EOR WAIT(", ioIDs( i ), ") <", oStat, "> ", oMsg
-    CALL zzrc( 4 )
+    ERROR STOP 4
 
 END SUBROUTINE Wait4IDs

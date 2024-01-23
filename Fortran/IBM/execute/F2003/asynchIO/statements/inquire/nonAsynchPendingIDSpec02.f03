@@ -60,7 +60,7 @@ PROGRAM nonAsynchPendingIDSpec02
             &ACCESS='stream', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -77,18 +77,18 @@ PROGRAM nonAsynchPendingIDSpec02
     INQUIRE(2121, PENDING=pHending, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "INQUIRE() <", iStat, "> ", iMsg
-        CALL zzrc( 21 )
+        ERROR STOP 21
 
     ELSE IF ( pHending ) THEN
         WRITE(0, *) "INQUIRE(PENDING=", pHending, ")"
-        CALL zzrc( 31 )
+        ERROR STOP 31
     END IF
 
 
     CLOSE(2121, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 41 )
+        ERROR STOP 41
     END IF
 
 END PROGRAM nonAsynchPendingIDSpec02

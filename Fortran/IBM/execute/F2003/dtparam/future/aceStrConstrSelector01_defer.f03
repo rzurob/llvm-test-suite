@@ -84,7 +84,7 @@ PROGRAM aceStrConstrSelector01
 
     ASSOCIATE(array => [ b(3,16)(rA), b(3,16)(rA), b(3,16)(rA) ])
 
-        IF (SIZE( array ) /= 3)                  CALL zzrc( 50_4 )
+        IF (SIZE( array ) /= 3)                  ERROR STOP 50_4
 
         DO i = 1, SIZE( array )
             IF (array( i ) /= bA( i ))           CALL zzrc( (60_4+INT(i, 4)) )
@@ -93,7 +93,7 @@ PROGRAM aceStrConstrSelector01
 
         ASSOCIATE(nestedArray => [ array,b(3,16)(rA),b(3,16)(rA),b(3,16)(rA) ])
 
-            IF (SIZE( nestedArray ) /= 6)        CALL zzrc( 70_4 )
+            IF (SIZE( nestedArray ) /= 6)        ERROR STOP 70_4
 
             DO i = 1, SIZE( nestedArray )
                 j = MOD((i - 1), 3) + 1
@@ -114,7 +114,7 @@ PROGRAM aceStrConstrSelector01
 
             ASSOCIATE(assumedArray => [ a,b(3,16)(rA),b(3,16)(rA),b(3,16)(rA) ])
 
-                IF (SIZE( assumedArray ) /= 6)        CALL zzrc( 90_4 )
+                IF (SIZE( assumedArray ) /= 6)        ERROR STOP 90_4
 
                 DO i = 1, SIZE( assumedArray )
                     j = MOD((i - 1), 3) + 1

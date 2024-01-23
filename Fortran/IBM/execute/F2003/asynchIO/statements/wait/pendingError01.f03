@@ -43,7 +43,7 @@ PROGRAM pendingError01
         &ACCESS='direct', FILE='pendingError01.dat', IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -61,7 +61,7 @@ PROGRAM pendingError01
     WAIT(6043, ID=aID( 1 ), ERR=100, IOSTAT=iStat, IOMSG=iMsg)
 
     WRITE(0, *) "1 ) WAIT(", aID( 1 ), ") <", iStat, "> ", iMsg
-    CALL zzrc( 21 )
+    ERROR STOP 21
 
 
 100 DO i = 2, 3
@@ -82,7 +82,7 @@ PROGRAM pendingError01
     CLOSE(6043, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 30 )
+        ERROR STOP 30
     END IF
 
 END PROGRAM pendingError01

@@ -197,7 +197,7 @@ PROGRAM aceCompPtrIntrinsic01
     DEALLOCATE( bA )
 
 
-    IF (COUNT([ b1, b2, b1 ] /= b3) /= 3) CALL zzrc( 20_4 )
+    IF (COUNT([ b1, b2, b1 ] /= b3) /= 3) ERROR STOP 20_4
 
 
     CONTAINS

@@ -70,14 +70,14 @@ MODULE m
 
             if (arg1 /= 'abcd') then
                 WRITE(0, *) "arg1 = '", arg1, "' (Expected 'abcd')"
-                CALL zzrc( 1_4 )
+                ERROR STOP 1_4
             end if
 
             arg1 = 'zyxw'
 
             if (arg2 /= 'abcd') then
                 WRITE(0, *) "arg2 = '", arg2, "' (Expected 'abcd')"
-                CALL zzrc( 2_4 )
+                ERROR STOP 2_4
             end if
 
             x = arg1( 1:2 ) // arg2( 3:4 )
@@ -108,23 +108,23 @@ PROGRAM valueAttrMultiSameArg001
 
     charResult = x(charValue, charValue)
     if (charResult /= 'zycd') then
-        CALL zzrc( 3_4 )
+        ERROR STOP 3_4
 
     else if (charValue /= 'abcd') then
-        CALL zzrc( 4_4 )
+        ERROR STOP 4_4
     end if
 
     call y(charValue, charValue)
     if (charValue /= 'abcd') then
-        CALL zzrc( 5_4 )
+        ERROR STOP 5_4
     end if
 
     charResult = z(charValue, charValue, charValue)
     if (charResult /= 'ycbc') then
-        CALL zzrc( 6_4 )
+        ERROR STOP 6_4
 
     else if (charValue /= 'abcd') then
-        CALL zzrc( 7_4 )
+        ERROR STOP 7_4
     end if
 
 END PROGRAM valueAttrMultiSameArg001
@@ -138,15 +138,15 @@ SUBROUTINE y(arg1, arg2)
 
 
     if (arg1 /= 'abcd') then
-        CALL zzrc( 8_4 )
+        ERROR STOP 8_4
     end if
 
     arg1 = x(arg2, arg2)
     if (arg1 /= 'zycd') then
-        CALL zzrc( 9_4 )
+        ERROR STOP 9_4
 
     else if (arg2 /= 'abcd') then
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     end if
 
 END SUBROUTINE y
@@ -161,15 +161,15 @@ CHARACTER(len = 4) FUNCTION z(arg1, arg2, arg3)
 
 
     if (arg2 /= 'abcd') then
-        CALL zzrc( 11_4 )
+        ERROR STOP 11_4
     end if
 
     arg2 = x(arg2, arg2)
     if (arg1 /= 'abcd') then
-        CALL zzrc( 12_4 )
+        ERROR STOP 12_4
 
     else if (arg3 /= 'abcd') then
-        CALL zzrc( 13_4 )
+        ERROR STOP 13_4
     end if
 
     z = arg2( 2:3 ) // arg1( 2:3 )

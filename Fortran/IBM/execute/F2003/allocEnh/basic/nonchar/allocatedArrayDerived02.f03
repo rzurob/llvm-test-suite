@@ -83,8 +83,8 @@ PROGRAM allocatedArrayDerived02
         SOURCE=RESHAPE((/ (tTypeDerived( (27 - i),i ), i = 27, 1, -1) /),&
                                                                 (/ 3,3,3 /)))
 
-    IF (.NOT. ALLOCATED( derivedArrayAlloc ))   CALL zzrc( 10_4 )
-    IF (SIZE( derivedArrayAlloc ) /= 27) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( derivedArrayAlloc ))   ERROR STOP 10_4
+    IF (SIZE( derivedArrayAlloc ) /= 27) ERROR STOP 20_4
 
     DO i = 1, 3
         IF (SIZE(derivedArrayAlloc, i) /= 3) CALL zzrc( (20_4 + i) )
@@ -97,8 +97,8 @@ PROGRAM allocatedArrayDerived02
     CALL AssignIt( )
 
 
-    IF (.NOT. ALLOCATED( derivedArrayAlloc ))   CALL zzrc( 100_4 )
-    IF (SIZE( derivedArrayAlloc ) /= 8) CALL zzrc( 120_4 )
+    IF (.NOT. ALLOCATED( derivedArrayAlloc ))   ERROR STOP 100_4
+    IF (SIZE( derivedArrayAlloc ) /= 8) ERROR STOP 120_4
 
     DO i = 1, 3
         IF (SIZE(derivedArrayAlloc, i) /= 2) CALL zzrc( (120_4 + i) )

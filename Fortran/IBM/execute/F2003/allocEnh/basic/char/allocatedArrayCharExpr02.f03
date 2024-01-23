@@ -45,20 +45,20 @@ PROGRAM allocatedArrayCharExpr02
 
     ALLOCATE(CHARACTER(6) :: charArrayAlloc( 5,5 ))
 
-    IF (.NOT. ALLOCATED( charArrayAlloc ))  CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( charArrayAlloc ))  ERROR STOP 10_4
 
 
     CALL Assign( )
 
 
-    IF (.NOT. ALLOCATED( charArrayAlloc ))  CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( charArrayAlloc ))  ERROR STOP 20_4
 
     PRINT *, SIZE( charArrayAlloc ),&
             SIZE(charArrayAlloc, 1), SIZE(charArrayAlloc, 2)
 
-    IF (SIZE( charArrayAlloc ) /= 9)        CALL zzrc( 30_4 )
-    IF (SIZE(charArrayAlloc, 1) /= 3)       CALL zzrc( 31_4 )
-    IF (SIZE(charArrayAlloc, 2) /= 3)       CALL zzrc( 32_4 )
+    IF (SIZE( charArrayAlloc ) /= 9)        ERROR STOP 30_4
+    IF (SIZE(charArrayAlloc, 1) /= 3)       ERROR STOP 31_4
+    IF (SIZE(charArrayAlloc, 2) /= 3)       ERROR STOP 32_4
 
 
     DO i = 1, 3
@@ -66,8 +66,8 @@ PROGRAM allocatedArrayCharExpr02
             PRINT *,"charArrayAlloc(",j,",",i,") == (",&
                     charArrayAlloc( j,i ),")",LEN( charArrayAlloc( j,i ) )
 
-            IF (LEN( charArrayAlloc( j,i ) ) /= 3)  CALL zzrc( 40_4 )
-            IF (charArrayAlloc( j,i ) /= 'bMX')     CALL zzrc( 41_4 )
+            IF (LEN( charArrayAlloc( j,i ) ) /= 3)  ERROR STOP 40_4
+            IF (charArrayAlloc( j,i ) /= 'bMX')     ERROR STOP 41_4
         END DO
     END DO
 

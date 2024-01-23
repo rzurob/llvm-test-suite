@@ -107,8 +107,8 @@ PROGRAM aceArrayFunctionReturn01
     baseOutA = baseInA(1)%Factorial( baseInA )
 
 
-    IF (SIZE( baseOutA ) /= 6)              CALL zzrc( 10_4 )
-    IF ( ANY(baseOutA%idx /= expected) )    CALL zzrc( 11_4 )
+    IF (SIZE( baseOutA ) /= 6)              ERROR STOP 10_4
+    IF ( ANY(baseOutA%idx /= expected) )    ERROR STOP 11_4
 
 
     DO i = 1, SIZE( baseOutA )

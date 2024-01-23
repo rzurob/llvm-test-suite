@@ -69,55 +69,55 @@ program acetint04
   iarr2a = (/integer(1):: MASK1, MASK2, MASK4, MASK8/)
   if (.not.all(iarr2a == iarr1)) then
      print *, "iarr2a (",iarr2a,") should be (",iarr1,")"
-     call zzrc( 1_4)
+     error stop 1_4
   end if
 
   iarr4a = (/integer(1):: MASK1, MASK2, MASK4, MASK8/)
   if (.not.all(iarr4a == iarr1)) then
      print *, "iarr4a (",iarr4a,") should be (",iarr1,")"
-     call zzrc( 2_4)
+     error stop 2_4
   end if
 
   iarr8a = (/integer(1):: MASK1, MASK2, MASK4, MASK8/)
   if (.not.all(iarr8a == iarr1)) then
      print *, "iarr8a (",iarr8a,") should be (",iarr1,")"
-     call zzrc( 3_4)
+     error stop 3_4
   end if
 
   iarra  = (/integer(1):: MASK1, MASK2, MASK4, MASK8/)
   if (.not.all(iarra  == iarr1)) then
      print *, "iarra (",iarra,") should be (", iarr1,")"
-     call zzrc( 4_4)
+     error stop 4_4
   end if
 
   iarr1a = (/integer(2):: MASK1, MASK2, MASK4, MASK8/)
   if (.not.all(iarr1a == iarr1)) then
      print *, "iarr1a (",iarr1a,") should be (",iarr1,")"
-     call zzrc( 5_4)
+     error stop 5_4
   end if
 
   iarr4a = (/integer(2):: MASK1, MASK2, MASK4, MASK8/)
   if (.not.all(iarr4a == iarr2)) then
      print *, "iarr4a (",iarr4a,") should be (",iarr2,")"
-     call zzrc( 6_4)
+     error stop 6_4
   end if
 
   iarr8a = (/integer(2):: MASK1, MASK2, MASK4, MASK8/)
   if (.not.all(iarr8a == iarr2)) then
      print *, "iarr8a (",iarr8a,") should be (",iarr2,")"
-     call zzrc( 7_4)
+     error stop 7_4
   end if
 
   iarra  = (/integer(2):: MASK1, MASK2, MASK4, MASK8/)
   if (.not.all(iarra  == iarr2)) then
      print *, "iarra (",iarra,") should be (", iarr2,")"
-     call zzrc( 8_4)
+     error stop 8_4
   end if
 
   iarr1a = (/integer(4):: MASK1, MASK2, MASK4, MASK8/)
   if (.not.all(iarr1a == iarr1)) then
      print *, "iarr1a (",iarr1a,") should be (",iarr1,")"
-     call zzrc( 9_4)
+     error stop 9_4
   end if
 
   iarr2a = (/integer(4):: MASK1, MASK2, MASK4, MASK8/)

@@ -49,7 +49,7 @@ PROGRAM ERRSpecRead04d
         ASYNCHRONOUS='yes', ACTION='read', IOSTAT=iStat, IOMSG=iMsg)
     if (iStat <> 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 11 )
+        error stop 11
     end if
 
 
@@ -74,7 +74,7 @@ PROGRAM ERRSpecRead04d
     close(939, IOSTAT=iStat, IOMSG=iMsg)
     if (iStat <> 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 11 )
+        error stop 11
     end if
 
 END PROGRAM ERRSpecRead04d

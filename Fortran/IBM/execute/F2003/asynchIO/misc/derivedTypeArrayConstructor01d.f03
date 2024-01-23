@@ -53,7 +53,7 @@ PROGRAM derivedTypeArrayConstructor01d
 
         IF (oStat <> 0) THEN
             WRITE(0, *) i, ") WRITE(*) <", oStat, "> ", oMsg
-            CALL zzrc( 1 )
+            ERROR STOP 1
         END IF
 
 
@@ -61,7 +61,7 @@ PROGRAM derivedTypeArrayConstructor01d
             &IOSTAT=oStat, IOMSG=oMsg) thatType( ((n - i) + 1) )
         IF (oStat <> 0) THEN
             WRITE(0, *) i, ") WRITE(*) <", oStat, "> ", oMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 

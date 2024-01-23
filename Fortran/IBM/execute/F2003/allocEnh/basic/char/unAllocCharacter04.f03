@@ -43,12 +43,12 @@ PROGRAM unAllocCharacter04
     CHARACTER(5), ALLOCATABLE :: chrArrAlloc( : )
 
 
-    IF ( ALLOCATED( chrArrAlloc ) ) CALL zzrc( 10_4 )
+    IF ( ALLOCATED( chrArrAlloc ) ) ERROR STOP 10_4
 
     chrArrAlloc = chrArr3
 
-    IF (.NOT. ALLOCATED( chrArrAlloc )) CALL zzrc( 11_4 )
-    IF (SIZE( chrArrAlloc ) /= 5)       CALL zzrc( 12_4 )
+    IF (.NOT. ALLOCATED( chrArrAlloc )) ERROR STOP 11_4
+    IF (SIZE( chrArrAlloc ) /= 5)       ERROR STOP 12_4
 
     DO i = 1, 5
         PRINT *, LEN( chrArrAlloc( i ) ), 'chrArrAlloc(', i, ') = "',&
@@ -74,12 +74,12 @@ PROGRAM unAllocCharacter04
                 (/ 'ABCDEFG', 'HIJKLMN', 'OPQRSTU' /)
 
 
-            IF ( ALLOCATED( chrArrAlloc ) ) CALL zzrc( 30_4 )
+            IF ( ALLOCATED( chrArrAlloc ) ) ERROR STOP 30_4
 
             chrArrAlloc = chrArr7
 
-            IF (.NOT. ALLOCATED( chrArrAlloc )) CALL zzrc( 31_4 )
-            IF (SIZE( chrArrAlloc ) /= 3)       CALL zzrc( 32_4 )
+            IF (.NOT. ALLOCATED( chrArrAlloc )) ERROR STOP 31_4
+            IF (SIZE( chrArrAlloc ) /= 3)       ERROR STOP 32_4
 
             DO i = 1, 3
                 PRINT *, LEN( chrArrAlloc( i ) ), 'chrArrAlloc(', i, ') = "',&

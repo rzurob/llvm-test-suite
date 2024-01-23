@@ -51,7 +51,7 @@ PROGRAM noIDSpecPending01
         &ACCESS='direct', FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -68,7 +68,7 @@ PROGRAM noIDSpecPending01
     WAIT(111, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 21 )
+        ERROR STOP 21
     END IF
 
 
@@ -88,7 +88,7 @@ PROGRAM noIDSpecPending01
     WAIT(111, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 51 )
+        ERROR STOP 51
     END IF
 
 
@@ -107,7 +107,7 @@ PROGRAM noIDSpecPending01
     CLOSE(111, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 80 )
+        ERROR STOP 80
     END IF
 
 END PROGRAM noIDSpecPending01

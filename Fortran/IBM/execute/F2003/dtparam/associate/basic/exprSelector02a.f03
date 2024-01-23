@@ -49,10 +49,10 @@ PROGRAM exprSelector02a
 
     ASSOCIATE(array => [ tK(1):: ])
         IF (SIZE( array ) /= 0) THEN
-            CALL zzrc( 10_4 )
+            ERROR STOP 10_4
 
         ELSE IF (array%k /= 1) THEN
-            CALL zzrc( 11_4 )
+            ERROR STOP 11_4
         END IF
     END ASSOCIATE
 
@@ -75,13 +75,13 @@ PROGRAM exprSelector02a
         END DO
 
         IF (SIZE( array ) /= 4) THEN
-            CALL zzrc( 30_4 )
+            ERROR STOP 30_4
 
         ELSE IF ( ANY(checkKindArray /= 1) ) THEN
-            CALL zzrc( 31_4 )
+            ERROR STOP 31_4
 
         ELSE IF ( ANY(checkValuesArray /= valuesArray) ) THEN
-            CALL zzrc( 32_4 )
+            ERROR STOP 32_4
         END IF
 
         DEALLOCATE( checkKindArray )

@@ -116,7 +116,7 @@ PROGRAM directReadWrite06
          ACTION='readwrite', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, "OPEN(", iostat, ") ", iomsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
@@ -197,6 +197,6 @@ PROGRAM directReadWrite06
     END DO
 
 
-    IF ( ANY(endValues /= startValues) ) CALL zzrc( 70_4 )
+    IF ( ANY(endValues /= startValues) ) ERROR STOP 70_4
 
 END PROGRAM directReadWrite06

@@ -71,7 +71,7 @@ program pendingNoIDSpec02
         &ACTION='write', FORM='formatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -88,7 +88,7 @@ program pendingNoIDSpec02
     INQUIRE(650, PENDING=isPending, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "INQUIRE() <", iStat, "> ", iMsg
-        CALL zzrc( 21 )
+        ERROR STOP 21
     END IF
 
 
@@ -122,7 +122,7 @@ program pendingNoIDSpec02
     CLOSE(650, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 61 )
+        ERROR STOP 61
     END IF
 
 end program pendingNoIDSpec02

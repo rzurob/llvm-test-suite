@@ -62,7 +62,7 @@ PROGRAM unitSpecFileUnitNum03
     WAIT(UNIT=78, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(6, *) "WAIT(Unit DOESNOT Exist) <", iStat, ">"
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -73,19 +73,19 @@ PROGRAM unitSpecFileUnitNum03
     OPEN(78, ASYNCHRONOUS='no', IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(6, *) "OPEN() <", iStat, ">"
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
     WRITE(78, FMT='(I3)', IOSTAT=iStat) 78
     IF (iStat <> 0) THEN
         WRITE(6, *) "WRITE() <", iStat, ">"
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
     WAIT(78, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(6, *) "WAIT(ASYNCHRONOUS=no) <", iStat, ">"
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
@@ -96,13 +96,13 @@ PROGRAM unitSpecFileUnitNum03
     CLOSE(78, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(6, *) "CLOSE() <", iStat, ">"
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
     WAIT(IOSTAT=iStat, UNIT=78)
     IF (iStat <> 0) THEN
         WRITE(6, *) "WAIT(ClosedUnit) <", iStat, ">"
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 END PROGRAM unitSpecFileUnitNum03

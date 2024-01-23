@@ -66,7 +66,7 @@ program pendingRewind02
             form='unformatted', asynchronous='yes', iostat=iStat, iomsg=iMsg)
     if (iStat /= 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1_4 )
+        error stop 1_4
     end if
 
 
@@ -85,7 +85,7 @@ program pendingRewind02
     rewind(188, iostat=iStat, iomsg=iMsg)
     if (iStat /= IOSTAT_END) then
         write(0, *) "REWIND() <", iStat, "> ", iMsg
-        call zzrc( 21_4 )
+        error stop 21_4
     end if
 
 
@@ -109,13 +109,13 @@ program pendingRewind02
     rewind(188, ERR=100, iostat=iStat, iomsg=iMsg)
 
     write(6, *) "REWIND() <", iStat, "> ", iMsg
-    call zzrc( 51_4 )
+    error stop 51_4
 
     goto 200
 
 100 write(6, *) "REWIND(ERR=) <", iStat, "> ", iMsg
     if (iStat /= IOSTAT_END) then
-        call zzrc( 61_4 )
+        error stop 61_4
     end if
 
 
@@ -127,7 +127,7 @@ program pendingRewind02
     close(188, iostat=iStat, iomsg=iMsg)
     if (iStat /= 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 81_4 )
+        error stop 81_4
     end if
 
 end program pendingRewind02

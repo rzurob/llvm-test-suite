@@ -60,7 +60,7 @@ PROGRAM pendingNextRecSpec01
         FORM='unformatted', RECL=4, ACTION='readwrite', IOSTAT=iStat)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -80,7 +80,7 @@ PROGRAM pendingNextRecSpec01
     nxtRec = InquireAndWait(213, 20)
     IF (nxtRec /= 7) THEN
         WRITE(0, *) "NEXTREC=", nxtRec, ", should be 7"
-        CALL zzrc( 31 )
+        ERROR STOP 31
     END IF
 
     PRINT '(10I5)', (dataOut( i ), i = 1, 10)
@@ -100,7 +100,7 @@ PROGRAM pendingNextRecSpec01
     nxtRec = InquireAndWait(213, 50)
     IF (nxtRec /= 6) THEN
         WRITE(0, *) "NEXTREC=", nxtRec, ", should be 6"
-        CALL zzrc( 61 )
+        ERROR STOP 61
     END IF
 
     PRINT '(10I5)', (dataIn( i ), i = 10, 1, -1)
@@ -109,7 +109,7 @@ PROGRAM pendingNextRecSpec01
     CLOSE(213, IOMSG=iMsg, IOSTAT=iStat)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 71 )
+        ERROR STOP 71
     END IF
 
 
@@ -117,7 +117,7 @@ PROGRAM pendingNextRecSpec01
         IF (dataOut( i ) /= dataIn( i )) THEN
             WRITE(6, *) " dataIn(", i, ") = ", dataIn( i )
             WRITE(6, *) "dataOut(", i, ") = ", dataOut( i )
-            CALL zzrc( 81 )
+            ERROR STOP 81
         END IF
     END DO
 

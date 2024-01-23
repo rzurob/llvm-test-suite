@@ -50,7 +50,7 @@ PROGRAM pendingBackspace03
          ACCESS='sequential', ACTION='read', FORM='unformatted', IOSTAT=iStat)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1_4 )
+        ERROR STOP 1_4
     END IF
 
 
@@ -81,7 +81,7 @@ PROGRAM pendingBackspace03
     CLOSE(2003, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 30_4 )
+        ERROR STOP 30_4
     END IF
 
 

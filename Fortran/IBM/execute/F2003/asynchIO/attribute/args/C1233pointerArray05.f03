@@ -58,7 +58,7 @@ program C1233pointerArray05
             write(0, *) "realValue = '", realValue,&
                         "', realArrayPtr(", i, ") = '",&
                                     realArrayPtr( i ), "'"
-            call zzrc( 21 )
+            error stop 21
         end if
     end do
 

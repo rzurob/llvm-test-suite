@@ -64,7 +64,7 @@ PROGRAM asynchSpecOpen08d
                                 &ioStatus, ") ", ioErrorMsg
 
     IF (ioStatus .NE. 24) THEN
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -77,7 +77,7 @@ PROGRAM asynchSpecOpen08d
                                             &ioStatus, ") ", ioErrorMsg
 
     IF (ioStatus <> 24) THEN
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 

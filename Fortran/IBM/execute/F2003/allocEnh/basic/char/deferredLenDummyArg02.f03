@@ -47,12 +47,12 @@ MODULE mModule
                 RESHAPE((/ ('ChEcK', i = 1, 25) /), (/ 5,5 /))
 
 
-            IF ( ALLOCATED( charArrArg ) )      CALL zzrc( 10_4 )
+            IF ( ALLOCATED( charArrArg ) )      ERROR STOP 10_4
 
             charArrArg = char5Var( :5,:5 )( 3: ) // '-' //&
                          (char5Var // '-' // char5Var( :5,:5 )( :3 ))
 
-            IF (.NOT. ALLOCATED( charArrArg ))  CALL zzrc( 11_4 )
+            IF (.NOT. ALLOCATED( charArrArg ))  ERROR STOP 11_4
 
         END SUBROUTINE ModSubAssign
 
@@ -63,16 +63,16 @@ MODULE mModule
             PRINT *, "ModSubCheck():  ", SIZE( charArrArg ),&
                       SIZE(charArrArg, 1), SIZE(charArrArg, 2)
 
-            IF (SIZE( charArrArg ) /= 25) CALL zzrc( 20_4 )
+            IF (SIZE( charArrArg ) /= 25) ERROR STOP 20_4
 
-            IF (SIZE(charArrArg, 1) /= 5) CALL zzrc( 21_4 )
-            IF (SIZE(charArrArg, 2) /= 5) CALL zzrc( 22_4 )
+            IF (SIZE(charArrArg, 1) /= 5) ERROR STOP 21_4
+            IF (SIZE(charArrArg, 2) /= 5) ERROR STOP 22_4
 
             PRINT *, LEN( charArrArg( 1,1 ) )
-            IF (LEN( charArrArg( 1,1 ) ) /= 13) CALL zzrc( 23_4 )
+            IF (LEN( charArrArg( 1,1 ) ) /= 13) ERROR STOP 23_4
 
             PRINT "(5(A13,', '))", charArrArg
-            IF (.NOT. ALL( (charArrArg == 'EcK-ChEcK-ChE') )) CALL zzrc( 24_4 )
+            IF (.NOT. ALL( (charArrArg == 'EcK-ChEcK-ChE') )) ERROR STOP 24_4
 
         END SUBROUTINE ModSubCheck
 
@@ -97,12 +97,12 @@ PROGRAM deferredLenDummyArg02
                 RESHAPE((/ ('pRiNt', i = 1, 25) /), (/ 5,5 /))
 
 
-            IF (.NOT. ALLOCATED( charArrArg ))  CALL zzrc( 31_4 )
+            IF (.NOT. ALLOCATED( charArrArg ))  ERROR STOP 31_4
 
             charArrArg = char5Var( :3,:3 ) // '-' //&
                          (char5Var( 2:4,2:4 ) // '-' // char5Var( 3:,3: ))
 
-            IF (.NOT. ALLOCATED( charArrArg ))  CALL zzrc( 31_4 )
+            IF (.NOT. ALLOCATED( charArrArg ))  ERROR STOP 31_4
 
         END SUBROUTINE SubAssign
 
@@ -113,17 +113,17 @@ PROGRAM deferredLenDummyArg02
             PRINT *, "SubCheck():  ", SIZE( charArrArg ),&
                       SIZE(charArrArg, 1), SIZE(charArrArg, 2)
 
-            IF (SIZE( charArrArg ) /= 9)  CALL zzrc( 40_4 )
+            IF (SIZE( charArrArg ) /= 9)  ERROR STOP 40_4
 
-            IF (SIZE(charArrArg, 1) /= 3) CALL zzrc( 41_4 )
-            IF (SIZE(charArrArg, 2) /= 3) CALL zzrc( 42_4 )
+            IF (SIZE(charArrArg, 1) /= 3) ERROR STOP 41_4
+            IF (SIZE(charArrArg, 2) /= 3) ERROR STOP 42_4
 
             PRINT *, LEN( charArrArg( 1,1 ) )
-            IF (LEN( charArrArg( 1,1 ) ) /= 17) CALL zzrc( 43_4 )
+            IF (LEN( charArrArg( 1,1 ) ) /= 17) ERROR STOP 43_4
 
             PRINT "(3(A17,', '))", charArrArg
             IF (.NOT. ALL( (charArrArg == 'pRiNt-pRiNt-pRiNt') ))&
-                                                    CALL zzrc( 44_4 )
+                                                    ERROR STOP 44_4
 
         END SUBROUTINE SubCheck
 

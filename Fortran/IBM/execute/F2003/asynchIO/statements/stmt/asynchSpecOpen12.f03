@@ -58,7 +58,7 @@ PROGRAM asynchSpecOpen12
             ASYNCHRONOUS='yes', FORM='unformatted', IOSTAT=iStat)
     if (0 <> iStat) then
         write(0, *) "OPEN(asynchSpecOpen12a.dat) <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -68,7 +68,7 @@ PROGRAM asynchSpecOpen12
 
         if (0 <> iStat) then
             write(0, *) i, "WRITE(asynchSpecOpen12a.dat) <", iStat, "> ", iMsg
-            call zzrc( 2 )
+            error stop 2
         end if
     END DO
 
@@ -78,7 +78,7 @@ PROGRAM asynchSpecOpen12
             ASYNCHRONOUS='yes', FORM='unformatted', IOSTAT=iStat)
     if (0 <> iStat) then
         write(0, *) "OPEN(asynchSpecOpen12b.dat) <", iStat, "> ", iMsg
-        call zzrc( 3 )
+        error stop 3
     end if
 
 
@@ -88,7 +88,7 @@ PROGRAM asynchSpecOpen12
             if (224 <> iStat) then
                 write(0, *) i, "WAIT(asynchSpecOpen12a.dat,ID=",&
                                 ioIDa( i ), ") <", iStat, "> ", iMsg
-                call zzrc( 4 )
+                error stop 4
             end if
 
             WRITE(181, ASYNCHRONOUS='yes', ID=ioIDb( i ),&
@@ -100,12 +100,12 @@ PROGRAM asynchSpecOpen12
             if (226 <> iStat) then
                 write(0, *) i, "INQUIRE(asynchSpecOpen12a.dat,ID=",&
                                 ioIDa( i ), ") <", iStat, "> ", iMsg
-                call zzrc( 5 )
+                error stop 5
 
             else if ( isPending ) then
                 write(0, *) i, "INQUIRE(asynchSpecOpen12a.dat,ID=",&
                                 ioIDa( i ), ",PENDING=", isPending, ")"
-                call zzrc( 6 )
+                error stop 6
             end if
 
             WRITE(181, IOMSG=iMsg, IOSTAT=iStat) ((i * 137) + 65)
@@ -113,7 +113,7 @@ PROGRAM asynchSpecOpen12
 
         if (0 <> iStat) then
             write(0, *) i, "WRITE(asynchSpecOpen12b.dat) <", iStat, "> ", iMsg
-            call zzrc( 6 )
+            error stop 6
         end if
     END DO
 
@@ -121,7 +121,7 @@ PROGRAM asynchSpecOpen12
     CLOSE(181, IOMSG=iMsg, IOSTAT=iStat)
     if (0 <> iStat) then
         write(0, *) "CLOSE(asynchSpecOpen12b.dat) <", iStat, "> ", iMsg
-        call zzrc( 7 )
+        error stop 7
     end if
 
 
@@ -131,7 +131,7 @@ PROGRAM asynchSpecOpen12
             if (224 <> iStat) then
                 write(0, *) i, "WAIT(asynchSpecOpen12b.dat,ID=",&
                                 ioIDb( i ), ") <", iStat, "> ", iMsg
-                call zzrc( 8 )
+                error stop 8
             end if
         end if
     END DO

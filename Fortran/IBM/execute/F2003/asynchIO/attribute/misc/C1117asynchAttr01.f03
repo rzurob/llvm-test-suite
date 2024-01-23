@@ -51,14 +51,14 @@ program C1117asynchAttr01
             ASYNCHRONOUS='yes', FORM='unformatted', IOSTAT=iStat)
     if (iStat /= 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
     WRITE(255, IOMSG=iMsg, IOSTAT=iStat) nonAsynchDataObj
     if (iStat /= 0) then
         write(0, *) "WRITE(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-        call zzrc( 2 )
+        error stop 2
     end if
 
 
@@ -66,47 +66,47 @@ program C1117asynchAttr01
         ID=iID, IOMSG=iMsg, IOSTAT=iStat) asynchDataObj
     if (iStat /= 0) then
         write(0, *) "WRITE(ASYNCHRONOUS=yes) <", iStat, "> ", iMsg
-        call zzrc( 3 )
+        error stop 3
     end if
 
 
     WAIT(255, ID=iID, IOMSG=iMsg, IOSTAT=iStat)
     if (iStat /= 0) then
         write(0, *) "WAIT(ID=", iID, ") <", iStat, "> ", iMsg
-        call zzrc( 4 )
+        error stop 4
     end if
 
 
     REWIND(255, IOMSG=iMsg, IOSTAT=iStat)
     if (iStat /= 0) then
         write(0, *) "REWIND() <", iStat, "> ", iMsg
-        call zzrc( 5 )
+        error stop 5
     end if
 
 
     READ(255, IOMSG=iMsg, IOSTAT=iStat) realDataIn, complexDataIn
     if (iStat /= 0) then
         write(0, *) "READ() <", iStat, "> ", iMsg
-        call zzrc( 6 )
+        error stop 6
     end if
 
 
     if (realDataIn /= nonAsynchDataObj) then
         write(0, *) "      realDataIn = '", realDataIn, "'"
         write(0, *) "nonAsynchDataObj = '", nonAsynchDataObj, "'"
-        call zzrc( 7 )
+        error stop 7
 
     else if (complexDataIn /= asynchDataObj) then
         write(0, *) "complexDataIn = '", complexDataIn, "'"
         write(0, *) "asynchDataObj = '", asynchDataObj, "'"
-        call zzrc( 8 )
+        error stop 8
     end if
 
 
     CLOSE(255, IOMSG=iMsg, IOSTAT=iStat)
     if (iStat /= 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 9 )
+        error stop 9
     end if
 
 end program C1117asynchAttr01

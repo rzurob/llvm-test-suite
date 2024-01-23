@@ -48,18 +48,18 @@ PROGRAM unallocatedScalarDerived01
     TYPE(dType) :: dTypeStatic = dType(1.23,(4.56,7.89))
 
 
-    IF ( ALLOCATED( dTypeAlloc ) ) CALL zzrc( 10_4 )
+    IF ( ALLOCATED( dTypeAlloc ) ) ERROR STOP 10_4
 
 
     dTypeAlloc = dTypeStatic
 
-    IF (.NOT. ALLOCATED( dTypeAlloc )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( dTypeAlloc )) ERROR STOP 20_4
 
     PRINT 10, dTypeAlloc%r, dTypeAlloc%c
 10  FORMAT('dTypeAlloc%r = "',F4.2,'", dTypeAlloc%c = (',F4.2,',',F4.2,')')
 
-    IF (dTypeAlloc%r /= 1.23) CALL zzrc( 30_4 )
-    IF (dTypeAlloc%c /= (4.56,7.89)) CALL zzrc( 40_4 )
+    IF (dTypeAlloc%r /= 1.23) ERROR STOP 30_4
+    IF (dTypeAlloc%c /= (4.56,7.89)) ERROR STOP 40_4
 
 
 END PROGRAM unallocatedScalarDerived01

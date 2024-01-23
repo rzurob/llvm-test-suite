@@ -33,7 +33,7 @@ PROGRAM implicitIntrinsic01
             &ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=ioErrorMsg)
     IF (iStat /= 0) THEN
         PRINT *, "OPEN(): ", ioErrorMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -41,21 +41,21 @@ PROGRAM implicitIntrinsic01
         &implicitAsynchComplex
     IF (iStat /= 0) THEN
         PRINT *, "READ(): ", ioErrorMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
     CLOSE(8, IOSTAT=iStat, IOMSG=ioErrorMsg)
     IF (iStat /= 0) THEN
         PRINT *, "CLOSE(): ", ioErrorMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
     PRINT "('implicitAsynchComplex = ( ',F5.3,',',F5.3,' )')",&
           &implicitAsynchComplex
     IF (implicitAsynchComplex /= ( 5.125,1.391 )) THEN
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 END PROGRAM implicitIntrinsic01

@@ -97,20 +97,20 @@ PROGRAM C1232assumedShape05
             ASYNCHRONOUS='yes', FORM='unformatted', IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
     CALL ShapeIsAssumed(96, n, complexArray, iStat)
     IF (iStat <> 0) THEN
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
     REWIND(96, IOMSG=iMsg, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "REWIND() <", iStat, "> ", iMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
@@ -118,13 +118,13 @@ PROGRAM C1232assumedShape05
         READ(96, IOSTAT=iStat, IOMSG=iMsg) testValue
         IF (iStat <> 0) THEN
             WRITE(0, *) i, "READ(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-            CALL zzrc( 4 )
+            ERROR STOP 4
         END IF
 
         IF (complexArray( i ) <> testValue) THEN
             WRITE(0, *) "complexArray(", i, ") =",&
                         complexArray( i ), ", testValue =", testValue
-            CALL zzrc( 5 )
+            ERROR STOP 5
         END IF
     END DO
 
@@ -132,7 +132,7 @@ PROGRAM C1232assumedShape05
     CLOSE(96, IOMSG=iMsg, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 END PROGRAM C1232assumedShape05

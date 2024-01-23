@@ -58,7 +58,7 @@ PROGRAM asynchAttrAssocName02
         &FORM='formatted', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -69,7 +69,7 @@ PROGRAM asynchAttrAssocName02
                     &IOSTAT=iStat, IOMSG=iMsg) iBuffer( i ), newLineChar
         IF (iStat <> 0) THEN
             WRITE(0, *) i, ") READ() <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -77,7 +77,7 @@ PROGRAM asynchAttrAssocName02
     WAIT(ioUnit, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
     DO i = 39, 1, -1
@@ -97,7 +97,7 @@ PROGRAM asynchAttrAssocName02
     CLOSE(ioUnit, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
@@ -105,7 +105,7 @@ PROGRAM asynchAttrAssocName02
         WRITE(0, *) "result   = '", result, "'"
         WRITE(0, *) "expected = '", expected, "'"
 
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 END PROGRAM asynchAttrAssocName02

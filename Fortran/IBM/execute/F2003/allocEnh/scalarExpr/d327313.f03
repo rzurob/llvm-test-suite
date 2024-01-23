@@ -39,9 +39,9 @@ PROGRAM allocArrVarScalarExpr03
     t2( 1 )%t1 = 2
 
     IF ( .FALSE. ) THEN
-        CALL zzrc( 20_4 )
+        ERROR STOP 20_4
     ELSE IF (t2( i )%t1 /= 2) THEN
-        CALL zzrc( 30_4 )
+        ERROR STOP 30_4
     END IF
 
 END PROGRAM allocArrVarScalarExpr03

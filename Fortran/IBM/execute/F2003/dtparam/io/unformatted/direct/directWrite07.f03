@@ -90,7 +90,7 @@ PROGRAM directWrite07
             RECL=112, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'OPEN(', iostat, ') ', iomsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
@@ -105,14 +105,14 @@ PROGRAM directWrite07
     WRITE(41, REC=5, IOSTAT=iostat, IOMSG=iomsg) (basePtrOut( i ), i = 7, 1, -1)
     IF (iostat /= 0) THEN
         PRINT *, 'WRITE(', iostat, ') ', iomsg
-        CALL zzrc( 30_4 )
+        ERROR STOP 30_4
     END IF
 
 
     CLOSE(41, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'CLOSE(', iostat, ') ', iomsg
-        CALL zzrc( 40_4 )
+        ERROR STOP 40_4
     END IF
 
 
@@ -120,14 +120,14 @@ PROGRAM directWrite07
             RECL=112, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'OPEN(', iostat, ') ', iomsg
-        CALL zzrc( 50_4 )
+        ERROR STOP 50_4
     END IF
 
 
     READ(41, REC=5, IOSTAT=iostat, IOMSG=iomsg) (baseIn( i ), i = 7, 1, -1)
     IF (iostat /= 0) THEN
         PRINT *, 'READ(', iostat, ') ', iomsg
-        CALL zzrc( 60_4 )
+        ERROR STOP 60_4
     END IF
 
     DO i = 3, 1, -1
@@ -142,7 +142,7 @@ PROGRAM directWrite07
     CLOSE(41, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, 'CLOSE(', iostat, ') ', iomsg
-        CALL zzrc( 80_4 )
+        ERROR STOP 80_4
     END IF
 
 

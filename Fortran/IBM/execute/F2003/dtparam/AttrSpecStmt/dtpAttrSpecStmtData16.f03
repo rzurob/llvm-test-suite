@@ -77,10 +77,10 @@ PROGRAM dtpAttrSpecStmtData16
     INTEGER :: i
 
 
-    IF (SIZE( baseData ) /= baseSize)           CALL zzrc( 10_4 )
+    IF (SIZE( baseData ) /= baseSize)           ERROR STOP 10_4
 
-    IF (baseData%bKind /= baseKind)             CALL zzrc( 11_4 )
-    IF (baseData%bLen /= mySize)                CALL zzrc( 12_4 )
+    IF (baseData%bKind /= baseKind)             ERROR STOP 11_4
+    IF (baseData%bLen /= mySize)                ERROR STOP 12_4
 
     DO i = 1, SIZE( baseData )
         IF (baseData( i )%bSize /= mySize)      CALL zzrc( (20_4 + INT(i, 4)) )

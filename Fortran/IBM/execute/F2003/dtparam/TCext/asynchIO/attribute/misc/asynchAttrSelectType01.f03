@@ -75,14 +75,14 @@ PROGRAM asynchAttrSelectType01
         &ASYNCHRONOUS='yes', FORM='formatted',IOSTAT=iStat, IOMSG=oMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
     ALLOCATE(tBase(20,4) :: base( 1000 ), STAT=iStat, ERRMSG=oMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "ALLOCATE( tBase(1000) ) <", iStat, "> ", oMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
     DO i = 1, 1000
@@ -102,7 +102,7 @@ PROGRAM asynchAttrSelectType01
 
     IF (iStat <> 0) THEN
         WRITE(0, *) "ALLOCATE( tDerived(1000) ) <", iStat, "> ", oMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
@@ -115,7 +115,7 @@ PROGRAM asynchAttrSelectType01
     CLOSE(102, IOSTAT=iStat, IOMSG=oMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", oMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 END PROGRAM asynchAttrSelectType01
@@ -134,7 +134,7 @@ SUBROUTINE Process( anObj )
             &IOSTAT=iStat, IOMSG=oMsg) anObj%baseInt1
     IF (iStat <> 0) THEN
         WRITE(0, *) "WRITE(Asynchronous) <", iStat, "> ", oMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
@@ -144,7 +144,7 @@ SUBROUTINE Process( anObj )
                                     &'tBase', thisObj%baseInt1
             IF (iStat <> 0) THEN
                 WRITE(0, *) "WRITE() <", iStat, "> ", oMsg
-                CALL zzrc( 5 )
+                ERROR STOP 5
             END IF
 
         CLASS IS (tBase(*,4))
@@ -152,7 +152,7 @@ SUBROUTINE Process( anObj )
                                     &'tBase', thisObj%baseInt1
             IF (iStat <> 0) THEN
                 WRITE(0, *) "WRITE() <", iStat, "> ", oMsg
-                CALL zzrc( 6 )
+                ERROR STOP 6
             END IF
     END SELECT
 

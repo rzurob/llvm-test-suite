@@ -71,12 +71,12 @@ PROGRAM assumedDummyArg02
     CHARACTER(45), ALLOCATABLE :: charArrayVar( : )
 
 
-    IF ( ALLOCATED( charArrayVar ) )    CALL zzrc( 10_4 )
+    IF ( ALLOCATED( charArrayVar ) )    ERROR STOP 10_4
 
     CALL AssumedAssign(charArrayVar, 'zYxWuVtSr', 5)
 
-    IF (.NOT. ALLOCATED( charArrayVar )) CALL zzrc( 11_4 )
-    IF (SIZE( charArrayVar ) /= 3)       CALL zzrc( 12_4 )
+    IF (.NOT. ALLOCATED( charArrayVar )) ERROR STOP 11_4
+    IF (SIZE( charArrayVar ) /= 3)       ERROR STOP 12_4
 
     DO i = 1, 3
         length = MIN(((3 + i) * 9), 45)

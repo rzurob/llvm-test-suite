@@ -50,7 +50,7 @@ program C1232arraySect01
             ACTION='write', FORM='unformatted', IOSTAT=iStat)
     IF (0 <> iStat) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -67,7 +67,7 @@ program C1232arraySect01
 
             IF (0 <> iStat) THEN
                 WRITE(0, *) i, ",", j, ") WRITE() <", iStat, "> ", iMsg
-                CALL zzrc( 2 )
+                ERROR STOP 2
             END IF
         END DO
 
@@ -81,7 +81,7 @@ program C1232arraySect01
                 IF (0 <> iStat) THEN
                     WRITE(0, *) l, ") WAIT(ID=", ioID( l ),&
                                     ") <", iStat, "> ", iMsg
-                    CALL zzrc( 3 )
+                    ERROR STOP 3
                 END IF
             END DO
         END IF
@@ -92,7 +92,7 @@ program C1232arraySect01
         WAIT(1232, ID=ioID( l ), IOSTAT=iStat, IOMSG=iMsg)
         IF (0 <> iStat) THEN
             WRITE(0, *) l, ") WAIT(ID=", ioID( l ), ") <", iStat, "> ", iMsg
-            CALL zzrc( 4 )
+            ERROR STOP 4
         END IF
     END DO
 
@@ -100,7 +100,7 @@ program C1232arraySect01
     CLOSE(1232, IOSTAT=iStat, IOMSG=iMsg)
     IF (0 <> iStat) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 end program C1232arraySect01

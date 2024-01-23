@@ -126,7 +126,7 @@ PROGRAM valueAttrMaxLen001
 
     iStat = maxSizeFunc(maxLenCharVar, maxLenCharVar)
     IF (iStat /= 0) THEN
-        CALL zzrc( 2_4 )
+        ERROR STOP 2_4
     END IF
 
 
@@ -139,7 +139,7 @@ PROGRAM valueAttrMaxLen001
 
 
             IF (maxSizeValueArg /= maxLenCharVar) THEN
-                CALL zzrc( 1_4 )
+                ERROR STOP 1_4
             END IF
 
         END SUBROUTINE maxSizeSub

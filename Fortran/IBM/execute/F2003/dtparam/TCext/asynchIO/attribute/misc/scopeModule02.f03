@@ -72,7 +72,7 @@ SUBROUTINE AsynchronousWrite( )
     OPEN(8, ACTION='write', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=ioErrMsg)
     IF (iStat /= 0) THEN
         PRINT *, "OPEN(): ", ioErrMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -84,14 +84,14 @@ SUBROUTINE AsynchronousWrite( )
         &aPtr%x
     IF (iStat /= 0) THEN
         PRINT *, "WRITE(): ", ioErrMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
     CLOSE(8, IOSTAT=iStat, IOMSG=ioErrMsg)
     IF (iStat /= 0) THEN
         PRINT *, "CLOSE(): ", ioErrMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 

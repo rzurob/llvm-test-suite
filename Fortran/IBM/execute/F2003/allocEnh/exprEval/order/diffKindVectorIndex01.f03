@@ -51,14 +51,14 @@ PROGRAM diffKindVectorIndex01
     arrIntAlloc =&
         RESHAPE((/ ((((i * 10) + j), j = 0, 9), i = 0, 9) /), (/ 10,10 /))
 
-    IF (KIND( arrIntAlloc ) /= defaultIntKind) CALL zzrc( 10_4 )
+    IF (KIND( arrIntAlloc ) /= defaultIntKind) ERROR STOP 10_4
     CALL DumpArray( 'Default Kind (10 x 10):' )
 
 
     arrIntAlloc =&
         INT(arrIntAlloc( (/ 2,3,4,5,6,7,8,9 /),(/ 2,3,4,5,6,7,8,9 /) ), 2)
 
-    IF (KIND( arrIntAlloc ) /= defaultIntKind) CALL zzrc( 20_4 )
+    IF (KIND( arrIntAlloc ) /= defaultIntKind) ERROR STOP 20_4
     CALL DumpArray( 'Kind 2 (8 x 8):' )
 
 
@@ -66,14 +66,14 @@ PROGRAM diffKindVectorIndex01
         INT(arrIntAlloc(&
                 (/ 1,1,(i, i = 1, 8),8,8 /),(/ 1,1,(i, i = 1, 8),8,8 /) ), 4)
 
-    IF (KIND( arrIntAlloc ) /= defaultIntKind) CALL zzrc( 30_4 )
+    IF (KIND( arrIntAlloc ) /= defaultIntKind) ERROR STOP 30_4
     CALL DumpArray( 'Kind 4 (12 x 12):' )
 
 
     arrIntAlloc =&
         INT(arrIntAlloc( (/ (i, i = 5, 8) /),(/ (i, i = 5, 8) /) ), 8)
 
-    IF (KIND( arrIntAlloc ) /= defaultIntKind) CALL zzrc( 40_4 )
+    IF (KIND( arrIntAlloc ) /= defaultIntKind) ERROR STOP 40_4
     CALL DumpArray( 'Kind 8 (4 x 4):' )
 
 

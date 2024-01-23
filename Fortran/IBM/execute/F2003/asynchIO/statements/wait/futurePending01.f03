@@ -62,7 +62,7 @@ PROGRAM futurePending01
         action='write', form='unformatted', iostat=iStat, iomsg=iMsg)
     if (iStat /= 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -72,7 +72,7 @@ PROGRAM futurePending01
 
         if (iStat /= 0) then
             write(0, *) i, ") WRITE() <", iStat, "> ", iMsg
-            call zzrc( 2 )
+            error stop 2
         end if
 
 
@@ -80,21 +80,21 @@ PROGRAM futurePending01
         wait(9, id=idFuture, iostat=iStat, iomsg=iMsg)
         if (iStat /= 224) then
             write(0, *) i, ") WAIT(ID=", idFuture, ") <", iStat, "> ", iMsg
-            call zzrc( 3 )
+            error stop 3
         end if
     end do
 
 
     iStat = Wait4IDs(9, n, ioID)
     if (iStat /= 0) then
-        call zzrc( 4 )
+        error stop 4
     end if
 
 
     close(9, iostat=iStat, iomsg=iMsg)
     if (iStat /= 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 5 )
+        error stop 5
     end if
 
 END PROGRAM futurePending01

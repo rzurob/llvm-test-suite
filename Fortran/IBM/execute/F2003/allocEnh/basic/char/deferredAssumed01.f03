@@ -49,43 +49,43 @@ PROGRAM deferredAssumed01
     CHARACTER(:), ALLOCATABLE :: deferred
 
 
-    IF ( ALLOCATED( deferred ) )        CALL zzrc( 10_4 )
+    IF ( ALLOCATED( deferred ) )        ERROR STOP 10_4
 
     ALLOCATE(deferred, SOURCE='abc')
 
-    IF ( ALLOCATED( assumed ) )         CALL zzrc( 11_4 )
-    IF (.NOT. ALLOCATED( deferred ))    CALL zzrc( 12_4 )
+    IF ( ALLOCATED( assumed ) )         ERROR STOP 11_4
+    IF (.NOT. ALLOCATED( deferred ))    ERROR STOP 12_4
 
     CALL AssignToAssumed(assumed, deferred, 20_4)
 
-    IF (.NOT. ALLOCATED( assumed )) CALL zzrc( 30_4 )
+    IF (.NOT. ALLOCATED( assumed )) ERROR STOP 30_4
 
     PRINT *, LEN( assumed ), LEN_TRIM( assumed ), "'", assumed, "'"
 
-    IF (LEN( assumed ) /= 5)        CALL zzrc( 31_4 )
-    IF (LEN_TRIM( assumed ) /= 3)   CALL zzrc( 32_4 )
-    IF (assumed /= 'abc')           CALL zzrc( 32_4 )
+    IF (LEN( assumed ) /= 5)        ERROR STOP 31_4
+    IF (LEN_TRIM( assumed ) /= 3)   ERROR STOP 32_4
+    IF (assumed /= 'abc')           ERROR STOP 32_4
 
 
     DEALLOCATE( deferred )
 
 
-    IF ( ALLOCATED( deferred ) )        CALL zzrc( 40_4 )
+    IF ( ALLOCATED( deferred ) )        ERROR STOP 40_4
 
     ALLOCATE(deferred, SOURCE='ZYXWVUT')
 
-    IF (.NOT. ALLOCATED( assumed ))     CALL zzrc( 41_4 )
-    IF (.NOT. ALLOCATED( deferred ))    CALL zzrc( 42_4 )
+    IF (.NOT. ALLOCATED( assumed ))     ERROR STOP 41_4
+    IF (.NOT. ALLOCATED( deferred ))    ERROR STOP 42_4
 
     CALL AssignToAssumed(assumed, deferred, 50_4)
 
-    IF (.NOT. ALLOCATED( assumed )) CALL zzrc( 60_4 )
+    IF (.NOT. ALLOCATED( assumed )) ERROR STOP 60_4
 
     PRINT *, LEN( assumed ), LEN_TRIM( assumed ), "'", assumed, "'"
 
-    IF (LEN( assumed ) /= 5)        CALL zzrc( 61_4 )
-    IF (LEN_TRIM( assumed ) /= 5)   CALL zzrc( 62_4 )
-    IF (assumed /= 'ZYXWV')         CALL zzrc( 62_4 )
+    IF (LEN( assumed ) /= 5)        ERROR STOP 61_4
+    IF (LEN_TRIM( assumed ) /= 5)   ERROR STOP 62_4
+    IF (assumed /= 'ZYXWV')         ERROR STOP 62_4
 
 END PROGRAM deferredAssumed01
 

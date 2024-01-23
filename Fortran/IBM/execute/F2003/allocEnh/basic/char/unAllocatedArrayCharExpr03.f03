@@ -64,8 +64,8 @@ PROGRAM unAllocatedArrayCharExpr03
     DO i = 1, 9
         PRINT *, LEN( charArrAlloc( i ) ), "'", charArrAlloc( i ), "'"
 
-        IF (LEN( charArrAlloc( i ) ) /= 7)  CALL zzrc( 30_4 )
-        IF (charArrAlloc( i ) /= 'THX-113') CALL zzrc( 31_4 )
+        IF (LEN( charArrAlloc( i ) ) /= 7)  ERROR STOP 30_4
+        IF (charArrAlloc( i ) /= 'THX-113') ERROR STOP 31_4
     END DO
 
 END PROGRAM unAllocatedArrayCharExpr03
@@ -81,18 +81,18 @@ SUBROUTINE SubMain( char4Arr )
     CALL SubSub( )
 
     PRINT *, SIZE( charArrAlloc )
-    IF (SIZE( charArrAlloc ) /= 9)      CALL zzrc( 20_4 )
+    IF (SIZE( charArrAlloc ) /= 9)      ERROR STOP 20_4
 
 
     CONTAINS
 
         SUBROUTINE SubSub( )
 
-            IF ( ALLOCATED( charArrAlloc ) )      CALL zzrc( 10_4 )
+            IF ( ALLOCATED( charArrAlloc ) )      ERROR STOP 10_4
 
             charArrAlloc = char3Arr // '-' // char4Arr
 
-            IF (.NOT. ALLOCATED( charArrAlloc ) )  CALL zzrc( 11_4 )
+            IF (.NOT. ALLOCATED( charArrAlloc ) )  ERROR STOP 11_4
 
         END SUBROUTINE SubSub
 

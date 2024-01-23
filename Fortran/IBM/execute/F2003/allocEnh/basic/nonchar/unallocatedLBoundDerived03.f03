@@ -83,21 +83,21 @@ PROGRAM unallocatedLBoundDerived03
         END DO
     END DO
 
-    IF ( ALLOCATED( d2Alloc ) ) CALL zzrc( 10_4 )
+    IF ( ALLOCATED( d2Alloc ) ) ERROR STOP 10_4
 
     d2Alloc = d2Array
 
-    IF (.NOT. ALLOCATED( d2Alloc )) CALL zzrc( 20_4 )
+    IF (.NOT. ALLOCATED( d2Alloc )) ERROR STOP 20_4
 
-    IF (SIZE( d2Alloc ) /= 1000000) CALL zzrc( 21_4 )
+    IF (SIZE( d2Alloc ) /= 1000000) ERROR STOP 21_4
 
-    IF (SIZE(d2Alloc, 1) /= 100)    CALL zzrc( 22_4 )
-    IF (SIZE(d2Alloc, 2) /= 100)    CALL zzrc( 23_4 )
-    IF (SIZE(d2Alloc, 3) /= 100)    CALL zzrc( 24_4 )
+    IF (SIZE(d2Alloc, 1) /= 100)    ERROR STOP 22_4
+    IF (SIZE(d2Alloc, 2) /= 100)    ERROR STOP 23_4
+    IF (SIZE(d2Alloc, 3) /= 100)    ERROR STOP 24_4
 
-    IF (LBOUND(d2Alloc, 1) /= 0)    CALL zzrc( 25_4 )
-    IF (LBOUND(d2Alloc, 2) /= 0)    CALL zzrc( 26_4 )
-    IF (LBOUND(d2Alloc, 3) /= 0)    CALL zzrc( 27_4 )
+    IF (LBOUND(d2Alloc, 1) /= 0)    ERROR STOP 25_4
+    IF (LBOUND(d2Alloc, 2) /= 0)    ERROR STOP 26_4
+    IF (LBOUND(d2Alloc, 3) /= 0)    ERROR STOP 27_4
 
     CALL CheckIt( d2Alloc )
 
@@ -113,15 +113,15 @@ SUBROUTINE CheckIt( dA )
             DO k = 0, 99
                 IF (dA( k,j,i )%bI /= k) THEN
                     PRINT *, k, j, i, dA( k,j,i )%bI, k
-                    CALL zzrc( 100_4 )
+                    ERROR STOP 100_4
 
                 ELSE IF (dA( k,j,i )%dI /= j) THEN
                     PRINT *, k, j, i, dA( k,j,i )%dI, j
-                    CALL zzrc( 101_4 )
+                    ERROR STOP 101_4
 
                 ELSE IF (dA( k,j,i )%d2IP /= i) THEN
                     PRINT *, k, j, i, dA( k,j,i )%d2IP, i
-                    CALL zzrc( 102_4 )
+                    ERROR STOP 102_4
                 END IF
             END DO
         END DO

@@ -84,7 +84,7 @@ program pendingIDSpec06
         FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     if (iStat /= 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1_4 )
+        error stop 1_4
     end if
 
 
@@ -107,13 +107,13 @@ program pendingIDSpec06
 
 
     if (iStat /= 0) then
-        call zzrc( 2_4 )
+        error stop 2_4
 
 
     else
         iStat = Wait4IDs(475, j, pdtIDs)
         if (iStat /= 0) then
-            call zzrc( 3_4 )
+            error stop 3_4
         end if
     end if
 
@@ -121,7 +121,7 @@ program pendingIDSpec06
     CLOSE(475, IOSTAT=iStat, IOMSG=iMsg)
     if (iStat /= 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 4_4 )
+        error stop 4_4
     end if
 
 end program pendingIDSpec06

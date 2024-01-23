@@ -50,7 +50,7 @@ PROGRAM asynchSpecOpen11d
     IF (ioStatus <> 0) THEN
         PRINT *, "OPEN(ASYNCHRONOUS='no'): ioStatus = (",&
                                             &ioStatus, ")", ioErrorMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -63,7 +63,7 @@ PROGRAM asynchSpecOpen11d
                                         &ioStatus, ") ", ioErrorMsg
 
     IF (ioStatus <> 24) THEN
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -74,7 +74,7 @@ PROGRAM asynchSpecOpen11d
 
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ioStatus = (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 

@@ -52,7 +52,7 @@ PROGRAM idSpecIDValue06d
         &IOMSG=iMsg, FILE='idSpecIDValue06d.dat', FORM='unformatted')
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -73,7 +73,7 @@ PROGRAM idSpecIDValue06d
     CLOSE(IOMSG=iMsg, UNIT=99, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 30 )
+        ERROR STOP 30
     END IF
 
 
@@ -101,7 +101,7 @@ SUBROUTINE Wait4It(ioUnit, iID)
     WAIT(UNIT=ioUnit, IOMSG=iMsg, ID=iID( 1 ), IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 21 )
+        ERROR STOP 21
     END IF
 
 

@@ -35,7 +35,7 @@
         &ASYNCHRONOUS='yes', FORM='unformatted', IOSTAT=iStat)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL ZZRC( 1_4 )
+        error stop 1_4
     END IF
 
 
@@ -65,7 +65,7 @@
     CLOSE(IVAR, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL ZZRC( 6_4 )
+        error stop 6_4
     END IF
 
     END PROGRAM FXOPEN_NEWUNIT19

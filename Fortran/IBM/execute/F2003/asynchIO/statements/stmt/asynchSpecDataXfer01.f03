@@ -46,7 +46,7 @@ PROGRAM asynchSpecDataXfer01
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(ACTION='WRITE'): ioStatus = (",&
                                 &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -54,7 +54,7 @@ PROGRAM asynchSpecDataXfer01
     IF (ioStatus /= 0) THEN
         PRINT *, "WRITE(ASYNCHRONOUS='YES'): ioStatus = (",&
                     &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -63,14 +63,14 @@ PROGRAM asynchSpecDataXfer01
     IF (ioStatus /= 0) THEN
         PRINT *, "WRITE(ASYNCHRONOUS='NO'): ioStatus = (",&
                     &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
     CLOSE(8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ioStatus = (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
@@ -79,7 +79,7 @@ PROGRAM asynchSpecDataXfer01
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(ACTION='READ'): ioStatus = (",&
                                 &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
@@ -87,11 +87,11 @@ PROGRAM asynchSpecDataXfer01
     IF (ioStatus /= 0) THEN
         PRINT *, "READ(ASYNCHRONOUS='NO'): ioStatus = (",&
                     &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
 
     ELSE IF (i /= 5) THEN
         PRINT *, "READ(ASYNCHRONOUS='NO'): (i != 5), i = (", i, ")"
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
 
@@ -99,18 +99,18 @@ PROGRAM asynchSpecDataXfer01
     IF (ioStatus /= 0) THEN
         PRINT *, "READ(ASYNCHRONOUS='YES'): ioStatus = (",&
                     &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 8 )
+        ERROR STOP 8
 
     ELSE IF (i /= 6) THEN
         PRINT *, "READ(ASYNCHRONOUS='YES'): (i != 6), i = (", i, ")"
-        CALL zzrc( 9 )
+        ERROR STOP 9
     END IF
 
 
     CLOSE(8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ioStatus = (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 10 )
+        ERROR STOP 10
     END IF
 
 

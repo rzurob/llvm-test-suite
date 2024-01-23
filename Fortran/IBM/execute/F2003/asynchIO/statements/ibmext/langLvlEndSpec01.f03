@@ -89,7 +89,7 @@ PROGRAM langLvlEndSpec01
     !
     READ(21, rec=4, END=100, iostat=iStat, iomsg=iMsg) dataValue( 4 )
     WRITE(6, *) "READ() <", iStat, "> ", iMsg
-    CALL zzrc( 11 )
+    ERROR STOP 11
 
     !
     !  IOSTAT= Specifier is set to IOSTAT_END (XL Fortran Language Reference
@@ -98,7 +98,7 @@ PROGRAM langLvlEndSpec01
     !
 100 WRITE(6, *) "READ(END=100) <", iStat, "> ", iMsg
     IF (IOSTAT_END /= iStat) THEN
-        CALL zzrc( 12 )
+        ERROR STOP 12
     END IF
 
 

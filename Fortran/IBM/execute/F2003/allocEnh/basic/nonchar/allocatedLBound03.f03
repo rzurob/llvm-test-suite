@@ -89,7 +89,7 @@ PROGRAM allocatedLBound03
                                             start( 7 ):start( 8 ),&
                                             start( 9 ):start( 10 )  ) )
 
-    IF (.NOT. ALLOCATED( complexAlloc )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( complexAlloc )) ERROR STOP 10_4
 
     CALL checkLBounds(start, 20_4)
 
@@ -104,7 +104,7 @@ PROGRAM allocatedLBound03
 
     CALL intrinsicAssignment( end )
 
-    IF (.NOT. ALLOCATED( complexAlloc )) CALL zzrc( 30_4 )
+    IF (.NOT. ALLOCATED( complexAlloc )) ERROR STOP 30_4
 
     PRINT *
     PRINT 100, "After", complexAlloc

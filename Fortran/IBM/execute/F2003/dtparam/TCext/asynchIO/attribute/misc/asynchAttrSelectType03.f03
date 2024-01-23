@@ -83,14 +83,14 @@ PROGRAM asynchAttrSelectType03
             &ACCESS='sequential', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
     ALLOCATE(tDerived1(20,4,1,1)::derived1( 1000 ), STAT=iStat, ERRMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "ALLOCATE() <", iStat, "> ", iMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -99,7 +99,7 @@ PROGRAM asynchAttrSelectType03
         iStat = Load(ioUnit, 100, base)
 
         IF (iStat <> 0) THEN
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
     END DO
 
@@ -107,7 +107,7 @@ PROGRAM asynchAttrSelectType03
     CLOSE(ioUnit, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 

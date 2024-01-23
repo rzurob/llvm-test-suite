@@ -64,7 +64,7 @@ PROGRAM asynchExternalAttr01
         &ASYNCHRONOUS='yes', FORM='formatted', IOSTAT=oStat)
     IF (oStat <> 0) THEN
         WRITE(0, *) "OPEN():  <", oStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -78,10 +78,10 @@ PROGRAM asynchExternalAttr01
     CLOSE(UNIT=16, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "CLOSE():  <", oStat, "> ", oMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
 
     ELSE IF (wStat <> 0) THEN
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 END PROGRAM asynchExternalAttr01

@@ -100,7 +100,7 @@ PROGRAM openBlankSpec01
         &FORM='formatted', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=msg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", msg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -138,18 +138,18 @@ PROGRAM openBlankSpec01
     CLOSE(29, IOSTAT=iStat, IOMSG=msg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", msg
-        CALL zzrc( 5 )
+        ERROR STOP 5
 
     ELSE IF ((rStat <> 0)  .AND.  (rStat <> IOSTAT_END)) THEN
         WRITE(0, *) "READ() <", rStat, "> ", rMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
 
     ELSE IF ( failed ) THEN
-        CALL zzrc( 3 )
+        ERROR STOP 3
 
     ELSE IF (wStat <> 0) THEN
         WRITE(0, *) "WAIT() <", wStat, "> ", wMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 END PROGRAM openBlankSpec01

@@ -59,7 +59,7 @@ PROGRAM unAllocatedLBound04
             (/ -9,0, 0,9, 10,19, 20,29, 30,39, 40,49, 50,59 /)
 
 
-    IF ( ALLOCATED( realArrayAlloc ) ) CALL zzrc( 10_4 )
+    IF ( ALLOCATED( realArrayAlloc ) ) ERROR STOP 10_4
 
 
     returnCode = intrinsicAssignment( indices )
@@ -67,11 +67,11 @@ PROGRAM unAllocatedLBound04
 
 
     IF (.NOT. ALLOCATED( realArrayAlloc )) THEN
-        CALL zzrc( 30_4 )
+        ERROR STOP 30_4
 
     ELSE IF (SIZE( realArrayAlloc ) /= 10**7) THEN
         PRINT *, "SIZE( realArrayAlloc ) =", SIZE( realArrayAlloc )
-        CALL zzrc( 40_4 )
+        ERROR STOP 40_4
 
     ELSE
         DO i = 1, 7
@@ -103,7 +103,7 @@ PROGRAM unAllocatedLBound04
                                     PRINT *, realArrayAlloc( o,n,m,l,k,j,i )
                                     PRINT *, REAL((value * 2.9979_4), 4)
 
-                                    CALL zzrc( 70_4 )
+                                    ERROR STOP 70_4
                                 END IF
 
                                 value = value + 1

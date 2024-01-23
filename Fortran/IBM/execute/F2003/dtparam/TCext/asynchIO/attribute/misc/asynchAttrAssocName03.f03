@@ -109,7 +109,7 @@ PROGRAM asynchAttrAssocName03
         &ASYNCHRONOUS=asynch%specVal, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "OPEN() <", oStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -122,7 +122,7 @@ PROGRAM asynchAttrAssocName03
         WAIT(2600, ID=aID( i ), IOSTAT=oStat, IOMSG=oMsg)
         IF (oStat <> 0) THEN
             WRITE(0, *) "WAIT() <", oStat, "> ", oMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
     END DO
 
@@ -130,7 +130,7 @@ PROGRAM asynchAttrAssocName03
     CLOSE(2600, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", oStat, "> ", oMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 END PROGRAM asynchAttrAssocName03
@@ -154,7 +154,7 @@ SUBROUTINE WriteSpec(theSpecArg, theID)
 
         IF (wStat <> 0) THEN
             WRITE(0, *) "WRITE() <", wStat, "> ", wMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END ASSOCIATE
 

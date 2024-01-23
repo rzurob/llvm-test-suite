@@ -116,7 +116,7 @@ PROGRAM specExprPending03
     !
 300 CONTINUE
     PRINT *, "CLOSE():  I/O Status = (", ioStatus, ")"
-    CALL zzrc( 3 )
+    ERROR STOP 3
     GO TO 100
 
 
@@ -125,7 +125,7 @@ PROGRAM specExprPending03
     !
 200 CONTINUE
     PRINT *, "OPEN():  I/O Status = (", ioStatus, ")"
-    CALL zzrc( 1 )
+    ERROR STOP 1
 
 
 100 CONTINUE
@@ -157,7 +157,7 @@ SUBROUTINE AsynchronousWrite( )
     !
 200 CONTINUE
     PRINT *, "WRITE():  I/O Status = (", iStatus, ")"
-    CALL zzrc( 2 )
+    ERROR STOP 2
 
 
 300 CONTINUE

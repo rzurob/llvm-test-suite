@@ -62,7 +62,7 @@ program C1232assumedShape06
                 ACTION='READWRITE', ACCESS='SEQUENTIAL', IOSTAT=iStat)
     if (iStat <> 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -71,7 +71,7 @@ program C1232assumedShape06
 
         if (iStat <> 0) then
             write(0, *) i, "CPipeLine()"
-            call zzrc( 2 )
+            error stop 2
         end if
     end do
 
@@ -80,7 +80,7 @@ program C1232assumedShape06
     goto 300
 
 200 write(0, *) "REWIND() <", iStat, "> ", iMsg
-    call zzrc( 3 )
+    error stop 3
 
 
 300 do i = n, 1, -1
@@ -89,7 +89,7 @@ program C1232assumedShape06
 
         if (iStat <> 0) then
             write(0, *) i, ") READ() <", iStat, "> ", iMsg
-            call zzrc( 4 )
+            error stop 4
         end if
     end do
 
@@ -98,13 +98,13 @@ program C1232assumedShape06
         wait(7004, ID=ioID( (n - i + 1) ), IOMSG=iMsg, IOSTAT=iStat)
         if (iStat <> 0) then
             write(0, *) i, ") WAIT(", ioID( i ), ") <", iStat, "> ", iMsg
-            call zzrc( 5 )
+            error stop 5
 
         else if (dataOut( i ) <> dataIn( i )) then
             write(0, *) " dataIn(", i, ") = '", dataIn( i ), "'"
             write(0, *) "dataOut(", i, ") = '", dataOut( i ), "'"
 
-            call zzrc( 6 )
+            error stop 6
         end if
     end do
 
@@ -112,7 +112,7 @@ program C1232assumedShape06
     close(7004, IOMSG=iMsg, IOSTAT=iStat)
     if (iStat <> 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 7 )
+        error stop 7
     end if
 
 end program C1232assumedShape06

@@ -59,7 +59,7 @@ PROGRAM asynchAttrAssocName01
                         FORM=helloWorld( 18:28 ), IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "OPEN() <", oStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -72,7 +72,7 @@ PROGRAM asynchAttrAssocName01
                 &IOSTAT=oStat, IOMSG=oMsg) hello, NEW_LINE( hello )
             IF (oStat <> 0) THEN
                 WRITE(0, *) "WRITE() <", oStat, "> ", oMsg
-                CALL zzrc( 2 )
+                ERROR STOP 2
             END IF
 
         END ASSOCIATE
@@ -83,7 +83,7 @@ PROGRAM asynchAttrAssocName01
         WAIT(UNIT=ioUnit, ID=aID( i ), IOSTAT=oStat, IOMSG=oMsg)
         IF (oStat <> 0) THEN
             WRITE(0, *) i, ") WAIT(", aID( i ), ") <", oStat, "> ", oMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
     END DO
 
@@ -91,7 +91,7 @@ PROGRAM asynchAttrAssocName01
     CLOSE(UNIT=ioUnit, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", oStat, "> ", oMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 END PROGRAM asynchAttrAssocName01

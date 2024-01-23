@@ -58,7 +58,7 @@ PROGRAM EORSpecRead03
         &ACTION='read', FORM='formatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -104,7 +104,7 @@ PROGRAM EORSpecRead03
     CLOSE(2001, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 31 )
+        ERROR STOP 31
     END IF
 
 END PROGRAM EORSpecRead03

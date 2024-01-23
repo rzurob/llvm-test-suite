@@ -55,7 +55,7 @@ program C1232arraySect05
                 ACTION='readwrite', ACCESS='stream', IOSTAT=iStat)
     if (iStat <> 0) then
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -77,21 +77,21 @@ program C1232arraySect05
 
         if (iStat <> 0) then
             WRITE(0, *) i, ") WRITE() <", iStat, "> ", iMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
 
         end if
 
         WRITE(6, '(I5,F12.5,F12.5)') i, realValue, sumData( i )
 
         if (realValue <> sumData( i )) then
-            CALL zzrc( 4 )
+            ERROR STOP 4
         end if
     end do
 
     CLOSE(4, IOMSG=iMsg, IOSTAT=iStat)
     if (iStat <> 0) then
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 5 )
+        error stop 5
     end if
 
 end program C1232arraySect05
@@ -116,7 +116,7 @@ SUBROUTINE SumDump(ioUnit, n, asynchData)
 
         if (iStat <> 0) then
             WRITE(0, *) n, ",", i, ") WRITE() <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         end if
     END DO
 

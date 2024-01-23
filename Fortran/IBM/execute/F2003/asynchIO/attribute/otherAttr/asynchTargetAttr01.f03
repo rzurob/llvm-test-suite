@@ -87,7 +87,7 @@ PROGRAM asynchTargetAttr01
         &FORM='formatted', ASYNCHRONOUS='yes', IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "OPEN() <", oStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -144,7 +144,7 @@ PROGRAM asynchTargetAttr01
     CLOSE(35, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", oStat, "> ", oMsg
-        CALL zzrc( 7 )
+        ERROR STOP 7
 
     ELSE IF (wtStat <> 0) THEN
         CALL zzrc( wtStat )

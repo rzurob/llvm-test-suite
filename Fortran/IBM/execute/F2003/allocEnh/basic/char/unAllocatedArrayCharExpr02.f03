@@ -46,11 +46,11 @@ MODULE mModule
             CHARACTER(3) :: char3Var2( 9 ) = (/ ('thx', i = 1, 9) /)
 
 
-            IF ( ALLOCATED( charArrAlloc ) )        CALL zzrc( 10_4 )
+            IF ( ALLOCATED( charArrAlloc ) )        ERROR STOP 10_4
 
             charArrAlloc = char3Var2 // char3Var1
 
-            IF (.NOT. ALLOCATED( charArrAlloc ))    CALL zzrc( 11_4 )
+            IF (.NOT. ALLOCATED( charArrAlloc ))    ERROR STOP 11_4
 
         END SUBROUTINE AssignSub
 
@@ -67,7 +67,7 @@ PROGRAM unAllocatedArrayCharExpr02
 
 
     PRINT *, SIZE( charArrAlloc )
-    IF (SIZE( charArrAlloc ) /= 9) CALL zzrc( 21_4 )
+    IF (SIZE( charArrAlloc ) /= 9) ERROR STOP 21_4
 
     DO i = 1, 9
         PRINT *, i, LEN( charArrAlloc( i ) ), "'", charArrAlloc( i ), "'"

@@ -132,10 +132,10 @@ PROGRAM aceScalarVariableExpr03
 
     baseArray = (/ baseItem1, baseItem2, baseItem3 /)
 
-    IF ( ANY(SHAPE( baseArray ) /= (/ 3 /)) )   CALL zzrc( 10_4 )
-    IF (baseArray( 1 ) /= baseItem1)            CALL zzrc( 11_4 )
-    IF (baseArray( 2 ) /= baseItem2)            CALL zzrc( 12_4 )
-    IF (baseArray( 3 ) /= baseItem3)            CALL zzrc( 13_4 )
+    IF ( ANY(SHAPE( baseArray ) /= (/ 3 /)) )   ERROR STOP 10_4
+    IF (baseArray( 1 ) /= baseItem1)            ERROR STOP 11_4
+    IF (baseArray( 2 ) /= baseItem2)            ERROR STOP 12_4
+    IF (baseArray( 3 ) /= baseItem3)            ERROR STOP 13_4
 
 
     ALLOCATE(containerItem1, SOURCE=container(3,8)(rA,baseItem1))
@@ -145,9 +145,9 @@ PROGRAM aceScalarVariableExpr03
 
     containerArray = (/ containerItem1, containerItem2, containerItem3 /)
 
-    IF ( ANY(SHAPE( containerArray ) /= (/ 3 /)) )      CALL zzrc( 20_4 )
-    IF (containerArray( 1 ) /= containerItem1)          CALL zzrc( 21_4 )
-    IF (containerArray( 2 ) /= containerItem2)          CALL zzrc( 22_4 )
-    IF (containerArray( 3 ) /= containerItem3)          CALL zzrc( 23_4 )
+    IF ( ANY(SHAPE( containerArray ) /= (/ 3 /)) )      ERROR STOP 20_4
+    IF (containerArray( 1 ) /= containerItem1)          ERROR STOP 21_4
+    IF (containerArray( 2 ) /= containerItem2)          ERROR STOP 22_4
+    IF (containerArray( 3 ) /= containerItem3)          ERROR STOP 23_4
 
 END PROGRAM aceScalarVariableExpr03

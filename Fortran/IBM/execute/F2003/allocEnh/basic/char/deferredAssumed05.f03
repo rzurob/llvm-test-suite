@@ -43,18 +43,18 @@ PROGRAM deferredAssumed05
            'eig', 'ht ', 'nin', 'ten', 'ele', 'ven', 'twe', 'lve', 'thi' /)
 
 
-    IF ( ALLOCATED( deferred ) ) CALL zzrc( 10_4 )
+    IF ( ALLOCATED( deferred ) ) ERROR STOP 10_4
 
     CALL DeferredAssign(deferred, assumed, 20_4)
 
 
-    IF (.NOT. ALLOCATED( deferred )) CALL zzrc( 30_4 )
+    IF (.NOT. ALLOCATED( deferred )) ERROR STOP 30_4
 
     CALL DeferredAssign(deferred,&
         (assumed( 1:8 ) // (/ (assumed( i )( 2: ), i = 17, 10, -1) /)), 40_4)
 
 
-    IF (.NOT. ALLOCATED( deferred )) CALL zzrc( 50_4 )
+    IF (.NOT. ALLOCATED( deferred )) ERROR STOP 50_4
 
     CALL DeferredAssign(deferred, (/ (assumed( i ), i = 15, 3, -1) /), 60_4)
 

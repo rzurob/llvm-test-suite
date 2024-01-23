@@ -83,11 +83,11 @@ program nonAsynchPendingSpec03
         PENDING=pretending, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "INQUIRE() <", iStat, "> ", iMsg
-        CALL zzrc( 21 )
+        ERROR STOP 21
 
     ELSE IF ( pretending ) THEN
         WRITE(0, *) "INQUIRE(PENDING=", pretending, ")"
-        CALL zzrc( 31 )
+        ERROR STOP 31
     END IF
 
 

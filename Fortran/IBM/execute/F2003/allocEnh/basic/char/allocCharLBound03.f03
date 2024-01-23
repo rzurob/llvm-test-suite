@@ -56,24 +56,24 @@ PROGRAM allocCharLBound03
 
     ALLOCATE(CHARACTER(3) :: chrArrAlloc1( -1:1,-1:1,-1:1,-1:1,-1:1 ))
 
-    IF (.NOT. ALLOCATED( chrArrAlloc1 )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( chrArrAlloc1 )) ERROR STOP 10_4
     chrArrAlloc1 = RESHAPE((/ ('ibm', i = 1, 243) /), (/ 3,3,3,3,3 /))
 
 
     ALLOCATE(chrArrAlloc2( -1:1,-1:1,-1:1,-1:1,-1:1 ),&
         SOURCE=RESHAPE((/ (CHAR( (32 + MOD(i, 94)) ), i = 1, 243) /),&
                                                         (/ 3,3,3,3,3 /)))
-    IF (.NOT. ALLOCATED( chrArrAlloc2 )) CALL zzrc( 11_4 )
+    IF (.NOT. ALLOCATED( chrArrAlloc2 )) ERROR STOP 11_4
 
 
     CALL IntrinsicAssignment( )
 
 
-    IF (.NOT. ALLOCATED( chrArrAlloc1 )) CALL zzrc( 20_4 )
-    IF (.NOT. ALLOCATED( chrArrAlloc2 )) CALL zzrc( 21_4 )
+    IF (.NOT. ALLOCATED( chrArrAlloc1 )) ERROR STOP 20_4
+    IF (.NOT. ALLOCATED( chrArrAlloc2 )) ERROR STOP 21_4
 
-    IF (SIZE( chrArrAlloc1 ) /= 32) CALL zzrc( 30_4 )
-    IF (SIZE( chrArrAlloc2 ) /= 32) CALL zzrc( 31_4 )
+    IF (SIZE( chrArrAlloc1 ) /= 32) ERROR STOP 30_4
+    IF (SIZE( chrArrAlloc2 ) /= 32) ERROR STOP 31_4
 
 
     DO i = 1, 5
@@ -90,14 +90,14 @@ PROGRAM allocCharLBound03
         WRITE(6, 10) chrArrAlloc1
 10      FORMAT(2('"',A7,'","',A7,'", '))
 
-        CALL zzrc( 60_4 )
+        ERROR STOP 60_4
 
     ELSE IF (.NOT. ALL(chrArrAlloc2 == 'i')) THEN
         WRITE(6, *) 'chrArrAlloc2:'
         WRITE(6, 20) chrArrAlloc2
 20      FORMAT(2('"',A1,'","',A1,'", '))
 
-        CALL zzrc( 70_4 )
+        ERROR STOP 70_4
     END IF
 
 END PROGRAM allocCharLBound03

@@ -58,66 +58,66 @@ PROGRAM allocatedScalarCharExpr02
 
         SUBROUTINE SubStrAssign( )
 
-            IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 10_4 )
+            IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 10_4
 
             charScalarAlloc = char6Var1( :5 )
 
-            IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 11_4 )
+            IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 11_4
             PRINT *, '1) charScalarAlloc = "', charScalarAlloc, '"'
-            IF (charScalarAlloc /= 'LMNop  ')       CALL zzrc( 12_4 )
+            IF (charScalarAlloc /= 'LMNop  ')       ERROR STOP 12_4
 
         END SUBROUTINE SubStrAssign
 
 
         SUBROUTINE CatAssign( )
 
-            IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 20_4 )
+            IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 20_4
 
             charScalarAlloc = char3Var1 // char2Var2
 
-            IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 21_4 )
+            IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 21_4
             PRINT *, '2) charScalarAlloc = "', charScalarAlloc, '"'
-            IF (charScalarAlloc /= 'uvwCD  ')       CALL zzrc( 22_4 )
+            IF (charScalarAlloc /= 'uvwCD  ')       ERROR STOP 22_4
 
         END SUBROUTINE CatAssign
 
 
         SUBROUTINE SubStrCatAssign( )
 
-            IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 30_4 )
+            IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 30_4
 
             charScalarAlloc = char6Var1( :3 ) // char3Var2( 2: )
 
-            IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 31_4 )
+            IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 31_4
             PRINT *, '3) charScalarAlloc = "', charScalarAlloc, '"'
-            IF (charScalarAlloc /= 'LMNYZ  ')       CALL zzrc( 32_4 )
+            IF (charScalarAlloc /= 'LMNYZ  ')       ERROR STOP 32_4
 
         END SUBROUTINE SubStrCatAssign
 
 
         SUBROUTINE IntrinsicReturnAssign( )
 
-            IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 40_4 )
+            IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 40_4
 
             charScalarAlloc = REPEAT(char2Var2, 3)
 
-            IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 41_4 )
+            IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 41_4
             PRINT *, '4) charScalarAlloc = "', charScalarAlloc, '"'
-            IF (charScalarAlloc /= 'CDCDCD ')       CALL zzrc( 42_4 )
+            IF (charScalarAlloc /= 'CDCDCD ')       ERROR STOP 42_4
 
         END SUBROUTINE IntrinsicReturnAssign
 
 
         SUBROUTINE MultipleCatAssign( )
 
-            IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 50_4 )
+            IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 50_4
 
             charScalarAlloc = char2Var1 // char3Var1( 2:2 ) //&
                                 CHAR( 49 ) // char6Var1( 5: )
 
-            IF (.NOT. ALLOCATED( charScalarAlloc )) CALL zzrc( 51_4 )
+            IF (.NOT. ALLOCATED( charScalarAlloc )) ERROR STOP 51_4
             PRINT *, '5) charScalarAlloc = "', charScalarAlloc, '"'
-            IF (charScalarAlloc /= 'abv1pq ')       CALL zzrc( 52_4 )
+            IF (charScalarAlloc /= 'abv1pq ')       ERROR STOP 52_4
 
         END SUBROUTINE MultipleCatAssign
 

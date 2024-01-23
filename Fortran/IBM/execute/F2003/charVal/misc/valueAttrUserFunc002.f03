@@ -102,7 +102,7 @@ PROGRAM valueAttrUserFunc002
 
     zResult = z( (x( xArgIn ) // y( yArgIn )) )
     if (zResult /= 'ZYXWVUTS') then
-        call zzrc( 1_4 )
+        error stop 1_4
     end if
 
 END PROGRAM valueAttrUserFunc002
@@ -114,14 +114,14 @@ CHARACTER(LEN = 4) FUNCTION x( arg1 )
     character(len = 4), value :: arg1
 
     if (arg1 /= xPected) then
-        call zzrc( 2_4 )
+        error stop 2_4
     end if
 
     arg1( 2:3 ) = 'YX'
     x = arg1
 
     if (xArgIn /= xPected) then
-        call zzrc( 3_4 )
+        error stop 3_4
     end if
 
 END FUNCTION x
@@ -133,7 +133,7 @@ CHARACTER(LEN = 4) FUNCTION y( arg1 )
     character(len = 4), value :: arg1
 
     if (arg1 /= yPected) then
-        call zzrc( 4_4 )
+        error stop 4_4
     end if
 
     arg1( 3:3 ) = 'T'
@@ -142,7 +142,7 @@ CHARACTER(LEN = 4) FUNCTION y( arg1 )
     y = arg1
 
     if (yArgIn /= yPected) then
-        call zzrc( 5_4 )
+        error stop 5_4
     end if
 
 END FUNCTION y
@@ -154,7 +154,7 @@ CHARACTER(LEN = 8) FUNCTION z( arg1 )
     character(len = 8), value :: arg1
 
     if (arg1 /= zPected) then
-        call zzrc( 6_4 )
+        error stop 6_4
     end if
 
     arg1( :1 )  = 'Z'

@@ -65,27 +65,27 @@ program nonAsynchPendingSpec01
         &access='stream', form='unformatted', iostat=iStat, iomsg=iMsg)
     if (0 /= iStat) then
         write(0, *) "OPEN(ASYNCHRONOUS=yes) <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
     open(3, action='write', access='stream',&
         &form='unformatted', iostat=iStat, iomsg=iMsg)
     if (0 /= iStat) then
         write(0, *) "OPEN(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-        call zzrc( 2 )
+        error stop 2
     end if
 
 
     write(3, iostat=iStat, iomsg=iMsg) 1234
     if (0 /= iStat) then
         write(0, *) "WRITE(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-        call zzrc( 3 )
+        error stop 3
     end if
 
     write(2, asynchronous='yes', id=ioID, iostat=iStat, iomsg=iMsg) 1234
     if (0 /= iStat) then
         write(0, *) "WRITE(ASYNCHRONOUS=yes) <", iStat, "> ", iMsg
-        call zzrc( 4 )
+        error stop 4
     end if
 
 
@@ -93,23 +93,23 @@ program nonAsynchPendingSpec01
     if (227 /= iStat) then
         write(0, *) "INQUIRE(ASYNCHRONOUS=no,ID=", ioID,&
                                     &") <", iStat, "> ", iMsg
-        call zzrc( 5 )
+        error stop 5
 
     else if ( exPending ) then
         write(0, *) "INQUIRE(ASYNCHRONOUS=no,ID=", ioID,&
                                 &",PENDING=", exPending, ")"
-        call zzrc( 6 )
+        error stop 6
     end if
 
 
     inquire(3, pending=exPending, iostat=iStat, iomsg=iMsg)
     if (0 /= iStat) then
         write(0, *) "INQUIRE(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-        call zzrc( 7 )
+        error stop 7
 
     else if ( exPending ) then
         write(0, *) "INQUIRE(ASYNCHRONOUS=no,PENDING=", exPending, ")"
-        call zzrc( 8 )
+        error stop 8
     end if
 
 
@@ -117,20 +117,20 @@ program nonAsynchPendingSpec01
     if (0 /= iStat) then
         write(0, *) "INQUIRE(ASYNCHRONOUS=yes,ID=", ioID,&
                                     &") <", iStat, "> ", iMsg
-        call zzrc( 9 )
+        error stop 9
     end if
 
 
     close(2, iostat=iStat, iomsg=iMsg)
     if (0 /= iStat) then
         write(0, *) "CLOSE(ASYNCHRONOUS=yes) <", iStat, "> ", iMsg
-        call zzrc( 11 )
+        error stop 11
     end if
 
     close(3, iostat=iStat, iomsg=iMsg)
     if (0 /= iStat) then
         write(0, *) "CLOSE(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-        call zzrc( 12 )
+        error stop 12
     end if
 
 end program nonAsynchPendingSpec01

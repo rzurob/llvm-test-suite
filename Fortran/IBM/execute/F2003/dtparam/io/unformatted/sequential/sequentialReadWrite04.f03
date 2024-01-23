@@ -190,7 +190,7 @@ PROGRAM sequentialReadWrite04
     OPEN(99, ACTION='readwrite', FORM='unformatted', IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, "OPEN(", iostat, ") ", iomsg
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
@@ -206,7 +206,7 @@ PROGRAM sequentialReadWrite04
     REWIND(99, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, "REWIND(", iostat, ") ", iomsg
-        CALL zzrc( 40_4 )
+        ERROR STOP 40_4
     END IF
 
 
@@ -222,7 +222,7 @@ PROGRAM sequentialReadWrite04
     CLOSE(99, IOSTAT=iostat, IOMSG=iomsg)
     IF (iostat /= 0) THEN
         PRINT *, "CLOSE(", iostat, ") ", iomsg
-        CALL zzrc( 70_4 )
+        ERROR STOP 70_4
     END IF
 
 

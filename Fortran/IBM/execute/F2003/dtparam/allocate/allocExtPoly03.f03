@@ -71,27 +71,27 @@ PROGRAM allocExtPoly03
     CLASS(ext(8,5,6)), POINTER :: extPtr
 
 
-    IF ( ASSOCIATED( extPtr ) )                         CALL zzrc( 10_4 )
+    IF ( ASSOCIATED( extPtr ) )                         ERROR STOP 10_4
 
 
     extPtr => NewExt( 20_4 )
 
 
-    IF (.NOT. ASSOCIATED( extPtr ))                     CALL zzrc( 21_4 )
+    IF (.NOT. ASSOCIATED( extPtr ))                     ERROR STOP 21_4
 
-    IF (extPtr%k1 /= 8)                                 CALL zzrc( 22_4 )
-    IF (KIND( extPtr%stuff ) /= 8)                      CALL zzrc( 23_4 )
+    IF (extPtr%k1 /= 8)                                 ERROR STOP 22_4
+    IF (KIND( extPtr%stuff ) /= 8)                      ERROR STOP 23_4
 
-    IF (extPtr%l1 /= 5)                                 CALL zzrc( 24_4 )
-    IF (extPtr%l2 /= 6)                                 CALL zzrc( 25_4 )
+    IF (extPtr%l1 /= 5)                                 ERROR STOP 24_4
+    IF (extPtr%l2 /= 6)                                 ERROR STOP 25_4
 
-    IF (LEN( extPtr%typeOfStuff ) /= 5)                 CALL zzrc( 26_4 )
-    IF ( ANY(SHAPE( extPtr%moreStuff ) /= [ 5,0 ]) )    CALL zzrc( 27_4 )
+    IF (LEN( extPtr%typeOfStuff ) /= 5)                 ERROR STOP 26_4
+    IF ( ANY(SHAPE( extPtr%moreStuff ) /= [ 5,0 ]) )    ERROR STOP 27_4
 
 
     DEALLOCATE( extPtr )
 
-    IF ( ASSOCIATED( extPtr ) )                         CALL zzrc( 30_4 )
+    IF ( ASSOCIATED( extPtr ) )                         ERROR STOP 30_4
 
 END PROGRAM allocExtPoly03
 

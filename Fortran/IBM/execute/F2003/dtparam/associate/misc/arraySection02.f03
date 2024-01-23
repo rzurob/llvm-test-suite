@@ -55,7 +55,7 @@ PROGRAM arraySection02
     ASSOCIATE(b => base( vector ))
 
         IF (SIZE( b ) /= SIZE( vector )) THEN
-            CALL zzrc( 5_4 )
+            ERROR STOP 5_4
         END IF
 
         DO i = 1, 2

@@ -56,7 +56,7 @@ PROGRAM pendingError02
         &FORM='unformatted', ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -78,13 +78,13 @@ PROGRAM pendingError02
     IF (aIOStat( 1,1 ) <> 0) THEN
         WRITE(0, *) "1a) READ(", aioID( 1 ), ") <",&
                     &aIOStat( 1,1 ), "> ", aIOMsg( 1,1 )
-        CALL zzrc( 31 )
+        ERROR STOP 31
     END IF
 
     IF (aIOStat( 1,2 ) <> 0) THEN
         WRITE(0, *) "1b) WAIT(", aioID( 1 ), ") <",&
                     &aIOStat( 1,2 ), "> ", aIOMsg( 1,2 )
-        CALL zzrc( 41 )
+        ERROR STOP 41
     END IF
 
 
@@ -94,7 +94,7 @@ PROGRAM pendingError02
     IF (aIOStat( 2,2 ) <> 1) THEN
         WRITE(0, *) "2b) WAIT(", aioID( 2 ), ") <",&
                     &aIOStat( 2,2 ), "> ", aIOMsg( 2,2 )
-        CALL zzrc( 42 )
+        ERROR STOP 42
     END IF
 
 
@@ -105,13 +105,13 @@ PROGRAM pendingError02
     IF (aIOStat( 3,1 ) <> 0) THEN
         WRITE(0, *) "3a) READ(", aioID( 3 ), ") <",&
                     &aIOStat( 3,1 ), "> ", aIOMsg( 3,1 )
-        CALL zzrc( 33 )
+        ERROR STOP 33
     END IF
 
     IF (aIOStat( 3,2 ) <> 224) THEN
         WRITE(0, *) "3b) WAIT(", aioID( 3 ), ") <",&
                     &aIOStat( 3,2 ), "> ", aIOMsg( 3,2 )
-        CALL zzrc( 43 )
+        ERROR STOP 43
     END IF
 
 
@@ -130,7 +130,7 @@ PROGRAM pendingError02
     CLOSE(ioUnit, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 61 )
+        ERROR STOP 61
     END IF
 
 END PROGRAM pendingError02

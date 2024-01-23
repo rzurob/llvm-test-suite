@@ -96,14 +96,14 @@ PROGRAM pendingSynchRead03
     READ(940, rec=1, err=100, iostat=iStat, iomsg=iMsg) dataValue( 4 )
 
     WRITE(0, *) "READ() <", iStat, "> ", iMsg
-    CALL zzrc( 11 )
+    ERROR STOP 11
 
 
 100 WRITE(0, *) "READ(ERR=100) <", iStat, "> ", iMsg
 
     IF (iStat <> 1) THEN
         WRITE(0, *) "READ() <", iStat, "> ", iMsg
-        CALL zzrc( 12 )
+        ERROR STOP 12
     END IF
 
 
@@ -118,7 +118,7 @@ PROGRAM pendingSynchRead03
     READ(940, rec=1, err=200) dataValue( 8 )
 
     WRITE(0, *) "READ() should not be here"
-    CALL zzrc( 13 )
+    ERROR STOP 13
 
 
 200 WRITE(0, *) "READ(ERR=200)"

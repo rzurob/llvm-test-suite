@@ -70,7 +70,7 @@ PROGRAM pendingERRSpec01
         ACCESS='sequential', ASYNCHRONOUS='yes', IOSTAT=iStat)
     IF (0 /= iStat) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -80,7 +80,7 @@ PROGRAM pendingERRSpec01
 
         IF (0 /= iStat) THEN
             WRITE(0, *) i, "WRITE() <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -93,13 +93,13 @@ PROGRAM pendingERRSpec01
     GOTO 200
 
 100 WRITE(0, *) "INQUIRE(ERR=100) <", iStat, "> ", iMsg
-    CALL zzrc( 4 )
+    ERROR STOP 4
 
 
 200 CLOSE(210, IOMSG=iMsg, IOSTAT=iStat)
     IF (0 /= iStat) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 END PROGRAM pendingERRSpec01
@@ -124,6 +124,6 @@ SUBROUTINE Inquire4ID(ioUnit, aID)
 
 
 100 WRITE(0, *) i, "INQUIRE(ERR=100,ID=", aID( i ), ") <", iStat, "> ", iMsg
-    CALL zzrc( 3 )
+    ERROR STOP 3
 
 END SUBROUTINE Inquire4ID

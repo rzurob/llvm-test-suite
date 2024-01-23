@@ -69,7 +69,7 @@ PROGRAM pendingNoIOSTATSpec04d
         ACTION='read', FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     if (iStat <> 0) THEN
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 11 )
+        error stop 11
     end if
 
 
@@ -88,14 +88,14 @@ PROGRAM pendingNoIOSTATSpec04d
 
     if ( neverEnding ) THEN
         write(0, *) "INQUIRE(PENDING=", neverEnding, ")"
-        call zzrc( 31 )
+        error stop 31
     end if
 
 
     close(930, IOSTAT=iStat, IOMSG=iMsg)
     if (iStat <> 0) THEN
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 41 )
+        error stop 41
     end if
 
 END PROGRAM pendingNoIOSTATSpec04d

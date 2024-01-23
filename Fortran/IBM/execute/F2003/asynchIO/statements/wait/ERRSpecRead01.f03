@@ -49,7 +49,7 @@ PROGRAM ERRSpecRead01
         &FILE='ERRSpecRead01.dat', IOMSG=iMsg, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -57,20 +57,20 @@ PROGRAM ERRSpecRead01
         &REC=100, IOSTAT=iStat, IOMSG=iMsg) dataValue
     IF (iStat <> 0) THEN
         WRITE(0, *) "READ() <", iStat, "> ", iMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
     WAIT(447, ID=iID, ERR=100, IOSTAT=iStat, IOMSG=iMsg)
 
     WRITE(0, *) "WAIT(ID=", iID, ") <", iStat, "> ", iMsg
-    CALL zzrc( 3 )
+    ERROR STOP 3
 
 100 WRITE(0, *) "WAIT(ERR=100,ID=", iID, ") <", iStat, "> ", iMsg
 
     IF (iStat <> 1) THEN
         WRITE(0, *) "WAIT(ERR=100,ID=", iID, ") <", iStat, "> ", iMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
@@ -78,27 +78,27 @@ PROGRAM ERRSpecRead01
     READ(447, ASYNCHRONOUS='yes', REC=100, IOSTAT=iStat, IOMSG=iMsg) dataValue
     IF (iStat <> 0) THEN
         WRITE(0, *) "READ() <", iStat, "> ", iMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
     WAIT(447, ERR=200, IOSTAT=iStat, IOMSG=iMsg)
 
     WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-    CALL zzrc( 6 )
+    ERROR STOP 6
 
 200 WRITE(0, *) "WAIT(ERR=200) <", iStat, "> ", iMsg
 
     IF (iStat <> 1) THEN
         WRITE(0, *) "WAIT(ERR=200) <", iStat, "> ", iMsg
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
 
     CLOSE(447, IOMSG=iMsg, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 8 )
+        ERROR STOP 8
     END IF
 
 END PROGRAM ERRSpecRead01

@@ -47,29 +47,29 @@ PROGRAM allocatedLBound02
     ALLOCATE(logAllocArray2( 0:3,5:5 ),&
             SOURCE=RESHAPE((/ (.TRUE._2, i = 1, 4) /), (/ 4, 1 /)))
 
-    IF (.NOT. ALLOCATED( logAllocArray2 )) CALL zzrc( 10_4 )
+    IF (.NOT. ALLOCATED( logAllocArray2 )) ERROR STOP 10_4
 
-    IF (LBOUND(logAllocArray2, 1) /= 0) CALL zzrc( 20_4 )
-    IF (LBOUND(logAllocArray2, 2) /= 5) CALL zzrc( 30_4 )
+    IF (LBOUND(logAllocArray2, 1) /= 0) ERROR STOP 20_4
+    IF (LBOUND(logAllocArray2, 2) /= 5) ERROR STOP 30_4
 
 
     logAllocArray2 = logArray2
 
 
-    IF (.NOT. ALLOCATED( logAllocArray2 )) CALL zzrc( 40_4 )
+    IF (.NOT. ALLOCATED( logAllocArray2 )) ERROR STOP 40_4
 
-    IF (SIZE( logAllocArray2 ) /= 4) CALL zzrc( 50_4 )
-    IF (SIZE(logAllocArray2, 1) /= 2) CALL zzrc( 60_4 )
-    IF (SIZE(logAllocArray2, 2) /= 2) CALL zzrc( 70_4 )
+    IF (SIZE( logAllocArray2 ) /= 4) ERROR STOP 50_4
+    IF (SIZE(logAllocArray2, 1) /= 2) ERROR STOP 60_4
+    IF (SIZE(logAllocArray2, 2) /= 2) ERROR STOP 70_4
 
 
     IF (LBOUND(logAllocArray2, 1) /= 5) THEN
         PRINT *, "LBOUND(logAllocArray2, 1) =", LBOUND(logAllocArray2, 1)
-        CALL zzrc( 80_4 )
+        ERROR STOP 80_4
 
     ELSE IF (LBOUND(logAllocArray2, 2) /= 3) THEN
         PRINT *, "LBOUND(logAllocArray2, 2) =", LBOUND(logAllocArray2, 2)
-        CALL zzrc( 90_4 )
+        ERROR STOP 90_4
     END IF
 
 

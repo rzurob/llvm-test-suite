@@ -61,22 +61,22 @@ PROGRAM nonAsynchPendingIDSpec03
     INQUIRE(948, PENDING=isPending, ID=noIOID, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 226) THEN
         WRITE(0, *) "INQUIRE(", noIOID, ") <", iStat, "> ", iMsg
-        CALL zzrc( 11 )
+        ERROR STOP 11
 
     ELSE IF ( isPending ) THEN
         WRITE(0, *) "INQUIRE(", noIOID, "PENDING=", isPending, ")"
-        CALL zzrc( 12 )
+        ERROR STOP 12
     END IF
 
 
     INQUIRE(948, PENDING=isPending, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "INQUIRE() <", iStat, "> ", iMsg
-        CALL zzrc( 13 )
+        ERROR STOP 13
 
     ELSE IF ( isPending ) THEN
         WRITE(0, *) "INQUIRE(PENDING=", isPending, ")"
-        CALL zzrc( 14 )
+        ERROR STOP 14
     END IF
 
 END PROGRAM nonAsynchPendingIDSpec03

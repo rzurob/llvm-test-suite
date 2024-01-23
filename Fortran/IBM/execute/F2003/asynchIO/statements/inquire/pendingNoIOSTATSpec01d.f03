@@ -73,7 +73,7 @@ program pendingNoIOSTATSpec01d
         &asynchronous='yes', form='unformatted', iostat=iStat)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 11_4 )
+        ERROR STOP 11_4
     END IF
 
 
@@ -92,7 +92,7 @@ program pendingNoIOSTATSpec01d
     CLOSE(43, iostat=iStat, iomsg=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 51_4 )
+        ERROR STOP 51_4
     END IF
 
 end program pendingNoIOSTATSpec01d

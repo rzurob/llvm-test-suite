@@ -51,7 +51,7 @@ PROGRAM pendingBackspace01
         &ACTION='readwrite', FORM='unformatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1_4 )
+        ERROR STOP 1_4
     END IF
 
 
@@ -94,7 +94,7 @@ PROGRAM pendingBackspace01
     REWIND(2003, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "REWIND() <", iStat, "> ", iMsg
-        CALL zzrc( 150_4 )
+        ERROR STOP 150_4
     END IF
 
 
@@ -117,7 +117,7 @@ PROGRAM pendingBackspace01
     CLOSE(2003, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat /= 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 160_4 )
+        ERROR STOP 160_4
     END IF
 
 END PROGRAM pendingBackspace01

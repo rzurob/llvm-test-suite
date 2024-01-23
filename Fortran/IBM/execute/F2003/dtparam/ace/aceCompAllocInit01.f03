@@ -177,7 +177,7 @@ PROGRAM aceCompAllocInit01
     TYPE(base(3,8)) :: g
 
 
-    IF (SIZE( d ) /= 3)                 CALL zzrc( 10_4 )
+    IF (SIZE( d ) /= 3)                 ERROR STOP 10_4
 
     DO i = 1, SIZE( d )
         IF ( ALLOCATED( d( i )%bT ) )   CALL zzrc( (10_4 + INT(i, 4)) )
@@ -197,7 +197,7 @@ PROGRAM aceCompAllocInit01
     d = [ g, f, e ]
 
 
-    IF (SIZE( d ) /= 3)                     CALL zzrc( 50_4 )
+    IF (SIZE( d ) /= 3)                     ERROR STOP 50_4
 
     DO i = 1, 3
         IF (.NOT. ALLOCATED( d( i )%bT ))   CALL zzrc( (50_4 + INT(i, 4)) )

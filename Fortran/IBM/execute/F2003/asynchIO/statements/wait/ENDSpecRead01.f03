@@ -53,7 +53,7 @@ PROGRAM ENDSpecRead01
         &ACCESS='stream', FORM='formatted', ASYNCHRONOUS='yes')
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -79,7 +79,7 @@ PROGRAM ENDSpecRead01
     WAIT(ioUnit, END=200, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 31 )
+        ERROR STOP 31
     END IF
 
     GOTO 300
@@ -101,7 +101,7 @@ PROGRAM ENDSpecRead01
 400 CLOSE(ioUnit, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, "> ", iMsg
-        CALL zzrc( 40 )
+        ERROR STOP 40
     END IF
 
 END PROGRAM ENDSpecRead01

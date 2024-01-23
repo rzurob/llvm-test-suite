@@ -48,10 +48,10 @@ PROGRAM exprSelector02b
 
     ASSOCIATE(array => [ tL(3):: ])
         IF (SIZE( array ) /= 0) THEN
-            CALL zzrc( 10_4 )
+            ERROR STOP 10_4
 
         ELSE IF (array%l /= 3) THEN
-            CALL zzrc( 11_4 )
+            ERROR STOP 11_4
         END IF
     END ASSOCIATE
 
@@ -74,10 +74,10 @@ PROGRAM exprSelector02b
         END DO
 
         IF (SIZE( array ) /= 4) THEN
-            CALL zzrc( 40_4 )
+            ERROR STOP 40_4
 
         ELSE IF ( ANY(checkValuesArray /= 4) ) THEN
-            CALL zzrc( 41_4 )
+            ERROR STOP 41_4
         END IF
 
         DEALLOCATE( checkValuesArray )

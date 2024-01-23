@@ -54,7 +54,7 @@ PROGRAM ENDSpecWrite01
         &FORM='formatted', ASYNCHRONOUS='yes', ACCESS='direct', UNIT=111)
     IF (oStat <> 0) THEN
         WRITE(0, *) "OPEN() <", oStat, "> ", oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -79,7 +79,7 @@ PROGRAM ENDSpecWrite01
     CLOSE(UNIT=111, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", oStat, "> ", oMsg
-        CALL zzrc( 41 )
+        ERROR STOP 41
     END IF
 
 
@@ -92,7 +92,7 @@ PROGRAM ENDSpecWrite01
 
 200 CONTINUE
     WRITE(0, *) "WAIT() ", oMsg
-    CALL zzrc( 31 )
+    ERROR STOP 31
 
 300 CONTINUE
 

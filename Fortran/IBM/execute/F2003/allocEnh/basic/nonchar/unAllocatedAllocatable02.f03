@@ -46,7 +46,7 @@ PROGRAM unAllocatedAllocatable02
 
     IF ( ALLOCATED( integerArrayUnAlloc ) ) THEN
         PRINT *, "ALLOCATED( integerArrayUnAlloc ) == .TRUE."
-        CALL zzrc( 10_4 )
+        ERROR STOP 10_4
     END IF
 
 
@@ -55,7 +55,7 @@ PROGRAM unAllocatedAllocatable02
     integerArrayUnAlloc = integerArray
     IF (.NOT. ALLOCATED( integerArrayUnAlloc )) THEN
         PRINT *, "ALLOCATED( integerArrayUnAlloc ) == .FALSE."
-        CALL zzrc( 20_4 )
+        ERROR STOP 20_4
     END IF
 
     PRINT 100, integerArrayUnAlloc

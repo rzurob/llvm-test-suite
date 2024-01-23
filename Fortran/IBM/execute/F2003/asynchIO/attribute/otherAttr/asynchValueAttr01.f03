@@ -94,7 +94,7 @@ PROGRAM asynchValueAttr01
                     &ACCESS='sequential', IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) 'asynchValueAttr01()  OPEN() <', oStat, '> ', oMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -108,7 +108,7 @@ PROGRAM asynchValueAttr01
     WAIT(oUnit, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) 'asynchValueAttr01()  WAIT() <', oStat, '> ', oMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
@@ -120,7 +120,7 @@ PROGRAM asynchValueAttr01
 
     IF (oStat <> 0) THEN
         WRITE(0, *) 'asynchValueAttr01()  READ() <', oStat, '> ', oMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
@@ -131,7 +131,7 @@ PROGRAM asynchValueAttr01
             WRITE(0, *) "asynchValueAttr01()  ptList() != ptCheck(), i =", i
             WRITE(0, *) "    ptList(", i, ") = (", ptList( i ), ")"
             WRITE(0, *) "   ptCheck(", i, ") = (", ptCheck( i ), ")"
-            CALL zzrc( 5 )
+            ERROR STOP 5
         END IF
     END DO
 
@@ -139,7 +139,7 @@ PROGRAM asynchValueAttr01
     CLOSE(UNIT=oUnit, IOSTAT=oStat, IOMSG=oMsg)
     IF (oStat <> 0) THEN
         WRITE(0, *) 'asynchValueAttr01()  CLOSE() <', oStat, '> ', oMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 END PROGRAM asynchValueAttr01
@@ -178,7 +178,7 @@ INTEGER FUNCTION SavePoint(ioUnit, block, sPt)
 
 
     IF (wStat <> 0) THEN
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 

@@ -43,7 +43,7 @@ PROGRAM implicitDerived01
             &ASYNCHRONOUS='yes', IOSTAT=iStat, IOMSG=ioErrorMsg)
     IF (iStat /= 0) THEN
         PRINT *, "OPEN(): ", ioErrorMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -51,7 +51,7 @@ PROGRAM implicitDerived01
         &implicitAsynchPoint
     IF (iStat /= 0) THEN
         PRINT *, "WRITE(): ", ioErrorMsg
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 10  FORMAT('implicitAsynchPoint%x = "',F5.3,'"',&
@@ -61,7 +61,7 @@ PROGRAM implicitDerived01
     CLOSE(8, IOSTAT=iStat, IOMSG=ioErrorMsg)
     IF (iStat /= 0) THEN
         PRINT *, "CLOSE(): ", ioErrorMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 END PROGRAM implicitDerived01

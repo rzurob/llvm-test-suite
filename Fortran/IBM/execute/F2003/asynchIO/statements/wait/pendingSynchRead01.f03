@@ -85,7 +85,7 @@ PROGRAM pendingSynchRead01
     write(100, IOSTAT=iStat, IOMSG=iMsg) ((4 * 42) + 7)
     if (0 <> iStat) then
         write(0, *) "WRITE() <", iStat, "> ", iMsg
-        call zzrc( 11 )
+        error stop 11
     end if
 
 
@@ -100,7 +100,7 @@ PROGRAM pendingSynchRead01
     write(100, ASYNCHRONOUS='no', IOSTAT=iStat, IOMSG=iMsg) ((8 * 42) + 7)
     if (0 <> iStat) then
         write(0, *) "WRITE(ASYNCHRONOUS=no) <", iStat, "> ", iMsg
-        call zzrc( 31 )
+        error stop 31
     end if
 
 

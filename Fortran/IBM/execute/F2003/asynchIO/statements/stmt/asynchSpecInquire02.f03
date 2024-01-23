@@ -64,7 +64,7 @@ PROGRAM asynchSpecInquire02
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(Asynchronous, read): ioStatus = (",&
                                 &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
     !
@@ -75,19 +75,19 @@ PROGRAM asynchSpecInquire02
     IF (ioStatus /= 0) THEN
         PRINT *, "INQUIRE(Asynchronous, read): ioStatus = (",&
                                         &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
     IF (asynchState /= 'YES') THEN
         PRINT *, "INQUIRE(Asynchronous, read): asynchState = (",&
                                                     &asynchState, ")"
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
     CLOSE(UNIT=8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ioStatus = (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 
@@ -99,7 +99,7 @@ PROGRAM asynchSpecInquire02
     IF (ioStatus /= 0) THEN
         PRINT *, "OPEN(Non-Asynchronous, Read): ioStatus = (",&
                                         &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
     !
@@ -110,19 +110,19 @@ PROGRAM asynchSpecInquire02
     IF (ioStatus /= 0) THEN
         PRINT *, "INQUIRE(Non-Asynchronous, Read): ioStatus = (",&
                                         &ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 8 )
+        ERROR STOP 8
     END IF
 
     IF (asynchState /= 'NO') THEN
         PRINT *, "INQUIRE(Non-Asynchronous, Read): asynchState = (",&
                                                         &asynchState, ")"
-        CALL zzrc( 9 )
+        ERROR STOP 9
     END IF
 
     CLOSE(UNIT=8, IOSTAT=ioStatus, IOMSG=ioErrorMsg)
     IF (ioStatus /= 0) THEN
         PRINT *, "CLOSE(): ioStatus = (", ioStatus, ") ", ioErrorMsg
-        CALL zzrc( 10 )
+        ERROR STOP 10
     END IF
 
 

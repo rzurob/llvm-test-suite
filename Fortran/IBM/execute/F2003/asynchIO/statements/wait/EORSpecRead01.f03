@@ -64,7 +64,7 @@ PROGRAM EORSpecRead01
         &ACTION='read', FORM='formatted', IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -74,7 +74,7 @@ PROGRAM EORSpecRead01
 
         IF (iStat <> 0) THEN
             WRITE(0, *) i, "READ() <", iStat, "> ", iMsg
-            CALL zzrc( 2 )
+            ERROR STOP 2
         END IF
     END DO
 
@@ -85,7 +85,7 @@ PROGRAM EORSpecRead01
     WAIT(IOSTAT=iStat, UNIT=109, IOMSG=iMsg, EOR=99)
     IF (iStat <> 0) THEN
         WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
     GOTO 100
@@ -93,7 +93,7 @@ PROGRAM EORSpecRead01
 
 99  CONTINUE
     WRITE(0, *) "WAIT() <", iStat, "> ", iMsg
-    CALL zzrc( 6 )
+    ERROR STOP 6
 
 
 100 CONTINUE
@@ -105,7 +105,7 @@ PROGRAM EORSpecRead01
     CLOSE(109, IOSTAT=iStat, IOMSG=iMsg)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, "> ", iMsg
-        CALL zzrc( 7 )
+        ERROR STOP 7
     END IF
 
 END PROGRAM EORSpecRead01
@@ -126,7 +126,7 @@ SUBROUTINE Wait4IDs(ioUnit, iIDs)
         WAIT(EOR=99, UNIT=ioUnit, ID=iIDs( i ), IOSTAT=iStat, IOMSG=iMsg)
         IF (iStat <> 0) THEN
             WRITE(0, *) i, ") WAIT(", iIDs( i ), ") <", iStat, "> ", iMsg
-            CALL zzrc( 3 )
+            ERROR STOP 3
         END IF
     END DO
 
@@ -135,7 +135,7 @@ SUBROUTINE Wait4IDs(ioUnit, iIDs)
 
 99  CONTINUE
     WRITE(0, *) i, ") WAIT(", iIDs( i ), ") <", iStat, "> ", iMsg
-    CALL zzrc( 4 )
+    ERROR STOP 4
 
 
 100 CONTINUE

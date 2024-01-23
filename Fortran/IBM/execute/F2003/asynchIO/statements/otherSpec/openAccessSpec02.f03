@@ -77,7 +77,7 @@ PROGRAM openAccessSpec02
 
     IF (fileStatus%ioStatus /= 0) THEN
         WRITE(0, *) "OPEN() <", fileStatus%ioStatus, "> ", fileStatus%ioMessage
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
 
@@ -89,7 +89,7 @@ PROGRAM openAccessSpec02
     IF (fileStatus%ioStatus /= 0) THEN
         WRITE(0, *) "WRITE(Asynchronous) <",&
             &fileStatus%ioStatus, "> ", fileStatus%ioMessage
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
 
@@ -102,7 +102,7 @@ PROGRAM openAccessSpec02
     IF (fileStatus%ioStatus /= 0) THEN
         WRITE(0, *) "WRITE() <",&
             &fileStatus%ioStatus, "> ", fileStatus%ioMessage
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
 
@@ -115,7 +115,7 @@ PROGRAM openAccessSpec02
     IF (fileStatus%ioStatus /= 0) THEN
         WRITE(0, *) "WRITE(Asynchronous) <",&
             &fileStatus%ioStatus, "> ", fileStatus%ioMessage
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
 
@@ -127,7 +127,7 @@ PROGRAM openAccessSpec02
     IF (fileStatus%ioStatus /= 0) THEN
         WRITE(0, *) "WAIT(ID=", aioID, ") <",&
             &fileStatus%ioStatus, "> ", fileStatus%ioMessage
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
 
@@ -138,7 +138,7 @@ PROGRAM openAccessSpec02
     IF (fileStatus%ioStatus /= 0) THEN
         WRITE(0, *) "CLOSE() <",&
             &fileStatus%ioStatus, "> ", fileStatus%ioMessage
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
 END PROGRAM openAccessSpec02

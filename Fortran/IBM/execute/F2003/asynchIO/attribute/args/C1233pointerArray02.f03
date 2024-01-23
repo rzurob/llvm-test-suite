@@ -43,7 +43,7 @@ PROGRAM C1233pointerArray02
     allocate(idList( idListSize ), STAT=iStat, ERRMSG=iMsg)
     if (iStat <> 0) then
         write(0, *) "ALLOCATE() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -52,7 +52,7 @@ PROGRAM C1233pointerArray02
         ACTION='read', ACCESS='direct', IOSTAT=iStat, IOMSG=iMsg)
     if (iStat <> 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 2 )
+        error stop 2
     end if
 
 
@@ -62,7 +62,7 @@ PROGRAM C1233pointerArray02
     close(1221, IOSTAT=iStat, IOMSG=iMsg)
     if (iStat <> 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 4 )
+        error stop 4
     end if
 
 
@@ -88,7 +88,7 @@ PROGRAM C1233pointerArray02
 
                 if (iStat <> 0) then
                     write(0, *) i, "READ() <", iStat, "> ", iMsg
-                    call zzrc( 3 )
+                    error stop 3
                 end if
             end do
 

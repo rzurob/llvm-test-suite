@@ -61,7 +61,7 @@ PROGRAM langLvlDoneSpec01
         ACCESS='stream', ACTION='read', IOSTAT=iStat, IOMSG=iMsg)
     if (iStat /= 0) then
         write(0, *) "OPEN() <", iStat, "> ", iMsg
-        call zzrc( 1 )
+        error stop 1
     end if
 
 
@@ -73,7 +73,7 @@ PROGRAM langLvlDoneSpec01
 
         if (iStat /= 0) then
             write(0, *) i, "READ() <", iStat, "> ", iMsg
-            call zzrc( 2 )
+            error stop 2
         end if
     end do
 
@@ -90,7 +90,7 @@ PROGRAM langLvlDoneSpec01
 
                 if (iStat /= 0) then
                     write(0, *) i, "WAIT() <", iStat, "> ", iMsg
-                    call zzrc( 3 )
+                    error stop 3
 
                 else if ( pendingDataXfers( i )%isDone ) then
                     numDone = numDone + 1
@@ -108,7 +108,7 @@ PROGRAM langLvlDoneSpec01
     close(420, IOSTAT=iStat, IOMSG=iMsg)
     if (iStat /= 0) then
         write(0, *) "CLOSE() <", iStat, "> ", iMsg
-        call zzrc( 5 )
+        error stop 5
     end if
 
 END PROGRAM langLvlDoneSpec01

@@ -208,8 +208,8 @@ PROGRAM dtpUseAssociated01a
             INTEGER :: rcBase
 
 
-            IF (.NOT. ALLOCATED( testData ))                CALL zzrc( 99_4 )
-            IF (SIZE( testData ) /= SIZE( oldTestData ))    CALL zzrc( 199_4 )
+            IF (.NOT. ALLOCATED( testData ))                ERROR STOP 99_4
+            IF (SIZE( testData ) /= SIZE( oldTestData ))    ERROR STOP 199_4
 
             DO i = 1, SIZE( testData )
 

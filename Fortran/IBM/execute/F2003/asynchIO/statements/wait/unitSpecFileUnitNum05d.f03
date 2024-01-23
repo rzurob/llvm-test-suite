@@ -69,7 +69,7 @@ PROGRAM unitSpecFileUnitNum05d
     !
     WAIT(27, ID=iID, IOSTAT=iStat)
     IF (iStat == 0) THEN
-        CALL zzrc( 1 )
+        ERROR STOP 1
     END IF
 
     WRITE(6, *) "WAIT(Unit DOESNOT Exist) <", iStat, ">"
@@ -82,18 +82,18 @@ PROGRAM unitSpecFileUnitNum05d
     OPEN(IOSTAT=iStat, UNIT=27)
     IF (iStat <> 0) THEN
         WRITE(0, *) "OPEN() <", iStat, ">"
-        CALL zzrc( 2 )
+        ERROR STOP 2
     END IF
 
     WRITE(FMT='(I3)', IOSTAT=iStat, UNIT=27) 27
     IF (iStat <> 0) THEN
         WRITE(0, *) "WRITE() <", iStat, ">"
-        CALL zzrc( 3 )
+        ERROR STOP 3
     END IF
 
     WAIT(UNIT=27, ID=iID, IOSTAT=iStat)
     IF (iStat == 0) THEN
-        CALL zzrc( 4 )
+        ERROR STOP 4
     END IF
 
     WRITE(6, *) "WAIT(ASYNCHRONOUS=no) <", iStat, ">"
@@ -106,12 +106,12 @@ PROGRAM unitSpecFileUnitNum05d
     CLOSE(27, IOSTAT=iStat)
     IF (iStat <> 0) THEN
         WRITE(0, *) "CLOSE() <", iStat, ">"
-        CALL zzrc( 5 )
+        ERROR STOP 5
     END IF
 
     WAIT(ID=iID, UNIT=27, IOSTAT=iStat)
     IF (iStat == 0) THEN
-        CALL zzrc( 6 )
+        ERROR STOP 6
     END IF
 
     WRITE(6, *) "WAIT(Unit Not Connected) <", iStat, ">"
