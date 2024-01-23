@@ -16,6 +16,8 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
+        include 'ieeeconsts.ft'
+
         program fxfinite02
 
         use ieee_arithmetic
