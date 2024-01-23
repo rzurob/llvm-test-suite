@@ -17,6 +17,8 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
+        include 'ieeeconsts.ft'
+
         program fnormal06
 
         use ieee_arithmetic

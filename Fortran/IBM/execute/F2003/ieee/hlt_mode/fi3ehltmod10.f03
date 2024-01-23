@@ -6,10 +6,9 @@
 !*
 !*  PRIMARY FUNCTIONS TESTED   : IEEE_SET_HALTING_MODE,IEEE_GET_HALTING_MODE
 !*
-!*  SECONDARY FUNCTIONS TESTED : IEEE_SET_STATUS,IEEE_GET_STATUS
-!*                               IEEE_SET_FLAG,IEEE_GET_FLAG
+!*  SECONDARY FUNCTIONS TESTED :
 !*
-!*  REQUIRED COMPILER OPTIONS  : -qfloat=nofold -qflttrap=invalid -qsigtrap
+!*  REQUIRED COMPILER OPTIONS  : -qfloat=nofold -qflttrap=inexact -qsigtrap
 !*
 !*  KEYWORD(S)                 :
 !*
@@ -18,17 +17,18 @@
 !*
 !*  DESCRIPTION                : Testing IEEE_SET_HALTING_MODE and
 !*                               IEEE_GET_HALTING_MODE subroutines for
-!*                               REAL*4. Halting on IEEE_INVALID exception.
+!*                               REAL*8. Halting on INEXACT exception.
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
-         program fi3ehltmod03
+         include 'ieeeconsts.ft'
 
-         use ieee_arithmetic
+         program fi3ehltmod10
+
          use ieee_exceptions
          use constants_for_ieee
 
-         real*4 :: tr_4
+         real(8) :: tr1_8
          logical :: actual_flag_value, actual_halting_value
          integer :: caseid
          type(ieee_status_type) :: status_value
@@ -40,9 +40,8 @@
 
          caseid = 2
 
-!...check if the processor supports halting process when
-!...IEEE_INVALID exception occurs:
-         if (IEEE_SUPPORT_HALTING(IEEE_INVALID) .eqv. .false.) then
+!...IEEE_INEXACT exception occurs:
+         if (IEEE_SUPPORT_HALTING(IEEE_INEXACT) .eqv. .false.) then
             call zzrc(caseid)
          endif
 
@@ -50,31 +49,24 @@
 !...execution will continue after any exception will occur
          call ieee_set_halting_mode(IEEE_ALL, .false.)
 
-!...halting on exception IEEE_INVALID
-         call ieee_set_flag(IEEE_INVALID, .false. )
-         call ieee_get_flag(IEEE_INVALID, actual_flag_value)
+!...halting on exception IEEE_INEXACT
+         call ieee_set_flag(IEEE_INEXACT, .false. )
+         call ieee_get_flag(IEEE_INEXACT, actual_flag_value)
          if (actual_flag_value .neqv. .false. ) then
             call zzrc(caseid+1)
          endif
-         call ieee_get_halting_mode(IEEE_INVALID, actual_halting_value)
+
+         call ieee_get_halting_mode(IEEE_INEXACT, actual_halting_value)
          if ( actual_halting_value .neqv. .false. ) then
-             call zzrc(caseid+2)
+            call zzrc(caseid+2)
          endif
 
-         call ieee_set_halting_mode(IEEE_INVALID, .true.)
-         call ieee_get_halting_mode(IEEE_INVALID, actual_halting_value)
-         if ( actual_halting_value .neqv. .true. ) then
-            call zzrc(caseid+3)
-         endif
-
-         tr_4 = r1_4/r1_4
-         print *, tr_4
-         call ieee_get_flag(IEEE_INVALID, actual_flag_value)
+         call ieee_set_halting_mode(IEEE_INEXACT, .true.)
+         tr1_8 = zr_8/r3_8
+         print *, tr1_8
+         call ieee_get_flag(IEEE_INEXACT, actual_flag_value)
          if ( actual_flag_value .neqv. .true. ) then
-            call zzrc(caseid+4)
-         endif
-         if (ieee_is_nan(tr_4) .neqv. .true. ) then
-            call zzrc(caseid+5)
+            call zzrc(caseid+3)
          endif
 
 !...set the floating point status back

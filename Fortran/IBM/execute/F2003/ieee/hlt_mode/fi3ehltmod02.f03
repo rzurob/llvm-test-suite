@@ -23,6 +23,8 @@
 !*
 !234567890123456789012345678901234567890123456789012345678901234567890
 
+         include 'ieeeconsts.ft'
+
          program fi3ehltmod02
 
          use ieee_exceptions
